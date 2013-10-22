@@ -48,8 +48,9 @@ namespace Amazon.DataPipeline.Model.Internal.MarshallTransformations
             
             if (uriResourcePath.Contains("?")) 
             {
-                string queryString = uriResourcePath.Substring(uriResourcePath.IndexOf("?") + 1);
-                uriResourcePath    = uriResourcePath.Substring(0, uriResourcePath.IndexOf("?"));
+                int queryPosition = uriResourcePath.IndexOf("?", StringComparison.OrdinalIgnoreCase);
+                string queryString = uriResourcePath.Substring(queryPosition + 1);
+                uriResourcePath    = uriResourcePath.Substring(0, queryPosition);
         
                 foreach (string s in queryString.Split('&', ';')) 
                 {
@@ -68,7 +69,7 @@ namespace Amazon.DataPipeline.Model.Internal.MarshallTransformations
             request.ResourcePath = uriResourcePath;
             
              
-            using (StringWriter stringWriter = new StringWriter())
+            using (StringWriter stringWriter = new StringWriter(System.Globalization.CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();

@@ -91,7 +91,7 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// Contains a description of the current <i>lifecycle</i> state.
+        /// Contains a description of the current <i>lifecycle</i> state. <note> The <c>Quarantined</c> lifecycle state is currently not used. </note>
         ///  
         /// <para>
         /// <b>Constraints:</b>

@@ -41,8 +41,6 @@ namespace Amazon.S3.IO
 
         private S3FileInfo file;
         private MemoryStream buffer;
-        private FileMode mode;
-        private FileAccess access;
 
         private bool canRead = true;
         private bool canSeek = true;
@@ -68,8 +66,6 @@ namespace Amazon.S3.IO
         {
             file = new S3FileInfo(s3Client, bucket, key);
             buffer = new MemoryStream(buffersize);
-            this.mode = mode;
-            this.access = access;
 
             fileExist = file.ExistsWithBucketCheck(out bucketExist);
 

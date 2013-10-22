@@ -34,7 +34,11 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(deleteDhcpOptionsRequest, "AmazonEC2");
             request.Parameters.Add("Action", "DeleteDhcpOptions");
-            request.Parameters.Add("Version", "2013-02-01");
+            request.Parameters.Add("Version", "2013-10-01");
+            if (deleteDhcpOptionsRequest != null && deleteDhcpOptionsRequest.IsSetDryRun())
+            {
+                request.Parameters.Add("DryRun", StringUtils.FromBool(deleteDhcpOptionsRequest.DryRun));
+            }
             if (deleteDhcpOptionsRequest != null && deleteDhcpOptionsRequest.IsSetDhcpOptionsId())
             {
                 request.Parameters.Add("DhcpOptionsId", StringUtils.FromString(deleteDhcpOptionsRequest.DhcpOptionsId));

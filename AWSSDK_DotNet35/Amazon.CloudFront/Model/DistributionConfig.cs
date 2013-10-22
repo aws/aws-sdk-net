@@ -32,6 +32,7 @@ namespace Amazon.CloudFront.Model
         private Origins origins;
         private DefaultCacheBehavior defaultCacheBehavior;
         private CacheBehaviors cacheBehaviors;
+        private CustomErrorResponses customErrorResponses;
         private string comment;
         private LoggingConfig logging;
         private PriceClass priceClass;
@@ -143,6 +144,22 @@ namespace Amazon.CloudFront.Model
         internal bool IsSetCacheBehaviors()
         {
             return this.cacheBehaviors != null;
+        }
+
+        /// <summary>
+        /// A complex type that contains zero or more CustomErrorResponse elements.
+        ///  
+        /// </summary>
+        public CustomErrorResponses CustomErrorResponses
+        {
+            get { return this.customErrorResponses; }
+            set { this.customErrorResponses = value; }
+        }
+
+        // Check to see if CustomErrorResponses property is set
+        internal bool IsSetCustomErrorResponses()
+        {
+            return this.customErrorResponses != null;
         }
 
         /// <summary>

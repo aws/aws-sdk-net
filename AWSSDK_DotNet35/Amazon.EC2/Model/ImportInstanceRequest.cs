@@ -29,10 +29,22 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class ImportInstanceRequest : AmazonWebServiceRequest
     {
+        private bool? dryRun;
         private string description;
         private ImportInstanceLaunchSpecification launchSpecification;
         private List<DiskImage> diskImages = new List<DiskImage>();
-        private string platform;
+        private PlatformValues platform;
+        public bool DryRun
+        {
+            get { return this.dryRun ?? default(bool); }
+            set { this.dryRun = value; }
+        }
+
+        // Check to see if DryRun property is set
+        internal bool IsSetDryRun()
+        {
+            return this.dryRun.HasValue;
+        }
         public string Description
         {
             get { return this.description; }
@@ -66,7 +78,7 @@ namespace Amazon.EC2.Model
         {
             return this.diskImages.Count > 0;
         }
-        public string Platform
+        public PlatformValues Platform
         {
             get { return this.platform; }
             set { this.platform = value; }

@@ -33,6 +33,9 @@
 
         public ActivityType Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonToken.Null)
+                return null;
+
             ActivityType activityType = new ActivityType();
 
         

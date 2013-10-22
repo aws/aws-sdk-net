@@ -29,12 +29,14 @@ namespace Amazon.Redshift.Model
     /// must be in the available state. </para> <para> When you delete a cluster, Amazon Redshift deletes any automated snapshots of the cluster.
     /// Also, when the retention period of the snapshot expires, Amazon Redshift automatically deletes it. If you want to keep an automated snapshot
     /// for a longer period, you can make a manual copy of the snapshot. Manual snapshots are retained until you delete them. </para> <para> For
-    /// more information about working with snapshots, go to Amazon Redshift Snapshots in the <i>Amazon Redshift Management Guide</i> .
+    /// more information about working with snapshots, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html"
+    /// >Amazon Redshift Snapshots</a> in the <i>Amazon Redshift Management Guide</i> .
     /// </para>
     /// </summary>
     public partial class CopyClusterSnapshotRequest : AmazonWebServiceRequest
     {
         private string sourceSnapshotIdentifier;
+        private string sourceSnapshotClusterIdentifier;
         private string targetSnapshotIdentifier;
 
         /// <summary>
@@ -52,6 +54,17 @@ namespace Amazon.Redshift.Model
         internal bool IsSetSourceSnapshotIdentifier()
         {
             return this.sourceSnapshotIdentifier != null;
+        }
+        public string SourceSnapshotClusterIdentifier
+        {
+            get { return this.sourceSnapshotClusterIdentifier; }
+            set { this.sourceSnapshotClusterIdentifier = value; }
+        }
+
+        // Check to see if SourceSnapshotClusterIdentifier property is set
+        internal bool IsSetSourceSnapshotClusterIdentifier()
+        {
+            return this.sourceSnapshotClusterIdentifier != null;
         }
 
         /// <summary>

@@ -28,7 +28,7 @@ namespace Amazon.ElastiCache.Model
     {
         /// <summary>
         /// Gets and sets the DescribeReservedCacheNodesResult property.
-        /// Contains the result of a successful invocation of the DescribeReservedCacheNodes action.
+        /// Represents the output of a DescribeReservedCacheNodes operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DescribeReservedCacheNodesResult class are now available on the DescribeReservedCacheNodesResponse class. You should use the properties on DescribeReservedCacheNodesResponse instead of accessing them through DescribeReservedCacheNodesResult.")]
         public DescribeReservedCacheNodesResult DescribeReservedCacheNodesResult

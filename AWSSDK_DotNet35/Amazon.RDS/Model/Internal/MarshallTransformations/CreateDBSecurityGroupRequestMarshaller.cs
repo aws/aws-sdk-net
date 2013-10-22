@@ -44,6 +44,25 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 request.Parameters.Add("DBSecurityGroupDescription", StringUtils.FromString(createDBSecurityGroupRequest.DBSecurityGroupDescription));
             }
 
+            if (createDBSecurityGroupRequest != null)
+            {
+                List<Tag> tagsList = createDBSecurityGroupRequest.Tags;
+                int tagsListIndex = 1;
+                foreach (Tag tagsListValue in tagsList)
+                {
+                    if (tagsListValue != null && tagsListValue.IsSetKey())
+                    {
+                        request.Parameters.Add("Tags.member." + tagsListIndex + ".Key", StringUtils.FromString(tagsListValue.Key));
+                    }
+                    if (tagsListValue != null && tagsListValue.IsSetValue())
+                    {
+                        request.Parameters.Add("Tags.member." + tagsListIndex + ".Value", StringUtils.FromString(tagsListValue.Value));
+                    }
+
+                    tagsListIndex++;
+                }
+            }
+
             return request;
         }
     }

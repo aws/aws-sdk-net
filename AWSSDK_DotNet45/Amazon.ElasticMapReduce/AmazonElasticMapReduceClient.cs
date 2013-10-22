@@ -36,7 +36,7 @@ namespace Amazon.ElasticMapReduce
 	public partial class AmazonElasticMapReduceClient : AmazonWebServiceClient, Amazon.ElasticMapReduce.IAmazonElasticMapReduce
     {
 
-        QueryStringSigner signer = new QueryStringSigner();
+        AWS4Signer signer = new AWS4Signer();
         #region Constructors
 
         /// <summary>
@@ -56,7 +56,7 @@ namespace Amazon.ElasticMapReduce
         ///
         /// </summary>
         public AmazonElasticMapReduceClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonElasticMapReduceConfig(), true, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonElasticMapReduceConfig(), AuthenticationTypes.User | AuthenticationTypes.Session) { }
 
         /// <summary>
         /// Constructs AmazonElasticMapReduceClient with the credentials loaded from the application's
@@ -76,7 +76,7 @@ namespace Amazon.ElasticMapReduce
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonElasticMapReduceClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonElasticMapReduceConfig(){RegionEndpoint = region}, true, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonElasticMapReduceConfig(){RegionEndpoint = region}, AuthenticationTypes.User | AuthenticationTypes.Session) { }
 
         /// <summary>
         /// Constructs AmazonElasticMapReduceClient with the credentials loaded from the application's
@@ -96,7 +96,7 @@ namespace Amazon.ElasticMapReduce
         /// </summary>
         /// <param name="config">The AmazonElasticMapReduce Configuration Object</param>
         public AmazonElasticMapReduceClient(AmazonElasticMapReduceConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config, true, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), config, AuthenticationTypes.User | AuthenticationTypes.Session) { }
 
         /// <summary>
         /// Constructs AmazonElasticMapReduceClient with AWS Credentials
@@ -124,7 +124,7 @@ namespace Amazon.ElasticMapReduce
         /// <param name="credentials">AWS Credentials</param>
         /// <param name="clientConfig">The AmazonElasticMapReduceClient Configuration Object</param>
         public AmazonElasticMapReduceClient(AWSCredentials credentials, AmazonElasticMapReduceConfig clientConfig)
-            : base(credentials, clientConfig, false, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(credentials, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
         {
         }
 
@@ -210,7 +210,7 @@ namespace Amazon.ElasticMapReduce
         /// <para>AddInstanceGroups adds an instance group to a running cluster.</para>
         /// </summary>
         /// 
-        /// <param name="addInstanceGroupsRequest">Container for the necessary parameters to execute the AddInstanceGroups service method on
+        /// <param name="request">Container for the necessary parameters to execute the AddInstanceGroups service method on
         /// AmazonElasticMapReduce.</param>
         /// 
         /// <returns>The response from the AddInstanceGroups service method, as returned by AmazonElasticMapReduce.</returns>
@@ -252,16 +252,16 @@ namespace Amazon.ElasticMapReduce
         /// <para> AddJobFlowSteps adds new steps to a running job flow. A maximum of 256 steps are allowed in each job flow. </para> <para>If your job
         /// flow is long-running (such as a Hive data warehouse) or complex, you may require more than 256 steps to process your data. You can bypass
         /// the 256-step limitation in various ways, including using the SSH shell to connect to the master node and submitting queries directly to the
-        /// software running on the master node, such as Hive and Hadoop. For more information on how to do this, go to Add More than 256 Steps to a Job
-        /// Flow in the <i>Amazon Elastic MapReduce Developer's Guide</i> .</para> <para> A step specifies the location of a JAR file stored either on
-        /// the master node of the job flow or in Amazon S3. Each step is performed by the main function of the main class of the JAR file. The main
-        /// class can be specified either in the manifest of the JAR or by using the MainFunction parameter of the step. </para> <para> Elastic
-        /// MapReduce executes each step in the order listed. For a step to be considered complete, the main function must exit with a zero exit code
-        /// and all Hadoop jobs started while the step was running must have completed and run successfully. </para> <para> You can only add steps to a
-        /// job flow that is in one of the following states: STARTING, BOOTSTRAPPING, RUNNING, or WAITING.</para>
+        /// software running on the master node, such as Hive and Hadoop. For more information on how to do this, go to <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/AddMoreThan256Steps.html">Add More than 256 Steps to a Job Flow</a>
+        /// in the <i>Amazon Elastic MapReduce Developer's Guide</i> .</para> <para> A step specifies the location of a JAR file stored either on the
+        /// master node of the job flow or in Amazon S3. Each step is performed by the main function of the main class of the JAR file. The main class
+        /// can be specified either in the manifest of the JAR or by using the MainFunction parameter of the step. </para> <para> Elastic MapReduce
+        /// executes each step in the order listed. For a step to be considered complete, the main function must exit with a zero exit code and all
+        /// Hadoop jobs started while the step was running must have completed and run successfully. </para> <para> You can only add steps to a job flow
+        /// that is in one of the following states: STARTING, BOOTSTRAPPING, RUNNING, or WAITING.</para>
         /// </summary>
         /// 
-        /// <param name="addJobFlowStepsRequest">Container for the necessary parameters to execute the AddJobFlowSteps service method on
+        /// <param name="request">Container for the necessary parameters to execute the AddJobFlowSteps service method on
         /// AmazonElasticMapReduce.</param>
         /// 
         /// <exception cref="T:Amazon.ElasticMapReduce.Model.InternalServerErrorException" />
@@ -314,7 +314,7 @@ namespace Amazon.ElasticMapReduce
         /// <para> Amazon Elastic MapReduce can return a maximum of 512 job flow descriptions. </para>
         /// </summary>
         /// 
-        /// <param name="describeJobFlowsRequest">Container for the necessary parameters to execute the DescribeJobFlows service method on
+        /// <param name="request">Container for the necessary parameters to execute the DescribeJobFlows service method on
         /// AmazonElasticMapReduce.</param>
         /// 
         /// <returns>The response from the DescribeJobFlows service method, as returned by AmazonElasticMapReduce.</returns>
@@ -369,8 +369,6 @@ namespace Amazon.ElasticMapReduce
         /// <para> Amazon Elastic MapReduce can return a maximum of 512 job flow descriptions. </para>
         /// </summary>
         /// 
-        /// <param name="describeJobFlowsRequest">Container for the necessary parameters to execute the DescribeJobFlows service method on
-        /// AmazonElasticMapReduce.</param>
         /// 
         /// <returns>The response from the DescribeJobFlows service method, as returned by AmazonElasticMapReduce.</returns>
         /// 
@@ -385,7 +383,7 @@ namespace Amazon.ElasticMapReduce
         /// new target instance count for the group and the instance group ID. The call will either succeed or fail atomically.</para>
         /// </summary>
         /// 
-        /// <param name="modifyInstanceGroupsRequest">Container for the necessary parameters to execute the ModifyInstanceGroups service method on
+        /// <param name="request">Container for the necessary parameters to execute the ModifyInstanceGroups service method on
         /// AmazonElasticMapReduce.</param>
         /// 
         /// <exception cref="T:Amazon.ElasticMapReduce.Model.InternalServerErrorException" />
@@ -430,12 +428,12 @@ namespace Amazon.ElasticMapReduce
         /// call, user intervention, or in the event of a job flow error.</para> <para>A maximum of 256 steps are allowed in each job flow.</para>
         /// <para>If your job flow is long-running (such as a Hive data warehouse) or complex, you may require more than 256 steps to process your data.
         /// You can bypass the 256-step limitation in various ways, including using the SSH shell to connect to the master node and submitting queries
-        /// directly to the software running on the master node, such as Hive and Hadoop. For more information on how to do this, go to Add More than
-        /// 256 Steps to a Job Flow in the <i>Amazon Elastic MapReduce Developer's Guide</i> .</para> <para>For long running job flows, we recommend
-        /// that you periodically store your results.</para>
+        /// directly to the software running on the master node, such as Hive and Hadoop. For more information on how to do this, go to <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/AddMoreThan256Steps.html">Add More than 256 Steps to a Job Flow</a>
+        /// in the <i>Amazon Elastic MapReduce Developer's Guide</i> .</para> <para>For long running job flows, we recommend that you periodically store
+        /// your results.</para>
         /// </summary>
         /// 
-        /// <param name="runJobFlowRequest">Container for the necessary parameters to execute the RunJobFlow service method on
+        /// <param name="request">Container for the necessary parameters to execute the RunJobFlow service method on
         /// AmazonElasticMapReduce.</param>
         /// 
         /// <returns>The response from the RunJobFlow service method, as returned by AmazonElasticMapReduce.</returns>
@@ -481,11 +479,11 @@ namespace Amazon.ElasticMapReduce
         /// an error, the instances will persist so you can recover any data stored in their ephemeral instance storage.</para> <para> To terminate a
         /// job flow that has been locked by setting SetTerminationProtection to <c>true</c> ,
         /// you must first unlock the job flow by a subsequent call to SetTerminationProtection in which you set the value to <c>false</c> .
-        /// </para> <para> For more information, go to Protecting a Job Flow from Termination in the <i>Amazon Elastic MapReduce Developer's Guide.</i>
-        /// </para>
+        /// </para> <para> For more information, go to <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/UsingEMR_TerminationProtection.html">Protecting a Job Flow from
+        /// Termination</a> in the <i>Amazon Elastic MapReduce Developer's Guide.</i> </para>
         /// </summary>
         /// 
-        /// <param name="setTerminationProtectionRequest">Container for the necessary parameters to execute the SetTerminationProtection service method
+        /// <param name="request">Container for the necessary parameters to execute the SetTerminationProtection service method
         /// on AmazonElasticMapReduce.</param>
         /// 
         /// <exception cref="T:Amazon.ElasticMapReduce.Model.InternalServerErrorException" />
@@ -528,7 +526,7 @@ namespace Amazon.ElasticMapReduce
         /// flow.</para>
         /// </summary>
         /// 
-        /// <param name="setVisibleToAllUsersRequest">Container for the necessary parameters to execute the SetVisibleToAllUsers service method on
+        /// <param name="request">Container for the necessary parameters to execute the SetVisibleToAllUsers service method on
         /// AmazonElasticMapReduce.</param>
         /// 
         /// <exception cref="T:Amazon.ElasticMapReduce.Model.InternalServerErrorException" />
@@ -572,7 +570,7 @@ namespace Amazon.ElasticMapReduce
         /// </para>
         /// </summary>
         /// 
-        /// <param name="terminateJobFlowsRequest">Container for the necessary parameters to execute the TerminateJobFlows service method on
+        /// <param name="request">Container for the necessary parameters to execute the TerminateJobFlows service method on
         /// AmazonElasticMapReduce.</param>
         /// 
         /// <exception cref="T:Amazon.ElasticMapReduce.Model.InternalServerErrorException" />

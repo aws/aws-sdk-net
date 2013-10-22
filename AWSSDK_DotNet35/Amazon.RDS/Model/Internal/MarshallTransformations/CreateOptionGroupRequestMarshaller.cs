@@ -52,6 +52,25 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 request.Parameters.Add("OptionGroupDescription", StringUtils.FromString(createOptionGroupRequest.OptionGroupDescription));
             }
 
+            if (createOptionGroupRequest != null)
+            {
+                List<Tag> tagsList = createOptionGroupRequest.Tags;
+                int tagsListIndex = 1;
+                foreach (Tag tagsListValue in tagsList)
+                {
+                    if (tagsListValue != null && tagsListValue.IsSetKey())
+                    {
+                        request.Parameters.Add("Tags.member." + tagsListIndex + ".Key", StringUtils.FromString(tagsListValue.Key));
+                    }
+                    if (tagsListValue != null && tagsListValue.IsSetValue())
+                    {
+                        request.Parameters.Add("Tags.member." + tagsListIndex + ".Value", StringUtils.FromString(tagsListValue.Value));
+                    }
+
+                    tagsListIndex++;
+                }
+            }
+
             return request;
         }
     }

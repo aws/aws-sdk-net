@@ -38,7 +38,7 @@
           return response;
         }
         
-        private void UnmarshallResult(JsonUnmarshallerContext context,ReportTaskRunnerHeartbeatResponse response)
+        private static void UnmarshallResult(JsonUnmarshallerContext context,ReportTaskRunnerHeartbeatResponse response)
         {
           
             int originalDepth = context.CurrentDepth;

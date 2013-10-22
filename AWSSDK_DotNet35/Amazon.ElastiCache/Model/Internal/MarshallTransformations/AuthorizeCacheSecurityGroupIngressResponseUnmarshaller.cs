@@ -57,7 +57,7 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
         }
         
         
-        private void UnmarshallResult(XmlUnmarshallerContext context,AuthorizeCacheSecurityGroupIngressResponse response)
+        private static void UnmarshallResult(XmlUnmarshallerContext context,AuthorizeCacheSecurityGroupIngressResponse response)
         {
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;

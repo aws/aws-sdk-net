@@ -65,7 +65,7 @@ namespace Amazon.ImportExport
         /// <param name="credentials">AWS Credentials</param>
         /// <param name="clientConfig">The AmazonImportExportClient Configuration Object</param>
         public AmazonImportExportClient(AWSCredentials credentials, AmazonImportExportConfig clientConfig)
-            : base(credentials, clientConfig, false, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(credentials, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
         {
         }
 
@@ -147,6 +147,19 @@ namespace Amazon.ImportExport
         #endregion
 
  
+		internal CancelJobResponse CancelJob(CancelJobRequest request)
+        {
+            var task = CancelJobAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> This operation cancels a specified job. Only the job owner can cancel it. The operation fails if the job has already started or is
         /// complete. </para>
@@ -173,6 +186,19 @@ namespace Amazon.ImportExport
             return response;
         }
  
+		internal CreateJobResponse CreateJob(CreateJobRequest request)
+        {
+            var task = CreateJobAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> This operation initiates the process of scheduling an upload or download of your data. You include in the request a manifest that
         /// describes the data transfer specifics. The response to the request includes a job ID, which you can use in other operations, a signature
@@ -208,6 +234,19 @@ namespace Amazon.ImportExport
             return response;
         }
  
+		internal GetStatusResponse GetStatus(GetStatusRequest request)
+        {
+            var task = GetStatusAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> This operation returns information about a job, including where the job is in the processing pipeline, the status of the results, and
         /// the signature value associated with the job. You can only return information about jobs you own. </para>
@@ -233,6 +272,19 @@ namespace Amazon.ImportExport
             return response;
         }
  
+		internal ListJobsResponse ListJobs(ListJobsRequest request)
+        {
+            var task = ListJobsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> This operation returns the jobs associated with the requester. AWS Import/Export lists the jobs in reverse chronological order based
         /// on the date of creation. For example if Job Test1 was created 2009Dec30 and Test2 was created 2010Feb05, the ListJobs operation would return
@@ -257,6 +309,19 @@ namespace Amazon.ImportExport
             return response;
         }
  
+		internal UpdateJobResponse UpdateJob(UpdateJobRequest request)
+        {
+            var task = UpdateJobAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> You use this operation to change the parameters specified in the original manifest file by supplying a new manifest file. The
         /// manifest file attached to this request replaces the original manifest file. You can only use the operation after a CreateJob request but

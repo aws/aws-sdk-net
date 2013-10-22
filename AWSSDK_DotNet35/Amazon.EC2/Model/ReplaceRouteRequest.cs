@@ -25,16 +25,29 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the ReplaceRoute operation.
-    /// <para> Replaces an existing route within a route table in a VPC. For more information about route tables, go to Route Tables in the Amazon
-    /// Virtual Private Cloud User Guide. </para>
+    /// <para> Replaces an existing route within a route table in a VPC. For more information about route tables, go to <a
+    /// href="http://docs.amazonwebservices.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html" >Route Tables</a> in the Amazon Virtual Private
+    /// Cloud User Guide. </para>
     /// </summary>
     public partial class ReplaceRouteRequest : AmazonWebServiceRequest
     {
+        private bool? dryRun;
         private string routeTableId;
         private string destinationCidrBlock;
         private string gatewayId;
         private string instanceId;
         private string networkInterfaceId;
+        public bool DryRun
+        {
+            get { return this.dryRun ?? default(bool); }
+            set { this.dryRun = value; }
+        }
+
+        // Check to see if DryRun property is set
+        internal bool IsSetDryRun()
+        {
+            return this.dryRun.HasValue;
+        }
 
         /// <summary>
         /// The ID of the route table where the route will be replaced.

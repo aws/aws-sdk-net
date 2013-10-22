@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// <para>Metadata assigned to a DB Instance consisting of a key-value pair.</para>
+    /// <para>Metadata assigned to an Amazon RDS resource consisting of a key-value pair.</para>
     /// </summary>
     public class Tag
     {
@@ -30,8 +30,8 @@ namespace Amazon.RDS.Model
         private string value;
 
         /// <summary>
-        /// A key is the required name of the tag. The string value can be from 1 to 128 Unicode characters in length and cannot be prefixed with
-        /// "aws:". The string may only contain only the set of Unicode letters, digits, white-space, '_', '.', '/', '=', '+', '-' (Java regex:
+        /// A key is the required name of the tag. The string value can be from 1 to 128 Unicode characters in length and cannot be prefixed with "aws:"
+        /// or "rds:". The string may only contain only the set of Unicode letters, digits, white-space, '_', '.', '/', '=', '+', '-' (Java regex:
         /// "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").
         ///  
         /// </summary>
@@ -49,8 +49,8 @@ namespace Amazon.RDS.Model
 
         /// <summary>
         /// A value is the optional value of the tag. The string value can be from 1 to 256 Unicode characters in length and cannot be prefixed with
-        /// "aws:". The string may only contain only the set of Unicode letters, digits, white-space, '_', '.', '/', '=', '+', '-' (Java regex:
-        /// "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").
+        /// "aws:" or "rds:". The string may only contain only the set of Unicode letters, digits, white-space, '_', '.', '/', '=', '+', '-' (Java
+        /// regex: "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").
         ///  
         /// </summary>
         public string Value

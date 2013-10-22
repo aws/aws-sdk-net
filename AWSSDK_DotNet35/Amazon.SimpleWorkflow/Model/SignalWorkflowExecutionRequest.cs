@@ -38,8 +38,9 @@ namespace Amazon.SimpleWorkflow.Model
     /// 
     /// </ul>
     /// <para>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified
-    /// constraints, the action fails by throwing <c>OperationNotPermitted</c> . For details and example IAM policies, see Using IAM to Manage
-    /// Access to Amazon SWF Workflows.</para>
+    /// constraints, the action fails by throwing <c>OperationNotPermitted</c> . For details and example IAM policies, see <a
+    /// href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html" >Using IAM to Manage Access to Amazon SWF Workflows</a>
+    /// .</para>
     /// </summary>
     public partial class SignalWorkflowExecutionRequest : AmazonWebServiceRequest
     {

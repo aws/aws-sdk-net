@@ -28,7 +28,7 @@ namespace Amazon.EC2.Model
         
         private string availabilityZone;
         private string groupName;
-        private string tenancy;
+        private Tenancy tenancy;
 
         /// <summary>
         /// The availability zone in which an Amazon EC2 instance runs.
@@ -68,8 +68,17 @@ namespace Amazon.EC2.Model
         /// dedicated means all instances launched into the VPC will be launched as dedicated tenancy regardless of the tenancy assigned to the instance
         /// at launch.
         ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>default, dedicated</description>
+        ///     </item>
+        /// </list>
+        /// </para>
         /// </summary>
-        public string Tenancy
+        public Tenancy Tenancy
         {
             get { return this.tenancy; }
             set { this.tenancy = value; }

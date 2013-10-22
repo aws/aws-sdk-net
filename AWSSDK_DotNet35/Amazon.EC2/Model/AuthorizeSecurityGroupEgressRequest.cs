@@ -37,8 +37,20 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class AuthorizeSecurityGroupEgressRequest : AmazonWebServiceRequest
     {
+        private bool? dryRun;
         private string groupId;
         private List<IpPermission> ipPermissions = new List<IpPermission>();
+        public bool DryRun
+        {
+            get { return this.dryRun ?? default(bool); }
+            set { this.dryRun = value; }
+        }
+
+        // Check to see if DryRun property is set
+        internal bool IsSetDryRun()
+        {
+            return this.dryRun.HasValue;
+        }
 
         /// <summary>
         /// ID of the VPC security group to modify.

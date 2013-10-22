@@ -33,6 +33,9 @@
 
         public TrustedAdvisorCheckRefreshStatus Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonToken.Null)
+                return null;
+
             TrustedAdvisorCheckRefreshStatus trustedAdvisorCheckRefreshStatus = new TrustedAdvisorCheckRefreshStatus();
 
         

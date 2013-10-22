@@ -25,7 +25,7 @@ namespace Amazon.EC2.Model
     public class ImportInstanceLaunchSpecification
     {
         
-        private string architecture;
+        private ArchitectureValues architecture;
         private List<string> groupNames = new List<string>();
         private string additionalInfo;
         private string userData;
@@ -33,9 +33,9 @@ namespace Amazon.EC2.Model
         private Placement placement;
         private bool? monitoring;
         private string subnetId;
-        private string instanceInitiatedShutdownBehavior;
+        private ShutdownBehavior instanceInitiatedShutdownBehavior;
         private string privateIpAddress;
-        public string Architecture
+        public ArchitectureValues Architecture
         {
             get { return this.architecture; }
             set { this.architecture = value; }
@@ -128,7 +128,7 @@ namespace Amazon.EC2.Model
         {
             return this.subnetId != null;
         }
-        public string InstanceInitiatedShutdownBehavior
+        public ShutdownBehavior InstanceInitiatedShutdownBehavior
         {
             get { return this.instanceInitiatedShutdownBehavior; }
             set { this.instanceInitiatedShutdownBehavior = value; }

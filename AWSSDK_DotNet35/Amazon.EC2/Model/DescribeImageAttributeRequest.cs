@@ -30,8 +30,20 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeImageAttributeRequest : AmazonWebServiceRequest
     {
+        private bool? dryRun;
         private string imageId;
-        private string attribute;
+        private ImageAttributeName attribute;
+        public bool DryRun
+        {
+            get { return this.dryRun ?? default(bool); }
+            set { this.dryRun = value; }
+        }
+
+        // Check to see if DryRun property is set
+        internal bool IsSetDryRun()
+        {
+            return this.dryRun.HasValue;
+        }
 
         /// <summary>
         /// The ID of the AMI whose attribute is to be described.
@@ -53,8 +65,17 @@ namespace Amazon.EC2.Model
         /// The name of the attribute to describe. Available attribute names: <c>productCodes</c>, <c>kernel</c>, <c>ramdisk</c>,
         /// <c>launchPermisson</c>, <c>blockDeviceMapping</c>
         ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>description, kernel, ramdisk, launchPermission, productCodes, blockDeviceMapping</description>
+        ///     </item>
+        /// </list>
+        /// </para>
         /// </summary>
-        public string Attribute
+        public ImageAttributeName Attribute
         {
             get { return this.attribute; }
             set { this.attribute = value; }

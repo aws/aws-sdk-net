@@ -25,11 +25,12 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyDBParameterGroup operation.
-    /// <para> Modifies the parameters of a DBParameterGroup. To modify more than one parameter submit a list of the following: ParameterName,
-    /// ParameterValue, and ApplyMethod. A maximum of 20 parameters can be modified in a single request. </para> <para><b>NOTE:</b> The
-    /// apply-immediate method can be used only for dynamic parameters; the pending-reboot method can be used with MySQL and Oracle DB Instances for
-    /// either dynamic or static parameters. For Microsoft SQL Server DB Instances, the pending-reboot method can be used only for static
-    /// parameters. </para>
+    /// <para> Modifies the parameters of a DB parameter group. To modify more than one parameter, submit a list of the following:
+    /// <c>ParameterName</c> ,
+    /// <c>ParameterValue</c> , and <c>ApplyMethod</c> . A maximum of 20 parameters can be modified in a single request. </para>
+    /// <para><b>NOTE:</b> The apply-immediate method can be used only for dynamic parameters; the pending-reboot method can be used with MySQL and
+    /// Oracle DB instances for either dynamic or static parameters. For Microsoft SQL Server DB instances, the pending-reboot method can be used
+    /// only for static parameters. </para>
     /// </summary>
     public partial class ModifyDBParameterGroupRequest : AmazonWebServiceRequest
     {
@@ -37,7 +38,7 @@ namespace Amazon.RDS.Model
         private List<Parameter> parameters = new List<Parameter>();
 
         /// <summary>
-        /// The name of the DB Parameter Group. Constraints: <ul> <li>Must be the name of an existing DB Parameter Group</li> <li>Must be 1 to 255
+        /// The name of the DB parameter group. Constraints: <ul> <li>Must be the name of an existing DB parameter group</li> <li>Must be 1 to 255
         /// alphanumeric characters</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
         /// </ul>
         ///  
@@ -58,7 +59,7 @@ namespace Amazon.RDS.Model
         /// An array of parameter names, values, and the apply method for the parameter update. At least one parameter name, value, and apply method
         /// must be supplied; subsequent arguments are optional. A maximum of 20 parameters may be modified in a single request. Valid Values (for the
         /// application method): <c>immediate | pending-reboot</c> <note>You can use the immediate value with dynamic parameters only. You can use the
-        /// pending-reboot value for both dynamic and static parameters, and changes are applied when DB Instance reboots. </note>
+        /// pending-reboot value for both dynamic and static parameters, and changes are applied when DB instance reboots. </note>
         ///  
         /// </summary>
         public List<Parameter> Parameters

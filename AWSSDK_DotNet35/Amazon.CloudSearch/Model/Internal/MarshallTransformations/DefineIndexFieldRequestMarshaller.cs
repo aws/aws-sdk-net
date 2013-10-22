@@ -161,10 +161,10 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
                                     {
                                         string value;
                                         bool hasValue = sourceDataMap.Cases.TryGetValue(key, out value);
-                                                                    request.Parameters.Add("Cases." + casesListIndex + ".Name", StringUtils.FromString(key));
+                                                                    request.Parameters.Add("Cases.entry." + casesListIndex + ".key", StringUtils.FromString(key));
                                         if (hasValue) 
                                         {
-                                            request.Parameters.Add("Cases." + casesListIndex + ".Value", StringUtils.FromString(value));
+                                            request.Parameters.Add("Cases.entry." + casesListIndex + ".value", StringUtils.FromString(value));
                                         }
                                         ++casesListIndex;
                                     }

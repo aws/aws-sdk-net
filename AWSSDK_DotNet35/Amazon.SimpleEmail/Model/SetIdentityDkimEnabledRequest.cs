@@ -34,7 +34,8 @@ namespace Amazon.SimpleEmail.Model
     /// </ul>
     /// <para>For email addresses (e.g., <c>user@example.com</c> ), you can only enable Easy DKIM signing if the corresponding domain (e.g.,
     /// <c>example.com</c> ) has been set up for Easy DKIM using the AWS Console or the <c>VerifyDomainDkim</c> action.</para> <para>This action is
-    /// throttled at one request per second.</para> <para>For more information about Easy DKIM signing, go to the Amazon SES Developer Guide.</para>
+    /// throttled at one request per second.</para> <para>For more information about Easy DKIM signing, go to the <a
+    /// href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html" >Amazon SES Developer Guide</a> .</para>
     /// </summary>
     public partial class SetIdentityDkimEnabledRequest : AmazonWebServiceRequest
     {

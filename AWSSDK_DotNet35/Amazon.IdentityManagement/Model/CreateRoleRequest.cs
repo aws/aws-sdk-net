@@ -25,10 +25,13 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateRole operation.
-    /// <para>Creates a new role for your AWS account. For more information about roles, go to Working with Roles. For information about limitations
-    /// on role names and the number of roles you can create, go to Limitations on IAM Entities in <i>Using AWS Identity and Access Management</i>
-    /// .</para> <para>The policy grants permission to an EC2 instance to assume the role. The policy is URL-encoded according to RFC 3986. For more
-    /// information about RFC 3986, go to http://www.faqs.org/rfcs/rfc3986.html. Currently, only EC2 instances can assume roles.</para>
+    /// <para>Creates a new role for your AWS account. For more information about roles, go to <a
+    /// href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/WorkingWithRoles.html" >Working with Roles</a> .
+    /// For information about limitations on role names and the number of roles you can create, go to <a
+    /// href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?LimitationsOnEntities.html" >Limitations on IAM Entities</a> in
+    /// <i>Using AWS Identity and Access Management</i> .</para> <para>The policy grants permission to an EC2 instance to assume the role. The
+    /// policy is URL-encoded according to RFC 3986. For more information about RFC 3986, go to <a href="http://www.faqs.org/rfcs/rfc3986.html"
+    /// >http://www.faqs.org/rfcs/rfc3986.html</a> . Currently, only EC2 instances can assume roles.</para>
     /// </summary>
     public partial class CreateRoleRequest : AmazonWebServiceRequest
     {

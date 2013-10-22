@@ -33,6 +33,9 @@
 
         public Disk Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonToken.Null)
+                return null;
+
             Disk disk = new Disk();
 
         

@@ -39,6 +39,32 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             {
                 request.Parameters.Add("OptionGroupName", StringUtils.FromString(describeOptionGroupsRequest.OptionGroupName));
             }
+
+            if (describeOptionGroupsRequest != null)
+            {
+                List<Filter> filtersList = describeOptionGroupsRequest.Filters;
+                int filtersListIndex = 1;
+                foreach (Filter filtersListValue in filtersList)
+                {
+                    if (filtersListValue != null && filtersListValue.IsSetFilterName())
+                    {
+                        request.Parameters.Add("Filters.member." + filtersListIndex + ".FilterName", StringUtils.FromString(filtersListValue.FilterName));
+                    }
+                    if (filtersListValue != null)
+                    {
+                        List<string> filterValueList = filtersListValue.FilterValue;
+
+                        int filterValueListIndex = 1;
+                        foreach (string filterValueListValue in filterValueList)
+                        { 
+                            request.Parameters.Add("Filters.member." + filtersListIndex + ".FilterValue.member." + filterValueListIndex, StringUtils.FromString(filterValueListValue));
+                            filterValueListIndex++;
+                        }
+                    }
+
+                    filtersListIndex++;
+                }
+            }
             if (describeOptionGroupsRequest != null && describeOptionGroupsRequest.IsSetMarker())
             {
                 request.Parameters.Add("Marker", StringUtils.FromString(describeOptionGroupsRequest.Marker));

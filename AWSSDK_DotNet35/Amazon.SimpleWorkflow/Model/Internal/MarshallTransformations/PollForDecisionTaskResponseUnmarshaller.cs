@@ -39,7 +39,7 @@
         }        
         
         
-        private void UnmarshallResult(JsonUnmarshallerContext context,PollForDecisionTaskResponse response)
+        private static void UnmarshallResult(JsonUnmarshallerContext context,PollForDecisionTaskResponse response)
         {                   
           response.DecisionTask = DecisionTaskUnmarshaller.GetInstance().Unmarshall(context);
           return;

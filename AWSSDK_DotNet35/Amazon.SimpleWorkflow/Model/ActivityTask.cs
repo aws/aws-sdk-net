@@ -17,13 +17,14 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using Amazon.Runtime;
 
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
     /// <para> Unit of work sent to an activity worker. </para>
     /// </summary>
-    public class ActivityTask
+    public partial class ActivityTask : AmazonWebServiceResponse
     {
         
         private string taskToken;

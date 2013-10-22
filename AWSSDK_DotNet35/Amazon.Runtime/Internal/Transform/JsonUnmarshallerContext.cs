@@ -54,9 +54,6 @@ namespace Amazon.Runtime.Internal.Transform
         private Dictionary<String, String> metadata = new Dictionary<string, string>();
         private JsonToken? currentToken = null;
 
-        // The string that has been deleted from stackString when doing update on the stack
-        private string lastParsedParentElement;
-
         #endregion
 
         #region Constructors
@@ -276,7 +273,6 @@ namespace Amazon.Runtime.Internal.Transform
 
         private void UpdateContext()
         {
-            lastParsedParentElement = null;
             if (!currentToken.HasValue) return;
 
             if (currentToken.Value == JsonToken.ObjectStart || currentToken.Value == JsonToken.ArrayStart)
@@ -297,7 +293,7 @@ namespace Amazon.Runtime.Internal.Transform
                     if (squareBracketsMatch || curlyBracketsMatch)
                     {
                         stack.Pop();
-                        lastParsedParentElement = stack.Pop();
+                        stack.Pop();
                     }
                 }
                 currentField = null;

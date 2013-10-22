@@ -35,7 +35,7 @@ namespace Amazon.Runtime
 #if !BCL
         static readonly private RegionEndpoint DEFAULT_REGION = RegionEndpoint.USEast1;
 #else
-        static readonly private RegionEndpoint DEFAULT_REGION;
+        static readonly private RegionEndpoint DEFAULT_REGION = GetDefaultRegionEndpoint();
 #endif
 
         private RegionEndpoint regionEndpoint = DEFAULT_REGION;
@@ -321,6 +321,16 @@ namespace Amazon.Runtime
 #if BCL
             this.UseNagleAlgorithm = useNagle;                
 #endif
+        }
+
+        /// <summary>
+        /// Performs validation on this config object.
+        /// Throws exception if any of the required values are missing/invalid.
+        /// </summary>
+        internal virtual void Validate()
+        {
+            if (RegionEndpoint == null)
+                throw new AmazonClientException("No RegionEndpoint configured");
         }
     }
 }

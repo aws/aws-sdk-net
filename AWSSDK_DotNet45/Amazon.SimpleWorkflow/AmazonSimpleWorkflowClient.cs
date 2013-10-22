@@ -30,8 +30,9 @@ namespace Amazon.SimpleWorkflow
     /// 
     /// Amazon Simple Workflow Service <para> The Amazon Simple Workflow Service API Reference is intended for programmers who need detailed
     /// information about the Amazon SWF actions and data types. </para> <para> For an broader overview of the Amazon SWF programming model, please
-    /// go to the Amazon SWF Developer Guide. </para> <para>This section provides an overview of Amazon SWF actions.</para> <para> <b>Action
-    /// Categories</b> </para> <para>The Amazon SWF actions can be grouped into the following major categories.</para>
+    /// go to the <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/">Amazon SWF Developer Guide</a> .
+    /// </para> <para>This section provides an overview of Amazon SWF actions.</para> <para> <b>Action Categories</b> </para> <para>The Amazon SWF
+    /// actions can be grouped into the following major categories.</para>
     /// <ul>
     /// <li> <para>Actions related to Activities</para> </li>
     /// <li> <para>Actions related to Deciders</para> </li>
@@ -42,56 +43,57 @@ namespace Amazon.SimpleWorkflow
     /// </ul>
     /// <para> <b>Actions related to Activities</b> </para> <para>The following are actions that are performed by activity workers:</para>
     /// <ul>
-    /// <li> <para> PollForActivityTask </para> </li>
-    /// <li> <para> RespondActivityTaskCompleted </para> </li>
-    /// <li> <para> RespondActivityTaskFailed </para> </li>
-    /// <li> <para> RespondActivityTaskCanceled </para> </li>
-    /// <li> <para> RecordActivityTaskHeartbeat </para> </li>
+    /// <li> <para> <a href="API_PollForActivityTask.html">PollForActivityTask</a> </para> </li>
+    /// <li> <para> <a href="API_RespondActivityTaskCompleted.html">RespondActivityTaskCompleted</a> </para> </li>
+    /// <li> <para> <a href="API_RespondActivityTaskFailed.html">RespondActivityTaskFailed</a> </para> </li>
+    /// <li> <para> <a href="API_RespondActivityTaskCanceled.html">RespondActivityTaskCanceled</a> </para> </li>
+    /// <li> <para> <a href="API_RecordActivityTaskHeartbeat.html">RecordActivityTaskHeartbeat</a> </para> </li>
     /// 
     /// </ul>
-    /// <para>Activity workers use the PollForActivityTask to get new activity tasks. After a worker receives an activity task from Amazon SWF, it
-    /// performs the task and responds using RespondActivityTaskCompleted if successful or RespondActivityTaskFailed if unsuccessful. </para> <para>
-    /// <b>Actions related to Deciders</b> </para> <para>The following are actions that are performed by deciders:</para>
+    /// <para>Activity workers use the <a href="API_PollForActivityTask.html">PollForActivityTask</a> to get new activity tasks. After a worker
+    /// receives an activity task from Amazon SWF, it performs the task and responds using <a href="API_RespondActivityTaskCompleted.html">RespondActivityTaskCompleted</a> if successful or <a href="API_RespondActivityTaskFailed.html">RespondActivityTaskFailed</a> if
+    /// unsuccessful. </para> <para> <b>Actions related to Deciders</b> </para> <para>The following are actions that are performed by
+    /// deciders:</para>
     /// <ul>
-    /// <li> <para> PollForDecisionTask </para> </li>
-    /// <li> <para> RespondDecisionTaskCompleted </para> </li>
+    /// <li> <para> <a href="API_PollForDecisionTask.html">PollForDecisionTask</a> </para> </li>
+    /// <li> <para> <a href="API_RespondDecisionTaskCompleted.html">RespondDecisionTaskCompleted</a> </para> </li>
     /// 
     /// </ul>
-    /// <para>Deciders use PollForDecisionTask to get decision tasks. After a decider receives a decision task from Amazon SWF, it examines its
-    /// workflow execution history and decides what to do next. It calls RespondDecisionTaskCompletedto complete the decision task and provide zero
-    /// or more next decisions. </para> <para> <b>Actions related to Workflow Executions</b> </para> <para>The following actions operate on a
-    /// workflow execution:</para>
+    /// <para>Deciders use <a href="API_PollForDecisionTask.html">PollForDecisionTask</a> to get decision tasks. After a decider receives a
+    /// decision task from Amazon SWF, it examines its workflow execution history and decides what to do next. It calls <a href="API_RespondDecisionTaskCompleted.html">RespondDecisionTaskCompleted</a> to complete the decision task and provide zero or more next
+    /// decisions. </para> <para> <b>Actions related to Workflow Executions</b> </para> <para>The following actions operate on a workflow
+    /// execution:</para>
     /// <ul>
-    /// <li> <para> RequestCancelWorkflowExecution </para> </li>
-    /// <li> <para> StartWorkflowExecution </para> </li>
-    /// <li> <para> SignalWorkflowExecution </para> </li>
-    /// <li> <para> TerminateWorkflowExecution </para> </li>
+    /// <li> <para> <a href="API_RequestCancelWorkflowExecution.html">RequestCancelWorkflowExecution</a> </para> </li>
+    /// <li> <para> <a href="API_StartWorkflowExecution.html">StartWorkflowExecution</a> </para> </li>
+    /// <li> <para> <a href="API_SignalWorkflowExecution.html">SignalWorkflowExecution</a> </para> </li>
+    /// <li> <para> <a href="API_TerminateWorkflowExecution.html">TerminateWorkflowExecution</a> </para> </li>
     /// 
     /// </ul>
     /// <para> <b>Actions related to Administration</b> </para> <para>Although you can perform administrative tasks from the Amazon SWF console,
     /// you can use the actions in this section to automate functions or build your own administrative tools. </para> <para> <b>Activity
     /// Management</b> </para>
     /// <ul>
-    /// <li> <para> RegisterActivityType </para> </li>
-    /// <li> <para> DeprecateActivityType </para> </li>
+    /// <li> <para> <a href="API_RegisterActivityType.html">RegisterActivityType</a> </para> </li>
+    /// <li> <para> <a href="API_DeprecateActivityType.html">DeprecateActivityType</a> </para> </li>
     /// 
     /// </ul>
     /// <para> <b>Workflow Management</b> </para>
     /// <ul>
-    /// <li> <para> RegisterWorkflowType </para> </li>
-    /// <li> <para> DeprecateWorkflowType </para> </li>
+    /// <li> <para> <a href="API_RegisterWorkflowType.html">RegisterWorkflowType</a> </para> </li>
+    /// <li> <para> <a href="API_DeprecateWorkflowType.html">DeprecateWorkflowType</a> </para> </li>
     /// 
     /// </ul>
     /// <para> <b>Domain Management</b> </para>
     /// <ul>
-    /// <li> <para> RegisterDomain </para> </li>
-    /// <li> <para> DeprecateDomain </para> </li>
+    /// <li> <para> <a href="API_RegisterDomain.html">RegisterDomain</a> </para> </li>
+    /// <li> <para> <a href="API_DeprecateDomain.html">DeprecateDomain</a> </para> </li>
     /// 
     /// </ul>
     /// <para> <b>Workflow Execution Management</b> </para>
     /// <ul>
-    /// <li> <para> RequestCancelWorkflowExecution </para> </li>
-    /// <li> <para> TerminateWorkflowExecution </para> </li>
+    /// <li> <para> <a href="API_RequestCancelWorkflowExecution.html">RequestCancelWorkflowExecution</a> </para> </li>
+    /// <li> <para> <a href="API_TerminateWorkflowExecution.html">TerminateWorkflowExecution</a> </para> </li>
     /// 
     /// </ul>
     /// <para> <b>Visibility Actions</b> </para> <para>Although you can perform visibility actions from the Amazon SWF console, you can use the
@@ -101,36 +103,36 @@ namespace Amazon.SimpleWorkflow
     /// </ul>
     /// <para> <b>Activity Visibility</b> </para>
     /// <ul>
-    /// <li> <para> ListActivityTypes </para> </li>
-    /// <li> <para> DescribeActivity </para> </li>
+    /// <li> <para> <a href="API_ListActivityTypes.html">ListActivityTypes</a> </para> </li>
+    /// <li> <para> <a href="API_DescribeActivityType.html">DescribeActivity</a> </para> </li>
     /// 
     /// </ul>
     /// <para> <b>Workflow Visibility</b> </para>
     /// <ul>
-    /// <li> <para> ListWorkflowTypes </para> </li>
-    /// <li> <para> DescribeWorkflowType </para> </li>
+    /// <li> <para> <a href="API_ListWorkflowTypes.html">ListWorkflowTypes</a> </para> </li>
+    /// <li> <para> <a href="API_DescribeWorkflowType.html">DescribeWorkflowType</a> </para> </li>
     /// 
     /// </ul>
     /// <para> <b>Workflow Execution Visibility</b> </para>
     /// <ul>
-    /// <li> <para> DescribeWorkflowExecution </para> </li>
-    /// <li> <para> ListOpenWorkflowExecutions </para> </li>
-    /// <li> <para> ListClosedWorkflowExecutions </para> </li>
-    /// <li> <para> CountOpenWorkflowExecutions </para> </li>
-    /// <li> <para> CountClosedWorkflowExecutions </para> </li>
-    /// <li> <para> GetWorkflowExecutionHistory </para> </li>
+    /// <li> <para> <a href="API_DescribeWorkflowExecution.html">DescribeWorkflowExecution</a> </para> </li>
+    /// <li> <para> <a href="API_ListOpenWorkflowExecutions.html">ListOpenWorkflowExecutions</a> </para> </li>
+    /// <li> <para> <a href="API_ListClosedWorkflowExecutions.html">ListClosedWorkflowExecutions</a> </para> </li>
+    /// <li> <para> <a href="API_CountOpenWorkflowExecutions.html">CountOpenWorkflowExecutions</a> </para> </li>
+    /// <li> <para> <a href="API_CountClosedWorkflowExecutions.html">CountClosedWorkflowExecutions</a> </para> </li>
+    /// <li> <para> <a href="API_GetWorkflowExecutionHistory.html">GetWorkflowExecutionHistory</a> </para> </li>
     /// 
     /// </ul>
     /// <para> <b>Domain Visibility</b> </para>
     /// <ul>
-    /// <li> <para> ListDomains </para> </li>
-    /// <li> <para> DescribeDomain </para> </li>
+    /// <li> <para> <a href="API_ListDomains.html">ListDomains</a> </para> </li>
+    /// <li> <para> <a href="API_DescribeDomain.html">DescribeDomain</a> </para> </li>
     /// 
     /// </ul>
     /// <para> <b>Task List Visibility</b> </para>
     /// <ul>
-    /// <li> <para> CountPendingActivityTasks </para> </li>
-    /// <li> <para> CountPendingDecisionTasks </para> </li>
+    /// <li> <para> <a href="API_CountPendingActivityTasks.html">CountPendingActivityTasks</a> </para> </li>
+    /// <li> <para> <a href="API_CountPendingDecisionTasks.html">CountPendingDecisionTasks</a> </para> </li>
     /// 
     /// </ul>
     /// </summary>
@@ -157,7 +159,7 @@ namespace Amazon.SimpleWorkflow
         ///
         /// </summary>
         public AmazonSimpleWorkflowClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonSimpleWorkflowConfig(), true, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonSimpleWorkflowConfig(), AuthenticationTypes.User | AuthenticationTypes.Session) { }
 
         /// <summary>
         /// Constructs AmazonSimpleWorkflowClient with the credentials loaded from the application's
@@ -177,7 +179,7 @@ namespace Amazon.SimpleWorkflow
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonSimpleWorkflowClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonSimpleWorkflowConfig(){RegionEndpoint = region}, true, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonSimpleWorkflowConfig(){RegionEndpoint = region}, AuthenticationTypes.User | AuthenticationTypes.Session) { }
 
         /// <summary>
         /// Constructs AmazonSimpleWorkflowClient with the credentials loaded from the application's
@@ -197,7 +199,7 @@ namespace Amazon.SimpleWorkflow
         /// </summary>
         /// <param name="config">The AmazonSimpleWorkflow Configuration Object</param>
         public AmazonSimpleWorkflowClient(AmazonSimpleWorkflowConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config, true, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), config, AuthenticationTypes.User | AuthenticationTypes.Session) { }
 
         /// <summary>
         /// Constructs AmazonSimpleWorkflowClient with AWS Credentials
@@ -225,7 +227,7 @@ namespace Amazon.SimpleWorkflow
         /// <param name="credentials">AWS Credentials</param>
         /// <param name="clientConfig">The AmazonSimpleWorkflowClient Configuration Object</param>
         public AmazonSimpleWorkflowClient(AWSCredentials credentials, AmazonSimpleWorkflowConfig clientConfig)
-            : base(credentials, clientConfig, false, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(credentials, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
         {
         }
 
@@ -326,11 +328,11 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// </ul>
         /// <para>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified
-        /// constraints, the action fails by throwing <c>OperationNotPermitted</c> . For details and example IAM policies, see Using IAM to Manage
-        /// Access to Amazon SWF Workflows.</para>
+        /// constraints, the action fails by throwing <c>OperationNotPermitted</c> . For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a>
+        /// .</para>
         /// </summary>
         /// 
-        /// <param name="countClosedWorkflowExecutionsRequest">Container for the necessary parameters to execute the CountClosedWorkflowExecutions
+        /// <param name="request">Container for the necessary parameters to execute the CountClosedWorkflowExecutions
         /// service method on AmazonSimpleWorkflow.</param>
         /// 
         /// <returns>The response from the CountClosedWorkflowExecutions service method, as returned by AmazonSimpleWorkflow.</returns>
@@ -388,11 +390,11 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// </ul>
         /// <para>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified
-        /// constraints, the action fails by throwing <c>OperationNotPermitted</c> . For details and example IAM policies, see Using IAM to Manage
-        /// Access to Amazon SWF Workflows.</para>
+        /// constraints, the action fails by throwing <c>OperationNotPermitted</c> . For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a>
+        /// .</para>
         /// </summary>
         /// 
-        /// <param name="countOpenWorkflowExecutionsRequest">Container for the necessary parameters to execute the CountOpenWorkflowExecutions service
+        /// <param name="request">Container for the necessary parameters to execute the CountOpenWorkflowExecutions service
         /// method on AmazonSimpleWorkflow.</param>
         /// 
         /// <returns>The response from the CountOpenWorkflowExecutions service method, as returned by AmazonSimpleWorkflow.</returns>
@@ -443,11 +445,11 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// </ul>
         /// <para>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified
-        /// constraints, the action fails by throwing <c>OperationNotPermitted</c> . For details and example IAM policies, see Using IAM to Manage
-        /// Access to Amazon SWF Workflows.</para>
+        /// constraints, the action fails by throwing <c>OperationNotPermitted</c> . For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a>
+        /// .</para>
         /// </summary>
         /// 
-        /// <param name="countPendingActivityTasksRequest">Container for the necessary parameters to execute the CountPendingActivityTasks service
+        /// <param name="request">Container for the necessary parameters to execute the CountPendingActivityTasks service
         /// method on AmazonSimpleWorkflow.</param>
         /// 
         /// <returns>The response from the CountPendingActivityTasks service method, as returned by AmazonSimpleWorkflow.</returns>
@@ -498,11 +500,11 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// </ul>
         /// <para>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified
-        /// constraints, the action fails by throwing <c>OperationNotPermitted</c> . For details and example IAM policies, see Using IAM to Manage
-        /// Access to Amazon SWF Workflows.</para>
+        /// constraints, the action fails by throwing <c>OperationNotPermitted</c> . For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a>
+        /// .</para>
         /// </summary>
         /// 
-        /// <param name="countPendingDecisionTasksRequest">Container for the necessary parameters to execute the CountPendingDecisionTasks service
+        /// <param name="request">Container for the necessary parameters to execute the CountPendingDecisionTasks service
         /// method on AmazonSimpleWorkflow.</param>
         /// 
         /// <returns>The response from the CountPendingDecisionTasks service method, as returned by AmazonSimpleWorkflow.</returns>
@@ -560,11 +562,11 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// </ul>
         /// <para>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified
-        /// constraints, the action fails by throwing <c>OperationNotPermitted</c> . For details and example IAM policies, see Using IAM to Manage
-        /// Access to Amazon SWF Workflows.</para>
+        /// constraints, the action fails by throwing <c>OperationNotPermitted</c> . For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a>
+        /// .</para>
         /// </summary>
         /// 
-        /// <param name="deprecateActivityTypeRequest">Container for the necessary parameters to execute the DeprecateActivityType service method on
+        /// <param name="request">Container for the necessary parameters to execute the DeprecateActivityType service method on
         /// AmazonSimpleWorkflow.</param>
         /// 
         /// <exception cref="T:Amazon.SimpleWorkflow.Model.TypeDeprecatedException" />
@@ -616,11 +618,11 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// </ul>
         /// <para>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified
-        /// constraints, the action fails by throwing <c>OperationNotPermitted</c> . For details and example IAM policies, see Using IAM to Manage
-        /// Access to Amazon SWF Workflows.</para>
+        /// constraints, the action fails by throwing <c>OperationNotPermitted</c> . For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a>
+        /// .</para>
         /// </summary>
         /// 
-        /// <param name="deprecateDomainRequest">Container for the necessary parameters to execute the DeprecateDomain service method on
+        /// <param name="request">Container for the necessary parameters to execute the DeprecateDomain service method on
         /// AmazonSimpleWorkflow.</param>
         /// 
         /// <exception cref="T:Amazon.SimpleWorkflow.Model.DomainDeprecatedException" />
@@ -677,11 +679,11 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// </ul>
         /// <para>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified
-        /// constraints, the action fails by throwing <c>OperationNotPermitted</c> . For details and example IAM policies, see Using IAM to Manage
-        /// Access to Amazon SWF Workflows.</para>
+        /// constraints, the action fails by throwing <c>OperationNotPermitted</c> . For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a>
+        /// .</para>
         /// </summary>
         /// 
-        /// <param name="deprecateWorkflowTypeRequest">Container for the necessary parameters to execute the DeprecateWorkflowType service method on
+        /// <param name="request">Container for the necessary parameters to execute the DeprecateWorkflowType service method on
         /// AmazonSimpleWorkflow.</param>
         /// 
         /// <exception cref="T:Amazon.SimpleWorkflow.Model.TypeDeprecatedException" />
@@ -736,11 +738,11 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// </ul>
         /// <para>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified
-        /// constraints, the action fails by throwing <c>OperationNotPermitted</c> . For details and example IAM policies, see Using IAM to Manage
-        /// Access to Amazon SWF Workflows.</para>
+        /// constraints, the action fails by throwing <c>OperationNotPermitted</c> . For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a>
+        /// .</para>
         /// </summary>
         /// 
-        /// <param name="describeActivityTypeRequest">Container for the necessary parameters to execute the DescribeActivityType service method on
+        /// <param name="request">Container for the necessary parameters to execute the DescribeActivityType service method on
         /// AmazonSimpleWorkflow.</param>
         /// 
         /// <returns>The response from the DescribeActivityType service method, as returned by AmazonSimpleWorkflow.</returns>
@@ -789,11 +791,11 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// </ul>
         /// <para>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified
-        /// constraints, the action fails by throwing <c>OperationNotPermitted</c> . For details and example IAM policies, see Using IAM to Manage
-        /// Access to Amazon SWF Workflows.</para>
+        /// constraints, the action fails by throwing <c>OperationNotPermitted</c> . For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a>
+        /// .</para>
         /// </summary>
         /// 
-        /// <param name="describeDomainRequest">Container for the necessary parameters to execute the DescribeDomain service method on
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDomain service method on
         /// AmazonSimpleWorkflow.</param>
         /// 
         /// <returns>The response from the DescribeDomain service method, as returned by AmazonSimpleWorkflow.</returns>
@@ -843,11 +845,11 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// </ul>
         /// <para>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified
-        /// constraints, the action fails by throwing <c>OperationNotPermitted</c> . For details and example IAM policies, see Using IAM to Manage
-        /// Access to Amazon SWF Workflows.</para>
+        /// constraints, the action fails by throwing <c>OperationNotPermitted</c> . For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a>
+        /// .</para>
         /// </summary>
         /// 
-        /// <param name="describeWorkflowExecutionRequest">Container for the necessary parameters to execute the DescribeWorkflowExecution service
+        /// <param name="request">Container for the necessary parameters to execute the DescribeWorkflowExecution service
         /// method on AmazonSimpleWorkflow.</param>
         /// 
         /// <returns>The response from the DescribeWorkflowExecution service method, as returned by AmazonSimpleWorkflow.</returns>
@@ -903,11 +905,11 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// </ul>
         /// <para>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified
-        /// constraints, the action fails by throwing <c>OperationNotPermitted</c> . For details and example IAM policies, see Using IAM to Manage
-        /// Access to Amazon SWF Workflows.</para>
+        /// constraints, the action fails by throwing <c>OperationNotPermitted</c> . For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a>
+        /// .</para>
         /// </summary>
         /// 
-        /// <param name="describeWorkflowTypeRequest">Container for the necessary parameters to execute the DescribeWorkflowType service method on
+        /// <param name="request">Container for the necessary parameters to execute the DescribeWorkflowType service method on
         /// AmazonSimpleWorkflow.</param>
         /// 
         /// <returns>The response from the DescribeWorkflowType service method, as returned by AmazonSimpleWorkflow.</returns>
@@ -958,11 +960,11 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// </ul>
         /// <para>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified
-        /// constraints, the action fails by throwing <c>OperationNotPermitted</c> . For details and example IAM policies, see Using IAM to Manage
-        /// Access to Amazon SWF Workflows.</para>
+        /// constraints, the action fails by throwing <c>OperationNotPermitted</c> . For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a>
+        /// .</para>
         /// </summary>
         /// 
-        /// <param name="getWorkflowExecutionHistoryRequest">Container for the necessary parameters to execute the GetWorkflowExecutionHistory service
+        /// <param name="request">Container for the necessary parameters to execute the GetWorkflowExecutionHistory service
         /// method on AmazonSimpleWorkflow.</param>
         /// 
         /// <returns>The response from the GetWorkflowExecutionHistory service method, as returned by AmazonSimpleWorkflow.</returns>
@@ -1013,11 +1015,11 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// </ul>
         /// <para>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified
-        /// constraints, the action fails by throwing <c>OperationNotPermitted</c> . For details and example IAM policies, see Using IAM to Manage
-        /// Access to Amazon SWF Workflows.</para>
+        /// constraints, the action fails by throwing <c>OperationNotPermitted</c> . For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a>
+        /// .</para>
         /// </summary>
         /// 
-        /// <param name="listActivityTypesRequest">Container for the necessary parameters to execute the ListActivityTypes service method on
+        /// <param name="request">Container for the necessary parameters to execute the ListActivityTypes service method on
         /// AmazonSimpleWorkflow.</param>
         /// 
         /// <returns>The response from the ListActivityTypes service method, as returned by AmazonSimpleWorkflow.</returns>
@@ -1076,11 +1078,11 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// </ul>
         /// <para>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified
-        /// constraints, the action fails by throwing <c>OperationNotPermitted</c> . For details and example IAM policies, see Using IAM to Manage
-        /// Access to Amazon SWF Workflows.</para>
+        /// constraints, the action fails by throwing <c>OperationNotPermitted</c> . For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a>
+        /// .</para>
         /// </summary>
         /// 
-        /// <param name="listClosedWorkflowExecutionsRequest">Container for the necessary parameters to execute the ListClosedWorkflowExecutions service
+        /// <param name="request">Container for the necessary parameters to execute the ListClosedWorkflowExecutions service
         /// method on AmazonSimpleWorkflow.</param>
         /// 
         /// <returns>The response from the ListClosedWorkflowExecutions service method, as returned by AmazonSimpleWorkflow.</returns>
@@ -1132,11 +1134,11 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// </ul>
         /// <para>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified
-        /// constraints, the action fails by throwing <c>OperationNotPermitted</c> . For details and example IAM policies, see Using IAM to Manage
-        /// Access to Amazon SWF Workflows.</para>
+        /// constraints, the action fails by throwing <c>OperationNotPermitted</c> . For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a>
+        /// .</para>
         /// </summary>
         /// 
-        /// <param name="listDomainsRequest">Container for the necessary parameters to execute the ListDomains service method on
+        /// <param name="request">Container for the necessary parameters to execute the ListDomains service method on
         /// AmazonSimpleWorkflow.</param>
         /// 
         /// <returns>The response from the ListDomains service method, as returned by AmazonSimpleWorkflow.</returns>
@@ -1194,11 +1196,11 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// </ul>
         /// <para>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified
-        /// constraints, the action fails by throwing <c>OperationNotPermitted</c> . For details and example IAM policies, see Using IAM to Manage
-        /// Access to Amazon SWF Workflows.</para>
+        /// constraints, the action fails by throwing <c>OperationNotPermitted</c> . For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a>
+        /// .</para>
         /// </summary>
         /// 
-        /// <param name="listOpenWorkflowExecutionsRequest">Container for the necessary parameters to execute the ListOpenWorkflowExecutions service
+        /// <param name="request">Container for the necessary parameters to execute the ListOpenWorkflowExecutions service
         /// method on AmazonSimpleWorkflow.</param>
         /// 
         /// <returns>The response from the ListOpenWorkflowExecutions service method, as returned by AmazonSimpleWorkflow.</returns>
@@ -1248,11 +1250,11 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// </ul>
         /// <para>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified
-        /// constraints, the action fails by throwing <c>OperationNotPermitted</c> . For details and example IAM policies, see Using IAM to Manage
-        /// Access to Amazon SWF Workflows.</para>
+        /// constraints, the action fails by throwing <c>OperationNotPermitted</c> . For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a>
+        /// .</para>
         /// </summary>
         /// 
-        /// <param name="listWorkflowTypesRequest">Container for the necessary parameters to execute the ListWorkflowTypes service method on
+        /// <param name="request">Container for the necessary parameters to execute the ListWorkflowTypes service method on
         /// AmazonSimpleWorkflow.</param>
         /// 
         /// <returns>The response from the ListWorkflowTypes service method, as returned by AmazonSimpleWorkflow.</returns>
@@ -1308,11 +1310,11 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// </ul>
         /// <para>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified
-        /// constraints, the action fails by throwing <c>OperationNotPermitted</c> . For details and example IAM policies, see Using IAM to Manage
-        /// Access to Amazon SWF Workflows.</para>
+        /// constraints, the action fails by throwing <c>OperationNotPermitted</c> . For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a>
+        /// .</para>
         /// </summary>
         /// 
-        /// <param name="pollForActivityTaskRequest">Container for the necessary parameters to execute the PollForActivityTask service method on
+        /// <param name="request">Container for the necessary parameters to execute the PollForActivityTask service method on
         /// AmazonSimpleWorkflow.</param>
         /// 
         /// <returns>The response from the PollForActivityTask service method, as returned by AmazonSimpleWorkflow.</returns>
@@ -1373,11 +1375,11 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// </ul>
         /// <para>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified
-        /// constraints, the action fails by throwing <c>OperationNotPermitted</c> . For details and example IAM policies, see Using IAM to Manage
-        /// Access to Amazon SWF Workflows.</para>
+        /// constraints, the action fails by throwing <c>OperationNotPermitted</c> . For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a>
+        /// .</para>
         /// </summary>
         /// 
-        /// <param name="pollForDecisionTaskRequest">Container for the necessary parameters to execute the PollForDecisionTask service method on
+        /// <param name="request">Container for the necessary parameters to execute the PollForDecisionTask service method on
         /// AmazonSimpleWorkflow.</param>
         /// 
         /// <returns>The response from the PollForDecisionTask service method, as returned by AmazonSimpleWorkflow.</returns>
@@ -1440,11 +1442,11 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// </ul>
         /// <para>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified
-        /// constraints, the action fails by throwing <c>OperationNotPermitted</c> . For details and example IAM policies, see Using IAM to Manage
-        /// Access to Amazon SWF Workflows.</para>
+        /// constraints, the action fails by throwing <c>OperationNotPermitted</c> . For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a>
+        /// .</para>
         /// </summary>
         /// 
-        /// <param name="recordActivityTaskHeartbeatRequest">Container for the necessary parameters to execute the RecordActivityTaskHeartbeat service
+        /// <param name="request">Container for the necessary parameters to execute the RecordActivityTaskHeartbeat service
         /// method on AmazonSimpleWorkflow.</param>
         /// 
         /// <returns>The response from the RecordActivityTaskHeartbeat service method, as returned by AmazonSimpleWorkflow.</returns>
@@ -1502,11 +1504,11 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// </ul>
         /// <para>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified
-        /// constraints, the action fails by throwing <c>OperationNotPermitted</c> . For details and example IAM policies, see Using IAM to Manage
-        /// Access to Amazon SWF Workflows.</para>
+        /// constraints, the action fails by throwing <c>OperationNotPermitted</c> . For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a>
+        /// .</para>
         /// </summary>
         /// 
-        /// <param name="registerActivityTypeRequest">Container for the necessary parameters to execute the RegisterActivityType service method on
+        /// <param name="request">Container for the necessary parameters to execute the RegisterActivityType service method on
         /// AmazonSimpleWorkflow.</param>
         /// 
         /// <exception cref="T:Amazon.SimpleWorkflow.Model.OperationNotPermittedException" />
@@ -1556,11 +1558,11 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// </ul>
         /// <para>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified
-        /// constraints, the action fails by throwing <c>OperationNotPermitted</c> . For details and example IAM policies, see Using IAM to Manage
-        /// Access to Amazon SWF Workflows.</para>
+        /// constraints, the action fails by throwing <c>OperationNotPermitted</c> . For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a>
+        /// .</para>
         /// </summary>
         /// 
-        /// <param name="registerDomainRequest">Container for the necessary parameters to execute the RegisterDomain service method on
+        /// <param name="request">Container for the necessary parameters to execute the RegisterDomain service method on
         /// AmazonSimpleWorkflow.</param>
         /// 
         /// <exception cref="T:Amazon.SimpleWorkflow.Model.DomainAlreadyExistsException" />
@@ -1618,11 +1620,11 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// </ul>
         /// <para>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified
-        /// constraints, the action fails by throwing <c>OperationNotPermitted</c> . For details and example IAM policies, see Using IAM to Manage
-        /// Access to Amazon SWF Workflows.</para>
+        /// constraints, the action fails by throwing <c>OperationNotPermitted</c> . For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a>
+        /// .</para>
         /// </summary>
         /// 
-        /// <param name="registerWorkflowTypeRequest">Container for the necessary parameters to execute the RegisterWorkflowType service method on
+        /// <param name="request">Container for the necessary parameters to execute the RegisterWorkflowType service method on
         /// AmazonSimpleWorkflow.</param>
         /// 
         /// <exception cref="T:Amazon.SimpleWorkflow.Model.OperationNotPermittedException" />
@@ -1676,11 +1678,11 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// </ul>
         /// <para>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified
-        /// constraints, the action fails by throwing <c>OperationNotPermitted</c> . For details and example IAM policies, see Using IAM to Manage
-        /// Access to Amazon SWF Workflows.</para>
+        /// constraints, the action fails by throwing <c>OperationNotPermitted</c> . For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a>
+        /// .</para>
         /// </summary>
         /// 
-        /// <param name="requestCancelWorkflowExecutionRequest">Container for the necessary parameters to execute the RequestCancelWorkflowExecution
+        /// <param name="request">Container for the necessary parameters to execute the RequestCancelWorkflowExecution
         /// service method on AmazonSimpleWorkflow.</param>
         /// 
         /// <exception cref="T:Amazon.SimpleWorkflow.Model.OperationNotPermittedException" />
@@ -1724,8 +1726,9 @@ namespace Amazon.SimpleWorkflow
         /// flag of a RecordActivityTaskHeartbeat request returns true and if the activity can be safely undone or abandoned. </para> <para> A task is
         /// considered open from the time that it is scheduled until it is closed. Therefore a task is reported as open while a worker is processing it.
         /// A task is closed after it has been specified in a call to RespondActivityTaskCompleted, RespondActivityTaskCanceled,
-        /// RespondActivityTaskFailed, or the task has timed out. </para> <para> <b>Access Control</b> </para> <para>You can use IAM policies to control
-        /// this action's access to Amazon SWF resources as follows:</para>
+        /// RespondActivityTaskFailed, or the task has <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-basic.html#swf-dev-timeout-types">timed out</a> .
+        /// </para> <para> <b>Access Control</b> </para> <para>You can use IAM policies to control this action's access to Amazon SWF resources as
+        /// follows:</para>
         /// <ul>
         /// <li>Use a <c>Resource</c> element with the domain name to limit the action to only specified domains.</li>
         /// <li>Use an <c>Action</c> element to allow or deny permission to call this action.</li>
@@ -1733,11 +1736,11 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// </ul>
         /// <para>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified
-        /// constraints, the action fails by throwing <c>OperationNotPermitted</c> . For details and example IAM policies, see Using IAM to Manage
-        /// Access to Amazon SWF Workflows.</para>
+        /// constraints, the action fails by throwing <c>OperationNotPermitted</c> . For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a>
+        /// .</para>
         /// </summary>
         /// 
-        /// <param name="respondActivityTaskCanceledRequest">Container for the necessary parameters to execute the RespondActivityTaskCanceled service
+        /// <param name="request">Container for the necessary parameters to execute the RespondActivityTaskCanceled service
         /// method on AmazonSimpleWorkflow.</param>
         /// 
         /// <exception cref="T:Amazon.SimpleWorkflow.Model.OperationNotPermittedException" />
@@ -1781,8 +1784,9 @@ namespace Amazon.SimpleWorkflow
         /// that the task is canceled through the canceled flag returned by RecordActivityTaskHeartbeat, it should cancel the task, clean up and then
         /// call RespondActivityTaskCanceled. </para> <para> A task is considered open from the time that it is scheduled until it is closed. Therefore
         /// a task is reported as open while a worker is processing it. A task is closed after it has been specified in a call to
-        /// RespondActivityTaskCompleted, RespondActivityTaskCanceled, RespondActivityTaskFailed, or the task has timed out. </para> <para> <b>Access
-        /// Control</b> </para> <para>You can use IAM policies to control this action's access to Amazon SWF resources as follows:</para>
+        /// RespondActivityTaskCompleted, RespondActivityTaskCanceled, RespondActivityTaskFailed, or the task has <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-basic.html#swf-dev-timeout-types">timed out</a> .
+        /// </para> <para> <b>Access Control</b> </para> <para>You can use IAM policies to control this action's access to Amazon SWF resources as
+        /// follows:</para>
         /// <ul>
         /// <li>Use a <c>Resource</c> element with the domain name to limit the action to only specified domains.</li>
         /// <li>Use an <c>Action</c> element to allow or deny permission to call this action.</li>
@@ -1790,11 +1794,11 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// </ul>
         /// <para>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified
-        /// constraints, the action fails by throwing <c>OperationNotPermitted</c> . For details and example IAM policies, see Using IAM to Manage
-        /// Access to Amazon SWF Workflows.</para>
+        /// constraints, the action fails by throwing <c>OperationNotPermitted</c> . For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a>
+        /// .</para>
         /// </summary>
         /// 
-        /// <param name="respondActivityTaskCompletedRequest">Container for the necessary parameters to execute the RespondActivityTaskCompleted service
+        /// <param name="request">Container for the necessary parameters to execute the RespondActivityTaskCompleted service
         /// method on AmazonSimpleWorkflow.</param>
         /// 
         /// <exception cref="T:Amazon.SimpleWorkflow.Model.OperationNotPermittedException" />
@@ -1836,8 +1840,9 @@ namespace Amazon.SimpleWorkflow
         /// specified). The <c>reason</c> and <c>details</c> appear in the <c>ActivityTaskFailed</c> event added to the workflow history. </para> <para>
         /// A task is considered open from the time that it is scheduled until it is closed. Therefore a task is reported as open while a worker is
         /// processing it. A task is closed after it has been specified in a call to RespondActivityTaskCompleted, RespondActivityTaskCanceled,
-        /// RespondActivityTaskFailed, or the task has timed out. </para> <para> <b>Access Control</b> </para> <para>You can use IAM policies to control
-        /// this action's access to Amazon SWF resources as follows:</para>
+        /// RespondActivityTaskFailed, or the task has <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-basic.html#swf-dev-timeout-types">timed out</a> .
+        /// </para> <para> <b>Access Control</b> </para> <para>You can use IAM policies to control this action's access to Amazon SWF resources as
+        /// follows:</para>
         /// <ul>
         /// <li>Use a <c>Resource</c> element with the domain name to limit the action to only specified domains.</li>
         /// <li>Use an <c>Action</c> element to allow or deny permission to call this action.</li>
@@ -1845,11 +1850,11 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// </ul>
         /// <para>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified
-        /// constraints, the action fails by throwing <c>OperationNotPermitted</c> . For details and example IAM policies, see Using IAM to Manage
-        /// Access to Amazon SWF Workflows.</para>
+        /// constraints, the action fails by throwing <c>OperationNotPermitted</c> . For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a>
+        /// .</para>
         /// </summary>
         /// 
-        /// <param name="respondActivityTaskFailedRequest">Container for the necessary parameters to execute the RespondActivityTaskFailed service
+        /// <param name="request">Container for the necessary parameters to execute the RespondActivityTaskFailed service
         /// method on AmazonSimpleWorkflow.</param>
         /// 
         /// <exception cref="T:Amazon.SimpleWorkflow.Model.OperationNotPermittedException" />
@@ -1893,11 +1898,11 @@ namespace Amazon.SimpleWorkflow
         /// to the event in the workflow execution history. </para> <para> <b>Access Control</b> </para> <para>If an IAM policy grants permission to use
         /// <c>RespondDecisionTaskCompleted</c> , it can express permissions for the list of decisions in the <c>decisions</c> parameter. Each of the
         /// decisions has one or more parameters, much like a regular API call. To allow for policies to be as readable as possible, you can express
-        /// permissions on decisions as if they were actual API calls, including applying conditions to some parameters. For more information, see Using
-        /// IAM to Manage Access to Amazon SWF Workflows.</para>
+        /// permissions on decisions as if they were actual API calls, including applying conditions to some parameters. For more information, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a>
+        /// .</para>
         /// </summary>
         /// 
-        /// <param name="respondDecisionTaskCompletedRequest">Container for the necessary parameters to execute the RespondDecisionTaskCompleted service
+        /// <param name="request">Container for the necessary parameters to execute the RespondDecisionTaskCompleted service
         /// method on AmazonSimpleWorkflow.</param>
         /// 
         /// <exception cref="T:Amazon.SimpleWorkflow.Model.OperationNotPermittedException" />
@@ -1948,11 +1953,11 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// </ul>
         /// <para>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified
-        /// constraints, the action fails by throwing <c>OperationNotPermitted</c> . For details and example IAM policies, see Using IAM to Manage
-        /// Access to Amazon SWF Workflows.</para>
+        /// constraints, the action fails by throwing <c>OperationNotPermitted</c> . For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a>
+        /// .</para>
         /// </summary>
         /// 
-        /// <param name="signalWorkflowExecutionRequest">Container for the necessary parameters to execute the SignalWorkflowExecution service method on
+        /// <param name="request">Container for the necessary parameters to execute the SignalWorkflowExecution service method on
         /// AmazonSimpleWorkflow.</param>
         /// 
         /// <exception cref="T:Amazon.SimpleWorkflow.Model.OperationNotPermittedException" />
@@ -2012,11 +2017,11 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// </ul>
         /// <para>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified
-        /// constraints, the action fails by throwing <c>OperationNotPermitted</c> . For details and example IAM policies, see Using IAM to Manage
-        /// Access to Amazon SWF Workflows.</para>
+        /// constraints, the action fails by throwing <c>OperationNotPermitted</c> . For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a>
+        /// .</para>
         /// </summary>
         /// 
-        /// <param name="startWorkflowExecutionRequest">Container for the necessary parameters to execute the StartWorkflowExecution service method on
+        /// <param name="request">Container for the necessary parameters to execute the StartWorkflowExecution service method on
         /// AmazonSimpleWorkflow.</param>
         /// 
         /// <returns>The response from the StartWorkflowExecution service method, as returned by AmazonSimpleWorkflow.</returns>
@@ -2075,11 +2080,11 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// </ul>
         /// <para>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified
-        /// constraints, the action fails by throwing <c>OperationNotPermitted</c> . For details and example IAM policies, see Using IAM to Manage
-        /// Access to Amazon SWF Workflows.</para>
+        /// constraints, the action fails by throwing <c>OperationNotPermitted</c> . For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a>
+        /// .</para>
         /// </summary>
         /// 
-        /// <param name="terminateWorkflowExecutionRequest">Container for the necessary parameters to execute the TerminateWorkflowExecution service
+        /// <param name="request">Container for the necessary parameters to execute the TerminateWorkflowExecution service
         /// method on AmazonSimpleWorkflow.</param>
         /// 
         /// <exception cref="T:Amazon.SimpleWorkflow.Model.OperationNotPermittedException" />

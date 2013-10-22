@@ -33,6 +33,9 @@
 
         public WorkflowExecutionTimedOutEventAttributes Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonToken.Null)
+                return null;
+
             WorkflowExecutionTimedOutEventAttributes workflowExecutionTimedOutEventAttributes = new WorkflowExecutionTimedOutEventAttributes();
 
         

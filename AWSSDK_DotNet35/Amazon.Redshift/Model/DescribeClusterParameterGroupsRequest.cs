@@ -28,7 +28,8 @@ namespace Amazon.Redshift.Model
     /// <para> Returns a list of Amazon Redshift parameter groups, including parameter groups you created and the default parameter group. For each
     /// parameter group, the response includes the parameter group name, description, and parameter group family name. You can optionally specify a
     /// name to retrieve the description of a specific parameter group. </para> <para> For more information about managing parameter groups, go to
-    /// Amazon Redshift Parameter Groups in the <i>Amazon Redshift Management Guide</i> .
+    /// <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html" >Amazon Redshift Parameter Groups</a> in the
+    /// <i>Amazon Redshift Management Guide</i> .
     /// </para>
     /// </summary>
     public partial class DescribeClusterParameterGroupsRequest : AmazonWebServiceRequest

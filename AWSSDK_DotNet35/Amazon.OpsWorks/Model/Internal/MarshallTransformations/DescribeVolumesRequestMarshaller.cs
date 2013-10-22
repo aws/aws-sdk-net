@@ -48,8 +48,9 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
             
             if (uriResourcePath.Contains("?")) 
             {
-                string queryString = uriResourcePath.Substring(uriResourcePath.IndexOf("?") + 1);
-                uriResourcePath    = uriResourcePath.Substring(0, uriResourcePath.IndexOf("?"));
+                int queryPosition = uriResourcePath.IndexOf("?", StringComparison.OrdinalIgnoreCase);
+                string queryString = uriResourcePath.Substring(queryPosition + 1);
+                uriResourcePath    = uriResourcePath.Substring(0, queryPosition);
         
                 foreach (string s in queryString.Split('&', ';')) 
                 {
@@ -68,7 +69,7 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
             request.ResourcePath = uriResourcePath;
             
              
-            using (StringWriter stringWriter = new StringWriter())
+            using (StringWriter stringWriter = new StringWriter(System.Globalization.CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
@@ -77,6 +78,11 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                 {
                     writer.WritePropertyName("InstanceId");
                     writer.Write(describeVolumesRequest.InstanceId);
+                }
+                if (describeVolumesRequest != null && describeVolumesRequest.IsSetStackId()) 
+                {
+                    writer.WritePropertyName("StackId");
+                    writer.Write(describeVolumesRequest.StackId);
                 }
                 if (describeVolumesRequest != null && describeVolumesRequest.IsSetRaidArrayId()) 
                 {

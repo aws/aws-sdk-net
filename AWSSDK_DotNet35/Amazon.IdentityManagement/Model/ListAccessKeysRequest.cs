@@ -99,7 +99,8 @@ namespace Amazon.IdentityManagement.Model
 
         /// <summary>
         /// Use this parameter only when paginating results to indicate the maximum number of keys you want in the response. If there are additional
-        /// keys beyond the maximum you specify, the <c>IsTruncated</c> response element is <c>true</c>.
+        /// keys beyond the maximum you specify, the <c>IsTruncated</c> response element is <c>true</c>. This parameter is optional. If you do not
+        /// include it, it defaults to 100.
         ///  
         /// <para>
         /// <b>Constraints:</b>

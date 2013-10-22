@@ -31,6 +31,7 @@ namespace Amazon.RDS.Model
     {
         private string sourceDBSnapshotIdentifier;
         private string targetDBSnapshotIdentifier;
+        private List<Tag> tags = new List<Tag>();
 
         /// <summary>
         /// The identifier for the source DB snapshot. Constraints: <ul> <li>Must be the identifier for a valid system snapshot in the "available"
@@ -65,6 +66,22 @@ namespace Amazon.RDS.Model
         internal bool IsSetTargetDBSnapshotIdentifier()
         {
             return this.targetDBSnapshotIdentifier != null;
+        }
+
+        /// <summary>
+        /// A list of tags.
+        ///  
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this.tags; }
+            set { this.tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this.tags.Count > 0;
         }
 
     }

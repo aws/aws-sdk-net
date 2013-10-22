@@ -38,7 +38,7 @@
           return response;
         }
         
-        private void UnmarshallResult(JsonUnmarshallerContext context,DeletePresetResponse response)
+        private static void UnmarshallResult(JsonUnmarshallerContext context,DeletePresetResponse response)
         {
                         
             return;

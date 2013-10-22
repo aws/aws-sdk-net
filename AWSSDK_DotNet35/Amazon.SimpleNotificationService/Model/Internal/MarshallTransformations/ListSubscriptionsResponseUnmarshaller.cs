@@ -52,7 +52,7 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
             return response;
         }
         
-        private void UnmarshallResult(XmlUnmarshallerContext context,ListSubscriptionsResponse response)
+        private static void UnmarshallResult(XmlUnmarshallerContext context,ListSubscriptionsResponse response)
         {
             
             int originalDepth = context.CurrentDepth;

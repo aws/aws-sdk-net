@@ -33,6 +33,9 @@
 
         public ValidationError Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonToken.Null)
+                return null;
+
             ValidationError validationError = new ValidationError();
 
         

@@ -35,7 +35,7 @@ namespace Amazon.ElasticTranscoder
         /// the pipeline.</para>
         /// </summary>
         /// 
-        /// <param name="cancelJobRequest">Container for the necessary parameters to execute the CancelJob service method on
+        /// <param name="request">Container for the necessary parameters to execute the CancelJob service method on
         /// AmazonElasticTranscoder.</param>
         /// 
         /// <returns>The response from the CancelJob service method, as returned by AmazonElasticTranscoder.</returns>
@@ -66,8 +66,6 @@ namespace Amazon.ElasticTranscoder
         /// the pipeline.</para>
         /// </summary>
         /// 
-        /// <param name="cancelJobRequest">Container for the necessary parameters to execute the CancelJob service method on
-        /// AmazonElasticTranscoder.</param>
         /// 
         /// <returns>The response from the CancelJob service method, as returned by AmazonElasticTranscoder.</returns>
         /// 
@@ -87,7 +85,7 @@ namespace Amazon.ElasticTranscoder
         /// Console).</para>
         /// </summary>
         /// 
-        /// <param name="createJobRequest">Container for the necessary parameters to execute the CreateJob service method on
+        /// <param name="request">Container for the necessary parameters to execute the CreateJob service method on
         /// AmazonElasticTranscoder.</param>
         /// 
         /// <returns>The response from the CreateJob service method, as returned by AmazonElasticTranscoder.</returns>
@@ -119,8 +117,6 @@ namespace Amazon.ElasticTranscoder
         /// Console).</para>
         /// </summary>
         /// 
-        /// <param name="createJobRequest">Container for the necessary parameters to execute the CreateJob service method on
-        /// AmazonElasticTranscoder.</param>
         /// 
         /// <returns>The response from the CreateJob service method, as returned by AmazonElasticTranscoder.</returns>
         /// 
@@ -137,7 +133,7 @@ namespace Amazon.ElasticTranscoder
         /// <para>The CreatePipeline operation creates a pipeline with settings that you specify.</para>
         /// </summary>
         /// 
-        /// <param name="createPipelineRequest">Container for the necessary parameters to execute the CreatePipeline service method on
+        /// <param name="request">Container for the necessary parameters to execute the CreatePipeline service method on
         /// AmazonElasticTranscoder.</param>
         /// 
         /// <returns>The response from the CreatePipeline service method, as returned by AmazonElasticTranscoder.</returns>
@@ -166,8 +162,6 @@ namespace Amazon.ElasticTranscoder
         /// <para>The CreatePipeline operation creates a pipeline with settings that you specify.</para>
         /// </summary>
         /// 
-        /// <param name="createPipelineRequest">Container for the necessary parameters to execute the CreatePipeline service method on
-        /// AmazonElasticTranscoder.</param>
         /// 
         /// <returns>The response from the CreatePipeline service method, as returned by AmazonElasticTranscoder.</returns>
         /// 
@@ -191,7 +185,7 @@ namespace Amazon.ElasticTranscoder
         /// <i>Recommendation ITU-T H.264: Advanced video coding for generic audiovisual services</i> .</para>
         /// </summary>
         /// 
-        /// <param name="createPresetRequest">Container for the necessary parameters to execute the CreatePreset service method on
+        /// <param name="request">Container for the necessary parameters to execute the CreatePreset service method on
         /// AmazonElasticTranscoder.</param>
         /// 
         /// <returns>The response from the CreatePreset service method, as returned by AmazonElasticTranscoder.</returns>
@@ -226,8 +220,6 @@ namespace Amazon.ElasticTranscoder
         /// <i>Recommendation ITU-T H.264: Advanced video coding for generic audiovisual services</i> .</para>
         /// </summary>
         /// 
-        /// <param name="createPresetRequest">Container for the necessary parameters to execute the CreatePreset service method on
-        /// AmazonElasticTranscoder.</param>
         /// 
         /// <returns>The response from the CreatePreset service method, as returned by AmazonElasticTranscoder.</returns>
         /// 
@@ -244,7 +236,7 @@ namespace Amazon.ElasticTranscoder
         /// currently in use (doesn't contain any active jobs). If the pipeline is currently in use, <c>DeletePipeline</c> returns an error. </para>
         /// </summary>
         /// 
-        /// <param name="deletePipelineRequest">Container for the necessary parameters to execute the DeletePipeline service method on
+        /// <param name="request">Container for the necessary parameters to execute the DeletePipeline service method on
         /// AmazonElasticTranscoder.</param>
         /// 
         /// <returns>The response from the DeletePipeline service method, as returned by AmazonElasticTranscoder.</returns>
@@ -274,8 +266,6 @@ namespace Amazon.ElasticTranscoder
         /// currently in use (doesn't contain any active jobs). If the pipeline is currently in use, <c>DeletePipeline</c> returns an error. </para>
         /// </summary>
         /// 
-        /// <param name="deletePipelineRequest">Container for the necessary parameters to execute the DeletePipeline service method on
-        /// AmazonElasticTranscoder.</param>
         /// 
         /// <returns>The response from the DeletePipeline service method, as returned by AmazonElasticTranscoder.</returns>
         /// 
@@ -293,7 +283,7 @@ namespace Amazon.ElasticTranscoder
         /// presets that are included with Elastic Transcoder. </para>
         /// </summary>
         /// 
-        /// <param name="deletePresetRequest">Container for the necessary parameters to execute the DeletePreset service method on
+        /// <param name="request">Container for the necessary parameters to execute the DeletePreset service method on
         /// AmazonElasticTranscoder.</param>
         /// 
         /// <returns>The response from the DeletePreset service method, as returned by AmazonElasticTranscoder.</returns>
@@ -322,8 +312,6 @@ namespace Amazon.ElasticTranscoder
         /// presets that are included with Elastic Transcoder. </para>
         /// </summary>
         /// 
-        /// <param name="deletePresetRequest">Container for the necessary parameters to execute the DeletePreset service method on
-        /// AmazonElasticTranscoder.</param>
         /// 
         /// <returns>The response from the DeletePreset service method, as returned by AmazonElasticTranscoder.</returns>
         /// 
@@ -340,7 +328,7 @@ namespace Amazon.ElasticTranscoder
         /// jobs currently in the specified pipeline. The response body contains one element for each job that satisfies the search criteria.</para>
         /// </summary>
         /// 
-        /// <param name="listJobsByPipelineRequest">Container for the necessary parameters to execute the ListJobsByPipeline service method on
+        /// <param name="request">Container for the necessary parameters to execute the ListJobsByPipeline service method on
         /// AmazonElasticTranscoder.</param>
         /// 
         /// <returns>The response from the ListJobsByPipeline service method, as returned by AmazonElasticTranscoder.</returns>
@@ -369,8 +357,6 @@ namespace Amazon.ElasticTranscoder
         /// jobs currently in the specified pipeline. The response body contains one element for each job that satisfies the search criteria.</para>
         /// </summary>
         /// 
-        /// <param name="listJobsByPipelineRequest">Container for the necessary parameters to execute the ListJobsByPipeline service method on
-        /// AmazonElasticTranscoder.</param>
         /// 
         /// <returns>The response from the ListJobsByPipeline service method, as returned by AmazonElasticTranscoder.</returns>
         /// 
@@ -387,7 +373,7 @@ namespace Amazon.ElasticTranscoder
         /// that satisfies the search criteria.</para>
         /// </summary>
         /// 
-        /// <param name="listJobsByStatusRequest">Container for the necessary parameters to execute the ListJobsByStatus service method on
+        /// <param name="request">Container for the necessary parameters to execute the ListJobsByStatus service method on
         /// AmazonElasticTranscoder.</param>
         /// 
         /// <returns>The response from the ListJobsByStatus service method, as returned by AmazonElasticTranscoder.</returns>
@@ -416,8 +402,6 @@ namespace Amazon.ElasticTranscoder
         /// that satisfies the search criteria.</para>
         /// </summary>
         /// 
-        /// <param name="listJobsByStatusRequest">Container for the necessary parameters to execute the ListJobsByStatus service method on
-        /// AmazonElasticTranscoder.</param>
         /// 
         /// <returns>The response from the ListJobsByStatus service method, as returned by AmazonElasticTranscoder.</returns>
         /// 
@@ -433,7 +417,7 @@ namespace Amazon.ElasticTranscoder
         /// <para>The ListPipelines operation gets a list of the pipelines associated with the current AWS account.</para>
         /// </summary>
         /// 
-        /// <param name="listPipelinesRequest">Container for the necessary parameters to execute the ListPipelines service method on
+        /// <param name="request">Container for the necessary parameters to execute the ListPipelines service method on
         /// AmazonElasticTranscoder.</param>
         /// 
         /// <returns>The response from the ListPipelines service method, as returned by AmazonElasticTranscoder.</returns>
@@ -460,8 +444,6 @@ namespace Amazon.ElasticTranscoder
         /// <para>The ListPipelines operation gets a list of the pipelines associated with the current AWS account.</para>
         /// </summary>
         /// 
-        /// <param name="listPipelinesRequest">Container for the necessary parameters to execute the ListPipelines service method on
-        /// AmazonElasticTranscoder.</param>
         /// 
         /// <returns>The response from the ListPipelines service method, as returned by AmazonElasticTranscoder.</returns>
         /// 
@@ -477,7 +459,7 @@ namespace Amazon.ElasticTranscoder
         /// AWS region.</para>
         /// </summary>
         /// 
-        /// <param name="listPresetsRequest">Container for the necessary parameters to execute the ListPresets service method on
+        /// <param name="request">Container for the necessary parameters to execute the ListPresets service method on
         /// AmazonElasticTranscoder.</param>
         /// 
         /// <returns>The response from the ListPresets service method, as returned by AmazonElasticTranscoder.</returns>
@@ -505,8 +487,6 @@ namespace Amazon.ElasticTranscoder
         /// AWS region.</para>
         /// </summary>
         /// 
-        /// <param name="listPresetsRequest">Container for the necessary parameters to execute the ListPresets service method on
-        /// AmazonElasticTranscoder.</param>
         /// 
         /// <returns>The response from the ListPresets service method, as returned by AmazonElasticTranscoder.</returns>
         /// 
@@ -521,7 +501,7 @@ namespace Amazon.ElasticTranscoder
         /// <para>The ReadJob operation returns detailed information about a job.</para>
         /// </summary>
         /// 
-        /// <param name="readJobRequest">Container for the necessary parameters to execute the ReadJob service method on
+        /// <param name="request">Container for the necessary parameters to execute the ReadJob service method on
         /// AmazonElasticTranscoder.</param>
         /// 
         /// <returns>The response from the ReadJob service method, as returned by AmazonElasticTranscoder.</returns>
@@ -549,8 +529,6 @@ namespace Amazon.ElasticTranscoder
         /// <para>The ReadJob operation returns detailed information about a job.</para>
         /// </summary>
         /// 
-        /// <param name="readJobRequest">Container for the necessary parameters to execute the ReadJob service method on
-        /// AmazonElasticTranscoder.</param>
         /// 
         /// <returns>The response from the ReadJob service method, as returned by AmazonElasticTranscoder.</returns>
         /// 
@@ -566,7 +544,7 @@ namespace Amazon.ElasticTranscoder
         /// <para>The ReadPipeline operation gets detailed information about a pipeline.</para>
         /// </summary>
         /// 
-        /// <param name="readPipelineRequest">Container for the necessary parameters to execute the ReadPipeline service method on
+        /// <param name="request">Container for the necessary parameters to execute the ReadPipeline service method on
         /// AmazonElasticTranscoder.</param>
         /// 
         /// <returns>The response from the ReadPipeline service method, as returned by AmazonElasticTranscoder.</returns>
@@ -594,8 +572,6 @@ namespace Amazon.ElasticTranscoder
         /// <para>The ReadPipeline operation gets detailed information about a pipeline.</para>
         /// </summary>
         /// 
-        /// <param name="readPipelineRequest">Container for the necessary parameters to execute the ReadPipeline service method on
-        /// AmazonElasticTranscoder.</param>
         /// 
         /// <returns>The response from the ReadPipeline service method, as returned by AmazonElasticTranscoder.</returns>
         /// 
@@ -611,7 +587,7 @@ namespace Amazon.ElasticTranscoder
         /// <para>The ReadPreset operation gets detailed information about a preset.</para>
         /// </summary>
         /// 
-        /// <param name="readPresetRequest">Container for the necessary parameters to execute the ReadPreset service method on
+        /// <param name="request">Container for the necessary parameters to execute the ReadPreset service method on
         /// AmazonElasticTranscoder.</param>
         /// 
         /// <returns>The response from the ReadPreset service method, as returned by AmazonElasticTranscoder.</returns>
@@ -639,8 +615,6 @@ namespace Amazon.ElasticTranscoder
         /// <para>The ReadPreset operation gets detailed information about a preset.</para>
         /// </summary>
         /// 
-        /// <param name="readPresetRequest">Container for the necessary parameters to execute the ReadPreset service method on
-        /// AmazonElasticTranscoder.</param>
         /// 
         /// <returns>The response from the ReadPreset service method, as returned by AmazonElasticTranscoder.</returns>
         /// 
@@ -659,7 +633,7 @@ namespace Amazon.ElasticTranscoder
         /// notification to Amazon SNS topics that you specify.</para>
         /// </summary>
         /// 
-        /// <param name="testRoleRequest">Container for the necessary parameters to execute the TestRole service method on
+        /// <param name="request">Container for the necessary parameters to execute the TestRole service method on
         /// AmazonElasticTranscoder.</param>
         /// 
         /// <returns>The response from the TestRole service method, as returned by AmazonElasticTranscoder.</returns>
@@ -690,8 +664,6 @@ namespace Amazon.ElasticTranscoder
         /// notification to Amazon SNS topics that you specify.</para>
         /// </summary>
         /// 
-        /// <param name="testRoleRequest">Container for the necessary parameters to execute the TestRole service method on
-        /// AmazonElasticTranscoder.</param>
         /// 
         /// <returns>The response from the TestRole service method, as returned by AmazonElasticTranscoder.</returns>
         /// 
@@ -709,7 +681,7 @@ namespace Amazon.ElasticTranscoder
         /// affected in addition to jobs that you submit after you change settings. </para> </para>
         /// </summary>
         /// 
-        /// <param name="updatePipelineRequest">Container for the necessary parameters to execute the UpdatePipeline service method on
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePipeline service method on
         /// AmazonElasticTranscoder.</param>
         /// 
         /// <returns>The response from the UpdatePipeline service method, as returned by AmazonElasticTranscoder.</returns>
@@ -741,7 +713,7 @@ namespace Amazon.ElasticTranscoder
         /// request.</para>
         /// </summary>
         /// 
-        /// <param name="updatePipelineNotificationsRequest">Container for the necessary parameters to execute the UpdatePipelineNotifications service
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePipelineNotifications service
         /// method on AmazonElasticTranscoder.</param>
         /// 
         /// <returns>The response from the UpdatePipelineNotifications service method, as returned by AmazonElasticTranscoder.</returns>
@@ -772,8 +744,6 @@ namespace Amazon.ElasticTranscoder
         /// request.</para>
         /// </summary>
         /// 
-        /// <param name="updatePipelineNotificationsRequest">Container for the necessary parameters to execute the UpdatePipelineNotifications service
-        /// method on AmazonElasticTranscoder.</param>
         /// 
         /// <returns>The response from the UpdatePipelineNotifications service method, as returned by AmazonElasticTranscoder.</returns>
         /// 
@@ -793,7 +763,7 @@ namespace Amazon.ElasticTranscoder
         /// the jobs that you want to cancel, and to send a CancelJob request. </para>
         /// </summary>
         /// 
-        /// <param name="updatePipelineStatusRequest">Container for the necessary parameters to execute the UpdatePipelineStatus service method on
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePipelineStatus service method on
         /// AmazonElasticTranscoder.</param>
         /// 
         /// <returns>The response from the UpdatePipelineStatus service method, as returned by AmazonElasticTranscoder.</returns>
@@ -825,8 +795,6 @@ namespace Amazon.ElasticTranscoder
         /// the jobs that you want to cancel, and to send a CancelJob request. </para>
         /// </summary>
         /// 
-        /// <param name="updatePipelineStatusRequest">Container for the necessary parameters to execute the UpdatePipelineStatus service method on
-        /// AmazonElasticTranscoder.</param>
         /// 
         /// <returns>The response from the UpdatePipelineStatus service method, as returned by AmazonElasticTranscoder.</returns>
         /// 

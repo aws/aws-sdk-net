@@ -26,8 +26,9 @@ namespace Amazon.SimpleNotificationService.Model
     /// <summary>
     /// Container for the parameters to the CreateTopic operation.
     /// <para>The <c>CreateTopic</c> action creates a topic to which notifications can be published. Users can create at most 100 topics. For more
-    /// information, see http://aws.amazon.com/sns. This action is idempotent, so if the requester already owns a topic with the specified name,
-    /// that topic's ARN is returned without creating a new topic.</para>
+    /// information, see <a href="http://aws.amazon.com/sns/" >http://aws.amazon.com/sns</a> .
+    /// This action is idempotent, so if the requester already owns a topic with the specified name, that topic's ARN is returned without
+    /// creating a new topic.</para>
     /// </summary>
     public partial class CreateTopicRequest : AmazonWebServiceRequest
     {

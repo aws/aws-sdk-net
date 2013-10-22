@@ -48,7 +48,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// A list of reserved DB Instance offerings.
+        /// A list of reserved DB instance offerings.
         ///  
         /// </summary>
         public List<ReservedDBInstancesOffering> ReservedDBInstancesOfferings

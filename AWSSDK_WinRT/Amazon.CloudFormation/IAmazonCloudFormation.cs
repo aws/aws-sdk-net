@@ -28,9 +28,9 @@ namespace Amazon.CloudFormation
     /// scalable, cost effective applications without worrying about creating and configuring the underlying the AWS infrastructure.</para>
     /// <para>With AWS CloudFormation, you declare all of your resources and dependencies in a template file. The template defines a collection of
     /// resources as a single unit called a stack. AWS CloudFormation creates and deletes all member resources of the stack together and manages all
-    /// dependencies between the resources for you.</para> <para>For more information about this product, go to the CloudFormation Product
-    /// Page.</para> <para>Amazon CloudFormation makes use of other AWS products. If you need additional technical information about a specific AWS
-    /// product, you can find the product's technical documentation at http://aws.amazon.com/documentation/.</para>
+    /// dependencies between the resources for you.</para> <para>For more information about this product, go to the <a href="http://aws.amazon.com/cloudformation/">CloudFormation Product Page</a> .</para> <para>Amazon CloudFormation makes use of other AWS
+    /// products. If you need additional technical information about a specific AWS product, you can find the product's technical documentation at
+    /// <a href="http://aws.amazon.com/documentation/">http://aws.amazon.com/documentation/</a> .</para>
     /// </summary>
 	public partial interface IAmazonCloudFormation : IDisposable
     {
@@ -79,10 +79,8 @@ namespace Amazon.CloudFormation
 		Task<DeleteStackResponse> DeleteStackAsync(DeleteStackRequest deleteStackRequest, CancellationToken cancellationToken = default(CancellationToken));
  
         /// <summary>
-        /// <para>Returns all the stack related events for the AWS account. If <c>StackName</c> is specified, returns events related to all the stacks
-        /// with the given name. If <c>StackName</c> is not specified, returns all the events for the account. For more information about a stack's
-        /// event history, go to the AWS CloudFormation User Guide.</para> <para><b>NOTE:</b>Events are returned, even if the stack never existed or has
-        /// been successfully deleted.</para>
+        /// <para>Returns all stack related events for a specified stack. For more information about a stack's event history, go to the <a href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS CloudFormation User Guide</a> .</para>
+        /// <para><b>NOTE:</b>Events are returned, even if the stack never existed or has been successfully deleted.</para>
         /// </summary>
         /// 
         /// <param name="describeStackEventsRequest">Container for the necessary parameters to execute the DescribeStackEvents service method on
@@ -115,8 +113,8 @@ namespace Amazon.CloudFormation
         /// you should use ListStackResources instead.</para> <para>For deleted stacks, <c>DescribeStackResources</c> returns resource information for
         /// up to 90 days after the stack has been deleted.</para> <para>You must specify either <c>StackName</c> or <c>PhysicalResourceId</c> , but not
         /// both. In addition, you can specify <c>LogicalResourceId</c> to filter the returned result. For more information about resources, the
-        /// <c>LogicalResourceId</c> and <c>PhysicalResourceId</c> , go to the AWS CloudFormation User Guide.</para> <para><b>NOTE:</b>A ValidationError
-        /// is returned if you specify both StackName and PhysicalResourceId in the same request.</para>
+        /// <c>LogicalResourceId</c> and <c>PhysicalResourceId</c> , go to the <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide">AWS CloudFormation User Guide</a> .</para> <para><b>NOTE:</b>A ValidationError is returned if you specify both StackName and
+        /// PhysicalResourceId in the same request.</para>
         /// </summary>
         /// 
         /// <param name="describeStackResourcesRequest">Container for the necessary parameters to execute the DescribeStackResources service method on
@@ -205,7 +203,7 @@ namespace Amazon.CloudFormation
         /// of the stack via the DescribeStacks action.</para> <para>To get a copy of the template for an existing stack, you can use the GetTemplate
         /// action.</para> <para>Tags that were associated with this stack during creation time will still be associated with the stack after an
         /// <c>UpdateStack</c> operation.</para> <para>For more information about creating an update template, updating a stack, and monitoring the
-        /// progress of the update, see Updating a Stack.</para>
+        /// progress of the update, see <a href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks.html">Updating a Stack</a> .</para>
         /// </summary>
         /// 
         /// <param name="updateStackRequest">Container for the necessary parameters to execute the UpdateStack service method on

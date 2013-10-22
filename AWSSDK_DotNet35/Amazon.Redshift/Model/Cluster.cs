@@ -17,13 +17,14 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using Amazon.Runtime;
 
 namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// <para>Describes a cluster.</para>
     /// </summary>
-    public class Cluster
+    public partial class Cluster : AmazonWebServiceResponse
     {
         
         private string clusterIdentifier;
@@ -48,6 +49,7 @@ namespace Amazon.Redshift.Model
         private int? numberOfNodes;
         private bool? publiclyAccessible;
         private bool? encrypted;
+        private RestoreStatus restoreStatus;
 
         /// <summary>
         /// The unique identifier of the cluster.
@@ -405,6 +407,17 @@ namespace Amazon.Redshift.Model
         internal bool IsSetEncrypted()
         {
             return this.encrypted.HasValue;
+        }
+        public RestoreStatus RestoreStatus
+        {
+            get { return this.restoreStatus; }
+            set { this.restoreStatus = value; }
+        }
+
+        // Check to see if RestoreStatus property is set
+        internal bool IsSetRestoreStatus()
+        {
+            return this.restoreStatus != null;
         }
     }
 }

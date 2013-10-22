@@ -31,6 +31,7 @@ namespace Amazon.IdentityManagement.Model
     {
         private string userName;
         private string password;
+        private bool? mustChangePassword;
 
         /// <summary>
         /// Name of the user whose password you want to update.
@@ -88,6 +89,17 @@ namespace Amazon.IdentityManagement.Model
         internal bool IsSetPassword()
         {
             return this.password != null;
+        }
+        public bool MustChangePassword
+        {
+            get { return this.mustChangePassword ?? default(bool); }
+            set { this.mustChangePassword = value; }
+        }
+
+        // Check to see if MustChangePassword property is set
+        internal bool IsSetMustChangePassword()
+        {
+            return this.mustChangePassword.HasValue;
         }
 
     }

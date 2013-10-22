@@ -33,6 +33,9 @@
 
         public PartListElement Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonToken.Null)
+                return null;
+
             PartListElement partListElement = new PartListElement();
 
         

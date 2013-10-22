@@ -25,8 +25,7 @@ namespace Amazon.StorageGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeChapCredentials operation.
-    /// <para>This operation returns an array of Challenge-Handshake Authentication Protocol (CHAP) credentials information for a specified iSCSI
-    /// target, one for each target-initiator pair.</para>
+    /// 
     /// </summary>
     public partial class DescribeChapCredentialsRequest : AmazonWebServiceRequest
     {

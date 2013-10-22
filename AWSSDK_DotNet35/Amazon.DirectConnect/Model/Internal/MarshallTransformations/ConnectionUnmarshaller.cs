@@ -33,6 +33,9 @@
 
         public Connection Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonToken.Null)
+                return null;
+
             Connection connection = new Connection();
 
         

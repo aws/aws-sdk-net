@@ -22,7 +22,7 @@ namespace Amazon.Auth.AccessControlPolicy.ActionIdentifiers
     /// The available AWS access control policy actions for Amazon SNS.
     /// </summary>
     /// <see cref="Amazon.Auth.AccessControlPolicy.Statement.Actions"/>
-    public class SNSActionIdentifiers
+    public static class SNSActionIdentifiers
     {
         public static readonly ActionIdentifier AllSNSActions = new ActionIdentifier("sns:*");
 

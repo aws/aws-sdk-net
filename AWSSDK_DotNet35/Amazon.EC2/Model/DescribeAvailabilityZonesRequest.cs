@@ -31,8 +31,20 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeAvailabilityZonesRequest : AmazonWebServiceRequest
     {
+        private bool? dryRun;
         private List<string> zoneNames = new List<string>();
         private List<Filter> filters = new List<Filter>();
+        public bool DryRun
+        {
+            get { return this.dryRun ?? default(bool); }
+            set { this.dryRun = value; }
+        }
+
+        // Check to see if DryRun property is set
+        internal bool IsSetDryRun()
+        {
+            return this.dryRun.HasValue;
+        }
 
         /// <summary>
         /// A list of the availability zone names to describe.

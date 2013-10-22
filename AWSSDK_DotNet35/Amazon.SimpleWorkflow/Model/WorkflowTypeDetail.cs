@@ -17,13 +17,14 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using Amazon.Runtime;
 
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
     /// <para> Contains details about a workflow type. </para>
     /// </summary>
-    public class WorkflowTypeDetail
+    public partial class WorkflowTypeDetail : AmazonWebServiceResponse
     {
         
         private WorkflowTypeInfo typeInfo;

@@ -25,7 +25,7 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the PurchaseReservedCacheNodesOffering operation.
-    /// <para> Purchases a reserved Cache Node offering. </para>
+    /// <para>The <i>PurchaseReservedCacheNodesOffering</i> operation allows you to purchase a reserved cache node offering.</para>
     /// </summary>
     public partial class PurchaseReservedCacheNodesOfferingRequest : AmazonWebServiceRequest
     {
@@ -34,7 +34,7 @@ namespace Amazon.ElastiCache.Model
         private int? cacheNodeCount;
 
         /// <summary>
-        /// The ID of the Reserved Cache Node offering to purchase. Example: 438012d3-4052-4cc7-b2e3-8d3372e0e706
+        /// The ID of the reserved cache node offering to purchase. Example: 438012d3-4052-4cc7-b2e3-8d3372e0e706
         ///  
         /// </summary>
         public string ReservedCacheNodesOfferingId
@@ -50,7 +50,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// Customer-specified identifier to track this reservation. Example: myreservationID
+        /// A customer-specified identifier to track this reservation. Example: myreservationID
         ///  
         /// </summary>
         public string ReservedCacheNodeId
@@ -66,7 +66,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// The number of instances to reserve. Default: <c>1</c>
+        /// The number of cache node instances to reserve. Default: <c>1</c>
         ///  
         /// </summary>
         public int CacheNodeCount

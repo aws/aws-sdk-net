@@ -29,10 +29,14 @@ namespace Amazon.DirectConnect
     /// the actions and data types for AWS Direct Connect. Use the following links to get started using the <i>AWS Direct Connect API Reference</i>
     /// :</para>
     /// <ul>
-    /// <li> Actions: An alphabetical list of all AWS Direct Connect actions.</li>
-    /// <li> Data Types: An alphabetical list of all AWS Direct Connect data types.</li>
-    /// <li> Common Query Parameters: Parameters that all Query actions can use.</li>
-    /// <li> Common Errors: Client and server errors that all actions can return.</li>
+    /// <li> <a href="http://docs.aws.amazon.com/directconnect/latest/APIReference/API_Operations.html" >Actions</a> : An alphabetical list of all
+    /// AWS Direct Connect actions.</li>
+    /// <li> <a href="http://docs.aws.amazon.com/directconnect/latest/APIReference/API_Types.html" >Data Types</a> : An alphabetical list of all
+    /// AWS Direct Connect data types.</li>
+    /// <li> <a href="http://docs.aws.amazon.com/directconnect/latest/APIReference/CommonParameters.html" >Common Query Parameters</a> : Parameters
+    /// that all Query actions can use.</li>
+    /// <li> <a href="http://docs.aws.amazon.com/directconnect/latest/APIReference/CommonErrors.html" >Common Errors</a> : Client and server errors
+    /// that all actions can return.</li>
     /// 
     /// </ul>
     /// </summary>
@@ -506,7 +510,8 @@ namespace Amazon.DirectConnect
         /// <summary>
         /// <para>Returns a list of virtual private gateways owned by the AWS account.</para> <para>You can create one or more AWS Direct Connect
         /// private virtual interfaces linking to a virtual private gateway. A virtual private gateway can be managed via Amazon Virtual Private Cloud
-        /// (VPC) console or the EC2 CreateVpnGateway action.</para>
+        /// (VPC) console or the <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-CreateVpnGateway.html" >EC2
+        /// CreateVpnGateway</a> action.</para>
         /// </summary>
         /// 
         /// <param name="describeVirtualGatewaysRequest">Container for the necessary parameters to execute the DescribeVirtualGateways service method on
@@ -546,7 +551,8 @@ namespace Amazon.DirectConnect
         /// <summary>
         /// <para>Returns a list of virtual private gateways owned by the AWS account.</para> <para>You can create one or more AWS Direct Connect
         /// private virtual interfaces linking to a virtual private gateway. A virtual private gateway can be managed via Amazon Virtual Private Cloud
-        /// (VPC) console or the EC2 CreateVpnGateway action.</para>
+        /// (VPC) console or the <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-CreateVpnGateway.html" >EC2
+        /// CreateVpnGateway</a> action.</para>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeVirtualGateways service method, as returned by AmazonDirectConnect.</returns>

@@ -335,8 +335,8 @@ namespace Amazon.AutoScaling.Model
 
         /// <summary>
         /// The name of the cluster placement group, if applicable. For more information, go to <a
-        /// href="http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/using_cluster_computing.html"> Using Cluster Instances</a> in the Amazon EC2
-        /// User Guide.
+        /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html"> Using Cluster Instances</a> in the Amazon EC2 User
+        /// Guide.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -412,7 +412,7 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// A list of status conditions for the Auto Scaling group.
+        /// The current state of the Auto Scaling group when a <a>DeleteAutoScalingGroup</a> action is in progress.
         ///  
         /// <para>
         /// <b>Constraints:</b>

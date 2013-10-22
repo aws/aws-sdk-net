@@ -51,6 +51,11 @@ namespace Amazon.DynamoDBv2.DataModel
     /// </summary>
     public class DynamoDBContextConfig
     {
+        public DynamoDBContextConfig()
+        {
+            TableNamePrefix = AWSConfigs.DynamoDBContextTableNamePrefix;
+        }
+
         /// <summary>
         /// Property that directs DynamoDBContext to use consistent reads.
         /// If property is not set, behavior defaults to non-consistent reads.

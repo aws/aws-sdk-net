@@ -29,7 +29,8 @@ namespace Amazon.EC2
     /// computing environment. Amazon EC2 reduces the time required to obtain and boot new server instances to minutes, allowing you to quickly
     /// scale capacity, both up and down, as your computing requirements change. Amazon EC2 changes the economics of computing by allowing you to
     /// pay only for capacity that you actually use. Amazon EC2 provides developers the tools to build failure resilient applications and isolate
-    /// themselves from common failure scenarios. </para> <para> Visit http://aws.amazon.com/ec2/ for more information. </para>
+    /// themselves from common failure scenarios. </para> <para> Visit <a href="http://aws.amazon.com/ec2/">http://aws.amazon.com/ec2/</a> for more
+    /// information. </para>
     /// </summary>
 	public partial interface IAmazonEC2 : IDisposable
     {
@@ -39,7 +40,7 @@ namespace Amazon.EC2
         /// <para> The AllocateAddress operation acquires an elastic IP address for use with your account. </para>
         /// </summary>
         /// 
-        /// <param name="allocateAddressRequest">Container for the necessary parameters to execute the AllocateAddress service method on
+        /// <param name="request">Container for the necessary parameters to execute the AllocateAddress service method on
         /// AmazonEC2.</param>
         /// 
         /// <returns>The response from the AllocateAddress service method, as returned by AmazonEC2.</returns>
@@ -61,8 +62,6 @@ namespace Amazon.EC2
         /// <para> The AllocateAddress operation acquires an elastic IP address for use with your account. </para>
         /// </summary>
         /// 
-        /// <param name="allocateAddressRequest">Container for the necessary parameters to execute the AllocateAddress service method on
-        /// AmazonEC2.</param>
         /// 
         /// <returns>The response from the AllocateAddress service method, as returned by AmazonEC2.</returns>
 		AllocateAddressResponse AllocateAddress();
@@ -71,7 +70,7 @@ namespace Amazon.EC2
         /// <summary>
         /// </summary>
         /// 
-        /// <param name="assignPrivateIpAddressesRequest">Container for the necessary parameters to execute the AssignPrivateIpAddresses service method
+        /// <param name="request">Container for the necessary parameters to execute the AssignPrivateIpAddresses service method
         /// on AmazonEC2.</param>
 		AssignPrivateIpAddressesResponse AssignPrivateIpAddresses(AssignPrivateIpAddressesRequest request);
 
@@ -94,7 +93,7 @@ namespace Amazon.EC2
         /// once, Amazon EC2 does not return an error. </para>
         /// </summary>
         /// 
-        /// <param name="associateAddressRequest">Container for the necessary parameters to execute the AssociateAddress service method on
+        /// <param name="request">Container for the necessary parameters to execute the AssociateAddress service method on
         /// AmazonEC2.</param>
         /// 
         /// <returns>The response from the AssociateAddress service method, as returned by AmazonEC2.</returns>
@@ -121,7 +120,7 @@ namespace Amazon.EC2
         /// Virtual Private Cloud Developer Guide. </para>
         /// </summary>
         /// 
-        /// <param name="associateDhcpOptionsRequest">Container for the necessary parameters to execute the AssociateDhcpOptions service method on
+        /// <param name="request">Container for the necessary parameters to execute the AssociateDhcpOptions service method on
         /// AmazonEC2.</param>
 		AssociateDhcpOptionsResponse AssociateDhcpOptions(AssociateDhcpOptionsRequest request);
 
@@ -142,10 +141,10 @@ namespace Amazon.EC2
         /// <para> Associates a subnet with a route table. The subnet and route table must be in the same VPC. This association causes traffic
         /// originating from the subnet to be routed according to the routes in the route table. The action returns an association ID, which you need if
         /// you want to disassociate the route table from the subnet later. A route table can be associated with multiple subnets. </para> <para> For
-        /// more information about route tables, go to Route Tables in the Amazon Virtual Private Cloud User Guide. </para>
+        /// more information about route tables, go to <a href="http://docs.amazonwebservices.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route Tables</a> in the Amazon Virtual Private Cloud User Guide. </para>
         /// </summary>
         /// 
-        /// <param name="associateRouteTableRequest">Container for the necessary parameters to execute the AssociateRouteTable service method on
+        /// <param name="request">Container for the necessary parameters to execute the AssociateRouteTable service method on
         /// AmazonEC2.</param>
         /// 
         /// <returns>The response from the AssociateRouteTable service method, as returned by AmazonEC2.</returns>
@@ -169,7 +168,7 @@ namespace Amazon.EC2
         /// and Internet gateway, go to the Amazon Virtual Private Cloud User Guide. </para>
         /// </summary>
         /// 
-        /// <param name="attachInternetGatewayRequest">Container for the necessary parameters to execute the AttachInternetGateway service method on
+        /// <param name="request">Container for the necessary parameters to execute the AttachInternetGateway service method on
         /// AmazonEC2.</param>
 		AttachInternetGatewayResponse AttachInternetGateway(AttachInternetGatewayRequest request);
 
@@ -189,7 +188,7 @@ namespace Amazon.EC2
         /// <summary>
         /// </summary>
         /// 
-        /// <param name="attachNetworkInterfaceRequest">Container for the necessary parameters to execute the AttachNetworkInterface service method on
+        /// <param name="request">Container for the necessary parameters to execute the AttachNetworkInterface service method on
         /// AmazonEC2.</param>
         /// 
         /// <returns>The response from the AttachNetworkInterface service method, as returned by AmazonEC2.</returns>
@@ -212,7 +211,7 @@ namespace Amazon.EC2
         /// <para> Attach a previously created volume to a running instance. </para>
         /// </summary>
         /// 
-        /// <param name="attachVolumeRequest">Container for the necessary parameters to execute the AttachVolume service method on AmazonEC2.</param>
+        /// <param name="request">Container for the necessary parameters to execute the AttachVolume service method on AmazonEC2.</param>
         /// 
         /// <returns>The response from the AttachVolume service method, as returned by AmazonEC2.</returns>
 		AttachVolumeResponse AttachVolume(AttachVolumeRequest request);
@@ -235,7 +234,7 @@ namespace Amazon.EC2
         /// instances in it. For more information, go to Process for Using Amazon VPC in the Amazon Virtual Private Cloud Developer Guide. </para>
         /// </summary>
         /// 
-        /// <param name="attachVpnGatewayRequest">Container for the necessary parameters to execute the AttachVpnGateway service method on
+        /// <param name="request">Container for the necessary parameters to execute the AttachVpnGateway service method on
         /// AmazonEC2.</param>
         /// 
         /// <returns>The response from the AttachVpnGateway service method, as returned by AmazonEC2.</returns>
@@ -266,7 +265,7 @@ namespace Amazon.EC2
         /// egress). </para>
         /// </summary>
         /// 
-        /// <param name="authorizeSecurityGroupEgressRequest">Container for the necessary parameters to execute the AuthorizeSecurityGroupEgress service
+        /// <param name="request">Container for the necessary parameters to execute the AuthorizeSecurityGroupEgress service
         /// method on AmazonEC2.</param>
 		AuthorizeSecurityGroupEgressResponse AuthorizeSecurityGroupEgress(AuthorizeSecurityGroupEgressRequest request);
 
@@ -291,7 +290,7 @@ namespace Amazon.EC2
         /// depending on the number of instances, a small delay might occur. </para>
         /// </summary>
         /// 
-        /// <param name="authorizeSecurityGroupIngressRequest">Container for the necessary parameters to execute the AuthorizeSecurityGroupIngress
+        /// <param name="request">Container for the necessary parameters to execute the AuthorizeSecurityGroupIngress
         /// service method on AmazonEC2.</param>
 		AuthorizeSecurityGroupIngressResponse AuthorizeSecurityGroupIngress(AuthorizeSecurityGroupIngressRequest request);
 
@@ -315,8 +314,6 @@ namespace Amazon.EC2
         /// depending on the number of instances, a small delay might occur. </para>
         /// </summary>
         /// 
-        /// <param name="authorizeSecurityGroupIngressRequest">Container for the necessary parameters to execute the AuthorizeSecurityGroupIngress
-        /// service method on AmazonEC2.</param>
 		AuthorizeSecurityGroupIngressResponse AuthorizeSecurityGroupIngress();
  
 
@@ -326,7 +323,7 @@ namespace Amazon.EC2
         /// API. </para>
         /// </summary>
         /// 
-        /// <param name="bundleInstanceRequest">Container for the necessary parameters to execute the BundleInstance service method on
+        /// <param name="request">Container for the necessary parameters to execute the BundleInstance service method on
         /// AmazonEC2.</param>
         /// 
         /// <returns>The response from the BundleInstance service method, as returned by AmazonEC2.</returns>
@@ -351,7 +348,7 @@ namespace Amazon.EC2
         /// the caller to clean up these parts from S3. </para>
         /// </summary>
         /// 
-        /// <param name="cancelBundleTaskRequest">Container for the necessary parameters to execute the CancelBundleTask service method on
+        /// <param name="request">Container for the necessary parameters to execute the CancelBundleTask service method on
         /// AmazonEC2.</param>
         /// 
         /// <returns>The response from the CancelBundleTask service method, as returned by AmazonEC2.</returns>
@@ -373,7 +370,7 @@ namespace Amazon.EC2
         /// <summary>
         /// </summary>
         /// 
-        /// <param name="cancelConversionTaskRequest">Container for the necessary parameters to execute the CancelConversionTask service method on
+        /// <param name="request">Container for the necessary parameters to execute the CancelConversionTask service method on
         /// AmazonEC2.</param>
 		CancelConversionTaskResponse CancelConversionTask(CancelConversionTaskRequest request);
 
@@ -393,7 +390,7 @@ namespace Amazon.EC2
         /// <summary>
         /// </summary>
         /// 
-        /// <param name="cancelExportTaskRequest">Container for the necessary parameters to execute the CancelExportTask service method on
+        /// <param name="request">Container for the necessary parameters to execute the CancelExportTask service method on
         /// AmazonEC2.</param>
 		CancelExportTaskResponse CancelExportTask(CancelExportTaskRequest request);
 
@@ -413,7 +410,7 @@ namespace Amazon.EC2
         /// <summary>
         /// </summary>
         /// 
-        /// <param name="cancelReservedInstancesListingRequest">Container for the necessary parameters to execute the CancelReservedInstancesListing
+        /// <param name="request">Container for the necessary parameters to execute the CancelReservedInstancesListing
         /// service method on AmazonEC2.</param>
         /// 
         /// <returns>The response from the CancelReservedInstancesListing service method, as returned by AmazonEC2.</returns>
@@ -440,7 +437,7 @@ namespace Amazon.EC2
         /// </para>
         /// </summary>
         /// 
-        /// <param name="cancelSpotInstanceRequestsRequest">Container for the necessary parameters to execute the CancelSpotInstanceRequests service
+        /// <param name="request">Container for the necessary parameters to execute the CancelSpotInstanceRequests service
         /// method on AmazonEC2.</param>
         /// 
         /// <returns>The response from the CancelSpotInstanceRequests service method, as returned by AmazonEC2.</returns>
@@ -466,7 +463,7 @@ namespace Amazon.EC2
         /// eligible. </para>
         /// </summary>
         /// 
-        /// <param name="confirmProductInstanceRequest">Container for the necessary parameters to execute the ConfirmProductInstance service method on
+        /// <param name="request">Container for the necessary parameters to execute the ConfirmProductInstance service method on
         /// AmazonEC2.</param>
         /// 
         /// <returns>The response from the ConfirmProductInstance service method, as returned by AmazonEC2.</returns>
@@ -488,7 +485,7 @@ namespace Amazon.EC2
         /// <summary>
         /// </summary>
         /// 
-        /// <param name="copyImageRequest">Container for the necessary parameters to execute the CopyImage service method on AmazonEC2.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CopyImage service method on AmazonEC2.</param>
         /// 
         /// <returns>The response from the CopyImage service method, as returned by AmazonEC2.</returns>
 		CopyImageResponse CopyImage(CopyImageRequest request);
@@ -509,7 +506,7 @@ namespace Amazon.EC2
         /// <summary>
         /// </summary>
         /// 
-        /// <param name="copySnapshotRequest">Container for the necessary parameters to execute the CopySnapshot service method on AmazonEC2.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CopySnapshot service method on AmazonEC2.</param>
         /// 
         /// <returns>The response from the CopySnapshot service method, as returned by AmazonEC2.</returns>
 		CopySnapshotResponse CopySnapshot(CopySnapshotRequest request);
@@ -534,11 +531,11 @@ namespace Amazon.EC2
         /// gateway that you create with this operation if you leave it inactive for an extended period of time. </para> <para> You must provide the
         /// Internet-routable IP address of the customer gateway's external interface. The IP address must be static. </para> <para> You must also
         /// provide the device's Border Gateway Protocol (BGP) Autonomous System Number (ASN). You can use an existing ASN assigned to your network. If
-        /// you don't have an ASN already, you can use a private ASN (in the 64512 - 65534 range). For more information about ASNs, go to
-        /// http://en.wikipedia.org/wiki/Autonomous_system_%28Internet%29. </para>
+        /// you don't have an ASN already, you can use a private ASN (in the 64512 - 65534 range). For more information about ASNs, go to <a href="http://en.wikipedia.org/wiki/Autonomous_system_%28Internet%29"> http://en.wikipedia.org/wiki/Autonomous_system_%28Internet%29</a> .
+        /// </para>
         /// </summary>
         /// 
-        /// <param name="createCustomerGatewayRequest">Container for the necessary parameters to execute the CreateCustomerGateway service method on
+        /// <param name="request">Container for the necessary parameters to execute the CreateCustomerGateway service method on
         /// AmazonEC2.</param>
         /// 
         /// <returns>The response from the CreateCustomerGateway service method, as returned by AmazonEC2.</returns>
@@ -560,10 +557,10 @@ namespace Amazon.EC2
         /// <summary>
         /// <para> Creates a set of DHCP options that you can then associate with one or more VPCs, causing all existing and new instances that you
         /// launch in those VPCs to use the set of DHCP options. The following table lists the individual DHCP options you can specify. For more
-        /// information about the options, go to http://www.ietf.org/rfc/rfc2132.txt </para>
+        /// information about the options, go to <a href="http://www.ietf.org/rfc/rfc2132.txt">http://www.ietf.org/rfc/rfc2132.txt</a> </para>
         /// </summary>
         /// 
-        /// <param name="createDhcpOptionsRequest">Container for the necessary parameters to execute the CreateDhcpOptions service method on
+        /// <param name="request">Container for the necessary parameters to execute the CreateDhcpOptions service method on
         /// AmazonEC2.</param>
         /// 
         /// <returns>The response from the CreateDhcpOptions service method, as returned by AmazonEC2.</returns>
@@ -588,7 +585,7 @@ namespace Amazon.EC2
         /// started. </para>
         /// </summary>
         /// 
-        /// <param name="createImageRequest">Container for the necessary parameters to execute the CreateImage service method on AmazonEC2.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateImage service method on AmazonEC2.</param>
         /// 
         /// <returns>The response from the CreateImage service method, as returned by AmazonEC2.</returns>
 		CreateImageResponse CreateImage(CreateImageRequest request);
@@ -609,7 +606,7 @@ namespace Amazon.EC2
         /// <summary>
         /// </summary>
         /// 
-        /// <param name="createInstanceExportTaskRequest">Container for the necessary parameters to execute the CreateInstanceExportTask service method
+        /// <param name="request">Container for the necessary parameters to execute the CreateInstanceExportTask service method
         /// on AmazonEC2.</param>
         /// 
         /// <returns>The response from the CreateInstanceExportTask service method, as returned by AmazonEC2.</returns>
@@ -634,7 +631,7 @@ namespace Amazon.EC2
         /// </para>
         /// </summary>
         /// 
-        /// <param name="createInternetGatewayRequest">Container for the necessary parameters to execute the CreateInternetGateway service method on
+        /// <param name="request">Container for the necessary parameters to execute the CreateInternetGateway service method on
         /// AmazonEC2.</param>
         /// 
         /// <returns>The response from the CreateInternetGateway service method, as returned by AmazonEC2.</returns>
@@ -658,8 +655,6 @@ namespace Amazon.EC2
         /// </para>
         /// </summary>
         /// 
-        /// <param name="createInternetGatewayRequest">Container for the necessary parameters to execute the CreateInternetGateway service method on
-        /// AmazonEC2.</param>
         /// 
         /// <returns>The response from the CreateInternetGateway service method, as returned by AmazonEC2.</returns>
 		CreateInternetGatewayResponse CreateInternetGateway();
@@ -670,7 +665,7 @@ namespace Amazon.EC2
         /// when launching new instances. For more information, see RunInstances. </para>
         /// </summary>
         /// 
-        /// <param name="createKeyPairRequest">Container for the necessary parameters to execute the CreateKeyPair service method on AmazonEC2.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateKeyPair service method on AmazonEC2.</param>
         /// 
         /// <returns>The response from the CreateKeyPair service method, as returned by AmazonEC2.</returns>
 		CreateKeyPairResponse CreateKeyPair(CreateKeyPairRequest request);
@@ -693,7 +688,7 @@ namespace Amazon.EC2
         /// in your VPC. For more information about network ACLs, go to Network ACLs in the Amazon Virtual Private Cloud User Guide. </para>
         /// </summary>
         /// 
-        /// <param name="createNetworkAclRequest">Container for the necessary parameters to execute the CreateNetworkAcl service method on
+        /// <param name="request">Container for the necessary parameters to execute the CreateNetworkAcl service method on
         /// AmazonEC2.</param>
         /// 
         /// <returns>The response from the CreateNetworkAcl service method, as returned by AmazonEC2.</returns>
@@ -722,7 +717,7 @@ namespace Amazon.EC2
         /// ACLs, go to Network ACLs in the Amazon Virtual Private Cloud User Guide. </para>
         /// </summary>
         /// 
-        /// <param name="createNetworkAclEntryRequest">Container for the necessary parameters to execute the CreateNetworkAclEntry service method on
+        /// <param name="request">Container for the necessary parameters to execute the CreateNetworkAclEntry service method on
         /// AmazonEC2.</param>
 		CreateNetworkAclEntryResponse CreateNetworkAclEntry(CreateNetworkAclEntryRequest request);
 
@@ -742,7 +737,7 @@ namespace Amazon.EC2
         /// <summary>
         /// </summary>
         /// 
-        /// <param name="createNetworkInterfaceRequest">Container for the necessary parameters to execute the CreateNetworkInterface service method on
+        /// <param name="request">Container for the necessary parameters to execute the CreateNetworkInterface service method on
         /// AmazonEC2.</param>
         /// 
         /// <returns>The response from the CreateNetworkInterface service method, as returned by AmazonEC2.</returns>
@@ -766,7 +761,7 @@ namespace Amazon.EC2
         /// scope of the user account. </para>
         /// </summary>
         /// 
-        /// <param name="createPlacementGroupRequest">Container for the necessary parameters to execute the CreatePlacementGroup service method on
+        /// <param name="request">Container for the necessary parameters to execute the CreatePlacementGroup service method on
         /// AmazonEC2.</param>
 		CreatePlacementGroupResponse CreatePlacementGroup(CreatePlacementGroupRequest request);
 
@@ -786,7 +781,7 @@ namespace Amazon.EC2
         /// <summary>
         /// </summary>
         /// 
-        /// <param name="createReservedInstancesListingRequest">Container for the necessary parameters to execute the CreateReservedInstancesListing
+        /// <param name="request">Container for the necessary parameters to execute the CreateReservedInstancesListing
         /// service method on AmazonEC2.</param>
         /// 
         /// <returns>The response from the CreateReservedInstancesListing service method, as returned by AmazonEC2.</returns>
@@ -815,11 +810,11 @@ namespace Amazon.EC2
         /// 
         /// </ul>
         /// <para> Both routes apply to the traffic destined for <c>192.0.2.3</c> . However, the second route in the list is more specific, so we use
-        /// that route to determine where to target the traffic. </para> <para> For more information about route tables, go to Route Tables in the
-        /// Amazon Virtual Private Cloud User Guide. </para>
+        /// that route to determine where to target the traffic. </para> <para> For more information about route tables, go to <a href="http://docs.amazonwebservices.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route Tables</a> in the Amazon Virtual Private
+        /// Cloud User Guide. </para>
         /// </summary>
         /// 
-        /// <param name="createRouteRequest">Container for the necessary parameters to execute the CreateRoute service method on AmazonEC2.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRoute service method on AmazonEC2.</param>
 		CreateRouteResponse CreateRoute(CreateRouteRequest request);
 
         /// <summary>
@@ -837,10 +832,10 @@ namespace Amazon.EC2
 
         /// <summary>
         /// <para> Creates a new route table within a VPC. After you create a new route table, you can add routes and associate the table with a subnet.
-        /// For more information about route tables, go to Route Tables in the Amazon Virtual Private Cloud User Guide. </para>
+        /// For more information about route tables, go to <a href="http://docs.amazonwebservices.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route Tables</a> in the Amazon Virtual Private Cloud User Guide. </para>
         /// </summary>
         /// 
-        /// <param name="createRouteTableRequest">Container for the necessary parameters to execute the CreateRouteTable service method on
+        /// <param name="request">Container for the necessary parameters to execute the CreateRouteTable service method on
         /// AmazonEC2.</param>
         /// 
         /// <returns>The response from the CreateRouteTable service method, as returned by AmazonEC2.</returns>
@@ -867,7 +862,7 @@ namespace Amazon.EC2
         /// RevokeSecurityGroupIngress operations. </para>
         /// </summary>
         /// 
-        /// <param name="createSecurityGroupRequest">Container for the necessary parameters to execute the CreateSecurityGroup service method on
+        /// <param name="request">Container for the necessary parameters to execute the CreateSecurityGroup service method on
         /// AmazonEC2.</param>
         /// 
         /// <returns>The response from the CreateSecurityGroup service method, as returned by AmazonEC2.</returns>
@@ -894,7 +889,7 @@ namespace Amazon.EC2
         /// status has returned. </para>
         /// </summary>
         /// 
-        /// <param name="createSnapshotRequest">Container for the necessary parameters to execute the CreateSnapshot service method on
+        /// <param name="request">Container for the necessary parameters to execute the CreateSnapshot service method on
         /// AmazonEC2.</param>
         /// 
         /// <returns>The response from the CreateSnapshot service method, as returned by AmazonEC2.</returns>
@@ -920,7 +915,7 @@ namespace Amazon.EC2
         /// </para>
         /// </summary>
         /// 
-        /// <param name="createSpotDatafeedSubscriptionRequest">Container for the necessary parameters to execute the CreateSpotDatafeedSubscription
+        /// <param name="request">Container for the necessary parameters to execute the CreateSpotDatafeedSubscription
         /// service method on AmazonEC2.</param>
         /// 
         /// <returns>The response from the CreateSpotDatafeedSubscription service method, as returned by AmazonEC2.</returns>
@@ -949,7 +944,7 @@ namespace Amazon.EC2
         /// address in each subnet's CIDR block. They're not available for use. </para>
         /// </summary>
         /// 
-        /// <param name="createSubnetRequest">Container for the necessary parameters to execute the CreateSubnet service method on AmazonEC2.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSubnet service method on AmazonEC2.</param>
         /// 
         /// <returns>The response from the CreateSubnet service method, as returned by AmazonEC2.</returns>
 		CreateSubnetResponse CreateSubnet(CreateSubnetRequest request);
@@ -972,7 +967,7 @@ namespace Amazon.EC2
         /// pair. Tag keys must be unique per resource. </para>
         /// </summary>
         /// 
-        /// <param name="createTagsRequest">Container for the necessary parameters to execute the CreateTags service method on AmazonEC2.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTags service method on AmazonEC2.</param>
 		CreateTagsResponse CreateTags(CreateTagsRequest request);
 
         /// <summary>
@@ -992,7 +987,7 @@ namespace Amazon.EC2
         /// <para> Initializes an empty volume of a given size. </para>
         /// </summary>
         /// 
-        /// <param name="createVolumeRequest">Container for the necessary parameters to execute the CreateVolume service method on AmazonEC2.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateVolume service method on AmazonEC2.</param>
         /// 
         /// <returns>The response from the CreateVolume service method, as returned by AmazonEC2.</returns>
 		CreateVolumeResponse CreateVolume(CreateVolumeRequest request);
@@ -1017,7 +1012,7 @@ namespace Amazon.EC2
         /// options (the standard EC2 host name, no domain name, no DNS server, no NTP server, and no NetBIOS server or node type). </para>
         /// </summary>
         /// 
-        /// <param name="createVpcRequest">Container for the necessary parameters to execute the CreateVpc service method on AmazonEC2.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateVpc service method on AmazonEC2.</param>
         /// 
         /// <returns>The response from the CreateVpc service method, as returned by AmazonEC2.</returns>
 		CreateVpcResponse CreateVpc(CreateVpcRequest request);
@@ -1046,7 +1041,7 @@ namespace Amazon.EC2
         /// create a new one, you must re-configure your customer gateway with the new information returned from this call. </para>
         /// </summary>
         /// 
-        /// <param name="createVpnConnectionRequest">Container for the necessary parameters to execute the CreateVpnConnection service method on
+        /// <param name="request">Container for the necessary parameters to execute the CreateVpnConnection service method on
         /// AmazonEC2.</param>
         /// 
         /// <returns>The response from the CreateVpnConnection service method, as returned by AmazonEC2.</returns>
@@ -1068,7 +1063,7 @@ namespace Amazon.EC2
         /// <summary>
         /// </summary>
         /// 
-        /// <param name="createVpnConnectionRouteRequest">Container for the necessary parameters to execute the CreateVpnConnectionRoute service method
+        /// <param name="request">Container for the necessary parameters to execute the CreateVpnConnectionRoute service method
         /// on AmazonEC2.</param>
 		CreateVpnConnectionRouteResponse CreateVpnConnectionRoute(CreateVpnConnectionRouteRequest request);
 
@@ -1090,7 +1085,7 @@ namespace Amazon.EC2
         /// creating the VPC itself. </para>
         /// </summary>
         /// 
-        /// <param name="createVpnGatewayRequest">Container for the necessary parameters to execute the CreateVpnGateway service method on
+        /// <param name="request">Container for the necessary parameters to execute the CreateVpnGateway service method on
         /// AmazonEC2.</param>
         /// 
         /// <returns>The response from the CreateVpnGateway service method, as returned by AmazonEC2.</returns>
@@ -1115,7 +1110,7 @@ namespace Amazon.EC2
         /// delete any customer gateway you leave inactive for an extended period of time. </para>
         /// </summary>
         /// 
-        /// <param name="deleteCustomerGatewayRequest">Container for the necessary parameters to execute the DeleteCustomerGateway service method on
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCustomerGateway service method on
         /// AmazonEC2.</param>
 		DeleteCustomerGatewayResponse DeleteCustomerGateway(DeleteCustomerGatewayRequest request);
 
@@ -1137,7 +1132,7 @@ namespace Amazon.EC2
         /// with a VPC. You can disassociate the set of options by associating either a new set of options or the default options with the VPC. </para>
         /// </summary>
         /// 
-        /// <param name="deleteDhcpOptionsRequest">Container for the necessary parameters to execute the DeleteDhcpOptions service method on
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDhcpOptions service method on
         /// AmazonEC2.</param>
 		DeleteDhcpOptionsResponse DeleteDhcpOptions(DeleteDhcpOptionsRequest request);
 
@@ -1159,7 +1154,7 @@ namespace Amazon.EC2
         /// Internet gateway, go to Amazon Virtual Private Cloud User Guide. </para>
         /// </summary>
         /// 
-        /// <param name="deleteInternetGatewayRequest">Container for the necessary parameters to execute the DeleteInternetGateway service method on
+        /// <param name="request">Container for the necessary parameters to execute the DeleteInternetGateway service method on
         /// AmazonEC2.</param>
 		DeleteInternetGatewayResponse DeleteInternetGateway(DeleteInternetGatewayRequest request);
 
@@ -1180,7 +1175,7 @@ namespace Amazon.EC2
         /// <para> The DeleteKeyPair operation deletes a key pair. </para>
         /// </summary>
         /// 
-        /// <param name="deleteKeyPairRequest">Container for the necessary parameters to execute the DeleteKeyPair service method on AmazonEC2.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteKeyPair service method on AmazonEC2.</param>
 		DeleteKeyPairResponse DeleteKeyPair(DeleteKeyPairRequest request);
 
         /// <summary>
@@ -1201,7 +1196,7 @@ namespace Amazon.EC2
         /// more information about network ACLs, go to Network ACLs in the Amazon Virtual Private Cloud User Guide. </para>
         /// </summary>
         /// 
-        /// <param name="deleteNetworkAclRequest">Container for the necessary parameters to execute the DeleteNetworkAcl service method on
+        /// <param name="request">Container for the necessary parameters to execute the DeleteNetworkAcl service method on
         /// AmazonEC2.</param>
 		DeleteNetworkAclResponse DeleteNetworkAcl(DeleteNetworkAclRequest request);
 
@@ -1223,7 +1218,7 @@ namespace Amazon.EC2
         /// the Amazon Virtual Private Cloud User Guide. </para>
         /// </summary>
         /// 
-        /// <param name="deleteNetworkAclEntryRequest">Container for the necessary parameters to execute the DeleteNetworkAclEntry service method on
+        /// <param name="request">Container for the necessary parameters to execute the DeleteNetworkAclEntry service method on
         /// AmazonEC2.</param>
 		DeleteNetworkAclEntryResponse DeleteNetworkAclEntry(DeleteNetworkAclEntryRequest request);
 
@@ -1243,7 +1238,7 @@ namespace Amazon.EC2
         /// <summary>
         /// </summary>
         /// 
-        /// <param name="deleteNetworkInterfaceRequest">Container for the necessary parameters to execute the DeleteNetworkInterface service method on
+        /// <param name="request">Container for the necessary parameters to execute the DeleteNetworkInterface service method on
         /// AmazonEC2.</param>
 		DeleteNetworkInterfaceResponse DeleteNetworkInterface(DeleteNetworkInterfaceRequest request);
 
@@ -1264,7 +1259,7 @@ namespace Amazon.EC2
         /// <para> Deletes a PlacementGroup from a user's account. Terminate all Amazon EC2 instances in the placement group before deletion. </para>
         /// </summary>
         /// 
-        /// <param name="deletePlacementGroupRequest">Container for the necessary parameters to execute the DeletePlacementGroup service method on
+        /// <param name="request">Container for the necessary parameters to execute the DeletePlacementGroup service method on
         /// AmazonEC2.</param>
 		DeletePlacementGroupResponse DeletePlacementGroup(DeletePlacementGroupRequest request);
 
@@ -1282,11 +1277,11 @@ namespace Amazon.EC2
  
 
         /// <summary>
-        /// <para> Deletes a route from a route table in a VPC. For more information about route tables, go to Route Tables in the Amazon Virtual
-        /// Private Cloud User Guide. </para>
+        /// <para> Deletes a route from a route table in a VPC. For more information about route tables, go to <a href="http://docs.amazonwebservices.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route Tables</a> in the Amazon Virtual Private
+        /// Cloud User Guide. </para>
         /// </summary>
         /// 
-        /// <param name="deleteRouteRequest">Container for the necessary parameters to execute the DeleteRoute service method on AmazonEC2.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRoute service method on AmazonEC2.</param>
 		DeleteRouteResponse DeleteRoute(DeleteRouteRequest request);
 
         /// <summary>
@@ -1304,10 +1299,10 @@ namespace Amazon.EC2
 
         /// <summary>
         /// <para> Deletes a route table from a VPC. The route table must not be associated with a subnet. You can't delete the main route table. For
-        /// more information about route tables, go to Route Tables in the Amazon Virtual Private Cloud User Guide. </para>
+        /// more information about route tables, go to <a href="http://docs.amazonwebservices.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route Tables</a> in the Amazon Virtual Private Cloud User Guide. </para>
         /// </summary>
         /// 
-        /// <param name="deleteRouteTableRequest">Container for the necessary parameters to execute the DeleteRouteTable service method on
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRouteTable service method on
         /// AmazonEC2.</param>
 		DeleteRouteTableResponse DeleteRouteTable(DeleteRouteTableRequest request);
 
@@ -1331,7 +1326,7 @@ namespace Amazon.EC2
         /// allow rule is removed. </para>
         /// </summary>
         /// 
-        /// <param name="deleteSecurityGroupRequest">Container for the necessary parameters to execute the DeleteSecurityGroup service method on
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSecurityGroup service method on
         /// AmazonEC2.</param>
 		DeleteSecurityGroupResponse DeleteSecurityGroup(DeleteSecurityGroupRequest request);
 
@@ -1354,8 +1349,6 @@ namespace Amazon.EC2
         /// allow rule is removed. </para>
         /// </summary>
         /// 
-        /// <param name="deleteSecurityGroupRequest">Container for the necessary parameters to execute the DeleteSecurityGroup service method on
-        /// AmazonEC2.</param>
 		DeleteSecurityGroupResponse DeleteSecurityGroup();
  
 
@@ -1364,7 +1357,7 @@ namespace Amazon.EC2
         /// </para>
         /// </summary>
         /// 
-        /// <param name="deleteSnapshotRequest">Container for the necessary parameters to execute the DeleteSnapshot service method on
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSnapshot service method on
         /// AmazonEC2.</param>
 		DeleteSnapshotResponse DeleteSnapshot(DeleteSnapshotRequest request);
 
@@ -1387,7 +1380,7 @@ namespace Amazon.EC2
         /// </para>
         /// </summary>
         /// 
-        /// <param name="deleteSpotDatafeedSubscriptionRequest">Container for the necessary parameters to execute the DeleteSpotDatafeedSubscription
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSpotDatafeedSubscription
         /// service method on AmazonEC2.</param>
 		DeleteSpotDatafeedSubscriptionResponse DeleteSpotDatafeedSubscription(DeleteSpotDatafeedSubscriptionRequest request);
 
@@ -1409,8 +1402,6 @@ namespace Amazon.EC2
         /// </para>
         /// </summary>
         /// 
-        /// <param name="deleteSpotDatafeedSubscriptionRequest">Container for the necessary parameters to execute the DeleteSpotDatafeedSubscription
-        /// service method on AmazonEC2.</param>
 		DeleteSpotDatafeedSubscriptionResponse DeleteSpotDatafeedSubscription();
  
 
@@ -1419,7 +1410,7 @@ namespace Amazon.EC2
         /// an error. </para>
         /// </summary>
         /// 
-        /// <param name="deleteSubnetRequest">Container for the necessary parameters to execute the DeleteSubnet service method on AmazonEC2.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSubnet service method on AmazonEC2.</param>
 		DeleteSubnetResponse DeleteSubnet(DeleteSubnetRequest request);
 
         /// <summary>
@@ -1439,7 +1430,7 @@ namespace Amazon.EC2
         /// <para> Deletes tags from the specified Amazon EC2 resources. </para>
         /// </summary>
         /// 
-        /// <param name="deleteTagsRequest">Container for the necessary parameters to execute the DeleteTags service method on AmazonEC2.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTags service method on AmazonEC2.</param>
 		DeleteTagsResponse DeleteTags(DeleteTagsRequest request);
 
         /// <summary>
@@ -1459,7 +1450,7 @@ namespace Amazon.EC2
         /// <para> Deletes a previously created volume. Once successfully deleted, a new volume can be created with the same name. </para>
         /// </summary>
         /// 
-        /// <param name="deleteVolumeRequest">Container for the necessary parameters to execute the DeleteVolume service method on AmazonEC2.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVolume service method on AmazonEC2.</param>
 		DeleteVolumeResponse DeleteVolume(DeleteVolumeRequest request);
 
         /// <summary>
@@ -1481,7 +1472,7 @@ namespace Amazon.EC2
         /// </para>
         /// </summary>
         /// 
-        /// <param name="deleteVpcRequest">Container for the necessary parameters to execute the DeleteVpc service method on AmazonEC2.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVpc service method on AmazonEC2.</param>
 		DeleteVpcResponse DeleteVpc(DeleteVpcRequest request);
 
         /// <summary>
@@ -1506,7 +1497,7 @@ namespace Amazon.EC2
         /// deleting the VPN connection. </para>
         /// </summary>
         /// 
-        /// <param name="deleteVpnConnectionRequest">Container for the necessary parameters to execute the DeleteVpnConnection service method on
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVpnConnection service method on
         /// AmazonEC2.</param>
 		DeleteVpnConnectionResponse DeleteVpnConnection(DeleteVpnConnectionRequest request);
 
@@ -1526,7 +1517,7 @@ namespace Amazon.EC2
         /// <summary>
         /// </summary>
         /// 
-        /// <param name="deleteVpnConnectionRouteRequest">Container for the necessary parameters to execute the DeleteVpnConnectionRoute service method
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVpnConnectionRoute service method
         /// on AmazonEC2.</param>
 		DeleteVpnConnectionRouteResponse DeleteVpnConnectionRoute(DeleteVpnConnectionRouteRequest request);
 
@@ -1549,7 +1540,7 @@ namespace Amazon.EC2
         /// the VPN gateway if you just want to delete and re-create the VPN connection between your VPC and data center. </para>
         /// </summary>
         /// 
-        /// <param name="deleteVpnGatewayRequest">Container for the necessary parameters to execute the DeleteVpnGateway service method on
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVpnGateway service method on
         /// AmazonEC2.</param>
 		DeleteVpnGatewayResponse DeleteVpnGateway(DeleteVpnGatewayRequest request);
 
@@ -1570,7 +1561,7 @@ namespace Amazon.EC2
         /// <para> The DeregisterImage operation deregisters an AMI. Once deregistered, instances of the AMI can no longer be launched. </para>
         /// </summary>
         /// 
-        /// <param name="deregisterImageRequest">Container for the necessary parameters to execute the DeregisterImage service method on
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterImage service method on
         /// AmazonEC2.</param>
 		DeregisterImageResponse DeregisterImage(DeregisterImageRequest request);
 
@@ -1590,7 +1581,7 @@ namespace Amazon.EC2
         /// <summary>
         /// </summary>
         /// 
-        /// <param name="describeAccountAttributesRequest">Container for the necessary parameters to execute the DescribeAccountAttributes service
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAccountAttributes service
         /// method on AmazonEC2.</param>
         /// 
         /// <returns>The response from the DescribeAccountAttributes service method, as returned by AmazonEC2.</returns>
@@ -1611,8 +1602,6 @@ namespace Amazon.EC2
         /// <summary>
         /// </summary>
         /// 
-        /// <param name="describeAccountAttributesRequest">Container for the necessary parameters to execute the DescribeAccountAttributes service
-        /// method on AmazonEC2.</param>
         /// 
         /// <returns>The response from the DescribeAccountAttributes service method, as returned by AmazonEC2.</returns>
 		DescribeAccountAttributesResponse DescribeAccountAttributes();
@@ -1622,7 +1611,7 @@ namespace Amazon.EC2
         /// <para> The DescribeAddresses operation lists elastic IP addresses assigned to your account. </para>
         /// </summary>
         /// 
-        /// <param name="describeAddressesRequest">Container for the necessary parameters to execute the DescribeAddresses service method on
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAddresses service method on
         /// AmazonEC2.</param>
         /// 
         /// <returns>The response from the DescribeAddresses service method, as returned by AmazonEC2.</returns>
@@ -1644,8 +1633,6 @@ namespace Amazon.EC2
         /// <para> The DescribeAddresses operation lists elastic IP addresses assigned to your account. </para>
         /// </summary>
         /// 
-        /// <param name="describeAddressesRequest">Container for the necessary parameters to execute the DescribeAddresses service method on
-        /// AmazonEC2.</param>
         /// 
         /// <returns>The response from the DescribeAddresses service method, as returned by AmazonEC2.</returns>
 		DescribeAddressesResponse DescribeAddresses();
@@ -1657,7 +1644,7 @@ namespace Amazon.EC2
         /// the same as <c>us-east-1a</c> for account B. Zone assignments are mapped independently for each account. </para>
         /// </summary>
         /// 
-        /// <param name="describeAvailabilityZonesRequest">Container for the necessary parameters to execute the DescribeAvailabilityZones service
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAvailabilityZones service
         /// method on AmazonEC2.</param>
         /// 
         /// <returns>The response from the DescribeAvailabilityZones service method, as returned by AmazonEC2.</returns>
@@ -1681,8 +1668,6 @@ namespace Amazon.EC2
         /// the same as <c>us-east-1a</c> for account B. Zone assignments are mapped independently for each account. </para>
         /// </summary>
         /// 
-        /// <param name="describeAvailabilityZonesRequest">Container for the necessary parameters to execute the DescribeAvailabilityZones service
-        /// method on AmazonEC2.</param>
         /// 
         /// <returns>The response from the DescribeAvailabilityZones service method, as returned by AmazonEC2.</returns>
 		DescribeAvailabilityZonesResponse DescribeAvailabilityZones();
@@ -1693,7 +1678,7 @@ namespace Amazon.EC2
         /// a short time after completion. If no bundle ids are given, all bundle tasks are returned. </para>
         /// </summary>
         /// 
-        /// <param name="describeBundleTasksRequest">Container for the necessary parameters to execute the DescribeBundleTasks service method on
+        /// <param name="request">Container for the necessary parameters to execute the DescribeBundleTasks service method on
         /// AmazonEC2.</param>
         /// 
         /// <returns>The response from the DescribeBundleTasks service method, as returned by AmazonEC2.</returns>
@@ -1716,8 +1701,6 @@ namespace Amazon.EC2
         /// a short time after completion. If no bundle ids are given, all bundle tasks are returned. </para>
         /// </summary>
         /// 
-        /// <param name="describeBundleTasksRequest">Container for the necessary parameters to execute the DescribeBundleTasks service method on
-        /// AmazonEC2.</param>
         /// 
         /// <returns>The response from the DescribeBundleTasks service method, as returned by AmazonEC2.</returns>
 		DescribeBundleTasksResponse DescribeBundleTasks();
@@ -1726,7 +1709,7 @@ namespace Amazon.EC2
         /// <summary>
         /// </summary>
         /// 
-        /// <param name="describeConversionTasksRequest">Container for the necessary parameters to execute the DescribeConversionTasks service method on
+        /// <param name="request">Container for the necessary parameters to execute the DescribeConversionTasks service method on
         /// AmazonEC2.</param>
         /// 
         /// <returns>The response from the DescribeConversionTasks service method, as returned by AmazonEC2.</returns>
@@ -1747,8 +1730,6 @@ namespace Amazon.EC2
         /// <summary>
         /// </summary>
         /// 
-        /// <param name="describeConversionTasksRequest">Container for the necessary parameters to execute the DescribeConversionTasks service method on
-        /// AmazonEC2.</param>
         /// 
         /// <returns>The response from the DescribeConversionTasks service method, as returned by AmazonEC2.</returns>
 		DescribeConversionTasksResponse DescribeConversionTasks();
@@ -1763,7 +1744,7 @@ namespace Amazon.EC2
         /// empty. The following table shows the available filters. </para>
         /// </summary>
         /// 
-        /// <param name="describeCustomerGatewaysRequest">Container for the necessary parameters to execute the DescribeCustomerGateways service method
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCustomerGateways service method
         /// on AmazonEC2.</param>
         /// 
         /// <returns>The response from the DescribeCustomerGateways service method, as returned by AmazonEC2.</returns>
@@ -1790,8 +1771,6 @@ namespace Amazon.EC2
         /// empty. The following table shows the available filters. </para>
         /// </summary>
         /// 
-        /// <param name="describeCustomerGatewaysRequest">Container for the necessary parameters to execute the DescribeCustomerGateways service method
-        /// on AmazonEC2.</param>
         /// 
         /// <returns>The response from the DescribeCustomerGateways service method, as returned by AmazonEC2.</returns>
 		DescribeCustomerGatewaysResponse DescribeCustomerGateways();
@@ -1807,7 +1786,7 @@ namespace Amazon.EC2
         /// </ul>
         /// </summary>
         /// 
-        /// <param name="describeDhcpOptionsRequest">Container for the necessary parameters to execute the DescribeDhcpOptions service method on
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDhcpOptions service method on
         /// AmazonEC2.</param>
         /// 
         /// <returns>The response from the DescribeDhcpOptions service method, as returned by AmazonEC2.</returns>
@@ -1835,8 +1814,6 @@ namespace Amazon.EC2
         /// </ul>
         /// </summary>
         /// 
-        /// <param name="describeDhcpOptionsRequest">Container for the necessary parameters to execute the DescribeDhcpOptions service method on
-        /// AmazonEC2.</param>
         /// 
         /// <returns>The response from the DescribeDhcpOptions service method, as returned by AmazonEC2.</returns>
 		DescribeDhcpOptionsResponse DescribeDhcpOptions();
@@ -1845,7 +1822,7 @@ namespace Amazon.EC2
         /// <summary>
         /// </summary>
         /// 
-        /// <param name="describeExportTasksRequest">Container for the necessary parameters to execute the DescribeExportTasks service method on
+        /// <param name="request">Container for the necessary parameters to execute the DescribeExportTasks service method on
         /// AmazonEC2.</param>
         /// 
         /// <returns>The response from the DescribeExportTasks service method, as returned by AmazonEC2.</returns>
@@ -1866,8 +1843,6 @@ namespace Amazon.EC2
         /// <summary>
         /// </summary>
         /// 
-        /// <param name="describeExportTasksRequest">Container for the necessary parameters to execute the DescribeExportTasks service method on
-        /// AmazonEC2.</param>
         /// 
         /// <returns>The response from the DescribeExportTasks service method, as returned by AmazonEC2.</returns>
 		DescribeExportTasksResponse DescribeExportTasks();
@@ -1878,7 +1853,7 @@ namespace Amazon.EC2
         /// </para>
         /// </summary>
         /// 
-        /// <param name="describeImageAttributeRequest">Container for the necessary parameters to execute the DescribeImageAttribute service method on
+        /// <param name="request">Container for the necessary parameters to execute the DescribeImageAttribute service method on
         /// AmazonEC2.</param>
         /// 
         /// <returns>The response from the DescribeImageAttribute service method, as returned by AmazonEC2.</returns>
@@ -1920,7 +1895,7 @@ namespace Amazon.EC2
         /// interval after deregistration. </para>
         /// </summary>
         /// 
-        /// <param name="describeImagesRequest">Container for the necessary parameters to execute the DescribeImages service method on
+        /// <param name="request">Container for the necessary parameters to execute the DescribeImages service method on
         /// AmazonEC2.</param>
         /// 
         /// <returns>The response from the DescribeImages service method, as returned by AmazonEC2.</returns>
@@ -1961,8 +1936,6 @@ namespace Amazon.EC2
         /// interval after deregistration. </para>
         /// </summary>
         /// 
-        /// <param name="describeImagesRequest">Container for the necessary parameters to execute the DescribeImages service method on
-        /// AmazonEC2.</param>
         /// 
         /// <returns>The response from the DescribeImages service method, as returned by AmazonEC2.</returns>
 		DescribeImagesResponse DescribeImages();
@@ -1972,7 +1945,7 @@ namespace Amazon.EC2
         /// <para> Returns information about an attribute of an instance. Only one attribute can be specified per call. </para>
         /// </summary>
         /// 
-        /// <param name="describeInstanceAttributeRequest">Container for the necessary parameters to execute the DescribeInstanceAttribute service
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceAttribute service
         /// method on AmazonEC2.</param>
         /// 
         /// <returns>The response from the DescribeInstanceAttribute service method, as returned by AmazonEC2.</returns>
@@ -1999,7 +1972,7 @@ namespace Amazon.EC2
         /// usually less than one hour. </para>
         /// </summary>
         /// 
-        /// <param name="describeInstancesRequest">Container for the necessary parameters to execute the DescribeInstances service method on
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstances service method on
         /// AmazonEC2.</param>
         /// 
         /// <returns>The response from the DescribeInstances service method, as returned by AmazonEC2.</returns>
@@ -2025,8 +1998,6 @@ namespace Amazon.EC2
         /// usually less than one hour. </para>
         /// </summary>
         /// 
-        /// <param name="describeInstancesRequest">Container for the necessary parameters to execute the DescribeInstances service method on
-        /// AmazonEC2.</param>
         /// 
         /// <returns>The response from the DescribeInstances service method, as returned by AmazonEC2.</returns>
 		DescribeInstancesResponse DescribeInstances();
@@ -2065,7 +2036,7 @@ namespace Amazon.EC2
         /// </ul>
         /// </summary>
         /// 
-        /// <param name="describeInstanceStatusRequest">Container for the necessary parameters to execute the DescribeInstanceStatus service method on
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceStatus service method on
         /// AmazonEC2.</param>
         /// 
         /// <returns>The response from the DescribeInstanceStatus service method, as returned by AmazonEC2.</returns>
@@ -2116,8 +2087,6 @@ namespace Amazon.EC2
         /// </ul>
         /// </summary>
         /// 
-        /// <param name="describeInstanceStatusRequest">Container for the necessary parameters to execute the DescribeInstanceStatus service method on
-        /// AmazonEC2.</param>
         /// 
         /// <returns>The response from the DescribeInstanceStatus service method, as returned by AmazonEC2.</returns>
 		DescribeInstanceStatusResponse DescribeInstanceStatus();
@@ -2135,7 +2104,7 @@ namespace Amazon.EC2
         /// </para>
         /// </summary>
         /// 
-        /// <param name="describeInternetGatewaysRequest">Container for the necessary parameters to execute the DescribeInternetGateways service method
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInternetGateways service method
         /// on AmazonEC2.</param>
         /// 
         /// <returns>The response from the DescribeInternetGateways service method, as returned by AmazonEC2.</returns>
@@ -2165,8 +2134,6 @@ namespace Amazon.EC2
         /// </para>
         /// </summary>
         /// 
-        /// <param name="describeInternetGatewaysRequest">Container for the necessary parameters to execute the DescribeInternetGateways service method
-        /// on AmazonEC2.</param>
         /// 
         /// <returns>The response from the DescribeInternetGateways service method, as returned by AmazonEC2.</returns>
 		DescribeInternetGatewaysResponse DescribeInternetGateways();
@@ -2177,7 +2144,7 @@ namespace Amazon.EC2
         /// those key pairs is returned. Otherwise, information for all registered key pairs is returned. </para>
         /// </summary>
         /// 
-        /// <param name="describeKeyPairsRequest">Container for the necessary parameters to execute the DescribeKeyPairs service method on
+        /// <param name="request">Container for the necessary parameters to execute the DescribeKeyPairs service method on
         /// AmazonEC2.</param>
         /// 
         /// <returns>The response from the DescribeKeyPairs service method, as returned by AmazonEC2.</returns>
@@ -2200,8 +2167,6 @@ namespace Amazon.EC2
         /// those key pairs is returned. Otherwise, information for all registered key pairs is returned. </para>
         /// </summary>
         /// 
-        /// <param name="describeKeyPairsRequest">Container for the necessary parameters to execute the DescribeKeyPairs service method on
-        /// AmazonEC2.</param>
         /// 
         /// <returns>The response from the DescribeKeyPairs service method, as returned by AmazonEC2.</returns>
 		DescribeKeyPairsResponse DescribeKeyPairs();
@@ -2218,8 +2183,6 @@ namespace Amazon.EC2
         /// </para>
         /// </summary>
         /// 
-        /// <param name="describeNetworkAclsRequest">Container for the necessary parameters to execute the DescribeNetworkAcls service method on
-        /// AmazonEC2.</param>
         /// 
         /// <returns>The response from the DescribeNetworkAcls service method, as returned by AmazonEC2.</returns>
 		DescribeNetworkAclsResponse DescribeNetworkAcls();
@@ -2237,7 +2200,7 @@ namespace Amazon.EC2
         /// </para>
         /// </summary>
         /// 
-        /// <param name="describeNetworkAclsRequest">Container for the necessary parameters to execute the DescribeNetworkAcls service method on
+        /// <param name="request">Container for the necessary parameters to execute the DescribeNetworkAcls service method on
         /// AmazonEC2.</param>
         /// 
         /// <returns>The response from the DescribeNetworkAcls service method, as returned by AmazonEC2.</returns>
@@ -2259,7 +2222,7 @@ namespace Amazon.EC2
         /// <summary>
         /// </summary>
         /// 
-        /// <param name="describeNetworkInterfaceAttributeRequest">Container for the necessary parameters to execute the
+        /// <param name="request">Container for the necessary parameters to execute the
         /// DescribeNetworkInterfaceAttribute service method on AmazonEC2.</param>
         /// 
         /// <returns>The response from the DescribeNetworkInterfaceAttribute service method, as returned by AmazonEC2.</returns>
@@ -2281,7 +2244,7 @@ namespace Amazon.EC2
         /// <summary>
         /// </summary>
         /// 
-        /// <param name="describeNetworkInterfacesRequest">Container for the necessary parameters to execute the DescribeNetworkInterfaces service
+        /// <param name="request">Container for the necessary parameters to execute the DescribeNetworkInterfaces service
         /// method on AmazonEC2.</param>
         /// 
         /// <returns>The response from the DescribeNetworkInterfaces service method, as returned by AmazonEC2.</returns>
@@ -2302,8 +2265,6 @@ namespace Amazon.EC2
         /// <summary>
         /// </summary>
         /// 
-        /// <param name="describeNetworkInterfacesRequest">Container for the necessary parameters to execute the DescribeNetworkInterfaces service
-        /// method on AmazonEC2.</param>
         /// 
         /// <returns>The response from the DescribeNetworkInterfaces service method, as returned by AmazonEC2.</returns>
 		DescribeNetworkInterfacesResponse DescribeNetworkInterfaces();
@@ -2313,7 +2274,7 @@ namespace Amazon.EC2
         /// <para> Returns information about one or more PlacementGroup instances in a user's account. </para>
         /// </summary>
         /// 
-        /// <param name="describePlacementGroupsRequest">Container for the necessary parameters to execute the DescribePlacementGroups service method on
+        /// <param name="request">Container for the necessary parameters to execute the DescribePlacementGroups service method on
         /// AmazonEC2.</param>
         /// 
         /// <returns>The response from the DescribePlacementGroups service method, as returned by AmazonEC2.</returns>
@@ -2335,8 +2296,6 @@ namespace Amazon.EC2
         /// <para> Returns information about one or more PlacementGroup instances in a user's account. </para>
         /// </summary>
         /// 
-        /// <param name="describePlacementGroupsRequest">Container for the necessary parameters to execute the DescribePlacementGroups service method on
-        /// AmazonEC2.</param>
         /// 
         /// <returns>The response from the DescribePlacementGroups service method, as returned by AmazonEC2.</returns>
 		DescribePlacementGroupsResponse DescribePlacementGroups();
@@ -2346,7 +2305,7 @@ namespace Amazon.EC2
         /// <para> The DescribeRegions operation describes regions zones that are currently available to the account. </para>
         /// </summary>
         /// 
-        /// <param name="describeRegionsRequest">Container for the necessary parameters to execute the DescribeRegions service method on
+        /// <param name="request">Container for the necessary parameters to execute the DescribeRegions service method on
         /// AmazonEC2.</param>
         /// 
         /// <returns>The response from the DescribeRegions service method, as returned by AmazonEC2.</returns>
@@ -2368,8 +2327,6 @@ namespace Amazon.EC2
         /// <para> The DescribeRegions operation describes regions zones that are currently available to the account. </para>
         /// </summary>
         /// 
-        /// <param name="describeRegionsRequest">Container for the necessary parameters to execute the DescribeRegions service method on
-        /// AmazonEC2.</param>
         /// 
         /// <returns>The response from the DescribeRegions service method, as returned by AmazonEC2.</returns>
 		DescribeRegionsResponse DescribeRegions();
@@ -2379,7 +2336,7 @@ namespace Amazon.EC2
         /// <para> The DescribeReservedInstances operation describes Reserved Instances that were purchased for use with your account. </para>
         /// </summary>
         /// 
-        /// <param name="describeReservedInstancesRequest">Container for the necessary parameters to execute the DescribeReservedInstances service
+        /// <param name="request">Container for the necessary parameters to execute the DescribeReservedInstances service
         /// method on AmazonEC2.</param>
         /// 
         /// <returns>The response from the DescribeReservedInstances service method, as returned by AmazonEC2.</returns>
@@ -2401,8 +2358,6 @@ namespace Amazon.EC2
         /// <para> The DescribeReservedInstances operation describes Reserved Instances that were purchased for use with your account. </para>
         /// </summary>
         /// 
-        /// <param name="describeReservedInstancesRequest">Container for the necessary parameters to execute the DescribeReservedInstances service
-        /// method on AmazonEC2.</param>
         /// 
         /// <returns>The response from the DescribeReservedInstances service method, as returned by AmazonEC2.</returns>
 		DescribeReservedInstancesResponse DescribeReservedInstances();
@@ -2411,7 +2366,7 @@ namespace Amazon.EC2
         /// <summary>
         /// </summary>
         /// 
-        /// <param name="describeReservedInstancesListingsRequest">Container for the necessary parameters to execute the
+        /// <param name="request">Container for the necessary parameters to execute the
         /// DescribeReservedInstancesListings service method on AmazonEC2.</param>
         /// 
         /// <returns>The response from the DescribeReservedInstancesListings service method, as returned by AmazonEC2.</returns>
@@ -2432,11 +2387,40 @@ namespace Amazon.EC2
         /// <summary>
         /// </summary>
         /// 
-        /// <param name="describeReservedInstancesListingsRequest">Container for the necessary parameters to execute the
-        /// DescribeReservedInstancesListings service method on AmazonEC2.</param>
         /// 
         /// <returns>The response from the DescribeReservedInstancesListings service method, as returned by AmazonEC2.</returns>
 		DescribeReservedInstancesListingsResponse DescribeReservedInstancesListings();
+ 
+
+        /// <summary>
+        /// <para> The DescribeReservedInstancesModifications operation describes modifications made to Reserved Instances in your account. </para>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the
+        /// DescribeReservedInstancesModifications service method on AmazonEC2.</param>
+        /// 
+        /// <returns>The response from the DescribeReservedInstancesModifications service method, as returned by AmazonEC2.</returns>
+		DescribeReservedInstancesModificationsResponse DescribeReservedInstancesModifications(DescribeReservedInstancesModificationsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeReservedInstancesModifications operation.
+        /// <seealso cref="Amazon.EC2.IAmazonEC2.DescribeReservedInstancesModifications"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeReservedInstancesModifications operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+		Task<DescribeReservedInstancesModificationsResponse> DescribeReservedInstancesModificationsAsync(DescribeReservedInstancesModificationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+ 
+        /// <summary>
+        /// <para> The DescribeReservedInstancesModifications operation describes modifications made to Reserved Instances in your account. </para>
+        /// </summary>
+        /// 
+        /// 
+        /// <returns>The response from the DescribeReservedInstancesModifications service method, as returned by AmazonEC2.</returns>
+		DescribeReservedInstancesModificationsResponse DescribeReservedInstancesModifications();
  
 
         /// <summary>
@@ -2445,7 +2429,7 @@ namespace Amazon.EC2
         /// errors) and pay a lower usage rate for the actual time used. </para>
         /// </summary>
         /// 
-        /// <param name="describeReservedInstancesOfferingsRequest">Container for the necessary parameters to execute the
+        /// <param name="request">Container for the necessary parameters to execute the
         /// DescribeReservedInstancesOfferings service method on AmazonEC2.</param>
         /// 
         /// <returns>The response from the DescribeReservedInstancesOfferings service method, as returned by AmazonEC2.</returns>
@@ -2469,8 +2453,6 @@ namespace Amazon.EC2
         /// errors) and pay a lower usage rate for the actual time used. </para>
         /// </summary>
         /// 
-        /// <param name="describeReservedInstancesOfferingsRequest">Container for the necessary parameters to execute the
-        /// DescribeReservedInstancesOfferings service method on AmazonEC2.</param>
         /// 
         /// <returns>The response from the DescribeReservedInstancesOfferings service method, as returned by AmazonEC2.</returns>
 		DescribeReservedInstancesOfferingsResponse DescribeReservedInstancesOfferings();
@@ -2488,7 +2470,7 @@ namespace Amazon.EC2
         /// </para>
         /// </summary>
         /// 
-        /// <param name="describeRouteTablesRequest">Container for the necessary parameters to execute the DescribeRouteTables service method on
+        /// <param name="request">Container for the necessary parameters to execute the DescribeRouteTables service method on
         /// AmazonEC2.</param>
         /// 
         /// <returns>The response from the DescribeRouteTables service method, as returned by AmazonEC2.</returns>
@@ -2518,8 +2500,6 @@ namespace Amazon.EC2
         /// </para>
         /// </summary>
         /// 
-        /// <param name="describeRouteTablesRequest">Container for the necessary parameters to execute the DescribeRouteTables service method on
-        /// AmazonEC2.</param>
         /// 
         /// <returns>The response from the DescribeRouteTables service method, as returned by AmazonEC2.</returns>
 		DescribeRouteTablesResponse DescribeRouteTables();
@@ -2531,7 +2511,7 @@ namespace Amazon.EC2
         /// group that does not exist, a fault is returned. </para>
         /// </summary>
         /// 
-        /// <param name="describeSecurityGroupsRequest">Container for the necessary parameters to execute the DescribeSecurityGroups service method on
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSecurityGroups service method on
         /// AmazonEC2.</param>
         /// 
         /// <returns>The response from the DescribeSecurityGroups service method, as returned by AmazonEC2.</returns>
@@ -2555,8 +2535,6 @@ namespace Amazon.EC2
         /// group that does not exist, a fault is returned. </para>
         /// </summary>
         /// 
-        /// <param name="describeSecurityGroupsRequest">Container for the necessary parameters to execute the DescribeSecurityGroups service method on
-        /// AmazonEC2.</param>
         /// 
         /// <returns>The response from the DescribeSecurityGroups service method, as returned by AmazonEC2.</returns>
 		DescribeSecurityGroupsResponse DescribeSecurityGroups();
@@ -2566,7 +2544,7 @@ namespace Amazon.EC2
         /// <para> Returns information about an attribute of a snapshot. Only one attribute can be specified per call. </para>
         /// </summary>
         /// 
-        /// <param name="describeSnapshotAttributeRequest">Container for the necessary parameters to execute the DescribeSnapshotAttribute service
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSnapshotAttribute service
         /// method on AmazonEC2.</param>
         /// 
         /// <returns>The response from the DescribeSnapshotAttribute service method, as returned by AmazonEC2.</returns>
@@ -2591,7 +2569,7 @@ namespace Amazon.EC2
         /// explicit create volume permissions. </para>
         /// </summary>
         /// 
-        /// <param name="describeSnapshotsRequest">Container for the necessary parameters to execute the DescribeSnapshots service method on
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSnapshots service method on
         /// AmazonEC2.</param>
         /// 
         /// <returns>The response from the DescribeSnapshots service method, as returned by AmazonEC2.</returns>
@@ -2615,8 +2593,6 @@ namespace Amazon.EC2
         /// explicit create volume permissions. </para>
         /// </summary>
         /// 
-        /// <param name="describeSnapshotsRequest">Container for the necessary parameters to execute the DescribeSnapshots service method on
-        /// AmazonEC2.</param>
         /// 
         /// <returns>The response from the DescribeSnapshots service method, as returned by AmazonEC2.</returns>
 		DescribeSnapshotsResponse DescribeSnapshots();
@@ -2628,7 +2604,7 @@ namespace Amazon.EC2
         /// </para>
         /// </summary>
         /// 
-        /// <param name="describeSpotDatafeedSubscriptionRequest">Container for the necessary parameters to execute the DescribeSpotDatafeedSubscription
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSpotDatafeedSubscription
         /// service method on AmazonEC2.</param>
         /// 
         /// <returns>The response from the DescribeSpotDatafeedSubscription service method, as returned by AmazonEC2.</returns>
@@ -2652,8 +2628,6 @@ namespace Amazon.EC2
         /// </para>
         /// </summary>
         /// 
-        /// <param name="describeSpotDatafeedSubscriptionRequest">Container for the necessary parameters to execute the DescribeSpotDatafeedSubscription
-        /// service method on AmazonEC2.</param>
         /// 
         /// <returns>The response from the DescribeSpotDatafeedSubscription service method, as returned by AmazonEC2.</returns>
 		DescribeSpotDatafeedSubscriptionResponse DescribeSpotDatafeedSubscription();
@@ -2662,20 +2636,20 @@ namespace Amazon.EC2
         /// <summary>
         /// <para> Describes Spot Instance requests. Spot Instances are instances that Amazon EC2 starts on your behalf when the maximum price that you
         /// specify exceeds the current Spot Price. Amazon EC2 periodically sets the Spot Price based on available Spot Instance capacity and current
-        /// spot instance requests. For conceptual information about Spot Instances, refer to the Amazon Elastic Compute Cloud Developer Guide or Amazon
-        /// Elastic Compute Cloud User Guide. </para> <para> You can filter the results to return information only about Spot Instance requests that
-        /// match criteria you specify. For example, you could get information about requests where the Spot Price you specified is a certain value (you
-        /// can't use greater than or less than comparison, but you can use <c>*</c> and <c>?</c> wildcards). You can specify multiple values for a
-        /// filter. A Spot Instance request must match at least one of the specified values for it to be included in the results. </para> <para> You can
-        /// specify multiple filters (e.g., the Spot Price is equal to a particular value, and the instance type is <c>m1.small</c> ). The result
-        /// includes information for a particular request only if it matches all your filters. If there's no match, no special message is returned; the
-        /// response is simply empty. </para> <para> You can use wildcards with the filter values: an asterisk matches zero or more characters, and
-        /// <c>?</c> matches exactly one character. You can escape special characters using a backslash before the character. For example, a value of
-        /// <c>\*amazon\?\\</c> searches for the literal string <c>*amazon?\</c> .
+        /// spot instance requests. For conceptual information about Spot Instances, refer to the <a href="http://docs.amazonwebservices.com/AWSEC2/2010-08-31/DeveloperGuide/"> Amazon Elastic Compute Cloud Developer Guide</a> or <a href="http://docs.amazonwebservices.com/AWSEC2/2010-08-31/UserGuide/"> Amazon Elastic Compute Cloud User Guide</a> .
+        /// </para> <para> You can filter the results to return information only about Spot Instance requests that match criteria you specify. For
+        /// example, you could get information about requests where the Spot Price you specified is a certain value (you can't use greater than or less
+        /// than comparison, but you can use <c>*</c> and <c>?</c> wildcards). You can specify multiple values for a filter. A Spot Instance request
+        /// must match at least one of the specified values for it to be included in the results. </para> <para> You can specify multiple filters (e.g.,
+        /// the Spot Price is equal to a particular value, and the instance type is <c>m1.small</c> ). The result includes information for a particular
+        /// request only if it matches all your filters. If there's no match, no special message is returned; the response is simply empty. </para>
+        /// <para> You can use wildcards with the filter values: an asterisk matches zero or more characters, and <c>?</c> matches exactly one
+        /// character. You can escape special characters using a backslash before the character. For example, a value of <c>\*amazon\?\\</c> searches
+        /// for the literal string <c>*amazon?\</c> .
         /// </para>
         /// </summary>
         /// 
-        /// <param name="describeSpotInstanceRequestsRequest">Container for the necessary parameters to execute the DescribeSpotInstanceRequests service
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSpotInstanceRequests service
         /// method on AmazonEC2.</param>
         /// 
         /// <returns>The response from the DescribeSpotInstanceRequests service method, as returned by AmazonEC2.</returns>
@@ -2696,21 +2670,19 @@ namespace Amazon.EC2
         /// <summary>
         /// <para> Describes Spot Instance requests. Spot Instances are instances that Amazon EC2 starts on your behalf when the maximum price that you
         /// specify exceeds the current Spot Price. Amazon EC2 periodically sets the Spot Price based on available Spot Instance capacity and current
-        /// spot instance requests. For conceptual information about Spot Instances, refer to the Amazon Elastic Compute Cloud Developer Guide or Amazon
-        /// Elastic Compute Cloud User Guide. </para> <para> You can filter the results to return information only about Spot Instance requests that
-        /// match criteria you specify. For example, you could get information about requests where the Spot Price you specified is a certain value (you
-        /// can't use greater than or less than comparison, but you can use <c>*</c> and <c>?</c> wildcards). You can specify multiple values for a
-        /// filter. A Spot Instance request must match at least one of the specified values for it to be included in the results. </para> <para> You can
-        /// specify multiple filters (e.g., the Spot Price is equal to a particular value, and the instance type is <c>m1.small</c> ). The result
-        /// includes information for a particular request only if it matches all your filters. If there's no match, no special message is returned; the
-        /// response is simply empty. </para> <para> You can use wildcards with the filter values: an asterisk matches zero or more characters, and
-        /// <c>?</c> matches exactly one character. You can escape special characters using a backslash before the character. For example, a value of
-        /// <c>\*amazon\?\\</c> searches for the literal string <c>*amazon?\</c> .
+        /// spot instance requests. For conceptual information about Spot Instances, refer to the <a href="http://docs.amazonwebservices.com/AWSEC2/2010-08-31/DeveloperGuide/"> Amazon Elastic Compute Cloud Developer Guide</a> or <a href="http://docs.amazonwebservices.com/AWSEC2/2010-08-31/UserGuide/"> Amazon Elastic Compute Cloud User Guide</a> .
+        /// </para> <para> You can filter the results to return information only about Spot Instance requests that match criteria you specify. For
+        /// example, you could get information about requests where the Spot Price you specified is a certain value (you can't use greater than or less
+        /// than comparison, but you can use <c>*</c> and <c>?</c> wildcards). You can specify multiple values for a filter. A Spot Instance request
+        /// must match at least one of the specified values for it to be included in the results. </para> <para> You can specify multiple filters (e.g.,
+        /// the Spot Price is equal to a particular value, and the instance type is <c>m1.small</c> ). The result includes information for a particular
+        /// request only if it matches all your filters. If there's no match, no special message is returned; the response is simply empty. </para>
+        /// <para> You can use wildcards with the filter values: an asterisk matches zero or more characters, and <c>?</c> matches exactly one
+        /// character. You can escape special characters using a backslash before the character. For example, a value of <c>\*amazon\?\\</c> searches
+        /// for the literal string <c>*amazon?\</c> .
         /// </para>
         /// </summary>
         /// 
-        /// <param name="describeSpotInstanceRequestsRequest">Container for the necessary parameters to execute the DescribeSpotInstanceRequests service
-        /// method on AmazonEC2.</param>
         /// 
         /// <returns>The response from the DescribeSpotInstanceRequests service method, as returned by AmazonEC2.</returns>
 		DescribeSpotInstanceRequestsResponse DescribeSpotInstanceRequests();
@@ -2724,7 +2696,7 @@ namespace Amazon.EC2
         /// </para>
         /// </summary>
         /// 
-        /// <param name="describeSpotPriceHistoryRequest">Container for the necessary parameters to execute the DescribeSpotPriceHistory service method
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSpotPriceHistory service method
         /// on AmazonEC2.</param>
         /// 
         /// <returns>The response from the DescribeSpotPriceHistory service method, as returned by AmazonEC2.</returns>
@@ -2750,8 +2722,6 @@ namespace Amazon.EC2
         /// </para>
         /// </summary>
         /// 
-        /// <param name="describeSpotPriceHistoryRequest">Container for the necessary parameters to execute the DescribeSpotPriceHistory service method
-        /// on AmazonEC2.</param>
         /// 
         /// <returns>The response from the DescribeSpotPriceHistory service method, as returned by AmazonEC2.</returns>
 		DescribeSpotPriceHistoryResponse DescribeSpotPriceHistory();
@@ -2765,7 +2735,7 @@ namespace Amazon.EC2
         /// is returned; the response is simply empty. The following table shows the available filters. </para>
         /// </summary>
         /// 
-        /// <param name="describeSubnetsRequest">Container for the necessary parameters to execute the DescribeSubnets service method on
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSubnets service method on
         /// AmazonEC2.</param>
         /// 
         /// <returns>The response from the DescribeSubnets service method, as returned by AmazonEC2.</returns>
@@ -2791,8 +2761,6 @@ namespace Amazon.EC2
         /// is returned; the response is simply empty. The following table shows the available filters. </para>
         /// </summary>
         /// 
-        /// <param name="describeSubnetsRequest">Container for the necessary parameters to execute the DescribeSubnets service method on
-        /// AmazonEC2.</param>
         /// 
         /// <returns>The response from the DescribeSubnets service method, as returned by AmazonEC2.</returns>
 		DescribeSubnetsResponse DescribeSubnets();
@@ -2802,7 +2770,7 @@ namespace Amazon.EC2
         /// <para> Describes the tags for the specified resources. </para>
         /// </summary>
         /// 
-        /// <param name="describeTagsRequest">Container for the necessary parameters to execute the DescribeTags service method on AmazonEC2.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTags service method on AmazonEC2.</param>
         /// 
         /// <returns>The response from the DescribeTags service method, as returned by AmazonEC2.</returns>
 		DescribeTagsResponse DescribeTags(DescribeTagsRequest request);
@@ -2823,7 +2791,6 @@ namespace Amazon.EC2
         /// <para> Describes the tags for the specified resources. </para>
         /// </summary>
         /// 
-        /// <param name="describeTagsRequest">Container for the necessary parameters to execute the DescribeTags service method on AmazonEC2.</param>
         /// 
         /// <returns>The response from the DescribeTags service method, as returned by AmazonEC2.</returns>
 		DescribeTagsResponse DescribeTags();
@@ -2832,7 +2799,7 @@ namespace Amazon.EC2
         /// <summary>
         /// </summary>
         /// 
-        /// <param name="describeVolumeAttributeRequest">Container for the necessary parameters to execute the DescribeVolumeAttribute service method on
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVolumeAttribute service method on
         /// AmazonEC2.</param>
         /// 
         /// <returns>The response from the DescribeVolumeAttribute service method, as returned by AmazonEC2.</returns>
@@ -2856,7 +2823,7 @@ namespace Amazon.EC2
         /// been deleted are not described. </para>
         /// </summary>
         /// 
-        /// <param name="describeVolumesRequest">Container for the necessary parameters to execute the DescribeVolumes service method on
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVolumes service method on
         /// AmazonEC2.</param>
         /// 
         /// <returns>The response from the DescribeVolumes service method, as returned by AmazonEC2.</returns>
@@ -2879,8 +2846,6 @@ namespace Amazon.EC2
         /// been deleted are not described. </para>
         /// </summary>
         /// 
-        /// <param name="describeVolumesRequest">Container for the necessary parameters to execute the DescribeVolumes service method on
-        /// AmazonEC2.</param>
         /// 
         /// <returns>The response from the DescribeVolumes service method, as returned by AmazonEC2.</returns>
 		DescribeVolumesResponse DescribeVolumes();
@@ -2890,7 +2855,7 @@ namespace Amazon.EC2
         /// <para> Describes the status of a volume. </para>
         /// </summary>
         /// 
-        /// <param name="describeVolumeStatusRequest">Container for the necessary parameters to execute the DescribeVolumeStatus service method on
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVolumeStatus service method on
         /// AmazonEC2.</param>
         /// 
         /// <returns>The response from the DescribeVolumeStatus service method, as returned by AmazonEC2.</returns>
@@ -2912,8 +2877,6 @@ namespace Amazon.EC2
         /// <para> Describes the status of a volume. </para>
         /// </summary>
         /// 
-        /// <param name="describeVolumeStatusRequest">Container for the necessary parameters to execute the DescribeVolumeStatus service method on
-        /// AmazonEC2.</param>
         /// 
         /// <returns>The response from the DescribeVolumeStatus service method, as returned by AmazonEC2.</returns>
 		DescribeVolumeStatusResponse DescribeVolumeStatus();
@@ -2922,7 +2885,7 @@ namespace Amazon.EC2
         /// <summary>
         /// </summary>
         /// 
-        /// <param name="describeVpcAttributeRequest">Container for the necessary parameters to execute the DescribeVpcAttribute service method on
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVpcAttribute service method on
         /// AmazonEC2.</param>
         /// 
         /// <returns>The response from the DescribeVpcAttribute service method, as returned by AmazonEC2.</returns>
@@ -2949,7 +2912,7 @@ namespace Amazon.EC2
         /// match, no special message is returned; the response is simply empty. The following table shows the available filters. </para>
         /// </summary>
         /// 
-        /// <param name="describeVpcsRequest">Container for the necessary parameters to execute the DescribeVpcs service method on AmazonEC2.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVpcs service method on AmazonEC2.</param>
         /// 
         /// <returns>The response from the DescribeVpcs service method, as returned by AmazonEC2.</returns>
 		DescribeVpcsResponse DescribeVpcs(DescribeVpcsRequest request);
@@ -2974,7 +2937,6 @@ namespace Amazon.EC2
         /// match, no special message is returned; the response is simply empty. The following table shows the available filters. </para>
         /// </summary>
         /// 
-        /// <param name="describeVpcsRequest">Container for the necessary parameters to execute the DescribeVpcs service method on AmazonEC2.</param>
         /// 
         /// <returns>The response from the DescribeVpcs service method, as returned by AmazonEC2.</returns>
 		DescribeVpcsResponse DescribeVpcs();
@@ -2990,7 +2952,7 @@ namespace Amazon.EC2
         /// the response is simply empty. The following table shows the available filters. </para>
         /// </summary>
         /// 
-        /// <param name="describeVpnConnectionsRequest">Container for the necessary parameters to execute the DescribeVpnConnections service method on
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVpnConnections service method on
         /// AmazonEC2.</param>
         /// 
         /// <returns>The response from the DescribeVpnConnections service method, as returned by AmazonEC2.</returns>
@@ -3018,8 +2980,6 @@ namespace Amazon.EC2
         /// the response is simply empty. The following table shows the available filters. </para>
         /// </summary>
         /// 
-        /// <param name="describeVpnConnectionsRequest">Container for the necessary parameters to execute the DescribeVpnConnections service method on
-        /// AmazonEC2.</param>
         /// 
         /// <returns>The response from the DescribeVpnConnections service method, as returned by AmazonEC2.</returns>
 		DescribeVpnConnectionsResponse DescribeVpnConnections();
@@ -3034,7 +2994,7 @@ namespace Amazon.EC2
         /// shows the available filters. </para>
         /// </summary>
         /// 
-        /// <param name="describeVpnGatewaysRequest">Container for the necessary parameters to execute the DescribeVpnGateways service method on
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVpnGateways service method on
         /// AmazonEC2.</param>
         /// 
         /// <returns>The response from the DescribeVpnGateways service method, as returned by AmazonEC2.</returns>
@@ -3061,8 +3021,6 @@ namespace Amazon.EC2
         /// shows the available filters. </para>
         /// </summary>
         /// 
-        /// <param name="describeVpnGatewaysRequest">Container for the necessary parameters to execute the DescribeVpnGateways service method on
-        /// AmazonEC2.</param>
         /// 
         /// <returns>The response from the DescribeVpnGateways service method, as returned by AmazonEC2.</returns>
 		DescribeVpnGatewaysResponse DescribeVpnGateways();
@@ -3075,7 +3033,7 @@ namespace Amazon.EC2
         /// Cloud User Guide. </para>
         /// </summary>
         /// 
-        /// <param name="detachInternetGatewayRequest">Container for the necessary parameters to execute the DetachInternetGateway service method on
+        /// <param name="request">Container for the necessary parameters to execute the DetachInternetGateway service method on
         /// AmazonEC2.</param>
 		DetachInternetGatewayResponse DetachInternetGateway(DetachInternetGatewayRequest request);
 
@@ -3095,7 +3053,7 @@ namespace Amazon.EC2
         /// <summary>
         /// </summary>
         /// 
-        /// <param name="detachNetworkInterfaceRequest">Container for the necessary parameters to execute the DetachNetworkInterface service method on
+        /// <param name="request">Container for the necessary parameters to execute the DetachNetworkInterface service method on
         /// AmazonEC2.</param>
 		DetachNetworkInterfaceResponse DetachNetworkInterface(DetachNetworkInterfaceRequest request);
 
@@ -3116,7 +3074,7 @@ namespace Amazon.EC2
         /// <para> Detach a previously attached volume from a running instance. </para>
         /// </summary>
         /// 
-        /// <param name="detachVolumeRequest">Container for the necessary parameters to execute the DetachVolume service method on AmazonEC2.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DetachVolume service method on AmazonEC2.</param>
         /// 
         /// <returns>The response from the DetachVolume service method, as returned by AmazonEC2.</returns>
 		DetachVolumeResponse DetachVolume(DetachVolumeRequest request);
@@ -3141,7 +3099,7 @@ namespace Amazon.EC2
         /// VPN gateway. </para>
         /// </summary>
         /// 
-        /// <param name="detachVpnGatewayRequest">Container for the necessary parameters to execute the DetachVpnGateway service method on
+        /// <param name="request">Container for the necessary parameters to execute the DetachVpnGateway service method on
         /// AmazonEC2.</param>
 		DetachVpnGatewayResponse DetachVpnGateway(DetachVpnGatewayRequest request);
 
@@ -3161,7 +3119,7 @@ namespace Amazon.EC2
         /// <summary>
         /// </summary>
         /// 
-        /// <param name="disableVgwRoutePropagationRequest">Container for the necessary parameters to execute the DisableVgwRoutePropagation service
+        /// <param name="request">Container for the necessary parameters to execute the DisableVgwRoutePropagation service
         /// method on AmazonEC2.</param>
 		DisableVgwRoutePropagationResponse DisableVgwRoutePropagation(DisableVgwRoutePropagationRequest request);
 
@@ -3183,7 +3141,7 @@ namespace Amazon.EC2
         /// an idempotent operation. If you enter it more than once, Amazon EC2 does not return an error. </para>
         /// </summary>
         /// 
-        /// <param name="disassociateAddressRequest">Container for the necessary parameters to execute the DisassociateAddress service method on
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateAddress service method on
         /// AmazonEC2.</param>
 		DisassociateAddressResponse DisassociateAddress(DisassociateAddressRequest request);
 
@@ -3204,18 +3162,16 @@ namespace Amazon.EC2
         /// an idempotent operation. If you enter it more than once, Amazon EC2 does not return an error. </para>
         /// </summary>
         /// 
-        /// <param name="disassociateAddressRequest">Container for the necessary parameters to execute the DisassociateAddress service method on
-        /// AmazonEC2.</param>
 		DisassociateAddressResponse DisassociateAddress();
  
 
         /// <summary>
         /// <para> Disassociates a subnet from a route table. </para> <para> After you perform this action, the subnet no longer uses the routes in the
-        /// route table. Instead it uses the routes in the VPC's main route table. For more information about route tables, go to Route Tables in the
-        /// Amazon Virtual Private Cloud User Guide. </para>
+        /// route table. Instead it uses the routes in the VPC's main route table. For more information about route tables, go to <a href="http://docs.amazonwebservices.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route Tables</a> in the Amazon Virtual Private
+        /// Cloud User Guide. </para>
         /// </summary>
         /// 
-        /// <param name="disassociateRouteTableRequest">Container for the necessary parameters to execute the DisassociateRouteTable service method on
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateRouteTable service method on
         /// AmazonEC2.</param>
 		DisassociateRouteTableResponse DisassociateRouteTable(DisassociateRouteTableRequest request);
 
@@ -3235,7 +3191,7 @@ namespace Amazon.EC2
         /// <summary>
         /// </summary>
         /// 
-        /// <param name="enableVgwRoutePropagationRequest">Container for the necessary parameters to execute the EnableVgwRoutePropagation service
+        /// <param name="request">Container for the necessary parameters to execute the EnableVgwRoutePropagation service
         /// method on AmazonEC2.</param>
 		EnableVgwRoutePropagationResponse EnableVgwRoutePropagation(EnableVgwRoutePropagationRequest request);
 
@@ -3256,7 +3212,7 @@ namespace Amazon.EC2
         /// <para> Enable IO on the volume after an event has occured. </para>
         /// </summary>
         /// 
-        /// <param name="enableVolumeIORequest">Container for the necessary parameters to execute the EnableVolumeIO service method on
+        /// <param name="request">Container for the necessary parameters to execute the EnableVolumeIO service method on
         /// AmazonEC2.</param>
 		EnableVolumeIOResponse EnableVolumeIO(EnableVolumeIORequest request);
 
@@ -3279,7 +3235,7 @@ namespace Amazon.EC2
         /// available for at least one hour after the most recent post. </para>
         /// </summary>
         /// 
-        /// <param name="getConsoleOutputRequest">Container for the necessary parameters to execute the GetConsoleOutput service method on
+        /// <param name="request">Container for the necessary parameters to execute the GetConsoleOutput service method on
         /// AmazonEC2.</param>
         /// 
         /// <returns>The response from the GetConsoleOutput service method, as returned by AmazonEC2.</returns>
@@ -3304,7 +3260,7 @@ namespace Amazon.EC2
         /// The password is encrypted using the key pair that you provided. </para>
         /// </summary>
         /// 
-        /// <param name="getPasswordDataRequest">Container for the necessary parameters to execute the GetPasswordData service method on
+        /// <param name="request">Container for the necessary parameters to execute the GetPasswordData service method on
         /// AmazonEC2.</param>
         /// 
         /// <returns>The response from the GetPasswordData service method, as returned by AmazonEC2.</returns>
@@ -3326,7 +3282,7 @@ namespace Amazon.EC2
         /// <summary>
         /// </summary>
         /// 
-        /// <param name="importInstanceRequest">Container for the necessary parameters to execute the ImportInstance service method on
+        /// <param name="request">Container for the necessary parameters to execute the ImportInstance service method on
         /// AmazonEC2.</param>
         /// 
         /// <returns>The response from the ImportInstance service method, as returned by AmazonEC2.</returns>
@@ -3354,13 +3310,13 @@ namespace Amazon.EC2
         /// <ul>
         /// <li> OpenSSH public key format, </li>
         /// <li> Base64 encoded DER format. </li>
-        /// <li> SSH public key file format as specified in RFC4716 .
+        /// <li> SSH public key file format as specified in <a href="http://tools.ietf.org/html/rfc4716"> RFC4716 </a> .
         /// </li>
         /// 
         /// </ul>
         /// </summary>
         /// 
-        /// <param name="importKeyPairRequest">Container for the necessary parameters to execute the ImportKeyPair service method on AmazonEC2.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ImportKeyPair service method on AmazonEC2.</param>
         /// 
         /// <returns>The response from the ImportKeyPair service method, as returned by AmazonEC2.</returns>
 		ImportKeyPairResponse ImportKeyPair(ImportKeyPairRequest request);
@@ -3381,7 +3337,7 @@ namespace Amazon.EC2
         /// <summary>
         /// </summary>
         /// 
-        /// <param name="importVolumeRequest">Container for the necessary parameters to execute the ImportVolume service method on AmazonEC2.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ImportVolume service method on AmazonEC2.</param>
         /// 
         /// <returns>The response from the ImportVolume service method, as returned by AmazonEC2.</returns>
 		ImportVolumeResponse ImportVolume(ImportVolumeRequest request);
@@ -3401,7 +3357,6 @@ namespace Amazon.EC2
         /// <summary>
         /// </summary>
         /// 
-        /// <param name="importVolumeRequest">Container for the necessary parameters to execute the ImportVolume service method on AmazonEC2.</param>
         /// 
         /// <returns>The response from the ImportVolume service method, as returned by AmazonEC2.</returns>
 		ImportVolumeResponse ImportVolume();
@@ -3411,7 +3366,7 @@ namespace Amazon.EC2
         /// <para> The ModifyImageAttribute operation modifies an attribute of an AMI. </para>
         /// </summary>
         /// 
-        /// <param name="modifyImageAttributeRequest">Container for the necessary parameters to execute the ModifyImageAttribute service method on
+        /// <param name="request">Container for the necessary parameters to execute the ModifyImageAttribute service method on
         /// AmazonEC2.</param>
 		ModifyImageAttributeResponse ModifyImageAttribute(ModifyImageAttributeRequest request);
 
@@ -3432,7 +3387,7 @@ namespace Amazon.EC2
         /// <para> Modifies an attribute of an instance. </para>
         /// </summary>
         /// 
-        /// <param name="modifyInstanceAttributeRequest">Container for the necessary parameters to execute the ModifyInstanceAttribute service method on
+        /// <param name="request">Container for the necessary parameters to execute the ModifyInstanceAttribute service method on
         /// AmazonEC2.</param>
 		ModifyInstanceAttributeResponse ModifyInstanceAttribute(ModifyInstanceAttributeRequest request);
 
@@ -3452,7 +3407,7 @@ namespace Amazon.EC2
         /// <summary>
         /// </summary>
         /// 
-        /// <param name="modifyNetworkInterfaceAttributeRequest">Container for the necessary parameters to execute the ModifyNetworkInterfaceAttribute
+        /// <param name="request">Container for the necessary parameters to execute the ModifyNetworkInterfaceAttribute
         /// service method on AmazonEC2.</param>
 		ModifyNetworkInterfaceAttributeResponse ModifyNetworkInterfaceAttribute(ModifyNetworkInterfaceAttributeRequest request);
 
@@ -3470,10 +3425,34 @@ namespace Amazon.EC2
  
 
         /// <summary>
+        /// <para> The ModifyReservedInstances operation modifies the Availability Zone, instance count, instance type, or network platform (EC2-Classic
+        /// or EC2-VPC) of your Reserved Instances. </para>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyReservedInstances service method on
+        /// AmazonEC2.</param>
+        /// 
+        /// <returns>The response from the ModifyReservedInstances service method, as returned by AmazonEC2.</returns>
+		ModifyReservedInstancesResponse ModifyReservedInstances(ModifyReservedInstancesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyReservedInstances operation.
+        /// <seealso cref="Amazon.EC2.IAmazonEC2.ModifyReservedInstances"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyReservedInstances operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+		Task<ModifyReservedInstancesResponse> ModifyReservedInstancesAsync(ModifyReservedInstancesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+ 
+
+        /// <summary>
         /// <para> Adds or remove permission settings for the specified snapshot. </para>
         /// </summary>
         /// 
-        /// <param name="modifySnapshotAttributeRequest">Container for the necessary parameters to execute the ModifySnapshotAttribute service method on
+        /// <param name="request">Container for the necessary parameters to execute the ModifySnapshotAttribute service method on
         /// AmazonEC2.</param>
 		ModifySnapshotAttributeResponse ModifySnapshotAttribute(ModifySnapshotAttributeRequest request);
 
@@ -3493,7 +3472,7 @@ namespace Amazon.EC2
         /// <summary>
         /// </summary>
         /// 
-        /// <param name="modifyVolumeAttributeRequest">Container for the necessary parameters to execute the ModifyVolumeAttribute service method on
+        /// <param name="request">Container for the necessary parameters to execute the ModifyVolumeAttribute service method on
         /// AmazonEC2.</param>
 		ModifyVolumeAttributeResponse ModifyVolumeAttribute(ModifyVolumeAttributeRequest request);
 
@@ -3513,7 +3492,7 @@ namespace Amazon.EC2
         /// <summary>
         /// </summary>
         /// 
-        /// <param name="modifyVpcAttributeRequest">Container for the necessary parameters to execute the ModifyVpcAttribute service method on
+        /// <param name="request">Container for the necessary parameters to execute the ModifyVpcAttribute service method on
         /// AmazonEC2.</param>
 		ModifyVpcAttributeResponse ModifyVpcAttribute(ModifyVpcAttributeRequest request);
 
@@ -3534,7 +3513,7 @@ namespace Amazon.EC2
         /// <para> Enables monitoring for a running instance. </para>
         /// </summary>
         /// 
-        /// <param name="monitorInstancesRequest">Container for the necessary parameters to execute the MonitorInstances service method on
+        /// <param name="request">Container for the necessary parameters to execute the MonitorInstances service method on
         /// AmazonEC2.</param>
         /// 
         /// <returns>The response from the MonitorInstances service method, as returned by AmazonEC2.</returns>
@@ -3559,7 +3538,7 @@ namespace Amazon.EC2
         /// a lower usage rate for the actual time used. </para>
         /// </summary>
         /// 
-        /// <param name="purchaseReservedInstancesOfferingRequest">Container for the necessary parameters to execute the
+        /// <param name="request">Container for the necessary parameters to execute the
         /// PurchaseReservedInstancesOffering service method on AmazonEC2.</param>
         /// 
         /// <returns>The response from the PurchaseReservedInstancesOffering service method, as returned by AmazonEC2.</returns>
@@ -3584,7 +3563,7 @@ namespace Amazon.EC2
         /// terminated instances are ignored. </para>
         /// </summary>
         /// 
-        /// <param name="rebootInstancesRequest">Container for the necessary parameters to execute the RebootInstances service method on
+        /// <param name="request">Container for the necessary parameters to execute the RebootInstances service method on
         /// AmazonEC2.</param>
 		RebootInstancesResponse RebootInstances(RebootInstancesRequest request);
 
@@ -3610,7 +3589,7 @@ namespace Amazon.EC2
         /// register the new image. For more information, see DeregisterImage. </para>
         /// </summary>
         /// 
-        /// <param name="registerImageRequest">Container for the necessary parameters to execute the RegisterImage service method on AmazonEC2.</param>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterImage service method on AmazonEC2.</param>
         /// 
         /// <returns>The response from the RegisterImage service method, as returned by AmazonEC2.</returns>
 		RegisterImageResponse RegisterImage(RegisterImageRequest request);
@@ -3636,7 +3615,6 @@ namespace Amazon.EC2
         /// register the new image. For more information, see DeregisterImage. </para>
         /// </summary>
         /// 
-        /// <param name="registerImageRequest">Container for the necessary parameters to execute the RegisterImage service method on AmazonEC2.</param>
         /// 
         /// <returns>The response from the RegisterImage service method, as returned by AmazonEC2.</returns>
 		RegisterImageResponse RegisterImage();
@@ -3651,7 +3629,7 @@ namespace Amazon.EC2
         /// error. </para>
         /// </summary>
         /// 
-        /// <param name="releaseAddressRequest">Container for the necessary parameters to execute the ReleaseAddress service method on
+        /// <param name="request">Container for the necessary parameters to execute the ReleaseAddress service method on
         /// AmazonEC2.</param>
 		ReleaseAddressResponse ReleaseAddress(ReleaseAddressRequest request);
 
@@ -3676,8 +3654,6 @@ namespace Amazon.EC2
         /// error. </para>
         /// </summary>
         /// 
-        /// <param name="releaseAddressRequest">Container for the necessary parameters to execute the ReleaseAddress service method on
-        /// AmazonEC2.</param>
 		ReleaseAddressResponse ReleaseAddress();
  
 
@@ -3686,7 +3662,7 @@ namespace Amazon.EC2
         /// default network ACL. For more information about network ACLs, go to Network ACLs in the Amazon Virtual Private Cloud User Guide. </para>
         /// </summary>
         /// 
-        /// <param name="replaceNetworkAclAssociationRequest">Container for the necessary parameters to execute the ReplaceNetworkAclAssociation service
+        /// <param name="request">Container for the necessary parameters to execute the ReplaceNetworkAclAssociation service
         /// method on AmazonEC2.</param>
         /// 
         /// <returns>The response from the ReplaceNetworkAclAssociation service method, as returned by AmazonEC2.</returns>
@@ -3710,7 +3686,7 @@ namespace Amazon.EC2
         /// Private Cloud User Guide. </para>
         /// </summary>
         /// 
-        /// <param name="replaceNetworkAclEntryRequest">Container for the necessary parameters to execute the ReplaceNetworkAclEntry service method on
+        /// <param name="request">Container for the necessary parameters to execute the ReplaceNetworkAclEntry service method on
         /// AmazonEC2.</param>
 		ReplaceNetworkAclEntryResponse ReplaceNetworkAclEntry(ReplaceNetworkAclEntryRequest request);
 
@@ -3728,11 +3704,11 @@ namespace Amazon.EC2
  
 
         /// <summary>
-        /// <para> Replaces an existing route within a route table in a VPC. For more information about route tables, go to Route Tables in the Amazon
-        /// Virtual Private Cloud User Guide. </para>
+        /// <para> Replaces an existing route within a route table in a VPC. For more information about route tables, go to <a href="http://docs.amazonwebservices.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route Tables</a> in the Amazon Virtual Private
+        /// Cloud User Guide. </para>
         /// </summary>
         /// 
-        /// <param name="replaceRouteRequest">Container for the necessary parameters to execute the ReplaceRoute service method on AmazonEC2.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ReplaceRoute service method on AmazonEC2.</param>
 		ReplaceRouteResponse ReplaceRoute(ReplaceRouteRequest request);
 
         /// <summary>
@@ -3750,12 +3726,12 @@ namespace Amazon.EC2
 
         /// <summary>
         /// <para> Changes the route table associated with a given subnet in a VPC. After you execute this action, the subnet uses the routes in the new
-        /// route table it's associated with. For more information about route tables, go to Route Tables in the Amazon Virtual Private Cloud User
-        /// Guide. </para> <para> You can also use this to change which table is the main route table in the VPC. You just specify the main route
-        /// table's association ID and the route table that you want to be the new main route table. </para>
+        /// route table it's associated with. For more information about route tables, go to <a href="http://docs.amazonwebservices.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route Tables</a> in the Amazon Virtual Private
+        /// Cloud User Guide. </para> <para> You can also use this to change which table is the main route table in the VPC. You just specify the main
+        /// route table's association ID and the route table that you want to be the new main route table. </para>
         /// </summary>
         /// 
-        /// <param name="replaceRouteTableAssociationRequest">Container for the necessary parameters to execute the ReplaceRouteTableAssociation service
+        /// <param name="request">Container for the necessary parameters to execute the ReplaceRouteTableAssociation service
         /// method on AmazonEC2.</param>
         /// 
         /// <returns>The response from the ReplaceRouteTableAssociation service method, as returned by AmazonEC2.</returns>
@@ -3777,7 +3753,7 @@ namespace Amazon.EC2
         /// <summary>
         /// </summary>
         /// 
-        /// <param name="reportInstanceStatusRequest">Container for the necessary parameters to execute the ReportInstanceStatus service method on
+        /// <param name="request">Container for the necessary parameters to execute the ReportInstanceStatus service method on
         /// AmazonEC2.</param>
 		ReportInstanceStatusResponse ReportInstanceStatus(ReportInstanceStatusRequest request);
 
@@ -3796,8 +3772,6 @@ namespace Amazon.EC2
         /// <summary>
         /// </summary>
         /// 
-        /// <param name="reportInstanceStatusRequest">Container for the necessary parameters to execute the ReportInstanceStatus service method on
-        /// AmazonEC2.</param>
 		ReportInstanceStatusResponse ReportInstanceStatus();
  
 
@@ -3808,7 +3782,7 @@ namespace Amazon.EC2
         /// Cloud Developer Guide or Amazon Elastic Compute Cloud User Guide. </para>
         /// </summary>
         /// 
-        /// <param name="requestSpotInstancesRequest">Container for the necessary parameters to execute the RequestSpotInstances service method on
+        /// <param name="request">Container for the necessary parameters to execute the RequestSpotInstances service method on
         /// AmazonEC2.</param>
         /// 
         /// <returns>The response from the RequestSpotInstances service method, as returned by AmazonEC2.</returns>
@@ -3832,7 +3806,7 @@ namespace Amazon.EC2
         /// attribute cannot be reset. </para>
         /// </summary>
         /// 
-        /// <param name="resetImageAttributeRequest">Container for the necessary parameters to execute the ResetImageAttribute service method on
+        /// <param name="request">Container for the necessary parameters to execute the ResetImageAttribute service method on
         /// AmazonEC2.</param>
 		ResetImageAttributeResponse ResetImageAttribute(ResetImageAttributeRequest request);
 
@@ -3853,7 +3827,7 @@ namespace Amazon.EC2
         /// <para> Resets an attribute of an instance to its default value. </para>
         /// </summary>
         /// 
-        /// <param name="resetInstanceAttributeRequest">Container for the necessary parameters to execute the ResetInstanceAttribute service method on
+        /// <param name="request">Container for the necessary parameters to execute the ResetInstanceAttribute service method on
         /// AmazonEC2.</param>
 		ResetInstanceAttributeResponse ResetInstanceAttribute(ResetInstanceAttributeRequest request);
 
@@ -3873,7 +3847,7 @@ namespace Amazon.EC2
         /// <summary>
         /// </summary>
         /// 
-        /// <param name="resetNetworkInterfaceAttributeRequest">Container for the necessary parameters to execute the ResetNetworkInterfaceAttribute
+        /// <param name="request">Container for the necessary parameters to execute the ResetNetworkInterfaceAttribute
         /// service method on AmazonEC2.</param>
 		ResetNetworkInterfaceAttributeResponse ResetNetworkInterfaceAttribute(ResetNetworkInterfaceAttributeRequest request);
 
@@ -3894,7 +3868,7 @@ namespace Amazon.EC2
         /// <para> Resets permission settings for the specified snapshot. </para>
         /// </summary>
         /// 
-        /// <param name="resetSnapshotAttributeRequest">Container for the necessary parameters to execute the ResetSnapshotAttribute service method on
+        /// <param name="request">Container for the necessary parameters to execute the ResetSnapshotAttribute service method on
         /// AmazonEC2.</param>
 		ResetSnapshotAttributeResponse ResetSnapshotAttribute(ResetSnapshotAttributeRequest request);
 
@@ -3921,7 +3895,7 @@ namespace Amazon.EC2
         /// However, a small delay might occur. </para>
         /// </summary>
         /// 
-        /// <param name="revokeSecurityGroupEgressRequest">Container for the necessary parameters to execute the RevokeSecurityGroupEgress service
+        /// <param name="request">Container for the necessary parameters to execute the RevokeSecurityGroupEgress service
         /// method on AmazonEC2.</param>
 		RevokeSecurityGroupEgressResponse RevokeSecurityGroupEgress(RevokeSecurityGroupEgressRequest request);
 
@@ -3946,7 +3920,7 @@ namespace Amazon.EC2
         /// the number of instances in the group, a small delay might occur. </para>
         /// </summary>
         /// 
-        /// <param name="revokeSecurityGroupIngressRequest">Container for the necessary parameters to execute the RevokeSecurityGroupIngress service
+        /// <param name="request">Container for the necessary parameters to execute the RevokeSecurityGroupIngress service
         /// method on AmazonEC2.</param>
 		RevokeSecurityGroupIngressResponse RevokeSecurityGroupIngress(RevokeSecurityGroupIngressRequest request);
 
@@ -3970,8 +3944,6 @@ namespace Amazon.EC2
         /// the number of instances in the group, a small delay might occur. </para>
         /// </summary>
         /// 
-        /// <param name="revokeSecurityGroupIngressRequest">Container for the necessary parameters to execute the RevokeSecurityGroupIngress service
-        /// method on AmazonEC2.</param>
 		RevokeSecurityGroupIngressResponse RevokeSecurityGroupIngress();
  
 
@@ -3996,7 +3968,7 @@ namespace Amazon.EC2
         /// Mappings. </para>
         /// </summary>
         /// 
-        /// <param name="runInstancesRequest">Container for the necessary parameters to execute the RunInstances service method on AmazonEC2.</param>
+        /// <param name="request">Container for the necessary parameters to execute the RunInstances service method on AmazonEC2.</param>
         /// 
         /// <returns>The response from the RunInstances service method, as returned by AmazonEC2.</returns>
 		RunInstancesResponse RunInstances(RunInstancesRequest request);
@@ -4022,7 +3994,7 @@ namespace Amazon.EC2
         /// store as its root device returns an error. </para>
         /// </summary>
         /// 
-        /// <param name="startInstancesRequest">Container for the necessary parameters to execute the StartInstances service method on
+        /// <param name="request">Container for the necessary parameters to execute the StartInstances service method on
         /// AmazonEC2.</param>
         /// 
         /// <returns>The response from the StartInstances service method, as returned by AmazonEC2.</returns>
@@ -4050,7 +4022,7 @@ namespace Amazon.EC2
         /// instance store as its root device returns an error. </para>
         /// </summary>
         /// 
-        /// <param name="stopInstancesRequest">Container for the necessary parameters to execute the StopInstances service method on AmazonEC2.</param>
+        /// <param name="request">Container for the necessary parameters to execute the StopInstances service method on AmazonEC2.</param>
         /// 
         /// <returns>The response from the StopInstances service method, as returned by AmazonEC2.</returns>
 		StopInstancesResponse StopInstances(StopInstancesRequest request);
@@ -4074,7 +4046,7 @@ namespace Amazon.EC2
         /// </para>
         /// </summary>
         /// 
-        /// <param name="terminateInstancesRequest">Container for the necessary parameters to execute the TerminateInstances service method on
+        /// <param name="request">Container for the necessary parameters to execute the TerminateInstances service method on
         /// AmazonEC2.</param>
         /// 
         /// <returns>The response from the TerminateInstances service method, as returned by AmazonEC2.</returns>
@@ -4096,7 +4068,7 @@ namespace Amazon.EC2
         /// <summary>
         /// </summary>
         /// 
-        /// <param name="unassignPrivateIpAddressesRequest">Container for the necessary parameters to execute the UnassignPrivateIpAddresses service
+        /// <param name="request">Container for the necessary parameters to execute the UnassignPrivateIpAddresses service
         /// method on AmazonEC2.</param>
 		UnassignPrivateIpAddressesResponse UnassignPrivateIpAddresses(UnassignPrivateIpAddressesRequest request);
 
@@ -4117,7 +4089,7 @@ namespace Amazon.EC2
         /// <para> Disables monitoring for a running instance. </para>
         /// </summary>
         /// 
-        /// <param name="unmonitorInstancesRequest">Container for the necessary parameters to execute the UnmonitorInstances service method on
+        /// <param name="request">Container for the necessary parameters to execute the UnmonitorInstances service method on
         /// AmazonEC2.</param>
         /// 
         /// <returns>The response from the UnmonitorInstances service method, as returned by AmazonEC2.</returns>

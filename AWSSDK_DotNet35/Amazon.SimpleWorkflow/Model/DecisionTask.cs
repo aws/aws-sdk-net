@@ -17,13 +17,14 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using Amazon.Runtime;
 
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
     /// <para> A structure that represents a decision task. Decision tasks are sent to deciders in order for them to make decisions. </para>
     /// </summary>
-    public class DecisionTask
+    public partial class DecisionTask : AmazonWebServiceResponse
     {
         
         private string taskToken;

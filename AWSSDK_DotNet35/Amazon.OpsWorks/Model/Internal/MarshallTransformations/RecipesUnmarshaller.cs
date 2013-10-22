@@ -33,6 +33,9 @@
 
         public Recipes Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonToken.Null)
+                return null;
+
             Recipes recipes = new Recipes();
 
         

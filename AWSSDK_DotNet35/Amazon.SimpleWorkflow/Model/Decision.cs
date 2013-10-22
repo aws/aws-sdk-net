@@ -49,8 +49,9 @@ namespace Amazon.SimpleWorkflow.Model
     /// </ul>
     /// <para> <b>Access Control</b> </para> <para>If you grant permission to use <c>RespondDecisionTaskCompleted</c> , you can use IAM policies to
     /// express permissions for the list of decisions returned by this action as if they were members of the API. Treating decisions as a pseudo API
-    /// maintains a uniform conceptual model and helps keep policies readable. For details and example IAM policies, see Using IAM to Manage Access
-    /// to Amazon SWF Workflows.</para> <para> <b>Decision Failure</b> </para> <para>Decisions can fail for several reasons</para>
+    /// maintains a uniform conceptual model and helps keep policies readable. For details and example IAM policies, see <a
+    /// href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html" >Using IAM to Manage Access to Amazon SWF Workflows</a>
+    /// .</para> <para> <b>Decision Failure</b> </para> <para>Decisions can fail for several reasons</para>
     /// <ul>
     /// <li>The ordering of decisions should follow a logical flow. Some decisions might not make sense in the current context of the workflow
     /// execution and will therefore fail.</li>

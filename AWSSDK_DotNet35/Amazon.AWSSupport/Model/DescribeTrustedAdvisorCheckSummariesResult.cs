@@ -30,8 +30,9 @@ namespace Amazon.AWSSupport.Model
         private List<TrustedAdvisorCheckSummary> summaries = new List<TrustedAdvisorCheckSummary>();
 
         /// <summary>
-        /// List of <a href="API_TrustedAdvisorCheckSummary.html" title="TrustedAdvisorCheckSummary">TrustedAdvisorCheckSummary</a> objects returned by
-        /// the <a href="API_DescribeTrustedAdvisorCheckSummaries.html"
+        /// List of <a href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorCheckSummary.html"
+        /// title="TrustedAdvisorCheckSummary">TrustedAdvisorCheckSummary</a> objects returned by the <a
+        /// href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorCheckSummaries.html"
         /// title="DescribeTrustedAdvisorCheckSummaries">DescribeTrustedAdvisorCheckSummaries</a> request.
         ///  
         /// </summary>

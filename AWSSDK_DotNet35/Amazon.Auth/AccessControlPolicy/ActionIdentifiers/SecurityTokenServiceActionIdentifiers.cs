@@ -22,10 +22,11 @@ namespace Amazon.Auth.AccessControlPolicy.ActionIdentifiers
     /// The available AWS access control policy actions for AWS Security Token Service.
     /// </summary>
     /// <see cref="Amazon.Auth.AccessControlPolicy.Statement.Actions"/>
-    public class SecurityTokenServiceActionIdentifiers
+    public static class SecurityTokenServiceActionIdentifiers
     {
         public static readonly ActionIdentifier AllSecurityTokenServiceActions = new ActionIdentifier("sts:*");
 
         public static readonly ActionIdentifier GetFederationToken = new ActionIdentifier("sts:GetFederationToken");
+        public static readonly ActionIdentifier AssumeRole = new ActionIdentifier("sts:AssumeRole");
     }
 }

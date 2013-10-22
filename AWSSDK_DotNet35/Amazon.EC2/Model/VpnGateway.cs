@@ -27,8 +27,8 @@ namespace Amazon.EC2.Model
     {
         
         private string vpnGatewayId;
-        private string state;
-        private string type;
+        private VpnState state;
+        private GatewayType type;
         private string availabilityZone;
         private List<VpcAttachment> vpcAttachments = new List<VpcAttachment>();
         private List<Tag> tags = new List<Tag>();
@@ -52,8 +52,17 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Describes the current state of the VPN gateway. Valid values are <c>pending</c>, <c>available</c>, <c>deleting</c>, and <c>deleted</c>.
         ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>pending, available, deleting, deleted</description>
+        ///     </item>
+        /// </list>
+        /// </para>
         /// </summary>
-        public string State
+        public VpnState State
         {
             get { return this.state; }
             set { this.state = value; }
@@ -68,8 +77,17 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Specifies the type of VPN connection the VPN gateway supports.
         ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>ipsec.1</description>
+        ///     </item>
+        /// </list>
+        /// </para>
         /// </summary>
-        public string Type
+        public GatewayType Type
         {
             get { return this.type; }
             set { this.type = value; }

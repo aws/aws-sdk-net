@@ -25,10 +25,12 @@ namespace Amazon.ElasticBeanstalk
     ///  AWS Elastic Beanstalk <para> This is the AWS Elastic Beanstalk API Reference. This guide provides detailed information about AWS Elastic
     /// Beanstalk actions, data types, parameters, and errors. </para> <para>AWS Elastic Beanstalk is a tool that makes it easy for you to create,
     /// deploy, and manage scalable, fault-tolerant applications running on Amazon Web Services cloud resources. </para> <para> For more information
-    /// about this product, go to the AWS Elastic Beanstalk details page. The location of the lastest AWS Elastic Beanstalk WSDL is
-    /// http://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl. </para> <para> <b>Endpoints</b> </para> <para>For a list
-    /// of region-specific endpoints that AWS Elastic Beanstalk supports, go to Regions and Endpoints in the <i>Amazon Web Services Glossary</i>
-    /// .</para>
+    /// about this product, go to the <a href="http://aws.amazon.com/elasticbeanstalk/" >AWS Elastic Beanstalk</a> details page. The location of the
+    /// lastest AWS Elastic Beanstalk WSDL is <a href="http://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl"
+    /// >http://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl</a> .
+    /// </para> <para> <b>Endpoints</b> </para> <para>For a list of region-specific endpoints that AWS Elastic Beanstalk supports, go to <a
+    /// href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region" >Regions and Endpoints</a> in the <i>Amazon Web
+    /// Services Glossary</i> .</para>
     /// </summary>
     public interface IAmazonElasticBeanstalk : IDisposable
     {

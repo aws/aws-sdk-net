@@ -109,7 +109,7 @@ namespace Amazon.EC2.Model
         /// <list type="definition">
         ///     <item>
         ///         <term>Allowed Values</term>
-        ///         <description>creating, available, in-use, deleting, error</description>
+        ///         <description>creating, available, in-use, deleting, deleted, error</description>
         ///     </item>
         /// </list>
         /// </para>

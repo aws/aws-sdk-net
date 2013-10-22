@@ -52,7 +52,7 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
             return response;
         }
         
-        private void UnmarshallResult(XmlUnmarshallerContext context,DescribeStackResourcesResponse response)
+        private static void UnmarshallResult(XmlUnmarshallerContext context,DescribeStackResourcesResponse response)
         {
             
             int originalDepth = context.CurrentDepth;

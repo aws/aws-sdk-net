@@ -25,9 +25,9 @@ namespace Amazon.EC2.Model
     public class VolumeStatusInfo
     {
         
-        private string status;
+        private VolumeStatusInfoStatus status;
         private List<VolumeStatusDetails> details = new List<VolumeStatusDetails>();
-        public string Status
+        public VolumeStatusInfoStatus Status
         {
             get { return this.status; }
             set { this.status = value; }

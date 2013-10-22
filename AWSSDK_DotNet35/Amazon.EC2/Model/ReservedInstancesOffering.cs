@@ -32,10 +32,10 @@ namespace Amazon.EC2.Model
         private long? duration;
         private float? usagePrice;
         private float? fixedPrice;
-        private string productDescription;
-        private string instanceTenancy;
-        private string currencyCode;
-        private string offeringType;
+        private RIProductDescription productDescription;
+        private Tenancy instanceTenancy;
+        private CurrencyCodeValues currencyCode;
+        private OfferingTypeValues offeringType;
         private List<RecurringCharge> recurringCharges = new List<RecurringCharge>();
         private bool? marketplace;
         private List<PricingDetail> pricingDetails = new List<PricingDetail>();
@@ -148,8 +148,17 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// The Reserved Instances description (ex: Windows or Unix/Linux).
         ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>Linux/UNIX, Linux/UNIX (Amazon VPC), Windows, Windows (Amazon VPC)</description>
+        ///     </item>
+        /// </list>
+        /// </para>
         /// </summary>
-        public string ProductDescription
+        public RIProductDescription ProductDescription
         {
             get { return this.productDescription; }
             set { this.productDescription = value; }
@@ -164,8 +173,17 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// The tenancy of the reserved instance (ex: default or dedicated).
         ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>default, dedicated</description>
+        ///     </item>
+        /// </list>
+        /// </para>
         /// </summary>
-        public string InstanceTenancy
+        public Tenancy InstanceTenancy
         {
             get { return this.instanceTenancy; }
             set { this.instanceTenancy = value; }
@@ -180,8 +198,17 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// The currency of the reserved instance. Specified using ISO 4217 standard (e.g., USD, JPY).
         ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>USD</description>
+        ///     </item>
+        /// </list>
+        /// </para>
         /// </summary>
-        public string CurrencyCode
+        public CurrencyCodeValues CurrencyCode
         {
             get { return this.currencyCode; }
             set { this.currencyCode = value; }
@@ -196,8 +223,17 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// The Reserved Instance offering type.
         ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>Heavy Utilization, Medium Utilization, Light Utilization</description>
+        ///     </item>
+        /// </list>
+        /// </para>
         /// </summary>
-        public string OfferingType
+        public OfferingTypeValues OfferingType
         {
             get { return this.offeringType; }
             set { this.offeringType = value; }

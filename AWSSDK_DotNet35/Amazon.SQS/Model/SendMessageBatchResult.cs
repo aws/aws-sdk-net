@@ -22,7 +22,8 @@ using Amazon.Runtime;
 namespace Amazon.SQS.Model
 {
     /// <summary>
-    /// 
+    /// <para>For each message in the batch, the response contains a SendMessageBatchResultEntry tag if the message succeeds or a
+    /// BatchResultErrorEntry tag if the message fails.</para>
     /// </summary>
     public partial class SendMessageBatchResult : AmazonWebServiceResponse
     {
@@ -31,7 +32,7 @@ namespace Amazon.SQS.Model
         private List<BatchResultErrorEntry> failed = new List<BatchResultErrorEntry>();
 
         /// <summary>
-        /// A list of <a>SendMessageBatchResultEntry</a>s.
+        /// A list of <a>SendMessageBatchResultEntry</a> items.
         ///  
         /// </summary>
         public List<SendMessageBatchResultEntry> Successful
@@ -47,7 +48,7 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// A list of <a>BatchResultErrorEntry</a>s with the error detail about each message that could not be enqueued.
+        /// A list of <a>BatchResultErrorEntry</a> items with the error detail about each message that could not be enqueued.
         ///  
         /// </summary>
         public List<BatchResultErrorEntry> Failed

@@ -25,8 +25,10 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the AddTagsToResource operation.
-    /// <para> Adds metadata tags to a DB Instance. These tags can also be used with cost allocation reporting to track cost associated with a DB
-    /// Instance.</para> <para>For an overview on tagging DB Instances, see DB Instance Tags. </para>
+    /// <para> Adds metadata tags to an Amazon RDS resource. These tags can also be used with cost allocation reporting to track cost associated
+    /// with Amazon RDS resources, or used in Condition statement in IAM policy for Amazon RDS.</para> <para>For an overview on tagging Amazon RDS
+    /// resources, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html" >Tagging Amazon RDS Resources</a>
+    /// .</para>
     /// </summary>
     public partial class AddTagsToResourceRequest : AmazonWebServiceRequest
     {
@@ -34,8 +36,8 @@ namespace Amazon.RDS.Model
         private List<Tag> tags = new List<Tag>();
 
         /// <summary>
-        /// The DB Instance the tags will be added to. This value is an Amazon Resource Name (ARN). For information about creating an ARN, see <a
-        /// href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN"> Constructing an RDS Amazon Resource Name
+        /// The Amazon RDS resource the tags will be added to. This value is an Amazon Resource Name (ARN). For information about creating an ARN, see
+        /// <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN"> Constructing an RDS Amazon Resource Name
         /// (ARN)</a>.
         ///  
         /// </summary>
@@ -52,7 +54,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The tags to be assigned to the DB Instance.
+        /// The tags to be assigned to the Amazon RDS resource.
         ///  
         /// </summary>
         public List<Tag> Tags

@@ -35,7 +35,7 @@ namespace Amazon.AutoScaling.Model
         private bool? forceDelete;
 
         /// <summary>
-        /// The name of the Auto Scaling group.
+        /// The name of the Auto Scaling group to delete.
         ///  
         /// <para>
         /// <b>Constraints:</b>

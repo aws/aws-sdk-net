@@ -31,7 +31,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         private string nextMarker;
 
         /// <summary>
-        /// A list of LoadBalancer description structures.
+        /// A list of load balancer description structures.
         ///  
         /// </summary>
         public List<LoadBalancerDescription> LoadBalancerDescriptions

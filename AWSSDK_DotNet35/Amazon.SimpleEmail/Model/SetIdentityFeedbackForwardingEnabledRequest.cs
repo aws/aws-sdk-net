@@ -27,7 +27,8 @@ namespace Amazon.SimpleEmail.Model
     /// Container for the parameters to the SetIdentityFeedbackForwardingEnabled operation.
     /// <para>Given an identity (email address or domain), enables or disables whether Amazon SES forwards feedback notifications as email. Feedback
     /// forwarding may only be disabled when both complaint and bounce topics are set.</para> <para>This action is throttled at one request per
-    /// second.</para> <para>For more information about feedback notification, see the Amazon SES Developer Guide.</para>
+    /// second.</para> <para>For more information about feedback notification, see the <a
+    /// href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/bounce-complaint-notifications.html" >Amazon SES Developer Guide</a> .</para>
     /// </summary>
     public partial class SetIdentityFeedbackForwardingEnabledRequest : AmazonWebServiceRequest
     {

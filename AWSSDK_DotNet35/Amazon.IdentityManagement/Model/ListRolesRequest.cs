@@ -26,9 +26,10 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Container for the parameters to the ListRoles operation.
     /// <para>Lists the roles that have the specified path prefix. If there are none, the action returns an empty list. For more information about
-    /// roles, go to Working with Roles.</para> <para>You can paginate the results using the <c>MaxItems</c> and <c>Marker</c> parameters.</para>
-    /// <para>The returned policy is URL-encoded according to RFC 3986. For more information about RFC 3986, go to
-    /// http://www.faqs.org/rfcs/rfc3986.html.</para>
+    /// roles, go to <a href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/WorkingWithRoles.html" >Working with Roles</a> .</para>
+    /// <para>You can paginate the results using the <c>MaxItems</c> and <c>Marker</c> parameters.</para> <para>The returned policy is URL-encoded
+    /// according to RFC 3986. For more information about RFC 3986, go to <a href="http://www.faqs.org/rfcs/rfc3986.html"
+    /// >http://www.faqs.org/rfcs/rfc3986.html</a> .</para>
     /// </summary>
     public partial class ListRolesRequest : AmazonWebServiceRequest
     {
@@ -99,7 +100,8 @@ namespace Amazon.IdentityManagement.Model
 
         /// <summary>
         /// Use this parameter only when paginating results to indicate the maximum number of user names you want in the response. If there are
-        /// additional user names beyond the maximum you specify, the <c>IsTruncated</c> response element is <c>true</c>.
+        /// additional user names beyond the maximum you specify, the <c>IsTruncated</c> response element is <c>true</c>. This parameter is optional. If
+        /// you do not include it, it defaults to 100.
         ///  
         /// <para>
         /// <b>Constraints:</b>

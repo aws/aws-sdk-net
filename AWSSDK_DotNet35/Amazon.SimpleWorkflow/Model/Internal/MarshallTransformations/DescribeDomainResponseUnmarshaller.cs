@@ -39,7 +39,7 @@
         }        
         
         
-        private void UnmarshallResult(JsonUnmarshallerContext context,DescribeDomainResponse response)
+        private static void UnmarshallResult(JsonUnmarshallerContext context,DescribeDomainResponse response)
         {                   
           response.DomainDetail = DomainDetailUnmarshaller.GetInstance().Unmarshall(context);
           return;

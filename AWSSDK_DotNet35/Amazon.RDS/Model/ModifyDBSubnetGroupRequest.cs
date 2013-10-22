@@ -34,7 +34,7 @@ namespace Amazon.RDS.Model
         private List<string> subnetIds = new List<string>();
 
         /// <summary>
-        /// The name for the DB Subnet Group. This value is stored as a lowercase string. Constraints: Must contain no more than 255 alphanumeric
+        /// The name for the DB subnet group. This value is stored as a lowercase string. Constraints: Must contain no more than 255 alphanumeric
         /// characters or hyphens. Must not be "Default". Example: <c>mySubnetgroup</c>
         ///  
         /// </summary>
@@ -51,7 +51,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The description for the DB Subnet Group.
+        /// The description for the DB subnet group.
         ///  
         /// </summary>
         public string DBSubnetGroupDescription
@@ -67,7 +67,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The EC2 Subnet IDs for the DB Subnet Group.
+        /// The EC2 subnet IDs for the DB subnet group.
         ///  
         /// </summary>
         public List<string> SubnetIds

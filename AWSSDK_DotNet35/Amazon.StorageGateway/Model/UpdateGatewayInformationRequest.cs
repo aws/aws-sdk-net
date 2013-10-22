@@ -25,8 +25,7 @@ namespace Amazon.StorageGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateGatewayInformation operation.
-    /// <para>This operation updates a gateway's metadata, which includes the gateway's name and time zone. To specify which gateway to update, use
-    /// the Amazon Resource Name (ARN) of the gateway in your request.</para>
+    /// 
     /// </summary>
     public partial class UpdateGatewayInformationRequest : AmazonWebServiceRequest
     {

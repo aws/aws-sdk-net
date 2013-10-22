@@ -33,8 +33,20 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class AssociateDhcpOptionsRequest : AmazonWebServiceRequest
     {
+        private bool? dryRun;
         private string dhcpOptionsId;
         private string vpcId;
+        public bool DryRun
+        {
+            get { return this.dryRun ?? default(bool); }
+            set { this.dryRun = value; }
+        }
+
+        // Check to see if DryRun property is set
+        internal bool IsSetDryRun()
+        {
+            return this.dryRun.HasValue;
+        }
 
         /// <summary>
         /// The ID of the DHCP options to associate with the VPC. Specify "default" to associate the default DHCP options with the VPC.

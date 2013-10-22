@@ -17,13 +17,14 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using Amazon.Runtime;
 
 namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// <para>Describes a snapshot.</para>
     /// </summary>
-    public class Snapshot
+    public partial class Snapshot : AmazonWebServiceResponse
     {
         
         private string snapshotIdentifier;
@@ -41,6 +42,14 @@ namespace Amazon.Redshift.Model
         private string dBName;
         private string vpcId;
         private bool? encrypted;
+        private List<AccountWithRestoreAccess> accountsWithRestoreAccess = new List<AccountWithRestoreAccess>();
+        private string ownerAccount;
+        private double? totalBackupSizeInMegaBytes;
+        private double? actualIncrementalBackupSizeInMegaBytes;
+        private double? backupProgressInMegaBytes;
+        private double? currentBackupRateInMegaBytesPerSecond;
+        private long? estimatedSecondsToCompletion;
+        private long? elapsedTimeInSeconds;
 
         /// <summary>
         /// The snapshot identifier that is provided in the request.
@@ -282,6 +291,136 @@ namespace Amazon.Redshift.Model
         internal bool IsSetEncrypted()
         {
             return this.encrypted.HasValue;
+        }
+
+        /// <summary>
+        /// A list of the AWS customer accounts authorized to restore the snapshot. Returns <c>null</c> if no accounts are authorized. Visible only to
+        /// the snapshot owner.
+        ///  
+        /// </summary>
+        public List<AccountWithRestoreAccess> AccountsWithRestoreAccess
+        {
+            get { return this.accountsWithRestoreAccess; }
+            set { this.accountsWithRestoreAccess = value; }
+        }
+
+        // Check to see if AccountsWithRestoreAccess property is set
+        internal bool IsSetAccountsWithRestoreAccess()
+        {
+            return this.accountsWithRestoreAccess.Count > 0;
+        }
+
+        /// <summary>
+        /// For manual snapshots, the AWS customer account used to create or copy the snapshot. For automatic snapshots, the owner of the cluster. The
+        /// owner can perform all snapshot actions, such as sharing a manual snapshot.
+        ///  
+        /// </summary>
+        public string OwnerAccount
+        {
+            get { return this.ownerAccount; }
+            set { this.ownerAccount = value; }
+        }
+
+        // Check to see if OwnerAccount property is set
+        internal bool IsSetOwnerAccount()
+        {
+            return this.ownerAccount != null;
+        }
+
+        /// <summary>
+        /// The size of the complete set of backup data that would be used to restore the instance.
+        ///  
+        /// </summary>
+        public double TotalBackupSizeInMegaBytes
+        {
+            get { return this.totalBackupSizeInMegaBytes ?? default(double); }
+            set { this.totalBackupSizeInMegaBytes = value; }
+        }
+
+        // Check to see if TotalBackupSizeInMegaBytes property is set
+        internal bool IsSetTotalBackupSizeInMegaBytes()
+        {
+            return this.totalBackupSizeInMegaBytes.HasValue;
+        }
+
+        /// <summary>
+        /// The size of the incremental backup.
+        ///  
+        /// </summary>
+        public double ActualIncrementalBackupSizeInMegaBytes
+        {
+            get { return this.actualIncrementalBackupSizeInMegaBytes ?? default(double); }
+            set { this.actualIncrementalBackupSizeInMegaBytes = value; }
+        }
+
+        // Check to see if ActualIncrementalBackupSizeInMegaBytes property is set
+        internal bool IsSetActualIncrementalBackupSizeInMegaBytes()
+        {
+            return this.actualIncrementalBackupSizeInMegaBytes.HasValue;
+        }
+
+        /// <summary>
+        /// The number of megabytes that have been transferred to the snapshot backup.
+        ///  
+        /// </summary>
+        public double BackupProgressInMegaBytes
+        {
+            get { return this.backupProgressInMegaBytes ?? default(double); }
+            set { this.backupProgressInMegaBytes = value; }
+        }
+
+        // Check to see if BackupProgressInMegaBytes property is set
+        internal bool IsSetBackupProgressInMegaBytes()
+        {
+            return this.backupProgressInMegaBytes.HasValue;
+        }
+
+        /// <summary>
+        /// The number of megabytes per second being transferred to the snapshot backup. Returns <c>0</c> for a completed backup.
+        ///  
+        /// </summary>
+        public double CurrentBackupRateInMegaBytesPerSecond
+        {
+            get { return this.currentBackupRateInMegaBytesPerSecond ?? default(double); }
+            set { this.currentBackupRateInMegaBytesPerSecond = value; }
+        }
+
+        // Check to see if CurrentBackupRateInMegaBytesPerSecond property is set
+        internal bool IsSetCurrentBackupRateInMegaBytesPerSecond()
+        {
+            return this.currentBackupRateInMegaBytesPerSecond.HasValue;
+        }
+
+        /// <summary>
+        /// The estimate of the time remaining before the snapshot backup will complete. Returns <c>0</c> for a completed backup.
+        ///  
+        /// </summary>
+        public long EstimatedSecondsToCompletion
+        {
+            get { return this.estimatedSecondsToCompletion ?? default(long); }
+            set { this.estimatedSecondsToCompletion = value; }
+        }
+
+        // Check to see if EstimatedSecondsToCompletion property is set
+        internal bool IsSetEstimatedSecondsToCompletion()
+        {
+            return this.estimatedSecondsToCompletion.HasValue;
+        }
+
+        /// <summary>
+        /// The amount of time an in-progress snapshot backup has been running, or the amount of time it took a completed backup to finish.
+        ///  
+        /// </summary>
+        public long ElapsedTimeInSeconds
+        {
+            get { return this.elapsedTimeInSeconds ?? default(long); }
+            set { this.elapsedTimeInSeconds = value; }
+        }
+
+        // Check to see if ElapsedTimeInSeconds property is set
+        internal bool IsSetElapsedTimeInSeconds()
+        {
+            return this.elapsedTimeInSeconds.HasValue;
         }
     }
 }

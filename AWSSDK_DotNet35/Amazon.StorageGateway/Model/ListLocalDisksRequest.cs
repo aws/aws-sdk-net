@@ -25,9 +25,7 @@ namespace Amazon.StorageGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the ListLocalDisks operation.
-    /// <para>This operation returns a list of the local disks of a gateway. To specify which gateway to describe you use the Amazon Resource Name
-    /// (ARN) of the gateway in the body of the request.</para> <para>The request returns all disks, specifying which are configured as working
-    /// storage, stored volume or not configured at all.</para>
+    /// 
     /// </summary>
     public partial class ListLocalDisksRequest : AmazonWebServiceRequest
     {

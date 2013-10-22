@@ -33,6 +33,9 @@
 
         public UserProfile Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonToken.Null)
+                return null;
+
             UserProfile userProfile = new UserProfile();
 
         

@@ -27,11 +27,11 @@ namespace Amazon.EC2.Model
     {
         
         private string vpcId;
-        private string state;
+        private VpcState state;
         private string cidrBlock;
         private string dhcpOptionsId;
         private List<Tag> tags = new List<Tag>();
-        private string instanceTenancy;
+        private Tenancy instanceTenancy;
         private bool? isDefault;
 
         /// <summary>
@@ -53,8 +53,17 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Describes the current state of the VPC. The state of the subnet may be either <c>pending</c> or <c>available</c>.
         ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>pending, available</description>
+        ///     </item>
+        /// </list>
+        /// </para>
         /// </summary>
-        public string State
+        public VpcState State
         {
             get { return this.state; }
             set { this.state = value; }
@@ -118,8 +127,17 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// The allowed tenancy of instances launched into the VPC.
         ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>default, dedicated</description>
+        ///     </item>
+        /// </list>
+        /// </para>
         /// </summary>
-        public string InstanceTenancy
+        public Tenancy InstanceTenancy
         {
             get { return this.instanceTenancy; }
             set { this.instanceTenancy = value; }

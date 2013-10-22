@@ -25,7 +25,7 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyCacheSubnetGroup operation.
-    /// <para> Modifies an existing Cache Subnet Group. </para>
+    /// <para>The <i>ModifyCacheSubnetGroup</i> operation modifies an existing cache subnet group.</para>
     /// </summary>
     public partial class ModifyCacheSubnetGroupRequest : AmazonWebServiceRequest
     {
@@ -34,7 +34,7 @@ namespace Amazon.ElastiCache.Model
         private List<string> subnetIds = new List<string>();
 
         /// <summary>
-        /// The name for the Cache Subnet Group. This value is stored as a lowercase string. Constraints: Must contain no more than 255 alphanumeric
+        /// The name for the cache subnet group. This value is stored as a lowercase string. Constraints: Must contain no more than 255 alphanumeric
         /// characters or hyphens. Example: <c>mysubnetgroup</c>
         ///  
         /// </summary>
@@ -51,7 +51,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// The description for the Cache Subnet Group.
+        /// A description for the cache subnet group.
         ///  
         /// </summary>
         public string CacheSubnetGroupDescription
@@ -67,7 +67,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// The EC2 Subnet IDs for the Cache Subnet Group.
+        /// The EC2 subnet IDs for the cache subnet group.
         ///  
         /// </summary>
         public List<string> SubnetIds

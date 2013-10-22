@@ -25,12 +25,12 @@ namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
     /// Container for the parameters to the RegisterInstancesWithLoadBalancer operation.
-    /// <para> Adds new instances to the LoadBalancer. </para> <para> Once the instance is registered, it starts receiving traffic and requests from
-    /// the LoadBalancer. Any instance that is not in any of the Availability Zones registered for the LoadBalancer will be moved to the
-    /// <i>OutOfService</i> state. It will move to the <i>InService</i> state when the Availability Zone is added to the LoadBalancer. </para>
-    /// <para><b>NOTE:</b> In order for this call to be successful, the client must have created the LoadBalancer. The client must provide the same
-    /// account credentials as those that were used to create the LoadBalancer. </para> <para><b>NOTE:</b> Completion of this API does not guarantee
-    /// that operation has completed. Rather, it means that the request has been registered and the changes will happen shortly. </para>
+    /// <para> Adds new instances to the load balancer. </para> <para> Once the instance is registered, it starts receiving traffic and requests
+    /// from the load balancer. Any instance that is not in any of the Availability Zones registered for the load balancer will be moved to the
+    /// <i>OutOfService</i> state. It will move to the <i>InService</i> state when the Availability Zone is added to the load balancer. </para>
+    /// <para><b>NOTE:</b> In order for this call to be successful, the client must have created the load balancer. The client must provide the same
+    /// account credentials as those that were used to create the load balancer. </para> <para><b>NOTE:</b> Completion of this API does not
+    /// guarantee that operation has completed. Rather, it means that the request has been registered and the changes will happen shortly. </para>
     /// </summary>
     public partial class RegisterInstancesWithLoadBalancerRequest : AmazonWebServiceRequest
     {
@@ -47,9 +47,9 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// Callers should use the properties initialize any additional object members.
         /// </summary>
         /// 
-        /// <param name="loadBalancerName"> The name associated with the LoadBalancer. The name must be unique within the client AWS account. </param>
-        /// <param name="instances"> A list of instance IDs that should be registered with the LoadBalancer. <note>When the instance is stopped and then
-        /// restarted, the IP addresses associated with your instance changes. Elastic Load Balancing cannot recognize the new IP address, which
+        /// <param name="loadBalancerName"> The name associated with the load balancer. The name must be unique within the client AWS account. </param>
+        /// <param name="instances"> A list of instance IDs that should be registered with the load balancer. <note>When the instance is stopped and
+        /// then restarted, the IP addresses associated with your instance changes. Elastic Load Balancing cannot recognize the new IP address, which
         /// prevents it from routing traffic to your instances. We recommend that you de-register your Amazon EC2 instances from your load balancer
         /// after you stop your instance, and then register the load balancer with your instance after you've restarted. To de-register your instances
         /// from load balancer, use <a>DeregisterInstancesFromLoadBalancer</a> action.</note> </param>
@@ -61,7 +61,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     
 
         /// <summary>
-        /// The name associated with the LoadBalancer. The name must be unique within the client AWS account.
+        /// The name associated with the load balancer. The name must be unique within the client AWS account.
         ///  
         /// </summary>
         public string LoadBalancerName
@@ -77,7 +77,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         }
 
         /// <summary>
-        /// A list of instance IDs that should be registered with the LoadBalancer. <note>When the instance is stopped and then restarted, the IP
+        /// A list of instance IDs that should be registered with the load balancer. <note>When the instance is stopped and then restarted, the IP
         /// addresses associated with your instance changes. Elastic Load Balancing cannot recognize the new IP address, which prevents it from routing
         /// traffic to your instances. We recommend that you de-register your Amazon EC2 instances from your load balancer after you stop your instance,
         /// and then register the load balancer with your instance after you've restarted. To de-register your instances from load balancer, use

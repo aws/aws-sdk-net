@@ -33,6 +33,9 @@
 
         public ExternalWorkflowExecutionSignaledEventAttributes Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonToken.Null)
+                return null;
+
             ExternalWorkflowExecutionSignaledEventAttributes externalWorkflowExecutionSignaledEventAttributes = new ExternalWorkflowExecutionSignaledEventAttributes();
 
         

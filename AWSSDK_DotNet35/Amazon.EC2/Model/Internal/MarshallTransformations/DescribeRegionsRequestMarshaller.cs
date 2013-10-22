@@ -34,7 +34,11 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(describeRegionsRequest, "AmazonEC2");
             request.Parameters.Add("Action", "DescribeRegions");
-            request.Parameters.Add("Version", "2013-02-01");
+            request.Parameters.Add("Version", "2013-10-01");
+            if (describeRegionsRequest != null && describeRegionsRequest.IsSetDryRun())
+            {
+                request.Parameters.Add("DryRun", StringUtils.FromBool(describeRegionsRequest.DryRun));
+            }
             if (describeRegionsRequest != null)
             {
                 List<string> regionNamesList = describeRegionsRequest.RegionNames;

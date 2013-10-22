@@ -38,7 +38,7 @@ namespace Amazon.DynamoDBv2.DataModel
     /// or specify different attribute casing.
     /// </summary>
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct, Inherited=true, AllowMultiple=false)]
-    public class DynamoDBTableAttribute : DynamoDBAttribute
+    public sealed class DynamoDBTableAttribute : DynamoDBAttribute
     {
         public string TableName { get; set; }
         public bool LowerCamelCaseProperties { get; set; }
@@ -57,7 +57,7 @@ namespace Amazon.DynamoDBv2.DataModel
     /// be included when saving or loading objects.
     /// </summary>
     [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property, Inherited = true, AllowMultiple = false)]
-    public class DynamoDBIgnoreAttribute : DynamoDBAttribute
+    public sealed class DynamoDBIgnoreAttribute : DynamoDBAttribute
     {
     }
 
@@ -73,7 +73,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <summary>
         /// Default constructor
         /// </summary>
-        public DynamoDBRenamableAttribute()
+        protected DynamoDBRenamableAttribute()
         {
         }
 
@@ -103,7 +103,7 @@ namespace Amazon.DynamoDBv2.DataModel
     /// numeric, integer, nullable type (e.g. int?, long?, byte?)
     /// </summary>
     [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property, Inherited = true, AllowMultiple = false)]
-    public class DynamoDBVersionAttribute : DynamoDBRenamableAttribute
+    public sealed class DynamoDBVersionAttribute : DynamoDBRenamableAttribute
     {
     }
 
@@ -175,7 +175,7 @@ namespace Amazon.DynamoDBv2.DataModel
     /// a Primitive object.
     /// </summary>
     [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property, Inherited = true, AllowMultiple = false)]
-    public class DynamoDBHashKeyAttribute : DynamoDBPropertyAttribute
+    public sealed class DynamoDBHashKeyAttribute : DynamoDBPropertyAttribute
     {
         /// <summary>
         /// Default constructor
@@ -230,7 +230,7 @@ namespace Amazon.DynamoDBv2.DataModel
     /// a Primitive object.
     /// </summary>
     [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property, Inherited = true, AllowMultiple = false)]
-    public class DynamoDBRangeKeyAttribute : DynamoDBPropertyAttribute
+    public sealed class DynamoDBRangeKeyAttribute : DynamoDBPropertyAttribute
     {
         /// <summary>
         /// Default constructor
@@ -284,7 +284,7 @@ namespace Amazon.DynamoDBv2.DataModel
     /// Members that are marked as a Local Secondary Index range key element must be convertible to a Primitive object.
     /// </summary>
     [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property, Inherited = true, AllowMultiple = false)]
-    public class DynamoDBLocalSecondaryIndexRangeKeyAttribute : DynamoDBPropertyAttribute
+    public sealed class DynamoDBLocalSecondaryIndexRangeKeyAttribute : DynamoDBPropertyAttribute
     {
         /// <summary>
         /// Index associated with this range key

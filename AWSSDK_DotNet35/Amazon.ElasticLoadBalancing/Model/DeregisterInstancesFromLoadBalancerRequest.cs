@@ -25,9 +25,9 @@ namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
     /// Container for the parameters to the DeregisterInstancesFromLoadBalancer operation.
-    /// <para> Deregisters instances from the LoadBalancer. Once the instance is deregistered, it will stop receiving traffic from the LoadBalancer.
-    /// </para> <para> In order to successfully call this API, the same account credentials as those used to create the LoadBalancer must be
-    /// provided. </para>
+    /// <para> Deregisters instances from the load balancer. Once the instance is deregistered, it will stop receiving traffic from the load
+    /// balancer. </para> <para> In order to successfully call this API, the same account credentials as those used to create the load balancer must
+    /// be provided. </para>
     /// </summary>
     public partial class DeregisterInstancesFromLoadBalancerRequest : AmazonWebServiceRequest
     {
@@ -44,7 +44,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// Callers should use the properties initialize any additional object members.
         /// </summary>
         /// 
-        /// <param name="loadBalancerName"> The name associated with the LoadBalancer. The name must be unique within the client AWS account. </param>
+        /// <param name="loadBalancerName"> The name associated with the load balancer. The name must be unique within the client AWS account. </param>
         /// <param name="instances"> A list of EC2 instance IDs consisting of all instances to be deregistered. </param>
         public DeregisterInstancesFromLoadBalancerRequest(string loadBalancerName, List<Instance> instances)
         {
@@ -54,7 +54,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     
 
         /// <summary>
-        /// The name associated with the LoadBalancer. The name must be unique within the client AWS account.
+        /// The name associated with the load balancer. The name must be unique within the client AWS account.
         ///  
         /// </summary>
         public string LoadBalancerName

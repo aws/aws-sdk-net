@@ -22,7 +22,8 @@ namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
     /// <para> A specification identifying an individual configuration option along with its current value. For a list of possible option values, go
-    /// to Option Values in the <i>AWS Elastic Beanstalk Developer Guide</i> .
+    /// to <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options.html" >Option Values</a> in the <i>AWS Elastic Beanstalk
+    /// Developer Guide</i> .
     /// </para>
     /// </summary>
     public class ConfigurationOptionSetting

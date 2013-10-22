@@ -39,6 +39,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             {
                 request.Parameters.Add("SnapshotIdentifier", StringUtils.FromString(deleteClusterSnapshotRequest.SnapshotIdentifier));
             }
+            if (deleteClusterSnapshotRequest != null && deleteClusterSnapshotRequest.IsSetSnapshotClusterIdentifier())
+            {
+                request.Parameters.Add("SnapshotClusterIdentifier", StringUtils.FromString(deleteClusterSnapshotRequest.SnapshotClusterIdentifier));
+            }
 
             return request;
         }

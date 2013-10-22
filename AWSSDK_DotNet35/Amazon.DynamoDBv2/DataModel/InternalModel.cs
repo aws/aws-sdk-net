@@ -24,6 +24,7 @@ using Amazon.DynamoDBv2.DocumentModel;
 using Amazon.DynamoDBv2.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Util;
 
 namespace Amazon.DynamoDBv2.DataModel
 {
@@ -212,7 +213,7 @@ namespace Amazon.DynamoDBv2.DataModel
         internal static ItemStorageConfig CreateStorageConfig(Type type)
         {
             if (type == null) throw new ArgumentNullException("type");
-
+            var typeWrapper = TypeFactory.GetTypeInfo(type);
             ItemStorageConfig config = new ItemStorageConfig(type);
 
             DynamoDBTableAttribute tableAttribute = Utils.GetTableAttribute(type);
@@ -222,7 +223,7 @@ namespace Amazon.DynamoDBv2.DataModel
             config.TableName = tableAttribute.TableName;
             config.LowerCamelCaseProperties = tableAttribute.LowerCamelCaseProperties;
 
-            foreach (var member in type.GetMembers())
+            foreach (var member in typeWrapper.GetMembers())
             {
                 // filter out non-fields and non-properties
                 if (!(member is FieldInfo || member is PropertyInfo)) continue;

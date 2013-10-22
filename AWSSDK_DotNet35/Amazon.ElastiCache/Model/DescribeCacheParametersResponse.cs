@@ -28,7 +28,7 @@ namespace Amazon.ElastiCache.Model
     {
         /// <summary>
         /// Gets and sets the DescribeCacheParametersResult property.
-        /// Contains a list of Parametes and CacheNodeTypeSpecificParameters.
+        /// Represents the output of a DescribeCacheParameters operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DescribeCacheParametersResult class are now available on the DescribeCacheParametersResponse class. You should use the properties on DescribeCacheParametersResponse instead of accessing them through DescribeCacheParametersResult.")]
         public DescribeCacheParametersResult DescribeCacheParametersResult

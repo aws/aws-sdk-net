@@ -27,7 +27,7 @@ namespace Amazon.EC2.Model
     {
         
         private string volumeId;
-        private string status;
+        private AttachmentStatus status;
         private DateTime? attachTime;
         private bool? deleteOnTermination;
 
@@ -50,8 +50,17 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// The status of the EBS volume.
         ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>attaching, attached, detaching, detached</description>
+        ///     </item>
+        /// </list>
+        /// </para>
         /// </summary>
-        public string Status
+        public AttachmentStatus Status
         {
             get { return this.status; }
             set { this.status = value; }

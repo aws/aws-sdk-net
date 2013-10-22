@@ -38,7 +38,7 @@
           return response;
         }
         
-        private void UnmarshallResult(JsonUnmarshallerContext context,DeletePipelineResponse response)
+        private static void UnmarshallResult(JsonUnmarshallerContext context,DeletePipelineResponse response)
         {
                         
             return;

@@ -98,8 +98,10 @@ namespace Amazon.AWSSupport.Model
 
         /// <summary>
         /// Additional information about the identified resource. The exact metadata and its order can be obtained by inspecting the <a
-        /// href="API_TrustedAdvisorCheckDescription.html" title="TrustedAdvisorCheckDescription">TrustedAdvisorCheckDescription</a> object returned by
-        /// the call to <a href="API_DescribeTrustedAdvisorChecks.html" title="DescribeTrustedAdvisorChecks">DescribeTrustedAdvisorChecks</a>.
+        /// href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorCheckDescription.html"
+        /// title="TrustedAdvisorCheckDescription">TrustedAdvisorCheckDescription</a> object returned by the call to <a
+        /// href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorChecks.html"
+        /// title="DescribeTrustedAdvisorChecks">DescribeTrustedAdvisorChecks</a>.
         ///  
         /// </summary>
         public List<string> Metadata

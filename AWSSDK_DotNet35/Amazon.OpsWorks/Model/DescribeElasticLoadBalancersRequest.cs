@@ -33,7 +33,7 @@ namespace Amazon.OpsWorks.Model
         private List<string> layerIds = new List<string>();
 
         /// <summary>
-        /// A stack ID. The action describes the Elastic Load Balancing instances for the stack.
+        /// A stack ID. The action describes the stack's Elastic Load Balancing instances.
         ///  
         /// </summary>
         public string StackId

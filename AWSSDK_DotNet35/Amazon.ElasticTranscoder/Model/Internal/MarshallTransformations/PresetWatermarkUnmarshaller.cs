@@ -33,6 +33,9 @@
 
         public PresetWatermark Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonToken.Null)
+                return null;
+
             PresetWatermark presetWatermark = new PresetWatermark();
 
         

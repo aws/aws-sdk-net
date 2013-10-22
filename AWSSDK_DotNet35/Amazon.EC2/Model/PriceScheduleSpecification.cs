@@ -27,7 +27,7 @@ namespace Amazon.EC2.Model
         
         private long? term;
         private double? price;
-        private string currencyCode;
+        private CurrencyCodeValues currencyCode;
         public long Term
         {
             get { return this.term ?? default(long); }
@@ -50,7 +50,7 @@ namespace Amazon.EC2.Model
         {
             return this.price.HasValue;
         }
-        public string CurrencyCode
+        public CurrencyCodeValues CurrencyCode
         {
             get { return this.currencyCode; }
             set { this.currencyCode = value; }

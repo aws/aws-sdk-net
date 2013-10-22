@@ -17,14 +17,14 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using Amazon.Runtime;
 
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// <para> This data type is used as a response element in the DescribeReservedCacheNodes and PurchaseReservedCacheNodesOffering actions.
-    /// </para>
+    /// <para>Represents the output of a <i>PurchaseReservedCacheNodesOffering</i> operation.</para>
     /// </summary>
-    public class ReservedCacheNode
+    public partial class ReservedCacheNode : AmazonWebServiceResponse
     {
         
         private string reservedCacheNodeId;
@@ -73,7 +73,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// The cache node type for the reserved Cache Node.
+        /// The cache node type for the reserved cache nodes.
         ///  
         /// </summary>
         public string CacheNodeType
@@ -121,7 +121,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// The fixed price charged for this reserved Cache Node.
+        /// The fixed price charged for this reserved cache node.
         ///  
         /// </summary>
         public double FixedPrice
@@ -137,7 +137,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// The hourly price charged for this reserved Cache Node.
+        /// The hourly price charged for this reserved cache node.
         ///  
         /// </summary>
         public double UsagePrice
@@ -153,7 +153,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// The number of reserved Cache Nodes.
+        /// The number of cache nodes that have been reserved.
         ///  
         /// </summary>
         public int CacheNodeCount
@@ -169,7 +169,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// The description of the reserved Cache Node.
+        /// The description of the reserved cache node.
         ///  
         /// </summary>
         public string ProductDescription
@@ -185,7 +185,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// The offering type of this reserved Cache Node.
+        /// The offering type of this reserved cache node.
         ///  
         /// </summary>
         public string OfferingType
@@ -201,7 +201,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// The state of the reserved Cache Node.
+        /// The state of the reserved cache node.
         ///  
         /// </summary>
         public string State
@@ -217,7 +217,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// The recurring price charged to run this reserved Cache Node.
+        /// The recurring price charged to run this reserved cache node.
         ///  
         /// </summary>
         public List<RecurringCharge> RecurringCharges

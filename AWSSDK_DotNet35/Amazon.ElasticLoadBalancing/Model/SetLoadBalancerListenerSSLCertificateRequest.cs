@@ -26,9 +26,10 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// <summary>
     /// Container for the parameters to the SetLoadBalancerListenerSSLCertificate operation.
     /// <para> Sets the certificate that terminates the specified listener's SSL connections. The specified certificate replaces any prior
-    /// certificate that was used on the same LoadBalancer and port. </para> <para>For information on using SetLoadBalancerListenerSSLCertificate,
-    /// see <i>Using the Query API </i> in the Updating an SSL Certificate for a Load Balancer section in of the <i>Elastic Load Balancing Developer
-    /// Guide</i> .</para>
+    /// certificate that was used on the same load balancer and port. </para> <para>For information on using SetLoadBalancerListenerSSLCertificate,
+    /// see <i>Using the Query API </i> in the <a
+    /// href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_UpdatingLoadBalancerSSL.html" >Updating an SSL Certificate
+    /// for a Load Balancer</a> section in of the <i>Elastic Load Balancing Developer Guide</i> .</para>
     /// </summary>
     public partial class SetLoadBalancerListenerSSLCertificateRequest : AmazonWebServiceRequest
     {
@@ -46,7 +47,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// Callers should use the properties initialize any additional object members.
         /// </summary>
         /// 
-        /// <param name="loadBalancerName"> The name of the the LoadBalancer. </param>
+        /// <param name="loadBalancerName"> The name of the the load balancer. </param>
         /// <param name="loadBalancerPort"> The port that uses the specified SSL certificate. </param>
         /// <param name="sSLCertificateId"> The ID of the SSL certificate chain to use. For more information on SSL certificates, see <a
         /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingServerCerts.html"> Managing Server Certificates </a> in the AWS Identity and
@@ -60,7 +61,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     
 
         /// <summary>
-        /// The name of the the LoadBalancer.
+        /// The name of the the load balancer.
         ///  
         /// </summary>
         public string LoadBalancerName

@@ -26,8 +26,9 @@ namespace Amazon.AWSSupport.Model
     /// <summary>
     /// Container for the parameters to the RefreshTrustedAdvisorCheck operation.
     /// <para>This action enables you to query the service to request a refresh for a specific Trusted Advisor check. Your request body contains a
-    /// <i>CheckId</i> for which you are querying. The response body contains a RefreshTrustedAdvisorCheckResult object containing <i>Status</i> and
-    /// <i>TimeUntilNextRefresh</i> fields.</para>
+    /// <i>CheckId</i> for which you are querying. The response body contains a <a
+    /// href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_RefreshTrustedAdvisorCheckResult.html"
+    /// >RefreshTrustedAdvisorCheckResult</a> object containing <i>Status</i> and <i>TimeUntilNextRefresh</i> fields.</para>
     /// </summary>
     public partial class RefreshTrustedAdvisorCheckRequest : AmazonWebServiceRequest
     {

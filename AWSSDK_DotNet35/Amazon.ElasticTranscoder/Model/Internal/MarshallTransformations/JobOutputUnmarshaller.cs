@@ -33,6 +33,9 @@
 
         public JobOutput Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonToken.Null)
+                return null;
+
             JobOutput jobOutput = new JobOutput();
 
         
@@ -137,6 +140,13 @@
                   }
                    jobOutput.Watermarks.Add(unmarshaller.Unmarshall(context));
                 }
+                continue;
+              }
+  
+              if (context.TestExpression("AlbumArt", targetDepth))
+              {
+                context.Read();
+                jobOutput.AlbumArt = JobAlbumArtUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   

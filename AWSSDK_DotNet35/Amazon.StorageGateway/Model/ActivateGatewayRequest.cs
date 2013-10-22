@@ -25,11 +25,7 @@ namespace Amazon.StorageGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the ActivateGateway operation.
-    /// <para>This operation activates the gateway you previously deployed on your host. For more information, see Downloading and Deploying AWS
-    /// Storage Gateway VM. In the activation process you specify information such as the region you want to use for storing snapshots, the time
-    /// zone for scheduled snapshots and the gateway schedule window, an activation key, and a name for your gateway. The activation process also
-    /// associates your gateway with your account (see UpdateGatewayInformation).</para> <para><b>NOTE:</b>You must power on the gateway VM before
-    /// you can activate your gateway.</para>
+    /// 
     /// </summary>
     public partial class ActivateGatewayRequest : AmazonWebServiceRequest
     {
@@ -38,23 +34,6 @@ namespace Amazon.StorageGateway.Model
         private GatewayTimezone gatewayTimezone;
         private string gatewayRegion;
         private GatewayType gatewayType;
-
-        /// <summary>
-        /// Your gateway activation key. You can obtain the activation key by sending an HTTP GET request with redirects enabled to the gateway IP
-        /// address (port 80). The redirect URL returned in the response provides you the activation key for your gateway in the query string parameter
-        /// <c>activationKey</c>. It may also include other activation-related parameters, however, these are merely defaults -- the arguments you pass
-        /// to the <c>ActivateGateway</c> API call determine the actual configuration of your gateway.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 50</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
         public string ActivationKey
         {
             get { return this.activationKey; }
@@ -96,21 +75,6 @@ namespace Amazon.StorageGateway.Model
         {
             return this.gatewayName != null;
         }
-
-        /// <summary>
-        /// One of the values that indicates the time zone you want to set for the gateway. The time zone is used, for example, for scheduling snapshots
-        /// and your gateway's maintenance schedule.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>GMT-12:00, GMT-11:00, GMT-10:00, GMT-9:00, GMT-8:00, GMT-7:00, GMT-6:00, GMT-5:00, GMT-4:00, GMT-3:30, GMT-3:00, GMT-2:00, GMT-1:00, GMT, GMT+1:00, GMT+2:00, GMT+3:00, GMT+3:30, GMT+4:00, GMT+4:30, GMT+5:00, GMT+5:30, GMT+5:45, GMT+6:00, GMT+7:00, GMT+8:00, GMT+9:00, GMT+9:30, GMT+10:00, GMT+11:00, GMT+12:00</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
         public GatewayTimezone GatewayTimezone
         {
             get { return this.gatewayTimezone; }
@@ -122,24 +86,6 @@ namespace Amazon.StorageGateway.Model
         {
             return this.gatewayTimezone != null;
         }
-
-        /// <summary>
-        /// One of the values that indicates the region where you want to store the snapshot backups. The gateway region specified must be the same
-        /// region as the region in your <c>Host</c> header in the request. For more information about available regions and endpoints for AWS Storage
-        /// Gateway, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">Regions and Endpoints</a> in the <b>Amazon Web
-        /// Services Glossary</b>. <i>Valid Values</i>: "us-east-1", "us-west-1", "us-west-2", "eu-west-1", "ap-northeast-1", "ap-southest-1",
-        /// "sa-east-1"
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 25</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
         public string GatewayRegion
         {
             get { return this.gatewayRegion; }
@@ -151,21 +97,6 @@ namespace Amazon.StorageGateway.Model
         {
             return this.gatewayRegion != null;
         }
-
-        /// <summary>
-        /// One of the values that defines the type of gateway to activate. The type specified is critical to all later functions of the gateway and
-        /// cannot be changed after activation. The default value is <c>STORED</c>.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>STORED, CACHED</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
         public GatewayType GatewayType
         {
             get { return this.gatewayType; }

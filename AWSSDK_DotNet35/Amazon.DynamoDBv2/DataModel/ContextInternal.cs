@@ -23,6 +23,8 @@ using System.Reflection;
 using Amazon.DynamoDBv2.DocumentModel;
 using Amazon.DynamoDBv2.Model;
 
+using Amazon.Util;
+
 namespace Amazon.DynamoDBv2.DataModel
 {
     public partial class DynamoDBContext
@@ -56,14 +58,15 @@ namespace Amazon.DynamoDBv2.DataModel
         }
         private static void IncrementVersion(Type memberType, ref Primitive version)
         {
-            if (memberType.IsAssignableFrom(typeof(Byte))) version = version.AsByte() + 1;
-            else if (memberType.IsAssignableFrom(typeof(SByte))) version = version.AsSByte() + 1;
-            else if (memberType.IsAssignableFrom(typeof(int))) version = version.AsInt() + 1;
-            else if (memberType.IsAssignableFrom(typeof(uint))) version = version.AsUInt() + 1;
-            else if (memberType.IsAssignableFrom(typeof(long))) version = version.AsLong() + 1;
-            else if (memberType.IsAssignableFrom(typeof(ulong))) version = version.AsULong() + 1;
-            else if (memberType.IsAssignableFrom(typeof(short))) version = version.AsShort() + 1;
-            else if (memberType.IsAssignableFrom(typeof(ushort))) version = version.AsUShort() + 1;
+            var memberTypeWrapper = TypeFactory.GetTypeInfo(memberType);
+            if (memberTypeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(Byte)))) version = version.AsByte() + 1;
+            else if (memberTypeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(SByte)))) version = version.AsSByte() + 1;
+            else if (memberTypeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(int)))) version = version.AsInt() + 1;
+            else if (memberTypeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(uint)))) version = version.AsUInt() + 1;
+            else if (memberTypeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(long)))) version = version.AsLong() + 1;
+            else if (memberTypeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(ulong)))) version = version.AsULong() + 1;
+            else if (memberTypeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(short)))) version = version.AsShort() + 1;
+            else if (memberTypeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(ushort)))) version = version.AsUShort() + 1;
         }
         private static Document CreateExpectedDocumentForVersion(ItemStorage storage)
         {
@@ -86,6 +89,15 @@ namespace Amazon.DynamoDBv2.DataModel
         #endregion
 
         #region Table methods
+
+        internal Table GetTargetTableInternal<T>(DynamoDBOperationConfig operationConfig)
+        {
+            Type type = typeof(T);
+            ItemStorageConfig storageConfig = ItemStorageConfigCache.GetConfig(type);
+            Table table = GetTargetTable(storageConfig, new DynamoDBFlatConfig(operationConfig, this.config));
+            Table copy = table.Copy(Table.DynamoDBConsumer.DocumentModel);
+            return table;
+        }
 
         internal Table GetTargetTable(ItemStorageConfig storageConfig, DynamoDBFlatConfig flatConfig)
         {
@@ -328,11 +340,12 @@ namespace Amazon.DynamoDBv2.DataModel
         // PrimitiveList <--> List
         private static bool TryFromPrimitiveList(Type targetType, PrimitiveList value, out object output)
         {
+            var targetTypeWrapper = TypeFactory.GetTypeInfo(targetType);
             Type elementType;
             if ((!Utils.ImplementsInterface(targetType, typeof(ICollection<>)) &&
                 !Utils.ImplementsInterface(targetType, typeof(IList))) ||
                 !Utils.CanInstantiate(targetType) ||
-                !Utils.IsPrimitive(elementType = targetType.GetGenericArguments()[0]))
+                !Utils.IsPrimitive(elementType = targetTypeWrapper.GetGenericArguments()[0]))
             {
                 output = null;
                 return false;
@@ -345,7 +358,7 @@ namespace Amazon.DynamoDBv2.DataModel
             MethodInfo collectionAdd = null;
             if (!useIListInterface)
             {
-                collectionAdd = targetType.GetMethod("Add");
+                collectionAdd = targetTypeWrapper.GetMethod("Add");
             }
             
             foreach (Primitive primitive in value.Entries)
@@ -370,21 +383,23 @@ namespace Amazon.DynamoDBv2.DataModel
         }
         private static bool TryToPrimitiveList(Type type, object value, bool canReturnPrimitive, out DynamoDBEntry output)
         {
+            var typeWrapper = TypeFactory.GetTypeInfo(type);
             Type elementType;
             if (!Utils.ImplementsInterface(type, typeof(ICollection<>)) ||
-                !Utils.IsPrimitive(elementType = type.GetGenericArguments()[0]))
+                !Utils.IsPrimitive(elementType = typeWrapper.GetGenericArguments()[0]))
             {
                 output = null;
                 return false;
             }
 
-            ICollection collection = value as ICollection;
+            IEnumerable enumerable = value as IEnumerable;
 
             Primitive primitive;
-            if (collection == null)
+            // Strings are collections of chars, don't treat them as collections
+            if (enumerable == null || value is string)
             {
                 if (canReturnPrimitive &&
-                    value.GetType().IsAssignableFrom(elementType) &&
+                    TypeFactory.GetTypeInfo(value.GetType()).IsAssignableFrom(TypeFactory.GetTypeInfo(elementType)) &&
                     TryToPrimitive(elementType, value, out primitive))
                 {
                     output = primitive;
@@ -397,7 +412,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
             PrimitiveList primitiveList = new PrimitiveList();
             DynamoDBEntryType? listType = null;
-            foreach (var item in collection)
+            foreach (var item in enumerable)
             {
                 if (TryToPrimitive(elementType, item, out primitive))
                 {
@@ -428,24 +443,25 @@ namespace Amazon.DynamoDBv2.DataModel
                 return true;
             }
 
-            if (targetType.IsAssignableFrom(typeof(Boolean))) output = value.AsBoolean();
-            else if (targetType.IsAssignableFrom(typeof(Byte))) output = value.AsByte();
-            else if (targetType.IsAssignableFrom(typeof(Char))) output = value.AsChar();
-            else if (targetType.IsAssignableFrom(typeof(DateTime))) output = value.AsDateTime();
-            else if (targetType.IsAssignableFrom(typeof(Decimal))) output = value.AsDecimal();
-            else if (targetType.IsAssignableFrom(typeof(Double))) output = value.AsDouble();
-            else if (targetType.IsAssignableFrom(typeof(int))) output = value.AsInt();
-            else if (targetType.IsAssignableFrom(typeof(long))) output = value.AsLong();
-            else if (targetType.IsAssignableFrom(typeof(SByte))) output = value.AsSByte();
-            else if (targetType.IsAssignableFrom(typeof(short))) output = value.AsShort();
-            else if (targetType.IsAssignableFrom(typeof(Single))) output = value.AsSingle();
-            else if (targetType.IsAssignableFrom(typeof(String))) output = value.AsString();
-            else if (targetType.IsAssignableFrom(typeof(uint))) output = value.AsUInt();
-            else if (targetType.IsAssignableFrom(typeof(ulong))) output = value.AsULong();
-            else if (targetType.IsAssignableFrom(typeof(ushort))) output = value.AsUShort();
-            else if (targetType.IsAssignableFrom(typeof(Guid))) output = value.AsGuid();
-            else if (targetType.IsAssignableFrom(typeof(byte[]))) output = value.AsByteArray();
-            else if (targetType.IsAssignableFrom(typeof(MemoryStream))) output = value.AsMemoryStream();
+            var targetTypeWrapper = TypeFactory.GetTypeInfo(targetType);
+            if (targetTypeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(Boolean)))) output = value.AsBoolean();
+            else if (targetTypeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(Byte)))) output = value.AsByte();
+            else if (targetTypeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(Char)))) output = value.AsChar();
+            else if (targetTypeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(DateTime)))) output = value.AsDateTime();
+            else if (targetTypeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(Decimal)))) output = value.AsDecimal();
+            else if (targetTypeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(Double)))) output = value.AsDouble();
+            else if (targetTypeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(int)))) output = value.AsInt();
+            else if (targetTypeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(long)))) output = value.AsLong();
+            else if (targetTypeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(SByte)))) output = value.AsSByte();
+            else if (targetTypeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(short)))) output = value.AsShort();
+            else if (targetTypeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(Single)))) output = value.AsSingle();
+            else if (targetTypeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(String)))) output = value.AsString();
+            else if (targetTypeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(uint)))) output = value.AsUInt();
+            else if (targetTypeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(ulong)))) output = value.AsULong();
+            else if (targetTypeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(ushort)))) output = value.AsUShort();
+            else if (targetTypeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(Guid)))) output = value.AsGuid();
+            else if (targetTypeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(byte[])))) output = value.AsByteArray();
+            else if (targetTypeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(MemoryStream)))) output = value.AsMemoryStream();
             else
             {
                 output = null;
@@ -455,24 +471,25 @@ namespace Amazon.DynamoDBv2.DataModel
         }
         private static bool TryToPrimitive(Type type, object value, out Primitive output)
         {
-            if (type.IsAssignableFrom(typeof(Boolean))) output = (Boolean)value;
-            else if (type.IsAssignableFrom(typeof(Byte))) output = (Byte)value;
-            else if (type.IsAssignableFrom(typeof(Char))) output = (Char)value;
-            else if (type.IsAssignableFrom(typeof(DateTime))) output = (DateTime)value;
-            else if (type.IsAssignableFrom(typeof(Decimal))) output = (Decimal)value;
-            else if (type.IsAssignableFrom(typeof(Double))) output = (Double)value;
-            else if (type.IsAssignableFrom(typeof(int))) output = (int)value;
-            else if (type.IsAssignableFrom(typeof(long))) output = (long)value;
-            else if (type.IsAssignableFrom(typeof(SByte))) output = (SByte)value;
-            else if (type.IsAssignableFrom(typeof(short))) output = (short)value;
-            else if (type.IsAssignableFrom(typeof(Single))) output = (Single)value;
-            else if (type.IsAssignableFrom(typeof(String))) output = (String)value;
-            else if (type.IsAssignableFrom(typeof(uint))) output = (uint)value;
-            else if (type.IsAssignableFrom(typeof(ulong))) output = (ulong)value;
-            else if (type.IsAssignableFrom(typeof(ushort))) output = (ushort)value;
-            else if (type.IsAssignableFrom(typeof(Guid))) output = (Guid)value;
-            else if (type.IsAssignableFrom(typeof(byte[]))) output = (byte[])value;
-            else if (type.IsAssignableFrom(typeof(MemoryStream))) output = (MemoryStream)value;
+            var typeWrapper = TypeFactory.GetTypeInfo(type);
+            if (typeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(Boolean)))) output = (Boolean)value;
+            else if (typeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(Byte)))) output = (Byte)value;
+            else if (typeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(Char)))) output = (Char)value;
+            else if (typeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(DateTime)))) output = (DateTime)value;
+            else if (typeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(Decimal)))) output = (Decimal)value;
+            else if (typeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(Double)))) output = (Double)value;
+            else if (typeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(int)))) output = (int)value;
+            else if (typeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(long)))) output = (long)value;
+            else if (typeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(SByte)))) output = (SByte)value;
+            else if (typeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(short)))) output = (short)value;
+            else if (typeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(Single)))) output = (Single)value;
+            else if (typeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(String)))) output = (String)value;
+            else if (typeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(uint)))) output = (uint)value;
+            else if (typeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(ulong)))) output = (ulong)value;
+            else if (typeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(ushort)))) output = (ushort)value;
+            else if (typeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(Guid)))) output = (Guid)value;
+            else if (typeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(byte[])))) output = (byte[])value;
+            else if (typeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(MemoryStream)))) output = (MemoryStream)value;
             else
             {
                 output = null;
@@ -749,7 +766,7 @@ namespace Amazon.DynamoDBv2.DataModel
             ItemStorageConfig storageConfig = ItemStorageConfigCache.GetConfig<T>();
             while (!search.IsDone)
             {
-                List<Document> set = search.GetNextSet();
+                List<Document> set = search.GetNextSetHelper(false);
                 foreach (var document in set)
                 {
                     ItemStorage storage = new ItemStorage(storageConfig);
@@ -758,6 +775,9 @@ namespace Amazon.DynamoDBv2.DataModel
                     yield return instance;
                 }
             }
+
+            // Reset search to allow retrieving items more than once
+            search.Reset();
         }
 
         #endregion
@@ -783,14 +803,14 @@ namespace Amazon.DynamoDBv2.DataModel
 
         private Search ConvertFromScan<T>(ScanOperationConfig scanConfig, DynamoDBOperationConfig operationConfig)
         {
-            Table table = GetTargetTable<T>(operationConfig);
+            Table table = GetTargetTableInternal<T>(operationConfig);
             Search search = table.Scan(scanConfig);
             return search;
         }
 
         private Search ConvertFromQuery<T>(QueryOperationConfig queryConfig, DynamoDBOperationConfig operationConfig)
         {
-            Table table = GetTargetTable<T>(operationConfig);
+            Table table = GetTargetTableInternal<T>(operationConfig);
             Search search = table.Query(queryConfig);
             return search;
         }

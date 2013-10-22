@@ -63,7 +63,7 @@
     <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>none</DebugType>
+    <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE;BCL;CODE_ANALYSIS</DefineConstants>
@@ -72,7 +72,7 @@
     <DocumentationFile>bin\Release\AWSSDK.xml</DocumentationFile>
     <RegisterForComInterop>false</RegisterForComInterop>
     <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
-    <DebugSymbols>false</DebugSymbols>
+    <DebugSymbols>true</DebugSymbols>
     <NoWarn>419,1591</NoWarn>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <RunCodeAnalysis>false</RunCodeAnalysis>
@@ -94,14 +94,18 @@
     <Compile Include="Amazon.Auth\AccessControlPolicy\ActionIdentifiers\CloudFormationActionIdentifiers.cs" />
     <Compile Include="Amazon.Auth\AccessControlPolicy\ActionIdentifiers\CloudFrontActionIdentifiers.cs" />
     <Compile Include="Amazon.Auth\AccessControlPolicy\ActionIdentifiers\CloudWatchActionIdentifiers.cs" />
+    <Compile Include="Amazon.Auth\AccessControlPolicy\ActionIdentifiers\DirectConnectActionIdentifiers.cs" />
     <Compile Include="Amazon.Auth\AccessControlPolicy\ActionIdentifiers\DynamoDBActionIdentifiers.cs" />
     <Compile Include="Amazon.Auth\AccessControlPolicy\ActionIdentifiers\EC2ActionIdentifiers.cs" />
     <Compile Include="Amazon.Auth\AccessControlPolicy\ActionIdentifiers\ElastiCacheActionIdentifiers.cs" />
     <Compile Include="Amazon.Auth\AccessControlPolicy\ActionIdentifiers\ElasticBeanstalkActionIdentifiers.cs" />
     <Compile Include="Amazon.Auth\AccessControlPolicy\ActionIdentifiers\ElasticLoadBalancingActionIdentifiers.cs" />
     <Compile Include="Amazon.Auth\AccessControlPolicy\ActionIdentifiers\ElasticMapReduceActionIdentifiers.cs" />
+    <Compile Include="Amazon.Auth\AccessControlPolicy\ActionIdentifiers\GlacierActionIdentifiers.cs" />
     <Compile Include="Amazon.Auth\AccessControlPolicy\ActionIdentifiers\IdentityandAccessManagementActionIdentifiers.cs" />
+    <Compile Include="Amazon.Auth\AccessControlPolicy\ActionIdentifiers\MarketplaceActionIdentifiers.cs" />
     <Compile Include="Amazon.Auth\AccessControlPolicy\ActionIdentifiers\RDSActionIdentifiers.cs" />
+    <Compile Include="Amazon.Auth\AccessControlPolicy\ActionIdentifiers\RedshiftActionIdentifiers.cs" />
     <Compile Include="Amazon.Auth\AccessControlPolicy\ActionIdentifiers\Route53ActionIdentifiers.cs" />
     <Compile Include="Amazon.Auth\AccessControlPolicy\ActionIdentifiers\SecurityTokenServiceActionIdentifiers.cs" />
     <Compile Include="Amazon.Auth\AccessControlPolicy\ActionIdentifiers\SESActionIdentifiers.cs" />
@@ -800,7 +804,6 @@
     <Compile Include="Amazon.AWSSupport\Model\TrustedAdvisorCategorySpecificSummary.cs" />
     <Compile Include="Amazon.AWSSupport\Model\TrustedAdvisorCheckDescription.cs" />
     <Compile Include="Amazon.AWSSupport\Model\TrustedAdvisorCheckRefreshStatus.cs" />
-    <Compile Include="Amazon.AWSSupport\Model\TrustedAdvisorCheckResponse.cs" />
     <Compile Include="Amazon.AWSSupport\Model\TrustedAdvisorCheckResult.cs" />
     <Compile Include="Amazon.AWSSupport\Model\TrustedAdvisorCheckSummary.cs" />
     <Compile Include="Amazon.AWSSupport\Model\TrustedAdvisorCostOptimizingSummary.cs" />
@@ -1075,6 +1078,7 @@
     <Compile Include="Amazon.CloudFront\Model\AccessDeniedException.cs" />
     <Compile Include="Amazon.CloudFront\Model\ActiveTrustedSigners.cs" />
     <Compile Include="Amazon.CloudFront\Model\Aliases.cs" />
+    <Compile Include="Amazon.CloudFront\Model\AllowedMethods.cs" />
     <Compile Include="Amazon.CloudFront\Model\BatchTooLargeException.cs" />
     <Compile Include="Amazon.CloudFront\Model\CacheBehavior.cs" />
     <Compile Include="Amazon.CloudFront\Model\CacheBehaviors.cs" />
@@ -1099,6 +1103,8 @@
     <Compile Include="Amazon.CloudFront\Model\CreateStreamingDistributionRequest.cs" />
     <Compile Include="Amazon.CloudFront\Model\CreateStreamingDistributionResponse.cs" />
     <Compile Include="Amazon.CloudFront\Model\CreateStreamingDistributionResult.cs" />
+    <Compile Include="Amazon.CloudFront\Model\CustomErrorResponse.cs" />
+    <Compile Include="Amazon.CloudFront\Model\CustomErrorResponses.cs" />
     <Compile Include="Amazon.CloudFront\Model\CustomOriginConfig.cs" />
     <Compile Include="Amazon.CloudFront\Model\DefaultCacheBehavior.cs" />
     <Compile Include="Amazon.CloudFront\Model\DeleteCloudFrontOriginAccessIdentityRequest.cs" />
@@ -1139,6 +1145,7 @@
     <Compile Include="Amazon.CloudFront\Model\InconsistentQuantitiesException.cs" />
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\ActiveTrustedSignersUnmarshaller.cs" />
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\AliasesUnmarshaller.cs" />
+    <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\AllowedMethodsUnmarshaller.cs" />
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\CacheBehaviorsUnmarshaller.cs" />
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\CacheBehaviorUnmarshaller.cs" />
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\CloudFrontOriginAccessIdentityConfigUnmarshaller.cs" />
@@ -1149,16 +1156,14 @@
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\CookiePreferenceUnmarshaller.cs" />
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\CreateCloudFrontOriginAccessIdentityRequestMarshaller.cs" />
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\CreateCloudFrontOriginAccessIdentityResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\CreateCloudFrontOriginAccessIdentityResultUnmarshaller.cs" />
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\CreateDistributionRequestMarshaller.cs" />
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\CreateDistributionResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\CreateDistributionResultUnmarshaller.cs" />
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\CreateInvalidationRequestMarshaller.cs" />
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\CreateInvalidationResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\CreateInvalidationResultUnmarshaller.cs" />
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\CreateStreamingDistributionRequestMarshaller.cs" />
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\CreateStreamingDistributionResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\CreateStreamingDistributionResultUnmarshaller.cs" />
+    <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\CustomErrorResponsesUnmarshaller.cs" />
+    <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\CustomErrorResponseUnmarshaller.cs" />
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\CustomOriginConfigUnmarshaller.cs" />
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\DefaultCacheBehaviorUnmarshaller.cs" />
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\DeleteCloudFrontOriginAccessIdentityRequestMarshaller.cs" />
@@ -1174,25 +1179,18 @@
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\ForwardedValuesUnmarshaller.cs" />
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\GetCloudFrontOriginAccessIdentityConfigRequestMarshaller.cs" />
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\GetCloudFrontOriginAccessIdentityConfigResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\GetCloudFrontOriginAccessIdentityConfigResultUnmarshaller.cs" />
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\GetCloudFrontOriginAccessIdentityRequestMarshaller.cs" />
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\GetCloudFrontOriginAccessIdentityResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\GetCloudFrontOriginAccessIdentityResultUnmarshaller.cs" />
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\GetDistributionConfigRequestMarshaller.cs" />
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\GetDistributionConfigResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\GetDistributionConfigResultUnmarshaller.cs" />
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\GetDistributionRequestMarshaller.cs" />
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\GetDistributionResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\GetDistributionResultUnmarshaller.cs" />
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\GetInvalidationRequestMarshaller.cs" />
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\GetInvalidationResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\GetInvalidationResultUnmarshaller.cs" />
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\GetStreamingDistributionConfigRequestMarshaller.cs" />
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\GetStreamingDistributionConfigResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\GetStreamingDistributionConfigResultUnmarshaller.cs" />
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\GetStreamingDistributionRequestMarshaller.cs" />
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\GetStreamingDistributionResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\GetStreamingDistributionResultUnmarshaller.cs" />
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\InvalidationBatchUnmarshaller.cs" />
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\InvalidationListUnmarshaller.cs" />
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\InvalidationSummaryUnmarshaller.cs" />
@@ -1200,16 +1198,12 @@
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\KeyPairIdsUnmarshaller.cs" />
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\ListCloudFrontOriginAccessIdentitiesRequestMarshaller.cs" />
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\ListCloudFrontOriginAccessIdentitiesResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\ListCloudFrontOriginAccessIdentitiesResultUnmarshaller.cs" />
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\ListDistributionsRequestMarshaller.cs" />
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\ListDistributionsResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\ListDistributionsResultUnmarshaller.cs" />
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\ListInvalidationsRequestMarshaller.cs" />
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\ListInvalidationsResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\ListInvalidationsResultUnmarshaller.cs" />
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\ListStreamingDistributionsRequestMarshaller.cs" />
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\ListStreamingDistributionsResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\ListStreamingDistributionsResultUnmarshaller.cs" />
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\LoggingConfigUnmarshaller.cs" />
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\OriginsUnmarshaller.cs" />
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\OriginUnmarshaller.cs" />
@@ -1225,13 +1219,10 @@
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\TrustedSignersUnmarshaller.cs" />
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\UpdateCloudFrontOriginAccessIdentityRequestMarshaller.cs" />
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\UpdateCloudFrontOriginAccessIdentityResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\UpdateCloudFrontOriginAccessIdentityResultUnmarshaller.cs" />
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\UpdateDistributionRequestMarshaller.cs" />
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\UpdateDistributionResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\UpdateDistributionResultUnmarshaller.cs" />
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\UpdateStreamingDistributionRequestMarshaller.cs" />
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\UpdateStreamingDistributionResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\UpdateStreamingDistributionResultUnmarshaller.cs" />
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\ViewerCertificateUnmarshaller.cs" />
     <Compile Include="Amazon.CloudFront\Model\InvalidArgumentException.cs" />
     <Compile Include="Amazon.CloudFront\Model\Invalidation.cs" />
@@ -1239,11 +1230,14 @@
     <Compile Include="Amazon.CloudFront\Model\InvalidationList.cs" />
     <Compile Include="Amazon.CloudFront\Model\InvalidationSummary.cs" />
     <Compile Include="Amazon.CloudFront\Model\InvalidDefaultRootObjectException.cs" />
+    <Compile Include="Amazon.CloudFront\Model\InvalidErrorCodeException.cs" />
     <Compile Include="Amazon.CloudFront\Model\InvalidForwardCookiesException.cs" />
     <Compile Include="Amazon.CloudFront\Model\InvalidIfMatchVersionException.cs" />
     <Compile Include="Amazon.CloudFront\Model\InvalidOriginAccessIdentityException.cs" />
     <Compile Include="Amazon.CloudFront\Model\InvalidOriginException.cs" />
+    <Compile Include="Amazon.CloudFront\Model\InvalidRelativePathException.cs" />
     <Compile Include="Amazon.CloudFront\Model\InvalidRequiredProtocolException.cs" />
+    <Compile Include="Amazon.CloudFront\Model\InvalidResponseCodeException.cs" />
     <Compile Include="Amazon.CloudFront\Model\InvalidViewerCertificateException.cs" />
     <Compile Include="Amazon.CloudFront\Model\KeyPairIds.cs" />
     <Compile Include="Amazon.CloudFront\Model\ListCloudFrontOriginAccessIdentitiesRequest.cs" />
@@ -2770,6 +2764,9 @@
     <Compile Include="Amazon.EC2\Model\DescribeReservedInstancesListingsResult.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.EC2\Model\DescribeReservedInstancesModificationsRequest.cs" />
+    <Compile Include="Amazon.EC2\Model\DescribeReservedInstancesModificationsResponse.cs" />
+    <Compile Include="Amazon.EC2\Model\DescribeReservedInstancesModificationsResult.cs" />
     <Compile Include="Amazon.EC2\Model\DescribeReservedInstancesOfferingsRequest.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -3709,6 +3706,8 @@
     <Compile Include="Amazon.EC2\Model\Internal\MarshallTransformations\DescribeReservedInstancesListingsResponseUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.EC2\Model\Internal\MarshallTransformations\DescribeReservedInstancesModificationsRequestMarshaller.cs" />
+    <Compile Include="Amazon.EC2\Model\Internal\MarshallTransformations\DescribeReservedInstancesModificationsResponseUnmarshaller.cs" />
     <Compile Include="Amazon.EC2\Model\Internal\MarshallTransformations\DescribeReservedInstancesOfferingsRequestMarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -4045,6 +4044,8 @@
     <Compile Include="Amazon.EC2\Model\Internal\MarshallTransformations\ModifyNetworkInterfaceAttributeResponseUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.EC2\Model\Internal\MarshallTransformations\ModifyReservedInstancesRequestMarshaller.cs" />
+    <Compile Include="Amazon.EC2\Model\Internal\MarshallTransformations\ModifyReservedInstancesResponseUnmarshaller.cs" />
     <Compile Include="Amazon.EC2\Model\Internal\MarshallTransformations\ModifySnapshotAttributeRequestMarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -4186,9 +4187,13 @@
     <Compile Include="Amazon.EC2\Model\Internal\MarshallTransformations\ReservationUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.EC2\Model\Internal\MarshallTransformations\ReservedInstancesConfigurationUnmarshaller.cs" />
+    <Compile Include="Amazon.EC2\Model\Internal\MarshallTransformations\ReservedInstancesIdUnmarshaller.cs" />
     <Compile Include="Amazon.EC2\Model\Internal\MarshallTransformations\ReservedInstancesListingUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.EC2\Model\Internal\MarshallTransformations\ReservedInstancesModificationResultUnmarshaller.cs" />
+    <Compile Include="Amazon.EC2\Model\Internal\MarshallTransformations\ReservedInstancesModificationUnmarshaller.cs" />
     <Compile Include="Amazon.EC2\Model\Internal\MarshallTransformations\ReservedInstancesOfferingUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -4405,6 +4410,9 @@
     <Compile Include="Amazon.EC2\Model\ModifyNetworkInterfaceAttributeResponse.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.EC2\Model\ModifyReservedInstancesRequest.cs" />
+    <Compile Include="Amazon.EC2\Model\ModifyReservedInstancesResponse.cs" />
+    <Compile Include="Amazon.EC2\Model\ModifyReservedInstancesResult.cs" />
     <Compile Include="Amazon.EC2\Model\ModifySnapshotAttributeRequest.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -4576,9 +4584,13 @@
     <Compile Include="Amazon.EC2\Model\ReservedInstances.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.EC2\Model\ReservedInstancesConfiguration.cs" />
+    <Compile Include="Amazon.EC2\Model\ReservedInstancesId.cs" />
     <Compile Include="Amazon.EC2\Model\ReservedInstancesListing.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.EC2\Model\ReservedInstancesModification.cs" />
+    <Compile Include="Amazon.EC2\Model\ReservedInstancesModificationResult.cs" />
     <Compile Include="Amazon.EC2\Model\ReservedInstancesOffering.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -4826,6 +4838,9 @@
     <Compile Include="Amazon.ElastiCache\Model\CreateCacheSubnetGroupRequest.cs" />
     <Compile Include="Amazon.ElastiCache\Model\CreateCacheSubnetGroupResponse.cs" />
     <Compile Include="Amazon.ElastiCache\Model\CreateCacheSubnetGroupResult.cs" />
+    <Compile Include="Amazon.ElastiCache\Model\CreateReplicationGroupRequest.cs" />
+    <Compile Include="Amazon.ElastiCache\Model\CreateReplicationGroupResponse.cs" />
+    <Compile Include="Amazon.ElastiCache\Model\CreateReplicationGroupResult.cs" />
     <Compile Include="Amazon.ElastiCache\Model\DeleteCacheClusterRequest.cs" />
     <Compile Include="Amazon.ElastiCache\Model\DeleteCacheClusterResponse.cs" />
     <Compile Include="Amazon.ElastiCache\Model\DeleteCacheClusterResult.cs" />
@@ -4835,6 +4850,9 @@
     <Compile Include="Amazon.ElastiCache\Model\DeleteCacheSecurityGroupResponse.cs" />
     <Compile Include="Amazon.ElastiCache\Model\DeleteCacheSubnetGroupRequest.cs" />
     <Compile Include="Amazon.ElastiCache\Model\DeleteCacheSubnetGroupResponse.cs" />
+    <Compile Include="Amazon.ElastiCache\Model\DeleteReplicationGroupRequest.cs" />
+    <Compile Include="Amazon.ElastiCache\Model\DeleteReplicationGroupResponse.cs" />
+    <Compile Include="Amazon.ElastiCache\Model\DeleteReplicationGroupResult.cs" />
     <Compile Include="Amazon.ElastiCache\Model\DescribeCacheClustersRequest.cs" />
     <Compile Include="Amazon.ElastiCache\Model\DescribeCacheClustersResponse.cs" />
     <Compile Include="Amazon.ElastiCache\Model\DescribeCacheClustersResult.cs" />
@@ -4859,6 +4877,9 @@
     <Compile Include="Amazon.ElastiCache\Model\DescribeEventsRequest.cs" />
     <Compile Include="Amazon.ElastiCache\Model\DescribeEventsResponse.cs" />
     <Compile Include="Amazon.ElastiCache\Model\DescribeEventsResult.cs" />
+    <Compile Include="Amazon.ElastiCache\Model\DescribeReplicationGroupsRequest.cs" />
+    <Compile Include="Amazon.ElastiCache\Model\DescribeReplicationGroupsResponse.cs" />
+    <Compile Include="Amazon.ElastiCache\Model\DescribeReplicationGroupsResult.cs" />
     <Compile Include="Amazon.ElastiCache\Model\DescribeReservedCacheNodesOfferingsRequest.cs" />
     <Compile Include="Amazon.ElastiCache\Model\DescribeReservedCacheNodesOfferingsResponse.cs" />
     <Compile Include="Amazon.ElastiCache\Model\DescribeReservedCacheNodesOfferingsResult.cs" />
@@ -4891,6 +4912,8 @@
     <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\CreateCacheSecurityGroupResponseUnmarshaller.cs" />
     <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\CreateCacheSubnetGroupRequestMarshaller.cs" />
     <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\CreateCacheSubnetGroupResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\CreateReplicationGroupRequestMarshaller.cs" />
+    <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\CreateReplicationGroupResponseUnmarshaller.cs" />
     <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\DeleteCacheClusterRequestMarshaller.cs" />
     <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\DeleteCacheClusterResponseUnmarshaller.cs" />
     <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\DeleteCacheParameterGroupRequestMarshaller.cs" />
@@ -4899,6 +4922,8 @@
     <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\DeleteCacheSecurityGroupResponseUnmarshaller.cs" />
     <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\DeleteCacheSubnetGroupRequestMarshaller.cs" />
     <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\DeleteCacheSubnetGroupResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\DeleteReplicationGroupRequestMarshaller.cs" />
+    <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\DeleteReplicationGroupResponseUnmarshaller.cs" />
     <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\DescribeCacheClustersRequestMarshaller.cs" />
     <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\DescribeCacheClustersResponseUnmarshaller.cs" />
     <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\DescribeCacheEngineVersionsRequestMarshaller.cs" />
@@ -4915,6 +4940,8 @@
     <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\DescribeEngineDefaultParametersResponseUnmarshaller.cs" />
     <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\DescribeEventsRequestMarshaller.cs" />
     <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\DescribeEventsResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\DescribeReplicationGroupsRequestMarshaller.cs" />
+    <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\DescribeReplicationGroupsResponseUnmarshaller.cs" />
     <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\DescribeReservedCacheNodesOfferingsRequestMarshaller.cs" />
     <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\DescribeReservedCacheNodesOfferingsResponseUnmarshaller.cs" />
     <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\DescribeReservedCacheNodesRequestMarshaller.cs" />
@@ -4929,6 +4956,10 @@
     <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\ModifyCacheParameterGroupResponseUnmarshaller.cs" />
     <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\ModifyCacheSubnetGroupRequestMarshaller.cs" />
     <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\ModifyCacheSubnetGroupResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\ModifyReplicationGroupRequestMarshaller.cs" />
+    <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\ModifyReplicationGroupResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\NodeGroupMemberUnmarshaller.cs" />
+    <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\NodeGroupUnmarshaller.cs" />
     <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\NotificationConfigurationUnmarshaller.cs" />
     <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\ParameterUnmarshaller.cs" />
     <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\PendingModifiedValuesUnmarshaller.cs" />
@@ -4937,6 +4968,8 @@
     <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\RebootCacheClusterRequestMarshaller.cs" />
     <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\RebootCacheClusterResponseUnmarshaller.cs" />
     <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\RecurringChargeUnmarshaller.cs" />
+    <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\ReplicationGroupPendingModifiedValuesUnmarshaller.cs" />
+    <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\ReplicationGroupUnmarshaller.cs" />
     <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\ReservedCacheNodesOfferingUnmarshaller.cs" />
     <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\ReservedCacheNodeUnmarshaller.cs" />
     <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\ResetCacheParameterGroupRequestMarshaller.cs" />
@@ -4950,6 +4983,7 @@
     <Compile Include="Amazon.ElastiCache\Model\InvalidCacheSecurityGroupStateException.cs" />
     <Compile Include="Amazon.ElastiCache\Model\InvalidParameterCombinationException.cs" />
     <Compile Include="Amazon.ElastiCache\Model\InvalidParameterValueException.cs" />
+    <Compile Include="Amazon.ElastiCache\Model\InvalidReplicationGroupStateException.cs" />
     <Compile Include="Amazon.ElastiCache\Model\InvalidSubnetException.cs" />
     <Compile Include="Amazon.ElastiCache\Model\InvalidVPCNetworkStateException.cs" />
     <Compile Include="Amazon.ElastiCache\Model\ModifyCacheClusterRequest.cs" />
@@ -4961,6 +4995,11 @@
     <Compile Include="Amazon.ElastiCache\Model\ModifyCacheSubnetGroupRequest.cs" />
     <Compile Include="Amazon.ElastiCache\Model\ModifyCacheSubnetGroupResponse.cs" />
     <Compile Include="Amazon.ElastiCache\Model\ModifyCacheSubnetGroupResult.cs" />
+    <Compile Include="Amazon.ElastiCache\Model\ModifyReplicationGroupRequest.cs" />
+    <Compile Include="Amazon.ElastiCache\Model\ModifyReplicationGroupResponse.cs" />
+    <Compile Include="Amazon.ElastiCache\Model\ModifyReplicationGroupResult.cs" />
+    <Compile Include="Amazon.ElastiCache\Model\NodeGroup.cs" />
+    <Compile Include="Amazon.ElastiCache\Model\NodeGroupMember.cs" />
     <Compile Include="Amazon.ElastiCache\Model\NodeQuotaForClusterExceededException.cs" />
     <Compile Include="Amazon.ElastiCache\Model\NodeQuotaForCustomerExceededException.cs" />
     <Compile Include="Amazon.ElastiCache\Model\NotificationConfiguration.cs" />
@@ -4974,6 +5013,10 @@
     <Compile Include="Amazon.ElastiCache\Model\RebootCacheClusterResponse.cs" />
     <Compile Include="Amazon.ElastiCache\Model\RebootCacheClusterResult.cs" />
     <Compile Include="Amazon.ElastiCache\Model\RecurringCharge.cs" />
+    <Compile Include="Amazon.ElastiCache\Model\ReplicationGroup.cs" />
+    <Compile Include="Amazon.ElastiCache\Model\ReplicationGroupAlreadyExistsException.cs" />
+    <Compile Include="Amazon.ElastiCache\Model\ReplicationGroupNotFoundException.cs" />
+    <Compile Include="Amazon.ElastiCache\Model\ReplicationGroupPendingModifiedValues.cs" />
     <Compile Include="Amazon.ElastiCache\Model\ReservedCacheNode.cs" />
     <Compile Include="Amazon.ElastiCache\Model\ReservedCacheNodeAlreadyExistsException.cs" />
     <Compile Include="Amazon.ElastiCache\Model\ReservedCacheNodeNotFoundException.cs" />
@@ -5668,6 +5711,7 @@
     <Compile Include="Amazon.ElasticTranscoder\AmazonElasticTranscoderException.cs" />
     <Compile Include="Amazon.ElasticTranscoder\IAmazonElasticTranscoder.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\AccessDeniedException.cs" />
+    <Compile Include="Amazon.ElasticTranscoder\Model\Artwork.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\AudioParameters.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\CancelJobRequest.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\CancelJobResponse.cs" />
@@ -5691,6 +5735,7 @@
     <Compile Include="Amazon.ElasticTranscoder\Model\DeletePresetResult.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\IncompatibleVersionException.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\InternalServiceException.cs" />
+    <Compile Include="Amazon.ElasticTranscoder\Model\Internal\MarshallTransformations\ArtworkUnmarshaller.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\Internal\MarshallTransformations\AudioParametersUnmarshaller.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\Internal\MarshallTransformations\CancelJobRequestMarshaller.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\Internal\MarshallTransformations\CancelJobResponseUnmarshaller.cs" />
@@ -5704,6 +5749,7 @@
     <Compile Include="Amazon.ElasticTranscoder\Model\Internal\MarshallTransformations\DeletePipelineResponseUnmarshaller.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\Internal\MarshallTransformations\DeletePresetRequestMarshaller.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\Internal\MarshallTransformations\DeletePresetResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.ElasticTranscoder\Model\Internal\MarshallTransformations\JobAlbumArtUnmarshaller.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\Internal\MarshallTransformations\JobInputUnmarshaller.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\Internal\MarshallTransformations\JobOutputUnmarshaller.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\Internal\MarshallTransformations\JobUnmarshaller.cs" />
@@ -5740,6 +5786,7 @@
     <Compile Include="Amazon.ElasticTranscoder\Model\Internal\MarshallTransformations\UpdatePipelineStatusResponseUnmarshaller.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\Internal\MarshallTransformations\VideoParametersUnmarshaller.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\Job.cs" />
+    <Compile Include="Amazon.ElasticTranscoder\Model\JobAlbumArt.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\JobInput.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\JobOutput.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\JobWatermark.cs" />
@@ -6251,9 +6298,6 @@
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\CreateAccessKeyResponseUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\CreateAccessKeyResultUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\CreateAccountAliasRequestMarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -6266,21 +6310,14 @@
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\CreateGroupResponseUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\CreateGroupResultUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\CreateInstanceProfileRequestMarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\CreateInstanceProfileResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\CreateInstanceProfileResultUnmarshaller.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\CreateLoginProfileRequestMarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\CreateLoginProfileResponseUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\CreateLoginProfileResultUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\CreateRoleRequestMarshaller.cs">
@@ -6289,25 +6326,16 @@
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\CreateRoleResponseUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\CreateRoleResultUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\CreateUserRequestMarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\CreateUserResponseUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\CreateUserResultUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\CreateVirtualMFADeviceRequestMarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\CreateVirtualMFADeviceResponseUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\CreateVirtualMFADeviceResultUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\DeactivateMFADeviceRequestMarshaller.cs">
@@ -6408,16 +6436,10 @@
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\GetAccountPasswordPolicyResponseUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\GetAccountPasswordPolicyResultUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\GetAccountSummaryRequestMarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\GetAccountSummaryResponseUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\GetAccountSummaryResultUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\GetGroupPolicyRequestMarshaller.cs">
@@ -6426,30 +6448,18 @@
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\GetGroupPolicyResponseUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\GetGroupPolicyResultUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\GetGroupRequestMarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\GetGroupResponseUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\GetGroupResultUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\GetInstanceProfileRequestMarshaller.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\GetInstanceProfileResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\GetInstanceProfileResultUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\GetLoginProfileRequestMarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\GetLoginProfileResponseUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\GetLoginProfileResultUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\GetRolePolicyRequestMarshaller.cs">
@@ -6458,16 +6468,10 @@
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\GetRolePolicyResponseUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\GetRolePolicyResultUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\GetRoleRequestMarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\GetRoleResponseUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\GetRoleResultUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\GetServerCertificateRequestMarshaller.cs">
@@ -6476,25 +6480,16 @@
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\GetServerCertificateResponseUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\GetServerCertificateResultUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\GetUserPolicyRequestMarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\GetUserPolicyResponseUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\GetUserPolicyResultUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\GetUserRequestMarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\GetUserResponseUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\GetUserResultUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\GroupUnmarshaller.cs">
@@ -6509,16 +6504,10 @@
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\ListAccessKeysResponseUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\ListAccessKeysResultUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\ListAccountAliasesRequestMarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\ListAccountAliasesResponseUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\ListAccountAliasesResultUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\ListGroupPoliciesRequestMarshaller.cs">
@@ -6527,16 +6516,10 @@
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\ListGroupPoliciesResponseUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\ListGroupPoliciesResultUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\ListGroupsForUserRequestMarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\ListGroupsForUserResponseUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\ListGroupsForUserResultUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\ListGroupsRequestMarshaller.cs">
@@ -6545,22 +6528,14 @@
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\ListGroupsResponseUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\ListGroupsResultUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\ListInstanceProfilesForRoleRequestMarshaller.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\ListInstanceProfilesForRoleResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\ListInstanceProfilesForRoleResultUnmarshaller.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\ListInstanceProfilesRequestMarshaller.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\ListInstanceProfilesResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\ListInstanceProfilesResultUnmarshaller.cs" />
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\ListMFADevicesRequestMarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\ListMFADevicesResponseUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\ListMFADevicesResultUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\ListRolePoliciesRequestMarshaller.cs">
@@ -6569,16 +6544,10 @@
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\ListRolePoliciesResponseUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\ListRolePoliciesResultUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\ListRolesRequestMarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\ListRolesResponseUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\ListRolesResultUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\ListServerCertificatesRequestMarshaller.cs">
@@ -6587,16 +6556,10 @@
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\ListServerCertificatesResponseUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\ListServerCertificatesResultUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\ListSigningCertificatesRequestMarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\ListSigningCertificatesResponseUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\ListSigningCertificatesResultUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\ListUserPoliciesRequestMarshaller.cs">
@@ -6605,25 +6568,16 @@
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\ListUserPoliciesResponseUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\ListUserPoliciesResultUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\ListUsersRequestMarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\ListUsersResponseUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\ListUsersResultUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\ListVirtualMFADevicesRequestMarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\ListVirtualMFADevicesResponseUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\ListVirtualMFADevicesResultUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\LoginProfileUnmarshaller.cs">
@@ -6733,16 +6687,10 @@
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\UploadServerCertificateResponseUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\UploadServerCertificateResultUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\UploadSigningCertificateRequestMarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\UploadSigningCertificateResponseUnmarshaller.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\UploadSigningCertificateResultUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.IdentityManagement\Model\Internal\MarshallTransformations\UserUnmarshaller.cs">
@@ -7097,6 +7045,10 @@
     <Compile Include="Amazon.OpsWorks\Model\App.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.OpsWorks\Model\AssignVolumeRequest.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\AssignVolumeResponse.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\AssociateElasticIpRequest.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\AssociateElasticIpResponse.cs" />
     <Compile Include="Amazon.OpsWorks\Model\AttachElasticLoadBalancerRequest.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -7208,6 +7160,10 @@
     <Compile Include="Amazon.OpsWorks\Model\DeploymentCommand.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.OpsWorks\Model\DeregisterElasticIpRequest.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\DeregisterElasticIpResponse.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\DeregisterVolumeRequest.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\DeregisterVolumeResponse.cs" />
     <Compile Include="Amazon.OpsWorks\Model\DescribeAppsRequest.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -7349,6 +7305,8 @@
     <Compile Include="Amazon.OpsWorks\Model\DetachElasticLoadBalancerResponse.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.OpsWorks\Model\DisassociateElasticIpRequest.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\DisassociateElasticIpResponse.cs" />
     <Compile Include="Amazon.OpsWorks\Model\ElasticIp.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -7370,6 +7328,10 @@
     <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\AppUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\AssignVolumeRequestMarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\AssignVolumeResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\AssociateElasticIpRequestMarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\AssociateElasticIpResponseUnmarshaller.cs" />
     <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\AttachElasticLoadBalancerRequestMarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -7460,6 +7422,10 @@
     <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\DeploymentUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\DeregisterElasticIpRequestMarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\DeregisterElasticIpResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\DeregisterVolumeRequestMarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\DeregisterVolumeResponseUnmarshaller.cs" />
     <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\DescribeAppsRequestMarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -7556,6 +7522,8 @@
     <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\DetachElasticLoadBalancerResponseUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\DisassociateElasticIpRequestMarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\DisassociateElasticIpResponseUnmarshaller.cs" />
     <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\ElasticIpUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -7592,6 +7560,10 @@
     <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\RecipesUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\RegisterElasticIpRequestMarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\RegisterElasticIpResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\RegisterVolumeRequestMarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\RegisterVolumeResponseUnmarshaller.cs" />
     <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\ServiceErrorUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -7650,12 +7622,16 @@
     <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\TimeBasedAutoScalingConfigurationUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\UnassignVolumeRequestMarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\UnassignVolumeResponseUnmarshaller.cs" />
     <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\UpdateAppRequestMarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\UpdateAppResponseUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\UpdateElasticIpRequestMarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\UpdateElasticIpResponseUnmarshaller.cs" />
     <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\UpdateInstanceRequestMarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -7680,6 +7656,8 @@
     <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\UpdateUserProfileResponseUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\UpdateVolumeRequestMarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\UpdateVolumeResponseUnmarshaller.cs" />
     <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\UserProfileUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -7713,6 +7691,12 @@
     <Compile Include="Amazon.OpsWorks\Model\Recipes.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.OpsWorks\Model\RegisterElasticIpRequest.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\RegisterElasticIpResponse.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\RegisterElasticIpResult.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\RegisterVolumeRequest.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\RegisterVolumeResponse.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\RegisterVolumeResult.cs" />
     <Compile Include="Amazon.OpsWorks\Model\ResourceNotFoundException.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -7774,12 +7758,16 @@
     <Compile Include="Amazon.OpsWorks\Model\TimeBasedAutoScalingConfiguration.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.OpsWorks\Model\UnassignVolumeRequest.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\UnassignVolumeResponse.cs" />
     <Compile Include="Amazon.OpsWorks\Model\UpdateAppRequest.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.OpsWorks\Model\UpdateAppResponse.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.OpsWorks\Model\UpdateElasticIpRequest.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\UpdateElasticIpResponse.cs" />
     <Compile Include="Amazon.OpsWorks\Model\UpdateInstanceRequest.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -7804,6 +7792,8 @@
     <Compile Include="Amazon.OpsWorks\Model\UpdateUserProfileResponse.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.OpsWorks\Model\UpdateVolumeRequest.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\UpdateVolumeResponse.cs" />
     <Compile Include="Amazon.OpsWorks\Model\UserProfile.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -8211,6 +8201,7 @@
     <Compile Include="Amazon.RDS\Model\EventCategoriesMap.cs" />
     <Compile Include="Amazon.RDS\Model\EventSubscription.cs" />
     <Compile Include="Amazon.RDS\Model\EventSubscriptionQuotaExceededException.cs" />
+    <Compile Include="Amazon.RDS\Model\Filter.cs" />
     <Compile Include="Amazon.RDS\Model\InstanceQuotaExceededException.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -8829,12 +8820,17 @@
     <Compile Include="Amazon.Redshift\AmazonRedshiftConfig.cs" />
     <Compile Include="Amazon.Redshift\AmazonRedshiftException.cs" />
     <Compile Include="Amazon.Redshift\IAmazonRedshift.cs" />
+    <Compile Include="Amazon.Redshift\Model\AccessToSnapshotDeniedException.cs" />
+    <Compile Include="Amazon.Redshift\Model\AccountWithRestoreAccess.cs" />
     <Compile Include="Amazon.Redshift\Model\AuthorizationAlreadyExistsException.cs" />
     <Compile Include="Amazon.Redshift\Model\AuthorizationNotFoundException.cs" />
     <Compile Include="Amazon.Redshift\Model\AuthorizationQuotaExceededException.cs" />
     <Compile Include="Amazon.Redshift\Model\AuthorizeClusterSecurityGroupIngressRequest.cs" />
     <Compile Include="Amazon.Redshift\Model\AuthorizeClusterSecurityGroupIngressResponse.cs" />
     <Compile Include="Amazon.Redshift\Model\AuthorizeClusterSecurityGroupIngressResult.cs" />
+    <Compile Include="Amazon.Redshift\Model\AuthorizeSnapshotAccessRequest.cs" />
+    <Compile Include="Amazon.Redshift\Model\AuthorizeSnapshotAccessResponse.cs" />
+    <Compile Include="Amazon.Redshift\Model\AuthorizeSnapshotAccessResult.cs" />
     <Compile Include="Amazon.Redshift\Model\AvailabilityZone.cs" />
     <Compile Include="Amazon.Redshift\Model\Cluster.cs" />
     <Compile Include="Amazon.Redshift\Model\ClusterAlreadyExistsException.cs" />
@@ -8933,8 +8929,11 @@
     <Compile Include="Amazon.Redshift\Model\Endpoint.cs" />
     <Compile Include="Amazon.Redshift\Model\Event.cs" />
     <Compile Include="Amazon.Redshift\Model\InsufficientClusterCapacityException.cs" />
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\AccountWithRestoreAccessUnmarshaller.cs" />
     <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\AuthorizeClusterSecurityGroupIngressRequestMarshaller.cs" />
     <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\AuthorizeClusterSecurityGroupIngressResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\AuthorizeSnapshotAccessRequestMarshaller.cs" />
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\AuthorizeSnapshotAccessResponseUnmarshaller.cs" />
     <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\AvailabilityZoneUnmarshaller.cs" />
     <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\ClusterParameterGroupStatusUnmarshaller.cs" />
     <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\ClusterParameterGroupUnmarshaller.cs" />
@@ -9016,8 +9015,11 @@
     <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\ResetClusterParameterGroupResponseUnmarshaller.cs" />
     <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\RestoreFromClusterSnapshotRequestMarshaller.cs" />
     <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\RestoreFromClusterSnapshotResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\RestoreStatusUnmarshaller.cs" />
     <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\RevokeClusterSecurityGroupIngressRequestMarshaller.cs" />
     <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\RevokeClusterSecurityGroupIngressResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\RevokeSnapshotAccessRequestMarshaller.cs" />
+    <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\RevokeSnapshotAccessResponseUnmarshaller.cs" />
     <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\SnapshotUnmarshaller.cs" />
     <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\SubnetUnmarshaller.cs" />
     <Compile Include="Amazon.Redshift\Model\Internal\MarshallTransformations\VpcSecurityGroupMembershipUnmarshaller.cs" />
@@ -9065,12 +9067,17 @@
     <Compile Include="Amazon.Redshift\Model\RestoreFromClusterSnapshotRequest.cs" />
     <Compile Include="Amazon.Redshift\Model\RestoreFromClusterSnapshotResponse.cs" />
     <Compile Include="Amazon.Redshift\Model\RestoreFromClusterSnapshotResult.cs" />
+    <Compile Include="Amazon.Redshift\Model\RestoreStatus.cs" />
     <Compile Include="Amazon.Redshift\Model\RevokeClusterSecurityGroupIngressRequest.cs" />
     <Compile Include="Amazon.Redshift\Model\RevokeClusterSecurityGroupIngressResponse.cs" />
     <Compile Include="Amazon.Redshift\Model\RevokeClusterSecurityGroupIngressResult.cs" />
+    <Compile Include="Amazon.Redshift\Model\RevokeSnapshotAccessRequest.cs" />
+    <Compile Include="Amazon.Redshift\Model\RevokeSnapshotAccessResponse.cs" />
+    <Compile Include="Amazon.Redshift\Model\RevokeSnapshotAccessResult.cs" />
     <Compile Include="Amazon.Redshift\Model\Snapshot.cs" />
     <Compile Include="Amazon.Redshift\Model\Subnet.cs" />
     <Compile Include="Amazon.Redshift\Model\SubnetAlreadyInUseException.cs" />
+    <Compile Include="Amazon.Redshift\Model\UnauthorizedOperationException.cs" />
     <Compile Include="Amazon.Redshift\Model\UnsupportedOptionException.cs" />
     <Compile Include="Amazon.Redshift\Model\VpcSecurityGroupMembership.cs" />
     <Compile Include="Amazon.Redshift\ServiceEnumerations.cs" />
@@ -9595,6 +9602,11 @@
     <Compile Include="Amazon.SimpleNotificationService\ServiceEnumerations.cs" />
     <Compile Include="Amazon.SimpleWorkflow\IAmazonSimpleWorkflow.cs" />
     <Compile Include="Amazon.SimpleWorkflow\ServiceEnumerations.cs" />
+    <Compile Include="Amazon.SQS\Model\Internal\MarshallTransformations\ListDeadLetterSourceQueuesRequestMarshaller.cs" />
+    <Compile Include="Amazon.SQS\Model\Internal\MarshallTransformations\ListDeadLetterSourceQueuesResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.SQS\Model\ListDeadLetterSourceQueuesRequest.cs" />
+    <Compile Include="Amazon.SQS\Model\ListDeadLetterSourceQueuesResponse.cs" />
+    <Compile Include="Amazon.SQS\Model\ListDeadLetterSourceQueuesResult.cs" />
     <Compile Include="Amazon.SQS\ServiceEnumerations.cs" />
     <Compile Include="Amazon.StorageGateway\IAmazonStorageGateway.cs" />
     <Compile Include="Amazon.StorageGateway\Model\Internal\MarshallTransformations\ActivateGatewayRequestMarshaller.cs">
@@ -9864,7 +9876,6 @@
     <Compile Include="Amazon.SecurityToken\Model\Internal\MarshallTransformations\AssumedRoleUserUnmarshaller.cs" />
     <Compile Include="Amazon.SecurityToken\Model\Internal\MarshallTransformations\AssumeRoleRequestMarshaller.cs" />
     <Compile Include="Amazon.SecurityToken\Model\Internal\MarshallTransformations\AssumeRoleResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.SecurityToken\Model\Internal\MarshallTransformations\AssumeRoleResultUnmarshaller.cs" />
     <Compile Include="Amazon.SecurityToken\Model\Internal\MarshallTransformations\AssumeRoleWithWebIdentityRequestMarshaller.cs" />
     <Compile Include="Amazon.SecurityToken\Model\Internal\MarshallTransformations\AssumeRoleWithWebIdentityResponseUnmarshaller.cs" />
     <Compile Include="Amazon.SimpleDB\AmazonSimpleDBClient.cs" />
@@ -9904,19 +9915,15 @@
     <Compile Include="Amazon.SimpleDB\Model\Internal\MarshallTransformations\DeleteDomainResponseUnmarshaller.cs" />
     <Compile Include="Amazon.SimpleDB\Model\Internal\MarshallTransformations\DomainMetadataRequestMarshaller.cs" />
     <Compile Include="Amazon.SimpleDB\Model\Internal\MarshallTransformations\DomainMetadataResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.SimpleDB\Model\Internal\MarshallTransformations\DomainMetadataResultUnmarshaller.cs" />
     <Compile Include="Amazon.SimpleDB\Model\Internal\MarshallTransformations\GetAttributesRequestMarshaller.cs" />
     <Compile Include="Amazon.SimpleDB\Model\Internal\MarshallTransformations\GetAttributesResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.SimpleDB\Model\Internal\MarshallTransformations\GetAttributesResultUnmarshaller.cs" />
     <Compile Include="Amazon.SimpleDB\Model\Internal\MarshallTransformations\ItemUnmarshaller.cs" />
     <Compile Include="Amazon.SimpleDB\Model\Internal\MarshallTransformations\ListDomainsRequestMarshaller.cs" />
     <Compile Include="Amazon.SimpleDB\Model\Internal\MarshallTransformations\ListDomainsResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.SimpleDB\Model\Internal\MarshallTransformations\ListDomainsResultUnmarshaller.cs" />
     <Compile Include="Amazon.SimpleDB\Model\Internal\MarshallTransformations\PutAttributesRequestMarshaller.cs" />
     <Compile Include="Amazon.SimpleDB\Model\Internal\MarshallTransformations\PutAttributesResponseUnmarshaller.cs" />
     <Compile Include="Amazon.SimpleDB\Model\Internal\MarshallTransformations\SelectRequestMarshaller.cs" />
     <Compile Include="Amazon.SimpleDB\Model\Internal\MarshallTransformations\SelectResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.SimpleDB\Model\Internal\MarshallTransformations\SelectResultUnmarshaller.cs" />
     <Compile Include="Amazon.SimpleDB\Model\InvalidNextTokenException.cs" />
     <Compile Include="Amazon.SimpleDB\Model\InvalidNumberPredicatesException.cs" />
     <Compile Include="Amazon.SimpleDB\Model\InvalidNumberValueTestsException.cs" />
@@ -9971,30 +9978,22 @@
     <Compile Include="Amazon.SimpleNotificationService\Model\Internal\MarshallTransformations\AddPermissionResponseUnmarshaller.cs" />
     <Compile Include="Amazon.SimpleNotificationService\Model\Internal\MarshallTransformations\ConfirmSubscriptionRequestMarshaller.cs" />
     <Compile Include="Amazon.SimpleNotificationService\Model\Internal\MarshallTransformations\ConfirmSubscriptionResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.SimpleNotificationService\Model\Internal\MarshallTransformations\ConfirmSubscriptionResultUnmarshaller.cs" />
     <Compile Include="Amazon.SimpleNotificationService\Model\Internal\MarshallTransformations\CreateTopicRequestMarshaller.cs" />
     <Compile Include="Amazon.SimpleNotificationService\Model\Internal\MarshallTransformations\CreateTopicResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.SimpleNotificationService\Model\Internal\MarshallTransformations\CreateTopicResultUnmarshaller.cs" />
     <Compile Include="Amazon.SimpleNotificationService\Model\Internal\MarshallTransformations\DeleteTopicRequestMarshaller.cs" />
     <Compile Include="Amazon.SimpleNotificationService\Model\Internal\MarshallTransformations\DeleteTopicResponseUnmarshaller.cs" />
     <Compile Include="Amazon.SimpleNotificationService\Model\Internal\MarshallTransformations\GetSubscriptionAttributesRequestMarshaller.cs" />
     <Compile Include="Amazon.SimpleNotificationService\Model\Internal\MarshallTransformations\GetSubscriptionAttributesResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.SimpleNotificationService\Model\Internal\MarshallTransformations\GetSubscriptionAttributesResultUnmarshaller.cs" />
     <Compile Include="Amazon.SimpleNotificationService\Model\Internal\MarshallTransformations\GetTopicAttributesRequestMarshaller.cs" />
     <Compile Include="Amazon.SimpleNotificationService\Model\Internal\MarshallTransformations\GetTopicAttributesResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.SimpleNotificationService\Model\Internal\MarshallTransformations\GetTopicAttributesResultUnmarshaller.cs" />
     <Compile Include="Amazon.SimpleNotificationService\Model\Internal\MarshallTransformations\ListSubscriptionsByTopicRequestMarshaller.cs" />
     <Compile Include="Amazon.SimpleNotificationService\Model\Internal\MarshallTransformations\ListSubscriptionsByTopicResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.SimpleNotificationService\Model\Internal\MarshallTransformations\ListSubscriptionsByTopicResultUnmarshaller.cs" />
     <Compile Include="Amazon.SimpleNotificationService\Model\Internal\MarshallTransformations\ListSubscriptionsRequestMarshaller.cs" />
     <Compile Include="Amazon.SimpleNotificationService\Model\Internal\MarshallTransformations\ListSubscriptionsResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.SimpleNotificationService\Model\Internal\MarshallTransformations\ListSubscriptionsResultUnmarshaller.cs" />
     <Compile Include="Amazon.SimpleNotificationService\Model\Internal\MarshallTransformations\ListTopicsRequestMarshaller.cs" />
     <Compile Include="Amazon.SimpleNotificationService\Model\Internal\MarshallTransformations\ListTopicsResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.SimpleNotificationService\Model\Internal\MarshallTransformations\ListTopicsResultUnmarshaller.cs" />
     <Compile Include="Amazon.SimpleNotificationService\Model\Internal\MarshallTransformations\PublishRequestMarshaller.cs" />
     <Compile Include="Amazon.SimpleNotificationService\Model\Internal\MarshallTransformations\PublishResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.SimpleNotificationService\Model\Internal\MarshallTransformations\PublishResultUnmarshaller.cs" />
     <Compile Include="Amazon.SimpleNotificationService\Model\Internal\MarshallTransformations\RemovePermissionRequestMarshaller.cs" />
     <Compile Include="Amazon.SimpleNotificationService\Model\Internal\MarshallTransformations\RemovePermissionResponseUnmarshaller.cs" />
     <Compile Include="Amazon.SimpleNotificationService\Model\Internal\MarshallTransformations\SetSubscriptionAttributesRequestMarshaller.cs" />
@@ -10003,7 +10002,6 @@
     <Compile Include="Amazon.SimpleNotificationService\Model\Internal\MarshallTransformations\SetTopicAttributesResponseUnmarshaller.cs" />
     <Compile Include="Amazon.SimpleNotificationService\Model\Internal\MarshallTransformations\SubscribeRequestMarshaller.cs" />
     <Compile Include="Amazon.SimpleNotificationService\Model\Internal\MarshallTransformations\SubscribeResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.SimpleNotificationService\Model\Internal\MarshallTransformations\SubscribeResultUnmarshaller.cs" />
     <Compile Include="Amazon.SimpleNotificationService\Model\Internal\MarshallTransformations\SubscriptionUnmarshaller.cs" />
     <Compile Include="Amazon.SimpleNotificationService\Model\Internal\MarshallTransformations\TopicUnmarshaller.cs" />
     <Compile Include="Amazon.SimpleNotificationService\Model\Internal\MarshallTransformations\UnsubscribeRequestMarshaller.cs" />
@@ -10141,10 +10139,8 @@
     <Compile Include="Amazon.SecurityToken\Model\Internal\MarshallTransformations\FederatedUserUnmarshaller.cs" />
     <Compile Include="Amazon.SecurityToken\Model\Internal\MarshallTransformations\GetFederationTokenRequestMarshaller.cs" />
     <Compile Include="Amazon.SecurityToken\Model\Internal\MarshallTransformations\GetFederationTokenResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.SecurityToken\Model\Internal\MarshallTransformations\GetFederationTokenResultUnmarshaller.cs" />
     <Compile Include="Amazon.SecurityToken\Model\Internal\MarshallTransformations\GetSessionTokenRequestMarshaller.cs" />
     <Compile Include="Amazon.SecurityToken\Model\Internal\MarshallTransformations\GetSessionTokenResponseUnmarshaller.cs" />
-    <Compile Include="Amazon.SecurityToken\Model\Internal\MarshallTransformations\GetSessionTokenResultUnmarshaller.cs" />
     <Compile Include="Amazon.SecurityToken\Model\MalformedPolicyDocumentException.cs" />
     <Compile Include="Amazon.SecurityToken\Model\PackedPolicyTooLargeException.cs" />
     <Compile Include="Amazon.SimpleEmail\AmazonSimpleEmailServiceClient.cs" />

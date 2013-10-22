@@ -29,6 +29,7 @@ namespace Amazon.IdentityManagement.Model
         
         private string userName;
         private DateTime? createDate;
+        private bool? mustChangePassword;
 
         /// <summary>
         /// The name of the user, which can be used for signing into the AWS Management Console.
@@ -73,6 +74,17 @@ namespace Amazon.IdentityManagement.Model
         internal bool IsSetCreateDate()
         {
             return this.createDate.HasValue;
+        }
+        public bool MustChangePassword
+        {
+            get { return this.mustChangePassword ?? default(bool); }
+            set { this.mustChangePassword = value; }
+        }
+
+        // Check to see if MustChangePassword property is set
+        internal bool IsSetMustChangePassword()
+        {
+            return this.mustChangePassword.HasValue;
         }
     }
 }

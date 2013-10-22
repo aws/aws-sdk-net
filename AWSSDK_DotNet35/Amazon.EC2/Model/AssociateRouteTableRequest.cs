@@ -28,12 +28,25 @@ namespace Amazon.EC2.Model
     /// <para> Associates a subnet with a route table. The subnet and route table must be in the same VPC. This association causes traffic
     /// originating from the subnet to be routed according to the routes in the route table. The action returns an association ID, which you need if
     /// you want to disassociate the route table from the subnet later. A route table can be associated with multiple subnets. </para> <para> For
-    /// more information about route tables, go to Route Tables in the Amazon Virtual Private Cloud User Guide. </para>
+    /// more information about route tables, go to <a href="http://docs.amazonwebservices.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html"
+    /// >Route Tables</a> in the Amazon Virtual Private Cloud User Guide. </para>
     /// </summary>
     public partial class AssociateRouteTableRequest : AmazonWebServiceRequest
     {
+        private bool? dryRun;
         private string subnetId;
         private string routeTableId;
+        public bool DryRun
+        {
+            get { return this.dryRun ?? default(bool); }
+            set { this.dryRun = value; }
+        }
+
+        // Check to see if DryRun property is set
+        internal bool IsSetDryRun()
+        {
+            return this.dryRun.HasValue;
+        }
 
         /// <summary>
         /// The ID of the subnet.

@@ -26,8 +26,11 @@ namespace Amazon.AWSSupport.Model
     /// <summary>
     /// Container for the parameters to the DescribeTrustedAdvisorCheckSummaries operation.
     /// <para>This action enables you to get the latest summaries for Trusted Advisor checks that you specify in your request. You submit the list
-    /// of Trusted Advisor checks for which you want summaries. You obtain these <i>CheckIds</i> by submitting a DescribeTrustedAdvisorChecks
-    /// request. </para> <para>The response body contains an array of TrustedAdvisorCheckSummary objects. </para>
+    /// of Trusted Advisor checks for which you want summaries. You obtain these <i>CheckIds</i> by submitting a <a
+    /// href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorChecks.html" >DescribeTrustedAdvisorChecks</a>
+    /// request. </para> <para>The response body contains an array of <a
+    /// href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorCheckSummary.html" >TrustedAdvisorCheckSummary</a>
+    /// objects. </para>
     /// </summary>
     public partial class DescribeTrustedAdvisorCheckSummariesRequest : AmazonWebServiceRequest
     {

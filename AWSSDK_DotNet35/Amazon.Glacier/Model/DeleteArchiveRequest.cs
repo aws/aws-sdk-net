@@ -36,9 +36,12 @@ namespace Amazon.Glacier.Model
     /// </ul>
     /// <para>This operation is idempotent. Attempting to delete an already-deleted archive does not result in an error. </para> <para>An AWS
     /// account has full permission to perform all operations (actions). However, AWS Identity and Access Management (IAM) users don't have any
-    /// permissions by default. You must grant them explicit permission to perform specific actions. For more information, see Access Control Using
-    /// AWS Identity and Access Management (IAM).</para> <para> For conceptual information and underlying REST API, go to Deleting an Archive in
-    /// Amazon Glacier and Delete Archive in the <i>Amazon Glacier Developer Guide</i> .
+    /// permissions by default. You must grant them explicit permission to perform specific actions. For more information, see <a
+    /// href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html" >Access Control Using AWS Identity and Access
+    /// Management (IAM)</a> .</para> <para> For conceptual information and underlying REST API, go to <a
+    /// href="http://docs.aws.amazon.com/amazonglacier/latest/dev/deleting-an-archive.html" >Deleting an Archive in Amazon Glacier</a> and <a
+    /// href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-archive-delete.html" >Delete Archive</a> in the <i>Amazon Glacier Developer
+    /// Guide</i> .
     /// </para>
     /// </summary>
     public partial class DeleteArchiveRequest : AmazonWebServiceRequest

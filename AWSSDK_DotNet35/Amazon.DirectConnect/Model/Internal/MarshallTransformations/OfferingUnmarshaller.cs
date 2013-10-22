@@ -33,6 +33,9 @@
 
         public Offering Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonToken.Null)
+                return null;
+
             Offering offering = new Offering();
 
         

@@ -14,10 +14,11 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
+using System.Text;
 using System.Xml;
 using System.Xml.Serialization;
-using System.Text;
 
 using Amazon.Route53.Model;
 
@@ -42,8 +43,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
 
 
             request.HttpMethod = "GET";
-              
-            Dictionary<string, string> queryParameters = new Dictionary<string, string>();
             string uriResourcePath = "/2012-12-12/hostedzone/{Id}/rrset?type={Type}&name={Name}&identifier={Identifier}&maxitems={MaxItems}"; 
             uriResourcePath = uriResourcePath.Replace("{Id}", listResourceRecordSetsRequest.IsSetHostedZoneId() ? listResourceRecordSetsRequest.HostedZoneId.ToString() : "" ); 
             uriResourcePath = uriResourcePath.Replace("{Name}", listResourceRecordSetsRequest.IsSetStartRecordName() ? listResourceRecordSetsRequest.StartRecordName.ToString() : "" ); 
@@ -53,7 +52,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
 
             if (uriResourcePath.Contains("?")) 
             {
-                int queryIndex = uriResourcePath.IndexOf("?");
+                int queryIndex = uriResourcePath.IndexOf("?", StringComparison.OrdinalIgnoreCase);
                 string queryString = uriResourcePath.Substring(queryIndex + 1);
                 
                 uriResourcePath    = uriResourcePath.Substring(0, queryIndex);

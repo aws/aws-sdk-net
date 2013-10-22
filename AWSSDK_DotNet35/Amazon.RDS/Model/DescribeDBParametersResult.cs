@@ -31,7 +31,7 @@ namespace Amazon.RDS.Model
         private string marker;
 
         /// <summary>
-        /// A list of <a>Parameter</a> instances.
+        /// A list of <a>Parameter</a> values.
         ///  
         /// </summary>
         public List<Parameter> Parameters

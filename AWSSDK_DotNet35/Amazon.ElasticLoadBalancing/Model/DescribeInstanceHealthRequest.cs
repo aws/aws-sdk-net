@@ -25,10 +25,10 @@ namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeInstanceHealth operation.
-    /// <para> Returns the current state of the instances of the specified LoadBalancer. If no instances are specified, the state of all the
-    /// instances for the LoadBalancer is returned. </para> <para><b>NOTE:</b> The client must have created the specified input LoadBalancer in
-    /// order to retrieve this information; the client must provide the same account credentials as those that were used to create the LoadBalancer.
-    /// </para>
+    /// <para> Returns the current state of the instances of the specified load balancer. If no instances are specified, the state of all the
+    /// instances for the load balancer is returned. </para> <para><b>NOTE:</b> The client must have created the specified input load balancer in
+    /// order to retrieve this information; the client must provide the same account credentials as those that were used to create the load
+    /// balancer. </para>
     /// </summary>
     public partial class DescribeInstanceHealthRequest : AmazonWebServiceRequest
     {
@@ -45,7 +45,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// Callers should use the properties initialize any additional object members.
         /// </summary>
         /// 
-        /// <param name="loadBalancerName"> The name associated with the LoadBalancer. The name must be unique within the client AWS account. </param>
+        /// <param name="loadBalancerName"> The name associated with the load balancer. The name must be unique within the client AWS account. </param>
         public DescribeInstanceHealthRequest(string loadBalancerName)
         {
             this.loadBalancerName = loadBalancerName;
@@ -53,7 +53,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     
 
         /// <summary>
-        /// The name associated with the LoadBalancer. The name must be unique within the client AWS account.
+        /// The name associated with the load balancer. The name must be unique within the client AWS account.
         ///  
         /// </summary>
         public string LoadBalancerName

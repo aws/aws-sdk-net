@@ -33,6 +33,9 @@
 
         public TimerFiredEventAttributes Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonToken.Null)
+                return null;
+
             TimerFiredEventAttributes timerFiredEventAttributes = new TimerFiredEventAttributes();
 
         

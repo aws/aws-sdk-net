@@ -25,14 +25,15 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
-    /// <para> Lists all tags on a DB Instance.</para> <para>For an overview on tagging DB Instances, see DB Instance Tags. </para>
+    /// <para> Lists all tags on an Amazon RDS resource.</para> <para>For an overview on tagging an Amazon RDS resource, see <a
+    /// href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html" >Tagging Amazon RDS Resources</a> .</para>
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonWebServiceRequest
     {
         private string resourceName;
 
         /// <summary>
-        /// The DB Instance with tags to be listed. This value is an Amazon Resource Name (ARN). For information about creating an ARN, see <a
+        /// The Amazon RDS resource with tags to be listed. This value is an Amazon Resource Name (ARN). For information about creating an ARN, see <a
         /// href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN"> Constructing an RDS Amazon Resource Name
         /// (ARN)</a>.
         ///  

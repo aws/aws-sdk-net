@@ -17,13 +17,14 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using Amazon.Runtime;
 
 namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// <para>Describes a subnet group.</para>
     /// </summary>
-    public class ClusterSubnetGroup
+    public partial class ClusterSubnetGroup : AmazonWebServiceResponse
     {
         
         private string clusterSubnetGroupName;

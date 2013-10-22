@@ -55,6 +55,11 @@ namespace Amazon.Runtime
             return this.Value;
         }
 
+        public string ToString(IFormatProvider provider)
+        {
+            return this.Value;
+        }
+
         public static implicit operator string(ConstantClass value)
         {
             if (value == null)

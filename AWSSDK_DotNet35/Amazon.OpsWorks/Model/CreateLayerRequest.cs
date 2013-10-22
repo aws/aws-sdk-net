@@ -25,10 +25,12 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateLayer operation.
-    /// <para>Creates a layer. For more information, see How to Create a Layer.</para> <para><b>NOTE:</b>You should use CreateLayer for non-custom
-    /// layer types such as PHP App Server only if the stack does not have an existing layer of that type. A stack can have at most one instance of
-    /// each non-custom layer; if you attempt to create a second instance, CreateLayer fails. A stack can have an arbitrary number of custom layers,
-    /// so you can call CreateLayer as many times as you like for that layer type.</para>
+    /// <para>Creates a layer. For more information, see <a
+    /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-create.html" >How to Create a Layer</a> .</para>
+    /// <para><b>NOTE:</b>You should use CreateLayer for noncustom layer types such as PHP App Server only if the stack does not have an existing
+    /// layer of that type. A stack can have at most one instance of each noncustom layer; if you attempt to create a second instance, CreateLayer
+    /// fails. A stack can have an arbitrary number of custom layers, so you can call CreateLayer as many times as you like for that layer
+    /// type.</para>
     /// </summary>
     public partial class CreateLayerRequest : AmazonWebServiceRequest
     {
@@ -43,6 +45,7 @@ namespace Amazon.OpsWorks.Model
         private List<VolumeConfiguration> volumeConfigurations = new List<VolumeConfiguration>();
         private bool? enableAutoHealing;
         private bool? autoAssignElasticIps;
+        private bool? autoAssignPublicIps;
         private Recipes customRecipes;
         private bool? installUpdatesOnBoot;
 
@@ -223,7 +226,8 @@ namespace Amazon.OpsWorks.Model
 
         /// <summary>
         /// Whether to automatically assign an <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP
-        /// address</a> to the layer.
+        /// address</a> to the layer's instances. For more information, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a Layer</a>.
         ///  
         /// </summary>
         public bool AutoAssignElasticIps
@@ -236,6 +240,23 @@ namespace Amazon.OpsWorks.Model
         internal bool IsSetAutoAssignElasticIps()
         {
             return this.autoAssignElasticIps.HasValue;
+        }
+
+        /// <summary>
+        /// For stacks that are running in a VPC, whether to automatically assign a public IP address to the layer's instances. For more information,
+        /// see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a Layer</a>.
+        ///  
+        /// </summary>
+        public bool AutoAssignPublicIps
+        {
+            get { return this.autoAssignPublicIps ?? default(bool); }
+            set { this.autoAssignPublicIps = value; }
+        }
+
+        // Check to see if AutoAssignPublicIps property is set
+        internal bool IsSetAutoAssignPublicIps()
+        {
+            return this.autoAssignPublicIps.HasValue;
         }
 
         /// <summary>

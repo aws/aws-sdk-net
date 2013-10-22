@@ -30,7 +30,7 @@ namespace Amazon.EC2.Model
         private string vpcId;
         private string description;
         private string ownerId;
-        private string status;
+        private NetworkInterfaceStatus status;
         private string privateIpAddress;
         private string privateDnsName;
         private bool? sourceDestCheck;
@@ -93,7 +93,7 @@ namespace Amazon.EC2.Model
         {
             return this.ownerId != null;
         }
-        public string Status
+        public NetworkInterfaceStatus Status
         {
             get { return this.status; }
             set { this.status = value; }

@@ -26,7 +26,7 @@ namespace Amazon.EC2.Model
     {
         
         private InstanceType instanceType;
-        private string productDescription;
+        private RIProductDescription productDescription;
         private string price;
         private DateTime? timestamp;
         private string availabilityZone;
@@ -41,7 +41,7 @@ namespace Amazon.EC2.Model
         {
             return this.instanceType != null;
         }
-        public string ProductDescription
+        public RIProductDescription ProductDescription
         {
             get { return this.productDescription; }
             set { this.productDescription = value; }

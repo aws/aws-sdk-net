@@ -176,8 +176,8 @@ namespace Amazon.S3.Transfer.Internal
             };
             initRequest.BeforeRequestEvent += this.RequestEventHandler;
 
-            if (this._fileTransporterRequest.MetaData != null && this._fileTransporterRequest.MetaData.Count > 0)
-                initRequest.MetaData = this._fileTransporterRequest.MetaData;
+            if (this._fileTransporterRequest.Metadata != null && this._fileTransporterRequest.Metadata.Count > 0)
+                initRequest.Metadata = this._fileTransporterRequest.Metadata;
             if (this._fileTransporterRequest.Headers != null && this._fileTransporterRequest.Headers.Count > 0)
                 initRequest.Headers = this._fileTransporterRequest.Headers;
 

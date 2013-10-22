@@ -62,7 +62,7 @@ namespace Amazon.ElasticTranscoder
         /// <param name="credentials">AWS Credentials</param>
         /// <param name="clientConfig">The AmazonElasticTranscoderClient Configuration Object</param>
         public AmazonElasticTranscoderClient(AWSCredentials credentials, AmazonElasticTranscoderConfig clientConfig)
-            : base(credentials, clientConfig, false, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(credentials, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
         {
         }
 
@@ -144,6 +144,19 @@ namespace Amazon.ElasticTranscoder
         #endregion
 
  
+		internal CancelJobResponse CancelJob(CancelJobRequest request)
+        {
+            var task = CancelJobAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>The CancelJob operation cancels an unfinished job.</para> <para><b>NOTE:</b>You can only cancel a job that has a status of Submitted.
         /// To prevent a pipeline from starting to process a job while you're getting the job identifier, use UpdatePipelineStatus to temporarily pause
@@ -173,6 +186,19 @@ namespace Amazon.ElasticTranscoder
             return response;
         }
  
+		internal CreateJobResponse CreateJob(CreateJobRequest request)
+        {
+            var task = CreateJobAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> When you create a job, Elastic Transcoder returns JSON data that includes the values that you specified plus information about the
         /// job that is created. </para> <para>If you have specified more than one output for your jobs (for example, one output for the Kindle Fire and
@@ -203,6 +229,19 @@ namespace Amazon.ElasticTranscoder
             return response;
         }
  
+		internal CreatePipelineResponse CreatePipeline(CreatePipelineRequest request)
+        {
+            var task = CreatePipelineAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>The CreatePipeline operation creates a pipeline with settings that you specify.</para>
         /// </summary>
@@ -230,6 +269,19 @@ namespace Amazon.ElasticTranscoder
             return response;
         }
  
+		internal CreatePresetResponse CreatePreset(CreatePresetRequest request)
+        {
+            var task = CreatePresetAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>The CreatePreset operation creates a preset with settings that you specify.</para> <para><b>IMPORTANT:</b>Elastic Transcoder checks
         /// the CreatePreset settings to ensure that they meet Elastic Transcoder requirements and to determine whether they comply with H.264
@@ -263,6 +315,19 @@ namespace Amazon.ElasticTranscoder
             return response;
         }
  
+		internal DeletePipelineResponse DeletePipeline(DeletePipelineRequest request)
+        {
+            var task = DeletePipelineAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>The DeletePipeline operation removes a pipeline.</para> <para> You can only delete a pipeline that has never been used or that is not
         /// currently in use (doesn't contain any active jobs). If the pipeline is currently in use, <c>DeletePipeline</c> returns an error. </para>
@@ -291,6 +356,19 @@ namespace Amazon.ElasticTranscoder
             return response;
         }
  
+		internal DeletePresetResponse DeletePreset(DeletePresetRequest request)
+        {
+            var task = DeletePresetAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>The DeletePreset operation removes a preset that you've added in an AWS region.</para> <para><b>NOTE:</b> You can't delete the default
         /// presets that are included with Elastic Transcoder. </para>
@@ -318,6 +396,19 @@ namespace Amazon.ElasticTranscoder
             return response;
         }
  
+		internal ListJobsByPipelineResponse ListJobsByPipeline(ListJobsByPipelineRequest request)
+        {
+            var task = ListJobsByPipelineAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>The ListJobsByPipeline operation gets a list of the jobs currently in a pipeline.</para> <para>Elastic Transcoder returns all of the
         /// jobs currently in the specified pipeline. The response body contains one element for each job that satisfies the search criteria.</para>
@@ -345,6 +436,19 @@ namespace Amazon.ElasticTranscoder
             return response;
         }
  
+		internal ListJobsByStatusResponse ListJobsByStatus(ListJobsByStatusRequest request)
+        {
+            var task = ListJobsByStatusAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>The ListJobsByStatus operation gets a list of jobs that have a specified status. The response body contains one element for each job
         /// that satisfies the search criteria.</para>
@@ -372,6 +476,19 @@ namespace Amazon.ElasticTranscoder
             return response;
         }
  
+		internal ListPipelinesResponse ListPipelines(ListPipelinesRequest request)
+        {
+            var task = ListPipelinesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>The ListPipelines operation gets a list of the pipelines associated with the current AWS account.</para>
         /// </summary>
@@ -397,6 +514,19 @@ namespace Amazon.ElasticTranscoder
             return response;
         }
  
+		internal ListPresetsResponse ListPresets(ListPresetsRequest request)
+        {
+            var task = ListPresetsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>The ListPresets operation gets a list of the default presets included with Elastic Transcoder and the presets that you've added in an
         /// AWS region.</para>
@@ -423,6 +553,19 @@ namespace Amazon.ElasticTranscoder
             return response;
         }
  
+		internal ReadJobResponse ReadJob(ReadJobRequest request)
+        {
+            var task = ReadJobAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>The ReadJob operation returns detailed information about a job.</para>
         /// </summary>
@@ -449,6 +592,19 @@ namespace Amazon.ElasticTranscoder
             return response;
         }
  
+		internal ReadPipelineResponse ReadPipeline(ReadPipelineRequest request)
+        {
+            var task = ReadPipelineAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>The ReadPipeline operation gets detailed information about a pipeline.</para>
         /// </summary>
@@ -475,6 +631,19 @@ namespace Amazon.ElasticTranscoder
             return response;
         }
  
+		internal ReadPresetResponse ReadPreset(ReadPresetRequest request)
+        {
+            var task = ReadPresetAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>The ReadPreset operation gets detailed information about a preset.</para>
         /// </summary>
@@ -501,6 +670,19 @@ namespace Amazon.ElasticTranscoder
             return response;
         }
  
+		internal TestRoleResponse TestRole(TestRoleRequest request)
+        {
+            var task = TestRoleAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>The TestRole operation tests the IAM role used to create the pipeline.</para> <para>The <c>TestRole</c> action lets you determine
         /// whether the IAM role you are using has sufficient permissions to let Elastic Transcoder perform tasks associated with the transcoding
@@ -530,6 +712,19 @@ namespace Amazon.ElasticTranscoder
             return response;
         }
  
+		internal UpdatePipelineResponse UpdatePipeline(UpdatePipelineRequest request)
+        {
+            var task = UpdatePipelineAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Use the <c>UpdatePipeline</c> operation to update settings for a pipeline. <para><b>IMPORTANT:</b>When you change pipeline settings,
         /// your changes take effect immediately. Jobs that you have already submitted and that Elastic Transcoder has not started to process are
@@ -559,6 +754,19 @@ namespace Amazon.ElasticTranscoder
             return response;
         }
  
+		internal UpdatePipelineNotificationsResponse UpdatePipelineNotifications(UpdatePipelineNotificationsRequest request)
+        {
+            var task = UpdatePipelineNotificationsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>With the UpdatePipelineNotifications operation, you can update Amazon Simple Notification Service (Amazon SNS) notifications for a
         /// pipeline.</para> <para>When you update notifications for a pipeline, Elastic Transcoder returns the values that you specified in the
@@ -588,6 +796,19 @@ namespace Amazon.ElasticTranscoder
             return response;
         }
  
+		internal UpdatePipelineStatusResponse UpdatePipelineStatus(UpdatePipelineStatusRequest request)
+        {
+            var task = UpdatePipelineStatusAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>The UpdatePipelineStatus operation pauses or reactivates a pipeline, so that the pipeline stops or restarts the processing of
         /// jobs.</para> <para>Changing the pipeline status is useful if you want to cancel one or more jobs. You can't cancel jobs after Elastic

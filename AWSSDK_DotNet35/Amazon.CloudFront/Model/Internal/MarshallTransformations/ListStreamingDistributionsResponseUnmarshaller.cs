@@ -37,7 +37,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             return response;
         }
         
-        private void UnmarshallResult(XmlUnmarshallerContext context,ListStreamingDistributionsResponse response)
+        private static void UnmarshallResult(XmlUnmarshallerContext context,ListStreamingDistributionsResponse response)
         {
             
             int originalDepth = context.CurrentDepth;

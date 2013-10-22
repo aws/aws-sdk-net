@@ -33,6 +33,9 @@
 
         public DescribeVaultOutput Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonToken.Null)
+                return null;
+
             DescribeVaultOutput describeVaultOutput = new DescribeVaultOutput();
 
         

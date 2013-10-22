@@ -30,8 +30,20 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DisassociateAddressRequest : AmazonWebServiceRequest
     {
+        private bool? dryRun;
         private string publicIp;
         private string associationId;
+        public bool DryRun
+        {
+            get { return this.dryRun ?? default(bool); }
+            set { this.dryRun = value; }
+        }
+
+        // Check to see if DryRun property is set
+        internal bool IsSetDryRun()
+        {
+            return this.dryRun.HasValue;
+        }
 
         /// <summary>
         /// The elastic IP address that you are disassociating from the instance.

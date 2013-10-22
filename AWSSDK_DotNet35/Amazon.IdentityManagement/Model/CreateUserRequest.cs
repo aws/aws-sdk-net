@@ -25,8 +25,9 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateUser operation.
-    /// <para>Creates a new user for your AWS account.</para> <para>For information about limitations on the number of users you can create, see
-    /// Limitations on IAM Entities in <i>Using AWS Identity and Access Management</i> .</para>
+    /// <para>Creates a new user for your AWS account.</para> <para>For information about limitations on the number of users you can create, see <a
+    /// href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?LimitationsOnEntities.html" >Limitations on IAM Entities</a> in
+    /// <i>Using AWS Identity and Access Management</i> .</para>
     /// </summary>
     public partial class CreateUserRequest : AmazonWebServiceRequest
     {

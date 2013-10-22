@@ -125,6 +125,10 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
             {
                 request.Parameters.Add("EbsOptimized", StringUtils.FromBool(createLaunchConfigurationRequest.EbsOptimized));
             }
+            if (createLaunchConfigurationRequest != null && createLaunchConfigurationRequest.IsSetAssociatePublicIpAddress())
+            {
+                request.Parameters.Add("AssociatePublicIpAddress", StringUtils.FromBool(createLaunchConfigurationRequest.AssociatePublicIpAddress));
+            }
 
             return request;
         }

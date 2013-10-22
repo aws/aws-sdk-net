@@ -28,7 +28,7 @@ namespace Amazon.EC2.Model
         private string spotInstanceRequestId;
         private string spotPrice;
         private SpotInstanceType type;
-        private string state;
+        private SpotInstanceState state;
         private SpotInstanceStateFault fault;
         private SpotInstanceStatus status;
         private DateTime? validFrom;
@@ -38,7 +38,7 @@ namespace Amazon.EC2.Model
         private LaunchSpecification launchSpecification;
         private string instanceId;
         private DateTime? createTime;
-        private string productDescription;
+        private RIProductDescription productDescription;
         private List<Tag> tags = new List<Tag>();
         private string launchedAvailabilityZone;
         public string SpotInstanceRequestId
@@ -74,7 +74,7 @@ namespace Amazon.EC2.Model
         {
             return this.type != null;
         }
-        public string State
+        public SpotInstanceState State
         {
             get { return this.state; }
             set { this.state = value; }
@@ -189,7 +189,7 @@ namespace Amazon.EC2.Model
         {
             return this.createTime.HasValue;
         }
-        public string ProductDescription
+        public RIProductDescription ProductDescription
         {
             get { return this.productDescription; }
             set { this.productDescription = value; }

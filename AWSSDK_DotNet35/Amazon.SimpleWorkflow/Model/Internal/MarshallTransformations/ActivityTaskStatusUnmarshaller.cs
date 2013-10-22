@@ -33,6 +33,9 @@
 
         public ActivityTaskStatus Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonToken.Null)
+                return null;
+
             ActivityTaskStatus activityTaskStatus = new ActivityTaskStatus();
 
         

@@ -25,8 +25,11 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the PutScheduledUpdateGroupAction operation.
-    /// <para> Creates a scheduled scaling action for an Auto Scaling group. If you leave a parameter unspecified, the corresponding value remains
-    /// unchanged in the affected Auto Scaling group. </para>
+    /// <para> Creates or updates a scheduled scaling action for an Auto Scaling group. When updating a scheduled scaling action, if you leave a
+    /// parameter unspecified, the corresponding value remains unchanged in the affected Auto Scaling group. </para> <para>For information on
+    /// creating or updating a scheduled action for your Auto Scaling group, see <a
+    /// href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/schedule_time.html" >Scale Based on a Schedule</a> .</para>
+    /// <para><b>NOTE:</b> Auto Scaling supports the date and time expressed in "YYYY-MM-DDThh:mm:ssZ" format in UTC/GMT only. </para>
     /// </summary>
     public partial class PutScheduledUpdateGroupActionRequest : AmazonWebServiceRequest
     {
@@ -117,8 +120,9 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// The time for this action to start, as in <c>--start-time 2010-06-01T00:00:00Z</c>. When <c>StartTime</c> and <c>EndTime</c> are specified
-        /// with <c>Recurrence</c>, they form the boundaries of when the recurring action will start and stop.
+        /// The time for this action to start, as in <c>--start-time 2010-06-01T00:00:00Z</c>. If you try to schedule your action in the past, Auto
+        /// Scaling returns an error message. When <c>StartTime</c> and <c>EndTime</c> are specified with <c>Recurrence</c>, they form the boundaries of
+        /// when the recurring action will start and stop.
         ///  
         /// </summary>
         public DateTime StartTime

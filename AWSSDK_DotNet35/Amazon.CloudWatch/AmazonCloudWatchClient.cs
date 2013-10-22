@@ -30,23 +30,61 @@ namespace Amazon.CloudWatch
     ///  
     /// Amazon CloudWatch <para>This is the <i>Amazon CloudWatch API Reference</i> . This guide provides detailed information about Amazon
     /// CloudWatch actions, data types, parameters, and errors. For detailed information about Amazon CloudWatch features and their associated API
-    /// calls, go to the Amazon CloudWatch Developer Guide. </para> <para>Amazon CloudWatch is a web service that enables you to publish, monitor,
-    /// and manage various metrics, as well as configure alarm actions based on data from metrics. For more information about this product go to
-    /// http://aws.amazon.com/cloudwatch. </para> <para>Use the following links to get started using the <i>Amazon CloudWatch API Reference</i>
-    /// :</para>
+    /// calls, go to the <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide" >Amazon CloudWatch Developer Guide</a> .
+    /// </para> <para>Amazon CloudWatch is a web service that enables you to publish, monitor, and manage various metrics, as well as configure
+    /// alarm actions based on data from metrics. For more information about this product go to <a href="http://aws.amazon.com/cloudwatch"
+    /// >http://aws.amazon.com/cloudwatch</a> .
+    /// </para> <para> For information about the namespace, metric names, and dimensions that other Amazon Web Services products use to send
+    /// metrics to Cloudwatch, go to <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html" >Amazon
+    /// CloudWatch Metrics, Namespaces, and Dimensions Reference</a> in the <i>Amazon CloudWatch Developer Guide</i> .
+    /// </para> <para>Use the following links to get started using the <i>Amazon CloudWatch API Reference</i> :</para>
     /// <ul>
-    /// <li> Actions: An alphabetical list of all Amazon CloudWatch actions.</li>
-    /// <li> Data Types: An alphabetical list of all Amazon CloudWatch data types.</li>
-    /// <li> Common Parameters: Parameters that all Query actions can use.</li>
-    /// <li> Common Errors: Client and server errors that all actions can return.</li>
-    /// <li> Regions and Endpoints: Itemized regions and endpoints for all AWS products.</li>
-    /// <li> WSDL Location: http://monitoring.amazonaws.com/doc/2010-08-01/CloudWatch.wsdl</li>
+    /// <li> <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_Operations.html" >Actions</a> : An alphabetical list of
+    /// all Amazon CloudWatch actions.</li>
+    /// <li> <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_Types.html" >Data Types</a> : An alphabetical list of all
+    /// Amazon CloudWatch data types.</li>
+    /// <li> <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CommonParameters.html" >Common Parameters</a> : Parameters
+    /// that all Query actions can use.</li>
+    /// <li> <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CommonErrors.html" >Common Errors</a> : Client and server
+    /// errors that all actions can return.</li>
+    /// <li> <a href="http://docs.aws.amazon.com/general/latest/gr/index.html?rande.html" >Regions and Endpoints</a> : Itemized regions and
+    /// endpoints for all AWS products.</li>
+    /// <li> <a href="http://monitoring.amazonaws.com/doc/2010-08-01/CloudWatch.wsdl" >WSDL Location</a> :
+    /// http://monitoring.amazonaws.com/doc/2010-08-01/CloudWatch.wsdl</li>
+    /// 
+    /// </ul>
+    /// <para>In addition to using the Amazon CloudWatch API, you can also use the following SDKs and third-party libraries to access Amazon
+    /// CloudWatch programmatically.</para>
+    /// <ul>
+    /// <li> <a href="http://aws.amazon.com/documentation/sdkforjava/" >AWS SDK for Java Documentation</a> </li>
+    /// <li> <a href="http://aws.amazon.com/documentation/sdkfornet/" >AWS SDK for .NET Documentation</a> </li>
+    /// <li> <a href="http://aws.amazon.com/documentation/sdkforphp/" >AWS SDK for PHP Documentation</a> </li>
+    /// <li> <a href="http://aws.amazon.com/documentation/sdkforruby/" >AWS SDK for Ruby Documentation</a> </li>
+    /// 
+    /// </ul>
+    /// <para>Developers in the AWS developer community also provide their own libraries, which you can find at the following AWS developer
+    /// centers:</para>
+    /// <ul>
+    /// <li> <a href="http://aws.amazon.com/java/" >AWS Java Developer Center</a> </li>
+    /// <li> <a href="http://aws.amazon.com/php/" >AWS PHP Developer Center</a> </li>
+    /// <li> <a href="http://aws.amazon.com/python/" >AWS Python Developer Center</a> </li>
+    /// <li> <a href="http://aws.amazon.com/ruby/" >AWS Ruby Developer Center</a> </li>
+    /// <li> <a href="http://aws.amazon.com/net/" >AWS Windows and .NET Developer Center</a> </li>
     /// 
     /// </ul>
     /// </summary>
     public partial class AmazonCloudWatchClient : AmazonWebServiceClient, IAmazonCloudWatch
     {
     AWS4Signer signer = new AWS4Signer();
+
+        #region Dispose
+
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
+        }
+
+        #endregion
 
         #region Constructors
 
@@ -67,7 +105,7 @@ namespace Amazon.CloudWatch
         ///
         /// </summary>
         public AmazonCloudWatchClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCloudWatchConfig(), true, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCloudWatchConfig(), AuthenticationTypes.User | AuthenticationTypes.Session) { }
 
         /// <summary>
         /// Constructs AmazonCloudWatchClient with the credentials loaded from the application's
@@ -87,7 +125,7 @@ namespace Amazon.CloudWatch
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonCloudWatchClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCloudWatchConfig(){RegionEndpoint = region}, true, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCloudWatchConfig{RegionEndpoint = region}, AuthenticationTypes.User | AuthenticationTypes.Session) { }
 
         /// <summary>
         /// Constructs AmazonCloudWatchClient with the credentials loaded from the application's
@@ -107,7 +145,7 @@ namespace Amazon.CloudWatch
         /// </summary>
         /// <param name="config">The AmazonCloudWatch Configuration Object</param>
         public AmazonCloudWatchClient(AmazonCloudWatchConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config, true, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), config, AuthenticationTypes.User | AuthenticationTypes.Session) { }
 
         /// <summary>
         /// Constructs AmazonCloudWatchClient with AWS Credentials
@@ -124,7 +162,7 @@ namespace Amazon.CloudWatch
         /// <param name="credentials">AWS Credentials</param>
         /// <param name="region">The region to connect.</param>
         public AmazonCloudWatchClient(AWSCredentials credentials, RegionEndpoint region)
-            : this(credentials, new AmazonCloudWatchConfig(){RegionEndpoint=region})
+            : this(credentials, new AmazonCloudWatchConfig{RegionEndpoint = region})
         {
         }
 
@@ -135,7 +173,7 @@ namespace Amazon.CloudWatch
         /// <param name="credentials">AWS Credentials</param>
         /// <param name="clientConfig">The AmazonCloudWatchClient Configuration Object</param>
         public AmazonCloudWatchClient(AWSCredentials credentials, AmazonCloudWatchConfig clientConfig)
-            : base(credentials, clientConfig, false, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(credentials, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
         {
         }
 
@@ -191,7 +229,7 @@ namespace Amazon.CloudWatch
         /// <param name="awsSessionToken">AWS Session Token</param>
         /// <param name="region">The region to connect.</param>
         public AmazonCloudWatchClient(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken, RegionEndpoint region)
-            : this(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, new AmazonCloudWatchConfig(){RegionEndpoint = region})
+            : this(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, new AmazonCloudWatchConfig{RegionEndpoint = region})
         {
         }
 
@@ -618,21 +656,25 @@ namespace Amazon.CloudWatch
         #region GetMetricStatistics
 
         /// <summary>
-        /// <para> Gets statistics for the specified metric. </para> <para><b>NOTE:</b> The maximum number of data points returned from a single
-        /// GetMetricStatistics request is 1,440. If a request is made that generates more than 1,440 data points, Amazon CloudWatch returns an error.
-        /// In such a case, alter the request by narrowing the specified time range or increasing the specified period. Alternatively, make multiple
-        /// requests across adjacent time ranges. </para> <para> Amazon CloudWatch aggregates data points based on the length of the <c>period</c> that
-        /// you specify. For example, if you request statistics with a one-minute granularity, Amazon CloudWatch aggregates data points with time stamps
-        /// that fall within the same one-minute period. In such a case, the data points queried can greatly outnumber the data points returned. </para>
-        /// <para><b>NOTE:</b> The maximum number of data points that can be queried is 50,850; whereas the maximum number of data points returned is
-        /// 1,440. </para> <para> The following examples show various statistics allowed by the data point query maximum of 50,850 when you call
-        /// <c>GetMetricStatistics</c> on Amazon EC2 instances with detailed (one-minute) monitoring enabled: </para>
+        /// <para> Gets statistics for the specified metric. </para> <para> The maximum number of data points returned from a single
+        /// <c>GetMetricStatistics</c> request is 1,440, wereas the maximum number of data points that can be queried is 50,850. If you make a request
+        /// that generates more than 1,440 data points, Amazon CloudWatch returns an error. In such a case, you can alter the request by narrowing the
+        /// specified time range or increasing the specified period. Alternatively, you can make multiple requests across adjacent time ranges. </para>
+        /// <para> Amazon CloudWatch aggregates data points based on the length of the <c>period</c> that you specify. For example, if you request
+        /// statistics with a one-minute granularity, Amazon CloudWatch aggregates data points with time stamps that fall within the same one-minute
+        /// period. In such a case, the data points queried can greatly outnumber the data points returned. </para> <para> The following examples show
+        /// various statistics allowed by the data point query maximum of 50,850 when you call <c>GetMetricStatistics</c> on Amazon EC2 instances with
+        /// detailed (one-minute) monitoring enabled: </para>
         /// <ul>
         /// <li>Statistics for up to 400 instances for a span of one hour</li>
         /// <li>Statistics for up to 35 instances over a span of 24 hours</li>
         /// <li>Statistics for up to 2 instances over a span of 2 weeks</li>
         /// 
         /// </ul>
+        /// <para> For information about the namespace, metric names, and dimensions that other Amazon Web Services products use to send metrics to
+        /// Cloudwatch, go to <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html" >Amazon CloudWatch
+        /// Metrics, Namespaces, and Dimensions Reference</a> in the <i>Amazon CloudWatch Developer Guide</i> .
+        /// </para>
         /// </summary>
         /// 
         /// <param name="getMetricStatisticsRequest">Container for the necessary parameters to execute the GetMetricStatistics service method on
@@ -701,10 +743,11 @@ namespace Amazon.CloudWatch
         #region ListMetrics
 
         /// <summary>
-        /// <para> Returns a list of valid metrics stored for the AWS account owner. Returned metrics can be used with <c>GetMetricStatistics</c> to
-        /// obtain statistical data for a given metric. </para> <para><b>NOTE:</b> Up to 500 results are returned for any one call. To retrieve further
+        /// <para> Returns a list of valid metrics stored for the AWS account owner. Returned metrics can be used with GetMetricStatistics to obtain
+        /// statistical data for a given metric. </para> <para><b>NOTE:</b> Up to 500 results are returned for any one call. To retrieve further
         /// results, use returned NextToken values with subsequent ListMetrics operations. </para> <para><b>NOTE:</b> If you create a metric with the
-        /// PutMetricData action, allow up to fifteen minutes for the metric to appear in calls to the ListMetrics action. </para>
+        /// PutMetricData action, allow up to fifteen minutes for the metric to appear in calls to the ListMetrics action. Statistics about the metric,
+        /// however, are available sooner using GetMetricStatistics. </para>
         /// </summary>
         /// 
         /// <param name="listMetricsRequest">Container for the necessary parameters to execute the ListMetrics service method on
@@ -766,10 +809,11 @@ namespace Amazon.CloudWatch
         
 
         /// <summary>
-        /// <para> Returns a list of valid metrics stored for the AWS account owner. Returned metrics can be used with <c>GetMetricStatistics</c> to
-        /// obtain statistical data for a given metric. </para> <para><b>NOTE:</b> Up to 500 results are returned for any one call. To retrieve further
+        /// <para> Returns a list of valid metrics stored for the AWS account owner. Returned metrics can be used with GetMetricStatistics to obtain
+        /// statistical data for a given metric. </para> <para><b>NOTE:</b> Up to 500 results are returned for any one call. To retrieve further
         /// results, use returned NextToken values with subsequent ListMetrics operations. </para> <para><b>NOTE:</b> If you create a metric with the
-        /// PutMetricData action, allow up to fifteen minutes for the metric to appear in calls to the ListMetrics action. </para>
+        /// PutMetricData action, allow up to fifteen minutes for the metric to appear in calls to the ListMetrics action. Statistics about the metric,
+        /// however, are available sooner using GetMetricStatistics. </para>
         /// </summary>
         /// 
         /// <returns>The response from the ListMetrics service method, as returned by AmazonCloudWatch.</returns>
@@ -851,12 +895,12 @@ namespace Amazon.CloudWatch
 
         /// <summary>
         /// <para> Publishes metric data points to Amazon CloudWatch. Amazon Cloudwatch associates the data points with the specified metric. If the
-        /// specified metric does not exist, Amazon CloudWatch creates the metric. </para> <para><b>NOTE:</b> If you create a metric with the
-        /// PutMetricData action, allow up to fifteen minutes for the metric to appear in calls to the ListMetrics action. </para> <para> The size of a
-        /// PutMetricData request is limited to 8 KB for HTTP GET requests and 40 KB for HTTP POST requests. </para> <para><b>IMPORTANT:</b> Although
-        /// the Value parameter accepts numbers of type Double, Amazon CloudWatch truncates values with very large exponents. Values with base-10
-        /// exponents greater than 126 (1 x 10^126) are truncated. Likewise, values with base-10 exponents less than -130 (1 x 10^-130) are also
-        /// truncated. </para>
+        /// specified metric does not exist, Amazon CloudWatch creates the metric. It can take up to fifteen minutes for a new metric to appear in calls
+        /// to the ListMetrics action.</para> <para> The size of a PutMetricData request is limited to 8 KB for HTTP GET requests and 40 KB for HTTP
+        /// POST requests. </para> <para><b>IMPORTANT:</b> Although the Value parameter accepts numbers of type Double, Amazon CloudWatch truncates
+        /// values with very large exponents. Values with base-10 exponents greater than 126 (1 x 10^126) are truncated. Likewise, values with base-10
+        /// exponents less than -130 (1 x 10^-130) are also truncated. </para> <para>Data that is timestamped 24 hours or more in the past may take in
+        /// excess of 48 hours to become available from submission time using <c>GetMetricStatistics</c> .</para>
         /// </summary>
         /// 
         /// <param name="putMetricDataRequest">Container for the necessary parameters to execute the PutMetricData service method on

@@ -14,10 +14,11 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
+using System.Text;
 using System.Xml;
 using System.Xml.Serialization;
-using System.Text;
 
 using Amazon.Route53.Model;
 
@@ -42,13 +43,11 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
 
 
             request.HttpMethod = "POST";
-              
-            Dictionary<string, string> queryParameters = new Dictionary<string, string>();
             string uriResourcePath = "/2012-12-12/hostedzone"; 
 
             if (uriResourcePath.Contains("?")) 
             {
-                int queryIndex = uriResourcePath.IndexOf("?");
+                int queryIndex = uriResourcePath.IndexOf("?", StringComparison.OrdinalIgnoreCase);
                 string queryString = uriResourcePath.Substring(queryIndex + 1);
                 
                 uriResourcePath    = uriResourcePath.Substring(0, queryIndex);
@@ -72,7 +71,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             request.ResourcePath = uriResourcePath;
             
              
-            StringWriter stringWriter = new StringWriter();
+            StringWriter stringWriter = new StringWriter(System.Globalization.CultureInfo.InvariantCulture);
                 using (XmlWriter xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true }))
                 {
                        
@@ -80,11 +79,11 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             xmlWriter.WriteStartElement("CreateHostedZoneRequest", "https://route53.amazonaws.com/doc/2012-12-12/");
                     if (createHostedZoneRequest.IsSetName()) 
         {
-            xmlWriter.WriteElementString("Name", "https://route53.amazonaws.com/doc/2012-12-12/", createHostedZoneRequest.Name.ToString());
+            xmlWriter.WriteElementString("Name", "https://route53.amazonaws.com/doc/2012-12-12/", createHostedZoneRequest.Name.ToString(CultureInfo.InvariantCulture));
           }
         if (createHostedZoneRequest.IsSetCallerReference()) 
         {
-            xmlWriter.WriteElementString("CallerReference", "https://route53.amazonaws.com/doc/2012-12-12/", createHostedZoneRequest.CallerReference.ToString());
+            xmlWriter.WriteElementString("CallerReference", "https://route53.amazonaws.com/doc/2012-12-12/", createHostedZoneRequest.CallerReference.ToString(CultureInfo.InvariantCulture));
           }
         if (createHostedZoneRequest != null) 
         {
@@ -94,7 +93,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                 xmlWriter.WriteStartElement("HostedZoneConfig", "https://route53.amazonaws.com/doc/2012-12-12/");
                 if (hostedZoneConfigHostedZoneConfig.IsSetComment()) 
                 {
-                    xmlWriter.WriteElementString("Comment", "https://route53.amazonaws.com/doc/2012-12-12/", hostedZoneConfigHostedZoneConfig.Comment.ToString());
+                    xmlWriter.WriteElementString("Comment", "https://route53.amazonaws.com/doc/2012-12-12/", hostedZoneConfigHostedZoneConfig.Comment.ToString(CultureInfo.InvariantCulture));
                   }
                 xmlWriter.WriteEndElement();
             }

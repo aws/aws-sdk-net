@@ -25,10 +25,7 @@ namespace Amazon.StorageGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateSnapshotSchedule operation.
-    /// <para>This operation updates a snapshot schedule configured for a gateway volume.</para> <para>The default snapshot schedule for volume is
-    /// once every 24 hours, starting at the creation time of the volume. You can use this API to change the shapshot schedule configured for the
-    /// volume.</para> <para>In the request you must identify the gateway volume whose snapshot schedule you want to update, and the schedule
-    /// information, including when you want the snapshot to begin on a day and the frequency (in hours) of snapshots.</para>
+    /// 
     /// </summary>
     public partial class UpdateSnapshotScheduleRequest : AmazonWebServiceRequest
     {

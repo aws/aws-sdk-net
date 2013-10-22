@@ -25,7 +25,8 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the RemoveTagsFromResource operation.
-    /// <para> Removes metadata tags from a DB Instance.</para> <para>For an overview on tagging DB Instances, see DB Instance Tags. </para>
+    /// <para> Removes metadata tags from an Amazon RDS resource.</para> <para>For an overview on tagging an Amazon RDS resource, see <a
+    /// href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html" >Tagging Amazon RDS Resources</a> .</para>
     /// </summary>
     public partial class RemoveTagsFromResourceRequest : AmazonWebServiceRequest
     {
@@ -33,9 +34,9 @@ namespace Amazon.RDS.Model
         private List<string> tagKeys = new List<string>();
 
         /// <summary>
-        /// The DB Instance the tags will be removed from. This value is an Amazon Resource Name (ARN). For information about creating an ARN, see <a
-        /// href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN"> Constructing an RDS Amazon Resource Name
-        /// (ARN)</a>.
+        /// The Amazon RDS resource the tags will be removed from. This value is an Amazon Resource Name (ARN). For information about creating an ARN,
+        /// see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN"> Constructing an RDS Amazon Resource
+        /// Name (ARN)</a>.
         ///  
         /// </summary>
         public string ResourceName

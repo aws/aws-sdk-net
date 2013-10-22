@@ -33,6 +33,9 @@
 
         public PipelineDescription Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonToken.Null)
+                return null;
+
             PipelineDescription pipelineDescription = new PipelineDescription();
 
         

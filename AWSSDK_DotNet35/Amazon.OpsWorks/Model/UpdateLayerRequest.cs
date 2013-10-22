@@ -39,6 +39,7 @@ namespace Amazon.OpsWorks.Model
         private List<VolumeConfiguration> volumeConfigurations = new List<VolumeConfiguration>();
         private bool? enableAutoHealing;
         private bool? autoAssignElasticIps;
+        private bool? autoAssignPublicIps;
         private Recipes customRecipes;
         private bool? installUpdatesOnBoot;
 
@@ -190,7 +191,8 @@ namespace Amazon.OpsWorks.Model
 
         /// <summary>
         /// Whether to automatically assign an <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP
-        /// address</a> to the layer.
+        /// address</a> to the layer's instances. For more information, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a Layer</a>.
         ///  
         /// </summary>
         public bool AutoAssignElasticIps
@@ -203,6 +205,23 @@ namespace Amazon.OpsWorks.Model
         internal bool IsSetAutoAssignElasticIps()
         {
             return this.autoAssignElasticIps.HasValue;
+        }
+
+        /// <summary>
+        /// For stacks that are running in a VPC, whether to automatically assign a public IP address to the layer's instances. For more information,
+        /// see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a Layer</a>.
+        ///  
+        /// </summary>
+        public bool AutoAssignPublicIps
+        {
+            get { return this.autoAssignPublicIps ?? default(bool); }
+            set { this.autoAssignPublicIps = value; }
+        }
+
+        // Check to see if AutoAssignPublicIps property is set
+        internal bool IsSetAutoAssignPublicIps()
+        {
+            return this.autoAssignPublicIps.HasValue;
         }
 
         /// <summary>

@@ -30,11 +30,12 @@ namespace Amazon.RDS.Model
     public partial class DescribeDBInstancesRequest : AmazonWebServiceRequest
     {
         private string dBInstanceIdentifier;
+        private List<Filter> filters = new List<Filter>();
         private int? maxRecords;
         private string marker;
 
         /// <summary>
-        /// The user-supplied instance identifier. If this parameter is specified, information from only the specific DB Instance is returned. This
+        /// The user-supplied instance identifier. If this parameter is specified, information from only the specific DB instance is returned. This
         /// parameter isn't case sensitive. Constraints: <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First character
         /// must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
         ///  
@@ -49,6 +50,22 @@ namespace Amazon.RDS.Model
         internal bool IsSetDBInstanceIdentifier()
         {
             return this.dBInstanceIdentifier != null;
+        }
+
+        /// <summary>
+        /// 
+        ///  
+        /// </summary>
+        public List<Filter> Filters
+        {
+            get { return this.filters; }
+            set { this.filters = value; }
+        }
+
+        // Check to see if Filters property is set
+        internal bool IsSetFilters()
+        {
+            return this.filters.Count > 0;
         }
 
         /// <summary>

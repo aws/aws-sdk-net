@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
         private string reservedInstancesId;
         private DateTime? createDate;
         private DateTime? updateDate;
-        private string status;
+        private ListingStatus status;
         private string statusMessage;
         private List<InstanceCount> instanceCounts = new List<InstanceCount>();
         private List<PriceSchedule> priceSchedules = new List<PriceSchedule>();
@@ -79,7 +79,7 @@ namespace Amazon.EC2.Model
         {
             return this.updateDate.HasValue;
         }
-        public string Status
+        public ListingStatus Status
         {
             get { return this.status; }
             set { this.status = value; }

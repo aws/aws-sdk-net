@@ -29,8 +29,7 @@ namespace Amazon.SimpleDB
     /// complex to design, and often requires extensive and repetitive database administration. Amazon SimpleDB is dramatically simpler, requiring
     /// no schema, automatically indexing your data and providing a simple API for storage and access. This approach eliminates the administrative
     /// burden of data modeling, index maintenance, and performance tuning. Developers gain access to this functionality within Amazon's proven
-    /// computing environment, are able to scale instantly, and pay only for what they use. </para> <para> Visit http://aws.amazon.com/simpledb/ for
-    /// more information. </para>
+    /// computing environment, are able to scale instantly, and pay only for what they use. </para> <para> Visit <a href="http://aws.amazon.com/simpledb/">http://aws.amazon.com/simpledb/</a> for more information. </para>
     /// </summary>
 	public partial interface IAmazonSimpleDB : IDisposable
     {
@@ -53,7 +52,7 @@ namespace Amazon.SimpleDB
         /// </para>
         /// </summary>
         /// 
-        /// <param name="batchDeleteAttributesRequest">Container for the necessary parameters to execute the BatchDeleteAttributes service method on
+        /// <param name="request">Container for the necessary parameters to execute the BatchDeleteAttributes service method on
         /// AmazonSimpleDB.</param>
 		BatchDeleteAttributesResponse BatchDeleteAttributes(BatchDeleteAttributesRequest request);
 
@@ -103,7 +102,7 @@ namespace Amazon.SimpleDB
         /// </para>
         /// </summary>
         /// 
-        /// <param name="batchPutAttributesRequest">Container for the necessary parameters to execute the BatchPutAttributes service method on
+        /// <param name="request">Container for the necessary parameters to execute the BatchPutAttributes service method on
         /// AmazonSimpleDB.</param>
         /// 
         /// <exception cref="T:Amazon.SimpleDB.Model.DuplicateItemNameException" />
@@ -134,11 +133,11 @@ namespace Amazon.SimpleDB
         /// <para> The <c>CreateDomain</c> operation creates a new domain. The domain name should be unique among the domains associated with the Access
         /// Key ID provided in the request. The <c>CreateDomain</c> operation may take 10 or more seconds to complete. </para> <para><b>NOTE:</b>
         /// CreateDomain is an idempotent operation; running it multiple times using the same domain name will not result in an error response. </para>
-        /// <para> The client can create up to 100 domains per account. </para> <para> If the client requires additional domains, go to
-        /// http://aws.amazon.com/contact-us/simpledb-limit-request/. </para>
+        /// <para> The client can create up to 100 domains per account. </para> <para> If the client requires additional domains, go to <a href="http://aws.amazon.com/contact-us/simpledb-limit-request/"> http://aws.amazon.com/contact-us/simpledb-limit-request/</a> .
+        /// </para>
         /// </summary>
         /// 
-        /// <param name="createDomainRequest">Container for the necessary parameters to execute the CreateDomain service method on
+        /// <param name="request">Container for the necessary parameters to execute the CreateDomain service method on
         /// AmazonSimpleDB.</param>
         /// 
         /// <exception cref="T:Amazon.SimpleDB.Model.InvalidParameterValueException" />
@@ -168,7 +167,7 @@ namespace Amazon.SimpleDB
         /// (write) might not return updated item data. </para>
         /// </summary>
         /// 
-        /// <param name="deleteAttributesRequest">Container for the necessary parameters to execute the DeleteAttributes service method on
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAttributes service method on
         /// AmazonSimpleDB.</param>
         /// 
         /// <exception cref="T:Amazon.SimpleDB.Model.InvalidParameterValueException" />
@@ -196,7 +195,7 @@ namespace Amazon.SimpleDB
         /// does not exist or running the function multiple times using the same domain name will not result in an error response. </para>
         /// </summary>
         /// 
-        /// <param name="deleteDomainRequest">Container for the necessary parameters to execute the DeleteDomain service method on
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDomain service method on
         /// AmazonSimpleDB.</param>
         /// 
         /// <exception cref="T:Amazon.SimpleDB.Model.MissingParameterException" />
@@ -220,7 +219,7 @@ namespace Amazon.SimpleDB
         /// the size of the attribute names and values. </para>
         /// </summary>
         /// 
-        /// <param name="domainMetadataRequest">Container for the necessary parameters to execute the DomainMetadata service method on
+        /// <param name="request">Container for the necessary parameters to execute the DomainMetadata service method on
         /// AmazonSimpleDB.</param>
         /// 
         /// <returns>The response from the DomainMetadata service method, as returned by AmazonSimpleDB.</returns>
@@ -250,7 +249,7 @@ namespace Amazon.SimpleDB
         /// returned. </para>
         /// </summary>
         /// 
-        /// <param name="getAttributesRequest">Container for the necessary parameters to execute the GetAttributes service method on
+        /// <param name="request">Container for the necessary parameters to execute the GetAttributes service method on
         /// AmazonSimpleDB.</param>
         /// 
         /// <returns>The response from the GetAttributes service method, as returned by AmazonSimpleDB.</returns>
@@ -275,12 +274,13 @@ namespace Amazon.SimpleDB
 
         /// <summary>
         /// <para> The <c>ListDomains</c> operation lists all domains associated with the Access Key ID. It returns domain names up to the limit set by
-        /// MaxNumberOfDomains. A NextToken is returned if there are more than <c>MaxNumberOfDomains</c> domains. Calling <c>ListDomains</c> successive
-        /// times with the <c>NextToken</c> provided by the operation returns up to <c>MaxNumberOfDomains</c> more domain names with each successive
-        /// operation call. </para>
+        /// <a href="#MaxNumberOfDomains">MaxNumberOfDomains</a> .
+        /// A <a href="#NextToken">NextToken</a> is returned if there are more than <c>MaxNumberOfDomains</c> domains. Calling
+        /// <c>ListDomains</c> successive times with the <c>NextToken</c> provided by the operation returns up to <c>MaxNumberOfDomains</c> more domain
+        /// names with each successive operation call. </para>
         /// </summary>
         /// 
-        /// <param name="listDomainsRequest">Container for the necessary parameters to execute the ListDomains service method on AmazonSimpleDB.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListDomains service method on AmazonSimpleDB.</param>
         /// 
         /// <returns>The response from the ListDomains service method, as returned by AmazonSimpleDB.</returns>
         /// 
@@ -302,12 +302,12 @@ namespace Amazon.SimpleDB
  
         /// <summary>
         /// <para> The <c>ListDomains</c> operation lists all domains associated with the Access Key ID. It returns domain names up to the limit set by
-        /// MaxNumberOfDomains. A NextToken is returned if there are more than <c>MaxNumberOfDomains</c> domains. Calling <c>ListDomains</c> successive
-        /// times with the <c>NextToken</c> provided by the operation returns up to <c>MaxNumberOfDomains</c> more domain names with each successive
-        /// operation call. </para>
+        /// <a href="#MaxNumberOfDomains">MaxNumberOfDomains</a> .
+        /// A <a href="#NextToken">NextToken</a> is returned if there are more than <c>MaxNumberOfDomains</c> domains. Calling
+        /// <c>ListDomains</c> successive times with the <c>NextToken</c> provided by the operation returns up to <c>MaxNumberOfDomains</c> more domain
+        /// names with each successive operation call. </para>
         /// </summary>
         /// 
-        /// <param name="listDomainsRequest">Container for the necessary parameters to execute the ListDomains service method on AmazonSimpleDB.</param>
         /// 
         /// <returns>The response from the ListDomains service method, as returned by AmazonSimpleDB.</returns>
         /// 
@@ -343,7 +343,7 @@ namespace Amazon.SimpleDB
         /// </para>
         /// </summary>
         /// 
-        /// <param name="putAttributesRequest">Container for the necessary parameters to execute the PutAttributes service method on
+        /// <param name="request">Container for the necessary parameters to execute the PutAttributes service method on
         /// AmazonSimpleDB.</param>
         /// 
         /// <exception cref="T:Amazon.SimpleDB.Model.InvalidParameterValueException" />
@@ -377,7 +377,7 @@ namespace Amazon.SimpleDB
         /// Queries in the Developer Guide. </para>
         /// </summary>
         /// 
-        /// <param name="selectRequest">Container for the necessary parameters to execute the Select service method on AmazonSimpleDB.</param>
+        /// <param name="request">Container for the necessary parameters to execute the Select service method on AmazonSimpleDB.</param>
         /// 
         /// <returns>The response from the Select service method, as returned by AmazonSimpleDB.</returns>
         /// 

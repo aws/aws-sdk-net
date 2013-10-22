@@ -617,7 +617,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         public static implicit operator Primitive(Char data)
         {
             Primitive ret = new Primitive();
-            ret.Value = data.ToString(CultureInfo.InvariantCulture);
+            ret.Value = data.ToString();
             return ret;
         }
         /// <summary>

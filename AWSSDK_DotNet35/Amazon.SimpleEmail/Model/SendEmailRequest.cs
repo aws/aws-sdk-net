@@ -33,7 +33,8 @@ namespace Amazon.SimpleEmail.Model
     /// email message to a larger audience, you can divide your recipient list into groups of 50 or fewer, and then call Amazon SES repeatedly to
     /// send the message to each group. </para> <para>For every message that you send, the total number of recipients (To:, CC: and BCC:) is counted
     /// against your <i>sending quota</i> - the maximum number of emails you can send in a 24-hour period. For information about your sending quota,
-    /// go to the Amazon SES Developer Guide. </para>
+    /// go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html" >Amazon SES Developer Guide</a> .
+    /// </para>
     /// </summary>
     public partial class SendEmailRequest : AmazonWebServiceRequest
     {
@@ -53,7 +54,10 @@ namespace Amazon.SimpleEmail.Model
         /// Callers should use the properties initialize any additional object members.
         /// </summary>
         /// 
-        /// <param name="source"> The identity's email address. </param>
+        /// <param name="source"> The identity's email address. By default, the string must be 7-bit ASCII. If the text must contain any other
+        /// characters, then you must use MIME encoded-word syntax (RFC 2047) instead of a literal string. MIME encoded-word syntax uses the following
+        /// form: <c>=?charset?encoding?encoded-text?=</c>. For more information, see <a href="http://tools.ietf.org/html/rfc2047">RFC 2047</a>.
+        /// </param>
         /// <param name="destination"> The destination for this email, composed of To:, CC:, and BCC: fields. </param>
         /// <param name="message"> The message to be sent. </param>
         public SendEmailRequest(string source, Destination destination, Message message)
@@ -65,7 +69,9 @@ namespace Amazon.SimpleEmail.Model
     
 
         /// <summary>
-        /// The identity's email address.
+        /// The identity's email address. By default, the string must be 7-bit ASCII. If the text must contain any other characters, then you must use
+        /// MIME encoded-word syntax (RFC 2047) instead of a literal string. MIME encoded-word syntax uses the following form:
+        /// <c>=?charset?encoding?encoded-text?=</c>. For more information, see <a href="http://tools.ietf.org/html/rfc2047">RFC 2047</a>.
         ///  
         /// </summary>
         public string Source

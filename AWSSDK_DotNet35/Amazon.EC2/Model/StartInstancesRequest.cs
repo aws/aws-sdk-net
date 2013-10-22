@@ -35,6 +35,7 @@ namespace Amazon.EC2.Model
     {
         private List<string> instanceIds = new List<string>();
         private string additionalInfo;
+        private bool? dryRun;
 
         /// <summary>
         /// The list of Amazon EC2 instances to start.
@@ -61,6 +62,17 @@ namespace Amazon.EC2.Model
         internal bool IsSetAdditionalInfo()
         {
             return this.additionalInfo != null;
+        }
+        public bool DryRun
+        {
+            get { return this.dryRun ?? default(bool); }
+            set { this.dryRun = value; }
+        }
+
+        // Check to see if DryRun property is set
+        internal bool IsSetDryRun()
+        {
+            return this.dryRun.HasValue;
         }
 
     }

@@ -31,7 +31,9 @@ namespace Amazon.DynamoDBv2.Model
     /// operation. The results also include the number of items exceeding the limit. A scan can result in no table data meeting the filter criteria.
     /// </para> <para>The result set is eventually consistent. </para> <para>By default, <i>Scan</i> operations proceed sequentially; however, for
     /// faster performance on large tables, applications can request a parallel <i>Scan</i> by specifying the <i>Segment</i> and
-    /// <i>TotalSegments</i> parameters. For more information, see Parallel Scan in the Amazon DynamoDB Developer Guide.</para>
+    /// <i>TotalSegments</i> parameters. For more information, see <a
+    /// href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#QueryAndScanParallelScan" >Parallel Scan</a> in the
+    /// Amazon DynamoDB Developer Guide.</para>
     /// </summary>
     public partial class ScanRequest : AmazonWebServiceRequest
     {

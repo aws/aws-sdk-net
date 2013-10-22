@@ -32,8 +32,20 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class CreateVpcRequest : AmazonWebServiceRequest
     {
+        private bool? dryRun;
         private string cidrBlock;
-        private string instanceTenancy;
+        private Tenancy instanceTenancy;
+        public bool DryRun
+        {
+            get { return this.dryRun ?? default(bool); }
+            set { this.dryRun = value; }
+        }
+
+        // Check to see if DryRun property is set
+        internal bool IsSetDryRun()
+        {
+            return this.dryRun.HasValue;
+        }
 
         /// <summary>
         /// A valid CIDR block.
@@ -55,8 +67,17 @@ namespace Amazon.EC2.Model
         /// The allowed tenancy of instances launched into the VPC. A value of default means instances can be launched with any tenancy; a value of
         /// dedicated means instances must be launched with tenancy as dedicated.
         ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>default, dedicated</description>
+        ///     </item>
+        /// </list>
+        /// </para>
         /// </summary>
-        public string InstanceTenancy
+        public Tenancy InstanceTenancy
         {
             get { return this.instanceTenancy; }
             set { this.instanceTenancy = value; }

@@ -57,7 +57,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         }
         
         
-        private void UnmarshallResult(XmlUnmarshallerContext context,ModifyDBInstanceResponse response)
+        private static void UnmarshallResult(XmlUnmarshallerContext context,ModifyDBInstanceResponse response)
         {
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;

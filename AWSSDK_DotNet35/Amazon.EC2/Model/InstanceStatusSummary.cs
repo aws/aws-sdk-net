@@ -25,9 +25,9 @@ namespace Amazon.EC2.Model
     public class InstanceStatusSummary
     {
         
-        private string status;
+        private SummaryStatus status;
         private List<InstanceStatusDetails> details = new List<InstanceStatusDetails>();
-        public string Status
+        public SummaryStatus Status
         {
             get { return this.status; }
             set { this.status = value; }

@@ -19,6 +19,10 @@ using System.Collections.Generic;
 using Amazon.DynamoDBv2.Model;
 using System.IO;
 
+#if (WIN_RT || WINDOWS_PHONE)
+using Amazon.MissingTypes;
+#endif
+
 namespace Amazon.DynamoDBv2.DocumentModel
 {
 

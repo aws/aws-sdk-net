@@ -37,6 +37,7 @@ namespace Amazon.OpsWorks.Model
         private string defaultOs;
         private string hostnameTheme;
         private string defaultAvailabilityZone;
+        private string defaultSubnetId;
         private string customJson;
         private StackConfigurationManager configurationManager;
         private bool? useCustomCookbooks;
@@ -130,13 +131,8 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// The stack default operating system, which must be set to one of the following. <ul> <li>Standard operating systems: <c>Amazon Linux</c> or
-        /// <c>Ubuntu 12.04 LTS</c></li> <li>Custom AMIs: <c>Custom</c></li> </ul> The default option is <c>Amazon Linux</c>. If you set this parameter
-        /// to <c>Custom</c>, you must use the <a>CreateInstance</a> action's AmiId parameter to specify the custom AMI that you want to use. For more
-        /// information on the standard operating systems, see <a
-        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating Systems</a>For more information on how to use
-        /// custom AMIs with OpsWorks, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom
-        /// AMIs</a>.
+        /// The stack's default operating system, which must be set to <c>Amazon Linux</c> or <c>Ubuntu 12.04 LTS</c>. The default option is <c>Amazon
+        /// Linux</c>.
         ///  
         /// </summary>
         public string DefaultOs
@@ -173,8 +169,9 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// The stack new default Availability Zone. For more information, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
-        /// and Endpoints</a>.
+        /// The stack's default Availability Zone, which must be in the specified region. For more information, see <a
+        /// href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>. If you also specify a value for
+        /// <c>DefaultSubnetId</c>, the subnet must be in the same zone. For more information, see <a>CreateStack</a>.
         ///  
         /// </summary>
         public string DefaultAvailabilityZone
@@ -187,6 +184,23 @@ namespace Amazon.OpsWorks.Model
         internal bool IsSetDefaultAvailabilityZone()
         {
             return this.defaultAvailabilityZone != null;
+        }
+
+        /// <summary>
+        /// The stack's default subnet ID. All instances will be launched into this subnet unless you specify otherwise when you create the instance. If
+        /// you also specify a value for <c>DefaultAvailabilityZone</c>, the subnet must be in that zone. For more information, see <a>CreateStack</a>.
+        ///  
+        /// </summary>
+        public string DefaultSubnetId
+        {
+            get { return this.defaultSubnetId; }
+            set { this.defaultSubnetId = value; }
+        }
+
+        // Check to see if DefaultSubnetId property is set
+        internal bool IsSetDefaultSubnetId()
+        {
+            return this.defaultSubnetId != null;
         }
 
         /// <summary>

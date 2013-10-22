@@ -17,6 +17,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using Amazon.Runtime;
 
 namespace Amazon.RDS.Model
 {
@@ -30,7 +31,7 @@ namespace Amazon.RDS.Model
     /// </ul>
     /// <para>This data type is used as a response element in the DescribeDBInstances action.</para>
     /// </summary>
-    public class DBInstance
+    public partial class DBInstance : AmazonWebServiceResponse
     {
         
         private string dBInstanceIdentifier;
@@ -66,7 +67,7 @@ namespace Amazon.RDS.Model
         private List<DBInstanceStatusInfo> statusInfos = new List<DBInstanceStatusInfo>();
 
         /// <summary>
-        /// Contains a user-supplied database identifier. This is the unique key that identifies a DB Instance.
+        /// Contains a user-supplied database identifier. This is the unique key that identifies a DB instance.
         ///  
         /// </summary>
         public string DBInstanceIdentifier
@@ -82,7 +83,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Contains the name of the compute and memory capacity class of the DB Instance.
+        /// Contains the name of the compute and memory capacity class of the DB instance.
         ///  
         /// </summary>
         public string DBInstanceClass
@@ -98,7 +99,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Provides the name of the database engine to be used for this DB Instance.
+        /// Provides the name of the database engine to be used for this DB instance.
         ///  
         /// </summary>
         public string Engine
@@ -130,7 +131,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Contains the master username for the DB Instance.
+        /// Contains the master username for the DB instance.
         ///  
         /// </summary>
         public string MasterUsername
@@ -147,8 +148,8 @@ namespace Amazon.RDS.Model
 
         /// <summary>
         /// The meaning of this parameter differs according to the database engine you use. <b>MySQL</b> Contains the name of the initial database of
-        /// this instance that was provided at create time, if one was specified when the DB Instance was created. This same name is returned for the
-        /// life of the DB Instance. Type: String <b>Oracle</b> Contains the Oracle System ID (SID) of the created DB Instance.
+        /// this instance that was provided at create time, if one was specified when the DB instance was created. This same name is returned for the
+        /// life of the DB instance. Type: String <b>Oracle</b> Contains the Oracle System ID (SID) of the created DB instance.
         ///  
         /// </summary>
         public string DBName
@@ -196,7 +197,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Provides the date and time the DB Instance was created.
+        /// Provides the date and time the DB instance was created.
         ///  
         /// </summary>
         public DateTime InstanceCreateTime
@@ -229,7 +230,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Specifies the number of days for which automatic DB Snapshots are retained.
+        /// Specifies the number of days for which automatic DB snapshots are retained.
         ///  
         /// </summary>
         public int BackupRetentionPeriod
@@ -245,7 +246,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Provides List of DB Security Group elements containing only <c>DBSecurityGroup.Name</c> and <c>DBSecurityGroup.Status</c> subelements.
+        /// Provides List of DB security group elements containing only <c>DBSecurityGroup.Name</c> and <c>DBSecurityGroup.Status</c> subelements.
         ///  
         /// </summary>
         public List<DBSecurityGroupMembership> DBSecurityGroups
@@ -261,7 +262,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Provides List of VPC security group elements that the DB Instance belongs to.
+        /// Provides List of VPC security group elements that the DB instance belongs to.
         ///  
         /// </summary>
         public List<VpcSecurityGroupMembership> VpcSecurityGroups
@@ -277,7 +278,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Provides the list of DB Parameter Groups applied to this DB Instance.
+        /// Provides the list of DB parameter groups applied to this DB instance.
         ///  
         /// </summary>
         public List<DBParameterGroupStatus> DBParameterGroups
@@ -293,7 +294,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Specifies the name of the Availability Zone the DB Instance is located in.
+        /// Specifies the name of the Availability Zone the DB instance is located in.
         ///  
         /// </summary>
         public string AvailabilityZone
@@ -309,8 +310,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Provides the inforamtion of the subnet group associated with the DB instance, including the name, descrption and subnets in the subnet
-        /// group.
+        /// Specifies information on the subnet group associated with the DB instance, including the name, description, and subnets in the subnet group.
         ///  
         /// </summary>
         public DBSubnetGroup DBSubnetGroup
@@ -342,7 +342,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Specifies that changes to the DB Instance are pending. This element is only included when changes are pending. Specific changes are
+        /// Specifies that changes to the DB instance are pending. This element is only included when changes are pending. Specific changes are
         /// identified by subelements.
         ///  
         /// </summary>
@@ -375,7 +375,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Specifies if the DB Instance is a Multi-AZ deployment.
+        /// Specifies if the DB instance is a Multi-AZ deployment.
         ///  
         /// </summary>
         public bool MultiAZ
@@ -423,7 +423,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Contains the identifier of the source DB Instance if this DB Instance is a Read Replica.
+        /// Contains the identifier of the source DB instance if this DB instance is a read replica.
         ///  
         /// </summary>
         public string ReadReplicaSourceDBInstanceIdentifier
@@ -439,7 +439,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Contains one or more identifiers of the Read Replicas associated with this DB Instance.
+        /// Contains one or more identifiers of the read replicas associated with this DB instance.
         ///  
         /// </summary>
         public List<string> ReadReplicaDBInstanceIdentifiers
@@ -455,7 +455,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// License model information for this DB Instance.
+        /// License model information for this DB instance.
         ///  
         /// </summary>
         public string LicenseModel
@@ -487,7 +487,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Provides the list of option group memberships for this DB Instance.
+        /// Provides the list of option group memberships for this DB instance.
         ///  
         /// </summary>
         public List<OptionGroupMembership> OptionGroupMemberships
@@ -535,7 +535,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Specifies the accessibility options for the DB Instance. A value of true specifies an Internet-facing instance with a publicly resolvable
+        /// Specifies the accessibility options for the DB instance. A value of true specifies an Internet-facing instance with a publicly resolvable
         /// DNS name, which resolves to a public IP address. A value of false specifies an internal instance with a DNS name that resolves to a private
         /// IP address. Default: The default behavior varies depending on whether a VPC has been requested or not. The following list shows the default
         /// behavior in each case. <ul> <li><b>Default VPC:</b>true</li> <li><b>VPC:</b>false</li> </ul> If no DB subnet group has been specified as
@@ -556,7 +556,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The status of a Read Replica. If the instance is not a for a read replica, this will be blank.
+        /// The status of a read replica. If the instance is not a read replica, this will be blank.
         ///  
         /// </summary>
         public List<DBInstanceStatusInfo> StatusInfos

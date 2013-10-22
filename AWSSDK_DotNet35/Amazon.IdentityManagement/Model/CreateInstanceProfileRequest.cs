@@ -25,9 +25,11 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateInstanceProfile operation.
-    /// <para>Creates a new instance profile. For information about instance profiles, go to About Instance Profiles.</para> <para>For information
-    /// about the number of instance profiles you can create, see Limitations on IAM Entities in <i>Using AWS Identity and Access Management</i>
-    /// .</para>
+    /// <para>Creates a new instance profile. For information about instance profiles, go to <a
+    /// href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/AboutInstanceProfiles.html" >About Instance Profiles</a> .</para> <para>For
+    /// information about the number of instance profiles you can create, see <a
+    /// href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?LimitationsOnEntities.html" >Limitations on IAM Entities</a> in
+    /// <i>Using AWS Identity and Access Management</i> .</para>
     /// </summary>
     public partial class CreateInstanceProfileRequest : AmazonWebServiceRequest
     {

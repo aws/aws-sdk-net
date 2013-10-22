@@ -32,6 +32,7 @@ namespace Amazon.CloudFront.Model
         private TrustedSigners trustedSigners;
         private ViewerProtocolPolicy viewerProtocolPolicy;
         private long? minTTL;
+        private AllowedMethods allowedMethods;
 
         /// <summary>
         /// The value of ID for the origin that you want CloudFront to route requests to when a request matches the path pattern either for a cache
@@ -130,6 +131,25 @@ namespace Amazon.CloudFront.Model
         internal bool IsSetMinTTL()
         {
             return this.minTTL.HasValue;
+        }
+
+        /// <summary>
+        /// A complex type that controls which HTTP methods CloudFront processes and forwards to your Amazon S3 bucket or your custom origin. There are
+        /// two options: - CloudFront forwards only GET and HEAD requests. - CloudFront forwards DELETE, GET, HEAD, OPTIONS, PATCH, POST, and PUT
+        /// requests. If you choose the second option, you may need to restrict access to your Amazon S3 bucket or to your custom origin so users can't
+        /// perform operations that you don't want them to. For example, you may not want users to have permission to delete objects from your origin.
+        ///  
+        /// </summary>
+        public AllowedMethods AllowedMethods
+        {
+            get { return this.allowedMethods; }
+            set { this.allowedMethods = value; }
+        }
+
+        // Check to see if AllowedMethods property is set
+        internal bool IsSetAllowedMethods()
+        {
+            return this.allowedMethods != null;
         }
     }
 }

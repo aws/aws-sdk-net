@@ -25,8 +25,9 @@ namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteEndpoint operation.
-    /// <para>The <c>DeleteEndpoint</c> action, which is idempotent, deletes the endpoint from SNS. For more information, see Using Amazon SNS
-    /// Mobile Push Notifications. </para>
+    /// <para>The <c>DeleteEndpoint</c> action, which is idempotent, deletes the endpoint from SNS. For more information, see <a
+    /// href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html" >Using Amazon SNS Mobile Push Notifications</a> .
+    /// </para>
     /// </summary>
     public partial class DeleteEndpointRequest : AmazonWebServiceRequest
     {

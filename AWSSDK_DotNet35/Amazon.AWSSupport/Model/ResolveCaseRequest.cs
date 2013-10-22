@@ -25,8 +25,8 @@ namespace Amazon.AWSSupport.Model
 {
     /// <summary>
     /// Container for the parameters to the ResolveCase operation.
-    /// <para>Takes a <i>CaseId</i> and returns the initial state of the case along with the state of the case after the call to ResolveCase
-    /// completed.</para>
+    /// <para>Takes a <i>CaseId</i> and returns the initial state of the case along with the state of the case after the call to <a
+    /// href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_ResolveCase.html" >ResolveCase</a> completed.</para>
     /// </summary>
     public partial class ResolveCaseRequest : AmazonWebServiceRequest
     {

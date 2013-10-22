@@ -375,9 +375,7 @@ namespace ThirdParty.Json.LitJson
             context.ExpectingValue = false;
         }
 
-#if BCL
         [CLSCompliant(false)]
-#endif
         public void Write (ulong number)
         {
             DoValidation (Condition.Value);

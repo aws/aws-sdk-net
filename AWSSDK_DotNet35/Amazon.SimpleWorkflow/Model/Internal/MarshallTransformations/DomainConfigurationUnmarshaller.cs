@@ -33,6 +33,9 @@
 
         public DomainConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonToken.Null)
+                return null;
+
             DomainConfiguration domainConfiguration = new DomainConfiguration();
 
         

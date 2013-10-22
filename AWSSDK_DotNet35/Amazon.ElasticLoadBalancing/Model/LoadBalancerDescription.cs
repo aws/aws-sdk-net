@@ -50,7 +50,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     
 
         /// <summary>
-        /// Specifies the name associated with the LoadBalancer.
+        /// Specifies the name associated with the load balancer.
         ///  
         /// </summary>
         public string LoadBalancerName
@@ -66,7 +66,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         }
 
         /// <summary>
-        /// Specifies the external DNS name associated with the LoadBalancer.
+        /// Specifies the external DNS name associated with the load balancer.
         ///  
         /// </summary>
         public string DNSName
@@ -82,8 +82,8 @@ namespace Amazon.ElasticLoadBalancing.Model
         }
 
         /// <summary>
-        /// Provides the name of the Amazon Route 53 hosted zone that is associated with the LoadBalancer. For information on how to associate your load
-        /// balancer with a hosted zone, go to <a
+        /// Provides the name of the Amazon Route 53 hosted zone that is associated with the load balancer. For information on how to associate your
+        /// load balancer with a hosted zone, go to <a
         /// href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/using-domain-names-with-elb.html">Using Domain Names With
         /// Elastic Load Balancing</a> in the <i>Elastic Load Balancing Developer Guide</i>.
         ///  
@@ -101,7 +101,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         }
 
         /// <summary>
-        /// Provides the ID of the Amazon Route 53 hosted zone name that is associated with the LoadBalancer. For information on how to associate or
+        /// Provides the ID of the Amazon Route 53 hosted zone name that is associated with the load balancer. For information on how to associate or
         /// disassociate your load balancer with a hosted zone, go to <a
         /// href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/using-domain-names-with-elb.html">Using Domain Names With
         /// Elastic Load Balancing</a> in the <i>Elastic Load Balancing Developer Guide</i>.
@@ -137,7 +137,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         }
 
         /// <summary>
-        /// Provides a list of policies defined for the LoadBalancer.
+        /// Provides a list of policies defined for the load balancer.
         ///  
         /// </summary>
         public Policies Policies
@@ -185,7 +185,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         }
 
         /// <summary>
-        /// Provides a list of VPC subnet IDs for the LoadBalancer.
+        /// Provides a list of VPC subnet IDs for the load balancer.
         ///  
         /// </summary>
         public List<string> Subnets
@@ -201,7 +201,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         }
 
         /// <summary>
-        /// Provides the ID of the VPC attached to the LoadBalancer.
+        /// Provides the ID of the VPC attached to the load balancer.
         ///  
         /// </summary>
         public string VPCId
@@ -217,7 +217,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         }
 
         /// <summary>
-        /// Provides a list of EC2 instance IDs for the LoadBalancer.
+        /// Provides a list of EC2 instance IDs for the load balancer.
         ///  
         /// </summary>
         public List<Instance> Instances
@@ -233,7 +233,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         }
 
         /// <summary>
-        /// Specifies information regarding the various health probes conducted on the LoadBalancer.
+        /// Specifies information regarding the various health probes conducted on the load balancer.
         ///  
         /// </summary>
         public HealthCheck HealthCheck
@@ -249,8 +249,8 @@ namespace Amazon.ElasticLoadBalancing.Model
         }
 
         /// <summary>
-        /// The security group that you can use as part of your inbound rules for your LoadBalancer's back-end Amazon EC2 application instances. To only
-        /// allow traffic from LoadBalancers, add a security group rule to your back end instance that specifies this source security group as the
+        /// The security group that you can use as part of your inbound rules for your load balancer's back-end Amazon EC2 application instances. To
+        /// only allow traffic from load balancers, add a security group rule to your back end instance that specifies this source security group as the
         /// inbound source.
         ///  
         /// </summary>
@@ -267,7 +267,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         }
 
         /// <summary>
-        /// The security groups the LoadBalancer is a member of (VPC only).
+        /// The security groups the load balancer is a member of (VPC only).
         ///  
         /// </summary>
         public List<string> SecurityGroups
@@ -283,7 +283,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         }
 
         /// <summary>
-        /// Provides the date and time the LoadBalancer was created.
+        /// Provides the date and time the load balancer was created.
         ///  
         /// </summary>
         public DateTime CreatedTime
@@ -299,9 +299,9 @@ namespace Amazon.ElasticLoadBalancing.Model
         }
 
         /// <summary>
-        /// Specifies the type of LoadBalancer. If the <c>Scheme</c> is <c>internet-facing</c>, the LoadBalancer has a publicly resolvable DNS name that
-        /// resolves to public IP addresses. If the <c>Scheme</c> is <c>internal</c>, the LoadBalancer has a publicly resolvable DNS name that resolves
-        /// to private IP addresses. This option is only available for LoadBalancers attached to an Amazon VPC.
+        /// Specifies the type of load balancer. If the <c>Scheme</c> is <c>internet-facing</c>, the load balancer has a publicly resolvable DNS name
+        /// that resolves to public IP addresses. If the <c>Scheme</c> is <c>internal</c>, the load balancer has a publicly resolvable DNS name that
+        /// resolves to private IP addresses. This option is only available for load balancers attached to an Amazon VPC.
         ///  
         /// </summary>
         public string Scheme

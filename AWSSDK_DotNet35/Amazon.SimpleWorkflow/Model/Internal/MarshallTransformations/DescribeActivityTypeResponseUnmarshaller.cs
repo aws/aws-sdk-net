@@ -39,7 +39,7 @@
         }        
         
         
-        private void UnmarshallResult(JsonUnmarshallerContext context,DescribeActivityTypeResponse response)
+        private static void UnmarshallResult(JsonUnmarshallerContext context,DescribeActivityTypeResponse response)
         {                   
           response.ActivityTypeDetail = ActivityTypeDetailUnmarshaller.GetInstance().Unmarshall(context);
           return;

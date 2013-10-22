@@ -33,6 +33,9 @@
 
         public DecisionTask Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonToken.Null)
+                return null;
+
             DecisionTask decisionTask = new DecisionTask();
 
         

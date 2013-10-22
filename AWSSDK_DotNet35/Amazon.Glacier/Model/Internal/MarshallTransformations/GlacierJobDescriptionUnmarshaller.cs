@@ -33,6 +33,9 @@
 
         public GlacierJobDescription Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonToken.Null)
+                return null;
+
             GlacierJobDescription glacierJobDescription = new GlacierJobDescription();
 
         

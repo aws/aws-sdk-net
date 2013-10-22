@@ -63,7 +63,7 @@ namespace Amazon.S3.Transfer.Internal
                 AutoCloseStream = this._fileTransporterRequest.AutoCloseStream,
                 ServerSideEncryptionMethod = this._fileTransporterRequest.ServerSideEncryptionMethod,
                 Headers = this._fileTransporterRequest.Headers,
-                MetaData = this._fileTransporterRequest.MetaData
+                Metadata = this._fileTransporterRequest.Metadata
             };
             putRequest.StreamUploadProgressCallback += new EventHandler<Runtime.StreamTransferProgressArgs>(this.putObjectProgressEventCallback);
 

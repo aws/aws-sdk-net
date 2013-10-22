@@ -30,14 +30,35 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class CreateVpnGatewayRequest : AmazonWebServiceRequest
     {
-        private string type;
+        private bool? dryRun;
+        private GatewayType type;
         private string availabilityZone;
+        public bool DryRun
+        {
+            get { return this.dryRun ?? default(bool); }
+            set { this.dryRun = value; }
+        }
+
+        // Check to see if DryRun property is set
+        internal bool IsSetDryRun()
+        {
+            return this.dryRun.HasValue;
+        }
 
         /// <summary>
         /// The type of VPN connection this VPN gateway supports.
         ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>ipsec.1</description>
+        ///     </item>
+        /// </list>
+        /// </para>
         /// </summary>
-        public string Type
+        public GatewayType Type
         {
             get { return this.type; }
             set { this.type = value; }

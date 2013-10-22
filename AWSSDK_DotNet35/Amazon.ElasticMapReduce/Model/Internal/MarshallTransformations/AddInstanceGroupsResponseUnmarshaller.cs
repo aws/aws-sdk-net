@@ -12,106 +12,99 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Net;
-using System.Collections.Generic;
-using Amazon.ElasticMapReduce.Model;
-using Amazon.Runtime;
-using Amazon.Runtime.Internal;
-using Amazon.Runtime.Internal.Transform;
+    using System;
+    using System.Net;
+    using System.Collections.Generic;
+    using ThirdParty.Json.LitJson;
+    using Amazon.ElasticMapReduce.Model;
+    using Amazon.Runtime;
+    using Amazon.Runtime.Internal;
+    using Amazon.Runtime.Internal.Transform;
 
-namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
-{
-    /// <summary>
-    ///    Response Unmarshaller for AddInstanceGroups operation
-    /// </summary>
-    internal class AddInstanceGroupsResponseUnmarshaller : XmlResponseUnmarshaller
+    namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
     {
-        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
-        {   
-            AddInstanceGroupsResponse response = new AddInstanceGroupsResponse();
-            
-            while (context.Read())
-            {
-                if (context.IsStartElement)
-                {                    
-                    if(context.TestExpression("AddInstanceGroupsResult", 2))
-                    {
-                        UnmarshallResult(context,response);                        
-                        continue;
-                    }
-                    
-                    if (context.TestExpression("ResponseMetadata", 2))
-                    {
-                        response.ResponseMetadata = ResponseMetadataUnmarshaller.GetInstance().Unmarshall(context);
-                    }
-                }
-            }
-                 
-                        
-            return response;
+      /// <summary>
+      /// Response Unmarshaller for AddInstanceGroups operation
+      /// </summary>
+      internal class AddInstanceGroupsResponseUnmarshaller : JsonResponseUnmarshaller
+      {
+        public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
+        {
+          AddInstanceGroupsResponse response = new AddInstanceGroupsResponse();          
+          
+          context.Read();
+          
+          UnmarshallResult(context,response);
+          return response;
         }
         
-        private void UnmarshallResult(XmlUnmarshallerContext context,AddInstanceGroupsResponse response)
+        private static void UnmarshallResult(JsonUnmarshallerContext context,AddInstanceGroupsResponse response)
         {
-            
+          
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
-            
-            if (context.IsStartOfDocument) 
-               targetDepth += 2;
-            
             while (context.Read())
             {
-                if (context.IsStartElement || context.IsAttribute)
+              
+              if (context.TestExpression("JobFlowId", targetDepth))
+              {
+                context.Read();
+                response.JobFlowId = StringUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
+              if (context.TestExpression("InstanceGroupIds", targetDepth))
+              {
+                context.Read();
+                response.InstanceGroupIds = new List<String>();
+                        StringUnmarshaller unmarshaller = StringUnmarshaller.GetInstance();
+                while (context.Read())
                 {
-                    if (context.TestExpression("JobFlowId", targetDepth))
-                    {
-                        response.JobFlowId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("InstanceGroupIds/member", targetDepth))
-                    {
-                        response.InstanceGroupIds.Add(StringUnmarshaller.GetInstance().Unmarshall(context));
-                            
-                        continue;
-                    }
+                  JsonToken token = context.CurrentTokenType;                
+                  if (token == JsonToken.ArrayStart)
+                  {
+                    continue;
+                  }
+                  if (token == JsonToken.ArrayEnd)
+                  {
+                    break;
+                  }
+                   response.InstanceGroupIds.Add(unmarshaller.Unmarshall(context));
                 }
-                else if (context.IsEndElement && context.CurrentDepth < originalDepth)
-                {
+                continue;
+              }
+  
+                if (context.CurrentDepth <= originalDepth)
+                {                   
                     return;
                 }
             }
-                            
-
-
+                        
             return;
-        }
+        }                        
         
-        public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+        public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InternalFailure"))
-            {
-                return new InternalServerErrorException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-    
-            return new AmazonElasticMapReduceException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+          ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);                    
+          
+          if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerErrorException"))
+          {
+            return new InternalServerErrorException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+          }
+  
+          return new AmazonElasticMapReduceException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        
-        private static AddInstanceGroupsResponseUnmarshaller instance;
 
+        private static AddInstanceGroupsResponseUnmarshaller instance;
         public static AddInstanceGroupsResponseUnmarshaller GetInstance()
         {
-            if (instance == null) 
-            {
-               instance = new AddInstanceGroupsResponseUnmarshaller();
-            }
-            return instance;
+          if (instance == null)
+          {
+            instance = new AddInstanceGroupsResponseUnmarshaller();
+          }
+          return instance;
         }
-    
+  
+      }
     }
-}
-    
+  

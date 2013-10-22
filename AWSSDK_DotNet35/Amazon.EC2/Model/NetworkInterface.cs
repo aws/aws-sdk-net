@@ -20,7 +20,8 @@ using System.IO;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>Network Interface
+    /// <summary>
+    /// <para> Specifies the characteristics of a network interface. </para>
     /// </summary>
     public class NetworkInterface
     {
@@ -33,7 +34,7 @@ namespace Amazon.EC2.Model
         private string ownerId;
         private string requesterId;
         private bool? requesterManaged;
-        private string status;
+        private NetworkInterfaceStatus status;
         private string macAddress;
         private string privateIpAddress;
         private string privateDnsName;
@@ -131,7 +132,7 @@ namespace Amazon.EC2.Model
         {
             return this.requesterManaged.HasValue;
         }
-        public string Status
+        public NetworkInterfaceStatus Status
         {
             get { return this.status; }
             set { this.status = value; }

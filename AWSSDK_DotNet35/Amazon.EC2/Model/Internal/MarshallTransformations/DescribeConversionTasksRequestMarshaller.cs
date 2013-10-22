@@ -34,7 +34,11 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(describeConversionTasksRequest, "AmazonEC2");
             request.Parameters.Add("Action", "DescribeConversionTasks");
-            request.Parameters.Add("Version", "2013-02-01");
+            request.Parameters.Add("Version", "2013-10-01");
+            if (describeConversionTasksRequest != null && describeConversionTasksRequest.IsSetDryRun())
+            {
+                request.Parameters.Add("DryRun", StringUtils.FromBool(describeConversionTasksRequest.DryRun));
+            }
 
             if (describeConversionTasksRequest != null)
             {

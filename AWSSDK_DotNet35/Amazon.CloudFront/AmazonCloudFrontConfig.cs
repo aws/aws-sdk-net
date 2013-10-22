@@ -29,7 +29,8 @@ namespace Amazon.CloudFront
         /// </summary>
         public AmazonCloudFrontConfig()
         {
-            
+            this.AuthenticationServiceName = "cloudfront";
+            this.RegionEndpoint = RegionEndpoint.USEast1;
         }
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.CloudFront
         {
             get
             {
-                return "2013-05-12";
+                return "2013-09-27";
             }
         }
     }

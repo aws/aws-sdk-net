@@ -29,9 +29,21 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class AttachVolumeRequest : AmazonWebServiceRequest
     {
+        private bool? dryRun;
         private string volumeId;
         private string instanceId;
         private string device;
+        public bool DryRun
+        {
+            get { return this.dryRun ?? default(bool); }
+            set { this.dryRun = value; }
+        }
+
+        // Check to see if DryRun property is set
+        internal bool IsSetDryRun()
+        {
+            return this.dryRun.HasValue;
+        }
 
         /// <summary>
         /// The ID of the Amazon EBS volume. The volume and instance must be within the same Availability Zone and the instance must be running.

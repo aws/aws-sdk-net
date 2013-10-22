@@ -30,6 +30,7 @@ namespace Amazon.DynamoDBv2.DataModel
     {
         #region Private members
 
+        private bool disposed;
         private bool ownClient;
         private IAmazonDynamoDB client;
         private Dictionary<string, Table> tablesMap;
@@ -41,6 +42,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
         #region Constructors
 
+#if !(WIN_RT || WINDOWS_PHONE)
         /// <summary>
         /// Constructs a DynamoDBContext object with a default AmazonDynamoDBClient
         /// client and a default DynamoDBContextConfig object for configuration.
@@ -72,7 +74,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="config"></param>
         public DynamoDBContext(RegionEndpoint region, DynamoDBContextConfig config)
             : this(new AmazonDynamoDBClient(region), true, config) { }
-
+#endif
         /// <summary>
         /// Constructs a DynamoDBContext object with the specified DynamoDB client.
         /// Uses default DynamoDBContextConfig object for configuration.
@@ -99,6 +101,48 @@ namespace Amazon.DynamoDBv2.DataModel
             this.tablesMap = new Dictionary<string, Table>();
             this.ownClient = ownClient;
             this.config = config ?? new DynamoDBContextConfig();
+        }
+
+        #endregion
+
+        #region Dispose Pattern Implementation
+
+        /// <summary>
+        /// Implements the Dispose pattern for the AmazonWebServiceClient
+        /// </summary>
+        /// <param name="disposing">Whether this object is being disposed via a call to Dispose
+        /// or garbage collected.</param>
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!this.disposed)
+            {
+                if (disposing && client != null)
+                {
+                    if (ownClient)
+                    {
+                        client.Dispose();
+                    }
+                    client = null;
+                }
+                this.disposed = true;
+            }
+        }
+
+        /// <summary>
+        /// Disposes of all managed and unmanaged resources.
+        /// </summary>
+        public void Dispose()
+        {
+            this.Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        /// <summary>
+        /// The destructor for the client class.
+        /// </summary>
+        ~DynamoDBContext()
+        {
+            this.Dispose(false);
         }
 
         #endregion

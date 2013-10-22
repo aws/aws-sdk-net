@@ -29,9 +29,21 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeReservedInstancesRequest : AmazonWebServiceRequest
     {
+        private bool? dryRun;
         private List<string> reservedInstancesIds = new List<string>();
         private List<Filter> filters = new List<Filter>();
-        private string offeringType;
+        private OfferingTypeValues offeringType;
+        public bool DryRun
+        {
+            get { return this.dryRun ?? default(bool); }
+            set { this.dryRun = value; }
+        }
+
+        // Check to see if DryRun property is set
+        internal bool IsSetDryRun()
+        {
+            return this.dryRun.HasValue;
+        }
 
         /// <summary>
         /// The optional list of Reserved Instance IDs to describe.
@@ -69,8 +81,17 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// The Reserved Instance offering type.
         ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>Heavy Utilization, Medium Utilization, Light Utilization</description>
+        ///     </item>
+        /// </list>
+        /// </para>
         /// </summary>
-        public string OfferingType
+        public OfferingTypeValues OfferingType
         {
             get { return this.offeringType; }
             set { this.offeringType = value; }

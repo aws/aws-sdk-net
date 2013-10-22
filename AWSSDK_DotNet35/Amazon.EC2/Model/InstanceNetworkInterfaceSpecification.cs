@@ -34,6 +34,12 @@ namespace Amazon.EC2.Model
         private bool? deleteOnTermination;
         private List<PrivateIpAddressSpecification> privateIpAddresses = new List<PrivateIpAddressSpecification>();
         private int? secondaryPrivateIpAddressCount;
+        private bool? associatePublicIpAddress;
+
+        /// <summary>
+        /// An existing interface to attach to a single instance. Requires n=1 instances.
+        ///  
+        /// </summary>
         public string NetworkInterfaceId
         {
             get { return this.networkInterfaceId; }
@@ -45,6 +51,12 @@ namespace Amazon.EC2.Model
         {
             return this.networkInterfaceId != null;
         }
+
+        /// <summary>
+        /// The device index. Applies to both attaching an existing network interface and when creating a network interface. Condition: If you are
+        /// specifying a network interface in the request, you must provide the device index.
+        ///  
+        /// </summary>
         public int DeviceIndex
         {
             get { return this.deviceIndex ?? default(int); }
@@ -56,6 +68,11 @@ namespace Amazon.EC2.Model
         {
             return this.deviceIndex.HasValue;
         }
+
+        /// <summary>
+        /// The subnet ID. Applies only when creating a network interface.
+        ///  
+        /// </summary>
         public string SubnetId
         {
             get { return this.subnetId; }
@@ -67,6 +84,11 @@ namespace Amazon.EC2.Model
         {
             return this.subnetId != null;
         }
+
+        /// <summary>
+        /// A description. Applies only when creating a network interface.
+        ///  
+        /// </summary>
         public string Description
         {
             get { return this.description; }
@@ -78,6 +100,11 @@ namespace Amazon.EC2.Model
         {
             return this.description != null;
         }
+
+        /// <summary>
+        /// The primary private IP address. Applies only when creating a network interface. Requires n=1 network interfaces in launch.
+        ///  
+        /// </summary>
         public string PrivateIpAddress
         {
             get { return this.privateIpAddress; }
@@ -132,6 +159,27 @@ namespace Amazon.EC2.Model
         internal bool IsSetSecondaryPrivateIpAddressCount()
         {
             return this.secondaryPrivateIpAddressCount.HasValue;
+        }
+
+        /// <summary>
+        /// Indicates whether to assign a public IP address to an instance in a VPC. The public IP address is associated with a specific network
+        /// interface. If set to <c>true</c>, the following rules apply: <ol> <li> Can only be associated with a single network interface with the
+        /// device index of 0. You can't associate a public IP address with a second network interface, and you can't associate a public IP address if
+        /// you are launching more than one network interface. </li> <li> Can only be associated with a new network interface, not an existing one.
+        /// </li> </ol> Default: If launching into a default subnet, the default value is <c>true</c>. If launching into a nondefault subnet, the
+        /// default value is <c>false</c>.
+        ///  
+        /// </summary>
+        public bool AssociatePublicIpAddress
+        {
+            get { return this.associatePublicIpAddress ?? default(bool); }
+            set { this.associatePublicIpAddress = value; }
+        }
+
+        // Check to see if AssociatePublicIpAddress property is set
+        internal bool IsSetAssociatePublicIpAddress()
+        {
+            return this.associatePublicIpAddress.HasValue;
         }
     }
 }

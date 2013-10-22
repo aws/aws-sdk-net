@@ -33,6 +33,9 @@
 
         public WriteRequest Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonToken.Null)
+                return null;
+
             WriteRequest writeRequest = new WriteRequest();
 
         

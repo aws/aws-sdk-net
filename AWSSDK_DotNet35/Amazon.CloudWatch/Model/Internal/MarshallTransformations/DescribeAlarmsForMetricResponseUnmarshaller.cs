@@ -52,7 +52,7 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
             return response;
         }
         
-        private void UnmarshallResult(XmlUnmarshallerContext context,DescribeAlarmsForMetricResponse response)
+        private static void UnmarshallResult(XmlUnmarshallerContext context,DescribeAlarmsForMetricResponse response)
         {
             
             int originalDepth = context.CurrentDepth;

@@ -30,7 +30,7 @@ namespace Amazon.EC2.Model
         private string instanceId;
         private string instanceOwnerId;
         private string networkInterfaceId;
-        private string state;
+        private RouteState state;
         public string DestinationCidrBlock
         {
             get { return this.destinationCidrBlock; }
@@ -86,7 +86,7 @@ namespace Amazon.EC2.Model
         {
             return this.networkInterfaceId != null;
         }
-        public string State
+        public RouteState State
         {
             get { return this.state; }
             set { this.state = value; }

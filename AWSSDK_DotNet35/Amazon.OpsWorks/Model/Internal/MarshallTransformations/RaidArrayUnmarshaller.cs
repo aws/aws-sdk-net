@@ -33,6 +33,9 @@
 
         public RaidArray Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonToken.Null)
+                return null;
+
             RaidArray raidArray = new RaidArray();
 
         

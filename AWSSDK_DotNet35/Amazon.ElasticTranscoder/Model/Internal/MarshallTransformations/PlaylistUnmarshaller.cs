@@ -33,6 +33,9 @@
 
         public Playlist Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonToken.Null)
+                return null;
+
             Playlist playlist = new Playlist();
 
         

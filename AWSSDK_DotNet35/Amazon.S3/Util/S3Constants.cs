@@ -113,7 +113,7 @@ namespace Amazon.S3.Util
         internal const string REGION_EU_WEST_1 = "eu-west-1";
 
         // Metadata Directives as strings
-        internal static readonly string[] MetaDataDirectives = { "COPY", "REPLACE" };
+        internal static readonly string[] MetadataDirectives = { "COPY", "REPLACE" };
 
         // S3 Bucket Versioning Configuration statuses
         internal const string VersioningOff = "Off";

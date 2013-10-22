@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
         private string ownerId;
         private string bucket;
         private string prefix;
-        private string state;
+        private DatafeedSubscriptionState state;
         private SpotInstanceStateFault fault;
 
         /// <summary>
@@ -83,8 +83,17 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Specifies the state of the Spot Instance request.
         ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>Active, Inactive</description>
+        ///     </item>
+        /// </list>
+        /// </para>
         /// </summary>
-        public string State
+        public DatafeedSubscriptionState State
         {
             get { return this.state; }
             set { this.state = value; }

@@ -28,7 +28,8 @@ namespace Amazon.SimpleEmail.Model
     /// <para>Given an identity (email address or domain), sets the Amazon SNS topic to which Amazon SES will publish bounce and complaint
     /// notifications for emails sent with that identity as the <c>Source</c> .
     /// Publishing to topics may only be disabled when feedback forwarding is enabled.</para> <para>This action is throttled at one request
-    /// per second.</para> <para>For more information about feedback notification, see the Amazon SES Developer Guide.</para>
+    /// per second.</para> <para>For more information about feedback notification, see the <a
+    /// href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/bounce-complaint-notifications.html" >Amazon SES Developer Guide</a> .</para>
     /// </summary>
     public partial class SetIdentityNotificationTopicRequest : AmazonWebServiceRequest
     {
@@ -78,7 +79,7 @@ namespace Amazon.SimpleEmail.Model
         }
 
         /// <summary>
-        /// The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (Amazon SNS) topic. If the parameter is ommited from the request or
+        /// The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (Amazon SNS) topic. If the parameter is omitted from the request or
         /// a null value is passed, the topic is cleared and publishing is disabled.
         ///  
         /// </summary>

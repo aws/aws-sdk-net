@@ -25,7 +25,7 @@ namespace Amazon.Runtime
     /// </summary>
     public class AmazonWebServiceResponse
     {
-        private ResponseMetadata responseMetaDataField;
+        private ResponseMetadata responseMetadataField;
         private long contentLength;
         private HttpStatusCode httpStatusCode;
 
@@ -35,8 +35,8 @@ namespace Amazon.Runtime
         /// </summary>
         public ResponseMetadata ResponseMetadata
         {
-            get { return  responseMetaDataField; }
-            set { responseMetaDataField = value; }
+            get { return  responseMetadataField; }
+            set { responseMetadataField = value; }
         }
 
         /// <summary>

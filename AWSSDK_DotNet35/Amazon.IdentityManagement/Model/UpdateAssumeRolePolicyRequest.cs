@@ -26,7 +26,8 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Container for the parameters to the UpdateAssumeRolePolicy operation.
     /// <para>Updates the policy that grants an entity permission to assume a role. Currently, only an Amazon EC2 instance can assume a role. For
-    /// more information about roles, go to Working with Roles.</para>
+    /// more information about roles, go to <a href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/WorkingWithRoles.html" >Working with
+    /// Roles</a> .</para>
     /// </summary>
     public partial class UpdateAssumeRolePolicyRequest : AmazonWebServiceRequest
     {

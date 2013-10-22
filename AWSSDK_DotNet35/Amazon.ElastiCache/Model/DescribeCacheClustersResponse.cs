@@ -28,7 +28,7 @@ namespace Amazon.ElastiCache.Model
     {
         /// <summary>
         /// Gets and sets the DescribeCacheClustersResult property.
-        /// Contains one or more Cache Clusters.
+        /// Represents the output of a DescribeCacheClusters operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DescribeCacheClustersResult class are now available on the DescribeCacheClustersResponse class. You should use the properties on DescribeCacheClustersResponse instead of accessing them through DescribeCacheClustersResult.")]
         public DescribeCacheClustersResult DescribeCacheClustersResult

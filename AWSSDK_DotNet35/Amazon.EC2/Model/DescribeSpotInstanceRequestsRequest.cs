@@ -27,22 +27,36 @@ namespace Amazon.EC2.Model
     /// Container for the parameters to the DescribeSpotInstanceRequests operation.
     /// <para> Describes Spot Instance requests. Spot Instances are instances that Amazon EC2 starts on your behalf when the maximum price that you
     /// specify exceeds the current Spot Price. Amazon EC2 periodically sets the Spot Price based on available Spot Instance capacity and current
-    /// spot instance requests. For conceptual information about Spot Instances, refer to the Amazon Elastic Compute Cloud Developer Guide or Amazon
-    /// Elastic Compute Cloud User Guide. </para> <para> You can filter the results to return information only about Spot Instance requests that
-    /// match criteria you specify. For example, you could get information about requests where the Spot Price you specified is a certain value (you
-    /// can't use greater than or less than comparison, but you can use <c>*</c> and <c>?</c> wildcards). You can specify multiple values for a
-    /// filter. A Spot Instance request must match at least one of the specified values for it to be included in the results. </para> <para> You can
-    /// specify multiple filters (e.g., the Spot Price is equal to a particular value, and the instance type is <c>m1.small</c> ). The result
-    /// includes information for a particular request only if it matches all your filters. If there's no match, no special message is returned; the
-    /// response is simply empty. </para> <para> You can use wildcards with the filter values: an asterisk matches zero or more characters, and
-    /// <c>?</c> matches exactly one character. You can escape special characters using a backslash before the character. For example, a value of
-    /// <c>\*amazon\?\\</c> searches for the literal string <c>*amazon?\</c> .
+    /// spot instance requests. For conceptual information about Spot Instances, refer to the <a
+    /// href="http://docs.amazonwebservices.com/AWSEC2/2010-08-31/DeveloperGuide/" > Amazon Elastic Compute Cloud Developer Guide</a> or <a
+    /// href="http://docs.amazonwebservices.com/AWSEC2/2010-08-31/UserGuide/" > Amazon Elastic Compute Cloud User Guide</a> .
+    /// </para> <para> You can filter the results to return information only about Spot Instance requests that match criteria you specify. For
+    /// example, you could get information about requests where the Spot Price you specified is a certain value (you can't use greater than or less
+    /// than comparison, but you can use <c>*</c> and <c>?</c> wildcards). You can specify multiple values for a filter. A Spot Instance request
+    /// must match at least one of the specified values for it to be included in the results. </para> <para> You can specify multiple filters (e.g.,
+    /// the Spot Price is equal to a particular value, and the instance type is <c>m1.small</c> ). The result includes information for a particular
+    /// request only if it matches all your filters. If there's no match, no special message is returned; the response is simply empty. </para>
+    /// <para> You can use wildcards with the filter values: an asterisk matches zero or more characters, and <c>?</c> matches exactly one
+    /// character. You can escape special characters using a backslash before the character. For example, a value of <c>\*amazon\?\\</c> searches
+    /// for the literal string <c>*amazon?\</c> .
     /// </para>
     /// </summary>
     public partial class DescribeSpotInstanceRequestsRequest : AmazonWebServiceRequest
     {
+        private bool? dryRun;
         private List<string> spotInstanceRequestIds = new List<string>();
         private List<Filter> filters = new List<Filter>();
+        public bool DryRun
+        {
+            get { return this.dryRun ?? default(bool); }
+            set { this.dryRun = value; }
+        }
+
+        // Check to see if DryRun property is set
+        internal bool IsSetDryRun()
+        {
+            return this.dryRun.HasValue;
+        }
 
         /// <summary>
         /// The ID of the request.

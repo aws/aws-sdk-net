@@ -38,7 +38,7 @@
           return response;
         }
         
-        private void UnmarshallResult(JsonUnmarshallerContext context,ListVolumeRecoveryPointsResponse response)
+        private static void UnmarshallResult(JsonUnmarshallerContext context,ListVolumeRecoveryPointsResponse response)
         {
           
             int originalDepth = context.CurrentDepth;

@@ -31,7 +31,8 @@ namespace Amazon.AWSSupport.Model
         private string finalCaseStatus;
 
         /// <summary>
-        /// Status of the case when the <a href="API_ResolveCase.html" title="ResolveCase">ResolveCase</a> request was sent.
+        /// Status of the case when the <a href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_ResolveCase.html"
+        /// title="ResolveCase">ResolveCase</a> request was sent.
         ///  
         /// </summary>
         public string InitialCaseStatus
@@ -47,7 +48,8 @@ namespace Amazon.AWSSupport.Model
         }
 
         /// <summary>
-        /// Status of the case after the <a href="API_ResolveCase.html" title="ResolveCase">ResolveCase</a> request was processed.
+        /// Status of the case after the <a href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_ResolveCase.html"
+        /// title="ResolveCase">ResolveCase</a> request was processed.
         ///  
         /// </summary>
         public string FinalCaseStatus

@@ -24,8 +24,8 @@ namespace Amazon.SimpleEmail
     ///  
     ///  Amazon Simple Email Service <para> This is the API Reference for Amazon Simple Email Service (Amazon SES). This documentation is intended to
     /// be used in conjunction with the Amazon SES Developer Guide. </para> <para> For specific details on how to construct a service request,
-    /// please consult the Amazon SES Developer Guide. </para> <para><b>NOTE:</b>The endpoint for Amazon SES is located at:
-    /// https://email.us-east-1.amazonaws.com </para>
+    /// please consult the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide" >Amazon SES Developer Guide</a> .
+    /// </para> <para><b>NOTE:</b>The endpoint for Amazon SES is located at: https://email.us-east-1.amazonaws.com </para>
     /// </summary>
     public interface IAmazonSimpleEmailService : IDisposable
     {
@@ -126,7 +126,7 @@ namespace Amazon.SimpleEmail
         /// 
         /// </ul>
         /// <para>This action is throttled at one request per second.</para> <para>For more information about creating DNS records using DKIM tokens,
-        /// go to the Amazon SES Developer Guide.</para>
+        /// go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html" >Amazon SES Developer Guide</a> .</para>
         /// </summary>
         /// 
         /// <param name="getIdentityDkimAttributesRequest">Container for the necessary parameters to execute the GetIdentityDkimAttributes service
@@ -170,7 +170,8 @@ namespace Amazon.SimpleEmail
         /// <summary>
         /// <para>Given a list of verified identities (email addresses and/or domains), returns a structure describing identity notification
         /// attributes.</para> <para>This action is throttled at one request per second.</para> <para>For more information about feedback notification,
-        /// see the Amazon SES Developer Guide.</para>
+        /// see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/bounce-complaint-notifications.html" >Amazon SES Developer Guide</a>
+        /// .</para>
         /// </summary>
         /// 
         /// <param name="getIdentityNotificationAttributesRequest">Container for the necessary parameters to execute the
@@ -473,7 +474,8 @@ namespace Amazon.SimpleEmail
         /// email message to a larger audience, you can divide your recipient list into groups of 50 or fewer, and then call Amazon SES repeatedly to
         /// send the message to each group. </para> <para>For every message that you send, the total number of recipients (To:, CC: and BCC:) is counted
         /// against your <i>sending quota</i> - the maximum number of emails you can send in a 24-hour period. For information about your sending quota,
-        /// go to the Amazon SES Developer Guide. </para>
+        /// go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html" >Amazon SES Developer Guide</a> .
+        /// </para>
         /// </summary>
         /// 
         /// <param name="sendEmailRequest">Container for the necessary parameters to execute the SendEmail service method on
@@ -525,7 +527,9 @@ namespace Amazon.SimpleEmail
         /// number of To:, CC: and BCC: email addresses cannot exceed 50. If you need to send an email message to a larger audience, you can divide your
         /// recipient list into groups of 50 or fewer, and then call Amazon SES repeatedly to send the message to each group. </para> <para>For every
         /// message that you send, the total number of recipients (To:, CC: and BCC:) is counted against your <i>sending quota</i> - the maximum number
-        /// of emails you can send in a 24-hour period. For information about your sending quota, go to the Amazon SES Developer Guide. </para>
+        /// of emails you can send in a 24-hour period. For information about your sending quota, go to the <a
+        /// href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html" >Amazon SES Developer Guide</a> .
+        /// </para>
         /// </summary>
         /// 
         /// <param name="sendRawEmailRequest">Container for the necessary parameters to execute the SendRawEmail service method on
@@ -577,7 +581,8 @@ namespace Amazon.SimpleEmail
         /// </ul>
         /// <para>For email addresses (e.g., <c>user@example.com</c> ), you can only enable Easy DKIM signing if the corresponding domain (e.g.,
         /// <c>example.com</c> ) has been set up for Easy DKIM using the AWS Console or the <c>VerifyDomainDkim</c> action.</para> <para>This action is
-        /// throttled at one request per second.</para> <para>For more information about Easy DKIM signing, go to the Amazon SES Developer Guide.</para>
+        /// throttled at one request per second.</para> <para>For more information about Easy DKIM signing, go to the <a
+        /// href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html" >Amazon SES Developer Guide</a> .</para>
         /// </summary>
         /// 
         /// <param name="setIdentityDkimEnabledRequest">Container for the necessary parameters to execute the SetIdentityDkimEnabled service method on
@@ -621,7 +626,8 @@ namespace Amazon.SimpleEmail
         /// <summary>
         /// <para>Given an identity (email address or domain), enables or disables whether Amazon SES forwards feedback notifications as email. Feedback
         /// forwarding may only be disabled when both complaint and bounce topics are set.</para> <para>This action is throttled at one request per
-        /// second.</para> <para>For more information about feedback notification, see the Amazon SES Developer Guide.</para>
+        /// second.</para> <para>For more information about feedback notification, see the <a
+        /// href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/bounce-complaint-notifications.html" >Amazon SES Developer Guide</a> .</para>
         /// </summary>
         /// 
         /// <param name="setIdentityFeedbackForwardingEnabledRequest">Container for the necessary parameters to execute the
@@ -666,7 +672,8 @@ namespace Amazon.SimpleEmail
         /// <para>Given an identity (email address or domain), sets the Amazon SNS topic to which Amazon SES will publish bounce and complaint
         /// notifications for emails sent with that identity as the <c>Source</c> .
         /// Publishing to topics may only be disabled when feedback forwarding is enabled.</para> <para>This action is throttled at one request
-        /// per second.</para> <para>For more information about feedback notification, see the Amazon SES Developer Guide.</para>
+        /// per second.</para> <para>For more information about feedback notification, see the <a
+        /// href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/bounce-complaint-notifications.html" >Amazon SES Developer Guide</a> .</para>
         /// </summary>
         /// 
         /// <param name="setIdentityNotificationTopicRequest">Container for the necessary parameters to execute the SetIdentityNotificationTopic service
@@ -713,7 +720,8 @@ namespace Amazon.SimpleEmail
         /// detect that you have updated your DNS records; this detection process may take up to 72 hours. Upon successful detection, Amazon SES will be
         /// able to DKIM-sign email originating from that domain.</para> <para>This action is throttled at one request per second.</para> <para>To
         /// enable or disable Easy DKIM signing for a domain, use the <c>SetIdentityDkimEnabled</c> action.</para> <para>For more information about
-        /// creating DNS records using DKIM tokens, go to the Amazon SES Developer Guide.</para>
+        /// creating DNS records using DKIM tokens, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html"
+        /// >Amazon SES Developer Guide</a> .</para>
         /// </summary>
         /// 
         /// <param name="verifyDomainDkimRequest">Container for the necessary parameters to execute the VerifyDomainDkim service method on

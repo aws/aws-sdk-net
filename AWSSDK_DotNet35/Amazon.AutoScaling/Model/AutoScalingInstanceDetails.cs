@@ -121,7 +121,9 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// The life cycle state of this instance.
+        /// The life cycle state of this instance. for more information, see <a
+        /// href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AS_Concepts.html#instance-lifecycle">Instance Lifecycle State</a> in the
+        /// <i>Auto Scaling Developer Guide</i>.
         ///  
         /// <para>
         /// <b>Constraints:</b>

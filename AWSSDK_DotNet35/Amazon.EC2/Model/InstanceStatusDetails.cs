@@ -25,10 +25,10 @@ namespace Amazon.EC2.Model
     public class InstanceStatusDetails
     {
         
-        private string name;
-        private string status;
+        private StatusName name;
+        private StatusType status;
         private DateTime? impairedSince;
-        public string Name
+        public StatusName Name
         {
             get { return this.name; }
             set { this.name = value; }
@@ -39,7 +39,7 @@ namespace Amazon.EC2.Model
         {
             return this.name != null;
         }
-        public string Status
+        public StatusType Status
         {
             get { return this.status; }
             set { this.status = value; }

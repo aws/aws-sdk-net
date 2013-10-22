@@ -34,7 +34,7 @@ namespace Amazon.RDS.Model
         private string marker;
 
         /// <summary>
-        /// The name of the DB Parameter Group Family.
+        /// The name of the DB parameter group family.
         ///  
         /// </summary>
         public string DBParameterGroupFamily
@@ -68,8 +68,8 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// An optional pagination token provided by a previous DescribeEngineDefaultParameters request. If this parameter is specified, the response
-        /// includes only records beyond the marker, up to the value specified by <c>MaxRecords</c>.
+        /// An optional pagination token provided by a previous <c>DescribeEngineDefaultParameters</c> request. If this parameter is specified, the
+        /// response includes only records beyond the marker, up to the value specified by <c>MaxRecords</c>.
         ///  
         /// </summary>
         public string Marker

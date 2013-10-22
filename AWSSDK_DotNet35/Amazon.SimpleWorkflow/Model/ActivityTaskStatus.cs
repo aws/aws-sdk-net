@@ -17,13 +17,14 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using Amazon.Runtime;
 
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
     /// <para> Status information about an activity task. </para>
     /// </summary>
-    public class ActivityTaskStatus
+    public partial class ActivityTaskStatus : AmazonWebServiceResponse
     {
         
         private bool? cancelRequested;

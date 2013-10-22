@@ -37,7 +37,7 @@ namespace Amazon.RDS.Model
         private string marker;
 
         /// <summary>
-        /// The customer-assigned name of the DB Instance that contains the log files you want to list. Constraints: <ul> <li>Must contain from 1 to 63
+        /// The customer-assigned name of the DB instance that contains the log files you want to list. Constraints: <ul> <li>Must contain from 1 to 63
         /// alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive
         /// hyphens</li> </ul>
         ///  

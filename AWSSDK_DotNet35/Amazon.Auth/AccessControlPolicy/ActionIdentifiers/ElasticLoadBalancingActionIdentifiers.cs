@@ -22,7 +22,7 @@ namespace Amazon.Auth.AccessControlPolicy.ActionIdentifiers
     /// The available AWS access control policy actions for Elastic Load Balancing.
     /// </summary>
     /// <see cref="Amazon.Auth.AccessControlPolicy.Statement.Actions"/>
-    public class ElasticLoadBalancingActionIdentifiers
+    public static class ElasticLoadBalancingActionIdentifiers
     {
         public static readonly ActionIdentifier AllElasticLoadBalancingActions = new ActionIdentifier("elasticloadbalancing:*");
 

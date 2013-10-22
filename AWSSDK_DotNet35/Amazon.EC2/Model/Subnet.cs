@@ -27,7 +27,7 @@ namespace Amazon.EC2.Model
     {
         
         private string subnetId;
-        private string state;
+        private SubnetState state;
         private string vpcId;
         private string cidrBlock;
         private int? availableIpAddressCount;
@@ -55,8 +55,17 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Describes the current state of the subnet. The state of the subnet may be either <c>pending</c> or <c>available</c>.
         ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>pending, available</description>
+        ///     </item>
+        /// </list>
+        /// </para>
         /// </summary>
-        public string State
+        public SubnetState State
         {
             get { return this.state; }
             set { this.state = value; }

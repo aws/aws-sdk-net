@@ -52,7 +52,7 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
             return response;
         }
         
-        private void UnmarshallResult(XmlUnmarshallerContext context,UpdateServiceAccessPoliciesResponse response)
+        private static void UnmarshallResult(XmlUnmarshallerContext context,UpdateServiceAccessPoliciesResponse response)
         {
             
             int originalDepth = context.CurrentDepth;

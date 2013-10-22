@@ -33,6 +33,9 @@
 
         public ActivityTaskCanceledEventAttributes Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonToken.Null)
+                return null;
+
             ActivityTaskCanceledEventAttributes activityTaskCanceledEventAttributes = new ActivityTaskCanceledEventAttributes();
 
         

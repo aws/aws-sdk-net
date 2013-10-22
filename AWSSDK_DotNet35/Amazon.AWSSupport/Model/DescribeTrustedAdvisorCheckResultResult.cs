@@ -30,7 +30,8 @@ namespace Amazon.AWSSupport.Model
         private TrustedAdvisorCheckResult result;
 
         /// <summary>
-        /// Returns a <a href="API_TrustedAdvisorCheckResult.html" title="TrustedAdvisorCheckResult">TrustedAdvisorCheckResult</a> object.
+        /// Returns a <a href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorCheckResult.html"
+        /// title="TrustedAdvisorCheckResult">TrustedAdvisorCheckResult</a> object.
         ///  
         /// </summary>
         public TrustedAdvisorCheckResult Result

@@ -31,8 +31,20 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class BundleInstanceRequest : AmazonWebServiceRequest
     {
+        private bool? dryRun;
         private string instanceId;
         private Storage storage;
+        public bool DryRun
+        {
+            get { return this.dryRun ?? default(bool); }
+            set { this.dryRun = value; }
+        }
+
+        // Check to see if DryRun property is set
+        internal bool IsSetDryRun()
+        {
+            return this.dryRun.HasValue;
+        }
 
         /// <summary>
         /// The ID of the instance to bundle.

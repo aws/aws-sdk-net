@@ -53,10 +53,7 @@ namespace Amazon.Runtime.Internal.Util
         static MethodInfo isEnabledForMethod;
         
         static Type systemStringFormatType;
-        static ITypeInfo systemStringFormatTypeInfo;
-
         static Type loggerType;
-        static ITypeInfo loggerTypeInfo;
 
         #endregion
 
@@ -80,7 +77,6 @@ namespace Amazon.Runtime.Internal.Util
                 try
                 {
                     loggerType = Type.GetType("Amazon.Runtime.Internal.Util.Logger");
-                    loggerTypeInfo = TypeFactory.GetTypeInfo(loggerType);
 
                     // The LogManager and its methods
                     logMangerType = Type.GetType("log4net.Core.LoggerManager, log4net");
@@ -105,7 +101,6 @@ namespace Amazon.Runtime.Internal.Util
                     errorLevelPropertyValue = levelTypeInfo.GetField("Error").GetValue(null);
 
                     systemStringFormatType = Type.GetType("log4net.Util.SystemStringFormat, log4net");
-                    systemStringFormatTypeInfo = TypeFactory.GetTypeInfo(systemStringFormatType);
 
                     logMethod = logTypeInfo.GetMethod("Log", new ITypeInfo[] { TypeFactory.GetTypeInfo(typeof(Type)), levelTypeInfo, TypeFactory.GetTypeInfo(typeof(object)), TypeFactory.GetTypeInfo(typeof(Exception)) });
                     isEnabledForMethod = logTypeInfo.GetMethod("IsEnabledFor", new ITypeInfo[] { levelTypeInfo });

@@ -28,7 +28,7 @@ namespace Amazon.ElastiCache.Model
     {
         /// <summary>
         /// Gets and sets the DescribeEventsResult property.
-        /// Contains a list of Events.
+        /// Represents the output of a DescribeEvents operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DescribeEventsResult class are now available on the DescribeEventsResponse class. You should use the properties on DescribeEventsResponse instead of accessing them through DescribeEventsResult.")]
         public DescribeEventsResult DescribeEventsResult

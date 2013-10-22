@@ -33,6 +33,9 @@
 
         public CachediSCSIVolume Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonToken.Null)
+                return null;
+
             CachediSCSIVolume cachediSCSIVolume = new CachediSCSIVolume();
 
         

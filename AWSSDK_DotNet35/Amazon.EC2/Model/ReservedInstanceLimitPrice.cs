@@ -26,7 +26,7 @@ namespace Amazon.EC2.Model
     {
         
         private double? amount;
-        private string currencyCode;
+        private CurrencyCodeValues currencyCode;
         public double Amount
         {
             get { return this.amount ?? default(double); }
@@ -38,7 +38,7 @@ namespace Amazon.EC2.Model
         {
             return this.amount.HasValue;
         }
-        public string CurrencyCode
+        public CurrencyCodeValues CurrencyCode
         {
             get { return this.currencyCode; }
             set { this.currencyCode = value; }

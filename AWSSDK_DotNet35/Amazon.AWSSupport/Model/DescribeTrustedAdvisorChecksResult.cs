@@ -30,7 +30,8 @@ namespace Amazon.AWSSupport.Model
         private List<TrustedAdvisorCheckDescription> checks = new List<TrustedAdvisorCheckDescription>();
 
         /// <summary>
-        /// List of the checks returned by calling <a href="API_DescribeTrustedAdvisorChecks.html"
+        /// List of the checks returned by calling <a
+        /// href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorChecks.html"
         /// title="DescribeTrustedAdvisorChecks">DescribeTrustedAdvisorChecks</a>
         ///  
         /// </summary>

@@ -22,7 +22,7 @@ namespace Amazon.Auth.AccessControlPolicy.ActionIdentifiers
     /// The available AWS access control policy actions for Amazon Elastic MapReduce.
     /// </summary>
     /// <see cref="Amazon.Auth.AccessControlPolicy.Statement.Actions"/>
-    public class ElasticMapReduceActionIdentifiers
+    public static class ElasticMapReduceActionIdentifiers
     {
         public static readonly ActionIdentifier AllElasticMapReduceActions = new ActionIdentifier("elasticmapreduce:*");
 

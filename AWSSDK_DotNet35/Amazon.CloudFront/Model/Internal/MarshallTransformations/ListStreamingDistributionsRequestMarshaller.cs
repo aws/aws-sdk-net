@@ -14,10 +14,11 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
+using System.Text;
 using System.Xml;
 using System.Xml.Serialization;
-using System.Text;
 
 using Amazon.CloudFront.Model;
 
@@ -42,15 +43,13 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 
 
             request.HttpMethod = "GET";
-              
-            Dictionary<string, string> queryParameters = new Dictionary<string, string>();
-            string uriResourcePath = "2013-05-12/streaming-distribution?Marker={Marker}&MaxItems={MaxItems}"; 
+            string uriResourcePath = "2013-09-27/streaming-distribution?Marker={Marker}&MaxItems={MaxItems}"; 
             uriResourcePath = uriResourcePath.Replace("{Marker}", listStreamingDistributionsRequest.IsSetMarker() ? listStreamingDistributionsRequest.Marker.ToString() : "" ); 
             uriResourcePath = uriResourcePath.Replace("{MaxItems}", listStreamingDistributionsRequest.IsSetMaxItems() ? listStreamingDistributionsRequest.MaxItems.ToString() : "" ); 
 
             if (uriResourcePath.Contains("?")) 
             {
-                int queryIndex = uriResourcePath.IndexOf("?");
+                int queryIndex = uriResourcePath.IndexOf("?", StringComparison.OrdinalIgnoreCase);
                 string queryString = uriResourcePath.Substring(queryIndex + 1);
                 
                 uriResourcePath    = uriResourcePath.Substring(0, queryIndex);

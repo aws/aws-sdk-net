@@ -29,11 +29,23 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class CopyImageRequest : AmazonWebServiceRequest
     {
+        private bool? dryRun;
         private string sourceRegion;
         private string sourceImageId;
         private string name;
         private string description;
         private string clientToken;
+        public bool DryRun
+        {
+            get { return this.dryRun ?? default(bool); }
+            set { this.dryRun = value; }
+        }
+
+        // Check to see if DryRun property is set
+        internal bool IsSetDryRun()
+        {
+            return this.dryRun.HasValue;
+        }
         public string SourceRegion
         {
             get { return this.sourceRegion; }

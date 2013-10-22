@@ -25,7 +25,7 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeDBParameters operation.
-    /// <para> Returns the detailed parameter list for a particular DBParameterGroup. </para>
+    /// <para> Returns the detailed parameter list for a particular DB parameter group. </para>
     /// </summary>
     public partial class DescribeDBParametersRequest : AmazonWebServiceRequest
     {
@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model
         private string marker;
 
         /// <summary>
-        /// The name of a specific DB Parameter Group to return details for. Constraints: <ul> <li>Must be 1 to 255 alphanumeric characters</li>
+        /// The name of a specific DB parameter group to return details for. Constraints: <ul> <li>Must be 1 to 255 alphanumeric characters</li>
         /// <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
         ///  
         /// </summary>
@@ -86,8 +86,8 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// An optional pagination token provided by a previous DescribeDBParameters request. If this parameter is specified, the response includes only
-        /// records beyond the marker, up to the value specified by <c>MaxRecords</c>.
+        /// An optional pagination token provided by a previous <c>DescribeDBParameters</c> request. If this parameter is specified, the response
+        /// includes only records beyond the marker, up to the value specified by <c>MaxRecords</c>.
         ///  
         /// </summary>
         public string Marker

@@ -33,6 +33,9 @@
 
         public Deployment Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonToken.Null)
+                return null;
+
             Deployment deployment = new Deployment();
 
         

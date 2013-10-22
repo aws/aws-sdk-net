@@ -34,7 +34,11 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(describeInstanceAttributeRequest, "AmazonEC2");
             request.Parameters.Add("Action", "DescribeInstanceAttribute");
-            request.Parameters.Add("Version", "2013-02-01");
+            request.Parameters.Add("Version", "2013-10-01");
+            if (describeInstanceAttributeRequest != null && describeInstanceAttributeRequest.IsSetDryRun())
+            {
+                request.Parameters.Add("DryRun", StringUtils.FromBool(describeInstanceAttributeRequest.DryRun));
+            }
             if (describeInstanceAttributeRequest != null && describeInstanceAttributeRequest.IsSetInstanceId())
             {
                 request.Parameters.Add("InstanceId", StringUtils.FromString(describeInstanceAttributeRequest.InstanceId));

@@ -52,7 +52,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             return response;
         }
         
-        private void UnmarshallResult(XmlUnmarshallerContext context,DescribeClusterParameterGroupsResponse response)
+        private static void UnmarshallResult(XmlUnmarshallerContext context,DescribeClusterParameterGroupsResponse response)
         {
             
             int originalDepth = context.CurrentDepth;

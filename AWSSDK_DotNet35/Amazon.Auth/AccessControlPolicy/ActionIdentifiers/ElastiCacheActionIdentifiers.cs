@@ -22,7 +22,7 @@ namespace Amazon.Auth.AccessControlPolicy.ActionIdentifiers
     /// The available AWS access control policy actions for AWS ElastiCache.
     /// </summary>
     /// <see cref="Amazon.Auth.AccessControlPolicy.Statement.Actions"/>
-    public class ElastiCacheActionIdentifiers
+    public static class ElastiCacheActionIdentifiers
     {
         public static readonly ActionIdentifier AllElastiCacheActions = new ActionIdentifier("elasticache:*");
 

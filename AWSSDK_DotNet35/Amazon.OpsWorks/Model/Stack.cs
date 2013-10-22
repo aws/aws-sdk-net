@@ -29,12 +29,14 @@ namespace Amazon.OpsWorks.Model
         private string stackId;
         private string name;
         private string region;
+        private string vpcId;
         private Dictionary<string,string> attributes = new Dictionary<string,string>();
         private string serviceRoleArn;
         private string defaultInstanceProfileArn;
         private string defaultOs;
         private string hostnameTheme;
         private string defaultAvailabilityZone;
+        private string defaultSubnetId;
         private string customJson;
         private StackConfigurationManager configurationManager;
         private bool? useCustomCookbooks;
@@ -93,6 +95,22 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
+        /// The VPC ID, if the stack is running in a VPC.
+        ///  
+        /// </summary>
+        public string VpcId
+        {
+            get { return this.vpcId; }
+            set { this.vpcId = value; }
+        }
+
+        // Check to see if VpcId property is set
+        internal bool IsSetVpcId()
+        {
+            return this.vpcId != null;
+        }
+
+        /// <summary>
         /// The contents of the stack's attributes bag.
         ///  
         /// </summary>
@@ -142,13 +160,8 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// The stack default operating system, which must be set to one of the following. <ul> <li>Standard operating systems: <c>Amazon Linux</c> or
-        /// <c>Ubuntu</c> 12.04 LTS"</li> <li>Custom AMIs: <c>Custom</c></li> </ul> The default option is <c>Amazon Linux</c>. If you set this parameter
-        /// to <c>Custom</c>, you must use the <a>CreateInstance</a> action's AmiId parameter to specify the custom AMI that you want to use. For more
-        /// information on the standard operating systems, see <a
-        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating Systems</a>For more information on how to use
-        /// custom AMIs with OpsWorks, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom
-        /// AMIs</a>.
+        /// The stack's default operating system, which must be set to <c>Amazon Linux</c> or <c>Ubuntu 12.04 LTS</c>. The default option is <c>Amazon
+        /// Linux</c>.
         ///  
         /// </summary>
         public string DefaultOs
@@ -194,6 +207,22 @@ namespace Amazon.OpsWorks.Model
         internal bool IsSetDefaultAvailabilityZone()
         {
             return this.defaultAvailabilityZone != null;
+        }
+
+        /// <summary>
+        /// The default subnet ID, if the stack is running in a VPC.
+        ///  
+        /// </summary>
+        public string DefaultSubnetId
+        {
+            get { return this.defaultSubnetId; }
+            set { this.defaultSubnetId = value; }
+        }
+
+        // Check to see if DefaultSubnetId property is set
+        internal bool IsSetDefaultSubnetId()
+        {
+            return this.defaultSubnetId != null;
         }
 
         /// <summary>

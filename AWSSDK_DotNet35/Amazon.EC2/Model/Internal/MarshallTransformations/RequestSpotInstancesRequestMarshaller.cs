@@ -34,7 +34,11 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(requestSpotInstancesRequest, "AmazonEC2");
             request.Parameters.Add("Action", "RequestSpotInstances");
-            request.Parameters.Add("Version", "2013-02-01");
+            request.Parameters.Add("Version", "2013-10-01");
+            if (requestSpotInstancesRequest != null && requestSpotInstancesRequest.IsSetDryRun())
+            {
+                request.Parameters.Add("DryRun", StringUtils.FromBool(requestSpotInstancesRequest.DryRun));
+            }
             if (requestSpotInstancesRequest != null && requestSpotInstancesRequest.IsSetSpotPrice())
             {
                 request.Parameters.Add("SpotPrice", StringUtils.FromString(requestSpotInstancesRequest.SpotPrice));
@@ -255,6 +259,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         if (networkInterfacesListValue != null && networkInterfacesListValue.IsSetSecondaryPrivateIpAddressCount())
                         {
                             request.Parameters.Add("LaunchSpecification.NetworkInterfaceSet." + networkInterfacesListIndex + ".SecondaryPrivateIpAddressCount", StringUtils.FromInt(networkInterfacesListValue.SecondaryPrivateIpAddressCount));
+                        }
+                        if (networkInterfacesListValue != null && networkInterfacesListValue.IsSetAssociatePublicIpAddress())
+                        {
+                            request.Parameters.Add("LaunchSpecification.NetworkInterfaceSet." + networkInterfacesListIndex + ".AssociatePublicIpAddress", StringUtils.FromBool(networkInterfacesListValue.AssociatePublicIpAddress));
                         }
 
                         networkInterfacesListIndex++;

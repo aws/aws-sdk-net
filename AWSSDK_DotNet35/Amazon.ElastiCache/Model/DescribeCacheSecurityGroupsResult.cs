@@ -22,7 +22,7 @@ using Amazon.Runtime;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// <para> Contains a list of CacheSecurityGroups. </para>
+    /// <para>Represents the output of a <i>DescribeCacheSecurityGroups</i> operation.</para>
     /// </summary>
     public partial class DescribeCacheSecurityGroupsResult : AmazonWebServiceResponse
     {
@@ -31,7 +31,7 @@ namespace Amazon.ElastiCache.Model
         private List<CacheSecurityGroup> cacheSecurityGroups = new List<CacheSecurityGroup>();
 
         /// <summary>
-        /// The marker obtained from a previous operation response.
+        /// Provides an identifier to allow retrieval of paginated results.
         ///  
         /// </summary>
         public string Marker
@@ -47,7 +47,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// A list of <a>CacheSecurityGroup</a> instances.
+        /// A list of cache security groups. Each element in the list contains detailed information about one group.
         ///  
         /// </summary>
         public List<CacheSecurityGroup> CacheSecurityGroups

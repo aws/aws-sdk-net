@@ -33,6 +33,9 @@
 
         public RecentCaseCommunications Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonToken.Null)
+                return null;
+
             RecentCaseCommunications recentCaseCommunications = new RecentCaseCommunications();
 
         

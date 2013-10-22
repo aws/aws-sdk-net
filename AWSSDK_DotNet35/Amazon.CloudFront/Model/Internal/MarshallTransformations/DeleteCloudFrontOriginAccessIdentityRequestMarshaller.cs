@@ -14,10 +14,11 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
+using System.Text;
 using System.Xml;
 using System.Xml.Serialization;
-using System.Text;
 
 using Amazon.CloudFront.Model;
 
@@ -45,14 +46,12 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         if(deleteCloudFrontOriginAccessIdentityRequest.IsSetIfMatch())
             request.Headers.Add("If-Match", deleteCloudFrontOriginAccessIdentityRequest.IfMatch);
             
-              
-            Dictionary<string, string> queryParameters = new Dictionary<string, string>();
-            string uriResourcePath = "2013-05-12/origin-access-identity/cloudfront/{Id}"; 
+            string uriResourcePath = "2013-09-27/origin-access-identity/cloudfront/{Id}"; 
             uriResourcePath = uriResourcePath.Replace("{Id}", deleteCloudFrontOriginAccessIdentityRequest.IsSetId() ? deleteCloudFrontOriginAccessIdentityRequest.Id.ToString() : "" ); 
 
             if (uriResourcePath.Contains("?")) 
             {
-                int queryIndex = uriResourcePath.IndexOf("?");
+                int queryIndex = uriResourcePath.IndexOf("?", StringComparison.OrdinalIgnoreCase);
                 string queryString = uriResourcePath.Substring(queryIndex + 1);
                 
                 uriResourcePath    = uriResourcePath.Substring(0, queryIndex);

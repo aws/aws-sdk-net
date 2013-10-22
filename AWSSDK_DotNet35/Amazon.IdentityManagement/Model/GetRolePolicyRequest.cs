@@ -25,9 +25,10 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the GetRolePolicy operation.
-    /// <para>Retrieves the specified policy document for the specified role. For more information about roles, go to Working with Roles.</para>
-    /// <para>The returned policy is URL-encoded according to RFC 3986. For more information about RFC 3986, go to
-    /// http://www.faqs.org/rfcs/rfc3986.html.</para>
+    /// <para>Retrieves the specified policy document for the specified role. For more information about roles, go to <a
+    /// href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/WorkingWithRoles.html" >Working with Roles</a> .</para> <para>The returned
+    /// policy is URL-encoded according to RFC 3986. For more information about RFC 3986, go to <a href="http://www.faqs.org/rfcs/rfc3986.html"
+    /// >http://www.faqs.org/rfcs/rfc3986.html</a> .</para>
     /// </summary>
     public partial class GetRolePolicyRequest : AmazonWebServiceRequest
     {

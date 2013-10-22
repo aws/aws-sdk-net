@@ -67,6 +67,72 @@ namespace Amazon.CloudFront
     }
     
 
+    /// <summary>Method
+    /// </summary>
+    public class Method : ConstantClass
+    {
+
+
+       /// <summary>Constant DELETE for Method
+       /// </summary>
+        public static readonly Method DELETE = new Method("DELETE");
+    
+
+       /// <summary>Constant GET for Method
+       /// </summary>
+        public static readonly Method GET = new Method("GET");
+    
+
+       /// <summary>Constant HEAD for Method
+       /// </summary>
+        public static readonly Method HEAD = new Method("HEAD");
+    
+
+       /// <summary>Constant OPTIONS for Method
+       /// </summary>
+        public static readonly Method OPTIONS = new Method("OPTIONS");
+    
+
+       /// <summary>Constant PATCH for Method
+       /// </summary>
+        public static readonly Method PATCH = new Method("PATCH");
+    
+
+       /// <summary>Constant POST for Method
+       /// </summary>
+        public static readonly Method POST = new Method("POST");
+    
+
+       /// <summary>Constant PUT for Method
+       /// </summary>
+        public static readonly Method PUT = new Method("PUT");
+    
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public Method(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Method FindValue(string value)
+        {
+            return FindValue<Method>(value);
+        }
+
+        public static implicit operator Method(string value)
+        {
+            return FindValue(value);
+        }
+    }
+    
+
     /// <summary>Origin Protocol Policy
     /// </summary>
     public class OriginProtocolPolicy : ConstantClass

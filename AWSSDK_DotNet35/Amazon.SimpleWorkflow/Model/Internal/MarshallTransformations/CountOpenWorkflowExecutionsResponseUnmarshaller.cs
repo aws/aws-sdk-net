@@ -39,7 +39,7 @@
         }        
         
         
-        private void UnmarshallResult(JsonUnmarshallerContext context,CountOpenWorkflowExecutionsResponse response)
+        private static void UnmarshallResult(JsonUnmarshallerContext context,CountOpenWorkflowExecutionsResponse response)
         {                   
           response.WorkflowExecutionCount = WorkflowExecutionCountUnmarshaller.GetInstance().Unmarshall(context);
           return;

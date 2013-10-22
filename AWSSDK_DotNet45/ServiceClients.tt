@@ -268,12 +268,21 @@ namespace <#= type.Namespace #>
         reader.MoveToContent();
         var innerxml = reader.ReadInnerXml();
 
+		bool hasParameters = method.GetParameters().Length > 0;
+
         StringBuilder sb = new StringBuilder();
         foreach (var line in innerxml.Trim().Split('\n'))
         {
+			// Skip parameters for parameterless version of methods.
+			if(!hasParameters && (line.Contains("<param") || line.Contains("</param")))
+				continue;
+
             sb.AppendLine("        /// " + line.Trim());
         }
         var ndoc = sb.ToString();
+
+		var tokenToSearch = string.Format("param name=\"{0}Request\"", method.Name.Substring(0, 1).ToLower() + method.Name.Substring(1));
+		ndoc = ndoc.Replace(tokenToSearch, "param name=\"request\"");
 
         return ndoc;
     }
@@ -321,7 +330,7 @@ namespace <#= type.Namespace #>
         ///
         /// </summary>
         public <#= baseName #>Client()
-            : base(FallbackCredentialsFactory.GetCredentials(), new <#= baseName #>Config(), true, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new <#= baseName #>Config(), AuthenticationTypes.User | AuthenticationTypes.Session) { }
 
         /// <summary>
         /// Constructs <#= baseName #>Client with the credentials loaded from the application's
@@ -341,7 +350,7 @@ namespace <#= type.Namespace #>
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public <#= baseName #>Client(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new <#= baseName #>Config(){RegionEndpoint = region}, true, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new <#= baseName #>Config(){RegionEndpoint = region}, AuthenticationTypes.User | AuthenticationTypes.Session) { }
 
         /// <summary>
         /// Constructs <#= baseName #>Client with the credentials loaded from the application's
@@ -361,7 +370,7 @@ namespace <#= type.Namespace #>
         /// </summary>
         /// <param name="config">The <#= baseName #> Configuration Object</param>
         public <#= baseName #>Client(<#= baseName #>Config config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config, true, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), config, AuthenticationTypes.User | AuthenticationTypes.Session) { }
 
         /// <summary>
         /// Constructs <#= baseName #>Client with AWS Credentials
@@ -389,7 +398,7 @@ namespace <#= type.Namespace #>
         /// <param name="credentials">AWS Credentials</param>
         /// <param name="clientConfig">The <#= baseName #>Client Configuration Object</param>
         public <#= baseName #>Client(AWSCredentials credentials, <#= baseName #>Config clientConfig)
-            : base(credentials, clientConfig, false, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(credentials, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
         {
         }
 

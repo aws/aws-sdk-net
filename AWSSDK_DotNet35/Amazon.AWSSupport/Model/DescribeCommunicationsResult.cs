@@ -31,7 +31,8 @@ namespace Amazon.AWSSupport.Model
         private string nextToken;
 
         /// <summary>
-        /// Contains a list of <a href="API_Communication.html" title="Communication">Communications</a> objects.
+        /// Contains a list of <a href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_Communication.html"
+        /// title="Communication">Communications</a> objects.
         ///  
         /// </summary>
         public List<Communication> Communications

@@ -26,12 +26,12 @@ namespace Amazon.CloudWatch.Model
     /// <summary>
     /// Container for the parameters to the PutMetricData operation.
     /// <para> Publishes metric data points to Amazon CloudWatch. Amazon Cloudwatch associates the data points with the specified metric. If the
-    /// specified metric does not exist, Amazon CloudWatch creates the metric. </para> <para><b>NOTE:</b> If you create a metric with the
-    /// PutMetricData action, allow up to fifteen minutes for the metric to appear in calls to the ListMetrics action. </para> <para> The size of a
-    /// PutMetricData request is limited to 8 KB for HTTP GET requests and 40 KB for HTTP POST requests. </para> <para><b>IMPORTANT:</b> Although
-    /// the Value parameter accepts numbers of type Double, Amazon CloudWatch truncates values with very large exponents. Values with base-10
-    /// exponents greater than 126 (1 x 10^126) are truncated. Likewise, values with base-10 exponents less than -130 (1 x 10^-130) are also
-    /// truncated. </para>
+    /// specified metric does not exist, Amazon CloudWatch creates the metric. It can take up to fifteen minutes for a new metric to appear in calls
+    /// to the ListMetrics action.</para> <para> The size of a PutMetricData request is limited to 8 KB for HTTP GET requests and 40 KB for HTTP
+    /// POST requests. </para> <para><b>IMPORTANT:</b> Although the Value parameter accepts numbers of type Double, Amazon CloudWatch truncates
+    /// values with very large exponents. Values with base-10 exponents greater than 126 (1 x 10^126) are truncated. Likewise, values with base-10
+    /// exponents less than -130 (1 x 10^-130) are also truncated. </para> <para>Data that is timestamped 24 hours or more in the past may take in
+    /// excess of 48 hours to become available from submission time using <c>GetMetricStatistics</c> .</para>
     /// </summary>
     public partial class PutMetricDataRequest : AmazonWebServiceRequest
     {
@@ -39,7 +39,8 @@ namespace Amazon.CloudWatch.Model
         private List<MetricDatum> metricData = new List<MetricDatum>();
 
         /// <summary>
-        /// The namespace for the metric data.
+        /// The namespace for the metric data. <note> You cannot specify a namespace that begins with "AWS/". Namespaces that begin with "AWS/" are
+        /// reserved for other Amazon Web Services products that send metrics to Amazon CloudWatch. </note>
         ///  
         /// <para>
         /// <b>Constraints:</b>

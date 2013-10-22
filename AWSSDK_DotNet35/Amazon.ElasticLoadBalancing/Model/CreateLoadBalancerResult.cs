@@ -30,7 +30,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         private string dNSName;
 
         /// <summary>
-        /// The DNS name for the LoadBalancer.
+        /// The DNS name for the load balancer.
         ///  
         /// </summary>
         public string DNSName

@@ -27,8 +27,9 @@ namespace Amazon.Redshift.Model
     /// Container for the parameters to the RebootCluster operation.
     /// <para> Reboots a cluster. This action is taken as soon as possible. It results in a momentary outage to the cluster, during which the
     /// cluster status is set to <c>rebooting</c> . A cluster event is created when the reboot is completed. Any pending cluster modifications (see
-    /// ModifyCluster) are applied at this reboot. For more information about managing clusters, go to Amazon Redshift Clusters in the <i>Amazon
-    /// Redshift Management Guide</i> </para>
+    /// ModifyCluster) are applied at this reboot. For more information about managing clusters, go to <a
+    /// href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html" >Amazon Redshift Clusters</a> in the <i>Amazon Redshift
+    /// Management Guide</i> </para>
     /// </summary>
     public partial class RebootClusterRequest : AmazonWebServiceRequest
     {

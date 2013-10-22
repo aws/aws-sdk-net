@@ -26,8 +26,8 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Container for the parameters to the ListInstanceProfiles operation.
     /// <para>Lists the instance profiles that have the specified path prefix. If there are none, the action returns an empty list. For more
-    /// information about instance profiles, go to About Instance Profiles.</para> <para>You can paginate the results using the <c>MaxItems</c> and
-    /// <c>Marker</c> parameters.</para>
+    /// information about instance profiles, go to <a href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/AboutInstanceProfiles.html"
+    /// >About Instance Profiles</a> .</para> <para>You can paginate the results using the <c>MaxItems</c> and <c>Marker</c> parameters.</para>
     /// </summary>
     public partial class ListInstanceProfilesRequest : AmazonWebServiceRequest
     {
@@ -98,7 +98,8 @@ namespace Amazon.IdentityManagement.Model
 
         /// <summary>
         /// Use this parameter only when paginating results to indicate the maximum number of user names you want in the response. If there are
-        /// additional user names beyond the maximum you specify, the <c>IsTruncated</c> response element is <c>true</c>.
+        /// additional user names beyond the maximum you specify, the <c>IsTruncated</c> response element is <c>true</c>. This parameter is optional. If
+        /// you do not include it, it defaults to 100.
         ///  
         /// <para>
         /// <b>Constraints:</b>

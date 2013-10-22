@@ -25,12 +25,7 @@ namespace Amazon.StorageGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateCachediSCSIVolume operation.
-    /// <para>This operation creates a cached volume on a specified cached gateway. This operation is supported only for the gateway-cached volume
-    /// architecture.</para> <para><b>NOTE:</b>Cache storage must be allocated to the gateway before you can create a cached volume. Use the
-    /// AddCache operation to add cache storage to a gateway. </para> <para>In the request, you must specify the gateway, size of the volume in
-    /// bytes, the iSCSI target name, an IP address on which to expose the target, and a unique client token. In response, AWS Storage Gateway
-    /// creates the volume and returns information about it such as the volume Amazon Resource Name (ARN), its size, and the iSCSI target ARN that
-    /// initiators can use to connect to the volume target.</para>
+    /// 
     /// </summary>
     public partial class CreateCachediSCSIVolumeRequest : AmazonWebServiceRequest
     {

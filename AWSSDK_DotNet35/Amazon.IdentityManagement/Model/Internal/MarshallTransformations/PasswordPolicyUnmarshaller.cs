@@ -73,6 +73,18 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                             
                         continue;
                     }
+                    if (context.TestExpression("ExpirePasswords", targetDepth))
+                    {
+                        passwordPolicy.ExpirePasswords = BoolUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
+                    }
+                    if (context.TestExpression("MaxPasswordAge", targetDepth))
+                    {
+                        passwordPolicy.MaxPasswordAge = IntUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {

@@ -49,6 +49,12 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                             
                         continue;
                     }
+                    if (context.TestExpression("MustChangePassword", targetDepth))
+                    {
+                        loginProfile.MustChangePassword = BoolUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {

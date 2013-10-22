@@ -22,7 +22,7 @@ namespace Amazon.Auth.AccessControlPolicy.ActionIdentifiers
     /// The available AWS access control policy actions for Amazon CloudFront.
     /// </summary>
     /// <see cref="Amazon.Auth.AccessControlPolicy.Statement.Actions"/>
-    public class CloudFrontActionIdentifiers
+    public static class CloudFrontActionIdentifiers
     {
         public static readonly ActionIdentifier AllCloudFrontActions = new ActionIdentifier("cloudfront:*");
 

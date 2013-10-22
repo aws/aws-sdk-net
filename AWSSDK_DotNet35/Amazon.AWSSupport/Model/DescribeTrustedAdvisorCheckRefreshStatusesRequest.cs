@@ -25,7 +25,9 @@ namespace Amazon.AWSSupport.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeTrustedAdvisorCheckRefreshStatuses operation.
-    /// <para>Returns the status of all refresh requests Trusted Advisor checks called using RefreshTrustedAdvisorCheck. </para>
+    /// <para>Returns the status of all refresh requests Trusted Advisor checks called using <a
+    /// href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_RefreshTrustedAdvisorCheck.html" >RefreshTrustedAdvisorCheck</a> .
+    /// </para>
     /// </summary>
     public partial class DescribeTrustedAdvisorCheckRefreshStatusesRequest : AmazonWebServiceRequest
     {
@@ -33,7 +35,8 @@ namespace Amazon.AWSSupport.Model
 
         /// <summary>
         /// List of the <i>CheckId</i> values for the Trusted Advisor checks for which you want to refresh the status. You obtain the <i>CheckId</i>
-        /// values by calling <a href="API_DescribeTrustedAdviserChecks.html" title="DescribeTrustedAdvisorChecks">DescribeTrustedAdvisorChecks</a>.
+        /// values by calling <a href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorChecks.html"
+        /// title="DescribeTrustedAdvisorChecks">DescribeTrustedAdvisorChecks</a>.
         ///  
         /// </summary>
         public List<string> CheckIds

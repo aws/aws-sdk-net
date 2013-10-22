@@ -335,7 +335,7 @@ namespace Amazon.S3.Model
         /// <summary>
         /// The collection of meta data for the request.
         /// </summary>
-        public MetadataCollection MetaData
+        public MetadataCollection Metadata
         {
             get
             {

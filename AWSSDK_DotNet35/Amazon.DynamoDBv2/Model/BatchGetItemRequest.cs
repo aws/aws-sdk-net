@@ -39,7 +39,9 @@ namespace Amazon.DynamoDBv2.Model
     /// application, keep in mind that Amazon DynamoDB does not return attributes in any particular order. To help parse the response by item,
     /// include the primary key values for the items in your request in the <i>AttributesToGet</i> parameter.</para> <para>If a requested item does
     /// not exist, it is not returned in the result. Requests for nonexistent items consume the minimum read capacity units according to the type of
-    /// read. For more information, see Capacity Units Calculations in the Amazon DynamoDB Developer Guide.</para>
+    /// read. For more information, see <a
+    /// href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDDTables.html#CapacityUnitCalculations" >Capacity Units
+    /// Calculations</a> in the Amazon DynamoDB Developer Guide.</para>
     /// </summary>
     public partial class BatchGetItemRequest : AmazonWebServiceRequest
     {

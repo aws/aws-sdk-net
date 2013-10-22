@@ -44,6 +44,7 @@ namespace Amazon.RDS.Model
         private List<string> eventCategories = new List<string>();
         private List<string> sourceIds = new List<string>();
         private bool? enabled;
+        private List<Tag> tags = new List<Tag>();
 
         /// <summary>
         /// The name of the subscription. Constraints: The name must be less than 255 characters.
@@ -118,9 +119,9 @@ namespace Amazon.RDS.Model
         /// The list of identifiers of the event sources for which events will be returned. If not specified, then all sources are included in the
         /// response. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it cannot end with a hyphen or
         /// contain two consecutive hyphens. Constraints: <ul> <li>If SourceIds are supplied, SourceType must also be provided.</li> <li>If the source
-        /// type is a DB instance, then a DBInstanceIdentifier must be supplied.</li> <li>If the source type is a DB security group, a
-        /// DBSecurityGroupName must be supplied.</li> <li>If the source type is a DB parameter group, a DBParameterGroupName must be supplied.</li>
-        /// <li>If the source type is a DB Snapshot, a DBSnapshotIdentifier must be supplied.</li> </ul>
+        /// type is a DB instance, then a <c>DBInstanceIdentifier</c> must be supplied.</li> <li>If the source type is a DB security group, a
+        /// <c>DBSecurityGroupName</c> must be supplied.</li> <li>If the source type is a DB parameter group, a <c>DBParameterGroupName</c> must be
+        /// supplied.</li> <li>If the source type is a DB snapshot, a <c>DBSnapshotIdentifier</c> must be supplied.</li> </ul>
         ///  
         /// </summary>
         public List<string> SourceIds
@@ -149,6 +150,22 @@ namespace Amazon.RDS.Model
         internal bool IsSetEnabled()
         {
             return this.enabled.HasValue;
+        }
+
+        /// <summary>
+        /// A list of tags.
+        ///  
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this.tags; }
+            set { this.tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this.tags.Count > 0;
         }
 
     }

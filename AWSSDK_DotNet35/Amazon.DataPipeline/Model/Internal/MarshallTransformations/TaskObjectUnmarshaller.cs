@@ -33,6 +33,9 @@
 
         public TaskObject Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonToken.Null)
+                return null;
+
             TaskObject taskObject = new TaskObject();
 
         

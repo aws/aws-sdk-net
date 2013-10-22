@@ -33,6 +33,9 @@
 
         public VolumeConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonToken.Null)
+                return null;
+
             VolumeConfiguration volumeConfiguration = new VolumeConfiguration();
 
         

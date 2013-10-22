@@ -29,7 +29,8 @@ namespace Amazon.SimpleNotificationService.Model
     /// such as GCM and APNS. <c>CreatePlatformEndpoint</c> requires the PlatformApplicationArn that is returned from
     /// <c>CreatePlatformApplication</c> . The EndpointArn that is returned when using <c>CreatePlatformEndpoint</c> can then be used by the
     /// <c>Publish</c> action to send a message to a mobile app or by the <c>Subscribe</c> action for subscription to a topic. For more information,
-    /// see Using Amazon SNS Mobile Push Notifications. </para>
+    /// see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html" >Using Amazon SNS Mobile Push Notifications</a> .
+    /// </para>
     /// </summary>
     public partial class CreatePlatformEndpointRequest : AmazonWebServiceRequest
     {

@@ -34,7 +34,9 @@ namespace Amazon.SimpleEmail.Model
     /// number of To:, CC: and BCC: email addresses cannot exceed 50. If you need to send an email message to a larger audience, you can divide your
     /// recipient list into groups of 50 or fewer, and then call Amazon SES repeatedly to send the message to each group. </para> <para>For every
     /// message that you send, the total number of recipients (To:, CC: and BCC:) is counted against your <i>sending quota</i> - the maximum number
-    /// of emails you can send in a 24-hour period. For information about your sending quota, go to the Amazon SES Developer Guide. </para>
+    /// of emails you can send in a 24-hour period. For information about your sending quota, go to the <a
+    /// href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html" >Amazon SES Developer Guide</a> .
+    /// </para>
     /// </summary>
     public partial class SendRawEmailRequest : AmazonWebServiceRequest
     {
@@ -54,9 +56,9 @@ namespace Amazon.SimpleEmail.Model
         /// 
         /// <param name="rawMessage"> The raw text of the message. The client is responsible for ensuring the following: <ul> <li>Message must contain a
         /// header and a body, separated by a blank line.</li> <li>All required header fields must be present.</li> <li>Each part of a multipart MIME
-        /// message must be formatted properly.</li> <li>MIME content types must be among those supported by Amazon SES. Refer to the <a
-        /// href="http://docs.amazonwebservices.com/ses/latest/DeveloperGuide">Amazon SES Developer Guide</a> for more details. </li> <li>Content must
-        /// be base64-encoded, if MIME requires it.</li> </ul> </param>
+        /// message must be formatted properly.</li> <li>MIME content types must be among those supported by Amazon SES. For more information, go to the
+        /// <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mime-types.html">Amazon SES Developer Guide</a>. </li> <li>Content must be
+        /// base64-encoded, if MIME requires it.</li> </ul> </param>
         public SendRawEmailRequest(RawMessage rawMessage)
         {
             this.rawMessage = rawMessage;
@@ -64,8 +66,11 @@ namespace Amazon.SimpleEmail.Model
     
 
         /// <summary>
-        /// The identity's email address. <note>If you specify the <c>Source</c> parameter, then bounce notifications and complaints will be sent to
-        /// this email address. This takes precedence over any <i>Return-Path</i> header that you might include in the raw text of the message. </note>
+        /// The identity's email address. By default, the string must be 7-bit ASCII. If the text must contain any other characters, then you must use
+        /// MIME encoded-word syntax (RFC 2047) instead of a literal string. MIME encoded-word syntax uses the following form:
+        /// <c>=?charset?encoding?encoded-text?=</c>. For more information, see <a href="http://tools.ietf.org/html/rfc2047">RFC 2047</a>. <note>If you
+        /// specify the <c>Source</c> parameter, then bounce notifications and complaints will be sent to this email address. This takes precedence over
+        /// any <i>Return-Path</i> header that you might include in the raw text of the message. </note>
         ///  
         /// </summary>
         public string Source
@@ -99,9 +104,9 @@ namespace Amazon.SimpleEmail.Model
         /// <summary>
         /// The raw text of the message. The client is responsible for ensuring the following: <ul> <li>Message must contain a header and a body,
         /// separated by a blank line.</li> <li>All required header fields must be present.</li> <li>Each part of a multipart MIME message must be
-        /// formatted properly.</li> <li>MIME content types must be among those supported by Amazon SES. Refer to the <a
-        /// href="http://docs.amazonwebservices.com/ses/latest/DeveloperGuide">Amazon SES Developer Guide</a> for more details. </li> <li>Content must
-        /// be base64-encoded, if MIME requires it.</li> </ul>
+        /// formatted properly.</li> <li>MIME content types must be among those supported by Amazon SES. For more information, go to the <a
+        /// href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/mime-types.html">Amazon SES Developer Guide</a>. </li> <li>Content must be
+        /// base64-encoded, if MIME requires it.</li> </ul>
         ///  
         /// </summary>
         public RawMessage RawMessage

@@ -38,7 +38,7 @@
           return response;
         }
         
-        private void UnmarshallResult(JsonUnmarshallerContext context,DescribeBandwidthRateLimitResponse response)
+        private static void UnmarshallResult(JsonUnmarshallerContext context,DescribeBandwidthRateLimitResponse response)
         {
           
             int originalDepth = context.CurrentDepth;

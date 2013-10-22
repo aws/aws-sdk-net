@@ -26,7 +26,8 @@ namespace Amazon.AWSSupport.Model
     /// <summary>
     /// Container for the parameters to the DescribeSeverityLevels operation.
     /// <para>This action returns the list of severity levels that you can assign to an AWS Support case. The severity level for a case is also a
-    /// field in the CaseDetails data type included in any CreateCase request. </para>
+    /// field in the <a href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_CaseDetails.html" >CaseDetails</a> data type included in
+    /// any <a href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_CreateCase.html" >CreateCase</a> request. </para>
     /// </summary>
     public partial class DescribeSeverityLevelsRequest : AmazonWebServiceRequest
     {

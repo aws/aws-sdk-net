@@ -29,7 +29,19 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DeletePlacementGroupRequest : AmazonWebServiceRequest
     {
+        private bool? dryRun;
         private string groupName;
+        public bool DryRun
+        {
+            get { return this.dryRun ?? default(bool); }
+            set { this.dryRun = value; }
+        }
+
+        // Check to see if DryRun property is set
+        internal bool IsSetDryRun()
+        {
+            return this.dryRun.HasValue;
+        }
 
         /// <summary>
         /// The name of the <c>PlacementGroup</c> to delete.

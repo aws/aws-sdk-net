@@ -33,6 +33,9 @@
 
         public StartChildWorkflowExecutionFailedEventAttributes Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonToken.Null)
+                return null;
+
             StartChildWorkflowExecutionFailedEventAttributes startChildWorkflowExecutionFailedEventAttributes = new StartChildWorkflowExecutionFailedEventAttributes();
 
         

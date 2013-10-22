@@ -34,16 +34,29 @@ namespace Amazon.EC2.Model
     /// 
     /// </ul>
     /// <para> Both routes apply to the traffic destined for <c>192.0.2.3</c> . However, the second route in the list is more specific, so we use
-    /// that route to determine where to target the traffic. </para> <para> For more information about route tables, go to Route Tables in the
-    /// Amazon Virtual Private Cloud User Guide. </para>
+    /// that route to determine where to target the traffic. </para> <para> For more information about route tables, go to <a
+    /// href="http://docs.amazonwebservices.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html" >Route Tables</a> in the Amazon Virtual Private
+    /// Cloud User Guide. </para>
     /// </summary>
     public partial class CreateRouteRequest : AmazonWebServiceRequest
     {
+        private bool? dryRun;
         private string routeTableId;
         private string destinationCidrBlock;
         private string gatewayId;
         private string instanceId;
         private string networkInterfaceId;
+        public bool DryRun
+        {
+            get { return this.dryRun ?? default(bool); }
+            set { this.dryRun = value; }
+        }
+
+        // Check to see if DryRun property is set
+        internal bool IsSetDryRun()
+        {
+            return this.dryRun.HasValue;
+        }
 
         /// <summary>
         /// The ID of the route table where the route will be added.

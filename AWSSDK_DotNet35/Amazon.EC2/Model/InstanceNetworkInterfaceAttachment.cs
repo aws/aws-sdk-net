@@ -27,7 +27,7 @@ namespace Amazon.EC2.Model
         
         private string attachmentId;
         private int? deviceIndex;
-        private string status;
+        private AttachmentStatus status;
         private DateTime? attachTime;
         private bool? deleteOnTermination;
         public string AttachmentId
@@ -52,7 +52,7 @@ namespace Amazon.EC2.Model
         {
             return this.deviceIndex.HasValue;
         }
-        public string Status
+        public AttachmentStatus Status
         {
             get { return this.status; }
             set { this.status = value; }

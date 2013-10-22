@@ -14,10 +14,11 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
+using System.Text;
 using System.Xml;
 using System.Xml.Serialization;
-using System.Text;
 
 using Amazon.Route53.Model;
 
@@ -42,15 +43,13 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
 
 
             request.HttpMethod = "GET";
-              
-            Dictionary<string, string> queryParameters = new Dictionary<string, string>();
             string uriResourcePath = "/2012-12-12/healthcheck?marker={Marker}&maxitems={MaxItems}"; 
             uriResourcePath = uriResourcePath.Replace("{Marker}", listHealthChecksRequest.IsSetMarker() ? listHealthChecksRequest.Marker.ToString() : "" ); 
             uriResourcePath = uriResourcePath.Replace("{MaxItems}", listHealthChecksRequest.IsSetMaxItems() ? listHealthChecksRequest.MaxItems.ToString() : "" ); 
 
             if (uriResourcePath.Contains("?")) 
             {
-                int queryIndex = uriResourcePath.IndexOf("?");
+                int queryIndex = uriResourcePath.IndexOf("?", StringComparison.OrdinalIgnoreCase);
                 string queryString = uriResourcePath.Substring(queryIndex + 1);
                 
                 uriResourcePath    = uriResourcePath.Substring(0, queryIndex);

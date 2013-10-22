@@ -33,6 +33,9 @@
 
         public ServiceError Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonToken.Null)
+                return null;
+
             ServiceError serviceError = new ServiceError();
 
         

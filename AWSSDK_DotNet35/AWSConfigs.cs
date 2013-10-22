@@ -151,6 +151,37 @@ namespace Amazon
 
         #endregion
 
+        #region DynamoDBContext TableNamePrefix
+
+        /// <summary>
+        /// Key for the DynamoDBContextTableNamePrefix property.
+        /// <seealso cref="Amazon.AWSConfigs.DynamoDBContextTableNamePrefix"/>
+        /// </summary>
+        public const string DynamoDBContextTableNamePrefixKey = "AWS.DynamoDBContext.TableNamePrefix";
+
+        /// <summary>
+        /// Configures the default TableNamePrefix that the DynamoDBContext will use if
+        /// not manually configured.
+        /// Changes to this setting will only take effect in newly-constructed instances of
+        /// DynamoDBContextConfig and DynamoDBContext.
+        /// 
+        /// The setting can be configured through App.config, for example:
+        /// <code>
+        /// &lt;appSettings&gt;
+        ///   &lt;add key="AWS.DynamoDBContext.TableNamePrefix" value="Test-"/&gt;
+        /// &lt;/appSettings&gt;
+        /// </code>
+        /// </summary>
+        public static string DynamoDBContextTableNamePrefix
+        {
+            get { return _dynamoDBContextTableNamePrefix; }
+            set { _dynamoDBContextTableNamePrefix = value; }
+        }
+
+        private static string _dynamoDBContextTableNamePrefix = GetConfig(DynamoDBContextTableNamePrefixKey);
+
+        #endregion
+
         #region Private general methods
 
         private static void OnPropertyChanged(string name)

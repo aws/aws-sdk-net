@@ -22,7 +22,8 @@ using Amazon.Runtime;
 namespace Amazon.AWSSupport.Model
 {
     /// <summary>
-    /// <para>Contains the AWSSupport <i>caseId</i> returned by a successful completion of the CreateCase action. </para>
+    /// <para>Contains the AWSSupport <i>caseId</i> returned by a successful completion of the <a
+    /// href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_CreateCase.html" >CreateCase</a> action. </para>
     /// </summary>
     public partial class CreateCaseResult : AmazonWebServiceResponse
     {

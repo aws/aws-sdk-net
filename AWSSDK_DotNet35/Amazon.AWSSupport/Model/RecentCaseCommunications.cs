@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.AWSSupport.Model
 {
     /// <summary>
-    /// <para>List of Commmunication objects.</para>
+    /// <para>List of <a href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_Communication.html" >Commmunication</a> objects.</para>
     /// </summary>
     public class RecentCaseCommunications
     {
@@ -30,7 +30,8 @@ namespace Amazon.AWSSupport.Model
         private string nextToken;
 
         /// <summary>
-        /// List of <a href="API_Communication.html" title="Communication">Commmunication</a> objects.
+        /// List of <a href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_Communication.html" title="Communication">Commmunication</a>
+        /// objects.
         ///  
         /// </summary>
         public List<Communication> Communications

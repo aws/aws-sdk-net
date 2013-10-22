@@ -97,6 +97,7 @@
     <Compile Include="Amazon.DynamoDBv2\DataModel\Context.Async.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.DynamoDBv2\DataModel\Context.cs" />
     <Compile Include="Amazon.DynamoDBv2\DataModel\Context.Sync.cs" />
     <Compile Include="Amazon.DynamoDBv2\DataModel\IDynamoDBContext.Async.cs">
       <SubType>Code</SubType>

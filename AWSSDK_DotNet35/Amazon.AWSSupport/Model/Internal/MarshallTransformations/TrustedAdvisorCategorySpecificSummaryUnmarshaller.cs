@@ -33,6 +33,9 @@
 
         public TrustedAdvisorCategorySpecificSummary Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonToken.Null)
+                return null;
+
             TrustedAdvisorCategorySpecificSummary trustedAdvisorCategorySpecificSummary = new TrustedAdvisorCategorySpecificSummary();
 
         

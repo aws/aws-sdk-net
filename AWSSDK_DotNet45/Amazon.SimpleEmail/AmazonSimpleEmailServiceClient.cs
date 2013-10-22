@@ -30,8 +30,8 @@ namespace Amazon.SimpleEmail
     /// 
     /// Amazon Simple Email Service <para> This is the API Reference for Amazon Simple Email Service (Amazon SES). This documentation is intended to
     /// be used in conjunction with the Amazon SES Developer Guide. </para> <para> For specific details on how to construct a service request,
-    /// please consult the Amazon SES Developer Guide. </para> <para><b>NOTE:</b>The endpoint for Amazon SES is located at:
-    /// https://email.us-east-1.amazonaws.com </para>
+    /// please consult the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide">Amazon SES Developer Guide</a> .
+    /// </para> <para><b>NOTE:</b>The endpoint for Amazon SES is located at: https://email.us-east-1.amazonaws.com </para>
     /// </summary>
 	public partial class AmazonSimpleEmailServiceClient : AmazonWebServiceClient, Amazon.SimpleEmail.IAmazonSimpleEmailService
     {
@@ -56,7 +56,7 @@ namespace Amazon.SimpleEmail
         ///
         /// </summary>
         public AmazonSimpleEmailServiceClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonSimpleEmailServiceConfig(), true, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonSimpleEmailServiceConfig(), AuthenticationTypes.User | AuthenticationTypes.Session) { }
 
         /// <summary>
         /// Constructs AmazonSimpleEmailServiceClient with the credentials loaded from the application's
@@ -76,7 +76,7 @@ namespace Amazon.SimpleEmail
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonSimpleEmailServiceClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonSimpleEmailServiceConfig(){RegionEndpoint = region}, true, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonSimpleEmailServiceConfig(){RegionEndpoint = region}, AuthenticationTypes.User | AuthenticationTypes.Session) { }
 
         /// <summary>
         /// Constructs AmazonSimpleEmailServiceClient with the credentials loaded from the application's
@@ -96,7 +96,7 @@ namespace Amazon.SimpleEmail
         /// </summary>
         /// <param name="config">The AmazonSimpleEmailService Configuration Object</param>
         public AmazonSimpleEmailServiceClient(AmazonSimpleEmailServiceConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config, true, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), config, AuthenticationTypes.User | AuthenticationTypes.Session) { }
 
         /// <summary>
         /// Constructs AmazonSimpleEmailServiceClient with AWS Credentials
@@ -124,7 +124,7 @@ namespace Amazon.SimpleEmail
         /// <param name="credentials">AWS Credentials</param>
         /// <param name="clientConfig">The AmazonSimpleEmailServiceClient Configuration Object</param>
         public AmazonSimpleEmailServiceClient(AWSCredentials credentials, AmazonSimpleEmailServiceConfig clientConfig)
-            : base(credentials, clientConfig, false, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(credentials, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
         {
         }
 
@@ -211,7 +211,7 @@ namespace Amazon.SimpleEmail
         /// at one request per second.</para>
         /// </summary>
         /// 
-        /// <param name="deleteIdentityRequest">Container for the necessary parameters to execute the DeleteIdentity service method on
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIdentity service method on
         /// AmazonSimpleEmailService.</param>
         /// 
         /// <returns>The response from the DeleteIdentity service method, as returned by AmazonSimpleEmailService.</returns>
@@ -253,7 +253,7 @@ namespace Amazon.SimpleEmail
         /// action is throttled at one request per second.</para>
         /// </summary>
         /// 
-        /// <param name="deleteVerifiedEmailAddressRequest">Container for the necessary parameters to execute the DeleteVerifiedEmailAddress service
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVerifiedEmailAddress service
         /// method on AmazonSimpleEmailService.</param>
 		public DeleteVerifiedEmailAddressResponse DeleteVerifiedEmailAddress(DeleteVerifiedEmailAddressRequest request)
         {
@@ -300,10 +300,10 @@ namespace Amazon.SimpleEmail
         /// 
         /// </ul>
         /// <para>This action is throttled at one request per second.</para> <para>For more information about creating DNS records using DKIM tokens,
-        /// go to the Amazon SES Developer Guide.</para>
+        /// go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html">Amazon SES Developer Guide</a> .</para>
         /// </summary>
         /// 
-        /// <param name="getIdentityDkimAttributesRequest">Container for the necessary parameters to execute the GetIdentityDkimAttributes service
+        /// <param name="request">Container for the necessary parameters to execute the GetIdentityDkimAttributes service
         /// method on AmazonSimpleEmailService.</param>
         /// 
         /// <returns>The response from the GetIdentityDkimAttributes service method, as returned by AmazonSimpleEmailService.</returns>
@@ -342,10 +342,11 @@ namespace Amazon.SimpleEmail
         /// <summary>
         /// <para>Given a list of verified identities (email addresses and/or domains), returns a structure describing identity notification
         /// attributes.</para> <para>This action is throttled at one request per second.</para> <para>For more information about feedback notification,
-        /// see the Amazon SES Developer Guide.</para>
+        /// see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/bounce-complaint-notifications.html">Amazon SES Developer Guide</a>
+        /// .</para>
         /// </summary>
         /// 
-        /// <param name="getIdentityNotificationAttributesRequest">Container for the necessary parameters to execute the
+        /// <param name="request">Container for the necessary parameters to execute the
         /// GetIdentityNotificationAttributes service method on AmazonSimpleEmailService.</param>
         /// 
         /// <returns>The response from the GetIdentityNotificationAttributes service method, as returned by AmazonSimpleEmailService.</returns>
@@ -386,7 +387,7 @@ namespace Amazon.SimpleEmail
         /// verification token for each identity.</para> <para>This action is throttled at one request per second.</para>
         /// </summary>
         /// 
-        /// <param name="getIdentityVerificationAttributesRequest">Container for the necessary parameters to execute the
+        /// <param name="request">Container for the necessary parameters to execute the
         /// GetIdentityVerificationAttributes service method on AmazonSimpleEmailService.</param>
         /// 
         /// <returns>The response from the GetIdentityVerificationAttributes service method, as returned by AmazonSimpleEmailService.</returns>
@@ -426,7 +427,7 @@ namespace Amazon.SimpleEmail
         /// <para>Returns the user's current sending limits.</para> <para>This action is throttled at one request per second.</para>
         /// </summary>
         /// 
-        /// <param name="getSendQuotaRequest">Container for the necessary parameters to execute the GetSendQuota service method on
+        /// <param name="request">Container for the necessary parameters to execute the GetSendQuota service method on
         /// AmazonSimpleEmailService.</param>
         /// 
         /// <returns>The response from the GetSendQuota service method, as returned by AmazonSimpleEmailService.</returns>
@@ -466,8 +467,6 @@ namespace Amazon.SimpleEmail
         /// <para>Returns the user's current sending limits.</para> <para>This action is throttled at one request per second.</para>
         /// </summary>
         /// 
-        /// <param name="getSendQuotaRequest">Container for the necessary parameters to execute the GetSendQuota service method on
-        /// AmazonSimpleEmailService.</param>
         /// 
         /// <returns>The response from the GetSendQuota service method, as returned by AmazonSimpleEmailService.</returns>
 		public GetSendQuotaResponse GetSendQuota()
@@ -481,7 +480,7 @@ namespace Amazon.SimpleEmail
         /// per second.</para>
         /// </summary>
         /// 
-        /// <param name="getSendStatisticsRequest">Container for the necessary parameters to execute the GetSendStatistics service method on
+        /// <param name="request">Container for the necessary parameters to execute the GetSendStatistics service method on
         /// AmazonSimpleEmailService.</param>
         /// 
         /// <returns>The response from the GetSendStatistics service method, as returned by AmazonSimpleEmailService.</returns>
@@ -523,8 +522,6 @@ namespace Amazon.SimpleEmail
         /// per second.</para>
         /// </summary>
         /// 
-        /// <param name="getSendStatisticsRequest">Container for the necessary parameters to execute the GetSendStatistics service method on
-        /// AmazonSimpleEmailService.</param>
         /// 
         /// <returns>The response from the GetSendStatistics service method, as returned by AmazonSimpleEmailService.</returns>
 		public GetSendStatisticsResponse GetSendStatistics()
@@ -537,7 +534,7 @@ namespace Amazon.SimpleEmail
         /// status.</para> <para>This action is throttled at one request per second.</para>
         /// </summary>
         /// 
-        /// <param name="listIdentitiesRequest">Container for the necessary parameters to execute the ListIdentities service method on
+        /// <param name="request">Container for the necessary parameters to execute the ListIdentities service method on
         /// AmazonSimpleEmailService.</param>
         /// 
         /// <returns>The response from the ListIdentities service method, as returned by AmazonSimpleEmailService.</returns>
@@ -578,8 +575,6 @@ namespace Amazon.SimpleEmail
         /// status.</para> <para>This action is throttled at one request per second.</para>
         /// </summary>
         /// 
-        /// <param name="listIdentitiesRequest">Container for the necessary parameters to execute the ListIdentities service method on
-        /// AmazonSimpleEmailService.</param>
         /// 
         /// <returns>The response from the ListIdentities service method, as returned by AmazonSimpleEmailService.</returns>
 		public ListIdentitiesResponse ListIdentities()
@@ -593,7 +588,7 @@ namespace Amazon.SimpleEmail
         /// preferred.</para> <para>This action is throttled at one request per second.</para>
         /// </summary>
         /// 
-        /// <param name="listVerifiedEmailAddressesRequest">Container for the necessary parameters to execute the ListVerifiedEmailAddresses service
+        /// <param name="request">Container for the necessary parameters to execute the ListVerifiedEmailAddresses service
         /// method on AmazonSimpleEmailService.</param>
         /// 
         /// <returns>The response from the ListVerifiedEmailAddresses service method, as returned by AmazonSimpleEmailService.</returns>
@@ -635,8 +630,6 @@ namespace Amazon.SimpleEmail
         /// preferred.</para> <para>This action is throttled at one request per second.</para>
         /// </summary>
         /// 
-        /// <param name="listVerifiedEmailAddressesRequest">Container for the necessary parameters to execute the ListVerifiedEmailAddresses service
-        /// method on AmazonSimpleEmailService.</param>
         /// 
         /// <returns>The response from the ListVerifiedEmailAddresses service method, as returned by AmazonSimpleEmailService.</returns>
 		public ListVerifiedEmailAddressesResponse ListVerifiedEmailAddresses()
@@ -653,10 +646,11 @@ namespace Amazon.SimpleEmail
         /// email message to a larger audience, you can divide your recipient list into groups of 50 or fewer, and then call Amazon SES repeatedly to
         /// send the message to each group. </para> <para>For every message that you send, the total number of recipients (To:, CC: and BCC:) is counted
         /// against your <i>sending quota</i> - the maximum number of emails you can send in a 24-hour period. For information about your sending quota,
-        /// go to the Amazon SES Developer Guide. </para>
+        /// go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html">Amazon SES Developer Guide</a> .
+        /// </para>
         /// </summary>
         /// 
-        /// <param name="sendEmailRequest">Container for the necessary parameters to execute the SendEmail service method on
+        /// <param name="request">Container for the necessary parameters to execute the SendEmail service method on
         /// AmazonSimpleEmailService.</param>
         /// 
         /// <returns>The response from the SendEmail service method, as returned by AmazonSimpleEmailService.</returns>
@@ -704,10 +698,11 @@ namespace Amazon.SimpleEmail
         /// number of To:, CC: and BCC: email addresses cannot exceed 50. If you need to send an email message to a larger audience, you can divide your
         /// recipient list into groups of 50 or fewer, and then call Amazon SES repeatedly to send the message to each group. </para> <para>For every
         /// message that you send, the total number of recipients (To:, CC: and BCC:) is counted against your <i>sending quota</i> - the maximum number
-        /// of emails you can send in a 24-hour period. For information about your sending quota, go to the Amazon SES Developer Guide. </para>
+        /// of emails you can send in a 24-hour period. For information about your sending quota, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html">Amazon SES Developer Guide</a> .
+        /// </para>
         /// </summary>
         /// 
-        /// <param name="sendRawEmailRequest">Container for the necessary parameters to execute the SendRawEmail service method on
+        /// <param name="request">Container for the necessary parameters to execute the SendRawEmail service method on
         /// AmazonSimpleEmailService.</param>
         /// 
         /// <returns>The response from the SendRawEmail service method, as returned by AmazonSimpleEmailService.</returns>
@@ -755,10 +750,10 @@ namespace Amazon.SimpleEmail
         /// </ul>
         /// <para>For email addresses (e.g., <c>user@example.com</c> ), you can only enable Easy DKIM signing if the corresponding domain (e.g.,
         /// <c>example.com</c> ) has been set up for Easy DKIM using the AWS Console or the <c>VerifyDomainDkim</c> action.</para> <para>This action is
-        /// throttled at one request per second.</para> <para>For more information about Easy DKIM signing, go to the Amazon SES Developer Guide.</para>
+        /// throttled at one request per second.</para> <para>For more information about Easy DKIM signing, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon SES Developer Guide</a> .</para>
         /// </summary>
         /// 
-        /// <param name="setIdentityDkimEnabledRequest">Container for the necessary parameters to execute the SetIdentityDkimEnabled service method on
+        /// <param name="request">Container for the necessary parameters to execute the SetIdentityDkimEnabled service method on
         /// AmazonSimpleEmailService.</param>
         /// 
         /// <returns>The response from the SetIdentityDkimEnabled service method, as returned by AmazonSimpleEmailService.</returns>
@@ -797,10 +792,10 @@ namespace Amazon.SimpleEmail
         /// <summary>
         /// <para>Given an identity (email address or domain), enables or disables whether Amazon SES forwards feedback notifications as email. Feedback
         /// forwarding may only be disabled when both complaint and bounce topics are set.</para> <para>This action is throttled at one request per
-        /// second.</para> <para>For more information about feedback notification, see the Amazon SES Developer Guide.</para>
+        /// second.</para> <para>For more information about feedback notification, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/bounce-complaint-notifications.html">Amazon SES Developer Guide</a> .</para>
         /// </summary>
         /// 
-        /// <param name="setIdentityFeedbackForwardingEnabledRequest">Container for the necessary parameters to execute the
+        /// <param name="request">Container for the necessary parameters to execute the
         /// SetIdentityFeedbackForwardingEnabled service method on AmazonSimpleEmailService.</param>
         /// 
         /// <returns>The response from the SetIdentityFeedbackForwardingEnabled service method, as returned by AmazonSimpleEmailService.</returns>
@@ -840,10 +835,10 @@ namespace Amazon.SimpleEmail
         /// <para>Given an identity (email address or domain), sets the Amazon SNS topic to which Amazon SES will publish bounce and complaint
         /// notifications for emails sent with that identity as the <c>Source</c> .
         /// Publishing to topics may only be disabled when feedback forwarding is enabled.</para> <para>This action is throttled at one request
-        /// per second.</para> <para>For more information about feedback notification, see the Amazon SES Developer Guide.</para>
+        /// per second.</para> <para>For more information about feedback notification, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/bounce-complaint-notifications.html">Amazon SES Developer Guide</a> .</para>
         /// </summary>
         /// 
-        /// <param name="setIdentityNotificationTopicRequest">Container for the necessary parameters to execute the SetIdentityNotificationTopic service
+        /// <param name="request">Container for the necessary parameters to execute the SetIdentityNotificationTopic service
         /// method on AmazonSimpleEmailService.</param>
         /// 
         /// <returns>The response from the SetIdentityNotificationTopic service method, as returned by AmazonSimpleEmailService.</returns>
@@ -885,10 +880,10 @@ namespace Amazon.SimpleEmail
         /// detect that you have updated your DNS records; this detection process may take up to 72 hours. Upon successful detection, Amazon SES will be
         /// able to DKIM-sign email originating from that domain.</para> <para>This action is throttled at one request per second.</para> <para>To
         /// enable or disable Easy DKIM signing for a domain, use the <c>SetIdentityDkimEnabled</c> action.</para> <para>For more information about
-        /// creating DNS records using DKIM tokens, go to the Amazon SES Developer Guide.</para>
+        /// creating DNS records using DKIM tokens, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html">Amazon SES Developer Guide</a> .</para>
         /// </summary>
         /// 
-        /// <param name="verifyDomainDkimRequest">Container for the necessary parameters to execute the VerifyDomainDkim service method on
+        /// <param name="request">Container for the necessary parameters to execute the VerifyDomainDkim service method on
         /// AmazonSimpleEmailService.</param>
         /// 
         /// <returns>The response from the VerifyDomainDkim service method, as returned by AmazonSimpleEmailService.</returns>
@@ -928,7 +923,7 @@ namespace Amazon.SimpleEmail
         /// <para>Verifies a domain.</para> <para>This action is throttled at one request per second.</para>
         /// </summary>
         /// 
-        /// <param name="verifyDomainIdentityRequest">Container for the necessary parameters to execute the VerifyDomainIdentity service method on
+        /// <param name="request">Container for the necessary parameters to execute the VerifyDomainIdentity service method on
         /// AmazonSimpleEmailService.</param>
         /// 
         /// <returns>The response from the VerifyDomainIdentity service method, as returned by AmazonSimpleEmailService.</returns>
@@ -970,7 +965,7 @@ namespace Amazon.SimpleEmail
         /// VerifyEmailIdentity action is now preferred.</para> <para>This action is throttled at one request per second.</para>
         /// </summary>
         /// 
-        /// <param name="verifyEmailAddressRequest">Container for the necessary parameters to execute the VerifyEmailAddress service method on
+        /// <param name="request">Container for the necessary parameters to execute the VerifyEmailAddress service method on
         /// AmazonSimpleEmailService.</param>
 		public VerifyEmailAddressResponse VerifyEmailAddress(VerifyEmailAddressRequest request)
         {
@@ -1009,7 +1004,7 @@ namespace Amazon.SimpleEmail
         /// action is throttled at one request per second.</para>
         /// </summary>
         /// 
-        /// <param name="verifyEmailIdentityRequest">Container for the necessary parameters to execute the VerifyEmailIdentity service method on
+        /// <param name="request">Container for the necessary parameters to execute the VerifyEmailIdentity service method on
         /// AmazonSimpleEmailService.</param>
         /// 
         /// <returns>The response from the VerifyEmailIdentity service method, as returned by AmazonSimpleEmailService.</returns>

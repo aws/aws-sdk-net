@@ -36,7 +36,7 @@ namespace Amazon.ElasticMapReduce
 	public partial class AmazonElasticMapReduceClient : AmazonWebServiceClient, Amazon.ElasticMapReduce.IAmazonElasticMapReduce
     {
 
-        QueryStringSigner signer = new QueryStringSigner();
+        AWS4Signer signer = new AWS4Signer();
         #region Constructors
 
         /// <summary>
@@ -65,7 +65,7 @@ namespace Amazon.ElasticMapReduce
         /// <param name="credentials">AWS Credentials</param>
         /// <param name="clientConfig">The AmazonElasticMapReduceClient Configuration Object</param>
         public AmazonElasticMapReduceClient(AWSCredentials credentials, AmazonElasticMapReduceConfig clientConfig)
-            : base(credentials, clientConfig, false, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(credentials, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
         {
         }
 
@@ -147,6 +147,19 @@ namespace Amazon.ElasticMapReduce
         #endregion
 
  
+		internal AddInstanceGroupsResponse AddInstanceGroups(AddInstanceGroupsRequest request)
+        {
+            var task = AddInstanceGroupsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>AddInstanceGroups adds an instance group to a running cluster.</para>
         /// </summary>
@@ -169,17 +182,30 @@ namespace Amazon.ElasticMapReduce
             return response;
         }
  
+		internal AddJobFlowStepsResponse AddJobFlowSteps(AddJobFlowStepsRequest request)
+        {
+            var task = AddJobFlowStepsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> AddJobFlowSteps adds new steps to a running job flow. A maximum of 256 steps are allowed in each job flow. </para> <para>If your job
         /// flow is long-running (such as a Hive data warehouse) or complex, you may require more than 256 steps to process your data. You can bypass
         /// the 256-step limitation in various ways, including using the SSH shell to connect to the master node and submitting queries directly to the
-        /// software running on the master node, such as Hive and Hadoop. For more information on how to do this, go to Add More than 256 Steps to a Job
-        /// Flow in the <i>Amazon Elastic MapReduce Developer's Guide</i> .</para> <para> A step specifies the location of a JAR file stored either on
-        /// the master node of the job flow or in Amazon S3. Each step is performed by the main function of the main class of the JAR file. The main
-        /// class can be specified either in the manifest of the JAR or by using the MainFunction parameter of the step. </para> <para> Elastic
-        /// MapReduce executes each step in the order listed. For a step to be considered complete, the main function must exit with a zero exit code
-        /// and all Hadoop jobs started while the step was running must have completed and run successfully. </para> <para> You can only add steps to a
-        /// job flow that is in one of the following states: STARTING, BOOTSTRAPPING, RUNNING, or WAITING.</para>
+        /// software running on the master node, such as Hive and Hadoop. For more information on how to do this, go to <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/AddMoreThan256Steps.html">Add More than 256 Steps to a Job Flow</a>
+        /// in the <i>Amazon Elastic MapReduce Developer's Guide</i> .</para> <para> A step specifies the location of a JAR file stored either on the
+        /// master node of the job flow or in Amazon S3. Each step is performed by the main function of the main class of the JAR file. The main class
+        /// can be specified either in the manifest of the JAR or by using the MainFunction parameter of the step. </para> <para> Elastic MapReduce
+        /// executes each step in the order listed. For a step to be considered complete, the main function must exit with a zero exit code and all
+        /// Hadoop jobs started while the step was running must have completed and run successfully. </para> <para> You can only add steps to a job flow
+        /// that is in one of the following states: STARTING, BOOTSTRAPPING, RUNNING, or WAITING.</para>
         /// </summary>
         /// 
         /// <param name="addJobFlowStepsRequest">Container for the necessary parameters to execute the AddJobFlowSteps service method on
@@ -198,6 +224,19 @@ namespace Amazon.ElasticMapReduce
             return response;
         }
  
+		internal DescribeJobFlowsResponse DescribeJobFlows(DescribeJobFlowsRequest request)
+        {
+            var task = DescribeJobFlowsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> DescribeJobFlows returns a list of job flows that match all of the supplied parameters. The parameters can include a list of job flow
         /// IDs, job flow states, and restrictions on job flow creation date and time.</para> <para> Regardless of supplied parameters, only job flows
@@ -233,6 +272,19 @@ namespace Amazon.ElasticMapReduce
             return response;
         }
  
+		internal ModifyInstanceGroupsResponse ModifyInstanceGroups(ModifyInstanceGroupsRequest request)
+        {
+            var task = ModifyInstanceGroupsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>ModifyInstanceGroups modifies the number of nodes and configuration settings of an instance group. The input parameters include the
         /// new target instance count for the group and the instance group ID. The call will either succeed or fail atomically.</para>
@@ -254,6 +306,19 @@ namespace Amazon.ElasticMapReduce
             return response;
         }
  
+		internal RunJobFlowResponse RunJobFlow(RunJobFlowRequest request)
+        {
+            var task = RunJobFlowAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> RunJobFlow creates and starts running a new job flow. The job flow will run the steps specified. Once the job flow completes, the
         /// cluster is stopped and the HDFS partition is lost. To prevent loss of data, configure the last step of the job flow to store results in
@@ -263,9 +328,9 @@ namespace Amazon.ElasticMapReduce
         /// call, user intervention, or in the event of a job flow error.</para> <para>A maximum of 256 steps are allowed in each job flow.</para>
         /// <para>If your job flow is long-running (such as a Hive data warehouse) or complex, you may require more than 256 steps to process your data.
         /// You can bypass the 256-step limitation in various ways, including using the SSH shell to connect to the master node and submitting queries
-        /// directly to the software running on the master node, such as Hive and Hadoop. For more information on how to do this, go to Add More than
-        /// 256 Steps to a Job Flow in the <i>Amazon Elastic MapReduce Developer's Guide</i> .</para> <para>For long running job flows, we recommend
-        /// that you periodically store your results.</para>
+        /// directly to the software running on the master node, such as Hive and Hadoop. For more information on how to do this, go to <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/AddMoreThan256Steps.html">Add More than 256 Steps to a Job Flow</a>
+        /// in the <i>Amazon Elastic MapReduce Developer's Guide</i> .</para> <para>For long running job flows, we recommend that you periodically store
+        /// your results.</para>
         /// </summary>
         /// 
         /// <param name="runJobFlowRequest">Container for the necessary parameters to execute the RunJobFlow service method on
@@ -286,6 +351,19 @@ namespace Amazon.ElasticMapReduce
             return response;
         }
  
+		internal SetTerminationProtectionResponse SetTerminationProtection(SetTerminationProtectionRequest request)
+        {
+            var task = SetTerminationProtectionAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> SetTerminationProtection locks a job flow so the Amazon EC2 instances in the cluster cannot be terminated by user intervention, an
         /// API call, or in the event of a job-flow error. The cluster still terminates upon successful completion of the job flow. Calling
@@ -294,8 +372,8 @@ namespace Amazon.ElasticMapReduce
         /// an error, the instances will persist so you can recover any data stored in their ephemeral instance storage.</para> <para> To terminate a
         /// job flow that has been locked by setting SetTerminationProtection to <c>true</c> ,
         /// you must first unlock the job flow by a subsequent call to SetTerminationProtection in which you set the value to <c>false</c> .
-        /// </para> <para> For more information, go to Protecting a Job Flow from Termination in the <i>Amazon Elastic MapReduce Developer's Guide.</i>
-        /// </para>
+        /// </para> <para> For more information, go to <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/UsingEMR_TerminationProtection.html">Protecting a Job Flow from
+        /// Termination</a> in the <i>Amazon Elastic MapReduce Developer's Guide.</i> </para>
         /// </summary>
         /// 
         /// <param name="setTerminationProtectionRequest">Container for the necessary parameters to execute the SetTerminationProtection service method
@@ -314,6 +392,19 @@ namespace Amazon.ElasticMapReduce
             return response;
         }
  
+		internal SetVisibleToAllUsersResponse SetVisibleToAllUsers(SetVisibleToAllUsersRequest request)
+        {
+            var task = SetVisibleToAllUsersAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Sets whether all AWS Identity and Access Management (IAM) users under your account can access the specifed job flows. This action
         /// works on running job flows. You can also set the visibility of a job flow when you launch it using the <c>VisibleToAllUsers</c> parameter of
@@ -337,6 +428,19 @@ namespace Amazon.ElasticMapReduce
             return response;
         }
  
+		internal TerminateJobFlowsResponse TerminateJobFlows(TerminateJobFlowsRequest request)
+        {
+            var task = TerminateJobFlowsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> TerminateJobFlows shuts a list of job flows down. When a job flow is shut down, any step not yet completed is canceled and the EC2
         /// instances on which the job flow is running are stopped. Any log files not already saved are uploaded to Amazon S3 if a LogUri was specified

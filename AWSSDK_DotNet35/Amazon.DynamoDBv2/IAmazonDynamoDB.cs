@@ -46,7 +46,9 @@ namespace Amazon.DynamoDBv2
         /// application, keep in mind that Amazon DynamoDB does not return attributes in any particular order. To help parse the response by item,
         /// include the primary key values for the items in your request in the <i>AttributesToGet</i> parameter.</para> <para>If a requested item does
         /// not exist, it is not returned in the result. Requests for nonexistent items consume the minimum read capacity units according to the type of
-        /// read. For more information, see Capacity Units Calculations in the Amazon DynamoDB Developer Guide.</para>
+        /// read. For more information, see <a
+        /// href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDDTables.html#CapacityUnitCalculations" >Capacity Units
+        /// Calculations</a> in the Amazon DynamoDB Developer Guide.</para>
         /// </summary>
         /// 
         /// <param name="batchGetItemRequest">Container for the necessary parameters to execute the BatchGetItem service method on
@@ -467,7 +469,9 @@ namespace Amazon.DynamoDBv2
         /// <i>ValidationException</i> .</para> <para>You can request that <i>PutItem</i> return either a copy of the old item (before the update) or a
         /// copy of the new item (after the update). For more information, see the <i>ReturnValues</i> description.</para> <para><b>NOTE:</b> To prevent
         /// a new item from replacing an existing item, use a conditional put operation with Exists set to false for the primary key attribute, or
-        /// attributes. </para> <para>For more information about using this API, see Working with Items in the Amazon DynamoDB Developer Guide.</para>
+        /// attributes. </para> <para>For more information about using this API, see <a
+        /// href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDDItems.html" >Working with Items</a> in the Amazon
+        /// DynamoDB Developer Guide.</para>
         /// </summary>
         /// 
         /// <param name="putItemRequest">Container for the necessary parameters to execute the PutItem service method on AmazonDynamoDBv2.</param>
@@ -569,7 +573,9 @@ namespace Amazon.DynamoDBv2
         /// operation. The results also include the number of items exceeding the limit. A scan can result in no table data meeting the filter criteria.
         /// </para> <para>The result set is eventually consistent. </para> <para>By default, <i>Scan</i> operations proceed sequentially; however, for
         /// faster performance on large tables, applications can request a parallel <i>Scan</i> by specifying the <i>Segment</i> and
-        /// <i>TotalSegments</i> parameters. For more information, see Parallel Scan in the Amazon DynamoDB Developer Guide.</para>
+        /// <i>TotalSegments</i> parameters. For more information, see <a
+        /// href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#QueryAndScanParallelScan" >Parallel Scan</a> in the
+        /// Amazon DynamoDB Developer Guide.</para>
         /// </summary>
         /// 
         /// <param name="scanRequest">Container for the necessary parameters to execute the Scan service method on AmazonDynamoDBv2.</param>
@@ -662,12 +668,13 @@ namespace Amazon.DynamoDBv2
         /// <summary>
         /// <para>Updates the provisioned throughput for the given table. Setting the throughput for a table helps you manage performance and is part of
         /// the provisioned throughput feature of Amazon DynamoDB.</para> <para>The provisioned throughput values can be upgraded or downgraded based on
-        /// the maximums and minimums listed in the Limits section in the Amazon DynamoDB Developer Guide.</para> <para>The table must be in the
-        /// <c>ACTIVE</c> state for this operation to succeed. <i>UpdateTable</i> is an asynchronous operation; while executing the operation, the table
-        /// is in the <c>UPDATING</c> state. While the table is in the <c>UPDATING</c> state, the table still has the provisioned throughput from before
-        /// the call. The new provisioned throughput setting is in effect only when the table returns to the <c>ACTIVE</c> state after the
-        /// <i>UpdateTable</i> operation. </para> <para>You cannot add, modify or delete local secondary indexes using <i>UpdateTable</i> . Local
-        /// secondary indexes can only be defined at table creation time.</para>
+        /// the maximums and minimums listed in the <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html" >Limits</a>
+        /// section in the Amazon DynamoDB Developer Guide.</para> <para>The table must be in the <c>ACTIVE</c> state for this operation to succeed.
+        /// <i>UpdateTable</i> is an asynchronous operation; while executing the operation, the table is in the <c>UPDATING</c> state. While the table
+        /// is in the <c>UPDATING</c> state, the table still has the provisioned throughput from before the call. The new provisioned throughput setting
+        /// is in effect only when the table returns to the <c>ACTIVE</c> state after the <i>UpdateTable</i> operation. </para> <para>You cannot add,
+        /// modify or delete local secondary indexes using <i>UpdateTable</i> . Local secondary indexes can only be defined at table creation
+        /// time.</para>
         /// </summary>
         /// 
         /// <param name="updateTableRequest">Container for the necessary parameters to execute the UpdateTable service method on

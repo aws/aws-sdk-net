@@ -22,7 +22,7 @@ namespace Amazon.Auth.AccessControlPolicy.ActionIdentifiers
     /// The available AWS access control policy actions for AWS CloudFormation.
     /// </summary>
     /// <see cref="Amazon.Auth.AccessControlPolicy.Statement.Actions"/>
-    public class CloudFormationActionIdentifiers
+    public static class CloudFormationActionIdentifiers
     {
         public static readonly ActionIdentifier AllCloudFormationActions = new ActionIdentifier("cloudformation:*");
 

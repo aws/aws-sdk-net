@@ -32,24 +32,22 @@ namespace Amazon.Runtime
     {
         private string proxyHost;
         private int proxyPort = -1;
+        private int? connectionLimit;
+        private bool useNagleAlgorithm = false;
 
-        static ClientConfig()
+        private static RegionEndpoint GetDefaultRegionEndpoint()
         {
             NameValueCollection appConfig = ConfigurationManager.AppSettings;
             var regionName = appConfig[APP_CONFIG_REGION_KEY];
-            if (string.IsNullOrEmpty(regionName))
+            if (!string.IsNullOrEmpty(regionName))
             {
-                DEFAULT_REGION = RegionEndpoint.USEast1;
-                return;
+                RegionEndpoint re = RegionEndpoint.GetBySystemName(regionName);
+                if (re == null)
+                    throw new ArgumentException("Region {0} specified in the app.config is not a valid region name", regionName);
+                return re;
             }
-
-            DEFAULT_REGION = RegionEndpoint.GetBySystemName(regionName);
-            if (DEFAULT_REGION == null)
-                throw new ArgumentException("Region {0} specified in the app.config is not a valid region name", regionName);
+            return null;
         }
-
-        private int? connectionLimit;
-        private bool useNagleAlgorithm = false;
 
         /// <summary>
         /// Gets and sets of the ProxyHost property.

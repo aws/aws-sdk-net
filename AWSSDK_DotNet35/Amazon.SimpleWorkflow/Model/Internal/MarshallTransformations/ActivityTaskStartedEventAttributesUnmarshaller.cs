@@ -33,6 +33,9 @@
 
         public ActivityTaskStartedEventAttributes Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonToken.Null)
+                return null;
+
             ActivityTaskStartedEventAttributes activityTaskStartedEventAttributes = new ActivityTaskStartedEventAttributes();
 
         

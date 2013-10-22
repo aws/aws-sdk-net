@@ -30,9 +30,10 @@ namespace Amazon.OpsWorks.Model
         private string name;
         private string domain;
         private string region;
+        private string instanceId;
 
         /// <summary>
-        /// The IP address
+        /// The IP address.
         ///  
         /// </summary>
         public string Ip
@@ -93,6 +94,22 @@ namespace Amazon.OpsWorks.Model
         internal bool IsSetRegion()
         {
             return this.region != null;
+        }
+
+        /// <summary>
+        /// The ID of the instance that the address is attached to.
+        ///  
+        /// </summary>
+        public string InstanceId
+        {
+            get { return this.instanceId; }
+            set { this.instanceId = value; }
+        }
+
+        // Check to see if InstanceId property is set
+        internal bool IsSetInstanceId()
+        {
+            return this.instanceId != null;
         }
     }
 }

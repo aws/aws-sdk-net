@@ -46,7 +46,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The status of the VPC Security Group.
+        /// The status of the VPC security group.
         ///  
         /// </summary>
         public string Status

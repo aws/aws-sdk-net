@@ -38,7 +38,7 @@
           return response;
         }
         
-        private void UnmarshallResult(JsonUnmarshallerContext context,CancelJobResponse response)
+        private static void UnmarshallResult(JsonUnmarshallerContext context,CancelJobResponse response)
         {
                         
             return;

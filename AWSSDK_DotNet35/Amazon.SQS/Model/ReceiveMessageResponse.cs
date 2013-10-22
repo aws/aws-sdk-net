@@ -28,7 +28,7 @@ namespace Amazon.SQS.Model
     {
         /// <summary>
         /// Gets and sets the ReceiveMessageResult property.
-        /// 
+        /// A list of received messages.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the ReceiveMessageResult class are now available on the ReceiveMessageResponse class. You should use the properties on ReceiveMessageResponse instead of accessing them through ReceiveMessageResult.")]
         public ReceiveMessageResult ReceiveMessageResult

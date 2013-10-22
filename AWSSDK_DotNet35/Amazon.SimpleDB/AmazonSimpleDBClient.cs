@@ -34,12 +34,21 @@ namespace Amazon.SimpleDB
     /// complex to design, and often requires extensive and repetitive database administration. Amazon SimpleDB is dramatically simpler, requiring
     /// no schema, automatically indexing your data and providing a simple API for storage and access. This approach eliminates the administrative
     /// burden of data modeling, index maintenance, and performance tuning. Developers gain access to this functionality within Amazon's proven
-    /// computing environment, are able to scale instantly, and pay only for what they use. </para> <para> Visit http://aws.amazon.com/simpledb/ for
-    /// more information. </para>
+    /// computing environment, are able to scale instantly, and pay only for what they use. </para> <para> Visit <a
+    /// href="http://aws.amazon.com/simpledb/" >http://aws.amazon.com/simpledb/</a> for more information. </para>
     /// </summary>
     public partial class AmazonSimpleDBClient : AmazonWebServiceClient, IAmazonSimpleDB
     {
     QueryStringSigner signer = new QueryStringSigner();
+
+        #region Dispose
+
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
+        }
+
+        #endregion
 
         #region Constructors
 
@@ -60,7 +69,7 @@ namespace Amazon.SimpleDB
         ///
         /// </summary>
         public AmazonSimpleDBClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonSimpleDBConfig(), true, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonSimpleDBConfig(), AuthenticationTypes.User | AuthenticationTypes.Session) { }
 
         /// <summary>
         /// Constructs AmazonSimpleDBClient with the credentials loaded from the application's
@@ -80,7 +89,7 @@ namespace Amazon.SimpleDB
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonSimpleDBClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonSimpleDBConfig(){RegionEndpoint = region}, true, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonSimpleDBConfig{RegionEndpoint = region}, AuthenticationTypes.User | AuthenticationTypes.Session) { }
 
         /// <summary>
         /// Constructs AmazonSimpleDBClient with the credentials loaded from the application's
@@ -100,7 +109,7 @@ namespace Amazon.SimpleDB
         /// </summary>
         /// <param name="config">The AmazonSimpleDB Configuration Object</param>
         public AmazonSimpleDBClient(AmazonSimpleDBConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config, true, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), config, AuthenticationTypes.User | AuthenticationTypes.Session) { }
 
         /// <summary>
         /// Constructs AmazonSimpleDBClient with AWS Credentials
@@ -117,7 +126,7 @@ namespace Amazon.SimpleDB
         /// <param name="credentials">AWS Credentials</param>
         /// <param name="region">The region to connect.</param>
         public AmazonSimpleDBClient(AWSCredentials credentials, RegionEndpoint region)
-            : this(credentials, new AmazonSimpleDBConfig(){RegionEndpoint=region})
+            : this(credentials, new AmazonSimpleDBConfig{RegionEndpoint = region})
         {
         }
 
@@ -128,7 +137,7 @@ namespace Amazon.SimpleDB
         /// <param name="credentials">AWS Credentials</param>
         /// <param name="clientConfig">The AmazonSimpleDBClient Configuration Object</param>
         public AmazonSimpleDBClient(AWSCredentials credentials, AmazonSimpleDBConfig clientConfig)
-            : base(credentials, clientConfig, false, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(credentials, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
         {
         }
 
@@ -184,7 +193,7 @@ namespace Amazon.SimpleDB
         /// <param name="awsSessionToken">AWS Session Token</param>
         /// <param name="region">The region to connect.</param>
         public AmazonSimpleDBClient(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken, RegionEndpoint region)
-            : this(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, new AmazonSimpleDBConfig(){RegionEndpoint = region})
+            : this(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, new AmazonSimpleDBConfig{RegionEndpoint = region})
         {
         }
 
@@ -377,8 +386,9 @@ namespace Amazon.SimpleDB
         /// <para> The <c>CreateDomain</c> operation creates a new domain. The domain name should be unique among the domains associated with the Access
         /// Key ID provided in the request. The <c>CreateDomain</c> operation may take 10 or more seconds to complete. </para> <para><b>NOTE:</b>
         /// CreateDomain is an idempotent operation; running it multiple times using the same domain name will not result in an error response. </para>
-        /// <para> The client can create up to 100 domains per account. </para> <para> If the client requires additional domains, go to
-        /// http://aws.amazon.com/contact-us/simpledb-limit-request/. </para>
+        /// <para> The client can create up to 100 domains per account. </para> <para> If the client requires additional domains, go to <a
+        /// href="http://aws.amazon.com/contact-us/simpledb-limit-request/" > http://aws.amazon.com/contact-us/simpledb-limit-request/</a> .
+        /// </para>
         /// </summary>
         /// 
         /// <param name="createDomainRequest">Container for the necessary parameters to execute the CreateDomain service method on
@@ -705,9 +715,10 @@ namespace Amazon.SimpleDB
 
         /// <summary>
         /// <para> The <c>ListDomains</c> operation lists all domains associated with the Access Key ID. It returns domain names up to the limit set by
-        /// MaxNumberOfDomains. A NextToken is returned if there are more than <c>MaxNumberOfDomains</c> domains. Calling <c>ListDomains</c> successive
-        /// times with the <c>NextToken</c> provided by the operation returns up to <c>MaxNumberOfDomains</c> more domain names with each successive
-        /// operation call. </para>
+        /// <a href="#MaxNumberOfDomains" >MaxNumberOfDomains</a> .
+        /// A <a href="#NextToken" >NextToken</a> is returned if there are more than <c>MaxNumberOfDomains</c> domains. Calling
+        /// <c>ListDomains</c> successive times with the <c>NextToken</c> provided by the operation returns up to <c>MaxNumberOfDomains</c> more domain
+        /// names with each successive operation call. </para>
         /// </summary>
         /// 
         /// <param name="listDomainsRequest">Container for the necessary parameters to execute the ListDomains service method on AmazonSimpleDB.</param>
@@ -769,9 +780,10 @@ namespace Amazon.SimpleDB
 
         /// <summary>
         /// <para> The <c>ListDomains</c> operation lists all domains associated with the Access Key ID. It returns domain names up to the limit set by
-        /// MaxNumberOfDomains. A NextToken is returned if there are more than <c>MaxNumberOfDomains</c> domains. Calling <c>ListDomains</c> successive
-        /// times with the <c>NextToken</c> provided by the operation returns up to <c>MaxNumberOfDomains</c> more domain names with each successive
-        /// operation call. </para>
+        /// <a href="#MaxNumberOfDomains" >MaxNumberOfDomains</a> .
+        /// A <a href="#NextToken" >NextToken</a> is returned if there are more than <c>MaxNumberOfDomains</c> domains. Calling
+        /// <c>ListDomains</c> successive times with the <c>NextToken</c> provided by the operation returns up to <c>MaxNumberOfDomains</c> more domain
+        /// names with each successive operation call. </para>
         /// </summary>
         /// 
         /// <returns>The response from the ListDomains service method, as returned by AmazonSimpleDB.</returns>

@@ -28,13 +28,19 @@ namespace Amazon.AutoScaling
     /// <summary>
     /// Implementation for accessing AmazonAutoScaling.
     /// 
-    /// Auto Scaling <para> This guide provides detailed information about Auto Scaling actions, data types, parameters, and errors. For detailed
-    /// information about Auto Scaling features and their associated API calls, go to the Auto Scaling Developer Guide. </para> <para> Auto Scaling
-    /// is a web service designed to automatically launch or terminate Amazon Elastic Compute Cloud (Amazon EC2) instances based on user-defined
-    /// policies, schedules, and health checks. This service is used in conjunction with Amazon CloudWatch and Elastic Load Balancing services.
-    /// </para> <para>This reference is based on the current WSDL, which is available at:</para> <para>
-    /// http://autoscaling.amazonaws.com/doc/2011-01-01/AutoScaling.wsdl </para> <para> <b>Endpoints</b> </para> <para>For information about this
-    /// product's regions and endpoints, go to Regions and Endpoints in the Amazon Web Services General Reference. </para>
+    /// Auto Scaling <para> Auto Scaling is a web service designed to automatically launch or terminate Amazon Elastic Compute Cloud (Amazon EC2)
+    /// instances based on user-defined policies, schedules, and health checks. This service is used in conjunction with Amazon CloudWatch and
+    /// Elastic Load Balancing services. </para> <para>Auto Scaling provides APIs that you can call by submitting a Query Request. Query requests
+    /// are HTTP or HTTPS requests that use the HTTP verbs GET or POST and a Query parameter named <i>Action</i> or <i>Operation</i> that specifies
+    /// the API you are calling. Action is used throughout this documentation, although Operation is also supported for backward compatibility with
+    /// other Amazon Web Services (AWS) Query APIs. </para> <para>Calling the API using a Query request is the most direct way to access the web
+    /// service, but requires that your application handle low-level details such as generating the hash to sign the request and error handling. The
+    /// benefit of calling the service using a Query request is that you are assured of having access to the complete functionality of the API. For
+    /// information about signing a a query request, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/api_requests.html">Use Query Requests to Call Auto Scaling APIs</a> </para> <para> This guide provides detailed information about Auto Scaling actions, data
+    /// types, parameters, and errors. For detailed information about Auto Scaling features and their associated API actions, go to the <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/">Auto Scaling Developer Guide</a> .
+    /// </para> <para>This reference is based on the current WSDL, which is available at:</para> <para> <a href="http://autoscaling.amazonaws.com/doc/2011-01-01/AutoScaling.wsdl">http://autoscaling.amazonaws.com/doc/2011-01-01/AutoScaling.wsdl</a> </para> <para> <b>Endpoints</b> </para> <para>For information about
+    /// this product's regions and endpoints, go to <a href="http://docs.aws.amazon.com/general/latest/gr/index.html?rande.html">Regions and
+    /// Endpoints</a> in the Amazon Web Services General Reference. </para>
     /// </summary>
 	public partial class AmazonAutoScalingClient : AmazonWebServiceClient, Amazon.AutoScaling.IAmazonAutoScaling
     {
@@ -68,7 +74,7 @@ namespace Amazon.AutoScaling
         /// <param name="credentials">AWS Credentials</param>
         /// <param name="clientConfig">The AmazonAutoScalingClient Configuration Object</param>
         public AmazonAutoScalingClient(AWSCredentials credentials, AmazonAutoScalingConfig clientConfig)
-            : base(credentials, clientConfig, false, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(credentials, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
         {
         }
 
@@ -150,10 +156,23 @@ namespace Amazon.AutoScaling
         #endregion
 
  
+		internal CreateAutoScalingGroupResponse CreateAutoScalingGroup(CreateAutoScalingGroupRequest request)
+        {
+            var task = CreateAutoScalingGroupAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Creates a new Auto Scaling group with the specified name and other attributes. When the creation request is completed, the Auto
         /// Scaling group is ready to be used in other calls. </para> <para><b>NOTE:</b> The Auto Scaling group name must be unique within the scope of
-        /// your AWS account, and under the quota of Auto Scaling groups allowed for your account. </para>
+        /// your AWS account. </para>
         /// </summary>
         /// 
         /// <param name="createAutoScalingGroupRequest">Container for the necessary parameters to execute the CreateAutoScalingGroup service method on
@@ -173,6 +192,19 @@ namespace Amazon.AutoScaling
             return response;
         }
  
+		internal CreateLaunchConfigurationResponse CreateLaunchConfiguration(CreateLaunchConfigurationRequest request)
+        {
+            var task = CreateLaunchConfigurationAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Creates a new launch configuration. The launch configuration name must be unique within the scope of the client's AWS account. The
         /// maximum limit of launch configurations, which by default is 100, must not yet have been met; otherwise, the call will fail. When created,
@@ -199,10 +231,24 @@ namespace Amazon.AutoScaling
             return response;
         }
  
+		internal CreateOrUpdateTagsResponse CreateOrUpdateTags(CreateOrUpdateTagsRequest request)
+        {
+            var task = CreateOrUpdateTagsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Creates new tags or updates existing tags for an Auto Scaling group. </para> <para><b>NOTE:</b> A tag's definition is composed of a
         /// resource ID, resource type, key and value, and the propagate flag. Value and the propagate flag are optional parameters. See the Request
-        /// Parameters for more information. </para>
+        /// Parameters for more information. </para> <para>For information on creating tags for your Auto Scaling group, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/ASTagging.html">Tag Your Auto Scaling Groups and Amazon EC2
+        /// Instances</a> .</para>
         /// </summary>
         /// 
         /// <param name="createOrUpdateTagsRequest">Container for the necessary parameters to execute the CreateOrUpdateTags service method on
@@ -222,6 +268,19 @@ namespace Amazon.AutoScaling
             return response;
         }
  
+		internal DeleteAutoScalingGroupResponse DeleteAutoScalingGroup(DeleteAutoScalingGroupRequest request)
+        {
+            var task = DeleteAutoScalingGroupAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Deletes the specified Auto Scaling group if the group has no instances and no scaling activities in progress. </para>
         /// <para><b>NOTE:</b> To remove all instances before calling DeleteAutoScalingGroup, you can call UpdateAutoScalingGroup to set the minimum and
@@ -245,6 +304,19 @@ namespace Amazon.AutoScaling
             return response;
         }
  
+		internal DeleteLaunchConfigurationResponse DeleteLaunchConfiguration(DeleteLaunchConfigurationRequest request)
+        {
+            var task = DeleteLaunchConfigurationAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Deletes the specified LaunchConfiguration. </para> <para> The specified launch configuration must not be attached to an Auto Scaling
         /// group. When this call completes, the launch configuration is no longer available for use. </para>
@@ -266,6 +338,19 @@ namespace Amazon.AutoScaling
             return response;
         }
  
+		internal DeleteNotificationConfigurationResponse DeleteNotificationConfiguration(DeleteNotificationConfigurationRequest request)
+        {
+            var task = DeleteNotificationConfigurationAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Deletes notifications created by PutNotificationConfiguration.</para>
         /// </summary>
@@ -284,6 +369,19 @@ namespace Amazon.AutoScaling
             return response;
         }
  
+		internal DeletePolicyResponse DeletePolicy(DeletePolicyRequest request)
+        {
+            var task = DeletePolicyAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Deletes a policy created by PutScalingPolicy.</para>
         /// </summary>
@@ -302,6 +400,19 @@ namespace Amazon.AutoScaling
             return response;
         }
  
+		internal DeleteScheduledActionResponse DeleteScheduledAction(DeleteScheduledActionRequest request)
+        {
+            var task = DeleteScheduledActionAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Deletes a scheduled action previously created using the PutScheduledUpdateGroupAction.</para>
         /// </summary>
@@ -320,6 +431,19 @@ namespace Amazon.AutoScaling
             return response;
         }
  
+		internal DeleteTagsResponse DeleteTags(DeleteTagsRequest request)
+        {
+            var task = DeleteTagsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Removes the specified tags or a set of tags from a set of resources.</para>
         /// </summary>
@@ -338,6 +462,19 @@ namespace Amazon.AutoScaling
             return response;
         }
  
+		internal DescribeAdjustmentTypesResponse DescribeAdjustmentTypes(DescribeAdjustmentTypesRequest request)
+        {
+            var task = DescribeAdjustmentTypesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Returns policy adjustment types for use in the PutScalingPolicy action. </para>
         /// </summary>
@@ -358,6 +495,19 @@ namespace Amazon.AutoScaling
             return response;
         }
  
+		internal DescribeAutoScalingGroupsResponse DescribeAutoScalingGroups(DescribeAutoScalingGroupsRequest request)
+        {
+            var task = DescribeAutoScalingGroupsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Returns a full description of each Auto Scaling group in the given list. This includes all Amazon EC2 instances that are members of
         /// the group. If a list of names is not provided, the service returns the full details of all Auto Scaling groups. </para> <para> This action
@@ -383,6 +533,19 @@ namespace Amazon.AutoScaling
             return response;
         }
  
+		internal DescribeAutoScalingInstancesResponse DescribeAutoScalingInstances(DescribeAutoScalingInstancesRequest request)
+        {
+            var task = DescribeAutoScalingInstancesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Returns a description of each Auto Scaling instance in the <c>InstanceIds</c> list. If a list is not provided, the service returns
         /// the full details of all instances up to a maximum of 50. By default, the service returns a list of 20 items. </para> <para> This action
@@ -408,6 +571,19 @@ namespace Amazon.AutoScaling
             return response;
         }
  
+		internal DescribeAutoScalingNotificationTypesResponse DescribeAutoScalingNotificationTypes(DescribeAutoScalingNotificationTypesRequest request)
+        {
+            var task = DescribeAutoScalingNotificationTypesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Returns a list of all notification types that are supported by Auto Scaling. </para>
         /// </summary>
@@ -428,6 +604,19 @@ namespace Amazon.AutoScaling
             return response;
         }
  
+		internal DescribeLaunchConfigurationsResponse DescribeLaunchConfigurations(DescribeLaunchConfigurationsRequest request)
+        {
+            var task = DescribeLaunchConfigurationsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Returns a full description of the launch configurations, or the specified launch configurations, if they exist. </para> <para> If no
         /// name is specified, then the full details of all launch configurations are returned. </para>
@@ -451,6 +640,19 @@ namespace Amazon.AutoScaling
             return response;
         }
  
+		internal DescribeMetricCollectionTypesResponse DescribeMetricCollectionTypes(DescribeMetricCollectionTypesRequest request)
+        {
+            var task = DescribeMetricCollectionTypesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Returns a list of metrics and a corresponding list of granularities for each metric. </para>
         /// </summary>
@@ -471,6 +673,19 @@ namespace Amazon.AutoScaling
             return response;
         }
  
+		internal DescribeNotificationConfigurationsResponse DescribeNotificationConfigurations(DescribeNotificationConfigurationsRequest request)
+        {
+            var task = DescribeNotificationConfigurationsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Returns a list of notification actions associated with Auto Scaling groups for specified events. </para>
         /// </summary>
@@ -493,6 +708,19 @@ namespace Amazon.AutoScaling
             return response;
         }
  
+		internal DescribePoliciesResponse DescribePolicies(DescribePoliciesRequest request)
+        {
+            var task = DescribePoliciesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Returns descriptions of what each policy does. This action supports pagination. If the response includes a token, there are more
         /// records available. To get the additional records, repeat the request with the response token as the <c>NextToken</c> parameter. </para>
@@ -516,6 +744,19 @@ namespace Amazon.AutoScaling
             return response;
         }
  
+		internal DescribeScalingActivitiesResponse DescribeScalingActivities(DescribeScalingActivitiesRequest request)
+        {
+            var task = DescribeScalingActivitiesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Returns the scaling activities for the specified Auto Scaling group. </para> <para> If the specified <c>ActivityIds</c> list is
         /// empty, all the activities from the past six weeks are returned. Activities are sorted by completion time. Activities still in progress
@@ -541,6 +782,19 @@ namespace Amazon.AutoScaling
             return response;
         }
  
+		internal DescribeScalingProcessTypesResponse DescribeScalingProcessTypes(DescribeScalingProcessTypesRequest request)
+        {
+            var task = DescribeScalingProcessTypesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Returns scaling process types for use in the ResumeProcesses and SuspendProcesses actions.</para>
         /// </summary>
@@ -561,6 +815,19 @@ namespace Amazon.AutoScaling
             return response;
         }
  
+		internal DescribeScheduledActionsResponse DescribeScheduledActions(DescribeScheduledActionsRequest request)
+        {
+            var task = DescribeScheduledActionsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Lists all the actions scheduled for your Auto Scaling group that haven't been executed. To see a list of actions already executed,
         /// see the activity record returned in DescribeScalingActivities. </para>
@@ -584,6 +851,19 @@ namespace Amazon.AutoScaling
             return response;
         }
  
+		internal DescribeTagsResponse DescribeTags(DescribeTagsRequest request)
+        {
+            var task = DescribeTagsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Lists the Auto Scaling group tags. </para> <para> You can use filters to limit results when describing tags. For example, you can
         /// query for tags of a particular Auto Scaling group. You can specify multiple values for a filter. A tag must match at least one of the
@@ -609,6 +889,19 @@ namespace Amazon.AutoScaling
             return response;
         }
  
+		internal DescribeTerminationPolicyTypesResponse DescribeTerminationPolicyTypes(DescribeTerminationPolicyTypesRequest request)
+        {
+            var task = DescribeTerminationPolicyTypesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Returns a list of all termination policies supported by Auto Scaling. </para>
         /// </summary>
@@ -629,6 +922,19 @@ namespace Amazon.AutoScaling
             return response;
         }
  
+		internal DisableMetricsCollectionResponse DisableMetricsCollection(DisableMetricsCollectionRequest request)
+        {
+            var task = DisableMetricsCollectionAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Disables monitoring of group metrics for the Auto Scaling group specified in <c>AutoScalingGroupName</c> .
         /// You can specify the list of affected metrics with the <c>Metrics</c> parameter. </para>
@@ -648,9 +954,22 @@ namespace Amazon.AutoScaling
             return response;
         }
  
+		internal EnableMetricsCollectionResponse EnableMetricsCollection(EnableMetricsCollectionRequest request)
+        {
+            var task = EnableMetricsCollectionAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Enables monitoring of group metrics for the Auto Scaling group specified in <c>AutoScalingGroupName</c> .
-        /// You can specify the list of enabled metrics with the <c>Metrics</c> parameter. </para> <para> Auto scaling metrics collection
+        /// You can specify the list of enabled metrics with the <c>Metrics</c> parameter. </para> <para> Auto Scaling metrics collection
         /// can be turned on only if the <c>InstanceMonitoring</c> flag, in the Auto Scaling group's launch configuration, is set to <c>True</c> .
         /// </para>
         /// </summary>
@@ -669,8 +988,21 @@ namespace Amazon.AutoScaling
             return response;
         }
  
+		internal ExecutePolicyResponse ExecutePolicy(ExecutePolicyRequest request)
+        {
+            var task = ExecutePolicyAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
-        /// <para>Runs the policy you create for your Auto Scaling group in PutScalingPolicy.</para>
+        /// <para>Executes the specified policy. </para>
         /// </summary>
         /// 
         /// <param name="executePolicyRequest">Container for the necessary parameters to execute the ExecutePolicy service method on
@@ -689,10 +1021,23 @@ namespace Amazon.AutoScaling
             return response;
         }
  
+		internal PutNotificationConfigurationResponse PutNotificationConfiguration(PutNotificationConfigurationRequest request)
+        {
+            var task = PutNotificationConfigurationAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Configures an Auto Scaling group to send notifications when specified events take place. Subscribers to this topic can have messages
-        /// for events delivered to an endpoint such as a web server or email address. </para> <para> A new <c>PutNotificationConfiguration</c>
-        /// overwrites an existing configuration.</para>
+        /// for events delivered to an endpoint such as a web server or email address. </para> <para>For more information see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/ASGettingNotifications.html">Get Email Notifications When Your Auto
+        /// Scaling Group Changes</a> </para> <para>A new <c>PutNotificationConfiguration</c> overwrites an existing configuration. </para>
         /// </summary>
         /// 
         /// <param name="putNotificationConfigurationRequest">Container for the necessary parameters to execute the PutNotificationConfiguration service
@@ -711,6 +1056,19 @@ namespace Amazon.AutoScaling
             return response;
         }
  
+		internal PutScalingPolicyResponse PutScalingPolicy(PutScalingPolicyRequest request)
+        {
+            var task = PutScalingPolicyAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Creates or updates a policy for an Auto Scaling group. To update an existing policy, use the existing policy name and set the
         /// parameter(s) you want to change. Any existing parameter not changed in an update to an existing policy is not changed in this update
@@ -735,9 +1093,24 @@ namespace Amazon.AutoScaling
             return response;
         }
  
+		internal PutScheduledUpdateGroupActionResponse PutScheduledUpdateGroupAction(PutScheduledUpdateGroupActionRequest request)
+        {
+            var task = PutScheduledUpdateGroupActionAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
-        /// <para> Creates a scheduled scaling action for an Auto Scaling group. If you leave a parameter unspecified, the corresponding value remains
-        /// unchanged in the affected Auto Scaling group. </para>
+        /// <para> Creates or updates a scheduled scaling action for an Auto Scaling group. When updating a scheduled scaling action, if you leave a
+        /// parameter unspecified, the corresponding value remains unchanged in the affected Auto Scaling group. </para> <para>For information on
+        /// creating or updating a scheduled action for your Auto Scaling group, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/schedule_time.html">Scale Based on a Schedule</a> .</para>
+        /// <para><b>NOTE:</b> Auto Scaling supports the date and time expressed in "YYYY-MM-DDThh:mm:ssZ" format in UTC/GMT only. </para>
         /// </summary>
         /// 
         /// <param name="putScheduledUpdateGroupActionRequest">Container for the necessary parameters to execute the PutScheduledUpdateGroupAction
@@ -757,8 +1130,24 @@ namespace Amazon.AutoScaling
             return response;
         }
  
+		internal ResumeProcessesResponse ResumeProcesses(ResumeProcessesRequest request)
+        {
+            var task = ResumeProcessesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
-        /// <para> Resumes Auto Scaling processes for an Auto Scaling group. For more information, see SuspendProcesses and ProcessType. </para>
+        /// <para> Resumes all suspended Auto Scaling processes for an Auto Scaling group. For information on suspending and resuming Auto Scaling
+        /// process, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US_SuspendResume.html">Suspend and Resume Auto Scaling
+        /// Process</a> .
+        /// </para>
         /// </summary>
         /// 
         /// <param name="resumeProcessesRequest">Container for the necessary parameters to execute the ResumeProcesses service method on
@@ -775,20 +1164,21 @@ namespace Amazon.AutoScaling
             return response;
         }
  
+		internal SetDesiredCapacityResponse SetDesiredCapacity(SetDesiredCapacityRequest request)
+        {
+            var task = SetDesiredCapacityAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
-        /// <para> Adjusts the desired size of the AutoScalingGroup by initiating scaling activities. When reducing the size of the group, it is not
-        /// possible to define which Amazon EC2 instances will be terminated. This applies to any Auto Scaling decisions that might result in
-        /// terminating instances. </para> <para> There are two common use cases for <c>SetDesiredCapacity</c> :
-        /// one for users of the Auto Scaling triggering system, and another for developers who write their own triggering systems. Both use
-        /// cases relate to the concept of cooldown. </para> <para> In the first case, if you use the Auto Scaling triggering system,
-        /// <c>SetDesiredCapacity</c> changes the size of your Auto Scaling group without regard to the cooldown period. This could be useful, for
-        /// example, if Auto Scaling did something unexpected for some reason. If your cooldown period is 10 minutes, Auto Scaling would normally reject
-        /// requests to change the size of the group for that entire 10-minute period. The <c>SetDesiredCapacity</c> command allows you to circumvent
-        /// this restriction and change the size of the group before the end of the cooldown period. </para> <para> In the second case, if you write
-        /// your own triggering system, you can use <c>SetDesiredCapacity</c> to control the size of your Auto Scaling group. If you want the same
-        /// cooldown functionality that Auto Scaling offers, you can configure <c>SetDesiredCapacity</c> to honor cooldown by setting the
-        /// <c>HonorCooldown</c> parameter to <c>true</c> .
-        /// </para>
+        /// <para> Sets the desired size of the specified AutoScalingGroup. </para>
         /// </summary>
         /// 
         /// <param name="setDesiredCapacityRequest">Container for the necessary parameters to execute the SetDesiredCapacity service method on
@@ -807,8 +1197,23 @@ namespace Amazon.AutoScaling
             return response;
         }
  
+		internal SetInstanceHealthResponse SetInstanceHealth(SetInstanceHealthRequest request)
+        {
+            var task = SetInstanceHealthAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
-        /// <para> Sets the health status of an instance. </para>
+        /// <para> Sets the health status of a specified instance that belongs to any of your Auto Scaling groups. </para> <para>For more information,
+        /// see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-configure-healthcheck.html">Configure Health Checks for Your
+        /// Auto Scaling group</a> .</para>
         /// </summary>
         /// 
         /// <param name="setInstanceHealthRequest">Container for the necessary parameters to execute the SetInstanceHealth service method on
@@ -825,12 +1230,27 @@ namespace Amazon.AutoScaling
             return response;
         }
  
+		internal SuspendProcessesResponse SuspendProcesses(SuspendProcessesRequest request)
+        {
+            var task = SuspendProcessesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Suspends Auto Scaling processes for an Auto Scaling group. To suspend specific process types, specify them by name with the
         /// <c>ScalingProcesses.member.N</c> parameter. To suspend all process types, omit the <c>ScalingProcesses.member.N</c> parameter. </para>
         /// <para><b>IMPORTANT:</b> Suspending either of the two primary process types, Launch or Terminate, can prevent other process types from
-        /// functioning properly. For more information about processes and their dependencies, see ProcessType. </para> <para> To resume processes that
-        /// have been suspended, use ResumeProcesses. </para>
+        /// functioning properly. </para> <para> To resume processes that have been suspended, use ResumeProcesses For more information on suspending
+        /// and resuming Auto Scaling process, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US_SuspendResume.html">Suspend
+        /// and Resume Auto Scaling Process</a> .
+        /// </para>
         /// </summary>
         /// 
         /// <param name="suspendProcessesRequest">Container for the necessary parameters to execute the SuspendProcesses service method on
@@ -847,6 +1267,19 @@ namespace Amazon.AutoScaling
             return response;
         }
  
+		internal TerminateInstanceInAutoScalingGroupResponse TerminateInstanceInAutoScalingGroup(TerminateInstanceInAutoScalingGroupRequest request)
+        {
+            var task = TerminateInstanceInAutoScalingGroupAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Terminates the specified instance. Optionally, the desired group size can be adjusted. </para> <para><b>NOTE:</b> This call simply
         /// registers a termination request. The termination of the instance cannot happen immediately. </para>
@@ -870,17 +1303,30 @@ namespace Amazon.AutoScaling
             return response;
         }
  
+		internal UpdateAutoScalingGroupResponse UpdateAutoScalingGroup(UpdateAutoScalingGroupRequest request)
+        {
+            var task = UpdateAutoScalingGroupAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Updates the configuration for the specified AutoScalingGroup. </para> <para><b>NOTE:</b> To update an Auto Scaling group with a
         /// launch configuration that has the InstanceMonitoring flag set to False, you must first ensure that collection of group metrics is disabled.
         /// Otherwise, calls to UpdateAutoScalingGroup will fail. If you have previously enabled group metrics collection, you can disable collection of
         /// all group metrics by calling DisableMetricsCollection. </para> <para> The new settings are registered upon the completion of this call. Any
-        /// launch configuration settings take effect on any triggers after this call returns. Triggers that are currently in progress aren't affected.
-        /// </para> <para><b>NOTE:</b> If a new value is specified for MinSize without specifying the value for DesiredCapacity, and if the new MinSize
-        /// is larger than the current size of the Auto Scaling Group, there will be an implicit call to SetDesiredCapacity to set the group to the new
-        /// MinSize. If a new value is specified for MaxSize without specifying the value for DesiredCapacity, and the new MaxSize is smaller than the
-        /// current size of the Auto Scaling Group, there will be an implicit call to SetDesiredCapacity to set the group to the new MaxSize. All other
-        /// optional parameters are left unchanged if not passed in the request. </para>
+        /// launch configuration settings take effect on any triggers after this call returns. Scaling activities that are currently in progress aren't
+        /// affected. </para> <para><b>NOTE:</b> If a new value is specified for MinSize without specifying the value for DesiredCapacity, and if the
+        /// new MinSize is larger than the current size of the Auto Scaling Group, there will be an implicit call to SetDesiredCapacity to set the group
+        /// to the new MinSize. If a new value is specified for MaxSize without specifying the value for DesiredCapacity, and the new MaxSize is smaller
+        /// than the current size of the Auto Scaling Group, there will be an implicit call to SetDesiredCapacity to set the group to the new MaxSize.
+        /// All other optional parameters are left unchanged if not passed in the request. </para>
         /// </summary>
         /// 
         /// <param name="updateAutoScalingGroupRequest">Container for the necessary parameters to execute the UpdateAutoScalingGroup service method on

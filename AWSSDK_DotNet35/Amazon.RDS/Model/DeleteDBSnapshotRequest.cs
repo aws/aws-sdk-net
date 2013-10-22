@@ -32,7 +32,7 @@ namespace Amazon.RDS.Model
         private string dBSnapshotIdentifier;
 
         /// <summary>
-        /// The DBSnapshot identifier. Constraints: Must be the name of an existing DB Snapshot in the <c>available</c> state.
+        /// The DBSnapshot identifier. Constraints: Must be the name of an existing DB snapshot in the <c>available</c> state.
         ///  
         /// </summary>
         public string DBSnapshotIdentifier

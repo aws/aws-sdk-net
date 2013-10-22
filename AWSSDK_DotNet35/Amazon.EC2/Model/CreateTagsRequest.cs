@@ -30,8 +30,20 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class CreateTagsRequest : AmazonWebServiceRequest
     {
+        private bool? dryRun;
         private List<string> resources = new List<string>();
         private List<Tag> tags = new List<Tag>();
+        public bool DryRun
+        {
+            get { return this.dryRun ?? default(bool); }
+            set { this.dryRun = value; }
+        }
+
+        // Check to see if DryRun property is set
+        internal bool IsSetDryRun()
+        {
+            return this.dryRun.HasValue;
+        }
 
         /// <summary>
         /// One or more IDs of resources to tag. This could be the ID of an AMI, an instance, an EBS volume, or snapshot, etc.

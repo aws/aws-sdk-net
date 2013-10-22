@@ -41,6 +41,7 @@ namespace Amazon.AutoScaling.Model
         private string iamInstanceProfile;
         private DateTime? createdTime;
         private bool? ebsOptimized;
+        private bool? associatePublicIpAddress;
 
         /// <summary>
         /// Specifies the name of the launch configuration.
@@ -407,6 +408,22 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetEbsOptimized()
         {
             return this.ebsOptimized.HasValue;
+        }
+
+        /// <summary>
+        /// Specifies whether the instance is associated with a public IP address (<c>true</c>) or not (<c>false</c>).
+        ///  
+        /// </summary>
+        public bool AssociatePublicIpAddress
+        {
+            get { return this.associatePublicIpAddress ?? default(bool); }
+            set { this.associatePublicIpAddress = value; }
+        }
+
+        // Check to see if AssociatePublicIpAddress property is set
+        internal bool IsSetAssociatePublicIpAddress()
+        {
+            return this.associatePublicIpAddress.HasValue;
         }
     }
 }

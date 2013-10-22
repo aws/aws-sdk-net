@@ -28,8 +28,8 @@ namespace Amazon.AWSSupport.Model
     /// <para>This action adds additional customer communication to an AWS Support case. You use the <i>CaseId</i> value to identify the case to
     /// which you want to add communication. You can list a set of email addresses to copy on the communication using the <i>CcEmailAddresses</i>
     /// value. The <i>CommunicationBody</i> value contains the text of the communication.</para> <para>This action's response indicates the success
-    /// or failure of the request.</para> <para>This action implements a subset of the behavior on the AWS Support Your Support Cases web
-    /// form.</para>
+    /// or failure of the request.</para> <para>This action implements a subset of the behavior on the AWS Support <a
+    /// href="https://aws.amazon.com/support" >Your Support Cases</a> web form.</para>
     /// </summary>
     public partial class AddCommunicationToCaseRequest : AmazonWebServiceRequest
     {

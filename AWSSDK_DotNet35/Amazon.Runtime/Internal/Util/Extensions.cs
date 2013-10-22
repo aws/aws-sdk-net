@@ -21,7 +21,7 @@ using Amazon.MissingTypes;
 
 namespace Amazon.Runtime.Internal.Util
 {
-    internal static class Extensions
+    internal static partial class Extensions
     {
         private static readonly long ticksPerSecond = TimeSpan.FromSeconds(1).Ticks;
         private static readonly double tickFrequency = ticksPerSecond / (double)Stopwatch.Frequency;

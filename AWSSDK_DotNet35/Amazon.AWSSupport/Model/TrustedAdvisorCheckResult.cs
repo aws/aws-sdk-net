@@ -17,18 +17,22 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
-using Amazon.Runtime;
 
 namespace Amazon.AWSSupport.Model
 {
     /// <summary>
-    /// <para>JSON-formatted object contained in the DescribeTrustedAdvisorCheckResult response. This object has three child objects:</para> <ol>
-    /// <li> TrustedAdvisorCategorySpecificSummary </li>
-    /// <li> TrustedAdvisorResourceDetail </li>
-    /// <li> TrustedAdvisorResourcesSummary </li>
+    /// <para>JSON-formatted object contained in the <a
+    /// href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorCheckResult.html"
+    /// >DescribeTrustedAdvisorCheckResult</a> response. This object has three child objects:</para> <ol> <li> <a
+    /// href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorCategorySpecificSummary.html"
+    /// >TrustedAdvisorCategorySpecificSummary</a> </li>
+    /// <li> <a href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorResourceDetail.html"
+    /// >TrustedAdvisorResourceDetail</a> </li>
+    /// <li> <a href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorResourcesSummary.html"
+    /// >TrustedAdvisorResourcesSummary</a> </li>
     /// </ol>
     /// </summary>
-    public partial class TrustedAdvisorCheckResult : AmazonWebServiceResponse
+    public class TrustedAdvisorCheckResult
     {
         
         private string checkId;
@@ -88,7 +92,8 @@ namespace Amazon.AWSSupport.Model
 
         /// <summary>
         /// JSON-formatted object that lists details about AWS resources that were analyzed in a call to Trusted Advisor <a
-        /// href="API_DescribeTrustedAdvisorCheckSummaries.html" title="DescribeTrustedAdvisorCheckSummaries">DescribeTrustedAdvisorCheckSummaries</a>.
+        /// href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorCheckSummaries.html"
+        /// title="DescribeTrustedAdvisorCheckSummaries">DescribeTrustedAdvisorCheckSummaries</a>.
         ///  
         /// </summary>
         public TrustedAdvisorResourcesSummary ResourcesSummary

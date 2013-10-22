@@ -31,8 +31,9 @@ namespace Amazon.SimpleWorkflow.Model
     /// to the event in the workflow execution history. </para> <para> <b>Access Control</b> </para> <para>If an IAM policy grants permission to use
     /// <c>RespondDecisionTaskCompleted</c> , it can express permissions for the list of decisions in the <c>decisions</c> parameter. Each of the
     /// decisions has one or more parameters, much like a regular API call. To allow for policies to be as readable as possible, you can express
-    /// permissions on decisions as if they were actual API calls, including applying conditions to some parameters. For more information, see Using
-    /// IAM to Manage Access to Amazon SWF Workflows.</para>
+    /// permissions on decisions as if they were actual API calls, including applying conditions to some parameters. For more information, see <a
+    /// href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html" >Using IAM to Manage Access to Amazon SWF Workflows</a>
+    /// .</para>
     /// </summary>
     public partial class RespondDecisionTaskCompletedRequest : AmazonWebServiceRequest
     {

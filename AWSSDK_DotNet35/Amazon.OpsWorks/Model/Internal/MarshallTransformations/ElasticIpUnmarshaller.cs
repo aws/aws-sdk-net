@@ -33,6 +33,9 @@
 
         public ElasticIp Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonToken.Null)
+                return null;
+
             ElasticIp elasticIp = new ElasticIp();
 
         
@@ -67,6 +70,13 @@
               {
                 context.Read();
                 elasticIp.Region = StringUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
+              if (context.TestExpression("InstanceId", targetDepth))
+              {
+                context.Read();
+                elasticIp.InstanceId = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   

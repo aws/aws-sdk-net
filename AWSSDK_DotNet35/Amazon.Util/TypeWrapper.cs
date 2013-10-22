@@ -34,6 +34,7 @@ namespace Amazon.Util
         Array ArrayCreateInstance(int length);
 
         Type GetInterface(string name);
+        Type[] GetInterfaces();
 
         IEnumerable<PropertyInfo> GetProperties();
 
@@ -42,6 +43,9 @@ namespace Amazon.Util
 
         MethodInfo GetMethod(string name);
         MethodInfo GetMethod(string name, ITypeInfo[] paramTypes);
+
+        MemberInfo[] GetMembers();
+
 
         ConstructorInfo GetConstructor(ITypeInfo[] paramTypes);
 
@@ -52,6 +56,9 @@ namespace Amazon.Util
         bool IsEnum {get;}
 
         bool IsClass { get; }
+
+        bool IsInterface { get; }
+        bool IsAbstract { get; }
 
         object EnumToObject(object value);
 
@@ -64,11 +71,21 @@ namespace Amazon.Util
         bool IsType(Type type);
 
         string FullName { get; }
+
+        bool IsGenericTypeDefinition { get; }
+        bool IsGenericType { get; }
+        bool ContainsGenericParameters { get; }
+        Type GetGenericTypeDefinition();
+        Type[] GetGenericArguments();
+
+        object[] GetCustomAttributes(bool inherit);
+        object[] GetCustomAttributes(ITypeInfo attributeType, bool inherit);
+
     }
 
     public static partial class TypeFactory
     {
-
+        public static readonly ITypeInfo[] EmptyTypes = new ITypeInfo[] { };
         public static ITypeInfo GetTypeInfo(Type type)
         {
             if (type == null)
@@ -98,7 +115,11 @@ namespace Amazon.Util
 
             public override bool Equals(object obj)
             {
-                return this._type.Equals(obj);
+                var typeWrapper = obj as AbstractTypeInfo;
+                if (typeWrapper == null)
+                    return false;
+
+                return this._type.Equals(typeWrapper._type);
             }
 
             public bool IsType(Type type)
@@ -108,16 +129,29 @@ namespace Amazon.Util
 
             public abstract Assembly Assembly { get; }
             public abstract Type GetInterface(string name);
+            public abstract Type[] GetInterfaces();
             public abstract IEnumerable<PropertyInfo> GetProperties();
             public abstract IEnumerable<FieldInfo> GetFields();
             public abstract FieldInfo GetField(string name);
             public abstract MethodInfo GetMethod(string name);
             public abstract MethodInfo GetMethod(string name, ITypeInfo[] paramTypes);
+            public abstract MemberInfo[] GetMembers();
             public abstract PropertyInfo GetProperty(string name);
             public abstract bool IsAssignableFrom(ITypeInfo typeInfo);
             public abstract bool IsClass { get; }
+            public abstract bool IsInterface { get; }
+            public abstract bool IsAbstract { get; }
             public abstract bool IsEnum { get; }
             public abstract ConstructorInfo GetConstructor(ITypeInfo[] paramTypes);
+
+            public abstract object[] GetCustomAttributes(bool inherit);
+            public abstract object[] GetCustomAttributes(ITypeInfo attributeType, bool inherit);
+
+            public abstract bool ContainsGenericParameters { get; }
+            public abstract bool IsGenericTypeDefinition { get; }
+            public abstract bool IsGenericType {get;}
+            public abstract Type GetGenericTypeDefinition();
+            public abstract Type[] GetGenericArguments();
 
             public bool IsArray
             {

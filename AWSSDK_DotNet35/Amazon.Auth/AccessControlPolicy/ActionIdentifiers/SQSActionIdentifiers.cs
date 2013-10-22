@@ -22,7 +22,7 @@ namespace Amazon.Auth.AccessControlPolicy.ActionIdentifiers
     /// The available AWS access control policy actions for Amazon SQS.
     /// </summary>
     /// <see cref="Amazon.Auth.AccessControlPolicy.Statement.Actions"/>
-    public class SQSActionIdentifiers
+    public static class SQSActionIdentifiers
     {
         public static readonly ActionIdentifier AllSQSActions = new ActionIdentifier("sqs:*");
 
@@ -32,6 +32,7 @@ namespace Amazon.Auth.AccessControlPolicy.ActionIdentifiers
         public static readonly ActionIdentifier DeleteMessage = new ActionIdentifier("sqs:DeleteMessage");
         public static readonly ActionIdentifier DeleteQueue = new ActionIdentifier("sqs:DeleteQueue");
         public static readonly ActionIdentifier GetQueueAttributes = new ActionIdentifier("sqs:GetQueueAttributes");
+        public static readonly ActionIdentifier GetQueueUrl = new ActionIdentifier("sqs:GetQueueUrl");
         public static readonly ActionIdentifier ListQueues = new ActionIdentifier("sqs:ListQueues");
         public static readonly ActionIdentifier ReceiveMessage = new ActionIdentifier("sqs:ReceiveMessage");
         public static readonly ActionIdentifier RemovePermission = new ActionIdentifier("sqs:RemovePermission");

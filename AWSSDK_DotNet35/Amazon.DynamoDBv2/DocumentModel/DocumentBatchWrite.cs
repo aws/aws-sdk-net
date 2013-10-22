@@ -366,7 +366,11 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return nextItems;
         }
 
+#if (WIN_RT || WINDOWS_PHONE)
+        private void CallUntilCompletion(BatchWriteItemRequest request, Dictionary<Key, Document> documentMap, AmazonDynamoDBClient client)
+#else
         private void CallUntilCompletion(BatchWriteItemRequest request, Dictionary<Key, Document> documentMap, IAmazonDynamoDB client)
+#endif
         {
             do
             {
@@ -617,7 +621,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
             if (!AreBothNull(x.S, y.S))
             {
-                if (!x.S.Equals(y.S, StringComparison.InvariantCulture))
+                if (!x.S.Equals(y.S, StringComparison.OrdinalIgnoreCase))
                 {
                     return false;
                 }
@@ -625,7 +629,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
             if (!AreBothNull(x.N, y.N))
             {
-                if (!x.N.Equals(y.N, StringComparison.InvariantCulture))
+                if (!x.N.Equals(y.N, StringComparison.OrdinalIgnoreCase))
                 {
                     return false;
                 }

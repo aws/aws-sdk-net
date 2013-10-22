@@ -33,6 +33,9 @@
 
         public History Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonToken.Null)
+                return null;
+
             History history = new History();
 
         

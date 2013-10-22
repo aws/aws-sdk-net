@@ -34,7 +34,11 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(createKeyPairRequest, "AmazonEC2");
             request.Parameters.Add("Action", "CreateKeyPair");
-            request.Parameters.Add("Version", "2013-02-01");
+            request.Parameters.Add("Version", "2013-10-01");
+            if (createKeyPairRequest != null && createKeyPairRequest.IsSetDryRun())
+            {
+                request.Parameters.Add("DryRun", StringUtils.FromBool(createKeyPairRequest.DryRun));
+            }
             if (createKeyPairRequest != null && createKeyPairRequest.IsSetKeyName())
             {
                 request.Parameters.Add("KeyName", StringUtils.FromString(createKeyPairRequest.KeyName));

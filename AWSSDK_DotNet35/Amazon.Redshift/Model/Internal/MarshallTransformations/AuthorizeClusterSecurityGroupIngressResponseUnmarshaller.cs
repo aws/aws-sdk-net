@@ -57,7 +57,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
         }
         
         
-        private void UnmarshallResult(XmlUnmarshallerContext context,AuthorizeClusterSecurityGroupIngressResponse response)
+        private static void UnmarshallResult(XmlUnmarshallerContext context,AuthorizeClusterSecurityGroupIngressResponse response)
         {
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;

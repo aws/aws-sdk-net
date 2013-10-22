@@ -21,8 +21,9 @@ using System.IO;
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// <para>Contains the information required to retrieve an app or cookbook from a repository. For more information, see Creating Apps or Custom
-    /// Recipes and Cookbooks.</para>
+    /// <para>Contains the information required to retrieve an app or cookbook from a repository. For more information, see <a
+    /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html" >Creating Apps</a> or <a
+    /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html" >Custom Recipes and Cookbooks</a> .</para>
     /// </summary>
     public class Source
     {

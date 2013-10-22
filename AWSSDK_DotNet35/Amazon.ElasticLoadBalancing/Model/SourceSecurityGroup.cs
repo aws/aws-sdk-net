@@ -22,7 +22,9 @@ namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
     /// <para> This data type is used as a response element in the DescribeLoadBalancers action. For information about Elastic Load Balancing
-    /// security groups, go to Using Security Groups With Elastic Load Balancing in the <i>Elastic Load Balancing Developer Guide</i> .
+    /// security groups, go to <a
+    /// href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-security-features.html#using-elb-security-groups" >Using
+    /// Security Groups With Elastic Load Balancing</a> in the <i>Elastic Load Balancing Developer Guide</i> .
     /// </para>
     /// </summary>
     public class SourceSecurityGroup

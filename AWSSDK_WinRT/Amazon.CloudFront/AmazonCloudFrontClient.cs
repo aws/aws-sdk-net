@@ -62,7 +62,7 @@ namespace Amazon.CloudFront
         /// <param name="credentials">AWS Credentials</param>
         /// <param name="clientConfig">The AmazonCloudFrontClient Configuration Object</param>
         public AmazonCloudFrontClient(AWSCredentials credentials, AmazonCloudFrontConfig clientConfig)
-            : base(credentials, clientConfig, false, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(credentials, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
         {
         }
 
@@ -144,6 +144,19 @@ namespace Amazon.CloudFront
         #endregion
 
  
+		internal CreateCloudFrontOriginAccessIdentityResponse CreateCloudFrontOriginAccessIdentity(CreateCloudFrontOriginAccessIdentityRequest request)
+        {
+            var task = CreateCloudFrontOriginAccessIdentityAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Create a new origin access identity. </para>
         /// </summary>
@@ -170,6 +183,19 @@ namespace Amazon.CloudFront
             return response;
         }
  
+		internal CreateDistributionResponse CreateDistribution(CreateDistributionRequest request)
+        {
+            var task = CreateDistributionAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Create a new distribution. </para>
         /// </summary>
@@ -181,20 +207,23 @@ namespace Amazon.CloudFront
         /// 
         /// <exception cref="T:Amazon.CloudFront.Model.TooManyCookieNamesInWhiteListException" />
         /// <exception cref="T:Amazon.CloudFront.Model.InvalidDefaultRootObjectException" />
+        /// <exception cref="T:Amazon.CloudFront.Model.InvalidResponseCodeException" />
         /// <exception cref="T:Amazon.CloudFront.Model.MissingBodyException" />
         /// <exception cref="T:Amazon.CloudFront.Model.TooManyDistributionCNAMEsException" />
         /// <exception cref="T:Amazon.CloudFront.Model.InvalidForwardCookiesException" />
         /// <exception cref="T:Amazon.CloudFront.Model.TooManyDistributionsException" />
         /// <exception cref="T:Amazon.CloudFront.Model.NoSuchOriginException" />
         /// <exception cref="T:Amazon.CloudFront.Model.InconsistentQuantitiesException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.CNAMEAlreadyExistsException" />
         /// <exception cref="T:Amazon.CloudFront.Model.InvalidArgumentException" />
+        /// <exception cref="T:Amazon.CloudFront.Model.CNAMEAlreadyExistsException" />
         /// <exception cref="T:Amazon.CloudFront.Model.InvalidOriginAccessIdentityException" />
         /// <exception cref="T:Amazon.CloudFront.Model.TrustedSignerDoesNotExistException" />
         /// <exception cref="T:Amazon.CloudFront.Model.InvalidOriginException" />
         /// <exception cref="T:Amazon.CloudFront.Model.TooManyCertificatesException" />
+        /// <exception cref="T:Amazon.CloudFront.Model.InvalidRelativePathException" />
         /// <exception cref="T:Amazon.CloudFront.Model.TooManyCacheBehaviorsException" />
         /// <exception cref="T:Amazon.CloudFront.Model.TooManyTrustedSignersException" />
+        /// <exception cref="T:Amazon.CloudFront.Model.InvalidErrorCodeException" />
         /// <exception cref="T:Amazon.CloudFront.Model.InvalidViewerCertificateException" />
         /// <exception cref="T:Amazon.CloudFront.Model.AccessDeniedException" />
         /// <exception cref="T:Amazon.CloudFront.Model.TooManyOriginsException" />
@@ -212,6 +241,19 @@ namespace Amazon.CloudFront
             return response;
         }
  
+		internal CreateInvalidationResponse CreateInvalidation(CreateInvalidationRequest request)
+        {
+            var task = CreateInvalidationAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Create a new invalidation. </para>
         /// </summary>
@@ -240,6 +282,19 @@ namespace Amazon.CloudFront
             return response;
         }
  
+		internal CreateStreamingDistributionResponse CreateStreamingDistribution(CreateStreamingDistributionRequest request)
+        {
+            var task = CreateStreamingDistributionAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Create a new streaming distribution. </para>
         /// </summary>
@@ -273,6 +328,19 @@ namespace Amazon.CloudFront
             return response;
         }
  
+		internal DeleteCloudFrontOriginAccessIdentityResponse DeleteCloudFrontOriginAccessIdentity(DeleteCloudFrontOriginAccessIdentityRequest request)
+        {
+            var task = DeleteCloudFrontOriginAccessIdentityAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Delete an origin access identity. </para>
         /// </summary>
@@ -297,6 +365,19 @@ namespace Amazon.CloudFront
             return response;
         }
  
+		internal DeleteDistributionResponse DeleteDistribution(DeleteDistributionRequest request)
+        {
+            var task = DeleteDistributionAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Delete a distribution. </para>
         /// </summary>
@@ -321,6 +402,19 @@ namespace Amazon.CloudFront
             return response;
         }
  
+		internal DeleteStreamingDistributionResponse DeleteStreamingDistribution(DeleteStreamingDistributionRequest request)
+        {
+            var task = DeleteStreamingDistributionAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Delete a streaming distribution. </para>
         /// </summary>
@@ -345,6 +439,19 @@ namespace Amazon.CloudFront
             return response;
         }
  
+		internal GetCloudFrontOriginAccessIdentityResponse GetCloudFrontOriginAccessIdentity(GetCloudFrontOriginAccessIdentityRequest request)
+        {
+            var task = GetCloudFrontOriginAccessIdentityAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Get the information about an origin access identity. </para>
         /// </summary>
@@ -368,6 +475,19 @@ namespace Amazon.CloudFront
             return response;
         }
  
+		internal GetCloudFrontOriginAccessIdentityConfigResponse GetCloudFrontOriginAccessIdentityConfig(GetCloudFrontOriginAccessIdentityConfigRequest request)
+        {
+            var task = GetCloudFrontOriginAccessIdentityConfigAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Get the configuration information about an origin access identity. </para>
         /// </summary>
@@ -391,6 +511,19 @@ namespace Amazon.CloudFront
             return response;
         }
  
+		internal GetDistributionResponse GetDistribution(GetDistributionRequest request)
+        {
+            var task = GetDistributionAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Get the information about a distribution. </para>
         /// </summary>
@@ -414,6 +547,19 @@ namespace Amazon.CloudFront
             return response;
         }
  
+		internal GetDistributionConfigResponse GetDistributionConfig(GetDistributionConfigRequest request)
+        {
+            var task = GetDistributionConfigAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Get the configuration information about a distribution. </para>
         /// </summary>
@@ -437,6 +583,19 @@ namespace Amazon.CloudFront
             return response;
         }
  
+		internal GetInvalidationResponse GetInvalidation(GetInvalidationRequest request)
+        {
+            var task = GetInvalidationAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Get the information about an invalidation. </para>
         /// </summary>
@@ -461,6 +620,19 @@ namespace Amazon.CloudFront
             return response;
         }
  
+		internal GetStreamingDistributionResponse GetStreamingDistribution(GetStreamingDistributionRequest request)
+        {
+            var task = GetStreamingDistributionAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Get the information about a streaming distribution. </para>
         /// </summary>
@@ -484,6 +656,19 @@ namespace Amazon.CloudFront
             return response;
         }
  
+		internal GetStreamingDistributionConfigResponse GetStreamingDistributionConfig(GetStreamingDistributionConfigRequest request)
+        {
+            var task = GetStreamingDistributionConfigAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Get the configuration information about a streaming distribution. </para>
         /// </summary>
@@ -507,6 +692,19 @@ namespace Amazon.CloudFront
             return response;
         }
  
+		internal ListCloudFrontOriginAccessIdentitiesResponse ListCloudFrontOriginAccessIdentities(ListCloudFrontOriginAccessIdentitiesRequest request)
+        {
+            var task = ListCloudFrontOriginAccessIdentitiesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> List origin access identities. </para>
         /// </summary>
@@ -529,6 +727,19 @@ namespace Amazon.CloudFront
             return response;
         }
  
+		internal ListDistributionsResponse ListDistributions(ListDistributionsRequest request)
+        {
+            var task = ListDistributionsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> List distributions. </para>
         /// </summary>
@@ -551,6 +762,19 @@ namespace Amazon.CloudFront
             return response;
         }
  
+		internal ListInvalidationsResponse ListInvalidations(ListInvalidationsRequest request)
+        {
+            var task = ListInvalidationsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> List invalidation batches. </para>
         /// </summary>
@@ -575,6 +799,19 @@ namespace Amazon.CloudFront
             return response;
         }
  
+		internal ListStreamingDistributionsResponse ListStreamingDistributions(ListStreamingDistributionsRequest request)
+        {
+            var task = ListStreamingDistributionsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> List streaming distributions. </para>
         /// </summary>
@@ -597,6 +834,19 @@ namespace Amazon.CloudFront
             return response;
         }
  
+		internal UpdateCloudFrontOriginAccessIdentityResponse UpdateCloudFrontOriginAccessIdentity(UpdateCloudFrontOriginAccessIdentityRequest request)
+        {
+            var task = UpdateCloudFrontOriginAccessIdentityAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Update an origin access identity. </para>
         /// </summary>
@@ -626,6 +876,19 @@ namespace Amazon.CloudFront
             return response;
         }
  
+		internal UpdateDistributionResponse UpdateDistribution(UpdateDistributionRequest request)
+        {
+            var task = UpdateDistributionAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Update a distribution. </para>
         /// </summary>
@@ -636,27 +899,30 @@ namespace Amazon.CloudFront
         /// <returns>The response from the UpdateDistribution service method, as returned by AmazonCloudFront.</returns>
         /// 
         /// <exception cref="T:Amazon.CloudFront.Model.TooManyCookieNamesInWhiteListException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidDefaultRootObjectException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidIfMatchVersionException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.IllegalUpdateException" />
+        /// <exception cref="T:Amazon.CloudFront.Model.InvalidResponseCodeException" />
         /// <exception cref="T:Amazon.CloudFront.Model.MissingBodyException" />
         /// <exception cref="T:Amazon.CloudFront.Model.TooManyDistributionCNAMEsException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidForwardCookiesException" />
         /// <exception cref="T:Amazon.CloudFront.Model.NoSuchOriginException" />
         /// <exception cref="T:Amazon.CloudFront.Model.PreconditionFailedException" />
         /// <exception cref="T:Amazon.CloudFront.Model.InconsistentQuantitiesException" />
         /// <exception cref="T:Amazon.CloudFront.Model.CNAMEAlreadyExistsException" />
         /// <exception cref="T:Amazon.CloudFront.Model.InvalidArgumentException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.TrustedSignerDoesNotExistException" />
         /// <exception cref="T:Amazon.CloudFront.Model.InvalidOriginAccessIdentityException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.TooManyCertificatesException" />
         /// <exception cref="T:Amazon.CloudFront.Model.TooManyCacheBehaviorsException" />
         /// <exception cref="T:Amazon.CloudFront.Model.TooManyTrustedSignersException" />
         /// <exception cref="T:Amazon.CloudFront.Model.NoSuchDistributionException" />
         /// <exception cref="T:Amazon.CloudFront.Model.InvalidViewerCertificateException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.AccessDeniedException" />
         /// <exception cref="T:Amazon.CloudFront.Model.TooManyOriginsException" />
         /// <exception cref="T:Amazon.CloudFront.Model.InvalidRequiredProtocolException" />
+        /// <exception cref="T:Amazon.CloudFront.Model.InvalidDefaultRootObjectException" />
+        /// <exception cref="T:Amazon.CloudFront.Model.InvalidIfMatchVersionException" />
+        /// <exception cref="T:Amazon.CloudFront.Model.IllegalUpdateException" />
+        /// <exception cref="T:Amazon.CloudFront.Model.InvalidForwardCookiesException" />
+        /// <exception cref="T:Amazon.CloudFront.Model.TrustedSignerDoesNotExistException" />
+        /// <exception cref="T:Amazon.CloudFront.Model.TooManyCertificatesException" />
+        /// <exception cref="T:Amazon.CloudFront.Model.InvalidRelativePathException" />
+        /// <exception cref="T:Amazon.CloudFront.Model.InvalidErrorCodeException" />
+        /// <exception cref="T:Amazon.CloudFront.Model.AccessDeniedException" />
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -669,6 +935,19 @@ namespace Amazon.CloudFront
             return response;
         }
  
+		internal UpdateStreamingDistributionResponse UpdateStreamingDistribution(UpdateStreamingDistributionRequest request)
+        {
+            var task = UpdateStreamingDistributionAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Update a streaming distribution. </para>
         /// </summary>

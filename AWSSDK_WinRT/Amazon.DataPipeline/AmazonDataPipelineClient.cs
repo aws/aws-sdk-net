@@ -41,8 +41,8 @@ namespace Amazon.DataPipeline
     /// Runner. AWS Data Pipeline Task Runner provides logic for common data management scenarios, such as performing database queries and running
     /// data analysis using Amazon Elastic MapReduce (Amazon EMR). You can use AWS Data Pipeline Task Runner as your task runner, or you can write
     /// your own task runner to provide custom data management. </para> <para> The AWS Data Pipeline API uses the Signature Version 4 protocol for
-    /// signing requests. For more information about how to sign a request with this protocol, see Signature Version 4 Signing Process. In the code
-    /// examples in this reference, the Signature Version 4 Request parameters are represented as AuthParams. </para>
+    /// signing requests. For more information about how to sign a request with this protocol, see <a href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 Signing Process</a> . In the code examples
+    /// in this reference, the Signature Version 4 Request parameters are represented as AuthParams. </para>
     /// </summary>
 	public partial class AmazonDataPipelineClient : AmazonWebServiceClient, Amazon.DataPipeline.IAmazonDataPipeline
     {
@@ -76,7 +76,7 @@ namespace Amazon.DataPipeline
         /// <param name="credentials">AWS Credentials</param>
         /// <param name="clientConfig">The AmazonDataPipelineClient Configuration Object</param>
         public AmazonDataPipelineClient(AWSCredentials credentials, AmazonDataPipelineConfig clientConfig)
-            : base(credentials, clientConfig, false, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(credentials, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
         {
         }
 
@@ -158,6 +158,19 @@ namespace Amazon.DataPipeline
         #endregion
 
  
+		internal ActivatePipelineResponse ActivatePipeline(ActivatePipelineRequest request)
+        {
+            var task = ActivatePipelineAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Validates a pipeline and initiates processing. If the pipeline does not pass validation, activation fails. </para> <para> Call this
         /// action to start processing pipeline tasks of a pipeline you've created using the CreatePipeline and PutPipelineDefinition actions. A
@@ -185,6 +198,19 @@ namespace Amazon.DataPipeline
             return response;
         }
  
+		internal CreatePipelineResponse CreatePipeline(CreatePipelineRequest request)
+        {
+            var task = CreatePipelineAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Creates a new empty pipeline. When this action succeeds, you can then use the PutPipelineDefinition action to populate the
         /// pipeline.</para>
@@ -209,6 +235,19 @@ namespace Amazon.DataPipeline
             return response;
         }
  
+		internal DeletePipelineResponse DeletePipeline(DeletePipelineRequest request)
+        {
+            var task = DeletePipelineAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Permanently deletes a pipeline, its pipeline definition and its run history. You cannot query or restore a deleted pipeline. AWS Data
         /// Pipeline will attempt to cancel instances associated with the pipeline that are currently being processed by task runners. Deleting a
@@ -234,6 +273,19 @@ namespace Amazon.DataPipeline
             return response;
         }
  
+		internal DescribeObjectsResponse DescribeObjects(DescribeObjectsRequest request)
+        {
+            var task = DescribeObjectsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Returns the object definitions for a set of objects associated with the pipeline. Object definitions are composed of a set of fields
         /// that define the properties of the object. </para>
@@ -260,6 +312,19 @@ namespace Amazon.DataPipeline
             return response;
         }
  
+		internal DescribePipelinesResponse DescribePipelines(DescribePipelinesRequest request)
+        {
+            var task = DescribePipelinesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Retrieve metadata about one or more pipelines. The information retrieved includes the name of the pipeline, the pipeline identifier,
         /// its current state, and the user account that owns the pipeline. Using account credentials, you can retrieve metadata about pipelines that
@@ -289,6 +354,19 @@ namespace Amazon.DataPipeline
             return response;
         }
  
+		internal EvaluateExpressionResponse EvaluateExpression(EvaluateExpressionRequest request)
+        {
+            var task = EvaluateExpressionAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Evaluates a string in the context of a specified object. A task runner can use this action to evaluate SQL queries stored in Amazon
         /// S3. </para>
@@ -316,6 +394,19 @@ namespace Amazon.DataPipeline
             return response;
         }
  
+		internal GetPipelineDefinitionResponse GetPipelineDefinition(GetPipelineDefinitionRequest request)
+        {
+            var task = GetPipelineDefinitionAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Returns the definition of the specified pipeline. You can call GetPipelineDefinition to retrieve the pipeline definition you provided
         /// using PutPipelineDefinition.</para>
@@ -342,6 +433,19 @@ namespace Amazon.DataPipeline
             return response;
         }
  
+		internal ListPipelinesResponse ListPipelines(ListPipelinesRequest request)
+        {
+            var task = ListPipelinesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Returns a list of pipeline identifiers for all active pipelines. Identifiers are returned only for pipelines you have permission to
         /// access. </para>
@@ -366,6 +470,19 @@ namespace Amazon.DataPipeline
             return response;
         }
  
+		internal PollForTaskResponse PollForTask(PollForTaskRequest request)
+        {
+            var task = PollForTaskAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Task runners call this action to receive a task to perform from AWS Data Pipeline. The task runner specifies which tasks it can
         /// perform by setting a value for the workerGroup parameter of the PollForTask call. The task returned by PollForTask may come from any of the
@@ -396,6 +513,19 @@ namespace Amazon.DataPipeline
             return response;
         }
  
+		internal PutPipelineDefinitionResponse PutPipelineDefinition(PutPipelineDefinitionRequest request)
+        {
+            var task = PutPipelineDefinitionAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Adds tasks, schedules, and preconditions that control the behavior of the pipeline. You can use PutPipelineDefinition to populate a
         /// new pipeline. </para> <para> PutPipelineDefinition also validates the configuration as it adds it to the pipeline. Changes to the pipeline
@@ -428,6 +558,19 @@ namespace Amazon.DataPipeline
             return response;
         }
  
+		internal QueryObjectsResponse QueryObjects(QueryObjectsRequest request)
+        {
+            var task = QueryObjectsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Queries a pipeline for the names of objects that match a specified set of conditions.</para> <para>The objects returned by
         /// QueryObjects are paginated and then filtered by the value you set for query. This means the action may return an empty result set with a
@@ -456,6 +599,19 @@ namespace Amazon.DataPipeline
             return response;
         }
  
+		internal ReportTaskProgressResponse ReportTaskProgress(ReportTaskProgressRequest request)
+        {
+            var task = ReportTaskProgressAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Updates the AWS Data Pipeline service on the progress of the calling task runner. When the task runner is assigned a task, it should
         /// call ReportTaskProgress to acknowledge that it has the task within 2 minutes. If the web service does not recieve this acknowledgement
@@ -488,6 +644,19 @@ namespace Amazon.DataPipeline
             return response;
         }
  
+		internal ReportTaskRunnerHeartbeatResponse ReportTaskRunnerHeartbeat(ReportTaskRunnerHeartbeatRequest request)
+        {
+            var task = ReportTaskRunnerHeartbeatAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Task runners call ReportTaskRunnerHeartbeat every 15 minutes to indicate that they are operational. In the case of AWS Data Pipeline
         /// Task Runner launched on a resource managed by AWS Data Pipeline, the web service can use this call to detect when the task runner
@@ -513,6 +682,19 @@ namespace Amazon.DataPipeline
             return response;
         }
  
+		internal SetStatusResponse SetStatus(SetStatusRequest request)
+        {
+            var task = SetStatusAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Requests that the status of an array of physical or logical pipeline objects be updated in the pipeline. This update may not occur
         /// immediately, but is eventually consistent. The status that can be set depends on the type of object.</para>
@@ -536,6 +718,19 @@ namespace Amazon.DataPipeline
             return response;
         }
  
+		internal SetTaskStatusResponse SetTaskStatus(SetTaskStatusRequest request)
+        {
+            var task = SetTaskStatusAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Notifies AWS Data Pipeline that a task is completed and provides information about the final status. The task runner calls this
         /// action regardless of whether the task was sucessful. The task runner does not need to call SetTaskStatus for tasks that are canceled by the
@@ -564,6 +759,19 @@ namespace Amazon.DataPipeline
             return response;
         }
  
+		internal ValidatePipelineDefinitionResponse ValidatePipelineDefinition(ValidatePipelineDefinitionRequest request)
+        {
+            var task = ValidatePipelineDefinitionAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Tests the pipeline definition with a set of validation checks to ensure that it is well formed and can run without error. </para>
         /// </summary>

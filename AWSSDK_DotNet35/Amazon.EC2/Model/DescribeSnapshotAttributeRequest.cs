@@ -29,8 +29,20 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeSnapshotAttributeRequest : AmazonWebServiceRequest
     {
+        private bool? dryRun;
         private string snapshotId;
         private SnapshotAttributeName attribute;
+        public bool DryRun
+        {
+            get { return this.dryRun ?? default(bool); }
+            set { this.dryRun = value; }
+        }
+
+        // Check to see if DryRun property is set
+        internal bool IsSetDryRun()
+        {
+            return this.dryRun.HasValue;
+        }
 
         /// <summary>
         /// The ID of the EBS snapshot whose attribute is being described.

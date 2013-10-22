@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// <para> This data type is used as a response element in the DescribeReservedCacheNodesOfferings action. </para>
+    /// <para>Describes all of the attributes of a reserved cache node offering.</para>
     /// </summary>
     public class ReservedCacheNodesOffering
     {
@@ -36,7 +36,7 @@ namespace Amazon.ElastiCache.Model
         private List<RecurringCharge> recurringCharges = new List<RecurringCharge>();
 
         /// <summary>
-        /// The offering identifier.
+        /// A unique identifier for the reserved cache node offering.
         ///  
         /// </summary>
         public string ReservedCacheNodesOfferingId
@@ -52,7 +52,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// The Cache Node type for the reserved Cache Node.
+        /// The cache node type for the reserved cache node.
         ///  
         /// </summary>
         public string CacheNodeType
@@ -68,7 +68,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// The duration of the offering in seconds.
+        /// The duration of the offering. in seconds.
         ///  
         /// </summary>
         public int Duration
@@ -148,7 +148,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// The recurring price charged to run this reserved Cache Node.
+        /// The recurring price charged to run this reserved cache node.
         ///  
         /// </summary>
         public List<RecurringCharge> RecurringCharges

@@ -38,7 +38,7 @@
           return response;
         }
         
-        private void UnmarshallResult(JsonUnmarshallerContext context,DescribeCachediSCSIVolumesResponse response)
+        private static void UnmarshallResult(JsonUnmarshallerContext context,DescribeCachediSCSIVolumesResponse response)
         {
           
             int originalDepth = context.CurrentDepth;

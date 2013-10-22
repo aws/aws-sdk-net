@@ -26,8 +26,9 @@ namespace Amazon.Redshift.Model
     /// <summary>
     /// Container for the parameters to the DeleteClusterSecurityGroup operation.
     /// <para> Deletes an Amazon Redshift security group. </para> <para><b>NOTE:</b>You cannot delete a security group that is associated with any
-    /// clusters. You cannot delete the default security group.</para> <para> For information about managing security groups, go to Amazon Redshift
-    /// Cluster Security Groups in the <i>Amazon Redshift Management Guide</i> .
+    /// clusters. You cannot delete the default security group.</para> <para> For information about managing security groups, go to <a
+    /// href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html" >Amazon Redshift Cluster Security Groups</a> in the
+    /// <i>Amazon Redshift Management Guide</i> .
     /// </para>
     /// </summary>
     public partial class DeleteClusterSecurityGroupRequest : AmazonWebServiceRequest

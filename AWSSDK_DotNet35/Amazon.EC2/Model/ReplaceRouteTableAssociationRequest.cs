@@ -26,14 +26,27 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Container for the parameters to the ReplaceRouteTableAssociation operation.
     /// <para> Changes the route table associated with a given subnet in a VPC. After you execute this action, the subnet uses the routes in the new
-    /// route table it's associated with. For more information about route tables, go to Route Tables in the Amazon Virtual Private Cloud User
-    /// Guide. </para> <para> You can also use this to change which table is the main route table in the VPC. You just specify the main route
-    /// table's association ID and the route table that you want to be the new main route table. </para>
+    /// route table it's associated with. For more information about route tables, go to <a
+    /// href="http://docs.amazonwebservices.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html" >Route Tables</a> in the Amazon Virtual Private
+    /// Cloud User Guide. </para> <para> You can also use this to change which table is the main route table in the VPC. You just specify the main
+    /// route table's association ID and the route table that you want to be the new main route table. </para>
     /// </summary>
     public partial class ReplaceRouteTableAssociationRequest : AmazonWebServiceRequest
     {
+        private bool? dryRun;
         private string associationId;
         private string routeTableId;
+        public bool DryRun
+        {
+            get { return this.dryRun ?? default(bool); }
+            set { this.dryRun = value; }
+        }
+
+        // Check to see if DryRun property is set
+        internal bool IsSetDryRun()
+        {
+            return this.dryRun.HasValue;
+        }
 
         /// <summary>
         /// The ID representing the current association between the original route table and the subnet.

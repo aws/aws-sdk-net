@@ -83,7 +83,7 @@ namespace Amazon.S3.Transfer.Internal
                     Key = key,
                     FilePath = filepath,
                     CannedACL = this._request.CannedACL,
-                    MetaData = this._request.MetaData,
+                    Metadata = this._request.Metadata,
                     StorageClass = this._request.StorageClass,
                     ServerSideEncryptionMethod = this._request.ServerSideEncryptionMethod
                 };

@@ -33,6 +33,9 @@
 
         public PutRequest Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonToken.Null)
+                return null;
+
             PutRequest putRequest = new PutRequest();
 
         

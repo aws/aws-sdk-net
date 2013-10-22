@@ -31,10 +31,22 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeSnapshotsRequest : AmazonWebServiceRequest
     {
+        private bool? dryRun;
         private List<string> snapshotIds = new List<string>();
         private List<string> ownerIds = new List<string>();
         private List<string> restorableByUserIds = new List<string>();
         private List<Filter> filters = new List<Filter>();
+        public bool DryRun
+        {
+            get { return this.dryRun ?? default(bool); }
+            set { this.dryRun = value; }
+        }
+
+        // Check to see if DryRun property is set
+        internal bool IsSetDryRun()
+        {
+            return this.dryRun.HasValue;
+        }
 
         /// <summary>
         /// The optional list of EBS snapshot IDs to describe.
@@ -53,7 +65,9 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The optional list of EBS snapshot owners.
+        /// An optional list of owners by which to scope the described EBS snapshots. Valid values are: <ul> <li> <c>self</c> : Snapshots owned by you
+        /// </li> <li> <i>AWS account ID</i> : Snapshots owned by this account ID </li> <li> <c>amazon</c> : Snapshots owned by Amazon </li> </ul> The
+        /// values <c>self</c> and <c>amazon</c> are literals.
         ///  
         /// </summary>
         public List<string> OwnerIds
@@ -69,7 +83,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The optional list of users who have permission to create volumes from the described EBS snapshots.
+        /// An optional list of users. The described snapshots are scoped to only those snapshots from which these users can create volumes.
         ///  
         /// </summary>
         public List<string> RestorableByUserIds

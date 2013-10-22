@@ -25,18 +25,20 @@ namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateLoadBalancer operation.
-    /// <para> Creates a new LoadBalancer. </para> <para> After the call has completed successfully, a new LoadBalancer is created; however, it will
-    /// not be usable until at least one instance has been registered. When the LoadBalancer creation is completed, the client can check whether or
-    /// not it is usable by using the DescribeInstanceHealth action. The LoadBalancer is usable as soon as any registered instance is
+    /// <para> Creates a new load balancer. </para> <para> After the call has completed successfully, a new load balancer is created; however, it
+    /// will not be usable until at least one instance has been registered. When the load balancer creation is completed, the client can check
+    /// whether or not it is usable by using the DescribeInstanceHealth action. The load balancer is usable as soon as any registered instance is
     /// <i>InService</i> .
-    /// </para> <para><b>NOTE:</b> Currently, the client's quota of LoadBalancers is limited to ten per Region. </para> <para><b>NOTE:</b>
-    /// LoadBalancer DNS names vary depending on the Region they're created in. For LoadBalancers created in the United States, the DNS name ends
+    /// </para> <para><b>NOTE:</b> Currently, the client's quota of load balancers is limited to ten per Region. </para> <para><b>NOTE:</b>
+    /// Load balancer DNS names vary depending on the Region they're created in. For load balancers created in the United States, the DNS name ends
     /// with: us-east-1.elb.amazonaws.com (for the Northern Virginia Region) us-west-1.elb.amazonaws.com (for the Northern California Region) For
-    /// LoadBalancers created in the EU (Ireland) Region, the DNS name ends with: eu-west-1.elb.amazonaws.com </para> <para>For information on using
-    /// CreateLoadBalancer to create a new LoadBalancer in Amazon EC2, go to Using Query API section in the <i>Creating a Load Balancer With SSL
-    /// Cipher Settings and Back-end Authentication</i> topic of the <i>Elastic Load Balancing Developer Guide</i> .</para> <para>For information on
-    /// using CreateLoadBalancer to create a new LoadBalancer in Amazon VPC, see <i>Using the Query API</i> in the Creating a Basic Load Balancer in
-    /// Amazon VPC section in the <i>Elastic Load Balancing Developer Guide</i> .</para>
+    /// load balancers created in the EU (Ireland) Region, the DNS name ends with: eu-west-1.elb.amazonaws.com </para> <para>For information on
+    /// using CreateLoadBalancer to create a new load balancer in Amazon EC2, go to <a
+    /// href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/creating_lb_QueryAPI.html" >Using Query API</a> section in the
+    /// <i>Creating a Load Balancer With SSL Cipher Settings and Back-end Authentication</i> topic of the <i>Elastic Load Balancing Developer
+    /// Guide</i> .</para> <para>For information on using CreateLoadBalancer to create a new load balancer in Amazon VPC, see <i>Using the Query
+    /// API</i> in the <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/USVPC_creating_basic_lb.html" >Creating a
+    /// Basic Load Balancer in Amazon VPC</a> section in the <i>Elastic Load Balancing Developer Guide</i> .</para>
     /// </summary>
     public partial class CreateLoadBalancerRequest : AmazonWebServiceRequest
     {
@@ -57,7 +59,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// Callers should use the properties initialize any additional object members.
         /// </summary>
         /// 
-        /// <param name="loadBalancerName"> The name associated with the LoadBalancer. The name must be unique within your set of LoadBalancers.
+        /// <param name="loadBalancerName"> The name associated with the load balancer. The name must be unique within your set of load balancers.
         /// </param>
         public CreateLoadBalancerRequest(string loadBalancerName)
         {
@@ -69,12 +71,12 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// Callers should use the properties initialize any additional object members.
         /// </summary>
         /// 
-        /// <param name="loadBalancerName"> The name associated with the LoadBalancer. The name must be unique within your set of LoadBalancers.
+        /// <param name="loadBalancerName"> The name associated with the load balancer. The name must be unique within your set of load balancers.
         /// </param>
         /// <param name="listeners"> A list of the following tuples: LoadBalancerPort, InstancePort, and Protocol. </param>
         /// <param name="availabilityZones"> A list of Availability Zones. At least one Availability Zone must be specified. Specified Availability
-        /// Zones must be in the same EC2 Region as the LoadBalancer. Traffic will be equally distributed across all zones. This list can be modified
-        /// after the creation of the LoadBalancer by calling <a>EnableAvailabilityZonesForLoadBalancer</a>. </param>
+        /// Zones must be in the same EC2 Region as the load balancer. Traffic will be equally distributed across all zones. This list can be modified
+        /// after the creation of the load balancer by calling <a>EnableAvailabilityZonesForLoadBalancer</a>. </param>
         public CreateLoadBalancerRequest(string loadBalancerName, List<Listener> listeners, List<string> availabilityZones)
         {
             this.loadBalancerName = loadBalancerName;
@@ -84,7 +86,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     
 
         /// <summary>
-        /// The name associated with the LoadBalancer. The name must be unique within your set of LoadBalancers.
+        /// The name associated with the load balancer. The name must be unique within your set of load balancers.
         ///  
         /// </summary>
         public string LoadBalancerName
@@ -117,8 +119,8 @@ namespace Amazon.ElasticLoadBalancing.Model
 
         /// <summary>
         /// A list of Availability Zones. At least one Availability Zone must be specified. Specified Availability Zones must be in the same EC2 Region
-        /// as the LoadBalancer. Traffic will be equally distributed across all zones. This list can be modified after the creation of the LoadBalancer
-        /// by calling <a>EnableAvailabilityZonesForLoadBalancer</a>.
+        /// as the load balancer. Traffic will be equally distributed across all zones. This list can be modified after the creation of the load
+        /// balancer by calling <a>EnableAvailabilityZonesForLoadBalancer</a>.
         ///  
         /// </summary>
         public List<string> AvailabilityZones
@@ -134,7 +136,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         }
 
         /// <summary>
-        /// A list of subnet IDs in your VPC to attach to your LoadBalancer.
+        /// A list of subnet IDs in your VPC to attach to your load balancer.
         ///  
         /// </summary>
         public List<string> Subnets
@@ -150,7 +152,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         }
 
         /// <summary>
-        /// The security groups assigned to your LoadBalancer within your VPC.
+        /// The security groups assigned to your load balancer within your VPC.
         ///  
         /// </summary>
         public List<string> SecurityGroups
@@ -166,9 +168,9 @@ namespace Amazon.ElasticLoadBalancing.Model
         }
 
         /// <summary>
-        /// The type of a LoadBalancer. By default, Elastic Load Balancing creates an Internet-facing LoadBalancer with a publicly resolvable DNS name,
-        /// which resolves to public IP addresses. Specify the value <c>internal</c> for this option to create an internal LoadBalancer with a DNS name
-        /// that resolves to private IP addresses. This option is only available for LoadBalancers attached to an Amazon VPC.
+        /// The type of a load balancer. By default, Elastic Load Balancing creates an Internet-facing load balancer with a publicly resolvable DNS
+        /// name, which resolves to public IP addresses. Specify the value <c>internal</c> for this option to create an internal load balancer with a
+        /// DNS name that resolves to private IP addresses. This option is only available for load balancers attached to an Amazon VPC.
         ///  
         /// </summary>
         public string Scheme

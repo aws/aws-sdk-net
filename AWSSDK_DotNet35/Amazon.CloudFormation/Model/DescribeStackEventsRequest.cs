@@ -25,10 +25,9 @@ namespace Amazon.CloudFormation.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeStackEvents operation.
-    /// <para>Returns all the stack related events for the AWS account. If <c>StackName</c> is specified, returns events related to all the stacks
-    /// with the given name. If <c>StackName</c> is not specified, returns all the events for the account. For more information about a stack's
-    /// event history, go to the AWS CloudFormation User Guide.</para> <para><b>NOTE:</b>Events are returned, even if the stack never existed or has
-    /// been successfully deleted.</para>
+    /// <para>Returns all stack related events for a specified stack. For more information about a stack's event history, go to the <a
+    /// href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide" >AWS CloudFormation User Guide</a> .</para>
+    /// <para><b>NOTE:</b>Events are returned, even if the stack never existed or has been successfully deleted.</para>
     /// </summary>
     public partial class DescribeStackEventsRequest : AmazonWebServiceRequest
     {
@@ -36,7 +35,7 @@ namespace Amazon.CloudFormation.Model
         private string nextToken;
 
         /// <summary>
-        /// The name or the unique identifier associated with the stack. Default: There is no default value.
+        /// The name or the unique identifier associated with the stack. Required: Yes. Default: There is no default value.
         ///  
         /// </summary>
         public string StackName

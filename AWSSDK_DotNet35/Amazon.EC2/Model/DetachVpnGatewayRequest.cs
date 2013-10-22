@@ -32,8 +32,20 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DetachVpnGatewayRequest : AmazonWebServiceRequest
     {
+        private bool? dryRun;
         private string vpnGatewayId;
         private string vpcId;
+        public bool DryRun
+        {
+            get { return this.dryRun ?? default(bool); }
+            set { this.dryRun = value; }
+        }
+
+        // Check to see if DryRun property is set
+        internal bool IsSetDryRun()
+        {
+            return this.dryRun.HasValue;
+        }
 
         /// <summary>
         /// The ID of the VPN gateway to detach from the VPC.

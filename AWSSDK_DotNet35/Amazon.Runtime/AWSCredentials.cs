@@ -31,7 +31,7 @@ namespace Amazon.Runtime
     /// <summary>
     /// Immutable representation of AWS credentials.
     /// </summary>
-    public class ImmutableCredentials : IDisposable
+    public class ImmutableCredentials
     {
         #region Properties
 
@@ -102,54 +102,18 @@ namespace Amazon.Runtime
         }
 
         #endregion
-
-
-        #region IDisposable Members
-
-        private bool _disposed = false;
-
-        public void Dispose()
-        {
-            Dispose(true);
-
-            GC.SuppressFinalize(this);
-        }
-
-        protected virtual void Dispose(bool disposing)
-        {
-            if (!_disposed)
-            {
-                _disposed = true;
-            }
-        }
-
-        #endregion
     }
 
     /// <summary>
     /// Abstract class that represents a credentials object for AWS services.
     /// </summary>
-    public abstract class AWSCredentials : IDisposable
+    public abstract class AWSCredentials
     {
         /// <summary>
         /// Returns a copy of ImmutableCredentials
         /// </summary>
         /// <returns></returns>
         public abstract ImmutableCredentials GetCredentials();
-
-        #region IDisposable Members
-
-        public void Dispose()
-        {
-            Dispose(true);
-            GC.SuppressFinalize(this);
-        }
-
-        protected virtual void Dispose(bool disposing)
-        {
-        }
-
-        #endregion
     }
 
     /// <summary>
@@ -199,29 +163,6 @@ namespace Amazon.Runtime
 
         #endregion
 
-
-        #region IDisposable Members
-
-        private bool _disposed = false;
-
-        protected override void Dispose(bool disposing)
-        {
-            if (!_disposed)
-            {
-                if (disposing)
-                {
-                    if (_credentials != null)
-                    {
-                        _credentials.Dispose();
-                        _credentials = null;
-                    }
-                }
-
-                _disposed = true;
-            }
-        }
-
-        #endregion
     }
 
     /// <summary>
@@ -269,29 +210,6 @@ namespace Amazon.Runtime
 
         #endregion
 
-
-        #region IDisposable Members
-
-        private bool _disposed = false;
-
-        protected override void Dispose(bool disposing)
-        {
-            if (!_disposed)
-            {
-                if (disposing)
-                {
-                    if (_lastCredentials != null)
-                    {
-                        _lastCredentials.Dispose();
-                        _lastCredentials = null;
-                    }
-                }
-
-                _disposed = true;
-            }
-        }
-
-        #endregion
     }
 
 #if BCL
@@ -346,30 +264,6 @@ namespace Amazon.Runtime
         }
 
         #endregion
-
-
-        #region IDisposable Members
-
-        private bool _disposed = false;
-
-        protected override void Dispose(bool disposing)
-        {
-            if (!_disposed)
-            {
-                if (disposing)
-                {
-                    if (_wrappedCredentials != null)
-                    {
-                        _wrappedCredentials.Dispose();
-                        _wrappedCredentials = null;
-                    }
-                }
-
-                _disposed = true;
-            }
-        }
-
-        #endregion
     }
 #endif
 
@@ -385,22 +279,10 @@ namespace Amazon.Runtime
         /// Refresh state container consisting of credentials
         /// and the date of the their expiration
         /// </summary>
-        protected class CredentialsRefreshState : IDisposable
+        protected class CredentialsRefreshState
         {
             public ImmutableCredentials Credentials { get; set; }
             public DateTime Expiration { get; set; }
-
-            #region IDisposable Members
-
-            public void Dispose()
-            {
-                if (Credentials != null)
-                {
-                    Credentials.Dispose();
-                }
-            }
-
-            #endregion
         }
 
 
@@ -423,10 +305,6 @@ namespace Amazon.Runtime
                 // If credentials are expired, update
                 if (ShouldUpdate)
                 {
-                    if (_currentState != null)
-                    {
-                        _currentState.Dispose();
-                    }
                     _currentState = GenerateNewCredentials();
 
                     // Check if the new credentials are already expired
@@ -467,30 +345,6 @@ namespace Amazon.Runtime
         protected virtual CredentialsRefreshState GenerateNewCredentials()
         {
             throw new NotImplementedException();
-        }
-
-        #endregion
-
-
-        #region IDisposable Members
-
-        private bool _disposed = false;
-
-        protected override void Dispose(bool disposing)
-        {
-            if (!_disposed)
-            {
-                if (disposing)
-                {
-                    if (_currentState != null)
-                    {
-                        _currentState.Dispose();
-                        _currentState = null;
-                    }
-                }
-
-                _disposed = true;
-            }
         }
 
         #endregion
@@ -680,7 +534,7 @@ namespace Amazon.Runtime
         {
             public string Code { get; set; }
             public string Message { get; set; }
-            public DateTime LastUpdated { get; set; }
+            //public DateTime LastUpdated { get; set; }
         }
 
         private class SecurityInfo : SecurityBase

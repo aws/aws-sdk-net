@@ -28,8 +28,9 @@ namespace Amazon.IdentityManagement.Model
     /// <para>Changes the status of the specified access key from Active to Inactive, or vice versa. This action can be used to disable a user's key
     /// as part of a key rotation work flow.</para> <para>If the <c>UserName</c> field is not specified, the UserName is determined implicitly based
     /// on the AWS Access Key ID used to sign the request. Because this action works for access keys under the AWS account, this API can be used to
-    /// manage root credentials even if the AWS account has no associated users.</para> <para>For information about rotating keys, see Managing Keys
-    /// and Certificates in <i>Using AWS Identity and Access Management</i> .</para>
+    /// manage root credentials even if the AWS account has no associated users.</para> <para>For information about rotating keys, see <a
+    /// href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?ManagingCredentials.html" >Managing Keys and Certificates</a> in
+    /// <i>Using AWS Identity and Access Management</i> .</para>
     /// </summary>
     public partial class UpdateAccessKeyRequest : AmazonWebServiceRequest
     {

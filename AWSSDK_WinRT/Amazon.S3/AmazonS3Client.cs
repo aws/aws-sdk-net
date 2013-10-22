@@ -62,7 +62,7 @@ namespace Amazon.S3
         /// <param name="credentials">AWS Credentials</param>
         /// <param name="clientConfig">The AmazonS3Client Configuration Object</param>
         public AmazonS3Client(AWSCredentials credentials, AmazonS3Config clientConfig)
-            : base(credentials, clientConfig, false, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(credentials, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
         {
         }
 
@@ -144,6 +144,19 @@ namespace Amazon.S3
         #endregion
 
  
+		internal AbortMultipartUploadResponse AbortMultipartUpload(AbortMultipartUploadRequest request)
+        {
+            var task = AbortMultipartUploadAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Aborts a multipart upload.</para>
         /// </summary>
@@ -162,6 +175,19 @@ namespace Amazon.S3
             return response;
         }
  
+		internal CompleteMultipartUploadResponse CompleteMultipartUpload(CompleteMultipartUploadRequest request)
+        {
+            var task = CompleteMultipartUploadAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Completes a multipart upload by assembling previously uploaded parts.</para>
         /// </summary>
@@ -182,6 +208,19 @@ namespace Amazon.S3
             return response;
         }
  
+		internal CopyObjectResponse CopyObject(CopyObjectRequest request)
+        {
+            var task = CopyObjectAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Creates a copy of an object that is already stored in Amazon S3.</para>
         /// </summary>
@@ -201,6 +240,19 @@ namespace Amazon.S3
             return response;
         }
  
+		internal CopyPartResponse CopyPart(CopyPartRequest request)
+        {
+            var task = CopyPartAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Uploads a part by copying data from an existing object as data source.</para>
         /// </summary>
@@ -220,6 +272,19 @@ namespace Amazon.S3
             return response;
         }
  
+		internal DeleteBucketResponse DeleteBucket(DeleteBucketRequest request)
+        {
+            var task = DeleteBucketAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Deletes the bucket. All objects (including all object versions and Delete Markers) in the bucket must be deleted before the bucket
         /// itself can be deleted.</para>
@@ -238,6 +303,19 @@ namespace Amazon.S3
             return response;
         }
  
+		internal DeleteBucketPolicyResponse DeleteBucketPolicy(DeleteBucketPolicyRequest request)
+        {
+            var task = DeleteBucketPolicyAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Deletes the policy from the bucket.</para>
         /// </summary>
@@ -256,6 +334,19 @@ namespace Amazon.S3
             return response;
         }
  
+		internal DeleteBucketTaggingResponse DeleteBucketTagging(DeleteBucketTaggingRequest request)
+        {
+            var task = DeleteBucketTaggingAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Deletes the tags from the bucket.</para>
         /// </summary>
@@ -274,6 +365,19 @@ namespace Amazon.S3
             return response;
         }
  
+		internal DeleteBucketWebsiteResponse DeleteBucketWebsite(DeleteBucketWebsiteRequest request)
+        {
+            var task = DeleteBucketWebsiteAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>This operation removes the website configuration from the bucket.</para>
         /// </summary>
@@ -292,6 +396,19 @@ namespace Amazon.S3
             return response;
         }
  
+		internal DeleteCORSConfigurationResponse DeleteCORSConfiguration(DeleteCORSConfigurationRequest request)
+        {
+            var task = DeleteCORSConfigurationAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Deletes the cors configuration information set for the bucket.</para>
         /// </summary>
@@ -310,6 +427,19 @@ namespace Amazon.S3
             return response;
         }
  
+		internal DeleteLifecycleConfigurationResponse DeleteLifecycleConfiguration(DeleteLifecycleConfigurationRequest request)
+        {
+            var task = DeleteLifecycleConfigurationAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Deletes the lifecycle configuration from the bucket.</para>
         /// </summary>
@@ -328,6 +458,19 @@ namespace Amazon.S3
             return response;
         }
  
+		internal DeleteObjectResponse DeleteObject(DeleteObjectRequest request)
+        {
+            var task = DeleteObjectAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Removes the null version (if there is one) of an object and inserts a delete marker, which becomes the latest version of the object.
         /// If there isn''t a null version, Amazon S3 does not remove any objects.</para>
@@ -348,6 +491,19 @@ namespace Amazon.S3
             return response;
         }
  
+		internal DeleteObjectsResponse DeleteObjects(DeleteObjectsRequest request)
+        {
+            var task = DeleteObjectsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>This operation enables you to delete multiple objects from a bucket using a single HTTP request. You may specify up to 1000
         /// keys.</para>
@@ -368,6 +524,19 @@ namespace Amazon.S3
             return response;
         }
  
+		internal GetACLResponse GetACL(GetACLRequest request)
+        {
+            var task = GetACLAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Returns the access control list (ACL) of an object.</para>
         /// </summary>
@@ -387,6 +556,19 @@ namespace Amazon.S3
             return response;
         }
  
+		internal GetBucketLocationResponse GetBucketLocation(GetBucketLocationRequest request)
+        {
+            var task = GetBucketLocationAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Returns the region the bucket resides in.</para>
         /// </summary>
@@ -407,6 +589,19 @@ namespace Amazon.S3
             return response;
         }
  
+		internal GetBucketLoggingResponse GetBucketLogging(GetBucketLoggingRequest request)
+        {
+            var task = GetBucketLoggingAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Returns the logging status of a bucket and the permissions users have to view and modify that status. To use GET, you must be the
         /// bucket owner.</para>
@@ -428,6 +623,19 @@ namespace Amazon.S3
             return response;
         }
  
+		internal GetBucketNotificationResponse GetBucketNotification(GetBucketNotificationRequest request)
+        {
+            var task = GetBucketNotificationAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Return the notification configuration of a bucket.</para>
         /// </summary>
@@ -448,6 +656,19 @@ namespace Amazon.S3
             return response;
         }
  
+		internal GetBucketPolicyResponse GetBucketPolicy(GetBucketPolicyRequest request)
+        {
+            var task = GetBucketPolicyAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Returns the policy of a specified bucket.</para>
         /// </summary>
@@ -468,6 +689,19 @@ namespace Amazon.S3
             return response;
         }
  
+		internal GetBucketRequestPaymentResponse GetBucketRequestPayment(GetBucketRequestPaymentRequest request)
+        {
+            var task = GetBucketRequestPaymentAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Returns the request payment configuration of a bucket.</para>
         /// </summary>
@@ -488,6 +722,19 @@ namespace Amazon.S3
             return response;
         }
  
+		internal GetBucketTaggingResponse GetBucketTagging(GetBucketTaggingRequest request)
+        {
+            var task = GetBucketTaggingAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Returns the tag set associated with the bucket.</para>
         /// </summary>
@@ -508,6 +755,19 @@ namespace Amazon.S3
             return response;
         }
  
+		internal GetBucketVersioningResponse GetBucketVersioning(GetBucketVersioningRequest request)
+        {
+            var task = GetBucketVersioningAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Returns the versioning state of a bucket.</para>
         /// </summary>
@@ -528,6 +788,19 @@ namespace Amazon.S3
             return response;
         }
  
+		internal GetBucketWebsiteResponse GetBucketWebsite(GetBucketWebsiteRequest request)
+        {
+            var task = GetBucketWebsiteAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Returns the website configuration for a bucket.</para>
         /// </summary>
@@ -548,6 +821,19 @@ namespace Amazon.S3
             return response;
         }
  
+		internal GetCORSConfigurationResponse GetCORSConfiguration(GetCORSConfigurationRequest request)
+        {
+            var task = GetCORSConfigurationAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Returns the cors configuration for the bucket.</para>
         /// </summary>
@@ -567,6 +853,19 @@ namespace Amazon.S3
             return response;
         }
  
+		internal GetLifecycleConfigurationResponse GetLifecycleConfiguration(GetLifecycleConfigurationRequest request)
+        {
+            var task = GetLifecycleConfigurationAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Returns the lifecycle configuration information set on the bucket.</para>
         /// </summary>
@@ -587,6 +886,19 @@ namespace Amazon.S3
             return response;
         }
  
+		internal GetObjectResponse GetObject(GetObjectRequest request)
+        {
+            var task = GetObjectAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Retrieves objects from Amazon S3.</para>
         /// </summary>
@@ -606,6 +918,19 @@ namespace Amazon.S3
             return response;
         }
  
+		internal GetObjectMetadataResponse GetObjectMetadata(GetObjectMetadataRequest request)
+        {
+            var task = GetObjectMetadataAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// Returns information about a specified object.
         /// </summary>
@@ -628,6 +953,19 @@ namespace Amazon.S3
             return response;
         }
  
+		internal GetObjectTorrentResponse GetObjectTorrent(GetObjectTorrentRequest request)
+        {
+            var task = GetObjectTorrentAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Return torrent files from a bucket.</para>
         /// </summary>
@@ -648,6 +986,19 @@ namespace Amazon.S3
             return response;
         }
  
+		internal InitiateMultipartUploadResponse InitiateMultipartUpload(InitiateMultipartUploadRequest request)
+        {
+            var task = InitiateMultipartUploadAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Initiates a multipart upload and returns an upload ID.</para>
         /// </summary>
@@ -668,6 +1019,19 @@ namespace Amazon.S3
             return response;
         }
  
+		internal ListBucketsResponse ListBuckets(ListBucketsRequest request)
+        {
+            var task = ListBucketsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Returns a list of all buckets owned by the authenticated sender of the request.</para>
         /// </summary>
@@ -687,6 +1051,19 @@ namespace Amazon.S3
             return response;
         }
  
+		internal ListMultipartUploadsResponse ListMultipartUploads(ListMultipartUploadsRequest request)
+        {
+            var task = ListMultipartUploadsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>This operation lists in-progress multipart uploads.</para>
         /// </summary>
@@ -707,6 +1084,19 @@ namespace Amazon.S3
             return response;
         }
  
+		internal ListObjectsResponse ListObjects(ListObjectsRequest request)
+        {
+            var task = ListObjectsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Returns some or all (up to 1000) of the objects in a bucket. You can use the request parameters as selection criteria to return a
         /// subset of the objects in a bucket.</para>
@@ -727,6 +1117,19 @@ namespace Amazon.S3
             return response;
         }
  
+		internal ListPartsResponse ListParts(ListPartsRequest request)
+        {
+            var task = ListPartsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Lists the parts that have been uploaded for a specific multipart upload.</para>
         /// </summary>
@@ -746,6 +1149,19 @@ namespace Amazon.S3
             return response;
         }
  
+		internal ListVersionsResponse ListVersions(ListVersionsRequest request)
+        {
+            var task = ListVersionsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Returns metadata about all of the versions of objects in a bucket.</para>
         /// </summary>
@@ -766,6 +1182,19 @@ namespace Amazon.S3
             return response;
         }
  
+		internal PutACLResponse PutACL(PutACLRequest request)
+        {
+            var task = PutACLAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>uses the acl subresource to set the access control list (ACL) permissions for an object that already exists in a bucket</para>
         /// </summary>
@@ -783,6 +1212,19 @@ namespace Amazon.S3
             return response;
         }
  
+		internal PutBucketResponse PutBucket(PutBucketRequest request)
+        {
+            var task = PutBucketAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Creates a new bucket.</para>
         /// </summary>
@@ -802,6 +1244,19 @@ namespace Amazon.S3
             return response;
         }
  
+		internal PutBucketLoggingResponse PutBucketLogging(PutBucketLoggingRequest request)
+        {
+            var task = PutBucketLoggingAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Set the logging parameters for a bucket and to specify permissions for who can view and modify the logging parameters. To set the
         /// logging status of a bucket, you must be the bucket owner.</para>
@@ -821,6 +1276,19 @@ namespace Amazon.S3
             return response;
         }
  
+		internal PutBucketNotificationResponse PutBucketNotification(PutBucketNotificationRequest request)
+        {
+            var task = PutBucketNotificationAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Enables notifications of specified events for a bucket.</para>
         /// </summary>
@@ -839,6 +1307,19 @@ namespace Amazon.S3
             return response;
         }
  
+		internal PutBucketPolicyResponse PutBucketPolicy(PutBucketPolicyRequest request)
+        {
+            var task = PutBucketPolicyAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Replaces a policy on a bucket. If the bucket already has a policy, the one in this request completely replaces it.</para>
         /// </summary>
@@ -857,6 +1338,19 @@ namespace Amazon.S3
             return response;
         }
  
+		internal PutBucketRequestPaymentResponse PutBucketRequestPayment(PutBucketRequestPaymentRequest request)
+        {
+            var task = PutBucketRequestPaymentAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Sets the request payment configuration for a bucket. By default, the bucket owner pays for downloads from the bucket. This
         /// configuration parameter enables the bucket owner (only) to specify that the person requesting the download will be charged for the
@@ -877,6 +1371,19 @@ namespace Amazon.S3
             return response;
         }
  
+		internal PutBucketTaggingResponse PutBucketTagging(PutBucketTaggingRequest request)
+        {
+            var task = PutBucketTaggingAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Sets the tags for a bucket.</para>
         /// </summary>
@@ -895,6 +1402,19 @@ namespace Amazon.S3
             return response;
         }
  
+		internal PutBucketVersioningResponse PutBucketVersioning(PutBucketVersioningRequest request)
+        {
+            var task = PutBucketVersioningAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Puts the versioning state of an existing bucket. To set the versioning state, you must be the bucket owner.</para>
         /// </summary>
@@ -913,6 +1433,19 @@ namespace Amazon.S3
             return response;
         }
  
+		internal PutBucketWebsiteResponse PutBucketWebsite(PutBucketWebsiteRequest request)
+        {
+            var task = PutBucketWebsiteAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Set the website configuration for a bucket.</para>
         /// </summary>
@@ -931,6 +1464,19 @@ namespace Amazon.S3
             return response;
         }
  
+		internal PutCORSConfigurationResponse PutCORSConfiguration(PutCORSConfigurationRequest request)
+        {
+            var task = PutCORSConfigurationAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Sets the cors configuration for a bucket.</para>
         /// </summary>
@@ -948,6 +1494,19 @@ namespace Amazon.S3
             return response;
         }
  
+		internal PutLifecycleConfigurationResponse PutLifecycleConfiguration(PutLifecycleConfigurationRequest request)
+        {
+            var task = PutLifecycleConfigurationAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Sets lifecycle configuration for your bucket. If a lifecycle configuration exists, it replaces it.</para>
         /// </summary>
@@ -966,6 +1525,19 @@ namespace Amazon.S3
             return response;
         }
  
+		internal PutObjectResponse PutObject(PutObjectRequest request)
+        {
+            var task = PutObjectAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Adds an object to a bucket.</para>
         /// </summary>
@@ -985,6 +1557,19 @@ namespace Amazon.S3
             return response;
         }
  
+		internal RestoreObjectResponse RestoreObject(RestoreObjectRequest request)
+        {
+            var task = RestoreObjectAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Restores an archived copy of an object back into Amazon S3</para>
         /// </summary>
@@ -1002,6 +1587,19 @@ namespace Amazon.S3
             return response;
         }
  
+		internal UploadPartResponse UploadPart(UploadPartRequest request)
+        {
+            var task = UploadPartAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Uploads a part in a multipart upload.</para>
         /// </summary>

@@ -30,8 +30,20 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class ResetImageAttributeRequest : AmazonWebServiceRequest
     {
+        private bool? dryRun;
         private string imageId;
-        private string attribute;
+        private ResetImageAttributeName attribute;
+        public bool DryRun
+        {
+            get { return this.dryRun ?? default(bool); }
+            set { this.dryRun = value; }
+        }
+
+        // Check to see if DryRun property is set
+        internal bool IsSetDryRun()
+        {
+            return this.dryRun.HasValue;
+        }
 
         /// <summary>
         /// The ID of the AMI whose attribute is being reset.
@@ -52,8 +64,17 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// The name of the attribute being reset. Available attribute names: <c>launchPermission</c>
         ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>launchPermission</description>
+        ///     </item>
+        /// </list>
+        /// </para>
         /// </summary>
-        public string Attribute
+        public ResetImageAttributeName Attribute
         {
             get { return this.attribute; }
             set { this.attribute = value; }

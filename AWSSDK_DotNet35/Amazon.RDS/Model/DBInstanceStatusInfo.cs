@@ -64,7 +64,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Status of the DB instance. For a StatusType of Read Replica, the values can be replicating, error, stopped, or terminated.
+        /// Status of the DB instance. For a StatusType of read replica, the values can be replicating, error, stopped, or terminated.
         ///  
         /// </summary>
         public string Status

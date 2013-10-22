@@ -34,7 +34,11 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(rebootInstancesRequest, "AmazonEC2");
             request.Parameters.Add("Action", "RebootInstances");
-            request.Parameters.Add("Version", "2013-02-01");
+            request.Parameters.Add("Version", "2013-10-01");
+            if (rebootInstancesRequest != null && rebootInstancesRequest.IsSetDryRun())
+            {
+                request.Parameters.Add("DryRun", StringUtils.FromBool(rebootInstancesRequest.DryRun));
+            }
             if (rebootInstancesRequest != null)
             {
                 List<string> instanceIdsList = rebootInstancesRequest.InstanceIds;

@@ -25,16 +25,18 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDBSecurityGroup operation.
-    /// <para> Creates a new DB Security Group. DB Security Groups control access to a DB Instance. </para>
+    /// <para> Creates a new DB security group. DB security groups control access to a DB instance. </para>
     /// </summary>
     public partial class CreateDBSecurityGroupRequest : AmazonWebServiceRequest
     {
         private string dBSecurityGroupName;
         private string dBSecurityGroupDescription;
+        private List<Tag> tags = new List<Tag>();
 
         /// <summary>
-        /// The name for the DB Security Group. This value is stored as a lowercase string. Constraints: Must contain no more than 255 alphanumeric
-        /// characters or hyphens. Must not be "Default". Example: <c>mysecuritygroup</c>
+        /// The name for the DB security group. This value is stored as a lowercase string. Constraints: <ul> <li>Must be 1 to 255 alphanumeric
+        /// characters</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> <li>Must not
+        /// be "Default"</li> <li>May not contain spaces</li> </ul> Example: <c>mysecuritygroup</c>
         ///  
         /// </summary>
         public string DBSecurityGroupName
@@ -50,7 +52,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The description for the DB Security Group.
+        /// The description for the DB security group.
         ///  
         /// </summary>
         public string DBSecurityGroupDescription
@@ -63,6 +65,22 @@ namespace Amazon.RDS.Model
         internal bool IsSetDBSecurityGroupDescription()
         {
             return this.dBSecurityGroupDescription != null;
+        }
+
+        /// <summary>
+        /// A list of tags.
+        ///  
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this.tags; }
+            set { this.tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this.tags.Count > 0;
         }
 
     }

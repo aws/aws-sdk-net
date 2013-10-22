@@ -25,7 +25,7 @@ namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
     /// Container for the parameters to the SetLoadBalancerPoliciesOfListener operation.
-    /// <para> Associates, updates, or disables a policy with a listener on the LoadBalancer. You can associate multiple policies with a listener.
+    /// <para> Associates, updates, or disables a policy with a listener on the load balancer. You can associate multiple policies with a listener.
     /// </para>
     /// </summary>
     public partial class SetLoadBalancerPoliciesOfListenerRequest : AmazonWebServiceRequest
@@ -44,8 +44,8 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// Callers should use the properties initialize any additional object members.
         /// </summary>
         /// 
-        /// <param name="loadBalancerName"> The name associated with the LoadBalancer. The name must be unique within the client AWS account. </param>
-        /// <param name="loadBalancerPort"> The external port of the LoadBalancer with which this policy applies to. </param>
+        /// <param name="loadBalancerName"> The name associated with the load balancer. The name must be unique within the client AWS account. </param>
+        /// <param name="loadBalancerPort"> The external port of the load balancer with which this policy applies to. </param>
         /// <param name="policyNames"> List of policies to be associated with the listener. Currently this list can have at most one policy. If the list
         /// is empty, the current policy is removed from the listener. </param>
         public SetLoadBalancerPoliciesOfListenerRequest(string loadBalancerName, int loadBalancerPort, List<string> policyNames)
@@ -57,7 +57,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     
 
         /// <summary>
-        /// The name associated with the LoadBalancer. The name must be unique within the client AWS account.
+        /// The name associated with the load balancer. The name must be unique within the client AWS account.
         ///  
         /// </summary>
         public string LoadBalancerName
@@ -73,7 +73,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         }
 
         /// <summary>
-        /// The external port of the LoadBalancer with which this policy applies to.
+        /// The external port of the load balancer with which this policy applies to.
         ///  
         /// </summary>
         public int LoadBalancerPort

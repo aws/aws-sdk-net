@@ -114,6 +114,11 @@ namespace Amazon.SimpleEmail
         public static readonly VerificationStatus Failed = new VerificationStatus("Failed");
     
 
+       /// <summary>Constant NotStarted for VerificationStatus
+       /// </summary>
+        public static readonly VerificationStatus NotStarted = new VerificationStatus("NotStarted");
+    
+
        /// <summary>Constant Pending for VerificationStatus
        /// </summary>
         public static readonly VerificationStatus Pending = new VerificationStatus("Pending");

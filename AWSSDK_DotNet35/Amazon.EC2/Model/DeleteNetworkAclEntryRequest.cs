@@ -30,9 +30,21 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DeleteNetworkAclEntryRequest : AmazonWebServiceRequest
     {
+        private bool? dryRun;
         private string networkAclId;
         private int? ruleNumber;
         private bool? egress;
+        public bool DryRun
+        {
+            get { return this.dryRun ?? default(bool); }
+            set { this.dryRun = value; }
+        }
+
+        // Check to see if DryRun property is set
+        internal bool IsSetDryRun()
+        {
+            return this.dryRun.HasValue;
+        }
 
         /// <summary>
         /// ID of the network ACL.

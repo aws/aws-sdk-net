@@ -28,16 +28,25 @@ namespace Amazon.ElastiCache
     /// <summary>
     /// Implementation for accessing AmazonElastiCache.
     ///  
-    /// Amazon ElastiCache <para> Amazon ElastiCache is a web service that makes it easier to set up, operate, and scale a distributed cache in the
-    /// cloud. </para> <para> With Amazon ElastiCache, customers gain all of the benefits of a high-performance, in-memory cache with far less of
-    /// the administrative burden of launching and managing a distributed cache. The service makes set-up, scaling, and cluster failure handling
-    /// much simpler than in a self-managed cache deployment. </para> <para> In addition, through integration with Amazon CloudWatch, customers get
+    /// Amazon ElastiCache <para>Amazon ElastiCache is a web service that makes it easier to set up, operate, and scale a distributed cache in the
+    /// cloud.</para> <para>With ElastiCache, customers gain all of the benefits of a high-performance, in-memory cache with far less of the
+    /// administrative burden of launching and managing a distributed cache. The service makes set-up, scaling, and cluster failure handling much
+    /// simpler than in a self-managed cache deployment.</para> <para>In addition, through integration with Amazon CloudWatch, customers get
     /// enhanced visibility into the key performance statistics associated with their cache and can receive alarms if a part of their cache runs
-    /// hot. </para>
+    /// hot.</para>
     /// </summary>
     public partial class AmazonElastiCacheClient : AmazonWebServiceClient, IAmazonElastiCache
     {
     QueryStringSigner signer = new QueryStringSigner();
+
+        #region Dispose
+
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
+        }
+
+        #endregion
 
         #region Constructors
 
@@ -58,7 +67,7 @@ namespace Amazon.ElastiCache
         ///
         /// </summary>
         public AmazonElastiCacheClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonElastiCacheConfig(), true, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonElastiCacheConfig(), AuthenticationTypes.User | AuthenticationTypes.Session) { }
 
         /// <summary>
         /// Constructs AmazonElastiCacheClient with the credentials loaded from the application's
@@ -78,7 +87,7 @@ namespace Amazon.ElastiCache
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonElastiCacheClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonElastiCacheConfig(){RegionEndpoint = region}, true, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonElastiCacheConfig{RegionEndpoint = region}, AuthenticationTypes.User | AuthenticationTypes.Session) { }
 
         /// <summary>
         /// Constructs AmazonElastiCacheClient with the credentials loaded from the application's
@@ -98,7 +107,7 @@ namespace Amazon.ElastiCache
         /// </summary>
         /// <param name="config">The AmazonElastiCache Configuration Object</param>
         public AmazonElastiCacheClient(AmazonElastiCacheConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config, true, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), config, AuthenticationTypes.User | AuthenticationTypes.Session) { }
 
         /// <summary>
         /// Constructs AmazonElastiCacheClient with AWS Credentials
@@ -115,7 +124,7 @@ namespace Amazon.ElastiCache
         /// <param name="credentials">AWS Credentials</param>
         /// <param name="region">The region to connect.</param>
         public AmazonElastiCacheClient(AWSCredentials credentials, RegionEndpoint region)
-            : this(credentials, new AmazonElastiCacheConfig(){RegionEndpoint=region})
+            : this(credentials, new AmazonElastiCacheConfig{RegionEndpoint = region})
         {
         }
 
@@ -126,7 +135,7 @@ namespace Amazon.ElastiCache
         /// <param name="credentials">AWS Credentials</param>
         /// <param name="clientConfig">The AmazonElastiCacheClient Configuration Object</param>
         public AmazonElastiCacheClient(AWSCredentials credentials, AmazonElastiCacheConfig clientConfig)
-            : base(credentials, clientConfig, false, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(credentials, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
         {
         }
 
@@ -182,7 +191,7 @@ namespace Amazon.ElastiCache
         /// <param name="awsSessionToken">AWS Session Token</param>
         /// <param name="region">The region to connect.</param>
         public AmazonElastiCacheClient(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken, RegionEndpoint region)
-            : this(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, new AmazonElastiCacheConfig(){RegionEndpoint = region})
+            : this(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, new AmazonElastiCacheConfig{RegionEndpoint = region})
         {
         }
 
@@ -205,9 +214,9 @@ namespace Amazon.ElastiCache
         #region AuthorizeCacheSecurityGroupIngress
 
         /// <summary>
-        /// <para> Authorizes ingress to a CacheSecurityGroup using EC2 Security Groups as authorization (therefore the application using the cache must
-        /// be running on EC2 clusters). This API requires the following parameters: EC2SecurityGroupName and EC2SecurityGroupOwnerId. </para>
-        /// <para><b>NOTE:</b> You cannot authorize ingress from an EC2 security group in one Region to an Amazon Cache Cluster in another. </para>
+        /// <para>The <i>AuthorizeCacheSecurityGroupIngress</i> operation allows network ingress to a cache security group. Applications using
+        /// ElastiCache must be running on Amazon EC2, and Amazon EC2 security groups are used as the authorization mechanism.</para> <para><b>NOTE:</b>
+        /// You cannot authorize ingress from an Amazon EC2 security group in one Region to an ElastiCache cluster in another Region. </para>
         /// </summary>
         /// 
         /// <param name="authorizeCacheSecurityGroupIngressRequest">Container for the necessary parameters to execute the
@@ -277,7 +286,8 @@ namespace Amazon.ElastiCache
         #region CreateCacheCluster
 
         /// <summary>
-        /// <para> Creates a new Cache Cluster. </para>
+        /// <para>The <i>CreateCacheCluster</i> operation creates a new cache cluster. All nodes in the cache cluster run the same protocol-compliant
+        /// cache engine software - either Memcached or Redis.</para>
         /// </summary>
         /// 
         /// <param name="createCacheClusterRequest">Container for the necessary parameters to execute the CreateCacheCluster service method on
@@ -286,16 +296,18 @@ namespace Amazon.ElastiCache
         /// <returns>The response from the CreateCacheCluster service method, as returned by AmazonElastiCache.</returns>
         /// 
         /// <exception cref="NodeQuotaForCustomerExceededException"/>
-        /// <exception cref="NodeQuotaForClusterExceededException"/>
-        /// <exception cref="CacheSubnetGroupNotFoundException"/>
-        /// <exception cref="InvalidParameterValueException"/>
         /// <exception cref="ClusterQuotaForCustomerExceededException"/>
         /// <exception cref="CacheClusterAlreadyExistsException"/>
-        /// <exception cref="InvalidVPCNetworkStateException"/>
         /// <exception cref="InsufficientCacheClusterCapacityException"/>
+        /// <exception cref="ReplicationGroupNotFoundException"/>
         /// <exception cref="InvalidParameterCombinationException"/>
         /// <exception cref="CacheParameterGroupNotFoundException"/>
         /// <exception cref="CacheSecurityGroupNotFoundException"/>
+        /// <exception cref="NodeQuotaForClusterExceededException"/>
+        /// <exception cref="CacheSubnetGroupNotFoundException"/>
+        /// <exception cref="InvalidReplicationGroupStateException"/>
+        /// <exception cref="InvalidParameterValueException"/>
+        /// <exception cref="InvalidVPCNetworkStateException"/>
         public CreateCacheClusterResponse CreateCacheCluster(CreateCacheClusterRequest createCacheClusterRequest)
         {
             IAsyncResult asyncResult = invokeCreateCacheCluster(createCacheClusterRequest, null, null, true);
@@ -353,7 +365,8 @@ namespace Amazon.ElastiCache
         #region CreateCacheParameterGroup
 
         /// <summary>
-        /// <para> Creates a new Cache Parameter Group. Cache Parameter groups control the parameters for a Cache Cluster.</para>
+        /// <para>The <i>CreateCacheParameterGroup</i> operation creates a new cache parameter group. A cache parameter group is a collection of
+        /// parameters that you apply to all of the nodes in a cache cluster.</para>
         /// </summary>
         /// 
         /// <param name="createCacheParameterGroupRequest">Container for the necessary parameters to execute the CreateCacheParameterGroup service
@@ -423,9 +436,10 @@ namespace Amazon.ElastiCache
         #region CreateCacheSecurityGroup
 
         /// <summary>
-        /// <para> Creates a new Cache Security Group. Cache Security groups control access to one or more Cache Clusters. </para> <para> Only use cache
-        /// security groups when you are creating a cluster outside of an Amazon Virtual Private Cloud (VPC). Inside of a VPC, use VPC security groups.
-        /// </para>
+        /// <para>The <i>CreateCacheSecurityGroup</i> operation creates a new cache security group. Use a cache security group to control access to one
+        /// or more cache clusters.</para> <para>Cache security groups are only used when you are creating a cluster outside of an Amazon Virtual
+        /// Private Cloud (VPC). If you are creating a cluster inside of a VPC, use a cache subnet group instead. For more information, see
+        /// <i>CreateCacheSubnetGroup</i> .</para>
         /// </summary>
         /// 
         /// <param name="createCacheSecurityGroupRequest">Container for the necessary parameters to execute the CreateCacheSecurityGroup service method
@@ -494,7 +508,8 @@ namespace Amazon.ElastiCache
         #region CreateCacheSubnetGroup
 
         /// <summary>
-        /// <para> Creates a new Cache Subnet Group. </para>
+        /// <para>The <i>CreateCacheSubnetGroup</i> operation creates a new cache subnet group.</para> <para>Use this parameter only when you are
+        /// creating a cluster in an Amazon Virtual Private Cloud (VPC).</para>
         /// </summary>
         /// 
         /// <param name="createCacheSubnetGroupRequest">Container for the necessary parameters to execute the CreateCacheSubnetGroup service method on
@@ -560,12 +575,86 @@ namespace Amazon.ElastiCache
 
         #endregion
     
+        #region CreateReplicationGroup
+
+        /// <summary>
+        /// <para>The <i>CreateReplicationGroup</i> operation creates a replication group. A replication group is a collection of cache clusters, where
+        /// one of the clusters is a read/write primary and the other clusters are read-only replicas. Writes to the primary are automatically
+        /// propagated to the replicas.</para> <para>When you create a replication group, you must specify an existing cache cluster that is in the
+        /// primary role. When the replication group has been successfully created, you can add one or more read replica replicas to it, up to a total
+        /// of five read replicas.</para>
+        /// </summary>
+        /// 
+        /// <param name="createReplicationGroupRequest">Container for the necessary parameters to execute the CreateReplicationGroup service method on
+        ///          AmazonElastiCache.</param>
+        /// 
+        /// <returns>The response from the CreateReplicationGroup service method, as returned by AmazonElastiCache.</returns>
+        /// 
+        /// <exception cref="ReplicationGroupAlreadyExistsException"/>
+        /// <exception cref="InvalidParameterValueException"/>
+        /// <exception cref="CacheClusterNotFoundException"/>
+        /// <exception cref="InvalidParameterCombinationException"/>
+        /// <exception cref="InvalidCacheClusterStateException"/>
+        public CreateReplicationGroupResponse CreateReplicationGroup(CreateReplicationGroupRequest createReplicationGroupRequest)
+        {
+            IAsyncResult asyncResult = invokeCreateReplicationGroup(createReplicationGroupRequest, null, null, true);
+            return EndCreateReplicationGroup(asyncResult);
+        }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateReplicationGroup operation.
+        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache.CreateReplicationGroup"/>
+        /// </summary>
+        /// 
+        /// <param name="createReplicationGroupRequest">Container for the necessary parameters to execute the CreateReplicationGroup operation on
+        ///          AmazonElastiCache.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
+        ///         EndCreateReplicationGroup operation.</returns>
+        public IAsyncResult BeginCreateReplicationGroup(CreateReplicationGroupRequest createReplicationGroupRequest, AsyncCallback callback, object state)
+        {
+            return invokeCreateReplicationGroup(createReplicationGroupRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the CreateReplicationGroup operation.
+        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache.CreateReplicationGroup"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateReplicationGroup.</param>
+        /// 
+        /// <returns>Returns a ReplicationGroup from AmazonElastiCache.</returns>
+        public CreateReplicationGroupResponse EndCreateReplicationGroup(IAsyncResult asyncResult)
+        {
+            return endOperation<CreateReplicationGroupResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeCreateReplicationGroup(CreateReplicationGroupRequest createReplicationGroupRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new CreateReplicationGroupRequestMarshaller().Marshall(createReplicationGroupRequest);
+            var unmarshaller = CreateReplicationGroupResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        #endregion
+    
         #region DeleteCacheCluster
 
         /// <summary>
-        /// <para> Deletes a previously provisioned Cache Cluster. A successful response from the web service indicates the request was received
-        /// correctly. This action cannot be canceled or reverted. DeleteCacheCluster deletes all associated Cache Nodes, node endpoints and the Cache
-        /// Cluster itself. </para>
+        /// <para>The <i>DeleteCacheCluster</i> operation deletes a previously provisioned cache cluster. <i>DeleteCacheCluster</i> deletes all
+        /// associated cache nodes, node endpoints and the cache cluster itself. When you receive a successful response from this operation, Amazon
+        /// ElastiCache immediately begins deleting the cache cluster; you cannot cancel or revert this operation.</para>
         /// </summary>
         /// 
         /// <param name="deleteCacheClusterRequest">Container for the necessary parameters to execute the DeleteCacheCluster service method on
@@ -634,8 +723,8 @@ namespace Amazon.ElastiCache
         #region DeleteCacheParameterGroup
 
         /// <summary>
-        /// <para> Deletes the specified CacheParameterGroup. The CacheParameterGroup cannot be deleted if it is associated with any cache clusters.
-        /// </para>
+        /// <para>The <i>DeleteCacheParameterGroup</i> operation deletes the specified cache parameter group. You cannot delete a cache parameter group
+        /// if it is associated with any cache clusters.</para>
         /// </summary>
         /// 
         /// <param name="deleteCacheParameterGroupRequest">Container for the necessary parameters to execute the DeleteCacheParameterGroup service
@@ -697,8 +786,8 @@ namespace Amazon.ElastiCache
         #region DeleteCacheSecurityGroup
 
         /// <summary>
-        /// <para> Deletes a Cache Security Group. </para> <para><b>NOTE:</b>The specified Cache Security Group must not be associated with any Cache
-        /// Clusters.</para>
+        /// <para>The <i>DeleteCacheSecurityGroup</i> operation deletes a cache security group.</para> <para><b>NOTE:</b>You cannot delete a cache
+        /// security group if it is associated with any cache clusters.</para>
         /// </summary>
         /// 
         /// <param name="deleteCacheSecurityGroupRequest">Container for the necessary parameters to execute the DeleteCacheSecurityGroup service method
@@ -760,8 +849,8 @@ namespace Amazon.ElastiCache
         #region DeleteCacheSubnetGroup
 
         /// <summary>
-        /// <para> Deletes a Cache Subnet Group. </para> <para><b>NOTE:</b>The specified Cache Subnet Group must not be associated with any Cache
-        /// Clusters.</para>
+        /// <para>The <i>DeleteCacheSubnetGroup</i> operation deletes a cache subnet group.</para> <para><b>NOTE:</b>You cannot delete a cache subnet
+        /// group if it is associated with any cache clusters.</para>
         /// </summary>
         /// 
         /// <param name="deleteCacheSubnetGroupRequest">Container for the necessary parameters to execute the DeleteCacheSubnetGroup service method on
@@ -818,18 +907,89 @@ namespace Amazon.ElastiCache
 
         #endregion
     
+        #region DeleteReplicationGroup
+
+        /// <summary>
+        /// <para>The <i>DeleteReplicationGroup</i> operation deletes an existing replication group. <i>DeleteReplicationGroup</i> deletes the primary
+        /// cache cluster and all of the read replicas in the replication group. When you receive a successful response from this operation, Amazon
+        /// ElastiCache immediately begins deleting the entire replication group; you cannot cancel or revert this operation.</para>
+        /// </summary>
+        /// 
+        /// <param name="deleteReplicationGroupRequest">Container for the necessary parameters to execute the DeleteReplicationGroup service method on
+        ///          AmazonElastiCache.</param>
+        /// 
+        /// <returns>The response from the DeleteReplicationGroup service method, as returned by AmazonElastiCache.</returns>
+        /// 
+        /// <exception cref="InvalidReplicationGroupStateException"/>
+        /// <exception cref="InvalidParameterValueException"/>
+        /// <exception cref="ReplicationGroupNotFoundException"/>
+        /// <exception cref="InvalidParameterCombinationException"/>
+        public DeleteReplicationGroupResponse DeleteReplicationGroup(DeleteReplicationGroupRequest deleteReplicationGroupRequest)
+        {
+            IAsyncResult asyncResult = invokeDeleteReplicationGroup(deleteReplicationGroupRequest, null, null, true);
+            return EndDeleteReplicationGroup(asyncResult);
+        }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteReplicationGroup operation.
+        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache.DeleteReplicationGroup"/>
+        /// </summary>
+        /// 
+        /// <param name="deleteReplicationGroupRequest">Container for the necessary parameters to execute the DeleteReplicationGroup operation on
+        ///          AmazonElastiCache.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
+        ///         EndDeleteReplicationGroup operation.</returns>
+        public IAsyncResult BeginDeleteReplicationGroup(DeleteReplicationGroupRequest deleteReplicationGroupRequest, AsyncCallback callback, object state)
+        {
+            return invokeDeleteReplicationGroup(deleteReplicationGroupRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the DeleteReplicationGroup operation.
+        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache.DeleteReplicationGroup"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteReplicationGroup.</param>
+        /// 
+        /// <returns>Returns a ReplicationGroup from AmazonElastiCache.</returns>
+        public DeleteReplicationGroupResponse EndDeleteReplicationGroup(IAsyncResult asyncResult)
+        {
+            return endOperation<DeleteReplicationGroupResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeDeleteReplicationGroup(DeleteReplicationGroupRequest deleteReplicationGroupRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new DeleteReplicationGroupRequestMarshaller().Marshall(deleteReplicationGroupRequest);
+            var unmarshaller = DeleteReplicationGroupResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        #endregion
+    
         #region DescribeCacheClusters
 
         /// <summary>
-        /// <para> Returns information about all provisioned Cache Clusters if no Cache Cluster identifier is specified, or about a specific Cache
-        /// Cluster if a Cache Cluster identifier is supplied. </para> <para> Cluster information will be returned by default. An optional
-        /// <i>ShowDetails</i> flag can be used to retrieve detailed information about the Cache Nodes associated with the Cache Cluster. Details
-        /// include the DNS address and port for the Cache Node endpoint. </para> <para> If the cluster is in the CREATING state, only cluster level
-        /// information will be displayed until all of the nodes are successfully provisioned. </para> <para> If the cluster is in the DELETING state,
-        /// only cluster level information will be displayed. </para> <para> While adding Cache Nodes, node endpoint information and creation time for
-        /// the additional nodes will not be displayed until they are completely provisioned. The cluster lifecycle tells the customer when new nodes
-        /// are AVAILABLE. </para> <para> While removing existing Cache Nodes from an cluster, endpoint information for the removed nodes will not be
-        /// displayed. </para> <para>DescribeCacheClusters supports pagination.</para>
+        /// <para>The <i>DescribeCacheClusters</i> operation returns information about all provisioned cache clusters if no cache cluster identifier is
+        /// specified, or about a specific cache cluster if a cache cluster identifier is supplied.</para> <para>By default, abbreviated information
+        /// about the cache clusters(s) will be returned. You can use the optional <i>ShowDetails</i> flag to retrieve detailed information about the
+        /// cache nodes associated with the cache clusters. These details include the DNS address and port for the cache node endpoint.</para> <para>If
+        /// the cluster is in the CREATING state, only cluster level information will be displayed until all of the nodes are successfully
+        /// provisioned.</para> <para>If the cluster is in the DELETING state, only cluster level information will be displayed.</para> <para>If cache
+        /// nodes are currently being added to the cache cluster, node endpoint information and creation time for the additional nodes will not be
+        /// displayed until they are completely provisioned. When the cache cluster state is <i>available</i> , the cluster is ready for use.</para>
+        /// <para>If cache nodes are currently being removed from the cache cluster, no endpoint information for the removed nodes is displayed.</para>
         /// </summary>
         /// 
         /// <param name="describeCacheClustersRequest">Container for the necessary parameters to execute the DescribeCacheClusters service method on
@@ -893,15 +1053,15 @@ namespace Amazon.ElastiCache
         
 
         /// <summary>
-        /// <para> Returns information about all provisioned Cache Clusters if no Cache Cluster identifier is specified, or about a specific Cache
-        /// Cluster if a Cache Cluster identifier is supplied. </para> <para> Cluster information will be returned by default. An optional
-        /// <i>ShowDetails</i> flag can be used to retrieve detailed information about the Cache Nodes associated with the Cache Cluster. Details
-        /// include the DNS address and port for the Cache Node endpoint. </para> <para> If the cluster is in the CREATING state, only cluster level
-        /// information will be displayed until all of the nodes are successfully provisioned. </para> <para> If the cluster is in the DELETING state,
-        /// only cluster level information will be displayed. </para> <para> While adding Cache Nodes, node endpoint information and creation time for
-        /// the additional nodes will not be displayed until they are completely provisioned. The cluster lifecycle tells the customer when new nodes
-        /// are AVAILABLE. </para> <para> While removing existing Cache Nodes from an cluster, endpoint information for the removed nodes will not be
-        /// displayed. </para> <para>DescribeCacheClusters supports pagination.</para>
+        /// <para>The <i>DescribeCacheClusters</i> operation returns information about all provisioned cache clusters if no cache cluster identifier is
+        /// specified, or about a specific cache cluster if a cache cluster identifier is supplied.</para> <para>By default, abbreviated information
+        /// about the cache clusters(s) will be returned. You can use the optional <i>ShowDetails</i> flag to retrieve detailed information about the
+        /// cache nodes associated with the cache clusters. These details include the DNS address and port for the cache node endpoint.</para> <para>If
+        /// the cluster is in the CREATING state, only cluster level information will be displayed until all of the nodes are successfully
+        /// provisioned.</para> <para>If the cluster is in the DELETING state, only cluster level information will be displayed.</para> <para>If cache
+        /// nodes are currently being added to the cache cluster, node endpoint information and creation time for the additional nodes will not be
+        /// displayed until they are completely provisioned. When the cache cluster state is <i>available</i> , the cluster is ready for use.</para>
+        /// <para>If cache nodes are currently being removed from the cache cluster, no endpoint information for the removed nodes is displayed.</para>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeCacheClusters service method, as returned by AmazonElastiCache.</returns>
@@ -920,7 +1080,7 @@ namespace Amazon.ElastiCache
         #region DescribeCacheEngineVersions
 
         /// <summary>
-        /// <para> Returns a list of the available cache engines and their versions. </para>
+        /// <para>The <i>DescribeCacheEngineVersions</i> operation returns a list of the available cache engines and their versions.</para>
         /// </summary>
         /// 
         /// <param name="describeCacheEngineVersionsRequest">Container for the necessary parameters to execute the DescribeCacheEngineVersions service
@@ -981,7 +1141,7 @@ namespace Amazon.ElastiCache
         
 
         /// <summary>
-        /// <para> Returns a list of the available cache engines and their versions. </para>
+        /// <para>The <i>DescribeCacheEngineVersions</i> operation returns a list of the available cache engines and their versions.</para>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeCacheEngineVersions service method, as returned by AmazonElastiCache.</returns>
@@ -997,8 +1157,8 @@ namespace Amazon.ElastiCache
         #region DescribeCacheParameterGroups
 
         /// <summary>
-        /// <para> Returns a list of CacheParameterGroup descriptions. If a CacheParameterGroupName is specified, the list will contain only the
-        /// descriptions of the specified CacheParameterGroup. </para>
+        /// <para>The <i>DescribeCacheParameterGroups</i> operation returns a list of cache parameter group descriptions. If a cache parameter group
+        /// name is specified, the list will contain only the descriptions for that group.</para>
         /// </summary>
         /// 
         /// <param name="describeCacheParameterGroupsRequest">Container for the necessary parameters to execute the DescribeCacheParameterGroups service
@@ -1062,8 +1222,8 @@ namespace Amazon.ElastiCache
         
 
         /// <summary>
-        /// <para> Returns a list of CacheParameterGroup descriptions. If a CacheParameterGroupName is specified, the list will contain only the
-        /// descriptions of the specified CacheParameterGroup. </para>
+        /// <para>The <i>DescribeCacheParameterGroups</i> operation returns a list of cache parameter group descriptions. If a cache parameter group
+        /// name is specified, the list will contain only the descriptions for that group.</para>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeCacheParameterGroups service method, as returned by AmazonElastiCache.</returns>
@@ -1082,7 +1242,7 @@ namespace Amazon.ElastiCache
         #region DescribeCacheParameters
 
         /// <summary>
-        /// <para> Returns the detailed parameter list for a particular CacheParameterGroup. </para>
+        /// <para>The <i>DescribeCacheParameters</i> operation returns the detailed parameter list for a particular cache parameter group.</para>
         /// </summary>
         /// 
         /// <param name="describeCacheParametersRequest">Container for the necessary parameters to execute the DescribeCacheParameters service method on
@@ -1150,8 +1310,8 @@ namespace Amazon.ElastiCache
         #region DescribeCacheSecurityGroups
 
         /// <summary>
-        /// <para> Returns a list of CacheSecurityGroup descriptions. If a CacheSecurityGroupName is specified, the list will contain only the
-        /// description of the specified CacheSecurityGroup. </para>
+        /// <para>The <i>DescribeCacheSecurityGroups</i> operation returns a list of cache security group descriptions. If a cache security group name
+        /// is specified, the list will contain only the description of that group.</para>
         /// </summary>
         /// 
         /// <param name="describeCacheSecurityGroupsRequest">Container for the necessary parameters to execute the DescribeCacheSecurityGroups service
@@ -1215,8 +1375,8 @@ namespace Amazon.ElastiCache
         
 
         /// <summary>
-        /// <para> Returns a list of CacheSecurityGroup descriptions. If a CacheSecurityGroupName is specified, the list will contain only the
-        /// description of the specified CacheSecurityGroup. </para>
+        /// <para>The <i>DescribeCacheSecurityGroups</i> operation returns a list of cache security group descriptions. If a cache security group name
+        /// is specified, the list will contain only the description of that group.</para>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeCacheSecurityGroups service method, as returned by AmazonElastiCache.</returns>
@@ -1235,8 +1395,8 @@ namespace Amazon.ElastiCache
         #region DescribeCacheSubnetGroups
 
         /// <summary>
-        /// <para> Returns a list of CacheSubnetGroup descriptions. If a CacheSubnetGroupName is specified, the list will contain only the description
-        /// of the specified Cache Subnet Group. </para>
+        /// <para>The <i>DescribeCacheSubnetGroups</i> operation returns a list of cache subnet group descriptions. If a subnet group name is specified,
+        /// the list will contain only the description of that group.</para>
         /// </summary>
         /// 
         /// <param name="describeCacheSubnetGroupsRequest">Container for the necessary parameters to execute the DescribeCacheSubnetGroups service
@@ -1298,8 +1458,8 @@ namespace Amazon.ElastiCache
         
 
         /// <summary>
-        /// <para> Returns a list of CacheSubnetGroup descriptions. If a CacheSubnetGroupName is specified, the list will contain only the description
-        /// of the specified Cache Subnet Group. </para>
+        /// <para>The <i>DescribeCacheSubnetGroups</i> operation returns a list of cache subnet group descriptions. If a subnet group name is specified,
+        /// the list will contain only the description of that group.</para>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeCacheSubnetGroups service method, as returned by AmazonElastiCache.</returns>
@@ -1316,7 +1476,8 @@ namespace Amazon.ElastiCache
         #region DescribeEngineDefaultParameters
 
         /// <summary>
-        /// <para> Returns the default engine and system parameter information for the specified cache engine. </para>
+        /// <para>The <i>DescribeEngineDefaultParameters</i> operation returns the default engine and system parameter information for the specified
+        /// cache engine.</para>
         /// </summary>
         /// 
         /// <param name="describeEngineDefaultParametersRequest">Container for the necessary parameters to execute the DescribeEngineDefaultParameters
@@ -1383,9 +1544,10 @@ namespace Amazon.ElastiCache
         #region DescribeEvents
 
         /// <summary>
-        /// <para> Returns events related to Cache Clusters, Cache Security Groups, and Cache Parameter Groups for the past 14 days. Events specific to
-        /// a particular Cache Cluster, Cache Security Group, or Cache Parameter Group can be obtained by providing the name as a parameter. By default,
-        /// the past hour of events are returned. </para>
+        /// <para>The <i>DescribeEvents</i> operation returns events related to cache clusters, cache security groups, and cache parameter groups. You
+        /// can obtain events specific to a particular cache cluster, cache security group, or cache parameter group by providing the name as a
+        /// parameter.</para> <para>By default, only the events occurring within the last hour are returned; however, you can retrieve up to 14 days'
+        /// worth of events if necessary.</para>
         /// </summary>
         /// 
         /// <param name="describeEventsRequest">Container for the necessary parameters to execute the DescribeEvents service method on
@@ -1448,9 +1610,10 @@ namespace Amazon.ElastiCache
         
 
         /// <summary>
-        /// <para> Returns events related to Cache Clusters, Cache Security Groups, and Cache Parameter Groups for the past 14 days. Events specific to
-        /// a particular Cache Cluster, Cache Security Group, or Cache Parameter Group can be obtained by providing the name as a parameter. By default,
-        /// the past hour of events are returned. </para>
+        /// <para>The <i>DescribeEvents</i> operation returns events related to cache clusters, cache security groups, and cache parameter groups. You
+        /// can obtain events specific to a particular cache cluster, cache security group, or cache parameter group by providing the name as a
+        /// parameter.</para> <para>By default, only the events occurring within the last hour are returned; however, you can retrieve up to 14 days'
+        /// worth of events if necessary.</para>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeEvents service method, as returned by AmazonElastiCache.</returns>
@@ -1465,10 +1628,96 @@ namespace Amazon.ElastiCache
 
         #endregion
     
+        #region DescribeReplicationGroups
+
+        /// <summary>
+        /// <para>The <i>DescribeReplicationGroups</i> operation returns information about a particular replication group. If no identifier is
+        /// specified, <i>DescribeReplicationGroups</i> returns information about all replication groups.</para>
+        /// </summary>
+        /// 
+        /// <param name="describeReplicationGroupsRequest">Container for the necessary parameters to execute the DescribeReplicationGroups service
+        ///          method on AmazonElastiCache.</param>
+        /// 
+        /// <returns>The response from the DescribeReplicationGroups service method, as returned by AmazonElastiCache.</returns>
+        /// 
+        /// <exception cref="InvalidParameterValueException"/>
+        /// <exception cref="ReplicationGroupNotFoundException"/>
+        /// <exception cref="InvalidParameterCombinationException"/>
+        public DescribeReplicationGroupsResponse DescribeReplicationGroups(DescribeReplicationGroupsRequest describeReplicationGroupsRequest)
+        {
+            IAsyncResult asyncResult = invokeDescribeReplicationGroups(describeReplicationGroupsRequest, null, null, true);
+            return EndDescribeReplicationGroups(asyncResult);
+        }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeReplicationGroups operation.
+        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache.DescribeReplicationGroups"/>
+        /// </summary>
+        /// 
+        /// <param name="describeReplicationGroupsRequest">Container for the necessary parameters to execute the DescribeReplicationGroups operation on
+        ///          AmazonElastiCache.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
+        ///         EndDescribeReplicationGroups operation.</returns>
+        public IAsyncResult BeginDescribeReplicationGroups(DescribeReplicationGroupsRequest describeReplicationGroupsRequest, AsyncCallback callback, object state)
+        {
+            return invokeDescribeReplicationGroups(describeReplicationGroupsRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the DescribeReplicationGroups operation.
+        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache.DescribeReplicationGroups"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeReplicationGroups.</param>
+        /// 
+        /// <returns>Returns a DescribeReplicationGroupsResult from AmazonElastiCache.</returns>
+        public DescribeReplicationGroupsResponse EndDescribeReplicationGroups(IAsyncResult asyncResult)
+        {
+            return endOperation<DescribeReplicationGroupsResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeDescribeReplicationGroups(DescribeReplicationGroupsRequest describeReplicationGroupsRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new DescribeReplicationGroupsRequestMarshaller().Marshall(describeReplicationGroupsRequest);
+            var unmarshaller = DescribeReplicationGroupsResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        /// <summary>
+        /// <para>The <i>DescribeReplicationGroups</i> operation returns information about a particular replication group. If no identifier is
+        /// specified, <i>DescribeReplicationGroups</i> returns information about all replication groups.</para>
+        /// </summary>
+        /// 
+        /// <returns>The response from the DescribeReplicationGroups service method, as returned by AmazonElastiCache.</returns>
+        /// 
+        /// <exception cref="InvalidParameterValueException"/>
+        /// <exception cref="ReplicationGroupNotFoundException"/>
+        /// <exception cref="InvalidParameterCombinationException"/>
+        public DescribeReplicationGroupsResponse DescribeReplicationGroups()
+        {
+            return DescribeReplicationGroups(new DescribeReplicationGroupsRequest());
+        }
+        
+
+        #endregion
+    
         #region DescribeReservedCacheNodes
 
         /// <summary>
-        /// <para> Returns information about reserved Cache Nodes for this account, or about a specified reserved Cache Node. </para>
+        /// <para>The <i>DescribeReservedCacheNodes</i> operation returns information about reserved cache nodes for this account, or about a specified
+        /// reserved cache node.</para>
         /// </summary>
         /// 
         /// <param name="describeReservedCacheNodesRequest">Container for the necessary parameters to execute the DescribeReservedCacheNodes service
@@ -1532,7 +1781,8 @@ namespace Amazon.ElastiCache
         
 
         /// <summary>
-        /// <para> Returns information about reserved Cache Nodes for this account, or about a specified reserved Cache Node. </para>
+        /// <para>The <i>DescribeReservedCacheNodes</i> operation returns information about reserved cache nodes for this account, or about a specified
+        /// reserved cache node.</para>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeReservedCacheNodes service method, as returned by AmazonElastiCache.</returns>
@@ -1551,7 +1801,7 @@ namespace Amazon.ElastiCache
         #region DescribeReservedCacheNodesOfferings
 
         /// <summary>
-        /// <para> Lists available reserved Cache Node offerings. </para>
+        /// <para>The <i>DescribeReservedCacheNodesOfferings</i> operation lists available reserved cache node offerings.</para>
         /// </summary>
         /// 
         /// <param name="describeReservedCacheNodesOfferingsRequest">Container for the necessary parameters to execute the
@@ -1615,7 +1865,7 @@ namespace Amazon.ElastiCache
         
 
         /// <summary>
-        /// <para> Lists available reserved Cache Node offerings. </para>
+        /// <para>The <i>DescribeReservedCacheNodesOfferings</i> operation lists available reserved cache node offerings.</para>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeReservedCacheNodesOfferings service method, as returned by AmazonElastiCache.</returns>
@@ -1634,8 +1884,8 @@ namespace Amazon.ElastiCache
         #region ModifyCacheCluster
 
         /// <summary>
-        /// <para> Modifies the Cache Cluster settings. You can change one or more Cache Cluster configuration parameters by specifying the parameters
-        /// and the new values in the request. </para>
+        /// <para>The <i>ModifyCacheCluster</i> operation modifies the settings for a cache cluster. You can use this operation to change one or more
+        /// cluster configuration parameters by specifying the parameters and the new values.</para>
         /// </summary>
         /// 
         /// <param name="modifyCacheClusterRequest">Container for the necessary parameters to execute the ModifyCacheCluster service method on
@@ -1710,8 +1960,8 @@ namespace Amazon.ElastiCache
         #region ModifyCacheParameterGroup
 
         /// <summary>
-        /// <para> Modifies the parameters of a CacheParameterGroup. To modify more than one parameter, submit a list of ParameterName and
-        /// ParameterValue parameters. A maximum of 20 parameters can be modified in a single request. </para>
+        /// <para>The <i>ModifyCacheParameterGroup</i> operation modifies the parameters of a cache parameter group. You can modify up to 20 parameters
+        /// in a single request by submitting a list parameter name and value pairs.</para>
         /// </summary>
         /// 
         /// <param name="modifyCacheParameterGroupRequest">Container for the necessary parameters to execute the ModifyCacheParameterGroup service
@@ -1780,7 +2030,7 @@ namespace Amazon.ElastiCache
         #region ModifyCacheSubnetGroup
 
         /// <summary>
-        /// <para> Modifies an existing Cache Subnet Group. </para>
+        /// <para>The <i>ModifyCacheSubnetGroup</i> operation modifies an existing cache subnet group.</para>
         /// </summary>
         /// 
         /// <param name="modifyCacheSubnetGroupRequest">Container for the necessary parameters to execute the ModifyCacheSubnetGroup service method on
@@ -1846,10 +2096,85 @@ namespace Amazon.ElastiCache
 
         #endregion
     
+        #region ModifyReplicationGroup
+
+        /// <summary>
+        /// <para>The <i>ModifyReplicationGroup</i> operation modifies the settings for a replication group.</para>
+        /// </summary>
+        /// 
+        /// <param name="modifyReplicationGroupRequest">Container for the necessary parameters to execute the ModifyReplicationGroup service method on
+        ///          AmazonElastiCache.</param>
+        /// 
+        /// <returns>The response from the ModifyReplicationGroup service method, as returned by AmazonElastiCache.</returns>
+        /// 
+        /// <exception cref="InvalidReplicationGroupStateException"/>
+        /// <exception cref="InvalidParameterValueException"/>
+        /// <exception cref="InvalidCacheSecurityGroupStateException"/>
+        /// <exception cref="InvalidVPCNetworkStateException"/>
+        /// <exception cref="ReplicationGroupNotFoundException"/>
+        /// <exception cref="CacheClusterNotFoundException"/>
+        /// <exception cref="InvalidParameterCombinationException"/>
+        /// <exception cref="CacheParameterGroupNotFoundException"/>
+        /// <exception cref="InvalidCacheClusterStateException"/>
+        /// <exception cref="CacheSecurityGroupNotFoundException"/>
+        public ModifyReplicationGroupResponse ModifyReplicationGroup(ModifyReplicationGroupRequest modifyReplicationGroupRequest)
+        {
+            IAsyncResult asyncResult = invokeModifyReplicationGroup(modifyReplicationGroupRequest, null, null, true);
+            return EndModifyReplicationGroup(asyncResult);
+        }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyReplicationGroup operation.
+        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache.ModifyReplicationGroup"/>
+        /// </summary>
+        /// 
+        /// <param name="modifyReplicationGroupRequest">Container for the necessary parameters to execute the ModifyReplicationGroup operation on
+        ///          AmazonElastiCache.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
+        ///         EndModifyReplicationGroup operation.</returns>
+        public IAsyncResult BeginModifyReplicationGroup(ModifyReplicationGroupRequest modifyReplicationGroupRequest, AsyncCallback callback, object state)
+        {
+            return invokeModifyReplicationGroup(modifyReplicationGroupRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the ModifyReplicationGroup operation.
+        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache.ModifyReplicationGroup"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyReplicationGroup.</param>
+        /// 
+        /// <returns>Returns a ReplicationGroup from AmazonElastiCache.</returns>
+        public ModifyReplicationGroupResponse EndModifyReplicationGroup(IAsyncResult asyncResult)
+        {
+            return endOperation<ModifyReplicationGroupResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeModifyReplicationGroup(ModifyReplicationGroupRequest modifyReplicationGroupRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new ModifyReplicationGroupRequestMarshaller().Marshall(modifyReplicationGroupRequest);
+            var unmarshaller = ModifyReplicationGroupResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        #endregion
+    
         #region PurchaseReservedCacheNodesOffering
 
         /// <summary>
-        /// <para> Purchases a reserved Cache Node offering. </para>
+        /// <para>The <i>PurchaseReservedCacheNodesOffering</i> operation allows you to purchase a reserved cache node offering.</para>
         /// </summary>
         /// 
         /// <param name="purchaseReservedCacheNodesOfferingRequest">Container for the necessary parameters to execute the
@@ -1919,10 +2244,11 @@ namespace Amazon.ElastiCache
         #region RebootCacheCluster
 
         /// <summary>
-        /// <para> Reboots some (or all) of the cache cluster nodes within a previously provisioned ElastiCache cluster. This API results in the
-        /// application of modified CacheParameterGroup parameters to the cache cluster. This action is taken as soon as possible, and results in a
-        /// momentary outage to the cache cluster during which the cache cluster status is set to rebooting. During that momentary outage, the contents
-        /// of the cache (for each cache cluster node being rebooted) are lost. A CacheCluster event is created when the reboot is completed. </para>
+        /// <para>The <i>RebootCacheCluster</i> operation reboots some, or all, of the cache cluster nodes within a provisioned cache cluster. This API
+        /// will apply any modified cache parameter groups to the cache cluster. The reboot action takes place as soon as possible, and results in a
+        /// momentary outage to the cache cluster. During the reboot, the cache cluster status is set to REBOOTING.</para> <para>The reboot causes the
+        /// contents of the cache (for each cache cluster node being rebooted) to be lost.</para> <para>When the reboot is complete, a cache cluster
+        /// event is created.</para>
         /// </summary>
         /// 
         /// <param name="rebootCacheClusterRequest">Container for the necessary parameters to execute the RebootCacheCluster service method on
@@ -1989,9 +2315,9 @@ namespace Amazon.ElastiCache
         #region ResetCacheParameterGroup
 
         /// <summary>
-        /// <para> Modifies the parameters of a CacheParameterGroup to the engine or system default value. To reset specific parameters submit a list of
-        /// the parameter names. To reset the entire CacheParameterGroup, specify the CacheParameterGroup name and ResetAllParameters parameters.
-        /// </para>
+        /// <para>The <i>ResetCacheParameterGroup</i> operation modifies the parameters of a cache parameter group to the engine or system default
+        /// value. You can reset specific parameters by submitting a list of parameter names. To reset the entire cache parameter group, specify the
+        /// <i>ResetAllParameters</i> and <i>CacheParameterGroupName</i> parameters.</para>
         /// </summary>
         /// 
         /// <param name="resetCacheParameterGroupRequest">Container for the necessary parameters to execute the ResetCacheParameterGroup service method
@@ -2060,7 +2386,8 @@ namespace Amazon.ElastiCache
         #region RevokeCacheSecurityGroupIngress
 
         /// <summary>
-        /// <para> Revokes ingress from a CacheSecurityGroup for previously authorized EC2 Security Groups. </para>
+        /// <para>The <i>RevokeCacheSecurityGroupIngress</i> operation revokes ingress from a cache security group. Use this operation to disallow
+        /// access from an Amazon EC2 security group that had been previously authorized.</para>
         /// </summary>
         /// 
         /// <param name="revokeCacheSecurityGroupIngressRequest">Container for the necessary parameters to execute the RevokeCacheSecurityGroupIngress

@@ -52,7 +52,7 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
             return response;
         }
         
-        private void UnmarshallResult(XmlUnmarshallerContext context,CreateQueueResponse response)
+        private static void UnmarshallResult(XmlUnmarshallerContext context,CreateQueueResponse response)
         {
             
             int originalDepth = context.CurrentDepth;
@@ -87,7 +87,7 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
             
-            if (errorResponse.Code != null && errorResponse.Code.Equals("AWS.SimpleQueueService.QueueNameExists"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("QueueAlreadyExists"))
             {
                 return new QueueNameExistsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }

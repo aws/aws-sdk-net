@@ -21,18 +21,12 @@ using Amazon.Runtime;
 
 namespace Amazon.StorageGateway.Model
 {
-    /// <summary>
-    /// <para>A JSON object containing the following fields:</para>
+    /// <summary>Describe Cachedi S C S I Volumes Result
     /// </summary>
     public partial class DescribeCachediSCSIVolumesResult : AmazonWebServiceResponse
     {
         
         private List<CachediSCSIVolume> cachediSCSIVolumes = new List<CachediSCSIVolume>();
-
-        /// <summary>
-        /// An array of objects where each object contains metadata about one cached volume.
-        ///  
-        /// </summary>
         public List<CachediSCSIVolume> CachediSCSIVolumes
         {
             get { return this.cachediSCSIVolumes; }

@@ -26,7 +26,7 @@ namespace Amazon.EC2.Model
     {
         
         private string outsideIpAddress;
-        private string status;
+        private TelemetryStatus status;
         private DateTime? lastStatusChange;
         private string statusMessage;
         private int? acceptedRouteCount;
@@ -41,7 +41,7 @@ namespace Amazon.EC2.Model
         {
             return this.outsideIpAddress != null;
         }
-        public string Status
+        public TelemetryStatus Status
         {
             get { return this.status; }
             set { this.status = value; }

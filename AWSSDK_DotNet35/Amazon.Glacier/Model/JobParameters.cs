@@ -86,7 +86,7 @@ namespace Amazon.Glacier.Model
 
         /// <summary>
         /// The optional description for the job. The description must be less than or equal to 1,024 bytes. The allowable characters are 7-bit ASCII
-        /// without control codes—specifically, ASCII values 32—126 decimal or 0x20—0x7E hexadecimal.
+        /// without control codes-specifically, ASCII values 32-126 decimal or 0x20-0x7E hexadecimal.
         ///  
         /// </summary>
         public string Description
@@ -117,6 +117,15 @@ namespace Amazon.Glacier.Model
         {
             return this.sNSTopic != null;
         }
+
+        /// <summary>
+        /// The byte range to retrieve for an archive retrieval. in the form "<i>StartByteValue</i>-<i>EndByteValue</i>" If not specified, the whole
+        /// archive is retrieved. If specified, the byte range must be megabyte (1024*1024) aligned which means that <i>StartByteValue</i> must be
+        /// divisible by 1 MB and <i>EndByteValue</i> plus 1 must be divisible by 1 MB or be the end of the archive specified as the archive byte size
+        /// value minus 1. If RetrievalByteRange is not megabyte aligned, this operation returns a 400 response. An error occurs if you specify this
+        /// field for an inventory retrieval job request.
+        ///  
+        /// </summary>
         public string RetrievalByteRange
         {
             get { return this.retrievalByteRange; }

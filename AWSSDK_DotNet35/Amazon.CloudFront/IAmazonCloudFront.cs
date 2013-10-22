@@ -88,20 +88,23 @@ namespace Amazon.CloudFront
         /// 
         /// <exception cref="TooManyCookieNamesInWhiteListException"/>
         /// <exception cref="InvalidDefaultRootObjectException"/>
+        /// <exception cref="InvalidResponseCodeException"/>
         /// <exception cref="MissingBodyException"/>
         /// <exception cref="TooManyDistributionCNAMEsException"/>
         /// <exception cref="InvalidForwardCookiesException"/>
         /// <exception cref="TooManyDistributionsException"/>
         /// <exception cref="NoSuchOriginException"/>
         /// <exception cref="InconsistentQuantitiesException"/>
-        /// <exception cref="CNAMEAlreadyExistsException"/>
         /// <exception cref="InvalidArgumentException"/>
+        /// <exception cref="CNAMEAlreadyExistsException"/>
         /// <exception cref="InvalidOriginAccessIdentityException"/>
         /// <exception cref="TrustedSignerDoesNotExistException"/>
         /// <exception cref="InvalidOriginException"/>
         /// <exception cref="TooManyCertificatesException"/>
+        /// <exception cref="InvalidRelativePathException"/>
         /// <exception cref="TooManyCacheBehaviorsException"/>
         /// <exception cref="TooManyTrustedSignersException"/>
+        /// <exception cref="InvalidErrorCodeException"/>
         /// <exception cref="InvalidViewerCertificateException"/>
         /// <exception cref="AccessDeniedException"/>
         /// <exception cref="TooManyOriginsException"/>
@@ -1026,27 +1029,30 @@ namespace Amazon.CloudFront
         /// <returns>The response from the UpdateDistribution service method, as returned by AmazonCloudFront.</returns>
         /// 
         /// <exception cref="TooManyCookieNamesInWhiteListException"/>
-        /// <exception cref="InvalidDefaultRootObjectException"/>
-        /// <exception cref="InvalidIfMatchVersionException"/>
-        /// <exception cref="IllegalUpdateException"/>
+        /// <exception cref="InvalidResponseCodeException"/>
         /// <exception cref="MissingBodyException"/>
         /// <exception cref="TooManyDistributionCNAMEsException"/>
-        /// <exception cref="InvalidForwardCookiesException"/>
         /// <exception cref="NoSuchOriginException"/>
         /// <exception cref="PreconditionFailedException"/>
         /// <exception cref="InconsistentQuantitiesException"/>
         /// <exception cref="CNAMEAlreadyExistsException"/>
         /// <exception cref="InvalidArgumentException"/>
-        /// <exception cref="TrustedSignerDoesNotExistException"/>
         /// <exception cref="InvalidOriginAccessIdentityException"/>
-        /// <exception cref="TooManyCertificatesException"/>
         /// <exception cref="TooManyCacheBehaviorsException"/>
         /// <exception cref="TooManyTrustedSignersException"/>
         /// <exception cref="NoSuchDistributionException"/>
         /// <exception cref="InvalidViewerCertificateException"/>
-        /// <exception cref="AccessDeniedException"/>
         /// <exception cref="TooManyOriginsException"/>
         /// <exception cref="InvalidRequiredProtocolException"/>
+        /// <exception cref="InvalidDefaultRootObjectException"/>
+        /// <exception cref="InvalidIfMatchVersionException"/>
+        /// <exception cref="IllegalUpdateException"/>
+        /// <exception cref="InvalidForwardCookiesException"/>
+        /// <exception cref="TrustedSignerDoesNotExistException"/>
+        /// <exception cref="TooManyCertificatesException"/>
+        /// <exception cref="InvalidRelativePathException"/>
+        /// <exception cref="InvalidErrorCodeException"/>
+        /// <exception cref="AccessDeniedException"/>
         UpdateDistributionResponse UpdateDistribution(UpdateDistributionRequest updateDistributionRequest);
 
         /// <summary>

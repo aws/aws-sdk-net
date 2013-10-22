@@ -33,6 +33,9 @@
 
         public TableDescription Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonToken.Null)
+                return null;
+
             TableDescription tableDescription = new TableDescription();
 
         

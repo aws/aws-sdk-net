@@ -36,10 +36,22 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class CreateVpnConnectionRequest : AmazonWebServiceRequest
     {
+        private bool? dryRun;
         private string type;
         private string customerGatewayId;
         private string vpnGatewayId;
         private VpnConnectionOptionsSpecification options;
+        public bool DryRun
+        {
+            get { return this.dryRun ?? default(bool); }
+            set { this.dryRun = value; }
+        }
+
+        // Check to see if DryRun property is set
+        internal bool IsSetDryRun()
+        {
+            return this.dryRun.HasValue;
+        }
 
         /// <summary>
         /// The type of VPN connection.

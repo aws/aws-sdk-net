@@ -33,6 +33,9 @@
 
         public VolumeRecoveryPointInfo Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonToken.Null)
+                return null;
+
             VolumeRecoveryPointInfo volumeRecoveryPointInfo = new VolumeRecoveryPointInfo();
 
         

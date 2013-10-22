@@ -146,6 +146,25 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 request.Parameters.Add("PubliclyAccessible", StringUtils.FromBool(createDBInstanceRequest.PubliclyAccessible));
             }
 
+            if (createDBInstanceRequest != null)
+            {
+                List<Tag> tagsList = createDBInstanceRequest.Tags;
+                int tagsListIndex = 1;
+                foreach (Tag tagsListValue in tagsList)
+                {
+                    if (tagsListValue != null && tagsListValue.IsSetKey())
+                    {
+                        request.Parameters.Add("Tags.member." + tagsListIndex + ".Key", StringUtils.FromString(tagsListValue.Key));
+                    }
+                    if (tagsListValue != null && tagsListValue.IsSetValue())
+                    {
+                        request.Parameters.Add("Tags.member." + tagsListIndex + ".Value", StringUtils.FromString(tagsListValue.Value));
+                    }
+
+                    tagsListIndex++;
+                }
+            }
+
             return request;
         }
     }

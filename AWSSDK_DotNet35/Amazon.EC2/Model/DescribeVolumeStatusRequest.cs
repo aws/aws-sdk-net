@@ -29,10 +29,22 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeVolumeStatusRequest : AmazonWebServiceRequest
     {
+        private bool? dryRun;
         private List<string> volumeIds = new List<string>();
         private List<Filter> filters = new List<Filter>();
         private string nextToken;
         private int? maxResults;
+        public bool DryRun
+        {
+            get { return this.dryRun ?? default(bool); }
+            set { this.dryRun = value; }
+        }
+
+        // Check to see if DryRun property is set
+        internal bool IsSetDryRun()
+        {
+            return this.dryRun.HasValue;
+        }
         public List<string> VolumeIds
         {
             get { return this.volumeIds; }

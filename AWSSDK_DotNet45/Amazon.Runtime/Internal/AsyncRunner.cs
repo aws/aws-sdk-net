@@ -31,6 +31,10 @@ namespace Amazon.Runtime.Internal
 
         public static Task<T> Run<T>(Func<T> action, CancellationToken cancellationToken)
         {
+#if (WIN_RT || WINDOWS_PHONE)
+            Task<T> task = Task.Run<T>(action);
+            return task;
+#else
             return Task<T>.Run(() =>
             {
                 Exception exception = null;
@@ -66,6 +70,7 @@ namespace Amazon.Runtime.Internal
 
                 return result;
             }, cancellationToken);
+#endif
         }
     }
 }

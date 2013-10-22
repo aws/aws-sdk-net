@@ -25,13 +25,13 @@ namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
     /// Container for the parameters to the DisableAvailabilityZonesForLoadBalancer operation.
-    /// <para> Removes the specified EC2 Availability Zones from the set of configured Availability Zones for the LoadBalancer. </para> <para> There
-    /// must be at least one Availability Zone registered with a LoadBalancer at all times. A client cannot remove all the Availability Zones from a
-    /// LoadBalancer. Once an Availability Zone is removed, all the instances registered with the LoadBalancer that are in the removed Availability
-    /// Zone go into the OutOfService state. Upon Availability Zone removal, the LoadBalancer attempts to equally balance the traffic among its
-    /// remaining usable Availability Zones. Trying to remove an Availability Zone that was not associated with the LoadBalancer does nothing.
-    /// </para> <para><b>NOTE:</b> In order for this call to be successful, the client must have created the LoadBalancer. The client must provide
-    /// the same account credentials as those that were used to create the LoadBalancer. </para>
+    /// <para> Removes the specified EC2 Availability Zones from the set of configured Availability Zones for the load balancer. </para> <para>
+    /// There must be at least one Availability Zone registered with a load balancer at all times. A client cannot remove all the Availability Zones
+    /// from a load balancer. Once an Availability Zone is removed, all the instances registered with the load balancer that are in the removed
+    /// Availability Zone go into the OutOfService state. Upon Availability Zone removal, the load balancer attempts to equally balance the traffic
+    /// among its remaining usable Availability Zones. Trying to remove an Availability Zone that was not associated with the load balancer does
+    /// nothing. </para> <para><b>NOTE:</b> In order for this call to be successful, the client must have created the load balancer. The client must
+    /// provide the same account credentials as those that were used to create the load balancer. </para>
     /// </summary>
     public partial class DisableAvailabilityZonesForLoadBalancerRequest : AmazonWebServiceRequest
     {
@@ -48,9 +48,9 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// Callers should use the properties initialize any additional object members.
         /// </summary>
         /// 
-        /// <param name="loadBalancerName"> The name associated with the LoadBalancer. The name must be unique within the client AWS account. </param>
-        /// <param name="availabilityZones"> A list of Availability Zones to be removed from the LoadBalancer. <note> There must be at least one
-        /// Availability Zone registered with a LoadBalancer at all times. The client cannot remove all the Availability Zones from a LoadBalancer.
+        /// <param name="loadBalancerName"> The name associated with the load balancer. The name must be unique within the client AWS account. </param>
+        /// <param name="availabilityZones"> A list of Availability Zones to be removed from the load balancer. <note> There must be at least one
+        /// Availability Zone registered with a load balancer at all times. The client cannot remove all the Availability Zones from a load balancer.
         /// Specified Availability Zones must be in the same Region. </note> </param>
         public DisableAvailabilityZonesForLoadBalancerRequest(string loadBalancerName, List<string> availabilityZones)
         {
@@ -60,7 +60,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     
 
         /// <summary>
-        /// The name associated with the LoadBalancer. The name must be unique within the client AWS account.
+        /// The name associated with the load balancer. The name must be unique within the client AWS account.
         ///  
         /// </summary>
         public string LoadBalancerName
@@ -76,9 +76,9 @@ namespace Amazon.ElasticLoadBalancing.Model
         }
 
         /// <summary>
-        /// A list of Availability Zones to be removed from the LoadBalancer. <note> There must be at least one Availability Zone registered with a
-        /// LoadBalancer at all times. The client cannot remove all the Availability Zones from a LoadBalancer. Specified Availability Zones must be in
-        /// the same Region. </note>
+        /// A list of Availability Zones to be removed from the load balancer. <note> There must be at least one Availability Zone registered with a
+        /// load balancer at all times. The client cannot remove all the Availability Zones from a load balancer. Specified Availability Zones must be
+        /// in the same Region. </note>
         ///  
         /// </summary>
         public List<string> AvailabilityZones

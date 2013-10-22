@@ -33,9 +33,10 @@ namespace Amazon.ElasticMapReduce.Model
     /// call, user intervention, or in the event of a job flow error.</para> <para>A maximum of 256 steps are allowed in each job flow.</para>
     /// <para>If your job flow is long-running (such as a Hive data warehouse) or complex, you may require more than 256 steps to process your data.
     /// You can bypass the 256-step limitation in various ways, including using the SSH shell to connect to the master node and submitting queries
-    /// directly to the software running on the master node, such as Hive and Hadoop. For more information on how to do this, go to Add More than
-    /// 256 Steps to a Job Flow in the <i>Amazon Elastic MapReduce Developer's Guide</i> .</para> <para>For long running job flows, we recommend
-    /// that you periodically store your results.</para>
+    /// directly to the software running on the master node, such as Hive and Hadoop. For more information on how to do this, go to <a
+    /// href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/AddMoreThan256Steps.html" >Add More than 256 Steps to a Job Flow</a>
+    /// in the <i>Amazon Elastic MapReduce Developer's Guide</i> .</para> <para>For long running job flows, we recommend that you periodically store
+    /// your results.</para>
     /// </summary>
     public partial class RunJobFlowRequest : AmazonWebServiceRequest
     {
@@ -47,6 +48,7 @@ namespace Amazon.ElasticMapReduce.Model
         private List<StepConfig> steps = new List<StepConfig>();
         private List<BootstrapActionConfig> bootstrapActions = new List<BootstrapActionConfig>();
         private List<string> supportedProducts = new List<string>();
+        private List<SupportedProductConfig> newSupportedProducts = new List<SupportedProductConfig>();
         private bool? visibleToAllUsers;
         private string jobFlowRole;
 
@@ -238,6 +240,28 @@ namespace Amazon.ElasticMapReduce.Model
         internal bool IsSetSupportedProducts()
         {
             return this.supportedProducts.Count > 0;
+        }
+
+        /// <summary>
+        /// A list of strings that indicates third-party software to use with the job flow that accepts a user argument list. EMR accepts and forwards
+        /// the argument list to the corresponding installation script as bootstrap action arguments. For more information, see <a
+        /// href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-mapr.html">Launch a Job Flow on the MapR Distribution for
+        /// Hadoop</a>. Currently supported values are: <ul> <li>"karmasphere-enterprise-utility" - tag the job flow for management by <a
+        /// href="http://aws.amazon.com/elasticmapreduce/karmasphere/">Karmasphere.</a></li> <li>"mapr-m3" - launch the job flow using MapR M3
+        /// Edition.</li> <li>"mapr-m5" - launch the job flow using MapR M5 Edition.</li> <li>"mapr" with the user arguments specifying "--edition,m3"
+        /// or "--edition,m5" - launch the job flow using MapR M3 or M5 Edition respectively.</li> </ul>
+        ///  
+        /// </summary>
+        public List<SupportedProductConfig> NewSupportedProducts
+        {
+            get { return this.newSupportedProducts; }
+            set { this.newSupportedProducts = value; }
+        }
+
+        // Check to see if NewSupportedProducts property is set
+        internal bool IsSetNewSupportedProducts()
+        {
+            return this.newSupportedProducts.Count > 0;
         }
 
         /// <summary>

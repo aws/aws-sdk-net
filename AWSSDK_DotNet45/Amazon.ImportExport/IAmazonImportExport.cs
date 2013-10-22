@@ -37,7 +37,7 @@ namespace Amazon.ImportExport
         /// complete. </para>
         /// </summary>
         /// 
-        /// <param name="cancelJobRequest">Container for the necessary parameters to execute the CancelJob service method on AmazonImportExport.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CancelJob service method on AmazonImportExport.</param>
         /// 
         /// <returns>The response from the CancelJob service method, as returned by AmazonImportExport.</returns>
         /// 
@@ -67,7 +67,7 @@ namespace Amazon.ImportExport
         /// that you use to identify your storage device, and the address where you should ship your storage device. </para>
         /// </summary>
         /// 
-        /// <param name="createJobRequest">Container for the necessary parameters to execute the CreateJob service method on AmazonImportExport.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateJob service method on AmazonImportExport.</param>
         /// 
         /// <returns>The response from the CreateJob service method, as returned by AmazonImportExport.</returns>
         /// 
@@ -104,7 +104,7 @@ namespace Amazon.ImportExport
         /// the signature value associated with the job. You can only return information about jobs you own. </para>
         /// </summary>
         /// 
-        /// <param name="getStatusRequest">Container for the necessary parameters to execute the GetStatus service method on AmazonImportExport.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetStatus service method on AmazonImportExport.</param>
         /// 
         /// <returns>The response from the GetStatus service method, as returned by AmazonImportExport.</returns>
         /// 
@@ -133,7 +133,7 @@ namespace Amazon.ImportExport
         /// Test2 followed by Test1. </para>
         /// </summary>
         /// 
-        /// <param name="listJobsRequest">Container for the necessary parameters to execute the ListJobs service method on AmazonImportExport.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListJobs service method on AmazonImportExport.</param>
         /// 
         /// <returns>The response from the ListJobs service method, as returned by AmazonImportExport.</returns>
         /// 
@@ -159,7 +159,6 @@ namespace Amazon.ImportExport
         /// Test2 followed by Test1. </para>
         /// </summary>
         /// 
-        /// <param name="listJobsRequest">Container for the necessary parameters to execute the ListJobs service method on AmazonImportExport.</param>
         /// 
         /// <returns>The response from the ListJobs service method, as returned by AmazonImportExport.</returns>
         /// 
@@ -174,7 +173,7 @@ namespace Amazon.ImportExport
         /// before the data transfer starts and you can only use it on jobs you own. </para>
         /// </summary>
         /// 
-        /// <param name="updateJobRequest">Container for the necessary parameters to execute the UpdateJob service method on AmazonImportExport.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateJob service method on AmazonImportExport.</param>
         /// 
         /// <returns>The response from the UpdateJob service method, as returned by AmazonImportExport.</returns>
         /// 

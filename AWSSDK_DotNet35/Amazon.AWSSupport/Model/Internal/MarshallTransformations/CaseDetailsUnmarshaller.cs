@@ -33,6 +33,9 @@
 
         public CaseDetails Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonToken.Null)
+                return null;
+
             CaseDetails caseDetails = new CaseDetails();
 
         

@@ -28,7 +28,7 @@ namespace Amazon.SQS.Model
     {
         /// <summary>
         /// Gets and sets the SendMessageResult property.
-        /// 
+        /// The MD5OfMessageBody and MessageId elements.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the SendMessageResult class are now available on the SendMessageResponse class. You should use the properties on SendMessageResponse instead of accessing them through SendMessageResult.")]
         public SendMessageResult SendMessageResult

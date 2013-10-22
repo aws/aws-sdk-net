@@ -61,6 +61,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             
                         continue;
                     }
+                    if (context.TestExpression("end", targetDepth))
+                    {
+                        reservedInstances.End = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
+                    }
                     if (context.TestExpression("duration", targetDepth))
                     {
                         reservedInstances.Duration = LongUnmarshaller.GetInstance().Unmarshall(context);

@@ -125,6 +125,7 @@ namespace Amazon.Runtime.Internal
         {
             private Metric metric;
             private RequestMetrics metrics;
+            private bool disposed;
 
             internal TimingEvent(RequestMetrics metrics, Metric metric)
             {
@@ -132,11 +133,40 @@ namespace Amazon.Runtime.Internal
                 this.metric = metric;
             }
 
-            #region IDisposable Members
+            #region Dispose Pattern Implementation
 
+            /// <summary>
+            /// Implements the Dispose pattern for the AmazonWebServiceClient
+            /// </summary>
+            /// <param name="disposing">Whether this object is being disposed via a call to Dispose
+            /// or garbage collected.</param>
+            protected virtual void Dispose(bool disposing)
+            {
+                if (!this.disposed)
+                {
+                    if (disposing)
+                    {
+                        metrics.StopEvent(metric);
+                    }
+                    this.disposed = true;
+                }
+            }
+
+            /// <summary>
+            /// Disposes of all managed and unmanaged resources.
+            /// </summary>
             public void Dispose()
             {
-                metrics.StopEvent(metric);
+                this.Dispose(true);
+                GC.SuppressFinalize(this);
+            }
+
+            /// <summary>
+            /// The destructor for the client class.
+            /// </summary>
+            ~TimingEvent()
+            {
+                this.Dispose(false);
             }
 
             #endregion
@@ -180,10 +210,10 @@ namespace Amazon.Runtime.Internal
         {
             errors.Add(new MetricError(metric, messageFormat, args));
         }
-        private void LogError_Locked(Metric metric, Exception exception, string messageFormat, params object[] args)
-        {
-            errors.Add(new MetricError(metric, exception, messageFormat, args));
-        }
+        //private void LogError_Locked(Metric metric, Exception exception, string messageFormat, params object[] args)
+        //{
+        //    errors.Add(new MetricError(metric, exception, messageFormat, args));
+        //}
         private static void Log(StringWriter writer, Metric metric, object metricValue)
         {
             writer.Write("{0} = {1}; ", metric, metricValue);

@@ -33,6 +33,9 @@
 
         public RequestCancelActivityTaskFailedEventAttributes Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonToken.Null)
+                return null;
+
             RequestCancelActivityTaskFailedEventAttributes requestCancelActivityTaskFailedEventAttributes = new RequestCancelActivityTaskFailedEventAttributes();
 
         

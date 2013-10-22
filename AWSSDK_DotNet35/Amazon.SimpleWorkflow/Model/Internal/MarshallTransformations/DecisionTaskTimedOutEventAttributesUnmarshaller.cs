@@ -33,6 +33,9 @@
 
         public DecisionTaskTimedOutEventAttributes Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonToken.Null)
+                return null;
+
             DecisionTaskTimedOutEventAttributes decisionTaskTimedOutEventAttributes = new DecisionTaskTimedOutEventAttributes();
 
         

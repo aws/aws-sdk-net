@@ -33,6 +33,9 @@
 
         public TaskList Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonToken.Null)
+                return null;
+
             TaskList taskList = new TaskList();
 
         

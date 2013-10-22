@@ -37,6 +37,15 @@ namespace Amazon.ImportExport
     {
     QueryStringSigner signer = new QueryStringSigner();
 
+        #region Dispose
+
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
+        }
+
+        #endregion
+
         #region Constructors
 
         /// <summary>
@@ -56,7 +65,7 @@ namespace Amazon.ImportExport
         ///
         /// </summary>
         public AmazonImportExportClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonImportExportConfig(), true, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonImportExportConfig(), AuthenticationTypes.User | AuthenticationTypes.Session) { }
 
         /// <summary>
         /// Constructs AmazonImportExportClient with the credentials loaded from the application's
@@ -76,7 +85,7 @@ namespace Amazon.ImportExport
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonImportExportClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonImportExportConfig(){RegionEndpoint = region}, true, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonImportExportConfig{RegionEndpoint = region}, AuthenticationTypes.User | AuthenticationTypes.Session) { }
 
         /// <summary>
         /// Constructs AmazonImportExportClient with the credentials loaded from the application's
@@ -96,7 +105,7 @@ namespace Amazon.ImportExport
         /// </summary>
         /// <param name="config">The AmazonImportExport Configuration Object</param>
         public AmazonImportExportClient(AmazonImportExportConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config, true, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), config, AuthenticationTypes.User | AuthenticationTypes.Session) { }
 
         /// <summary>
         /// Constructs AmazonImportExportClient with AWS Credentials
@@ -113,7 +122,7 @@ namespace Amazon.ImportExport
         /// <param name="credentials">AWS Credentials</param>
         /// <param name="region">The region to connect.</param>
         public AmazonImportExportClient(AWSCredentials credentials, RegionEndpoint region)
-            : this(credentials, new AmazonImportExportConfig(){RegionEndpoint=region})
+            : this(credentials, new AmazonImportExportConfig{RegionEndpoint = region})
         {
         }
 
@@ -124,7 +133,7 @@ namespace Amazon.ImportExport
         /// <param name="credentials">AWS Credentials</param>
         /// <param name="clientConfig">The AmazonImportExportClient Configuration Object</param>
         public AmazonImportExportClient(AWSCredentials credentials, AmazonImportExportConfig clientConfig)
-            : base(credentials, clientConfig, false, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(credentials, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
         {
         }
 
@@ -180,7 +189,7 @@ namespace Amazon.ImportExport
         /// <param name="awsSessionToken">AWS Session Token</param>
         /// <param name="region">The region to connect.</param>
         public AmazonImportExportClient(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken, RegionEndpoint region)
-            : this(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, new AmazonImportExportConfig(){RegionEndpoint = region})
+            : this(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, new AmazonImportExportConfig{RegionEndpoint = region})
         {
         }
 

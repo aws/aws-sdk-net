@@ -31,11 +31,11 @@ namespace Amazon.CloudSearch.Model
         private OptionStatus status;
 
         /// <summary>
-        /// An IAM access policy as described in <a href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?AccessPolicyLanguage.html"
+        /// An IAM access policy as described in <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?AccessPolicyLanguage.html"
         /// target="_blank">The Access Policy Language</a> in <i>Using AWS Identity and Access Management</i>. The maximum size of an access policy
         /// document is 100 KB. Example: <c>{"Statement": [{"Effect":"Allow", "Action": "*", "Resource":
-        /// "arn:aws:cs:us-east-1:1234567890:search/movies", "Condition": { "IpAddress": { aws:SourceIp": ["203.0.113.1/32"] } }}, {"Effect":"Allow",
-        /// "Action": "*", "Resource": "arn:aws:cs:us-east-1:1234567890:documents/movies", "Condition": { "IpAddress": { aws:SourceIp":
+        /// "arn:aws:cs:us-east-1:1234567890:search/movies", "Condition": { "IpAddress": { "aws:SourceIp": ["203.0.113.1/32"] } }}, {"Effect":"Allow",
+        /// "Action": "*", "Resource": "arn:aws:cs:us-east-1:1234567890:documents/movies", "Condition": { "IpAddress": { "aws:SourceIp":
         /// ["203.0.113.1/32"] } }} ] }</c>
         ///  
         /// </summary>

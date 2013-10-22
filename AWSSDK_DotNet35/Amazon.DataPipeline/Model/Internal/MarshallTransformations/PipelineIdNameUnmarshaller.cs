@@ -33,6 +33,9 @@
 
         public PipelineIdName Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonToken.Null)
+                return null;
+
             PipelineIdName pipelineIdName = new PipelineIdName();
 
         

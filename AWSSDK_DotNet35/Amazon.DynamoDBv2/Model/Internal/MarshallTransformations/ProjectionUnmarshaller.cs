@@ -33,6 +33,9 @@
 
         public Projection Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonToken.Null)
+                return null;
+
             Projection projection = new Projection();
 
         

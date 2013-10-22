@@ -27,7 +27,7 @@ namespace Amazon.EC2.Model
         
         private List<ImportInstanceVolumeDetailItem> volumes = new List<ImportInstanceVolumeDetailItem>();
         private string instanceId;
-        private string platform;
+        private PlatformValues platform;
         private string description;
         public List<ImportInstanceVolumeDetailItem> Volumes
         {
@@ -51,7 +51,7 @@ namespace Amazon.EC2.Model
         {
             return this.instanceId != null;
         }
-        public string Platform
+        public PlatformValues Platform
         {
             get { return this.platform; }
             set { this.platform = value; }

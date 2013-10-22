@@ -33,6 +33,9 @@
 
         public Run Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonToken.Null)
+                return null;
+
             Run run = new Run();
 
         

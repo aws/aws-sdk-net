@@ -35,12 +35,68 @@ namespace Amazon.Glacier.Transfer
     /// </summary>
     public class ArchiveTransferManager : IDisposable
     {
+        #region Private/internal members
+
         // Threshold for when to use multipart upload operations
         internal const long MULTIPART_UPLOAD_SIZE_THRESHOLD = 1024L * 1024L * 10L;
+        private bool shouldDispose;
+        private bool disposed;
+        private IAmazonGlacier glacierClient;
+
+        /// <summary>
+        /// The Glacier client used by the ArchiveTransferManager.
+        /// </summary>
+        internal AmazonGlacierClient GlacierClient
+        {
+            get { return this.glacierClient as AmazonGlacierClient; }
+        }
+
+        #endregion
+
+        #region Dispose Pattern Implementation
+
+        /// <summary>
+        /// Implements the Dispose pattern for the AmazonWebServiceClient
+        /// </summary>
+        /// <param name="disposing">Whether this object is being disposed via a call to Dispose
+        /// or garbage collected.</param>
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!this.disposed)
+            {
+                if (disposing && glacierClient != null)
+                {
+                    if (shouldDispose)
+                    {
+                        glacierClient.Dispose();
+                    }
+                    glacierClient = null;
+                }
+                this.disposed = true;
+            }
+        }
+
+        /// <summary>
+        /// Disposes of all managed and unmanaged resources.
+        /// </summary>
+        public void Dispose()
+        {
+            this.Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        /// <summary>
+        /// The destructor for the client class.
+        /// </summary>
+        ~ArchiveTransferManager()
+        {
+            this.Dispose(false);
+        }
+
+        #endregion
 
 
-        bool shouldDispose;
-        IAmazonGlacier glacierClient;
+        #region Constructors
 
         /// <summary>
         /// Constructs an ArchiveTransferManager object for the specified Amazon Glacier region endpoint using the credentials
@@ -98,25 +154,9 @@ namespace Amazon.Glacier.Transfer
             this.shouldDispose = true;
         }
 
-        /// <summary>
-        /// 	Disposes of allocated resources and initiates garbage collection
-        /// 	for the <see cref="ArchiveTransferManager"/> object.
-        /// </summary>
-        public void Dispose()
-        {
-            if (this.shouldDispose)
-            {
-                this.glacierClient.Dispose();
-            }
-        }
+        #endregion
 
-        /// <summary>
-        /// The Glacier client used by the ArchiveTransferManager.
-        /// </summary>
-        internal AmazonGlacierClient GlacierClient
-        {
-            get { return this.glacierClient as AmazonGlacierClient; }
-        }
+        #region Public memebers
 
         /// <summary>
         /// Creates a vault.
@@ -151,6 +191,8 @@ namespace Amazon.Glacier.Transfer
             request.BeforeRequestEvent += new UserAgentPostFix("DeleteArchive").UserAgentRequestEventHandlerSync;
             this.glacierClient.DeleteArchive(request);
         }
+
+        #endregion
 
         #region Upload
 

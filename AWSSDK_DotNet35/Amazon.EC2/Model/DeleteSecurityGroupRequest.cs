@@ -32,8 +32,20 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DeleteSecurityGroupRequest : AmazonWebServiceRequest
     {
+        private bool? dryRun;
         private string groupName;
         private string groupId;
+        public bool DryRun
+        {
+            get { return this.dryRun ?? default(bool); }
+            set { this.dryRun = value; }
+        }
+
+        // Check to see if DryRun property is set
+        internal bool IsSetDryRun()
+        {
+            return this.dryRun.HasValue;
+        }
 
         /// <summary>
         /// The name of the Amazon EC2 security group to delete.

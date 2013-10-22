@@ -36,8 +36,8 @@ namespace Amazon.DataPipeline
     /// Runner. AWS Data Pipeline Task Runner provides logic for common data management scenarios, such as performing database queries and running
     /// data analysis using Amazon Elastic MapReduce (Amazon EMR). You can use AWS Data Pipeline Task Runner as your task runner, or you can write
     /// your own task runner to provide custom data management. </para> <para> The AWS Data Pipeline API uses the Signature Version 4 protocol for
-    /// signing requests. For more information about how to sign a request with this protocol, see Signature Version 4 Signing Process. In the code
-    /// examples in this reference, the Signature Version 4 Request parameters are represented as AuthParams. </para>
+    /// signing requests. For more information about how to sign a request with this protocol, see <a href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 Signing Process</a> . In the code examples
+    /// in this reference, the Signature Version 4 Request parameters are represented as AuthParams. </para>
     /// </summary>
 	public partial interface IAmazonDataPipeline : IDisposable
     {
@@ -49,7 +49,7 @@ namespace Amazon.DataPipeline
         /// pipeline cannot be modified after it has been successfully activated. </para>
         /// </summary>
         /// 
-        /// <param name="activatePipelineRequest">Container for the necessary parameters to execute the ActivatePipeline service method on
+        /// <param name="request">Container for the necessary parameters to execute the ActivatePipeline service method on
         /// AmazonDataPipeline.</param>
         /// 
         /// <returns>The response from the ActivatePipeline service method, as returned by AmazonDataPipeline.</returns>
@@ -78,7 +78,7 @@ namespace Amazon.DataPipeline
         /// pipeline.</para>
         /// </summary>
         /// 
-        /// <param name="createPipelineRequest">Container for the necessary parameters to execute the CreatePipeline service method on
+        /// <param name="request">Container for the necessary parameters to execute the CreatePipeline service method on
         /// AmazonDataPipeline.</param>
         /// 
         /// <returns>The response from the CreatePipeline service method, as returned by AmazonDataPipeline.</returns>
@@ -107,7 +107,7 @@ namespace Amazon.DataPipeline
         /// Pause on individual components. Components that are paused by SetStatus can be resumed. </para>
         /// </summary>
         /// 
-        /// <param name="deletePipelineRequest">Container for the necessary parameters to execute the DeletePipeline service method on
+        /// <param name="request">Container for the necessary parameters to execute the DeletePipeline service method on
         /// AmazonDataPipeline.</param>
         /// 
         /// <exception cref="T:Amazon.DataPipeline.Model.PipelineNotFoundException" />
@@ -133,7 +133,7 @@ namespace Amazon.DataPipeline
         /// that define the properties of the object. </para>
         /// </summary>
         /// 
-        /// <param name="describeObjectsRequest">Container for the necessary parameters to execute the DescribeObjects service method on
+        /// <param name="request">Container for the necessary parameters to execute the DescribeObjects service method on
         /// AmazonDataPipeline.</param>
         /// 
         /// <returns>The response from the DescribeObjects service method, as returned by AmazonDataPipeline.</returns>
@@ -165,7 +165,7 @@ namespace Amazon.DataPipeline
         /// GetPipelineDefinition action. </para>
         /// </summary>
         /// 
-        /// <param name="describePipelinesRequest">Container for the necessary parameters to execute the DescribePipelines service method on
+        /// <param name="request">Container for the necessary parameters to execute the DescribePipelines service method on
         /// AmazonDataPipeline.</param>
         /// 
         /// <returns>The response from the DescribePipelines service method, as returned by AmazonDataPipeline.</returns>
@@ -194,7 +194,7 @@ namespace Amazon.DataPipeline
         /// S3. </para>
         /// </summary>
         /// 
-        /// <param name="evaluateExpressionRequest">Container for the necessary parameters to execute the EvaluateExpression service method on
+        /// <param name="request">Container for the necessary parameters to execute the EvaluateExpression service method on
         /// AmazonDataPipeline.</param>
         /// 
         /// <returns>The response from the EvaluateExpression service method, as returned by AmazonDataPipeline.</returns>
@@ -224,7 +224,7 @@ namespace Amazon.DataPipeline
         /// using PutPipelineDefinition.</para>
         /// </summary>
         /// 
-        /// <param name="getPipelineDefinitionRequest">Container for the necessary parameters to execute the GetPipelineDefinition service method on
+        /// <param name="request">Container for the necessary parameters to execute the GetPipelineDefinition service method on
         /// AmazonDataPipeline.</param>
         /// 
         /// <returns>The response from the GetPipelineDefinition service method, as returned by AmazonDataPipeline.</returns>
@@ -253,7 +253,7 @@ namespace Amazon.DataPipeline
         /// access. </para>
         /// </summary>
         /// 
-        /// <param name="listPipelinesRequest">Container for the necessary parameters to execute the ListPipelines service method on
+        /// <param name="request">Container for the necessary parameters to execute the ListPipelines service method on
         /// AmazonDataPipeline.</param>
         /// 
         /// <returns>The response from the ListPipelines service method, as returned by AmazonDataPipeline.</returns>
@@ -279,8 +279,6 @@ namespace Amazon.DataPipeline
         /// access. </para>
         /// </summary>
         /// 
-        /// <param name="listPipelinesRequest">Container for the necessary parameters to execute the ListPipelines service method on
-        /// AmazonDataPipeline.</param>
         /// 
         /// <returns>The response from the ListPipelines service method, as returned by AmazonDataPipeline.</returns>
         /// 
@@ -299,7 +297,7 @@ namespace Amazon.DataPipeline
         /// should not call PollForTask again on the same <c>workerGroup</c> until it receives a response, and this may take up to 90 seconds. </para>
         /// </summary>
         /// 
-        /// <param name="pollForTaskRequest">Container for the necessary parameters to execute the PollForTask service method on
+        /// <param name="request">Container for the necessary parameters to execute the PollForTask service method on
         /// AmazonDataPipeline.</param>
         /// 
         /// <returns>The response from the PollForTask service method, as returned by AmazonDataPipeline.</returns>
@@ -333,7 +331,7 @@ namespace Amazon.DataPipeline
         /// action. </para>
         /// </summary>
         /// 
-        /// <param name="putPipelineDefinitionRequest">Container for the necessary parameters to execute the PutPipelineDefinition service method on
+        /// <param name="request">Container for the necessary parameters to execute the PutPipelineDefinition service method on
         /// AmazonDataPipeline.</param>
         /// 
         /// <returns>The response from the PutPipelineDefinition service method, as returned by AmazonDataPipeline.</returns>
@@ -364,7 +362,7 @@ namespace Amazon.DataPipeline
         /// value for marker, until <c>HasMoreResults</c> returns <c>False</c> .</para>
         /// </summary>
         /// 
-        /// <param name="queryObjectsRequest">Container for the necessary parameters to execute the QueryObjects service method on
+        /// <param name="request">Container for the necessary parameters to execute the QueryObjects service method on
         /// AmazonDataPipeline.</param>
         /// 
         /// <returns>The response from the QueryObjects service method, as returned by AmazonDataPipeline.</returns>
@@ -398,7 +396,7 @@ namespace Amazon.DataPipeline
         /// task runners should call ReportTaskProgress every 60 seconds. </para>
         /// </summary>
         /// 
-        /// <param name="reportTaskProgressRequest">Container for the necessary parameters to execute the ReportTaskProgress service method on
+        /// <param name="request">Container for the necessary parameters to execute the ReportTaskProgress service method on
         /// AmazonDataPipeline.</param>
         /// 
         /// <returns>The response from the ReportTaskProgress service method, as returned by AmazonDataPipeline.</returns>
@@ -429,7 +427,7 @@ namespace Amazon.DataPipeline
         /// application has failed and restart a new instance.</para>
         /// </summary>
         /// 
-        /// <param name="reportTaskRunnerHeartbeatRequest">Container for the necessary parameters to execute the ReportTaskRunnerHeartbeat service
+        /// <param name="request">Container for the necessary parameters to execute the ReportTaskRunnerHeartbeat service
         /// method on AmazonDataPipeline.</param>
         /// 
         /// <returns>The response from the ReportTaskRunnerHeartbeat service method, as returned by AmazonDataPipeline.</returns>
@@ -456,7 +454,7 @@ namespace Amazon.DataPipeline
         /// immediately, but is eventually consistent. The status that can be set depends on the type of object.</para>
         /// </summary>
         /// 
-        /// <param name="setStatusRequest">Container for the necessary parameters to execute the SetStatus service method on AmazonDataPipeline.</param>
+        /// <param name="request">Container for the necessary parameters to execute the SetStatus service method on AmazonDataPipeline.</param>
         /// 
         /// <exception cref="T:Amazon.DataPipeline.Model.PipelineNotFoundException" />
         /// <exception cref="T:Amazon.DataPipeline.Model.InternalServiceErrorException" />
@@ -483,7 +481,7 @@ namespace Amazon.DataPipeline
         /// web service during a call to ReportTaskProgress. </para>
         /// </summary>
         /// 
-        /// <param name="setTaskStatusRequest">Container for the necessary parameters to execute the SetTaskStatus service method on
+        /// <param name="request">Container for the necessary parameters to execute the SetTaskStatus service method on
         /// AmazonDataPipeline.</param>
         /// 
         /// <returns>The response from the SetTaskStatus service method, as returned by AmazonDataPipeline.</returns>
@@ -512,7 +510,7 @@ namespace Amazon.DataPipeline
         /// <para>Tests the pipeline definition with a set of validation checks to ensure that it is well formed and can run without error. </para>
         /// </summary>
         /// 
-        /// <param name="validatePipelineDefinitionRequest">Container for the necessary parameters to execute the ValidatePipelineDefinition service
+        /// <param name="request">Container for the necessary parameters to execute the ValidatePipelineDefinition service
         /// method on AmazonDataPipeline.</param>
         /// 
         /// <returns>The response from the ValidatePipelineDefinition service method, as returned by AmazonDataPipeline.</returns>

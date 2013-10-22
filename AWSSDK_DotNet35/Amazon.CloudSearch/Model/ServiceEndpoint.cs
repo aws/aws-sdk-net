@@ -31,7 +31,7 @@ namespace Amazon.CloudSearch.Model
         private string endpoint;
 
         /// <summary>
-        /// An Amazon Resource Name (ARN). See <a href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+        /// An Amazon Resource Name (ARN). See <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
         /// target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS Identity and Access Management</i> for more information.
         ///  
         /// </summary>

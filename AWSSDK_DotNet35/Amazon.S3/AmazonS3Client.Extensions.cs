@@ -69,34 +69,32 @@ namespace Amazon.S3
             if (!request.IsSetExpires())
                 throw new ArgumentNullException("request.Expires", "The Expires Specified is null!");
 
-            using (ImmutableCredentials immutableCredentials = credentials.GetCredentials())
+            ImmutableCredentials immutableCredentials = credentials.GetCredentials();
+            IRequest irequest = Marshall(request, immutableCredentials.AccessKey, immutableCredentials.Token);
+            signer.Sign(irequest, this.config, immutableCredentials.AccessKey, immutableCredentials.SecretKey);
+
+            var authorization = irequest.Headers[S3QueryParameter.Authorization.ToString()];
+            authorization = authorization.Substring(authorization.IndexOf(":", StringComparison.Ordinal) + 1);
+            authorization = AmazonS3Util.UrlEncode(authorization, false);
+
+            string endpoint = config.DetermineServiceURL();
+            Protocol protocol = DetermineProtocol();
+            if (request.Protocol != protocol)
             {
-                IRequest irequest = Marshall(request, immutableCredentials.AccessKey, immutableCredentials.Token);
-                signer.Sign(irequest, this.config, immutableCredentials.AccessKey, immutableCredentials.SecretKey);
-
-                var authorization = irequest.Headers[S3QueryParameter.Authorization.ToString()];
-                authorization = authorization.Substring(authorization.IndexOf(":", StringComparison.Ordinal) + 1);
-                authorization = AmazonS3Util.UrlEncode(authorization, false);
-
-                string endpoint = config.DetermineServiceURL();
-                Protocol protocol = DetermineProtocol();
-                if (request.Protocol != protocol)
+                switch (protocol)
                 {
-                    switch (protocol)
-                    {
-                        case Protocol.HTTP:
-                            endpoint = endpoint.Replace("http://", "https://");
-                            break;
-                        case Protocol.HTTPS:
-                            endpoint = endpoint.Replace("https://", "http://");
-                            break;
-                    }
+                    case Protocol.HTTP:
+                        endpoint = endpoint.Replace("http://", "https://");
+                        break;
+                    case Protocol.HTTPS:
+                        endpoint = endpoint.Replace("https://", "http://");
+                        break;
                 }
-
-                Uri url = ComposeUrl(irequest, new Uri(endpoint));
-                string result = url.AbsoluteUri + "&Signature=" + authorization;
-                return result;
             }
+
+            Uri url = ComposeUrl(irequest, new Uri(endpoint));
+            string result = url.AbsoluteUri + "&Signature=" + authorization;
+            return result;
         }
 
 

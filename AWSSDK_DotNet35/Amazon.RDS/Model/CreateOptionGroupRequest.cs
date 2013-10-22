@@ -25,7 +25,7 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateOptionGroup operation.
-    /// <para> Creates a new Option Group. You can create up to 20 option groups. </para>
+    /// <para> Creates a new option group. You can create up to 20 option groups. </para>
     /// </summary>
     public partial class CreateOptionGroupRequest : AmazonWebServiceRequest
     {
@@ -33,11 +33,12 @@ namespace Amazon.RDS.Model
         private string engineName;
         private string majorEngineVersion;
         private string optionGroupDescription;
+        private List<Tag> tags = new List<Tag>();
 
         /// <summary>
         /// Specifies the name of the option group to be created. Constraints: <ul> <li>Must be 1 to 255 alphanumeric characters or hyphens</li>
         /// <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul> Example:
-        /// <c>myOptiongroup</c>
+        /// <c>myoptiongroup</c>
         ///  
         /// </summary>
         public string OptionGroupName
@@ -98,6 +99,22 @@ namespace Amazon.RDS.Model
         internal bool IsSetOptionGroupDescription()
         {
             return this.optionGroupDescription != null;
+        }
+
+        /// <summary>
+        /// A list of tags.
+        ///  
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this.tags; }
+            set { this.tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this.tags.Count > 0;
         }
 
     }

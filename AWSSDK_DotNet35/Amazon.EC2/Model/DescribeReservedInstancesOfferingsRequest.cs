@@ -31,15 +31,31 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeReservedInstancesOfferingsRequest : AmazonWebServiceRequest
     {
+        private bool? dryRun;
         private List<string> reservedInstancesOfferingIds = new List<string>();
         private InstanceType instanceType;
         private string availabilityZone;
-        private string productDescription;
+        private RIProductDescription productDescription;
         private List<Filter> filters = new List<Filter>();
-        private string instanceTenancy;
-        private string offeringType;
+        private Tenancy instanceTenancy;
+        private OfferingTypeValues offeringType;
         private string nextToken;
         private int? maxResults;
+        private bool? includeMarketplace;
+        private long? minDuration;
+        private long? maxDuration;
+        private int? maxInstanceCount;
+        public bool DryRun
+        {
+            get { return this.dryRun ?? default(bool); }
+            set { this.dryRun = value; }
+        }
+
+        // Check to see if DryRun property is set
+        internal bool IsSetDryRun()
+        {
+            return this.dryRun.HasValue;
+        }
 
         /// <summary>
         /// An optional list of the unique IDs of the Reserved Instance offerings to describe.
@@ -101,8 +117,17 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// The Reserved Instance product description.
         ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>Linux/UNIX, Linux/UNIX (Amazon VPC), Windows, Windows (Amazon VPC)</description>
+        ///     </item>
+        /// </list>
+        /// </para>
         /// </summary>
-        public string ProductDescription
+        public RIProductDescription ProductDescription
         {
             get { return this.productDescription; }
             set { this.productDescription = value; }
@@ -135,8 +160,17 @@ namespace Amazon.EC2.Model
         /// The tenancy of the Reserved Instance offering. A Reserved Instance with tenancy of dedicated will run on single-tenant hardware and can only
         /// be launched within a VPC.
         ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>default, dedicated</description>
+        ///     </item>
+        /// </list>
+        /// </para>
         /// </summary>
-        public string InstanceTenancy
+        public Tenancy InstanceTenancy
         {
             get { return this.instanceTenancy; }
             set { this.instanceTenancy = value; }
@@ -151,8 +185,17 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// The Reserved Instance offering type.
         ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>Heavy Utilization, Medium Utilization, Light Utilization</description>
+        ///     </item>
+        /// </list>
+        /// </para>
         /// </summary>
-        public string OfferingType
+        public OfferingTypeValues OfferingType
         {
             get { return this.offeringType; }
             set { this.offeringType = value; }
@@ -184,6 +227,65 @@ namespace Amazon.EC2.Model
         internal bool IsSetMaxResults()
         {
             return this.maxResults.HasValue;
+        }
+
+        /// <summary>
+        /// Include Marketplace offerings in the response.
+        ///  
+        /// </summary>
+        public bool IncludeMarketplace
+        {
+            get { return this.includeMarketplace ?? default(bool); }
+            set { this.includeMarketplace = value; }
+        }
+
+        // Check to see if IncludeMarketplace property is set
+        internal bool IsSetIncludeMarketplace()
+        {
+            return this.includeMarketplace.HasValue;
+        }
+
+        /// <summary>
+        /// Minimum duration (in seconds) to filter when searching for offerings.
+        ///  
+        /// </summary>
+        public long MinDuration
+        {
+            get { return this.minDuration ?? default(long); }
+            set { this.minDuration = value; }
+        }
+
+        // Check to see if MinDuration property is set
+        internal bool IsSetMinDuration()
+        {
+            return this.minDuration.HasValue;
+        }
+
+        /// <summary>
+        /// Maximum duration (in seconds) to filter when searching for offerings.
+        ///  
+        /// </summary>
+        public long MaxDuration
+        {
+            get { return this.maxDuration ?? default(long); }
+            set { this.maxDuration = value; }
+        }
+
+        // Check to see if MaxDuration property is set
+        internal bool IsSetMaxDuration()
+        {
+            return this.maxDuration.HasValue;
+        }
+        public int MaxInstanceCount
+        {
+            get { return this.maxInstanceCount ?? default(int); }
+            set { this.maxInstanceCount = value; }
+        }
+
+        // Check to see if MaxInstanceCount property is set
+        internal bool IsSetMaxInstanceCount()
+        {
+            return this.maxInstanceCount.HasValue;
         }
 
     }

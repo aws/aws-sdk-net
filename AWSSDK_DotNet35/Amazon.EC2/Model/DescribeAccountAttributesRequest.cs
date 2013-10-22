@@ -29,7 +29,19 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeAccountAttributesRequest : AmazonWebServiceRequest
     {
+        private bool? dryRun;
         private List<string> attributeNames = new List<string>();
+        public bool DryRun
+        {
+            get { return this.dryRun ?? default(bool); }
+            set { this.dryRun = value; }
+        }
+
+        // Check to see if DryRun property is set
+        internal bool IsSetDryRun()
+        {
+            return this.dryRun.HasValue;
+        }
         public List<string> AttributeNames
         {
             get { return this.attributeNames; }

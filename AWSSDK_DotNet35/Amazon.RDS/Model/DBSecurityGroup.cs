@@ -17,6 +17,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using Amazon.Runtime;
 
 namespace Amazon.RDS.Model
 {
@@ -31,7 +32,7 @@ namespace Amazon.RDS.Model
     /// </ul>
     /// <para>This data type is used as a response element in the DescribeDBSecurityGroups action.</para>
     /// </summary>
-    public class DBSecurityGroup
+    public partial class DBSecurityGroup : AmazonWebServiceResponse
     {
         
         private string ownerId;
@@ -42,7 +43,7 @@ namespace Amazon.RDS.Model
         private List<IPRange> iPRanges = new List<IPRange>();
 
         /// <summary>
-        /// Provides the AWS ID of the owner of a specific DB Security Group.
+        /// Provides the AWS ID of the owner of a specific DB security group.
         ///  
         /// </summary>
         public string OwnerId
@@ -58,7 +59,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Specifies the name of the DB Security Group.
+        /// Specifies the name of the DB security group.
         ///  
         /// </summary>
         public string DBSecurityGroupName
@@ -74,7 +75,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Provides the description of the DB Security Group.
+        /// Provides the description of the DB security group.
         ///  
         /// </summary>
         public string DBSecurityGroupDescription
@@ -90,7 +91,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Provides the VpcId of the DB Security Group.
+        /// Provides the VpcId of the DB security group.
         ///  
         /// </summary>
         public string VpcId

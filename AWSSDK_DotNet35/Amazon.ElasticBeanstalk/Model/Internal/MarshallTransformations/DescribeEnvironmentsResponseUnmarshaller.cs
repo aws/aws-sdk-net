@@ -52,7 +52,7 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
             return response;
         }
         
-        private void UnmarshallResult(XmlUnmarshallerContext context,DescribeEnvironmentsResponse response)
+        private static void UnmarshallResult(XmlUnmarshallerContext context,DescribeEnvironmentsResponse response)
         {
             
             int originalDepth = context.CurrentDepth;

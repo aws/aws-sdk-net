@@ -41,12 +41,22 @@ namespace Amazon.DataPipeline
     /// Runner. AWS Data Pipeline Task Runner provides logic for common data management scenarios, such as performing database queries and running
     /// data analysis using Amazon Elastic MapReduce (Amazon EMR). You can use AWS Data Pipeline Task Runner as your task runner, or you can write
     /// your own task runner to provide custom data management. </para> <para> The AWS Data Pipeline API uses the Signature Version 4 protocol for
-    /// signing requests. For more information about how to sign a request with this protocol, see Signature Version 4 Signing Process. In the code
-    /// examples in this reference, the Signature Version 4 Request parameters are represented as AuthParams. </para>
+    /// signing requests. For more information about how to sign a request with this protocol, see <a
+    /// href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html" >Signature Version 4 Signing Process</a> . In the code examples
+    /// in this reference, the Signature Version 4 Request parameters are represented as AuthParams. </para>
     /// </summary>
     public partial class AmazonDataPipelineClient : AmazonWebServiceClient, IAmazonDataPipeline
     {
     AWS4Signer signer = new AWS4Signer();
+
+        #region Dispose
+
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
+        }
+
+        #endregion
 
         #region Constructors
 
@@ -67,7 +77,7 @@ namespace Amazon.DataPipeline
         ///
         /// </summary>
         public AmazonDataPipelineClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonDataPipelineConfig(), true, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonDataPipelineConfig(), AuthenticationTypes.User | AuthenticationTypes.Session) { }
 
         /// <summary>
         /// Constructs AmazonDataPipelineClient with the credentials loaded from the application's
@@ -87,7 +97,7 @@ namespace Amazon.DataPipeline
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonDataPipelineClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonDataPipelineConfig(){RegionEndpoint = region}, true, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonDataPipelineConfig{RegionEndpoint = region}, AuthenticationTypes.User | AuthenticationTypes.Session) { }
 
         /// <summary>
         /// Constructs AmazonDataPipelineClient with the credentials loaded from the application's
@@ -107,7 +117,7 @@ namespace Amazon.DataPipeline
         /// </summary>
         /// <param name="config">The AmazonDataPipeline Configuration Object</param>
         public AmazonDataPipelineClient(AmazonDataPipelineConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config, true, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), config, AuthenticationTypes.User | AuthenticationTypes.Session) { }
 
         /// <summary>
         /// Constructs AmazonDataPipelineClient with AWS Credentials
@@ -124,7 +134,7 @@ namespace Amazon.DataPipeline
         /// <param name="credentials">AWS Credentials</param>
         /// <param name="region">The region to connect.</param>
         public AmazonDataPipelineClient(AWSCredentials credentials, RegionEndpoint region)
-            : this(credentials, new AmazonDataPipelineConfig(){RegionEndpoint=region})
+            : this(credentials, new AmazonDataPipelineConfig{RegionEndpoint = region})
         {
         }
 
@@ -135,7 +145,7 @@ namespace Amazon.DataPipeline
         /// <param name="credentials">AWS Credentials</param>
         /// <param name="clientConfig">The AmazonDataPipelineClient Configuration Object</param>
         public AmazonDataPipelineClient(AWSCredentials credentials, AmazonDataPipelineConfig clientConfig)
-            : base(credentials, clientConfig, false, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(credentials, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
         {
         }
 
@@ -191,7 +201,7 @@ namespace Amazon.DataPipeline
         /// <param name="awsSessionToken">AWS Session Token</param>
         /// <param name="region">The region to connect.</param>
         public AmazonDataPipelineClient(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken, RegionEndpoint region)
-            : this(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, new AmazonDataPipelineConfig(){RegionEndpoint = region})
+            : this(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, new AmazonDataPipelineConfig{RegionEndpoint = region})
         {
         }
 

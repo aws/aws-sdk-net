@@ -36,9 +36,12 @@ namespace Amazon.Glacier.Model
     /// Multipart Uploads operation lists all multipart uploads for a vault and does not require a multipart upload ID. The List Parts operation
     /// requires a multipart upload ID since parts are associated with a single upload.</para> <para>An AWS account has full permission to perform
     /// all operations (actions). However, AWS Identity and Access Management (IAM) users don't have any permissions by default. You must grant them
-    /// explicit permission to perform specific actions. For more information, see Access Control Using AWS Identity and Access Management
-    /// (IAM).</para> <para>For conceptual information and the underlying REST API, go to Working with Archives in Amazon Glacier and List Multipart
-    /// Uploads in the <i>Amazon Glacier Developer Guide</i> .</para>
+    /// explicit permission to perform specific actions. For more information, see <a
+    /// href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html" >Access Control Using AWS Identity and Access
+    /// Management (IAM)</a> .</para> <para>For conceptual information and the underlying REST API, go to <a
+    /// href="http://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html" >Working with Archives in Amazon Glacier</a> and <a
+    /// href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-list-uploads.html" >List Multipart Uploads </a> in the <i>Amazon
+    /// Glacier Developer Guide</i> .</para>
     /// </summary>
     public partial class ListMultipartUploadsRequest : AmazonWebServiceRequest
     {

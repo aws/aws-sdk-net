@@ -34,8 +34,20 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class StopInstancesRequest : AmazonWebServiceRequest
     {
+        private bool? dryRun;
         private List<string> instanceIds = new List<string>();
         private bool? force;
+        public bool DryRun
+        {
+            get { return this.dryRun ?? default(bool); }
+            set { this.dryRun = value; }
+        }
+
+        // Check to see if DryRun property is set
+        internal bool IsSetDryRun()
+        {
+            return this.dryRun.HasValue;
+        }
 
         /// <summary>
         /// The list of Amazon EC2 instances to stop.

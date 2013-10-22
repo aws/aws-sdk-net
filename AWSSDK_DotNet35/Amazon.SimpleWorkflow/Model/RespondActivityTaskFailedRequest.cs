@@ -29,8 +29,10 @@ namespace Amazon.SimpleWorkflow.Model
     /// specified). The <c>reason</c> and <c>details</c> appear in the <c>ActivityTaskFailed</c> event added to the workflow history. </para> <para>
     /// A task is considered open from the time that it is scheduled until it is closed. Therefore a task is reported as open while a worker is
     /// processing it. A task is closed after it has been specified in a call to RespondActivityTaskCompleted, RespondActivityTaskCanceled,
-    /// RespondActivityTaskFailed, or the task has timed out. </para> <para> <b>Access Control</b> </para> <para>You can use IAM policies to control
-    /// this action's access to Amazon SWF resources as follows:</para>
+    /// RespondActivityTaskFailed, or the task has <a
+    /// href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-basic.html#swf-dev-timeout-types" >timed out</a> .
+    /// </para> <para> <b>Access Control</b> </para> <para>You can use IAM policies to control this action's access to Amazon SWF resources as
+    /// follows:</para>
     /// <ul>
     /// <li>Use a <c>Resource</c> element with the domain name to limit the action to only specified domains.</li>
     /// <li>Use an <c>Action</c> element to allow or deny permission to call this action.</li>
@@ -38,8 +40,9 @@ namespace Amazon.SimpleWorkflow.Model
     /// 
     /// </ul>
     /// <para>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified
-    /// constraints, the action fails by throwing <c>OperationNotPermitted</c> . For details and example IAM policies, see Using IAM to Manage
-    /// Access to Amazon SWF Workflows.</para>
+    /// constraints, the action fails by throwing <c>OperationNotPermitted</c> . For details and example IAM policies, see <a
+    /// href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html" >Using IAM to Manage Access to Amazon SWF Workflows</a>
+    /// .</para>
     /// </summary>
     public partial class RespondActivityTaskFailedRequest : AmazonWebServiceRequest
     {

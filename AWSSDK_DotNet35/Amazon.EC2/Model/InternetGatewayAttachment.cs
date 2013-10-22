@@ -26,7 +26,7 @@ namespace Amazon.EC2.Model
     {
         
         private string vpcId;
-        private string state;
+        private AttachmentStatus state;
         public string VpcId
         {
             get { return this.vpcId; }
@@ -38,7 +38,7 @@ namespace Amazon.EC2.Model
         {
             return this.vpcId != null;
         }
-        public string State
+        public AttachmentStatus State
         {
             get { return this.state; }
             set { this.state = value; }

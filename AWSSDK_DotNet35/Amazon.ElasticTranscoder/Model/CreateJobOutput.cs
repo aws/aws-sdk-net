@@ -32,6 +32,7 @@ namespace Amazon.ElasticTranscoder.Model
         private string presetId;
         private string segmentDuration;
         private List<JobWatermark> watermarks = new List<JobWatermark>();
+        private JobAlbumArt albumArt;
 
         /// <summary>
         /// The name to assign to the transcoded file. Elastic Transcoder saves the file in the Amazon S3 bucket specified by the <c>OutputBucket</c>
@@ -191,6 +192,23 @@ namespace Amazon.ElasticTranscoder.Model
         internal bool IsSetWatermarks()
         {
             return this.watermarks.Count > 0;
+        }
+
+        /// <summary>
+        /// Information about the album art that you want Elastic Transcoder to add to the file during transcoding. You can specify up to twenty album
+        /// artworks for each output. Settings for each artwork must be defined in the job for the current output.
+        ///  
+        /// </summary>
+        public JobAlbumArt AlbumArt
+        {
+            get { return this.albumArt; }
+            set { this.albumArt = value; }
+        }
+
+        // Check to see if AlbumArt property is set
+        internal bool IsSetAlbumArt()
+        {
+            return this.albumArt != null;
         }
     }
 }

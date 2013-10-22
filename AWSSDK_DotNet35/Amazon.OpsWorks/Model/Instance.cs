@@ -38,6 +38,7 @@ namespace Amazon.OpsWorks.Model
         private string os;
         private string amiId;
         private string availabilityZone;
+        private string subnetId;
         private string publicDns;
         private string privateDns;
         private string publicIp;
@@ -250,6 +251,22 @@ namespace Amazon.OpsWorks.Model
         internal bool IsSetAvailabilityZone()
         {
             return this.availabilityZone != null;
+        }
+
+        /// <summary>
+        /// The instance's subnet ID, if the stack is running in a VPC.
+        ///  
+        /// </summary>
+        public string SubnetId
+        {
+            get { return this.subnetId; }
+            set { this.subnetId = value; }
+        }
+
+        // Check to see if SubnetId property is set
+        internal bool IsSetSubnetId()
+        {
+            return this.subnetId != null;
         }
 
         /// <summary>

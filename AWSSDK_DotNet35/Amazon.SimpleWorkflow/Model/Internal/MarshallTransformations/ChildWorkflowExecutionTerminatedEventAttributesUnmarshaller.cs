@@ -33,6 +33,9 @@
 
         public ChildWorkflowExecutionTerminatedEventAttributes Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonToken.Null)
+                return null;
+
             ChildWorkflowExecutionTerminatedEventAttributes childWorkflowExecutionTerminatedEventAttributes = new ChildWorkflowExecutionTerminatedEventAttributes();
 
         

@@ -29,11 +29,23 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class CreateVolumeRequest : AmazonWebServiceRequest
     {
+        private bool? dryRun;
         private int? size;
         private string snapshotId;
         private string availabilityZone;
         private VolumeType volumeType;
         private int? iops;
+        public bool DryRun
+        {
+            get { return this.dryRun ?? default(bool); }
+            set { this.dryRun = value; }
+        }
+
+        // Check to see if DryRun property is set
+        internal bool IsSetDryRun()
+        {
+            return this.dryRun.HasValue;
+        }
 
         /// <summary>
         /// The size of the volume, in gigabytes. Required if you are not creating a volume from a snapshot.

@@ -29,7 +29,19 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class AllocateAddressRequest : AmazonWebServiceRequest
     {
+        private bool? dryRun;
         private DomainType domain;
+        public bool DryRun
+        {
+            get { return this.dryRun ?? default(bool); }
+            set { this.dryRun = value; }
+        }
+
+        // Check to see if DryRun property is set
+        internal bool IsSetDryRun()
+        {
+            return this.dryRun.HasValue;
+        }
 
         /// <summary>
         /// Set to <c>vpc</c> to allocate the address to your VPC. By default, will allocate to EC2.

@@ -35,9 +35,11 @@ namespace Amazon.Glacier.Model
     /// </ul>
     /// </para> <para>This operation is idempotent.</para> <para>An AWS account has full permission to perform all operations (actions). However,
     /// AWS Identity and Access Management (IAM) users don't have any permissions by default. You must grant them explicit permission to perform
-    /// specific actions. For more information, see Access Control Using AWS Identity and Access Management (IAM).</para> <para> For conceptual
-    /// information and underlying REST API, go to Creating a Vault in Amazon Glacier and Create Vault in the <i>Amazon Glacier Developer Guide</i>
-    /// .
+    /// specific actions. For more information, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html"
+    /// >Access Control Using AWS Identity and Access Management (IAM)</a> .</para> <para> For conceptual information and underlying REST API, go to
+    /// <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/creating-vaults.html" >Creating a Vault in Amazon Glacier</a> and <a
+    /// href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-put.html" >Create Vault </a> in the <i>Amazon Glacier Developer
+    /// Guide</i> .
     /// </para>
     /// </summary>
     public partial class CreateVaultRequest : AmazonWebServiceRequest

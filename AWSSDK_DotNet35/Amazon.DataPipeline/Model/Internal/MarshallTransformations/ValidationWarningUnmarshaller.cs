@@ -33,6 +33,9 @@
 
         public ValidationWarning Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonToken.Null)
+                return null;
+
             ValidationWarning validationWarning = new ValidationWarning();
 
         

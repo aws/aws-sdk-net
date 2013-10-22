@@ -34,7 +34,9 @@ namespace Amazon.DynamoDBv2.Model
     /// <i>ValidationException</i> .</para> <para>You can request that <i>PutItem</i> return either a copy of the old item (before the update) or a
     /// copy of the new item (after the update). For more information, see the <i>ReturnValues</i> description.</para> <para><b>NOTE:</b> To prevent
     /// a new item from replacing an existing item, use a conditional put operation with Exists set to false for the primary key attribute, or
-    /// attributes. </para> <para>For more information about using this API, see Working with Items in the Amazon DynamoDB Developer Guide.</para>
+    /// attributes. </para> <para>For more information about using this API, see <a
+    /// href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDDItems.html" >Working with Items</a> in the Amazon
+    /// DynamoDB Developer Guide.</para>
     /// </summary>
     public partial class PutItemRequest : AmazonWebServiceRequest
     {

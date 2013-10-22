@@ -33,6 +33,9 @@
 
         public VirtualGateway Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonToken.Null)
+                return null;
+
             VirtualGateway virtualGateway = new VirtualGateway();
 
         

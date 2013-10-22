@@ -34,6 +34,15 @@ namespace Amazon.ElasticTranscoder
     {
     AWS4Signer signer = new AWS4Signer();
 
+        #region Dispose
+
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
+        }
+
+        #endregion
+
         #region Constructors
 
         /// <summary>
@@ -53,7 +62,7 @@ namespace Amazon.ElasticTranscoder
         ///
         /// </summary>
         public AmazonElasticTranscoderClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonElasticTranscoderConfig(), true, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonElasticTranscoderConfig(), AuthenticationTypes.User | AuthenticationTypes.Session) { }
 
         /// <summary>
         /// Constructs AmazonElasticTranscoderClient with the credentials loaded from the application's
@@ -73,7 +82,7 @@ namespace Amazon.ElasticTranscoder
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonElasticTranscoderClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonElasticTranscoderConfig(){RegionEndpoint = region}, true, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonElasticTranscoderConfig{RegionEndpoint = region}, AuthenticationTypes.User | AuthenticationTypes.Session) { }
 
         /// <summary>
         /// Constructs AmazonElasticTranscoderClient with the credentials loaded from the application's
@@ -93,7 +102,7 @@ namespace Amazon.ElasticTranscoder
         /// </summary>
         /// <param name="config">The AmazonElasticTranscoder Configuration Object</param>
         public AmazonElasticTranscoderClient(AmazonElasticTranscoderConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config, true, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), config, AuthenticationTypes.User | AuthenticationTypes.Session) { }
 
         /// <summary>
         /// Constructs AmazonElasticTranscoderClient with AWS Credentials
@@ -110,7 +119,7 @@ namespace Amazon.ElasticTranscoder
         /// <param name="credentials">AWS Credentials</param>
         /// <param name="region">The region to connect.</param>
         public AmazonElasticTranscoderClient(AWSCredentials credentials, RegionEndpoint region)
-            : this(credentials, new AmazonElasticTranscoderConfig(){RegionEndpoint=region})
+            : this(credentials, new AmazonElasticTranscoderConfig{RegionEndpoint = region})
         {
         }
 
@@ -121,7 +130,7 @@ namespace Amazon.ElasticTranscoder
         /// <param name="credentials">AWS Credentials</param>
         /// <param name="clientConfig">The AmazonElasticTranscoderClient Configuration Object</param>
         public AmazonElasticTranscoderClient(AWSCredentials credentials, AmazonElasticTranscoderConfig clientConfig)
-            : base(credentials, clientConfig, false, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(credentials, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
         {
         }
 
@@ -177,7 +186,7 @@ namespace Amazon.ElasticTranscoder
         /// <param name="awsSessionToken">AWS Session Token</param>
         /// <param name="region">The region to connect.</param>
         public AmazonElasticTranscoderClient(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken, RegionEndpoint region)
-            : this(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, new AmazonElasticTranscoderConfig(){RegionEndpoint = region})
+            : this(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, new AmazonElasticTranscoderConfig{RegionEndpoint = region})
         {
         }
 

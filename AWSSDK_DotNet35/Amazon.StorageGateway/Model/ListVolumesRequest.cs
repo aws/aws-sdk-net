@@ -25,11 +25,7 @@ namespace Amazon.StorageGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the ListVolumes operation.
-    /// <para>This operation lists the iSCSI stored volumes of a gateway. Results are sorted by volume ARN. The response includes only the volume
-    /// ARNs. If you want additional volume information, use the DescribeStorediSCSIVolumes API.</para> <para>The operation supports pagination. By
-    /// default, the operation returns a maximum of up to 100 volumes. You can optionally specify the <c>Limit</c> field in the body to limit the
-    /// number of volumes in the response. If the number of volumes returned in the response is truncated, the response includes a Marker field. You
-    /// can use this Marker value in your subsequent request to retrieve the next set of volumes.</para>
+    /// 
     /// </summary>
     public partial class ListVolumesRequest : AmazonWebServiceRequest
     {

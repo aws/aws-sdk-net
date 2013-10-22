@@ -33,15 +33,27 @@ namespace Amazon.EC2.Model
     /// <ul>
     /// <li> OpenSSH public key format, </li>
     /// <li> Base64 encoded DER format. </li>
-    /// <li> SSH public key file format as specified in RFC4716 .
+    /// <li> SSH public key file format as specified in <a href="http://tools.ietf.org/html/rfc4716" > RFC4716 </a> .
     /// </li>
     /// 
     /// </ul>
     /// </summary>
     public partial class ImportKeyPairRequest : AmazonWebServiceRequest
     {
+        private bool? dryRun;
         private string keyName;
         private string publicKeyMaterial;
+        public bool DryRun
+        {
+            get { return this.dryRun ?? default(bool); }
+            set { this.dryRun = value; }
+        }
+
+        // Check to see if DryRun property is set
+        internal bool IsSetDryRun()
+        {
+            return this.dryRun.HasValue;
+        }
 
         /// <summary>
         /// The unique name for the key pair.

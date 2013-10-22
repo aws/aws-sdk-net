@@ -25,12 +25,13 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the AuthorizeDBSecurityGroupIngress operation.
-    /// <para> Enables ingress to a DBSecurityGroup using one of two forms of authorization. First, EC2 or VPC Security Groups can be added to the
+    /// <para> Enables ingress to a DBSecurityGroup using one of two forms of authorization. First, EC2 or VPC security groups can be added to the
     /// DBSecurityGroup if the application using the database is running on EC2 or VPC instances. Second, IP ranges are available if the application
     /// accessing your database is running on the Internet. Required parameters for this API are one of CIDR range, EC2SecurityGroupId for VPC, or
     /// (EC2SecurityGroupOwnerId and either EC2SecurityGroupName or EC2SecurityGroupId for non-VPC). </para> <para><b>NOTE:</b> You cannot authorize
-    /// ingress from an EC2 security group in one Region to an Amazon RDS DB Instance in another. You cannot authorize ingress from a VPC security
-    /// group in one VPC to an Amazon RDS DB Instance in another. </para> <para>For an overview of CIDR ranges, go to the Wikipedia Tutorial.
+    /// ingress from an EC2 security group in one Region to an Amazon RDS DB instance in another. You cannot authorize ingress from a VPC security
+    /// group in one VPC to an Amazon RDS DB instance in another. </para> <para>For an overview of CIDR ranges, go to the <a
+    /// href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing" >Wikipedia Tutorial</a> .
     /// </para>
     /// </summary>
     public partial class AuthorizeDBSecurityGroupIngressRequest : AmazonWebServiceRequest
@@ -42,7 +43,7 @@ namespace Amazon.RDS.Model
         private string eC2SecurityGroupOwnerId;
 
         /// <summary>
-        /// The name of the DB Security Group to add authorization to.
+        /// The name of the DB security group to add authorization to.
         ///  
         /// </summary>
         public string DBSecurityGroupName
@@ -74,7 +75,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Name of the EC2 Security Group to authorize. For VPC DB Security Groups, <c>EC2SecurityGroupId</c> must be provided. Otherwise,
+        /// Name of the EC2 security group to authorize. For VPC DB security groups, <c>EC2SecurityGroupId</c> must be provided. Otherwise,
         /// EC2SecurityGroupOwnerId and either <c>EC2SecurityGroupName</c> or <c>EC2SecurityGroupId</c> must be provided.
         ///  
         /// </summary>
@@ -91,7 +92,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Id of the EC2 Security Group to authorize. For VPC DB Security Groups, <c>EC2SecurityGroupId</c> must be provided. Otherwise,
+        /// Id of the EC2 security group to authorize. For VPC DB security groups, <c>EC2SecurityGroupId</c> must be provided. Otherwise,
         /// EC2SecurityGroupOwnerId and either <c>EC2SecurityGroupName</c> or <c>EC2SecurityGroupId</c> must be provided.
         ///  
         /// </summary>
@@ -108,8 +109,8 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// AWS Account Number of the owner of the EC2 Security Group specified in the EC2SecurityGroupName parameter. The AWS Access Key ID is not an
-        /// acceptable value. For VPC DB Security Groups, <c>EC2SecurityGroupId</c> must be provided. Otherwise, EC2SecurityGroupOwnerId and either
+        /// AWS Account Number of the owner of the EC2 security group specified in the EC2SecurityGroupName parameter. The AWS Access Key ID is not an
+        /// acceptable value. For VPC DB security groups, <c>EC2SecurityGroupId</c> must be provided. Otherwise, EC2SecurityGroupOwnerId and either
         /// <c>EC2SecurityGroupName</c> or <c>EC2SecurityGroupId</c> must be provided.
         ///  
         /// </summary>

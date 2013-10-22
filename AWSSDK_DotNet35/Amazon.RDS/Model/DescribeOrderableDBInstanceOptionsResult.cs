@@ -31,7 +31,7 @@ namespace Amazon.RDS.Model
         private string marker;
 
         /// <summary>
-        /// An <a>OrderableDBInstanceOption</a> structure containing information about orderable options for the DB Instance.
+        /// An <a>OrderableDBInstanceOption</a> structure containing information about orderable options for the DB instance.
         ///  
         /// </summary>
         public List<OrderableDBInstanceOption> OrderableDBInstanceOptions

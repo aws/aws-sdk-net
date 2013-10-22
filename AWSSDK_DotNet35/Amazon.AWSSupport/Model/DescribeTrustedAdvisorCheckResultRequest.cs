@@ -26,11 +26,17 @@ namespace Amazon.AWSSupport.Model
     /// <summary>
     /// Container for the parameters to the DescribeTrustedAdvisorCheckResult operation.
     /// <para>This action responds with the results of a Trusted Advisor check. Once you have obtained the list of available Trusted Advisor checks
-    /// by calling DescribeTrustedAdvisorChecks, you specify the <i>CheckId</i> for the check you want to retrieve from AWS Support.</para>
-    /// <para>The response for this action contains a JSON-formatted TrustedAdvisorCheckResult object</para> <para>, which is a container for the
-    /// following three objects:</para> <ol> <li> TrustedAdvisorCategorySpecificSummary </li>
-    /// <li> TrustedAdvisorResourceDetail </li>
-    /// <li> TrustedAdvisorResourcesSummary </li>
+    /// by calling <a href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorChecks.html"
+    /// >DescribeTrustedAdvisorChecks</a> , you specify the <i>CheckId</i> for the check you want to retrieve from AWS Support.</para> <para>The
+    /// response for this action contains a JSON-formatted <a
+    /// href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorCheckResultResult.html"
+    /// >TrustedAdvisorCheckResult</a> object</para> <para>, which is a container for the following three objects:</para> <ol> <li> <a
+    /// href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorCategorySpecificSummary.html"
+    /// >TrustedAdvisorCategorySpecificSummary</a> </li>
+    /// <li> <a href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorResourceDetail.html"
+    /// >TrustedAdvisorResourceDetail</a> </li>
+    /// <li> <a href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorResourcesSummary.html"
+    /// >TrustedAdvisorResourcesSummary</a> </li>
     /// </ol> <para>In addition, the response contains the following fields:</para> <ol> <li> <b>Status</b> . Overall status of the check.</li>
     /// <li> <b>Timestamp</b> . Time at which Trusted Advisor last ran the check. </li>
     /// <li> <b>CheckId</b> . Unique identifier for the specific check returned by the request.</li>

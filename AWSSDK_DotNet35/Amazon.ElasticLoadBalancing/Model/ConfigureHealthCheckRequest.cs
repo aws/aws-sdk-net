@@ -42,7 +42,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// Callers should use the properties initialize any additional object members.
         /// </summary>
         /// 
-        /// <param name="loadBalancerName"> The mnemonic name associated with the LoadBalancer. This name must be unique within the client AWS account.
+        /// <param name="loadBalancerName"> The mnemonic name associated with the load balancer. This name must be unique within the client AWS account.
         /// </param>
         /// <param name="healthCheck"> A structure containing the configuration information for the new healthcheck. </param>
         public ConfigureHealthCheckRequest(string loadBalancerName, HealthCheck healthCheck)
@@ -53,7 +53,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     
 
         /// <summary>
-        /// The mnemonic name associated with the LoadBalancer. This name must be unique within the client AWS account.
+        /// The mnemonic name associated with the load balancer. This name must be unique within the client AWS account.
         ///  
         /// </summary>
         public string LoadBalancerName

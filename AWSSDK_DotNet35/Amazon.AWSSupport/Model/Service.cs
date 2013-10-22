@@ -21,7 +21,8 @@ using System.IO;
 namespace Amazon.AWSSupport.Model
 {
     /// <summary>
-    /// <para>JSON-formatted object that represents an AWS Service returned by the DescribeServices action. </para>
+    /// <para>JSON-formatted object that represents an AWS Service returned by the <a
+    /// href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeServices.html" >DescribeServices</a> action. </para>
     /// </summary>
     public class Service
     {
@@ -31,8 +32,9 @@ namespace Amazon.AWSSupport.Model
         private List<Category> categories = new List<Category>();
 
         /// <summary>
-        /// JSON-formatted string that represents a code for an AWS service returned by <a href="API_DescribeServices.html"
-        /// title="DescribeServices">DescribeServices</a> response. Has a corrsponding name represented by a service.name string.
+        /// JSON-formatted string that represents a code for an AWS service returned by <a
+        /// href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeServices.html" title="DescribeServices">DescribeServices</a>
+        /// response. Has a corrsponding name represented by a service.name string.
         ///  
         /// </summary>
         public string Code
@@ -65,8 +67,8 @@ namespace Amazon.AWSSupport.Model
 
         /// <summary>
         /// JSON-formatted list of categories that describe the type of support issue a case describes. Categories are strings that represent a category
-        /// name and a category code. Category names and codes are passed to AWS Support when you call <a href="API_CreateCase.html"
-        /// title="CreateCase">CreateCase</a>.
+        /// name and a category code. Category names and codes are passed to AWS Support when you call <a
+        /// href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_CreateCase.html" title="CreateCase">CreateCase</a>.
         ///  
         /// </summary>
         public List<Category> Categories

@@ -51,9 +51,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// The identifier of the event source to be added. An identifier must begin with a letter and must contain only ASCII letters, digits, and
         /// hyphens; it cannot end with a hyphen or contain two consecutive hyphens. Constraints: <ul> <li>If the source type is a DB instance, then a
-        /// DBInstanceIdentifier must be supplied.</li> <li>If the source type is a DB security group, a DBSecurityGroupName must be supplied.</li>
-        /// <li>If the source type is a DB parameter group, a DBParameterGroupName must be supplied.</li> <li>If the source type is a DB Snapshot, a
-        /// DBSnapshotIdentifier must be supplied.</li> </ul>
+        /// <c>DBInstanceIdentifier</c> must be supplied.</li> <li>If the source type is a DB security group, a <c>DBSecurityGroupName</c> must be
+        /// supplied.</li> <li>If the source type is a DB parameter group, a <c>DBParameterGroupName</c> must be supplied.</li> <li>If the source type
+        /// is a DB snapshot, a <c>DBSnapshotIdentifier</c> must be supplied.</li> </ul>
         ///  
         /// </summary>
         public string SourceIdentifier

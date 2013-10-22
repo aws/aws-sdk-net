@@ -28,8 +28,11 @@ namespace Amazon.CloudSearch
     /// <summary>
     /// Implementation for accessing AmazonCloudSearch.
     /// 
-    /// Amazon CloudSearch Configuration Service <para>You use the Configuration Service to create, configure, and manage search domains. Amazon
-    /// CloudSearch configuration requests are submitted to <c>cloudsearch.us-east-1.amazonaws.com</c> using the AWS Query protocol. </para>
+    /// Amazon CloudSearch Configuration Service <para>You use the configuration service to create, configure, and manage search domains.
+    /// Configuration service requests are submitted using the AWS Query protocol. AWS Query requests are HTTP or HTTPS requests submitted via HTTP
+    /// GET or POST with a query parameter named Action.</para> <para>The endpoint for configuration service requests is region-specific:
+    /// cloudsearch. <i>region</i> .amazonaws.com. For example, cloudsearch.us-east-1.amazonaws.com. For a current list of supported regions and
+    /// endpoints, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#cloudsearch_region">Regions and Endpoints</a> .</para>
     /// </summary>
 	public partial class AmazonCloudSearchClient : AmazonWebServiceClient, Amazon.CloudSearch.IAmazonCloudSearch
     {
@@ -54,7 +57,7 @@ namespace Amazon.CloudSearch
         ///
         /// </summary>
         public AmazonCloudSearchClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCloudSearchConfig(), true, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCloudSearchConfig(), AuthenticationTypes.User | AuthenticationTypes.Session) { }
 
         /// <summary>
         /// Constructs AmazonCloudSearchClient with the credentials loaded from the application's
@@ -74,7 +77,7 @@ namespace Amazon.CloudSearch
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonCloudSearchClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCloudSearchConfig(){RegionEndpoint = region}, true, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCloudSearchConfig(){RegionEndpoint = region}, AuthenticationTypes.User | AuthenticationTypes.Session) { }
 
         /// <summary>
         /// Constructs AmazonCloudSearchClient with the credentials loaded from the application's
@@ -94,7 +97,7 @@ namespace Amazon.CloudSearch
         /// </summary>
         /// <param name="config">The AmazonCloudSearch Configuration Object</param>
         public AmazonCloudSearchClient(AmazonCloudSearchConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config, true, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), config, AuthenticationTypes.User | AuthenticationTypes.Session) { }
 
         /// <summary>
         /// Constructs AmazonCloudSearchClient with AWS Credentials
@@ -122,7 +125,7 @@ namespace Amazon.CloudSearch
         /// <param name="credentials">AWS Credentials</param>
         /// <param name="clientConfig">The AmazonCloudSearchClient Configuration Object</param>
         public AmazonCloudSearchClient(AWSCredentials credentials, AmazonCloudSearchConfig clientConfig)
-            : base(credentials, clientConfig, false, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(credentials, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
         {
         }
 
@@ -208,7 +211,7 @@ namespace Amazon.CloudSearch
         /// <para>Creates a new search domain.</para>
         /// </summary>
         /// 
-        /// <param name="createDomainRequest">Container for the necessary parameters to execute the CreateDomain service method on
+        /// <param name="request">Container for the necessary parameters to execute the CreateDomain service method on
         /// AmazonCloudSearch.</param>
         /// 
         /// <returns>The response from the CreateDomain service method, as returned by AmazonCloudSearch.</returns>
@@ -253,7 +256,7 @@ namespace Amazon.CloudSearch
         /// new configuration replaces the old one. You can configure a maximum of 200 index fields.</para>
         /// </summary>
         /// 
-        /// <param name="defineIndexFieldRequest">Container for the necessary parameters to execute the DefineIndexField service method on
+        /// <param name="request">Container for the necessary parameters to execute the DefineIndexField service method on
         /// AmazonCloudSearch.</param>
         /// 
         /// <returns>The response from the DefineIndexField service method, as returned by AmazonCloudSearch.</returns>
@@ -300,7 +303,7 @@ namespace Amazon.CloudSearch
         /// expression exists, the new configuration replaces the old one. You can configure a maximum of 50 rank expressions.</para>
         /// </summary>
         /// 
-        /// <param name="defineRankExpressionRequest">Container for the necessary parameters to execute the DefineRankExpression service method on
+        /// <param name="request">Container for the necessary parameters to execute the DefineRankExpression service method on
         /// AmazonCloudSearch.</param>
         /// 
         /// <returns>The response from the DefineRankExpression service method, as returned by AmazonCloudSearch.</returns>
@@ -346,7 +349,7 @@ namespace Amazon.CloudSearch
         /// <para>Permanently deletes a search domain and all of its data.</para>
         /// </summary>
         /// 
-        /// <param name="deleteDomainRequest">Container for the necessary parameters to execute the DeleteDomain service method on
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDomain service method on
         /// AmazonCloudSearch.</param>
         /// 
         /// <returns>The response from the DeleteDomain service method, as returned by AmazonCloudSearch.</returns>
@@ -389,7 +392,7 @@ namespace Amazon.CloudSearch
         /// <para>Removes an <c>IndexField</c> from the search domain.</para>
         /// </summary>
         /// 
-        /// <param name="deleteIndexFieldRequest">Container for the necessary parameters to execute the DeleteIndexField service method on
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIndexField service method on
         /// AmazonCloudSearch.</param>
         /// 
         /// <returns>The response from the DeleteIndexField service method, as returned by AmazonCloudSearch.</returns>
@@ -434,7 +437,7 @@ namespace Amazon.CloudSearch
         /// <para>Removes a <c>RankExpression</c> from the search domain.</para>
         /// </summary>
         /// 
-        /// <param name="deleteRankExpressionRequest">Container for the necessary parameters to execute the DeleteRankExpression service method on
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRankExpression service method on
         /// AmazonCloudSearch.</param>
         /// 
         /// <returns>The response from the DeleteRankExpression service method, as returned by AmazonCloudSearch.</returns>
@@ -479,7 +482,7 @@ namespace Amazon.CloudSearch
         /// <para>Gets the default search field configured for the search domain.</para>
         /// </summary>
         /// 
-        /// <param name="describeDefaultSearchFieldRequest">Container for the necessary parameters to execute the DescribeDefaultSearchField service
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDefaultSearchField service
         /// method on AmazonCloudSearch.</param>
         /// 
         /// <returns>The response from the DescribeDefaultSearchField service method, as returned by AmazonCloudSearch.</returns>
@@ -524,7 +527,7 @@ namespace Amazon.CloudSearch
         /// default.</para>
         /// </summary>
         /// 
-        /// <param name="describeDomainsRequest">Container for the necessary parameters to execute the DescribeDomains service method on
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDomains service method on
         /// AmazonCloudSearch.</param>
         /// 
         /// <returns>The response from the DescribeDomains service method, as returned by AmazonCloudSearch.</returns>
@@ -568,8 +571,6 @@ namespace Amazon.CloudSearch
         /// default.</para>
         /// </summary>
         /// 
-        /// <param name="describeDomainsRequest">Container for the necessary parameters to execute the DescribeDomains service method on
-        /// AmazonCloudSearch.</param>
         /// 
         /// <returns>The response from the DescribeDomains service method, as returned by AmazonCloudSearch.</returns>
         /// 
@@ -585,7 +586,7 @@ namespace Amazon.CloudSearch
         /// by default.</para>
         /// </summary>
         /// 
-        /// <param name="describeIndexFieldsRequest">Container for the necessary parameters to execute the DescribeIndexFields service method on
+        /// <param name="request">Container for the necessary parameters to execute the DescribeIndexFields service method on
         /// AmazonCloudSearch.</param>
         /// 
         /// <returns>The response from the DescribeIndexFields service method, as returned by AmazonCloudSearch.</returns>
@@ -630,7 +631,7 @@ namespace Amazon.CloudSearch
         /// expressions by default. </para>
         /// </summary>
         /// 
-        /// <param name="describeRankExpressionsRequest">Container for the necessary parameters to execute the DescribeRankExpressions service method on
+        /// <param name="request">Container for the necessary parameters to execute the DescribeRankExpressions service method on
         /// AmazonCloudSearch.</param>
         /// 
         /// <returns>The response from the DescribeRankExpressions service method, as returned by AmazonCloudSearch.</returns>
@@ -674,7 +675,7 @@ namespace Amazon.CloudSearch
         /// <para>Gets information about the resource-based policies that control access to the domain's document and search services.</para>
         /// </summary>
         /// 
-        /// <param name="describeServiceAccessPoliciesRequest">Container for the necessary parameters to execute the DescribeServiceAccessPolicies
+        /// <param name="request">Container for the necessary parameters to execute the DescribeServiceAccessPolicies
         /// service method on AmazonCloudSearch.</param>
         /// 
         /// <returns>The response from the DescribeServiceAccessPolicies service method, as returned by AmazonCloudSearch.</returns>
@@ -718,7 +719,7 @@ namespace Amazon.CloudSearch
         /// <para>Gets the stemming dictionary configured for the search domain.</para>
         /// </summary>
         /// 
-        /// <param name="describeStemmingOptionsRequest">Container for the necessary parameters to execute the DescribeStemmingOptions service method on
+        /// <param name="request">Container for the necessary parameters to execute the DescribeStemmingOptions service method on
         /// AmazonCloudSearch.</param>
         /// 
         /// <returns>The response from the DescribeStemmingOptions service method, as returned by AmazonCloudSearch.</returns>
@@ -762,7 +763,7 @@ namespace Amazon.CloudSearch
         /// <para>Gets the stopwords configured for the search domain.</para>
         /// </summary>
         /// 
-        /// <param name="describeStopwordOptionsRequest">Container for the necessary parameters to execute the DescribeStopwordOptions service method on
+        /// <param name="request">Container for the necessary parameters to execute the DescribeStopwordOptions service method on
         /// AmazonCloudSearch.</param>
         /// 
         /// <returns>The response from the DescribeStopwordOptions service method, as returned by AmazonCloudSearch.</returns>
@@ -806,7 +807,7 @@ namespace Amazon.CloudSearch
         /// <para>Gets the synonym dictionary configured for the search domain.</para>
         /// </summary>
         /// 
-        /// <param name="describeSynonymOptionsRequest">Container for the necessary parameters to execute the DescribeSynonymOptions service method on
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSynonymOptions service method on
         /// AmazonCloudSearch.</param>
         /// 
         /// <returns>The response from the DescribeSynonymOptions service method, as returned by AmazonCloudSearch.</returns>
@@ -852,7 +853,7 @@ namespace Amazon.CloudSearch
         /// results.</para>
         /// </summary>
         /// 
-        /// <param name="indexDocumentsRequest">Container for the necessary parameters to execute the IndexDocuments service method on
+        /// <param name="request">Container for the necessary parameters to execute the IndexDocuments service method on
         /// AmazonCloudSearch.</param>
         /// 
         /// <returns>The response from the IndexDocuments service method, as returned by AmazonCloudSearch.</returns>
@@ -893,11 +894,12 @@ namespace Amazon.CloudSearch
         }
  
         /// <summary>
-        /// <para>Configures the default search field for the search domain. The default search field is used when a search request does not specify
-        /// which fields to search. By default, it is configured to include the contents of all of the domain's text fields.</para>
+        /// <para>Configures the default search field for the search domain. The default search field is the text field that is searched when a search
+        /// request does not specify which fields to search. By default, it is configured to include the contents of all of the domain's text fields.
+        /// </para>
         /// </summary>
         /// 
-        /// <param name="updateDefaultSearchFieldRequest">Container for the necessary parameters to execute the UpdateDefaultSearchField service method
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDefaultSearchField service method
         /// on AmazonCloudSearch.</param>
         /// 
         /// <returns>The response from the UpdateDefaultSearchField service method, as returned by AmazonCloudSearch.</returns>
@@ -943,7 +945,7 @@ namespace Amazon.CloudSearch
         /// document is 100 KB.</para>
         /// </summary>
         /// 
-        /// <param name="updateServiceAccessPoliciesRequest">Container for the necessary parameters to execute the UpdateServiceAccessPolicies service
+        /// <param name="request">Container for the necessary parameters to execute the UpdateServiceAccessPolicies service
         /// method on AmazonCloudSearch.</param>
         /// 
         /// <returns>The response from the UpdateServiceAccessPolicies service method, as returned by AmazonCloudSearch.</returns>
@@ -990,7 +992,7 @@ namespace Amazon.CloudSearch
         /// requests. The maximum size of the stemming dictionary is 500 KB.</para>
         /// </summary>
         /// 
-        /// <param name="updateStemmingOptionsRequest">Container for the necessary parameters to execute the UpdateStemmingOptions service method on
+        /// <param name="request">Container for the necessary parameters to execute the UpdateStemmingOptions service method on
         /// AmazonCloudSearch.</param>
         /// 
         /// <returns>The response from the UpdateStemmingOptions service method, as returned by AmazonCloudSearch.</returns>
@@ -1037,7 +1039,7 @@ namespace Amazon.CloudSearch
         /// of the stopwords dictionary is 10 KB.</para>
         /// </summary>
         /// 
-        /// <param name="updateStopwordOptionsRequest">Container for the necessary parameters to execute the UpdateStopwordOptions service method on
+        /// <param name="request">Container for the necessary parameters to execute the UpdateStopwordOptions service method on
         /// AmazonCloudSearch.</param>
         /// 
         /// <returns>The response from the UpdateStopwordOptions service method, as returned by AmazonCloudSearch.</returns>
@@ -1084,7 +1086,7 @@ namespace Amazon.CloudSearch
         /// that occur in text fields. The maximum size of the synonym dictionary is 100 KB. </para>
         /// </summary>
         /// 
-        /// <param name="updateSynonymOptionsRequest">Container for the necessary parameters to execute the UpdateSynonymOptions service method on
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSynonymOptions service method on
         /// AmazonCloudSearch.</param>
         /// 
         /// <returns>The response from the UpdateSynonymOptions service method, as returned by AmazonCloudSearch.</returns>

@@ -25,8 +25,8 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeCacheSubnetGroups operation.
-    /// <para> Returns a list of CacheSubnetGroup descriptions. If a CacheSubnetGroupName is specified, the list will contain only the description
-    /// of the specified Cache Subnet Group. </para>
+    /// <para>The <i>DescribeCacheSubnetGroups</i> operation returns a list of cache subnet group descriptions. If a subnet group name is specified,
+    /// the list will contain only the description of that group.</para>
     /// </summary>
     public partial class DescribeCacheSubnetGroupsRequest : AmazonWebServiceRequest
     {
@@ -35,7 +35,7 @@ namespace Amazon.ElastiCache.Model
         private string marker;
 
         /// <summary>
-        /// The name of the Cache Subnet Group to return details for.
+        /// The name of the cache subnet group to return details for.
         ///  
         /// </summary>
         public string CacheSubnetGroupName
@@ -52,7 +52,7 @@ namespace Amazon.ElastiCache.Model
 
         /// <summary>
         /// The maximum number of records to include in the response. If more records exist than the specified <c>MaxRecords</c> value, a marker is
-        /// included in the response so that the remaining results may be retrieved. Default: 100 Constraints: minimum 20, maximum 100
+        /// included in the response so that the remaining results can be retrieved. Default: 100Constraints: minimum 20; maximum 100.
         ///  
         /// </summary>
         public int MaxRecords
@@ -68,8 +68,8 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// An optional marker provided in the previous DescribeCacheSubnetGroups request. If this parameter is specified, the response includes only
-        /// records beyond the marker, up to the value specified by <c>MaxRecords</c>.
+        /// An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is
+        /// specified, the response includes only records beyond the marker, up to the value specified by <i>MaxRecords</i>.
         ///  
         /// </summary>
         public string Marker

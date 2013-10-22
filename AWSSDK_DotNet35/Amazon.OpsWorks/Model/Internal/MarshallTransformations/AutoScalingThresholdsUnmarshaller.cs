@@ -33,6 +33,9 @@
 
         public AutoScalingThresholds Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonToken.Null)
+                return null;
+
             AutoScalingThresholds autoScalingThresholds = new AutoScalingThresholds();
 
         

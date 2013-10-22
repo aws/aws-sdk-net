@@ -37,7 +37,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         private List<string> policyNames = new List<string>();
 
         /// <summary>
-        /// The mnemonic name associated with the LoadBalancer. This name must be unique within the client AWS account.
+        /// The mnemonic name associated with the load balancer. This name must be unique within the client AWS account.
         ///  
         /// </summary>
         public string LoadBalancerName

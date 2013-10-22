@@ -33,6 +33,9 @@
 
         public DomainInfos Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonToken.Null)
+                return null;
+
             DomainInfos domainInfos = new DomainInfos();
 
         

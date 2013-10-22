@@ -22,7 +22,7 @@ using Amazon.Runtime;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// <para> Contains a list of CacheParameterGroups. </para>
+    /// <para>Represents the output of a <i>DescribeCacheParameterGroups</i> operation.</para>
     /// </summary>
     public partial class DescribeCacheParameterGroupsResult : AmazonWebServiceResponse
     {
@@ -31,7 +31,7 @@ namespace Amazon.ElastiCache.Model
         private List<CacheParameterGroup> cacheParameterGroups = new List<CacheParameterGroup>();
 
         /// <summary>
-        /// The marker obtained from a previous operation response.
+        /// Provides an identifier to allow retrieval of paginated results.
         ///  
         /// </summary>
         public string Marker
@@ -47,7 +47,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// A list of <a>CacheParameterGroup</a> instances.
+        /// A list of cache parameter groups. Each element in the list contains detailed information about one cache parameter group.
         ///  
         /// </summary>
         public List<CacheParameterGroup> CacheParameterGroups

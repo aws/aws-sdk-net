@@ -31,7 +31,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         private List<PolicyAttributeDescription> policyAttributeDescriptions = new List<PolicyAttributeDescription>();
 
         /// <summary>
-        /// The name mof the policy associated with the LoadBalancer.
+        /// The name of the policy associated with the load balancer.
         ///  
         /// </summary>
         public string PolicyName
@@ -47,7 +47,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         }
 
         /// <summary>
-        /// The name of the policy type associated with the LoadBalancer.
+        /// The name of the policy type associated with the load balancer.
         ///  
         /// </summary>
         public string PolicyTypeName

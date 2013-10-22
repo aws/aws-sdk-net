@@ -26,8 +26,8 @@ namespace Amazon.EC2.Model
     {
         
         private string destinationCidrBlock;
-        private string source;
-        private string state;
+        private VpnStaticRouteSource source;
+        private VpnState state;
         public string DestinationCidrBlock
         {
             get { return this.destinationCidrBlock; }
@@ -39,7 +39,7 @@ namespace Amazon.EC2.Model
         {
             return this.destinationCidrBlock != null;
         }
-        public string Source
+        public VpnStaticRouteSource Source
         {
             get { return this.source; }
             set { this.source = value; }
@@ -50,7 +50,7 @@ namespace Amazon.EC2.Model
         {
             return this.source != null;
         }
-        public string State
+        public VpnState State
         {
             get { return this.state; }
             set { this.state = value; }

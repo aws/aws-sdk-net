@@ -32,6 +32,7 @@ namespace Amazon.RDS.Model
     public partial class DescribeEventSubscriptionsRequest : AmazonWebServiceRequest
     {
         private string subscriptionName;
+        private List<Filter> filters = new List<Filter>();
         private int? maxRecords;
         private string marker;
 
@@ -49,6 +50,17 @@ namespace Amazon.RDS.Model
         internal bool IsSetSubscriptionName()
         {
             return this.subscriptionName != null;
+        }
+        public List<Filter> Filters
+        {
+            get { return this.filters; }
+            set { this.filters = value; }
+        }
+
+        // Check to see if Filters property is set
+        internal bool IsSetFilters()
+        {
+            return this.filters.Count > 0;
         }
 
         /// <summary>

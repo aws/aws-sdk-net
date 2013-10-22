@@ -25,10 +25,11 @@ namespace Amazon.CloudWatch.Model
 {
     /// <summary>
     /// Container for the parameters to the ListMetrics operation.
-    /// <para> Returns a list of valid metrics stored for the AWS account owner. Returned metrics can be used with <c>GetMetricStatistics</c> to
-    /// obtain statistical data for a given metric. </para> <para><b>NOTE:</b> Up to 500 results are returned for any one call. To retrieve further
+    /// <para> Returns a list of valid metrics stored for the AWS account owner. Returned metrics can be used with GetMetricStatistics to obtain
+    /// statistical data for a given metric. </para> <para><b>NOTE:</b> Up to 500 results are returned for any one call. To retrieve further
     /// results, use returned NextToken values with subsequent ListMetrics operations. </para> <para><b>NOTE:</b> If you create a metric with the
-    /// PutMetricData action, allow up to fifteen minutes for the metric to appear in calls to the ListMetrics action. </para>
+    /// PutMetricData action, allow up to fifteen minutes for the metric to appear in calls to the ListMetrics action. Statistics about the metric,
+    /// however, are available sooner using GetMetricStatistics. </para>
     /// </summary>
     public partial class ListMetricsRequest : AmazonWebServiceRequest
     {

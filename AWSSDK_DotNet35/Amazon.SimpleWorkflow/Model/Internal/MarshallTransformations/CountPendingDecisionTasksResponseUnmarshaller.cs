@@ -39,7 +39,7 @@
         }        
         
         
-        private void UnmarshallResult(JsonUnmarshallerContext context,CountPendingDecisionTasksResponse response)
+        private static void UnmarshallResult(JsonUnmarshallerContext context,CountPendingDecisionTasksResponse response)
         {                   
           response.PendingTaskCount = PendingTaskCountUnmarshaller.GetInstance().Unmarshall(context);
           return;

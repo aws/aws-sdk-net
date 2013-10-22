@@ -33,6 +33,9 @@
 
         public ConsumedCapacity Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonToken.Null)
+                return null;
+
             ConsumedCapacity consumedCapacity = new ConsumedCapacity();
 
         

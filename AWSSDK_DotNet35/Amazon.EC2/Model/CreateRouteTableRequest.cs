@@ -26,11 +26,24 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Container for the parameters to the CreateRouteTable operation.
     /// <para> Creates a new route table within a VPC. After you create a new route table, you can add routes and associate the table with a subnet.
-    /// For more information about route tables, go to Route Tables in the Amazon Virtual Private Cloud User Guide. </para>
+    /// For more information about route tables, go to <a href="http://docs.amazonwebservices.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html"
+    /// >Route Tables</a> in the Amazon Virtual Private Cloud User Guide. </para>
     /// </summary>
     public partial class CreateRouteTableRequest : AmazonWebServiceRequest
     {
+        private bool? dryRun;
         private string vpcId;
+        public bool DryRun
+        {
+            get { return this.dryRun ?? default(bool); }
+            set { this.dryRun = value; }
+        }
+
+        // Check to see if DryRun property is set
+        internal bool IsSetDryRun()
+        {
+            return this.dryRun.HasValue;
+        }
 
         /// <summary>
         /// The ID of the VPC where the route table will be created.

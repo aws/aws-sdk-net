@@ -27,12 +27,13 @@ namespace Amazon.DynamoDBv2.Model
     /// Container for the parameters to the UpdateTable operation.
     /// <para>Updates the provisioned throughput for the given table. Setting the throughput for a table helps you manage performance and is part of
     /// the provisioned throughput feature of Amazon DynamoDB.</para> <para>The provisioned throughput values can be upgraded or downgraded based on
-    /// the maximums and minimums listed in the Limits section in the Amazon DynamoDB Developer Guide.</para> <para>The table must be in the
-    /// <c>ACTIVE</c> state for this operation to succeed. <i>UpdateTable</i> is an asynchronous operation; while executing the operation, the table
-    /// is in the <c>UPDATING</c> state. While the table is in the <c>UPDATING</c> state, the table still has the provisioned throughput from before
-    /// the call. The new provisioned throughput setting is in effect only when the table returns to the <c>ACTIVE</c> state after the
-    /// <i>UpdateTable</i> operation. </para> <para>You cannot add, modify or delete local secondary indexes using <i>UpdateTable</i> . Local
-    /// secondary indexes can only be defined at table creation time.</para>
+    /// the maximums and minimums listed in the <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html" >Limits</a>
+    /// section in the Amazon DynamoDB Developer Guide.</para> <para>The table must be in the <c>ACTIVE</c> state for this operation to succeed.
+    /// <i>UpdateTable</i> is an asynchronous operation; while executing the operation, the table is in the <c>UPDATING</c> state. While the table
+    /// is in the <c>UPDATING</c> state, the table still has the provisioned throughput from before the call. The new provisioned throughput setting
+    /// is in effect only when the table returns to the <c>ACTIVE</c> state after the <i>UpdateTable</i> operation. </para> <para>You cannot add,
+    /// modify or delete local secondary indexes using <i>UpdateTable</i> . Local secondary indexes can only be defined at table creation
+    /// time.</para>
     /// </summary>
     public partial class UpdateTableRequest : AmazonWebServiceRequest
     {

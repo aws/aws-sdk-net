@@ -31,15 +31,25 @@ namespace Amazon.OpsWorks
     /// AWS OpsWorks <para>Welcome to the <i>AWS OpsWorks API Reference</i> . This guide provides descriptions, syntax, and usage examples about AWS
     /// OpsWorks actions and data types, including common parameters and error codes. </para> <para>AWS OpsWorks is an application management
     /// service that provides an integrated experience for overseeing the complete application lifecycle. For information about this product, go to
-    /// the AWS OpsWorks details page. </para> <para> <b>Endpoints</b> </para> <para>AWS OpsWorks supports only one endpoint,
-    /// opsworks.us-east-1.amazonaws.com (HTTPS), so you must connect to that endpoint. You can then use the API to direct AWS OpsWorks to create
-    /// stacks in any AWS Region.</para> <para> <b>Chef Version</b> </para> <para>When you call CreateStack, CloneStack, or UpdateStack we recommend
-    /// you use the <c>ConfigurationManager</c> parameter to specify the Chef version, 0.9 or 11.4. The default value is currently 0.9. However, we
-    /// expect to change the default value to 11.4 in late August 2013.</para>
+    /// the <a href="http://aws.amazon.com/opsworks/" >AWS OpsWorks</a> details page. </para> <para> <b>Endpoints</b> </para> <para>AWS OpsWorks
+    /// supports only one endpoint, opsworks.us-east-1.amazonaws.com (HTTPS), so you must connect to that endpoint. You can then use the API to
+    /// direct AWS OpsWorks to create stacks in any AWS Region.</para> <para> <b>Chef Version</b> </para> <para>When you call CreateStack,
+    /// CloneStack, or UpdateStack we recommend you use the <c>ConfigurationManager</c> parameter to specify the Chef version, 0.9 or 11.4. The
+    /// default value is currently 0.9. However, we expect to change the default value to 11.4 in October 2013. For more information, see <a
+    /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-chef11.html" >Using AWS OpsWorks with Chef 11</a> .</para>
     /// </summary>
     public partial class AmazonOpsWorksClient : AmazonWebServiceClient, IAmazonOpsWorks
     {
     AWS4Signer signer = new AWS4Signer();
+
+        #region Dispose
+
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
+        }
+
+        #endregion
 
         #region Constructors
 
@@ -60,7 +70,7 @@ namespace Amazon.OpsWorks
         ///
         /// </summary>
         public AmazonOpsWorksClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonOpsWorksConfig(), true, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonOpsWorksConfig(), AuthenticationTypes.User | AuthenticationTypes.Session) { }
 
         /// <summary>
         /// Constructs AmazonOpsWorksClient with the credentials loaded from the application's
@@ -80,7 +90,7 @@ namespace Amazon.OpsWorks
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonOpsWorksClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonOpsWorksConfig(){RegionEndpoint = region}, true, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonOpsWorksConfig{RegionEndpoint = region}, AuthenticationTypes.User | AuthenticationTypes.Session) { }
 
         /// <summary>
         /// Constructs AmazonOpsWorksClient with the credentials loaded from the application's
@@ -100,7 +110,7 @@ namespace Amazon.OpsWorks
         /// </summary>
         /// <param name="config">The AmazonOpsWorks Configuration Object</param>
         public AmazonOpsWorksClient(AmazonOpsWorksConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config, true, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), config, AuthenticationTypes.User | AuthenticationTypes.Session) { }
 
         /// <summary>
         /// Constructs AmazonOpsWorksClient with AWS Credentials
@@ -117,7 +127,7 @@ namespace Amazon.OpsWorks
         /// <param name="credentials">AWS Credentials</param>
         /// <param name="region">The region to connect.</param>
         public AmazonOpsWorksClient(AWSCredentials credentials, RegionEndpoint region)
-            : this(credentials, new AmazonOpsWorksConfig(){RegionEndpoint=region})
+            : this(credentials, new AmazonOpsWorksConfig{RegionEndpoint = region})
         {
         }
 
@@ -128,7 +138,7 @@ namespace Amazon.OpsWorks
         /// <param name="credentials">AWS Credentials</param>
         /// <param name="clientConfig">The AmazonOpsWorksClient Configuration Object</param>
         public AmazonOpsWorksClient(AWSCredentials credentials, AmazonOpsWorksConfig clientConfig)
-            : base(credentials, clientConfig, false, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(credentials, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
         {
         }
 
@@ -184,7 +194,7 @@ namespace Amazon.OpsWorks
         /// <param name="awsSessionToken">AWS Session Token</param>
         /// <param name="region">The region to connect.</param>
         public AmazonOpsWorksClient(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken, RegionEndpoint region)
-            : this(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, new AmazonOpsWorksConfig(){RegionEndpoint = region})
+            : this(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, new AmazonOpsWorksConfig{RegionEndpoint = region})
         {
         }
 
@@ -204,12 +214,135 @@ namespace Amazon.OpsWorks
         #endregion
 
 
+        #region AssignVolume
+
+        /// <summary>
+        /// <para>Assigns one of the stack's registered Amazon EBS volumes to a specified instance. The volume must first be registered with the stack
+        /// by calling RegisterVolume. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html"
+        /// >http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html</a> .</para>
+        /// </summary>
+        /// 
+        /// <param name="assignVolumeRequest">Container for the necessary parameters to execute the AssignVolume service method on
+        ///          AmazonOpsWorks.</param>
+        /// 
+        /// <exception cref="ResourceNotFoundException"/>
+        /// <exception cref="ValidationException"/>
+        public AssignVolumeResponse AssignVolume(AssignVolumeRequest assignVolumeRequest)
+        {
+            IAsyncResult asyncResult = invokeAssignVolume(assignVolumeRequest, null, null, true);
+            return EndAssignVolume(asyncResult);
+        }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssignVolume operation.
+        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks.AssignVolume"/>
+        /// </summary>
+        /// 
+        /// <param name="assignVolumeRequest">Container for the necessary parameters to execute the AssignVolume operation on AmazonOpsWorks.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        public IAsyncResult BeginAssignVolume(AssignVolumeRequest assignVolumeRequest, AsyncCallback callback, object state)
+        {
+            return invokeAssignVolume(assignVolumeRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the AssignVolume operation.
+        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks.AssignVolume"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssignVolume.</param>
+        public AssignVolumeResponse EndAssignVolume(IAsyncResult asyncResult)
+        {
+            return endOperation<AssignVolumeResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeAssignVolume(AssignVolumeRequest assignVolumeRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new AssignVolumeRequestMarshaller().Marshall(assignVolumeRequest);
+            var unmarshaller = AssignVolumeResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        #endregion
+    
+        #region AssociateElasticIp
+
+        /// <summary>
+        /// <para>Associates one of the stack's registered Elastic IP addresses with a specified instance. The address must first be registered with the
+        /// stack by calling RegisterElasticIp. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html"
+        /// >http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html</a> .</para>
+        /// </summary>
+        /// 
+        /// <param name="associateElasticIpRequest">Container for the necessary parameters to execute the AssociateElasticIp service method on
+        ///          AmazonOpsWorks.</param>
+        /// 
+        /// <exception cref="ResourceNotFoundException"/>
+        /// <exception cref="ValidationException"/>
+        public AssociateElasticIpResponse AssociateElasticIp(AssociateElasticIpRequest associateElasticIpRequest)
+        {
+            IAsyncResult asyncResult = invokeAssociateElasticIp(associateElasticIpRequest, null, null, true);
+            return EndAssociateElasticIp(asyncResult);
+        }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateElasticIp operation.
+        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks.AssociateElasticIp"/>
+        /// </summary>
+        /// 
+        /// <param name="associateElasticIpRequest">Container for the necessary parameters to execute the AssociateElasticIp operation on
+        ///          AmazonOpsWorks.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        public IAsyncResult BeginAssociateElasticIp(AssociateElasticIpRequest associateElasticIpRequest, AsyncCallback callback, object state)
+        {
+            return invokeAssociateElasticIp(associateElasticIpRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the AssociateElasticIp operation.
+        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks.AssociateElasticIp"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateElasticIp.</param>
+        public AssociateElasticIpResponse EndAssociateElasticIp(IAsyncResult asyncResult)
+        {
+            return endOperation<AssociateElasticIpResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeAssociateElasticIp(AssociateElasticIpRequest associateElasticIpRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new AssociateElasticIpRequestMarshaller().Marshall(associateElasticIpRequest);
+            var unmarshaller = AssociateElasticIpResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        #endregion
+    
         #region AttachElasticLoadBalancer
 
         /// <summary>
-        /// <para>Attaches an Elastic Load Balancing instance to a specified layer.</para> <para><b>NOTE:</b>You must create the Elastic Load Balancing
-        /// instance separately, by using the Elastic Load Balancing console, API, or CLI. For more information, see Elastic Load Balancing Developer
-        /// Guide.</para>
+        /// <para>Attaches an Elastic Load Balancing load balancer to a specified layer.</para> <para><b>NOTE:</b>You must create the Elastic Load
+        /// Balancing instance separately, by using the Elastic Load Balancing console, API, or CLI. For more information, see Elastic Load Balancing
+        /// Developer Guide.</para>
         /// </summary>
         /// 
         /// <param name="attachElasticLoadBalancerRequest">Container for the necessary parameters to execute the AttachElasticLoadBalancer service
@@ -269,7 +402,8 @@ namespace Amazon.OpsWorks
         #region CloneStack
 
         /// <summary>
-        /// <para>Creates a clone of a specified stack. For more information, see Clone a Stack.</para>
+        /// <para>Creates a clone of a specified stack. For more information, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-cloning.html" >Clone a Stack</a> .</para>
         /// </summary>
         /// 
         /// <param name="cloneStackRequest">Container for the necessary parameters to execute the CloneStack service method on AmazonOpsWorks.</param>
@@ -334,7 +468,8 @@ namespace Amazon.OpsWorks
         #region CreateApp
 
         /// <summary>
-        /// <para>Creates an app for a specified stack. For more information, see Creating Apps.</para>
+        /// <para>Creates an app for a specified stack. For more information, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html" >Creating Apps</a> .</para>
         /// </summary>
         /// 
         /// <param name="createAppRequest">Container for the necessary parameters to execute the CreateApp service method on AmazonOpsWorks.</param>
@@ -406,7 +541,8 @@ namespace Amazon.OpsWorks
         /// <li>Stack deployment runs the <c>deploy</c> recipes but does not raise an event.</li>
         /// 
         /// </ul>
-        /// <para>For more information, see Deploying Apps and Run Stack Commands.</para>
+        /// <para>For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-deploying.html" >Deploying
+        /// Apps</a> and <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-commands.html" >Run Stack Commands</a> .</para>
         /// </summary>
         /// 
         /// <param name="createDeploymentRequest">Container for the necessary parameters to execute the CreateDeployment service method on
@@ -473,7 +609,8 @@ namespace Amazon.OpsWorks
         #region CreateInstance
 
         /// <summary>
-        /// <para>Creates an instance in a specified stack. For more information, see Adding an Instance to a Layer.</para>
+        /// <para>Creates an instance in a specified stack. For more information, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html" >Adding an Instance to a Layer</a> .</para>
         /// </summary>
         /// 
         /// <param name="createInstanceRequest">Container for the necessary parameters to execute the CreateInstance service method on
@@ -540,10 +677,12 @@ namespace Amazon.OpsWorks
         #region CreateLayer
 
         /// <summary>
-        /// <para>Creates a layer. For more information, see How to Create a Layer.</para> <para><b>NOTE:</b>You should use CreateLayer for non-custom
-        /// layer types such as PHP App Server only if the stack does not have an existing layer of that type. A stack can have at most one instance of
-        /// each non-custom layer; if you attempt to create a second instance, CreateLayer fails. A stack can have an arbitrary number of custom layers,
-        /// so you can call CreateLayer as many times as you like for that layer type.</para>
+        /// <para>Creates a layer. For more information, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-create.html" >How to Create a Layer</a> .</para>
+        /// <para><b>NOTE:</b>You should use CreateLayer for noncustom layer types such as PHP App Server only if the stack does not have an existing
+        /// layer of that type. A stack can have at most one instance of each noncustom layer; if you attempt to create a second instance, CreateLayer
+        /// fails. A stack can have an arbitrary number of custom layers, so you can call CreateLayer as many times as you like for that layer
+        /// type.</para>
         /// </summary>
         /// 
         /// <param name="createLayerRequest">Container for the necessary parameters to execute the CreateLayer service method on AmazonOpsWorks.</param>
@@ -608,7 +747,8 @@ namespace Amazon.OpsWorks
         #region CreateStack
 
         /// <summary>
-        /// <para>Creates a new stack. For more information, see Create a New Stack.</para>
+        /// <para>Creates a new stack. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-edit.html"
+        /// >Create a New Stack</a> .</para>
         /// </summary>
         /// 
         /// <param name="createStackRequest">Container for the necessary parameters to execute the CreateStack service method on AmazonOpsWorks.</param>
@@ -796,7 +936,8 @@ namespace Amazon.OpsWorks
         #region DeleteInstance
 
         /// <summary>
-        /// <para>Deletes a specified instance. You must stop an instance before you can delete it. For more information, see Deleting Instances.</para>
+        /// <para>Deletes a specified instance. You must stop an instance before you can delete it. For more information, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-delete.html" >Deleting Instances</a> .</para>
         /// </summary>
         /// 
         /// <param name="deleteInstanceRequest">Container for the necessary parameters to execute the DeleteInstance service method on
@@ -856,8 +997,8 @@ namespace Amazon.OpsWorks
         #region DeleteLayer
 
         /// <summary>
-        /// <para>Deletes a specified layer. You must first stop and then delete all associated instances. For more information, see How to Delete a
-        /// Layer.</para>
+        /// <para>Deletes a specified layer. You must first stop and then delete all associated instances. For more information, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-delete.html" >How to Delete a Layer</a> .</para>
         /// </summary>
         /// 
         /// <param name="deleteLayerRequest">Container for the necessary parameters to execute the DeleteLayer service method on AmazonOpsWorks.</param>
@@ -915,7 +1056,8 @@ namespace Amazon.OpsWorks
         #region DeleteStack
 
         /// <summary>
-        /// <para>Deletes a specified stack. You must first delete all instances, layers, and apps. For more information, see Shut Down a Stack.</para>
+        /// <para>Deletes a specified stack. You must first delete all instances, layers, and apps. For more information, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-shutting.html" >Shut Down a Stack</a> .</para>
         /// </summary>
         /// 
         /// <param name="deleteStackRequest">Container for the necessary parameters to execute the DeleteStack service method on AmazonOpsWorks.</param>
@@ -1021,6 +1163,130 @@ namespace Amazon.OpsWorks
         {
             IRequest irequest = new DeleteUserProfileRequestMarshaller().Marshall(deleteUserProfileRequest);
             var unmarshaller = DeleteUserProfileResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        #endregion
+    
+        #region DeregisterElasticIp
+
+        /// <summary>
+        /// <para>Deregisters a specified Elastic IP address. The address can then be registered by another stack. For more information, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html"
+        /// >http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html</a> .</para>
+        /// </summary>
+        /// 
+        /// <param name="deregisterElasticIpRequest">Container for the necessary parameters to execute the DeregisterElasticIp service method on
+        ///          AmazonOpsWorks.</param>
+        /// 
+        /// <exception cref="ResourceNotFoundException"/>
+        /// <exception cref="ValidationException"/>
+        public DeregisterElasticIpResponse DeregisterElasticIp(DeregisterElasticIpRequest deregisterElasticIpRequest)
+        {
+            IAsyncResult asyncResult = invokeDeregisterElasticIp(deregisterElasticIpRequest, null, null, true);
+            return EndDeregisterElasticIp(asyncResult);
+        }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeregisterElasticIp operation.
+        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks.DeregisterElasticIp"/>
+        /// </summary>
+        /// 
+        /// <param name="deregisterElasticIpRequest">Container for the necessary parameters to execute the DeregisterElasticIp operation on
+        ///          AmazonOpsWorks.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        public IAsyncResult BeginDeregisterElasticIp(DeregisterElasticIpRequest deregisterElasticIpRequest, AsyncCallback callback, object state)
+        {
+            return invokeDeregisterElasticIp(deregisterElasticIpRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the DeregisterElasticIp operation.
+        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks.DeregisterElasticIp"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeregisterElasticIp.</param>
+        public DeregisterElasticIpResponse EndDeregisterElasticIp(IAsyncResult asyncResult)
+        {
+            return endOperation<DeregisterElasticIpResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeDeregisterElasticIp(DeregisterElasticIpRequest deregisterElasticIpRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new DeregisterElasticIpRequestMarshaller().Marshall(deregisterElasticIpRequest);
+            var unmarshaller = DeregisterElasticIpResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        #endregion
+    
+        #region DeregisterVolume
+
+        /// <summary>
+        /// <para>Deregisters an Amazon EBS volume. The volume can then be registered by another stack. For more information, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html"
+        /// >http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html</a> .</para>
+        /// </summary>
+        /// 
+        /// <param name="deregisterVolumeRequest">Container for the necessary parameters to execute the DeregisterVolume service method on
+        ///          AmazonOpsWorks.</param>
+        /// 
+        /// <exception cref="ResourceNotFoundException"/>
+        /// <exception cref="ValidationException"/>
+        public DeregisterVolumeResponse DeregisterVolume(DeregisterVolumeRequest deregisterVolumeRequest)
+        {
+            IAsyncResult asyncResult = invokeDeregisterVolume(deregisterVolumeRequest, null, null, true);
+            return EndDeregisterVolume(asyncResult);
+        }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeregisterVolume operation.
+        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks.DeregisterVolume"/>
+        /// </summary>
+        /// 
+        /// <param name="deregisterVolumeRequest">Container for the necessary parameters to execute the DeregisterVolume operation on
+        ///          AmazonOpsWorks.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        public IAsyncResult BeginDeregisterVolume(DeregisterVolumeRequest deregisterVolumeRequest, AsyncCallback callback, object state)
+        {
+            return invokeDeregisterVolume(deregisterVolumeRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the DeregisterVolume operation.
+        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks.DeregisterVolume"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeregisterVolume.</param>
+        public DeregisterVolumeResponse EndDeregisterVolume(IAsyncResult asyncResult)
+        {
+            return endOperation<DeregisterVolumeResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeDeregisterVolume(DeregisterVolumeRequest deregisterVolumeRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new DeregisterVolumeRequestMarshaller().Marshall(deregisterVolumeRequest);
+            var unmarshaller = DeregisterVolumeResponseUnmarshaller.GetInstance();
             AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
             Invoke(result);
             return result;
@@ -1234,7 +1500,8 @@ namespace Amazon.OpsWorks
         #region DescribeElasticIps
 
         /// <summary>
-        /// <para>Describes Elastic IP addresses.</para> <para><b>NOTE:</b>You must specify at least one of the parameters.</para>
+        /// <para>Describes <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html" >Elastic IP addresses</a>
+        /// .</para> <para><b>NOTE:</b>You must specify at least one of the parameters.</para>
         /// </summary>
         /// 
         /// <param name="describeElasticIpsRequest">Container for the necessary parameters to execute the DescribeElasticIps service method on
@@ -2083,7 +2350,7 @@ namespace Amazon.OpsWorks
         #region DetachElasticLoadBalancer
 
         /// <summary>
-        /// <para>Detaches a specified Elastic Load Balancing instance from it's layer.</para>
+        /// <para>Detaches a specified Elastic Load Balancing instance from its layer.</para>
         /// </summary>
         /// 
         /// <param name="detachElasticLoadBalancerRequest">Container for the necessary parameters to execute the DetachElasticLoadBalancer service
@@ -2130,6 +2397,68 @@ namespace Amazon.OpsWorks
         {
             IRequest irequest = new DetachElasticLoadBalancerRequestMarshaller().Marshall(detachElasticLoadBalancerRequest);
             var unmarshaller = DetachElasticLoadBalancerResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        #endregion
+    
+        #region DisassociateElasticIp
+
+        /// <summary>
+        /// <para>Disassociates an Elastic IP address from its instance. The address remains registered with the stack. For more information, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html"
+        /// >http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html</a> .</para>
+        /// </summary>
+        /// 
+        /// <param name="disassociateElasticIpRequest">Container for the necessary parameters to execute the DisassociateElasticIp service method on
+        ///          AmazonOpsWorks.</param>
+        /// 
+        /// <exception cref="ResourceNotFoundException"/>
+        /// <exception cref="ValidationException"/>
+        public DisassociateElasticIpResponse DisassociateElasticIp(DisassociateElasticIpRequest disassociateElasticIpRequest)
+        {
+            IAsyncResult asyncResult = invokeDisassociateElasticIp(disassociateElasticIpRequest, null, null, true);
+            return EndDisassociateElasticIp(asyncResult);
+        }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateElasticIp operation.
+        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks.DisassociateElasticIp"/>
+        /// </summary>
+        /// 
+        /// <param name="disassociateElasticIpRequest">Container for the necessary parameters to execute the DisassociateElasticIp operation on
+        ///          AmazonOpsWorks.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        public IAsyncResult BeginDisassociateElasticIp(DisassociateElasticIpRequest disassociateElasticIpRequest, AsyncCallback callback, object state)
+        {
+            return invokeDisassociateElasticIp(disassociateElasticIpRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the DisassociateElasticIp operation.
+        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks.DisassociateElasticIp"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateElasticIp.</param>
+        public DisassociateElasticIpResponse EndDisassociateElasticIp(IAsyncResult asyncResult)
+        {
+            return endOperation<DisassociateElasticIpResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeDisassociateElasticIp(DisassociateElasticIpRequest disassociateElasticIpRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new DisassociateElasticIpRequestMarshaller().Marshall(disassociateElasticIpRequest);
+            var unmarshaller = DisassociateElasticIpResponseUnmarshaller.GetInstance();
             AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
             Invoke(result);
             return result;
@@ -2208,7 +2537,9 @@ namespace Amazon.OpsWorks
         #region RebootInstance
 
         /// <summary>
-        /// <para>Reboots a specified instance. For more information, see Starting, Stopping, and Rebooting Instances.</para>
+        /// <para>Reboots a specified instance. For more information, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-starting.html" >Starting, Stopping, and Rebooting Instances</a>
+        /// .</para>
         /// </summary>
         /// 
         /// <param name="rebootInstanceRequest">Container for the necessary parameters to execute the RebootInstance service method on
@@ -2265,11 +2596,152 @@ namespace Amazon.OpsWorks
 
         #endregion
     
+        #region RegisterElasticIp
+
+        /// <summary>
+        /// <para>Registers an Elastic IP address with a specified stack. An address can be registered with only one stack at a time. If the address is
+        /// already registered, you must first deregister it by calling DeregisterElasticIp. For more information, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html"
+        /// >http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html</a> .</para>
+        /// </summary>
+        /// 
+        /// <param name="registerElasticIpRequest">Container for the necessary parameters to execute the RegisterElasticIp service method on
+        ///          AmazonOpsWorks.</param>
+        /// 
+        /// <returns>The response from the RegisterElasticIp service method, as returned by AmazonOpsWorks.</returns>
+        /// 
+        /// <exception cref="ResourceNotFoundException"/>
+        /// <exception cref="ValidationException"/>
+        public RegisterElasticIpResponse RegisterElasticIp(RegisterElasticIpRequest registerElasticIpRequest)
+        {
+            IAsyncResult asyncResult = invokeRegisterElasticIp(registerElasticIpRequest, null, null, true);
+            return EndRegisterElasticIp(asyncResult);
+        }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RegisterElasticIp operation.
+        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks.RegisterElasticIp"/>
+        /// </summary>
+        /// 
+        /// <param name="registerElasticIpRequest">Container for the necessary parameters to execute the RegisterElasticIp operation on
+        ///          AmazonOpsWorks.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRegisterElasticIp
+        ///         operation.</returns>
+        public IAsyncResult BeginRegisterElasticIp(RegisterElasticIpRequest registerElasticIpRequest, AsyncCallback callback, object state)
+        {
+            return invokeRegisterElasticIp(registerElasticIpRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the RegisterElasticIp operation.
+        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks.RegisterElasticIp"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRegisterElasticIp.</param>
+        /// 
+        /// <returns>Returns a RegisterElasticIpResult from AmazonOpsWorks.</returns>
+        public RegisterElasticIpResponse EndRegisterElasticIp(IAsyncResult asyncResult)
+        {
+            return endOperation<RegisterElasticIpResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeRegisterElasticIp(RegisterElasticIpRequest registerElasticIpRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new RegisterElasticIpRequestMarshaller().Marshall(registerElasticIpRequest);
+            var unmarshaller = RegisterElasticIpResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        #endregion
+    
+        #region RegisterVolume
+
+        /// <summary>
+        /// <para>Registers an Amazon EBS volume with a specified stack. A volume can be registered with only one stack at a time. If the volume is
+        /// already registered, you must first deregister it by calling DeregisterVolume. For more information, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html"
+        /// >http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html</a> .</para>
+        /// </summary>
+        /// 
+        /// <param name="registerVolumeRequest">Container for the necessary parameters to execute the RegisterVolume service method on
+        ///          AmazonOpsWorks.</param>
+        /// 
+        /// <returns>The response from the RegisterVolume service method, as returned by AmazonOpsWorks.</returns>
+        /// 
+        /// <exception cref="ResourceNotFoundException"/>
+        /// <exception cref="ValidationException"/>
+        public RegisterVolumeResponse RegisterVolume(RegisterVolumeRequest registerVolumeRequest)
+        {
+            IAsyncResult asyncResult = invokeRegisterVolume(registerVolumeRequest, null, null, true);
+            return EndRegisterVolume(asyncResult);
+        }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RegisterVolume operation.
+        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks.RegisterVolume"/>
+        /// </summary>
+        /// 
+        /// <param name="registerVolumeRequest">Container for the necessary parameters to execute the RegisterVolume operation on
+        ///          AmazonOpsWorks.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRegisterVolume
+        ///         operation.</returns>
+        public IAsyncResult BeginRegisterVolume(RegisterVolumeRequest registerVolumeRequest, AsyncCallback callback, object state)
+        {
+            return invokeRegisterVolume(registerVolumeRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the RegisterVolume operation.
+        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks.RegisterVolume"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRegisterVolume.</param>
+        /// 
+        /// <returns>Returns a RegisterVolumeResult from AmazonOpsWorks.</returns>
+        public RegisterVolumeResponse EndRegisterVolume(IAsyncResult asyncResult)
+        {
+            return endOperation<RegisterVolumeResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeRegisterVolume(RegisterVolumeRequest registerVolumeRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new RegisterVolumeRequestMarshaller().Marshall(registerVolumeRequest);
+            var unmarshaller = RegisterVolumeResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        #endregion
+    
         #region SetLoadBasedAutoScaling
 
         /// <summary>
-        /// <para>Specify the load-based auto scaling configuration for a specified layer. For more information, see Managing Load with Time-based and
-        /// Load-based Instances.</para> <para><b>NOTE:</b>To use load-based auto scaling, you must create a set of load-based auto scaling instances.
+        /// <para>Specify the load-based auto scaling configuration for a specified layer. For more information, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-autoscaling.html" >Managing Load with Time-based and Load-based
+        /// Instances</a> .</para> <para><b>NOTE:</b>To use load-based auto scaling, you must create a set of load-based auto scaling instances.
         /// Load-based auto scaling operates only on the instances from that set, so you must ensure that you have created enough instances to handle
         /// the maximum anticipated load.</para>
         /// </summary>
@@ -2331,7 +2803,8 @@ namespace Amazon.OpsWorks
         #region SetPermission
 
         /// <summary>
-        /// <para>Specifies a stack's permissions. For more information, see Security and Permissions.</para>
+        /// <para>Specifies a stack's permissions. For more information, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingsecurity.html" >Security and Permissions</a> .</para>
         /// </summary>
         /// 
         /// <param name="setPermissionRequest">Container for the necessary parameters to execute the SetPermission service method on
@@ -2390,8 +2863,9 @@ namespace Amazon.OpsWorks
         #region SetTimeBasedAutoScaling
 
         /// <summary>
-        /// <para>Specify the time-based auto scaling configuration for a specified instance. For more information, see Managing Load with Time-based
-        /// and Load-based Instances.</para>
+        /// <para>Specify the time-based auto scaling configuration for a specified instance. For more information, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-autoscaling.html" >Managing Load with Time-based and Load-based
+        /// Instances</a> .</para>
         /// </summary>
         /// 
         /// <param name="setTimeBasedAutoScalingRequest">Container for the necessary parameters to execute the SetTimeBasedAutoScaling service method on
@@ -2451,7 +2925,9 @@ namespace Amazon.OpsWorks
         #region StartInstance
 
         /// <summary>
-        /// <para>Starts a specified instance. For more information, see Starting, Stopping, and Rebooting Instances.</para>
+        /// <para>Starts a specified instance. For more information, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-starting.html" >Starting, Stopping, and Rebooting Instances</a>
+        /// .</para>
         /// </summary>
         /// 
         /// <param name="startInstanceRequest">Container for the necessary parameters to execute the StartInstance service method on
@@ -2569,8 +3045,9 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// <para>Stops a specified instance. When you stop a standard instance, the data disappears and must be reinstalled when you restart the
-        /// instance. You can stop an Amazon EBS-backed instance without losing data. For more information, see Starting, Stopping, and Rebooting
-        /// Instances.</para>
+        /// instance. You can stop an Amazon EBS-backed instance without losing data. For more information, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-starting.html" >Starting, Stopping, and Rebooting Instances</a>
+        /// .</para>
         /// </summary>
         /// 
         /// <param name="stopInstanceRequest">Container for the necessary parameters to execute the StopInstance service method on
@@ -2684,6 +3161,68 @@ namespace Amazon.OpsWorks
 
         #endregion
     
+        #region UnassignVolume
+
+        /// <summary>
+        /// <para>Unassigns an assigned Amazon EBS volume. The volume remains registered with the stack. For more information, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html"
+        /// >http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html</a> .</para>
+        /// </summary>
+        /// 
+        /// <param name="unassignVolumeRequest">Container for the necessary parameters to execute the UnassignVolume service method on
+        ///          AmazonOpsWorks.</param>
+        /// 
+        /// <exception cref="ResourceNotFoundException"/>
+        /// <exception cref="ValidationException"/>
+        public UnassignVolumeResponse UnassignVolume(UnassignVolumeRequest unassignVolumeRequest)
+        {
+            IAsyncResult asyncResult = invokeUnassignVolume(unassignVolumeRequest, null, null, true);
+            return EndUnassignVolume(asyncResult);
+        }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UnassignVolume operation.
+        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks.UnassignVolume"/>
+        /// </summary>
+        /// 
+        /// <param name="unassignVolumeRequest">Container for the necessary parameters to execute the UnassignVolume operation on
+        ///          AmazonOpsWorks.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        public IAsyncResult BeginUnassignVolume(UnassignVolumeRequest unassignVolumeRequest, AsyncCallback callback, object state)
+        {
+            return invokeUnassignVolume(unassignVolumeRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the UnassignVolume operation.
+        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks.UnassignVolume"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUnassignVolume.</param>
+        public UnassignVolumeResponse EndUnassignVolume(IAsyncResult asyncResult)
+        {
+            return endOperation<UnassignVolumeResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeUnassignVolume(UnassignVolumeRequest unassignVolumeRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new UnassignVolumeRequestMarshaller().Marshall(unassignVolumeRequest);
+            var unmarshaller = UnassignVolumeResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        #endregion
+    
         #region UpdateApp
 
         /// <summary>
@@ -2733,6 +3272,68 @@ namespace Amazon.OpsWorks
         {
             IRequest irequest = new UpdateAppRequestMarshaller().Marshall(updateAppRequest);
             var unmarshaller = UpdateAppResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        #endregion
+    
+        #region UpdateElasticIp
+
+        /// <summary>
+        /// <para>Updates a registered Elastic IP address's name. For more information, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html"
+        /// >http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html</a> .</para>
+        /// </summary>
+        /// 
+        /// <param name="updateElasticIpRequest">Container for the necessary parameters to execute the UpdateElasticIp service method on
+        ///          AmazonOpsWorks.</param>
+        /// 
+        /// <exception cref="ResourceNotFoundException"/>
+        /// <exception cref="ValidationException"/>
+        public UpdateElasticIpResponse UpdateElasticIp(UpdateElasticIpRequest updateElasticIpRequest)
+        {
+            IAsyncResult asyncResult = invokeUpdateElasticIp(updateElasticIpRequest, null, null, true);
+            return EndUpdateElasticIp(asyncResult);
+        }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateElasticIp operation.
+        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks.UpdateElasticIp"/>
+        /// </summary>
+        /// 
+        /// <param name="updateElasticIpRequest">Container for the necessary parameters to execute the UpdateElasticIp operation on
+        ///          AmazonOpsWorks.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        public IAsyncResult BeginUpdateElasticIp(UpdateElasticIpRequest updateElasticIpRequest, AsyncCallback callback, object state)
+        {
+            return invokeUpdateElasticIp(updateElasticIpRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the UpdateElasticIp operation.
+        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks.UpdateElasticIp"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateElasticIp.</param>
+        public UpdateElasticIpResponse EndUpdateElasticIp(IAsyncResult asyncResult)
+        {
+            return endOperation<UpdateElasticIpResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeUpdateElasticIp(UpdateElasticIpRequest updateElasticIpRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new UpdateElasticIpRequestMarshaller().Marshall(updateElasticIpRequest);
+            var unmarshaller = UpdateElasticIpResponseUnmarshaller.GetInstance();
             AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
             Invoke(result);
             return result;
@@ -2969,6 +3570,67 @@ namespace Amazon.OpsWorks
         {
             IRequest irequest = new UpdateUserProfileRequestMarshaller().Marshall(updateUserProfileRequest);
             var unmarshaller = UpdateUserProfileResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        #endregion
+    
+        #region UpdateVolume
+
+        /// <summary>
+        /// <para>Updates an Amazon EBS volume's name or mount point. For more information, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html"
+        /// >http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html</a> .</para>
+        /// </summary>
+        /// 
+        /// <param name="updateVolumeRequest">Container for the necessary parameters to execute the UpdateVolume service method on
+        ///          AmazonOpsWorks.</param>
+        /// 
+        /// <exception cref="ResourceNotFoundException"/>
+        /// <exception cref="ValidationException"/>
+        public UpdateVolumeResponse UpdateVolume(UpdateVolumeRequest updateVolumeRequest)
+        {
+            IAsyncResult asyncResult = invokeUpdateVolume(updateVolumeRequest, null, null, true);
+            return EndUpdateVolume(asyncResult);
+        }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateVolume operation.
+        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks.UpdateVolume"/>
+        /// </summary>
+        /// 
+        /// <param name="updateVolumeRequest">Container for the necessary parameters to execute the UpdateVolume operation on AmazonOpsWorks.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        public IAsyncResult BeginUpdateVolume(UpdateVolumeRequest updateVolumeRequest, AsyncCallback callback, object state)
+        {
+            return invokeUpdateVolume(updateVolumeRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the UpdateVolume operation.
+        /// <seealso cref="Amazon.OpsWorks.IAmazonOpsWorks.UpdateVolume"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateVolume.</param>
+        public UpdateVolumeResponse EndUpdateVolume(IAsyncResult asyncResult)
+        {
+            return endOperation<UpdateVolumeResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeUpdateVolume(UpdateVolumeRequest updateVolumeRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new UpdateVolumeRequestMarshaller().Marshall(updateVolumeRequest);
+            var unmarshaller = UpdateVolumeResponseUnmarshaller.GetInstance();
             AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
             Invoke(result);
             return result;

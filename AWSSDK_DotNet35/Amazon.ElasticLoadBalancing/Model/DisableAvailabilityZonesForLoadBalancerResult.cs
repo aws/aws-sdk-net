@@ -30,7 +30,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         private List<string> availabilityZones = new List<string>();
 
         /// <summary>
-        /// A list of updated Availability Zones for the LoadBalancer.
+        /// A list of updated Availability Zones for the load balancer.
         ///  
         /// </summary>
         public List<string> AvailabilityZones

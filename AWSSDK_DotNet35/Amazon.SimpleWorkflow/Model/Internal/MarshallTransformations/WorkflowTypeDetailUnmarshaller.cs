@@ -33,6 +33,9 @@
 
         public WorkflowTypeDetail Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonToken.Null)
+                return null;
+
             WorkflowTypeDetail workflowTypeDetail = new WorkflowTypeDetail();
 
         

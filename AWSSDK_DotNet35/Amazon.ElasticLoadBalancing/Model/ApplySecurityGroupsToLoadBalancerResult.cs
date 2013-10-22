@@ -30,7 +30,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         private List<string> securityGroups = new List<string>();
 
         /// <summary>
-        /// A list of security group IDs associated with your LoadBalancer.
+        /// A list of security group IDs associated with your load balancer.
         ///  
         /// </summary>
         public List<string> SecurityGroups

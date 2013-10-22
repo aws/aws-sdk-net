@@ -33,6 +33,9 @@
 
         public RouteFilterPrefix Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonToken.Null)
+                return null;
+
             RouteFilterPrefix routeFilterPrefix = new RouteFilterPrefix();
 
         

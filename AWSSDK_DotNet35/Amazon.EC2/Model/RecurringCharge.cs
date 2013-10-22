@@ -26,14 +26,23 @@ namespace Amazon.EC2.Model
     public class RecurringCharge
     {
         
-        private string frequency;
+        private RecurringChargeFrequency frequency;
         private double? amount;
 
         /// <summary>
         /// The frequency of the recurring charge.
         ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>Hourly</description>
+        ///     </item>
+        /// </list>
+        /// </para>
         /// </summary>
-        public string Frequency
+        public RecurringChargeFrequency Frequency
         {
             get { return this.frequency; }
             set { this.frequency = value; }

@@ -39,6 +39,32 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             {
                 request.Parameters.Add("DBSubnetGroupName", StringUtils.FromString(describeDBSubnetGroupsRequest.DBSubnetGroupName));
             }
+
+            if (describeDBSubnetGroupsRequest != null)
+            {
+                List<Filter> filtersList = describeDBSubnetGroupsRequest.Filters;
+                int filtersListIndex = 1;
+                foreach (Filter filtersListValue in filtersList)
+                {
+                    if (filtersListValue != null && filtersListValue.IsSetFilterName())
+                    {
+                        request.Parameters.Add("Filters.member." + filtersListIndex + ".FilterName", StringUtils.FromString(filtersListValue.FilterName));
+                    }
+                    if (filtersListValue != null)
+                    {
+                        List<string> filterValueList = filtersListValue.FilterValue;
+
+                        int filterValueListIndex = 1;
+                        foreach (string filterValueListValue in filterValueList)
+                        { 
+                            request.Parameters.Add("Filters.member." + filtersListIndex + ".FilterValue.member." + filterValueListIndex, StringUtils.FromString(filterValueListValue));
+                            filterValueListIndex++;
+                        }
+                    }
+
+                    filtersListIndex++;
+                }
+            }
             if (describeDBSubnetGroupsRequest != null && describeDBSubnetGroupsRequest.IsSetMaxRecords())
             {
                 request.Parameters.Add("MaxRecords", StringUtils.FromInt(describeDBSubnetGroupsRequest.MaxRecords));

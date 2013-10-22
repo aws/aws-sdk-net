@@ -36,6 +36,15 @@ namespace Amazon.S3
     {
         S3Signer signer = new S3Signer();
 
+        #region Dispose
+
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
+        }
+
+        #endregion
+        
         #region Constructors
 
         /// <summary>
@@ -55,7 +64,7 @@ namespace Amazon.S3
         ///
         /// </summary>
         public AmazonS3Client()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonS3Config(), true, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonS3Config(), AuthenticationTypes.User | AuthenticationTypes.Session) { }
 
         /// <summary>
         /// Constructs AmazonS3Client with the credentials loaded from the application's
@@ -75,7 +84,7 @@ namespace Amazon.S3
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonS3Client(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonS3Config(){RegionEndpoint = region}, true, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonS3Config(){RegionEndpoint = region}, AuthenticationTypes.User | AuthenticationTypes.Session) { }
 
         /// <summary>
         /// Constructs AmazonS3Client with the credentials loaded from the application's
@@ -95,7 +104,7 @@ namespace Amazon.S3
         /// </summary>
         /// <param name="config">The AmazonS3 Configuration Object</param>
         public AmazonS3Client(AmazonS3Config config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config, true, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), config, AuthenticationTypes.User | AuthenticationTypes.Session) { }
 
         /// <summary>
         /// Constructs AmazonS3Client with AWS Credentials
@@ -123,7 +132,7 @@ namespace Amazon.S3
         /// <param name="credentials">AWS Credentials</param>
         /// <param name="clientConfig">The AmazonS3Client Configuration Object</param>
         public AmazonS3Client(AWSCredentials credentials, AmazonS3Config clientConfig)
-            : base(credentials, clientConfig, false, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(credentials, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
         {
         }
 

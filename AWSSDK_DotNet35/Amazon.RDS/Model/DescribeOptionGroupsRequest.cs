@@ -30,6 +30,7 @@ namespace Amazon.RDS.Model
     public partial class DescribeOptionGroupsRequest : AmazonWebServiceRequest
     {
         private string optionGroupName;
+        private List<Filter> filters = new List<Filter>();
         private string marker;
         private int? maxRecords;
         private string engineName;
@@ -49,6 +50,17 @@ namespace Amazon.RDS.Model
         internal bool IsSetOptionGroupName()
         {
             return this.optionGroupName != null;
+        }
+        public List<Filter> Filters
+        {
+            get { return this.filters; }
+            set { this.filters = value; }
+        }
+
+        // Check to see if Filters property is set
+        internal bool IsSetFilters()
+        {
+            return this.filters.Count > 0;
         }
 
         /// <summary>

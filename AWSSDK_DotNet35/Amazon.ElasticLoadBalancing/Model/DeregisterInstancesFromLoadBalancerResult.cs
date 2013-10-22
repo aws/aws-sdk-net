@@ -30,7 +30,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         private List<Instance> instances = new List<Instance>();
 
         /// <summary>
-        /// An updated list of remaining instances registered with the LoadBalancer.
+        /// An updated list of remaining instances registered with the load balancer.
         ///  
         /// </summary>
         public List<Instance> Instances

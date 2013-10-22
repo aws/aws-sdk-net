@@ -33,6 +33,9 @@
 
         public App Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonToken.Null)
+                return null;
+
             App app = new App();
 
         

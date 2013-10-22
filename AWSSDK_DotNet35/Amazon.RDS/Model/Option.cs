@@ -132,7 +132,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// If the option requires access to a port, then this DB Security Group allows access to the port.
+        /// If the option requires access to a port, then this DB security group allows access to the port.
         ///  
         /// </summary>
         public List<DBSecurityGroupMembership> DBSecurityGroupMemberships
@@ -148,7 +148,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// If the option requires access to a port, then this VPC Security Group allows access to the port.
+        /// If the option requires access to a port, then this VPC security group allows access to the port.
         ///  
         /// </summary>
         public List<VpcSecurityGroupMembership> VpcSecurityGroupMemberships

@@ -26,13 +26,22 @@ namespace Amazon.EC2.Model
     public class Monitoring
     {
         
-        private string state;
+        private MonitoringState state;
 
         /// <summary>
         /// The state of monitoring on an Amazon EC2 instance (ex: enabled, disabled).
         ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>disabled, enabled, pending</description>
+        ///     </item>
+        /// </list>
+        /// </para>
         /// </summary>
-        public string State
+        public MonitoringState State
         {
             get { return this.state; }
             set { this.state = value; }

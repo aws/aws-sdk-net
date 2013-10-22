@@ -28,7 +28,7 @@ namespace Amazon.ElastiCache.Model
     {
         /// <summary>
         /// Gets and sets the DescribeCacheParameterGroupsResult property.
-        /// Contains a list of CacheParameterGroups.
+        /// Represents the output of a DescribeCacheParameterGroups operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DescribeCacheParameterGroupsResult class are now available on the DescribeCacheParameterGroupsResponse class. You should use the properties on DescribeCacheParameterGroupsResponse instead of accessing them through DescribeCacheParameterGroupsResult.")]
         public DescribeCacheParameterGroupsResult DescribeCacheParameterGroupsResult

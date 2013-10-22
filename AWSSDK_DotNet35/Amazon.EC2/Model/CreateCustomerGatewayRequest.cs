@@ -31,20 +31,42 @@ namespace Amazon.EC2.Model
     /// gateway that you create with this operation if you leave it inactive for an extended period of time. </para> <para> You must provide the
     /// Internet-routable IP address of the customer gateway's external interface. The IP address must be static. </para> <para> You must also
     /// provide the device's Border Gateway Protocol (BGP) Autonomous System Number (ASN). You can use an existing ASN assigned to your network. If
-    /// you don't have an ASN already, you can use a private ASN (in the 64512 - 65534 range). For more information about ASNs, go to
-    /// http://en.wikipedia.org/wiki/Autonomous_system_%28Internet%29. </para>
+    /// you don't have an ASN already, you can use a private ASN (in the 64512 - 65534 range). For more information about ASNs, go to <a
+    /// href="http://en.wikipedia.org/wiki/Autonomous_system_%28Internet%29" > http://en.wikipedia.org/wiki/Autonomous_system_%28Internet%29</a> .
+    /// </para>
     /// </summary>
     public partial class CreateCustomerGatewayRequest : AmazonWebServiceRequest
     {
-        private string type;
+        private bool? dryRun;
+        private GatewayType type;
         private string publicIp;
         private int? bgpAsn;
+        public bool DryRun
+        {
+            get { return this.dryRun ?? default(bool); }
+            set { this.dryRun = value; }
+        }
+
+        // Check to see if DryRun property is set
+        internal bool IsSetDryRun()
+        {
+            return this.dryRun.HasValue;
+        }
 
         /// <summary>
         /// The type of VPN connection this customer gateway supports.
         ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>ipsec.1</description>
+        ///     </item>
+        /// </list>
+        /// </para>
         /// </summary>
-        public string Type
+        public GatewayType Type
         {
             get { return this.type; }
             set { this.type = value; }

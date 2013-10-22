@@ -33,6 +33,9 @@
 
         public VaultNotificationConfig Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonToken.Null)
+                return null;
+
             VaultNotificationConfig vaultNotificationConfig = new VaultNotificationConfig();
 
         

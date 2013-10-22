@@ -25,11 +25,11 @@ namespace Amazon.SimpleNotificationService
     /// 
     /// Amazon Simple Notification Service <para>Amazon Simple Notification Service (Amazon SNS) is a web service that enables you to build
     /// distributed web-enabled applications. Applications can use Amazon SNS to easily push real-time notification messages to interested
-    /// subscribers over multiple delivery protocols. For more information about this product see http://aws.amazon.com/sns. For detailed
-    /// information about Amazon SNS features and their associated API calls, see the Amazon SNS Developer Guide. </para> <para>We also provide SDKs
-    /// that enable you to access Amazon SNS from your preferred programming language. The SDKs contain functionality that automatically takes care
-    /// of tasks such as: cryptographically signing your service requests, retrying requests, and handling error responses. For a list of available
-    /// SDKs, go to Tools for Amazon Web Services. </para>
+    /// subscribers over multiple delivery protocols. For more information about this product see <a href="http://aws.amazon.com/sns/">http://aws.amazon.com/sns</a> . For detailed information about Amazon SNS features and their associated API calls, see the <a href="http://docs.aws.amazon.com/sns/latest/dg/">Amazon SNS Developer Guide</a> .
+    /// </para> <para>We also provide SDKs that enable you to access Amazon SNS from your preferred programming language. The SDKs contain
+    /// functionality that automatically takes care of tasks such as: cryptographically signing your service requests, retrying requests, and
+    /// handling error responses. For a list of available SDKs, go to <a href="http://aws.amazon.com/tools/">Tools for Amazon Web Services</a> .
+    /// </para>
     /// </summary>
 	public partial interface IAmazonSimpleNotificationService : IDisposable
     {
@@ -80,7 +80,8 @@ namespace Amazon.SimpleNotificationService
         /// "client id". The PlatformCredential is also received from the notification service. For APNS/APNS_SANDBOX, PlatformCredential is "private
         /// key". For GCM, PlatformCredential is "API key". For ADM, PlatformCredential is "client secret". The PlatformApplicationArn that is returned
         /// when using <c>CreatePlatformApplication</c> is then used as an attribute for the <c>CreatePlatformEndpoint</c> action. For more information,
-        /// see Using Amazon SNS Mobile Push Notifications. </para>
+        /// see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push Notifications</a> .
+        /// </para>
         /// </summary>
         /// 
         /// <param name="createPlatformApplicationRequest">Container for the necessary parameters to execute the CreatePlatformApplication service
@@ -101,7 +102,8 @@ namespace Amazon.SimpleNotificationService
         /// such as GCM and APNS. <c>CreatePlatformEndpoint</c> requires the PlatformApplicationArn that is returned from
         /// <c>CreatePlatformApplication</c> . The EndpointArn that is returned when using <c>CreatePlatformEndpoint</c> can then be used by the
         /// <c>Publish</c> action to send a message to a mobile app or by the <c>Subscribe</c> action for subscription to a topic. For more information,
-        /// see Using Amazon SNS Mobile Push Notifications. </para>
+        /// see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push Notifications</a> .
+        /// </para>
         /// </summary>
         /// 
         /// <param name="createPlatformEndpointRequest">Container for the necessary parameters to execute the CreatePlatformEndpoint service method on
@@ -120,8 +122,9 @@ namespace Amazon.SimpleNotificationService
  
         /// <summary>
         /// <para>The <c>CreateTopic</c> action creates a topic to which notifications can be published. Users can create at most 100 topics. For more
-        /// information, see http://aws.amazon.com/sns. This action is idempotent, so if the requester already owns a topic with the specified name,
-        /// that topic's ARN is returned without creating a new topic.</para>
+        /// information, see <a href="http://aws.amazon.com/sns/">http://aws.amazon.com/sns</a> .
+        /// This action is idempotent, so if the requester already owns a topic with the specified name, that topic's ARN is returned without
+        /// creating a new topic.</para>
         /// </summary>
         /// 
         /// <param name="createTopicRequest">Container for the necessary parameters to execute the CreateTopic service method on
@@ -139,8 +142,8 @@ namespace Amazon.SimpleNotificationService
 		Task<CreateTopicResponse> CreateTopicAsync(CreateTopicRequest createTopicRequest, CancellationToken cancellationToken = default(CancellationToken));
  
         /// <summary>
-        /// <para>The <c>DeleteEndpoint</c> action, which is idempotent, deletes the endpoint from SNS. For more information, see Using Amazon SNS
-        /// Mobile Push Notifications. </para>
+        /// <para>The <c>DeleteEndpoint</c> action, which is idempotent, deletes the endpoint from SNS. For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push Notifications</a> .
+        /// </para>
         /// </summary>
         /// 
         /// <param name="deleteEndpointRequest">Container for the necessary parameters to execute the DeleteEndpoint service method on
@@ -156,7 +159,9 @@ namespace Amazon.SimpleNotificationService
  
         /// <summary>
         /// <para>The <c>DeletePlatformApplication</c> action deletes a platform application object for one of the supported push notification services,
-        /// such as APNS and GCM. For more information, see Using Amazon SNS Mobile Push Notifications. </para>
+        /// such as APNS and GCM. For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS
+        /// Mobile Push Notifications</a> .
+        /// </para>
         /// </summary>
         /// 
         /// <param name="deletePlatformApplicationRequest">Container for the necessary parameters to execute the DeletePlatformApplication service
@@ -190,7 +195,9 @@ namespace Amazon.SimpleNotificationService
  
         /// <summary>
         /// <para>The <c>GetEndpointAttributes</c> retrieves the endpoint attributes for a device on one of the supported push notification services,
-        /// such as GCM and APNS. For more information, see Using Amazon SNS Mobile Push Notifications. </para>
+        /// such as GCM and APNS. For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS
+        /// Mobile Push Notifications</a> .
+        /// </para>
         /// </summary>
         /// 
         /// <param name="getEndpointAttributesRequest">Container for the necessary parameters to execute the GetEndpointAttributes service method on
@@ -209,7 +216,8 @@ namespace Amazon.SimpleNotificationService
  
         /// <summary>
         /// <para>The <c>GetPlatformApplicationAttributes</c> action retrieves the attributes of the platform application object for the supported push
-        /// notification services, such as APNS and GCM. For more information, see Using Amazon SNS Mobile Push Notifications. </para>
+        /// notification services, such as APNS and GCM. For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push Notifications</a> .
+        /// </para>
         /// </summary>
         /// 
         /// <param name="getPlatformApplicationAttributesRequest">Container for the necessary parameters to execute the GetPlatformApplicationAttributes
@@ -268,7 +276,7 @@ namespace Amazon.SimpleNotificationService
         /// notification service, such as GCM and APNS. The results for <c>ListEndpointsByPlatformApplication</c> are paginated and return a limited
         /// list of endpoints, up to 100. If additional records are available after the first page results, then a NextToken string will be returned. To
         /// receive the next page, you call <c>ListEndpointsByPlatformApplication</c> again using the NextToken string received from the previous call.
-        /// When there are no more records to return, NextToken will be null. For more information, see Using Amazon SNS Mobile Push Notifications.
+        /// When there are no more records to return, NextToken will be null. For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push Notifications</a> .
         /// </para>
         /// </summary>
         /// 
@@ -291,7 +299,9 @@ namespace Amazon.SimpleNotificationService
         /// as APNS and GCM. The results for <c>ListPlatformApplications</c> are paginated and return a limited list of applications, up to 100. If
         /// additional records are available after the first page results, then a NextToken string will be returned. To receive the next page, you call
         /// <c>ListPlatformApplications</c> using the NextToken string received from the previous call. When there are no more records to return,
-        /// NextToken will be null. For more information, see Using Amazon SNS Mobile Push Notifications. </para>
+        /// NextToken will be null. For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS
+        /// Mobile Push Notifications</a> .
+        /// </para>
         /// </summary>
         /// 
         /// <param name="listPlatformApplicationsRequest">Container for the necessary parameters to execute the ListPlatformApplications service method
@@ -408,7 +418,9 @@ namespace Amazon.SimpleNotificationService
  
         /// <summary>
         /// <para>The <c>SetEndpointAttributes</c> action sets the attributes for an endpoint for a device on one of the supported push notification
-        /// services, such as GCM and APNS. For more information, see Using Amazon SNS Mobile Push Notifications. </para>
+        /// services, such as GCM and APNS. For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using
+        /// Amazon SNS Mobile Push Notifications</a> .
+        /// </para>
         /// </summary>
         /// 
         /// <param name="setEndpointAttributesRequest">Container for the necessary parameters to execute the SetEndpointAttributes service method on
@@ -425,7 +437,8 @@ namespace Amazon.SimpleNotificationService
  
         /// <summary>
         /// <para>The <c>SetPlatformApplicationAttributes</c> action sets the attributes of the platform application object for the supported push
-        /// notification services, such as APNS and GCM. For more information, see Using Amazon SNS Mobile Push Notifications. </para>
+        /// notification services, such as APNS and GCM. For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push Notifications</a> .
+        /// </para>
         /// </summary>
         /// 
         /// <param name="setPlatformApplicationAttributesRequest">Container for the necessary parameters to execute the SetPlatformApplicationAttributes

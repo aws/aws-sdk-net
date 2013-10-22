@@ -272,7 +272,11 @@ namespace Amazon.Glacier.Model
         }
 
         /// <summary>
-        /// For an ArchiveRetrieval job, it is the checksum of the archive. Otherwise, the value is null.
+        /// For an ArchiveRetrieval job, it is the checksum of the archive. Otherwise, the value is null. The SHA256 tree hash value for the requested
+        /// range of an archive. If the Initiate a Job request for an archive specified a tree-hash aligned range, then this field returns a value. For
+        /// the specific case when the whole archive is retrieved, this value is the same as the ArchiveSHA256TreeHash value. This field is null in the
+        /// following situations: <ul> <li>Archive retrieval jobs that specify a range that is not tree-hash aligned.</li> </ul> <ul> <li>Archival jobs
+        /// that specify a range that is equal to the whole archive and the job status is InProgress.</li> </ul> <ul> <li>Inventory jobs.</li> </ul>
         ///  
         /// </summary>
         public string SHA256TreeHash
@@ -286,6 +290,11 @@ namespace Amazon.Glacier.Model
         {
             return this.sHA256TreeHash != null;
         }
+
+        /// <summary>
+        /// The SHA256 tree hash of the entire archive for an archive retrieval. For inventory retrieval jobs, this field is null.
+        ///  
+        /// </summary>
         public string ArchiveSHA256TreeHash
         {
             get { return this.archiveSHA256TreeHash; }
@@ -297,6 +306,13 @@ namespace Amazon.Glacier.Model
         {
             return this.archiveSHA256TreeHash != null;
         }
+
+        /// <summary>
+        /// The retrieved byte range for archive retrieval jobs in the form "<i>StartByteValue</i>-<i>EndByteValue</i>" If no range was specified in the
+        /// archive retrieval, then the whole archive is retrieved and <i>StartByteValue</i> equals 0 and <i>EndByteValue</i> equals the size of the
+        /// archive minus 1. For inventory retrieval jobs this field is null.
+        ///  
+        /// </summary>
         public string RetrievalByteRange
         {
             get { return this.retrievalByteRange; }

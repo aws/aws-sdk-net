@@ -33,6 +33,9 @@
 
         public Communication Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonToken.Null)
+                return null;
+
             Communication communication = new Communication();
 
         

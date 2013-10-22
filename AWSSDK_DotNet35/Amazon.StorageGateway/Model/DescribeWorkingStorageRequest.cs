@@ -25,10 +25,7 @@ namespace Amazon.StorageGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeWorkingStorage operation.
-    /// <para>This operation returns information about the working storage of a gateway. This operation is supported only for the gateway-stored
-    /// volume architecture. </para> <para><b>NOTE:</b> Working storage is also referred to as upload buffer. You can also use the
-    /// DescribeUploadBuffer operation to add upload buffer to a stored-volume gateway. </para> <para>The response includes disk IDs that are
-    /// configured as working storage, and it includes the amount of working storage allocated and used.</para>
+    /// 
     /// </summary>
     public partial class DescribeWorkingStorageRequest : AmazonWebServiceRequest
     {

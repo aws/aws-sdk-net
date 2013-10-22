@@ -20,7 +20,7 @@ namespace Amazon.StorageGateway
 {
 
     /// <summary>
-    /// Configuration for accessing AWS Storage Gateway Service service
+    /// Configuration for accessing AmazonStorageGateway service
     /// </summary>
     public class AmazonStorageGatewayConfig : ClientConfig
     {

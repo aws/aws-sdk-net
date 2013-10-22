@@ -21,8 +21,7 @@ using Amazon.Runtime;
 
 namespace Amazon.StorageGateway.Model
 {
-    /// <summary>
-    /// <para>A JSON object containing the following fields:</para>
+    /// <summary>Describe Gateway Information Result
     /// </summary>
     public partial class DescribeGatewayInformationResult : AmazonWebServiceResponse
     {
@@ -60,20 +59,6 @@ namespace Amazon.StorageGateway.Model
         {
             return this.gatewayARN != null;
         }
-
-        /// <summary>
-        /// The gateway ID.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>12 - 30</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
         public string GatewayId
         {
             get { return this.gatewayId; }
@@ -85,20 +70,6 @@ namespace Amazon.StorageGateway.Model
         {
             return this.gatewayId != null;
         }
-
-        /// <summary>
-        /// One of the values that indicates the time zone configured for the gateway.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>GMT-12:00, GMT-11:00, GMT-10:00, GMT-9:00, GMT-8:00, GMT-7:00, GMT-6:00, GMT-5:00, GMT-4:00, GMT-3:30, GMT-3:00, GMT-2:00, GMT-1:00, GMT, GMT+1:00, GMT+2:00, GMT+3:00, GMT+3:30, GMT+4:00, GMT+4:30, GMT+5:00, GMT+5:30, GMT+5:45, GMT+6:00, GMT+7:00, GMT+8:00, GMT+9:00, GMT+9:30, GMT+10:00, GMT+11:00, GMT+12:00</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
         public GatewayTimezone GatewayTimezone
         {
             get { return this.gatewayTimezone; }
@@ -110,20 +81,6 @@ namespace Amazon.StorageGateway.Model
         {
             return this.gatewayTimezone != null;
         }
-
-        /// <summary>
-        /// One of the values that indicates the operating state of the gateway.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>RUNNING, SHUTDOWN</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
         public GatewayState GatewayState
         {
             get { return this.gatewayState; }
@@ -135,11 +92,6 @@ namespace Amazon.StorageGateway.Model
         {
             return this.gatewayState != null;
         }
-
-        /// <summary>
-        /// A <a>NetworkInterface</a> array that contains descriptions of the gateway network interfaces.
-        ///  
-        /// </summary>
         public List<NetworkInterface> GatewayNetworkInterfaces
         {
             get { return this.gatewayNetworkInterfaces; }
@@ -151,20 +103,6 @@ namespace Amazon.StorageGateway.Model
         {
             return this.gatewayNetworkInterfaces.Count > 0;
         }
-
-        /// <summary>
-        /// TBD
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>STORED, CACHED</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
         public GatewayType GatewayType
         {
             get { return this.gatewayType; }
@@ -176,22 +114,6 @@ namespace Amazon.StorageGateway.Model
         {
             return this.gatewayType != null;
         }
-
-        /// <summary>
-        /// The date at which an update to the gateway is available. This date is in the time zone of the gateway. If the gateway is not available for
-        /// an update this field is not returned in the response. <!-- Q: [eronh] This next sentence doesn't seem to agree with the preceding one, nor
-        /// does it agree with the response example. -->
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 25</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
         public string NextUpdateAvailabilityDate
         {
             get { return this.nextUpdateAvailabilityDate; }

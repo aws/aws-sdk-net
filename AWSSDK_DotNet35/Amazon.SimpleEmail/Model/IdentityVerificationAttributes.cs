@@ -37,7 +37,7 @@ namespace Amazon.SimpleEmail.Model
         /// <list type="definition">
         ///     <item>
         ///         <term>Allowed Values</term>
-        ///         <description>Pending, Success, Failed, TemporaryFailure</description>
+        ///         <description>Pending, Success, Failed, TemporaryFailure, NotStarted</description>
         ///     </item>
         /// </list>
         /// </para>

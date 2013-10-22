@@ -25,8 +25,9 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the GetAccountPasswordPolicy operation.
-    /// <para>Retrieves the password policy for the AWS account. For more information about using a password policy, go to Managing an IAM Password
-    /// Policy.</para>
+    /// <para>Retrieves the password policy for the AWS account. For more information about using a password policy, go to <a
+    /// href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html" >Managing an IAM Password Policy</a>
+    /// .</para>
     /// </summary>
     public partial class GetAccountPasswordPolicyRequest : AmazonWebServiceRequest
     {

@@ -28,8 +28,9 @@ namespace Amazon.Redshift.Model
     /// <para> Deletes a previously provisioned cluster. A successful response from the web service indicates that the request was received
     /// correctly. If a final cluster snapshot is requested the status of the cluster will be "final-snapshot" while the snapshot is being taken,
     /// then it's "deleting" once Amazon Redshift begins deleting the cluster. Use DescribeClusters to monitor the status of the deletion. The
-    /// delete operation cannot be canceled or reverted once submitted. For more information about managing clusters, go to Amazon Redshift Clusters
-    /// in the <i>Amazon Redshift Management Guide</i> .
+    /// delete operation cannot be canceled or reverted once submitted. For more information about managing clusters, go to <a
+    /// href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html" >Amazon Redshift Clusters</a> in the <i>Amazon Redshift
+    /// Management Guide</i> .
     /// </para>
     /// </summary>
     public partial class DeleteClusterRequest : AmazonWebServiceRequest

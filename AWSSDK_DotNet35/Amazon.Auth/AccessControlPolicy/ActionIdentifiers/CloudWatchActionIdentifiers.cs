@@ -22,7 +22,7 @@ namespace Amazon.Auth.AccessControlPolicy.ActionIdentifiers
     /// The available AWS access control policy actions for Amazon CloudWatch.
     /// </summary>
     /// <see cref="Amazon.Auth.AccessControlPolicy.Statement.Actions"/>
-    public class CloudWatchActionIdentifiers
+    public static class CloudWatchActionIdentifiers
     {
         public static readonly ActionIdentifier AllCloudWatchActions = new ActionIdentifier("cloudwatch:*");
 

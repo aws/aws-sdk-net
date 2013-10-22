@@ -33,6 +33,9 @@
 
         public ElasticLoadBalancer Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonToken.Null)
+                return null;
+
             ElasticLoadBalancer elasticLoadBalancer = new ElasticLoadBalancer();
 
         
@@ -101,6 +104,27 @@
                     break;
                   }
                    elasticLoadBalancer.AvailabilityZones.Add(unmarshaller.Unmarshall(context));
+                }
+                continue;
+              }
+  
+              if (context.TestExpression("SubnetIds", targetDepth))
+              {
+                context.Read();
+                elasticLoadBalancer.SubnetIds = new List<String>();
+                        StringUnmarshaller unmarshaller = StringUnmarshaller.GetInstance();
+                while (context.Read())
+                {
+                  JsonToken token = context.CurrentTokenType;                
+                  if (token == JsonToken.ArrayStart)
+                  {
+                    continue;
+                  }
+                  if (token == JsonToken.ArrayEnd)
+                  {
+                    break;
+                  }
+                   elasticLoadBalancer.SubnetIds.Add(unmarshaller.Unmarshall(context));
                 }
                 continue;
               }

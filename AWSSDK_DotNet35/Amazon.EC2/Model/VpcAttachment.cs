@@ -27,7 +27,7 @@ namespace Amazon.EC2.Model
     {
         
         private string vpcId;
-        private string state;
+        private AttachmentStatus state;
 
         /// <summary>
         /// 
@@ -48,8 +48,17 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// 
         ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>attaching, attached, detaching, detached</description>
+        ///     </item>
+        /// </list>
+        /// </para>
         /// </summary>
-        public string State
+        public AttachmentStatus State
         {
             get { return this.state; }
             set { this.state = value; }

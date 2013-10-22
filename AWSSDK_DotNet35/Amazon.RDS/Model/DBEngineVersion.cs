@@ -67,7 +67,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The name of the DBParameterGroupFamily for the database engine.
+        /// The name of the DB parameter group family for the database engine.
         ///  
         /// </summary>
         public string DBParameterGroupFamily

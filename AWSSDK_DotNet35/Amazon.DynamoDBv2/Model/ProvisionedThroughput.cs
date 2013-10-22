@@ -22,7 +22,8 @@ namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
     /// <para>The provisioned throughput settings for the specified table. The settings can be modified using the <i>UpdateTable</i>
-    /// operation.</para> <para>For current minimum and maximum provisioned throughput values, see Limits in the Amazon DynamoDB Developer
+    /// operation.</para> <para>For current minimum and maximum provisioned throughput values, see <a
+    /// href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html" >Limits</a> in the Amazon DynamoDB Developer
     /// Guide.</para>
     /// </summary>
     public class ProvisionedThroughput

@@ -22,7 +22,7 @@ namespace Amazon.Auth.AccessControlPolicy.ActionIdentifiers
     /// The available AWS access control policy actions for AWS Elastic Beanstalk.
     /// </summary>
     /// <see cref="Amazon.Auth.AccessControlPolicy.Statement.Actions"/>
-    public class ElasticBeanstalkActionIdentifiers
+    public static class ElasticBeanstalkActionIdentifiers
     {
         public static readonly ActionIdentifier AllElasticBeanstalkActions = new ActionIdentifier("elasticbeanstalk:*");
 

@@ -33,18 +33,19 @@ namespace Amazon.Route53
         /// <para>Use this action to create or change your authoritative DNS information. To use this action, send a <c>POST</c> request to the
         /// <c>2012-12-12/hostedzone/hosted Zone ID/rrset</c> resource. The request body must include an XML document with a
         /// <c>ChangeResourceRecordSetsRequest</c> element.</para> <para>Changes are a list of change items and are considered transactional. For more
-        /// information on transactional changes, also known as change batches, see Creating, Changing, and Deleting Resource Record Sets Using the
-        /// Route 53 API in the <i>Amazon Route 53 Developer Guide</i> .</para> <para><b>IMPORTANT:</b>Due to the nature of transactional changes, you
-        /// cannot delete the same resource record set more than once in a single change batch. If you attempt to delete the same change batch more than
-        /// once, Route 53 returns an InvalidChangeBatch error.</para> <para>In response to a <c>ChangeResourceRecordSets</c> request, your DNS data is
-        /// changed on all Route 53 DNS servers. Initially, the status of a change is <c>PENDING</c> . This means the change has not yet propagated to
-        /// all the authoritative Route 53 DNS servers. When the change is propagated to all hosts, the change returns a status of <c>INSYNC</c>
-        /// .</para> <para>Note the following limitations on a <c>ChangeResourceRecordSets</c> request:</para> <para>- A request cannot contain more
-        /// than 100 Change elements.</para> <para>- A request cannot contain more than 1000 ResourceRecord elements.</para> <para>The sum of the number
-        /// of characters (including spaces) in all <c>Value</c> elements in a request cannot exceed 32,000 characters.</para>
+        /// information on transactional changes, also known as change batches, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/RRSchanges.html#RRSchanges_API">Creating, Changing, and Deleting Resource
+        /// Record Sets Using the Route 53 API</a> in the <i>Amazon Route 53 Developer Guide</i> .</para> <para><b>IMPORTANT:</b>Due to the nature of
+        /// transactional changes, you cannot delete the same resource record set more than once in a single change batch. If you attempt to delete the
+        /// same change batch more than once, Route 53 returns an InvalidChangeBatch error.</para> <para>In response to a
+        /// <c>ChangeResourceRecordSets</c> request, your DNS data is changed on all Route 53 DNS servers. Initially, the status of a change is
+        /// <c>PENDING</c> . This means the change has not yet propagated to all the authoritative Route 53 DNS servers. When the change is propagated
+        /// to all hosts, the change returns a status of <c>INSYNC</c> .</para> <para>Note the following limitations on a
+        /// <c>ChangeResourceRecordSets</c> request:</para> <para>- A request cannot contain more than 100 Change elements.</para> <para>- A request
+        /// cannot contain more than 1000 ResourceRecord elements.</para> <para>The sum of the number of characters (including spaces) in all
+        /// <c>Value</c> elements in a request cannot exceed 32,000 characters.</para>
         /// </summary>
         /// 
-        /// <param name="changeResourceRecordSetsRequest">Container for the necessary parameters to execute the ChangeResourceRecordSets service method
+        /// <param name="request">Container for the necessary parameters to execute the ChangeResourceRecordSets service method
         /// on AmazonRoute53.</param>
         /// 
         /// <returns>The response from the ChangeResourceRecordSets service method, as returned by AmazonRoute53.</returns>
@@ -75,7 +76,7 @@ namespace Amazon.Route53
         /// response returns the <c>CreateHealthCheckResponse</c> element that contains metadata about the health check.</para>
         /// </summary>
         /// 
-        /// <param name="createHealthCheckRequest">Container for the necessary parameters to execute the CreateHealthCheck service method on
+        /// <param name="request">Container for the necessary parameters to execute the CreateHealthCheck service method on
         /// AmazonRoute53.</param>
         /// 
         /// <returns>The response from the CreateHealthCheck service method, as returned by AmazonRoute53.</returns>
@@ -103,13 +104,13 @@ namespace Amazon.Route53
         /// <c>2012-12-12/hostedzone</c> resource. The request body must include an XML document with a <c>CreateHostedZoneRequest</c> element. The
         /// response returns the <c>CreateHostedZoneResponse</c> element that contains metadata about the hosted zone.</para> <para>Route 53
         /// automatically creates a default SOA record and four NS records for the zone. The NS records in the hosted zone are the name servers you give
-        /// your registrar to delegate your domain to. For more information about SOA and NS records, see NS and SOA Records that Route 53 Creates for a
-        /// Hosted Zone in the <i>Amazon Route 53 Developer Guide</i> .</para> <para>When you create a zone, its initial status is <c>PENDING</c> . This
+        /// your registrar to delegate your domain to. For more information about SOA and NS records, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/SOA-NSrecords.html">NS and SOA Records that Route 53 Creates for a Hosted
+        /// Zone</a> in the <i>Amazon Route 53 Developer Guide</i> .</para> <para>When you create a zone, its initial status is <c>PENDING</c> . This
         /// means that it is not yet available on all DNS servers. The status of the zone changes to <c>INSYNC</c> when the NS and SOA records are
         /// available on all Route 53 DNS servers. </para>
         /// </summary>
         /// 
-        /// <param name="createHostedZoneRequest">Container for the necessary parameters to execute the CreateHostedZone service method on
+        /// <param name="request">Container for the necessary parameters to execute the CreateHostedZone service method on
         /// AmazonRoute53.</param>
         /// 
         /// <returns>The response from the CreateHostedZone service method, as returned by AmazonRoute53.</returns>
@@ -142,7 +143,7 @@ namespace Amazon.Route53
         /// HealthCheckInUse error. For information about disassociating the records from your health check, see ChangeResourceRecordSets.</para>
         /// </summary>
         /// 
-        /// <param name="deleteHealthCheckRequest">Container for the necessary parameters to execute the DeleteHealthCheck service method on
+        /// <param name="request">Container for the necessary parameters to execute the DeleteHealthCheck service method on
         /// AmazonRoute53.</param>
         /// 
         /// <returns>The response from the DeleteHealthCheck service method, as returned by AmazonRoute53.</returns>
@@ -167,14 +168,14 @@ namespace Amazon.Route53
 
         /// <summary>
         /// <para>This action deletes a hosted zone. To delete a hosted zone, send a <c>DELETE</c> request to the <c>2012-12-12/hostedzone/hosted zone
-        /// ID </c> resource.</para> <para>For more information about deleting a hosted zone, see Deleting a Hosted Zone in the <i>Amazon Route 53
+        /// ID </c> resource.</para> <para>For more information about deleting a hosted zone, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DeleteHostedZone.html">Deleting a Hosted Zone</a> in the <i>Amazon Route 53
         /// Developer Guide</i> .</para> <para><b>IMPORTANT:</b> You can delete a hosted zone only if there are no resource record sets other than the
         /// default SOA record and NS resource record sets. If your hosted zone contains other resource record sets, you must delete them before you can
         /// delete your hosted zone. If you try to delete a hosted zone that contains other resource record sets, Route 53 will deny your request with a
         /// HostedZoneNotEmpty error. For information about deleting records from your hosted zone, see ChangeResourceRecordSets.</para>
         /// </summary>
         /// 
-        /// <param name="deleteHostedZoneRequest">Container for the necessary parameters to execute the DeleteHostedZone service method on
+        /// <param name="request">Container for the necessary parameters to execute the DeleteHostedZone service method on
         /// AmazonRoute53.</param>
         /// 
         /// <returns>The response from the DeleteHostedZone service method, as returned by AmazonRoute53.</returns>
@@ -204,7 +205,7 @@ namespace Amazon.Route53
         /// change batch requests.</para> <para>- <c>INSYNC</c> indicates that the changes have replicated to all Amazon Route 53 DNS servers. </para>
         /// </summary>
         /// 
-        /// <param name="getChangeRequest">Container for the necessary parameters to execute the GetChange service method on AmazonRoute53.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetChange service method on AmazonRoute53.</param>
         /// 
         /// <returns>The response from the GetChange service method, as returned by AmazonRoute53.</returns>
         /// 
@@ -229,7 +230,7 @@ namespace Amazon.Route53
         /// <para> To retrieve the health check, send a <c>GET</c> request to the <c>2012-12-12/healthcheck/health check ID </c> resource. </para>
         /// </summary>
         /// 
-        /// <param name="getHealthCheckRequest">Container for the necessary parameters to execute the GetHealthCheck service method on
+        /// <param name="request">Container for the necessary parameters to execute the GetHealthCheck service method on
         /// AmazonRoute53.</param>
         /// 
         /// <returns>The response from the GetHealthCheck service method, as returned by AmazonRoute53.</returns>
@@ -256,7 +257,7 @@ namespace Amazon.Route53
         /// resource. The delegation set is the four Route 53 name servers that were assigned to the hosted zone when you created it.</para>
         /// </summary>
         /// 
-        /// <param name="getHostedZoneRequest">Container for the necessary parameters to execute the GetHostedZone service method on
+        /// <param name="request">Container for the necessary parameters to execute the GetHostedZone service method on
         /// AmazonRoute53.</param>
         /// 
         /// <returns>The response from the GetHostedZone service method, as returned by AmazonRoute53.</returns>
@@ -286,7 +287,7 @@ namespace Amazon.Route53
         /// Route 53 returns a maximum of 100 items. If you set MaxItems to a value greater than 100, Amazon Route 53 returns only the first 100.</para>
         /// </summary>
         /// 
-        /// <param name="listHealthChecksRequest">Container for the necessary parameters to execute the ListHealthChecks service method on
+        /// <param name="request">Container for the necessary parameters to execute the ListHealthChecks service method on
         /// AmazonRoute53.</param>
         /// 
         /// <returns>The response from the ListHealthChecks service method, as returned by AmazonRoute53.</returns>
@@ -314,8 +315,6 @@ namespace Amazon.Route53
         /// Route 53 returns a maximum of 100 items. If you set MaxItems to a value greater than 100, Amazon Route 53 returns only the first 100.</para>
         /// </summary>
         /// 
-        /// <param name="listHealthChecksRequest">Container for the necessary parameters to execute the ListHealthChecks service method on
-        /// AmazonRoute53.</param>
         /// 
         /// <returns>The response from the ListHealthChecks service method, as returned by AmazonRoute53.</returns>
         /// 
@@ -331,7 +330,7 @@ namespace Amazon.Route53
         /// a maximum of 100 items. If you set MaxItems to a value greater than 100, Amazon Route 53 returns only the first 100.</para>
         /// </summary>
         /// 
-        /// <param name="listHostedZonesRequest">Container for the necessary parameters to execute the ListHostedZones service method on
+        /// <param name="request">Container for the necessary parameters to execute the ListHostedZones service method on
         /// AmazonRoute53.</param>
         /// 
         /// <returns>The response from the ListHostedZones service method, as returned by AmazonRoute53.</returns>
@@ -359,8 +358,6 @@ namespace Amazon.Route53
         /// a maximum of 100 items. If you set MaxItems to a value greater than 100, Amazon Route 53 returns only the first 100.</para>
         /// </summary>
         /// 
-        /// <param name="listHostedZonesRequest">Container for the necessary parameters to execute the ListHostedZones service method on
-        /// AmazonRoute53.</param>
         /// 
         /// <returns>The response from the ListHostedZones service method, as returned by AmazonRoute53.</returns>
         /// 
@@ -394,7 +391,7 @@ namespace Amazon.Route53
         /// visible in a subsequent call to ListResourceRecordSets by that process.</para>
         /// </summary>
         /// 
-        /// <param name="listResourceRecordSetsRequest">Container for the necessary parameters to execute the ListResourceRecordSets service method on
+        /// <param name="request">Container for the necessary parameters to execute the ListResourceRecordSets service method on
         /// AmazonRoute53.</param>
         /// 
         /// <returns>The response from the ListResourceRecordSets service method, as returned by AmazonRoute53.</returns>

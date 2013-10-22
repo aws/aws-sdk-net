@@ -32,6 +32,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class RequestSpotInstancesRequest : AmazonWebServiceRequest
     {
+        private bool? dryRun;
         private string spotPrice;
         private int? instanceCount;
         private SpotInstanceType type;
@@ -40,6 +41,17 @@ namespace Amazon.EC2.Model
         private string launchGroup;
         private string availabilityZoneGroup;
         private LaunchSpecification launchSpecification;
+        public bool DryRun
+        {
+            get { return this.dryRun ?? default(bool); }
+            set { this.dryRun = value; }
+        }
+
+        // Check to see if DryRun property is set
+        internal bool IsSetDryRun()
+        {
+            return this.dryRun.HasValue;
+        }
 
         /// <summary>
         /// Specifies the maximum hourly price for any Spot Instance launched to fulfill the request.

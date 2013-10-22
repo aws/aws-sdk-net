@@ -28,12 +28,24 @@ namespace Amazon.CloudSearch
     /// <summary>
     /// Implementation for accessing AmazonCloudSearch.
     ///  
-    /// Amazon CloudSearch Configuration Service <para>You use the Configuration Service to create, configure, and manage search domains. Amazon
-    /// CloudSearch configuration requests are submitted to <c>cloudsearch.us-east-1.amazonaws.com</c> using the AWS Query protocol. </para>
+    /// Amazon CloudSearch Configuration Service <para>You use the configuration service to create, configure, and manage search domains.
+    /// Configuration service requests are submitted using the AWS Query protocol. AWS Query requests are HTTP or HTTPS requests submitted via HTTP
+    /// GET or POST with a query parameter named Action.</para> <para>The endpoint for configuration service requests is region-specific:
+    /// cloudsearch. <i>region</i> .amazonaws.com. For example, cloudsearch.us-east-1.amazonaws.com. For a current list of supported regions and
+    /// endpoints, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#cloudsearch_region" >Regions and Endpoints</a> .</para>
     /// </summary>
     public partial class AmazonCloudSearchClient : AmazonWebServiceClient, IAmazonCloudSearch
     {
     AWS4Signer signer = new AWS4Signer();
+
+        #region Dispose
+
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
+        }
+
+        #endregion
 
         #region Constructors
 
@@ -54,7 +66,7 @@ namespace Amazon.CloudSearch
         ///
         /// </summary>
         public AmazonCloudSearchClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCloudSearchConfig(), true, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCloudSearchConfig(), AuthenticationTypes.User | AuthenticationTypes.Session) { }
 
         /// <summary>
         /// Constructs AmazonCloudSearchClient with the credentials loaded from the application's
@@ -74,7 +86,7 @@ namespace Amazon.CloudSearch
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonCloudSearchClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCloudSearchConfig(){RegionEndpoint = region}, true, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCloudSearchConfig{RegionEndpoint = region}, AuthenticationTypes.User | AuthenticationTypes.Session) { }
 
         /// <summary>
         /// Constructs AmazonCloudSearchClient with the credentials loaded from the application's
@@ -94,7 +106,7 @@ namespace Amazon.CloudSearch
         /// </summary>
         /// <param name="config">The AmazonCloudSearch Configuration Object</param>
         public AmazonCloudSearchClient(AmazonCloudSearchConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config, true, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), config, AuthenticationTypes.User | AuthenticationTypes.Session) { }
 
         /// <summary>
         /// Constructs AmazonCloudSearchClient with AWS Credentials
@@ -111,7 +123,7 @@ namespace Amazon.CloudSearch
         /// <param name="credentials">AWS Credentials</param>
         /// <param name="region">The region to connect.</param>
         public AmazonCloudSearchClient(AWSCredentials credentials, RegionEndpoint region)
-            : this(credentials, new AmazonCloudSearchConfig(){RegionEndpoint=region})
+            : this(credentials, new AmazonCloudSearchConfig{RegionEndpoint = region})
         {
         }
 
@@ -122,7 +134,7 @@ namespace Amazon.CloudSearch
         /// <param name="credentials">AWS Credentials</param>
         /// <param name="clientConfig">The AmazonCloudSearchClient Configuration Object</param>
         public AmazonCloudSearchClient(AWSCredentials credentials, AmazonCloudSearchConfig clientConfig)
-            : base(credentials, clientConfig, false, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(credentials, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
         {
         }
 
@@ -178,7 +190,7 @@ namespace Amazon.CloudSearch
         /// <param name="awsSessionToken">AWS Session Token</param>
         /// <param name="region">The region to connect.</param>
         public AmazonCloudSearchClient(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken, RegionEndpoint region)
-            : this(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, new AmazonCloudSearchConfig(){RegionEndpoint = region})
+            : this(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, new AmazonCloudSearchConfig{RegionEndpoint = region})
         {
         }
 
@@ -1245,8 +1257,9 @@ namespace Amazon.CloudSearch
         #region UpdateDefaultSearchField
 
         /// <summary>
-        /// <para>Configures the default search field for the search domain. The default search field is used when a search request does not specify
-        /// which fields to search. By default, it is configured to include the contents of all of the domain's text fields.</para>
+        /// <para>Configures the default search field for the search domain. The default search field is the text field that is searched when a search
+        /// request does not specify which fields to search. By default, it is configured to include the contents of all of the domain's text fields.
+        /// </para>
         /// </summary>
         /// 
         /// <param name="updateDefaultSearchFieldRequest">Container for the necessary parameters to execute the UpdateDefaultSearchField service method

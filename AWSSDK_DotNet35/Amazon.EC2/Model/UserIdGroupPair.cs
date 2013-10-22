@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para> An AWS user ID identifiying an AWS account, and the name of a security group within that account. </para>
+    /// <para> An AWS user ID identifying an AWS account, and the name of a security group within that account. </para>
     /// </summary>
     public class UserIdGroupPair
     {

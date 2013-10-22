@@ -25,17 +25,18 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeDBSecurityGroups operation.
-    /// <para> Returns a list of DBSecurityGroup descriptions. If a DBSecurityGroupName is specified, the list will contain only the descriptions of
-    /// the specified DBSecurityGroup. </para> <para>For an overview of CIDR ranges, go to the Wikipedia Tutorial. </para>
+    /// <para> Returns a list of <c>DBSecurityGroup</c> descriptions. If a <c>DBSecurityGroupName</c> is specified, the list will contain only the
+    /// descriptions of the specified DB security group. </para>
     /// </summary>
     public partial class DescribeDBSecurityGroupsRequest : AmazonWebServiceRequest
     {
         private string dBSecurityGroupName;
+        private List<Filter> filters = new List<Filter>();
         private int? maxRecords;
         private string marker;
 
         /// <summary>
-        /// The name of the DB Security Group to return details for.
+        /// The name of the DB security group to return details for.
         ///  
         /// </summary>
         public string DBSecurityGroupName
@@ -48,6 +49,17 @@ namespace Amazon.RDS.Model
         internal bool IsSetDBSecurityGroupName()
         {
             return this.dBSecurityGroupName != null;
+        }
+        public List<Filter> Filters
+        {
+            get { return this.filters; }
+            set { this.filters = value; }
+        }
+
+        // Check to see if Filters property is set
+        internal bool IsSetFilters()
+        {
+            return this.filters.Count > 0;
         }
 
         /// <summary>

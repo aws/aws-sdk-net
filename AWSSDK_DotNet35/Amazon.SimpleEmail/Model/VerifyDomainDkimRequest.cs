@@ -30,7 +30,8 @@ namespace Amazon.SimpleEmail.Model
     /// detect that you have updated your DNS records; this detection process may take up to 72 hours. Upon successful detection, Amazon SES will be
     /// able to DKIM-sign email originating from that domain.</para> <para>This action is throttled at one request per second.</para> <para>To
     /// enable or disable Easy DKIM signing for a domain, use the <c>SetIdentityDkimEnabled</c> action.</para> <para>For more information about
-    /// creating DNS records using DKIM tokens, go to the Amazon SES Developer Guide.</para>
+    /// creating DNS records using DKIM tokens, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html"
+    /// >Amazon SES Developer Guide</a> .</para>
     /// </summary>
     public partial class VerifyDomainDkimRequest : AmazonWebServiceRequest
     {

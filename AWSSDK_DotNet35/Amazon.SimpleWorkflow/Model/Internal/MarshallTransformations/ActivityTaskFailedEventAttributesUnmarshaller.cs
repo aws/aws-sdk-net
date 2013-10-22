@@ -33,6 +33,9 @@
 
         public ActivityTaskFailedEventAttributes Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonToken.Null)
+                return null;
+
             ActivityTaskFailedEventAttributes activityTaskFailedEventAttributes = new ActivityTaskFailedEventAttributes();
 
         

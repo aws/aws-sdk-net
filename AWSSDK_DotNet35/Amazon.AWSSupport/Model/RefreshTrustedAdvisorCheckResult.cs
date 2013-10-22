@@ -30,7 +30,7 @@ namespace Amazon.AWSSupport.Model
         private TrustedAdvisorCheckRefreshStatus status;
 
         /// <summary>
-        /// Returns the overall status of the <a href="API_RefreshTrustedAdvisorCheck.html"
+        /// Returns the overall status of the <a href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_RefreshTrustedAdvisorCheck.html"
         /// title="RefreshTrustedAdvisorCheck">RefreshTrustedAdvisorCheck</a> call.
         ///  
         /// </summary>

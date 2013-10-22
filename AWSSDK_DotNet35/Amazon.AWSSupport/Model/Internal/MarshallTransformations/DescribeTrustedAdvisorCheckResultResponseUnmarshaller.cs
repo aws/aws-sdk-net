@@ -38,7 +38,7 @@
           return response;
         }
         
-        private void UnmarshallResult(JsonUnmarshallerContext context,DescribeTrustedAdvisorCheckResultResponse response)
+        private static void UnmarshallResult(JsonUnmarshallerContext context,DescribeTrustedAdvisorCheckResultResponse response)
         {
           
             int originalDepth = context.CurrentDepth;

@@ -29,8 +29,9 @@ namespace Amazon.SecurityToken.Model
     /// identity provider, such as Login with Amazon, Facebook, or Google. <c>AssumeRoleWithWebIdentity</c> is an API call that does not require the
     /// use of AWS security credentials. Therefore, you can distribute an application (for example, on mobile devices) that requests temporary
     /// security credentials without including long-term AWS credentials in the application or by deploying server-based proxy services that use
-    /// long-term AWS credentials. For more information, see Creating a Mobile Application with Third-Party Sign-In in <i>AWS Security Token
-    /// Service</i> .
+    /// long-term AWS credentials. For more information, see <a
+    /// href="http://aws-docs-alpha.integ.amazon.com/STS/latest/UsingSTS/STSUseCases.html#MobileApplication-KnownProvider" >Creating a Mobile
+    /// Application with Third-Party Sign-In</a> in <i>AWS Security Token Service</i> .
     /// </para> <para> The temporary security credentials consist of an access key ID, a secret access key, and a security token. Applications can
     /// use these temporary security credentials to sign calls to AWS service APIs. The credentials are valid for the duration that you specified
     /// when calling <c>AssumeRoleWithWebIdentity</c> , which can be from 900 seconds (15 minutes) to 3600 seconds (1 hour). By default, the
@@ -41,8 +42,10 @@ namespace Amazon.SecurityToken.Model
     /// evaluated when calls to AWS service APIs are made using the temporary security credentials. </para> <para> Before your application can call
     /// <c>AssumeRoleWithWebIdentity</c> , you must have an identity token from a supported identity provider and create a role that the application
     /// can assume. The role that your application assumes must trust the identity provider that is associated with the identity token. In other
-    /// words, the identity provider must be specified in the role's trust policy. For more information, see Creating Temporary Security Credentials
-    /// for Mobile Apps Using Third-Party Identity Providers. </para>
+    /// words, the identity provider must be specified in the role's trust policy. For more information, see <a
+    /// href="http://docs.aws.amazon.com/STS/latest/UsingSTS/CreatingWIF.html" > Creating Temporary Security Credentials for Mobile Apps Using
+    /// Third-Party Identity Providers</a> .
+    /// </para>
     /// </summary>
     public partial class AssumeRoleWithWebIdentityRequest : AmazonWebServiceRequest
     {

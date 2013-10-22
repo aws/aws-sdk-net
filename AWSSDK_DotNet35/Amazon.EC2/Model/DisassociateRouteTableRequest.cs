@@ -26,12 +26,25 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Container for the parameters to the DisassociateRouteTable operation.
     /// <para> Disassociates a subnet from a route table. </para> <para> After you perform this action, the subnet no longer uses the routes in the
-    /// route table. Instead it uses the routes in the VPC's main route table. For more information about route tables, go to Route Tables in the
-    /// Amazon Virtual Private Cloud User Guide. </para>
+    /// route table. Instead it uses the routes in the VPC's main route table. For more information about route tables, go to <a
+    /// href="http://docs.amazonwebservices.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html" >Route Tables</a> in the Amazon Virtual Private
+    /// Cloud User Guide. </para>
     /// </summary>
     public partial class DisassociateRouteTableRequest : AmazonWebServiceRequest
     {
+        private bool? dryRun;
         private string associationId;
+        public bool DryRun
+        {
+            get { return this.dryRun ?? default(bool); }
+            set { this.dryRun = value; }
+        }
+
+        // Check to see if DryRun property is set
+        internal bool IsSetDryRun()
+        {
+            return this.dryRun.HasValue;
+        }
 
         /// <summary>
         /// The association ID representing the current association between the route table and subnet.

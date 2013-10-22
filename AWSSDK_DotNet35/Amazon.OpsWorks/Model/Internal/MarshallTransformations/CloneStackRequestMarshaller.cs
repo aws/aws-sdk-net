@@ -48,8 +48,9 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
             
             if (uriResourcePath.Contains("?")) 
             {
-                string queryString = uriResourcePath.Substring(uriResourcePath.IndexOf("?") + 1);
-                uriResourcePath    = uriResourcePath.Substring(0, uriResourcePath.IndexOf("?"));
+                int queryPosition = uriResourcePath.IndexOf("?", StringComparison.OrdinalIgnoreCase);
+                string queryString = uriResourcePath.Substring(queryPosition + 1);
+                uriResourcePath    = uriResourcePath.Substring(0, queryPosition);
         
                 foreach (string s in queryString.Split('&', ';')) 
                 {
@@ -68,7 +69,7 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
             request.ResourcePath = uriResourcePath;
             
              
-            using (StringWriter stringWriter = new StringWriter())
+            using (StringWriter stringWriter = new StringWriter(System.Globalization.CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
@@ -87,6 +88,11 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                 {
                     writer.WritePropertyName("Region");
                     writer.Write(cloneStackRequest.Region);
+                }
+                if (cloneStackRequest != null && cloneStackRequest.IsSetVpcId()) 
+                {
+                    writer.WritePropertyName("VpcId");
+                    writer.Write(cloneStackRequest.VpcId);
                 }
                 if (cloneStackRequest != null) 
                 {
@@ -129,6 +135,11 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                 {
                     writer.WritePropertyName("DefaultAvailabilityZone");
                     writer.Write(cloneStackRequest.DefaultAvailabilityZone);
+                }
+                if (cloneStackRequest != null && cloneStackRequest.IsSetDefaultSubnetId()) 
+                {
+                    writer.WritePropertyName("DefaultSubnetId");
+                    writer.Write(cloneStackRequest.DefaultSubnetId);
                 }
                 if (cloneStackRequest != null && cloneStackRequest.IsSetCustomJson()) 
                 {

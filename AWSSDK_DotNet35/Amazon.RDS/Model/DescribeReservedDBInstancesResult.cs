@@ -48,7 +48,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// A list of of reserved DB Instances.
+        /// A list of reserved DB instances.
         ///  
         /// </summary>
         public List<ReservedDBInstance> ReservedDBInstances

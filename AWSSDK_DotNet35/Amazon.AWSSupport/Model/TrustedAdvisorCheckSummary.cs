@@ -24,8 +24,10 @@ namespace Amazon.AWSSupport.Model
     /// <para>Reports a summary of the Trusted Advisor check. This object contains the following child objects that report summary information about
     /// specific checks by category and resource: </para>
     /// <ul>
-    /// <li> TrustedAdvisorCategorySpecificSummary </li>
-    /// <li> TrustedAdvisorResourcesSummary </li>
+    /// <li> <a href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorCategorySpecificSummary.html"
+    /// >TrustedAdvisorCategorySpecificSummary</a> </li>
+    /// <li> <a href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorResourcesSummary.html"
+    /// >TrustedAdvisorResourcesSummary</a> </li>
     /// 
     /// </ul>
     /// </summary>
@@ -105,7 +107,8 @@ namespace Amazon.AWSSupport.Model
 
         /// <summary>
         /// JSON-formatted object that lists details about AWS resources that were analyzed in a call to Trusted Advisor <a
-        /// href="API_DescribeTrustedAdvisorCheckSummaries.html" title="DescribeTrustedAdvisorCheckSummaries">DescribeTrustedAdvisorCheckSummaries</a>.
+        /// href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorCheckSummaries.html"
+        /// title="DescribeTrustedAdvisorCheckSummaries">DescribeTrustedAdvisorCheckSummaries</a>.
         ///  
         /// </summary>
         public TrustedAdvisorResourcesSummary ResourcesSummary

@@ -27,11 +27,23 @@ namespace Amazon.EC2.Model
     /// Container for the parameters to the CreateDhcpOptions operation.
     /// <para> Creates a set of DHCP options that you can then associate with one or more VPCs, causing all existing and new instances that you
     /// launch in those VPCs to use the set of DHCP options. The following table lists the individual DHCP options you can specify. For more
-    /// information about the options, go to http://www.ietf.org/rfc/rfc2132.txt </para>
+    /// information about the options, go to <a href="http://www.ietf.org/rfc/rfc2132.txt" >http://www.ietf.org/rfc/rfc2132.txt</a> </para>
     /// </summary>
     public partial class CreateDhcpOptionsRequest : AmazonWebServiceRequest
     {
+        private bool? dryRun;
         private List<DhcpConfiguration> dhcpConfigurations = new List<DhcpConfiguration>();
+        public bool DryRun
+        {
+            get { return this.dryRun ?? default(bool); }
+            set { this.dryRun = value; }
+        }
+
+        // Check to see if DryRun property is set
+        internal bool IsSetDryRun()
+        {
+            return this.dryRun.HasValue;
+        }
 
         /// <summary>
         /// A set of one or more DHCP configurations.

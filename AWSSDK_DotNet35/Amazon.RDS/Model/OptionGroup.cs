@@ -17,13 +17,14 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using Amazon.Runtime;
 
 namespace Amazon.RDS.Model
 {
     /// <summary>
     /// <para> </para>
     /// </summary>
-    public class OptionGroup
+    public partial class OptionGroup : AmazonWebServiceResponse
     {
         
         private string optionGroupName;

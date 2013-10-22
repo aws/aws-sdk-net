@@ -52,7 +52,7 @@ namespace Amazon.SimpleDB.Model.Internal.MarshallTransformations
             return response;
         }
         
-        private void UnmarshallResult(XmlUnmarshallerContext context,DomainMetadataResponse response)
+        private static void UnmarshallResult(XmlUnmarshallerContext context,DomainMetadataResponse response)
         {
             
             int originalDepth = context.CurrentDepth;

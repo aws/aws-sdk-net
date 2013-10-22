@@ -33,6 +33,9 @@
 
         public Preset Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonToken.Null)
+                return null;
+
             Preset preset = new Preset();
 
         

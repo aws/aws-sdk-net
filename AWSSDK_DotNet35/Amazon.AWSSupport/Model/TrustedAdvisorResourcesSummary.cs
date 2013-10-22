@@ -21,8 +21,9 @@ using System.IO;
 namespace Amazon.AWSSupport.Model
 {
     /// <summary>
-    /// <para>JSON-formatted object that lists details about AWS resources that were analyzed in a call to Trusted Advisor
-    /// DescribeTrustedAdvisorCheckSummaries. </para>
+    /// <para>JSON-formatted object that lists details about AWS resources that were analyzed in a call to Trusted Advisor <a
+    /// href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorCheckSummaries.html"
+    /// >DescribeTrustedAdvisorCheckSummaries</a> . </para>
     /// </summary>
     public class TrustedAdvisorResourcesSummary
     {

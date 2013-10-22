@@ -26,7 +26,9 @@ namespace Amazon.SimpleNotificationService.Model
     /// <summary>
     /// Container for the parameters to the SetEndpointAttributes operation.
     /// <para>The <c>SetEndpointAttributes</c> action sets the attributes for an endpoint for a device on one of the supported push notification
-    /// services, such as GCM and APNS. For more information, see Using Amazon SNS Mobile Push Notifications. </para>
+    /// services, such as GCM and APNS. For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html" >Using
+    /// Amazon SNS Mobile Push Notifications</a> .
+    /// </para>
     /// </summary>
     public partial class SetEndpointAttributesRequest : AmazonWebServiceRequest
     {

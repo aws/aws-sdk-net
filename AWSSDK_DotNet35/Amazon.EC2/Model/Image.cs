@@ -32,16 +32,16 @@ namespace Amazon.EC2.Model
         private string ownerId;
         private bool? publicValue;
         private List<ProductCode> productCodes = new List<ProductCode>();
-        private string architecture;
-        private string imageType;
+        private ArchitectureValues architecture;
+        private ImageTypeValues imageType;
         private string kernelId;
         private string ramdiskId;
-        private string platform;
+        private PlatformValues platform;
         private StateReason stateReason;
         private string imageOwnerAlias;
         private string name;
         private string description;
-        private string rootDeviceType;
+        private DeviceType rootDeviceType;
         private string rootDeviceName;
         private List<BlockDeviceMapping> blockDeviceMappings = new List<BlockDeviceMapping>();
         private VirtualizationType virtualizationType;
@@ -157,8 +157,17 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// The architecture of the image.
         ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>i386, x86_64</description>
+        ///     </item>
+        /// </list>
+        /// </para>
         /// </summary>
-        public string Architecture
+        public ArchitectureValues Architecture
         {
             get { return this.architecture; }
             set { this.architecture = value; }
@@ -173,8 +182,17 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// The type of image (machine, kernel, or ramdisk).
         ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>machine, kernel, ramdisk</description>
+        ///     </item>
+        /// </list>
+        /// </para>
         /// </summary>
-        public string ImageType
+        public ImageTypeValues ImageType
         {
             get { return this.imageType; }
             set { this.imageType = value; }
@@ -221,8 +239,17 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// The operating platform of the AMI.
         ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>Windows</description>
+        ///     </item>
+        /// </list>
+        /// </para>
         /// </summary>
-        public string Platform
+        public PlatformValues Platform
         {
             get { return this.platform; }
             set { this.platform = value; }
@@ -301,8 +328,17 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// The root device type used by the AMI. The AMI can use an Amazon EBS or instance store root device.
         ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>ebs, instance-store</description>
+        ///     </item>
+        /// </list>
+        /// </para>
         /// </summary>
-        public string RootDeviceType
+        public DeviceType RootDeviceType
         {
             get { return this.rootDeviceType; }
             set { this.rootDeviceType = value; }

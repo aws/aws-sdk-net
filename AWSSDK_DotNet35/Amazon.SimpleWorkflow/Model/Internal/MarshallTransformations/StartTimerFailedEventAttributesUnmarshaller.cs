@@ -33,6 +33,9 @@
 
         public StartTimerFailedEventAttributes Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonToken.Null)
+                return null;
+
             StartTimerFailedEventAttributes startTimerFailedEventAttributes = new StartTimerFailedEventAttributes();
 
         

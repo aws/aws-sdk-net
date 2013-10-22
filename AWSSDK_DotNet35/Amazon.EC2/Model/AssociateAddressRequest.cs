@@ -31,12 +31,24 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class AssociateAddressRequest : AmazonWebServiceRequest
     {
+        private bool? dryRun;
         private string instanceId;
         private string publicIp;
         private string allocationId;
         private string networkInterfaceId;
         private string privateIpAddress;
         private bool? allowReassociation;
+        public bool DryRun
+        {
+            get { return this.dryRun ?? default(bool); }
+            set { this.dryRun = value; }
+        }
+
+        // Check to see if DryRun property is set
+        internal bool IsSetDryRun()
+        {
+            return this.dryRun.HasValue;
+        }
 
         /// <summary>
         /// The instance to associate with the IP address.

@@ -26,7 +26,9 @@ namespace Amazon.AWSSupport.Model
     /// <summary>
     /// Container for the parameters to the DescribeTrustedAdvisorChecks operation.
     /// <para>This action enables you to get a list of the available Trusted Advisor checks. You must specify a language code. English ("en") and
-    /// Japanese ("jp") are currently supported. The response contains a list of TrustedAdvisorCheckDescription objects. </para>
+    /// Japanese ("jp") are currently supported. The response contains a list of <a
+    /// href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorCheckDescription.html" >TrustedAdvisorCheckDescription</a>
+    /// objects. </para>
     /// </summary>
     public partial class DescribeTrustedAdvisorChecksRequest : AmazonWebServiceRequest
     {

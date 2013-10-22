@@ -25,12 +25,7 @@ namespace Amazon.StorageGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateGatewaySoftwareNow operation.
-    /// <para>This operation updates the gateway virtual machine (VM) software. The request immediately triggers the software update. </para>
-    /// <para><b>NOTE:</b>When you make this request, you get a 200 OK success response immediately. However, it might take some time for the update
-    /// to complete. You can call DescribeGatewayInformation to verify the gateway is in the STATE_RUNNING state.</para> <para><b>IMPORTANT:</b>A
-    /// software update forces a system restart of your gateway. You can minimize the chance of any disruption to your applications by increasing
-    /// your iSCSI Initiators' timeouts. For more information about increasing iSCSI Initiator timeouts for Windows and Linux, see Customizing Your
-    /// Windows iSCSI Settings and Customizing Your Linux iSCSI Settings, respectively.</para>
+    /// 
     /// </summary>
     public partial class UpdateGatewaySoftwareNowRequest : AmazonWebServiceRequest
     {

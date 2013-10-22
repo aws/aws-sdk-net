@@ -25,7 +25,7 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyDBInstance operation.
-    /// <para> Modify settings for a DB Instance. You can change one or more database configuration parameters by specifying these parameters and
+    /// <para> Modify settings for a DB instance. You can change one or more database configuration parameters by specifying these parameters and
     /// the new values in the request. </para>
     /// </summary>
     public partial class ModifyDBInstanceRequest : AmazonWebServiceRequest
@@ -50,8 +50,8 @@ namespace Amazon.RDS.Model
         private string newDBInstanceIdentifier;
 
         /// <summary>
-        /// The DB Instance identifier. This value is stored as a lowercase string. Constraints: <ul> <li>Must be the identifier for an existing DB
-        /// Instance</li> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end
+        /// The DB instance identifier. This value is stored as a lowercase string. Constraints: <ul> <li>Must be the identifier for an existing DB
+        /// instance</li> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end
         /// with a hyphen or contain two consecutive hyphens</li> </ul>
         ///  
         /// </summary>
@@ -97,7 +97,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The new compute and memory capacity of the DB Instance. To determine the instance classes that are available for a particular DB engine, use
+        /// The new compute and memory capacity of the DB instance. To determine the instance classes that are available for a particular DB engine, use
         /// the <a>DescribeOrderableDBInstanceOptions</a> action. Passing a value for this parameter causes an outage during the change and is applied
         /// during the next maintenance window, unless the <c>ApplyImmediately</c> parameter is specified as <c>true</c> for this request. Default: Uses
         /// existing setting Valid Values: <c>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge | db.m2.xlarge | db.m2.2xlarge |
@@ -117,7 +117,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// A list of DB Security Groups to authorize on this DB Instance. Changing this parameter does not result in an outage and the change is
+        /// A list of DB security groups to authorize on this DB instance. Changing this parameter does not result in an outage and the change is
         /// asynchronously applied as soon as possible. Constraints: <ul> <li>Must be 1 to 255 alphanumeric characters</li> <li>First character must be
         /// a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
         ///  
@@ -135,7 +135,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// A list of EC2 VPC Security Groups to authorize on this DB Instance. This change is asynchronously applied as soon as possible. Constraints:
+        /// A list of EC2 VPC security groups to authorize on this DB instance. This change is asynchronously applied as soon as possible. Constraints:
         /// <ul> <li>Must be 1 to 255 alphanumeric characters</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two
         /// consecutive hyphens</li> </ul>
         ///  
@@ -154,8 +154,8 @@ namespace Amazon.RDS.Model
 
         /// <summary>
         /// Specifies whether or not the modifications in this request and any pending modifications are asynchronously applied as soon as possible,
-        /// regardless of the <c>PreferredMaintenanceWindow</c> setting for the DB Instance. If this parameter is passed as <c>false</c>, changes to the
-        /// DB Instance are applied on the next call to <a>RebootDBInstance</a>, the next maintenance reboot, or the next failure reboot, whichever
+        /// regardless of the <c>PreferredMaintenanceWindow</c> setting for the DB instance. If this parameter is passed as <c>false</c>, changes to the
+        /// DB instance are applied on the next call to <a>RebootDBInstance</a>, the next maintenance reboot, or the next failure reboot, whichever
         /// occurs first. See each parameter to determine when a change is applied. Default: <c>false</c>
         ///  
         /// </summary>
@@ -172,7 +172,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The new password for the DB Instance master user. Can be any printable ASCII character except "/", "\", or "@". Changing this parameter does
+        /// The new password for the DB instance master user. Can be any printable ASCII character except "/", """, or "@". Changing this parameter does
         /// not result in an outage and the change is asynchronously applied as soon as possible. Between the time of the request and the completion of
         /// the request, the <c>MasterUserPassword</c> element exists in the <c>PendingModifiedValues</c> element of the operation response. Default:
         /// Uses existing setting Constraints: Must be 8 to 41 alphanumeric characters (MySQL), 8 to 30 alphanumeric characters (Oracle), or 8 to 128
@@ -193,9 +193,9 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The name of the DB Parameter Group to apply to this DB Instance. Changing this parameter does not result in an outage and the change is
+        /// The name of the DB parameter group to apply to this DB instance. Changing this parameter does not result in an outage and the change is
         /// applied during the next maintenance window unless the <c>ApplyImmediately</c> parameter is set to <c>true</c> for this request. Default:
-        /// Uses existing setting Constraints: The DB Parameter Group must be in the same DB Parameter Group family as this DB Instance.
+        /// Uses existing setting Constraints: The DB parameter group must be in the same DB parameter group family as this DB instance.
         ///  
         /// </summary>
         public string DBParameterGroupName
@@ -216,7 +216,7 @@ namespace Amazon.RDS.Model
         /// value to 0. These changes are applied during the next maintenance window unless the <c>ApplyImmediately</c> parameter is set to <c>true</c>
         /// for this request. If you change the parameter from one non-zero value to another non-zero value, the change is asynchronously applied as
         /// soon as possible. Default: Uses existing setting Constraints: <ul> <li>Must be a value from 0 to 8</li> <li>Cannot be set to 0 if the DB
-        /// Instance is a master instance with read replicas or if the DB Instance is a read replica</li> </ul>
+        /// instance is a master instance with read replicas or if the DB instance is a read replica</li> </ul>
         ///  
         /// </summary>
         public int BackupRetentionPeriod
@@ -254,7 +254,7 @@ namespace Amazon.RDS.Model
         /// The weekly time range (in UTC) during which system maintenance can occur, which may result in an outage. Changing this parameter does not
         /// result in an outage, except in the following situation, and the change is asynchronously applied as soon as possible. If there are pending
         /// actions that cause a reboot, and the maintenance window is changed to include the current time, then changing this parameter will cause a
-        /// reboot of the DB Instance. If moving this window to the current time, there must be at least 30 minutes between the current time and end of
+        /// reboot of the DB instance. If moving this window to the current time, there must be at least 30 minutes between the current time and end of
         /// the window to ensure pending changes are applied. Default: Uses existing setting Format: ddd:hh24:mi-ddd:hh24:mi Valid Days: Mon | Tue | Wed
         /// | Thu | Fri | Sat | Sun Constraints: Must be at least 30 minutes
         ///  
@@ -272,9 +272,9 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Specifies if the DB Instance is a Multi-AZ deployment. Changing this parameter does not result in an outage and the change is applied during
+        /// Specifies if the DB instance is a Multi-AZ deployment. Changing this parameter does not result in an outage and the change is applied during
         /// the next maintenance window unless the <c>ApplyImmediately</c> parameter is set to <c>true</c> for this request. Constraints: Cannot be
-        /// specified if the DB Instance is a read replica.
+        /// specified if the DB instance is a read replica.
         ///  
         /// </summary>
         public bool MultiAZ
@@ -292,8 +292,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// The version number of the database engine to upgrade to. Changing this parameter results in an outage and the change is applied during the
         /// next maintenance window unless the <c>ApplyImmediately</c> parameter is set to <c>true</c> for this request. For major version upgrades, if
-        /// a nondefault DB Parameter Group is currently in use, a new DB Parameter Group in the DB Parameter Group Family for the new engine version
-        /// must be specified. The new DB Parameter Group can be the default for that DB Parameter Group Family. Example: <c>5.1.42</c>
+        /// a non-default DB parameter group is currently in use, a new DB parameter group in the DB parameter group family for the new engine version
+        /// must be specified. The new DB parameter group can be the default for that DB parameter group family. Example: <c>5.1.42</c>
         ///  
         /// </summary>
         public string EngineVersion
@@ -311,7 +311,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Indicates that major version upgrades are allowed. Changing this parameter does not result in an outage and the change is asynchronously
         /// applied as soon as possible. Constraints: This parameter must be set to true when specifying a value for the EngineVersion parameter that is
-        /// a different major version than the DB Instance's current version.
+        /// a different major version than the DB instance's current version.
         ///  
         /// </summary>
         public bool AllowMajorVersionUpgrade
@@ -327,7 +327,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Indicates that minor version upgrades will be applied automatically to the DB Instance during the maintenance window. Changing this
+        /// Indicates that minor version upgrades will be applied automatically to the DB instance during the maintenance window. Changing this
         /// parameter does not result in an outage except in the following case and the change is asynchronously applied as soon as possible. An outage
         /// will result if this parameter is set to <c>true</c> during the maintenance window, and a newer minor version is available, and RDS has
         /// enabled auto patching for that engine version.
@@ -372,7 +372,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Indicates that the DB Instance should be associated with the specified option group. Changing this parameter does not result in an outage
+        /// Indicates that the DB instance should be associated with the specified option group. Changing this parameter does not result in an outage
         /// except in the following case and the change is applied during the next maintenance window unless the <c>ApplyImmediately</c> parameter is
         /// set to <c>true</c> for this request. If the parameter change results in an option group that enables OEM, this change can cause a brief
         /// (sub-second) period during which new connections are rejected but existing connections are not interrupted. <!-- Note that persistent
@@ -394,7 +394,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The new DB Instance identifier for the DB Instance when renaming a DB Instance. This value is stored as a lowercase string. Constraints:
+        /// The new DB instance identifier for the DB instance when renaming a DB Instance. This value is stored as a lowercase string. Constraints:
         /// <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a
         /// hyphen or contain two consecutive hyphens</li> </ul>
         ///  

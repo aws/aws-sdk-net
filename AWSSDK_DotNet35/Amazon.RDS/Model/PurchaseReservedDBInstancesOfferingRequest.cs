@@ -25,16 +25,17 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the PurchaseReservedDBInstancesOffering operation.
-    /// <para> Purchases a reserved DB Instance offering. </para>
+    /// <para> Purchases a reserved DB instance offering. </para>
     /// </summary>
     public partial class PurchaseReservedDBInstancesOfferingRequest : AmazonWebServiceRequest
     {
         private string reservedDBInstancesOfferingId;
         private string reservedDBInstanceId;
         private int? dBInstanceCount;
+        private List<Tag> tags = new List<Tag>();
 
         /// <summary>
-        /// The ID of the Reserved DB Instance offering to purchase. Example: 438012d3-4052-4cc7-b2e3-8d3372e0e706
+        /// The ID of the Reserved DB instance offering to purchase. Example: 438012d3-4052-4cc7-b2e3-8d3372e0e706
         ///  
         /// </summary>
         public string ReservedDBInstancesOfferingId
@@ -79,6 +80,22 @@ namespace Amazon.RDS.Model
         internal bool IsSetDBInstanceCount()
         {
             return this.dBInstanceCount.HasValue;
+        }
+
+        /// <summary>
+        /// A list of tags.
+        ///  
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this.tags; }
+            set { this.tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this.tags.Count > 0;
         }
 
     }

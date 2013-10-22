@@ -417,16 +417,6 @@ namespace Amazon.Runtime.Internal.Transform
                 nodeContent = String.Empty;
         }
 
-        /// <summary>
-        /// The <c>XmlNodeType</c> of the current event. Will be one of
-        /// <c>Element</c>, <c>EndElement</c>, or <c>Attribute</c> during parsing,
-        /// and <c>None</c> at the start and end.
-        /// </summary>
-        private XmlNodeType NodeType
-        {
-            get { return this.nodeType; }
-        }
-
         #endregion
     }
 

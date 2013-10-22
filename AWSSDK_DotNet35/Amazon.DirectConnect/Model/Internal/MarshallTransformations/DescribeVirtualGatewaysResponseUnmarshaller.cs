@@ -38,7 +38,7 @@
           return response;
         }
         
-        private void UnmarshallResult(JsonUnmarshallerContext context,DescribeVirtualGatewaysResponse response)
+        private static void UnmarshallResult(JsonUnmarshallerContext context,DescribeVirtualGatewaysResponse response)
         {
           
             int originalDepth = context.CurrentDepth;

@@ -12,69 +12,70 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System.Collections.Generic;
+    using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using ThirdParty.Json.LitJson;
+    using Amazon.ElasticMapReduce.Model;
+    using Amazon.Runtime.Internal.Transform;
 
-using Amazon.ElasticMapReduce.Model;
-using Amazon.Runtime.Internal.Transform;
-
-namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
-{
-     /// <summary>
-     ///   BootstrapActionConfig Unmarshaller
-     /// </summary>
-    internal class BootstrapActionConfigUnmarshaller : IUnmarshaller<BootstrapActionConfig, XmlUnmarshallerContext>, IUnmarshaller<BootstrapActionConfig, JsonUnmarshallerContext> 
+    namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
     {
-        public BootstrapActionConfig Unmarshall(XmlUnmarshallerContext context) 
+      /// <summary>
+      /// BootstrapActionConfigUnmarshaller
+      /// </summary>
+      internal class BootstrapActionConfigUnmarshaller : IUnmarshaller<BootstrapActionConfig, XmlUnmarshallerContext>, IUnmarshaller<BootstrapActionConfig, JsonUnmarshallerContext>
+      {
+        BootstrapActionConfig IUnmarshaller<BootstrapActionConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
+          throw new NotImplementedException();
+        }
+
+        public BootstrapActionConfig Unmarshall(JsonUnmarshallerContext context)
+        {
+            if (context.CurrentTokenType == JsonToken.Null)
+                return null;
+
             BootstrapActionConfig bootstrapActionConfig = new BootstrapActionConfig();
+
+        
+        
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
-            
-            if (context.IsStartOfDocument) 
-               targetDepth += 2;
-            
             while (context.Read())
             {
-                if (context.IsStartElement || context.IsAttribute)
-                {
-                    if (context.TestExpression("Name", targetDepth))
-                    {
-                        bootstrapActionConfig.Name = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("ScriptBootstrapAction", targetDepth))
-                    {
-                        bootstrapActionConfig.ScriptBootstrapAction = ScriptBootstrapActionConfigUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                }
-                else if (context.IsEndElement && context.CurrentDepth < originalDepth)
+              
+              if (context.TestExpression("Name", targetDepth))
+              {
+                context.Read();
+                bootstrapActionConfig.Name = StringUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
+              if (context.TestExpression("ScriptBootstrapAction", targetDepth))
+              {
+                context.Read();
+                bootstrapActionConfig.ScriptBootstrapAction = ScriptBootstrapActionConfigUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
+                if (context.CurrentDepth <= originalDepth)
                 {
                     return bootstrapActionConfig;
                 }
             }
-                        
-
+          
 
             return bootstrapActionConfig;
         }
 
-        public BootstrapActionConfig Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
-        }
-
         private static BootstrapActionConfigUnmarshaller instance;
-
-        public static BootstrapActionConfigUnmarshaller GetInstance() 
+        public static BootstrapActionConfigUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new BootstrapActionConfigUnmarshaller();
-
+            if (instance == null)
+                instance = new BootstrapActionConfigUnmarshaller();
             return instance;
         }
     }
 }
-    
+  

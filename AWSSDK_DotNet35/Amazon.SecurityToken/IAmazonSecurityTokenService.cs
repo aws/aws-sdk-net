@@ -24,14 +24,19 @@ namespace Amazon.SecurityToken
     ///  
     ///  AWS Security Token Service <para>The AWS Security Token Service is a web service that enables you to request temporary, limited-privilege
     /// credentials for AWS Identity and Access Management (IAM) users or for users that you authenticate (federated users). This guide provides
-    /// descriptions of the AWS Security Token Service API.</para> <para> For more detailed information about using this service, go to Using
-    /// Temporary Security Credentials. </para> <para> For information about setting up signatures and authorization through the API, go to Signing
-    /// AWS API Requests in the <i>AWS General Reference</i> . For general information about the Query API, go to Making Query Requests in <i>Using
-    /// IAM</i> . For information about using security tokens with other AWS products, go to Using Temporary Security Credentials to Access AWS in
-    /// <i>Using Temporary Security Credentials</i> .
+    /// descriptions of the AWS Security Token Service API.</para> <para> For more detailed information about using this service, go to <a
+    /// href="http://docs.aws.amazon.com/IAM/latest/UsingSTS/Welcome.html" >Using Temporary Security Credentials</a> .
+    /// </para> <para> For information about setting up signatures and authorization through the API, go to <a
+    /// href="http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html" >Signing AWS API Requests</a> in the <i>AWS General
+    /// Reference</i> . For general information about the Query API, go to <a
+    /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html" >Making Query Requests</a> in <i>Using IAM</i> . For
+    /// information about using security tokens with other AWS products, go to <a
+    /// href="http://docs.aws.amazon.com/IAM/latest/UsingSTS/UsingTokens.html" >Using Temporary Security Credentials to Access AWS</a> in <i>Using
+    /// Temporary Security Credentials</i> .
     /// </para> <para> If you're new to AWS and need additional technical information about a specific AWS product, you can find the product's
-    /// technical documentation at http://aws.amazon.com/documentation/. </para> <para> We will refer to Amazon Identity and Access Management using
-    /// the abbreviated form IAM. All copyrights and legal protections still apply. </para>
+    /// technical documentation at <a href="http://aws.amazon.com/documentation/" >http://aws.amazon.com/documentation/</a> .
+    /// </para> <para> We will refer to Amazon Identity and Access Management using the abbreviated form IAM. All copyrights and legal
+    /// protections still apply. </para>
     /// </summary>
     public interface IAmazonSecurityTokenService : IDisposable
     {
@@ -46,13 +51,14 @@ namespace Amazon.SecurityToken
         /// You could create long-term credentials in each account to access those resources. However, managing all those credentials and remembering
         /// which one can access which account can be time consuming. Instead, you can create one set of long-term credentials in one account and then
         /// use temporary security credentials to access all the other accounts by assuming roles in those accounts. For more information about roles,
-        /// see Roles in <i>Using IAM</i> .
+        /// see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html" >Roles</a> in <i>Using IAM</i> .
         /// </para> <para> For federation, you can, for example, grant single sign-on access to the AWS Management Console. If you already have an
         /// identity and authentication system in your corporate network, you don't have to recreate user identities in AWS in order to grant those user
         /// identities access to AWS. Instead, after a user has been authenticated, you call <c>AssumeRole</c> (and specify the role with the
         /// appropriate permissions) to get temporary security credentials for that user. With those temporary security credentials, you construct a
-        /// sign-in URL that users can use to access the console. For more information, see Scenarios for Granting Temporary Access in <i>AWS Security
-        /// Token Service</i> .
+        /// sign-in URL that users can use to access the console. For more information, see <a
+        /// href="http://docs.aws.amazon.com/STS/latest/UsingSTS/STSUseCases.html" >Scenarios for Granting Temporary Access</a> in <i>AWS Security Token
+        /// Service</i> .
         /// </para> <para> The temporary security credentials are valid for the duration that you specified when calling <c>AssumeRole</c> , which can
         /// be from 900 seconds (15 minutes) to 3600 seconds (1 hour). The default is 1 hour. </para> <para> The temporary security credentials that are
         /// returned from the <c>AssumeRoleWithWebIdentity</c> response have the permissions that are associated with the access policy of the role
@@ -112,8 +118,9 @@ namespace Amazon.SecurityToken
         /// identity provider, such as Login with Amazon, Facebook, or Google. <c>AssumeRoleWithWebIdentity</c> is an API call that does not require the
         /// use of AWS security credentials. Therefore, you can distribute an application (for example, on mobile devices) that requests temporary
         /// security credentials without including long-term AWS credentials in the application or by deploying server-based proxy services that use
-        /// long-term AWS credentials. For more information, see Creating a Mobile Application with Third-Party Sign-In in <i>AWS Security Token
-        /// Service</i> .
+        /// long-term AWS credentials. For more information, see <a
+        /// href="http://aws-docs-alpha.integ.amazon.com/STS/latest/UsingSTS/STSUseCases.html#MobileApplication-KnownProvider" >Creating a Mobile
+        /// Application with Third-Party Sign-In</a> in <i>AWS Security Token Service</i> .
         /// </para> <para> The temporary security credentials consist of an access key ID, a secret access key, and a security token. Applications can
         /// use these temporary security credentials to sign calls to AWS service APIs. The credentials are valid for the duration that you specified
         /// when calling <c>AssumeRoleWithWebIdentity</c> , which can be from 900 seconds (15 minutes) to 3600 seconds (1 hour). By default, the
@@ -124,8 +131,10 @@ namespace Amazon.SecurityToken
         /// evaluated when calls to AWS service APIs are made using the temporary security credentials. </para> <para> Before your application can call
         /// <c>AssumeRoleWithWebIdentity</c> , you must have an identity token from a supported identity provider and create a role that the application
         /// can assume. The role that your application assumes must trust the identity provider that is associated with the identity token. In other
-        /// words, the identity provider must be specified in the role's trust policy. For more information, see Creating Temporary Security Credentials
-        /// for Mobile Apps Using Third-Party Identity Providers. </para>
+        /// words, the identity provider must be specified in the role's trust policy. For more information, see <a
+        /// href="http://docs.aws.amazon.com/STS/latest/UsingSTS/CreatingWIF.html" > Creating Temporary Security Credentials for Mobile Apps Using
+        /// Third-Party Identity Providers</a> .
+        /// </para>
         /// </summary>
         /// 
         /// <param name="assumeRoleWithWebIdentityRequest">Container for the necessary parameters to execute the AssumeRoleWithWebIdentity service
@@ -184,9 +193,11 @@ namespace Amazon.SecurityToken
         /// seconds (36 hours); credentials that are created by using account credentials have a maximum duration of 3600 seconds (1 hour).</para>
         /// <para> The permissions that are granted to the federated user are the intersection of the policy that is passed with the
         /// <c>GetFederationToken</c> request and policies that are associated with of the entity making the <c>GetFederationToken</c> call. </para>
-        /// <para> For more information about how permissions work, see Controlling Permissions in Temporary Credentials in <i>Using Temporary Security
-        /// Credentials</i> . For information about using <c>GetFederationToken</c> to create temporary security credentials, see Creating Temporary
-        /// Credentials to Enable Access for Federated Users in <i>Using Temporary Security Credentials</i> .</para>
+        /// <para> For more information about how permissions work, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/TokenPermissions.html"
+        /// >Controlling Permissions in Temporary Credentials</a> in <i>Using Temporary Security Credentials</i> . For information about using
+        /// <c>GetFederationToken</c> to create temporary security credentials, see <a
+        /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/CreatingFedTokens.html" >Creating Temporary Credentials to Enable Access for Federated
+        /// Users</a> in <i>Using Temporary Security Credentials</i> .</para>
         /// </summary>
         /// 
         /// <param name="getFederationTokenRequest">Container for the necessary parameters to execute the GetFederationToken service method on
@@ -239,8 +250,9 @@ namespace Amazon.SecurityToken
         /// that you specify, between 900 seconds (15 minutes) and 129600 seconds (36 hours); credentials that are created by using account credentials
         /// have a maximum duration of 3600 seconds (1 hour).</para> <para> The permissions that are granted to the federated user are the intersection
         /// of the policy that is passed with the <c>GetSessionToken</c> request and policies that are associated with of the entity making the
-        /// <c>GetSessionToken</c> call. </para> <para>For more information about using <c>GetSessionToken</c> to create temporary credentials, go to
-        /// Creating Temporary Credentials to Enable Access for IAM Users in <i>Using IAM</i> .</para>
+        /// <c>GetSessionToken</c> call. </para> <para>For more information about using <c>GetSessionToken</c> to create temporary credentials, go to <a
+        /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/CreatingSessionTokens.html" >Creating Temporary Credentials to Enable Access for IAM
+        /// Users</a> in <i>Using IAM</i> .</para>
         /// </summary>
         /// 
         /// <param name="getSessionTokenRequest">Container for the necessary parameters to execute the GetSessionToken service method on
@@ -285,8 +297,9 @@ namespace Amazon.SecurityToken
         /// that you specify, between 900 seconds (15 minutes) and 129600 seconds (36 hours); credentials that are created by using account credentials
         /// have a maximum duration of 3600 seconds (1 hour).</para> <para> The permissions that are granted to the federated user are the intersection
         /// of the policy that is passed with the <c>GetSessionToken</c> request and policies that are associated with of the entity making the
-        /// <c>GetSessionToken</c> call. </para> <para>For more information about using <c>GetSessionToken</c> to create temporary credentials, go to
-        /// Creating Temporary Credentials to Enable Access for IAM Users in <i>Using IAM</i> .</para>
+        /// <c>GetSessionToken</c> call. </para> <para>For more information about using <c>GetSessionToken</c> to create temporary credentials, go to <a
+        /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/CreatingSessionTokens.html" >Creating Temporary Credentials to Enable Access for IAM
+        /// Users</a> in <i>Using IAM</i> .</para>
         /// </summary>
         /// 
         /// <returns>The response from the GetSessionToken service method, as returned by AmazonSecurityTokenService.</returns>

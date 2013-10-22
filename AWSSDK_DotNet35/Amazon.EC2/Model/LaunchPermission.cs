@@ -27,7 +27,7 @@ namespace Amazon.EC2.Model
     {
         
         private string userId;
-        private string group;
+        private PermissionGroup group;
 
         /// <summary>
         /// The AWS user ID of the user involved in this launch permission.
@@ -48,8 +48,17 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// The AWS group of the user involved in this launch permission. Available groups: <c>all</c>
         ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>all</description>
+        ///     </item>
+        /// </list>
+        /// </para>
         /// </summary>
-        public string Group
+        public PermissionGroup Group
         {
             get { return this.group; }
             set { this.group = value; }

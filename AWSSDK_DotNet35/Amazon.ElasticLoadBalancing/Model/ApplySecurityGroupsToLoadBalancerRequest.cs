@@ -25,7 +25,7 @@ namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
     /// Container for the parameters to the ApplySecurityGroupsToLoadBalancer operation.
-    /// <para> Associates one or more security groups with your LoadBalancer in VPC. The provided security group IDs will override any currently
+    /// <para> Associates one or more security groups with your load balancer in VPC. The provided security group IDs will override any currently
     /// applied security groups. </para>
     /// </summary>
     public partial class ApplySecurityGroupsToLoadBalancerRequest : AmazonWebServiceRequest
@@ -34,7 +34,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         private List<string> securityGroups = new List<string>();
 
         /// <summary>
-        /// The name associated with the LoadBalancer. The name must be unique within the client AWS account.
+        /// The name associated with the load balancer. The name must be unique within the client AWS account.
         ///  
         /// </summary>
         public string LoadBalancerName
@@ -50,7 +50,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         }
 
         /// <summary>
-        /// A list of security group IDs to associate with your LoadBalancer in VPC. The security group IDs must be provided as the ID and not the
+        /// A list of security group IDs to associate with your load balancer in VPC. The security group IDs must be provided as the ID and not the
         /// security group name (For example, sg-1234).
         ///  
         /// </summary>

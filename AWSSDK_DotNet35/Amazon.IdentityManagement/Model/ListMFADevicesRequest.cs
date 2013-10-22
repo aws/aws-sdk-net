@@ -96,7 +96,8 @@ namespace Amazon.IdentityManagement.Model
 
         /// <summary>
         /// Use this only when paginating results to indicate the maximum number of MFA devices you want in the response. If there are additional MFA
-        /// devices beyond the maximum you specify, the <c>IsTruncated</c> response element is <c>true</c>.
+        /// devices beyond the maximum you specify, the <c>IsTruncated</c> response element is <c>true</c>. This parameter is optional. If you do not
+        /// include it, it defaults to 100.
         ///  
         /// <para>
         /// <b>Constraints:</b>

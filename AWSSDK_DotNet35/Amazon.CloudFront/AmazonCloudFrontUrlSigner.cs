@@ -386,14 +386,6 @@ namespace Amazon.CloudFront
             }
         }
 
-        private static RSAParameters ConvertPEMToRSAParameters(string pathToPrivateKey)
-        {
-            using (StreamReader reader = new StreamReader(pathToPrivateKey))
-            {
-                return ConvertPEMToRSAParameters(reader);
-            }
-        }
-
         private static RSAParameters ConvertPEMToRSAParameters(StreamReader privateKeyReader)
         {
             RSAParameters rsaParams;

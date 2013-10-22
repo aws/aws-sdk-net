@@ -47,6 +47,11 @@ namespace Amazon.Util
                 return this._type.GetInterfaces().FirstOrDefault(x => (x.Namespace + "." + x.Name) == name);
             }
 
+            public override Type[] GetInterfaces()
+            {
+                return this._type.GetInterfaces();
+            }
+
             public override IEnumerable<PropertyInfo> GetProperties()
             {
                 return this._type.GetProperties();
@@ -57,9 +62,24 @@ namespace Amazon.Util
                 return this._type.GetFields();
             }
 
+            public override MemberInfo[] GetMembers()
+            {
+                return this._type.GetMembers();
+            }
+
             public override bool IsClass
             {
                 get { return this._type.IsClass; }
+            }
+
+            public override bool IsInterface
+            {
+                get { return this._type.IsInterface; }
+            }
+
+            public override bool IsAbstract
+            {
+                get { return this._type.IsAbstract; }
             }
 
             public override bool IsEnum
@@ -97,6 +117,41 @@ namespace Amazon.Util
             public override bool IsAssignableFrom(ITypeInfo typeInfo)
             {
                 return this._type.IsAssignableFrom(((AbstractTypeInfo)typeInfo).Type);
+            }
+
+            public override bool ContainsGenericParameters
+            {
+                get { return this._type.ContainsGenericParameters; }
+            }
+
+            public override bool IsGenericTypeDefinition
+            {
+                get { return this._type.IsGenericTypeDefinition; }
+            }
+
+            public override bool IsGenericType
+            {
+                get { return this._type.IsGenericType; }
+            }
+
+            public override Type GetGenericTypeDefinition()
+            {
+                return this._type.GetGenericTypeDefinition();
+            }
+
+            public override Type[] GetGenericArguments()
+            {
+                return this._type.GetGenericArguments();
+            }
+
+            public override object[] GetCustomAttributes(bool inherit)
+            {
+                return this._type.GetCustomAttributes(inherit);
+            }
+
+            public override object[] GetCustomAttributes(ITypeInfo attributeType, bool inherit)
+            {
+                return this._type.GetCustomAttributes(((TypeInfoWrapper)attributeType)._type, inherit);
             }
 
             public override Assembly Assembly

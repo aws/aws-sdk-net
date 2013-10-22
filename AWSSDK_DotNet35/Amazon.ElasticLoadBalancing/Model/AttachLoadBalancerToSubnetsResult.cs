@@ -30,7 +30,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         private List<string> subnets = new List<string>();
 
         /// <summary>
-        /// A list of subnet IDs added for the LoadBalancer.
+        /// A list of subnet IDs added for the load balancer.
         ///  
         /// </summary>
         public List<string> Subnets

@@ -34,7 +34,11 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(describeSnapshotsRequest, "AmazonEC2");
             request.Parameters.Add("Action", "DescribeSnapshots");
-            request.Parameters.Add("Version", "2013-02-01");
+            request.Parameters.Add("Version", "2013-10-01");
+            if (describeSnapshotsRequest != null && describeSnapshotsRequest.IsSetDryRun())
+            {
+                request.Parameters.Add("DryRun", StringUtils.FromBool(describeSnapshotsRequest.DryRun));
+            }
             if (describeSnapshotsRequest != null)
             {
                 List<string> snapshotIdsList = describeSnapshotsRequest.SnapshotIds;

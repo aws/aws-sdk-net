@@ -14,9 +14,13 @@
  */
 
 using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 using System.Text;
+
+using Amazon.Util;
 
 namespace Amazon.DynamoDBv2.DataModel
 {
@@ -26,38 +30,40 @@ namespace Amazon.DynamoDBv2.DataModel
 
         public static bool IsPrimitive(Type type)
         {
+            var typeWrapper = TypeFactory.GetTypeInfo(type);
             return (
-                type.IsAssignableFrom(typeof(Boolean)) ||
-                type.IsAssignableFrom(typeof(Byte)) ||
-                type.IsAssignableFrom(typeof(Char)) ||
-                type.IsAssignableFrom(typeof(DateTime)) ||
-                type.IsAssignableFrom(typeof(Decimal)) ||
-                type.IsAssignableFrom(typeof(Double)) ||
-                type.IsAssignableFrom(typeof(int)) ||
-                type.IsAssignableFrom(typeof(long)) ||
-                type.IsAssignableFrom(typeof(SByte)) ||
-                type.IsAssignableFrom(typeof(short)) ||
-                type.IsAssignableFrom(typeof(Single)) ||
-                type.IsAssignableFrom(typeof(String)) ||
-                type.IsAssignableFrom(typeof(uint)) ||
-                type.IsAssignableFrom(typeof(ulong)) ||
-                type.IsAssignableFrom(typeof(ushort)) ||
-                type.IsAssignableFrom(typeof(Guid)) ||
-                type.IsAssignableFrom(typeof(byte[])) ||
-                type.IsAssignableFrom(typeof(MemoryStream)));
+                typeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(Boolean))) ||
+                typeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(Byte))) ||
+                typeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(Char))) ||
+                typeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(DateTime))) ||
+                typeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(Decimal))) ||
+                typeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(Double))) ||
+                typeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(int))) ||
+                typeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(long))) ||
+                typeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(SByte))) ||
+                typeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(short))) ||
+                typeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(Single))) ||
+                typeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(String))) ||
+                typeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(uint))) ||
+                typeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(ulong))) ||
+                typeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(ushort))) ||
+                typeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(Guid))) ||
+                typeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(byte[]))) ||
+                typeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(MemoryStream))));
         }
 
         public static void ValidateVersionType(Type memberType)
         {
-            if (memberType.IsGenericType && memberType.GetGenericTypeDefinition() == typeof(Nullable<>) &&
-                (memberType.IsAssignableFrom(typeof(Byte)) ||
-                memberType.IsAssignableFrom(typeof(SByte)) ||
-                memberType.IsAssignableFrom(typeof(int)) ||
-                memberType.IsAssignableFrom(typeof(uint)) ||
-                memberType.IsAssignableFrom(typeof(long)) ||
-                memberType.IsAssignableFrom(typeof(ulong)) ||
-                memberType.IsAssignableFrom(typeof(short)) ||
-                memberType.IsAssignableFrom(typeof(ushort))))
+            var memberTypeWrapper = TypeFactory.GetTypeInfo(memberType);
+            if (memberTypeWrapper.IsGenericType && memberTypeWrapper.GetGenericTypeDefinition() == typeof(Nullable<>) &&
+                (memberTypeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(Byte))) ||
+                memberTypeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(SByte))) ||
+                memberTypeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(int))) ||
+                memberTypeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(uint))) ||
+                memberTypeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(long))) ||
+                memberTypeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(ulong))) ||
+                memberTypeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(short))) ||
+                memberTypeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(ushort)))))
             {
                 return;
             }
@@ -79,13 +85,17 @@ namespace Amazon.DynamoDBv2.DataModel
         public static DynamoDBAttribute GetAttribute(Type targetType)
         {
             if (targetType == null) throw new ArgumentNullException("targetType");
-            object[] attributes = targetType.GetCustomAttributes(typeof(DynamoDBAttribute), true);
+            object[] attributes = TypeFactory.GetTypeInfo(targetType).GetCustomAttributes(TypeFactory.GetTypeInfo(typeof(DynamoDBAttribute)), true);
             return GetSingleDDBAttribute(attributes);
         }
         public static DynamoDBAttribute GetAttribute(MemberInfo targetMemberInfo)
         {
             if (targetMemberInfo == null) throw new ArgumentNullException("targetMemberInfo");
+#if (WIN_RT || WINDOWS_PHONE)
+            object[] attributes = targetMemberInfo.GetCustomAttributes(typeof(DynamoDBAttribute), true).ToArray();
+#else
             object[] attributes = targetMemberInfo.GetCustomAttributes(typeof(DynamoDBAttribute), true);
+#endif
             return GetSingleDDBAttribute(attributes);
         }
 
@@ -115,21 +125,24 @@ namespace Amazon.DynamoDBv2.DataModel
                 throw new ArgumentNullException();
             if (!CanInstantiate(objectType))
                 throw new InvalidOperationException("Cannot instantiate type " + objectType.FullName);
-            var constructorInfo = objectType.GetConstructor(Type.EmptyTypes);
+
+            var objectTypeWrapper = TypeFactory.GetTypeInfo(objectType);
+            var constructorInfo = objectTypeWrapper.GetConstructor(TypeFactory.EmptyTypes);
             if (constructorInfo == null) throw new InvalidOperationException("Type must have a parameterless constructor");
             object instance = constructorInfo.Invoke(null);
             return instance;
         }
         public static bool CanInstantiate(Type objectType)
         {
+            var objectTypeWrapper = TypeFactory.GetTypeInfo(objectType);
             return
                 //objectType.IsPublic &&
-                objectType.IsClass &&
-                !objectType.IsInterface &&
-                !objectType.IsAbstract &&
-                !objectType.IsGenericTypeDefinition &&
-                !objectType.ContainsGenericParameters &&
-                objectType.GetConstructor(Type.EmptyTypes) != null; // parameterless constructor present?
+                objectTypeWrapper.IsClass &&
+                !objectTypeWrapper.IsInterface &&
+                !objectTypeWrapper.IsAbstract &&
+                !objectTypeWrapper.IsGenericTypeDefinition &&
+                !objectTypeWrapper.ContainsGenericParameters &&
+                objectTypeWrapper.GetConstructor(TypeFactory.EmptyTypes) != null; // parameterless constructor present?
         }
         public static Type GetType(MemberInfo member)
         {
@@ -155,16 +168,19 @@ namespace Amazon.DynamoDBv2.DataModel
         }
         public static bool ImplementsInterface(Type targetType, Type interfaceType)
         {
-            if (!interfaceType.IsInterface)
+            var targetTypeWrapper = TypeFactory.GetTypeInfo(targetType);
+            var interfaceTypeWrapper = TypeFactory.GetTypeInfo(interfaceType);
+            if (!interfaceTypeWrapper.IsInterface)
                 throw new ArgumentOutOfRangeException("interfaceType", "Type is not an interface");
 
-            foreach (var inter in targetType.GetInterfaces())
+            foreach (var inter in targetTypeWrapper.GetInterfaces())
             {
-                if (inter == interfaceType)
+                var interWrapper = TypeFactory.GetTypeInfo(inter);
+                if (object.Equals(interWrapper, interfaceTypeWrapper))
                     return true;
-                if (interfaceType.IsGenericTypeDefinition && inter.IsGenericType)
+                if (interfaceTypeWrapper.IsGenericTypeDefinition && interWrapper.IsGenericType)
                 {
-                    var generic = inter.GetGenericTypeDefinition();
+                    var generic = interWrapper.GetGenericTypeDefinition();
                     if (generic == interfaceType)
                         return true;
                 }

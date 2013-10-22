@@ -25,9 +25,9 @@ namespace Amazon.EC2.Model
     public class InstanceCount
     {
         
-        private string state;
+        private ListingState state;
         private int? count;
-        public string State
+        public ListingState State
         {
             get { return this.state; }
             set { this.state = value; }

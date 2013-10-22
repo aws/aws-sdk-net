@@ -22,7 +22,7 @@ namespace Amazon.Auth.AccessControlPolicy.ActionIdentifiers
     /// The available AWS access control policy actions for AWS Identity and Access Management.
     /// </summary>
     /// <see cref="Amazon.Auth.AccessControlPolicy.Statement.Actions"/>
-    public class IdentityandAccessManagementActionIdentifiers
+    public static class IdentityandAccessManagementActionIdentifiers
     {
         public static readonly ActionIdentifier AllIdentityandAccessManagementActions = new ActionIdentifier("iam:*");
 

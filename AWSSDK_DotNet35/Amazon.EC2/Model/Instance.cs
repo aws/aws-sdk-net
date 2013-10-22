@@ -40,19 +40,19 @@ namespace Amazon.EC2.Model
         private Placement placement;
         private string kernelId;
         private string ramdiskId;
-        private string platform;
+        private PlatformValues platform;
         private Monitoring monitoring;
         private string subnetId;
         private string vpcId;
         private string privateIpAddress;
         private string publicIpAddress;
         private StateReason stateReason;
-        private string architecture;
-        private string rootDeviceType;
+        private ArchitectureValues architecture;
+        private DeviceType rootDeviceType;
         private string rootDeviceName;
         private List<InstanceBlockDeviceMapping> blockDeviceMappings = new List<InstanceBlockDeviceMapping>();
         private VirtualizationType virtualizationType;
-        private string instanceLifecycle;
+        private InstanceLifecycleType instanceLifecycle;
         private string spotInstanceRequestId;
         private InstanceLicense license;
         private string clientToken;
@@ -303,8 +303,17 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Platform of the instance (e.g., Windows).
         ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>Windows</description>
+        ///     </item>
+        /// </list>
+        /// </para>
         /// </summary>
-        public string Platform
+        public PlatformValues Platform
         {
             get { return this.platform; }
             set { this.platform = value; }
@@ -415,8 +424,17 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// The architecture of this instance.
         ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>i386, x86_64</description>
+        ///     </item>
+        /// </list>
+        /// </para>
         /// </summary>
-        public string Architecture
+        public ArchitectureValues Architecture
         {
             get { return this.architecture; }
             set { this.architecture = value; }
@@ -431,8 +449,17 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// The root device type used by the AMI. The AMI can use an Amazon EBS or instance store root device.
         ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>ebs, instance-store</description>
+        ///     </item>
+        /// </list>
+        /// </para>
         /// </summary>
-        public string RootDeviceType
+        public DeviceType RootDeviceType
         {
             get { return this.rootDeviceType; }
             set { this.rootDeviceType = value; }
@@ -490,8 +517,17 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// 
         ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>spot</description>
+        ///     </item>
+        /// </list>
+        /// </para>
         /// </summary>
-        public string InstanceLifecycle
+        public InstanceLifecycleType InstanceLifecycle
         {
             get { return this.instanceLifecycle; }
             set { this.instanceLifecycle = value; }

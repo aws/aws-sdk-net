@@ -309,7 +309,11 @@ namespace Amazon.DynamoDBv2.DocumentModel
             }
         }
 
+#if (WIN_RT || WINDOWS_PHONE)
+        private void CallUntilCompletion(AmazonDynamoDBClient client, BatchGetItemRequest request)
+#else
         private void CallUntilCompletion(IAmazonDynamoDB client, BatchGetItemRequest request)
+#endif
         {
             do
             {
@@ -410,10 +414,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
         private class RequestSet : QuickList<Dictionary<string, AttributeValue>>
         {
             public DocumentBatchGet Batch { get; private set; }
-
-            public RequestSet(DocumentBatchGet batch)
-                : this(new Dictionary<string, AttributeValue>[0], batch)
-            { }
 
             public RequestSet(IEnumerable<Dictionary<string, AttributeValue>> items, DocumentBatchGet batch)
                 : base(items)

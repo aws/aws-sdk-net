@@ -25,23 +25,33 @@ namespace Amazon.AWSSupport.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateCase operation.
-    /// <para>Creates a new case in the AWS Support Center. This action is modeled on the behavior of the AWS Support Center Open a new case page.
-    /// Its parameters require you to specify the following information: </para> <ol> <li> <b>ServiceCode.</b> Represents a code for an AWS service.
-    /// You obtain the <i>ServiceCode</i> by calling DescribeServices. </li>
+    /// <para>Creates a new case in the AWS Support Center. This action is modeled on the behavior of the AWS Support Center <a
+    /// href="https://aws.amazon.com/support/createCase" >Open a new case</a> page. Its parameters require you to specify the following information:
+    /// </para> <ol> <li> <b>ServiceCode.</b> Represents a code for an AWS service. You obtain the <i>ServiceCode</i> by calling <a
+    /// href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeServices.html" >DescribeServices</a> . </li>
     /// <li> <b>CategoryCode</b> . Represents a category for the service defined for the ServiceCode value. You also obtain the cateogory code for
-    /// a service by calling DescribeServices. Each AWS service defines its own set of category codes. </li>
+    /// a service by calling <a href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeServices.html" >DescribeServices</a> .
+    /// Each AWS service defines its own set of category codes. </li>
     /// <li> <b>SeverityCode</b> . Represents a value that specifies the urgency of the case, and the time interval in which your service level
-    /// agreement specifies a response from AWS Support. You obtain the SeverityCode by calling DescribeSeverityLevels.</li>
-    /// <li> <b>Subject</b> . Represents the <b>Subject</b> field on the AWS Support Center Open a new case page.</li>
-    /// <li> <b>CommunicationBody</b> . Represents the <b>Description</b> field on the AWS Support Center Open a new case page.</li>
+    /// agreement specifies a response from AWS Support. You obtain the SeverityCode by calling <a
+    /// href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeSeverityLevels.html" >DescribeSeverityLevels</a> .</li>
+    /// <li> <b>Subject</b> . Represents the <b>Subject</b> field on the AWS Support Center <a href="https://aws.amazon.com/support/createCase"
+    /// >Open a new case</a> page.</li>
+    /// <li> <b>CommunicationBody</b> . Represents the <b>Description</b> field on the AWS Support Center <a
+    /// href="https://aws.amazon.com/support/createCase" >Open a new case</a> page.</li>
     /// <li> <b>Language</b> . Specifies the human language in which AWS Support handles the case. The API currently supports English and
     /// Japanese.</li>
-    /// <li> <b>CcEmailAddresses</b> . Represents the AWS Support Center <b>CC</b> field on the Open a new case page. You can list email
-    /// addresses to be copied on any correspondence about the case. The account that opens the case is already identified by passing the AWS
-    /// Credentials in the HTTP POST method or in a method or function call from one of the programming languages supported by an AWS SDK. </li>
+    /// <li> <b>CcEmailAddresses</b> . Represents the AWS Support Center <b>CC</b> field on the <a
+    /// href="https://aws.amazon.com/support/createCase" >Open a new case</a> page. You can list email addresses to be copied on any correspondence
+    /// about the case. The account that opens the case is already identified by passing the AWS Credentials in the HTTP POST method or in a method
+    /// or function call from one of the programming languages supported by an <a href="http://aws.amazon.com/tools/" >AWS SDK</a> . </li>
+    /// <li> <b>IssueType</b> . Indicates the type of issue for the case. You can specify either "customer-service" or "technical." If you do not
+    /// indicate a value, this parameter defaults to "technical." </li>
     /// </ol> <para><b>NOTE:</b>The AWS Support API does not currently support the ability to add attachments to cases. You can, however, call
-    /// AddCommunicationToCase to add information to an open case. </para> <para>A successful CreateCase request returns an AWS Support case number.
-    /// Case numbers are used by DescribeCases request to retrieve existing AWS Support support cases. </para>
+    /// AddCommunicationToCase to add information to an open case. </para> <para>A successful <a
+    /// href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_CreateCase.html" >CreateCase</a> request returns an AWS Support case
+    /// number. Case numbers are used by <a href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeCases.html"
+    /// >DescribeCases</a> request to retrieve existing AWS Support support cases. </para>
     /// </summary>
     public partial class CreateCaseRequest : AmazonWebServiceRequest
     {
@@ -71,7 +81,8 @@ namespace Amazon.AWSSupport.Model
         }
 
         /// <summary>
-        /// Code for the AWS service returned by the call to <a href="API_DescribeServices.html" title="DescribeServices">DescribeServices</a>.
+        /// Code for the AWS service returned by the call to <a
+        /// href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeServices.html" title="DescribeServices">DescribeServices</a>.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -96,7 +107,8 @@ namespace Amazon.AWSSupport.Model
         }
 
         /// <summary>
-        /// Code for the severity level returned by the call to <a href="API_DescribeSeverityLevels.html"
+        /// Code for the severity level returned by the call to <a
+        /// href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeSeverityLevels.html"
         /// title="DescribeSeverityLevels">DescribeSeverityLevels</a>. <note>The availability of severity levels depends on each customer's support
         /// subscription. In other words, your subscription may not necessarily require the urgent level of response time.</note>
         ///  
@@ -130,8 +142,8 @@ namespace Amazon.AWSSupport.Model
         }
 
         /// <summary>
-        /// Parameter that represents the communication body text when you create an AWS Support case by calling <a href="API_CreateCase.html"
-        /// title="CreateCase">CreateCase</a>.
+        /// Parameter that represents the communication body text when you create an AWS Support case by calling <a
+        /// href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_CreateCase.html" title="CreateCase">CreateCase</a>.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -198,7 +210,8 @@ namespace Amazon.AWSSupport.Model
         }
 
         /// <summary>
-        /// Field passed as a parameter in a <a href="API_CreateCase.html" title="CreateCase">CreateCase</a> call.
+        /// Field passed as a parameter in a <a href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_CreateCase.html"
+        /// title="CreateCase">CreateCase</a> call.
         ///  
         /// </summary>
         public string IssueType

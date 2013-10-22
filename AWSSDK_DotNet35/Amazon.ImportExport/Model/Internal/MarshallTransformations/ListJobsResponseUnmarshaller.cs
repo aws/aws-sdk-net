@@ -52,7 +52,7 @@ namespace Amazon.ImportExport.Model.Internal.MarshallTransformations
             return response;
         }
         
-        private void UnmarshallResult(XmlUnmarshallerContext context,ListJobsResponse response)
+        private static void UnmarshallResult(XmlUnmarshallerContext context,ListJobsResponse response)
         {
             
             int originalDepth = context.CurrentDepth;

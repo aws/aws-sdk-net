@@ -38,7 +38,7 @@
           return response;
         }
         
-        private void UnmarshallResult(JsonUnmarshallerContext context,ListPartsResponse response)
+        private static void UnmarshallResult(JsonUnmarshallerContext context,ListPartsResponse response)
         {
           
             int originalDepth = context.CurrentDepth;

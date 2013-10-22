@@ -30,6 +30,7 @@ namespace Amazon.IdentityManagement
         public AmazonIdentityManagementServiceConfig()
         {
             this.AuthenticationServiceName = "iam";
+            this.RegionEndpoint = RegionEndpoint.USEast1;
         }
 
         /// <summary>

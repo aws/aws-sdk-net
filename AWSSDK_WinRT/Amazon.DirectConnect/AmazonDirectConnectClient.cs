@@ -35,10 +35,14 @@ namespace Amazon.DirectConnect
     /// the actions and data types for AWS Direct Connect. Use the following links to get started using the <i>AWS Direct Connect API Reference</i>
     /// :</para>
     /// <ul>
-    /// <li> Actions: An alphabetical list of all AWS Direct Connect actions.</li>
-    /// <li> Data Types: An alphabetical list of all AWS Direct Connect data types.</li>
-    /// <li> Common Query Parameters: Parameters that all Query actions can use.</li>
-    /// <li> Common Errors: Client and server errors that all actions can return.</li>
+    /// <li> <a href="http://docs.aws.amazon.com/directconnect/latest/APIReference/API_Operations.html">Actions</a> : An alphabetical list of all
+    /// AWS Direct Connect actions.</li>
+    /// <li> <a href="http://docs.aws.amazon.com/directconnect/latest/APIReference/API_Types.html">Data Types</a> : An alphabetical list of all
+    /// AWS Direct Connect data types.</li>
+    /// <li> <a href="http://docs.aws.amazon.com/directconnect/latest/APIReference/CommonParameters.html">Common Query Parameters</a> : Parameters
+    /// that all Query actions can use.</li>
+    /// <li> <a href="http://docs.aws.amazon.com/directconnect/latest/APIReference/CommonErrors.html">Common Errors</a> : Client and server errors
+    /// that all actions can return.</li>
     /// 
     /// </ul>
     /// </summary>
@@ -74,7 +78,7 @@ namespace Amazon.DirectConnect
         /// <param name="credentials">AWS Credentials</param>
         /// <param name="clientConfig">The AmazonDirectConnectClient Configuration Object</param>
         public AmazonDirectConnectClient(AWSCredentials credentials, AmazonDirectConnectConfig clientConfig)
-            : base(credentials, clientConfig, false, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(credentials, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
         {
         }
 
@@ -156,6 +160,19 @@ namespace Amazon.DirectConnect
         #endregion
 
  
+		internal CreateConnectionResponse CreateConnection(CreateConnectionRequest request)
+        {
+            var task = CreateConnectionAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Creates a new network connection between the customer network and a specific AWS Direct Connect location.</para> <para>A connection
         /// links your internal network to an AWS Direct Connect location over a standard 1 gigabit or 10 gigabit Ethernet fiber-optic cable. One end of
@@ -183,6 +200,19 @@ namespace Amazon.DirectConnect
             return response;
         }
  
+		internal CreatePrivateVirtualInterfaceResponse CreatePrivateVirtualInterface(CreatePrivateVirtualInterfaceRequest request)
+        {
+            var task = CreatePrivateVirtualInterfaceAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Creates a new private virtual interface. A virtual interface is the VLAN that transports AWS Direct Connect traffic. A private
         /// virtual interface supports sending traffic to a single Virtual Private Cloud (VPC). </para>
@@ -207,6 +237,19 @@ namespace Amazon.DirectConnect
             return response;
         }
  
+		internal CreatePublicVirtualInterfaceResponse CreatePublicVirtualInterface(CreatePublicVirtualInterfaceRequest request)
+        {
+            var task = CreatePublicVirtualInterfaceAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Creates a new public virtual interface. A virtual interface is the VLAN that transports AWS Direct Connect traffic. A public virtual
         /// interface supports sending traffic to public services of AWS such as Amazon Simple Storage Service (Amazon S3). </para>
@@ -231,6 +274,19 @@ namespace Amazon.DirectConnect
             return response;
         }
  
+		internal DeleteConnectionResponse DeleteConnection(DeleteConnectionRequest request)
+        {
+            var task = DeleteConnectionAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Deletes the connection.</para> <para>Deleting a connection only stops the AWS Direct Connect port hour and data transfer charges. You
         /// separately need to cancel any services or charges for cross-connects or network circuits that connect you to the AWS Direct Connect location
@@ -256,6 +312,19 @@ namespace Amazon.DirectConnect
             return response;
         }
  
+		internal DeleteVirtualInterfaceResponse DeleteVirtualInterface(DeleteVirtualInterfaceRequest request)
+        {
+            var task = DeleteVirtualInterfaceAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Deletes a virtual interface. </para>
         /// </summary>
@@ -279,6 +348,19 @@ namespace Amazon.DirectConnect
             return response;
         }
  
+		internal DescribeConnectionDetailResponse DescribeConnectionDetail(DescribeConnectionDetailRequest request)
+        {
+            var task = DescribeConnectionDetailAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Displays details about a specific connection including the order steps for the connection and the current state of the connection
         /// order.</para>
@@ -303,6 +385,19 @@ namespace Amazon.DirectConnect
             return response;
         }
  
+		internal DescribeConnectionsResponse DescribeConnections(DescribeConnectionsRequest request)
+        {
+            var task = DescribeConnectionsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Displays all connections in this region.</para> <para>If a connection ID is provided, it will only return this particular
         /// connection.</para>
@@ -327,6 +422,19 @@ namespace Amazon.DirectConnect
             return response;
         }
  
+		internal DescribeOfferingDetailResponse DescribeOfferingDetail(DescribeOfferingDetailRequest request)
+        {
+            var task = DescribeOfferingDetailAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Displays additional ordering step details for a specified offering.</para>
         /// </summary>
@@ -350,6 +458,19 @@ namespace Amazon.DirectConnect
             return response;
         }
  
+		internal DescribeOfferingsResponse DescribeOfferings(DescribeOfferingsRequest request)
+        {
+            var task = DescribeOfferingsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Describes one or more of the offerings that are currently available for creating new connections. The results include offerings for
         /// all regions.</para> <para>To order a new connection you need to select a specific offering ID.</para>
@@ -374,10 +495,24 @@ namespace Amazon.DirectConnect
             return response;
         }
  
+		internal DescribeVirtualGatewaysResponse DescribeVirtualGateways(DescribeVirtualGatewaysRequest request)
+        {
+            var task = DescribeVirtualGatewaysAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Returns a list of virtual private gateways owned by the AWS account.</para> <para>You can create one or more AWS Direct Connect
         /// private virtual interfaces linking to a virtual private gateway. A virtual private gateway can be managed via Amazon Virtual Private Cloud
-        /// (VPC) console or the EC2 CreateVpnGateway action.</para>
+        /// (VPC) console or the <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-CreateVpnGateway.html">EC2
+        /// CreateVpnGateway</a> action.</para>
         /// </summary>
         /// 
         /// <param name="describeVirtualGatewaysRequest">Container for the necessary parameters to execute the DescribeVirtualGateways service method on
@@ -399,6 +534,19 @@ namespace Amazon.DirectConnect
             return response;
         }
  
+		internal DescribeVirtualInterfacesResponse DescribeVirtualInterfaces(DescribeVirtualInterfacesRequest request)
+        {
+            var task = DescribeVirtualInterfacesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Displays all virtual interfaces for an AWS account. Virtual interfaces deleted fewer than 15 minutes before DescribeVirtualInterfaces
         /// is called are also returned. If a connection ID is included then only virtual interfaces associated with this connection will be returned.

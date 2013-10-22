@@ -38,7 +38,7 @@
           return response;
         }
         
-        private void UnmarshallResult(JsonUnmarshallerContext context,GetVaultNotificationsResponse response)
+        private static void UnmarshallResult(JsonUnmarshallerContext context,GetVaultNotificationsResponse response)
         {
           response.VaultNotificationConfig = VaultNotificationConfigUnmarshaller.GetInstance().Unmarshall(context);             
             return;

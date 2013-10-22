@@ -27,7 +27,7 @@ namespace Amazon.EC2.Model
     {
         
         private string zoneName;
-        private string state;
+        private AvailabilityZoneState state;
         private string regionName;
         private List<AvailabilityZoneMessage> messages = new List<AvailabilityZoneMessage>();
 
@@ -50,8 +50,17 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// State of the Availability Zone.
         ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>available</description>
+        ///     </item>
+        /// </list>
+        /// </para>
         /// </summary>
-        public string State
+        public AvailabilityZoneState State
         {
             get { return this.state; }
             set { this.state = value; }

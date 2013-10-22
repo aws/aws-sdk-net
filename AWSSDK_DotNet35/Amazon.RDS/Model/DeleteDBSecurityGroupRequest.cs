@@ -25,17 +25,17 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteDBSecurityGroup operation.
-    /// <para> Deletes a DB Security Group. </para> <para><b>NOTE:</b>The specified DB Security Group must not be associated with any DB
-    /// Instances.</para>
+    /// <para> Deletes a DB security group. </para> <para><b>NOTE:</b>The specified DB security group must not be associated with any DB
+    /// instances.</para>
     /// </summary>
     public partial class DeleteDBSecurityGroupRequest : AmazonWebServiceRequest
     {
         private string dBSecurityGroupName;
 
         /// <summary>
-        /// The name of the DB Security Group to delete. <note>You cannot delete the default DB Security Group.</note> Constraints: <ul> <li>Must be 1
+        /// The name of the DB security group to delete. <note>You cannot delete the default DB security group.</note> Constraints: <ul> <li>Must be 1
         /// to 255 alphanumeric characters</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive
-        /// hyphens</li> </ul>
+        /// hyphens</li> <li>Must not be "Default"</li> <li>May not contain spaces</li> </ul>
         ///  
         /// </summary>
         public string DBSecurityGroupName

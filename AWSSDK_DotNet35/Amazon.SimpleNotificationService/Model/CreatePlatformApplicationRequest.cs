@@ -32,7 +32,8 @@ namespace Amazon.SimpleNotificationService.Model
     /// "client id". The PlatformCredential is also received from the notification service. For APNS/APNS_SANDBOX, PlatformCredential is "private
     /// key". For GCM, PlatformCredential is "API key". For ADM, PlatformCredential is "client secret". The PlatformApplicationArn that is returned
     /// when using <c>CreatePlatformApplication</c> is then used as an attribute for the <c>CreatePlatformEndpoint</c> action. For more information,
-    /// see Using Amazon SNS Mobile Push Notifications. </para>
+    /// see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html" >Using Amazon SNS Mobile Push Notifications</a> .
+    /// </para>
     /// </summary>
     public partial class CreatePlatformApplicationRequest : AmazonWebServiceRequest
     {

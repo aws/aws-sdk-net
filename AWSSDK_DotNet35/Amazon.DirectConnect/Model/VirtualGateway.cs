@@ -22,7 +22,8 @@ namespace Amazon.DirectConnect.Model
 {
     /// <summary>
     /// <para>You can create one or more Direct Connect private virtual interfaces linking to your virtual private gateway.</para> <para>Virtual
-    /// private gateway can be managed via AWS Virtual Private Cloud Console or the EC2 CreateVpnGateway API.</para>
+    /// private gateway can be managed via AWS Virtual Private Cloud Console or the <a
+    /// href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-CreateVpnGateway.html" >EC2 CreateVpnGateway API</a> .</para>
     /// </summary>
     public class VirtualGateway
     {

@@ -25,20 +25,21 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeDBSnapshots operation.
-    /// <para> Returns information about DBSnapshots. This API supports pagination. </para>
+    /// <para> Returns information about DB snapshots. This API supports pagination. </para>
     /// </summary>
     public partial class DescribeDBSnapshotsRequest : AmazonWebServiceRequest
     {
         private string dBInstanceIdentifier;
         private string dBSnapshotIdentifier;
         private string snapshotType;
+        private List<Filter> filters = new List<Filter>();
         private int? maxRecords;
         private string marker;
 
         /// <summary>
-        /// A DB Instance Identifier to retrieve the list of DB Snapshots for. Cannot be used in conjunction with DBSnapshotIdentifier. This parameter
-        /// isn't case sensitive. Constraints: <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First character must be a
-        /// letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
+        /// A DB instance identifier to retrieve the list of DB snapshots for. Cannot be used in conjunction with <c>DBSnapshotIdentifier</c>. This
+        /// parameter is not case sensitive. Constraints: <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First character
+        /// must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
         ///  
         /// </summary>
         public string DBInstanceIdentifier
@@ -54,10 +55,10 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// A specific DB Snapshot Identifier to describe. Cannot be used in conjunction with DBInstanceIdentifier. This value is stored as a lowercase
-        /// string. Constraints: <ul> <li>Must be 1 to 255 alphanumeric characters</li> <li>First character must be a letter</li> <li>Cannot end with a
-        /// hyphen or contain two consecutive hyphens</li> <li>If this is the identifier of an automated snapshot, the <c>SnapshotType</c> parameter
-        /// must also be specified.</li> </ul>
+        /// A specific DB snapshot identifier to describe. Cannot be used in conjunction with <c>DBInstanceIdentifier</c>. This value is stored as a
+        /// lowercase string. Constraints: <ul> <li>Must be 1 to 255 alphanumeric characters</li> <li>First character must be a letter</li> <li>Cannot
+        /// end with a hyphen or contain two consecutive hyphens</li> <li>If this is the identifier of an automated snapshot, the <c>SnapshotType</c>
+        /// parameter must also be specified.</li> </ul>
         ///  
         /// </summary>
         public string DBSnapshotIdentifier
@@ -73,7 +74,8 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// An optional snapshot type for which snapshots will be returned. If not specified, the returned results will include snapshots of all types.
+        /// The type of snapshots that will be returned. Values can be "automated" or "manual." If not specified, the returned results will include all
+        /// snapshots types.
         ///  
         /// </summary>
         public string SnapshotType
@@ -86,6 +88,17 @@ namespace Amazon.RDS.Model
         internal bool IsSetSnapshotType()
         {
             return this.snapshotType != null;
+        }
+        public List<Filter> Filters
+        {
+            get { return this.filters; }
+            set { this.filters = value; }
+        }
+
+        // Check to see if Filters property is set
+        internal bool IsSetFilters()
+        {
+            return this.filters.Count > 0;
         }
 
         /// <summary>
@@ -107,8 +120,8 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// An optional pagination token provided by a previous DescribeDBSnapshots request. If this parameter is specified, the response includes only
-        /// records beyond the marker, up to the value specified by <c>MaxRecords</c>.
+        /// An optional pagination token provided by a previous <c>DescribeDBSnapshots</c> request. If this parameter is specified, the response
+        /// includes only records beyond the marker, up to the value specified by <c>MaxRecords</c>.
         ///  
         /// </summary>
         public string Marker

@@ -47,7 +47,7 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// The generated hostname.
+        /// The generated host name.
         ///  
         /// </summary>
         public string Hostname

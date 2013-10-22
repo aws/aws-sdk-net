@@ -17,13 +17,14 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using Amazon.Runtime;
 
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
     /// <para> Contains the count of tasks in a task list. </para>
     /// </summary>
-    public class PendingTaskCount
+    public partial class PendingTaskCount : AmazonWebServiceResponse
     {
         
         private int? count;

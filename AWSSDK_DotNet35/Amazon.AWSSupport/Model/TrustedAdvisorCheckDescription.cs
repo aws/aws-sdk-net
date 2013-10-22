@@ -21,7 +21,9 @@ using System.IO;
 namespace Amazon.AWSSupport.Model
 {
     /// <summary>
-    /// <para>Description of each check returned by DescribeTrustedAdvisorChecks.</para>
+    /// <para>Description of each check returned by <a
+    /// href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorChecks.html" >DescribeTrustedAdvisorChecks</a>
+    /// .</para>
     /// </summary>
     public class TrustedAdvisorCheckDescription
     {
@@ -97,7 +99,7 @@ namespace Amazon.AWSSupport.Model
         }
 
         /// <summary>
-        /// List of metadata returned in <a href="API_TrustedAdvisorResourceDetail.html"
+        /// List of metadata returned in <a href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorResourceDetail.html"
         /// title="TrustedAdvisorResourceDetail">TrustedAdvisorResourceDetail</a> objects for a Trusted Advisor check.
         ///  
         /// </summary>

@@ -30,8 +30,20 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeKeyPairsRequest : AmazonWebServiceRequest
     {
+        private bool? dryRun;
         private List<string> keyNames = new List<string>();
         private List<Filter> filters = new List<Filter>();
+        public bool DryRun
+        {
+            get { return this.dryRun ?? default(bool); }
+            set { this.dryRun = value; }
+        }
+
+        // Check to see if DryRun property is set
+        internal bool IsSetDryRun()
+        {
+            return this.dryRun.HasValue;
+        }
 
         /// <summary>
         /// The optional list of key pair names to describe.

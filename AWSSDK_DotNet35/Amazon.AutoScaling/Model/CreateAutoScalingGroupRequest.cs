@@ -27,7 +27,7 @@ namespace Amazon.AutoScaling.Model
     /// Container for the parameters to the CreateAutoScalingGroup operation.
     /// <para> Creates a new Auto Scaling group with the specified name and other attributes. When the creation request is completed, the Auto
     /// Scaling group is ready to be used in other calls. </para> <para><b>NOTE:</b> The Auto Scaling group name must be unique within the scope of
-    /// your AWS account, and under the quota of Auto Scaling groups allowed for your account. </para>
+    /// your AWS account. </para>
     /// </summary>
     public partial class CreateAutoScalingGroupRequest : AmazonWebServiceRequest
     {
@@ -76,7 +76,7 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// The name of the launch configuration to use with the Auto Scaling group.
+        /// The name of an existing launch configuration to use to launch new instances.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -137,7 +137,8 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// The number of Amazon EC2 instances that should be running in the group.
+        /// The number of Amazon EC2 instances that should be running in the group. The desired capacity must be greater than or equal to the minimum
+        /// size and less than or equal to the maximum size specified for the Auto Scaling group.
         ///  
         /// </summary>
         public int DesiredCapacity
@@ -153,7 +154,9 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// The amount of time, in seconds, after a scaling activity completes before any further trigger-related scaling activities can start.
+        /// The amount of time, in seconds, between a successful scaling activity and the succeeding scaling activity. If a <c>DefaultCooldown</c>
+        /// period is not specified, Auto Scaling uses the default value of 300 as the default cool down period for the Auto Scaling group. For more
+        /// information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AS_Concepts.html#Cooldown">Cooldown Period</a>
         ///  
         /// </summary>
         public int DefaultCooldown
@@ -194,7 +197,9 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// A list of load balancers to use.
+        /// A list of existing Elastic Load Balancing load balancers to use. The load balancers must be associated with the AWS account. For information
+        /// on using load balancers, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US_SetUpASLBApp.html">Use Load Balancer
+        /// to Load Balance Your Auto Scaling Group</a>.
         ///  
         /// </summary>
         public List<string> LoadBalancerNames
@@ -210,7 +215,9 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// The service you want the health status from, Amazon EC2 or Elastic Load Balancer. Valid values are <c>EC2</c> or <c>ELB</c>.
+        /// The service you want the health checks from, Amazon EC2 or Elastic Load Balancer. Valid values are <c>EC2</c> or <c>ELB</c>. By default, the
+        /// Auto Scaling health check uses the results of Amazon EC2 instance status checks to determine the health of an instance. For more
+        /// information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AS_Concepts.html#healthcheck">Health Check</a>.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -239,7 +246,10 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// Length of time in seconds after a new Amazon EC2 instance comes into service that Auto Scaling starts checking its health.
+        /// Length of time in seconds after a new Amazon EC2 instance comes into service that Auto Scaling starts checking its health. During this time
+        /// any health check failure for the that instance is ignored. This is required if you are adding <c>ELB</c> health check. Frequently, new
+        /// instances need to warm up, briefly, before they can pass a health check. To provide ample warm-up time, set the health check grace period of
+        /// the group to match the expected startup period of your application.
         ///  
         /// </summary>
         public int HealthCheckGracePeriod
@@ -255,8 +265,8 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// Physical location of your cluster placement group created in Amazon EC2. For more information about cluster placement group, see <a
-        /// href="http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">Using Cluster Instances</a>
+        /// Physical location of an existing cluster placement group into which you want to launch your instances. For information about cluster
+        /// placement group, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">Using Cluster Instances</a>
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -286,7 +296,10 @@ namespace Amazon.AutoScaling.Model
 
         /// <summary>
         /// A comma-separated list of subnet identifiers of Amazon Virtual Private Clouds (Amazon VPCs). If you specify subnets and Availability Zones
-        /// with this call, ensure that the subnets' Availability Zones match the Availability Zones specified.
+        /// with this call, ensure that the subnets' Availability Zones match the Availability Zones specified. For information on launching your Auto
+        /// Scaling group into Amazon VPC subnets, see <a
+        /// href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/autoscalingsubnets.html">Launch Auto Scaling Instances into Amazon
+        /// VPC</a>.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -316,9 +329,9 @@ namespace Amazon.AutoScaling.Model
 
         /// <summary>
         /// A standalone termination policy or a list of termination policies used to select the instance to terminate. The policies are executed in the
-        /// order that they are listed. For more information on configuring a termination policy for your Auto Scaling group, go to <a
-        /// href="http://docs.amazonwebservices.com/AutoScaling/latest/DeveloperGuide/us-termination-policy.html">Instance Termination Policy for Your
-        /// Auto Scaling Group</a> in the the <i>Auto Scaling Developer Guide</i>.
+        /// order that they are listed. For more information on configuring a termination policy for your Auto Scaling group, see <a
+        /// href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/us-termination-policy.html">Instance Termination Policy for Your Auto
+        /// Scaling Group</a> in the the <i>Auto Scaling Developer Guide</i>.
         ///  
         /// </summary>
         public List<string> TerminationPolicies
@@ -335,7 +348,9 @@ namespace Amazon.AutoScaling.Model
 
         /// <summary>
         /// The tag to be created or updated. Each tag should be defined by its resource type, resource ID, key, value, and a propagate flag. Valid
-        /// values: key=<i>value</i>, value=<i>value</i>, propagate=<i>true</i> or <i>false</i>. Value and propagate are optional parameters.
+        /// values: key=<i>value</i>, value=<i>value</i>, propagate=<i>true</i> or <i>false</i>. Value and propagate are optional parameters. For
+        /// information about using tags, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/ASTagging.html">Tag Your Auto
+        /// Scaling Groups and Amazon EC2 Instances</a>.
         ///  
         /// </summary>
         public List<Tag> Tags

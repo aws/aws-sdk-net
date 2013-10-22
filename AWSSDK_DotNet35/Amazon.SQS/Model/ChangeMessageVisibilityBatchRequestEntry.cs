@@ -21,7 +21,12 @@ using System.IO;
 namespace Amazon.SQS.Model
 {
     /// <summary>
-    /// <para>Encloses a receipt handle and an entry id for each message in ChangeMessageVisibilityBatch.</para>
+    /// <para>Encloses a receipt handle and an entry id for each message in ChangeMessageVisibilityBatch. </para> <para><b>IMPORTANT:</b> All of the
+    /// following parameters are list parameters that must be prefixed with ChangeMessageVisibilityBatchRequestEntry.n, where n is an integer value
+    /// starting with 1. For example, a parameter list for this action might look like this: </para> <para>
+    /// <c>&amp;amp;ChangeMessageVisibilityBatchRequestEntry.1.Id=change_visibility_msg_2</c> </para> <para>
+    /// <c>&amp;amp;ChangeMessageVisibilityBatchRequestEntry.1.ReceiptHandle=Your_Receipt_Handle </c> </para> <para>
+    /// <c>&amp;amp;ChangeMessageVisibilityBatchRequestEntry.1.VisibilityTimeout=45</c> </para>
     /// </summary>
     public class ChangeMessageVisibilityBatchRequestEntry
     {

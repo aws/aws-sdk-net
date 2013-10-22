@@ -28,7 +28,7 @@ namespace Amazon.EC2.Model
         
         private string instanceId;
         private string bundleId;
-        private string state;
+        private BundleTaskState state;
         private DateTime? startTime;
         private DateTime? updateTime;
         private Storage storage;
@@ -70,8 +70,17 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// The state of this task.
         ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>pending, waiting-for-shutdown, bundling, storing, cancelling, complete, failed</description>
+        ///     </item>
+        /// </list>
+        /// </para>
         /// </summary>
-        public string State
+        public BundleTaskState State
         {
             get { return this.state; }
             set { this.state = value; }

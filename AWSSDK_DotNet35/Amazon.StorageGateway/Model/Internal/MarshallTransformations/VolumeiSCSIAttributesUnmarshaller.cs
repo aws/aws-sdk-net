@@ -33,6 +33,9 @@
 
         public VolumeiSCSIAttributes Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonToken.Null)
+                return null;
+
             VolumeiSCSIAttributes volumeiSCSIAttributes = new VolumeiSCSIAttributes();
 
         

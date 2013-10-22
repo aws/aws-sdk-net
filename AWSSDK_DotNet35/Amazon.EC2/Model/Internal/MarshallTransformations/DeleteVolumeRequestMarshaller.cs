@@ -34,7 +34,11 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(deleteVolumeRequest, "AmazonEC2");
             request.Parameters.Add("Action", "DeleteVolume");
-            request.Parameters.Add("Version", "2013-02-01");
+            request.Parameters.Add("Version", "2013-10-01");
+            if (deleteVolumeRequest != null && deleteVolumeRequest.IsSetDryRun())
+            {
+                request.Parameters.Add("DryRun", StringUtils.FromBool(deleteVolumeRequest.DryRun));
+            }
             if (deleteVolumeRequest != null && deleteVolumeRequest.IsSetVolumeId())
             {
                 request.Parameters.Add("VolumeId", StringUtils.FromString(deleteVolumeRequest.VolumeId));

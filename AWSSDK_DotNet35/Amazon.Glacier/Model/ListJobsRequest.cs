@@ -43,8 +43,9 @@ namespace Amazon.Glacier.Model
     /// specified status are returned. The <c>completed</c> parameter allows you to specify that only jobs in a specific completion state are
     /// returned.</para> <para>An AWS account has full permission to perform all operations (actions). However, AWS Identity and Access Management
     /// (IAM) users don't have any permissions by default. You must grant them explicit permission to perform specific actions. For more
-    /// information, see Access Control Using AWS Identity and Access Management (IAM).</para> <para>For the underlying REST API, go to List Jobs
-    /// </para>
+    /// information, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html" >Access Control Using AWS
+    /// Identity and Access Management (IAM)</a> .</para> <para>For the underlying REST API, go to <a
+    /// href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-jobs-get.html" >List Jobs </a> </para>
     /// </summary>
     public partial class ListJobsRequest : AmazonWebServiceRequest
     {

@@ -34,7 +34,11 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(deleteCustomerGatewayRequest, "AmazonEC2");
             request.Parameters.Add("Action", "DeleteCustomerGateway");
-            request.Parameters.Add("Version", "2013-02-01");
+            request.Parameters.Add("Version", "2013-10-01");
+            if (deleteCustomerGatewayRequest != null && deleteCustomerGatewayRequest.IsSetDryRun())
+            {
+                request.Parameters.Add("DryRun", StringUtils.FromBool(deleteCustomerGatewayRequest.DryRun));
+            }
             if (deleteCustomerGatewayRequest != null && deleteCustomerGatewayRequest.IsSetCustomerGatewayId())
             {
                 request.Parameters.Add("CustomerGatewayId", StringUtils.FromString(deleteCustomerGatewayRequest.CustomerGatewayId));

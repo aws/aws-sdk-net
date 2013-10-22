@@ -35,8 +35,9 @@ namespace Amazon.DataPipeline
     /// Runner. AWS Data Pipeline Task Runner provides logic for common data management scenarios, such as performing database queries and running
     /// data analysis using Amazon Elastic MapReduce (Amazon EMR). You can use AWS Data Pipeline Task Runner as your task runner, or you can write
     /// your own task runner to provide custom data management. </para> <para> The AWS Data Pipeline API uses the Signature Version 4 protocol for
-    /// signing requests. For more information about how to sign a request with this protocol, see Signature Version 4 Signing Process. In the code
-    /// examples in this reference, the Signature Version 4 Request parameters are represented as AuthParams. </para>
+    /// signing requests. For more information about how to sign a request with this protocol, see <a
+    /// href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html" >Signature Version 4 Signing Process</a> . In the code examples
+    /// in this reference, the Signature Version 4 Request parameters are represented as AuthParams. </para>
     /// </summary>
     public interface IAmazonDataPipeline : IDisposable
     {

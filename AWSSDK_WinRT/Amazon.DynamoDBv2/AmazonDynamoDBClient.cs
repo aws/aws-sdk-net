@@ -69,7 +69,7 @@ namespace Amazon.DynamoDBv2
         /// <param name="credentials">AWS Credentials</param>
         /// <param name="clientConfig">The AmazonDynamoDBClient Configuration Object</param>
         public AmazonDynamoDBClient(AWSCredentials credentials, AmazonDynamoDBConfig clientConfig)
-            : base(credentials, clientConfig, false, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(credentials, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
         {
         }
 
@@ -151,6 +151,19 @@ namespace Amazon.DynamoDBv2
         #endregion
 
  
+		internal BatchGetItemResponse BatchGetItem(BatchGetItemRequest request)
+        {
+            var task = BatchGetItemAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>The <i>BatchGetItem</i> operation returns the attributes of one or more items from one or more tables. You identify requested items by
         /// primary key.</para> <para>A single operation can retrieve up to 1 MB of data, which can comprise as many as 100 items. <i>BatchGetItem</i>
@@ -166,7 +179,8 @@ namespace Amazon.DynamoDBv2
         /// application, keep in mind that Amazon DynamoDB does not return attributes in any particular order. To help parse the response by item,
         /// include the primary key values for the items in your request in the <i>AttributesToGet</i> parameter.</para> <para>If a requested item does
         /// not exist, it is not returned in the result. Requests for nonexistent items consume the minimum read capacity units according to the type of
-        /// read. For more information, see Capacity Units Calculations in the Amazon DynamoDB Developer Guide.</para>
+        /// read. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDDTables.html#CapacityUnitCalculations">Capacity Units
+        /// Calculations</a> in the Amazon DynamoDB Developer Guide.</para>
         /// </summary>
         /// 
         /// <param name="batchGetItemRequest">Container for the necessary parameters to execute the BatchGetItem service method on
@@ -189,6 +203,19 @@ namespace Amazon.DynamoDBv2
             return response;
         }
  
+		internal BatchWriteItemResponse BatchWriteItem(BatchWriteItemRequest request)
+        {
+            var task = BatchWriteItemAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>The <i>BatchWriteItem</i> operation puts or deletes multiple items in one or more tables. A single call to <i>BatchWriteItem</i> can
         /// write up to 1 MB of data, which can comprise as many as 25 put or delete requests. Individual items to be written can be as large as 64
@@ -243,6 +270,19 @@ namespace Amazon.DynamoDBv2
             return response;
         }
  
+		internal CreateTableResponse CreateTable(CreateTableRequest request)
+        {
+            var task = CreateTableAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>The <i>CreateTable</i> operation adds a new table to your account. In an AWS account, table names must be unique within each region.
         /// That is, you can have two tables with same name if you create the tables in different regions.</para> <para> <i>CreateTable</i> is an
@@ -273,6 +313,19 @@ namespace Amazon.DynamoDBv2
             return response;
         }
  
+		internal DeleteItemResponse DeleteItem(DeleteItemRequest request)
+        {
+            var task = DeleteItemAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Deletes a single item in a table by primary key. You can perform a conditional delete operation that deletes the item if it exists, or
         /// if it has an expected attribute value.</para> <para>In addition to deleting an item, you can also return the item's attribute values in the
@@ -303,6 +356,19 @@ namespace Amazon.DynamoDBv2
             return response;
         }
  
+		internal DeleteTableResponse DeleteTable(DeleteTableRequest request)
+        {
+            var task = DeleteTableAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>The <i>DeleteTable</i> operation deletes a table and all of its items. After a <i>DeleteTable</i> request, the specified table is in
         /// the <c>DELETING</c> state until Amazon DynamoDB completes the deletion. If the table is in the <c>ACTIVE</c> state, you can delete it. If a
@@ -335,6 +401,19 @@ namespace Amazon.DynamoDBv2
             return response;
         }
  
+		internal DescribeTableResponse DescribeTable(DescribeTableRequest request)
+        {
+            var task = DescribeTableAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Returns information about the table, including the current status of the table, when it was created, the primary key schema, and any
         /// indexes on the table.</para>
@@ -359,6 +438,19 @@ namespace Amazon.DynamoDBv2
             return response;
         }
  
+		internal GetItemResponse GetItem(GetItemRequest request)
+        {
+            var task = GetItemAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>The <i>GetItem</i> operation returns a set of attributes for the item with the given primary key. If there is no matching item,
         /// <i>GetItem</i> does not return any data.</para> <para> <i>GetItem</i> provides an eventually consistent read by default. If your application
@@ -385,6 +477,19 @@ namespace Amazon.DynamoDBv2
             return response;
         }
  
+		internal ListTablesResponse ListTables(ListTablesRequest request)
+        {
+            var task = ListTablesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Returns an array of all the tables associated with the current account and endpoint. </para>
         /// </summary>
@@ -406,6 +511,19 @@ namespace Amazon.DynamoDBv2
             return response;
         }
  
+		internal PutItemResponse PutItem(PutItemRequest request)
+        {
+            var task = PutItemAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Creates a new item, or replaces an old item with a new item. If an item already exists in the specified table with the same primary
         /// key, the new item completely replaces the existing item. You can perform a conditional put (insert a new item if one with the specified
@@ -416,7 +534,8 @@ namespace Amazon.DynamoDBv2
         /// <i>ValidationException</i> .</para> <para>You can request that <i>PutItem</i> return either a copy of the old item (before the update) or a
         /// copy of the new item (after the update). For more information, see the <i>ReturnValues</i> description.</para> <para><b>NOTE:</b> To prevent
         /// a new item from replacing an existing item, use a conditional put operation with Exists set to false for the primary key attribute, or
-        /// attributes. </para> <para>For more information about using this API, see Working with Items in the Amazon DynamoDB Developer Guide.</para>
+        /// attributes. </para> <para>For more information about using this API, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDDItems.html">Working with Items</a> in the Amazon
+        /// DynamoDB Developer Guide.</para>
         /// </summary>
         /// 
         /// <param name="putItemRequest">Container for the necessary parameters to execute the PutItem service method on AmazonDynamoDBv2.</param>
@@ -440,6 +559,19 @@ namespace Amazon.DynamoDBv2
             return response;
         }
  
+		internal QueryResponse Query(QueryRequest request)
+        {
+            var task = QueryAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>A <i>Query</i> operation directly accesses items from a table using the table primary key, or from an index using the index key. You
         /// must provide a specific hash key value. You can narrow the scope of the query by using comparison operators on the range key value, or on
@@ -471,6 +603,19 @@ namespace Amazon.DynamoDBv2
             return response;
         }
  
+		internal ScanResponse Scan(ScanRequest request)
+        {
+            var task = ScanAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>The <i>Scan</i> operation returns one or more items and item attributes by accessing every item in the table. To have Amazon DynamoDB
         /// return fewer items, you can provide a <i>ScanFilter</i> .</para> <para>If the total number of scanned items exceeds the maximum data set
@@ -478,7 +623,8 @@ namespace Amazon.DynamoDBv2
         /// operation. The results also include the number of items exceeding the limit. A scan can result in no table data meeting the filter criteria.
         /// </para> <para>The result set is eventually consistent. </para> <para>By default, <i>Scan</i> operations proceed sequentially; however, for
         /// faster performance on large tables, applications can request a parallel <i>Scan</i> by specifying the <i>Segment</i> and
-        /// <i>TotalSegments</i> parameters. For more information, see Parallel Scan in the Amazon DynamoDB Developer Guide.</para>
+        /// <i>TotalSegments</i> parameters. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#QueryAndScanParallelScan">Parallel Scan</a> in the
+        /// Amazon DynamoDB Developer Guide.</para>
         /// </summary>
         /// 
         /// <param name="scanRequest">Container for the necessary parameters to execute the Scan service method on AmazonDynamoDBv2.</param>
@@ -500,6 +646,19 @@ namespace Amazon.DynamoDBv2
             return response;
         }
  
+		internal UpdateItemResponse UpdateItem(UpdateItemRequest request)
+        {
+            var task = UpdateItemAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Edits an existing item's attributes, or inserts a new item if it does not already exist. You can put, delete, or add attribute
         /// values. You can also perform a conditional update (insert a new attribute name-value pair if it doesn't exist, or replace an existing
@@ -528,15 +687,29 @@ namespace Amazon.DynamoDBv2
             return response;
         }
  
+		internal UpdateTableResponse UpdateTable(UpdateTableRequest request)
+        {
+            var task = UpdateTableAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Updates the provisioned throughput for the given table. Setting the throughput for a table helps you manage performance and is part of
         /// the provisioned throughput feature of Amazon DynamoDB.</para> <para>The provisioned throughput values can be upgraded or downgraded based on
-        /// the maximums and minimums listed in the Limits section in the Amazon DynamoDB Developer Guide.</para> <para>The table must be in the
-        /// <c>ACTIVE</c> state for this operation to succeed. <i>UpdateTable</i> is an asynchronous operation; while executing the operation, the table
-        /// is in the <c>UPDATING</c> state. While the table is in the <c>UPDATING</c> state, the table still has the provisioned throughput from before
-        /// the call. The new provisioned throughput setting is in effect only when the table returns to the <c>ACTIVE</c> state after the
-        /// <i>UpdateTable</i> operation. </para> <para>You cannot add, modify or delete local secondary indexes using <i>UpdateTable</i> . Local
-        /// secondary indexes can only be defined at table creation time.</para>
+        /// the maximums and minimums listed in the <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
+        /// section in the Amazon DynamoDB Developer Guide.</para> <para>The table must be in the <c>ACTIVE</c> state for this operation to succeed.
+        /// <i>UpdateTable</i> is an asynchronous operation; while executing the operation, the table is in the <c>UPDATING</c> state. While the table
+        /// is in the <c>UPDATING</c> state, the table still has the provisioned throughput from before the call. The new provisioned throughput setting
+        /// is in effect only when the table returns to the <c>ACTIVE</c> state after the <i>UpdateTable</i> operation. </para> <para>You cannot add,
+        /// modify or delete local secondary indexes using <i>UpdateTable</i> . Local secondary indexes can only be defined at table creation
+        /// time.</para>
         /// </summary>
         /// 
         /// <param name="updateTableRequest">Container for the necessary parameters to execute the UpdateTable service method on

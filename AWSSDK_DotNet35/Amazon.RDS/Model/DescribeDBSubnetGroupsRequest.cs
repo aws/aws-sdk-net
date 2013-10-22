@@ -26,16 +26,19 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// Container for the parameters to the DescribeDBSubnetGroups operation.
     /// <para> Returns a list of DBSubnetGroup descriptions. If a DBSubnetGroupName is specified, the list will contain only the descriptions of the
-    /// specified DBSubnetGroup. </para> <para>For an overview of CIDR ranges, go to the Wikipedia Tutorial. </para>
+    /// specified DBSubnetGroup. </para> <para>For an overview of CIDR ranges, go to the <a
+    /// href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing" >Wikipedia Tutorial</a> .
+    /// </para>
     /// </summary>
     public partial class DescribeDBSubnetGroupsRequest : AmazonWebServiceRequest
     {
         private string dBSubnetGroupName;
+        private List<Filter> filters = new List<Filter>();
         private int? maxRecords;
         private string marker;
 
         /// <summary>
-        /// The name of the DB Subnet Group to return details for.
+        /// The name of the DB subnet group to return details for.
         ///  
         /// </summary>
         public string DBSubnetGroupName
@@ -48,6 +51,17 @@ namespace Amazon.RDS.Model
         internal bool IsSetDBSubnetGroupName()
         {
             return this.dBSubnetGroupName != null;
+        }
+        public List<Filter> Filters
+        {
+            get { return this.filters; }
+            set { this.filters = value; }
+        }
+
+        // Check to see if Filters property is set
+        internal bool IsSetFilters()
+        {
+            return this.filters.Count > 0;
         }
 
         /// <summary>

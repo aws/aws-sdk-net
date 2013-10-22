@@ -33,6 +33,9 @@
 
         public KeysAndAttributes Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonToken.Null)
+                return null;
+
             KeysAndAttributes keysAndAttributes = new KeysAndAttributes();
 
         

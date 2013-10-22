@@ -35,8 +35,20 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeVpnConnectionsRequest : AmazonWebServiceRequest
     {
+        private bool? dryRun;
         private List<string> vpnConnectionIds = new List<string>();
         private List<Filter> filters = new List<Filter>();
+        public bool DryRun
+        {
+            get { return this.dryRun ?? default(bool); }
+            set { this.dryRun = value; }
+        }
+
+        // Check to see if DryRun property is set
+        internal bool IsSetDryRun()
+        {
+            return this.dryRun.HasValue;
+        }
 
         /// <summary>
         /// A VPN connection ID. More than one may be specified per request.

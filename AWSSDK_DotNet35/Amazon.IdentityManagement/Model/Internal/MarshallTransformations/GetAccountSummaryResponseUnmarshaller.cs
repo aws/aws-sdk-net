@@ -52,7 +52,7 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
             return response;
         }
         
-        private void UnmarshallResult(XmlUnmarshallerContext context,GetAccountSummaryResponse response)
+        private static void UnmarshallResult(XmlUnmarshallerContext context,GetAccountSummaryResponse response)
         {
             
             int originalDepth = context.CurrentDepth;

@@ -25,7 +25,8 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateCacheSubnetGroup operation.
-    /// <para> Creates a new Cache Subnet Group. </para>
+    /// <para>The <i>CreateCacheSubnetGroup</i> operation creates a new cache subnet group.</para> <para>Use this parameter only when you are
+    /// creating a cluster in an Amazon Virtual Private Cloud (VPC).</para>
     /// </summary>
     public partial class CreateCacheSubnetGroupRequest : AmazonWebServiceRequest
     {
@@ -34,7 +35,7 @@ namespace Amazon.ElastiCache.Model
         private List<string> subnetIds = new List<string>();
 
         /// <summary>
-        /// The name for the Cache Subnet Group. This value is stored as a lowercase string. Constraints: Must contain no more than 255 alphanumeric
+        /// A name for the cache subnet group. This value is stored as a lowercase string. Constraints: Must contain no more than 255 alphanumeric
         /// characters or hyphens. Example: <c>mysubnetgroup</c>
         ///  
         /// </summary>
@@ -51,7 +52,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// The description for the Cache Subnet Group.
+        /// A description for the cache subnet group.
         ///  
         /// </summary>
         public string CacheSubnetGroupDescription
@@ -67,7 +68,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// The EC2 Subnet IDs for the Cache Subnet Group.
+        /// A list of VPC subnet IDs for the cache subnet group.
         ///  
         /// </summary>
         public List<string> SubnetIds

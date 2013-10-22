@@ -52,7 +52,7 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
             return response;
         }
         
-        private void UnmarshallResult(XmlUnmarshallerContext context,SendMessageResponse response)
+        private static void UnmarshallResult(XmlUnmarshallerContext context,SendMessageResponse response)
         {
             
             int originalDepth = context.CurrentDepth;

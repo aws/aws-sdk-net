@@ -33,6 +33,9 @@
 
         public Category Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonToken.Null)
+                return null;
+
             Category category = new Category();
 
         

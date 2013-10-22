@@ -26,8 +26,8 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// <summary>
     /// Container for the parameters to the CreateLoadBalancerPolicy operation.
     /// <para> Creates a new policy that contains the necessary attributes depending on the policy type. Policies are settings that are saved for
-    /// your Elastic LoadBalancer and that can be applied to the front-end listener, or the back-end application server, depending on your policy
-    /// type. </para>
+    /// your load balancer and that can be applied to the front-end listener, or the back-end application server, depending on your policy type.
+    /// </para>
     /// </summary>
     public partial class CreateLoadBalancerPolicyRequest : AmazonWebServiceRequest
     {
@@ -53,7 +53,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         }
 
         /// <summary>
-        /// The name of the LoadBalancer policy being created. The name must be unique within the set of policies for this LoadBalancer.
+        /// The name of the load balancer policy being created. The name must be unique within the set of policies for this load balancer.
         ///  
         /// </summary>
         public string PolicyName

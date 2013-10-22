@@ -22,7 +22,7 @@ namespace Amazon.Auth.AccessControlPolicy.ActionIdentifiers
     /// The available AWS access control policy actions for Auto Scaling.
     /// </summary>
     /// <see cref="Amazon.Auth.AccessControlPolicy.Statement.Actions"/>
-    public class AutoScalingActionIdentifiers
+    public static class AutoScalingActionIdentifiers
     {
         public static readonly ActionIdentifier AllAutoScalingActions = new ActionIdentifier("autoscaling:*");
 

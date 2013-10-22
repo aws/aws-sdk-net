@@ -52,7 +52,7 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
             return response;
         }
         
-        private void UnmarshallResult(XmlUnmarshallerContext context,DescribeNotificationConfigurationsResponse response)
+        private static void UnmarshallResult(XmlUnmarshallerContext context,DescribeNotificationConfigurationsResponse response)
         {
             
             int originalDepth = context.CurrentDepth;

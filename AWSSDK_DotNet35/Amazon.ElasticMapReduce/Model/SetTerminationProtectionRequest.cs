@@ -32,8 +32,9 @@ namespace Amazon.ElasticMapReduce.Model
     /// an error, the instances will persist so you can recover any data stored in their ephemeral instance storage.</para> <para> To terminate a
     /// job flow that has been locked by setting SetTerminationProtection to <c>true</c> ,
     /// you must first unlock the job flow by a subsequent call to SetTerminationProtection in which you set the value to <c>false</c> .
-    /// </para> <para> For more information, go to Protecting a Job Flow from Termination in the <i>Amazon Elastic MapReduce Developer's Guide.</i>
-    /// </para>
+    /// </para> <para> For more information, go to <a
+    /// href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/UsingEMR_TerminationProtection.html" >Protecting a Job Flow from
+    /// Termination</a> in the <i>Amazon Elastic MapReduce Developer's Guide.</i> </para>
     /// </summary>
     public partial class SetTerminationProtectionRequest : AmazonWebServiceRequest
     {

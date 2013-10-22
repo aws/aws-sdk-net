@@ -567,11 +567,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <returns>Table object</returns>
         public Table GetTargetTable<T>(DynamoDBOperationConfig operationConfig)
         {
-            Type type = typeof(T);
-            ItemStorageConfig storageConfig = ItemStorageConfigCache.GetConfig(type);
-            Table table = GetTargetTable(storageConfig, new DynamoDBFlatConfig(operationConfig, this.config));
-            Table copy = table.Copy(Table.DynamoDBConsumer.DocumentModel);
-            return table;
+            return GetTargetTableInternal<T>(operationConfig);
         }
 
         #endregion

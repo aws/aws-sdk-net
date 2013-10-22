@@ -25,7 +25,7 @@ namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateLoadBalancerListeners operation.
-    /// <para> Creates one or more listeners on a LoadBalancer for the specified port. If a listener with the given port does not already exist, it
+    /// <para> Creates one or more listeners on a load balancer for the specified port. If a listener with the given port does not already exist, it
     /// will be created; otherwise, the properties of the new listener must match the properties of the existing listener. </para>
     /// </summary>
     public partial class CreateLoadBalancerListenersRequest : AmazonWebServiceRequest
@@ -43,7 +43,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// Callers should use the properties initialize any additional object members.
         /// </summary>
         /// 
-        /// <param name="loadBalancerName"> The name of the LoadBalancer. </param>
+        /// <param name="loadBalancerName"> The name of the load balancer. </param>
         /// <param name="listeners"> A list of <c>LoadBalancerPort</c>, <c>InstancePort</c>, <c>Protocol</c>, and <c>SSLCertificateId</c> items.
         /// </param>
         public CreateLoadBalancerListenersRequest(string loadBalancerName, List<Listener> listeners)
@@ -54,7 +54,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     
 
         /// <summary>
-        /// The name of the LoadBalancer.
+        /// The name of the load balancer.
         ///  
         /// </summary>
         public string LoadBalancerName

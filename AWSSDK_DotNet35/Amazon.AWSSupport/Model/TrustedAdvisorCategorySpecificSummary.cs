@@ -21,7 +21,8 @@ using System.IO;
 namespace Amazon.AWSSupport.Model
 {
     /// <summary>
-    /// <para>JSON-formatted child object of TrustedAdvisorCheckResult objects. </para>
+    /// <para>JSON-formatted child object of <a href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorCheckResult.html"
+    /// >TrustedAdvisorCheckResult</a> objects. </para>
     /// </summary>
     public class TrustedAdvisorCategorySpecificSummary
     {

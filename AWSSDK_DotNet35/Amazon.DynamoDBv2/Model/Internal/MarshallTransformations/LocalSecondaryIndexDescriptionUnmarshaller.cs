@@ -33,6 +33,9 @@
 
         public LocalSecondaryIndexDescription Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonToken.Null)
+                return null;
+
             LocalSecondaryIndexDescription localSecondaryIndexDescription = new LocalSecondaryIndexDescription();
 
         

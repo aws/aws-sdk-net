@@ -33,6 +33,9 @@
 
         public Field Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonToken.Null)
+                return null;
+
             Field field = new Field();
 
         

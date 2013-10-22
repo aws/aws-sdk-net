@@ -28,7 +28,7 @@ namespace Amazon.ElastiCache.Model
     {
         /// <summary>
         /// Gets and sets the DescribeCacheEngineVersionsResult property.
-        /// Contains the result of a successful invocation of the DescribeCacheEngineVersions action.
+        /// Represents the output of a DescribeCacheEngineVersions operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DescribeCacheEngineVersionsResult class are now available on the DescribeCacheEngineVersionsResponse class. You should use the properties on DescribeCacheEngineVersionsResponse instead of accessing them through DescribeCacheEngineVersionsResult.")]
         public DescribeCacheEngineVersionsResult DescribeCacheEngineVersionsResult

@@ -22,7 +22,7 @@ namespace Amazon.Auth.AccessControlPolicy.ActionIdentifiers
     /// The available AWS access control policy actions for Amazon SimpleDB.
     /// </summary>
     /// <see cref="Amazon.Auth.AccessControlPolicy.Statement.Actions"/>
-    public class SimpleDBActionIdentifiers
+    public static class SimpleDBActionIdentifiers
     {
         public static readonly ActionIdentifier AllSimpleDBActions = new ActionIdentifier("sdb:*");
 

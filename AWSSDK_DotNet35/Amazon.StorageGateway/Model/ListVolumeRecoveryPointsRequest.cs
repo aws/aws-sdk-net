@@ -25,10 +25,7 @@ namespace Amazon.StorageGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the ListVolumeRecoveryPoints operation.
-    /// <para>This operation lists the recovery points for a specified gateway. This operation is supported only for the gateway-cached volume
-    /// architecture.</para> <para>Each gateway-cached volume has one recovery point. A volume recovery point is a point in time at which all data
-    /// of the volume is consistent and from which you can create a snapshot. To create a snapshot from a volume recovery point use the
-    /// CreateSnapshotFromVolumeRecoveryPoint operation.</para>
+    /// 
     /// </summary>
     public partial class ListVolumeRecoveryPointsRequest : AmazonWebServiceRequest
     {

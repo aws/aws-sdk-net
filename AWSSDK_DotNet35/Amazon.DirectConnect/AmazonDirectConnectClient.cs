@@ -35,16 +35,29 @@ namespace Amazon.DirectConnect
     /// the actions and data types for AWS Direct Connect. Use the following links to get started using the <i>AWS Direct Connect API Reference</i>
     /// :</para>
     /// <ul>
-    /// <li> Actions: An alphabetical list of all AWS Direct Connect actions.</li>
-    /// <li> Data Types: An alphabetical list of all AWS Direct Connect data types.</li>
-    /// <li> Common Query Parameters: Parameters that all Query actions can use.</li>
-    /// <li> Common Errors: Client and server errors that all actions can return.</li>
+    /// <li> <a href="http://docs.aws.amazon.com/directconnect/latest/APIReference/API_Operations.html" >Actions</a> : An alphabetical list of all
+    /// AWS Direct Connect actions.</li>
+    /// <li> <a href="http://docs.aws.amazon.com/directconnect/latest/APIReference/API_Types.html" >Data Types</a> : An alphabetical list of all
+    /// AWS Direct Connect data types.</li>
+    /// <li> <a href="http://docs.aws.amazon.com/directconnect/latest/APIReference/CommonParameters.html" >Common Query Parameters</a> : Parameters
+    /// that all Query actions can use.</li>
+    /// <li> <a href="http://docs.aws.amazon.com/directconnect/latest/APIReference/CommonErrors.html" >Common Errors</a> : Client and server errors
+    /// that all actions can return.</li>
     /// 
     /// </ul>
     /// </summary>
     public partial class AmazonDirectConnectClient : AmazonWebServiceClient, IAmazonDirectConnect
     {
     AWS4Signer signer = new AWS4Signer();
+
+        #region Dispose
+
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
+        }
+
+        #endregion
 
         #region Constructors
 
@@ -65,7 +78,7 @@ namespace Amazon.DirectConnect
         ///
         /// </summary>
         public AmazonDirectConnectClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonDirectConnectConfig(), true, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonDirectConnectConfig(), AuthenticationTypes.User | AuthenticationTypes.Session) { }
 
         /// <summary>
         /// Constructs AmazonDirectConnectClient with the credentials loaded from the application's
@@ -85,7 +98,7 @@ namespace Amazon.DirectConnect
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonDirectConnectClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonDirectConnectConfig(){RegionEndpoint = region}, true, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonDirectConnectConfig{RegionEndpoint = region}, AuthenticationTypes.User | AuthenticationTypes.Session) { }
 
         /// <summary>
         /// Constructs AmazonDirectConnectClient with the credentials loaded from the application's
@@ -105,7 +118,7 @@ namespace Amazon.DirectConnect
         /// </summary>
         /// <param name="config">The AmazonDirectConnect Configuration Object</param>
         public AmazonDirectConnectClient(AmazonDirectConnectConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config, true, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), config, AuthenticationTypes.User | AuthenticationTypes.Session) { }
 
         /// <summary>
         /// Constructs AmazonDirectConnectClient with AWS Credentials
@@ -122,7 +135,7 @@ namespace Amazon.DirectConnect
         /// <param name="credentials">AWS Credentials</param>
         /// <param name="region">The region to connect.</param>
         public AmazonDirectConnectClient(AWSCredentials credentials, RegionEndpoint region)
-            : this(credentials, new AmazonDirectConnectConfig(){RegionEndpoint=region})
+            : this(credentials, new AmazonDirectConnectConfig{RegionEndpoint = region})
         {
         }
 
@@ -133,7 +146,7 @@ namespace Amazon.DirectConnect
         /// <param name="credentials">AWS Credentials</param>
         /// <param name="clientConfig">The AmazonDirectConnectClient Configuration Object</param>
         public AmazonDirectConnectClient(AWSCredentials credentials, AmazonDirectConnectConfig clientConfig)
-            : base(credentials, clientConfig, false, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(credentials, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
         {
         }
 
@@ -189,7 +202,7 @@ namespace Amazon.DirectConnect
         /// <param name="awsSessionToken">AWS Session Token</param>
         /// <param name="region">The region to connect.</param>
         public AmazonDirectConnectClient(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken, RegionEndpoint region)
-            : this(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, new AmazonDirectConnectConfig(){RegionEndpoint = region})
+            : this(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, new AmazonDirectConnectConfig{RegionEndpoint = region})
         {
         }
 
@@ -902,7 +915,8 @@ namespace Amazon.DirectConnect
         /// <summary>
         /// <para>Returns a list of virtual private gateways owned by the AWS account.</para> <para>You can create one or more AWS Direct Connect
         /// private virtual interfaces linking to a virtual private gateway. A virtual private gateway can be managed via Amazon Virtual Private Cloud
-        /// (VPC) console or the EC2 CreateVpnGateway action.</para>
+        /// (VPC) console or the <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-CreateVpnGateway.html" >EC2
+        /// CreateVpnGateway</a> action.</para>
         /// </summary>
         /// 
         /// <param name="describeVirtualGatewaysRequest">Container for the necessary parameters to execute the DescribeVirtualGateways service method on
@@ -967,7 +981,8 @@ namespace Amazon.DirectConnect
         /// <summary>
         /// <para>Returns a list of virtual private gateways owned by the AWS account.</para> <para>You can create one or more AWS Direct Connect
         /// private virtual interfaces linking to a virtual private gateway. A virtual private gateway can be managed via Amazon Virtual Private Cloud
-        /// (VPC) console or the EC2 CreateVpnGateway action.</para>
+        /// (VPC) console or the <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-CreateVpnGateway.html" >EC2
+        /// CreateVpnGateway</a> action.</para>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeVirtualGateways service method, as returned by AmazonDirectConnect.</returns>

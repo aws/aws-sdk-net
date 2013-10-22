@@ -14,10 +14,11 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
+using System.Text;
 using System.Xml;
 using System.Xml.Serialization;
-using System.Text;
 
 using Amazon.Route53.Model;
 
@@ -42,13 +43,11 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
 
 
             request.HttpMethod = "POST";
-              
-            Dictionary<string, string> queryParameters = new Dictionary<string, string>();
             string uriResourcePath = "/2012-12-12/healthcheck"; 
 
             if (uriResourcePath.Contains("?")) 
             {
-                int queryIndex = uriResourcePath.IndexOf("?");
+                int queryIndex = uriResourcePath.IndexOf("?", StringComparison.OrdinalIgnoreCase);
                 string queryString = uriResourcePath.Substring(queryIndex + 1);
                 
                 uriResourcePath    = uriResourcePath.Substring(0, queryIndex);
@@ -72,7 +71,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             request.ResourcePath = uriResourcePath;
             
              
-            StringWriter stringWriter = new StringWriter();
+            StringWriter stringWriter = new StringWriter(System.Globalization.CultureInfo.InvariantCulture);
                 using (XmlWriter xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true }))
                 {
                        
@@ -80,7 +79,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             xmlWriter.WriteStartElement("CreateHealthCheckRequest", "https://route53.amazonaws.com/doc/2012-12-12/");
                     if (createHealthCheckRequest.IsSetCallerReference()) 
         {
-            xmlWriter.WriteElementString("CallerReference", "https://route53.amazonaws.com/doc/2012-12-12/", createHealthCheckRequest.CallerReference.ToString());
+            xmlWriter.WriteElementString("CallerReference", "https://route53.amazonaws.com/doc/2012-12-12/", createHealthCheckRequest.CallerReference.ToString(CultureInfo.InvariantCulture));
           }
         if (createHealthCheckRequest != null) 
         {
@@ -90,23 +89,23 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                 xmlWriter.WriteStartElement("HealthCheckConfig", "https://route53.amazonaws.com/doc/2012-12-12/");
                 if (healthCheckConfigHealthCheckConfig.IsSetIPAddress()) 
                 {
-                    xmlWriter.WriteElementString("IPAddress", "https://route53.amazonaws.com/doc/2012-12-12/", healthCheckConfigHealthCheckConfig.IPAddress.ToString());
+                    xmlWriter.WriteElementString("IPAddress", "https://route53.amazonaws.com/doc/2012-12-12/", healthCheckConfigHealthCheckConfig.IPAddress.ToString(CultureInfo.InvariantCulture));
                   }
                 if (healthCheckConfigHealthCheckConfig.IsSetPort()) 
                 {
-                    xmlWriter.WriteElementString("Port", "https://route53.amazonaws.com/doc/2012-12-12/", healthCheckConfigHealthCheckConfig.Port.ToString());
+                    xmlWriter.WriteElementString("Port", "https://route53.amazonaws.com/doc/2012-12-12/", healthCheckConfigHealthCheckConfig.Port.ToString(CultureInfo.InvariantCulture));
                   }
                 if (healthCheckConfigHealthCheckConfig.IsSetType()) 
                 {
-                    xmlWriter.WriteElementString("Type", "https://route53.amazonaws.com/doc/2012-12-12/", healthCheckConfigHealthCheckConfig.Type.ToString());
+                    xmlWriter.WriteElementString("Type", "https://route53.amazonaws.com/doc/2012-12-12/", healthCheckConfigHealthCheckConfig.Type.ToString(CultureInfo.InvariantCulture));
                   }
                 if (healthCheckConfigHealthCheckConfig.IsSetResourcePath()) 
                 {
-                    xmlWriter.WriteElementString("ResourcePath", "https://route53.amazonaws.com/doc/2012-12-12/", healthCheckConfigHealthCheckConfig.ResourcePath.ToString());
+                    xmlWriter.WriteElementString("ResourcePath", "https://route53.amazonaws.com/doc/2012-12-12/", healthCheckConfigHealthCheckConfig.ResourcePath.ToString(CultureInfo.InvariantCulture));
                   }
                 if (healthCheckConfigHealthCheckConfig.IsSetFullyQualifiedDomainName()) 
                 {
-                    xmlWriter.WriteElementString("FullyQualifiedDomainName", "https://route53.amazonaws.com/doc/2012-12-12/", healthCheckConfigHealthCheckConfig.FullyQualifiedDomainName.ToString());
+                    xmlWriter.WriteElementString("FullyQualifiedDomainName", "https://route53.amazonaws.com/doc/2012-12-12/", healthCheckConfigHealthCheckConfig.FullyQualifiedDomainName.ToString(CultureInfo.InvariantCulture));
                   }
                 xmlWriter.WriteEndElement();
             }

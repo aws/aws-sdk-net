@@ -27,7 +27,7 @@ namespace Amazon.EC2.Model
         
         private string exportTaskId;
         private string description;
-        private string state;
+        private ExportTaskState state;
         private string statusMessage;
         private InstanceExportDetails instanceExportDetails;
         private ExportToS3Task exportToS3Task;
@@ -53,7 +53,7 @@ namespace Amazon.EC2.Model
         {
             return this.description != null;
         }
-        public string State
+        public ExportTaskState State
         {
             get { return this.state; }
             set { this.state = value; }

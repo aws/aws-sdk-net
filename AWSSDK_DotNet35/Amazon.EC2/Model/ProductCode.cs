@@ -27,7 +27,7 @@ namespace Amazon.EC2.Model
     {
         
         private string productCodeId;
-        private string productCodeType;
+        private ProductCodeValues productCodeType;
 
         /// <summary>
         /// The unique ID of an AWS DevPay product code.
@@ -44,7 +44,7 @@ namespace Amazon.EC2.Model
         {
             return this.productCodeId != null;
         }
-        public string ProductCodeType
+        public ProductCodeValues ProductCodeType
         {
             get { return this.productCodeType; }
             set { this.productCodeType = value; }

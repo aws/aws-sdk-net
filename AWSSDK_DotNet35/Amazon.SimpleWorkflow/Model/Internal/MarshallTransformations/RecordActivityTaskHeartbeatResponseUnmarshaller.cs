@@ -39,7 +39,7 @@
         }        
         
         
-        private void UnmarshallResult(JsonUnmarshallerContext context,RecordActivityTaskHeartbeatResponse response)
+        private static void UnmarshallResult(JsonUnmarshallerContext context,RecordActivityTaskHeartbeatResponse response)
         {                   
           response.ActivityTaskStatus = ActivityTaskStatusUnmarshaller.GetInstance().Unmarshall(context);
           return;

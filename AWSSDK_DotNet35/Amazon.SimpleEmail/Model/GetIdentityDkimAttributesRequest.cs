@@ -37,7 +37,7 @@ namespace Amazon.SimpleEmail.Model
     /// 
     /// </ul>
     /// <para>This action is throttled at one request per second.</para> <para>For more information about creating DNS records using DKIM tokens,
-    /// go to the Amazon SES Developer Guide.</para>
+    /// go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html" >Amazon SES Developer Guide</a> .</para>
     /// </summary>
     public partial class GetIdentityDkimAttributesRequest : AmazonWebServiceRequest
     {

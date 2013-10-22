@@ -29,12 +29,13 @@ namespace Amazon.IdentityManagement
     /// Implementation for accessing AmazonIdentityManagementService.
     /// 
     /// AWS Identity and Access Management <para>This guide provides descriptions of the Identity and Access Management (IAM) API as well as links
-    /// to related content in the guide, Using IAM.</para> <para>IAM is a web service that enables AWS customers to manage users and user
-    /// permissions under their AWS account. For more information about this product go to AWS Identity and Access Management (IAM). For information
-    /// about setting up signatures and authorization through the API, go to Signing AWS API Requests in the <i>AWS General Reference</i> . For
-    /// general information about using the Query API with IAM, go to Making Query Requests in <i>Using IAM</i> .</para> <para>If you're new to AWS
-    /// and need additional technical information about a specific AWS product, you can find the product's technical documentation at
-    /// http://aws.amazon.com/documentation/.</para>
+    /// to related content in the guide, <a href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/">Using IAM</a> .</para> <para>IAM is a
+    /// web service that enables AWS customers to manage users and user permissions under their AWS account. For more information about this product
+    /// go to <a href="http://aws.amazon.com/iam/">AWS Identity and Access Management (IAM)</a> . For information about setting up signatures and
+    /// authorization through the API, go to <a href="http://docs.amazonwebservices.com/general/latest/gr/signing_aws_api_requests.html">Signing
+    /// AWS API Requests</a> in the <i>AWS General Reference</i> . For general information about using the Query API with IAM, go to <a href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">Making Query Requests</a> in <i>Using IAM</i> .</para>
+    /// <para>If you're new to AWS and need additional technical information about a specific AWS product, you can find the product's technical
+    /// documentation at <a href="http://aws.amazon.com/documentation/">http://aws.amazon.com/documentation/</a> .</para>
     /// </summary>
 	public partial class AmazonIdentityManagementServiceClient : AmazonWebServiceClient, Amazon.IdentityManagement.IAmazonIdentityManagementService
     {
@@ -68,7 +69,7 @@ namespace Amazon.IdentityManagement
         /// <param name="credentials">AWS Credentials</param>
         /// <param name="clientConfig">The AmazonIdentityManagementServiceClient Configuration Object</param>
         public AmazonIdentityManagementServiceClient(AWSCredentials credentials, AmazonIdentityManagementServiceConfig clientConfig)
-            : base(credentials, clientConfig, false, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(credentials, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
         {
         }
 
@@ -150,9 +151,23 @@ namespace Amazon.IdentityManagement
         #endregion
 
  
+		internal AddRoleToInstanceProfileResponse AddRoleToInstanceProfile(AddRoleToInstanceProfileRequest request)
+        {
+            var task = AddRoleToInstanceProfileAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
-        /// <para>Adds the specified role to the specified instance profile. For more information about roles, go to Working with Roles. For more
-        /// information about instance profiles, go to About Instance Profiles.</para>
+        /// <para>Adds the specified role to the specified instance profile. For more information about roles, go to <a href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working with Roles</a> . For more information about
+        /// instance profiles, go to <a href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About Instance
+        /// Profiles</a> .</para>
         /// </summary>
         /// 
         /// <param name="addRoleToInstanceProfileRequest">Container for the necessary parameters to execute the AddRoleToInstanceProfile service method
@@ -173,6 +188,19 @@ namespace Amazon.IdentityManagement
             return response;
         }
  
+		internal AddUserToGroupResponse AddUserToGroup(AddUserToGroupRequest request)
+        {
+            var task = AddUserToGroupAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Adds the specified user to the specified group.</para>
         /// </summary>
@@ -194,9 +222,22 @@ namespace Amazon.IdentityManagement
             return response;
         }
  
+		internal ChangePasswordResponse ChangePassword(ChangePasswordRequest request)
+        {
+            var task = ChangePasswordAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Changes the password of the IAM user calling <c>ChangePassword</c> . The root account password is not affected by this action. For
-        /// information about modifying passwords, see Managing Passwords.</para>
+        /// information about modifying passwords, see <a href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/Using_ManagingLogins.html">Managing Passwords</a> .</para>
         /// </summary>
         /// 
         /// <param name="changePasswordRequest">Container for the necessary parameters to execute the ChangePassword service method on
@@ -216,15 +257,27 @@ namespace Amazon.IdentityManagement
             return response;
         }
  
+		internal CreateAccessKeyResponse CreateAccessKey(CreateAccessKeyRequest request)
+        {
+            var task = CreateAccessKeyAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Creates a new AWS Secret Access Key and corresponding AWS Access Key ID for the specified user. The default status for new keys is
         /// <c>Active</c> .</para> <para>If you do not specify a user name, IAM determines the user name implicitly based on the AWS Access Key ID
         /// signing the request. Because this action works for access keys under the AWS account, you can use this API to manage root credentials even
-        /// if the AWS account has no associated users.</para> <para>For information about limits on the number of keys you can create, see Limitations
-        /// on IAM Entities in <i>Using AWS Identity and Access Management</i> .</para> <para><b>IMPORTANT:</b>To ensure the security of your AWS
-        /// account, the Secret Access Key is accessible only during key and user creation. You must save the key (for example, in a text file) if you
-        /// want to be able to access it again. If a secret key is lost, you can delete the access keys for the associated user and then create new
-        /// keys.</para>
+        /// if the AWS account has no associated users.</para> <para>For information about limits on the number of keys you can create, see <a href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?LimitationsOnEntities.html">Limitations on IAM Entities</a> in
+        /// <i>Using AWS Identity and Access Management</i> .</para> <para><b>IMPORTANT:</b>To ensure the security of your AWS account, the Secret
+        /// Access Key is accessible only during key and user creation. You must save the key (for example, in a text file) if you want to be able to
+        /// access it again. If a secret key is lost, you can delete the access keys for the associated user and then create new keys.</para>
         /// </summary>
         /// 
         /// <param name="createAccessKeyRequest">Container for the necessary parameters to execute the CreateAccessKey service method on
@@ -246,9 +299,22 @@ namespace Amazon.IdentityManagement
             return response;
         }
  
+		internal CreateAccountAliasResponse CreateAccountAlias(CreateAccountAliasRequest request)
+        {
+            var task = CreateAccountAliasAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
-        /// <para>This action creates an alias for your AWS account. For information about using an AWS account alias, see Using an Alias for Your AWS
-        /// Account ID in <i>Using AWS Identity and Access Management</i> .</para>
+        /// <para>This action creates an alias for your AWS account. For information about using an AWS account alias, see <a href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/AccountAlias.html">Using an Alias for Your AWS Account ID</a> in <i>Using AWS
+        /// Identity and Access Management</i> .</para>
         /// </summary>
         /// 
         /// <param name="createAccountAliasRequest">Container for the necessary parameters to execute the CreateAccountAlias service method on
@@ -267,8 +333,21 @@ namespace Amazon.IdentityManagement
             return response;
         }
  
+		internal CreateGroupResponse CreateGroup(CreateGroupRequest request)
+        {
+            var task = CreateGroupAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
-        /// <para>Creates a new group.</para> <para>For information about the number of groups you can create, see Limitations on IAM Entities in
+        /// <para>Creates a new group.</para> <para>For information about the number of groups you can create, see <a href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?LimitationsOnEntities.html">Limitations on IAM Entities</a> in
         /// <i>Using AWS Identity and Access Management</i> .</para>
         /// </summary>
         /// 
@@ -292,10 +371,23 @@ namespace Amazon.IdentityManagement
             return response;
         }
  
+		internal CreateInstanceProfileResponse CreateInstanceProfile(CreateInstanceProfileRequest request)
+        {
+            var task = CreateInstanceProfileAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
-        /// <para>Creates a new instance profile. For information about instance profiles, go to About Instance Profiles.</para> <para>For information
-        /// about the number of instance profiles you can create, see Limitations on IAM Entities in <i>Using AWS Identity and Access Management</i>
-        /// .</para>
+        /// <para>Creates a new instance profile. For information about instance profiles, go to <a href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About Instance Profiles</a> .</para> <para>For
+        /// information about the number of instance profiles you can create, see <a href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?LimitationsOnEntities.html">Limitations on IAM Entities</a> in
+        /// <i>Using AWS Identity and Access Management</i> .</para>
         /// </summary>
         /// 
         /// <param name="createInstanceProfileRequest">Container for the necessary parameters to execute the CreateInstanceProfile service method on
@@ -317,9 +409,23 @@ namespace Amazon.IdentityManagement
             return response;
         }
  
+		internal CreateLoginProfileResponse CreateLoginProfile(CreateLoginProfileRequest request)
+        {
+            var task = CreateLoginProfileAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Creates a password for the specified user, giving the user the ability to access AWS services through the AWS Management Console. For
-        /// more information about managing passwords, see Managing Passwords in <i>Using IAM</i> .</para>
+        /// more information about managing passwords, see <a href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_ManagingLogins.html">Managing Passwords</a> in <i>Using
+        /// IAM</i> .</para>
         /// </summary>
         /// 
         /// <param name="createLoginProfileRequest">Container for the necessary parameters to execute the CreateLoginProfile service method on
@@ -342,11 +448,24 @@ namespace Amazon.IdentityManagement
             return response;
         }
  
+		internal CreateRoleResponse CreateRole(CreateRoleRequest request)
+        {
+            var task = CreateRoleAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
-        /// <para>Creates a new role for your AWS account. For more information about roles, go to Working with Roles. For information about limitations
-        /// on role names and the number of roles you can create, go to Limitations on IAM Entities in <i>Using AWS Identity and Access Management</i>
-        /// .</para> <para>The policy grants permission to an EC2 instance to assume the role. The policy is URL-encoded according to RFC 3986. For more
-        /// information about RFC 3986, go to http://www.faqs.org/rfcs/rfc3986.html. Currently, only EC2 instances can assume roles.</para>
+        /// <para>Creates a new role for your AWS account. For more information about roles, go to <a href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working with Roles</a> .
+        /// For information about limitations on role names and the number of roles you can create, go to <a href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?LimitationsOnEntities.html">Limitations on IAM Entities</a> in
+        /// <i>Using AWS Identity and Access Management</i> .</para> <para>The policy grants permission to an EC2 instance to assume the role. The
+        /// policy is URL-encoded according to RFC 3986. For more information about RFC 3986, go to <a href="http://www.faqs.org/rfcs/rfc3986.html">http://www.faqs.org/rfcs/rfc3986.html</a> . Currently, only EC2 instances can assume roles.</para>
         /// </summary>
         /// 
         /// <param name="createRoleRequest">Container for the necessary parameters to execute the CreateRole service method on
@@ -369,9 +488,22 @@ namespace Amazon.IdentityManagement
             return response;
         }
  
+		internal CreateUserResponse CreateUser(CreateUserRequest request)
+        {
+            var task = CreateUserAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
-        /// <para>Creates a new user for your AWS account.</para> <para>For information about limitations on the number of users you can create, see
-        /// Limitations on IAM Entities in <i>Using AWS Identity and Access Management</i> .</para>
+        /// <para>Creates a new user for your AWS account.</para> <para>For information about limitations on the number of users you can create, see <a href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?LimitationsOnEntities.html">Limitations on IAM Entities</a> in
+        /// <i>Using AWS Identity and Access Management</i> .</para>
         /// </summary>
         /// 
         /// <param name="createUserRequest">Container for the necessary parameters to execute the CreateUser service method on
@@ -394,13 +526,26 @@ namespace Amazon.IdentityManagement
             return response;
         }
  
+		internal CreateVirtualMFADeviceResponse CreateVirtualMFADevice(CreateVirtualMFADeviceRequest request)
+        {
+            var task = CreateVirtualMFADeviceAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
-        /// <para>Creates a new virtual MFA device for the AWS account. After creating the virtual MFA, use EnableMFADevice to attach the MFA device to
-        /// an IAM user. For more information about creating and working with virtual MFA devices, go to Using a Virtual MFA Device in <i>Using AWS
-        /// Identity and Access Management</i> .</para> <para>For information about limits on the number of MFA devices you can create, see Limitations
-        /// on Entities in <i>Using AWS Identity and Access Management</i> .</para> <para><b>IMPORTANT:</b>The seed information contained in the QR code
-        /// and the Base32 string should be treated like any other secret access information, such as your AWS access keys or your passwords. After you
-        /// provision your virtual device, you should ensure that the information is destroyed following secure procedures.</para>
+        /// <para>Creates a new virtual MFA device for the AWS account. After creating the virtual MFA, use <a href="http://docs.amazonwebservices.com/IAM/latest/APIReference/API_EnableMFADevice.html">EnableMFADevice</a> to attach the MFA device to
+        /// an IAM user. For more information about creating and working with virtual MFA devices, go to <a href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_VirtualMFA.html">Using a Virtual MFA Device</a> in <i>Using
+        /// AWS Identity and Access Management</i> .</para> <para>For information about limits on the number of MFA devices you can create, see <a href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?LimitationsOnEntities.html">Limitations on Entities</a> in <i>Using
+        /// AWS Identity and Access Management</i> .</para> <para><b>IMPORTANT:</b>The seed information contained in the QR code and the Base32 string
+        /// should be treated like any other secret access information, such as your AWS access keys or your passwords. After you provision your virtual
+        /// device, you should ensure that the information is destroyed following secure procedures.</para>
         /// </summary>
         /// 
         /// <param name="createVirtualMFADeviceRequest">Container for the necessary parameters to execute the CreateVirtualMFADevice service method on
@@ -422,6 +567,19 @@ namespace Amazon.IdentityManagement
             return response;
         }
  
+		internal DeactivateMFADeviceResponse DeactivateMFADevice(DeactivateMFADeviceRequest request)
+        {
+            var task = DeactivateMFADeviceAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Deactivates the specified MFA device and removes it from association with the user name for which it was originally enabled.</para>
         /// </summary>
@@ -443,6 +601,19 @@ namespace Amazon.IdentityManagement
             return response;
         }
  
+		internal DeleteAccessKeyResponse DeleteAccessKey(DeleteAccessKeyRequest request)
+        {
+            var task = DeleteAccessKeyAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Deletes the access key associated with the specified user.</para> <para>If you do not specify a user name, IAM determines the user
         /// name implicitly based on the AWS Access Key ID signing the request. Because this action works for access keys under the AWS account, you can
@@ -465,9 +636,22 @@ namespace Amazon.IdentityManagement
             return response;
         }
  
+		internal DeleteAccountAliasResponse DeleteAccountAlias(DeleteAccountAliasRequest request)
+        {
+            var task = DeleteAccountAliasAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
-        /// <para>Deletes the specified AWS account alias. For information about using an AWS account alias, see Using an Alias for Your AWS Account ID
-        /// in <i>Using AWS Identity and Access Management</i> .</para>
+        /// <para>Deletes the specified AWS account alias. For information about using an AWS account alias, see <a href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/AccountAlias.html">Using an Alias for Your AWS Account ID</a> in <i>Using AWS
+        /// Identity and Access Management</i> .</para>
         /// </summary>
         /// 
         /// <param name="deleteAccountAliasRequest">Container for the necessary parameters to execute the DeleteAccountAlias service method on
@@ -486,6 +670,19 @@ namespace Amazon.IdentityManagement
             return response;
         }
  
+		internal DeleteAccountPasswordPolicyResponse DeleteAccountPasswordPolicy(DeleteAccountPasswordPolicyRequest request)
+        {
+            var task = DeleteAccountPasswordPolicyAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Deletes the password policy for the AWS account.</para>
         /// </summary>
@@ -506,6 +703,19 @@ namespace Amazon.IdentityManagement
             return response;
         }
  
+		internal DeleteGroupResponse DeleteGroup(DeleteGroupRequest request)
+        {
+            var task = DeleteGroupAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Deletes the specified group. The group must not contain any users or have any attached policies.</para>
         /// </summary>
@@ -527,6 +737,19 @@ namespace Amazon.IdentityManagement
             return response;
         }
  
+		internal DeleteGroupPolicyResponse DeleteGroupPolicy(DeleteGroupPolicyRequest request)
+        {
+            var task = DeleteGroupPolicyAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Deletes the specified policy that is associated with the specified group.</para>
         /// </summary>
@@ -547,11 +770,25 @@ namespace Amazon.IdentityManagement
             return response;
         }
  
+		internal DeleteInstanceProfileResponse DeleteInstanceProfile(DeleteInstanceProfileRequest request)
+        {
+            var task = DeleteInstanceProfileAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Deletes the specified instance profile. The instance profile must not have an associated role.</para> <para><b>IMPORTANT:</b>Make sure
         /// you do not have any Amazon EC2 instances running with the instance profile you are about to delete. Deleting a role or instance profile that
         /// is associated with a running instance will break any applications running on the instance.</para> <para>For more information about instance
-        /// profiles, go to About Instance Profiles.</para>
+        /// profiles, go to <a href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About Instance Profiles</a>
+        /// .</para>
         /// </summary>
         /// 
         /// <param name="deleteInstanceProfileRequest">Container for the necessary parameters to execute the DeleteInstanceProfile service method on
@@ -571,6 +808,19 @@ namespace Amazon.IdentityManagement
             return response;
         }
  
+		internal DeleteLoginProfileResponse DeleteLoginProfile(DeleteLoginProfileRequest request)
+        {
+            var task = DeleteLoginProfileAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Deletes the password for the specified user, which terminates the user's ability to access AWS services through the AWS Management
         /// Console.</para> <para><b>IMPORTANT:</b>Deleting a user's password does not prevent a user from accessing IAM through the command line
@@ -595,10 +845,23 @@ namespace Amazon.IdentityManagement
             return response;
         }
  
+		internal DeleteRoleResponse DeleteRole(DeleteRoleRequest request)
+        {
+            var task = DeleteRoleAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
-        /// <para>Deletes the specified role. The role must not have any policies attached. For more information about roles, go to Working with
-        /// Roles.</para> <para><b>IMPORTANT:</b>Make sure you do not have any Amazon EC2 instances running with the role you are about to delete.
-        /// Deleting a role or instance profile that is associated with a running instance will break any applications running on the instance.</para>
+        /// <para>Deletes the specified role. The role must not have any policies attached. For more information about roles, go to <a href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working with Roles</a> .</para>
+        /// <para><b>IMPORTANT:</b>Make sure you do not have any Amazon EC2 instances running with the role you are about to delete. Deleting a role or
+        /// instance profile that is associated with a running instance will break any applications running on the instance.</para>
         /// </summary>
         /// 
         /// <param name="deleteRoleRequest">Container for the necessary parameters to execute the DeleteRole service method on
@@ -618,6 +881,19 @@ namespace Amazon.IdentityManagement
             return response;
         }
  
+		internal DeleteRolePolicyResponse DeleteRolePolicy(DeleteRolePolicyRequest request)
+        {
+            var task = DeleteRolePolicyAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Deletes the specified policy associated with the specified role.</para>
         /// </summary>
@@ -638,6 +914,19 @@ namespace Amazon.IdentityManagement
             return response;
         }
  
+		internal DeleteServerCertificateResponse DeleteServerCertificate(DeleteServerCertificateRequest request)
+        {
+            var task = DeleteServerCertificateAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Deletes the specified server certificate.</para> <para><b>IMPORTANT:</b>If you are using a server certificate with Elastic Load
         /// Balancing, deleting the certificate could have implications for your application. If Elastic Load Balancing doesn't detect the deletion of
@@ -663,6 +952,19 @@ namespace Amazon.IdentityManagement
             return response;
         }
  
+		internal DeleteSigningCertificateResponse DeleteSigningCertificate(DeleteSigningCertificateRequest request)
+        {
+            var task = DeleteSigningCertificateAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Deletes the specified signing certificate associated with the specified user.</para> <para>If you do not specify a user name, IAM
         /// determines the user name implicitly based on the AWS Access Key ID signing the request. Because this action works for access keys under the
@@ -685,6 +987,19 @@ namespace Amazon.IdentityManagement
             return response;
         }
  
+		internal DeleteUserResponse DeleteUser(DeleteUserRequest request)
+        {
+            var task = DeleteUserAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Deletes the specified user. The user must not belong to any groups, have any keys or signing certificates, or have any attached
         /// policies.</para>
@@ -707,6 +1022,19 @@ namespace Amazon.IdentityManagement
             return response;
         }
  
+		internal DeleteUserPolicyResponse DeleteUserPolicy(DeleteUserPolicyRequest request)
+        {
+            var task = DeleteUserPolicyAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Deletes the specified policy associated with the specified user.</para>
         /// </summary>
@@ -727,6 +1055,19 @@ namespace Amazon.IdentityManagement
             return response;
         }
  
+		internal DeleteVirtualMFADeviceResponse DeleteVirtualMFADevice(DeleteVirtualMFADeviceRequest request)
+        {
+            var task = DeleteVirtualMFADeviceAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Deletes a virtual MFA device.</para> <para><b>NOTE:</b>You must deactivate a user's virtual MFA device before you can delete it. For
         /// information about deactivating MFA devices, see DeactivateMFADevice.</para>
@@ -749,6 +1090,19 @@ namespace Amazon.IdentityManagement
             return response;
         }
  
+		internal EnableMFADeviceResponse EnableMFADevice(EnableMFADeviceRequest request)
+        {
+            var task = EnableMFADeviceAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Enables the specified MFA device and associates it with the specified user name. When enabled, the MFA device is required for every
         /// subsequent login by the user name associated with the device.</para>
@@ -774,9 +1128,22 @@ namespace Amazon.IdentityManagement
             return response;
         }
  
+		internal GetAccountPasswordPolicyResponse GetAccountPasswordPolicy(GetAccountPasswordPolicyRequest request)
+        {
+            var task = GetAccountPasswordPolicyAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
-        /// <para>Retrieves the password policy for the AWS account. For more information about using a password policy, go to Managing an IAM Password
-        /// Policy.</para>
+        /// <para>Retrieves the password policy for the AWS account. For more information about using a password policy, go to <a href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html">Managing an IAM Password Policy</a>
+        /// .</para>
         /// </summary>
         /// 
         /// <param name="getAccountPasswordPolicyRequest">Container for the necessary parameters to execute the GetAccountPasswordPolicy service method
@@ -797,9 +1164,23 @@ namespace Amazon.IdentityManagement
             return response;
         }
  
+		internal GetAccountSummaryResponse GetAccountSummary(GetAccountSummaryRequest request)
+        {
+            var task = GetAccountSummaryAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Retrieves account level information about account entity usage and IAM quotas.</para> <para>For information about limitations on IAM
-        /// entities, see Limitations on IAM Entities in <i>Using AWS Identity and Access Management</i> .</para>
+        /// entities, see <a href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?LimitationsOnEntities.html">Limitations on IAM
+        /// Entities</a> in <i>Using AWS Identity and Access Management</i> .</para>
         /// </summary>
         /// 
         /// <param name="getAccountSummaryRequest">Container for the necessary parameters to execute the GetAccountSummary service method on
@@ -818,6 +1199,19 @@ namespace Amazon.IdentityManagement
             return response;
         }
  
+		internal GetGroupResponse GetGroup(GetGroupRequest request)
+        {
+            var task = GetGroupAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Returns a list of users that are in the specified group. You can paginate the results using the <c>MaxItems</c> and <c>Marker</c>
         /// parameters.</para>
@@ -841,9 +1235,22 @@ namespace Amazon.IdentityManagement
             return response;
         }
  
+		internal GetGroupPolicyResponse GetGroupPolicy(GetGroupPolicyRequest request)
+        {
+            var task = GetGroupPolicyAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Retrieves the specified policy document for the specified group. The returned policy is URL-encoded according to RFC 3986. For more
-        /// information about RFC 3986, go to http://www.faqs.org/rfcs/rfc3986.html.</para>
+        /// information about RFC 3986, go to <a href="http://www.faqs.org/rfcs/rfc3986.html">http://www.faqs.org/rfcs/rfc3986.html</a> .</para>
         /// </summary>
         /// 
         /// <param name="getGroupPolicyRequest">Container for the necessary parameters to execute the GetGroupPolicy service method on
@@ -864,9 +1271,22 @@ namespace Amazon.IdentityManagement
             return response;
         }
  
+		internal GetInstanceProfileResponse GetInstanceProfile(GetInstanceProfileRequest request)
+        {
+            var task = GetInstanceProfileAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Retrieves information about the specified instance profile, including the instance profile's path, GUID, ARN, and role. For more
-        /// information about instance profiles, go to About Instance Profiles. For more information about ARNs, go to ARNs.</para>
+        /// information about instance profiles, go to <a href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About Instance Profiles</a> . For more information about ARNs, go to <a href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/Using_Identifiers.html#Identifiers_ARNs">ARNs</a> .</para>
         /// </summary>
         /// 
         /// <param name="getInstanceProfileRequest">Container for the necessary parameters to execute the GetInstanceProfile service method on
@@ -887,6 +1307,19 @@ namespace Amazon.IdentityManagement
             return response;
         }
  
+		internal GetLoginProfileResponse GetLoginProfile(GetLoginProfileRequest request)
+        {
+            var task = GetLoginProfileAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Retrieves the user name and password create date for the specified user.</para>
         /// </summary>
@@ -909,11 +1342,24 @@ namespace Amazon.IdentityManagement
             return response;
         }
  
+		internal GetRoleResponse GetRole(GetRoleRequest request)
+        {
+            var task = GetRoleAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Retrieves information about the specified role, including the role's path, GUID, ARN, and the policy granting permission to EC2 to
-        /// assume the role. For more information about ARNs, go to ARNs. For more information about roles, go to Working with Roles.</para> <para>The
-        /// returned policy is URL-encoded according to RFC 3986. For more information about RFC 3986, go to
-        /// http://www.faqs.org/rfcs/rfc3986.html.</para>
+        /// assume the role. For more information about ARNs, go to <a href="&#xA;            http://docs.amazonwebservices.com/IAM/latest/UserGuide/Using_Identifiers.html#Identifiers_ARNs">ARNs</a> .
+        /// For more information about roles, go to <a href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
+        /// with Roles</a> .</para> <para>The returned policy is URL-encoded according to RFC 3986. For more information about RFC 3986, go to <a href="http://www.faqs.org/rfcs/rfc3986.html">http://www.faqs.org/rfcs/rfc3986.html</a> .</para>
         /// </summary>
         /// 
         /// <param name="getRoleRequest">Container for the necessary parameters to execute the GetRole service method on
@@ -934,10 +1380,22 @@ namespace Amazon.IdentityManagement
             return response;
         }
  
+		internal GetRolePolicyResponse GetRolePolicy(GetRolePolicyRequest request)
+        {
+            var task = GetRolePolicyAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
-        /// <para>Retrieves the specified policy document for the specified role. For more information about roles, go to Working with Roles.</para>
-        /// <para>The returned policy is URL-encoded according to RFC 3986. For more information about RFC 3986, go to
-        /// http://www.faqs.org/rfcs/rfc3986.html.</para>
+        /// <para>Retrieves the specified policy document for the specified role. For more information about roles, go to <a href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working with Roles</a> .</para> <para>The returned
+        /// policy is URL-encoded according to RFC 3986. For more information about RFC 3986, go to <a href="http://www.faqs.org/rfcs/rfc3986.html">http://www.faqs.org/rfcs/rfc3986.html</a> .</para>
         /// </summary>
         /// 
         /// <param name="getRolePolicyRequest">Container for the necessary parameters to execute the GetRolePolicy service method on
@@ -958,6 +1416,19 @@ namespace Amazon.IdentityManagement
             return response;
         }
  
+		internal GetServerCertificateResponse GetServerCertificate(GetServerCertificateRequest request)
+        {
+            var task = GetServerCertificateAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Retrieves information about the specified server certificate.</para>
         /// </summary>
@@ -980,6 +1451,19 @@ namespace Amazon.IdentityManagement
             return response;
         }
  
+		internal GetUserResponse GetUser(GetUserRequest request)
+        {
+            var task = GetUserAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Retrieves information about the specified user, including the user's path, GUID, and ARN.</para> <para>If you do not specify a user
         /// name, IAM determines the user name implicitly based on the AWS Access Key ID signing the request.</para>
@@ -1003,9 +1487,22 @@ namespace Amazon.IdentityManagement
             return response;
         }
  
+		internal GetUserPolicyResponse GetUserPolicy(GetUserPolicyRequest request)
+        {
+            var task = GetUserPolicyAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Retrieves the specified policy document for the specified user. The returned policy is URL-encoded according to RFC 3986. For more
-        /// information about RFC 3986, go to http://www.faqs.org/rfcs/rfc3986.html.</para>
+        /// information about RFC 3986, go to <a href="http://www.faqs.org/rfcs/rfc3986.html">http://www.faqs.org/rfcs/rfc3986.html</a> .</para>
         /// </summary>
         /// 
         /// <param name="getUserPolicyRequest">Container for the necessary parameters to execute the GetUserPolicy service method on
@@ -1026,6 +1523,19 @@ namespace Amazon.IdentityManagement
             return response;
         }
  
+		internal ListAccessKeysResponse ListAccessKeys(ListAccessKeysRequest request)
+        {
+            var task = ListAccessKeysAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Returns information about the Access Key IDs associated with the specified user. If there are none, the action returns an empty
         /// list.</para> <para>Although each user is limited to a small number of keys, you can still paginate the results using the <c>MaxItems</c> and
@@ -1053,10 +1563,23 @@ namespace Amazon.IdentityManagement
             return response;
         }
  
+		internal ListAccountAliasesResponse ListAccountAliases(ListAccountAliasesRequest request)
+        {
+            var task = ListAccountAliasesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
-        /// <para>Lists the account aliases associated with the account. For information about using an AWS account alias, see Using an Alias for Your
-        /// AWS Account ID in <i>Using AWS Identity and Access Management</i> .</para> <para>You can paginate the results using the <c>MaxItems</c> and
-        /// <c>Marker</c> parameters.</para>
+        /// <para>Lists the account aliases associated with the account. For information about using an AWS account alias, see <a href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/AccountAlias.html">Using an Alias for Your AWS Account ID</a> in <i>Using AWS
+        /// Identity and Access Management</i> .</para> <para>You can paginate the results using the <c>MaxItems</c> and <c>Marker</c>
+        /// parameters.</para>
         /// </summary>
         /// 
         /// <param name="listAccountAliasesRequest">Container for the necessary parameters to execute the ListAccountAliases service method on
@@ -1075,6 +1598,19 @@ namespace Amazon.IdentityManagement
             return response;
         }
  
+		internal ListGroupPoliciesResponse ListGroupPolicies(ListGroupPoliciesRequest request)
+        {
+            var task = ListGroupPoliciesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Lists the names of the policies associated with the specified group. If there are none, the action returns an empty list.</para>
         /// <para>You can paginate the results using the <c>MaxItems</c> and <c>Marker</c> parameters.</para>
@@ -1098,6 +1634,19 @@ namespace Amazon.IdentityManagement
             return response;
         }
  
+		internal ListGroupsResponse ListGroups(ListGroupsRequest request)
+        {
+            var task = ListGroupsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Lists the groups that have the specified path prefix.</para> <para>You can paginate the results using the <c>MaxItems</c> and
         /// <c>Marker</c> parameters.</para>
@@ -1119,6 +1668,19 @@ namespace Amazon.IdentityManagement
             return response;
         }
  
+		internal ListGroupsForUserResponse ListGroupsForUser(ListGroupsForUserRequest request)
+        {
+            var task = ListGroupsForUserAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Lists the groups the specified user belongs to.</para> <para>You can paginate the results using the <c>MaxItems</c> and <c>Marker</c>
         /// parameters.</para>
@@ -1142,10 +1704,22 @@ namespace Amazon.IdentityManagement
             return response;
         }
  
+		internal ListInstanceProfilesResponse ListInstanceProfiles(ListInstanceProfilesRequest request)
+        {
+            var task = ListInstanceProfilesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Lists the instance profiles that have the specified path prefix. If there are none, the action returns an empty list. For more
-        /// information about instance profiles, go to About Instance Profiles.</para> <para>You can paginate the results using the <c>MaxItems</c> and
-        /// <c>Marker</c> parameters.</para>
+        /// information about instance profiles, go to <a href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About Instance Profiles</a> .</para> <para>You can paginate the results using the <c>MaxItems</c> and <c>Marker</c> parameters.</para>
         /// </summary>
         /// 
         /// <param name="listInstanceProfilesRequest">Container for the necessary parameters to execute the ListInstanceProfiles service method on
@@ -1164,10 +1738,22 @@ namespace Amazon.IdentityManagement
             return response;
         }
  
+		internal ListInstanceProfilesForRoleResponse ListInstanceProfilesForRole(ListInstanceProfilesForRoleRequest request)
+        {
+            var task = ListInstanceProfilesForRoleAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Lists the instance profiles that have the specified associated role. If there are none, the action returns an empty list. For more
-        /// information about instance profiles, go to About Instance Profiles.</para> <para>You can paginate the results using the <c>MaxItems</c> and
-        /// <c>Marker</c> parameters.</para>
+        /// information about instance profiles, go to <a href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About Instance Profiles</a> .</para> <para>You can paginate the results using the <c>MaxItems</c> and <c>Marker</c> parameters.</para>
         /// </summary>
         /// 
         /// <param name="listInstanceProfilesForRoleRequest">Container for the necessary parameters to execute the ListInstanceProfilesForRole service
@@ -1188,6 +1774,19 @@ namespace Amazon.IdentityManagement
             return response;
         }
  
+		internal ListMFADevicesResponse ListMFADevices(ListMFADevicesRequest request)
+        {
+            var task = ListMFADevicesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Lists the MFA devices. If the request includes the user name, then this action lists all the MFA devices associated with the specified
         /// user name. If you do not specify a user name, IAM determines the user name implicitly based on the AWS Access Key ID signing the
@@ -1212,6 +1811,19 @@ namespace Amazon.IdentityManagement
             return response;
         }
  
+		internal ListRolePoliciesResponse ListRolePolicies(ListRolePoliciesRequest request)
+        {
+            var task = ListRolePoliciesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Lists the names of the policies associated with the specified role. If there are none, the action returns an empty list.</para>
         /// <para>You can paginate the results using the <c>MaxItems</c> and <c>Marker</c> parameters.</para>
@@ -1235,11 +1847,24 @@ namespace Amazon.IdentityManagement
             return response;
         }
  
+		internal ListRolesResponse ListRoles(ListRolesRequest request)
+        {
+            var task = ListRolesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Lists the roles that have the specified path prefix. If there are none, the action returns an empty list. For more information about
-        /// roles, go to Working with Roles.</para> <para>You can paginate the results using the <c>MaxItems</c> and <c>Marker</c> parameters.</para>
-        /// <para>The returned policy is URL-encoded according to RFC 3986. For more information about RFC 3986, go to
-        /// http://www.faqs.org/rfcs/rfc3986.html.</para>
+        /// roles, go to <a href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working with Roles</a> .</para>
+        /// <para>You can paginate the results using the <c>MaxItems</c> and <c>Marker</c> parameters.</para> <para>The returned policy is URL-encoded
+        /// according to RFC 3986. For more information about RFC 3986, go to <a href="http://www.faqs.org/rfcs/rfc3986.html">http://www.faqs.org/rfcs/rfc3986.html</a> .</para>
         /// </summary>
         /// 
         /// <param name="listRolesRequest">Container for the necessary parameters to execute the ListRoles service method on
@@ -1258,6 +1883,19 @@ namespace Amazon.IdentityManagement
             return response;
         }
  
+		internal ListServerCertificatesResponse ListServerCertificates(ListServerCertificatesRequest request)
+        {
+            var task = ListServerCertificatesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Lists the server certificates that have the specified path prefix. If none exist, the action returns an empty list.</para> <para>You
         /// can paginate the results using the <c>MaxItems</c> and <c>Marker</c> parameters.</para>
@@ -1279,6 +1917,19 @@ namespace Amazon.IdentityManagement
             return response;
         }
  
+		internal ListSigningCertificatesResponse ListSigningCertificates(ListSigningCertificatesRequest request)
+        {
+            var task = ListSigningCertificatesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Returns information about the signing certificates associated with the specified user. If there are none, the action returns an empty
         /// list.</para> <para>Although each user is limited to a small number of signing certificates, you can still paginate the results using the
@@ -1305,6 +1956,19 @@ namespace Amazon.IdentityManagement
             return response;
         }
  
+		internal ListUserPoliciesResponse ListUserPolicies(ListUserPoliciesRequest request)
+        {
+            var task = ListUserPoliciesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Lists the names of the policies associated with the specified user. If there are none, the action returns an empty list.</para>
         /// <para>You can paginate the results using the <c>MaxItems</c> and <c>Marker</c> parameters.</para>
@@ -1328,6 +1992,19 @@ namespace Amazon.IdentityManagement
             return response;
         }
  
+		internal ListUsersResponse ListUsers(ListUsersRequest request)
+        {
+            var task = ListUsersAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Lists the users that have the specified path prefix. If there are none, the action returns an empty list.</para> <para>You can
         /// paginate the results using the <c>MaxItems</c> and <c>Marker</c> parameters.</para>
@@ -1349,6 +2026,19 @@ namespace Amazon.IdentityManagement
             return response;
         }
  
+		internal ListVirtualMFADevicesResponse ListVirtualMFADevices(ListVirtualMFADevicesRequest request)
+        {
+            var task = ListVirtualMFADevicesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Lists the virtual MFA devices under the AWS account by assignment status. If you do not specify an assignment status, the action
         /// returns a list of all virtual MFA devices. Assignment status can be <c>Assigned</c> ,
@@ -1373,13 +2063,27 @@ namespace Amazon.IdentityManagement
             return response;
         }
  
+		internal PutGroupPolicyResponse PutGroupPolicy(PutGroupPolicyRequest request)
+        {
+            var task = PutGroupPolicyAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
-        /// <para>Adds (or updates) a policy document associated with the specified group. For information about policies, refer to Overview of Policies
-        /// in <i>Using AWS Identity and Access Management</i> .</para> <para>For information about limits on the number of policies you can associate
-        /// with a group, see Limitations on IAM Entities in <i>Using AWS Identity and Access Management</i> .</para> <para><b>NOTE:</b>Because policy
-        /// documents can be large, you should use POST rather than GET when calling PutGroupPolicy. For information about setting up signatures and
-        /// authorization through the API, go to Signing AWS API Requests in the AWS General Reference. For general information about using the Query
-        /// API with IAM, go to Making Query Requests in Using IAM.</para>
+        /// <para>Adds (or updates) a policy document associated with the specified group. For information about policies, refer to <a href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?PoliciesOverview.html">Overview of Policies</a> in <i>Using AWS
+        /// Identity and Access Management</i> .</para> <para>For information about limits on the number of policies you can associate with a group, see
+        /// <a href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?LimitationsOnEntities.html">Limitations on IAM Entities</a> in
+        /// <i>Using AWS Identity and Access Management</i> .</para> <para><b>NOTE:</b>Because policy documents can be large, you should use POST rather
+        /// than GET when calling PutGroupPolicy. For information about setting up signatures and authorization through the API, go to Signing AWS API
+        /// Requests in the AWS General Reference. For general information about using the Query API with IAM, go to Making Query Requests in Using
+        /// IAM.</para>
         /// </summary>
         /// 
         /// <param name="putGroupPolicyRequest">Container for the necessary parameters to execute the PutGroupPolicy service method on
@@ -1400,13 +2104,26 @@ namespace Amazon.IdentityManagement
             return response;
         }
  
+		internal PutRolePolicyResponse PutRolePolicy(PutRolePolicyRequest request)
+        {
+            var task = PutRolePolicyAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
-        /// <para>Adds (or updates) a policy document associated with the specified role. For information about policies, go to Overview of Policies in
-        /// <i>Using AWS Identity and Access Management</i> .</para> <para>For information about limits on the policies you can associate with a role,
-        /// see Limitations on IAM Entities in <i>Using AWS Identity and Access Management</i> .</para> <para><b>NOTE:</b>Because policy documents can
-        /// be large, you should use POST rather than GET when calling PutRolePolicy. For information about setting up signatures and authorization
-        /// through the API, go to Signing AWS API Requests in the AWS General Reference. For general information about using the Query API with IAM, go
-        /// to Making Query Requests in Using IAM.</para>
+        /// <para>Adds (or updates) a policy document associated with the specified role. For information about policies, go to <a href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?PoliciesOverview.html">Overview of Policies</a> in <i>Using AWS
+        /// Identity and Access Management</i> .</para> <para>For information about limits on the policies you can associate with a role, see <a href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?LimitationsOnEntities.html">Limitations on IAM Entities</a> in
+        /// <i>Using AWS Identity and Access Management</i> .</para> <para><b>NOTE:</b>Because policy documents can be large, you should use POST rather
+        /// than GET when calling PutRolePolicy. For information about setting up signatures and authorization through the API, go to Signing AWS API
+        /// Requests in the AWS General Reference. For general information about using the Query API with IAM, go to Making Query Requests in Using
+        /// IAM.</para>
         /// </summary>
         /// 
         /// <param name="putRolePolicyRequest">Container for the necessary parameters to execute the PutRolePolicy service method on
@@ -1427,13 +2144,27 @@ namespace Amazon.IdentityManagement
             return response;
         }
  
+		internal PutUserPolicyResponse PutUserPolicy(PutUserPolicyRequest request)
+        {
+            var task = PutUserPolicyAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
-        /// <para>Adds (or updates) a policy document associated with the specified user. For information about policies, refer to Overview of Policies
-        /// in <i>Using AWS Identity and Access Management</i> .</para> <para>For information about limits on the number of policies you can associate
-        /// with a user, see Limitations on IAM Entities in <i>Using AWS Identity and Access Management</i> .</para> <para><b>NOTE:</b>Because policy
-        /// documents can be large, you should use POST rather than GET when calling PutUserPolicy. For information about setting up signatures and
-        /// authorization through the API, go to Signing AWS API Requests in the AWS General Reference. For general information about using the Query
-        /// API with IAM, go to Making Query Requests in Using IAM.</para>
+        /// <para>Adds (or updates) a policy document associated with the specified user. For information about policies, refer to <a href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?PoliciesOverview.html">Overview of Policies</a> in <i>Using AWS
+        /// Identity and Access Management</i> .</para> <para>For information about limits on the number of policies you can associate with a user, see
+        /// <a href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?LimitationsOnEntities.html">Limitations on IAM Entities</a> in
+        /// <i>Using AWS Identity and Access Management</i> .</para> <para><b>NOTE:</b>Because policy documents can be large, you should use POST rather
+        /// than GET when calling PutUserPolicy. For information about setting up signatures and authorization through the API, go to Signing AWS API
+        /// Requests in the AWS General Reference. For general information about using the Query API with IAM, go to Making Query Requests in Using
+        /// IAM.</para>
         /// </summary>
         /// 
         /// <param name="putUserPolicyRequest">Container for the necessary parameters to execute the PutUserPolicy service method on
@@ -1454,11 +2185,26 @@ namespace Amazon.IdentityManagement
             return response;
         }
  
+		internal RemoveRoleFromInstanceProfileResponse RemoveRoleFromInstanceProfile(RemoveRoleFromInstanceProfileRequest request)
+        {
+            var task = RemoveRoleFromInstanceProfileAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Removes the specified role from the specified instance profile.</para> <para><b>IMPORTANT:</b>Make sure you do not have any Amazon EC2
         /// instances running with the role you are about to remove from the instance profile. Removing a role from an instance profile that is
         /// associated with a running instance will break any applications running on the instance.</para> <para>For more information about roles, go to
-        /// Working with Roles. For more information about instance profiles, go to About Instance Profiles.</para>
+        /// <a href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working with Roles</a> . For more information about
+        /// instance profiles, go to <a href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About Instance
+        /// Profiles</a> .</para>
         /// </summary>
         /// 
         /// <param name="removeRoleFromInstanceProfileRequest">Container for the necessary parameters to execute the RemoveRoleFromInstanceProfile
@@ -1477,6 +2223,19 @@ namespace Amazon.IdentityManagement
             return response;
         }
  
+		internal RemoveUserFromGroupResponse RemoveUserFromGroup(RemoveUserFromGroupRequest request)
+        {
+            var task = RemoveUserFromGroupAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Removes the specified user from the specified group.</para>
         /// </summary>
@@ -1497,6 +2256,19 @@ namespace Amazon.IdentityManagement
             return response;
         }
  
+		internal ResyncMFADeviceResponse ResyncMFADevice(ResyncMFADeviceRequest request)
+        {
+            var task = ResyncMFADeviceAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Synchronizes the specified MFA device with AWS servers.</para>
         /// </summary>
@@ -1518,12 +2290,25 @@ namespace Amazon.IdentityManagement
             return response;
         }
  
+		internal UpdateAccessKeyResponse UpdateAccessKey(UpdateAccessKeyRequest request)
+        {
+            var task = UpdateAccessKeyAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Changes the status of the specified access key from Active to Inactive, or vice versa. This action can be used to disable a user's key
         /// as part of a key rotation work flow.</para> <para>If the <c>UserName</c> field is not specified, the UserName is determined implicitly based
         /// on the AWS Access Key ID used to sign the request. Because this action works for access keys under the AWS account, this API can be used to
-        /// manage root credentials even if the AWS account has no associated users.</para> <para>For information about rotating keys, see Managing Keys
-        /// and Certificates in <i>Using AWS Identity and Access Management</i> .</para>
+        /// manage root credentials even if the AWS account has no associated users.</para> <para>For information about rotating keys, see <a href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?ManagingCredentials.html">Managing Keys and Certificates</a> in
+        /// <i>Using AWS Identity and Access Management</i> .</para>
         /// </summary>
         /// 
         /// <param name="updateAccessKeyRequest">Container for the necessary parameters to execute the UpdateAccessKey service method on
@@ -1542,9 +2327,22 @@ namespace Amazon.IdentityManagement
             return response;
         }
  
+		internal UpdateAccountPasswordPolicyResponse UpdateAccountPasswordPolicy(UpdateAccountPasswordPolicyRequest request)
+        {
+            var task = UpdateAccountPasswordPolicyAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
-        /// <para>Updates the password policy settings for the account. For more information about using a password policy, go to Managing an IAM
-        /// Password Policy.</para>
+        /// <para>Updates the password policy settings for the account. For more information about using a password policy, go to <a href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html">Managing an IAM Password Policy</a>
+        /// .</para>
         /// </summary>
         /// 
         /// <param name="updateAccountPasswordPolicyRequest">Container for the necessary parameters to execute the UpdateAccountPasswordPolicy service
@@ -1564,9 +2362,23 @@ namespace Amazon.IdentityManagement
             return response;
         }
  
+		internal UpdateAssumeRolePolicyResponse UpdateAssumeRolePolicy(UpdateAssumeRolePolicyRequest request)
+        {
+            var task = UpdateAssumeRolePolicyAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Updates the policy that grants an entity permission to assume a role. Currently, only an Amazon EC2 instance can assume a role. For
-        /// more information about roles, go to Working with Roles.</para>
+        /// more information about roles, go to <a href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working with
+        /// Roles</a> .</para>
         /// </summary>
         /// 
         /// <param name="updateAssumeRolePolicyRequest">Container for the necessary parameters to execute the UpdateAssumeRolePolicy service method on
@@ -1586,6 +2398,19 @@ namespace Amazon.IdentityManagement
             return response;
         }
  
+		internal UpdateGroupResponse UpdateGroup(UpdateGroupRequest request)
+        {
+            var task = UpdateGroupAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Updates the name and/or the path of the specified group.</para> <para><b>IMPORTANT:</b> You should understand the implications of
         /// changing a group's path or name. For more information, see Renaming Users and Groups in Using AWS Identity and Access Management. </para>
@@ -1611,6 +2436,19 @@ namespace Amazon.IdentityManagement
             return response;
         }
  
+		internal UpdateLoginProfileResponse UpdateLoginProfile(UpdateLoginProfileRequest request)
+        {
+            var task = UpdateLoginProfileAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Changes the password for the specified user.</para>
         /// </summary>
@@ -1633,6 +2471,19 @@ namespace Amazon.IdentityManagement
             return response;
         }
  
+		internal UpdateServerCertificateResponse UpdateServerCertificate(UpdateServerCertificateRequest request)
+        {
+            var task = UpdateServerCertificateAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Updates the name and/or the path of the specified server certificate.</para> <para><b>IMPORTANT:</b> You should understand the
         /// implications of changing a server certificate's path or name. For more information, see Managing Server Certificates in Using AWS Identity
@@ -1659,12 +2510,26 @@ namespace Amazon.IdentityManagement
             return response;
         }
  
+		internal UpdateSigningCertificateResponse UpdateSigningCertificate(UpdateSigningCertificateRequest request)
+        {
+            var task = UpdateSigningCertificateAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Changes the status of the specified signing certificate from active to disabled, or vice versa. This action can be used to disable a
         /// user's signing certificate as part of a certificate rotation work flow.</para> <para>If the <c>UserName</c> field is not specified, the
         /// UserName is determined implicitly based on the AWS Access Key ID used to sign the request. Because this action works for access keys under
         /// the AWS account, this API can be used to manage root credentials even if the AWS account has no associated users.</para> <para>For
-        /// information about rotating certificates, see Managing Keys and Certificates in <i>Using AWS Identity and Access Management</i> .</para>
+        /// information about rotating certificates, see <a href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?ManagingCredentials.html">Managing Keys and Certificates</a> in
+        /// <i>Using AWS Identity and Access Management</i> .</para>
         /// </summary>
         /// 
         /// <param name="updateSigningCertificateRequest">Container for the necessary parameters to execute the UpdateSigningCertificate service method
@@ -1683,6 +2548,19 @@ namespace Amazon.IdentityManagement
             return response;
         }
  
+		internal UpdateUserResponse UpdateUser(UpdateUserRequest request)
+        {
+            var task = UpdateUserAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Updates the name and/or the path of the specified user.</para> <para><b>IMPORTANT:</b> You should understand the implications of
         /// changing a user's path or name. For more information, see Renaming Users and Groups in Using AWS Identity and Access Management. </para>
@@ -1709,14 +2587,26 @@ namespace Amazon.IdentityManagement
             return response;
         }
  
+		internal UploadServerCertificateResponse UploadServerCertificate(UploadServerCertificateRequest request)
+        {
+            var task = UploadServerCertificateAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Uploads a server certificate entity for the AWS account. The server certificate entity includes a public key certificate, a private
         /// key, and an optional certificate chain, which should all be PEM-encoded.</para> <para>For information about the number of server
-        /// certificates you can upload, see Limitations on IAM Entities in <i>Using AWS Identity and Access Management</i> .</para>
-        /// <para><b>NOTE:</b>Because the body of the public key certificate, private key, and the certificate chain can be large, you should use POST
-        /// rather than GET when calling UploadServerCertificate. For information about setting up signatures and authorization through the API, go to
-        /// Signing AWS API Requests in the AWS General Reference. For general information about using the Query API with IAM, go to Making Query
-        /// Requests in Using IAM.</para>
+        /// certificates you can upload, see <a href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?LimitationsOnEntities.html">Limitations on IAM Entities</a> in <i>Using AWS Identity and Access Management</i> .</para> <para><b>NOTE:</b>Because the body of the
+        /// public key certificate, private key, and the certificate chain can be large, you should use POST rather than GET when calling
+        /// UploadServerCertificate. For information about setting up signatures and authorization through the API, go to Signing AWS API Requests in
+        /// the AWS General Reference. For general information about using the Query API with IAM, go to Making Query Requests in Using IAM.</para>
         /// </summary>
         /// 
         /// <param name="uploadServerCertificateRequest">Container for the necessary parameters to execute the UploadServerCertificate service method on
@@ -1740,6 +2630,19 @@ namespace Amazon.IdentityManagement
             return response;
         }
  
+		internal UploadSigningCertificateResponse UploadSigningCertificate(UploadSigningCertificateRequest request)
+        {
+            var task = UploadSigningCertificateAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Uploads an X.509 signing certificate and associates it with the specified user. Some AWS services use X.509 signing certificates to
         /// validate requests that are signed with a corresponding private key. When you upload the certificate, its default status is <c>Active</c>

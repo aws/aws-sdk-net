@@ -25,7 +25,7 @@ namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
     /// Container for the parameters to the AttachLoadBalancerToSubnets operation.
-    /// <para> Adds one or more subnets to the set of configured subnets in the VPC for the LoadBalancer. </para> <para> The Loadbalancers evenly
+    /// <para> Adds one or more subnets to the set of configured subnets in the VPC for the load balancer. </para> <para> The Loadbalancers evenly
     /// distribute requests across all of the registered subnets. </para>
     /// </summary>
     public partial class AttachLoadBalancerToSubnetsRequest : AmazonWebServiceRequest
@@ -34,7 +34,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         private List<string> subnets = new List<string>();
 
         /// <summary>
-        /// The name associated with the LoadBalancer. The name must be unique within the client AWS account.
+        /// The name associated with the load balancer. The name must be unique within the client AWS account.
         ///  
         /// </summary>
         public string LoadBalancerName
@@ -50,7 +50,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         }
 
         /// <summary>
-        /// A list of subnet IDs to add for the LoadBalancer.
+        /// A list of subnet IDs to add for the load balancer.
         ///  
         /// </summary>
         public List<string> Subnets

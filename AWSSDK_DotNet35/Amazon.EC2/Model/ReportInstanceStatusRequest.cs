@@ -29,12 +29,24 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class ReportInstanceStatusRequest : AmazonWebServiceRequest
     {
+        private bool? dryRun;
         private List<string> instances = new List<string>();
-        private string status;
+        private ReportStatusType status;
         private DateTime? startTime;
         private DateTime? endTime;
         private List<string> reasonCodes = new List<string>();
         private string description;
+        public bool DryRun
+        {
+            get { return this.dryRun ?? default(bool); }
+            set { this.dryRun = value; }
+        }
+
+        // Check to see if DryRun property is set
+        internal bool IsSetDryRun()
+        {
+            return this.dryRun.HasValue;
+        }
         public List<string> Instances
         {
             get { return this.instances; }
@@ -46,7 +58,7 @@ namespace Amazon.EC2.Model
         {
             return this.instances.Count > 0;
         }
-        public string Status
+        public ReportStatusType Status
         {
             get { return this.status; }
             set { this.status = value; }

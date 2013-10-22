@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
         private string expirationTime;
         private ImportInstanceTaskDetails importInstance;
         private ImportVolumeTaskDetails importVolume;
-        private string state;
+        private ConversionTaskState state;
         private string statusMessage;
         private List<Tag> tags = new List<Tag>();
         public string ConversionTaskId
@@ -76,7 +76,7 @@ namespace Amazon.EC2.Model
         {
             return this.importVolume != null;
         }
-        public string State
+        public ConversionTaskState State
         {
             get { return this.state; }
             set { this.state = value; }

@@ -35,10 +35,14 @@ namespace Amazon.DirectConnect
     /// the actions and data types for AWS Direct Connect. Use the following links to get started using the <i>AWS Direct Connect API Reference</i>
     /// :</para>
     /// <ul>
-    /// <li> Actions: An alphabetical list of all AWS Direct Connect actions.</li>
-    /// <li> Data Types: An alphabetical list of all AWS Direct Connect data types.</li>
-    /// <li> Common Query Parameters: Parameters that all Query actions can use.</li>
-    /// <li> Common Errors: Client and server errors that all actions can return.</li>
+    /// <li> <a href="http://docs.aws.amazon.com/directconnect/latest/APIReference/API_Operations.html">Actions</a> : An alphabetical list of all
+    /// AWS Direct Connect actions.</li>
+    /// <li> <a href="http://docs.aws.amazon.com/directconnect/latest/APIReference/API_Types.html">Data Types</a> : An alphabetical list of all
+    /// AWS Direct Connect data types.</li>
+    /// <li> <a href="http://docs.aws.amazon.com/directconnect/latest/APIReference/CommonParameters.html">Common Query Parameters</a> : Parameters
+    /// that all Query actions can use.</li>
+    /// <li> <a href="http://docs.aws.amazon.com/directconnect/latest/APIReference/CommonErrors.html">Common Errors</a> : Client and server errors
+    /// that all actions can return.</li>
     /// 
     /// </ul>
     /// </summary>
@@ -65,7 +69,7 @@ namespace Amazon.DirectConnect
         ///
         /// </summary>
         public AmazonDirectConnectClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonDirectConnectConfig(), true, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonDirectConnectConfig(), AuthenticationTypes.User | AuthenticationTypes.Session) { }
 
         /// <summary>
         /// Constructs AmazonDirectConnectClient with the credentials loaded from the application's
@@ -85,7 +89,7 @@ namespace Amazon.DirectConnect
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonDirectConnectClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonDirectConnectConfig(){RegionEndpoint = region}, true, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonDirectConnectConfig(){RegionEndpoint = region}, AuthenticationTypes.User | AuthenticationTypes.Session) { }
 
         /// <summary>
         /// Constructs AmazonDirectConnectClient with the credentials loaded from the application's
@@ -105,7 +109,7 @@ namespace Amazon.DirectConnect
         /// </summary>
         /// <param name="config">The AmazonDirectConnect Configuration Object</param>
         public AmazonDirectConnectClient(AmazonDirectConnectConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config, true, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), config, AuthenticationTypes.User | AuthenticationTypes.Session) { }
 
         /// <summary>
         /// Constructs AmazonDirectConnectClient with AWS Credentials
@@ -133,7 +137,7 @@ namespace Amazon.DirectConnect
         /// <param name="credentials">AWS Credentials</param>
         /// <param name="clientConfig">The AmazonDirectConnectClient Configuration Object</param>
         public AmazonDirectConnectClient(AWSCredentials credentials, AmazonDirectConnectConfig clientConfig)
-            : base(credentials, clientConfig, false, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(credentials, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
         {
         }
 
@@ -223,7 +227,7 @@ namespace Amazon.DirectConnect
         /// connection in one region does not provide connectivity to other regions.</para>
         /// </summary>
         /// 
-        /// <param name="createConnectionRequest">Container for the necessary parameters to execute the CreateConnection service method on
+        /// <param name="request">Container for the necessary parameters to execute the CreateConnection service method on
         /// AmazonDirectConnect.</param>
         /// 
         /// <returns>The response from the CreateConnection service method, as returned by AmazonDirectConnect.</returns>
@@ -267,7 +271,7 @@ namespace Amazon.DirectConnect
         /// virtual interface supports sending traffic to a single Virtual Private Cloud (VPC). </para>
         /// </summary>
         /// 
-        /// <param name="createPrivateVirtualInterfaceRequest">Container for the necessary parameters to execute the CreatePrivateVirtualInterface
+        /// <param name="request">Container for the necessary parameters to execute the CreatePrivateVirtualInterface
         /// service method on AmazonDirectConnect.</param>
         /// 
         /// <returns>The response from the CreatePrivateVirtualInterface service method, as returned by AmazonDirectConnect.</returns>
@@ -311,8 +315,6 @@ namespace Amazon.DirectConnect
         /// virtual interface supports sending traffic to a single Virtual Private Cloud (VPC). </para>
         /// </summary>
         /// 
-        /// <param name="createPrivateVirtualInterfaceRequest">Container for the necessary parameters to execute the CreatePrivateVirtualInterface
-        /// service method on AmazonDirectConnect.</param>
         /// 
         /// <returns>The response from the CreatePrivateVirtualInterface service method, as returned by AmazonDirectConnect.</returns>
         /// 
@@ -328,7 +330,7 @@ namespace Amazon.DirectConnect
         /// interface supports sending traffic to public services of AWS such as Amazon Simple Storage Service (Amazon S3). </para>
         /// </summary>
         /// 
-        /// <param name="createPublicVirtualInterfaceRequest">Container for the necessary parameters to execute the CreatePublicVirtualInterface service
+        /// <param name="request">Container for the necessary parameters to execute the CreatePublicVirtualInterface service
         /// method on AmazonDirectConnect.</param>
         /// 
         /// <returns>The response from the CreatePublicVirtualInterface service method, as returned by AmazonDirectConnect.</returns>
@@ -372,8 +374,6 @@ namespace Amazon.DirectConnect
         /// interface supports sending traffic to public services of AWS such as Amazon Simple Storage Service (Amazon S3). </para>
         /// </summary>
         /// 
-        /// <param name="createPublicVirtualInterfaceRequest">Container for the necessary parameters to execute the CreatePublicVirtualInterface service
-        /// method on AmazonDirectConnect.</param>
         /// 
         /// <returns>The response from the CreatePublicVirtualInterface service method, as returned by AmazonDirectConnect.</returns>
         /// 
@@ -390,7 +390,7 @@ namespace Amazon.DirectConnect
         /// with the providers of those services.</para>
         /// </summary>
         /// 
-        /// <param name="deleteConnectionRequest">Container for the necessary parameters to execute the DeleteConnection service method on
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConnection service method on
         /// AmazonDirectConnect.</param>
         /// 
         /// <returns>The response from the DeleteConnection service method, as returned by AmazonDirectConnect.</returns>
@@ -433,7 +433,7 @@ namespace Amazon.DirectConnect
         /// <para> Deletes a virtual interface. </para>
         /// </summary>
         /// 
-        /// <param name="deleteVirtualInterfaceRequest">Container for the necessary parameters to execute the DeleteVirtualInterface service method on
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVirtualInterface service method on
         /// AmazonDirectConnect.</param>
         /// 
         /// <returns>The response from the DeleteVirtualInterface service method, as returned by AmazonDirectConnect.</returns>
@@ -476,8 +476,6 @@ namespace Amazon.DirectConnect
         /// <para> Deletes a virtual interface. </para>
         /// </summary>
         /// 
-        /// <param name="deleteVirtualInterfaceRequest">Container for the necessary parameters to execute the DeleteVirtualInterface service method on
-        /// AmazonDirectConnect.</param>
         /// 
         /// <returns>The response from the DeleteVirtualInterface service method, as returned by AmazonDirectConnect.</returns>
         /// 
@@ -493,7 +491,7 @@ namespace Amazon.DirectConnect
         /// order.</para>
         /// </summary>
         /// 
-        /// <param name="describeConnectionDetailRequest">Container for the necessary parameters to execute the DescribeConnectionDetail service method
+        /// <param name="request">Container for the necessary parameters to execute the DescribeConnectionDetail service method
         /// on AmazonDirectConnect.</param>
         /// 
         /// <returns>The response from the DescribeConnectionDetail service method, as returned by AmazonDirectConnect.</returns>
@@ -537,7 +535,7 @@ namespace Amazon.DirectConnect
         /// connection.</para>
         /// </summary>
         /// 
-        /// <param name="describeConnectionsRequest">Container for the necessary parameters to execute the DescribeConnections service method on
+        /// <param name="request">Container for the necessary parameters to execute the DescribeConnections service method on
         /// AmazonDirectConnect.</param>
         /// 
         /// <returns>The response from the DescribeConnections service method, as returned by AmazonDirectConnect.</returns>
@@ -581,8 +579,6 @@ namespace Amazon.DirectConnect
         /// connection.</para>
         /// </summary>
         /// 
-        /// <param name="describeConnectionsRequest">Container for the necessary parameters to execute the DescribeConnections service method on
-        /// AmazonDirectConnect.</param>
         /// 
         /// <returns>The response from the DescribeConnections service method, as returned by AmazonDirectConnect.</returns>
         /// 
@@ -597,7 +593,7 @@ namespace Amazon.DirectConnect
         /// <para>Displays additional ordering step details for a specified offering.</para>
         /// </summary>
         /// 
-        /// <param name="describeOfferingDetailRequest">Container for the necessary parameters to execute the DescribeOfferingDetail service method on
+        /// <param name="request">Container for the necessary parameters to execute the DescribeOfferingDetail service method on
         /// AmazonDirectConnect.</param>
         /// 
         /// <returns>The response from the DescribeOfferingDetail service method, as returned by AmazonDirectConnect.</returns>
@@ -641,7 +637,7 @@ namespace Amazon.DirectConnect
         /// all regions.</para> <para>To order a new connection you need to select a specific offering ID.</para>
         /// </summary>
         /// 
-        /// <param name="describeOfferingsRequest">Container for the necessary parameters to execute the DescribeOfferings service method on
+        /// <param name="request">Container for the necessary parameters to execute the DescribeOfferings service method on
         /// AmazonDirectConnect.</param>
         /// 
         /// <returns>The response from the DescribeOfferings service method, as returned by AmazonDirectConnect.</returns>
@@ -685,8 +681,6 @@ namespace Amazon.DirectConnect
         /// all regions.</para> <para>To order a new connection you need to select a specific offering ID.</para>
         /// </summary>
         /// 
-        /// <param name="describeOfferingsRequest">Container for the necessary parameters to execute the DescribeOfferings service method on
-        /// AmazonDirectConnect.</param>
         /// 
         /// <returns>The response from the DescribeOfferings service method, as returned by AmazonDirectConnect.</returns>
         /// 
@@ -700,10 +694,11 @@ namespace Amazon.DirectConnect
         /// <summary>
         /// <para>Returns a list of virtual private gateways owned by the AWS account.</para> <para>You can create one or more AWS Direct Connect
         /// private virtual interfaces linking to a virtual private gateway. A virtual private gateway can be managed via Amazon Virtual Private Cloud
-        /// (VPC) console or the EC2 CreateVpnGateway action.</para>
+        /// (VPC) console or the <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-CreateVpnGateway.html">EC2
+        /// CreateVpnGateway</a> action.</para>
         /// </summary>
         /// 
-        /// <param name="describeVirtualGatewaysRequest">Container for the necessary parameters to execute the DescribeVirtualGateways service method on
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVirtualGateways service method on
         /// AmazonDirectConnect.</param>
         /// 
         /// <returns>The response from the DescribeVirtualGateways service method, as returned by AmazonDirectConnect.</returns>
@@ -745,11 +740,10 @@ namespace Amazon.DirectConnect
         /// <summary>
         /// <para>Returns a list of virtual private gateways owned by the AWS account.</para> <para>You can create one or more AWS Direct Connect
         /// private virtual interfaces linking to a virtual private gateway. A virtual private gateway can be managed via Amazon Virtual Private Cloud
-        /// (VPC) console or the EC2 CreateVpnGateway action.</para>
+        /// (VPC) console or the <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-CreateVpnGateway.html">EC2
+        /// CreateVpnGateway</a> action.</para>
         /// </summary>
         /// 
-        /// <param name="describeVirtualGatewaysRequest">Container for the necessary parameters to execute the DescribeVirtualGateways service method on
-        /// AmazonDirectConnect.</param>
         /// 
         /// <returns>The response from the DescribeVirtualGateways service method, as returned by AmazonDirectConnect.</returns>
         /// 
@@ -767,7 +761,7 @@ namespace Amazon.DirectConnect
         /// transmits the traffic between the Direct Connect location and the customer.</para>
         /// </summary>
         /// 
-        /// <param name="describeVirtualInterfacesRequest">Container for the necessary parameters to execute the DescribeVirtualInterfaces service
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVirtualInterfaces service
         /// method on AmazonDirectConnect.</param>
         /// 
         /// <returns>The response from the DescribeVirtualInterfaces service method, as returned by AmazonDirectConnect.</returns>
@@ -813,8 +807,6 @@ namespace Amazon.DirectConnect
         /// transmits the traffic between the Direct Connect location and the customer.</para>
         /// </summary>
         /// 
-        /// <param name="describeVirtualInterfacesRequest">Container for the necessary parameters to execute the DescribeVirtualInterfaces service
-        /// method on AmazonDirectConnect.</param>
         /// 
         /// <returns>The response from the DescribeVirtualInterfaces service method, as returned by AmazonDirectConnect.</returns>
         /// 

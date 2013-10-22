@@ -172,6 +172,12 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                             
                         continue;
                     }
+                    if (context.TestExpression("RestoreStatus", targetDepth))
+                    {
+                        cluster.RestoreStatus = RestoreStatusUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {

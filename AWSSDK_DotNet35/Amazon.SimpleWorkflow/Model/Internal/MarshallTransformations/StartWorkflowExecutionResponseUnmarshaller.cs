@@ -39,7 +39,7 @@
         }        
         
         
-        private void UnmarshallResult(JsonUnmarshallerContext context,StartWorkflowExecutionResponse response)
+        private static void UnmarshallResult(JsonUnmarshallerContext context,StartWorkflowExecutionResponse response)
         {                   
           response.Run = RunUnmarshaller.GetInstance().Unmarshall(context);
           return;

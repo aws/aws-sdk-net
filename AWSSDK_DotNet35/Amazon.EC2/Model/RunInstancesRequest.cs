@@ -46,6 +46,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class RunInstancesRequest : AmazonWebServiceRequest
     {
+        private bool? dryRun;
         private string imageId;
         private int? minCount;
         private int? maxCount;
@@ -61,7 +62,7 @@ namespace Amazon.EC2.Model
         private bool? monitoring;
         private string subnetId;
         private bool? disableApiTermination;
-        private string instanceInitiatedShutdownBehavior;
+        private ShutdownBehavior instanceInitiatedShutdownBehavior;
         private InstanceLicenseSpecification license;
         private string privateIpAddress;
         private string clientToken;
@@ -69,6 +70,17 @@ namespace Amazon.EC2.Model
         private List<InstanceNetworkInterfaceSpecification> networkInterfaces = new List<InstanceNetworkInterfaceSpecification>();
         private IamInstanceProfileSpecification iamInstanceProfile;
         private bool? ebsOptimized;
+        public bool DryRun
+        {
+            get { return this.dryRun ?? default(bool); }
+            set { this.dryRun = value; }
+        }
+
+        // Check to see if DryRun property is set
+        internal bool IsSetDryRun()
+        {
+            return this.dryRun.HasValue;
+        }
 
         /// <summary>
         /// Unique ID of a machine image, returned by a call to DescribeImages.
@@ -163,7 +175,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Specifies additional information to make available to the instance(s).
+        /// Specifies additional information to make available to the instance(s). This parameter must be passed as a Base64-encoded string.
         ///  
         /// </summary>
         public string UserData
@@ -321,8 +333,17 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Specifies whether the instance's Amazon EBS volumes are stopped or terminated when the instance is shut down.
         ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>stop, terminate</description>
+        ///     </item>
+        /// </list>
+        /// </para>
         /// </summary>
-        public string InstanceInitiatedShutdownBehavior
+        public ShutdownBehavior InstanceInitiatedShutdownBehavior
         {
             get { return this.instanceInitiatedShutdownBehavior; }
             set { this.instanceInitiatedShutdownBehavior = value; }
@@ -399,6 +420,11 @@ namespace Amazon.EC2.Model
         {
             return this.additionalInfo != null;
         }
+
+        /// <summary>
+        /// List of network interfaces associated with the instance.
+        ///  
+        /// </summary>
         public List<InstanceNetworkInterfaceSpecification> NetworkInterfaces
         {
             get { return this.networkInterfaces; }

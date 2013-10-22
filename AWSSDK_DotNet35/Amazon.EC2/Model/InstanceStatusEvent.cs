@@ -26,7 +26,7 @@ namespace Amazon.EC2.Model
     public class InstanceStatusEvent
     {
         
-        private string code;
+        private EventCode code;
         private string description;
         private DateTime? notBefore;
         private DateTime? notAfter;
@@ -34,8 +34,17 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// The associated code of the event. Valid values: instance-reboot, system-reboot, instance-retirement
         ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>instance-reboot, system-reboot, system-maintenance, instance-retirement, instance-stop</description>
+        ///     </item>
+        /// </list>
+        /// </para>
         /// </summary>
-        public string Code
+        public EventCode Code
         {
             get { return this.code; }
             set { this.code = value; }

@@ -56,7 +56,7 @@ namespace Amazon.ImportExport
         ///
         /// </summary>
         public AmazonImportExportClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonImportExportConfig(), true, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonImportExportConfig(), AuthenticationTypes.User | AuthenticationTypes.Session) { }
 
         /// <summary>
         /// Constructs AmazonImportExportClient with the credentials loaded from the application's
@@ -76,7 +76,7 @@ namespace Amazon.ImportExport
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonImportExportClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonImportExportConfig(){RegionEndpoint = region}, true, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonImportExportConfig(){RegionEndpoint = region}, AuthenticationTypes.User | AuthenticationTypes.Session) { }
 
         /// <summary>
         /// Constructs AmazonImportExportClient with the credentials loaded from the application's
@@ -96,7 +96,7 @@ namespace Amazon.ImportExport
         /// </summary>
         /// <param name="config">The AmazonImportExport Configuration Object</param>
         public AmazonImportExportClient(AmazonImportExportConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config, true, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), config, AuthenticationTypes.User | AuthenticationTypes.Session) { }
 
         /// <summary>
         /// Constructs AmazonImportExportClient with AWS Credentials
@@ -124,7 +124,7 @@ namespace Amazon.ImportExport
         /// <param name="credentials">AWS Credentials</param>
         /// <param name="clientConfig">The AmazonImportExportClient Configuration Object</param>
         public AmazonImportExportClient(AWSCredentials credentials, AmazonImportExportConfig clientConfig)
-            : base(credentials, clientConfig, false, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(credentials, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
         {
         }
 
@@ -211,7 +211,7 @@ namespace Amazon.ImportExport
         /// complete. </para>
         /// </summary>
         /// 
-        /// <param name="cancelJobRequest">Container for the necessary parameters to execute the CancelJob service method on AmazonImportExport.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CancelJob service method on AmazonImportExport.</param>
         /// 
         /// <returns>The response from the CancelJob service method, as returned by AmazonImportExport.</returns>
         /// 
@@ -258,7 +258,7 @@ namespace Amazon.ImportExport
         /// that you use to identify your storage device, and the address where you should ship your storage device. </para>
         /// </summary>
         /// 
-        /// <param name="createJobRequest">Container for the necessary parameters to execute the CreateJob service method on AmazonImportExport.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateJob service method on AmazonImportExport.</param>
         /// 
         /// <returns>The response from the CreateJob service method, as returned by AmazonImportExport.</returns>
         /// 
@@ -312,7 +312,7 @@ namespace Amazon.ImportExport
         /// the signature value associated with the job. You can only return information about jobs you own. </para>
         /// </summary>
         /// 
-        /// <param name="getStatusRequest">Container for the necessary parameters to execute the GetStatus service method on AmazonImportExport.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetStatus service method on AmazonImportExport.</param>
         /// 
         /// <returns>The response from the GetStatus service method, as returned by AmazonImportExport.</returns>
         /// 
@@ -358,7 +358,7 @@ namespace Amazon.ImportExport
         /// Test2 followed by Test1. </para>
         /// </summary>
         /// 
-        /// <param name="listJobsRequest">Container for the necessary parameters to execute the ListJobs service method on AmazonImportExport.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListJobs service method on AmazonImportExport.</param>
         /// 
         /// <returns>The response from the ListJobs service method, as returned by AmazonImportExport.</returns>
         /// 
@@ -402,7 +402,6 @@ namespace Amazon.ImportExport
         /// Test2 followed by Test1. </para>
         /// </summary>
         /// 
-        /// <param name="listJobsRequest">Container for the necessary parameters to execute the ListJobs service method on AmazonImportExport.</param>
         /// 
         /// <returns>The response from the ListJobs service method, as returned by AmazonImportExport.</returns>
         /// 
@@ -419,7 +418,7 @@ namespace Amazon.ImportExport
         /// before the data transfer starts and you can only use it on jobs you own. </para>
         /// </summary>
         /// 
-        /// <param name="updateJobRequest">Container for the necessary parameters to execute the UpdateJob service method on AmazonImportExport.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateJob service method on AmazonImportExport.</param>
         /// 
         /// <returns>The response from the UpdateJob service method, as returned by AmazonImportExport.</returns>
         /// 

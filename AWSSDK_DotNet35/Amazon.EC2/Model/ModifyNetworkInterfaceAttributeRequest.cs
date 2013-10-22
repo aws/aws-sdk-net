@@ -29,11 +29,23 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class ModifyNetworkInterfaceAttributeRequest : AmazonWebServiceRequest
     {
+        private bool? dryRun;
         private string networkInterfaceId;
         private string description;
         private bool? sourceDestCheck;
         private List<string> groups = new List<string>();
         private NetworkInterfaceAttachmentChanges attachment;
+        public bool DryRun
+        {
+            get { return this.dryRun ?? default(bool); }
+            set { this.dryRun = value; }
+        }
+
+        // Check to see if DryRun property is set
+        internal bool IsSetDryRun()
+        {
+            return this.dryRun.HasValue;
+        }
         public string NetworkInterfaceId
         {
             get { return this.networkInterfaceId; }

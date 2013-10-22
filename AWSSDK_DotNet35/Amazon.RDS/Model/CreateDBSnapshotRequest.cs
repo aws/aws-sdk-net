@@ -31,9 +31,10 @@ namespace Amazon.RDS.Model
     {
         private string dBSnapshotIdentifier;
         private string dBInstanceIdentifier;
+        private List<Tag> tags = new List<Tag>();
 
         /// <summary>
-        /// The identifier for the DB Snapshot. Constraints: <ul> <li>Cannot be null, empty, or blank</li> <li>Must contain from 1 to 255 alphanumeric
+        /// The identifier for the DB snapshot. Constraints: <ul> <li>Cannot be null, empty, or blank</li> <li>Must contain from 1 to 255 alphanumeric
         /// characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
         /// </ul> Example: <c>my-snapshot-id</c>
         ///  
@@ -51,7 +52,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The DB Instance identifier. This is the unique key that identifies a DB Instance. This parameter isn't case sensitive. Constraints: <ul>
+        /// The DB instance identifier. This is the unique key that identifies a DB instance. This parameter isn't case sensitive. Constraints: <ul>
         /// <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen
         /// or contain two consecutive hyphens</li> </ul>
         ///  
@@ -66,6 +67,22 @@ namespace Amazon.RDS.Model
         internal bool IsSetDBInstanceIdentifier()
         {
             return this.dBInstanceIdentifier != null;
+        }
+
+        /// <summary>
+        /// A list of tags.
+        ///  
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this.tags; }
+            set { this.tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this.tags.Count > 0;
         }
 
     }

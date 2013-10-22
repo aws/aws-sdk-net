@@ -17,13 +17,14 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using Amazon.Runtime;
 
 namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// <para> Describes a reserved node. </para>
     /// </summary>
-    public class ReservedNode
+    public partial class ReservedNode : AmazonWebServiceResponse
     {
         
         private string reservedNodeId;

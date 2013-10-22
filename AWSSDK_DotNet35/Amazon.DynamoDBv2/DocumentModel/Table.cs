@@ -35,8 +35,13 @@ namespace Amazon.DynamoDBv2.DocumentModel
         }
 
         private string[] keyNames;
-        internal IAmazonDynamoDB DDBClient { get; private set; }
         internal Table.DynamoDBConsumer TableConsumer { get; private set; }
+
+#if (WIN_RT || WINDOWS_PHONE)
+        internal AmazonDynamoDBClient DDBClient { get; private set; }
+#else
+        internal IAmazonDynamoDB DDBClient { get; private set; }
+#endif
 
         #endregion
 
@@ -247,7 +252,12 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         private Table(IAmazonDynamoDB ddbClient, string tableName, Table.DynamoDBConsumer consumer)
         {
+#if (WIN_RT || WINDOWS_PHONE)
+            DDBClient = ddbClient as AmazonDynamoDBClient;
+#else
             DDBClient = ddbClient;
+#endif
+
             TableConsumer = consumer;
             TableName = tableName;
             Keys = new Dictionary<string, KeyDescription>();

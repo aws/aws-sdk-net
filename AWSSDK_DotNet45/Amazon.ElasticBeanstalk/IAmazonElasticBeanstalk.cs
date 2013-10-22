@@ -26,10 +26,10 @@ namespace Amazon.ElasticBeanstalk
     /// AWS Elastic Beanstalk <para> This is the AWS Elastic Beanstalk API Reference. This guide provides detailed information about AWS Elastic
     /// Beanstalk actions, data types, parameters, and errors. </para> <para>AWS Elastic Beanstalk is a tool that makes it easy for you to create,
     /// deploy, and manage scalable, fault-tolerant applications running on Amazon Web Services cloud resources. </para> <para> For more information
-    /// about this product, go to the AWS Elastic Beanstalk details page. The location of the lastest AWS Elastic Beanstalk WSDL is
-    /// http://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl. </para> <para> <b>Endpoints</b> </para> <para>For a list
-    /// of region-specific endpoints that AWS Elastic Beanstalk supports, go to Regions and Endpoints in the <i>Amazon Web Services Glossary</i>
-    /// .</para>
+    /// about this product, go to the <a href="http://aws.amazon.com/elasticbeanstalk/">AWS Elastic Beanstalk</a> details page. The location of the
+    /// lastest AWS Elastic Beanstalk WSDL is <a href="http://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl">http://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl</a> .
+    /// </para> <para> <b>Endpoints</b> </para> <para>For a list of region-specific endpoints that AWS Elastic Beanstalk supports, go to <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region">Regions and Endpoints</a> in the <i>Amazon Web
+    /// Services Glossary</i> .</para>
     /// </summary>
 	public partial interface IAmazonElasticBeanstalk : IDisposable
     {
@@ -39,7 +39,7 @@ namespace Amazon.ElasticBeanstalk
         /// <para> Checks if the specified CNAME is available. </para>
         /// </summary>
         /// 
-        /// <param name="checkDNSAvailabilityRequest">Container for the necessary parameters to execute the CheckDNSAvailability service method on
+        /// <param name="request">Container for the necessary parameters to execute the CheckDNSAvailability service method on
         /// AmazonElasticBeanstalk.</param>
         /// 
         /// <returns>The response from the CheckDNSAvailability service method, as returned by AmazonElasticBeanstalk.</returns>
@@ -64,7 +64,7 @@ namespace Amazon.ElasticBeanstalk
         /// application container. </para>
         /// </summary>
         /// 
-        /// <param name="createApplicationRequest">Container for the necessary parameters to execute the CreateApplication service method on
+        /// <param name="request">Container for the necessary parameters to execute the CreateApplication service method on
         /// AmazonElasticBeanstalk.</param>
         /// 
         /// <returns>The response from the CreateApplication service method, as returned by AmazonElasticBeanstalk.</returns>
@@ -91,7 +91,7 @@ namespace Amazon.ElasticBeanstalk
         /// exception when you attempt to launch an environment from the application version. </para>
         /// </summary>
         /// 
-        /// <param name="createApplicationVersionRequest">Container for the necessary parameters to execute the CreateApplicationVersion service method
+        /// <param name="request">Container for the necessary parameters to execute the CreateApplicationVersion service method
         /// on AmazonElasticBeanstalk.</param>
         /// 
         /// <returns>The response from the CreateApplicationVersion service method, as returned by AmazonElasticBeanstalk.</returns>
@@ -126,7 +126,7 @@ namespace Amazon.ElasticBeanstalk
         /// </ul>
         /// </summary>
         /// 
-        /// <param name="createConfigurationTemplateRequest">Container for the necessary parameters to execute the CreateConfigurationTemplate service
+        /// <param name="request">Container for the necessary parameters to execute the CreateConfigurationTemplate service
         /// method on AmazonElasticBeanstalk.</param>
         /// 
         /// <returns>The response from the CreateConfigurationTemplate service method, as returned by AmazonElasticBeanstalk.</returns>
@@ -152,7 +152,7 @@ namespace Amazon.ElasticBeanstalk
         /// <para> Launches an environment for the specified application using the specified configuration. </para>
         /// </summary>
         /// 
-        /// <param name="createEnvironmentRequest">Container for the necessary parameters to execute the CreateEnvironment service method on
+        /// <param name="request">Container for the necessary parameters to execute the CreateEnvironment service method on
         /// AmazonElasticBeanstalk.</param>
         /// 
         /// <returns>The response from the CreateEnvironment service method, as returned by AmazonElasticBeanstalk.</returns>
@@ -178,7 +178,7 @@ namespace Amazon.ElasticBeanstalk
         /// <para> Creates the Amazon S3 storage location for the account. </para> <para> This location is used to store user log files. </para>
         /// </summary>
         /// 
-        /// <param name="createStorageLocationRequest">Container for the necessary parameters to execute the CreateStorageLocation service method on
+        /// <param name="request">Container for the necessary parameters to execute the CreateStorageLocation service method on
         /// AmazonElasticBeanstalk.</param>
         /// 
         /// <returns>The response from the CreateStorageLocation service method, as returned by AmazonElasticBeanstalk.</returns>
@@ -204,8 +204,6 @@ namespace Amazon.ElasticBeanstalk
         /// <para> Creates the Amazon S3 storage location for the account. </para> <para> This location is used to store user log files. </para>
         /// </summary>
         /// 
-        /// <param name="createStorageLocationRequest">Container for the necessary parameters to execute the CreateStorageLocation service method on
-        /// AmazonElasticBeanstalk.</param>
         /// 
         /// <returns>The response from the CreateStorageLocation service method, as returned by AmazonElasticBeanstalk.</returns>
         /// 
@@ -220,7 +218,7 @@ namespace Amazon.ElasticBeanstalk
         /// from your Amazon S3 bucket. </para> <para><b>NOTE:</b>You cannot delete an application that has a running environment. </para>
         /// </summary>
         /// 
-        /// <param name="deleteApplicationRequest">Container for the necessary parameters to execute the DeleteApplication service method on
+        /// <param name="request">Container for the necessary parameters to execute the DeleteApplication service method on
         /// AmazonElasticBeanstalk.</param>
         /// 
         /// <exception cref="T:Amazon.ElasticBeanstalk.Model.OperationInProgressException" />
@@ -244,7 +242,7 @@ namespace Amazon.ElasticBeanstalk
         /// is associated with a running environment.</para>
         /// </summary>
         /// 
-        /// <param name="deleteApplicationVersionRequest">Container for the necessary parameters to execute the DeleteApplicationVersion service method
+        /// <param name="request">Container for the necessary parameters to execute the DeleteApplicationVersion service method
         /// on AmazonElasticBeanstalk.</param>
         /// 
         /// <exception cref="T:Amazon.ElasticBeanstalk.Model.OperationInProgressException" />
@@ -272,7 +270,7 @@ namespace Amazon.ElasticBeanstalk
         /// environment.</para>
         /// </summary>
         /// 
-        /// <param name="deleteConfigurationTemplateRequest">Container for the necessary parameters to execute the DeleteConfigurationTemplate service
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConfigurationTemplate service
         /// method on AmazonElasticBeanstalk.</param>
         /// 
         /// <exception cref="T:Amazon.ElasticBeanstalk.Model.OperationInProgressException" />
@@ -298,7 +296,7 @@ namespace Amazon.ElasticBeanstalk
         /// process or has failed. The draft configuration remains in existence until it is deleted with this action. </para>
         /// </summary>
         /// 
-        /// <param name="deleteEnvironmentConfigurationRequest">Container for the necessary parameters to execute the DeleteEnvironmentConfiguration
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEnvironmentConfiguration
         /// service method on AmazonElasticBeanstalk.</param>
 		DeleteEnvironmentConfigurationResponse DeleteEnvironmentConfiguration(DeleteEnvironmentConfigurationRequest request);
 
@@ -319,7 +317,7 @@ namespace Amazon.ElasticBeanstalk
         /// <para>Returns the descriptions of existing applications.</para>
         /// </summary>
         /// 
-        /// <param name="describeApplicationsRequest">Container for the necessary parameters to execute the DescribeApplications service method on
+        /// <param name="request">Container for the necessary parameters to execute the DescribeApplications service method on
         /// AmazonElasticBeanstalk.</param>
         /// 
         /// <returns>The response from the DescribeApplications service method, as returned by AmazonElasticBeanstalk.</returns>
@@ -341,8 +339,6 @@ namespace Amazon.ElasticBeanstalk
         /// <para>Returns the descriptions of existing applications.</para>
         /// </summary>
         /// 
-        /// <param name="describeApplicationsRequest">Container for the necessary parameters to execute the DescribeApplications service method on
-        /// AmazonElasticBeanstalk.</param>
         /// 
         /// <returns>The response from the DescribeApplications service method, as returned by AmazonElasticBeanstalk.</returns>
 		DescribeApplicationsResponse DescribeApplications();
@@ -352,7 +348,7 @@ namespace Amazon.ElasticBeanstalk
         /// <para>Returns descriptions for existing application versions.</para>
         /// </summary>
         /// 
-        /// <param name="describeApplicationVersionsRequest">Container for the necessary parameters to execute the DescribeApplicationVersions service
+        /// <param name="request">Container for the necessary parameters to execute the DescribeApplicationVersions service
         /// method on AmazonElasticBeanstalk.</param>
         /// 
         /// <returns>The response from the DescribeApplicationVersions service method, as returned by AmazonElasticBeanstalk.</returns>
@@ -374,8 +370,6 @@ namespace Amazon.ElasticBeanstalk
         /// <para>Returns descriptions for existing application versions.</para>
         /// </summary>
         /// 
-        /// <param name="describeApplicationVersionsRequest">Container for the necessary parameters to execute the DescribeApplicationVersions service
-        /// method on AmazonElasticBeanstalk.</param>
         /// 
         /// <returns>The response from the DescribeApplicationVersions service method, as returned by AmazonElasticBeanstalk.</returns>
 		DescribeApplicationVersionsResponse DescribeApplicationVersions();
@@ -387,7 +381,7 @@ namespace Amazon.ElasticBeanstalk
         /// environment if an option value is changed. </para>
         /// </summary>
         /// 
-        /// <param name="describeConfigurationOptionsRequest">Container for the necessary parameters to execute the DescribeConfigurationOptions service
+        /// <param name="request">Container for the necessary parameters to execute the DescribeConfigurationOptions service
         /// method on AmazonElasticBeanstalk.</param>
         /// 
         /// <returns>The response from the DescribeConfigurationOptions service method, as returned by AmazonElasticBeanstalk.</returns>
@@ -411,8 +405,6 @@ namespace Amazon.ElasticBeanstalk
         /// environment if an option value is changed. </para>
         /// </summary>
         /// 
-        /// <param name="describeConfigurationOptionsRequest">Container for the necessary parameters to execute the DescribeConfigurationOptions service
-        /// method on AmazonElasticBeanstalk.</param>
         /// 
         /// <returns>The response from the DescribeConfigurationOptions service method, as returned by AmazonElasticBeanstalk.</returns>
 		DescribeConfigurationOptionsResponse DescribeConfigurationOptions();
@@ -430,7 +422,7 @@ namespace Amazon.ElasticBeanstalk
         /// </ul>
         /// </summary>
         /// 
-        /// <param name="describeConfigurationSettingsRequest">Container for the necessary parameters to execute the DescribeConfigurationSettings
+        /// <param name="request">Container for the necessary parameters to execute the DescribeConfigurationSettings
         /// service method on AmazonElasticBeanstalk.</param>
         /// 
         /// <returns>The response from the DescribeConfigurationSettings service method, as returned by AmazonElasticBeanstalk.</returns>
@@ -453,7 +445,7 @@ namespace Amazon.ElasticBeanstalk
         /// <para>Returns AWS resources for this environment.</para>
         /// </summary>
         /// 
-        /// <param name="describeEnvironmentResourcesRequest">Container for the necessary parameters to execute the DescribeEnvironmentResources service
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEnvironmentResources service
         /// method on AmazonElasticBeanstalk.</param>
         /// 
         /// <returns>The response from the DescribeEnvironmentResources service method, as returned by AmazonElasticBeanstalk.</returns>
@@ -478,7 +470,7 @@ namespace Amazon.ElasticBeanstalk
         /// <para>Returns descriptions for existing environments.</para>
         /// </summary>
         /// 
-        /// <param name="describeEnvironmentsRequest">Container for the necessary parameters to execute the DescribeEnvironments service method on
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEnvironments service method on
         /// AmazonElasticBeanstalk.</param>
         /// 
         /// <returns>The response from the DescribeEnvironments service method, as returned by AmazonElasticBeanstalk.</returns>
@@ -500,8 +492,6 @@ namespace Amazon.ElasticBeanstalk
         /// <para>Returns descriptions for existing environments.</para>
         /// </summary>
         /// 
-        /// <param name="describeEnvironmentsRequest">Container for the necessary parameters to execute the DescribeEnvironments service method on
-        /// AmazonElasticBeanstalk.</param>
         /// 
         /// <returns>The response from the DescribeEnvironments service method, as returned by AmazonElasticBeanstalk.</returns>
 		DescribeEnvironmentsResponse DescribeEnvironments();
@@ -512,7 +502,7 @@ namespace Amazon.ElasticBeanstalk
         /// recent 1,000 events from the specified NextToken. </para>
         /// </summary>
         /// 
-        /// <param name="describeEventsRequest">Container for the necessary parameters to execute the DescribeEvents service method on
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEvents service method on
         /// AmazonElasticBeanstalk.</param>
         /// 
         /// <returns>The response from the DescribeEvents service method, as returned by AmazonElasticBeanstalk.</returns>
@@ -535,8 +525,6 @@ namespace Amazon.ElasticBeanstalk
         /// recent 1,000 events from the specified NextToken. </para>
         /// </summary>
         /// 
-        /// <param name="describeEventsRequest">Container for the necessary parameters to execute the DescribeEvents service method on
-        /// AmazonElasticBeanstalk.</param>
         /// 
         /// <returns>The response from the DescribeEvents service method, as returned by AmazonElasticBeanstalk.</returns>
 		DescribeEventsResponse DescribeEvents();
@@ -546,7 +534,7 @@ namespace Amazon.ElasticBeanstalk
         /// <para> Returns a list of the available solution stack names. </para>
         /// </summary>
         /// 
-        /// <param name="listAvailableSolutionStacksRequest">Container for the necessary parameters to execute the ListAvailableSolutionStacks service
+        /// <param name="request">Container for the necessary parameters to execute the ListAvailableSolutionStacks service
         /// method on AmazonElasticBeanstalk.</param>
         /// 
         /// <returns>The response from the ListAvailableSolutionStacks service method, as returned by AmazonElasticBeanstalk.</returns>
@@ -568,8 +556,6 @@ namespace Amazon.ElasticBeanstalk
         /// <para> Returns a list of the available solution stack names. </para>
         /// </summary>
         /// 
-        /// <param name="listAvailableSolutionStacksRequest">Container for the necessary parameters to execute the ListAvailableSolutionStacks service
-        /// method on AmazonElasticBeanstalk.</param>
         /// 
         /// <returns>The response from the ListAvailableSolutionStacks service method, as returned by AmazonElasticBeanstalk.</returns>
 		ListAvailableSolutionStacksResponse ListAvailableSolutionStacks();
@@ -580,7 +566,7 @@ namespace Amazon.ElasticBeanstalk
         /// and forces a restart. </para>
         /// </summary>
         /// 
-        /// <param name="rebuildEnvironmentRequest">Container for the necessary parameters to execute the RebuildEnvironment service method on
+        /// <param name="request">Container for the necessary parameters to execute the RebuildEnvironment service method on
         /// AmazonElasticBeanstalk.</param>
         /// 
         /// <exception cref="T:Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException" />
@@ -609,7 +595,7 @@ namespace Amazon.ElasticBeanstalk
         /// </ul>
         /// </summary>
         /// 
-        /// <param name="requestEnvironmentInfoRequest">Container for the necessary parameters to execute the RequestEnvironmentInfo service method on
+        /// <param name="request">Container for the necessary parameters to execute the RequestEnvironmentInfo service method on
         /// AmazonElasticBeanstalk.</param>
 		RequestEnvironmentInfoResponse RequestEnvironmentInfo(RequestEnvironmentInfoRequest request);
 
@@ -630,7 +616,7 @@ namespace Amazon.ElasticBeanstalk
         /// <para> Causes the environment to restart the application container server running on each Amazon EC2 instance. </para>
         /// </summary>
         /// 
-        /// <param name="restartAppServerRequest">Container for the necessary parameters to execute the RestartAppServer service method on
+        /// <param name="request">Container for the necessary parameters to execute the RestartAppServer service method on
         /// AmazonElasticBeanstalk.</param>
 		RestartAppServerResponse RestartAppServer(RestartAppServerRequest request);
 
@@ -655,7 +641,7 @@ namespace Amazon.ElasticBeanstalk
         /// </ul>
         /// </summary>
         /// 
-        /// <param name="retrieveEnvironmentInfoRequest">Container for the necessary parameters to execute the RetrieveEnvironmentInfo service method on
+        /// <param name="request">Container for the necessary parameters to execute the RetrieveEnvironmentInfo service method on
         /// AmazonElasticBeanstalk.</param>
         /// 
         /// <returns>The response from the RetrieveEnvironmentInfo service method, as returned by AmazonElasticBeanstalk.</returns>
@@ -678,7 +664,7 @@ namespace Amazon.ElasticBeanstalk
         /// <para> Swaps the CNAMEs of two environments. </para>
         /// </summary>
         /// 
-        /// <param name="swapEnvironmentCNAMEsRequest">Container for the necessary parameters to execute the SwapEnvironmentCNAMEs service method on
+        /// <param name="request">Container for the necessary parameters to execute the SwapEnvironmentCNAMEs service method on
         /// AmazonElasticBeanstalk.</param>
 		SwapEnvironmentCNAMEsResponse SwapEnvironmentCNAMEs(SwapEnvironmentCNAMEsRequest request);
 
@@ -699,7 +685,7 @@ namespace Amazon.ElasticBeanstalk
         /// <para> Terminates the specified environment. </para>
         /// </summary>
         /// 
-        /// <param name="terminateEnvironmentRequest">Container for the necessary parameters to execute the TerminateEnvironment service method on
+        /// <param name="request">Container for the necessary parameters to execute the TerminateEnvironment service method on
         /// AmazonElasticBeanstalk.</param>
         /// 
         /// <returns>The response from the TerminateEnvironment service method, as returned by AmazonElasticBeanstalk.</returns>
@@ -725,7 +711,7 @@ namespace Amazon.ElasticBeanstalk
         /// description) is not provided, the value remains unchanged. To clear these properties, specify an empty string. </para>
         /// </summary>
         /// 
-        /// <param name="updateApplicationRequest">Container for the necessary parameters to execute the UpdateApplication service method on
+        /// <param name="request">Container for the necessary parameters to execute the UpdateApplication service method on
         /// AmazonElasticBeanstalk.</param>
         /// 
         /// <returns>The response from the UpdateApplication service method, as returned by AmazonElasticBeanstalk.</returns>
@@ -749,7 +735,7 @@ namespace Amazon.ElasticBeanstalk
         /// description) is not provided, the value remains unchanged. To clear properties, specify an empty string. </para>
         /// </summary>
         /// 
-        /// <param name="updateApplicationVersionRequest">Container for the necessary parameters to execute the UpdateApplicationVersion service method
+        /// <param name="request">Container for the necessary parameters to execute the UpdateApplicationVersion service method
         /// on AmazonElasticBeanstalk.</param>
         /// 
         /// <returns>The response from the UpdateApplicationVersion service method, as returned by AmazonElasticBeanstalk.</returns>
@@ -778,7 +764,7 @@ namespace Amazon.ElasticBeanstalk
         /// </ul>
         /// </summary>
         /// 
-        /// <param name="updateConfigurationTemplateRequest">Container for the necessary parameters to execute the UpdateConfigurationTemplate service
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConfigurationTemplate service
         /// method on AmazonElasticBeanstalk.</param>
         /// 
         /// <returns>The response from the UpdateConfigurationTemplate service method, as returned by AmazonElasticBeanstalk.</returns>
@@ -807,7 +793,7 @@ namespace Amazon.ElasticBeanstalk
         /// DescribeConfigurationSettings for this environment returns two setting descriptions with different <c>DeploymentStatus</c> values. </para>
         /// </summary>
         /// 
-        /// <param name="updateEnvironmentRequest">Container for the necessary parameters to execute the UpdateEnvironment service method on
+        /// <param name="request">Container for the necessary parameters to execute the UpdateEnvironment service method on
         /// AmazonElasticBeanstalk.</param>
         /// 
         /// <returns>The response from the UpdateEnvironment service method, as returned by AmazonElasticBeanstalk.</returns>
@@ -834,7 +820,7 @@ namespace Amazon.ElasticBeanstalk
         /// values. </para>
         /// </summary>
         /// 
-        /// <param name="validateConfigurationSettingsRequest">Container for the necessary parameters to execute the ValidateConfigurationSettings
+        /// <param name="request">Container for the necessary parameters to execute the ValidateConfigurationSettings
         /// service method on AmazonElasticBeanstalk.</param>
         /// 
         /// <returns>The response from the ValidateConfigurationSettings service method, as returned by AmazonElasticBeanstalk.</returns>

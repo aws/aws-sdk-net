@@ -12,6 +12,7 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+#pragma warning disable 1574
 
 using System;
 using System.Collections.Generic;
@@ -124,6 +125,22 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="batches">
         /// Configured BatchGet objects
         /// </param>
+        public Task ExecuteBatchGetAsync(params BatchGet[] batches)
+        {
+            return ExecuteBatchGetAsync(batches, default(CancellationToken));
+        }
+
+        /// <summary>
+        /// Issues a batch-get request with multiple batches.
+        /// 
+        /// Results are stored in the individual batches.
+        /// </summary>
+        /// <param name="batches">
+        /// Configured BatchGet objects
+        /// </param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
         public Task ExecuteBatchGetAsync(BatchGet[] batches, CancellationToken cancellationToken = default(CancellationToken))
         {
             MultiTableBatchGet superBatch = new MultiTableBatchGet(batches);
@@ -139,6 +156,9 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </summary>
         /// <param name="batches">
         /// Configured BatchWrite objects
+        /// </param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         public Task ExecuteBatchWriteAsync(BatchWrite[] batches, CancellationToken cancellationToken = default(CancellationToken))
         {

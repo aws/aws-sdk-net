@@ -27,8 +27,9 @@ namespace Amazon.Redshift.Model
     /// Container for the parameters to the CreateCluster operation.
     /// <para> Creates a new cluster. To create the cluster in virtual private cloud (VPC), you must provide cluster subnet group name. If you don't
     /// provide a cluster subnet group name or the cluster security group parameter, Amazon Redshift creates a non-VPC cluster, it associates the
-    /// default cluster security group with the cluster. For more information about managing clusters, go to Amazon Redshift Clusters in the
-    /// <i>Amazon Redshift Management Guide</i> .
+    /// default cluster security group with the cluster. For more information about managing clusters, go to <a
+    /// href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html" >Amazon Redshift Clusters</a> in the <i>Amazon Redshift
+    /// Management Guide</i> .
     /// </para>
     /// </summary>
     public partial class CreateClusterRequest : AmazonWebServiceRequest

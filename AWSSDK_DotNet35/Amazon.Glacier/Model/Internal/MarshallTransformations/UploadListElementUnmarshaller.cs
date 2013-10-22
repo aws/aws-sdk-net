@@ -33,6 +33,9 @@
 
         public UploadListElement Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonToken.Null)
+                return null;
+
             UploadListElement uploadListElement = new UploadListElement();
 
         

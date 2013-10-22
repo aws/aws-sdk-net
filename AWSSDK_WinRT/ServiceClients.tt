@@ -160,6 +160,19 @@ namespace <#= type.Namespace #>
             if(method.GetParameters().Length != 0)
             {
 #> 
+		internal <#= method.Name #>Response <#= method.Name #>(<#= method.Name #>Request request)
+        {
+            var task = <#= method.Name #>Async(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
 <#= getOperationDocumentation(sdkDocs, method)#>		public async Task<<#= method.Name #>Response> <#= method.Name #>Async(<#= method.Name #>Request <#= method.Name.Substring(0, 1).ToLower() + method.Name.Substring(1) #>Request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new <#= method.Name #>RequestMarshaller();
@@ -286,7 +299,7 @@ namespace <#= type.Namespace #>
         /// <param name="credentials">AWS Credentials</param>
         /// <param name="clientConfig">The <#= baseName #>Client Configuration Object</param>
         public <#= baseName #>Client(AWSCredentials credentials, <#= baseName #>Config clientConfig)
-            : base(credentials, clientConfig, false, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(credentials, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
         {
         }
 

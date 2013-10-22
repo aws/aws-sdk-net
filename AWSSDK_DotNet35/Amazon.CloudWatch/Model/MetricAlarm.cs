@@ -124,7 +124,10 @@ namespace Amazon.CloudWatch.Model
         }
 
         /// <summary>
-        /// The time stamp of the last update to the alarm configuration.
+        /// The time stamp of the last update to the alarm configuration. Amazon CloudWatch uses Coordinated Universal Time (UTC) when returning time
+        /// stamps, which do not accommodate seasonal adjustments such as daylight savings time. For more information, see <a
+        /// href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Time stamps</a> in the
+        /// <i>Amazon CloudWatch Developer Guide</i>.
         ///  
         /// </summary>
         public DateTime AlarmConfigurationUpdatedTimestamp
@@ -212,7 +215,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// The list of actions to execute when this alarm transitions into an <c>INSUFFICIENT_DATA</c> state from any other state. Each action is
         /// specified as an Amazon Resource Number (ARN). Currently the only actions supported are publishing to an Amazon SNS topic or triggering an
-        /// Auto Scaling policy.
+        /// Auto Scaling policy. <important>The current WSDL lists this attribute as <c>UnknownActions</c>.</important>
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -312,7 +315,10 @@ namespace Amazon.CloudWatch.Model
         }
 
         /// <summary>
-        /// The time stamp of the last update to the alarm's state.
+        /// The time stamp of the last update to the alarm's state. Amazon CloudWatch uses Coordinated Universal Time (UTC) when returning time stamps,
+        /// which do not accommodate seasonal adjustments such as daylight savings time. For more information, see <a
+        /// href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Time stamps</a> in the
+        /// <i>Amazon CloudWatch Developer Guide</i>.
         ///  
         /// </summary>
         public DateTime StateUpdatedTimestamp

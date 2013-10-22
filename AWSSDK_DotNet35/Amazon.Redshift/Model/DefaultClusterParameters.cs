@@ -17,13 +17,14 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using Amazon.Runtime;
 
 namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// <para>Describes the default cluster parameters for a parameter group family. </para>
     /// </summary>
-    public class DefaultClusterParameters
+    public partial class DefaultClusterParameters : AmazonWebServiceResponse
     {
         
         private string parameterGroupFamily;

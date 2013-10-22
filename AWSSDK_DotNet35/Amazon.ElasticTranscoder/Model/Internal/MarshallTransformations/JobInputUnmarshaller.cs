@@ -33,6 +33,9 @@
 
         public JobInput Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonToken.Null)
+                return null;
+
             JobInput jobInput = new JobInput();
 
         

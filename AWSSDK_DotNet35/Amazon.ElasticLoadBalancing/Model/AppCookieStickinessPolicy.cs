@@ -39,8 +39,8 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// Callers should use the properties initialize any additional object members.
         /// </summary>
         /// 
-        /// <param name="policyName"> The mnemonic name for the policy being created. The name must be unique within a set of policies for this
-        /// LoadBalancer. </param>
+        /// <param name="policyName"> The mnemonic name for the policy being created. The name must be unique within a set of policies for this load
+        /// balancer. </param>
         /// <param name="cookieName"> The name of the application cookie used for stickiness. </param>
         public AppCookieStickinessPolicy(string policyName, string cookieName)
         {
@@ -50,7 +50,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     
 
         /// <summary>
-        /// The mnemonic name for the policy being created. The name must be unique within a set of policies for this LoadBalancer.
+        /// The mnemonic name for the policy being created. The name must be unique within a set of policies for this load balancer.
         ///  
         /// </summary>
         public string PolicyName

@@ -17,13 +17,14 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using Amazon.Runtime;
 
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
     /// <para> Contains details of a domain. </para>
     /// </summary>
-    public class DomainDetail
+    public partial class DomainDetail : AmazonWebServiceResponse
     {
         
         private DomainInfo domainInfo;

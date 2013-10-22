@@ -37,9 +37,11 @@ namespace Amazon.Glacier.Model
     /// Amazon Glacier also removes the multipart upload resource if you cancel the multipart upload or it may be removed if there is no activity
     /// for a period of 24 hours.</para> <para>An AWS account has full permission to perform all operations (actions). However, AWS Identity and
     /// Access Management (IAM) users don't have any permissions by default. You must grant them explicit permission to perform specific actions.
-    /// For more information, see Access Control Using AWS Identity and Access Management (IAM).</para> <para>For conceptual information and
-    /// underlying REST API, go to Uploading Large Archives in Parts (Multipart Upload) and Initiate Multipart Upload in the <i>Amazon Glacier
-    /// Developer Guide</i> .</para>
+    /// For more information, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html" >Access Control
+    /// Using AWS Identity and Access Management (IAM)</a> .</para> <para>For conceptual information and underlying REST API, go to <a
+    /// href="http://docs.aws.amazon.com/amazonglacier/latest/dev/uploading-archive-mpu.html" >Uploading Large Archives in Parts (Multipart
+    /// Upload)</a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-initiate-upload.html" >Initiate Multipart
+    /// Upload</a> in the <i>Amazon Glacier Developer Guide</i> .</para>
     /// </summary>
     public partial class InitiateMultipartUploadRequest : AmazonWebServiceRequest
     {

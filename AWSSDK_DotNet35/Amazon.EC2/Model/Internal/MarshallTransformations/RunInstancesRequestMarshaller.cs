@@ -34,7 +34,11 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(runInstancesRequest, "AmazonEC2");
             request.Parameters.Add("Action", "RunInstances");
-            request.Parameters.Add("Version", "2013-02-01");
+            request.Parameters.Add("Version", "2013-10-01");
+            if (runInstancesRequest != null && runInstancesRequest.IsSetDryRun())
+            {
+                request.Parameters.Add("DryRun", StringUtils.FromBool(runInstancesRequest.DryRun));
+            }
             if (runInstancesRequest != null && runInstancesRequest.IsSetImageId())
             {
                 request.Parameters.Add("ImageId", StringUtils.FromString(runInstancesRequest.ImageId));
@@ -252,6 +256,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (networkInterfacesListValue != null && networkInterfacesListValue.IsSetSecondaryPrivateIpAddressCount())
                     {
                         request.Parameters.Add("NetworkInterface." + networkInterfacesListIndex + ".SecondaryPrivateIpAddressCount", StringUtils.FromInt(networkInterfacesListValue.SecondaryPrivateIpAddressCount));
+                    }
+                    if (networkInterfacesListValue != null && networkInterfacesListValue.IsSetAssociatePublicIpAddress())
+                    {
+                        request.Parameters.Add("NetworkInterface." + networkInterfacesListIndex + ".AssociatePublicIpAddress", StringUtils.FromBool(networkInterfacesListValue.AssociatePublicIpAddress));
                     }
 
                     networkInterfacesListIndex++;

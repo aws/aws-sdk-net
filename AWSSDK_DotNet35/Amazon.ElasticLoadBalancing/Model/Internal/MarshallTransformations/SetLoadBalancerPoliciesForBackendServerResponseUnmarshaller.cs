@@ -52,7 +52,7 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
             return response;
         }
         
-        private void UnmarshallResult(XmlUnmarshallerContext context,SetLoadBalancerPoliciesForBackendServerResponse response)
+        private static void UnmarshallResult(XmlUnmarshallerContext context,SetLoadBalancerPoliciesForBackendServerResponse response)
         {
             
             int originalDepth = context.CurrentDepth;

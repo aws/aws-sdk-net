@@ -30,19 +30,22 @@ namespace Amazon.Redshift.Model
     /// After Amazon Redshift creates the cluster you can use the ModifyCluster API to associate a different security group and different parameter
     /// group with the restored cluster. </para> <para> If a snapshot is taken of a cluster in VPC, you can restore it only in VPC. In this case,
     /// you must provide a cluster subnet group where you want the cluster restored. If snapshot is taken of a cluster outside VPC, then you can
-    /// restore it only outside VPC.</para> <para> For more information about working with snapshots, go to Amazon Redshift Snapshots in the
-    /// <i>Amazon Redshift Management Guide</i> .
+    /// restore it only outside VPC.</para> <para> For more information about working with snapshots, go to <a
+    /// href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html" >Amazon Redshift Snapshots</a> in the <i>Amazon Redshift
+    /// Management Guide</i> .
     /// </para>
     /// </summary>
     public partial class RestoreFromClusterSnapshotRequest : AmazonWebServiceRequest
     {
         private string clusterIdentifier;
         private string snapshotIdentifier;
+        private string snapshotClusterIdentifier;
         private int? port;
         private string availabilityZone;
         private bool? allowVersionUpgrade;
         private string clusterSubnetGroupName;
         private bool? publiclyAccessible;
+        private string ownerAccount;
 
         /// <summary>
         /// The identifier of the cluster that will be created from restoring the snapshot. Constraints: <ul> <li>Must contain from 1 to 63 alphanumeric
@@ -76,6 +79,17 @@ namespace Amazon.Redshift.Model
         internal bool IsSetSnapshotIdentifier()
         {
             return this.snapshotIdentifier != null;
+        }
+        public string SnapshotClusterIdentifier
+        {
+            get { return this.snapshotClusterIdentifier; }
+            set { this.snapshotClusterIdentifier = value; }
+        }
+
+        // Check to see if SnapshotClusterIdentifier property is set
+        internal bool IsSetSnapshotClusterIdentifier()
+        {
+            return this.snapshotClusterIdentifier != null;
         }
 
         /// <summary>
@@ -160,6 +174,23 @@ namespace Amazon.Redshift.Model
         internal bool IsSetPubliclyAccessible()
         {
             return this.publiclyAccessible.HasValue;
+        }
+
+        /// <summary>
+        /// The AWS customer account used to create or copy the snapshot. Required if you are restoring a snapshot you do not own, optional if you own
+        /// the snapshot.
+        ///  
+        /// </summary>
+        public string OwnerAccount
+        {
+            get { return this.ownerAccount; }
+            set { this.ownerAccount = value; }
+        }
+
+        // Check to see if OwnerAccount property is set
+        internal bool IsSetOwnerAccount()
+        {
+            return this.ownerAccount != null;
         }
 
     }

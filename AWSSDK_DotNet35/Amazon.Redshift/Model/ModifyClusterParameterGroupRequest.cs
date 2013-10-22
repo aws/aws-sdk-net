@@ -25,8 +25,9 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyClusterParameterGroup operation.
-    /// <para> Modifies the parameters of a parameter group. </para> <para> For more information about managing parameter groups, go to Amazon
-    /// Redshift Parameter Groups in the <i>Amazon Redshift Management Guide</i> .
+    /// <para> Modifies the parameters of a parameter group. </para> <para> For more information about managing parameter groups, go to <a
+    /// href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html" >Amazon Redshift Parameter Groups</a> in the
+    /// <i>Amazon Redshift Management Guide</i> .
     /// </para>
     /// </summary>
     public partial class ModifyClusterParameterGroupRequest : AmazonWebServiceRequest

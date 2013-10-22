@@ -28,8 +28,11 @@ namespace Amazon.CloudSearch
     /// <summary>
     /// Implementation for accessing AmazonCloudSearch.
     /// 
-    /// Amazon CloudSearch Configuration Service <para>You use the Configuration Service to create, configure, and manage search domains. Amazon
-    /// CloudSearch configuration requests are submitted to <c>cloudsearch.us-east-1.amazonaws.com</c> using the AWS Query protocol. </para>
+    /// Amazon CloudSearch Configuration Service <para>You use the configuration service to create, configure, and manage search domains.
+    /// Configuration service requests are submitted using the AWS Query protocol. AWS Query requests are HTTP or HTTPS requests submitted via HTTP
+    /// GET or POST with a query parameter named Action.</para> <para>The endpoint for configuration service requests is region-specific:
+    /// cloudsearch. <i>region</i> .amazonaws.com. For example, cloudsearch.us-east-1.amazonaws.com. For a current list of supported regions and
+    /// endpoints, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#cloudsearch_region">Regions and Endpoints</a> .</para>
     /// </summary>
 	public partial class AmazonCloudSearchClient : AmazonWebServiceClient, Amazon.CloudSearch.IAmazonCloudSearch
     {
@@ -63,7 +66,7 @@ namespace Amazon.CloudSearch
         /// <param name="credentials">AWS Credentials</param>
         /// <param name="clientConfig">The AmazonCloudSearchClient Configuration Object</param>
         public AmazonCloudSearchClient(AWSCredentials credentials, AmazonCloudSearchConfig clientConfig)
-            : base(credentials, clientConfig, false, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(credentials, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
         {
         }
 
@@ -145,6 +148,19 @@ namespace Amazon.CloudSearch
         #endregion
 
  
+		internal CreateDomainResponse CreateDomain(CreateDomainRequest request)
+        {
+            var task = CreateDomainAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Creates a new search domain.</para>
         /// </summary>
@@ -169,6 +185,19 @@ namespace Amazon.CloudSearch
             return response;
         }
  
+		internal DefineIndexFieldResponse DefineIndexField(DefineIndexFieldRequest request)
+        {
+            var task = DefineIndexFieldAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Configures an <c>IndexField</c> for the search domain. Used to create new fields and modify existing ones. If the field exists, the
         /// new configuration replaces the old one. You can configure a maximum of 200 index fields.</para>
@@ -196,6 +225,19 @@ namespace Amazon.CloudSearch
             return response;
         }
  
+		internal DefineRankExpressionResponse DefineRankExpression(DefineRankExpressionRequest request)
+        {
+            var task = DefineRankExpressionAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Configures a <c>RankExpression</c> for the search domain. Used to create new rank expressions and modify existing ones. If the
         /// expression exists, the new configuration replaces the old one. You can configure a maximum of 50 rank expressions.</para>
@@ -223,6 +265,19 @@ namespace Amazon.CloudSearch
             return response;
         }
  
+		internal DeleteDomainResponse DeleteDomain(DeleteDomainRequest request)
+        {
+            var task = DeleteDomainAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Permanently deletes a search domain and all of its data.</para>
         /// </summary>
@@ -246,6 +301,19 @@ namespace Amazon.CloudSearch
             return response;
         }
  
+		internal DeleteIndexFieldResponse DeleteIndexField(DeleteIndexFieldRequest request)
+        {
+            var task = DeleteIndexFieldAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Removes an <c>IndexField</c> from the search domain.</para>
         /// </summary>
@@ -271,6 +339,19 @@ namespace Amazon.CloudSearch
             return response;
         }
  
+		internal DeleteRankExpressionResponse DeleteRankExpression(DeleteRankExpressionRequest request)
+        {
+            var task = DeleteRankExpressionAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Removes a <c>RankExpression</c> from the search domain.</para>
         /// </summary>
@@ -296,6 +377,19 @@ namespace Amazon.CloudSearch
             return response;
         }
  
+		internal DescribeDefaultSearchFieldResponse DescribeDefaultSearchField(DescribeDefaultSearchFieldRequest request)
+        {
+            var task = DescribeDefaultSearchFieldAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Gets the default search field configured for the search domain.</para>
         /// </summary>
@@ -320,6 +414,19 @@ namespace Amazon.CloudSearch
             return response;
         }
  
+		internal DescribeDomainsResponse DescribeDomains(DescribeDomainsRequest request)
+        {
+            var task = DescribeDomainsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Gets information about the search domains owned by this account. Can be limited to specific domains. Shows all domains by
         /// default.</para>
@@ -344,6 +451,19 @@ namespace Amazon.CloudSearch
             return response;
         }
  
+		internal DescribeIndexFieldsResponse DescribeIndexFields(DescribeIndexFieldsRequest request)
+        {
+            var task = DescribeIndexFieldsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Gets information about the index fields configured for the search domain. Can be limited to specific fields by name. Shows all fields
         /// by default.</para>
@@ -369,6 +489,19 @@ namespace Amazon.CloudSearch
             return response;
         }
  
+		internal DescribeRankExpressionsResponse DescribeRankExpressions(DescribeRankExpressionsRequest request)
+        {
+            var task = DescribeRankExpressionsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Gets the rank expressions configured for the search domain. Can be limited to specific rank expressions by name. Shows all rank
         /// expressions by default. </para>
@@ -394,6 +527,19 @@ namespace Amazon.CloudSearch
             return response;
         }
  
+		internal DescribeServiceAccessPoliciesResponse DescribeServiceAccessPolicies(DescribeServiceAccessPoliciesRequest request)
+        {
+            var task = DescribeServiceAccessPoliciesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Gets information about the resource-based policies that control access to the domain's document and search services.</para>
         /// </summary>
@@ -418,6 +564,19 @@ namespace Amazon.CloudSearch
             return response;
         }
  
+		internal DescribeStemmingOptionsResponse DescribeStemmingOptions(DescribeStemmingOptionsRequest request)
+        {
+            var task = DescribeStemmingOptionsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Gets the stemming dictionary configured for the search domain.</para>
         /// </summary>
@@ -442,6 +601,19 @@ namespace Amazon.CloudSearch
             return response;
         }
  
+		internal DescribeStopwordOptionsResponse DescribeStopwordOptions(DescribeStopwordOptionsRequest request)
+        {
+            var task = DescribeStopwordOptionsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Gets the stopwords configured for the search domain.</para>
         /// </summary>
@@ -466,6 +638,19 @@ namespace Amazon.CloudSearch
             return response;
         }
  
+		internal DescribeSynonymOptionsResponse DescribeSynonymOptions(DescribeSynonymOptionsRequest request)
+        {
+            var task = DescribeSynonymOptionsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Gets the synonym dictionary configured for the search domain.</para>
         /// </summary>
@@ -490,6 +675,19 @@ namespace Amazon.CloudSearch
             return response;
         }
  
+		internal IndexDocumentsResponse IndexDocuments(IndexDocumentsRequest request)
+        {
+            var task = IndexDocumentsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Tells the search domain to start indexing its documents using the latest text processing options and <c>IndexFields</c> . This
         /// operation must be invoked to make options whose OptionStatus has <c>OptionState</c> of <c>RequiresIndexDocuments</c> visible in search
@@ -516,9 +714,23 @@ namespace Amazon.CloudSearch
             return response;
         }
  
+		internal UpdateDefaultSearchFieldResponse UpdateDefaultSearchField(UpdateDefaultSearchFieldRequest request)
+        {
+            var task = UpdateDefaultSearchFieldAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
-        /// <para>Configures the default search field for the search domain. The default search field is used when a search request does not specify
-        /// which fields to search. By default, it is configured to include the contents of all of the domain's text fields.</para>
+        /// <para>Configures the default search field for the search domain. The default search field is the text field that is searched when a search
+        /// request does not specify which fields to search. By default, it is configured to include the contents of all of the domain's text fields.
+        /// </para>
         /// </summary>
         /// 
         /// <param name="updateDefaultSearchFieldRequest">Container for the necessary parameters to execute the UpdateDefaultSearchField service method
@@ -542,6 +754,19 @@ namespace Amazon.CloudSearch
             return response;
         }
  
+		internal UpdateServiceAccessPoliciesResponse UpdateServiceAccessPolicies(UpdateServiceAccessPoliciesRequest request)
+        {
+            var task = UpdateServiceAccessPoliciesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Configures the policies that control access to the domain's document and search services. The maximum size of an access policy
         /// document is 100 KB.</para>
@@ -569,6 +794,19 @@ namespace Amazon.CloudSearch
             return response;
         }
  
+		internal UpdateStemmingOptionsResponse UpdateStemmingOptions(UpdateStemmingOptionsRequest request)
+        {
+            var task = UpdateStemmingOptionsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Configures a stemming dictionary for the search domain. The stemming dictionary is used during indexing and when processing search
         /// requests. The maximum size of the stemming dictionary is 500 KB.</para>
@@ -596,6 +834,19 @@ namespace Amazon.CloudSearch
             return response;
         }
  
+		internal UpdateStopwordOptionsResponse UpdateStopwordOptions(UpdateStopwordOptionsRequest request)
+        {
+            var task = UpdateStopwordOptionsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Configures stopwords for the search domain. Stopwords are used during indexing and when processing search requests. The maximum size
         /// of the stopwords dictionary is 10 KB.</para>
@@ -623,6 +874,19 @@ namespace Amazon.CloudSearch
             return response;
         }
  
+		internal UpdateSynonymOptionsResponse UpdateSynonymOptions(UpdateSynonymOptionsRequest request)
+        {
+            var task = UpdateSynonymOptionsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Configures a synonym dictionary for the search domain. The synonym dictionary is used during indexing to configure mappings for terms
         /// that occur in text fields. The maximum size of the synonym dictionary is 100 KB. </para>

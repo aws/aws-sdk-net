@@ -22,7 +22,7 @@ namespace Amazon.Auth.AccessControlPolicy.ActionIdentifiers
     /// The available AWS access control policy actions for Amazon Route 53.
     /// </summary>
     /// <see cref="Amazon.Auth.AccessControlPolicy.Statement.Actions"/>
-    public class Route53ActionIdentifiers
+    public static class Route53ActionIdentifiers
     {
         public static readonly ActionIdentifier AllRoute53Actions = new ActionIdentifier("route53:*");
 

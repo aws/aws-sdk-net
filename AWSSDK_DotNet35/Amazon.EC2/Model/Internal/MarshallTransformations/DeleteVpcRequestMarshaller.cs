@@ -34,7 +34,11 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(deleteVpcRequest, "AmazonEC2");
             request.Parameters.Add("Action", "DeleteVpc");
-            request.Parameters.Add("Version", "2013-02-01");
+            request.Parameters.Add("Version", "2013-10-01");
+            if (deleteVpcRequest != null && deleteVpcRequest.IsSetDryRun())
+            {
+                request.Parameters.Add("DryRun", StringUtils.FromBool(deleteVpcRequest.DryRun));
+            }
             if (deleteVpcRequest != null && deleteVpcRequest.IsSetVpcId())
             {
                 request.Parameters.Add("VpcId", StringUtils.FromString(deleteVpcRequest.VpcId));

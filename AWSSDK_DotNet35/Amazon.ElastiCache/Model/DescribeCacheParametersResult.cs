@@ -22,7 +22,7 @@ using Amazon.Runtime;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// <para> Contains a list of Parametes and CacheNodeTypeSpecificParameters. </para>
+    /// <para>Represents the output of a <i>DescribeCacheParameters</i> operation.</para>
     /// </summary>
     public partial class DescribeCacheParametersResult : AmazonWebServiceResponse
     {
@@ -32,7 +32,7 @@ namespace Amazon.ElastiCache.Model
         private List<CacheNodeTypeSpecificParameter> cacheNodeTypeSpecificParameters = new List<CacheNodeTypeSpecificParameter>();
 
         /// <summary>
-        /// The marker obtained from a previous operation response.
+        /// Provides an identifier to allow retrieval of paginated results.
         ///  
         /// </summary>
         public string Marker
@@ -64,7 +64,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// A list of <a>CacheNodeTypeSpecificParameter</a> instances.
+        /// A list of parameters specific to a particular cache node type. Each element in the list contains detailed information about one parameter.
         ///  
         /// </summary>
         public List<CacheNodeTypeSpecificParameter> CacheNodeTypeSpecificParameters

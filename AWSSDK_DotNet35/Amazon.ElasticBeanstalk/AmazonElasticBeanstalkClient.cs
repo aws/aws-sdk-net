@@ -31,14 +31,25 @@ namespace Amazon.ElasticBeanstalk
     /// AWS Elastic Beanstalk <para> This is the AWS Elastic Beanstalk API Reference. This guide provides detailed information about AWS Elastic
     /// Beanstalk actions, data types, parameters, and errors. </para> <para>AWS Elastic Beanstalk is a tool that makes it easy for you to create,
     /// deploy, and manage scalable, fault-tolerant applications running on Amazon Web Services cloud resources. </para> <para> For more information
-    /// about this product, go to the AWS Elastic Beanstalk details page. The location of the lastest AWS Elastic Beanstalk WSDL is
-    /// http://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl. </para> <para> <b>Endpoints</b> </para> <para>For a list
-    /// of region-specific endpoints that AWS Elastic Beanstalk supports, go to Regions and Endpoints in the <i>Amazon Web Services Glossary</i>
-    /// .</para>
+    /// about this product, go to the <a href="http://aws.amazon.com/elasticbeanstalk/" >AWS Elastic Beanstalk</a> details page. The location of the
+    /// lastest AWS Elastic Beanstalk WSDL is <a href="http://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl"
+    /// >http://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl</a> .
+    /// </para> <para> <b>Endpoints</b> </para> <para>For a list of region-specific endpoints that AWS Elastic Beanstalk supports, go to <a
+    /// href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region" >Regions and Endpoints</a> in the <i>Amazon Web
+    /// Services Glossary</i> .</para>
     /// </summary>
     public partial class AmazonElasticBeanstalkClient : AmazonWebServiceClient, IAmazonElasticBeanstalk
     {
     AWS4Signer signer = new AWS4Signer();
+
+        #region Dispose
+
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
+        }
+
+        #endregion
 
         #region Constructors
 
@@ -59,7 +70,7 @@ namespace Amazon.ElasticBeanstalk
         ///
         /// </summary>
         public AmazonElasticBeanstalkClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonElasticBeanstalkConfig(), true, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonElasticBeanstalkConfig(), AuthenticationTypes.User | AuthenticationTypes.Session) { }
 
         /// <summary>
         /// Constructs AmazonElasticBeanstalkClient with the credentials loaded from the application's
@@ -79,7 +90,7 @@ namespace Amazon.ElasticBeanstalk
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonElasticBeanstalkClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonElasticBeanstalkConfig(){RegionEndpoint = region}, true, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonElasticBeanstalkConfig{RegionEndpoint = region}, AuthenticationTypes.User | AuthenticationTypes.Session) { }
 
         /// <summary>
         /// Constructs AmazonElasticBeanstalkClient with the credentials loaded from the application's
@@ -99,7 +110,7 @@ namespace Amazon.ElasticBeanstalk
         /// </summary>
         /// <param name="config">The AmazonElasticBeanstalk Configuration Object</param>
         public AmazonElasticBeanstalkClient(AmazonElasticBeanstalkConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config, true, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), config, AuthenticationTypes.User | AuthenticationTypes.Session) { }
 
         /// <summary>
         /// Constructs AmazonElasticBeanstalkClient with AWS Credentials
@@ -116,7 +127,7 @@ namespace Amazon.ElasticBeanstalk
         /// <param name="credentials">AWS Credentials</param>
         /// <param name="region">The region to connect.</param>
         public AmazonElasticBeanstalkClient(AWSCredentials credentials, RegionEndpoint region)
-            : this(credentials, new AmazonElasticBeanstalkConfig(){RegionEndpoint=region})
+            : this(credentials, new AmazonElasticBeanstalkConfig{RegionEndpoint = region})
         {
         }
 
@@ -127,7 +138,7 @@ namespace Amazon.ElasticBeanstalk
         /// <param name="credentials">AWS Credentials</param>
         /// <param name="clientConfig">The AmazonElasticBeanstalkClient Configuration Object</param>
         public AmazonElasticBeanstalkClient(AWSCredentials credentials, AmazonElasticBeanstalkConfig clientConfig)
-            : base(credentials, clientConfig, false, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(credentials, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
         {
         }
 
@@ -183,7 +194,7 @@ namespace Amazon.ElasticBeanstalk
         /// <param name="awsSessionToken">AWS Session Token</param>
         /// <param name="region">The region to connect.</param>
         public AmazonElasticBeanstalkClient(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken, RegionEndpoint region)
-            : this(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, new AmazonElasticBeanstalkConfig(){RegionEndpoint = region})
+            : this(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, new AmazonElasticBeanstalkConfig{RegionEndpoint = region})
         {
         }
 

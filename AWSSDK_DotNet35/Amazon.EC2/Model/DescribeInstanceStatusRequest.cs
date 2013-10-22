@@ -58,11 +58,23 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeInstanceStatusRequest : AmazonWebServiceRequest
     {
+        private bool? dryRun;
         private List<string> instanceIds = new List<string>();
         private List<Filter> filters = new List<Filter>();
         private string nextToken;
         private int? maxResults;
         private bool? includeAllInstances;
+        public bool DryRun
+        {
+            get { return this.dryRun ?? default(bool); }
+            set { this.dryRun = value; }
+        }
+
+        // Check to see if DryRun property is set
+        internal bool IsSetDryRun()
+        {
+            return this.dryRun.HasValue;
+        }
 
         /// <summary>
         /// The list of instance IDs. If not specified, all instances are described.

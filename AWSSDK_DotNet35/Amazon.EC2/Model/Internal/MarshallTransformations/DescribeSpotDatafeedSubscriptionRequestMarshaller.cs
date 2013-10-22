@@ -34,7 +34,11 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(describeSpotDatafeedSubscriptionRequest, "AmazonEC2");
             request.Parameters.Add("Action", "DescribeSpotDatafeedSubscription");
-            request.Parameters.Add("Version", "2013-02-01");
+            request.Parameters.Add("Version", "2013-10-01");
+            if (describeSpotDatafeedSubscriptionRequest != null && describeSpotDatafeedSubscriptionRequest.IsSetDryRun())
+            {
+                request.Parameters.Add("DryRun", StringUtils.FromBool(describeSpotDatafeedSubscriptionRequest.DryRun));
+            }
 
             return request;
         }

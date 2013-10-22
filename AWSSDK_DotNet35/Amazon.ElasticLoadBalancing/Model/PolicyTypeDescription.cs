@@ -63,7 +63,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         }
 
         /// <summary>
-        /// The description of the policy attributes associated with the LoadBalancer policies defined by the Elastic Load Balancing service.
+        /// The description of the policy attributes associated with the load balancer policies defined by the Elastic Load Balancing service.
         ///  
         /// </summary>
         public List<PolicyAttributeTypeDescription> PolicyAttributeTypeDescriptions

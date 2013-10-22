@@ -25,8 +25,7 @@ namespace Amazon.StorageGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeSnapshotSchedule operation.
-    /// <para>This operation describes the snapshot schedule for the specified gateway volume. The snapshot schedule information includes intervals
-    /// at which snapshots are automatically initiated on the volume.</para>
+    /// 
     /// </summary>
     public partial class DescribeSnapshotScheduleRequest : AmazonWebServiceRequest
     {

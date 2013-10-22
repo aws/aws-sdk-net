@@ -32,7 +32,16 @@ namespace Amazon.CloudFront
     /// </summary>
     public partial class AmazonCloudFrontClient : AmazonWebServiceClient, IAmazonCloudFront
     {
-        AWS4Signer signer = new AWS4Signer();
+    AWS4Signer signer = new AWS4Signer();
+
+        #region Dispose
+
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
+        }
+
+        #endregion
 
         #region Constructors
 
@@ -53,7 +62,7 @@ namespace Amazon.CloudFront
         ///
         /// </summary>
         public AmazonCloudFrontClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCloudFrontConfig(), true, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCloudFrontConfig(), AuthenticationTypes.User | AuthenticationTypes.Session) { }
 
         /// <summary>
         /// Constructs AmazonCloudFrontClient with the credentials loaded from the application's
@@ -73,7 +82,7 @@ namespace Amazon.CloudFront
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonCloudFrontClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCloudFrontConfig(){RegionEndpoint = region}, true, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCloudFrontConfig{RegionEndpoint = region}, AuthenticationTypes.User | AuthenticationTypes.Session) { }
 
         /// <summary>
         /// Constructs AmazonCloudFrontClient with the credentials loaded from the application's
@@ -93,7 +102,7 @@ namespace Amazon.CloudFront
         /// </summary>
         /// <param name="config">The AmazonCloudFront Configuration Object</param>
         public AmazonCloudFrontClient(AmazonCloudFrontConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config, true, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+            : base(FallbackCredentialsFactory.GetCredentials(), config, AuthenticationTypes.User | AuthenticationTypes.Session) { }
 
         /// <summary>
         /// Constructs AmazonCloudFrontClient with AWS Credentials
@@ -110,7 +119,7 @@ namespace Amazon.CloudFront
         /// <param name="credentials">AWS Credentials</param>
         /// <param name="region">The region to connect.</param>
         public AmazonCloudFrontClient(AWSCredentials credentials, RegionEndpoint region)
-            : this(credentials, new AmazonCloudFrontConfig(){RegionEndpoint=region})
+            : this(credentials, new AmazonCloudFrontConfig{RegionEndpoint = region})
         {
         }
 
@@ -121,7 +130,7 @@ namespace Amazon.CloudFront
         /// <param name="credentials">AWS Credentials</param>
         /// <param name="clientConfig">The AmazonCloudFrontClient Configuration Object</param>
         public AmazonCloudFrontClient(AWSCredentials credentials, AmazonCloudFrontConfig clientConfig)
-            : base(credentials, clientConfig, false, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(credentials, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
         {
         }
 
@@ -177,7 +186,7 @@ namespace Amazon.CloudFront
         /// <param name="awsSessionToken">AWS Session Token</param>
         /// <param name="region">The region to connect.</param>
         public AmazonCloudFrontClient(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken, RegionEndpoint region)
-            : this(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, new AmazonCloudFrontConfig(){RegionEndpoint = region})
+            : this(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, new AmazonCloudFrontConfig{RegionEndpoint = region})
         {
         }
 
@@ -280,20 +289,23 @@ namespace Amazon.CloudFront
         /// 
         /// <exception cref="TooManyCookieNamesInWhiteListException"/>
         /// <exception cref="InvalidDefaultRootObjectException"/>
+        /// <exception cref="InvalidResponseCodeException"/>
         /// <exception cref="MissingBodyException"/>
         /// <exception cref="TooManyDistributionCNAMEsException"/>
         /// <exception cref="InvalidForwardCookiesException"/>
         /// <exception cref="TooManyDistributionsException"/>
         /// <exception cref="NoSuchOriginException"/>
         /// <exception cref="InconsistentQuantitiesException"/>
-        /// <exception cref="CNAMEAlreadyExistsException"/>
         /// <exception cref="InvalidArgumentException"/>
+        /// <exception cref="CNAMEAlreadyExistsException"/>
         /// <exception cref="InvalidOriginAccessIdentityException"/>
         /// <exception cref="TrustedSignerDoesNotExistException"/>
         /// <exception cref="InvalidOriginException"/>
         /// <exception cref="TooManyCertificatesException"/>
+        /// <exception cref="InvalidRelativePathException"/>
         /// <exception cref="TooManyCacheBehaviorsException"/>
         /// <exception cref="TooManyTrustedSignersException"/>
+        /// <exception cref="InvalidErrorCodeException"/>
         /// <exception cref="InvalidViewerCertificateException"/>
         /// <exception cref="AccessDeniedException"/>
         /// <exception cref="TooManyOriginsException"/>
@@ -1680,27 +1692,30 @@ namespace Amazon.CloudFront
         /// <returns>The response from the UpdateDistribution service method, as returned by AmazonCloudFront.</returns>
         /// 
         /// <exception cref="TooManyCookieNamesInWhiteListException"/>
-        /// <exception cref="InvalidDefaultRootObjectException"/>
-        /// <exception cref="InvalidIfMatchVersionException"/>
-        /// <exception cref="IllegalUpdateException"/>
+        /// <exception cref="InvalidResponseCodeException"/>
         /// <exception cref="MissingBodyException"/>
         /// <exception cref="TooManyDistributionCNAMEsException"/>
-        /// <exception cref="InvalidForwardCookiesException"/>
         /// <exception cref="NoSuchOriginException"/>
         /// <exception cref="PreconditionFailedException"/>
         /// <exception cref="InconsistentQuantitiesException"/>
         /// <exception cref="CNAMEAlreadyExistsException"/>
         /// <exception cref="InvalidArgumentException"/>
-        /// <exception cref="TrustedSignerDoesNotExistException"/>
         /// <exception cref="InvalidOriginAccessIdentityException"/>
-        /// <exception cref="TooManyCertificatesException"/>
         /// <exception cref="TooManyCacheBehaviorsException"/>
         /// <exception cref="TooManyTrustedSignersException"/>
         /// <exception cref="NoSuchDistributionException"/>
         /// <exception cref="InvalidViewerCertificateException"/>
-        /// <exception cref="AccessDeniedException"/>
         /// <exception cref="TooManyOriginsException"/>
         /// <exception cref="InvalidRequiredProtocolException"/>
+        /// <exception cref="InvalidDefaultRootObjectException"/>
+        /// <exception cref="InvalidIfMatchVersionException"/>
+        /// <exception cref="IllegalUpdateException"/>
+        /// <exception cref="InvalidForwardCookiesException"/>
+        /// <exception cref="TrustedSignerDoesNotExistException"/>
+        /// <exception cref="TooManyCertificatesException"/>
+        /// <exception cref="InvalidRelativePathException"/>
+        /// <exception cref="InvalidErrorCodeException"/>
+        /// <exception cref="AccessDeniedException"/>
         public UpdateDistributionResponse UpdateDistribution(UpdateDistributionRequest updateDistributionRequest)
         {
             IAsyncResult asyncResult = invokeUpdateDistribution(updateDistributionRequest, null, null, true);

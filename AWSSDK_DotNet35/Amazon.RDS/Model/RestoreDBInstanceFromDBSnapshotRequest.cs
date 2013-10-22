@@ -25,7 +25,7 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the RestoreDBInstanceFromDBSnapshot operation.
-    /// <para> Creates a new DB Instance from a DB snapshot. The target database is created from the source database restore point with the same
+    /// <para> Creates a new DB instance from a DB snapshot. The target database is created from the source database restore point with the same
     /// configuration as the original source database, except that the new RDS instance is created with the default security group. </para>
     /// </summary>
     public partial class RestoreDBInstanceFromDBSnapshotRequest : AmazonWebServiceRequest
@@ -44,9 +44,10 @@ namespace Amazon.RDS.Model
         private string engine;
         private int? iops;
         private string optionGroupName;
+        private List<Tag> tags = new List<Tag>();
 
         /// <summary>
-        /// The identifier for the DB Snapshot to restore from. Constraints: <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
+        /// The identifier for the DB snapshot to restore from. Constraints: <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
         /// <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
         ///  
         /// </summary>
@@ -63,7 +64,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Name of the DB Instance to create from the DB Snapshot. This parameter isn't case sensitive. Constraints: <ul> <li>Must contain from 1 to
+        /// Name of the DB instance to create from the DB snapshot. This parameter isn't case sensitive. Constraints: <ul> <li>Must contain from 1 to
         /// 255 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two
         /// consecutive hyphens</li> </ul> Example: <c>my-snapshot-id</c>
         ///  
@@ -98,7 +99,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The port number on which the database accepts connections. Default: The same port as the original DB Instance Constraints: Value must be
+        /// The port number on which the database accepts connections. Default: The same port as the original DB instance Constraints: Value must be
         /// <c>1150-65535</c>
         ///  
         /// </summary>
@@ -132,7 +133,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The DB Subnet Group name to use for the new instance.
+        /// The DB subnet group name to use for the new instance.
         ///  
         /// </summary>
         public string DBSubnetGroupName
@@ -148,7 +149,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Specifies if the DB Instance is a Multi-AZ deployment. Constraint: You cannot specify the AvailabilityZone parameter if the MultiAZ
+        /// Specifies if the DB instance is a Multi-AZ deployment. Constraint: You cannot specify the AvailabilityZone parameter if the MultiAZ
         /// parameter is set to <c>true</c>.
         ///  
         /// </summary>
@@ -165,7 +166,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Specifies the accessibility options for the DB Instance. A value of true specifies an Internet-facing instance with a publicly resolvable
+        /// Specifies the accessibility options for the DB instance. A value of true specifies an Internet-facing instance with a publicly resolvable
         /// DNS name, which resolves to a public IP address. A value of false specifies an internal instance with a DNS name that resolves to a private
         /// IP address. Default: The default behavior varies depending on whether a VPC has been requested or not. The following list shows the default
         /// behavior in each case. <ul> <li><b>Default VPC:</b>true</li> <li><b>VPC:</b>false</li> </ul> If no DB subnet group has been specified as
@@ -186,7 +187,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Indicates that minor version upgrades will be applied automatically to the DB Instance during the maintenance window.
+        /// Indicates that minor version upgrades will be applied automatically to the DB instance during the maintenance window.
         ///  
         /// </summary>
         public bool AutoMinorVersionUpgrade
@@ -202,7 +203,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// License model information for the restored DB Instance. Default: Same as source. Valid values: <c>license-included</c> |
+        /// License model information for the restored DB instance. Default: Same as source. Valid values: <c>license-included</c> |
         /// <c>bring-your-own-license</c> | <c>general-public-license</c>
         ///  
         /// </summary>
@@ -219,7 +220,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The database name for the restored DB Instance. <note> This parameter doesn't apply to the MySQL engine. </note>
+        /// The database name for the restored DB instance. <note> This parameter doesn't apply to the MySQL engine. </note>
         ///  
         /// </summary>
         public string DBName
@@ -252,7 +253,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Specifies the amount of provisioned IOPS for the DB Instance, expressed in I/O operations per second. If this parameter is not specified,
+        /// Specifies the amount of provisioned IOPS for the DB instance, expressed in I/O operations per second. If this parameter is not specified,
         /// the IOPS value will be taken from the backup. If this parameter is set to 0, the new instance will be converted to a non-PIOPS instance,
         /// which will take additional time, though your DB instance will be available for connections before the conversion starts. Constraints: Must
         /// be an integer greater than 1000.
@@ -287,6 +288,22 @@ namespace Amazon.RDS.Model
         internal bool IsSetOptionGroupName()
         {
             return this.optionGroupName != null;
+        }
+
+        /// <summary>
+        /// A list of tags.
+        ///  
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this.tags; }
+            set { this.tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this.tags.Count > 0;
         }
 
     }

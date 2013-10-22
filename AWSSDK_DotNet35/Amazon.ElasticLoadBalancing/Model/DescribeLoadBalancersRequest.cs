@@ -25,10 +25,10 @@ namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeLoadBalancers operation.
-    /// <para> Returns detailed configuration information for the specified LoadBalancers. If no LoadBalancers are specified, the operation returns
-    /// configuration information for all LoadBalancers created by the caller. </para> <para><b>NOTE:</b> The client must have created the specified
-    /// input LoadBalancers in order to retrieve this information; the client must provide the same account credentials as those that were used to
-    /// create the LoadBalancer. </para>
+    /// <para> Returns detailed configuration information for the specified load balancers. If no load balancers are specified, the operation
+    /// returns configuration information for all load balancers created by the caller. </para> <para><b>NOTE:</b> The client must have created the
+    /// specified input load balancers in order to retrieve this information; the client must provide the same account credentials as those that
+    /// were used to create the load balancer. </para>
     /// </summary>
     public partial class DescribeLoadBalancersRequest : AmazonWebServiceRequest
     {
@@ -45,7 +45,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// Callers should use the properties initialize any additional object members.
         /// </summary>
         /// 
-        /// <param name="loadBalancerNames"> A list of names associated with the LoadBalancers at creation time. </param>
+        /// <param name="loadBalancerNames"> A list of names associated with the load balancers at creation time. </param>
         public DescribeLoadBalancersRequest(List<string> loadBalancerNames)
         {
             this.loadBalancerNames = loadBalancerNames;
@@ -53,7 +53,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     
 
         /// <summary>
-        /// A list of names associated with the LoadBalancers at creation time.
+        /// A list of names associated with the load balancers at creation time.
         ///  
         /// </summary>
         public List<string> LoadBalancerNames

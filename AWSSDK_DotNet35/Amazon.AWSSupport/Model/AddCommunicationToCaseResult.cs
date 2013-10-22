@@ -30,8 +30,8 @@ namespace Amazon.AWSSupport.Model
         private bool? result;
 
         /// <summary>
-        /// Returns true if the <a href="API_AddCommunicationToCase.html" title="AddCommunicationToCase">AddCommunicationToCase</a> succeeds. Returns an
-        /// error otherwise.
+        /// Returns true if the <a href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_AddCommunicationToCase.html"
+        /// title="AddCommunicationToCase">AddCommunicationToCase</a> succeeds. Returns an error otherwise.
         ///  
         /// </summary>
         public bool Result

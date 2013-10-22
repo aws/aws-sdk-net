@@ -34,7 +34,11 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(getPasswordDataRequest, "AmazonEC2");
             request.Parameters.Add("Action", "GetPasswordData");
-            request.Parameters.Add("Version", "2013-02-01");
+            request.Parameters.Add("Version", "2013-10-01");
+            if (getPasswordDataRequest != null && getPasswordDataRequest.IsSetDryRun())
+            {
+                request.Parameters.Add("DryRun", StringUtils.FromBool(getPasswordDataRequest.DryRun));
+            }
             if (getPasswordDataRequest != null && getPasswordDataRequest.IsSetInstanceId())
             {
                 request.Parameters.Add("InstanceId", StringUtils.FromString(getPasswordDataRequest.InstanceId));

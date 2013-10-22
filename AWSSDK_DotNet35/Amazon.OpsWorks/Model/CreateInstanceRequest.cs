@@ -25,7 +25,8 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateInstance operation.
-    /// <para>Creates an instance in a specified stack. For more information, see Adding an Instance to a Layer.</para>
+    /// <para>Creates an instance in a specified stack. For more information, see <a
+    /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html" >Adding an Instance to a Layer</a> .</para>
     /// </summary>
     public partial class CreateInstanceRequest : AmazonWebServiceRequest
     {
@@ -38,6 +39,7 @@ namespace Amazon.OpsWorks.Model
         private string amiId;
         private string sshKeyName;
         private string availabilityZone;
+        private string subnetId;
         private Architecture architecture;
         private RootDeviceType rootDeviceType;
         private bool? installUpdatesOnBoot;
@@ -207,6 +209,23 @@ namespace Amazon.OpsWorks.Model
         internal bool IsSetAvailabilityZone()
         {
             return this.availabilityZone != null;
+        }
+
+        /// <summary>
+        /// The ID of the instance's subnet. If the stack is running in a VPC, you can use this parameter to override the stack's default subnet ID
+        /// value and direct AWS OpsWorks to launch the instance in a different subnet.
+        ///  
+        /// </summary>
+        public string SubnetId
+        {
+            get { return this.subnetId; }
+            set { this.subnetId = value; }
+        }
+
+        // Check to see if SubnetId property is set
+        internal bool IsSetSubnetId()
+        {
+            return this.subnetId != null;
         }
 
         /// <summary>

@@ -34,8 +34,7 @@ namespace Amazon.SimpleDB
     /// complex to design, and often requires extensive and repetitive database administration. Amazon SimpleDB is dramatically simpler, requiring
     /// no schema, automatically indexing your data and providing a simple API for storage and access. This approach eliminates the administrative
     /// burden of data modeling, index maintenance, and performance tuning. Developers gain access to this functionality within Amazon's proven
-    /// computing environment, are able to scale instantly, and pay only for what they use. </para> <para> Visit http://aws.amazon.com/simpledb/ for
-    /// more information. </para>
+    /// computing environment, are able to scale instantly, and pay only for what they use. </para> <para> Visit <a href="http://aws.amazon.com/simpledb/">http://aws.amazon.com/simpledb/</a> for more information. </para>
     /// </summary>
 	public partial class AmazonSimpleDBClient : AmazonWebServiceClient, Amazon.SimpleDB.IAmazonSimpleDB
     {
@@ -69,7 +68,7 @@ namespace Amazon.SimpleDB
         /// <param name="credentials">AWS Credentials</param>
         /// <param name="clientConfig">The AmazonSimpleDBClient Configuration Object</param>
         public AmazonSimpleDBClient(AWSCredentials credentials, AmazonSimpleDBConfig clientConfig)
-            : base(credentials, clientConfig, false, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(credentials, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
         {
         }
 
@@ -151,6 +150,19 @@ namespace Amazon.SimpleDB
         #endregion
 
  
+		internal BatchDeleteAttributesResponse BatchDeleteAttributes(BatchDeleteAttributesRequest request)
+        {
+            var task = BatchDeleteAttributesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Performs multiple DeleteAttributes operations in a single call, which reduces round trips and latencies. This enables Amazon SimpleDB
         /// to optimize requests, which generally yields better throughput. </para> <para><b>NOTE:</b> If you specify BatchDeleteAttributes without
@@ -182,6 +194,19 @@ namespace Amazon.SimpleDB
             return response;
         }
  
+		internal BatchPutAttributesResponse BatchPutAttributes(BatchPutAttributesRequest request)
+        {
+            var task = BatchPutAttributesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> The <c>BatchPutAttributes</c> operation creates or replaces attributes within one or more items. By using this operation, the client
         /// can perform multiple PutAttribute operation with a single call. This helps yield savings in round trips and latencies, enabling Amazon
@@ -239,12 +264,25 @@ namespace Amazon.SimpleDB
             return response;
         }
  
+		internal CreateDomainResponse CreateDomain(CreateDomainRequest request)
+        {
+            var task = CreateDomainAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> The <c>CreateDomain</c> operation creates a new domain. The domain name should be unique among the domains associated with the Access
         /// Key ID provided in the request. The <c>CreateDomain</c> operation may take 10 or more seconds to complete. </para> <para><b>NOTE:</b>
         /// CreateDomain is an idempotent operation; running it multiple times using the same domain name will not result in an error response. </para>
-        /// <para> The client can create up to 100 domains per account. </para> <para> If the client requires additional domains, go to
-        /// http://aws.amazon.com/contact-us/simpledb-limit-request/. </para>
+        /// <para> The client can create up to 100 domains per account. </para> <para> If the client requires additional domains, go to <a href="http://aws.amazon.com/contact-us/simpledb-limit-request/"> http://aws.amazon.com/contact-us/simpledb-limit-request/</a> .
+        /// </para>
         /// </summary>
         /// 
         /// <param name="createDomainRequest">Container for the necessary parameters to execute the CreateDomain service method on
@@ -265,6 +303,19 @@ namespace Amazon.SimpleDB
             return response;
         }
  
+		internal DeleteAttributesResponse DeleteAttributes(DeleteAttributesRequest request)
+        {
+            var task = DeleteAttributesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Deletes one or more attributes associated with an item. If all attributes of the item are deleted, the item is deleted. </para>
         /// <para><b>NOTE:</b> If DeleteAttributes is called without being passed any attributes or values specified, all the attributes for the item
@@ -293,6 +344,19 @@ namespace Amazon.SimpleDB
             return response;
         }
  
+		internal DeleteDomainResponse DeleteDomain(DeleteDomainRequest request)
+        {
+            var task = DeleteDomainAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> The <c>DeleteDomain</c> operation deletes a domain. Any items (and their attributes) in the domain are deleted as well. The
         /// <c>DeleteDomain</c> operation might take 10 or more seconds to complete. </para> <para><b>NOTE:</b> Running DeleteDomain on a domain that
@@ -315,6 +379,19 @@ namespace Amazon.SimpleDB
             return response;
         }
  
+		internal DomainMetadataResponse DomainMetadata(DomainMetadataRequest request)
+        {
+            var task = DomainMetadataAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Returns information about the domain, including when the domain was created, the number of items and attributes in the domain, and
         /// the size of the attribute names and values. </para>
@@ -339,6 +416,19 @@ namespace Amazon.SimpleDB
             return response;
         }
  
+		internal GetAttributesResponse GetAttributes(GetAttributesRequest request)
+        {
+            var task = GetAttributesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Returns all of the attributes associated with the specified item. Optionally, the attributes returned can be limited to one or more
         /// attributes by specifying an attribute name parameter. </para> <para> If the item does not exist on the replica that was accessed for this
@@ -367,11 +457,25 @@ namespace Amazon.SimpleDB
             return response;
         }
  
+		internal ListDomainsResponse ListDomains(ListDomainsRequest request)
+        {
+            var task = ListDomainsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> The <c>ListDomains</c> operation lists all domains associated with the Access Key ID. It returns domain names up to the limit set by
-        /// MaxNumberOfDomains. A NextToken is returned if there are more than <c>MaxNumberOfDomains</c> domains. Calling <c>ListDomains</c> successive
-        /// times with the <c>NextToken</c> provided by the operation returns up to <c>MaxNumberOfDomains</c> more domain names with each successive
-        /// operation call. </para>
+        /// <a href="#MaxNumberOfDomains">MaxNumberOfDomains</a> .
+        /// A <a href="#NextToken">NextToken</a> is returned if there are more than <c>MaxNumberOfDomains</c> domains. Calling
+        /// <c>ListDomains</c> successive times with the <c>NextToken</c> provided by the operation returns up to <c>MaxNumberOfDomains</c> more domain
+        /// names with each successive operation call. </para>
         /// </summary>
         /// 
         /// <param name="listDomainsRequest">Container for the necessary parameters to execute the ListDomains service method on AmazonSimpleDB.</param>
@@ -392,6 +496,19 @@ namespace Amazon.SimpleDB
             return response;
         }
  
+		internal PutAttributesResponse PutAttributes(PutAttributesRequest request)
+        {
+            var task = PutAttributesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> The PutAttributes operation creates or replaces attributes in an item. The client may specify new attributes using a combination of
         /// the <c>Attribute.X.Name</c> and <c>Attribute.X.Value</c> parameters. The client specifies the first attribute by the parameters
@@ -441,6 +558,19 @@ namespace Amazon.SimpleDB
             return response;
         }
  
+		internal SelectResponse Select(SelectRequest request)
+        {
+            var task = SelectAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> The <c>Select</c> operation returns a set of attributes for <c>ItemNames</c> that match the select expression. <c>Select</c> is
         /// similar to the standard SQL SELECT statement. </para> <para> The total size of the response cannot exceed 1 MB in total size. Amazon

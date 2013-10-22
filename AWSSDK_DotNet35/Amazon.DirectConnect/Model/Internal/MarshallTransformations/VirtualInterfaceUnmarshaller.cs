@@ -33,6 +33,9 @@
 
         public VirtualInterface Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonToken.Null)
+                return null;
+
             VirtualInterface virtualInterface = new VirtualInterface();
 
         

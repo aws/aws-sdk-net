@@ -34,7 +34,7 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(deleteCacheClusterRequest, "AmazonElastiCache");
             request.Parameters.Add("Action", "DeleteCacheCluster");
-            request.Parameters.Add("Version", "2012-11-15");
+            request.Parameters.Add("Version", "2013-06-15");
             if (deleteCacheClusterRequest != null && deleteCacheClusterRequest.IsSetCacheClusterId())
             {
                 request.Parameters.Add("CacheClusterId", StringUtils.FromString(deleteCacheClusterRequest.CacheClusterId));

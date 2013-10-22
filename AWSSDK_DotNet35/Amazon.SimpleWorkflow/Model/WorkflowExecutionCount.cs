@@ -17,13 +17,14 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using Amazon.Runtime;
 
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
     /// <para> Contains the count of workflow executions returned from CountOpenWorkflowExecutions or CountClosedWorkflowExecutions </para>
     /// </summary>
-    public class WorkflowExecutionCount
+    public partial class WorkflowExecutionCount : AmazonWebServiceResponse
     {
         
         private int? count;

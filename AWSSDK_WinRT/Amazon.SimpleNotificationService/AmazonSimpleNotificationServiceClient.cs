@@ -30,11 +30,11 @@ namespace Amazon.SimpleNotificationService
     /// 
     /// Amazon Simple Notification Service <para>Amazon Simple Notification Service (Amazon SNS) is a web service that enables you to build
     /// distributed web-enabled applications. Applications can use Amazon SNS to easily push real-time notification messages to interested
-    /// subscribers over multiple delivery protocols. For more information about this product see http://aws.amazon.com/sns. For detailed
-    /// information about Amazon SNS features and their associated API calls, see the Amazon SNS Developer Guide. </para> <para>We also provide SDKs
-    /// that enable you to access Amazon SNS from your preferred programming language. The SDKs contain functionality that automatically takes care
-    /// of tasks such as: cryptographically signing your service requests, retrying requests, and handling error responses. For a list of available
-    /// SDKs, go to Tools for Amazon Web Services. </para>
+    /// subscribers over multiple delivery protocols. For more information about this product see <a href="http://aws.amazon.com/sns/">http://aws.amazon.com/sns</a> . For detailed information about Amazon SNS features and their associated API calls, see the <a href="http://docs.aws.amazon.com/sns/latest/dg/">Amazon SNS Developer Guide</a> .
+    /// </para> <para>We also provide SDKs that enable you to access Amazon SNS from your preferred programming language. The SDKs contain
+    /// functionality that automatically takes care of tasks such as: cryptographically signing your service requests, retrying requests, and
+    /// handling error responses. For a list of available SDKs, go to <a href="http://aws.amazon.com/tools/">Tools for Amazon Web Services</a> .
+    /// </para>
     /// </summary>
 	public partial class AmazonSimpleNotificationServiceClient : AmazonWebServiceClient, Amazon.SimpleNotificationService.IAmazonSimpleNotificationService
     {
@@ -68,7 +68,7 @@ namespace Amazon.SimpleNotificationService
         /// <param name="credentials">AWS Credentials</param>
         /// <param name="clientConfig">The AmazonSimpleNotificationServiceClient Configuration Object</param>
         public AmazonSimpleNotificationServiceClient(AWSCredentials credentials, AmazonSimpleNotificationServiceConfig clientConfig)
-            : base(credentials, clientConfig, false, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(credentials, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
         {
         }
 
@@ -150,6 +150,19 @@ namespace Amazon.SimpleNotificationService
         #endregion
 
  
+		internal AddPermissionResponse AddPermission(AddPermissionRequest request)
+        {
+            var task = AddPermissionAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>The <c>AddPermission</c> action adds a statement to a topic's access control policy, granting access for the specified AWS accounts to
         /// the specified actions.</para>
@@ -174,6 +187,19 @@ namespace Amazon.SimpleNotificationService
             return response;
         }
  
+		internal ConfirmSubscriptionResponse ConfirmSubscription(ConfirmSubscriptionRequest request)
+        {
+            var task = ConfirmSubscriptionAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>The <c>ConfirmSubscription</c> action verifies an endpoint owner's intent to receive messages by validating the token sent to the
         /// endpoint by an earlier <c>Subscribe</c> action. If the token is valid, the action creates a new subscription and returns its Amazon Resource
@@ -202,6 +228,19 @@ namespace Amazon.SimpleNotificationService
             return response;
         }
  
+		internal CreatePlatformApplicationResponse CreatePlatformApplication(CreatePlatformApplicationRequest request)
+        {
+            var task = CreatePlatformApplicationAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>The <c>CreatePlatformApplication</c> action creates a platform application object for one of the supported push notification services,
         /// such as APNS and GCM, to which devices and mobile apps may register. You must specify PlatformPrincipal and PlatformCredential attributes
@@ -210,7 +249,8 @@ namespace Amazon.SimpleNotificationService
         /// "client id". The PlatformCredential is also received from the notification service. For APNS/APNS_SANDBOX, PlatformCredential is "private
         /// key". For GCM, PlatformCredential is "API key". For ADM, PlatformCredential is "client secret". The PlatformApplicationArn that is returned
         /// when using <c>CreatePlatformApplication</c> is then used as an attribute for the <c>CreatePlatformEndpoint</c> action. For more information,
-        /// see Using Amazon SNS Mobile Push Notifications. </para>
+        /// see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push Notifications</a> .
+        /// </para>
         /// </summary>
         /// 
         /// <param name="createPlatformApplicationRequest">Container for the necessary parameters to execute the CreatePlatformApplication service
@@ -233,12 +273,26 @@ namespace Amazon.SimpleNotificationService
             return response;
         }
  
+		internal CreatePlatformEndpointResponse CreatePlatformEndpoint(CreatePlatformEndpointRequest request)
+        {
+            var task = CreatePlatformEndpointAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>The <c>CreatePlatformEndpoint</c> creates an endpoint for a device and mobile app on one of the supported push notification services,
         /// such as GCM and APNS. <c>CreatePlatformEndpoint</c> requires the PlatformApplicationArn that is returned from
         /// <c>CreatePlatformApplication</c> . The EndpointArn that is returned when using <c>CreatePlatformEndpoint</c> can then be used by the
         /// <c>Publish</c> action to send a message to a mobile app or by the <c>Subscribe</c> action for subscription to a topic. For more information,
-        /// see Using Amazon SNS Mobile Push Notifications. </para>
+        /// see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push Notifications</a> .
+        /// </para>
         /// </summary>
         /// 
         /// <param name="createPlatformEndpointRequest">Container for the necessary parameters to execute the CreatePlatformEndpoint service method on
@@ -262,10 +316,24 @@ namespace Amazon.SimpleNotificationService
             return response;
         }
  
+		internal CreateTopicResponse CreateTopic(CreateTopicRequest request)
+        {
+            var task = CreateTopicAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>The <c>CreateTopic</c> action creates a topic to which notifications can be published. Users can create at most 100 topics. For more
-        /// information, see http://aws.amazon.com/sns. This action is idempotent, so if the requester already owns a topic with the specified name,
-        /// that topic's ARN is returned without creating a new topic.</para>
+        /// information, see <a href="http://aws.amazon.com/sns/">http://aws.amazon.com/sns</a> .
+        /// This action is idempotent, so if the requester already owns a topic with the specified name, that topic's ARN is returned without
+        /// creating a new topic.</para>
         /// </summary>
         /// 
         /// <param name="createTopicRequest">Container for the necessary parameters to execute the CreateTopic service method on
@@ -289,9 +357,22 @@ namespace Amazon.SimpleNotificationService
             return response;
         }
  
+		internal DeleteEndpointResponse DeleteEndpoint(DeleteEndpointRequest request)
+        {
+            var task = DeleteEndpointAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
-        /// <para>The <c>DeleteEndpoint</c> action, which is idempotent, deletes the endpoint from SNS. For more information, see Using Amazon SNS
-        /// Mobile Push Notifications. </para>
+        /// <para>The <c>DeleteEndpoint</c> action, which is idempotent, deletes the endpoint from SNS. For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push Notifications</a> .
+        /// </para>
         /// </summary>
         /// 
         /// <param name="deleteEndpointRequest">Container for the necessary parameters to execute the DeleteEndpoint service method on
@@ -312,9 +393,24 @@ namespace Amazon.SimpleNotificationService
             return response;
         }
  
+		internal DeletePlatformApplicationResponse DeletePlatformApplication(DeletePlatformApplicationRequest request)
+        {
+            var task = DeletePlatformApplicationAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>The <c>DeletePlatformApplication</c> action deletes a platform application object for one of the supported push notification services,
-        /// such as APNS and GCM. For more information, see Using Amazon SNS Mobile Push Notifications. </para>
+        /// such as APNS and GCM. For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS
+        /// Mobile Push Notifications</a> .
+        /// </para>
         /// </summary>
         /// 
         /// <param name="deletePlatformApplicationRequest">Container for the necessary parameters to execute the DeletePlatformApplication service
@@ -335,6 +431,19 @@ namespace Amazon.SimpleNotificationService
             return response;
         }
  
+		internal DeleteTopicResponse DeleteTopic(DeleteTopicRequest request)
+        {
+            var task = DeleteTopicAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>The <c>DeleteTopic</c> action deletes a topic and all its subscriptions. Deleting a topic might prevent some messages previously sent
         /// to the topic from being delivered to subscribers. This action is idempotent, so deleting a topic that does not exist does not result in an
@@ -360,9 +469,24 @@ namespace Amazon.SimpleNotificationService
             return response;
         }
  
+		internal GetEndpointAttributesResponse GetEndpointAttributes(GetEndpointAttributesRequest request)
+        {
+            var task = GetEndpointAttributesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>The <c>GetEndpointAttributes</c> retrieves the endpoint attributes for a device on one of the supported push notification services,
-        /// such as GCM and APNS. For more information, see Using Amazon SNS Mobile Push Notifications. </para>
+        /// such as GCM and APNS. For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS
+        /// Mobile Push Notifications</a> .
+        /// </para>
         /// </summary>
         /// 
         /// <param name="getEndpointAttributesRequest">Container for the necessary parameters to execute the GetEndpointAttributes service method on
@@ -386,9 +510,23 @@ namespace Amazon.SimpleNotificationService
             return response;
         }
  
+		internal GetPlatformApplicationAttributesResponse GetPlatformApplicationAttributes(GetPlatformApplicationAttributesRequest request)
+        {
+            var task = GetPlatformApplicationAttributesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>The <c>GetPlatformApplicationAttributes</c> action retrieves the attributes of the platform application object for the supported push
-        /// notification services, such as APNS and GCM. For more information, see Using Amazon SNS Mobile Push Notifications. </para>
+        /// notification services, such as APNS and GCM. For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push Notifications</a> .
+        /// </para>
         /// </summary>
         /// 
         /// <param name="getPlatformApplicationAttributesRequest">Container for the necessary parameters to execute the GetPlatformApplicationAttributes
@@ -412,6 +550,19 @@ namespace Amazon.SimpleNotificationService
             return response;
         }
  
+		internal GetSubscriptionAttributesResponse GetSubscriptionAttributes(GetSubscriptionAttributesRequest request)
+        {
+            var task = GetSubscriptionAttributesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>The <c>GetSubscriptionAttribtues</c> action returns all of the properties of a subscription.</para>
         /// </summary>
@@ -437,6 +588,19 @@ namespace Amazon.SimpleNotificationService
             return response;
         }
  
+		internal GetTopicAttributesResponse GetTopicAttributes(GetTopicAttributesRequest request)
+        {
+            var task = GetTopicAttributesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>The <c>GetTopicAttributes</c> action returns all of the properties of a topic. Topic properties returned might differ based on the
         /// authorization of the user. </para>
@@ -463,12 +627,25 @@ namespace Amazon.SimpleNotificationService
             return response;
         }
  
+		internal ListEndpointsByPlatformApplicationResponse ListEndpointsByPlatformApplication(ListEndpointsByPlatformApplicationRequest request)
+        {
+            var task = ListEndpointsByPlatformApplicationAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>The <c>ListEndpointsByPlatformApplication</c> action lists the endpoints and endpoint attributes for devices in a supported push
         /// notification service, such as GCM and APNS. The results for <c>ListEndpointsByPlatformApplication</c> are paginated and return a limited
         /// list of endpoints, up to 100. If additional records are available after the first page results, then a NextToken string will be returned. To
         /// receive the next page, you call <c>ListEndpointsByPlatformApplication</c> again using the NextToken string received from the previous call.
-        /// When there are no more records to return, NextToken will be null. For more information, see Using Amazon SNS Mobile Push Notifications.
+        /// When there are no more records to return, NextToken will be null. For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push Notifications</a> .
         /// </para>
         /// </summary>
         /// 
@@ -493,12 +670,27 @@ namespace Amazon.SimpleNotificationService
             return response;
         }
  
+		internal ListPlatformApplicationsResponse ListPlatformApplications(ListPlatformApplicationsRequest request)
+        {
+            var task = ListPlatformApplicationsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>The <c>ListPlatformApplications</c> action lists the platform application objects for the supported push notification services, such
         /// as APNS and GCM. The results for <c>ListPlatformApplications</c> are paginated and return a limited list of applications, up to 100. If
         /// additional records are available after the first page results, then a NextToken string will be returned. To receive the next page, you call
         /// <c>ListPlatformApplications</c> using the NextToken string received from the previous call. When there are no more records to return,
-        /// NextToken will be null. For more information, see Using Amazon SNS Mobile Push Notifications. </para>
+        /// NextToken will be null. For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS
+        /// Mobile Push Notifications</a> .
+        /// </para>
         /// </summary>
         /// 
         /// <param name="listPlatformApplicationsRequest">Container for the necessary parameters to execute the ListPlatformApplications service method
@@ -521,6 +713,19 @@ namespace Amazon.SimpleNotificationService
             return response;
         }
  
+		internal ListSubscriptionsResponse ListSubscriptions(ListSubscriptionsRequest request)
+        {
+            var task = ListSubscriptionsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>The <c>ListSubscriptions</c> action returns a list of the requester's subscriptions. Each call returns a limited list of
         /// subscriptions, up to 100. If there are more subscriptions, a <c>NextToken</c> is also returned. Use the <c>NextToken</c> parameter in a new
@@ -547,6 +752,19 @@ namespace Amazon.SimpleNotificationService
             return response;
         }
  
+		internal ListSubscriptionsByTopicResponse ListSubscriptionsByTopic(ListSubscriptionsByTopicRequest request)
+        {
+            var task = ListSubscriptionsByTopicAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>The <c>ListSubscriptionsByTopic</c> action returns a list of the subscriptions to a specific topic. Each call returns a limited list
         /// of subscriptions, up to 100. If there are more subscriptions, a <c>NextToken</c> is also returned. Use the <c>NextToken</c> parameter in a
@@ -574,6 +792,19 @@ namespace Amazon.SimpleNotificationService
             return response;
         }
  
+		internal ListTopicsResponse ListTopics(ListTopicsRequest request)
+        {
+            var task = ListTopicsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>The <c>ListTopics</c> action returns a list of the requester's topics. Each call returns a limited list of topics, up to 100. If there
         /// are more topics, a <c>NextToken</c> is also returned. Use the <c>NextToken</c> parameter in a new <c>ListTopics</c> call to get further
@@ -600,6 +831,19 @@ namespace Amazon.SimpleNotificationService
             return response;
         }
  
+		internal PublishResponse Publish(PublishRequest request)
+        {
+            var task = PublishAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>The <c>Publish</c> action sends a message to all of a topic's subscribed endpoints. When a <c>messageId</c> is returned, the message
         /// has been saved and Amazon SNS will attempt to deliver it to the topic's subscribers shortly. The format of the outgoing message to each
@@ -632,6 +876,19 @@ namespace Amazon.SimpleNotificationService
             return response;
         }
  
+		internal RemovePermissionResponse RemovePermission(RemovePermissionRequest request)
+        {
+            var task = RemovePermissionAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>The <c>RemovePermission</c> action removes a statement from a topic's access control policy.</para>
         /// </summary>
@@ -655,9 +912,24 @@ namespace Amazon.SimpleNotificationService
             return response;
         }
  
+		internal SetEndpointAttributesResponse SetEndpointAttributes(SetEndpointAttributesRequest request)
+        {
+            var task = SetEndpointAttributesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>The <c>SetEndpointAttributes</c> action sets the attributes for an endpoint for a device on one of the supported push notification
-        /// services, such as GCM and APNS. For more information, see Using Amazon SNS Mobile Push Notifications. </para>
+        /// services, such as GCM and APNS. For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using
+        /// Amazon SNS Mobile Push Notifications</a> .
+        /// </para>
         /// </summary>
         /// 
         /// <param name="setEndpointAttributesRequest">Container for the necessary parameters to execute the SetEndpointAttributes service method on
@@ -679,9 +951,23 @@ namespace Amazon.SimpleNotificationService
             return response;
         }
  
+		internal SetPlatformApplicationAttributesResponse SetPlatformApplicationAttributes(SetPlatformApplicationAttributesRequest request)
+        {
+            var task = SetPlatformApplicationAttributesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>The <c>SetPlatformApplicationAttributes</c> action sets the attributes of the platform application object for the supported push
-        /// notification services, such as APNS and GCM. For more information, see Using Amazon SNS Mobile Push Notifications. </para>
+        /// notification services, such as APNS and GCM. For more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push Notifications</a> .
+        /// </para>
         /// </summary>
         /// 
         /// <param name="setPlatformApplicationAttributesRequest">Container for the necessary parameters to execute the SetPlatformApplicationAttributes
@@ -703,6 +989,19 @@ namespace Amazon.SimpleNotificationService
             return response;
         }
  
+		internal SetSubscriptionAttributesResponse SetSubscriptionAttributes(SetSubscriptionAttributesRequest request)
+        {
+            var task = SetSubscriptionAttributesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>The <c>SetSubscriptionAttributes</c> action allows a subscription owner to set an attribute of the topic to a new value.</para>
         /// </summary>
@@ -726,6 +1025,19 @@ namespace Amazon.SimpleNotificationService
             return response;
         }
  
+		internal SetTopicAttributesResponse SetTopicAttributes(SetTopicAttributesRequest request)
+        {
+            var task = SetTopicAttributesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>The <c>SetTopicAttributes</c> action allows a topic owner to set an attribute of the topic to a new value.</para>
         /// </summary>
@@ -749,6 +1061,19 @@ namespace Amazon.SimpleNotificationService
             return response;
         }
  
+		internal SubscribeResponse Subscribe(SubscribeRequest request)
+        {
+            var task = SubscribeAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>The <c>Subscribe</c> action prepares to subscribe an endpoint by sending the endpoint a confirmation message. To actually create a
         /// subscription, the endpoint owner must call the <c>ConfirmSubscription</c> action with the token from the confirmation message. Confirmation
@@ -777,6 +1102,19 @@ namespace Amazon.SimpleNotificationService
             return response;
         }
  
+		internal UnsubscribeResponse Unsubscribe(UnsubscribeRequest request)
+        {
+            var task = UnsubscribeAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>The <c>Unsubscribe</c> action deletes a subscription. If the subscription requires authentication for deletion, only the owner of the
         /// subscription or the topic's owner can unsubscribe, and an AWS signature is required. If the <c>Unsubscribe</c> call does not require

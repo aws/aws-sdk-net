@@ -38,7 +38,7 @@
           return response;
         }
         
-        private void UnmarshallResult(JsonUnmarshallerContext context,DescribeElasticIpsResponse response)
+        private static void UnmarshallResult(JsonUnmarshallerContext context,DescribeElasticIpsResponse response)
         {
           
             int originalDepth = context.CurrentDepth;

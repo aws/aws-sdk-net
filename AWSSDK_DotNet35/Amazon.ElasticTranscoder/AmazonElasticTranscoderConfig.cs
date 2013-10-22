@@ -52,7 +52,7 @@ namespace Amazon.ElasticTranscoder
         {
             get
             {
-                return "";
+                return "2012-09-25";
             }
         }
     }

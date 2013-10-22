@@ -55,7 +55,7 @@ namespace Amazon.SimpleEmail.Model
         /// <list type="definition">
         ///     <item>
         ///         <term>Allowed Values</term>
-        ///         <description>Pending, Success, Failed, TemporaryFailure</description>
+        ///         <description>Pending, Success, Failed, TemporaryFailure, NotStarted</description>
         ///     </item>
         /// </list>
         /// </para>
@@ -73,9 +73,11 @@ namespace Amazon.SimpleEmail.Model
         }
 
         /// <summary>
-        /// A set of DNS records (tokens) that must be published in the domain name's DNS for DKIM verification to complete, and which must remain
-        /// published in order for DKIM signing to succeed. The tokens are <c>CNAME</c> DNS records that point to DKIM public keys hosted by Amazon SES.
-        /// (This only applies to domain entities, not email address identities.)
+        /// A set of character strings that represent the domain's identity. Using these tokens, you will need to create DNS CNAME records that point to
+        /// DKIM public keys hosted by Amazon SES. Amazon Web Services will eventually detect that you have updated your DNS records; this detection
+        /// process may take up to 72 hours. Upon successful detection, Amazon SES will be able to DKIM-sign email originating from that domain. (This
+        /// only applies to domain identities, not email address identities.) For more information about creating DNS records using DKIM tokens, go to
+        /// the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html">Amazon SES Developer Guide</a>.
         ///  
         /// </summary>
         public List<string> DkimTokens

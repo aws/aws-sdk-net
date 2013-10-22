@@ -46,7 +46,6 @@ namespace Amazon.Runtime
         protected const int MAX_BACKOFF_IN_MILLISECONDS = 30 * 1000;
         protected ClientConfig config;
         protected AWSCredentials credentials;
-        protected bool ownCredentials;
         internal AuthenticationTypes authenticationType;
 
         protected bool disposed;
@@ -63,14 +62,6 @@ namespace Amazon.Runtime
         {
             if (!this.disposed)
             {
-                if (disposing && credentials != null)
-                {
-                    if (ownCredentials)
-                    {
-                        credentials.Dispose();
-                    }
-                    credentials = null;
-                }
                 if (disposing && logger != null)
                 {
                     logger.Flush();
@@ -124,17 +115,16 @@ namespace Amazon.Runtime
         #endregion
 
         #region Constructors
-        internal AbstractWebServiceClient(AWSCredentials credentials, ClientConfig config, bool ownCredentials, AuthenticationTypes authenticationType)
+        internal AbstractWebServiceClient(AWSCredentials credentials, ClientConfig config, AuthenticationTypes authenticationType)
         {
             if (config.DisableLogging)
                 this.logger = Logger.EmptyLogger;
             else
                 this.logger = Logger.GetLogger(this.GetType());
 
+            config.Validate();
             this.config = config;
-            this.ownCredentials = ownCredentials;
             this.authenticationType = authenticationType;
-
             this.credentials = credentials;
 
             Initialize();
@@ -142,22 +132,22 @@ namespace Amazon.Runtime
 
         internal AbstractWebServiceClient(string awsAccessKeyId, string awsSecretAccessKey, ClientConfig config, AuthenticationTypes authenticationType)
             : this((AWSCredentials)new BasicAWSCredentials(awsAccessKeyId, awsSecretAccessKey),
-                config, true, authenticationType)
+                config, authenticationType)
         {
         }
 
         internal AbstractWebServiceClient(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken, ClientConfig config, AuthenticationTypes authenticationType)
-            : this(new SessionAWSCredentials(awsAccessKeyId, awsSecretAccessKey, awsSessionToken), config, true, authenticationType)
+            : this(new SessionAWSCredentials(awsAccessKeyId, awsSecretAccessKey, awsSessionToken), config, authenticationType)
         {
         }
 
         internal AbstractWebServiceClient(string awsAccessKeyId, string awsSecretAccessKey, ClientConfig config)
-            : this(new BasicAWSCredentials(awsAccessKeyId, awsSecretAccessKey), config, true, AuthenticationTypes.User)
+            : this(new BasicAWSCredentials(awsAccessKeyId, awsSecretAccessKey), config, AuthenticationTypes.User)
         {
         }
 
         internal AbstractWebServiceClient(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken, ClientConfig config)
-            : this(new SessionAWSCredentials(awsAccessKeyId, awsSecretAccessKey, awsSessionToken), config, true, AuthenticationTypes.User)
+            : this(new SessionAWSCredentials(awsAccessKeyId, awsSecretAccessKey, awsSessionToken), config, AuthenticationTypes.User)
         {
         }
 
@@ -191,29 +181,27 @@ namespace Amazon.Runtime
             using (requestData.Metrics.StartEvent(RequestMetrics.Metric.RequestSigningTime))
             {
                 requestData.Metrics.StartEvent(RequestMetrics.Metric.CredentialsRequestTime);
-                using (ImmutableCredentials immutableCredentials = credentials.GetCredentials())
+                ImmutableCredentials immutableCredentials = credentials.GetCredentials();
+                // credentials would be null in the case of anonymous users getting public resources from S3
+                if (immutableCredentials == null)
+                    return;
+                requestData.Metrics.StopEvent(RequestMetrics.Metric.CredentialsRequestTime);
+                if (immutableCredentials.UseToken)
                 {
-                    // credentials would be null in the case of anonymous users getting public resources from S3
-                    if (immutableCredentials == null)
-                        return;
-                    requestData.Metrics.StopEvent(RequestMetrics.Metric.CredentialsRequestTime);
-                    if (immutableCredentials.UseToken)
+                    ClientProtocol protocol = requestData.Signer.Protocol;
+                    switch (protocol)
                     {
-                        ClientProtocol protocol = requestData.Signer.Protocol;
-                        switch (protocol)
-                        {
-                            case ClientProtocol.QueryStringProtocol:
-                                requestData.Request.Parameters["SecurityToken"] = immutableCredentials.Token;
-                                break;
-                            case ClientProtocol.RestProtocol:
-                                requestData.Request.Headers["x-amz-security-token"] = immutableCredentials.Token;
-                                break;
-                            default:
-                                throw new InvalidDataException("Cannot determine protocol");
-                        }
+                        case ClientProtocol.QueryStringProtocol:
+                            requestData.Request.Parameters["SecurityToken"] = immutableCredentials.Token;
+                            break;
+                        case ClientProtocol.RestProtocol:
+                            requestData.Request.Headers["x-amz-security-token"] = immutableCredentials.Token;
+                            break;
+                        default:
+                            throw new InvalidDataException("Cannot determine protocol");
                     }
-                    requestData.Signer.Sign(requestData.Request, this.config, immutableCredentials.AccessKey, immutableCredentials.SecretKey);
                 }
+                requestData.Signer.Sign(requestData.Request, this.config, immutableCredentials.AccessKey, immutableCredentials.SecretKey);
             }
         }
 

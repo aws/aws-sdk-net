@@ -33,6 +33,9 @@
 
         public ConnectionOrderStep Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonToken.Null)
+                return null;
+
             ConnectionOrderStep connectionOrderStep = new ConnectionOrderStep();
 
         

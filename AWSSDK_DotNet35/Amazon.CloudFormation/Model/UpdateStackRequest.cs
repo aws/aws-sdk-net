@@ -29,7 +29,8 @@ namespace Amazon.CloudFormation.Model
     /// of the stack via the DescribeStacks action.</para> <para>To get a copy of the template for an existing stack, you can use the GetTemplate
     /// action.</para> <para>Tags that were associated with this stack during creation time will still be associated with the stack after an
     /// <c>UpdateStack</c> operation.</para> <para>For more information about creating an update template, updating a stack, and monitoring the
-    /// progress of the update, see Updating a Stack.</para>
+    /// progress of the update, see <a href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks.html"
+    /// >Updating a Stack</a> .</para>
     /// </summary>
     public partial class UpdateStackRequest : AmazonWebServiceRequest
     {

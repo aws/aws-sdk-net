@@ -34,7 +34,11 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(terminateInstancesRequest, "AmazonEC2");
             request.Parameters.Add("Action", "TerminateInstances");
-            request.Parameters.Add("Version", "2013-02-01");
+            request.Parameters.Add("Version", "2013-10-01");
+            if (terminateInstancesRequest != null && terminateInstancesRequest.IsSetDryRun())
+            {
+                request.Parameters.Add("DryRun", StringUtils.FromBool(terminateInstancesRequest.DryRun));
+            }
             if (terminateInstancesRequest != null)
             {
                 List<string> instanceIdsList = terminateInstancesRequest.InstanceIds;

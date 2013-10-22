@@ -29,7 +29,7 @@ namespace Amazon.ElasticMapReduce
         /// </summary>
         public AmazonElasticMapReduceConfig()
         {
-            
+            this.AuthenticationServiceName = "elasticmapreduce";
         }
 
         /// <summary>

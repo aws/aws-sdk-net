@@ -25,10 +25,7 @@ namespace Amazon.StorageGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteSnapshotSchedule operation.
-    /// <para> This operation deletes a snapshot of a volume. </para> <para> You can take snapshots of your gateway volumes on a scheduled or ad-hoc
-    /// basis. This API enables you to delete a snapshot schedule for a volume. For more information, see Working with Snapshots. In the
-    /// <c>DeleteSnapshotSchedule</c> request, you identify the volume by providing its Amazon Resource Name (ARN). </para> <para><b>NOTE:</b> To
-    /// list or delete a snapshot, you must use the Amazon EC2 API. in Amazon Elastic Compute Cloud API Reference. </para>
+    /// 
     /// </summary>
     public partial class DeleteSnapshotScheduleRequest : AmazonWebServiceRequest
     {

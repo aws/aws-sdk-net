@@ -33,6 +33,9 @@
 
         public Volume Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonToken.Null)
+                return null;
+
             Volume volume = new Volume();
 
         

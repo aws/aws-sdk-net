@@ -29,8 +29,20 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeConversionTasksRequest : AmazonWebServiceRequest
     {
+        private bool? dryRun;
         private List<Filter> filters = new List<Filter>();
         private List<string> conversionTaskIds = new List<string>();
+        public bool DryRun
+        {
+            get { return this.dryRun ?? default(bool); }
+            set { this.dryRun = value; }
+        }
+
+        // Check to see if DryRun property is set
+        internal bool IsSetDryRun()
+        {
+            return this.dryRun.HasValue;
+        }
         public List<Filter> Filters
         {
             get { return this.filters; }

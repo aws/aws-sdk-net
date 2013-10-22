@@ -52,7 +52,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             return response;
         }
         
-        private void UnmarshallResult(XmlUnmarshallerContext context,DescribeOptionGroupsResponse response)
+        private static void UnmarshallResult(XmlUnmarshallerContext context,DescribeOptionGroupsResponse response)
         {
             
             int originalDepth = context.CurrentDepth;

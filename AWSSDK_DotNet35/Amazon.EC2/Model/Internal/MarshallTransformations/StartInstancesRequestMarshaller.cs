@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(startInstancesRequest, "AmazonEC2");
             request.Parameters.Add("Action", "StartInstances");
-            request.Parameters.Add("Version", "2013-02-01");
+            request.Parameters.Add("Version", "2013-10-01");
             if (startInstancesRequest != null)
             {
                 List<string> instanceIdsList = startInstancesRequest.InstanceIds;
@@ -49,6 +49,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             if (startInstancesRequest != null && startInstancesRequest.IsSetAdditionalInfo())
             {
                 request.Parameters.Add("AdditionalInfo", StringUtils.FromString(startInstancesRequest.AdditionalInfo));
+            }
+            if (startInstancesRequest != null && startInstancesRequest.IsSetDryRun())
+            {
+                request.Parameters.Add("DryRun", StringUtils.FromBool(startInstancesRequest.DryRun));
             }
 
             return request;

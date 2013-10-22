@@ -33,6 +33,9 @@
 
         public CancelWorkflowExecutionFailedEventAttributes Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonToken.Null)
+                return null;
+
             CancelWorkflowExecutionFailedEventAttributes cancelWorkflowExecutionFailedEventAttributes = new CancelWorkflowExecutionFailedEventAttributes();
 
         

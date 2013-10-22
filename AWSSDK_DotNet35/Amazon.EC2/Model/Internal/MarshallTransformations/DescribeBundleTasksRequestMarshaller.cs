@@ -34,7 +34,11 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(describeBundleTasksRequest, "AmazonEC2");
             request.Parameters.Add("Action", "DescribeBundleTasks");
-            request.Parameters.Add("Version", "2013-02-01");
+            request.Parameters.Add("Version", "2013-10-01");
+            if (describeBundleTasksRequest != null && describeBundleTasksRequest.IsSetDryRun())
+            {
+                request.Parameters.Add("DryRun", StringUtils.FromBool(describeBundleTasksRequest.DryRun));
+            }
             if (describeBundleTasksRequest != null)
             {
                 List<string> bundleIdsList = describeBundleTasksRequest.BundleIds;

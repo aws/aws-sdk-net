@@ -33,6 +33,9 @@
 
         public VideoParameters Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonToken.Null)
+                return null;
+
             VideoParameters videoParameters = new VideoParameters();
 
         

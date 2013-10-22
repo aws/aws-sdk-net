@@ -14,10 +14,11 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
+using System.Text;
 using System.Xml;
 using System.Xml.Serialization;
-using System.Text;
 
 using Amazon.CloudFront.Model;
 
@@ -45,14 +46,12 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         if(updateCloudFrontOriginAccessIdentityRequest.IsSetIfMatch())
             request.Headers.Add("If-Match", updateCloudFrontOriginAccessIdentityRequest.IfMatch);
             
-              
-            Dictionary<string, string> queryParameters = new Dictionary<string, string>();
-            string uriResourcePath = "2013-05-12/origin-access-identity/cloudfront/{Id}/config"; 
+            string uriResourcePath = "2013-09-27/origin-access-identity/cloudfront/{Id}/config"; 
             uriResourcePath = uriResourcePath.Replace("{Id}", updateCloudFrontOriginAccessIdentityRequest.IsSetId() ? updateCloudFrontOriginAccessIdentityRequest.Id.ToString() : "" ); 
 
             if (uriResourcePath.Contains("?")) 
             {
-                int queryIndex = uriResourcePath.IndexOf("?");
+                int queryIndex = uriResourcePath.IndexOf("?", StringComparison.OrdinalIgnoreCase);
                 string queryString = uriResourcePath.Substring(queryIndex + 1);
                 
                 uriResourcePath    = uriResourcePath.Substring(0, queryIndex);
@@ -76,7 +75,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             request.ResourcePath = uriResourcePath;
             
              
-            StringWriter stringWriter = new StringWriter();
+            StringWriter stringWriter = new StringWriter(System.Globalization.CultureInfo.InvariantCulture);
                 using (XmlWriter xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true }))
                 {
                        
@@ -85,14 +84,14 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             CloudFrontOriginAccessIdentityConfig cloudFrontOriginAccessIdentityConfigCloudFrontOriginAccessIdentityConfig = updateCloudFrontOriginAccessIdentityRequest.CloudFrontOriginAccessIdentityConfig;
             if (cloudFrontOriginAccessIdentityConfigCloudFrontOriginAccessIdentityConfig != null) 
             {
-                xmlWriter.WriteStartElement("CloudFrontOriginAccessIdentityConfig", "http://cloudfront.amazonaws.com/doc/2013-05-12/");
+                xmlWriter.WriteStartElement("CloudFrontOriginAccessIdentityConfig", "http://cloudfront.amazonaws.com/doc/2013-09-27/");
                 if (cloudFrontOriginAccessIdentityConfigCloudFrontOriginAccessIdentityConfig.IsSetCallerReference()) 
                 {
-                    xmlWriter.WriteElementString("CallerReference", "http://cloudfront.amazonaws.com/doc/2013-05-12/", cloudFrontOriginAccessIdentityConfigCloudFrontOriginAccessIdentityConfig.CallerReference.ToString());
+                    xmlWriter.WriteElementString("CallerReference", "http://cloudfront.amazonaws.com/doc/2013-09-27/", cloudFrontOriginAccessIdentityConfigCloudFrontOriginAccessIdentityConfig.CallerReference.ToString(CultureInfo.InvariantCulture));
                   }
                 if (cloudFrontOriginAccessIdentityConfigCloudFrontOriginAccessIdentityConfig.IsSetComment()) 
                 {
-                    xmlWriter.WriteElementString("Comment", "http://cloudfront.amazonaws.com/doc/2013-05-12/", cloudFrontOriginAccessIdentityConfigCloudFrontOriginAccessIdentityConfig.Comment.ToString());
+                    xmlWriter.WriteElementString("Comment", "http://cloudfront.amazonaws.com/doc/2013-09-27/", cloudFrontOriginAccessIdentityConfigCloudFrontOriginAccessIdentityConfig.Comment.ToString(CultureInfo.InvariantCulture));
                   }
                 xmlWriter.WriteEndElement();
             }

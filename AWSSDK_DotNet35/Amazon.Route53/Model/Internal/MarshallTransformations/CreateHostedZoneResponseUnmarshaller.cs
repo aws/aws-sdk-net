@@ -44,7 +44,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             return response;
         }
         
-        private void UnmarshallResult(XmlUnmarshallerContext context,CreateHostedZoneResponse response)
+        private static void UnmarshallResult(XmlUnmarshallerContext context,CreateHostedZoneResponse response)
         {
             
             int originalDepth = context.CurrentDepth;

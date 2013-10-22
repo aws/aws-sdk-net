@@ -17,6 +17,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using Amazon.Runtime;
 
 namespace Amazon.RDS.Model
 {
@@ -31,7 +32,7 @@ namespace Amazon.RDS.Model
     /// </ul>
     /// <para>This data type is used as a response element in the DescribeDBSubnetGroups action.</para>
     /// </summary>
-    public class DBSubnetGroup
+    public partial class DBSubnetGroup : AmazonWebServiceResponse
     {
         
         private string dBSubnetGroupName;
@@ -41,7 +42,7 @@ namespace Amazon.RDS.Model
         private List<Subnet> subnets = new List<Subnet>();
 
         /// <summary>
-        /// Specifies the name of the DB Subnet Group.
+        /// Specifies the name of the DB subnet group.
         ///  
         /// </summary>
         public string DBSubnetGroupName
@@ -57,7 +58,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Provides the description of the DB Subnet Group.
+        /// Provides the description of the DB subnet group.
         ///  
         /// </summary>
         public string DBSubnetGroupDescription
@@ -73,7 +74,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Provides the VpcId of the DB Subnet Group.
+        /// Provides the VpcId of the DB subnet group.
         ///  
         /// </summary>
         public string VpcId
@@ -89,7 +90,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Provides the status of the DB Subnet Group.
+        /// Provides the status of the DB subnet group.
         ///  
         /// </summary>
         public string SubnetGroupStatus

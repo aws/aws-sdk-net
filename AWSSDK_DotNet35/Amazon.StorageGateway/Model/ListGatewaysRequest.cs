@@ -25,11 +25,7 @@ namespace Amazon.StorageGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the ListGateways operation.
-    /// <para>This operation lists gateways owned by an AWS account in a region specified in the request. The returned list is ordered by gateway
-    /// Amazon Resource Name (ARN).</para> <para>By default, the operation returns a maximum of 100 gateways. This operation supports pagination
-    /// that allows you to optionally reduce the number of gateways returned in a response.</para> <para>If you have more gateways than are returned
-    /// in a response-that is, the response returns only a truncated list of your gateways-the response contains a marker that you can specify in
-    /// your next request to fetch the next page of gateways.</para>
+    /// 
     /// </summary>
     public partial class ListGatewaysRequest : AmazonWebServiceRequest
     {

@@ -29,7 +29,9 @@ namespace Amazon.IdentityManagement.Model
     /// user's signing certificate as part of a certificate rotation work flow.</para> <para>If the <c>UserName</c> field is not specified, the
     /// UserName is determined implicitly based on the AWS Access Key ID used to sign the request. Because this action works for access keys under
     /// the AWS account, this API can be used to manage root credentials even if the AWS account has no associated users.</para> <para>For
-    /// information about rotating certificates, see Managing Keys and Certificates in <i>Using AWS Identity and Access Management</i> .</para>
+    /// information about rotating certificates, see <a
+    /// href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?ManagingCredentials.html" >Managing Keys and Certificates</a> in
+    /// <i>Using AWS Identity and Access Management</i> .</para>
     /// </summary>
     public partial class UpdateSigningCertificateRequest : AmazonWebServiceRequest
     {

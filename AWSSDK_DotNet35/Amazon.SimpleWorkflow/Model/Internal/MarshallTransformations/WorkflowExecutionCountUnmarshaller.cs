@@ -33,6 +33,9 @@
 
         public WorkflowExecutionCount Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonToken.Null)
+                return null;
+
             WorkflowExecutionCount workflowExecutionCount = new WorkflowExecutionCount();
 
         

@@ -27,7 +27,8 @@ namespace Amazon.AWSSupport.Model
     /// Container for the parameters to the DescribeCases operation.
     /// <para>This action returns a list of cases that you specify by passing one or more CaseIds. In addition, you can filter the cases by date by
     /// setting values for the AfterTime and BeforeTime request parameters. </para> <para> The response returns the following in JSON format:
-    /// </para> <ol> <li>One or more CaseDetails data types. </li>
+    /// </para> <ol> <li>One or more <a href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_CaseDetails.html" >CaseDetails</a> data
+    /// types. </li>
     /// <li>One or more <i>NextToken</i> objects, strings that specifies where to paginate the returned records represented by <i>CaseDetails</i>
     /// .</li>
     /// </ol>
@@ -117,8 +118,8 @@ namespace Amazon.AWSSupport.Model
         }
 
         /// <summary>
-        /// Boolean that indicates whether or not resolved support cases should be listed in the <a href="API_DescribeCases.html"
-        /// title="DescribeCases">DescribeCases</a> search.
+        /// Boolean that indicates whether or not resolved support cases should be listed in the <a
+        /// href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeCases.html" title="DescribeCases">DescribeCases</a> search.
         ///  
         /// </summary>
         public bool IncludeResolvedCases

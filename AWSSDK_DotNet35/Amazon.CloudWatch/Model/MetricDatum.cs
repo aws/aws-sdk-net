@@ -60,7 +60,8 @@ namespace Amazon.CloudWatch.Model
         }
 
         /// <summary>
-        /// A list of dimensions associated with the metric.
+        /// A list of dimensions associated with the metric. Note, when using the Dimensions value in a query, you need to append .member.N to it (e.g.,
+        /// Dimensions.member.N).
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -85,7 +86,11 @@ namespace Amazon.CloudWatch.Model
         }
 
         /// <summary>
-        /// The time stamp used for the metric. If not specified, the default value is set to the time the metric data was received.
+        /// The time stamp used for the metric. If not specified, the default value is set to the time the metric data was received. Amazon CloudWatch
+        /// uses Coordinated Universal Time (UTC) when returning time stamps, which do not accommodate seasonal adjustments such as daylight savings
+        /// time. For more information, see <a
+        /// href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Time stamps</a> in the
+        /// <i>Amazon CloudWatch Developer Guide</i>.
         ///  
         /// </summary>
         public DateTime Timestamp

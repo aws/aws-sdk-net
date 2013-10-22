@@ -17,13 +17,14 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using Amazon.Runtime;
 
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
     /// <para> Detailed information about an activity type. </para>
     /// </summary>
-    public class ActivityTypeDetail
+    public partial class ActivityTypeDetail : AmazonWebServiceResponse
     {
         
         private ActivityTypeInfo typeInfo;

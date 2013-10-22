@@ -52,7 +52,7 @@ namespace Amazon.SecurityToken.Model.Internal.MarshallTransformations
             return response;
         }
         
-        private void UnmarshallResult(XmlUnmarshallerContext context,GetFederationTokenResponse response)
+        private static void UnmarshallResult(XmlUnmarshallerContext context,GetFederationTokenResponse response)
         {
             
             int originalDepth = context.CurrentDepth;

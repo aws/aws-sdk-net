@@ -30,8 +30,8 @@ namespace Amazon.SimpleEmail
     /// 
     /// Amazon Simple Email Service <para> This is the API Reference for Amazon Simple Email Service (Amazon SES). This documentation is intended to
     /// be used in conjunction with the Amazon SES Developer Guide. </para> <para> For specific details on how to construct a service request,
-    /// please consult the Amazon SES Developer Guide. </para> <para><b>NOTE:</b>The endpoint for Amazon SES is located at:
-    /// https://email.us-east-1.amazonaws.com </para>
+    /// please consult the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide">Amazon SES Developer Guide</a> .
+    /// </para> <para><b>NOTE:</b>The endpoint for Amazon SES is located at: https://email.us-east-1.amazonaws.com </para>
     /// </summary>
 	public partial class AmazonSimpleEmailServiceClient : AmazonWebServiceClient, Amazon.SimpleEmail.IAmazonSimpleEmailService
     {
@@ -65,7 +65,7 @@ namespace Amazon.SimpleEmail
         /// <param name="credentials">AWS Credentials</param>
         /// <param name="clientConfig">The AmazonSimpleEmailServiceClient Configuration Object</param>
         public AmazonSimpleEmailServiceClient(AWSCredentials credentials, AmazonSimpleEmailServiceConfig clientConfig)
-            : base(credentials, clientConfig, false, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(credentials, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
         {
         }
 
@@ -147,6 +147,19 @@ namespace Amazon.SimpleEmail
         #endregion
 
  
+		internal DeleteIdentityResponse DeleteIdentity(DeleteIdentityRequest request)
+        {
+            var task = DeleteIdentityAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Deletes the specified identity (email address or domain) from the list of verified identities.</para> <para>This action is throttled
         /// at one request per second.</para>
@@ -168,6 +181,19 @@ namespace Amazon.SimpleEmail
             return response;
         }
  
+		internal DeleteVerifiedEmailAddressResponse DeleteVerifiedEmailAddress(DeleteVerifiedEmailAddressRequest request)
+        {
+            var task = DeleteVerifiedEmailAddressAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Deletes the specified email address from the list of verified addresses.</para> <para><b>IMPORTANT:</b>The DeleteVerifiedEmailAddress
         /// action is deprecated as of the May 15, 2012 release of Domain Verification. The DeleteIdentity action is now preferred.</para> <para>This
@@ -188,6 +214,19 @@ namespace Amazon.SimpleEmail
             return response;
         }
  
+		internal GetIdentityDkimAttributesResponse GetIdentityDkimAttributes(GetIdentityDkimAttributesRequest request)
+        {
+            var task = GetIdentityDkimAttributesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Returns the current status of Easy DKIM signing for an entity. For domain name identities, this action also returns the DKIM tokens
         /// that are required for Easy DKIM signing, and whether Amazon SES has successfully verified that these tokens have been published.</para>
@@ -201,7 +240,7 @@ namespace Amazon.SimpleEmail
         /// 
         /// </ul>
         /// <para>This action is throttled at one request per second.</para> <para>For more information about creating DNS records using DKIM tokens,
-        /// go to the Amazon SES Developer Guide.</para>
+        /// go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html">Amazon SES Developer Guide</a> .</para>
         /// </summary>
         /// 
         /// <param name="getIdentityDkimAttributesRequest">Container for the necessary parameters to execute the GetIdentityDkimAttributes service
@@ -220,10 +259,24 @@ namespace Amazon.SimpleEmail
             return response;
         }
  
+		internal GetIdentityNotificationAttributesResponse GetIdentityNotificationAttributes(GetIdentityNotificationAttributesRequest request)
+        {
+            var task = GetIdentityNotificationAttributesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Given a list of verified identities (email addresses and/or domains), returns a structure describing identity notification
         /// attributes.</para> <para>This action is throttled at one request per second.</para> <para>For more information about feedback notification,
-        /// see the Amazon SES Developer Guide.</para>
+        /// see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/bounce-complaint-notifications.html">Amazon SES Developer Guide</a>
+        /// .</para>
         /// </summary>
         /// 
         /// <param name="getIdentityNotificationAttributesRequest">Container for the necessary parameters to execute the
@@ -242,6 +295,19 @@ namespace Amazon.SimpleEmail
             return response;
         }
  
+		internal GetIdentityVerificationAttributesResponse GetIdentityVerificationAttributes(GetIdentityVerificationAttributesRequest request)
+        {
+            var task = GetIdentityVerificationAttributesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Given a list of identities (email addresses and/or domains), returns the verification status and (for domain identities) the
         /// verification token for each identity.</para> <para>This action is throttled at one request per second.</para>
@@ -263,6 +329,19 @@ namespace Amazon.SimpleEmail
             return response;
         }
  
+		internal GetSendQuotaResponse GetSendQuota(GetSendQuotaRequest request)
+        {
+            var task = GetSendQuotaAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Returns the user's current sending limits.</para> <para>This action is throttled at one request per second.</para>
         /// </summary>
@@ -283,6 +362,19 @@ namespace Amazon.SimpleEmail
             return response;
         }
  
+		internal GetSendStatisticsResponse GetSendStatistics(GetSendStatisticsRequest request)
+        {
+            var task = GetSendStatisticsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Returns the user's sending statistics. The result is a list of data points, representing the last two weeks of sending activity.
         /// </para> <para>Each data point in the list contains statistics for a 15-minute interval.</para> <para>This action is throttled at one request
@@ -305,6 +397,19 @@ namespace Amazon.SimpleEmail
             return response;
         }
  
+		internal ListIdentitiesResponse ListIdentities(ListIdentitiesRequest request)
+        {
+            var task = ListIdentitiesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Returns a list containing all of the identities (email addresses and domains) for a specific AWS Account, regardless of verification
         /// status.</para> <para>This action is throttled at one request per second.</para>
@@ -326,6 +431,19 @@ namespace Amazon.SimpleEmail
             return response;
         }
  
+		internal ListVerifiedEmailAddressesResponse ListVerifiedEmailAddresses(ListVerifiedEmailAddressesRequest request)
+        {
+            var task = ListVerifiedEmailAddressesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Returns a list containing all of the email addresses that have been verified.</para> <para><b>IMPORTANT:</b>The
         /// ListVerifiedEmailAddresses action is deprecated as of the May 15, 2012 release of Domain Verification. The ListIdentities action is now
@@ -348,6 +466,19 @@ namespace Amazon.SimpleEmail
             return response;
         }
  
+		internal SendEmailResponse SendEmail(SendEmailRequest request)
+        {
+            var task = SendEmailAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Composes an email message based on input data, and then immediately queues the message for sending. </para> <para><b>IMPORTANT:</b>
         /// You can only send email from verified email addresses and domains. If you have not requested production access to Amazon SES, you must also
@@ -357,7 +488,8 @@ namespace Amazon.SimpleEmail
         /// email message to a larger audience, you can divide your recipient list into groups of 50 or fewer, and then call Amazon SES repeatedly to
         /// send the message to each group. </para> <para>For every message that you send, the total number of recipients (To:, CC: and BCC:) is counted
         /// against your <i>sending quota</i> - the maximum number of emails you can send in a 24-hour period. For information about your sending quota,
-        /// go to the Amazon SES Developer Guide. </para>
+        /// go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html">Amazon SES Developer Guide</a> .
+        /// </para>
         /// </summary>
         /// 
         /// <param name="sendEmailRequest">Container for the necessary parameters to execute the SendEmail service method on
@@ -378,6 +510,19 @@ namespace Amazon.SimpleEmail
             return response;
         }
  
+		internal SendRawEmailResponse SendRawEmail(SendRawEmailRequest request)
+        {
+            var task = SendRawEmailAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Sends an email message, with header and content specified by the client. The <c>SendRawEmail</c> action is useful for sending
         /// multipart MIME emails. The raw text of the message must comply with Internet email standards; otherwise, the message cannot be sent. </para>
@@ -388,7 +533,8 @@ namespace Amazon.SimpleEmail
         /// number of To:, CC: and BCC: email addresses cannot exceed 50. If you need to send an email message to a larger audience, you can divide your
         /// recipient list into groups of 50 or fewer, and then call Amazon SES repeatedly to send the message to each group. </para> <para>For every
         /// message that you send, the total number of recipients (To:, CC: and BCC:) is counted against your <i>sending quota</i> - the maximum number
-        /// of emails you can send in a 24-hour period. For information about your sending quota, go to the Amazon SES Developer Guide. </para>
+        /// of emails you can send in a 24-hour period. For information about your sending quota, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html">Amazon SES Developer Guide</a> .
+        /// </para>
         /// </summary>
         /// 
         /// <param name="sendRawEmailRequest">Container for the necessary parameters to execute the SendRawEmail service method on
@@ -409,6 +555,19 @@ namespace Amazon.SimpleEmail
             return response;
         }
  
+		internal SetIdentityDkimEnabledResponse SetIdentityDkimEnabled(SetIdentityDkimEnabledRequest request)
+        {
+            var task = SetIdentityDkimEnabledAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Enables or disables Easy DKIM signing of email sent from an identity:</para>
         /// <ul>
@@ -419,7 +578,7 @@ namespace Amazon.SimpleEmail
         /// </ul>
         /// <para>For email addresses (e.g., <c>user@example.com</c> ), you can only enable Easy DKIM signing if the corresponding domain (e.g.,
         /// <c>example.com</c> ) has been set up for Easy DKIM using the AWS Console or the <c>VerifyDomainDkim</c> action.</para> <para>This action is
-        /// throttled at one request per second.</para> <para>For more information about Easy DKIM signing, go to the Amazon SES Developer Guide.</para>
+        /// throttled at one request per second.</para> <para>For more information about Easy DKIM signing, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon SES Developer Guide</a> .</para>
         /// </summary>
         /// 
         /// <param name="setIdentityDkimEnabledRequest">Container for the necessary parameters to execute the SetIdentityDkimEnabled service method on
@@ -438,10 +597,23 @@ namespace Amazon.SimpleEmail
             return response;
         }
  
+		internal SetIdentityFeedbackForwardingEnabledResponse SetIdentityFeedbackForwardingEnabled(SetIdentityFeedbackForwardingEnabledRequest request)
+        {
+            var task = SetIdentityFeedbackForwardingEnabledAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Given an identity (email address or domain), enables or disables whether Amazon SES forwards feedback notifications as email. Feedback
         /// forwarding may only be disabled when both complaint and bounce topics are set.</para> <para>This action is throttled at one request per
-        /// second.</para> <para>For more information about feedback notification, see the Amazon SES Developer Guide.</para>
+        /// second.</para> <para>For more information about feedback notification, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/bounce-complaint-notifications.html">Amazon SES Developer Guide</a> .</para>
         /// </summary>
         /// 
         /// <param name="setIdentityFeedbackForwardingEnabledRequest">Container for the necessary parameters to execute the
@@ -460,11 +632,24 @@ namespace Amazon.SimpleEmail
             return response;
         }
  
+		internal SetIdentityNotificationTopicResponse SetIdentityNotificationTopic(SetIdentityNotificationTopicRequest request)
+        {
+            var task = SetIdentityNotificationTopicAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Given an identity (email address or domain), sets the Amazon SNS topic to which Amazon SES will publish bounce and complaint
         /// notifications for emails sent with that identity as the <c>Source</c> .
         /// Publishing to topics may only be disabled when feedback forwarding is enabled.</para> <para>This action is throttled at one request
-        /// per second.</para> <para>For more information about feedback notification, see the Amazon SES Developer Guide.</para>
+        /// per second.</para> <para>For more information about feedback notification, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/bounce-complaint-notifications.html">Amazon SES Developer Guide</a> .</para>
         /// </summary>
         /// 
         /// <param name="setIdentityNotificationTopicRequest">Container for the necessary parameters to execute the SetIdentityNotificationTopic service
@@ -483,13 +668,26 @@ namespace Amazon.SimpleEmail
             return response;
         }
  
+		internal VerifyDomainDkimResponse VerifyDomainDkim(VerifyDomainDkimRequest request)
+        {
+            var task = VerifyDomainDkimAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Returns a set of DKIM tokens for a domain. DKIM <i>tokens</i> are character strings that represent your domain's identity. Using these
         /// tokens, you will need to create DNS CNAME records that point to DKIM public keys hosted by Amazon SES. Amazon Web Services will eventually
         /// detect that you have updated your DNS records; this detection process may take up to 72 hours. Upon successful detection, Amazon SES will be
         /// able to DKIM-sign email originating from that domain.</para> <para>This action is throttled at one request per second.</para> <para>To
         /// enable or disable Easy DKIM signing for a domain, use the <c>SetIdentityDkimEnabled</c> action.</para> <para>For more information about
-        /// creating DNS records using DKIM tokens, go to the Amazon SES Developer Guide.</para>
+        /// creating DNS records using DKIM tokens, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html">Amazon SES Developer Guide</a> .</para>
         /// </summary>
         /// 
         /// <param name="verifyDomainDkimRequest">Container for the necessary parameters to execute the VerifyDomainDkim service method on
@@ -508,6 +706,19 @@ namespace Amazon.SimpleEmail
             return response;
         }
  
+		internal VerifyDomainIdentityResponse VerifyDomainIdentity(VerifyDomainIdentityRequest request)
+        {
+            var task = VerifyDomainIdentityAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Verifies a domain.</para> <para>This action is throttled at one request per second.</para>
         /// </summary>
@@ -528,6 +739,19 @@ namespace Amazon.SimpleEmail
             return response;
         }
  
+		internal VerifyEmailAddressResponse VerifyEmailAddress(VerifyEmailAddressRequest request)
+        {
+            var task = VerifyEmailAddressAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Verifies an email address. This action causes a confirmation email message to be sent to the specified address.</para>
         /// <para><b>IMPORTANT:</b>The VerifyEmailAddress action is deprecated as of the May 15, 2012 release of Domain Verification. The
@@ -548,6 +772,19 @@ namespace Amazon.SimpleEmail
             return response;
         }
  
+		internal VerifyEmailIdentityResponse VerifyEmailIdentity(VerifyEmailIdentityRequest request)
+        {
+            var task = VerifyEmailIdentityAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Verifies an email address. This action causes a confirmation email message to be sent to the specified address.</para> <para>This
         /// action is throttled at one request per second.</para>

@@ -21,7 +21,11 @@ using System.IO;
 namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
-    /// <para>Represents the destination of the message, consisting of To:, CC:, and BCC: fields.</para>
+    /// <para>Represents the destination of the message, consisting of To:, CC:, and BCC: fields.</para> <para> By default, the string must be 7-bit
+    /// ASCII. If the text must contain any other characters, then you must use MIME encoded-word syntax (RFC 2047) instead of a literal string.
+    /// MIME encoded-word syntax uses the following form: <c>=?charset?encoding?encoded-text?=</c> .
+    /// For more information, see <a href="http://tools.ietf.org/html/rfc2047" >RFC 2047</a> .
+    /// </para>
     /// </summary>
     public class Destination
     {

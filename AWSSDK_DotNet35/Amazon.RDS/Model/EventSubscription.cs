@@ -17,13 +17,14 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using Amazon.Runtime;
 
 namespace Amazon.RDS.Model
 {
     /// <summary>
     /// <para>Contains the results of a successful invocation of the DescribeEventSubscriptions action.</para>
     /// </summary>
-    public class EventSubscription
+    public partial class EventSubscription : AmazonWebServiceResponse
     {
         
         private string customerAwsId;

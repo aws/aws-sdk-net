@@ -35,6 +35,7 @@ namespace Amazon.EC2.Model
         private List<string> groups = new List<string>();
         private List<PrivateIpAddressSpecification> privateIpAddresses = new List<PrivateIpAddressSpecification>();
         private int? secondaryPrivateIpAddressCount;
+        private bool? dryRun;
         public string SubnetId
         {
             get { return this.subnetId; }
@@ -100,6 +101,17 @@ namespace Amazon.EC2.Model
         internal bool IsSetSecondaryPrivateIpAddressCount()
         {
             return this.secondaryPrivateIpAddressCount.HasValue;
+        }
+        public bool DryRun
+        {
+            get { return this.dryRun ?? default(bool); }
+            set { this.dryRun = value; }
+        }
+
+        // Check to see if DryRun property is set
+        internal bool IsSetDryRun()
+        {
+            return this.dryRun.HasValue;
         }
 
     }

@@ -36,6 +36,7 @@ namespace Amazon.S3.Model
         /// Gets and sets the StorageFile property. The Windows.Storage.IStorageFile that will be read 
         /// from and upload to Amazon S3.
         /// </summary>
+        [System.CLSCompliant(false)]
         public IStorageFile StorageFile
         {
             get;

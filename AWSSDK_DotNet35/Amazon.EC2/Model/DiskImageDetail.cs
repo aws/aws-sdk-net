@@ -25,10 +25,10 @@ namespace Amazon.EC2.Model
     public class DiskImageDetail
     {
         
-        private string format;
+        private DiskImageFormat format;
         private long? bytes;
         private string importManifestUrl;
-        public string Format
+        public DiskImageFormat Format
         {
             get { return this.format; }
             set { this.format = value; }

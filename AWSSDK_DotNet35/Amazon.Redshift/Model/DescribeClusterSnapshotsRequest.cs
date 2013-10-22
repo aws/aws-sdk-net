@@ -26,7 +26,8 @@ namespace Amazon.Redshift.Model
     /// <summary>
     /// Container for the parameters to the DescribeClusterSnapshots operation.
     /// <para> Returns one or more snapshot objects, which contain metadata about your cluster snapshots. By default, this operation returns
-    /// information about all snapshots of all clusters that are owned by the AWS account. </para>
+    /// information about all snapshots of all clusters that are owned by you AWS customer account. No information is returned for snapshots owned
+    /// by inactive AWS customer accounts. </para>
     /// </summary>
     public partial class DescribeClusterSnapshotsRequest : AmazonWebServiceRequest
     {
@@ -37,6 +38,7 @@ namespace Amazon.Redshift.Model
         private DateTime? endTime;
         private int? maxRecords;
         private string marker;
+        private string ownerAccount;
 
         /// <summary>
         /// The identifier of the cluster for which information about snapshots is requested.
@@ -156,6 +158,23 @@ namespace Amazon.Redshift.Model
         internal bool IsSetMarker()
         {
             return this.marker != null;
+        }
+
+        /// <summary>
+        /// The AWS customer account used to create or copy the snapshot. Use this field to filter the results to snapshots owned by a particular
+        /// account. To describe snapshots you own, either specify your AWS customer account, or do not specify the parameter.
+        ///  
+        /// </summary>
+        public string OwnerAccount
+        {
+            get { return this.ownerAccount; }
+            set { this.ownerAccount = value; }
+        }
+
+        // Check to see if OwnerAccount property is set
+        internal bool IsSetOwnerAccount()
+        {
+            return this.ownerAccount != null;
         }
 
     }

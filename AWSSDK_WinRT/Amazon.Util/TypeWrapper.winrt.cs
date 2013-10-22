@@ -43,6 +43,11 @@ namespace Amazon.Util
                 return this._typeInfo.ImplementedInterfaces.FirstOrDefault(x => (x.Namespace + "." + x.Name) == name);
             }
 
+            public override Type[] GetInterfaces()
+            {
+                return this._typeInfo.ImplementedInterfaces.ToArray();
+            }
+
             public override IEnumerable<PropertyInfo> GetProperties()
             {
                 return this._type.GetRuntimeProperties();
@@ -58,9 +63,24 @@ namespace Amazon.Util
                 return this._type.GetRuntimeField(name);
             }
 
+            public override MemberInfo[] GetMembers()
+            {
+                return this._typeInfo.DeclaredMembers.ToArray();
+            }
+
             public override bool IsClass
             {
                 get { return this._typeInfo.IsClass; }
+            }
+
+            public override bool IsInterface
+            {
+                get { return this._typeInfo.IsInterface; }
+            }
+
+            public override bool IsAbstract
+            {
+                get { return this._typeInfo.IsAbstract; }
             }
 
             public override bool IsEnum
@@ -71,6 +91,34 @@ namespace Amazon.Util
             public override MethodInfo GetMethod(string name)
             {
                 return this._type.GetRuntimeMethods().FirstOrDefault(x => x.Name == name);
+            }
+
+            public override bool ContainsGenericParameters
+            {
+                get { return this._typeInfo.ContainsGenericParameters; }
+            }
+
+            public override bool IsGenericTypeDefinition
+            {
+                get { return this._typeInfo.IsGenericTypeDefinition; }
+            }
+
+            public override bool IsGenericType
+            {
+                get
+                {
+                    return this._typeInfo.IsGenericType;
+                }
+            }
+
+            public override Type GetGenericTypeDefinition()
+            {
+                return this._typeInfo.GetGenericTypeDefinition();
+            }
+
+            public override Type[] GetGenericArguments()
+            {
+                return this._typeInfo.GenericTypeArguments;
             }
 
             public override MethodInfo GetMethod(string name, ITypeInfo[] paramTypes)
@@ -89,6 +137,16 @@ namespace Amazon.Util
             public override bool IsAssignableFrom(ITypeInfo typeInfo)
             {
                 return this._typeInfo.IsAssignableFrom(((TypeInfoWrapper)typeInfo)._typeInfo);
+            }
+
+            public override object[] GetCustomAttributes(bool inherit)
+            {
+                return this._typeInfo.GetCustomAttributes(inherit).ToArray();
+            }
+
+            public override object[] GetCustomAttributes(ITypeInfo attributeType, bool inherit)
+            {
+                return this._typeInfo.GetCustomAttributes(((TypeInfoWrapper)attributeType)._type, inherit).ToArray();
             }
 
             public override Assembly Assembly 

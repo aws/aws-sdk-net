@@ -50,13 +50,13 @@ namespace Amazon.ElasticMapReduce
         /// <para> AddJobFlowSteps adds new steps to a running job flow. A maximum of 256 steps are allowed in each job flow. </para> <para>If your job
         /// flow is long-running (such as a Hive data warehouse) or complex, you may require more than 256 steps to process your data. You can bypass
         /// the 256-step limitation in various ways, including using the SSH shell to connect to the master node and submitting queries directly to the
-        /// software running on the master node, such as Hive and Hadoop. For more information on how to do this, go to Add More than 256 Steps to a Job
-        /// Flow in the <i>Amazon Elastic MapReduce Developer's Guide</i> .</para> <para> A step specifies the location of a JAR file stored either on
-        /// the master node of the job flow or in Amazon S3. Each step is performed by the main function of the main class of the JAR file. The main
-        /// class can be specified either in the manifest of the JAR or by using the MainFunction parameter of the step. </para> <para> Elastic
-        /// MapReduce executes each step in the order listed. For a step to be considered complete, the main function must exit with a zero exit code
-        /// and all Hadoop jobs started while the step was running must have completed and run successfully. </para> <para> You can only add steps to a
-        /// job flow that is in one of the following states: STARTING, BOOTSTRAPPING, RUNNING, or WAITING.</para>
+        /// software running on the master node, such as Hive and Hadoop. For more information on how to do this, go to <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/AddMoreThan256Steps.html">Add More than 256 Steps to a Job Flow</a>
+        /// in the <i>Amazon Elastic MapReduce Developer's Guide</i> .</para> <para> A step specifies the location of a JAR file stored either on the
+        /// master node of the job flow or in Amazon S3. Each step is performed by the main function of the main class of the JAR file. The main class
+        /// can be specified either in the manifest of the JAR or by using the MainFunction parameter of the step. </para> <para> Elastic MapReduce
+        /// executes each step in the order listed. For a step to be considered complete, the main function must exit with a zero exit code and all
+        /// Hadoop jobs started while the step was running must have completed and run successfully. </para> <para> You can only add steps to a job flow
+        /// that is in one of the following states: STARTING, BOOTSTRAPPING, RUNNING, or WAITING.</para>
         /// </summary>
         /// 
         /// <param name="addJobFlowStepsRequest">Container for the necessary parameters to execute the AddJobFlowSteps service method on
@@ -119,9 +119,9 @@ namespace Amazon.ElasticMapReduce
         /// call, user intervention, or in the event of a job flow error.</para> <para>A maximum of 256 steps are allowed in each job flow.</para>
         /// <para>If your job flow is long-running (such as a Hive data warehouse) or complex, you may require more than 256 steps to process your data.
         /// You can bypass the 256-step limitation in various ways, including using the SSH shell to connect to the master node and submitting queries
-        /// directly to the software running on the master node, such as Hive and Hadoop. For more information on how to do this, go to Add More than
-        /// 256 Steps to a Job Flow in the <i>Amazon Elastic MapReduce Developer's Guide</i> .</para> <para>For long running job flows, we recommend
-        /// that you periodically store your results.</para>
+        /// directly to the software running on the master node, such as Hive and Hadoop. For more information on how to do this, go to <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/AddMoreThan256Steps.html">Add More than 256 Steps to a Job Flow</a>
+        /// in the <i>Amazon Elastic MapReduce Developer's Guide</i> .</para> <para>For long running job flows, we recommend that you periodically store
+        /// your results.</para>
         /// </summary>
         /// 
         /// <param name="runJobFlowRequest">Container for the necessary parameters to execute the RunJobFlow service method on
@@ -143,8 +143,8 @@ namespace Amazon.ElasticMapReduce
         /// an error, the instances will persist so you can recover any data stored in their ephemeral instance storage.</para> <para> To terminate a
         /// job flow that has been locked by setting SetTerminationProtection to <c>true</c> ,
         /// you must first unlock the job flow by a subsequent call to SetTerminationProtection in which you set the value to <c>false</c> .
-        /// </para> <para> For more information, go to Protecting a Job Flow from Termination in the <i>Amazon Elastic MapReduce Developer's Guide.</i>
-        /// </para>
+        /// </para> <para> For more information, go to <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/UsingEMR_TerminationProtection.html">Protecting a Job Flow from
+        /// Termination</a> in the <i>Amazon Elastic MapReduce Developer's Guide.</i> </para>
         /// </summary>
         /// 
         /// <param name="setTerminationProtectionRequest">Container for the necessary parameters to execute the SetTerminationProtection service method

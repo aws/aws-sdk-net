@@ -17,13 +17,14 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using Amazon.Runtime;
 
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
     /// <para> Contains a paginated list of information about workflow executions. </para>
     /// </summary>
-    public class WorkflowExecutionInfos
+    public partial class WorkflowExecutionInfos : AmazonWebServiceResponse
     {
         
         private List<WorkflowExecutionInfo> executionInfos = new List<WorkflowExecutionInfo>();

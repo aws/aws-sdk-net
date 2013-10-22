@@ -33,6 +33,9 @@
 
         public PipelineObject Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonToken.Null)
+                return null;
+
             PipelineObject pipelineObject = new PipelineObject();
 
         

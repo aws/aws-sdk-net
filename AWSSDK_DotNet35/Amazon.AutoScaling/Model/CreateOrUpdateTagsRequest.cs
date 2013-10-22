@@ -27,7 +27,9 @@ namespace Amazon.AutoScaling.Model
     /// Container for the parameters to the CreateOrUpdateTags operation.
     /// <para> Creates new tags or updates existing tags for an Auto Scaling group. </para> <para><b>NOTE:</b> A tag's definition is composed of a
     /// resource ID, resource type, key and value, and the propagate flag. Value and the propagate flag are optional parameters. See the Request
-    /// Parameters for more information. </para>
+    /// Parameters for more information. </para> <para>For information on creating tags for your Auto Scaling group, see <a
+    /// href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/ASTagging.html" >Tag Your Auto Scaling Groups and Amazon EC2
+    /// Instances</a> .</para>
     /// </summary>
     public partial class CreateOrUpdateTagsRequest : AmazonWebServiceRequest
     {

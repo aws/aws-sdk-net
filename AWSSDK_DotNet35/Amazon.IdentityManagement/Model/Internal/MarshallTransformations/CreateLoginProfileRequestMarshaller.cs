@@ -43,6 +43,10 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
             {
                 request.Parameters.Add("Password", StringUtils.FromString(createLoginProfileRequest.Password));
             }
+            if (createLoginProfileRequest != null && createLoginProfileRequest.IsSetMustChangePassword())
+            {
+                request.Parameters.Add("MustChangePassword", StringUtils.FromBool(createLoginProfileRequest.MustChangePassword));
+            }
 
             return request;
         }

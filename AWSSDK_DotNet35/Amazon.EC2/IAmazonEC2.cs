@@ -28,7 +28,8 @@ namespace Amazon.EC2
     /// computing environment. Amazon EC2 reduces the time required to obtain and boot new server instances to minutes, allowing you to quickly
     /// scale capacity, both up and down, as your computing requirements change. Amazon EC2 changes the economics of computing by allowing you to
     /// pay only for capacity that you actually use. Amazon EC2 provides developers the tools to build failure resilient applications and isolate
-    /// themselves from common failure scenarios. </para> <para> Visit http://aws.amazon.com/ec2/ for more information. </para>
+    /// themselves from common failure scenarios. </para> <para> Visit <a href="http://aws.amazon.com/ec2/" >http://aws.amazon.com/ec2/</a> for more
+    /// information. </para>
     /// </summary>
     public interface IAmazonEC2 : IDisposable
     {
@@ -205,7 +206,8 @@ namespace Amazon.EC2
         /// <para> Associates a subnet with a route table. The subnet and route table must be in the same VPC. This association causes traffic
         /// originating from the subnet to be routed according to the routes in the route table. The action returns an association ID, which you need if
         /// you want to disassociate the route table from the subnet later. A route table can be associated with multiple subnets. </para> <para> For
-        /// more information about route tables, go to Route Tables in the Amazon Virtual Private Cloud User Guide. </para>
+        /// more information about route tables, go to <a href="http://docs.amazonwebservices.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html"
+        /// >Route Tables</a> in the Amazon Virtual Private Cloud User Guide. </para>
         /// </summary>
         /// 
         /// <param name="associateRouteTableRequest">Container for the necessary parameters to execute the AssociateRouteTable service method on
@@ -867,8 +869,9 @@ namespace Amazon.EC2
         /// gateway that you create with this operation if you leave it inactive for an extended period of time. </para> <para> You must provide the
         /// Internet-routable IP address of the customer gateway's external interface. The IP address must be static. </para> <para> You must also
         /// provide the device's Border Gateway Protocol (BGP) Autonomous System Number (ASN). You can use an existing ASN assigned to your network. If
-        /// you don't have an ASN already, you can use a private ASN (in the 64512 - 65534 range). For more information about ASNs, go to
-        /// http://en.wikipedia.org/wiki/Autonomous_system_%28Internet%29. </para>
+        /// you don't have an ASN already, you can use a private ASN (in the 64512 - 65534 range). For more information about ASNs, go to <a
+        /// href="http://en.wikipedia.org/wiki/Autonomous_system_%28Internet%29" > http://en.wikipedia.org/wiki/Autonomous_system_%28Internet%29</a> .
+        /// </para>
         /// </summary>
         /// 
         /// <param name="createCustomerGatewayRequest">Container for the necessary parameters to execute the CreateCustomerGateway service method on
@@ -912,7 +915,7 @@ namespace Amazon.EC2
         /// <summary>
         /// <para> Creates a set of DHCP options that you can then associate with one or more VPCs, causing all existing and new instances that you
         /// launch in those VPCs to use the set of DHCP options. The following table lists the individual DHCP options you can specify. For more
-        /// information about the options, go to http://www.ietf.org/rfc/rfc2132.txt </para>
+        /// information about the options, go to <a href="http://www.ietf.org/rfc/rfc2132.txt" >http://www.ietf.org/rfc/rfc2132.txt</a> </para>
         /// </summary>
         /// 
         /// <param name="createDhcpOptionsRequest">Container for the necessary parameters to execute the CreateDhcpOptions service method on
@@ -1342,8 +1345,9 @@ namespace Amazon.EC2
         /// 
         /// </ul>
         /// <para> Both routes apply to the traffic destined for <c>192.0.2.3</c> . However, the second route in the list is more specific, so we use
-        /// that route to determine where to target the traffic. </para> <para> For more information about route tables, go to Route Tables in the
-        /// Amazon Virtual Private Cloud User Guide. </para>
+        /// that route to determine where to target the traffic. </para> <para> For more information about route tables, go to <a
+        /// href="http://docs.amazonwebservices.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html" >Route Tables</a> in the Amazon Virtual Private
+        /// Cloud User Guide. </para>
         /// </summary>
         /// 
         /// <param name="createRouteRequest">Container for the necessary parameters to execute the CreateRoute service method on AmazonEC2.</param>
@@ -1377,7 +1381,8 @@ namespace Amazon.EC2
 
         /// <summary>
         /// <para> Creates a new route table within a VPC. After you create a new route table, you can add routes and associate the table with a subnet.
-        /// For more information about route tables, go to Route Tables in the Amazon Virtual Private Cloud User Guide. </para>
+        /// For more information about route tables, go to <a href="http://docs.amazonwebservices.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html"
+        /// >Route Tables</a> in the Amazon Virtual Private Cloud User Guide. </para>
         /// </summary>
         /// 
         /// <param name="createRouteTableRequest">Container for the necessary parameters to execute the CreateRouteTable service method on
@@ -2124,8 +2129,9 @@ namespace Amazon.EC2
         #region DeleteRoute
 
         /// <summary>
-        /// <para> Deletes a route from a route table in a VPC. For more information about route tables, go to Route Tables in the Amazon Virtual
-        /// Private Cloud User Guide. </para>
+        /// <para> Deletes a route from a route table in a VPC. For more information about route tables, go to <a
+        /// href="http://docs.amazonwebservices.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html" >Route Tables</a> in the Amazon Virtual Private
+        /// Cloud User Guide. </para>
         /// </summary>
         /// 
         /// <param name="deleteRouteRequest">Container for the necessary parameters to execute the DeleteRoute service method on AmazonEC2.</param>
@@ -2159,7 +2165,8 @@ namespace Amazon.EC2
 
         /// <summary>
         /// <para> Deletes a route table from a VPC. The route table must not be associated with a subnet. You can't delete the main route table. For
-        /// more information about route tables, go to Route Tables in the Amazon Virtual Private Cloud User Guide. </para>
+        /// more information about route tables, go to <a href="http://docs.amazonwebservices.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html"
+        /// >Route Tables</a> in the Amazon Virtual Private Cloud User Guide. </para>
         /// </summary>
         /// 
         /// <param name="deleteRouteTableRequest">Container for the necessary parameters to execute the DeleteRouteTable service method on
@@ -3825,6 +3832,56 @@ namespace Amazon.EC2
         
     
 
+        #region DescribeReservedInstancesModifications
+
+        /// <summary>
+        /// <para> The DescribeReservedInstancesModifications operation describes modifications made to Reserved Instances in your account. </para>
+        /// </summary>
+        /// 
+        /// <param name="describeReservedInstancesModificationsRequest">Container for the necessary parameters to execute the
+        ///          DescribeReservedInstancesModifications service method on AmazonEC2.</param>
+        /// 
+        /// <returns>The response from the DescribeReservedInstancesModifications service method, as returned by AmazonEC2.</returns>
+        /// 
+        DescribeReservedInstancesModificationsResponse DescribeReservedInstancesModifications(DescribeReservedInstancesModificationsRequest describeReservedInstancesModificationsRequest);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeReservedInstancesModifications operation.
+        /// <seealso cref="Amazon.EC2.IAmazonEC2.DescribeReservedInstancesModifications"/>
+        /// </summary>
+        /// 
+        /// <param name="describeReservedInstancesModificationsRequest">Container for the necessary parameters to execute the
+        ///          DescribeReservedInstancesModifications operation on AmazonEC2.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
+        ///         EndDescribeReservedInstancesModifications operation.</returns>
+        IAsyncResult BeginDescribeReservedInstancesModifications(DescribeReservedInstancesModificationsRequest describeReservedInstancesModificationsRequest, AsyncCallback callback, object state);
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the DescribeReservedInstancesModifications operation.
+        /// <seealso cref="Amazon.EC2.IAmazonEC2.DescribeReservedInstancesModifications"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeReservedInstancesModifications.</param>
+        /// 
+        /// <returns>Returns a DescribeReservedInstancesModificationsResult from AmazonEC2.</returns>
+        DescribeReservedInstancesModificationsResponse EndDescribeReservedInstancesModifications(IAsyncResult asyncResult);
+
+        /// <summary>
+        /// <para> The DescribeReservedInstancesModifications operation describes modifications made to Reserved Instances in your account. </para>
+        /// </summary>
+        /// 
+        /// <returns>The response from the DescribeReservedInstancesModifications service method, as returned by AmazonEC2.</returns>
+        /// 
+        DescribeReservedInstancesModificationsResponse DescribeReservedInstancesModifications();
+        
+        #endregion
+        
+    
+
         #region DescribeReservedInstancesOfferings
 
         /// <summary>
@@ -4154,16 +4211,18 @@ namespace Amazon.EC2
         /// <summary>
         /// <para> Describes Spot Instance requests. Spot Instances are instances that Amazon EC2 starts on your behalf when the maximum price that you
         /// specify exceeds the current Spot Price. Amazon EC2 periodically sets the Spot Price based on available Spot Instance capacity and current
-        /// spot instance requests. For conceptual information about Spot Instances, refer to the Amazon Elastic Compute Cloud Developer Guide or Amazon
-        /// Elastic Compute Cloud User Guide. </para> <para> You can filter the results to return information only about Spot Instance requests that
-        /// match criteria you specify. For example, you could get information about requests where the Spot Price you specified is a certain value (you
-        /// can't use greater than or less than comparison, but you can use <c>*</c> and <c>?</c> wildcards). You can specify multiple values for a
-        /// filter. A Spot Instance request must match at least one of the specified values for it to be included in the results. </para> <para> You can
-        /// specify multiple filters (e.g., the Spot Price is equal to a particular value, and the instance type is <c>m1.small</c> ). The result
-        /// includes information for a particular request only if it matches all your filters. If there's no match, no special message is returned; the
-        /// response is simply empty. </para> <para> You can use wildcards with the filter values: an asterisk matches zero or more characters, and
-        /// <c>?</c> matches exactly one character. You can escape special characters using a backslash before the character. For example, a value of
-        /// <c>\*amazon\?\\</c> searches for the literal string <c>*amazon?\</c> .
+        /// spot instance requests. For conceptual information about Spot Instances, refer to the <a
+        /// href="http://docs.amazonwebservices.com/AWSEC2/2010-08-31/DeveloperGuide/" > Amazon Elastic Compute Cloud Developer Guide</a> or <a
+        /// href="http://docs.amazonwebservices.com/AWSEC2/2010-08-31/UserGuide/" > Amazon Elastic Compute Cloud User Guide</a> .
+        /// </para> <para> You can filter the results to return information only about Spot Instance requests that match criteria you specify. For
+        /// example, you could get information about requests where the Spot Price you specified is a certain value (you can't use greater than or less
+        /// than comparison, but you can use <c>*</c> and <c>?</c> wildcards). You can specify multiple values for a filter. A Spot Instance request
+        /// must match at least one of the specified values for it to be included in the results. </para> <para> You can specify multiple filters (e.g.,
+        /// the Spot Price is equal to a particular value, and the instance type is <c>m1.small</c> ). The result includes information for a particular
+        /// request only if it matches all your filters. If there's no match, no special message is returned; the response is simply empty. </para>
+        /// <para> You can use wildcards with the filter values: an asterisk matches zero or more characters, and <c>?</c> matches exactly one
+        /// character. You can escape special characters using a backslash before the character. For example, a value of <c>\*amazon\?\\</c> searches
+        /// for the literal string <c>*amazon?\</c> .
         /// </para>
         /// </summary>
         /// 
@@ -4202,16 +4261,18 @@ namespace Amazon.EC2
         /// <summary>
         /// <para> Describes Spot Instance requests. Spot Instances are instances that Amazon EC2 starts on your behalf when the maximum price that you
         /// specify exceeds the current Spot Price. Amazon EC2 periodically sets the Spot Price based on available Spot Instance capacity and current
-        /// spot instance requests. For conceptual information about Spot Instances, refer to the Amazon Elastic Compute Cloud Developer Guide or Amazon
-        /// Elastic Compute Cloud User Guide. </para> <para> You can filter the results to return information only about Spot Instance requests that
-        /// match criteria you specify. For example, you could get information about requests where the Spot Price you specified is a certain value (you
-        /// can't use greater than or less than comparison, but you can use <c>*</c> and <c>?</c> wildcards). You can specify multiple values for a
-        /// filter. A Spot Instance request must match at least one of the specified values for it to be included in the results. </para> <para> You can
-        /// specify multiple filters (e.g., the Spot Price is equal to a particular value, and the instance type is <c>m1.small</c> ). The result
-        /// includes information for a particular request only if it matches all your filters. If there's no match, no special message is returned; the
-        /// response is simply empty. </para> <para> You can use wildcards with the filter values: an asterisk matches zero or more characters, and
-        /// <c>?</c> matches exactly one character. You can escape special characters using a backslash before the character. For example, a value of
-        /// <c>\*amazon\?\\</c> searches for the literal string <c>*amazon?\</c> .
+        /// spot instance requests. For conceptual information about Spot Instances, refer to the <a
+        /// href="http://docs.amazonwebservices.com/AWSEC2/2010-08-31/DeveloperGuide/" > Amazon Elastic Compute Cloud Developer Guide</a> or <a
+        /// href="http://docs.amazonwebservices.com/AWSEC2/2010-08-31/UserGuide/" > Amazon Elastic Compute Cloud User Guide</a> .
+        /// </para> <para> You can filter the results to return information only about Spot Instance requests that match criteria you specify. For
+        /// example, you could get information about requests where the Spot Price you specified is a certain value (you can't use greater than or less
+        /// than comparison, but you can use <c>*</c> and <c>?</c> wildcards). You can specify multiple values for a filter. A Spot Instance request
+        /// must match at least one of the specified values for it to be included in the results. </para> <para> You can specify multiple filters (e.g.,
+        /// the Spot Price is equal to a particular value, and the instance type is <c>m1.small</c> ). The result includes information for a particular
+        /// request only if it matches all your filters. If there's no match, no special message is returned; the response is simply empty. </para>
+        /// <para> You can use wildcards with the filter values: an asterisk matches zero or more characters, and <c>?</c> matches exactly one
+        /// character. You can escape special characters using a backslash before the character. For example, a value of <c>\*amazon\?\\</c> searches
+        /// for the literal string <c>*amazon?\</c> .
         /// </para>
         /// </summary>
         /// 
@@ -4977,8 +5038,9 @@ namespace Amazon.EC2
 
         /// <summary>
         /// <para> Disassociates a subnet from a route table. </para> <para> After you perform this action, the subnet no longer uses the routes in the
-        /// route table. Instead it uses the routes in the VPC's main route table. For more information about route tables, go to Route Tables in the
-        /// Amazon Virtual Private Cloud User Guide. </para>
+        /// route table. Instead it uses the routes in the VPC's main route table. For more information about route tables, go to <a
+        /// href="http://docs.amazonwebservices.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html" >Route Tables</a> in the Amazon Virtual Private
+        /// Cloud User Guide. </para>
         /// </summary>
         /// 
         /// <param name="disassociateRouteTableRequest">Container for the necessary parameters to execute the DisassociateRouteTable service method on
@@ -5215,7 +5277,7 @@ namespace Amazon.EC2
         /// <ul>
         /// <li> OpenSSH public key format, </li>
         /// <li> Base64 encoded DER format. </li>
-        /// <li> SSH public key file format as specified in RFC4716 .
+        /// <li> SSH public key file format as specified in <a href="http://tools.ietf.org/html/rfc4716" > RFC4716 </a> .
         /// </li>
         /// 
         /// </ul>
@@ -5400,6 +5462,49 @@ namespace Amazon.EC2
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyNetworkInterfaceAttribute.</param>
         ModifyNetworkInterfaceAttributeResponse EndModifyNetworkInterfaceAttribute(IAsyncResult asyncResult);
+        
+        #endregion
+        
+    
+
+        #region ModifyReservedInstances
+
+        /// <summary>
+        /// <para> The ModifyReservedInstances operation modifies the Availability Zone, instance count, instance type, or network platform (EC2-Classic
+        /// or EC2-VPC) of your Reserved Instances. </para>
+        /// </summary>
+        /// 
+        /// <param name="modifyReservedInstancesRequest">Container for the necessary parameters to execute the ModifyReservedInstances service method on
+        ///          AmazonEC2.</param>
+        /// 
+        /// <returns>The response from the ModifyReservedInstances service method, as returned by AmazonEC2.</returns>
+        /// 
+        ModifyReservedInstancesResponse ModifyReservedInstances(ModifyReservedInstancesRequest modifyReservedInstancesRequest);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyReservedInstances operation.
+        /// <seealso cref="Amazon.EC2.IAmazonEC2.ModifyReservedInstances"/>
+        /// </summary>
+        /// 
+        /// <param name="modifyReservedInstancesRequest">Container for the necessary parameters to execute the ModifyReservedInstances operation on
+        ///          AmazonEC2.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
+        ///         EndModifyReservedInstances operation.</returns>
+        IAsyncResult BeginModifyReservedInstances(ModifyReservedInstancesRequest modifyReservedInstancesRequest, AsyncCallback callback, object state);
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the ModifyReservedInstances operation.
+        /// <seealso cref="Amazon.EC2.IAmazonEC2.ModifyReservedInstances"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyReservedInstances.</param>
+        /// 
+        /// <returns>Returns a ModifyReservedInstancesResult from AmazonEC2.</returns>
+        ModifyReservedInstancesResponse EndModifyReservedInstances(IAsyncResult asyncResult);
         
         #endregion
         
@@ -5819,8 +5924,9 @@ namespace Amazon.EC2
         #region ReplaceRoute
 
         /// <summary>
-        /// <para> Replaces an existing route within a route table in a VPC. For more information about route tables, go to Route Tables in the Amazon
-        /// Virtual Private Cloud User Guide. </para>
+        /// <para> Replaces an existing route within a route table in a VPC. For more information about route tables, go to <a
+        /// href="http://docs.amazonwebservices.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html" >Route Tables</a> in the Amazon Virtual Private
+        /// Cloud User Guide. </para>
         /// </summary>
         /// 
         /// <param name="replaceRouteRequest">Container for the necessary parameters to execute the ReplaceRoute service method on AmazonEC2.</param>
@@ -5854,9 +5960,10 @@ namespace Amazon.EC2
 
         /// <summary>
         /// <para> Changes the route table associated with a given subnet in a VPC. After you execute this action, the subnet uses the routes in the new
-        /// route table it's associated with. For more information about route tables, go to Route Tables in the Amazon Virtual Private Cloud User
-        /// Guide. </para> <para> You can also use this to change which table is the main route table in the VPC. You just specify the main route
-        /// table's association ID and the route table that you want to be the new main route table. </para>
+        /// route table it's associated with. For more information about route tables, go to <a
+        /// href="http://docs.amazonwebservices.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html" >Route Tables</a> in the Amazon Virtual Private
+        /// Cloud User Guide. </para> <para> You can also use this to change which table is the main route table in the VPC. You just specify the main
+        /// route table's association ID and the route table that you want to be the new main route table. </para>
         /// </summary>
         /// 
         /// <param name="replaceRouteTableAssociationRequest">Container for the necessary parameters to execute the ReplaceRouteTableAssociation service

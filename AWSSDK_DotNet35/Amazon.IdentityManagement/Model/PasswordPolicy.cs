@@ -33,6 +33,8 @@ namespace Amazon.IdentityManagement.Model
         private bool? requireUppercaseCharacters;
         private bool? requireLowercaseCharacters;
         private bool? allowUsersToChangePassword;
+        private bool? expirePasswords;
+        private int? maxPasswordAge;
 
         /// <summary>
         /// Minimum length to require for IAM user passwords.
@@ -137,6 +139,28 @@ namespace Amazon.IdentityManagement.Model
         internal bool IsSetAllowUsersToChangePassword()
         {
             return this.allowUsersToChangePassword.HasValue;
+        }
+        public bool ExpirePasswords
+        {
+            get { return this.expirePasswords ?? default(bool); }
+            set { this.expirePasswords = value; }
+        }
+
+        // Check to see if ExpirePasswords property is set
+        internal bool IsSetExpirePasswords()
+        {
+            return this.expirePasswords.HasValue;
+        }
+        public int MaxPasswordAge
+        {
+            get { return this.maxPasswordAge ?? default(int); }
+            set { this.maxPasswordAge = value; }
+        }
+
+        // Check to see if MaxPasswordAge property is set
+        internal bool IsSetMaxPasswordAge()
+        {
+            return this.maxPasswordAge.HasValue;
         }
     }
 }

@@ -48,10 +48,22 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeImagesRequest : AmazonWebServiceRequest
     {
+        private bool? dryRun;
         private List<string> imageIds = new List<string>();
         private List<string> owners = new List<string>();
         private List<string> executableUsers = new List<string>();
         private List<Filter> filters = new List<Filter>();
+        public bool DryRun
+        {
+            get { return this.dryRun ?? default(bool); }
+            set { this.dryRun = value; }
+        }
+
+        // Check to see if DryRun property is set
+        internal bool IsSetDryRun()
+        {
+            return this.dryRun.HasValue;
+        }
 
         /// <summary>
         /// An optional list of the AMI IDs to describe. If not specified, all AMIs will be described.
@@ -70,8 +82,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The optional list of owners for the described AMIs. The IDs amazon, self, and explicit can be used to include AMIs owned by Amazon, AMIs
-        /// owned by the user, and AMIs for which the user has explicit launch permissions, respectively.
+        /// An optional list of owners by which to scope the described AMIs. Valid values are: <ul> <li> <c>self</c> : AMIs owned by you </li> <li>
+        /// <i>AWS account ID</i> : AMIs owned by this account ID </li> <li> <c>aws-marketplace</c> : AMIs owned by the AWS Marketplace </li> <li>
+        /// <c>amazon</c> : AMIs owned by Amazon </li> <li> <c>all</c> : Do not scope the AMIs returned by owner </li> </ul> The values <c>self</c>,
+        /// <c>aws-marketplace</c>, <c>amazon</c>, and <c>all</c> are literals.
         ///  
         /// </summary>
         public List<string> Owners
@@ -87,8 +101,9 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The optional list of users with explicit launch permissions for the described AMIs. The user ID can be a user's account ID, 'self' to return
-        /// AMIs for which the sender of the request has explicit launch permissions, or 'all' to return AMIs with public launch permissions.
+        /// An optional list of users whose launch permissions will be used to scope the described AMIs. Valid values are: <ul> <li> <c>self</c> : AMIs
+        /// for which you have explicit launch permissions </li> <li> <c>AWS account ID</c> : AMIs for which this account ID has launch permissions
+        /// </li> <li> <c>all</c> : AMIs that have public launch permissions </li> </ul> The values <c>self</c> and <c>all</c> are literals.
         ///  
         /// </summary>
         public List<string> ExecutableUsers

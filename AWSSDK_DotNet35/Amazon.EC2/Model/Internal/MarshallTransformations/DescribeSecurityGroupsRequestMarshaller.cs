@@ -34,7 +34,11 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(describeSecurityGroupsRequest, "AmazonEC2");
             request.Parameters.Add("Action", "DescribeSecurityGroups");
-            request.Parameters.Add("Version", "2013-02-01");
+            request.Parameters.Add("Version", "2013-10-01");
+            if (describeSecurityGroupsRequest != null && describeSecurityGroupsRequest.IsSetDryRun())
+            {
+                request.Parameters.Add("DryRun", StringUtils.FromBool(describeSecurityGroupsRequest.DryRun));
+            }
             if (describeSecurityGroupsRequest != null)
             {
                 List<string> groupNamesList = describeSecurityGroupsRequest.GroupNames;

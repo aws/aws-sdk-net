@@ -38,7 +38,7 @@
           return response;
         }
         
-        private void UnmarshallResult(JsonUnmarshallerContext context,DescribeElasticLoadBalancersResponse response)
+        private static void UnmarshallResult(JsonUnmarshallerContext context,DescribeElasticLoadBalancersResponse response)
         {
           
             int originalDepth = context.CurrentDepth;

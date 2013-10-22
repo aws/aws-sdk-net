@@ -14,10 +14,11 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
+using System.Text;
 using System.Xml;
 using System.Xml.Serialization;
-using System.Text;
 
 using Amazon.CloudFront.Model;
 
@@ -42,13 +43,11 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 
 
             request.HttpMethod = "POST";
-              
-            Dictionary<string, string> queryParameters = new Dictionary<string, string>();
-            string uriResourcePath = "2013-05-12/streaming-distribution"; 
+            string uriResourcePath = "2013-09-27/streaming-distribution"; 
 
             if (uriResourcePath.Contains("?")) 
             {
-                int queryIndex = uriResourcePath.IndexOf("?");
+                int queryIndex = uriResourcePath.IndexOf("?", StringComparison.OrdinalIgnoreCase);
                 string queryString = uriResourcePath.Substring(queryIndex + 1);
                 
                 uriResourcePath    = uriResourcePath.Substring(0, queryIndex);
@@ -72,7 +71,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             request.ResourcePath = uriResourcePath;
             
              
-            StringWriter stringWriter = new StringWriter();
+            StringWriter stringWriter = new StringWriter(System.Globalization.CultureInfo.InvariantCulture);
                 using (XmlWriter xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true }))
                 {
                        
@@ -81,24 +80,24 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             StreamingDistributionConfig streamingDistributionConfigStreamingDistributionConfig = createStreamingDistributionRequest.StreamingDistributionConfig;
             if (streamingDistributionConfigStreamingDistributionConfig != null) 
             {
-                xmlWriter.WriteStartElement("StreamingDistributionConfig", "http://cloudfront.amazonaws.com/doc/2013-05-12/");
+                xmlWriter.WriteStartElement("StreamingDistributionConfig", "http://cloudfront.amazonaws.com/doc/2013-09-27/");
                 if (streamingDistributionConfigStreamingDistributionConfig.IsSetCallerReference()) 
                 {
-                    xmlWriter.WriteElementString("CallerReference", "http://cloudfront.amazonaws.com/doc/2013-05-12/", streamingDistributionConfigStreamingDistributionConfig.CallerReference.ToString());
+                    xmlWriter.WriteElementString("CallerReference", "http://cloudfront.amazonaws.com/doc/2013-09-27/", streamingDistributionConfigStreamingDistributionConfig.CallerReference.ToString(CultureInfo.InvariantCulture));
                   }
                 if (streamingDistributionConfigStreamingDistributionConfig != null) 
                 {
                     S3Origin s3OriginS3Origin = streamingDistributionConfigStreamingDistributionConfig.S3Origin;
                     if (s3OriginS3Origin != null) 
                     {
-                        xmlWriter.WriteStartElement("S3Origin", "http://cloudfront.amazonaws.com/doc/2013-05-12/");
+                        xmlWriter.WriteStartElement("S3Origin", "http://cloudfront.amazonaws.com/doc/2013-09-27/");
                         if (s3OriginS3Origin.IsSetDomainName()) 
                         {
-                            xmlWriter.WriteElementString("DomainName", "http://cloudfront.amazonaws.com/doc/2013-05-12/", s3OriginS3Origin.DomainName.ToString());
+                            xmlWriter.WriteElementString("DomainName", "http://cloudfront.amazonaws.com/doc/2013-09-27/", s3OriginS3Origin.DomainName.ToString(CultureInfo.InvariantCulture));
                           }
                         if (s3OriginS3Origin.IsSetOriginAccessIdentity()) 
                         {
-                            xmlWriter.WriteElementString("OriginAccessIdentity", "http://cloudfront.amazonaws.com/doc/2013-05-12/", s3OriginS3Origin.OriginAccessIdentity.ToString());
+                            xmlWriter.WriteElementString("OriginAccessIdentity", "http://cloudfront.amazonaws.com/doc/2013-09-27/", s3OriginS3Origin.OriginAccessIdentity.ToString(CultureInfo.InvariantCulture));
                           }
                         xmlWriter.WriteEndElement();
                     }
@@ -108,10 +107,10 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     Aliases aliasesAliases = streamingDistributionConfigStreamingDistributionConfig.Aliases;
                     if (aliasesAliases != null) 
                     {
-                        xmlWriter.WriteStartElement("Aliases", "http://cloudfront.amazonaws.com/doc/2013-05-12/");
+                        xmlWriter.WriteStartElement("Aliases", "http://cloudfront.amazonaws.com/doc/2013-09-27/");
                         if (aliasesAliases.IsSetQuantity()) 
                         {
-                            xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2013-05-12/", aliasesAliases.Quantity.ToString());
+                            xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2013-09-27/", aliasesAliases.Quantity.ToString(CultureInfo.InvariantCulture));
                           }
 
                         if (aliasesAliases != null) 
@@ -120,10 +119,10 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                             if (aliasesAliasesitemsList != null && aliasesAliasesitemsList.Count > 0) 
                             {
                                 int aliasesAliasesitemsListIndex = 1;
-                                xmlWriter.WriteStartElement("Items", "http://cloudfront.amazonaws.com/doc/2013-05-12/");
+                                xmlWriter.WriteStartElement("Items", "http://cloudfront.amazonaws.com/doc/2013-09-27/");
                                 foreach (string aliasesAliasesitemsListValue in aliasesAliasesitemsList) 
                                 {
-                                    xmlWriter.WriteStartElement("CNAME", "http://cloudfront.amazonaws.com/doc/2013-05-12/");
+                                    xmlWriter.WriteStartElement("CNAME", "http://cloudfront.amazonaws.com/doc/2013-09-27/");
                                     xmlWriter.WriteValue(aliasesAliasesitemsListValue);
                                 xmlWriter.WriteEndElement();
 
@@ -138,25 +137,25 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 }
                 if (streamingDistributionConfigStreamingDistributionConfig.IsSetComment()) 
                 {
-                    xmlWriter.WriteElementString("Comment", "http://cloudfront.amazonaws.com/doc/2013-05-12/", streamingDistributionConfigStreamingDistributionConfig.Comment.ToString());
+                    xmlWriter.WriteElementString("Comment", "http://cloudfront.amazonaws.com/doc/2013-09-27/", streamingDistributionConfigStreamingDistributionConfig.Comment.ToString(CultureInfo.InvariantCulture));
                   }
                 if (streamingDistributionConfigStreamingDistributionConfig != null) 
                 {
                     StreamingLoggingConfig streamingLoggingConfigLogging = streamingDistributionConfigStreamingDistributionConfig.Logging;
                     if (streamingLoggingConfigLogging != null) 
                     {
-                        xmlWriter.WriteStartElement("Logging", "http://cloudfront.amazonaws.com/doc/2013-05-12/");
+                        xmlWriter.WriteStartElement("Logging", "http://cloudfront.amazonaws.com/doc/2013-09-27/");
                         if (streamingLoggingConfigLogging.IsSetEnabled()) 
                         {
-                            xmlWriter.WriteElementString("Enabled", "http://cloudfront.amazonaws.com/doc/2013-05-12/", streamingLoggingConfigLogging.Enabled.ToString().ToLower());
+                            xmlWriter.WriteElementString("Enabled", "http://cloudfront.amazonaws.com/doc/2013-09-27/", streamingLoggingConfigLogging.Enabled.ToString(CultureInfo.InvariantCulture).ToLower(CultureInfo.InvariantCulture));
                           }
                         if (streamingLoggingConfigLogging.IsSetBucket()) 
                         {
-                            xmlWriter.WriteElementString("Bucket", "http://cloudfront.amazonaws.com/doc/2013-05-12/", streamingLoggingConfigLogging.Bucket.ToString());
+                            xmlWriter.WriteElementString("Bucket", "http://cloudfront.amazonaws.com/doc/2013-09-27/", streamingLoggingConfigLogging.Bucket.ToString(CultureInfo.InvariantCulture));
                           }
                         if (streamingLoggingConfigLogging.IsSetPrefix()) 
                         {
-                            xmlWriter.WriteElementString("Prefix", "http://cloudfront.amazonaws.com/doc/2013-05-12/", streamingLoggingConfigLogging.Prefix.ToString());
+                            xmlWriter.WriteElementString("Prefix", "http://cloudfront.amazonaws.com/doc/2013-09-27/", streamingLoggingConfigLogging.Prefix.ToString(CultureInfo.InvariantCulture));
                           }
                         xmlWriter.WriteEndElement();
                     }
@@ -166,14 +165,14 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     TrustedSigners trustedSignersTrustedSigners = streamingDistributionConfigStreamingDistributionConfig.TrustedSigners;
                     if (trustedSignersTrustedSigners != null) 
                     {
-                        xmlWriter.WriteStartElement("TrustedSigners", "http://cloudfront.amazonaws.com/doc/2013-05-12/");
+                        xmlWriter.WriteStartElement("TrustedSigners", "http://cloudfront.amazonaws.com/doc/2013-09-27/");
                         if (trustedSignersTrustedSigners.IsSetEnabled()) 
                         {
-                            xmlWriter.WriteElementString("Enabled", "http://cloudfront.amazonaws.com/doc/2013-05-12/", trustedSignersTrustedSigners.Enabled.ToString().ToLower());
+                            xmlWriter.WriteElementString("Enabled", "http://cloudfront.amazonaws.com/doc/2013-09-27/", trustedSignersTrustedSigners.Enabled.ToString(CultureInfo.InvariantCulture).ToLower(CultureInfo.InvariantCulture));
                           }
                         if (trustedSignersTrustedSigners.IsSetQuantity()) 
                         {
-                            xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2013-05-12/", trustedSignersTrustedSigners.Quantity.ToString());
+                            xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2013-09-27/", trustedSignersTrustedSigners.Quantity.ToString(CultureInfo.InvariantCulture));
                           }
 
                         if (trustedSignersTrustedSigners != null) 
@@ -182,10 +181,10 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                             if (trustedSignersTrustedSignersitemsList != null && trustedSignersTrustedSignersitemsList.Count > 0) 
                             {
                                 int trustedSignersTrustedSignersitemsListIndex = 1;
-                                xmlWriter.WriteStartElement("Items", "http://cloudfront.amazonaws.com/doc/2013-05-12/");
+                                xmlWriter.WriteStartElement("Items", "http://cloudfront.amazonaws.com/doc/2013-09-27/");
                                 foreach (string trustedSignersTrustedSignersitemsListValue in trustedSignersTrustedSignersitemsList) 
                                 {
-                                    xmlWriter.WriteStartElement("AwsAccountNumber", "http://cloudfront.amazonaws.com/doc/2013-05-12/");
+                                    xmlWriter.WriteStartElement("AwsAccountNumber", "http://cloudfront.amazonaws.com/doc/2013-09-27/");
                                     xmlWriter.WriteValue(trustedSignersTrustedSignersitemsListValue);
                                 xmlWriter.WriteEndElement();
 
@@ -200,11 +199,11 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 }
                 if (streamingDistributionConfigStreamingDistributionConfig.IsSetPriceClass()) 
                 {
-                    xmlWriter.WriteElementString("PriceClass", "http://cloudfront.amazonaws.com/doc/2013-05-12/", streamingDistributionConfigStreamingDistributionConfig.PriceClass.ToString());
+                    xmlWriter.WriteElementString("PriceClass", "http://cloudfront.amazonaws.com/doc/2013-09-27/", streamingDistributionConfigStreamingDistributionConfig.PriceClass.ToString(CultureInfo.InvariantCulture));
                   }
                 if (streamingDistributionConfigStreamingDistributionConfig.IsSetEnabled()) 
                 {
-                    xmlWriter.WriteElementString("Enabled", "http://cloudfront.amazonaws.com/doc/2013-05-12/", streamingDistributionConfigStreamingDistributionConfig.Enabled.ToString().ToLower());
+                    xmlWriter.WriteElementString("Enabled", "http://cloudfront.amazonaws.com/doc/2013-09-27/", streamingDistributionConfigStreamingDistributionConfig.Enabled.ToString(CultureInfo.InvariantCulture).ToLower(CultureInfo.InvariantCulture));
                   }
                 xmlWriter.WriteEndElement();
             }

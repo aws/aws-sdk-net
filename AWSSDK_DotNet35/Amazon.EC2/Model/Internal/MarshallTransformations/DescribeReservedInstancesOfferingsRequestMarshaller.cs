@@ -34,7 +34,11 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(describeReservedInstancesOfferingsRequest, "AmazonEC2");
             request.Parameters.Add("Action", "DescribeReservedInstancesOfferings");
-            request.Parameters.Add("Version", "2013-02-01");
+            request.Parameters.Add("Version", "2013-10-01");
+            if (describeReservedInstancesOfferingsRequest != null && describeReservedInstancesOfferingsRequest.IsSetDryRun())
+            {
+                request.Parameters.Add("DryRun", StringUtils.FromBool(describeReservedInstancesOfferingsRequest.DryRun));
+            }
             if (describeReservedInstancesOfferingsRequest != null)
             {
                 List<string> reservedInstancesOfferingIdsList = describeReservedInstancesOfferingsRequest.ReservedInstancesOfferingIds;
@@ -99,6 +103,22 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             if (describeReservedInstancesOfferingsRequest != null && describeReservedInstancesOfferingsRequest.IsSetMaxResults())
             {
                 request.Parameters.Add("MaxResults", StringUtils.FromInt(describeReservedInstancesOfferingsRequest.MaxResults));
+            }
+            if (describeReservedInstancesOfferingsRequest != null && describeReservedInstancesOfferingsRequest.IsSetIncludeMarketplace())
+            {
+                request.Parameters.Add("IncludeMarketplace", StringUtils.FromBool(describeReservedInstancesOfferingsRequest.IncludeMarketplace));
+            }
+            if (describeReservedInstancesOfferingsRequest != null && describeReservedInstancesOfferingsRequest.IsSetMinDuration())
+            {
+                request.Parameters.Add("MinDuration", StringUtils.FromLong(describeReservedInstancesOfferingsRequest.MinDuration));
+            }
+            if (describeReservedInstancesOfferingsRequest != null && describeReservedInstancesOfferingsRequest.IsSetMaxDuration())
+            {
+                request.Parameters.Add("MaxDuration", StringUtils.FromLong(describeReservedInstancesOfferingsRequest.MaxDuration));
+            }
+            if (describeReservedInstancesOfferingsRequest != null && describeReservedInstancesOfferingsRequest.IsSetMaxInstanceCount())
+            {
+                request.Parameters.Add("MaxInstanceCount", StringUtils.FromInt(describeReservedInstancesOfferingsRequest.MaxInstanceCount));
             }
 
             return request;

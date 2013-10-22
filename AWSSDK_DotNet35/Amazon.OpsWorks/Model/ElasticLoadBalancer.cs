@@ -33,6 +33,7 @@ namespace Amazon.OpsWorks.Model
         private string layerId;
         private string vpcId;
         private List<string> availabilityZones = new List<string>();
+        private List<string> subnetIds = new List<string>();
         private List<string> ec2InstanceIds = new List<string>();
 
         /// <summary>
@@ -132,7 +133,7 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// The instance's Availability Zones.
+        /// A list of Availability Zones.
         ///  
         /// </summary>
         public List<string> AvailabilityZones
@@ -145,6 +146,22 @@ namespace Amazon.OpsWorks.Model
         internal bool IsSetAvailabilityZones()
         {
             return this.availabilityZones.Count > 0;
+        }
+
+        /// <summary>
+        /// A list of subnet IDs, if the stack is running in a VPC.
+        ///  
+        /// </summary>
+        public List<string> SubnetIds
+        {
+            get { return this.subnetIds; }
+            set { this.subnetIds = value; }
+        }
+
+        // Check to see if SubnetIds property is set
+        internal bool IsSetSubnetIds()
+        {
+            return this.subnetIds.Count > 0;
         }
 
         /// <summary>

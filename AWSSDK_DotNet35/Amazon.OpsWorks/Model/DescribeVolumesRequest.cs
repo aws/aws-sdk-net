@@ -30,6 +30,7 @@ namespace Amazon.OpsWorks.Model
     public partial class DescribeVolumesRequest : AmazonWebServiceRequest
     {
         private string instanceId;
+        private string stackId;
         private string raidArrayId;
         private List<string> volumeIds = new List<string>();
 
@@ -48,6 +49,22 @@ namespace Amazon.OpsWorks.Model
         internal bool IsSetInstanceId()
         {
             return this.instanceId != null;
+        }
+
+        /// <summary>
+        /// A stack ID. The action describes the stack's registered Amazon EBS volumes.
+        ///  
+        /// </summary>
+        public string StackId
+        {
+            get { return this.stackId; }
+            set { this.stackId = value; }
+        }
+
+        // Check to see if StackId property is set
+        internal bool IsSetStackId()
+        {
+            return this.stackId != null;
         }
 
         /// <summary>

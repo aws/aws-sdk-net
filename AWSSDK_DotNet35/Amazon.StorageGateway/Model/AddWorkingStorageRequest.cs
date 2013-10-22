@@ -25,10 +25,7 @@ namespace Amazon.StorageGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the AddWorkingStorage operation.
-    /// <para>This operation configures one or more gateway local disks as working storage for a gateway. This operation is supported only for the
-    /// gateway-stored volume architecture.</para> <para><b>NOTE:</b> Working storage is also referred to as upload buffer. You can also use the
-    /// AddUploadBuffer operation to add upload buffer to a stored-volume gateway. </para> <para>In the request, you specify the gateway Amazon
-    /// Resource Name (ARN) to which you want to add working storage, and one or more disk IDs that you want to configure as working storage.</para>
+    /// 
     /// </summary>
     public partial class AddWorkingStorageRequest : AmazonWebServiceRequest
     {

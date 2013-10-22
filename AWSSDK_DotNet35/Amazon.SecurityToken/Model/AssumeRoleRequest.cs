@@ -31,13 +31,14 @@ namespace Amazon.SecurityToken.Model
     /// You could create long-term credentials in each account to access those resources. However, managing all those credentials and remembering
     /// which one can access which account can be time consuming. Instead, you can create one set of long-term credentials in one account and then
     /// use temporary security credentials to access all the other accounts by assuming roles in those accounts. For more information about roles,
-    /// see Roles in <i>Using IAM</i> .
+    /// see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html" >Roles</a> in <i>Using IAM</i> .
     /// </para> <para> For federation, you can, for example, grant single sign-on access to the AWS Management Console. If you already have an
     /// identity and authentication system in your corporate network, you don't have to recreate user identities in AWS in order to grant those user
     /// identities access to AWS. Instead, after a user has been authenticated, you call <c>AssumeRole</c> (and specify the role with the
     /// appropriate permissions) to get temporary security credentials for that user. With those temporary security credentials, you construct a
-    /// sign-in URL that users can use to access the console. For more information, see Scenarios for Granting Temporary Access in <i>AWS Security
-    /// Token Service</i> .
+    /// sign-in URL that users can use to access the console. For more information, see <a
+    /// href="http://docs.aws.amazon.com/STS/latest/UsingSTS/STSUseCases.html" >Scenarios for Granting Temporary Access</a> in <i>AWS Security Token
+    /// Service</i> .
     /// </para> <para> The temporary security credentials are valid for the duration that you specified when calling <c>AssumeRole</c> , which can
     /// be from 900 seconds (15 minutes) to 3600 seconds (1 hour). The default is 1 hour. </para> <para> The temporary security credentials that are
     /// returned from the <c>AssumeRoleWithWebIdentity</c> response have the permissions that are associated with the access policy of the role

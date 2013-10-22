@@ -36,7 +36,7 @@ namespace Amazon.RDS.Model
         private int? port;
 
         /// <summary>
-        /// Specifies the DNS address of the DB Instance.
+        /// Specifies the DNS address of the DB instance.
         ///  
         /// </summary>
         public string Address

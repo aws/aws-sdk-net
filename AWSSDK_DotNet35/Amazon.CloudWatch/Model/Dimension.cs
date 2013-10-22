@@ -21,7 +21,8 @@ using System.IO;
 namespace Amazon.CloudWatch.Model
 {
     /// <summary>
-    /// <para> The <c>Dimension</c> data type further expands on the identity of a metric using a Name, Value pair. </para>
+    /// <para> The <c>Dimension</c> data type further expands on the identity of a metric using a Name, Value pair. </para> <para>For examples that
+    /// use one or more dimensions, see PutMetricData.</para>
     /// </summary>
     public class Dimension
     {

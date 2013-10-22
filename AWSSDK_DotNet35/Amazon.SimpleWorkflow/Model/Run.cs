@@ -17,13 +17,14 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using Amazon.Runtime;
 
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
     /// <para> Specifies the <c>runId</c> of a workflow execution. </para>
     /// </summary>
-    public class Run
+    public partial class Run : AmazonWebServiceResponse
     {
         
         private string runId;

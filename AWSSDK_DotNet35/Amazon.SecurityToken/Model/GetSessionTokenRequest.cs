@@ -34,8 +34,9 @@ namespace Amazon.SecurityToken.Model
     /// that you specify, between 900 seconds (15 minutes) and 129600 seconds (36 hours); credentials that are created by using account credentials
     /// have a maximum duration of 3600 seconds (1 hour).</para> <para> The permissions that are granted to the federated user are the intersection
     /// of the policy that is passed with the <c>GetSessionToken</c> request and policies that are associated with of the entity making the
-    /// <c>GetSessionToken</c> call. </para> <para>For more information about using <c>GetSessionToken</c> to create temporary credentials, go to
-    /// Creating Temporary Credentials to Enable Access for IAM Users in <i>Using IAM</i> .</para>
+    /// <c>GetSessionToken</c> call. </para> <para>For more information about using <c>GetSessionToken</c> to create temporary credentials, go to <a
+    /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/CreatingSessionTokens.html" >Creating Temporary Credentials to Enable Access for IAM
+    /// Users</a> in <i>Using IAM</i> .</para>
     /// </summary>
     public partial class GetSessionTokenRequest : AmazonWebServiceRequest
     {

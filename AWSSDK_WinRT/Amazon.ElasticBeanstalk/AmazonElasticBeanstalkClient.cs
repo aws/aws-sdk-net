@@ -31,10 +31,10 @@ namespace Amazon.ElasticBeanstalk
     /// AWS Elastic Beanstalk <para> This is the AWS Elastic Beanstalk API Reference. This guide provides detailed information about AWS Elastic
     /// Beanstalk actions, data types, parameters, and errors. </para> <para>AWS Elastic Beanstalk is a tool that makes it easy for you to create,
     /// deploy, and manage scalable, fault-tolerant applications running on Amazon Web Services cloud resources. </para> <para> For more information
-    /// about this product, go to the AWS Elastic Beanstalk details page. The location of the lastest AWS Elastic Beanstalk WSDL is
-    /// http://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl. </para> <para> <b>Endpoints</b> </para> <para>For a list
-    /// of region-specific endpoints that AWS Elastic Beanstalk supports, go to Regions and Endpoints in the <i>Amazon Web Services Glossary</i>
-    /// .</para>
+    /// about this product, go to the <a href="http://aws.amazon.com/elasticbeanstalk/">AWS Elastic Beanstalk</a> details page. The location of the
+    /// lastest AWS Elastic Beanstalk WSDL is <a href="http://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl">http://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl</a> .
+    /// </para> <para> <b>Endpoints</b> </para> <para>For a list of region-specific endpoints that AWS Elastic Beanstalk supports, go to <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region">Regions and Endpoints</a> in the <i>Amazon Web
+    /// Services Glossary</i> .</para>
     /// </summary>
 	public partial class AmazonElasticBeanstalkClient : AmazonWebServiceClient, Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk
     {
@@ -68,7 +68,7 @@ namespace Amazon.ElasticBeanstalk
         /// <param name="credentials">AWS Credentials</param>
         /// <param name="clientConfig">The AmazonElasticBeanstalkClient Configuration Object</param>
         public AmazonElasticBeanstalkClient(AWSCredentials credentials, AmazonElasticBeanstalkConfig clientConfig)
-            : base(credentials, clientConfig, false, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(credentials, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
         {
         }
 
@@ -150,6 +150,19 @@ namespace Amazon.ElasticBeanstalk
         #endregion
 
  
+		internal CheckDNSAvailabilityResponse CheckDNSAvailability(CheckDNSAvailabilityRequest request)
+        {
+            var task = CheckDNSAvailabilityAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Checks if the specified CNAME is available. </para>
         /// </summary>
@@ -170,6 +183,19 @@ namespace Amazon.ElasticBeanstalk
             return response;
         }
  
+		internal CreateApplicationResponse CreateApplication(CreateApplicationRequest request)
+        {
+            var task = CreateApplicationAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Creates an application that has one configuration template named <c>default</c> and no application versions. </para>
         /// <para><b>NOTE:</b> The default configuration template is for a 32-bit version of the Amazon Linux operating system running the Tomcat 6
@@ -194,6 +220,19 @@ namespace Amazon.ElasticBeanstalk
             return response;
         }
  
+		internal CreateApplicationVersionResponse CreateApplicationVersion(CreateApplicationVersionRequest request)
+        {
+            var task = CreateApplicationVersionAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Creates an application version for the specified application.</para> <para><b>NOTE:</b>Once you create an application version with a
         /// specified Amazon S3 bucket and key location, you cannot change that Amazon S3 location. If you change the Amazon S3 location, you receive an
@@ -221,6 +260,19 @@ namespace Amazon.ElasticBeanstalk
             return response;
         }
  
+		internal CreateConfigurationTemplateResponse CreateConfigurationTemplate(CreateConfigurationTemplateRequest request)
+        {
+            var task = CreateConfigurationTemplateAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Creates a configuration template. Templates are associated with a specific application and are used to deploy different versions of
         /// the application with the same configuration settings.</para> <para>Related Topics</para>
@@ -251,6 +303,19 @@ namespace Amazon.ElasticBeanstalk
             return response;
         }
  
+		internal CreateEnvironmentResponse CreateEnvironment(CreateEnvironmentRequest request)
+        {
+            var task = CreateEnvironmentAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Launches an environment for the specified application using the specified configuration. </para>
         /// </summary>
@@ -274,6 +339,19 @@ namespace Amazon.ElasticBeanstalk
             return response;
         }
  
+		internal CreateStorageLocationResponse CreateStorageLocation(CreateStorageLocationRequest request)
+        {
+            var task = CreateStorageLocationAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Creates the Amazon S3 storage location for the account. </para> <para> This location is used to store user log files. </para>
         /// </summary>
@@ -298,6 +376,19 @@ namespace Amazon.ElasticBeanstalk
             return response;
         }
  
+		internal DeleteApplicationResponse DeleteApplication(DeleteApplicationRequest request)
+        {
+            var task = DeleteApplicationAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Deletes the specified application along with all associated versions and configurations. The application versions will not be deleted
         /// from your Amazon S3 bucket. </para> <para><b>NOTE:</b>You cannot delete an application that has a running environment. </para>
@@ -319,6 +410,19 @@ namespace Amazon.ElasticBeanstalk
             return response;
         }
  
+		internal DeleteApplicationVersionResponse DeleteApplicationVersion(DeleteApplicationVersionRequest request)
+        {
+            var task = DeleteApplicationVersionAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Deletes the specified version from the specified application. </para> <para><b>NOTE:</b>You cannot delete an application version that
         /// is associated with a running environment.</para>
@@ -343,6 +447,19 @@ namespace Amazon.ElasticBeanstalk
             return response;
         }
  
+		internal DeleteConfigurationTemplateResponse DeleteConfigurationTemplate(DeleteConfigurationTemplateRequest request)
+        {
+            var task = DeleteConfigurationTemplateAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Deletes the specified configuration template.</para> <para><b>NOTE:</b>When you launch an environment using a configuration template,
         /// the environment gets a copy of the template. You can delete or modify the environment's copy of the template without affecting the running
@@ -365,6 +482,19 @@ namespace Amazon.ElasticBeanstalk
             return response;
         }
  
+		internal DeleteEnvironmentConfigurationResponse DeleteEnvironmentConfiguration(DeleteEnvironmentConfigurationRequest request)
+        {
+            var task = DeleteEnvironmentConfigurationAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Deletes the draft configuration associated with the running environment. </para> <para> Updating a running environment with any
         /// configuration changes creates a draft configuration set. You can get the draft configuration using DescribeConfigurationSettings while the
@@ -386,6 +516,19 @@ namespace Amazon.ElasticBeanstalk
             return response;
         }
  
+		internal DescribeApplicationsResponse DescribeApplications(DescribeApplicationsRequest request)
+        {
+            var task = DescribeApplicationsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Returns the descriptions of existing applications.</para>
         /// </summary>
@@ -406,6 +549,19 @@ namespace Amazon.ElasticBeanstalk
             return response;
         }
  
+		internal DescribeApplicationVersionsResponse DescribeApplicationVersions(DescribeApplicationVersionsRequest request)
+        {
+            var task = DescribeApplicationVersionsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Returns descriptions for existing application versions.</para>
         /// </summary>
@@ -426,6 +582,19 @@ namespace Amazon.ElasticBeanstalk
             return response;
         }
  
+		internal DescribeConfigurationOptionsResponse DescribeConfigurationOptions(DescribeConfigurationOptionsRequest request)
+        {
+            var task = DescribeConfigurationOptionsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Describes the configuration options that are used in a particular configuration template or environment, or that a specified solution
         /// stack defines. The description includes the values the options, their default values, and an indication of the required action on a running
@@ -448,6 +617,19 @@ namespace Amazon.ElasticBeanstalk
             return response;
         }
  
+		internal DescribeConfigurationSettingsResponse DescribeConfigurationSettings(DescribeConfigurationSettingsRequest request)
+        {
+            var task = DescribeConfigurationSettingsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Returns a description of the settings for the specified configuration set, that is, either a configuration template or the
         /// configuration set associated with a running environment. </para> <para> When describing the settings for the configuration set associated
@@ -476,6 +658,19 @@ namespace Amazon.ElasticBeanstalk
             return response;
         }
  
+		internal DescribeEnvironmentResourcesResponse DescribeEnvironmentResources(DescribeEnvironmentResourcesRequest request)
+        {
+            var task = DescribeEnvironmentResourcesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Returns AWS resources for this environment.</para>
         /// </summary>
@@ -498,6 +693,19 @@ namespace Amazon.ElasticBeanstalk
             return response;
         }
  
+		internal DescribeEnvironmentsResponse DescribeEnvironments(DescribeEnvironmentsRequest request)
+        {
+            var task = DescribeEnvironmentsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Returns descriptions for existing environments.</para>
         /// </summary>
@@ -518,6 +726,19 @@ namespace Amazon.ElasticBeanstalk
             return response;
         }
  
+		internal DescribeEventsResponse DescribeEvents(DescribeEventsRequest request)
+        {
+            var task = DescribeEventsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Returns list of event descriptions matching criteria up to the last 6 weeks.</para> <para><b>NOTE:</b> This action returns the most
         /// recent 1,000 events from the specified NextToken. </para>
@@ -539,6 +760,19 @@ namespace Amazon.ElasticBeanstalk
             return response;
         }
  
+		internal ListAvailableSolutionStacksResponse ListAvailableSolutionStacks(ListAvailableSolutionStacksRequest request)
+        {
+            var task = ListAvailableSolutionStacksAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Returns a list of the available solution stack names. </para>
         /// </summary>
@@ -559,6 +793,19 @@ namespace Amazon.ElasticBeanstalk
             return response;
         }
  
+		internal RebuildEnvironmentResponse RebuildEnvironment(RebuildEnvironmentRequest request)
+        {
+            var task = RebuildEnvironmentAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Deletes and recreates all of the AWS resources (for example: the Auto Scaling group, load balancer, etc.) for a specified environment
         /// and forces a restart. </para>
@@ -580,6 +827,19 @@ namespace Amazon.ElasticBeanstalk
             return response;
         }
  
+		internal RequestEnvironmentInfoResponse RequestEnvironmentInfo(RequestEnvironmentInfoRequest request)
+        {
+            var task = RequestEnvironmentInfoAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Initiates a request to compile the specified type of information of the deployed environment. </para> <para> Setting the
         /// <c>InfoType</c> to <c>tail</c> compiles the last lines from the application server log files of every Amazon EC2 instance in your
@@ -604,6 +864,19 @@ namespace Amazon.ElasticBeanstalk
             return response;
         }
  
+		internal RestartAppServerResponse RestartAppServer(RestartAppServerRequest request)
+        {
+            var task = RestartAppServerAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Causes the environment to restart the application container server running on each Amazon EC2 instance. </para>
         /// </summary>
@@ -622,6 +895,19 @@ namespace Amazon.ElasticBeanstalk
             return response;
         }
  
+		internal RetrieveEnvironmentInfoResponse RetrieveEnvironmentInfo(RetrieveEnvironmentInfoRequest request)
+        {
+            var task = RetrieveEnvironmentInfoAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Retrieves the compiled information from a RequestEnvironmentInfo request. </para> <para>Related Topics</para>
         /// <ul>
@@ -646,6 +932,19 @@ namespace Amazon.ElasticBeanstalk
             return response;
         }
  
+		internal SwapEnvironmentCNAMEsResponse SwapEnvironmentCNAMEs(SwapEnvironmentCNAMEsRequest request)
+        {
+            var task = SwapEnvironmentCNAMEsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Swaps the CNAMEs of two environments. </para>
         /// </summary>
@@ -664,6 +963,19 @@ namespace Amazon.ElasticBeanstalk
             return response;
         }
  
+		internal TerminateEnvironmentResponse TerminateEnvironment(TerminateEnvironmentRequest request)
+        {
+            var task = TerminateEnvironmentAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Terminates the specified environment. </para>
         /// </summary>
@@ -686,6 +998,19 @@ namespace Amazon.ElasticBeanstalk
             return response;
         }
  
+		internal UpdateApplicationResponse UpdateApplication(UpdateApplicationRequest request)
+        {
+            var task = UpdateApplicationAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para>Updates the specified application to have the specified properties. </para> <para><b>NOTE:</b> If a property (for example,
         /// description) is not provided, the value remains unchanged. To clear these properties, specify an empty string. </para>
@@ -707,6 +1032,19 @@ namespace Amazon.ElasticBeanstalk
             return response;
         }
  
+		internal UpdateApplicationVersionResponse UpdateApplicationVersion(UpdateApplicationVersionRequest request)
+        {
+            var task = UpdateApplicationVersionAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Updates the specified application version to have the specified properties. </para> <para><b>NOTE:</b> If a property (for example,
         /// description) is not provided, the value remains unchanged. To clear properties, specify an empty string. </para>
@@ -728,6 +1066,19 @@ namespace Amazon.ElasticBeanstalk
             return response;
         }
  
+		internal UpdateConfigurationTemplateResponse UpdateConfigurationTemplate(UpdateConfigurationTemplateRequest request)
+        {
+            var task = UpdateConfigurationTemplateAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Updates the specified configuration template to have the specified properties or configuration option values. </para>
         /// <para><b>NOTE:</b> If a property (for example, ApplicationName) is not provided, its value remains unchanged. To clear such properties,
@@ -756,6 +1107,19 @@ namespace Amazon.ElasticBeanstalk
             return response;
         }
  
+		internal UpdateEnvironmentResponse UpdateEnvironment(UpdateEnvironmentRequest request)
+        {
+            var task = UpdateEnvironmentAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Updates the environment description, deploys a new application version, updates the configuration settings to an entirely new
         /// configuration template, or updates select configuration option values in the running environment. </para> <para> Attempting to update both
@@ -782,6 +1146,19 @@ namespace Amazon.ElasticBeanstalk
             return response;
         }
  
+		internal ValidateConfigurationSettingsResponse ValidateConfigurationSettings(ValidateConfigurationSettingsRequest request)
+        {
+            var task = ValidateConfigurationSettingsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Takes a set of configuration settings and either a configuration template or environment, and determines whether those values are
         /// valid. </para> <para> This action returns a list of messages indicating any errors or warnings associated with the selection of option

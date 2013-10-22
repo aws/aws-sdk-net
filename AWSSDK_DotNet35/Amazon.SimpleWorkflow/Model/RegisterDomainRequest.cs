@@ -35,8 +35,9 @@ namespace Amazon.SimpleWorkflow.Model
     /// 
     /// </ul>
     /// <para>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified
-    /// constraints, the action fails by throwing <c>OperationNotPermitted</c> . For details and example IAM policies, see Using IAM to Manage
-    /// Access to Amazon SWF Workflows.</para>
+    /// constraints, the action fails by throwing <c>OperationNotPermitted</c> . For details and example IAM policies, see <a
+    /// href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html" >Using IAM to Manage Access to Amazon SWF Workflows</a>
+    /// .</para>
     /// </summary>
     public partial class RegisterDomainRequest : AmazonWebServiceRequest
     {
@@ -97,9 +98,9 @@ namespace Amazon.SimpleWorkflow.Model
         }
 
         /// <summary>
-        /// A duration (in days) for which the record (including the history) of workflow executions in this domain should be kept by the service. After
-        /// the retention period, the workflow execution will not be available in the results of visibility calls. If you pass the value <c>NONE</c>
-        /// then there is no expiration for workflow execution history (effectively an infinite retention period).
+        /// Specifies the duration--<b><i>in days</i></b>--for which the record (including the history) of workflow executions in this domain should be
+        /// kept by the service. After the retention period, the workflow execution will not be available in the results of visibility calls. If a
+        /// duration of <c>NONE</c> is specified, the records for workflow executions in this domain are not retained at all.
         ///  
         /// <para>
         /// <b>Constraints:</b>

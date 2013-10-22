@@ -139,6 +139,7 @@
     <Compile Include="Amazon.IdentityManagement\IAmazonIdentityManagementService.cs" />
     <Compile Include="Amazon.ImportExport\AmazonImportExportClient.cs" />
     <Compile Include="Amazon.ImportExport\IAmazonImportExport.cs" />
+    <Compile Include="Amazon.MissingTypes\ICloneable.cs" />
     <Compile Include="Amazon.OpsWorks\AmazonOpsWorksClient.cs" />
     <Compile Include="Amazon.OpsWorks\IAmazonOpsWorks.cs" />
     <Compile Include="Amazon.RDS\AmazonRDSClient.cs" />
@@ -147,6 +148,7 @@
     <Compile Include="Amazon.Redshift\IAmazonRedshift.cs" />
     <Compile Include="Amazon.Route53\AmazonRoute53Client.cs" />
     <Compile Include="Amazon.Route53\IAmazonRoute53.cs" />
+    <Compile Include="Amazon.Runtime\Internal\Util\Extensions.winrt.cs" />
     <Compile Include="Amazon.S3\AmazonS3Client.cs" />
     <Compile Include="Amazon.S3\IAmazonS3.cs" />
     <Compile Include="Amazon.S3\Model\PutObjectRequest.storagefile.cs" />
@@ -223,7 +225,7 @@
     <Compile Include="..\AWSSDK_DotNet45\Amazon.Runtime\*">
       <Visible>false</Visible>
     </Compile>
-    <Compile Include="..\AWSSDK_DotNet45\Amazon.Runtime\Internal\*" Exclude="..\AWSSDK_DotNet45\Amazon.Runtime\Internal\AsyncRunner.cs">
+    <Compile Include="..\AWSSDK_DotNet45\Amazon.Runtime\Internal\*">
       <Visible>false</Visible>
     </Compile>
     <Compile Include="..\AWSSDK_DotNet45\Amazon.Runtime\Internal\Transform\*">
@@ -320,13 +322,25 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\AWSSDK_DotNet35\Amazon.DynamoDBv2\*" Exclude="..\AWSSDK_DotNet35\Amazon.DynamoDBv2\IAmazonDynamoDB.cs;..\AWSSDK_DotNet35\Amazon.DynamoDBv2\AmazonDynamoDBClient.cs;..\AWSSDK_DotNet35\Amazon.DynamoDBv2\DynamoDBAsync.cs">
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.DynamoDBv2\*" Exclude="..\AWSSDK_DotNet35\Amazon.DynamoDBv2\IAmazonDynamoDB.cs;..\AWSSDK_DotNet35\Amazon.DynamoDBv2\AmazonDynamoDBClient.cs">
       <Visible>false</Visible>
     </Compile>
     <Compile Include="..\AWSSDK_DotNet35\Amazon.DynamoDBv2\Model\*">
       <Visible>false</Visible>
     </Compile>
     <Compile Include="..\AWSSDK_DotNet35\Amazon.DynamoDBv2\Model\Internal\MarshallTransformations\*">
+      <Visible>false</Visible>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.DynamoDBv2\DocumentModel\*" Exclude="..\AWSSDK_DotNet35\Amazon.DynamoDBv2\DocumentModel\*.Sync.cs;..\AWSSDK_DotNet35\Amazon.DynamoDBv2\DocumentModel\*.Async.cs">
+      <Visible>false</Visible>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet45\Amazon.DynamoDBv2\DocumentModel\*.Async.cs">
+      <Visible>false</Visible>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.DynamoDBv2\DataModel\*" Exclude="..\AWSSDK_DotNet35\Amazon.DynamoDBv2\DataModel\*.Sync.cs;..\AWSSDK_DotNet35\Amazon.DynamoDBv2\DataModel\*.Async.cs">
+      <Visible>false</Visible>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet45\Amazon.DynamoDBv2\DataModel\*.Async.cs;..\AWSSDK_DotNet45\Amazon.DynamoDBv2\DataModel\Context.cs">
       <Visible>false</Visible>
     </Compile>
   </ItemGroup>

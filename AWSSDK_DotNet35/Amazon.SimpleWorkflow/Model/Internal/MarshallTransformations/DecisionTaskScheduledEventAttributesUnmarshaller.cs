@@ -33,6 +33,9 @@
 
         public DecisionTaskScheduledEventAttributes Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonToken.Null)
+                return null;
+
             DecisionTaskScheduledEventAttributes decisionTaskScheduledEventAttributes = new DecisionTaskScheduledEventAttributes();
 
         

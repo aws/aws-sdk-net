@@ -34,7 +34,8 @@ namespace Amazon.EC2
     /// computing environment. Amazon EC2 reduces the time required to obtain and boot new server instances to minutes, allowing you to quickly
     /// scale capacity, both up and down, as your computing requirements change. Amazon EC2 changes the economics of computing by allowing you to
     /// pay only for capacity that you actually use. Amazon EC2 provides developers the tools to build failure resilient applications and isolate
-    /// themselves from common failure scenarios. </para> <para> Visit http://aws.amazon.com/ec2/ for more information. </para>
+    /// themselves from common failure scenarios. </para> <para> Visit <a href="http://aws.amazon.com/ec2/">http://aws.amazon.com/ec2/</a> for more
+    /// information. </para>
     /// </summary>
     /// <summary>
     /// Implementation for accessing AmazonEC2.
@@ -79,7 +80,7 @@ namespace Amazon.EC2
         /// <param name="credentials">AWS Credentials</param>
         /// <param name="clientConfig">The AmazonEC2Client Configuration Object</param>
         public AmazonEC2Client(AWSCredentials credentials, AmazonEC2Config clientConfig)
-            : base(credentials, clientConfig, false, AuthenticationTypes.User | AuthenticationTypes.Session)
+            : base(credentials, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
         {
         }
 
@@ -161,6 +162,19 @@ namespace Amazon.EC2
         #endregion
 
  
+		internal AllocateAddressResponse AllocateAddress(AllocateAddressRequest request)
+        {
+            var task = AllocateAddressAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> The AllocateAddress operation acquires an elastic IP address for use with your account. </para>
         /// </summary>
@@ -181,6 +195,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal AssignPrivateIpAddressesResponse AssignPrivateIpAddresses(AssignPrivateIpAddressesRequest request)
+        {
+            var task = AssignPrivateIpAddressesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// </summary>
         /// 
@@ -198,6 +225,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal AssociateAddressResponse AssociateAddress(AssociateAddressRequest request)
+        {
+            var task = AssociateAddressAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> The AssociateAddress operation associates an elastic IP address with an instance. </para> <para> If the IP address is currently
         /// assigned to another instance, the IP address is assigned to the new instance. This is an idempotent operation. If you enter it more than
@@ -220,6 +260,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal AssociateDhcpOptionsResponse AssociateDhcpOptions(AssociateDhcpOptionsRequest request)
+        {
+            var task = AssociateDhcpOptionsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Associates a set of DHCP options (that you've previously created) with the specified VPC. Or, associates the default DHCP options
         /// with the VPC. The default set consists of the standard EC2 host name, no domain name, no DNS server, no NTP server, and no NetBIOS server or
@@ -242,11 +295,24 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal AssociateRouteTableResponse AssociateRouteTable(AssociateRouteTableRequest request)
+        {
+            var task = AssociateRouteTableAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Associates a subnet with a route table. The subnet and route table must be in the same VPC. This association causes traffic
         /// originating from the subnet to be routed according to the routes in the route table. The action returns an association ID, which you need if
         /// you want to disassociate the route table from the subnet later. A route table can be associated with multiple subnets. </para> <para> For
-        /// more information about route tables, go to Route Tables in the Amazon Virtual Private Cloud User Guide. </para>
+        /// more information about route tables, go to <a href="http://docs.amazonwebservices.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route Tables</a> in the Amazon Virtual Private Cloud User Guide. </para>
         /// </summary>
         /// 
         /// <param name="associateRouteTableRequest">Container for the necessary parameters to execute the AssociateRouteTable service method on
@@ -265,6 +331,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal AttachInternetGatewayResponse AttachInternetGateway(AttachInternetGatewayRequest request)
+        {
+            var task = AttachInternetGatewayAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Attaches an Internet gateway to a VPC, enabling connectivity between the Internet and the VPC. For more information about your VPC
         /// and Internet gateway, go to the Amazon Virtual Private Cloud User Guide. </para>
@@ -284,6 +363,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal AttachNetworkInterfaceResponse AttachNetworkInterface(AttachNetworkInterfaceRequest request)
+        {
+            var task = AttachNetworkInterfaceAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// </summary>
         /// 
@@ -303,6 +395,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal AttachVolumeResponse AttachVolume(AttachVolumeRequest request)
+        {
+            var task = AttachVolumeAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Attach a previously created volume to a running instance. </para>
         /// </summary>
@@ -322,6 +427,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal AttachVpnGatewayResponse AttachVpnGateway(AttachVpnGatewayRequest request)
+        {
+            var task = AttachVpnGatewayAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Attaches a VPN gateway to a VPC. This is the last step required to get your VPC fully connected to your data center before launching
         /// instances in it. For more information, go to Process for Using Amazon VPC in the Amazon Virtual Private Cloud Developer Guide. </para>
@@ -343,6 +461,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal AuthorizeSecurityGroupEgressResponse AuthorizeSecurityGroupEgress(AuthorizeSecurityGroupEgressRequest request)
+        {
+            var task = AuthorizeSecurityGroupEgressAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> This action applies only to security groups in a VPC; it's not supported for EC2 security groups. For information about Amazon
         /// Virtual Private Cloud and VPC security groups, go to the Amazon Virtual Private Cloud User Guide. </para> <para> The action adds one or more
@@ -369,6 +500,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal AuthorizeSecurityGroupIngressResponse AuthorizeSecurityGroupIngress(AuthorizeSecurityGroupIngressRequest request)
+        {
+            var task = AuthorizeSecurityGroupIngressAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> The AuthorizeSecurityGroupIngress operation adds permissions to a security group. </para> <para> Permissions are specified by the IP
         /// protocol (TCP, UDP or ICMP), the source of the request (by IP range or an Amazon EC2 user-group pair), the source and destination port
@@ -391,6 +535,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal BundleInstanceResponse BundleInstance(BundleInstanceRequest request)
+        {
+            var task = BundleInstanceAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> The BundleInstance operation request that an instance is bundled the next time it boots. The bundling process creates a new image
         /// from a running instance and stores the AMI data in S3. Once bundled, the image must be registered in the normal way using the RegisterImage
@@ -413,6 +570,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal CancelBundleTaskResponse CancelBundleTask(CancelBundleTaskRequest request)
+        {
+            var task = CancelBundleTaskAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> CancelBundleTask operation cancels a pending or in-progress bundling task. This is an asynchronous call and it make take a while for
         /// the task to be canceled. If a task is canceled while it is storing items, there may be parts of the incomplete AMI stored in S3. It is up to
@@ -435,6 +605,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal CancelConversionTaskResponse CancelConversionTask(CancelConversionTaskRequest request)
+        {
+            var task = CancelConversionTaskAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// </summary>
         /// 
@@ -452,6 +635,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal CancelExportTaskResponse CancelExportTask(CancelExportTaskRequest request)
+        {
+            var task = CancelExportTaskAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// </summary>
         /// 
@@ -469,6 +665,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal CancelReservedInstancesListingResponse CancelReservedInstancesListing(CancelReservedInstancesListingRequest request)
+        {
+            var task = CancelReservedInstancesListingAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// </summary>
         /// 
@@ -488,6 +697,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal CancelSpotInstanceRequestsResponse CancelSpotInstanceRequests(CancelSpotInstanceRequestsRequest request)
+        {
+            var task = CancelSpotInstanceRequestsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Cancels one or more Spot Instance requests. </para> <para> Spot Instances are instances that Amazon EC2 starts on your behalf when
         /// the maximum price that you specify exceeds the current Spot Price. Amazon EC2 periodically sets the Spot Price based on available Spot
@@ -512,6 +734,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal ConfirmProductInstanceResponse ConfirmProductInstance(ConfirmProductInstanceRequest request)
+        {
+            var task = ConfirmProductInstanceAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> The ConfirmProductInstance operation returns true if the specified product code is attached to the specified instance. The operation
         /// returns false if the product code is not attached to the instance. </para> <para> The ConfirmProductInstance operation can only be executed
@@ -535,6 +770,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal CopyImageResponse CopyImage(CopyImageRequest request)
+        {
+            var task = CopyImageAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// </summary>
         /// 
@@ -553,6 +801,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal CopySnapshotResponse CopySnapshot(CopySnapshotRequest request)
+        {
+            var task = CopySnapshotAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// </summary>
         /// 
@@ -571,6 +832,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal CreateCustomerGatewayResponse CreateCustomerGateway(CreateCustomerGatewayRequest request)
+        {
+            var task = CreateCustomerGatewayAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Provides information to AWS about your customer gateway device. The customer gateway is the appliance at your end of the VPN
         /// connection (compared to the VPN gateway, which is the device at the AWS side of the VPN connection). You can have a single active customer
@@ -578,8 +852,8 @@ namespace Amazon.EC2
         /// gateway that you create with this operation if you leave it inactive for an extended period of time. </para> <para> You must provide the
         /// Internet-routable IP address of the customer gateway's external interface. The IP address must be static. </para> <para> You must also
         /// provide the device's Border Gateway Protocol (BGP) Autonomous System Number (ASN). You can use an existing ASN assigned to your network. If
-        /// you don't have an ASN already, you can use a private ASN (in the 64512 - 65534 range). For more information about ASNs, go to
-        /// http://en.wikipedia.org/wiki/Autonomous_system_%28Internet%29. </para>
+        /// you don't have an ASN already, you can use a private ASN (in the 64512 - 65534 range). For more information about ASNs, go to <a href="http://en.wikipedia.org/wiki/Autonomous_system_%28Internet%29"> http://en.wikipedia.org/wiki/Autonomous_system_%28Internet%29</a> .
+        /// </para>
         /// </summary>
         /// 
         /// <param name="createCustomerGatewayRequest">Container for the necessary parameters to execute the CreateCustomerGateway service method on
@@ -598,10 +872,23 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal CreateDhcpOptionsResponse CreateDhcpOptions(CreateDhcpOptionsRequest request)
+        {
+            var task = CreateDhcpOptionsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Creates a set of DHCP options that you can then associate with one or more VPCs, causing all existing and new instances that you
         /// launch in those VPCs to use the set of DHCP options. The following table lists the individual DHCP options you can specify. For more
-        /// information about the options, go to http://www.ietf.org/rfc/rfc2132.txt </para>
+        /// information about the options, go to <a href="http://www.ietf.org/rfc/rfc2132.txt">http://www.ietf.org/rfc/rfc2132.txt</a> </para>
         /// </summary>
         /// 
         /// <param name="createDhcpOptionsRequest">Container for the necessary parameters to execute the CreateDhcpOptions service method on
@@ -620,6 +907,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal CreateImageResponse CreateImage(CreateImageRequest request)
+        {
+            var task = CreateImageAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Creates an Amazon EBS-backed AMI from a "running" or "stopped" instance. AMIs that use an Amazon EBS root device boot faster than
         /// AMIs that use instance stores. They can be up to 1 TiB in size, use storage that persists on instance failure, and can be stopped and
@@ -641,6 +941,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal CreateInstanceExportTaskResponse CreateInstanceExportTask(CreateInstanceExportTaskRequest request)
+        {
+            var task = CreateInstanceExportTaskAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// </summary>
         /// 
@@ -660,6 +973,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal CreateInternetGatewayResponse CreateInternetGateway(CreateInternetGatewayRequest request)
+        {
+            var task = CreateInternetGatewayAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Creates a new Internet gateway in your AWS account. After creating the Internet gateway, you then attach it to a VPC using
         /// <c>AttachInternetGateway</c> . For more information about your VPC and Internet gateway, go to Amazon Virtual Private Cloud User Guide.
@@ -682,6 +1008,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal CreateKeyPairResponse CreateKeyPair(CreateKeyPairRequest request)
+        {
+            var task = CreateKeyPairAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> The CreateKeyPair operation creates a new 2048 bit RSA key pair and returns a unique ID that can be used to reference this key pair
         /// when launching new instances. For more information, see RunInstances. </para>
@@ -702,6 +1041,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal CreateNetworkAclResponse CreateNetworkAcl(CreateNetworkAclRequest request)
+        {
+            var task = CreateNetworkAclAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Creates a new network ACL in a VPC. Network ACLs provide an optional layer of security (on top of security groups) for the instances
         /// in your VPC. For more information about network ACLs, go to Network ACLs in the Amazon Virtual Private Cloud User Guide. </para>
@@ -723,6 +1075,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal CreateNetworkAclEntryResponse CreateNetworkAclEntry(CreateNetworkAclEntryRequest request)
+        {
+            var task = CreateNetworkAclEntryAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Creates an entry (i.e., rule) in a network ACL with a rule number you specify. Each network ACL has a set of numbered ingress rules
         /// and a separate set of numbered egress rules. When determining whether a packet should be allowed in or out of a subnet associated with the
@@ -747,6 +1112,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal CreateNetworkInterfaceResponse CreateNetworkInterface(CreateNetworkInterfaceRequest request)
+        {
+            var task = CreateNetworkInterfaceAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// </summary>
         /// 
@@ -766,6 +1144,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal CreatePlacementGroupResponse CreatePlacementGroup(CreatePlacementGroupRequest request)
+        {
+            var task = CreatePlacementGroupAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Creates a PlacementGroup into which multiple Amazon EC2 instances can be launched. Users must give the group a name unique within the
         /// scope of the user account. </para>
@@ -785,6 +1176,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal CreateReservedInstancesListingResponse CreateReservedInstancesListing(CreateReservedInstancesListingRequest request)
+        {
+            var task = CreateReservedInstancesListingAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// </summary>
         /// 
@@ -804,6 +1208,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal CreateRouteResponse CreateRoute(CreateRouteRequest request)
+        {
+            var task = CreateRouteAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Creates a new route in a route table within a VPC. The route's target can be either a gateway attached to the VPC or a NAT instance
         /// in the VPC. </para> <para> When determining how to route traffic, we use the route with the most specific match. For example, let's say the
@@ -814,8 +1231,8 @@ namespace Amazon.EC2
         /// 
         /// </ul>
         /// <para> Both routes apply to the traffic destined for <c>192.0.2.3</c> . However, the second route in the list is more specific, so we use
-        /// that route to determine where to target the traffic. </para> <para> For more information about route tables, go to Route Tables in the
-        /// Amazon Virtual Private Cloud User Guide. </para>
+        /// that route to determine where to target the traffic. </para> <para> For more information about route tables, go to <a href="http://docs.amazonwebservices.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route Tables</a> in the Amazon Virtual Private
+        /// Cloud User Guide. </para>
         /// </summary>
         /// 
         /// <param name="createRouteRequest">Container for the necessary parameters to execute the CreateRoute service method on AmazonEC2.</param>
@@ -831,9 +1248,22 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal CreateRouteTableResponse CreateRouteTable(CreateRouteTableRequest request)
+        {
+            var task = CreateRouteTableAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Creates a new route table within a VPC. After you create a new route table, you can add routes and associate the table with a subnet.
-        /// For more information about route tables, go to Route Tables in the Amazon Virtual Private Cloud User Guide. </para>
+        /// For more information about route tables, go to <a href="http://docs.amazonwebservices.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route Tables</a> in the Amazon Virtual Private Cloud User Guide. </para>
         /// </summary>
         /// 
         /// <param name="createRouteTableRequest">Container for the necessary parameters to execute the CreateRouteTable service method on
@@ -852,6 +1282,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal CreateSecurityGroupResponse CreateSecurityGroup(CreateSecurityGroupRequest request)
+        {
+            var task = CreateSecurityGroupAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> The CreateSecurityGroup operation creates a new security group. </para> <para> Every instance is launched in a security group. If no
         /// security group is specified during launch, the instances are launched in the default security group. Instances within the same security
@@ -876,6 +1319,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal CreateSnapshotResponse CreateSnapshot(CreateSnapshotRequest request)
+        {
+            var task = CreateSnapshotAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Create a snapshot of the volume identified by volume ID. A volume does not have to be detached at the time the snapshot is taken.
         /// </para> <para><b>NOTE:</b> Snapshot creation requires that the system is in a consistent state. For instance, this means that if taking a
@@ -900,6 +1356,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal CreateSpotDatafeedSubscriptionResponse CreateSpotDatafeedSubscription(CreateSpotDatafeedSubscriptionRequest request)
+        {
+            var task = CreateSpotDatafeedSubscriptionAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Creates the data feed for Spot Instances, enabling you to view Spot Instance usage logs. You can create one data feed per account.
         /// </para> <para> For conceptual information about Spot Instances, refer to the Amazon Elastic Compute Cloud Developer Guide or Amazon Elastic
@@ -923,6 +1392,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal CreateSubnetResponse CreateSubnet(CreateSubnetRequest request)
+        {
+            var task = CreateSubnetAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Creates a subnet in an existing VPC. You can create up to 20 subnets in a VPC. If you add more than one subnet to a VPC, they're set
         /// up in a star topology with a logical router in the middle. When you create each subnet, you provide the VPC ID and the CIDR block you want
@@ -948,6 +1430,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal CreateTagsResponse CreateTags(CreateTagsRequest request)
+        {
+            var task = CreateTagsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Adds or overwrites tags for the specified resources. Each resource can have a maximum of 10 tags. Each tag consists of a key-value
         /// pair. Tag keys must be unique per resource. </para>
@@ -966,6 +1461,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal CreateVolumeResponse CreateVolume(CreateVolumeRequest request)
+        {
+            var task = CreateVolumeAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Initializes an empty volume of a given size. </para>
         /// </summary>
@@ -985,6 +1493,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal CreateVpcResponse CreateVpc(CreateVpcRequest request)
+        {
+            var task = CreateVpcAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Creates a VPC with the CIDR block you specify. The smallest VPC you can create uses a <c>/28</c> netmask (16 IP addresses), and the
         /// largest uses a <c>/18</c> netmask (16,384 IP addresses). To help you decide how big to make your VPC, go to the topic about creating VPCs in
@@ -1007,6 +1528,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal CreateVpnConnectionResponse CreateVpnConnection(CreateVpnConnectionRequest request)
+        {
+            var task = CreateVpnConnectionAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Creates a new VPN connection between an existing VPN gateway and customer gateway. The only supported connection type is ipsec.1.
         /// </para> <para> The response includes information that you need to configure your customer gateway, in XML format. We recommend you use the
@@ -1034,6 +1568,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal CreateVpnConnectionRouteResponse CreateVpnConnectionRoute(CreateVpnConnectionRouteRequest request)
+        {
+            var task = CreateVpnConnectionRouteAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// </summary>
         /// 
@@ -1051,6 +1598,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal CreateVpnGatewayResponse CreateVpnGateway(CreateVpnGatewayRequest request)
+        {
+            var task = CreateVpnGatewayAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Creates a new VPN gateway. A VPN gateway is the VPC-side endpoint for your VPN connection. You can create a VPN gateway before
         /// creating the VPC itself. </para>
@@ -1072,6 +1632,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal DeleteCustomerGatewayResponse DeleteCustomerGateway(DeleteCustomerGatewayRequest request)
+        {
+            var task = DeleteCustomerGatewayAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Deletes a customer gateway. You must delete the VPN connection before deleting the customer gateway. </para> <para> You can have a
         /// single active customer gateway per AWS account (active means that you've created a VPN connection with that customer gateway). AWS might
@@ -1092,6 +1665,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal DeleteDhcpOptionsResponse DeleteDhcpOptions(DeleteDhcpOptionsRequest request)
+        {
+            var task = DeleteDhcpOptionsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Deletes a set of DHCP options that you specify. Amazon VPC returns an error if the set of options you specify is currently associated
         /// with a VPC. You can disassociate the set of options by associating either a new set of options or the default options with the VPC. </para>
@@ -1111,6 +1697,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal DeleteInternetGatewayResponse DeleteInternetGateway(DeleteInternetGatewayRequest request)
+        {
+            var task = DeleteInternetGatewayAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Deletes an Internet gateway from your AWS account. The gateway must not be attached to a VPC. For more information about your VPC and
         /// Internet gateway, go to Amazon Virtual Private Cloud User Guide. </para>
@@ -1130,6 +1729,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal DeleteKeyPairResponse DeleteKeyPair(DeleteKeyPairRequest request)
+        {
+            var task = DeleteKeyPairAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> The DeleteKeyPair operation deletes a key pair. </para>
         /// </summary>
@@ -1147,6 +1759,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal DeleteNetworkAclResponse DeleteNetworkAcl(DeleteNetworkAclRequest request)
+        {
+            var task = DeleteNetworkAclAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Deletes a network ACL from a VPC. The ACL must not have any subnets associated with it. You can't delete the default network ACL. For
         /// more information about network ACLs, go to Network ACLs in the Amazon Virtual Private Cloud User Guide. </para>
@@ -1166,6 +1791,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal DeleteNetworkAclEntryResponse DeleteNetworkAclEntry(DeleteNetworkAclEntryRequest request)
+        {
+            var task = DeleteNetworkAclEntryAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Deletes an ingress or egress entry (i.e., rule) from a network ACL. For more information about network ACLs, go to Network ACLs in
         /// the Amazon Virtual Private Cloud User Guide. </para>
@@ -1185,6 +1823,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal DeleteNetworkInterfaceResponse DeleteNetworkInterface(DeleteNetworkInterfaceRequest request)
+        {
+            var task = DeleteNetworkInterfaceAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// </summary>
         /// 
@@ -1202,6 +1853,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal DeletePlacementGroupResponse DeletePlacementGroup(DeletePlacementGroupRequest request)
+        {
+            var task = DeletePlacementGroupAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Deletes a PlacementGroup from a user's account. Terminate all Amazon EC2 instances in the placement group before deletion. </para>
         /// </summary>
@@ -1220,9 +1884,22 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal DeleteRouteResponse DeleteRoute(DeleteRouteRequest request)
+        {
+            var task = DeleteRouteAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
-        /// <para> Deletes a route from a route table in a VPC. For more information about route tables, go to Route Tables in the Amazon Virtual
-        /// Private Cloud User Guide. </para>
+        /// <para> Deletes a route from a route table in a VPC. For more information about route tables, go to <a href="http://docs.amazonwebservices.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route Tables</a> in the Amazon Virtual Private
+        /// Cloud User Guide. </para>
         /// </summary>
         /// 
         /// <param name="deleteRouteRequest">Container for the necessary parameters to execute the DeleteRoute service method on AmazonEC2.</param>
@@ -1238,9 +1915,22 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal DeleteRouteTableResponse DeleteRouteTable(DeleteRouteTableRequest request)
+        {
+            var task = DeleteRouteTableAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Deletes a route table from a VPC. The route table must not be associated with a subnet. You can't delete the main route table. For
-        /// more information about route tables, go to Route Tables in the Amazon Virtual Private Cloud User Guide. </para>
+        /// more information about route tables, go to <a href="http://docs.amazonwebservices.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route Tables</a> in the Amazon Virtual Private Cloud User Guide. </para>
         /// </summary>
         /// 
         /// <param name="deleteRouteTableRequest">Container for the necessary parameters to execute the DeleteRouteTable service method on
@@ -1257,6 +1947,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal DeleteSecurityGroupResponse DeleteSecurityGroup(DeleteSecurityGroupRequest request)
+        {
+            var task = DeleteSecurityGroupAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> The DeleteSecurityGroup operation deletes a security group. </para> <para><b>NOTE:</b> If you attempt to delete a security group that
         /// contains instances, a fault is returned. If you attempt to delete a security group that is referenced by another security group, a fault is
@@ -1278,6 +1981,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal DeleteSnapshotResponse DeleteSnapshot(DeleteSnapshotRequest request)
+        {
+            var task = DeleteSnapshotAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Deletes the snapshot identified by <c>snapshotId</c> .
         /// </para>
@@ -1297,6 +2013,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal DeleteSpotDatafeedSubscriptionResponse DeleteSpotDatafeedSubscription(DeleteSpotDatafeedSubscriptionRequest request)
+        {
+            var task = DeleteSpotDatafeedSubscriptionAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Deletes the data feed for Spot Instances. </para> <para> For conceptual information about Spot Instances, refer to the Amazon Elastic
         /// Compute Cloud Developer Guide or Amazon Elastic Compute Cloud User Guide .
@@ -1317,6 +2046,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal DeleteSubnetResponse DeleteSubnet(DeleteSubnetRequest request)
+        {
+            var task = DeleteSubnetAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Deletes a subnet from a VPC. You must terminate all running instances in the subnet before deleting it, otherwise Amazon VPC returns
         /// an error. </para>
@@ -1335,6 +2077,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal DeleteTagsResponse DeleteTags(DeleteTagsRequest request)
+        {
+            var task = DeleteTagsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Deletes tags from the specified Amazon EC2 resources. </para>
         /// </summary>
@@ -1352,6 +2107,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal DeleteVolumeResponse DeleteVolume(DeleteVolumeRequest request)
+        {
+            var task = DeleteVolumeAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Deletes a previously created volume. Once successfully deleted, a new volume can be created with the same name. </para>
         /// </summary>
@@ -1369,6 +2137,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal DeleteVpcResponse DeleteVpc(DeleteVpcRequest request)
+        {
+            var task = DeleteVpcAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Deletes a VPC. You must detach or delete all gateways or other objects that are dependent on the VPC first. For example, you must
         /// terminate all running instances, delete all VPC security groups (except the default), delete all the route tables (except the default), etc.
@@ -1388,6 +2169,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal DeleteVpnConnectionResponse DeleteVpnConnection(DeleteVpnConnectionRequest request)
+        {
+            var task = DeleteVpnConnectionAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Deletes a VPN connection. Use this if you want to delete a VPC and all its associated components. Another reason to use this
         /// operation is if you believe the tunnel credentials for your VPN connection have been compromised. In that situation, you can delete the VPN
@@ -1411,6 +2205,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal DeleteVpnConnectionRouteResponse DeleteVpnConnectionRoute(DeleteVpnConnectionRouteRequest request)
+        {
+            var task = DeleteVpnConnectionRouteAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// </summary>
         /// 
@@ -1428,6 +2235,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal DeleteVpnGatewayResponse DeleteVpnGateway(DeleteVpnGatewayRequest request)
+        {
+            var task = DeleteVpnGatewayAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Deletes a VPN gateway. Use this when you want to delete a VPC and all its associated components because you no longer need them. We
         /// recommend that before you delete a VPN gateway, you detach it from the VPC and delete the VPN connection. Note that you don't need to delete
@@ -1448,6 +2268,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal DeregisterImageResponse DeregisterImage(DeregisterImageRequest request)
+        {
+            var task = DeregisterImageAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> The DeregisterImage operation deregisters an AMI. Once deregistered, instances of the AMI can no longer be launched. </para>
         /// </summary>
@@ -1466,6 +2299,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal DescribeAccountAttributesResponse DescribeAccountAttributes(DescribeAccountAttributesRequest request)
+        {
+            var task = DescribeAccountAttributesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// </summary>
         /// 
@@ -1485,6 +2331,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal DescribeAddressesResponse DescribeAddresses(DescribeAddressesRequest request)
+        {
+            var task = DescribeAddressesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> The DescribeAddresses operation lists elastic IP addresses assigned to your account. </para>
         /// </summary>
@@ -1505,6 +2364,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal DescribeAvailabilityZonesResponse DescribeAvailabilityZones(DescribeAvailabilityZonesRequest request)
+        {
+            var task = DescribeAvailabilityZonesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> The DescribeAvailabilityZones operation describes availability zones that are currently available to the account and their states.
         /// </para> <para> Availability zones are not the same across accounts. The availability zone <c>us-east-1a</c> for account A is not necessarily
@@ -1527,6 +2399,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal DescribeBundleTasksResponse DescribeBundleTasks(DescribeBundleTasksRequest request)
+        {
+            var task = DescribeBundleTasksAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> The DescribeBundleTasks operation describes in-progress and recent bundle tasks. Complete and failed tasks are removed from the list
         /// a short time after completion. If no bundle ids are given, all bundle tasks are returned. </para>
@@ -1548,6 +2433,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal DescribeConversionTasksResponse DescribeConversionTasks(DescribeConversionTasksRequest request)
+        {
+            var task = DescribeConversionTasksAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// </summary>
         /// 
@@ -1567,6 +2465,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal DescribeCustomerGatewaysResponse DescribeCustomerGateways(DescribeCustomerGatewaysRequest request)
+        {
+            var task = DescribeCustomerGatewaysAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Gives you information about your customer gateways. You can filter the results to return information only about customer gateways
         /// that match criteria you specify. For example, you could ask to get information about a particular customer gateway (or all) only if the
@@ -1592,6 +2503,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal DescribeDhcpOptionsResponse DescribeDhcpOptions(DescribeDhcpOptionsRequest request)
+        {
+            var task = DescribeDhcpOptionsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Gives you information about one or more sets of DHCP options. You can specify one or more DHCP options set IDs, or no IDs (to
         /// describe all your sets of DHCP options). The returned information consists of: </para>
@@ -1618,6 +2542,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal DescribeExportTasksResponse DescribeExportTasks(DescribeExportTasksRequest request)
+        {
+            var task = DescribeExportTasksAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// </summary>
         /// 
@@ -1637,6 +2574,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal DescribeImageAttributeResponse DescribeImageAttribute(DescribeImageAttributeRequest request)
+        {
+            var task = DescribeImageAttributeAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> The DescribeImageAttribute operation returns information about an attribute of an AMI. Only one attribute can be specified per call.
         /// </para>
@@ -1658,6 +2608,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal DescribeImagesResponse DescribeImages(DescribeImagesRequest request)
+        {
+            var task = DescribeImagesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> The DescribeImages operation returns information about AMIs, AKIs, and ARIs available to the user. Information returned includes
         /// image type, product codes, architecture, and kernel and RAM disk IDs. Images available to the user include public images available for any
@@ -1697,6 +2660,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal DescribeInstanceAttributeResponse DescribeInstanceAttribute(DescribeInstanceAttributeRequest request)
+        {
+            var task = DescribeInstanceAttributeAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Returns information about an attribute of an instance. Only one attribute can be specified per call. </para>
         /// </summary>
@@ -1717,6 +2693,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal DescribeInstancesResponse DescribeInstances(DescribeInstancesRequest request)
+        {
+            var task = DescribeInstancesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> The DescribeInstances operation returns information about instances that you own. </para> <para> If you specify one or more instance
         /// IDs, Amazon EC2 returns information for those instances. If you do not specify instance IDs, Amazon EC2 returns information for all relevant
@@ -1741,6 +2730,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal DescribeInstanceStatusResponse DescribeInstanceStatus(DescribeInstanceStatusRequest request)
+        {
+            var task = DescribeInstanceStatusAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Describes the status of an Amazon Elastic Compute Cloud (Amazon EC2) instance. Instance status provides information about two types
         /// of scheduled events for an instance that may require your attention: </para>
@@ -1790,6 +2792,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal DescribeInternetGatewaysResponse DescribeInternetGateways(DescribeInternetGatewaysRequest request)
+        {
+            var task = DescribeInternetGatewaysAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Gives you information about your Internet gateways. You can filter the results to return information only about Internet gateways
         /// that match criteria you specify. For example, you could get information only about gateways with particular tags. The Internet gateway must
@@ -1818,6 +2833,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal DescribeKeyPairsResponse DescribeKeyPairs(DescribeKeyPairsRequest request)
+        {
+            var task = DescribeKeyPairsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> The DescribeKeyPairs operation returns information about key pairs available to you. If you specify key pairs, information about
         /// those key pairs is returned. Otherwise, information for all registered key pairs is returned. </para>
@@ -1839,6 +2867,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal DescribeNetworkAclsResponse DescribeNetworkAcls(DescribeNetworkAclsRequest request)
+        {
+            var task = DescribeNetworkAclsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Gives you information about the network ACLs in your VPC. You can filter the results to return information only about ACLs that match
         /// criteria you specify. For example, you could get information only the ACL associated with a particular subnet. The ACL must match at least
@@ -1867,6 +2908,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal DescribeNetworkInterfaceAttributeResponse DescribeNetworkInterfaceAttribute(DescribeNetworkInterfaceAttributeRequest request)
+        {
+            var task = DescribeNetworkInterfaceAttributeAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// </summary>
         /// 
@@ -1886,6 +2940,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal DescribeNetworkInterfacesResponse DescribeNetworkInterfaces(DescribeNetworkInterfacesRequest request)
+        {
+            var task = DescribeNetworkInterfacesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// </summary>
         /// 
@@ -1905,6 +2972,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal DescribePlacementGroupsResponse DescribePlacementGroups(DescribePlacementGroupsRequest request)
+        {
+            var task = DescribePlacementGroupsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Returns information about one or more PlacementGroup instances in a user's account. </para>
         /// </summary>
@@ -1925,6 +3005,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal DescribeRegionsResponse DescribeRegions(DescribeRegionsRequest request)
+        {
+            var task = DescribeRegionsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> The DescribeRegions operation describes regions zones that are currently available to the account. </para>
         /// </summary>
@@ -1945,6 +3038,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal DescribeReservedInstancesResponse DescribeReservedInstances(DescribeReservedInstancesRequest request)
+        {
+            var task = DescribeReservedInstancesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> The DescribeReservedInstances operation describes Reserved Instances that were purchased for use with your account. </para>
         /// </summary>
@@ -1965,6 +3071,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal DescribeReservedInstancesListingsResponse DescribeReservedInstancesListings(DescribeReservedInstancesListingsRequest request)
+        {
+            var task = DescribeReservedInstancesListingsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// </summary>
         /// 
@@ -1984,6 +3103,52 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal DescribeReservedInstancesModificationsResponse DescribeReservedInstancesModifications(DescribeReservedInstancesModificationsRequest request)
+        {
+            var task = DescribeReservedInstancesModificationsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
+        /// <summary>
+        /// <para> The DescribeReservedInstancesModifications operation describes modifications made to Reserved Instances in your account. </para>
+        /// </summary>
+        /// 
+        /// <param name="describeReservedInstancesModificationsRequest">Container for the necessary parameters to execute the
+        /// DescribeReservedInstancesModifications service method on AmazonEC2.</param>
+        /// 
+        /// <returns>The response from the DescribeReservedInstancesModifications service method, as returned by AmazonEC2.</returns>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+		public async Task<DescribeReservedInstancesModificationsResponse> DescribeReservedInstancesModificationsAsync(DescribeReservedInstancesModificationsRequest describeReservedInstancesModificationsRequest, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeReservedInstancesModificationsRequestMarshaller();
+            var unmarshaller = DescribeReservedInstancesModificationsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeReservedInstancesModificationsRequest, DescribeReservedInstancesModificationsResponse>(describeReservedInstancesModificationsRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
+ 
+		internal DescribeReservedInstancesOfferingsResponse DescribeReservedInstancesOfferings(DescribeReservedInstancesOfferingsRequest request)
+        {
+            var task = DescribeReservedInstancesOfferingsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> The DescribeReservedInstancesOfferings operation describes Reserved Instance offerings that are available for purchase. With Amazon
         /// EC2 Reserved Instances, you purchase the right to launch Amazon EC2 instances for a period of time (without getting insufficient capacity
@@ -2006,6 +3171,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal DescribeRouteTablesResponse DescribeRouteTables(DescribeRouteTablesRequest request)
+        {
+            var task = DescribeRouteTablesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Gives you information about your route tables. You can filter the results to return information only about tables that match criteria
         /// you specify. For example, you could get information only about a table associated with a particular subnet. You can specify multiple values
@@ -2034,6 +3212,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal DescribeSecurityGroupsResponse DescribeSecurityGroups(DescribeSecurityGroupsRequest request)
+        {
+            var task = DescribeSecurityGroupsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> The DescribeSecurityGroups operation returns information about security groups that you own. </para> <para> If you specify security
         /// group names, information about those security group is returned. Otherwise, information for all security group is returned. If you specify a
@@ -2056,6 +3247,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal DescribeSnapshotAttributeResponse DescribeSnapshotAttribute(DescribeSnapshotAttributeRequest request)
+        {
+            var task = DescribeSnapshotAttributeAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Returns information about an attribute of a snapshot. Only one attribute can be specified per call. </para>
         /// </summary>
@@ -2076,6 +3280,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal DescribeSnapshotsResponse DescribeSnapshots(DescribeSnapshotsRequest request)
+        {
+            var task = DescribeSnapshotsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Returns information about the Amazon EBS snapshots available to you. Snapshots available to you include public snapshots available
         /// for any AWS account to launch, private snapshots you own, and private snapshots owned by another AWS account but for which you've been given
@@ -2098,6 +3315,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal DescribeSpotDatafeedSubscriptionResponse DescribeSpotDatafeedSubscription(DescribeSpotDatafeedSubscriptionRequest request)
+        {
+            var task = DescribeSpotDatafeedSubscriptionAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Describes the data feed for Spot Instances. </para> <para> For conceptual information about Spot Instances, refer to the Amazon
         /// Elastic Compute Cloud Developer Guide or Amazon Elastic Compute Cloud User Guide .
@@ -2120,19 +3350,32 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal DescribeSpotInstanceRequestsResponse DescribeSpotInstanceRequests(DescribeSpotInstanceRequestsRequest request)
+        {
+            var task = DescribeSpotInstanceRequestsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Describes Spot Instance requests. Spot Instances are instances that Amazon EC2 starts on your behalf when the maximum price that you
         /// specify exceeds the current Spot Price. Amazon EC2 periodically sets the Spot Price based on available Spot Instance capacity and current
-        /// spot instance requests. For conceptual information about Spot Instances, refer to the Amazon Elastic Compute Cloud Developer Guide or Amazon
-        /// Elastic Compute Cloud User Guide. </para> <para> You can filter the results to return information only about Spot Instance requests that
-        /// match criteria you specify. For example, you could get information about requests where the Spot Price you specified is a certain value (you
-        /// can't use greater than or less than comparison, but you can use <c>*</c> and <c>?</c> wildcards). You can specify multiple values for a
-        /// filter. A Spot Instance request must match at least one of the specified values for it to be included in the results. </para> <para> You can
-        /// specify multiple filters (e.g., the Spot Price is equal to a particular value, and the instance type is <c>m1.small</c> ). The result
-        /// includes information for a particular request only if it matches all your filters. If there's no match, no special message is returned; the
-        /// response is simply empty. </para> <para> You can use wildcards with the filter values: an asterisk matches zero or more characters, and
-        /// <c>?</c> matches exactly one character. You can escape special characters using a backslash before the character. For example, a value of
-        /// <c>\*amazon\?\\</c> searches for the literal string <c>*amazon?\</c> .
+        /// spot instance requests. For conceptual information about Spot Instances, refer to the <a href="http://docs.amazonwebservices.com/AWSEC2/2010-08-31/DeveloperGuide/"> Amazon Elastic Compute Cloud Developer Guide</a> or <a href="http://docs.amazonwebservices.com/AWSEC2/2010-08-31/UserGuide/"> Amazon Elastic Compute Cloud User Guide</a> .
+        /// </para> <para> You can filter the results to return information only about Spot Instance requests that match criteria you specify. For
+        /// example, you could get information about requests where the Spot Price you specified is a certain value (you can't use greater than or less
+        /// than comparison, but you can use <c>*</c> and <c>?</c> wildcards). You can specify multiple values for a filter. A Spot Instance request
+        /// must match at least one of the specified values for it to be included in the results. </para> <para> You can specify multiple filters (e.g.,
+        /// the Spot Price is equal to a particular value, and the instance type is <c>m1.small</c> ). The result includes information for a particular
+        /// request only if it matches all your filters. If there's no match, no special message is returned; the response is simply empty. </para>
+        /// <para> You can use wildcards with the filter values: an asterisk matches zero or more characters, and <c>?</c> matches exactly one
+        /// character. You can escape special characters using a backslash before the character. For example, a value of <c>\*amazon\?\\</c> searches
+        /// for the literal string <c>*amazon?\</c> .
         /// </para>
         /// </summary>
         /// 
@@ -2152,6 +3395,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal DescribeSpotPriceHistoryResponse DescribeSpotPriceHistory(DescribeSpotPriceHistoryRequest request)
+        {
+            var task = DescribeSpotPriceHistoryAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Describes the Spot Price history. </para> <para> Spot Instances are instances that Amazon EC2 starts on your behalf when the maximum
         /// price that you specify exceeds the current Spot Price. Amazon EC2 periodically sets the Spot Price based on available Spot Instance capacity
@@ -2176,6 +3432,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal DescribeSubnetsResponse DescribeSubnets(DescribeSubnetsRequest request)
+        {
+            var task = DescribeSubnetsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Gives you information about your subnets. You can filter the results to return information only about subnets that match criteria you
         /// specify. </para> <para> For example, you could ask to get information about a particular subnet (or all) only if the subnet's state is
@@ -2200,6 +3469,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal DescribeTagsResponse DescribeTags(DescribeTagsRequest request)
+        {
+            var task = DescribeTagsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Describes the tags for the specified resources. </para>
         /// </summary>
@@ -2219,6 +3501,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal DescribeVolumeAttributeResponse DescribeVolumeAttribute(DescribeVolumeAttributeRequest request)
+        {
+            var task = DescribeVolumeAttributeAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// </summary>
         /// 
@@ -2238,6 +3533,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal DescribeVolumesResponse DescribeVolumes(DescribeVolumesRequest request)
+        {
+            var task = DescribeVolumesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Describes the status of the indicated volume or, in lieu of any specified, all volumes belonging to the caller. Volumes that have
         /// been deleted are not described. </para>
@@ -2259,6 +3567,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal DescribeVolumeStatusResponse DescribeVolumeStatus(DescribeVolumeStatusRequest request)
+        {
+            var task = DescribeVolumeStatusAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Describes the status of a volume. </para>
         /// </summary>
@@ -2279,6 +3600,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal DescribeVpcAttributeResponse DescribeVpcAttribute(DescribeVpcAttributeRequest request)
+        {
+            var task = DescribeVpcAttributeAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// </summary>
         /// 
@@ -2298,6 +3632,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal DescribeVpcsResponse DescribeVpcs(DescribeVpcsRequest request)
+        {
+            var task = DescribeVpcsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Gives you information about your VPCs. You can filter the results to return information only about VPCs that match criteria you
         /// specify. </para> <para> For example, you could ask to get information about a particular VPC or VPCs (or all your VPCs) only if the VPC's
@@ -2321,6 +3668,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal DescribeVpnConnectionsResponse DescribeVpnConnections(DescribeVpnConnectionsRequest request)
+        {
+            var task = DescribeVpnConnectionsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Gives you information about your VPN connections. </para> <para><b>IMPORTANT:</b> We strongly recommend you use HTTPS when calling
         /// this operation because the response contains sensitive cryptographic information for configuring your customer gateway. You can filter the
@@ -2347,6 +3707,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal DescribeVpnGatewaysResponse DescribeVpnGateways(DescribeVpnGatewaysRequest request)
+        {
+            var task = DescribeVpnGatewaysAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Gives you information about your VPN gateways. You can filter the results to return information only about VPN gateways that match
         /// criteria you specify. </para> <para> For example, you could ask to get information about a particular VPN gateway (or all) only if the
@@ -2372,6 +3745,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal DetachInternetGatewayResponse DetachInternetGateway(DetachInternetGatewayRequest request)
+        {
+            var task = DetachInternetGatewayAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Detaches an Internet gateway from a VPC, disabling connectivity between the Internet and the VPC. The VPC must not contain any
         /// running instances with elastic IP addresses. For more information about your VPC and Internet gateway, go to Amazon Virtual Private Cloud
@@ -2393,6 +3779,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal DetachNetworkInterfaceResponse DetachNetworkInterface(DetachNetworkInterfaceRequest request)
+        {
+            var task = DetachNetworkInterfaceAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// </summary>
         /// 
@@ -2410,6 +3809,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal DetachVolumeResponse DetachVolume(DetachVolumeRequest request)
+        {
+            var task = DetachVolumeAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Detach a previously attached volume from a running instance. </para>
         /// </summary>
@@ -2429,6 +3841,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal DetachVpnGatewayResponse DetachVpnGateway(DetachVpnGatewayRequest request)
+        {
+            var task = DetachVpnGatewayAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Detaches a VPN gateway from a VPC. You do this if you're planning to turn off the VPC and not use it anymore. You can confirm a VPN
         /// gateway has been completely detached from a VPC by describing the VPN gateway (any attachments to the VPN gateway are also described).
@@ -2450,6 +3875,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal DisableVgwRoutePropagationResponse DisableVgwRoutePropagation(DisableVgwRoutePropagationRequest request)
+        {
+            var task = DisableVgwRoutePropagationAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// </summary>
         /// 
@@ -2467,6 +3905,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal DisassociateAddressResponse DisassociateAddress(DisassociateAddressRequest request)
+        {
+            var task = DisassociateAddressAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> The DisassociateAddress operation disassociates the specified elastic IP address from the instance to which it is assigned. This is
         /// an idempotent operation. If you enter it more than once, Amazon EC2 does not return an error. </para>
@@ -2486,10 +3937,23 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal DisassociateRouteTableResponse DisassociateRouteTable(DisassociateRouteTableRequest request)
+        {
+            var task = DisassociateRouteTableAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Disassociates a subnet from a route table. </para> <para> After you perform this action, the subnet no longer uses the routes in the
-        /// route table. Instead it uses the routes in the VPC's main route table. For more information about route tables, go to Route Tables in the
-        /// Amazon Virtual Private Cloud User Guide. </para>
+        /// route table. Instead it uses the routes in the VPC's main route table. For more information about route tables, go to <a href="http://docs.amazonwebservices.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route Tables</a> in the Amazon Virtual Private
+        /// Cloud User Guide. </para>
         /// </summary>
         /// 
         /// <param name="disassociateRouteTableRequest">Container for the necessary parameters to execute the DisassociateRouteTable service method on
@@ -2506,6 +3970,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal EnableVgwRoutePropagationResponse EnableVgwRoutePropagation(EnableVgwRoutePropagationRequest request)
+        {
+            var task = EnableVgwRoutePropagationAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// </summary>
         /// 
@@ -2523,6 +4000,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal EnableVolumeIOResponse EnableVolumeIO(EnableVolumeIORequest request)
+        {
+            var task = EnableVolumeIOAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Enable IO on the volume after an event has occured. </para>
         /// </summary>
@@ -2541,6 +4031,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal GetConsoleOutputResponse GetConsoleOutput(GetConsoleOutputRequest request)
+        {
+            var task = GetConsoleOutputAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> The GetConsoleOutput operation retrieves console output for the specified instance. </para> <para> Instance console output is
         /// buffered and posted shortly after instance boot, reboot, and termination. Amazon EC2 preserves the most recent 64 KB output which will be
@@ -2563,6 +4066,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal GetPasswordDataResponse GetPasswordData(GetPasswordDataRequest request)
+        {
+            var task = GetPasswordDataAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Retrieves the encrypted administrator password for the instances running Windows. </para> <para><b>NOTE:</b> The Windows password is
         /// only generated the first time an AMI is launched. It is not generated for rebundled AMIs or after the password is changed on an instance.
@@ -2585,6 +4101,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal ImportInstanceResponse ImportInstance(ImportInstanceRequest request)
+        {
+            var task = ImportInstanceAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// </summary>
         /// 
@@ -2604,6 +4133,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal ImportKeyPairResponse ImportKeyPair(ImportKeyPairRequest request)
+        {
+            var task = ImportKeyPairAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Imports the public key from an RSA key pair created with a third-party tool. This operation differs from CreateKeyPair as the private
         /// key is never transferred between the caller and AWS servers. </para> <para> RSA key pairs are easily created on Microsoft Windows and Linux
@@ -2613,7 +4155,7 @@ namespace Amazon.EC2
         /// <ul>
         /// <li> OpenSSH public key format, </li>
         /// <li> Base64 encoded DER format. </li>
-        /// <li> SSH public key file format as specified in RFC4716 .
+        /// <li> SSH public key file format as specified in <a href="http://tools.ietf.org/html/rfc4716"> RFC4716 </a> .
         /// </li>
         /// 
         /// </ul>
@@ -2634,6 +4176,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal ImportVolumeResponse ImportVolume(ImportVolumeRequest request)
+        {
+            var task = ImportVolumeAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// </summary>
         /// 
@@ -2652,6 +4207,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal ModifyImageAttributeResponse ModifyImageAttribute(ModifyImageAttributeRequest request)
+        {
+            var task = ModifyImageAttributeAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> The ModifyImageAttribute operation modifies an attribute of an AMI. </para>
         /// </summary>
@@ -2670,6 +4238,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal ModifyInstanceAttributeResponse ModifyInstanceAttribute(ModifyInstanceAttributeRequest request)
+        {
+            var task = ModifyInstanceAttributeAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Modifies an attribute of an instance. </para>
         /// </summary>
@@ -2688,6 +4269,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal ModifyNetworkInterfaceAttributeResponse ModifyNetworkInterfaceAttribute(ModifyNetworkInterfaceAttributeRequest request)
+        {
+            var task = ModifyNetworkInterfaceAttributeAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// </summary>
         /// 
@@ -2705,6 +4299,53 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal ModifyReservedInstancesResponse ModifyReservedInstances(ModifyReservedInstancesRequest request)
+        {
+            var task = ModifyReservedInstancesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
+        /// <summary>
+        /// <para> The ModifyReservedInstances operation modifies the Availability Zone, instance count, instance type, or network platform (EC2-Classic
+        /// or EC2-VPC) of your Reserved Instances. </para>
+        /// </summary>
+        /// 
+        /// <param name="modifyReservedInstancesRequest">Container for the necessary parameters to execute the ModifyReservedInstances service method on
+        /// AmazonEC2.</param>
+        /// 
+        /// <returns>The response from the ModifyReservedInstances service method, as returned by AmazonEC2.</returns>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+		public async Task<ModifyReservedInstancesResponse> ModifyReservedInstancesAsync(ModifyReservedInstancesRequest modifyReservedInstancesRequest, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ModifyReservedInstancesRequestMarshaller();
+            var unmarshaller = ModifyReservedInstancesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ModifyReservedInstancesRequest, ModifyReservedInstancesResponse>(modifyReservedInstancesRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
+ 
+		internal ModifySnapshotAttributeResponse ModifySnapshotAttribute(ModifySnapshotAttributeRequest request)
+        {
+            var task = ModifySnapshotAttributeAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Adds or remove permission settings for the specified snapshot. </para>
         /// </summary>
@@ -2723,6 +4364,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal ModifyVolumeAttributeResponse ModifyVolumeAttribute(ModifyVolumeAttributeRequest request)
+        {
+            var task = ModifyVolumeAttributeAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// </summary>
         /// 
@@ -2740,6 +4394,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal ModifyVpcAttributeResponse ModifyVpcAttribute(ModifyVpcAttributeRequest request)
+        {
+            var task = ModifyVpcAttributeAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// </summary>
         /// 
@@ -2757,6 +4424,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal MonitorInstancesResponse MonitorInstances(MonitorInstancesRequest request)
+        {
+            var task = MonitorInstancesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Enables monitoring for a running instance. </para>
         /// </summary>
@@ -2777,6 +4457,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal PurchaseReservedInstancesOfferingResponse PurchaseReservedInstancesOffering(PurchaseReservedInstancesOfferingRequest request)
+        {
+            var task = PurchaseReservedInstancesOfferingAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> The PurchaseReservedInstancesOffering operation purchases a Reserved Instance for use with your account. With Amazon EC2 Reserved
         /// Instances, you purchase the right to launch Amazon EC2 instances for a period of time (without getting insufficient capacity errors) and pay
@@ -2799,6 +4492,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal RebootInstancesResponse RebootInstances(RebootInstancesRequest request)
+        {
+            var task = RebootInstancesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> The RebootInstances operation requests a reboot of one or more instances. This operation is asynchronous; it only queues a request to
         /// reboot the specified instance(s). The operation will succeed if the instances are valid and belong to the user. Requests to reboot
@@ -2819,6 +4525,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal RegisterImageResponse RegisterImage(RegisterImageRequest request)
+        {
+            var task = RegisterImageAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> The RegisterImage operation registers an AMI with Amazon EC2. Images must be registered before they can be launched. For more
         /// information, see RunInstances. </para> <para> Each AMI is associated with an unique ID which is provided by the Amazon EC2 service through
@@ -2843,6 +4562,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal ReleaseAddressResponse ReleaseAddress(ReleaseAddressRequest request)
+        {
+            var task = ReleaseAddressAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> The ReleaseAddress operation releases an elastic IP address associated with your account. </para> <para><b>NOTE:</b> Releasing an IP
         /// address automatically disassociates it from any instance with which it is associated. For more information, see DisassociateAddress. </para>
@@ -2866,6 +4598,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal ReplaceNetworkAclAssociationResponse ReplaceNetworkAclAssociation(ReplaceNetworkAclAssociationRequest request)
+        {
+            var task = ReplaceNetworkAclAssociationAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Changes which network ACL a subnet is associated with. By default when you create a subnet, it's automatically associated with the
         /// default network ACL. For more information about network ACLs, go to Network ACLs in the Amazon Virtual Private Cloud User Guide. </para>
@@ -2887,6 +4632,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal ReplaceNetworkAclEntryResponse ReplaceNetworkAclEntry(ReplaceNetworkAclEntryRequest request)
+        {
+            var task = ReplaceNetworkAclEntryAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Replaces an entry (i.e., rule) in a network ACL. For more information about network ACLs, go to Network ACLs in the Amazon Virtual
         /// Private Cloud User Guide. </para>
@@ -2906,9 +4664,22 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal ReplaceRouteResponse ReplaceRoute(ReplaceRouteRequest request)
+        {
+            var task = ReplaceRouteAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
-        /// <para> Replaces an existing route within a route table in a VPC. For more information about route tables, go to Route Tables in the Amazon
-        /// Virtual Private Cloud User Guide. </para>
+        /// <para> Replaces an existing route within a route table in a VPC. For more information about route tables, go to <a href="http://docs.amazonwebservices.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route Tables</a> in the Amazon Virtual Private
+        /// Cloud User Guide. </para>
         /// </summary>
         /// 
         /// <param name="replaceRouteRequest">Container for the necessary parameters to execute the ReplaceRoute service method on AmazonEC2.</param>
@@ -2924,11 +4695,24 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal ReplaceRouteTableAssociationResponse ReplaceRouteTableAssociation(ReplaceRouteTableAssociationRequest request)
+        {
+            var task = ReplaceRouteTableAssociationAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Changes the route table associated with a given subnet in a VPC. After you execute this action, the subnet uses the routes in the new
-        /// route table it's associated with. For more information about route tables, go to Route Tables in the Amazon Virtual Private Cloud User
-        /// Guide. </para> <para> You can also use this to change which table is the main route table in the VPC. You just specify the main route
-        /// table's association ID and the route table that you want to be the new main route table. </para>
+        /// route table it's associated with. For more information about route tables, go to <a href="http://docs.amazonwebservices.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route Tables</a> in the Amazon Virtual Private
+        /// Cloud User Guide. </para> <para> You can also use this to change which table is the main route table in the VPC. You just specify the main
+        /// route table's association ID and the route table that you want to be the new main route table. </para>
         /// </summary>
         /// 
         /// <param name="replaceRouteTableAssociationRequest">Container for the necessary parameters to execute the ReplaceRouteTableAssociation service
@@ -2947,6 +4731,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal ReportInstanceStatusResponse ReportInstanceStatus(ReportInstanceStatusRequest request)
+        {
+            var task = ReportInstanceStatusAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// </summary>
         /// 
@@ -2964,6 +4761,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal RequestSpotInstancesResponse RequestSpotInstances(RequestSpotInstancesRequest request)
+        {
+            var task = RequestSpotInstancesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Creates a Spot Instance request. </para> <para> Spot Instances are instances that Amazon EC2 starts on your behalf when the maximum
         /// price that you specify exceeds the current Spot Price. Amazon EC2 periodically sets the Spot Price based on available Spot Instance capacity
@@ -2987,6 +4797,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal ResetImageAttributeResponse ResetImageAttribute(ResetImageAttributeRequest request)
+        {
+            var task = ResetImageAttributeAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> The ResetImageAttribute operation resets an attribute of an AMI to its default value. </para> <para><b>NOTE:</b> The productCodes
         /// attribute cannot be reset. </para>
@@ -3006,6 +4829,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal ResetInstanceAttributeResponse ResetInstanceAttribute(ResetInstanceAttributeRequest request)
+        {
+            var task = ResetInstanceAttributeAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Resets an attribute of an instance to its default value. </para>
         /// </summary>
@@ -3024,6 +4860,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal ResetNetworkInterfaceAttributeResponse ResetNetworkInterfaceAttribute(ResetNetworkInterfaceAttributeRequest request)
+        {
+            var task = ResetNetworkInterfaceAttributeAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// </summary>
         /// 
@@ -3041,6 +4890,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal ResetSnapshotAttributeResponse ResetSnapshotAttribute(ResetSnapshotAttributeRequest request)
+        {
+            var task = ResetSnapshotAttributeAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Resets permission settings for the specified snapshot. </para>
         /// </summary>
@@ -3059,6 +4921,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal RevokeSecurityGroupEgressResponse RevokeSecurityGroupEgress(RevokeSecurityGroupEgressRequest request)
+        {
+            var task = RevokeSecurityGroupEgressAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> This action applies only to security groups in a VPC. It doesn't work with EC2 security groups. For information about Amazon Virtual
         /// Private Cloud and VPC security groups, go to the Amazon Virtual Private Cloud User Guide. </para> <para> The action removes one or more
@@ -3083,6 +4958,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal RevokeSecurityGroupIngressResponse RevokeSecurityGroupIngress(RevokeSecurityGroupIngressRequest request)
+        {
+            var task = RevokeSecurityGroupIngressAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> The RevokeSecurityGroupIngress operation revokes permissions from a security group. The permissions used to revoke must be specified
         /// using the same values used to grant the permissions. </para> <para> Permissions are specified by IP protocol (TCP, UDP, or ICMP), the source
@@ -3105,6 +4993,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal RunInstancesResponse RunInstances(RunInstancesRequest request)
+        {
+            var task = RunInstancesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> The RunInstances operation launches a specified number of instances. </para> <para> If Amazon EC2 cannot launch the minimum number
         /// AMIs you request, no instances launch. If there is insufficient capacity to launch the maximum number of AMIs you request, Amazon EC2
@@ -3141,6 +5042,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal StartInstancesResponse StartInstances(StartInstancesRequest request)
+        {
+            var task = StartInstancesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Starts an instance that uses an Amazon EBS volume as its root device. Instances that use Amazon EBS volumes as their root devices can
         /// be quickly stopped and started. When an instance is stopped, the compute resources are released and you are not billed for hourly instance
@@ -3165,6 +5079,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal StopInstancesResponse StopInstances(StopInstancesRequest request)
+        {
+            var task = StopInstancesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Stops an instance that uses an Amazon EBS volume as its root device. Instances that use Amazon EBS volumes as their root devices can
         /// be quickly stopped and started. When an instance is stopped, the compute resources are released and you are not billed for hourly instance
@@ -3189,6 +5116,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal TerminateInstancesResponse TerminateInstances(TerminateInstancesRequest request)
+        {
+            var task = TerminateInstancesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> The TerminateInstances operation shuts down one or more instances. This operation is idempotent; if you terminate an instance more
         /// than once, each call will succeed. </para> <para> Terminated instances will remain visible after termination (approximately one hour).
@@ -3211,6 +5151,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal UnassignPrivateIpAddressesResponse UnassignPrivateIpAddresses(UnassignPrivateIpAddressesRequest request)
+        {
+            var task = UnassignPrivateIpAddressesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// </summary>
         /// 
@@ -3228,6 +5181,19 @@ namespace Amazon.EC2
             return response;
         }
  
+		internal UnmonitorInstancesResponse UnmonitorInstances(UnmonitorInstancesRequest request)
+        {
+            var task = UnmonitorInstancesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
         /// <summary>
         /// <para> Disables monitoring for a running instance. </para>
         /// </summary>

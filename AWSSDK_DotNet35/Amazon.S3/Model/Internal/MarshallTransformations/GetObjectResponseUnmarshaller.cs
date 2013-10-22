@@ -90,7 +90,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             foreach (var name in responseData.GetHeaderNames())
             {
                 if (name.StartsWith("x-amz-meta-"))
-                    response.MetaData[name] = responseData.GetHeaderValue(name);
+                    response.Metadata[name] = responseData.GetHeaderValue(name);
             }
 
             return;
