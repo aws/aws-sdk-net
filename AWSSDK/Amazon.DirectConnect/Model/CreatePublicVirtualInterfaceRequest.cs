@@ -25,8 +25,8 @@ namespace Amazon.DirectConnect.Model
 {
     /// <summary>
     /// Container for the parameters to the CreatePublicVirtualInterface operation.
-    /// <para> Creates a new public virtual interface. A virtual interface is the VLAN that transports Direct Connect traffic. A public virtual
-    /// interface supports sending traffic to public AWS services such as S3. </para>
+    /// <para>Creates a new public virtual interface. A virtual interface is the VLAN that transports AWS Direct Connect traffic. A public virtual
+    /// interface supports sending traffic to public services of AWS such as Amazon Simple Storage Service (Amazon S3).</para>
     /// </summary>
     /// <seealso cref="Amazon.DirectConnect.AmazonDirectConnect.CreatePublicVirtualInterface"/>
     public class CreatePublicVirtualInterfaceRequest : AmazonWebServiceRequest
@@ -60,7 +60,7 @@ namespace Amazon.DirectConnect.Model
         // Check to see if ConnectionId property is set
         internal bool IsSetConnectionId()
         {
-            return this.connectionId != null;       
+            return this.connectionId != null;
         }
 
         /// <summary>
@@ -89,7 +89,7 @@ namespace Amazon.DirectConnect.Model
         // Check to see if NewPublicVirtualInterface property is set
         internal bool IsSetNewPublicVirtualInterface()
         {
-            return this.newPublicVirtualInterface != null;       
+            return this.newPublicVirtualInterface != null;
         }
     }
 }

@@ -59,7 +59,7 @@ namespace Amazon.DirectConnect.Model
         // Check to see if ConnectionId property is set
         internal bool IsSetConnectionId()
         {
-            return this.connectionId != null;       
+            return this.connectionId != null;
         }
     }
 }

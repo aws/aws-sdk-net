@@ -21,9 +21,9 @@ using System.IO;
 namespace Amazon.DirectConnect.Model
 {
     /// <summary>
-    /// <para> A structure containing a list of virtual interfaces. </para>
+    /// <para>A structure containing a list of virtual interfaces.</para>
     /// </summary>
-    public class DescribeVirtualInterfacesResult  
+    public class DescribeVirtualInterfacesResult
     {
         
         private List<VirtualInterface> virtualInterfaces = new List<VirtualInterface>();
@@ -52,7 +52,7 @@ namespace Amazon.DirectConnect.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the VirtualInterfaces collection
         /// </summary>
@@ -72,7 +72,7 @@ namespace Amazon.DirectConnect.Model
         // Check to see if VirtualInterfaces property is set
         internal bool IsSetVirtualInterfaces()
         {
-            return this.virtualInterfaces.Count > 0;       
+            return this.virtualInterfaces.Count > 0;
         }
     }
 }

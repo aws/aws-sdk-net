@@ -11,30 +11,32 @@
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
- */ 
+ */
     using System;
     using System.Collections.Generic;
     using System.IO;
     using Amazon.DirectConnect.Model;
     using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations 
-    { 
-      /// <summary> 
-      /// DescribeConnectionsResultUnmarshaller 
-      /// </summary> 
-      internal class DescribeConnectionsResultUnmarshaller : IUnmarshaller<DescribeConnectionsResult, XmlUnmarshallerContext>, IUnmarshaller<DescribeConnectionsResult, JsonUnmarshallerContext> 
-      { 
+    namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
+    {
+      /// <summary>
+      /// DescribeConnectionsResultUnmarshaller
+      /// </summary>
+      internal class DescribeConnectionsResultUnmarshaller : IUnmarshaller<DescribeConnectionsResult, XmlUnmarshallerContext>, IUnmarshaller<DescribeConnectionsResult, JsonUnmarshallerContext>
+      {
         DescribeConnectionsResult IUnmarshaller<DescribeConnectionsResult, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
           throw new NotImplementedException();
         }
-        
-        public DescribeConnectionsResult Unmarshall(JsonUnmarshallerContext context) 
+
+        public DescribeConnectionsResult Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             DescribeConnectionsResult describeConnectionsResult = new DescribeConnectionsResult();
-          describeConnectionsResult.Connections = null; 
-                                  
+          describeConnectionsResult.Connections = null;
+                        
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             while (context.Read())
@@ -43,8 +45,8 @@
                 {
                 context.Read();
                 context.Read();
-               
-              if (context.TestExpression("Connections", targetDepth)) 
+              
+              if (context.TestExpression("Connections", targetDepth))
               {
                 describeConnectionsResult.Connections = new List<Connection>();
                         ConnectionUnmarshaller unmarshaller = ConnectionUnmarshaller.GetInstance();
@@ -59,27 +61,27 @@
                     break;
                   }
                 }
-                continue; 
+                continue;
               }
-   
-                } 
-                else if (context.IsEndElement && context.CurrentDepth <= originalDepth) 
-                { 
-                    return describeConnectionsResult; 
-                } 
-            } 
+  
+                }
+                else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
+                {
+                    return describeConnectionsResult;
+                }
+            }
           
-          
-            return describeConnectionsResult; 
-        } 
-        
-        private static DescribeConnectionsResultUnmarshaller instance; 
-        public static DescribeConnectionsResultUnmarshaller GetInstance() 
-        { 
-            if (instance == null) 
-                instance = new DescribeConnectionsResultUnmarshaller(); 
+
+            return describeConnectionsResult;
+        }
+
+        private static DescribeConnectionsResultUnmarshaller instance;
+        public static DescribeConnectionsResultUnmarshaller GetInstance()
+        {
+            if (instance == null)
+                instance = new DescribeConnectionsResultUnmarshaller();
             return instance;
-        } 
-    } 
-} 
+        }
+    }
+}
   

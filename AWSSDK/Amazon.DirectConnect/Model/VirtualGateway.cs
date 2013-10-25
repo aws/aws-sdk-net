@@ -22,16 +22,17 @@ namespace Amazon.DirectConnect.Model
 {
     /// <summary>
     /// <para>You can create one or more Direct Connect private virtual interfaces linking to your virtual private gateway.</para> <para>Virtual
-    /// private gateway can be managed via AWS Virtual Private Cloud Console or the EC2 CreateVpnGateway API.</para>
+    /// private gateway can be managed via AWS Virtual Private Cloud Console or the <a
+    /// href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-CreateVpnGateway.html" >EC2 CreateVpnGateway API</a> .</para>
     /// </summary>
-    public class VirtualGateway  
+    public class VirtualGateway
     {
         
         private string virtualGatewayId;
         private string virtualGatewayState;
 
         /// <summary>
-        /// Virtual private gateway to a VPC. Example: vgw-123er56
+        /// The ID of the virtual private gateway to a VPC. Only applies to private virtual interfaces. Example: vgw-123er56
         ///  
         /// </summary>
         public string VirtualGatewayId
@@ -56,7 +57,7 @@ namespace Amazon.DirectConnect.Model
         // Check to see if VirtualGatewayId property is set
         internal bool IsSetVirtualGatewayId()
         {
-            return this.virtualGatewayId != null;       
+            return this.virtualGatewayId != null;
         }
 
         /// <summary>
@@ -88,7 +89,7 @@ namespace Amazon.DirectConnect.Model
         // Check to see if VirtualGatewayState property is set
         internal bool IsSetVirtualGatewayState()
         {
-            return this.virtualGatewayState != null;       
+            return this.virtualGatewayState != null;
         }
     }
 }

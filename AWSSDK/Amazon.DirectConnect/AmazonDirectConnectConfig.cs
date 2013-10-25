@@ -29,7 +29,7 @@ namespace Amazon.DirectConnect
         /// </summary>
         public AmazonDirectConnectConfig()
         {
-            this.ServiceURL = "https://directconnect.us-east-1.amazonaws.com/";
+            this.ServiceURL = "https://directconnect.us-east-1.amazonaws.com";
             this.AuthenticationServiceName = "directconnect";
         }
 

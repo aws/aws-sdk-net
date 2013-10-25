@@ -31,7 +31,7 @@ namespace Amazon.DynamoDB
         {
             this.ServiceURL = "https://dynamodb.us-east-1.amazonaws.com/";
             this.AuthenticationServiceName = "dynamodb";
-            this.MaxErrorRetry = 8;
+            this.MaxErrorRetry = 10;
         }
 
         /// <summary>

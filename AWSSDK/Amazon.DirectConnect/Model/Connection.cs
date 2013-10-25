@@ -21,16 +21,44 @@ using System.IO;
 namespace Amazon.DirectConnect.Model
 {
     /// <summary>
-    /// <para> A connection represents the physical network connection between the Direct Connect location and the customer. </para>
+    /// <para>A connection represents the physical network connection between the Direct Connect location and the customer.</para>
     /// </summary>
-    public class Connection  
+    public class Connection
     {
         
+        private string ownerAccount;
         private string connectionId;
         private string connectionName;
         private string connectionState;
         private string region;
         private string location;
+        private string bandwidth;
+        private int? vlan;
+        private string partnerName;
+        public string OwnerAccount
+        {
+            get { return this.ownerAccount; }
+            set { this.ownerAccount = value; }
+        }
+
+        /// <summary>
+        /// Sets the OwnerAccount property
+        /// </summary>
+        /// <param name="ownerAccount">The value to set for the OwnerAccount property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public Connection WithOwnerAccount(string ownerAccount)
+        {
+            this.ownerAccount = ownerAccount;
+            return this;
+        }
+            
+
+        // Check to see if OwnerAccount property is set
+        internal bool IsSetOwnerAccount()
+        {
+            return this.ownerAccount != null;
+        }
 
         /// <summary>
         /// ID of the connection. Example: dxcon-fg5678gh Default: None
@@ -58,7 +86,7 @@ namespace Amazon.DirectConnect.Model
         // Check to see if ConnectionId property is set
         internal bool IsSetConnectionId()
         {
-            return this.connectionId != null;       
+            return this.connectionId != null;
         }
 
         /// <summary>
@@ -87,22 +115,24 @@ namespace Amazon.DirectConnect.Model
         // Check to see if ConnectionName property is set
         internal bool IsSetConnectionName()
         {
-            return this.connectionName != null;       
+            return this.connectionName != null;
         }
 
         /// <summary>
-        /// State of the connection. <ul> <li><b>Requested</b>: The initial state of connection immediately after creation. The connection stays in the
-        /// requested state until the LOA is sent to the customer.</li> <li><b>Pending</b>: A connection is pending after the customer receives the LOA
-        /// and remains pending until the completion of the partner circuit.</li> <li><b>Available</b>: A connection that has a completed partner
-        /// circuit and is ready for use. A connection must be available before virtual interfaces can be created.</li> <li><b>Deleted</b>: A connection
-        /// that has been deleted.</li> </ul>
+        /// State of the connection. <ul> <li><b>Ordering</b>: The initial state of a hosted connection provisioned on an interconnect. The connection
+        /// stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</li> <li><b>Requested</b>:
+        /// The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to
+        /// the customer.</li> <li><b>Pending</b>: The connection has been approved, and is being initialized.</li> <li><b>Available</b>: The network
+        /// link is up, and the connection is ready for use.</li> <li><b>Down</b>: The network link is down.</li> <li><b>Deleted</b>: The connection has
+        /// been deleted.</li> <li><b>Rejected</b>: A hosted connection in the 'Ordering' state will enter the 'Rejected' state if it is deleted by the
+        /// end customer.</li> </ul>
         ///  
         /// <para>
         /// <b>Constraints:</b>
         /// <list type="definition">
         ///     <item>
         ///         <term>Allowed Values</term>
-        ///         <description>requested, pending, available, deleted</description>
+        ///         <description>ordering, requested, pending, available, down, deleting, deleted, rejected</description>
         ///     </item>
         /// </list>
         /// </para>
@@ -129,11 +159,11 @@ namespace Amazon.DirectConnect.Model
         // Check to see if ConnectionState property is set
         internal bool IsSetConnectionState()
         {
-            return this.connectionState != null;       
+            return this.connectionState != null;
         }
 
         /// <summary>
-        /// The AWS region where the offering is located. Example: us-east-1 Default: None
+        /// The AWS region where the connection is located. Example: us-east-1 Default: None
         ///  
         /// </summary>
         public string Region
@@ -158,11 +188,11 @@ namespace Amazon.DirectConnect.Model
         // Check to see if Region property is set
         internal bool IsSetRegion()
         {
-            return this.region != null;       
+            return this.region != null;
         }
 
         /// <summary>
-        /// The AWS Direct Connect location where the offering is located. Example: EqSV5 Default: None
+        /// Where the connection is located. Example: EqSV5 Default: None
         ///  
         /// </summary>
         public string Location
@@ -187,7 +217,89 @@ namespace Amazon.DirectConnect.Model
         // Check to see if Location property is set
         internal bool IsSetLocation()
         {
-            return this.location != null;       
+            return this.location != null;
+        }
+
+        /// <summary>
+        /// Bandwidth of the connection. Example: 1Gbps Default: None
+        ///  
+        /// </summary>
+        public string Bandwidth
+        {
+            get { return this.bandwidth; }
+            set { this.bandwidth = value; }
+        }
+
+        /// <summary>
+        /// Sets the Bandwidth property
+        /// </summary>
+        /// <param name="bandwidth">The value to set for the Bandwidth property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public Connection WithBandwidth(string bandwidth)
+        {
+            this.bandwidth = bandwidth;
+            return this;
+        }
+            
+
+        // Check to see if Bandwidth property is set
+        internal bool IsSetBandwidth()
+        {
+            return this.bandwidth != null;
+        }
+
+        /// <summary>
+        /// VLAN ID Example: 101
+        ///  
+        /// </summary>
+        public int Vlan
+        {
+            get { return this.vlan ?? default(int); }
+            set { this.vlan = value; }
+        }
+
+        /// <summary>
+        /// Sets the Vlan property
+        /// </summary>
+        /// <param name="vlan">The value to set for the Vlan property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public Connection WithVlan(int vlan)
+        {
+            this.vlan = vlan;
+            return this;
+        }
+            
+
+        // Check to see if Vlan property is set
+        internal bool IsSetVlan()
+        {
+            return this.vlan.HasValue;
+        }
+        public string PartnerName
+        {
+            get { return this.partnerName; }
+            set { this.partnerName = value; }
+        }
+
+        /// <summary>
+        /// Sets the PartnerName property
+        /// </summary>
+        /// <param name="partnerName">The value to set for the PartnerName property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public Connection WithPartnerName(string partnerName)
+        {
+            this.partnerName = partnerName;
+            return this;
+        }
+            
+
+        // Check to see if PartnerName property is set
+        internal bool IsSetPartnerName()
+        {
+            return this.partnerName != null;
         }
     }
 }

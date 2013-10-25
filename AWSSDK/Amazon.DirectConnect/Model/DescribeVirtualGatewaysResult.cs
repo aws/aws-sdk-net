@@ -21,15 +21,15 @@ using System.IO;
 namespace Amazon.DirectConnect.Model
 {
     /// <summary>
-    /// <para> A structure containing a list of virtual gateways. </para>
+    /// <para>A structure containing a list of virtual private gateways.</para>
     /// </summary>
-    public class DescribeVirtualGatewaysResult  
+    public class DescribeVirtualGatewaysResult
     {
         
         private List<VirtualGateway> virtualGateways = new List<VirtualGateway>();
 
         /// <summary>
-        /// A list of virtual gateways.
+        /// A list of virtual private gateways.
         ///  
         /// </summary>
         public List<VirtualGateway> VirtualGateways
@@ -52,7 +52,7 @@ namespace Amazon.DirectConnect.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the VirtualGateways collection
         /// </summary>
@@ -72,7 +72,7 @@ namespace Amazon.DirectConnect.Model
         // Check to see if VirtualGateways property is set
         internal bool IsSetVirtualGateways()
         {
-            return this.virtualGateways.Count > 0;       
+            return this.virtualGateways.Count > 0;
         }
     }
 }

@@ -21,9 +21,9 @@ using System.IO;
 namespace Amazon.DirectConnect.Model
 {
     /// <summary>
-    /// <para> A list of connections. </para>
+    /// <para>A structure containing a list of connections.</para>
     /// </summary>
-    public class DescribeConnectionsResult  
+    public class DescribeConnectionsResult
     {
         
         private List<Connection> connections = new List<Connection>();
@@ -52,7 +52,7 @@ namespace Amazon.DirectConnect.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Connections collection
         /// </summary>
@@ -72,7 +72,7 @@ namespace Amazon.DirectConnect.Model
         // Check to see if Connections property is set
         internal bool IsSetConnections()
         {
-            return this.connections.Count > 0;       
+            return this.connections.Count > 0;
         }
     }
 }

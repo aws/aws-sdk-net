@@ -25,7 +25,7 @@ namespace Amazon.DirectConnect.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteVirtualInterface operation.
-    /// <para> Deletes a virtual interface. </para>
+    /// <para>Deletes a virtual interface.</para>
     /// </summary>
     /// <seealso cref="Amazon.DirectConnect.AmazonDirectConnect.DeleteVirtualInterface"/>
     public class DeleteVirtualInterfaceRequest : AmazonWebServiceRequest
@@ -58,7 +58,7 @@ namespace Amazon.DirectConnect.Model
         // Check to see if VirtualInterfaceId property is set
         internal bool IsSetVirtualInterfaceId()
         {
-            return this.virtualInterfaceId != null;       
+            return this.virtualInterfaceId != null;
         }
     }
 }

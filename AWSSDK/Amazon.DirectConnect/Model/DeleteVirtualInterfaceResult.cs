@@ -21,27 +21,31 @@ using System.IO;
 namespace Amazon.DirectConnect.Model
 {
     /// <summary>
-    /// <para> The response of calling DeleteVirtualInterface. </para>
+    /// <para>The response received when DeleteVirtualInterface is called.</para>
     /// </summary>
-    public class DeleteVirtualInterfaceResult  
+    public class DeleteVirtualInterfaceResult
     {
         
         private string virtualInterfaceState;
 
         /// <summary>
-        /// State of the virtual interface. <ul> <li><b>Verifying</b>: This state only applies to public virtual interfaces. Each public virtual
-        /// interface need validation before the virtual interface can be created.</li> <li><b>Pending</b>: A virtual interface is in this state from
-        /// the time that it is created until the virtual interface is ready to forward traffic.</li> <li><b>Available</b>: A virtual interface that is
-        /// able to forward traffic.</li> <li><b>Deleting</b>: A virtual interface is in this state immediately after calling
-        /// <i>DeleteVirtualInterface</i> until it can no longer forward traffic.</li> <li><b>Deleted</b>: A virtual interface that cannot forward
-        /// traffic.</li> </ul>
+        /// State of the virtual interface. <ul> <li><b>Confirming</b>: The creation of the virtual interface is pending confirmation from the virtual
+        /// interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the
+        /// virtual interface will remain in this state until it is confirmed by the virtual interface owner.</li> <li><b>Verifying</b>: This state only
+        /// applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</li>
+        /// <li><b>Pending</b>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward
+        /// traffic.</li> <li><b>Available</b>: A virtual interface that is able to forward traffic.</li> <li><b>Deleting</b>: A virtual interface is in
+        /// this state immediately after calling <i>DeleteVirtualInterface</i> until it can no longer forward traffic.</li> <li><b>Deleted</b>: A
+        /// virtual interface that cannot forward traffic.</li> <li><b>Rejected</b>: The virtual interface owner has declined creation of the virtual
+        /// interface. If a virtual interface in the 'Confirming' state is deleted by the virtual interface owner, the virtual interface will enter the
+        /// 'Rejected' state.</li> </ul>
         ///  
         /// <para>
         /// <b>Constraints:</b>
         /// <list type="definition">
         ///     <item>
         ///         <term>Allowed Values</term>
-        ///         <description>verifying, pending, available, deleting, deleted</description>
+        ///         <description>confirming, verifying, pending, available, deleting, deleted, rejected</description>
         ///     </item>
         /// </list>
         /// </para>
@@ -68,7 +72,7 @@ namespace Amazon.DirectConnect.Model
         // Check to see if VirtualInterfaceState property is set
         internal bool IsSetVirtualInterfaceState()
         {
-            return this.virtualInterfaceState != null;       
+            return this.virtualInterfaceState != null;
         }
     }
 }

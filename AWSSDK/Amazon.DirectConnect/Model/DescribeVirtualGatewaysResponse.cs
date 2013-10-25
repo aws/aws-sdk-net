@@ -30,18 +30,18 @@ namespace Amazon.DirectConnect.Model
 
         /// <summary>
         /// Gets and sets the DescribeVirtualGatewaysResult property.
-        /// A structure containing a list of virtual gateways.
+        /// A structure containing a list of virtual private gateways.
         /// </summary>
         public DescribeVirtualGatewaysResult DescribeVirtualGatewaysResult
         {
-            get 
+            get
             {
                 if(this.describeVirtualGatewaysResult == null)
                 {
                     this.describeVirtualGatewaysResult = new DescribeVirtualGatewaysResult();
                 }
 
-                return this.describeVirtualGatewaysResult; 
+                return this.describeVirtualGatewaysResult;
             }
             set { this.describeVirtualGatewaysResult = value; }
         }

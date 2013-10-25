@@ -30,18 +30,18 @@ namespace Amazon.DirectConnect.Model
 
         /// <summary>
         /// Gets and sets the DescribeConnectionsResult property.
-        /// A list of connections.
+        /// A structure containing a list of connections.
         /// </summary>
         public DescribeConnectionsResult DescribeConnectionsResult
         {
-            get 
+            get
             {
                 if(this.describeConnectionsResult == null)
                 {
                     this.describeConnectionsResult = new DescribeConnectionsResult();
                 }
 
-                return this.describeConnectionsResult; 
+                return this.describeConnectionsResult;
             }
             set { this.describeConnectionsResult = value; }
         }

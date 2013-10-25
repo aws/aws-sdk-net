@@ -73,10 +73,15 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 
-                if (createConnectionRequest != null && createConnectionRequest.IsSetOfferingId()) 
+                if (createConnectionRequest != null && createConnectionRequest.IsSetLocation()) 
                 {
-                    writer.WritePropertyName("offeringId");
-                    writer.Write(createConnectionRequest.OfferingId);
+                    writer.WritePropertyName("location");
+                    writer.Write(createConnectionRequest.Location);
+                }
+                if (createConnectionRequest != null && createConnectionRequest.IsSetBandwidth()) 
+                {
+                    writer.WritePropertyName("bandwidth");
+                    writer.Write(createConnectionRequest.Bandwidth);
                 }
                 if (createConnectionRequest != null && createConnectionRequest.IsSetConnectionName()) 
                 {
