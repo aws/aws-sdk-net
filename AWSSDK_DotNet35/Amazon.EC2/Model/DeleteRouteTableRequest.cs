@@ -29,21 +29,10 @@ namespace Amazon.EC2.Model
     /// more information about route tables, go to <a href="http://docs.amazonwebservices.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html"
     /// >Route Tables</a> in the Amazon Virtual Private Cloud User Guide. </para>
     /// </summary>
-    public partial class DeleteRouteTableRequest : AmazonWebServiceRequest
+    public partial class DeleteRouteTableRequest : AmazonEC2Request
     {
-        private bool? dryRun;
         private string routeTableId;
-        public bool DryRun
-        {
-            get { return this.dryRun ?? default(bool); }
-            set { this.dryRun = value; }
-        }
 
-        // Check to see if DryRun property is set
-        internal bool IsSetDryRun()
-        {
-            return this.dryRun.HasValue;
-        }
 
         /// <summary>
         /// The ID of the route table to be deleted.

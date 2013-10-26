@@ -27,23 +27,12 @@ namespace Amazon.EC2.Model
     /// Container for the parameters to the DescribeReservedInstances operation.
     /// <para> The DescribeReservedInstances operation describes Reserved Instances that were purchased for use with your account. </para>
     /// </summary>
-    public partial class DescribeReservedInstancesRequest : AmazonWebServiceRequest
+    public partial class DescribeReservedInstancesRequest : AmazonEC2Request
     {
-        private bool? dryRun;
         private List<string> reservedInstancesIds = new List<string>();
         private List<Filter> filters = new List<Filter>();
         private OfferingTypeValues offeringType;
-        public bool DryRun
-        {
-            get { return this.dryRun ?? default(bool); }
-            set { this.dryRun = value; }
-        }
 
-        // Check to see if DryRun property is set
-        internal bool IsSetDryRun()
-        {
-            return this.dryRun.HasValue;
-        }
 
         /// <summary>
         /// The optional list of Reserved Instance IDs to describe.

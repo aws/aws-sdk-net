@@ -29,6 +29,7 @@ namespace Amazon.EC2.Model
         
         private List<Snapshot> snapshots = new List<Snapshot>();
 
+
         /// <summary>
         /// The list of described EBS snapshots.
         ///  

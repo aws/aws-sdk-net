@@ -29,6 +29,7 @@ namespace Amazon.EC2.Model
         private ContainerFormat containerFormat;
         private string s3Bucket;
         private string s3Key;
+
         public DiskImageFormat DiskImageFormat
         {
             get { return this.diskImageFormat; }

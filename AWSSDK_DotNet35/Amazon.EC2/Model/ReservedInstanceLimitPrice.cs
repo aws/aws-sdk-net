@@ -27,6 +27,7 @@ namespace Amazon.EC2.Model
         
         private double? amount;
         private CurrencyCodeValues currencyCode;
+
         public double Amount
         {
             get { return this.amount ?? default(double); }

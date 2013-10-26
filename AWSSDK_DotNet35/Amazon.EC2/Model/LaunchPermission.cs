@@ -29,6 +29,7 @@ namespace Amazon.EC2.Model
         private string userId;
         private PermissionGroup group;
 
+
         /// <summary>
         /// The AWS user ID of the user involved in this launch permission.
         ///  

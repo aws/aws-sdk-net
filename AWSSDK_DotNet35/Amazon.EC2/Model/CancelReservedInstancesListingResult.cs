@@ -27,6 +27,7 @@ namespace Amazon.EC2.Model
     {
         
         private List<ReservedInstancesListing> reservedInstancesListings = new List<ReservedInstancesListing>();
+
         public List<ReservedInstancesListing> ReservedInstancesListings
         {
             get { return this.reservedInstancesListings; }

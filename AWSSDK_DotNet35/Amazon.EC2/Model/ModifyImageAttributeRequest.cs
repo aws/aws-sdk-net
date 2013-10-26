@@ -27,9 +27,8 @@ namespace Amazon.EC2.Model
     /// Container for the parameters to the ModifyImageAttribute operation.
     /// <para> The ModifyImageAttribute operation modifies an attribute of an AMI. </para>
     /// </summary>
-    public partial class ModifyImageAttributeRequest : AmazonWebServiceRequest
+    public partial class ModifyImageAttributeRequest : AmazonEC2Request
     {
-        private bool? dryRun;
         private string imageId;
         private string attribute;
         private string operationType;
@@ -39,17 +38,7 @@ namespace Amazon.EC2.Model
         private string value;
         private LaunchPermissionModifications launchPermission;
         private string description;
-        public bool DryRun
-        {
-            get { return this.dryRun ?? default(bool); }
-            set { this.dryRun = value; }
-        }
 
-        // Check to see if DryRun property is set
-        internal bool IsSetDryRun()
-        {
-            return this.dryRun.HasValue;
-        }
 
         /// <summary>
         /// The ID of the AMI whose attribute you want to modify.

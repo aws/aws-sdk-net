@@ -32,9 +32,8 @@ namespace Amazon.EC2.Model
     /// modifications to an image in Amazon S3 invalidates this registration. If you make changes to an image, deregister the previous image and
     /// register the new image. For more information, see DeregisterImage. </para>
     /// </summary>
-    public partial class RegisterImageRequest : AmazonWebServiceRequest
+    public partial class RegisterImageRequest : AmazonEC2Request
     {
-        private bool? dryRun;
         private string imageLocation;
         private string name;
         private string description;
@@ -43,17 +42,7 @@ namespace Amazon.EC2.Model
         private string ramdiskId;
         private string rootDeviceName;
         private List<BlockDeviceMapping> blockDeviceMappings = new List<BlockDeviceMapping>();
-        public bool DryRun
-        {
-            get { return this.dryRun ?? default(bool); }
-            set { this.dryRun = value; }
-        }
 
-        // Check to see if DryRun property is set
-        internal bool IsSetDryRun()
-        {
-            return this.dryRun.HasValue;
-        }
 
         /// <summary>
         /// The full path to your AMI manifest in Amazon S3 storage.

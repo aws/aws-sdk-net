@@ -28,6 +28,7 @@ namespace Amazon.EC2.Model
         private string internetGatewayId;
         private List<InternetGatewayAttachment> attachments = new List<InternetGatewayAttachment>();
         private List<Tag> tags = new List<Tag>();
+
         public string InternetGatewayId
         {
             get { return this.internetGatewayId; }

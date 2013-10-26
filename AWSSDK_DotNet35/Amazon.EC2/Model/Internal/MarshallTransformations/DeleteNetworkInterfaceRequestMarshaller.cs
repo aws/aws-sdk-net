@@ -35,10 +35,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             IRequest request = new DefaultRequest(deleteNetworkInterfaceRequest, "AmazonEC2");
             request.Parameters.Add("Action", "DeleteNetworkInterface");
             request.Parameters.Add("Version", "2013-10-01");
-            if (deleteNetworkInterfaceRequest != null && deleteNetworkInterfaceRequest.IsSetDryRun())
-            {
-                request.Parameters.Add("DryRun", StringUtils.FromBool(deleteNetworkInterfaceRequest.DryRun));
-            }
             if (deleteNetworkInterfaceRequest != null && deleteNetworkInterfaceRequest.IsSetNetworkInterfaceId())
             {
                 request.Parameters.Add("NetworkInterfaceId", StringUtils.FromString(deleteNetworkInterfaceRequest.NetworkInterfaceId));

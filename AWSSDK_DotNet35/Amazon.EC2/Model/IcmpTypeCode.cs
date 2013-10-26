@@ -29,6 +29,7 @@ namespace Amazon.EC2.Model
         private int? type;
         private int? code;
 
+
         /// <summary>
         /// For the ICMP protocol, the ICMP type. A value of <c>-1</c> is a wildcard meaning all types. Required if specifying <c>icmp</c> for the
         /// protocol.

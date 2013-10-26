@@ -28,6 +28,7 @@ namespace Amazon.EC2.Model
         private string destinationCidrBlock;
         private VpnStaticRouteSource source;
         private VpnState state;
+
         public string DestinationCidrBlock
         {
             get { return this.destinationCidrBlock; }

@@ -27,9 +27,10 @@ namespace Amazon.EC2.Model
     /// Container for the parameters to the CancelReservedInstancesListing operation.
     /// 
     /// </summary>
-    public partial class CancelReservedInstancesListingRequest : AmazonWebServiceRequest
+    public partial class CancelReservedInstancesListingRequest : AmazonEC2Request
     {
         private string reservedInstancesListingId;
+
         public string ReservedInstancesListingId
         {
             get { return this.reservedInstancesListingId; }

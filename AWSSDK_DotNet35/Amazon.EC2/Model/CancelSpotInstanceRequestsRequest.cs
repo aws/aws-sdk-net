@@ -31,21 +31,10 @@ namespace Amazon.EC2.Model
     /// Elastic Compute Cloud Developer Guide or Amazon Elastic Compute Cloud User Guide .
     /// </para>
     /// </summary>
-    public partial class CancelSpotInstanceRequestsRequest : AmazonWebServiceRequest
+    public partial class CancelSpotInstanceRequestsRequest : AmazonEC2Request
     {
-        private bool? dryRun;
         private List<string> spotInstanceRequestIds = new List<string>();
-        public bool DryRun
-        {
-            get { return this.dryRun ?? default(bool); }
-            set { this.dryRun = value; }
-        }
 
-        // Check to see if DryRun property is set
-        internal bool IsSetDryRun()
-        {
-            return this.dryRun.HasValue;
-        }
 
         /// <summary>
         /// Specifies the ID of the Spot Instance request.

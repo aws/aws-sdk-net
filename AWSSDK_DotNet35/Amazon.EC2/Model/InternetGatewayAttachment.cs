@@ -27,6 +27,7 @@ namespace Amazon.EC2.Model
         
         private string vpcId;
         private AttachmentStatus state;
+
         public string VpcId
         {
             get { return this.vpcId; }

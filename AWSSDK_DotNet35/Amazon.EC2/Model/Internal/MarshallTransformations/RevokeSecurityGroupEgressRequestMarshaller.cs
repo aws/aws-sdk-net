@@ -35,10 +35,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             IRequest request = new DefaultRequest(revokeSecurityGroupEgressRequest, "AmazonEC2");
             request.Parameters.Add("Action", "RevokeSecurityGroupEgress");
             request.Parameters.Add("Version", "2013-10-01");
-            if (revokeSecurityGroupEgressRequest != null && revokeSecurityGroupEgressRequest.IsSetDryRun())
-            {
-                request.Parameters.Add("DryRun", StringUtils.FromBool(revokeSecurityGroupEgressRequest.DryRun));
-            }
             if (revokeSecurityGroupEgressRequest != null && revokeSecurityGroupEgressRequest.IsSetGroupId())
             {
                 request.Parameters.Add("GroupId", StringUtils.FromString(revokeSecurityGroupEgressRequest.GroupId));

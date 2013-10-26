@@ -30,6 +30,7 @@ namespace Amazon.EC2.Model
         private List<ReservedInstancesOffering> reservedInstancesOfferings = new List<ReservedInstancesOffering>();
         private string nextToken;
 
+
         /// <summary>
         /// The list of described Reserved Instance offerings.
         ///  

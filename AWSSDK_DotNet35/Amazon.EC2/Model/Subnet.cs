@@ -36,6 +36,7 @@ namespace Amazon.EC2.Model
         private bool? mapPublicIpOnLaunch;
         private List<Tag> tags = new List<Tag>();
 
+
         /// <summary>
         /// Specifies the ID of the subnet.
         ///  

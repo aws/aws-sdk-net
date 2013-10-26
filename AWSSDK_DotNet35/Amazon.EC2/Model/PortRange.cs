@@ -29,6 +29,7 @@ namespace Amazon.EC2.Model
         private int? from;
         private int? to;
 
+
         /// <summary>
         /// The first port in the range. Required if specifying <c>tcp</c> or <c>udp</c> for the protocol.
         ///  

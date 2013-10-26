@@ -28,9 +28,8 @@ namespace Amazon.EC2.Model
     /// <para> Replaces an entry (i.e., rule) in a network ACL. For more information about network ACLs, go to Network ACLs in the Amazon Virtual
     /// Private Cloud User Guide. </para>
     /// </summary>
-    public partial class ReplaceNetworkAclEntryRequest : AmazonWebServiceRequest
+    public partial class ReplaceNetworkAclEntryRequest : AmazonEC2Request
     {
-        private bool? dryRun;
         private string networkAclId;
         private int? ruleNumber;
         private string protocol;
@@ -39,17 +38,7 @@ namespace Amazon.EC2.Model
         private string cidrBlock;
         private IcmpTypeCode icmpTypeCode;
         private PortRange portRange;
-        public bool DryRun
-        {
-            get { return this.dryRun ?? default(bool); }
-            set { this.dryRun = value; }
-        }
 
-        // Check to see if DryRun property is set
-        internal bool IsSetDryRun()
-        {
-            return this.dryRun.HasValue;
-        }
 
         /// <summary>
         /// ID of the ACL where the entry will be replaced.

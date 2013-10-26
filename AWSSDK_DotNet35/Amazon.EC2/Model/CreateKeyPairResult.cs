@@ -29,6 +29,7 @@ namespace Amazon.EC2.Model
         
         private KeyPair keyPair;
 
+
         /// <summary>
         /// The newly created EC2 key pair.
         ///  

@@ -29,6 +29,7 @@ namespace Amazon.EC2.Model
         
         private List<Image> images = new List<Image>();
 
+
         /// <summary>
         /// The list of the described AMIs.
         ///  

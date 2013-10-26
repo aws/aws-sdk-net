@@ -27,6 +27,7 @@ namespace Amazon.EC2.Model
     {
         
         private List<NetworkInterface> networkInterfaces = new List<NetworkInterface>();
+
         public List<NetworkInterface> NetworkInterfaces
         {
             get { return this.networkInterfaces; }

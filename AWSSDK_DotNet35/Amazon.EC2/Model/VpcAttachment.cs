@@ -29,6 +29,7 @@ namespace Amazon.EC2.Model
         private string vpcId;
         private AttachmentStatus state;
 
+
         /// <summary>
         /// 
         ///  

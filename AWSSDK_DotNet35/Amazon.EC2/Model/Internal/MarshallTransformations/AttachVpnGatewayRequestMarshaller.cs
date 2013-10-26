@@ -35,10 +35,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             IRequest request = new DefaultRequest(attachVpnGatewayRequest, "AmazonEC2");
             request.Parameters.Add("Action", "AttachVpnGateway");
             request.Parameters.Add("Version", "2013-10-01");
-            if (attachVpnGatewayRequest != null && attachVpnGatewayRequest.IsSetDryRun())
-            {
-                request.Parameters.Add("DryRun", StringUtils.FromBool(attachVpnGatewayRequest.DryRun));
-            }
             if (attachVpnGatewayRequest != null && attachVpnGatewayRequest.IsSetVpnGatewayId())
             {
                 request.Parameters.Add("VpnGatewayId", StringUtils.FromString(attachVpnGatewayRequest.VpnGatewayId));

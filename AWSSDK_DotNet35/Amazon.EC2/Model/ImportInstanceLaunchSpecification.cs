@@ -35,6 +35,7 @@ namespace Amazon.EC2.Model
         private string subnetId;
         private ShutdownBehavior instanceInitiatedShutdownBehavior;
         private string privateIpAddress;
+
         public ArchitectureValues Architecture
         {
             get { return this.architecture; }

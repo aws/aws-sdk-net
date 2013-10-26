@@ -30,22 +30,11 @@ namespace Amazon.EC2.Model
     /// returned. For example, if security group B has a rule that allows access from security group A, security group A cannot be deleted until the
     /// allow rule is removed. </para>
     /// </summary>
-    public partial class DeleteSecurityGroupRequest : AmazonWebServiceRequest
+    public partial class DeleteSecurityGroupRequest : AmazonEC2Request
     {
-        private bool? dryRun;
         private string groupName;
         private string groupId;
-        public bool DryRun
-        {
-            get { return this.dryRun ?? default(bool); }
-            set { this.dryRun = value; }
-        }
 
-        // Check to see if DryRun property is set
-        internal bool IsSetDryRun()
-        {
-            return this.dryRun.HasValue;
-        }
 
         /// <summary>
         /// The name of the Amazon EC2 security group to delete.

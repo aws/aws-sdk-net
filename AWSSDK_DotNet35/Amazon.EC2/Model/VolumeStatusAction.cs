@@ -29,6 +29,7 @@ namespace Amazon.EC2.Model
         private string description;
         private string eventType;
         private string eventId;
+
         public string Code
         {
             get { return this.code; }

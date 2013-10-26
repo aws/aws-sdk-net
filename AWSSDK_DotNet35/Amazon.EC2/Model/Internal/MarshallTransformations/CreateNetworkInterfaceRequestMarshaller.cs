@@ -81,10 +81,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 request.Parameters.Add("SecondaryPrivateIpAddressCount", StringUtils.FromInt(createNetworkInterfaceRequest.SecondaryPrivateIpAddressCount));
             }
-            if (createNetworkInterfaceRequest != null && createNetworkInterfaceRequest.IsSetDryRun())
-            {
-                request.Parameters.Add("DryRun", StringUtils.FromBool(createNetworkInterfaceRequest.DryRun));
-            }
 
             return request;
         }

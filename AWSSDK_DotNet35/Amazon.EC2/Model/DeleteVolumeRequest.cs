@@ -27,21 +27,10 @@ namespace Amazon.EC2.Model
     /// Container for the parameters to the DeleteVolume operation.
     /// <para> Deletes a previously created volume. Once successfully deleted, a new volume can be created with the same name. </para>
     /// </summary>
-    public partial class DeleteVolumeRequest : AmazonWebServiceRequest
+    public partial class DeleteVolumeRequest : AmazonEC2Request
     {
-        private bool? dryRun;
         private string volumeId;
-        public bool DryRun
-        {
-            get { return this.dryRun ?? default(bool); }
-            set { this.dryRun = value; }
-        }
 
-        // Check to see if DryRun property is set
-        internal bool IsSetDryRun()
-        {
-            return this.dryRun.HasValue;
-        }
 
         /// <summary>
         /// The ID of the EBS volume to delete.

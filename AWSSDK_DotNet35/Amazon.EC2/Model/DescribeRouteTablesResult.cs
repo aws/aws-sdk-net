@@ -27,6 +27,7 @@ namespace Amazon.EC2.Model
     {
         
         private List<RouteTable> routeTables = new List<RouteTable>();
+
         public List<RouteTable> RouteTables
         {
             get { return this.routeTables; }

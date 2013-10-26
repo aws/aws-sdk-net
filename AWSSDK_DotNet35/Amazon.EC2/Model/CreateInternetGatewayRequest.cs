@@ -29,20 +29,9 @@ namespace Amazon.EC2.Model
     /// <c>AttachInternetGateway</c> . For more information about your VPC and Internet gateway, go to Amazon Virtual Private Cloud User Guide.
     /// </para>
     /// </summary>
-    public partial class CreateInternetGatewayRequest : AmazonWebServiceRequest
+    public partial class CreateInternetGatewayRequest : AmazonEC2Request
     {
-        private bool? dryRun;
-        public bool DryRun
-        {
-            get { return this.dryRun ?? default(bool); }
-            set { this.dryRun = value; }
-        }
 
-        // Check to see if DryRun property is set
-        internal bool IsSetDryRun()
-        {
-            return this.dryRun.HasValue;
-        }
 
     }
 }

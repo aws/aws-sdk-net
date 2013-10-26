@@ -329,8 +329,8 @@ namespace Amazon.Runtime
         /// </summary>
         internal virtual void Validate()
         {
-            if (RegionEndpoint == null)
-                throw new AmazonClientException("No RegionEndpoint configured");
+            if (RegionEndpoint == null && string.IsNullOrEmpty(this.ServiceURL))
+                throw new AmazonClientException("No RegionEndpoint or ServiceURL configured");
         }
     }
 }

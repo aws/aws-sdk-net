@@ -27,6 +27,7 @@ namespace Amazon.EC2.Model
         
         private string instanceId;
         private ExportEnvironment targetEnvironment;
+
         public string InstanceId
         {
             get { return this.instanceId; }

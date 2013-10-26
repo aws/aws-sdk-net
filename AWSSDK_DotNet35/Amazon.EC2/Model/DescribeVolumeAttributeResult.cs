@@ -29,6 +29,7 @@ namespace Amazon.EC2.Model
         private string volumeId;
         private bool? autoEnableIO;
         private List<ProductCode> productCodes = new List<ProductCode>();
+
         public string VolumeId
         {
             get { return this.volumeId; }

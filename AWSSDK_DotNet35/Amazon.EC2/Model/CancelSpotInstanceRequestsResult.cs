@@ -27,6 +27,7 @@ namespace Amazon.EC2.Model
     {
         
         private List<CancelledSpotInstanceRequest> cancelledSpotInstanceRequests = new List<CancelledSpotInstanceRequest>();
+
         public List<CancelledSpotInstanceRequest> CancelledSpotInstanceRequests
         {
             get { return this.cancelledSpotInstanceRequests; }

@@ -31,6 +31,7 @@ namespace Amazon.EC2.Model
         private string keyFingerprint;
         private string keyMaterial;
 
+
         /// <summary>
         /// The name of the key pair.
         ///  

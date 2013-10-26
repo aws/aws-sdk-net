@@ -27,6 +27,7 @@ namespace Amazon.EC2.Model
         
         private List<CreateVolumePermission> add = new List<CreateVolumePermission>();
         private List<CreateVolumePermission> remove = new List<CreateVolumePermission>();
+
         public List<CreateVolumePermission> Add
         {
             get { return this.add; }

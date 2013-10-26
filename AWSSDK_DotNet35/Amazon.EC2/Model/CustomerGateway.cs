@@ -33,6 +33,7 @@ namespace Amazon.EC2.Model
         private string bgpAsn;
         private List<Tag> tags = new List<Tag>();
 
+
         /// <summary>
         /// Specifies the ID of the customer gateway.
         ///  

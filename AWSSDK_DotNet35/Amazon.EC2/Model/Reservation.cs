@@ -33,6 +33,7 @@ namespace Amazon.EC2.Model
         private List<string> groupNames = new List<string>();
         private List<Instance> instances = new List<Instance>();
 
+
         /// <summary>
         /// The unique ID of this reservation.
         ///  

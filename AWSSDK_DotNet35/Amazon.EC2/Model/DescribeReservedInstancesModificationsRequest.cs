@@ -27,11 +27,12 @@ namespace Amazon.EC2.Model
     /// Container for the parameters to the DescribeReservedInstancesModifications operation.
     /// <para> The DescribeReservedInstancesModifications operation describes modifications made to Reserved Instances in your account. </para>
     /// </summary>
-    public partial class DescribeReservedInstancesModificationsRequest : AmazonWebServiceRequest
+    public partial class DescribeReservedInstancesModificationsRequest : AmazonEC2Request
     {
         private List<string> reservedInstancesModificationIds = new List<string>();
         private string nextToken;
         private List<Filter> filters = new List<Filter>();
+
 
         /// <summary>
         /// An optional list of Reserved Instances modification IDs to describe.

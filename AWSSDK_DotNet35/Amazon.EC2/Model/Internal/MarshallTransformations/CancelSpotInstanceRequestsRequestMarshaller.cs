@@ -35,10 +35,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             IRequest request = new DefaultRequest(cancelSpotInstanceRequestsRequest, "AmazonEC2");
             request.Parameters.Add("Action", "CancelSpotInstanceRequests");
             request.Parameters.Add("Version", "2013-10-01");
-            if (cancelSpotInstanceRequestsRequest != null && cancelSpotInstanceRequestsRequest.IsSetDryRun())
-            {
-                request.Parameters.Add("DryRun", StringUtils.FromBool(cancelSpotInstanceRequestsRequest.DryRun));
-            }
             if (cancelSpotInstanceRequestsRequest != null)
             {
                 List<string> spotInstanceRequestIdsList = cancelSpotInstanceRequestsRequest.SpotInstanceRequestIds;

@@ -29,6 +29,7 @@ namespace Amazon.EC2.Model
         
         private VolumeAttachment attachment;
 
+
         /// <summary>
         /// 
         ///  

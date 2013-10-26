@@ -35,10 +35,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             IRequest request = new DefaultRequest(createCustomerGatewayRequest, "AmazonEC2");
             request.Parameters.Add("Action", "CreateCustomerGateway");
             request.Parameters.Add("Version", "2013-10-01");
-            if (createCustomerGatewayRequest != null && createCustomerGatewayRequest.IsSetDryRun())
-            {
-                request.Parameters.Add("DryRun", StringUtils.FromBool(createCustomerGatewayRequest.DryRun));
-            }
             if (createCustomerGatewayRequest != null && createCustomerGatewayRequest.IsSetType())
             {
                 request.Parameters.Add("Type", StringUtils.FromString(createCustomerGatewayRequest.Type));

@@ -29,6 +29,7 @@ namespace Amazon.EC2.Model
         private string code;
         private string message;
 
+
         /// <summary>
         /// Reason code for the state change.
         ///  

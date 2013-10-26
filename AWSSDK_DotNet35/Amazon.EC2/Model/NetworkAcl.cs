@@ -31,6 +31,7 @@ namespace Amazon.EC2.Model
         private List<NetworkAclEntry> entries = new List<NetworkAclEntry>();
         private List<NetworkAclAssociation> associations = new List<NetworkAclAssociation>();
         private List<Tag> tags = new List<Tag>();
+
         public string NetworkAclId
         {
             get { return this.networkAclId; }

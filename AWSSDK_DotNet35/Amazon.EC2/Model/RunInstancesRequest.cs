@@ -44,9 +44,8 @@ namespace Amazon.EC2.Model
     /// greater stability and performance for these instance types. For more information about kernels, see Kernels, RAM Disks, and Block Device
     /// Mappings. </para>
     /// </summary>
-    public partial class RunInstancesRequest : AmazonWebServiceRequest
+    public partial class RunInstancesRequest : AmazonEC2Request
     {
-        private bool? dryRun;
         private string imageId;
         private int? minCount;
         private int? maxCount;
@@ -70,17 +69,7 @@ namespace Amazon.EC2.Model
         private List<InstanceNetworkInterfaceSpecification> networkInterfaces = new List<InstanceNetworkInterfaceSpecification>();
         private IamInstanceProfileSpecification iamInstanceProfile;
         private bool? ebsOptimized;
-        public bool DryRun
-        {
-            get { return this.dryRun ?? default(bool); }
-            set { this.dryRun = value; }
-        }
 
-        // Check to see if DryRun property is set
-        internal bool IsSetDryRun()
-        {
-            return this.dryRun.HasValue;
-        }
 
         /// <summary>
         /// Unique ID of a machine image, returned by a call to DescribeImages.

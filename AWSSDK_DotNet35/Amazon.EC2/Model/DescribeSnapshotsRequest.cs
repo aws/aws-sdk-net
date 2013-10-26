@@ -29,24 +29,13 @@ namespace Amazon.EC2.Model
     /// for any AWS account to launch, private snapshots you own, and private snapshots owned by another AWS account but for which you've been given
     /// explicit create volume permissions. </para>
     /// </summary>
-    public partial class DescribeSnapshotsRequest : AmazonWebServiceRequest
+    public partial class DescribeSnapshotsRequest : AmazonEC2Request
     {
-        private bool? dryRun;
         private List<string> snapshotIds = new List<string>();
         private List<string> ownerIds = new List<string>();
         private List<string> restorableByUserIds = new List<string>();
         private List<Filter> filters = new List<Filter>();
-        public bool DryRun
-        {
-            get { return this.dryRun ?? default(bool); }
-            set { this.dryRun = value; }
-        }
 
-        // Check to see if DryRun property is set
-        internal bool IsSetDryRun()
-        {
-            return this.dryRun.HasValue;
-        }
 
         /// <summary>
         /// The optional list of EBS snapshot IDs to describe.

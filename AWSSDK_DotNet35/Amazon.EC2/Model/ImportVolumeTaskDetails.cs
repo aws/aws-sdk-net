@@ -30,6 +30,7 @@ namespace Amazon.EC2.Model
         private string description;
         private DiskImageDescription image;
         private DiskImageVolumeDescription volume;
+
         public long BytesConverted
         {
             get { return this.bytesConverted ?? default(long); }

@@ -27,6 +27,7 @@ namespace Amazon.EC2.Model
         
         private VolumeStatusName name;
         private string status;
+
         public VolumeStatusName Name
         {
             get { return this.name; }

@@ -38,6 +38,7 @@ namespace Amazon.EC2.Model
         private InstanceNetworkInterfaceAttachment attachment;
         private InstanceNetworkInterfaceAssociation association;
         private List<InstancePrivateIpAddress> privateIpAddresses = new List<InstancePrivateIpAddress>();
+
         public string NetworkInterfaceId
         {
             get { return this.networkInterfaceId; }

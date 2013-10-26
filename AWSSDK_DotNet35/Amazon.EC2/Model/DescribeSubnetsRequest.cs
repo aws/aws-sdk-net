@@ -31,22 +31,11 @@ namespace Amazon.EC2.Model
     /// The result includes information for a particular subnet only if the subnet matches all your filters. If there's no match, no special message
     /// is returned; the response is simply empty. The following table shows the available filters. </para>
     /// </summary>
-    public partial class DescribeSubnetsRequest : AmazonWebServiceRequest
+    public partial class DescribeSubnetsRequest : AmazonEC2Request
     {
-        private bool? dryRun;
         private List<string> subnetIds = new List<string>();
         private List<Filter> filters = new List<Filter>();
-        public bool DryRun
-        {
-            get { return this.dryRun ?? default(bool); }
-            set { this.dryRun = value; }
-        }
 
-        // Check to see if DryRun property is set
-        internal bool IsSetDryRun()
-        {
-            return this.dryRun.HasValue;
-        }
 
         /// <summary>
         /// A set of one or more subnet IDs.

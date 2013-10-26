@@ -32,6 +32,7 @@ namespace Amazon.EC2.Model
         private DatafeedSubscriptionState state;
         private SpotInstanceStateFault fault;
 
+
         /// <summary>
         /// Specifies the AWS account ID of the account.
         ///  

@@ -27,6 +27,7 @@ namespace Amazon.EC2.Model
         
         private double? price;
         private int? count;
+
         public double Price
         {
             get { return this.price ?? default(double); }

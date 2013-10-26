@@ -36,6 +36,7 @@ namespace Amazon.EC2.Model
         private int? secondaryPrivateIpAddressCount;
         private bool? associatePublicIpAddress;
 
+
         /// <summary>
         /// An existing interface to attach to a single instance. Requires n=1 instances.
         ///  

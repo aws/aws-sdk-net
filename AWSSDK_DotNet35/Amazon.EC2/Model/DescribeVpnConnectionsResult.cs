@@ -29,6 +29,7 @@ namespace Amazon.EC2.Model
         
         private List<VpnConnection> vpnConnections = new List<VpnConnection>();
 
+
         /// <summary>
         /// 
         ///  

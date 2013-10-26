@@ -29,6 +29,7 @@ namespace Amazon.EC2.Model
         
         private List<AvailabilityZone> availabilityZones = new List<AvailabilityZone>();
 
+
         /// <summary>
         /// The list of described Amazon EC2 availability zones.
         ///  

@@ -43,6 +43,7 @@ namespace Amazon.EC2.Model
         private OfferingTypeValues offeringType;
         private List<RecurringCharge> recurringCharges = new List<RecurringCharge>();
 
+
         /// <summary>
         /// The unique ID of the Reserved Instances purchase.
         ///  

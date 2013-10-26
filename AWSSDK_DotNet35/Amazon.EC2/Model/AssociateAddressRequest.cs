@@ -29,26 +29,15 @@ namespace Amazon.EC2.Model
     /// assigned to another instance, the IP address is assigned to the new instance. This is an idempotent operation. If you enter it more than
     /// once, Amazon EC2 does not return an error. </para>
     /// </summary>
-    public partial class AssociateAddressRequest : AmazonWebServiceRequest
+    public partial class AssociateAddressRequest : AmazonEC2Request
     {
-        private bool? dryRun;
         private string instanceId;
         private string publicIp;
         private string allocationId;
         private string networkInterfaceId;
         private string privateIpAddress;
         private bool? allowReassociation;
-        public bool DryRun
-        {
-            get { return this.dryRun ?? default(bool); }
-            set { this.dryRun = value; }
-        }
 
-        // Check to see if DryRun property is set
-        internal bool IsSetDryRun()
-        {
-            return this.dryRun.HasValue;
-        }
 
         /// <summary>
         /// The instance to associate with the IP address.

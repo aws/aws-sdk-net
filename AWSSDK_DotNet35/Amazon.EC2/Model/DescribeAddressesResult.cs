@@ -29,6 +29,7 @@ namespace Amazon.EC2.Model
         
         private List<Address> addresses = new List<Address>();
 
+
         /// <summary>
         /// The list of Elastic IPs.
         ///  

@@ -26,6 +26,7 @@ namespace Amazon.EC2.Model
     {
         
         private string id;
+
         public string Id
         {
             get { return this.id; }

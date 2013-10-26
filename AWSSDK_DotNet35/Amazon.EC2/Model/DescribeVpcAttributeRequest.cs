@@ -27,22 +27,11 @@ namespace Amazon.EC2.Model
     /// Container for the parameters to the DescribeVpcAttribute operation.
     /// 
     /// </summary>
-    public partial class DescribeVpcAttributeRequest : AmazonWebServiceRequest
+    public partial class DescribeVpcAttributeRequest : AmazonEC2Request
     {
-        private bool? dryRun;
         private string vpcId;
         private VpcAttributeName attribute;
-        public bool DryRun
-        {
-            get { return this.dryRun ?? default(bool); }
-            set { this.dryRun = value; }
-        }
 
-        // Check to see if DryRun property is set
-        internal bool IsSetDryRun()
-        {
-            return this.dryRun.HasValue;
-        }
         public string VpcId
         {
             get { return this.vpcId; }

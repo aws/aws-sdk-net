@@ -29,6 +29,7 @@ namespace Amazon.EC2.Model
         
         private List<TagDescription> tags = new List<TagDescription>();
 
+
         /// <summary>
         /// A list of the tags for the specified resources.
         ///  

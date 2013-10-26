@@ -28,23 +28,12 @@ namespace Amazon.EC2.Model
     /// <para> Deletes an ingress or egress entry (i.e., rule) from a network ACL. For more information about network ACLs, go to Network ACLs in
     /// the Amazon Virtual Private Cloud User Guide. </para>
     /// </summary>
-    public partial class DeleteNetworkAclEntryRequest : AmazonWebServiceRequest
+    public partial class DeleteNetworkAclEntryRequest : AmazonEC2Request
     {
-        private bool? dryRun;
         private string networkAclId;
         private int? ruleNumber;
         private bool? egress;
-        public bool DryRun
-        {
-            get { return this.dryRun ?? default(bool); }
-            set { this.dryRun = value; }
-        }
 
-        // Check to see if DryRun property is set
-        internal bool IsSetDryRun()
-        {
-            return this.dryRun.HasValue;
-        }
 
         /// <summary>
         /// ID of the network ACL.

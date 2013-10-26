@@ -28,6 +28,7 @@ namespace Amazon.EC2.Model
         private DiskImageDetail image;
         private string description;
         private VolumeDetail volume;
+
         public DiskImageDetail Image
         {
             get { return this.image; }

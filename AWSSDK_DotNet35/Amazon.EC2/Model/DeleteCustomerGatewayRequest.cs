@@ -29,21 +29,10 @@ namespace Amazon.EC2.Model
     /// single active customer gateway per AWS account (active means that you've created a VPN connection with that customer gateway). AWS might
     /// delete any customer gateway you leave inactive for an extended period of time. </para>
     /// </summary>
-    public partial class DeleteCustomerGatewayRequest : AmazonWebServiceRequest
+    public partial class DeleteCustomerGatewayRequest : AmazonEC2Request
     {
-        private bool? dryRun;
         private string customerGatewayId;
-        public bool DryRun
-        {
-            get { return this.dryRun ?? default(bool); }
-            set { this.dryRun = value; }
-        }
 
-        // Check to see if DryRun property is set
-        internal bool IsSetDryRun()
-        {
-            return this.dryRun.HasValue;
-        }
 
         /// <summary>
         /// The ID of the customer gateway to delete.

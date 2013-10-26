@@ -27,12 +27,13 @@ namespace Amazon.EC2.Model
     /// Container for the parameters to the CreateReservedInstancesListing operation.
     /// 
     /// </summary>
-    public partial class CreateReservedInstancesListingRequest : AmazonWebServiceRequest
+    public partial class CreateReservedInstancesListingRequest : AmazonEC2Request
     {
         private string reservedInstancesId;
         private int? instanceCount;
         private List<PriceScheduleSpecification> priceSchedules = new List<PriceScheduleSpecification>();
         private string clientToken;
+
         public string ReservedInstancesId
         {
             get { return this.reservedInstancesId; }

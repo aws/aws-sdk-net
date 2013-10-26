@@ -35,10 +35,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             IRequest request = new DefaultRequest(bundleInstanceRequest, "AmazonEC2");
             request.Parameters.Add("Action", "BundleInstance");
             request.Parameters.Add("Version", "2013-10-01");
-            if (bundleInstanceRequest != null && bundleInstanceRequest.IsSetDryRun())
-            {
-                request.Parameters.Add("DryRun", StringUtils.FromBool(bundleInstanceRequest.DryRun));
-            }
             if (bundleInstanceRequest != null && bundleInstanceRequest.IsSetInstanceId())
             {
                 request.Parameters.Add("InstanceId", StringUtils.FromString(bundleInstanceRequest.InstanceId));

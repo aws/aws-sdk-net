@@ -27,6 +27,7 @@ namespace Amazon.EC2.Model
         
         private long? size;
         private string id;
+
         public long Size
         {
             get { return this.size ?? default(long); }

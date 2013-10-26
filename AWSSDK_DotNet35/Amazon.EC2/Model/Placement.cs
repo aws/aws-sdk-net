@@ -30,6 +30,7 @@ namespace Amazon.EC2.Model
         private string groupName;
         private Tenancy tenancy;
 
+
         /// <summary>
         /// The availability zone in which an Amazon EC2 instance runs.
         ///  

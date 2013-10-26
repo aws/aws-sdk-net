@@ -28,22 +28,11 @@ namespace Amazon.EC2.Model
     /// <para> Adds or overwrites tags for the specified resources. Each resource can have a maximum of 10 tags. Each tag consists of a key-value
     /// pair. Tag keys must be unique per resource. </para>
     /// </summary>
-    public partial class CreateTagsRequest : AmazonWebServiceRequest
+    public partial class CreateTagsRequest : AmazonEC2Request
     {
-        private bool? dryRun;
         private List<string> resources = new List<string>();
         private List<Tag> tags = new List<Tag>();
-        public bool DryRun
-        {
-            get { return this.dryRun ?? default(bool); }
-            set { this.dryRun = value; }
-        }
 
-        // Check to see if DryRun property is set
-        internal bool IsSetDryRun()
-        {
-            return this.dryRun.HasValue;
-        }
 
         /// <summary>
         /// One or more IDs of resources to tag. This could be the ID of an AMI, an instance, an EBS volume, or snapshot, etc.

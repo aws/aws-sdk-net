@@ -28,6 +28,7 @@ namespace Amazon.EC2.Model
         private long? term;
         private double? price;
         private CurrencyCodeValues currencyCode;
+
         public long Term
         {
             get { return this.term ?? default(long); }

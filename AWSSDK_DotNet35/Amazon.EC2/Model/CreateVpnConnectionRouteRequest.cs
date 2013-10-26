@@ -27,10 +27,11 @@ namespace Amazon.EC2.Model
     /// Container for the parameters to the CreateVpnConnectionRoute operation.
     /// 
     /// </summary>
-    public partial class CreateVpnConnectionRouteRequest : AmazonWebServiceRequest
+    public partial class CreateVpnConnectionRouteRequest : AmazonEC2Request
     {
         private string vpnConnectionId;
         private string destinationCidrBlock;
+
         public string VpnConnectionId
         {
             get { return this.vpnConnectionId; }

@@ -29,6 +29,7 @@ namespace Amazon.EC2.Model
         
         private Reservation reservation;
 
+
         /// <summary>
         /// The newly created reservation, containing the new instances.
         ///  

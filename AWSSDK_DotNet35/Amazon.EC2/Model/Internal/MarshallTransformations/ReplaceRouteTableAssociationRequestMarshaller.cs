@@ -35,10 +35,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             IRequest request = new DefaultRequest(replaceRouteTableAssociationRequest, "AmazonEC2");
             request.Parameters.Add("Action", "ReplaceRouteTableAssociation");
             request.Parameters.Add("Version", "2013-10-01");
-            if (replaceRouteTableAssociationRequest != null && replaceRouteTableAssociationRequest.IsSetDryRun())
-            {
-                request.Parameters.Add("DryRun", StringUtils.FromBool(replaceRouteTableAssociationRequest.DryRun));
-            }
             if (replaceRouteTableAssociationRequest != null && replaceRouteTableAssociationRequest.IsSetAssociationId())
             {
                 request.Parameters.Add("AssociationId", StringUtils.FromString(replaceRouteTableAssociationRequest.AssociationId));

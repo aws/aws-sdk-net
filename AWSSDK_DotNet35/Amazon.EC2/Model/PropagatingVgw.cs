@@ -26,6 +26,7 @@ namespace Amazon.EC2.Model
     {
         
         private string gatewayId;
+
         public string GatewayId
         {
             get { return this.gatewayId; }

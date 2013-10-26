@@ -32,6 +32,7 @@ namespace Amazon.EC2.Model
         private AttachmentStatus status;
         private DateTime? attachTime;
         private bool? deleteOnTermination;
+
         public string AttachmentId
         {
             get { return this.attachmentId; }

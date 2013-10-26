@@ -35,10 +35,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             IRequest request = new DefaultRequest(deleteTagsRequest, "AmazonEC2");
             request.Parameters.Add("Action", "DeleteTags");
             request.Parameters.Add("Version", "2013-10-01");
-            if (deleteTagsRequest != null && deleteTagsRequest.IsSetDryRun())
-            {
-                request.Parameters.Add("DryRun", StringUtils.FromBool(deleteTagsRequest.DryRun));
-            }
             if (deleteTagsRequest != null)
             {
                 List<string> resourcesList = deleteTagsRequest.Resources;

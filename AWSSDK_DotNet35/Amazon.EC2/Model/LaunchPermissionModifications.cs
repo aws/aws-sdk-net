@@ -27,6 +27,7 @@ namespace Amazon.EC2.Model
         
         private List<LaunchPermission> add = new List<LaunchPermission>();
         private List<LaunchPermission> remove = new List<LaunchPermission>();
+
         public List<LaunchPermission> Add
         {
             get { return this.add; }

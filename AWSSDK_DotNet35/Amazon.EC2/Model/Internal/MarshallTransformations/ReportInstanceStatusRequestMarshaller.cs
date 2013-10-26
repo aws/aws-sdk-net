@@ -35,10 +35,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             IRequest request = new DefaultRequest(reportInstanceStatusRequest, "AmazonEC2");
             request.Parameters.Add("Action", "ReportInstanceStatus");
             request.Parameters.Add("Version", "2013-10-01");
-            if (reportInstanceStatusRequest != null && reportInstanceStatusRequest.IsSetDryRun())
-            {
-                request.Parameters.Add("DryRun", StringUtils.FromBool(reportInstanceStatusRequest.DryRun));
-            }
             if (reportInstanceStatusRequest != null)
             {
                 List<string> instancesList = reportInstanceStatusRequest.Instances;

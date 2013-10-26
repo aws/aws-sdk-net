@@ -29,23 +29,12 @@ namespace Amazon.EC2.Model
     /// Instances, you purchase the right to launch Amazon EC2 instances for a period of time (without getting insufficient capacity errors) and pay
     /// a lower usage rate for the actual time used. </para>
     /// </summary>
-    public partial class PurchaseReservedInstancesOfferingRequest : AmazonWebServiceRequest
+    public partial class PurchaseReservedInstancesOfferingRequest : AmazonEC2Request
     {
-        private bool? dryRun;
         private string reservedInstancesOfferingId;
         private int? instanceCount;
         private ReservedInstanceLimitPrice limitPrice;
-        public bool DryRun
-        {
-            get { return this.dryRun ?? default(bool); }
-            set { this.dryRun = value; }
-        }
 
-        // Check to see if DryRun property is set
-        internal bool IsSetDryRun()
-        {
-            return this.dryRun.HasValue;
-        }
 
         /// <summary>
         /// The unique ID of the Reserved Instances offering being purchased.

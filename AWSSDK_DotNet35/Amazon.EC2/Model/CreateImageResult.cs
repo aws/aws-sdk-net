@@ -29,6 +29,7 @@ namespace Amazon.EC2.Model
         
         private string imageId;
 
+
         /// <summary>
         /// The ID of the new AMI.
         ///  

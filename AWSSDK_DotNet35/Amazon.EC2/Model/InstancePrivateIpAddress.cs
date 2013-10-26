@@ -29,6 +29,7 @@ namespace Amazon.EC2.Model
         private string privateDnsName;
         private bool? primary;
         private InstanceNetworkInterfaceAssociation association;
+
         public string PrivateIpAddress
         {
             get { return this.privateIpAddress; }

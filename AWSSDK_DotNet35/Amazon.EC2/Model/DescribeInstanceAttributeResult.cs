@@ -29,6 +29,7 @@ namespace Amazon.EC2.Model
         
         private InstanceAttribute instanceAttribute;
 
+
         /// <summary>
         /// The described instance attribute.
         ///  

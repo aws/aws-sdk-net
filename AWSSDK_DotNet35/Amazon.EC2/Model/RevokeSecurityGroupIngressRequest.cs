@@ -31,23 +31,12 @@ namespace Amazon.EC2.Model
     /// and types (for ICMP). </para> <para> Permission changes are quickly propagated to instances within the security group. However, depending on
     /// the number of instances in the group, a small delay might occur. </para>
     /// </summary>
-    public partial class RevokeSecurityGroupIngressRequest : AmazonWebServiceRequest
+    public partial class RevokeSecurityGroupIngressRequest : AmazonEC2Request
     {
-        private bool? dryRun;
         private string groupName;
         private string groupId;
         private List<IpPermission> ipPermissions = new List<IpPermission>();
-        public bool DryRun
-        {
-            get { return this.dryRun ?? default(bool); }
-            set { this.dryRun = value; }
-        }
 
-        // Check to see if DryRun property is set
-        internal bool IsSetDryRun()
-        {
-            return this.dryRun.HasValue;
-        }
 
         /// <summary>
         /// Name of the standard (EC2) security group to modify. The group must belong to your account. Can be used instead of GroupID for standard

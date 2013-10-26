@@ -29,6 +29,7 @@ namespace Amazon.EC2.Model
         
         private List<SpotInstanceRequest> spotInstanceRequests = new List<SpotInstanceRequest>();
 
+
         /// <summary>
         /// Contains a list of Spot Instance requests.
         ///  

@@ -32,6 +32,7 @@ namespace Amazon.EC2.Model
         private List<UserIdGroupPair> userIdGroupPairs = new List<UserIdGroupPair>();
         private List<string> ipRanges = new List<string>();
 
+
         /// <summary>
         /// The IP protocol of this permission. Valid protocol values: <c>tcp</c>, <c>udp</c>, <c>icmp</c>
         ///  

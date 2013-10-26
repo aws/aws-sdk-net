@@ -28,22 +28,11 @@ namespace Amazon.EC2.Model
     /// <para> Creates a new VPN gateway. A VPN gateway is the VPC-side endpoint for your VPN connection. You can create a VPN gateway before
     /// creating the VPC itself. </para>
     /// </summary>
-    public partial class CreateVpnGatewayRequest : AmazonWebServiceRequest
+    public partial class CreateVpnGatewayRequest : AmazonEC2Request
     {
-        private bool? dryRun;
         private GatewayType type;
         private string availabilityZone;
-        public bool DryRun
-        {
-            get { return this.dryRun ?? default(bool); }
-            set { this.dryRun = value; }
-        }
 
-        // Check to see if DryRun property is set
-        internal bool IsSetDryRun()
-        {
-            return this.dryRun.HasValue;
-        }
 
         /// <summary>
         /// The type of VPN connection this VPN gateway supports.

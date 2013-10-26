@@ -27,6 +27,7 @@ namespace Amazon.EC2.Model
     {
         
         private RouteTable routeTable;
+
         public RouteTable RouteTable
         {
             get { return this.routeTable; }

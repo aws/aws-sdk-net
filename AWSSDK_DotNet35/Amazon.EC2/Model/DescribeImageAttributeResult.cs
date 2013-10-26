@@ -29,6 +29,7 @@ namespace Amazon.EC2.Model
         
         private ImageAttribute imageAttribute;
 
+
         /// <summary>
         /// The described image attribute of the associated AMI.
         ///  

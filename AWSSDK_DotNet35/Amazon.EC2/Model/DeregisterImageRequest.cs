@@ -27,21 +27,10 @@ namespace Amazon.EC2.Model
     /// Container for the parameters to the DeregisterImage operation.
     /// <para> The DeregisterImage operation deregisters an AMI. Once deregistered, instances of the AMI can no longer be launched. </para>
     /// </summary>
-    public partial class DeregisterImageRequest : AmazonWebServiceRequest
+    public partial class DeregisterImageRequest : AmazonEC2Request
     {
-        private bool? dryRun;
         private string imageId;
-        public bool DryRun
-        {
-            get { return this.dryRun ?? default(bool); }
-            set { this.dryRun = value; }
-        }
 
-        // Check to see if DryRun property is set
-        internal bool IsSetDryRun()
-        {
-            return this.dryRun.HasValue;
-        }
 
         /// <summary>
         /// The ID of the AMI to deregister.

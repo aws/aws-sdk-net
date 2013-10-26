@@ -35,6 +35,7 @@ namespace Amazon.EC2.Model
         private string networkInterfaceOwnerId;
         private string privateIpAddress;
 
+
         /// <summary>
         /// 
         ///  

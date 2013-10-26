@@ -27,22 +27,11 @@ namespace Amazon.EC2.Model
     /// Container for the parameters to the DescribeRegions operation.
     /// <para> The DescribeRegions operation describes regions zones that are currently available to the account. </para>
     /// </summary>
-    public partial class DescribeRegionsRequest : AmazonWebServiceRequest
+    public partial class DescribeRegionsRequest : AmazonEC2Request
     {
-        private bool? dryRun;
         private List<string> regionNames = new List<string>();
         private List<Filter> filters = new List<Filter>();
-        public bool DryRun
-        {
-            get { return this.dryRun ?? default(bool); }
-            set { this.dryRun = value; }
-        }
 
-        // Check to see if DryRun property is set
-        internal bool IsSetDryRun()
-        {
-            return this.dryRun.HasValue;
-        }
 
         /// <summary>
         /// The optional list of regions to describe.

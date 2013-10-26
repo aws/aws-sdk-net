@@ -29,6 +29,7 @@ namespace Amazon.EC2.Model
         
         private VpcAttachment vpcAttachement;
 
+
         /// <summary>
         /// 
         ///  

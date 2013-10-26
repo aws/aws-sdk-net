@@ -35,10 +35,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             IRequest request = new DefaultRequest(describeAccountAttributesRequest, "AmazonEC2");
             request.Parameters.Add("Action", "DescribeAccountAttributes");
             request.Parameters.Add("Version", "2013-10-01");
-            if (describeAccountAttributesRequest != null && describeAccountAttributesRequest.IsSetDryRun())
-            {
-                request.Parameters.Add("DryRun", StringUtils.FromBool(describeAccountAttributesRequest.DryRun));
-            }
             if (describeAccountAttributesRequest != null)
             {
                 List<string> attributeNamesList = describeAccountAttributesRequest.AttributeNames;

@@ -28,22 +28,11 @@ namespace Amazon.EC2.Model
     /// <para> The DescribeBundleTasks operation describes in-progress and recent bundle tasks. Complete and failed tasks are removed from the list
     /// a short time after completion. If no bundle ids are given, all bundle tasks are returned. </para>
     /// </summary>
-    public partial class DescribeBundleTasksRequest : AmazonWebServiceRequest
+    public partial class DescribeBundleTasksRequest : AmazonEC2Request
     {
-        private bool? dryRun;
         private List<string> bundleIds = new List<string>();
         private List<Filter> filters = new List<Filter>();
-        public bool DryRun
-        {
-            get { return this.dryRun ?? default(bool); }
-            set { this.dryRun = value; }
-        }
 
-        // Check to see if DryRun property is set
-        internal bool IsSetDryRun()
-        {
-            return this.dryRun.HasValue;
-        }
 
         /// <summary>
         /// The list of bundle task IDs to describe.

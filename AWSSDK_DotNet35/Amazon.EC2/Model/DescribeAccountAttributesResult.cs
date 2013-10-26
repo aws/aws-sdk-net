@@ -27,6 +27,7 @@ namespace Amazon.EC2.Model
     {
         
         private List<AccountAttribute> accountAttributes = new List<AccountAttribute>();
+
         public List<AccountAttribute> AccountAttributes
         {
             get { return this.accountAttributes; }

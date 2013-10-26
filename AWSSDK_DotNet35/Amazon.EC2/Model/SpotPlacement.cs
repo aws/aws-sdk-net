@@ -29,6 +29,7 @@ namespace Amazon.EC2.Model
         private string availabilityZone;
         private string groupName;
 
+
         /// <summary>
         /// The availability zone in which an Amazon EC2 instance runs.
         ///  

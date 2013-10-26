@@ -27,6 +27,7 @@ namespace Amazon.EC2.Model
         
         private ListingState state;
         private int? count;
+
         public ListingState State
         {
             get { return this.state; }

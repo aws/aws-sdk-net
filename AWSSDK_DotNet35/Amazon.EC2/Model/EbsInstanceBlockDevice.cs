@@ -31,6 +31,7 @@ namespace Amazon.EC2.Model
         private DateTime? attachTime;
         private bool? deleteOnTermination;
 
+
         /// <summary>
         /// The ID of the EBS volume.
         ///  

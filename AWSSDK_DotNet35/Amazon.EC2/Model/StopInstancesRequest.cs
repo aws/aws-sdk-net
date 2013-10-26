@@ -32,22 +32,11 @@ namespace Amazon.EC2.Model
     /// which it can be restarted. Stopping an instance does not preserve data stored in RAM. Performing this operation on an instance that uses an
     /// instance store as its root device returns an error. </para>
     /// </summary>
-    public partial class StopInstancesRequest : AmazonWebServiceRequest
+    public partial class StopInstancesRequest : AmazonEC2Request
     {
-        private bool? dryRun;
         private List<string> instanceIds = new List<string>();
         private bool? force;
-        public bool DryRun
-        {
-            get { return this.dryRun ?? default(bool); }
-            set { this.dryRun = value; }
-        }
 
-        // Check to see if DryRun property is set
-        internal bool IsSetDryRun()
-        {
-            return this.dryRun.HasValue;
-        }
 
         /// <summary>
         /// The list of Amazon EC2 instances to stop.

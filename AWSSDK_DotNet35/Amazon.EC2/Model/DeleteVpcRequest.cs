@@ -29,21 +29,10 @@ namespace Amazon.EC2.Model
     /// terminate all running instances, delete all VPC security groups (except the default), delete all the route tables (except the default), etc.
     /// </para>
     /// </summary>
-    public partial class DeleteVpcRequest : AmazonWebServiceRequest
+    public partial class DeleteVpcRequest : AmazonEC2Request
     {
-        private bool? dryRun;
         private string vpcId;
-        public bool DryRun
-        {
-            get { return this.dryRun ?? default(bool); }
-            set { this.dryRun = value; }
-        }
 
-        // Check to see if DryRun property is set
-        internal bool IsSetDryRun()
-        {
-            return this.dryRun.HasValue;
-        }
 
         /// <summary>
         /// The ID of the VPC you want to delete.

@@ -31,6 +31,7 @@ namespace Amazon.EC2.Model
         private string statusMessage;
         private InstanceExportDetails instanceExportDetails;
         private ExportToS3Task exportToS3Task;
+
         public string ExportTaskId
         {
             get { return this.exportTaskId; }

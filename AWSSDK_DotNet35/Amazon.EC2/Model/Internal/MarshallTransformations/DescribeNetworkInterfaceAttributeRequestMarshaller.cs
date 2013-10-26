@@ -35,10 +35,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             IRequest request = new DefaultRequest(describeNetworkInterfaceAttributeRequest, "AmazonEC2");
             request.Parameters.Add("Action", "DescribeNetworkInterfaceAttribute");
             request.Parameters.Add("Version", "2013-10-01");
-            if (describeNetworkInterfaceAttributeRequest != null && describeNetworkInterfaceAttributeRequest.IsSetDryRun())
-            {
-                request.Parameters.Add("DryRun", StringUtils.FromBool(describeNetworkInterfaceAttributeRequest.DryRun));
-            }
             if (describeNetworkInterfaceAttributeRequest != null && describeNetworkInterfaceAttributeRequest.IsSetNetworkInterfaceId())
             {
                 request.Parameters.Add("NetworkInterfaceId", StringUtils.FromString(describeNetworkInterfaceAttributeRequest.NetworkInterfaceId));

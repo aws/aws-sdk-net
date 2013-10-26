@@ -28,6 +28,7 @@ namespace Amazon.EC2.Model
         private DiskImageFormat format;
         private long? bytes;
         private string importManifestUrl;
+
         public DiskImageFormat Format
         {
             get { return this.format; }

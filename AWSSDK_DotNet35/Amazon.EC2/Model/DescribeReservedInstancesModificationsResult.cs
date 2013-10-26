@@ -30,6 +30,7 @@ namespace Amazon.EC2.Model
         private List<ReservedInstancesModification> reservedInstancesModifications = new List<ReservedInstancesModification>();
         private string nextToken;
 
+
         /// <summary>
         /// The list of Reserved Instances modification requests.
         ///  

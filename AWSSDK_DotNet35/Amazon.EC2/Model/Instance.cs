@@ -64,6 +64,7 @@ namespace Amazon.EC2.Model
         private IamInstanceProfile iamInstanceProfile;
         private bool? ebsOptimized;
 
+
         /// <summary>
         /// Unique ID of the instance launched.
         ///  

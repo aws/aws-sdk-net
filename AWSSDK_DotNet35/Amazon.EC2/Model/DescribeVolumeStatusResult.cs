@@ -28,6 +28,7 @@ namespace Amazon.EC2.Model
         
         private List<VolumeStatusItem> volumeStatuses = new List<VolumeStatusItem>();
         private string nextToken;
+
         public List<VolumeStatusItem> VolumeStatuses
         {
             get { return this.volumeStatuses; }

@@ -28,21 +28,10 @@ namespace Amazon.EC2.Model
     /// <para> Deletes a network ACL from a VPC. The ACL must not have any subnets associated with it. You can't delete the default network ACL. For
     /// more information about network ACLs, go to Network ACLs in the Amazon Virtual Private Cloud User Guide. </para>
     /// </summary>
-    public partial class DeleteNetworkAclRequest : AmazonWebServiceRequest
+    public partial class DeleteNetworkAclRequest : AmazonEC2Request
     {
-        private bool? dryRun;
         private string networkAclId;
-        public bool DryRun
-        {
-            get { return this.dryRun ?? default(bool); }
-            set { this.dryRun = value; }
-        }
 
-        // Check to see if DryRun property is set
-        internal bool IsSetDryRun()
-        {
-            return this.dryRun.HasValue;
-        }
 
         /// <summary>
         /// The ID of the network ACL to be deleted.

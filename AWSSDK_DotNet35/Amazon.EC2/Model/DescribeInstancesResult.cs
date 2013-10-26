@@ -29,6 +29,7 @@ namespace Amazon.EC2.Model
         
         private List<Reservation> reservations = new List<Reservation>();
 
+
         /// <summary>
         /// The list of reservations containing the describes instances.
         ///  

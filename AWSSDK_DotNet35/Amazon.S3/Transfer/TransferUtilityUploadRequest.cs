@@ -320,19 +320,6 @@ namespace Amazon.S3.Transfer
         /// </remarks>
         public event EventHandler<UploadProgressArgs> UploadProgressEvent;
 
-        /// <summary>
-        /// The handler will be attached to the UploadProgressEvent which is fired as data
-        /// is uploaded to S3.  The handler will be passed information detailing how much data
-        /// has been uploaded as well as how much will be uploaded.
-        /// </summary>
-        /// <param name="handler">A method that is called when UploadProgressEvent is fired.</param>
-        /// <returns>this instance of the TransferUtilityUploadRequest</returns>
-        public TransferUtilityUploadRequest WithSubscriber(EventHandler<UploadProgressArgs> handler)
-        {
-            this.UploadProgressEvent += handler;
-            return this;
-        }
-
 
         /// <summary>
         /// Causes the UploadProgressEvent event to be fired.

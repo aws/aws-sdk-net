@@ -31,6 +31,7 @@ namespace Amazon.EC2.Model
         private List<CreateVolumePermission> createVolumePermissions = new List<CreateVolumePermission>();
         private List<ProductCode> productCodes = new List<ProductCode>();
 
+
         /// <summary>
         /// The ID of the snapshot whose attribute is being described.
         ///  

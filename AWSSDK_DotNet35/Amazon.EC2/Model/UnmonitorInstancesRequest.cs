@@ -27,21 +27,10 @@ namespace Amazon.EC2.Model
     /// Container for the parameters to the UnmonitorInstances operation.
     /// <para> Disables monitoring for a running instance. </para>
     /// </summary>
-    public partial class UnmonitorInstancesRequest : AmazonWebServiceRequest
+    public partial class UnmonitorInstancesRequest : AmazonEC2Request
     {
-        private bool? dryRun;
         private List<string> instanceIds = new List<string>();
-        public bool DryRun
-        {
-            get { return this.dryRun ?? default(bool); }
-            set { this.dryRun = value; }
-        }
 
-        // Check to see if DryRun property is set
-        internal bool IsSetDryRun()
-        {
-            return this.dryRun.HasValue;
-        }
 
         /// <summary>
         /// The list of Amazon EC2 instances on which to disable monitoring.

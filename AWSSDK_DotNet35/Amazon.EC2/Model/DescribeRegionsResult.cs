@@ -29,6 +29,7 @@ namespace Amazon.EC2.Model
         
         private List<Region> regions = new List<Region>();
 
+
         /// <summary>
         /// The list of described Amazon EC2 regions.
         ///  

@@ -27,6 +27,7 @@ namespace Amazon.EC2.Model
     {
         
         private InternetGateway internetGateway;
+
         public InternetGateway InternetGateway
         {
             get { return this.internetGateway; }

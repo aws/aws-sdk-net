@@ -30,22 +30,11 @@ namespace Amazon.EC2.Model
     /// by the owner of the AMI. This feature is useful when an AMI owner is providing support and wants to verify whether a user's instance is
     /// eligible. </para>
     /// </summary>
-    public partial class ConfirmProductInstanceRequest : AmazonWebServiceRequest
+    public partial class ConfirmProductInstanceRequest : AmazonEC2Request
     {
-        private bool? dryRun;
         private string productCode;
         private string instanceId;
-        public bool DryRun
-        {
-            get { return this.dryRun ?? default(bool); }
-            set { this.dryRun = value; }
-        }
 
-        // Check to see if DryRun property is set
-        internal bool IsSetDryRun()
-        {
-            return this.dryRun.HasValue;
-        }
 
         /// <summary>
         /// The product code to confirm.

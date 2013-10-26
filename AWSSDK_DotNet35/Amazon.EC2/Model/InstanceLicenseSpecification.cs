@@ -29,6 +29,7 @@ namespace Amazon.EC2.Model
         
         private string pool;
 
+
         /// <summary>
         /// The license pool from which to take a license when starting Amazon EC2 instances in the associated <c>RunInstances</c> request.
         ///  

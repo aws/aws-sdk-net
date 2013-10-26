@@ -31,6 +31,7 @@ namespace Amazon.EC2.Model
         private DateTime? notBefore;
         private DateTime? notAfter;
 
+
         /// <summary>
         /// The associated code of the event. Valid values: instance-reboot, system-reboot, instance-retirement
         ///  

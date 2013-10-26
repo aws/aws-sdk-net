@@ -28,21 +28,10 @@ namespace Amazon.EC2.Model
     /// <para> The CreateKeyPair operation creates a new 2048 bit RSA key pair and returns a unique ID that can be used to reference this key pair
     /// when launching new instances. For more information, see RunInstances. </para>
     /// </summary>
-    public partial class CreateKeyPairRequest : AmazonWebServiceRequest
+    public partial class CreateKeyPairRequest : AmazonEC2Request
     {
-        private bool? dryRun;
         private string keyName;
-        public bool DryRun
-        {
-            get { return this.dryRun ?? default(bool); }
-            set { this.dryRun = value; }
-        }
 
-        // Check to see if DryRun property is set
-        internal bool IsSetDryRun()
-        {
-            return this.dryRun.HasValue;
-        }
 
         /// <summary>
         /// The unique name for the new key pair.

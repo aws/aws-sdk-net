@@ -29,6 +29,7 @@ namespace Amazon.EC2.Model
         
         private List<Vpc> vpcs = new List<Vpc>();
 
+
         /// <summary>
         /// 
         ///  

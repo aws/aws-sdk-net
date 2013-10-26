@@ -35,10 +35,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             IRequest request = new DefaultRequest(getConsoleOutputRequest, "AmazonEC2");
             request.Parameters.Add("Action", "GetConsoleOutput");
             request.Parameters.Add("Version", "2013-10-01");
-            if (getConsoleOutputRequest != null && getConsoleOutputRequest.IsSetDryRun())
-            {
-                request.Parameters.Add("DryRun", StringUtils.FromBool(getConsoleOutputRequest.DryRun));
-            }
             if (getConsoleOutputRequest != null && getConsoleOutputRequest.IsSetInstanceId())
             {
                 request.Parameters.Add("InstanceId", StringUtils.FromString(getConsoleOutputRequest.InstanceId));

@@ -31,6 +31,7 @@ namespace Amazon.EC2.Model
         private bool? sourceDestCheck;
         private List<GroupIdentifier> groups = new List<GroupIdentifier>();
         private NetworkInterfaceAttachment attachment;
+
         public string NetworkInterfaceId
         {
             get { return this.networkInterfaceId; }

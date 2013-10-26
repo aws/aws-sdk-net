@@ -28,6 +28,7 @@ namespace Amazon.EC2.Model
         
         private S3Storage s3;
 
+
         /// <summary>
         /// The details of S3 storage for bundling a Windows instance.
         ///  

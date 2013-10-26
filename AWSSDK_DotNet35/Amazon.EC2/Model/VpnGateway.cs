@@ -33,6 +33,7 @@ namespace Amazon.EC2.Model
         private List<VpcAttachment> vpcAttachments = new List<VpcAttachment>();
         private List<Tag> tags = new List<Tag>();
 
+
         /// <summary>
         /// Specifies the ID of the VPN gateway.
         ///  

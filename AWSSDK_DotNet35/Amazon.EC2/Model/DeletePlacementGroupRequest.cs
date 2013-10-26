@@ -27,21 +27,10 @@ namespace Amazon.EC2.Model
     /// Container for the parameters to the DeletePlacementGroup operation.
     /// <para> Deletes a PlacementGroup from a user's account. Terminate all Amazon EC2 instances in the placement group before deletion. </para>
     /// </summary>
-    public partial class DeletePlacementGroupRequest : AmazonWebServiceRequest
+    public partial class DeletePlacementGroupRequest : AmazonEC2Request
     {
-        private bool? dryRun;
         private string groupName;
-        public bool DryRun
-        {
-            get { return this.dryRun ?? default(bool); }
-            set { this.dryRun = value; }
-        }
 
-        // Check to see if DryRun property is set
-        internal bool IsSetDryRun()
-        {
-            return this.dryRun.HasValue;
-        }
 
         /// <summary>
         /// The name of the <c>PlacementGroup</c> to delete.

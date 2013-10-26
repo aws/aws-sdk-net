@@ -27,9 +27,8 @@ namespace Amazon.EC2.Model
     /// Container for the parameters to the ModifyInstanceAttribute operation.
     /// <para> Modifies an attribute of an instance. </para>
     /// </summary>
-    public partial class ModifyInstanceAttributeRequest : AmazonWebServiceRequest
+    public partial class ModifyInstanceAttributeRequest : AmazonEC2Request
     {
-        private bool? dryRun;
         private string instanceId;
         private InstanceAttributeName attribute;
         private string value;
@@ -43,17 +42,7 @@ namespace Amazon.EC2.Model
         private string instanceInitiatedShutdownBehavior;
         private List<string> groups = new List<string>();
         private bool? ebsOptimized;
-        public bool DryRun
-        {
-            get { return this.dryRun ?? default(bool); }
-            set { this.dryRun = value; }
-        }
 
-        // Check to see if DryRun property is set
-        internal bool IsSetDryRun()
-        {
-            return this.dryRun.HasValue;
-        }
 
         /// <summary>
         /// The ID of the instance whose attribute is being modified.

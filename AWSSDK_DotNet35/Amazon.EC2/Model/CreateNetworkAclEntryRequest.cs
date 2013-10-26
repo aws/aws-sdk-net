@@ -33,9 +33,8 @@ namespace Amazon.EC2.Model
     /// can't modify it; you must either replace it, or create a new entry and delete the old one. </para> <para> For more information about network
     /// ACLs, go to Network ACLs in the Amazon Virtual Private Cloud User Guide. </para>
     /// </summary>
-    public partial class CreateNetworkAclEntryRequest : AmazonWebServiceRequest
+    public partial class CreateNetworkAclEntryRequest : AmazonEC2Request
     {
-        private bool? dryRun;
         private string networkAclId;
         private int? ruleNumber;
         private string protocol;
@@ -44,17 +43,7 @@ namespace Amazon.EC2.Model
         private string cidrBlock;
         private IcmpTypeCode icmpTypeCode;
         private PortRange portRange;
-        public bool DryRun
-        {
-            get { return this.dryRun ?? default(bool); }
-            set { this.dryRun = value; }
-        }
 
-        // Check to see if DryRun property is set
-        internal bool IsSetDryRun()
-        {
-            return this.dryRun.HasValue;
-        }
 
         /// <summary>
         /// ID of the ACL where the entry will be created.

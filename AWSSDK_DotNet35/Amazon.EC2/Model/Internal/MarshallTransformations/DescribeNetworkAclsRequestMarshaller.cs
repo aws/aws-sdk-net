@@ -35,10 +35,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             IRequest request = new DefaultRequest(describeNetworkAclsRequest, "AmazonEC2");
             request.Parameters.Add("Action", "DescribeNetworkAcls");
             request.Parameters.Add("Version", "2013-10-01");
-            if (describeNetworkAclsRequest != null && describeNetworkAclsRequest.IsSetDryRun())
-            {
-                request.Parameters.Add("DryRun", StringUtils.FromBool(describeNetworkAclsRequest.DryRun));
-            }
             if (describeNetworkAclsRequest != null)
             {
                 List<string> networkAclIdsList = describeNetworkAclsRequest.NetworkAclIds;

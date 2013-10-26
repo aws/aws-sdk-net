@@ -32,6 +32,7 @@ namespace Amazon.EC2.Model
         private PlacementStrategy strategy;
         private PlacementGroupState state;
 
+
         /// <summary>
         /// The name of this <c>PlacementGroup</c>.
         ///  

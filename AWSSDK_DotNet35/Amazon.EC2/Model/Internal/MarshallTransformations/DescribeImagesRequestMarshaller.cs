@@ -35,10 +35,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             IRequest request = new DefaultRequest(describeImagesRequest, "AmazonEC2");
             request.Parameters.Add("Action", "DescribeImages");
             request.Parameters.Add("Version", "2013-10-01");
-            if (describeImagesRequest != null && describeImagesRequest.IsSetDryRun())
-            {
-                request.Parameters.Add("DryRun", StringUtils.FromBool(describeImagesRequest.DryRun));
-            }
             if (describeImagesRequest != null)
             {
                 List<string> imageIdsList = describeImagesRequest.ImageIds;

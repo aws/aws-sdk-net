@@ -28,6 +28,7 @@ namespace Amazon.EC2.Model
         
         private MonitoringState state;
 
+
         /// <summary>
         /// The state of monitoring on an Amazon EC2 instance (ex: enabled, disabled).
         ///  

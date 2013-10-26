@@ -27,6 +27,7 @@ namespace Amazon.EC2.Model
     {
         
         private List<DhcpOptions> dhcpOptions = new List<DhcpOptions>();
+
         public List<DhcpOptions> DhcpOptions
         {
             get { return this.dhcpOptions; }

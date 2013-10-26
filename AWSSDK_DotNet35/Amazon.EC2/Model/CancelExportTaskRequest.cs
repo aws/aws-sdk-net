@@ -27,9 +27,10 @@ namespace Amazon.EC2.Model
     /// Container for the parameters to the CancelExportTask operation.
     /// 
     /// </summary>
-    public partial class CancelExportTaskRequest : AmazonWebServiceRequest
+    public partial class CancelExportTaskRequest : AmazonEC2Request
     {
         private string exportTaskId;
+
         public string ExportTaskId
         {
             get { return this.exportTaskId; }

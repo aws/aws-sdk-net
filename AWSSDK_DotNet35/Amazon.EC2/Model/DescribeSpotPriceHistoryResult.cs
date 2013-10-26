@@ -28,6 +28,7 @@ namespace Amazon.EC2.Model
         
         private List<SpotPrice> spotPriceHistory = new List<SpotPrice>();
         private string nextToken;
+
         public List<SpotPrice> SpotPriceHistory
         {
             get { return this.spotPriceHistory; }

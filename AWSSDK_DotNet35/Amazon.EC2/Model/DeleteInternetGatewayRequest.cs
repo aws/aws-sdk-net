@@ -28,21 +28,10 @@ namespace Amazon.EC2.Model
     /// <para> Deletes an Internet gateway from your AWS account. The gateway must not be attached to a VPC. For more information about your VPC and
     /// Internet gateway, go to Amazon Virtual Private Cloud User Guide. </para>
     /// </summary>
-    public partial class DeleteInternetGatewayRequest : AmazonWebServiceRequest
+    public partial class DeleteInternetGatewayRequest : AmazonEC2Request
     {
-        private bool? dryRun;
         private string internetGatewayId;
-        public bool DryRun
-        {
-            get { return this.dryRun ?? default(bool); }
-            set { this.dryRun = value; }
-        }
 
-        // Check to see if DryRun property is set
-        internal bool IsSetDryRun()
-        {
-            return this.dryRun.HasValue;
-        }
 
         /// <summary>
         /// The ID of the Internet gateway to be deleted.

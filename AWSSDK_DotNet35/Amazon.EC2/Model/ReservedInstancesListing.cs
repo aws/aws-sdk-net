@@ -35,6 +35,7 @@ namespace Amazon.EC2.Model
         private List<PriceSchedule> priceSchedules = new List<PriceSchedule>();
         private List<Tag> tags = new List<Tag>();
         private string clientToken;
+
         public string ReservedInstancesListingId
         {
             get { return this.reservedInstancesListingId; }

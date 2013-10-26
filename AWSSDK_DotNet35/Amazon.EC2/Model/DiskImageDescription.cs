@@ -29,6 +29,7 @@ namespace Amazon.EC2.Model
         private long? size;
         private string importManifestUrl;
         private string checksum;
+
         public DiskImageFormat Format
         {
             get { return this.format; }

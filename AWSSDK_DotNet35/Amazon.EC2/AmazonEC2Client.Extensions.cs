@@ -21,6 +21,9 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
+using System.Reflection;
+using System.Net;
+using Amazon.Util;
 
 
 namespace Amazon.EC2
@@ -165,6 +168,144 @@ namespace Amazon.EC2
                     }
                 }
             }
+        }
+
+        #endregion
+
+        #region DryRun
+
+        private class DryRunInfo
+        {
+            public MethodInfo Method { get; private set; }
+
+            public DryRunInfo(MethodInfo method)
+            {
+                Method = method;
+            }
+
+            public void DryRun(AmazonEC2Client client, AmazonEC2Request request, ref DryRunResponse response)
+            {
+                response.IsSuccessful = false;
+
+                SetDryRun(request, true);
+                try
+                {
+                    Method.Invoke(client, new object[] { request });
+                    // If no exception thrown, consider this a failure
+                    response.Message = "Unrecognized service response for the dry-run request.";
+                }
+                catch (Exception invokeException)
+                {
+                    Exception actualException = invokeException.InnerException;
+                    AmazonEC2Exception ec2e = actualException as AmazonEC2Exception;
+
+                    response.Message = actualException.Message;
+                    if (ec2e != null)
+                    {
+                        response.IsSuccessful = ec2e.StatusCode == HttpStatusCode.PreconditionFailed;
+                        response.ResponseMetadata = new ResponseMetadata
+                        {
+                            RequestId = ec2e.RequestId
+                        };
+                    }
+
+                    if (!response.IsSuccessful)
+                        response.Error = actualException;
+                }
+                finally
+                {
+                    SetDryRun(request, false);
+                }
+            }
+
+            private void SetDryRun(AmazonEC2Request request, bool value)
+            {
+                if (value)
+                    request.BeforeRequestEvent += SetDryRunParameterCallback;
+                else
+                    request.BeforeRequestEvent -= SetDryRunParameterCallback;
+            }
+
+            private void SetDryRunParameterCallback(object sender, RequestEventArgs args)
+            {
+                WebServiceRequestEventArgs wsrea = args as WebServiceRequestEventArgs;
+                if (wsrea != null)
+                {
+                    wsrea.Parameters["DryRun"] = "true";
+                }
+            }
+        }
+
+        private static Dictionary<Type, DryRunInfo> _methodCache = null;
+        private static Dictionary<Type, DryRunInfo> MethodCache
+        {
+            get
+            {
+                if (_methodCache == null)
+                {
+                    _methodCache = new Dictionary<Type, DryRunInfo>();
+
+                    var ec2RequestType = TypeFactory.GetTypeInfo(typeof(AmazonEC2Request));
+                    var allMembers = TypeFactory.GetTypeInfo(typeof(AmazonEC2Client)).GetMembers();
+                    foreach (var member in allMembers)
+                    {
+                        MethodInfo method = member as MethodInfo;
+                        if (method == null)
+                            continue;
+
+                        // Return type must be named "*Response"
+                        var returnType = method.ReturnType;
+                        if (!returnType.Name.EndsWith("Response", StringComparison.OrdinalIgnoreCase))
+                            continue;
+
+                        // There must be only one input parameter
+                        var parameters = method.GetParameters();
+                        if (parameters.Length != 1)
+                            continue;
+
+                        // The input parameter must extend EC2Request, but must not be EC2Request
+                        var inputType = parameters[0].ParameterType;
+                        var inputTypeInfo = TypeFactory.GetTypeInfo(inputType);
+                        if (inputType == ec2RequestType || !ec2RequestType.IsAssignableFrom(inputTypeInfo))
+                            continue;
+
+                        // Method name must match: [Name]Request = [InputTypeName]
+                        if (!string.Equals(method.Name + "Request", inputType.Name, StringComparison.OrdinalIgnoreCase))
+                            continue;
+
+                        _methodCache[inputType] = new DryRunInfo(method);
+                    }
+                }
+
+                return _methodCache;
+            }
+        }
+
+        /// <summary>
+        /// Checks whether you have the required permissions for the action, without actually making the request.
+        /// </summary>
+        /// <param name="request">Request to do a dry run of.</param>
+        /// <returns>Result of the dry run.</returns>
+        public DryRunResponse DryRun(AmazonEC2Request request)
+        {
+            DryRunResponse response = new DryRunResponse { IsSuccessful = false };
+
+            if (request == null)
+            {
+                response.Message = "Request must not be null";
+                return response;
+            }
+
+            DryRunInfo dryRunInfo;
+            Type requestType = request.GetType();
+            if (!MethodCache.TryGetValue(requestType, out dryRunInfo) || dryRunInfo == null)
+            {
+                response.Message = "Unrecognized request";
+                return response;
+            }
+
+            dryRunInfo.DryRun(this, request, ref response);
+            return response;
         }
 
         #endregion

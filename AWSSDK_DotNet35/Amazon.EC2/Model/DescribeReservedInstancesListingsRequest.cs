@@ -27,11 +27,12 @@ namespace Amazon.EC2.Model
     /// Container for the parameters to the DescribeReservedInstancesListings operation.
     /// 
     /// </summary>
-    public partial class DescribeReservedInstancesListingsRequest : AmazonWebServiceRequest
+    public partial class DescribeReservedInstancesListingsRequest : AmazonEC2Request
     {
         private string reservedInstancesId;
         private string reservedInstancesListingId;
         private List<Filter> filters = new List<Filter>();
+
         public string ReservedInstancesId
         {
             get { return this.reservedInstancesId; }

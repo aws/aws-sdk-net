@@ -28,6 +28,7 @@ namespace Amazon.EC2.Model
         private string publicIp;
         private string publicDnsName;
         private string ipOwnerId;
+
         public string PublicIp
         {
             get { return this.publicIp; }

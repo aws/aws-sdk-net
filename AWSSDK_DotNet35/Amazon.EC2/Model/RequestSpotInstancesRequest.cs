@@ -30,9 +30,8 @@ namespace Amazon.EC2.Model
     /// and current spot instance requests. </para> <para> For conceptual information about Spot Instances, refer to the Amazon Elastic Compute
     /// Cloud Developer Guide or Amazon Elastic Compute Cloud User Guide. </para>
     /// </summary>
-    public partial class RequestSpotInstancesRequest : AmazonWebServiceRequest
+    public partial class RequestSpotInstancesRequest : AmazonEC2Request
     {
-        private bool? dryRun;
         private string spotPrice;
         private int? instanceCount;
         private SpotInstanceType type;
@@ -41,17 +40,7 @@ namespace Amazon.EC2.Model
         private string launchGroup;
         private string availabilityZoneGroup;
         private LaunchSpecification launchSpecification;
-        public bool DryRun
-        {
-            get { return this.dryRun ?? default(bool); }
-            set { this.dryRun = value; }
-        }
 
-        // Check to see if DryRun property is set
-        internal bool IsSetDryRun()
-        {
-            return this.dryRun.HasValue;
-        }
 
         /// <summary>
         /// Specifies the maximum hourly price for any Spot Instance launched to fulfill the request.

@@ -35,22 +35,11 @@ namespace Amazon.EC2.Model
     /// occur. </para> <para> <b>Important:</b> For VPC security groups: You can have up to 50 rules total per group (covering both ingress and
     /// egress). </para>
     /// </summary>
-    public partial class AuthorizeSecurityGroupEgressRequest : AmazonWebServiceRequest
+    public partial class AuthorizeSecurityGroupEgressRequest : AmazonEC2Request
     {
-        private bool? dryRun;
         private string groupId;
         private List<IpPermission> ipPermissions = new List<IpPermission>();
-        public bool DryRun
-        {
-            get { return this.dryRun ?? default(bool); }
-            set { this.dryRun = value; }
-        }
 
-        // Check to see if DryRun property is set
-        internal bool IsSetDryRun()
-        {
-            return this.dryRun.HasValue;
-        }
 
         /// <summary>
         /// ID of the VPC security group to modify.

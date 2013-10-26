@@ -35,10 +35,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             IRequest request = new DefaultRequest(describeRouteTablesRequest, "AmazonEC2");
             request.Parameters.Add("Action", "DescribeRouteTables");
             request.Parameters.Add("Version", "2013-10-01");
-            if (describeRouteTablesRequest != null && describeRouteTablesRequest.IsSetDryRun())
-            {
-                request.Parameters.Add("DryRun", StringUtils.FromBool(describeRouteTablesRequest.DryRun));
-            }
             if (describeRouteTablesRequest != null)
             {
                 List<string> routeTableIdsList = describeRouteTablesRequest.RouteTableIds;

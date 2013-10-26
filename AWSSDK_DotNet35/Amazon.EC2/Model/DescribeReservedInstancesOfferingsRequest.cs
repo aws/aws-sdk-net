@@ -29,9 +29,8 @@ namespace Amazon.EC2.Model
     /// EC2 Reserved Instances, you purchase the right to launch Amazon EC2 instances for a period of time (without getting insufficient capacity
     /// errors) and pay a lower usage rate for the actual time used. </para>
     /// </summary>
-    public partial class DescribeReservedInstancesOfferingsRequest : AmazonWebServiceRequest
+    public partial class DescribeReservedInstancesOfferingsRequest : AmazonEC2Request
     {
-        private bool? dryRun;
         private List<string> reservedInstancesOfferingIds = new List<string>();
         private InstanceType instanceType;
         private string availabilityZone;
@@ -45,17 +44,7 @@ namespace Amazon.EC2.Model
         private long? minDuration;
         private long? maxDuration;
         private int? maxInstanceCount;
-        public bool DryRun
-        {
-            get { return this.dryRun ?? default(bool); }
-            set { this.dryRun = value; }
-        }
 
-        // Check to see if DryRun property is set
-        internal bool IsSetDryRun()
-        {
-            return this.dryRun.HasValue;
-        }
 
         /// <summary>
         /// An optional list of the unique IDs of the Reserved Instance offerings to describe.

@@ -34,6 +34,7 @@ namespace Amazon.EC2.Model
         private Tenancy instanceTenancy;
         private bool? isDefault;
 
+
         /// <summary>
         /// Specifies the ID of the VPC.
         ///  

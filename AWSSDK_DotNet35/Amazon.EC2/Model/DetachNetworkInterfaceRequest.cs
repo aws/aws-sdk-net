@@ -27,22 +27,11 @@ namespace Amazon.EC2.Model
     /// Container for the parameters to the DetachNetworkInterface operation.
     /// 
     /// </summary>
-    public partial class DetachNetworkInterfaceRequest : AmazonWebServiceRequest
+    public partial class DetachNetworkInterfaceRequest : AmazonEC2Request
     {
-        private bool? dryRun;
         private string attachmentId;
         private bool? force;
-        public bool DryRun
-        {
-            get { return this.dryRun ?? default(bool); }
-            set { this.dryRun = value; }
-        }
 
-        // Check to see if DryRun property is set
-        internal bool IsSetDryRun()
-        {
-            return this.dryRun.HasValue;
-        }
         public string AttachmentId
         {
             get { return this.attachmentId; }

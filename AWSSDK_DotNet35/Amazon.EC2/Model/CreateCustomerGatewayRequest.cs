@@ -35,23 +35,12 @@ namespace Amazon.EC2.Model
     /// href="http://en.wikipedia.org/wiki/Autonomous_system_%28Internet%29" > http://en.wikipedia.org/wiki/Autonomous_system_%28Internet%29</a> .
     /// </para>
     /// </summary>
-    public partial class CreateCustomerGatewayRequest : AmazonWebServiceRequest
+    public partial class CreateCustomerGatewayRequest : AmazonEC2Request
     {
-        private bool? dryRun;
         private GatewayType type;
         private string publicIp;
         private int? bgpAsn;
-        public bool DryRun
-        {
-            get { return this.dryRun ?? default(bool); }
-            set { this.dryRun = value; }
-        }
 
-        // Check to see if DryRun property is set
-        internal bool IsSetDryRun()
-        {
-            return this.dryRun.HasValue;
-        }
 
         /// <summary>
         /// The type of VPN connection this customer gateway supports.

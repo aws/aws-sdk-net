@@ -27,21 +27,10 @@ namespace Amazon.EC2.Model
     /// Container for the parameters to the DescribeTags operation.
     /// <para> Describes the tags for the specified resources. </para>
     /// </summary>
-    public partial class DescribeTagsRequest : AmazonWebServiceRequest
+    public partial class DescribeTagsRequest : AmazonEC2Request
     {
-        private bool? dryRun;
         private List<Filter> filters = new List<Filter>();
-        public bool DryRun
-        {
-            get { return this.dryRun ?? default(bool); }
-            set { this.dryRun = value; }
-        }
 
-        // Check to see if DryRun property is set
-        internal bool IsSetDryRun()
-        {
-            return this.dryRun.HasValue;
-        }
 
         /// <summary>
         /// A list of filters used to match properties for tags.

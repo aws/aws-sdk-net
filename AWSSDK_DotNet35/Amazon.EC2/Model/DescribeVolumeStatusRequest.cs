@@ -27,24 +27,13 @@ namespace Amazon.EC2.Model
     /// Container for the parameters to the DescribeVolumeStatus operation.
     /// <para> Describes the status of a volume. </para>
     /// </summary>
-    public partial class DescribeVolumeStatusRequest : AmazonWebServiceRequest
+    public partial class DescribeVolumeStatusRequest : AmazonEC2Request
     {
-        private bool? dryRun;
         private List<string> volumeIds = new List<string>();
         private List<Filter> filters = new List<Filter>();
         private string nextToken;
         private int? maxResults;
-        public bool DryRun
-        {
-            get { return this.dryRun ?? default(bool); }
-            set { this.dryRun = value; }
-        }
 
-        // Check to see if DryRun property is set
-        internal bool IsSetDryRun()
-        {
-            return this.dryRun.HasValue;
-        }
         public List<string> VolumeIds
         {
             get { return this.volumeIds; }

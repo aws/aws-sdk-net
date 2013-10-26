@@ -43,6 +43,7 @@ namespace Amazon.EC2.Model
         private IamInstanceProfileSpecification iamInstanceProfile;
         private bool? ebsOptimized;
 
+
         /// <summary>
         /// The AMI ID.
         ///  

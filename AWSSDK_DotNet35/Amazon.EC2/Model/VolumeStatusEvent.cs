@@ -30,6 +30,7 @@ namespace Amazon.EC2.Model
         private DateTime? notBefore;
         private DateTime? notAfter;
         private string eventId;
+
         public string EventType
         {
             get { return this.eventType; }

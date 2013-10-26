@@ -31,6 +31,7 @@ namespace Amazon.EC2.Model
         private string instanceOwnerId;
         private string networkInterfaceId;
         private RouteState state;
+
         public string DestinationCidrBlock
         {
             get { return this.destinationCidrBlock; }

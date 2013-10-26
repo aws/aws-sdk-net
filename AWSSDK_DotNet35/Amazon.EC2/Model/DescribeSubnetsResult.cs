@@ -29,6 +29,7 @@ namespace Amazon.EC2.Model
         
         private List<Subnet> subnets = new List<Subnet>();
 
+
         /// <summary>
         /// Contains a set of one or more <a>Subnet</a> instances.
         ///  

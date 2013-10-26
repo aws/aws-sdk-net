@@ -31,6 +31,7 @@ namespace Amazon.EC2.Model
         private DomainType domain;
         private string allocationId;
 
+
         /// <summary>
         /// IP address for use with your account.
         ///  

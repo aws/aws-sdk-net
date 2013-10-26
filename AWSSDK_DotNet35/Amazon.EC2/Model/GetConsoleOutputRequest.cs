@@ -29,21 +29,10 @@ namespace Amazon.EC2.Model
     /// buffered and posted shortly after instance boot, reboot, and termination. Amazon EC2 preserves the most recent 64 KB output which will be
     /// available for at least one hour after the most recent post. </para>
     /// </summary>
-    public partial class GetConsoleOutputRequest : AmazonWebServiceRequest
+    public partial class GetConsoleOutputRequest : AmazonEC2Request
     {
-        private bool? dryRun;
         private string instanceId;
-        public bool DryRun
-        {
-            get { return this.dryRun ?? default(bool); }
-            set { this.dryRun = value; }
-        }
 
-        // Check to see if DryRun property is set
-        internal bool IsSetDryRun()
-        {
-            return this.dryRun.HasValue;
-        }
 
         /// <summary>
         /// The ID of the instance for which you want console output.

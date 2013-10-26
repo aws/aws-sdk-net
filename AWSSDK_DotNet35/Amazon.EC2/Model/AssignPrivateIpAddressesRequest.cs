@@ -27,12 +27,13 @@ namespace Amazon.EC2.Model
     /// Container for the parameters to the AssignPrivateIpAddresses operation.
     /// 
     /// </summary>
-    public partial class AssignPrivateIpAddressesRequest : AmazonWebServiceRequest
+    public partial class AssignPrivateIpAddressesRequest : AmazonEC2Request
     {
         private string networkInterfaceId;
         private List<string> privateIpAddresses = new List<string>();
         private int? secondaryPrivateIpAddressCount;
         private bool? allowReassignment;
+
         public string NetworkInterfaceId
         {
             get { return this.networkInterfaceId; }

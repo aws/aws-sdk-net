@@ -35,10 +35,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             IRequest request = new DefaultRequest(describeAvailabilityZonesRequest, "AmazonEC2");
             request.Parameters.Add("Action", "DescribeAvailabilityZones");
             request.Parameters.Add("Version", "2013-10-01");
-            if (describeAvailabilityZonesRequest != null && describeAvailabilityZonesRequest.IsSetDryRun())
-            {
-                request.Parameters.Add("DryRun", StringUtils.FromBool(describeAvailabilityZonesRequest.DryRun));
-            }
             if (describeAvailabilityZonesRequest != null)
             {
                 List<string> zoneNamesList = describeAvailabilityZonesRequest.ZoneNames;

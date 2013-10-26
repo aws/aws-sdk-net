@@ -29,21 +29,10 @@ namespace Amazon.EC2.Model
     /// reboot the specified instance(s). The operation will succeed if the instances are valid and belong to the user. Requests to reboot
     /// terminated instances are ignored. </para>
     /// </summary>
-    public partial class RebootInstancesRequest : AmazonWebServiceRequest
+    public partial class RebootInstancesRequest : AmazonEC2Request
     {
-        private bool? dryRun;
         private List<string> instanceIds = new List<string>();
-        public bool DryRun
-        {
-            get { return this.dryRun ?? default(bool); }
-            set { this.dryRun = value; }
-        }
 
-        // Check to see if DryRun property is set
-        internal bool IsSetDryRun()
-        {
-            return this.dryRun.HasValue;
-        }
 
         /// <summary>
         /// The list of instances to terminate.

@@ -29,20 +29,9 @@ namespace Amazon.EC2.Model
     /// Elastic Compute Cloud Developer Guide or Amazon Elastic Compute Cloud User Guide .
     /// </para>
     /// </summary>
-    public partial class DescribeSpotDatafeedSubscriptionRequest : AmazonWebServiceRequest
+    public partial class DescribeSpotDatafeedSubscriptionRequest : AmazonEC2Request
     {
-        private bool? dryRun;
-        public bool DryRun
-        {
-            get { return this.dryRun ?? default(bool); }
-            set { this.dryRun = value; }
-        }
 
-        // Check to see if DryRun property is set
-        internal bool IsSetDryRun()
-        {
-            return this.dryRun.HasValue;
-        }
 
     }
 }

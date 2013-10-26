@@ -33,6 +33,7 @@ namespace Amazon.EC2.Model
         private DateTime? attachTime;
         private bool? deleteOnTermination;
 
+
         /// <summary>
         /// 
         ///  

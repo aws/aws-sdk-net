@@ -41,6 +41,7 @@ namespace Amazon.EC2.Model
         private RIProductDescription productDescription;
         private List<Tag> tags = new List<Tag>();
         private string launchedAvailabilityZone;
+
         public string SpotInstanceRequestId
         {
             get { return this.spotInstanceRequestId; }

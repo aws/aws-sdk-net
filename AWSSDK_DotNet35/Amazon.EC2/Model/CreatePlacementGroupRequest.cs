@@ -28,22 +28,11 @@ namespace Amazon.EC2.Model
     /// <para> Creates a PlacementGroup into which multiple Amazon EC2 instances can be launched. Users must give the group a name unique within the
     /// scope of the user account. </para>
     /// </summary>
-    public partial class CreatePlacementGroupRequest : AmazonWebServiceRequest
+    public partial class CreatePlacementGroupRequest : AmazonEC2Request
     {
-        private bool? dryRun;
         private string groupName;
         private PlacementStrategy strategy;
-        public bool DryRun
-        {
-            get { return this.dryRun ?? default(bool); }
-            set { this.dryRun = value; }
-        }
 
-        // Check to see if DryRun property is set
-        internal bool IsSetDryRun()
-        {
-            return this.dryRun.HasValue;
-        }
 
         /// <summary>
         /// The name of the <c>PlacementGroup</c>.

@@ -33,6 +33,7 @@ namespace Amazon.EC2.Model
         private InstanceStatusSummary systemStatus;
         private InstanceStatusSummary status;
 
+
         /// <summary>
         /// The ID of the Amazon EC2 instance.
         ///  

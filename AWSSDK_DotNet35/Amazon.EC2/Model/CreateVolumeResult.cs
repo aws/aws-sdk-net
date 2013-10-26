@@ -29,6 +29,7 @@ namespace Amazon.EC2.Model
         
         private Volume volume;
 
+
         /// <summary>
         /// The newly created EBS volume.
         ///  

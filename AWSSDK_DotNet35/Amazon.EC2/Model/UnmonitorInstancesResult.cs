@@ -30,6 +30,7 @@ namespace Amazon.EC2.Model
         
         private List<InstanceMonitoring> instanceMonitorings = new List<InstanceMonitoring>();
 
+
         /// <summary>
         /// A list of updated monitoring information for the instances specified in the request.
         ///  

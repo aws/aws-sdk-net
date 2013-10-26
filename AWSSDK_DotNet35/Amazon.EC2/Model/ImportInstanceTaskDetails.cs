@@ -29,6 +29,7 @@ namespace Amazon.EC2.Model
         private string instanceId;
         private PlatformValues platform;
         private string description;
+
         public List<ImportInstanceVolumeDetailItem> Volumes
         {
             get { return this.volumes; }

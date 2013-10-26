@@ -27,6 +27,7 @@ namespace Amazon.EC2.Model
     {
         
         private List<ConversionTask> conversionTasks = new List<ConversionTask>();
+
         public List<ConversionTask> ConversionTasks
         {
             get { return this.conversionTasks; }

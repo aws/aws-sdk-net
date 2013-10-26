@@ -29,6 +29,7 @@ namespace Amazon.EC2.Model
         
         private List<SecurityGroup> securityGroups = new List<SecurityGroup>();
 
+
         /// <summary>
         /// The list of described Amazon EC2 security groups.
         ///  

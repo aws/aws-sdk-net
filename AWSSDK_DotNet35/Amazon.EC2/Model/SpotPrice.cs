@@ -30,6 +30,7 @@ namespace Amazon.EC2.Model
         private string price;
         private DateTime? timestamp;
         private string availabilityZone;
+
         public InstanceType InstanceType
         {
             get { return this.instanceType; }

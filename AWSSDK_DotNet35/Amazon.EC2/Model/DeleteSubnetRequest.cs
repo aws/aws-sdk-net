@@ -28,21 +28,10 @@ namespace Amazon.EC2.Model
     /// <para> Deletes a subnet from a VPC. You must terminate all running instances in the subnet before deleting it, otherwise Amazon VPC returns
     /// an error. </para>
     /// </summary>
-    public partial class DeleteSubnetRequest : AmazonWebServiceRequest
+    public partial class DeleteSubnetRequest : AmazonEC2Request
     {
-        private bool? dryRun;
         private string subnetId;
-        public bool DryRun
-        {
-            get { return this.dryRun ?? default(bool); }
-            set { this.dryRun = value; }
-        }
 
-        // Check to see if DryRun property is set
-        internal bool IsSetDryRun()
-        {
-            return this.dryRun.HasValue;
-        }
 
         /// <summary>
         /// The ID of the subnet you want to delete.

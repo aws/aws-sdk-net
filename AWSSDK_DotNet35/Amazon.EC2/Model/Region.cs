@@ -29,6 +29,7 @@ namespace Amazon.EC2.Model
         private string regionName;
         private string endpoint;
 
+
         /// <summary>
         /// Name of the region.
         ///  

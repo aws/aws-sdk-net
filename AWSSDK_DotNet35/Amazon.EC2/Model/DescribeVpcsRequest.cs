@@ -31,22 +31,11 @@ namespace Amazon.EC2.Model
     /// available). The result includes information for a particular VPC only if the VPC matches all your filters. </para> <para> If there's no
     /// match, no special message is returned; the response is simply empty. The following table shows the available filters. </para>
     /// </summary>
-    public partial class DescribeVpcsRequest : AmazonWebServiceRequest
+    public partial class DescribeVpcsRequest : AmazonEC2Request
     {
-        private bool? dryRun;
         private List<string> vpcIds = new List<string>();
         private List<Filter> filters = new List<Filter>();
-        public bool DryRun
-        {
-            get { return this.dryRun ?? default(bool); }
-            set { this.dryRun = value; }
-        }
 
-        // Check to see if DryRun property is set
-        internal bool IsSetDryRun()
-        {
-            return this.dryRun.HasValue;
-        }
 
         /// <summary>
         /// The ID of a VPC you want information about.

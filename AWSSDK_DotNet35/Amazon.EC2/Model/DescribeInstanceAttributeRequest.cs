@@ -27,22 +27,11 @@ namespace Amazon.EC2.Model
     /// Container for the parameters to the DescribeInstanceAttribute operation.
     /// <para> Returns information about an attribute of an instance. Only one attribute can be specified per call. </para>
     /// </summary>
-    public partial class DescribeInstanceAttributeRequest : AmazonWebServiceRequest
+    public partial class DescribeInstanceAttributeRequest : AmazonEC2Request
     {
-        private bool? dryRun;
         private string instanceId;
         private InstanceAttributeName attribute;
-        public bool DryRun
-        {
-            get { return this.dryRun ?? default(bool); }
-            set { this.dryRun = value; }
-        }
 
-        // Check to see if DryRun property is set
-        internal bool IsSetDryRun()
-        {
-            return this.dryRun.HasValue;
-        }
 
         /// <summary>
         /// The ID of the instance whose instance attribute is being described.

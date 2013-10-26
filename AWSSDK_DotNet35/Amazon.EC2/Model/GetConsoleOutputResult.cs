@@ -31,6 +31,7 @@ namespace Amazon.EC2.Model
         private DateTime? timestamp;
         private string output;
 
+
         /// <summary>
         /// The ID of the instance whose console output was requested.
         ///  

@@ -35,10 +35,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             IRequest request = new DefaultRequest(resetSnapshotAttributeRequest, "AmazonEC2");
             request.Parameters.Add("Action", "ResetSnapshotAttribute");
             request.Parameters.Add("Version", "2013-10-01");
-            if (resetSnapshotAttributeRequest != null && resetSnapshotAttributeRequest.IsSetDryRun())
-            {
-                request.Parameters.Add("DryRun", StringUtils.FromBool(resetSnapshotAttributeRequest.DryRun));
-            }
             if (resetSnapshotAttributeRequest != null && resetSnapshotAttributeRequest.IsSetSnapshotId())
             {
                 request.Parameters.Add("SnapshotId", StringUtils.FromString(resetSnapshotAttributeRequest.SnapshotId));

@@ -35,6 +35,7 @@ namespace Amazon.EC2.Model
         private string vpcId;
         private List<Tag> tags = new List<Tag>();
 
+
         /// <summary>
         /// The AWS Access Key ID of the owner of the security group.
         ///  

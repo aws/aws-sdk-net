@@ -29,6 +29,7 @@ namespace Amazon.EC2.Model
         private int? code;
         private InstanceStateName name;
 
+
         /// <summary>
         /// A 16-bit unsigned integer. The high byte is an opaque internal value and should be ignored. The low byte is set based on the state
         /// represented.

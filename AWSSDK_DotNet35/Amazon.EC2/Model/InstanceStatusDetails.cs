@@ -28,6 +28,7 @@ namespace Amazon.EC2.Model
         private StatusName name;
         private StatusType status;
         private DateTime? impairedSince;
+
         public StatusName Name
         {
             get { return this.name; }

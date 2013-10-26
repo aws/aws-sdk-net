@@ -29,25 +29,14 @@ namespace Amazon.EC2.Model
     /// AMIs that use instance stores. They can be up to 1 TiB in size, use storage that persists on instance failure, and can be stopped and
     /// started. </para>
     /// </summary>
-    public partial class CreateImageRequest : AmazonWebServiceRequest
+    public partial class CreateImageRequest : AmazonEC2Request
     {
-        private bool? dryRun;
         private string instanceId;
         private string name;
         private string description;
         private bool? noReboot;
         private List<BlockDeviceMapping> blockDeviceMappings = new List<BlockDeviceMapping>();
-        public bool DryRun
-        {
-            get { return this.dryRun ?? default(bool); }
-            set { this.dryRun = value; }
-        }
 
-        // Check to see if DryRun property is set
-        internal bool IsSetDryRun()
-        {
-            return this.dryRun.HasValue;
-        }
 
         /// <summary>
         /// The ID of the instance from which to create the new image.

@@ -29,6 +29,7 @@ namespace Amazon.EC2.Model
         private string routeTableId;
         private string subnetId;
         private bool? main;
+
         public string RouteTableAssociationId
         {
             get { return this.routeTableAssociationId; }

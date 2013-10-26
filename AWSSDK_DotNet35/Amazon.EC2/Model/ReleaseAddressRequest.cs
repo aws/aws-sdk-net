@@ -32,22 +32,11 @@ namespace Amazon.EC2.Model
     /// on an elastic IP address that is already released, the address might be assigned to another account which will cause Amazon EC2 to return an
     /// error. </para>
     /// </summary>
-    public partial class ReleaseAddressRequest : AmazonWebServiceRequest
+    public partial class ReleaseAddressRequest : AmazonEC2Request
     {
-        private bool? dryRun;
         private string publicIp;
         private string allocationId;
-        public bool DryRun
-        {
-            get { return this.dryRun ?? default(bool); }
-            set { this.dryRun = value; }
-        }
 
-        // Check to see if DryRun property is set
-        internal bool IsSetDryRun()
-        {
-            return this.dryRun.HasValue;
-        }
 
         /// <summary>
         /// The elastic IP address that you are releasing from your account.

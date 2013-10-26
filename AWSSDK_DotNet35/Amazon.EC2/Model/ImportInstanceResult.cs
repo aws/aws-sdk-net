@@ -27,6 +27,7 @@ namespace Amazon.EC2.Model
     {
         
         private ConversionTask conversionTask;
+
         public ConversionTask ConversionTask
         {
             get { return this.conversionTask; }

@@ -27,6 +27,7 @@ namespace Amazon.EC2.Model
         
         private string privateIpAddress;
         private bool? primary;
+
         public string PrivateIpAddress
         {
             get { return this.privateIpAddress; }

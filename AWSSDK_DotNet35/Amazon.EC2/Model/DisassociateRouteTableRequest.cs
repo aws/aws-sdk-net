@@ -30,21 +30,10 @@ namespace Amazon.EC2.Model
     /// href="http://docs.amazonwebservices.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html" >Route Tables</a> in the Amazon Virtual Private
     /// Cloud User Guide. </para>
     /// </summary>
-    public partial class DisassociateRouteTableRequest : AmazonWebServiceRequest
+    public partial class DisassociateRouteTableRequest : AmazonEC2Request
     {
-        private bool? dryRun;
         private string associationId;
-        public bool DryRun
-        {
-            get { return this.dryRun ?? default(bool); }
-            set { this.dryRun = value; }
-        }
 
-        // Check to see if DryRun property is set
-        internal bool IsSetDryRun()
-        {
-            return this.dryRun.HasValue;
-        }
 
         /// <summary>
         /// The association ID representing the current association between the route table and subnet.

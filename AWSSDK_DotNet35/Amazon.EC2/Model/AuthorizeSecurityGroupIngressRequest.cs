@@ -31,23 +31,12 @@ namespace Amazon.EC2.Model
     /// and code fields. </para> <para> Permission changes are propagated to instances within the security group as quickly as possible. However,
     /// depending on the number of instances, a small delay might occur. </para>
     /// </summary>
-    public partial class AuthorizeSecurityGroupIngressRequest : AmazonWebServiceRequest
+    public partial class AuthorizeSecurityGroupIngressRequest : AmazonEC2Request
     {
-        private bool? dryRun;
         private string groupName;
         private string groupId;
         private List<IpPermission> ipPermissions = new List<IpPermission>();
-        public bool DryRun
-        {
-            get { return this.dryRun ?? default(bool); }
-            set { this.dryRun = value; }
-        }
 
-        // Check to see if DryRun property is set
-        internal bool IsSetDryRun()
-        {
-            return this.dryRun.HasValue;
-        }
 
         /// <summary>
         /// Name of the standard (EC2) security group to modify. The group must belong to your account. Can be used instead of GroupID for standard

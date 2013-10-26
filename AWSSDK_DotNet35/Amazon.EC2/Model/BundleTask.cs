@@ -35,6 +35,7 @@ namespace Amazon.EC2.Model
         private string progress;
         private BundleTaskError bundleTaskError;
 
+
         /// <summary>
         /// Instance associated with this bundle task.
         ///  

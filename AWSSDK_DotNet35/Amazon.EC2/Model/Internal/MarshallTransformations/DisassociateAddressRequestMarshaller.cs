@@ -35,10 +35,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             IRequest request = new DefaultRequest(disassociateAddressRequest, "AmazonEC2");
             request.Parameters.Add("Action", "DisassociateAddress");
             request.Parameters.Add("Version", "2013-10-01");
-            if (disassociateAddressRequest != null && disassociateAddressRequest.IsSetDryRun())
-            {
-                request.Parameters.Add("DryRun", StringUtils.FromBool(disassociateAddressRequest.DryRun));
-            }
             if (disassociateAddressRequest != null && disassociateAddressRequest.IsSetPublicIp())
             {
                 request.Parameters.Add("PublicIp", StringUtils.FromString(disassociateAddressRequest.PublicIp));

@@ -2077,6 +2077,7 @@
     <Compile Include="Amazon.EC2\Model\AllocateAddressResult.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.EC2\Model\AmazonEC2Request.cs" />
     <Compile Include="Amazon.EC2\Model\AssignPrivateIpAddressesRequest.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -2992,6 +2993,8 @@
     <Compile Include="Amazon.EC2\Model\DiskImageVolumeDescription.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.EC2\Model\DryRunResponse.cs" />
+    <Compile Include="Amazon.EC2\Model\DryRunResult.cs" />
     <Compile Include="Amazon.EC2\Model\EbsBlockDevice.cs">
       <SubType>Code</SubType>
     </Compile>

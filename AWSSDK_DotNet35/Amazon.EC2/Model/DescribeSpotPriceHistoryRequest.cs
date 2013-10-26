@@ -31,9 +31,8 @@ namespace Amazon.EC2.Model
     /// Cloud Developer Guide or Amazon Elastic Compute Cloud User Guide .
     /// </para>
     /// </summary>
-    public partial class DescribeSpotPriceHistoryRequest : AmazonWebServiceRequest
+    public partial class DescribeSpotPriceHistoryRequest : AmazonEC2Request
     {
-        private bool? dryRun;
         private DateTime? startTime;
         private DateTime? endTime;
         private List<string> instanceTypes = new List<string>();
@@ -42,17 +41,7 @@ namespace Amazon.EC2.Model
         private string availabilityZone;
         private int? maxResults;
         private string nextToken;
-        public bool DryRun
-        {
-            get { return this.dryRun ?? default(bool); }
-            set { this.dryRun = value; }
-        }
 
-        // Check to see if DryRun property is set
-        internal bool IsSetDryRun()
-        {
-            return this.dryRun.HasValue;
-        }
 
         /// <summary>
         /// The start date and time of the Spot Instance price history data.

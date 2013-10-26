@@ -27,10 +27,11 @@ namespace Amazon.EC2.Model
     /// Container for the parameters to the EnableVgwRoutePropagation operation.
     /// 
     /// </summary>
-    public partial class EnableVgwRoutePropagationRequest : AmazonWebServiceRequest
+    public partial class EnableVgwRoutePropagationRequest : AmazonEC2Request
     {
         private string routeTableId;
         private string gatewayId;
+
         public string RouteTableId
         {
             get { return this.routeTableId; }

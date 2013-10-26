@@ -27,6 +27,7 @@ namespace Amazon.EC2.Model
     {
         
         private string imageId;
+
         public string ImageId
         {
             get { return this.imageId; }

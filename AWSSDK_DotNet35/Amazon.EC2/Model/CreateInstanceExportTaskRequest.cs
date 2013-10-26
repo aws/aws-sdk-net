@@ -27,12 +27,13 @@ namespace Amazon.EC2.Model
     /// Container for the parameters to the CreateInstanceExportTask operation.
     /// 
     /// </summary>
-    public partial class CreateInstanceExportTaskRequest : AmazonWebServiceRequest
+    public partial class CreateInstanceExportTaskRequest : AmazonEC2Request
     {
         private string description;
         private string instanceId;
         private ExportEnvironment targetEnvironment;
         private ExportToS3TaskSpecification exportToS3Task;
+
         public string Description
         {
             get { return this.description; }

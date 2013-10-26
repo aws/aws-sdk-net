@@ -44,6 +44,7 @@ namespace Amazon.EC2.Model
         private NetworkInterfaceAssociation association;
         private List<Tag> tagSet = new List<Tag>();
         private List<NetworkInterfacePrivateIpAddress> privateIpAddresses = new List<NetworkInterfacePrivateIpAddress>();
+
         public string NetworkInterfaceId
         {
             get { return this.networkInterfaceId; }

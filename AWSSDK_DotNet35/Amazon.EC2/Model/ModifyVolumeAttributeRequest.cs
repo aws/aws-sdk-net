@@ -27,22 +27,11 @@ namespace Amazon.EC2.Model
     /// Container for the parameters to the ModifyVolumeAttribute operation.
     /// 
     /// </summary>
-    public partial class ModifyVolumeAttributeRequest : AmazonWebServiceRequest
+    public partial class ModifyVolumeAttributeRequest : AmazonEC2Request
     {
-        private bool? dryRun;
         private string volumeId;
         private bool? autoEnableIO;
-        public bool DryRun
-        {
-            get { return this.dryRun ?? default(bool); }
-            set { this.dryRun = value; }
-        }
 
-        // Check to see if DryRun property is set
-        internal bool IsSetDryRun()
-        {
-            return this.dryRun.HasValue;
-        }
         public string VolumeId
         {
             get { return this.volumeId; }

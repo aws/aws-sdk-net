@@ -35,10 +35,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             IRequest request = new DefaultRequest(describeVolumesRequest, "AmazonEC2");
             request.Parameters.Add("Action", "DescribeVolumes");
             request.Parameters.Add("Version", "2013-10-01");
-            if (describeVolumesRequest != null && describeVolumesRequest.IsSetDryRun())
-            {
-                request.Parameters.Add("DryRun", StringUtils.FromBool(describeVolumesRequest.DryRun));
-            }
             if (describeVolumesRequest != null)
             {
                 List<string> volumeIdsList = describeVolumesRequest.VolumeIds;

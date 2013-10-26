@@ -29,6 +29,7 @@ namespace Amazon.EC2.Model
         
         private List<BundleTask> bundleTasks = new List<BundleTask>();
 
+
         /// <summary>
         /// The list of described bundle tasks.
         ///  

@@ -28,6 +28,7 @@ namespace Amazon.EC2.Model
         private string code;
         private DateTime? updateTime;
         private string message;
+
         public string Code
         {
             get { return this.code; }

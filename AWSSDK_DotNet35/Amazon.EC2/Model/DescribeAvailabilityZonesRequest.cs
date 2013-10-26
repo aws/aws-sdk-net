@@ -29,22 +29,11 @@ namespace Amazon.EC2.Model
     /// </para> <para> Availability zones are not the same across accounts. The availability zone <c>us-east-1a</c> for account A is not necessarily
     /// the same as <c>us-east-1a</c> for account B. Zone assignments are mapped independently for each account. </para>
     /// </summary>
-    public partial class DescribeAvailabilityZonesRequest : AmazonWebServiceRequest
+    public partial class DescribeAvailabilityZonesRequest : AmazonEC2Request
     {
-        private bool? dryRun;
         private List<string> zoneNames = new List<string>();
         private List<Filter> filters = new List<Filter>();
-        public bool DryRun
-        {
-            get { return this.dryRun ?? default(bool); }
-            set { this.dryRun = value; }
-        }
 
-        // Check to see if DryRun property is set
-        internal bool IsSetDryRun()
-        {
-            return this.dryRun.HasValue;
-        }
 
         /// <summary>
         /// A list of the availability zone names to describe.

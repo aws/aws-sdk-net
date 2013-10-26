@@ -50,10 +50,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 request.Parameters.Add("AdditionalInfo", StringUtils.FromString(startInstancesRequest.AdditionalInfo));
             }
-            if (startInstancesRequest != null && startInstancesRequest.IsSetDryRun())
-            {
-                request.Parameters.Add("DryRun", StringUtils.FromBool(startInstancesRequest.DryRun));
-            }
 
             return request;
         }

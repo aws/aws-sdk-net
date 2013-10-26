@@ -29,6 +29,7 @@ namespace Amazon.EC2.Model
         private string userId;
         private PermissionGroup group;
 
+
         /// <summary>
         /// The user ID of the user that can create volumes from the snapshot.
         ///  

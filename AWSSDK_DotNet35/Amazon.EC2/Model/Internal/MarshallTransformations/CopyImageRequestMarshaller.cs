@@ -35,10 +35,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             IRequest request = new DefaultRequest(copyImageRequest, "AmazonEC2");
             request.Parameters.Add("Action", "CopyImage");
             request.Parameters.Add("Version", "2013-10-01");
-            if (copyImageRequest != null && copyImageRequest.IsSetDryRun())
-            {
-                request.Parameters.Add("DryRun", StringUtils.FromBool(copyImageRequest.DryRun));
-            }
             if (copyImageRequest != null && copyImageRequest.IsSetSourceRegion())
             {
                 request.Parameters.Add("SourceRegion", StringUtils.FromString(copyImageRequest.SourceRegion));

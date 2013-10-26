@@ -33,22 +33,11 @@ namespace Amazon.EC2.Model
     /// specify the ICMP type and code. </para> <para> Rule changes are propagated to instances within the security group as quickly as possible.
     /// However, a small delay might occur. </para>
     /// </summary>
-    public partial class RevokeSecurityGroupEgressRequest : AmazonWebServiceRequest
+    public partial class RevokeSecurityGroupEgressRequest : AmazonEC2Request
     {
-        private bool? dryRun;
         private string groupId;
         private List<IpPermission> ipPermissions = new List<IpPermission>();
-        public bool DryRun
-        {
-            get { return this.dryRun ?? default(bool); }
-            set { this.dryRun = value; }
-        }
 
-        // Check to see if DryRun property is set
-        internal bool IsSetDryRun()
-        {
-            return this.dryRun.HasValue;
-        }
 
         /// <summary>
         /// ID of the VPC security group to modify.

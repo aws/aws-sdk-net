@@ -30,6 +30,7 @@ namespace Amazon.EC2.Model
         private string keyName;
         private string keyFingerprint;
 
+
         /// <summary>
         /// The name of the key pair.
         ///  

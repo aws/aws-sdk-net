@@ -30,6 +30,7 @@ namespace Amazon.EC2.Model
         private List<DhcpConfiguration> dhcpConfigurations = new List<DhcpConfiguration>();
         private List<Tag> tags = new List<Tag>();
 
+
         /// <summary>
         /// Specifies the ID of the set of DHCP options.
         ///  

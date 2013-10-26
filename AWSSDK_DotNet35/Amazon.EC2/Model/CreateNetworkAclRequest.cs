@@ -28,21 +28,10 @@ namespace Amazon.EC2.Model
     /// <para> Creates a new network ACL in a VPC. Network ACLs provide an optional layer of security (on top of security groups) for the instances
     /// in your VPC. For more information about network ACLs, go to Network ACLs in the Amazon Virtual Private Cloud User Guide. </para>
     /// </summary>
-    public partial class CreateNetworkAclRequest : AmazonWebServiceRequest
+    public partial class CreateNetworkAclRequest : AmazonEC2Request
     {
-        private bool? dryRun;
         private string vpcId;
-        public bool DryRun
-        {
-            get { return this.dryRun ?? default(bool); }
-            set { this.dryRun = value; }
-        }
 
-        // Check to see if DryRun property is set
-        internal bool IsSetDryRun()
-        {
-            return this.dryRun.HasValue;
-        }
 
         /// <summary>
         /// The ID of the VPC where the network ACL will be created.

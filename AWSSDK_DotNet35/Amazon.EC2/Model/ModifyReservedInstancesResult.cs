@@ -29,6 +29,7 @@ namespace Amazon.EC2.Model
         
         private string reservedInstancesModificationId;
 
+
         /// <summary>
         /// The unique ID for the submitted modification request.
         ///  

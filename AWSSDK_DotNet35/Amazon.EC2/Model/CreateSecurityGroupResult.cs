@@ -27,6 +27,7 @@ namespace Amazon.EC2.Model
     {
         
         private string groupId;
+
         public string GroupId
         {
             get { return this.groupId; }

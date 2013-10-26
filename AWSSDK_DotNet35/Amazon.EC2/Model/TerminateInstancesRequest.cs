@@ -29,21 +29,10 @@ namespace Amazon.EC2.Model
     /// than once, each call will succeed. </para> <para> Terminated instances will remain visible after termination (approximately one hour).
     /// </para>
     /// </summary>
-    public partial class TerminateInstancesRequest : AmazonWebServiceRequest
+    public partial class TerminateInstancesRequest : AmazonEC2Request
     {
-        private bool? dryRun;
         private List<string> instanceIds = new List<string>();
-        public bool DryRun
-        {
-            get { return this.dryRun ?? default(bool); }
-            set { this.dryRun = value; }
-        }
 
-        // Check to see if DryRun property is set
-        internal bool IsSetDryRun()
-        {
-            return this.dryRun.HasValue;
-        }
 
         /// <summary>
         /// The list of instances to terminate.

@@ -29,6 +29,7 @@ namespace Amazon.EC2.Model
         
         private List<Volume> volumes = new List<Volume>();
 
+
         /// <summary>
         /// The list of described EBS volumes.
         ///  

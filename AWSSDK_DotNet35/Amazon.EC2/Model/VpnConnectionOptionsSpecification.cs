@@ -26,6 +26,7 @@ namespace Amazon.EC2.Model
     {
         
         private bool? staticRoutesOnly;
+
         public bool StaticRoutesOnly
         {
             get { return this.staticRoutesOnly ?? default(bool); }

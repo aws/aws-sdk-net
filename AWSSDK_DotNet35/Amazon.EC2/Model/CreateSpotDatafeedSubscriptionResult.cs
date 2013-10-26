@@ -28,6 +28,7 @@ namespace Amazon.EC2.Model
         
         private SpotDatafeedSubscription spotDatafeedSubscription;
 
+
         /// <summary>
         /// The SpotDatafeedSubscriptionType data type.
         ///  

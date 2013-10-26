@@ -29,6 +29,7 @@ namespace Amazon.EC2.Model
         private List<InstanceStatus> instanceStatuses = new List<InstanceStatus>();
         private string nextToken;
 
+
         /// <summary>
         /// Collection of instance statuses describing the state of the requested instances.
         ///  

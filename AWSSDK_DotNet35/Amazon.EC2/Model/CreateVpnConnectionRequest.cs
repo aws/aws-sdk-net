@@ -34,24 +34,13 @@ namespace Amazon.EC2.Model
     /// cryptographic information for configuring your customer gateway. If you decide to shut down your VPN connection for any reason and then
     /// create a new one, you must re-configure your customer gateway with the new information returned from this call. </para>
     /// </summary>
-    public partial class CreateVpnConnectionRequest : AmazonWebServiceRequest
+    public partial class CreateVpnConnectionRequest : AmazonEC2Request
     {
-        private bool? dryRun;
         private string type;
         private string customerGatewayId;
         private string vpnGatewayId;
         private VpnConnectionOptionsSpecification options;
-        public bool DryRun
-        {
-            get { return this.dryRun ?? default(bool); }
-            set { this.dryRun = value; }
-        }
 
-        // Check to see if DryRun property is set
-        internal bool IsSetDryRun()
-        {
-            return this.dryRun.HasValue;
-        }
 
         /// <summary>
         /// The type of VPN connection.

@@ -29,21 +29,10 @@ namespace Amazon.EC2.Model
     /// recommend that before you delete a VPN gateway, you detach it from the VPC and delete the VPN connection. Note that you don't need to delete
     /// the VPN gateway if you just want to delete and re-create the VPN connection between your VPC and data center. </para>
     /// </summary>
-    public partial class DeleteVpnGatewayRequest : AmazonWebServiceRequest
+    public partial class DeleteVpnGatewayRequest : AmazonEC2Request
     {
-        private bool? dryRun;
         private string vpnGatewayId;
-        public bool DryRun
-        {
-            get { return this.dryRun ?? default(bool); }
-            set { this.dryRun = value; }
-        }
 
-        // Check to see if DryRun property is set
-        internal bool IsSetDryRun()
-        {
-            return this.dryRun.HasValue;
-        }
 
         /// <summary>
         /// The ID of the VPN gateway to delete.

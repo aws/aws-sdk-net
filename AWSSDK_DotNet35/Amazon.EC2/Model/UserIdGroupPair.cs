@@ -30,6 +30,7 @@ namespace Amazon.EC2.Model
         private string groupName;
         private string groupId;
 
+
         /// <summary>
         /// The AWS user ID of an account.
         ///  

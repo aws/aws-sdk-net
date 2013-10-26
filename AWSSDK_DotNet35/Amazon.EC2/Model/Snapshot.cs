@@ -37,6 +37,7 @@ namespace Amazon.EC2.Model
         private string ownerAlias;
         private List<Tag> tags = new List<Tag>();
 
+
         /// <summary>
         /// The unique ID of this snapshot.
         ///  

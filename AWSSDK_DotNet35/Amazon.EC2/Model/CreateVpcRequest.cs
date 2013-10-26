@@ -30,22 +30,11 @@ namespace Amazon.EC2.Model
     /// the Amazon Virtual Private Cloud Developer Guide. </para> <para> By default, each instance you launch in the VPC has the default DHCP
     /// options (the standard EC2 host name, no domain name, no DNS server, no NTP server, and no NetBIOS server or node type). </para>
     /// </summary>
-    public partial class CreateVpcRequest : AmazonWebServiceRequest
+    public partial class CreateVpcRequest : AmazonEC2Request
     {
-        private bool? dryRun;
         private string cidrBlock;
         private Tenancy instanceTenancy;
-        public bool DryRun
-        {
-            get { return this.dryRun ?? default(bool); }
-            set { this.dryRun = value; }
-        }
 
-        // Check to see if DryRun property is set
-        internal bool IsSetDryRun()
-        {
-            return this.dryRun.HasValue;
-        }
 
         /// <summary>
         /// A valid CIDR block.

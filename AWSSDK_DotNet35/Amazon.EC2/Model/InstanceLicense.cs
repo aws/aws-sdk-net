@@ -28,6 +28,7 @@ namespace Amazon.EC2.Model
         
         private string pool;
 
+
         /// <summary>
         /// The license pool from which this license was used (ex: <c>'windows'</c>).
         ///  

@@ -27,6 +27,7 @@ namespace Amazon.EC2.Model
     {
         
         private ExportTask exportTask;
+
         public ExportTask ExportTask
         {
             get { return this.exportTask; }

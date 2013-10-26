@@ -32,6 +32,7 @@ namespace Amazon.EC2.Model
         private ConversionTaskState state;
         private string statusMessage;
         private List<Tag> tags = new List<Tag>();
+
         public string ConversionTaskId
         {
             get { return this.conversionTaskId; }

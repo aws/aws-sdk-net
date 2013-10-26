@@ -35,10 +35,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             IRequest request = new DefaultRequest(deleteSecurityGroupRequest, "AmazonEC2");
             request.Parameters.Add("Action", "DeleteSecurityGroup");
             request.Parameters.Add("Version", "2013-10-01");
-            if (deleteSecurityGroupRequest != null && deleteSecurityGroupRequest.IsSetDryRun())
-            {
-                request.Parameters.Add("DryRun", StringUtils.FromBool(deleteSecurityGroupRequest.DryRun));
-            }
             if (deleteSecurityGroupRequest != null && deleteSecurityGroupRequest.IsSetGroupName())
             {
                 request.Parameters.Add("GroupName", StringUtils.FromString(deleteSecurityGroupRequest.GroupName));

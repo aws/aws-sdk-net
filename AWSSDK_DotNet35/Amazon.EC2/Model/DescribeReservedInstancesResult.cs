@@ -29,6 +29,7 @@ namespace Amazon.EC2.Model
         
         private List<ReservedInstances> reservedInstances = new List<ReservedInstances>();
 
+
         /// <summary>
         /// The list of described Reserved Instances.
         ///  

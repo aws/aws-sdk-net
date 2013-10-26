@@ -29,6 +29,7 @@ namespace Amazon.EC2.Model
         
         private Vpc vpc;
 
+
         /// <summary>
         /// Information about the VPC.
         ///  

@@ -27,21 +27,10 @@ namespace Amazon.EC2.Model
     /// Container for the parameters to the AllocateAddress operation.
     /// <para> The AllocateAddress operation acquires an elastic IP address for use with your account. </para>
     /// </summary>
-    public partial class AllocateAddressRequest : AmazonWebServiceRequest
+    public partial class AllocateAddressRequest : AmazonEC2Request
     {
-        private bool? dryRun;
         private DomainType domain;
-        public bool DryRun
-        {
-            get { return this.dryRun ?? default(bool); }
-            set { this.dryRun = value; }
-        }
 
-        // Check to see if DryRun property is set
-        internal bool IsSetDryRun()
-        {
-            return this.dryRun.HasValue;
-        }
 
         /// <summary>
         /// Set to <c>vpc</c> to allocate the address to your VPC. By default, will allocate to EC2.

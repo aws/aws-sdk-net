@@ -32,6 +32,7 @@ namespace Amazon.EC2.Model
         private string cidrBlock;
         private IcmpTypeCode icmpTypeCode;
         private PortRange portRange;
+
         public int RuleNumber
         {
             get { return this.ruleNumber ?? default(int); }

@@ -29,6 +29,7 @@ namespace Amazon.EC2.Model
         private string ipOwnerId;
         private string allocationId;
         private string associationId;
+
         public string PublicIp
         {
             get { return this.publicIp; }

@@ -35,10 +35,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             IRequest request = new DefaultRequest(attachInternetGatewayRequest, "AmazonEC2");
             request.Parameters.Add("Action", "AttachInternetGateway");
             request.Parameters.Add("Version", "2013-10-01");
-            if (attachInternetGatewayRequest != null && attachInternetGatewayRequest.IsSetDryRun())
-            {
-                request.Parameters.Add("DryRun", StringUtils.FromBool(attachInternetGatewayRequest.DryRun));
-            }
             if (attachInternetGatewayRequest != null && attachInternetGatewayRequest.IsSetInternetGatewayId())
             {
                 request.Parameters.Add("InternetGatewayId", StringUtils.FromString(attachInternetGatewayRequest.InternetGatewayId));

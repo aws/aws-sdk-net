@@ -35,10 +35,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             IRequest request = new DefaultRequest(releaseAddressRequest, "AmazonEC2");
             request.Parameters.Add("Action", "ReleaseAddress");
             request.Parameters.Add("Version", "2013-10-01");
-            if (releaseAddressRequest != null && releaseAddressRequest.IsSetDryRun())
-            {
-                request.Parameters.Add("DryRun", StringUtils.FromBool(releaseAddressRequest.DryRun));
-            }
             if (releaseAddressRequest != null && releaseAddressRequest.IsSetPublicIp())
             {
                 request.Parameters.Add("PublicIp", StringUtils.FromString(releaseAddressRequest.PublicIp));

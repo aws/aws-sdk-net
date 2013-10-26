@@ -29,6 +29,7 @@ namespace Amazon.EC2.Model
         private string instanceId;
         private Monitoring monitoring;
 
+
         /// <summary>
         /// Instance ID.
         ///  

@@ -48,6 +48,7 @@ namespace Amazon.EC2.Model
         private List<Tag> tags = new List<Tag>();
         private HypervisorType hypervisor;
 
+
         /// <summary>
         /// The unique ID of the AMI.
         ///  

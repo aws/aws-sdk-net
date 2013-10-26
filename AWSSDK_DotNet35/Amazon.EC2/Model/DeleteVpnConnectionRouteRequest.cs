@@ -27,10 +27,11 @@ namespace Amazon.EC2.Model
     /// Container for the parameters to the DeleteVpnConnectionRoute operation.
     /// 
     /// </summary>
-    public partial class DeleteVpnConnectionRouteRequest : AmazonWebServiceRequest
+    public partial class DeleteVpnConnectionRouteRequest : AmazonEC2Request
     {
         private string vpnConnectionId;
         private string destinationCidrBlock;
+
         public string VpnConnectionId
         {
             get { return this.vpnConnectionId; }

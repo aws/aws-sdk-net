@@ -28,22 +28,11 @@ namespace Amazon.EC2.Model
     /// <para> The DisassociateAddress operation disassociates the specified elastic IP address from the instance to which it is assigned. This is
     /// an idempotent operation. If you enter it more than once, Amazon EC2 does not return an error. </para>
     /// </summary>
-    public partial class DisassociateAddressRequest : AmazonWebServiceRequest
+    public partial class DisassociateAddressRequest : AmazonEC2Request
     {
-        private bool? dryRun;
         private string publicIp;
         private string associationId;
-        public bool DryRun
-        {
-            get { return this.dryRun ?? default(bool); }
-            set { this.dryRun = value; }
-        }
 
-        // Check to see if DryRun property is set
-        internal bool IsSetDryRun()
-        {
-            return this.dryRun.HasValue;
-        }
 
         /// <summary>
         /// The elastic IP address that you are disassociating from the instance.

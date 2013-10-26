@@ -29,23 +29,12 @@ namespace Amazon.EC2.Model
     /// group names, information about those security group is returned. Otherwise, information for all security group is returned. If you specify a
     /// group that does not exist, a fault is returned. </para>
     /// </summary>
-    public partial class DescribeSecurityGroupsRequest : AmazonWebServiceRequest
+    public partial class DescribeSecurityGroupsRequest : AmazonEC2Request
     {
-        private bool? dryRun;
         private List<string> groupNames = new List<string>();
         private List<string> groupIds = new List<string>();
         private List<Filter> filters = new List<Filter>();
-        public bool DryRun
-        {
-            get { return this.dryRun ?? default(bool); }
-            set { this.dryRun = value; }
-        }
 
-        // Check to see if DryRun property is set
-        internal bool IsSetDryRun()
-        {
-            return this.dryRun.HasValue;
-        }
 
         /// <summary>
         /// An optional list of group names that specify the Amazon EC2 security groups to describe.

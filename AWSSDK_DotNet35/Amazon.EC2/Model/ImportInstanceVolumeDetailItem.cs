@@ -32,6 +32,7 @@ namespace Amazon.EC2.Model
         private string status;
         private string statusMessage;
         private string description;
+
         public long BytesConverted
         {
             get { return this.bytesConverted ?? default(long); }

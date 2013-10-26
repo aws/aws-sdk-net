@@ -29,6 +29,7 @@ namespace Amazon.EC2.Model
         
         private List<PlacementGroup> placementGroups = new List<PlacementGroup>();
 
+
         /// <summary>
         /// Contains information about the specified <c>PlacementGroups</c>.
         ///  

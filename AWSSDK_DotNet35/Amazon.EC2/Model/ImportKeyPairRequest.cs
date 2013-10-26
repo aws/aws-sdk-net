@@ -38,22 +38,11 @@ namespace Amazon.EC2.Model
     /// 
     /// </ul>
     /// </summary>
-    public partial class ImportKeyPairRequest : AmazonWebServiceRequest
+    public partial class ImportKeyPairRequest : AmazonEC2Request
     {
-        private bool? dryRun;
         private string keyName;
         private string publicKeyMaterial;
-        public bool DryRun
-        {
-            get { return this.dryRun ?? default(bool); }
-            set { this.dryRun = value; }
-        }
 
-        // Check to see if DryRun property is set
-        internal bool IsSetDryRun()
-        {
-            return this.dryRun.HasValue;
-        }
 
         /// <summary>
         /// The unique name for the key pair.

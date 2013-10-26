@@ -31,6 +31,7 @@ namespace Amazon.EC2.Model
         private string virtualName;
         private string noDevice;
 
+
         /// <summary>
         /// The device name (e.g., <c>/dev/sdh</c>) at which the block device is exposed on the instance.
         ///  

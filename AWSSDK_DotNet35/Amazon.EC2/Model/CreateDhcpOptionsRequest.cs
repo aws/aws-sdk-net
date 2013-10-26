@@ -29,21 +29,10 @@ namespace Amazon.EC2.Model
     /// launch in those VPCs to use the set of DHCP options. The following table lists the individual DHCP options you can specify. For more
     /// information about the options, go to <a href="http://www.ietf.org/rfc/rfc2132.txt" >http://www.ietf.org/rfc/rfc2132.txt</a> </para>
     /// </summary>
-    public partial class CreateDhcpOptionsRequest : AmazonWebServiceRequest
+    public partial class CreateDhcpOptionsRequest : AmazonEC2Request
     {
-        private bool? dryRun;
         private List<DhcpConfiguration> dhcpConfigurations = new List<DhcpConfiguration>();
-        public bool DryRun
-        {
-            get { return this.dryRun ?? default(bool); }
-            set { this.dryRun = value; }
-        }
 
-        // Check to see if DryRun property is set
-        internal bool IsSetDryRun()
-        {
-            return this.dryRun.HasValue;
-        }
 
         /// <summary>
         /// A set of one or more DHCP configurations.

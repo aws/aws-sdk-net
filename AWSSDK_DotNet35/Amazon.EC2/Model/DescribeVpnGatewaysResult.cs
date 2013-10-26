@@ -29,6 +29,7 @@ namespace Amazon.EC2.Model
         
         private List<VpnGateway> vpnGateways = new List<VpnGateway>();
 
+
         /// <summary>
         /// 
         ///  

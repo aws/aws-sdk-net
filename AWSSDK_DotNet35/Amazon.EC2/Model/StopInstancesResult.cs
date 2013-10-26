@@ -29,6 +29,7 @@ namespace Amazon.EC2.Model
         
         private List<InstanceStateChange> stoppingInstances = new List<InstanceStateChange>();
 
+
         /// <summary>
         /// The list of the stopping instances and details on how their state has changed.
         ///  

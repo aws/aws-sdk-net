@@ -27,6 +27,7 @@ namespace Amazon.EC2.Model
     {
         
         private List<ExportTask> exportTasks = new List<ExportTask>();
+
         public List<ExportTask> ExportTasks
         {
             get { return this.exportTasks; }

@@ -27,6 +27,7 @@ namespace Amazon.EC2.Model
         
         private string spotInstanceRequestId;
         private CancelSpotInstanceRequestState state;
+
         public string SpotInstanceRequestId
         {
             get { return this.spotInstanceRequestId; }

@@ -28,21 +28,10 @@ namespace Amazon.EC2.Model
     /// <para> Deletes a set of DHCP options that you specify. Amazon VPC returns an error if the set of options you specify is currently associated
     /// with a VPC. You can disassociate the set of options by associating either a new set of options or the default options with the VPC. </para>
     /// </summary>
-    public partial class DeleteDhcpOptionsRequest : AmazonWebServiceRequest
+    public partial class DeleteDhcpOptionsRequest : AmazonEC2Request
     {
-        private bool? dryRun;
         private string dhcpOptionsId;
-        public bool DryRun
-        {
-            get { return this.dryRun ?? default(bool); }
-            set { this.dryRun = value; }
-        }
 
-        // Check to see if DryRun property is set
-        internal bool IsSetDryRun()
-        {
-            return this.dryRun.HasValue;
-        }
 
         /// <summary>
         /// The ID of the DHCP options set to delete.

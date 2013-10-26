@@ -29,21 +29,10 @@ namespace Amazon.EC2.Model
     /// the task to be canceled. If a task is canceled while it is storing items, there may be parts of the incomplete AMI stored in S3. It is up to
     /// the caller to clean up these parts from S3. </para>
     /// </summary>
-    public partial class CancelBundleTaskRequest : AmazonWebServiceRequest
+    public partial class CancelBundleTaskRequest : AmazonEC2Request
     {
-        private bool? dryRun;
         private string bundleId;
-        public bool DryRun
-        {
-            get { return this.dryRun ?? default(bool); }
-            set { this.dryRun = value; }
-        }
 
-        // Check to see if DryRun property is set
-        internal bool IsSetDryRun()
-        {
-            return this.dryRun.HasValue;
-        }
 
         /// <summary>
         /// The ID of the bundle task to cancel.

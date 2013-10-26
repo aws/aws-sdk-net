@@ -32,6 +32,7 @@ namespace Amazon.EC2.Model
         private VolumeType volumeType;
         private int? iops;
 
+
         /// <summary>
         /// The ID of the snapshot from which the volume will be created.
         ///  

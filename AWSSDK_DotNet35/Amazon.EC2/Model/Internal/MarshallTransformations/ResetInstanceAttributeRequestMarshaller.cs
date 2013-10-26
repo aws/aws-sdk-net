@@ -35,10 +35,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             IRequest request = new DefaultRequest(resetInstanceAttributeRequest, "AmazonEC2");
             request.Parameters.Add("Action", "ResetInstanceAttribute");
             request.Parameters.Add("Version", "2013-10-01");
-            if (resetInstanceAttributeRequest != null && resetInstanceAttributeRequest.IsSetDryRun())
-            {
-                request.Parameters.Add("DryRun", StringUtils.FromBool(resetInstanceAttributeRequest.DryRun));
-            }
             if (resetInstanceAttributeRequest != null && resetInstanceAttributeRequest.IsSetInstanceId())
             {
                 request.Parameters.Add("InstanceId", StringUtils.FromString(resetInstanceAttributeRequest.InstanceId));

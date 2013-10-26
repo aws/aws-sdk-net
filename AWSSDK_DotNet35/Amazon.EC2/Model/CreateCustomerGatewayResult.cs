@@ -29,6 +29,7 @@ namespace Amazon.EC2.Model
         
         private CustomerGateway customerGateway;
 
+
         /// <summary>
         /// Information about the customer gateway.
         ///  

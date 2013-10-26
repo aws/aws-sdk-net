@@ -29,6 +29,7 @@ namespace Amazon.EC2.Model
         
         private string ownerId;
 
+
         /// <summary>
         /// The instance owner's account ID. Only present if the product code is attached to the instance.
         ///  

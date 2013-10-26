@@ -30,6 +30,7 @@ namespace Amazon.EC2.Model
         private InstanceState currentState;
         private InstanceState previousState;
 
+
         /// <summary>
         /// The ID of the instance whose state changed.
         ///  

@@ -30,22 +30,11 @@ namespace Amazon.EC2.Model
     /// User Guide. </para> <para> For more information about Amazon Virtual Private Cloud and Internet gateways, go to the Amazon Virtual Private
     /// Cloud User Guide. </para>
     /// </summary>
-    public partial class DetachInternetGatewayRequest : AmazonWebServiceRequest
+    public partial class DetachInternetGatewayRequest : AmazonEC2Request
     {
-        private bool? dryRun;
         private string internetGatewayId;
         private string vpcId;
-        public bool DryRun
-        {
-            get { return this.dryRun ?? default(bool); }
-            set { this.dryRun = value; }
-        }
 
-        // Check to see if DryRun property is set
-        internal bool IsSetDryRun()
-        {
-            return this.dryRun.HasValue;
-        }
 
         /// <summary>
         /// The ID of the Internet gateway to detach.

@@ -30,22 +30,11 @@ namespace Amazon.EC2.Model
     /// </para> <para> You must wait for the attachment's state to switch to detached before you can delete the VPC or attach a different VPC to the
     /// VPN gateway. </para>
     /// </summary>
-    public partial class DetachVpnGatewayRequest : AmazonWebServiceRequest
+    public partial class DetachVpnGatewayRequest : AmazonEC2Request
     {
-        private bool? dryRun;
         private string vpnGatewayId;
         private string vpcId;
-        public bool DryRun
-        {
-            get { return this.dryRun ?? default(bool); }
-            set { this.dryRun = value; }
-        }
 
-        // Check to see if DryRun property is set
-        internal bool IsSetDryRun()
-        {
-            return this.dryRun.HasValue;
-        }
 
         /// <summary>
         /// The ID of the VPN gateway to detach from the VPC.

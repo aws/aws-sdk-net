@@ -29,6 +29,7 @@ namespace Amazon.EC2.Model
         
         private VolumeAttachment attachment;
 
+
         /// <summary>
         /// The updated EBS volume attachment information after trying to detach the volume from the specified instance.
         ///  

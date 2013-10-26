@@ -27,24 +27,13 @@ namespace Amazon.EC2.Model
     /// Container for the parameters to the DetachVolume operation.
     /// <para> Detach a previously attached volume from a running instance. </para>
     /// </summary>
-    public partial class DetachVolumeRequest : AmazonWebServiceRequest
+    public partial class DetachVolumeRequest : AmazonEC2Request
     {
-        private bool? dryRun;
         private string volumeId;
         private string instanceId;
         private string device;
         private bool? force;
-        public bool DryRun
-        {
-            get { return this.dryRun ?? default(bool); }
-            set { this.dryRun = value; }
-        }
 
-        // Check to see if DryRun property is set
-        internal bool IsSetDryRun()
-        {
-            return this.dryRun.HasValue;
-        }
 
         /// <summary>
         /// The ID of the volume to detach.

@@ -27,22 +27,11 @@ namespace Amazon.EC2.Model
     /// Container for the parameters to the DeleteTags operation.
     /// <para> Deletes tags from the specified Amazon EC2 resources. </para>
     /// </summary>
-    public partial class DeleteTagsRequest : AmazonWebServiceRequest
+    public partial class DeleteTagsRequest : AmazonEC2Request
     {
-        private bool? dryRun;
         private List<string> resources = new List<string>();
         private List<Tag> tags = new List<Tag>();
-        public bool DryRun
-        {
-            get { return this.dryRun ?? default(bool); }
-            set { this.dryRun = value; }
-        }
 
-        // Check to see if DryRun property is set
-        internal bool IsSetDryRun()
-        {
-            return this.dryRun.HasValue;
-        }
 
         /// <summary>
         /// A list of one or more resource IDs. This could be the ID of an AMI, an instance, an EBS volume, or snapshot, etc.

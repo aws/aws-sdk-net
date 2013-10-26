@@ -30,22 +30,11 @@ namespace Amazon.EC2.Model
     /// Compute Cloud User Guide .
     /// </para>
     /// </summary>
-    public partial class CreateSpotDatafeedSubscriptionRequest : AmazonWebServiceRequest
+    public partial class CreateSpotDatafeedSubscriptionRequest : AmazonEC2Request
     {
-        private bool? dryRun;
         private string bucket;
         private string prefix;
-        public bool DryRun
-        {
-            get { return this.dryRun ?? default(bool); }
-            set { this.dryRun = value; }
-        }
 
-        // Check to see if DryRun property is set
-        internal bool IsSetDryRun()
-        {
-            return this.dryRun.HasValue;
-        }
 
         /// <summary>
         /// The Amazon S3 bucket in which to store the Spot Instance datafeed.

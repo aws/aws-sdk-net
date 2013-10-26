@@ -31,6 +31,7 @@ namespace Amazon.EC2.Model
         private List<RouteTableAssociation> associations = new List<RouteTableAssociation>();
         private List<Tag> tags = new List<Tag>();
         private List<PropagatingVgw> propagatingVgws = new List<PropagatingVgw>();
+
         public string RouteTableId
         {
             get { return this.routeTableId; }

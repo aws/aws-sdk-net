@@ -29,6 +29,7 @@ namespace Amazon.EC2.Model
         private string vpcId;
         private bool? enableDnsSupport;
         private bool? enableDnsHostnames;
+
         public string VpcId
         {
             get { return this.vpcId; }

@@ -31,6 +31,7 @@ namespace Amazon.EC2.Model
         private DateTime? timestamp;
         private string passwordData;
 
+
         /// <summary>
         /// The ID of the instance whose Windows administrator password was requested.
         ///  

@@ -35,10 +35,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             IRequest request = new DefaultRequest(associateAddressRequest, "AmazonEC2");
             request.Parameters.Add("Action", "AssociateAddress");
             request.Parameters.Add("Version", "2013-10-01");
-            if (associateAddressRequest != null && associateAddressRequest.IsSetDryRun())
-            {
-                request.Parameters.Add("DryRun", StringUtils.FromBool(associateAddressRequest.DryRun));
-            }
             if (associateAddressRequest != null && associateAddressRequest.IsSetInstanceId())
             {
                 request.Parameters.Add("InstanceId", StringUtils.FromString(associateAddressRequest.InstanceId));

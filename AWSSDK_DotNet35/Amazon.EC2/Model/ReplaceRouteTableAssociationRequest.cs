@@ -31,22 +31,11 @@ namespace Amazon.EC2.Model
     /// Cloud User Guide. </para> <para> You can also use this to change which table is the main route table in the VPC. You just specify the main
     /// route table's association ID and the route table that you want to be the new main route table. </para>
     /// </summary>
-    public partial class ReplaceRouteTableAssociationRequest : AmazonWebServiceRequest
+    public partial class ReplaceRouteTableAssociationRequest : AmazonEC2Request
     {
-        private bool? dryRun;
         private string associationId;
         private string routeTableId;
-        public bool DryRun
-        {
-            get { return this.dryRun ?? default(bool); }
-            set { this.dryRun = value; }
-        }
 
-        // Check to see if DryRun property is set
-        internal bool IsSetDryRun()
-        {
-            return this.dryRun.HasValue;
-        }
 
         /// <summary>
         /// The ID representing the current association between the original route table and the subnet.

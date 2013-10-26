@@ -27,24 +27,13 @@ namespace Amazon.EC2.Model
     /// Container for the parameters to the ImportInstance operation.
     /// 
     /// </summary>
-    public partial class ImportInstanceRequest : AmazonWebServiceRequest
+    public partial class ImportInstanceRequest : AmazonEC2Request
     {
-        private bool? dryRun;
         private string description;
         private ImportInstanceLaunchSpecification launchSpecification;
         private List<DiskImage> diskImages = new List<DiskImage>();
         private PlatformValues platform;
-        public bool DryRun
-        {
-            get { return this.dryRun ?? default(bool); }
-            set { this.dryRun = value; }
-        }
 
-        // Check to see if DryRun property is set
-        internal bool IsSetDryRun()
-        {
-            return this.dryRun.HasValue;
-        }
         public string Description
         {
             get { return this.description; }

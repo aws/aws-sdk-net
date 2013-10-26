@@ -29,6 +29,7 @@ namespace Amazon.EC2.Model
         private string reservedInstancesId;
         private ReservedInstancesConfiguration targetConfiguration;
 
+
         /// <summary>
         /// The ID for the Reserved Instances created as part of the modification request.
         ///  

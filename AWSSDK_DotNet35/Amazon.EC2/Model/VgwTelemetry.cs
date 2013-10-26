@@ -30,6 +30,7 @@ namespace Amazon.EC2.Model
         private DateTime? lastStatusChange;
         private string statusMessage;
         private int? acceptedRouteCount;
+
         public string OutsideIpAddress
         {
             get { return this.outsideIpAddress; }

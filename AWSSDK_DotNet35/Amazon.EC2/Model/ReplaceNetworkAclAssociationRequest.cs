@@ -28,22 +28,11 @@ namespace Amazon.EC2.Model
     /// <para> Changes which network ACL a subnet is associated with. By default when you create a subnet, it's automatically associated with the
     /// default network ACL. For more information about network ACLs, go to Network ACLs in the Amazon Virtual Private Cloud User Guide. </para>
     /// </summary>
-    public partial class ReplaceNetworkAclAssociationRequest : AmazonWebServiceRequest
+    public partial class ReplaceNetworkAclAssociationRequest : AmazonEC2Request
     {
-        private bool? dryRun;
         private string associationId;
         private string networkAclId;
-        public bool DryRun
-        {
-            get { return this.dryRun ?? default(bool); }
-            set { this.dryRun = value; }
-        }
 
-        // Check to see if DryRun property is set
-        internal bool IsSetDryRun()
-        {
-            return this.dryRun.HasValue;
-        }
 
         /// <summary>
         /// The ID representing the current association between the original network ACL and the subnet.

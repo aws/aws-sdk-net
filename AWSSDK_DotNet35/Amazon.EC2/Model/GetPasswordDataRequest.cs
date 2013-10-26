@@ -29,21 +29,10 @@ namespace Amazon.EC2.Model
     /// only generated the first time an AMI is launched. It is not generated for rebundled AMIs or after the password is changed on an instance.
     /// The password is encrypted using the key pair that you provided. </para>
     /// </summary>
-    public partial class GetPasswordDataRequest : AmazonWebServiceRequest
+    public partial class GetPasswordDataRequest : AmazonEC2Request
     {
-        private bool? dryRun;
         private string instanceId;
-        public bool DryRun
-        {
-            get { return this.dryRun ?? default(bool); }
-            set { this.dryRun = value; }
-        }
 
-        // Check to see if DryRun property is set
-        internal bool IsSetDryRun()
-        {
-            return this.dryRun.HasValue;
-        }
 
         /// <summary>
         /// The ID of the instance for which you want the Windows administrator password.

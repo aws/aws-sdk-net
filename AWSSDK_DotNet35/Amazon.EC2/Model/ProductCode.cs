@@ -29,6 +29,7 @@ namespace Amazon.EC2.Model
         private string productCodeId;
         private ProductCodeValues productCodeType;
 
+
         /// <summary>
         /// The unique ID of an AWS DevPay product code.
         ///  

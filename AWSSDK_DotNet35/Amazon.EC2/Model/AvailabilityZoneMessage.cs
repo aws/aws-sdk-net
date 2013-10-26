@@ -26,6 +26,7 @@ namespace Amazon.EC2.Model
     {
         
         private string message;
+
         public string Message
         {
             get { return this.message; }

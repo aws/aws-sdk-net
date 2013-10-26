@@ -38,6 +38,7 @@ namespace Amazon.EC2.Model
         private List<ProductCode> productCodes = new List<ProductCode>();
         private bool? ebsOptimized;
 
+
         /// <summary>
         /// The ID of the associated instance.
         ///  

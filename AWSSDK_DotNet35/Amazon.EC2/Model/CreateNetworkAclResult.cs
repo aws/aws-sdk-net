@@ -27,6 +27,7 @@ namespace Amazon.EC2.Model
     {
         
         private NetworkAcl networkAcl;
+
         public NetworkAcl NetworkAcl
         {
             get { return this.networkAcl; }

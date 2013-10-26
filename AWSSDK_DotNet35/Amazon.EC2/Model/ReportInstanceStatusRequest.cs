@@ -27,26 +27,15 @@ namespace Amazon.EC2.Model
     /// Container for the parameters to the ReportInstanceStatus operation.
     /// 
     /// </summary>
-    public partial class ReportInstanceStatusRequest : AmazonWebServiceRequest
+    public partial class ReportInstanceStatusRequest : AmazonEC2Request
     {
-        private bool? dryRun;
         private List<string> instances = new List<string>();
         private ReportStatusType status;
         private DateTime? startTime;
         private DateTime? endTime;
         private List<string> reasonCodes = new List<string>();
         private string description;
-        public bool DryRun
-        {
-            get { return this.dryRun ?? default(bool); }
-            set { this.dryRun = value; }
-        }
 
-        // Check to see if DryRun property is set
-        internal bool IsSetDryRun()
-        {
-            return this.dryRun.HasValue;
-        }
         public List<string> Instances
         {
             get { return this.instances; }

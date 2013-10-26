@@ -28,6 +28,7 @@ namespace Amazon.EC2.Model
         
         private NetworkInterface networkInterface;
 
+
         /// <summary>
         /// Specifies the characteristics of a network interface.
         ///  

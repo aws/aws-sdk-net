@@ -27,10 +27,11 @@ namespace Amazon.EC2.Model
     /// Container for the parameters to the UnassignPrivateIpAddresses operation.
     /// 
     /// </summary>
-    public partial class UnassignPrivateIpAddressesRequest : AmazonWebServiceRequest
+    public partial class UnassignPrivateIpAddressesRequest : AmazonEC2Request
     {
         private string networkInterfaceId;
         private List<string> privateIpAddresses = new List<string>();
+
         public string NetworkInterfaceId
         {
             get { return this.networkInterfaceId; }

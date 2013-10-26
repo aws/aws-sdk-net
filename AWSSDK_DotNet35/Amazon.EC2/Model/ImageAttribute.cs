@@ -34,6 +34,7 @@ namespace Amazon.EC2.Model
         private string description;
         private List<BlockDeviceMapping> blockDeviceMappings = new List<BlockDeviceMapping>();
 
+
         /// <summary>
         /// The ID of the associated AMI.
         ///  

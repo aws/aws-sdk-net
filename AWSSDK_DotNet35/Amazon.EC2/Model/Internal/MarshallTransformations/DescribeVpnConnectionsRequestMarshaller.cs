@@ -35,10 +35,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             IRequest request = new DefaultRequest(describeVpnConnectionsRequest, "AmazonEC2");
             request.Parameters.Add("Action", "DescribeVpnConnections");
             request.Parameters.Add("Version", "2013-10-01");
-            if (describeVpnConnectionsRequest != null && describeVpnConnectionsRequest.IsSetDryRun())
-            {
-                request.Parameters.Add("DryRun", StringUtils.FromBool(describeVpnConnectionsRequest.DryRun));
-            }
             if (describeVpnConnectionsRequest != null)
             {
                 List<string> vpnConnectionIdsList = describeVpnConnectionsRequest.VpnConnectionIds;

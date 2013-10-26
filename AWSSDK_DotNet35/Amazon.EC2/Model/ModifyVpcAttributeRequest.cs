@@ -27,11 +27,12 @@ namespace Amazon.EC2.Model
     /// Container for the parameters to the ModifyVpcAttribute operation.
     /// 
     /// </summary>
-    public partial class ModifyVpcAttributeRequest : AmazonWebServiceRequest
+    public partial class ModifyVpcAttributeRequest : AmazonEC2Request
     {
         private string vpcId;
         private bool? enableDnsSupport;
         private bool? enableDnsHostnames;
+
         public string VpcId
         {
             get { return this.vpcId; }

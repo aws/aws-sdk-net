@@ -28,22 +28,11 @@ namespace Amazon.EC2.Model
     /// <para> Describes the status of the indicated volume or, in lieu of any specified, all volumes belonging to the caller. Volumes that have
     /// been deleted are not described. </para>
     /// </summary>
-    public partial class DescribeVolumesRequest : AmazonWebServiceRequest
+    public partial class DescribeVolumesRequest : AmazonEC2Request
     {
-        private bool? dryRun;
         private List<string> volumeIds = new List<string>();
         private List<Filter> filters = new List<Filter>();
-        public bool DryRun
-        {
-            get { return this.dryRun ?? default(bool); }
-            set { this.dryRun = value; }
-        }
 
-        // Check to see if DryRun property is set
-        internal bool IsSetDryRun()
-        {
-            return this.dryRun.HasValue;
-        }
 
         /// <summary>
         /// The optional list of EBS volumes to describe.

@@ -37,6 +37,7 @@ namespace Amazon.EC2.Model
         private VolumeType volumeType;
         private int? iops;
 
+
         /// <summary>
         /// The unique ID of this volume.
         ///  

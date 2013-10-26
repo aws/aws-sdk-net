@@ -29,6 +29,7 @@ namespace Amazon.EC2.Model
         private RecurringChargeFrequency frequency;
         private double? amount;
 
+
         /// <summary>
         /// The frequency of the recurring charge.
         ///  

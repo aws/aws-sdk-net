@@ -31,6 +31,7 @@ namespace Amazon.EC2.Model
         private EbsBlockDevice ebs;
         private string noDevice;
 
+
         /// <summary>
         /// Specifies the virtual device name.
         ///  

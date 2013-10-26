@@ -36,6 +36,7 @@ namespace Amazon.EC2.Model
         private string statusMessage;
         private string clientToken;
 
+
         /// <summary>
         /// The unique ID for the submitted modification request.
         ///  

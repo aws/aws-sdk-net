@@ -31,22 +31,11 @@ namespace Amazon.EC2.Model
     /// included in the returned results. </para> <para> Recently terminated instances might appear in the returned results. This interval is
     /// usually less than one hour. </para>
     /// </summary>
-    public partial class DescribeInstancesRequest : AmazonWebServiceRequest
+    public partial class DescribeInstancesRequest : AmazonEC2Request
     {
-        private bool? dryRun;
         private List<string> instanceIds = new List<string>();
         private List<Filter> filters = new List<Filter>();
-        public bool DryRun
-        {
-            get { return this.dryRun ?? default(bool); }
-            set { this.dryRun = value; }
-        }
 
-        // Check to see if DryRun property is set
-        internal bool IsSetDryRun()
-        {
-            return this.dryRun.HasValue;
-        }
 
         /// <summary>
         /// An optional list of the instances to describe.

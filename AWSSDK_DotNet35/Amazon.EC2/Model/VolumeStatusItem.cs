@@ -30,6 +30,7 @@ namespace Amazon.EC2.Model
         private VolumeStatusInfo volumeStatus;
         private List<VolumeStatusEvent> events = new List<VolumeStatusEvent>();
         private List<VolumeStatusAction> actions = new List<VolumeStatusAction>();
+
         public string VolumeId
         {
             get { return this.volumeId; }

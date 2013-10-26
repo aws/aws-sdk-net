@@ -31,22 +31,11 @@ namespace Amazon.EC2.Model
     /// options. For more information about the supported DHCP options and using them with Amazon VPC, go to Using DHCP Options in the Amazon
     /// Virtual Private Cloud Developer Guide. </para>
     /// </summary>
-    public partial class AssociateDhcpOptionsRequest : AmazonWebServiceRequest
+    public partial class AssociateDhcpOptionsRequest : AmazonEC2Request
     {
-        private bool? dryRun;
         private string dhcpOptionsId;
         private string vpcId;
-        public bool DryRun
-        {
-            get { return this.dryRun ?? default(bool); }
-            set { this.dryRun = value; }
-        }
 
-        // Check to see if DryRun property is set
-        internal bool IsSetDryRun()
-        {
-            return this.dryRun.HasValue;
-        }
 
         /// <summary>
         /// The ID of the DHCP options to associate with the VPC. Specify "default" to associate the default DHCP options with the VPC.

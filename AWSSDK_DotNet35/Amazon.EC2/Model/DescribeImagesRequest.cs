@@ -46,24 +46,13 @@ namespace Amazon.EC2.Model
     /// permissions, or all for public AMIs. </para> <para><b>NOTE:</b> Deregistered images are included in the returned results for an unspecified
     /// interval after deregistration. </para>
     /// </summary>
-    public partial class DescribeImagesRequest : AmazonWebServiceRequest
+    public partial class DescribeImagesRequest : AmazonEC2Request
     {
-        private bool? dryRun;
         private List<string> imageIds = new List<string>();
         private List<string> owners = new List<string>();
         private List<string> executableUsers = new List<string>();
         private List<Filter> filters = new List<Filter>();
-        public bool DryRun
-        {
-            get { return this.dryRun ?? default(bool); }
-            set { this.dryRun = value; }
-        }
 
-        // Check to see if DryRun property is set
-        internal bool IsSetDryRun()
-        {
-            return this.dryRun.HasValue;
-        }
 
         /// <summary>
         /// An optional list of the AMI IDs to describe. If not specified, all AMIs will be described.

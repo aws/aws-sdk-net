@@ -33,23 +33,12 @@ namespace Amazon.EC2.Model
     /// largest uses a <c>/18</c> netmask (16,384 IP addresses). </para> <para><b>IMPORTANT:</b> AWS reserves both the first four and the last IP
     /// address in each subnet's CIDR block. They're not available for use. </para>
     /// </summary>
-    public partial class CreateSubnetRequest : AmazonWebServiceRequest
+    public partial class CreateSubnetRequest : AmazonEC2Request
     {
-        private bool? dryRun;
         private string vpcId;
         private string cidrBlock;
         private string availabilityZone;
-        public bool DryRun
-        {
-            get { return this.dryRun ?? default(bool); }
-            set { this.dryRun = value; }
-        }
 
-        // Check to see if DryRun property is set
-        internal bool IsSetDryRun()
-        {
-            return this.dryRun.HasValue;
-        }
 
         /// <summary>
         /// The ID of the VPC to create the subnet in.

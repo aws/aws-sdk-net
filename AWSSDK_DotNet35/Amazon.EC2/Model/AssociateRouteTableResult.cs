@@ -27,6 +27,7 @@ namespace Amazon.EC2.Model
     {
         
         private string associationId;
+
         public string AssociationId
         {
             get { return this.associationId; }

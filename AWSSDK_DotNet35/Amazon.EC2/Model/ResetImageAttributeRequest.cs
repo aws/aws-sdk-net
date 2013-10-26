@@ -28,22 +28,11 @@ namespace Amazon.EC2.Model
     /// <para> The ResetImageAttribute operation resets an attribute of an AMI to its default value. </para> <para><b>NOTE:</b> The productCodes
     /// attribute cannot be reset. </para>
     /// </summary>
-    public partial class ResetImageAttributeRequest : AmazonWebServiceRequest
+    public partial class ResetImageAttributeRequest : AmazonEC2Request
     {
-        private bool? dryRun;
         private string imageId;
         private ResetImageAttributeName attribute;
-        public bool DryRun
-        {
-            get { return this.dryRun ?? default(bool); }
-            set { this.dryRun = value; }
-        }
 
-        // Check to see if DryRun property is set
-        internal bool IsSetDryRun()
-        {
-            return this.dryRun.HasValue;
-        }
 
         /// <summary>
         /// The ID of the AMI whose attribute is being reset.

@@ -30,6 +30,7 @@ namespace Amazon.EC2.Model
         private string key;
         private string value;
 
+
         /// <summary>
         /// The tag's key.
         ///  

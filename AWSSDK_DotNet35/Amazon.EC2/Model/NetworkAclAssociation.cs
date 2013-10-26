@@ -28,6 +28,7 @@ namespace Amazon.EC2.Model
         private string networkAclAssociationId;
         private string networkAclId;
         private string subnetId;
+
         public string NetworkAclAssociationId
         {
             get { return this.networkAclAssociationId; }

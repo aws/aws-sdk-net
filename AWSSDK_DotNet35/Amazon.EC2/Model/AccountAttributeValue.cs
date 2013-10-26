@@ -26,6 +26,7 @@ namespace Amazon.EC2.Model
     {
         
         private string attributeValue;
+
         public string AttributeValue
         {
             get { return this.attributeValue; }

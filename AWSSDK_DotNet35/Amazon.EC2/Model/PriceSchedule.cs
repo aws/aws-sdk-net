@@ -29,6 +29,7 @@ namespace Amazon.EC2.Model
         private double? price;
         private CurrencyCodeValues currencyCode;
         private bool? active;
+
         public long Term
         {
             get { return this.term ?? default(long); }

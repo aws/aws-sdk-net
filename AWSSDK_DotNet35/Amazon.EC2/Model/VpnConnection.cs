@@ -37,6 +37,7 @@ namespace Amazon.EC2.Model
         private VpnConnectionOptions options;
         private List<VpnStaticRoute> routes = new List<VpnStaticRoute>();
 
+
         /// <summary>
         /// Specifies the ID of the VPN gateway at the VPC end of the VPN connection.
         ///  

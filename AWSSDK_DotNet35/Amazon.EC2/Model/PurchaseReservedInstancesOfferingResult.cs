@@ -30,6 +30,7 @@ namespace Amazon.EC2.Model
         
         private string reservedInstancesId;
 
+
         /// <summary>
         /// The unique ID of the Reserved Instances purchased for your account.
         ///  

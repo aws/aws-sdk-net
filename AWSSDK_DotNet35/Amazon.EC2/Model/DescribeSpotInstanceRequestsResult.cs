@@ -27,6 +27,7 @@ namespace Amazon.EC2.Model
     {
         
         private List<SpotInstanceRequest> spotInstanceRequests = new List<SpotInstanceRequest>();
+
         public List<SpotInstanceRequest> SpotInstanceRequests
         {
             get { return this.spotInstanceRequests; }

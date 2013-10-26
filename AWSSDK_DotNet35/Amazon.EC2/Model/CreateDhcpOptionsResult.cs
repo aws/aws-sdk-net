@@ -29,6 +29,7 @@ namespace Amazon.EC2.Model
         
         private DhcpOptions dhcpOptions;
 
+
         /// <summary>
         /// A set of one or more DHCP options.
         ///  

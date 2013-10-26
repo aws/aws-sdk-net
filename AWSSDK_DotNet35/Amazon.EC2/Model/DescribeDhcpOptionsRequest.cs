@@ -33,22 +33,11 @@ namespace Amazon.EC2.Model
     /// 
     /// </ul>
     /// </summary>
-    public partial class DescribeDhcpOptionsRequest : AmazonWebServiceRequest
+    public partial class DescribeDhcpOptionsRequest : AmazonEC2Request
     {
-        private bool? dryRun;
         private List<string> dhcpOptionsIds = new List<string>();
         private List<Filter> filters = new List<Filter>();
-        public bool DryRun
-        {
-            get { return this.dryRun ?? default(bool); }
-            set { this.dryRun = value; }
-        }
 
-        // Check to see if DryRun property is set
-        internal bool IsSetDryRun()
-        {
-            return this.dryRun.HasValue;
-        }
         public List<string> DhcpOptionsIds
         {
             get { return this.dhcpOptionsIds; }

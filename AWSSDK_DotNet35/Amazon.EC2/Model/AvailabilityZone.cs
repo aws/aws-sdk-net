@@ -31,6 +31,7 @@ namespace Amazon.EC2.Model
         private string regionName;
         private List<AvailabilityZoneMessage> messages = new List<AvailabilityZoneMessage>();
 
+
         /// <summary>
         /// Name of the Availability Zone.
         ///  

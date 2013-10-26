@@ -28,22 +28,11 @@ namespace Amazon.EC2.Model
     /// <para> The DescribeImageAttribute operation returns information about an attribute of an AMI. Only one attribute can be specified per call.
     /// </para>
     /// </summary>
-    public partial class DescribeImageAttributeRequest : AmazonWebServiceRequest
+    public partial class DescribeImageAttributeRequest : AmazonEC2Request
     {
-        private bool? dryRun;
         private string imageId;
         private ImageAttributeName attribute;
-        public bool DryRun
-        {
-            get { return this.dryRun ?? default(bool); }
-            set { this.dryRun = value; }
-        }
 
-        // Check to see if DryRun property is set
-        internal bool IsSetDryRun()
-        {
-            return this.dryRun.HasValue;
-        }
 
         /// <summary>
         /// The ID of the AMI whose attribute is to be described.

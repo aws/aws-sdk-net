@@ -35,10 +35,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             IRequest request = new DefaultRequest(describeAddressesRequest, "AmazonEC2");
             request.Parameters.Add("Action", "DescribeAddresses");
             request.Parameters.Add("Version", "2013-10-01");
-            if (describeAddressesRequest != null && describeAddressesRequest.IsSetDryRun())
-            {
-                request.Parameters.Add("DryRun", StringUtils.FromBool(describeAddressesRequest.DryRun));
-            }
             if (describeAddressesRequest != null)
             {
                 List<string> publicIpsList = describeAddressesRequest.PublicIps;

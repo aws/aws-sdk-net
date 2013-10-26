@@ -27,6 +27,7 @@ namespace Amazon.EC2.Model
     {
         
         private string snapshotId;
+
         public string SnapshotId
         {
             get { return this.snapshotId; }

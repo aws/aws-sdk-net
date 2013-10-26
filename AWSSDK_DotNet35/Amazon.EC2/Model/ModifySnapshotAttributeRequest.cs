@@ -27,26 +27,15 @@ namespace Amazon.EC2.Model
     /// Container for the parameters to the ModifySnapshotAttribute operation.
     /// <para> Adds or remove permission settings for the specified snapshot. </para>
     /// </summary>
-    public partial class ModifySnapshotAttributeRequest : AmazonWebServiceRequest
+    public partial class ModifySnapshotAttributeRequest : AmazonEC2Request
     {
-        private bool? dryRun;
         private string snapshotId;
         private SnapshotAttributeName attribute;
         private string operationType;
         private List<string> userIds = new List<string>();
         private List<string> groupNames = new List<string>();
         private CreateVolumePermissionModifications createVolumePermission;
-        public bool DryRun
-        {
-            get { return this.dryRun ?? default(bool); }
-            set { this.dryRun = value; }
-        }
 
-        // Check to see if DryRun property is set
-        internal bool IsSetDryRun()
-        {
-            return this.dryRun.HasValue;
-        }
 
         /// <summary>
         /// The ID of the EBS snapshot whose attributes are being modified.

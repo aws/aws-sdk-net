@@ -35,10 +35,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             IRequest request = new DefaultRequest(monitorInstancesRequest, "AmazonEC2");
             request.Parameters.Add("Action", "MonitorInstances");
             request.Parameters.Add("Version", "2013-10-01");
-            if (monitorInstancesRequest != null && monitorInstancesRequest.IsSetDryRun())
-            {
-                request.Parameters.Add("DryRun", StringUtils.FromBool(monitorInstancesRequest.DryRun));
-            }
             if (monitorInstancesRequest != null)
             {
                 List<string> instanceIdsList = monitorInstancesRequest.InstanceIds;

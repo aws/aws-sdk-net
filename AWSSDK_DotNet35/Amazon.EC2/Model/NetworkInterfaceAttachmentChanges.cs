@@ -27,6 +27,7 @@ namespace Amazon.EC2.Model
         
         private string attachmentId;
         private bool? deleteOnTermination;
+
         public string AttachmentId
         {
             get { return this.attachmentId; }

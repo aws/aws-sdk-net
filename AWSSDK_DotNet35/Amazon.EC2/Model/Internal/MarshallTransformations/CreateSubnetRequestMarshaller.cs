@@ -35,10 +35,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             IRequest request = new DefaultRequest(createSubnetRequest, "AmazonEC2");
             request.Parameters.Add("Action", "CreateSubnet");
             request.Parameters.Add("Version", "2013-10-01");
-            if (createSubnetRequest != null && createSubnetRequest.IsSetDryRun())
-            {
-                request.Parameters.Add("DryRun", StringUtils.FromBool(createSubnetRequest.DryRun));
-            }
             if (createSubnetRequest != null && createSubnetRequest.IsSetVpcId())
             {
                 request.Parameters.Add("VpcId", StringUtils.FromString(createSubnetRequest.VpcId));

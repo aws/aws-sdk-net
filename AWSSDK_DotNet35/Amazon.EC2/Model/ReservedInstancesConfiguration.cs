@@ -31,6 +31,7 @@ namespace Amazon.EC2.Model
         private int? instanceCount;
         private InstanceType instanceType;
 
+
         /// <summary>
         /// The Availability Zone for the modified Reserved Instances.
         ///  

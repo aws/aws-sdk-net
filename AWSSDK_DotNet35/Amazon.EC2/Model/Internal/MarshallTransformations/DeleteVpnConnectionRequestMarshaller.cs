@@ -35,10 +35,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             IRequest request = new DefaultRequest(deleteVpnConnectionRequest, "AmazonEC2");
             request.Parameters.Add("Action", "DeleteVpnConnection");
             request.Parameters.Add("Version", "2013-10-01");
-            if (deleteVpnConnectionRequest != null && deleteVpnConnectionRequest.IsSetDryRun())
-            {
-                request.Parameters.Add("DryRun", StringUtils.FromBool(deleteVpnConnectionRequest.DryRun));
-            }
             if (deleteVpnConnectionRequest != null && deleteVpnConnectionRequest.IsSetVpnConnectionId())
             {
                 request.Parameters.Add("VpnConnectionId", StringUtils.FromString(deleteVpnConnectionRequest.VpnConnectionId));

@@ -40,6 +40,7 @@ namespace Amazon.EC2.Model
         private bool? marketplace;
         private List<PricingDetail> pricingDetails = new List<PricingDetail>();
 
+
         /// <summary>
         /// The unique ID of this Reserved Instances offering.
         ///  

@@ -29,6 +29,7 @@ namespace Amazon.EC2.Model
         private string deviceName;
         private EbsInstanceBlockDevice ebs;
 
+
         /// <summary>
         /// The device name (e.g., <c>/dev/sdh</c>) at which the block device is exposed on the instance.
         ///  

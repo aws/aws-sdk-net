@@ -27,6 +27,7 @@ namespace Amazon.EC2.Model
         
         private string arn;
         private string id;
+
         public string Arn
         {
             get { return this.arn; }
