@@ -26,6 +26,7 @@ using System.Net;
 using System.Text;
 
 using Amazon.S3.Model;
+using Amazon.Util;
 
 namespace Amazon.S3.Util
 {
@@ -50,6 +51,8 @@ namespace Amazon.S3.Util
             _isSetStorageClass = false,
             _isSetActionStatus = false;
 
+        private string _key;
+
         public S3PostUploadRequest()
         {
             this.Metadata = new Dictionary<string, string>();
@@ -66,7 +69,11 @@ namespace Amazon.S3.Util
         /// <summary>
         /// The name of the uploaded key.
         /// </summary>
-        public string Key { get; set; }
+        public string Key
+        {
+            get { return _key; }
+            set { _key = AWSSDKUtils.ToUnixPath(value); }
+        }
 
         /// <summary>
         /// Stream to read the upload data for
