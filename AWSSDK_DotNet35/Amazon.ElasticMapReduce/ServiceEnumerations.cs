@@ -37,6 +37,11 @@ namespace Amazon.ElasticMapReduce
         public static readonly ActionOnFailure CONTINUE = new ActionOnFailure("CONTINUE");
     
 
+       /// <summary>Constant TERMINATE_CLUSTER for ActionOnFailure
+       /// </summary>
+        public static readonly ActionOnFailure TERMINATE_CLUSTER = new ActionOnFailure("TERMINATE_CLUSTER");
+    
+
        /// <summary>Constant TERMINATE_JOB_FLOW for ActionOnFailure
        /// </summary>
         public static readonly ActionOnFailure TERMINATE_JOB_FLOW = new ActionOnFailure("TERMINATE_JOB_FLOW");
@@ -67,6 +72,138 @@ namespace Amazon.ElasticMapReduce
     }
     
 
+    /// <summary>Cluster State
+    /// </summary>
+    public class ClusterState : ConstantClass
+    {
+
+
+       /// <summary>Constant BOOTSTRAPPING for ClusterState
+       /// </summary>
+        public static readonly ClusterState BOOTSTRAPPING = new ClusterState("BOOTSTRAPPING");
+    
+
+       /// <summary>Constant RUNNING for ClusterState
+       /// </summary>
+        public static readonly ClusterState RUNNING = new ClusterState("RUNNING");
+    
+
+       /// <summary>Constant STARTING for ClusterState
+       /// </summary>
+        public static readonly ClusterState STARTING = new ClusterState("STARTING");
+    
+
+       /// <summary>Constant TERMINATED for ClusterState
+       /// </summary>
+        public static readonly ClusterState TERMINATED = new ClusterState("TERMINATED");
+    
+
+       /// <summary>Constant TERMINATED_WITH_ERRORS for ClusterState
+       /// </summary>
+        public static readonly ClusterState TERMINATED_WITH_ERRORS = new ClusterState("TERMINATED_WITH_ERRORS");
+    
+
+       /// <summary>Constant TERMINATING for ClusterState
+       /// </summary>
+        public static readonly ClusterState TERMINATING = new ClusterState("TERMINATING");
+    
+
+       /// <summary>Constant WAITING for ClusterState
+       /// </summary>
+        public static readonly ClusterState WAITING = new ClusterState("WAITING");
+    
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public ClusterState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ClusterState FindValue(string value)
+        {
+            return FindValue<ClusterState>(value);
+        }
+
+        public static implicit operator ClusterState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+    
+
+    /// <summary>Cluster State Change Reason Code
+    /// </summary>
+    public class ClusterStateChangeReasonCode : ConstantClass
+    {
+
+
+       /// <summary>Constant ALL_STEPS_COMPLETED for ClusterStateChangeReasonCode
+       /// </summary>
+        public static readonly ClusterStateChangeReasonCode ALL_STEPS_COMPLETED = new ClusterStateChangeReasonCode("ALL_STEPS_COMPLETED");
+    
+
+       /// <summary>Constant BOOTSTRAP_FAILURE for ClusterStateChangeReasonCode
+       /// </summary>
+        public static readonly ClusterStateChangeReasonCode BOOTSTRAP_FAILURE = new ClusterStateChangeReasonCode("BOOTSTRAP_FAILURE");
+    
+
+       /// <summary>Constant INSTANCE_FAILURE for ClusterStateChangeReasonCode
+       /// </summary>
+        public static readonly ClusterStateChangeReasonCode INSTANCE_FAILURE = new ClusterStateChangeReasonCode("INSTANCE_FAILURE");
+    
+
+       /// <summary>Constant INTERNAL_ERROR for ClusterStateChangeReasonCode
+       /// </summary>
+        public static readonly ClusterStateChangeReasonCode INTERNAL_ERROR = new ClusterStateChangeReasonCode("INTERNAL_ERROR");
+    
+
+       /// <summary>Constant STEP_FAILURE for ClusterStateChangeReasonCode
+       /// </summary>
+        public static readonly ClusterStateChangeReasonCode STEP_FAILURE = new ClusterStateChangeReasonCode("STEP_FAILURE");
+    
+
+       /// <summary>Constant USER_REQUEST for ClusterStateChangeReasonCode
+       /// </summary>
+        public static readonly ClusterStateChangeReasonCode USER_REQUEST = new ClusterStateChangeReasonCode("USER_REQUEST");
+    
+
+       /// <summary>Constant VALIDATION_ERROR for ClusterStateChangeReasonCode
+       /// </summary>
+        public static readonly ClusterStateChangeReasonCode VALIDATION_ERROR = new ClusterStateChangeReasonCode("VALIDATION_ERROR");
+    
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public ClusterStateChangeReasonCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ClusterStateChangeReasonCode FindValue(string value)
+        {
+            return FindValue<ClusterStateChangeReasonCode>(value);
+        }
+
+        public static implicit operator ClusterStateChangeReasonCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+    
+
     /// <summary>Instance Group State
     /// </summary>
     public class InstanceGroupState : ConstantClass
@@ -86,11 +223,6 @@ namespace Amazon.ElasticMapReduce
        /// <summary>Constant ENDED for InstanceGroupState
        /// </summary>
         public static readonly InstanceGroupState ENDED = new InstanceGroupState("ENDED");
-    
-
-       /// <summary>Constant FAILED for InstanceGroupState
-       /// </summary>
-        public static readonly InstanceGroupState FAILED = new InstanceGroupState("FAILED");
     
 
        /// <summary>Constant PROVISIONING for InstanceGroupState
@@ -113,14 +245,19 @@ namespace Amazon.ElasticMapReduce
         public static readonly InstanceGroupState SHUTTING_DOWN = new InstanceGroupState("SHUTTING_DOWN");
     
 
-       /// <summary>Constant STARTING for InstanceGroupState
+       /// <summary>Constant SUSPENDED for InstanceGroupState
        /// </summary>
-        public static readonly InstanceGroupState STARTING = new InstanceGroupState("STARTING");
+        public static readonly InstanceGroupState SUSPENDED = new InstanceGroupState("SUSPENDED");
     
 
        /// <summary>Constant TERMINATED for InstanceGroupState
        /// </summary>
         public static readonly InstanceGroupState TERMINATED = new InstanceGroupState("TERMINATED");
+    
+
+       /// <summary>Constant TERMINATING for InstanceGroupState
+       /// </summary>
+        public static readonly InstanceGroupState TERMINATING = new InstanceGroupState("TERMINATING");
     
 
         /// <summary>
@@ -142,6 +279,103 @@ namespace Amazon.ElasticMapReduce
         }
 
         public static implicit operator InstanceGroupState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+    
+
+    /// <summary>Instance Group State Change Reason Code
+    /// </summary>
+    public class InstanceGroupStateChangeReasonCode : ConstantClass
+    {
+
+
+       /// <summary>Constant CLUSTER_TERMINATED for InstanceGroupStateChangeReasonCode
+       /// </summary>
+        public static readonly InstanceGroupStateChangeReasonCode CLUSTER_TERMINATED = new InstanceGroupStateChangeReasonCode("CLUSTER_TERMINATED");
+    
+
+       /// <summary>Constant INSTANCE_FAILURE for InstanceGroupStateChangeReasonCode
+       /// </summary>
+        public static readonly InstanceGroupStateChangeReasonCode INSTANCE_FAILURE = new InstanceGroupStateChangeReasonCode("INSTANCE_FAILURE");
+    
+
+       /// <summary>Constant INTERNAL_ERROR for InstanceGroupStateChangeReasonCode
+       /// </summary>
+        public static readonly InstanceGroupStateChangeReasonCode INTERNAL_ERROR = new InstanceGroupStateChangeReasonCode("INTERNAL_ERROR");
+    
+
+       /// <summary>Constant VALIDATION_ERROR for InstanceGroupStateChangeReasonCode
+       /// </summary>
+        public static readonly InstanceGroupStateChangeReasonCode VALIDATION_ERROR = new InstanceGroupStateChangeReasonCode("VALIDATION_ERROR");
+    
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public InstanceGroupStateChangeReasonCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InstanceGroupStateChangeReasonCode FindValue(string value)
+        {
+            return FindValue<InstanceGroupStateChangeReasonCode>(value);
+        }
+
+        public static implicit operator InstanceGroupStateChangeReasonCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+    
+
+    /// <summary>Instance Group Type
+    /// </summary>
+    public class InstanceGroupType : ConstantClass
+    {
+
+
+       /// <summary>Constant CORE for InstanceGroupType
+       /// </summary>
+        public static readonly InstanceGroupType CORE = new InstanceGroupType("CORE");
+    
+
+       /// <summary>Constant MASTER for InstanceGroupType
+       /// </summary>
+        public static readonly InstanceGroupType MASTER = new InstanceGroupType("MASTER");
+    
+
+       /// <summary>Constant TASK for InstanceGroupType
+       /// </summary>
+        public static readonly InstanceGroupType TASK = new InstanceGroupType("TASK");
+    
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public InstanceGroupType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InstanceGroupType FindValue(string value)
+        {
+            return FindValue<InstanceGroupType>(value);
+        }
+
+        public static implicit operator InstanceGroupType(string value)
         {
             return FindValue(value);
         }
@@ -188,6 +422,118 @@ namespace Amazon.ElasticMapReduce
         }
 
         public static implicit operator InstanceRoleType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+    
+
+    /// <summary>Instance State
+    /// </summary>
+    public class InstanceState : ConstantClass
+    {
+
+
+       /// <summary>Constant AWAITING_FULFILLMENT for InstanceState
+       /// </summary>
+        public static readonly InstanceState AWAITING_FULFILLMENT = new InstanceState("AWAITING_FULFILLMENT");
+    
+
+       /// <summary>Constant BOOTSTRAPPING for InstanceState
+       /// </summary>
+        public static readonly InstanceState BOOTSTRAPPING = new InstanceState("BOOTSTRAPPING");
+    
+
+       /// <summary>Constant PROVISIONING for InstanceState
+       /// </summary>
+        public static readonly InstanceState PROVISIONING = new InstanceState("PROVISIONING");
+    
+
+       /// <summary>Constant RUNNING for InstanceState
+       /// </summary>
+        public static readonly InstanceState RUNNING = new InstanceState("RUNNING");
+    
+
+       /// <summary>Constant TERMINATED for InstanceState
+       /// </summary>
+        public static readonly InstanceState TERMINATED = new InstanceState("TERMINATED");
+    
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public InstanceState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InstanceState FindValue(string value)
+        {
+            return FindValue<InstanceState>(value);
+        }
+
+        public static implicit operator InstanceState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+    
+
+    /// <summary>Instance State Change Reason Code
+    /// </summary>
+    public class InstanceStateChangeReasonCode : ConstantClass
+    {
+
+
+       /// <summary>Constant BOOTSTRAP_FAILURE for InstanceStateChangeReasonCode
+       /// </summary>
+        public static readonly InstanceStateChangeReasonCode BOOTSTRAP_FAILURE = new InstanceStateChangeReasonCode("BOOTSTRAP_FAILURE");
+    
+
+       /// <summary>Constant CLUSTER_TERMINATED for InstanceStateChangeReasonCode
+       /// </summary>
+        public static readonly InstanceStateChangeReasonCode CLUSTER_TERMINATED = new InstanceStateChangeReasonCode("CLUSTER_TERMINATED");
+    
+
+       /// <summary>Constant INSTANCE_FAILURE for InstanceStateChangeReasonCode
+       /// </summary>
+        public static readonly InstanceStateChangeReasonCode INSTANCE_FAILURE = new InstanceStateChangeReasonCode("INSTANCE_FAILURE");
+    
+
+       /// <summary>Constant INTERNAL_ERROR for InstanceStateChangeReasonCode
+       /// </summary>
+        public static readonly InstanceStateChangeReasonCode INTERNAL_ERROR = new InstanceStateChangeReasonCode("INTERNAL_ERROR");
+    
+
+       /// <summary>Constant VALIDATION_ERROR for InstanceStateChangeReasonCode
+       /// </summary>
+        public static readonly InstanceStateChangeReasonCode VALIDATION_ERROR = new InstanceStateChangeReasonCode("VALIDATION_ERROR");
+    
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public InstanceStateChangeReasonCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InstanceStateChangeReasonCode FindValue(string value)
+        {
+            return FindValue<InstanceStateChangeReasonCode>(value);
+        }
+
+        public static implicit operator InstanceStateChangeReasonCode(string value)
         {
             return FindValue(value);
         }
@@ -366,6 +712,103 @@ namespace Amazon.ElasticMapReduce
         }
 
         public static implicit operator StepExecutionState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+    
+
+    /// <summary>Step State
+    /// </summary>
+    public class StepState : ConstantClass
+    {
+
+
+       /// <summary>Constant CANCELLED for StepState
+       /// </summary>
+        public static readonly StepState CANCELLED = new StepState("CANCELLED");
+    
+
+       /// <summary>Constant COMPLETED for StepState
+       /// </summary>
+        public static readonly StepState COMPLETED = new StepState("COMPLETED");
+    
+
+       /// <summary>Constant FAILED for StepState
+       /// </summary>
+        public static readonly StepState FAILED = new StepState("FAILED");
+    
+
+       /// <summary>Constant INTERRUPTED for StepState
+       /// </summary>
+        public static readonly StepState INTERRUPTED = new StepState("INTERRUPTED");
+    
+
+       /// <summary>Constant PENDING for StepState
+       /// </summary>
+        public static readonly StepState PENDING = new StepState("PENDING");
+    
+
+       /// <summary>Constant RUNNING for StepState
+       /// </summary>
+        public static readonly StepState RUNNING = new StepState("RUNNING");
+    
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public StepState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StepState FindValue(string value)
+        {
+            return FindValue<StepState>(value);
+        }
+
+        public static implicit operator StepState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+    
+
+    /// <summary>Step State Change Reason Code
+    /// </summary>
+    public class StepStateChangeReasonCode : ConstantClass
+    {
+
+
+       /// <summary>Constant NONE for StepStateChangeReasonCode
+       /// </summary>
+        public static readonly StepStateChangeReasonCode NONE = new StepStateChangeReasonCode("NONE");
+    
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public StepStateChangeReasonCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StepStateChangeReasonCode FindValue(string value)
+        {
+            return FindValue<StepStateChangeReasonCode>(value);
+        }
+
+        public static implicit operator StepStateChangeReasonCode(string value)
         {
             return FindValue(value);
         }

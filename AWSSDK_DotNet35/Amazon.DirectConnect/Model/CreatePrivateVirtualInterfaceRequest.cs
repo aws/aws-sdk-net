@@ -25,13 +25,14 @@ namespace Amazon.DirectConnect.Model
 {
     /// <summary>
     /// Container for the parameters to the CreatePrivateVirtualInterface operation.
-    /// <para> Creates a new private virtual interface. A virtual interface is the VLAN that transports AWS Direct Connect traffic. A private
-    /// virtual interface supports sending traffic to a single Virtual Private Cloud (VPC). </para>
+    /// <para>Creates a new private virtual interface. A virtual interface is the VLAN that transports AWS Direct Connect traffic. A private
+    /// virtual interface supports sending traffic to a single Virtual Private Cloud (VPC).</para>
     /// </summary>
-    public partial class CreatePrivateVirtualInterfaceRequest : AmazonWebServiceRequest
+    public partial class CreatePrivateVirtualInterfaceRequest : AmazonDirectConnectRequest
     {
         private string connectionId;
         private NewPrivateVirtualInterface newPrivateVirtualInterface;
+
 
         /// <summary>
         /// ID of the connection. Example: dxcon-fg5678gh Default: None

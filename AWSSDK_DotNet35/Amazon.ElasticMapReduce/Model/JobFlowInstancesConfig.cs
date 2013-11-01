@@ -37,6 +37,7 @@ namespace Amazon.ElasticMapReduce.Model
         private string hadoopVersion;
         private string ec2SubnetId;
 
+
         /// <summary>
         /// The EC2 instance type of the master node.
         ///  
@@ -128,7 +129,7 @@ namespace Amazon.ElasticMapReduce.Model
         }
 
         /// <summary>
-        /// Specifies the name of the Amazon EC2 key pair that can be used to ssh to the master node as the user called "hadoop."
+        /// The name of the Amazon EC2 key pair that can be used to ssh to the master node as the user called "hadoop."
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -157,7 +158,7 @@ namespace Amazon.ElasticMapReduce.Model
         }
 
         /// <summary>
-        /// Specifies the Availability Zone the job flow will run in.
+        /// The Availability Zone the job flow will run in.
         ///  
         /// </summary>
         public PlacementType Placement
@@ -206,9 +207,9 @@ namespace Amazon.ElasticMapReduce.Model
         }
 
         /// <summary>
-        /// Specifies the Hadoop version for the job flow. Valid inputs are "0.18", "0.20", or "0.20.205". If you do not set this value, the default of
-        /// 0.18 is used, unless the AmiVersion parameter is set in the RunJobFlow call, in which case the default version of Hadoop for that AMI
-        /// version is used.
+        /// The Hadoop version for the job flow. Valid inputs are "0.18", "0.20", or "0.20.205". If you do not set this value, the default of 0.18 is
+        /// used, unless the AmiVersion parameter is set in the RunJobFlow call, in which case the default version of Hadoop for that AMI version is
+        /// used.
         ///  
         /// <para>
         /// <b>Constraints:</b>

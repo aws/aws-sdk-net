@@ -30,6 +30,7 @@ namespace Amazon.ElasticMapReduce.Model
         private ActionOnFailure actionOnFailure;
         private HadoopJarStepConfig hadoopJarStep;
 
+
         /// <summary>
         /// The name of the job flow step.
         ///  
@@ -60,14 +61,14 @@ namespace Amazon.ElasticMapReduce.Model
         }
 
         /// <summary>
-        /// Specifies the action to take if the job flow step fails.
+        /// The action to take if the job flow step fails.
         ///  
         /// <para>
         /// <b>Constraints:</b>
         /// <list type="definition">
         ///     <item>
         ///         <term>Allowed Values</term>
-        ///         <description>TERMINATE_JOB_FLOW, CANCEL_AND_WAIT, CONTINUE</description>
+        ///         <description>TERMINATE_JOB_FLOW, TERMINATE_CLUSTER, CANCEL_AND_WAIT, CONTINUE</description>
         ///     </item>
         /// </list>
         /// </para>
@@ -85,7 +86,7 @@ namespace Amazon.ElasticMapReduce.Model
         }
 
         /// <summary>
-        /// Specifies the JAR file used for the job flow step.
+        /// The JAR file used for the job flow step.
         ///  
         /// </summary>
         public HadoopJarStepConfig HadoopJarStep

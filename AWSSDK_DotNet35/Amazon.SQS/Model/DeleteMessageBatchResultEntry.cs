@@ -28,6 +28,7 @@ namespace Amazon.SQS.Model
         
         private string id;
 
+
         /// <summary>
         /// Represents a successfully deleted message.
         ///  

@@ -25,20 +25,17 @@ namespace Amazon.SQS.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteMessageBatch operation.
-    /// <para>Deletes multiple messages. This is a batch version of DeleteMessage. The result of the delete action on each message is reported
-    /// individually in the response.</para> <para><b>IMPORTANT:</b> Because the batch request can result in a combination of successful and
-    /// unsuccessful actions, you should check for batch errors even when the call returns an HTTP status code of 200. </para>
-    /// <para><b>NOTE:</b>Some API actions take lists of parameters. These lists are specified using the param.n notation. Values of n are integers
-    /// starting from 1. For example, a parameter list with two elements looks like this: </para> <para> <c>&amp;amp;Attribute.1=this</c> </para>
-    /// <para> <c>&amp;amp;Attribute.2=that</c> </para>
+    /// <para>This is a batch version of DeleteMessage. It takes multiple receipt handles and deletes each one of the messages. The result of the
+    /// delete operation on each message is reported individually in the response.</para>
     /// </summary>
-    public partial class DeleteMessageBatchRequest : AmazonWebServiceRequest
+    public partial class DeleteMessageBatchRequest : AmazonSQSRequest
     {
         private string queueUrl;
         private List<DeleteMessageBatchRequestEntry> entries = new List<DeleteMessageBatchRequestEntry>();
 
+
         /// <summary>
-        /// The URL of the Amazon SQS queue to take action on.
+        /// The URL of the SQS queue to take action on.
         ///  
         /// </summary>
         public string QueueUrl

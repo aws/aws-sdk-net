@@ -201,7 +201,7 @@ namespace Amazon.Runtime
                             throw new InvalidDataException("Cannot determine protocol");
                     }
                 }
-                requestData.Signer.Sign(requestData.Request, this.config, immutableCredentials.AccessKey, immutableCredentials.SecretKey);
+                requestData.Signer.Sign(requestData.Request, this.config, requestData.Metrics, immutableCredentials.AccessKey, immutableCredentials.SecretKey);
             }
         }
 
@@ -237,7 +237,6 @@ namespace Amazon.Runtime
                 requestData = request.Content;
             }
 
-            this.logger.DebugFormat("Request body's content size {0}", requestData.Length);
             return requestData;
         }
 
@@ -330,21 +329,16 @@ namespace Amazon.Runtime
         #endregion
 
         #region Logging Methods
-        protected void LogFinalMetrics(AsyncResult asyncResult)
+        protected void LogFinalMetrics(RequestMetrics metrics)
         {
-            asyncResult.Metrics.StopEvent(RequestMetrics.Metric.ClientExecuteTime);
+            metrics.StopEvent(RequestMetrics.Metric.ClientExecuteTime);
             if (config.LogMetrics)
             {
-                string errors = asyncResult.Metrics.GetErrors();
+                string errors = metrics.GetErrors();
                 if (!string.IsNullOrEmpty(errors))
                     logger.InfoFormat("Request metrics errors: {0}", errors);
-                logger.InfoFormat("Request metrics: {0}", asyncResult.Metrics);
+                logger.InfoFormat("Request metrics: {0}", metrics);
             }
-        }
-
-        protected void LogResponse(RequestMetrics metrics, IRequest request, HttpStatusCode statusCode)
-        {
-            metrics.AddProperty(RequestMetrics.Metric.StatusCode, statusCode);
         }
 
         protected void LogFinishedResponse(RequestMetrics metrics, UnmarshallerContext context, long contentLength)

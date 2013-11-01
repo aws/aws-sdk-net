@@ -22,12 +22,13 @@ using Amazon.Runtime;
 namespace Amazon.DirectConnect.Model
 {
     /// <summary>
-    /// <para> A structure containing a list of connections. </para>
+    /// <para>A structure containing a list of connections.</para>
     /// </summary>
     public partial class DescribeConnectionsResult : AmazonWebServiceResponse
     {
         
         private List<Connection> connections = new List<Connection>();
+
 
         /// <summary>
         /// A list of connections.

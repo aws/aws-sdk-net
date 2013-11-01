@@ -27,10 +27,11 @@ namespace Amazon.ElasticMapReduce.Model
     /// Container for the parameters to the AddInstanceGroups operation.
     /// <para>AddInstanceGroups adds an instance group to a running cluster.</para>
     /// </summary>
-    public partial class AddInstanceGroupsRequest : AmazonWebServiceRequest
+    public partial class AddInstanceGroupsRequest : AmazonElasticMapReduceRequest
     {
         private List<InstanceGroupConfig> instanceGroups = new List<InstanceGroupConfig>();
         private string jobFlowId;
+
 
         /// <summary>
         /// Instance Groups to add.

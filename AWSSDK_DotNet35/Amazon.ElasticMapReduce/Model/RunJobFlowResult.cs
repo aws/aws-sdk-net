@@ -29,6 +29,7 @@ namespace Amazon.ElasticMapReduce.Model
         
         private string jobFlowId;
 
+
         /// <summary>
         /// An unique identifier for the job flow.
         ///  

@@ -46,10 +46,11 @@ namespace Amazon.Runtime.Internal.Auth
         /// </summary>
         /// <param name="awsAccessKeyId">The AWS public key</param>
         /// <param name="awsSecretAccessKey">The AWS secret key used to sign the request in clear text</param>
+        /// <param name="metrics">Request metrics</param>
         /// <param name="clientConfig">The configuration that specifies which hashing algorithm to use</param>
         /// <param name="request">The request to have the signature compute for</param>
         /// <exception cref="Amazon.Runtime.SignatureException">If any problems are encountered while signing the request</exception>
-        public override void Sign(IRequest request, ClientConfig clientConfig, string awsAccessKeyId, string awsSecretAccessKey)
+        public override void Sign(IRequest request, ClientConfig clientConfig, RequestMetrics metrics, string awsAccessKeyId, string awsSecretAccessKey)
         {
             // clean up request from previous execution
             request.Headers.Remove("Authorization");
@@ -85,14 +86,16 @@ namespace Amazon.Runtime.Internal.Auth
                                                           request.ContentStreamHash,
                                                           request.HttpMethod);
 
-            StringBuilder stringToSign = new StringBuilder();
-            stringToSign.AppendFormat("{0}-{1}\n{2}\n{3}\n", SCHEME, ALGORITHM, dateTime, scope);
+            StringBuilder stringToSignBuilder = new StringBuilder();
+            stringToSignBuilder.AppendFormat("{0}-{1}\n{2}\n{3}\n", SCHEME, ALGORITHM, dateTime, scope);
 
             byte[] canonicalRequestHashBytes = CryptoUtilFactory.CryptoInstance.ComputeSHA256Hash(Encoding.UTF8.GetBytes(canonicalRequest));
-            stringToSign.Append(AWSSDKUtils.ToHex(canonicalRequestHashBytes, true));
+            stringToSignBuilder.Append(AWSSDKUtils.ToHex(canonicalRequestHashBytes, true));
 
             byte[] hashKey = ComposeSigningKey(signingAlgorithm, awsSecretAccessKey, region, dateStamp, service);
-            byte[] signature = CryptoUtilFactory.CryptoInstance.HMACSignBinary(Encoding.UTF8.GetBytes(stringToSign.ToString()), hashKey, SigningAlgorithm.HmacSHA256);
+            string stringToSign = stringToSignBuilder.ToString();
+            metrics.AddProperty(RequestMetrics.Metric.StringToSign, stringToSign);
+            byte[] signature = CryptoUtilFactory.CryptoInstance.HMACSignBinary(Encoding.UTF8.GetBytes(stringToSign), hashKey, SigningAlgorithm.HmacSHA256);
 
             StringBuilder authorizationHeader = new StringBuilder();
             authorizationHeader.AppendFormat("{0}-{1} ", SCHEME, ALGORITHM);

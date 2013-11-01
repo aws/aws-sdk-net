@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.SQS.Model
 {
     /// <summary>
-    /// <para>An Amazon SQS message.</para>
+    /// 
     /// </summary>
     public class Message
     {
@@ -32,8 +32,9 @@ namespace Amazon.SQS.Model
         private string body;
         private Dictionary<string,string> attributes = new Dictionary<string,string>();
 
+
         /// <summary>
-        /// A unique identifier for the message. Message IDs are considered unique across all AWS accounts for an extended period of time.
+        /// 
         ///  
         /// </summary>
         public string MessageId
@@ -49,8 +50,7 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// An identifier associated with the act of receiving the message. A new receipt handle is returned every time you receive a message. When
-        /// deleting a message, you provide the last received receipt handle to delete the message.
+        /// 
         ///  
         /// </summary>
         public string ReceiptHandle
@@ -66,7 +66,7 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// An MD5 digest of the non-URL-encoded message body string.
+        /// 
         ///  
         /// </summary>
         public string MD5OfBody
@@ -82,7 +82,7 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// The message's contents (not URL-encoded).
+        /// 
         ///  
         /// </summary>
         public string Body
@@ -98,9 +98,7 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// <c>SenderId</c>, <c>SentTimestamp</c>, <c>ApproximateReceiveCount</c>, and/or <c>ApproximateFirstReceiveTimestamp</c>. <c>SentTimestamp</c>
-        /// and <c>ApproximateFirstReceiveTimestamp</c> are each returned as an integer representing the <a
-        /// href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in milliseconds.
+        /// 
         ///  
         /// </summary>
         public Dictionary<string,string> Attributes

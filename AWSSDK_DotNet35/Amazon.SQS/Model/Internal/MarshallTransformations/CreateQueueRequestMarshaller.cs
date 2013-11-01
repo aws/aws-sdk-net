@@ -48,10 +48,10 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
                     {
                         string value;
                         bool hasValue = createQueueRequest.Attributes.TryGetValue(key, out value);
-                                    request.Parameters.Add("Attribute.entry." + attributesListIndex + ".key", StringUtils.FromString(key));
+                                    request.Parameters.Add("Attribute." + attributesListIndex + ".Name", StringUtils.FromString(key));
                         if (hasValue) 
                         {
-                            request.Parameters.Add("Attribute.entry." + attributesListIndex + ".value", StringUtils.FromString(value));
+                            request.Parameters.Add("Attribute." + attributesListIndex + ".Value", StringUtils.FromString(value));
                         }
                         ++attributesListIndex;
                     }

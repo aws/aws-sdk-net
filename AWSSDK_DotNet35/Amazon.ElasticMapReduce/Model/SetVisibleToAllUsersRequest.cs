@@ -25,15 +25,16 @@ namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
     /// Container for the parameters to the SetVisibleToAllUsers operation.
-    /// <para>Sets whether all AWS Identity and Access Management (IAM) users under your account can access the specifed job flows. This action
+    /// <para>Sets whether all AWS Identity and Access Management (IAM) users under your account can access the specified job flows. This action
     /// works on running job flows. You can also set the visibility of a job flow when you launch it using the <c>VisibleToAllUsers</c> parameter of
     /// RunJobFlow. The SetVisibleToAllUsers action can be called only by an IAM user who created the job flow or the AWS account that owns the job
     /// flow.</para>
     /// </summary>
-    public partial class SetVisibleToAllUsersRequest : AmazonWebServiceRequest
+    public partial class SetVisibleToAllUsersRequest : AmazonElasticMapReduceRequest
     {
         private List<string> jobFlowIds = new List<string>();
         private bool? visibleToAllUsers;
+
 
         /// <summary>
         /// Identifiers of the job flows to receive the new visibility setting.

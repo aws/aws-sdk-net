@@ -40,11 +40,12 @@ namespace Amazon.Runtime.Internal.Auth
             get { return ClientProtocol.RestProtocol; }
         }
 
-        public override void Sign(IRequest request, ClientConfig clientConfig, string awsAccessKeyId, string awsSecretAccessKey)
+        public override void Sign(IRequest request, ClientConfig clientConfig, RequestMetrics metrics, string awsAccessKeyId, string awsSecretAccessKey)
         {
             request.Headers["x-amz-date"] = AWSSDKUtils.FormattedCurrentTimestampRFC822;
 
             string toSign = buildSigningString(request.HttpMethod, request.CanonicalResource, request.Parameters, request.Headers);
+            metrics.AddProperty(RequestMetrics.Metric.StringToSign, toSign);
             string auth = CryptoUtilFactory.CryptoInstance.HMACSign(toSign, awsSecretAccessKey, SigningAlgorithm.HmacSHA1);
             string authorization = string.Concat("AWS ", awsAccessKeyId, ":", auth);
             request.Headers[S3QueryParameter.Authorization.ToString()] = authorization;

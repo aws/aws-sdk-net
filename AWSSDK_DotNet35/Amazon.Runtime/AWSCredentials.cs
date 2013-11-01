@@ -25,6 +25,7 @@ using System.Configuration;
 #endif
 
 using ThirdParty.Json.LitJson;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.Runtime
 {
@@ -291,6 +292,30 @@ namespace Amazon.Runtime
 
         #endregion
 
+        #region Private members
+
+        private static Logger _logger = Logger.GetLogger(typeof(RefreshingAWSCredentials));
+        private TimeSpan _preemptExpiryTime = TimeSpan.FromMinutes(0);
+
+        #endregion
+
+        #region Properties
+
+        /// <summary>
+        /// The time before actual expiration to expire the credentials.        
+        /// Property cannot be set to a negative TimeSpan.
+        /// </summary>
+        public TimeSpan PreemptExpiryTime
+        {
+            get { return _preemptExpiryTime; }
+            set
+            {
+                if (value < TimeSpan.Zero) throw new ArgumentOutOfRangeException("PreemptExpiryTime cannot be negative");
+                _preemptExpiryTime = value;
+            }
+        }
+
+        #endregion
 
         #region Override methods
 
@@ -311,6 +336,20 @@ namespace Amazon.Runtime
                     if (ShouldUpdate)
                     {
                         throw new AmazonClientException("The retrieved credentials have already expired");
+                    }
+
+                    // Offset the Expiration by PreemptExpiryTime
+                    _currentState.Expiration -= PreemptExpiryTime;
+
+                    if (ShouldUpdate)
+                    {
+                        // This could happen if the default value of PreemptExpiryTime is
+                        // overriden and set too high such that ShouldUpdate returns true.
+                        _logger.InfoFormat(
+                            "The preempt expiry time is set too high: Current time = {0}, Credentials expiry time = {1}, Preempt expiry time = {2}.",
+                            DateTime.Now,
+                            _currentState.Expiration,
+                            PreemptExpiryTime);
                     }
                 }
 
@@ -354,6 +393,14 @@ namespace Amazon.Runtime
     /// </summary>
     public class InstanceProfileAWSCredentials : RefreshingAWSCredentials
     {
+        #region Private members
+
+        // Set preempt expiry to 2 minutes. New access keys are available 5 minutes before expiry time.
+        // http://aws.amazon.com/iam/faqs/#How_do_i_rotate_the_access_keys_on_the_EC2_instance 
+        private static TimeSpan _preemptExpiryTime = TimeSpan.FromMinutes(2);
+
+        #endregion
+
         #region Properties
 
         /// <summary>
@@ -384,6 +431,7 @@ namespace Amazon.Runtime
         public InstanceProfileAWSCredentials(string role)
         {
             Role = role;
+            this.PreemptExpiryTime = _preemptExpiryTime;
         }
 
         /// <summary>
@@ -534,7 +582,7 @@ namespace Amazon.Runtime
         {
             public string Code { get; set; }
             public string Message { get; set; }
-            //public DateTime LastUpdated { get; set; }
+            public DateTime LastUpdated { get; set; }
         }
 
         private class SecurityInfo : SecurityBase

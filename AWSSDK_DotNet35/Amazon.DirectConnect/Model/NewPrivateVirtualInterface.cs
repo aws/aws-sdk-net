@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.DirectConnect.Model
 {
     /// <summary>
-    /// <para> A structure containing information about a new private virtual interface. </para>
+    /// <para>A structure containing information about a new private virtual interface.</para>
     /// </summary>
     public class NewPrivateVirtualInterface
     {
@@ -33,6 +33,7 @@ namespace Amazon.DirectConnect.Model
         private string amazonAddress;
         private string customerAddress;
         private string virtualGatewayId;
+
 
         /// <summary>
         /// The name of the virtual interface assigned by the customer Example: "My VPC"

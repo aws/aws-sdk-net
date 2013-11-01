@@ -71,7 +71,8 @@ namespace Amazon.S3
 
             ImmutableCredentials immutableCredentials = credentials.GetCredentials();
             IRequest irequest = Marshall(request, immutableCredentials.AccessKey, immutableCredentials.Token);
-            signer.Sign(irequest, this.config, immutableCredentials.AccessKey, immutableCredentials.SecretKey);
+            RequestMetrics metrics = new RequestMetrics();
+            signer.Sign(irequest, this.config, metrics, immutableCredentials.AccessKey, immutableCredentials.SecretKey);
 
             var authorization = irequest.Headers[S3QueryParameter.Authorization.ToString()];
             authorization = authorization.Substring(authorization.IndexOf(":", StringComparison.Ordinal) + 1);
@@ -367,9 +368,11 @@ namespace Amazon.S3
                 {
                     putObjectRequest.SetupForFilePath();
                 }
-                else if (!string.IsNullOrEmpty(putObjectRequest.ContentBody) && string.IsNullOrEmpty(putObjectRequest.Headers.ContentType))
+                else if (!string.IsNullOrEmpty(putObjectRequest.ContentBody))
                 {
-                    putObjectRequest.Headers.ContentType = "text/plain";
+                    if (string.IsNullOrEmpty(putObjectRequest.Headers.ContentType))
+                        putObjectRequest.Headers.ContentType = "text/plain";
+
                     putObjectRequest.InputStream = new MemoryStream(Encoding.UTF8.GetBytes(putObjectRequest.ContentBody));
                 }
 #if WIN_RT || WINDOWS_PHONE

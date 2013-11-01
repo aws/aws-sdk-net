@@ -22,12 +22,13 @@ using Amazon.Runtime;
 namespace Amazon.SQS.Model
 {
     /// <summary>
-    /// <para> A list of your queues. </para>
+    /// 
     /// </summary>
     public partial class ListQueuesResult : AmazonWebServiceResponse
     {
         
         private List<string> queueUrls = new List<string>();
+
 
         /// <summary>
         /// A list of queue URLs, up to 1000 entries.

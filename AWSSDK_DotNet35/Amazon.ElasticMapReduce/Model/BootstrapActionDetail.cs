@@ -28,6 +28,7 @@ namespace Amazon.ElasticMapReduce.Model
         
         private BootstrapActionConfig bootstrapActionConfig;
 
+
         /// <summary>
         /// A description of the bootstrap action.
         ///  

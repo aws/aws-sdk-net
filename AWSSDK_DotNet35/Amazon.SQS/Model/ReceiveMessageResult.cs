@@ -22,12 +22,13 @@ using Amazon.Runtime;
 namespace Amazon.SQS.Model
 {
     /// <summary>
-    /// <para> A list of received messages. </para>
+    /// 
     /// </summary>
     public partial class ReceiveMessageResult : AmazonWebServiceResponse
     {
         
         private List<Message> messages = new List<Message>();
+
 
         /// <summary>
         /// A list of messages.

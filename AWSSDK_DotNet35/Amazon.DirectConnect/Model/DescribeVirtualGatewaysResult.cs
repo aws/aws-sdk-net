@@ -22,12 +22,13 @@ using Amazon.Runtime;
 namespace Amazon.DirectConnect.Model
 {
     /// <summary>
-    /// <para> A structure containing a list of virtual private gateways. </para>
+    /// <para>A structure containing a list of virtual private gateways.</para>
     /// </summary>
     public partial class DescribeVirtualGatewaysResult : AmazonWebServiceResponse
     {
         
         private List<VirtualGateway> virtualGateways = new List<VirtualGateway>();
+
 
         /// <summary>
         /// A list of virtual private gateways.

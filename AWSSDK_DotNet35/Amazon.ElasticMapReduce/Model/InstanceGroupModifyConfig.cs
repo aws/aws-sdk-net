@@ -28,6 +28,8 @@ namespace Amazon.ElasticMapReduce.Model
         
         private string instanceGroupId;
         private int? instanceCount;
+        private List<string> eC2InstanceIdsToTerminate = new List<string>();
+
 
         /// <summary>
         /// Unique ID of the instance group to expand or shrink.
@@ -72,6 +74,23 @@ namespace Amazon.ElasticMapReduce.Model
         internal bool IsSetInstanceCount()
         {
             return this.instanceCount.HasValue;
+        }
+
+        /// <summary>
+        /// The EC2 InstanceIds to terminate. For advanced users only. Once you terminate the instances, the instance group will not return to its
+        /// original requested size.
+        ///  
+        /// </summary>
+        public List<string> EC2InstanceIdsToTerminate
+        {
+            get { return this.eC2InstanceIdsToTerminate; }
+            set { this.eC2InstanceIdsToTerminate = value; }
+        }
+
+        // Check to see if EC2InstanceIdsToTerminate property is set
+        internal bool IsSetEC2InstanceIdsToTerminate()
+        {
+            return this.eC2InstanceIdsToTerminate.Count > 0;
         }
     }
 }

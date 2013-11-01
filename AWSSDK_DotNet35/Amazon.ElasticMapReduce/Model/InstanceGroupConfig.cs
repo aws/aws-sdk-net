@@ -33,6 +33,7 @@ namespace Amazon.ElasticMapReduce.Model
         private string instanceType;
         private int? instanceCount;
 
+
         /// <summary>
         /// Friendly name given to the instance group.
         ///  

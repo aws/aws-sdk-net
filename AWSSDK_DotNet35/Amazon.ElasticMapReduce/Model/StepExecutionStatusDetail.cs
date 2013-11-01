@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
-    /// <para>Specifies the execution state of a step.</para>
+    /// <para>The execution state of a step.</para>
     /// </summary>
     public class StepExecutionStatusDetail
     {
@@ -31,6 +31,7 @@ namespace Amazon.ElasticMapReduce.Model
         private DateTime? startDateTime;
         private DateTime? endDateTime;
         private string lastStateChangeReason;
+
 
         /// <summary>
         /// The state of the job flow step.

@@ -29,6 +29,7 @@ namespace Amazon.ElasticMapReduce.Model
         private StepConfig stepConfig;
         private StepExecutionStatusDetail executionStatusDetail;
 
+
         /// <summary>
         /// The step configuration.
         ///  

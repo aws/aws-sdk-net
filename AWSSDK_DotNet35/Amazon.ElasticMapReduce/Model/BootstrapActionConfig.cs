@@ -29,6 +29,7 @@ namespace Amazon.ElasticMapReduce.Model
         private string name;
         private ScriptBootstrapActionConfig scriptBootstrapAction;
 
+
         /// <summary>
         /// The name of the bootstrap action.
         ///  

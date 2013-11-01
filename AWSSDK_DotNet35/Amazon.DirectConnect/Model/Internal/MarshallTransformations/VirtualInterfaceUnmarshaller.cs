@@ -45,6 +45,13 @@
             while (context.Read())
             {
               
+              if (context.TestExpression("ownerAccount", targetDepth))
+              {
+                context.Read();
+                virtualInterface.OwnerAccount = StringUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
               if (context.TestExpression("virtualInterfaceId", targetDepth))
               {
                 context.Read();

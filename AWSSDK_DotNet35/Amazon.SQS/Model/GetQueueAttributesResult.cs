@@ -22,12 +22,13 @@ using Amazon.Runtime;
 namespace Amazon.SQS.Model
 {
     /// <summary>
-    /// <para> A list of returned queue attributes. </para>
+    /// 
     /// </summary>
     public partial class GetQueueAttributesResult : AmazonWebServiceResponse
     {
         
         private Dictionary<string,string> attributes = new Dictionary<string,string>();
+
 
         /// <summary>
         /// A map of attributes to the respective values.

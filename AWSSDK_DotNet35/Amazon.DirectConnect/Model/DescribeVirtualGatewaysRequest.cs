@@ -30,8 +30,9 @@ namespace Amazon.DirectConnect.Model
     /// (VPC) console or the <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-CreateVpnGateway.html" >EC2
     /// CreateVpnGateway</a> action.</para>
     /// </summary>
-    public partial class DescribeVirtualGatewaysRequest : AmazonWebServiceRequest
+    public partial class DescribeVirtualGatewaysRequest : AmazonDirectConnectRequest
     {
+
 
     }
 }

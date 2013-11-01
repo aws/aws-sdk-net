@@ -178,6 +178,7 @@ namespace Amazon.Runtime
                         if (asyncResult.RequestState.RequestStream == null)
                         {
                             byte[] requestData = asyncResult.RequestState.RequestData;
+                            asyncResult.Metrics.AddProperty(RequestMetrics.Metric.RequestSize, requestData.Length);
                             requestStream.Write(requestData, 0, requestData.Length);
                         }
                         else
@@ -279,13 +280,11 @@ namespace Amazon.Runtime
                     using (asyncResult.Metrics.StartEvent(RequestMetrics.Metric.ResponseProcessingTime))
                     {
                         var unmarshaller = asyncResult.Unmarshaller;
-                        asyncResult.Metrics.AddProperty(RequestMetrics.Metric.StatusCode, httpResponse.StatusCode);
                         LogResponse(asyncResult.Metrics, asyncResult.Request, httpResponse.StatusCode);
 
                         try
                         {
                             context = unmarshaller.CreateContext(new HttpWebRequestResponseData(httpResponse), config.LogResponse || config.ReadEntireResponse || AWSConfigs.ResponseLogging != ResponseLoggingOption.Never, asyncResult.Metrics);
-
                             
                             using (asyncResult.Metrics.StartEvent(RequestMetrics.Metric.ResponseUnmarshallTime))
                             {
@@ -296,7 +295,10 @@ namespace Amazon.Runtime
                             response.ContentLength = httpResponse.ContentLength;
                             response.HttpStatusCode = httpResponse.StatusCode;
                             asyncResult.FinalResponse = response;
-                            asyncResult.Metrics.AddProperty(RequestMetrics.Metric.AWSRequestID, response.ResponseMetadata.RequestId);
+                            if (response.ResponseMetadata != null)
+                            {
+                                asyncResult.Metrics.AddProperty(RequestMetrics.Metric.AWSRequestID, response.ResponseMetadata.RequestId);
+                            }
 
                             LogFinishedResponse(asyncResult.Metrics, context, httpResponse.ContentLength);
                         }
@@ -312,7 +314,8 @@ namespace Amazon.Runtime
                     HttpWebResponse exceptionHttpResponse = we.Response as HttpWebResponse;
 
                     // If the error is a 404 and the request is configured to supress it. Then unmarshall as much as we can.
-                    if (exceptionHttpResponse.StatusCode == HttpStatusCode.NotFound &&
+                    if (exceptionHttpResponse != null &&
+                        exceptionHttpResponse.StatusCode == HttpStatusCode.NotFound &&
                         asyncResult.Request.Suppress404Exceptions)
                     {
                         var unmarshaller = asyncResult.Unmarshaller;
@@ -358,7 +361,7 @@ namespace Amazon.Runtime
                 }
                 else
                 {
-                    LogFinalMetrics(asyncResult);
+                    LogFinalMetrics(asyncResult.Metrics);
                 }
             }
             catch (Exception e)
@@ -644,6 +647,12 @@ namespace Amazon.Runtime
             if (e.InnerException != null)
                 return isInnerExceptionThreadAbort(e.InnerException);
             return false;
+        }
+
+        protected void LogResponse(RequestMetrics metrics, IRequest request, HttpStatusCode statusCode)
+        {
+            RequestMetrics.Timing timing = metrics.StopEvent(RequestMetrics.Metric.HttpRequestTime);
+            metrics.AddProperty(RequestMetrics.Metric.StatusCode, statusCode);
         }
     }
 }

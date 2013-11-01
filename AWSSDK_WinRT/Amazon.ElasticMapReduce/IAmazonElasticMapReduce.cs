@@ -24,8 +24,8 @@ namespace Amazon.ElasticMapReduce
     /// Interface for accessing AmazonElasticMapReduce.
     /// 
     /// <para> This is the <i>Amazon Elastic MapReduce API Reference</i> . This guide provides descriptions and samples of the Amazon Elastic
-    /// MapReduce APIs.</para> <para>Amazon Elastic MapReduce is a web service that makes it easy to process large amounts of data efficiently.
-    /// Elastic MapReduce uses Hadoop processing combined with several AWS products to do tasks such as web indexing, data mining, log file
+    /// MapReduce APIs.</para> <para>Amazon Elastic MapReduce (Amazon EMR) is a web service that makes it easy to process large amounts of data
+    /// efficiently. Amazon EMR uses Hadoop processing combined with several AWS products to do tasks such as web indexing, data mining, log file
     /// analysis, machine learning, scientific simulation, and data warehousing.</para>
     /// </summary>
 	public partial interface IAmazonElasticMapReduce : IDisposable
@@ -62,11 +62,30 @@ namespace Amazon.ElasticMapReduce
         /// <param name="addJobFlowStepsRequest">Container for the necessary parameters to execute the AddJobFlowSteps service method on
         /// AmazonElasticMapReduce.</param>
         /// 
+        /// <returns>The response from the AddJobFlowSteps service method, as returned by AmazonElasticMapReduce.</returns>
+        /// 
         /// <exception cref="T:Amazon.ElasticMapReduce.Model.InternalServerErrorException" />
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		Task<AddJobFlowStepsResponse> AddJobFlowStepsAsync(AddJobFlowStepsRequest addJobFlowStepsRequest, CancellationToken cancellationToken = default(CancellationToken));
+ 
+        /// <summary>
+        /// <para>Provides cluster-level details including status, hardware and software configuration, VPC settings, and so on. For information about
+        /// the cluster steps, see ListSteps.</para>
+        /// </summary>
+        /// 
+        /// <param name="describeClusterRequest">Container for the necessary parameters to execute the DescribeCluster service method on
+        /// AmazonElasticMapReduce.</param>
+        /// 
+        /// <returns>The response from the DescribeCluster service method, as returned by AmazonElasticMapReduce.</returns>
+        /// 
+        /// <exception cref="T:Amazon.ElasticMapReduce.Model.InternalServerException" />
+        /// <exception cref="T:Amazon.ElasticMapReduce.Model.InvalidRequestException" />
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+		Task<DescribeClusterResponse> DescribeClusterAsync(DescribeClusterRequest describeClusterRequest, CancellationToken cancellationToken = default(CancellationToken));
  
         /// <summary>
         /// <para> DescribeJobFlows returns a list of job flows that match all of the supplied parameters. The parameters can include a list of job flow
@@ -95,6 +114,106 @@ namespace Amazon.ElasticMapReduce
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		Task<DescribeJobFlowsResponse> DescribeJobFlowsAsync(DescribeJobFlowsRequest describeJobFlowsRequest, CancellationToken cancellationToken = default(CancellationToken));
+ 
+        /// <summary>
+        /// <para>Provides more detail about the cluster step.</para>
+        /// </summary>
+        /// 
+        /// <param name="describeStepRequest">Container for the necessary parameters to execute the DescribeStep service method on
+        /// AmazonElasticMapReduce.</param>
+        /// 
+        /// <returns>The response from the DescribeStep service method, as returned by AmazonElasticMapReduce.</returns>
+        /// 
+        /// <exception cref="T:Amazon.ElasticMapReduce.Model.InternalServerException" />
+        /// <exception cref="T:Amazon.ElasticMapReduce.Model.InvalidRequestException" />
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+		Task<DescribeStepResponse> DescribeStepAsync(DescribeStepRequest describeStepRequest, CancellationToken cancellationToken = default(CancellationToken));
+ 
+        /// <summary>
+        /// <para>Provides information about the bootstrap actions associated with a cluster.</para>
+        /// </summary>
+        /// 
+        /// <param name="listBootstrapActionsRequest">Container for the necessary parameters to execute the ListBootstrapActions service method on
+        /// AmazonElasticMapReduce.</param>
+        /// 
+        /// <returns>The response from the ListBootstrapActions service method, as returned by AmazonElasticMapReduce.</returns>
+        /// 
+        /// <exception cref="T:Amazon.ElasticMapReduce.Model.InternalServerException" />
+        /// <exception cref="T:Amazon.ElasticMapReduce.Model.InvalidRequestException" />
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+		Task<ListBootstrapActionsResponse> ListBootstrapActionsAsync(ListBootstrapActionsRequest listBootstrapActionsRequest, CancellationToken cancellationToken = default(CancellationToken));
+ 
+        /// <summary>
+        /// <para>Provides the status of all clusters visible to this AWS account. Allows you to filter the list of clusters based on certain criteria;
+        /// for example, filtering by cluster creation date and time or by status. This call returns a maximum of 50 clusters per call, but returns a
+        /// marker to track the paging of the cluster list across multiple ListClusters calls. </para>
+        /// </summary>
+        /// 
+        /// <param name="listClustersRequest">Container for the necessary parameters to execute the ListClusters service method on
+        /// AmazonElasticMapReduce.</param>
+        /// 
+        /// <returns>The response from the ListClusters service method, as returned by AmazonElasticMapReduce.</returns>
+        /// 
+        /// <exception cref="T:Amazon.ElasticMapReduce.Model.InternalServerException" />
+        /// <exception cref="T:Amazon.ElasticMapReduce.Model.InvalidRequestException" />
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+		Task<ListClustersResponse> ListClustersAsync(ListClustersRequest listClustersRequest, CancellationToken cancellationToken = default(CancellationToken));
+ 
+        /// <summary>
+        /// <para>Provides all available details about the instance groups in a cluster.</para>
+        /// </summary>
+        /// 
+        /// <param name="listInstanceGroupsRequest">Container for the necessary parameters to execute the ListInstanceGroups service method on
+        /// AmazonElasticMapReduce.</param>
+        /// 
+        /// <returns>The response from the ListInstanceGroups service method, as returned by AmazonElasticMapReduce.</returns>
+        /// 
+        /// <exception cref="T:Amazon.ElasticMapReduce.Model.InternalServerException" />
+        /// <exception cref="T:Amazon.ElasticMapReduce.Model.InvalidRequestException" />
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+		Task<ListInstanceGroupsResponse> ListInstanceGroupsAsync(ListInstanceGroupsRequest listInstanceGroupsRequest, CancellationToken cancellationToken = default(CancellationToken));
+ 
+        /// <summary>
+        /// <para>Provides information about the cluster instances that Amazon EMR provisions on behalf of a user when it creates the cluster. For
+        /// example, this operation indicates when the EC2 instances reach the Ready state, when instances become available to Amazon EMR to use for
+        /// jobs, and the IP addresses for cluster instances, etc. </para>
+        /// </summary>
+        /// 
+        /// <param name="listInstancesRequest">Container for the necessary parameters to execute the ListInstances service method on
+        /// AmazonElasticMapReduce.</param>
+        /// 
+        /// <returns>The response from the ListInstances service method, as returned by AmazonElasticMapReduce.</returns>
+        /// 
+        /// <exception cref="T:Amazon.ElasticMapReduce.Model.InternalServerException" />
+        /// <exception cref="T:Amazon.ElasticMapReduce.Model.InvalidRequestException" />
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+		Task<ListInstancesResponse> ListInstancesAsync(ListInstancesRequest listInstancesRequest, CancellationToken cancellationToken = default(CancellationToken));
+ 
+        /// <summary>
+        /// <para>Provides a list of steps for the cluster. </para>
+        /// </summary>
+        /// 
+        /// <param name="listStepsRequest">Container for the necessary parameters to execute the ListSteps service method on
+        /// AmazonElasticMapReduce.</param>
+        /// 
+        /// <returns>The response from the ListSteps service method, as returned by AmazonElasticMapReduce.</returns>
+        /// 
+        /// <exception cref="T:Amazon.ElasticMapReduce.Model.InternalServerException" />
+        /// <exception cref="T:Amazon.ElasticMapReduce.Model.InvalidRequestException" />
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+		Task<ListStepsResponse> ListStepsAsync(ListStepsRequest listStepsRequest, CancellationToken cancellationToken = default(CancellationToken));
  
         /// <summary>
         /// <para>ModifyInstanceGroups modifies the number of nodes and configuration settings of an instance group. The input parameters include the
@@ -157,7 +276,7 @@ namespace Amazon.ElasticMapReduce
 		Task<SetTerminationProtectionResponse> SetTerminationProtectionAsync(SetTerminationProtectionRequest setTerminationProtectionRequest, CancellationToken cancellationToken = default(CancellationToken));
  
         /// <summary>
-        /// <para>Sets whether all AWS Identity and Access Management (IAM) users under your account can access the specifed job flows. This action
+        /// <para>Sets whether all AWS Identity and Access Management (IAM) users under your account can access the specified job flows. This action
         /// works on running job flows. You can also set the visibility of a job flow when you launch it using the <c>VisibleToAllUsers</c> parameter of
         /// RunJobFlow. The SetVisibleToAllUsers action can be called only by an IAM user who created the job flow or the AWS account that owns the job
         /// flow.</para>

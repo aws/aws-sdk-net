@@ -38,7 +38,7 @@ namespace Amazon.Util
         internal const string DefaultRegion = "us-east-1";
         internal const string DefaultGovRegion = "us-gov-west-1";
 
-        internal const string SDKVersionNumber = "2.0.0.7";
+        internal const string SDKVersionNumber = "2.0.0.8";
 
         internal const string IfModifiedSinceHeader = "IfModifiedSince";
         internal const string IfMatchHeader = "If-Match";
@@ -390,12 +390,12 @@ namespace Amazon.Util
                 var eventHandler = ((EventHandler<T>)call);
                 if (eventHandler != null)
                 {
-                    dispatcher.Invoke(() => eventHandler(sender, args));
+                    dispatcher.Dispatch(() => eventHandler(sender, args));
                 }
             }
         }
 
-        private static BackgroundDispatcher dispatcher = new BackgroundDispatcher();
+        private static BackgroundInvoker dispatcher = new BackgroundInvoker();
 
         /// <summary>
         /// Parses a query string of a URL and returns the parameters as a string-to-string dictionary.
@@ -573,7 +573,7 @@ namespace Amazon.Util
             if (!RFCEncodingSchemes.TryGetValue(rfcNumber, out validUrlCharacters))
                 validUrlCharacters = ValidUrlCharacters;
 
-            string unreservedChars = String.Concat(validUrlCharacters, (path ? "/:" : ""));
+            string unreservedChars = String.Concat(validUrlCharacters, (path ? "/:'()" : ""));
 
             foreach (char symbol in System.Text.Encoding.UTF8.GetBytes(data))
             {

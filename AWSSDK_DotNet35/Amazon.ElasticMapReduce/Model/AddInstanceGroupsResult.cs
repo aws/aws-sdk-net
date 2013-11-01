@@ -30,6 +30,7 @@ namespace Amazon.ElasticMapReduce.Model
         private string jobFlowId;
         private List<string> instanceGroupIds = new List<string>();
 
+
         /// <summary>
         /// The job flow ID in which the instance groups are added.
         ///  

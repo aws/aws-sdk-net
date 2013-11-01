@@ -31,9 +31,10 @@ namespace Amazon.ElasticMapReduce.Model
     /// it may take up to 5-20 minutes for the job flow to completely terminate and release allocated resources, such as Amazon EC2 instances.
     /// </para>
     /// </summary>
-    public partial class TerminateJobFlowsRequest : AmazonWebServiceRequest
+    public partial class TerminateJobFlowsRequest : AmazonElasticMapReduceRequest
     {
         private List<string> jobFlowIds = new List<string>();
+
 
         /// <summary>
         /// A list of job flows to be shutdown.

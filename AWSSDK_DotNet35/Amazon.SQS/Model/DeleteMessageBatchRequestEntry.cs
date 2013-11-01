@@ -29,6 +29,7 @@ namespace Amazon.SQS.Model
         private string id;
         private string receiptHandle;
 
+
         /// <summary>
         /// An identifier for this particular receipt handle. This is used to communicate the result. Note that the <c>Id</c>s of a batch request need
         /// to be unique within the request.

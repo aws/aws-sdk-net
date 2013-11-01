@@ -29,9 +29,10 @@ namespace Amazon.DirectConnect.Model
     /// separately need to cancel any services or charges for cross-connects or network circuits that connect you to the AWS Direct Connect location
     /// with the providers of those services.</para>
     /// </summary>
-    public partial class DeleteConnectionRequest : AmazonWebServiceRequest
+    public partial class DeleteConnectionRequest : AmazonDirectConnectRequest
     {
         private string connectionId;
+
 
         /// <summary>
         /// ID of the connection. Example: dxcon-fg5678gh Default: None

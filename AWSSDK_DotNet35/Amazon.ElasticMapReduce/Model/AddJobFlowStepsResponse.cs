@@ -22,11 +22,22 @@ using Amazon.Runtime;
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
-    /// Returns information about the AddJobFlowSteps response metadata.
-    /// The AddJobFlowSteps operation has a void result type.
+    /// Returns information about the  AddJobFlowSteps response and response metadata.
     /// </summary>
-    public partial class AddJobFlowStepsResponse : AmazonWebServiceResponse
+    public class AddJobFlowStepsResponse : AddJobFlowStepsResult
     {
+        /// <summary>
+        /// Gets and sets the AddJobFlowStepsResult property.
+        /// The output for the AddJobFlowSteps operation.
+        /// </summary>
+        [Obsolete(@"This property has been deprecated. All properties of the AddJobFlowStepsResult class are now available on the AddJobFlowStepsResponse class. You should use the properties on AddJobFlowStepsResponse instead of accessing them through AddJobFlowStepsResult.")]
+        public AddJobFlowStepsResult AddJobFlowStepsResult
+        {
+            get
+            {
+                return this;
+            }
+        }
     }
 }
     

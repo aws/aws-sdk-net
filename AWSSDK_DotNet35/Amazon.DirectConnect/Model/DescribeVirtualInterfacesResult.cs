@@ -22,12 +22,13 @@ using Amazon.Runtime;
 namespace Amazon.DirectConnect.Model
 {
     /// <summary>
-    /// <para> A structure containing a list of virtual interfaces. </para>
+    /// <para>A structure containing a list of virtual interfaces.</para>
     /// </summary>
     public partial class DescribeVirtualInterfacesResult : AmazonWebServiceResponse
     {
         
         private List<VirtualInterface> virtualInterfaces = new List<VirtualInterface>();
+
 
         /// <summary>
         /// A list of virtual interfaces.

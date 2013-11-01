@@ -61,7 +61,7 @@ namespace Amazon.Runtime.Internal.Auth
             }
         }
 
-        public abstract void Sign(IRequest request, ClientConfig clientConfig, string awsAccessKeyId, string awsSecretAccessKey);
+        public abstract void Sign(IRequest request, ClientConfig clientConfig, RequestMetrics metrics, string awsAccessKeyId, string awsSecretAccessKey);
 
         public abstract ClientProtocol Protocol { get; }
     }

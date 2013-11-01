@@ -94,6 +94,20 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                             writer.WritePropertyName("InstanceCount");
                             writer.Write(instanceGroupsListValue.InstanceCount);
                         }
+
+                        if (instanceGroupsListValue != null && instanceGroupsListValue.EC2InstanceIdsToTerminate != null && instanceGroupsListValue.EC2InstanceIdsToTerminate.Count > 0) 
+                        {
+                            List<string> eC2InstanceIdsToTerminateList = instanceGroupsListValue.EC2InstanceIdsToTerminate;
+                            writer.WritePropertyName("EC2InstanceIdsToTerminate");
+                            writer.WriteArrayStart();
+
+                            foreach (string eC2InstanceIdsToTerminateListValue in eC2InstanceIdsToTerminateList) 
+                            { 
+                                writer.Write(StringUtils.FromString(eC2InstanceIdsToTerminateListValue));
+                            }
+
+                            writer.WriteArrayEnd();
+                        }
                         writer.WriteObjectEnd();
                     }
                     writer.WriteArrayEnd();

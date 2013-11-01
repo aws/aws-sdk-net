@@ -28,6 +28,7 @@ namespace Amazon.SQS.Model
         
         private string id;
 
+
         /// <summary>
         /// Represents a message whose visibility timeout has been changed successfully.
         ///  

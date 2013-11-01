@@ -40,6 +40,7 @@ namespace Amazon.ElasticMapReduce.Model
         private bool? terminationProtected;
         private string hadoopVersion;
 
+
         /// <summary>
         /// The Amazon EC2 master node instance type.
         ///  
@@ -267,7 +268,7 @@ namespace Amazon.ElasticMapReduce.Model
         }
 
         /// <summary>
-        /// Specifies the Amazon EC2 Availability Zone for the job flow.
+        /// The Amazon EC2 Availability Zone for the job flow.
         ///  
         /// </summary>
         public PlacementType Placement
@@ -283,7 +284,7 @@ namespace Amazon.ElasticMapReduce.Model
         }
 
         /// <summary>
-        /// Specifies whether or not the job flow should terminate after completing all steps.
+        /// Specifies whether the job flow should terminate after completing all steps.
         ///  
         /// </summary>
         public bool KeepJobFlowAliveWhenNoSteps
@@ -316,7 +317,7 @@ namespace Amazon.ElasticMapReduce.Model
         }
 
         /// <summary>
-        /// Specifies the Hadoop version for the job flow.
+        /// The Hadoop version for the job flow.
         ///  
         /// <para>
         /// <b>Constraints:</b>

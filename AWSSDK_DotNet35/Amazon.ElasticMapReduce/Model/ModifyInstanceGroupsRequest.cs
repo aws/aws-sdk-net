@@ -28,9 +28,10 @@ namespace Amazon.ElasticMapReduce.Model
     /// <para>ModifyInstanceGroups modifies the number of nodes and configuration settings of an instance group. The input parameters include the
     /// new target instance count for the group and the instance group ID. The call will either succeed or fail atomically.</para>
     /// </summary>
-    public partial class ModifyInstanceGroupsRequest : AmazonWebServiceRequest
+    public partial class ModifyInstanceGroupsRequest : AmazonElasticMapReduceRequest
     {
         private List<InstanceGroupModifyConfig> instanceGroups = new List<InstanceGroupModifyConfig>();
+
 
         /// <summary>
         /// Instance groups to change.

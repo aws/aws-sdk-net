@@ -29,8 +29,8 @@ namespace Amazon.ElasticMapReduce
     /// Implementation for accessing AmazonElasticMapReduce.
     /// 
     /// <para> This is the <i>Amazon Elastic MapReduce API Reference</i> . This guide provides descriptions and samples of the Amazon Elastic
-    /// MapReduce APIs.</para> <para>Amazon Elastic MapReduce is a web service that makes it easy to process large amounts of data efficiently.
-    /// Elastic MapReduce uses Hadoop processing combined with several AWS products to do tasks such as web indexing, data mining, log file
+    /// MapReduce APIs.</para> <para>Amazon Elastic MapReduce (Amazon EMR) is a web service that makes it easy to process large amounts of data
+    /// efficiently. Amazon EMR uses Hadoop processing combined with several AWS products to do tasks such as web indexing, data mining, log file
     /// analysis, machine learning, scientific simulation, and data warehousing.</para>
     /// </summary>
 	public partial class AmazonElasticMapReduceClient : AmazonWebServiceClient, Amazon.ElasticMapReduce.IAmazonElasticMapReduce
@@ -264,6 +264,8 @@ namespace Amazon.ElasticMapReduce
         /// <param name="request">Container for the necessary parameters to execute the AddJobFlowSteps service method on
         /// AmazonElasticMapReduce.</param>
         /// 
+        /// <returns>The response from the AddJobFlowSteps service method, as returned by AmazonElasticMapReduce.</returns>
+        /// 
         /// <exception cref="T:Amazon.ElasticMapReduce.Model.InternalServerErrorException" />
 		public AddJobFlowStepsResponse AddJobFlowSteps(AddJobFlowStepsRequest request)
         {
@@ -295,6 +297,65 @@ namespace Amazon.ElasticMapReduce
             var response = await Invoke<IRequest, AddJobFlowStepsRequest, AddJobFlowStepsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
                 .ConfigureAwait(continueOnCapturedContext: false);
             return response;
+        }
+ 
+        /// <summary>
+        /// <para>Provides cluster-level details including status, hardware and software configuration, VPC settings, and so on. For information about
+        /// the cluster steps, see ListSteps.</para>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCluster service method on
+        /// AmazonElasticMapReduce.</param>
+        /// 
+        /// <returns>The response from the DescribeCluster service method, as returned by AmazonElasticMapReduce.</returns>
+        /// 
+        /// <exception cref="T:Amazon.ElasticMapReduce.Model.InternalServerException" />
+        /// <exception cref="T:Amazon.ElasticMapReduce.Model.InvalidRequestException" />
+		public DescribeClusterResponse DescribeCluster(DescribeClusterRequest request)
+        {
+            var task = DescribeClusterAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+          
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeCluster operation.
+        /// <seealso cref="Amazon.ElasticMapReduce.IAmazonElasticMapReduce.DescribeCluster"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCluster operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+		public async Task<DescribeClusterResponse> DescribeClusterAsync(DescribeClusterRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeClusterRequestMarshaller();
+            var unmarshaller = DescribeClusterResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeClusterRequest, DescribeClusterResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
+ 
+        /// <summary>
+        /// <para>Provides cluster-level details including status, hardware and software configuration, VPC settings, and so on. For information about
+        /// the cluster steps, see ListSteps.</para>
+        /// </summary>
+        /// 
+        /// 
+        /// <returns>The response from the DescribeCluster service method, as returned by AmazonElasticMapReduce.</returns>
+        /// 
+        /// <exception cref="T:Amazon.ElasticMapReduce.Model.InternalServerException" />
+        /// <exception cref="T:Amazon.ElasticMapReduce.Model.InvalidRequestException" />
+		public DescribeClusterResponse DescribeCluster()
+        {
+            return this.DescribeCluster(new DescribeClusterRequest());
         }
  
         /// <summary>
@@ -376,6 +437,356 @@ namespace Amazon.ElasticMapReduce
 		public DescribeJobFlowsResponse DescribeJobFlows()
         {
             return this.DescribeJobFlows(new DescribeJobFlowsRequest());
+        }
+ 
+        /// <summary>
+        /// <para>Provides more detail about the cluster step.</para>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeStep service method on
+        /// AmazonElasticMapReduce.</param>
+        /// 
+        /// <returns>The response from the DescribeStep service method, as returned by AmazonElasticMapReduce.</returns>
+        /// 
+        /// <exception cref="T:Amazon.ElasticMapReduce.Model.InternalServerException" />
+        /// <exception cref="T:Amazon.ElasticMapReduce.Model.InvalidRequestException" />
+		public DescribeStepResponse DescribeStep(DescribeStepRequest request)
+        {
+            var task = DescribeStepAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+          
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeStep operation.
+        /// <seealso cref="Amazon.ElasticMapReduce.IAmazonElasticMapReduce.DescribeStep"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeStep operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+		public async Task<DescribeStepResponse> DescribeStepAsync(DescribeStepRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeStepRequestMarshaller();
+            var unmarshaller = DescribeStepResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeStepRequest, DescribeStepResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
+ 
+        /// <summary>
+        /// <para>Provides more detail about the cluster step.</para>
+        /// </summary>
+        /// 
+        /// 
+        /// <returns>The response from the DescribeStep service method, as returned by AmazonElasticMapReduce.</returns>
+        /// 
+        /// <exception cref="T:Amazon.ElasticMapReduce.Model.InternalServerException" />
+        /// <exception cref="T:Amazon.ElasticMapReduce.Model.InvalidRequestException" />
+		public DescribeStepResponse DescribeStep()
+        {
+            return this.DescribeStep(new DescribeStepRequest());
+        }
+ 
+        /// <summary>
+        /// <para>Provides information about the bootstrap actions associated with a cluster.</para>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListBootstrapActions service method on
+        /// AmazonElasticMapReduce.</param>
+        /// 
+        /// <returns>The response from the ListBootstrapActions service method, as returned by AmazonElasticMapReduce.</returns>
+        /// 
+        /// <exception cref="T:Amazon.ElasticMapReduce.Model.InternalServerException" />
+        /// <exception cref="T:Amazon.ElasticMapReduce.Model.InvalidRequestException" />
+		public ListBootstrapActionsResponse ListBootstrapActions(ListBootstrapActionsRequest request)
+        {
+            var task = ListBootstrapActionsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+          
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListBootstrapActions operation.
+        /// <seealso cref="Amazon.ElasticMapReduce.IAmazonElasticMapReduce.ListBootstrapActions"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListBootstrapActions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+		public async Task<ListBootstrapActionsResponse> ListBootstrapActionsAsync(ListBootstrapActionsRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListBootstrapActionsRequestMarshaller();
+            var unmarshaller = ListBootstrapActionsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ListBootstrapActionsRequest, ListBootstrapActionsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
+ 
+        /// <summary>
+        /// <para>Provides information about the bootstrap actions associated with a cluster.</para>
+        /// </summary>
+        /// 
+        /// 
+        /// <returns>The response from the ListBootstrapActions service method, as returned by AmazonElasticMapReduce.</returns>
+        /// 
+        /// <exception cref="T:Amazon.ElasticMapReduce.Model.InternalServerException" />
+        /// <exception cref="T:Amazon.ElasticMapReduce.Model.InvalidRequestException" />
+		public ListBootstrapActionsResponse ListBootstrapActions()
+        {
+            return this.ListBootstrapActions(new ListBootstrapActionsRequest());
+        }
+ 
+        /// <summary>
+        /// <para>Provides the status of all clusters visible to this AWS account. Allows you to filter the list of clusters based on certain criteria;
+        /// for example, filtering by cluster creation date and time or by status. This call returns a maximum of 50 clusters per call, but returns a
+        /// marker to track the paging of the cluster list across multiple ListClusters calls. </para>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListClusters service method on
+        /// AmazonElasticMapReduce.</param>
+        /// 
+        /// <returns>The response from the ListClusters service method, as returned by AmazonElasticMapReduce.</returns>
+        /// 
+        /// <exception cref="T:Amazon.ElasticMapReduce.Model.InternalServerException" />
+        /// <exception cref="T:Amazon.ElasticMapReduce.Model.InvalidRequestException" />
+		public ListClustersResponse ListClusters(ListClustersRequest request)
+        {
+            var task = ListClustersAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+          
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListClusters operation.
+        /// <seealso cref="Amazon.ElasticMapReduce.IAmazonElasticMapReduce.ListClusters"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListClusters operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+		public async Task<ListClustersResponse> ListClustersAsync(ListClustersRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListClustersRequestMarshaller();
+            var unmarshaller = ListClustersResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ListClustersRequest, ListClustersResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
+ 
+        /// <summary>
+        /// <para>Provides the status of all clusters visible to this AWS account. Allows you to filter the list of clusters based on certain criteria;
+        /// for example, filtering by cluster creation date and time or by status. This call returns a maximum of 50 clusters per call, but returns a
+        /// marker to track the paging of the cluster list across multiple ListClusters calls. </para>
+        /// </summary>
+        /// 
+        /// 
+        /// <returns>The response from the ListClusters service method, as returned by AmazonElasticMapReduce.</returns>
+        /// 
+        /// <exception cref="T:Amazon.ElasticMapReduce.Model.InternalServerException" />
+        /// <exception cref="T:Amazon.ElasticMapReduce.Model.InvalidRequestException" />
+		public ListClustersResponse ListClusters()
+        {
+            return this.ListClusters(new ListClustersRequest());
+        }
+ 
+        /// <summary>
+        /// <para>Provides all available details about the instance groups in a cluster.</para>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListInstanceGroups service method on
+        /// AmazonElasticMapReduce.</param>
+        /// 
+        /// <returns>The response from the ListInstanceGroups service method, as returned by AmazonElasticMapReduce.</returns>
+        /// 
+        /// <exception cref="T:Amazon.ElasticMapReduce.Model.InternalServerException" />
+        /// <exception cref="T:Amazon.ElasticMapReduce.Model.InvalidRequestException" />
+		public ListInstanceGroupsResponse ListInstanceGroups(ListInstanceGroupsRequest request)
+        {
+            var task = ListInstanceGroupsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+          
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListInstanceGroups operation.
+        /// <seealso cref="Amazon.ElasticMapReduce.IAmazonElasticMapReduce.ListInstanceGroups"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListInstanceGroups operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+		public async Task<ListInstanceGroupsResponse> ListInstanceGroupsAsync(ListInstanceGroupsRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListInstanceGroupsRequestMarshaller();
+            var unmarshaller = ListInstanceGroupsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ListInstanceGroupsRequest, ListInstanceGroupsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
+ 
+        /// <summary>
+        /// <para>Provides all available details about the instance groups in a cluster.</para>
+        /// </summary>
+        /// 
+        /// 
+        /// <returns>The response from the ListInstanceGroups service method, as returned by AmazonElasticMapReduce.</returns>
+        /// 
+        /// <exception cref="T:Amazon.ElasticMapReduce.Model.InternalServerException" />
+        /// <exception cref="T:Amazon.ElasticMapReduce.Model.InvalidRequestException" />
+		public ListInstanceGroupsResponse ListInstanceGroups()
+        {
+            return this.ListInstanceGroups(new ListInstanceGroupsRequest());
+        }
+ 
+        /// <summary>
+        /// <para>Provides information about the cluster instances that Amazon EMR provisions on behalf of a user when it creates the cluster. For
+        /// example, this operation indicates when the EC2 instances reach the Ready state, when instances become available to Amazon EMR to use for
+        /// jobs, and the IP addresses for cluster instances, etc. </para>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListInstances service method on
+        /// AmazonElasticMapReduce.</param>
+        /// 
+        /// <returns>The response from the ListInstances service method, as returned by AmazonElasticMapReduce.</returns>
+        /// 
+        /// <exception cref="T:Amazon.ElasticMapReduce.Model.InternalServerException" />
+        /// <exception cref="T:Amazon.ElasticMapReduce.Model.InvalidRequestException" />
+		public ListInstancesResponse ListInstances(ListInstancesRequest request)
+        {
+            var task = ListInstancesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+          
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListInstances operation.
+        /// <seealso cref="Amazon.ElasticMapReduce.IAmazonElasticMapReduce.ListInstances"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListInstances operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+		public async Task<ListInstancesResponse> ListInstancesAsync(ListInstancesRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListInstancesRequestMarshaller();
+            var unmarshaller = ListInstancesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ListInstancesRequest, ListInstancesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
+ 
+        /// <summary>
+        /// <para>Provides information about the cluster instances that Amazon EMR provisions on behalf of a user when it creates the cluster. For
+        /// example, this operation indicates when the EC2 instances reach the Ready state, when instances become available to Amazon EMR to use for
+        /// jobs, and the IP addresses for cluster instances, etc. </para>
+        /// </summary>
+        /// 
+        /// 
+        /// <returns>The response from the ListInstances service method, as returned by AmazonElasticMapReduce.</returns>
+        /// 
+        /// <exception cref="T:Amazon.ElasticMapReduce.Model.InternalServerException" />
+        /// <exception cref="T:Amazon.ElasticMapReduce.Model.InvalidRequestException" />
+		public ListInstancesResponse ListInstances()
+        {
+            return this.ListInstances(new ListInstancesRequest());
+        }
+ 
+        /// <summary>
+        /// <para>Provides a list of steps for the cluster. </para>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListSteps service method on
+        /// AmazonElasticMapReduce.</param>
+        /// 
+        /// <returns>The response from the ListSteps service method, as returned by AmazonElasticMapReduce.</returns>
+        /// 
+        /// <exception cref="T:Amazon.ElasticMapReduce.Model.InternalServerException" />
+        /// <exception cref="T:Amazon.ElasticMapReduce.Model.InvalidRequestException" />
+		public ListStepsResponse ListSteps(ListStepsRequest request)
+        {
+            var task = ListStepsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+          
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListSteps operation.
+        /// <seealso cref="Amazon.ElasticMapReduce.IAmazonElasticMapReduce.ListSteps"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListSteps operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+		public async Task<ListStepsResponse> ListStepsAsync(ListStepsRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListStepsRequestMarshaller();
+            var unmarshaller = ListStepsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, ListStepsRequest, ListStepsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
+ 
+        /// <summary>
+        /// <para>Provides a list of steps for the cluster. </para>
+        /// </summary>
+        /// 
+        /// 
+        /// <returns>The response from the ListSteps service method, as returned by AmazonElasticMapReduce.</returns>
+        /// 
+        /// <exception cref="T:Amazon.ElasticMapReduce.Model.InternalServerException" />
+        /// <exception cref="T:Amazon.ElasticMapReduce.Model.InvalidRequestException" />
+		public ListStepsResponse ListSteps()
+        {
+            return this.ListSteps(new ListStepsRequest());
         }
  
         /// <summary>
@@ -520,7 +931,7 @@ namespace Amazon.ElasticMapReduce
         }
  
         /// <summary>
-        /// <para>Sets whether all AWS Identity and Access Management (IAM) users under your account can access the specifed job flows. This action
+        /// <para>Sets whether all AWS Identity and Access Management (IAM) users under your account can access the specified job flows. This action
         /// works on running job flows. You can also set the visibility of a job flow when you launch it using the <c>VisibleToAllUsers</c> parameter of
         /// RunJobFlow. The SetVisibleToAllUsers action can be called only by an IAM user who created the job flow or the AWS account that owns the job
         /// flow.</para>

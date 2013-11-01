@@ -29,6 +29,7 @@ namespace Amazon.ElasticMapReduce.Model
         private string key;
         private string value;
 
+
         /// <summary>
         /// The unique identifier of a key value pair.
         ///  

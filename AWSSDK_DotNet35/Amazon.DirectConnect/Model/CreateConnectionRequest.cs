@@ -25,31 +25,49 @@ namespace Amazon.DirectConnect.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateConnection operation.
-    /// <para>Creates a new network connection between the customer network and a specific AWS Direct Connect location.</para> <para>A connection
-    /// links your internal network to an AWS Direct Connect location over a standard 1 gigabit or 10 gigabit Ethernet fiber-optic cable. One end of
-    /// the cable is connected to your router, the other to an AWS Direct Connect router. A Direct Connect location provides access to Amazon Web
-    /// Services in the region it is associated with. You can establish connections with AWS Direct Connect locations in multiple regions, but a
-    /// connection in one region does not provide connectivity to other regions.</para>
+    /// <para>Creates a new connection between the customer network and a specific AWS Direct Connect location.</para> <para>A connection links your
+    /// internal network to an AWS Direct Connect location over a standard 1 gigabit or 10 gigabit Ethernet fiber-optic cable. One end of the cable
+    /// is connected to your router, the other to an AWS Direct Connect router. A Direct Connect location provides access to Amazon Web Services in
+    /// the region it is associated with. You can establish connections with AWS Direct Connect locations in multiple regions, but a connection in
+    /// one region does not provide connectivity to other regions.</para>
     /// </summary>
-    public partial class CreateConnectionRequest : AmazonWebServiceRequest
+    public partial class CreateConnectionRequest : AmazonDirectConnectRequest
     {
-        private string offeringId;
+        private string location;
+        private string bandwidth;
         private string connectionName;
 
+
         /// <summary>
-        /// The ID of the offering. Example: us-west-1_EqSV5_1G Default: None
+        /// Where the connection is located. Example: EqSV5 Default: None
         ///  
         /// </summary>
-        public string OfferingId
+        public string Location
         {
-            get { return this.offeringId; }
-            set { this.offeringId = value; }
+            get { return this.location; }
+            set { this.location = value; }
         }
 
-        // Check to see if OfferingId property is set
-        internal bool IsSetOfferingId()
+        // Check to see if Location property is set
+        internal bool IsSetLocation()
         {
-            return this.offeringId != null;
+            return this.location != null;
+        }
+
+        /// <summary>
+        /// Bandwidth of the connection. Example: 1Gbps Default: None
+        ///  
+        /// </summary>
+        public string Bandwidth
+        {
+            get { return this.bandwidth; }
+            set { this.bandwidth = value; }
+        }
+
+        // Check to see if Bandwidth property is set
+        internal bool IsSetBandwidth()
+        {
+            return this.bandwidth != null;
         }
 
         /// <summary>

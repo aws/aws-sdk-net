@@ -52,8 +52,6 @@ namespace Amazon.Runtime
         private bool logResponse = false;
         private int bufferSize = AWSSDKUtils.DefaultBufferSize;
         private bool resignRetries = false;
-        private string proxyUsername;
-        private string proxyPassword; 
         private ICredentials proxyCredentials;
         private bool logMetrics = AWSConfigs.LogMetrics;
         private bool disableLogging = false;
@@ -158,11 +156,16 @@ namespace Amazon.Runtime
 
         internal static string GetUrl(RegionEndpoint regionEndpoint, string regionEndpointServiceName, bool useHttp)
         {
-            string url;
             var endpoint = regionEndpoint.GetEndpointForService(regionEndpointServiceName);
-            // use https iff endpoint supports https and useHttp = false; otherwise, use http
-            string protocol = endpoint.HTTPS && !useHttp ? "https://" : "http://";
-            url = new Uri(string.Format("{0}{1}", protocol, endpoint.Hostname)).AbsoluteUri;
+            bool shouldUseHttp;
+            if (endpoint.HTTP && endpoint.HTTPS)    // if both are supported, go with user preference
+                shouldUseHttp = useHttp;
+            else if (endpoint.HTTPS)                // if HTTPS is supported, go with HTTPS
+                shouldUseHttp = false;
+            else                                    // if HTTP is supported, go with HTTP
+                shouldUseHttp = true;
+
+            string url = new Uri(string.Format("{0}{1}", shouldUseHttp ? "http://" : "https://", endpoint.Hostname)).AbsoluteUri;
             return url;
         }
 
@@ -269,50 +272,11 @@ namespace Amazon.Runtime
         }
 
         /// <summary>
-        /// Gets and sets the ProxyUsername property.
-        /// Used in conjunction with the ProxyPassword
-        /// property to authenticate requests with the
-        /// specified Proxy server.
-        /// </summary>
-        [Obsolete("Use ProxyCredentials instead")]
-        public string ProxyUsername
-        {
-            get { return this.proxyUsername; }
-            set { this.proxyUsername = value; }
-        }
-
-        /// <summary>
-        /// Gets and sets the ProxyPassword property.
-        /// Used in conjunction with the ProxyUsername
-        /// property to authenticate requests with the
-        /// specified Proxy server.
-        /// </summary>
-        /// <remarks>
-        /// If this property isn't set, String.Empty is used as
-        /// the proxy password. This property isn't
-        /// used if ProxyUsername is null or empty.
-        /// </remarks>
-        [Obsolete("Use ProxyCredentials instead")]
-        public string ProxyPassword
-        {
-            get { return this.proxyPassword; }
-            set { this.proxyPassword = value; }
-        }
-
-        /// <summary>
         /// Credentials to use with a proxy.
         /// </summary>
         public ICredentials ProxyCredentials
         {
-            get
-            {
-                ICredentials credentials = this.proxyCredentials;
-                if (credentials == null && !string.IsNullOrEmpty(this.proxyUsername))
-                {
-                    credentials = new NetworkCredential(this.proxyUsername, this.proxyPassword ?? String.Empty);
-                }
-                return credentials;
-            }
+            get { return this.proxyCredentials; }
             set { this.proxyCredentials = value; }
         }
 

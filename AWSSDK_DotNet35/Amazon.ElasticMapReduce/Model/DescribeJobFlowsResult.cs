@@ -29,6 +29,7 @@ namespace Amazon.ElasticMapReduce.Model
         
         private List<JobFlowDetail> jobFlows = new List<JobFlowDetail>();
 
+
         /// <summary>
         /// A list of job flows matching the parameters supplied.
         ///  

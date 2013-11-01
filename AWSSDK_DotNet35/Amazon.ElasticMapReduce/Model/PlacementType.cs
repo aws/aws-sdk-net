@@ -21,12 +21,13 @@ using System.IO;
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
-    /// <para>Specifies the Amazon EC2 location for the job flow.</para>
+    /// <para>The Amazon EC2 location for the job flow.</para>
     /// </summary>
     public class PlacementType
     {
         
         private string availabilityZone;
+
 
         /// <summary>
         /// The Amazon EC2 Availability Zone for the job flow.

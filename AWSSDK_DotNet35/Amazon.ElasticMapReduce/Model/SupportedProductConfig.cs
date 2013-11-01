@@ -30,6 +30,7 @@ namespace Amazon.ElasticMapReduce.Model
         private string name;
         private List<string> args = new List<string>();
 
+
         /// <summary>
         /// The name of the product configuration.
         ///  

@@ -31,7 +31,7 @@ namespace Amazon.Runtime.Internal.Auth
             get { return ClientProtocol.RestProtocol; }
         }
 
-        public override void Sign(IRequest request, ClientConfig clientConfig, string awsAccessKeyId, string awsSecretAccessKey)
+        public override void Sign(IRequest request, ClientConfig clientConfig, RequestMetrics metrics, string awsAccessKeyId, string awsSecretAccessKey)
         {
             if (String.IsNullOrEmpty(awsAccessKeyId))
             {

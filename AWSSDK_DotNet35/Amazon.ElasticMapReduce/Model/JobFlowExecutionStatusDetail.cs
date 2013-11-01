@@ -33,6 +33,7 @@ namespace Amazon.ElasticMapReduce.Model
         private DateTime? endDateTime;
         private string lastStateChangeReason;
 
+
         /// <summary>
         /// The state of the job flow.
         ///  
@@ -41,7 +42,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <list type="definition">
         ///     <item>
         ///         <term>Allowed Values</term>
-        ///         <description>COMPLETED, FAILED, TERMINATED, RUNNING, SHUTTING_DOWN, STARTING, WAITING, BOOTSTRAPPING</description>
+        ///         <description>STARTING, BOOTSTRAPPING, RUNNING, WAITING, SHUTTING_DOWN, TERMINATED, COMPLETED, FAILED</description>
         ///     </item>
         /// </list>
         /// </para>

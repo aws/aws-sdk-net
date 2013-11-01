@@ -29,6 +29,7 @@ namespace Amazon.ElasticMapReduce.Model
         private string path;
         private List<string> args = new List<string>();
 
+
         /// <summary>
         /// Location of the script to run during a bootstrap action. Can be either a location in Amazon S3 or on a local file system.
         ///  

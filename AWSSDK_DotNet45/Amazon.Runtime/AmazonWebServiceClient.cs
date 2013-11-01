@@ -130,23 +130,27 @@ namespace Amazon.Runtime
 
         private async Task<T> InvokeConfiguredRequest<T>(WebRequestState state, CancellationToken cancellationToken) where T : AmazonWebServiceResponse
         {
-            logger.DebugFormat("Starting request {0} at {1}", state.Request.RequestName, this.config.ServiceURL);
-
             T response = null;
             bool shouldRetry = false;
             HttpResponseMessage responseMessage = null;
-            var requestMessage = ConfigureRequestMessage(state.Request, state.Unmarshaller is JsonResponseUnmarshaller);
+            var requestMessage = ConfigureRequestMessage(state);
             try
             {
-                SetContent(requestMessage, state.Request);
+                SetContent(requestMessage, state);
 
-                responseMessage = await httpClient.SendAsync(requestMessage, cancellationToken)
-                    .ConfigureAwait(continueOnCapturedContext: false);
+                using (state.Metrics.StartEvent(RequestMetrics.Metric.HttpRequestTime))
+                {
+                    responseMessage = await httpClient.SendAsync(requestMessage, cancellationToken)
+                        .ConfigureAwait(continueOnCapturedContext: false);
+                }
 
                 if (!IsErrorResponse(responseMessage) ||
                     responseMessage.StatusCode == HttpStatusCode.NotFound && state.Request.Suppress404Exceptions)
                 {
-                    response = (T)HandleHttpContent(state, responseMessage, cancellationToken);
+                    using (state.Metrics.StartEvent(RequestMetrics.Metric.ResponseProcessingTime))
+                    {
+                        response = (T)HandleHttpContent(state, responseMessage, cancellationToken);
+                    }
                 }
                 else
                 {
@@ -197,6 +201,10 @@ namespace Amazon.Runtime
                     .ConfigureAwait(continueOnCapturedContext: false);
                 return (T)retryResponse;
             }
+            else
+            {
+                LogFinalMetrics(state.Metrics);
+            }
 
             return response;
         }
@@ -206,8 +214,9 @@ namespace Amazon.Runtime
             return !responseMessage.IsSuccessStatusCode;
         }
 
-        void SetContent(HttpRequestMessage requestMessage, IRequest request)
+        void SetContent(HttpRequestMessage requestMessage, IRequestData state)
         {
+            var request = state.Request;
             if (requestMessage.Method == HttpMethod.Get || requestMessage.Method == HttpMethod.Delete || requestMessage.Method == HttpMethod.Head)
             {
                 return;
@@ -224,6 +233,7 @@ namespace Amazon.Runtime
             }
             else if ((requestData = GetRequestData(request)) != null)
             {
+                state.Metrics.AddProperty(RequestMetrics.Metric.RequestSize, requestData.Length);
                 requestMessage.Content = new ByteArrayContent(requestData);
             }
             else
@@ -257,9 +267,14 @@ namespace Amazon.Runtime
             IWebResponseData responseData = new HttpClientResponseData(httpResponse);
             try
             {
-                var context = state.Unmarshaller.CreateContext(responseData, config.LogResponse || config.ReadEntireResponse, state.Metrics);
+                var context = state.Unmarshaller.CreateContext(responseData,
+                    config.LogResponse || config.ReadEntireResponse || AWSConfigs.ResponseLogging != ResponseLoggingOption.Never
+                    , state.Metrics);
 
-                response = state.Unmarshaller.Unmarshall(context);
+                using (state.Metrics.StartEvent(RequestMetrics.Metric.ResponseUnmarshallTime))
+                {
+                    response = state.Unmarshaller.Unmarshall(context);
+                }
                 context.ValidateCRC32IfAvailable();
 
                 var contentHeaders = httpResponse.Content.Headers as HttpContentHeaders;
@@ -269,6 +284,10 @@ namespace Amazon.Runtime
                     response.HttpStatusCode = httpResponse.StatusCode;
                 }
 
+                if (response.ResponseMetadata != null)
+                {
+                    state.Metrics.AddProperty(RequestMetrics.Metric.AWSRequestID, response.ResponseMetadata.RequestId);
+                }
                 LogFinishedResponse(state.Metrics, context, response.ContentLength);
 
                 return response;
@@ -375,8 +394,11 @@ namespace Amazon.Runtime
             return httpClient;
         }
 
-        protected virtual HttpRequestMessage ConfigureRequestMessage(IRequest wrappedRequest, bool acceptJson)
+        protected virtual HttpRequestMessage ConfigureRequestMessage(IRequestData state)
         {
+            IRequest wrappedRequest = state.Request;
+            bool acceptJson = state.Unmarshaller is JsonResponseUnmarshaller;
+
             Uri url = ComposeUrl(wrappedRequest, wrappedRequest.Endpoint);
             var request = new HttpRequestMessage();
             request.RequestUri = url;
@@ -472,6 +494,11 @@ namespace Amazon.Runtime
                                     new StreamTransferProgressArgs(bytesRead, totalBytesRead, contentLength),
                                     client);
             }
+        }
+
+        protected void LogResponse(RequestMetrics metrics, IRequest request, HttpStatusCode statusCode)
+        {
+            metrics.AddProperty(RequestMetrics.Metric.StatusCode, statusCode);
         }
     }
 }

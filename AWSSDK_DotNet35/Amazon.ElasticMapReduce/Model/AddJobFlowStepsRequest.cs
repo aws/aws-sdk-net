@@ -37,10 +37,11 @@ namespace Amazon.ElasticMapReduce.Model
     /// Hadoop jobs started while the step was running must have completed and run successfully. </para> <para> You can only add steps to a job flow
     /// that is in one of the following states: STARTING, BOOTSTRAPPING, RUNNING, or WAITING.</para>
     /// </summary>
-    public partial class AddJobFlowStepsRequest : AmazonWebServiceRequest
+    public partial class AddJobFlowStepsRequest : AmazonElasticMapReduceRequest
     {
         private string jobFlowId;
         private List<StepConfig> steps = new List<StepConfig>();
+
 
         /// <summary>
         /// A string that uniquely identifies the job flow. This identifier is returned by <a>RunJobFlow</a> and can also be obtained from

@@ -39,10 +39,11 @@ namespace Amazon.Runtime.Internal.Auth
         /// </summary>
         /// <param name="awsAccessKeyId">The AWS public key</param>
         /// <param name="awsSecretAccessKey">The AWS secret key used to sign the request in clear text</param>
+        /// <param name="metrics">Request metrics</param>
         /// <param name="clientConfig">The configuration that specifies which hashing algorithm to use</param>
         /// <param name="request">The request to have the signature compute for</param>
         /// <exception cref="Amazon.Runtime.SignatureException">If any problems are encountered while signing the request</exception>
-        public override void Sign(IRequest request, ClientConfig clientConfig, string awsAccessKeyId, string awsSecretAccessKey)
+        public override void Sign(IRequest request, ClientConfig clientConfig, RequestMetrics metrics, string awsAccessKeyId, string awsSecretAccessKey)
         {
             if (String.IsNullOrEmpty(awsAccessKeyId))
             {
@@ -55,6 +56,7 @@ namespace Amazon.Runtime.Internal.Auth
             request.Parameters["Timestamp"] = AWSSDKUtils.FormattedCurrentTimestampISO8601;
 
             string toSign = AWSSDKUtils.CalculateStringToSignV2(request.Parameters, clientConfig.DetermineServiceURL());
+            metrics.AddProperty(RequestMetrics.Metric.StringToSign, toSign);
             string auth = ComputeHash(toSign, awsSecretAccessKey, clientConfig.SignatureMethod);
             request.Parameters["Signature"] = auth;
         }

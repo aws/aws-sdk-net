@@ -41,6 +41,7 @@ namespace Amazon.ElasticMapReduce.Model
         private DateTime? readyDateTime;
         private DateTime? endDateTime;
 
+
         /// <summary>
         /// Unique identifier for the instance group.
         ///  
@@ -247,7 +248,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <list type="definition">
         ///     <item>
         ///         <term>Allowed Values</term>
-        ///         <description>PROVISIONING, STARTING, BOOTSTRAPPING, RUNNING, RESIZING, ARRESTED, SHUTTING_DOWN, TERMINATED, FAILED, ENDED</description>
+        ///         <description>PROVISIONING, BOOTSTRAPPING, RUNNING, RESIZING, SUSPENDED, TERMINATING, TERMINATED, ARRESTED, SHUTTING_DOWN, ENDED</description>
         ///     </item>
         /// </list>
         /// </para>

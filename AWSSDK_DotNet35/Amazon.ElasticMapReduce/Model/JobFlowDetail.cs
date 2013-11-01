@@ -38,6 +38,7 @@ namespace Amazon.ElasticMapReduce.Model
         private bool? visibleToAllUsers;
         private string jobFlowRole;
 
+
         /// <summary>
         /// The job flow identifier.
         ///  

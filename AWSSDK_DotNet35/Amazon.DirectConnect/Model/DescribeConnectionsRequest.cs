@@ -28,9 +28,10 @@ namespace Amazon.DirectConnect.Model
     /// <para>Displays all connections in this region.</para> <para>If a connection ID is provided, it will only return this particular
     /// connection.</para>
     /// </summary>
-    public partial class DescribeConnectionsRequest : AmazonWebServiceRequest
+    public partial class DescribeConnectionsRequest : AmazonDirectConnectRequest
     {
         private string connectionId;
+
 
         /// <summary>
         /// ID of the connection. Example: dxcon-fg5678gh Default: None

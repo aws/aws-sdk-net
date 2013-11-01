@@ -46,6 +46,13 @@
             while (context.Read())
             {
               
+              if (context.TestExpression("ownerAccount", targetDepth))
+              {
+                context.Read();
+                response.OwnerAccount = StringUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
               if (context.TestExpression("connectionId", targetDepth))
               {
                 context.Read();
@@ -78,6 +85,27 @@
               {
                 context.Read();
                 response.Location = StringUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
+              if (context.TestExpression("bandwidth", targetDepth))
+              {
+                context.Read();
+                response.Bandwidth = StringUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
+              if (context.TestExpression("vlan", targetDepth))
+              {
+                context.Read();
+                response.Vlan = IntUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
+              if (context.TestExpression("partnerName", targetDepth))
+              {
+                context.Read();
+                response.PartnerName = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   

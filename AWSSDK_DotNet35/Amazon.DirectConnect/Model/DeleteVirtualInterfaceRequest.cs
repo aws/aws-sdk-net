@@ -25,11 +25,12 @@ namespace Amazon.DirectConnect.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteVirtualInterface operation.
-    /// <para> Deletes a virtual interface. </para>
+    /// <para>Deletes a virtual interface.</para>
     /// </summary>
-    public partial class DeleteVirtualInterfaceRequest : AmazonWebServiceRequest
+    public partial class DeleteVirtualInterfaceRequest : AmazonDirectConnectRequest
     {
         private string virtualInterfaceId;
+
 
         /// <summary>
         /// ID of the virtual interface. Example: dxvif-123dfg56 Default: None

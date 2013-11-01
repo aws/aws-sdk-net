@@ -36,10 +36,11 @@ namespace Amazon.ElasticMapReduce.Model
     /// href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/UsingEMR_TerminationProtection.html" >Protecting a Job Flow from
     /// Termination</a> in the <i>Amazon Elastic MapReduce Developer's Guide.</i> </para>
     /// </summary>
-    public partial class SetTerminationProtectionRequest : AmazonWebServiceRequest
+    public partial class SetTerminationProtectionRequest : AmazonElasticMapReduceRequest
     {
         private List<string> jobFlowIds = new List<string>();
         private bool? terminationProtected;
+
 
         /// <summary>
         /// A list of strings that uniquely identify the job flows to protect. This identifier is returned by <a>RunJobFlow</a> and can also be obtained

@@ -30,10 +30,51 @@
       {
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-          AddJobFlowStepsResponse response = new AddJobFlowStepsResponse();
+          AddJobFlowStepsResponse response = new AddJobFlowStepsResponse();          
           
+          context.Read();
+          
+          UnmarshallResult(context,response);
           return response;
-        }        
+        }
+        
+        private static void UnmarshallResult(JsonUnmarshallerContext context,AddJobFlowStepsResponse response)
+        {
+          
+            int originalDepth = context.CurrentDepth;
+            int targetDepth = originalDepth + 1;
+            while (context.Read())
+            {
+              
+              if (context.TestExpression("StepIds", targetDepth))
+              {
+                context.Read();
+                response.StepIds = new List<String>();
+                        StringUnmarshaller unmarshaller = StringUnmarshaller.GetInstance();
+                while (context.Read())
+                {
+                  JsonToken token = context.CurrentTokenType;                
+                  if (token == JsonToken.ArrayStart)
+                  {
+                    continue;
+                  }
+                  if (token == JsonToken.ArrayEnd)
+                  {
+                    break;
+                  }
+                   response.StepIds.Add(unmarshaller.Unmarshall(context));
+                }
+                continue;
+              }
+  
+                if (context.CurrentDepth <= originalDepth)
+                {                   
+                    return;
+                }
+            }
+                        
+            return;
+        }                        
         
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {

@@ -29,8 +29,8 @@ namespace Amazon.ElasticMapReduce
     /// Implementation for accessing AmazonElasticMapReduce.
     ///  
     /// <para> This is the <i>Amazon Elastic MapReduce API Reference</i> . This guide provides descriptions and samples of the Amazon Elastic
-    /// MapReduce APIs.</para> <para>Amazon Elastic MapReduce is a web service that makes it easy to process large amounts of data efficiently.
-    /// Elastic MapReduce uses Hadoop processing combined with several AWS products to do tasks such as web indexing, data mining, log file
+    /// MapReduce APIs.</para> <para>Amazon Elastic MapReduce (Amazon EMR) is a web service that makes it easy to process large amounts of data
+    /// efficiently. Amazon EMR uses Hadoop processing combined with several AWS products to do tasks such as web indexing, data mining, log file
     /// analysis, machine learning, scientific simulation, and data warehousing.</para>
     /// </summary>
     public partial class AmazonElasticMapReduceClient : AmazonWebServiceClient, IAmazonElasticMapReduce
@@ -294,6 +294,8 @@ namespace Amazon.ElasticMapReduce
         /// <param name="addJobFlowStepsRequest">Container for the necessary parameters to execute the AddJobFlowSteps service method on
         ///          AmazonElasticMapReduce.</param>
         /// 
+        /// <returns>The response from the AddJobFlowSteps service method, as returned by AmazonElasticMapReduce.</returns>
+        /// 
         /// <exception cref="InternalServerErrorException"/>
         public AddJobFlowStepsResponse AddJobFlowSteps(AddJobFlowStepsRequest addJobFlowStepsRequest)
         {
@@ -313,6 +315,9 @@ namespace Amazon.ElasticMapReduce
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAddJobFlowSteps
+        ///         operation.</returns>
         public IAsyncResult BeginAddJobFlowSteps(AddJobFlowStepsRequest addJobFlowStepsRequest, AsyncCallback callback, object state)
         {
             return invokeAddJobFlowSteps(addJobFlowStepsRequest, callback, state, false);
@@ -326,6 +331,8 @@ namespace Amazon.ElasticMapReduce
         /// </summary>
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAddJobFlowSteps.</param>
+        /// 
+        /// <returns>Returns a AddJobFlowStepsResult from AmazonElasticMapReduce.</returns>
         public AddJobFlowStepsResponse EndAddJobFlowSteps(IAsyncResult asyncResult)
         {
             return endOperation<AddJobFlowStepsResponse>(asyncResult);
@@ -340,6 +347,89 @@ namespace Amazon.ElasticMapReduce
             return result;
         }
         
+        
+
+        #endregion
+    
+        #region DescribeCluster
+
+        /// <summary>
+        /// <para>Provides cluster-level details including status, hardware and software configuration, VPC settings, and so on. For information about
+        /// the cluster steps, see ListSteps.</para>
+        /// </summary>
+        /// 
+        /// <param name="describeClusterRequest">Container for the necessary parameters to execute the DescribeCluster service method on
+        ///          AmazonElasticMapReduce.</param>
+        /// 
+        /// <returns>The response from the DescribeCluster service method, as returned by AmazonElasticMapReduce.</returns>
+        /// 
+        /// <exception cref="InternalServerException"/>
+        /// <exception cref="InvalidRequestException"/>
+        public DescribeClusterResponse DescribeCluster(DescribeClusterRequest describeClusterRequest)
+        {
+            IAsyncResult asyncResult = invokeDescribeCluster(describeClusterRequest, null, null, true);
+            return EndDescribeCluster(asyncResult);
+        }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeCluster operation.
+        /// <seealso cref="Amazon.ElasticMapReduce.IAmazonElasticMapReduce.DescribeCluster"/>
+        /// </summary>
+        /// 
+        /// <param name="describeClusterRequest">Container for the necessary parameters to execute the DescribeCluster operation on
+        ///          AmazonElasticMapReduce.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeCluster
+        ///         operation.</returns>
+        public IAsyncResult BeginDescribeCluster(DescribeClusterRequest describeClusterRequest, AsyncCallback callback, object state)
+        {
+            return invokeDescribeCluster(describeClusterRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the DescribeCluster operation.
+        /// <seealso cref="Amazon.ElasticMapReduce.IAmazonElasticMapReduce.DescribeCluster"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeCluster.</param>
+        /// 
+        /// <returns>Returns a DescribeClusterResult from AmazonElasticMapReduce.</returns>
+        public DescribeClusterResponse EndDescribeCluster(IAsyncResult asyncResult)
+        {
+            return endOperation<DescribeClusterResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeDescribeCluster(DescribeClusterRequest describeClusterRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new DescribeClusterRequestMarshaller().Marshall(describeClusterRequest);
+            var unmarshaller = DescribeClusterResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        /// <summary>
+        /// <para>Provides cluster-level details including status, hardware and software configuration, VPC settings, and so on. For information about
+        /// the cluster steps, see ListSteps.</para>
+        /// </summary>
+        /// 
+        /// <returns>The response from the DescribeCluster service method, as returned by AmazonElasticMapReduce.</returns>
+        /// 
+        /// <exception cref="InternalServerException"/>
+        /// <exception cref="InvalidRequestException"/>
+        public DescribeClusterResponse DescribeCluster()
+        {
+            return DescribeCluster(new DescribeClusterRequest());
+        }
         
 
         #endregion
@@ -444,6 +534,499 @@ namespace Amazon.ElasticMapReduce
         public DescribeJobFlowsResponse DescribeJobFlows()
         {
             return DescribeJobFlows(new DescribeJobFlowsRequest());
+        }
+        
+
+        #endregion
+    
+        #region DescribeStep
+
+        /// <summary>
+        /// <para>Provides more detail about the cluster step.</para>
+        /// </summary>
+        /// 
+        /// <param name="describeStepRequest">Container for the necessary parameters to execute the DescribeStep service method on
+        ///          AmazonElasticMapReduce.</param>
+        /// 
+        /// <returns>The response from the DescribeStep service method, as returned by AmazonElasticMapReduce.</returns>
+        /// 
+        /// <exception cref="InternalServerException"/>
+        /// <exception cref="InvalidRequestException"/>
+        public DescribeStepResponse DescribeStep(DescribeStepRequest describeStepRequest)
+        {
+            IAsyncResult asyncResult = invokeDescribeStep(describeStepRequest, null, null, true);
+            return EndDescribeStep(asyncResult);
+        }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeStep operation.
+        /// <seealso cref="Amazon.ElasticMapReduce.IAmazonElasticMapReduce.DescribeStep"/>
+        /// </summary>
+        /// 
+        /// <param name="describeStepRequest">Container for the necessary parameters to execute the DescribeStep operation on
+        ///          AmazonElasticMapReduce.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeStep
+        ///         operation.</returns>
+        public IAsyncResult BeginDescribeStep(DescribeStepRequest describeStepRequest, AsyncCallback callback, object state)
+        {
+            return invokeDescribeStep(describeStepRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the DescribeStep operation.
+        /// <seealso cref="Amazon.ElasticMapReduce.IAmazonElasticMapReduce.DescribeStep"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeStep.</param>
+        /// 
+        /// <returns>Returns a DescribeStepResult from AmazonElasticMapReduce.</returns>
+        public DescribeStepResponse EndDescribeStep(IAsyncResult asyncResult)
+        {
+            return endOperation<DescribeStepResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeDescribeStep(DescribeStepRequest describeStepRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new DescribeStepRequestMarshaller().Marshall(describeStepRequest);
+            var unmarshaller = DescribeStepResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        /// <summary>
+        /// <para>Provides more detail about the cluster step.</para>
+        /// </summary>
+        /// 
+        /// <returns>The response from the DescribeStep service method, as returned by AmazonElasticMapReduce.</returns>
+        /// 
+        /// <exception cref="InternalServerException"/>
+        /// <exception cref="InvalidRequestException"/>
+        public DescribeStepResponse DescribeStep()
+        {
+            return DescribeStep(new DescribeStepRequest());
+        }
+        
+
+        #endregion
+    
+        #region ListBootstrapActions
+
+        /// <summary>
+        /// <para>Provides information about the bootstrap actions associated with a cluster.</para>
+        /// </summary>
+        /// 
+        /// <param name="listBootstrapActionsRequest">Container for the necessary parameters to execute the ListBootstrapActions service method on
+        ///          AmazonElasticMapReduce.</param>
+        /// 
+        /// <returns>The response from the ListBootstrapActions service method, as returned by AmazonElasticMapReduce.</returns>
+        /// 
+        /// <exception cref="InternalServerException"/>
+        /// <exception cref="InvalidRequestException"/>
+        public ListBootstrapActionsResponse ListBootstrapActions(ListBootstrapActionsRequest listBootstrapActionsRequest)
+        {
+            IAsyncResult asyncResult = invokeListBootstrapActions(listBootstrapActionsRequest, null, null, true);
+            return EndListBootstrapActions(asyncResult);
+        }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListBootstrapActions operation.
+        /// <seealso cref="Amazon.ElasticMapReduce.IAmazonElasticMapReduce.ListBootstrapActions"/>
+        /// </summary>
+        /// 
+        /// <param name="listBootstrapActionsRequest">Container for the necessary parameters to execute the ListBootstrapActions operation on
+        ///          AmazonElasticMapReduce.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
+        ///         EndListBootstrapActions operation.</returns>
+        public IAsyncResult BeginListBootstrapActions(ListBootstrapActionsRequest listBootstrapActionsRequest, AsyncCallback callback, object state)
+        {
+            return invokeListBootstrapActions(listBootstrapActionsRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the ListBootstrapActions operation.
+        /// <seealso cref="Amazon.ElasticMapReduce.IAmazonElasticMapReduce.ListBootstrapActions"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListBootstrapActions.</param>
+        /// 
+        /// <returns>Returns a ListBootstrapActionsResult from AmazonElasticMapReduce.</returns>
+        public ListBootstrapActionsResponse EndListBootstrapActions(IAsyncResult asyncResult)
+        {
+            return endOperation<ListBootstrapActionsResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeListBootstrapActions(ListBootstrapActionsRequest listBootstrapActionsRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new ListBootstrapActionsRequestMarshaller().Marshall(listBootstrapActionsRequest);
+            var unmarshaller = ListBootstrapActionsResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        /// <summary>
+        /// <para>Provides information about the bootstrap actions associated with a cluster.</para>
+        /// </summary>
+        /// 
+        /// <returns>The response from the ListBootstrapActions service method, as returned by AmazonElasticMapReduce.</returns>
+        /// 
+        /// <exception cref="InternalServerException"/>
+        /// <exception cref="InvalidRequestException"/>
+        public ListBootstrapActionsResponse ListBootstrapActions()
+        {
+            return ListBootstrapActions(new ListBootstrapActionsRequest());
+        }
+        
+
+        #endregion
+    
+        #region ListClusters
+
+        /// <summary>
+        /// <para>Provides the status of all clusters visible to this AWS account. Allows you to filter the list of clusters based on certain criteria;
+        /// for example, filtering by cluster creation date and time or by status. This call returns a maximum of 50 clusters per call, but returns a
+        /// marker to track the paging of the cluster list across multiple ListClusters calls. </para>
+        /// </summary>
+        /// 
+        /// <param name="listClustersRequest">Container for the necessary parameters to execute the ListClusters service method on
+        ///          AmazonElasticMapReduce.</param>
+        /// 
+        /// <returns>The response from the ListClusters service method, as returned by AmazonElasticMapReduce.</returns>
+        /// 
+        /// <exception cref="InternalServerException"/>
+        /// <exception cref="InvalidRequestException"/>
+        public ListClustersResponse ListClusters(ListClustersRequest listClustersRequest)
+        {
+            IAsyncResult asyncResult = invokeListClusters(listClustersRequest, null, null, true);
+            return EndListClusters(asyncResult);
+        }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListClusters operation.
+        /// <seealso cref="Amazon.ElasticMapReduce.IAmazonElasticMapReduce.ListClusters"/>
+        /// </summary>
+        /// 
+        /// <param name="listClustersRequest">Container for the necessary parameters to execute the ListClusters operation on
+        ///          AmazonElasticMapReduce.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListClusters
+        ///         operation.</returns>
+        public IAsyncResult BeginListClusters(ListClustersRequest listClustersRequest, AsyncCallback callback, object state)
+        {
+            return invokeListClusters(listClustersRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the ListClusters operation.
+        /// <seealso cref="Amazon.ElasticMapReduce.IAmazonElasticMapReduce.ListClusters"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListClusters.</param>
+        /// 
+        /// <returns>Returns a ListClustersResult from AmazonElasticMapReduce.</returns>
+        public ListClustersResponse EndListClusters(IAsyncResult asyncResult)
+        {
+            return endOperation<ListClustersResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeListClusters(ListClustersRequest listClustersRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new ListClustersRequestMarshaller().Marshall(listClustersRequest);
+            var unmarshaller = ListClustersResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        /// <summary>
+        /// <para>Provides the status of all clusters visible to this AWS account. Allows you to filter the list of clusters based on certain criteria;
+        /// for example, filtering by cluster creation date and time or by status. This call returns a maximum of 50 clusters per call, but returns a
+        /// marker to track the paging of the cluster list across multiple ListClusters calls. </para>
+        /// </summary>
+        /// 
+        /// <returns>The response from the ListClusters service method, as returned by AmazonElasticMapReduce.</returns>
+        /// 
+        /// <exception cref="InternalServerException"/>
+        /// <exception cref="InvalidRequestException"/>
+        public ListClustersResponse ListClusters()
+        {
+            return ListClusters(new ListClustersRequest());
+        }
+        
+
+        #endregion
+    
+        #region ListInstanceGroups
+
+        /// <summary>
+        /// <para>Provides all available details about the instance groups in a cluster.</para>
+        /// </summary>
+        /// 
+        /// <param name="listInstanceGroupsRequest">Container for the necessary parameters to execute the ListInstanceGroups service method on
+        ///          AmazonElasticMapReduce.</param>
+        /// 
+        /// <returns>The response from the ListInstanceGroups service method, as returned by AmazonElasticMapReduce.</returns>
+        /// 
+        /// <exception cref="InternalServerException"/>
+        /// <exception cref="InvalidRequestException"/>
+        public ListInstanceGroupsResponse ListInstanceGroups(ListInstanceGroupsRequest listInstanceGroupsRequest)
+        {
+            IAsyncResult asyncResult = invokeListInstanceGroups(listInstanceGroupsRequest, null, null, true);
+            return EndListInstanceGroups(asyncResult);
+        }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListInstanceGroups operation.
+        /// <seealso cref="Amazon.ElasticMapReduce.IAmazonElasticMapReduce.ListInstanceGroups"/>
+        /// </summary>
+        /// 
+        /// <param name="listInstanceGroupsRequest">Container for the necessary parameters to execute the ListInstanceGroups operation on
+        ///          AmazonElasticMapReduce.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
+        ///         EndListInstanceGroups operation.</returns>
+        public IAsyncResult BeginListInstanceGroups(ListInstanceGroupsRequest listInstanceGroupsRequest, AsyncCallback callback, object state)
+        {
+            return invokeListInstanceGroups(listInstanceGroupsRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the ListInstanceGroups operation.
+        /// <seealso cref="Amazon.ElasticMapReduce.IAmazonElasticMapReduce.ListInstanceGroups"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListInstanceGroups.</param>
+        /// 
+        /// <returns>Returns a ListInstanceGroupsResult from AmazonElasticMapReduce.</returns>
+        public ListInstanceGroupsResponse EndListInstanceGroups(IAsyncResult asyncResult)
+        {
+            return endOperation<ListInstanceGroupsResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeListInstanceGroups(ListInstanceGroupsRequest listInstanceGroupsRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new ListInstanceGroupsRequestMarshaller().Marshall(listInstanceGroupsRequest);
+            var unmarshaller = ListInstanceGroupsResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        /// <summary>
+        /// <para>Provides all available details about the instance groups in a cluster.</para>
+        /// </summary>
+        /// 
+        /// <returns>The response from the ListInstanceGroups service method, as returned by AmazonElasticMapReduce.</returns>
+        /// 
+        /// <exception cref="InternalServerException"/>
+        /// <exception cref="InvalidRequestException"/>
+        public ListInstanceGroupsResponse ListInstanceGroups()
+        {
+            return ListInstanceGroups(new ListInstanceGroupsRequest());
+        }
+        
+
+        #endregion
+    
+        #region ListInstances
+
+        /// <summary>
+        /// <para>Provides information about the cluster instances that Amazon EMR provisions on behalf of a user when it creates the cluster. For
+        /// example, this operation indicates when the EC2 instances reach the Ready state, when instances become available to Amazon EMR to use for
+        /// jobs, and the IP addresses for cluster instances, etc. </para>
+        /// </summary>
+        /// 
+        /// <param name="listInstancesRequest">Container for the necessary parameters to execute the ListInstances service method on
+        ///          AmazonElasticMapReduce.</param>
+        /// 
+        /// <returns>The response from the ListInstances service method, as returned by AmazonElasticMapReduce.</returns>
+        /// 
+        /// <exception cref="InternalServerException"/>
+        /// <exception cref="InvalidRequestException"/>
+        public ListInstancesResponse ListInstances(ListInstancesRequest listInstancesRequest)
+        {
+            IAsyncResult asyncResult = invokeListInstances(listInstancesRequest, null, null, true);
+            return EndListInstances(asyncResult);
+        }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListInstances operation.
+        /// <seealso cref="Amazon.ElasticMapReduce.IAmazonElasticMapReduce.ListInstances"/>
+        /// </summary>
+        /// 
+        /// <param name="listInstancesRequest">Container for the necessary parameters to execute the ListInstances operation on
+        ///          AmazonElasticMapReduce.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListInstances
+        ///         operation.</returns>
+        public IAsyncResult BeginListInstances(ListInstancesRequest listInstancesRequest, AsyncCallback callback, object state)
+        {
+            return invokeListInstances(listInstancesRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the ListInstances operation.
+        /// <seealso cref="Amazon.ElasticMapReduce.IAmazonElasticMapReduce.ListInstances"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListInstances.</param>
+        /// 
+        /// <returns>Returns a ListInstancesResult from AmazonElasticMapReduce.</returns>
+        public ListInstancesResponse EndListInstances(IAsyncResult asyncResult)
+        {
+            return endOperation<ListInstancesResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeListInstances(ListInstancesRequest listInstancesRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new ListInstancesRequestMarshaller().Marshall(listInstancesRequest);
+            var unmarshaller = ListInstancesResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        /// <summary>
+        /// <para>Provides information about the cluster instances that Amazon EMR provisions on behalf of a user when it creates the cluster. For
+        /// example, this operation indicates when the EC2 instances reach the Ready state, when instances become available to Amazon EMR to use for
+        /// jobs, and the IP addresses for cluster instances, etc. </para>
+        /// </summary>
+        /// 
+        /// <returns>The response from the ListInstances service method, as returned by AmazonElasticMapReduce.</returns>
+        /// 
+        /// <exception cref="InternalServerException"/>
+        /// <exception cref="InvalidRequestException"/>
+        public ListInstancesResponse ListInstances()
+        {
+            return ListInstances(new ListInstancesRequest());
+        }
+        
+
+        #endregion
+    
+        #region ListSteps
+
+        /// <summary>
+        /// <para>Provides a list of steps for the cluster. </para>
+        /// </summary>
+        /// 
+        /// <param name="listStepsRequest">Container for the necessary parameters to execute the ListSteps service method on
+        ///          AmazonElasticMapReduce.</param>
+        /// 
+        /// <returns>The response from the ListSteps service method, as returned by AmazonElasticMapReduce.</returns>
+        /// 
+        /// <exception cref="InternalServerException"/>
+        /// <exception cref="InvalidRequestException"/>
+        public ListStepsResponse ListSteps(ListStepsRequest listStepsRequest)
+        {
+            IAsyncResult asyncResult = invokeListSteps(listStepsRequest, null, null, true);
+            return EndListSteps(asyncResult);
+        }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListSteps operation.
+        /// <seealso cref="Amazon.ElasticMapReduce.IAmazonElasticMapReduce.ListSteps"/>
+        /// </summary>
+        /// 
+        /// <param name="listStepsRequest">Container for the necessary parameters to execute the ListSteps operation on AmazonElasticMapReduce.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListSteps
+        ///         operation.</returns>
+        public IAsyncResult BeginListSteps(ListStepsRequest listStepsRequest, AsyncCallback callback, object state)
+        {
+            return invokeListSteps(listStepsRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the ListSteps operation.
+        /// <seealso cref="Amazon.ElasticMapReduce.IAmazonElasticMapReduce.ListSteps"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListSteps.</param>
+        /// 
+        /// <returns>Returns a ListStepsResult from AmazonElasticMapReduce.</returns>
+        public ListStepsResponse EndListSteps(IAsyncResult asyncResult)
+        {
+            return endOperation<ListStepsResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeListSteps(ListStepsRequest listStepsRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new ListStepsRequestMarshaller().Marshall(listStepsRequest);
+            var unmarshaller = ListStepsResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        /// <summary>
+        /// <para>Provides a list of steps for the cluster. </para>
+        /// </summary>
+        /// 
+        /// <returns>The response from the ListSteps service method, as returned by AmazonElasticMapReduce.</returns>
+        /// 
+        /// <exception cref="InternalServerException"/>
+        /// <exception cref="InvalidRequestException"/>
+        public ListStepsResponse ListSteps()
+        {
+            return ListSteps(new ListStepsRequest());
         }
         
 
@@ -657,7 +1240,7 @@ namespace Amazon.ElasticMapReduce
         #region SetVisibleToAllUsers
 
         /// <summary>
-        /// <para>Sets whether all AWS Identity and Access Management (IAM) users under your account can access the specifed job flows. This action
+        /// <para>Sets whether all AWS Identity and Access Management (IAM) users under your account can access the specified job flows. This action
         /// works on running job flows. You can also set the visibility of a job flow when you launch it using the <c>VisibleToAllUsers</c> parameter of
         /// RunJobFlow. The SetVisibleToAllUsers action can be called only by an IAM user who created the job flow or the AWS account that owns the job
         /// flow.</para>

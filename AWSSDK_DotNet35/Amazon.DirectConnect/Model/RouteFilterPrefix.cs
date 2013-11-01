@@ -28,6 +28,7 @@ namespace Amazon.DirectConnect.Model
         
         private string cidr;
 
+
         /// <summary>
         /// CIDR notation for the advertised route. Multiple routes are separated by commas Example: 10.10.10.0/24,10.10.11.0/24
         ///  

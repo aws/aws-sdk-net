@@ -40,12 +40,13 @@ namespace Amazon.ElasticMapReduce.Model
     /// </ul>
     /// <para> Amazon Elastic MapReduce can return a maximum of 512 job flow descriptions. </para>
     /// </summary>
-    public partial class DescribeJobFlowsRequest : AmazonWebServiceRequest
+    public partial class DescribeJobFlowsRequest : AmazonElasticMapReduceRequest
     {
         private DateTime? createdAfter;
         private DateTime? createdBefore;
         private List<string> jobFlowIds = new List<string>();
         private List<string> jobFlowStates = new List<string>();
+
 
         /// <summary>
         /// Return only job flows created after this date and time.

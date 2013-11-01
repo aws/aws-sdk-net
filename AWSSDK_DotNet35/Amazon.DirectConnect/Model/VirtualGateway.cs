@@ -31,6 +31,7 @@ namespace Amazon.DirectConnect.Model
         private string virtualGatewayId;
         private string virtualGatewayState;
 
+
         /// <summary>
         /// The ID of the virtual private gateway to a VPC. Only applies to private virtual interfaces. Example: vgw-123er56
         ///  

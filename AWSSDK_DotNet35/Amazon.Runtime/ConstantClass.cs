@@ -111,12 +111,66 @@ namespace Amazon.Runtime
 
         public override bool Equals(object obj)
         {
-            if(obj is string)
+            if (obj == null)
             {
-                return string.Equals(this.Value, (string)obj);
+                // If obj is null, return false.
+                return false;
             }
 
-            return string.Equals(this.Value, ((ConstantClass)obj).Value);
+            // If both are the same instance, return true.
+            if (System.Object.ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            var objConstantClass = obj as ConstantClass;            
+            if (this.Equals(objConstantClass))
+            {
+                return true;
+            }
+
+            var objString = obj as string;
+            if (objString != null)
+            {
+                return StringComparer.Ordinal.Equals(this.Value, objString);
+            }
+
+            // obj is of an incompatible type, return false.
+            return false;
+        }
+
+        public bool Equals(ConstantClass obj)
+        {
+            if ((object)obj == null)
+            {
+                // If obj is null, return false.
+                return false;
+            }
+            return StringComparer.Ordinal.Equals(this.Value, obj.Value);
+        }
+
+        public static bool operator ==(ConstantClass a, ConstantClass b)
+        {            
+            if (System.Object.ReferenceEquals(a, b))
+            {
+                // If both are null, or both are the same instance, return true.
+                return true;
+            }
+
+            if ((object)a == null)
+            {
+                // If either is null, return false.
+                return false;
+            }
+            else
+            {
+                return a.Equals(b);
+            }
+        }
+
+        public static bool operator !=(ConstantClass a, ConstantClass b)
+        {
+            return !(a == b);
         }
     }
 }

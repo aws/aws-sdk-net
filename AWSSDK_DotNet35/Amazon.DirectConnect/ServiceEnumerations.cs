@@ -37,9 +37,29 @@ namespace Amazon.DirectConnect
         public static readonly ConnectionState Deleted = new ConnectionState("deleted");
     
 
+       /// <summary>Constant Deleting for ConnectionState
+       /// </summary>
+        public static readonly ConnectionState Deleting = new ConnectionState("deleting");
+    
+
+       /// <summary>Constant Down for ConnectionState
+       /// </summary>
+        public static readonly ConnectionState Down = new ConnectionState("down");
+    
+
+       /// <summary>Constant Ordering for ConnectionState
+       /// </summary>
+        public static readonly ConnectionState Ordering = new ConnectionState("ordering");
+    
+
        /// <summary>Constant Pending for ConnectionState
        /// </summary>
         public static readonly ConnectionState Pending = new ConnectionState("pending");
+    
+
+       /// <summary>Constant Rejected for ConnectionState
+       /// </summary>
+        public static readonly ConnectionState Rejected = new ConnectionState("rejected");
     
 
        /// <summary>Constant Requested for ConnectionState
@@ -72,26 +92,46 @@ namespace Amazon.DirectConnect
     }
     
 
-    /// <summary>Step State
+    /// <summary>Interconnect State
     /// </summary>
-    public class StepState : ConstantClass
+    public class InterconnectState : ConstantClass
     {
 
 
-       /// <summary>Constant Completed for StepState
+       /// <summary>Constant Available for InterconnectState
        /// </summary>
-        public static readonly StepState Completed = new StepState("completed");
+        public static readonly InterconnectState Available = new InterconnectState("available");
     
 
-       /// <summary>Constant Pending for StepState
+       /// <summary>Constant Deleted for InterconnectState
        /// </summary>
-        public static readonly StepState Pending = new StepState("pending");
+        public static readonly InterconnectState Deleted = new InterconnectState("deleted");
+    
+
+       /// <summary>Constant Deleting for InterconnectState
+       /// </summary>
+        public static readonly InterconnectState Deleting = new InterconnectState("deleting");
+    
+
+       /// <summary>Constant Down for InterconnectState
+       /// </summary>
+        public static readonly InterconnectState Down = new InterconnectState("down");
+    
+
+       /// <summary>Constant Pending for InterconnectState
+       /// </summary>
+        public static readonly InterconnectState Pending = new InterconnectState("pending");
+    
+
+       /// <summary>Constant Requested for InterconnectState
+       /// </summary>
+        public static readonly InterconnectState Requested = new InterconnectState("requested");
     
 
         /// <summary>
         /// Default Constructor
         /// </summary>
-        public StepState(string value)
+        public InterconnectState(string value)
             : base(value)
         {
         }
@@ -101,12 +141,12 @@ namespace Amazon.DirectConnect
         /// </summary>
         /// <param name="value">The unique value for the constant</param>
         /// <returns>The constant for the unique value</returns>
-        public static StepState FindValue(string value)
+        public static InterconnectState FindValue(string value)
         {
-            return FindValue<StepState>(value);
+            return FindValue<InterconnectState>(value);
         }
 
-        public static implicit operator StepState(string value)
+        public static implicit operator InterconnectState(string value)
         {
             return FindValue(value);
         }
@@ -124,6 +164,11 @@ namespace Amazon.DirectConnect
         public static readonly VirtualInterfaceState Available = new VirtualInterfaceState("available");
     
 
+       /// <summary>Constant Confirming for VirtualInterfaceState
+       /// </summary>
+        public static readonly VirtualInterfaceState Confirming = new VirtualInterfaceState("confirming");
+    
+
        /// <summary>Constant Deleted for VirtualInterfaceState
        /// </summary>
         public static readonly VirtualInterfaceState Deleted = new VirtualInterfaceState("deleted");
@@ -137,6 +182,11 @@ namespace Amazon.DirectConnect
        /// <summary>Constant Pending for VirtualInterfaceState
        /// </summary>
         public static readonly VirtualInterfaceState Pending = new VirtualInterfaceState("pending");
+    
+
+       /// <summary>Constant Rejected for VirtualInterfaceState
+       /// </summary>
+        public static readonly VirtualInterfaceState Rejected = new VirtualInterfaceState("rejected");
     
 
        /// <summary>Constant Verifying for VirtualInterfaceState

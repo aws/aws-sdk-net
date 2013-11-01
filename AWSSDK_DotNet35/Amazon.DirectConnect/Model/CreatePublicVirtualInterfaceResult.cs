@@ -22,11 +22,12 @@ using Amazon.Runtime;
 namespace Amazon.DirectConnect.Model
 {
     /// <summary>
-    /// <para> A virtual interface (VLAN) transmits the traffic between the Direct Connect location and the customer. </para>
+    /// <para>A virtual interface (VLAN) transmits the traffic between the Direct Connect location and the customer.</para>
     /// </summary>
     public partial class CreatePublicVirtualInterfaceResult : AmazonWebServiceResponse
     {
         
+        private string ownerAccount;
         private string virtualInterfaceId;
         private string location;
         private string connectionId;
@@ -41,6 +42,18 @@ namespace Amazon.DirectConnect.Model
         private string customerRouterConfig;
         private string virtualGatewayId;
         private List<RouteFilterPrefix> routeFilterPrefixes = new List<RouteFilterPrefix>();
+
+        public string OwnerAccount
+        {
+            get { return this.ownerAccount; }
+            set { this.ownerAccount = value; }
+        }
+
+        // Check to see if OwnerAccount property is set
+        internal bool IsSetOwnerAccount()
+        {
+            return this.ownerAccount != null;
+        }
 
         /// <summary>
         /// ID of the virtual interface. Example: dxvif-123dfg56 Default: None
@@ -59,7 +72,7 @@ namespace Amazon.DirectConnect.Model
         }
 
         /// <summary>
-        /// Where the AWS Direct Connect offering is located. Example: EqSV5 Default: None
+        /// Where the connection is located. Example: EqSV5 Default: None
         ///  
         /// </summary>
         public string Location
@@ -203,19 +216,23 @@ namespace Amazon.DirectConnect.Model
         }
 
         /// <summary>
-        /// State of the virtual interface. <ul> <li><b>Verifying</b>: This state only applies to public virtual interfaces. Each public virtual
-        /// interface needs validation before the virtual interface can be created.</li> <li><b>Pending</b>: A virtual interface is in this state from
-        /// the time that it is created until the virtual interface is ready to forward traffic.</li> <li><b>Available</b>: A virtual interface that is
-        /// able to forward traffic.</li> <li><b>Deleting</b>: A virtual interface is in this state immediately after calling
-        /// <i>DeleteVirtualInterface</i> until it can no longer forward traffic.</li> <li><b>Deleted</b>: A virtual interface that cannot forward
-        /// traffic.</li> </ul>
+        /// State of the virtual interface. <ul> <li><b>Confirming</b>: The creation of the virtual interface is pending confirmation from the virtual
+        /// interface owner. If the owner of the virtual interface is different from the owner of the connection on which it is provisioned, then the
+        /// virtual interface will remain in this state until it is confirmed by the virtual interface owner.</li> <li><b>Verifying</b>: This state only
+        /// applies to public virtual interfaces. Each public virtual interface needs validation before the virtual interface can be created.</li>
+        /// <li><b>Pending</b>: A virtual interface is in this state from the time that it is created until the virtual interface is ready to forward
+        /// traffic.</li> <li><b>Available</b>: A virtual interface that is able to forward traffic.</li> <li><b>Deleting</b>: A virtual interface is in
+        /// this state immediately after calling <i>DeleteVirtualInterface</i> until it can no longer forward traffic.</li> <li><b>Deleted</b>: A
+        /// virtual interface that cannot forward traffic.</li> <li><b>Rejected</b>: The virtual interface owner has declined creation of the virtual
+        /// interface. If a virtual interface in the 'Confirming' state is deleted by the virtual interface owner, the virtual interface will enter the
+        /// 'Rejected' state.</li> </ul>
         ///  
         /// <para>
         /// <b>Constraints:</b>
         /// <list type="definition">
         ///     <item>
         ///         <term>Allowed Values</term>
-        ///         <description>verifying, pending, available, deleting, deleted</description>
+        ///         <description>confirming, verifying, pending, available, deleting, deleted, rejected</description>
         ///     </item>
         /// </list>
         /// </para>

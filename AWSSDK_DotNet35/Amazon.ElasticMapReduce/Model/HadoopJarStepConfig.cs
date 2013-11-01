@@ -32,6 +32,7 @@ namespace Amazon.ElasticMapReduce.Model
         private string mainClass;
         private List<string> args = new List<string>();
 
+
         /// <summary>
         /// A list of Java properties that are set when the step runs. You can use these properties to pass key value pairs to your main function.
         ///  

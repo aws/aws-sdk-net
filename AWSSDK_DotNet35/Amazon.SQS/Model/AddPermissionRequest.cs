@@ -25,25 +25,26 @@ namespace Amazon.SQS.Model
 {
     /// <summary>
     /// Container for the parameters to the AddPermission operation.
-    /// <para>Adds a permission to a queue for a specific <a href="http://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P" >principal</a> .
+    /// <para>The AddPermission action adds a permission to a queue for a specific <a
+    /// href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/Glossary.html" >principal</a> .
     /// This allows for sharing access to the queue.</para> <para>When you create a queue, you have full control access rights for the queue.
     /// Only you (as owner of the queue) can grant or deny permissions to the queue. For more information about these permissions, see <a
-    /// href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/acp-overview.html" >Shared Queues</a> in the <i>Amazon SQS
-    /// Developer Guide</i> .</para> <para><b>NOTE:</b> AddPermission writes an Amazon SQS-generated policy. If you want to write your own policy,
-    /// use SetQueueAttributes to upload your policy. For more information about writing your own policy, see Using The Access Policy Language in
-    /// the Amazon SQS Developer Guide. </para> <para><b>NOTE:</b>Some API actions take lists of parameters. These lists are specified using the
-    /// param.n notation. Values of n are integers starting from 1. For example, a parameter list with two elements looks like this: </para> <para>
-    /// <c>&amp;amp;Attribute.1=this</c> </para> <para> <c>&amp;amp;Attribute.2=that</c> </para>
+    /// href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/?acp-overview.html" >Shared Queues</a> in the Amazon SQS
+    /// Developer Guide.</para> <para> <c>AddPermission</c> writes an SQS-generated policy. If you want to write your own policy, use
+    /// SetQueueAttributes to upload your policy. For more information about writing your own policy, see <a
+    /// href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/?AccessPolicyLanguage.html" >Appendix: The Access Policy
+    /// Language</a> in the Amazon SQS Developer Guide.</para>
     /// </summary>
-    public partial class AddPermissionRequest : AmazonWebServiceRequest
+    public partial class AddPermissionRequest : AmazonSQSRequest
     {
         private string queueUrl;
         private string label;
         private List<string> aWSAccountIds = new List<string>();
         private List<string> actions = new List<string>();
 
+
         /// <summary>
-        /// The URL of the Amazon SQS queue to take action on.
+        /// The URL of the SQS queue to take action on.
         ///  
         /// </summary>
         public string QueueUrl
@@ -76,10 +77,8 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// The AWS account number of the <a href="http://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P">principal</a> who will be given
-        /// permission. The principal must have an AWS account, but does not need to be signed up for Amazon SQS. For information about locating the AWS
-        /// account identification, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AWSCredentials.html">Your AWS
-        /// Identifiers</a> in the <i>Amazon SQS Developer Guide</i>.
+        /// The AWS account number of the <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/Glossary.html">principal</a> who
+        /// will be given permission. The principal must have an AWS account, but does not need to be signed up for Amazon SQS.
         ///  
         /// </summary>
         public List<string> AWSAccountIds
@@ -95,12 +94,7 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// The action the client wants to allow for the specified principal. The following are valid values: <c>* | SendMessage | ReceiveMessage |
-        /// DeleteMessage | ChangeMessageVisibility | GetQueueAttributes | GetQueueUrl</c>. For more information about these actions, see <a
-        /// href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/acp-overview.html#PermissionTypes">Understanding
-        /// Permissions</a> in the <i>Amazon SQS Developer Guide</i>. Specifying <c>SendMessage</c>, <c>DeleteMessage</c>, or
-        /// <c>ChangeMessageVisibility</c> for the <c>ActionName.n</c> also grants permissions for the corresponding batch versions of those actions:
-        /// <c>SendMessageBatch</c>, <c>DeleteMessageBatch</c>, and <c>ChangeMessageVisibilityBatch</c>.
+        /// The action the client wants to allow for the specified principal.
         ///  
         /// </summary>
         public List<string> Actions
