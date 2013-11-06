@@ -12,4 +12,4 @@ before_install:
 
 script:
   - MONO_IOMAP=case xbuild "AWSSDK_DotNet35/AWSSDK_DotNet35.sln" /p:TargetFrameworkProfile="" /p:TargetFrameworkVersion="v3.5" /p:TreatWarningsAsErrors="false"
-  - MONO_IOMAP=case xbuild "AWSSDK_DotNet45/AWSSDK_DotNet45.sln" /p:TargetFrameworkProfile="" /p:TargetFrameworkVersion="v4.5"
+  - MONO_IOMAP=case xbuild "AWSSDK_DotNet45/AWSSDK_DotNet45.sln" /p:TargetFrameworkProfile="" /p:TargetFrameworkVersion="v4.5" /p:TreatWarningsAsErrors="false"
