@@ -23,7 +23,7 @@ namespace Amazon.ElasticTranscoder.Model
     /// <summary>
     /// <para>The <c>DeletePresetResponse</c> structure.</para>
     /// </summary>
-    public class DeletePresetResult
+    public partial class DeletePresetResult
     {
         
     }

@@ -25,7 +25,7 @@ namespace Amazon.StorageGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateStorediSCSIVolume operation.
-    /// <para>This operation creates a volume on a specified gateway. This operation is supported only for the gateway-cached volume architecture.
+    /// <para>This operation creates a volume on a specified gateway. This operation is supported only for the gateway-stored volume architecture.
     /// </para> <para>The size of the volume to create is inferred from the disk size. You can choose to preserve existing data on the disk, create
     /// volume from an existing snapshot, or create an empty volume. If you choose to create an empty gateway volume, then any existing data on the
     /// disk is erased.</para> <para>In the request you must specify the gateway and the disk information on which you are creating the volume. In
@@ -78,13 +78,12 @@ namespace Amazon.StorageGateway.Model
         // Check to see if GatewayARN property is set
         internal bool IsSetGatewayARN()
         {
-            return this.gatewayARN != null;       
+            return this.gatewayARN != null;
         }
 
         /// <summary>
         /// The unique identifier for the gateway local disk that is configured as a stored volume. Use <a
-        /// href="http://docs.amazonwebservices.com/storagegateway/latest/userguide/API_ListLocalDisks.html">ListLocalDisks</a> to list disk IDs for a
-        /// gateway.
+        /// href="http://docs.aws.amazon.com/storagegateway/latest/userguide/API_ListLocalDisks.html">ListLocalDisks</a> to list disk IDs for a gateway.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -118,13 +117,13 @@ namespace Amazon.StorageGateway.Model
         // Check to see if DiskId property is set
         internal bool IsSetDiskId()
         {
-            return this.diskId != null;       
+            return this.diskId != null;
         }
 
         /// <summary>
         /// The snapshot ID (e.g. "snap-1122aabb") of the snapshot to restore as the new stored volume. Specify this field if you want to create the
         /// iSCSI storage volume from a snapshot otherwise do not include this field. To list snapshots for your account use <a
-        /// href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a> in the
+        /// href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a> in the
         /// <i>Amazon Elastic Compute Cloud API Reference</i>.
         ///  
         /// <para>
@@ -159,7 +158,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if SnapshotId property is set
         internal bool IsSetSnapshotId()
         {
-            return this.snapshotId != null;       
+            return this.snapshotId != null;
         }
 
         /// <summary>
@@ -189,7 +188,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if PreserveExistingData property is set
         internal bool IsSetPreserveExistingData()
         {
-            return this.preserveExistingData.HasValue;       
+            return this.preserveExistingData.HasValue;
         }
 
         /// <summary>
@@ -234,7 +233,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if TargetName property is set
         internal bool IsSetTargetName()
         {
-            return this.targetName != null;       
+            return this.targetName != null;
         }
 
         /// <summary>
@@ -273,7 +272,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if NetworkInterfaceId property is set
         internal bool IsSetNetworkInterfaceId()
         {
-            return this.networkInterfaceId != null;       
+            return this.networkInterfaceId != null;
         }
     }
 }

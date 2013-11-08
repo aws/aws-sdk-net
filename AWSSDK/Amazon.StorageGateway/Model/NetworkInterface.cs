@@ -23,7 +23,7 @@ namespace Amazon.StorageGateway.Model
     /// <summary>
     /// <para>Describes a gateway's network interface.</para>
     /// </summary>
-    public class NetworkInterface  
+    public partial class NetworkInterface
     {
         
         private string ipv4Address;
@@ -56,7 +56,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if Ipv4Address property is set
         internal bool IsSetIpv4Address()
         {
-            return this.ipv4Address != null;       
+            return this.ipv4Address != null;
         }
 
         /// <summary>
@@ -85,7 +85,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if MacAddress property is set
         internal bool IsSetMacAddress()
         {
-            return this.macAddress != null;       
+            return this.macAddress != null;
         }
 
         /// <summary>
@@ -114,7 +114,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if Ipv6Address property is set
         internal bool IsSetIpv6Address()
         {
-            return this.ipv6Address != null;       
+            return this.ipv6Address != null;
         }
     }
 }

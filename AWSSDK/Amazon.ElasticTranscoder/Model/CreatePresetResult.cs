@@ -23,7 +23,7 @@ namespace Amazon.ElasticTranscoder.Model
     /// <summary>
     /// <para>The <c>CreatePresetResponse</c> structure.</para>
     /// </summary>
-    public class CreatePresetResult
+    public partial class CreatePresetResult
     {
         
         private Preset preset;

@@ -22,18 +22,14 @@ namespace Amazon.StorageGateway.Model
 {
     /// <summary>
     /// <para>A JSON object containing the following fields:</para>
-    /// <ul>
-    /// <li> DescribeCachediSCSIVolumesOutput$CachediSCSIVolumes </li>
-    /// 
-    /// </ul>
     /// </summary>
-    public class DescribeCachediSCSIVolumesResult  
+    public partial class DescribeCachediSCSIVolumesResult
     {
         
         private List<CachediSCSIVolume> cachediSCSIVolumes = new List<CachediSCSIVolume>();
 
         /// <summary>
-        /// An array of <a>CachediSCSIVolume</a> objects where each object contains metadata about one cached volume.
+        /// An array of objects where each object contains metadata about one cached volume.
         ///  
         /// </summary>
         public List<CachediSCSIVolume> CachediSCSIVolumes
@@ -56,7 +52,7 @@ namespace Amazon.StorageGateway.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the CachediSCSIVolumes collection
         /// </summary>
@@ -76,7 +72,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if CachediSCSIVolumes property is set
         internal bool IsSetCachediSCSIVolumes()
         {
-            return this.cachediSCSIVolumes.Count > 0;       
+            return this.cachediSCSIVolumes.Count > 0;
         }
     }
 }

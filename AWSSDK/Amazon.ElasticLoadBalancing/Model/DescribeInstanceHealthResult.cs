@@ -23,7 +23,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// <summary>
     /// <para> The output for the DescribeInstanceHealth action. </para>
     /// </summary>
-    public class DescribeInstanceHealthResult  
+    public partial class DescribeInstanceHealthResult
     {
         
         private List<InstanceState> instanceStates = new List<InstanceState>();
@@ -52,7 +52,7 @@ namespace Amazon.ElasticLoadBalancing.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the InstanceStates collection
         /// </summary>
@@ -72,7 +72,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if InstanceStates property is set
         internal bool IsSetInstanceStates()
         {
-            return this.instanceStates.Count > 0;       
+            return this.instanceStates.Count > 0;
         }
     }
 }

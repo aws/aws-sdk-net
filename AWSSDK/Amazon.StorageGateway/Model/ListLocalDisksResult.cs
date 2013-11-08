@@ -20,15 +20,9 @@ using System.IO;
 
 namespace Amazon.StorageGateway.Model
 {
-    /// <summary>
-    /// <para>A JSON object containing the following fields:</para>
-    /// <ul>
-    /// <li> ListLocalDisksOutput$Disks </li>
-    /// <li> GatewayARN </li>
-    /// 
-    /// </ul>
+    /// <summary>List Local Disks Result
     /// </summary>
-    public class ListLocalDisksResult  
+    public partial class ListLocalDisksResult
     {
         
         private string gatewayARN;
@@ -70,13 +64,8 @@ namespace Amazon.StorageGateway.Model
         // Check to see if GatewayARN property is set
         internal bool IsSetGatewayARN()
         {
-            return this.gatewayARN != null;       
+            return this.gatewayARN != null;
         }
-
-        /// <summary>
-        /// An array of <a>Disk</a> objects.
-        ///  
-        /// </summary>
         public List<Disk> Disks
         {
             get { return this.disks; }
@@ -97,7 +86,7 @@ namespace Amazon.StorageGateway.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Disks collection
         /// </summary>
@@ -117,7 +106,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if Disks property is set
         internal bool IsSetDisks()
         {
-            return this.disks.Count > 0;       
+            return this.disks.Count > 0;
         }
     }
 }

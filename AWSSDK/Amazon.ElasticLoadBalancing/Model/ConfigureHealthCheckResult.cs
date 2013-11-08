@@ -23,7 +23,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// <summary>
     /// <para> The output for the ConfigureHealthCheck action. </para>
     /// </summary>
-    public class ConfigureHealthCheckResult  
+    public partial class ConfigureHealthCheckResult
     {
         
         private HealthCheck healthCheck;
@@ -54,7 +54,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if HealthCheck property is set
         internal bool IsSetHealthCheck()
         {
-            return this.healthCheck != null;       
+            return this.healthCheck != null;
         }
     }
 }

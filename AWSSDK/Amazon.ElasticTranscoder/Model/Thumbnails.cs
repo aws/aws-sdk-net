@@ -23,7 +23,7 @@ namespace Amazon.ElasticTranscoder.Model
     /// <summary>
     /// <para>Thumbnails for videos.</para>
     /// </summary>
-    public class Thumbnails
+    public partial class Thumbnails
     {
         
         private string format;

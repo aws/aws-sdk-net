@@ -4978,15 +4978,8 @@ namespace Amazon.S3
                 queryStr.Append(value);
                 parameters[S3QueryParameter.Expires] = value;
 
-
                 StringBuilder encodedQueryStrToSign = new StringBuilder();
                 StringBuilder queryStrToSign = new StringBuilder();
-                if (request.IsSetKey() &&
-                    request.IsSetVersionId() &&
-                    request.Verb < HttpVerb.PUT)
-                {
-                    addParameter(queryStrToSign, encodedQueryStrToSign, "versionId", request.VersionId);
-                }
 
                 addParameter(queryStrToSign, encodedQueryStrToSign, ResponseHeaderOverrides.RESPONSE_CACHE_CONTROL, request.ResponseHeaderOverrides.CacheControl);
                 addParameter(queryStrToSign, encodedQueryStrToSign, ResponseHeaderOverrides.RESPONSE_CONTENT_DISPOSITION, request.ResponseHeaderOverrides.ContentDisposition);
@@ -4994,6 +4987,13 @@ namespace Amazon.S3
                 addParameter(queryStrToSign, encodedQueryStrToSign, ResponseHeaderOverrides.RESPONSE_CONTENT_LANGUAGE, request.ResponseHeaderOverrides.ContentLanguage);
                 addParameter(queryStrToSign, encodedQueryStrToSign, ResponseHeaderOverrides.RESPONSE_CONTENT_TYPE, request.ResponseHeaderOverrides.ContentType);
                 addParameter(queryStrToSign, encodedQueryStrToSign, ResponseHeaderOverrides.RESPONSE_EXPIRES, request.ResponseHeaderOverrides.Expires);
+
+                if (request.IsSetKey() &&
+                    request.IsSetVersionId() &&
+                    request.Verb < HttpVerb.PUT)
+                {
+                    addParameter(queryStrToSign, encodedQueryStrToSign, "versionId", request.VersionId);
+                }
 
                 if (queryStrToSign.Length > 0)
                 {

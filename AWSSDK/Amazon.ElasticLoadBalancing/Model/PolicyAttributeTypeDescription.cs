@@ -24,7 +24,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// <para> The <c>PolicyAttributeTypeDescription</c> data type. This data type is used to describe values that are acceptable for the policy
     /// attribute. </para>
     /// </summary>
-    public class PolicyAttributeTypeDescription  
+    public partial class PolicyAttributeTypeDescription
     {
         
         private string attributeName;
@@ -59,7 +59,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if AttributeName property is set
         internal bool IsSetAttributeName()
         {
-            return this.attributeName != null;       
+            return this.attributeName != null;
         }
 
         /// <summary>
@@ -88,7 +88,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if AttributeType property is set
         internal bool IsSetAttributeType()
         {
-            return this.attributeType != null;       
+            return this.attributeType != null;
         }
 
         /// <summary>
@@ -117,7 +117,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if Description property is set
         internal bool IsSetDescription()
         {
-            return this.description != null;       
+            return this.description != null;
         }
 
         /// <summary>
@@ -146,7 +146,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if DefaultValue property is set
         internal bool IsSetDefaultValue()
         {
-            return this.defaultValue != null;       
+            return this.defaultValue != null;
         }
 
         /// <summary>
@@ -177,7 +177,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if Cardinality property is set
         internal bool IsSetCardinality()
         {
-            return this.cardinality != null;       
+            return this.cardinality != null;
         }
     }
 }

@@ -24,7 +24,7 @@ namespace Amazon.ElastiCache.Model
     /// <para>Describes a notification topic and its status. Notification topics are used for publishing ElastiCache events to subscribers using
     /// Amazon Simple Notification Service (SNS).</para>
     /// </summary>
-    public class NotificationConfiguration
+    public partial class NotificationConfiguration
     {
         
         private string topicArn;

@@ -24,7 +24,7 @@ namespace Amazon.ElastiCache.Model
     /// <para>Represents an individual cache node within a cache cluster. Each cache node runs its own instance of the cluster's protocol-compliant
     /// caching software - either Memcached or Redis.</para>
     /// </summary>
-    public class CacheNode
+    public partial class CacheNode
     {
         
         private string cacheNodeId;

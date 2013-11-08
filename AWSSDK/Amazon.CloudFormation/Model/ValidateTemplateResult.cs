@@ -23,7 +23,7 @@ namespace Amazon.CloudFormation.Model
     /// <summary>
     /// <para>The output for ValidateTemplate action.</para>
     /// </summary>
-    public class ValidateTemplateResult
+    public partial class ValidateTemplateResult
     {
         
         private List<TemplateParameter> parameters = new List<TemplateParameter>();
@@ -108,7 +108,7 @@ namespace Amazon.CloudFormation.Model
         }
 
         /// <summary>
-        /// The capabitilites found within the template. Currently, CAPABILITY_IAM is the only capability detected. If your template contains IAM
+        /// The capabilities found within the template. Currently, CAPABILITY_IAM is the only capability detected. If your template contains IAM
         /// resources, you must specify the CAPABILITY_IAM value for this parameter when you use the <a>CreateStack</a> or <a>UpdateStack</a> actions
         /// with your template; otherwise, those actions return an InsufficientCapabilities error.
         ///  

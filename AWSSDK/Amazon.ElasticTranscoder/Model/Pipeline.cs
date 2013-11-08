@@ -23,7 +23,7 @@ namespace Amazon.ElasticTranscoder.Model
     /// <summary>
     /// <para>The pipeline (queue) that is used to manage jobs.</para>
     /// </summary>
-    public class Pipeline
+    public partial class Pipeline
     {
         
         private string id;

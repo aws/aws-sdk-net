@@ -23,7 +23,7 @@ namespace Amazon.CloudFormation.Model
     /// <summary>
     /// <para>The Parameter data type.</para>
     /// </summary>
-    public class Parameter
+    public partial class Parameter
     {
         
         private string parameterKey;

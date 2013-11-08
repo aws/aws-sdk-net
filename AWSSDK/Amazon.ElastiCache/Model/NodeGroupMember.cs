@@ -23,7 +23,7 @@ namespace Amazon.ElastiCache.Model
     /// <summary>
     /// <para>Represents a single node within a node group.</para>
     /// </summary>
-    public class NodeGroupMember
+    public partial class NodeGroupMember
     {
         
         private string cacheClusterId;

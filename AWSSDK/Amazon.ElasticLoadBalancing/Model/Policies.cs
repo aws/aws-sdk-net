@@ -23,7 +23,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// <summary>
     /// <para> The policies data type. </para>
     /// </summary>
-    public class Policies  
+    public partial class Policies
     {
         
         private List<AppCookieStickinessPolicy> appCookieStickinessPolicies = new List<AppCookieStickinessPolicy>();
@@ -60,7 +60,7 @@ namespace Amazon.ElasticLoadBalancing.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the AppCookieStickinessPolicies collection
         /// </summary>
@@ -80,7 +80,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if AppCookieStickinessPolicies property is set
         internal bool IsSetAppCookieStickinessPolicies()
         {
-            return this.appCookieStickinessPolicies.Count > 0;       
+            return this.appCookieStickinessPolicies.Count > 0;
         }
 
         /// <summary>
@@ -107,7 +107,7 @@ namespace Amazon.ElasticLoadBalancing.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the LBCookieStickinessPolicies collection
         /// </summary>
@@ -127,7 +127,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if LBCookieStickinessPolicies property is set
         internal bool IsSetLBCookieStickinessPolicies()
         {
-            return this.lBCookieStickinessPolicies.Count > 0;       
+            return this.lBCookieStickinessPolicies.Count > 0;
         }
 
         /// <summary>
@@ -154,7 +154,7 @@ namespace Amazon.ElasticLoadBalancing.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the OtherPolicies collection
         /// </summary>
@@ -174,7 +174,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if OtherPolicies property is set
         internal bool IsSetOtherPolicies()
         {
-            return this.otherPolicies.Count > 0;       
+            return this.otherPolicies.Count > 0;
         }
     }
 }

@@ -28,7 +28,7 @@ namespace Amazon.ElastiCache.Model
     /// 
     /// </ul>
     /// </summary>
-    public class CacheSubnetGroup
+    public partial class CacheSubnetGroup
     {
         
         private string cacheSubnetGroupName;

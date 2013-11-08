@@ -23,7 +23,7 @@ namespace Amazon.ElasticTranscoder.Model
     /// <summary>
     /// <para>The <c>ReadPipelineResponse</c> structure.</para>
     /// </summary>
-    public class ReadPipelineResult
+    public partial class ReadPipelineResult
     {
         
         private Pipeline pipeline;

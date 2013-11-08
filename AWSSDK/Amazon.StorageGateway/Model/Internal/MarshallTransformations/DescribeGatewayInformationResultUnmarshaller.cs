@@ -11,30 +11,32 @@
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
- */ 
+ */
     using System;
     using System.Collections.Generic;
     using System.IO;
     using Amazon.StorageGateway.Model;
     using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations 
-    { 
-      /// <summary> 
-      /// DescribeGatewayInformationResultUnmarshaller 
-      /// </summary> 
-      internal class DescribeGatewayInformationResultUnmarshaller : IUnmarshaller<DescribeGatewayInformationResult, XmlUnmarshallerContext>, IUnmarshaller<DescribeGatewayInformationResult, JsonUnmarshallerContext> 
-      { 
+    namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
+    {
+      /// <summary>
+      /// DescribeGatewayInformationResultUnmarshaller
+      /// </summary>
+      internal class DescribeGatewayInformationResultUnmarshaller : IUnmarshaller<DescribeGatewayInformationResult, XmlUnmarshallerContext>, IUnmarshaller<DescribeGatewayInformationResult, JsonUnmarshallerContext>
+      {
         DescribeGatewayInformationResult IUnmarshaller<DescribeGatewayInformationResult, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
           throw new NotImplementedException();
         }
-        
-        public DescribeGatewayInformationResult Unmarshall(JsonUnmarshallerContext context) 
+
+        public DescribeGatewayInformationResult Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             DescribeGatewayInformationResult describeGatewayInformationResult = new DescribeGatewayInformationResult();
-          describeGatewayInformationResult.GatewayNetworkInterfaces = null; 
-                                  
+          describeGatewayInformationResult.GatewayNetworkInterfaces = null;
+                        
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             while (context.Read())
@@ -43,32 +45,32 @@
                 {
                 context.Read();
                 context.Read();
-               
-              if (context.TestExpression("GatewayARN", targetDepth)) 
+              
+              if (context.TestExpression("GatewayARN", targetDepth))
               {
                 describeGatewayInformationResult.GatewayARN = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue; 
+                continue;
               }
-   
-              if (context.TestExpression("GatewayId", targetDepth)) 
+  
+              if (context.TestExpression("GatewayId", targetDepth))
               {
                 describeGatewayInformationResult.GatewayId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue; 
+                continue;
               }
-   
-              if (context.TestExpression("GatewayTimezone", targetDepth)) 
+  
+              if (context.TestExpression("GatewayTimezone", targetDepth))
               {
                 describeGatewayInformationResult.GatewayTimezone = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue; 
+                continue;
               }
-   
-              if (context.TestExpression("GatewayState", targetDepth)) 
+  
+              if (context.TestExpression("GatewayState", targetDepth))
               {
                 describeGatewayInformationResult.GatewayState = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue; 
+                continue;
               }
-   
-              if (context.TestExpression("GatewayNetworkInterfaces", targetDepth)) 
+  
+              if (context.TestExpression("GatewayNetworkInterfaces", targetDepth))
               {
                 describeGatewayInformationResult.GatewayNetworkInterfaces = new List<NetworkInterface>();
                         NetworkInterfaceUnmarshaller unmarshaller = NetworkInterfaceUnmarshaller.GetInstance();
@@ -83,39 +85,39 @@
                     break;
                   }
                 }
-                continue; 
+                continue;
               }
-   
-              if (context.TestExpression("GatewayType", targetDepth)) 
+  
+              if (context.TestExpression("GatewayType", targetDepth))
               {
                 describeGatewayInformationResult.GatewayType = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue; 
+                continue;
               }
-   
-              if (context.TestExpression("NextUpdateAvailabilityDate", targetDepth)) 
+  
+              if (context.TestExpression("NextUpdateAvailabilityDate", targetDepth))
               {
                 describeGatewayInformationResult.NextUpdateAvailabilityDate = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue; 
+                continue;
               }
-   
-                } 
-                else if (context.IsEndElement && context.CurrentDepth <= originalDepth) 
-                { 
-                    return describeGatewayInformationResult; 
-                } 
-            } 
+  
+                }
+                else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
+                {
+                    return describeGatewayInformationResult;
+                }
+            }
           
-          
-            return describeGatewayInformationResult; 
-        } 
-        
-        private static DescribeGatewayInformationResultUnmarshaller instance; 
-        public static DescribeGatewayInformationResultUnmarshaller GetInstance() 
-        { 
-            if (instance == null) 
-                instance = new DescribeGatewayInformationResultUnmarshaller(); 
+
+            return describeGatewayInformationResult;
+        }
+
+        private static DescribeGatewayInformationResultUnmarshaller instance;
+        public static DescribeGatewayInformationResultUnmarshaller GetInstance()
+        {
+            if (instance == null)
+                instance = new DescribeGatewayInformationResultUnmarshaller();
             return instance;
-        } 
-    } 
-} 
+        }
+    }
+}
   

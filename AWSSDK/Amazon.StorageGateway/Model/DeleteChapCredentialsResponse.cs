@@ -30,18 +30,18 @@ namespace Amazon.StorageGateway.Model
 
         /// <summary>
         /// Gets and sets the DeleteChapCredentialsResult property.
-        /// A JSON object containing the following fields: DeleteChapCredentialsOutput$InitiatorName DeleteChapCredentialsOutput$TargetARN
+        /// A JSON object containing the following fields:
         /// </summary>
         public DeleteChapCredentialsResult DeleteChapCredentialsResult
         {
-            get 
+            get
             {
                 if(this.deleteChapCredentialsResult == null)
                 {
                     this.deleteChapCredentialsResult = new DeleteChapCredentialsResult();
                 }
 
-                return this.deleteChapCredentialsResult; 
+                return this.deleteChapCredentialsResult;
             }
             set { this.deleteChapCredentialsResult = value; }
         }

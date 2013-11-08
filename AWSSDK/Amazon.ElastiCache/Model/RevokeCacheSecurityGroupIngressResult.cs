@@ -23,7 +23,7 @@ namespace Amazon.ElastiCache.Model
     /// <summary>
     /// The results from the RevokeCacheSecurityGroupIngress action.
     /// </summary>
-    public class RevokeCacheSecurityGroupIngressResult
+    public partial class RevokeCacheSecurityGroupIngressResult
     {
         private CacheSecurityGroup cacheSecurityGroupValue;
 

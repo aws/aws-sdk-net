@@ -20,10 +20,9 @@ using System.IO;
 
 namespace Amazon.StorageGateway.Model
 {
-    /// <summary>
-    /// <para>The Amazon Resource Name (ARN) of the gateway for which cache storage was configured.</para>
+    /// <summary>Add Cache Result
     /// </summary>
-    public class AddCacheResult  
+    public partial class AddCacheResult
     {
         
         private string gatewayARN;
@@ -64,7 +63,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if GatewayARN property is set
         internal bool IsSetGatewayARN()
         {
-            return this.gatewayARN != null;       
+            return this.gatewayARN != null;
         }
     }
 }

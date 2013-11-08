@@ -23,7 +23,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// <summary>
     /// <para> The Listener data type. </para>
     /// </summary>
-    public class Listener
+    public partial class Listener
     {
         
         private string protocol;

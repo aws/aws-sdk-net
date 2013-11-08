@@ -78,13 +78,8 @@ namespace Amazon.StorageGateway.Model
         // Check to see if GatewayARN property is set
         internal bool IsSetGatewayARN()
         {
-            return this.gatewayARN != null;       
+            return this.gatewayARN != null;
         }
-
-        /// <summary>
-        /// The size of the cached volume.
-        ///  
-        /// </summary>
         public long VolumeSizeInBytes
         {
             get { return this.volumeSizeInBytes ?? default(long); }
@@ -107,25 +102,8 @@ namespace Amazon.StorageGateway.Model
         // Check to see if VolumeSizeInBytes property is set
         internal bool IsSetVolumeSizeInBytes()
         {
-            return this.volumeSizeInBytes.HasValue;       
+            return this.volumeSizeInBytes.HasValue;
         }
-
-        /// <summary>
-        /// The snapshot ID (e.g., "snap-1122aabb") of the snapshot to restore as the new stored volume. Specify this field if you want to create the
-        /// iSCSI cached volume from a snapshot; otherwise, do not include this field. To list snapshots for your account, use <a
-        /// href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a> in
-        /// Amazon Elastic Compute Cloud API Reference.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>\Asnap-[0-9a-fA-F]{8}\z</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
         public string SnapshotId
         {
             get { return this.snapshotId; }
@@ -148,29 +126,8 @@ namespace Amazon.StorageGateway.Model
         // Check to see if SnapshotId property is set
         internal bool IsSetSnapshotId()
         {
-            return this.snapshotId != null;       
+            return this.snapshotId != null;
         }
-
-        /// <summary>
-        /// The name of the iSCSI target used by initiators to connect to the target and as a suffix for the target ARN. For example, specifying
-        /// <b>TargetName</b> as <i>myvolume</i> results in the target ARN of
-        /// <i>arn:aws:storagegateway:us-east-1:111122223333:gateway/mygateway/target/iqn.1997-05.com.amazon:myvolume</i>. The target name must be
-        /// unique across all volumes of a gateway.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 200</description>
-        ///     </item>
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>^[-\.;a-z0-9]+$</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
         public string TargetName
         {
             get { return this.targetName; }
@@ -193,23 +150,8 @@ namespace Amazon.StorageGateway.Model
         // Check to see if TargetName property is set
         internal bool IsSetTargetName()
         {
-            return this.targetName != null;       
+            return this.targetName != null;
         }
-
-        /// <summary>
-        /// The network interface of the gateway on which to expose the iSCSI target. Only IPv4 addresses are accepted. Use the
-        /// <a>DescribeGatewayInformation</a> operation to get a list of the network interfaces available on the gateway.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Pattern</term>
-        ///         <description>\A(25[0-5]|2[0-4]\d|[0-1]?\d?\d)(\.(25[0-5]|2[0-4]\d|[0-1]?\d?\d)){3}\z</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
         public string NetworkInterfaceId
         {
             get { return this.networkInterfaceId; }
@@ -232,22 +174,8 @@ namespace Amazon.StorageGateway.Model
         // Check to see if NetworkInterfaceId property is set
         internal bool IsSetNetworkInterfaceId()
         {
-            return this.networkInterfaceId != null;       
+            return this.networkInterfaceId != null;
         }
-
-        /// <summary>
-        /// A unique identifying string for the cached volume.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>5 - 100</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
         public string ClientToken
         {
             get { return this.clientToken; }
@@ -270,7 +198,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if ClientToken property is set
         internal bool IsSetClientToken()
         {
-            return this.clientToken != null;       
+            return this.clientToken != null;
         }
     }
 }

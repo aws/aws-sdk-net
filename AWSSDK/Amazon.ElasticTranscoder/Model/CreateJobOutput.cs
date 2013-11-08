@@ -23,7 +23,7 @@ namespace Amazon.ElasticTranscoder.Model
     /// <summary>
     /// <para>The <c>CreateJobOutput</c> structure.</para>
     /// </summary>
-    public class CreateJobOutput
+    public partial class CreateJobOutput
     {
         
         private string key;
@@ -33,6 +33,7 @@ namespace Amazon.ElasticTranscoder.Model
         private string segmentDuration;
         private List<JobWatermark> watermarks = new List<JobWatermark>();
         private JobAlbumArt albumArt;
+        private List<Clip> composition = new List<Clip>();
 
         /// <summary>
         /// The name to assign to the transcoded file. Elastic Transcoder saves the file in the Amazon S3 bucket specified by the <c>OutputBucket</c>
@@ -318,6 +319,55 @@ namespace Amazon.ElasticTranscoder.Model
         internal bool IsSetAlbumArt()
         {
             return this.albumArt != null;
+        }
+
+        /// <summary>
+        /// You can create an output file that contains an excerpt from the input file. This excerpt, called a clip, can come from the beginning,
+        /// middle, or end of the file. The Composition object contains settings for the clips that make up an output file. For the current release, you
+        /// can only specify settings for a single clip per output file. The Composition object cannot be null.
+        ///  
+        /// </summary>
+        public List<Clip> Composition
+        {
+            get { return this.composition; }
+            set { this.composition = value; }
+        }
+        /// <summary>
+        /// Adds elements to the Composition collection
+        /// </summary>
+        /// <param name="composition">The values to add to the Composition collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public CreateJobOutput WithComposition(params Clip[] composition)
+        {
+            foreach (Clip element in composition)
+            {
+                this.composition.Add(element);
+            }
+
+            return this;
+        }
+
+        /// <summary>
+        /// Adds elements to the Composition collection
+        /// </summary>
+        /// <param name="composition">The values to add to the Composition collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public CreateJobOutput WithComposition(IEnumerable<Clip> composition)
+        {
+            foreach (Clip element in composition)
+            {
+                this.composition.Add(element);
+            }
+
+            return this;
+        }
+
+        // Check to see if Composition property is set
+        internal bool IsSetComposition()
+        {
+            return this.composition.Count > 0;
         }
     }
 }

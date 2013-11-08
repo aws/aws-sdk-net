@@ -24,7 +24,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// <para> This data type is used as a response element in the DescribeLoadBalancers action to describe the configuration of the back-end
     /// server. </para>
     /// </summary>
-    public class BackendServerDescription  
+    public partial class BackendServerDescription
     {
         
         private int? instancePort;
@@ -65,7 +65,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if InstancePort property is set
         internal bool IsSetInstancePort()
         {
-            return this.instancePort.HasValue;       
+            return this.instancePort.HasValue;
         }
 
         /// <summary>
@@ -92,7 +92,7 @@ namespace Amazon.ElasticLoadBalancing.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the PolicyNames collection
         /// </summary>
@@ -112,7 +112,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if PolicyNames property is set
         internal bool IsSetPolicyNames()
         {
-            return this.policyNames.Count > 0;       
+            return this.policyNames.Count > 0;
         }
     }
 }

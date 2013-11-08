@@ -23,21 +23,21 @@ namespace Amazon.CloudFormation.Model
     /// <summary>
     /// <para>The output for GetTemplate action.</para>
     /// </summary>
-    public class GetTemplateResult
+    public partial class GetTemplateResult
     {
         
         private string templateBody;
 
         /// <summary>
         /// Structure containing the template body. (For more information, go to the <a
-        /// href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/">AWS CloudFormation User Guide</a>.)
+        /// href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/">AWS CloudFormation User Guide</a>.)
         ///  
         /// <para>
         /// <b>Constraints:</b>
         /// <list type="definition">
         ///     <item>
         ///         <term>Length</term>
-        ///         <description>1 - 51200</description>
+        ///         <description>1 - </description>
         ///     </item>
         /// </list>
         /// </para>

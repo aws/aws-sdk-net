@@ -23,7 +23,7 @@ namespace Amazon.CloudFormation.Model
     /// <summary>
     /// <para>Contains detailed information about the specified stack resource.</para>
     /// </summary>
-    public class StackResourceDetail
+    public partial class StackResourceDetail
     {
         
         private string stackName;
@@ -154,7 +154,7 @@ namespace Amazon.CloudFormation.Model
         }
 
         /// <summary>
-        /// Type of the resource. (For more information, go to the <a href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
+        /// Type of the resource. (For more information, go to the <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide">AWS
         /// CloudFormation User Guide</a>.)
         ///  
         /// </summary>
@@ -310,7 +310,7 @@ namespace Amazon.CloudFormation.Model
 
         /// <summary>
         /// The JSON format content of the <c>Metadata</c> attribute declared for the resource. For more information, see <a
-        /// href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-attribute-metadata.html">Metadata Attribute</a> in the AWS
+        /// href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-metadata.html">Metadata Attribute</a> in the AWS
         /// CloudFormation User Guide.
         ///  
         /// </summary>

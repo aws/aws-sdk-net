@@ -23,7 +23,7 @@ namespace Amazon.ElasticTranscoder.Model
     /// <summary>
     /// <para>The CreateJobResponse structure.</para>
     /// </summary>
-    public class CreateJobResult
+    public partial class CreateJobResult
     {
         
         private Job job;

@@ -20,22 +20,17 @@ using System.IO;
 
 namespace Amazon.StorageGateway.Model
 {
-    /// <summary>
-    /// <para>A JSON object containing the following fields:</para>
-    /// <ul>
-    /// <li> ListVolumeRecoveryPointsOutput$GatewayARN </li>
-    /// <li> ListVolumeRecoveryPointsOutput$VolumeRecoveryPointInfos </li>
-    /// 
-    /// </ul>
+    /// <summary>List Volume Recovery Points Result
     /// </summary>
-    public class ListVolumeRecoveryPointsResult  
+    public partial class ListVolumeRecoveryPointsResult
     {
         
         private string gatewayARN;
         private List<VolumeRecoveryPointInfo> volumeRecoveryPointInfos = new List<VolumeRecoveryPointInfo>();
 
         /// <summary>
-        /// The Amazon Resource Name (ARN) of the activated gateway whose local disk information is returned.
+        /// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and
+        /// region.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -69,14 +64,8 @@ namespace Amazon.StorageGateway.Model
         // Check to see if GatewayARN property is set
         internal bool IsSetGatewayARN()
         {
-            return this.gatewayARN != null;       
+            return this.gatewayARN != null;
         }
-
-        /// <summary>
-        /// An array of <a>VolumeRecoveryPointInfo</a> objects, where each object describes a recovery point. If no recovery points are defined for the
-        /// volume, then <i>VolumeRecoveryPointInfos</i> is an empty array "[]"
-        ///  
-        /// </summary>
         public List<VolumeRecoveryPointInfo> VolumeRecoveryPointInfos
         {
             get { return this.volumeRecoveryPointInfos; }
@@ -97,7 +86,7 @@ namespace Amazon.StorageGateway.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the VolumeRecoveryPointInfos collection
         /// </summary>
@@ -117,7 +106,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if VolumeRecoveryPointInfos property is set
         internal bool IsSetVolumeRecoveryPointInfos()
         {
-            return this.volumeRecoveryPointInfos.Count > 0;       
+            return this.volumeRecoveryPointInfos.Count > 0;
         }
     }
 }

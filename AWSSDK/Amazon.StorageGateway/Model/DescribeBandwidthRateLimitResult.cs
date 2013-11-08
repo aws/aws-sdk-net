@@ -22,14 +22,8 @@ namespace Amazon.StorageGateway.Model
 {
     /// <summary>
     /// <para>A JSON object containing the following fields:</para>
-    /// <ul>
-    /// <li> GatewayARN </li>
-    /// <li> DescribeBandwidthRateLimitOutput$AverageDownloadRateLimitInBitsPerSec </li>
-    /// <li> DescribeBandwidthRateLimitOutput$AverageDownloadRateLimitInBitsPerSec </li>
-    /// 
-    /// </ul>
     /// </summary>
-    public class DescribeBandwidthRateLimitResult  
+    public partial class DescribeBandwidthRateLimitResult
     {
         
         private string gatewayARN;
@@ -72,7 +66,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if GatewayARN property is set
         internal bool IsSetGatewayARN()
         {
-            return this.gatewayARN != null;       
+            return this.gatewayARN != null;
         }
 
         /// <summary>
@@ -110,7 +104,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if AverageUploadRateLimitInBitsPerSec property is set
         internal bool IsSetAverageUploadRateLimitInBitsPerSec()
         {
-            return this.averageUploadRateLimitInBitsPerSec.HasValue;       
+            return this.averageUploadRateLimitInBitsPerSec.HasValue;
         }
 
         /// <summary>
@@ -149,7 +143,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if AverageDownloadRateLimitInBitsPerSec property is set
         internal bool IsSetAverageDownloadRateLimitInBitsPerSec()
         {
-            return this.averageDownloadRateLimitInBitsPerSec.HasValue;       
+            return this.averageDownloadRateLimitInBitsPerSec.HasValue;
         }
     }
 }

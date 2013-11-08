@@ -30,18 +30,18 @@ namespace Amazon.StorageGateway.Model
 
         /// <summary>
         /// Gets and sets the UpdateMaintenanceStartTimeResult property.
-        /// A JSON object containing the GatewayARN of the gateway whose maintenance start time is updated.
+        /// A JSON object containing the of the gateway whose maintenance start time is updated.
         /// </summary>
         public UpdateMaintenanceStartTimeResult UpdateMaintenanceStartTimeResult
         {
-            get 
+            get
             {
                 if(this.updateMaintenanceStartTimeResult == null)
                 {
                     this.updateMaintenanceStartTimeResult = new UpdateMaintenanceStartTimeResult();
                 }
 
-                return this.updateMaintenanceStartTimeResult; 
+                return this.updateMaintenanceStartTimeResult;
             }
             set { this.updateMaintenanceStartTimeResult = value; }
         }

@@ -23,7 +23,7 @@ namespace Amazon.ElastiCache.Model
     /// <summary>
     /// The results from the DeleteReplicationGroup action.
     /// </summary>
-    public class DeleteReplicationGroupResult
+    public partial class DeleteReplicationGroupResult
     {
         private ReplicationGroup replicationGroupValue;
 

@@ -36,6 +36,7 @@
                 return null;
             JobOutput jobOutput = new JobOutput();
           jobOutput.Watermarks = null;
+                        jobOutput.Composition = null;
                         
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
@@ -133,6 +134,24 @@
               if (context.TestExpression("AlbumArt", targetDepth))
               {
                 jobOutput.AlbumArt = JobAlbumArtUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
+              if (context.TestExpression("Composition", targetDepth))
+              {
+                jobOutput.Composition = new List<Clip>();
+                        ClipUnmarshaller unmarshaller = ClipUnmarshaller.GetInstance();
+                while (context.Read())
+                {
+                  if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))
+                  {
+                     jobOutput.Composition.Add(unmarshaller.Unmarshall(context));
+                  }
+                  else if (context.IsEndArray)
+                  {
+                    break;
+                  }
+                }
                 continue;
               }
   

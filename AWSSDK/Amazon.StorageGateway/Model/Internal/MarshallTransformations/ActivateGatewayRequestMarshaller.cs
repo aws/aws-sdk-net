@@ -38,7 +38,7 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
         {
 
             IRequest request = new DefaultRequest(activateGatewayRequest, "AmazonStorageGateway");
-            string target = "StorageGateway_20120630.ActivateGateway";
+            string target = "StorageGateway_20130630.ActivateGateway";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
 
@@ -97,6 +97,16 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                 {
                     writer.WritePropertyName("GatewayType");
                     writer.Write(activateGatewayRequest.GatewayType);
+                }
+                if (activateGatewayRequest != null && activateGatewayRequest.IsSetTapeDriveType()) 
+                {
+                    writer.WritePropertyName("TapeDriveType");
+                    writer.Write(activateGatewayRequest.TapeDriveType);
+                }
+                if (activateGatewayRequest != null && activateGatewayRequest.IsSetMediumChangerType()) 
+                {
+                    writer.WritePropertyName("MediumChangerType");
+                    writer.Write(activateGatewayRequest.MediumChangerType);
                 }
 
                 writer.WriteObjectEnd();

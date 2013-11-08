@@ -23,7 +23,7 @@ namespace Amazon.ElastiCache.Model
     /// <summary>
     /// <para>Describes all of the attributes of a reserved cache node offering.</para>
     /// </summary>
-    public class ReservedCacheNodesOffering
+    public partial class ReservedCacheNodesOffering
     {
         
         private string reservedCacheNodesOfferingId;

@@ -30,18 +30,18 @@ namespace Amazon.StorageGateway.Model
 
         /// <summary>
         /// Gets and sets the DeleteVolumeResult property.
-        /// A JSON object containing the DeleteVolumeOutput$VolumeARN of the storage volume that was deleted
+        /// A JSON object containing the of the storage volume that was deleted
         /// </summary>
         public DeleteVolumeResult DeleteVolumeResult
         {
-            get 
+            get
             {
                 if(this.deleteVolumeResult == null)
                 {
                     this.deleteVolumeResult = new DeleteVolumeResult();
                 }
 
-                return this.deleteVolumeResult; 
+                return this.deleteVolumeResult;
             }
             set { this.deleteVolumeResult = value; }
         }

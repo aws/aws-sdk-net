@@ -22,17 +22,8 @@ namespace Amazon.StorageGateway.Model
 {
     /// <summary>
     /// <para>A JSON object containing the following fields:</para>
-    /// <ul>
-    /// <li> GatewayARN </li>
-    /// <li> DescribeGatewayInformationOutput$GatewayId </li>
-    /// <li> DescribeGatewayInformationOutput$GatewayNetworkInterfaces </li>
-    /// <li> DescribeGatewayInformationOutput$GatewayState </li>
-    /// <li> DescribeGatewayInformationOutput$GatewayTimezone </li>
-    /// <li> DescribeGatewayInformationOutput$NextUpdateAvailabilityDate </li>
-    /// 
-    /// </ul>
     /// </summary>
-    public class DescribeGatewayInformationResult  
+    public partial class DescribeGatewayInformationResult
     {
         
         private string gatewayARN;
@@ -79,7 +70,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if GatewayARN property is set
         internal bool IsSetGatewayARN()
         {
-            return this.gatewayARN != null;       
+            return this.gatewayARN != null;
         }
 
         /// <summary>
@@ -117,18 +108,18 @@ namespace Amazon.StorageGateway.Model
         // Check to see if GatewayId property is set
         internal bool IsSetGatewayId()
         {
-            return this.gatewayId != null;       
+            return this.gatewayId != null;
         }
 
         /// <summary>
-        /// One of the <a>GatewayTimezone</a> values that indicates the time zone configured for the gateway.
+        /// One of the values that indicates the time zone configured for the gateway.
         ///  
         /// <para>
         /// <b>Constraints:</b>
         /// <list type="definition">
         ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>GMT-12:00, GMT-11:00, GMT-10:00, GMT-9:00, GMT-8:00, GMT-7:00, GMT-6:00, GMT-5:00, GMT-4:00, GMT-3:30, GMT-3:00, GMT-2:00, GMT-1:00, GMT, GMT+1:00, GMT+2:00, GMT+3:00, GMT+3:30, GMT+4:00, GMT+4:30, GMT+5:00, GMT+5:30, GMT+5:45, GMT+6:00, GMT+7:00, GMT+8:00, GMT+9:00, GMT+9:30, GMT+10:00, GMT+11:00, GMT+12:00</description>
+        ///         <term>Length</term>
+        ///         <description>3 - 10</description>
         ///     </item>
         /// </list>
         /// </para>
@@ -155,18 +146,18 @@ namespace Amazon.StorageGateway.Model
         // Check to see if GatewayTimezone property is set
         internal bool IsSetGatewayTimezone()
         {
-            return this.gatewayTimezone != null;       
+            return this.gatewayTimezone != null;
         }
 
         /// <summary>
-        /// One of the <a>GatewayState</a> values that indicates the operating state of the gateway.
+        /// One of the values that indicates the operating state of the gateway.
         ///  
         /// <para>
         /// <b>Constraints:</b>
         /// <list type="definition">
         ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>RUNNING, SHUTDOWN</description>
+        ///         <term>Length</term>
+        ///         <description>2 - 25</description>
         ///     </item>
         /// </list>
         /// </para>
@@ -193,7 +184,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if GatewayState property is set
         internal bool IsSetGatewayState()
         {
-            return this.gatewayState != null;       
+            return this.gatewayState != null;
         }
 
         /// <summary>
@@ -220,7 +211,7 @@ namespace Amazon.StorageGateway.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the GatewayNetworkInterfaces collection
         /// </summary>
@@ -240,7 +231,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if GatewayNetworkInterfaces property is set
         internal bool IsSetGatewayNetworkInterfaces()
         {
-            return this.gatewayNetworkInterfaces.Count > 0;       
+            return this.gatewayNetworkInterfaces.Count > 0;
         }
 
         /// <summary>
@@ -250,8 +241,8 @@ namespace Amazon.StorageGateway.Model
         /// <b>Constraints:</b>
         /// <list type="definition">
         ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>STORED, CACHED</description>
+        ///         <term>Length</term>
+        ///         <description>2 - 20</description>
         ///     </item>
         /// </list>
         /// </para>
@@ -278,7 +269,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if GatewayType property is set
         internal bool IsSetGatewayType()
         {
-            return this.gatewayType != null;       
+            return this.gatewayType != null;
         }
 
         /// <summary>
@@ -318,7 +309,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if NextUpdateAvailabilityDate property is set
         internal bool IsSetNextUpdateAvailabilityDate()
         {
-            return this.nextUpdateAvailabilityDate != null;       
+            return this.nextUpdateAvailabilityDate != null;
         }
     }
 }

@@ -30,18 +30,18 @@ namespace Amazon.StorageGateway.Model
 
         /// <summary>
         /// Gets and sets the AddUploadBufferResult property.
-        /// The Amazon Resource Name (ARN) of the gateway for which upload buffer was configured.
+        /// 
         /// </summary>
         public AddUploadBufferResult AddUploadBufferResult
         {
-            get 
+            get
             {
                 if(this.addUploadBufferResult == null)
                 {
                     this.addUploadBufferResult = new AddUploadBufferResult();
                 }
 
-                return this.addUploadBufferResult; 
+                return this.addUploadBufferResult;
             }
             set { this.addUploadBufferResult = value; }
         }

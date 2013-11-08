@@ -23,7 +23,7 @@ namespace Amazon.ElasticTranscoder.Model
     /// <summary>
     /// <para>The response body contains a JSON object. If the job is successfully canceled, the value of <c>Success</c> is <c>true</c> .</para>
     /// </summary>
-    public class CancelJobResult
+    public partial class CancelJobResult
     {
         
     }

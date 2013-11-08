@@ -21,9 +21,9 @@ using System.IO;
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
-    /// <para>A JSON object containing the GatewayARN of the gateway for which working storage was configured.</para>
+    /// <para>A JSON object containing the of the gateway for which working storage was configured.</para>
     /// </summary>
-    public class AddWorkingStorageResult  
+    public partial class AddWorkingStorageResult
     {
         
         private string gatewayARN;
@@ -64,7 +64,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if GatewayARN property is set
         internal bool IsSetGatewayARN()
         {
-            return this.gatewayARN != null;       
+            return this.gatewayARN != null;
         }
     }
 }

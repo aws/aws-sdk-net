@@ -23,7 +23,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// <summary>
     /// <para> The output for the AttachLoadBalancerToSubnets action. </para>
     /// </summary>
-    public class AttachLoadBalancerToSubnetsResult
+    public partial class AttachLoadBalancerToSubnetsResult
     {
         
         private List<string> subnets = new List<string>();

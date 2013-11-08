@@ -25,11 +25,12 @@ namespace Amazon.StorageGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the ActivateGateway operation.
-    /// <para>This operation activates the gateway you previously deployed on your VMware host. For more information, see Downloading and Deploying
-    /// AWS Storage Gateway VM. In the activation process you specify information such as the region you want to use for storing snapshots, the time
-    /// zone for scheduled snapshots and the gateway schedule window, an activation key, and a name for your gateway. The activation process also
-    /// associates your gateway with your account (see UpdateGatewayInformation).</para> <para><b>NOTE:</b>You must power on the gateway VM before
-    /// you can activate your gateway.</para>
+    /// <para>This operation activates the gateway you previously deployed on your host. For more information, see <a
+    /// href="http://docs.aws.amazon.com/storagegateway/latest/userguide/DownloadAndDeploy.html" >Downloading and Deploying AWS Storage Gateway
+    /// VM</a> . In the activation process you specify information such as the region you want to use for storing snapshots, the time zone for
+    /// scheduled snapshots and the gateway schedule window, an activation key, and a name for your gateway. The activation process also associates
+    /// your gateway with your account (see UpdateGatewayInformation).</para> <para><b>NOTE:</b>You must power on the gateway VM before you can
+    /// activate your gateway.</para>
     /// </summary>
     /// <seealso cref="Amazon.StorageGateway.AmazonStorageGateway.ActivateGateway"/>
     public class ActivateGatewayRequest : AmazonWebServiceRequest
@@ -39,6 +40,8 @@ namespace Amazon.StorageGateway.Model
         private string gatewayTimezone;
         private string gatewayRegion;
         private string gatewayType;
+        private string tapeDriveType;
+        private string mediumChangerType;
 
         /// <summary>
         /// Your gateway activation key. You can obtain the activation key by sending an HTTP GET request with redirects enabled to the gateway IP
@@ -78,7 +81,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if ActivationKey property is set
         internal bool IsSetActivationKey()
         {
-            return this.activationKey != null;       
+            return this.activationKey != null;
         }
 
         /// <summary>
@@ -121,7 +124,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if GatewayName property is set
         internal bool IsSetGatewayName()
         {
-            return this.gatewayName != null;       
+            return this.gatewayName != null;
         }
 
         /// <summary>
@@ -132,8 +135,8 @@ namespace Amazon.StorageGateway.Model
         /// <b>Constraints:</b>
         /// <list type="definition">
         ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>GMT-12:00, GMT-11:00, GMT-10:00, GMT-9:00, GMT-8:00, GMT-7:00, GMT-6:00, GMT-5:00, GMT-4:00, GMT-3:30, GMT-3:00, GMT-2:00, GMT-1:00, GMT, GMT+1:00, GMT+2:00, GMT+3:00, GMT+3:30, GMT+4:00, GMT+4:30, GMT+5:00, GMT+5:30, GMT+5:45, GMT+6:00, GMT+7:00, GMT+8:00, GMT+9:00, GMT+9:30, GMT+10:00, GMT+11:00, GMT+12:00</description>
+        ///         <term>Length</term>
+        ///         <description>3 - 10</description>
         ///     </item>
         /// </list>
         /// </para>
@@ -160,14 +163,14 @@ namespace Amazon.StorageGateway.Model
         // Check to see if GatewayTimezone property is set
         internal bool IsSetGatewayTimezone()
         {
-            return this.gatewayTimezone != null;       
+            return this.gatewayTimezone != null;
         }
 
         /// <summary>
         /// One of the values that indicates the region where you want to store the snapshot backups. The gateway region specified must be the same
         /// region as the region in your <c>Host</c> header in the request. For more information about available regions and endpoints for AWS Storage
-        /// Gateway, see <a href="http://docs.amazonwebservices.com/general/latest/gr/rande.html#sg_region">Regions and Endpoints</a> in the <b>Amazon
-        /// Web Services Glossary</b>. <i>Valid Values</i>: "us-east-1", "us-west-1", "us-west-2", "eu-west-1", "ap-northeast-1", "ap-southest-1",
+        /// Gateway, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">Regions and Endpoints</a> in the <b>Amazon Web
+        /// Services Glossary</b>. <i>Valid Values</i>: "us-east-1", "us-west-1", "us-west-2", "eu-west-1", "ap-northeast-1", "ap-southest-1",
         /// "sa-east-1"
         ///  
         /// <para>
@@ -202,7 +205,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if GatewayRegion property is set
         internal bool IsSetGatewayRegion()
         {
-            return this.gatewayRegion != null;       
+            return this.gatewayRegion != null;
         }
 
         /// <summary>
@@ -213,8 +216,8 @@ namespace Amazon.StorageGateway.Model
         /// <b>Constraints:</b>
         /// <list type="definition">
         ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>STORED, CACHED</description>
+        ///         <term>Length</term>
+        ///         <description>2 - 20</description>
         ///     </item>
         /// </list>
         /// </para>
@@ -241,7 +244,55 @@ namespace Amazon.StorageGateway.Model
         // Check to see if GatewayType property is set
         internal bool IsSetGatewayType()
         {
-            return this.gatewayType != null;       
+            return this.gatewayType != null;
+        }
+        public string TapeDriveType
+        {
+            get { return this.tapeDriveType; }
+            set { this.tapeDriveType = value; }
+        }
+
+        /// <summary>
+        /// Sets the TapeDriveType property
+        /// </summary>
+        /// <param name="tapeDriveType">The value to set for the TapeDriveType property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public ActivateGatewayRequest WithTapeDriveType(string tapeDriveType)
+        {
+            this.tapeDriveType = tapeDriveType;
+            return this;
+        }
+            
+
+        // Check to see if TapeDriveType property is set
+        internal bool IsSetTapeDriveType()
+        {
+            return this.tapeDriveType != null;
+        }
+        public string MediumChangerType
+        {
+            get { return this.mediumChangerType; }
+            set { this.mediumChangerType = value; }
+        }
+
+        /// <summary>
+        /// Sets the MediumChangerType property
+        /// </summary>
+        /// <param name="mediumChangerType">The value to set for the MediumChangerType property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public ActivateGatewayRequest WithMediumChangerType(string mediumChangerType)
+        {
+            this.mediumChangerType = mediumChangerType;
+            return this;
+        }
+            
+
+        // Check to see if MediumChangerType property is set
+        internal bool IsSetMediumChangerType()
+        {
+            return this.mediumChangerType != null;
         }
     }
 }

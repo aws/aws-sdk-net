@@ -23,7 +23,7 @@ namespace Amazon.ElastiCache.Model
     /// <summary>
     /// <para>Describes a name-value pair that is used to update the value of a parameter.</para>
     /// </summary>
-    public class ParameterNameValue
+    public partial class ParameterNameValue
     {
         
         private string parameterName;

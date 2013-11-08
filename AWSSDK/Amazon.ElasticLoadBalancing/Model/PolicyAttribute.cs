@@ -23,7 +23,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// <summary>
     /// <para> The PolicyAttribute data type. This data type contains a key/value pair that defines properties of a specific policy. </para>
     /// </summary>
-    public class PolicyAttribute  
+    public partial class PolicyAttribute
     {
         
         private string attributeName;
@@ -42,7 +42,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// 
         /// <param name="attributeName"> The name of the attribute associated with the policy. </param>
         /// <param name="attributeValue"> The value of the attribute associated with the policy. </param>
-        public PolicyAttribute(string attributeName, string attributeValue) 
+        public PolicyAttribute(string attributeName, string attributeValue)
         {
             this.attributeName = attributeName;
             this.attributeValue = attributeValue;
@@ -75,7 +75,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if AttributeName property is set
         internal bool IsSetAttributeName()
         {
-            return this.attributeName != null;       
+            return this.attributeName != null;
         }
 
         /// <summary>
@@ -104,7 +104,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if AttributeValue property is set
         internal bool IsSetAttributeValue()
         {
-            return this.attributeValue != null;       
+            return this.attributeValue != null;
         }
     }
 }

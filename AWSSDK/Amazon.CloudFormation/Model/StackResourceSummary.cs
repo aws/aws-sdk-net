@@ -23,7 +23,7 @@ namespace Amazon.CloudFormation.Model
     /// <summary>
     /// <para>Contains high-level information about the specified stack resource.</para>
     /// </summary>
-    public class StackResourceSummary
+    public partial class StackResourceSummary
     {
         
         private string logicalResourceId;
@@ -92,7 +92,7 @@ namespace Amazon.CloudFormation.Model
         }
 
         /// <summary>
-        /// Type of the resource. (For more information, go to the <a href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
+        /// Type of the resource. (For more information, go to the <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide">AWS
         /// CloudFormation User Guide</a>.)
         ///  
         /// </summary>

@@ -29,7 +29,7 @@ namespace Amazon.ElasticTranscoder.Model
     /// graphics in the job than you specify watermark settings in the preset, which allows you to use the same preset for up to four watermarks
     /// that have different dimensions.</para>
     /// </summary>
-    public class PresetWatermark
+    public partial class PresetWatermark
     {
         
         private string id;

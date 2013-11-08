@@ -23,7 +23,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// <summary>
     /// <para> The output for the DescribeLoadBalancerPolicyTypes action. </para>
     /// </summary>
-    public class DescribeLoadBalancerPolicyTypesResult  
+    public partial class DescribeLoadBalancerPolicyTypesResult
     {
         
         private List<PolicyTypeDescription> policyTypeDescriptions = new List<PolicyTypeDescription>();
@@ -53,7 +53,7 @@ namespace Amazon.ElasticLoadBalancing.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the PolicyTypeDescriptions collection
         /// </summary>
@@ -73,7 +73,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if PolicyTypeDescriptions property is set
         internal bool IsSetPolicyTypeDescriptions()
         {
-            return this.policyTypeDescriptions.Count > 0;       
+            return this.policyTypeDescriptions.Count > 0;
         }
     }
 }

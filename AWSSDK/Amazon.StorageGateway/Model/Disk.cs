@@ -20,10 +20,9 @@ using System.IO;
 
 namespace Amazon.StorageGateway.Model
 {
-    /// <summary>
-    /// <para>Describes a gateway local disk.</para>
+    /// <summary>Disk
     /// </summary>
-    public class Disk  
+    public partial class Disk
     {
         
         private string diskId;
@@ -32,20 +31,6 @@ namespace Amazon.StorageGateway.Model
         private long? diskSizeInBytes;
         private string diskAllocationType;
         private string diskAllocationResource;
-
-        /// <summary>
-        /// The unique device ID or other distinguishing data that identify the local disk.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 300</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
         public string DiskId
         {
             get { return this.diskId; }
@@ -68,13 +53,8 @@ namespace Amazon.StorageGateway.Model
         // Check to see if DiskId property is set
         internal bool IsSetDiskId()
         {
-            return this.diskId != null;       
+            return this.diskId != null;
         }
-
-        /// <summary>
-        /// The path of the local disk in the gateway virtual machine (VM).
-        ///  
-        /// </summary>
         public string DiskPath
         {
             get { return this.diskPath; }
@@ -97,13 +77,8 @@ namespace Amazon.StorageGateway.Model
         // Check to see if DiskPath property is set
         internal bool IsSetDiskPath()
         {
-            return this.diskPath != null;       
+            return this.diskPath != null;
         }
-
-        /// <summary>
-        /// The device node of the local disk as assigned by the virtualization environment.
-        ///  
-        /// </summary>
         public string DiskNode
         {
             get { return this.diskNode; }
@@ -126,13 +101,8 @@ namespace Amazon.StorageGateway.Model
         // Check to see if DiskNode property is set
         internal bool IsSetDiskNode()
         {
-            return this.diskNode != null;       
+            return this.diskNode != null;
         }
-
-        /// <summary>
-        /// The local disk size in bytes.
-        ///  
-        /// </summary>
         public long DiskSizeInBytes
         {
             get { return this.diskSizeInBytes ?? default(long); }
@@ -155,22 +125,8 @@ namespace Amazon.StorageGateway.Model
         // Check to see if DiskSizeInBytes property is set
         internal bool IsSetDiskSizeInBytes()
         {
-            return this.diskSizeInBytes.HasValue;       
+            return this.diskSizeInBytes.HasValue;
         }
-
-        /// <summary>
-        /// One of the <a>DiskAllocationType</a> enumeration values that identifies how the local disk is used.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>AVAILABLE, CACHE STORAGE, STORED iSCSI VOLUME, UPLOAD BUFFER, WORKING STORAGE</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
         public string DiskAllocationType
         {
             get { return this.diskAllocationType; }
@@ -193,14 +149,8 @@ namespace Amazon.StorageGateway.Model
         // Check to see if DiskAllocationType property is set
         internal bool IsSetDiskAllocationType()
         {
-            return this.diskAllocationType != null;       
+            return this.diskAllocationType != null;
         }
-
-        /// <summary>
-        /// The iSCSI Qualified Name (IQN) that is defined for the disk. This field is not included in the response if the local disk is not defined as
-        /// an iSCSI target. The format of this field is <i>targetIqn::LUNNumber::region-volumeId</i>.
-        ///  
-        /// </summary>
         public string DiskAllocationResource
         {
             get { return this.diskAllocationResource; }
@@ -223,7 +173,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if DiskAllocationResource property is set
         internal bool IsSetDiskAllocationResource()
         {
-            return this.diskAllocationResource != null;       
+            return this.diskAllocationResource != null;
         }
     }
 }

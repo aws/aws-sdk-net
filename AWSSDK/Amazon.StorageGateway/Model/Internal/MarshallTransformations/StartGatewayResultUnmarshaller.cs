@@ -11,29 +11,31 @@
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
- */ 
+ */
     using System;
     using System.Collections.Generic;
     using System.IO;
     using Amazon.StorageGateway.Model;
     using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations 
-    { 
-      /// <summary> 
-      /// StartGatewayResultUnmarshaller 
-      /// </summary> 
-      internal class StartGatewayResultUnmarshaller : IUnmarshaller<StartGatewayResult, XmlUnmarshallerContext>, IUnmarshaller<StartGatewayResult, JsonUnmarshallerContext> 
-      { 
+    namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
+    {
+      /// <summary>
+      /// StartGatewayResultUnmarshaller
+      /// </summary>
+      internal class StartGatewayResultUnmarshaller : IUnmarshaller<StartGatewayResult, XmlUnmarshallerContext>, IUnmarshaller<StartGatewayResult, JsonUnmarshallerContext>
+      {
         StartGatewayResult IUnmarshaller<StartGatewayResult, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
           throw new NotImplementedException();
         }
-        
-        public StartGatewayResult Unmarshall(JsonUnmarshallerContext context) 
+
+        public StartGatewayResult Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             StartGatewayResult startGatewayResult = new StartGatewayResult();
-                    
+          
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             while (context.Read())
@@ -42,31 +44,31 @@
                 {
                 context.Read();
                 context.Read();
-               
-              if (context.TestExpression("GatewayARN", targetDepth)) 
+              
+              if (context.TestExpression("GatewayARN", targetDepth))
               {
                 startGatewayResult.GatewayARN = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue; 
+                continue;
               }
-   
-                } 
-                else if (context.IsEndElement && context.CurrentDepth <= originalDepth) 
-                { 
-                    return startGatewayResult; 
-                } 
-            } 
+  
+                }
+                else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
+                {
+                    return startGatewayResult;
+                }
+            }
           
-          
-            return startGatewayResult; 
-        } 
-        
-        private static StartGatewayResultUnmarshaller instance; 
-        public static StartGatewayResultUnmarshaller GetInstance() 
-        { 
-            if (instance == null) 
-                instance = new StartGatewayResultUnmarshaller(); 
+
+            return startGatewayResult;
+        }
+
+        private static StartGatewayResultUnmarshaller instance;
+        public static StartGatewayResultUnmarshaller GetInstance()
+        {
+            if (instance == null)
+                instance = new StartGatewayResultUnmarshaller();
             return instance;
-        } 
-    } 
-} 
+        }
+    }
+}
   

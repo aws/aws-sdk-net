@@ -236,6 +236,41 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
                                 writer.WriteObjectEnd();
                             }
                         }
+
+                        if (output != null && output.Composition != null && output.Composition.Count > 0)
+                        {
+                            List<Clip> compositionList = output.Composition;
+                            writer.WritePropertyName("Composition");
+                            writer.WriteArrayStart();
+
+                            foreach (Clip compositionListValue in compositionList) 
+                            {
+                                writer.WriteObjectStart();
+
+                                if (compositionListValue != null) 
+                                {
+                                    TimeSpan timeSpan = compositionListValue.TimeSpan;
+                                    if (timeSpan != null)
+                                    {
+                                        writer.WritePropertyName("TimeSpan");
+                                        writer.WriteObjectStart();
+                                        if (timeSpan != null && timeSpan.IsSetStartTime()) 
+                                        {
+                                            writer.WritePropertyName("StartTime");
+                                            writer.Write(timeSpan.StartTime);
+                                        }
+                                        if (timeSpan != null && timeSpan.IsSetDuration()) 
+                                        {
+                                            writer.WritePropertyName("Duration");
+                                            writer.Write(timeSpan.Duration);
+                                        }
+                                        writer.WriteObjectEnd();
+                                    }
+                                }
+                                writer.WriteObjectEnd();
+                            }
+                            writer.WriteArrayEnd();
+                        }
                         writer.WriteObjectEnd();
                     }
                 }
@@ -357,6 +392,41 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
                                 }
                                 writer.WriteObjectEnd();
                             }
+                        }
+
+                        if (outputsListValue != null && outputsListValue.Composition != null && outputsListValue.Composition.Count > 0)
+                        {
+                            List<Clip> compositionList = outputsListValue.Composition;
+                            writer.WritePropertyName("Composition");
+                            writer.WriteArrayStart();
+
+                            foreach (Clip compositionListValue in compositionList) 
+                            {
+                                writer.WriteObjectStart();
+
+                                if (compositionListValue != null) 
+                                {
+                                    TimeSpan timeSpan = compositionListValue.TimeSpan;
+                                    if (timeSpan != null)
+                                    {
+                                        writer.WritePropertyName("TimeSpan");
+                                        writer.WriteObjectStart();
+                                        if (timeSpan != null && timeSpan.IsSetStartTime()) 
+                                        {
+                                            writer.WritePropertyName("StartTime");
+                                            writer.Write(timeSpan.StartTime);
+                                        }
+                                        if (timeSpan != null && timeSpan.IsSetDuration()) 
+                                        {
+                                            writer.WritePropertyName("Duration");
+                                            writer.Write(timeSpan.Duration);
+                                        }
+                                        writer.WriteObjectEnd();
+                                    }
+                                }
+                                writer.WriteObjectEnd();
+                            }
+                            writer.WriteArrayEnd();
                         }
                         writer.WriteObjectEnd();
                     }

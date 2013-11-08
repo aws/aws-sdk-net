@@ -23,7 +23,7 @@ namespace Amazon.ElastiCache.Model
     /// <summary>
     /// <para>Represents the output of a DescribeCacheEngineVersions operation.</para>
     /// </summary>
-    public class DescribeCacheEngineVersionsResult
+    public partial class DescribeCacheEngineVersionsResult
     {
         
         private string marker;

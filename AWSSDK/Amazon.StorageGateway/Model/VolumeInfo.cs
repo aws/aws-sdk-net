@@ -20,30 +20,13 @@ using System.IO;
 
 namespace Amazon.StorageGateway.Model
 {
-    /// <summary>
-    /// <para>Describes a storage volume.</para>
+    /// <summary>Volume Info
     /// </summary>
-    public class VolumeInfo  
+    public partial class VolumeInfo
     {
         
         private string volumeARN;
         private string volumeType;
-
-        /// <summary>
-        /// The Amazon Resource Name (ARN) for the storage volume. For example, the following is a valid ARN:
-        /// <c>arn:aws:storagegateway:us-east-1:111122223333:gateway/mygateway/volume/vol-1122AABB</c> <i>Valid Values</i>: 50 to 500 lowercase letters,
-        /// numbers, periods (.), and hyphens (-).
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>50 - 500</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
         public string VolumeARN
         {
             get { return this.volumeARN; }
@@ -66,22 +49,8 @@ namespace Amazon.StorageGateway.Model
         // Check to see if VolumeARN property is set
         internal bool IsSetVolumeARN()
         {
-            return this.volumeARN != null;       
+            return this.volumeARN != null;
         }
-
-        /// <summary>
-        /// One of the VolumeType values that indicates the configuration of the storage volume, for example as a storage volume.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>STORED iSCSI, CACHED iSCSI</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
         public string VolumeType
         {
             get { return this.volumeType; }
@@ -104,7 +73,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if VolumeType property is set
         internal bool IsSetVolumeType()
         {
-            return this.volumeType != null;       
+            return this.volumeType != null;
         }
     }
 }

@@ -23,7 +23,7 @@ namespace Amazon.ElastiCache.Model
     /// <summary>
     /// <para>Represents the output of a <i>DescribeEngineDefaultParameters</i> operation.</para>
     /// </summary>
-    public class EngineDefaults
+    public partial class EngineDefaults
     {
         
         private string cacheParameterGroupFamily;

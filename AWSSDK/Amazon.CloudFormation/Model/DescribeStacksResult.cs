@@ -23,7 +23,7 @@ namespace Amazon.CloudFormation.Model
     /// <summary>
     /// <para>The output for a DescribeStacks action.</para>
     /// </summary>
-    public class DescribeStacksResult
+    public partial class DescribeStacksResult
     {
         
         private List<Stack> stacks = new List<Stack>();

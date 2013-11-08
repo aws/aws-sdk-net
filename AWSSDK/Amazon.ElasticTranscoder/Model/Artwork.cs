@@ -26,7 +26,7 @@ namespace Amazon.ElasticTranscoder.Model
     /// empty <c>Artwork</c> array.</para> <para>To pass through existing artwork unchanged, set the <c>Merge Policy</c> to "Prepend", "Append", or
     /// "Fallback", and use an empty <c>Artwork</c> array.</para>
     /// </summary>
-    public class Artwork
+    public partial class Artwork
     {
         
         private string inputKey;

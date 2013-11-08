@@ -23,7 +23,7 @@ namespace Amazon.ElastiCache.Model
     /// <summary>
     /// <para>Provides all of the details about a particular cache engine version.</para>
     /// </summary>
-    public class CacheEngineVersion
+    public partial class CacheEngineVersion
     {
         
         private string engine;

@@ -23,7 +23,7 @@ namespace Amazon.StorageGateway.Model
     /// <summary>
     /// <para>Lists iSCSI information about a volume.</para>
     /// </summary>
-    public class VolumeiSCSIAttributes  
+    public partial class VolumeiSCSIAttributes
     {
         
         private string targetARN;
@@ -67,7 +67,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if TargetARN property is set
         internal bool IsSetTargetARN()
         {
-            return this.targetARN != null;       
+            return this.targetARN != null;
         }
 
         /// <summary>
@@ -105,7 +105,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if NetworkInterfaceId property is set
         internal bool IsSetNetworkInterfaceId()
         {
-            return this.networkInterfaceId != null;       
+            return this.networkInterfaceId != null;
         }
 
         /// <summary>
@@ -134,7 +134,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if NetworkInterfacePort property is set
         internal bool IsSetNetworkInterfacePort()
         {
-            return this.networkInterfacePort.HasValue;       
+            return this.networkInterfacePort.HasValue;
         }
 
         /// <summary>
@@ -172,7 +172,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if LunNumber property is set
         internal bool IsSetLunNumber()
         {
-            return this.lunNumber.HasValue;       
+            return this.lunNumber.HasValue;
         }
 
         /// <summary>
@@ -201,7 +201,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if ChapEnabled property is set
         internal bool IsSetChapEnabled()
         {
-            return this.chapEnabled.HasValue;       
+            return this.chapEnabled.HasValue;
         }
     }
 }

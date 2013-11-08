@@ -23,7 +23,7 @@ namespace Amazon.ElastiCache.Model
     /// <summary>
     /// <para>Represents the output of a <i>CreateCacheParameterGroup</i> operation.</para>
     /// </summary>
-    public class CacheParameterGroup
+    public partial class CacheParameterGroup
     {
         
         private string cacheParameterGroupName;

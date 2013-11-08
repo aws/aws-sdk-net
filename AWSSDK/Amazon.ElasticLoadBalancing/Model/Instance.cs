@@ -23,7 +23,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// <summary>
     /// <para> The Instance data type. </para>
     /// </summary>
-    public class Instance  
+    public partial class Instance
     {
         
         private string instanceId;
@@ -40,7 +40,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// 
         /// <param name="instanceId"> Provides an EC2 instance ID. </param>
-        public Instance(string instanceId) 
+        public Instance(string instanceId)
         {
             this.instanceId = instanceId;
         }
@@ -72,7 +72,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if InstanceId property is set
         internal bool IsSetInstanceId()
         {
-            return this.instanceId != null;       
+            return this.instanceId != null;
         }
     }
 }

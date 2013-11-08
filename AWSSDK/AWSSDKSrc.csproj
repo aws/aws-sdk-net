@@ -1148,6 +1148,9 @@
     <Compile Include="Amazon.CloudFormation\Model\EstimateTemplateCostResult.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.CloudFormation\Model\GetStackPolicyRequest.cs" />
+    <Compile Include="Amazon.CloudFormation\Model\GetStackPolicyResponse.cs" />
+    <Compile Include="Amazon.CloudFormation\Model\GetStackPolicyResult.cs" />
     <Compile Include="Amazon.CloudFormation\Model\GetTemplateRequest.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -1222,6 +1225,9 @@
     <Compile Include="Amazon.CloudFormation\Model\Internal\MarshallTransformations\EstimateTemplateCostResultUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.CloudFormation\Model\Internal\MarshallTransformations\GetStackPolicyRequestMarshaller.cs" />
+    <Compile Include="Amazon.CloudFormation\Model\Internal\MarshallTransformations\GetStackPolicyResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.CloudFormation\Model\Internal\MarshallTransformations\GetStackPolicyResultUnmarshaller.cs" />
     <Compile Include="Amazon.CloudFormation\Model\Internal\MarshallTransformations\GetTemplateRequestMarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -1255,6 +1261,8 @@
     <Compile Include="Amazon.CloudFormation\Model\Internal\MarshallTransformations\ParameterUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.CloudFormation\Model\Internal\MarshallTransformations\SetStackPolicyRequestMarshaller.cs" />
+    <Compile Include="Amazon.CloudFormation\Model\Internal\MarshallTransformations\SetStackPolicyResponseUnmarshaller.cs" />
     <Compile Include="Amazon.CloudFormation\Model\Internal\MarshallTransformations\StackEventUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -1322,6 +1330,8 @@
     <Compile Include="Amazon.CloudFormation\Model\Parameter.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.CloudFormation\Model\SetStackPolicyRequest.cs" />
+    <Compile Include="Amazon.CloudFormation\Model\SetStackPolicyResponse.cs" />
     <Compile Include="Amazon.CloudFormation\Model\Stack.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -4612,6 +4622,7 @@
     <Compile Include="Amazon.ElasticLoadBalancing\Model\CreateLoadBalancerResult.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\CrossZoneLoadBalancing.cs" />
     <Compile Include="Amazon.ElasticLoadBalancing\Model\DeleteLoadBalancerListenersRequest.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -4657,6 +4668,9 @@
     <Compile Include="Amazon.ElasticLoadBalancing\Model\DescribeInstanceHealthResult.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\DescribeLoadBalancerAttributesRequest.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\DescribeLoadBalancerAttributesResponse.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\DescribeLoadBalancerAttributesResult.cs" />
     <Compile Include="Amazon.ElasticLoadBalancing\Model\DescribeLoadBalancerPoliciesRequest.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -4767,6 +4781,7 @@
     <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\CreateLoadBalancerResultUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\CrossZoneLoadBalancingUnmarshaller.cs" />
     <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\DeleteLoadBalancerListenersRequestMarshaller.cs" />
     <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\DeleteLoadBalancerListenersResponseUnmarshaller.cs" />
     <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\DeleteLoadBalancerListenersResultUnmarshaller.cs" />
@@ -4794,6 +4809,9 @@
     <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\DescribeInstanceHealthResultUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\DescribeLoadBalancerAttributesRequestMarshaller.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\DescribeLoadBalancerAttributesResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\DescribeLoadBalancerAttributesResultUnmarshaller.cs" />
     <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\DescribeLoadBalancerPoliciesRequestMarshaller.cs" />
     <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\DescribeLoadBalancerPoliciesResponseUnmarshaller.cs" />
     <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\DescribeLoadBalancerPoliciesResultUnmarshaller.cs" />
@@ -4836,9 +4854,13 @@
     <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\ListenerUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\LoadBalancerAttributesUnmarshaller.cs" />
     <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\LoadBalancerDescriptionUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\ModifyLoadBalancerAttributesRequestMarshaller.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\ModifyLoadBalancerAttributesResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\ModifyLoadBalancerAttributesResultUnmarshaller.cs" />
     <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\PoliciesUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -4888,12 +4910,17 @@
     <Compile Include="Amazon.ElasticLoadBalancing\Model\ListenerNotFoundException.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\LoadBalancerAttributeNotFoundException.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\LoadBalancerAttributes.cs" />
     <Compile Include="Amazon.ElasticLoadBalancing\Model\LoadBalancerDescription.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.ElasticLoadBalancing\Model\LoadBalancerNotFoundException.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\ModifyLoadBalancerAttributesRequest.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\ModifyLoadBalancerAttributesResponse.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\ModifyLoadBalancerAttributesResult.cs" />
     <Compile Include="Amazon.ElasticLoadBalancing\Model\Policies.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -5053,6 +5080,7 @@
     <Compile Include="Amazon.ElasticTranscoder\Model\CancelJobRequest.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\CancelJobResponse.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\CancelJobResult.cs" />
+    <Compile Include="Amazon.ElasticTranscoder\Model\Clip.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\CreateJobOutput.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\CreateJobPlaylist.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\CreateJobRequest.cs" />
@@ -5077,6 +5105,7 @@
     <Compile Include="Amazon.ElasticTranscoder\Model\Internal\MarshallTransformations\CancelJobRequestMarshaller.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\Internal\MarshallTransformations\CancelJobResponseUnmarshaller.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\Internal\MarshallTransformations\CancelJobResultUnmarshaller.cs" />
+    <Compile Include="Amazon.ElasticTranscoder\Model\Internal\MarshallTransformations\ClipUnmarshaller.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\Internal\MarshallTransformations\CreateJobRequestMarshaller.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\Internal\MarshallTransformations\CreateJobResponseUnmarshaller.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\Internal\MarshallTransformations\CreateJobResultUnmarshaller.cs" />
@@ -5129,6 +5158,7 @@
     <Compile Include="Amazon.ElasticTranscoder\Model\Internal\MarshallTransformations\TestRoleResponseUnmarshaller.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\Internal\MarshallTransformations\TestRoleResultUnmarshaller.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\Internal\MarshallTransformations\ThumbnailsUnmarshaller.cs" />
+    <Compile Include="Amazon.ElasticTranscoder\Model\Internal\MarshallTransformations\TimeSpanUnmarshaller.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\Internal\MarshallTransformations\UpdatePipelineNotificationsRequestMarshaller.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\Internal\MarshallTransformations\UpdatePipelineNotificationsResponseUnmarshaller.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\Internal\MarshallTransformations\UpdatePipelineNotificationsResultUnmarshaller.cs" />
@@ -5179,6 +5209,7 @@
     <Compile Include="Amazon.ElasticTranscoder\Model\TestRoleResponse.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\TestRoleResult.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\Thumbnails.cs" />
+    <Compile Include="Amazon.ElasticTranscoder\Model\TimeSpan.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\UpdatePipelineNotificationsRequest.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\UpdatePipelineNotificationsResponse.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\UpdatePipelineNotificationsResult.cs" />
@@ -9632,24 +9663,55 @@
     <Compile Include="Amazon.StorageGateway\Model\AddUploadBufferResponse.cs" />
     <Compile Include="Amazon.StorageGateway\Model\AddUploadBufferResult.cs" />
     <Compile Include="Amazon.StorageGateway\Model\CachediSCSIVolume.cs" />
+    <Compile Include="Amazon.StorageGateway\Model\CancelArchivalRequest.cs" />
+    <Compile Include="Amazon.StorageGateway\Model\CancelArchivalResponse.cs" />
+    <Compile Include="Amazon.StorageGateway\Model\CancelArchivalResult.cs" />
+    <Compile Include="Amazon.StorageGateway\Model\CancelRetrievalRequest.cs" />
+    <Compile Include="Amazon.StorageGateway\Model\CancelRetrievalResponse.cs" />
+    <Compile Include="Amazon.StorageGateway\Model\CancelRetrievalResult.cs" />
     <Compile Include="Amazon.StorageGateway\Model\CreateCachediSCSIVolumeRequest.cs" />
     <Compile Include="Amazon.StorageGateway\Model\CreateCachediSCSIVolumeResponse.cs" />
     <Compile Include="Amazon.StorageGateway\Model\CreateCachediSCSIVolumeResult.cs" />
     <Compile Include="Amazon.StorageGateway\Model\CreateSnapshotFromVolumeRecoveryPointRequest.cs" />
     <Compile Include="Amazon.StorageGateway\Model\CreateSnapshotFromVolumeRecoveryPointResponse.cs" />
     <Compile Include="Amazon.StorageGateway\Model\CreateSnapshotFromVolumeRecoveryPointResult.cs" />
+    <Compile Include="Amazon.StorageGateway\Model\CreateTapesRequest.cs" />
+    <Compile Include="Amazon.StorageGateway\Model\CreateTapesResponse.cs" />
+    <Compile Include="Amazon.StorageGateway\Model\CreateTapesResult.cs" />
     <Compile Include="Amazon.StorageGateway\Model\DeleteSnapshotScheduleRequest.cs" />
     <Compile Include="Amazon.StorageGateway\Model\DeleteSnapshotScheduleResponse.cs" />
     <Compile Include="Amazon.StorageGateway\Model\DeleteSnapshotScheduleResult.cs" />
+    <Compile Include="Amazon.StorageGateway\Model\DeleteTapeArchiveRequest.cs" />
+    <Compile Include="Amazon.StorageGateway\Model\DeleteTapeArchiveResponse.cs" />
+    <Compile Include="Amazon.StorageGateway\Model\DeleteTapeArchiveResult.cs" />
+    <Compile Include="Amazon.StorageGateway\Model\DeleteTapeRequest.cs" />
+    <Compile Include="Amazon.StorageGateway\Model\DeleteTapeResponse.cs" />
+    <Compile Include="Amazon.StorageGateway\Model\DeleteTapeResult.cs" />
     <Compile Include="Amazon.StorageGateway\Model\DescribeCachediSCSIVolumesRequest.cs" />
     <Compile Include="Amazon.StorageGateway\Model\DescribeCachediSCSIVolumesResponse.cs" />
     <Compile Include="Amazon.StorageGateway\Model\DescribeCachediSCSIVolumesResult.cs" />
     <Compile Include="Amazon.StorageGateway\Model\DescribeCacheRequest.cs" />
     <Compile Include="Amazon.StorageGateway\Model\DescribeCacheResponse.cs" />
     <Compile Include="Amazon.StorageGateway\Model\DescribeCacheResult.cs" />
+    <Compile Include="Amazon.StorageGateway\Model\DescribeTapeArchivesRequest.cs" />
+    <Compile Include="Amazon.StorageGateway\Model\DescribeTapeArchivesResponse.cs" />
+    <Compile Include="Amazon.StorageGateway\Model\DescribeTapeArchivesResult.cs" />
+    <Compile Include="Amazon.StorageGateway\Model\DescribeTapeRecoveryPointsRequest.cs" />
+    <Compile Include="Amazon.StorageGateway\Model\DescribeTapeRecoveryPointsResponse.cs" />
+    <Compile Include="Amazon.StorageGateway\Model\DescribeTapeRecoveryPointsResult.cs" />
+    <Compile Include="Amazon.StorageGateway\Model\DescribeTapesRequest.cs" />
+    <Compile Include="Amazon.StorageGateway\Model\DescribeTapesResponse.cs" />
+    <Compile Include="Amazon.StorageGateway\Model\DescribeTapesResult.cs" />
     <Compile Include="Amazon.StorageGateway\Model\DescribeUploadBufferRequest.cs" />
     <Compile Include="Amazon.StorageGateway\Model\DescribeUploadBufferResponse.cs" />
     <Compile Include="Amazon.StorageGateway\Model\DescribeUploadBufferResult.cs" />
+    <Compile Include="Amazon.StorageGateway\Model\DescribeVTLDevicesRequest.cs" />
+    <Compile Include="Amazon.StorageGateway\Model\DescribeVTLDevicesResponse.cs" />
+    <Compile Include="Amazon.StorageGateway\Model\DescribeVTLDevicesResult.cs" />
+    <Compile Include="Amazon.StorageGateway\Model\DeviceiSCSIAttributes.cs" />
+    <Compile Include="Amazon.StorageGateway\Model\DisableGatewayRequest.cs" />
+    <Compile Include="Amazon.StorageGateway\Model\DisableGatewayResponse.cs" />
+    <Compile Include="Amazon.StorageGateway\Model\DisableGatewayResult.cs" />
     <Compile Include="Amazon.StorageGateway\Model\Internal\MarshallTransformations\AddCacheRequestMarshaller.cs" />
     <Compile Include="Amazon.StorageGateway\Model\Internal\MarshallTransformations\AddCacheResponseUnmarshaller.cs" />
     <Compile Include="Amazon.StorageGateway\Model\Internal\MarshallTransformations\AddCacheResultUnmarshaller.cs" />
@@ -9657,32 +9719,83 @@
     <Compile Include="Amazon.StorageGateway\Model\Internal\MarshallTransformations\AddUploadBufferResponseUnmarshaller.cs" />
     <Compile Include="Amazon.StorageGateway\Model\Internal\MarshallTransformations\AddUploadBufferResultUnmarshaller.cs" />
     <Compile Include="Amazon.StorageGateway\Model\Internal\MarshallTransformations\CachediSCSIVolumeUnmarshaller.cs" />
+    <Compile Include="Amazon.StorageGateway\Model\Internal\MarshallTransformations\CancelArchivalRequestMarshaller.cs" />
+    <Compile Include="Amazon.StorageGateway\Model\Internal\MarshallTransformations\CancelArchivalResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.StorageGateway\Model\Internal\MarshallTransformations\CancelArchivalResultUnmarshaller.cs" />
+    <Compile Include="Amazon.StorageGateway\Model\Internal\MarshallTransformations\CancelRetrievalRequestMarshaller.cs" />
+    <Compile Include="Amazon.StorageGateway\Model\Internal\MarshallTransformations\CancelRetrievalResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.StorageGateway\Model\Internal\MarshallTransformations\CancelRetrievalResultUnmarshaller.cs" />
     <Compile Include="Amazon.StorageGateway\Model\Internal\MarshallTransformations\CreateCachediSCSIVolumeRequestMarshaller.cs" />
     <Compile Include="Amazon.StorageGateway\Model\Internal\MarshallTransformations\CreateCachediSCSIVolumeResponseUnmarshaller.cs" />
     <Compile Include="Amazon.StorageGateway\Model\Internal\MarshallTransformations\CreateCachediSCSIVolumeResultUnmarshaller.cs" />
     <Compile Include="Amazon.StorageGateway\Model\Internal\MarshallTransformations\CreateSnapshotFromVolumeRecoveryPointRequestMarshaller.cs" />
     <Compile Include="Amazon.StorageGateway\Model\Internal\MarshallTransformations\CreateSnapshotFromVolumeRecoveryPointResponseUnmarshaller.cs" />
     <Compile Include="Amazon.StorageGateway\Model\Internal\MarshallTransformations\CreateSnapshotFromVolumeRecoveryPointResultUnmarshaller.cs" />
+    <Compile Include="Amazon.StorageGateway\Model\Internal\MarshallTransformations\CreateTapesRequestMarshaller.cs" />
+    <Compile Include="Amazon.StorageGateway\Model\Internal\MarshallTransformations\CreateTapesResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.StorageGateway\Model\Internal\MarshallTransformations\CreateTapesResultUnmarshaller.cs" />
     <Compile Include="Amazon.StorageGateway\Model\Internal\MarshallTransformations\DeleteSnapshotScheduleRequestMarshaller.cs" />
     <Compile Include="Amazon.StorageGateway\Model\Internal\MarshallTransformations\DeleteSnapshotScheduleResponseUnmarshaller.cs" />
     <Compile Include="Amazon.StorageGateway\Model\Internal\MarshallTransformations\DeleteSnapshotScheduleResultUnmarshaller.cs" />
+    <Compile Include="Amazon.StorageGateway\Model\Internal\MarshallTransformations\DeleteTapeArchiveRequestMarshaller.cs" />
+    <Compile Include="Amazon.StorageGateway\Model\Internal\MarshallTransformations\DeleteTapeArchiveResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.StorageGateway\Model\Internal\MarshallTransformations\DeleteTapeArchiveResultUnmarshaller.cs" />
+    <Compile Include="Amazon.StorageGateway\Model\Internal\MarshallTransformations\DeleteTapeRequestMarshaller.cs" />
+    <Compile Include="Amazon.StorageGateway\Model\Internal\MarshallTransformations\DeleteTapeResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.StorageGateway\Model\Internal\MarshallTransformations\DeleteTapeResultUnmarshaller.cs" />
     <Compile Include="Amazon.StorageGateway\Model\Internal\MarshallTransformations\DescribeCachediSCSIVolumesRequestMarshaller.cs" />
     <Compile Include="Amazon.StorageGateway\Model\Internal\MarshallTransformations\DescribeCachediSCSIVolumesResponseUnmarshaller.cs" />
     <Compile Include="Amazon.StorageGateway\Model\Internal\MarshallTransformations\DescribeCachediSCSIVolumesResultUnmarshaller.cs" />
     <Compile Include="Amazon.StorageGateway\Model\Internal\MarshallTransformations\DescribeCacheRequestMarshaller.cs" />
     <Compile Include="Amazon.StorageGateway\Model\Internal\MarshallTransformations\DescribeCacheResponseUnmarshaller.cs" />
     <Compile Include="Amazon.StorageGateway\Model\Internal\MarshallTransformations\DescribeCacheResultUnmarshaller.cs" />
+    <Compile Include="Amazon.StorageGateway\Model\Internal\MarshallTransformations\DescribeTapeArchivesRequestMarshaller.cs" />
+    <Compile Include="Amazon.StorageGateway\Model\Internal\MarshallTransformations\DescribeTapeArchivesResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.StorageGateway\Model\Internal\MarshallTransformations\DescribeTapeArchivesResultUnmarshaller.cs" />
+    <Compile Include="Amazon.StorageGateway\Model\Internal\MarshallTransformations\DescribeTapeRecoveryPointsRequestMarshaller.cs" />
+    <Compile Include="Amazon.StorageGateway\Model\Internal\MarshallTransformations\DescribeTapeRecoveryPointsResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.StorageGateway\Model\Internal\MarshallTransformations\DescribeTapeRecoveryPointsResultUnmarshaller.cs" />
+    <Compile Include="Amazon.StorageGateway\Model\Internal\MarshallTransformations\DescribeTapesRequestMarshaller.cs" />
+    <Compile Include="Amazon.StorageGateway\Model\Internal\MarshallTransformations\DescribeTapesResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.StorageGateway\Model\Internal\MarshallTransformations\DescribeTapesResultUnmarshaller.cs" />
     <Compile Include="Amazon.StorageGateway\Model\Internal\MarshallTransformations\DescribeUploadBufferRequestMarshaller.cs" />
     <Compile Include="Amazon.StorageGateway\Model\Internal\MarshallTransformations\DescribeUploadBufferResponseUnmarshaller.cs" />
     <Compile Include="Amazon.StorageGateway\Model\Internal\MarshallTransformations\DescribeUploadBufferResultUnmarshaller.cs" />
+    <Compile Include="Amazon.StorageGateway\Model\Internal\MarshallTransformations\DescribeVTLDevicesRequestMarshaller.cs" />
+    <Compile Include="Amazon.StorageGateway\Model\Internal\MarshallTransformations\DescribeVTLDevicesResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.StorageGateway\Model\Internal\MarshallTransformations\DescribeVTLDevicesResultUnmarshaller.cs" />
+    <Compile Include="Amazon.StorageGateway\Model\Internal\MarshallTransformations\DeviceiSCSIAttributesUnmarshaller.cs" />
+    <Compile Include="Amazon.StorageGateway\Model\Internal\MarshallTransformations\DisableGatewayRequestMarshaller.cs" />
+    <Compile Include="Amazon.StorageGateway\Model\Internal\MarshallTransformations\DisableGatewayResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.StorageGateway\Model\Internal\MarshallTransformations\DisableGatewayResultUnmarshaller.cs" />
     <Compile Include="Amazon.StorageGateway\Model\Internal\MarshallTransformations\ListVolumeRecoveryPointsRequestMarshaller.cs" />
     <Compile Include="Amazon.StorageGateway\Model\Internal\MarshallTransformations\ListVolumeRecoveryPointsResponseUnmarshaller.cs" />
     <Compile Include="Amazon.StorageGateway\Model\Internal\MarshallTransformations\ListVolumeRecoveryPointsResultUnmarshaller.cs" />
+    <Compile Include="Amazon.StorageGateway\Model\Internal\MarshallTransformations\RetrieveTapeArchiveRequestMarshaller.cs" />
+    <Compile Include="Amazon.StorageGateway\Model\Internal\MarshallTransformations\RetrieveTapeArchiveResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.StorageGateway\Model\Internal\MarshallTransformations\RetrieveTapeArchiveResultUnmarshaller.cs" />
+    <Compile Include="Amazon.StorageGateway\Model\Internal\MarshallTransformations\RetrieveTapeRecoveryPointRequestMarshaller.cs" />
+    <Compile Include="Amazon.StorageGateway\Model\Internal\MarshallTransformations\RetrieveTapeRecoveryPointResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.StorageGateway\Model\Internal\MarshallTransformations\RetrieveTapeRecoveryPointResultUnmarshaller.cs" />
+    <Compile Include="Amazon.StorageGateway\Model\Internal\MarshallTransformations\TapeArchiveUnmarshaller.cs" />
+    <Compile Include="Amazon.StorageGateway\Model\Internal\MarshallTransformations\TapeRecoveryPointInfoUnmarshaller.cs" />
+    <Compile Include="Amazon.StorageGateway\Model\Internal\MarshallTransformations\TapeUnmarshaller.cs" />
     <Compile Include="Amazon.StorageGateway\Model\Internal\MarshallTransformations\VolumeRecoveryPointInfoUnmarshaller.cs" />
+    <Compile Include="Amazon.StorageGateway\Model\Internal\MarshallTransformations\VTLDeviceUnmarshaller.cs" />
     <Compile Include="Amazon.StorageGateway\Model\ListVolumeRecoveryPointsRequest.cs" />
     <Compile Include="Amazon.StorageGateway\Model\ListVolumeRecoveryPointsResponse.cs" />
     <Compile Include="Amazon.StorageGateway\Model\ListVolumeRecoveryPointsResult.cs" />
+    <Compile Include="Amazon.StorageGateway\Model\RetrieveTapeArchiveRequest.cs" />
+    <Compile Include="Amazon.StorageGateway\Model\RetrieveTapeArchiveResponse.cs" />
+    <Compile Include="Amazon.StorageGateway\Model\RetrieveTapeArchiveResult.cs" />
+    <Compile Include="Amazon.StorageGateway\Model\RetrieveTapeRecoveryPointRequest.cs" />
+    <Compile Include="Amazon.StorageGateway\Model\RetrieveTapeRecoveryPointResponse.cs" />
+    <Compile Include="Amazon.StorageGateway\Model\RetrieveTapeRecoveryPointResult.cs" />
+    <Compile Include="Amazon.StorageGateway\Model\Tape.cs" />
+    <Compile Include="Amazon.StorageGateway\Model\TapeArchive.cs" />
+    <Compile Include="Amazon.StorageGateway\Model\TapeRecoveryPointInfo.cs" />
     <Compile Include="Amazon.StorageGateway\Model\VolumeRecoveryPointInfo.cs" />
+    <Compile Include="Amazon.StorageGateway\Model\VTLDevice.cs" />
     <Compile Include="Amazon.Util\PartStreamWrapper.cs" />
     <Compile Include="Amazon.S3\Model\PutBucketPolicyRequest.cs" />
     <Compile Include="Amazon.S3\Model\PutBucketPolicyResponse.cs" />
@@ -10772,7 +10885,6 @@
     <Compile Include="Amazon.StorageGateway\Model\StartGatewayRequest.cs" />
     <Compile Include="Amazon.StorageGateway\Model\StartGatewayResponse.cs" />
     <Compile Include="Amazon.StorageGateway\Model\StartGatewayResult.cs" />
-    <Compile Include="Amazon.StorageGateway\Model\StorageGatewayError.cs" />
     <Compile Include="Amazon.StorageGateway\Model\StorediSCSIVolume.cs" />
     <Compile Include="Amazon.StorageGateway\Model\UpdateBandwidthRateLimitRequest.cs" />
     <Compile Include="Amazon.StorageGateway\Model\UpdateBandwidthRateLimitResponse.cs" />

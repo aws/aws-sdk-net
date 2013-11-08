@@ -23,7 +23,7 @@ namespace Amazon.CloudFormation.Model
     /// <summary>
     /// <para>The output for a DescribeStackResource action.</para>
     /// </summary>
-    public class DescribeStackResourceResult
+    public partial class DescribeStackResourceResult
     {
         
         private StackResourceDetail stackResourceDetail;

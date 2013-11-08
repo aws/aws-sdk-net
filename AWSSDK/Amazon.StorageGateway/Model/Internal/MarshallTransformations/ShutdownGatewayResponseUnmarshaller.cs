@@ -11,59 +11,63 @@
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
- */ 
-    using System; 
+ */
+    using System;
     using System.Net;
-    using Amazon.StorageGateway.Model; 
-    using Amazon.Runtime; 
-    using Amazon.Runtime.Internal; 
-    using Amazon.Runtime.Internal.Transform; 
-    
-    namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations 
-    { 
-      /// <summary> 
-      /// Response Unmarshaller for ShutdownGateway operation 
-      /// </summary> 
-      internal class ShutdownGatewayResponseUnmarshaller : JsonResponseUnmarshaller 
-      { 
-        public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context) 
-        { 
+    using Amazon.StorageGateway.Model;
+    using Amazon.Runtime;
+    using Amazon.Runtime.Internal;
+    using Amazon.Runtime.Internal.Transform;
+
+    namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
+    {
+      /// <summary>
+      /// Response Unmarshaller for ShutdownGateway operation
+      /// </summary>
+      internal class ShutdownGatewayResponseUnmarshaller : JsonResponseUnmarshaller
+      {
+        public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
+        {
           ShutdownGatewayResponse response = new ShutdownGatewayResponse();
           
           context.Read();
       
-          response.ShutdownGatewayResult = ShutdownGatewayResultUnmarshaller.GetInstance().Unmarshall(context); 
-           
-          return response; 
-        } 
-         
-        public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode) 
-        { 
-          ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context); 
-           
-          if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerErrorException")) 
-          { 
-            return new InternalServerErrorException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode); 
-          } 
-   
-          if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidGatewayRequestException")) 
-          { 
-            return new InvalidGatewayRequestException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode); 
-          } 
-   
-          return new AmazonStorageGatewayException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode); 
-        } 
+          response.ShutdownGatewayResult = ShutdownGatewayResultUnmarshaller.GetInstance().Unmarshall(context);
+          
+          return response;
+        }
+        
+        public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+        {
+          ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+          
+          if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerErrorException"))
+          {
+            InternalServerErrorException ex = new InternalServerErrorException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            
+            return ex;
+          }
   
-        private static ShutdownGatewayResponseUnmarshaller instance; 
-        public static ShutdownGatewayResponseUnmarshaller GetInstance() 
-        { 
-          if (instance == null) 
-          { 
-            instance = new ShutdownGatewayResponseUnmarshaller(); 
-          } 
+          if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidGatewayRequestException"))
+          {
+            InvalidGatewayRequestException ex = new InvalidGatewayRequestException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            
+            return ex;
+          }
+  
+          return new AmazonStorageGatewayException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+        }
+
+        private static ShutdownGatewayResponseUnmarshaller instance;
+        public static ShutdownGatewayResponseUnmarshaller GetInstance()
+        {
+          if (instance == null)
+          {
+            instance = new ShutdownGatewayResponseUnmarshaller();
+          }
           return instance;
-        } 
+        }
   
-      } 
-    } 
+      }
+    }
   

@@ -23,7 +23,7 @@ namespace Amazon.ElasticTranscoder.Model
     /// <summary>
     /// <para>The <c>UpdatePipelineNotificationsResponse</c> structure.</para>
     /// </summary>
-    public class UpdatePipelineNotificationsResult
+    public partial class UpdatePipelineNotificationsResult
     {
         
         private Pipeline pipeline;

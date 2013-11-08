@@ -30,18 +30,18 @@ namespace Amazon.StorageGateway.Model
 
         /// <summary>
         /// Gets and sets the CreateCachediSCSIVolumeResult property.
-        /// A JSON object containing the following fields: CreateCachediSCSIVolume$TargetARN CreateCachediSCSIVolume$VolumeARN
+        /// 
         /// </summary>
         public CreateCachediSCSIVolumeResult CreateCachediSCSIVolumeResult
         {
-            get 
+            get
             {
                 if(this.createCachediSCSIVolumeResult == null)
                 {
                     this.createCachediSCSIVolumeResult = new CreateCachediSCSIVolumeResult();
                 }
 
-                return this.createCachediSCSIVolumeResult; 
+                return this.createCachediSCSIVolumeResult;
             }
             set { this.createCachediSCSIVolumeResult = value; }
         }

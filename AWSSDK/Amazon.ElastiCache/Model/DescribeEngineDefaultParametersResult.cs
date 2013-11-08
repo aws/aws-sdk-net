@@ -23,7 +23,7 @@ namespace Amazon.ElastiCache.Model
     /// <summary>
     /// The results from the DescribeEngineDefaultParameters action.
     /// </summary>
-    public class DescribeEngineDefaultParametersResult
+    public partial class DescribeEngineDefaultParametersResult
     {
         private EngineDefaults engineDefaultsValue;
 

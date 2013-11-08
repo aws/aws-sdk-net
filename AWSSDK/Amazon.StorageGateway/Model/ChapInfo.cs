@@ -24,7 +24,7 @@ namespace Amazon.StorageGateway.Model
     /// <para>Describes Challenge-Handshake Authentication Protocol (CHAP) information that supports authentication between your gateway and iSCSI
     /// initiators.</para>
     /// </summary>
-    public class ChapInfo  
+    public partial class ChapInfo
     {
         
         private string targetARN;
@@ -67,7 +67,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if TargetARN property is set
         internal bool IsSetTargetARN()
         {
-            return this.targetARN != null;       
+            return this.targetARN != null;
         }
 
         /// <summary>
@@ -105,7 +105,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if SecretToAuthenticateInitiator property is set
         internal bool IsSetSecretToAuthenticateInitiator()
         {
-            return this.secretToAuthenticateInitiator != null;       
+            return this.secretToAuthenticateInitiator != null;
         }
 
         /// <summary>
@@ -147,7 +147,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if InitiatorName property is set
         internal bool IsSetInitiatorName()
         {
-            return this.initiatorName != null;       
+            return this.initiatorName != null;
         }
 
         /// <summary>
@@ -185,7 +185,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if SecretToAuthenticateTarget property is set
         internal bool IsSetSecretToAuthenticateTarget()
         {
-            return this.secretToAuthenticateTarget != null;       
+            return this.secretToAuthenticateTarget != null;
         }
     }
 }

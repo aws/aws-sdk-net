@@ -38,7 +38,7 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
         {
 
             IRequest request = new DefaultRequest(createSnapshotFromVolumeRecoveryPointRequest, "AmazonStorageGateway");
-            string target = "StorageGateway_20120630.CreateSnapshotFromVolumeRecoveryPoint";
+            string target = "StorageGateway_20130630.CreateSnapshotFromVolumeRecoveryPoint";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
 

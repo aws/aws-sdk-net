@@ -23,7 +23,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// <summary>
     /// <para> The InstanceState data type. </para>
     /// </summary>
-    public class InstanceState
+    public partial class InstanceState
     {
         
         private string instanceId;

@@ -30,18 +30,18 @@ namespace Amazon.StorageGateway.Model
 
         /// <summary>
         /// Gets and sets the UpdateSnapshotScheduleResult property.
-        /// A JSON object containing the UpdateSnapshotScheduleOutput$VolumeARN of the updated storage volume.
+        /// A JSON object containing the of the updated storage volume.
         /// </summary>
         public UpdateSnapshotScheduleResult UpdateSnapshotScheduleResult
         {
-            get 
+            get
             {
                 if(this.updateSnapshotScheduleResult == null)
                 {
                     this.updateSnapshotScheduleResult = new UpdateSnapshotScheduleResult();
                 }
 
-                return this.updateSnapshotScheduleResult; 
+                return this.updateSnapshotScheduleResult;
             }
             set { this.updateSnapshotScheduleResult = value; }
         }

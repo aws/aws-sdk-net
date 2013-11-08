@@ -23,7 +23,7 @@ namespace Amazon.ElastiCache.Model
     /// <summary>
     /// <para>Represents the output of a <i>DescribeCacheSubnetGroups</i> operation.</para>
     /// </summary>
-    public class DescribeCacheSubnetGroupsResult
+    public partial class DescribeCacheSubnetGroupsResult
     {
         
         private string marker;

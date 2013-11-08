@@ -23,7 +23,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// <summary>
     /// <para> The output for the DeregisterInstancesFromLoadBalancer action. </para>
     /// </summary>
-    public class DeregisterInstancesFromLoadBalancerResult
+    public partial class DeregisterInstancesFromLoadBalancerResult
     {
         
         private List<Instance> instances = new List<Instance>();

@@ -8055,7 +8055,7 @@ namespace Amazon.EC2
         private static IDictionary<string, string> ConvertEnableVGWRoutePropagation(EnableVGWRoutePropagationRequest request)
         {
             IDictionary<string, string> parameters = ConvertBase(request);
-            parameters["Action"] = "EnableVGWRoutePropagation";
+            parameters["Action"] = "EnableVgwRoutePropagation";
 
             if (request.IsSetRouteTableId())
             {
@@ -8075,7 +8075,7 @@ namespace Amazon.EC2
         private static IDictionary<string, string> ConvertDisableVGWRoutePropagation(DisableVGWRoutePropagationRequest request)
         {
             IDictionary<string, string> parameters = ConvertBase(request);
-            parameters["Action"] = "DisableVGWRoutePropagation";
+            parameters["Action"] = "DisableVgwRoutePropagation";
 
             if (request.IsSetRouteTableId())
             {

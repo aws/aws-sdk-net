@@ -38,7 +38,7 @@ namespace Amazon.ElastiCache
     public class AmazonElastiCacheClient : AmazonWebServiceClient, AmazonElastiCache
     {
     
-        AbstractAWSSigner signer = new QueryStringSigner();
+        AbstractAWSSigner signer = new AWS4Signer();
 
         #region Constructors
 
@@ -294,9 +294,10 @@ namespace Amazon.ElastiCache
         #region DeleteReplicationGroup
 
         /// <summary>
-        /// <para>The <i>DeleteReplicationGroup</i> operation deletes an existing replication group. <i>DeleteReplicationGroup</i> deletes the primary
-        /// cache cluster and all of the read replicas in the replication group. When you receive a successful response from this operation, Amazon
-        /// ElastiCache immediately begins deleting the entire replication group; you cannot cancel or revert this operation.</para>
+        /// <para>The <i>DeleteReplicationGroup</i> operation deletes an existing replication group. By default, this operation deletes the entire
+        /// replication group, including the primary cache cluster and all of the read replicas. You can optionally delete only the read replicas, while
+        /// retaining the primary cache cluster.</para> <para>When you receive a successful response from this operation, Amazon ElastiCache immediately
+        /// begins deleting the selected resources; you cannot cancel or revert this operation.</para>
         /// </summary>
         /// 
         /// <param name="deleteReplicationGroupRequest">Container for the necessary parameters to execute the DeleteReplicationGroup service method on

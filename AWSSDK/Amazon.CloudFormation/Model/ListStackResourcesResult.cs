@@ -23,7 +23,7 @@ namespace Amazon.CloudFormation.Model
     /// <summary>
     /// <para>The output for a ListStackResources action.</para>
     /// </summary>
-    public class ListStackResourcesResult
+    public partial class ListStackResourcesResult
     {
         
         private List<StackResourceSummary> stackResourceSummaries = new List<StackResourceSummary>();

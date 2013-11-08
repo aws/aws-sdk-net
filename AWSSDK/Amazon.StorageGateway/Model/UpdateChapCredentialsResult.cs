@@ -22,12 +22,8 @@ namespace Amazon.StorageGateway.Model
 {
     /// <summary>
     /// <para>A JSON object containing the following fields:</para>
-    /// <ul>
-    /// <li> UpdateChapCredentialsOutput$InitiatorName </li>
-    /// UpdateChapCredentialsOutput$TargetARN
-    /// </ul>
     /// </summary>
-    public class UpdateChapCredentialsResult  
+    public partial class UpdateChapCredentialsResult
     {
         
         private string targetARN;
@@ -68,7 +64,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if TargetARN property is set
         internal bool IsSetTargetARN()
         {
-            return this.targetARN != null;       
+            return this.targetARN != null;
         }
 
         /// <summary>
@@ -110,7 +106,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if InitiatorName property is set
         internal bool IsSetInitiatorName()
         {
-            return this.initiatorName != null;       
+            return this.initiatorName != null;
         }
     }
 }

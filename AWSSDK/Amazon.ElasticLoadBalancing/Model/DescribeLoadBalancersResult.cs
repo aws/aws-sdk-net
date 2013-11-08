@@ -23,7 +23,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// <summary>
     /// <para> The output for the DescribeLoadBalancers action. </para>
     /// </summary>
-    public class DescribeLoadBalancersResult
+    public partial class DescribeLoadBalancersResult
     {
         
         private List<LoadBalancerDescription> loadBalancerDescriptions = new List<LoadBalancerDescription>();

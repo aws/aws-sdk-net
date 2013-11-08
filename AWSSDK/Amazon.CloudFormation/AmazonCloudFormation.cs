@@ -27,9 +27,11 @@ namespace Amazon.CloudFormation
     /// scalable, cost effective applications without worrying about creating and configuring the underlying the AWS infrastructure.</para>
     /// <para>With AWS CloudFormation, you declare all of your resources and dependencies in a template file. The template defines a collection of
     /// resources as a single unit called a stack. AWS CloudFormation creates and deletes all member resources of the stack together and manages all
-    /// dependencies between the resources for you.</para> <para>For more information about this product, go to the CloudFormation Product
-    /// Page.</para> <para>Amazon CloudFormation makes use of other AWS products. If you need additional technical information about a specific AWS
-    /// product, you can find the product's technical documentation at http://aws.amazon.com/documentation/.</para>
+    /// dependencies between the resources for you.</para> <para>For more information about this product, go to the <a
+    /// href="http://aws.amazon.com/cloudformation/" >CloudFormation Product Page</a> .</para> <para>Amazon CloudFormation makes use of other AWS
+    /// products. If you need additional technical information about a specific AWS product, you can find the product's technical documentation at
+    /// <a href="http://aws.amazon.com/documentation/" >http://aws.amazon.com/documentation/</a> .</para> <para><b>NOTE:</b>You must call the AWS
+    /// CloudFormation API as a regular IAM user. AWS CloudFormation does not support calling the API with an IAM role </para>
     /// </summary>
     public interface AmazonCloudFormation : IDisposable
     {
@@ -140,7 +142,7 @@ namespace Amazon.CloudFormation
         #region GetTemplate
 
         /// <summary>
-        /// <para>Returns the template body for a specified stack name. You can get the template for running or deleted stacks.</para> <para>For deleted
+        /// <para>Returns the template body for a specified stack. You can get the template for running or deleted stacks.</para> <para>For deleted
         /// stacks, GetTemplate returns the template for up to 90 days after the stack has been deleted.</para> <para><b>NOTE:</b> If the template does
         /// not exist, a ValidationError is returned. </para>
         /// </summary>
@@ -176,6 +178,48 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>Returns a GetTemplateResult from AmazonCloudFormation.</returns>
         GetTemplateResponse EndGetTemplate(IAsyncResult asyncResult);
+        
+        #endregion
+        
+    
+
+        #region GetStackPolicy
+
+        /// <summary>
+        /// <para>Returns the stack policy for a specified stack. If a stack doesn't have a policy, a null value is returned.</para>
+        /// </summary>
+        /// 
+        /// <param name="getStackPolicyRequest">Container for the necessary parameters to execute the GetStackPolicy service method on
+        ///          AmazonCloudFormation.</param>
+        /// 
+        /// <returns>The response from the GetStackPolicy service method, as returned by AmazonCloudFormation.</returns>
+        /// 
+        GetStackPolicyResponse GetStackPolicy(GetStackPolicyRequest getStackPolicyRequest);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetStackPolicy operation.
+        /// <seealso cref="Amazon.CloudFormation.AmazonCloudFormation.GetStackPolicy"/>
+        /// </summary>
+        /// 
+        /// <param name="getStackPolicyRequest">Container for the necessary parameters to execute the GetStackPolicy operation on
+        ///          AmazonCloudFormation.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetStackPolicy
+        ///         operation.</returns>
+        IAsyncResult BeginGetStackPolicy(GetStackPolicyRequest getStackPolicyRequest, AsyncCallback callback, object state);
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the GetStackPolicy operation.
+        /// <seealso cref="Amazon.CloudFormation.AmazonCloudFormation.GetStackPolicy"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetStackPolicy.</param>
+        /// 
+        /// <returns>Returns a GetStackPolicyResult from AmazonCloudFormation.</returns>
+        GetStackPolicyResponse EndGetStackPolicy(IAsyncResult asyncResult);
         
         #endregion
         
@@ -229,6 +273,41 @@ namespace Amazon.CloudFormation
         /// <returns>The response from the ListStacks service method, as returned by AmazonCloudFormation.</returns>
         /// 
         ListStacksResponse ListStacks();
+        
+        #endregion
+        
+    
+
+        #region SetStackPolicy
+
+        /// <summary>
+        /// <para>Sets a stack policy for a specified stack.</para>
+        /// </summary>
+        /// 
+        /// <param name="setStackPolicyRequest">Container for the necessary parameters to execute the SetStackPolicy service method on
+        ///          AmazonCloudFormation.</param>
+        /// 
+        SetStackPolicyResponse SetStackPolicy(SetStackPolicyRequest setStackPolicyRequest);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SetStackPolicy operation.
+        /// <seealso cref="Amazon.CloudFormation.AmazonCloudFormation.SetStackPolicy"/>
+        /// </summary>
+        /// 
+        /// <param name="setStackPolicyRequest">Container for the necessary parameters to execute the SetStackPolicy operation on
+        ///          AmazonCloudFormation.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        IAsyncResult BeginSetStackPolicy(SetStackPolicyRequest setStackPolicyRequest, AsyncCallback callback, object state);
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the SetStackPolicy operation.
+        /// <seealso cref="Amazon.CloudFormation.AmazonCloudFormation.SetStackPolicy"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetStackPolicy.</param>
+        SetStackPolicyResponse EndSetStackPolicy(IAsyncResult asyncResult);
         
         #endregion
         
@@ -327,10 +406,9 @@ namespace Amazon.CloudFormation
         #region DescribeStackEvents
 
         /// <summary>
-        /// <para>Returns all the stack related events for the AWS account. If <c>StackName</c> is specified, returns events related to all the stacks
-        /// with the given name. If <c>StackName</c> is not specified, returns all the events for the account. For more information about a stack's
-        /// event history, go to the AWS CloudFormation User Guide.</para> <para><b>NOTE:</b>Events are returned, even if the stack never existed or has
-        /// been successfully deleted.</para>
+        /// <para>Returns all stack related events for a specified stack. For more information about a stack's event history, go to the <a
+        /// href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide" >AWS CloudFormation User Guide</a> .</para> <para><b>NOTE:</b>Events
+        /// are returned, even if the stack never existed or has been successfully deleted.</para>
         /// </summary>
         /// 
         /// <param name="describeStackEventsRequest">Container for the necessary parameters to execute the DescribeStackEvents service method on
@@ -366,10 +444,9 @@ namespace Amazon.CloudFormation
         DescribeStackEventsResponse EndDescribeStackEvents(IAsyncResult asyncResult);
 
         /// <summary>
-        /// <para>Returns all the stack related events for the AWS account. If <c>StackName</c> is specified, returns events related to all the stacks
-        /// with the given name. If <c>StackName</c> is not specified, returns all the events for the account. For more information about a stack's
-        /// event history, go to the AWS CloudFormation User Guide.</para> <para><b>NOTE:</b>Events are returned, even if the stack never existed or has
-        /// been successfully deleted.</para>
+        /// <para>Returns all stack related events for a specified stack. For more information about a stack's event history, go to the <a
+        /// href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide" >AWS CloudFormation User Guide</a> .</para> <para><b>NOTE:</b>Events
+        /// are returned, even if the stack never existed or has been successfully deleted.</para>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeStackEvents service method, as returned by AmazonCloudFormation.</returns>
@@ -459,37 +536,117 @@ namespace Amazon.CloudFormation
         
     
 
-        #region DeleteStack
+        #region UpdateStack
 
         /// <summary>
-        /// <para>Deletes a specified stack. Once the call completes successfully, stack deletion starts. Deleted stacks do not show up in the
-        /// DescribeStacks API if the deletion has been completed successfully.</para>
+        /// <para>Updates a stack as specified in the template. After the call completes successfully, the stack update starts. You can check the status
+        /// of the stack via the DescribeStacks action.</para> <para> <b>Note: </b> You cannot update <a
+        /// href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html" >AWS::S3::Bucket</a> resources, for
+        /// example, to add or modify tags.</para> <para>To get a copy of the template for an existing stack, you can use the GetTemplate
+        /// action.</para> <para>Tags that were associated with this stack during creation time will still be associated with the stack after an
+        /// <c>UpdateStack</c> operation.</para> <para>For more information about creating an update template, updating a stack, and monitoring the
+        /// progress of the update, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks.html" >Updating
+        /// a Stack</a> .</para>
         /// </summary>
         /// 
-        /// <param name="deleteStackRequest">Container for the necessary parameters to execute the DeleteStack service method on
+        /// <param name="updateStackRequest">Container for the necessary parameters to execute the UpdateStack service method on
         ///          AmazonCloudFormation.</param>
         /// 
-        DeleteStackResponse DeleteStack(DeleteStackRequest deleteStackRequest);
+        /// <returns>The response from the UpdateStack service method, as returned by AmazonCloudFormation.</returns>
+        /// 
+        /// <exception cref="InsufficientCapabilitiesException"/>
+        UpdateStackResponse UpdateStack(UpdateStackRequest updateStackRequest);
 
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteStack operation.
-        /// <seealso cref="Amazon.CloudFormation.AmazonCloudFormation.DeleteStack"/>
+        /// Initiates the asynchronous execution of the UpdateStack operation.
+        /// <seealso cref="Amazon.CloudFormation.AmazonCloudFormation.UpdateStack"/>
         /// </summary>
         /// 
-        /// <param name="deleteStackRequest">Container for the necessary parameters to execute the DeleteStack operation on
+        /// <param name="updateStackRequest">Container for the necessary parameters to execute the UpdateStack operation on
         ///          AmazonCloudFormation.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
-        IAsyncResult BeginDeleteStack(DeleteStackRequest deleteStackRequest, AsyncCallback callback, object state);
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateStack
+        ///         operation.</returns>
+        IAsyncResult BeginUpdateStack(UpdateStackRequest updateStackRequest, AsyncCallback callback, object state);
 
         /// <summary>
-        /// Finishes the asynchronous execution of the DeleteStack operation.
-        /// <seealso cref="Amazon.CloudFormation.AmazonCloudFormation.DeleteStack"/>
+        /// Finishes the asynchronous execution of the UpdateStack operation.
+        /// <seealso cref="Amazon.CloudFormation.AmazonCloudFormation.UpdateStack"/>
         /// </summary>
         /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteStack.</param>
-        DeleteStackResponse EndDeleteStack(IAsyncResult asyncResult);
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateStack.</param>
+        /// 
+        /// <returns>Returns a UpdateStackResult from AmazonCloudFormation.</returns>
+        UpdateStackResponse EndUpdateStack(IAsyncResult asyncResult);
+        
+        #endregion
+        
+    
+
+        #region DescribeStackResources
+
+        /// <summary>
+        /// <para>Returns AWS resource descriptions for running and deleted stacks. If <c>StackName</c> is specified, all the associated resources that
+        /// are part of the stack are returned. If <c>PhysicalResourceId</c> is specified, the associated resources of the stack that the resource
+        /// belongs to are returned.</para> <para><b>NOTE:</b>Only the first 100 resources will be returned. If your stack has more resources than this,
+        /// you should use ListStackResources instead.</para> <para>For deleted stacks, <c>DescribeStackResources</c> returns resource information for
+        /// up to 90 days after the stack has been deleted.</para> <para>You must specify either <c>StackName</c> or <c>PhysicalResourceId</c> , but not
+        /// both. In addition, you can specify <c>LogicalResourceId</c> to filter the returned result. For more information about resources, the
+        /// <c>LogicalResourceId</c> and <c>PhysicalResourceId</c> , go to the <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide"
+        /// >AWS CloudFormation User Guide</a> .</para> <para><b>NOTE:</b>A ValidationError is returned if you specify both StackName and
+        /// PhysicalResourceId in the same request.</para>
+        /// </summary>
+        /// 
+        /// <param name="describeStackResourcesRequest">Container for the necessary parameters to execute the DescribeStackResources service method on
+        ///          AmazonCloudFormation.</param>
+        /// 
+        /// <returns>The response from the DescribeStackResources service method, as returned by AmazonCloudFormation.</returns>
+        /// 
+        DescribeStackResourcesResponse DescribeStackResources(DescribeStackResourcesRequest describeStackResourcesRequest);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeStackResources operation.
+        /// <seealso cref="Amazon.CloudFormation.AmazonCloudFormation.DescribeStackResources"/>
+        /// </summary>
+        /// 
+        /// <param name="describeStackResourcesRequest">Container for the necessary parameters to execute the DescribeStackResources operation on
+        ///          AmazonCloudFormation.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
+        ///         EndDescribeStackResources operation.</returns>
+        IAsyncResult BeginDescribeStackResources(DescribeStackResourcesRequest describeStackResourcesRequest, AsyncCallback callback, object state);
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the DescribeStackResources operation.
+        /// <seealso cref="Amazon.CloudFormation.AmazonCloudFormation.DescribeStackResources"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeStackResources.</param>
+        /// 
+        /// <returns>Returns a DescribeStackResourcesResult from AmazonCloudFormation.</returns>
+        DescribeStackResourcesResponse EndDescribeStackResources(IAsyncResult asyncResult);
+
+        /// <summary>
+        /// <para>Returns AWS resource descriptions for running and deleted stacks. If <c>StackName</c> is specified, all the associated resources that
+        /// are part of the stack are returned. If <c>PhysicalResourceId</c> is specified, the associated resources of the stack that the resource
+        /// belongs to are returned.</para> <para><b>NOTE:</b>Only the first 100 resources will be returned. If your stack has more resources than this,
+        /// you should use ListStackResources instead.</para> <para>For deleted stacks, <c>DescribeStackResources</c> returns resource information for
+        /// up to 90 days after the stack has been deleted.</para> <para>You must specify either <c>StackName</c> or <c>PhysicalResourceId</c> , but not
+        /// both. In addition, you can specify <c>LogicalResourceId</c> to filter the returned result. For more information about resources, the
+        /// <c>LogicalResourceId</c> and <c>PhysicalResourceId</c> , go to the <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide"
+        /// >AWS CloudFormation User Guide</a> .</para> <para><b>NOTE:</b>A ValidationError is returned if you specify both StackName and
+        /// PhysicalResourceId in the same request.</para>
+        /// </summary>
+        /// 
+        /// <returns>The response from the DescribeStackResources service method, as returned by AmazonCloudFormation.</returns>
+        /// 
+        DescribeStackResourcesResponse DescribeStackResources();
         
         #endregion
         
@@ -538,112 +695,37 @@ namespace Amazon.CloudFormation
         
     
 
-        #region DescribeStackResources
+        #region DeleteStack
 
         /// <summary>
-        /// <para>Returns AWS resource descriptions for running and deleted stacks. If <c>StackName</c> is specified, all the associated resources that
-        /// are part of the stack are returned. If <c>PhysicalResourceId</c> is specified, the associated resources of the stack that the resource
-        /// belongs to are returned.</para> <para><b>NOTE:</b>Only the first 100 resources will be returned. If your stack has more resources than this,
-        /// you should use ListStackResources instead.</para> <para>For deleted stacks, <c>DescribeStackResources</c> returns resource information for
-        /// up to 90 days after the stack has been deleted.</para> <para>You must specify either <c>StackName</c> or <c>PhysicalResourceId</c> , but not
-        /// both. In addition, you can specify <c>LogicalResourceId</c> to filter the returned result. For more information about resources, the
-        /// <c>LogicalResourceId</c> and <c>PhysicalResourceId</c> , go to the AWS CloudFormation User Guide.</para> <para><b>NOTE:</b>A ValidationError
-        /// is returned if you specify both StackName and PhysicalResourceId in the same request.</para>
+        /// <para>Deletes a specified stack. Once the call completes successfully, stack deletion starts. Deleted stacks do not show up in the
+        /// DescribeStacks API if the deletion has been completed successfully.</para>
         /// </summary>
         /// 
-        /// <param name="describeStackResourcesRequest">Container for the necessary parameters to execute the DescribeStackResources service method on
+        /// <param name="deleteStackRequest">Container for the necessary parameters to execute the DeleteStack service method on
         ///          AmazonCloudFormation.</param>
         /// 
-        /// <returns>The response from the DescribeStackResources service method, as returned by AmazonCloudFormation.</returns>
-        /// 
-        DescribeStackResourcesResponse DescribeStackResources(DescribeStackResourcesRequest describeStackResourcesRequest);
+        DeleteStackResponse DeleteStack(DeleteStackRequest deleteStackRequest);
 
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeStackResources operation.
-        /// <seealso cref="Amazon.CloudFormation.AmazonCloudFormation.DescribeStackResources"/>
+        /// Initiates the asynchronous execution of the DeleteStack operation.
+        /// <seealso cref="Amazon.CloudFormation.AmazonCloudFormation.DeleteStack"/>
         /// </summary>
         /// 
-        /// <param name="describeStackResourcesRequest">Container for the necessary parameters to execute the DescribeStackResources operation on
+        /// <param name="deleteStackRequest">Container for the necessary parameters to execute the DeleteStack operation on
         ///          AmazonCloudFormation.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndDescribeStackResources operation.</returns>
-        IAsyncResult BeginDescribeStackResources(DescribeStackResourcesRequest describeStackResourcesRequest, AsyncCallback callback, object state);
+        IAsyncResult BeginDeleteStack(DeleteStackRequest deleteStackRequest, AsyncCallback callback, object state);
 
         /// <summary>
-        /// Finishes the asynchronous execution of the DescribeStackResources operation.
-        /// <seealso cref="Amazon.CloudFormation.AmazonCloudFormation.DescribeStackResources"/>
+        /// Finishes the asynchronous execution of the DeleteStack operation.
+        /// <seealso cref="Amazon.CloudFormation.AmazonCloudFormation.DeleteStack"/>
         /// </summary>
         /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeStackResources.</param>
-        /// 
-        /// <returns>Returns a DescribeStackResourcesResult from AmazonCloudFormation.</returns>
-        DescribeStackResourcesResponse EndDescribeStackResources(IAsyncResult asyncResult);
-
-        /// <summary>
-        /// <para>Returns AWS resource descriptions for running and deleted stacks. If <c>StackName</c> is specified, all the associated resources that
-        /// are part of the stack are returned. If <c>PhysicalResourceId</c> is specified, the associated resources of the stack that the resource
-        /// belongs to are returned.</para> <para><b>NOTE:</b>Only the first 100 resources will be returned. If your stack has more resources than this,
-        /// you should use ListStackResources instead.</para> <para>For deleted stacks, <c>DescribeStackResources</c> returns resource information for
-        /// up to 90 days after the stack has been deleted.</para> <para>You must specify either <c>StackName</c> or <c>PhysicalResourceId</c> , but not
-        /// both. In addition, you can specify <c>LogicalResourceId</c> to filter the returned result. For more information about resources, the
-        /// <c>LogicalResourceId</c> and <c>PhysicalResourceId</c> , go to the AWS CloudFormation User Guide.</para> <para><b>NOTE:</b>A ValidationError
-        /// is returned if you specify both StackName and PhysicalResourceId in the same request.</para>
-        /// </summary>
-        /// 
-        /// <returns>The response from the DescribeStackResources service method, as returned by AmazonCloudFormation.</returns>
-        /// 
-        DescribeStackResourcesResponse DescribeStackResources();
-        
-        #endregion
-        
-    
-
-        #region UpdateStack
-
-        /// <summary>
-        /// <para>Updates a stack as specified in the template. After the call completes successfully, the stack update starts. You can check the status
-        /// of the stack via the DescribeStacks action.</para> <para>To get a copy of the template for an existing stack, you can use the GetTemplate
-        /// action.</para> <para>Tags that were associated with this stack during creation time will still be associated with the stack after an
-        /// <c>UpdateStack</c> operation.</para> <para>For more information about creating an update template, updating a stack, and monitoring the
-        /// progress of the update, see Updating a Stack.</para>
-        /// </summary>
-        /// 
-        /// <param name="updateStackRequest">Container for the necessary parameters to execute the UpdateStack service method on
-        ///          AmazonCloudFormation.</param>
-        /// 
-        /// <returns>The response from the UpdateStack service method, as returned by AmazonCloudFormation.</returns>
-        /// 
-        /// <exception cref="InsufficientCapabilitiesException"/>
-        UpdateStackResponse UpdateStack(UpdateStackRequest updateStackRequest);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the UpdateStack operation.
-        /// <seealso cref="Amazon.CloudFormation.AmazonCloudFormation.UpdateStack"/>
-        /// </summary>
-        /// 
-        /// <param name="updateStackRequest">Container for the necessary parameters to execute the UpdateStack operation on
-        ///          AmazonCloudFormation.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateStack
-        ///         operation.</returns>
-        IAsyncResult BeginUpdateStack(UpdateStackRequest updateStackRequest, AsyncCallback callback, object state);
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the UpdateStack operation.
-        /// <seealso cref="Amazon.CloudFormation.AmazonCloudFormation.UpdateStack"/>
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateStack.</param>
-        /// 
-        /// <returns>Returns a UpdateStackResult from AmazonCloudFormation.</returns>
-        UpdateStackResponse EndUpdateStack(IAsyncResult asyncResult);
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteStack.</param>
+        DeleteStackResponse EndDeleteStack(IAsyncResult asyncResult);
         
         #endregion
         

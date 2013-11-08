@@ -23,7 +23,7 @@ namespace Amazon.ElastiCache.Model
     /// <summary>
     /// <para>Represents the output of a <i>DescribeReplicationGroups</i> operation.</para>
     /// </summary>
-    public class DescribeReplicationGroupsResult
+    public partial class DescribeReplicationGroupsResult
     {
         
         private string marker;

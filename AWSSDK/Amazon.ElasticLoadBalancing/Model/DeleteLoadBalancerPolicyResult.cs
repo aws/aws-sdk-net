@@ -23,7 +23,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// <summary>
     /// <para> The output for the DeleteLoadBalancerPolicy action. </para>
     /// </summary>
-    public class DeleteLoadBalancerPolicyResult  
+    public partial class DeleteLoadBalancerPolicyResult
     {
         
     }

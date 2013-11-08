@@ -23,7 +23,7 @@ namespace Amazon.ElasticTranscoder.Model
     /// <summary>
     /// <para>The <c>Permission</c> structure.</para>
     /// </summary>
-    public class Permission
+    public partial class Permission
     {
         
         private string granteeType;

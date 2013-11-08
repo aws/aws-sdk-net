@@ -23,7 +23,7 @@ namespace Amazon.ElasticTranscoder.Model
     /// <summary>
     /// <para>A section of the response body that provides information about the job that is created.</para>
     /// </summary>
-    public class Job
+    public partial class Job
     {
         
         private string id;

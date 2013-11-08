@@ -21,9 +21,9 @@ using System.IO;
 namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
-    /// Parameters required for transcoding audio.
+    /// <para>Parameters required for transcoding audio.</para>
     /// </summary>
-    public class AudioParameters
+    public partial class AudioParameters
     {
         
         private string codec;

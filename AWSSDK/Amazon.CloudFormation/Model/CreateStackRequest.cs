@@ -41,6 +41,8 @@ namespace Amazon.CloudFormation.Model
         private List<string> notificationARNs = new List<string>();
         private List<string> capabilities = new List<string>();
         private string onFailure;
+        private string stackPolicyBody;
+        private string stackPolicyURL;
         private List<Tag> tags = new List<Tag>();
 
         /// <summary>
@@ -75,7 +77,7 @@ namespace Amazon.CloudFormation.Model
 
         /// <summary>
         /// Structure containing the template body. (For more information, go to the <a
-        /// href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS CloudFormation User Guide</a>.) Conditional: You must pass
+        /// href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide">AWS CloudFormation User Guide</a>.) Conditional: You must pass
         /// <c>TemplateBody</c> or <c>TemplateURL</c>. If both are passed, only <c>TemplateBody</c> is used.
         ///  
         /// <para>
@@ -83,7 +85,7 @@ namespace Amazon.CloudFormation.Model
         /// <list type="definition">
         ///     <item>
         ///         <term>Length</term>
-        ///         <description>1 - 51200</description>
+        ///         <description>1 - </description>
         ///     </item>
         /// </list>
         /// </para>
@@ -115,7 +117,7 @@ namespace Amazon.CloudFormation.Model
 
         /// <summary>
         /// Location of file containing the template body. The URL must point to a template (max size: 307,200 bytes) located in an S3 bucket in the
-        /// same region as the stack. For more information, go to the <a href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
+        /// same region as the stack. For more information, go to the <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide">AWS
         /// CloudFormation User Guide</a>. Conditional: You must pass <c>TemplateURL</c> or <c>TemplateBody</c>. If both are passed, only
         /// <c>TemplateBody</c> is used.
         ///  
@@ -330,11 +332,11 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// The list of capabilities that you want to allow in the stack. If your template contains IAM resources, you must specify the CAPABILITY_IAM
         /// value for this parameter; otherwise, this action returns an InsufficientCapabilities error. IAM resources are the following: <a
-        /// href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">AWS::IAM::AccessKey</a>, <a
-        /// href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>, <a
-        /// href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::Policy</a>, <a
-        /// href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::User</a>, and <a
-        /// href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
+        /// href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">AWS::IAM::AccessKey</a>, <a
+        /// href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>, <a
+        /// href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::Policy</a>, <a
+        /// href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::User</a>, and <a
+        /// href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
         ///  
         /// </summary>
         public List<string> Capabilities
@@ -420,7 +422,86 @@ namespace Amazon.CloudFormation.Model
         }
 
         /// <summary>
-        /// A set of user-defined <c>Tags</c> to associate with this stack, represented by key/value pairs. Tags defined for the stack are propogated to
+        /// Structure containing the stack policy body. (For more information, go to the <a
+        /// href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html"> AWS CloudFormation User Guide</a>.) If
+        /// you pass <c>StackPolicyBody</c> and <c>StackPolicyURL</c>, only <c>StackPolicyBody</c> is used.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Length</term>
+        ///         <description>1 - 16384</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
+        public string StackPolicyBody
+        {
+            get { return this.stackPolicyBody; }
+            set { this.stackPolicyBody = value; }
+        }
+
+        /// <summary>
+        /// Sets the StackPolicyBody property
+        /// </summary>
+        /// <param name="stackPolicyBody">The value to set for the StackPolicyBody property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public CreateStackRequest WithStackPolicyBody(string stackPolicyBody)
+        {
+            this.stackPolicyBody = stackPolicyBody;
+            return this;
+        }
+            
+
+        // Check to see if StackPolicyBody property is set
+        internal bool IsSetStackPolicyBody()
+        {
+            return this.stackPolicyBody != null;
+        }
+
+        /// <summary>
+        /// Location of a file containing the stack policy. The URL must point to a policy (max size: 16KB) located in an S3 bucket in the same region
+        /// as the stack. If you pass <c>StackPolicyBody</c> and <c>StackPolicyURL</c>, only <c>StackPolicyBody</c> is used.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Length</term>
+        ///         <description>1 - 1350</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
+        public string StackPolicyURL
+        {
+            get { return this.stackPolicyURL; }
+            set { this.stackPolicyURL = value; }
+        }
+
+        /// <summary>
+        /// Sets the StackPolicyURL property
+        /// </summary>
+        /// <param name="stackPolicyURL">The value to set for the StackPolicyURL property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public CreateStackRequest WithStackPolicyURL(string stackPolicyURL)
+        {
+            this.stackPolicyURL = stackPolicyURL;
+            return this;
+        }
+            
+
+        // Check to see if StackPolicyURL property is set
+        internal bool IsSetStackPolicyURL()
+        {
+            return this.stackPolicyURL != null;
+        }
+
+        /// <summary>
+        /// A set of user-defined <c>Tags</c> to associate with this stack, represented by key/value pairs. Tags defined for the stack are propagated to
         /// EC2 resources that are created as part of the stack. A maximum number of 10 tags can be specified.
         ///  
         /// </summary>

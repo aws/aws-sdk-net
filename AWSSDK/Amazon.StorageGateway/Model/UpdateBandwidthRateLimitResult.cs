@@ -21,9 +21,9 @@ using System.IO;
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
-    /// <para>A JSON object containing the GatewayARN of the gateway whose throttle information was updated.</para>
+    /// <para>A JSON object containing the of the gateway whose throttle information was updated.</para>
     /// </summary>
-    public class UpdateBandwidthRateLimitResult  
+    public partial class UpdateBandwidthRateLimitResult
     {
         
         private string gatewayARN;
@@ -64,7 +64,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if GatewayARN property is set
         internal bool IsSetGatewayARN()
         {
-            return this.gatewayARN != null;       
+            return this.gatewayARN != null;
         }
     }
 }

@@ -30,18 +30,18 @@ namespace Amazon.StorageGateway.Model
 
         /// <summary>
         /// Gets and sets the CreateSnapshotResult property.
-        /// A JSON object containing the following fields: CreateSnapshotOutput$SnapshotId CreateSnapshotOutput$VolumeARN
+        /// A JSON object containing the following fields:
         /// </summary>
         public CreateSnapshotResult CreateSnapshotResult
         {
-            get 
+            get
             {
                 if(this.createSnapshotResult == null)
                 {
                     this.createSnapshotResult = new CreateSnapshotResult();
                 }
 
-                return this.createSnapshotResult; 
+                return this.createSnapshotResult;
             }
             set { this.createSnapshotResult = value; }
         }

@@ -23,7 +23,7 @@ namespace Amazon.ElastiCache.Model
     /// <summary>
     /// <para>Represents the output of a <i>DescribeReservedCacheNodesOfferings</i> operation.</para>
     /// </summary>
-    public class DescribeReservedCacheNodesOfferingsResult
+    public partial class DescribeReservedCacheNodesOfferingsResult
     {
         
         private string marker;

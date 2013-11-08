@@ -23,7 +23,7 @@ namespace Amazon.ElastiCache.Model
     /// <summary>
     /// The results from the CreateCacheParameterGroup action.
     /// </summary>
-    public class CreateCacheParameterGroupResult
+    public partial class CreateCacheParameterGroupResult
     {
         private CacheParameterGroup cacheParameterGroupValue;
 

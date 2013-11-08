@@ -23,7 +23,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// <summary>
     /// <para> The <c>PolicyDescription</c> data type. </para>
     /// </summary>
-    public class PolicyDescription
+    public partial class PolicyDescription
     {
         
         private string policyName;

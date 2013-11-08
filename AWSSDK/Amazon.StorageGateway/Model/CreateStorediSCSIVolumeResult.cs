@@ -22,14 +22,8 @@ namespace Amazon.StorageGateway.Model
 {
     /// <summary>
     /// <para>A JSON object containing the following fields:</para>
-    /// <ul>
-    /// <li> CreateStorediSCSIVolumeOutput$TargetARN </li>
-    /// <li> CreateStorediSCSIVolumeOutput$VolumeARN </li>
-    /// <li> CreateStorediSCSIVolumeOutput$VolumeSizeInBytes </li>
-    /// 
-    /// </ul>
     /// </summary>
-    public class CreateStorediSCSIVolumeResult  
+    public partial class CreateStorediSCSIVolumeResult
     {
         
         private string volumeARN;
@@ -71,7 +65,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if VolumeARN property is set
         internal bool IsSetVolumeARN()
         {
-            return this.volumeARN != null;       
+            return this.volumeARN != null;
         }
 
         /// <summary>
@@ -100,7 +94,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if VolumeSizeInBytes property is set
         internal bool IsSetVolumeSizeInBytes()
         {
-            return this.volumeSizeInBytes.HasValue;       
+            return this.volumeSizeInBytes.HasValue;
         }
 
         /// <summary>
@@ -138,7 +132,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if TargetARN property is set
         internal bool IsSetTargetARN()
         {
-            return this.targetARN != null;       
+            return this.targetARN != null;
         }
     }
 }

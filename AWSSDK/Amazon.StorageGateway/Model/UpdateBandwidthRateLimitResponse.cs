@@ -30,18 +30,18 @@ namespace Amazon.StorageGateway.Model
 
         /// <summary>
         /// Gets and sets the UpdateBandwidthRateLimitResult property.
-        /// A JSON object containing the GatewayARN of the gateway whose throttle information was updated.
+        /// A JSON object containing the of the gateway whose throttle information was updated.
         /// </summary>
         public UpdateBandwidthRateLimitResult UpdateBandwidthRateLimitResult
         {
-            get 
+            get
             {
                 if(this.updateBandwidthRateLimitResult == null)
                 {
                     this.updateBandwidthRateLimitResult = new UpdateBandwidthRateLimitResult();
                 }
 
-                return this.updateBandwidthRateLimitResult; 
+                return this.updateBandwidthRateLimitResult;
             }
             set { this.updateBandwidthRateLimitResult = value; }
         }

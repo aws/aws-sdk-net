@@ -22,13 +22,8 @@ namespace Amazon.StorageGateway.Model
 {
     /// <summary>
     /// <para>A JSON object containing the following fields:</para>
-    /// <ul>
-    /// <li> CreateSnapshotOutput$SnapshotId </li>
-    /// <li> CreateSnapshotOutput$VolumeARN </li>
-    /// 
-    /// </ul>
     /// </summary>
-    public class CreateSnapshotResult  
+    public partial class CreateSnapshotResult
     {
         
         private string volumeARN;
@@ -69,7 +64,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if VolumeARN property is set
         internal bool IsSetVolumeARN()
         {
-            return this.volumeARN != null;       
+            return this.volumeARN != null;
         }
 
         /// <summary>
@@ -108,7 +103,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if SnapshotId property is set
         internal bool IsSetSnapshotId()
         {
-            return this.snapshotId != null;       
+            return this.snapshotId != null;
         }
     }
 }

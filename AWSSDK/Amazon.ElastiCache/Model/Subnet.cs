@@ -24,7 +24,7 @@ namespace Amazon.ElastiCache.Model
     /// <para>Represents the subnet associated with a cache cluster. This parameter refers to subnets defined in Amazon Virtual Private Cloud
     /// (Amazon VPC) and used with ElastiCache.</para>
     /// </summary>
-    public class Subnet
+    public partial class Subnet
     {
         
         private string subnetIdentifier;

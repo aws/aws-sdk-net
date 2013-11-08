@@ -23,8 +23,6 @@ namespace Amazon.StorageGateway.Model
     /// </summary>
     public class InvalidGatewayRequestException : AmazonStorageGatewayException 
     {
-        private StorageGatewayError error;
-    
         /// <summary>
         /// Constructs a new InvalidGatewayRequestException with the specified error
         /// message.
@@ -48,10 +46,5 @@ namespace Amazon.StorageGateway.Model
             : base(message, errorType, errorCode, RequestId, statusCode) {}
 
         
-        public StorageGatewayError Error
-        {
-            get { return error; }
-            set { error = value; }
-        }
     }
 }

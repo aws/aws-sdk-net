@@ -23,7 +23,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// <summary>
     /// <para> The output for the EnableAvailabilityZonesForLoadBalancer action. </para>
     /// </summary>
-    public class EnableAvailabilityZonesForLoadBalancerResult
+    public partial class EnableAvailabilityZonesForLoadBalancerResult
     {
         
         private List<string> availabilityZones = new List<string>();

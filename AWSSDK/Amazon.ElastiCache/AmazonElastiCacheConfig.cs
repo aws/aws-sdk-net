@@ -30,7 +30,7 @@ namespace Amazon.ElastiCache
         public AmazonElastiCacheConfig()
         {
             this.ServiceURL = "https://elasticache.us-east-1.amazonaws.com/";
-            
+            this.AuthenticationServiceName = "elasticache";
         }
 
         /// <summary>

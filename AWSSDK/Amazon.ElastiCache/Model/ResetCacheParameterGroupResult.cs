@@ -28,7 +28,7 @@ namespace Amazon.ElastiCache.Model
     /// 
     /// </ul>
     /// </summary>
-    public class ResetCacheParameterGroupResult
+    public partial class ResetCacheParameterGroupResult
     {
         
         private string cacheParameterGroupName;

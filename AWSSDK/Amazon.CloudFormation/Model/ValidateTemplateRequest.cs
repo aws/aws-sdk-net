@@ -35,7 +35,7 @@ namespace Amazon.CloudFormation.Model
 
         /// <summary>
         /// String containing the template body. (For more information, go to the <a
-        /// href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS CloudFormation User Guide</a>.) Conditional: You must pass
+        /// href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide">AWS CloudFormation User Guide</a>.) Conditional: You must pass
         /// <c>TemplateURL</c> or <c>TemplateBody</c>. If both are passed, only <c>TemplateBody</c> is used.
         ///  
         /// <para>
@@ -43,7 +43,7 @@ namespace Amazon.CloudFormation.Model
         /// <list type="definition">
         ///     <item>
         ///         <term>Length</term>
-        ///         <description>1 - 51200</description>
+        ///         <description>1 - </description>
         ///     </item>
         /// </list>
         /// </para>
@@ -75,7 +75,7 @@ namespace Amazon.CloudFormation.Model
 
         /// <summary>
         /// Location of file containing the template body. The URL must point to a template (max size: 307,200 bytes) located in an S3 bucket in the
-        /// same region as the stack. For more information, go to the <a href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
+        /// same region as the stack. For more information, go to the <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide">AWS
         /// CloudFormation User Guide</a>. Conditional: You must pass <c>TemplateURL</c> or <c>TemplateBody</c>. If both are passed, only
         /// <c>TemplateBody</c> is used.
         ///  

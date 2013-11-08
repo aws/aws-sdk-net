@@ -23,7 +23,7 @@ namespace Amazon.ElasticTranscoder.Model
     /// <summary>
     /// <para>The .jpg or .png file associated with an audio file.</para>
     /// </summary>
-    public class JobAlbumArt
+    public partial class JobAlbumArt
     {
         
         private string mergePolicy;

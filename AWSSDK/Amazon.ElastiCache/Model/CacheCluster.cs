@@ -23,7 +23,7 @@ namespace Amazon.ElastiCache.Model
     /// <summary>
     /// <para>Contains all of the attributes of a specific cache cluster.</para>
     /// </summary>
-    public class CacheCluster
+    public partial class CacheCluster
     {
         
         private string cacheClusterId;

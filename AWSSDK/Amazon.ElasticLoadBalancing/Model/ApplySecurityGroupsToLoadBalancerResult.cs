@@ -23,7 +23,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// <summary>
     /// <para> The out for the ApplySecurityGroupsToLoadBalancer action. </para>
     /// </summary>
-    public class ApplySecurityGroupsToLoadBalancerResult
+    public partial class ApplySecurityGroupsToLoadBalancerResult
     {
         
         private List<string> securityGroups = new List<string>();

@@ -30,18 +30,18 @@ namespace Amazon.StorageGateway.Model
 
         /// <summary>
         /// Gets and sets the AddWorkingStorageResult property.
-        /// A JSON object containing the GatewayARN of the gateway for which working storage was configured.
+        /// A JSON object containing the of the gateway for which working storage was configured.
         /// </summary>
         public AddWorkingStorageResult AddWorkingStorageResult
         {
-            get 
+            get
             {
                 if(this.addWorkingStorageResult == null)
                 {
                     this.addWorkingStorageResult = new AddWorkingStorageResult();
                 }
 
-                return this.addWorkingStorageResult; 
+                return this.addWorkingStorageResult;
             }
             set { this.addWorkingStorageResult = value; }
         }

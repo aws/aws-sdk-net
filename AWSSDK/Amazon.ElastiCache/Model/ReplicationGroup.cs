@@ -23,7 +23,7 @@ namespace Amazon.ElastiCache.Model
     /// <summary>
     /// <para>Contains all of the attributes of a specific replication group.</para>
     /// </summary>
-    public class ReplicationGroup
+    public partial class ReplicationGroup
     {
         
         private string replicationGroupId;

@@ -20,33 +20,13 @@ using System.IO;
 
 namespace Amazon.StorageGateway.Model
 {
-    /// <summary>
-    /// <para>A JSON object containing the following fields:</para>
-    /// <ul>
-    /// <li> CreateCachediSCSIVolume$TargetARN </li>
-    /// <li> CreateCachediSCSIVolume$VolumeARN </li>
-    /// 
-    /// </ul>
+    /// <summary>Create Cachedi S C S I Volume Result
     /// </summary>
-    public class CreateCachediSCSIVolumeResult  
+    public partial class CreateCachediSCSIVolumeResult
     {
         
         private string volumeARN;
         private string targetARN;
-
-        /// <summary>
-        /// The ARN of the configured volume.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>50 - 500</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
         public string VolumeARN
         {
             get { return this.volumeARN; }
@@ -69,22 +49,8 @@ namespace Amazon.StorageGateway.Model
         // Check to see if VolumeARN property is set
         internal bool IsSetVolumeARN()
         {
-            return this.volumeARN != null;       
+            return this.volumeARN != null;
         }
-
-        /// <summary>
-        /// The ARN of the volume target that includes the iSCSI name that initiators can use to connect to the target.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>50 - 800</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
         public string TargetARN
         {
             get { return this.targetARN; }
@@ -107,7 +73,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if TargetARN property is set
         internal bool IsSetTargetARN()
         {
-            return this.targetARN != null;       
+            return this.targetARN != null;
         }
     }
 }

@@ -23,7 +23,7 @@ namespace Amazon.ElastiCache.Model
     /// <summary>
     /// The results from the CreateCacheSubnetGroup action.
     /// </summary>
-    public class CreateCacheSubnetGroupResult
+    public partial class CreateCacheSubnetGroupResult
     {
         private CacheSubnetGroup cacheSubnetGroupValue;
 

@@ -22,15 +22,8 @@ namespace Amazon.StorageGateway.Model
 {
     /// <summary>
     /// <para>A JSON object containing the following fields:</para>
-    /// <ul>
-    /// <li> DescribeWorkingStorageOutput$DiskIds </li>
-    /// <li> GatewayARN </li>
-    /// <li> DescribeWorkingStorageOutput$WorkingStorageAllocatedInBytes </li>
-    /// <li> DescribeWorkingStorageOutput$WorkingStorageUsedInBytes </li>
-    /// 
-    /// </ul>
     /// </summary>
-    public class DescribeWorkingStorageResult  
+    public partial class DescribeWorkingStorageResult
     {
         
         private string gatewayARN;
@@ -74,7 +67,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if GatewayARN property is set
         internal bool IsSetGatewayARN()
         {
-            return this.gatewayARN != null;       
+            return this.gatewayARN != null;
         }
 
         /// <summary>
@@ -102,7 +95,7 @@ namespace Amazon.StorageGateway.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the DiskIds collection
         /// </summary>
@@ -122,7 +115,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if DiskIds property is set
         internal bool IsSetDiskIds()
         {
-            return this.diskIds.Count > 0;       
+            return this.diskIds.Count > 0;
         }
 
         /// <summary>
@@ -151,7 +144,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if WorkingStorageUsedInBytes property is set
         internal bool IsSetWorkingStorageUsedInBytes()
         {
-            return this.workingStorageUsedInBytes.HasValue;       
+            return this.workingStorageUsedInBytes.HasValue;
         }
 
         /// <summary>
@@ -180,7 +173,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if WorkingStorageAllocatedInBytes property is set
         internal bool IsSetWorkingStorageAllocatedInBytes()
         {
-            return this.workingStorageAllocatedInBytes.HasValue;       
+            return this.workingStorageAllocatedInBytes.HasValue;
         }
     }
 }

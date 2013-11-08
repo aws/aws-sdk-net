@@ -23,7 +23,7 @@ namespace Amazon.ElastiCache.Model
     /// <summary>
     /// <para>The settings to be applied to the replication group, either immediately or during the next maintenance window.</para>
     /// </summary>
-    public class ReplicationGroupPendingModifiedValues
+    public partial class ReplicationGroupPendingModifiedValues
     {
         
         private string primaryClusterId;

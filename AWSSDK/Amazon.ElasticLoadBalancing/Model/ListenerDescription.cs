@@ -23,7 +23,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// <summary>
     /// <para> The ListenerDescription data type. </para>
     /// </summary>
-    public class ListenerDescription  
+    public partial class ListenerDescription
     {
         
         private Listener listener;
@@ -61,7 +61,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if Listener property is set
         internal bool IsSetListener()
         {
-            return this.listener != null;       
+            return this.listener != null;
         }
 
         /// <summary>
@@ -88,7 +88,7 @@ namespace Amazon.ElasticLoadBalancing.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the PolicyNames collection
         /// </summary>
@@ -108,7 +108,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if PolicyNames property is set
         internal bool IsSetPolicyNames()
         {
-            return this.policyNames.Count > 0;       
+            return this.policyNames.Count > 0;
         }
     }
 }

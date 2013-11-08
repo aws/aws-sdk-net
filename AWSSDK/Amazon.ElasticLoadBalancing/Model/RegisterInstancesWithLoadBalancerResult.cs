@@ -23,7 +23,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// <summary>
     /// <para> The output for the RegisterInstancesWithLoadBalancer action. </para>
     /// </summary>
-    public class RegisterInstancesWithLoadBalancerResult
+    public partial class RegisterInstancesWithLoadBalancerResult
     {
         
         private List<Instance> instances = new List<Instance>();

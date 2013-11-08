@@ -23,7 +23,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// <summary>
     /// <para>The LBCookieStickinessPolicy data type. </para>
     /// </summary>
-    public class LBCookieStickinessPolicy
+    public partial class LBCookieStickinessPolicy
     {
         
         private string policyName;

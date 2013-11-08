@@ -26,10 +26,13 @@ namespace Amazon.CloudFormation.Model
     /// <summary>
     /// Container for the parameters to the UpdateStack operation.
     /// <para>Updates a stack as specified in the template. After the call completes successfully, the stack update starts. You can check the status
-    /// of the stack via the DescribeStacks action.</para> <para>To get a copy of the template for an existing stack, you can use the GetTemplate
+    /// of the stack via the DescribeStacks action.</para> <para> <b>Note: </b> You cannot update <a
+    /// href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html" >AWS::S3::Bucket</a> resources, for
+    /// example, to add or modify tags.</para> <para>To get a copy of the template for an existing stack, you can use the GetTemplate
     /// action.</para> <para>Tags that were associated with this stack during creation time will still be associated with the stack after an
     /// <c>UpdateStack</c> operation.</para> <para>For more information about creating an update template, updating a stack, and monitoring the
-    /// progress of the update, see Updating a Stack.</para>
+    /// progress of the update, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks.html" >Updating
+    /// a Stack</a> .</para>
     /// </summary>
     /// <seealso cref="Amazon.CloudFormation.AmazonCloudFormation.UpdateStack"/>
     public class UpdateStackRequest : AmazonWebServiceRequest
@@ -37,8 +40,12 @@ namespace Amazon.CloudFormation.Model
         private string stackName;
         private string templateBody;
         private string templateURL;
+        private string stackPolicyDuringUpdateBody;
+        private string stackPolicyDuringUpdateURL;
         private List<Parameter> parameters = new List<Parameter>();
         private List<string> capabilities = new List<string>();
+        private string stackPolicyBody;
+        private string stackPolicyURL;
 
         /// <summary>
         /// The name or stack ID of the stack to update. <note> Must contain only alphanumeric characters (case sensitive) and start with an alpha
@@ -72,7 +79,7 @@ namespace Amazon.CloudFormation.Model
 
         /// <summary>
         /// Structure containing the template body. (For more information, go to the <a
-        /// href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS CloudFormation User Guide</a>.) Conditional: You must pass
+        /// href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide">AWS CloudFormation User Guide</a>.) Conditional: You must pass
         /// <c>TemplateBody</c> or <c>TemplateURL</c>. If both are passed, only <c>TemplateBody</c> is used.
         ///  
         /// <para>
@@ -80,7 +87,7 @@ namespace Amazon.CloudFormation.Model
         /// <list type="definition">
         ///     <item>
         ///         <term>Length</term>
-        ///         <description>1 - 51200</description>
+        ///         <description>1 - </description>
         ///     </item>
         /// </list>
         /// </para>
@@ -112,8 +119,8 @@ namespace Amazon.CloudFormation.Model
 
         /// <summary>
         /// Location of file containing the template body. The URL must point to a template located in an S3 bucket in the same region as the stack. For
-        /// more information, go to the <a href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS CloudFormation User
-        /// Guide</a>. Conditional: You must pass <c>TemplateURL</c> or <c>TemplateBody</c>. If both are passed, only <c>TemplateBody</c> is used.
+        /// more information, go to the <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide">AWS CloudFormation User Guide</a>.
+        /// Conditional: You must pass <c>TemplateURL</c> or <c>TemplateBody</c>. If both are passed, only <c>TemplateBody</c> is used.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -148,6 +155,88 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetTemplateURL()
         {
             return this.templateURL != null;
+        }
+
+        /// <summary>
+        /// Structure containing the temporary overriding stack policy body. If you pass <c>StackPolicyDuringUpdateBody</c> and
+        /// <c>StackPolicyDuringUpdateURL</c>, only <c>StackPolicyDuringUpdateBody</c> is used. If you want to update protected resources, specify a
+        /// temporary overriding stack policy during this update. If you do not specify a stack policy, the current policy that associated with the
+        /// stack will be used.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Length</term>
+        ///         <description>1 - 16384</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
+        public string StackPolicyDuringUpdateBody
+        {
+            get { return this.stackPolicyDuringUpdateBody; }
+            set { this.stackPolicyDuringUpdateBody = value; }
+        }
+
+        /// <summary>
+        /// Sets the StackPolicyDuringUpdateBody property
+        /// </summary>
+        /// <param name="stackPolicyDuringUpdateBody">The value to set for the StackPolicyDuringUpdateBody property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public UpdateStackRequest WithStackPolicyDuringUpdateBody(string stackPolicyDuringUpdateBody)
+        {
+            this.stackPolicyDuringUpdateBody = stackPolicyDuringUpdateBody;
+            return this;
+        }
+            
+
+        // Check to see if StackPolicyDuringUpdateBody property is set
+        internal bool IsSetStackPolicyDuringUpdateBody()
+        {
+            return this.stackPolicyDuringUpdateBody != null;
+        }
+
+        /// <summary>
+        /// Location of a file containing the temporary overriding stack policy. The URL must point to a policy (max size: 16KB) located in an S3 bucket
+        /// in the same region as the stack. If you pass <c>StackPolicyDuringUpdateBody</c> and <c>StackPolicyDuringUpdateURL</c>, only
+        /// <c>StackPolicyDuringUpdateBody</c> is used. If you want to update protected resources, specify a temporary overriding stack policy during
+        /// this update. If you do not specify a stack policy, the current policy that is associated with the stack will be used.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Length</term>
+        ///         <description>1 - 1350</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
+        public string StackPolicyDuringUpdateURL
+        {
+            get { return this.stackPolicyDuringUpdateURL; }
+            set { this.stackPolicyDuringUpdateURL = value; }
+        }
+
+        /// <summary>
+        /// Sets the StackPolicyDuringUpdateURL property
+        /// </summary>
+        /// <param name="stackPolicyDuringUpdateURL">The value to set for the StackPolicyDuringUpdateURL property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public UpdateStackRequest WithStackPolicyDuringUpdateURL(string stackPolicyDuringUpdateURL)
+        {
+            this.stackPolicyDuringUpdateURL = stackPolicyDuringUpdateURL;
+            return this;
+        }
+            
+
+        // Check to see if StackPolicyDuringUpdateURL property is set
+        internal bool IsSetStackPolicyDuringUpdateURL()
+        {
+            return this.stackPolicyDuringUpdateURL != null;
         }
 
         /// <summary>
@@ -200,37 +289,11 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// The list of capabilities that you want to allow in the stack. If your stack contains IAM resources, you must specify the CAPABILITY_IAM
         /// value for this parameter; otherwise, this action returns an InsufficientCapabilities error. IAM resources are the following: <a
-        /// href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">AWS::IAM::AccessKey</a>, <a
-        /// href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>, <a
-        /// href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::Policy</a>, <a
-        /// href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::User</a>, and <a
-        /// href="http://docs.amazon
-        /// 
-        /// 
-        /// 
-        /// 
-        /// 
-        /// 
-        /// 
-        /// 
-        /// 
-        /// 
-        /// 
-        /// 
-        /// 
-        /// 
-        /// 
-        /// 
-        /// 
-        /// 
-        /// 
-        /// 
-        /// 
-        /// 
-        /// 
-        /// 
-        /// 
-        /// webservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
+        /// href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">AWS::IAM::AccessKey</a>, <a
+        /// href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>, <a
+        /// href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::Policy</a>, <a
+        /// href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::User</a>, and <a
+        /// href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
         ///  
         /// </summary>
         public List<string> Capabilities
@@ -274,6 +337,89 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetCapabilities()
         {
             return this.capabilities.Count > 0;
+        }
+
+        /// <summary>
+        /// Structure containing the updated stack policy body. If you pass <c>StackPolicyBody</c> and <c>StackPolicyURL</c>, only
+        /// <c>StackPolicyBody</c> is used. If you want to update a stack policy during a stack update, specify an updated stack policy. For example,
+        /// you can include an updated stack policy to protect a new resource created in the stack update. If you do not specify a stack policy, the
+        /// current policy that is associated with the stack is unchanged.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Length</term>
+        ///         <description>1 - 16384</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
+        public string StackPolicyBody
+        {
+            get { return this.stackPolicyBody; }
+            set { this.stackPolicyBody = value; }
+        }
+
+        /// <summary>
+        /// Sets the StackPolicyBody property
+        /// </summary>
+        /// <param name="stackPolicyBody">The value to set for the StackPolicyBody property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public UpdateStackRequest WithStackPolicyBody(string stackPolicyBody)
+        {
+            this.stackPolicyBody = stackPolicyBody;
+            return this;
+        }
+            
+
+        // Check to see if StackPolicyBody property is set
+        internal bool IsSetStackPolicyBody()
+        {
+            return this.stackPolicyBody != null;
+        }
+
+        /// <summary>
+        /// Location of a file containing the updated stack policy. The URL must point to a policy (max size: 16KB) located in an S3 bucket in the same
+        /// region as the stack. If you pass <c>StackPolicyBody</c> and <c>StackPolicyURL</c>, only <c>StackPolicyBody</c> is used. If you want to
+        /// update a stack policy during a stack update, specify an updated stack policy. For example, you can include an updated stack policy to
+        /// protect a new resource created in the stack update. If you do not specify a stack policy, the current policy that is associated with the
+        /// stack is unchanged.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Length</term>
+        ///         <description>1 - 1350</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
+        public string StackPolicyURL
+        {
+            get { return this.stackPolicyURL; }
+            set { this.stackPolicyURL = value; }
+        }
+
+        /// <summary>
+        /// Sets the StackPolicyURL property
+        /// </summary>
+        /// <param name="stackPolicyURL">The value to set for the StackPolicyURL property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public UpdateStackRequest WithStackPolicyURL(string stackPolicyURL)
+        {
+            this.stackPolicyURL = stackPolicyURL;
+            return this;
+        }
+            
+
+        // Check to see if StackPolicyURL property is set
+        internal bool IsSetStackPolicyURL()
+        {
+            return this.stackPolicyURL != null;
         }
     }
 }

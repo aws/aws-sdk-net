@@ -47,6 +47,14 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
             {
                 request.Parameters.Add("TemplateURL", StringUtils.FromString(updateStackRequest.TemplateURL));
             }
+            if (updateStackRequest != null && updateStackRequest.IsSetStackPolicyDuringUpdateBody())
+            {
+                request.Parameters.Add("StackPolicyDuringUpdateBody", StringUtils.FromString(updateStackRequest.StackPolicyDuringUpdateBody));
+            }
+            if (updateStackRequest != null && updateStackRequest.IsSetStackPolicyDuringUpdateURL())
+            {
+                request.Parameters.Add("StackPolicyDuringUpdateURL", StringUtils.FromString(updateStackRequest.StackPolicyDuringUpdateURL));
+            }
 
             if (updateStackRequest != null)
             {
@@ -76,6 +84,14 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     request.Parameters.Add("Capabilities.member." + capabilitiesListIndex, StringUtils.FromString(capabilitiesListValue));
                     capabilitiesListIndex++;
                 }
+            }
+            if (updateStackRequest != null && updateStackRequest.IsSetStackPolicyBody())
+            {
+                request.Parameters.Add("StackPolicyBody", StringUtils.FromString(updateStackRequest.StackPolicyBody));
+            }
+            if (updateStackRequest != null && updateStackRequest.IsSetStackPolicyURL())
+            {
+                request.Parameters.Add("StackPolicyURL", StringUtils.FromString(updateStackRequest.StackPolicyURL));
             }
 
             return request;

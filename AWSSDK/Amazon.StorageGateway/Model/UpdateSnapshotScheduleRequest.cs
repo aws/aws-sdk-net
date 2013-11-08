@@ -26,7 +26,7 @@ namespace Amazon.StorageGateway.Model
     /// <summary>
     /// Container for the parameters to the UpdateSnapshotSchedule operation.
     /// <para>This operation updates a snapshot schedule configured for a gateway volume.</para> <para>The default snapshot schedule for volume is
-    /// once every 24 hours, starting at the creation time of the volume. You can use this API to change the shapshot schedule configured for the
+    /// once every 24 hours, starting at the creation time of the volume. You can use this API to change the snapshot schedule configured for the
     /// volume.</para> <para>In the request you must identify the gateway volume whose snapshot schedule you want to update, and the schedule
     /// information, including when you want the snapshot to begin on a day and the frequency (in hours) of snapshots.</para>
     /// </summary>
@@ -73,7 +73,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if VolumeARN property is set
         internal bool IsSetVolumeARN()
         {
-            return this.volumeARN != null;       
+            return this.volumeARN != null;
         }
 
         /// <summary>
@@ -112,7 +112,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if StartAt property is set
         internal bool IsSetStartAt()
         {
-            return this.startAt.HasValue;       
+            return this.startAt.HasValue;
         }
 
         /// <summary>
@@ -150,7 +150,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if RecurrenceInHours property is set
         internal bool IsSetRecurrenceInHours()
         {
-            return this.recurrenceInHours.HasValue;       
+            return this.recurrenceInHours.HasValue;
         }
 
         /// <summary>
@@ -188,7 +188,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if Description property is set
         internal bool IsSetDescription()
         {
-            return this.description != null;       
+            return this.description != null;
         }
     }
 }

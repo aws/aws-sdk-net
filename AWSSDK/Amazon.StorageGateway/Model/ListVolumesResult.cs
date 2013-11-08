@@ -20,16 +20,9 @@ using System.IO;
 
 namespace Amazon.StorageGateway.Model
 {
-    /// <summary>
-    /// <para>A JSON object containing the following fields:</para>
-    /// <ul>
-    /// <li> GatewayARN </li>
-    /// <li> ListVolumesOutput$Marker </li>
-    /// <li> ListVolumesOutput$VolumeInfos </li>
-    /// 
-    /// </ul>
+    /// <summary>List Volumes Result
     /// </summary>
-    public class ListVolumesResult  
+    public partial class ListVolumesResult
     {
         
         private string gatewayARN;
@@ -72,23 +65,8 @@ namespace Amazon.StorageGateway.Model
         // Check to see if GatewayARN property is set
         internal bool IsSetGatewayARN()
         {
-            return this.gatewayARN != null;       
+            return this.gatewayARN != null;
         }
-
-        /// <summary>
-        /// Use the marker in your next request to continue pagination of iSCSI volumes. If there are no more volumes to list, this field does not
-        /// appear in the response body.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 1000</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
         public string Marker
         {
             get { return this.marker; }
@@ -111,14 +89,8 @@ namespace Amazon.StorageGateway.Model
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;       
+            return this.marker != null;
         }
-
-        /// <summary>
-        /// An array of <a>VolumeInfo</a> objects, where each object describes an iSCSI volume. If no volumes are defined for the gateway, then
-        /// <c>VolumeInfos</c> is an empty array "[]".
-        ///  
-        /// </summary>
         public List<VolumeInfo> VolumeInfos
         {
             get { return this.volumeInfos; }
@@ -139,7 +111,7 @@ namespace Amazon.StorageGateway.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the VolumeInfos collection
         /// </summary>
@@ -159,7 +131,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if VolumeInfos property is set
         internal bool IsSetVolumeInfos()
         {
-            return this.volumeInfos.Count > 0;       
+            return this.volumeInfos.Count > 0;
         }
     }
 }

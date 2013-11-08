@@ -24,7 +24,7 @@ namespace Amazon.ElasticTranscoder.Model
     /// <para>Watermarks can be in .png or .jpg format. If you want to display a watermark that is not rectangular, use the .png format, which
     /// supports transparency.</para>
     /// </summary>
-    public class JobWatermark
+    public partial class JobWatermark
     {
         
         private string presetWatermarkId;

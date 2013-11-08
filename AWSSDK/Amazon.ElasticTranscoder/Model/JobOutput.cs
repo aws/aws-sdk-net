@@ -25,7 +25,7 @@ namespace Amazon.ElasticTranscoder.Model
     /// you specified multiple outputs for a job, the <c>Output</c> object lists information about the first output. This duplicates the information
     /// that is listed for the first output in the <c>Outputs</c> object.</para>
     /// </summary>
-    public class JobOutput
+    public partial class JobOutput
     {
         
         private string id;
@@ -41,6 +41,7 @@ namespace Amazon.ElasticTranscoder.Model
         private int? height;
         private List<JobWatermark> watermarks = new List<JobWatermark>();
         private JobAlbumArt albumArt;
+        private List<Clip> composition = new List<Clip>();
 
         /// <summary>
         /// A sequential counter, starting with 1, that identifies an output among the outputs from the current job. In the Output syntax, this value is
@@ -458,10 +459,10 @@ namespace Amazon.ElasticTranscoder.Model
         /// <summary>
         /// Information about the watermarks that you want Elastic Transcoder to add to the video during transcoding. You can specify up to four
         /// watermarks for each output. Settings for each watermark must be defined in the preset that you specify in <c>Preset</c> for the current
-        /// output. Watermarks are added to the output video in the sequence in which you list them in the job output—the first watermark in the list is
-        /// added to the output video first, the second watermark in the list is added next, and so on. As a result, if the settings in a preset cause
-        /// Elastic Transcoder to place all watermarks in the same location, the second watermark that you add will cover the first one, the third one
-        /// will cover the second, and the fourth one will cover the third.
+        /// output. Watermarks are added to the output video in the sequence in which you list them in the job outputâ€�?the first watermark in the list
+        /// is added to the output video first, the second watermark in the list is added next, and so on. As a result, if the settings in a preset
+        /// cause Elastic Transcoder to place all watermarks in the same location, the second watermark that you add will cover the first one, the third
+        /// one will cover the second, and the fourth one will cover the third.
         ///  
         /// </summary>
         public List<JobWatermark> Watermarks
@@ -534,6 +535,55 @@ namespace Amazon.ElasticTranscoder.Model
         internal bool IsSetAlbumArt()
         {
             return this.albumArt != null;
+        }
+
+        /// <summary>
+        /// You can create an output file that contains an excerpt from the input file. This excerpt, called a clip, can come from the beginning,
+        /// middle, or end of the file. The Composition object contains settings for the clips that make up an output file. For the current release, you
+        /// can only specify settings for a single clip per output file. The Composition object cannot be null.
+        ///  
+        /// </summary>
+        public List<Clip> Composition
+        {
+            get { return this.composition; }
+            set { this.composition = value; }
+        }
+        /// <summary>
+        /// Adds elements to the Composition collection
+        /// </summary>
+        /// <param name="composition">The values to add to the Composition collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public JobOutput WithComposition(params Clip[] composition)
+        {
+            foreach (Clip element in composition)
+            {
+                this.composition.Add(element);
+            }
+
+            return this;
+        }
+
+        /// <summary>
+        /// Adds elements to the Composition collection
+        /// </summary>
+        /// <param name="composition">The values to add to the Composition collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public JobOutput WithComposition(IEnumerable<Clip> composition)
+        {
+            foreach (Clip element in composition)
+            {
+                this.composition.Add(element);
+            }
+
+            return this;
+        }
+
+        // Check to see if Composition property is set
+        internal bool IsSetComposition()
+        {
+            return this.composition.Count > 0;
         }
     }
 }

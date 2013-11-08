@@ -21,9 +21,9 @@ using System.IO;
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
-    /// <para>A JSON object containing a DescribeChapCredentialsOutput$ChapCredentials.</para>
+    /// <para>A JSON object containing a .</para>
     /// </summary>
-    public class DescribeChapCredentialsResult  
+    public partial class DescribeChapCredentialsResult
     {
         
         private List<ChapInfo> chapCredentials = new List<ChapInfo>();
@@ -57,7 +57,7 @@ namespace Amazon.StorageGateway.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the ChapCredentials collection
         /// </summary>
@@ -77,7 +77,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if ChapCredentials property is set
         internal bool IsSetChapCredentials()
         {
-            return this.chapCredentials.Count > 0;       
+            return this.chapCredentials.Count > 0;
         }
     }
 }

@@ -23,7 +23,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// <summary>
     /// <para> The output for the CreateLoadBalancer action. </para>
     /// </summary>
-    public class CreateLoadBalancerResult
+    public partial class CreateLoadBalancerResult
     {
         
         private string dNSName;

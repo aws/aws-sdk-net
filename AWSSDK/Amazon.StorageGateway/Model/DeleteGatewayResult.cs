@@ -21,9 +21,9 @@ using System.IO;
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
-    /// <para>A JSON object containing the GatewayARN of the deleted gateway.</para>
+    /// <para>A JSON object containing the of the deleted gateway.</para>
     /// </summary>
-    public class DeleteGatewayResult  
+    public partial class DeleteGatewayResult
     {
         
         private string gatewayARN;
@@ -64,7 +64,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if GatewayARN property is set
         internal bool IsSetGatewayARN()
         {
-            return this.gatewayARN != null;       
+            return this.gatewayARN != null;
         }
     }
 }

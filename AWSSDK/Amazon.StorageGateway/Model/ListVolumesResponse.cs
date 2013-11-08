@@ -30,18 +30,18 @@ namespace Amazon.StorageGateway.Model
 
         /// <summary>
         /// Gets and sets the ListVolumesResult property.
-        /// A JSON object containing the following fields: GatewayARN ListVolumesOutput$Marker ListVolumesOutput$VolumeInfos
+        /// 
         /// </summary>
         public ListVolumesResult ListVolumesResult
         {
-            get 
+            get
             {
                 if(this.listVolumesResult == null)
                 {
                     this.listVolumesResult = new ListVolumesResult();
                 }
 
-                return this.listVolumesResult; 
+                return this.listVolumesResult;
             }
             set { this.listVolumesResult = value; }
         }

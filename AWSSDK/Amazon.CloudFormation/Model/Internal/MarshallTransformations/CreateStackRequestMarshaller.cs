@@ -100,6 +100,14 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
             {
                 request.Parameters.Add("OnFailure", StringUtils.FromString(createStackRequest.OnFailure));
             }
+            if (createStackRequest != null && createStackRequest.IsSetStackPolicyBody())
+            {
+                request.Parameters.Add("StackPolicyBody", StringUtils.FromString(createStackRequest.StackPolicyBody));
+            }
+            if (createStackRequest != null && createStackRequest.IsSetStackPolicyURL())
+            {
+                request.Parameters.Add("StackPolicyURL", StringUtils.FromString(createStackRequest.StackPolicyURL));
+            }
 
             if (createStackRequest != null)
             {

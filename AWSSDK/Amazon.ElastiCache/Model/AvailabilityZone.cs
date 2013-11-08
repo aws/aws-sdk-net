@@ -23,7 +23,7 @@ namespace Amazon.ElastiCache.Model
     /// <summary>
     /// <para>Describes an availability zone in which the cache cluster is launched.</para>
     /// </summary>
-    public class AvailabilityZone
+    public partial class AvailabilityZone
     {
         
         private string name;

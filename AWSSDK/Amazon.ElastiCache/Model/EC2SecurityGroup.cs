@@ -23,7 +23,7 @@ namespace Amazon.ElastiCache.Model
     /// <summary>
     /// <para>Provides ownership and status information for an Amazon EC2 security group.</para>
     /// </summary>
-    public class EC2SecurityGroup
+    public partial class EC2SecurityGroup
     {
         
         private string status;

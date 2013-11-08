@@ -21,9 +21,9 @@ using System.IO;
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
-    /// <para>A JSON object containing the GatewayARN of the gateway whose maintenance start time is updated.</para>
+    /// <para>A JSON object containing the of the gateway whose maintenance start time is updated.</para>
     /// </summary>
-    public class UpdateMaintenanceStartTimeResult  
+    public partial class UpdateMaintenanceStartTimeResult
     {
         
         private string gatewayARN;
@@ -64,7 +64,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if GatewayARN property is set
         internal bool IsSetGatewayARN()
         {
-            return this.gatewayARN != null;       
+            return this.gatewayARN != null;
         }
     }
 }

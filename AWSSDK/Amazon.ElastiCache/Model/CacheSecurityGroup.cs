@@ -29,7 +29,7 @@ namespace Amazon.ElastiCache.Model
     /// 
     /// </ul>
     /// </summary>
-    public class CacheSecurityGroup
+    public partial class CacheSecurityGroup
     {
         
         private string ownerId;

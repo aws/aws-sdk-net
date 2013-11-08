@@ -23,7 +23,7 @@ namespace Amazon.ElastiCache.Model
     /// <summary>
     /// The results from the RebootCacheCluster action.
     /// </summary>
-    public class RebootCacheClusterResult
+    public partial class RebootCacheClusterResult
     {
         private CacheCluster cacheClusterValue;
 

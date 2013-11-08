@@ -24,7 +24,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// <para> The <c>PolicyAttributeDescription</c> data type. This data type is used to describe the attributes and values associated with a
     /// policy. </para>
     /// </summary>
-    public class PolicyAttributeDescription  
+    public partial class PolicyAttributeDescription
     {
         
         private string attributeName;
@@ -56,7 +56,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if AttributeName property is set
         internal bool IsSetAttributeName()
         {
-            return this.attributeName != null;       
+            return this.attributeName != null;
         }
 
         /// <summary>
@@ -85,7 +85,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if AttributeValue property is set
         internal bool IsSetAttributeValue()
         {
-            return this.attributeValue != null;       
+            return this.attributeValue != null;
         }
     }
 }

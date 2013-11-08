@@ -23,7 +23,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// <summary>
     /// <para> The output for the SetLoadBalancerPoliciesOfListener action. </para>
     /// </summary>
-    public class SetLoadBalancerPoliciesOfListenerResult  
+    public partial class SetLoadBalancerPoliciesOfListenerResult
     {
         
     }

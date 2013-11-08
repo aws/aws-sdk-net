@@ -30,18 +30,18 @@ namespace Amazon.StorageGateway.Model
 
         /// <summary>
         /// Gets and sets the DeleteGatewayResult property.
-        /// A JSON object containing the GatewayARN of the deleted gateway.
+        /// A JSON object containing the of the deleted gateway.
         /// </summary>
         public DeleteGatewayResult DeleteGatewayResult
         {
-            get 
+            get
             {
                 if(this.deleteGatewayResult == null)
                 {
                     this.deleteGatewayResult = new DeleteGatewayResult();
                 }
 
-                return this.deleteGatewayResult; 
+                return this.deleteGatewayResult;
             }
             set { this.deleteGatewayResult = value; }
         }

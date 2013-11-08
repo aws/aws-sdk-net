@@ -23,7 +23,7 @@ namespace Amazon.ElastiCache.Model
     /// <summary>
     /// <para>Represents a cache cluster's status within a particular cache security group.</para>
     /// </summary>
-    public class CacheSecurityGroupMembership
+    public partial class CacheSecurityGroupMembership
     {
         
         private string cacheSecurityGroupName;

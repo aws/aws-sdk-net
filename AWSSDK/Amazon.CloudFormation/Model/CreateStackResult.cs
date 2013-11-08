@@ -23,7 +23,7 @@ namespace Amazon.CloudFormation.Model
     /// <summary>
     /// <para>The output for a CreateStack action.</para>
     /// </summary>
-    public class CreateStackResult
+    public partial class CreateStackResult
     {
         
         private string stackId;

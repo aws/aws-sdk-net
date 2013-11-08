@@ -11,30 +11,32 @@
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
- */ 
+ */
     using System;
     using System.Collections.Generic;
     using System.IO;
     using Amazon.StorageGateway.Model;
     using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations 
-    { 
-      /// <summary> 
-      /// DescribeWorkingStorageResultUnmarshaller 
-      /// </summary> 
-      internal class DescribeWorkingStorageResultUnmarshaller : IUnmarshaller<DescribeWorkingStorageResult, XmlUnmarshallerContext>, IUnmarshaller<DescribeWorkingStorageResult, JsonUnmarshallerContext> 
-      { 
+    namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
+    {
+      /// <summary>
+      /// DescribeWorkingStorageResultUnmarshaller
+      /// </summary>
+      internal class DescribeWorkingStorageResultUnmarshaller : IUnmarshaller<DescribeWorkingStorageResult, XmlUnmarshallerContext>, IUnmarshaller<DescribeWorkingStorageResult, JsonUnmarshallerContext>
+      {
         DescribeWorkingStorageResult IUnmarshaller<DescribeWorkingStorageResult, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
           throw new NotImplementedException();
         }
-        
-        public DescribeWorkingStorageResult Unmarshall(JsonUnmarshallerContext context) 
+
+        public DescribeWorkingStorageResult Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             DescribeWorkingStorageResult describeWorkingStorageResult = new DescribeWorkingStorageResult();
-          describeWorkingStorageResult.DiskIds = null; 
-                                  
+          describeWorkingStorageResult.DiskIds = null;
+                        
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             while (context.Read())
@@ -43,14 +45,14 @@
                 {
                 context.Read();
                 context.Read();
-               
-              if (context.TestExpression("GatewayARN", targetDepth)) 
+              
+              if (context.TestExpression("GatewayARN", targetDepth))
               {
                 describeWorkingStorageResult.GatewayARN = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue; 
+                continue;
               }
-   
-              if (context.TestExpression("DiskIds", targetDepth)) 
+  
+              if (context.TestExpression("DiskIds", targetDepth))
               {
                 describeWorkingStorageResult.DiskIds = new List<String>();
                         StringUnmarshaller unmarshaller = StringUnmarshaller.GetInstance();
@@ -65,39 +67,39 @@
                     break;
                   }
                 }
-                continue; 
+                continue;
               }
-   
-              if (context.TestExpression("WorkingStorageUsedInBytes", targetDepth)) 
+  
+              if (context.TestExpression("WorkingStorageUsedInBytes", targetDepth))
               {
                 describeWorkingStorageResult.WorkingStorageUsedInBytes = LongUnmarshaller.GetInstance().Unmarshall(context);
-                continue; 
+                continue;
               }
-   
-              if (context.TestExpression("WorkingStorageAllocatedInBytes", targetDepth)) 
+  
+              if (context.TestExpression("WorkingStorageAllocatedInBytes", targetDepth))
               {
                 describeWorkingStorageResult.WorkingStorageAllocatedInBytes = LongUnmarshaller.GetInstance().Unmarshall(context);
-                continue; 
+                continue;
               }
-   
-                } 
-                else if (context.IsEndElement && context.CurrentDepth <= originalDepth) 
-                { 
-                    return describeWorkingStorageResult; 
-                } 
-            } 
+  
+                }
+                else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
+                {
+                    return describeWorkingStorageResult;
+                }
+            }
           
-          
-            return describeWorkingStorageResult; 
-        } 
-        
-        private static DescribeWorkingStorageResultUnmarshaller instance; 
-        public static DescribeWorkingStorageResultUnmarshaller GetInstance() 
-        { 
-            if (instance == null) 
-                instance = new DescribeWorkingStorageResultUnmarshaller(); 
+
+            return describeWorkingStorageResult;
+        }
+
+        private static DescribeWorkingStorageResultUnmarshaller instance;
+        public static DescribeWorkingStorageResultUnmarshaller GetInstance()
+        {
+            if (instance == null)
+                instance = new DescribeWorkingStorageResultUnmarshaller();
             return instance;
-        } 
-    } 
-} 
+        }
+    }
+}
   

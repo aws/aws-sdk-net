@@ -20,31 +20,12 @@ using System.IO;
 
 namespace Amazon.StorageGateway.Model
 {
-    /// <summary>
-    /// <para>A JSON object containing the following fields:</para>
-    /// <ul>
-    /// <li> DeleteSnapshotScheduleOutput$VolumeARN </li>
-    /// 
-    /// </ul>
+    /// <summary>Delete Snapshot Schedule Result
     /// </summary>
-    public class DeleteSnapshotScheduleResult  
+    public partial class DeleteSnapshotScheduleResult
     {
         
         private string volumeARN;
-
-        /// <summary>
-        /// The Amazon Resource Name (ARN) of the volume of which the snapshot was taken.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>50 - 500</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
         public string VolumeARN
         {
             get { return this.volumeARN; }
@@ -67,7 +48,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if VolumeARN property is set
         internal bool IsSetVolumeARN()
         {
-            return this.volumeARN != null;       
+            return this.volumeARN != null;
         }
     }
 }

@@ -23,7 +23,7 @@ namespace Amazon.ElastiCache.Model
     /// <summary>
     /// <para>A value that applies only to a certain cache node type.</para>
     /// </summary>
-    public class CacheNodeTypeSpecificValue
+    public partial class CacheNodeTypeSpecificValue
     {
         
         private string cacheNodeType;

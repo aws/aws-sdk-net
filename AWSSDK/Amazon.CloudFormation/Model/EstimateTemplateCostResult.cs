@@ -23,7 +23,7 @@ namespace Amazon.CloudFormation.Model
     /// <summary>
     /// <para>The output for a EstimateTemplateCost action.</para>
     /// </summary>
-    public class EstimateTemplateCostResult
+    public partial class EstimateTemplateCostResult
     {
         
         private string url;

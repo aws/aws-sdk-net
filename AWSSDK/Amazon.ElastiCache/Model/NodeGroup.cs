@@ -23,7 +23,7 @@ namespace Amazon.ElastiCache.Model
     /// <summary>
     /// <para>Represents a collection of cache nodes in a replication group.</para>
     /// </summary>
-    public class NodeGroup
+    public partial class NodeGroup
     {
         
         private string nodeGroupId;

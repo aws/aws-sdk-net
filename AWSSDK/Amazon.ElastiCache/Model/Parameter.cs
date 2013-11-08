@@ -23,7 +23,7 @@ namespace Amazon.ElastiCache.Model
     /// <summary>
     /// <para>Describes an individual setting that controls some aspect of ElastiCache behavior.</para>
     /// </summary>
-    public class Parameter
+    public partial class Parameter
     {
         
         private string parameterName;

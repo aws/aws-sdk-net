@@ -23,7 +23,7 @@ namespace Amazon.ElasticTranscoder.Model
     /// <summary>
     /// <para>The <c>PipelineOutputConfig</c> structure.</para>
     /// </summary>
-    public class PipelineOutputConfig
+    public partial class PipelineOutputConfig
     {
         
         private string bucket;

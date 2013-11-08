@@ -23,7 +23,7 @@ namespace Amazon.ElasticTranscoder.Model
     /// <summary>
     /// <para>When you update status for a pipeline, Elastic Transcoder returns the values that you specified in the request.</para>
     /// </summary>
-    public class UpdatePipelineStatusResult
+    public partial class UpdatePipelineStatusResult
     {
         
         private Pipeline pipeline;

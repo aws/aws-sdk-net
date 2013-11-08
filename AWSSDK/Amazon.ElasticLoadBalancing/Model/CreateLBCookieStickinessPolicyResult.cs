@@ -23,7 +23,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// <summary>
     /// <para> The output for the CreateLBCookieStickinessPolicy action. </para>
     /// </summary>
-    public class CreateLBCookieStickinessPolicyResult  
+    public partial class CreateLBCookieStickinessPolicyResult
     {
         
     }

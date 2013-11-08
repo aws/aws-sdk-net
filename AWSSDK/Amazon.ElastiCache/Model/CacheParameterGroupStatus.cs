@@ -23,7 +23,7 @@ namespace Amazon.ElastiCache.Model
     /// <summary>
     /// <para>The status of the cache parameter group.</para>
     /// </summary>
-    public class CacheParameterGroupStatus
+    public partial class CacheParameterGroupStatus
     {
         
         private string cacheParameterGroupName;

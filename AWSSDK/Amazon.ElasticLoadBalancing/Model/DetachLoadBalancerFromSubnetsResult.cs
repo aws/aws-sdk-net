@@ -23,7 +23,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// <summary>
     /// <para> The output for the DetachLoadBalancerFromSubnets action. </para>
     /// </summary>
-    public class DetachLoadBalancerFromSubnetsResult
+    public partial class DetachLoadBalancerFromSubnetsResult
     {
         
         private List<string> subnets = new List<string>();

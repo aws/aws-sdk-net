@@ -35,7 +35,9 @@ namespace Amazon.CloudFormation.Model
         private string nextToken;
 
         /// <summary>
-        /// The name or the unique identifier associated with the stack. Default: There is no default value.
+        /// The name or the unique identifier associated with the stack, which are not always interchangeable: <ul> <li>Running stacks: You can specify
+        /// either the stack's name or its unique stack ID.</li> <li>Deleted stacks: You must specify the unique stack ID.</li> </ul> Default: There is
+        /// no default value.
         ///  
         /// </summary>
         public string StackName

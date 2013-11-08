@@ -11,29 +11,31 @@
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
- */ 
+ */
     using System;
     using System.Collections.Generic;
     using System.IO;
     using Amazon.StorageGateway.Model;
     using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations 
-    { 
-      /// <summary> 
-      /// AddUploadBufferResultUnmarshaller 
-      /// </summary> 
-      internal class AddUploadBufferResultUnmarshaller : IUnmarshaller<AddUploadBufferResult, XmlUnmarshallerContext>, IUnmarshaller<AddUploadBufferResult, JsonUnmarshallerContext> 
-      { 
+    namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
+    {
+      /// <summary>
+      /// AddUploadBufferResultUnmarshaller
+      /// </summary>
+      internal class AddUploadBufferResultUnmarshaller : IUnmarshaller<AddUploadBufferResult, XmlUnmarshallerContext>, IUnmarshaller<AddUploadBufferResult, JsonUnmarshallerContext>
+      {
         AddUploadBufferResult IUnmarshaller<AddUploadBufferResult, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
           throw new NotImplementedException();
         }
-        
-        public AddUploadBufferResult Unmarshall(JsonUnmarshallerContext context) 
+
+        public AddUploadBufferResult Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             AddUploadBufferResult addUploadBufferResult = new AddUploadBufferResult();
-                    
+          
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             while (context.Read())
@@ -42,31 +44,31 @@
                 {
                 context.Read();
                 context.Read();
-               
-              if (context.TestExpression("GatewayARN", targetDepth)) 
+              
+              if (context.TestExpression("GatewayARN", targetDepth))
               {
                 addUploadBufferResult.GatewayARN = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue; 
+                continue;
               }
-   
-                } 
-                else if (context.IsEndElement && context.CurrentDepth <= originalDepth) 
-                { 
-                    return addUploadBufferResult; 
-                } 
-            } 
+  
+                }
+                else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
+                {
+                    return addUploadBufferResult;
+                }
+            }
           
-          
-            return addUploadBufferResult; 
-        } 
-        
-        private static AddUploadBufferResultUnmarshaller instance; 
-        public static AddUploadBufferResultUnmarshaller GetInstance() 
-        { 
-            if (instance == null) 
-                instance = new AddUploadBufferResultUnmarshaller(); 
+
+            return addUploadBufferResult;
+        }
+
+        private static AddUploadBufferResultUnmarshaller instance;
+        public static AddUploadBufferResultUnmarshaller GetInstance()
+        {
+            if (instance == null)
+                instance = new AddUploadBufferResultUnmarshaller();
             return instance;
-        } 
-    } 
-} 
+        }
+    }
+}
   

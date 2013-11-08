@@ -23,7 +23,7 @@ namespace Amazon.ElastiCache.Model
     /// <summary>
     /// <para>Represents the information required for client programs to connect to a cache node.</para>
     /// </summary>
-    public class Endpoint
+    public partial class Endpoint
     {
         
         private string address;

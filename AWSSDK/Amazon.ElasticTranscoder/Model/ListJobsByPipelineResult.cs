@@ -23,7 +23,7 @@ namespace Amazon.ElasticTranscoder.Model
     /// <summary>
     /// <para>The <c>ListJobsByPipelineResponse</c> structure.</para>
     /// </summary>
-    public class ListJobsByPipelineResult
+    public partial class ListJobsByPipelineResult
     {
         
         private List<Job> jobs = new List<Job>();

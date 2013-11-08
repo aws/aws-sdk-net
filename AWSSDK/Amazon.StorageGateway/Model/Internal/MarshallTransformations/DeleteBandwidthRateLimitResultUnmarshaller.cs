@@ -11,29 +11,31 @@
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
- */ 
+ */
     using System;
     using System.Collections.Generic;
     using System.IO;
     using Amazon.StorageGateway.Model;
     using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations 
-    { 
-      /// <summary> 
-      /// DeleteBandwidthRateLimitResultUnmarshaller 
-      /// </summary> 
-      internal class DeleteBandwidthRateLimitResultUnmarshaller : IUnmarshaller<DeleteBandwidthRateLimitResult, XmlUnmarshallerContext>, IUnmarshaller<DeleteBandwidthRateLimitResult, JsonUnmarshallerContext> 
-      { 
+    namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
+    {
+      /// <summary>
+      /// DeleteBandwidthRateLimitResultUnmarshaller
+      /// </summary>
+      internal class DeleteBandwidthRateLimitResultUnmarshaller : IUnmarshaller<DeleteBandwidthRateLimitResult, XmlUnmarshallerContext>, IUnmarshaller<DeleteBandwidthRateLimitResult, JsonUnmarshallerContext>
+      {
         DeleteBandwidthRateLimitResult IUnmarshaller<DeleteBandwidthRateLimitResult, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
           throw new NotImplementedException();
         }
-        
-        public DeleteBandwidthRateLimitResult Unmarshall(JsonUnmarshallerContext context) 
+
+        public DeleteBandwidthRateLimitResult Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             DeleteBandwidthRateLimitResult deleteBandwidthRateLimitResult = new DeleteBandwidthRateLimitResult();
-                    
+          
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             while (context.Read())
@@ -42,31 +44,31 @@
                 {
                 context.Read();
                 context.Read();
-               
-              if (context.TestExpression("GatewayARN", targetDepth)) 
+              
+              if (context.TestExpression("GatewayARN", targetDepth))
               {
                 deleteBandwidthRateLimitResult.GatewayARN = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue; 
+                continue;
               }
-   
-                } 
-                else if (context.IsEndElement && context.CurrentDepth <= originalDepth) 
-                { 
-                    return deleteBandwidthRateLimitResult; 
-                } 
-            } 
+  
+                }
+                else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
+                {
+                    return deleteBandwidthRateLimitResult;
+                }
+            }
           
-          
-            return deleteBandwidthRateLimitResult; 
-        } 
-        
-        private static DeleteBandwidthRateLimitResultUnmarshaller instance; 
-        public static DeleteBandwidthRateLimitResultUnmarshaller GetInstance() 
-        { 
-            if (instance == null) 
-                instance = new DeleteBandwidthRateLimitResultUnmarshaller(); 
+
+            return deleteBandwidthRateLimitResult;
+        }
+
+        private static DeleteBandwidthRateLimitResultUnmarshaller instance;
+        public static DeleteBandwidthRateLimitResultUnmarshaller GetInstance()
+        {
+            if (instance == null)
+                instance = new DeleteBandwidthRateLimitResultUnmarshaller();
             return instance;
-        } 
-    } 
-} 
+        }
+    }
+}
   

@@ -30,18 +30,18 @@ namespace Amazon.StorageGateway.Model
 
         /// <summary>
         /// Gets and sets the ListGatewaysResult property.
-        /// A JSON object containing the following fields: ListGatewaysOutput$Gateways ListGatewaysOutput$Marker
+        /// 
         /// </summary>
         public ListGatewaysResult ListGatewaysResult
         {
-            get 
+            get
             {
                 if(this.listGatewaysResult == null)
                 {
                     this.listGatewaysResult = new ListGatewaysResult();
                 }
 
-                return this.listGatewaysResult; 
+                return this.listGatewaysResult;
             }
             set { this.listGatewaysResult = value; }
         }

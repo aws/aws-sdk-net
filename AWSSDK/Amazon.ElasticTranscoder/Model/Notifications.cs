@@ -24,7 +24,7 @@ namespace Amazon.ElasticTranscoder.Model
     /// <para>The Amazon Simple Notification Service (Amazon SNS) topic or topics to notify in order to report job status.</para>
     /// <para><b>IMPORTANT:</b>To receive notifications, you must also subscribe to the new topic in the Amazon SNS console.</para>
     /// </summary>
-    public class Notifications
+    public partial class Notifications
     {
         
         private string progressing;

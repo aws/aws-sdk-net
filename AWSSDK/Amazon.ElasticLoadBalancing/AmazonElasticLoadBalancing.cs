@@ -193,6 +193,246 @@ namespace Amazon.ElasticLoadBalancing
         
     
 
+        #region ModifyLoadBalancerAttributes
+
+        /// <summary>
+        /// <para>Modifies the attributes of a specified load balancer.</para>
+        /// </summary>
+        /// 
+        /// <param name="modifyLoadBalancerAttributesRequest">Container for the necessary parameters to execute the ModifyLoadBalancerAttributes service
+        ///          method on AmazonElasticLoadBalancing.</param>
+        /// 
+        /// <returns>The response from the ModifyLoadBalancerAttributes service method, as returned by AmazonElasticLoadBalancing.</returns>
+        /// 
+        /// <exception cref="InvalidConfigurationRequestException"/>
+        /// <exception cref="LoadBalancerAttributeNotFoundException"/>
+        /// <exception cref="LoadBalancerNotFoundException"/>
+        ModifyLoadBalancerAttributesResponse ModifyLoadBalancerAttributes(ModifyLoadBalancerAttributesRequest modifyLoadBalancerAttributesRequest);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyLoadBalancerAttributes operation.
+        /// <seealso cref="Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancing.ModifyLoadBalancerAttributes"/>
+        /// </summary>
+        /// 
+        /// <param name="modifyLoadBalancerAttributesRequest">Container for the necessary parameters to execute the ModifyLoadBalancerAttributes
+        ///          operation on AmazonElasticLoadBalancing.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
+        ///         EndModifyLoadBalancerAttributes operation.</returns>
+        IAsyncResult BeginModifyLoadBalancerAttributes(ModifyLoadBalancerAttributesRequest modifyLoadBalancerAttributesRequest, AsyncCallback callback, object state);
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the ModifyLoadBalancerAttributes operation.
+        /// <seealso cref="Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancing.ModifyLoadBalancerAttributes"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyLoadBalancerAttributes.</param>
+        /// 
+        /// <returns>Returns a ModifyLoadBalancerAttributesResult from AmazonElasticLoadBalancing.</returns>
+        ModifyLoadBalancerAttributesResponse EndModifyLoadBalancerAttributes(IAsyncResult asyncResult);
+        
+        #endregion
+        
+    
+
+        #region CreateLoadBalancerListeners
+
+        /// <summary>
+        /// <para> Creates one or more listeners on a load balancer for the specified port. If a listener with the given port does not already exist, it
+        /// will be created; otherwise, the properties of the new listener must match the properties of the existing listener. </para> <para>For more
+        /// information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/us-add-listener.html" >Add a Listener to
+        /// Your Load Balancer</a> in the <i>Elastic Load Balancing Developer Guide</i> .</para>
+        /// </summary>
+        /// 
+        /// <param name="createLoadBalancerListenersRequest">Container for the necessary parameters to execute the CreateLoadBalancerListeners service
+        ///          method on AmazonElasticLoadBalancing.</param>
+        /// 
+        /// <returns>The response from the CreateLoadBalancerListeners service method, as returned by AmazonElasticLoadBalancing.</returns>
+        /// 
+        /// <exception cref="InvalidConfigurationRequestException"/>
+        /// <exception cref="DuplicateListenerException"/>
+        /// <exception cref="CertificateNotFoundException"/>
+        /// <exception cref="LoadBalancerNotFoundException"/>
+        CreateLoadBalancerListenersResponse CreateLoadBalancerListeners(CreateLoadBalancerListenersRequest createLoadBalancerListenersRequest);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateLoadBalancerListeners operation.
+        /// <seealso cref="Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancing.CreateLoadBalancerListeners"/>
+        /// </summary>
+        /// 
+        /// <param name="createLoadBalancerListenersRequest">Container for the necessary parameters to execute the CreateLoadBalancerListeners operation
+        ///          on AmazonElasticLoadBalancing.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
+        ///         EndCreateLoadBalancerListeners operation.</returns>
+        IAsyncResult BeginCreateLoadBalancerListeners(CreateLoadBalancerListenersRequest createLoadBalancerListenersRequest, AsyncCallback callback, object state);
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the CreateLoadBalancerListeners operation.
+        /// <seealso cref="Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancing.CreateLoadBalancerListeners"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateLoadBalancerListeners.</param>
+        /// 
+        /// <returns>Returns a CreateLoadBalancerListenersResult from AmazonElasticLoadBalancing.</returns>
+        CreateLoadBalancerListenersResponse EndCreateLoadBalancerListeners(IAsyncResult asyncResult);
+        
+        #endregion
+        
+    
+
+        #region DeleteLoadBalancerListeners
+
+        /// <summary>
+        /// <para> Deletes listeners from the load balancer for the specified port. </para>
+        /// </summary>
+        /// 
+        /// <param name="deleteLoadBalancerListenersRequest">Container for the necessary parameters to execute the DeleteLoadBalancerListeners service
+        ///          method on AmazonElasticLoadBalancing.</param>
+        /// 
+        /// <returns>The response from the DeleteLoadBalancerListeners service method, as returned by AmazonElasticLoadBalancing.</returns>
+        /// 
+        /// <exception cref="LoadBalancerNotFoundException"/>
+        DeleteLoadBalancerListenersResponse DeleteLoadBalancerListeners(DeleteLoadBalancerListenersRequest deleteLoadBalancerListenersRequest);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteLoadBalancerListeners operation.
+        /// <seealso cref="Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancing.DeleteLoadBalancerListeners"/>
+        /// </summary>
+        /// 
+        /// <param name="deleteLoadBalancerListenersRequest">Container for the necessary parameters to execute the DeleteLoadBalancerListeners operation
+        ///          on AmazonElasticLoadBalancing.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
+        ///         EndDeleteLoadBalancerListeners operation.</returns>
+        IAsyncResult BeginDeleteLoadBalancerListeners(DeleteLoadBalancerListenersRequest deleteLoadBalancerListenersRequest, AsyncCallback callback, object state);
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the DeleteLoadBalancerListeners operation.
+        /// <seealso cref="Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancing.DeleteLoadBalancerListeners"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteLoadBalancerListeners.</param>
+        /// 
+        /// <returns>Returns a DeleteLoadBalancerListenersResult from AmazonElasticLoadBalancing.</returns>
+        DeleteLoadBalancerListenersResponse EndDeleteLoadBalancerListeners(IAsyncResult asyncResult);
+        
+        #endregion
+        
+    
+
+        #region CreateAppCookieStickinessPolicy
+
+        /// <summary>
+        /// <para> Generates a stickiness policy with sticky session lifetimes that follow that of an application-generated cookie. This policy can be
+        /// associated only with HTTP/HTTPS listeners. </para> <para> This policy is similar to the policy created by CreateLBCookieStickinessPolicy,
+        /// except that the lifetime of the special Elastic Load Balancing cookie follows the lifetime of the application-generated cookie specified in
+        /// the policy configuration. The load balancer only inserts a new stickiness cookie when the application response includes a new application
+        /// cookie. </para> <para> If the application cookie is explicitly removed or expires, the session stops being sticky until a new application
+        /// cookie is issued. </para> <para><b>NOTE:</b> An application client must receive and send two cookies: the application-generated cookie and
+        /// the special Elastic Load Balancing cookie named AWSELB. This is the default behavior for many common web browsers. </para> <para>For more
+        /// information, see <a
+        /// href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_StickySessions.html#US_EnableStickySessionsAppCookies"
+        /// >Enabling Application-Controlled Session Stickiness</a> in the <i>Elastic Load Balancing Developer Guide</i> .</para>
+        /// </summary>
+        /// 
+        /// <param name="createAppCookieStickinessPolicyRequest">Container for the necessary parameters to execute the CreateAppCookieStickinessPolicy
+        ///          service method on AmazonElasticLoadBalancing.</param>
+        /// 
+        /// <returns>The response from the CreateAppCookieStickinessPolicy service method, as returned by AmazonElasticLoadBalancing.</returns>
+        /// 
+        /// <exception cref="InvalidConfigurationRequestException"/>
+        /// <exception cref="DuplicatePolicyNameException"/>
+        /// <exception cref="TooManyPoliciesException"/>
+        /// <exception cref="LoadBalancerNotFoundException"/>
+        CreateAppCookieStickinessPolicyResponse CreateAppCookieStickinessPolicy(CreateAppCookieStickinessPolicyRequest createAppCookieStickinessPolicyRequest);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateAppCookieStickinessPolicy operation.
+        /// <seealso cref="Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancing.CreateAppCookieStickinessPolicy"/>
+        /// </summary>
+        /// 
+        /// <param name="createAppCookieStickinessPolicyRequest">Container for the necessary parameters to execute the CreateAppCookieStickinessPolicy
+        ///          operation on AmazonElasticLoadBalancing.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
+        ///         EndCreateAppCookieStickinessPolicy operation.</returns>
+        IAsyncResult BeginCreateAppCookieStickinessPolicy(CreateAppCookieStickinessPolicyRequest createAppCookieStickinessPolicyRequest, AsyncCallback callback, object state);
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the CreateAppCookieStickinessPolicy operation.
+        /// <seealso cref="Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancing.CreateAppCookieStickinessPolicy"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateAppCookieStickinessPolicy.</param>
+        /// 
+        /// <returns>Returns a CreateAppCookieStickinessPolicyResult from AmazonElasticLoadBalancing.</returns>
+        CreateAppCookieStickinessPolicyResponse EndCreateAppCookieStickinessPolicy(IAsyncResult asyncResult);
+        
+        #endregion
+        
+    
+
+        #region ApplySecurityGroupsToLoadBalancer
+
+        /// <summary>
+        /// <para> Associates one or more security groups with your load balancer in Amazon Virtual Private Cloud (Amazon VPC). The provided security
+        /// group IDs will override any currently applied security groups. </para> <para>For more information, see <a
+        /// href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/USVPC_ApplySG.html" >Manage Security Groups in Amazon VPC</a> in
+        /// the <i>Elastic Load Balancing Developer Guide</i> .</para>
+        /// </summary>
+        /// 
+        /// <param name="applySecurityGroupsToLoadBalancerRequest">Container for the necessary parameters to execute the
+        ///          ApplySecurityGroupsToLoadBalancer service method on AmazonElasticLoadBalancing.</param>
+        /// 
+        /// <returns>The response from the ApplySecurityGroupsToLoadBalancer service method, as returned by AmazonElasticLoadBalancing.</returns>
+        /// 
+        /// <exception cref="InvalidConfigurationRequestException"/>
+        /// <exception cref="InvalidSecurityGroupException"/>
+        /// <exception cref="LoadBalancerNotFoundException"/>
+        ApplySecurityGroupsToLoadBalancerResponse ApplySecurityGroupsToLoadBalancer(ApplySecurityGroupsToLoadBalancerRequest applySecurityGroupsToLoadBalancerRequest);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ApplySecurityGroupsToLoadBalancer operation.
+        /// <seealso cref="Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancing.ApplySecurityGroupsToLoadBalancer"/>
+        /// </summary>
+        /// 
+        /// <param name="applySecurityGroupsToLoadBalancerRequest">Container for the necessary parameters to execute the
+        ///          ApplySecurityGroupsToLoadBalancer operation on AmazonElasticLoadBalancing.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
+        ///         EndApplySecurityGroupsToLoadBalancer operation.</returns>
+        IAsyncResult BeginApplySecurityGroupsToLoadBalancer(ApplySecurityGroupsToLoadBalancerRequest applySecurityGroupsToLoadBalancerRequest, AsyncCallback callback, object state);
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the ApplySecurityGroupsToLoadBalancer operation.
+        /// <seealso cref="Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancing.ApplySecurityGroupsToLoadBalancer"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginApplySecurityGroupsToLoadBalancer.</param>
+        /// 
+        /// <returns>Returns a ApplySecurityGroupsToLoadBalancerResult from AmazonElasticLoadBalancing.</returns>
+        ApplySecurityGroupsToLoadBalancerResponse EndApplySecurityGroupsToLoadBalancer(IAsyncResult asyncResult);
+        
+        #endregion
+        
+    
+
         #region DescribeLoadBalancerPolicies
 
         /// <summary>
@@ -308,8 +548,8 @@ namespace Amazon.ElasticLoadBalancing
         /// instances registered with the load balancer that are in the removed Availability Zone go into the <i>OutOfService</i> state. Upon
         /// Availability Zone removal, the load balancer attempts to equally balance the traffic among its remaining usable Availability Zones. Trying
         /// to remove an Availability Zone that was not associated with the load balancer does nothing. </para> <para>For more information, see <a
-        /// href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_ShrinkLBApp04.html"> Disable an Availability Zone from a
-        /// Load-Balanced Application </a> in the <i>Elastic Load Balancing Developer Guide</i> .</para>
+        /// href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_ShrinkLBApp04.html" >Disable an Availability Zone from a
+        /// Load-Balanced Application</a> in the <i>Elastic Load Balancing Developer Guide</i> .</para>
         /// </summary>
         /// 
         /// <param name="disableAvailabilityZonesForLoadBalancerRequest">Container for the necessary parameters to execute the
@@ -495,8 +735,8 @@ namespace Amazon.ElasticLoadBalancing
         /// <para> Adds one or more EC2 Availability Zones to the load balancer. </para> <para> The load balancer evenly distributes requests across all
         /// its registered Availability Zones that contain instances. </para> <para><b>NOTE:</b> The new EC2 Availability Zones to be added must be in
         /// the same EC2 Region as the Availability Zones for which the load balancer was created. </para> <para>For more information, see <a
-        /// href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_AddLBAvailabilityZone.html"> Expand a Load Balanced
-        /// Application to an Additional Availability Zone </a> in the <i>Elastic Load Balancing Developer Guide</i> .</para>
+        /// href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_AddLBAvailabilityZone.html" >Expand a Load Balanced
+        /// Application to an Additional Availability Zone</a> in the <i>Elastic Load Balancing Developer Guide</i> .</para>
         /// </summary>
         /// 
         /// <param name="enableAvailabilityZonesForLoadBalancerRequest">Container for the necessary parameters to execute the
@@ -583,55 +823,6 @@ namespace Amazon.ElasticLoadBalancing
         
     
 
-        #region CreateLoadBalancerListeners
-
-        /// <summary>
-        /// <para> Creates one or more listeners on a load balancer for the specified port. If a listener with the given port does not already exist, it
-        /// will be created; otherwise, the properties of the new listener must match the properties of the existing listener. </para> <para>For more
-        /// information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/us-add-listener.html"> Add a Listener to
-        /// Your Load Balancer </a> in the <i>Elastic Load Balancing Developer Guide</i> .</para>
-        /// </summary>
-        /// 
-        /// <param name="createLoadBalancerListenersRequest">Container for the necessary parameters to execute the CreateLoadBalancerListeners service
-        ///          method on AmazonElasticLoadBalancing.</param>
-        /// 
-        /// <returns>The response from the CreateLoadBalancerListeners service method, as returned by AmazonElasticLoadBalancing.</returns>
-        /// 
-        /// <exception cref="InvalidConfigurationRequestException"/>
-        /// <exception cref="DuplicateListenerException"/>
-        /// <exception cref="CertificateNotFoundException"/>
-        /// <exception cref="LoadBalancerNotFoundException"/>
-        CreateLoadBalancerListenersResponse CreateLoadBalancerListeners(CreateLoadBalancerListenersRequest createLoadBalancerListenersRequest);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the CreateLoadBalancerListeners operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancing.CreateLoadBalancerListeners"/>
-        /// </summary>
-        /// 
-        /// <param name="createLoadBalancerListenersRequest">Container for the necessary parameters to execute the CreateLoadBalancerListeners operation
-        ///          on AmazonElasticLoadBalancing.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndCreateLoadBalancerListeners operation.</returns>
-        IAsyncResult BeginCreateLoadBalancerListeners(CreateLoadBalancerListenersRequest createLoadBalancerListenersRequest, AsyncCallback callback, object state);
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the CreateLoadBalancerListeners operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancing.CreateLoadBalancerListeners"/>
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateLoadBalancerListeners.</param>
-        /// 
-        /// <returns>Returns a CreateLoadBalancerListenersResult from AmazonElasticLoadBalancing.</returns>
-        CreateLoadBalancerListenersResponse EndCreateLoadBalancerListeners(IAsyncResult asyncResult);
-        
-        #endregion
-        
-    
-
         #region CreateLoadBalancer
 
         /// <summary>
@@ -644,16 +835,16 @@ namespace Amazon.ElasticLoadBalancing
         /// 
         /// </ul>
         /// <para>For information about the AWS regions supported by Elastic Load Balancing, see <a
-        /// href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elb_region"> Regions and Endpoints </a> .</para> <para>You can create up to 10
+        /// href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elb_region" >Regions and Endpoints</a> .</para> <para>You can create up to 10
         /// load balancers per region per account.</para> <para>Elastic Load Balancing supports load balancing your Amazon EC2 instances launched within
         /// any one of the following platforms:</para>
         /// <ul>
         /// <li> <i>EC2-Classic</i> <para>For information on creating and managing your load balancers in EC2-Classic, see <a
-        /// href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/UserScenariosForEC2.html"> Deploy Elastic Load Balancing in
-        /// Amazon EC2-Classic </a> .</para> </li>
+        /// href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/UserScenariosForEC2.html" >Deploy Elastic Load Balancing in
+        /// Amazon EC2-Classic</a> .</para> </li>
         /// <li> <i>EC2-VPC</i> <para>For information on creating and managing your load balancers in EC2-VPC, see <a
-        /// href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/UserScenariosForVPC.html"> Deploy Elastic Load Balancing in
-        /// Amazon VPC </a> .</para> </li>
+        /// href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/UserScenariosForVPC.html" >Deploy Elastic Load Balancing in
+        /// Amazon VPC</a> .</para> </li>
         /// 
         /// </ul>
         /// </summary>
@@ -753,57 +944,14 @@ namespace Amazon.ElasticLoadBalancing
         
     
 
-        #region DeleteLoadBalancerListeners
-
-        /// <summary>
-        /// <para> Deletes listeners from the load balancer for the specified port. </para>
-        /// </summary>
-        /// 
-        /// <param name="deleteLoadBalancerListenersRequest">Container for the necessary parameters to execute the DeleteLoadBalancerListeners service
-        ///          method on AmazonElasticLoadBalancing.</param>
-        /// 
-        /// <returns>The response from the DeleteLoadBalancerListeners service method, as returned by AmazonElasticLoadBalancing.</returns>
-        /// 
-        /// <exception cref="LoadBalancerNotFoundException"/>
-        DeleteLoadBalancerListenersResponse DeleteLoadBalancerListeners(DeleteLoadBalancerListenersRequest deleteLoadBalancerListenersRequest);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the DeleteLoadBalancerListeners operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancing.DeleteLoadBalancerListeners"/>
-        /// </summary>
-        /// 
-        /// <param name="deleteLoadBalancerListenersRequest">Container for the necessary parameters to execute the DeleteLoadBalancerListeners operation
-        ///          on AmazonElasticLoadBalancing.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndDeleteLoadBalancerListeners operation.</returns>
-        IAsyncResult BeginDeleteLoadBalancerListeners(DeleteLoadBalancerListenersRequest deleteLoadBalancerListenersRequest, AsyncCallback callback, object state);
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the DeleteLoadBalancerListeners operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancing.DeleteLoadBalancerListeners"/>
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteLoadBalancerListeners.</param>
-        /// 
-        /// <returns>Returns a DeleteLoadBalancerListenersResult from AmazonElasticLoadBalancing.</returns>
-        DeleteLoadBalancerListenersResponse EndDeleteLoadBalancerListeners(IAsyncResult asyncResult);
-        
-        #endregion
-        
-    
-
         #region DeregisterInstancesFromLoadBalancer
 
         /// <summary>
         /// <para> Deregisters instances from the load balancer. Once the instance is deregistered, it will stop receiving traffic from the load
         /// balancer. </para> <para> In order to successfully call this API, the same account credentials as those used to create the load balancer must
         /// be provided. </para> <para>For more information, see <a
-        /// href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_DeReg_Reg_Instances.html"> De-register and Register Amazon
-        /// EC2 Instances </a> in the <i>Elastic Load Balancing Developer Guide</i> .</para> <para>You can use DescribeLoadBalancers to verify if the
+        /// href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_DeReg_Reg_Instances.html" >De-register and Register Amazon
+        /// EC2 Instances</a> in the <i>Elastic Load Balancing Developer Guide</i> .</para> <para>You can use DescribeLoadBalancers to verify if the
         /// instance is deregistered from the load balancer.</para>
         /// </summary>
         /// 
@@ -850,8 +998,8 @@ namespace Amazon.ElasticLoadBalancing
         /// <summary>
         /// <para> Sets the certificate that terminates the specified listener's SSL connections. The specified certificate replaces any prior
         /// certificate that was used on the same load balancer and port. </para> <para>For more information on updating your SSL certificate, see <a
-        /// href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_UpdatingLoadBalancerSSL.html"> Updating an SSL Certificate
-        /// for a Load Balancer </a> in the <i>Elastic Load Balancing Developer Guide</i> .</para>
+        /// href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_UpdatingLoadBalancerSSL.html" >Updating an SSL Certificate
+        /// for a Load Balancer</a> in the <i>Elastic Load Balancing Developer Guide</i> .</para>
         /// </summary>
         /// 
         /// <param name="setLoadBalancerListenerSSLCertificateRequest">Container for the necessary parameters to execute the
@@ -889,6 +1037,50 @@ namespace Amazon.ElasticLoadBalancing
         /// 
         /// <returns>Returns a SetLoadBalancerListenerSSLCertificateResult from AmazonElasticLoadBalancing.</returns>
         SetLoadBalancerListenerSSLCertificateResponse EndSetLoadBalancerListenerSSLCertificate(IAsyncResult asyncResult);
+        
+        #endregion
+        
+    
+
+        #region DescribeLoadBalancerAttributes
+
+        /// <summary>
+        /// <para>Returns detailed information about all of the attributes associated with the specified load balancer.</para>
+        /// </summary>
+        /// 
+        /// <param name="describeLoadBalancerAttributesRequest">Container for the necessary parameters to execute the DescribeLoadBalancerAttributes
+        ///          service method on AmazonElasticLoadBalancing.</param>
+        /// 
+        /// <returns>The response from the DescribeLoadBalancerAttributes service method, as returned by AmazonElasticLoadBalancing.</returns>
+        /// 
+        /// <exception cref="LoadBalancerAttributeNotFoundException"/>
+        /// <exception cref="LoadBalancerNotFoundException"/>
+        DescribeLoadBalancerAttributesResponse DescribeLoadBalancerAttributes(DescribeLoadBalancerAttributesRequest describeLoadBalancerAttributesRequest);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeLoadBalancerAttributes operation.
+        /// <seealso cref="Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancing.DescribeLoadBalancerAttributes"/>
+        /// </summary>
+        /// 
+        /// <param name="describeLoadBalancerAttributesRequest">Container for the necessary parameters to execute the DescribeLoadBalancerAttributes
+        ///          operation on AmazonElasticLoadBalancing.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
+        ///         EndDescribeLoadBalancerAttributes operation.</returns>
+        IAsyncResult BeginDescribeLoadBalancerAttributes(DescribeLoadBalancerAttributesRequest describeLoadBalancerAttributesRequest, AsyncCallback callback, object state);
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the DescribeLoadBalancerAttributes operation.
+        /// <seealso cref="Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancing.DescribeLoadBalancerAttributes"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeLoadBalancerAttributes.</param>
+        /// 
+        /// <returns>Returns a DescribeLoadBalancerAttributesResult from AmazonElasticLoadBalancing.</returns>
+        DescribeLoadBalancerAttributesResponse EndDescribeLoadBalancerAttributes(IAsyncResult asyncResult);
         
         #endregion
         
@@ -953,8 +1145,8 @@ namespace Amazon.ElasticLoadBalancing
         /// <summary>
         /// <para> Adds one or more subnets to the set of configured subnets in the Amazon Virtual Private Cloud (Amazon VPC) for the load balancer.
         /// </para> <para> The load balancers evenly distribute requests across all of the registered subnets. For more information, see <a
-        /// href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/UserScenariosForVPC.html"> Deploy Elastic Load Balancing in
-        /// Amazon VPC </a> in the <i>Elastic Load Balancing Developer Guide</i> .
+        /// href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/UserScenariosForVPC.html" >Deploy Elastic Load Balancing in
+        /// Amazon VPC</a> in the <i>Elastic Load Balancing Developer Guide</i> .
         /// </para>
         /// </summary>
         /// 
@@ -993,61 +1185,6 @@ namespace Amazon.ElasticLoadBalancing
         /// 
         /// <returns>Returns a AttachLoadBalancerToSubnetsResult from AmazonElasticLoadBalancing.</returns>
         AttachLoadBalancerToSubnetsResponse EndAttachLoadBalancerToSubnets(IAsyncResult asyncResult);
-        
-        #endregion
-        
-    
-
-        #region CreateAppCookieStickinessPolicy
-
-        /// <summary>
-        /// <para> Generates a stickiness policy with sticky session lifetimes that follow that of an application-generated cookie. This policy can be
-        /// associated only with HTTP/HTTPS listeners. </para> <para> This policy is similar to the policy created by CreateLBCookieStickinessPolicy,
-        /// except that the lifetime of the special Elastic Load Balancing cookie follows the lifetime of the application-generated cookie specified in
-        /// the policy configuration. The load balancer only inserts a new stickiness cookie when the application response includes a new application
-        /// cookie. </para> <para> If the application cookie is explicitly removed or expires, the session stops being sticky until a new application
-        /// cookie is issued. </para> <para><b>NOTE:</b> An application client must receive and send two cookies: the application-generated cookie and
-        /// the special Elastic Load Balancing cookie named AWSELB. This is the default behavior for many common web browsers. </para> <para>For more
-        /// information, see <a
-        /// href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_StickySessions.html#US_EnableStickySessionsAppCookies"
-        /// >Enabling Application-Controlled Session Stickiness</a> in the <i>Elastic Load Balancing Developer Guide</i> .</para>
-        /// </summary>
-        /// 
-        /// <param name="createAppCookieStickinessPolicyRequest">Container for the necessary parameters to execute the CreateAppCookieStickinessPolicy
-        ///          service method on AmazonElasticLoadBalancing.</param>
-        /// 
-        /// <returns>The response from the CreateAppCookieStickinessPolicy service method, as returned by AmazonElasticLoadBalancing.</returns>
-        /// 
-        /// <exception cref="InvalidConfigurationRequestException"/>
-        /// <exception cref="DuplicatePolicyNameException"/>
-        /// <exception cref="TooManyPoliciesException"/>
-        /// <exception cref="LoadBalancerNotFoundException"/>
-        CreateAppCookieStickinessPolicyResponse CreateAppCookieStickinessPolicy(CreateAppCookieStickinessPolicyRequest createAppCookieStickinessPolicyRequest);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the CreateAppCookieStickinessPolicy operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancing.CreateAppCookieStickinessPolicy"/>
-        /// </summary>
-        /// 
-        /// <param name="createAppCookieStickinessPolicyRequest">Container for the necessary parameters to execute the CreateAppCookieStickinessPolicy
-        ///          operation on AmazonElasticLoadBalancing.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndCreateAppCookieStickinessPolicy operation.</returns>
-        IAsyncResult BeginCreateAppCookieStickinessPolicy(CreateAppCookieStickinessPolicyRequest createAppCookieStickinessPolicyRequest, AsyncCallback callback, object state);
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the CreateAppCookieStickinessPolicy operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancing.CreateAppCookieStickinessPolicy"/>
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateAppCookieStickinessPolicy.</param>
-        /// 
-        /// <returns>Returns a CreateAppCookieStickinessPolicyResult from AmazonElasticLoadBalancing.</returns>
-        CreateAppCookieStickinessPolicyResponse EndCreateAppCookieStickinessPolicy(IAsyncResult asyncResult);
         
         #endregion
         
@@ -1104,54 +1241,6 @@ namespace Amazon.ElasticLoadBalancing
         /// 
         /// <returns>Returns a RegisterInstancesWithLoadBalancerResult from AmazonElasticLoadBalancing.</returns>
         RegisterInstancesWithLoadBalancerResponse EndRegisterInstancesWithLoadBalancer(IAsyncResult asyncResult);
-        
-        #endregion
-        
-    
-
-        #region ApplySecurityGroupsToLoadBalancer
-
-        /// <summary>
-        /// <para> Associates one or more security groups with your load balancer in Amazon Virtual Private Cloud (Amazon VPC). The provided security
-        /// group IDs will override any currently applied security groups. </para> <para>For more information, see <a
-        /// href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/USVPC_ApplySG.html" >Manage Security Groups in Amazon VPC</a> in
-        /// the <i>Elastic Load Balancing Developer Guide</i> .</para>
-        /// </summary>
-        /// 
-        /// <param name="applySecurityGroupsToLoadBalancerRequest">Container for the necessary parameters to execute the
-        ///          ApplySecurityGroupsToLoadBalancer service method on AmazonElasticLoadBalancing.</param>
-        /// 
-        /// <returns>The response from the ApplySecurityGroupsToLoadBalancer service method, as returned by AmazonElasticLoadBalancing.</returns>
-        /// 
-        /// <exception cref="InvalidConfigurationRequestException"/>
-        /// <exception cref="InvalidSecurityGroupException"/>
-        /// <exception cref="LoadBalancerNotFoundException"/>
-        ApplySecurityGroupsToLoadBalancerResponse ApplySecurityGroupsToLoadBalancer(ApplySecurityGroupsToLoadBalancerRequest applySecurityGroupsToLoadBalancerRequest);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the ApplySecurityGroupsToLoadBalancer operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancing.ApplySecurityGroupsToLoadBalancer"/>
-        /// </summary>
-        /// 
-        /// <param name="applySecurityGroupsToLoadBalancerRequest">Container for the necessary parameters to execute the
-        ///          ApplySecurityGroupsToLoadBalancer operation on AmazonElasticLoadBalancing.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndApplySecurityGroupsToLoadBalancer operation.</returns>
-        IAsyncResult BeginApplySecurityGroupsToLoadBalancer(ApplySecurityGroupsToLoadBalancerRequest applySecurityGroupsToLoadBalancerRequest, AsyncCallback callback, object state);
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the ApplySecurityGroupsToLoadBalancer operation.
-        /// <seealso cref="Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancing.ApplySecurityGroupsToLoadBalancer"/>
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginApplySecurityGroupsToLoadBalancer.</param>
-        /// 
-        /// <returns>Returns a ApplySecurityGroupsToLoadBalancerResult from AmazonElasticLoadBalancing.</returns>
-        ApplySecurityGroupsToLoadBalancerResponse EndApplySecurityGroupsToLoadBalancer(IAsyncResult asyncResult);
         
         #endregion
         

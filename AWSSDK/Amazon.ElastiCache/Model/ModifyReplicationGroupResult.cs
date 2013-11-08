@@ -23,7 +23,7 @@ namespace Amazon.ElastiCache.Model
     /// <summary>
     /// The results from the ModifyReplicationGroup action.
     /// </summary>
-    public class ModifyReplicationGroupResult
+    public partial class ModifyReplicationGroupResult
     {
         private ReplicationGroup replicationGroupValue;
 

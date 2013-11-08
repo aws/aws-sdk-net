@@ -25,7 +25,7 @@ namespace Amazon.ElasticTranscoder.Model
     /// information about the master playlists that you want Elastic Transcoder to create. We recommend that you create only one master playlist.
     /// The maximum number of master playlists in a job is 30. </para>
     /// </summary>
-    public class Playlist
+    public partial class Playlist
     {
         
         private string name;

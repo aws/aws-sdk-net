@@ -23,7 +23,7 @@ namespace Amazon.ElasticTranscoder.Model
     /// <summary>
     /// <para>Information about the file that you're transcoding.</para>
     /// </summary>
-    public class JobInput
+    public partial class JobInput
     {
         
         private string key;

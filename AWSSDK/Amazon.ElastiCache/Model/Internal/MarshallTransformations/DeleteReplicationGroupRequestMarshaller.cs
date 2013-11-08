@@ -39,6 +39,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
             {
                 request.Parameters.Add("ReplicationGroupId", StringUtils.FromString(deleteReplicationGroupRequest.ReplicationGroupId));
             }
+            if (deleteReplicationGroupRequest != null && deleteReplicationGroupRequest.IsSetRetainPrimaryCluster())
+            {
+                request.Parameters.Add("RetainPrimaryCluster", StringUtils.FromBool(deleteReplicationGroupRequest.RetainPrimaryCluster));
+            }
 
             return request;
         }
