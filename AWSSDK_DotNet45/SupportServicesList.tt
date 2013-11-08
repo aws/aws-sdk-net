@@ -1,0 +1,39 @@
+﻿<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#
+	var supportedServicesInterfaces = new List<string>()
+	{
+		"Amazon.AutoScaling.IAmazonAutoScaling",
+		"Amazon.CloudFormation.IAmazonCloudFormation",
+		"Amazon.CloudFront.IAmazonCloudFront",
+		"Amazon.CloudSearch.IAmazonCloudSearch",
+		"Amazon.CloudWatch.IAmazonCloudWatch",
+		"Amazon.DataPipeline.IAmazonDataPipeline",
+		"Amazon.DirectConnect.IAmazonDirectConnect",
+		"Amazon.DynamoDBv2.IAmazonDynamoDB",
+		"Amazon.EC2.IAmazonEC2",
+		"Amazon.ElasticBeanstalk.IAmazonElasticBeanstalk",
+		"Amazon.ElastiCache.IAmazonElastiCache",
+		"Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing",
+		"Amazon.ElasticMapReduce.IAmazonElasticMapReduce",
+		"Amazon.ElasticTranscoder.IAmazonElasticTranscoder",
+		"Amazon.Glacier.IAmazonGlacier",
+		"Amazon.IdentityManagement.IAmazonIdentityManagementService",
+		"Amazon.ImportExport.IAmazonImportExport",
+		"Amazon.OpsWorks.IAmazonOpsWorks",
+		"Amazon.RDS.IAmazonRDS",
+		"Amazon.Redshift.IAmazonRedshift",
+		"Amazon.Route53.IAmazonRoute53",
+		"Amazon.S3.IAmazonS3",
+		"Amazon.SecurityToken.IAmazonSecurityTokenService",
+		"Amazon.SimpleDB.IAmazonSimpleDB",
+		"Amazon.SimpleEmail.IAmazonSimpleEmailService",
+		"Amazon.SimpleNotificationService.IAmazonSimpleNotificationService",
+		"Amazon.SimpleWorkflow.IAmazonSimpleWorkflow",
+		"Amazon.SQS.IAmazonSQS",
+		"Amazon.StorageGateway.IAmazonStorageGateway",
+		"Amazon.AWSSupport.IAmazonAWSSupport"
+	};
+#>

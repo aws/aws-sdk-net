@@ -1,0 +1,494 @@
+﻿<#@ template debug="false" hostspecific="true" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ assembly name="System.Xml" #>
+<#@ assembly name="System.Xml.Linq" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Reflection" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Xml.XPath" #>
+<#@ import namespace="System.Xml.Linq" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ include file="SupportServicesList.tt"#>
+<#
+    var assembly = Assembly.LoadFrom(getBaseSDKFilePath("AWSSDK.dll"));
+    var sdkDocs = XDocument.Load(getBaseSDKFilePath("AWSSDK.xml"), LoadOptions.PreserveWhitespace);
+
+    foreach(var interfaceFullName in supportedServicesInterfaces)
+    {
+        GenerateService(assembly, sdkDocs, interfaceFullName);
+    }
+#>
+<#+
+    void GenerateService(Assembly assembly, XDocument sdkDocs, string interfaceName)
+    {
+        var type = assembly.GetType(interfaceName);
+        if(type == null)
+            throw new Exception("Find type " + interfaceName + " in assembly " + assembly.Location);
+
+        GenerateServiceInterface(assembly, sdkDocs, type.FullName);
+        SaveOutput(@".\" + type.Namespace + @"\" + type.Name + ".cs");
+
+        GenerateServiceClient(assembly, sdkDocs, type.FullName);
+        SaveOutput(@".\" + type.Namespace + @"\" + type.Name.Substring(1) + "Client.cs");
+    }
+
+    // Get the latest version whether debug or release of the base SDK artifacts.
+    string getBaseSDKFilePath(string file)
+    {
+        var runtimeFolder = Host.ResolvePath("Amazon.Runtime");
+        var debugPath = Path.Combine(Directory.GetParent(Directory.GetParent(runtimeFolder).FullName).FullName, @"AWSSDK_DotNet35\bin\debug\" + file);
+        var releasePath = Path.Combine(Directory.GetParent(Directory.GetParent(runtimeFolder).FullName).FullName, @"AWSSDK_DotNet35\bin\release\" + file);
+
+        if(!File.Exists(releasePath) && !File.Exists(debugPath))
+        {
+            throw new Exception(file + " is not found, make sure to compile the base SDK first");
+        }
+
+        if(!File.Exists(releasePath))
+            return debugPath;
+
+        if(!File.Exists(debugPath))
+            return releasePath;
+
+        if(File.GetLastWriteTime(releasePath) > File.GetLastWriteTime(debugPath))
+            return releasePath;
+        else
+            return debugPath;
+    }
+
+    void SaveOutput(string outputFileName)
+    {
+        string templateDirectory = Path.GetDirectoryName(Host.TemplateFile);
+        string outputFilePath = Path.Combine(templateDirectory, outputFileName);
+        string outputDirectory = Path.GetDirectoryName(outputFilePath);
+        Directory.CreateDirectory(outputDirectory);
+        File.WriteAllText(outputFilePath, this.GenerationEnvironment.ToString()); 
+
+        this.GenerationEnvironment.Remove(0, this.GenerationEnvironment.Length);
+    }
+#>
+
+
+<#+
+    void GenerateServiceInterface(Assembly assembly, XDocument sdkDocs, string typeName)
+    {
+        addLicenseHeader();
+        var type = assembly.GetType(typeName);
+#>
+using System;
+using System.Threading;
+using System.Threading.Tasks;
+
+using <#= type.Namespace #>.Model;
+
+namespace <#= type.Namespace #>
+{
+<#= getClassDocumentation(sdkDocs, type.FullName) #>	public partial interface <#= type.Name #> : IDisposable
+    {
+<#+
+        foreach (var method in type.GetMethods().OrderBy(x => x.Name))
+        {
+            // Skip begin and end methods
+            if (method.ReturnType == typeof(IAsyncResult) || (method.GetParameters().Length == 1 && method.GetParameters()[0].ParameterType == typeof(IAsyncResult)))
+                continue;
+
+            // Skip methods that are added via extensions.
+            if (method.Name.Equals("GetPreSignedURL"))
+                continue;
+
+            if(method.GetParameters().Length == 0)
+            {
+#> 
+<#= getOperationDocumentation(sdkDocs, method) #>		<#= method.Name #>Response <#= method.Name #>();
+<#+          
+            }
+            else
+            {
+#> 
+
+<#= getOperationDocumentation(sdkDocs, method) #>		<#= method.Name #>Response <#= method.Name #>(<#= method.Name #>Request request);
+
+<#+ addAsyncDocumentation(method);#>		Task<<#= method.Name #>Response> <#= method.Name #>Async(<#= method.Name #>Request request, CancellationToken cancellationToken = default(CancellationToken));
+<#+          
+            }
+        }		
+#>
+    }
+}
+<#+
+
+    }
+#>
+
+
+<#+
+    void GenerateServiceClient(Assembly assembly, XDocument sdkDocs, string interfaceName)
+    {
+        addLicenseHeader();
+        var type = assembly.GetType(interfaceName);
+
+        var clientName = type.Namespace + "." +  type.Name.Substring(1) + "Client";
+        var signer = getSigner(assembly, clientName);
+
+        var baseName = type.Name; 
+        if(baseName.StartsWith("I"))
+            baseName = baseName.Substring(1);
+#>
+using System;
+using System.Threading;
+using System.Threading.Tasks;
+
+using <#= type.Namespace #>.Model;
+using <#= type.Namespace #>.Model.Internal.MarshallTransformations;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Auth;
+using Amazon.Runtime.Internal.Transform;
+
+namespace <#= type.Namespace #>
+{
+<#= getClassDocumentation(sdkDocs, type.Namespace + "." + baseName + "Client") #>	public partial class <#= baseName #>Client : AmazonWebServiceClient, <#= interfaceName #>
+    {
+
+        <#= signer #> signer = new <#= signer #>();
+
+        #region Dispose
+
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
+        }
+
+        #endregion
+
+<#+
+        addConstuctors(baseName);
+
+        foreach (var method in type.GetMethods().OrderBy(x => x.Name))
+        {
+            // Skip begin and end methods
+            if (method.ReturnType == typeof(IAsyncResult) || (method.GetParameters().Length == 1 && method.GetParameters()[0].ParameterType == typeof(IAsyncResult)))
+                continue;
+
+            // Skip methods that are added via extensions.
+            if (method.Name.Equals("GetPreSignedURL"))
+                continue;
+
+            if(method.GetParameters().Length == 0)
+            {
+#> 
+<#= getOperationDocumentation(sdkDocs, method) #>		public <#= method.Name #>Response <#= method.Name #>()
+        {
+            return this.<#= method.Name #>(new <#= method.Name #>Request());
+        }
+<#+          
+            }
+            else
+            {
+#> 
+<#= getOperationDocumentation(sdkDocs, method) #>		public <#= method.Name #>Response <#= method.Name #>(<#= method.Name #>Request request)
+        {
+            var task = <#= method.Name #>Async(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+          
+<#+ addAsyncDocumentation(method);#>		public async Task<<#= method.Name #>Response> <#= method.Name #>Async(<#= method.Name #>Request request, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new <#= method.Name #>RequestMarshaller();
+            var unmarshaller = <#= method.Name #>ResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, <#= method.Name #>Request, <#= method.Name #>Response>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
+<#+          
+            }     
+        }				
+#>
+    }
+}
+<#+ 
+    }
+
+#>
+
+
+<#+
+    void addLicenseHeader()
+    {
+#>
+/*
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+<#+
+    }
+
+    void addAsyncDocumentation(MethodInfo method)
+    {
+#>
+        /// <summary>
+        /// Initiates the asynchronous execution of the <#= method.Name #> operation.
+        /// <seealso cref="<#= method.DeclaringType.FullName + "." + method.Name #>"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the <#= method.Name #> operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+<#+
+    }
+#>
+
+<#+
+    string getSigner(Assembly assembly, string typeName)
+    {
+        var type = assembly.GetType(typeName);
+        var field = type.GetField("signer", BindingFlags.Instance | BindingFlags.NonPublic);
+        return field.FieldType.Name;
+    }
+
+    string getOperationDocumentation(XDocument sdkDocs,MethodInfo method)
+    {
+        var clientType = method.DeclaringType.Namespace + "." + method.DeclaringType.Name.Substring(1) + "Client";
+        var signature = "M:" + clientType + "." + method.Name + "(" + method.DeclaringType.Namespace + ".Model." + method.Name + "Request)";
+
+        var element = sdkDocs.XPathSelectElement("//members/member[@name='" + signature + "']");
+        if(element == null)
+            return signature;
+        var reader = element.CreateReader();
+        reader.MoveToContent();
+        var innerxml = reader.ReadInnerXml();
+
+		bool hasParameters = method.GetParameters().Length > 0;
+
+        StringBuilder sb = new StringBuilder();
+        foreach (var line in innerxml.Trim().Split('\n'))
+        {
+			// Skip parameters for parameterless version of methods.
+			if(!hasParameters && (line.Contains("<param") || line.Contains("</param")))
+				continue;
+
+            sb.AppendLine("        /// " + line.Trim());
+        }
+        var ndoc = sb.ToString();
+
+		var tokenToSearch = string.Format("param name=\"{0}Request\"", method.Name.Substring(0, 1).ToLower() + method.Name.Substring(1));
+		ndoc = ndoc.Replace(tokenToSearch, "param name=\"request\"");
+
+        return ndoc;
+    }
+
+    string getClassDocumentation(XDocument sdkDocs, string typeName)
+    {
+        var signature = "T:" + typeName;
+
+        var element = sdkDocs.XPathSelectElement("//members/member[@name='" + signature + "']");
+        if(element == null)
+            return signature;
+        var reader = element.CreateReader();
+        reader.MoveToContent();
+        var innerxml = reader.ReadInnerXml();
+
+        StringBuilder sb = new StringBuilder();
+        foreach (var line in innerxml.Trim().Split('\n'))
+        {
+            sb.AppendLine("    /// " + line.Trim());
+        }
+        var ndoc = sb.ToString();
+
+        return ndoc;
+    }
+
+    void addConstuctors(string baseName)
+    {
+#>
+        #region Constructors
+
+        /// <summary>
+        /// Constructs <#= baseName #>Client with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSAccessKey" value="********************"/&gt;
+        ///         &lt;add key="AWSSecretKey" value="****************************************"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        ///
+        /// </summary>
+        public <#= baseName #>Client()
+            : base(FallbackCredentialsFactory.GetCredentials(), new <#= baseName #>Config(), AuthenticationTypes.User | AuthenticationTypes.Session) { }
+
+        /// <summary>
+        /// Constructs <#= baseName #>Client with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSAccessKey" value="********************"/&gt;
+        ///         &lt;add key="AWSSecretKey" value="****************************************"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        ///
+        /// </summary>
+        /// <param name="region">The region to connect.</param>
+        public <#= baseName #>Client(RegionEndpoint region)
+            : base(FallbackCredentialsFactory.GetCredentials(), new <#= baseName #>Config(){RegionEndpoint = region}, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+
+        /// <summary>
+        /// Constructs <#= baseName #>Client with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSAccessKey" value="********************"/&gt;
+        ///         &lt;add key="AWSSecretKey" value="****************************************"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        ///
+        /// </summary>
+        /// <param name="config">The <#= baseName #> Configuration Object</param>
+        public <#= baseName #>Client(<#= baseName #>Config config)
+            : base(FallbackCredentialsFactory.GetCredentials(), config, AuthenticationTypes.User | AuthenticationTypes.Session) { }
+
+        /// <summary>
+        /// Constructs <#= baseName #>Client with AWS Credentials
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        public <#= baseName #>Client(AWSCredentials credentials)
+            : this(credentials, new <#= baseName #>Config())
+        {
+        }
+
+        /// <summary>
+        /// Constructs <#= baseName #>Client with AWS Credentials
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="region">The region to connect.</param>
+        public <#= baseName #>Client(AWSCredentials credentials, RegionEndpoint region)
+            : this(credentials, new <#= baseName #>Config(){RegionEndpoint=region})
+        {
+        }
+
+        /// <summary>
+        /// Constructs <#= baseName #>Client with AWS Credentials and an
+        /// <#= baseName #>Client Configuration object.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="clientConfig">The <#= baseName #>Client Configuration Object</param>
+        public <#= baseName #>Client(AWSCredentials credentials, <#= baseName #>Config clientConfig)
+            : base(credentials, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+        {
+        }
+
+        /// <summary>
+        /// Constructs <#= baseName #>Client with AWS Access Key ID and AWS Secret Key
+        /// </summary>
+        /// <param name="awsAccessKeyId">AWS Access Key ID</param>
+        /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        public <#= baseName #>Client(string awsAccessKeyId, string awsSecretAccessKey)
+            : this(awsAccessKeyId, awsSecretAccessKey, new <#= baseName #>Config())
+        {
+        }
+
+        /// <summary>
+        /// Constructs <#= baseName #>Client with AWS Access Key ID and AWS Secret Key
+        /// </summary>
+        /// <param name="awsAccessKeyId">AWS Access Key ID</param>
+        /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        /// <param name="region">The region to connect.</param>
+        public <#= baseName #>Client(string awsAccessKeyId, string awsSecretAccessKey, RegionEndpoint region)
+            : this(awsAccessKeyId, awsSecretAccessKey, new <#= baseName #>Config() {RegionEndpoint=region})
+        {
+        }
+
+        /// <summary>
+        /// Constructs <#= baseName #>Client with AWS Access Key ID, AWS Secret Key and an
+        /// <#= baseName #>Client Configuration object. If the config object's
+        /// UseSecureStringForAwsSecretKey is false, the AWS Secret Key
+        /// is stored as a clear-text string. Please use this option only
+        /// if the application environment doesn't allow the use of SecureStrings.
+        /// </summary>
+        /// <param name="awsAccessKeyId">AWS Access Key ID</param>
+        /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        /// <param name="clientConfig">The <#= baseName #>Client Configuration Object</param>
+        public <#= baseName #>Client(string awsAccessKeyId, string awsSecretAccessKey, <#= baseName #>Config clientConfig)
+            : base(awsAccessKeyId, awsSecretAccessKey, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+        {
+        }
+
+        /// <summary>
+        /// Constructs <#= baseName #>Client with AWS Access Key ID and AWS Secret Key
+        /// </summary>
+        /// <param name="awsAccessKeyId">AWS Access Key ID</param>
+        /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        /// <param name="awsSessionToken">AWS Session Token</param>
+        public <#= baseName #>Client(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken)
+            : this(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, new <#= baseName #>Config())
+        {
+        }
+
+        /// <summary>
+        /// Constructs <#= baseName #>Client with AWS Access Key ID and AWS Secret Key
+        /// </summary>
+        /// <param name="awsAccessKeyId">AWS Access Key ID</param>
+        /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        /// <param name="awsSessionToken">AWS Session Token</param>
+        /// <param name="region">The region to connect.</param>
+        public <#= baseName #>Client(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken, RegionEndpoint region)
+            : this(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, new <#= baseName #>Config(){RegionEndpoint = region})
+        {
+        }
+
+        /// <summary>
+        /// Constructs <#= baseName #>Client with AWS Access Key ID, AWS Secret Key and an
+        /// <#= baseName #>Client Configuration object. If the config object's
+        /// UseSecureStringForAwsSecretKey is false, the AWS Secret Key
+        /// is stored as a clear-text string. Please use this option only
+        /// if the application environment doesn't allow the use of SecureStrings.
+        /// </summary>
+        /// <param name="awsAccessKeyId">AWS Access Key ID</param>
+        /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        /// <param name="awsSessionToken">AWS Session Token</param>
+        /// <param name="clientConfig">The <#= baseName #>Client Configuration Object</param>
+        public <#= baseName #>Client(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken, <#= baseName #>Config clientConfig)
+            : base(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+        {
+        }
+
+        #endregion
+
+<#+
+    }
+#>

@@ -486,7 +486,7 @@ namespace Amazon.TraceListener
             {
                 var diff = (now - lastTimestamp);
                 if (diff.TotalMilliseconds < 1)
-                    now += oneMillisecond;
+                    now = lastTimestamp + oneMillisecond;
                 lastTimestamp = now;
             }
             return now;

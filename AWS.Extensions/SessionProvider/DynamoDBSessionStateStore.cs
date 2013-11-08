@@ -156,7 +156,7 @@ namespace Amazon.SessionProvider
         int _initialWriteUnits = 5;
         bool _createIfNotExist = true;
 
-        AmazonDynamoDB _ddbClient;
+        IAmazonDynamoDB _ddbClient;
         Table _table;
         TimeSpan _timeout = new TimeSpan(0, 20, 0);
 
@@ -171,7 +171,7 @@ namespace Amazon.SessionProvider
         /// Constructor for testing.
         /// </summary>
         /// <param name="ddbClient"></param>
-        public DynamoDBSessionStateStore(AmazonDynamoDB ddbClient)
+        public DynamoDBSessionStateStore(IAmazonDynamoDB ddbClient)
         {
             this._ddbClient = ddbClient;
             SetupTable();
@@ -627,7 +627,7 @@ namespace Amazon.SessionProvider
         /// so use this method sparingly like a nightly or weekly clean job.
         /// </summary>
         /// <param name="dbClient">The AmazonDynamoDB client used to find a delete expired sessions.</param>
-        public static void DeleteExpiredSessions(AmazonDynamoDB dbClient)
+        public static void DeleteExpiredSessions(IAmazonDynamoDB dbClient)
         {
             DeleteExpiredSessions(dbClient, DEFAULT_TABLENAME);
         }
@@ -639,7 +639,7 @@ namespace Amazon.SessionProvider
         /// </summary>
         /// <param name="dbClient">The AmazonDynamoDB client used to find a delete expired sessions.</param>
         /// <param name="tableName">The table to search.</param>
-        public static void DeleteExpiredSessions(AmazonDynamoDB dbClient, string tableName)
+        public static void DeleteExpiredSessions(IAmazonDynamoDB dbClient, string tableName)
         {
             Table table = Table.LoadTable(dbClient, tableName, Table.DynamoDBConsumer.SessionStateProvider);
 
@@ -720,8 +720,10 @@ namespace Amazon.SessionProvider
 
             CreateTableResponse response = this._ddbClient.CreateTable(createRequest);
 
-            DescribeTableRequest descRequest = new DescribeTableRequest()
-                .WithTableName(this._tableName);
+            DescribeTableRequest descRequest = new DescribeTableRequest
+            {
+                TableName = this._tableName
+            };
             descRequest.BeforeRequestEvent += this.UserAgentRequestEventHandler;
 
             // Wait till table is active
@@ -730,7 +732,7 @@ namespace Amazon.SessionProvider
             {
                 Thread.Sleep(DESCRIBE_INTERVAL);
                 DescribeTableResponse descResponse = this._ddbClient.DescribeTable(descRequest);
-                string tableStatus = descResponse.DescribeTableResult.Table.TableStatus;
+                string tableStatus = descResponse.Table.TableStatus;
 
                 if (string.Equals(tableStatus, ACTIVE_STATUS, StringComparison.InvariantCultureIgnoreCase))
                     isActive = true;
