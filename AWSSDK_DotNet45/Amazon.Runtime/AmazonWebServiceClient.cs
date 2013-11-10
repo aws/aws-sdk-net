@@ -229,13 +229,19 @@ namespace Amazon.Runtime
         void SetContent(HttpRequestMessage requestMessage, IRequestData state)
         {
             var request = state.Request;
-            if (requestMessage.Method == HttpMethod.Get || requestMessage.Method == HttpMethod.Delete || requestMessage.Method == HttpMethod.Head)
+            if (requestMessage.Method == HttpMethod.Get || 
+                requestMessage.Method == HttpMethod.Delete || 
+                requestMessage.Method == HttpMethod.Head)
             {
                 return;
             }
 
             byte[] requestData;
-            if (request.ContentStream != null)
+            if (request.UseQueryString)
+            {
+                requestMessage.Content = new ByteArrayContent(new Byte[0]);
+            }
+            else if (request.ContentStream != null)
             {
                 var eventStream = new EventStream(request.ContentStream, true);
                 var tracker = new StreamReadTracker(this, request.OriginalRequest.StreamUploadProgressCallback, request.ContentStream.Length);

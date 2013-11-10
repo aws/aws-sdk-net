@@ -58,7 +58,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             long contentLength;
             if (string.IsNullOrEmpty(contentLengthHeader) || !long.TryParse(contentLengthHeader, out contentLength))
             {
-                contentLength =-1;
+                contentLength = -1;
             }
             if (contentLength < 0)
             {
@@ -72,33 +72,40 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 }
             }
 
-            if (contentLength > 0)
+            if (context.Stream.CanRead && contentLength != 0)
             {
-                while (context.Read())
+                try
                 {
-                    if (context.IsStartElement)
+                    while (context.Read())
                     {
-                        if (context.TestExpression("Error/Code"))
+                        if (context.IsStartElement)
                         {
-                            response.Code = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            continue;
-                        }
-                        if (context.TestExpression("Error/Message"))
-                        {
-                            response.Message = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            continue;
-                        }
-                        if (context.TestExpression("Error/Resource"))
-                        {
-                            response.Resource = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            continue;
-                        }
-                        if (context.TestExpression("Error/RequestId"))
-                        {
-                            response.RequestId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            continue;
+                            if (context.TestExpression("Error/Code"))
+                            {
+                                response.Code = StringUnmarshaller.GetInstance().Unmarshall(context);
+                                continue;
+                            }
+                            if (context.TestExpression("Error/Message"))
+                            {
+                                response.Message = StringUnmarshaller.GetInstance().Unmarshall(context);
+                                continue;
+                            }
+                            if (context.TestExpression("Error/Resource"))
+                            {
+                                response.Resource = StringUnmarshaller.GetInstance().Unmarshall(context);
+                                continue;
+                            }
+                            if (context.TestExpression("Error/RequestId"))
+                            {
+                                response.RequestId = StringUnmarshaller.GetInstance().Unmarshall(context);
+                                continue;
+                            }
                         }
                     }
+                }
+                catch
+                {
+                    // Error response was not XML
                 }
             }
 
