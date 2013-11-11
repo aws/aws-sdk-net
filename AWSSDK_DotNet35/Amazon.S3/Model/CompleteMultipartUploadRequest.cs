@@ -130,6 +130,30 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
+        /// Adds a collection of part numbers and corresponding etags by transforming the CopyPartResponse into PartETags.
+        /// </summary>
+        /// <param name="responses">The list of response objects return from CopyParts.</param>
+        public void AddPartETags(params CopyPartResponse[] responses)
+        {
+            foreach (CopyPartResponse response in responses)
+            {
+                this.PartETags.Add(new PartETag(response.PartNumber, response.ETag));
+            }
+        }
+
+        /// <summary>
+        /// Adds a collection of part numbers and corresponding etags by transforming the CopyPartResponse into PartETags.
+        /// </summary>
+        /// <param name="responses">The list of response objects return from CopyParts.</param>
+        public void AddPartETags(IEnumerable<CopyPartResponse> responses)
+        {
+            foreach (CopyPartResponse response in responses)
+            {
+                this.PartETags.Add(new PartETag(response.PartNumber, response.ETag));
+            }
+        }
+
+        /// <summary>
         /// The upload id for the in-progress multipart upload that should be completed.
         /// </summary>
         public string UploadId

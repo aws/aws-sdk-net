@@ -4836,6 +4836,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.EC2\ServiceEnumerations.cs" />
+    <Compile Include="Amazon.EC2\Util\EC2Metadata.cs" />
     <Compile Include="Amazon.EC2\Util\ImageUtilities.cs" />
     <Compile Include="Amazon.EC2\Util\LaunchNATInstanceRequest.cs" />
     <Compile Include="Amazon.EC2\Util\LaunchVPCWithPublicAndPrivateSubnetsRequest.cs" />
