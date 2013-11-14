@@ -30,6 +30,7 @@ namespace Amazon.Redshift.Model
         private string marker;
         private List<ClusterSubnetGroup> clusterSubnetGroups = new List<ClusterSubnetGroup>();
 
+
         /// <summary>
         /// A marker at which to continue listing cluster subnet groups in a new request. A marker is returned if there are more cluster subnet groups
         /// to list than were returned in the response.

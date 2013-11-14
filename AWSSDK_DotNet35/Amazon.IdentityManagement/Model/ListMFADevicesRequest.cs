@@ -26,14 +26,15 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Container for the parameters to the ListMFADevices operation.
     /// <para>Lists the MFA devices. If the request includes the user name, then this action lists all the MFA devices associated with the specified
-    /// user name. If you do not specify a user name, IAM determines the user name implicitly based on the AWS Access Key ID signing the
+    /// user name. If you do not specify a user name, IAM determines the user name implicitly based on the AWS access key ID signing the
     /// request.</para> <para>You can paginate the results using the <c>MaxItems</c> and <c>Marker</c> parameters.</para>
     /// </summary>
-    public partial class ListMFADevicesRequest : AmazonWebServiceRequest
+    public partial class ListMFADevicesRequest : AmazonIdentityManagementServiceRequest
     {
         private string userName;
         private string marker;
         private int? maxItems;
+
 
         /// <summary>
         /// Name of the user whose MFA devices you want to list.

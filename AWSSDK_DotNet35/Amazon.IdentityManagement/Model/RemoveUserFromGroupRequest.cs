@@ -27,10 +27,11 @@ namespace Amazon.IdentityManagement.Model
     /// Container for the parameters to the RemoveUserFromGroup operation.
     /// <para>Removes the specified user from the specified group.</para>
     /// </summary>
-    public partial class RemoveUserFromGroupRequest : AmazonWebServiceRequest
+    public partial class RemoveUserFromGroupRequest : AmazonIdentityManagementServiceRequest
     {
         private string groupName;
         private string userName;
+
 
         /// <summary>
         /// Name of the group to update.

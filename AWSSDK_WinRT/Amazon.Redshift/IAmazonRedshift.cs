@@ -23,38 +23,17 @@ namespace Amazon.Redshift
     /// <summary>
     /// Interface for accessing AmazonRedshift.
     /// 
-    /// Amazon Redshift <b>Overview</b> <para> This is the Amazon Redshift API Reference. This guide provides descriptions and samples of the Amazon
-    /// Redshift API. </para> <para> Amazon Redshift manages all the work of setting up, operating, and scaling a data warehouse: provisioning
-    /// capacity, monitoring and backing up the cluster, and applying patches and upgrades to the Amazon Redshift engine. You can focus on using
-    /// your data to acquire new insights for your business and customers. </para> <b>Are You a First-Time Amazon Redshift User?</b> <para>If you
-    /// are a first-time user of Amazon Redshift, we recommend that you begin by reading the following sections:</para> <para>
-    /// <ul>
-    /// <li> <para> <i>Service Highlights and Pricing</i> - The <a href="http://aws.amazon.com/redshift/">product detail page</a> provides the
-    /// Amazon Redshift value proposition, service highlights and pricing. </para> </li>
-    /// <li> <para> <i>Getting Started</i> - The <a href="http://docs.aws.amazon.com/redshift/latest/gsg/getting-started.html">Getting Started
-    /// Guide</a> includes an example that walks you through the process of creating a cluster, creating database tables, uploading data, and
-    /// testing queries. </para> </li>
-    /// 
-    /// </ul>
-    /// </para> <para>After you complete the Getting Started Guide, we recommend that you explore one of the following guides:</para>
-    /// <ul>
-    /// <li> <para> <i>Cluster Management</i> - If you are responsible for managing Amazon Redshift clusters, the <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/welcome.html">Cluster Management Guide</a> shows you how to create and manage Amazon
-    /// Redshift clusters.</para> <para> If you are an application developer, you can use the Amazon Redshift Query API to manage clusters
-    /// programmatically. Additionally, the AWS SDK libraries that wrap the underlying Amazon Redshift API simplify your programming tasks. If you
-    /// prefer a more interactive way of managing clusters, you can use the Amazon Redshift console and the AWS command line interface (AWS CLI).
-    /// For information about the API and CLI, go to the following manuals : </para>
-    /// <ul>
-    /// <li> <para>API Reference ( <i>this document</i> ) </para> </li>
-    /// <li> <para> <a href="http://docs.aws.amazon.com/redshift/latest/cli">CLI Reference</a> </para> </li>
-    /// 
-    /// </ul>
-    /// </li>
-    /// <li> <para> <i>Amazon Redshift Database Database Developer</i> - If you are a database developer, the Amazon Redshift <a href="http://docs.aws.amazon.com/redshift/latest/dg/">Database Developer Guide</a> explains how to design, build, query, and maintain the
-    /// databases that make up your data warehouse. </para> </li>
-    /// 
-    /// </ul>
-    /// <para>For a list of supported AWS regions where you can provision a cluster, go to the <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#redshift_region">Regions and Endpoints</a> section in the <i>Amazon Web
-    /// Services Glossary</i> . </para>
+    /// Amazon Redshift <b>Overview</b> <para> This is an interface reference for Amazon Redshift. It contains documentation for one of the
+    /// programming or command line interfaces you can use to manage Amazon Redshift clusters. Note that Amazon Redshift is asynchronous, which
+    /// means that some interfaces may require techniques, such as polling or asynchronous callback handlers, to determine when a command has been
+    /// applied. In this reference, the parameter descriptions indicate whether a change is applied immediately, on the next instance reboot, or
+    /// during the next maintenance window. For a summary of the Amazon Redshift cluster management interfaces, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/using-aws-sdk.html">Using the Amazon Redshift Management Interfaces </a> .</para>
+    /// <para> Amazon Redshift manages all the work of setting up, operating, and scaling a data warehouse: provisioning capacity, monitoring and
+    /// backing up the cluster, and applying patches and upgrades to the Amazon Redshift engine. You can focus on using your data to acquire new
+    /// insights for your business and customers. </para> <para>If you are a first-time user of Amazon Redshift, we recommend that you begin by
+    /// reading the The <a href="http://docs.aws.amazon.com/redshift/latest/gsg/getting-started.html">Amazon Redshift Getting Started Guide</a>
+    /// </para> <para>If you are a database developer, the <a href="http://docs.aws.amazon.com/redshift/latest/dg/welcome.html">Amazon Redshift
+    /// Database Developer Guide</a> explains how to design, build, query, and maintain the databases that make up your data warehouse. </para>
     /// </summary>
 	public partial interface IAmazonRedshift : IDisposable
     {
@@ -140,18 +119,21 @@ namespace Amazon.Redshift
         /// 
         /// <returns>The response from the CreateCluster service method, as returned by AmazonRedshift.</returns>
         /// 
+        /// <exception cref="T:Amazon.Redshift.Model.InvalidElasticIpException" />
         /// <exception cref="T:Amazon.Redshift.Model.InvalidSubnetException" />
+        /// <exception cref="T:Amazon.Redshift.Model.HsmConfigurationNotFoundException" />
+        /// <exception cref="T:Amazon.Redshift.Model.ClusterSubnetGroupNotFoundException" />
+        /// <exception cref="T:Amazon.Redshift.Model.InvalidClusterSubnetGroupStateException" />
+        /// <exception cref="T:Amazon.Redshift.Model.ClusterAlreadyExistsException" />
+        /// <exception cref="T:Amazon.Redshift.Model.InvalidVPCNetworkStateException" />
+        /// <exception cref="T:Amazon.Redshift.Model.ClusterParameterGroupNotFoundException" />
         /// <exception cref="T:Amazon.Redshift.Model.InsufficientClusterCapacityException" />
         /// <exception cref="T:Amazon.Redshift.Model.UnauthorizedOperationException" />
         /// <exception cref="T:Amazon.Redshift.Model.NumberOfNodesQuotaExceededException" />
         /// <exception cref="T:Amazon.Redshift.Model.NumberOfNodesPerClusterLimitExceededException" />
-        /// <exception cref="T:Amazon.Redshift.Model.ClusterSubnetGroupNotFoundException" />
-        /// <exception cref="T:Amazon.Redshift.Model.InvalidClusterSubnetGroupStateException" />
-        /// <exception cref="T:Amazon.Redshift.Model.ClusterAlreadyExistsException" />
-        /// <exception cref="T:Amazon.Redshift.Model.ClusterSecurityGroupNotFoundException" />
+        /// <exception cref="T:Amazon.Redshift.Model.HsmClientCertificateNotFoundException" />
         /// <exception cref="T:Amazon.Redshift.Model.ClusterQuotaExceededException" />
-        /// <exception cref="T:Amazon.Redshift.Model.InvalidVPCNetworkStateException" />
-        /// <exception cref="T:Amazon.Redshift.Model.ClusterParameterGroupNotFoundException" />
+        /// <exception cref="T:Amazon.Redshift.Model.ClusterSecurityGroupNotFoundException" />
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -241,6 +223,78 @@ namespace Amazon.Redshift
 		Task<CreateClusterSubnetGroupResponse> CreateClusterSubnetGroupAsync(CreateClusterSubnetGroupRequest createClusterSubnetGroupRequest, CancellationToken cancellationToken = default(CancellationToken));
  
         /// <summary>
+        /// <para> Creates an Amazon Redshift event notification subscription. This action requires an ARN (Amazon Resource Name) of an Amazon SNS topic
+        /// created by either the Amazon Redshift console, the Amazon SNS console, or the Amazon SNS API. To obtain an ARN with Amazon SNS, you must
+        /// create a topic in Amazon SNS and subscribe to the topic. The ARN is displayed in the SNS console. </para> <para> You can specify the source
+        /// type, and lists of Amazon Redshift source IDs, event categories, and event severities. Notifications will be sent for all events you want
+        /// that match those criteria. For example, you can specify source type = cluster, source ID = my-cluster-1 and mycluster2, event categories =
+        /// Availability, Backup, and severity = ERROR. The subsription will only send notifications for those ERROR events in the Availability and
+        /// Backup categores for the specified clusters. </para> <para> If you specify both the source type and source IDs, such as source type =
+        /// cluster and source identifier = my-cluster-1, notifiactions will be sent for all the cluster events for my-cluster-1. If you specify a
+        /// source type but do not specify a source identifier, you will receive notice of the events for the objects of that type in your AWS account.
+        /// If you do not specify either the SourceType nor the SourceIdentifier, you will be notified of events generated from all Amazon Redshift
+        /// sources belonging to your AWS account. You must specify a source type if you specify a source ID. </para>
+        /// </summary>
+        /// 
+        /// <param name="createEventSubscriptionRequest">Container for the necessary parameters to execute the CreateEventSubscription service method on
+        /// AmazonRedshift.</param>
+        /// 
+        /// <returns>The response from the CreateEventSubscription service method, as returned by AmazonRedshift.</returns>
+        /// 
+        /// <exception cref="T:Amazon.Redshift.Model.SubscriptionCategoryNotFoundException" />
+        /// <exception cref="T:Amazon.Redshift.Model.SubscriptionAlreadyExistException" />
+        /// <exception cref="T:Amazon.Redshift.Model.EventSubscriptionQuotaExceededException" />
+        /// <exception cref="T:Amazon.Redshift.Model.SubscriptionEventIdNotFoundException" />
+        /// <exception cref="T:Amazon.Redshift.Model.SubscriptionSeverityNotFoundException" />
+        /// <exception cref="T:Amazon.Redshift.Model.SourceNotFoundException" />
+        /// <exception cref="T:Amazon.Redshift.Model.SNSNoAuthorizationException" />
+        /// <exception cref="T:Amazon.Redshift.Model.SNSTopicArnNotFoundException" />
+        /// <exception cref="T:Amazon.Redshift.Model.SNSInvalidTopicException" />
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+		Task<CreateEventSubscriptionResponse> CreateEventSubscriptionAsync(CreateEventSubscriptionRequest createEventSubscriptionRequest, CancellationToken cancellationToken = default(CancellationToken));
+ 
+        /// <summary>
+        /// <para>Creates an HSM client certificate that an Amazon Redshift cluster will use to connect to the client's HSM in order to store and
+        /// retrieve the keys used to encrypt the cluster databases.</para> <para>The command returns a public key, which you must store in the HSM.
+        /// After creating the HSM certificate, you must create an Amazon Redshift HSM configuration that provides a cluster the information needed to
+        /// store and retrieve database encryption keys in the HSM. For more information, go to aLinkToHSMTopic in the Amazon Redshift Management
+        /// Guide.</para>
+        /// </summary>
+        /// 
+        /// <param name="createHsmClientCertificateRequest">Container for the necessary parameters to execute the CreateHsmClientCertificate service
+        /// method on AmazonRedshift.</param>
+        /// 
+        /// <returns>The response from the CreateHsmClientCertificate service method, as returned by AmazonRedshift.</returns>
+        /// 
+        /// <exception cref="T:Amazon.Redshift.Model.HsmClientCertificateQuotaExceededException" />
+        /// <exception cref="T:Amazon.Redshift.Model.HsmClientCertificateAlreadyExistsException" />
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+		Task<CreateHsmClientCertificateResponse> CreateHsmClientCertificateAsync(CreateHsmClientCertificateRequest createHsmClientCertificateRequest, CancellationToken cancellationToken = default(CancellationToken));
+ 
+        /// <summary>
+        /// <para>Creates an HSM configuration that contains the information required by an Amazon Redshift cluster to store and retrieve database
+        /// encryption keys in a Hardware Storeage Module (HSM). After creating the HSM configuration, you can specify it as a parameter when creating a
+        /// cluster. The cluster will then store its encryption keys in the HSM.</para> <para>Before creating an HSM configuration, you must have first
+        /// created an HSM client certificate. For more information, go to aLinkToHSMTopic in the Amazon Redshift Management Guide.</para>
+        /// </summary>
+        /// 
+        /// <param name="createHsmConfigurationRequest">Container for the necessary parameters to execute the CreateHsmConfiguration service method on
+        /// AmazonRedshift.</param>
+        /// 
+        /// <returns>The response from the CreateHsmConfiguration service method, as returned by AmazonRedshift.</returns>
+        /// 
+        /// <exception cref="T:Amazon.Redshift.Model.HsmConfigurationQuotaExceededException" />
+        /// <exception cref="T:Amazon.Redshift.Model.HsmConfigurationAlreadyExistsException" />
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+		Task<CreateHsmConfigurationResponse> CreateHsmConfigurationAsync(CreateHsmConfigurationRequest createHsmConfigurationRequest, CancellationToken cancellationToken = default(CancellationToken));
+ 
+        /// <summary>
         /// <para> Deletes a previously provisioned cluster. A successful response from the web service indicates that the request was received
         /// correctly. If a final cluster snapshot is requested the status of the cluster will be "final-snapshot" while the snapshot is being taken,
         /// then it's "deleting" once Amazon Redshift begins deleting the cluster. Use DescribeClusters to monitor the status of the deletion. The
@@ -328,6 +382,47 @@ namespace Amazon.Redshift
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		Task<DeleteClusterSubnetGroupResponse> DeleteClusterSubnetGroupAsync(DeleteClusterSubnetGroupRequest deleteClusterSubnetGroupRequest, CancellationToken cancellationToken = default(CancellationToken));
+ 
+        /// <summary>
+        /// <para> Deletes an Amazon Redshift event notification subscription. </para>
+        /// </summary>
+        /// 
+        /// <param name="deleteEventSubscriptionRequest">Container for the necessary parameters to execute the DeleteEventSubscription service method on
+        /// AmazonRedshift.</param>
+        /// 
+        /// <exception cref="T:Amazon.Redshift.Model.SubscriptionNotFoundException" />
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+		Task<DeleteEventSubscriptionResponse> DeleteEventSubscriptionAsync(DeleteEventSubscriptionRequest deleteEventSubscriptionRequest, CancellationToken cancellationToken = default(CancellationToken));
+ 
+        /// <summary>
+        /// <para>Deletes the specified HSM client certificate.</para>
+        /// </summary>
+        /// 
+        /// <param name="deleteHsmClientCertificateRequest">Container for the necessary parameters to execute the DeleteHsmClientCertificate service
+        /// method on AmazonRedshift.</param>
+        /// 
+        /// <exception cref="T:Amazon.Redshift.Model.InvalidHsmClientCertificateStateException" />
+        /// <exception cref="T:Amazon.Redshift.Model.HsmClientCertificateNotFoundException" />
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+		Task<DeleteHsmClientCertificateResponse> DeleteHsmClientCertificateAsync(DeleteHsmClientCertificateRequest deleteHsmClientCertificateRequest, CancellationToken cancellationToken = default(CancellationToken));
+ 
+        /// <summary>
+        /// <para>Deletes the specified Amazon Redshift HSM configuration.</para>
+        /// </summary>
+        /// 
+        /// <param name="deleteHsmConfigurationRequest">Container for the necessary parameters to execute the DeleteHsmConfiguration service method on
+        /// AmazonRedshift.</param>
+        /// 
+        /// <exception cref="T:Amazon.Redshift.Model.HsmConfigurationNotFoundException" />
+        /// <exception cref="T:Amazon.Redshift.Model.InvalidHsmConfigurationStateException" />
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+		Task<DeleteHsmConfigurationResponse> DeleteHsmConfigurationAsync(DeleteHsmConfigurationRequest deleteHsmConfigurationRequest, CancellationToken cancellationToken = default(CancellationToken));
  
         /// <summary>
         /// <para> Returns a list of Amazon Redshift parameter groups, including parameter groups you created and the default parameter group. For each
@@ -471,6 +566,21 @@ namespace Amazon.Redshift
 		Task<DescribeDefaultClusterParametersResponse> DescribeDefaultClusterParametersAsync(DescribeDefaultClusterParametersRequest describeDefaultClusterParametersRequest, CancellationToken cancellationToken = default(CancellationToken));
  
         /// <summary>
+        /// <para>Displays a list of event categories for all event source types, or for a specified source type. For a list of the event categories and
+        /// source types, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-event-notifications.html">Amazon Redshift Event
+        /// Notifications</a> .</para>
+        /// </summary>
+        /// 
+        /// <param name="describeEventCategoriesRequest">Container for the necessary parameters to execute the DescribeEventCategories service method on
+        /// AmazonRedshift.</param>
+        /// 
+        /// <returns>The response from the DescribeEventCategories service method, as returned by AmazonRedshift.</returns>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+		Task<DescribeEventCategoriesResponse> DescribeEventCategoriesAsync(DescribeEventCategoriesRequest describeEventCategoriesRequest, CancellationToken cancellationToken = default(CancellationToken));
+ 
+        /// <summary>
         /// <para> Returns events related to clusters, security groups, snapshots, and parameter groups for the past 14 days. Events specific to a
         /// particular cluster, security group, snapshot or parameter group can be obtained by providing the name as a parameter. By default, the past
         /// hour of events are returned. </para>
@@ -484,6 +594,70 @@ namespace Amazon.Redshift
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		Task<DescribeEventsResponse> DescribeEventsAsync(DescribeEventsRequest describeEventsRequest, CancellationToken cancellationToken = default(CancellationToken));
+ 
+        /// <summary>
+        /// <para> Lists descriptions of all the Amazon Redshift event notifications subscription for a customer account. If you specify a subscription
+        /// name, lists the description for that subscription. </para>
+        /// </summary>
+        /// 
+        /// <param name="describeEventSubscriptionsRequest">Container for the necessary parameters to execute the DescribeEventSubscriptions service
+        /// method on AmazonRedshift.</param>
+        /// 
+        /// <returns>The response from the DescribeEventSubscriptions service method, as returned by AmazonRedshift.</returns>
+        /// 
+        /// <exception cref="T:Amazon.Redshift.Model.SubscriptionNotFoundException" />
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+		Task<DescribeEventSubscriptionsResponse> DescribeEventSubscriptionsAsync(DescribeEventSubscriptionsRequest describeEventSubscriptionsRequest, CancellationToken cancellationToken = default(CancellationToken));
+ 
+        /// <summary>
+        /// <para>Returns information about the specified HSM client certificate. If no certificate ID is specified, returns information about all the
+        /// HSM certificates owned by your AWS customer account.</para>
+        /// </summary>
+        /// 
+        /// <param name="describeHsmClientCertificatesRequest">Container for the necessary parameters to execute the DescribeHsmClientCertificates
+        /// service method on AmazonRedshift.</param>
+        /// 
+        /// <returns>The response from the DescribeHsmClientCertificates service method, as returned by AmazonRedshift.</returns>
+        /// 
+        /// <exception cref="T:Amazon.Redshift.Model.HsmClientCertificateNotFoundException" />
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+		Task<DescribeHsmClientCertificatesResponse> DescribeHsmClientCertificatesAsync(DescribeHsmClientCertificatesRequest describeHsmClientCertificatesRequest, CancellationToken cancellationToken = default(CancellationToken));
+ 
+        /// <summary>
+        /// <para>Returns information about the specified Amazon Redshift HSM configuration. If no configuration ID is specified, returns information
+        /// about all the HSM configurations owned by your AWS customer account.</para>
+        /// </summary>
+        /// 
+        /// <param name="describeHsmConfigurationsRequest">Container for the necessary parameters to execute the DescribeHsmConfigurations service
+        /// method on AmazonRedshift.</param>
+        /// 
+        /// <returns>The response from the DescribeHsmConfigurations service method, as returned by AmazonRedshift.</returns>
+        /// 
+        /// <exception cref="T:Amazon.Redshift.Model.HsmConfigurationNotFoundException" />
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+		Task<DescribeHsmConfigurationsResponse> DescribeHsmConfigurationsAsync(DescribeHsmConfigurationsRequest describeHsmConfigurationsRequest, CancellationToken cancellationToken = default(CancellationToken));
+ 
+        /// <summary>
+        /// <para>Describes whether information, such as queries and connection attempts, is being logged for the specified Amazon Redshift
+        /// cluster.</para>
+        /// </summary>
+        /// 
+        /// <param name="describeLoggingStatusRequest">Container for the necessary parameters to execute the DescribeLoggingStatus service method on
+        /// AmazonRedshift.</param>
+        /// 
+        /// <returns>The response from the DescribeLoggingStatus service method, as returned by AmazonRedshift.</returns>
+        /// 
+        /// <exception cref="T:Amazon.Redshift.Model.ClusterNotFoundException" />
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+		Task<DescribeLoggingStatusResponse> DescribeLoggingStatusAsync(DescribeLoggingStatusRequest describeLoggingStatusRequest, CancellationToken cancellationToken = default(CancellationToken));
  
         /// <summary>
         /// <para> Returns a list of orderable cluster options. Before you create a new cluster you can use this operation to find what options are
@@ -558,6 +732,78 @@ namespace Amazon.Redshift
 		Task<DescribeResizeResponse> DescribeResizeAsync(DescribeResizeRequest describeResizeRequest, CancellationToken cancellationToken = default(CancellationToken));
  
         /// <summary>
+        /// <para>Stops logging information, such as queries and connection attempts, for the specified Amazon Redshift cluster.</para>
+        /// </summary>
+        /// 
+        /// <param name="disableLoggingRequest">Container for the necessary parameters to execute the DisableLogging service method on
+        /// AmazonRedshift.</param>
+        /// 
+        /// <returns>The response from the DisableLogging service method, as returned by AmazonRedshift.</returns>
+        /// 
+        /// <exception cref="T:Amazon.Redshift.Model.ClusterNotFoundException" />
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+		Task<DisableLoggingResponse> DisableLoggingAsync(DisableLoggingRequest disableLoggingRequest, CancellationToken cancellationToken = default(CancellationToken));
+ 
+        /// <summary>
+        /// <para>Disables the automatic copying of snapshots from one region to another region for a specified cluster.</para>
+        /// </summary>
+        /// 
+        /// <param name="disableSnapshotCopyRequest">Container for the necessary parameters to execute the DisableSnapshotCopy service method on
+        /// AmazonRedshift.</param>
+        /// 
+        /// <returns>The response from the DisableSnapshotCopy service method, as returned by AmazonRedshift.</returns>
+        /// 
+        /// <exception cref="T:Amazon.Redshift.Model.SnapshotCopyAlreadyDisabledException" />
+        /// <exception cref="T:Amazon.Redshift.Model.UnauthorizedOperationException" />
+        /// <exception cref="T:Amazon.Redshift.Model.ClusterNotFoundException" />
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+		Task<DisableSnapshotCopyResponse> DisableSnapshotCopyAsync(DisableSnapshotCopyRequest disableSnapshotCopyRequest, CancellationToken cancellationToken = default(CancellationToken));
+ 
+        /// <summary>
+        /// <para>Starts logging information, such as queries and connection attempts, for the specified Amazon Redshift cluster.</para>
+        /// </summary>
+        /// 
+        /// <param name="enableLoggingRequest">Container for the necessary parameters to execute the EnableLogging service method on
+        /// AmazonRedshift.</param>
+        /// 
+        /// <returns>The response from the EnableLogging service method, as returned by AmazonRedshift.</returns>
+        /// 
+        /// <exception cref="T:Amazon.Redshift.Model.InvalidS3KeyPrefixException" />
+        /// <exception cref="T:Amazon.Redshift.Model.InvalidS3BucketNameException" />
+        /// <exception cref="T:Amazon.Redshift.Model.BucketNotFoundException" />
+        /// <exception cref="T:Amazon.Redshift.Model.ClusterNotFoundException" />
+        /// <exception cref="T:Amazon.Redshift.Model.InsufficientS3BucketPolicyException" />
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+		Task<EnableLoggingResponse> EnableLoggingAsync(EnableLoggingRequest enableLoggingRequest, CancellationToken cancellationToken = default(CancellationToken));
+ 
+        /// <summary>
+        /// <para>Enables the automatic copy of snapshots from one region to another region for a specified cluster.</para>
+        /// </summary>
+        /// 
+        /// <param name="enableSnapshotCopyRequest">Container for the necessary parameters to execute the EnableSnapshotCopy service method on
+        /// AmazonRedshift.</param>
+        /// 
+        /// <returns>The response from the EnableSnapshotCopy service method, as returned by AmazonRedshift.</returns>
+        /// 
+        /// <exception cref="T:Amazon.Redshift.Model.CopyToRegionDisabledException" />
+        /// <exception cref="T:Amazon.Redshift.Model.UnauthorizedOperationException" />
+        /// <exception cref="T:Amazon.Redshift.Model.InvalidClusterStateException" />
+        /// <exception cref="T:Amazon.Redshift.Model.ClusterNotFoundException" />
+        /// <exception cref="T:Amazon.Redshift.Model.IncompatibleOrderableOptionsException" />
+        /// <exception cref="T:Amazon.Redshift.Model.SnapshotCopyAlreadyEnabledException" />
+        /// <exception cref="T:Amazon.Redshift.Model.UnknownSnapshotCopyRegionException" />
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+		Task<EnableSnapshotCopyResponse> EnableSnapshotCopyAsync(EnableSnapshotCopyRequest enableSnapshotCopyRequest, CancellationToken cancellationToken = default(CancellationToken));
+ 
+        /// <summary>
         /// <para> Modifies the settings for a cluster. For example, you can add another security or parameter group, update the preferred maintenance
         /// window, or change the master user password. Resetting a cluster password or modifying the security groups associated with a cluster do not
         /// need a reboot. However, modifying parameter group requires a reboot for parameters to take effect. For more information about managing
@@ -573,6 +819,7 @@ namespace Amazon.Redshift
         /// <returns>The response from the ModifyCluster service method, as returned by AmazonRedshift.</returns>
         /// 
         /// <exception cref="T:Amazon.Redshift.Model.InvalidClusterSecurityGroupStateException" />
+        /// <exception cref="T:Amazon.Redshift.Model.HsmConfigurationNotFoundException" />
         /// <exception cref="T:Amazon.Redshift.Model.InsufficientClusterCapacityException" />
         /// <exception cref="T:Amazon.Redshift.Model.UnauthorizedOperationException" />
         /// <exception cref="T:Amazon.Redshift.Model.InvalidClusterStateException" />
@@ -580,6 +827,7 @@ namespace Amazon.Redshift
         /// <exception cref="T:Amazon.Redshift.Model.ClusterNotFoundException" />
         /// <exception cref="T:Amazon.Redshift.Model.UnsupportedOptionException" />
         /// <exception cref="T:Amazon.Redshift.Model.ClusterSecurityGroupNotFoundException" />
+        /// <exception cref="T:Amazon.Redshift.Model.HsmClientCertificateNotFoundException" />
         /// <exception cref="T:Amazon.Redshift.Model.ClusterParameterGroupNotFoundException" />
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -623,6 +871,46 @@ namespace Amazon.Redshift
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		Task<ModifyClusterSubnetGroupResponse> ModifyClusterSubnetGroupAsync(ModifyClusterSubnetGroupRequest modifyClusterSubnetGroupRequest, CancellationToken cancellationToken = default(CancellationToken));
+ 
+        /// <summary>
+        /// <para> Modifies an existing Amazon Redshift event notification subscription. </para>
+        /// </summary>
+        /// 
+        /// <param name="modifyEventSubscriptionRequest">Container for the necessary parameters to execute the ModifyEventSubscription service method on
+        /// AmazonRedshift.</param>
+        /// 
+        /// <returns>The response from the ModifyEventSubscription service method, as returned by AmazonRedshift.</returns>
+        /// 
+        /// <exception cref="T:Amazon.Redshift.Model.SubscriptionCategoryNotFoundException" />
+        /// <exception cref="T:Amazon.Redshift.Model.SubscriptionEventIdNotFoundException" />
+        /// <exception cref="T:Amazon.Redshift.Model.SubscriptionSeverityNotFoundException" />
+        /// <exception cref="T:Amazon.Redshift.Model.SourceNotFoundException" />
+        /// <exception cref="T:Amazon.Redshift.Model.SNSNoAuthorizationException" />
+        /// <exception cref="T:Amazon.Redshift.Model.SNSTopicArnNotFoundException" />
+        /// <exception cref="T:Amazon.Redshift.Model.SubscriptionNotFoundException" />
+        /// <exception cref="T:Amazon.Redshift.Model.SNSInvalidTopicException" />
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+		Task<ModifyEventSubscriptionResponse> ModifyEventSubscriptionAsync(ModifyEventSubscriptionRequest modifyEventSubscriptionRequest, CancellationToken cancellationToken = default(CancellationToken));
+ 
+        /// <summary>
+        /// <para> Modifies the number of days to retain automated snapshots in the destination region after they are copied from the source region.
+        /// </para>
+        /// </summary>
+        /// 
+        /// <param name="modifySnapshotCopyRetentionPeriodRequest">Container for the necessary parameters to execute the
+        /// ModifySnapshotCopyRetentionPeriod service method on AmazonRedshift.</param>
+        /// 
+        /// <returns>The response from the ModifySnapshotCopyRetentionPeriod service method, as returned by AmazonRedshift.</returns>
+        /// 
+        /// <exception cref="T:Amazon.Redshift.Model.SnapshotCopyDisabledException" />
+        /// <exception cref="T:Amazon.Redshift.Model.UnauthorizedOperationException" />
+        /// <exception cref="T:Amazon.Redshift.Model.ClusterNotFoundException" />
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+		Task<ModifySnapshotCopyRetentionPeriodResponse> ModifySnapshotCopyRetentionPeriodAsync(ModifySnapshotCopyRetentionPeriodRequest modifySnapshotCopyRetentionPeriodRequest, CancellationToken cancellationToken = default(CancellationToken));
  
         /// <summary>
         /// <para> Allows you to purchase reserved nodes. Amazon Redshift offers a predefined set of reserved node offerings. You can purchase one of
@@ -700,7 +988,9 @@ namespace Amazon.Redshift
         /// 
         /// <returns>The response from the RestoreFromClusterSnapshot service method, as returned by AmazonRedshift.</returns>
         /// 
+        /// <exception cref="T:Amazon.Redshift.Model.InvalidElasticIpException" />
         /// <exception cref="T:Amazon.Redshift.Model.InvalidSubnetException" />
+        /// <exception cref="T:Amazon.Redshift.Model.HsmConfigurationNotFoundException" />
         /// <exception cref="T:Amazon.Redshift.Model.ClusterSubnetGroupNotFoundException" />
         /// <exception cref="T:Amazon.Redshift.Model.InvalidClusterSubnetGroupStateException" />
         /// <exception cref="T:Amazon.Redshift.Model.ClusterAlreadyExistsException" />
@@ -714,6 +1004,7 @@ namespace Amazon.Redshift
         /// <exception cref="T:Amazon.Redshift.Model.NumberOfNodesPerClusterLimitExceededException" />
         /// <exception cref="T:Amazon.Redshift.Model.ClusterSnapshotNotFoundException" />
         /// <exception cref="T:Amazon.Redshift.Model.ClusterQuotaExceededException" />
+        /// <exception cref="T:Amazon.Redshift.Model.HsmClientCertificateNotFoundException" />
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -758,5 +1049,21 @@ namespace Amazon.Redshift
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		Task<RevokeSnapshotAccessResponse> RevokeSnapshotAccessAsync(RevokeSnapshotAccessRequest revokeSnapshotAccessRequest, CancellationToken cancellationToken = default(CancellationToken));
+ 
+        /// <summary>
+        /// <para> Rotates the encryption keys for a cluster. </para>
+        /// </summary>
+        /// 
+        /// <param name="rotateEncryptionKeyRequest">Container for the necessary parameters to execute the RotateEncryptionKey service method on
+        /// AmazonRedshift.</param>
+        /// 
+        /// <returns>The response from the RotateEncryptionKey service method, as returned by AmazonRedshift.</returns>
+        /// 
+        /// <exception cref="T:Amazon.Redshift.Model.InvalidClusterStateException" />
+        /// <exception cref="T:Amazon.Redshift.Model.ClusterNotFoundException" />
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+		Task<RotateEncryptionKeyResponse> RotateEncryptionKeyAsync(RotateEncryptionKeyRequest rotateEncryptionKeyRequest, CancellationToken cancellationToken = default(CancellationToken));
     }
 }

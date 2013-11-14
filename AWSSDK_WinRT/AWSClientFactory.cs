@@ -25,6 +25,7 @@ using Amazon.AutoScaling;
 using Amazon.CloudFormation;
 using Amazon.CloudFront;
 using Amazon.CloudSearch;
+using Amazon.CloudTrail;
 using Amazon.CloudWatch;
 using Amazon.DataPipeline;
 using Amazon.DirectConnect;
@@ -431,6 +432,98 @@ namespace Amazon
         public static IAmazonCloudSearch CreateAmazonCloudSearchClient(AWSCredentials credentials, AmazonCloudSearchConfig config)
         {
             return new AmazonCloudSearchClient(credentials, config);
+        }
+		#endregion
+
+		#region Amazon CloudTrail
+
+        /// <summary>
+        /// Create a client for the Amazon CloudTrail Service with the default configuration
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <returns>An Amazon CloudTrail client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonCloudTrail CreateAmazonCloudTrailClient(
+            string awsAccessKey,
+            string awsSecretAccessKey
+            )
+        {
+            return new AmazonCloudTrailClient(awsAccessKey, awsSecretAccessKey);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon CloudTrail Service with the specified configuration
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <param name="config">Configuration options for the service like HTTP Proxy, # of connections, etc
+        /// </param>
+        /// <returns>An Amazon CloudTrail client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonCloudTrail CreateAmazonCloudTrailClient(
+            string awsAccessKey,
+            string awsSecretAccessKey, AmazonCloudTrailConfig config
+            )
+        {
+            return new AmazonCloudTrailClient(awsAccessKey, awsSecretAccessKey, config);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon CloudTrail Service with the specified region
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon CloudTrail client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonCloudTrail CreateAmazonCloudTrailClient(
+            string awsAccessKey,
+            string awsSecretAccessKey, RegionEndpoint region
+            )
+        {
+            return new AmazonCloudTrailClient(awsAccessKey, awsSecretAccessKey, region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon CloudTrail Service with AWSCredentials.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <returns>An Amazon CloudTrail client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonCloudTrail CreateAmazonCloudTrailClient(AWSCredentials credentials)
+        {
+            return new AmazonCloudTrailClient(credentials);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon CloudTrail Service with AWSCredentials and region.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon CloudTrail client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonCloudTrail CreateAmazonCloudTrailClient(AWSCredentials credentials, RegionEndpoint region)
+        {
+            return new AmazonCloudTrailClient(credentials, region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon CloudTrail Service with AWSCredentials and an AmazonCloudTrail Configuration object.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="config">Configuration options for the service like HTTP Proxy, # of connections, etc</param>
+        /// <returns>An Amazon CloudTrail client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonCloudTrail CreateAmazonCloudTrailClient(AWSCredentials credentials, AmazonCloudTrailConfig config)
+        {
+            return new AmazonCloudTrailClient(credentials, config);
         }
 		#endregion
 

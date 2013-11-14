@@ -26,14 +26,14 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Container for the parameters to the AddRoleToInstanceProfile operation.
     /// <para>Adds the specified role to the specified instance profile. For more information about roles, go to <a
-    /// href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/WorkingWithRoles.html" >Working with Roles</a> . For more information about
-    /// instance profiles, go to <a href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/AboutInstanceProfiles.html" >About Instance
-    /// Profiles</a> .</para>
+    /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html" >Working with Roles</a> . For more information about instance
+    /// profiles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html" >About Instance Profiles</a> .</para>
     /// </summary>
-    public partial class AddRoleToInstanceProfileRequest : AmazonWebServiceRequest
+    public partial class AddRoleToInstanceProfileRequest : AmazonIdentityManagementServiceRequest
     {
         private string instanceProfileName;
         private string roleName;
+
 
         /// <summary>
         /// Name of the instance profile to update.

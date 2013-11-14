@@ -30,6 +30,7 @@ namespace Amazon.Redshift.Model
         private string eC2SecurityGroupName;
         private string eC2SecurityGroupOwnerId;
 
+
         /// <summary>
         /// The status of the EC2 security group.
         ///  

@@ -29,6 +29,7 @@ namespace Amazon.IdentityManagement.Model
         
         private Role role;
 
+
         /// <summary>
         /// Information about the role.
         ///  

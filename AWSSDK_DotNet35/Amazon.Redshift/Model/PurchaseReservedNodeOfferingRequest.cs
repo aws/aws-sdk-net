@@ -33,10 +33,11 @@ namespace Amazon.Redshift.Model
     /// 
     /// </para>
     /// </summary>
-    public partial class PurchaseReservedNodeOfferingRequest : AmazonWebServiceRequest
+    public partial class PurchaseReservedNodeOfferingRequest : AmazonRedshiftRequest
     {
         private string reservedNodeOfferingId;
         private int? nodeCount;
+
 
         /// <summary>
         /// The unique identifier of the reserved node offering you want to purchase.

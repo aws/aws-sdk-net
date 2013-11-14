@@ -25,11 +25,13 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the GetLoginProfile operation.
-    /// <para>Retrieves the user name and password create date for the specified user.</para>
+    /// <para>Retrieves the user name and password-creation date for the specified user. If the user has not been assigned a password, the action
+    /// returns a 404 ( <c>NoSuchEntity</c> ) error. </para>
     /// </summary>
-    public partial class GetLoginProfileRequest : AmazonWebServiceRequest
+    public partial class GetLoginProfileRequest : AmazonIdentityManagementServiceRequest
     {
         private string userName;
+
 
         /// <summary>
         /// Name of the user whose login profile you want to retrieve.

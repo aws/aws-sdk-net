@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model
     /// Management Guide</i> .
     /// </para>
     /// </summary>
-    public partial class RestoreFromClusterSnapshotRequest : AmazonWebServiceRequest
+    public partial class RestoreFromClusterSnapshotRequest : AmazonRedshiftRequest
     {
         private string clusterIdentifier;
         private string snapshotIdentifier;
@@ -46,6 +46,10 @@ namespace Amazon.Redshift.Model
         private string clusterSubnetGroupName;
         private bool? publiclyAccessible;
         private string ownerAccount;
+        private string hsmClientCertificateIdentifier;
+        private string hsmConfigurationIdentifier;
+        private string elasticIp;
+
 
         /// <summary>
         /// The identifier of the cluster that will be created from restoring the snapshot. Constraints: <ul> <li>Must contain from 1 to 63 alphanumeric
@@ -80,6 +84,12 @@ namespace Amazon.Redshift.Model
         {
             return this.snapshotIdentifier != null;
         }
+
+        /// <summary>
+        /// The name of the cluster the source snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot
+        /// resource element that specifies anything other than * for the cluster name.
+        ///  
+        /// </summary>
         public string SnapshotClusterIdentifier
         {
             get { return this.snapshotClusterIdentifier; }
@@ -191,6 +201,55 @@ namespace Amazon.Redshift.Model
         internal bool IsSetOwnerAccount()
         {
             return this.ownerAccount != null;
+        }
+
+        /// <summary>
+        /// Specifies the name of the HSM client certificate the Amazon Redshift cluster uses to retrieve the data encryption keys stored in an HSM.
+        ///  
+        /// </summary>
+        public string HsmClientCertificateIdentifier
+        {
+            get { return this.hsmClientCertificateIdentifier; }
+            set { this.hsmClientCertificateIdentifier = value; }
+        }
+
+        // Check to see if HsmClientCertificateIdentifier property is set
+        internal bool IsSetHsmClientCertificateIdentifier()
+        {
+            return this.hsmClientCertificateIdentifier != null;
+        }
+
+        /// <summary>
+        /// Specifies the name of the HSM configuration that contains the information the Amazon Redshift cluster can use to retrieve and store keys in
+        /// an HSM.
+        ///  
+        /// </summary>
+        public string HsmConfigurationIdentifier
+        {
+            get { return this.hsmConfigurationIdentifier; }
+            set { this.hsmConfigurationIdentifier = value; }
+        }
+
+        // Check to see if HsmConfigurationIdentifier property is set
+        internal bool IsSetHsmConfigurationIdentifier()
+        {
+            return this.hsmConfigurationIdentifier != null;
+        }
+
+        /// <summary>
+        /// The elastic IP (EIP) address for the cluster.
+        ///  
+        /// </summary>
+        public string ElasticIp
+        {
+            get { return this.elasticIp; }
+            set { this.elasticIp = value; }
+        }
+
+        // Check to see if ElasticIp property is set
+        internal bool IsSetElasticIp()
+        {
+            return this.elasticIp != null;
         }
 
     }

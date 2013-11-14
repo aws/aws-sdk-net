@@ -29,6 +29,7 @@ namespace Amazon.IdentityManagement.Model
         
         private ServerCertificate serverCertificate;
 
+
         /// <summary>
         /// Information about the server certificate.
         ///  

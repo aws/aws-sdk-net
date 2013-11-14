@@ -31,10 +31,11 @@ namespace Amazon.Redshift.Model
     /// <i>Amazon Redshift Management Guide</i> .
     /// </para>
     /// </summary>
-    public partial class CreateClusterSecurityGroupRequest : AmazonWebServiceRequest
+    public partial class CreateClusterSecurityGroupRequest : AmazonRedshiftRequest
     {
         private string clusterSecurityGroupName;
         private string description;
+
 
         /// <summary>
         /// The name for the security group. Amazon Redshift stores the value as a lowercase string. Constraints: <ul> <li>Must contain no more than 255

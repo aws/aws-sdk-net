@@ -29,6 +29,7 @@ namespace Amazon.IdentityManagement.Model
         
         private InstanceProfile instanceProfile;
 
+
         /// <summary>
         /// Information about the instance profile.
         ///  

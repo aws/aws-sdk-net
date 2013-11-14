@@ -28,41 +28,18 @@ namespace Amazon.Redshift
     /// <summary>
     /// Implementation for accessing AmazonRedshift.
     ///  
-    /// Amazon Redshift <b>Overview</b> <para> This is the Amazon Redshift API Reference. This guide provides descriptions and samples of the Amazon
-    /// Redshift API. </para> <para> Amazon Redshift manages all the work of setting up, operating, and scaling a data warehouse: provisioning
-    /// capacity, monitoring and backing up the cluster, and applying patches and upgrades to the Amazon Redshift engine. You can focus on using
-    /// your data to acquire new insights for your business and customers. </para> <b>Are You a First-Time Amazon Redshift User?</b> <para>If you
-    /// are a first-time user of Amazon Redshift, we recommend that you begin by reading the following sections:</para> <para>
-    /// <ul>
-    /// <li> <para> <i>Service Highlights and Pricing</i> - The <a href="http://aws.amazon.com/redshift/" >product detail page</a> provides the
-    /// Amazon Redshift value proposition, service highlights and pricing. </para> </li>
-    /// <li> <para> <i>Getting Started</i> - The <a href="http://docs.aws.amazon.com/redshift/latest/gsg/getting-started.html" >Getting Started
-    /// Guide</a> includes an example that walks you through the process of creating a cluster, creating database tables, uploading data, and
-    /// testing queries. </para> </li>
-    /// 
-    /// </ul>
-    /// </para> <para>After you complete the Getting Started Guide, we recommend that you explore one of the following guides:</para>
-    /// <ul>
-    /// <li> <para> <i>Cluster Management</i> - If you are responsible for managing Amazon Redshift clusters, the <a
-    /// href="http://docs.aws.amazon.com/redshift/latest/mgmt/welcome.html" >Cluster Management Guide</a> shows you how to create and manage Amazon
-    /// Redshift clusters.</para> <para> If you are an application developer, you can use the Amazon Redshift Query API to manage clusters
-    /// programmatically. Additionally, the AWS SDK libraries that wrap the underlying Amazon Redshift API simplify your programming tasks. If you
-    /// prefer a more interactive way of managing clusters, you can use the Amazon Redshift console and the AWS command line interface (AWS CLI).
-    /// For information about the API and CLI, go to the following manuals : </para>
-    /// <ul>
-    /// <li> <para>API Reference ( <i>this document</i> ) </para> </li>
-    /// <li> <para> <a href="http://docs.aws.amazon.com/redshift/latest/cli" >CLI Reference</a> </para> </li>
-    /// 
-    /// </ul>
-    /// </li>
-    /// <li> <para> <i>Amazon Redshift Database Database Developer</i> - If you are a database developer, the Amazon Redshift <a
-    /// href="http://docs.aws.amazon.com/redshift/latest/dg/" >Database Developer Guide</a> explains how to design, build, query, and maintain the
-    /// databases that make up your data warehouse. </para> </li>
-    /// 
-    /// </ul>
-    /// <para>For a list of supported AWS regions where you can provision a cluster, go to the <a
-    /// href="http://docs.aws.amazon.com/general/latest/gr/rande.html#redshift_region" >Regions and Endpoints</a> section in the <i>Amazon Web
-    /// Services Glossary</i> . </para>
+    /// Amazon Redshift <b>Overview</b> <para> This is an interface reference for Amazon Redshift. It contains documentation for one of the
+    /// programming or command line interfaces you can use to manage Amazon Redshift clusters. Note that Amazon Redshift is asynchronous, which
+    /// means that some interfaces may require techniques, such as polling or asynchronous callback handlers, to determine when a command has been
+    /// applied. In this reference, the parameter descriptions indicate whether a change is applied immediately, on the next instance reboot, or
+    /// during the next maintenance window. For a summary of the Amazon Redshift cluster management interfaces, go to <a
+    /// href="http://docs.aws.amazon.com/redshift/latest/mgmt/using-aws-sdk.html" >Using the Amazon Redshift Management Interfaces </a> .</para>
+    /// <para> Amazon Redshift manages all the work of setting up, operating, and scaling a data warehouse: provisioning capacity, monitoring and
+    /// backing up the cluster, and applying patches and upgrades to the Amazon Redshift engine. You can focus on using your data to acquire new
+    /// insights for your business and customers. </para> <para>If you are a first-time user of Amazon Redshift, we recommend that you begin by
+    /// reading the The <a href="http://docs.aws.amazon.com/redshift/latest/gsg/getting-started.html" >Amazon Redshift Getting Started Guide</a>
+    /// </para> <para>If you are a database developer, the <a href="http://docs.aws.amazon.com/redshift/latest/dg/welcome.html" >Amazon Redshift
+    /// Database Developer Guide</a> explains how to design, build, query, and maintain the databases that make up your data warehouse. </para>
     /// </summary>
     public partial class AmazonRedshiftClient : AmazonWebServiceClient, IAmazonRedshift
     {
@@ -479,18 +456,21 @@ namespace Amazon.Redshift
         /// 
         /// <returns>The response from the CreateCluster service method, as returned by AmazonRedshift.</returns>
         /// 
+        /// <exception cref="InvalidElasticIpException"/>
         /// <exception cref="InvalidSubnetException"/>
+        /// <exception cref="HsmConfigurationNotFoundException"/>
+        /// <exception cref="ClusterSubnetGroupNotFoundException"/>
+        /// <exception cref="InvalidClusterSubnetGroupStateException"/>
+        /// <exception cref="ClusterAlreadyExistsException"/>
+        /// <exception cref="InvalidVPCNetworkStateException"/>
+        /// <exception cref="ClusterParameterGroupNotFoundException"/>
         /// <exception cref="InsufficientClusterCapacityException"/>
         /// <exception cref="UnauthorizedOperationException"/>
         /// <exception cref="NumberOfNodesQuotaExceededException"/>
         /// <exception cref="NumberOfNodesPerClusterLimitExceededException"/>
-        /// <exception cref="ClusterSubnetGroupNotFoundException"/>
-        /// <exception cref="InvalidClusterSubnetGroupStateException"/>
-        /// <exception cref="ClusterAlreadyExistsException"/>
-        /// <exception cref="ClusterSecurityGroupNotFoundException"/>
+        /// <exception cref="HsmClientCertificateNotFoundException"/>
         /// <exception cref="ClusterQuotaExceededException"/>
-        /// <exception cref="InvalidVPCNetworkStateException"/>
-        /// <exception cref="ClusterParameterGroupNotFoundException"/>
+        /// <exception cref="ClusterSecurityGroupNotFoundException"/>
         public CreateClusterResponse CreateCluster(CreateClusterRequest createClusterRequest)
         {
             IAsyncResult asyncResult = invokeCreateCluster(createClusterRequest, null, null, true);
@@ -834,6 +814,231 @@ namespace Amazon.Redshift
 
         #endregion
     
+        #region CreateEventSubscription
+
+        /// <summary>
+        /// <para> Creates an Amazon Redshift event notification subscription. This action requires an ARN (Amazon Resource Name) of an Amazon SNS topic
+        /// created by either the Amazon Redshift console, the Amazon SNS console, or the Amazon SNS API. To obtain an ARN with Amazon SNS, you must
+        /// create a topic in Amazon SNS and subscribe to the topic. The ARN is displayed in the SNS console. </para> <para> You can specify the source
+        /// type, and lists of Amazon Redshift source IDs, event categories, and event severities. Notifications will be sent for all events you want
+        /// that match those criteria. For example, you can specify source type = cluster, source ID = my-cluster-1 and mycluster2, event categories =
+        /// Availability, Backup, and severity = ERROR. The subsription will only send notifications for those ERROR events in the Availability and
+        /// Backup categores for the specified clusters. </para> <para> If you specify both the source type and source IDs, such as source type =
+        /// cluster and source identifier = my-cluster-1, notifiactions will be sent for all the cluster events for my-cluster-1. If you specify a
+        /// source type but do not specify a source identifier, you will receive notice of the events for the objects of that type in your AWS account.
+        /// If you do not specify either the SourceType nor the SourceIdentifier, you will be notified of events generated from all Amazon Redshift
+        /// sources belonging to your AWS account. You must specify a source type if you specify a source ID. </para>
+        /// </summary>
+        /// 
+        /// <param name="createEventSubscriptionRequest">Container for the necessary parameters to execute the CreateEventSubscription service method on
+        ///          AmazonRedshift.</param>
+        /// 
+        /// <returns>The response from the CreateEventSubscription service method, as returned by AmazonRedshift.</returns>
+        /// 
+        /// <exception cref="SubscriptionCategoryNotFoundException"/>
+        /// <exception cref="SubscriptionAlreadyExistException"/>
+        /// <exception cref="EventSubscriptionQuotaExceededException"/>
+        /// <exception cref="SubscriptionEventIdNotFoundException"/>
+        /// <exception cref="SubscriptionSeverityNotFoundException"/>
+        /// <exception cref="SourceNotFoundException"/>
+        /// <exception cref="SNSNoAuthorizationException"/>
+        /// <exception cref="SNSTopicArnNotFoundException"/>
+        /// <exception cref="SNSInvalidTopicException"/>
+        public CreateEventSubscriptionResponse CreateEventSubscription(CreateEventSubscriptionRequest createEventSubscriptionRequest)
+        {
+            IAsyncResult asyncResult = invokeCreateEventSubscription(createEventSubscriptionRequest, null, null, true);
+            return EndCreateEventSubscription(asyncResult);
+        }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateEventSubscription operation.
+        /// <seealso cref="Amazon.Redshift.IAmazonRedshift.CreateEventSubscription"/>
+        /// </summary>
+        /// 
+        /// <param name="createEventSubscriptionRequest">Container for the necessary parameters to execute the CreateEventSubscription operation on
+        ///          AmazonRedshift.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
+        ///         EndCreateEventSubscription operation.</returns>
+        public IAsyncResult BeginCreateEventSubscription(CreateEventSubscriptionRequest createEventSubscriptionRequest, AsyncCallback callback, object state)
+        {
+            return invokeCreateEventSubscription(createEventSubscriptionRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the CreateEventSubscription operation.
+        /// <seealso cref="Amazon.Redshift.IAmazonRedshift.CreateEventSubscription"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateEventSubscription.</param>
+        /// 
+        /// <returns>Returns a EventSubscription from AmazonRedshift.</returns>
+        public CreateEventSubscriptionResponse EndCreateEventSubscription(IAsyncResult asyncResult)
+        {
+            return endOperation<CreateEventSubscriptionResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeCreateEventSubscription(CreateEventSubscriptionRequest createEventSubscriptionRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new CreateEventSubscriptionRequestMarshaller().Marshall(createEventSubscriptionRequest);
+            var unmarshaller = CreateEventSubscriptionResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        #endregion
+    
+        #region CreateHsmClientCertificate
+
+        /// <summary>
+        /// <para>Creates an HSM client certificate that an Amazon Redshift cluster will use to connect to the client's HSM in order to store and
+        /// retrieve the keys used to encrypt the cluster databases.</para> <para>The command returns a public key, which you must store in the HSM.
+        /// After creating the HSM certificate, you must create an Amazon Redshift HSM configuration that provides a cluster the information needed to
+        /// store and retrieve database encryption keys in the HSM. For more information, go to aLinkToHSMTopic in the Amazon Redshift Management
+        /// Guide.</para>
+        /// </summary>
+        /// 
+        /// <param name="createHsmClientCertificateRequest">Container for the necessary parameters to execute the CreateHsmClientCertificate service
+        ///          method on AmazonRedshift.</param>
+        /// 
+        /// <returns>The response from the CreateHsmClientCertificate service method, as returned by AmazonRedshift.</returns>
+        /// 
+        /// <exception cref="HsmClientCertificateQuotaExceededException"/>
+        /// <exception cref="HsmClientCertificateAlreadyExistsException"/>
+        public CreateHsmClientCertificateResponse CreateHsmClientCertificate(CreateHsmClientCertificateRequest createHsmClientCertificateRequest)
+        {
+            IAsyncResult asyncResult = invokeCreateHsmClientCertificate(createHsmClientCertificateRequest, null, null, true);
+            return EndCreateHsmClientCertificate(asyncResult);
+        }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateHsmClientCertificate operation.
+        /// <seealso cref="Amazon.Redshift.IAmazonRedshift.CreateHsmClientCertificate"/>
+        /// </summary>
+        /// 
+        /// <param name="createHsmClientCertificateRequest">Container for the necessary parameters to execute the CreateHsmClientCertificate operation
+        ///          on AmazonRedshift.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
+        ///         EndCreateHsmClientCertificate operation.</returns>
+        public IAsyncResult BeginCreateHsmClientCertificate(CreateHsmClientCertificateRequest createHsmClientCertificateRequest, AsyncCallback callback, object state)
+        {
+            return invokeCreateHsmClientCertificate(createHsmClientCertificateRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the CreateHsmClientCertificate operation.
+        /// <seealso cref="Amazon.Redshift.IAmazonRedshift.CreateHsmClientCertificate"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateHsmClientCertificate.</param>
+        /// 
+        /// <returns>Returns a HsmClientCertificate from AmazonRedshift.</returns>
+        public CreateHsmClientCertificateResponse EndCreateHsmClientCertificate(IAsyncResult asyncResult)
+        {
+            return endOperation<CreateHsmClientCertificateResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeCreateHsmClientCertificate(CreateHsmClientCertificateRequest createHsmClientCertificateRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new CreateHsmClientCertificateRequestMarshaller().Marshall(createHsmClientCertificateRequest);
+            var unmarshaller = CreateHsmClientCertificateResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        #endregion
+    
+        #region CreateHsmConfiguration
+
+        /// <summary>
+        /// <para>Creates an HSM configuration that contains the information required by an Amazon Redshift cluster to store and retrieve database
+        /// encryption keys in a Hardware Storeage Module (HSM). After creating the HSM configuration, you can specify it as a parameter when creating a
+        /// cluster. The cluster will then store its encryption keys in the HSM.</para> <para>Before creating an HSM configuration, you must have first
+        /// created an HSM client certificate. For more information, go to aLinkToHSMTopic in the Amazon Redshift Management Guide.</para>
+        /// </summary>
+        /// 
+        /// <param name="createHsmConfigurationRequest">Container for the necessary parameters to execute the CreateHsmConfiguration service method on
+        ///          AmazonRedshift.</param>
+        /// 
+        /// <returns>The response from the CreateHsmConfiguration service method, as returned by AmazonRedshift.</returns>
+        /// 
+        /// <exception cref="HsmConfigurationQuotaExceededException"/>
+        /// <exception cref="HsmConfigurationAlreadyExistsException"/>
+        public CreateHsmConfigurationResponse CreateHsmConfiguration(CreateHsmConfigurationRequest createHsmConfigurationRequest)
+        {
+            IAsyncResult asyncResult = invokeCreateHsmConfiguration(createHsmConfigurationRequest, null, null, true);
+            return EndCreateHsmConfiguration(asyncResult);
+        }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateHsmConfiguration operation.
+        /// <seealso cref="Amazon.Redshift.IAmazonRedshift.CreateHsmConfiguration"/>
+        /// </summary>
+        /// 
+        /// <param name="createHsmConfigurationRequest">Container for the necessary parameters to execute the CreateHsmConfiguration operation on
+        ///          AmazonRedshift.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
+        ///         EndCreateHsmConfiguration operation.</returns>
+        public IAsyncResult BeginCreateHsmConfiguration(CreateHsmConfigurationRequest createHsmConfigurationRequest, AsyncCallback callback, object state)
+        {
+            return invokeCreateHsmConfiguration(createHsmConfigurationRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the CreateHsmConfiguration operation.
+        /// <seealso cref="Amazon.Redshift.IAmazonRedshift.CreateHsmConfiguration"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateHsmConfiguration.</param>
+        /// 
+        /// <returns>Returns a HsmConfiguration from AmazonRedshift.</returns>
+        public CreateHsmConfigurationResponse EndCreateHsmConfiguration(IAsyncResult asyncResult)
+        {
+            return endOperation<CreateHsmConfigurationResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeCreateHsmConfiguration(CreateHsmConfigurationRequest createHsmConfigurationRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new CreateHsmConfigurationRequestMarshaller().Marshall(createHsmConfigurationRequest);
+            var unmarshaller = CreateHsmConfigurationResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        #endregion
+    
         #region DeleteCluster
 
         /// <summary>
@@ -1155,6 +1360,185 @@ namespace Amazon.Redshift
         {
             IRequest irequest = new DeleteClusterSubnetGroupRequestMarshaller().Marshall(deleteClusterSubnetGroupRequest);
             var unmarshaller = DeleteClusterSubnetGroupResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        #endregion
+    
+        #region DeleteEventSubscription
+
+        /// <summary>
+        /// <para> Deletes an Amazon Redshift event notification subscription. </para>
+        /// </summary>
+        /// 
+        /// <param name="deleteEventSubscriptionRequest">Container for the necessary parameters to execute the DeleteEventSubscription service method on
+        ///          AmazonRedshift.</param>
+        /// 
+        /// <exception cref="SubscriptionNotFoundException"/>
+        public DeleteEventSubscriptionResponse DeleteEventSubscription(DeleteEventSubscriptionRequest deleteEventSubscriptionRequest)
+        {
+            IAsyncResult asyncResult = invokeDeleteEventSubscription(deleteEventSubscriptionRequest, null, null, true);
+            return EndDeleteEventSubscription(asyncResult);
+        }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteEventSubscription operation.
+        /// <seealso cref="Amazon.Redshift.IAmazonRedshift.DeleteEventSubscription"/>
+        /// </summary>
+        /// 
+        /// <param name="deleteEventSubscriptionRequest">Container for the necessary parameters to execute the DeleteEventSubscription operation on
+        ///          AmazonRedshift.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        public IAsyncResult BeginDeleteEventSubscription(DeleteEventSubscriptionRequest deleteEventSubscriptionRequest, AsyncCallback callback, object state)
+        {
+            return invokeDeleteEventSubscription(deleteEventSubscriptionRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the DeleteEventSubscription operation.
+        /// <seealso cref="Amazon.Redshift.IAmazonRedshift.DeleteEventSubscription"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteEventSubscription.</param>
+        public DeleteEventSubscriptionResponse EndDeleteEventSubscription(IAsyncResult asyncResult)
+        {
+            return endOperation<DeleteEventSubscriptionResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeDeleteEventSubscription(DeleteEventSubscriptionRequest deleteEventSubscriptionRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new DeleteEventSubscriptionRequestMarshaller().Marshall(deleteEventSubscriptionRequest);
+            var unmarshaller = DeleteEventSubscriptionResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        #endregion
+    
+        #region DeleteHsmClientCertificate
+
+        /// <summary>
+        /// <para>Deletes the specified HSM client certificate.</para>
+        /// </summary>
+        /// 
+        /// <param name="deleteHsmClientCertificateRequest">Container for the necessary parameters to execute the DeleteHsmClientCertificate service
+        ///          method on AmazonRedshift.</param>
+        /// 
+        /// <exception cref="InvalidHsmClientCertificateStateException"/>
+        /// <exception cref="HsmClientCertificateNotFoundException"/>
+        public DeleteHsmClientCertificateResponse DeleteHsmClientCertificate(DeleteHsmClientCertificateRequest deleteHsmClientCertificateRequest)
+        {
+            IAsyncResult asyncResult = invokeDeleteHsmClientCertificate(deleteHsmClientCertificateRequest, null, null, true);
+            return EndDeleteHsmClientCertificate(asyncResult);
+        }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteHsmClientCertificate operation.
+        /// <seealso cref="Amazon.Redshift.IAmazonRedshift.DeleteHsmClientCertificate"/>
+        /// </summary>
+        /// 
+        /// <param name="deleteHsmClientCertificateRequest">Container for the necessary parameters to execute the DeleteHsmClientCertificate operation
+        ///          on AmazonRedshift.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        public IAsyncResult BeginDeleteHsmClientCertificate(DeleteHsmClientCertificateRequest deleteHsmClientCertificateRequest, AsyncCallback callback, object state)
+        {
+            return invokeDeleteHsmClientCertificate(deleteHsmClientCertificateRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the DeleteHsmClientCertificate operation.
+        /// <seealso cref="Amazon.Redshift.IAmazonRedshift.DeleteHsmClientCertificate"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteHsmClientCertificate.</param>
+        public DeleteHsmClientCertificateResponse EndDeleteHsmClientCertificate(IAsyncResult asyncResult)
+        {
+            return endOperation<DeleteHsmClientCertificateResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeDeleteHsmClientCertificate(DeleteHsmClientCertificateRequest deleteHsmClientCertificateRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new DeleteHsmClientCertificateRequestMarshaller().Marshall(deleteHsmClientCertificateRequest);
+            var unmarshaller = DeleteHsmClientCertificateResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        #endregion
+    
+        #region DeleteHsmConfiguration
+
+        /// <summary>
+        /// <para>Deletes the specified Amazon Redshift HSM configuration.</para>
+        /// </summary>
+        /// 
+        /// <param name="deleteHsmConfigurationRequest">Container for the necessary parameters to execute the DeleteHsmConfiguration service method on
+        ///          AmazonRedshift.</param>
+        /// 
+        /// <exception cref="HsmConfigurationNotFoundException"/>
+        /// <exception cref="InvalidHsmConfigurationStateException"/>
+        public DeleteHsmConfigurationResponse DeleteHsmConfiguration(DeleteHsmConfigurationRequest deleteHsmConfigurationRequest)
+        {
+            IAsyncResult asyncResult = invokeDeleteHsmConfiguration(deleteHsmConfigurationRequest, null, null, true);
+            return EndDeleteHsmConfiguration(asyncResult);
+        }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteHsmConfiguration operation.
+        /// <seealso cref="Amazon.Redshift.IAmazonRedshift.DeleteHsmConfiguration"/>
+        /// </summary>
+        /// 
+        /// <param name="deleteHsmConfigurationRequest">Container for the necessary parameters to execute the DeleteHsmConfiguration operation on
+        ///          AmazonRedshift.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        public IAsyncResult BeginDeleteHsmConfiguration(DeleteHsmConfigurationRequest deleteHsmConfigurationRequest, AsyncCallback callback, object state)
+        {
+            return invokeDeleteHsmConfiguration(deleteHsmConfigurationRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the DeleteHsmConfiguration operation.
+        /// <seealso cref="Amazon.Redshift.IAmazonRedshift.DeleteHsmConfiguration"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteHsmConfiguration.</param>
+        public DeleteHsmConfigurationResponse EndDeleteHsmConfiguration(IAsyncResult asyncResult)
+        {
+            return endOperation<DeleteHsmConfigurationResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeDeleteHsmConfiguration(DeleteHsmConfigurationRequest deleteHsmConfigurationRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new DeleteHsmConfigurationRequestMarshaller().Marshall(deleteHsmConfigurationRequest);
+            var unmarshaller = DeleteHsmConfigurationResponseUnmarshaller.GetInstance();
             AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
             Invoke(result);
             return result;
@@ -1815,6 +2199,168 @@ namespace Amazon.Redshift
 
         #endregion
     
+        #region DescribeEventCategories
+
+        /// <summary>
+        /// <para>Displays a list of event categories for all event source types, or for a specified source type. For a list of the event categories and
+        /// source types, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-event-notifications.html" >Amazon Redshift Event
+        /// Notifications</a> .</para>
+        /// </summary>
+        /// 
+        /// <param name="describeEventCategoriesRequest">Container for the necessary parameters to execute the DescribeEventCategories service method on
+        ///          AmazonRedshift.</param>
+        /// 
+        /// <returns>The response from the DescribeEventCategories service method, as returned by AmazonRedshift.</returns>
+        /// 
+        public DescribeEventCategoriesResponse DescribeEventCategories(DescribeEventCategoriesRequest describeEventCategoriesRequest)
+        {
+            IAsyncResult asyncResult = invokeDescribeEventCategories(describeEventCategoriesRequest, null, null, true);
+            return EndDescribeEventCategories(asyncResult);
+        }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeEventCategories operation.
+        /// <seealso cref="Amazon.Redshift.IAmazonRedshift.DescribeEventCategories"/>
+        /// </summary>
+        /// 
+        /// <param name="describeEventCategoriesRequest">Container for the necessary parameters to execute the DescribeEventCategories operation on
+        ///          AmazonRedshift.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
+        ///         EndDescribeEventCategories operation.</returns>
+        public IAsyncResult BeginDescribeEventCategories(DescribeEventCategoriesRequest describeEventCategoriesRequest, AsyncCallback callback, object state)
+        {
+            return invokeDescribeEventCategories(describeEventCategoriesRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the DescribeEventCategories operation.
+        /// <seealso cref="Amazon.Redshift.IAmazonRedshift.DescribeEventCategories"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeEventCategories.</param>
+        /// 
+        /// <returns>Returns a DescribeEventCategoriesResult from AmazonRedshift.</returns>
+        public DescribeEventCategoriesResponse EndDescribeEventCategories(IAsyncResult asyncResult)
+        {
+            return endOperation<DescribeEventCategoriesResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeDescribeEventCategories(DescribeEventCategoriesRequest describeEventCategoriesRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new DescribeEventCategoriesRequestMarshaller().Marshall(describeEventCategoriesRequest);
+            var unmarshaller = DescribeEventCategoriesResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        /// <summary>
+        /// <para>Displays a list of event categories for all event source types, or for a specified source type. For a list of the event categories and
+        /// source types, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-event-notifications.html" >Amazon Redshift Event
+        /// Notifications</a> .</para>
+        /// </summary>
+        /// 
+        /// <returns>The response from the DescribeEventCategories service method, as returned by AmazonRedshift.</returns>
+        /// 
+        public DescribeEventCategoriesResponse DescribeEventCategories()
+        {
+            return DescribeEventCategories(new DescribeEventCategoriesRequest());
+        }
+        
+
+        #endregion
+    
+        #region DescribeEventSubscriptions
+
+        /// <summary>
+        /// <para> Lists descriptions of all the Amazon Redshift event notifications subscription for a customer account. If you specify a subscription
+        /// name, lists the description for that subscription. </para>
+        /// </summary>
+        /// 
+        /// <param name="describeEventSubscriptionsRequest">Container for the necessary parameters to execute the DescribeEventSubscriptions service
+        ///          method on AmazonRedshift.</param>
+        /// 
+        /// <returns>The response from the DescribeEventSubscriptions service method, as returned by AmazonRedshift.</returns>
+        /// 
+        /// <exception cref="SubscriptionNotFoundException"/>
+        public DescribeEventSubscriptionsResponse DescribeEventSubscriptions(DescribeEventSubscriptionsRequest describeEventSubscriptionsRequest)
+        {
+            IAsyncResult asyncResult = invokeDescribeEventSubscriptions(describeEventSubscriptionsRequest, null, null, true);
+            return EndDescribeEventSubscriptions(asyncResult);
+        }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeEventSubscriptions operation.
+        /// <seealso cref="Amazon.Redshift.IAmazonRedshift.DescribeEventSubscriptions"/>
+        /// </summary>
+        /// 
+        /// <param name="describeEventSubscriptionsRequest">Container for the necessary parameters to execute the DescribeEventSubscriptions operation
+        ///          on AmazonRedshift.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
+        ///         EndDescribeEventSubscriptions operation.</returns>
+        public IAsyncResult BeginDescribeEventSubscriptions(DescribeEventSubscriptionsRequest describeEventSubscriptionsRequest, AsyncCallback callback, object state)
+        {
+            return invokeDescribeEventSubscriptions(describeEventSubscriptionsRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the DescribeEventSubscriptions operation.
+        /// <seealso cref="Amazon.Redshift.IAmazonRedshift.DescribeEventSubscriptions"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeEventSubscriptions.</param>
+        /// 
+        /// <returns>Returns a DescribeEventSubscriptionsResult from AmazonRedshift.</returns>
+        public DescribeEventSubscriptionsResponse EndDescribeEventSubscriptions(IAsyncResult asyncResult)
+        {
+            return endOperation<DescribeEventSubscriptionsResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeDescribeEventSubscriptions(DescribeEventSubscriptionsRequest describeEventSubscriptionsRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new DescribeEventSubscriptionsRequestMarshaller().Marshall(describeEventSubscriptionsRequest);
+            var unmarshaller = DescribeEventSubscriptionsResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        /// <summary>
+        /// <para> Lists descriptions of all the Amazon Redshift event notifications subscription for a customer account. If you specify a subscription
+        /// name, lists the description for that subscription. </para>
+        /// </summary>
+        /// 
+        /// <returns>The response from the DescribeEventSubscriptions service method, as returned by AmazonRedshift.</returns>
+        /// 
+        /// <exception cref="SubscriptionNotFoundException"/>
+        public DescribeEventSubscriptionsResponse DescribeEventSubscriptions()
+        {
+            return DescribeEventSubscriptions(new DescribeEventSubscriptionsRequest());
+        }
+        
+
+        #endregion
+    
         #region DescribeEvents
 
         /// <summary>
@@ -1892,6 +2438,235 @@ namespace Amazon.Redshift
         {
             return DescribeEvents(new DescribeEventsRequest());
         }
+        
+
+        #endregion
+    
+        #region DescribeHsmClientCertificates
+
+        /// <summary>
+        /// <para>Returns information about the specified HSM client certificate. If no certificate ID is specified, returns information about all the
+        /// HSM certificates owned by your AWS customer account.</para>
+        /// </summary>
+        /// 
+        /// <param name="describeHsmClientCertificatesRequest">Container for the necessary parameters to execute the DescribeHsmClientCertificates
+        ///          service method on AmazonRedshift.</param>
+        /// 
+        /// <returns>The response from the DescribeHsmClientCertificates service method, as returned by AmazonRedshift.</returns>
+        /// 
+        /// <exception cref="HsmClientCertificateNotFoundException"/>
+        public DescribeHsmClientCertificatesResponse DescribeHsmClientCertificates(DescribeHsmClientCertificatesRequest describeHsmClientCertificatesRequest)
+        {
+            IAsyncResult asyncResult = invokeDescribeHsmClientCertificates(describeHsmClientCertificatesRequest, null, null, true);
+            return EndDescribeHsmClientCertificates(asyncResult);
+        }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeHsmClientCertificates operation.
+        /// <seealso cref="Amazon.Redshift.IAmazonRedshift.DescribeHsmClientCertificates"/>
+        /// </summary>
+        /// 
+        /// <param name="describeHsmClientCertificatesRequest">Container for the necessary parameters to execute the DescribeHsmClientCertificates
+        ///          operation on AmazonRedshift.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
+        ///         EndDescribeHsmClientCertificates operation.</returns>
+        public IAsyncResult BeginDescribeHsmClientCertificates(DescribeHsmClientCertificatesRequest describeHsmClientCertificatesRequest, AsyncCallback callback, object state)
+        {
+            return invokeDescribeHsmClientCertificates(describeHsmClientCertificatesRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the DescribeHsmClientCertificates operation.
+        /// <seealso cref="Amazon.Redshift.IAmazonRedshift.DescribeHsmClientCertificates"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeHsmClientCertificates.</param>
+        /// 
+        /// <returns>Returns a DescribeHsmClientCertificatesResult from AmazonRedshift.</returns>
+        public DescribeHsmClientCertificatesResponse EndDescribeHsmClientCertificates(IAsyncResult asyncResult)
+        {
+            return endOperation<DescribeHsmClientCertificatesResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeDescribeHsmClientCertificates(DescribeHsmClientCertificatesRequest describeHsmClientCertificatesRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new DescribeHsmClientCertificatesRequestMarshaller().Marshall(describeHsmClientCertificatesRequest);
+            var unmarshaller = DescribeHsmClientCertificatesResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        /// <summary>
+        /// <para>Returns information about the specified HSM client certificate. If no certificate ID is specified, returns information about all the
+        /// HSM certificates owned by your AWS customer account.</para>
+        /// </summary>
+        /// 
+        /// <returns>The response from the DescribeHsmClientCertificates service method, as returned by AmazonRedshift.</returns>
+        /// 
+        /// <exception cref="HsmClientCertificateNotFoundException"/>
+        public DescribeHsmClientCertificatesResponse DescribeHsmClientCertificates()
+        {
+            return DescribeHsmClientCertificates(new DescribeHsmClientCertificatesRequest());
+        }
+        
+
+        #endregion
+    
+        #region DescribeHsmConfigurations
+
+        /// <summary>
+        /// <para>Returns information about the specified Amazon Redshift HSM configuration. If no configuration ID is specified, returns information
+        /// about all the HSM configurations owned by your AWS customer account.</para>
+        /// </summary>
+        /// 
+        /// <param name="describeHsmConfigurationsRequest">Container for the necessary parameters to execute the DescribeHsmConfigurations service
+        ///          method on AmazonRedshift.</param>
+        /// 
+        /// <returns>The response from the DescribeHsmConfigurations service method, as returned by AmazonRedshift.</returns>
+        /// 
+        /// <exception cref="HsmConfigurationNotFoundException"/>
+        public DescribeHsmConfigurationsResponse DescribeHsmConfigurations(DescribeHsmConfigurationsRequest describeHsmConfigurationsRequest)
+        {
+            IAsyncResult asyncResult = invokeDescribeHsmConfigurations(describeHsmConfigurationsRequest, null, null, true);
+            return EndDescribeHsmConfigurations(asyncResult);
+        }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeHsmConfigurations operation.
+        /// <seealso cref="Amazon.Redshift.IAmazonRedshift.DescribeHsmConfigurations"/>
+        /// </summary>
+        /// 
+        /// <param name="describeHsmConfigurationsRequest">Container for the necessary parameters to execute the DescribeHsmConfigurations operation on
+        ///          AmazonRedshift.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
+        ///         EndDescribeHsmConfigurations operation.</returns>
+        public IAsyncResult BeginDescribeHsmConfigurations(DescribeHsmConfigurationsRequest describeHsmConfigurationsRequest, AsyncCallback callback, object state)
+        {
+            return invokeDescribeHsmConfigurations(describeHsmConfigurationsRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the DescribeHsmConfigurations operation.
+        /// <seealso cref="Amazon.Redshift.IAmazonRedshift.DescribeHsmConfigurations"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeHsmConfigurations.</param>
+        /// 
+        /// <returns>Returns a DescribeHsmConfigurationsResult from AmazonRedshift.</returns>
+        public DescribeHsmConfigurationsResponse EndDescribeHsmConfigurations(IAsyncResult asyncResult)
+        {
+            return endOperation<DescribeHsmConfigurationsResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeDescribeHsmConfigurations(DescribeHsmConfigurationsRequest describeHsmConfigurationsRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new DescribeHsmConfigurationsRequestMarshaller().Marshall(describeHsmConfigurationsRequest);
+            var unmarshaller = DescribeHsmConfigurationsResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        /// <summary>
+        /// <para>Returns information about the specified Amazon Redshift HSM configuration. If no configuration ID is specified, returns information
+        /// about all the HSM configurations owned by your AWS customer account.</para>
+        /// </summary>
+        /// 
+        /// <returns>The response from the DescribeHsmConfigurations service method, as returned by AmazonRedshift.</returns>
+        /// 
+        /// <exception cref="HsmConfigurationNotFoundException"/>
+        public DescribeHsmConfigurationsResponse DescribeHsmConfigurations()
+        {
+            return DescribeHsmConfigurations(new DescribeHsmConfigurationsRequest());
+        }
+        
+
+        #endregion
+    
+        #region DescribeLoggingStatus
+
+        /// <summary>
+        /// <para>Describes whether information, such as queries and connection attempts, is being logged for the specified Amazon Redshift
+        /// cluster.</para>
+        /// </summary>
+        /// 
+        /// <param name="describeLoggingStatusRequest">Container for the necessary parameters to execute the DescribeLoggingStatus service method on
+        ///          AmazonRedshift.</param>
+        /// 
+        /// <returns>The response from the DescribeLoggingStatus service method, as returned by AmazonRedshift.</returns>
+        /// 
+        /// <exception cref="ClusterNotFoundException"/>
+        public DescribeLoggingStatusResponse DescribeLoggingStatus(DescribeLoggingStatusRequest describeLoggingStatusRequest)
+        {
+            IAsyncResult asyncResult = invokeDescribeLoggingStatus(describeLoggingStatusRequest, null, null, true);
+            return EndDescribeLoggingStatus(asyncResult);
+        }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeLoggingStatus operation.
+        /// <seealso cref="Amazon.Redshift.IAmazonRedshift.DescribeLoggingStatus"/>
+        /// </summary>
+        /// 
+        /// <param name="describeLoggingStatusRequest">Container for the necessary parameters to execute the DescribeLoggingStatus operation on
+        ///          AmazonRedshift.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
+        ///         EndDescribeLoggingStatus operation.</returns>
+        public IAsyncResult BeginDescribeLoggingStatus(DescribeLoggingStatusRequest describeLoggingStatusRequest, AsyncCallback callback, object state)
+        {
+            return invokeDescribeLoggingStatus(describeLoggingStatusRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the DescribeLoggingStatus operation.
+        /// <seealso cref="Amazon.Redshift.IAmazonRedshift.DescribeLoggingStatus"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeLoggingStatus.</param>
+        /// 
+        /// <returns>Returns a DescribeLoggingStatusResult from AmazonRedshift.</returns>
+        public DescribeLoggingStatusResponse EndDescribeLoggingStatus(IAsyncResult asyncResult)
+        {
+            return endOperation<DescribeLoggingStatusResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeDescribeLoggingStatus(DescribeLoggingStatusRequest describeLoggingStatusRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new DescribeLoggingStatusRequestMarshaller().Marshall(describeLoggingStatusRequest);
+            var unmarshaller = DescribeLoggingStatusResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
         
 
         #endregion
@@ -2225,6 +3000,281 @@ namespace Amazon.Redshift
 
         #endregion
     
+        #region DisableLogging
+
+        /// <summary>
+        /// <para>Stops logging information, such as queries and connection attempts, for the specified Amazon Redshift cluster.</para>
+        /// </summary>
+        /// 
+        /// <param name="disableLoggingRequest">Container for the necessary parameters to execute the DisableLogging service method on
+        ///          AmazonRedshift.</param>
+        /// 
+        /// <returns>The response from the DisableLogging service method, as returned by AmazonRedshift.</returns>
+        /// 
+        /// <exception cref="ClusterNotFoundException"/>
+        public DisableLoggingResponse DisableLogging(DisableLoggingRequest disableLoggingRequest)
+        {
+            IAsyncResult asyncResult = invokeDisableLogging(disableLoggingRequest, null, null, true);
+            return EndDisableLogging(asyncResult);
+        }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisableLogging operation.
+        /// <seealso cref="Amazon.Redshift.IAmazonRedshift.DisableLogging"/>
+        /// </summary>
+        /// 
+        /// <param name="disableLoggingRequest">Container for the necessary parameters to execute the DisableLogging operation on
+        ///          AmazonRedshift.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisableLogging
+        ///         operation.</returns>
+        public IAsyncResult BeginDisableLogging(DisableLoggingRequest disableLoggingRequest, AsyncCallback callback, object state)
+        {
+            return invokeDisableLogging(disableLoggingRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the DisableLogging operation.
+        /// <seealso cref="Amazon.Redshift.IAmazonRedshift.DisableLogging"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisableLogging.</param>
+        /// 
+        /// <returns>Returns a DisableLoggingResult from AmazonRedshift.</returns>
+        public DisableLoggingResponse EndDisableLogging(IAsyncResult asyncResult)
+        {
+            return endOperation<DisableLoggingResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeDisableLogging(DisableLoggingRequest disableLoggingRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new DisableLoggingRequestMarshaller().Marshall(disableLoggingRequest);
+            var unmarshaller = DisableLoggingResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        #endregion
+    
+        #region DisableSnapshotCopy
+
+        /// <summary>
+        /// <para>Disables the automatic copying of snapshots from one region to another region for a specified cluster.</para>
+        /// </summary>
+        /// 
+        /// <param name="disableSnapshotCopyRequest">Container for the necessary parameters to execute the DisableSnapshotCopy service method on
+        ///          AmazonRedshift.</param>
+        /// 
+        /// <returns>The response from the DisableSnapshotCopy service method, as returned by AmazonRedshift.</returns>
+        /// 
+        /// <exception cref="SnapshotCopyAlreadyDisabledException"/>
+        /// <exception cref="UnauthorizedOperationException"/>
+        /// <exception cref="ClusterNotFoundException"/>
+        public DisableSnapshotCopyResponse DisableSnapshotCopy(DisableSnapshotCopyRequest disableSnapshotCopyRequest)
+        {
+            IAsyncResult asyncResult = invokeDisableSnapshotCopy(disableSnapshotCopyRequest, null, null, true);
+            return EndDisableSnapshotCopy(asyncResult);
+        }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisableSnapshotCopy operation.
+        /// <seealso cref="Amazon.Redshift.IAmazonRedshift.DisableSnapshotCopy"/>
+        /// </summary>
+        /// 
+        /// <param name="disableSnapshotCopyRequest">Container for the necessary parameters to execute the DisableSnapshotCopy operation on
+        ///          AmazonRedshift.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
+        ///         EndDisableSnapshotCopy operation.</returns>
+        public IAsyncResult BeginDisableSnapshotCopy(DisableSnapshotCopyRequest disableSnapshotCopyRequest, AsyncCallback callback, object state)
+        {
+            return invokeDisableSnapshotCopy(disableSnapshotCopyRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the DisableSnapshotCopy operation.
+        /// <seealso cref="Amazon.Redshift.IAmazonRedshift.DisableSnapshotCopy"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisableSnapshotCopy.</param>
+        /// 
+        /// <returns>Returns a Cluster from AmazonRedshift.</returns>
+        public DisableSnapshotCopyResponse EndDisableSnapshotCopy(IAsyncResult asyncResult)
+        {
+            return endOperation<DisableSnapshotCopyResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeDisableSnapshotCopy(DisableSnapshotCopyRequest disableSnapshotCopyRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new DisableSnapshotCopyRequestMarshaller().Marshall(disableSnapshotCopyRequest);
+            var unmarshaller = DisableSnapshotCopyResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        #endregion
+    
+        #region EnableLogging
+
+        /// <summary>
+        /// <para>Starts logging information, such as queries and connection attempts, for the specified Amazon Redshift cluster.</para>
+        /// </summary>
+        /// 
+        /// <param name="enableLoggingRequest">Container for the necessary parameters to execute the EnableLogging service method on
+        ///          AmazonRedshift.</param>
+        /// 
+        /// <returns>The response from the EnableLogging service method, as returned by AmazonRedshift.</returns>
+        /// 
+        /// <exception cref="InvalidS3KeyPrefixException"/>
+        /// <exception cref="InvalidS3BucketNameException"/>
+        /// <exception cref="BucketNotFoundException"/>
+        /// <exception cref="ClusterNotFoundException"/>
+        /// <exception cref="InsufficientS3BucketPolicyException"/>
+        public EnableLoggingResponse EnableLogging(EnableLoggingRequest enableLoggingRequest)
+        {
+            IAsyncResult asyncResult = invokeEnableLogging(enableLoggingRequest, null, null, true);
+            return EndEnableLogging(asyncResult);
+        }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the EnableLogging operation.
+        /// <seealso cref="Amazon.Redshift.IAmazonRedshift.EnableLogging"/>
+        /// </summary>
+        /// 
+        /// <param name="enableLoggingRequest">Container for the necessary parameters to execute the EnableLogging operation on AmazonRedshift.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndEnableLogging
+        ///         operation.</returns>
+        public IAsyncResult BeginEnableLogging(EnableLoggingRequest enableLoggingRequest, AsyncCallback callback, object state)
+        {
+            return invokeEnableLogging(enableLoggingRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the EnableLogging operation.
+        /// <seealso cref="Amazon.Redshift.IAmazonRedshift.EnableLogging"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginEnableLogging.</param>
+        /// 
+        /// <returns>Returns a EnableLoggingResult from AmazonRedshift.</returns>
+        public EnableLoggingResponse EndEnableLogging(IAsyncResult asyncResult)
+        {
+            return endOperation<EnableLoggingResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeEnableLogging(EnableLoggingRequest enableLoggingRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new EnableLoggingRequestMarshaller().Marshall(enableLoggingRequest);
+            var unmarshaller = EnableLoggingResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        #endregion
+    
+        #region EnableSnapshotCopy
+
+        /// <summary>
+        /// <para>Enables the automatic copy of snapshots from one region to another region for a specified cluster.</para>
+        /// </summary>
+        /// 
+        /// <param name="enableSnapshotCopyRequest">Container for the necessary parameters to execute the EnableSnapshotCopy service method on
+        ///          AmazonRedshift.</param>
+        /// 
+        /// <returns>The response from the EnableSnapshotCopy service method, as returned by AmazonRedshift.</returns>
+        /// 
+        /// <exception cref="CopyToRegionDisabledException"/>
+        /// <exception cref="UnauthorizedOperationException"/>
+        /// <exception cref="InvalidClusterStateException"/>
+        /// <exception cref="ClusterNotFoundException"/>
+        /// <exception cref="IncompatibleOrderableOptionsException"/>
+        /// <exception cref="SnapshotCopyAlreadyEnabledException"/>
+        /// <exception cref="UnknownSnapshotCopyRegionException"/>
+        public EnableSnapshotCopyResponse EnableSnapshotCopy(EnableSnapshotCopyRequest enableSnapshotCopyRequest)
+        {
+            IAsyncResult asyncResult = invokeEnableSnapshotCopy(enableSnapshotCopyRequest, null, null, true);
+            return EndEnableSnapshotCopy(asyncResult);
+        }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the EnableSnapshotCopy operation.
+        /// <seealso cref="Amazon.Redshift.IAmazonRedshift.EnableSnapshotCopy"/>
+        /// </summary>
+        /// 
+        /// <param name="enableSnapshotCopyRequest">Container for the necessary parameters to execute the EnableSnapshotCopy operation on
+        ///          AmazonRedshift.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
+        ///         EndEnableSnapshotCopy operation.</returns>
+        public IAsyncResult BeginEnableSnapshotCopy(EnableSnapshotCopyRequest enableSnapshotCopyRequest, AsyncCallback callback, object state)
+        {
+            return invokeEnableSnapshotCopy(enableSnapshotCopyRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the EnableSnapshotCopy operation.
+        /// <seealso cref="Amazon.Redshift.IAmazonRedshift.EnableSnapshotCopy"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginEnableSnapshotCopy.</param>
+        /// 
+        /// <returns>Returns a Cluster from AmazonRedshift.</returns>
+        public EnableSnapshotCopyResponse EndEnableSnapshotCopy(IAsyncResult asyncResult)
+        {
+            return endOperation<EnableSnapshotCopyResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeEnableSnapshotCopy(EnableSnapshotCopyRequest enableSnapshotCopyRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new EnableSnapshotCopyRequestMarshaller().Marshall(enableSnapshotCopyRequest);
+            var unmarshaller = EnableSnapshotCopyResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        #endregion
+    
         #region ModifyCluster
 
         /// <summary>
@@ -2243,6 +3293,7 @@ namespace Amazon.Redshift
         /// <returns>The response from the ModifyCluster service method, as returned by AmazonRedshift.</returns>
         /// 
         /// <exception cref="InvalidClusterSecurityGroupStateException"/>
+        /// <exception cref="HsmConfigurationNotFoundException"/>
         /// <exception cref="InsufficientClusterCapacityException"/>
         /// <exception cref="UnauthorizedOperationException"/>
         /// <exception cref="InvalidClusterStateException"/>
@@ -2250,6 +3301,7 @@ namespace Amazon.Redshift
         /// <exception cref="ClusterNotFoundException"/>
         /// <exception cref="UnsupportedOptionException"/>
         /// <exception cref="ClusterSecurityGroupNotFoundException"/>
+        /// <exception cref="HsmClientCertificateNotFoundException"/>
         /// <exception cref="ClusterParameterGroupNotFoundException"/>
         public ModifyClusterResponse ModifyCluster(ModifyClusterRequest modifyClusterRequest)
         {
@@ -2436,6 +3488,148 @@ namespace Amazon.Redshift
         {
             IRequest irequest = new ModifyClusterSubnetGroupRequestMarshaller().Marshall(modifyClusterSubnetGroupRequest);
             var unmarshaller = ModifyClusterSubnetGroupResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        #endregion
+    
+        #region ModifyEventSubscription
+
+        /// <summary>
+        /// <para> Modifies an existing Amazon Redshift event notification subscription. </para>
+        /// </summary>
+        /// 
+        /// <param name="modifyEventSubscriptionRequest">Container for the necessary parameters to execute the ModifyEventSubscription service method on
+        ///          AmazonRedshift.</param>
+        /// 
+        /// <returns>The response from the ModifyEventSubscription service method, as returned by AmazonRedshift.</returns>
+        /// 
+        /// <exception cref="SubscriptionCategoryNotFoundException"/>
+        /// <exception cref="SubscriptionEventIdNotFoundException"/>
+        /// <exception cref="SubscriptionSeverityNotFoundException"/>
+        /// <exception cref="SourceNotFoundException"/>
+        /// <exception cref="SNSNoAuthorizationException"/>
+        /// <exception cref="SNSTopicArnNotFoundException"/>
+        /// <exception cref="SubscriptionNotFoundException"/>
+        /// <exception cref="SNSInvalidTopicException"/>
+        public ModifyEventSubscriptionResponse ModifyEventSubscription(ModifyEventSubscriptionRequest modifyEventSubscriptionRequest)
+        {
+            IAsyncResult asyncResult = invokeModifyEventSubscription(modifyEventSubscriptionRequest, null, null, true);
+            return EndModifyEventSubscription(asyncResult);
+        }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyEventSubscription operation.
+        /// <seealso cref="Amazon.Redshift.IAmazonRedshift.ModifyEventSubscription"/>
+        /// </summary>
+        /// 
+        /// <param name="modifyEventSubscriptionRequest">Container for the necessary parameters to execute the ModifyEventSubscription operation on
+        ///          AmazonRedshift.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
+        ///         EndModifyEventSubscription operation.</returns>
+        public IAsyncResult BeginModifyEventSubscription(ModifyEventSubscriptionRequest modifyEventSubscriptionRequest, AsyncCallback callback, object state)
+        {
+            return invokeModifyEventSubscription(modifyEventSubscriptionRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the ModifyEventSubscription operation.
+        /// <seealso cref="Amazon.Redshift.IAmazonRedshift.ModifyEventSubscription"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyEventSubscription.</param>
+        /// 
+        /// <returns>Returns a EventSubscription from AmazonRedshift.</returns>
+        public ModifyEventSubscriptionResponse EndModifyEventSubscription(IAsyncResult asyncResult)
+        {
+            return endOperation<ModifyEventSubscriptionResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeModifyEventSubscription(ModifyEventSubscriptionRequest modifyEventSubscriptionRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new ModifyEventSubscriptionRequestMarshaller().Marshall(modifyEventSubscriptionRequest);
+            var unmarshaller = ModifyEventSubscriptionResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        #endregion
+    
+        #region ModifySnapshotCopyRetentionPeriod
+
+        /// <summary>
+        /// <para> Modifies the number of days to retain automated snapshots in the destination region after they are copied from the source region.
+        /// </para>
+        /// </summary>
+        /// 
+        /// <param name="modifySnapshotCopyRetentionPeriodRequest">Container for the necessary parameters to execute the
+        ///          ModifySnapshotCopyRetentionPeriod service method on AmazonRedshift.</param>
+        /// 
+        /// <returns>The response from the ModifySnapshotCopyRetentionPeriod service method, as returned by AmazonRedshift.</returns>
+        /// 
+        /// <exception cref="SnapshotCopyDisabledException"/>
+        /// <exception cref="UnauthorizedOperationException"/>
+        /// <exception cref="ClusterNotFoundException"/>
+        public ModifySnapshotCopyRetentionPeriodResponse ModifySnapshotCopyRetentionPeriod(ModifySnapshotCopyRetentionPeriodRequest modifySnapshotCopyRetentionPeriodRequest)
+        {
+            IAsyncResult asyncResult = invokeModifySnapshotCopyRetentionPeriod(modifySnapshotCopyRetentionPeriodRequest, null, null, true);
+            return EndModifySnapshotCopyRetentionPeriod(asyncResult);
+        }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifySnapshotCopyRetentionPeriod operation.
+        /// <seealso cref="Amazon.Redshift.IAmazonRedshift.ModifySnapshotCopyRetentionPeriod"/>
+        /// </summary>
+        /// 
+        /// <param name="modifySnapshotCopyRetentionPeriodRequest">Container for the necessary parameters to execute the
+        ///          ModifySnapshotCopyRetentionPeriod operation on AmazonRedshift.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
+        ///         EndModifySnapshotCopyRetentionPeriod operation.</returns>
+        public IAsyncResult BeginModifySnapshotCopyRetentionPeriod(ModifySnapshotCopyRetentionPeriodRequest modifySnapshotCopyRetentionPeriodRequest, AsyncCallback callback, object state)
+        {
+            return invokeModifySnapshotCopyRetentionPeriod(modifySnapshotCopyRetentionPeriodRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the ModifySnapshotCopyRetentionPeriod operation.
+        /// <seealso cref="Amazon.Redshift.IAmazonRedshift.ModifySnapshotCopyRetentionPeriod"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifySnapshotCopyRetentionPeriod.</param>
+        /// 
+        /// <returns>Returns a Cluster from AmazonRedshift.</returns>
+        public ModifySnapshotCopyRetentionPeriodResponse EndModifySnapshotCopyRetentionPeriod(IAsyncResult asyncResult)
+        {
+            return endOperation<ModifySnapshotCopyRetentionPeriodResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeModifySnapshotCopyRetentionPeriod(ModifySnapshotCopyRetentionPeriodRequest modifySnapshotCopyRetentionPeriodRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new ModifySnapshotCopyRetentionPeriodRequestMarshaller().Marshall(modifySnapshotCopyRetentionPeriodRequest);
+            var unmarshaller = ModifySnapshotCopyRetentionPeriodResponseUnmarshaller.GetInstance();
             AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
             Invoke(result);
             return result;
@@ -2677,7 +3871,9 @@ namespace Amazon.Redshift
         /// 
         /// <returns>The response from the RestoreFromClusterSnapshot service method, as returned by AmazonRedshift.</returns>
         /// 
+        /// <exception cref="InvalidElasticIpException"/>
         /// <exception cref="InvalidSubnetException"/>
+        /// <exception cref="HsmConfigurationNotFoundException"/>
         /// <exception cref="ClusterSubnetGroupNotFoundException"/>
         /// <exception cref="InvalidClusterSubnetGroupStateException"/>
         /// <exception cref="ClusterAlreadyExistsException"/>
@@ -2691,6 +3887,7 @@ namespace Amazon.Redshift
         /// <exception cref="NumberOfNodesPerClusterLimitExceededException"/>
         /// <exception cref="ClusterSnapshotNotFoundException"/>
         /// <exception cref="ClusterQuotaExceededException"/>
+        /// <exception cref="HsmClientCertificateNotFoundException"/>
         public RestoreFromClusterSnapshotResponse RestoreFromClusterSnapshot(RestoreFromClusterSnapshotRequest restoreFromClusterSnapshotRequest)
         {
             IAsyncResult asyncResult = invokeRestoreFromClusterSnapshot(restoreFromClusterSnapshotRequest, null, null, true);
@@ -2880,6 +4077,73 @@ namespace Amazon.Redshift
         {
             IRequest irequest = new RevokeSnapshotAccessRequestMarshaller().Marshall(revokeSnapshotAccessRequest);
             var unmarshaller = RevokeSnapshotAccessResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        #endregion
+    
+        #region RotateEncryptionKey
+
+        /// <summary>
+        /// <para> Rotates the encryption keys for a cluster. </para>
+        /// </summary>
+        /// 
+        /// <param name="rotateEncryptionKeyRequest">Container for the necessary parameters to execute the RotateEncryptionKey service method on
+        ///          AmazonRedshift.</param>
+        /// 
+        /// <returns>The response from the RotateEncryptionKey service method, as returned by AmazonRedshift.</returns>
+        /// 
+        /// <exception cref="InvalidClusterStateException"/>
+        /// <exception cref="ClusterNotFoundException"/>
+        public RotateEncryptionKeyResponse RotateEncryptionKey(RotateEncryptionKeyRequest rotateEncryptionKeyRequest)
+        {
+            IAsyncResult asyncResult = invokeRotateEncryptionKey(rotateEncryptionKeyRequest, null, null, true);
+            return EndRotateEncryptionKey(asyncResult);
+        }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RotateEncryptionKey operation.
+        /// <seealso cref="Amazon.Redshift.IAmazonRedshift.RotateEncryptionKey"/>
+        /// </summary>
+        /// 
+        /// <param name="rotateEncryptionKeyRequest">Container for the necessary parameters to execute the RotateEncryptionKey operation on
+        ///          AmazonRedshift.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
+        ///         EndRotateEncryptionKey operation.</returns>
+        public IAsyncResult BeginRotateEncryptionKey(RotateEncryptionKeyRequest rotateEncryptionKeyRequest, AsyncCallback callback, object state)
+        {
+            return invokeRotateEncryptionKey(rotateEncryptionKeyRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the RotateEncryptionKey operation.
+        /// <seealso cref="Amazon.Redshift.IAmazonRedshift.RotateEncryptionKey"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRotateEncryptionKey.</param>
+        /// 
+        /// <returns>Returns a Cluster from AmazonRedshift.</returns>
+        public RotateEncryptionKeyResponse EndRotateEncryptionKey(IAsyncResult asyncResult)
+        {
+            return endOperation<RotateEncryptionKeyResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeRotateEncryptionKey(RotateEncryptionKeyRequest rotateEncryptionKeyRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new RotateEncryptionKeyRequestMarshaller().Marshall(rotateEncryptionKeyRequest);
+            var unmarshaller = RotateEncryptionKeyResponseUnmarshaller.GetInstance();
             AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
             Invoke(result);
             return result;

@@ -27,17 +27,17 @@ namespace Amazon.IdentityManagement.Model
     /// Container for the parameters to the UpdateSigningCertificate operation.
     /// <para>Changes the status of the specified signing certificate from active to disabled, or vice versa. This action can be used to disable a
     /// user's signing certificate as part of a certificate rotation work flow.</para> <para>If the <c>UserName</c> field is not specified, the
-    /// UserName is determined implicitly based on the AWS Access Key ID used to sign the request. Because this action works for access keys under
+    /// UserName is determined implicitly based on the AWS access key ID used to sign the request. Because this action works for access keys under
     /// the AWS account, this API can be used to manage root credentials even if the AWS account has no associated users.</para> <para>For
-    /// information about rotating certificates, see <a
-    /// href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?ManagingCredentials.html" >Managing Keys and Certificates</a> in
-    /// <i>Using AWS Identity and Access Management</i> .</para>
+    /// information about rotating certificates, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?ManagingCredentials.html"
+    /// >Managing Keys and Certificates</a> in <i>Using AWS Identity and Access Management</i> .</para>
     /// </summary>
-    public partial class UpdateSigningCertificateRequest : AmazonWebServiceRequest
+    public partial class UpdateSigningCertificateRequest : AmazonIdentityManagementServiceRequest
     {
         private string userName;
         private string certificateId;
         private StatusType status;
+
 
         /// <summary>
         /// Name of the user the signing certificate belongs to.

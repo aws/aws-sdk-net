@@ -29,6 +29,7 @@ namespace Amazon.IdentityManagement.Model
         
         private VirtualMFADevice virtualMFADevice;
 
+
         /// <summary>
         /// A newly created virtual MFA device.
         ///  

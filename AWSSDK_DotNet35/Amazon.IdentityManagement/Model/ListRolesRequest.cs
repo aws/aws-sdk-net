@@ -26,16 +26,17 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Container for the parameters to the ListRoles operation.
     /// <para>Lists the roles that have the specified path prefix. If there are none, the action returns an empty list. For more information about
-    /// roles, go to <a href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/WorkingWithRoles.html" >Working with Roles</a> .</para>
-    /// <para>You can paginate the results using the <c>MaxItems</c> and <c>Marker</c> parameters.</para> <para>The returned policy is URL-encoded
-    /// according to RFC 3986. For more information about RFC 3986, go to <a href="http://www.faqs.org/rfcs/rfc3986.html"
+    /// roles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html" >Working with Roles</a> .</para> <para>You can
+    /// paginate the results using the <c>MaxItems</c> and <c>Marker</c> parameters.</para> <para>The returned policy is URL-encoded according to
+    /// RFC 3986. For more information about RFC 3986, go to <a href="http://www.faqs.org/rfcs/rfc3986.html"
     /// >http://www.faqs.org/rfcs/rfc3986.html</a> .</para>
     /// </summary>
-    public partial class ListRolesRequest : AmazonWebServiceRequest
+    public partial class ListRolesRequest : AmazonIdentityManagementServiceRequest
     {
         private string pathPrefix;
         private string marker;
         private int? maxItems;
+
 
         /// <summary>
         /// The path prefix for filtering the results. For example: <c>/application_abc/component_xyz/</c>, which would get all roles whose path starts

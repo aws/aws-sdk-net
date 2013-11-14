@@ -28,12 +28,13 @@ namespace Amazon.IdentityManagement.Model
     /// <para>Enables the specified MFA device and associates it with the specified user name. When enabled, the MFA device is required for every
     /// subsequent login by the user name associated with the device.</para>
     /// </summary>
-    public partial class EnableMFADeviceRequest : AmazonWebServiceRequest
+    public partial class EnableMFADeviceRequest : AmazonIdentityManagementServiceRequest
     {
         private string userName;
         private string serialNumber;
         private string authenticationCode1;
         private string authenticationCode2;
+
 
         /// <summary>
         /// Name of the user for whom you want to enable the MFA device.

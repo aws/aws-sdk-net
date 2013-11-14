@@ -29,6 +29,7 @@ namespace Amazon.IdentityManagement.Model
         
         private ServerCertificateMetadata serverCertificateMetadata;
 
+
         /// <summary>
         /// The meta information of the uploaded server certificate without its certificate body, certificate chain, and private key.
         ///  

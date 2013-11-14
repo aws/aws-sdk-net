@@ -28,11 +28,12 @@ namespace Amazon.IdentityManagement.Model
     /// <para>Lists the groups that have the specified path prefix.</para> <para>You can paginate the results using the <c>MaxItems</c> and
     /// <c>Marker</c> parameters.</para>
     /// </summary>
-    public partial class ListGroupsRequest : AmazonWebServiceRequest
+    public partial class ListGroupsRequest : AmazonIdentityManagementServiceRequest
     {
         private string pathPrefix;
         private string marker;
         private int? maxItems;
+
 
         /// <summary>
         /// The path prefix for filtering the results. For example: <c>/division_abc/subdivision_xyz/</c>, which would get all groups whose path starts

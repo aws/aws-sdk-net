@@ -31,6 +31,7 @@ namespace Amazon.IdentityManagement.Model
         private string policyName;
         private string policyDocument;
 
+
         /// <summary>
         /// The user the policy is associated with.
         ///  

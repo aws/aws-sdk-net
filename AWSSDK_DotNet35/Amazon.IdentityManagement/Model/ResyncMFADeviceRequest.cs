@@ -27,12 +27,13 @@ namespace Amazon.IdentityManagement.Model
     /// Container for the parameters to the ResyncMFADevice operation.
     /// <para>Synchronizes the specified MFA device with AWS servers.</para>
     /// </summary>
-    public partial class ResyncMFADeviceRequest : AmazonWebServiceRequest
+    public partial class ResyncMFADeviceRequest : AmazonIdentityManagementServiceRequest
     {
         private string userName;
         private string serialNumber;
         private string authenticationCode1;
         private string authenticationCode2;
+
 
         /// <summary>
         /// Name of the user whose MFA device you want to resynchronize.

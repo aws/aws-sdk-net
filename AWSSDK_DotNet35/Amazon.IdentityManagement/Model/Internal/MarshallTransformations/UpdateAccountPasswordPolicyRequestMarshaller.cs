@@ -59,14 +59,6 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
             {
                 request.Parameters.Add("AllowUsersToChangePassword", StringUtils.FromBool(updateAccountPasswordPolicyRequest.AllowUsersToChangePassword));
             }
-            if (updateAccountPasswordPolicyRequest != null && updateAccountPasswordPolicyRequest.IsSetExpirePasswords())
-            {
-                request.Parameters.Add("ExpirePasswords", StringUtils.FromBool(updateAccountPasswordPolicyRequest.ExpirePasswords));
-            }
-            if (updateAccountPasswordPolicyRequest != null && updateAccountPasswordPolicyRequest.IsSetMaxPasswordAge())
-            {
-                request.Parameters.Add("MaxPasswordAge", StringUtils.FromInt(updateAccountPasswordPolicyRequest.MaxPasswordAge));
-            }
 
             return request;
         }

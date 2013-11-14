@@ -33,6 +33,7 @@ namespace Amazon.Redshift.Model
         private string subnetGroupStatus;
         private List<Subnet> subnets = new List<Subnet>();
 
+
         /// <summary>
         /// The name of the cluster subnet group.
         ///  

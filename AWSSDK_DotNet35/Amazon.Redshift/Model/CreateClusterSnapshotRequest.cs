@@ -30,10 +30,11 @@ namespace Amazon.Redshift.Model
     /// Snapshots</a> in the <i>Amazon Redshift Management Guide</i> .
     /// </para>
     /// </summary>
-    public partial class CreateClusterSnapshotRequest : AmazonWebServiceRequest
+    public partial class CreateClusterSnapshotRequest : AmazonRedshiftRequest
     {
         private string snapshotIdentifier;
         private string clusterIdentifier;
+
 
         /// <summary>
         /// A unique identifier for the snapshot that you are requesting. This identifier must be unique for all snapshots within the AWS account.

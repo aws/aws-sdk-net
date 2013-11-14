@@ -34,8 +34,9 @@ namespace Amazon.Redshift.Model
         private string clusterVersion;
         private int? automatedSnapshotRetentionPeriod;
 
+
         /// <summary>
-        /// The pending or in-progress change of the master credentials for the cluster.
+        /// The pending or in-progress change of the master password for the cluster.
         ///  
         /// </summary>
         public string MasterUserPassword

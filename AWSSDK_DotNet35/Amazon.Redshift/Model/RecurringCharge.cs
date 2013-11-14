@@ -29,6 +29,7 @@ namespace Amazon.Redshift.Model
         private double? recurringChargeAmount;
         private string recurringChargeFrequency;
 
+
         /// <summary>
         /// The amount charged per the period of time specified by the recurring charge frequency.
         ///  

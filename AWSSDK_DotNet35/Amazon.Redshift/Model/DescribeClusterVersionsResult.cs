@@ -30,6 +30,7 @@ namespace Amazon.Redshift.Model
         private string marker;
         private List<ClusterVersion> clusterVersions = new List<ClusterVersion>();
 
+
         /// <summary>
         /// The identifier returned to allow retrieval of paginated results.
         ///  

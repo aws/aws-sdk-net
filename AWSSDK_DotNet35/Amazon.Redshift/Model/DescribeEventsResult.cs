@@ -30,6 +30,7 @@ namespace Amazon.Redshift.Model
         private string marker;
         private List<Event> events = new List<Event>();
 
+
         /// <summary>
         /// A marker at which to continue listing events in a new request. The response returns a marker if there are more events to list than returned
         /// in the response.

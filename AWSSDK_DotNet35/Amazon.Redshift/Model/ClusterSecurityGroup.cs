@@ -32,6 +32,7 @@ namespace Amazon.Redshift.Model
         private List<EC2SecurityGroup> eC2SecurityGroups = new List<EC2SecurityGroup>();
         private List<IPRange> iPRanges = new List<IPRange>();
 
+
         /// <summary>
         /// The name of the cluster security group to which the operation was applied.
         ///  

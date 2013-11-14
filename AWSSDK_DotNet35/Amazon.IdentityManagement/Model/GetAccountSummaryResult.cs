@@ -29,6 +29,7 @@ namespace Amazon.IdentityManagement.Model
         
         private Dictionary<string,int> summaryMap = new Dictionary<string,int>();
 
+
         /// <summary>
         /// A set of key value pairs containing account-level information. <c>SummaryMap</c> contains the following keys: <ul>
         /// <li><c>AccessKeysPerUserQuota</c> - Maximum number of access keys that can be created per user</li> <li><c>AccountMFAEnabled</c> - 1 if the

@@ -26,19 +26,19 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Container for the parameters to the CreateUser operation.
     /// <para>Creates a new user for your AWS account.</para> <para>For information about limitations on the number of users you can create, see <a
-    /// href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?LimitationsOnEntities.html" >Limitations on IAM Entities</a> in
-    /// <i>Using AWS Identity and Access Management</i> .</para>
+    /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?LimitationsOnEntities.html" >Limitations on IAM Entities</a> in <i>Using
+    /// AWS Identity and Access Management</i> .</para>
     /// </summary>
-    public partial class CreateUserRequest : AmazonWebServiceRequest
+    public partial class CreateUserRequest : AmazonIdentityManagementServiceRequest
     {
         private string path;
         private string userName;
 
+
         /// <summary>
         /// The path for the user name. For more information about paths, see <a
-        /// href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM
-        /// Entities</a> in <i>Using AWS Identity and Access Management</i>. This parameter is optional. If it is not included, it defaults to a slash
-        /// (/).
+        /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in
+        /// <i>Using AWS Identity and Access Management</i>. This parameter is optional. If it is not included, it defaults to a slash (/).
         ///  
         /// <para>
         /// <b>Constraints:</b>

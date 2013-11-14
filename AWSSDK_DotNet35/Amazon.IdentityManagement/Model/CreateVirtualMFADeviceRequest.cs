@@ -26,25 +26,25 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Container for the parameters to the CreateVirtualMFADevice operation.
     /// <para>Creates a new virtual MFA device for the AWS account. After creating the virtual MFA, use <a
-    /// href="http://docs.amazonwebservices.com/IAM/latest/APIReference/API_EnableMFADevice.html" >EnableMFADevice</a> to attach the MFA device to
-    /// an IAM user. For more information about creating and working with virtual MFA devices, go to <a
-    /// href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_VirtualMFA.html" >Using a Virtual MFA Device</a> in <i>Using
-    /// AWS Identity and Access Management</i> .</para> <para>For information about limits on the number of MFA devices you can create, see <a
-    /// href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?LimitationsOnEntities.html" >Limitations on Entities</a> in <i>Using
-    /// AWS Identity and Access Management</i> .</para> <para><b>IMPORTANT:</b>The seed information contained in the QR code and the Base32 string
+    /// href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_EnableMFADevice.html" >EnableMFADevice</a> to attach the MFA device to an IAM
+    /// user. For more information about creating and working with virtual MFA devices, go to <a
+    /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_VirtualMFA.html" >Using a Virtual MFA Device</a> in <i>Using AWS
+    /// Identity and Access Management</i> .</para> <para>For information about limits on the number of MFA devices you can create, see <a
+    /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?LimitationsOnEntities.html" >Limitations on Entities</a> in <i>Using AWS
+    /// Identity and Access Management</i> .</para> <para><b>IMPORTANT:</b>The seed information contained in the QR code and the Base32 string
     /// should be treated like any other secret access information, such as your AWS access keys or your passwords. After you provision your virtual
     /// device, you should ensure that the information is destroyed following secure procedures.</para>
     /// </summary>
-    public partial class CreateVirtualMFADeviceRequest : AmazonWebServiceRequest
+    public partial class CreateVirtualMFADeviceRequest : AmazonIdentityManagementServiceRequest
     {
         private string path;
         private string virtualMFADeviceName;
 
+
         /// <summary>
         /// The path for the virtual MFA device. For more information about paths, see <a
-        /// href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM
-        /// Entities</a> in <i>Using AWS Identity and Access Management</i>. This parameter is optional. If it is not included, it defaults to a slash
-        /// (/).
+        /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in
+        /// <i>Using AWS Identity and Access Management</i>. This parameter is optional. If it is not included, it defaults to a slash (/).
         ///  
         /// <para>
         /// <b>Constraints:</b>

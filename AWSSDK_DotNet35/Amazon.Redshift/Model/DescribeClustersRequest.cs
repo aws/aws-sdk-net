@@ -31,11 +31,12 @@ namespace Amazon.Redshift.Model
     /// Management Guide</i> .
     /// </para>
     /// </summary>
-    public partial class DescribeClustersRequest : AmazonWebServiceRequest
+    public partial class DescribeClustersRequest : AmazonRedshiftRequest
     {
         private string clusterIdentifier;
         private int? maxRecords;
         private string marker;
+
 
         /// <summary>
         /// The unique identifier of a cluster whose properties you are requesting. This parameter isn't case sensitive. The default is that all

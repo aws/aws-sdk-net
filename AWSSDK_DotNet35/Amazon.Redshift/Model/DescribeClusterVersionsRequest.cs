@@ -30,12 +30,13 @@ namespace Amazon.Redshift.Model
     /// href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html" >Amazon Redshift Clusters</a> in the <i>Amazon Redshift
     /// Management Guide</i> </para>
     /// </summary>
-    public partial class DescribeClusterVersionsRequest : AmazonWebServiceRequest
+    public partial class DescribeClusterVersionsRequest : AmazonRedshiftRequest
     {
         private string clusterVersion;
         private string clusterParameterGroupFamily;
         private int? maxRecords;
         private string marker;
+
 
         /// <summary>
         /// The specific cluster version to return. Example: <c>1.0</c>

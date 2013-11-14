@@ -28,11 +28,12 @@ namespace Amazon.IdentityManagement.Model
     /// <para>Lists the server certificates that have the specified path prefix. If none exist, the action returns an empty list.</para> <para>You
     /// can paginate the results using the <c>MaxItems</c> and <c>Marker</c> parameters.</para>
     /// </summary>
-    public partial class ListServerCertificatesRequest : AmazonWebServiceRequest
+    public partial class ListServerCertificatesRequest : AmazonIdentityManagementServiceRequest
     {
         private string pathPrefix;
         private string marker;
         private int? maxItems;
+
 
         /// <summary>
         /// The path prefix for filtering the results. For example: <c>/company/servercerts</c> would get all server certificates for which the path

@@ -29,6 +29,7 @@ namespace Amazon.Redshift.Model
         private string clusterSecurityGroupName;
         private string status;
 
+
         /// <summary>
         /// The name of the cluster security group.
         ///  

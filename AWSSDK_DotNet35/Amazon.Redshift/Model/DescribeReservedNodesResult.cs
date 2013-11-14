@@ -30,6 +30,7 @@ namespace Amazon.Redshift.Model
         private string marker;
         private List<ReservedNode> reservedNodes = new List<ReservedNode>();
 
+
         /// <summary>
         /// A marker that can be used to retrieve paginated results.
         ///  

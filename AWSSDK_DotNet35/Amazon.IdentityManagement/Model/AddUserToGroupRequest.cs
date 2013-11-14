@@ -27,10 +27,11 @@ namespace Amazon.IdentityManagement.Model
     /// Container for the parameters to the AddUserToGroup operation.
     /// <para>Adds the specified user to the specified group.</para>
     /// </summary>
-    public partial class AddUserToGroupRequest : AmazonWebServiceRequest
+    public partial class AddUserToGroupRequest : AmazonIdentityManagementServiceRequest
     {
         private string groupName;
         private string userName;
+
 
         /// <summary>
         /// Name of the group to update.

@@ -90,6 +90,11 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 return new InvalidClusterSecurityGroupStateException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
     
+            if (errorResponse.Code != null && errorResponse.Code.Equals("HsmConfigurationNotFoundFault"))
+            {
+                return new HsmConfigurationNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+    
             if (errorResponse.Code != null && errorResponse.Code.Equals("InsufficientClusterCapacity"))
             {
                 return new InsufficientClusterCapacityException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
@@ -123,6 +128,11 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             if (errorResponse.Code != null && errorResponse.Code.Equals("ClusterSecurityGroupNotFound"))
             {
                 return new ClusterSecurityGroupNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+    
+            if (errorResponse.Code != null && errorResponse.Code.Equals("HsmClientCertificateNotFoundFault"))
+            {
+                return new HsmClientCertificateNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
     
             if (errorResponse.Code != null && errorResponse.Code.Equals("ClusterParameterGroupNotFound"))

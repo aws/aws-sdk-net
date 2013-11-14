@@ -20,7 +20,8 @@ using System.IO;
 
 namespace Amazon.Redshift.Model
 {
-    /// <summary>Restore Status
+    /// <summary>
+    /// <para>Describes the status of a cluster restore action. Returns null if the cluster was not created by restoring a snapshot.</para>
     /// </summary>
     public class RestoreStatus
     {
@@ -31,6 +32,12 @@ namespace Amazon.Redshift.Model
         private long? progressInMegaBytes;
         private long? elapsedTimeInSeconds;
         private long? estimatedTimeToCompletionInSeconds;
+
+
+        /// <summary>
+        /// The status of the restore action. Returns starting, restoring, completed, or failed.
+        ///  
+        /// </summary>
         public string Status
         {
             get { return this.status; }
@@ -42,6 +49,11 @@ namespace Amazon.Redshift.Model
         {
             return this.status != null;
         }
+
+        /// <summary>
+        /// The number of megabytes per second being transferred from the backup storage. Returns the average rate for a completed backup.
+        ///  
+        /// </summary>
         public double CurrentRestoreRateInMegaBytesPerSecond
         {
             get { return this.currentRestoreRateInMegaBytesPerSecond ?? default(double); }
@@ -53,6 +65,11 @@ namespace Amazon.Redshift.Model
         {
             return this.currentRestoreRateInMegaBytesPerSecond.HasValue;
         }
+
+        /// <summary>
+        /// The size of the set of snapshot data used to restore the cluster.
+        ///  
+        /// </summary>
         public long SnapshotSizeInMegaBytes
         {
             get { return this.snapshotSizeInMegaBytes ?? default(long); }
@@ -64,6 +81,11 @@ namespace Amazon.Redshift.Model
         {
             return this.snapshotSizeInMegaBytes.HasValue;
         }
+
+        /// <summary>
+        /// The number of megabytes that have been transferred from snapshot storage.
+        ///  
+        /// </summary>
         public long ProgressInMegaBytes
         {
             get { return this.progressInMegaBytes ?? default(long); }
@@ -75,6 +97,11 @@ namespace Amazon.Redshift.Model
         {
             return this.progressInMegaBytes.HasValue;
         }
+
+        /// <summary>
+        /// The amount of time an in-progress restore has been running, or the amount of time it took a completed restore to finish.
+        ///  
+        /// </summary>
         public long ElapsedTimeInSeconds
         {
             get { return this.elapsedTimeInSeconds ?? default(long); }
@@ -86,6 +113,11 @@ namespace Amazon.Redshift.Model
         {
             return this.elapsedTimeInSeconds.HasValue;
         }
+
+        /// <summary>
+        /// The estimate of the time remaining before the restore will complete. Returns 0 for a completed restore.
+        ///  
+        /// </summary>
         public long EstimatedTimeToCompletionInSeconds
         {
             get { return this.estimatedTimeToCompletionInSeconds ?? default(long); }

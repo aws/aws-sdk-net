@@ -130,6 +130,12 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                             
                         continue;
                     }
+                    if (context.TestExpression("EncryptedWithHSM", targetDepth))
+                    {
+                        snapshot.EncryptedWithHSM = BoolUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
+                    }
                     if (context.TestExpression("AccountsWithRestoreAccess/AccountWithRestoreAccess", targetDepth))
                     {
                         snapshot.AccountsWithRestoreAccess.Add(AccountWithRestoreAccessUnmarshaller.GetInstance().Unmarshall(context));
@@ -175,6 +181,12 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ElapsedTimeInSeconds", targetDepth))
                     {
                         snapshot.ElapsedTimeInSeconds = LongUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
+                    }
+                    if (context.TestExpression("SourceRegion", targetDepth))
+                    {
+                        snapshot.SourceRegion = StringUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
                     }

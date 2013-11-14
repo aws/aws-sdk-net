@@ -29,6 +29,7 @@ namespace Amazon.Redshift.Model
         private string status;
         private string cIDRIP;
 
+
         /// <summary>
         /// The status of the IP range, for example, "authorized".
         ///  

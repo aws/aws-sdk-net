@@ -27,11 +27,12 @@ namespace Amazon.Redshift.Model
     /// Container for the parameters to the DescribeReservedNodes operation.
     /// <para> Returns the descriptions of the reserved nodes. </para>
     /// </summary>
-    public partial class DescribeReservedNodesRequest : AmazonWebServiceRequest
+    public partial class DescribeReservedNodesRequest : AmazonRedshiftRequest
     {
         private string reservedNodeId;
         private int? maxRecords;
         private string marker;
+
 
         /// <summary>
         /// Identifier for the node reservation.

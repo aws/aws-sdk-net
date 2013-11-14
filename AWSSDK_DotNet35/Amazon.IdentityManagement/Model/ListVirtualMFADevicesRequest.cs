@@ -27,15 +27,15 @@ namespace Amazon.IdentityManagement.Model
     /// Container for the parameters to the ListVirtualMFADevices operation.
     /// <para> Lists the virtual MFA devices under the AWS account by assignment status. If you do not specify an assignment status, the action
     /// returns a list of all virtual MFA devices. Assignment status can be <c>Assigned</c> ,
-    /// 
-    /// <c>Unassigned</c> , or <c>Any</c> .
-    /// </para> <para>You can paginate the results using the <c>MaxItems</c> and <c>Marker</c> parameters.</para>
+    /// <c>Unassigned</c> , or <c>Any</c> . </para> <para>You can paginate the results using the <c>MaxItems</c> and
+    /// <c>Marker</c> parameters.</para>
     /// </summary>
-    public partial class ListVirtualMFADevicesRequest : AmazonWebServiceRequest
+    public partial class ListVirtualMFADevicesRequest : AmazonIdentityManagementServiceRequest
     {
         private AssignmentStatusType assignmentStatus;
         private string marker;
         private int? maxItems;
+
 
         /// <summary>
         /// The status (unassigned or assigned) of the devices to list. If you do not specify an <c>AssignmentStatus</c>, the action defaults to

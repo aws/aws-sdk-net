@@ -29,6 +29,7 @@ namespace Amazon.IdentityManagement.Model
         
         private PasswordPolicy passwordPolicy;
 
+
         /// <summary>
         /// The PasswordPolicy data type contains information about the account password policy. This data type is used as a response element in the
         /// action <a>GetAccountPasswordPolicy</a>.

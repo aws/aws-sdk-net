@@ -29,6 +29,7 @@ namespace Amazon.IdentityManagement.Model
         
         private User user;
 
+
         /// <summary>
         /// Information about the user.
         ///  

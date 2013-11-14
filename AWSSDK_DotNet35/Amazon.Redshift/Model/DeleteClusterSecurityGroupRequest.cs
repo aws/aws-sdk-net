@@ -31,9 +31,10 @@ namespace Amazon.Redshift.Model
     /// <i>Amazon Redshift Management Guide</i> .
     /// </para>
     /// </summary>
-    public partial class DeleteClusterSecurityGroupRequest : AmazonWebServiceRequest
+    public partial class DeleteClusterSecurityGroupRequest : AmazonRedshiftRequest
     {
         private string clusterSecurityGroupName;
+
 
         /// <summary>
         /// The name of the cluster security group to be deleted.

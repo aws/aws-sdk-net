@@ -35,6 +35,7 @@ namespace Amazon.Redshift.Model
         private string offeringType;
         private List<RecurringCharge> recurringCharges = new List<RecurringCharge>();
 
+
         /// <summary>
         /// The offering identifier.
         ///  

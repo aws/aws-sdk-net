@@ -78,6 +78,8 @@
     <Compile Include="Amazon.CloudFront\IAmazonCloudFront.cs" />
     <Compile Include="Amazon.CloudSearch\AmazonCloudSearchClient.cs" />
     <Compile Include="Amazon.CloudSearch\IAmazonCloudSearch.cs" />
+    <Compile Include="Amazon.CloudTrail\AmazonCloudTrailClient.cs" />
+    <Compile Include="Amazon.CloudTrail\IAmazonCloudTrail.cs" />
     <Compile Include="Amazon.CloudWatch\AmazonCloudWatchClient.cs" />
     <Compile Include="Amazon.CloudWatch\IAmazonCloudWatch.cs" />
     <Compile Include="Amazon.DataPipeline\AmazonDataPipelineClient.cs" />
@@ -284,6 +286,17 @@
       <Visible>false</Visible>
     </Compile>
     <Compile Include="..\AWSSDK_DotNet35\Amazon.CloudSearch\Model\Internal\MarshallTransformations\*">
+      <Visible>false</Visible>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.CloudTrail\*" Exclude="..\AWSSDK_DotNet35\Amazon.CloudTrail\IAmazonCloudTrail.cs;..\AWSSDK_DotNet35\Amazon.CloudTrail\AmazonCloudTrailClient.cs">
+      <Visible>false</Visible>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.CloudTrail\Model\*">
+      <Visible>false</Visible>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.CloudTrail\Model\Internal\MarshallTransformations\*">
       <Visible>false</Visible>
     </Compile>
   </ItemGroup>

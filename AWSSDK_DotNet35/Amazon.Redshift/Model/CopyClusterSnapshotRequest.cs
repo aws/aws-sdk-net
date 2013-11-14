@@ -33,11 +33,12 @@ namespace Amazon.Redshift.Model
     /// >Amazon Redshift Snapshots</a> in the <i>Amazon Redshift Management Guide</i> .
     /// </para>
     /// </summary>
-    public partial class CopyClusterSnapshotRequest : AmazonWebServiceRequest
+    public partial class CopyClusterSnapshotRequest : AmazonRedshiftRequest
     {
         private string sourceSnapshotIdentifier;
         private string sourceSnapshotClusterIdentifier;
         private string targetSnapshotIdentifier;
+
 
         /// <summary>
         /// The identifier for the source snapshot. Constraints: <ul> <li>Must be the identifier for a valid automated snapshot whose state is
@@ -55,6 +56,13 @@ namespace Amazon.Redshift.Model
         {
             return this.sourceSnapshotIdentifier != null;
         }
+
+        /// <summary>
+        /// The identifier of the cluster the source snapshot was created from. This parameter is required if your IAM user has a policy containing a
+        /// snapshot resource element that specifies anything other than * for the cluster name. Constraints: <ul> <li>Must be the identifier for a
+        /// valid cluster.</li> </ul>
+        ///  
+        /// </summary>
         public string SourceSnapshotClusterIdentifier
         {
             get { return this.sourceSnapshotClusterIdentifier; }

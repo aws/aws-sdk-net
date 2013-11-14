@@ -29,6 +29,7 @@ namespace Amazon.IdentityManagement.Model
         
         private SigningCertificate certificate;
 
+
         /// <summary>
         /// Information about the certificate.
         ///  

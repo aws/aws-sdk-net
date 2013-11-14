@@ -30,9 +30,10 @@ namespace Amazon.Redshift.Model
     /// as <c>SUCCEEDED</c> until the next resize. </para> <para> A resize operation can be requested using ModifyCluster and specifying a different
     /// number or type of nodes for the cluster. </para>
     /// </summary>
-    public partial class DescribeResizeRequest : AmazonWebServiceRequest
+    public partial class DescribeResizeRequest : AmazonRedshiftRequest
     {
         private string clusterIdentifier;
+
 
         /// <summary>
         /// The unique identifier of a cluster whose resize progress you are requesting. This parameter isn't case-sensitive. By default, resize

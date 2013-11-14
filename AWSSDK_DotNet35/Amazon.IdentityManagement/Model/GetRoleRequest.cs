@@ -27,14 +27,15 @@ namespace Amazon.IdentityManagement.Model
     /// Container for the parameters to the GetRole operation.
     /// <para>Retrieves information about the specified role, including the role's path, GUID, ARN, and the policy granting permission to EC2 to
     /// assume the role. For more information about ARNs, go to <a href="
-    /// http://docs.amazonwebservices.com/IAM/latest/UserGuide/Using_Identifiers.html#Identifiers_ARNs" >ARNs</a> .
-    /// For more information about roles, go to <a href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/WorkingWithRoles.html" >Working
-    /// with Roles</a> .</para> <para>The returned policy is URL-encoded according to RFC 3986. For more information about RFC 3986, go to <a
-    /// href="http://www.faqs.org/rfcs/rfc3986.html" >http://www.faqs.org/rfcs/rfc3986.html</a> .</para>
+    /// http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html#Identifiers_ARNs" >ARNs</a> . For more information about roles, go to
+    /// <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html" >Working with Roles</a> .</para> <para>The returned policy
+    /// is URL-encoded according to RFC 3986. For more information about RFC 3986, go to <a href="http://www.faqs.org/rfcs/rfc3986.html"
+    /// >http://www.faqs.org/rfcs/rfc3986.html</a> .</para>
     /// </summary>
-    public partial class GetRoleRequest : AmazonWebServiceRequest
+    public partial class GetRoleRequest : AmazonIdentityManagementServiceRequest
     {
         private string roleName;
+
 
         /// <summary>
         /// Name of the role to get information about.

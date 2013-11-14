@@ -31,34 +31,32 @@ namespace Amazon.SecurityToken.Model
     /// You could create long-term credentials in each account to access those resources. However, managing all those credentials and remembering
     /// which one can access which account can be time consuming. Instead, you can create one set of long-term credentials in one account and then
     /// use temporary security credentials to access all the other accounts by assuming roles in those accounts. For more information about roles,
-    /// see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html" >Roles</a> in <i>Using IAM</i> .
-    /// </para> <para> For federation, you can, for example, grant single sign-on access to the AWS Management Console. If you already have an
-    /// identity and authentication system in your corporate network, you don't have to recreate user identities in AWS in order to grant those user
-    /// identities access to AWS. Instead, after a user has been authenticated, you call <c>AssumeRole</c> (and specify the role with the
-    /// appropriate permissions) to get temporary security credentials for that user. With those temporary security credentials, you construct a
-    /// sign-in URL that users can use to access the console. For more information, see <a
+    /// see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html" >Roles</a> in <i>Using IAM</i> . </para> <para> For
+    /// federation, you can, for example, grant single sign-on access to the AWS Management Console. If you already have an identity and
+    /// authentication system in your corporate network, you don't have to recreate user identities in AWS in order to grant those user identities
+    /// access to AWS. Instead, after a user has been authenticated, you call <c>AssumeRole</c> (and specify the role with the appropriate
+    /// permissions) to get temporary security credentials for that user. With those temporary security credentials, you construct a sign-in URL
+    /// that users can use to access the console. For more information, see <a
     /// href="http://docs.aws.amazon.com/STS/latest/UsingSTS/STSUseCases.html" >Scenarios for Granting Temporary Access</a> in <i>AWS Security Token
-    /// Service</i> .
-    /// </para> <para> The temporary security credentials are valid for the duration that you specified when calling <c>AssumeRole</c> , which can
-    /// be from 900 seconds (15 minutes) to 3600 seconds (1 hour). The default is 1 hour. </para> <para> The temporary security credentials that are
-    /// returned from the <c>AssumeRoleWithWebIdentity</c> response have the permissions that are associated with the access policy of the role
-    /// being assumed and any policies that are associated with the AWS resource being accessed. You can further restrict the permissions of the
-    /// temporary security credentials by passing a policy in the request. The resulting permissions are an intersection of the role's access policy
-    /// and the policy that you passed. These policies and any applicable resource-based policies are evaluated when calls to AWS service APIs are
-    /// made using the temporary security credentials. </para> <para> To assume a role, your AWS account must be trusted by the role. The trust
-    /// relationship is defined in the role's trust policy when the IAM role is created. You must also have a policy that allows you to call
-    /// <c>sts:AssumeRole</c> .
-    /// </para> <para> <b>Important:</b> You cannot call <c>Assumerole</c> by using AWS account credentials; access will be denied. You must use
-    /// IAM user credentials to call <c>AssumeRole</c> .
-    /// </para>
+    /// Service</i> . </para> <para> The temporary security credentials are valid for the duration that you specified when calling <c>AssumeRole</c>
+    /// , which can be from 900 seconds (15 minutes) to 3600 seconds (1 hour). The default is 1 hour. </para> <para>Optionally, you can pass an AWS
+    /// IAM access policy to this operation. The temporary security credentials that are returned by the operation have the permissions that are
+    /// associated with the access policy of the role that is being assumed, except for any permissions explicitly denied by the policy you pass.
+    /// This gives you a way to further restrict the permissions for the federated user. These policies and any applicable resource-based policies
+    /// are evaluated when calls to AWS are made using the temporary security credentials. </para> <para> To assume a role, your AWS account must be
+    /// trusted by the role. The trust relationship is defined in the role's trust policy when the IAM role is created. You must also have a policy
+    /// that allows you to call <c>sts:AssumeRole</c> . </para> <para> <b>Important:</b> You cannot call <c>AssumeRole</c> by using AWS account
+    /// credentials; access will be denied. You must use IAM user credentials or temporary security credentials to call <c>AssumeRole</c> . </para>
+    /// 
     /// </summary>
-    public partial class AssumeRoleRequest : AmazonWebServiceRequest
+    public partial class AssumeRoleRequest : AmazonSecurityTokenServiceRequest
     {
         private string roleArn;
         private string roleSessionName;
         private string policy;
         private int? durationSeconds;
         private string externalId;
+
 
         /// <summary>
         /// The Amazon Resource Name (ARN) of the role that the caller is assuming.
@@ -115,9 +113,10 @@ namespace Amazon.SecurityToken.Model
         }
 
         /// <summary>
-        /// A supplemental policy that is associated with the temporary security credentials from the <c>AssumeRole</c> call. The resulting permissions
-        /// of the temporary security credentials are an intersection of this policy and the access policy that is associated with the role. Use this
-        /// policy to further restrict the permissions of the temporary security credentials.
+        /// An AWS IAM policy in JSON format. The temporary security credentials that are returned by the operation have the permissions that are
+        /// associated with the access policy of the role being assumed, except for any permissions explicitly denied by the policy you pass. This gives
+        /// you a way to further restrict the permissions for the federated user. These policies and any applicable resource-based policies are
+        /// evaluated when calls to AWS are made using the temporary security credentials.
         ///  
         /// <para>
         /// <b>Constraints:</b>

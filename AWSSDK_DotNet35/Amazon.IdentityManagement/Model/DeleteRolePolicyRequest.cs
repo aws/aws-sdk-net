@@ -27,10 +27,11 @@ namespace Amazon.IdentityManagement.Model
     /// Container for the parameters to the DeleteRolePolicy operation.
     /// <para>Deletes the specified policy associated with the specified role.</para>
     /// </summary>
-    public partial class DeleteRolePolicyRequest : AmazonWebServiceRequest
+    public partial class DeleteRolePolicyRequest : AmazonIdentityManagementServiceRequest
     {
         private string roleName;
         private string policyName;
+
 
         /// <summary>
         /// Name of the role the associated with the policy.

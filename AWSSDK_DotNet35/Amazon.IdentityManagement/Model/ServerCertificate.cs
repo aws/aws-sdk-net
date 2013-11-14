@@ -31,6 +31,7 @@ namespace Amazon.IdentityManagement.Model
         private string certificateBody;
         private string certificateChain;
 
+
         /// <summary>
         /// The meta information of the server certificate, such as its name, path, ID, and ARN.
         ///  

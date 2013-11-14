@@ -28,9 +28,10 @@ namespace Amazon.IdentityManagement.Model
     /// <para>Deletes a virtual MFA device.</para> <para><b>NOTE:</b>You must deactivate a user's virtual MFA device before you can delete it. For
     /// information about deactivating MFA devices, see DeactivateMFADevice.</para>
     /// </summary>
-    public partial class DeleteVirtualMFADeviceRequest : AmazonWebServiceRequest
+    public partial class DeleteVirtualMFADeviceRequest : AmazonIdentityManagementServiceRequest
     {
         private string serialNumber;
+
 
         /// <summary>
         /// The serial number that uniquely identifies the MFA device. For virtual MFA devices, the serial number is the same as the ARN.

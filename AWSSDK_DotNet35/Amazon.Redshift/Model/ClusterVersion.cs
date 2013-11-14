@@ -30,6 +30,7 @@ namespace Amazon.Redshift.Model
         private string clusterParameterGroupFamily;
         private string description;
 
+
         /// <summary>
         /// The version number used by the cluster.
         ///  

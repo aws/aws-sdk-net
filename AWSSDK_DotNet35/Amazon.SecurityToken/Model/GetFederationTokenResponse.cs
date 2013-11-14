@@ -28,7 +28,8 @@ namespace Amazon.SecurityToken.Model
     {
         /// <summary>
         /// Gets and sets the GetFederationTokenResult property.
-        /// Contains the result of a successful invocation of the GetFederationToken action.
+        /// Contains the result of a successful call to the GetFederationToken action, including temporary AWS credentials that can be used to make AWS
+        /// requests.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the GetFederationTokenResult class are now available on the GetFederationTokenResponse class. You should use the properties on GetFederationTokenResponse instead of accessing them through GetFederationTokenResult.")]
         public GetFederationTokenResult GetFederationTokenResult

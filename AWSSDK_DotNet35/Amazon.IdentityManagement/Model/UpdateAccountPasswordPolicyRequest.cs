@@ -26,10 +26,9 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Container for the parameters to the UpdateAccountPasswordPolicy operation.
     /// <para>Updates the password policy settings for the account. For more information about using a password policy, go to <a
-    /// href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html" >Managing an IAM Password Policy</a>
-    /// .</para>
+    /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html" >Managing an IAM Password Policy</a> .</para>
     /// </summary>
-    public partial class UpdateAccountPasswordPolicyRequest : AmazonWebServiceRequest
+    public partial class UpdateAccountPasswordPolicyRequest : AmazonIdentityManagementServiceRequest
     {
         private int? minimumPasswordLength;
         private bool? requireSymbols;
@@ -37,8 +36,7 @@ namespace Amazon.IdentityManagement.Model
         private bool? requireUppercaseCharacters;
         private bool? requireLowercaseCharacters;
         private bool? allowUsersToChangePassword;
-        private bool? expirePasswords;
-        private int? maxPasswordAge;
+
         public int MinimumPasswordLength
         {
             get { return this.minimumPasswordLength ?? default(int); }
@@ -104,28 +102,6 @@ namespace Amazon.IdentityManagement.Model
         internal bool IsSetAllowUsersToChangePassword()
         {
             return this.allowUsersToChangePassword.HasValue;
-        }
-        public bool ExpirePasswords
-        {
-            get { return this.expirePasswords ?? default(bool); }
-            set { this.expirePasswords = value; }
-        }
-
-        // Check to see if ExpirePasswords property is set
-        internal bool IsSetExpirePasswords()
-        {
-            return this.expirePasswords.HasValue;
-        }
-        public int MaxPasswordAge
-        {
-            get { return this.maxPasswordAge ?? default(int); }
-            set { this.maxPasswordAge = value; }
-        }
-
-        // Check to see if MaxPasswordAge property is set
-        internal bool IsSetMaxPasswordAge()
-        {
-            return this.maxPasswordAge.HasValue;
         }
 
     }

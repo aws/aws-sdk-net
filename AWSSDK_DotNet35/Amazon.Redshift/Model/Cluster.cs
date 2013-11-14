@@ -50,6 +50,12 @@ namespace Amazon.Redshift.Model
         private bool? publiclyAccessible;
         private bool? encrypted;
         private RestoreStatus restoreStatus;
+        private HsmStatus hsmStatus;
+        private ClusterSnapshotCopyStatus clusterSnapshotCopyStatus;
+        private string clusterPublicKey;
+        private List<ClusterNode> clusterNodes = new List<ClusterNode>();
+        private ElasticIpStatus elasticIpStatus;
+
 
         /// <summary>
         /// The unique identifier of the cluster.
@@ -408,6 +414,11 @@ namespace Amazon.Redshift.Model
         {
             return this.encrypted.HasValue;
         }
+
+        /// <summary>
+        /// Describes the status of a cluster restore action. Returns null if the cluster was not created by restoring a snapshot.
+        ///  
+        /// </summary>
         public RestoreStatus RestoreStatus
         {
             get { return this.restoreStatus; }
@@ -418,6 +429,87 @@ namespace Amazon.Redshift.Model
         internal bool IsSetRestoreStatus()
         {
             return this.restoreStatus != null;
+        }
+
+        /// <summary>
+        /// Reports whether the Amazon Redshift cluster has finished applying any HSM settings changes specified in a modify cluster command. Values:
+        /// active, applying
+        ///  
+        /// </summary>
+        public HsmStatus HsmStatus
+        {
+            get { return this.hsmStatus; }
+            set { this.hsmStatus = value; }
+        }
+
+        // Check to see if HsmStatus property is set
+        internal bool IsSetHsmStatus()
+        {
+            return this.hsmStatus != null;
+        }
+
+        /// <summary>
+        /// Returns the destination region and retention period that are configured for cross-region snapshot copy.
+        ///  
+        /// </summary>
+        public ClusterSnapshotCopyStatus ClusterSnapshotCopyStatus
+        {
+            get { return this.clusterSnapshotCopyStatus; }
+            set { this.clusterSnapshotCopyStatus = value; }
+        }
+
+        // Check to see if ClusterSnapshotCopyStatus property is set
+        internal bool IsSetClusterSnapshotCopyStatus()
+        {
+            return this.clusterSnapshotCopyStatus != null;
+        }
+
+        /// <summary>
+        /// The public key for the cluster.
+        ///  
+        /// </summary>
+        public string ClusterPublicKey
+        {
+            get { return this.clusterPublicKey; }
+            set { this.clusterPublicKey = value; }
+        }
+
+        // Check to see if ClusterPublicKey property is set
+        internal bool IsSetClusterPublicKey()
+        {
+            return this.clusterPublicKey != null;
+        }
+
+        /// <summary>
+        /// The nodes in a cluster.
+        ///  
+        /// </summary>
+        public List<ClusterNode> ClusterNodes
+        {
+            get { return this.clusterNodes; }
+            set { this.clusterNodes = value; }
+        }
+
+        // Check to see if ClusterNodes property is set
+        internal bool IsSetClusterNodes()
+        {
+            return this.clusterNodes.Count > 0;
+        }
+
+        /// <summary>
+        /// Describes the status of the elastic IP (EIP) address.
+        ///  
+        /// </summary>
+        public ElasticIpStatus ElasticIpStatus
+        {
+            get { return this.elasticIpStatus; }
+            set { this.elasticIpStatus = value; }
+        }
+
+        // Check to see if ElasticIpStatus property is set
+        internal bool IsSetElasticIpStatus()
+        {
+            return this.elasticIpStatus != null;
         }
     }
 }

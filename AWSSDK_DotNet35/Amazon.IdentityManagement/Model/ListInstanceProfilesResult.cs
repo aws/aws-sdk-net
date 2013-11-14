@@ -31,6 +31,7 @@ namespace Amazon.IdentityManagement.Model
         private bool? isTruncated;
         private string marker;
 
+
         /// <summary>
         /// A list of instance profiles.
         ///  

@@ -30,10 +30,11 @@ namespace Amazon.Redshift.Model
     /// <i>Amazon Redshift Management Guide</i> .
     /// </para>
     /// </summary>
-    public partial class ModifyClusterParameterGroupRequest : AmazonWebServiceRequest
+    public partial class ModifyClusterParameterGroupRequest : AmazonRedshiftRequest
     {
         private string parameterGroupName;
         private List<Parameter> parameters = new List<Parameter>();
+
 
         /// <summary>
         /// The name of the parameter group to be modified.

@@ -28,10 +28,11 @@ namespace Amazon.IdentityManagement.Model
     /// <para>Retrieves the specified policy document for the specified group. The returned policy is URL-encoded according to RFC 3986. For more
     /// information about RFC 3986, go to <a href="http://www.faqs.org/rfcs/rfc3986.html" >http://www.faqs.org/rfcs/rfc3986.html</a> .</para>
     /// </summary>
-    public partial class GetGroupPolicyRequest : AmazonWebServiceRequest
+    public partial class GetGroupPolicyRequest : AmazonIdentityManagementServiceRequest
     {
         private string groupName;
         private string policyName;
+
 
         /// <summary>
         /// Name of the group the policy is associated with.

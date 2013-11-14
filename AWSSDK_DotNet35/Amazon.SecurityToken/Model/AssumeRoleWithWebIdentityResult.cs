@@ -22,8 +22,8 @@ using Amazon.Runtime;
 namespace Amazon.SecurityToken.Model
 {
     /// <summary>
-    /// <para>Contains the result of a successful invocation of the AssumeRoleWithWebIdentity action, including temporary AWS credentials that can
-    /// be used to make AWS requests.</para>
+    /// <para> Contains the result of a successful call to the AssumeRoleWithWebIdentity action, including temporary AWS credentials that can be
+    /// used to make AWS requests. </para>
     /// </summary>
     public partial class AssumeRoleWithWebIdentityResult : AmazonWebServiceResponse
     {
@@ -32,6 +32,7 @@ namespace Amazon.SecurityToken.Model
         private string subjectFromWebIdentityToken;
         private AssumedRoleUser assumedRoleUser;
         private int? packedPolicySize;
+
 
         /// <summary>
         /// The temporary security credentials, which include an access key ID, a secret access key, and a security token.

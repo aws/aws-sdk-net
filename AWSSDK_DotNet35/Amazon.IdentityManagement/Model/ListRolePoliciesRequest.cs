@@ -28,11 +28,12 @@ namespace Amazon.IdentityManagement.Model
     /// <para>Lists the names of the policies associated with the specified role. If there are none, the action returns an empty list.</para>
     /// <para>You can paginate the results using the <c>MaxItems</c> and <c>Marker</c> parameters.</para>
     /// </summary>
-    public partial class ListRolePoliciesRequest : AmazonWebServiceRequest
+    public partial class ListRolePoliciesRequest : AmazonIdentityManagementServiceRequest
     {
         private string roleName;
         private string marker;
         private int? maxItems;
+
 
         /// <summary>
         /// The name of the role to list policies for.

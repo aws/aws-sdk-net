@@ -22,7 +22,8 @@ using Amazon.Runtime;
 namespace Amazon.SecurityToken.Model
 {
     /// <summary>
-    /// <para>Contains the result of a successful invocation of the GetFederationToken action.</para>
+    /// <para> Contains the result of a successful call to the GetFederationToken action, including temporary AWS credentials that can be used to
+    /// make AWS requests. </para>
     /// </summary>
     public partial class GetFederationTokenResult : AmazonWebServiceResponse
     {
@@ -30,6 +31,7 @@ namespace Amazon.SecurityToken.Model
         private Credentials credentials;
         private FederatedUser federatedUser;
         private int? packedPolicySize;
+
 
         /// <summary>
         /// Credentials for the service API authentication.

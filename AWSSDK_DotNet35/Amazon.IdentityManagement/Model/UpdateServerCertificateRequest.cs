@@ -28,15 +28,16 @@ namespace Amazon.IdentityManagement.Model
     /// <para>Updates the name and/or the path of the specified server certificate.</para> <para><b>IMPORTANT:</b> You should understand the
     /// implications of changing a server certificate's path or name. For more information, see Managing Server Certificates in Using AWS Identity
     /// and Access Management. </para> <para><b>NOTE:</b>To change a server certificate name the requester must have appropriate permissions on both
-    /// the source object and the target object. For example, to change the name from ProductionCert to ProdCert, the entity making the request
-    /// must have permission on ProductionCert and ProdCert, or must have permission on all (*). For more information about permissions, see
-    /// Permissions and Policies. </para>
+    /// the source object and the target object. For example, to change the name from ProductionCert to ProdCert, the entity making the request must
+    /// have permission on ProductionCert and ProdCert, or must have permission on all (*). For more information about permissions, see Permissions
+    /// and Policies. </para>
     /// </summary>
-    public partial class UpdateServerCertificateRequest : AmazonWebServiceRequest
+    public partial class UpdateServerCertificateRequest : AmazonIdentityManagementServiceRequest
     {
         private string serverCertificateName;
         private string newPath;
         private string newServerCertificateName;
+
 
         /// <summary>
         /// The name of the server certificate that you want to update.

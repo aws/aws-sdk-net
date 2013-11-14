@@ -29,7 +29,7 @@ namespace Amazon.Redshift.Model
     /// information about all snapshots of all clusters that are owned by you AWS customer account. No information is returned for snapshots owned
     /// by inactive AWS customer accounts. </para>
     /// </summary>
-    public partial class DescribeClusterSnapshotsRequest : AmazonWebServiceRequest
+    public partial class DescribeClusterSnapshotsRequest : AmazonRedshiftRequest
     {
         private string clusterIdentifier;
         private string snapshotIdentifier;
@@ -39,6 +39,7 @@ namespace Amazon.Redshift.Model
         private int? maxRecords;
         private string marker;
         private string ownerAccount;
+
 
         /// <summary>
         /// The identifier of the cluster for which information about snapshots is requested.

@@ -31,9 +31,10 @@ namespace Amazon.Redshift.Model
     /// href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html" >Amazon Redshift Clusters</a> in the <i>Amazon Redshift
     /// Management Guide</i> </para>
     /// </summary>
-    public partial class RebootClusterRequest : AmazonWebServiceRequest
+    public partial class RebootClusterRequest : AmazonRedshiftRequest
     {
         private string clusterIdentifier;
+
 
         /// <summary>
         /// The cluster identifier.

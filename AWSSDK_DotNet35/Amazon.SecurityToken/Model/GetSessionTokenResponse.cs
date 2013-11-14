@@ -28,7 +28,8 @@ namespace Amazon.SecurityToken.Model
     {
         /// <summary>
         /// Gets and sets the GetSessionTokenResult property.
-        /// Contains the result of a successful invocation of the GetSessionToken action.
+        /// Contains the result of a successful call to the GetSessionToken action, including temporary AWS credentials that can be used to make AWS
+        /// requests.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the GetSessionTokenResult class are now available on the GetSessionTokenResponse class. You should use the properties on GetSessionTokenResponse instead of accessing them through GetSessionTokenResult.")]
         public GetSessionTokenResult GetSessionTokenResult

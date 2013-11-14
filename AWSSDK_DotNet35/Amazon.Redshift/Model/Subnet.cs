@@ -30,6 +30,7 @@ namespace Amazon.Redshift.Model
         private AvailabilityZone subnetAvailabilityZone;
         private string subnetStatus;
 
+
         /// <summary>
         /// The identifier of the subnet.
         ///  

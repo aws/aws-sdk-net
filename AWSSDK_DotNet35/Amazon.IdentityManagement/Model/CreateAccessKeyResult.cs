@@ -29,6 +29,7 @@ namespace Amazon.IdentityManagement.Model
         
         private AccessKey accessKey;
 
+
         /// <summary>
         /// Information about the access key.
         ///  

@@ -30,6 +30,7 @@ namespace Amazon.Redshift.Model
         private List<Parameter> parameters = new List<Parameter>();
         private string marker;
 
+
         /// <summary>
         /// A list of <a>Parameter</a> instances. Each instance lists the parameters of one cluster parameter group.
         ///  

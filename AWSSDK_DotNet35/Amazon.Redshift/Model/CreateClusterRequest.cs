@@ -32,7 +32,7 @@ namespace Amazon.Redshift.Model
     /// Management Guide</i> .
     /// </para>
     /// </summary>
-    public partial class CreateClusterRequest : AmazonWebServiceRequest
+    public partial class CreateClusterRequest : AmazonRedshiftRequest
     {
         private string dBName;
         private string clusterIdentifier;
@@ -53,15 +53,19 @@ namespace Amazon.Redshift.Model
         private int? numberOfNodes;
         private bool? publiclyAccessible;
         private bool? encrypted;
+        private string hsmClientCertificateIdentifier;
+        private string hsmConfigurationIdentifier;
+        private string elasticIp;
+
 
         /// <summary>
         /// The name of the first database to be created when the cluster is created. To create additional databases after the cluster is created,
         /// connect to the cluster with a SQL client and use SQL commands to create a database. For more information, go to <a
-        /// href="http://docs.aws.amazon.com/redshift/latest/dg/t_creating_database.html">Create a Database</a> in the Amazon Redshift Developer Guide.
-        /// Default: <c>dev</c> Constraints: <ul> <li>Must contain 1 to 64 alphanumeric characters.</li> <li>Must contain only lowercase letters.</li>
-        /// <li>Cannot be a word that is reserved by the service. A list of reserved words can be found in <a
-        /// href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Developer Guide. </li>
-        /// </ul>
+        /// href="http://docs.aws.amazon.com/redshift/latest/dg/t_creating_database.html">Create a Database</a> in the Amazon Redshift Database
+        /// Developer Guide. Default: <c>dev</c> Constraints: <ul> <li>Must contain 1 to 64 alphanumeric characters.</li> <li>Must contain only
+        /// lowercase letters.</li> <li>Cannot be a word that is reserved by the service. A list of reserved words can be found in <a
+        /// href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.
+        /// </li> </ul>
         ///  
         /// </summary>
         public string DBName
@@ -135,8 +139,8 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// The user name associated with the master user account for the cluster that is being created. Constraints: <ul> <li>Must be 1 - 128
         /// alphanumeric characters.</li> <li>First character must be a letter.</li> <li>Cannot be a reserved word. A list of reserved words can be
-        /// found in <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Developer
-        /// Guide. </li> </ul>
+        /// found in <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database
+        /// Developer Guide. </li> </ul>
         ///  
         /// </summary>
         public string MasterUsername
@@ -400,6 +404,58 @@ namespace Amazon.Redshift.Model
         internal bool IsSetEncrypted()
         {
             return this.encrypted.HasValue;
+        }
+
+        /// <summary>
+        /// Specifies the name of the HSM client certificate the Amazon Redshift cluster uses to retrieve the data encryption keys stored in an HSM.
+        ///  
+        /// </summary>
+        public string HsmClientCertificateIdentifier
+        {
+            get { return this.hsmClientCertificateIdentifier; }
+            set { this.hsmClientCertificateIdentifier = value; }
+        }
+
+        // Check to see if HsmClientCertificateIdentifier property is set
+        internal bool IsSetHsmClientCertificateIdentifier()
+        {
+            return this.hsmClientCertificateIdentifier != null;
+        }
+
+        /// <summary>
+        /// Specifies the name of the HSM configuration that contains the information the Amazon Redshift cluster can use to retrieve and store keys in
+        /// an HSM.
+        ///  
+        /// </summary>
+        public string HsmConfigurationIdentifier
+        {
+            get { return this.hsmConfigurationIdentifier; }
+            set { this.hsmConfigurationIdentifier = value; }
+        }
+
+        // Check to see if HsmConfigurationIdentifier property is set
+        internal bool IsSetHsmConfigurationIdentifier()
+        {
+            return this.hsmConfigurationIdentifier != null;
+        }
+
+        /// <summary>
+        /// The Elastic IP (EIP) address for the cluster. Constraints: The cluster must be provisioned in EC2-VPC and publicly-accessible through an
+        /// Internet gateway. For more information about provisioning clusters in EC2-VPC, go to <a
+        /// href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported Platforms to Launch Your
+        /// Cluster</a> in the Amazon Redshift Management Guide.
+        ///  
+        /// </summary>
+        public string ElasticIp
+        {
+            get { return this.elasticIp; }
+            set { this.elasticIp = value; }
+        }
+
+        // Check to see if ElasticIp property is set
+        internal bool IsSetElasticIp()
+        {
+            return this.elasticIp != null;
         }
 
     }

@@ -30,6 +30,7 @@ namespace Amazon.Redshift.Model
         private string marker;
         private List<ReservedNodeOffering> reservedNodeOfferings = new List<ReservedNodeOffering>();
 
+
         /// <summary>
         /// An optional marker returned by a previous <a>DescribeReservedNodeOfferings</a> request to indicate the first reserved node offering that the
         /// request will return.

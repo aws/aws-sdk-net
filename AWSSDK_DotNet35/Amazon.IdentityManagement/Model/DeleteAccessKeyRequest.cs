@@ -26,13 +26,14 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Container for the parameters to the DeleteAccessKey operation.
     /// <para>Deletes the access key associated with the specified user.</para> <para>If you do not specify a user name, IAM determines the user
-    /// name implicitly based on the AWS Access Key ID signing the request. Because this action works for access keys under the AWS account, you can
+    /// name implicitly based on the AWS access key ID signing the request. Because this action works for access keys under the AWS account, you can
     /// use this API to manage root credentials even if the AWS account has no associated users.</para>
     /// </summary>
-    public partial class DeleteAccessKeyRequest : AmazonWebServiceRequest
+    public partial class DeleteAccessKeyRequest : AmazonIdentityManagementServiceRequest
     {
         private string userName;
         private string accessKeyId;
+
 
         /// <summary>
         /// Name of the user whose key you want to delete.
@@ -64,7 +65,7 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
-        /// The Access Key ID for the Access Key ID and Secret Access Key you want to delete.
+        /// The access key ID for the access key ID and secret access key you want to delete.
         ///  
         /// <para>
         /// <b>Constraints:</b>

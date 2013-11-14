@@ -31,6 +31,7 @@ namespace Amazon.Redshift.Model
         private string parameterGroupFamily;
         private string description;
 
+
         /// <summary>
         /// The name of the cluster parameter group.
         ///  

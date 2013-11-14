@@ -27,9 +27,10 @@ namespace Amazon.Redshift.Model
     /// Container for the parameters to the DeleteClusterSubnetGroup operation.
     /// <para> Deletes the specified cluster subnet group. </para>
     /// </summary>
-    public partial class DeleteClusterSubnetGroupRequest : AmazonWebServiceRequest
+    public partial class DeleteClusterSubnetGroupRequest : AmazonRedshiftRequest
     {
         private string clusterSubnetGroupName;
+
 
         /// <summary>
         /// The name of the cluster subnet group name to be deleted.

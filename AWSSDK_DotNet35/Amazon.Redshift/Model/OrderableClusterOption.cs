@@ -31,6 +31,7 @@ namespace Amazon.Redshift.Model
         private string nodeType;
         private List<AvailabilityZone> availabilityZones = new List<AvailabilityZone>();
 
+
         /// <summary>
         /// The version of the orderable cluster.
         ///  

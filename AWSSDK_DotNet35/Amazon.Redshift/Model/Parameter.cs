@@ -35,6 +35,7 @@ namespace Amazon.Redshift.Model
         private bool? isModifiable;
         private string minimumEngineVersion;
 
+
         /// <summary>
         /// The name of the parameter.
         ///  

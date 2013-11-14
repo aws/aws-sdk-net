@@ -28,6 +28,7 @@ namespace Amazon.Redshift.Model
         
         private string accountId;
 
+
         /// <summary>
         /// The identifier of an AWS customer account authorized to restore a snapshot.
         ///  

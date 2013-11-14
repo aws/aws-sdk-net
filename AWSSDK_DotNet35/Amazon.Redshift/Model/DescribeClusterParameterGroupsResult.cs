@@ -30,6 +30,7 @@ namespace Amazon.Redshift.Model
         private string marker;
         private List<ClusterParameterGroup> parameterGroups = new List<ClusterParameterGroup>();
 
+
         /// <summary>
         /// A marker at which to continue listing cluster parameter groups in a new request. The response returns a marker if there are more parameter
         /// groups to list than returned in the response.

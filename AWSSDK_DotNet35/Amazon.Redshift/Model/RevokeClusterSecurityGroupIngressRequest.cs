@@ -31,12 +31,13 @@ namespace Amazon.Redshift.Model
     /// <i>Amazon Redshift Management Guide</i> .
     /// </para>
     /// </summary>
-    public partial class RevokeClusterSecurityGroupIngressRequest : AmazonWebServiceRequest
+    public partial class RevokeClusterSecurityGroupIngressRequest : AmazonRedshiftRequest
     {
         private string clusterSecurityGroupName;
         private string cIDRIP;
         private string eC2SecurityGroupName;
         private string eC2SecurityGroupOwnerId;
+
 
         /// <summary>
         /// The name of the security Group from which to revoke the ingress rule.

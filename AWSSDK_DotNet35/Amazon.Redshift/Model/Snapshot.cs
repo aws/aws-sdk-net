@@ -42,6 +42,7 @@ namespace Amazon.Redshift.Model
         private string dBName;
         private string vpcId;
         private bool? encrypted;
+        private bool? encryptedWithHSM;
         private List<AccountWithRestoreAccess> accountsWithRestoreAccess = new List<AccountWithRestoreAccess>();
         private string ownerAccount;
         private double? totalBackupSizeInMegaBytes;
@@ -50,6 +51,8 @@ namespace Amazon.Redshift.Model
         private double? currentBackupRateInMegaBytesPerSecond;
         private long? estimatedSecondsToCompletion;
         private long? elapsedTimeInSeconds;
+        private string sourceRegion;
+
 
         /// <summary>
         /// The snapshot identifier that is provided in the request.
@@ -294,6 +297,23 @@ namespace Amazon.Redshift.Model
         }
 
         /// <summary>
+        /// A boolean that indicates whether the snapshot data is encrypted using the HSM keys of the source cluster. <c>true</c> indicates that the
+        /// data is encrypted using HSM keys.
+        ///  
+        /// </summary>
+        public bool EncryptedWithHSM
+        {
+            get { return this.encryptedWithHSM ?? default(bool); }
+            set { this.encryptedWithHSM = value; }
+        }
+
+        // Check to see if EncryptedWithHSM property is set
+        internal bool IsSetEncryptedWithHSM()
+        {
+            return this.encryptedWithHSM.HasValue;
+        }
+
+        /// <summary>
         /// A list of the AWS customer accounts authorized to restore the snapshot. Returns <c>null</c> if no accounts are authorized. Visible only to
         /// the snapshot owner.
         ///  
@@ -328,7 +348,7 @@ namespace Amazon.Redshift.Model
         }
 
         /// <summary>
-        /// The size of the complete set of backup data that would be used to restore the instance.
+        /// The size of the complete set of backup data that would be used to restore the cluster.
         ///  
         /// </summary>
         public double TotalBackupSizeInMegaBytes
@@ -421,6 +441,22 @@ namespace Amazon.Redshift.Model
         internal bool IsSetElapsedTimeInSeconds()
         {
             return this.elapsedTimeInSeconds.HasValue;
+        }
+
+        /// <summary>
+        /// The source region from which the snapshot was copied.
+        ///  
+        /// </summary>
+        public string SourceRegion
+        {
+            get { return this.sourceRegion; }
+            set { this.sourceRegion = value; }
+        }
+
+        // Check to see if SourceRegion property is set
+        internal bool IsSetSourceRegion()
+        {
+            return this.sourceRegion != null;
         }
     }
 }

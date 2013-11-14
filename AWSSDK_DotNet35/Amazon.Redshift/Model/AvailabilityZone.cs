@@ -28,6 +28,7 @@ namespace Amazon.Redshift.Model
         
         private string name;
 
+
         /// <summary>
         /// The name of the availability zone.
         ///  

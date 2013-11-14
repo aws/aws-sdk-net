@@ -31,6 +31,7 @@ namespace Amazon.IdentityManagement.Model
         private string serialNumber;
         private DateTime? enableDate;
 
+
         /// <summary>
         /// The user with whom the MFA device is associated.
         ///  

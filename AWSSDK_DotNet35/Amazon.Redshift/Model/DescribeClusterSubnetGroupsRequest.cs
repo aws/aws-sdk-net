@@ -28,11 +28,12 @@ namespace Amazon.Redshift.Model
     /// <para> Returns one or more cluster subnet group objects, which contain metadata about your cluster subnet groups. By default, this
     /// operation returns information about all cluster subnet groups that are defined in you AWS account. </para>
     /// </summary>
-    public partial class DescribeClusterSubnetGroupsRequest : AmazonWebServiceRequest
+    public partial class DescribeClusterSubnetGroupsRequest : AmazonRedshiftRequest
     {
         private string clusterSubnetGroupName;
         private int? maxRecords;
         private string marker;
+
 
         /// <summary>
         /// The name of the cluster subnet group for which information is requested.

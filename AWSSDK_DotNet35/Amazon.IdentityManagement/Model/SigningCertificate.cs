@@ -33,6 +33,7 @@ namespace Amazon.IdentityManagement.Model
         private StatusType status;
         private DateTime? uploadDate;
 
+
         /// <summary>
         /// Name of the user the signing certificate is associated with.
         ///  

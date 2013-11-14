@@ -32,12 +32,13 @@ namespace Amazon.Redshift.Model
     /// href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html" >Amazon Redshift Clusters</a> in the <i>Amazon Redshift
     /// Management Guide</i> </para>
     /// </summary>
-    public partial class DescribeOrderableClusterOptionsRequest : AmazonWebServiceRequest
+    public partial class DescribeOrderableClusterOptionsRequest : AmazonRedshiftRequest
     {
         private string clusterVersion;
         private string nodeType;
         private int? maxRecords;
         private string marker;
+
 
         /// <summary>
         /// The version filter value. Specify this parameter to show only the available offerings matching the specified version. Default: All versions.

@@ -28,7 +28,8 @@ namespace Amazon.SecurityToken.Model
     {
         /// <summary>
         /// Gets and sets the AssumeRoleResult property.
-        /// Contains the result of a successful invocation of the AssumeRole action.
+        /// Contains the result of a successful call to the AssumeRole action, including temporary AWS credentials that can be used to make AWS
+        /// requests.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the AssumeRoleResult class are now available on the AssumeRoleResponse class. You should use the properties on AssumeRoleResponse instead of accessing them through AssumeRoleResult.")]
         public AssumeRoleResult AssumeRoleResult

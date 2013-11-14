@@ -36,6 +36,7 @@ namespace Amazon.IdentityManagement.Model
         private bool? expirePasswords;
         private int? maxPasswordAge;
 
+
         /// <summary>
         /// Minimum length to require for IAM user passwords.
         ///  

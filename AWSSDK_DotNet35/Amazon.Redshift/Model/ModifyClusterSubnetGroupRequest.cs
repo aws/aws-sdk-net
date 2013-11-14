@@ -28,11 +28,12 @@ namespace Amazon.Redshift.Model
     /// <para> Modifies a cluster subnet group to include the specified list of VPC subnets. The operation replaces the existing list of subnets
     /// with the new list of subnets. </para>
     /// </summary>
-    public partial class ModifyClusterSubnetGroupRequest : AmazonWebServiceRequest
+    public partial class ModifyClusterSubnetGroupRequest : AmazonRedshiftRequest
     {
         private string clusterSubnetGroupName;
         private string description;
         private List<string> subnetIds = new List<string>();
+
 
         /// <summary>
         /// The name of the subnet group to be modified.

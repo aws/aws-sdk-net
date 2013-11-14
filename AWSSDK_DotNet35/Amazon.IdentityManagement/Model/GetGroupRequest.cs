@@ -28,11 +28,12 @@ namespace Amazon.IdentityManagement.Model
     /// <para>Returns a list of users that are in the specified group. You can paginate the results using the <c>MaxItems</c> and <c>Marker</c>
     /// parameters.</para>
     /// </summary>
-    public partial class GetGroupRequest : AmazonWebServiceRequest
+    public partial class GetGroupRequest : AmazonIdentityManagementServiceRequest
     {
         private string groupName;
         private string marker;
         private int? maxItems;
+
 
         /// <summary>
         /// Name of the group.

@@ -32,6 +32,7 @@ namespace Amazon.IdentityManagement.Model
         private User user;
         private DateTime? enableDate;
 
+
         /// <summary>
         /// The serial number associated with <c>VirtualMFADevice</c>.
         ///  

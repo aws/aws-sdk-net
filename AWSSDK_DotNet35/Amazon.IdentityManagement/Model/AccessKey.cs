@@ -33,6 +33,7 @@ namespace Amazon.IdentityManagement.Model
         private string secretAccessKey;
         private DateTime? createDate;
 
+
         /// <summary>
         /// Name of the user the key is associated with.
         ///  

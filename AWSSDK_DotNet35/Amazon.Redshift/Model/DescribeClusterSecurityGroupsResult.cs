@@ -30,6 +30,7 @@ namespace Amazon.Redshift.Model
         private string marker;
         private List<ClusterSecurityGroup> clusterSecurityGroups = new List<ClusterSecurityGroup>();
 
+
         /// <summary>
         /// A marker at which to continue listing cluster security groups in a new request. The response returns a marker if there are more security
         /// groups to list than could be returned in the response.

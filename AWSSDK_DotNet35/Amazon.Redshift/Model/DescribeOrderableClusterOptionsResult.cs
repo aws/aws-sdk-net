@@ -30,6 +30,7 @@ namespace Amazon.Redshift.Model
         private List<OrderableClusterOption> orderableClusterOptions = new List<OrderableClusterOption>();
         private string marker;
 
+
         /// <summary>
         /// An <a>OrderableClusterOption</a> structure containing information about orderable options for the Cluster.
         ///  

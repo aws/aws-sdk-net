@@ -33,11 +33,12 @@ namespace Amazon.Redshift.Model
     /// <i>Amazon Redshift Management Guide</i> .
     /// </para>
     /// </summary>
-    public partial class CreateClusterParameterGroupRequest : AmazonWebServiceRequest
+    public partial class CreateClusterParameterGroupRequest : AmazonRedshiftRequest
     {
         private string parameterGroupName;
         private string parameterGroupFamily;
         private string description;
+
 
         /// <summary>
         /// The name of the cluster parameter group. Constraints: <ul> <li>Must be 1 to 255 alphanumeric characters or hyphens</li> <li>First character

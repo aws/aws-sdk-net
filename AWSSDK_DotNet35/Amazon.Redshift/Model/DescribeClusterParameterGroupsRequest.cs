@@ -32,11 +32,12 @@ namespace Amazon.Redshift.Model
     /// <i>Amazon Redshift Management Guide</i> .
     /// </para>
     /// </summary>
-    public partial class DescribeClusterParameterGroupsRequest : AmazonWebServiceRequest
+    public partial class DescribeClusterParameterGroupsRequest : AmazonRedshiftRequest
     {
         private string parameterGroupName;
         private int? maxRecords;
         private string marker;
+
 
         /// <summary>
         /// The name of a specific parameter group for which to return details. By default, details about all parameter groups and the default parameter

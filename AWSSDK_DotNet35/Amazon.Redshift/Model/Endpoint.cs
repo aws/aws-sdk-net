@@ -29,6 +29,7 @@ namespace Amazon.Redshift.Model
         private string address;
         private int? port;
 
+
         /// <summary>
         /// The DNS address of the Cluster.
         ///  

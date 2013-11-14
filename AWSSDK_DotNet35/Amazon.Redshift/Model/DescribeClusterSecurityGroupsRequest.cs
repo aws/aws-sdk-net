@@ -31,11 +31,12 @@ namespace Amazon.Redshift.Model
     /// <i>Amazon Redshift Management Guide</i> .
     /// </para>
     /// </summary>
-    public partial class DescribeClusterSecurityGroupsRequest : AmazonWebServiceRequest
+    public partial class DescribeClusterSecurityGroupsRequest : AmazonRedshiftRequest
     {
         private string clusterSecurityGroupName;
         private int? maxRecords;
         private string marker;
+
 
         /// <summary>
         /// The name of a cluster security group for which you are requesting details. You can specify either the <b>Marker</b> parameter or a

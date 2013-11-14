@@ -26,19 +26,19 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Container for the parameters to the PutGroupPolicy operation.
     /// <para>Adds (or updates) a policy document associated with the specified group. For information about policies, refer to <a
-    /// href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?PoliciesOverview.html" >Overview of Policies</a> in <i>Using AWS
-    /// Identity and Access Management</i> .</para> <para>For information about limits on the number of policies you can associate with a group, see
-    /// <a href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?LimitationsOnEntities.html" >Limitations on IAM Entities</a> in
-    /// <i>Using AWS Identity and Access Management</i> .</para> <para><b>NOTE:</b>Because policy documents can be large, you should use POST rather
-    /// than GET when calling PutGroupPolicy. For information about setting up signatures and authorization through the API, go to Signing AWS API
-    /// Requests in the AWS General Reference. For general information about using the Query API with IAM, go to Making Query Requests in Using
-    /// IAM.</para>
+    /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?PoliciesOverview.html" >Overview of Policies</a> in <i>Using AWS Identity
+    /// and Access Management</i> .</para> <para>For information about limits on the number of policies you can associate with a group, see <a
+    /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?LimitationsOnEntities.html" >Limitations on IAM Entities</a> in <i>Using
+    /// AWS Identity and Access Management</i> .</para> <para><b>NOTE:</b>Because policy documents can be large, you should use POST rather than GET
+    /// when calling PutGroupPolicy. For information about setting up signatures and authorization through the API, go to Signing AWS API Requests
+    /// in the AWS General Reference. For general information about using the Query API with IAM, go to Making Query Requests in Using IAM.</para>
     /// </summary>
-    public partial class PutGroupPolicyRequest : AmazonWebServiceRequest
+    public partial class PutGroupPolicyRequest : AmazonIdentityManagementServiceRequest
     {
         private string groupName;
         private string policyName;
         private string policyDocument;
+
 
         /// <summary>
         /// Name of the group to associate the policy with.

@@ -34,11 +34,12 @@ namespace Amazon.Redshift.Model
     /// 
     /// </para>
     /// </summary>
-    public partial class DescribeReservedNodeOfferingsRequest : AmazonWebServiceRequest
+    public partial class DescribeReservedNodeOfferingsRequest : AmazonRedshiftRequest
     {
         private string reservedNodeOfferingId;
         private int? maxRecords;
         private string marker;
+
 
         /// <summary>
         /// The unique identifier for the offering.

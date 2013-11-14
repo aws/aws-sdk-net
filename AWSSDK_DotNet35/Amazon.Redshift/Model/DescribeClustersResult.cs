@@ -30,6 +30,7 @@ namespace Amazon.Redshift.Model
         private string marker;
         private List<Cluster> clusters = new List<Cluster>();
 
+
         /// <summary>
         /// A marker at which to continue listing clusters in a new request. A marker is returned if there are more clusters to list than were returned
         /// in the response.

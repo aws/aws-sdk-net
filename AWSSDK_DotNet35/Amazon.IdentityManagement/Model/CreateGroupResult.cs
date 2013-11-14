@@ -29,6 +29,7 @@ namespace Amazon.IdentityManagement.Model
         
         private Group group;
 
+
         /// <summary>
         /// Information about the group.
         ///  

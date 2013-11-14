@@ -30,11 +30,12 @@ namespace Amazon.Redshift.Model
     /// in the <i>Amazon Redshift Management Guide</i> .
     /// </para>
     /// </summary>
-    public partial class AuthorizeSnapshotAccessRequest : AmazonWebServiceRequest
+    public partial class AuthorizeSnapshotAccessRequest : AmazonRedshiftRequest
     {
         private string snapshotIdentifier;
         private string snapshotClusterIdentifier;
         private string accountWithRestoreAccess;
+
 
         /// <summary>
         /// The identifier of the snapshot the account is authorized to restore.
@@ -51,6 +52,12 @@ namespace Amazon.Redshift.Model
         {
             return this.snapshotIdentifier != null;
         }
+
+        /// <summary>
+        /// The identifier of the cluster the snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot
+        /// resource element that specifies anything other than * for the cluster name.
+        ///  
+        /// </summary>
         public string SnapshotClusterIdentifier
         {
             get { return this.snapshotClusterIdentifier; }

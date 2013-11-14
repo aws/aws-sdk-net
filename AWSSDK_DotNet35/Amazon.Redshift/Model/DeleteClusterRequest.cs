@@ -33,11 +33,12 @@ namespace Amazon.Redshift.Model
     /// Management Guide</i> .
     /// </para>
     /// </summary>
-    public partial class DeleteClusterRequest : AmazonWebServiceRequest
+    public partial class DeleteClusterRequest : AmazonRedshiftRequest
     {
         private string clusterIdentifier;
         private bool? skipFinalClusterSnapshot;
         private string finalClusterSnapshotIdentifier;
+
 
         /// <summary>
         /// The identifier of the cluster to be deleted. Constraints: <ul> <li>Must contain lowercase characters.</li> <li>Must contain from 1 to 63

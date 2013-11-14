@@ -31,6 +31,7 @@ namespace Amazon.Redshift.Model
         private string marker;
         private List<Parameter> parameters = new List<Parameter>();
 
+
         /// <summary>
         /// The name of the cluster parameter group family to which the engine default parameters apply.
         ///  

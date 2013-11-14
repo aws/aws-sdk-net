@@ -33,7 +33,7 @@ namespace Amazon.Redshift.Model
     /// When resizing a cluster, you must specify both the number of nodes and the node type even if one of the parameters does not change. If you
     /// specify the same number of nodes and node type that are already configured for the cluster, an error is returned.</para>
     /// </summary>
-    public partial class ModifyClusterRequest : AmazonWebServiceRequest
+    public partial class ModifyClusterRequest : AmazonRedshiftRequest
     {
         private string clusterIdentifier;
         private string clusterType;
@@ -47,6 +47,9 @@ namespace Amazon.Redshift.Model
         private string preferredMaintenanceWindow;
         private string clusterVersion;
         private bool? allowVersionUpgrade;
+        private string hsmClientCertificateIdentifier;
+        private string hsmConfigurationIdentifier;
+
 
         /// <summary>
         /// The unique identifier of the cluster to be modified. Example: <c>examplecluster</c>
@@ -271,6 +274,39 @@ namespace Amazon.Redshift.Model
         internal bool IsSetAllowVersionUpgrade()
         {
             return this.allowVersionUpgrade.HasValue;
+        }
+
+        /// <summary>
+        /// Specifies the name of the HSM client certificate the Amazon Redshift cluster uses to retrieve the data encryption keys stored in an HSM.
+        ///  
+        /// </summary>
+        public string HsmClientCertificateIdentifier
+        {
+            get { return this.hsmClientCertificateIdentifier; }
+            set { this.hsmClientCertificateIdentifier = value; }
+        }
+
+        // Check to see if HsmClientCertificateIdentifier property is set
+        internal bool IsSetHsmClientCertificateIdentifier()
+        {
+            return this.hsmClientCertificateIdentifier != null;
+        }
+
+        /// <summary>
+        /// Specifies the name of the HSM configuration that contains the information the Amazon Redshift cluster can use to retrieve and store keys in
+        /// an HSM.
+        ///  
+        /// </summary>
+        public string HsmConfigurationIdentifier
+        {
+            get { return this.hsmConfigurationIdentifier; }
+            set { this.hsmConfigurationIdentifier = value; }
+        }
+
+        // Check to see if HsmConfigurationIdentifier property is set
+        internal bool IsSetHsmConfigurationIdentifier()
+        {
+            return this.hsmConfigurationIdentifier != null;
         }
 
     }

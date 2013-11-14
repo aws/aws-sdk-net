@@ -29,11 +29,12 @@ namespace Amazon.Redshift.Model
     /// "engine-default". To reset the entire parameter group specify the <i>ResetAllParameters</i> parameter. For parameter changes to take effect
     /// you must reboot any associated clusters. </para>
     /// </summary>
-    public partial class ResetClusterParameterGroupRequest : AmazonWebServiceRequest
+    public partial class ResetClusterParameterGroupRequest : AmazonRedshiftRequest
     {
         private string parameterGroupName;
         private bool? resetAllParameters;
         private List<Parameter> parameters = new List<Parameter>();
+
 
         /// <summary>
         /// The name of the cluster parameter group to be reset.

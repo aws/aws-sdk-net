@@ -35,12 +35,13 @@ namespace Amazon.Redshift.Model
     /// href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html" >Working with Security Groups</a> in the <i>Amazon
     /// Redshift Management Guide</i> .</para>
     /// </summary>
-    public partial class AuthorizeClusterSecurityGroupIngressRequest : AmazonWebServiceRequest
+    public partial class AuthorizeClusterSecurityGroupIngressRequest : AmazonRedshiftRequest
     {
         private string clusterSecurityGroupName;
         private string cIDRIP;
         private string eC2SecurityGroupName;
         private string eC2SecurityGroupOwnerId;
+
 
         /// <summary>
         /// The name of the security group to which the ingress rule is added.

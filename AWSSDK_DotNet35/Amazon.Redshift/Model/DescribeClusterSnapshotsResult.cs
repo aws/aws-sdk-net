@@ -30,6 +30,7 @@ namespace Amazon.Redshift.Model
         private string marker;
         private List<Snapshot> snapshots = new List<Snapshot>();
 
+
         /// <summary>
         /// A marker that indicates the first snapshot that a subsequent <a>DescribeClusterSnapshots</a> request will return. The response returns a
         /// marker only if there are more snapshots to list than the current response can return.

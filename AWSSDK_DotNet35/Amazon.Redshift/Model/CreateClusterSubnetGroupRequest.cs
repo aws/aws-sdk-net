@@ -31,11 +31,12 @@ namespace Amazon.Redshift.Model
     /// the <i>Amazon Redshift Management Guide</i> .
     /// </para>
     /// </summary>
-    public partial class CreateClusterSubnetGroupRequest : AmazonWebServiceRequest
+    public partial class CreateClusterSubnetGroupRequest : AmazonRedshiftRequest
     {
         private string clusterSubnetGroupName;
         private string description;
         private List<string> subnetIds = new List<string>();
+
 
         /// <summary>
         /// The name for the subnet group. Amazon Redshift stores the value as a lowercase string. Constraints: <ul> <li>Must contain no more than 255

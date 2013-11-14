@@ -31,11 +31,12 @@ namespace Amazon.IdentityManagement.Model
     /// For example, to change Managers to MGRs, the entity making the request must have permission on Managers and MGRs, or must have permission on
     /// all (*). For more information about permissions, see Permissions and Policies. </para>
     /// </summary>
-    public partial class UpdateGroupRequest : AmazonWebServiceRequest
+    public partial class UpdateGroupRequest : AmazonIdentityManagementServiceRequest
     {
         private string groupName;
         private string newPath;
         private string newGroupName;
+
 
         /// <summary>
         /// Name of the group to update. If you're changing the name of the group, this is the original name.

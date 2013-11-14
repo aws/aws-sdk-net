@@ -28,14 +28,15 @@ namespace Amazon.IdentityManagement.Model
     /// <para>Returns information about the signing certificates associated with the specified user. If there are none, the action returns an empty
     /// list.</para> <para>Although each user is limited to a small number of signing certificates, you can still paginate the results using the
     /// <c>MaxItems</c> and <c>Marker</c> parameters.</para> <para>If the <c>UserName</c> field is not specified, the user name is determined
-    /// implicitly based on the AWS Access Key ID used to sign the request. Because this action works for access keys under the AWS account, this
+    /// implicitly based on the AWS access key ID used to sign the request. Because this action works for access keys under the AWS account, this
     /// API can be used to manage root credentials even if the AWS account has no associated users.</para>
     /// </summary>
-    public partial class ListSigningCertificatesRequest : AmazonWebServiceRequest
+    public partial class ListSigningCertificatesRequest : AmazonIdentityManagementServiceRequest
     {
         private string userName;
         private string marker;
         private int? maxItems;
+
 
         /// <summary>
         /// The name of the user.

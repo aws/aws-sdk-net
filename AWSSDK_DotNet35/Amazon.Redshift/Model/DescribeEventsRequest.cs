@@ -29,7 +29,7 @@ namespace Amazon.Redshift.Model
     /// particular cluster, security group, snapshot or parameter group can be obtained by providing the name as a parameter. By default, the past
     /// hour of events are returned. </para>
     /// </summary>
-    public partial class DescribeEventsRequest : AmazonWebServiceRequest
+    public partial class DescribeEventsRequest : AmazonRedshiftRequest
     {
         private string sourceIdentifier;
         private SourceType sourceType;
@@ -38,6 +38,7 @@ namespace Amazon.Redshift.Model
         private int? duration;
         private int? maxRecords;
         private string marker;
+
 
         /// <summary>
         /// The identifier of the event source for which events will be returned. If this parameter is not specified, then all sources are included in

@@ -35,6 +35,7 @@ namespace Amazon.Redshift.Model
         private List<string> importTablesInProgress = new List<string>();
         private List<string> importTablesNotStarted = new List<string>();
 
+
         /// <summary>
         /// The node type that the cluster will have after the resize is complete.
         ///  

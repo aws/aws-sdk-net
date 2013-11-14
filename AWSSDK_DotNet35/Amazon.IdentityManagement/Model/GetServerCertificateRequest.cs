@@ -27,9 +27,10 @@ namespace Amazon.IdentityManagement.Model
     /// Container for the parameters to the GetServerCertificate operation.
     /// <para>Retrieves information about the specified server certificate.</para>
     /// </summary>
-    public partial class GetServerCertificateRequest : AmazonWebServiceRequest
+    public partial class GetServerCertificateRequest : AmazonIdentityManagementServiceRequest
     {
         private string serverCertificateName;
+
 
         /// <summary>
         /// The name of the server certificate you want to retrieve information about.

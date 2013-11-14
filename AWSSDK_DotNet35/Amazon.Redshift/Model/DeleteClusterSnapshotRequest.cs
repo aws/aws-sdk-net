@@ -30,10 +30,11 @@ namespace Amazon.Redshift.Model
     /// not delete your manual snapshots. You must delete manual snapshot explicitly to avoid getting charged. If other accounts are authorized to
     /// access the snapshot, you must revoke all of the authorizations before you can delete the snapshot. </para>
     /// </summary>
-    public partial class DeleteClusterSnapshotRequest : AmazonWebServiceRequest
+    public partial class DeleteClusterSnapshotRequest : AmazonRedshiftRequest
     {
         private string snapshotIdentifier;
         private string snapshotClusterIdentifier;
+
 
         /// <summary>
         /// The unique identifier of the manual snapshot to be deleted. Constraints: Must be the name of an existing snapshot that is in the
@@ -51,6 +52,12 @@ namespace Amazon.Redshift.Model
         {
             return this.snapshotIdentifier != null;
         }
+
+        /// <summary>
+        /// The unique identifier of the cluster the snapshot was created from. This parameter is required if your IAM user has a policy containing a
+        /// snapshot resource element that specifies anything other than * for the cluster name. Constraints: Must be the name of valid cluster.
+        ///  
+        /// </summary>
         public string SnapshotClusterIdentifier
         {
             get { return this.snapshotClusterIdentifier; }

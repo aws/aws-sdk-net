@@ -32,6 +32,7 @@ namespace Amazon.IdentityManagement.Model
         private StatusType status;
         private DateTime? createDate;
 
+
         /// <summary>
         /// Name of the user the key is associated with.
         ///  

@@ -41,10 +41,11 @@ namespace Amazon.IdentityManagement.Model
         private DateTime? createDate;
         private List<Role> roles = new List<Role>();
 
+
         /// <summary>
         /// Path to the instance profile. For more information about paths, see <a
-        /// href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM
-        /// Entities</a> in <i>Using AWS Identity and Access Management</i>.
+        /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in
+        /// <i>Using AWS Identity and Access Management</i>.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -103,8 +104,8 @@ namespace Amazon.IdentityManagement.Model
 
         /// <summary>
         /// The stable and unique string identifying the instance profile. For more information about IDs, see <a
-        /// href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM
-        /// Entities</a> in <i>Using AWS Identity and Access Management</i>.
+        /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in
+        /// <i>Using AWS Identity and Access Management</i>.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -134,8 +135,8 @@ namespace Amazon.IdentityManagement.Model
 
         /// <summary>
         /// The Amazon Resource Name (ARN) specifying the instance profile. For more information about ARNs and how to use them in policies, see <a
-        /// href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM
-        /// Entities</a> in <i>Using AWS Identity and Access Management</i>.
+        /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in
+        /// <i>Using AWS Identity and Access Management</i>.
         ///  
         /// <para>
         /// <b>Constraints:</b>

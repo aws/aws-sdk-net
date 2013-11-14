@@ -29,6 +29,7 @@ namespace Amazon.Redshift.Model
         private string vpcSecurityGroupId;
         private string status;
 
+
         /// <summary>
         /// 
         ///  

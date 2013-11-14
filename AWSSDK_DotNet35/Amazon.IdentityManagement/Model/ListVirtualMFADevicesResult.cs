@@ -30,6 +30,7 @@ namespace Amazon.IdentityManagement.Model
         private List<VirtualMFADevice> virtualMFADevices = new List<VirtualMFADevice>();
         private bool? isTruncated;
         private string marker;
+
         public List<VirtualMFADevice> VirtualMFADevices
         {
             get { return this.virtualMFADevices; }

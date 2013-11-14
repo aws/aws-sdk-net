@@ -28,10 +28,11 @@ namespace Amazon.IdentityManagement.Model
     /// <para>Retrieves the specified policy document for the specified user. The returned policy is URL-encoded according to RFC 3986. For more
     /// information about RFC 3986, go to <a href="http://www.faqs.org/rfcs/rfc3986.html" >http://www.faqs.org/rfcs/rfc3986.html</a> .</para>
     /// </summary>
-    public partial class GetUserPolicyRequest : AmazonWebServiceRequest
+    public partial class GetUserPolicyRequest : AmazonIdentityManagementServiceRequest
     {
         private string userName;
         private string policyName;
+
 
         /// <summary>
         /// Name of the user who the policy is associated with.

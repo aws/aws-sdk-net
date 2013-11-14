@@ -26,24 +26,25 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Container for the parameters to the CreateRole operation.
     /// <para>Creates a new role for your AWS account. For more information about roles, go to <a
-    /// href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/WorkingWithRoles.html" >Working with Roles</a> .
+    /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html" >Working with Roles</a> .
     /// For information about limitations on role names and the number of roles you can create, go to <a
-    /// href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?LimitationsOnEntities.html" >Limitations on IAM Entities</a> in
-    /// <i>Using AWS Identity and Access Management</i> .</para> <para>The policy grants permission to an EC2 instance to assume the role. The
-    /// policy is URL-encoded according to RFC 3986. For more information about RFC 3986, go to <a href="http://www.faqs.org/rfcs/rfc3986.html"
-    /// >http://www.faqs.org/rfcs/rfc3986.html</a> . Currently, only EC2 instances can assume roles.</para>
+    /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?LimitationsOnEntities.html" >Limitations on IAM Entities</a> in <i>Using
+    /// AWS Identity and Access Management</i> .</para> <para>The policy grants permission to an EC2 instance to assume the role. The policy is
+    /// URL-encoded according to RFC 3986. For more information about RFC 3986, go to <a href="http://www.faqs.org/rfcs/rfc3986.html"
+    /// >http://www.faqs.org/rfcs/rfc3986.html</a> .
+    /// Currently, only EC2 instances can assume roles.</para>
     /// </summary>
-    public partial class CreateRoleRequest : AmazonWebServiceRequest
+    public partial class CreateRoleRequest : AmazonIdentityManagementServiceRequest
     {
         private string path;
         private string roleName;
         private string assumeRolePolicyDocument;
 
+
         /// <summary>
         /// The path to the role. For more information about paths, see <a
-        /// href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM
-        /// Entities</a> in <i>Using AWS Identity and Access Management</i>. This parameter is optional. If it is not included, it defaults to a slash
-        /// (/).
+        /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in
+        /// <i>Using AWS Identity and Access Management</i>. This parameter is optional. If it is not included, it defaults to a slash (/).
         ///  
         /// <para>
         /// <b>Constraints:</b>

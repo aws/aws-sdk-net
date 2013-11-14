@@ -28,9 +28,10 @@ namespace Amazon.IdentityManagement.Model
     /// <para>Deletes the specified user. The user must not belong to any groups, have any keys or signing certificates, or have any attached
     /// policies.</para>
     /// </summary>
-    public partial class DeleteUserRequest : AmazonWebServiceRequest
+    public partial class DeleteUserRequest : AmazonIdentityManagementServiceRequest
     {
         private string userName;
+
 
         /// <summary>
         /// Name of the user to delete.

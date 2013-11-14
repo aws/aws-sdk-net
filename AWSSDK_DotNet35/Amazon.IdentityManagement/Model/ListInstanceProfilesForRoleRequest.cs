@@ -26,14 +26,15 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Container for the parameters to the ListInstanceProfilesForRole operation.
     /// <para>Lists the instance profiles that have the specified associated role. If there are none, the action returns an empty list. For more
-    /// information about instance profiles, go to <a href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/AboutInstanceProfiles.html"
-    /// >About Instance Profiles</a> .</para> <para>You can paginate the results using the <c>MaxItems</c> and <c>Marker</c> parameters.</para>
+    /// information about instance profiles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html" >About
+    /// Instance Profiles</a> .</para> <para>You can paginate the results using the <c>MaxItems</c> and <c>Marker</c> parameters.</para>
     /// </summary>
-    public partial class ListInstanceProfilesForRoleRequest : AmazonWebServiceRequest
+    public partial class ListInstanceProfilesForRoleRequest : AmazonIdentityManagementServiceRequest
     {
         private string roleName;
         private string marker;
         private int? maxItems;
+
 
         /// <summary>
         /// The name of the role to list instance profiles for.

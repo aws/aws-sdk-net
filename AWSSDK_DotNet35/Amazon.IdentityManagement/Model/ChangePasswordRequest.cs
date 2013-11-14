@@ -26,13 +26,14 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Container for the parameters to the ChangePassword operation.
     /// <para>Changes the password of the IAM user calling <c>ChangePassword</c> . The root account password is not affected by this action. For
-    /// information about modifying passwords, see <a href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/Using_ManagingLogins.html"
-    /// >Managing Passwords</a> .</para>
+    /// information about modifying passwords, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingLogins.html" >Managing
+    /// Passwords</a> .</para>
     /// </summary>
-    public partial class ChangePasswordRequest : AmazonWebServiceRequest
+    public partial class ChangePasswordRequest : AmazonIdentityManagementServiceRequest
     {
         private string oldPassword;
         private string newPassword;
+
         public string OldPassword
         {
             get { return this.oldPassword; }

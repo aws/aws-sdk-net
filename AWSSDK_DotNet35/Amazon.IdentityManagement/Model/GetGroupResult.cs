@@ -32,6 +32,7 @@ namespace Amazon.IdentityManagement.Model
         private bool? isTruncated;
         private string marker;
 
+
         /// <summary>
         /// Information about the group.
         ///  
