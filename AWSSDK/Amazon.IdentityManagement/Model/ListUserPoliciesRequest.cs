@@ -74,7 +74,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if UserName property is set
         internal bool IsSetUserName()
         {
-            return this.userName != null;       
+            return this.userName != null;
         }
 
         /// <summary>
@@ -117,12 +117,13 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;       
+            return this.marker != null;
         }
 
         /// <summary>
         /// Use this only when paginating results to indicate the maximum number of policy names you want in the response. If there are additional
-        /// policy names beyond the maximum you specify, the <c>IsTruncated</c> response element is <c>true</c>.
+        /// policy names beyond the maximum you specify, the <c>IsTruncated</c> response element is <c>true</c>. This parameter is optional. If you do
+        /// not include it, it defaults to 100.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -156,7 +157,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if MaxItems property is set
         internal bool IsSetMaxItems()
         {
-            return this.maxItems.HasValue;       
+            return this.maxItems.HasValue;
         }
     }
 }

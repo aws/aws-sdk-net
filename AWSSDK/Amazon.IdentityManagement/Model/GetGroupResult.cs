@@ -23,7 +23,7 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// <para>Contains the result of a successful invocation of the GetGroup action.</para>
     /// </summary>
-    public class GetGroupResult  
+    public partial class GetGroupResult
     {
         
         private Group group;
@@ -57,7 +57,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if Group property is set
         internal bool IsSetGroup()
         {
-            return this.group != null;       
+            return this.group != null;
         }
 
         /// <summary>
@@ -84,7 +84,7 @@ namespace Amazon.IdentityManagement.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Users collection
         /// </summary>
@@ -104,7 +104,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if Users property is set
         internal bool IsSetUsers()
         {
-            return this.users.Count > 0;       
+            return this.users.Count > 0;
         }
 
         /// <summary>
@@ -134,7 +134,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if IsTruncated property is set
         internal bool IsSetIsTruncated()
         {
-            return this.isTruncated.HasValue;       
+            return this.isTruncated.HasValue;
         }
 
         /// <summary>
@@ -177,7 +177,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;       
+            return this.marker != null;
         }
     }
 }

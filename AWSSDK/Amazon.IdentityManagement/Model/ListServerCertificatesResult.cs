@@ -23,7 +23,7 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// <para>Contains the result of a successful invocation of the ListServerCertificates action.</para>
     /// </summary>
-    public class ListServerCertificatesResult  
+    public partial class ListServerCertificatesResult
     {
         
         private List<ServerCertificateMetadata> serverCertificateMetadataList = new List<ServerCertificateMetadata>();
@@ -54,7 +54,7 @@ namespace Amazon.IdentityManagement.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the ServerCertificateMetadataList collection
         /// </summary>
@@ -74,7 +74,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if ServerCertificateMetadataList property is set
         internal bool IsSetServerCertificateMetadataList()
         {
-            return this.serverCertificateMetadataList.Count > 0;       
+            return this.serverCertificateMetadataList.Count > 0;
         }
 
         /// <summary>
@@ -104,7 +104,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if IsTruncated property is set
         internal bool IsSetIsTruncated()
         {
-            return this.isTruncated.HasValue;       
+            return this.isTruncated.HasValue;
         }
 
         /// <summary>
@@ -147,7 +147,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;       
+            return this.marker != null;
         }
     }
 }

@@ -27,9 +27,9 @@ namespace Amazon.IdentityManagement.Model
     /// Container for the parameters to the DeleteServerCertificate operation.
     /// <para>Deletes the specified server certificate.</para> <para><b>IMPORTANT:</b>If you are using a server certificate with Elastic Load
     /// Balancing, deleting the certificate could have implications for your application. If Elastic Load Balancing doesn't detect the deletion of
-    /// bound certificates, it may continue to use the certificates. This could cause Elastic Load Balancing to stop accepting traffic. We
-    /// recommend that you remove the reference to the certificate from Elastic Load Balancing before using this command to delete the certificate.
-    /// For more information, go to DeleteLoadBalancerListeners in the Elastic Load Balancing API Reference.</para>
+    /// bound certificates, it may continue to use the certificates. This could cause Elastic Load Balancing to stop accepting traffic. We recommend
+    /// that you remove the reference to the certificate from Elastic Load Balancing before using this command to delete the certificate. For more
+    /// information, go to DeleteLoadBalancerListeners in the Elastic Load Balancing API Reference.</para>
     /// </summary>
     /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.DeleteServerCertificate"/>
     public class DeleteServerCertificateRequest : AmazonWebServiceRequest
@@ -75,7 +75,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if ServerCertificateName property is set
         internal bool IsSetServerCertificateName()
         {
-            return this.serverCertificateName != null;       
+            return this.serverCertificateName != null;
         }
     }
 }

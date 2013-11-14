@@ -30,8 +30,8 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// instances registered with the load balancer that are in the removed Availability Zone go into the <i>OutOfService</i> state. Upon
     /// Availability Zone removal, the load balancer attempts to equally balance the traffic among its remaining usable Availability Zones. Trying
     /// to remove an Availability Zone that was not associated with the load balancer does nothing. </para> <para>For more information, see <a
-    /// href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_ShrinkLBApp04.html"> Disable an Availability Zone from a
-    /// Load-Balanced Application </a> in the <i>Elastic Load Balancing Developer Guide</i> .</para>
+    /// href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_ShrinkLBApp04.html" >Disable an Availability Zone from a
+    /// Load-Balanced Application</a> in the <i>Elastic Load Balancing Developer Guide</i> .</para>
     /// </summary>
     /// <seealso cref="Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancing.DisableAvailabilityZonesForLoadBalancer"/>
     public class DisableAvailabilityZonesForLoadBalancerRequest : AmazonWebServiceRequest

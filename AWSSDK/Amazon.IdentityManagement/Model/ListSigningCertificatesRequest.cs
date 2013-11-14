@@ -28,7 +28,7 @@ namespace Amazon.IdentityManagement.Model
     /// <para>Returns information about the signing certificates associated with the specified user. If there are none, the action returns an empty
     /// list.</para> <para>Although each user is limited to a small number of signing certificates, you can still paginate the results using the
     /// <c>MaxItems</c> and <c>Marker</c> parameters.</para> <para>If the <c>UserName</c> field is not specified, the user name is determined
-    /// implicitly based on the AWS Access Key ID used to sign the request. Because this action works for access keys under the AWS account, this
+    /// implicitly based on the AWS access key ID used to sign the request. Because this action works for access keys under the AWS account, this
     /// API can be used to manage root credentials even if the AWS account has no associated users.</para>
     /// </summary>
     /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.ListSigningCertificates"/>
@@ -77,7 +77,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if UserName property is set
         internal bool IsSetUserName()
         {
-            return this.userName != null;       
+            return this.userName != null;
         }
 
         /// <summary>
@@ -120,12 +120,13 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;       
+            return this.marker != null;
         }
 
         /// <summary>
         /// Use this only when paginating results to indicate the maximum number of certificate IDs you want in the response. If there are additional
-        /// certificate IDs beyond the maximum you specify, the <c>IsTruncated</c> response element is <c>true</c>.
+        /// certificate IDs beyond the maximum you specify, the <c>IsTruncated</c> response element is <c>true</c>. This parameter is optional. If you
+        /// do not include it, it defaults to 100.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -159,7 +160,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if MaxItems property is set
         internal bool IsSetMaxItems()
         {
-            return this.maxItems.HasValue;       
+            return this.maxItems.HasValue;
         }
     }
 }

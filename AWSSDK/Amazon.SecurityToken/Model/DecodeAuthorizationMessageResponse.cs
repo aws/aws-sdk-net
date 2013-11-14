@@ -30,7 +30,8 @@ namespace Amazon.SecurityToken.Model
 
         /// <summary>
         /// Gets and sets the DecodeAuthorizationMessageResult property.
-        /// 
+        /// A document that contains additional information about the authorization status of a request from an encoded message that is returned in
+        /// response to an AWS request.
         /// </summary>
         public DecodeAuthorizationMessageResult DecodeAuthorizationMessageResult
         {

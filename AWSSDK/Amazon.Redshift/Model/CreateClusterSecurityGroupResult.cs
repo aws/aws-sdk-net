@@ -23,7 +23,7 @@ namespace Amazon.Redshift.Model
     /// <summary>
     /// The results from the CreateClusterSecurityGroup action.
     /// </summary>
-    public class CreateClusterSecurityGroupResult
+    public partial class CreateClusterSecurityGroupResult
     {
         private ClusterSecurityGroup clusterSecurityGroupValue;
 

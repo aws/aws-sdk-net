@@ -24,7 +24,7 @@ namespace Amazon.IdentityManagement.Model
     /// <para>The <c>MFADevice</c> data type contains information about an MFA device.</para> <para> This data type is used as a response element in
     /// the action ListMFADevices. </para>
     /// </summary>
-    public class MFADevice  
+    public partial class MFADevice
     {
         
         private string userName;
@@ -70,7 +70,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if UserName property is set
         internal bool IsSetUserName()
         {
-            return this.userName != null;       
+            return this.userName != null;
         }
 
         /// <summary>
@@ -112,7 +112,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if SerialNumber property is set
         internal bool IsSetSerialNumber()
         {
-            return this.serialNumber != null;       
+            return this.serialNumber != null;
         }
 
         /// <summary>
@@ -141,7 +141,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if EnableDate property is set
         internal bool IsSetEnableDate()
         {
-            return this.enableDate.HasValue;       
+            return this.enableDate.HasValue;
         }
     }
 }

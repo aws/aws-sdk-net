@@ -25,8 +25,14 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateRole operation.
-    /// <para>Creates a new role for your AWS account.</para> <para>For information about limitations on the number of roles you can create, see
-    /// Limitations on IAM Entities in <i>Using AWS Identity and Access Management</i> .</para>
+    /// <para>Creates a new role for your AWS account. For more information about roles, go to <a
+    /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html" >Working with Roles</a> .
+    /// For information about limitations on role names and the number of roles you can create, go to <a
+    /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?LimitationsOnEntities.html" >Limitations on IAM Entities</a> in <i>Using
+    /// AWS Identity and Access Management</i> .</para> <para>The policy grants permission to an EC2 instance to assume the role. The policy is
+    /// URL-encoded according to RFC 3986. For more information about RFC 3986, go to <a href="http://www.faqs.org/rfcs/rfc3986.html"
+    /// >http://www.faqs.org/rfcs/rfc3986.html</a> .
+    /// Currently, only EC2 instances can assume roles.</para>
     /// </summary>
     /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.CreateRole"/>
     public class CreateRoleRequest : AmazonWebServiceRequest
@@ -37,9 +43,8 @@ namespace Amazon.IdentityManagement.Model
 
         /// <summary>
         /// The path to the role. For more information about paths, see <a
-        /// href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM
-        /// Entities</a> in <i>Using AWS Identity and Access Management</i>. This parameter is optional. If it is not included, it defaults to a slash
-        /// (/).
+        /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in
+        /// <i>Using AWS Identity and Access Management</i>. This parameter is optional. If it is not included, it defaults to a slash (/).
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -77,7 +82,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if Path property is set
         internal bool IsSetPath()
         {
-            return this.path != null;       
+            return this.path != null;
         }
 
         /// <summary>
@@ -119,11 +124,11 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if RoleName property is set
         internal bool IsSetRoleName()
         {
-            return this.roleName != null;       
+            return this.roleName != null;
         }
 
         /// <summary>
-        /// The policy govering by who and under what conditions the role can be assumed.
+        /// The policy that grants an entity permission to assume the role.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -161,7 +166,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if AssumeRolePolicyDocument property is set
         internal bool IsSetAssumeRolePolicyDocument()
         {
-            return this.assumeRolePolicyDocument != null;       
+            return this.assumeRolePolicyDocument != null;
         }
     }
 }

@@ -21,15 +21,16 @@ using System.IO;
 namespace Amazon.SecurityToken.Model
 {
     /// <summary>
-    /// 
+    /// <para>A document that contains additional information about the authorization status of a request from an encoded message that is returned
+    /// in response to an AWS request. </para>
     /// </summary>
-    public class DecodeAuthorizationMessageResult
+    public partial class DecodeAuthorizationMessageResult
     {
         
         private string decodedMessage;
 
         /// <summary>
-        /// An XML document that contains the decoded message.
+        /// An XML document that contains the decoded message. For more information, see <c>DecodeAuthorizationMessage</c>.
         ///  
         /// </summary>
         public string DecodedMessage

@@ -27,9 +27,9 @@ namespace Amazon.IdentityManagement.Model
     /// Container for the parameters to the UpdateUser operation.
     /// <para>Updates the name and/or the path of the specified user.</para> <para><b>IMPORTANT:</b> You should understand the implications of
     /// changing a user's path or name. For more information, see Renaming Users and Groups in Using AWS Identity and Access Management. </para>
-    /// <para><b>NOTE:</b>To change a user name the requester must have appropriate permissions on both the source object and the target object.
-    /// For example, to change Bob to Robert, the entity making the request must have permission on Bob and Robert, or must have permission on all
-    /// (*). For more information about permissions, see Permissions and Policies. </para>
+    /// <para><b>NOTE:</b>To change a user name the requester must have appropriate permissions on both the source object and the target object. For
+    /// example, to change Bob to Robert, the entity making the request must have permission on Bob and Robert, or must have permission on all (*).
+    /// For more information about permissions, see Permissions and Policies. </para>
     /// </summary>
     /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.UpdateUser"/>
     public class UpdateUserRequest : AmazonWebServiceRequest
@@ -77,7 +77,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if UserName property is set
         internal bool IsSetUserName()
         {
-            return this.userName != null;       
+            return this.userName != null;
         }
 
         /// <summary>
@@ -119,7 +119,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if NewPath property is set
         internal bool IsSetNewPath()
         {
-            return this.newPath != null;       
+            return this.newPath != null;
         }
 
         /// <summary>
@@ -161,7 +161,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if NewUserName property is set
         internal bool IsSetNewUserName()
         {
-            return this.newUserName != null;       
+            return this.newUserName != null;
         }
     }
 }

@@ -23,7 +23,7 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// <para>The <c>VirtualMFADevice</c> data type contains information about a virtual MFA device.</para>
     /// </summary>
-    public class VirtualMFADevice  
+    public partial class VirtualMFADevice
     {
         
         private string serialNumber;
@@ -71,7 +71,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if SerialNumber property is set
         internal bool IsSetSerialNumber()
         {
-            return this.serialNumber != null;       
+            return this.serialNumber != null;
         }
 
         /// <summary>
@@ -101,7 +101,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if Base32StringSeed property is set
         internal bool IsSetBase32StringSeed()
         {
-            return this.base32StringSeed != null;       
+            return this.base32StringSeed != null;
         }
 
         /// <summary>
@@ -132,7 +132,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if QRCodePNG property is set
         internal bool IsSetQRCodePNG()
         {
-            return this.qRCodePNG != null;       
+            return this.qRCodePNG != null;
         }
 
         /// <summary>
@@ -162,7 +162,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if User property is set
         internal bool IsSetUser()
         {
-            return this.user != null;       
+            return this.user != null;
         }
         public DateTime EnableDate
         {
@@ -186,7 +186,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if EnableDate property is set
         internal bool IsSetEnableDate()
         {
-            return this.enableDate.HasValue;       
+            return this.enableDate.HasValue;
         }
     }
 }

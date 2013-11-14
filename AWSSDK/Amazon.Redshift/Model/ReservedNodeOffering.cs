@@ -23,7 +23,7 @@ namespace Amazon.Redshift.Model
     /// <summary>
     /// <para>Describes a reserved node offering.</para>
     /// </summary>
-    public class ReservedNodeOffering
+    public partial class ReservedNodeOffering
     {
         
         private string reservedNodeOfferingId;

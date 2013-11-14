@@ -23,7 +23,7 @@ namespace Amazon.Redshift.Model
     /// <summary>
     /// <para> Describes a subnet. </para>
     /// </summary>
-    public class Subnet
+    public partial class Subnet
     {
         
         private string subnetIdentifier;

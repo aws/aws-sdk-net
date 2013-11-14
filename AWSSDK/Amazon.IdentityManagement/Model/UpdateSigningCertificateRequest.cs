@@ -27,9 +27,10 @@ namespace Amazon.IdentityManagement.Model
     /// Container for the parameters to the UpdateSigningCertificate operation.
     /// <para>Changes the status of the specified signing certificate from active to disabled, or vice versa. This action can be used to disable a
     /// user's signing certificate as part of a certificate rotation work flow.</para> <para>If the <c>UserName</c> field is not specified, the
-    /// UserName is determined implicitly based on the AWS Access Key ID used to sign the request. Because this action works for access keys under
+    /// UserName is determined implicitly based on the AWS access key ID used to sign the request. Because this action works for access keys under
     /// the AWS account, this API can be used to manage root credentials even if the AWS account has no associated users.</para> <para>For
-    /// information about rotating certificates, see Managing Keys and Certificates in <i>Using AWS Identity and Access Management</i> .</para>
+    /// information about rotating certificates, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?ManagingCredentials.html"
+    /// >Managing Keys and Certificates</a> in <i>Using AWS Identity and Access Management</i> .</para>
     /// </summary>
     /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.UpdateSigningCertificate"/>
     public class UpdateSigningCertificateRequest : AmazonWebServiceRequest
@@ -77,7 +78,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if UserName property is set
         internal bool IsSetUserName()
         {
-            return this.userName != null;       
+            return this.userName != null;
         }
 
         /// <summary>
@@ -119,7 +120,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if CertificateId property is set
         internal bool IsSetCertificateId()
         {
-            return this.certificateId != null;       
+            return this.certificateId != null;
         }
 
         /// <summary>
@@ -158,7 +159,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if Status property is set
         internal bool IsSetStatus()
         {
-            return this.status != null;       
+            return this.status != null;
         }
     }
 }

@@ -23,7 +23,7 @@ namespace Amazon.Redshift.Model
     /// <summary>
     /// The results from the DeleteClusterSnapshot action.
     /// </summary>
-    public class DeleteClusterSnapshotResult
+    public partial class DeleteClusterSnapshotResult
     {
         private Snapshot snapshotValue;
 

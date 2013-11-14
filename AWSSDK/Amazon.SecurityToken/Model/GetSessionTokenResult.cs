@@ -21,9 +21,10 @@ using System.IO;
 namespace Amazon.SecurityToken.Model
 {
     /// <summary>
-    /// <para>Contains the result of a successful invocation of the GetSessionToken action.</para>
+    /// <para> Contains the result of a successful call to the GetSessionToken action, including temporary AWS credentials that can be used to make
+    /// AWS requests. </para>
     /// </summary>
-    public class GetSessionTokenResult
+    public partial class GetSessionTokenResult
     {
         
         private Credentials credentials;

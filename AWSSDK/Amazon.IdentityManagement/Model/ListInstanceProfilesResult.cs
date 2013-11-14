@@ -21,9 +21,9 @@ using System.IO;
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// <para>Contains the result of a successful invocation of the ListInstanceProfilesResponse action.</para>
+    /// <para>Contains the result of a successful invocation of the ListInstanceProfiles action.</para>
     /// </summary>
-    public class ListInstanceProfilesResult  
+    public partial class ListInstanceProfilesResult
     {
         
         private List<InstanceProfile> instanceProfiles = new List<InstanceProfile>();
@@ -54,7 +54,7 @@ namespace Amazon.IdentityManagement.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the InstanceProfiles collection
         /// </summary>
@@ -74,7 +74,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if InstanceProfiles property is set
         internal bool IsSetInstanceProfiles()
         {
-            return this.instanceProfiles.Count > 0;       
+            return this.instanceProfiles.Count > 0;
         }
 
         /// <summary>
@@ -104,7 +104,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if IsTruncated property is set
         internal bool IsSetIsTruncated()
         {
-            return this.isTruncated.HasValue;       
+            return this.isTruncated.HasValue;
         }
 
         /// <summary>
@@ -147,7 +147,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;       
+            return this.marker != null;
         }
     }
 }

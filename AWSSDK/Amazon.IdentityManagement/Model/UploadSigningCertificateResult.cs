@@ -23,7 +23,7 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// <para>Contains the result of a successful invocation of the UploadSigningCertificate action.</para>
     /// </summary>
-    public class UploadSigningCertificateResult  
+    public partial class UploadSigningCertificateResult
     {
         
         private SigningCertificate certificate;
@@ -54,7 +54,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if Certificate property is set
         internal bool IsSetCertificate()
         {
-            return this.certificate != null;       
+            return this.certificate != null;
         }
     }
 }

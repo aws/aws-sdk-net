@@ -22,13 +22,14 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
      /// <summary>
      ///   UploadServerCertificateResult Unmarshaller
      /// </summary>
-    internal class UploadServerCertificateResultUnmarshaller : IUnmarshaller<UploadServerCertificateResult, XmlUnmarshallerContext> 
+    internal class UploadServerCertificateResultUnmarshaller : IUnmarshaller<UploadServerCertificateResult, XmlUnmarshallerContext>, IUnmarshaller<UploadServerCertificateResult, JsonUnmarshallerContext> 
     {
         public UploadServerCertificateResult Unmarshall(XmlUnmarshallerContext context) 
         {
             UploadServerCertificateResult uploadServerCertificateResult = new UploadServerCertificateResult();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -52,6 +53,11 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 
 
             return uploadServerCertificateResult;
+        }
+
+        public UploadServerCertificateResult Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static UploadServerCertificateResultUnmarshaller instance;

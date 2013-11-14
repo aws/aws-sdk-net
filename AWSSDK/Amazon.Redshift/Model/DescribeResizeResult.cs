@@ -23,7 +23,7 @@ namespace Amazon.Redshift.Model
     /// <summary>
     /// <para>Describes the result of a cluster resize operation.</para>
     /// </summary>
-    public class DescribeResizeResult
+    public partial class DescribeResizeResult
     {
         
         private string targetNodeType;

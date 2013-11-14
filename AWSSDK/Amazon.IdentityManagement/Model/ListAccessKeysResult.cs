@@ -23,7 +23,7 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// <para>Contains the result of a successful invocation of the ListAccessKeys action.</para>
     /// </summary>
-    public class ListAccessKeysResult  
+    public partial class ListAccessKeysResult
     {
         
         private List<AccessKeyMetadata> accessKeyMetadata = new List<AccessKeyMetadata>();
@@ -54,7 +54,7 @@ namespace Amazon.IdentityManagement.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the AccessKeyMetadata collection
         /// </summary>
@@ -74,7 +74,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if AccessKeyMetadata property is set
         internal bool IsSetAccessKeyMetadata()
         {
-            return this.accessKeyMetadata.Count > 0;       
+            return this.accessKeyMetadata.Count > 0;
         }
 
         /// <summary>
@@ -104,7 +104,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if IsTruncated property is set
         internal bool IsSetIsTruncated()
         {
-            return this.isTruncated.HasValue;       
+            return this.isTruncated.HasValue;
         }
 
         /// <summary>
@@ -147,7 +147,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;       
+            return this.marker != null;
         }
     }
 }

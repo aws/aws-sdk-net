@@ -25,7 +25,10 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the GetInstanceProfile operation.
-    /// <para>Retrieves information about the specified instance profile, including the instance profile's path, GUID, ARN, and role.</para>
+    /// <para>Retrieves information about the specified instance profile, including the instance profile's path, GUID, ARN, and role. For more
+    /// information about instance profiles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html" >About
+    /// Instance Profiles</a> . For more information about ARNs, go to <a
+    /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html#Identifiers_ARNs" >ARNs</a> .</para>
     /// </summary>
     /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.GetInstanceProfile"/>
     public class GetInstanceProfileRequest : AmazonWebServiceRequest
@@ -71,7 +74,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if InstanceProfileName property is set
         internal bool IsSetInstanceProfileName()
         {
-            return this.instanceProfileName != null;       
+            return this.instanceProfileName != null;
         }
     }
 }

@@ -23,7 +23,7 @@ namespace Amazon.Redshift.Model
     /// <summary>
     /// The results from the DeleteCluster action.
     /// </summary>
-    public class DeleteClusterResult
+    public partial class DeleteClusterResult
     {
         private Cluster clusterValue;
 

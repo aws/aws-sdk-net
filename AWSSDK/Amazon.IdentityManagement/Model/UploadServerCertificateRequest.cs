@@ -27,11 +27,11 @@ namespace Amazon.IdentityManagement.Model
     /// Container for the parameters to the UploadServerCertificate operation.
     /// <para>Uploads a server certificate entity for the AWS account. The server certificate entity includes a public key certificate, a private
     /// key, and an optional certificate chain, which should all be PEM-encoded.</para> <para>For information about the number of server
-    /// certificates you can upload, see Limitations on IAM Entities in <i>Using AWS Identity and Access Management</i> .</para>
-    /// <para><b>NOTE:</b>Because the body of the public key certificate, private key, and the certificate chain can be large, you should use POST
-    /// rather than GET when calling UploadServerCertificate. For information about setting up signatures and authorization through the API, go to
-    /// Signing AWS API Requests in the AWS General Reference. For general information about using the Query API with IAM, go to Making Query
-    /// Requests in Using IAM.</para>
+    /// certificates you can upload, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?LimitationsOnEntities.html"
+    /// >Limitations on IAM Entities</a> in <i>Using AWS Identity and Access Management</i> .</para> <para><b>NOTE:</b>Because the body of the
+    /// public key certificate, private key, and the certificate chain can be large, you should use POST rather than GET when calling
+    /// UploadServerCertificate. For information about setting up signatures and authorization through the API, go to Signing AWS API Requests in
+    /// the AWS General Reference. For general information about using the Query API with IAM, go to Making Query Requests in Using IAM.</para>
     /// </summary>
     /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.UploadServerCertificate"/>
     public class UploadServerCertificateRequest : AmazonWebServiceRequest
@@ -44,9 +44,8 @@ namespace Amazon.IdentityManagement.Model
 
         /// <summary>
         /// The path for the server certificate. For more information about paths, see <a
-        /// href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM
-        /// Entities</a> in <i>Using AWS Identity and Access Management</i>. This parameter is optional. If it is not included, it defaults to a slash
-        /// (/).
+        /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in
+        /// <i>Using AWS Identity and Access Management</i>. This parameter is optional. If it is not included, it defaults to a slash (/).
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -84,7 +83,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if Path property is set
         internal bool IsSetPath()
         {
-            return this.path != null;       
+            return this.path != null;
         }
 
         /// <summary>
@@ -126,7 +125,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if ServerCertificateName property is set
         internal bool IsSetServerCertificateName()
         {
-            return this.serverCertificateName != null;       
+            return this.serverCertificateName != null;
         }
 
         /// <summary>
@@ -168,7 +167,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if CertificateBody property is set
         internal bool IsSetCertificateBody()
         {
-            return this.certificateBody != null;       
+            return this.certificateBody != null;
         }
 
         /// <summary>
@@ -210,7 +209,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if PrivateKey property is set
         internal bool IsSetPrivateKey()
         {
-            return this.privateKey != null;       
+            return this.privateKey != null;
         }
 
         /// <summary>
@@ -252,7 +251,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if CertificateChain property is set
         internal bool IsSetCertificateChain()
         {
-            return this.certificateChain != null;       
+            return this.certificateChain != null;
         }
     }
 }

@@ -23,7 +23,7 @@ namespace Amazon.Redshift.Model
     /// <summary>
     /// <para> Contains the output from the DescribeClusterParameters action. </para>
     /// </summary>
-    public class DescribeClusterParametersResult
+    public partial class DescribeClusterParametersResult
     {
         
         private List<Parameter> parameters = new List<Parameter>();

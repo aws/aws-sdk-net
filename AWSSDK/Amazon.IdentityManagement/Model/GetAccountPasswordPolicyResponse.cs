@@ -30,18 +30,18 @@ namespace Amazon.IdentityManagement.Model
 
         /// <summary>
         /// Gets and sets the GetAccountPasswordPolicyResult property.
-        /// 
+        /// Contains the result of a successful invocation of the GetAccountPasswordPolicy action.
         /// </summary>
         public GetAccountPasswordPolicyResult GetAccountPasswordPolicyResult
         {
-            get 
+            get
             {
                 if(this.getAccountPasswordPolicyResult == null)
                 {
                     this.getAccountPasswordPolicyResult = new GetAccountPasswordPolicyResult();
                 }
 
-                return this.getAccountPasswordPolicyResult; 
+                return this.getAccountPasswordPolicyResult;
             }
             set { this.getAccountPasswordPolicyResult = value; }
         }

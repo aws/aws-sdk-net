@@ -25,8 +25,8 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the GetUser operation.
-    /// <para>Retrieves information about the specified user, including the user's path, GUID, and ARN.</para> <para>If you do not specify a user
-    /// name, IAM determines the user name implicitly based on the AWS Access Key ID signing the request.</para>
+    /// <para>Retrieves information about the specified user, including the user's path, unique ID, and ARN.</para> <para>If you do not specify a
+    /// user name, IAM determines the user name implicitly based on the AWS access key ID signing the request.</para>
     /// </summary>
     /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.GetUser"/>
     public class GetUserRequest : AmazonWebServiceRequest
@@ -72,7 +72,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if UserName property is set
         internal bool IsSetUserName()
         {
-            return this.userName != null;       
+            return this.userName != null;
         }
     }
 }

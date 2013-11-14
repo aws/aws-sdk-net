@@ -23,7 +23,7 @@ namespace Amazon.Redshift.Model
     /// <summary>
     /// The results from the RevokeClusterSecurityGroupIngress action.
     /// </summary>
-    public class RevokeClusterSecurityGroupIngressResult
+    public partial class RevokeClusterSecurityGroupIngressResult
     {
         private ClusterSecurityGroup clusterSecurityGroupValue;
 

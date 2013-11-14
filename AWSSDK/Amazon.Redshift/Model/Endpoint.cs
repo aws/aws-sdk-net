@@ -23,7 +23,7 @@ namespace Amazon.Redshift.Model
     /// <summary>
     /// <para>Describes a connection endpoint.</para>
     /// </summary>
-    public class Endpoint
+    public partial class Endpoint
     {
         
         private string address;

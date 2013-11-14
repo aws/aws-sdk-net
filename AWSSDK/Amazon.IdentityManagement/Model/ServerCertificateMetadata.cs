@@ -24,7 +24,7 @@ namespace Amazon.IdentityManagement.Model
     /// <para>ServerCertificateMetadata contains information about a server certificate without its certificate body, certificate chain, and private
     /// key.</para> <para>This data type is used as a response element in the action UploadServerCertificate and ListServerCertificates.</para>
     /// </summary>
-    public class ServerCertificateMetadata  
+    public partial class ServerCertificateMetadata
     {
         
         private string path;
@@ -35,8 +35,8 @@ namespace Amazon.IdentityManagement.Model
 
         /// <summary>
         /// Path to the server certificate. For more information about paths, see <a
-        /// href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM
-        /// Entities</a> in <i>Using AWS Identity and Access Management</i>.
+        /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in
+        /// <i>Using AWS Identity and Access Management</i>.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -74,7 +74,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if Path property is set
         internal bool IsSetPath()
         {
-            return this.path != null;       
+            return this.path != null;
         }
 
         /// <summary>
@@ -116,13 +116,13 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if ServerCertificateName property is set
         internal bool IsSetServerCertificateName()
         {
-            return this.serverCertificateName != null;       
+            return this.serverCertificateName != null;
         }
 
         /// <summary>
         /// The stable and unique string identifying the server certificate. For more information about IDs, see <a
-        /// href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM
-        /// Entities</a> in <i>Using AWS Identity and Access Management</i>.
+        /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in
+        /// <i>Using AWS Identity and Access Management</i>.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -160,13 +160,13 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if ServerCertificateId property is set
         internal bool IsSetServerCertificateId()
         {
-            return this.serverCertificateId != null;       
+            return this.serverCertificateId != null;
         }
 
         /// <summary>
         /// The Amazon Resource Name (ARN) specifying the server certificate. For more information about ARNs and how to use them in policies, see <a
-        /// href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM
-        /// Entities</a> in <i>Using AWS Identity and Access Management</i>.
+        /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in
+        /// <i>Using AWS Identity and Access Management</i>.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -200,7 +200,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if Arn property is set
         internal bool IsSetArn()
         {
-            return this.arn != null;       
+            return this.arn != null;
         }
 
         /// <summary>
@@ -229,7 +229,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if UploadDate property is set
         internal bool IsSetUploadDate()
         {
-            return this.uploadDate.HasValue;       
+            return this.uploadDate.HasValue;
         }
     }
 }

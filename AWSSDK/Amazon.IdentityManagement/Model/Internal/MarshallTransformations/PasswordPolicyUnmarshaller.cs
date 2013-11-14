@@ -22,13 +22,14 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
      /// <summary>
      ///   PasswordPolicy Unmarshaller
      /// </summary>
-    internal class PasswordPolicyUnmarshaller : IUnmarshaller<PasswordPolicy, XmlUnmarshallerContext> 
+    internal class PasswordPolicyUnmarshaller : IUnmarshaller<PasswordPolicy, XmlUnmarshallerContext>, IUnmarshaller<PasswordPolicy, JsonUnmarshallerContext> 
     {
         public PasswordPolicy Unmarshall(XmlUnmarshallerContext context) 
         {
             PasswordPolicy passwordPolicy = new PasswordPolicy();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -71,6 +72,18 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                         passwordPolicy.AllowUsersToChangePassword = BoolUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
+                    } 
+                    if (context.TestExpression("ExpirePasswords", targetDepth))
+                    {
+                        passwordPolicy.ExpirePasswords = BoolUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
+                    } 
+                    if (context.TestExpression("MaxPasswordAge", targetDepth))
+                    {
+                        passwordPolicy.MaxPasswordAge = IntUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
@@ -82,6 +95,11 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 
 
             return passwordPolicy;
+        }
+
+        public PasswordPolicy Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static PasswordPolicyUnmarshaller instance;

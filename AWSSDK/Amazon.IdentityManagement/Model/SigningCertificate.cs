@@ -24,7 +24,7 @@ namespace Amazon.IdentityManagement.Model
     /// <para>The SigningCertificate data type contains information about an X.509 signing certificate.</para> <para> This data type is used as a
     /// response element in the actions UploadSigningCertificate and ListSigningCertificates. </para>
     /// </summary>
-    public class SigningCertificate  
+    public partial class SigningCertificate
     {
         
         private string userName;
@@ -72,7 +72,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if UserName property is set
         internal bool IsSetUserName()
         {
-            return this.userName != null;       
+            return this.userName != null;
         }
 
         /// <summary>
@@ -114,7 +114,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if CertificateId property is set
         internal bool IsSetCertificateId()
         {
-            return this.certificateId != null;       
+            return this.certificateId != null;
         }
 
         /// <summary>
@@ -156,7 +156,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if CertificateBody property is set
         internal bool IsSetCertificateBody()
         {
-            return this.certificateBody != null;       
+            return this.certificateBody != null;
         }
 
         /// <summary>
@@ -194,7 +194,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if Status property is set
         internal bool IsSetStatus()
         {
-            return this.status != null;       
+            return this.status != null;
         }
 
         /// <summary>
@@ -223,7 +223,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if UploadDate property is set
         internal bool IsSetUploadDate()
         {
-            return this.uploadDate.HasValue;       
+            return this.uploadDate.HasValue;
         }
     }
 }

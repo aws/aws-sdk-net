@@ -570,7 +570,7 @@ namespace Amazon.ElasticTranscoder
         /// 
         /// <returns>Returns a TestRoleResult from AmazonElasticTranscoder.</returns>
         TestRoleResponse EndTestRole(IAsyncResult asyncResult);
-                
+        
         #endregion
         
     

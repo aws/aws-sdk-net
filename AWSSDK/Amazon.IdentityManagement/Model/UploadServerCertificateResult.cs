@@ -23,7 +23,7 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// <para>Contains the result of a successful invocation of the UploadServerCertificate action.</para>
     /// </summary>
-    public class UploadServerCertificateResult  
+    public partial class UploadServerCertificateResult
     {
         
         private ServerCertificateMetadata serverCertificateMetadata;
@@ -54,7 +54,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if ServerCertificateMetadata property is set
         internal bool IsSetServerCertificateMetadata()
         {
-            return this.serverCertificateMetadata != null;       
+            return this.serverCertificateMetadata != null;
         }
     }
 }

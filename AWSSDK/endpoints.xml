@@ -21,6 +21,12 @@
         <Hostname>cloudsearch.us-east-1.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
+        <ServiceName>cloudtrail</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>cloudtrail.us-east-1.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
         <ServiceName>monitoring</ServiceName>
         <Http>true</Http>
         <Https>true</Https>
@@ -355,6 +361,12 @@
         <Http>false</Http>
         <Https>true</Https>
         <Hostname>cloudsearch.us-west-2.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
+        <ServiceName>cloudtrail</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>cloudtrail.us-west-2.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
         <ServiceName>monitoring</ServiceName>
@@ -1369,6 +1381,12 @@
       <RegionName>us-west-2</RegionName>
       <RegionName>eu-west-1</RegionName>
       <RegionName>ap-southeast-1</RegionName>
+    </Service>
+    <Service>
+      <Name>cloudtrail</Name>
+      <FullName>AWS CloudTrail</FullName>
+      <RegionName>us-east-1</RegionName>
+      <RegionName>us-west-2</RegionName>
     </Service>
     <Service>
       <Name>monitoring</Name>

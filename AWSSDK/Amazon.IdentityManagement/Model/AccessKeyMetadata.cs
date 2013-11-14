@@ -24,7 +24,7 @@ namespace Amazon.IdentityManagement.Model
     /// <para>The AccessKey data type contains information about an AWS access key, without its secret key.</para> <para> This data type is used as
     /// a response element in the action ListAccessKeys. </para>
     /// </summary>
-    public class AccessKeyMetadata  
+    public partial class AccessKeyMetadata
     {
         
         private string userName;
@@ -71,7 +71,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if UserName property is set
         internal bool IsSetUserName()
         {
-            return this.userName != null;       
+            return this.userName != null;
         }
 
         /// <summary>
@@ -113,7 +113,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if AccessKeyId property is set
         internal bool IsSetAccessKeyId()
         {
-            return this.accessKeyId != null;       
+            return this.accessKeyId != null;
         }
 
         /// <summary>
@@ -151,7 +151,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if Status property is set
         internal bool IsSetStatus()
         {
-            return this.status != null;       
+            return this.status != null;
         }
 
         /// <summary>
@@ -180,7 +180,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if CreateDate property is set
         internal bool IsSetCreateDate()
         {
-            return this.createDate.HasValue;       
+            return this.createDate.HasValue;
         }
     }
 }

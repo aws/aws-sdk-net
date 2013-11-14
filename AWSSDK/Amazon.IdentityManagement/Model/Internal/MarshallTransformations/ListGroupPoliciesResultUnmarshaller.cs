@@ -22,13 +22,14 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
      /// <summary>
      ///   ListGroupPoliciesResult Unmarshaller
      /// </summary>
-    internal class ListGroupPoliciesResultUnmarshaller : IUnmarshaller<ListGroupPoliciesResult, XmlUnmarshallerContext> 
+    internal class ListGroupPoliciesResultUnmarshaller : IUnmarshaller<ListGroupPoliciesResult, XmlUnmarshallerContext>, IUnmarshaller<ListGroupPoliciesResult, JsonUnmarshallerContext> 
     {
         public ListGroupPoliciesResult Unmarshall(XmlUnmarshallerContext context) 
         {
             ListGroupPoliciesResult listGroupPoliciesResult = new ListGroupPoliciesResult();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -64,6 +65,11 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 
 
             return listGroupPoliciesResult;
+        }
+
+        public ListGroupPoliciesResult Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static ListGroupPoliciesResultUnmarshaller instance;

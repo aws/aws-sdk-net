@@ -23,7 +23,7 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// <para>Contains the result of a successful invocation of the CreateGroup action.</para>
     /// </summary>
-    public class CreateGroupResult  
+    public partial class CreateGroupResult
     {
         
         private Group group;
@@ -54,7 +54,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if Group property is set
         internal bool IsSetGroup()
         {
-            return this.group != null;       
+            return this.group != null;
         }
     }
 }

@@ -23,7 +23,7 @@ namespace Amazon.Redshift.Model
     /// <summary>
     /// <para> Contains the output from the DescribeClusterVersions action. </para>
     /// </summary>
-    public class DescribeClusterVersionsResult
+    public partial class DescribeClusterVersionsResult
     {
         
         private string marker;

@@ -23,7 +23,7 @@ namespace Amazon.Redshift.Model
     /// <summary>
     /// The results from the CreateCluster action.
     /// </summary>
-    public class CreateClusterResult
+    public partial class CreateClusterResult
     {
         private Cluster clusterValue;
 

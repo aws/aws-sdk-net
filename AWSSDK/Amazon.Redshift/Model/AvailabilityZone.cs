@@ -23,7 +23,7 @@ namespace Amazon.Redshift.Model
     /// <summary>
     /// <para> Describes an availability zone. </para>
     /// </summary>
-    public class AvailabilityZone
+    public partial class AvailabilityZone
     {
         
         private string name;

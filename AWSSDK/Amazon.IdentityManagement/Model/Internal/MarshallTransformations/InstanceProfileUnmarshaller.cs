@@ -22,13 +22,14 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
      /// <summary>
      ///   InstanceProfile Unmarshaller
      /// </summary>
-    internal class InstanceProfileUnmarshaller : IUnmarshaller<InstanceProfile, XmlUnmarshallerContext> 
+    internal class InstanceProfileUnmarshaller : IUnmarshaller<InstanceProfile, XmlUnmarshallerContext>, IUnmarshaller<InstanceProfile, JsonUnmarshallerContext> 
     {
         public InstanceProfile Unmarshall(XmlUnmarshallerContext context) 
         {
             InstanceProfile instanceProfile = new InstanceProfile();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -82,6 +83,11 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 
 
             return instanceProfile;
+        }
+
+        public InstanceProfile Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static InstanceProfileUnmarshaller instance;

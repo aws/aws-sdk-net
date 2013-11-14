@@ -23,7 +23,7 @@ namespace Amazon.Redshift.Model
     /// <summary>
     /// <para>Describes a subnet group.</para>
     /// </summary>
-    public class ClusterSubnetGroup
+    public partial class ClusterSubnetGroup
     {
         
         private string clusterSubnetGroupName;

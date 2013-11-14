@@ -25,9 +25,10 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the ListAccountAliases operation.
-    /// <para>Lists the account aliases associated with the account. For information about using an AWS account alias, see Using an Alias for Your
-    /// AWS Account ID in <i>Using AWS Identity and Access Management</i> .</para> <para>You can paginate the results using the <c>MaxItems</c> and
-    /// <c>Marker</c> parameters.</para>
+    /// <para>Lists the account aliases associated with the account. For information about using an AWS account alias, see <a
+    /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html" >Using an Alias for Your AWS Account ID</a> in <i>Using AWS
+    /// Identity and Access Management</i> .</para> <para>You can paginate the results using the <c>MaxItems</c> and <c>Marker</c>
+    /// parameters.</para>
     /// </summary>
     /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.ListAccountAliases"/>
     public class ListAccountAliasesRequest : AmazonWebServiceRequest
@@ -75,12 +76,13 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;       
+            return this.marker != null;
         }
 
         /// <summary>
         /// Use this only when paginating results to indicate the maximum number of account aliases you want in the response. If there are additional
-        /// account aliases beyond the maximum you specify, the <c>IsTruncated</c> response element is <c>true</c>.
+        /// account aliases beyond the maximum you specify, the <c>IsTruncated</c> response element is <c>true</c>. This parameter is optional. If you
+        /// do not include it, it defaults to 100.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -114,7 +116,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if MaxItems property is set
         internal bool IsSetMaxItems()
         {
-            return this.maxItems.HasValue;       
+            return this.maxItems.HasValue;
         }
     }
 }

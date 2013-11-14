@@ -23,7 +23,7 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// <para>Contains the result of a successful invocation of the CreateAccessKey action.</para>
     /// </summary>
-    public class CreateAccessKeyResult  
+    public partial class CreateAccessKeyResult
     {
         
         private AccessKey accessKey;
@@ -54,7 +54,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if AccessKey property is set
         internal bool IsSetAccessKey()
         {
-            return this.accessKey != null;       
+            return this.accessKey != null;
         }
     }
 }

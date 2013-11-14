@@ -34,14 +34,14 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         public DeregisterInstancesFromLoadBalancerResult DeregisterInstancesFromLoadBalancerResult
         {
-            get 
+            get
             {
                 if(this.deregisterInstancesFromLoadBalancerResult == null)
                 {
                     this.deregisterInstancesFromLoadBalancerResult = new DeregisterInstancesFromLoadBalancerResult();
                 }
 
-                return this.deregisterInstancesFromLoadBalancerResult; 
+                return this.deregisterInstancesFromLoadBalancerResult;
             }
             set { this.deregisterInstancesFromLoadBalancerResult = value; }
         }

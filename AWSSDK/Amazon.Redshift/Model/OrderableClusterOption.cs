@@ -23,7 +23,7 @@ namespace Amazon.Redshift.Model
     /// <summary>
     /// <para> Describes an orderable cluster option. </para>
     /// </summary>
-    public class OrderableClusterOption
+    public partial class OrderableClusterOption
     {
         
         private string clusterVersion;

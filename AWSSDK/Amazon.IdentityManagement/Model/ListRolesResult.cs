@@ -21,9 +21,9 @@ using System.IO;
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// <para>Contains the result of a successful invocation of the ListRolesResponse action.</para>
+    /// <para>Contains the result of a successful invocation of the ListRoles action.</para>
     /// </summary>
-    public class ListRolesResult  
+    public partial class ListRolesResult
     {
         
         private List<Role> roles = new List<Role>();
@@ -54,7 +54,7 @@ namespace Amazon.IdentityManagement.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Roles collection
         /// </summary>
@@ -74,7 +74,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if Roles property is set
         internal bool IsSetRoles()
         {
-            return this.roles.Count > 0;       
+            return this.roles.Count > 0;
         }
 
         /// <summary>
@@ -104,7 +104,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if IsTruncated property is set
         internal bool IsSetIsTruncated()
         {
-            return this.isTruncated.HasValue;       
+            return this.isTruncated.HasValue;
         }
 
         /// <summary>
@@ -147,7 +147,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;       
+            return this.marker != null;
         }
     }
 }

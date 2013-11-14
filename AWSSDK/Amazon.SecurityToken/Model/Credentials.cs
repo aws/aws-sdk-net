@@ -23,7 +23,7 @@ namespace Amazon.SecurityToken.Model
     /// <summary>
     /// <para>AWS credentials for API authentication.</para>
     /// </summary>
-    public class Credentials
+    public partial class Credentials
     {
         
         private string accessKeyId;

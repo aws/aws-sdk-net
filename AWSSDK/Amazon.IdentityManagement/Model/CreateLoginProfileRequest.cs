@@ -26,7 +26,9 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Container for the parameters to the CreateLoginProfile operation.
     /// <para>Creates a password for the specified user, giving the user the ability to access AWS services through the AWS Management Console. For
-    /// more information about managing passwords, see Managing Passwords in <i>Using IAM</i> .</para>
+    /// more information about managing passwords, see <a
+    /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_ManagingLogins.html" >Managing Passwords</a> in <i>Using IAM</i>
+    /// .</para>
     /// </summary>
     /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.CreateLoginProfile"/>
     public class CreateLoginProfileRequest : AmazonWebServiceRequest
@@ -73,7 +75,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if UserName property is set
         internal bool IsSetUserName()
         {
-            return this.userName != null;       
+            return this.userName != null;
         }
 
         /// <summary>
@@ -115,7 +117,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if Password property is set
         internal bool IsSetPassword()
         {
-            return this.password != null;       
+            return this.password != null;
         }
     }
 }

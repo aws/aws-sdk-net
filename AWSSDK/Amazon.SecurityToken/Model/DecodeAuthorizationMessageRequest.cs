@@ -31,14 +31,14 @@ namespace Amazon.SecurityToken.Model
     /// provide details about this authorization failure. </para> <para><b>NOTE:</b> Only certain AWS actions return an encoded authorization
     /// message. The documentation for an individual action indicates whether that action returns an encoded message in addition to returning an
     /// HTTP code. </para> <para>The message is encoded because the details of the authorization status can constitute privileged information that
-    /// the user who requested the action should not see. To decode an authorization status message, a user must be granted permissions via an IAM
-    /// policy to request the <c>DecodeAuthorizationMessage</c> (
+    /// the user who requested the action should not see. To decode an authorization status message, a user must be granted permissions via an AWS
+    /// IAM policy to request the <c>DecodeAuthorizationMessage</c> (
     /// <c>sts:DecodeAuthorizationMessage</c> ) action. </para> <para> The decoded message includes the following type of
     /// information: </para>
     /// <ul>
-    /// <li>Whether the request was denied due to an explicit deny or due to the absence of an explicit allow. For more information, see
-    /// Determining Whether a Request is Allowed or Denied in <i>Using IAM</i> .
-    /// </li>
+    /// <li>Whether the request was denied due to an explicit deny or due to the absence of an explicit allow. For more information, see <a
+    /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AccessPolicyLanguage_EvaluationLogic.html#policy-eval-denyallow" >Determining Whether
+    /// a Request is Allowed or Denied</a> in <i>Using AWS IAM</i> . </li>
     /// <li>The principal who made the request.</li>
     /// <li>The requested action.</li>
     /// <li>The requested resource.</li>

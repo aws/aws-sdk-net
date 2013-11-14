@@ -21,9 +21,9 @@ using System.IO;
 namespace Amazon.SecurityToken.Model
 {
     /// <summary>
-    /// <para> The identifiers for the temporary security credentials that the <c>AssumeRole</c> action returns. </para>
+    /// <para>The identifiers for the temporary security credentials that the operation returns. </para>
     /// </summary>
-    public class AssumedRoleUser
+    public partial class AssumedRoleUser
     {
         
         private string assumedRoleId;

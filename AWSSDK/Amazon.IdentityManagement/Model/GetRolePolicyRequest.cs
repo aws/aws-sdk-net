@@ -25,8 +25,10 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the GetRolePolicy operation.
-    /// <para>Retrieves the specified policy document for the specified role. The returned policy is URL-encoded according to RFC 3986. For more
-    /// information about RFC 3986, go to http://www.faqs.org/rfcs/rfc3986.html.</para>
+    /// <para>Retrieves the specified policy document for the specified role. For more information about roles, go to <a
+    /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html" >Working with Roles</a> .</para> <para>The returned policy is
+    /// URL-encoded according to RFC 3986. For more information about RFC 3986, go to <a href="http://www.faqs.org/rfcs/rfc3986.html"
+    /// >http://www.faqs.org/rfcs/rfc3986.html</a> .</para>
     /// </summary>
     /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.GetRolePolicy"/>
     public class GetRolePolicyRequest : AmazonWebServiceRequest
@@ -35,7 +37,7 @@ namespace Amazon.IdentityManagement.Model
         private string policyName;
 
         /// <summary>
-        /// Name of the role who the policy is associated with.
+        /// Name of the role associated with the policy.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -73,7 +75,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if RoleName property is set
         internal bool IsSetRoleName()
         {
-            return this.roleName != null;       
+            return this.roleName != null;
         }
 
         /// <summary>
@@ -115,7 +117,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if PolicyName property is set
         internal bool IsSetPolicyName()
         {
-            return this.policyName != null;       
+            return this.policyName != null;
         }
     }
 }

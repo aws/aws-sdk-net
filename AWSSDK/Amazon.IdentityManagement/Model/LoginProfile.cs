@@ -24,7 +24,7 @@ namespace Amazon.IdentityManagement.Model
     /// <para>The LoginProfile data type contains the user name and password create date for a user.</para> <para> This data type is used as a
     /// response element in the actions CreateLoginProfile and GetLoginProfile. </para>
     /// </summary>
-    public class LoginProfile  
+    public partial class LoginProfile
     {
         
         private string userName;
@@ -69,7 +69,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if UserName property is set
         internal bool IsSetUserName()
         {
-            return this.userName != null;       
+            return this.userName != null;
         }
 
         /// <summary>
@@ -98,7 +98,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if CreateDate property is set
         internal bool IsSetCreateDate()
         {
-            return this.createDate.HasValue;       
+            return this.createDate.HasValue;
         }
     }
 }

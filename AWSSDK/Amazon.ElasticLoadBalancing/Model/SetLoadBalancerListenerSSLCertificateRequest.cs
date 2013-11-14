@@ -27,8 +27,8 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// Container for the parameters to the SetLoadBalancerListenerSSLCertificate operation.
     /// <para> Sets the certificate that terminates the specified listener's SSL connections. The specified certificate replaces any prior
     /// certificate that was used on the same load balancer and port. </para> <para>For more information on updating your SSL certificate, see <a
-    /// href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_UpdatingLoadBalancerSSL.html"> Updating an SSL Certificate
-    /// for a Load Balancer </a> in the <i>Elastic Load Balancing Developer Guide</i> .</para>
+    /// href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_UpdatingLoadBalancerSSL.html" >Updating an SSL Certificate
+    /// for a Load Balancer</a> in the <i>Elastic Load Balancing Developer Guide</i> .</para>
     /// </summary>
     /// <seealso cref="Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancing.SetLoadBalancerListenerSSLCertificate"/>
     public class SetLoadBalancerListenerSSLCertificateRequest : AmazonWebServiceRequest

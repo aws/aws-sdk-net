@@ -22,13 +22,14 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
      /// <summary>
      ///   ListAccessKeysResult Unmarshaller
      /// </summary>
-    internal class ListAccessKeysResultUnmarshaller : IUnmarshaller<ListAccessKeysResult, XmlUnmarshallerContext> 
+    internal class ListAccessKeysResultUnmarshaller : IUnmarshaller<ListAccessKeysResult, XmlUnmarshallerContext>, IUnmarshaller<ListAccessKeysResult, JsonUnmarshallerContext> 
     {
         public ListAccessKeysResult Unmarshall(XmlUnmarshallerContext context) 
         {
             ListAccessKeysResult listAccessKeysResult = new ListAccessKeysResult();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -64,6 +65,11 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 
 
             return listAccessKeysResult;
+        }
+
+        public ListAccessKeysResult Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static ListAccessKeysResultUnmarshaller instance;

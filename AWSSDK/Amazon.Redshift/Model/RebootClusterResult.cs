@@ -23,7 +23,7 @@ namespace Amazon.Redshift.Model
     /// <summary>
     /// The results from the RebootCluster action.
     /// </summary>
-    public class RebootClusterResult
+    public partial class RebootClusterResult
     {
         private Cluster clusterValue;
 

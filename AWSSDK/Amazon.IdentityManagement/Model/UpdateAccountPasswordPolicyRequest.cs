@@ -25,8 +25,8 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateAccountPasswordPolicy operation.
-    /// <para>Updates the password policy settings for the account. For more information about using a password policy, go to Managing an IAM
-    /// Password Policy.</para>
+    /// <para>Updates the password policy settings for the account. For more information about using a password policy, go to <a
+    /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html" >Managing an IAM Password Policy</a> .</para>
     /// </summary>
     /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.UpdateAccountPasswordPolicy"/>
     public class UpdateAccountPasswordPolicyRequest : AmazonWebServiceRequest
@@ -59,7 +59,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if MinimumPasswordLength property is set
         internal bool IsSetMinimumPasswordLength()
         {
-            return this.minimumPasswordLength.HasValue;       
+            return this.minimumPasswordLength.HasValue;
         }
         public bool RequireSymbols
         {
@@ -83,7 +83,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if RequireSymbols property is set
         internal bool IsSetRequireSymbols()
         {
-            return this.requireSymbols.HasValue;       
+            return this.requireSymbols.HasValue;
         }
         public bool RequireNumbers
         {
@@ -107,7 +107,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if RequireNumbers property is set
         internal bool IsSetRequireNumbers()
         {
-            return this.requireNumbers.HasValue;       
+            return this.requireNumbers.HasValue;
         }
         public bool RequireUppercaseCharacters
         {
@@ -131,7 +131,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if RequireUppercaseCharacters property is set
         internal bool IsSetRequireUppercaseCharacters()
         {
-            return this.requireUppercaseCharacters.HasValue;       
+            return this.requireUppercaseCharacters.HasValue;
         }
         public bool RequireLowercaseCharacters
         {
@@ -155,7 +155,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if RequireLowercaseCharacters property is set
         internal bool IsSetRequireLowercaseCharacters()
         {
-            return this.requireLowercaseCharacters.HasValue;       
+            return this.requireLowercaseCharacters.HasValue;
         }
         public bool AllowUsersToChangePassword
         {
@@ -179,7 +179,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if AllowUsersToChangePassword property is set
         internal bool IsSetAllowUsersToChangePassword()
         {
-            return this.allowUsersToChangePassword.HasValue;       
+            return this.allowUsersToChangePassword.HasValue;
         }
     }
 }

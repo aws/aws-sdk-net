@@ -23,7 +23,7 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// <para>Contains the result of a successful invocation of the CreateVirtualMFADevice action.</para>
     /// </summary>
-    public class CreateVirtualMFADeviceResult  
+    public partial class CreateVirtualMFADeviceResult
     {
         
         private VirtualMFADevice virtualMFADevice;
@@ -54,7 +54,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if VirtualMFADevice property is set
         internal bool IsSetVirtualMFADevice()
         {
-            return this.virtualMFADevice != null;       
+            return this.virtualMFADevice != null;
         }
     }
 }

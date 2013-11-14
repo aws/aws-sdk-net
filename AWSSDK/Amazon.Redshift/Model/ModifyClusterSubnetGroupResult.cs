@@ -23,7 +23,7 @@ namespace Amazon.Redshift.Model
     /// <summary>
     /// The results from the ModifyClusterSubnetGroup action.
     /// </summary>
-    public class ModifyClusterSubnetGroupResult
+    public partial class ModifyClusterSubnetGroupResult
     {
         private ClusterSubnetGroup clusterSubnetGroupValue;
 

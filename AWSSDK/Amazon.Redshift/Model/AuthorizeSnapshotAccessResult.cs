@@ -23,7 +23,7 @@ namespace Amazon.Redshift.Model
     /// <summary>
     /// The results from the AuthorizeSnapshotAccess action.
     /// </summary>
-    public class AuthorizeSnapshotAccessResult
+    public partial class AuthorizeSnapshotAccessResult
     {
         private Snapshot snapshotValue;
 

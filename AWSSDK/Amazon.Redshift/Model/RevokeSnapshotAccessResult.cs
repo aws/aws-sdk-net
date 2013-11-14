@@ -23,7 +23,7 @@ namespace Amazon.Redshift.Model
     /// <summary>
     /// The results from the RevokeSnapshotAccess action.
     /// </summary>
-    public class RevokeSnapshotAccessResult
+    public partial class RevokeSnapshotAccessResult
     {
         private Snapshot snapshotValue;
 

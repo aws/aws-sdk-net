@@ -27,8 +27,8 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// Container for the parameters to the CreateLoadBalancerListeners operation.
     /// <para> Creates one or more listeners on a load balancer for the specified port. If a listener with the given port does not already exist, it
     /// will be created; otherwise, the properties of the new listener must match the properties of the existing listener. </para> <para>For more
-    /// information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/us-add-listener.html"> Add a Listener to
-    /// Your Load Balancer </a> in the <i>Elastic Load Balancing Developer Guide</i> .</para>
+    /// information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/us-add-listener.html" >Add a Listener to
+    /// Your Load Balancer</a> in the <i>Elastic Load Balancing Developer Guide</i> .</para>
     /// </summary>
     /// <seealso cref="Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancing.CreateLoadBalancerListeners"/>
     public class CreateLoadBalancerListenersRequest : AmazonWebServiceRequest

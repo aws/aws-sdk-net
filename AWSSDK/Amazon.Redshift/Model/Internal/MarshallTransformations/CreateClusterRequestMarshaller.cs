@@ -125,6 +125,18 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             {
                 request.Parameters.Add("Encrypted", StringUtils.FromBool(createClusterRequest.Encrypted));
             }
+            if (createClusterRequest != null && createClusterRequest.IsSetHsmClientCertificateIdentifier())
+            {
+                request.Parameters.Add("HsmClientCertificateIdentifier", StringUtils.FromString(createClusterRequest.HsmClientCertificateIdentifier));
+            }
+            if (createClusterRequest != null && createClusterRequest.IsSetHsmConfigurationIdentifier())
+            {
+                request.Parameters.Add("HsmConfigurationIdentifier", StringUtils.FromString(createClusterRequest.HsmConfigurationIdentifier));
+            }
+            if (createClusterRequest != null && createClusterRequest.IsSetElasticIp())
+            {
+                request.Parameters.Add("ElasticIp", StringUtils.FromString(createClusterRequest.ElasticIp));
+            }
 
             return request;
         }

@@ -26,8 +26,9 @@ namespace Amazon.Redshift.Model
     /// <summary>
     /// Container for the parameters to the CreateClusterSubnetGroup operation.
     /// <para> Creates a new Amazon Redshift subnet group. You must provide a list of one or more subnets in your existing Amazon Virtual Private
-    /// Cloud (Amazon VPC) when creating Amazon Redshift subnet group. </para> <para> For information about subnet groups, go to Amazon Redshift
-    /// Cluster Subnet Groups in the <i>Amazon Redshift Management Guide</i> .
+    /// Cloud (Amazon VPC) when creating Amazon Redshift subnet group. </para> <para> For information about subnet groups, go to <a
+    /// href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-cluster-subnet-groups.html" >Amazon Redshift Cluster Subnet Groups</a> in
+    /// the <i>Amazon Redshift Management Guide</i> .
     /// </para>
     /// </summary>
     /// <seealso cref="Amazon.Redshift.AmazonRedshift.CreateClusterSubnetGroup"/>

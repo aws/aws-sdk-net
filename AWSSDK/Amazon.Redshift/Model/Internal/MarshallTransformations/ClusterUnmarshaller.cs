@@ -171,6 +171,42 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                         cluster.Encrypted = BoolUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
+                    } 
+                    if (context.TestExpression("RestoreStatus", targetDepth))
+                    {
+                        cluster.RestoreStatus = RestoreStatusUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
+                    } 
+                    if (context.TestExpression("HsmStatus", targetDepth))
+                    {
+                        cluster.HsmStatus = HsmStatusUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
+                    } 
+                    if (context.TestExpression("ClusterSnapshotCopyStatus", targetDepth))
+                    {
+                        cluster.ClusterSnapshotCopyStatus = ClusterSnapshotCopyStatusUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
+                    } 
+                    if (context.TestExpression("ClusterPublicKey", targetDepth))
+                    {
+                        cluster.ClusterPublicKey = StringUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
+                    } 
+                    if (context.TestExpression("ClusterNodes/member", targetDepth))
+                    {
+                        cluster.ClusterNodes.Add(ClusterNodeUnmarshaller.GetInstance().Unmarshall(context));
+                            
+                        continue;
+                    } 
+                    if (context.TestExpression("ElasticIpStatus", targetDepth))
+                    {
+                        cluster.ElasticIpStatus = ElasticIpStatusUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)

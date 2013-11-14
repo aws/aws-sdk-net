@@ -643,7 +643,8 @@ namespace Amazon.Runtime
                     asyncResult.RequestState.WebRequest.Abort();
 
                     // If it is a keep alive error or name resolution error then attempt a retry
-                    if (we != null && asyncResult.RetriesAttempt < config.MaxErrorRetry && (we.Status == WebExceptionStatus.KeepAliveFailure || we.Status == WebExceptionStatus.NameResolutionFailure))
+                    if (we != null && asyncResult.RetriesAttempt < config.MaxErrorRetry &&
+                        (we.Status == WebExceptionStatus.KeepAliveFailure || we.Status == WebExceptionStatus.NameResolutionFailure || we.Status == WebExceptionStatus.ConnectionClosed))
                     {
                         pauseExponentially(asyncResult);
                         return true;

@@ -23,7 +23,7 @@ namespace Amazon.Redshift.Model
     /// <summary>
     /// <para> Describes an AWS customer account authorized to restore a snapshot. </para>
     /// </summary>
-    public class AccountWithRestoreAccess
+    public partial class AccountWithRestoreAccess
     {
         
         private string accountId;

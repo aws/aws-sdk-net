@@ -22,13 +22,14 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
      /// <summary>
      ///   SigningCertificate Unmarshaller
      /// </summary>
-    internal class SigningCertificateUnmarshaller : IUnmarshaller<SigningCertificate, XmlUnmarshallerContext> 
+    internal class SigningCertificateUnmarshaller : IUnmarshaller<SigningCertificate, XmlUnmarshallerContext>, IUnmarshaller<SigningCertificate, JsonUnmarshallerContext> 
     {
         public SigningCertificate Unmarshall(XmlUnmarshallerContext context) 
         {
             SigningCertificate signingCertificate = new SigningCertificate();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -76,6 +77,11 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 
 
             return signingCertificate;
+        }
+
+        public SigningCertificate Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static SigningCertificateUnmarshaller instance;

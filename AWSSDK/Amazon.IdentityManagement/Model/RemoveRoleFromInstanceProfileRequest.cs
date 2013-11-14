@@ -25,7 +25,12 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the RemoveRoleFromInstanceProfile operation.
-    /// <para>Removes the specified role from the specified instance profile.</para>
+    /// <para>Removes the specified role from the specified instance profile.</para> <para><b>IMPORTANT:</b>Make sure you do not have any Amazon EC2
+    /// instances running with the role you are about to remove from the instance profile. Removing a role from an instance profile that is
+    /// associated with a running instance will break any applications running on the instance.</para> <para>For more information about roles, go to
+    /// <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html" >Working with Roles</a> .
+    /// For more information about instance profiles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html"
+    /// >About Instance Profiles</a> .</para>
     /// </summary>
     /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.RemoveRoleFromInstanceProfile"/>
     public class RemoveRoleFromInstanceProfileRequest : AmazonWebServiceRequest
@@ -72,7 +77,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if InstanceProfileName property is set
         internal bool IsSetInstanceProfileName()
         {
-            return this.instanceProfileName != null;       
+            return this.instanceProfileName != null;
         }
 
         /// <summary>
@@ -114,7 +119,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if RoleName property is set
         internal bool IsSetRoleName()
         {
-            return this.roleName != null;       
+            return this.roleName != null;
         }
     }
 }

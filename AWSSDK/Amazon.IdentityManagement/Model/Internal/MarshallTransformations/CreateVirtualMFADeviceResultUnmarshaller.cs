@@ -22,13 +22,14 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
      /// <summary>
      ///   CreateVirtualMFADeviceResult Unmarshaller
      /// </summary>
-    internal class CreateVirtualMFADeviceResultUnmarshaller : IUnmarshaller<CreateVirtualMFADeviceResult, XmlUnmarshallerContext> 
+    internal class CreateVirtualMFADeviceResultUnmarshaller : IUnmarshaller<CreateVirtualMFADeviceResult, XmlUnmarshallerContext>, IUnmarshaller<CreateVirtualMFADeviceResult, JsonUnmarshallerContext> 
     {
         public CreateVirtualMFADeviceResult Unmarshall(XmlUnmarshallerContext context) 
         {
             CreateVirtualMFADeviceResult createVirtualMFADeviceResult = new CreateVirtualMFADeviceResult();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -52,6 +53,11 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 
 
             return createVirtualMFADeviceResult;
+        }
+
+        public CreateVirtualMFADeviceResult Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static CreateVirtualMFADeviceResultUnmarshaller instance;

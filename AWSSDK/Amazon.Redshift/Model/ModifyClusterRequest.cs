@@ -28,10 +28,10 @@ namespace Amazon.Redshift.Model
     /// <para> Modifies the settings for a cluster. For example, you can add another security or parameter group, update the preferred maintenance
     /// window, or change the master user password. Resetting a cluster password or modifying the security groups associated with a cluster do not
     /// need a reboot. However, modifying parameter group requires a reboot for parameters to take effect. For more information about managing
-    /// clusters, go to Amazon Redshift Clusters in the <i>Amazon Redshift Management Guide</i> </para> <para>You can also change node type and the
-    /// number of nodes to scale up or down the cluster. When resizing a cluster, you must specify both the number of nodes and the node type even
-    /// if one of the parameters does not change. If you specify the same number of nodes and node type that are already configured for the cluster,
-    /// an error is returned.</para>
+    /// clusters, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html" >Amazon Redshift Clusters</a> in the
+    /// <i>Amazon Redshift Management Guide</i> </para> <para>You can also change node type and the number of nodes to scale up or down the cluster.
+    /// When resizing a cluster, you must specify both the number of nodes and the node type even if one of the parameters does not change. If you
+    /// specify the same number of nodes and node type that are already configured for the cluster, an error is returned.</para>
     /// </summary>
     /// <seealso cref="Amazon.Redshift.AmazonRedshift.ModifyCluster"/>
     public class ModifyClusterRequest : AmazonWebServiceRequest
@@ -48,6 +48,8 @@ namespace Amazon.Redshift.Model
         private string preferredMaintenanceWindow;
         private string clusterVersion;
         private bool? allowVersionUpgrade;
+        private string hsmClientCertificateIdentifier;
+        private string hsmConfigurationIdentifier;
 
         /// <summary>
         /// The unique identifier of the cluster to be modified. Example: <c>examplecluster</c>
@@ -464,6 +466,65 @@ namespace Amazon.Redshift.Model
         internal bool IsSetAllowVersionUpgrade()
         {
             return this.allowVersionUpgrade.HasValue;
+        }
+
+        /// <summary>
+        /// Specifies the name of the HSM client certificate the Amazon Redshift cluster uses to retrieve the data encryption keys stored in an HSM.
+        ///  
+        /// </summary>
+        public string HsmClientCertificateIdentifier
+        {
+            get { return this.hsmClientCertificateIdentifier; }
+            set { this.hsmClientCertificateIdentifier = value; }
+        }
+
+        /// <summary>
+        /// Sets the HsmClientCertificateIdentifier property
+        /// </summary>
+        /// <param name="hsmClientCertificateIdentifier">The value to set for the HsmClientCertificateIdentifier property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public ModifyClusterRequest WithHsmClientCertificateIdentifier(string hsmClientCertificateIdentifier)
+        {
+            this.hsmClientCertificateIdentifier = hsmClientCertificateIdentifier;
+            return this;
+        }
+            
+
+        // Check to see if HsmClientCertificateIdentifier property is set
+        internal bool IsSetHsmClientCertificateIdentifier()
+        {
+            return this.hsmClientCertificateIdentifier != null;
+        }
+
+        /// <summary>
+        /// Specifies the name of the HSM configuration that contains the information the Amazon Redshift cluster can use to retrieve and store keys in
+        /// an HSM.
+        ///  
+        /// </summary>
+        public string HsmConfigurationIdentifier
+        {
+            get { return this.hsmConfigurationIdentifier; }
+            set { this.hsmConfigurationIdentifier = value; }
+        }
+
+        /// <summary>
+        /// Sets the HsmConfigurationIdentifier property
+        /// </summary>
+        /// <param name="hsmConfigurationIdentifier">The value to set for the HsmConfigurationIdentifier property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public ModifyClusterRequest WithHsmConfigurationIdentifier(string hsmConfigurationIdentifier)
+        {
+            this.hsmConfigurationIdentifier = hsmConfigurationIdentifier;
+            return this;
+        }
+            
+
+        // Check to see if HsmConfigurationIdentifier property is set
+        internal bool IsSetHsmConfigurationIdentifier()
+        {
+            return this.hsmConfigurationIdentifier != null;
         }
     }
 }

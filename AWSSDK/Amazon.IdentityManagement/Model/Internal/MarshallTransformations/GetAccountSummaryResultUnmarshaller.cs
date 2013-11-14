@@ -22,13 +22,14 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
      /// <summary>
      ///   GetAccountSummaryResult Unmarshaller
      /// </summary>
-    internal class GetAccountSummaryResultUnmarshaller : IUnmarshaller<GetAccountSummaryResult, XmlUnmarshallerContext> 
+    internal class GetAccountSummaryResultUnmarshaller : IUnmarshaller<GetAccountSummaryResult, XmlUnmarshallerContext>, IUnmarshaller<GetAccountSummaryResult, JsonUnmarshallerContext> 
     {
         public GetAccountSummaryResult Unmarshall(XmlUnmarshallerContext context) 
         {
             GetAccountSummaryResult getAccountSummaryResult = new GetAccountSummaryResult();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -53,6 +54,11 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 
 
             return getAccountSummaryResult;
+        }
+
+        public GetAccountSummaryResult Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static GetAccountSummaryResultUnmarshaller instance;

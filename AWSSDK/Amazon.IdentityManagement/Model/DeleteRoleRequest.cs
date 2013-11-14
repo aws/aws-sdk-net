@@ -25,7 +25,10 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteRole operation.
-    /// <para>Deletes the specified role. The role must not have any attached policies.</para>
+    /// <para>Deletes the specified role. The role must not have any policies attached. For more information about roles, go to <a
+    /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html" >Working with Roles</a> .</para> <para><b>IMPORTANT:</b>Make
+    /// sure you do not have any Amazon EC2 instances running with the role you are about to delete. Deleting a role or instance profile that is
+    /// associated with a running instance will break any applications running on the instance.</para>
     /// </summary>
     /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.DeleteRole"/>
     public class DeleteRoleRequest : AmazonWebServiceRequest
@@ -71,7 +74,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if RoleName property is set
         internal bool IsSetRoleName()
         {
-            return this.roleName != null;       
+            return this.roleName != null;
         }
     }
 }

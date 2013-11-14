@@ -23,7 +23,7 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// <para>Contains the result of a successful invocation of the GetServerCertificate action.</para>
     /// </summary>
-    public class GetServerCertificateResult  
+    public partial class GetServerCertificateResult
     {
         
         private ServerCertificate serverCertificate;
@@ -54,7 +54,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if ServerCertificate property is set
         internal bool IsSetServerCertificate()
         {
-            return this.serverCertificate != null;       
+            return this.serverCertificate != null;
         }
     }
 }

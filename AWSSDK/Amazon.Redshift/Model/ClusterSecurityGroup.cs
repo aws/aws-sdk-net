@@ -23,7 +23,7 @@ namespace Amazon.Redshift.Model
     /// <summary>
     /// <para>Describes a security group.</para>
     /// </summary>
-    public class ClusterSecurityGroup
+    public partial class ClusterSecurityGroup
     {
         
         private string clusterSecurityGroupName;

@@ -30,16 +30,18 @@ namespace Amazon.SecurityToken.Model
     /// inside a corporate network. Because you must call the <c>GetFederationToken</c> action using the long-term security credentials of an IAM
     /// user, this call is appropriate in contexts where those credentials can be safely stored, usually in a server-based application. </para>
     /// <para> <b>Note:</b> Do not use this call in mobile applications or client-based web applications that directly get temporary security
-    /// credentials. For those types of applications, use <c>AssumeRoleWithWebIdentity</c> .
-    /// </para> <para> The <c>GetFederationToken</c> action must be called by using the long-term AWS security credentials of the AWS account or
-    /// an IAM user. Credentials that are created by IAM users are valid for the specified duration, between 900 seconds (15 minutes) and 129600
-    /// seconds (36 hours); credentials that are created by using account credentials have a maximum duration of 3600 seconds (1 hour). </para>
-    /// <para> The permissions that are granted to the federated user are the intersection of the policy that is passed with the
-    /// <c>GetFederationToken</c> request and policies that are associated with of the entity making the <c>GetFederationToken</c> call. </para>
-    /// <para> For more information about how permissions work, see Controlling Permissions in Temporary Credentials in <i>Using Temporary Security
-    /// Credentials</i> . For information about using <c>GetFederationToken</c> to create temporary security credentials, see Creating Temporary
-    /// Credentials to Enable Access for Federated Users in <i>Using Temporary Security Credentials</i> .
-    /// </para>
+    /// credentials. For those types of applications, use <c>AssumeRoleWithWebIdentity</c> . </para> <para>The <c>GetFederationToken</c> action must
+    /// be called by using the long-term AWS security credentials of the AWS account or an IAM user. Credentials that are created by IAM users are
+    /// valid for the specified duration, between 900 seconds (15 minutes) and 129600 seconds (36 hours); credentials that are created by using
+    /// account credentials have a maximum duration of 3600 seconds (1 hour). </para> <para>Optionally, you can pass an AWS IAM access policy to
+    /// this operation. The temporary security credentials that are returned by the operation have the permissions that are associated with the
+    /// entity that is making the <c>GetFederationToken</c> call, except for any permissions explicitly denied by the policy you pass. This gives
+    /// you a way to further restrict the permissions for the federated user. These policies and any applicable resource-based policies are
+    /// evaluated when calls to AWS are made using the temporary security credentials. </para> <para> For more information about how permissions
+    /// work, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/TokenPermissions.html" >Controlling Permissions in Temporary
+    /// Credentials</a> in <i>Using Temporary Security Credentials</i> . For information about using <c>GetFederationToken</c> to create temporary
+    /// security credentials, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/CreatingFedTokens.html" >Creating Temporary Credentials
+    /// to Enable Access for Federated Users</a> in <i>Using Temporary Security Credentials</i> . </para>
     /// </summary>
     /// <seealso cref="Amazon.SecurityToken.AmazonSecurityTokenService.GetFederationToken"/>
     public class GetFederationTokenRequest : AmazonWebServiceRequest
@@ -92,10 +94,10 @@ namespace Amazon.SecurityToken.Model
         }
 
         /// <summary>
-        /// A policy that specifies the permissions that are granted to the federated user. By default, federated users have no permissions; they do not
-        /// inherit any from the IAM user. When you specify a policy, the federated user's permissions are intersection of the specified policy and the
-        /// IAM user's policy. If you don't specify a policy, federated users can only access AWS resources that explicitly allow those federated users
-        /// in a resource policy, such as in an Amazon S3 bucket policy.
+        /// An AWS IAM policy in JSON format. By default, federated users have no permissions; they do not inherit any from the IAM user. When you
+        /// specify a policy, the federated user's permissions are based on the specified policy and the IAM user's policy. If you don't specify a
+        /// policy, federated users can only access AWS resources that explicitly allow those federated users in a resource policy, such as in an Amazon
+        /// S3 bucket policy.
         ///  
         /// <para>
         /// <b>Constraints:</b>

@@ -23,7 +23,7 @@ namespace Amazon.Redshift.Model
     /// <summary>
     /// <para>Describes a cluster.</para>
     /// </summary>
-    public class Cluster
+    public partial class Cluster
     {
         
         private string clusterIdentifier;
@@ -48,6 +48,12 @@ namespace Amazon.Redshift.Model
         private int? numberOfNodes;
         private bool? publiclyAccessible;
         private bool? encrypted;
+        private RestoreStatus restoreStatus;
+        private HsmStatus hsmStatus;
+        private ClusterSnapshotCopyStatus clusterSnapshotCopyStatus;
+        private string clusterPublicKey;
+        private List<ClusterNode> clusterNodes = new List<ClusterNode>();
+        private ElasticIpStatus elasticIpStatus;
 
         /// <summary>
         /// The unique identifier of the cluster.
@@ -745,6 +751,199 @@ namespace Amazon.Redshift.Model
         internal bool IsSetEncrypted()
         {
             return this.encrypted.HasValue;
+        }
+
+        /// <summary>
+        /// Describes the status of a cluster restore action. Returns null if the cluster was not created by restoring a snapshot.
+        ///  
+        /// </summary>
+        public RestoreStatus RestoreStatus
+        {
+            get { return this.restoreStatus; }
+            set { this.restoreStatus = value; }
+        }
+
+        /// <summary>
+        /// Sets the RestoreStatus property
+        /// </summary>
+        /// <param name="restoreStatus">The value to set for the RestoreStatus property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public Cluster WithRestoreStatus(RestoreStatus restoreStatus)
+        {
+            this.restoreStatus = restoreStatus;
+            return this;
+        }
+            
+
+        // Check to see if RestoreStatus property is set
+        internal bool IsSetRestoreStatus()
+        {
+            return this.restoreStatus != null;
+        }
+
+        /// <summary>
+        /// Reports whether the Amazon Redshift cluster has finished applying any HSM settings changes specified in a modify cluster command. Values:
+        /// active, applying
+        ///  
+        /// </summary>
+        public HsmStatus HsmStatus
+        {
+            get { return this.hsmStatus; }
+            set { this.hsmStatus = value; }
+        }
+
+        /// <summary>
+        /// Sets the HsmStatus property
+        /// </summary>
+        /// <param name="hsmStatus">The value to set for the HsmStatus property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public Cluster WithHsmStatus(HsmStatus hsmStatus)
+        {
+            this.hsmStatus = hsmStatus;
+            return this;
+        }
+            
+
+        // Check to see if HsmStatus property is set
+        internal bool IsSetHsmStatus()
+        {
+            return this.hsmStatus != null;
+        }
+
+        /// <summary>
+        /// Returns the destination region and retention period that are configured for cross-region snapshot copy.
+        ///  
+        /// </summary>
+        public ClusterSnapshotCopyStatus ClusterSnapshotCopyStatus
+        {
+            get { return this.clusterSnapshotCopyStatus; }
+            set { this.clusterSnapshotCopyStatus = value; }
+        }
+
+        /// <summary>
+        /// Sets the ClusterSnapshotCopyStatus property
+        /// </summary>
+        /// <param name="clusterSnapshotCopyStatus">The value to set for the ClusterSnapshotCopyStatus property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public Cluster WithClusterSnapshotCopyStatus(ClusterSnapshotCopyStatus clusterSnapshotCopyStatus)
+        {
+            this.clusterSnapshotCopyStatus = clusterSnapshotCopyStatus;
+            return this;
+        }
+            
+
+        // Check to see if ClusterSnapshotCopyStatus property is set
+        internal bool IsSetClusterSnapshotCopyStatus()
+        {
+            return this.clusterSnapshotCopyStatus != null;
+        }
+
+        /// <summary>
+        /// The public key for the cluster.
+        ///  
+        /// </summary>
+        public string ClusterPublicKey
+        {
+            get { return this.clusterPublicKey; }
+            set { this.clusterPublicKey = value; }
+        }
+
+        /// <summary>
+        /// Sets the ClusterPublicKey property
+        /// </summary>
+        /// <param name="clusterPublicKey">The value to set for the ClusterPublicKey property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public Cluster WithClusterPublicKey(string clusterPublicKey)
+        {
+            this.clusterPublicKey = clusterPublicKey;
+            return this;
+        }
+            
+
+        // Check to see if ClusterPublicKey property is set
+        internal bool IsSetClusterPublicKey()
+        {
+            return this.clusterPublicKey != null;
+        }
+
+        /// <summary>
+        /// The nodes in a cluster.
+        ///  
+        /// </summary>
+        public List<ClusterNode> ClusterNodes
+        {
+            get { return this.clusterNodes; }
+            set { this.clusterNodes = value; }
+        }
+        /// <summary>
+        /// Adds elements to the ClusterNodes collection
+        /// </summary>
+        /// <param name="clusterNodes">The values to add to the ClusterNodes collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public Cluster WithClusterNodes(params ClusterNode[] clusterNodes)
+        {
+            foreach (ClusterNode element in clusterNodes)
+            {
+                this.clusterNodes.Add(element);
+            }
+
+            return this;
+        }
+
+        /// <summary>
+        /// Adds elements to the ClusterNodes collection
+        /// </summary>
+        /// <param name="clusterNodes">The values to add to the ClusterNodes collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public Cluster WithClusterNodes(IEnumerable<ClusterNode> clusterNodes)
+        {
+            foreach (ClusterNode element in clusterNodes)
+            {
+                this.clusterNodes.Add(element);
+            }
+
+            return this;
+        }
+
+        // Check to see if ClusterNodes property is set
+        internal bool IsSetClusterNodes()
+        {
+            return this.clusterNodes.Count > 0;
+        }
+
+        /// <summary>
+        /// Describes the status of the elastic IP (EIP) address.
+        ///  
+        /// </summary>
+        public ElasticIpStatus ElasticIpStatus
+        {
+            get { return this.elasticIpStatus; }
+            set { this.elasticIpStatus = value; }
+        }
+
+        /// <summary>
+        /// Sets the ElasticIpStatus property
+        /// </summary>
+        /// <param name="elasticIpStatus">The value to set for the ElasticIpStatus property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public Cluster WithElasticIpStatus(ElasticIpStatus elasticIpStatus)
+        {
+            this.elasticIpStatus = elasticIpStatus;
+            return this;
+        }
+            
+
+        // Check to see if ElasticIpStatus property is set
+        internal bool IsSetElasticIpStatus()
+        {
+            return this.elasticIpStatus != null;
         }
     }
 }

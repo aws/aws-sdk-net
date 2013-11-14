@@ -23,7 +23,7 @@ namespace Amazon.Redshift.Model
     /// <summary>
     /// The results from the CopyClusterSnapshot action.
     /// </summary>
-    public class CopyClusterSnapshotResult
+    public partial class CopyClusterSnapshotResult
     {
         private Snapshot snapshotValue;
 

@@ -22,13 +22,14 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
      /// <summary>
      ///   CreateLoginProfileResult Unmarshaller
      /// </summary>
-    internal class CreateLoginProfileResultUnmarshaller : IUnmarshaller<CreateLoginProfileResult, XmlUnmarshallerContext> 
+    internal class CreateLoginProfileResultUnmarshaller : IUnmarshaller<CreateLoginProfileResult, XmlUnmarshallerContext>, IUnmarshaller<CreateLoginProfileResult, JsonUnmarshallerContext> 
     {
         public CreateLoginProfileResult Unmarshall(XmlUnmarshallerContext context) 
         {
             CreateLoginProfileResult createLoginProfileResult = new CreateLoginProfileResult();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -52,6 +53,11 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 
 
             return createLoginProfileResult;
+        }
+
+        public CreateLoginProfileResult Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static CreateLoginProfileResultUnmarshaller instance;

@@ -24,7 +24,7 @@ namespace Amazon.Redshift.Model
     /// <para> Contains the output from the ModifyClusterParameterGroup and ResetClusterParameterGroup actions and indicate the parameter group
     /// involved and the status of the operation on the parameter group. </para>
     /// </summary>
-    public class ModifyClusterParameterGroupResult
+    public partial class ModifyClusterParameterGroupResult
     {
         
         private string parameterGroupName;

@@ -23,7 +23,7 @@ namespace Amazon.Redshift.Model
     /// <summary>
     /// <para>Describes a cluster version, including the parameter group family and description of the version.</para>
     /// </summary>
-    public class ClusterVersion
+    public partial class ClusterVersion
     {
         
         private string clusterVersion;

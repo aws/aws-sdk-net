@@ -23,7 +23,7 @@ namespace Amazon.Redshift.Model
     /// <summary>
     /// <para> Contains the output from the DescribeReservedNodeOfferings action. </para>
     /// </summary>
-    public class DescribeReservedNodeOfferingsResult
+    public partial class DescribeReservedNodeOfferingsResult
     {
         
         private string marker;

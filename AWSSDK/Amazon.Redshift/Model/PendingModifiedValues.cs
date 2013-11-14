@@ -24,7 +24,7 @@ namespace Amazon.Redshift.Model
     /// <para> Describes cluster attributes that are in a pending state. A change to one or more the attributes was requested and is in progress or
     /// will be applied. </para>
     /// </summary>
-    public class PendingModifiedValues
+    public partial class PendingModifiedValues
     {
         
         private string masterUserPassword;
@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model
         private int? automatedSnapshotRetentionPeriod;
 
         /// <summary>
-        /// The pending or in-progress change of the master credentials for the cluster.
+        /// The pending or in-progress change of the master password for the cluster.
         ///  
         /// </summary>
         public string MasterUserPassword

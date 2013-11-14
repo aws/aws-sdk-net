@@ -23,7 +23,7 @@ namespace Amazon.Redshift.Model
     /// <summary>
     /// <para> Contains the output from the DescribeClusterSubnetGroups action. </para>
     /// </summary>
-    public class DescribeClusterSubnetGroupsResult
+    public partial class DescribeClusterSubnetGroupsResult
     {
         
         private string marker;

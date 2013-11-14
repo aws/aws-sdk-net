@@ -23,7 +23,7 @@ namespace Amazon.Redshift.Model
     /// <summary>
     /// <para> Contains the output from the DescribeOrderableClusterOptions action. </para>
     /// </summary>
-    public class DescribeOrderableClusterOptionsResult
+    public partial class DescribeOrderableClusterOptionsResult
     {
         
         private List<OrderableClusterOption> orderableClusterOptions = new List<OrderableClusterOption>();

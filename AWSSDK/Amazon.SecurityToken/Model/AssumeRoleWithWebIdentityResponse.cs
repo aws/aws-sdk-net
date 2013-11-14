@@ -30,8 +30,8 @@ namespace Amazon.SecurityToken.Model
 
         /// <summary>
         /// Gets and sets the AssumeRoleWithWebIdentityResult property.
-        /// Contains the result of a successful invocation of the AssumeRoleWithWebIdentity action, including temporary AWS credentials that can be used
-        /// to make AWS requests.
+        /// Contains the result of a successful call to the AssumeRoleWithWebIdentity action, including temporary AWS credentials that can be used to
+        /// make AWS requests.
         /// </summary>
         public AssumeRoleWithWebIdentityResult AssumeRoleWithWebIdentityResult
         {

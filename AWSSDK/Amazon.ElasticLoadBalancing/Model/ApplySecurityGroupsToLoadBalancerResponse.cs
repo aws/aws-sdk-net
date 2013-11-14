@@ -34,14 +34,14 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         public ApplySecurityGroupsToLoadBalancerResult ApplySecurityGroupsToLoadBalancerResult
         {
-            get 
+            get
             {
                 if(this.applySecurityGroupsToLoadBalancerResult == null)
                 {
                     this.applySecurityGroupsToLoadBalancerResult = new ApplySecurityGroupsToLoadBalancerResult();
                 }
 
-                return this.applySecurityGroupsToLoadBalancerResult; 
+                return this.applySecurityGroupsToLoadBalancerResult;
             }
             set { this.applySecurityGroupsToLoadBalancerResult = value; }
         }

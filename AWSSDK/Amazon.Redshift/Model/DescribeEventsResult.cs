@@ -23,7 +23,7 @@ namespace Amazon.Redshift.Model
     /// <summary>
     /// <para> Contains the output from the DescribeEvents action. </para>
     /// </summary>
-    public class DescribeEventsResult
+    public partial class DescribeEventsResult
     {
         
         private string marker;

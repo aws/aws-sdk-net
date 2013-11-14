@@ -23,7 +23,7 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// <para>Contains the result of a successful invocation of the GetAccountSummary action.</para>
     /// </summary>
-    public class GetAccountSummaryResult  
+    public partial class GetAccountSummaryResult
     {
         
         private Dictionary<string,int> summaryMap = new Dictionary<string,int>();
@@ -70,7 +70,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if SummaryMap property is set
         internal bool IsSetSummaryMap()
         {
-            return this.summaryMap != null;       
+            return this.summaryMap != null;
         }
     }
 }

@@ -21,9 +21,9 @@ using System.IO;
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// <para>Contains the result of a successful invocation of the CreateInstanceProfileResponse action.</para>
+    /// <para>Contains the result of a successful invocation of the CreateInstanceProfile action.</para>
     /// </summary>
-    public class CreateInstanceProfileResult  
+    public partial class CreateInstanceProfileResult
     {
         
         private InstanceProfile instanceProfile;
@@ -54,7 +54,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if InstanceProfile property is set
         internal bool IsSetInstanceProfile()
         {
-            return this.instanceProfile != null;       
+            return this.instanceProfile != null;
         }
     }
 }

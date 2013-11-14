@@ -26,13 +26,15 @@ namespace Amazon.Redshift.Model
     /// <summary>
     /// Container for the parameters to the AuthorizeSnapshotAccess operation.
     /// <para> Authorizes the specified AWS customer account to restore the specified snapshot. </para> <para> For more information about working
-    /// with snapshots, go to Amazon Redshift Snapshots in the <i>Amazon Redshift Management Guide</i> .
+    /// with snapshots, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html" >Amazon Redshift Snapshots</a>
+    /// in the <i>Amazon Redshift Management Guide</i> .
     /// </para>
     /// </summary>
     /// <seealso cref="Amazon.Redshift.AmazonRedshift.AuthorizeSnapshotAccess"/>
     public class AuthorizeSnapshotAccessRequest : AmazonWebServiceRequest
     {
         private string snapshotIdentifier;
+        private string snapshotClusterIdentifier;
         private string accountWithRestoreAccess;
 
         /// <summary>
@@ -62,6 +64,36 @@ namespace Amazon.Redshift.Model
         internal bool IsSetSnapshotIdentifier()
         {
             return this.snapshotIdentifier != null;
+        }
+
+        /// <summary>
+        /// The identifier of the cluster the snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot
+        /// resource element that specifies anything other than * for the cluster name.
+        ///  
+        /// </summary>
+        public string SnapshotClusterIdentifier
+        {
+            get { return this.snapshotClusterIdentifier; }
+            set { this.snapshotClusterIdentifier = value; }
+        }
+
+        /// <summary>
+        /// Sets the SnapshotClusterIdentifier property
+        /// </summary>
+        /// <param name="snapshotClusterIdentifier">The value to set for the SnapshotClusterIdentifier property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public AuthorizeSnapshotAccessRequest WithSnapshotClusterIdentifier(string snapshotClusterIdentifier)
+        {
+            this.snapshotClusterIdentifier = snapshotClusterIdentifier;
+            return this;
+        }
+            
+
+        // Check to see if SnapshotClusterIdentifier property is set
+        internal bool IsSetSnapshotClusterIdentifier()
+        {
+            return this.snapshotClusterIdentifier != null;
         }
 
         /// <summary>

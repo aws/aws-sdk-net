@@ -34,7 +34,7 @@ namespace Amazon.IdentityManagement.Model
         private string policyName;
 
         /// <summary>
-        /// Name of the role the policy is associated with.
+        /// Name of the role the associated with the policy.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -72,7 +72,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if RoleName property is set
         internal bool IsSetRoleName()
         {
-            return this.roleName != null;       
+            return this.roleName != null;
         }
 
         /// <summary>
@@ -114,7 +114,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if PolicyName property is set
         internal bool IsSetPolicyName()
         {
-            return this.policyName != null;       
+            return this.policyName != null;
         }
     }
 }

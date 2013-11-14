@@ -22,13 +22,14 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
      /// <summary>
      ///   GetServerCertificateResult Unmarshaller
      /// </summary>
-    internal class GetServerCertificateResultUnmarshaller : IUnmarshaller<GetServerCertificateResult, XmlUnmarshallerContext> 
+    internal class GetServerCertificateResultUnmarshaller : IUnmarshaller<GetServerCertificateResult, XmlUnmarshallerContext>, IUnmarshaller<GetServerCertificateResult, JsonUnmarshallerContext> 
     {
         public GetServerCertificateResult Unmarshall(XmlUnmarshallerContext context) 
         {
             GetServerCertificateResult getServerCertificateResult = new GetServerCertificateResult();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -52,6 +53,11 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 
 
             return getServerCertificateResult;
+        }
+
+        public GetServerCertificateResult Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static GetServerCertificateResultUnmarshaller instance;

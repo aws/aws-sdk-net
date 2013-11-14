@@ -23,7 +23,7 @@ namespace Amazon.Redshift.Model
     /// <summary>
     /// <para>Describes a parameter group.</para>
     /// </summary>
-    public class ClusterParameterGroup
+    public partial class ClusterParameterGroup
     {
         
         private string parameterGroupName;

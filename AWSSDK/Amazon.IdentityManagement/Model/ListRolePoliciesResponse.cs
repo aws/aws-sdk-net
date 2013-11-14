@@ -30,18 +30,18 @@ namespace Amazon.IdentityManagement.Model
 
         /// <summary>
         /// Gets and sets the ListRolePoliciesResult property.
-        /// Contains the result of a successful invocation of the ListRolePoliciesResponse action.
+        /// Contains the result of a successful invocation of the ListRolePolicies action.
         /// </summary>
         public ListRolePoliciesResult ListRolePoliciesResult
         {
-            get 
+            get
             {
                 if(this.listRolePoliciesResult == null)
                 {
                     this.listRolePoliciesResult = new ListRolePoliciesResult();
                 }
 
-                return this.listRolePoliciesResult; 
+                return this.listRolePoliciesResult;
             }
             set { this.listRolePoliciesResult = value; }
         }

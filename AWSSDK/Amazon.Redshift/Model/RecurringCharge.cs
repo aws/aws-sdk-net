@@ -23,7 +23,7 @@ namespace Amazon.Redshift.Model
     /// <summary>
     /// <para>Describes a recurring charge.</para>
     /// </summary>
-    public class RecurringCharge
+    public partial class RecurringCharge
     {
         
         private double? recurringChargeAmount;

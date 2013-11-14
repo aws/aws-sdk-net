@@ -76,7 +76,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if PathPrefix property is set
         internal bool IsSetPathPrefix()
         {
-            return this.pathPrefix != null;       
+            return this.pathPrefix != null;
         }
 
         /// <summary>
@@ -119,12 +119,13 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;       
+            return this.marker != null;
         }
 
         /// <summary>
         /// Use this only when paginating results to indicate the maximum number of server certificates you want in the response. If there are
-        /// additional server certificates beyond the maximum you specify, the <c>IsTruncated</c> response element will be set to <c>true</c>.
+        /// additional server certificates beyond the maximum you specify, the <c>IsTruncated</c> response element will be set to <c>true</c>. This
+        /// parameter is optional. If you do not include it, it defaults to 100.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -158,7 +159,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if MaxItems property is set
         internal bool IsSetMaxItems()
         {
-            return this.maxItems.HasValue;       
+            return this.maxItems.HasValue;
         }
     }
 }

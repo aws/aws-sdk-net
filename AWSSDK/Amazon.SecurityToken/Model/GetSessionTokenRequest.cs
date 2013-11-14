@@ -32,10 +32,13 @@ namespace Amazon.SecurityToken.Model
     /// programmatic calls to APIs that require MFA authentication. </para> <para> The <c>GetSessionToken</c> action must be called by using the
     /// long-term AWS security credentials of the AWS account or an IAM user. Credentials that are created by IAM users are valid for the duration
     /// that you specify, between 900 seconds (15 minutes) and 129600 seconds (36 hours); credentials that are created by using account credentials
-    /// have a maximum duration of 3600 seconds (1 hour). </para> <para> The permissions that are granted to the federated user are the intersection
-    /// of the policy that is passed with the <c>GetSessionToken</c> request and policies that are associated with of the entity making the
-    /// <c>GetSessionToken</c> call. </para> <para> For more information about using <c>GetSessionToken</c> to create temporary credentials, go to
-    /// Creating Temporary Credentials to Enable Access for IAM Users in <i>Using IAM</i> .
+    /// have a maximum duration of 3600 seconds (1 hour). </para> <para>Optionally, you can pass an AWS IAM access policy to this operation. The
+    /// temporary security credentials that are returned by the operation have the permissions that are associated with the entity that is making
+    /// the <c>GetSessionToken</c> call, except for any permissions explicitly denied by the policy you pass. This gives you a way to further
+    /// restrict the permissions for the federated user. These policies and any applicable resource-based policies are evaluated when calls to AWS
+    /// are made using the temporary security credentials. </para> <para>For more information about using <c>GetSessionToken</c> to create temporary
+    /// credentials, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/CreatingSessionTokens.html" > Creating Temporary Credentials to
+    /// Enable Access for IAM Users </a> in <i>Using IAM</i> .
     /// </para>
     /// </summary>
     /// <seealso cref="Amazon.SecurityToken.AmazonSecurityTokenService.GetSessionToken"/>

@@ -77,39 +77,22 @@ namespace Amazon.S3.Model
             {
                 if (disposing)
                 {
-                    //Remove Managed Resources
+                    // Remove Unmanaged Resources
+                    if (responseStream != null)
+                        responseStream.Close();
+                    if (httpResponse != null)
+                        httpResponse.Close();
                     if (webHeaders != null)
-                    {
                         webHeaders.Clear();
-                    }
                 }
 
-                // Remove Unmanaged Resources
-                // I.O.W. remove resources that have to be explicitly
-                // "Dispose"d or Closed. For an S3 Response, these are:
-                // 1. The Response Stream for GET Object requests
-                // 2. The HttpResponse object for GET Object requests
-                if (responseStream != null)
-                {
-                    responseStream.Close();
-                    responseStream = null;
-                }
+                // Remove Managed Resources
+                responseStream = null;
+                httpResponse = null;
+                webHeaders = null;
 
-                if (httpResponse != null)
-                {
-                    httpResponse.Close();
-                    httpResponse = null;
-                }
                 disposed = true;
             }
-        }
-
-        /// <summary>
-        /// The destructor for the S3Response class.
-        /// </summary>
-        ~S3Response()
-        {
-            Dispose(false);
         }
 
         #endregion

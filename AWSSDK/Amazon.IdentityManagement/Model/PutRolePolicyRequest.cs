@@ -25,12 +25,13 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the PutRolePolicy operation.
-    /// <para>Adds (or updates) a policy document associated with the specified role. For information about policies, refer to Overview of Policies
-    /// in <i>Using AWS Identity and Access Management</i> .</para> <para>For information about limits on the number of policies you can associate
-    /// with a role, see Limitations on IAM Entities in <i>Using AWS Identity and Access Management</i> .</para> <para><b>NOTE:</b>Because policy
-    /// documents can be large, you should use POST rather than GET when calling PutRolePolicy. For information about setting up signatures and
-    /// authorization through the API, go to Signing AWS API Requests in the AWS General Reference. For general information about using the Query
-    /// API with IAM, go to Making Query Requests in Using IAM.</para>
+    /// <para>Adds (or updates) a policy document associated with the specified role. For information about policies, go to <a
+    /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?PoliciesOverview.html" >Overview of Policies</a> in <i>Using AWS Identity
+    /// and Access Management</i> .</para> <para>For information about limits on the policies you can associate with a role, see <a
+    /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?LimitationsOnEntities.html" >Limitations on IAM Entities</a> in <i>Using
+    /// AWS Identity and Access Management</i> .</para> <para><b>NOTE:</b>Because policy documents can be large, you should use POST rather than GET
+    /// when calling PutRolePolicy. For information about setting up signatures and authorization through the API, go to Signing AWS API Requests in
+    /// the AWS General Reference. For general information about using the Query API with IAM, go to Making Query Requests in Using IAM.</para>
     /// </summary>
     /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.PutRolePolicy"/>
     public class PutRolePolicyRequest : AmazonWebServiceRequest
@@ -78,7 +79,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if RoleName property is set
         internal bool IsSetRoleName()
         {
-            return this.roleName != null;       
+            return this.roleName != null;
         }
 
         /// <summary>
@@ -120,7 +121,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if PolicyName property is set
         internal bool IsSetPolicyName()
         {
-            return this.policyName != null;       
+            return this.policyName != null;
         }
 
         /// <summary>
@@ -162,7 +163,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if PolicyDocument property is set
         internal bool IsSetPolicyDocument()
         {
-            return this.policyDocument != null;       
+            return this.policyDocument != null;
         }
     }
 }

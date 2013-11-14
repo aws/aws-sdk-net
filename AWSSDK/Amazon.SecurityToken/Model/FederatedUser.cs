@@ -23,7 +23,7 @@ namespace Amazon.SecurityToken.Model
     /// <summary>
     /// <para>Identifiers for the federated user that is associated with the credentials.</para>
     /// </summary>
-    public class FederatedUser
+    public partial class FederatedUser
     {
         
         private string federatedUserId;

@@ -34,16 +34,16 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// 
     /// </ul>
     /// <para>For information about the AWS regions supported by Elastic Load Balancing, see <a
-    /// href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elb_region"> Regions and Endpoints </a> .</para> <para>You can create up to 10
+    /// href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elb_region" >Regions and Endpoints</a> .</para> <para>You can create up to 10
     /// load balancers per region per account.</para> <para>Elastic Load Balancing supports load balancing your Amazon EC2 instances launched within
     /// any one of the following platforms:</para>
     /// <ul>
     /// <li> <i>EC2-Classic</i> <para>For information on creating and managing your load balancers in EC2-Classic, see <a
-    /// href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/UserScenariosForEC2.html"> Deploy Elastic Load Balancing in
-    /// Amazon EC2-Classic </a> .</para> </li>
+    /// href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/UserScenariosForEC2.html" >Deploy Elastic Load Balancing in
+    /// Amazon EC2-Classic</a> .</para> </li>
     /// <li> <i>EC2-VPC</i> <para>For information on creating and managing your load balancers in EC2-VPC, see <a
-    /// href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/UserScenariosForVPC.html"> Deploy Elastic Load Balancing in
-    /// Amazon VPC </a> .</para> </li>
+    /// href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/UserScenariosForVPC.html" >Deploy Elastic Load Balancing in
+    /// Amazon VPC</a> .</para> </li>
     /// 
     /// </ul>
     /// </summary>

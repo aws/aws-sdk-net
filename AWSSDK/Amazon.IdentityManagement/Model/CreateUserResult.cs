@@ -23,7 +23,7 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// <para>Contains the result of a successful invocation of the CreateUser action.</para>
     /// </summary>
-    public class CreateUserResult  
+    public partial class CreateUserResult
     {
         
         private User user;
@@ -54,7 +54,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if User property is set
         internal bool IsSetUser()
         {
-            return this.user != null;       
+            return this.user != null;
         }
     }
 }

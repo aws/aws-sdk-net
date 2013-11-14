@@ -39,6 +39,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             {
                 request.Parameters.Add("SnapshotIdentifier", StringUtils.FromString(authorizeSnapshotAccessRequest.SnapshotIdentifier));
             }
+            if (authorizeSnapshotAccessRequest != null && authorizeSnapshotAccessRequest.IsSetSnapshotClusterIdentifier())
+            {
+                request.Parameters.Add("SnapshotClusterIdentifier", StringUtils.FromString(authorizeSnapshotAccessRequest.SnapshotClusterIdentifier));
+            }
             if (authorizeSnapshotAccessRequest != null && authorizeSnapshotAccessRequest.IsSetAccountWithRestoreAccess())
             {
                 request.Parameters.Add("AccountWithRestoreAccess", StringUtils.FromString(authorizeSnapshotAccessRequest.AccountWithRestoreAccess));

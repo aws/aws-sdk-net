@@ -34,14 +34,14 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         public AttachLoadBalancerToSubnetsResult AttachLoadBalancerToSubnetsResult
         {
-            get 
+            get
             {
                 if(this.attachLoadBalancerToSubnetsResult == null)
                 {
                     this.attachLoadBalancerToSubnetsResult = new AttachLoadBalancerToSubnetsResult();
                 }
 
-                return this.attachLoadBalancerToSubnetsResult; 
+                return this.attachLoadBalancerToSubnetsResult;
             }
             set { this.attachLoadBalancerToSubnetsResult = value; }
         }

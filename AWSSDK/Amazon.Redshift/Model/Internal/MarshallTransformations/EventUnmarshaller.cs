@@ -55,9 +55,27 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                             
                         continue;
                     } 
+                    if (context.TestExpression("EventCategories/EventCategory", targetDepth))
+                    {
+                        eventValue.EventCategories.Add(StringUnmarshaller.GetInstance().Unmarshall(context));
+                            
+                        continue;
+                    } 
+                    if (context.TestExpression("Severity", targetDepth))
+                    {
+                        eventValue.Severity = StringUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
+                    } 
                     if (context.TestExpression("Date", targetDepth))
                     {
                         eventValue.Date = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
+                    } 
+                    if (context.TestExpression("EventId", targetDepth))
+                    {
+                        eventValue.EventId = StringUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
                     }

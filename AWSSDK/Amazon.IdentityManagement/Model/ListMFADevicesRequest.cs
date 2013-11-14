@@ -26,7 +26,7 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Container for the parameters to the ListMFADevices operation.
     /// <para>Lists the MFA devices. If the request includes the user name, then this action lists all the MFA devices associated with the specified
-    /// user name. If you do not specify a user name, IAM determines the user name implicitly based on the AWS Access Key ID signing the
+    /// user name. If you do not specify a user name, IAM determines the user name implicitly based on the AWS access key ID signing the
     /// request.</para> <para>You can paginate the results using the <c>MaxItems</c> and <c>Marker</c> parameters.</para>
     /// </summary>
     /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.ListMFADevices"/>
@@ -75,7 +75,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if UserName property is set
         internal bool IsSetUserName()
         {
-            return this.userName != null;       
+            return this.userName != null;
         }
 
         /// <summary>
@@ -118,12 +118,13 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;       
+            return this.marker != null;
         }
 
         /// <summary>
         /// Use this only when paginating results to indicate the maximum number of MFA devices you want in the response. If there are additional MFA
-        /// devices beyond the maximum you specify, the <c>IsTruncated</c> response element is <c>true</c>.
+        /// devices beyond the maximum you specify, the <c>IsTruncated</c> response element is <c>true</c>. This parameter is optional. If you do not
+        /// include it, it defaults to 100.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -157,7 +158,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if MaxItems property is set
         internal bool IsSetMaxItems()
         {
-            return this.maxItems.HasValue;       
+            return this.maxItems.HasValue;
         }
     }
 }

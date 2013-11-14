@@ -27,9 +27,8 @@ namespace Amazon.IdentityManagement.Model
     /// Container for the parameters to the ListVirtualMFADevices operation.
     /// <para> Lists the virtual MFA devices under the AWS account by assignment status. If you do not specify an assignment status, the action
     /// returns a list of all virtual MFA devices. Assignment status can be <c>Assigned</c> ,
-    /// 
-    /// <c>Unassigned</c> , or <c>Any</c> .
-    /// </para> <para>You can paginate the results using the <c>MaxItems</c> and <c>Marker</c> parameters.</para>
+    /// <c>Unassigned</c> , or <c>Any</c> . </para> <para>You can paginate the results using the <c>MaxItems</c> and
+    /// <c>Marker</c> parameters.</para>
     /// </summary>
     /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.ListVirtualMFADevices"/>
     public class ListVirtualMFADevicesRequest : AmazonWebServiceRequest
@@ -74,7 +73,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if AssignmentStatus property is set
         internal bool IsSetAssignmentStatus()
         {
-            return this.assignmentStatus != null;       
+            return this.assignmentStatus != null;
         }
 
         /// <summary>
@@ -117,12 +116,13 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;       
+            return this.marker != null;
         }
 
         /// <summary>
         /// Use this parameter only when paginating results to indicate the maximum number of user names you want in the response. If there are
-        /// additional user names beyond the maximum you specify, the <c>IsTruncated</c> response element is <c>true</c>.
+        /// additional user names beyond the maximum you specify, the <c>IsTruncated</c> response element is <c>true</c>. This parameter is optional. If
+        /// you do not include it, it defaults to 100.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -156,7 +156,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if MaxItems property is set
         internal bool IsSetMaxItems()
         {
-            return this.maxItems.HasValue;       
+            return this.maxItems.HasValue;
         }
     }
 }

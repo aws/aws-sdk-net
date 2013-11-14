@@ -23,7 +23,7 @@ namespace Amazon.Redshift.Model
     /// <summary>
     /// <para>Describes the default cluster parameters for a parameter group family. </para>
     /// </summary>
-    public class DefaultClusterParameters
+    public partial class DefaultClusterParameters
     {
         
         private string parameterGroupFamily;

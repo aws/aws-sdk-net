@@ -21,9 +21,10 @@ using System.IO;
 namespace Amazon.SecurityToken.Model
 {
     /// <summary>
-    /// <para>Contains the result of a successful invocation of the AssumeRole action.</para>
+    /// <para> Contains the result of a successful call to the AssumeRole action, including temporary AWS credentials that can be used to make AWS
+    /// requests. </para>
     /// </summary>
-    public class AssumeRoleResult
+    public partial class AssumeRoleResult
     {
         
         private Credentials credentials;

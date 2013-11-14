@@ -26,7 +26,7 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Container for the parameters to the GetGroupPolicy operation.
     /// <para>Retrieves the specified policy document for the specified group. The returned policy is URL-encoded according to RFC 3986. For more
-    /// information about RFC 3986, go to http://www.faqs.org/rfcs/rfc3986.html.</para>
+    /// information about RFC 3986, go to <a href="http://www.faqs.org/rfcs/rfc3986.html" >http://www.faqs.org/rfcs/rfc3986.html</a> .</para>
     /// </summary>
     /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.GetGroupPolicy"/>
     public class GetGroupPolicyRequest : AmazonWebServiceRequest
@@ -73,7 +73,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if GroupName property is set
         internal bool IsSetGroupName()
         {
-            return this.groupName != null;       
+            return this.groupName != null;
         }
 
         /// <summary>
@@ -115,7 +115,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if PolicyName property is set
         internal bool IsSetPolicyName()
         {
-            return this.policyName != null;       
+            return this.policyName != null;
         }
     }
 }

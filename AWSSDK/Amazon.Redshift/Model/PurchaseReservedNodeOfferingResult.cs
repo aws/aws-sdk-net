@@ -23,7 +23,7 @@ namespace Amazon.Redshift.Model
     /// <summary>
     /// The results from the PurchaseReservedNodeOffering action.
     /// </summary>
-    public class PurchaseReservedNodeOfferingResult
+    public partial class PurchaseReservedNodeOfferingResult
     {
         private ReservedNode reservedNodeValue;
 

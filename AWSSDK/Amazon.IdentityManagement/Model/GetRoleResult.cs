@@ -21,9 +21,9 @@ using System.IO;
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// <para>Contains the result of a successful invocation of the GetRoleResponse action.</para>
+    /// <para>Contains the result of a successful invocation of the GetRole action.</para>
     /// </summary>
-    public class GetRoleResult  
+    public partial class GetRoleResult
     {
         
         private Role role;
@@ -54,7 +54,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if Role property is set
         internal bool IsSetRole()
         {
-            return this.role != null;       
+            return this.role != null;
         }
     }
 }

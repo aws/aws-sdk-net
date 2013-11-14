@@ -23,7 +23,7 @@ namespace Amazon.Redshift.Model
     /// <summary>
     /// The results from the ModifyCluster action.
     /// </summary>
-    public class ModifyClusterResult
+    public partial class ModifyClusterResult
     {
         private Cluster clusterValue;
 

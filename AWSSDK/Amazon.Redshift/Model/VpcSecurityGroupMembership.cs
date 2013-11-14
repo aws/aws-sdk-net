@@ -23,7 +23,7 @@ namespace Amazon.Redshift.Model
     /// <summary>
     /// <para>Describes the members of a VPC security group.</para>
     /// </summary>
-    public class VpcSecurityGroupMembership
+    public partial class VpcSecurityGroupMembership
     {
         
         private string vpcSecurityGroupId;

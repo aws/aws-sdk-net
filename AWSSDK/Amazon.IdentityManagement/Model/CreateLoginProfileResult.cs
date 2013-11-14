@@ -23,7 +23,7 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// <para>Contains the result of a successful invocation of the CreateLoginProfile action.</para>
     /// </summary>
-    public class CreateLoginProfileResult  
+    public partial class CreateLoginProfileResult
     {
         
         private LoginProfile loginProfile;
@@ -54,7 +54,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if LoginProfile property is set
         internal bool IsSetLoginProfile()
         {
-            return this.loginProfile != null;       
+            return this.loginProfile != null;
         }
     }
 }

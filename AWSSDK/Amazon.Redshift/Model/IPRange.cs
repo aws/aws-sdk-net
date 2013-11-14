@@ -23,7 +23,7 @@ namespace Amazon.Redshift.Model
     /// <summary>
     /// <para> Describes an IP range used in a security group. </para>
     /// </summary>
-    public class IPRange
+    public partial class IPRange
     {
         
         private string status;
