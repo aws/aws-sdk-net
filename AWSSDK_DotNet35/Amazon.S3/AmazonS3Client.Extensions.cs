@@ -72,6 +72,8 @@ namespace Amazon.S3
 
             ImmutableCredentials immutableCredentials = Credentials.GetCredentials();
             IRequest irequest = Marshall(request, immutableCredentials.AccessKey, immutableCredentials.Token);
+            irequest.Endpoint = DetermineEndpoint(irequest);
+            ProcessRequestHandlers(irequest);
             RequestMetrics metrics = new RequestMetrics();
             signer.Sign(irequest, this.Config, metrics, immutableCredentials.AccessKey, immutableCredentials.SecretKey);
 
@@ -79,23 +81,21 @@ namespace Amazon.S3
             authorization = authorization.Substring(authorization.IndexOf(":", StringComparison.Ordinal) + 1);
             authorization = AmazonS3Util.UrlEncode(authorization, false);
 
-            string endpoint = Config.DetermineServiceURL();
+            Uri url = ComposeUrl(irequest, irequest.Endpoint);
+            string result = url.AbsoluteUri + "&Signature=" + authorization;
             Protocol protocol = DetermineProtocol();
             if (request.Protocol != protocol)
             {
                 switch (protocol)
                 {
                     case Protocol.HTTP:
-                        endpoint = endpoint.Replace("http://", "https://");
+                        result = result.Replace("http://", "https://");
                         break;
                     case Protocol.HTTPS:
-                        endpoint = endpoint.Replace("https://", "http://");
+                        result = result.Replace("https://", "http://");
                         break;
                 }
             }
-
-            Uri url = ComposeUrl(irequest, new Uri(endpoint));
-            string result = url.AbsoluteUri + "&Signature=" + authorization;
             return result;
         }
 

@@ -41,7 +41,8 @@ namespace Amazon.Runtime
         internal static List<string> ErrorCodesToRetryOn = new List<string>
         {
             "Throttling",
-            "ProvisionedThroughputExceededException"
+            "ProvisionedThroughputExceededException",
+            "RequestTimeout"
         };
 
 #if (!WIN_RT)

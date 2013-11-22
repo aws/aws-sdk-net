@@ -183,12 +183,13 @@ namespace Amazon.Runtime
                             else
                             {
                                 var callback = asyncResult.Request.OriginalRequest.StreamUploadProgressCallback;
-                            byte[] buffer = new byte[this.Config.BufferSize];
+                                byte[] buffer = new byte[this.Config.BufferSize];
                                 int bytesRead = 0;
                                 long totalBytesWritten = 0;
                                 Stream inputStream = asyncResult.RequestState.RequestStream;
+                                int bytesToRead = buffer.Length;
 
-                                while ((bytesRead = inputStream.Read(buffer, 0, buffer.Length)) > 0)
+                                while ((bytesRead = inputStream.Read(buffer, 0, bytesToRead)) > 0)
                                 {
                                     requestStream.Write(buffer, 0, bytesRead);
                                     totalBytesWritten += bytesRead;
@@ -201,7 +202,6 @@ namespace Amazon.Runtime
                                             this);
                                     }
                                 }
-
                             }
                         }
                     }
