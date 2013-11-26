@@ -73,7 +73,7 @@ namespace Amazon.Auth.AccessControlPolicy
         /// <summary>
         /// The default policy version
         /// </summary>
-        private const string DEFAULT_POLICY_VERSION = "2008-10-17";
+        private const string DEFAULT_POLICY_VERSION = "2012-10-17";
 
         private string id;
         private string version = DEFAULT_POLICY_VERSION;
@@ -151,7 +151,7 @@ namespace Amazon.Auth.AccessControlPolicy
         }
 
         /// <summary>
-        /// Gets the version of this AWS policy.
+        /// Gets and sets the version of this AWS policy.
         /// </summary>
         public string Version
         {
@@ -159,7 +159,7 @@ namespace Amazon.Auth.AccessControlPolicy
             {
                 return version;
             }
-            internal set
+            set
             {
                 this.version = value;
             }

@@ -17,7 +17,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace AWSSDK.Amazon.SimpleNotificationService
+using Amazon.SQS;
+using Amazon.SQS.Model;
+
+namespace Amazon.SimpleNotificationService
 {
     public partial interface IAmazonSimpleNotificationService : IDisposable
     {
@@ -57,10 +60,11 @@ namespace AWSSDK.Amazon.SimpleNotificationService
         /// </para>
         /// </summary>
         /// <param name="topicArn">The topic to subscribe to</param>
+        /// <param name="sqsClient">The SQS client used to get attributes and set the policy on the SQS queue.</param>
         /// <param name="sqsQueueUrl">The queue to add a subscription to.</param>
         /// <returns>The subscription ARN as returned by Amazon SNS when the queue is 
         /// successfully subscribed to the topic.</returns>
-        string SubscribeQueue(string topicArn, string sqsQueueUrl);
+        string SubscribeQueue(string topicArn, IAmazonSQS sqsClient, string sqsQueueUrl);
         #endregion
 #endif
     }

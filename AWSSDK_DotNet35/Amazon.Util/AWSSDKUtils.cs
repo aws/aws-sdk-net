@@ -38,7 +38,7 @@ namespace Amazon.Util
         internal const string DefaultRegion = "us-east-1";
         internal const string DefaultGovRegion = "us-gov-west-1";
 
-        internal const string SDKVersionNumber = "2.0.2.2";
+        internal const string SDKVersionNumber = "2.0.2.3";
 
         internal const string IfModifiedSinceHeader = "IfModifiedSince";
         internal const string IfMatchHeader = "If-Match";
@@ -84,6 +84,30 @@ namespace Amazon.Util
         /// Characters outside of this set will be encoded.
         /// </summary>
         public const string ValidUrlCharactersRFC1738 = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-_.";
+
+        /// <summary>
+        /// The set of accepted and valid Url path characters per RFC3986.
+        /// </summary>
+        private static string ValidPathCharacters = DetermineValidPathCharacters();
+
+        // Checks which path characters should not be encoded
+        // This set will be different for .NET 4 and .NET 4.5, as
+        // per http://msdn.microsoft.com/en-us/library/hh367887%28v=vs.110%29.aspx
+        private static string DetermineValidPathCharacters()
+        {
+            string basePathCharacters = "/:'()!*[]";
+
+            StringBuilder sb = new StringBuilder();
+            foreach (var c in basePathCharacters)
+            {
+                string escaped = Uri.EscapeUriString(c.ToString());
+                if (escaped.Length == 1 && escaped[0] == c)
+                    sb.Append(c);
+            }
+            string result = sb.ToString();
+
+            return result;
+        }
 
         /// <summary>
         /// The string representing Url Encoded Content in HTTP requests
@@ -577,7 +601,7 @@ namespace Amazon.Util
             if (!RFCEncodingSchemes.TryGetValue(rfcNumber, out validUrlCharacters))
                 validUrlCharacters = ValidUrlCharacters;
 
-            string unreservedChars = String.Concat(validUrlCharacters, (path ? "/:'()" : ""));
+            string unreservedChars = String.Concat(validUrlCharacters, (path ? ValidPathCharacters : ""));
 
             foreach (char symbol in System.Text.Encoding.UTF8.GetBytes(data))
             {

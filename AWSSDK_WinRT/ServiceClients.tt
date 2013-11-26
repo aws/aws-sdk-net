@@ -95,7 +95,7 @@ namespace <#= type.Namespace #>
                 continue;
 
             // Skip methods that are added via extensions.
-            if (method.Name.Equals("GetPreSignedURL"))
+            if (method.Name.Equals("GetPreSignedURL") || method.Name.Equals("SubscribeQueue"))
                 continue;
 
             if(method.GetParameters().Length != 0)
@@ -154,7 +154,7 @@ namespace <#= type.Namespace #>
                 continue;
 
             // Skip methods that are added via extensions.
-            if (method.Name.Equals("GetPreSignedURL"))
+            if (method.Name.Equals("GetPreSignedURL") || method.Name.Equals("SubscribeQueue"))
                 continue;
 
             if(method.GetParameters().Length != 0)
