@@ -55,6 +55,12 @@
   
               if (context.TestExpression("CodecOptions", targetDepth))
               {
+                
+                  if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                  {
+                      videoParameters.CodecOptions = null;
+                      continue;
+                  }              
                 videoParameters.CodecOptions = new Dictionary<String,String>();
                 KeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller> unmarshaller = new KeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.GetInstance(), StringUnmarshaller.GetInstance());
                 while (context.Read())
@@ -147,8 +153,14 @@
   
               if (context.TestExpression("Watermarks", targetDepth))
               {
-                videoParameters.Watermarks = new List<PresetWatermark>();
-                        PresetWatermarkUnmarshaller unmarshaller = PresetWatermarkUnmarshaller.GetInstance();
+                
+                  if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                  {
+                      videoParameters.Watermarks = null;
+                      continue;
+                  }              
+                  videoParameters.Watermarks = new List<PresetWatermark>();
+                  PresetWatermarkUnmarshaller unmarshaller = PresetWatermarkUnmarshaller.GetInstance();
                 while (context.Read())
                 {
                   if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))

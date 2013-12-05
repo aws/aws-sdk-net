@@ -73,8 +73,14 @@
   
               if (context.TestExpression("Outputs", targetDepth))
               {
-                job.Outputs = new List<JobOutput>();
-                        JobOutputUnmarshaller unmarshaller = JobOutputUnmarshaller.GetInstance();
+                
+                  if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                  {
+                      job.Outputs = null;
+                      continue;
+                  }              
+                  job.Outputs = new List<JobOutput>();
+                  JobOutputUnmarshaller unmarshaller = JobOutputUnmarshaller.GetInstance();
                 while (context.Read())
                 {
                   if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))
@@ -97,8 +103,14 @@
   
               if (context.TestExpression("Playlists", targetDepth))
               {
-                job.Playlists = new List<Playlist>();
-                        PlaylistUnmarshaller unmarshaller = PlaylistUnmarshaller.GetInstance();
+                
+                  if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                  {
+                      job.Playlists = null;
+                      continue;
+                  }              
+                  job.Playlists = new List<Playlist>();
+                  PlaylistUnmarshaller unmarshaller = PlaylistUnmarshaller.GetInstance();
                 while (context.Read())
                 {
                   if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))

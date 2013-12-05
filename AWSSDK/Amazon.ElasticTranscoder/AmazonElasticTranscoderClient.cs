@@ -30,7 +30,7 @@ namespace Amazon.ElasticTranscoder
     ///  
     /// AWS Elastic Transcoder Service <para>The AWS Elastic Transcoder Service.</para>
     /// </summary>
-    public class AmazonElasticTranscoderClient : AmazonWebServiceClient, AmazonElasticTranscoder
+    public partial class AmazonElasticTranscoderClient : AmazonWebServiceClient, AmazonElasticTranscoder
     {
     
         AbstractAWSSigner signer = new AWS4Signer();

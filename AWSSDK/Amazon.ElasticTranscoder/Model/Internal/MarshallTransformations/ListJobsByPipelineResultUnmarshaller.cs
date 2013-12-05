@@ -48,8 +48,14 @@
               
               if (context.TestExpression("Jobs", targetDepth))
               {
-                listJobsByPipelineResult.Jobs = new List<Job>();
-                        JobUnmarshaller unmarshaller = JobUnmarshaller.GetInstance();
+                
+                  if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                  {
+                      listJobsByPipelineResult.Jobs = null;
+                      continue;
+                  }              
+                  listJobsByPipelineResult.Jobs = new List<Job>();
+                  JobUnmarshaller unmarshaller = JobUnmarshaller.GetInstance();
                 while (context.Read())
                 {
                   if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))
