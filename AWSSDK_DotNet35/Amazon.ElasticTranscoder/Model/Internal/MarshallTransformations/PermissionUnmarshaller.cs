@@ -62,8 +62,14 @@
               if (context.TestExpression("Access", targetDepth))
               {
                 context.Read();
-                permission.Access = new List<String>();
-                        StringUnmarshaller unmarshaller = StringUnmarshaller.GetInstance();
+                
+                if (context.CurrentTokenType == JsonToken.Null)
+                {
+                    permission.Access = null;
+                    continue;
+                }
+                  permission.Access = new List<String>();
+                  StringUnmarshaller unmarshaller = StringUnmarshaller.GetInstance();
                 while (context.Read())
                 {
                   JsonToken token = context.CurrentTokenType;                

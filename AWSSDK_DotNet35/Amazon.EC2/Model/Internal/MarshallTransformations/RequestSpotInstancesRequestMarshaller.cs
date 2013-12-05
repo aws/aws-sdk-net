@@ -200,23 +200,23 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         if (networkInterfacesListValue != null && networkInterfacesListValue.IsSetNetworkInterfaceId())
                         {
-                            request.Parameters.Add("LaunchSpecification.NetworkInterfaceSet." + networkInterfacesListIndex + ".NetworkInterfaceId", StringUtils.FromString(networkInterfacesListValue.NetworkInterfaceId));
+                            request.Parameters.Add("LaunchSpecification.NetworkInterface." + networkInterfacesListIndex + ".NetworkInterfaceId", StringUtils.FromString(networkInterfacesListValue.NetworkInterfaceId));
                         }
                         if (networkInterfacesListValue != null && networkInterfacesListValue.IsSetDeviceIndex())
                         {
-                            request.Parameters.Add("LaunchSpecification.NetworkInterfaceSet." + networkInterfacesListIndex + ".DeviceIndex", StringUtils.FromInt(networkInterfacesListValue.DeviceIndex));
+                            request.Parameters.Add("LaunchSpecification.NetworkInterface." + networkInterfacesListIndex + ".DeviceIndex", StringUtils.FromInt(networkInterfacesListValue.DeviceIndex));
                         }
                         if (networkInterfacesListValue != null && networkInterfacesListValue.IsSetSubnetId())
                         {
-                            request.Parameters.Add("LaunchSpecification.NetworkInterfaceSet." + networkInterfacesListIndex + ".SubnetId", StringUtils.FromString(networkInterfacesListValue.SubnetId));
+                            request.Parameters.Add("LaunchSpecification.NetworkInterface." + networkInterfacesListIndex + ".SubnetId", StringUtils.FromString(networkInterfacesListValue.SubnetId));
                         }
                         if (networkInterfacesListValue != null && networkInterfacesListValue.IsSetDescription())
                         {
-                            request.Parameters.Add("LaunchSpecification.NetworkInterfaceSet." + networkInterfacesListIndex + ".Description", StringUtils.FromString(networkInterfacesListValue.Description));
+                            request.Parameters.Add("LaunchSpecification.NetworkInterface." + networkInterfacesListIndex + ".Description", StringUtils.FromString(networkInterfacesListValue.Description));
                         }
                         if (networkInterfacesListValue != null && networkInterfacesListValue.IsSetPrivateIpAddress())
                         {
-                            request.Parameters.Add("LaunchSpecification.NetworkInterfaceSet." + networkInterfacesListIndex + ".PrivateIpAddress", StringUtils.FromString(networkInterfacesListValue.PrivateIpAddress));
+                            request.Parameters.Add("LaunchSpecification.NetworkInterface." + networkInterfacesListIndex + ".PrivateIpAddress", StringUtils.FromString(networkInterfacesListValue.PrivateIpAddress));
                         }
                         if (networkInterfacesListValue != null)
                         {
@@ -225,13 +225,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             int groupsListIndex = 1;
                             foreach (string groupsListValue in groupsList)
                             { 
-                                request.Parameters.Add("LaunchSpecification.NetworkInterfaceSet." + networkInterfacesListIndex + ".SecurityGroupId." + groupsListIndex, StringUtils.FromString(groupsListValue));
+                                request.Parameters.Add("LaunchSpecification.NetworkInterface." + networkInterfacesListIndex + ".SecurityGroupId." + groupsListIndex, StringUtils.FromString(groupsListValue));
                                 groupsListIndex++;
                             }
                         }
                         if (networkInterfacesListValue != null && networkInterfacesListValue.IsSetDeleteOnTermination())
                         {
-                            request.Parameters.Add("LaunchSpecification.NetworkInterfaceSet." + networkInterfacesListIndex + ".DeleteOnTermination", StringUtils.FromBool(networkInterfacesListValue.DeleteOnTermination));
+                            request.Parameters.Add("LaunchSpecification.NetworkInterface." + networkInterfacesListIndex + ".DeleteOnTermination", StringUtils.FromBool(networkInterfacesListValue.DeleteOnTermination));
                         }
 
                         if (networkInterfacesListValue != null)
@@ -242,11 +242,11 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             {
                                 if (privateIpAddressesListValue != null && privateIpAddressesListValue.IsSetPrivateIpAddress())
                                 {
-                                    request.Parameters.Add("LaunchSpecification.NetworkInterfaceSet." + networkInterfacesListIndex + ".PrivateIpAddresses." + privateIpAddressesListIndex + ".PrivateIpAddress", StringUtils.FromString(privateIpAddressesListValue.PrivateIpAddress));
+                                    request.Parameters.Add("LaunchSpecification.NetworkInterface." + networkInterfacesListIndex + ".PrivateIpAddresses." + privateIpAddressesListIndex + ".PrivateIpAddress", StringUtils.FromString(privateIpAddressesListValue.PrivateIpAddress));
                                 }
                                 if (privateIpAddressesListValue != null && privateIpAddressesListValue.IsSetPrimary())
                                 {
-                                    request.Parameters.Add("LaunchSpecification.NetworkInterfaceSet." + networkInterfacesListIndex + ".PrivateIpAddresses." + privateIpAddressesListIndex + ".Primary", StringUtils.FromBool(privateIpAddressesListValue.Primary));
+                                    request.Parameters.Add("LaunchSpecification.NetworkInterface." + networkInterfacesListIndex + ".PrivateIpAddresses." + privateIpAddressesListIndex + ".Primary", StringUtils.FromBool(privateIpAddressesListValue.Primary));
                                 }
 
                                 privateIpAddressesListIndex++;
@@ -254,11 +254,11 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         }
                         if (networkInterfacesListValue != null && networkInterfacesListValue.IsSetSecondaryPrivateIpAddressCount())
                         {
-                            request.Parameters.Add("LaunchSpecification.NetworkInterfaceSet." + networkInterfacesListIndex + ".SecondaryPrivateIpAddressCount", StringUtils.FromInt(networkInterfacesListValue.SecondaryPrivateIpAddressCount));
+                            request.Parameters.Add("LaunchSpecification.NetworkInterface." + networkInterfacesListIndex + ".SecondaryPrivateIpAddressCount", StringUtils.FromInt(networkInterfacesListValue.SecondaryPrivateIpAddressCount));
                         }
                         if (networkInterfacesListValue != null && networkInterfacesListValue.IsSetAssociatePublicIpAddress())
                         {
-                            request.Parameters.Add("LaunchSpecification.NetworkInterfaceSet." + networkInterfacesListIndex + ".AssociatePublicIpAddress", StringUtils.FromBool(networkInterfacesListValue.AssociatePublicIpAddress));
+                            request.Parameters.Add("LaunchSpecification.NetworkInterface." + networkInterfacesListIndex + ".AssociatePublicIpAddress", StringUtils.FromBool(networkInterfacesListValue.AssociatePublicIpAddress));
                         }
 
                         networkInterfacesListIndex++;

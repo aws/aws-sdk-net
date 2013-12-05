@@ -64,11 +64,11 @@ namespace Amazon.S3.Encryption
 
         private static byte[] EncryptEnvelopeKeyUsingSymmetricKey(SymmetricAlgorithm symmetricAlgorithm, byte[] envelopeKey)
         {
-            symmetricAlgorithm.IV = new byte[symmetricAlgorithm.IV.Length];
             symmetricAlgorithm.Mode = CipherMode.ECB;
-            ICryptoTransform encryptor = symmetricAlgorithm.CreateEncryptor();
-
-            return (encryptor.TransformFinalBlock(envelopeKey, 0, envelopeKey.Length));
+            using (ICryptoTransform encryptor = symmetricAlgorithm.CreateEncryptor())
+            {
+                return (encryptor.TransformFinalBlock(envelopeKey, 0, envelopeKey.Length));
+            }
         }
 
         /// <summary>
@@ -98,11 +98,11 @@ namespace Amazon.S3.Encryption
 
         private static byte[] DecryptEnvelopeKeyUsingSymmetricKey(SymmetricAlgorithm symmetricAlgorithm, byte[] encryptedEnvelopeKey)
         {
-            symmetricAlgorithm.IV = new byte[symmetricAlgorithm.IV.Length];
             symmetricAlgorithm.Mode = CipherMode.ECB;
-            ICryptoTransform decryptor = symmetricAlgorithm.CreateDecryptor();
-
-            return (decryptor.TransformFinalBlock(encryptedEnvelopeKey, 0, encryptedEnvelopeKey.Length));
+            using (ICryptoTransform decryptor = symmetricAlgorithm.CreateDecryptor())
+            {
+                return (decryptor.TransformFinalBlock(encryptedEnvelopeKey, 0, encryptedEnvelopeKey.Length));
+            }
         }
 
         #region StreamEncryption

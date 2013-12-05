@@ -62,8 +62,14 @@
               if (context.TestExpression("Permissions", targetDepth))
               {
                 context.Read();
-                pipelineOutputConfig.Permissions = new List<Permission>();
-                        PermissionUnmarshaller unmarshaller = PermissionUnmarshaller.GetInstance();
+                
+                if (context.CurrentTokenType == JsonToken.Null)
+                {
+                    pipelineOutputConfig.Permissions = null;
+                    continue;
+                }
+                  pipelineOutputConfig.Permissions = new List<Permission>();
+                  PermissionUnmarshaller unmarshaller = PermissionUnmarshaller.GetInstance();
                 while (context.Read())
                 {
                   JsonToken token = context.CurrentTokenType;                

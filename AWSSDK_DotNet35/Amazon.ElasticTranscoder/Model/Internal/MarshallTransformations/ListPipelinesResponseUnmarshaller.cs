@@ -49,8 +49,14 @@
               if (context.TestExpression("Pipelines", targetDepth))
               {
                 context.Read();
-                response.Pipelines = new List<Pipeline>();
-                        PipelineUnmarshaller unmarshaller = PipelineUnmarshaller.GetInstance();
+                
+                if (context.CurrentTokenType == JsonToken.Null)
+                {
+                    response.Pipelines = null;
+                    continue;
+                }
+                  response.Pipelines = new List<Pipeline>();
+                  PipelineUnmarshaller unmarshaller = PipelineUnmarshaller.GetInstance();
                 while (context.Read())
                 {
                   JsonToken token = context.CurrentTokenType;                

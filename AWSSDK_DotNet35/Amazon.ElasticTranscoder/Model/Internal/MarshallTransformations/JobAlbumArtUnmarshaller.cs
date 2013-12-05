@@ -55,8 +55,14 @@
               if (context.TestExpression("Artwork", targetDepth))
               {
                 context.Read();
-                jobAlbumArt.Artwork = new List<Artwork>();
-                        ArtworkUnmarshaller unmarshaller = ArtworkUnmarshaller.GetInstance();
+                
+                if (context.CurrentTokenType == JsonToken.Null)
+                {
+                    jobAlbumArt.Artwork = null;
+                    continue;
+                }
+                  jobAlbumArt.Artwork = new List<Artwork>();
+                  ArtworkUnmarshaller unmarshaller = ArtworkUnmarshaller.GetInstance();
                 while (context.Read())
                 {
                   JsonToken token = context.CurrentTokenType;                

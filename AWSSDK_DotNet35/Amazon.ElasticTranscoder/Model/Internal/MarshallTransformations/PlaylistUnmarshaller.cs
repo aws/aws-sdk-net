@@ -62,8 +62,14 @@
               if (context.TestExpression("OutputKeys", targetDepth))
               {
                 context.Read();
-                playlist.OutputKeys = new List<String>();
-                        StringUnmarshaller unmarshaller = StringUnmarshaller.GetInstance();
+                
+                if (context.CurrentTokenType == JsonToken.Null)
+                {
+                    playlist.OutputKeys = null;
+                    continue;
+                }
+                  playlist.OutputKeys = new List<String>();
+                  StringUnmarshaller unmarshaller = StringUnmarshaller.GetInstance();
                 while (context.Read())
                 {
                   JsonToken token = context.CurrentTokenType;                

@@ -49,8 +49,14 @@
               if (context.TestExpression("Presets", targetDepth))
               {
                 context.Read();
-                response.Presets = new List<Preset>();
-                        PresetUnmarshaller unmarshaller = PresetUnmarshaller.GetInstance();
+                
+                if (context.CurrentTokenType == JsonToken.Null)
+                {
+                    response.Presets = null;
+                    continue;
+                }
+                  response.Presets = new List<Preset>();
+                  PresetUnmarshaller unmarshaller = PresetUnmarshaller.GetInstance();
                 while (context.Read())
                 {
                   JsonToken token = context.CurrentTokenType;                

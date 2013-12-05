@@ -125,8 +125,14 @@
               if (context.TestExpression("Watermarks", targetDepth))
               {
                 context.Read();
-                jobOutput.Watermarks = new List<JobWatermark>();
-                        JobWatermarkUnmarshaller unmarshaller = JobWatermarkUnmarshaller.GetInstance();
+                
+                if (context.CurrentTokenType == JsonToken.Null)
+                {
+                    jobOutput.Watermarks = null;
+                    continue;
+                }
+                  jobOutput.Watermarks = new List<JobWatermark>();
+                  JobWatermarkUnmarshaller unmarshaller = JobWatermarkUnmarshaller.GetInstance();
                 while (context.Read())
                 {
                   JsonToken token = context.CurrentTokenType;                
@@ -153,8 +159,14 @@
               if (context.TestExpression("Composition", targetDepth))
               {
                 context.Read();
-                jobOutput.Composition = new List<Clip>();
-                        ClipUnmarshaller unmarshaller = ClipUnmarshaller.GetInstance();
+                
+                if (context.CurrentTokenType == JsonToken.Null)
+                {
+                    jobOutput.Composition = null;
+                    continue;
+                }
+                  jobOutput.Composition = new List<Clip>();
+                  ClipUnmarshaller unmarshaller = ClipUnmarshaller.GetInstance();
                 while (context.Read())
                 {
                   JsonToken token = context.CurrentTokenType;                

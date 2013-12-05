@@ -76,8 +76,14 @@
               if (context.TestExpression("Outputs", targetDepth))
               {
                 context.Read();
-                job.Outputs = new List<JobOutput>();
-                        JobOutputUnmarshaller unmarshaller = JobOutputUnmarshaller.GetInstance();
+                
+                if (context.CurrentTokenType == JsonToken.Null)
+                {
+                    job.Outputs = null;
+                    continue;
+                }
+                  job.Outputs = new List<JobOutput>();
+                  JobOutputUnmarshaller unmarshaller = JobOutputUnmarshaller.GetInstance();
                 while (context.Read())
                 {
                   JsonToken token = context.CurrentTokenType;                
@@ -104,8 +110,14 @@
               if (context.TestExpression("Playlists", targetDepth))
               {
                 context.Read();
-                job.Playlists = new List<Playlist>();
-                        PlaylistUnmarshaller unmarshaller = PlaylistUnmarshaller.GetInstance();
+                
+                if (context.CurrentTokenType == JsonToken.Null)
+                {
+                    job.Playlists = null;
+                    continue;
+                }
+                  job.Playlists = new List<Playlist>();
+                  PlaylistUnmarshaller unmarshaller = PlaylistUnmarshaller.GetInstance();
                 while (context.Read())
                 {
                   JsonToken token = context.CurrentTokenType;                

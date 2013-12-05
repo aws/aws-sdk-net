@@ -913,26 +913,6 @@ namespace Amazon.ElasticTranscoder
         }
  
         /// <summary>
-        /// <para>The TestRole operation tests the IAM role used to create the pipeline.</para> <para>The <c>TestRole</c> action lets you determine
-        /// whether the IAM role you are using has sufficient permissions to let Elastic Transcoder perform tasks associated with the transcoding
-        /// process. The action attempts to assume the specified IAM role, checks read access to the input and output buckets, and tries to send a test
-        /// notification to Amazon SNS topics that you specify.</para>
-        /// </summary>
-        /// 
-        /// 
-        /// <returns>The response from the TestRole service method, as returned by AmazonElasticTranscoder.</returns>
-        /// 
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.ResourceNotFoundException" />
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.AccessDeniedException" />
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.InternalServiceException" />
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.ValidationException" />
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.IncompatibleVersionException" />
-		public TestRoleResponse TestRole()
-        {
-            return this.TestRole(new TestRoleRequest());
-        }
- 
-        /// <summary>
         /// <para> Use the <c>UpdatePipeline</c> operation to update settings for a pipeline. <para><b>IMPORTANT:</b>When you change pipeline settings,
         /// your changes take effect immediately. Jobs that you have already submitted and that Elastic Transcoder has not started to process are
         /// affected in addition to jobs that you submit after you change settings. </para> </para>
@@ -1031,26 +1011,6 @@ namespace Amazon.ElasticTranscoder
         }
  
         /// <summary>
-        /// <para>With the UpdatePipelineNotifications operation, you can update Amazon Simple Notification Service (Amazon SNS) notifications for a
-        /// pipeline.</para> <para>When you update notifications for a pipeline, Elastic Transcoder returns the values that you specified in the
-        /// request.</para>
-        /// </summary>
-        /// 
-        /// 
-        /// <returns>The response from the UpdatePipelineNotifications service method, as returned by AmazonElasticTranscoder.</returns>
-        /// 
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.ResourceNotFoundException" />
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.AccessDeniedException" />
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.ResourceInUseException" />
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.InternalServiceException" />
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.ValidationException" />
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.IncompatibleVersionException" />
-		public UpdatePipelineNotificationsResponse UpdatePipelineNotifications()
-        {
-            return this.UpdatePipelineNotifications(new UpdatePipelineNotificationsRequest());
-        }
- 
-        /// <summary>
         /// <para>The UpdatePipelineStatus operation pauses or reactivates a pipeline, so that the pipeline stops or restarts the processing of
         /// jobs.</para> <para>Changing the pipeline status is useful if you want to cancel one or more jobs. You can't cancel jobs after Elastic
         /// Transcoder has started processing them; if you pause the pipeline to which you submitted the jobs, you have more time to get the job IDs for
@@ -1098,27 +1058,6 @@ namespace Amazon.ElasticTranscoder
             var response = await Invoke<IRequest, UpdatePipelineStatusRequest, UpdatePipelineStatusResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
                 .ConfigureAwait(continueOnCapturedContext: false);
             return response;
-        }
- 
-        /// <summary>
-        /// <para>The UpdatePipelineStatus operation pauses or reactivates a pipeline, so that the pipeline stops or restarts the processing of
-        /// jobs.</para> <para>Changing the pipeline status is useful if you want to cancel one or more jobs. You can't cancel jobs after Elastic
-        /// Transcoder has started processing them; if you pause the pipeline to which you submitted the jobs, you have more time to get the job IDs for
-        /// the jobs that you want to cancel, and to send a CancelJob request. </para>
-        /// </summary>
-        /// 
-        /// 
-        /// <returns>The response from the UpdatePipelineStatus service method, as returned by AmazonElasticTranscoder.</returns>
-        /// 
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.ResourceNotFoundException" />
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.AccessDeniedException" />
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.ResourceInUseException" />
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.InternalServiceException" />
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.ValidationException" />
-        /// <exception cref="T:Amazon.ElasticTranscoder.Model.IncompatibleVersionException" />
-		public UpdatePipelineStatusResponse UpdatePipelineStatus()
-        {
-            return this.UpdatePipelineStatus(new UpdatePipelineStatusRequest());
         }
     }
 }
