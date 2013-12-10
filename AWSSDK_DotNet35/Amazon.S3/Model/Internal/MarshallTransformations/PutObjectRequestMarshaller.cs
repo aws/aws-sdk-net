@@ -59,9 +59,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if(putObjectRequest.IsSetWebsiteRedirectLocation())
                 request.Headers.Add("x-amz-website-redirect-location", S3Transforms.ToStringValue(putObjectRequest.WebsiteRedirectLocation));
 
-            var metadata = putObjectRequest.Metadata;
-            foreach (var name in metadata.Keys)
-                request.Headers[name] = metadata[name];
+            AmazonS3Util.SetMetadataHeaders(request, putObjectRequest.Metadata);
             
               
             Dictionary<string, string> queryParameters = new Dictionary<string, string>();

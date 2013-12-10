@@ -79,6 +79,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (copyObjectRequest.IsSetWebsiteRedirectLocation())
                 request.Headers.Add("x-amz-website-redirect-location", S3Transforms.ToStringValue(copyObjectRequest.WebsiteRedirectLocation));
 
+            AmazonS3Util.SetMetadataHeaders(request, copyObjectRequest.Metadata);
 
             Dictionary<string, string> queryParameters = new Dictionary<string, string>();
             string uriResourcePath = "/{Bucket}/{Key}";

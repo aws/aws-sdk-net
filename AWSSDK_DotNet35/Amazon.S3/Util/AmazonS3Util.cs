@@ -32,6 +32,7 @@ using System.Text.RegularExpressions;
 using Amazon.S3.Model;
 using Amazon.Util;
 using System.Threading;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.S3.Util
 {
@@ -313,6 +314,12 @@ namespace Amazon.S3.Util
             {
                 return BitConverter.ToString(hashed).Replace("-", String.Empty);
             }
+        }
+
+        internal static void SetMetadataHeaders(IRequest request, MetadataCollection metadata)
+        {
+            foreach (var name in metadata.Keys)
+                request.Headers[name] = metadata[name];
         }
 
         /// <summary>

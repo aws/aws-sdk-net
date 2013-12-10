@@ -62,9 +62,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (initiateMultipartUploadRequest.IsSetWebsiteRedirectLocation())
                 request.Headers.Add("x-amz-website-redirect-location", S3Transforms.ToStringValue(initiateMultipartUploadRequest.WebsiteRedirectLocation));
 
-            var metadata = initiateMultipartUploadRequest.Metadata;
-            foreach (var name in metadata.Keys)
-                request.Headers[name] = metadata[name];
+            AmazonS3Util.SetMetadataHeaders(request, initiateMultipartUploadRequest.Metadata);
 
             Dictionary<string, string> queryParameters = new Dictionary<string, string>();
             string uriResourcePath = "/{Bucket}/{Key}?uploads";

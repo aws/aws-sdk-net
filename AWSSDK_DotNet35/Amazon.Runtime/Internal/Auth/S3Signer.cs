@@ -109,7 +109,6 @@ namespace Amazon.Runtime.Internal.Auth
                 {
                     sb.Append(AmazonS3Util.UrlEncode(canonicalizedResource, true));
                 }
-                //sb.Append(canonicalizedResource);
             }
 
             return sb.ToString();
@@ -119,7 +118,7 @@ namespace Amazon.Runtime.Internal.Auth
         {
             // Create the canonicalized header string to return.
             StringBuilder sb = new StringBuilder(256);
-            foreach (string key in headers.Keys.OrderBy(x => x.ToLower(CultureInfo.InvariantCulture)))
+            foreach (string key in headers.Keys.OrderBy(x => x, StringComparer.OrdinalIgnoreCase))
             {
                 var lowerKey = key.ToLower(CultureInfo.InvariantCulture);
                 if (!lowerKey.StartsWith("x-amz-", StringComparison.Ordinal))

@@ -155,7 +155,7 @@ namespace Amazon.Runtime
             var objString = obj as string;
             if (objString != null)
             {
-                return StringComparer.Ordinal.Equals(this.Value, objString);
+                return StringComparer.OrdinalIgnoreCase.Equals(this.Value, objString);
             }
 
             // obj is of an incompatible type, return false.
@@ -169,7 +169,7 @@ namespace Amazon.Runtime
                 // If obj is null, return false.
                 return false;
             }
-            return StringComparer.Ordinal.Equals(this.Value, obj.Value);
+            return StringComparer.OrdinalIgnoreCase.Equals(this.Value, obj.Value);
         }
 
         public static bool operator ==(ConstantClass a, ConstantClass b)
@@ -192,6 +192,39 @@ namespace Amazon.Runtime
         }
 
         public static bool operator !=(ConstantClass a, ConstantClass b)
+        {
+            return !(a == b);
+        }
+
+        public static bool operator ==(ConstantClass a, string b)
+        {
+            if ((object)a == null && b == null)
+            {
+                return true;
+            }
+
+            if ((object)a == null)
+            {
+                // If either is null, return false.
+                return false;
+            }
+            else
+            {
+                return a.Equals(b);
+            }
+        }
+
+        public static bool operator ==(string a, ConstantClass b)
+        {
+            return (b == a);
+        }        
+
+        public static bool operator !=(ConstantClass a, string b)
+        {
+            return !(a == b);
+        }
+
+        public static bool operator !=(string a, ConstantClass b)
         {
             return !(a == b);
         }
