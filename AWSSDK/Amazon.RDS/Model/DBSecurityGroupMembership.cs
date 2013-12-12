@@ -30,14 +30,14 @@ namespace Amazon.RDS.Model
     /// 
     /// </ul>
     /// </summary>
-    public class DBSecurityGroupMembership
+    public partial class DBSecurityGroupMembership
     {
         
         private string dBSecurityGroupName;
         private string status;
 
         /// <summary>
-        /// The name of the DB Security Group.
+        /// The name of the DB security group.
         ///  
         /// </summary>
         public string DBSecurityGroupName
@@ -66,7 +66,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The status of the DB Security Group.
+        /// The status of the DB security group.
         ///  
         /// </summary>
         public string Status

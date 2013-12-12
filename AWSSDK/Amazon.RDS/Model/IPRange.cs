@@ -23,7 +23,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// <para> This data type is used as a response element in the DescribeDBSecurityGroups action. </para>
     /// </summary>
-    public class IPRange
+    public partial class IPRange
     {
         
         private string status;

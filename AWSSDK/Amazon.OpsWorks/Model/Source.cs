@@ -25,7 +25,7 @@ namespace Amazon.OpsWorks.Model
     /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html" >Creating Apps</a> or <a
     /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html" >Custom Recipes and Cookbooks</a> .</para>
     /// </summary>
-    public class Source
+    public partial class Source
     {
         
         private string type;

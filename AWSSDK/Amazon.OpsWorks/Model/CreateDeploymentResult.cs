@@ -23,7 +23,7 @@ namespace Amazon.OpsWorks.Model
     /// <summary>
     /// <para>Contains the response to a <c>CreateDeployment</c> request.</para>
     /// </summary>
-    public class CreateDeploymentResult
+    public partial class CreateDeploymentResult
     {
         
         private string deploymentId;

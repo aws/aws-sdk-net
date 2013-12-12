@@ -23,7 +23,7 @@ namespace Amazon.ElasticBeanstalk.Model
     /// <summary>
     /// <para>A specification of a location in Amazon S3.</para>
     /// </summary>
-    public class S3Location  
+    public partial class S3Location
     {
         
         private string s3Bucket;
@@ -64,7 +64,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if S3Bucket property is set
         internal bool IsSetS3Bucket()
         {
-            return this.s3Bucket != null;       
+            return this.s3Bucket != null;
         }
 
         /// <summary>
@@ -102,7 +102,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if S3Key property is set
         internal bool IsSetS3Key()
         {
-            return this.s3Key != null;       
+            return this.s3Key != null;
         }
     }
 }

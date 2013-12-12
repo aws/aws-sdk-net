@@ -39,7 +39,7 @@ namespace Amazon.RDS.Model
         private string eC2SecurityGroupOwnerId;
 
         /// <summary>
-        /// The name of the DB Security Group to revoke ingress from.
+        /// The name of the DB security group to revoke ingress from.
         ///  
         /// </summary>
         public string DBSecurityGroupName
@@ -98,7 +98,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The name of the EC2 Security Group to revoke access from. For VPC DB Security Groups, <c>EC2SecurityGroupId</c> must be provided. Otherwise,
+        /// The name of the EC2 security group to revoke access from. For VPC DB security groups, <c>EC2SecurityGroupId</c> must be provided. Otherwise,
         /// EC2SecurityGroupOwnerId and either <c>EC2SecurityGroupName</c> or <c>EC2SecurityGroupId</c> must be provided.
         ///  
         /// </summary>
@@ -128,7 +128,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The id of the EC2 Security Group to revoke access from. For VPC DB Security Groups, <c>EC2SecurityGroupId</c> must be provided. Otherwise,
+        /// The id of the EC2 security group to revoke access from. For VPC DB security groups, <c>EC2SecurityGroupId</c> must be provided. Otherwise,
         /// EC2SecurityGroupOwnerId and either <c>EC2SecurityGroupName</c> or <c>EC2SecurityGroupId</c> must be provided.
         ///  
         /// </summary>
@@ -159,7 +159,7 @@ namespace Amazon.RDS.Model
 
         /// <summary>
         /// The AWS Account Number of the owner of the EC2 security group specified in the <c>EC2SecurityGroupName</c> parameter. The AWS Access Key ID
-        /// is not an acceptable value. For VPC DB Security Groups, <c>EC2SecurityGroupId</c> must be provided. Otherwise, EC2SecurityGroupOwnerId and
+        /// is not an acceptable value. For VPC DB security groups, <c>EC2SecurityGroupId</c> must be provided. Otherwise, EC2SecurityGroupOwnerId and
         /// either <c>EC2SecurityGroupName</c> or <c>EC2SecurityGroupId</c> must be provided.
         ///  
         /// </summary>

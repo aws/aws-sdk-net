@@ -31,6 +31,7 @@ namespace Amazon.RDS.Model
     public class DescribeOptionGroupsRequest : AmazonWebServiceRequest
     {
         private string optionGroupName;
+        private List<Filter> filters = new List<Filter>();
         private string marker;
         private int? maxRecords;
         private string engineName;
@@ -63,6 +64,53 @@ namespace Amazon.RDS.Model
         internal bool IsSetOptionGroupName()
         {
             return this.optionGroupName != null;
+        }
+
+        /// <summary>
+        /// This parameter is not currently supported.
+        ///  
+        /// </summary>
+        public List<Filter> Filters
+        {
+            get { return this.filters; }
+            set { this.filters = value; }
+        }
+        /// <summary>
+        /// Adds elements to the Filters collection
+        /// </summary>
+        /// <param name="filters">The values to add to the Filters collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public DescribeOptionGroupsRequest WithFilters(params Filter[] filters)
+        {
+            foreach (Filter element in filters)
+            {
+                this.filters.Add(element);
+            }
+
+            return this;
+        }
+
+        /// <summary>
+        /// Adds elements to the Filters collection
+        /// </summary>
+        /// <param name="filters">The values to add to the Filters collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public DescribeOptionGroupsRequest WithFilters(IEnumerable<Filter> filters)
+        {
+            foreach (Filter element in filters)
+            {
+                this.filters.Add(element);
+            }
+
+            return this;
+        }
+
+        // Check to see if Filters property is set
+        internal bool IsSetFilters()
+        {
+            return this.filters.Count > 0;
         }
 
         /// <summary>

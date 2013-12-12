@@ -23,7 +23,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// <para> Contains the result of a successful invocation of the DescribeEvents action. </para>
     /// </summary>
-    public class DescribeEventsResult
+    public partial class DescribeEventsResult
     {
         
         private string marker;

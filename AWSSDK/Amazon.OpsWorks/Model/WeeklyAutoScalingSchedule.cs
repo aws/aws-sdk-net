@@ -34,7 +34,7 @@ namespace Amazon.OpsWorks.Model
     /// "12":"on", "13":"on", "14":"on", "15":"on" }
     /// </c>
     /// </summary>
-    public class WeeklyAutoScalingSchedule
+    public partial class WeeklyAutoScalingSchedule
     {
         
         private Dictionary<string,string> monday = new Dictionary<string,string>();

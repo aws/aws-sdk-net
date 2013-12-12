@@ -23,7 +23,7 @@ namespace Amazon.OpsWorks.Model
     /// <summary>
     /// <para>Describes the configuration manager.</para>
     /// </summary>
-    public class StackConfigurationManager
+    public partial class StackConfigurationManager
     {
         
         private string name;

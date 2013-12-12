@@ -23,14 +23,14 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// <para> Contains the result of a successful invocation of the DescribeOrderableDBInstanceOptions action. </para>
     /// </summary>
-    public class DescribeOrderableDBInstanceOptionsResult
+    public partial class DescribeOrderableDBInstanceOptionsResult
     {
         
         private List<OrderableDBInstanceOption> orderableDBInstanceOptions = new List<OrderableDBInstanceOption>();
         private string marker;
 
         /// <summary>
-        /// An <a>OrderableDBInstanceOption</a> structure containing information about orderable options for the DB Instance.
+        /// An <a>OrderableDBInstanceOption</a> structure containing information about orderable options for the DB instance.
         ///  
         /// </summary>
         public List<OrderableDBInstanceOption> OrderableDBInstanceOptions

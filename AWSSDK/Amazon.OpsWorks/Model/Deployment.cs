@@ -23,7 +23,7 @@ namespace Amazon.OpsWorks.Model
     /// <summary>
     /// <para>Describes a deployment of a stack or app.</para>
     /// </summary>
-    public class Deployment
+    public partial class Deployment
     {
         
         private string deploymentId;

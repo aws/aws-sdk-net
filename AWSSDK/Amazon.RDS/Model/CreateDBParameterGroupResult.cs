@@ -23,7 +23,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// The results from the CreateDBParameterGroup action.
     /// </summary>
-    public class CreateDBParameterGroupResult
+    public partial class CreateDBParameterGroupResult
     {
         private DBParameterGroup dBParameterGroupValue;
 

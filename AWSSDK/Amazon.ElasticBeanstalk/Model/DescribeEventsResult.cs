@@ -23,7 +23,7 @@ namespace Amazon.ElasticBeanstalk.Model
     /// <summary>
     /// <para>Result message wrapping a list of event descriptions.</para>
     /// </summary>
-    public class DescribeEventsResult  
+    public partial class DescribeEventsResult
     {
         
         private List<EventDescription> events = new List<EventDescription>();
@@ -53,7 +53,7 @@ namespace Amazon.ElasticBeanstalk.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Events collection
         /// </summary>
@@ -73,7 +73,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if Events property is set
         internal bool IsSetEvents()
         {
-            return this.events.Count > 0;       
+            return this.events.Count > 0;
         }
 
         /// <summary>
@@ -103,7 +103,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if NextToken property is set
         internal bool IsSetNextToken()
         {
-            return this.nextToken != null;       
+            return this.nextToken != null;
         }
     }
 }

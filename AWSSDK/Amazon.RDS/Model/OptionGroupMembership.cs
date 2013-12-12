@@ -23,7 +23,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// <para> Provides information on the option groups the DB instance is a member of. </para>
     /// </summary>
-    public class OptionGroupMembership
+    public partial class OptionGroupMembership
     {
         
         private string optionGroupName;
@@ -59,7 +59,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The status of the DB Instance's option group membership (e.g. in-sync, pending, pending-maintenance, applying).
+        /// The status of the DB instance's option group membership (e.g. in-sync, pending, pending-maintenance, applying).
         ///  
         /// </summary>
         public string Status

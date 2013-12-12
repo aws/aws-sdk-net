@@ -22,13 +22,14 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
      /// <summary>
      ///   CreateStorageLocationResult Unmarshaller
      /// </summary>
-    internal class CreateStorageLocationResultUnmarshaller : IUnmarshaller<CreateStorageLocationResult, XmlUnmarshallerContext> 
+    internal class CreateStorageLocationResultUnmarshaller : IUnmarshaller<CreateStorageLocationResult, XmlUnmarshallerContext>, IUnmarshaller<CreateStorageLocationResult, JsonUnmarshallerContext> 
     {
         public CreateStorageLocationResult Unmarshall(XmlUnmarshallerContext context) 
         {
             CreateStorageLocationResult createStorageLocationResult = new CreateStorageLocationResult();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -52,6 +53,11 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
 
 
             return createStorageLocationResult;
+        }
+
+        public CreateStorageLocationResult Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static CreateStorageLocationResultUnmarshaller instance;

@@ -25,18 +25,19 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeDBParameterGroups operation.
-    /// <para> Returns a list of DBParameterGroup descriptions. If a DBParameterGroupName is specified, the list will contain only the description
-    /// of the specified DBParameterGroup. </para>
+    /// <para> Returns a list of <c>DBParameterGroup</c> descriptions. If a <c>DBParameterGroupName</c> is specified, the list will contain only the
+    /// description of the specified DB parameter group. </para>
     /// </summary>
     /// <seealso cref="Amazon.RDS.AmazonRDS.DescribeDBParameterGroups"/>
     public class DescribeDBParameterGroupsRequest : AmazonWebServiceRequest
     {
         private string dBParameterGroupName;
+        private List<Filter> filters = new List<Filter>();
         private int? maxRecords;
         private string marker;
 
         /// <summary>
-        /// The name of a specific DB Parameter Group to return details for. Constraints: <ul> <li>Must be 1 to 255 alphanumeric characters</li>
+        /// The name of a specific DB parameter group to return details for. Constraints: <ul> <li>Must be 1 to 255 alphanumeric characters</li>
         /// <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
         ///  
         /// </summary>
@@ -63,6 +64,53 @@ namespace Amazon.RDS.Model
         internal bool IsSetDBParameterGroupName()
         {
             return this.dBParameterGroupName != null;
+        }
+
+        /// <summary>
+        /// This parameter is not currently supported.
+        ///  
+        /// </summary>
+        public List<Filter> Filters
+        {
+            get { return this.filters; }
+            set { this.filters = value; }
+        }
+        /// <summary>
+        /// Adds elements to the Filters collection
+        /// </summary>
+        /// <param name="filters">The values to add to the Filters collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public DescribeDBParameterGroupsRequest WithFilters(params Filter[] filters)
+        {
+            foreach (Filter element in filters)
+            {
+                this.filters.Add(element);
+            }
+
+            return this;
+        }
+
+        /// <summary>
+        /// Adds elements to the Filters collection
+        /// </summary>
+        /// <param name="filters">The values to add to the Filters collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public DescribeDBParameterGroupsRequest WithFilters(IEnumerable<Filter> filters)
+        {
+            foreach (Filter element in filters)
+            {
+                this.filters.Add(element);
+            }
+
+            return this;
+        }
+
+        // Check to see if Filters property is set
+        internal bool IsSetFilters()
+        {
+            return this.filters.Count > 0;
         }
 
         /// <summary>
@@ -97,8 +145,8 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// An optional pagination token provided by a previous DescribeDBParameterGroups request. If this parameter is specified, the response includes
-        /// only records beyond the marker, up to the value specified by <c>MaxRecords</c>.
+        /// An optional pagination token provided by a previous <c>DescribeDBParameterGroups</c> request. If this parameter is specified, the response
+        /// includes only records beyond the marker, up to the value specified by <c>MaxRecords</c>.
         ///  
         /// </summary>
         public string Marker

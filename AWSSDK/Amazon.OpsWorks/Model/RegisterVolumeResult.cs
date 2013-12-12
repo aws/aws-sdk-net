@@ -23,7 +23,7 @@ namespace Amazon.OpsWorks.Model
     /// <summary>
     /// <para>Contains the response to a <c>RegisterVolume</c> request.</para>
     /// </summary>
-    public class RegisterVolumeResult
+    public partial class RegisterVolumeResult
     {
         
         private string volumeId;

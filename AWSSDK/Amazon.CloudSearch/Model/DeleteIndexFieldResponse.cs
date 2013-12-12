@@ -34,14 +34,14 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         public DeleteIndexFieldResult DeleteIndexFieldResult
         {
-            get 
+            get
             {
                 if(this.deleteIndexFieldResult == null)
                 {
                     this.deleteIndexFieldResult = new DeleteIndexFieldResult();
                 }
 
-                return this.deleteIndexFieldResult; 
+                return this.deleteIndexFieldResult;
             }
             set { this.deleteIndexFieldResult = value; }
         }

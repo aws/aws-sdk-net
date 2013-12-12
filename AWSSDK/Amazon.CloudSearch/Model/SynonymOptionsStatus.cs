@@ -23,7 +23,7 @@ namespace Amazon.CloudSearch.Model
     /// <summary>
     /// <para>The synonym options configured for this search domain and the current status of those options.</para>
     /// </summary>
-    public class SynonymOptionsStatus  
+    public partial class SynonymOptionsStatus
     {
         
         private string options;
@@ -32,7 +32,7 @@ namespace Amazon.CloudSearch.Model
         /// <summary>
         /// Maps terms to their synonyms, serialized as a JSON document. The document has a single object with one property "synonyms" whose value is an
         /// object mapping terms to their synonyms. Each synonym is a simple string or an array of strings. The maximum size of a stopwords document is
-        /// 100KB. Example: <c>{ "synonyms": {"cat": ["feline", "kitten"], "puppy": "dog"} }</c>
+        /// 100 KB. Example: <c>{ "synonyms": {"cat": ["feline", "kitten"], "puppy": "dog"} }</c>
         ///  
         /// </summary>
         public string Options
@@ -57,7 +57,7 @@ namespace Amazon.CloudSearch.Model
         // Check to see if Options property is set
         internal bool IsSetOptions()
         {
-            return this.options != null;       
+            return this.options != null;
         }
 
         /// <summary>
@@ -86,7 +86,7 @@ namespace Amazon.CloudSearch.Model
         // Check to see if Status property is set
         internal bool IsSetStatus()
         {
-            return this.status != null;       
+            return this.status != null;
         }
     }
 }

@@ -23,7 +23,7 @@ namespace Amazon.OpsWorks.Model
     /// <summary>
     /// <para>Contains the response to a <c>DescribeTimeBasedAutoScaling</c> request.</para>
     /// </summary>
-    public class DescribeTimeBasedAutoScalingResult
+    public partial class DescribeTimeBasedAutoScalingResult
     {
         
         private List<TimeBasedAutoScalingConfiguration> timeBasedAutoScalingConfigurations = new List<TimeBasedAutoScalingConfiguration>();

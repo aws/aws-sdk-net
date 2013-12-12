@@ -34,14 +34,14 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         public UpdateDefaultSearchFieldResult UpdateDefaultSearchFieldResult
         {
-            get 
+            get
             {
                 if(this.updateDefaultSearchFieldResult == null)
                 {
                     this.updateDefaultSearchFieldResult = new UpdateDefaultSearchFieldResult();
                 }
 
-                return this.updateDefaultSearchFieldResult; 
+                return this.updateDefaultSearchFieldResult;
             }
             set { this.updateDefaultSearchFieldResult = value; }
         }

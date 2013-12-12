@@ -23,7 +23,7 @@ namespace Amazon.ElasticBeanstalk.Model
     /// <summary>
     /// <para>Describes the properties of a Listener for the LoadBalancer.</para>
     /// </summary>
-    public class Listener  
+    public partial class Listener
     {
         
         private string protocol;
@@ -55,7 +55,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if Protocol property is set
         internal bool IsSetProtocol()
         {
-            return this.protocol != null;       
+            return this.protocol != null;
         }
 
         /// <summary>
@@ -84,7 +84,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if Port property is set
         internal bool IsSetPort()
         {
-            return this.port.HasValue;       
+            return this.port.HasValue;
         }
     }
 }

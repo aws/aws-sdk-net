@@ -32,6 +32,8 @@
 
         public BatchGetItemResult Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             BatchGetItemResult batchGetItemResult = new BatchGetItemResult();
           batchGetItemResult.Responses = null;
                         batchGetItemResult.UnprocessedKeys = null;

@@ -34,7 +34,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(deleteDBSubnetGroupRequest, "AmazonRDS");
             request.Parameters.Add("Action", "DeleteDBSubnetGroup");
-            request.Parameters.Add("Version", "2013-05-15");
+            request.Parameters.Add("Version", "2013-09-09");
             if (deleteDBSubnetGroupRequest != null && deleteDBSubnetGroupRequest.IsSetDBSubnetGroupName())
             {
                 request.Parameters.Add("DBSubnetGroupName", StringUtils.FromString(deleteDBSubnetGroupRequest.DBSubnetGroupName));

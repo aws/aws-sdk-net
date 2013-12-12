@@ -23,7 +23,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// The results from the AuthorizeDBSecurityGroupIngress action.
     /// </summary>
-    public class AuthorizeDBSecurityGroupIngressResult
+    public partial class AuthorizeDBSecurityGroupIngressResult
     {
         private DBSecurityGroup dBSecurityGroupValue;
 

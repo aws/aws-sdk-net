@@ -23,7 +23,7 @@ namespace Amazon.ElasticBeanstalk.Model
     /// <summary>
     /// <para> An error or warning for a desired configuration option value. </para>
     /// </summary>
-    public class ValidationMessage  
+    public partial class ValidationMessage
     {
         
         private string message;
@@ -57,7 +57,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if Message property is set
         internal bool IsSetMessage()
         {
-            return this.message != null;       
+            return this.message != null;
         }
 
         /// <summary>
@@ -98,7 +98,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if Severity property is set
         internal bool IsSetSeverity()
         {
-            return this.severity != null;       
+            return this.severity != null;
         }
 
         /// <summary>
@@ -127,7 +127,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if Namespace property is set
         internal bool IsSetNamespace()
         {
-            return this.namespaceValue != null;       
+            return this.namespaceValue != null;
         }
 
         /// <summary>
@@ -156,7 +156,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if OptionName property is set
         internal bool IsSetOptionName()
         {
-            return this.optionName != null;       
+            return this.optionName != null;
         }
     }
 }

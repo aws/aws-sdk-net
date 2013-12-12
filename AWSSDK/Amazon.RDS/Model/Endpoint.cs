@@ -29,14 +29,14 @@ namespace Amazon.RDS.Model
     /// 
     /// </ul>
     /// </summary>
-    public class Endpoint
+    public partial class Endpoint
     {
         
         private string address;
         private int? port;
 
         /// <summary>
-        /// Specifies the DNS address of the DB Instance.
+        /// Specifies the DNS address of the DB instance.
         ///  
         /// </summary>
         public string Address

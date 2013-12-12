@@ -37,8 +37,10 @@ namespace Amazon.DynamoDBv2
         /// size limit of 1 MB, the scan stops and results are returned to the user with a <i>LastEvaluatedKey</i> to continue the scan in a subsequent
         /// operation. The results also include the number of items exceeding the limit. A scan can result in no table data meeting the filter criteria.
         /// </para> <para>The result set is eventually consistent. </para> <para>By default, <i>Scan</i> operations proceed sequentially; however, for
-        /// faster performance on large tables, applications can perform a parallel <i>Scan</i> by specifying the <i>Segment</i> and
-        /// <i>TotalSegments</i> parameters. For more information, see Parallel Scan in the <i>Amazon DynamoDB Developer Guide</i> .</para>
+        /// faster performance on large tables, applications can request a parallel <i>Scan</i> by specifying the <i>Segment</i> and
+        /// <i>TotalSegments</i> parameters. For more information, see <a
+        /// href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#QueryAndScanParallelScan" >Parallel Scan</a> in the
+        /// Amazon DynamoDB Developer Guide.</para>
         /// </summary>
         /// 
         /// <param name="scanRequest">Container for the necessary parameters to execute the Scan service method on AmazonDynamoDBv2.</param>
@@ -83,12 +85,12 @@ namespace Amazon.DynamoDBv2
         /// <summary>
         /// <para>Updates the provisioned throughput for the given table. Setting the throughput for a table helps you manage performance and is part of
         /// the provisioned throughput feature of Amazon DynamoDB.</para> <para>The provisioned throughput values can be upgraded or downgraded based on
-        /// the maximums and minimums listed in the Limits section in the <i>Amazon DynamoDB Developer Guide</i> .</para> <para>The table must be in
-        /// the <c>ACTIVE</c> state for this operation to succeed. <i>UpdateTable</i> is an asynchronous operation; while executing the operation, the
-        /// table is in the <c>UPDATING</c> state. While the table is in the <c>UPDATING</c> state, the table still has the provisioned throughput from
-        /// before the call. The new provisioned throughput setting is in effect only when the table returns to the <c>ACTIVE</c> state after the
-        /// <i>UpdateTable</i> operation. </para> <para>You cannot add, modify or delete local secondary indexes using <i>UpdateTable</i> . Local
-        /// secondary indexes can only be defined at table creation time.</para>
+        /// the maximums and minimums listed in the <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html" >Limits</a>
+        /// section in the Amazon DynamoDB Developer Guide.</para> <para>The table must be in the <c>ACTIVE</c> state for this operation to succeed.
+        /// <i>UpdateTable</i> is an asynchronous operation; while executing the operation, the table is in the <c>UPDATING</c> state. While the table
+        /// is in the <c>UPDATING</c> state, the table still has the provisioned throughput from before the call. The new provisioned throughput setting
+        /// is in effect only when the table returns to the <c>ACTIVE</c> state after the <i>UpdateTable</i> operation. </para> <para>You cannot add,
+        /// modify or delete indexes using <i>UpdateTable</i> . Indexes can only be defined at table creation time.</para>
         /// </summary>
         /// 
         /// <param name="updateTableRequest">Container for the necessary parameters to execute the UpdateTable service method on
@@ -139,12 +141,8 @@ namespace Amazon.DynamoDBv2
         /// <i>ResourceInUseException</i> . If the specified table does not exist, Amazon DynamoDB returns a
         /// <i>ResourceNotFoundException</i> . If table is already in the <c>DELETING</c> state, no error is returned. </para> <para><b>NOTE:</b> Amazon
         /// DynamoDB might continue to accept data read and write operations, such as GetItem and PutItem, on a table in the DELETING state until the
-        /// table deletion is complete. </para> <para>Tables are unique among those associated with the AWS Account issuing the request, and the AWS
-        /// region that receives the request (such as dynamodb.us-east-1.amazonaws.com). Each Amazon DynamoDB endpoint is entirely independent. For
-        /// example, if you have two tables called "MyTable," one in dynamodb.us-east-1.amazonaws.com and one in dynamodb.us-west-1.amazonaws.com, they
-        /// are completely independent and do not share any data; deleting one does not delete the other.</para> <para>When you delete a table, any
-        /// local secondary indexes on that table are also deleted.</para> <para>Use the <i>DescribeTable</i> API to check the status of the table.
-        /// </para>
+        /// table deletion is complete. </para> <para>When you delete a table, any indexes on that table are also deleted.</para> <para>Use the
+        /// <i>DescribeTable</i> API to check the status of the table. </para>
         /// </summary>
         /// 
         /// <param name="deleteTableRequest">Container for the necessary parameters to execute the DeleteTable service method on
@@ -352,6 +350,54 @@ namespace Amazon.DynamoDBv2
         
     
 
+        #region UpdateItem
+
+        /// <summary>
+        /// <para> Edits an existing item's attributes, or inserts a new item if it does not already exist. You can put, delete, or add attribute
+        /// values. You can also perform a conditional update (insert a new attribute name-value pair if it doesn't exist, or replace an existing
+        /// name-value pair if it has certain expected attribute values).</para> <para>In addition to updating an item, you can also return the item's
+        /// attribute values in the same operation, using the <i>ReturnValues</i> parameter.</para>
+        /// </summary>
+        /// 
+        /// <param name="updateItemRequest">Container for the necessary parameters to execute the UpdateItem service method on AmazonDynamoDBv2.</param>
+        /// 
+        /// <returns>The response from the UpdateItem service method, as returned by AmazonDynamoDBv2.</returns>
+        /// 
+        /// <exception cref="ItemCollectionSizeLimitExceededException"/>
+        /// <exception cref="ResourceNotFoundException"/>
+        /// <exception cref="ConditionalCheckFailedException"/>
+        /// <exception cref="ProvisionedThroughputExceededException"/>
+        /// <exception cref="InternalServerErrorException"/>
+        UpdateItemResponse UpdateItem(UpdateItemRequest updateItemRequest);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateItem operation.
+        /// <seealso cref="Amazon.DynamoDBv2.AmazonDynamoDB.UpdateItem"/>
+        /// </summary>
+        /// 
+        /// <param name="updateItemRequest">Container for the necessary parameters to execute the UpdateItem operation on AmazonDynamoDBv2.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateItem
+        ///         operation.</returns>
+        IAsyncResult BeginUpdateItem(UpdateItemRequest updateItemRequest, AsyncCallback callback, object state);
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the UpdateItem operation.
+        /// <seealso cref="Amazon.DynamoDBv2.AmazonDynamoDB.UpdateItem"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateItem.</param>
+        /// 
+        /// <returns>Returns a UpdateItemResult from AmazonDynamoDBv2.</returns>
+        UpdateItemResponse EndUpdateItem(IAsyncResult asyncResult);
+        
+        #endregion
+        
+    
+
         #region DeleteItem
 
         /// <summary>
@@ -409,9 +455,9 @@ namespace Amazon.DynamoDBv2
         /// That is, you can have two tables with same name if you create the tables in different regions.</para> <para> <i>CreateTable</i> is an
         /// asynchronous operation. Upon receiving a <i>CreateTable</i> request, Amazon DynamoDB immediately returns a response with a
         /// <i>TableStatus</i> of <c>CREATING</c> . After the table is created, Amazon DynamoDB sets the <i>TableStatus</i> to <c>ACTIVE</c> . You can
-        /// perform read and write operations only on an <c>ACTIVE</c> table. </para> <para>If you want to create multiple tables with local secondary
-        /// indexes on them, you must create them sequentially. Only one table with local secondary indexes can be in the <c>CREATING</c> state at any
-        /// given time.</para> <para>You can use the <i>DescribeTable</i> API to check the table status.</para>
+        /// perform read and write operations only on an <c>ACTIVE</c> table. </para> <para>If you want to create multiple tables with secondary indexes
+        /// on them, you must create them sequentially. Only one table with secondary indexes can be in the <c>CREATING</c> state at any given
+        /// time.</para> <para>You can use the <i>DescribeTable</i> API to check the table status.</para>
         /// </summary>
         /// 
         /// <param name="createTableRequest">Container for the necessary parameters to execute the CreateTable service method on
@@ -452,6 +498,66 @@ namespace Amazon.DynamoDBv2
         
     
 
+        #region BatchGetItem
+
+        /// <summary>
+        /// <para>The <i>BatchGetItem</i> operation returns the attributes of one or more items from one or more tables. You identify requested items by
+        /// primary key.</para> <para>A single operation can retrieve up to 1 MB of data, which can comprise as many as 100 items. <i>BatchGetItem</i>
+        /// will return a partial result if the response size limit is exceeded, the table's provisioned throughput is exceeded, or an internal
+        /// processing failure occurs. If a partial result is returned, the operation returns a value for <i>UnprocessedKeys</i> . You can use this
+        /// value to retry the operation starting with the next item to get.</para> <para>For example, if you ask to retrieve 100 items, but each
+        /// individual item is 50 KB in size, the system returns 20 items (1 MB) and an appropriate <i>UnprocessedKeys</i> value so you can get the next
+        /// page of results. If desired, your application can include its own logic to assemble the pages of results into one dataset.</para> <para>If
+        /// no items can be processed because of insufficient provisioned throughput on each of the tables involved in the request, <i>BatchGetItem</i>
+        /// throws <i>ProvisionedThroughputExceededException</i> . </para> <para>By default, <i>BatchGetItem</i> performs eventually consistent reads on
+        /// every table in the request. If you want strongly consistent reads instead, you can set <i>ConsistentRead</i> to <c>true</c> for any or all
+        /// tables.</para> <para>In order to minimize response latency, <i>BatchGetItem</i> fetches items in parallel.</para> <para>When designing your
+        /// application, keep in mind that Amazon DynamoDB does not return attributes in any particular order. To help parse the response by item,
+        /// include the primary key values for the items in your request in the <i>AttributesToGet</i> parameter.</para> <para>If a requested item does
+        /// not exist, it is not returned in the result. Requests for nonexistent items consume the minimum read capacity units according to the type of
+        /// read. For more information, see <a
+        /// href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDDTables.html#CapacityUnitCalculations" >Capacity Units
+        /// Calculations</a> in the Amazon DynamoDB Developer Guide.</para>
+        /// </summary>
+        /// 
+        /// <param name="batchGetItemRequest">Container for the necessary parameters to execute the BatchGetItem service method on
+        ///          AmazonDynamoDBv2.</param>
+        /// 
+        /// <returns>The response from the BatchGetItem service method, as returned by AmazonDynamoDBv2.</returns>
+        /// 
+        /// <exception cref="ResourceNotFoundException"/>
+        /// <exception cref="ProvisionedThroughputExceededException"/>
+        /// <exception cref="InternalServerErrorException"/>
+        BatchGetItemResponse BatchGetItem(BatchGetItemRequest batchGetItemRequest);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchGetItem operation.
+        /// <seealso cref="Amazon.DynamoDBv2.AmazonDynamoDB.BatchGetItem"/>
+        /// </summary>
+        /// 
+        /// <param name="batchGetItemRequest">Container for the necessary parameters to execute the BatchGetItem operation on AmazonDynamoDBv2.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchGetItem
+        ///         operation.</returns>
+        IAsyncResult BeginBatchGetItem(BatchGetItemRequest batchGetItemRequest, AsyncCallback callback, object state);
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the BatchGetItem operation.
+        /// <seealso cref="Amazon.DynamoDBv2.AmazonDynamoDB.BatchGetItem"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchGetItem.</param>
+        /// 
+        /// <returns>Returns a BatchGetItemResult from AmazonDynamoDBv2.</returns>
+        BatchGetItemResponse EndBatchGetItem(IAsyncResult asyncResult);
+        
+        #endregion
+        
+    
+
         #region Query
 
         /// <summary>
@@ -463,7 +569,9 @@ namespace Amazon.DynamoDBv2
         /// user with a <i>LastEvaluatedKey</i> to continue the query in a subsequent operation. Unlike a <i>Scan</i> operation, a <i>Query</i>
         /// operation never returns an empty result set <i>and</i> a
         /// <i>LastEvaluatedKey</i> . The <i>LastEvaluatedKey</i> is only provided if the results exceed 1 MB, or if you have used
-        /// <i>Limit</i> . </para> <para>To request a strongly consistent result, set <i>ConsistentRead</i> to true.</para>
+        /// <i>Limit</i> . </para> <para>You can query a table, a local secondary index (LSI), or a global secondary index (GSI).. For a query on a
+        /// table or on an LSI, you can set <i>ConsistentRead</i> to true and obtain a strongly consistent result. GSIs support eventually consistent
+        /// reads only, so do not specify <i>ConsistentRead</i> when querying a GSI.</para>
         /// </summary>
         /// 
         /// <param name="queryRequest">Container for the necessary parameters to execute the Query service method on AmazonDynamoDBv2.</param>
@@ -515,8 +623,9 @@ namespace Amazon.DynamoDBv2
         /// <i>ValidationException</i> .</para> <para>You can request that <i>PutItem</i> return either a copy of the old item (before the update) or a
         /// copy of the new item (after the update). For more information, see the <i>ReturnValues</i> description.</para> <para><b>NOTE:</b> To prevent
         /// a new item from replacing an existing item, use a conditional put operation with Exists set to false for the primary key attribute, or
-        /// attributes. </para> <para>For more information about using this API, see Working with Items in the <i>Amazon DynamoDB Developer Guide</i>
-        /// .</para>
+        /// attributes. </para> <para>For more information about using this API, see <a
+        /// href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDDItems.html" >Working with Items</a> in the Amazon
+        /// DynamoDB Developer Guide.</para>
         /// </summary>
         /// 
         /// <param name="putItemRequest">Container for the necessary parameters to execute the PutItem service method on AmazonDynamoDBv2.</param>
@@ -561,10 +670,7 @@ namespace Amazon.DynamoDBv2
         #region ListTables
 
         /// <summary>
-        /// <para>Returns an array of all the tables associated with the current account and endpoint. </para> <para>Each Amazon DynamoDB endpoint is
-        /// entirely independent. For example, if you have two tables called "MyTable," one in <i>dynamodb.us-east-1.amazonaws.com</i> and one in
-        /// <i>dynamodb.us-west-1.amazonaws.com</i> , they are completely independent and do not share any data. The <i>ListTables</i> operation returns
-        /// all of the table names associated with the account making the request, for the endpoint that receives the request.</para>
+        /// <para>Returns an array of all the tables associated with the current account and endpoint. </para>
         /// </summary>
         /// 
         /// <param name="listTablesRequest">Container for the necessary parameters to execute the ListTables service method on AmazonDynamoDBv2.</param>
@@ -599,122 +705,13 @@ namespace Amazon.DynamoDBv2
         ListTablesResponse EndListTables(IAsyncResult asyncResult);
 
         /// <summary>
-        /// <para>Returns an array of all the tables associated with the current account and endpoint. </para> <para>Each Amazon DynamoDB endpoint is
-        /// entirely independent. For example, if you have two tables called "MyTable," one in <i>dynamodb.us-east-1.amazonaws.com</i> and one in
-        /// <i>dynamodb.us-west-1.amazonaws.com</i> , they are completely independent and do not share any data. The <i>ListTables</i> operation returns
-        /// all of the table names associated with the account making the request, for the endpoint that receives the request.</para>
+        /// <para>Returns an array of all the tables associated with the current account and endpoint. </para>
         /// </summary>
         /// 
         /// <returns>The response from the ListTables service method, as returned by AmazonDynamoDBv2.</returns>
         /// 
         /// <exception cref="InternalServerErrorException"/>
         ListTablesResponse ListTables();
-        
-        #endregion
-        
-    
-
-        #region UpdateItem
-
-        /// <summary>
-        /// <para> Edits an existing item's attributes, or inserts a new item if it does not already exist. You can put, delete, or add attribute
-        /// values. You can also perform a conditional update (insert a new attribute name-value pair if it doesn't exist, or replace an existing
-        /// name-value pair if it has certain expected attribute values).</para> <para>In addition to updating an item, you can also return the item's
-        /// attribute values in the same operation, using the <i>ReturnValues</i> parameter.</para>
-        /// </summary>
-        /// 
-        /// <param name="updateItemRequest">Container for the necessary parameters to execute the UpdateItem service method on AmazonDynamoDBv2.</param>
-        /// 
-        /// <returns>The response from the UpdateItem service method, as returned by AmazonDynamoDBv2.</returns>
-        /// 
-        /// <exception cref="ItemCollectionSizeLimitExceededException"/>
-        /// <exception cref="ResourceNotFoundException"/>
-        /// <exception cref="ConditionalCheckFailedException"/>
-        /// <exception cref="ProvisionedThroughputExceededException"/>
-        /// <exception cref="InternalServerErrorException"/>
-        UpdateItemResponse UpdateItem(UpdateItemRequest updateItemRequest);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the UpdateItem operation.
-        /// <seealso cref="Amazon.DynamoDBv2.AmazonDynamoDB.UpdateItem"/>
-        /// </summary>
-        /// 
-        /// <param name="updateItemRequest">Container for the necessary parameters to execute the UpdateItem operation on AmazonDynamoDBv2.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateItem
-        ///         operation.</returns>
-        IAsyncResult BeginUpdateItem(UpdateItemRequest updateItemRequest, AsyncCallback callback, object state);
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the UpdateItem operation.
-        /// <seealso cref="Amazon.DynamoDBv2.AmazonDynamoDB.UpdateItem"/>
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateItem.</param>
-        /// 
-        /// <returns>Returns a UpdateItemResult from AmazonDynamoDBv2.</returns>
-        UpdateItemResponse EndUpdateItem(IAsyncResult asyncResult);
-        
-        #endregion
-        
-    
-
-        #region BatchGetItem
-
-        /// <summary>
-        /// <para>The <i>BatchGetItem</i> operation returns the attributes of one or more items from one or more tables. You identify requested items by
-        /// primary key.</para> <para>A single operation can retrieve up to 1 MB of data, which can comprise as many as 100 items. <i>BatchGetItem</i>
-        /// will return a partial result if the response size limit is exceeded, the table's provisioned throughput is exceeded, or an internal
-        /// processing failure occurs. If a partial result is returned, the operation returns a value for <i>UnprocessedKeys</i> . You can use this
-        /// value to retry the operation starting with the next item to get.</para> <para>For example, if you ask to retrieve 100 items, but each
-        /// individual item is 50 KB in size, the system returns 20 items (1 MB) and an appropriate <i>UnprocessedKeys</i> value so you can get the next
-        /// page of results. If desired, your application can include its own logic to assemble the pages of results into one dataset.</para> <para>If
-        /// no items can be processed because of insufficient provisioned throughput on each of the tables involved in the request, <i>BatchGetItem</i>
-        /// throws <i>ProvisionedThroughputExceededException</i> . </para> <para>By default, <i>BatchGetItem</i> performs eventually consistent reads on
-        /// every table in the request. If you want strongly consistent reads instead, you can set <i>ConsistentRead</i> to <c>true</c> for any or all
-        /// tables.</para> <para>In order to minimize response latency, <i>BatchGetItem</i> fetches items in parallel.</para> <para>When designing your
-        /// application, keep in mind that Amazon DynamoDB does not return attributes in any particular order. To help parse the response by item,
-        /// include the primary key values for the items in your request in the <i>AttributesToGet</i> parameter.</para> <para>If a requested item does
-        /// not exist, it is not returned in the result. Requests for nonexistent items consume the minimum read capacity units according to the type of
-        /// read. For more information, see Capacity Units Calculations in the <i>Amazon DynamoDB Developer Guide</i> .</para>
-        /// </summary>
-        /// 
-        /// <param name="batchGetItemRequest">Container for the necessary parameters to execute the BatchGetItem service method on
-        ///          AmazonDynamoDBv2.</param>
-        /// 
-        /// <returns>The response from the BatchGetItem service method, as returned by AmazonDynamoDBv2.</returns>
-        /// 
-        /// <exception cref="ResourceNotFoundException"/>
-        /// <exception cref="ProvisionedThroughputExceededException"/>
-        /// <exception cref="InternalServerErrorException"/>
-        BatchGetItemResponse BatchGetItem(BatchGetItemRequest batchGetItemRequest);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the BatchGetItem operation.
-        /// <seealso cref="Amazon.DynamoDBv2.AmazonDynamoDB.BatchGetItem"/>
-        /// </summary>
-        /// 
-        /// <param name="batchGetItemRequest">Container for the necessary parameters to execute the BatchGetItem operation on AmazonDynamoDBv2.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchGetItem
-        ///         operation.</returns>
-        IAsyncResult BeginBatchGetItem(BatchGetItemRequest batchGetItemRequest, AsyncCallback callback, object state);
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the BatchGetItem operation.
-        /// <seealso cref="Amazon.DynamoDBv2.AmazonDynamoDB.BatchGetItem"/>
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchGetItem.</param>
-        /// 
-        /// <returns>Returns a BatchGetItemResult from AmazonDynamoDBv2.</returns>
-        BatchGetItemResponse EndBatchGetItem(IAsyncResult asyncResult);
         
         #endregion
         

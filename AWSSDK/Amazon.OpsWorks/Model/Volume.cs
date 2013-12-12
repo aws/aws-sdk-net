@@ -23,7 +23,7 @@ namespace Amazon.OpsWorks.Model
     /// <summary>
     /// <para>Describes an instance's Amazon EBS volume.</para>
     /// </summary>
-    public class Volume
+    public partial class Volume
     {
         
         private string volumeId;

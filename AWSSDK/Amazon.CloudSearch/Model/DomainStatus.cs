@@ -23,14 +23,14 @@ namespace Amazon.CloudSearch.Model
     /// <summary>
     /// <para>The current status of the search domain.</para>
     /// </summary>
-    public class DomainStatus
+    public partial class DomainStatus
     {
         
         private string domainId;
         private string domainName;
         private bool? created;
         private bool? deleted;
-        private int? numSearchableDocs;
+        private long? numSearchableDocs;
         private ServiceEndpoint docService;
         private ServiceEndpoint searchService;
         private bool? requiresIndexDocuments;
@@ -195,9 +195,9 @@ namespace Amazon.CloudSearch.Model
         /// </list>
         /// </para>
         /// </summary>
-        public int NumSearchableDocs
+        public long NumSearchableDocs
         {
-            get { return this.numSearchableDocs ?? default(int); }
+            get { return this.numSearchableDocs ?? default(long); }
             set { this.numSearchableDocs = value; }
         }
 
@@ -207,7 +207,7 @@ namespace Amazon.CloudSearch.Model
         /// <param name="numSearchableDocs">The value to set for the NumSearchableDocs property </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public DomainStatus WithNumSearchableDocs(int numSearchableDocs)
+        public DomainStatus WithNumSearchableDocs(long numSearchableDocs)
         {
             this.numSearchableDocs = numSearchableDocs;
             return this;

@@ -23,7 +23,7 @@ namespace Amazon.CloudSearch.Model
     /// <summary>
     /// <para>A response message that contains the status of updated stopword options.</para>
     /// </summary>
-    public class UpdateStopwordOptionsResult  
+    public partial class UpdateStopwordOptionsResult
     {
         
         private StopwordOptionsStatus stopwords;
@@ -54,7 +54,7 @@ namespace Amazon.CloudSearch.Model
         // Check to see if Stopwords property is set
         internal bool IsSetStopwords()
         {
-            return this.stopwords != null;       
+            return this.stopwords != null;
         }
     }
 }

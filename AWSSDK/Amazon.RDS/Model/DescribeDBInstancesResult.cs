@@ -23,7 +23,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// <para> Contains the result of a successful invocation of the DescribeDBInstances action. </para>
     /// </summary>
-    public class DescribeDBInstancesResult
+    public partial class DescribeDBInstancesResult
     {
         
         private string marker;

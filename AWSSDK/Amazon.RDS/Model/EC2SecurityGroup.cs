@@ -29,7 +29,7 @@ namespace Amazon.RDS.Model
     /// 
     /// </ul>
     /// </summary>
-    public class EC2SecurityGroup
+    public partial class EC2SecurityGroup
     {
         
         private string status;
@@ -67,7 +67,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Specifies the name of the EC2 Security Group.
+        /// Specifies the name of the EC2 security group.
         ///  
         /// </summary>
         public string EC2SecurityGroupName
@@ -96,7 +96,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Specifies the id of the EC2 Security Group.
+        /// Specifies the id of the EC2 security group.
         ///  
         /// </summary>
         public string EC2SecurityGroupId

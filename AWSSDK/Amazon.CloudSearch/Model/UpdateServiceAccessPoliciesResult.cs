@@ -23,7 +23,7 @@ namespace Amazon.CloudSearch.Model
     /// <summary>
     /// <para>A response message that contains the status of updated access policies.</para>
     /// </summary>
-    public class UpdateServiceAccessPoliciesResult  
+    public partial class UpdateServiceAccessPoliciesResult
     {
         
         private AccessPoliciesStatus accessPolicies;
@@ -54,7 +54,7 @@ namespace Amazon.CloudSearch.Model
         // Check to see if AccessPolicies property is set
         internal bool IsSetAccessPolicies()
         {
-            return this.accessPolicies != null;       
+            return this.accessPolicies != null;
         }
     }
 }

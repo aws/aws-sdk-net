@@ -23,7 +23,7 @@ namespace Amazon.CloudSearch.Model
     /// <summary>
     /// <para>The result of an <c>IndexDocuments</c> action.</para>
     /// </summary>
-    public class IndexDocumentsResult  
+    public partial class IndexDocumentsResult
     {
         
         private List<string> fieldNames = new List<string>();
@@ -52,7 +52,7 @@ namespace Amazon.CloudSearch.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the FieldNames collection
         /// </summary>
@@ -72,7 +72,7 @@ namespace Amazon.CloudSearch.Model
         // Check to see if FieldNames property is set
         internal bool IsSetFieldNames()
         {
-            return this.fieldNames.Count > 0;       
+            return this.fieldNames.Count > 0;
         }
     }
 }

@@ -23,7 +23,7 @@ namespace Amazon.OpsWorks.Model
     /// <summary>
     /// <para>Contains the response to a <c>CreateUserProfile</c> request.</para>
     /// </summary>
-    public class CreateUserProfileResult
+    public partial class CreateUserProfileResult
     {
         
         private string iamUserArn;

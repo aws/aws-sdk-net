@@ -23,13 +23,13 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// <para> Contains the result of a successful invocation of the ModifyDBParameterGroup or ResetDBParameterGroup action. </para>
     /// </summary>
-    public class ModifyDBParameterGroupResult
+    public partial class ModifyDBParameterGroupResult
     {
         
         private string dBParameterGroupName;
 
         /// <summary>
-        /// The name of the DB Parameter Group.
+        /// The name of the DB parameter group.
         ///  
         /// </summary>
         public string DBParameterGroupName

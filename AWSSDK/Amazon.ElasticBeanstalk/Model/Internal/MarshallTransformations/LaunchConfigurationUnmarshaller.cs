@@ -22,13 +22,14 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
      /// <summary>
      ///   LaunchConfiguration Unmarshaller
      /// </summary>
-    internal class LaunchConfigurationUnmarshaller : IUnmarshaller<LaunchConfiguration, XmlUnmarshallerContext> 
+    internal class LaunchConfigurationUnmarshaller : IUnmarshaller<LaunchConfiguration, XmlUnmarshallerContext>, IUnmarshaller<LaunchConfiguration, JsonUnmarshallerContext> 
     {
         public LaunchConfiguration Unmarshall(XmlUnmarshallerContext context) 
         {
             LaunchConfiguration launchConfiguration = new LaunchConfiguration();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -52,6 +53,11 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
 
 
             return launchConfiguration;
+        }
+
+        public LaunchConfiguration Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static LaunchConfigurationUnmarshaller instance;

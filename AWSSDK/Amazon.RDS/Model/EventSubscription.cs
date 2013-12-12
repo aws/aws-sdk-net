@@ -23,7 +23,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// <para>Contains the results of a successful invocation of the DescribeEventSubscriptions action.</para>
     /// </summary>
-    public class EventSubscription
+    public partial class EventSubscription
     {
         
         private string customerAwsId;

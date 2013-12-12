@@ -21,10 +21,10 @@ using System.IO;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// <para> Option Group option settings are used to display settings available for each option with their default values and other information.
+    /// <para> option group option settings are used to display settings available for each option with their default values and other information.
     /// These values are used with the DescribeOptionGroupOptions action. </para>
     /// </summary>
-    public class OptionGroupOptionSetting
+    public partial class OptionGroupOptionSetting
     {
         
         private string settingName;

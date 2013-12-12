@@ -23,7 +23,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// <para> Contains the result of a successful invocation of the DescribeDBEngineVersions action. </para>
     /// </summary>
-    public class DescribeDBEngineVersionsResult
+    public partial class DescribeDBEngineVersionsResult
     {
         
         private string marker;

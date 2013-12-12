@@ -21,10 +21,10 @@ using System.IO;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// <para> Contains a list of available options for a DB Instance </para> <para> This data type is used as a response element in the
+    /// <para> Contains a list of available options for a DB instance </para> <para> This data type is used as a response element in the
     /// DescribeOrderableDBInstanceOptions action. </para>
     /// </summary>
-    public class OrderableDBInstanceOption
+    public partial class OrderableDBInstanceOption
     {
         
         private string engine;
@@ -37,7 +37,7 @@ namespace Amazon.RDS.Model
         private bool? vpc;
 
         /// <summary>
-        /// The engine type of the orderable DB Instance.
+        /// The engine type of the orderable DB instance.
         ///  
         /// </summary>
         public string Engine
@@ -66,7 +66,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The engine version of the orderable DB Instance.
+        /// The engine version of the orderable DB instance.
         ///  
         /// </summary>
         public string EngineVersion
@@ -95,7 +95,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The DB Instance Class for the orderable DB Instance
+        /// The DB instance Class for the orderable DB instance
         ///  
         /// </summary>
         public string DBInstanceClass
@@ -124,7 +124,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The license model for the orderable DB Instance.
+        /// The license model for the orderable DB instance.
         ///  
         /// </summary>
         public string LicenseModel
@@ -153,7 +153,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// A list of availability zones for the orderable DB Instance.
+        /// A list of availability zones for the orderable DB instance.
         ///  
         /// </summary>
         public List<AvailabilityZone> AvailabilityZones
@@ -200,7 +200,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Indicates whether this orderable DB Instance is multi-AZ capable.
+        /// Indicates whether this orderable DB instance is multi-AZ capable.
         ///  
         /// </summary>
         public bool MultiAZCapable
@@ -229,7 +229,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Indicates whether this orderable DB Instance can have a read replica.
+        /// Indicates whether this orderable DB instance can have a read replica.
         ///  
         /// </summary>
         public bool ReadReplicaCapable
@@ -258,7 +258,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Indicates whether this is a VPC orderable DB Instance.
+        /// Indicates whether this is a VPC orderable DB instance.
         ///  
         /// </summary>
         public bool Vpc

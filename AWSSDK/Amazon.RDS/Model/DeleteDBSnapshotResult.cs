@@ -23,7 +23,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// The results from the DeleteDBSnapshot action.
     /// </summary>
-    public class DeleteDBSnapshotResult
+    public partial class DeleteDBSnapshotResult
     {
         private DBSnapshot dBSnapshotValue;
 

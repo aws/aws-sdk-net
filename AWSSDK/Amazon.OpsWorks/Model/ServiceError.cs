@@ -23,7 +23,7 @@ namespace Amazon.OpsWorks.Model
     /// <summary>
     /// <para>Describes an AWS OpsWorks service error.</para>
     /// </summary>
-    public class ServiceError
+    public partial class ServiceError
     {
         
         private string serviceErrorId;

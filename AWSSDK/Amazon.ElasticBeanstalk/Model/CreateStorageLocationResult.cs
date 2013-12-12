@@ -23,7 +23,7 @@ namespace Amazon.ElasticBeanstalk.Model
     /// <summary>
     /// <para>Results of a CreateStorageLocationResult call.</para>
     /// </summary>
-    public class CreateStorageLocationResult  
+    public partial class CreateStorageLocationResult
     {
         
         private string s3Bucket;
@@ -63,7 +63,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if S3Bucket property is set
         internal bool IsSetS3Bucket()
         {
-            return this.s3Bucket != null;       
+            return this.s3Bucket != null;
         }
     }
 }

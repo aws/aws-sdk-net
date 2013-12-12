@@ -32,9 +32,10 @@ namespace Amazon.RDS.Model
     {
         private string dBSnapshotIdentifier;
         private string dBInstanceIdentifier;
+        private List<Tag> tags = new List<Tag>();
 
         /// <summary>
-        /// The identifier for the DB Snapshot. Constraints: <ul> <li>Cannot be null, empty, or blank</li> <li>Must contain from 1 to 255 alphanumeric
+        /// The identifier for the DB snapshot. Constraints: <ul> <li>Cannot be null, empty, or blank</li> <li>Must contain from 1 to 255 alphanumeric
         /// characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
         /// </ul> Example: <c>my-snapshot-id</c>
         ///  
@@ -65,7 +66,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The DB Instance identifier. This is the unique key that identifies a DB Instance. This parameter isn't case sensitive. Constraints: <ul>
+        /// The DB instance identifier. This is the unique key that identifies a DB instance. This parameter isn't case sensitive. Constraints: <ul>
         /// <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen
         /// or contain two consecutive hyphens</li> </ul>
         ///  
@@ -93,6 +94,53 @@ namespace Amazon.RDS.Model
         internal bool IsSetDBInstanceIdentifier()
         {
             return this.dBInstanceIdentifier != null;
+        }
+
+        /// <summary>
+        /// A list of tags.
+        ///  
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this.tags; }
+            set { this.tags = value; }
+        }
+        /// <summary>
+        /// Adds elements to the Tags collection
+        /// </summary>
+        /// <param name="tags">The values to add to the Tags collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public CreateDBSnapshotRequest WithTags(params Tag[] tags)
+        {
+            foreach (Tag element in tags)
+            {
+                this.tags.Add(element);
+            }
+
+            return this;
+        }
+
+        /// <summary>
+        /// Adds elements to the Tags collection
+        /// </summary>
+        /// <param name="tags">The values to add to the Tags collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public CreateDBSnapshotRequest WithTags(IEnumerable<Tag> tags)
+        {
+            foreach (Tag element in tags)
+            {
+                this.tags.Add(element);
+            }
+
+            return this;
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this.tags.Count > 0;
         }
     }
 }

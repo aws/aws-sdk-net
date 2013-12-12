@@ -23,7 +23,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// <para> Contains the result of a successful invocation of the DescribeEngineDefaultParameters action. </para>
     /// </summary>
-    public class EngineDefaults
+    public partial class EngineDefaults
     {
         
         private string dBParameterGroupFamily;
@@ -31,7 +31,7 @@ namespace Amazon.RDS.Model
         private List<Parameter> parameters = new List<Parameter>();
 
         /// <summary>
-        /// Specifies the name of the DB Parameter Group Family which the engine default parameters apply to.
+        /// Specifies the name of the DB parameter group family which the engine default parameters apply to.
         ///  
         /// </summary>
         public string DBParameterGroupFamily

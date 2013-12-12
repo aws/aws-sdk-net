@@ -23,7 +23,7 @@ namespace Amazon.OpsWorks.Model
     /// <summary>
     /// <para>Describes an Amazon EBS volume configuration.</para>
     /// </summary>
-    public class VolumeConfiguration
+    public partial class VolumeConfiguration
     {
         
         private string mountPoint;

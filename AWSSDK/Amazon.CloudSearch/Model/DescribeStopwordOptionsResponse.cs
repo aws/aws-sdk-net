@@ -34,14 +34,14 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         public DescribeStopwordOptionsResult DescribeStopwordOptionsResult
         {
-            get 
+            get
             {
                 if(this.describeStopwordOptionsResult == null)
                 {
                     this.describeStopwordOptionsResult = new DescribeStopwordOptionsResult();
                 }
 
-                return this.describeStopwordOptionsResult; 
+                return this.describeStopwordOptionsResult;
             }
             set { this.describeStopwordOptionsResult = value; }
         }

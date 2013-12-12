@@ -23,7 +23,7 @@ namespace Amazon.OpsWorks.Model
     /// <summary>
     /// <para>Describes an Elastic IP address.</para>
     /// </summary>
-    public class ElasticIp
+    public partial class ElasticIp
     {
         
         private string ip;

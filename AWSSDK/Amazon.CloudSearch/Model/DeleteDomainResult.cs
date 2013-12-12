@@ -24,7 +24,7 @@ namespace Amazon.CloudSearch.Model
     /// <para>A response message that contains the status of a newly deleted domain, or no status if the domain has already been completely
     /// deleted.</para>
     /// </summary>
-    public class DeleteDomainResult  
+    public partial class DeleteDomainResult
     {
         
         private DomainStatus domainStatus;
@@ -55,7 +55,7 @@ namespace Amazon.CloudSearch.Model
         // Check to see if DomainStatus property is set
         internal bool IsSetDomainStatus()
         {
-            return this.domainStatus != null;       
+            return this.domainStatus != null;
         }
     }
 }

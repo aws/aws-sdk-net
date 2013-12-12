@@ -75,7 +75,7 @@ namespace Amazon.CloudSearch.Model
         // Check to see if DomainName property is set
         internal bool IsSetDomainName()
         {
-            return this.domainName != null;       
+            return this.domainName != null;
         }
 
         /// <summary>
@@ -102,7 +102,7 @@ namespace Amazon.CloudSearch.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the RankNames collection
         /// </summary>
@@ -122,7 +122,7 @@ namespace Amazon.CloudSearch.Model
         // Check to see if RankNames property is set
         internal bool IsSetRankNames()
         {
-            return this.rankNames.Count > 0;       
+            return this.rankNames.Count > 0;
         }
     }
 }

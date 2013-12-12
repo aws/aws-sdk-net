@@ -29,7 +29,7 @@ namespace Amazon.DynamoDBv2.Model
         private TableDescription table;
 
         /// <summary>
-        /// Contains the properties of a table.
+        /// Represents the properties of a table.
         ///  
         /// </summary>
         public TableDescription Table

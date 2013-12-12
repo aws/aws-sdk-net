@@ -23,7 +23,7 @@ namespace Amazon.CloudSearch.Model
     /// <summary>
     /// <para>Specifies how to map source attribute values to custom values when populating an <c>IndexField</c> .</para>
     /// </summary>
-    public class SourceDataMap
+    public partial class SourceDataMap
     {
         
         private string sourceName;

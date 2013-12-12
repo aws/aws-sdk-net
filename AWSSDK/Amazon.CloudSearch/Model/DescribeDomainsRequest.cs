@@ -57,7 +57,7 @@ namespace Amazon.CloudSearch.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the DomainNames collection
         /// </summary>
@@ -77,7 +77,7 @@ namespace Amazon.CloudSearch.Model
         // Check to see if DomainNames property is set
         internal bool IsSetDomainNames()
         {
-            return this.domainNames.Count > 0;       
+            return this.domainNames.Count > 0;
         }
     }
 }

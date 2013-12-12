@@ -23,7 +23,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// <para> Available option. </para>
     /// </summary>
-    public class OptionGroupOption
+    public partial class OptionGroupOption
     {
         
         private string name;

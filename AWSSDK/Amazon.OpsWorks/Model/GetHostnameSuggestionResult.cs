@@ -23,7 +23,7 @@ namespace Amazon.OpsWorks.Model
     /// <summary>
     /// <para>Contains the response to a <c>GetHostnameSuggestion</c> request.</para>
     /// </summary>
-    public class GetHostnameSuggestionResult
+    public partial class GetHostnameSuggestionResult
     {
         
         private string layerId;

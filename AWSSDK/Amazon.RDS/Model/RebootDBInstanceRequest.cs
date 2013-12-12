@@ -25,10 +25,14 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the RebootDBInstance operation.
-    /// <para> Reboots a previously provisioned RDS instance. This API results in the application of modified DBParameterGroup parameters with
-    /// ApplyStatus of pending-reboot to the RDS instance. This action is taken as soon as possible, and results in a momentary outage to the RDS
-    /// instance during which the RDS instance status is set to rebooting. If the RDS instance is configured for MultiAZ, it is possible that the
-    /// reboot will be conducted through a failover. A DBInstance event is created when the reboot is completed. </para>
+    /// <para> Rebooting a DB instance restarts the database engine service. A reboot also applies to the DB instance any modifications to the
+    /// associated DB parameter group that were pending. Rebooting a DB instance results in a momentary outage of the instance, during which the DB
+    /// instance status is set to rebooting. If the RDS instance is configured for MultiAZ, it is possible that the reboot will be conducted through
+    /// a failover. An Amazon RDS event is created when the reboot is completed. </para> <para> If your DB instance is deployed in multiple
+    /// Availability Zones, you can force a failover from one AZ to the other during the reboot. You might force a failover to test the availability
+    /// of your DB instance deployment or to restore operations to the original AZ after a failover occurs. </para> <para> The time required to
+    /// reboot is a function of the specific database engine's crash recovery process. To improve the reboot time, we recommend that you reduce
+    /// database activities as much as possible during the reboot process to reduce rollback activity for in-transit transactions. </para>
     /// </summary>
     /// <seealso cref="Amazon.RDS.AmazonRDS.RebootDBInstance"/>
     public class RebootDBInstanceRequest : AmazonWebServiceRequest
@@ -37,7 +41,7 @@ namespace Amazon.RDS.Model
         private bool? forceFailover;
 
         /// <summary>
-        /// The DB Instance identifier. This parameter is stored as a lowercase string. Constraints: <ul> <li>Must contain from 1 to 63 alphanumeric
+        /// The DB instance identifier. This parameter is stored as a lowercase string. Constraints: <ul> <li>Must contain from 1 to 63 alphanumeric
         /// characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
         /// </ul>
         ///  

@@ -31,11 +31,12 @@ namespace Amazon.RDS.Model
     public class DescribeDBInstancesRequest : AmazonWebServiceRequest
     {
         private string dBInstanceIdentifier;
+        private List<Filter> filters = new List<Filter>();
         private int? maxRecords;
         private string marker;
 
         /// <summary>
-        /// The user-supplied instance identifier. If this parameter is specified, information from only the specific DB Instance is returned. This
+        /// The user-supplied instance identifier. If this parameter is specified, information from only the specific DB instance is returned. This
         /// parameter isn't case sensitive. Constraints: <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First character
         /// must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
         ///  
@@ -63,6 +64,53 @@ namespace Amazon.RDS.Model
         internal bool IsSetDBInstanceIdentifier()
         {
             return this.dBInstanceIdentifier != null;
+        }
+
+        /// <summary>
+        /// This parameter is not currently supported.
+        ///  
+        /// </summary>
+        public List<Filter> Filters
+        {
+            get { return this.filters; }
+            set { this.filters = value; }
+        }
+        /// <summary>
+        /// Adds elements to the Filters collection
+        /// </summary>
+        /// <param name="filters">The values to add to the Filters collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public DescribeDBInstancesRequest WithFilters(params Filter[] filters)
+        {
+            foreach (Filter element in filters)
+            {
+                this.filters.Add(element);
+            }
+
+            return this;
+        }
+
+        /// <summary>
+        /// Adds elements to the Filters collection
+        /// </summary>
+        /// <param name="filters">The values to add to the Filters collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public DescribeDBInstancesRequest WithFilters(IEnumerable<Filter> filters)
+        {
+            foreach (Filter element in filters)
+            {
+                this.filters.Add(element);
+            }
+
+            return this;
+        }
+
+        // Check to see if Filters property is set
+        internal bool IsSetFilters()
+        {
+            return this.filters.Count > 0;
         }
 
         /// <summary>

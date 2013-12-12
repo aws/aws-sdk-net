@@ -53,9 +53,19 @@ namespace Amazon.DynamoDBv2.DocumentModel
         public Dictionary<string, KeyDescription> Keys { get; private set; }
 
         /// <summary>
+        /// Global secondary indexes of the table.
+        /// </summary>
+        public Dictionary<string, GlobalSecondaryIndexDescription> GlobalSecondaryIndexes { get; private set; }
+
+        /// <summary>
         /// Local secondary indexes of the table.
         /// </summary>
         public Dictionary<string, LocalSecondaryIndexDescription> LocalSecondaryIndexes { get; private set; }
+
+        /// <summary>
+        /// Names of the global secondary indexes of the table.
+        /// </summary>
+        public List<string> GlobalSecondaryIndexNames { get; private set; }
 
         /// <summary>
         /// Names of the local secondary indexes of the table.
@@ -137,6 +147,17 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 {
                     LocalSecondaryIndexes[index.IndexName] = index;
                     LocalSecondaryIndexNames.Add(index.IndexName);
+                }
+            }
+
+            GlobalSecondaryIndexes.Clear();
+            GlobalSecondaryIndexNames.Clear();
+            if (table.GlobalSecondaryIndexes != null)
+            {
+                foreach (var index in table.GlobalSecondaryIndexes)
+                {
+                    GlobalSecondaryIndexes[index.IndexName] = index;
+                    GlobalSecondaryIndexNames.Add(index.IndexName);
                 }
             }
 
@@ -255,6 +276,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
             RangeKeys = new List<string>();
             LocalSecondaryIndexes = new Dictionary<string, LocalSecondaryIndexDescription>();
             LocalSecondaryIndexNames = new List<string>();
+            GlobalSecondaryIndexes = new Dictionary<string, GlobalSecondaryIndexDescription>();
+            GlobalSecondaryIndexNames = new List<string>();
             Attributes = new List<AttributeDefinition>();
         }
 

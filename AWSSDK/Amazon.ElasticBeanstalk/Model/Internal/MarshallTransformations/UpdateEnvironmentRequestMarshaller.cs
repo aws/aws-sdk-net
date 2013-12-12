@@ -43,6 +43,26 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
             {
                 request.Parameters.Add("EnvironmentName", StringUtils.FromString(updateEnvironmentRequest.EnvironmentName));
             }
+            if (updateEnvironmentRequest != null && updateEnvironmentRequest.IsSetDescription())
+            {
+                request.Parameters.Add("Description", StringUtils.FromString(updateEnvironmentRequest.Description));
+            }
+            if (updateEnvironmentRequest != null)
+            {
+                EnvironmentTier tier = updateEnvironmentRequest.Tier;
+                if (tier != null && tier.IsSetName())
+                {
+                    request.Parameters.Add("Tier.Name", StringUtils.FromString(tier.Name));
+                }
+                if (tier != null && tier.IsSetType())
+                {
+                    request.Parameters.Add("Tier.Type", StringUtils.FromString(tier.Type));
+                }
+                if (tier != null && tier.IsSetVersion())
+                {
+                    request.Parameters.Add("Tier.Version", StringUtils.FromString(tier.Version));
+                }
+            }
             if (updateEnvironmentRequest != null && updateEnvironmentRequest.IsSetVersionLabel())
             {
                 request.Parameters.Add("VersionLabel", StringUtils.FromString(updateEnvironmentRequest.VersionLabel));
@@ -50,10 +70,6 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
             if (updateEnvironmentRequest != null && updateEnvironmentRequest.IsSetTemplateName())
             {
                 request.Parameters.Add("TemplateName", StringUtils.FromString(updateEnvironmentRequest.TemplateName));
-            }
-            if (updateEnvironmentRequest != null && updateEnvironmentRequest.IsSetDescription())
-            {
-                request.Parameters.Add("Description", StringUtils.FromString(updateEnvironmentRequest.Description));
             }
 
             if (updateEnvironmentRequest != null)

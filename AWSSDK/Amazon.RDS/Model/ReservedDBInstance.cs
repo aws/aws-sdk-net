@@ -24,7 +24,7 @@ namespace Amazon.RDS.Model
     /// <para> This data type is used as a response element in the DescribeReservedDBInstances and PurchaseReservedDBInstancesOffering actions.
     /// </para>
     /// </summary>
-    public class ReservedDBInstance
+    public partial class ReservedDBInstance
     {
         
         private string reservedDBInstanceId;
@@ -101,7 +101,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The DB instance class for the reserved DB Instance.
+        /// The DB instance class for the reserved DB instance.
         ///  
         /// </summary>
         public string DBInstanceClass
@@ -188,7 +188,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The fixed price charged for this reserved DB Instance.
+        /// The fixed price charged for this reserved DB instance.
         ///  
         /// </summary>
         public double FixedPrice
@@ -217,7 +217,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The hourly price charged for this reserved DB Instance.
+        /// The hourly price charged for this reserved DB instance.
         ///  
         /// </summary>
         public double UsagePrice
@@ -246,7 +246,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The currency code for the reserved DB Instance.
+        /// The currency code for the reserved DB instance.
         ///  
         /// </summary>
         public string CurrencyCode
@@ -275,7 +275,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The number of reserved DB Instances.
+        /// The number of reserved DB instances.
         ///  
         /// </summary>
         public int DBInstanceCount
@@ -304,7 +304,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The description of the reserved DB Instance.
+        /// The description of the reserved DB instance.
         ///  
         /// </summary>
         public string ProductDescription
@@ -333,7 +333,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The offering type of this reserved DB Instance.
+        /// The offering type of this reserved DB instance.
         ///  
         /// </summary>
         public string OfferingType
@@ -391,7 +391,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The state of the reserved DB Instance.
+        /// The state of the reserved DB instance.
         ///  
         /// </summary>
         public string State
@@ -420,7 +420,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The recurring price charged to run this reserved DB Instance.
+        /// The recurring price charged to run this reserved DB instance.
         ///  
         /// </summary>
         public List<RecurringCharge> RecurringCharges

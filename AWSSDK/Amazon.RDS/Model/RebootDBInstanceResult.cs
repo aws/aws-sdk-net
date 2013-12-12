@@ -23,7 +23,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// The results from the RebootDBInstance action.
     /// </summary>
-    public class RebootDBInstanceResult
+    public partial class RebootDBInstanceResult
     {
         private DBInstance dBInstanceValue;
 

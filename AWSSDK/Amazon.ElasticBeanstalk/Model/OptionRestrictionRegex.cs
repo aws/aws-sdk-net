@@ -23,7 +23,7 @@ namespace Amazon.ElasticBeanstalk.Model
     /// <summary>
     /// <para> A regular expression representing a restriction on a string configuration option value. </para>
     /// </summary>
-    public class OptionRestrictionRegex  
+    public partial class OptionRestrictionRegex
     {
         
         private string pattern;
@@ -55,7 +55,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if Pattern property is set
         internal bool IsSetPattern()
         {
-            return this.pattern != null;       
+            return this.pattern != null;
         }
 
         /// <summary>
@@ -84,7 +84,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if Label property is set
         internal bool IsSetLabel()
         {
-            return this.label != null;       
+            return this.label != null;
         }
     }
 }

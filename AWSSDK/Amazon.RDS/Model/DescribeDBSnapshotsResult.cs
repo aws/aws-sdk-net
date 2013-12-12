@@ -23,7 +23,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// <para> Contains the result of a successful invocation of the DescribeDBSnapshots action. </para>
     /// </summary>
-    public class DescribeDBSnapshotsResult
+    public partial class DescribeDBSnapshotsResult
     {
         
         private string marker;

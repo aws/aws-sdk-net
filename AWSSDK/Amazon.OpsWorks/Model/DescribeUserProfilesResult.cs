@@ -23,7 +23,7 @@ namespace Amazon.OpsWorks.Model
     /// <summary>
     /// <para>Contains the response to a <c>DescribeUserProfiles</c> request.</para>
     /// </summary>
-    public class DescribeUserProfilesResult
+    public partial class DescribeUserProfilesResult
     {
         
         private List<UserProfile> userProfiles = new List<UserProfile>();

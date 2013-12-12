@@ -32,6 +32,8 @@
 
         public BatchWriteItemResult Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             BatchWriteItemResult batchWriteItemResult = new BatchWriteItemResult();
           batchWriteItemResult.UnprocessedItems = null;
                         batchWriteItemResult.ItemCollectionMetrics = null;

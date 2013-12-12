@@ -23,7 +23,7 @@ namespace Amazon.ElasticBeanstalk.Model
     /// <summary>
     /// <para>The description of an Amazon EC2 instance.</para>
     /// </summary>
-    public class Instance  
+    public partial class Instance
     {
         
         private string id;
@@ -54,7 +54,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if Id property is set
         internal bool IsSetId()
         {
-            return this.id != null;       
+            return this.id != null;
         }
     }
 }

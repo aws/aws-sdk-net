@@ -23,7 +23,7 @@ namespace Amazon.ElasticBeanstalk.Model
     /// <summary>
     /// <para>The information retrieved from the Amazon EC2 instances.</para>
     /// </summary>
-    public class EnvironmentInfoDescription  
+    public partial class EnvironmentInfoDescription
     {
         
         private string infoType;
@@ -66,7 +66,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if InfoType property is set
         internal bool IsSetInfoType()
         {
-            return this.infoType != null;       
+            return this.infoType != null;
         }
 
         /// <summary>
@@ -95,7 +95,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if Ec2InstanceId property is set
         internal bool IsSetEc2InstanceId()
         {
-            return this.ec2InstanceId != null;       
+            return this.ec2InstanceId != null;
         }
 
         /// <summary>
@@ -124,7 +124,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if SampleTimestamp property is set
         internal bool IsSetSampleTimestamp()
         {
-            return this.sampleTimestamp.HasValue;       
+            return this.sampleTimestamp.HasValue;
         }
 
         /// <summary>
@@ -153,7 +153,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if Message property is set
         internal bool IsSetMessage()
         {
-            return this.message != null;       
+            return this.message != null;
         }
     }
 }

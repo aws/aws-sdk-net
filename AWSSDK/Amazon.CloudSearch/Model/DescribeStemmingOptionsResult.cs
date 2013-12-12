@@ -23,7 +23,7 @@ namespace Amazon.CloudSearch.Model
     /// <summary>
     /// <para>A response message that contains the stemming options for a search domain.</para>
     /// </summary>
-    public class DescribeStemmingOptionsResult  
+    public partial class DescribeStemmingOptionsResult
     {
         
         private StemmingOptionsStatus stems;
@@ -54,7 +54,7 @@ namespace Amazon.CloudSearch.Model
         // Check to see if Stems property is set
         internal bool IsSetStems()
         {
-            return this.stems != null;       
+            return this.stems != null;
         }
     }
 }

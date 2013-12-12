@@ -24,7 +24,7 @@ namespace Amazon.CloudSearch.Model
     /// <para>The endpoint to which service requests can be submitted, including the actual URL prefix for sending requests and the Amazon Resource
     /// Name (ARN) so the endpoint can be referenced in other API calls such as UpdateServiceAccessPolicies.</para>
     /// </summary>
-    public class ServiceEndpoint
+    public partial class ServiceEndpoint
     {
         
         private string arn;

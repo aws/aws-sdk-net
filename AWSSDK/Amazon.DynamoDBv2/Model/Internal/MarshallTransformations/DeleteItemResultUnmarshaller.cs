@@ -32,6 +32,8 @@
 
         public DeleteItemResult Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             DeleteItemResult deleteItemResult = new DeleteItemResult();
           deleteItemResult.Attributes = null;
                         

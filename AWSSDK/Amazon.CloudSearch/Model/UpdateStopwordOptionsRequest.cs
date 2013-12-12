@@ -26,7 +26,7 @@ namespace Amazon.CloudSearch.Model
     /// <summary>
     /// Container for the parameters to the UpdateStopwordOptions operation.
     /// <para>Configures stopwords for the search domain. Stopwords are used during indexing and when processing search requests. The maximum size
-    /// of the stopwords dictionary is 10KB.</para>
+    /// of the stopwords dictionary is 10 KB.</para>
     /// </summary>
     /// <seealso cref="Amazon.CloudSearch.AmazonCloudSearch.UpdateStopwordOptions"/>
     public class UpdateStopwordOptionsRequest : AmazonWebServiceRequest
@@ -75,12 +75,12 @@ namespace Amazon.CloudSearch.Model
         // Check to see if DomainName property is set
         internal bool IsSetDomainName()
         {
-            return this.domainName != null;       
+            return this.domainName != null;
         }
 
         /// <summary>
         /// Lists stopwords serialized as a JSON document. The document has a single object with one property "stopwords" whose value is an array of
-        /// strings. The maximum size of a stopwords document is 10KB. Example: <c>{ "stopwords": ["a", "an", "the", "of"] }</c>
+        /// strings. The maximum size of a stopwords document is 10 KB. Example: <c>{ "stopwords": ["a", "an", "the", "of"] }</c>
         ///  
         /// </summary>
         public string Stopwords
@@ -105,7 +105,7 @@ namespace Amazon.CloudSearch.Model
         // Check to see if Stopwords property is set
         internal bool IsSetStopwords()
         {
-            return this.stopwords != null;       
+            return this.stopwords != null;
         }
     }
 }

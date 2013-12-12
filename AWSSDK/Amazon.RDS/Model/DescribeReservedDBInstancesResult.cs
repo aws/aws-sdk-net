@@ -23,7 +23,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// <para> Contains the result of a successful invocation of the DescribeReservedDBInstances action. </para>
     /// </summary>
-    public class DescribeReservedDBInstancesResult
+    public partial class DescribeReservedDBInstancesResult
     {
         
         private string marker;
@@ -60,7 +60,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// A list of of reserved DB Instances.
+        /// A list of reserved DB instances.
         ///  
         /// </summary>
         public List<ReservedDBInstance> ReservedDBInstances

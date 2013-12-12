@@ -23,7 +23,7 @@ namespace Amazon.ElasticBeanstalk.Model
     /// <summary>
     /// <para>Result message containing a single description of an application.</para>
     /// </summary>
-    public class UpdateApplicationResult  
+    public partial class UpdateApplicationResult
     {
         
         private ApplicationDescription application;
@@ -54,7 +54,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if Application property is set
         internal bool IsSetApplication()
         {
-            return this.application != null;       
+            return this.application != null;
         }
     }
 }

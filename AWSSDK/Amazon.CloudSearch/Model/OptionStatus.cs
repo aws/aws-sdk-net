@@ -23,7 +23,7 @@ namespace Amazon.CloudSearch.Model
     /// <summary>
     /// <para>The status of an option, including when it was last updated and whether it is actively in use for searches.</para>
     /// </summary>
-    public class OptionStatus
+    public partial class OptionStatus
     {
         
         private DateTime? creationDate;

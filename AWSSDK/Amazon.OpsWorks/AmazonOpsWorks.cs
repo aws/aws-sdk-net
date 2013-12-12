@@ -25,95 +25,73 @@ namespace Amazon.OpsWorks
     ///  AWS OpsWorks <para>Welcome to the <i>AWS OpsWorks API Reference</i> . This guide provides descriptions, syntax, and usage examples about AWS
     /// OpsWorks actions and data types, including common parameters and error codes. </para> <para>AWS OpsWorks is an application management
     /// service that provides an integrated experience for overseeing the complete application lifecycle. For information about this product, go to
-    /// the <a href="http://aws.amazon.com/opsworks/" >AWS OpsWorks</a> details page. </para> <para> <b>Endpoints</b> </para> <para>AWS OpsWorks
-    /// supports only one endpoint, opsworks.us-east-1.amazonaws.com (HTTPS), so you must connect to that endpoint. You can then use the API to
-    /// direct AWS OpsWorks to create stacks in any AWS Region.</para> <para> <b>Chef Version</b> </para> <para>When you call CreateStack,
-    /// CloneStack, or UpdateStack we recommend you use the <c>ConfigurationManager</c> parameter to specify the Chef version, 0.9 or 11.4. The
-    /// default value is currently 0.9. However, we expect to change the default value to 11.4 in September 2013.</para>
+    /// the <a href="http://aws.amazon.com/opsworks/" >AWS OpsWorks</a> details page. </para> <para> <b>SDKs and CLI</b> </para> <para>The most
+    /// common way to use the AWS OpsWorks API is by using the AWS Command Line Interface (CLI) or by using one of the AWS SDKs to implement
+    /// applications in your preferred language. For more information, see:</para>
+    /// <ul>
+    /// <li> <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html" >AWS CLI</a> </li>
+    /// <li> <a href="http://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/com/amazonaws/services/opsworks/AWSOpsWorksClient.html" >AWS SDK for
+    /// Java</a> </li>
+    /// <li> <a href="http://docs.aws.amazon.com/sdkfornet/latest/apidocs/html/N_Amazon_OpsWorks.htm" >AWS SDK for .NET</a> </li>
+    /// <li> <a href="http://docs.aws.amazon.com/aws-sdk-php-2/latest/class-Aws.OpsWorks.OpsWorksClient.html" >AWS SDK for PHP 2</a> </li>
+    /// <li> <a href="http://docs.aws.amazon.com/AWSRubySDK/latest/AWS/OpsWorks/Client.html" >AWS SDK for Ruby</a> </li>
+    /// <li> <a href="http://aws.amazon.com/documentation/sdkforjavascript/" >AWS SDK for Node.js</a> </li>
+    /// <li> <a href="http://docs.pythonboto.org/en/latest/ref/opsworks.html" >AWS SDK for Python(Boto)</a> </li>
+    /// 
+    /// </ul>
+    /// <para> <b>Endpoints</b> </para> <para>AWS OpsWorks supports only one endpoint, opsworks.us-east-1.amazonaws.com (HTTPS), so you must
+    /// connect to that endpoint. You can then use the API to direct AWS OpsWorks to create stacks in any AWS Region.</para> <para> <b>Chef
+    /// Version</b> </para> <para>When you call CreateStack, CloneStack, or UpdateStack we recommend you use the <c>ConfigurationManager</c>
+    /// parameter to specify the Chef version, 0.9 or 11.4. The default value is currently 0.9. However, we expect to change the default value to
+    /// 11.4 in October 2013. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-chef11.html"
+    /// >Using AWS OpsWorks with Chef 11</a> .</para>
     /// </summary>
     public interface AmazonOpsWorks : IDisposable
     {
         
 
-        #region RegisterVolume
+        #region UpdateMyUserProfile
 
         /// <summary>
-        /// <para>Registers an Amazon EBS volume with a specified stack. A volume can be registered with only one stack at a time. If the volume is
-        /// already registered, you must first deregister it by calling DeregisterVolume. For more information, see <a
-        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html"
-        /// >http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html</a> .</para>
+        /// <para>Updates a user's SSH public key.</para> <para> <b>Required Permissions</b> : To use this action, an IAM user must have self-management
+        /// enabled or an attached policy that explicitly grants permissions. For more information on user permissions, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
         /// </summary>
         /// 
-        /// <param name="registerVolumeRequest">Container for the necessary parameters to execute the RegisterVolume service method on
+        /// <param name="updateMyUserProfileRequest">Container for the necessary parameters to execute the UpdateMyUserProfile service method on
         ///          AmazonOpsWorks.</param>
         /// 
-        /// <returns>The response from the RegisterVolume service method, as returned by AmazonOpsWorks.</returns>
-        /// 
-        /// <exception cref="ResourceNotFoundException"/>
         /// <exception cref="ValidationException"/>
-        RegisterVolumeResponse RegisterVolume(RegisterVolumeRequest registerVolumeRequest);
+        UpdateMyUserProfileResponse UpdateMyUserProfile(UpdateMyUserProfileRequest updateMyUserProfileRequest);
 
         /// <summary>
-        /// Initiates the asynchronous execution of the RegisterVolume operation.
-        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.RegisterVolume"/>
+        /// Initiates the asynchronous execution of the UpdateMyUserProfile operation.
+        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.UpdateMyUserProfile"/>
         /// </summary>
         /// 
-        /// <param name="registerVolumeRequest">Container for the necessary parameters to execute the RegisterVolume operation on
+        /// <param name="updateMyUserProfileRequest">Container for the necessary parameters to execute the UpdateMyUserProfile operation on
         ///          AmazonOpsWorks.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRegisterVolume
-        ///         operation.</returns>
-        IAsyncResult BeginRegisterVolume(RegisterVolumeRequest registerVolumeRequest, AsyncCallback callback, object state);
+        IAsyncResult BeginUpdateMyUserProfile(UpdateMyUserProfileRequest updateMyUserProfileRequest, AsyncCallback callback, object state);
 
         /// <summary>
-        /// Finishes the asynchronous execution of the RegisterVolume operation.
-        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.RegisterVolume"/>
+        /// Finishes the asynchronous execution of the UpdateMyUserProfile operation.
+        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.UpdateMyUserProfile"/>
         /// </summary>
         /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRegisterVolume.</param>
-        /// 
-        /// <returns>Returns a RegisterVolumeResult from AmazonOpsWorks.</returns>
-        RegisterVolumeResponse EndRegisterVolume(IAsyncResult asyncResult);
-        
-        #endregion
-        
-    
-
-        #region UpdateUserProfile
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateMyUserProfile.</param>
+        UpdateMyUserProfileResponse EndUpdateMyUserProfile(IAsyncResult asyncResult);
 
         /// <summary>
-        /// <para>Updates a specified user profile.</para>
+        /// <para>Updates a user's SSH public key.</para> <para> <b>Required Permissions</b> : To use this action, an IAM user must have self-management
+        /// enabled or an attached policy that explicitly grants permissions. For more information on user permissions, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
         /// </summary>
         /// 
-        /// <param name="updateUserProfileRequest">Container for the necessary parameters to execute the UpdateUserProfile service method on
-        ///          AmazonOpsWorks.</param>
-        /// 
-        /// <exception cref="ResourceNotFoundException"/>
         /// <exception cref="ValidationException"/>
-        UpdateUserProfileResponse UpdateUserProfile(UpdateUserProfileRequest updateUserProfileRequest);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the UpdateUserProfile operation.
-        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.UpdateUserProfile"/>
-        /// </summary>
-        /// 
-        /// <param name="updateUserProfileRequest">Container for the necessary parameters to execute the UpdateUserProfile operation on
-        ///          AmazonOpsWorks.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        IAsyncResult BeginUpdateUserProfile(UpdateUserProfileRequest updateUserProfileRequest, AsyncCallback callback, object state);
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the UpdateUserProfile operation.
-        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.UpdateUserProfile"/>
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateUserProfile.</param>
-        UpdateUserProfileResponse EndUpdateUserProfile(IAsyncResult asyncResult);
+        UpdateMyUserProfileResponse UpdateMyUserProfile();
         
         #endregion
         
@@ -123,8 +101,10 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// <para>Deregisters an Amazon EBS volume. The volume can then be registered by another stack. For more information, see <a
-        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html"
-        /// >http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html</a> .</para>
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html" >Resource Management</a> .</para> <para> <b>Required
+        /// Permissions</b> : To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly
+        /// grants permissions. For more information on user permissions, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
         /// </summary>
         /// 
         /// <param name="deregisterVolumeRequest">Container for the necessary parameters to execute the DeregisterVolume service method on
@@ -158,92 +138,14 @@ namespace Amazon.OpsWorks
         
     
 
-        #region RebootInstance
-
-        /// <summary>
-        /// <para>Reboots a specified instance. For more information, see <a
-        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-starting.html" >Starting, Stopping, and Rebooting Instances</a>
-        /// .</para>
-        /// </summary>
-        /// 
-        /// <param name="rebootInstanceRequest">Container for the necessary parameters to execute the RebootInstance service method on
-        ///          AmazonOpsWorks.</param>
-        /// 
-        /// <exception cref="ResourceNotFoundException"/>
-        /// <exception cref="ValidationException"/>
-        RebootInstanceResponse RebootInstance(RebootInstanceRequest rebootInstanceRequest);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the RebootInstance operation.
-        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.RebootInstance"/>
-        /// </summary>
-        /// 
-        /// <param name="rebootInstanceRequest">Container for the necessary parameters to execute the RebootInstance operation on
-        ///          AmazonOpsWorks.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        IAsyncResult BeginRebootInstance(RebootInstanceRequest rebootInstanceRequest, AsyncCallback callback, object state);
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the RebootInstance operation.
-        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.RebootInstance"/>
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRebootInstance.</param>
-        RebootInstanceResponse EndRebootInstance(IAsyncResult asyncResult);
-        
-        #endregion
-        
-    
-
-        #region CreateStack
-
-        /// <summary>
-        /// <para>Creates a new stack. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-edit.html"
-        /// >Create a New Stack</a> .</para>
-        /// </summary>
-        /// 
-        /// <param name="createStackRequest">Container for the necessary parameters to execute the CreateStack service method on AmazonOpsWorks.</param>
-        /// 
-        /// <returns>The response from the CreateStack service method, as returned by AmazonOpsWorks.</returns>
-        /// 
-        /// <exception cref="ValidationException"/>
-        CreateStackResponse CreateStack(CreateStackRequest createStackRequest);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the CreateStack operation.
-        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.CreateStack"/>
-        /// </summary>
-        /// 
-        /// <param name="createStackRequest">Container for the necessary parameters to execute the CreateStack operation on AmazonOpsWorks.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateStack
-        ///         operation.</returns>
-        IAsyncResult BeginCreateStack(CreateStackRequest createStackRequest, AsyncCallback callback, object state);
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the CreateStack operation.
-        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.CreateStack"/>
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateStack.</param>
-        /// 
-        /// <returns>Returns a CreateStackResult from AmazonOpsWorks.</returns>
-        CreateStackResponse EndCreateStack(IAsyncResult asyncResult);
-        
-        #endregion
-        
-    
-
         #region SetPermission
 
         /// <summary>
         /// <para>Specifies a stack's permissions. For more information, see <a
-        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingsecurity.html" >Security and Permissions</a> .</para>
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingsecurity.html" >Security and Permissions</a> .</para> <para> <b>Required
+        /// Permissions</b> : To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly
+        /// grants permissions. For more information on user permissions, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
         /// </summary>
         /// 
         /// <param name="setPermissionRequest">Container for the necessary parameters to execute the SetPermission service method on
@@ -279,7 +181,10 @@ namespace Amazon.OpsWorks
         #region DescribeInstances
 
         /// <summary>
-        /// <para>Requests a description of a set of instances.</para> <para><b>NOTE:</b>You must specify at least one of the parameters.</para>
+        /// <para>Requests a description of a set of instances.</para> <para><b>NOTE:</b>You must specify at least one of the parameters.</para> <para>
+        /// <b>Required Permissions</b> : To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an
+        /// attached policy that explicitly grants permissions. For more information on user permissions, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
         /// </summary>
         /// 
         /// <param name="describeInstancesRequest">Container for the necessary parameters to execute the DescribeInstances service method on
@@ -323,7 +228,10 @@ namespace Amazon.OpsWorks
         #region DescribePermissions
 
         /// <summary>
-        /// <para>Describes the permissions for a specified stack.</para>
+        /// <para>Describes the permissions for a specified stack.</para> <para> <b>Required Permissions</b> : To use this action, an IAM user must have
+        /// a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user
+        /// permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a>
+        /// .</para>
         /// </summary>
         /// 
         /// <param name="describePermissionsRequest">Container for the necessary parameters to execute the DescribePermissions service method on
@@ -368,7 +276,10 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// <para>Deletes a specified instance. You must stop an instance before you can delete it. For more information, see <a
-        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-delete.html" >Deleting Instances</a> .</para>
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-delete.html" >Deleting Instances</a> .</para> <para> <b>Required
+        /// Permissions</b> : To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly
+        /// grants permissions. For more information on user permissions, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
         /// </summary>
         /// 
         /// <param name="deleteInstanceRequest">Container for the necessary parameters to execute the DeleteInstance service method on
@@ -406,7 +317,10 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// <para>Creates a clone of a specified stack. For more information, see <a
-        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-cloning.html" >Clone a Stack</a> .</para>
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-cloning.html" >Clone a Stack</a> .</para> <para> <b>Required
+        /// Permissions</b> : To use this action, an IAM user must have an attached policy that explicitly grants permissions. For more information on
+        /// user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User
+        /// Permissions</a> .</para>
         /// </summary>
         /// 
         /// <param name="cloneStackRequest">Container for the necessary parameters to execute the CloneStack service method on AmazonOpsWorks.</param>
@@ -445,94 +359,13 @@ namespace Amazon.OpsWorks
         
     
 
-        #region CreateInstance
-
-        /// <summary>
-        /// <para>Creates an instance in a specified stack. For more information, see <a
-        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html" >Adding an Instance to a Layer</a> .</para>
-        /// </summary>
-        /// 
-        /// <param name="createInstanceRequest">Container for the necessary parameters to execute the CreateInstance service method on
-        ///          AmazonOpsWorks.</param>
-        /// 
-        /// <returns>The response from the CreateInstance service method, as returned by AmazonOpsWorks.</returns>
-        /// 
-        /// <exception cref="ResourceNotFoundException"/>
-        /// <exception cref="ValidationException"/>
-        CreateInstanceResponse CreateInstance(CreateInstanceRequest createInstanceRequest);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the CreateInstance operation.
-        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.CreateInstance"/>
-        /// </summary>
-        /// 
-        /// <param name="createInstanceRequest">Container for the necessary parameters to execute the CreateInstance operation on
-        ///          AmazonOpsWorks.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateInstance
-        ///         operation.</returns>
-        IAsyncResult BeginCreateInstance(CreateInstanceRequest createInstanceRequest, AsyncCallback callback, object state);
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the CreateInstance operation.
-        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.CreateInstance"/>
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateInstance.</param>
-        /// 
-        /// <returns>Returns a CreateInstanceResult from AmazonOpsWorks.</returns>
-        CreateInstanceResponse EndCreateInstance(IAsyncResult asyncResult);
-        
-        #endregion
-        
-    
-
-        #region StopInstance
-
-        /// <summary>
-        /// <para>Stops a specified instance. When you stop a standard instance, the data disappears and must be reinstalled when you restart the
-        /// instance. You can stop an Amazon EBS-backed instance without losing data. For more information, see <a
-        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-starting.html" >Starting, Stopping, and Rebooting Instances</a>
-        /// .</para>
-        /// </summary>
-        /// 
-        /// <param name="stopInstanceRequest">Container for the necessary parameters to execute the StopInstance service method on
-        ///          AmazonOpsWorks.</param>
-        /// 
-        /// <exception cref="ResourceNotFoundException"/>
-        /// <exception cref="ValidationException"/>
-        StopInstanceResponse StopInstance(StopInstanceRequest stopInstanceRequest);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the StopInstance operation.
-        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.StopInstance"/>
-        /// </summary>
-        /// 
-        /// <param name="stopInstanceRequest">Container for the necessary parameters to execute the StopInstance operation on AmazonOpsWorks.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        IAsyncResult BeginStopInstance(StopInstanceRequest stopInstanceRequest, AsyncCallback callback, object state);
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the StopInstance operation.
-        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.StopInstance"/>
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopInstance.</param>
-        StopInstanceResponse EndStopInstance(IAsyncResult asyncResult);
-        
-        #endregion
-        
-    
-
         #region DetachElasticLoadBalancer
 
         /// <summary>
-        /// <para>Detaches a specified Elastic Load Balancing instance from its layer.</para>
+        /// <para>Detaches a specified Elastic Load Balancing instance from its layer.</para> <para> <b>Required Permissions</b> : To use this action,
+        /// an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more
+        /// information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing
+        /// User Permissions</a> .</para>
         /// </summary>
         /// 
         /// <param name="detachElasticLoadBalancerRequest">Container for the necessary parameters to execute the DetachElasticLoadBalancer service
@@ -565,10 +398,53 @@ namespace Amazon.OpsWorks
         
     
 
+        #region StopInstance
+
+        /// <summary>
+        /// <para>Stops a specified instance. When you stop a standard instance, the data disappears and must be reinstalled when you restart the
+        /// instance. You can stop an Amazon EBS-backed instance without losing data. For more information, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-starting.html" >Starting, Stopping, and Rebooting Instances</a>
+        /// .</para> <para> <b>Required Permissions</b> : To use this action, an IAM user must have a Manage permissions level for the stack, or an
+        /// attached policy that explicitly grants permissions. For more information on user permissions, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
+        /// </summary>
+        /// 
+        /// <param name="stopInstanceRequest">Container for the necessary parameters to execute the StopInstance service method on
+        ///          AmazonOpsWorks.</param>
+        /// 
+        /// <exception cref="ResourceNotFoundException"/>
+        /// <exception cref="ValidationException"/>
+        StopInstanceResponse StopInstance(StopInstanceRequest stopInstanceRequest);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopInstance operation.
+        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.StopInstance"/>
+        /// </summary>
+        /// 
+        /// <param name="stopInstanceRequest">Container for the necessary parameters to execute the StopInstance operation on AmazonOpsWorks.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        IAsyncResult BeginStopInstance(StopInstanceRequest stopInstanceRequest, AsyncCallback callback, object state);
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the StopInstance operation.
+        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.StopInstance"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopInstance.</param>
+        StopInstanceResponse EndStopInstance(IAsyncResult asyncResult);
+        
+        #endregion
+        
+    
+
         #region UpdateApp
 
         /// <summary>
-        /// <para>Updates a specified app.</para>
+        /// <para>Updates a specified app.</para> <para> <b>Required Permissions</b> : To use this action, an IAM user must have a Deploy or Manage
+        /// permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
         /// </summary>
         /// 
         /// <param name="updateAppRequest">Container for the necessary parameters to execute the UpdateApp service method on AmazonOpsWorks.</param>
@@ -600,158 +476,13 @@ namespace Amazon.OpsWorks
         
     
 
-        #region DeleteApp
-
-        /// <summary>
-        /// <para>Deletes a specified app.</para>
-        /// </summary>
-        /// 
-        /// <param name="deleteAppRequest">Container for the necessary parameters to execute the DeleteApp service method on AmazonOpsWorks.</param>
-        /// 
-        /// <exception cref="ResourceNotFoundException"/>
-        /// <exception cref="ValidationException"/>
-        DeleteAppResponse DeleteApp(DeleteAppRequest deleteAppRequest);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the DeleteApp operation.
-        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.DeleteApp"/>
-        /// </summary>
-        /// 
-        /// <param name="deleteAppRequest">Container for the necessary parameters to execute the DeleteApp operation on AmazonOpsWorks.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        IAsyncResult BeginDeleteApp(DeleteAppRequest deleteAppRequest, AsyncCallback callback, object state);
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the DeleteApp operation.
-        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.DeleteApp"/>
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteApp.</param>
-        DeleteAppResponse EndDeleteApp(IAsyncResult asyncResult);
-        
-        #endregion
-        
-    
-
-        #region DeregisterElasticIp
-
-        /// <summary>
-        /// <para>Deregisters a specified Elastic IP address. The address can then be registered by another stack. For more information, see <a
-        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html"
-        /// >http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html</a> .</para>
-        /// </summary>
-        /// 
-        /// <param name="deregisterElasticIpRequest">Container for the necessary parameters to execute the DeregisterElasticIp service method on
-        ///          AmazonOpsWorks.</param>
-        /// 
-        /// <exception cref="ResourceNotFoundException"/>
-        /// <exception cref="ValidationException"/>
-        DeregisterElasticIpResponse DeregisterElasticIp(DeregisterElasticIpRequest deregisterElasticIpRequest);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the DeregisterElasticIp operation.
-        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.DeregisterElasticIp"/>
-        /// </summary>
-        /// 
-        /// <param name="deregisterElasticIpRequest">Container for the necessary parameters to execute the DeregisterElasticIp operation on
-        ///          AmazonOpsWorks.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        IAsyncResult BeginDeregisterElasticIp(DeregisterElasticIpRequest deregisterElasticIpRequest, AsyncCallback callback, object state);
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the DeregisterElasticIp operation.
-        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.DeregisterElasticIp"/>
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeregisterElasticIp.</param>
-        DeregisterElasticIpResponse EndDeregisterElasticIp(IAsyncResult asyncResult);
-        
-        #endregion
-        
-    
-
-        #region UpdateStack
-
-        /// <summary>
-        /// <para>Updates a specified stack.</para>
-        /// </summary>
-        /// 
-        /// <param name="updateStackRequest">Container for the necessary parameters to execute the UpdateStack service method on AmazonOpsWorks.</param>
-        /// 
-        /// <exception cref="ResourceNotFoundException"/>
-        /// <exception cref="ValidationException"/>
-        UpdateStackResponse UpdateStack(UpdateStackRequest updateStackRequest);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the UpdateStack operation.
-        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.UpdateStack"/>
-        /// </summary>
-        /// 
-        /// <param name="updateStackRequest">Container for the necessary parameters to execute the UpdateStack operation on AmazonOpsWorks.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        IAsyncResult BeginUpdateStack(UpdateStackRequest updateStackRequest, AsyncCallback callback, object state);
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the UpdateStack operation.
-        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.UpdateStack"/>
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateStack.</param>
-        UpdateStackResponse EndUpdateStack(IAsyncResult asyncResult);
-        
-        #endregion
-        
-    
-
-        #region AttachElasticLoadBalancer
-
-        /// <summary>
-        /// <para>Attaches an Elastic Load Balancing load balancer to a specified layer.</para> <para><b>NOTE:</b>You must create the Elastic Load
-        /// Balancing instance separately, by using the Elastic Load Balancing console, API, or CLI. For more information, see Elastic Load Balancing
-        /// Developer Guide.</para>
-        /// </summary>
-        /// 
-        /// <param name="attachElasticLoadBalancerRequest">Container for the necessary parameters to execute the AttachElasticLoadBalancer service
-        ///          method on AmazonOpsWorks.</param>
-        /// 
-        /// <exception cref="ResourceNotFoundException"/>
-        /// <exception cref="ValidationException"/>
-        AttachElasticLoadBalancerResponse AttachElasticLoadBalancer(AttachElasticLoadBalancerRequest attachElasticLoadBalancerRequest);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the AttachElasticLoadBalancer operation.
-        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.AttachElasticLoadBalancer"/>
-        /// </summary>
-        /// 
-        /// <param name="attachElasticLoadBalancerRequest">Container for the necessary parameters to execute the AttachElasticLoadBalancer operation on
-        ///          AmazonOpsWorks.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        IAsyncResult BeginAttachElasticLoadBalancer(AttachElasticLoadBalancerRequest attachElasticLoadBalancerRequest, AsyncCallback callback, object state);
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the AttachElasticLoadBalancer operation.
-        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.AttachElasticLoadBalancer"/>
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAttachElasticLoadBalancer.</param>
-        AttachElasticLoadBalancerResponse EndAttachElasticLoadBalancer(IAsyncResult asyncResult);
-        
-        #endregion
-        
-    
-
         #region DescribeCommands
 
         /// <summary>
-        /// <para>Describes the results of specified commands.</para> <para><b>NOTE:</b>You must specify at least one of the parameters.</para>
+        /// <para>Describes the results of specified commands.</para> <para><b>NOTE:</b>You must specify at least one of the parameters.</para> <para>
+        /// <b>Required Permissions</b> : To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an
+        /// attached policy that explicitly grants permissions. For more information on user permissions, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
         /// </summary>
         /// 
         /// <param name="describeCommandsRequest">Container for the necessary parameters to execute the DescribeCommands service method on
@@ -797,7 +528,9 @@ namespace Amazon.OpsWorks
         /// <summary>
         /// <para>Associates one of the stack's registered Elastic IP addresses with a specified instance. The address must first be registered with the
         /// stack by calling RegisterElasticIp. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html"
-        /// >http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html</a> .</para>
+        /// >Resource Management</a> .</para> <para> <b>Required Permissions</b> : To use this action, an IAM user must have a Manage permissions level
+        /// for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
         /// </summary>
         /// 
         /// <param name="associateElasticIpRequest">Container for the necessary parameters to execute the AssociateElasticIp service method on
@@ -831,55 +564,14 @@ namespace Amazon.OpsWorks
         
     
 
-        #region CreateUserProfile
-
-        /// <summary>
-        /// <para>Creates a new user profile.</para>
-        /// </summary>
-        /// 
-        /// <param name="createUserProfileRequest">Container for the necessary parameters to execute the CreateUserProfile service method on
-        ///          AmazonOpsWorks.</param>
-        /// 
-        /// <returns>The response from the CreateUserProfile service method, as returned by AmazonOpsWorks.</returns>
-        /// 
-        /// <exception cref="ValidationException"/>
-        CreateUserProfileResponse CreateUserProfile(CreateUserProfileRequest createUserProfileRequest);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the CreateUserProfile operation.
-        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.CreateUserProfile"/>
-        /// </summary>
-        /// 
-        /// <param name="createUserProfileRequest">Container for the necessary parameters to execute the CreateUserProfile operation on
-        ///          AmazonOpsWorks.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateUserProfile
-        ///         operation.</returns>
-        IAsyncResult BeginCreateUserProfile(CreateUserProfileRequest createUserProfileRequest, AsyncCallback callback, object state);
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the CreateUserProfile operation.
-        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.CreateUserProfile"/>
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateUserProfile.</param>
-        /// 
-        /// <returns>Returns a CreateUserProfileResult from AmazonOpsWorks.</returns>
-        CreateUserProfileResponse EndCreateUserProfile(IAsyncResult asyncResult);
-        
-        #endregion
-        
-    
-
         #region UnassignVolume
 
         /// <summary>
         /// <para>Unassigns an assigned Amazon EBS volume. The volume remains registered with the stack. For more information, see <a
-        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html"
-        /// >http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html</a> .</para>
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html" >Resource Management</a> .</para> <para> <b>Required
+        /// Permissions</b> : To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly
+        /// grants permissions. For more information on user permissions, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
         /// </summary>
         /// 
         /// <param name="unassignVolumeRequest">Container for the necessary parameters to execute the UnassignVolume service method on
@@ -913,98 +605,13 @@ namespace Amazon.OpsWorks
         
     
 
-        #region DescribeLayers
-
-        /// <summary>
-        /// <para>Requests a description of one or more layers in a specified stack.</para> <para><b>NOTE:</b>You must specify at least one of the
-        /// parameters.</para>
-        /// </summary>
-        /// 
-        /// <param name="describeLayersRequest">Container for the necessary parameters to execute the DescribeLayers service method on
-        ///          AmazonOpsWorks.</param>
-        /// 
-        /// <returns>The response from the DescribeLayers service method, as returned by AmazonOpsWorks.</returns>
-        /// 
-        /// <exception cref="ResourceNotFoundException"/>
-        /// <exception cref="ValidationException"/>
-        DescribeLayersResponse DescribeLayers(DescribeLayersRequest describeLayersRequest);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the DescribeLayers operation.
-        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.DescribeLayers"/>
-        /// </summary>
-        /// 
-        /// <param name="describeLayersRequest">Container for the necessary parameters to execute the DescribeLayers operation on
-        ///          AmazonOpsWorks.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeLayers
-        ///         operation.</returns>
-        IAsyncResult BeginDescribeLayers(DescribeLayersRequest describeLayersRequest, AsyncCallback callback, object state);
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the DescribeLayers operation.
-        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.DescribeLayers"/>
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeLayers.</param>
-        /// 
-        /// <returns>Returns a DescribeLayersResult from AmazonOpsWorks.</returns>
-        DescribeLayersResponse EndDescribeLayers(IAsyncResult asyncResult);
-        
-        #endregion
-        
-    
-
-        #region GetHostnameSuggestion
-
-        /// <summary>
-        /// <para>Gets a generated host name for the specified layer, based on the current host name theme.</para>
-        /// </summary>
-        /// 
-        /// <param name="getHostnameSuggestionRequest">Container for the necessary parameters to execute the GetHostnameSuggestion service method on
-        ///          AmazonOpsWorks.</param>
-        /// 
-        /// <returns>The response from the GetHostnameSuggestion service method, as returned by AmazonOpsWorks.</returns>
-        /// 
-        /// <exception cref="ValidationException"/>
-        GetHostnameSuggestionResponse GetHostnameSuggestion(GetHostnameSuggestionRequest getHostnameSuggestionRequest);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the GetHostnameSuggestion operation.
-        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.GetHostnameSuggestion"/>
-        /// </summary>
-        /// 
-        /// <param name="getHostnameSuggestionRequest">Container for the necessary parameters to execute the GetHostnameSuggestion operation on
-        ///          AmazonOpsWorks.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndGetHostnameSuggestion operation.</returns>
-        IAsyncResult BeginGetHostnameSuggestion(GetHostnameSuggestionRequest getHostnameSuggestionRequest, AsyncCallback callback, object state);
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the GetHostnameSuggestion operation.
-        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.GetHostnameSuggestion"/>
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetHostnameSuggestion.</param>
-        /// 
-        /// <returns>Returns a GetHostnameSuggestionResult from AmazonOpsWorks.</returns>
-        GetHostnameSuggestionResponse EndGetHostnameSuggestion(IAsyncResult asyncResult);
-        
-        #endregion
-        
-    
-
         #region DescribeRaidArrays
 
         /// <summary>
-        /// <para>Describe an instance's RAID arrays.</para> <para><b>NOTE:</b>You must specify at least one of the parameters.</para>
+        /// <para>Describe an instance's RAID arrays.</para> <para><b>NOTE:</b>You must specify at least one of the parameters.</para> <para>
+        /// <b>Required Permissions</b> : To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an
+        /// attached policy that explicitly grants permissions. For more information on user permissions, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
         /// </summary>
         /// 
         /// <param name="describeRaidArraysRequest">Container for the necessary parameters to execute the DescribeRaidArrays service method on
@@ -1045,46 +652,48 @@ namespace Amazon.OpsWorks
         
     
 
-        #region DescribeLoadBasedAutoScaling
+        #region GetHostnameSuggestion
 
         /// <summary>
-        /// <para>Describes load-based auto scaling configurations for specified layers.</para> <para><b>NOTE:</b>You must specify at least one of the
-        /// parameters.</para>
+        /// <para>Gets a generated host name for the specified layer, based on the current host name theme.</para> <para> <b>Required Permissions</b> :
+        /// To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants
+        /// permissions. For more information on user permissions, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
         /// </summary>
         /// 
-        /// <param name="describeLoadBasedAutoScalingRequest">Container for the necessary parameters to execute the DescribeLoadBasedAutoScaling service
-        ///          method on AmazonOpsWorks.</param>
+        /// <param name="getHostnameSuggestionRequest">Container for the necessary parameters to execute the GetHostnameSuggestion service method on
+        ///          AmazonOpsWorks.</param>
         /// 
-        /// <returns>The response from the DescribeLoadBasedAutoScaling service method, as returned by AmazonOpsWorks.</returns>
+        /// <returns>The response from the GetHostnameSuggestion service method, as returned by AmazonOpsWorks.</returns>
         /// 
         /// <exception cref="ResourceNotFoundException"/>
         /// <exception cref="ValidationException"/>
-        DescribeLoadBasedAutoScalingResponse DescribeLoadBasedAutoScaling(DescribeLoadBasedAutoScalingRequest describeLoadBasedAutoScalingRequest);
+        GetHostnameSuggestionResponse GetHostnameSuggestion(GetHostnameSuggestionRequest getHostnameSuggestionRequest);
 
         /// <summary>
-        /// Initiates the asynchronous execution of the DescribeLoadBasedAutoScaling operation.
-        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.DescribeLoadBasedAutoScaling"/>
+        /// Initiates the asynchronous execution of the GetHostnameSuggestion operation.
+        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.GetHostnameSuggestion"/>
         /// </summary>
         /// 
-        /// <param name="describeLoadBasedAutoScalingRequest">Container for the necessary parameters to execute the DescribeLoadBasedAutoScaling
-        ///          operation on AmazonOpsWorks.</param>
+        /// <param name="getHostnameSuggestionRequest">Container for the necessary parameters to execute the GetHostnameSuggestion operation on
+        ///          AmazonOpsWorks.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndDescribeLoadBasedAutoScaling operation.</returns>
-        IAsyncResult BeginDescribeLoadBasedAutoScaling(DescribeLoadBasedAutoScalingRequest describeLoadBasedAutoScalingRequest, AsyncCallback callback, object state);
+        ///         EndGetHostnameSuggestion operation.</returns>
+        IAsyncResult BeginGetHostnameSuggestion(GetHostnameSuggestionRequest getHostnameSuggestionRequest, AsyncCallback callback, object state);
 
         /// <summary>
-        /// Finishes the asynchronous execution of the DescribeLoadBasedAutoScaling operation.
-        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.DescribeLoadBasedAutoScaling"/>
+        /// Finishes the asynchronous execution of the GetHostnameSuggestion operation.
+        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.GetHostnameSuggestion"/>
         /// </summary>
         /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeLoadBasedAutoScaling.</param>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetHostnameSuggestion.</param>
         /// 
-        /// <returns>Returns a DescribeLoadBasedAutoScalingResult from AmazonOpsWorks.</returns>
-        DescribeLoadBasedAutoScalingResponse EndDescribeLoadBasedAutoScaling(IAsyncResult asyncResult);
+        /// <returns>Returns a GetHostnameSuggestionResult from AmazonOpsWorks.</returns>
+        GetHostnameSuggestionResponse EndGetHostnameSuggestion(IAsyncResult asyncResult);
         
         #endregion
         
@@ -1097,7 +706,9 @@ namespace Amazon.OpsWorks
         /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-autoscaling.html" >Managing Load with Time-based and Load-based
         /// Instances</a> .</para> <para><b>NOTE:</b>To use load-based auto scaling, you must create a set of load-based auto scaling instances.
         /// Load-based auto scaling operates only on the instances from that set, so you must ensure that you have created enough instances to handle
-        /// the maximum anticipated load.</para>
+        /// the maximum anticipated load.</para> <para> <b>Required Permissions</b> : To use this action, an IAM user must have a Manage permissions
+        /// level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
         /// </summary>
         /// 
         /// <param name="setLoadBasedAutoScalingRequest">Container for the necessary parameters to execute the SetLoadBasedAutoScaling service method on
@@ -1131,139 +742,13 @@ namespace Amazon.OpsWorks
         
     
 
-        #region DescribeElasticLoadBalancers
-
-        /// <summary>
-        /// <para>Describes a stack's Elastic Load Balancing instances.</para> <para><b>NOTE:</b>You must specify at least one of the parameters.</para>
-        /// </summary>
-        /// 
-        /// <param name="describeElasticLoadBalancersRequest">Container for the necessary parameters to execute the DescribeElasticLoadBalancers service
-        ///          method on AmazonOpsWorks.</param>
-        /// 
-        /// <returns>The response from the DescribeElasticLoadBalancers service method, as returned by AmazonOpsWorks.</returns>
-        /// 
-        /// <exception cref="ResourceNotFoundException"/>
-        /// <exception cref="ValidationException"/>
-        DescribeElasticLoadBalancersResponse DescribeElasticLoadBalancers(DescribeElasticLoadBalancersRequest describeElasticLoadBalancersRequest);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the DescribeElasticLoadBalancers operation.
-        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.DescribeElasticLoadBalancers"/>
-        /// </summary>
-        /// 
-        /// <param name="describeElasticLoadBalancersRequest">Container for the necessary parameters to execute the DescribeElasticLoadBalancers
-        ///          operation on AmazonOpsWorks.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndDescribeElasticLoadBalancers operation.</returns>
-        IAsyncResult BeginDescribeElasticLoadBalancers(DescribeElasticLoadBalancersRequest describeElasticLoadBalancersRequest, AsyncCallback callback, object state);
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the DescribeElasticLoadBalancers operation.
-        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.DescribeElasticLoadBalancers"/>
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeElasticLoadBalancers.</param>
-        /// 
-        /// <returns>Returns a DescribeElasticLoadBalancersResult from AmazonOpsWorks.</returns>
-        DescribeElasticLoadBalancersResponse EndDescribeElasticLoadBalancers(IAsyncResult asyncResult);
-
-        /// <summary>
-        /// <para>Describes a stack's Elastic Load Balancing instances.</para> <para><b>NOTE:</b>You must specify at least one of the parameters.</para>
-        /// </summary>
-        /// 
-        /// <returns>The response from the DescribeElasticLoadBalancers service method, as returned by AmazonOpsWorks.</returns>
-        /// 
-        /// <exception cref="ResourceNotFoundException"/>
-        /// <exception cref="ValidationException"/>
-        DescribeElasticLoadBalancersResponse DescribeElasticLoadBalancers();
-        
-        #endregion
-        
-    
-
-        #region DeleteLayer
-
-        /// <summary>
-        /// <para>Deletes a specified layer. You must first stop and then delete all associated instances. For more information, see <a
-        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-delete.html" >How to Delete a Layer</a> .</para>
-        /// </summary>
-        /// 
-        /// <param name="deleteLayerRequest">Container for the necessary parameters to execute the DeleteLayer service method on AmazonOpsWorks.</param>
-        /// 
-        /// <exception cref="ResourceNotFoundException"/>
-        /// <exception cref="ValidationException"/>
-        DeleteLayerResponse DeleteLayer(DeleteLayerRequest deleteLayerRequest);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the DeleteLayer operation.
-        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.DeleteLayer"/>
-        /// </summary>
-        /// 
-        /// <param name="deleteLayerRequest">Container for the necessary parameters to execute the DeleteLayer operation on AmazonOpsWorks.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        IAsyncResult BeginDeleteLayer(DeleteLayerRequest deleteLayerRequest, AsyncCallback callback, object state);
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the DeleteLayer operation.
-        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.DeleteLayer"/>
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteLayer.</param>
-        DeleteLayerResponse EndDeleteLayer(IAsyncResult asyncResult);
-        
-        #endregion
-        
-    
-
-        #region SetTimeBasedAutoScaling
-
-        /// <summary>
-        /// <para>Specify the time-based auto scaling configuration for a specified instance. For more information, see <a
-        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-autoscaling.html" >Managing Load with Time-based and Load-based
-        /// Instances</a> .</para>
-        /// </summary>
-        /// 
-        /// <param name="setTimeBasedAutoScalingRequest">Container for the necessary parameters to execute the SetTimeBasedAutoScaling service method on
-        ///          AmazonOpsWorks.</param>
-        /// 
-        /// <exception cref="ResourceNotFoundException"/>
-        /// <exception cref="ValidationException"/>
-        SetTimeBasedAutoScalingResponse SetTimeBasedAutoScaling(SetTimeBasedAutoScalingRequest setTimeBasedAutoScalingRequest);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the SetTimeBasedAutoScaling operation.
-        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.SetTimeBasedAutoScaling"/>
-        /// </summary>
-        /// 
-        /// <param name="setTimeBasedAutoScalingRequest">Container for the necessary parameters to execute the SetTimeBasedAutoScaling operation on
-        ///          AmazonOpsWorks.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        IAsyncResult BeginSetTimeBasedAutoScaling(SetTimeBasedAutoScalingRequest setTimeBasedAutoScalingRequest, AsyncCallback callback, object state);
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the SetTimeBasedAutoScaling operation.
-        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.SetTimeBasedAutoScaling"/>
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetTimeBasedAutoScaling.</param>
-        SetTimeBasedAutoScalingResponse EndSetTimeBasedAutoScaling(IAsyncResult asyncResult);
-        
-        #endregion
-        
-    
-
         #region DescribeVolumes
 
         /// <summary>
-        /// <para>Describes an instance's Amazon EBS volumes.</para> <para><b>NOTE:</b>You must specify at least one of the parameters.</para>
+        /// <para>Describes an instance's Amazon EBS volumes.</para> <para><b>NOTE:</b>You must specify at least one of the parameters.</para> <para>
+        /// <b>Required Permissions</b> : To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an
+        /// attached policy that explicitly grants permissions. For more information on user permissions, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
         /// </summary>
         /// 
         /// <param name="describeVolumesRequest">Container for the necessary parameters to execute the DescribeVolumes service method on
@@ -1304,11 +789,1108 @@ namespace Amazon.OpsWorks
         
     
 
+        #region AssignVolume
+
+        /// <summary>
+        /// <para>Assigns one of the stack's registered Amazon EBS volumes to a specified instance. The volume must first be registered with the stack
+        /// by calling RegisterVolume. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html" >Resource
+        /// Management</a> .</para> <para> <b>Required Permissions</b> : To use this action, an IAM user must have a Manage permissions level for the
+        /// stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
+        /// </summary>
+        /// 
+        /// <param name="assignVolumeRequest">Container for the necessary parameters to execute the AssignVolume service method on
+        ///          AmazonOpsWorks.</param>
+        /// 
+        /// <exception cref="ResourceNotFoundException"/>
+        /// <exception cref="ValidationException"/>
+        AssignVolumeResponse AssignVolume(AssignVolumeRequest assignVolumeRequest);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssignVolume operation.
+        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.AssignVolume"/>
+        /// </summary>
+        /// 
+        /// <param name="assignVolumeRequest">Container for the necessary parameters to execute the AssignVolume operation on AmazonOpsWorks.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        IAsyncResult BeginAssignVolume(AssignVolumeRequest assignVolumeRequest, AsyncCallback callback, object state);
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the AssignVolume operation.
+        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.AssignVolume"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssignVolume.</param>
+        AssignVolumeResponse EndAssignVolume(IAsyncResult asyncResult);
+        
+        #endregion
+        
+    
+
+        #region DescribeServiceErrors
+
+        /// <summary>
+        /// <para>Describes AWS OpsWorks service errors.</para> <para> <b>Required Permissions</b> : To use this action, an IAM user must have a Show,
+        /// Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user
+        /// permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a>
+        /// .</para>
+        /// </summary>
+        /// 
+        /// <param name="describeServiceErrorsRequest">Container for the necessary parameters to execute the DescribeServiceErrors service method on
+        ///          AmazonOpsWorks.</param>
+        /// 
+        /// <returns>The response from the DescribeServiceErrors service method, as returned by AmazonOpsWorks.</returns>
+        /// 
+        /// <exception cref="ResourceNotFoundException"/>
+        /// <exception cref="ValidationException"/>
+        DescribeServiceErrorsResponse DescribeServiceErrors(DescribeServiceErrorsRequest describeServiceErrorsRequest);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeServiceErrors operation.
+        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.DescribeServiceErrors"/>
+        /// </summary>
+        /// 
+        /// <param name="describeServiceErrorsRequest">Container for the necessary parameters to execute the DescribeServiceErrors operation on
+        ///          AmazonOpsWorks.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
+        ///         EndDescribeServiceErrors operation.</returns>
+        IAsyncResult BeginDescribeServiceErrors(DescribeServiceErrorsRequest describeServiceErrorsRequest, AsyncCallback callback, object state);
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the DescribeServiceErrors operation.
+        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.DescribeServiceErrors"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeServiceErrors.</param>
+        /// 
+        /// <returns>Returns a DescribeServiceErrorsResult from AmazonOpsWorks.</returns>
+        DescribeServiceErrorsResponse EndDescribeServiceErrors(IAsyncResult asyncResult);
+
+        /// <summary>
+        /// <para>Describes AWS OpsWorks service errors.</para> <para> <b>Required Permissions</b> : To use this action, an IAM user must have a Show,
+        /// Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user
+        /// permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a>
+        /// .</para>
+        /// </summary>
+        /// 
+        /// <returns>The response from the DescribeServiceErrors service method, as returned by AmazonOpsWorks.</returns>
+        /// 
+        /// <exception cref="ResourceNotFoundException"/>
+        /// <exception cref="ValidationException"/>
+        DescribeServiceErrorsResponse DescribeServiceErrors();
+        
+        #endregion
+        
+    
+
+        #region UpdateLayer
+
+        /// <summary>
+        /// <para>Updates a specified layer.</para> <para> <b>Required Permissions</b> : To use this action, an IAM user must have a Manage permissions
+        /// level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
+        /// </summary>
+        /// 
+        /// <param name="updateLayerRequest">Container for the necessary parameters to execute the UpdateLayer service method on AmazonOpsWorks.</param>
+        /// 
+        /// <exception cref="ResourceNotFoundException"/>
+        /// <exception cref="ValidationException"/>
+        UpdateLayerResponse UpdateLayer(UpdateLayerRequest updateLayerRequest);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateLayer operation.
+        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.UpdateLayer"/>
+        /// </summary>
+        /// 
+        /// <param name="updateLayerRequest">Container for the necessary parameters to execute the UpdateLayer operation on AmazonOpsWorks.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        IAsyncResult BeginUpdateLayer(UpdateLayerRequest updateLayerRequest, AsyncCallback callback, object state);
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the UpdateLayer operation.
+        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.UpdateLayer"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateLayer.</param>
+        UpdateLayerResponse EndUpdateLayer(IAsyncResult asyncResult);
+        
+        #endregion
+        
+    
+
+        #region UpdateElasticIp
+
+        /// <summary>
+        /// <para>Updates a registered Elastic IP address's name. For more information, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html" >Resource Management</a> .</para> <para> <b>Required
+        /// Permissions</b> : To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly
+        /// grants permissions. For more information on user permissions, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
+        /// </summary>
+        /// 
+        /// <param name="updateElasticIpRequest">Container for the necessary parameters to execute the UpdateElasticIp service method on
+        ///          AmazonOpsWorks.</param>
+        /// 
+        /// <exception cref="ResourceNotFoundException"/>
+        /// <exception cref="ValidationException"/>
+        UpdateElasticIpResponse UpdateElasticIp(UpdateElasticIpRequest updateElasticIpRequest);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateElasticIp operation.
+        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.UpdateElasticIp"/>
+        /// </summary>
+        /// 
+        /// <param name="updateElasticIpRequest">Container for the necessary parameters to execute the UpdateElasticIp operation on
+        ///          AmazonOpsWorks.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        IAsyncResult BeginUpdateElasticIp(UpdateElasticIpRequest updateElasticIpRequest, AsyncCallback callback, object state);
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the UpdateElasticIp operation.
+        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.UpdateElasticIp"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateElasticIp.</param>
+        UpdateElasticIpResponse EndUpdateElasticIp(IAsyncResult asyncResult);
+        
+        #endregion
+        
+    
+
+        #region StartInstance
+
+        /// <summary>
+        /// <para>Starts a specified instance. For more information, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-starting.html" >Starting, Stopping, and Rebooting Instances</a>
+        /// .</para> <para> <b>Required Permissions</b> : To use this action, an IAM user must have a Manage permissions level for the stack, or an
+        /// attached policy that explicitly grants permissions. For more information on user permissions, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
+        /// </summary>
+        /// 
+        /// <param name="startInstanceRequest">Container for the necessary parameters to execute the StartInstance service method on
+        ///          AmazonOpsWorks.</param>
+        /// 
+        /// <exception cref="ResourceNotFoundException"/>
+        /// <exception cref="ValidationException"/>
+        StartInstanceResponse StartInstance(StartInstanceRequest startInstanceRequest);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartInstance operation.
+        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.StartInstance"/>
+        /// </summary>
+        /// 
+        /// <param name="startInstanceRequest">Container for the necessary parameters to execute the StartInstance operation on AmazonOpsWorks.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        IAsyncResult BeginStartInstance(StartInstanceRequest startInstanceRequest, AsyncCallback callback, object state);
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the StartInstance operation.
+        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.StartInstance"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartInstance.</param>
+        StartInstanceResponse EndStartInstance(IAsyncResult asyncResult);
+        
+        #endregion
+        
+    
+
+        #region CreateLayer
+
+        /// <summary>
+        /// <para>Creates a layer. For more information, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-create.html" >How to Create a Layer</a> .</para>
+        /// <para><b>NOTE:</b>You should use CreateLayer for noncustom layer types such as PHP App Server only if the stack does not have an existing
+        /// layer of that type. A stack can have at most one instance of each noncustom layer; if you attempt to create a second instance, CreateLayer
+        /// fails. A stack can have an arbitrary number of custom layers, so you can call CreateLayer as many times as you like for that layer
+        /// type.</para> <para> <b>Required Permissions</b> : To use this action, an IAM user must have a Manage permissions level for the stack, or an
+        /// attached policy that explicitly grants permissions. For more information on user permissions, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
+        /// </summary>
+        /// 
+        /// <param name="createLayerRequest">Container for the necessary parameters to execute the CreateLayer service method on AmazonOpsWorks.</param>
+        /// 
+        /// <returns>The response from the CreateLayer service method, as returned by AmazonOpsWorks.</returns>
+        /// 
+        /// <exception cref="ResourceNotFoundException"/>
+        /// <exception cref="ValidationException"/>
+        CreateLayerResponse CreateLayer(CreateLayerRequest createLayerRequest);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateLayer operation.
+        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.CreateLayer"/>
+        /// </summary>
+        /// 
+        /// <param name="createLayerRequest">Container for the necessary parameters to execute the CreateLayer operation on AmazonOpsWorks.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateLayer
+        ///         operation.</returns>
+        IAsyncResult BeginCreateLayer(CreateLayerRequest createLayerRequest, AsyncCallback callback, object state);
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the CreateLayer operation.
+        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.CreateLayer"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateLayer.</param>
+        /// 
+        /// <returns>Returns a CreateLayerResult from AmazonOpsWorks.</returns>
+        CreateLayerResponse EndCreateLayer(IAsyncResult asyncResult);
+        
+        #endregion
+        
+    
+
+        #region DisassociateElasticIp
+
+        /// <summary>
+        /// <para>Disassociates an Elastic IP address from its instance. The address remains registered with the stack. For more information, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html" >Resource Management</a> .</para> <para> <b>Required
+        /// Permissions</b> : To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly
+        /// grants permissions. For more information on user permissions, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
+        /// </summary>
+        /// 
+        /// <param name="disassociateElasticIpRequest">Container for the necessary parameters to execute the DisassociateElasticIp service method on
+        ///          AmazonOpsWorks.</param>
+        /// 
+        /// <exception cref="ResourceNotFoundException"/>
+        /// <exception cref="ValidationException"/>
+        DisassociateElasticIpResponse DisassociateElasticIp(DisassociateElasticIpRequest disassociateElasticIpRequest);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateElasticIp operation.
+        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.DisassociateElasticIp"/>
+        /// </summary>
+        /// 
+        /// <param name="disassociateElasticIpRequest">Container for the necessary parameters to execute the DisassociateElasticIp operation on
+        ///          AmazonOpsWorks.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        IAsyncResult BeginDisassociateElasticIp(DisassociateElasticIpRequest disassociateElasticIpRequest, AsyncCallback callback, object state);
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the DisassociateElasticIp operation.
+        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.DisassociateElasticIp"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateElasticIp.</param>
+        DisassociateElasticIpResponse EndDisassociateElasticIp(IAsyncResult asyncResult);
+        
+        #endregion
+        
+    
+
+        #region DeleteStack
+
+        /// <summary>
+        /// <para>Deletes a specified stack. You must first delete all instances, layers, and apps. For more information, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-shutting.html" >Shut Down a Stack</a> .</para> <para> <b>Required
+        /// Permissions</b> : To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly
+        /// grants permissions. For more information on user permissions, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
+        /// </summary>
+        /// 
+        /// <param name="deleteStackRequest">Container for the necessary parameters to execute the DeleteStack service method on AmazonOpsWorks.</param>
+        /// 
+        /// <exception cref="ResourceNotFoundException"/>
+        /// <exception cref="ValidationException"/>
+        DeleteStackResponse DeleteStack(DeleteStackRequest deleteStackRequest);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteStack operation.
+        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.DeleteStack"/>
+        /// </summary>
+        /// 
+        /// <param name="deleteStackRequest">Container for the necessary parameters to execute the DeleteStack operation on AmazonOpsWorks.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        IAsyncResult BeginDeleteStack(DeleteStackRequest deleteStackRequest, AsyncCallback callback, object state);
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the DeleteStack operation.
+        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.DeleteStack"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteStack.</param>
+        DeleteStackResponse EndDeleteStack(IAsyncResult asyncResult);
+        
+        #endregion
+        
+    
+
+        #region StartStack
+
+        /// <summary>
+        /// <para>Starts stack's instances. </para> <para> <b>Required Permissions</b> : To use this action, an IAM user must have a Manage permissions
+        /// level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
+        /// </summary>
+        /// 
+        /// <param name="startStackRequest">Container for the necessary parameters to execute the StartStack service method on AmazonOpsWorks.</param>
+        /// 
+        /// <exception cref="ResourceNotFoundException"/>
+        /// <exception cref="ValidationException"/>
+        StartStackResponse StartStack(StartStackRequest startStackRequest);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartStack operation.
+        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.StartStack"/>
+        /// </summary>
+        /// 
+        /// <param name="startStackRequest">Container for the necessary parameters to execute the StartStack operation on AmazonOpsWorks.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        IAsyncResult BeginStartStack(StartStackRequest startStackRequest, AsyncCallback callback, object state);
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the StartStack operation.
+        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.StartStack"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartStack.</param>
+        StartStackResponse EndStartStack(IAsyncResult asyncResult);
+        
+        #endregion
+        
+    
+
+        #region RegisterVolume
+
+        /// <summary>
+        /// <para>Registers an Amazon EBS volume with a specified stack. A volume can be registered with only one stack at a time. If the volume is
+        /// already registered, you must first deregister it by calling DeregisterVolume. For more information, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html" >Resource Management</a> .</para> <para> <b>Required
+        /// Permissions</b> : To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly
+        /// grants permissions. For more information on user permissions, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
+        /// </summary>
+        /// 
+        /// <param name="registerVolumeRequest">Container for the necessary parameters to execute the RegisterVolume service method on
+        ///          AmazonOpsWorks.</param>
+        /// 
+        /// <returns>The response from the RegisterVolume service method, as returned by AmazonOpsWorks.</returns>
+        /// 
+        /// <exception cref="ResourceNotFoundException"/>
+        /// <exception cref="ValidationException"/>
+        RegisterVolumeResponse RegisterVolume(RegisterVolumeRequest registerVolumeRequest);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RegisterVolume operation.
+        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.RegisterVolume"/>
+        /// </summary>
+        /// 
+        /// <param name="registerVolumeRequest">Container for the necessary parameters to execute the RegisterVolume operation on
+        ///          AmazonOpsWorks.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRegisterVolume
+        ///         operation.</returns>
+        IAsyncResult BeginRegisterVolume(RegisterVolumeRequest registerVolumeRequest, AsyncCallback callback, object state);
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the RegisterVolume operation.
+        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.RegisterVolume"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRegisterVolume.</param>
+        /// 
+        /// <returns>Returns a RegisterVolumeResult from AmazonOpsWorks.</returns>
+        RegisterVolumeResponse EndRegisterVolume(IAsyncResult asyncResult);
+        
+        #endregion
+        
+    
+
+        #region UpdateUserProfile
+
+        /// <summary>
+        /// <para>Updates a specified user profile.</para> <para> <b>Required Permissions</b> : To use this action, an IAM user must have an attached
+        /// policy that explicitly grants permissions. For more information on user permissions, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
+        /// </summary>
+        /// 
+        /// <param name="updateUserProfileRequest">Container for the necessary parameters to execute the UpdateUserProfile service method on
+        ///          AmazonOpsWorks.</param>
+        /// 
+        /// <exception cref="ResourceNotFoundException"/>
+        /// <exception cref="ValidationException"/>
+        UpdateUserProfileResponse UpdateUserProfile(UpdateUserProfileRequest updateUserProfileRequest);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateUserProfile operation.
+        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.UpdateUserProfile"/>
+        /// </summary>
+        /// 
+        /// <param name="updateUserProfileRequest">Container for the necessary parameters to execute the UpdateUserProfile operation on
+        ///          AmazonOpsWorks.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        IAsyncResult BeginUpdateUserProfile(UpdateUserProfileRequest updateUserProfileRequest, AsyncCallback callback, object state);
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the UpdateUserProfile operation.
+        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.UpdateUserProfile"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateUserProfile.</param>
+        UpdateUserProfileResponse EndUpdateUserProfile(IAsyncResult asyncResult);
+        
+        #endregion
+        
+    
+
+        #region RebootInstance
+
+        /// <summary>
+        /// <para>Reboots a specified instance. For more information, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-starting.html" >Starting, Stopping, and Rebooting Instances</a>
+        /// .</para> <para> <b>Required Permissions</b> : To use this action, an IAM user must have a Manage permissions level for the stack, or an
+        /// attached policy that explicitly grants permissions. For more information on user permissions, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
+        /// </summary>
+        /// 
+        /// <param name="rebootInstanceRequest">Container for the necessary parameters to execute the RebootInstance service method on
+        ///          AmazonOpsWorks.</param>
+        /// 
+        /// <exception cref="ResourceNotFoundException"/>
+        /// <exception cref="ValidationException"/>
+        RebootInstanceResponse RebootInstance(RebootInstanceRequest rebootInstanceRequest);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RebootInstance operation.
+        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.RebootInstance"/>
+        /// </summary>
+        /// 
+        /// <param name="rebootInstanceRequest">Container for the necessary parameters to execute the RebootInstance operation on
+        ///          AmazonOpsWorks.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        IAsyncResult BeginRebootInstance(RebootInstanceRequest rebootInstanceRequest, AsyncCallback callback, object state);
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the RebootInstance operation.
+        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.RebootInstance"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRebootInstance.</param>
+        RebootInstanceResponse EndRebootInstance(IAsyncResult asyncResult);
+        
+        #endregion
+        
+    
+
+        #region CreateStack
+
+        /// <summary>
+        /// <para>Creates a new stack. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-edit.html"
+        /// >Create a New Stack</a> .</para> <para> <b>Required Permissions</b> : To use this action, an IAM user must have an attached policy that
+        /// explicitly grants permissions. For more information on user permissions, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
+        /// </summary>
+        /// 
+        /// <param name="createStackRequest">Container for the necessary parameters to execute the CreateStack service method on AmazonOpsWorks.</param>
+        /// 
+        /// <returns>The response from the CreateStack service method, as returned by AmazonOpsWorks.</returns>
+        /// 
+        /// <exception cref="ValidationException"/>
+        CreateStackResponse CreateStack(CreateStackRequest createStackRequest);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateStack operation.
+        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.CreateStack"/>
+        /// </summary>
+        /// 
+        /// <param name="createStackRequest">Container for the necessary parameters to execute the CreateStack operation on AmazonOpsWorks.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateStack
+        ///         operation.</returns>
+        IAsyncResult BeginCreateStack(CreateStackRequest createStackRequest, AsyncCallback callback, object state);
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the CreateStack operation.
+        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.CreateStack"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateStack.</param>
+        /// 
+        /// <returns>Returns a CreateStackResult from AmazonOpsWorks.</returns>
+        CreateStackResponse EndCreateStack(IAsyncResult asyncResult);
+        
+        #endregion
+        
+    
+
+        #region CreateInstance
+
+        /// <summary>
+        /// <para>Creates an instance in a specified stack. For more information, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html" >Adding an Instance to a Layer</a> .</para> <para>
+        /// <b>Required Permissions</b> : To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that
+        /// explicitly grants permissions. For more information on user permissions, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
+        /// </summary>
+        /// 
+        /// <param name="createInstanceRequest">Container for the necessary parameters to execute the CreateInstance service method on
+        ///          AmazonOpsWorks.</param>
+        /// 
+        /// <returns>The response from the CreateInstance service method, as returned by AmazonOpsWorks.</returns>
+        /// 
+        /// <exception cref="ResourceNotFoundException"/>
+        /// <exception cref="ValidationException"/>
+        CreateInstanceResponse CreateInstance(CreateInstanceRequest createInstanceRequest);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateInstance operation.
+        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.CreateInstance"/>
+        /// </summary>
+        /// 
+        /// <param name="createInstanceRequest">Container for the necessary parameters to execute the CreateInstance operation on
+        ///          AmazonOpsWorks.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateInstance
+        ///         operation.</returns>
+        IAsyncResult BeginCreateInstance(CreateInstanceRequest createInstanceRequest, AsyncCallback callback, object state);
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the CreateInstance operation.
+        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.CreateInstance"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateInstance.</param>
+        /// 
+        /// <returns>Returns a CreateInstanceResult from AmazonOpsWorks.</returns>
+        CreateInstanceResponse EndCreateInstance(IAsyncResult asyncResult);
+        
+        #endregion
+        
+    
+
+        #region DeleteApp
+
+        /// <summary>
+        /// <para>Deletes a specified app.</para> <para> <b>Required Permissions</b> : To use this action, an IAM user must have a Manage permissions
+        /// level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
+        /// </summary>
+        /// 
+        /// <param name="deleteAppRequest">Container for the necessary parameters to execute the DeleteApp service method on AmazonOpsWorks.</param>
+        /// 
+        /// <exception cref="ResourceNotFoundException"/>
+        /// <exception cref="ValidationException"/>
+        DeleteAppResponse DeleteApp(DeleteAppRequest deleteAppRequest);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteApp operation.
+        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.DeleteApp"/>
+        /// </summary>
+        /// 
+        /// <param name="deleteAppRequest">Container for the necessary parameters to execute the DeleteApp operation on AmazonOpsWorks.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        IAsyncResult BeginDeleteApp(DeleteAppRequest deleteAppRequest, AsyncCallback callback, object state);
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the DeleteApp operation.
+        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.DeleteApp"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteApp.</param>
+        DeleteAppResponse EndDeleteApp(IAsyncResult asyncResult);
+        
+        #endregion
+        
+    
+
+        #region DeregisterElasticIp
+
+        /// <summary>
+        /// <para>Deregisters a specified Elastic IP address. The address can then be registered by another stack. For more information, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html" >Resource Management</a> .</para> <para> <b>Required
+        /// Permissions</b> : To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly
+        /// grants permissions. For more information on user permissions, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
+        /// </summary>
+        /// 
+        /// <param name="deregisterElasticIpRequest">Container for the necessary parameters to execute the DeregisterElasticIp service method on
+        ///          AmazonOpsWorks.</param>
+        /// 
+        /// <exception cref="ResourceNotFoundException"/>
+        /// <exception cref="ValidationException"/>
+        DeregisterElasticIpResponse DeregisterElasticIp(DeregisterElasticIpRequest deregisterElasticIpRequest);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeregisterElasticIp operation.
+        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.DeregisterElasticIp"/>
+        /// </summary>
+        /// 
+        /// <param name="deregisterElasticIpRequest">Container for the necessary parameters to execute the DeregisterElasticIp operation on
+        ///          AmazonOpsWorks.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        IAsyncResult BeginDeregisterElasticIp(DeregisterElasticIpRequest deregisterElasticIpRequest, AsyncCallback callback, object state);
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the DeregisterElasticIp operation.
+        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.DeregisterElasticIp"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeregisterElasticIp.</param>
+        DeregisterElasticIpResponse EndDeregisterElasticIp(IAsyncResult asyncResult);
+        
+        #endregion
+        
+    
+
+        #region AttachElasticLoadBalancer
+
+        /// <summary>
+        /// <para>Attaches an Elastic Load Balancing load balancer to a specified layer.</para> <para><b>NOTE:</b>You must create the Elastic Load
+        /// Balancing instance separately, by using the Elastic Load Balancing console, API, or CLI. For more information, see Elastic Load Balancing
+        /// Developer Guide.</para> <para> <b>Required Permissions</b> : To use this action, an IAM user must have a Manage permissions level for the
+        /// stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
+        /// </summary>
+        /// 
+        /// <param name="attachElasticLoadBalancerRequest">Container for the necessary parameters to execute the AttachElasticLoadBalancer service
+        ///          method on AmazonOpsWorks.</param>
+        /// 
+        /// <exception cref="ResourceNotFoundException"/>
+        /// <exception cref="ValidationException"/>
+        AttachElasticLoadBalancerResponse AttachElasticLoadBalancer(AttachElasticLoadBalancerRequest attachElasticLoadBalancerRequest);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AttachElasticLoadBalancer operation.
+        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.AttachElasticLoadBalancer"/>
+        /// </summary>
+        /// 
+        /// <param name="attachElasticLoadBalancerRequest">Container for the necessary parameters to execute the AttachElasticLoadBalancer operation on
+        ///          AmazonOpsWorks.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        IAsyncResult BeginAttachElasticLoadBalancer(AttachElasticLoadBalancerRequest attachElasticLoadBalancerRequest, AsyncCallback callback, object state);
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the AttachElasticLoadBalancer operation.
+        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.AttachElasticLoadBalancer"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAttachElasticLoadBalancer.</param>
+        AttachElasticLoadBalancerResponse EndAttachElasticLoadBalancer(IAsyncResult asyncResult);
+        
+        #endregion
+        
+    
+
+        #region UpdateStack
+
+        /// <summary>
+        /// <para>Updates a specified stack.</para> <para> <b>Required Permissions</b> : To use this action, an IAM user must have a Manage permissions
+        /// level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
+        /// </summary>
+        /// 
+        /// <param name="updateStackRequest">Container for the necessary parameters to execute the UpdateStack service method on AmazonOpsWorks.</param>
+        /// 
+        /// <exception cref="ResourceNotFoundException"/>
+        /// <exception cref="ValidationException"/>
+        UpdateStackResponse UpdateStack(UpdateStackRequest updateStackRequest);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateStack operation.
+        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.UpdateStack"/>
+        /// </summary>
+        /// 
+        /// <param name="updateStackRequest">Container for the necessary parameters to execute the UpdateStack operation on AmazonOpsWorks.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        IAsyncResult BeginUpdateStack(UpdateStackRequest updateStackRequest, AsyncCallback callback, object state);
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the UpdateStack operation.
+        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.UpdateStack"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateStack.</param>
+        UpdateStackResponse EndUpdateStack(IAsyncResult asyncResult);
+        
+        #endregion
+        
+    
+
+        #region CreateUserProfile
+
+        /// <summary>
+        /// <para>Creates a new user profile.</para> <para> <b>Required Permissions</b> : To use this action, an IAM user must have an attached policy
+        /// that explicitly grants permissions. For more information on user permissions, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
+        /// </summary>
+        /// 
+        /// <param name="createUserProfileRequest">Container for the necessary parameters to execute the CreateUserProfile service method on
+        ///          AmazonOpsWorks.</param>
+        /// 
+        /// <returns>The response from the CreateUserProfile service method, as returned by AmazonOpsWorks.</returns>
+        /// 
+        /// <exception cref="ValidationException"/>
+        CreateUserProfileResponse CreateUserProfile(CreateUserProfileRequest createUserProfileRequest);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateUserProfile operation.
+        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.CreateUserProfile"/>
+        /// </summary>
+        /// 
+        /// <param name="createUserProfileRequest">Container for the necessary parameters to execute the CreateUserProfile operation on
+        ///          AmazonOpsWorks.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateUserProfile
+        ///         operation.</returns>
+        IAsyncResult BeginCreateUserProfile(CreateUserProfileRequest createUserProfileRequest, AsyncCallback callback, object state);
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the CreateUserProfile operation.
+        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.CreateUserProfile"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateUserProfile.</param>
+        /// 
+        /// <returns>Returns a CreateUserProfileResult from AmazonOpsWorks.</returns>
+        CreateUserProfileResponse EndCreateUserProfile(IAsyncResult asyncResult);
+        
+        #endregion
+        
+    
+
+        #region DescribeLayers
+
+        /// <summary>
+        /// <para>Requests a description of one or more layers in a specified stack.</para> <para><b>NOTE:</b>You must specify at least one of the
+        /// parameters.</para> <para> <b>Required Permissions</b> : To use this action, an IAM user must have a Show, Deploy, or Manage permissions
+        /// level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
+        /// </summary>
+        /// 
+        /// <param name="describeLayersRequest">Container for the necessary parameters to execute the DescribeLayers service method on
+        ///          AmazonOpsWorks.</param>
+        /// 
+        /// <returns>The response from the DescribeLayers service method, as returned by AmazonOpsWorks.</returns>
+        /// 
+        /// <exception cref="ResourceNotFoundException"/>
+        /// <exception cref="ValidationException"/>
+        DescribeLayersResponse DescribeLayers(DescribeLayersRequest describeLayersRequest);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeLayers operation.
+        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.DescribeLayers"/>
+        /// </summary>
+        /// 
+        /// <param name="describeLayersRequest">Container for the necessary parameters to execute the DescribeLayers operation on
+        ///          AmazonOpsWorks.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeLayers
+        ///         operation.</returns>
+        IAsyncResult BeginDescribeLayers(DescribeLayersRequest describeLayersRequest, AsyncCallback callback, object state);
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the DescribeLayers operation.
+        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.DescribeLayers"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeLayers.</param>
+        /// 
+        /// <returns>Returns a DescribeLayersResult from AmazonOpsWorks.</returns>
+        DescribeLayersResponse EndDescribeLayers(IAsyncResult asyncResult);
+        
+        #endregion
+        
+    
+
+        #region DescribeLoadBasedAutoScaling
+
+        /// <summary>
+        /// <para>Describes load-based auto scaling configurations for specified layers.</para> <para><b>NOTE:</b>You must specify at least one of the
+        /// parameters.</para> <para> <b>Required Permissions</b> : To use this action, an IAM user must have a Show, Deploy, or Manage permissions
+        /// level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
+        /// </summary>
+        /// 
+        /// <param name="describeLoadBasedAutoScalingRequest">Container for the necessary parameters to execute the DescribeLoadBasedAutoScaling service
+        ///          method on AmazonOpsWorks.</param>
+        /// 
+        /// <returns>The response from the DescribeLoadBasedAutoScaling service method, as returned by AmazonOpsWorks.</returns>
+        /// 
+        /// <exception cref="ResourceNotFoundException"/>
+        /// <exception cref="ValidationException"/>
+        DescribeLoadBasedAutoScalingResponse DescribeLoadBasedAutoScaling(DescribeLoadBasedAutoScalingRequest describeLoadBasedAutoScalingRequest);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeLoadBasedAutoScaling operation.
+        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.DescribeLoadBasedAutoScaling"/>
+        /// </summary>
+        /// 
+        /// <param name="describeLoadBasedAutoScalingRequest">Container for the necessary parameters to execute the DescribeLoadBasedAutoScaling
+        ///          operation on AmazonOpsWorks.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
+        ///         EndDescribeLoadBasedAutoScaling operation.</returns>
+        IAsyncResult BeginDescribeLoadBasedAutoScaling(DescribeLoadBasedAutoScalingRequest describeLoadBasedAutoScalingRequest, AsyncCallback callback, object state);
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the DescribeLoadBasedAutoScaling operation.
+        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.DescribeLoadBasedAutoScaling"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeLoadBasedAutoScaling.</param>
+        /// 
+        /// <returns>Returns a DescribeLoadBasedAutoScalingResult from AmazonOpsWorks.</returns>
+        DescribeLoadBasedAutoScalingResponse EndDescribeLoadBasedAutoScaling(IAsyncResult asyncResult);
+        
+        #endregion
+        
+    
+
+        #region DescribeElasticLoadBalancers
+
+        /// <summary>
+        /// <para>Describes a stack's Elastic Load Balancing instances.</para> <para><b>NOTE:</b>You must specify at least one of the parameters.</para>
+        /// <para> <b>Required Permissions</b> : To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or
+        /// an attached policy that explicitly grants permissions. For more information on user permissions, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
+        /// </summary>
+        /// 
+        /// <param name="describeElasticLoadBalancersRequest">Container for the necessary parameters to execute the DescribeElasticLoadBalancers service
+        ///          method on AmazonOpsWorks.</param>
+        /// 
+        /// <returns>The response from the DescribeElasticLoadBalancers service method, as returned by AmazonOpsWorks.</returns>
+        /// 
+        /// <exception cref="ResourceNotFoundException"/>
+        /// <exception cref="ValidationException"/>
+        DescribeElasticLoadBalancersResponse DescribeElasticLoadBalancers(DescribeElasticLoadBalancersRequest describeElasticLoadBalancersRequest);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeElasticLoadBalancers operation.
+        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.DescribeElasticLoadBalancers"/>
+        /// </summary>
+        /// 
+        /// <param name="describeElasticLoadBalancersRequest">Container for the necessary parameters to execute the DescribeElasticLoadBalancers
+        ///          operation on AmazonOpsWorks.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
+        ///         EndDescribeElasticLoadBalancers operation.</returns>
+        IAsyncResult BeginDescribeElasticLoadBalancers(DescribeElasticLoadBalancersRequest describeElasticLoadBalancersRequest, AsyncCallback callback, object state);
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the DescribeElasticLoadBalancers operation.
+        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.DescribeElasticLoadBalancers"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeElasticLoadBalancers.</param>
+        /// 
+        /// <returns>Returns a DescribeElasticLoadBalancersResult from AmazonOpsWorks.</returns>
+        DescribeElasticLoadBalancersResponse EndDescribeElasticLoadBalancers(IAsyncResult asyncResult);
+
+        /// <summary>
+        /// <para>Describes a stack's Elastic Load Balancing instances.</para> <para><b>NOTE:</b>You must specify at least one of the parameters.</para>
+        /// <para> <b>Required Permissions</b> : To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or
+        /// an attached policy that explicitly grants permissions. For more information on user permissions, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
+        /// </summary>
+        /// 
+        /// <returns>The response from the DescribeElasticLoadBalancers service method, as returned by AmazonOpsWorks.</returns>
+        /// 
+        /// <exception cref="ResourceNotFoundException"/>
+        /// <exception cref="ValidationException"/>
+        DescribeElasticLoadBalancersResponse DescribeElasticLoadBalancers();
+        
+        #endregion
+        
+    
+
+        #region DeleteLayer
+
+        /// <summary>
+        /// <para>Deletes a specified layer. You must first stop and then delete all associated instances. For more information, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-delete.html" >How to Delete a Layer</a> .</para> <para>
+        /// <b>Required Permissions</b> : To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that
+        /// explicitly grants permissions. For more information on user permissions, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
+        /// </summary>
+        /// 
+        /// <param name="deleteLayerRequest">Container for the necessary parameters to execute the DeleteLayer service method on AmazonOpsWorks.</param>
+        /// 
+        /// <exception cref="ResourceNotFoundException"/>
+        /// <exception cref="ValidationException"/>
+        DeleteLayerResponse DeleteLayer(DeleteLayerRequest deleteLayerRequest);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteLayer operation.
+        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.DeleteLayer"/>
+        /// </summary>
+        /// 
+        /// <param name="deleteLayerRequest">Container for the necessary parameters to execute the DeleteLayer operation on AmazonOpsWorks.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        IAsyncResult BeginDeleteLayer(DeleteLayerRequest deleteLayerRequest, AsyncCallback callback, object state);
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the DeleteLayer operation.
+        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.DeleteLayer"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteLayer.</param>
+        DeleteLayerResponse EndDeleteLayer(IAsyncResult asyncResult);
+        
+        #endregion
+        
+    
+
+        #region DescribeMyUserProfile
+
+        /// <summary>
+        /// <para>Describes a user's SSH information.</para> <para> <b>Required Permissions</b> : To use this action, an IAM user must have
+        /// self-management enabled or an attached policy that explicitly grants permissions. For more information on user permissions, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
+        /// </summary>
+        /// 
+        /// <param name="describeMyUserProfileRequest">Container for the necessary parameters to execute the DescribeMyUserProfile service method on
+        ///          AmazonOpsWorks.</param>
+        /// 
+        /// <returns>The response from the DescribeMyUserProfile service method, as returned by AmazonOpsWorks.</returns>
+        /// 
+        DescribeMyUserProfileResponse DescribeMyUserProfile(DescribeMyUserProfileRequest describeMyUserProfileRequest);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeMyUserProfile operation.
+        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.DescribeMyUserProfile"/>
+        /// </summary>
+        /// 
+        /// <param name="describeMyUserProfileRequest">Container for the necessary parameters to execute the DescribeMyUserProfile operation on
+        ///          AmazonOpsWorks.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
+        ///         EndDescribeMyUserProfile operation.</returns>
+        IAsyncResult BeginDescribeMyUserProfile(DescribeMyUserProfileRequest describeMyUserProfileRequest, AsyncCallback callback, object state);
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the DescribeMyUserProfile operation.
+        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.DescribeMyUserProfile"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeMyUserProfile.</param>
+        /// 
+        /// <returns>Returns a DescribeMyUserProfileResult from AmazonOpsWorks.</returns>
+        DescribeMyUserProfileResponse EndDescribeMyUserProfile(IAsyncResult asyncResult);
+
+        /// <summary>
+        /// <para>Describes a user's SSH information.</para> <para> <b>Required Permissions</b> : To use this action, an IAM user must have
+        /// self-management enabled or an attached policy that explicitly grants permissions. For more information on user permissions, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
+        /// </summary>
+        /// 
+        /// <returns>The response from the DescribeMyUserProfile service method, as returned by AmazonOpsWorks.</returns>
+        /// 
+        DescribeMyUserProfileResponse DescribeMyUserProfile();
+        
+        #endregion
+        
+    
+
+        #region SetTimeBasedAutoScaling
+
+        /// <summary>
+        /// <para>Specify the time-based auto scaling configuration for a specified instance. For more information, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-autoscaling.html" >Managing Load with Time-based and Load-based
+        /// Instances</a> .</para> <para> <b>Required Permissions</b> : To use this action, an IAM user must have a Manage permissions level for the
+        /// stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
+        /// </summary>
+        /// 
+        /// <param name="setTimeBasedAutoScalingRequest">Container for the necessary parameters to execute the SetTimeBasedAutoScaling service method on
+        ///          AmazonOpsWorks.</param>
+        /// 
+        /// <exception cref="ResourceNotFoundException"/>
+        /// <exception cref="ValidationException"/>
+        SetTimeBasedAutoScalingResponse SetTimeBasedAutoScaling(SetTimeBasedAutoScalingRequest setTimeBasedAutoScalingRequest);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SetTimeBasedAutoScaling operation.
+        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.SetTimeBasedAutoScaling"/>
+        /// </summary>
+        /// 
+        /// <param name="setTimeBasedAutoScalingRequest">Container for the necessary parameters to execute the SetTimeBasedAutoScaling operation on
+        ///          AmazonOpsWorks.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        IAsyncResult BeginSetTimeBasedAutoScaling(SetTimeBasedAutoScalingRequest setTimeBasedAutoScalingRequest, AsyncCallback callback, object state);
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the SetTimeBasedAutoScaling operation.
+        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.SetTimeBasedAutoScaling"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetTimeBasedAutoScaling.</param>
+        SetTimeBasedAutoScalingResponse EndSetTimeBasedAutoScaling(IAsyncResult asyncResult);
+        
+        #endregion
+        
+    
+
         #region CreateApp
 
         /// <summary>
         /// <para>Creates an app for a specified stack. For more information, see <a
-        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html" >Creating Apps</a> .</para>
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html" >Creating Apps</a> .</para> <para> <b>Required
+        /// Permissions</b> : To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly
+        /// grants permissions. For more information on user permissions, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
         /// </summary>
         /// 
         /// <param name="createAppRequest">Container for the necessary parameters to execute the CreateApp service method on AmazonOpsWorks.</param>
@@ -1347,77 +1929,40 @@ namespace Amazon.OpsWorks
         
     
 
-        #region AssignVolume
+        #region DeleteUserProfile
 
         /// <summary>
-        /// <para>Assigns one of the stack's registered Amazon EBS volumes to a specified instance. The volume must first be registered with the stack
-        /// by calling RegisterVolume. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html"
-        /// >http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html</a> .</para>
+        /// <para>Deletes a user profile.</para> <para> <b>Required Permissions</b> : To use this action, an IAM user must have an attached policy that
+        /// explicitly grants permissions. For more information on user permissions, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
         /// </summary>
         /// 
-        /// <param name="assignVolumeRequest">Container for the necessary parameters to execute the AssignVolume service method on
+        /// <param name="deleteUserProfileRequest">Container for the necessary parameters to execute the DeleteUserProfile service method on
         ///          AmazonOpsWorks.</param>
         /// 
         /// <exception cref="ResourceNotFoundException"/>
         /// <exception cref="ValidationException"/>
-        AssignVolumeResponse AssignVolume(AssignVolumeRequest assignVolumeRequest);
+        DeleteUserProfileResponse DeleteUserProfile(DeleteUserProfileRequest deleteUserProfileRequest);
 
         /// <summary>
-        /// Initiates the asynchronous execution of the AssignVolume operation.
-        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.AssignVolume"/>
+        /// Initiates the asynchronous execution of the DeleteUserProfile operation.
+        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.DeleteUserProfile"/>
         /// </summary>
         /// 
-        /// <param name="assignVolumeRequest">Container for the necessary parameters to execute the AssignVolume operation on AmazonOpsWorks.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        IAsyncResult BeginAssignVolume(AssignVolumeRequest assignVolumeRequest, AsyncCallback callback, object state);
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the AssignVolume operation.
-        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.AssignVolume"/>
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssignVolume.</param>
-        AssignVolumeResponse EndAssignVolume(IAsyncResult asyncResult);
-        
-        #endregion
-        
-    
-
-        #region UpdateVolume
-
-        /// <summary>
-        /// <para>Updates an Amazon EBS volume's name or mount point. For more information, see <a
-        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html"
-        /// >http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html</a> .</para>
-        /// </summary>
-        /// 
-        /// <param name="updateVolumeRequest">Container for the necessary parameters to execute the UpdateVolume service method on
+        /// <param name="deleteUserProfileRequest">Container for the necessary parameters to execute the DeleteUserProfile operation on
         ///          AmazonOpsWorks.</param>
-        /// 
-        /// <exception cref="ResourceNotFoundException"/>
-        /// <exception cref="ValidationException"/>
-        UpdateVolumeResponse UpdateVolume(UpdateVolumeRequest updateVolumeRequest);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the UpdateVolume operation.
-        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.UpdateVolume"/>
-        /// </summary>
-        /// 
-        /// <param name="updateVolumeRequest">Container for the necessary parameters to execute the UpdateVolume operation on AmazonOpsWorks.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
-        IAsyncResult BeginUpdateVolume(UpdateVolumeRequest updateVolumeRequest, AsyncCallback callback, object state);
+        IAsyncResult BeginDeleteUserProfile(DeleteUserProfileRequest deleteUserProfileRequest, AsyncCallback callback, object state);
 
         /// <summary>
-        /// Finishes the asynchronous execution of the UpdateVolume operation.
-        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.UpdateVolume"/>
+        /// Finishes the asynchronous execution of the DeleteUserProfile operation.
+        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.DeleteUserProfile"/>
         /// </summary>
         /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateVolume.</param>
-        UpdateVolumeResponse EndUpdateVolume(IAsyncResult asyncResult);
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteUserProfile.</param>
+        DeleteUserProfileResponse EndDeleteUserProfile(IAsyncResult asyncResult);
         
         #endregion
         
@@ -1427,7 +1972,9 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// <para>Describes time-based auto scaling configurations for specified instances.</para> <para><b>NOTE:</b>You must specify at least one of
-        /// the parameters.</para>
+        /// the parameters.</para> <para> <b>Required Permissions</b> : To use this action, an IAM user must have a Show, Deploy, or Manage permissions
+        /// level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
         /// </summary>
         /// 
         /// <param name="describeTimeBasedAutoScalingRequest">Container for the necessary parameters to execute the DescribeTimeBasedAutoScaling service
@@ -1468,38 +2015,41 @@ namespace Amazon.OpsWorks
         
     
 
-        #region DeleteUserProfile
+        #region UpdateVolume
 
         /// <summary>
-        /// <para>Deletes a user profile.</para>
+        /// <para>Updates an Amazon EBS volume's name or mount point. For more information, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html" >Resource Management</a> .</para> <para> <b>Required
+        /// Permissions</b> : To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly
+        /// grants permissions. For more information on user permissions, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
         /// </summary>
         /// 
-        /// <param name="deleteUserProfileRequest">Container for the necessary parameters to execute the DeleteUserProfile service method on
+        /// <param name="updateVolumeRequest">Container for the necessary parameters to execute the UpdateVolume service method on
         ///          AmazonOpsWorks.</param>
         /// 
         /// <exception cref="ResourceNotFoundException"/>
         /// <exception cref="ValidationException"/>
-        DeleteUserProfileResponse DeleteUserProfile(DeleteUserProfileRequest deleteUserProfileRequest);
+        UpdateVolumeResponse UpdateVolume(UpdateVolumeRequest updateVolumeRequest);
 
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteUserProfile operation.
-        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.DeleteUserProfile"/>
+        /// Initiates the asynchronous execution of the UpdateVolume operation.
+        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.UpdateVolume"/>
         /// </summary>
         /// 
-        /// <param name="deleteUserProfileRequest">Container for the necessary parameters to execute the DeleteUserProfile operation on
-        ///          AmazonOpsWorks.</param>
+        /// <param name="updateVolumeRequest">Container for the necessary parameters to execute the UpdateVolume operation on AmazonOpsWorks.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
-        IAsyncResult BeginDeleteUserProfile(DeleteUserProfileRequest deleteUserProfileRequest, AsyncCallback callback, object state);
+        IAsyncResult BeginUpdateVolume(UpdateVolumeRequest updateVolumeRequest, AsyncCallback callback, object state);
 
         /// <summary>
-        /// Finishes the asynchronous execution of the DeleteUserProfile operation.
-        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.DeleteUserProfile"/>
+        /// Finishes the asynchronous execution of the UpdateVolume operation.
+        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.UpdateVolume"/>
         /// </summary>
         /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteUserProfile.</param>
-        DeleteUserProfileResponse EndDeleteUserProfile(IAsyncResult asyncResult);
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateVolume.</param>
+        UpdateVolumeResponse EndUpdateVolume(IAsyncResult asyncResult);
         
         #endregion
         
@@ -1508,7 +2058,9 @@ namespace Amazon.OpsWorks
         #region DescribeUserProfiles
 
         /// <summary>
-        /// <para>Describe specified users.</para>
+        /// <para>Describe specified users.</para> <para> <b>Required Permissions</b> : To use this action, an IAM user must have an attached policy
+        /// that explicitly grants permissions. For more information on user permissions, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
         /// </summary>
         /// 
         /// <param name="describeUserProfilesRequest">Container for the necessary parameters to execute the DescribeUserProfiles service method on
@@ -1544,6 +2096,18 @@ namespace Amazon.OpsWorks
         /// 
         /// <returns>Returns a DescribeUserProfilesResult from AmazonOpsWorks.</returns>
         DescribeUserProfilesResponse EndDescribeUserProfiles(IAsyncResult asyncResult);
+
+        /// <summary>
+        /// <para>Describe specified users.</para> <para> <b>Required Permissions</b> : To use this action, an IAM user must have an attached policy
+        /// that explicitly grants permissions. For more information on user permissions, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
+        /// </summary>
+        /// 
+        /// <returns>The response from the DescribeUserProfiles service method, as returned by AmazonOpsWorks.</returns>
+        /// 
+        /// <exception cref="ResourceNotFoundException"/>
+        /// <exception cref="ValidationException"/>
+        DescribeUserProfilesResponse DescribeUserProfiles();
         
         #endregion
         
@@ -1552,7 +2116,9 @@ namespace Amazon.OpsWorks
         #region UpdateInstance
 
         /// <summary>
-        /// <para>Updates a specified instance.</para>
+        /// <para>Updates a specified instance.</para> <para> <b>Required Permissions</b> : To use this action, an IAM user must have a Manage
+        /// permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
         /// </summary>
         /// 
         /// <param name="updateInstanceRequest">Container for the necessary parameters to execute the UpdateInstance service method on
@@ -1586,65 +2152,13 @@ namespace Amazon.OpsWorks
         
     
 
-        #region DescribeServiceErrors
-
-        /// <summary>
-        /// <para>Describes AWS OpsWorks service errors.</para>
-        /// </summary>
-        /// 
-        /// <param name="describeServiceErrorsRequest">Container for the necessary parameters to execute the DescribeServiceErrors service method on
-        ///          AmazonOpsWorks.</param>
-        /// 
-        /// <returns>The response from the DescribeServiceErrors service method, as returned by AmazonOpsWorks.</returns>
-        /// 
-        /// <exception cref="ResourceNotFoundException"/>
-        /// <exception cref="ValidationException"/>
-        DescribeServiceErrorsResponse DescribeServiceErrors(DescribeServiceErrorsRequest describeServiceErrorsRequest);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the DescribeServiceErrors operation.
-        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.DescribeServiceErrors"/>
-        /// </summary>
-        /// 
-        /// <param name="describeServiceErrorsRequest">Container for the necessary parameters to execute the DescribeServiceErrors operation on
-        ///          AmazonOpsWorks.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
-        ///         EndDescribeServiceErrors operation.</returns>
-        IAsyncResult BeginDescribeServiceErrors(DescribeServiceErrorsRequest describeServiceErrorsRequest, AsyncCallback callback, object state);
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the DescribeServiceErrors operation.
-        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.DescribeServiceErrors"/>
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeServiceErrors.</param>
-        /// 
-        /// <returns>Returns a DescribeServiceErrorsResult from AmazonOpsWorks.</returns>
-        DescribeServiceErrorsResponse EndDescribeServiceErrors(IAsyncResult asyncResult);
-
-        /// <summary>
-        /// <para>Describes AWS OpsWorks service errors.</para>
-        /// </summary>
-        /// 
-        /// <returns>The response from the DescribeServiceErrors service method, as returned by AmazonOpsWorks.</returns>
-        /// 
-        /// <exception cref="ResourceNotFoundException"/>
-        /// <exception cref="ValidationException"/>
-        DescribeServiceErrorsResponse DescribeServiceErrors();
-        
-        #endregion
-        
-    
-
         #region DescribeDeployments
 
         /// <summary>
         /// <para>Requests a description of a specified set of deployments.</para> <para><b>NOTE:</b>You must specify at least one of the
-        /// parameters.</para>
+        /// parameters.</para> <para> <b>Required Permissions</b> : To use this action, an IAM user must have a Show, Deploy, or Manage permissions
+        /// level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
         /// </summary>
         /// 
         /// <param name="describeDeploymentsRequest">Container for the necessary parameters to execute the DescribeDeployments service method on
@@ -1685,125 +2199,15 @@ namespace Amazon.OpsWorks
         
     
 
-        #region UpdateElasticIp
-
-        /// <summary>
-        /// <para>Updates a registered Elastic IP address's name. For more information, see <a
-        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html"
-        /// >http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html</a> .</para>
-        /// </summary>
-        /// 
-        /// <param name="updateElasticIpRequest">Container for the necessary parameters to execute the UpdateElasticIp service method on
-        ///          AmazonOpsWorks.</param>
-        /// 
-        /// <exception cref="ResourceNotFoundException"/>
-        /// <exception cref="ValidationException"/>
-        UpdateElasticIpResponse UpdateElasticIp(UpdateElasticIpRequest updateElasticIpRequest);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the UpdateElasticIp operation.
-        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.UpdateElasticIp"/>
-        /// </summary>
-        /// 
-        /// <param name="updateElasticIpRequest">Container for the necessary parameters to execute the UpdateElasticIp operation on
-        ///          AmazonOpsWorks.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        IAsyncResult BeginUpdateElasticIp(UpdateElasticIpRequest updateElasticIpRequest, AsyncCallback callback, object state);
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the UpdateElasticIp operation.
-        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.UpdateElasticIp"/>
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateElasticIp.</param>
-        UpdateElasticIpResponse EndUpdateElasticIp(IAsyncResult asyncResult);
-        
-        #endregion
-        
-    
-
-        #region UpdateLayer
-
-        /// <summary>
-        /// <para>Updates a specified layer.</para>
-        /// </summary>
-        /// 
-        /// <param name="updateLayerRequest">Container for the necessary parameters to execute the UpdateLayer service method on AmazonOpsWorks.</param>
-        /// 
-        /// <exception cref="ResourceNotFoundException"/>
-        /// <exception cref="ValidationException"/>
-        UpdateLayerResponse UpdateLayer(UpdateLayerRequest updateLayerRequest);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the UpdateLayer operation.
-        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.UpdateLayer"/>
-        /// </summary>
-        /// 
-        /// <param name="updateLayerRequest">Container for the necessary parameters to execute the UpdateLayer operation on AmazonOpsWorks.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        IAsyncResult BeginUpdateLayer(UpdateLayerRequest updateLayerRequest, AsyncCallback callback, object state);
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the UpdateLayer operation.
-        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.UpdateLayer"/>
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateLayer.</param>
-        UpdateLayerResponse EndUpdateLayer(IAsyncResult asyncResult);
-        
-        #endregion
-        
-    
-
-        #region StartInstance
-
-        /// <summary>
-        /// <para>Starts a specified instance. For more information, see <a
-        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-starting.html" >Starting, Stopping, and Rebooting Instances</a>
-        /// .</para>
-        /// </summary>
-        /// 
-        /// <param name="startInstanceRequest">Container for the necessary parameters to execute the StartInstance service method on
-        ///          AmazonOpsWorks.</param>
-        /// 
-        /// <exception cref="ResourceNotFoundException"/>
-        /// <exception cref="ValidationException"/>
-        StartInstanceResponse StartInstance(StartInstanceRequest startInstanceRequest);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the StartInstance operation.
-        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.StartInstance"/>
-        /// </summary>
-        /// 
-        /// <param name="startInstanceRequest">Container for the necessary parameters to execute the StartInstance operation on AmazonOpsWorks.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        IAsyncResult BeginStartInstance(StartInstanceRequest startInstanceRequest, AsyncCallback callback, object state);
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the StartInstance operation.
-        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.StartInstance"/>
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartInstance.</param>
-        StartInstanceResponse EndStartInstance(IAsyncResult asyncResult);
-        
-        #endregion
-        
-    
-
         #region RegisterElasticIp
 
         /// <summary>
         /// <para>Registers an Elastic IP address with a specified stack. An address can be registered with only one stack at a time. If the address is
         /// already registered, you must first deregister it by calling DeregisterElasticIp. For more information, see <a
-        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html"
-        /// >http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html</a> .</para>
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html" >Resource Management</a> .</para> <para> <b>Required
+        /// Permissions</b> : To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly
+        /// grants permissions. For more information on user permissions, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
         /// </summary>
         /// 
         /// <param name="registerElasticIpRequest">Container for the necessary parameters to execute the RegisterElasticIp service method on
@@ -1848,7 +2252,10 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// <para>Describes <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html" >Elastic IP addresses</a>
-        /// .</para> <para><b>NOTE:</b>You must specify at least one of the parameters.</para>
+        /// .</para> <para><b>NOTE:</b>You must specify at least one of the parameters.</para> <para> <b>Required Permissions</b> : To use this action,
+        /// an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions.
+        /// For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+        /// >Managing User Permissions</a> .</para>
         /// </summary>
         /// 
         /// <param name="describeElasticIpsRequest">Container for the necessary parameters to execute the DescribeElasticIps service method on
@@ -1892,7 +2299,10 @@ namespace Amazon.OpsWorks
         #region DescribeStacks
 
         /// <summary>
-        /// <para>Requests a description of one or more stacks.</para>
+        /// <para>Requests a description of one or more stacks.</para> <para> <b>Required Permissions</b> : To use this action, an IAM user must have a
+        /// Show, Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on
+        /// user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User
+        /// Permissions</a> .</para>
         /// </summary>
         /// 
         /// <param name="describeStacksRequest">Container for the necessary parameters to execute the DescribeStacks service method on
@@ -1930,7 +2340,10 @@ namespace Amazon.OpsWorks
         DescribeStacksResponse EndDescribeStacks(IAsyncResult asyncResult);
 
         /// <summary>
-        /// <para>Requests a description of one or more stacks.</para>
+        /// <para>Requests a description of one or more stacks.</para> <para> <b>Required Permissions</b> : To use this action, an IAM user must have a
+        /// Show, Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on
+        /// user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User
+        /// Permissions</a> .</para>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeStacks service method, as returned by AmazonOpsWorks.</returns>
@@ -1947,6 +2360,9 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// <para>Requests a description of a specified set of apps.</para> <para><b>NOTE:</b>You must specify at least one of the parameters.</para>
+        /// <para> <b>Required Permissions</b> : To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or
+        /// an attached policy that explicitly grants permissions. For more information on user permissions, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
         /// </summary>
         /// 
         /// <param name="describeAppsRequest">Container for the necessary parameters to execute the DescribeApps service method on
@@ -1986,158 +2402,48 @@ namespace Amazon.OpsWorks
         
     
 
-        #region CreateLayer
+        #region DescribeStackSummary
 
         /// <summary>
-        /// <para>Creates a layer. For more information, see <a
-        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-create.html" >How to Create a Layer</a> .</para>
-        /// <para><b>NOTE:</b>You should use CreateLayer for noncustom layer types such as PHP App Server only if the stack does not have an existing
-        /// layer of that type. A stack can have at most one instance of each noncustom layer; if you attempt to create a second instance, CreateLayer
-        /// fails. A stack can have an arbitrary number of custom layers, so you can call CreateLayer as many times as you like for that layer
-        /// type.</para>
+        /// <para>Describes the number of layers and apps in a specified stack, and the number of instances in each state, such as <c>running_setup</c>
+        /// or <c>online</c> .</para> <para> <b>Required Permissions</b> : To use this action, an IAM user must have a Show, Deploy, or Manage
+        /// permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
         /// </summary>
         /// 
-        /// <param name="createLayerRequest">Container for the necessary parameters to execute the CreateLayer service method on AmazonOpsWorks.</param>
-        /// 
-        /// <returns>The response from the CreateLayer service method, as returned by AmazonOpsWorks.</returns>
-        /// 
-        /// <exception cref="ResourceNotFoundException"/>
-        /// <exception cref="ValidationException"/>
-        CreateLayerResponse CreateLayer(CreateLayerRequest createLayerRequest);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the CreateLayer operation.
-        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.CreateLayer"/>
-        /// </summary>
-        /// 
-        /// <param name="createLayerRequest">Container for the necessary parameters to execute the CreateLayer operation on AmazonOpsWorks.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateLayer
-        ///         operation.</returns>
-        IAsyncResult BeginCreateLayer(CreateLayerRequest createLayerRequest, AsyncCallback callback, object state);
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the CreateLayer operation.
-        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.CreateLayer"/>
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateLayer.</param>
-        /// 
-        /// <returns>Returns a CreateLayerResult from AmazonOpsWorks.</returns>
-        CreateLayerResponse EndCreateLayer(IAsyncResult asyncResult);
-        
-        #endregion
-        
-    
-
-        #region DisassociateElasticIp
-
-        /// <summary>
-        /// <para>Disassociates an Elastic IP address from its instance. The address remains registered with the stack. For more information, see <a
-        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html"
-        /// >http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html</a> .</para>
-        /// </summary>
-        /// 
-        /// <param name="disassociateElasticIpRequest">Container for the necessary parameters to execute the DisassociateElasticIp service method on
+        /// <param name="describeStackSummaryRequest">Container for the necessary parameters to execute the DescribeStackSummary service method on
         ///          AmazonOpsWorks.</param>
         /// 
+        /// <returns>The response from the DescribeStackSummary service method, as returned by AmazonOpsWorks.</returns>
+        /// 
         /// <exception cref="ResourceNotFoundException"/>
         /// <exception cref="ValidationException"/>
-        DisassociateElasticIpResponse DisassociateElasticIp(DisassociateElasticIpRequest disassociateElasticIpRequest);
+        DescribeStackSummaryResponse DescribeStackSummary(DescribeStackSummaryRequest describeStackSummaryRequest);
 
         /// <summary>
-        /// Initiates the asynchronous execution of the DisassociateElasticIp operation.
-        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.DisassociateElasticIp"/>
+        /// Initiates the asynchronous execution of the DescribeStackSummary operation.
+        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.DescribeStackSummary"/>
         /// </summary>
         /// 
-        /// <param name="disassociateElasticIpRequest">Container for the necessary parameters to execute the DisassociateElasticIp operation on
+        /// <param name="describeStackSummaryRequest">Container for the necessary parameters to execute the DescribeStackSummary operation on
         ///          AmazonOpsWorks.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
-        IAsyncResult BeginDisassociateElasticIp(DisassociateElasticIpRequest disassociateElasticIpRequest, AsyncCallback callback, object state);
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
+        ///         EndDescribeStackSummary operation.</returns>
+        IAsyncResult BeginDescribeStackSummary(DescribeStackSummaryRequest describeStackSummaryRequest, AsyncCallback callback, object state);
 
         /// <summary>
-        /// Finishes the asynchronous execution of the DisassociateElasticIp operation.
-        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.DisassociateElasticIp"/>
+        /// Finishes the asynchronous execution of the DescribeStackSummary operation.
+        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.DescribeStackSummary"/>
         /// </summary>
         /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateElasticIp.</param>
-        DisassociateElasticIpResponse EndDisassociateElasticIp(IAsyncResult asyncResult);
-        
-        #endregion
-        
-    
-
-        #region DeleteStack
-
-        /// <summary>
-        /// <para>Deletes a specified stack. You must first delete all instances, layers, and apps. For more information, see <a
-        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-shutting.html" >Shut Down a Stack</a> .</para>
-        /// </summary>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeStackSummary.</param>
         /// 
-        /// <param name="deleteStackRequest">Container for the necessary parameters to execute the DeleteStack service method on AmazonOpsWorks.</param>
-        /// 
-        /// <exception cref="ResourceNotFoundException"/>
-        /// <exception cref="ValidationException"/>
-        DeleteStackResponse DeleteStack(DeleteStackRequest deleteStackRequest);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the DeleteStack operation.
-        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.DeleteStack"/>
-        /// </summary>
-        /// 
-        /// <param name="deleteStackRequest">Container for the necessary parameters to execute the DeleteStack operation on AmazonOpsWorks.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        IAsyncResult BeginDeleteStack(DeleteStackRequest deleteStackRequest, AsyncCallback callback, object state);
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the DeleteStack operation.
-        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.DeleteStack"/>
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteStack.</param>
-        DeleteStackResponse EndDeleteStack(IAsyncResult asyncResult);
-        
-        #endregion
-        
-    
-
-        #region StartStack
-
-        /// <summary>
-        /// <para>Starts stack's instances. </para>
-        /// </summary>
-        /// 
-        /// <param name="startStackRequest">Container for the necessary parameters to execute the StartStack service method on AmazonOpsWorks.</param>
-        /// 
-        /// <exception cref="ResourceNotFoundException"/>
-        /// <exception cref="ValidationException"/>
-        StartStackResponse StartStack(StartStackRequest startStackRequest);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the StartStack operation.
-        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.StartStack"/>
-        /// </summary>
-        /// 
-        /// <param name="startStackRequest">Container for the necessary parameters to execute the StartStack operation on AmazonOpsWorks.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        IAsyncResult BeginStartStack(StartStackRequest startStackRequest, AsyncCallback callback, object state);
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the StartStack operation.
-        /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.StartStack"/>
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartStack.</param>
-        StartStackResponse EndStartStack(IAsyncResult asyncResult);
+        /// <returns>Returns a DescribeStackSummaryResult from AmazonOpsWorks.</returns>
+        DescribeStackSummaryResponse EndDescribeStackSummary(IAsyncResult asyncResult);
         
         #endregion
         
@@ -2146,7 +2452,9 @@ namespace Amazon.OpsWorks
         #region StopStack
 
         /// <summary>
-        /// <para>Stops a specified stack.</para>
+        /// <para>Stops a specified stack.</para> <para> <b>Required Permissions</b> : To use this action, an IAM user must have a Manage permissions
+        /// level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
         /// </summary>
         /// 
         /// <param name="stopStackRequest">Container for the necessary parameters to execute the StopStack service method on AmazonOpsWorks.</param>
@@ -2190,6 +2498,9 @@ namespace Amazon.OpsWorks
         /// </ul>
         /// <para>For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-deploying.html" >Deploying
         /// Apps</a> and <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-commands.html" >Run Stack Commands</a> .</para>
+        /// <para> <b>Required Permissions</b> : To use this action, an IAM user must have a Deploy or Manage permissions level for the stack, or an
+        /// attached policy that explicitly grants permissions. For more information on user permissions, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
         /// </summary>
         /// 
         /// <param name="createDeploymentRequest">Container for the necessary parameters to execute the CreateDeployment service method on

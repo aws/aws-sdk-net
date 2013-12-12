@@ -23,7 +23,7 @@ namespace Amazon.CloudSearch.Model
     /// <summary>
     /// <para>A response message that contains the status of one or more domains.</para>
     /// </summary>
-    public class DescribeDomainsResult  
+    public partial class DescribeDomainsResult
     {
         
         private List<DomainStatus> domainStatusList = new List<DomainStatus>();
@@ -52,7 +52,7 @@ namespace Amazon.CloudSearch.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the DomainStatusList collection
         /// </summary>
@@ -72,7 +72,7 @@ namespace Amazon.CloudSearch.Model
         // Check to see if DomainStatusList property is set
         internal bool IsSetDomainStatusList()
         {
-            return this.domainStatusList.Count > 0;       
+            return this.domainStatusList.Count > 0;
         }
     }
 }

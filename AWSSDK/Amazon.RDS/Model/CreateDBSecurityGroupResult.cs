@@ -23,7 +23,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// The results from the CreateDBSecurityGroup action.
     /// </summary>
-    public class CreateDBSecurityGroupResult
+    public partial class CreateDBSecurityGroupResult
     {
         private DBSecurityGroup dBSecurityGroupValue;
 

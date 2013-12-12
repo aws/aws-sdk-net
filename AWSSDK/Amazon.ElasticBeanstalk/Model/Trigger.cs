@@ -23,7 +23,7 @@ namespace Amazon.ElasticBeanstalk.Model
     /// <summary>
     /// <para>Describes a trigger.</para>
     /// </summary>
-    public class Trigger  
+    public partial class Trigger
     {
         
         private string name;
@@ -54,7 +54,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if Name property is set
         internal bool IsSetName()
         {
-            return this.name != null;       
+            return this.name != null;
         }
     }
 }

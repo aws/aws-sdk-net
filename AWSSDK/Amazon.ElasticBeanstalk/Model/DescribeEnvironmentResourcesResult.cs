@@ -23,7 +23,7 @@ namespace Amazon.ElasticBeanstalk.Model
     /// <summary>
     /// <para>Result message containing a list of environment resource descriptions. </para>
     /// </summary>
-    public class DescribeEnvironmentResourcesResult  
+    public partial class DescribeEnvironmentResourcesResult
     {
         
         private EnvironmentResourceDescription environmentResources;
@@ -54,7 +54,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if EnvironmentResources property is set
         internal bool IsSetEnvironmentResources()
         {
-            return this.environmentResources != null;       
+            return this.environmentResources != null;
         }
     }
 }

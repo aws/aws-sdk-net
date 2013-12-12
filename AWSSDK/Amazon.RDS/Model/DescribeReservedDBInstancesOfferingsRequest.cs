@@ -25,7 +25,7 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeReservedDBInstancesOfferings operation.
-    /// <para> Lists available reserved DB Instance offerings. </para>
+    /// <para> Lists available reserved DB instance offerings. </para>
     /// </summary>
     /// <seealso cref="Amazon.RDS.AmazonRDS.DescribeReservedDBInstancesOfferings"/>
     public class DescribeReservedDBInstancesOfferingsRequest : AmazonWebServiceRequest
@@ -70,7 +70,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The DB Instance class filter value. Specify this parameter to show only the available offerings matching the specified DB Instance class.
+        /// The DB instance class filter value. Specify this parameter to show only the available offerings matching the specified DB instance class.
         ///  
         /// </summary>
         public string DBInstanceClass

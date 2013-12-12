@@ -23,7 +23,7 @@ namespace Amazon.OpsWorks.Model
     /// <summary>
     /// <para>A description of the app.</para>
     /// </summary>
-    public class App
+    public partial class App
     {
         
         private string appId;

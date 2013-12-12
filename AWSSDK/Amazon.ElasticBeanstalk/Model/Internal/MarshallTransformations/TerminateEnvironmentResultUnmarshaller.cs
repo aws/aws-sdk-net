@@ -22,13 +22,14 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
      /// <summary>
      ///   TerminateEnvironmentResult Unmarshaller
      /// </summary>
-    internal class TerminateEnvironmentResultUnmarshaller : IUnmarshaller<TerminateEnvironmentResult, XmlUnmarshallerContext> 
+    internal class TerminateEnvironmentResultUnmarshaller : IUnmarshaller<TerminateEnvironmentResult, XmlUnmarshallerContext>, IUnmarshaller<TerminateEnvironmentResult, JsonUnmarshallerContext> 
     {
         public TerminateEnvironmentResult Unmarshall(XmlUnmarshallerContext context) 
         {
             TerminateEnvironmentResult terminateEnvironmentResult = new TerminateEnvironmentResult();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -119,6 +120,12 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                         terminateEnvironmentResult.Resources = EnvironmentResourcesDescriptionUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
+                    } 
+                    if (context.TestExpression("Tier", targetDepth))
+                    {
+                        terminateEnvironmentResult.Tier = EnvironmentTierUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
@@ -130,6 +137,11 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
 
 
             return terminateEnvironmentResult;
+        }
+
+        public TerminateEnvironmentResult Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static TerminateEnvironmentResultUnmarshaller instance;

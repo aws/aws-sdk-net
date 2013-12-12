@@ -31,7 +31,7 @@ namespace Amazon.DynamoDBv2.Model
         private List<ConsumedCapacity> consumedCapacity = new List<ConsumedCapacity>();
 
         /// <summary>
-        /// A map of table name to a list of items. Each object in <i>Responses</i>consists of a table name, along with a map of attribute data
+        /// A map of table name to a list of items. Each object in <i>Responses</i> consists of a table name, along with a map of attribute data
         /// consisting of the data type and attribute value.
         ///  
         /// </summary>

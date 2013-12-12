@@ -23,7 +23,7 @@ namespace Amazon.ElasticBeanstalk.Model
     /// <summary>
     /// <para>Provides a list of validation messages.</para>
     /// </summary>
-    public class ValidateConfigurationSettingsResult  
+    public partial class ValidateConfigurationSettingsResult
     {
         
         private List<ValidationMessage> messages = new List<ValidationMessage>();
@@ -52,7 +52,7 @@ namespace Amazon.ElasticBeanstalk.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Messages collection
         /// </summary>
@@ -72,7 +72,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if Messages property is set
         internal bool IsSetMessages()
         {
-            return this.messages.Count > 0;       
+            return this.messages.Count > 0;
         }
     }
 }

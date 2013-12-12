@@ -25,7 +25,7 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeOrderableDBInstanceOptions operation.
-    /// <para> Returns a list of orderable DB Instance options for the specified engine. </para>
+    /// <para> Returns a list of orderable DB instance options for the specified engine. </para>
     /// </summary>
     /// <seealso cref="Amazon.RDS.AmazonRDS.DescribeOrderableDBInstanceOptions"/>
     public class DescribeOrderableDBInstanceOptionsRequest : AmazonWebServiceRequest
@@ -39,7 +39,7 @@ namespace Amazon.RDS.Model
         private string marker;
 
         /// <summary>
-        /// The name of the engine to retrieve DB Instance options for.
+        /// The name of the engine to retrieve DB instance options for.
         ///  
         /// </summary>
         public string Engine
@@ -97,7 +97,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The DB Instance class filter value. Specify this parameter to show only the available offerings matching the specified DB Instance class.
+        /// The DB instance class filter value. Specify this parameter to show only the available offerings matching the specified DB instance class.
         ///  
         /// </summary>
         public string DBInstanceClass

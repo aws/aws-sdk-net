@@ -23,7 +23,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// <para>Data returned from the <b>DescribeEventCategories</b> action.</para>
     /// </summary>
-    public class DescribeEventCategoriesResult
+    public partial class DescribeEventCategoriesResult
     {
         
         private List<EventCategoriesMap> eventCategoriesMapList = new List<EventCategoriesMap>();

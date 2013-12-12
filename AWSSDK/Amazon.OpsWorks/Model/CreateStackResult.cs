@@ -23,7 +23,7 @@ namespace Amazon.OpsWorks.Model
     /// <summary>
     /// <para>Contains the response to a <c>CreateStack</c> request.</para>
     /// </summary>
-    public class CreateStackResult
+    public partial class CreateStackResult
     {
         
         private string stackId;

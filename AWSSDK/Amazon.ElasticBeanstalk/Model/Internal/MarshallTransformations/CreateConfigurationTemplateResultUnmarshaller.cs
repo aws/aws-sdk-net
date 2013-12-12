@@ -22,13 +22,14 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
      /// <summary>
      ///   CreateConfigurationTemplateResult Unmarshaller
      /// </summary>
-    internal class CreateConfigurationTemplateResultUnmarshaller : IUnmarshaller<CreateConfigurationTemplateResult, XmlUnmarshallerContext> 
+    internal class CreateConfigurationTemplateResultUnmarshaller : IUnmarshaller<CreateConfigurationTemplateResult, XmlUnmarshallerContext>, IUnmarshaller<CreateConfigurationTemplateResult, JsonUnmarshallerContext> 
     {
         public CreateConfigurationTemplateResult Unmarshall(XmlUnmarshallerContext context) 
         {
             CreateConfigurationTemplateResult createConfigurationTemplateResult = new CreateConfigurationTemplateResult();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -100,6 +101,11 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
 
 
             return createConfigurationTemplateResult;
+        }
+
+        public CreateConfigurationTemplateResult Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static CreateConfigurationTemplateResultUnmarshaller instance;

@@ -25,13 +25,12 @@ namespace Amazon.ElasticBeanstalk
     ///  AWS Elastic Beanstalk <para> This is the AWS Elastic Beanstalk API Reference. This guide provides detailed information about AWS Elastic
     /// Beanstalk actions, data types, parameters, and errors. </para> <para>AWS Elastic Beanstalk is a tool that makes it easy for you to create,
     /// deploy, and manage scalable, fault-tolerant applications running on Amazon Web Services cloud resources. </para> <para> For more information
-    /// about this product, go to the AWS Elastic Beanstalk details page. The location of the lastest AWS Elastic Beanstalk WSDL is
-    /// http://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl. </para> <para> <b>Endpoints</b> </para> <para>AWS Elastic
-    /// Beanstalk supports the following region-specific endpoint:</para>
-    /// <ul>
-    /// <li> https://elasticbeanstalk.us-east-1.amazonaws.com </li>
-    /// 
-    /// </ul>
+    /// about this product, go to the <a href="http://aws.amazon.com/elasticbeanstalk/" >AWS Elastic Beanstalk</a> details page. The location of the
+    /// latest AWS Elastic Beanstalk WSDL is <a href="http://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl"
+    /// >http://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl</a> .
+    /// </para> <para> <b>Endpoints</b> </para> <para>For a list of region-specific endpoints that AWS Elastic Beanstalk supports, go to <a
+    /// href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region" >Regions and Endpoints</a> in the <i>Amazon Web
+    /// Services Glossary</i> .</para>
     /// </summary>
     public interface AmazonElasticBeanstalk : IDisposable
     {
@@ -144,6 +143,7 @@ namespace Amazon.ElasticBeanstalk
         /// <param name="deleteConfigurationTemplateRequest">Container for the necessary parameters to execute the DeleteConfigurationTemplate service
         ///          method on AmazonElasticBeanstalk.</param>
         /// 
+        /// <exception cref="OperationInProgressException"/>
         DeleteConfigurationTemplateResponse DeleteConfigurationTemplate(DeleteConfigurationTemplateRequest deleteConfigurationTemplateRequest);
 
         /// <summary>
@@ -182,6 +182,7 @@ namespace Amazon.ElasticBeanstalk
         /// <returns>The response from the CreateEnvironment service method, as returned by AmazonElasticBeanstalk.</returns>
         /// 
         /// <exception cref="TooManyEnvironmentsException"/>
+        /// <exception cref="InsufficientPrivilegesException"/>
         CreateEnvironmentResponse CreateEnvironment(CreateEnvironmentRequest createEnvironmentRequest);
 
         /// <summary>
@@ -224,6 +225,7 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the CreateStorageLocation service method, as returned by AmazonElasticBeanstalk.</returns>
         /// 
+        /// <exception cref="InsufficientPrivilegesException"/>
         /// <exception cref="S3SubscriptionRequiredException"/>
         /// <exception cref="TooManyBucketsException"/>
         CreateStorageLocationResponse CreateStorageLocation(CreateStorageLocationRequest createStorageLocationRequest);
@@ -259,6 +261,7 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the CreateStorageLocation service method, as returned by AmazonElasticBeanstalk.</returns>
         /// 
+        /// <exception cref="InsufficientPrivilegesException"/>
         /// <exception cref="S3SubscriptionRequiredException"/>
         /// <exception cref="TooManyBucketsException"/>
         CreateStorageLocationResponse CreateStorageLocation();
@@ -322,7 +325,9 @@ namespace Amazon.ElasticBeanstalk
         /// <returns>The response from the CreateApplicationVersion service method, as returned by AmazonElasticBeanstalk.</returns>
         /// 
         /// <exception cref="TooManyApplicationsException"/>
+        /// <exception cref="InsufficientPrivilegesException"/>
         /// <exception cref="TooManyApplicationVersionsException"/>
+        /// <exception cref="S3LocationNotInServiceRegionException"/>
         CreateApplicationVersionResponse CreateApplicationVersion(CreateApplicationVersionRequest createApplicationVersionRequest);
 
         /// <summary>
@@ -364,7 +369,10 @@ namespace Amazon.ElasticBeanstalk
         /// <param name="deleteApplicationVersionRequest">Container for the necessary parameters to execute the DeleteApplicationVersion service method
         ///          on AmazonElasticBeanstalk.</param>
         /// 
+        /// <exception cref="OperationInProgressException"/>
+        /// <exception cref="InsufficientPrivilegesException"/>
         /// <exception cref="SourceBundleDeletionException"/>
+        /// <exception cref="S3LocationNotInServiceRegionException"/>
         DeleteApplicationVersionResponse DeleteApplicationVersion(DeleteApplicationVersionRequest deleteApplicationVersionRequest);
 
         /// <summary>
@@ -444,13 +452,14 @@ namespace Amazon.ElasticBeanstalk
         #region DeleteApplication
 
         /// <summary>
-        /// <para> Deletes the specified application along with all associated versions and configurations. </para> <para><b>NOTE:</b>You cannot delete
-        /// an application that has a running environment. </para>
+        /// <para> Deletes the specified application along with all associated versions and configurations. The application versions will not be deleted
+        /// from your Amazon S3 bucket. </para> <para><b>NOTE:</b>You cannot delete an application that has a running environment. </para>
         /// </summary>
         /// 
         /// <param name="deleteApplicationRequest">Container for the necessary parameters to execute the DeleteApplication service method on
         ///          AmazonElasticBeanstalk.</param>
         /// 
+        /// <exception cref="OperationInProgressException"/>
         DeleteApplicationResponse DeleteApplication(DeleteApplicationRequest deleteApplicationRequest);
 
         /// <summary>
@@ -520,12 +529,45 @@ namespace Amazon.ElasticBeanstalk
         
     
 
+        #region SwapEnvironmentCNAMEs
+
+        /// <summary>
+        /// <para> Swaps the CNAMEs of two environments. </para>
+        /// </summary>
+        /// 
+        /// <param name="swapEnvironmentCNAMEsRequest">Container for the necessary parameters to execute the SwapEnvironmentCNAMEs service method on
+        ///          AmazonElasticBeanstalk.</param>
+        /// 
+        SwapEnvironmentCNAMEsResponse SwapEnvironmentCNAMEs(SwapEnvironmentCNAMEsRequest swapEnvironmentCNAMEsRequest);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SwapEnvironmentCNAMEs operation.
+        /// <seealso cref="Amazon.ElasticBeanstalk.AmazonElasticBeanstalk.SwapEnvironmentCNAMEs"/>
+        /// </summary>
+        /// 
+        /// <param name="swapEnvironmentCNAMEsRequest">Container for the necessary parameters to execute the SwapEnvironmentCNAMEs operation on
+        ///          AmazonElasticBeanstalk.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        IAsyncResult BeginSwapEnvironmentCNAMEs(SwapEnvironmentCNAMEsRequest swapEnvironmentCNAMEsRequest, AsyncCallback callback, object state);
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the SwapEnvironmentCNAMEs operation.
+        /// <seealso cref="Amazon.ElasticBeanstalk.AmazonElasticBeanstalk.SwapEnvironmentCNAMEs"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSwapEnvironmentCNAMEs.</param>
+        SwapEnvironmentCNAMEsResponse EndSwapEnvironmentCNAMEs(IAsyncResult asyncResult);
+        
+        #endregion
+        
+    
+
         #region CreateApplication
 
         /// <summary>
         /// <para> Creates an application that has one configuration template named <c>default</c> and no application versions. </para>
-        /// <para><b>NOTE:</b> The default configuration template is for a 32-bit version of the Amazon Linux operating system running the Tomcat 6
-        /// application container. </para>
         /// </summary>
         /// 
         /// <param name="createApplicationRequest">Container for the necessary parameters to execute the CreateApplication service method on
@@ -565,41 +607,6 @@ namespace Amazon.ElasticBeanstalk
         
     
 
-        #region SwapEnvironmentCNAMEs
-
-        /// <summary>
-        /// <para> Swaps the CNAMEs of two environments. </para>
-        /// </summary>
-        /// 
-        /// <param name="swapEnvironmentCNAMEsRequest">Container for the necessary parameters to execute the SwapEnvironmentCNAMEs service method on
-        ///          AmazonElasticBeanstalk.</param>
-        /// 
-        SwapEnvironmentCNAMEsResponse SwapEnvironmentCNAMEs(SwapEnvironmentCNAMEsRequest swapEnvironmentCNAMEsRequest);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the SwapEnvironmentCNAMEs operation.
-        /// <seealso cref="Amazon.ElasticBeanstalk.AmazonElasticBeanstalk.SwapEnvironmentCNAMEs"/>
-        /// </summary>
-        /// 
-        /// <param name="swapEnvironmentCNAMEsRequest">Container for the necessary parameters to execute the SwapEnvironmentCNAMEs operation on
-        ///          AmazonElasticBeanstalk.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        IAsyncResult BeginSwapEnvironmentCNAMEs(SwapEnvironmentCNAMEsRequest swapEnvironmentCNAMEsRequest, AsyncCallback callback, object state);
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the SwapEnvironmentCNAMEs operation.
-        /// <seealso cref="Amazon.ElasticBeanstalk.AmazonElasticBeanstalk.SwapEnvironmentCNAMEs"/>
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSwapEnvironmentCNAMEs.</param>
-        SwapEnvironmentCNAMEsResponse EndSwapEnvironmentCNAMEs(IAsyncResult asyncResult);
-        
-        #endregion
-        
-    
-
         #region UpdateConfigurationTemplate
 
         /// <summary>
@@ -617,6 +624,7 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the UpdateConfigurationTemplate service method, as returned by AmazonElasticBeanstalk.</returns>
         /// 
+        /// <exception cref="InsufficientPrivilegesException"/>
         UpdateConfigurationTemplateResponse UpdateConfigurationTemplate(UpdateConfigurationTemplateRequest updateConfigurationTemplateRequest);
 
         /// <summary>
@@ -848,6 +856,7 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the DescribeEnvironmentResources service method, as returned by AmazonElasticBeanstalk.</returns>
         /// 
+        /// <exception cref="InsufficientPrivilegesException"/>
         DescribeEnvironmentResourcesResponse DescribeEnvironmentResources(DescribeEnvironmentResourcesRequest describeEnvironmentResourcesRequest);
 
         /// <summary>
@@ -890,6 +899,7 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the TerminateEnvironment service method, as returned by AmazonElasticBeanstalk.</returns>
         /// 
+        /// <exception cref="InsufficientPrivilegesException"/>
         TerminateEnvironmentResponse TerminateEnvironment(TerminateEnvironmentRequest terminateEnvironmentRequest);
 
         /// <summary>
@@ -934,6 +944,7 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the ValidateConfigurationSettings service method, as returned by AmazonElasticBeanstalk.</returns>
         /// 
+        /// <exception cref="InsufficientPrivilegesException"/>
         ValidateConfigurationSettingsResponse ValidateConfigurationSettings(ValidateConfigurationSettingsRequest validateConfigurationSettingsRequest);
 
         /// <summary>
@@ -1053,6 +1064,7 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the UpdateEnvironment service method, as returned by AmazonElasticBeanstalk.</returns>
         /// 
+        /// <exception cref="InsufficientPrivilegesException"/>
         UpdateEnvironmentResponse UpdateEnvironment(UpdateEnvironmentRequest updateEnvironmentRequest);
 
         /// <summary>
@@ -1102,6 +1114,7 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the CreateConfigurationTemplate service method, as returned by AmazonElasticBeanstalk.</returns>
         /// 
+        /// <exception cref="InsufficientPrivilegesException"/>
         /// <exception cref="TooManyConfigurationTemplatesException"/>
         CreateConfigurationTemplateResponse CreateConfigurationTemplate(CreateConfigurationTemplateRequest createConfigurationTemplateRequest);
 
@@ -1244,6 +1257,7 @@ namespace Amazon.ElasticBeanstalk
         /// <param name="rebuildEnvironmentRequest">Container for the necessary parameters to execute the RebuildEnvironment service method on
         ///          AmazonElasticBeanstalk.</param>
         /// 
+        /// <exception cref="InsufficientPrivilegesException"/>
         RebuildEnvironmentResponse RebuildEnvironment(RebuildEnvironmentRequest rebuildEnvironmentRequest);
 
         /// <summary>

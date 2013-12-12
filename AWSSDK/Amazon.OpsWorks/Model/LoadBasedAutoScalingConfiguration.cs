@@ -23,7 +23,7 @@ namespace Amazon.OpsWorks.Model
     /// <summary>
     /// <para>Describes a layer's load-based auto scaling configuration.</para>
     /// </summary>
-    public class LoadBasedAutoScalingConfiguration
+    public partial class LoadBasedAutoScalingConfiguration
     {
         
         private string layerId;

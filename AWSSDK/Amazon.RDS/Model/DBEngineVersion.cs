@@ -23,7 +23,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// <para> This data type is used as a response element in the action DescribeDBEngineVersions. </para>
     /// </summary>
-    public class DBEngineVersion
+    public partial class DBEngineVersion
     {
         
         private string engine;
@@ -93,7 +93,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The name of the DBParameterGroupFamily for the database engine.
+        /// The name of the DB parameter group family for the database engine.
         ///  
         /// </summary>
         public string DBParameterGroupFamily

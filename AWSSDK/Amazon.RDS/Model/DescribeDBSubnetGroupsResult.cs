@@ -23,7 +23,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// <para> Contains the result of a successful invocation of the DescribeDBSubnetGroups action. </para>
     /// </summary>
-    public class DescribeDBSubnetGroupsResult
+    public partial class DescribeDBSubnetGroupsResult
     {
         
         private string marker;

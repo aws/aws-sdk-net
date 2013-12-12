@@ -97,7 +97,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The name of a specific DB Parameter Group family to return details for. Constraints: <ul> <li>Must be 1 to 255 alphanumeric characters</li>
+        /// The name of a specific DB parameter group family to return details for. Constraints: <ul> <li>Must be 1 to 255 alphanumeric characters</li>
         /// <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
         ///  
         /// </summary>

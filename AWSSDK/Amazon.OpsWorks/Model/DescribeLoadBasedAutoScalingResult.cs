@@ -23,7 +23,7 @@ namespace Amazon.OpsWorks.Model
     /// <summary>
     /// <para>Contains the response to a <c>DescribeLoadBasedAutoScaling</c> request.</para>
     /// </summary>
-    public class DescribeLoadBasedAutoScalingResult
+    public partial class DescribeLoadBasedAutoScalingResult
     {
         
         private List<LoadBasedAutoScalingConfiguration> loadBasedAutoScalingConfigurations = new List<LoadBasedAutoScalingConfiguration>();

@@ -23,7 +23,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// <para>Contains the results of a successful invocation of the DescribeEventCategories action.</para>
     /// </summary>
-    public class EventCategoriesMap
+    public partial class EventCategoriesMap
     {
         
         private string sourceType;

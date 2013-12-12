@@ -23,7 +23,7 @@ namespace Amazon.CloudSearch.Model
     /// <summary>
     /// <para>Options that define a <c>uint</c> field in the search index.</para>
     /// </summary>
-    public class UIntOptions
+    public partial class UIntOptions
     {
         
         private int? defaultValue;

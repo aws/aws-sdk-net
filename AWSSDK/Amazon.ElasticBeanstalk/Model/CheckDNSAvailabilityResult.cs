@@ -23,7 +23,7 @@ namespace Amazon.ElasticBeanstalk.Model
     /// <summary>
     /// <para>Indicates if the specified CNAME is available.</para>
     /// </summary>
-    public class CheckDNSAvailabilityResult  
+    public partial class CheckDNSAvailabilityResult
     {
         
         private bool? available;
@@ -57,7 +57,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if Available property is set
         internal bool IsSetAvailable()
         {
-            return this.available.HasValue;       
+            return this.available.HasValue;
         }
 
         /// <summary>
@@ -95,7 +95,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if FullyQualifiedCNAME property is set
         internal bool IsSetFullyQualifiedCNAME()
         {
-            return this.fullyQualifiedCNAME != null;       
+            return this.fullyQualifiedCNAME != null;
         }
     }
 }

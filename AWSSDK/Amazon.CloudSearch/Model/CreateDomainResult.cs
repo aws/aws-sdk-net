@@ -23,7 +23,7 @@ namespace Amazon.CloudSearch.Model
     /// <summary>
     /// <para>A response message that contains the status of a newly created domain.</para>
     /// </summary>
-    public class CreateDomainResult  
+    public partial class CreateDomainResult
     {
         
         private DomainStatus domainStatus;
@@ -54,7 +54,7 @@ namespace Amazon.CloudSearch.Model
         // Check to see if DomainStatus property is set
         internal bool IsSetDomainStatus()
         {
-            return this.domainStatus != null;       
+            return this.domainStatus != null;
         }
     }
 }

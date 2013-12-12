@@ -27,9 +27,9 @@ namespace Amazon.RDS.Model
     /// Container for the parameters to the DeleteDBInstance operation.
     /// <para> The DeleteDBInstance action deletes a previously provisioned DB instance. A successful response from the web service indicates the
     /// request was received correctly. When you delete a DB instance, all automated backups for that instance are deleted and cannot be recovered.
-    /// Manual DB Snapshots of the DB instance to be deleted are not deleted. </para> <para> If a final DBSnapshot is requested the status of the
-    /// RDS instance will be "deleting" until the DBSnapshot is created. DescribeDBInstance is used to monitor the status of this operation. This
-    /// cannot be canceled or reverted once submitted. </para>
+    /// Manual DB snapshots of the DB instance to be deleted are not deleted. </para> <para> If a final DB snapshot is requested the status of the
+    /// RDS instance will be "deleting" until the DB snapshot is created. The API action <c>DescribeDBInstance</c> is used to monitor the status of
+    /// this operation. The action cannot be canceled or reverted once submitted. </para>
     /// </summary>
     /// <seealso cref="Amazon.RDS.AmazonRDS.DeleteDBInstance"/>
     public class DeleteDBInstanceRequest : AmazonWebServiceRequest
@@ -39,7 +39,7 @@ namespace Amazon.RDS.Model
         private string finalDBSnapshotIdentifier;
 
         /// <summary>
-        /// The DB Instance identifier for the DB Instance to be deleted. This parameter isn't case sensitive. Constraints: <ul> <li>Must contain from 1
+        /// The DB instance identifier for the DB instance to be deleted. This parameter isn't case sensitive. Constraints: <ul> <li>Must contain from 1
         /// to 63 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two
         /// consecutive hyphens</li> </ul>
         ///  
@@ -70,9 +70,9 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Determines whether a final DB Snapshot is created before the DB Instance is deleted. If <c>true</c> is specified, no DBSnapshot is created.
-        /// If false is specified, a DB Snapshot is created before the DB Instance is deleted. <note>The FinalDBSnapshotIdentifier parameter must be
-        /// specified if SkipFinalSnapshot is <c>false</c>.</note> Default: <c>false</c>
+        /// Determines whether a final DB snapshot is created before the DB instance is deleted. If <c>true</c> is specified, no DBSnapshot is created.
+        /// If <c>false</c> is specified, a DB snapshot is created before the DB instance is deleted. Specify <c>true</c> when deleting a read replica.
+        /// <note>The FinalDBSnapshotIdentifier parameter must be specified if SkipFinalSnapshot is <c>false</c>.</note> Default: <c>false</c>
         ///  
         /// </summary>
         public bool SkipFinalSnapshot
@@ -103,7 +103,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// The DBSnapshotIdentifier of the new DBSnapshot created when SkipFinalSnapshot is set to <c>false</c>. <note> Specifying this parameter and
         /// also setting the SkipFinalShapshot parameter to true results in an error. </note> Constraints: <ul> <li>Must be 1 to 255 alphanumeric
-        /// characters</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
+        /// characters</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> <li>Cannot be
+        /// specified when deleting a read replica.</li> </ul>
         ///  
         /// </summary>
         public string FinalDBSnapshotIdentifier

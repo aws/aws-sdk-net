@@ -23,7 +23,7 @@ namespace Amazon.OpsWorks.Model
     /// <summary>
     /// <para>Contains the response to a <c>DescribeServiceErrors</c> request.</para>
     /// </summary>
-    public class DescribeServiceErrorsResult
+    public partial class DescribeServiceErrorsResult
     {
         
         private List<ServiceError> serviceErrors = new List<ServiceError>();

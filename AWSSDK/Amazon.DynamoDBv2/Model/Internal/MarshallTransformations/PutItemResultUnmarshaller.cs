@@ -32,6 +32,8 @@
 
         public PutItemResult Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             PutItemResult putItemResult = new PutItemResult();
           putItemResult.Attributes = null;
                         

@@ -23,7 +23,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// The results from the CreateDBInstance action.
     /// </summary>
-    public class CreateDBInstanceResult
+    public partial class CreateDBInstanceResult
     {
         private DBInstance dBInstanceValue;
 

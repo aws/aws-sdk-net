@@ -54,12 +54,13 @@ namespace Amazon.RDS.Model
         private string optionGroupName;
         private string characterSetName;
         private bool? publiclyAccessible;
+        private List<Tag> tags = new List<Tag>();
 
         /// <summary>
         /// The meaning of this parameter differs according to the database engine you use. <b>MySQL</b> The name of the database to create when the DB
-        /// Instance is created. If this parameter is not specified, no database is created in the DB Instance. Constraints: <ul> <li>Must contain 1 to
+        /// instance is created. If this parameter is not specified, no database is created in the DB instance. Constraints: <ul> <li>Must contain 1 to
         /// 64 alphanumeric characters</li> <li>Cannot be a word reserved by the specified database engine</li> </ul> Type: String <b>Oracle</b> The
-        /// Oracle System ID (SID) of the created DB Instance. Default: <c>ORCL</c> Constraints: <ul> <li>Cannot be longer than 8 characters</li> </ul>
+        /// Oracle System ID (SID) of the created DB instance. Default: <c>ORCL</c> Constraints: <ul> <li>Cannot be longer than 8 characters</li> </ul>
         /// <b>SQL Server</b> Not applicable. Must be null.
         ///  
         /// </summary>
@@ -89,7 +90,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The DB Instance identifier. This parameter is stored as a lowercase string. Constraints: <ul> <li>Must contain from 1 to 63 alphanumeric
+        /// The DB instance identifier. This parameter is stored as a lowercase string. Constraints: <ul> <li>Must contain from 1 to 63 alphanumeric
         /// characters or hyphens (1 to 15 for SQL Server).</li> <li>First character must be a letter.</li> <li>Cannot end with a hyphen or contain two
         /// consecutive hyphens.</li> </ul> Example: <c>mydbinstance</c>
         ///  
@@ -151,7 +152,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The compute and memory capacity of the DB Instance. Valid Values: <c>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge |
+        /// The compute and memory capacity of the DB instance. Valid Values: <c>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge |
         /// db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge</c>
         ///  
         /// </summary>
@@ -211,7 +212,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The name of master user for the client DB Instance. <b>MySQL</b> Constraints: <ul> <li>Must be 1 to 16 alphanumeric characters.</li>
+        /// The name of master user for the client DB instance. <b>MySQL</b> Constraints: <ul> <li>Must be 1 to 16 alphanumeric characters.</li>
         /// <li>First character must be a letter.</li> <li>Cannot be a reserved word for the chosen database engine.</li> </ul> Type: String
         /// <b>Oracle</b> Constraints: <ul> <li>Must be 1 to 30 alphanumeric characters.</li> <li>First character must be a letter.</li> <li>Cannot be a
         /// reserved word for the chosen database engine.</li> </ul> <b>SQL Server</b> Constraints: <ul> <li>Must be 1 to 128 alphanumeric
@@ -244,9 +245,9 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The password for the master database user. Can be any printable ASCII character except "/", "\", or "@". Type: String <b>MySQL</b>
-        /// Constraints: Must contain from 8 to 41 alphanumeric characters. <b>Oracle</b> Constraints: Must contain from 8 to 30 alphanumeric
-        /// characters. <b>SQL Server</b> Constraints: Must contain from 8 to 128 alphanumeric characters.
+        /// The password for the master database user. Can be any printable ASCII character except "/", """, or "@". Type: String <b>MySQL</b>
+        /// Constraints: Must contain from 8 to 41 characters. <b>Oracle</b> Constraints: Must contain from 8 to 30 characters. <b>SQL Server</b>
+        /// Constraints: Must contain from 8 to 128 characters.
         ///  
         /// </summary>
         public string MasterUserPassword
@@ -275,7 +276,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// A list of DB Security Groups to associate with this DB Instance. Default: The default DB Security Group for the database engine.
+        /// A list of DB security groups to associate with this DB instance. Default: The default DB security group for the database engine.
         ///  
         /// </summary>
         public List<string> DBSecurityGroups
@@ -322,7 +323,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// A list of EC2 VPC Security Groups to associate with this DB Instance. Default: The default EC2 VPC Security Group for the DB Subnet group's
+        /// A list of EC2 VPC security groups to associate with this DB instance. Default: The default EC2 VPC security group for the DB subnet group's
         /// VPC.
         ///  
         /// </summary>
@@ -401,7 +402,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// A DB Subnet Group to associate with this DB Instance. If there is no DB Subnet Group, then it is a non-VPC DB instance.
+        /// A DB subnet group to associate with this DB instance. If there is no DB subnet group, then it is a non-VPC DB instance.
         ///  
         /// </summary>
         public string DBSubnetGroupName
@@ -462,7 +463,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The name of the DB Parameter Group to associate with this DB instance. If this argument is omitted, the default DBParameterGroup for the
+        /// The name of the DB parameter group to associate with this DB instance. If this argument is omitted, the default DBParameterGroup for the
         /// specified engine will be used. Constraints: <ul> <li>Must be 1 to 255 alphanumeric characters</li> <li>First character must be a letter</li>
         /// <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
         ///  
@@ -494,8 +495,8 @@ namespace Amazon.RDS.Model
 
         /// <summary>
         /// The number of days for which automated backups are retained. Setting this parameter to a positive number enables backups. Setting this
-        /// parameter to 0 disables automated backups. Default: 1 Constraints: <ul> <li>Must be a value from 0 to 8</li> <li>Cannot be set to 0 if the
-        /// DB Instance is a master instance with read replicas</li> </ul>
+        /// parameter to 0 disables automated backups. Default: 1 Constraints: <ul> <li>Must be a value from 0 to 35</li> <li>Cannot be set to 0 if the
+        /// DB instance is a source to read replicas</li> </ul>
         ///  
         /// </summary>
         public int BackupRetentionPeriod
@@ -525,12 +526,9 @@ namespace Amazon.RDS.Model
 
         /// <summary>
         /// The daily time range during which automated backups are created if automated backups are enabled, using the <c>BackupRetentionPeriod</c>
-        /// parameter. Default: A 30-minute window selected at random from an 8-hour block of time per region. The following list shows the time blocks
-        /// for each region from which the default backup windows are assigned. <ul> <li><b>US-East (Northern Virginia) Region:</b> 03:00-11:00 UTC</li>
-        /// <li><b>US-West (Northern California) Region:</b> 06:00-14:00 UTC</li> <li><b>EU (Ireland) Region:</b> 22:00-06:00 UTC</li> <li><b>Asia
-        /// Pacific (Singapore) Region:</b> 14:00-22:00 UTC</li> <li><b>Asia Pacific (Tokyo) Region: </b> 17:00-03:00 UTC</li> </ul> Constraints: Must
-        /// be in the format <c>hh24:mi-hh24:mi</c>. Times should be Universal Time Coordinated (UTC). Must not conflict with the preferred maintenance
-        /// window. Must be at least 30 minutes.
+        /// parameter. Default: A 30-minute window selected at random from an 8-hour block of time per region. See the Amazon RDS User Guide for the
+        /// time blocks for each region from which the default backup windows are assigned. Constraints: Must be in the format <c>hh24:mi-hh24:mi</c>.
+        /// Times should be Universal Time Coordinated (UTC). Must not conflict with the preferred maintenance window. Must be at least 30 minutes.
         ///  
         /// </summary>
         public string PreferredBackupWindow
@@ -590,7 +588,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Specifies if the DB Instance is a Multi-AZ deployment. You cannot set the AvailabilityZone parameter if the MultiAZ parameter is set to
+        /// Specifies if the DB instance is a Multi-AZ deployment. You cannot set the AvailabilityZone parameter if the MultiAZ parameter is set to
         /// true.
         ///  
         /// </summary>
@@ -650,7 +648,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Indicates that minor engine upgrades will be applied automatically to the DB Instance during the maintenance window. Default: <c>true</c>
+        /// Indicates that minor engine upgrades will be applied automatically to the DB instance during the maintenance window. Default: <c>true</c>
         ///  
         /// </summary>
         public bool AutoMinorVersionUpgrade
@@ -679,7 +677,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// License model information for this DB Instance. Valid values: <c>license-included</c> | <c>bring-your-own-license</c> |
+        /// License model information for this DB instance. Valid values: <c>license-included</c> | <c>bring-your-own-license</c> |
         /// <c>general-public-license</c>
         ///  
         /// </summary>
@@ -709,7 +707,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for the DB Instance. Constraints: Must be an
+        /// The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for the DB instance. Constraints: Must be an
         /// integer greater than 1000.
         ///  
         /// </summary>
@@ -739,7 +737,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Indicates that the DB Instance should be associated with the specified option group. <!-- Note that persistent options, such as the
+        /// Indicates that the DB instance should be associated with the specified option group. <!-- Note that persistent options, such as the
         /// TDE_SQLServer option for Microsoft SQL Server, cannot be removed from an option group while DB instances are associated with the option
         /// group. --> Permanent options, such as the TDE option for Oracle Advanced Security TDE, cannot be removed from an option group, and that
         /// option group cannot be removed from a DB instance once it is associated with a DB instance
@@ -771,7 +769,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// For supported engines, indicates that the DB Instance should be associated with the specified CharacterSet.
+        /// For supported engines, indicates that the DB instance should be associated with the specified CharacterSet.
         ///  
         /// </summary>
         public string CharacterSetName
@@ -800,7 +798,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Specifies the accessibility options for the DB Instance. A value of true specifies an Internet-facing instance with a publicly resolvable
+        /// Specifies the accessibility options for the DB instance. A value of true specifies an Internet-facing instance with a publicly resolvable
         /// DNS name, which resolves to a public IP address. A value of false specifies an internal instance with a DNS name that resolves to a private
         /// IP address. Default: The default behavior varies depending on whether a VPC has been requested or not. The following list shows the default
         /// behavior in each case. <ul> <li><b>Default VPC:</b>true</li> <li><b>VPC:</b>false</li> </ul> If no DB subnet group has been specified as
@@ -831,6 +829,53 @@ namespace Amazon.RDS.Model
         internal bool IsSetPubliclyAccessible()
         {
             return this.publiclyAccessible.HasValue;
+        }
+
+        /// <summary>
+        /// A list of tags.
+        ///  
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this.tags; }
+            set { this.tags = value; }
+        }
+        /// <summary>
+        /// Adds elements to the Tags collection
+        /// </summary>
+        /// <param name="tags">The values to add to the Tags collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public CreateDBInstanceRequest WithTags(params Tag[] tags)
+        {
+            foreach (Tag element in tags)
+            {
+                this.tags.Add(element);
+            }
+
+            return this;
+        }
+
+        /// <summary>
+        /// Adds elements to the Tags collection
+        /// </summary>
+        /// <param name="tags">The values to add to the Tags collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public CreateDBInstanceRequest WithTags(IEnumerable<Tag> tags)
+        {
+            foreach (Tag element in tags)
+            {
+                this.tags.Add(element);
+            }
+
+            return this;
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this.tags.Count > 0;
         }
     }
 }

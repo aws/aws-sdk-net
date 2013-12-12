@@ -34,7 +34,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(createDBSubnetGroupRequest, "AmazonRDS");
             request.Parameters.Add("Action", "CreateDBSubnetGroup");
-            request.Parameters.Add("Version", "2013-05-15");
+            request.Parameters.Add("Version", "2013-09-09");
             if (createDBSubnetGroupRequest != null && createDBSubnetGroupRequest.IsSetDBSubnetGroupName())
             {
                 request.Parameters.Add("DBSubnetGroupName", StringUtils.FromString(createDBSubnetGroupRequest.DBSubnetGroupName));
@@ -52,6 +52,25 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 { 
                     request.Parameters.Add("SubnetIds.member." + subnetIdsListIndex, StringUtils.FromString(subnetIdsListValue));
                     subnetIdsListIndex++;
+                }
+            }
+
+            if (createDBSubnetGroupRequest != null)
+            {
+                List<Tag> tagsList = createDBSubnetGroupRequest.Tags;
+                int tagsListIndex = 1;
+                foreach (Tag tagsListValue in tagsList)
+                {
+                    if (tagsListValue != null && tagsListValue.IsSetKey())
+                    {
+                        request.Parameters.Add("Tags.member." + tagsListIndex + ".Key", StringUtils.FromString(tagsListValue.Key));
+                    }
+                    if (tagsListValue != null && tagsListValue.IsSetValue())
+                    {
+                        request.Parameters.Add("Tags.member." + tagsListIndex + ".Value", StringUtils.FromString(tagsListValue.Value));
+                    }
+
+                    tagsListIndex++;
                 }
             }
 

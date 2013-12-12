@@ -23,7 +23,7 @@ namespace Amazon.OpsWorks.Model
     /// <summary>
     /// <para>Contains the response to a <c>CreateApp</c> request.</para>
     /// </summary>
-    public class CreateAppResult
+    public partial class CreateAppResult
     {
         
         private string appId;

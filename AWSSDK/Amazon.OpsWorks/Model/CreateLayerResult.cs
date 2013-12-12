@@ -23,7 +23,7 @@ namespace Amazon.OpsWorks.Model
     /// <summary>
     /// <para>Contains the response to a <c>CreateLayer</c> request.</para>
     /// </summary>
-    public class CreateLayerResult
+    public partial class CreateLayerResult
     {
         
         private string layerId;

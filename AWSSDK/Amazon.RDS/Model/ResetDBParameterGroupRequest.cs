@@ -25,10 +25,10 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the ResetDBParameterGroup operation.
-    /// <para> Modifies the parameters of a DBParameterGroup to the engine/system default value. To reset specific parameters submit a list of the
-    /// following: ParameterName and ApplyMethod. To reset the entire DBParameterGroup specify the DBParameterGroup name and ResetAllParameters
-    /// parameters. When resetting the entire group, dynamic parameters are updated immediately and static parameters are set to pending-reboot to
-    /// take effect on the next DB instance restart or RebootDBInstance request. </para>
+    /// <para> Modifies the parameters of a DB parameter group to the engine/system default value. To reset specific parameters submit a list of the
+    /// following: <c>ParameterName</c> and <c>ApplyMethod</c> . To reset the entire DB parameter group, specify the <c>DBParameterGroup</c> name
+    /// and <c>ResetAllParameters</c> parameters. When resetting the entire group, dynamic parameters are updated immediately and static parameters
+    /// are set to <c>pending-reboot</c> to take effect on the next DB instance restart or <c>RebootDBInstance</c> request. </para>
     /// </summary>
     /// <seealso cref="Amazon.RDS.AmazonRDS.ResetDBParameterGroup"/>
     public class ResetDBParameterGroupRequest : AmazonWebServiceRequest
@@ -38,7 +38,7 @@ namespace Amazon.RDS.Model
         private List<Parameter> parameters = new List<Parameter>();
 
         /// <summary>
-        /// The name of the DB Parameter Group. Constraints: <ul> <li>Must be 1 to 255 alphanumeric characters</li> <li>First character must be a
+        /// The name of the DB parameter group. Constraints: <ul> <li>Must be 1 to 255 alphanumeric characters</li> <li>First character must be a
         /// letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
         ///  
         /// </summary>
@@ -68,7 +68,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Specifies whether (<c>true</c>) or not (<c>false</c>) to reset all parameters in the DB Parameter Group to default values. Default:
+        /// Specifies whether (<c>true</c>) or not (<c>false</c>) to reset all parameters in the DB parameter group to default values. Default:
         /// <c>true</c>
         ///  
         /// </summary>
@@ -101,7 +101,7 @@ namespace Amazon.RDS.Model
         /// An array of parameter names, values, and the apply method for the parameter update. At least one parameter name, value, and apply method
         /// must be supplied; subsequent arguments are optional. A maximum of 20 parameters may be modified in a single request. <b>MySQL</b> Valid
         /// Values (for Apply method): <c>immediate</c> | <c>pending-reboot</c> You can use the immediate value with dynamic parameters only. You can
-        /// use the <c>pending-reboot</c> value for both dynamic and static parameters, and changes are applied when DB Instance reboots. <b>Oracle</b>
+        /// use the <c>pending-reboot</c> value for both dynamic and static parameters, and changes are applied when DB instance reboots. <b>Oracle</b>
         /// Valid Values (for Apply method): <c>pending-reboot</c>
         ///  
         /// </summary>

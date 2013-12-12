@@ -23,7 +23,7 @@ namespace Amazon.CloudSearch.Model
     /// <summary>
     /// <para>The source attribute name and an optional default value to use if a document doesn't have an attribute of that name.</para>
     /// </summary>
-    public class SourceData
+    public partial class SourceData
     {
         
         private string sourceName;

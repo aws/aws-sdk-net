@@ -23,7 +23,7 @@ namespace Amazon.ElasticBeanstalk.Model
     /// <summary>
     /// <para>Describes the properties of an environment.</para>
     /// </summary>
-    public class EnvironmentDescription  
+    public partial class EnvironmentDescription
     {
         
         private string environmentName;
@@ -40,6 +40,7 @@ namespace Amazon.ElasticBeanstalk.Model
         private string status;
         private string health;
         private EnvironmentResourcesDescription resources;
+        private EnvironmentTier tier;
 
         /// <summary>
         /// The name of this environment.
@@ -76,7 +77,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if EnvironmentName property is set
         internal bool IsSetEnvironmentName()
         {
-            return this.environmentName != null;       
+            return this.environmentName != null;
         }
 
         /// <summary>
@@ -105,7 +106,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if EnvironmentId property is set
         internal bool IsSetEnvironmentId()
         {
-            return this.environmentId != null;       
+            return this.environmentId != null;
         }
 
         /// <summary>
@@ -143,7 +144,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if ApplicationName property is set
         internal bool IsSetApplicationName()
         {
-            return this.applicationName != null;       
+            return this.applicationName != null;
         }
 
         /// <summary>
@@ -181,7 +182,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if VersionLabel property is set
         internal bool IsSetVersionLabel()
         {
-            return this.versionLabel != null;       
+            return this.versionLabel != null;
         }
 
         /// <summary>
@@ -219,7 +220,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if SolutionStackName property is set
         internal bool IsSetSolutionStackName()
         {
-            return this.solutionStackName != null;       
+            return this.solutionStackName != null;
         }
 
         /// <summary>
@@ -257,7 +258,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if TemplateName property is set
         internal bool IsSetTemplateName()
         {
-            return this.templateName != null;       
+            return this.templateName != null;
         }
 
         /// <summary>
@@ -295,11 +296,11 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if Description property is set
         internal bool IsSetDescription()
         {
-            return this.description != null;       
+            return this.description != null;
         }
 
         /// <summary>
-        /// The URL to the LoadBalancer for this environment.
+        /// For load-balanced, autoscaling environments, the URL to the LoadBalancer. For single-instance environments, the IP address of the instance.
         ///  
         /// </summary>
         public string EndpointURL
@@ -324,7 +325,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if EndpointURL property is set
         internal bool IsSetEndpointURL()
         {
-            return this.endpointURL != null;       
+            return this.endpointURL != null;
         }
 
         /// <summary>
@@ -362,7 +363,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if CNAME property is set
         internal bool IsSetCNAME()
         {
-            return this.cNAME != null;       
+            return this.cNAME != null;
         }
 
         /// <summary>
@@ -391,7 +392,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if DateCreated property is set
         internal bool IsSetDateCreated()
         {
-            return this.dateCreated.HasValue;       
+            return this.dateCreated.HasValue;
         }
 
         /// <summary>
@@ -420,7 +421,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if DateUpdated property is set
         internal bool IsSetDateUpdated()
         {
-            return this.dateUpdated.HasValue;       
+            return this.dateUpdated.HasValue;
         }
 
         /// <summary>
@@ -461,7 +462,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if Status property is set
         internal bool IsSetStatus()
         {
-            return this.status != null;       
+            return this.status != null;
         }
 
         /// <summary>
@@ -507,7 +508,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if Health property is set
         internal bool IsSetHealth()
         {
-            return this.health != null;       
+            return this.health != null;
         }
 
         /// <summary>
@@ -536,7 +537,36 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if Resources property is set
         internal bool IsSetResources()
         {
-            return this.resources != null;       
+            return this.resources != null;
+        }
+
+        /// <summary>
+        /// Describes the current tier of this environment.
+        ///  
+        /// </summary>
+        public EnvironmentTier Tier
+        {
+            get { return this.tier; }
+            set { this.tier = value; }
+        }
+
+        /// <summary>
+        /// Sets the Tier property
+        /// </summary>
+        /// <param name="tier">The value to set for the Tier property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public EnvironmentDescription WithTier(EnvironmentTier tier)
+        {
+            this.tier = tier;
+            return this;
+        }
+            
+
+        // Check to see if Tier property is set
+        internal bool IsSetTier()
+        {
+            return this.tier != null;
         }
     }
 }

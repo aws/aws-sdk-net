@@ -23,7 +23,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// <para>This data type is used as a response element to DownloadDBLogFilePortion.</para>
     /// </summary>
-    public class DownloadDBLogFilePortionResult
+    public partial class DownloadDBLogFilePortionResult
     {
         
         private string logFileData;

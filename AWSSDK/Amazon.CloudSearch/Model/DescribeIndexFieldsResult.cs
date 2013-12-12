@@ -23,7 +23,7 @@ namespace Amazon.CloudSearch.Model
     /// <summary>
     /// <para>A response message that contains the index fields for a search domain.</para>
     /// </summary>
-    public class DescribeIndexFieldsResult  
+    public partial class DescribeIndexFieldsResult
     {
         
         private List<IndexFieldStatus> indexFields = new List<IndexFieldStatus>();
@@ -52,7 +52,7 @@ namespace Amazon.CloudSearch.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the IndexFields collection
         /// </summary>
@@ -72,7 +72,7 @@ namespace Amazon.CloudSearch.Model
         // Check to see if IndexFields property is set
         internal bool IsSetIndexFields()
         {
-            return this.indexFields.Count > 0;       
+            return this.indexFields.Count > 0;
         }
     }
 }

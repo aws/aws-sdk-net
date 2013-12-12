@@ -23,7 +23,7 @@ namespace Amazon.CloudSearch.Model
     /// <summary>
     /// <para>A response message that contains the status of an updated default search field.</para>
     /// </summary>
-    public class UpdateDefaultSearchFieldResult  
+    public partial class UpdateDefaultSearchFieldResult
     {
         
         private DefaultSearchFieldStatus defaultSearchField;
@@ -54,7 +54,7 @@ namespace Amazon.CloudSearch.Model
         // Check to see if DefaultSearchField property is set
         internal bool IsSetDefaultSearchField()
         {
-            return this.defaultSearchField != null;       
+            return this.defaultSearchField != null;
         }
     }
 }

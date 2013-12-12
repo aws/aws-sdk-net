@@ -26,17 +26,20 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// Container for the parameters to the DescribeDBSubnetGroups operation.
     /// <para> Returns a list of DBSubnetGroup descriptions. If a DBSubnetGroupName is specified, the list will contain only the descriptions of the
-    /// specified DBSubnetGroup. </para> <para>For an overview of CIDR ranges, go to the Wikipedia Tutorial. </para>
+    /// specified DBSubnetGroup. </para> <para>For an overview of CIDR ranges, go to the <a
+    /// href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing" >Wikipedia Tutorial</a> .
+    /// </para>
     /// </summary>
     /// <seealso cref="Amazon.RDS.AmazonRDS.DescribeDBSubnetGroups"/>
     public class DescribeDBSubnetGroupsRequest : AmazonWebServiceRequest
     {
         private string dBSubnetGroupName;
+        private List<Filter> filters = new List<Filter>();
         private int? maxRecords;
         private string marker;
 
         /// <summary>
-        /// The name of the DB Subnet Group to return details for.
+        /// The name of the DB subnet group to return details for.
         ///  
         /// </summary>
         public string DBSubnetGroupName
@@ -62,6 +65,53 @@ namespace Amazon.RDS.Model
         internal bool IsSetDBSubnetGroupName()
         {
             return this.dBSubnetGroupName != null;
+        }
+
+        /// <summary>
+        /// This parameter is not currently supported.
+        ///  
+        /// </summary>
+        public List<Filter> Filters
+        {
+            get { return this.filters; }
+            set { this.filters = value; }
+        }
+        /// <summary>
+        /// Adds elements to the Filters collection
+        /// </summary>
+        /// <param name="filters">The values to add to the Filters collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public DescribeDBSubnetGroupsRequest WithFilters(params Filter[] filters)
+        {
+            foreach (Filter element in filters)
+            {
+                this.filters.Add(element);
+            }
+
+            return this;
+        }
+
+        /// <summary>
+        /// Adds elements to the Filters collection
+        /// </summary>
+        /// <param name="filters">The values to add to the Filters collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public DescribeDBSubnetGroupsRequest WithFilters(IEnumerable<Filter> filters)
+        {
+            foreach (Filter element in filters)
+            {
+                this.filters.Add(element);
+            }
+
+            return this;
+        }
+
+        // Check to see if Filters property is set
+        internal bool IsSetFilters()
+        {
+            return this.filters.Count > 0;
         }
 
         /// <summary>

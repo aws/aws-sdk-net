@@ -22,13 +22,14 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
      /// <summary>
      ///   ListAvailableSolutionStacksResult Unmarshaller
      /// </summary>
-    internal class ListAvailableSolutionStacksResultUnmarshaller : IUnmarshaller<ListAvailableSolutionStacksResult, XmlUnmarshallerContext> 
+    internal class ListAvailableSolutionStacksResultUnmarshaller : IUnmarshaller<ListAvailableSolutionStacksResult, XmlUnmarshallerContext>, IUnmarshaller<ListAvailableSolutionStacksResult, JsonUnmarshallerContext> 
     {
         public ListAvailableSolutionStacksResult Unmarshall(XmlUnmarshallerContext context) 
         {
             ListAvailableSolutionStacksResult listAvailableSolutionStacksResult = new ListAvailableSolutionStacksResult();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -58,6 +59,11 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
 
 
             return listAvailableSolutionStacksResult;
+        }
+
+        public ListAvailableSolutionStacksResult Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static ListAvailableSolutionStacksResultUnmarshaller instance;

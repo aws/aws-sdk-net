@@ -22,13 +22,14 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
      /// <summary>
      ///   DescribeEnvironmentResourcesResult Unmarshaller
      /// </summary>
-    internal class DescribeEnvironmentResourcesResultUnmarshaller : IUnmarshaller<DescribeEnvironmentResourcesResult, XmlUnmarshallerContext> 
+    internal class DescribeEnvironmentResourcesResultUnmarshaller : IUnmarshaller<DescribeEnvironmentResourcesResult, XmlUnmarshallerContext>, IUnmarshaller<DescribeEnvironmentResourcesResult, JsonUnmarshallerContext> 
     {
         public DescribeEnvironmentResourcesResult Unmarshall(XmlUnmarshallerContext context) 
         {
             DescribeEnvironmentResourcesResult describeEnvironmentResourcesResult = new DescribeEnvironmentResourcesResult();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -52,6 +53,11 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
 
 
             return describeEnvironmentResourcesResult;
+        }
+
+        public DescribeEnvironmentResourcesResult Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static DescribeEnvironmentResourcesResultUnmarshaller instance;

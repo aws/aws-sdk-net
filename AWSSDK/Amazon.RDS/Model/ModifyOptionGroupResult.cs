@@ -23,7 +23,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// The results from the ModifyOptionGroup action.
     /// </summary>
-    public class ModifyOptionGroupResult
+    public partial class ModifyOptionGroupResult
     {
         private OptionGroup optionGroupValue;
 

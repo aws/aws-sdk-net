@@ -22,13 +22,14 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
      /// <summary>
      ///   UpdateConfigurationTemplateResult Unmarshaller
      /// </summary>
-    internal class UpdateConfigurationTemplateResultUnmarshaller : IUnmarshaller<UpdateConfigurationTemplateResult, XmlUnmarshallerContext> 
+    internal class UpdateConfigurationTemplateResultUnmarshaller : IUnmarshaller<UpdateConfigurationTemplateResult, XmlUnmarshallerContext>, IUnmarshaller<UpdateConfigurationTemplateResult, JsonUnmarshallerContext> 
     {
         public UpdateConfigurationTemplateResult Unmarshall(XmlUnmarshallerContext context) 
         {
             UpdateConfigurationTemplateResult updateConfigurationTemplateResult = new UpdateConfigurationTemplateResult();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -100,6 +101,11 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
 
 
             return updateConfigurationTemplateResult;
+        }
+
+        public UpdateConfigurationTemplateResult Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static UpdateConfigurationTemplateResultUnmarshaller instance;

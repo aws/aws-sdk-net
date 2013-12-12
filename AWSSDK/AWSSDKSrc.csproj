@@ -2475,6 +2475,9 @@
     <Compile Include="Amazon.DirectConnect\Model\VirtualInterface.cs" />
     <Compile Include="Amazon.DynamoDBv2\AmazonDynamoDB.cs" />
     <Compile Include="Amazon.DynamoDBv2\AmazonDynamoDBClient.cs" />
+    <Compile Include="Amazon.DynamoDBv2\AmazonDynamoDBClient.Extension.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.DynamoDBv2\AmazonDynamoDBConfig.cs" />
     <Compile Include="Amazon.DynamoDBv2\AmazonDynamoDBException.cs" />
     <Compile Include="Amazon.DynamoDBv2\DataModel\Attributes.cs">
@@ -2519,6 +2522,7 @@
     <Compile Include="Amazon.DynamoDBv2\Model\BatchWriteItemRequest.cs" />
     <Compile Include="Amazon.DynamoDBv2\Model\BatchWriteItemResponse.cs" />
     <Compile Include="Amazon.DynamoDBv2\Model\BatchWriteItemResult.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\Capacity.cs" />
     <Compile Include="Amazon.DynamoDBv2\Model\Condition.cs" />
     <Compile Include="Amazon.DynamoDBv2\Model\ConditionalCheckFailedException.cs" />
     <Compile Include="Amazon.DynamoDBv2\Model\ConsumedCapacity.cs" />
@@ -2539,6 +2543,9 @@
     <Compile Include="Amazon.DynamoDBv2\Model\GetItemRequest.cs" />
     <Compile Include="Amazon.DynamoDBv2\Model\GetItemResponse.cs" />
     <Compile Include="Amazon.DynamoDBv2\Model\GetItemResult.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\GlobalSecondaryIndex.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\GlobalSecondaryIndexDescription.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\GlobalSecondaryIndexUpdate.cs" />
     <Compile Include="Amazon.DynamoDBv2\Model\InternalServerErrorException.cs" />
     <Compile Include="Amazon.DynamoDBv2\Model\Internal\MarshallTransformations\AttributeDefinitionUnmarshaller.cs" />
     <Compile Include="Amazon.DynamoDBv2\Model\Internal\MarshallTransformations\AttributeValueUnmarshaller.cs" />
@@ -2548,6 +2555,7 @@
     <Compile Include="Amazon.DynamoDBv2\Model\Internal\MarshallTransformations\BatchWriteItemRequestMarshaller.cs" />
     <Compile Include="Amazon.DynamoDBv2\Model\Internal\MarshallTransformations\BatchWriteItemResponseUnmarshaller.cs" />
     <Compile Include="Amazon.DynamoDBv2\Model\Internal\MarshallTransformations\BatchWriteItemResultUnmarshaller.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\Internal\MarshallTransformations\CapacityUnmarshaller.cs" />
     <Compile Include="Amazon.DynamoDBv2\Model\Internal\MarshallTransformations\ConsumedCapacityUnmarshaller.cs" />
     <Compile Include="Amazon.DynamoDBv2\Model\Internal\MarshallTransformations\CreateTableRequestMarshaller.cs" />
     <Compile Include="Amazon.DynamoDBv2\Model\Internal\MarshallTransformations\CreateTableResponseUnmarshaller.cs" />
@@ -2565,6 +2573,7 @@
     <Compile Include="Amazon.DynamoDBv2\Model\Internal\MarshallTransformations\GetItemRequestMarshaller.cs" />
     <Compile Include="Amazon.DynamoDBv2\Model\Internal\MarshallTransformations\GetItemResponseUnmarshaller.cs" />
     <Compile Include="Amazon.DynamoDBv2\Model\Internal\MarshallTransformations\GetItemResultUnmarshaller.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\Internal\MarshallTransformations\GlobalSecondaryIndexDescriptionUnmarshaller.cs" />
     <Compile Include="Amazon.DynamoDBv2\Model\Internal\MarshallTransformations\ItemCollectionMetricsUnmarshaller.cs" />
     <Compile Include="Amazon.DynamoDBv2\Model\Internal\MarshallTransformations\KeysAndAttributesUnmarshaller.cs" />
     <Compile Include="Amazon.DynamoDBv2\Model\Internal\MarshallTransformations\KeySchemaElementUnmarshaller.cs" />
@@ -2619,6 +2628,7 @@
     <Compile Include="Amazon.DynamoDBv2\Model\ScanResponse.cs" />
     <Compile Include="Amazon.DynamoDBv2\Model\ScanResult.cs" />
     <Compile Include="Amazon.DynamoDBv2\Model\TableDescription.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\UpdateGlobalSecondaryIndexAction.cs" />
     <Compile Include="Amazon.DynamoDBv2\Model\UpdateItemRequest.cs" />
     <Compile Include="Amazon.DynamoDBv2\Model\UpdateItemResponse.cs" />
     <Compile Include="Amazon.DynamoDBv2\Model\UpdateItemResult.cs" />
@@ -4445,8 +4455,10 @@
     <Compile Include="Amazon.ElasticBeanstalk\Model\EnvironmentInfoDescription.cs" />
     <Compile Include="Amazon.ElasticBeanstalk\Model\EnvironmentResourceDescription.cs" />
     <Compile Include="Amazon.ElasticBeanstalk\Model\EnvironmentResourcesDescription.cs" />
+    <Compile Include="Amazon.ElasticBeanstalk\Model\EnvironmentTier.cs" />
     <Compile Include="Amazon.ElasticBeanstalk\Model\EventDescription.cs" />
     <Compile Include="Amazon.ElasticBeanstalk\Model\Instance.cs" />
+    <Compile Include="Amazon.ElasticBeanstalk\Model\InsufficientPrivilegesException.cs" />
     <Compile Include="Amazon.ElasticBeanstalk\Model\Internal\MarshallTransformations\ApplicationDescriptionUnmarshaller.cs" />
     <Compile Include="Amazon.ElasticBeanstalk\Model\Internal\MarshallTransformations\ApplicationVersionDescriptionUnmarshaller.cs" />
     <Compile Include="Amazon.ElasticBeanstalk\Model\Internal\MarshallTransformations\AutoScalingGroupUnmarshaller.cs" />
@@ -4504,6 +4516,7 @@
     <Compile Include="Amazon.ElasticBeanstalk\Model\Internal\MarshallTransformations\EnvironmentInfoDescriptionUnmarshaller.cs" />
     <Compile Include="Amazon.ElasticBeanstalk\Model\Internal\MarshallTransformations\EnvironmentResourceDescriptionUnmarshaller.cs" />
     <Compile Include="Amazon.ElasticBeanstalk\Model\Internal\MarshallTransformations\EnvironmentResourcesDescriptionUnmarshaller.cs" />
+    <Compile Include="Amazon.ElasticBeanstalk\Model\Internal\MarshallTransformations\EnvironmentTierUnmarshaller.cs" />
     <Compile Include="Amazon.ElasticBeanstalk\Model\Internal\MarshallTransformations\EventDescriptionUnmarshaller.cs" />
     <Compile Include="Amazon.ElasticBeanstalk\Model\Internal\MarshallTransformations\InstanceUnmarshaller.cs" />
     <Compile Include="Amazon.ElasticBeanstalk\Model\Internal\MarshallTransformations\LaunchConfigurationUnmarshaller.cs" />
@@ -4514,6 +4527,7 @@
     <Compile Include="Amazon.ElasticBeanstalk\Model\Internal\MarshallTransformations\LoadBalancerDescriptionUnmarshaller.cs" />
     <Compile Include="Amazon.ElasticBeanstalk\Model\Internal\MarshallTransformations\LoadBalancerUnmarshaller.cs" />
     <Compile Include="Amazon.ElasticBeanstalk\Model\Internal\MarshallTransformations\OptionRestrictionRegexUnmarshaller.cs" />
+    <Compile Include="Amazon.ElasticBeanstalk\Model\Internal\MarshallTransformations\QueueUnmarshaller.cs" />
     <Compile Include="Amazon.ElasticBeanstalk\Model\Internal\MarshallTransformations\RebuildEnvironmentRequestMarshaller.cs" />
     <Compile Include="Amazon.ElasticBeanstalk\Model\Internal\MarshallTransformations\RebuildEnvironmentResponseUnmarshaller.cs" />
     <Compile Include="Amazon.ElasticBeanstalk\Model\Internal\MarshallTransformations\RequestEnvironmentInfoRequestMarshaller.cs" />
@@ -4557,8 +4571,10 @@
     <Compile Include="Amazon.ElasticBeanstalk\Model\LoadBalancer.cs" />
     <Compile Include="Amazon.ElasticBeanstalk\Model\LoadBalancerDescription.cs" />
     <Compile Include="Amazon.ElasticBeanstalk\Model\MissingRequiredParameterException.cs" />
+    <Compile Include="Amazon.ElasticBeanstalk\Model\OperationInProgressException.cs" />
     <Compile Include="Amazon.ElasticBeanstalk\Model\OptionRestrictionRegex.cs" />
     <Compile Include="Amazon.ElasticBeanstalk\Model\OptionSpecification.cs" />
+    <Compile Include="Amazon.ElasticBeanstalk\Model\Queue.cs" />
     <Compile Include="Amazon.ElasticBeanstalk\Model\RebuildEnvironmentRequest.cs" />
     <Compile Include="Amazon.ElasticBeanstalk\Model\RebuildEnvironmentResponse.cs" />
     <Compile Include="Amazon.ElasticBeanstalk\Model\RequestEnvironmentInfoRequest.cs" />
@@ -4569,6 +4585,7 @@
     <Compile Include="Amazon.ElasticBeanstalk\Model\RetrieveEnvironmentInfoResponse.cs" />
     <Compile Include="Amazon.ElasticBeanstalk\Model\RetrieveEnvironmentInfoResult.cs" />
     <Compile Include="Amazon.ElasticBeanstalk\Model\S3Location.cs" />
+    <Compile Include="Amazon.ElasticBeanstalk\Model\S3LocationNotInServiceRegionException.cs" />
     <Compile Include="Amazon.ElasticBeanstalk\Model\S3SubscriptionRequiredException.cs" />
     <Compile Include="Amazon.ElasticBeanstalk\Model\SolutionStackDescription.cs" />
     <Compile Include="Amazon.ElasticBeanstalk\Model\SourceBundleDeletionException.cs" />
@@ -5283,6 +5300,9 @@
     <Compile Include="Amazon.ElasticTranscoder\Model\VideoParameters.cs" />
     <Compile Include="Amazon.Glacier\AmazonGlacier.cs" />
     <Compile Include="Amazon.Glacier\AmazonGlacierClient.cs" />
+    <Compile Include="Amazon.Glacier\AmazonGlacierClient.Extensions.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.Glacier\AmazonGlacierConfig.cs" />
     <Compile Include="Amazon.Glacier\AmazonGlacierException.cs" />
     <Compile Include="Amazon.Glacier\AmazonGlacierExtensions.cs" />
@@ -6627,6 +6647,72 @@
     <Compile Include="Amazon.ImportExport\Model\UpdateJobResponse.cs" />
     <Compile Include="Amazon.ImportExport\Model\UpdateJobResult.cs" />
     <Compile Include="Amazon.ImportExport\Util\JobTypeConstants.cs" />
+    <Compile Include="Amazon.Kinesis\AmazonKinesis.cs" />
+    <Compile Include="Amazon.Kinesis\AmazonKinesisClient.cs" />
+    <Compile Include="Amazon.Kinesis\AmazonKinesisConfig.cs" />
+    <Compile Include="Amazon.Kinesis\AmazonKinesisException.cs" />
+    <Compile Include="Amazon.Kinesis\Model\CreateStreamRequest.cs" />
+    <Compile Include="Amazon.Kinesis\Model\CreateStreamResponse.cs" />
+    <Compile Include="Amazon.Kinesis\Model\DeleteStreamRequest.cs" />
+    <Compile Include="Amazon.Kinesis\Model\DeleteStreamResponse.cs" />
+    <Compile Include="Amazon.Kinesis\Model\DescribeStreamRequest.cs" />
+    <Compile Include="Amazon.Kinesis\Model\DescribeStreamResponse.cs" />
+    <Compile Include="Amazon.Kinesis\Model\DescribeStreamResult.cs" />
+    <Compile Include="Amazon.Kinesis\Model\ExpiredIteratorException.cs" />
+    <Compile Include="Amazon.Kinesis\Model\GetRecordsRequest.cs" />
+    <Compile Include="Amazon.Kinesis\Model\GetRecordsResponse.cs" />
+    <Compile Include="Amazon.Kinesis\Model\GetRecordsResult.cs" />
+    <Compile Include="Amazon.Kinesis\Model\GetShardIteratorRequest.cs" />
+    <Compile Include="Amazon.Kinesis\Model\GetShardIteratorResponse.cs" />
+    <Compile Include="Amazon.Kinesis\Model\GetShardIteratorResult.cs" />
+    <Compile Include="Amazon.Kinesis\Model\HashKeyRange.cs" />
+    <Compile Include="Amazon.Kinesis\Model\Internal\MarshallTransformations\CreateStreamRequestMarshaller.cs" />
+    <Compile Include="Amazon.Kinesis\Model\Internal\MarshallTransformations\CreateStreamResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.Kinesis\Model\Internal\MarshallTransformations\DeleteStreamRequestMarshaller.cs" />
+    <Compile Include="Amazon.Kinesis\Model\Internal\MarshallTransformations\DeleteStreamResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.Kinesis\Model\Internal\MarshallTransformations\DescribeStreamRequestMarshaller.cs" />
+    <Compile Include="Amazon.Kinesis\Model\Internal\MarshallTransformations\DescribeStreamResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.Kinesis\Model\Internal\MarshallTransformations\DescribeStreamResultUnmarshaller.cs" />
+    <Compile Include="Amazon.Kinesis\Model\Internal\MarshallTransformations\GetRecordsRequestMarshaller.cs" />
+    <Compile Include="Amazon.Kinesis\Model\Internal\MarshallTransformations\GetRecordsResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.Kinesis\Model\Internal\MarshallTransformations\GetRecordsResultUnmarshaller.cs" />
+    <Compile Include="Amazon.Kinesis\Model\Internal\MarshallTransformations\GetShardIteratorRequestMarshaller.cs" />
+    <Compile Include="Amazon.Kinesis\Model\Internal\MarshallTransformations\GetShardIteratorResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.Kinesis\Model\Internal\MarshallTransformations\GetShardIteratorResultUnmarshaller.cs" />
+    <Compile Include="Amazon.Kinesis\Model\Internal\MarshallTransformations\HashKeyRangeUnmarshaller.cs" />
+    <Compile Include="Amazon.Kinesis\Model\Internal\MarshallTransformations\ListStreamsRequestMarshaller.cs" />
+    <Compile Include="Amazon.Kinesis\Model\Internal\MarshallTransformations\ListStreamsResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.Kinesis\Model\Internal\MarshallTransformations\ListStreamsResultUnmarshaller.cs" />
+    <Compile Include="Amazon.Kinesis\Model\Internal\MarshallTransformations\MergeShardsRequestMarshaller.cs" />
+    <Compile Include="Amazon.Kinesis\Model\Internal\MarshallTransformations\MergeShardsResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.Kinesis\Model\Internal\MarshallTransformations\PutRecordRequestMarshaller.cs" />
+    <Compile Include="Amazon.Kinesis\Model\Internal\MarshallTransformations\PutRecordResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.Kinesis\Model\Internal\MarshallTransformations\PutRecordResultUnmarshaller.cs" />
+    <Compile Include="Amazon.Kinesis\Model\Internal\MarshallTransformations\RecordUnmarshaller.cs" />
+    <Compile Include="Amazon.Kinesis\Model\Internal\MarshallTransformations\SequenceNumberRangeUnmarshaller.cs" />
+    <Compile Include="Amazon.Kinesis\Model\Internal\MarshallTransformations\ShardUnmarshaller.cs" />
+    <Compile Include="Amazon.Kinesis\Model\Internal\MarshallTransformations\SplitShardRequestMarshaller.cs" />
+    <Compile Include="Amazon.Kinesis\Model\Internal\MarshallTransformations\SplitShardResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.Kinesis\Model\Internal\MarshallTransformations\StreamDescriptionUnmarshaller.cs" />
+    <Compile Include="Amazon.Kinesis\Model\InvalidArgumentException.cs" />
+    <Compile Include="Amazon.Kinesis\Model\LimitExceededException.cs" />
+    <Compile Include="Amazon.Kinesis\Model\ListStreamsRequest.cs" />
+    <Compile Include="Amazon.Kinesis\Model\ListStreamsResponse.cs" />
+    <Compile Include="Amazon.Kinesis\Model\ListStreamsResult.cs" />
+    <Compile Include="Amazon.Kinesis\Model\MergeShardsRequest.cs" />
+    <Compile Include="Amazon.Kinesis\Model\MergeShardsResponse.cs" />
+    <Compile Include="Amazon.Kinesis\Model\ProvisionedThroughputExceededException.cs" />
+    <Compile Include="Amazon.Kinesis\Model\PutRecordRequest.cs" />
+    <Compile Include="Amazon.Kinesis\Model\PutRecordResponse.cs" />
+    <Compile Include="Amazon.Kinesis\Model\PutRecordResult.cs" />
+    <Compile Include="Amazon.Kinesis\Model\Record.cs" />
+    <Compile Include="Amazon.Kinesis\Model\ResourceInUseException.cs" />
+    <Compile Include="Amazon.Kinesis\Model\ResourceNotFoundException.cs" />
+    <Compile Include="Amazon.Kinesis\Model\SequenceNumberRange.cs" />
+    <Compile Include="Amazon.Kinesis\Model\Shard.cs" />
+    <Compile Include="Amazon.Kinesis\Model\SplitShardRequest.cs" />
+    <Compile Include="Amazon.Kinesis\Model\SplitShardResponse.cs" />
+    <Compile Include="Amazon.Kinesis\Model\StreamDescription.cs" />
     <Compile Include="Amazon.OpsWorks\AmazonOpsWorks.cs" />
     <Compile Include="Amazon.OpsWorks\AmazonOpsWorksClient.cs" />
     <Compile Include="Amazon.OpsWorks\AmazonOpsWorksConfig.cs" />
@@ -6825,6 +6911,9 @@
     <Compile Include="Amazon.OpsWorks\Model\DescribeLoadBasedAutoScalingResult.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.OpsWorks\Model\DescribeMyUserProfileRequest.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\DescribeMyUserProfileResponse.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\DescribeMyUserProfileResult.cs" />
     <Compile Include="Amazon.OpsWorks\Model\DescribePermissionsRequest.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -6861,6 +6950,9 @@
     <Compile Include="Amazon.OpsWorks\Model\DescribeStacksResult.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.OpsWorks\Model\DescribeStackSummaryRequest.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\DescribeStackSummaryResponse.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\DescribeStackSummaryResult.cs" />
     <Compile Include="Amazon.OpsWorks\Model\DescribeTimeBasedAutoScalingRequest.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -6914,6 +7006,7 @@
     <Compile Include="Amazon.OpsWorks\Model\Instance.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.OpsWorks\Model\InstancesCount.cs" />
     <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\AppUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -7108,6 +7201,9 @@
     <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\DescribeLoadBasedAutoScalingResultUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\DescribeMyUserProfileRequestMarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\DescribeMyUserProfileResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\DescribeMyUserProfileResultUnmarshaller.cs" />
     <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\DescribePermissionsRequestMarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -7144,6 +7240,9 @@
     <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\DescribeStacksResultUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\DescribeStackSummaryRequestMarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\DescribeStackSummaryResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\DescribeStackSummaryResultUnmarshaller.cs" />
     <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\DescribeTimeBasedAutoScalingRequestMarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -7194,6 +7293,7 @@
     <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\GetHostnameSuggestionResultUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\InstancesCountUnmarshaller.cs" />
     <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\InstanceUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -7224,6 +7324,7 @@
     <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\RegisterVolumeRequestMarshaller.cs" />
     <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\RegisterVolumeResponseUnmarshaller.cs" />
     <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\RegisterVolumeResultUnmarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\SelfUserProfileUnmarshaller.cs" />
     <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\ServiceErrorUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -7254,6 +7355,7 @@
     <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\StackConfigurationManagerUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\StackSummaryUnmarshaller.cs" />
     <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\StackUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -7306,6 +7408,8 @@
     <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\UpdateLayerResponseUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\UpdateMyUserProfileRequestMarshaller.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\UpdateMyUserProfileResponseUnmarshaller.cs" />
     <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\UpdateStackRequestMarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -7362,6 +7466,7 @@
     <Compile Include="Amazon.OpsWorks\Model\ResourceNotFoundException.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.OpsWorks\Model\SelfUserProfile.cs" />
     <Compile Include="Amazon.OpsWorks\Model\ServiceError.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -7395,6 +7500,7 @@
     <Compile Include="Amazon.OpsWorks\Model\StackConfigurationManager.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.OpsWorks\Model\StackSummary.cs" />
     <Compile Include="Amazon.OpsWorks\Model\StartInstanceRequest.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -7444,6 +7550,8 @@
     <Compile Include="Amazon.OpsWorks\Model\UpdateLayerResponse.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.OpsWorks\Model\UpdateMyUserProfileRequest.cs" />
+    <Compile Include="Amazon.OpsWorks\Model\UpdateMyUserProfileResponse.cs" />
     <Compile Include="Amazon.OpsWorks\Model\UpdateStackRequest.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -7657,6 +7765,7 @@
     <Compile Include="Amazon.RDS\Model\DBSubnetGroupDoesNotCoverEnoughAZsException.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.RDS\Model\DBSubnetGroupNotAllowedException.cs" />
     <Compile Include="Amazon.RDS\Model\DBSubnetGroupNotFoundException.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -7866,6 +7975,7 @@
     <Compile Include="Amazon.RDS\Model\EventCategoriesMap.cs" />
     <Compile Include="Amazon.RDS\Model\EventSubscription.cs" />
     <Compile Include="Amazon.RDS\Model\EventSubscriptionQuotaExceededException.cs" />
+    <Compile Include="Amazon.RDS\Model\Filter.cs" />
     <Compile Include="Amazon.RDS\Model\InstanceQuotaExceededException.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -8370,6 +8480,7 @@
     <Compile Include="Amazon.RDS\Model\InvalidDBSnapshotStateException.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.RDS\Model\InvalidDBSubnetGroupException.cs" />
     <Compile Include="Amazon.RDS\Model\InvalidDBSubnetGroupStateException.cs">
       <SubType>Code</SubType>
     </Compile>

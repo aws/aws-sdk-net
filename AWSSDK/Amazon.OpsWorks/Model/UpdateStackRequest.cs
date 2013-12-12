@@ -25,7 +25,9 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateStack operation.
-    /// <para>Updates a specified stack.</para>
+    /// <para>Updates a specified stack.</para> <para> <b>Required Permissions</b> : To use this action, an IAM user must have a Manage permissions
+    /// level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a
+    /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
     /// </summary>
     /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.UpdateStack"/>
     public class UpdateStackRequest : AmazonWebServiceRequest
@@ -231,11 +233,11 @@ namespace Amazon.OpsWorks.Model
 
         /// <summary>
         /// The stack's new host name theme, with spaces are replaced by underscores. The theme is used to generate host names for the stack's
-        /// instances. By default, <c>HostnameTheme</c> is set to Layer_Dependent, which creates host names by appending integers to the layer's short
-        /// name. The other themes are: <ul> <li>Baked_Goods</li> <li>Clouds</li> <li>European_Cities</li> <li>Fruits</li> <li>Greek_Deities</li>
-        /// <li>Legendary_Creatures_from_Japan</li> <li>Planets_and_Moons</li> <li>Roman_Deities</li> <li>Scottish_Islands</li> <li>US_Cities</li>
-        /// <li>Wild_Cats</li> </ul> To obtain a generated host name, call <c>GetHostNameSuggestion</c>, which returns a host name based on the current
-        /// theme.
+        /// instances. By default, <c>HostnameTheme</c> is set to <c>Layer_Dependent</c>, which creates host names by appending integers to the layer's
+        /// short name. The other themes are: <ul> <li><c>Baked_Goods</c></li> <li><c>Clouds</c></li> <li><c>European_Cities</c></li>
+        /// <li><c>Fruits</c></li> <li><c>Greek_Deities</c></li> <li><c>Legendary_Creatures_from_Japan</c></li> <li><c>Planets_and_Moons</c></li>
+        /// <li><c>Roman_Deities</c></li> <li><c>Scottish_Islands</c></li> <li><c>US_Cities</c></li> <li><c>Wild_Cats</c></li> </ul> To obtain a
+        /// generated host name, call <c>GetHostNameSuggestion</c>, which returns a host name based on the current theme.
         ///  
         /// </summary>
         public string HostnameTheme

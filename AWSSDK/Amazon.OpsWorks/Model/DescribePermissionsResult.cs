@@ -23,7 +23,7 @@ namespace Amazon.OpsWorks.Model
     /// <summary>
     /// <para>Contains the response to a <c>DescribePermissions</c> request.</para>
     /// </summary>
-    public class DescribePermissionsResult
+    public partial class DescribePermissionsResult
     {
         
         private List<Permission> permissions = new List<Permission>();

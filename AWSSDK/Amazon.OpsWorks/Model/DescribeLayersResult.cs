@@ -23,7 +23,7 @@ namespace Amazon.OpsWorks.Model
     /// <summary>
     /// <para>Contains the response to a <c>DescribeLayers</c> request.</para>
     /// </summary>
-    public class DescribeLayersResult
+    public partial class DescribeLayersResult
     {
         
         private List<Layer> layers = new List<Layer>();

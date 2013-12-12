@@ -25,7 +25,7 @@ namespace Amazon.RDS.Model
     /// describe option groups. For example, the NATIVE_NETWORK_ENCRYPTION option has a setting called SQLNET.ENCRYPTION_SERVER that can have
     /// several different values. </para>
     /// </summary>
-    public class OptionSetting
+    public partial class OptionSetting
     {
         
         private string name;

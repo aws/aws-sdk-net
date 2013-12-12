@@ -23,7 +23,7 @@ namespace Amazon.ElasticBeanstalk.Model
     /// <summary>
     /// <para>Result message containing a list of environment descriptions.</para>
     /// </summary>
-    public class DescribeEnvironmentsResult  
+    public partial class DescribeEnvironmentsResult
     {
         
         private List<EnvironmentDescription> environments = new List<EnvironmentDescription>();
@@ -52,7 +52,7 @@ namespace Amazon.ElasticBeanstalk.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Environments collection
         /// </summary>
@@ -72,7 +72,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if Environments property is set
         internal bool IsSetEnvironments()
         {
-            return this.environments.Count > 0;       
+            return this.environments.Count > 0;
         }
     }
 }

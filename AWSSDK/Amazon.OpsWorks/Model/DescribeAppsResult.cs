@@ -23,7 +23,7 @@ namespace Amazon.OpsWorks.Model
     /// <summary>
     /// <para>Contains the response to a <c>DescribeApps</c> request.</para>
     /// </summary>
-    public class DescribeAppsResult
+    public partial class DescribeAppsResult
     {
         
         private List<App> apps = new List<App>();

@@ -23,7 +23,7 @@ namespace Amazon.ElasticBeanstalk.Model
     /// <summary>
     /// <para>Result message wrapping a list of application version descriptions.</para>
     /// </summary>
-    public class DescribeApplicationVersionsResult  
+    public partial class DescribeApplicationVersionsResult
     {
         
         private List<ApplicationVersionDescription> applicationVersions = new List<ApplicationVersionDescription>();
@@ -52,7 +52,7 @@ namespace Amazon.ElasticBeanstalk.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the ApplicationVersions collection
         /// </summary>
@@ -72,7 +72,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if ApplicationVersions property is set
         internal bool IsSetApplicationVersions()
         {
-            return this.applicationVersions.Count > 0;       
+            return this.applicationVersions.Count > 0;
         }
     }
 }

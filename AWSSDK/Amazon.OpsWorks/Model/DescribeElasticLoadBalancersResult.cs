@@ -23,7 +23,7 @@ namespace Amazon.OpsWorks.Model
     /// <summary>
     /// <para>Contains the response to a <c>DescribeElasticLoadBalancers</c> request.</para>
     /// </summary>
-    public class DescribeElasticLoadBalancersResult
+    public partial class DescribeElasticLoadBalancersResult
     {
         
         private List<ElasticLoadBalancer> elasticLoadBalancers = new List<ElasticLoadBalancer>();

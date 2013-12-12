@@ -23,7 +23,7 @@ namespace Amazon.ElasticBeanstalk.Model
     /// <summary>
     /// <para> Describes the possible values for a configuration option. </para>
     /// </summary>
-    public class ConfigurationOptionDescription  
+    public partial class ConfigurationOptionDescription
     {
         
         private string namespaceValue;
@@ -64,7 +64,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if Namespace property is set
         internal bool IsSetNamespace()
         {
-            return this.namespaceValue != null;       
+            return this.namespaceValue != null;
         }
 
         /// <summary>
@@ -93,7 +93,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if Name property is set
         internal bool IsSetName()
         {
-            return this.name != null;       
+            return this.name != null;
         }
 
         /// <summary>
@@ -122,7 +122,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if DefaultValue property is set
         internal bool IsSetDefaultValue()
         {
-            return this.defaultValue != null;       
+            return this.defaultValue != null;
         }
 
         /// <summary>
@@ -159,7 +159,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if ChangeSeverity property is set
         internal bool IsSetChangeSeverity()
         {
-            return this.changeSeverity != null;       
+            return this.changeSeverity != null;
         }
 
         /// <summary>
@@ -193,7 +193,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if UserDefined property is set
         internal bool IsSetUserDefined()
         {
-            return this.userDefined.HasValue;       
+            return this.userDefined.HasValue;
         }
 
         /// <summary>
@@ -238,7 +238,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if ValueType property is set
         internal bool IsSetValueType()
         {
-            return this.valueType != null;       
+            return this.valueType != null;
         }
 
         /// <summary>
@@ -265,7 +265,7 @@ namespace Amazon.ElasticBeanstalk.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the ValueOptions collection
         /// </summary>
@@ -285,7 +285,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if ValueOptions property is set
         internal bool IsSetValueOptions()
         {
-            return this.valueOptions.Count > 0;       
+            return this.valueOptions.Count > 0;
         }
 
         /// <summary>
@@ -314,7 +314,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if MinValue property is set
         internal bool IsSetMinValue()
         {
-            return this.minValue.HasValue;       
+            return this.minValue.HasValue;
         }
 
         /// <summary>
@@ -343,7 +343,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if MaxValue property is set
         internal bool IsSetMaxValue()
         {
-            return this.maxValue.HasValue;       
+            return this.maxValue.HasValue;
         }
 
         /// <summary>
@@ -372,7 +372,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if MaxLength property is set
         internal bool IsSetMaxLength()
         {
-            return this.maxLength.HasValue;       
+            return this.maxLength.HasValue;
         }
 
         /// <summary>
@@ -401,7 +401,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if Regex property is set
         internal bool IsSetRegex()
         {
-            return this.regex != null;       
+            return this.regex != null;
         }
     }
 }

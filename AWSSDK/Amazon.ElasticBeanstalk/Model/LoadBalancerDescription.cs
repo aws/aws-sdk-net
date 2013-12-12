@@ -23,7 +23,7 @@ namespace Amazon.ElasticBeanstalk.Model
     /// <summary>
     /// <para>Describes the details of a LoadBalancer.</para>
     /// </summary>
-    public class LoadBalancerDescription  
+    public partial class LoadBalancerDescription
     {
         
         private string loadBalancerName;
@@ -56,7 +56,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if LoadBalancerName property is set
         internal bool IsSetLoadBalancerName()
         {
-            return this.loadBalancerName != null;       
+            return this.loadBalancerName != null;
         }
 
         /// <summary>
@@ -85,7 +85,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if Domain property is set
         internal bool IsSetDomain()
         {
-            return this.domain != null;       
+            return this.domain != null;
         }
 
         /// <summary>
@@ -112,7 +112,7 @@ namespace Amazon.ElasticBeanstalk.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Listeners collection
         /// </summary>
@@ -132,7 +132,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if Listeners property is set
         internal bool IsSetListeners()
         {
-            return this.listeners.Count > 0;       
+            return this.listeners.Count > 0;
         }
     }
 }

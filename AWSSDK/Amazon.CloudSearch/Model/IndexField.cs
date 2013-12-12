@@ -24,7 +24,7 @@ namespace Amazon.CloudSearch.Model
     /// <para>Defines a field in the index, including its name, type, and the source of its data. The <c>IndexFieldType</c> indicates which of the
     /// options will be present. It is invalid to specify options for a type other than the <c>IndexFieldType</c> .</para>
     /// </summary>
-    public class IndexField  
+    public partial class IndexField
     {
         
         private string indexFieldName;
@@ -75,7 +75,7 @@ namespace Amazon.CloudSearch.Model
         // Check to see if IndexFieldName property is set
         internal bool IsSetIndexFieldName()
         {
-            return this.indexFieldName != null;       
+            return this.indexFieldName != null;
         }
 
         /// <summary>
@@ -113,7 +113,7 @@ namespace Amazon.CloudSearch.Model
         // Check to see if IndexFieldType property is set
         internal bool IsSetIndexFieldType()
         {
-            return this.indexFieldType != null;       
+            return this.indexFieldType != null;
         }
 
         /// <summary>
@@ -142,7 +142,7 @@ namespace Amazon.CloudSearch.Model
         // Check to see if UIntOptions property is set
         internal bool IsSetUIntOptions()
         {
-            return this.uIntOptions != null;       
+            return this.uIntOptions != null;
         }
 
         /// <summary>
@@ -171,7 +171,7 @@ namespace Amazon.CloudSearch.Model
         // Check to see if LiteralOptions property is set
         internal bool IsSetLiteralOptions()
         {
-            return this.literalOptions != null;       
+            return this.literalOptions != null;
         }
 
         /// <summary>
@@ -200,7 +200,7 @@ namespace Amazon.CloudSearch.Model
         // Check to see if TextOptions property is set
         internal bool IsSetTextOptions()
         {
-            return this.textOptions != null;       
+            return this.textOptions != null;
         }
 
         /// <summary>
@@ -229,7 +229,7 @@ namespace Amazon.CloudSearch.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the SourceAttributes collection
         /// </summary>
@@ -249,7 +249,7 @@ namespace Amazon.CloudSearch.Model
         // Check to see if SourceAttributes property is set
         internal bool IsSetSourceAttributes()
         {
-            return this.sourceAttributes.Count > 0;       
+            return this.sourceAttributes.Count > 0;
         }
     }
 }

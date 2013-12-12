@@ -23,7 +23,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// 
     /// </summary>
-    public class ListTagsForResourceResult
+    public partial class ListTagsForResourceResult
     {
         
         private List<Tag> tagList = new List<Tag>();

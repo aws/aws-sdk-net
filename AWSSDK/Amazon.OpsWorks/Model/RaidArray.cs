@@ -23,7 +23,7 @@ namespace Amazon.OpsWorks.Model
     /// <summary>
     /// <para>Describes an instance's RAID array.</para>
     /// </summary>
-    public class RaidArray
+    public partial class RaidArray
     {
         
         private string raidArrayId;

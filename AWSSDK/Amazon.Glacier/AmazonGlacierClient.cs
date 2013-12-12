@@ -48,7 +48,7 @@ namespace Amazon.Glacier
     /// 
     /// </ul>
     /// </summary>
-    public class AmazonGlacierClient : AmazonWebServiceClient, AmazonGlacier
+    public partial class AmazonGlacierClient : AmazonWebServiceClient, AmazonGlacier
     {
     
         AbstractAWSSigner signer = new AWS4Signer();
@@ -1839,32 +1839,6 @@ namespace Amazon.Glacier
 
         #endregion
     
-        protected override void Initialize()
-        {
-            this.config.UseNagleAlgorithm = true;
-            this.config.ResignRetries = true;
-        }
-
-        /// <summary>
-        /// Add API version header
-        /// </summary>
-        /// <param name="request"></param>
-        protected override void ProcessRequestHandlers(IRequest request)
-        {
-            if (request.ResourcePath != null)
-            {
-                if (request.ResourcePath.StartsWith("//"))
-                {
-                    request.ResourcePath = "/-" + request.ResourcePath.Substring(1);
-                }
-            }
-
-            base.ProcessRequestHandlers(request);
-            request.Headers["x-amz-glacier-version"] = "2012-06-01";
-        }
-
-
-
     }
 }
     

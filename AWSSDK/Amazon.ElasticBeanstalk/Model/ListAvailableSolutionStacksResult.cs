@@ -23,7 +23,7 @@ namespace Amazon.ElasticBeanstalk.Model
     /// <summary>
     /// <para>A list of available AWS Elastic Beanstalk solution stacks. </para>
     /// </summary>
-    public class ListAvailableSolutionStacksResult  
+    public partial class ListAvailableSolutionStacksResult
     {
         
         private List<string> solutionStacks = new List<string>();
@@ -53,7 +53,7 @@ namespace Amazon.ElasticBeanstalk.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the SolutionStacks collection
         /// </summary>
@@ -73,7 +73,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if SolutionStacks property is set
         internal bool IsSetSolutionStacks()
         {
-            return this.solutionStacks.Count > 0;       
+            return this.solutionStacks.Count > 0;
         }
 
         /// <summary>
@@ -100,7 +100,7 @@ namespace Amazon.ElasticBeanstalk.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the SolutionStackDetails collection
         /// </summary>
@@ -120,7 +120,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if SolutionStackDetails property is set
         internal bool IsSetSolutionStackDetails()
         {
-            return this.solutionStackDetails.Count > 0;       
+            return this.solutionStackDetails.Count > 0;
         }
     }
 }

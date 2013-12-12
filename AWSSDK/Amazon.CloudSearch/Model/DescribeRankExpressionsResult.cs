@@ -23,7 +23,7 @@ namespace Amazon.CloudSearch.Model
     /// <summary>
     /// <para>A response message that contains the rank expressions for a search domain.</para>
     /// </summary>
-    public class DescribeRankExpressionsResult  
+    public partial class DescribeRankExpressionsResult
     {
         
         private List<RankExpressionStatus> rankExpressions = new List<RankExpressionStatus>();
@@ -52,7 +52,7 @@ namespace Amazon.CloudSearch.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the RankExpressions collection
         /// </summary>
@@ -72,7 +72,7 @@ namespace Amazon.CloudSearch.Model
         // Check to see if RankExpressions property is set
         internal bool IsSetRankExpressions()
         {
-            return this.rankExpressions.Count > 0;       
+            return this.rankExpressions.Count > 0;
         }
     }
 }

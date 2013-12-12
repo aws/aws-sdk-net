@@ -23,7 +23,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// <para> This data type is used as a response element in the DescribeEvents action. </para>
     /// </summary>
-    public class Event
+    public partial class Event
     {
         
         private string sourceIdentifier;

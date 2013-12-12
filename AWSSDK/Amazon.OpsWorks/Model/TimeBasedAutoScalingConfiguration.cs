@@ -23,7 +23,7 @@ namespace Amazon.OpsWorks.Model
     /// <summary>
     /// <para>Describes an instance's time-based auto scaling configuration.</para>
     /// </summary>
-    public class TimeBasedAutoScalingConfiguration
+    public partial class TimeBasedAutoScalingConfiguration
     {
         
         private string instanceId;

@@ -23,7 +23,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// The results from the RestoreDBInstanceFromDBSnapshot action.
     /// </summary>
-    public class RestoreDBInstanceFromDBSnapshotResult
+    public partial class RestoreDBInstanceFromDBSnapshotResult
     {
         private DBInstance dBInstanceValue;
 

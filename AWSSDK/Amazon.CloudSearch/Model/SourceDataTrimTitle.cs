@@ -23,7 +23,7 @@ namespace Amazon.CloudSearch.Model
     /// <summary>
     /// <para>Specifies how to trim common words from the beginning of a field to enable title sorting by that field.</para>
     /// </summary>
-    public class SourceDataTrimTitle
+    public partial class SourceDataTrimTitle
     {
         
         private string sourceName;

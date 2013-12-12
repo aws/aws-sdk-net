@@ -23,7 +23,7 @@ namespace Amazon.ElasticBeanstalk.Model
     /// <summary>
     /// <para>Describes the AWS resources in use by this environment. This data is not live data.</para>
     /// </summary>
-    public class EnvironmentResourcesDescription  
+    public partial class EnvironmentResourcesDescription
     {
         
         private LoadBalancerDescription loadBalancer;
@@ -54,7 +54,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if LoadBalancer property is set
         internal bool IsSetLoadBalancer()
         {
-            return this.loadBalancer != null;       
+            return this.loadBalancer != null;
         }
     }
 }

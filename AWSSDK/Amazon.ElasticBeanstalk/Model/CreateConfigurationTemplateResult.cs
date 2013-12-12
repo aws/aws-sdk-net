@@ -23,7 +23,7 @@ namespace Amazon.ElasticBeanstalk.Model
     /// <summary>
     /// <para> Describes the settings for a configuration set. </para>
     /// </summary>
-    public class CreateConfigurationTemplateResult  
+    public partial class CreateConfigurationTemplateResult
     {
         
         private string solutionStackName;
@@ -71,7 +71,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if SolutionStackName property is set
         internal bool IsSetSolutionStackName()
         {
-            return this.solutionStackName != null;       
+            return this.solutionStackName != null;
         }
 
         /// <summary>
@@ -109,7 +109,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if ApplicationName property is set
         internal bool IsSetApplicationName()
         {
-            return this.applicationName != null;       
+            return this.applicationName != null;
         }
 
         /// <summary>
@@ -147,7 +147,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if TemplateName property is set
         internal bool IsSetTemplateName()
         {
-            return this.templateName != null;       
+            return this.templateName != null;
         }
 
         /// <summary>
@@ -185,7 +185,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if Description property is set
         internal bool IsSetDescription()
         {
-            return this.description != null;       
+            return this.description != null;
         }
 
         /// <summary>
@@ -223,7 +223,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if EnvironmentName property is set
         internal bool IsSetEnvironmentName()
         {
-            return this.environmentName != null;       
+            return this.environmentName != null;
         }
 
         /// <summary>
@@ -269,7 +269,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if DeploymentStatus property is set
         internal bool IsSetDeploymentStatus()
         {
-            return this.deploymentStatus != null;       
+            return this.deploymentStatus != null;
         }
 
         /// <summary>
@@ -298,7 +298,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if DateCreated property is set
         internal bool IsSetDateCreated()
         {
-            return this.dateCreated.HasValue;       
+            return this.dateCreated.HasValue;
         }
 
         /// <summary>
@@ -327,7 +327,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if DateUpdated property is set
         internal bool IsSetDateUpdated()
         {
-            return this.dateUpdated.HasValue;       
+            return this.dateUpdated.HasValue;
         }
 
         /// <summary>
@@ -354,7 +354,7 @@ namespace Amazon.ElasticBeanstalk.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the OptionSettings collection
         /// </summary>
@@ -374,7 +374,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if OptionSettings property is set
         internal bool IsSetOptionSettings()
         {
-            return this.optionSettings.Count > 0;       
+            return this.optionSettings.Count > 0;
         }
     }
 }

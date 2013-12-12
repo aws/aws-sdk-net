@@ -25,11 +25,11 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDBParameterGroup operation.
-    /// <para> Creates a new DB Parameter Group. </para> <para> A DB Parameter Group is initially created with the default parameters for the
-    /// database engine used by the DB Instance. To provide custom values for any of the parameters, you must modify the group after creating it
-    /// using <i>ModifyDBParameterGroup</i> . Once you've created a DB Parameter Group, you need to associate it with your DB Instance using
-    /// <i>ModifyDBInstance</i> . When you associate a new DB Parameter Group with a running DB Instance, you need to reboot the DB Instance for the
-    /// new DB Parameter Group and associated settings to take effect. </para>
+    /// <para> Creates a new DB parameter group. </para> <para> A DB parameter group is initially created with the default parameters for the
+    /// database engine used by the DB instance. To provide custom values for any of the parameters, you must modify the group after creating it
+    /// using <i>ModifyDBParameterGroup</i> . Once you've created a DB parameter group, you need to associate it with your DB instance using
+    /// <i>ModifyDBInstance</i> . When you associate a new DB parameter group with a running DB instance, you need to reboot the DB Instance for the
+    /// new DB parameter group and associated settings to take effect. </para>
     /// </summary>
     /// <seealso cref="Amazon.RDS.AmazonRDS.CreateDBParameterGroup"/>
     public class CreateDBParameterGroupRequest : AmazonWebServiceRequest
@@ -37,9 +37,10 @@ namespace Amazon.RDS.Model
         private string dBParameterGroupName;
         private string dBParameterGroupFamily;
         private string description;
+        private List<Tag> tags = new List<Tag>();
 
         /// <summary>
-        /// The name of the DB Parameter Group. Constraints: <ul> <li>Must be 1 to 255 alphanumeric characters</li> <li>First character must be a
+        /// The name of the DB parameter group. Constraints: <ul> <li>Must be 1 to 255 alphanumeric characters</li> <li>First character must be a
         /// letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul> <note>This value is stored as a lower-case
         /// string.</note>
         ///  
@@ -70,8 +71,8 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The DB Parameter Group Family name. A DB Parameter Group can be associated with one and only one DB Parameter Group Family, and can be
-        /// applied only to a DB Instance running a database engine and engine version compatible with that DB Parameter Group Family.
+        /// The DB parameter group family name. A DB parameter group can be associated with one and only one DB parameter group family, and can be
+        /// applied only to a DB instance running a database engine and engine version compatible with that DB parameter group family.
         ///  
         /// </summary>
         public string DBParameterGroupFamily
@@ -100,7 +101,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The description for the DB Parameter Group.
+        /// The description for the DB parameter group.
         ///  
         /// </summary>
         public string Description
@@ -126,6 +127,53 @@ namespace Amazon.RDS.Model
         internal bool IsSetDescription()
         {
             return this.description != null;
+        }
+
+        /// <summary>
+        /// A list of tags.
+        ///  
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this.tags; }
+            set { this.tags = value; }
+        }
+        /// <summary>
+        /// Adds elements to the Tags collection
+        /// </summary>
+        /// <param name="tags">The values to add to the Tags collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public CreateDBParameterGroupRequest WithTags(params Tag[] tags)
+        {
+            foreach (Tag element in tags)
+            {
+                this.tags.Add(element);
+            }
+
+            return this;
+        }
+
+        /// <summary>
+        /// Adds elements to the Tags collection
+        /// </summary>
+        /// <param name="tags">The values to add to the Tags collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public CreateDBParameterGroupRequest WithTags(IEnumerable<Tag> tags)
+        {
+            foreach (Tag element in tags)
+            {
+                this.tags.Add(element);
+            }
+
+            return this;
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this.tags.Count > 0;
         }
     }
 }

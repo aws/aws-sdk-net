@@ -23,7 +23,7 @@ namespace Amazon.OpsWorks.Model
     /// <summary>
     /// <para>Contains the response to a <c>DescribeVolumes</c> request.</para>
     /// </summary>
-    public class DescribeVolumesResult
+    public partial class DescribeVolumesResult
     {
         
         private List<Volume> volumes = new List<Volume>();

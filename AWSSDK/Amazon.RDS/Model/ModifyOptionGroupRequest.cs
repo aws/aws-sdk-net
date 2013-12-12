@@ -25,7 +25,7 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyOptionGroup operation.
-    /// <para> Modifies an existing Option Group. </para>
+    /// <para> Modifies an existing option group. </para>
     /// </summary>
     /// <seealso cref="Amazon.RDS.AmazonRDS.ModifyOptionGroup"/>
     public class ModifyOptionGroupRequest : AmazonWebServiceRequest
@@ -68,7 +68,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Options in this list are added to the Option Group or, if already present, the specified configuration is used to update the existing
+        /// Options in this list are added to the option group or, if already present, the specified configuration is used to update the existing
         /// configuration.
         ///  
         /// </summary>
@@ -116,7 +116,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Options in this list are removed from the Option Group.
+        /// Options in this list are removed from the option group.
         ///  
         /// </summary>
         public List<string> OptionsToRemove
@@ -164,7 +164,7 @@ namespace Amazon.RDS.Model
 
         /// <summary>
         /// Indicates whether the changes should be applied immediately, or during the next maintenance window for each instance associated with the
-        /// Option Group.
+        /// option group.
         ///  
         /// </summary>
         public bool ApplyImmediately

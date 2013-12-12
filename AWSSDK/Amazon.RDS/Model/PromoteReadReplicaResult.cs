@@ -23,7 +23,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// The results from the PromoteReadReplica action.
     /// </summary>
-    public class PromoteReadReplicaResult
+    public partial class PromoteReadReplicaResult
     {
         private DBInstance dBInstanceValue;
 

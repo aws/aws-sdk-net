@@ -23,7 +23,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// The results from the AddSourceIdentifierToSubscription action.
     /// </summary>
-    public class AddSourceIdentifierToSubscriptionResult
+    public partial class AddSourceIdentifierToSubscriptionResult
     {
         private EventSubscription eventSubscriptionValue;
 

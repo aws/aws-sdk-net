@@ -23,7 +23,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// <para> Contains the result of a successful invocation of the DescribeDBParameterGroups action. </para>
     /// </summary>
-    public class DescribeDBParameterGroupsResult
+    public partial class DescribeDBParameterGroupsResult
     {
         
         private string marker;

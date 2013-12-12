@@ -21,9 +21,12 @@ using System.IO;
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
-    /// <para> A specification identifying an individual configuration option along with its current value. </para>
+    /// <para> A specification identifying an individual configuration option along with its current value. For a list of possible option values, go
+    /// to <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options.html" >Option Values</a> in the <i>AWS Elastic Beanstalk
+    /// Developer Guide</i> .
+    /// </para>
     /// </summary>
-    public class ConfigurationOptionSetting  
+    public partial class ConfigurationOptionSetting
     {
         
         private string namespaceValue;
@@ -56,7 +59,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if Namespace property is set
         internal bool IsSetNamespace()
         {
-            return this.namespaceValue != null;       
+            return this.namespaceValue != null;
         }
 
         /// <summary>
@@ -85,7 +88,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if OptionName property is set
         internal bool IsSetOptionName()
         {
-            return this.optionName != null;       
+            return this.optionName != null;
         }
 
         /// <summary>
@@ -114,7 +117,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if Value property is set
         internal bool IsSetValue()
         {
-            return this.value != null;       
+            return this.value != null;
         }
     }
 }

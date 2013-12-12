@@ -23,7 +23,7 @@ namespace Amazon.CloudSearch.Model
     /// <summary>
     /// <para>Options that define a literal field in the search index.</para>
     /// </summary>
-    public class LiteralOptions
+    public partial class LiteralOptions
     {
         
         private string defaultValue;

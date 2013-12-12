@@ -25,9 +25,9 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDBInstanceReadReplica operation.
-    /// <para> Creates a DB Instance that acts as a Read Replica of a source DB Instance. </para> <para> All Read Replica DB Instances are created
-    /// as Single-AZ deployments with backups disabled. All other DB Instance attributes (including DB Security Groups and DB Parameter Groups) are
-    /// inherited from the source DB Instance, except as specified below. </para> <para><b>IMPORTANT:</b> The source DB Instance must have backup
+    /// <para> Creates a DB instance that acts as a read replica of a source DB instance. </para> <para> All read replica DB instances are created
+    /// as Single-AZ deployments with backups disabled. All other DB instance attributes (including DB security groups and DB parameter groups) are
+    /// inherited from the source DB instance, except as specified below. </para> <para><b>IMPORTANT:</b> The source DB instance must have backup
     /// retention enabled. </para>
     /// </summary>
     /// <seealso cref="Amazon.RDS.AmazonRDS.CreateDBInstanceReadReplica"/>
@@ -42,9 +42,11 @@ namespace Amazon.RDS.Model
         private int? iops;
         private string optionGroupName;
         private bool? publiclyAccessible;
+        private List<Tag> tags = new List<Tag>();
+        private string dBSubnetGroupName;
 
         /// <summary>
-        /// The DB Instance identifier of the Read Replica. This is the unique key that identifies a DB Instance. This parameter is stored as a
+        /// The DB instance identifier of the read replica. This is the unique key that identifies a DB instance. This parameter is stored as a
         /// lowercase string.
         ///  
         /// </summary>
@@ -74,8 +76,10 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The identifier of the DB Instance that will act as the source for the Read Replica. Each DB Instance can have up to five Read Replicas.
-        /// Constraints: Must be the identifier of an existing DB Instance that is not already a Read Replica DB Instance.
+        /// The identifier of the DB instance that will act as the source for the read replica. Each DB instance can have up to five read replicas.
+        /// Constraints: <ul> <li>Must be the identifier of an existing DB instance.</li> <li>Can specify a DB instance that is a read replica only if
+        /// the source is running MySQL 5.6.</li> <li>The specified DB instance must have automatic backups enabled, its backup retention period must be
+        /// greater than 0.</li> </ul>
         ///  
         /// </summary>
         public string SourceDBInstanceIdentifier
@@ -104,8 +108,8 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The compute and memory capacity of the Read Replica. Valid Values: <c>db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge | db.m2.xlarge
-        /// |db.m2.2xlarge | db.m2.4xlarge</c> Default: Inherits from the source DB Instance.
+        /// The compute and memory capacity of the read replica. Valid Values: <c>db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge | db.m2.xlarge
+        /// |db.m2.2xlarge | db.m2.4xlarge</c> Default: Inherits from the source DB instance.
         ///  
         /// </summary>
         public string DBInstanceClass
@@ -134,7 +138,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The Amazon EC2 Availability Zone that the Read Replica will be created in. Default: A random, system-chosen Availability Zone in the
+        /// The Amazon EC2 Availability Zone that the read replica will be created in. Default: A random, system-chosen Availability Zone in the
         /// endpoint's region. Example: <c>us-east-1d</c>
         ///  
         /// </summary>
@@ -164,7 +168,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The port number that the DB Instance uses for connections. Default: Inherits from the source DB Instance Valid Values: <c>1150-65535</c>
+        /// The port number that the DB instance uses for connections. Default: Inherits from the source DB instance Valid Values: <c>1150-65535</c>
         ///  
         /// </summary>
         public int Port
@@ -193,8 +197,8 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Indicates that minor engine upgrades will be applied automatically to the Read Replica during the maintenance window. Default: Inherits from
-        /// the source DB Instance
+        /// Indicates that minor engine upgrades will be applied automatically to the read replica during the maintenance window. Default: Inherits from
+        /// the source DB instance
         ///  
         /// </summary>
         public bool AutoMinorVersionUpgrade
@@ -223,7 +227,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for the DB Instance.
+        /// The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for the DB instance.
         ///  
         /// </summary>
         public int Iops
@@ -252,7 +256,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The option group the DB instance will be associated with. If omitted, the default Option Group for the engine specified will be used.
+        /// The option group the DB instance will be associated with. If omitted, the default option group for the engine specified will be used.
         ///  
         /// </summary>
         public string OptionGroupName
@@ -281,7 +285,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Specifies the accessibility options for the DB Instance. A value of true specifies an Internet-facing instance with a publicly resolvable
+        /// Specifies the accessibility options for the DB instance. A value of true specifies an Internet-facing instance with a publicly resolvable
         /// DNS name, which resolves to a public IP address. A value of false specifies an internal instance with a DNS name that resolves to a private
         /// IP address. Default: The default behavior varies depending on whether a VPC has been requested or not. The following list shows the default
         /// behavior in each case. <ul> <li><b>Default VPC:</b>true</li> <li><b>VPC:</b>false</li> </ul> If no DB subnet group has been specified as
@@ -312,6 +316,83 @@ namespace Amazon.RDS.Model
         internal bool IsSetPubliclyAccessible()
         {
             return this.publiclyAccessible.HasValue;
+        }
+
+        /// <summary>
+        /// A list of tags.
+        ///  
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this.tags; }
+            set { this.tags = value; }
+        }
+        /// <summary>
+        /// Adds elements to the Tags collection
+        /// </summary>
+        /// <param name="tags">The values to add to the Tags collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public CreateDBInstanceReadReplicaRequest WithTags(params Tag[] tags)
+        {
+            foreach (Tag element in tags)
+            {
+                this.tags.Add(element);
+            }
+
+            return this;
+        }
+
+        /// <summary>
+        /// Adds elements to the Tags collection
+        /// </summary>
+        /// <param name="tags">The values to add to the Tags collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public CreateDBInstanceReadReplicaRequest WithTags(IEnumerable<Tag> tags)
+        {
+            foreach (Tag element in tags)
+            {
+                this.tags.Add(element);
+            }
+
+            return this;
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this.tags.Count > 0;
+        }
+
+        /// <summary>
+        /// A DB Subnet Group to associate with this DB Instance in case of a cross region read replica. If there is no DB Subnet Group, then it is a
+        /// non-VPC DB instance. Constraints: All the cross region read replicas that share the source instance should lie within the same VPC.
+        ///  
+        /// </summary>
+        public string DBSubnetGroupName
+        {
+            get { return this.dBSubnetGroupName; }
+            set { this.dBSubnetGroupName = value; }
+        }
+
+        /// <summary>
+        /// Sets the DBSubnetGroupName property
+        /// </summary>
+        /// <param name="dBSubnetGroupName">The value to set for the DBSubnetGroupName property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public CreateDBInstanceReadReplicaRequest WithDBSubnetGroupName(string dBSubnetGroupName)
+        {
+            this.dBSubnetGroupName = dBSubnetGroupName;
+            return this;
+        }
+            
+
+        // Check to see if DBSubnetGroupName property is set
+        internal bool IsSetDBSubnetGroupName()
+        {
+            return this.dBSubnetGroupName != null;
         }
     }
 }

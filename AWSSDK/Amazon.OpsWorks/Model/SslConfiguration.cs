@@ -23,7 +23,7 @@ namespace Amazon.OpsWorks.Model
     /// <summary>
     /// <para>Describes an app's SSL configuration.</para>
     /// </summary>
-    public class SslConfiguration
+    public partial class SslConfiguration
     {
         
         private string certificate;

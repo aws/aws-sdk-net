@@ -23,7 +23,7 @@ namespace Amazon.CloudSearch.Model
     /// <summary>
     /// <para>Options that define a text field in the search index.</para>
     /// </summary>
-    public class TextOptions
+    public partial class TextOptions
     {
         
         private string defaultValue;

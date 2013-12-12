@@ -75,7 +75,7 @@ namespace Amazon.CloudSearch.Model
         // Check to see if DomainName property is set
         internal bool IsSetDomainName()
         {
-            return this.domainName != null;       
+            return this.domainName != null;
         }
 
         /// <summary>
@@ -105,7 +105,7 @@ namespace Amazon.CloudSearch.Model
         // Check to see if IndexField property is set
         internal bool IsSetIndexField()
         {
-            return this.indexField != null;       
+            return this.indexField != null;
         }
     }
 }

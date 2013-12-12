@@ -23,7 +23,7 @@ namespace Amazon.ElasticBeanstalk.Model
     /// <summary>
     /// <para>The results from a request to change the configuration settings of an environment.</para>
     /// </summary>
-    public class DescribeConfigurationSettingsResult  
+    public partial class DescribeConfigurationSettingsResult
     {
         
         private List<ConfigurationSettingsDescription> configurationSettings = new List<ConfigurationSettingsDescription>();
@@ -52,7 +52,7 @@ namespace Amazon.ElasticBeanstalk.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the ConfigurationSettings collection
         /// </summary>
@@ -72,7 +72,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if ConfigurationSettings property is set
         internal bool IsSetConfigurationSettings()
         {
-            return this.configurationSettings.Count > 0;       
+            return this.configurationSettings.Count > 0;
         }
     }
 }

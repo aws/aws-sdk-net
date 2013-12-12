@@ -23,7 +23,7 @@ namespace Amazon.CloudSearch.Model
     /// <summary>
     /// <para>The value of the <c>DefaultSearchField</c> configured for this search domain and its current status.</para>
     /// </summary>
-    public class DefaultSearchFieldStatus  
+    public partial class DefaultSearchFieldStatus
     {
         
         private string options;
@@ -69,7 +69,7 @@ namespace Amazon.CloudSearch.Model
         // Check to see if Options property is set
         internal bool IsSetOptions()
         {
-            return this.options != null;       
+            return this.options != null;
         }
 
         /// <summary>
@@ -98,7 +98,7 @@ namespace Amazon.CloudSearch.Model
         // Check to see if Status property is set
         internal bool IsSetStatus()
         {
-            return this.status != null;       
+            return this.status != null;
         }
     }
 }

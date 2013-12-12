@@ -23,7 +23,7 @@ namespace Amazon.OpsWorks.Model
     /// <summary>
     /// <para>Describes an Elastic Load Balancing instance.</para>
     /// </summary>
-    public class ElasticLoadBalancer
+    public partial class ElasticLoadBalancer
     {
         
         private string elasticLoadBalancerName;

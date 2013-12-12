@@ -23,7 +23,7 @@ namespace Amazon.OpsWorks.Model
     /// <summary>
     /// <para>Describes a command.</para>
     /// </summary>
-    public class Command
+    public partial class Command
     {
         
         private string commandId;
@@ -299,8 +299,9 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// The command type: <ul> <li>deploy</li> <li>rollback</li> <li>start</li> <li>stop</li> <li>restart</li> <li>undeploy</li>
-        /// <li>update_dependencies</li> <li>install_dependencies</li> <li>update_custom_cookbooks</li> <li>execute_recipes</li> </ul>
+        /// The command type: <ul> <li><c>deploy</c></li> <li><c>rollback</c></li> <li><c>start</c></li> <li><c>stop</c></li> <li><c>restart</c></li>
+        /// <li><c>undeploy</c></li> <li><c>update_dependencies</c></li> <li><c>install_dependencies</c></li> <li><c>update_custom_cookbooks</c></li>
+        /// <li><c>execute_recipes</c></li> </ul>
         ///  
         /// </summary>
         public string Type

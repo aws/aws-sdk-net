@@ -26,7 +26,8 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// Container for the parameters to the DescribeEventCategories operation.
     /// <para>Displays a list of categories for all event source types, or, if specified, for a specified source type. You can see a list of the
-    /// event categories and source types in the Events topic in the Amazon RDS User Guide.</para>
+    /// event categories and source types in the <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html" > Events</a> topic
+    /// in the Amazon RDS User Guide.</para>
     /// </summary>
     /// <seealso cref="Amazon.RDS.AmazonRDS.DescribeEventCategories"/>
     public class DescribeEventCategoriesRequest : AmazonWebServiceRequest

@@ -23,14 +23,14 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// <para> Contains the result of a successful invocation of the DescribeDBParameters action. </para>
     /// </summary>
-    public class DescribeDBParametersResult
+    public partial class DescribeDBParametersResult
     {
         
         private List<Parameter> parameters = new List<Parameter>();
         private string marker;
 
         /// <summary>
-        /// A list of <a>Parameter</a> instances.
+        /// A list of <a>Parameter</a> values.
         ///  
         /// </summary>
         public List<Parameter> Parameters

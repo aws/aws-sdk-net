@@ -23,7 +23,7 @@ namespace Amazon.ElasticBeanstalk.Model
     /// <summary>
     /// <para>Result message containing a list of application descriptions.</para>
     /// </summary>
-    public class DescribeApplicationsResult  
+    public partial class DescribeApplicationsResult
     {
         
         private List<ApplicationDescription> applications = new List<ApplicationDescription>();
@@ -52,7 +52,7 @@ namespace Amazon.ElasticBeanstalk.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Applications collection
         /// </summary>
@@ -72,7 +72,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if Applications property is set
         internal bool IsSetApplications()
         {
-            return this.applications.Count > 0;       
+            return this.applications.Count > 0;
         }
     }
 }

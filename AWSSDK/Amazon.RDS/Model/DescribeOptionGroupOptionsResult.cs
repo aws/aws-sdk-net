@@ -23,7 +23,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// <para> </para>
     /// </summary>
-    public class DescribeOptionGroupOptionsResult
+    public partial class DescribeOptionGroupOptionsResult
     {
         
         private List<OptionGroupOption> optionGroupOptions = new List<OptionGroupOption>();

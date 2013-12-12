@@ -29,7 +29,7 @@ namespace Amazon.RDS.Model
     /// </ul>
     /// <para>This data type is used as a response element in the DescribeDBSnapshots action.</para>
     /// </summary>
-    public class DBSnapshot
+    public partial class DBSnapshot
     {
         
         private string dBSnapshotIdentifier;
@@ -48,9 +48,11 @@ namespace Amazon.RDS.Model
         private string snapshotType;
         private int? iops;
         private string optionGroupName;
+        private int? percentProgress;
+        private string sourceRegion;
 
         /// <summary>
-        /// Specifies the identifier for the DB Snapshot.
+        /// Specifies the identifier for the DB snapshot.
         ///  
         /// </summary>
         public string DBSnapshotIdentifier
@@ -79,7 +81,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Specifies the the DBInstanceIdentifier of the DB Instance this DB Snapshot was created from.
+        /// Specifies the DB instance identifier of the DB instance this DB snapshot was created from.
         ///  
         /// </summary>
         public string DBInstanceIdentifier
@@ -195,7 +197,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Specifies the status of this DB Snapshot.
+        /// Specifies the status of this DB snapshot.
         ///  
         /// </summary>
         public string Status
@@ -253,7 +255,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Specifies the name of the Availability Zone the DB Instance was located in at the time of the DB Snapshot.
+        /// Specifies the name of the Availability Zone the DB instance was located in at the time of the DB snapshot.
         ///  
         /// </summary>
         public string AvailabilityZone
@@ -282,7 +284,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Provides the Vpc Id associated with the DB Snapshot.
+        /// Provides the Vpc Id associated with the DB snapshot.
         ///  
         /// </summary>
         public string VpcId
@@ -340,7 +342,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Provides the master username for the DB Snapshot.
+        /// Provides the master username for the DB snapshot.
         ///  
         /// </summary>
         public string MasterUsername
@@ -398,7 +400,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// License model information for the restored DB Instance.
+        /// License model information for the restored DB instance.
         ///  
         /// </summary>
         public string LicenseModel
@@ -427,7 +429,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Provides the type of the DB Snapshot.
+        /// Provides the type of the DB snapshot.
         ///  
         /// </summary>
         public string SnapshotType
@@ -456,7 +458,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Specifies the Provisioned IOPS (I/O operations per second) value of the DB Instance at the time of the snapshot.
+        /// Specifies the Provisioned IOPS (I/O operations per second) value of the DB instance at the time of the snapshot.
         ///  
         /// </summary>
         public int Iops
@@ -485,7 +487,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Provides the option group name for the DB Snapshot.
+        /// Provides the option group name for the DB snapshot.
         ///  
         /// </summary>
         public string OptionGroupName
@@ -511,6 +513,64 @@ namespace Amazon.RDS.Model
         internal bool IsSetOptionGroupName()
         {
             return this.optionGroupName != null;
+        }
+
+        /// <summary>
+        /// The percentage of the estimated data that has been transferred.
+        ///  
+        /// </summary>
+        public int PercentProgress
+        {
+            get { return this.percentProgress ?? default(int); }
+            set { this.percentProgress = value; }
+        }
+
+        /// <summary>
+        /// Sets the PercentProgress property
+        /// </summary>
+        /// <param name="percentProgress">The value to set for the PercentProgress property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public DBSnapshot WithPercentProgress(int percentProgress)
+        {
+            this.percentProgress = percentProgress;
+            return this;
+        }
+            
+
+        // Check to see if PercentProgress property is set
+        internal bool IsSetPercentProgress()
+        {
+            return this.percentProgress.HasValue;
+        }
+
+        /// <summary>
+        /// The region that the DB snapshot was created in or copied from.
+        ///  
+        /// </summary>
+        public string SourceRegion
+        {
+            get { return this.sourceRegion; }
+            set { this.sourceRegion = value; }
+        }
+
+        /// <summary>
+        /// Sets the SourceRegion property
+        /// </summary>
+        /// <param name="sourceRegion">The value to set for the SourceRegion property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public DBSnapshot WithSourceRegion(string sourceRegion)
+        {
+            this.sourceRegion = sourceRegion;
+            return this;
+        }
+            
+
+        // Check to see if SourceRegion property is set
+        internal bool IsSetSourceRegion()
+        {
+            return this.sourceRegion != null;
         }
     }
 }

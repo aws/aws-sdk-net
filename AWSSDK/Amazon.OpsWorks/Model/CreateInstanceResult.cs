@@ -23,7 +23,7 @@ namespace Amazon.OpsWorks.Model
     /// <summary>
     /// <para>Contains the response to a <c>CreateInstance</c> request.</para>
     /// </summary>
-    public class CreateInstanceResult
+    public partial class CreateInstanceResult
     {
         
         private string instanceId;

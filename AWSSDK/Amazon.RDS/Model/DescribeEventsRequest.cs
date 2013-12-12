@@ -25,8 +25,8 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeEvents operation.
-    /// <para> Returns events related to DB Instances, DB Security Groups, DB Snapshots and DB Parameter Groups for the past 14 days. Events
-    /// specific to a particular DB Instance, DB Security Group, database snapshot or DB Parameter Group can be obtained by providing the name as a
+    /// <para> Returns events related to DB instances, DB security groups, DB snapshots, and DB parameter groups for the past 14 days. Events
+    /// specific to a particular DB instance, DB security group, database snapshot, or DB parameter group can be obtained by providing the name as a
     /// parameter. By default, the past hour of events are returned. </para>
     /// </summary>
     /// <seealso cref="Amazon.RDS.AmazonRDS.DescribeEvents"/>
@@ -43,10 +43,11 @@ namespace Amazon.RDS.Model
 
         /// <summary>
         /// The identifier of the event source for which events will be returned. If not specified, then all sources are included in the response.
-        /// Constraints: <ul> <li>If SourceIdentifier is supplied, SourceType must also be provided.</li> <li>If the source type is DBInstance, then a
-        /// DBInstanceIdentifier must be supplied.</li> <li>If the source type is DBSecurityGroup, a DBSecurityGroupName must be supplied.</li> <li>If
-        /// the source type is DBParameterGroup, a DBParameterGroupName must be supplied.</li> <li>If the source type is DBSnapshot, a
-        /// DBSnapshotIdentifier must be supplied.</li> <li>Cannot end with a hyphen or contain two consecutive hyphens.</li> </ul>
+        /// Constraints: <ul> <li>If SourceIdentifier is supplied, SourceType must also be provided.</li> <li>If the source type is <c>DBInstance</c>,
+        /// then a <c>DBInstanceIdentifier</c> must be supplied.</li> <li>If the source type is <c>DBSecurityGroup</c>, a <c>DBSecurityGroupName</c>
+        /// must be supplied.</li> <li>If the source type is <c>DBParameterGroup</c>, a <c>DBParameterGroupName</c> must be supplied.</li> <li>If the
+        /// source type is <c>DBSnapshot</c>, a <c>DBSnapshotIdentifier</c> must be supplied.</li> <li>Cannot end with a hyphen or contain two
+        /// consecutive hyphens.</li> </ul>
         ///  
         /// </summary>
         public string SourceIdentifier

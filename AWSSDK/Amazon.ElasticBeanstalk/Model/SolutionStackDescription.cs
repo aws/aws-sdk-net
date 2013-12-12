@@ -23,7 +23,7 @@ namespace Amazon.ElasticBeanstalk.Model
     /// <summary>
     /// <para> Describes the solution stack. </para>
     /// </summary>
-    public class SolutionStackDescription  
+    public partial class SolutionStackDescription
     {
         
         private string solutionStackName;
@@ -64,7 +64,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if SolutionStackName property is set
         internal bool IsSetSolutionStackName()
         {
-            return this.solutionStackName != null;       
+            return this.solutionStackName != null;
         }
 
         /// <summary>
@@ -91,7 +91,7 @@ namespace Amazon.ElasticBeanstalk.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the PermittedFileTypes collection
         /// </summary>
@@ -111,7 +111,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if PermittedFileTypes property is set
         internal bool IsSetPermittedFileTypes()
         {
-            return this.permittedFileTypes.Count > 0;       
+            return this.permittedFileTypes.Count > 0;
         }
     }
 }

@@ -23,7 +23,7 @@ namespace Amazon.CloudSearch.Model
     /// <summary>
     /// <para>A response message that contains the status of a deleted index field.</para>
     /// </summary>
-    public class DeleteIndexFieldResult  
+    public partial class DeleteIndexFieldResult
     {
         
         private IndexFieldStatus indexField;
@@ -54,7 +54,7 @@ namespace Amazon.CloudSearch.Model
         // Check to see if IndexField property is set
         internal bool IsSetIndexField()
         {
-            return this.indexField != null;       
+            return this.indexField != null;
         }
     }
 }

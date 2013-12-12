@@ -23,7 +23,7 @@ namespace Amazon.ElasticBeanstalk.Model
     /// <summary>
     /// <para> A specification identifying an individual configuration option. </para>
     /// </summary>
-    public class OptionSpecification  
+    public partial class OptionSpecification
     {
         
         private string namespaceValue;
@@ -55,7 +55,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if Namespace property is set
         internal bool IsSetNamespace()
         {
-            return this.namespaceValue != null;       
+            return this.namespaceValue != null;
         }
 
         /// <summary>
@@ -84,7 +84,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if OptionName property is set
         internal bool IsSetOptionName()
         {
-            return this.optionName != null;       
+            return this.optionName != null;
         }
     }
 }

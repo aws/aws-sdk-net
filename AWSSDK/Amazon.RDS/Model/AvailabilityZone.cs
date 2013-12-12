@@ -28,7 +28,7 @@ namespace Amazon.RDS.Model
     /// </ul>
     /// </para>
     /// </summary>
-    public class AvailabilityZone
+    public partial class AvailabilityZone
     {
         
         private string name;

@@ -25,7 +25,9 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateUserProfile operation.
-    /// <para>Updates a specified user profile.</para>
+    /// <para>Updates a specified user profile.</para> <para> <b>Required Permissions</b> : To use this action, an IAM user must have an attached
+    /// policy that explicitly grants permissions. For more information on user permissions, see <a
+    /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
     /// </summary>
     /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.UpdateUserProfile"/>
     public class UpdateUserProfileRequest : AmazonWebServiceRequest
@@ -33,6 +35,7 @@ namespace Amazon.OpsWorks.Model
         private string iamUserArn;
         private string sshUsername;
         private string sshPublicKey;
+        private bool? allowSelfManagement;
 
         /// <summary>
         /// The user IAM ARN.
@@ -119,6 +122,36 @@ namespace Amazon.OpsWorks.Model
         internal bool IsSetSshPublicKey()
         {
             return this.sshPublicKey != null;
+        }
+
+        /// <summary>
+        /// Whether users can specify their own SSH public key through the My Settings page. For more information, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing User Permissions</a>.
+        ///  
+        /// </summary>
+        public bool AllowSelfManagement
+        {
+            get { return this.allowSelfManagement ?? default(bool); }
+            set { this.allowSelfManagement = value; }
+        }
+
+        /// <summary>
+        /// Sets the AllowSelfManagement property
+        /// </summary>
+        /// <param name="allowSelfManagement">The value to set for the AllowSelfManagement property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public UpdateUserProfileRequest WithAllowSelfManagement(bool allowSelfManagement)
+        {
+            this.allowSelfManagement = allowSelfManagement;
+            return this;
+        }
+            
+
+        // Check to see if AllowSelfManagement property is set
+        internal bool IsSetAllowSelfManagement()
+        {
+            return this.allowSelfManagement.HasValue;
         }
     }
 }

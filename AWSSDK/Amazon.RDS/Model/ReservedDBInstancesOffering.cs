@@ -23,7 +23,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// <para> This data type is used as a response element in the DescribeReservedDBInstancesOfferings action. </para>
     /// </summary>
-    public class ReservedDBInstancesOffering
+    public partial class ReservedDBInstancesOffering
     {
         
         private string reservedDBInstancesOfferingId;
@@ -67,7 +67,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The DB instance class for the reserved DB Instance.
+        /// The DB instance class for the reserved DB instance.
         ///  
         /// </summary>
         public string DBInstanceClass
@@ -183,7 +183,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The currency code for the reserved DB Instance offering.
+        /// The currency code for the reserved DB instance offering.
         ///  
         /// </summary>
         public string CurrencyCode
@@ -299,7 +299,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The recurring price charged to run this reserved DB Instance.
+        /// The recurring price charged to run this reserved DB instance.
         ///  
         /// </summary>
         public List<RecurringCharge> RecurringCharges

@@ -22,13 +22,14 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
      /// <summary>
      ///   ValidateConfigurationSettingsResult Unmarshaller
      /// </summary>
-    internal class ValidateConfigurationSettingsResultUnmarshaller : IUnmarshaller<ValidateConfigurationSettingsResult, XmlUnmarshallerContext> 
+    internal class ValidateConfigurationSettingsResultUnmarshaller : IUnmarshaller<ValidateConfigurationSettingsResult, XmlUnmarshallerContext>, IUnmarshaller<ValidateConfigurationSettingsResult, JsonUnmarshallerContext> 
     {
         public ValidateConfigurationSettingsResult Unmarshall(XmlUnmarshallerContext context) 
         {
             ValidateConfigurationSettingsResult validateConfigurationSettingsResult = new ValidateConfigurationSettingsResult();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -52,6 +53,11 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
 
 
             return validateConfigurationSettingsResult;
+        }
+
+        public ValidateConfigurationSettingsResult Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static ValidateConfigurationSettingsResultUnmarshaller instance;

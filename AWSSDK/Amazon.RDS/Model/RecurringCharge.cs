@@ -24,7 +24,7 @@ namespace Amazon.RDS.Model
     /// <para> This data type is used as a response element in the DescribeReservedDBInstances and DescribeReservedDBInstancesOfferings actions.
     /// </para>
     /// </summary>
-    public class RecurringCharge
+    public partial class RecurringCharge
     {
         
         private double? recurringChargeAmount;

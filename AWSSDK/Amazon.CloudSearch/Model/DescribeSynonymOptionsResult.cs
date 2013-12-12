@@ -23,7 +23,7 @@ namespace Amazon.CloudSearch.Model
     /// <summary>
     /// <para>A response message that contains the synonym options for a search domain.</para>
     /// </summary>
-    public class DescribeSynonymOptionsResult  
+    public partial class DescribeSynonymOptionsResult
     {
         
         private SynonymOptionsStatus synonyms;
@@ -54,7 +54,7 @@ namespace Amazon.CloudSearch.Model
         // Check to see if Synonyms property is set
         internal bool IsSetSynonyms()
         {
-            return this.synonyms != null;       
+            return this.synonyms != null;
         }
     }
 }

@@ -41,6 +41,13 @@
         {
           ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
           
+          if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
+          {
+            ResourceNotFoundException ex = new ResourceNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            
+            return ex;
+          }
+  
           if (errorResponse.Code != null && errorResponse.Code.Equals("ValidationException"))
           {
             ValidationException ex = new ValidationException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);

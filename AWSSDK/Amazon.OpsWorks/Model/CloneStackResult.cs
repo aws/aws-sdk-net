@@ -23,7 +23,7 @@ namespace Amazon.OpsWorks.Model
     /// <summary>
     /// <para>Contains the response to a <c>CloneStack</c> request.</para>
     /// </summary>
-    public class CloneStackResult
+    public partial class CloneStackResult
     {
         
         private string stackId;

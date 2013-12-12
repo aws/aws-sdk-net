@@ -27,8 +27,9 @@ namespace Amazon.RDS.Model
     /// Container for the parameters to the ModifyEventSubscription operation.
     /// <para>Modifies an existing RDS event notification subscription. Note that you cannot modify the source identifiers using this call; to
     /// change source identifiers for a subscription, use the AddSourceIdentifierToSubscription and RemoveSourceIdentifierFromSubscription
-    /// calls.</para> <para>You can see a list of the event categories for a given SourceType in the Events topic in the Amazon RDS User Guide or by
-    /// using the <b>DescribeEventCategories</b> action.</para>
+    /// calls.</para> <para>You can see a list of the event categories for a given SourceType in the <a
+    /// href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html" >Events</a> topic in the Amazon RDS User Guide or by using the
+    /// <b>DescribeEventCategories</b> action.</para>
     /// </summary>
     /// <seealso cref="Amazon.RDS.AmazonRDS.ModifyEventSubscription"/>
     public class ModifyEventSubscriptionRequest : AmazonWebServiceRequest

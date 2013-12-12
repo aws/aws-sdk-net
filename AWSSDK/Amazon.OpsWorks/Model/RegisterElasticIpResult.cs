@@ -23,7 +23,7 @@ namespace Amazon.OpsWorks.Model
     /// <summary>
     /// <para>Contains the response to a <c>RegisterElasticIp</c> request.</para>
     /// </summary>
-    public class RegisterElasticIpResult
+    public partial class RegisterElasticIpResult
     {
         
         private string elasticIp;

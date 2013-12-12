@@ -88,8 +88,8 @@ namespace Amazon.DynamoDBv2.Model
         /// <i>ItemCollectionKey</i> - The hash key value of the item collection. This is the same as the hash key of the item. </li> <li>
         /// <i>SizeEstimateRange</i> - An estimate of item collection size, expressed in GB. This is a two-element array containing a lower bound and an
         /// upper bound for the estimate. The estimate includes the size of all the items in the table, plus the size of all attributes projected into
-        /// all of the secondary indexes on the table. Use this estimate to measure whether a secondary index is approaching its size limit. The
-        /// estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate. </li> </ul>
+        /// all of the local secondary indexes on the table. Use this estimate to measure whether a local secondary index is approaching its size limit.
+        /// The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate. </li> </ul>
         ///  
         /// </summary>
         public Dictionary<string,List<ItemCollectionMetrics>> ItemCollectionMetrics

@@ -22,13 +22,14 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
      /// <summary>
      ///   ApplicationVersionDescription Unmarshaller
      /// </summary>
-    internal class ApplicationVersionDescriptionUnmarshaller : IUnmarshaller<ApplicationVersionDescription, XmlUnmarshallerContext> 
+    internal class ApplicationVersionDescriptionUnmarshaller : IUnmarshaller<ApplicationVersionDescription, XmlUnmarshallerContext>, IUnmarshaller<ApplicationVersionDescription, JsonUnmarshallerContext> 
     {
         public ApplicationVersionDescription Unmarshall(XmlUnmarshallerContext context) 
         {
             ApplicationVersionDescription applicationVersionDescription = new ApplicationVersionDescription();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -82,6 +83,11 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
 
 
             return applicationVersionDescription;
+        }
+
+        public ApplicationVersionDescription Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static ApplicationVersionDescriptionUnmarshaller instance;

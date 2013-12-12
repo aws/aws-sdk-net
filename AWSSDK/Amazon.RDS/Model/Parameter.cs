@@ -24,7 +24,7 @@ namespace Amazon.RDS.Model
     /// <para> This data type is used as a request parameter in the ModifyDBParameterGroup and ResetDBParameterGroup actions. </para> <para>This
     /// data type is used as a response element in the DescribeEngineDefaultParameters and DescribeDBParameters actions.</para>
     /// </summary>
-    public class Parameter
+    public partial class Parameter
     {
         
         private string parameterName;

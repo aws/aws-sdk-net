@@ -23,7 +23,7 @@ namespace Amazon.ElasticBeanstalk.Model
     /// <summary>
     /// <para>Describes an event.</para>
     /// </summary>
-    public class EventDescription  
+    public partial class EventDescription
     {
         
         private DateTime? eventDate;
@@ -61,7 +61,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if EventDate property is set
         internal bool IsSetEventDate()
         {
-            return this.eventDate.HasValue;       
+            return this.eventDate.HasValue;
         }
 
         /// <summary>
@@ -90,7 +90,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if Message property is set
         internal bool IsSetMessage()
         {
-            return this.message != null;       
+            return this.message != null;
         }
 
         /// <summary>
@@ -128,7 +128,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if ApplicationName property is set
         internal bool IsSetApplicationName()
         {
-            return this.applicationName != null;       
+            return this.applicationName != null;
         }
 
         /// <summary>
@@ -166,7 +166,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if VersionLabel property is set
         internal bool IsSetVersionLabel()
         {
-            return this.versionLabel != null;       
+            return this.versionLabel != null;
         }
 
         /// <summary>
@@ -204,7 +204,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if TemplateName property is set
         internal bool IsSetTemplateName()
         {
-            return this.templateName != null;       
+            return this.templateName != null;
         }
 
         /// <summary>
@@ -242,7 +242,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if EnvironmentName property is set
         internal bool IsSetEnvironmentName()
         {
-            return this.environmentName != null;       
+            return this.environmentName != null;
         }
 
         /// <summary>
@@ -271,7 +271,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if RequestId property is set
         internal bool IsSetRequestId()
         {
-            return this.requestId != null;       
+            return this.requestId != null;
         }
 
         /// <summary>
@@ -309,7 +309,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if Severity property is set
         internal bool IsSetSeverity()
         {
-            return this.severity != null;       
+            return this.severity != null;
         }
     }
 }

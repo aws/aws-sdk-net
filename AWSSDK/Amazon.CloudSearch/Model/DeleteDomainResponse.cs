@@ -34,14 +34,14 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         public DeleteDomainResult DeleteDomainResult
         {
-            get 
+            get
             {
                 if(this.deleteDomainResult == null)
                 {
                     this.deleteDomainResult = new DeleteDomainResult();
                 }
 
-                return this.deleteDomainResult; 
+                return this.deleteDomainResult;
             }
             set { this.deleteDomainResult = value; }
         }

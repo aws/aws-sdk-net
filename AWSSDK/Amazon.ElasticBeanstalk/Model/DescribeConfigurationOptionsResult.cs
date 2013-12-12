@@ -23,7 +23,7 @@ namespace Amazon.ElasticBeanstalk.Model
     /// <summary>
     /// <para>Describes the settings for a specified configuration set.</para>
     /// </summary>
-    public class DescribeConfigurationOptionsResult  
+    public partial class DescribeConfigurationOptionsResult
     {
         
         private string solutionStackName;
@@ -64,7 +64,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if SolutionStackName property is set
         internal bool IsSetSolutionStackName()
         {
-            return this.solutionStackName != null;       
+            return this.solutionStackName != null;
         }
 
         /// <summary>
@@ -91,7 +91,7 @@ namespace Amazon.ElasticBeanstalk.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Options collection
         /// </summary>
@@ -111,7 +111,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if Options property is set
         internal bool IsSetOptions()
         {
-            return this.options.Count > 0;       
+            return this.options.Count > 0;
         }
     }
 }

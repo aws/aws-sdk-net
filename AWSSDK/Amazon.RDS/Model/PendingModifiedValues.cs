@@ -23,7 +23,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// <para> This data type is used as a response element in the ModifyDBInstance action. </para>
     /// </summary>
-    public class PendingModifiedValues
+    public partial class PendingModifiedValues
     {
         
         private string dBInstanceClass;
@@ -37,7 +37,7 @@ namespace Amazon.RDS.Model
         private string dBInstanceIdentifier;
 
         /// <summary>
-        /// Contains the new <c>DBInstanceClass</c> for the DB Instance that will be applied or is in progress.
+        /// Contains the new <c>DBInstanceClass</c> for the DB instance that will be applied or is in progress.
         ///  
         /// </summary>
         public string DBInstanceClass
@@ -66,7 +66,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Contains the new <c>AllocatedStorage</c> size for the DB Instance that will be applied or is in progress.
+        /// Contains the new <c>AllocatedStorage</c> size for the DB instance that will be applied or is in progress.
         ///  
         /// </summary>
         public int AllocatedStorage
@@ -95,7 +95,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Contains the pending or in-progress change of the master credentials for the DB Instance.
+        /// Contains the pending or in-progress change of the master credentials for the DB instance.
         ///  
         /// </summary>
         public string MasterUserPassword
@@ -124,7 +124,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Specifies the pending port for the DB Instance.
+        /// Specifies the pending port for the DB instance.
         ///  
         /// </summary>
         public int Port
@@ -182,7 +182,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Indicates that the Single-AZ DB Instance is to change to a Multi-AZ deployment.
+        /// Indicates that the Single-AZ DB instance is to change to a Multi-AZ deployment.
         ///  
         /// </summary>
         public bool MultiAZ
@@ -240,7 +240,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Specifies the new Provisioned IOPS value for the DB Instance that will be applied or is being applied.
+        /// Specifies the new Provisioned IOPS value for the DB instance that will be applied or is being applied.
         ///  
         /// </summary>
         public int Iops
@@ -269,7 +269,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Contains the new <c>DBInstanceIdentifier</c> for the DB Instance that will be applied or is in progress.
+        /// Contains the new <c>DBInstanceIdentifier</c> for the DB instance that will be applied or is in progress.
         ///  
         /// </summary>
         public string DBInstanceIdentifier

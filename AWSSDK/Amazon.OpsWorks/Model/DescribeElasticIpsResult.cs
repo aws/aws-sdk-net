@@ -23,7 +23,7 @@ namespace Amazon.OpsWorks.Model
     /// <summary>
     /// <para>Contains the response to a <c>DescribeElasticIps</c> request.</para>
     /// </summary>
-    public class DescribeElasticIpsResult
+    public partial class DescribeElasticIpsResult
     {
         
         private List<ElasticIp> elasticIps = new List<ElasticIp>();

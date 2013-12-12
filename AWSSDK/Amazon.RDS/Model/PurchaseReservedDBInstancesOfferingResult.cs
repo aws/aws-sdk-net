@@ -23,7 +23,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// The results from the PurchaseReservedDBInstancesOffering action.
     /// </summary>
-    public class PurchaseReservedDBInstancesOfferingResult
+    public partial class PurchaseReservedDBInstancesOfferingResult
     {
         private ReservedDBInstance reservedDBInstanceValue;
 

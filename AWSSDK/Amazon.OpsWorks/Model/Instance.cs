@@ -23,7 +23,7 @@ namespace Amazon.OpsWorks.Model
     /// <summary>
     /// <para>Describes an instance.</para>
     /// </summary>
-    public class Instance
+    public partial class Instance
     {
         
         private string instanceId;
@@ -327,8 +327,9 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// The instance status: <ul> <li>requested</li> <li>booting</li> <li>running_setup</li> <li>online</li> <li>setup_failed</li>
-        /// <li>start_failed</li> <li>terminating</li> <li>terminated</li> <li>stopped</li> <li>connection_lost</li> </ul>
+        /// The instance status: <ul> <li><c>requested</c></li> <li><c>booting</c></li> <li><c>running_setup</c></li> <li><c>online</c></li>
+        /// <li><c>setup_failed</c></li> <li><c>start_failed</c></li> <li><c>terminating</c></li> <li><c>terminated</c></li> <li><c>stopped</c></li>
+        /// <li><c>connection_lost</c></li> </ul>
         ///  
         /// </summary>
         public string Status

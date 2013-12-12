@@ -23,7 +23,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// <para>This data type is used as a response element to DescribeDBLogFiles.</para>
     /// </summary>
-    public class DescribeDBLogFilesDetails
+    public partial class DescribeDBLogFilesDetails
     {
         
         private string logFileName;

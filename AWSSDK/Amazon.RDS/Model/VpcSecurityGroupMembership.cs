@@ -23,7 +23,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// <para>This data type is used as a response element for queries on VPC security group membership.</para>
     /// </summary>
-    public class VpcSecurityGroupMembership
+    public partial class VpcSecurityGroupMembership
     {
         
         private string vpcSecurityGroupId;
@@ -59,7 +59,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The status of the VPC Security Group.
+        /// The status of the VPC security group.
         ///  
         /// </summary>
         public string Status

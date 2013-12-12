@@ -22,13 +22,14 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
      /// <summary>
      ///   S3Location Unmarshaller
      /// </summary>
-    internal class S3LocationUnmarshaller : IUnmarshaller<S3Location, XmlUnmarshallerContext> 
+    internal class S3LocationUnmarshaller : IUnmarshaller<S3Location, XmlUnmarshallerContext>, IUnmarshaller<S3Location, JsonUnmarshallerContext> 
     {
         public S3Location Unmarshall(XmlUnmarshallerContext context) 
         {
             S3Location s3Location = new S3Location();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -58,6 +59,11 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
 
 
             return s3Location;
+        }
+
+        public S3Location Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static S3LocationUnmarshaller instance;

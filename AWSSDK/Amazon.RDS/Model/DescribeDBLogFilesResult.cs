@@ -23,7 +23,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// <para> The response from a call to DescribeDBLogFiles. </para>
     /// </summary>
-    public class DescribeDBLogFilesResult
+    public partial class DescribeDBLogFilesResult
     {
         
         private List<DescribeDBLogFilesDetails> describeDBLogFiles = new List<DescribeDBLogFilesDetails>();

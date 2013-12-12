@@ -23,7 +23,7 @@ namespace Amazon.CloudSearch.Model
     /// <summary>
     /// <para>A response message that contains the status of a deleted <c>RankExpression</c> .</para>
     /// </summary>
-    public class DeleteRankExpressionResult  
+    public partial class DeleteRankExpressionResult
     {
         
         private RankExpressionStatus rankExpression;
@@ -54,7 +54,7 @@ namespace Amazon.CloudSearch.Model
         // Check to see if RankExpression property is set
         internal bool IsSetRankExpression()
         {
-            return this.rankExpression != null;       
+            return this.rankExpression != null;
         }
     }
 }

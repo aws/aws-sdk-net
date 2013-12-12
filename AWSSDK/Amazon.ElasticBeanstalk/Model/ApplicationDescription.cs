@@ -23,7 +23,7 @@ namespace Amazon.ElasticBeanstalk.Model
     /// <summary>
     /// <para>Describes the properties of an application.</para>
     /// </summary>
-    public class ApplicationDescription  
+    public partial class ApplicationDescription
     {
         
         private string applicationName;
@@ -68,7 +68,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if ApplicationName property is set
         internal bool IsSetApplicationName()
         {
-            return this.applicationName != null;       
+            return this.applicationName != null;
         }
 
         /// <summary>
@@ -106,7 +106,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if Description property is set
         internal bool IsSetDescription()
         {
-            return this.description != null;       
+            return this.description != null;
         }
 
         /// <summary>
@@ -135,7 +135,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if DateCreated property is set
         internal bool IsSetDateCreated()
         {
-            return this.dateCreated.HasValue;       
+            return this.dateCreated.HasValue;
         }
 
         /// <summary>
@@ -164,7 +164,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if DateUpdated property is set
         internal bool IsSetDateUpdated()
         {
-            return this.dateUpdated.HasValue;       
+            return this.dateUpdated.HasValue;
         }
 
         /// <summary>
@@ -191,7 +191,7 @@ namespace Amazon.ElasticBeanstalk.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Versions collection
         /// </summary>
@@ -211,7 +211,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if Versions property is set
         internal bool IsSetVersions()
         {
-            return this.versions.Count > 0;       
+            return this.versions.Count > 0;
         }
 
         /// <summary>
@@ -238,7 +238,7 @@ namespace Amazon.ElasticBeanstalk.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the ConfigurationTemplates collection
         /// </summary>
@@ -258,7 +258,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if ConfigurationTemplates property is set
         internal bool IsSetConfigurationTemplates()
         {
-            return this.configurationTemplates.Count > 0;       
+            return this.configurationTemplates.Count > 0;
         }
     }
 }

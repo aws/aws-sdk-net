@@ -23,7 +23,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// <para> This data type is used as a response element in the action DescribeDBEngineVersions. </para>
     /// </summary>
-    public class CharacterSet
+    public partial class CharacterSet
     {
         
         private string characterSetName;

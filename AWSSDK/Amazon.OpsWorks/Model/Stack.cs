@@ -23,7 +23,7 @@ namespace Amazon.OpsWorks.Model
     /// <summary>
     /// <para>Describes a stack.</para>
     /// </summary>
-    public class Stack
+    public partial class Stack
     {
         
         private string stackId;

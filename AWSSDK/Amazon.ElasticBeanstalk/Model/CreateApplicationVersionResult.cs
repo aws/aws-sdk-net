@@ -23,7 +23,7 @@ namespace Amazon.ElasticBeanstalk.Model
     /// <summary>
     /// <para> Result message wrapping a single description of an application version. </para>
     /// </summary>
-    public class CreateApplicationVersionResult  
+    public partial class CreateApplicationVersionResult
     {
         
         private ApplicationVersionDescription applicationVersion;
@@ -54,7 +54,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if ApplicationVersion property is set
         internal bool IsSetApplicationVersion()
         {
-            return this.applicationVersion != null;       
+            return this.applicationVersion != null;
         }
     }
 }

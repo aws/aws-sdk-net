@@ -23,7 +23,7 @@ namespace Amazon.ElasticBeanstalk.Model
     /// <summary>
     /// <para>Result message containing a description of the requested environment info.</para>
     /// </summary>
-    public class RetrieveEnvironmentInfoResult  
+    public partial class RetrieveEnvironmentInfoResult
     {
         
         private List<EnvironmentInfoDescription> environmentInfo = new List<EnvironmentInfoDescription>();
@@ -52,7 +52,7 @@ namespace Amazon.ElasticBeanstalk.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the EnvironmentInfo collection
         /// </summary>
@@ -72,7 +72,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if EnvironmentInfo property is set
         internal bool IsSetEnvironmentInfo()
         {
-            return this.environmentInfo.Count > 0;       
+            return this.environmentInfo.Count > 0;
         }
     }
 }

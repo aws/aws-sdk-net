@@ -23,7 +23,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// <para> This data type is used as a response element in the DescribeDBSubnetGroups action. </para>
     /// </summary>
-    public class Subnet
+    public partial class Subnet
     {
         
         private string subnetIdentifier;

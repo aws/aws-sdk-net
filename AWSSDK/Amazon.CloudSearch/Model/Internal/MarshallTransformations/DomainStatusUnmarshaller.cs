@@ -63,7 +63,7 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
                     } 
                     if (context.TestExpression("NumSearchableDocs", targetDepth))
                     {
-                        domainStatus.NumSearchableDocs = IntUnmarshaller.GetInstance().Unmarshall(context);
+                        domainStatus.NumSearchableDocs = LongUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
                     } 
