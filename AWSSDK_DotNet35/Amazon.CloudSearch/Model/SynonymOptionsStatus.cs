@@ -29,6 +29,7 @@ namespace Amazon.CloudSearch.Model
         private string options;
         private OptionStatus status;
 
+
         /// <summary>
         /// Maps terms to their synonyms, serialized as a JSON document. The document has a single object with one property "synonyms" whose value is an
         /// object mapping terms to their synonyms. Each synonym is a simple string or an array of strings. The maximum size of a stopwords document is

@@ -49,8 +49,14 @@
               if (context.TestExpression("Instances", targetDepth))
               {
                 context.Read();
-                response.Instances = new List<Instance>();
-                        InstanceUnmarshaller unmarshaller = InstanceUnmarshaller.GetInstance();
+                
+                if (context.CurrentTokenType == JsonToken.Null)
+                {
+                    response.Instances = null;
+                    continue;
+                }
+                  response.Instances = new List<Instance>();
+                  InstanceUnmarshaller unmarshaller = InstanceUnmarshaller.GetInstance();
                 while (context.Read())
                 {
                   JsonToken token = context.CurrentTokenType;                
@@ -89,12 +95,16 @@
           
           if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerException"))
           {
-            return new InternalServerException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            InternalServerException ex = new InternalServerException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            
+            return ex;
           }
   
           if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidRequestException"))
           {
-            return new InvalidRequestException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            InvalidRequestException ex = new InvalidRequestException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            
+            return ex;
           }
   
           return new AmazonElasticMapReduceException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);

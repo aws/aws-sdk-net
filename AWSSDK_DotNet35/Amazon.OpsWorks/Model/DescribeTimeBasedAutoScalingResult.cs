@@ -29,6 +29,7 @@ namespace Amazon.OpsWorks.Model
         
         private List<TimeBasedAutoScalingConfiguration> timeBasedAutoScalingConfigurations = new List<TimeBasedAutoScalingConfiguration>();
 
+
         /// <summary>
         /// An array of <c>TimeBasedAutoScalingConfiguration</c> objects that describe the configuration for the specified instances.
         ///  

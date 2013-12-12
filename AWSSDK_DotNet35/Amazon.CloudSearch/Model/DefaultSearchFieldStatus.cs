@@ -29,6 +29,7 @@ namespace Amazon.CloudSearch.Model
         private string options;
         private OptionStatus status;
 
+
         /// <summary>
         /// The name of the <c>IndexField</c> to use as the default search field. The default is an empty string, which automatically searches all text
         /// fields.

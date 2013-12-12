@@ -55,8 +55,14 @@
               if (context.TestExpression("Args", targetDepth))
               {
                 context.Read();
-                scriptBootstrapActionConfig.Args = new List<String>();
-                        StringUnmarshaller unmarshaller = StringUnmarshaller.GetInstance();
+                
+                if (context.CurrentTokenType == JsonToken.Null)
+                {
+                    scriptBootstrapActionConfig.Args = null;
+                    continue;
+                }
+                  scriptBootstrapActionConfig.Args = new List<String>();
+                  StringUnmarshaller unmarshaller = StringUnmarshaller.GetInstance();
                 while (context.Read())
                 {
                   JsonToken token = context.CurrentTokenType;                

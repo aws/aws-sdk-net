@@ -30,6 +30,7 @@ namespace Amazon.RDS.Model
         private List<OrderableDBInstanceOption> orderableDBInstanceOptions = new List<OrderableDBInstanceOption>();
         private string marker;
 
+
         /// <summary>
         /// An <a>OrderableDBInstanceOption</a> structure containing information about orderable options for the DB instance.
         ///  

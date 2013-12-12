@@ -27,10 +27,11 @@ namespace Amazon.ElasticBeanstalk.Model
     /// Container for the parameters to the RestartAppServer operation.
     /// <para> Causes the environment to restart the application container server running on each Amazon EC2 instance. </para>
     /// </summary>
-    public partial class RestartAppServerRequest : AmazonWebServiceRequest
+    public partial class RestartAppServerRequest : AmazonElasticBeanstalkRequest
     {
         private string environmentId;
         private string environmentName;
+
 
         /// <summary>
         /// The ID of the environment to restart the server for. Condition: You must specify either this or an EnvironmentName, or both. If you do not

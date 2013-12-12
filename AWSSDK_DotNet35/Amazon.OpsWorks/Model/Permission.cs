@@ -30,6 +30,8 @@ namespace Amazon.OpsWorks.Model
         private string iamUserArn;
         private bool? allowSsh;
         private bool? allowSudo;
+        private string level;
+
 
         /// <summary>
         /// A stack ID.
@@ -94,6 +96,24 @@ namespace Amazon.OpsWorks.Model
         internal bool IsSetAllowSudo()
         {
             return this.allowSudo.HasValue;
+        }
+
+        /// <summary>
+        /// The user's permission level, which must be the following: <ul> <li><c>deny</c></li> <li><c>show</c></li> <li><c>deploy</c></li>
+        /// <li><c>manage</c></li> <li><c>iam_only</c></li> </ul> For more information on the permissions associated with these levels, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>
+        ///  
+        /// </summary>
+        public string Level
+        {
+            get { return this.level; }
+            set { this.level = value; }
+        }
+
+        // Check to see if Level property is set
+        internal bool IsSetLevel()
+        {
+            return this.level != null;
         }
     }
 }

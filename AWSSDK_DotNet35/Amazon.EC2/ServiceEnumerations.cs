@@ -1186,6 +1186,31 @@ namespace Amazon.EC2
         public static readonly InstanceType C1Xlarge = new InstanceType("c1.xlarge");
     
 
+       /// <summary>Constant C32xlarge for InstanceType
+       /// </summary>
+        public static readonly InstanceType C32xlarge = new InstanceType("c3.2xlarge");
+    
+
+       /// <summary>Constant C34xlarge for InstanceType
+       /// </summary>
+        public static readonly InstanceType C34xlarge = new InstanceType("c3.4xlarge");
+    
+
+       /// <summary>Constant C38xlarge for InstanceType
+       /// </summary>
+        public static readonly InstanceType C38xlarge = new InstanceType("c3.8xlarge");
+    
+
+       /// <summary>Constant C3Large for InstanceType
+       /// </summary>
+        public static readonly InstanceType C3Large = new InstanceType("c3.large");
+    
+
+       /// <summary>Constant C3Xlarge for InstanceType
+       /// </summary>
+        public static readonly InstanceType C3Xlarge = new InstanceType("c3.xlarge");
+    
+
        /// <summary>Constant Cc14xlarge for InstanceType
        /// </summary>
         public static readonly InstanceType Cc14xlarge = new InstanceType("cc1.4xlarge");
@@ -1206,6 +1231,11 @@ namespace Amazon.EC2
         public static readonly InstanceType Cr18xlarge = new InstanceType("cr1.8xlarge");
     
 
+       /// <summary>Constant G22xlarge for InstanceType
+       /// </summary>
+        public static readonly InstanceType G22xlarge = new InstanceType("g2.2xlarge");
+    
+
        /// <summary>Constant Hi14xlarge for InstanceType
        /// </summary>
         public static readonly InstanceType Hi14xlarge = new InstanceType("hi1.4xlarge");
@@ -1214,6 +1244,26 @@ namespace Amazon.EC2
        /// <summary>Constant Hs18xlarge for InstanceType
        /// </summary>
         public static readonly InstanceType Hs18xlarge = new InstanceType("hs1.8xlarge");
+    
+
+       /// <summary>Constant I22xlarge for InstanceType
+       /// </summary>
+        public static readonly InstanceType I22xlarge = new InstanceType("i2.2xlarge");
+    
+
+       /// <summary>Constant I24xlarge for InstanceType
+       /// </summary>
+        public static readonly InstanceType I24xlarge = new InstanceType("i2.4xlarge");
+    
+
+       /// <summary>Constant I28xlarge for InstanceType
+       /// </summary>
+        public static readonly InstanceType I28xlarge = new InstanceType("i2.8xlarge");
+    
+
+       /// <summary>Constant I2Xlarge for InstanceType
+       /// </summary>
+        public static readonly InstanceType I2Xlarge = new InstanceType("i2.xlarge");
     
 
        /// <summary>Constant M1Large for InstanceType

@@ -136,6 +136,18 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                             
                         continue;
                     }
+                    if (context.TestExpression("PercentProgress", targetDepth))
+                    {
+                        dBSnapshot.PercentProgress = IntUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
+                    }
+                    if (context.TestExpression("SourceRegion", targetDepth))
+                    {
+                        dBSnapshot.SourceRegion = StringUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {

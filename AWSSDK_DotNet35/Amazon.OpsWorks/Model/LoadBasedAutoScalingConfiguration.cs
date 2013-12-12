@@ -31,6 +31,7 @@ namespace Amazon.OpsWorks.Model
         private AutoScalingThresholds upScaling;
         private AutoScalingThresholds downScaling;
 
+
         /// <summary>
         /// The layer ID.
         ///  

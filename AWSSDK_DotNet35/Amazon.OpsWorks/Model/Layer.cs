@@ -45,6 +45,7 @@ namespace Amazon.OpsWorks.Model
         private string createdAt;
         private bool? installUpdatesOnBoot;
 
+
         /// <summary>
         /// The layer stack ID.
         ///  

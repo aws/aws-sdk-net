@@ -34,7 +34,7 @@ namespace Amazon.ElasticBeanstalk.Model
     /// 
     /// </ul>
     /// </summary>
-    public partial class CreateConfigurationTemplateRequest : AmazonWebServiceRequest
+    public partial class CreateConfigurationTemplateRequest : AmazonElasticBeanstalkRequest
     {
         private string applicationName;
         private string templateName;
@@ -43,6 +43,7 @@ namespace Amazon.ElasticBeanstalk.Model
         private string environmentId;
         private string description;
         private List<ConfigurationOptionSetting> optionSettings = new List<ConfigurationOptionSetting>();
+
 
         /// <summary>
         /// The name of the application to associate with this configuration template. If no application is found with this name, AWS Elastic Beanstalk

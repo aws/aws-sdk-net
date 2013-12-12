@@ -27,10 +27,11 @@ namespace Amazon.CloudSearch.Model
     /// Container for the parameters to the DeleteRankExpression operation.
     /// <para>Removes a <c>RankExpression</c> from the search domain.</para>
     /// </summary>
-    public partial class DeleteRankExpressionRequest : AmazonWebServiceRequest
+    public partial class DeleteRankExpressionRequest : AmazonCloudSearchRequest
     {
         private string domainName;
         private string rankName;
+
 
         /// <summary>
         /// A string that represents the name of a domain. Domain names must be unique across the domains owned by an account within an AWS region.

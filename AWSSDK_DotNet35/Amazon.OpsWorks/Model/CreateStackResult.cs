@@ -29,6 +29,7 @@ namespace Amazon.OpsWorks.Model
         
         private string stackId;
 
+
         /// <summary>
         /// The stack ID, which is an opaque string that you use to identify the stack when performing actions such as <c>DescribeStacks</c>.
         ///  

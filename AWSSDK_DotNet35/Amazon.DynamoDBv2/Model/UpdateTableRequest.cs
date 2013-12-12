@@ -35,10 +35,12 @@ namespace Amazon.DynamoDBv2.Model
     /// modify or delete local secondary indexes using <i>UpdateTable</i> . Local secondary indexes can only be defined at table creation
     /// time.</para>
     /// </summary>
-    public partial class UpdateTableRequest : AmazonWebServiceRequest
+    public partial class UpdateTableRequest : AmazonDynamoDBv2Request
     {
         private string tableName;
         private ProvisionedThroughput provisionedThroughput;
+        private List<GlobalSecondaryIndexUpdate> globalSecondaryIndexUpdates = new List<GlobalSecondaryIndexUpdate>();
+
 
         /// <summary>
         /// The name of the table to be updated.
@@ -85,6 +87,17 @@ namespace Amazon.DynamoDBv2.Model
         internal bool IsSetProvisionedThroughput()
         {
             return this.provisionedThroughput != null;
+        }
+        public List<GlobalSecondaryIndexUpdate> GlobalSecondaryIndexUpdates
+        {
+            get { return this.globalSecondaryIndexUpdates; }
+            set { this.globalSecondaryIndexUpdates = value; }
+        }
+
+        // Check to see if GlobalSecondaryIndexUpdates property is set
+        internal bool IsSetGlobalSecondaryIndexUpdates()
+        {
+            return this.globalSecondaryIndexUpdates.Count > 0;
         }
 
     }

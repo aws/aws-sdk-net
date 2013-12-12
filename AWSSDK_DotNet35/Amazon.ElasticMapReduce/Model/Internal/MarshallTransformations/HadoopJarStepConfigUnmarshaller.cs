@@ -48,8 +48,14 @@
               if (context.TestExpression("Properties", targetDepth))
               {
                 context.Read();
-                hadoopJarStepConfig.Properties = new List<KeyValue>();
-                        KeyValueUnmarshaller unmarshaller = KeyValueUnmarshaller.GetInstance();
+                
+                if (context.CurrentTokenType == JsonToken.Null)
+                {
+                    hadoopJarStepConfig.Properties = null;
+                    continue;
+                }
+                  hadoopJarStepConfig.Properties = new List<KeyValue>();
+                  KeyValueUnmarshaller unmarshaller = KeyValueUnmarshaller.GetInstance();
                 while (context.Read())
                 {
                   JsonToken token = context.CurrentTokenType;                
@@ -83,8 +89,14 @@
               if (context.TestExpression("Args", targetDepth))
               {
                 context.Read();
-                hadoopJarStepConfig.Args = new List<String>();
-                        StringUnmarshaller unmarshaller = StringUnmarshaller.GetInstance();
+                
+                if (context.CurrentTokenType == JsonToken.Null)
+                {
+                    hadoopJarStepConfig.Args = null;
+                    continue;
+                }
+                  hadoopJarStepConfig.Args = new List<String>();
+                  StringUnmarshaller unmarshaller = StringUnmarshaller.GetInstance();
                 while (context.Read())
                 {
                   JsonToken token = context.CurrentTokenType;                

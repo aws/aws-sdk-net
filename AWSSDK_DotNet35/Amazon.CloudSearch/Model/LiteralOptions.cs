@@ -31,6 +31,7 @@ namespace Amazon.CloudSearch.Model
         private bool? facetEnabled;
         private bool? resultEnabled;
 
+
         /// <summary>
         /// The default value for a literal field. Optional.
         ///  

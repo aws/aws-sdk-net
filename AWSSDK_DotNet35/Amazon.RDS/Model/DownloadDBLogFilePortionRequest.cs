@@ -27,12 +27,13 @@ namespace Amazon.RDS.Model
     /// Container for the parameters to the DownloadDBLogFilePortion operation.
     /// <para> Downloads the last line of the specified log file. </para>
     /// </summary>
-    public partial class DownloadDBLogFilePortionRequest : AmazonWebServiceRequest
+    public partial class DownloadDBLogFilePortionRequest : AmazonRDSRequest
     {
         private string dBInstanceIdentifier;
         private string logFileName;
         private string marker;
         private int? numberOfLines;
+
 
         /// <summary>
         /// The customer-assigned name of the DB instance that contains the log files you want to list. Constraints: <ul> <li>Must contain from 1 to 63

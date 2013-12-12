@@ -29,6 +29,7 @@ namespace Amazon.CloudSearch.Model
         private IndexField options;
         private OptionStatus status;
 
+
         /// <summary>
         /// Defines a field in the index, including its name, type, and the source of its data. The <c>IndexFieldType</c> indicates which of the options
         /// will be present. It is invalid to specify options for a type other than the <c>IndexFieldType</c>.

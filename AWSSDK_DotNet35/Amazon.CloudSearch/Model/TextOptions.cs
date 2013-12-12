@@ -31,6 +31,7 @@ namespace Amazon.CloudSearch.Model
         private bool? resultEnabled;
         private string textProcessor;
 
+
         /// <summary>
         /// The default value for a text field. Optional.
         ///  

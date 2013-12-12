@@ -27,9 +27,10 @@ namespace Amazon.CloudSearch.Model
     /// Container for the parameters to the DescribeDefaultSearchField operation.
     /// <para>Gets the default search field configured for the search domain.</para>
     /// </summary>
-    public partial class DescribeDefaultSearchFieldRequest : AmazonWebServiceRequest
+    public partial class DescribeDefaultSearchFieldRequest : AmazonCloudSearchRequest
     {
         private string domainName;
+
 
         /// <summary>
         /// A string that represents the name of a domain. Domain names must be unique across the domains owned by an account within an AWS region.

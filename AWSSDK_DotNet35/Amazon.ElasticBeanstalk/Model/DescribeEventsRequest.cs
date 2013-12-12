@@ -28,7 +28,7 @@ namespace Amazon.ElasticBeanstalk.Model
     /// <para>Returns list of event descriptions matching criteria up to the last 6 weeks.</para> <para><b>NOTE:</b> This action returns the most
     /// recent 1,000 events from the specified NextToken. </para>
     /// </summary>
-    public partial class DescribeEventsRequest : AmazonWebServiceRequest
+    public partial class DescribeEventsRequest : AmazonElasticBeanstalkRequest
     {
         private string applicationName;
         private string versionLabel;
@@ -41,6 +41,7 @@ namespace Amazon.ElasticBeanstalk.Model
         private DateTime? endTime;
         private int? maxRecords;
         private string nextToken;
+
 
         /// <summary>
         /// If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those associated with this application.

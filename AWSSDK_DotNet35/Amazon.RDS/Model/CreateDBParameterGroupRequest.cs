@@ -31,12 +31,13 @@ namespace Amazon.RDS.Model
     /// <i>ModifyDBInstance</i> . When you associate a new DB parameter group with a running DB instance, you need to reboot the DB Instance for the
     /// new DB parameter group and associated settings to take effect. </para>
     /// </summary>
-    public partial class CreateDBParameterGroupRequest : AmazonWebServiceRequest
+    public partial class CreateDBParameterGroupRequest : AmazonRDSRequest
     {
         private string dBParameterGroupName;
         private string dBParameterGroupFamily;
         private string description;
         private List<Tag> tags = new List<Tag>();
+
 
         /// <summary>
         /// The name of the DB parameter group. Constraints: <ul> <li>Must be 1 to 255 alphanumeric characters</li> <li>First character must be a

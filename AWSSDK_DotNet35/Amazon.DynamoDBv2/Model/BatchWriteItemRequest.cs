@@ -56,11 +56,12 @@ namespace Amazon.DynamoDBv2.Model
     /// 
     /// </ul>
     /// </summary>
-    public partial class BatchWriteItemRequest : AmazonWebServiceRequest
+    public partial class BatchWriteItemRequest : AmazonDynamoDBv2Request
     {
         private Dictionary<string,List<WriteRequest>> requestItems = new Dictionary<string,List<WriteRequest>>();
         private ReturnConsumedCapacity returnConsumedCapacity;
         private ReturnItemCollectionMetrics returnItemCollectionMetrics;
+
 
         /// <summary>
         /// A map of one or more table names and, for each table, a list of operations to be performed (<i>DeleteRequest</i> or <i>PutRequest</i>). Each
@@ -105,7 +106,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <list type="definition">
         ///     <item>
         ///         <term>Allowed Values</term>
-        ///         <description>TOTAL, NONE</description>
+        ///         <description>INDEXES, TOTAL, NONE</description>
         ///     </item>
         /// </list>
         /// </para>

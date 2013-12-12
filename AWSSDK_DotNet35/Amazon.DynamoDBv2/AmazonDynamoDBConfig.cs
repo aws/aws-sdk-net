@@ -30,7 +30,7 @@ namespace Amazon.DynamoDBv2
         public AmazonDynamoDBConfig()
         {
             this.AuthenticationServiceName = "dynamodb";
-            this.MaxErrorRetry = 8;
+            this.MaxErrorRetry = 10;
         }
 
         /// <summary>

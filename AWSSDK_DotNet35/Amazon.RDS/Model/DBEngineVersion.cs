@@ -34,6 +34,7 @@ namespace Amazon.RDS.Model
         private CharacterSet defaultCharacterSet;
         private List<CharacterSet> supportedCharacterSets = new List<CharacterSet>();
 
+
         /// <summary>
         /// The name of the database engine.
         ///  

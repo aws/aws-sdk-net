@@ -118,8 +118,14 @@
               if (context.TestExpression("Applications", targetDepth))
               {
                 context.Read();
-                cluster.Applications = new List<Application>();
-                        ApplicationUnmarshaller unmarshaller = ApplicationUnmarshaller.GetInstance();
+                
+                if (context.CurrentTokenType == JsonToken.Null)
+                {
+                    cluster.Applications = null;
+                    continue;
+                }
+                  cluster.Applications = new List<Application>();
+                  ApplicationUnmarshaller unmarshaller = ApplicationUnmarshaller.GetInstance();
                 while (context.Read())
                 {
                   JsonToken token = context.CurrentTokenType;                
@@ -132,6 +138,33 @@
                     break;
                   }
                    cluster.Applications.Add(unmarshaller.Unmarshall(context));
+                }
+                continue;
+              }
+  
+              if (context.TestExpression("Tags", targetDepth))
+              {
+                context.Read();
+                
+                if (context.CurrentTokenType == JsonToken.Null)
+                {
+                    cluster.Tags = null;
+                    continue;
+                }
+                  cluster.Tags = new List<Tag>();
+                  TagUnmarshaller unmarshaller = TagUnmarshaller.GetInstance();
+                while (context.Read())
+                {
+                  JsonToken token = context.CurrentTokenType;                
+                  if (token == JsonToken.ArrayStart)
+                  {
+                    continue;
+                  }
+                  if (token == JsonToken.ArrayEnd)
+                  {
+                    break;
+                  }
+                   cluster.Tags.Add(unmarshaller.Unmarshall(context));
                 }
                 continue;
               }

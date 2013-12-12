@@ -33,13 +33,15 @@ namespace Amazon.DynamoDBv2.Model
     /// indexes on them, you must create them sequentially. Only one table with local secondary indexes can be in the <c>CREATING</c> state at any
     /// given time.</para> <para>You can use the <i>DescribeTable</i> API to check the table status.</para>
     /// </summary>
-    public partial class CreateTableRequest : AmazonWebServiceRequest
+    public partial class CreateTableRequest : AmazonDynamoDBv2Request
     {
         private List<AttributeDefinition> attributeDefinitions = new List<AttributeDefinition>();
         private string tableName;
         private List<KeySchemaElement> keySchema = new List<KeySchemaElement>();
         private List<LocalSecondaryIndex> localSecondaryIndexes = new List<LocalSecondaryIndex>();
+        private List<GlobalSecondaryIndex> globalSecondaryIndexes = new List<GlobalSecondaryIndex>();
         private ProvisionedThroughput provisionedThroughput;
+
 
         /// <summary>
         /// An array of attributes that describe the key schema for the table and indexes.
@@ -145,6 +147,17 @@ namespace Amazon.DynamoDBv2.Model
         internal bool IsSetLocalSecondaryIndexes()
         {
             return this.localSecondaryIndexes.Count > 0;
+        }
+        public List<GlobalSecondaryIndex> GlobalSecondaryIndexes
+        {
+            get { return this.globalSecondaryIndexes; }
+            set { this.globalSecondaryIndexes = value; }
+        }
+
+        // Check to see if GlobalSecondaryIndexes property is set
+        internal bool IsSetGlobalSecondaryIndexes()
+        {
+            return this.globalSecondaryIndexes.Count > 0;
         }
 
         /// <summary>

@@ -29,6 +29,7 @@ namespace Amazon.OpsWorks.Model
         
         private string instanceId;
 
+
         /// <summary>
         /// The instance ID.
         ///  

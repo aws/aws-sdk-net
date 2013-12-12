@@ -26,12 +26,15 @@ namespace Amazon.OpsWorks.Model
     /// <summary>
     /// Container for the parameters to the DeregisterVolume operation.
     /// <para>Deregisters an Amazon EBS volume. The volume can then be registered by another stack. For more information, see <a
-    /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html"
-    /// >http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html</a> .</para>
+    /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/resources.html" >Resource Management</a> .</para> <para> <b>Required
+    /// Permissions</b> : To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly
+    /// grants permissions. For more information on user permissions, see <a
+    /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
     /// </summary>
-    public partial class DeregisterVolumeRequest : AmazonWebServiceRequest
+    public partial class DeregisterVolumeRequest : AmazonOpsWorksRequest
     {
         private string volumeId;
+
 
         /// <summary>
         /// The volume ID.

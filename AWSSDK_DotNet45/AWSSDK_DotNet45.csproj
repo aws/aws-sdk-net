@@ -30,7 +30,7 @@
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE;BCL;CODE_ANALYSIS</DefineConstants>
+    <DefineConstants>TRACE;BCL;BCL45;CODE_ANALYSIS</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\Release\AWSSDK.XML</DocumentationFile>
@@ -49,6 +49,7 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.WebRequest" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -132,6 +133,8 @@
     <Compile Include="Amazon.IdentityManagement\IAmazonIdentityManagementService.cs" />
     <Compile Include="Amazon.ImportExport\AmazonImportExportClient.cs" />
     <Compile Include="Amazon.ImportExport\IAmazonImportExport.cs" />
+    <Compile Include="Amazon.Kinesis\AmazonKinesisClient.cs" />
+    <Compile Include="Amazon.Kinesis\IAmazonKinesis.cs" />
     <Compile Include="Amazon.OpsWorks\AmazonOpsWorksClient.cs" />
     <Compile Include="Amazon.OpsWorks\IAmazonOpsWorks.cs" />
     <Compile Include="Amazon.RDS\AmazonRDSClient.cs" />
@@ -187,7 +190,7 @@
     <Compile Include="..\AWSSDK_DotNet35\Amazon.Runtime\*" Exclude="..\AWSSDK_DotNet35\Amazon.Runtime\AmazonWebServiceClient.cs">
       <Visible>false</Visible>
     </Compile>
-    <Compile Include="..\AWSSDK_DotNet35\Amazon.Runtime\Internal\*">
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.Runtime\Internal\*" Exclude="..\AWSSDK_DotNet35\Amazon.Runtime\Internal\*.bcl35.cs">
       <Visible>false</Visible>
     </Compile>
     <Compile Include="..\AWSSDK_DotNet35\Amazon.Runtime\Internal\Auth\*">
@@ -468,6 +471,17 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.Kinesis\*" Exclude="..\AWSSDK_DotNet35\Amazon.Kinesis\IAmazonKinesis.cs;..\AWSSDK_DotNet35\Amazon.Kinesis\AmazonKinesisClient.cs">
+      <Visible>false</Visible>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.Kinesis\Model\*">
+      <Visible>false</Visible>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.Kinesis\Model\Internal\MarshallTransformations\*">
+      <Visible>false</Visible>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="..\AWSSDK_DotNet35\Amazon.OpsWorks\*" Exclude="..\AWSSDK_DotNet35\Amazon.OpsWorks\IAmazonOpsWorks.cs;..\AWSSDK_DotNet35\Amazon.OpsWorks\AmazonOpsWorksClient.cs">
       <Visible>false</Visible>
     </Compile>
@@ -521,13 +535,13 @@
     <Compile Include="..\AWSSDK_DotNet35\Amazon.S3\IO\*">
       <Visible>false</Visible>
     </Compile>
-    <Compile Include="..\AWSSDK_DotNet35\Amazon.S3\Model\*">
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.S3\Model\*" Exclude="..\AWSSDK_DotNet35\Amazon.S3\Model\*.bcl35.cs">
       <Visible>false</Visible>
     </Compile>
     <Compile Include="..\AWSSDK_DotNet35\Amazon.S3\Model\Internal\MarshallTransformations\*">
       <Visible>false</Visible>
     </Compile>
-    <Compile Include="..\AWSSDK_DotNet35\Amazon.S3\Transfer\*" Exclude="..\AWSSDK_DotNet35\Amazon.S3\Transfer\TransferUtility.async.cs">
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.S3\Transfer\*" Exclude="..\AWSSDK_DotNet35\Amazon.S3\Transfer\TransferUtility.async.cs;..\AWSSDK_DotNet35\Amazon.S3\Transfer\*.bcl35.cs">
       <Visible>false</Visible>
     </Compile>
     <Compile Include="..\AWSSDK_DotNet35\Amazon.S3\Transfer\Internal\*">

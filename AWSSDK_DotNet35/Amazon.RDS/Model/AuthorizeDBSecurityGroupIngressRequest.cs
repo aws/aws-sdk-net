@@ -34,13 +34,14 @@ namespace Amazon.RDS.Model
     /// href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing" >Wikipedia Tutorial</a> .
     /// </para>
     /// </summary>
-    public partial class AuthorizeDBSecurityGroupIngressRequest : AmazonWebServiceRequest
+    public partial class AuthorizeDBSecurityGroupIngressRequest : AmazonRDSRequest
     {
         private string dBSecurityGroupName;
         private string cIDRIP;
         private string eC2SecurityGroupName;
         private string eC2SecurityGroupId;
         private string eC2SecurityGroupOwnerId;
+
 
         /// <summary>
         /// The name of the DB security group to add authorization to.

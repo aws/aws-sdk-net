@@ -28,10 +28,11 @@ namespace Amazon.CloudSearch.Model
     /// <para>Configures a stemming dictionary for the search domain. The stemming dictionary is used during indexing and when processing search
     /// requests. The maximum size of the stemming dictionary is 500 KB.</para>
     /// </summary>
-    public partial class UpdateStemmingOptionsRequest : AmazonWebServiceRequest
+    public partial class UpdateStemmingOptionsRequest : AmazonCloudSearchRequest
     {
         private string domainName;
         private string stems;
+
 
         /// <summary>
         /// A string that represents the name of a domain. Domain names must be unique across the domains owned by an account within an AWS region.

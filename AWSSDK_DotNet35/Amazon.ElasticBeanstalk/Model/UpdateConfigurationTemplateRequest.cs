@@ -33,13 +33,14 @@ namespace Amazon.ElasticBeanstalk.Model
     /// 
     /// </ul>
     /// </summary>
-    public partial class UpdateConfigurationTemplateRequest : AmazonWebServiceRequest
+    public partial class UpdateConfigurationTemplateRequest : AmazonElasticBeanstalkRequest
     {
         private string applicationName;
         private string templateName;
         private string description;
         private List<ConfigurationOptionSetting> optionSettings = new List<ConfigurationOptionSetting>();
         private List<OptionSpecification> optionsToRemove = new List<OptionSpecification>();
+
 
         /// <summary>
         /// The name of the application associated with the configuration template to update. If no application is found with this name,

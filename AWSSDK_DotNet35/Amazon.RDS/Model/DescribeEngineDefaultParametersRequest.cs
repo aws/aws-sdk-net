@@ -27,11 +27,12 @@ namespace Amazon.RDS.Model
     /// Container for the parameters to the DescribeEngineDefaultParameters operation.
     /// <para> Returns the default engine and system parameter information for the specified database engine. </para>
     /// </summary>
-    public partial class DescribeEngineDefaultParametersRequest : AmazonWebServiceRequest
+    public partial class DescribeEngineDefaultParametersRequest : AmazonRDSRequest
     {
         private string dBParameterGroupFamily;
         private int? maxRecords;
         private string marker;
+
 
         /// <summary>
         /// The name of the DB parameter group family.

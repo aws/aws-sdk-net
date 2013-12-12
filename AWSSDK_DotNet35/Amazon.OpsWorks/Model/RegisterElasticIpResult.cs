@@ -29,6 +29,7 @@ namespace Amazon.OpsWorks.Model
         
         private string elasticIp;
 
+
         /// <summary>
         /// The Elastic IP address.
         ///  

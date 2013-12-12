@@ -28,6 +28,7 @@ namespace Amazon.CloudSearch.Model
         
         private int? defaultValue;
 
+
         /// <summary>
         /// The default value for an unsigned integer field. Optional.
         ///  

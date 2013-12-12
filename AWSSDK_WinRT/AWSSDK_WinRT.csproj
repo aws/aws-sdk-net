@@ -141,6 +141,8 @@
     <Compile Include="Amazon.IdentityManagement\IAmazonIdentityManagementService.cs" />
     <Compile Include="Amazon.ImportExport\AmazonImportExportClient.cs" />
     <Compile Include="Amazon.ImportExport\IAmazonImportExport.cs" />
+    <Compile Include="Amazon.Kinesis\AmazonKinesisClient.cs" />
+    <Compile Include="Amazon.Kinesis\IAmazonKinesis.cs" />
     <Compile Include="Amazon.MissingTypes\ICloneable.cs" />
     <Compile Include="Amazon.OpsWorks\AmazonOpsWorksClient.cs" />
     <Compile Include="Amazon.OpsWorks\IAmazonOpsWorks.cs" />
@@ -233,7 +235,7 @@
     <Compile Include="..\AWSSDK_DotNet45\Amazon.Runtime\Internal\Transform\*">
       <Visible>false</Visible>
     </Compile>
-    <Compile Include="..\AWSSDK_DotNet35\Amazon.Runtime\Internal\*">
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.Runtime\Internal\*" Exclude="..\AWSSDK_DotNet35\Amazon.Runtime\Internal\*.bcl35.cs">
       <Visible>false</Visible>
     </Compile>
     <Compile Include="..\AWSSDK_DotNet35\Amazon.Runtime\Internal\Auth\*">
@@ -466,6 +468,17 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.Kinesis\*" Exclude="..\AWSSDK_DotNet35\Amazon.Kinesis\IAmazonKinesis.cs;..\AWSSDK_DotNet35\Amazon.Kinesis\AmazonKinesisClient.cs">
+      <Visible>false</Visible>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.Kinesis\Model\*">
+      <Visible>false</Visible>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.Kinesis\Model\Internal\MarshallTransformations\*">
+      <Visible>false</Visible>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="..\AWSSDK_DotNet35\Amazon.OpsWorks\*" Exclude="..\AWSSDK_DotNet35\Amazon.OpsWorks\IAmazonOpsWorks.cs;..\AWSSDK_DotNet35\Amazon.OpsWorks\AmazonOpsWorksClient.cs">
       <Visible>false</Visible>
     </Compile>
@@ -513,7 +526,7 @@
     <Compile Include="..\AWSSDK_DotNet35\Amazon.S3\*" Exclude="..\AWSSDK_DotNet35\Amazon.S3\IAmazonS3.cs;..\AWSSDK_DotNet35\Amazon.S3\AmazonS3Client.cs">
       <Visible>false</Visible>
     </Compile>
-    <Compile Include="..\AWSSDK_DotNet35\Amazon.S3\Model\*" Exclude="..\AWSSDK_DotNet35\Amazon.S3\Model\PutObjectRequest.bcl.cs;..\AWSSDK_DotNet35\Amazon.S3\Model\UploadPartRequest.bcl.cs">
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.S3\Model\*" Exclude="..\AWSSDK_DotNet35\Amazon.S3\Model\*.bcl.cs;..\AWSSDK_DotNet35\Amazon.S3\Model\*.bcl35.cs">
       <Visible>false</Visible>
     </Compile>
     <Compile Include="..\AWSSDK_DotNet35\Amazon.S3\Model\Internal\MarshallTransformations\*">

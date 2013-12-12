@@ -30,11 +30,12 @@ namespace Amazon.RDS.Model
     /// and <c>ResetAllParameters</c> parameters. When resetting the entire group, dynamic parameters are updated immediately and static parameters
     /// are set to <c>pending-reboot</c> to take effect on the next DB instance restart or <c>RebootDBInstance</c> request. </para>
     /// </summary>
-    public partial class ResetDBParameterGroupRequest : AmazonWebServiceRequest
+    public partial class ResetDBParameterGroupRequest : AmazonRDSRequest
     {
         private string dBParameterGroupName;
         private bool? resetAllParameters;
         private List<Parameter> parameters = new List<Parameter>();
+
 
         /// <summary>
         /// The name of the DB parameter group. Constraints: <ul> <li>Must be 1 to 255 alphanumeric characters</li> <li>First character must be a

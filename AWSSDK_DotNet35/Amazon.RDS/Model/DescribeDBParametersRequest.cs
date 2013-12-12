@@ -27,12 +27,13 @@ namespace Amazon.RDS.Model
     /// Container for the parameters to the DescribeDBParameters operation.
     /// <para> Returns the detailed parameter list for a particular DB parameter group. </para>
     /// </summary>
-    public partial class DescribeDBParametersRequest : AmazonWebServiceRequest
+    public partial class DescribeDBParametersRequest : AmazonRDSRequest
     {
         private string dBParameterGroupName;
         private string source;
         private int? maxRecords;
         private string marker;
+
 
         /// <summary>
         /// The name of a specific DB parameter group to return details for. Constraints: <ul> <li>Must be 1 to 255 alphanumeric characters</li>

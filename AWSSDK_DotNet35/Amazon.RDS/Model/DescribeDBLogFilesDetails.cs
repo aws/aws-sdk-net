@@ -30,6 +30,7 @@ namespace Amazon.RDS.Model
         private long? lastWritten;
         private long? size;
 
+
         /// <summary>
         /// The name of the log file for the specified DB instance.
         ///  

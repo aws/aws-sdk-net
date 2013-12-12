@@ -27,11 +27,12 @@ namespace Amazon.ElasticBeanstalk.Model
     /// Container for the parameters to the TerminateEnvironment operation.
     /// <para> Terminates the specified environment. </para>
     /// </summary>
-    public partial class TerminateEnvironmentRequest : AmazonWebServiceRequest
+    public partial class TerminateEnvironmentRequest : AmazonElasticBeanstalkRequest
     {
         private string environmentId;
         private string environmentName;
         private bool? terminateResources;
+
 
         /// <summary>
         /// The ID of the environment to terminate. Condition: You must specify either this or an EnvironmentName, or both. If you do not specify

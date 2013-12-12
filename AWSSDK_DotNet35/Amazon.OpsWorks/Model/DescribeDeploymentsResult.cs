@@ -29,6 +29,7 @@ namespace Amazon.OpsWorks.Model
         
         private List<Deployment> deployments = new List<Deployment>();
 
+
         /// <summary>
         /// An array of <c>Deployment</c> objects that describe the deployments.
         ///  

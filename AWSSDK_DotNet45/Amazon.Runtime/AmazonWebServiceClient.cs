@@ -166,22 +166,30 @@ namespace Amazon.Runtime
             {
                 var we = e.InnerException as WebException;
 
-                // The WinRT framework doesn't break down errors                
-                if (we != null &&
-#if WIN_RT                    
-                    we.Status == WebExceptionStatus.UnknownError
-#else
-                    WebExceptionStatusesToRetryOn.Contains(we.Status)
-#endif
-                )
+                if (we != null)
                 {
-                    shouldRetry = RetryOrThrow(state, e);
+                    if (WebExceptionStatusesToThrowOn.Contains(we.Status))
+                    {
+                        throw new AmazonServiceException(we);
+                    }
+
+                    // The WinRT framework doesn't break down errors, not all status values are available for WinRT.                
+                    if (
+#if WIN_RT                    
+                    (we.Status == WebExceptionStatus.UnknownError || WebExceptionStatusesToRetryOn.Contains(we.Status))
+#else
+                        WebExceptionStatusesToRetryOn.Contains(we.Status)
+#endif
+                    )
+                    {
+                        shouldRetry = RetryOrThrow(state, e);
+                    }
                 }
 
                 var ioe = e.InnerException as IOException;
                 if (ioe != null)
                 {
-#if !WIN_RT 
+#if !WIN_RT
                     if (IsInnerExceptionThreadAbort(ioe))
                     { throw new AmazonServiceException(e); }
 #endif
@@ -190,11 +198,18 @@ namespace Amazon.Runtime
 
                 // Check if response is null at the end as
                 // it can be null for both WebException and IOException.
-                if (!shouldRetry && response==null)
+                if (!shouldRetry && response == null)
                 {
                     shouldRetry = RetryOrThrow(state, e);
                 }
-            }            
+
+                // If shouldRetry is not set by any of the above checks,
+                // re-throw the exception.
+                if (!shouldRetry)
+                {
+                    throw new AmazonServiceException(e);
+                }
+            }
             finally
             {
                 if (responseMessage != null && !state.Unmarshaller.HasStreamingProperty)
@@ -373,8 +388,17 @@ namespace Amazon.Runtime
 
         protected HttpClient ConfigureHttpClient()
         {
+#if BCL45
+            var httpMessageHandler = new WebRequestHandler();
+            if (this.Config.ReadWriteTimeoutInternal.HasValue)
+            {
+                // ReadWriteTimeout value is set to ClientConfig.MaxTimeout for S3 and Glacier.
+                // Use default value (300 seconds) for other services.
+                httpMessageHandler.ReadWriteTimeout = (int)this.Config.ReadWriteTimeoutInternal.Value.TotalMilliseconds;
+            }            
+#else
             var httpMessageHandler = new HttpClientHandler();
-
+#endif
 
 #if BCL
             
@@ -406,9 +430,13 @@ namespace Amazon.Runtime
                 httpMessageHandler.Proxy.Credentials = Config.ProxyCredentials;
             }
 
-
-            var httpClient = new HttpClient(httpMessageHandler);
-            httpClient.Timeout = TimeSpan.FromMilliseconds(int.MaxValue);
+            var httpClient = new HttpClient(httpMessageHandler);            
+            if (this.Config.TimeoutInternal.HasValue)
+            {
+                // Timeout value is set to ClientConfig.MaxTimeout for S3 and Glacier.
+                // Use default value (100 seconds) for other services.
+                httpClient.Timeout = this.Config.TimeoutInternal.Value;
+            }
             
             return httpClient;
         }

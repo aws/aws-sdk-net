@@ -27,12 +27,13 @@ namespace Amazon.ElasticBeanstalk.Model
     /// Container for the parameters to the SwapEnvironmentCNAMEs operation.
     /// <para> Swaps the CNAMEs of two environments. </para>
     /// </summary>
-    public partial class SwapEnvironmentCNAMEsRequest : AmazonWebServiceRequest
+    public partial class SwapEnvironmentCNAMEsRequest : AmazonElasticBeanstalkRequest
     {
         private string sourceEnvironmentId;
         private string sourceEnvironmentName;
         private string destinationEnvironmentId;
         private string destinationEnvironmentName;
+
 
         /// <summary>
         /// The ID of the source environment. Condition: You must specify at least the <c>SourceEnvironmentID</c> or the <c>SourceEnvironmentName</c>.

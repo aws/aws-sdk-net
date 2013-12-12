@@ -30,10 +30,11 @@ namespace Amazon.ElasticBeanstalk.Model
     /// update is in progress or if the update fails. The <c>DeploymentStatus</c> for the draft configuration indicates whether the deployment is in
     /// process or has failed. The draft configuration remains in existence until it is deleted with this action. </para>
     /// </summary>
-    public partial class DeleteEnvironmentConfigurationRequest : AmazonWebServiceRequest
+    public partial class DeleteEnvironmentConfigurationRequest : AmazonElasticBeanstalkRequest
     {
         private string applicationName;
         private string environmentName;
+
 
         /// <summary>
         /// The name of the application the environment is associated with.

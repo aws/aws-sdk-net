@@ -27,9 +27,10 @@ namespace Amazon.RDS.Model
     /// Container for the parameters to the DeleteOptionGroup operation.
     /// <para> Deletes an existing option group. </para>
     /// </summary>
-    public partial class DeleteOptionGroupRequest : AmazonWebServiceRequest
+    public partial class DeleteOptionGroupRequest : AmazonRDSRequest
     {
         private string optionGroupName;
+
 
         /// <summary>
         /// The name of the option group to be deleted. <note>You cannot delete default option groups.</note>

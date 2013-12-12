@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(enableVolumeIORequest, "AmazonEC2");
             request.Parameters.Add("Action", "EnableVolumeIO");
-            request.Parameters.Add("Version", "2013-10-01");
+            request.Parameters.Add("Version", "2013-10-15");
             if (enableVolumeIORequest != null && enableVolumeIORequest.IsSetVolumeId())
             {
                 request.Parameters.Add("VolumeId", StringUtils.FromString(enableVolumeIORequest.VolumeId));

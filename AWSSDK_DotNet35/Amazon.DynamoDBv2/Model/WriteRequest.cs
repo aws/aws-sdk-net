@@ -31,6 +31,7 @@ namespace Amazon.DynamoDBv2.Model
         private PutRequest putRequest;
         private DeleteRequest deleteRequest;
 
+
         /// <summary>
         /// Represents a request to perform a <i>PutItem</i> operation.
         ///  

@@ -29,6 +29,7 @@ namespace Amazon.OpsWorks.Model
         
         private List<ElasticIp> elasticIps = new List<ElasticIp>();
 
+
         /// <summary>
         /// An <c>ElasticIps</c> object that describes the specified Elastic IP addresses.
         ///  

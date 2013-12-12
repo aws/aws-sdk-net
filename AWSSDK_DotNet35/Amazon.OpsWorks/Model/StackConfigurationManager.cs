@@ -29,6 +29,7 @@ namespace Amazon.OpsWorks.Model
         private string name;
         private string version;
 
+
         /// <summary>
         /// The name. This parameter must be set to "Chef".
         ///  

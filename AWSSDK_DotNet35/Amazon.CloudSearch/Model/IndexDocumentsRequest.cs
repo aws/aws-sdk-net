@@ -29,9 +29,10 @@ namespace Amazon.CloudSearch.Model
     /// operation must be invoked to make options whose OptionStatus has <c>OptionState</c> of <c>RequiresIndexDocuments</c> visible in search
     /// results.</para>
     /// </summary>
-    public partial class IndexDocumentsRequest : AmazonWebServiceRequest
+    public partial class IndexDocumentsRequest : AmazonCloudSearchRequest
     {
         private string domainName;
+
 
         /// <summary>
         /// A string that represents the name of a domain. Domain names must be unique across the domains owned by an account within an AWS region.

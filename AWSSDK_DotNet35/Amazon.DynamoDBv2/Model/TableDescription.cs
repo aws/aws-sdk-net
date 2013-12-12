@@ -35,6 +35,8 @@ namespace Amazon.DynamoDBv2.Model
         private long? tableSizeBytes;
         private long? itemCount;
         private List<LocalSecondaryIndexDescription> localSecondaryIndexes = new List<LocalSecondaryIndexDescription>();
+        private List<GlobalSecondaryIndexDescription> globalSecondaryIndexes = new List<GlobalSecondaryIndexDescription>();
+
 
         /// <summary>
         /// An array of <i>AttributeDefinition</i> objects. Each of these objects describes one attribute in the table and index key schema. Each
@@ -236,6 +238,17 @@ namespace Amazon.DynamoDBv2.Model
         internal bool IsSetLocalSecondaryIndexes()
         {
             return this.localSecondaryIndexes.Count > 0;
+        }
+        public List<GlobalSecondaryIndexDescription> GlobalSecondaryIndexes
+        {
+            get { return this.globalSecondaryIndexes; }
+            set { this.globalSecondaryIndexes = value; }
+        }
+
+        // Check to see if GlobalSecondaryIndexes property is set
+        internal bool IsSetGlobalSecondaryIndexes()
+        {
+            return this.globalSecondaryIndexes.Count > 0;
         }
     }
 }

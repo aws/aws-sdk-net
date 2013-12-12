@@ -121,6 +121,12 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                             
                         continue;
                     }
+                    if (context.TestExpression("Tier", targetDepth))
+                    {
+                        environmentDescription.Tier = EnvironmentTierUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {

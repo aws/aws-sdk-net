@@ -29,7 +29,7 @@ namespace Amazon.RDS.Model
     /// specific to a particular DB instance, DB security group, database snapshot, or DB parameter group can be obtained by providing the name as a
     /// parameter. By default, the past hour of events are returned. </para>
     /// </summary>
-    public partial class DescribeEventsRequest : AmazonWebServiceRequest
+    public partial class DescribeEventsRequest : AmazonRDSRequest
     {
         private string sourceIdentifier;
         private SourceType sourceType;
@@ -39,6 +39,7 @@ namespace Amazon.RDS.Model
         private List<string> eventCategories = new List<string>();
         private int? maxRecords;
         private string marker;
+
 
         /// <summary>
         /// The identifier of the event source for which events will be returned. If not specified, then all sources are included in the response.

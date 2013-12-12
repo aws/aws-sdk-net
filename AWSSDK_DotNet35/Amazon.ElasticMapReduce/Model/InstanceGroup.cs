@@ -41,15 +41,6 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// The identifier of the instance group.
         ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 64</description>
-        ///     </item>
-        /// </list>
-        /// </para>
         /// </summary>
         public string Id
         {
@@ -66,15 +57,6 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// The name of the instance group.
         ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 256</description>
-        ///     </item>
-        /// </list>
-        /// </para>
         /// </summary>
         public string Name
         {
@@ -141,15 +123,6 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// The bid price for each EC2 instance in the instance group when launching nodes as Spot Instances, expressed in USD.
         ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 256</description>
-        ///     </item>
-        /// </list>
-        /// </para>
         /// </summary>
         public string BidPrice
         {

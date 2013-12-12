@@ -34,7 +34,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(describeEngineDefaultParametersRequest, "AmazonRDS");
             request.Parameters.Add("Action", "DescribeEngineDefaultParameters");
-            request.Parameters.Add("Version", "2013-05-15");
+            request.Parameters.Add("Version", "2013-09-09");
             if (describeEngineDefaultParametersRequest != null && describeEngineDefaultParametersRequest.IsSetDBParameterGroupFamily())
             {
                 request.Parameters.Add("DBParameterGroupFamily", StringUtils.FromString(describeEngineDefaultParametersRequest.DBParameterGroupFamily));

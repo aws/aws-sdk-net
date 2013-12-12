@@ -31,6 +31,10 @@ namespace Amazon.DynamoDBv2.Model
         
         private string tableName;
         private double? capacityUnits;
+        private Capacity table;
+        private Dictionary<string,Capacity> localSecondaryIndexes = new Dictionary<string,Capacity>();
+        private Dictionary<string,Capacity> globalSecondaryIndexes = new Dictionary<string,Capacity>();
+
 
         /// <summary>
         /// The table that consumed the provisioned throughput.
@@ -75,6 +79,39 @@ namespace Amazon.DynamoDBv2.Model
         internal bool IsSetCapacityUnits()
         {
             return this.capacityUnits.HasValue;
+        }
+        public Capacity Table
+        {
+            get { return this.table; }
+            set { this.table = value; }
+        }
+
+        // Check to see if Table property is set
+        internal bool IsSetTable()
+        {
+            return this.table != null;
+        }
+        public Dictionary<string,Capacity> LocalSecondaryIndexes
+        {
+            get { return this.localSecondaryIndexes; }
+            set { this.localSecondaryIndexes = value; }
+        }
+
+        // Check to see if LocalSecondaryIndexes property is set
+        internal bool IsSetLocalSecondaryIndexes()
+        {
+            return this.localSecondaryIndexes != null;
+        }
+        public Dictionary<string,Capacity> GlobalSecondaryIndexes
+        {
+            get { return this.globalSecondaryIndexes; }
+            set { this.globalSecondaryIndexes = value; }
+        }
+
+        // Check to see if GlobalSecondaryIndexes property is set
+        internal bool IsSetGlobalSecondaryIndexes()
+        {
+            return this.globalSecondaryIndexes != null;
         }
     }
 }

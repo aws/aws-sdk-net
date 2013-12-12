@@ -27,8 +27,9 @@ namespace Amazon.ElasticBeanstalk.Model
     /// Container for the parameters to the ListAvailableSolutionStacks operation.
     /// <para> Returns a list of the available solution stack names. </para>
     /// </summary>
-    public partial class ListAvailableSolutionStacksRequest : AmazonWebServiceRequest
+    public partial class ListAvailableSolutionStacksRequest : AmazonElasticBeanstalkRequest
     {
+
 
     }
 }

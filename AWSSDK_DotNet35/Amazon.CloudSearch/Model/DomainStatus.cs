@@ -30,7 +30,7 @@ namespace Amazon.CloudSearch.Model
         private string domainName;
         private bool? created;
         private bool? deleted;
-        private int? numSearchableDocs;
+        private long? numSearchableDocs;
         private ServiceEndpoint docService;
         private ServiceEndpoint searchService;
         private bool? requiresIndexDocuments;
@@ -38,6 +38,7 @@ namespace Amazon.CloudSearch.Model
         private string searchInstanceType;
         private int? searchPartitionCount;
         private int? searchInstanceCount;
+
 
         /// <summary>
         /// An internally generated unique identifier for a domain.
@@ -143,9 +144,9 @@ namespace Amazon.CloudSearch.Model
         /// </list>
         /// </para>
         /// </summary>
-        public int NumSearchableDocs
+        public long NumSearchableDocs
         {
-            get { return this.numSearchableDocs ?? default(int); }
+            get { return this.numSearchableDocs ?? default(long); }
             set { this.numSearchableDocs = value; }
         }
 

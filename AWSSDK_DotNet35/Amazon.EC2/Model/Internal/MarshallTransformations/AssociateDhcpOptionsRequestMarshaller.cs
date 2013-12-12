@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(associateDhcpOptionsRequest, "AmazonEC2");
             request.Parameters.Add("Action", "AssociateDhcpOptions");
-            request.Parameters.Add("Version", "2013-10-01");
+            request.Parameters.Add("Version", "2013-10-15");
             if (associateDhcpOptionsRequest != null && associateDhcpOptionsRequest.IsSetDhcpOptionsId())
             {
                 request.Parameters.Add("DhcpOptionsId", StringUtils.FromString(associateDhcpOptionsRequest.DhcpOptionsId));

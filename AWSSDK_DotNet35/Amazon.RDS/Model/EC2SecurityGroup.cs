@@ -37,6 +37,7 @@ namespace Amazon.RDS.Model
         private string eC2SecurityGroupId;
         private string eC2SecurityGroupOwnerId;
 
+
         /// <summary>
         /// Provides the status of the EC2 security group. Status can be "authorizing", "authorized", "revoking", and "revoked".
         ///  

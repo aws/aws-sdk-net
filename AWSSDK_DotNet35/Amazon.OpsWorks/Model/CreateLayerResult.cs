@@ -29,6 +29,7 @@ namespace Amazon.OpsWorks.Model
         
         private string layerId;
 
+
         /// <summary>
         /// The layer ID.
         ///  

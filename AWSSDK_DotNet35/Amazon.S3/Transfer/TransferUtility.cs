@@ -53,8 +53,8 @@ namespace Amazon.S3.Transfer
     /// <remarks>
     /// 	<para>
     /// 	Transfers are stored in memory. If the application is restarted, 
-    /// 	previous transfers are no longer accessible.  In this situation, if necessary, 
-    /// 	you should clean up any multipart uploads	that are incomplete.
+    /// 	previous transfers are no longer accessible. In this situation, if necessary, 
+    /// 	you should clean up any multipart uploads that are incomplete.
     /// 	</para>
     /// </remarks>
     public partial class TransferUtility : IDisposable
@@ -69,6 +69,12 @@ namespace Amazon.S3.Transfer
         /// <summary>
         /// 	Constructs a new <see cref="TransferUtility"/> class.
         /// </summary>
+        /// <remarks>
+        /// <para>
+        /// If a Timeout needs to be specified, use the constructor which takes an <see cref="Amazon.S3.AmazonS3Client"/> as a paramater.
+        /// Use an instance of <see cref="Amazon.S3.AmazonS3Client"/> constructed with an <see cref="Amazon.S3.AmazonS3Config"/> object with the Timeout specified. 
+        /// </para>        
+        /// </remarks>
         public TransferUtility()
             : this(new AmazonS3Client())
         {
@@ -81,6 +87,12 @@ namespace Amazon.S3.Transfer
         /// <param name="region">
         ///     The region to configure the transfer utility for.
         /// </param>
+        /// <remarks>
+        /// <para>
+        /// If a Timeout needs to be specified, use the constructor which takes an <see cref="Amazon.S3.AmazonS3Client"/> as a paramater.
+        /// Use an instance of <see cref="Amazon.S3.AmazonS3Client"/> constructed with an <see cref="Amazon.S3.AmazonS3Config"/> object with the Timeout specified. 
+        /// </para>        
+        /// </remarks>
         public TransferUtility(RegionEndpoint region)
             : this(new AmazonS3Client(region))
         {
@@ -96,6 +108,12 @@ namespace Amazon.S3.Transfer
         /// <param name="awsSecretAccessKey">
         /// 	The AWS Secret Access Key.
         /// </param>
+        /// <remarks>
+        /// <para>
+        /// If a Timeout needs to be specified, use the constructor which takes an <see cref="Amazon.S3.AmazonS3Client"/> as a paramater.
+        /// Use an instance of <see cref="Amazon.S3.AmazonS3Client"/> constructed with an <see cref="Amazon.S3.AmazonS3Config"/> object with the Timeout specified. 
+        /// </para>        
+        /// </remarks>
         public TransferUtility(string awsAccessKeyId, string awsSecretAccessKey)
             : this(new AmazonS3Client(awsAccessKeyId, awsSecretAccessKey))
         {
@@ -114,6 +132,12 @@ namespace Amazon.S3.Transfer
         /// <param name="region">
         ///     The region to configure the transfer utility for.
         /// </param>
+        /// <remarks>
+        /// <para>
+        /// If a Timeout needs to be specified, use the constructor which takes an <see cref="Amazon.S3.AmazonS3Client"/> as a paramater.
+        /// Use an instance of <see cref="Amazon.S3.AmazonS3Client"/> constructed with an <see cref="Amazon.S3.AmazonS3Config"/> object with the Timeout specified. 
+        /// </para>        
+        /// </remarks>
         public TransferUtility(string awsAccessKeyId, string awsSecretAccessKey, RegionEndpoint region)
             : this(new AmazonS3Client(awsAccessKeyId, awsSecretAccessKey, region))
         {
@@ -132,6 +156,12 @@ namespace Amazon.S3.Transfer
         /// <param name="config">
         /// 	Specifies advanced settings.
         /// </param>
+        /// <remarks>
+        /// <para>
+        /// If a Timeout needs to be specified, use the constructor which takes an <see cref="Amazon.S3.AmazonS3Client"/> as a paramater.
+        /// Use an instance of <see cref="Amazon.S3.AmazonS3Client"/> constructed with an <see cref="Amazon.S3.AmazonS3Config"/> object with the Timeout specified. 
+        /// </para>        
+        /// </remarks>
         public TransferUtility(string awsAccessKeyId, string awsSecretAccessKey, TransferUtilityConfig config)
             : this(new AmazonS3Client(awsAccessKeyId, awsSecretAccessKey), config)
         {
@@ -153,6 +183,12 @@ namespace Amazon.S3.Transfer
         /// <param name="config">
         /// 	Specifies advanced settings.
         /// </param>
+        /// <remarks>
+        /// <para>
+        /// If a Timeout needs to be specified, use the constructor which takes an <see cref="Amazon.S3.AmazonS3Client"/> as a paramater.
+        /// Use an instance of <see cref="Amazon.S3.AmazonS3Client"/> constructed with an <see cref="Amazon.S3.AmazonS3Config"/> object with the Timeout specified. 
+        /// </para>        
+        /// </remarks>
         public TransferUtility(string awsAccessKeyId, string awsSecretAccessKey, RegionEndpoint region, TransferUtilityConfig config)
             : this(new AmazonS3Client(awsAccessKeyId, awsSecretAccessKey, region), config)
         {
@@ -166,6 +202,12 @@ namespace Amazon.S3.Transfer
         /// <param name="s3Client">
         /// 	The Amazon S3 client.
         /// </param>
+        /// <remarks>
+        /// <para>
+        /// If a Timeout needs to be specified, use the constructor which takes an <see cref="Amazon.S3.AmazonS3Client"/> as a paramater.
+        /// Use an instance of <see cref="Amazon.S3.AmazonS3Client"/> constructed with an <see cref="Amazon.S3.AmazonS3Config"/> object with the Timeout specified. 
+        /// </para>        
+        /// </remarks>
         public TransferUtility(IAmazonS3 s3Client)
             : this(s3Client, new TransferUtilityConfig())
         {
@@ -180,6 +222,12 @@ namespace Amazon.S3.Transfer
         /// <param name="config">
         /// 	Specifies advanced configuration settings for <see cref="TransferUtility"/>.
         /// </param>
+        /// <remarks>
+        /// <para>
+        /// If a Timeout needs to be specified, use the constructor which takes an <see cref="Amazon.S3.AmazonS3Client"/> as a paramater.
+        /// Use an instance of <see cref="Amazon.S3.AmazonS3Client"/> constructed with an <see cref="Amazon.S3.AmazonS3Config"/> object with the Timeout specified. 
+        /// </para>        
+        /// </remarks>
         public TransferUtility(IAmazonS3 s3Client, TransferUtilityConfig config)
         {
             this._s3Client = s3Client;

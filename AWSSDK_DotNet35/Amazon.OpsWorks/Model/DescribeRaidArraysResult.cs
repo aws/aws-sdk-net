@@ -29,6 +29,7 @@ namespace Amazon.OpsWorks.Model
         
         private List<RaidArray> raidArrays = new List<RaidArray>();
 
+
         /// <summary>
         /// A <c>RaidArrays</c> object that describes the specified RAID arrays.
         ///  

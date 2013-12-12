@@ -27,17 +27,19 @@ namespace Amazon.ElasticBeanstalk.Model
     /// Container for the parameters to the CreateEnvironment operation.
     /// <para> Launches an environment for the specified application using the specified configuration. </para>
     /// </summary>
-    public partial class CreateEnvironmentRequest : AmazonWebServiceRequest
+    public partial class CreateEnvironmentRequest : AmazonElasticBeanstalkRequest
     {
         private string applicationName;
-        private string versionLabel;
         private string environmentName;
+        private string description;
+        private string cNAMEPrefix;
+        private EnvironmentTier tier;
+        private string versionLabel;
         private string templateName;
         private string solutionStackName;
-        private string cNAMEPrefix;
-        private string description;
         private List<ConfigurationOptionSetting> optionSettings = new List<ConfigurationOptionSetting>();
         private List<OptionSpecification> optionsToRemove = new List<OptionSpecification>();
+
 
         /// <summary>
         /// The name of the application that contains the version to be deployed. If no application is found with this name, <c>CreateEnvironment</c>
@@ -66,33 +68,6 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// The name of the application version to deploy. If the specified application has no associated application versions, AWS Elastic Beanstalk
-        /// <c>UpdateEnvironment</c> returns an <c>InvalidParameterValue</c> error. Default: If not specified, AWS Elastic Beanstalk attempts to launch
-        /// the most recently created application version.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 100</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string VersionLabel
-        {
-            get { return this.versionLabel; }
-            set { this.versionLabel = value; }
-        }
-
-        // Check to see if VersionLabel property is set
-        internal bool IsSetVersionLabel()
-        {
-            return this.versionLabel != null;
-        }
-
-        /// <summary>
         /// A unique name for the deployment environment. Used in the application URL. Constraint: Must be from 4 to 23 characters in length. The name
         /// can contain only letters, numbers, and hyphens. It cannot start or end with a hyphen. This name must be unique in your account. If the
         /// specified name already exists, AWS Elastic Beanstalk returns an <c>InvalidParameterValue</c> error. Default: If the CNAME parameter is not
@@ -118,6 +93,100 @@ namespace Amazon.ElasticBeanstalk.Model
         internal bool IsSetEnvironmentName()
         {
             return this.environmentName != null;
+        }
+
+        /// <summary>
+        /// Describes this environment.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Length</term>
+        ///         <description>0 - 200</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
+        public string Description
+        {
+            get { return this.description; }
+            set { this.description = value; }
+        }
+
+        // Check to see if Description property is set
+        internal bool IsSetDescription()
+        {
+            return this.description != null;
+        }
+
+        /// <summary>
+        /// If specified, the environment attempts to use this value as the prefix for the CNAME. If not specified, the CNAME is generated automatically
+        /// by appending a random alphanumeric string to the environment name.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Length</term>
+        ///         <description>4 - 63</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
+        public string CNAMEPrefix
+        {
+            get { return this.cNAMEPrefix; }
+            set { this.cNAMEPrefix = value; }
+        }
+
+        // Check to see if CNAMEPrefix property is set
+        internal bool IsSetCNAMEPrefix()
+        {
+            return this.cNAMEPrefix != null;
+        }
+
+        /// <summary>
+        /// This specifies the tier to use for creating this environment.
+        ///  
+        /// </summary>
+        public EnvironmentTier Tier
+        {
+            get { return this.tier; }
+            set { this.tier = value; }
+        }
+
+        // Check to see if Tier property is set
+        internal bool IsSetTier()
+        {
+            return this.tier != null;
+        }
+
+        /// <summary>
+        /// The name of the application version to deploy. If the specified application has no associated application versions, AWS Elastic Beanstalk
+        /// <c>UpdateEnvironment</c> returns an <c>InvalidParameterValue</c> error. Default: If not specified, AWS Elastic Beanstalk attempts to launch
+        /// the sample application in the container.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Length</term>
+        ///         <description>1 - 100</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
+        public string VersionLabel
+        {
+            get { return this.versionLabel; }
+            set { this.versionLabel = value; }
+        }
+
+        // Check to see if VersionLabel property is set
+        internal bool IsSetVersionLabel()
+        {
+            return this.versionLabel != null;
         }
 
         /// <summary>
@@ -174,57 +243,6 @@ namespace Amazon.ElasticBeanstalk.Model
         internal bool IsSetSolutionStackName()
         {
             return this.solutionStackName != null;
-        }
-
-        /// <summary>
-        /// If specified, the environment attempts to use this value as the prefix for the CNAME. If not specified, the CNAME is generated automatically
-        /// by appending a random alphanumeric string to the environment name.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>4 - 63</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string CNAMEPrefix
-        {
-            get { return this.cNAMEPrefix; }
-            set { this.cNAMEPrefix = value; }
-        }
-
-        // Check to see if CNAMEPrefix property is set
-        internal bool IsSetCNAMEPrefix()
-        {
-            return this.cNAMEPrefix != null;
-        }
-
-        /// <summary>
-        /// Describes this environment.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 200</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string Description
-        {
-            get { return this.description; }
-            set { this.description = value; }
-        }
-
-        // Check to see if Description property is set
-        internal bool IsSetDescription()
-        {
-            return this.description != null;
         }
 
         /// <summary>

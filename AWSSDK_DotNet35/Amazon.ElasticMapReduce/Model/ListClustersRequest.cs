@@ -38,7 +38,7 @@ namespace Amazon.ElasticMapReduce.Model
 
 
         /// <summary>
-        /// The creation date and time beginning value filter for listing clusters .
+        /// The creation date and time beginning value filter for listing clusters.
         ///  
         /// </summary>
         public DateTime CreatedAfter
@@ -54,7 +54,7 @@ namespace Amazon.ElasticMapReduce.Model
         }
 
         /// <summary>
-        /// The creation date and time end value filter for listing clusters .
+        /// The creation date and time end value filter for listing clusters.
         ///  
         /// </summary>
         public DateTime CreatedBefore
@@ -86,17 +86,9 @@ namespace Amazon.ElasticMapReduce.Model
         }
 
         /// <summary>
-        /// The pagination token that indicates the next set of results to retrieve.
+        /// The pagination token is a random string indicating whether there are more results to fetch. Provide the pagination token from earlier API
+        /// calls to retrieve the next page of results. When the value is null, all results have been returned.
         ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 512</description>
-        ///     </item>
-        /// </list>
-        /// </para>
         /// </summary>
         public string Marker
         {

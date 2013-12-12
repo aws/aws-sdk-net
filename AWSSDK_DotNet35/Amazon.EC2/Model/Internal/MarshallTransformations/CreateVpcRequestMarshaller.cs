@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(createVpcRequest, "AmazonEC2");
             request.Parameters.Add("Action", "CreateVpc");
-            request.Parameters.Add("Version", "2013-10-01");
+            request.Parameters.Add("Version", "2013-10-15");
             if (createVpcRequest != null && createVpcRequest.IsSetCidrBlock())
             {
                 request.Parameters.Add("CidrBlock", StringUtils.FromString(createVpcRequest.CidrBlock));

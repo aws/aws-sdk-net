@@ -32,6 +32,7 @@ namespace Amazon.RDS.Model
         private List<string> eventCategories = new List<string>();
         private DateTime? date;
 
+
         /// <summary>
         /// Provides the identifier for the source of the event.
         ///  

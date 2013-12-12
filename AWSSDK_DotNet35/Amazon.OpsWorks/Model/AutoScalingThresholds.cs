@@ -34,6 +34,7 @@ namespace Amazon.OpsWorks.Model
         private double? memoryThreshold;
         private double? loadThreshold;
 
+
         /// <summary>
         /// The number of instances to add or remove when the load exceeds a threshold.
         ///  

@@ -29,6 +29,7 @@ namespace Amazon.OpsWorks.Model
         
         private List<ServiceError> serviceErrors = new List<ServiceError>();
 
+
         /// <summary>
         /// An array of <c>ServiceError</c> objects that describe the specified service errors.
         ///  

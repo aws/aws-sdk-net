@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(deleteVpnGatewayRequest, "AmazonEC2");
             request.Parameters.Add("Action", "DeleteVpnGateway");
-            request.Parameters.Add("Version", "2013-10-01");
+            request.Parameters.Add("Version", "2013-10-15");
             if (deleteVpnGatewayRequest != null && deleteVpnGatewayRequest.IsSetVpnGatewayId())
             {
                 request.Parameters.Add("VpnGatewayId", StringUtils.FromString(deleteVpnGatewayRequest.VpnGatewayId));

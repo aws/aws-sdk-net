@@ -36,15 +36,6 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// The name of the Amazon EC2 key pair to use when connecting with SSH into the master node as a user named "hadoop".
         ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 256</description>
-        ///     </item>
-        /// </list>
-        /// </para>
         /// </summary>
         public string Ec2KeyName
         {
@@ -64,15 +55,6 @@ namespace Amazon.ElasticMapReduce.Model
         /// cluster compute quadruple extra large (cc1.4xlarge) instances. Thus, you cannot specify the cc1.4xlarge instance type for nodes of a job
         /// flow launched in a VPC.
         ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 256</description>
-        ///     </item>
-        /// </list>
-        /// </para>
         /// </summary>
         public string Ec2SubnetId
         {
@@ -89,15 +71,6 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// The Availability Zone in which the cluster will run.
         ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 256</description>
-        ///     </item>
-        /// </list>
-        /// </para>
         /// </summary>
         public string Ec2AvailabilityZone
         {
@@ -114,15 +87,6 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// The IAM role that was specified when the job flow was launched. The EC2 instances of the job flow assume this role.
         ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 256</description>
-        ///     </item>
-        /// </list>
-        /// </para>
         /// </summary>
         public string IamInstanceProfile
         {

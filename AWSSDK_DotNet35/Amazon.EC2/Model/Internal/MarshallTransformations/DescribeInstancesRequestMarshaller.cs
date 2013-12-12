@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(describeInstancesRequest, "AmazonEC2");
             request.Parameters.Add("Action", "DescribeInstances");
-            request.Parameters.Add("Version", "2013-10-01");
+            request.Parameters.Add("Version", "2013-10-15");
             if (describeInstancesRequest != null)
             {
                 List<string> instanceIdsList = describeInstancesRequest.InstanceIds;

@@ -30,6 +30,7 @@ namespace Amazon.DynamoDBv2.Model
         private List<string> attributesToGet = new List<string>();
         private bool? consistentRead;
 
+
         /// <summary>
         /// Represents the primary key attribute values that define the items and the attributes associated with the items.
         ///  

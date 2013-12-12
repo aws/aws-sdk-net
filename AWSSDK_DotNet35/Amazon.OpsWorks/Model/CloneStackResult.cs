@@ -29,6 +29,7 @@ namespace Amazon.OpsWorks.Model
         
         private string stackId;
 
+
         /// <summary>
         /// The cloned stack ID.
         ///  

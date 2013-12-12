@@ -29,6 +29,7 @@ namespace Amazon.RDS.Model
         private string sourceType;
         private List<string> eventCategories = new List<string>();
 
+
         /// <summary>
         /// The source type that the returned categories belong to
         ///  

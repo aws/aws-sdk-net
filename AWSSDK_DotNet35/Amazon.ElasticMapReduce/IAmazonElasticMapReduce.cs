@@ -27,7 +27,7 @@ namespace Amazon.ElasticMapReduce
     /// efficiently. Amazon EMR uses Hadoop processing combined with several AWS products to do tasks such as web indexing, data mining, log file
     /// analysis, machine learning, scientific simulation, and data warehousing.</para>
     /// </summary>
-    public interface IAmazonElasticMapReduce : IDisposable
+    public partial interface IAmazonElasticMapReduce : IDisposable
     {
 
 
@@ -123,6 +123,51 @@ namespace Amazon.ElasticMapReduce
         /// <returns>Returns a AddJobFlowStepsResult from AmazonElasticMapReduce.</returns>
         AddJobFlowStepsResponse EndAddJobFlowSteps(IAsyncResult asyncResult);
         
+        #endregion
+        
+    
+
+        #region AddTags
+
+        /// <summary>
+        /// <para>Adds tags to an Amazon EMR resource. Tags make it easier to associate clusters in various ways, such as grouping clusters to track
+        /// your Amazon EMR resource allocation costs. For more information, see <a
+        /// href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html" >Tagging Amazon EMR Resources</a> .
+        /// </para>
+        /// </summary>
+        /// 
+        /// <param name="addTagsRequest">Container for the necessary parameters to execute the AddTags service method on AmazonElasticMapReduce.</param>
+        /// 
+        /// <returns>The response from the AddTags service method, as returned by AmazonElasticMapReduce.</returns>
+        /// 
+        /// <exception cref="InternalServerException"/>
+        /// <exception cref="InvalidRequestException"/>
+        AddTagsResponse AddTags(AddTagsRequest addTagsRequest);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AddTags operation.
+        /// <seealso cref="Amazon.ElasticMapReduce.IAmazonElasticMapReduce.AddTags"/>
+        /// </summary>
+        /// 
+        /// <param name="addTagsRequest">Container for the necessary parameters to execute the AddTags operation on AmazonElasticMapReduce.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAddTags
+        ///         operation.</returns>
+        IAsyncResult BeginAddTags(AddTagsRequest addTagsRequest, AsyncCallback callback, object state);
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the AddTags operation.
+        /// <seealso cref="Amazon.ElasticMapReduce.IAmazonElasticMapReduce.AddTags"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAddTags.</param>
+        /// 
+        /// <returns>Returns a AddTagsResult from AmazonElasticMapReduce.</returns>
+        AddTagsResponse EndAddTags(IAsyncResult asyncResult);
+
         #endregion
         
     
@@ -624,6 +669,53 @@ namespace Amazon.ElasticMapReduce
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyInstanceGroups.</param>
         ModifyInstanceGroupsResponse EndModifyInstanceGroups(IAsyncResult asyncResult);
+        
+        #endregion
+        
+    
+
+        #region RemoveTags
+
+        /// <summary>
+        /// <para>Removes tags from an Amazon EMR resource. Tags make it easier to associate clusters in various ways, such as grouping clusters to
+        /// track your Amazon EMR resource allocation costs. For more information, see <a
+        /// href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html" >Tagging Amazon EMR Resources</a> .
+        /// </para>
+        /// </summary>
+        /// 
+        /// <param name="removeTagsRequest">Container for the necessary parameters to execute the RemoveTags service method on
+        ///          AmazonElasticMapReduce.</param>
+        /// 
+        /// <returns>The response from the RemoveTags service method, as returned by AmazonElasticMapReduce.</returns>
+        /// 
+        /// <exception cref="InternalServerException"/>
+        /// <exception cref="InvalidRequestException"/>
+        RemoveTagsResponse RemoveTags(RemoveTagsRequest removeTagsRequest);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RemoveTags operation.
+        /// <seealso cref="Amazon.ElasticMapReduce.IAmazonElasticMapReduce.RemoveTags"/>
+        /// </summary>
+        /// 
+        /// <param name="removeTagsRequest">Container for the necessary parameters to execute the RemoveTags operation on
+        ///          AmazonElasticMapReduce.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRemoveTags
+        ///         operation.</returns>
+        IAsyncResult BeginRemoveTags(RemoveTagsRequest removeTagsRequest, AsyncCallback callback, object state);
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the RemoveTags operation.
+        /// <seealso cref="Amazon.ElasticMapReduce.IAmazonElasticMapReduce.RemoveTags"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRemoveTags.</param>
+        /// 
+        /// <returns>Returns a RemoveTagsResult from AmazonElasticMapReduce.</returns>
+        RemoveTagsResponse EndRemoveTags(IAsyncResult asyncResult);
         
         #endregion
         

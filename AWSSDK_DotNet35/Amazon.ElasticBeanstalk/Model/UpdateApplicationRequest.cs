@@ -28,10 +28,11 @@ namespace Amazon.ElasticBeanstalk.Model
     /// <para>Updates the specified application to have the specified properties. </para> <para><b>NOTE:</b> If a property (for example,
     /// description) is not provided, the value remains unchanged. To clear these properties, specify an empty string. </para>
     /// </summary>
-    public partial class UpdateApplicationRequest : AmazonWebServiceRequest
+    public partial class UpdateApplicationRequest : AmazonElasticBeanstalkRequest
     {
         private string applicationName;
         private string description;
+
 
         /// <summary>
         /// The name of the application to update. If no such application is found, <c>UpdateApplication</c> returns an <c>InvalidParameterValue</c>

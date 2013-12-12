@@ -279,12 +279,12 @@ namespace Amazon.DynamoDBv2.DataModel
 
 
     /// <summary>
-    /// DynamoDB property that marks up current member as range key element for a Local Secondary Index on a table.
+    /// Abstract DynamoDB property attribute that marks up current member as range key element for a Secondary Index on a table.
     /// 
-    /// Members that are marked as a Local Secondary Index range key element must be convertible to a Primitive object.
+    /// Members that are marked as a Secondary Index range key element must be convertible to a Primitive object.
     /// </summary>
     [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property, Inherited = true, AllowMultiple = false)]
-    public sealed class DynamoDBLocalSecondaryIndexRangeKeyAttribute : DynamoDBPropertyAttribute
+    public abstract class DynamoDBSecondaryIndexRangeKeyAttribute : DynamoDBPropertyAttribute
     {
         /// <summary>
         /// Index associated with this range key
@@ -294,8 +294,8 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <summary>
         /// Constructor that accepts a single inde name.
         /// </summary>
-        /// <param name="indexName">Name of the Local Secondary Index this range key belongs to.</param>
-        public DynamoDBLocalSecondaryIndexRangeKeyAttribute(string indexName)
+        /// <param name="indexName">Name of the Secondary Index this range key belongs to.</param>
+        public DynamoDBSecondaryIndexRangeKeyAttribute(string indexName)
             : base()
         {
             IndexNames = new string[] { indexName };
@@ -304,11 +304,57 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <summary>
         /// Constructor that accepts multiple index names.
         /// </summary>
-        /// <param name="indexNames">Names of the Local Secondary Indexes this range key belongs to.</param>
-        public DynamoDBLocalSecondaryIndexRangeKeyAttribute(params string[] indexNames)
+        /// <param name="indexNames">Names of the Secondary Indexes this range key belongs to.</param>
+        public DynamoDBSecondaryIndexRangeKeyAttribute(params string[] indexNames)
             : base()
         {
             IndexNames = indexNames.Distinct(StringComparer.Ordinal).ToArray();
         }
+    }
+
+    /// <summary>
+    /// DynamoDB property attribute that marks up current member as range key element for a Local Secondary Index on a table.
+    /// 
+    /// Members that are marked as a Local Secondary Index range key element must be convertible to a Primitive object.
+    /// </summary>
+    [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property, Inherited = true, AllowMultiple = false)]
+    public sealed class DynamoDBLocalSecondaryIndexRangeKeyAttribute : DynamoDBSecondaryIndexRangeKeyAttribute
+    {
+        /// <summary>
+        /// Constructor that accepts a single inde name.
+        /// </summary>
+        /// <param name="indexName">Name of the Local Secondary Index this range key belongs to.</param>
+        public DynamoDBLocalSecondaryIndexRangeKeyAttribute(string indexName)
+            : base(indexName) { }
+
+        /// <summary>
+        /// Constructor that accepts multiple index names.
+        /// </summary>
+        /// <param name="indexNames">Names of the Local Secondary Indexes this range key belongs to.</param>
+        public DynamoDBLocalSecondaryIndexRangeKeyAttribute(params string[] indexNames)
+            : base(indexNames) { }
+    }
+
+    /// <summary>
+    /// DynamoDB property attribute that marks up current member as range key element for a Global Secondary Index on a table.
+    /// 
+    /// Members that are marked as a Global Secondary Index range key element must be convertible to a Primitive object.
+    /// </summary>
+    [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property, Inherited = true, AllowMultiple = false)]
+    public sealed class DynamoDBGlobalSecondaryIndexRangeKeyAttribute : DynamoDBSecondaryIndexRangeKeyAttribute
+    {
+        /// <summary>
+        /// Constructor that accepts a single inde name.
+        /// </summary>
+        /// <param name="indexName">Name of the Global Secondary Index this range key belongs to.</param>
+        public DynamoDBGlobalSecondaryIndexRangeKeyAttribute(string indexName)
+            : base(indexName) { }
+
+        /// <summary>
+        /// Constructor that accepts multiple index names.
+        /// </summary>
+        /// <param name="indexNames">Names of the Global Secondary Indexes this range key belongs to.</param>
+        public DynamoDBGlobalSecondaryIndexRangeKeyAttribute(params string[] indexNames)
+            : base(indexNames) { }
     }
 }

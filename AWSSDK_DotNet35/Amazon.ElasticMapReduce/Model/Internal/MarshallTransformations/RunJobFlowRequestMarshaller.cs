@@ -14,6 +14,7 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Text;
 using System.Xml.Serialization;
@@ -69,7 +70,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             request.ResourcePath = uriResourcePath;
             
              
-            using (StringWriter stringWriter = new StringWriter(System.Globalization.CultureInfo.InvariantCulture))
+            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
@@ -393,6 +394,30 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                 {
                     writer.WritePropertyName("JobFlowRole");
                     writer.Write(runJobFlowRequest.JobFlowRole);
+                }
+
+                if (runJobFlowRequest != null && runJobFlowRequest.Tags != null && runJobFlowRequest.Tags.Count > 0)
+                {
+                    List<Tag> tagsList = runJobFlowRequest.Tags;
+                    writer.WritePropertyName("Tags");
+                    writer.WriteArrayStart();
+
+                    foreach (Tag tagsListValue in tagsList) 
+                    {
+                        writer.WriteObjectStart();
+                        if (tagsListValue != null && tagsListValue.IsSetKey()) 
+                        {
+                            writer.WritePropertyName("Key");
+                            writer.Write(tagsListValue.Key);
+                        }
+                        if (tagsListValue != null && tagsListValue.IsSetValue()) 
+                        {
+                            writer.WritePropertyName("Value");
+                            writer.Write(tagsListValue.Value);
+                        }
+                        writer.WriteObjectEnd();
+                    }
+                    writer.WriteArrayEnd();
                 }
 
                 writer.WriteObjectEnd();

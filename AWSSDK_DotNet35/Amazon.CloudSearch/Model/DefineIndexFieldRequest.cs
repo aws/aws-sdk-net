@@ -28,10 +28,11 @@ namespace Amazon.CloudSearch.Model
     /// <para>Configures an <c>IndexField</c> for the search domain. Used to create new fields and modify existing ones. If the field exists, the
     /// new configuration replaces the old one. You can configure a maximum of 200 index fields.</para>
     /// </summary>
-    public partial class DefineIndexFieldRequest : AmazonWebServiceRequest
+    public partial class DefineIndexFieldRequest : AmazonCloudSearchRequest
     {
         private string domainName;
         private IndexField indexField;
+
 
         /// <summary>
         /// A string that represents the name of a domain. Domain names must be unique across the domains owned by an account within an AWS region.

@@ -73,6 +73,13 @@
                 continue;
               }
   
+              if (context.TestExpression("AllowSelfManagement", targetDepth))
+              {
+                context.Read();
+                userProfile.AllowSelfManagement = BoolUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
                 if (context.CurrentDepth <= originalDepth)
                 {
                     return userProfile;

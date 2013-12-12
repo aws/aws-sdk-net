@@ -31,6 +31,7 @@ namespace Amazon.DynamoDBv2.Model
         private Dictionary<string,List<ItemCollectionMetrics>> itemCollectionMetrics = new Dictionary<string,List<ItemCollectionMetrics>>();
         private List<ConsumedCapacity> consumedCapacity = new List<ConsumedCapacity>();
 
+
         /// <summary>
         /// A map of tables and requests against those tables that were not processed. The <i>UnprocessedKeys</i> value is in the same form as
         /// <i>RequestItems</i>, so you can provide this value directly to a subsequent <i>BatchGetItem</i> operation. For more information, see

@@ -62,8 +62,14 @@
               if (context.TestExpression("Args", targetDepth))
               {
                 context.Read();
-                command.Args = new List<String>();
-                        StringUnmarshaller unmarshaller = StringUnmarshaller.GetInstance();
+                
+                if (context.CurrentTokenType == JsonToken.Null)
+                {
+                    command.Args = null;
+                    continue;
+                }
+                  command.Args = new List<String>();
+                  StringUnmarshaller unmarshaller = StringUnmarshaller.GetInstance();
                 while (context.Read())
                 {
                   JsonToken token = context.CurrentTokenType;                

@@ -36,7 +36,7 @@ namespace Amazon.RDS.Model
     /// SourceType nor the SourceIdentifier, you will be notified of events generated from all RDS sources belonging to your customer
     /// account.</para>
     /// </summary>
-    public partial class CreateEventSubscriptionRequest : AmazonWebServiceRequest
+    public partial class CreateEventSubscriptionRequest : AmazonRDSRequest
     {
         private string subscriptionName;
         private string snsTopicArn;
@@ -45,6 +45,7 @@ namespace Amazon.RDS.Model
         private List<string> sourceIds = new List<string>();
         private bool? enabled;
         private List<Tag> tags = new List<Tag>();
+
 
         /// <summary>
         /// The name of the subscription. Constraints: The name must be less than 255 characters.

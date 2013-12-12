@@ -28,7 +28,7 @@ namespace Amazon.RDS.Model
     /// <para> Creates a new DB instance from a DB snapshot. The target database is created from the source database restore point with the same
     /// configuration as the original source database, except that the new RDS instance is created with the default security group. </para>
     /// </summary>
-    public partial class RestoreDBInstanceFromDBSnapshotRequest : AmazonWebServiceRequest
+    public partial class RestoreDBInstanceFromDBSnapshotRequest : AmazonRDSRequest
     {
         private string dBInstanceIdentifier;
         private string dBSnapshotIdentifier;
@@ -45,6 +45,7 @@ namespace Amazon.RDS.Model
         private int? iops;
         private string optionGroupName;
         private List<Tag> tags = new List<Tag>();
+
 
         /// <summary>
         /// The identifier for the DB snapshot to restore from. Constraints: <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>

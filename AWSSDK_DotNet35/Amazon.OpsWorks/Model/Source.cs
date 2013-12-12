@@ -35,6 +35,7 @@ namespace Amazon.OpsWorks.Model
         private string sshKey;
         private string revision;
 
+
         /// <summary>
         /// The repository type.
         ///  

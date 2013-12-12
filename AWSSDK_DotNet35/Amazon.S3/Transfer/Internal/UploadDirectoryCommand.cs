@@ -85,7 +85,10 @@ namespace Amazon.S3.Transfer.Internal
                     CannedACL = this._request.CannedACL,
                     Metadata = this._request.Metadata,
                     StorageClass = this._request.StorageClass,
-                    ServerSideEncryptionMethod = this._request.ServerSideEncryptionMethod
+                    ServerSideEncryptionMethod = this._request.ServerSideEncryptionMethod,
+#if (BCL && !BCL45)
+                    Timeout = this._request.Timeout
+#endif
                 };
                 uploadRequest.UploadProgressEvent += new EventHandler<UploadProgressArgs>(uploadProgressEventCallback);
 

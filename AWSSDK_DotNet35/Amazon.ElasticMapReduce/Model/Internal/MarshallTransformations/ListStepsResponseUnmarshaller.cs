@@ -49,8 +49,14 @@
               if (context.TestExpression("Steps", targetDepth))
               {
                 context.Read();
-                response.Steps = new List<StepSummary>();
-                        StepSummaryUnmarshaller unmarshaller = StepSummaryUnmarshaller.GetInstance();
+                
+                if (context.CurrentTokenType == JsonToken.Null)
+                {
+                    response.Steps = null;
+                    continue;
+                }
+                  response.Steps = new List<StepSummary>();
+                  StepSummaryUnmarshaller unmarshaller = StepSummaryUnmarshaller.GetInstance();
                 while (context.Read())
                 {
                   JsonToken token = context.CurrentTokenType;                
@@ -89,12 +95,16 @@
           
           if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerException"))
           {
-            return new InternalServerException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            InternalServerException ex = new InternalServerException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            
+            return ex;
           }
   
           if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidRequestException"))
           {
-            return new InvalidRequestException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            InvalidRequestException ex = new InvalidRequestException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            
+            return ex;
           }
   
           return new AmazonElasticMapReduceException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);

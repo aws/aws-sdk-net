@@ -35,7 +35,7 @@ namespace Amazon.DynamoDBv2.Model
     /// href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#QueryAndScanParallelScan" >Parallel Scan</a> in the
     /// Amazon DynamoDB Developer Guide.</para>
     /// </summary>
-    public partial class ScanRequest : AmazonWebServiceRequest
+    public partial class ScanRequest : AmazonDynamoDBv2Request
     {
         private string tableName;
         private List<string> attributesToGet = new List<string>();
@@ -46,6 +46,7 @@ namespace Amazon.DynamoDBv2.Model
         private ReturnConsumedCapacity returnConsumedCapacity;
         private int? totalSegments;
         private int? segment;
+
 
         /// <summary>
         /// The name of the table containing the requested items.
@@ -265,7 +266,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <list type="definition">
         ///     <item>
         ///         <term>Allowed Values</term>
-        ///         <description>TOTAL, NONE</description>
+        ///         <description>INDEXES, TOTAL, NONE</description>
         ///     </item>
         /// </list>
         /// </para>

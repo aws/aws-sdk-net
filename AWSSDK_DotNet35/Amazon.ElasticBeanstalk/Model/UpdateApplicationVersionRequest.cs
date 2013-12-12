@@ -28,11 +28,12 @@ namespace Amazon.ElasticBeanstalk.Model
     /// <para> Updates the specified application version to have the specified properties. </para> <para><b>NOTE:</b> If a property (for example,
     /// description) is not provided, the value remains unchanged. To clear properties, specify an empty string. </para>
     /// </summary>
-    public partial class UpdateApplicationVersionRequest : AmazonWebServiceRequest
+    public partial class UpdateApplicationVersionRequest : AmazonElasticBeanstalkRequest
     {
         private string applicationName;
         private string versionLabel;
         private string description;
+
 
         /// <summary>
         /// The name of the application associated with this version. If no application is found with this name, <c>UpdateApplication</c> returns an

@@ -29,6 +29,7 @@ namespace Amazon.CloudSearch.Model
         
         private StopwordOptionsStatus stopwords;
 
+
         /// <summary>
         /// The stopword options configured for this search domain and the current status of those options.
         ///  

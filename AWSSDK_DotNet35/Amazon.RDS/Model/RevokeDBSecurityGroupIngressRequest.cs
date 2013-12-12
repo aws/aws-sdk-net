@@ -29,13 +29,14 @@ namespace Amazon.RDS.Model
     /// this API are one of CIDRIP, EC2SecurityGroupId for VPC, or (EC2SecurityGroupOwnerId and either EC2SecurityGroupName or EC2SecurityGroupId).
     /// </para>
     /// </summary>
-    public partial class RevokeDBSecurityGroupIngressRequest : AmazonWebServiceRequest
+    public partial class RevokeDBSecurityGroupIngressRequest : AmazonRDSRequest
     {
         private string dBSecurityGroupName;
         private string cIDRIP;
         private string eC2SecurityGroupName;
         private string eC2SecurityGroupId;
         private string eC2SecurityGroupOwnerId;
+
 
         /// <summary>
         /// The name of the DB security group to revoke ingress from.

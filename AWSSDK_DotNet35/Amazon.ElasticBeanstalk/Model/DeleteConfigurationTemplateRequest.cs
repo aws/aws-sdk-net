@@ -29,10 +29,11 @@ namespace Amazon.ElasticBeanstalk.Model
     /// the environment gets a copy of the template. You can delete or modify the environment's copy of the template without affecting the running
     /// environment.</para>
     /// </summary>
-    public partial class DeleteConfigurationTemplateRequest : AmazonWebServiceRequest
+    public partial class DeleteConfigurationTemplateRequest : AmazonElasticBeanstalkRequest
     {
         private string applicationName;
         private string templateName;
+
 
         /// <summary>
         /// The name of the application to delete the configuration template from.

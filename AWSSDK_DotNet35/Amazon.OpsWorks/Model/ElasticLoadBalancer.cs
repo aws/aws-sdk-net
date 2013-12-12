@@ -36,6 +36,7 @@ namespace Amazon.OpsWorks.Model
         private List<string> subnetIds = new List<string>();
         private List<string> ec2InstanceIds = new List<string>();
 
+
         /// <summary>
         /// The Elastic Load Balancing instance's name.
         ///  

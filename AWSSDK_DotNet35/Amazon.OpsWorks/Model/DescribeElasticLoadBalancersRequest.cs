@@ -26,11 +26,15 @@ namespace Amazon.OpsWorks.Model
     /// <summary>
     /// Container for the parameters to the DescribeElasticLoadBalancers operation.
     /// <para>Describes a stack's Elastic Load Balancing instances.</para> <para><b>NOTE:</b>You must specify at least one of the parameters.</para>
+    /// <para> <b>Required Permissions</b> : To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or
+    /// an attached policy that explicitly grants permissions. For more information on user permissions, see <a
+    /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
     /// </summary>
-    public partial class DescribeElasticLoadBalancersRequest : AmazonWebServiceRequest
+    public partial class DescribeElasticLoadBalancersRequest : AmazonOpsWorksRequest
     {
         private string stackId;
         private List<string> layerIds = new List<string>();
+
 
         /// <summary>
         /// A stack ID. The action describes the stack's Elastic Load Balancing instances.

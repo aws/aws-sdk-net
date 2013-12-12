@@ -32,6 +32,7 @@ namespace Amazon.DynamoDBv2.Model
         private long? indexSizeBytes;
         private long? itemCount;
 
+
         /// <summary>
         /// Represents the name of the secondary index.
         ///  

@@ -30,12 +30,13 @@ namespace Amazon.RDS.Model
     /// href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing" >Wikipedia Tutorial</a> .
     /// </para>
     /// </summary>
-    public partial class DescribeDBSubnetGroupsRequest : AmazonWebServiceRequest
+    public partial class DescribeDBSubnetGroupsRequest : AmazonRDSRequest
     {
         private string dBSubnetGroupName;
         private List<Filter> filters = new List<Filter>();
         private int? maxRecords;
         private string marker;
+
 
         /// <summary>
         /// The name of the DB subnet group to return details for.
@@ -52,6 +53,11 @@ namespace Amazon.RDS.Model
         {
             return this.dBSubnetGroupName != null;
         }
+
+        /// <summary>
+        /// This parameter is not currently supported.
+        ///  
+        /// </summary>
         public List<Filter> Filters
         {
             get { return this.filters; }

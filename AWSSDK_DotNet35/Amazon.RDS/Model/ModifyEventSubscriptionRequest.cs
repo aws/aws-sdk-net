@@ -31,13 +31,14 @@ namespace Amazon.RDS.Model
     /// href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html" >Events</a> topic in the Amazon RDS User Guide or by using the
     /// <b>DescribeEventCategories</b> action.</para>
     /// </summary>
-    public partial class ModifyEventSubscriptionRequest : AmazonWebServiceRequest
+    public partial class ModifyEventSubscriptionRequest : AmazonRDSRequest
     {
         private string subscriptionName;
         private string snsTopicArn;
         private string sourceType;
         private List<string> eventCategories = new List<string>();
         private bool? enabled;
+
 
         /// <summary>
         /// The name of the RDS event notification subscription.

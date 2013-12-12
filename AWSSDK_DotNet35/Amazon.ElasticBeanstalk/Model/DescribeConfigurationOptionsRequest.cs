@@ -29,13 +29,14 @@ namespace Amazon.ElasticBeanstalk.Model
     /// stack defines. The description includes the values the options, their default values, and an indication of the required action on a running
     /// environment if an option value is changed. </para>
     /// </summary>
-    public partial class DescribeConfigurationOptionsRequest : AmazonWebServiceRequest
+    public partial class DescribeConfigurationOptionsRequest : AmazonElasticBeanstalkRequest
     {
         private string applicationName;
         private string templateName;
         private string environmentName;
         private string solutionStackName;
         private List<OptionSpecification> options = new List<OptionSpecification>();
+
 
         /// <summary>
         /// The name of the application associated with the configuration template or environment. Only needed if you want to describe the configuration

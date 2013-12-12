@@ -39,6 +39,7 @@ using Amazon.ElasticTranscoder;
 using Amazon.Glacier;
 using Amazon.IdentityManagement;
 using Amazon.ImportExport;
+using Amazon.Kinesis;
 using Amazon.OpsWorks;
 using Amazon.RDS;
 using Amazon.Redshift;
@@ -2926,6 +2927,165 @@ namespace Amazon
         public static IAmazonImportExport CreateAmazonImportExportClient(AWSCredentials credentials, AmazonImportExportConfig config)
         {
             return new AmazonImportExportClient(credentials, config);
+        }
+        #endregion
+
+        #region Amazon Kinesis
+
+        /// <summary>
+        /// Create a client for the Amazon Kinesis Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSAccessKey" value="********************"/&gt;
+        ///         &lt;add key="AWSSecretKey" value="****************************************"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        /// </summary>
+        /// <returns>An Amazon Kinesis client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonKinesis CreateAmazonKinesisClient()
+        {
+            return new AmazonKinesisClient();
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon Kinesis Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSAccessKey" value="********************"/&gt;
+        ///         &lt;add key="AWSSecretKey" value="****************************************"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        /// </summary>
+        /// <param name="config">Configuration options for the service like HTTP Proxy, # of connections, etc</param>
+        /// <returns>An Amazon Kinesis client</returns>
+        public static IAmazonKinesis CreateAmazonKinesisClient(AmazonKinesisConfig config)
+        {
+            return new AmazonKinesisClient(config);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon Kinesis Service with the default configuration
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <returns>An Amazon Kinesis client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonKinesis CreateAmazonKinesisClient(
+            string awsAccessKey,
+            string awsSecretAccessKey
+            )
+        {
+            return new AmazonKinesisClient(awsAccessKey, awsSecretAccessKey);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon Kinesis Service with the specified configuration
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <param name="config">Configuration options for the service like HTTP Proxy, # of connections, etc
+        /// </param>
+        /// <returns>An Amazon Kinesis client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonKinesis CreateAmazonKinesisClient(
+            string awsAccessKey,
+            string awsSecretAccessKey, AmazonKinesisConfig config
+            )
+        {
+            return new AmazonKinesisClient(awsAccessKey, awsSecretAccessKey, config);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon Kinesis Service with the credentials loaded from the application's
+        /// default configuration, and if unsuccessful from the Instance Profile service on an EC2 instance.
+        /// 
+        /// Example App.config with credentials set. 
+        /// <code>
+        /// &lt;?xml version="1.0" encoding="utf-8" ?&gt;
+        /// &lt;configuration&gt;
+        ///     &lt;appSettings&gt;
+        ///         &lt;add key="AWSAccessKey" value="********************"/&gt;
+        ///         &lt;add key="AWSSecretKey" value="****************************************"/&gt;
+        ///     &lt;/appSettings&gt;
+        /// &lt;/configuration&gt;
+        /// </code>
+        /// </summary>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon Kinesis client</returns>
+        public static IAmazonKinesis CreateAmazonKinesisClient(RegionEndpoint region)
+        {
+            return new AmazonKinesisClient(region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon Kinesis Service with the specified region
+        /// </summary>
+        /// <param name="awsAccessKey">The AWS Access Key associated with the account</param>
+        /// <param name="awsSecretAccessKey">The AWS Secret Access Key associated with the account</param>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon Kinesis client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonKinesis CreateAmazonKinesisClient(
+            string awsAccessKey,
+            string awsSecretAccessKey, RegionEndpoint region
+            )
+        {
+            return new AmazonKinesisClient(awsAccessKey, awsSecretAccessKey, region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon Kinesis Service with AWSCredentials.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <returns>An Amazon Kinesis client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonKinesis CreateAmazonKinesisClient(AWSCredentials credentials)
+        {
+            return new AmazonKinesisClient(credentials);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon Kinesis Service with AWSCredentials and region.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="region">The region to connect to.</param>
+        /// <returns>An Amazon Kinesis client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonKinesis CreateAmazonKinesisClient(AWSCredentials credentials, RegionEndpoint region)
+        {
+            return new AmazonKinesisClient(credentials, region);
+        }
+
+        /// <summary>
+        /// Create a client for the Amazon Kinesis Service with AWSCredentials and an AmazonKinesis Configuration object.
+        /// </summary>
+        /// <param name="credentials">AWS Credentials</param>
+        /// <param name="config">Configuration options for the service like HTTP Proxy, # of connections, etc</param>
+        /// <returns>An Amazon Kinesis client</returns>
+        /// <remarks>
+        /// </remarks>
+        public static IAmazonKinesis CreateAmazonKinesisClient(AWSCredentials credentials, AmazonKinesisConfig config)
+        {
+            return new AmazonKinesisClient(credentials, config);
         }
         #endregion
 

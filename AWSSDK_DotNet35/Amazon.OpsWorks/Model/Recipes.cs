@@ -40,6 +40,7 @@ namespace Amazon.OpsWorks.Model
         private List<string> undeploy = new List<string>();
         private List<string> shutdown = new List<string>();
 
+
         /// <summary>
         /// An array of custom recipe names to be run following a <c>setup</c> event.
         ///  

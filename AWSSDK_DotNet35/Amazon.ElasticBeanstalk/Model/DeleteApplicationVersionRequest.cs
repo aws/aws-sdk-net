@@ -28,11 +28,12 @@ namespace Amazon.ElasticBeanstalk.Model
     /// <para> Deletes the specified version from the specified application. </para> <para><b>NOTE:</b>You cannot delete an application version that
     /// is associated with a running environment.</para>
     /// </summary>
-    public partial class DeleteApplicationVersionRequest : AmazonWebServiceRequest
+    public partial class DeleteApplicationVersionRequest : AmazonElasticBeanstalkRequest
     {
         private string applicationName;
         private string versionLabel;
         private bool? deleteSourceBundle;
+
 
         /// <summary>
         /// The name of the application to delete releases from.

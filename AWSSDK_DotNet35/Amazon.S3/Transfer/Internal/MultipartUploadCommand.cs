@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Util;
 using Amazon.S3.Model;
 using Amazon.S3.Util;
 using Amazon.S3.Encryption;
+using Amazon.Runtime;
 
 namespace Amazon.S3.Transfer.Internal
 {
@@ -164,7 +165,6 @@ namespace Amazon.S3.Transfer.Internal
         /// </summary>
         public override void Execute()
         {
-            int timeout = this._config.DefaultTimeout;
 
             InitiateMultipartUploadRequest initRequest = new InitiateMultipartUploadRequest()
             {
@@ -199,7 +199,10 @@ namespace Amazon.S3.Transfer.Internal
                         Key = this._fileTransporterRequest.Key,
                         UploadId = initResponse.UploadId,
                         PartNumber = i,
-                        PartSize = this._partSize
+                        PartSize = this._partSize,
+#if (BCL && !BCL45)
+                        Timeout = ClientConfig.GetTimeoutValue(this._config.DefaultTimeout,this._fileTransporterRequest.Timeout)
+#endif
                     };
 
                     if ((filePosition + this._partSize >= this._contentLength) && _s3Client is AmazonS3EncryptionClient)

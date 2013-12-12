@@ -27,9 +27,10 @@ namespace Amazon.RDS.Model
     /// Container for the parameters to the DeleteEventSubscription operation.
     /// <para>Deletes an RDS event notification subscription.</para>
     /// </summary>
-    public partial class DeleteEventSubscriptionRequest : AmazonWebServiceRequest
+    public partial class DeleteEventSubscriptionRequest : AmazonRDSRequest
     {
         private string subscriptionName;
+
 
         /// <summary>
         /// The name of the RDS event notification subscription you want to delete.

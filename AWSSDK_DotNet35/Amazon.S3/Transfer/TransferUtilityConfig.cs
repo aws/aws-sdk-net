@@ -38,12 +38,10 @@ namespace Amazon.S3.Transfer
     /// 	different configurations and tune transfer manager performance.
     /// 	</para>
     /// </summary>
-    public class TransferUtilityConfig
+    public partial class TransferUtilityConfig
     {
         long _minSizeBeforePartUpload = 16 * (long)Math.Pow(2, 20);
         int _numberOfThreads;
-        int _defaultTimeout = 5 * 60 * 1000; // Default value is 5 minutes.
-
 
         /// <summary>
         /// Default constructor.
@@ -54,7 +52,7 @@ namespace Amazon.S3.Transfer
         }
 
         /// <summary>
-        /// Gets or sets the minimum part size for upload parts. 
+        /// Gets or sets the minimum part size for upload parts in bytes. The default is 16 MB.
         /// Decreasing the minimum part size causes 
         /// multipart uploads to be split into a larger number
         /// of smaller parts. Setting this value too low has a negative effect
@@ -85,15 +83,6 @@ namespace Amazon.S3.Transfer
 
                 this._numberOfThreads = value;
             }
-        }
-
-        /// <summary>
-        /// Gets or sets the default timeout in milliseconds used for writing objects to S3.  The default value is 5 minutes.
-        /// </summary>
-        public int DefaultTimeout
-        {
-            get { return this._defaultTimeout; }
-            set { this._defaultTimeout = value; }
         }
     }
 }

@@ -28,9 +28,10 @@ namespace Amazon.RDS.Model
     /// <para> Lists all tags on an Amazon RDS resource.</para> <para>For an overview on tagging an Amazon RDS resource, see <a
     /// href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html" >Tagging Amazon RDS Resources</a> .</para>
     /// </summary>
-    public partial class ListTagsForResourceRequest : AmazonWebServiceRequest
+    public partial class ListTagsForResourceRequest : AmazonRDSRequest
     {
         private string resourceName;
+
 
         /// <summary>
         /// The Amazon RDS resource with tags to be listed. This value is an Amazon Resource Name (ARN). For information about creating an ARN, see <a

@@ -22,16 +22,16 @@ namespace Amazon.Glacier
     /// <summary>
     /// Configuration for accessing AmazonGlacier service
     /// </summary>
-    public class AmazonGlacierConfig : ClientConfig
+    public partial class AmazonGlacierConfig : ClientConfig
     {
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonGlacierConfig()
         {
-            this.AuthenticationServiceName = "glacier";
+            this.AuthenticationServiceName = "glacier";            
         }
-
+                
         /// <summary>
         /// The constant used to lookup in the region hash the endpoint.
         /// </summary>

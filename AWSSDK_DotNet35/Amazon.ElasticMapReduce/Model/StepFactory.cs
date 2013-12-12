@@ -205,9 +205,11 @@ namespace Amazon.ElasticMapReduce.Model
 
         /// <summary>
         /// The available Hive versions.
+        /// For reference: http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/UsingEMR_SupportedHiveVersions.html
         /// </summary>
         public class HiveVersion
         {
+            public static readonly HiveVersion Hive_0_4 = new HiveVersion("0.4");
             public static readonly HiveVersion Hive_0_5 = new HiveVersion("0.5");
             public static readonly HiveVersion Hive_0_7 = new HiveVersion("0.7");
             public static readonly HiveVersion Hive_0_7_1 = new HiveVersion("0.7.1");
@@ -216,11 +218,21 @@ namespace Amazon.ElasticMapReduce.Model
             public static readonly HiveVersion Hive_0_7_1_3 = new HiveVersion("0.7.1.3");
             public static readonly HiveVersion Hive_0_7_1_4 = new HiveVersion("0.7.1.4");
             public static readonly HiveVersion Hive_0_8_1 = new HiveVersion("0.8.1");
+            public static readonly HiveVersion Hive_0_8_1_1 = new HiveVersion("0.8.1.1");
+            public static readonly HiveVersion Hive_0_8_1_2 = new HiveVersion("0.8.1.2");
+            public static readonly HiveVersion Hive_0_8_1_3 = new HiveVersion("0.8.1.3");
+            public static readonly HiveVersion Hive_0_8_1_4 = new HiveVersion("0.8.1.4");
+            public static readonly HiveVersion Hive_0_8_1_5 = new HiveVersion("0.8.1.5");
+            public static readonly HiveVersion Hive_0_8_1_6 = new HiveVersion("0.8.1.6");
+            public static readonly HiveVersion Hive_0_8_1_7 = new HiveVersion("0.8.1.7");
+            public static readonly HiveVersion Hive_0_8_1_8 = new HiveVersion("0.8.1.8");
+            public static readonly HiveVersion Hive_0_11_0 = new HiveVersion("0.11.0");
+            public static readonly HiveVersion Hive_0_11_0_1 = new HiveVersion("0.11.0.1");
             public static readonly HiveVersion Hive_Latest = new HiveVersion("latest");
 
             string _version;
 
-            private HiveVersion(string version)
+            public HiveVersion(string version)
             {
                 this._version = version;
             }

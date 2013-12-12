@@ -25,9 +25,11 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateInstance operation.
-    /// <para>Updates a specified instance.</para>
+    /// <para>Updates a specified instance.</para> <para> <b>Required Permissions</b> : To use this action, an IAM user must have a Manage
+    /// permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a
+    /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
     /// </summary>
-    public partial class UpdateInstanceRequest : AmazonWebServiceRequest
+    public partial class UpdateInstanceRequest : AmazonOpsWorksRequest
     {
         private string instanceId;
         private List<string> layerIds = new List<string>();
@@ -39,6 +41,7 @@ namespace Amazon.OpsWorks.Model
         private string sshKeyName;
         private Architecture architecture;
         private bool? installUpdatesOnBoot;
+
 
         /// <summary>
         /// The instance ID.

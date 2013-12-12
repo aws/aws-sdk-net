@@ -39,6 +39,7 @@ namespace Amazon.OpsWorks.Model
         private string customJson;
         private List<string> instanceIds = new List<string>();
 
+
         /// <summary>
         /// The deployment ID.
         ///  

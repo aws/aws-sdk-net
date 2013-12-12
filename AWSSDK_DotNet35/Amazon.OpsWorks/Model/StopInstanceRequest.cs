@@ -28,11 +28,14 @@ namespace Amazon.OpsWorks.Model
     /// <para>Stops a specified instance. When you stop a standard instance, the data disappears and must be reinstalled when you restart the
     /// instance. You can stop an Amazon EBS-backed instance without losing data. For more information, see <a
     /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-starting.html" >Starting, Stopping, and Rebooting Instances</a>
-    /// .</para>
+    /// .</para> <para> <b>Required Permissions</b> : To use this action, an IAM user must have a Manage permissions level for the stack, or an
+    /// attached policy that explicitly grants permissions. For more information on user permissions, see <a
+    /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
     /// </summary>
-    public partial class StopInstanceRequest : AmazonWebServiceRequest
+    public partial class StopInstanceRequest : AmazonOpsWorksRequest
     {
         private string instanceId;
+
 
         /// <summary>
         /// The instance ID.

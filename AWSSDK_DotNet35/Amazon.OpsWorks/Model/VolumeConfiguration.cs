@@ -31,6 +31,7 @@ namespace Amazon.OpsWorks.Model
         private int? numberOfDisks;
         private int? size;
 
+
         /// <summary>
         /// The volume mount point. For example "/dev/sdh".
         ///  

@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(describeVpcAttributeRequest, "AmazonEC2");
             request.Parameters.Add("Action", "DescribeVpcAttribute");
-            request.Parameters.Add("Version", "2013-10-01");
+            request.Parameters.Add("Version", "2013-10-15");
             if (describeVpcAttributeRequest != null && describeVpcAttributeRequest.IsSetVpcId())
             {
                 request.Parameters.Add("VpcId", StringUtils.FromString(describeVpcAttributeRequest.VpcId));

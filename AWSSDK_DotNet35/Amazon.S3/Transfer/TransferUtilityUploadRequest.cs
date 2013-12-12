@@ -35,7 +35,7 @@ namespace Amazon.S3.Transfer
     /// that can be set when making a this request with the 
     /// <c>TransferUtility</c> method.
     /// </summary>
-    public class TransferUtilityUploadRequest
+    public class TransferUtilityUploadRequest : BaseUploadRequest
     {
         private string bucketName;
         private string key;

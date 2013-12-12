@@ -36,6 +36,7 @@ namespace Amazon.RDS.Model
         private int? iops;
         private string dBInstanceIdentifier;
 
+
         /// <summary>
         /// Contains the new <c>DBInstanceClass</c> for the DB instance that will be applied or is in progress.
         ///  

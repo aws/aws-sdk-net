@@ -34,9 +34,10 @@ namespace Amazon.DynamoDBv2.Model
     /// table deletion is complete. </para> <para>When you delete a table, any local secondary indexes on that table are also deleted.</para>
     /// <para>Use the <i>DescribeTable</i> API to check the status of the table. </para>
     /// </summary>
-    public partial class DeleteTableRequest : AmazonWebServiceRequest
+    public partial class DeleteTableRequest : AmazonDynamoDBv2Request
     {
         private string tableName;
+
 
         /// <summary>
         /// The name of the table to delete.

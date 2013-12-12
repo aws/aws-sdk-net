@@ -29,6 +29,7 @@ namespace Amazon.OpsWorks.Model
         
         private List<Layer> layers = new List<Layer>();
 
+
         /// <summary>
         /// An array of <c>Layer</c> objects that describe the layers.
         ///  

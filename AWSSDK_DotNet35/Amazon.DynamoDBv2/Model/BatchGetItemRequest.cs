@@ -43,10 +43,11 @@ namespace Amazon.DynamoDBv2.Model
     /// href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDDTables.html#CapacityUnitCalculations" >Capacity Units
     /// Calculations</a> in the Amazon DynamoDB Developer Guide.</para>
     /// </summary>
-    public partial class BatchGetItemRequest : AmazonWebServiceRequest
+    public partial class BatchGetItemRequest : AmazonDynamoDBv2Request
     {
         private Dictionary<string,KeysAndAttributes> requestItems = new Dictionary<string,KeysAndAttributes>();
         private ReturnConsumedCapacity returnConsumedCapacity;
+
 
         /// <summary>
         /// A map of one or more table names and, for each table, the corresponding primary keys for the items to retrieve. Each table name can be
@@ -87,7 +88,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <list type="definition">
         ///     <item>
         ///         <term>Allowed Values</term>
-        ///         <description>TOTAL, NONE</description>
+        ///         <description>INDEXES, TOTAL, NONE</description>
         ///     </item>
         /// </list>
         /// </para>

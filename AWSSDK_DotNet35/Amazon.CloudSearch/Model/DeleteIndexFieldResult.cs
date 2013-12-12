@@ -29,6 +29,7 @@ namespace Amazon.CloudSearch.Model
         
         private IndexFieldStatus indexField;
 
+
         /// <summary>
         /// The value of an <c>IndexField</c> and its current status.
         ///  

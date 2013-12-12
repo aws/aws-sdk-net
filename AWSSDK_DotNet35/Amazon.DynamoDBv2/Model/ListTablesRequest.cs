@@ -27,10 +27,11 @@ namespace Amazon.DynamoDBv2.Model
     /// Container for the parameters to the ListTables operation.
     /// <para>Returns an array of all the tables associated with the current account and endpoint. </para>
     /// </summary>
-    public partial class ListTablesRequest : AmazonWebServiceRequest
+    public partial class ListTablesRequest : AmazonDynamoDBv2Request
     {
         private string exclusiveStartTableName;
         private int? limit;
+
 
         /// <summary>
         /// The name of the table that starts the list. If you already ran a <i>ListTables</i> operation and received a <i>LastEvaluatedTableName</i>

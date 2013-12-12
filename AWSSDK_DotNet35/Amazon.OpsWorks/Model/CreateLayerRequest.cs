@@ -30,9 +30,11 @@ namespace Amazon.OpsWorks.Model
     /// <para><b>NOTE:</b>You should use CreateLayer for noncustom layer types such as PHP App Server only if the stack does not have an existing
     /// layer of that type. A stack can have at most one instance of each noncustom layer; if you attempt to create a second instance, CreateLayer
     /// fails. A stack can have an arbitrary number of custom layers, so you can call CreateLayer as many times as you like for that layer
-    /// type.</para>
+    /// type.</para> <para> <b>Required Permissions</b> : To use this action, an IAM user must have a Manage permissions level for the stack, or an
+    /// attached policy that explicitly grants permissions. For more information on user permissions, see <a
+    /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
     /// </summary>
-    public partial class CreateLayerRequest : AmazonWebServiceRequest
+    public partial class CreateLayerRequest : AmazonOpsWorksRequest
     {
         private string stackId;
         private LayerType type;
@@ -48,6 +50,7 @@ namespace Amazon.OpsWorks.Model
         private bool? autoAssignPublicIps;
         private Recipes customRecipes;
         private bool? installUpdatesOnBoot;
+
 
         /// <summary>
         /// The layer stack ID.

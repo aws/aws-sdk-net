@@ -28,9 +28,10 @@ namespace Amazon.DynamoDBv2.Model
     /// <para>Returns information about the table, including the current status of the table, when it was created, the primary key schema, and any
     /// indexes on the table.</para>
     /// </summary>
-    public partial class DescribeTableRequest : AmazonWebServiceRequest
+    public partial class DescribeTableRequest : AmazonDynamoDBv2Request
     {
         private string tableName;
+
 
         /// <summary>
         /// The name of the table to describe.

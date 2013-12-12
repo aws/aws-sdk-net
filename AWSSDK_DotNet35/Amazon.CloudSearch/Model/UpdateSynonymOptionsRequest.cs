@@ -28,10 +28,11 @@ namespace Amazon.CloudSearch.Model
     /// <para>Configures a synonym dictionary for the search domain. The synonym dictionary is used during indexing to configure mappings for terms
     /// that occur in text fields. The maximum size of the synonym dictionary is 100 KB. </para>
     /// </summary>
-    public partial class UpdateSynonymOptionsRequest : AmazonWebServiceRequest
+    public partial class UpdateSynonymOptionsRequest : AmazonCloudSearchRequest
     {
         private string domainName;
         private string synonyms;
+
 
         /// <summary>
         /// A string that represents the name of a domain. Domain names must be unique across the domains owned by an account within an AWS region.

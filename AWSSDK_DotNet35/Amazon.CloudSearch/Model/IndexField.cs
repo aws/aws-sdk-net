@@ -34,6 +34,7 @@ namespace Amazon.CloudSearch.Model
         private TextOptions textOptions;
         private List<SourceAttribute> sourceAttributes = new List<SourceAttribute>();
 
+
         /// <summary>
         /// The name of a field in the search index. Field names must begin with a letter and can contain the following characters: a-z (lowercase),
         /// 0-9, and _ (underscore). Uppercase letters and hyphens are not allowed. The names "body", "docid", and "text_relevance" are reserved and

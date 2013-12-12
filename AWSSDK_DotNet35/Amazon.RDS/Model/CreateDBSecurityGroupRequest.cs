@@ -27,11 +27,12 @@ namespace Amazon.RDS.Model
     /// Container for the parameters to the CreateDBSecurityGroup operation.
     /// <para> Creates a new DB security group. DB security groups control access to a DB instance. </para>
     /// </summary>
-    public partial class CreateDBSecurityGroupRequest : AmazonWebServiceRequest
+    public partial class CreateDBSecurityGroupRequest : AmazonRDSRequest
     {
         private string dBSecurityGroupName;
         private string dBSecurityGroupDescription;
         private List<Tag> tags = new List<Tag>();
+
 
         /// <summary>
         /// The name for the DB security group. This value is stored as a lowercase string. Constraints: <ul> <li>Must be 1 to 255 alphanumeric

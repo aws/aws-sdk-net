@@ -33,11 +33,12 @@ namespace Amazon.ElasticBeanstalk.Model
     /// 
     /// </ul>
     /// </summary>
-    public partial class RequestEnvironmentInfoRequest : AmazonWebServiceRequest
+    public partial class RequestEnvironmentInfoRequest : AmazonElasticBeanstalkRequest
     {
         private string environmentId;
         private string environmentName;
         private EnvironmentInfoType infoType;
+
 
         /// <summary>
         /// The ID of the environment of the requested data. If no such environment is found, <c>RequestEnvironmentInfo</c> returns an

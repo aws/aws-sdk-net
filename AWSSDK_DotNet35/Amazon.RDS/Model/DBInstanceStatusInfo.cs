@@ -31,6 +31,7 @@ namespace Amazon.RDS.Model
         private string status;
         private string message;
 
+
         /// <summary>
         /// This value is currently "read replication."
         ///  

@@ -27,9 +27,10 @@ namespace Amazon.ElasticBeanstalk.Model
     /// Container for the parameters to the DescribeApplications operation.
     /// <para>Returns the descriptions of existing applications.</para>
     /// </summary>
-    public partial class DescribeApplicationsRequest : AmazonWebServiceRequest
+    public partial class DescribeApplicationsRequest : AmazonElasticBeanstalkRequest
     {
         private List<string> applicationNames = new List<string>();
+
 
         /// <summary>
         /// If specified, AWS Elastic Beanstalk restricts the returned descriptions to only include those with the specified names.

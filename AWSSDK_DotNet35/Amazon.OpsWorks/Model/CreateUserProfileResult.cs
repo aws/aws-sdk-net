@@ -29,6 +29,7 @@ namespace Amazon.OpsWorks.Model
         
         private string iamUserArn;
 
+
         /// <summary>
         /// The user's IAM ARN.
         ///  

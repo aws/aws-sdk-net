@@ -29,6 +29,7 @@ namespace Amazon.OpsWorks.Model
         
         private List<LoadBasedAutoScalingConfiguration> loadBasedAutoScalingConfigurations = new List<LoadBasedAutoScalingConfiguration>();
 
+
         /// <summary>
         /// An array of <c>LoadBasedAutoScalingConfiguration</c> objects that describe each layer's configuration.
         ///  

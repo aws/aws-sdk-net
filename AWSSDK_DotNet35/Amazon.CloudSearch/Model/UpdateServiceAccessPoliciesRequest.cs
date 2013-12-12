@@ -28,10 +28,11 @@ namespace Amazon.CloudSearch.Model
     /// <para>Configures the policies that control access to the domain's document and search services. The maximum size of an access policy
     /// document is 100 KB.</para>
     /// </summary>
-    public partial class UpdateServiceAccessPoliciesRequest : AmazonWebServiceRequest
+    public partial class UpdateServiceAccessPoliciesRequest : AmazonCloudSearchRequest
     {
         private string domainName;
         private string accessPolicies;
+
 
         /// <summary>
         /// A string that represents the name of a domain. Domain names must be unique across the domains owned by an account within an AWS region.

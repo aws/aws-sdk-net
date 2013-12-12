@@ -30,7 +30,7 @@ namespace Amazon.RDS.Model
     /// inherited from the source DB instance, except as specified below. </para> <para><b>IMPORTANT:</b> The source DB instance must have backup
     /// retention enabled. </para>
     /// </summary>
-    public partial class CreateDBInstanceReadReplicaRequest : AmazonWebServiceRequest
+    public partial class CreateDBInstanceReadReplicaRequest : AmazonRDSRequest
     {
         private string dBInstanceIdentifier;
         private string sourceDBInstanceIdentifier;
@@ -42,6 +42,8 @@ namespace Amazon.RDS.Model
         private string optionGroupName;
         private bool? publiclyAccessible;
         private List<Tag> tags = new List<Tag>();
+        private string dBSubnetGroupName;
+
 
         /// <summary>
         /// The DB instance identifier of the read replica. This is the unique key that identifies a DB instance. This parameter is stored as a
@@ -62,7 +64,9 @@ namespace Amazon.RDS.Model
 
         /// <summary>
         /// The identifier of the DB instance that will act as the source for the read replica. Each DB instance can have up to five read replicas.
-        /// Constraints: Must be the identifier of an existing DB instance that is not already a read replica DB instance.
+        /// Constraints: <ul> <li>Must be the identifier of an existing DB instance.</li> <li>Can specify a DB instance that is a read replica only if
+        /// the source is running MySQL 5.6.</li> <li>The specified DB instance must have automatic backups enabled, its backup retention period must be
+        /// greater than 0.</li> </ul>
         ///  
         /// </summary>
         public string SourceDBInstanceIdentifier
@@ -211,6 +215,23 @@ namespace Amazon.RDS.Model
         internal bool IsSetTags()
         {
             return this.tags.Count > 0;
+        }
+
+        /// <summary>
+        /// A DB Subnet Group to associate with this DB Instance in case of a cross region read replica. If there is no DB Subnet Group, then it is a
+        /// non-VPC DB instance. Constraints: All the cross region read replicas that share the source instance should lie within the same VPC.
+        ///  
+        /// </summary>
+        public string DBSubnetGroupName
+        {
+            get { return this.dBSubnetGroupName; }
+            set { this.dBSubnetGroupName = value; }
+        }
+
+        // Check to see if DBSubnetGroupName property is set
+        internal bool IsSetDBSubnetGroupName()
+        {
+            return this.dBSubnetGroupName != null;
         }
 
     }

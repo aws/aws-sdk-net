@@ -10,6 +10,7 @@
 		"Amazon.DynamoDBv2.IAmazonDynamoDB",
 		"Amazon.EC2.IAmazonEC2",
 		"Amazon.ElasticLoadBalancing.IAmazonElasticLoadBalancing",
+		"Amazon.Kinesis.IAmazonKinesis",
 		"Amazon.S3.IAmazonS3",
 		"Amazon.SecurityToken.IAmazonSecurityTokenService",
 		"Amazon.SimpleDB.IAmazonSimpleDB",

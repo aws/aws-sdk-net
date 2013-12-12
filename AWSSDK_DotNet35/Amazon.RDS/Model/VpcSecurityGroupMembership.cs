@@ -29,6 +29,7 @@ namespace Amazon.RDS.Model
         private string vpcSecurityGroupId;
         private string status;
 
+
         /// <summary>
         /// The name of the VPC security group.
         ///  

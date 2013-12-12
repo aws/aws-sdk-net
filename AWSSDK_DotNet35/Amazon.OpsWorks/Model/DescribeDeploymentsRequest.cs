@@ -26,13 +26,16 @@ namespace Amazon.OpsWorks.Model
     /// <summary>
     /// Container for the parameters to the DescribeDeployments operation.
     /// <para>Requests a description of a specified set of deployments.</para> <para><b>NOTE:</b>You must specify at least one of the
-    /// parameters.</para>
+    /// parameters.</para> <para> <b>Required Permissions</b> : To use this action, an IAM user must have a Show, Deploy, or Manage permissions
+    /// level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a
+    /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
     /// </summary>
-    public partial class DescribeDeploymentsRequest : AmazonWebServiceRequest
+    public partial class DescribeDeploymentsRequest : AmazonOpsWorksRequest
     {
         private string stackId;
         private string appId;
         private List<string> deploymentIds = new List<string>();
+
 
         /// <summary>
         /// The stack ID. If you include this parameter, <c>DescribeDeployments</c> returns a description of the commands associated with the specified

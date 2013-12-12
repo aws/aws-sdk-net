@@ -46,7 +46,7 @@ namespace Amazon.DynamoDBv2.DataModel
         public bool IsHashKey { get; set; }
         public bool IsRangeKey { get; set; }
         public bool IsVersion { get; set; }
-        public bool IsLSIRangeKey { get { return (Indexes != null && Indexes.Count > 0); } }
+        public bool IsSecondaryIndexRangeKey { get { return (Indexes != null && Indexes.Count > 0); } }
 
         // corresponding IndexName, if applicable
         public List<string> Indexes { get; set; }
@@ -127,7 +127,7 @@ namespace Amazon.DynamoDBv2.DataModel
             PropertyToPropertyStorageMapping[propertyName] = value;
             if (!AttributesToGet.Contains(attributeName))
                 AttributesToGet.Add(attributeName);
-            if (value.IsLSIRangeKey)
+            if (value.IsSecondaryIndexRangeKey)
             {
                 List<string> indexes;
                 if (!AttributeToIndexesNameMapping.TryGetValue(attributeName, out indexes))
@@ -268,13 +268,12 @@ namespace Amazon.DynamoDBv2.DataModel
 
                         propertyStorage.IsRangeKey = true;
                     }
-
-                    var lsiRangeKeyAttribute = propertyAttribute as DynamoDBLocalSecondaryIndexRangeKeyAttribute;
-                    if (lsiRangeKeyAttribute != null)
+                    if (propertyAttribute is DynamoDBSecondaryIndexRangeKeyAttribute)
                     {
-                        if (lsiRangeKeyAttribute.IndexNames == null || lsiRangeKeyAttribute.IndexNames.Length == 0)
-                            throw new InvalidOperationException("Local Secondary Index must not be null or empty");
-                        propertyStorage.Indexes.AddRange(lsiRangeKeyAttribute.IndexNames);
+                        DynamoDBSecondaryIndexRangeKeyAttribute siRangeKeyAttribute = propertyAttribute as DynamoDBSecondaryIndexRangeKeyAttribute;
+                        if (siRangeKeyAttribute.IndexNames == null || siRangeKeyAttribute.IndexNames.Length == 0)
+                            throw new InvalidOperationException("Index must not be null or empty");
+                        propertyStorage.Indexes.AddRange(siRangeKeyAttribute.IndexNames);
                     }
 
                     if (propertyAttribute.Converter != null)

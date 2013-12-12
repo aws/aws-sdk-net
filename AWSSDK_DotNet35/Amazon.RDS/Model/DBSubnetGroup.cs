@@ -41,6 +41,7 @@ namespace Amazon.RDS.Model
         private string subnetGroupStatus;
         private List<Subnet> subnets = new List<Subnet>();
 
+
         /// <summary>
         /// Specifies the name of the DB subnet group.
         ///  

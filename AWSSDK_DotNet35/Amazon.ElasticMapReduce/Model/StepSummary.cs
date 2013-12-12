@@ -34,15 +34,6 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// The identifier of the cluster step.
         ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 64</description>
-        ///     </item>
-        /// </list>
-        /// </para>
         /// </summary>
         public string Id
         {
@@ -59,15 +50,6 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// The name of the cluster step.
         ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 256</description>
-        ///     </item>
-        /// </list>
-        /// </para>
         /// </summary>
         public string Name
         {

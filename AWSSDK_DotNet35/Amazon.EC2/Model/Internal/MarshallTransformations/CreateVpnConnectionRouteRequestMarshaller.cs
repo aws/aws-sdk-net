@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(createVpnConnectionRouteRequest, "AmazonEC2");
             request.Parameters.Add("Action", "CreateVpnConnectionRoute");
-            request.Parameters.Add("Version", "2013-10-01");
+            request.Parameters.Add("Version", "2013-10-15");
             if (createVpnConnectionRouteRequest != null && createVpnConnectionRouteRequest.IsSetVpnConnectionId())
             {
                 request.Parameters.Add("VpnConnectionId", StringUtils.FromString(createVpnConnectionRouteRequest.VpnConnectionId));

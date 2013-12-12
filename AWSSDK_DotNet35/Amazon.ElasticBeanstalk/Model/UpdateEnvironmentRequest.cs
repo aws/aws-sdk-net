@@ -31,15 +31,17 @@ namespace Amazon.ElasticBeanstalk.Model
     /// When updating the configuration settings to a new template or individual settings, a draft configuration is created and
     /// DescribeConfigurationSettings for this environment returns two setting descriptions with different <c>DeploymentStatus</c> values. </para>
     /// </summary>
-    public partial class UpdateEnvironmentRequest : AmazonWebServiceRequest
+    public partial class UpdateEnvironmentRequest : AmazonElasticBeanstalkRequest
     {
         private string environmentId;
         private string environmentName;
+        private string description;
+        private EnvironmentTier tier;
         private string versionLabel;
         private string templateName;
-        private string description;
         private List<ConfigurationOptionSetting> optionSettings = new List<ConfigurationOptionSetting>();
         private List<OptionSpecification> optionsToRemove = new List<OptionSpecification>();
+
 
         /// <summary>
         /// The ID of the environment to update. If no environment with this ID exists, AWS Elastic Beanstalk returns an <c>InvalidParameterValue</c>
@@ -84,6 +86,48 @@ namespace Amazon.ElasticBeanstalk.Model
         internal bool IsSetEnvironmentName()
         {
             return this.environmentName != null;
+        }
+
+        /// <summary>
+        /// If this parameter is specified, AWS Elastic Beanstalk updates the description of this environment.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Length</term>
+        ///         <description>0 - 200</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
+        public string Description
+        {
+            get { return this.description; }
+            set { this.description = value; }
+        }
+
+        // Check to see if Description property is set
+        internal bool IsSetDescription()
+        {
+            return this.description != null;
+        }
+
+        /// <summary>
+        /// This specifies the tier to use to update the environment. Condition: You can only update the tier version for an environment. If you change
+        /// the name of the type, AWS Elastic Beanstalk returns <c>InvalidParameterValue</c> error.
+        ///  
+        /// </summary>
+        public EnvironmentTier Tier
+        {
+            get { return this.tier; }
+            set { this.tier = value; }
+        }
+
+        // Check to see if Tier property is set
+        internal bool IsSetTier()
+        {
+            return this.tier != null;
         }
 
         /// <summary>
@@ -136,31 +180,6 @@ namespace Amazon.ElasticBeanstalk.Model
         internal bool IsSetTemplateName()
         {
             return this.templateName != null;
-        }
-
-        /// <summary>
-        /// If this parameter is specified, AWS Elastic Beanstalk updates the description of this environment.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 200</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string Description
-        {
-            get { return this.description; }
-            set { this.description = value; }
-        }
-
-        // Check to see if Description property is set
-        internal bool IsSetDescription()
-        {
-            return this.description != null;
         }
 
         /// <summary>

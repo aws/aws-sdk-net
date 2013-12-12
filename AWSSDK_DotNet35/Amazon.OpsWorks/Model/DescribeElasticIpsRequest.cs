@@ -26,13 +26,17 @@ namespace Amazon.OpsWorks.Model
     /// <summary>
     /// Container for the parameters to the DescribeElasticIps operation.
     /// <para>Describes <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html" >Elastic IP addresses</a>
-    /// .</para> <para><b>NOTE:</b>You must specify at least one of the parameters.</para>
+    /// .</para> <para><b>NOTE:</b>You must specify at least one of the parameters.</para> <para> <b>Required Permissions</b> : To use this action,
+    /// an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions.
+    /// For more information on user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"
+    /// >Managing User Permissions</a> .</para>
     /// </summary>
-    public partial class DescribeElasticIpsRequest : AmazonWebServiceRequest
+    public partial class DescribeElasticIpsRequest : AmazonOpsWorksRequest
     {
         private string instanceId;
         private string stackId;
         private List<string> ips = new List<string>();
+
 
         /// <summary>
         /// The instance ID. If you include this parameter, <c>DescribeElasticIps</c> returns a description of the Elastic IP addresses associated with

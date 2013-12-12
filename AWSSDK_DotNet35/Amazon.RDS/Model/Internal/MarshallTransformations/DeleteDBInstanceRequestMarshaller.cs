@@ -34,7 +34,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(deleteDBInstanceRequest, "AmazonRDS");
             request.Parameters.Add("Action", "DeleteDBInstance");
-            request.Parameters.Add("Version", "2013-05-15");
+            request.Parameters.Add("Version", "2013-09-09");
             if (deleteDBInstanceRequest != null && deleteDBInstanceRequest.IsSetDBInstanceIdentifier())
             {
                 request.Parameters.Add("DBInstanceIdentifier", StringUtils.FromString(deleteDBInstanceRequest.DBInstanceIdentifier));

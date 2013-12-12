@@ -38,15 +38,6 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// The unique identifier for the instance in Amazon EMR.
         ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 64</description>
-        ///     </item>
-        /// </list>
-        /// </para>
         /// </summary>
         public string Id
         {
@@ -63,15 +54,6 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// The unique identifier of the instance in Amazon EC2.
         ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 64</description>
-        ///     </item>
-        /// </list>
-        /// </para>
         /// </summary>
         public string Ec2InstanceId
         {
@@ -88,15 +70,6 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// The public DNS name of the instance.
         ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 256</description>
-        ///     </item>
-        /// </list>
-        /// </para>
         /// </summary>
         public string PublicDnsName
         {
@@ -113,15 +86,6 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// The public IP address of the instance.
         ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 256</description>
-        ///     </item>
-        /// </list>
-        /// </para>
         /// </summary>
         public string PublicIpAddress
         {
@@ -138,15 +102,6 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// The private DNS name of the instance.
         ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 256</description>
-        ///     </item>
-        /// </list>
-        /// </para>
         /// </summary>
         public string PrivateDnsName
         {
@@ -163,15 +118,6 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// The private IP address of the instance.
         ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 256</description>
-        ///     </item>
-        /// </list>
-        /// </para>
         /// </summary>
         public string PrivateIpAddress
         {

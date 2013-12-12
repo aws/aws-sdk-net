@@ -26,14 +26,19 @@ namespace Amazon.OpsWorks.Model
     /// <summary>
     /// Container for the parameters to the SetPermission operation.
     /// <para>Specifies a stack's permissions. For more information, see <a
-    /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingsecurity.html" >Security and Permissions</a> .</para>
+    /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingsecurity.html" >Security and Permissions</a> .</para> <para> <b>Required
+    /// Permissions</b> : To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly
+    /// grants permissions. For more information on user permissions, see <a
+    /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
     /// </summary>
-    public partial class SetPermissionRequest : AmazonWebServiceRequest
+    public partial class SetPermissionRequest : AmazonOpsWorksRequest
     {
         private string stackId;
         private string iamUserArn;
         private bool? allowSsh;
         private bool? allowSudo;
+        private string level;
+
 
         /// <summary>
         /// The stack ID.
@@ -97,6 +102,25 @@ namespace Amazon.OpsWorks.Model
         internal bool IsSetAllowSudo()
         {
             return this.allowSudo.HasValue;
+        }
+
+        /// <summary>
+        /// The user's permission level, which must be set to one of the following strings. You cannot set your own permissions level. <ul>
+        /// <li><c>deny</c></li> <li><c>show</c></li> <li><c>deploy</c></li> <li><c>manage</c></li> <li><c>iam_only</c></li> </ul> For more information
+        /// on the permissions associated with these levels, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>
+        ///  
+        /// </summary>
+        public string Level
+        {
+            get { return this.level; }
+            set { this.level = value; }
+        }
+
+        // Check to see if Level property is set
+        internal bool IsSetLevel()
+        {
+            return this.level != null;
         }
 
     }

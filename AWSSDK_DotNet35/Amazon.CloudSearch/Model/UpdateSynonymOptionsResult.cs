@@ -29,6 +29,7 @@ namespace Amazon.CloudSearch.Model
         
         private SynonymOptionsStatus synonyms;
 
+
         /// <summary>
         /// The synonym options configured for this search domain and the current status of those options.
         ///  

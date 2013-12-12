@@ -30,6 +30,7 @@ namespace Amazon.CloudSearch.Model
         
         private DomainStatus domainStatus;
 
+
         /// <summary>
         /// The current status of the search domain.
         ///  

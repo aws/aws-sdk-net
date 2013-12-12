@@ -73,6 +73,12 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                             
                         continue;
                     }
+                    if (context.TestExpression("Queues/member", targetDepth))
+                    {
+                        environmentResourceDescription.Queues.Add(QueueUnmarshaller.GetInstance().Unmarshall(context));
+                            
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {

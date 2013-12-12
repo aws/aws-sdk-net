@@ -32,6 +32,8 @@ namespace Amazon.ElasticBeanstalk.Model
         private List<LaunchConfiguration> launchConfigurations = new List<LaunchConfiguration>();
         private List<LoadBalancer> loadBalancers = new List<LoadBalancer>();
         private List<Trigger> triggers = new List<Trigger>();
+        private List<Queue> queues = new List<Queue>();
+
 
         /// <summary>
         /// The name of the environment.
@@ -136,6 +138,22 @@ namespace Amazon.ElasticBeanstalk.Model
         internal bool IsSetTriggers()
         {
             return this.triggers.Count > 0;
+        }
+
+        /// <summary>
+        /// The queues used by this environment.
+        ///  
+        /// </summary>
+        public List<Queue> Queues
+        {
+            get { return this.queues; }
+            set { this.queues = value; }
+        }
+
+        // Check to see if Queues property is set
+        internal bool IsSetQueues()
+        {
+            return this.queues.Count > 0;
         }
     }
 }

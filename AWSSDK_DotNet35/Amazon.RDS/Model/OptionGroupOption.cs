@@ -38,6 +38,7 @@ namespace Amazon.RDS.Model
         private bool? permanent;
         private List<OptionGroupOptionSetting> optionGroupOptionSettings = new List<OptionGroupOptionSetting>();
 
+
         /// <summary>
         /// The name of the option.
         ///  

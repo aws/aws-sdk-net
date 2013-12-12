@@ -30,6 +30,7 @@ namespace Amazon.CloudSearch.Model
         private string defaultValue;
         private Dictionary<string,string> cases = new Dictionary<string,string>();
 
+
         /// <summary>
         /// The name of the document source field to add to this <c>IndexField</c>.
         ///  

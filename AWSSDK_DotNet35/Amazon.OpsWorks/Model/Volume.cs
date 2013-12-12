@@ -38,6 +38,7 @@ namespace Amazon.OpsWorks.Model
         private string region;
         private string availabilityZone;
 
+
         /// <summary>
         /// The volume ID.
         ///  

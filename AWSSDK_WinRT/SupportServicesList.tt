@@ -23,6 +23,7 @@
 		"Amazon.Glacier.IAmazonGlacier",
 		"Amazon.IdentityManagement.IAmazonIdentityManagementService",
         "Amazon.ImportExport.IAmazonImportExport",
+		"Amazon.Kinesis.IAmazonKinesis",
 		"Amazon.OpsWorks.IAmazonOpsWorks",
 		"Amazon.RDS.IAmazonRDS",
 		"Amazon.Redshift.IAmazonRedshift",

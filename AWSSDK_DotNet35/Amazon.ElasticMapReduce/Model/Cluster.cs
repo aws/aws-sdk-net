@@ -37,20 +37,12 @@ namespace Amazon.ElasticMapReduce.Model
         private bool? terminationProtected;
         private bool? visibleToAllUsers;
         private List<Application> applications = new List<Application>();
+        private List<Tag> tags = new List<Tag>();
 
 
         /// <summary>
         /// The unique identifier for the cluster.
         ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 64</description>
-        ///     </item>
-        /// </list>
-        /// </para>
         /// </summary>
         public string Id
         {
@@ -67,15 +59,6 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// The name of the cluster.
         ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 256</description>
-        ///     </item>
-        /// </list>
-        /// </para>
         /// </summary>
         public string Name
         {
@@ -141,15 +124,6 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// The AMI version requested for this cluster.<!-- For more information, see <a>JobFlowDetail$AmiVersion</a>.-->
         ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 256</description>
-        ///     </item>
-        /// </list>
-        /// </para>
         /// </summary>
         public string RequestedAmiVersion
         {
@@ -167,15 +141,6 @@ namespace Amazon.ElasticMapReduce.Model
         /// The AMI version running on this cluster. This differs from the requested version only if the requested version is a meta version, such as
         /// "latest". <!--For more information, see <a>JobFlowDetail$AmiVersion</a>.-->
         ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 256</description>
-        ///     </item>
-        /// </list>
-        /// </para>
         /// </summary>
         public string RunningAmiVersion
         {
@@ -255,6 +220,22 @@ namespace Amazon.ElasticMapReduce.Model
         internal bool IsSetApplications()
         {
             return this.applications.Count > 0;
+        }
+
+        /// <summary>
+        /// A list of tags associated with cluster.
+        ///  
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this.tags; }
+            set { this.tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this.tags.Count > 0;
         }
     }
 }

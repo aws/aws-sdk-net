@@ -28,10 +28,11 @@ namespace Amazon.RDS.Model
     /// <para> Removes metadata tags from an Amazon RDS resource.</para> <para>For an overview on tagging an Amazon RDS resource, see <a
     /// href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html" >Tagging Amazon RDS Resources</a> .</para>
     /// </summary>
-    public partial class RemoveTagsFromResourceRequest : AmazonWebServiceRequest
+    public partial class RemoveTagsFromResourceRequest : AmazonRDSRequest
     {
         private string resourceName;
         private List<string> tagKeys = new List<string>();
+
 
         /// <summary>
         /// The Amazon RDS resource the tags will be removed from. This value is an Amazon Resource Name (ARN). For information about creating an ARN,

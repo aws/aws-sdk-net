@@ -29,6 +29,7 @@ namespace Amazon.OpsWorks.Model
         private string instanceId;
         private WeeklyAutoScalingSchedule autoScalingSchedule;
 
+
         /// <summary>
         /// The instance ID.
         ///  

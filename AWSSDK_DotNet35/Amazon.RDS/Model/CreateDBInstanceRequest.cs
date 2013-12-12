@@ -27,7 +27,7 @@ namespace Amazon.RDS.Model
     /// Container for the parameters to the CreateDBInstance operation.
     /// <para> Creates a new DB instance. </para>
     /// </summary>
-    public partial class CreateDBInstanceRequest : AmazonWebServiceRequest
+    public partial class CreateDBInstanceRequest : AmazonRDSRequest
     {
         private string dBName;
         private string dBInstanceIdentifier;
@@ -54,6 +54,7 @@ namespace Amazon.RDS.Model
         private string characterSetName;
         private bool? publiclyAccessible;
         private List<Tag> tags = new List<Tag>();
+
 
         /// <summary>
         /// The meaning of this parameter differs according to the database engine you use. <b>MySQL</b> The name of the database to create when the DB
@@ -289,8 +290,8 @@ namespace Amazon.RDS.Model
 
         /// <summary>
         /// The number of days for which automated backups are retained. Setting this parameter to a positive number enables backups. Setting this
-        /// parameter to 0 disables automated backups. Default: 1 Constraints: <ul> <li>Must be a value from 0 to 8</li> <li>Cannot be set to 0 if the
-        /// DB instance is a master instance with read replicas</li> </ul>
+        /// parameter to 0 disables automated backups. Default: 1 Constraints: <ul> <li>Must be a value from 0 to 35</li> <li>Cannot be set to 0 if the
+        /// DB instance is a source to read replicas</li> </ul>
         ///  
         /// </summary>
         public int BackupRetentionPeriod

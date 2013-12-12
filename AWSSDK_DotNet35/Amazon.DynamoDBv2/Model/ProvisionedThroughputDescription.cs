@@ -33,6 +33,7 @@ namespace Amazon.DynamoDBv2.Model
         private long? readCapacityUnits;
         private long? writeCapacityUnits;
 
+
         /// <summary>
         /// The date and time of the last provisioned throughput increase for this table.
         ///  

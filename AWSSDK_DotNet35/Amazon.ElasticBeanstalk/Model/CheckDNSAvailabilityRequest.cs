@@ -27,9 +27,10 @@ namespace Amazon.ElasticBeanstalk.Model
     /// Container for the parameters to the CheckDNSAvailability operation.
     /// <para> Checks if the specified CNAME is available. </para>
     /// </summary>
-    public partial class CheckDNSAvailabilityRequest : AmazonWebServiceRequest
+    public partial class CheckDNSAvailabilityRequest : AmazonElasticBeanstalkRequest
     {
         private string cNAMEPrefix;
+
 
         /// <summary>
         /// The prefix used when this CNAME is reserved.

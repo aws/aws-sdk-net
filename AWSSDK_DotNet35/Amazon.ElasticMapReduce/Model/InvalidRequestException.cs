@@ -22,7 +22,7 @@ namespace Amazon.ElasticMapReduce.Model
     /// AmazonElasticMapReduce exception
     /// </summary>
     public class InvalidRequestException : AmazonElasticMapReduceException 
-    {
+    {   
         /// <summary>
         /// Constructs a new InvalidRequestException with the specified error
         /// message.
@@ -45,6 +45,5 @@ namespace Amazon.ElasticMapReduce.Model
         internal InvalidRequestException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
 
-        
     }
 }

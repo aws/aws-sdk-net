@@ -273,7 +273,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
                     if (ShouldSave(dbe, ignoreNullValues))
                     {
-                        if (propertyStorage.IsHashKey || propertyStorage.IsRangeKey || propertyStorage.IsVersion || propertyStorage.IsLSIRangeKey)
+                        if (propertyStorage.IsHashKey || propertyStorage.IsRangeKey || propertyStorage.IsVersion || propertyStorage.IsSecondaryIndexRangeKey)
                         {
                             if (dbe is PrimitiveList)
                                 throw new InvalidOperationException("Property " + propertyName + " is a hash key, range key or version property and cannot be PrimitiveList");
@@ -611,7 +611,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 {
                     object[] conditionValues = condition.Values;
                     PropertyStorage propertyStorage = storageConfig.GetPropertyStorage(condition.PropertyName);
-                    if (propertyStorage.IsLSIRangeKey)
+                    if (propertyStorage.IsSecondaryIndexRangeKey)
                         indexNames.AddRange(propertyStorage.Indexes);
                     List<AttributeValue> attributeValues = new List<AttributeValue>();
                     foreach (var conditionValue in conditionValues)

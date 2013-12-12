@@ -27,9 +27,10 @@ namespace Amazon.CloudSearch.Model
     /// Container for the parameters to the DeleteDomain operation.
     /// <para>Permanently deletes a search domain and all of its data.</para>
     /// </summary>
-    public partial class DeleteDomainRequest : AmazonWebServiceRequest
+    public partial class DeleteDomainRequest : AmazonCloudSearchRequest
     {
         private string domainName;
+
 
         /// <summary>
         /// A string that represents the name of a domain. Domain names must be unique across the domains owned by an account within an AWS region.

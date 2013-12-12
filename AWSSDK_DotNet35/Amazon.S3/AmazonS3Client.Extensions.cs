@@ -289,14 +289,10 @@ namespace Amazon.S3
                 if (uploadPartResponse != null)
                     uploadPartResponse.PartNumber = uploadPartRequest.PartNumber;
 
-                // FilePath was set, so we created the undlerying stream, so we must close it
+                // FilePath was set, so we created the underlying stream, so we must close it
                 if (uploadPartRequest.IsSetFilePath())
                 {
-#if !WIN_RT
-                    uploadPartRequest.InputStream.Close();
-#else
                     uploadPartRequest.InputStream.Dispose();
-#endif
                 }
 
                 // If InputStream was a HashStream, compare calculated hash to returned etag
@@ -327,6 +323,32 @@ namespace Amazon.S3
             {
                 copyPartResponse.PartNumber = ((CopyPartRequest)request.OriginalRequest).PartNumber;
             }
+        }
+
+        protected override void ProcessExceptionHandlers(Exception exception, IRequest request)
+        {
+            base.ProcessExceptionHandlers(exception, request);
+
+            var putObjectRequest = request.OriginalRequest as PutObjectRequest;
+            if (putObjectRequest != null)
+            {
+                if (putObjectRequest.InputStream != null
+                    && (!string.IsNullOrEmpty(putObjectRequest.FilePath) || putObjectRequest.AutoCloseStream))
+                {
+                    putObjectRequest.InputStream.Dispose();
+                }
+
+                // Set the input stream to null since it was created during the request to represent the filepath or content body
+                if (!string.IsNullOrEmpty(putObjectRequest.FilePath) || !string.IsNullOrEmpty(putObjectRequest.ContentBody)
+#if WIN_RT || WINDOWS_PHONE
+                    || putObjectRequest.StorageFile != null
+#endif
+)
+                {
+                    putObjectRequest.InputStream = null;
+                }
+            }
+
         }
 
         protected override void ProcessPreRequestHandlers(AmazonWebServiceRequest request)

@@ -27,7 +27,7 @@ namespace Amazon.RDS.Model
     /// Container for the parameters to the DescribeDBSnapshots operation.
     /// <para> Returns information about DB snapshots. This API supports pagination. </para>
     /// </summary>
-    public partial class DescribeDBSnapshotsRequest : AmazonWebServiceRequest
+    public partial class DescribeDBSnapshotsRequest : AmazonRDSRequest
     {
         private string dBInstanceIdentifier;
         private string dBSnapshotIdentifier;
@@ -35,6 +35,7 @@ namespace Amazon.RDS.Model
         private List<Filter> filters = new List<Filter>();
         private int? maxRecords;
         private string marker;
+
 
         /// <summary>
         /// A DB instance identifier to retrieve the list of DB snapshots for. Cannot be used in conjunction with <c>DBSnapshotIdentifier</c>. This
@@ -89,6 +90,11 @@ namespace Amazon.RDS.Model
         {
             return this.snapshotType != null;
         }
+
+        /// <summary>
+        /// This parameter is not currently supported.
+        ///  
+        /// </summary>
         public List<Filter> Filters
         {
             get { return this.filters; }

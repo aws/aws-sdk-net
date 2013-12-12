@@ -310,6 +310,50 @@ namespace Amazon.ElasticMapReduce
         }
  
         /// <summary>
+        /// <para>Adds tags to an Amazon EMR resource. Tags make it easier to associate clusters in various ways, such as grouping clusters to track
+        /// your Amazon EMR resource allocation costs. For more information, see <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html">Tagging Amazon EMR Resources</a> .
+        /// </para>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AddTags service method on AmazonElasticMapReduce.</param>
+        /// 
+        /// <returns>The response from the AddTags service method, as returned by AmazonElasticMapReduce.</returns>
+        /// 
+        /// <exception cref="T:Amazon.ElasticMapReduce.Model.InternalServerException" />
+        /// <exception cref="T:Amazon.ElasticMapReduce.Model.InvalidRequestException" />
+		public AddTagsResponse AddTags(AddTagsRequest request)
+        {
+            var task = AddTagsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+          
+        /// <summary>
+        /// Initiates the asynchronous execution of the AddTags operation.
+        /// <seealso cref="Amazon.ElasticMapReduce.IAmazonElasticMapReduce.AddTags"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AddTags operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+		public async Task<AddTagsResponse> AddTagsAsync(AddTagsRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new AddTagsRequestMarshaller();
+            var unmarshaller = AddTagsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, AddTagsRequest, AddTagsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
+ 
+        /// <summary>
         /// <para>Provides cluster-level details including status, hardware and software configuration, VPC settings, and so on. For information about
         /// the cluster steps, see ListSteps.</para>
         /// </summary>
@@ -836,6 +880,51 @@ namespace Amazon.ElasticMapReduce
             var marshaller = new ModifyInstanceGroupsRequestMarshaller();
             var unmarshaller = ModifyInstanceGroupsResponseUnmarshaller.GetInstance();
             var response = await Invoke<IRequest, ModifyInstanceGroupsRequest, ModifyInstanceGroupsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
+ 
+        /// <summary>
+        /// <para>Removes tags from an Amazon EMR resource. Tags make it easier to associate clusters in various ways, such as grouping clusters to
+        /// track your Amazon EMR resource allocation costs. For more information, see <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html">Tagging Amazon EMR Resources</a> .
+        /// </para>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RemoveTags service method on
+        /// AmazonElasticMapReduce.</param>
+        /// 
+        /// <returns>The response from the RemoveTags service method, as returned by AmazonElasticMapReduce.</returns>
+        /// 
+        /// <exception cref="T:Amazon.ElasticMapReduce.Model.InternalServerException" />
+        /// <exception cref="T:Amazon.ElasticMapReduce.Model.InvalidRequestException" />
+		public RemoveTagsResponse RemoveTags(RemoveTagsRequest request)
+        {
+            var task = RemoveTagsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+          
+        /// <summary>
+        /// Initiates the asynchronous execution of the RemoveTags operation.
+        /// <seealso cref="Amazon.ElasticMapReduce.IAmazonElasticMapReduce.RemoveTags"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RemoveTags operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+		public async Task<RemoveTagsResponse> RemoveTagsAsync(RemoveTagsRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new RemoveTagsRequestMarshaller();
+            var unmarshaller = RemoveTagsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, RemoveTagsRequest, RemoveTagsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
                 .ConfigureAwait(continueOnCapturedContext: false);
             return response;
         }

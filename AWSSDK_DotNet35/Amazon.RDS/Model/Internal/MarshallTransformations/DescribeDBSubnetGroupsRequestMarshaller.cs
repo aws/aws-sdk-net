@@ -34,7 +34,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(describeDBSubnetGroupsRequest, "AmazonRDS");
             request.Parameters.Add("Action", "DescribeDBSubnetGroups");
-            request.Parameters.Add("Version", "2013-05-15");
+            request.Parameters.Add("Version", "2013-09-09");
             if (describeDBSubnetGroupsRequest != null && describeDBSubnetGroupsRequest.IsSetDBSubnetGroupName())
             {
                 request.Parameters.Add("DBSubnetGroupName", StringUtils.FromString(describeDBSubnetGroupsRequest.DBSubnetGroupName));

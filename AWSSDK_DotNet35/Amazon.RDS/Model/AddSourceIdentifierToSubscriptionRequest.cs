@@ -27,10 +27,11 @@ namespace Amazon.RDS.Model
     /// Container for the parameters to the AddSourceIdentifierToSubscription operation.
     /// <para>Adds a source identifier to an existing RDS event notification subscription.</para>
     /// </summary>
-    public partial class AddSourceIdentifierToSubscriptionRequest : AmazonWebServiceRequest
+    public partial class AddSourceIdentifierToSubscriptionRequest : AmazonRDSRequest
     {
         private string subscriptionName;
         private string sourceIdentifier;
+
 
         /// <summary>
         /// The name of the RDS event notification subscription you want to add a source identifier to.

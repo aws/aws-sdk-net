@@ -34,10 +34,11 @@ namespace Amazon.RDS.Model
     /// reboot is a function of the specific database engine's crash recovery process. To improve the reboot time, we recommend that you reduce
     /// database activities as much as possible during the reboot process to reduce rollback activity for in-transit transactions. </para>
     /// </summary>
-    public partial class RebootDBInstanceRequest : AmazonWebServiceRequest
+    public partial class RebootDBInstanceRequest : AmazonRDSRequest
     {
         private string dBInstanceIdentifier;
         private bool? forceFailover;
+
 
         /// <summary>
         /// The DB instance identifier. This parameter is stored as a lowercase string. Constraints: <ul> <li>Must contain from 1 to 63 alphanumeric

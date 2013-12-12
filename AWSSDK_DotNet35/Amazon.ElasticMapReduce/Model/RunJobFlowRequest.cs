@@ -51,6 +51,7 @@ namespace Amazon.ElasticMapReduce.Model
         private List<SupportedProductConfig> newSupportedProducts = new List<SupportedProductConfig>();
         private bool? visibleToAllUsers;
         private string jobFlowRole;
+        private List<Tag> tags = new List<Tag>();
 
 
         /// <summary>
@@ -226,9 +227,8 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// A list of strings that indicates third-party software to use with the job flow. For more information, go to <a
         /// href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use Third Party Applications with
-        /// Amazon EMR</a>. Currently supported values are: <ul> <li>"karmasphere-enterprise-utility" - tag the job flow for management by <a
-        /// href="http://aws.amazon.com/elasticmapreduce/karmasphere/">Karmasphere.</a></li> <li>"mapr-m3" - launch the job flow using MapR M3
-        /// Edition.</li> <li>"mapr-m5" - launch the job flow using MapR M5 Edition.</li> </ul>
+        /// Amazon EMR</a>. Currently supported values are: <ul> <li>"mapr-m3" - launch the job flow using MapR M3 Edition.</li> <li>"mapr-m5" - launch
+        /// the job flow using MapR M5 Edition.</li> </ul>
         ///  
         /// </summary>
         public List<string> SupportedProducts
@@ -247,10 +247,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// A list of strings that indicates third-party software to use with the job flow that accepts a user argument list. EMR accepts and forwards
         /// the argument list to the corresponding installation script as bootstrap action arguments. For more information, see <a
         /// href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-mapr.html">Launch a Job Flow on the MapR Distribution for
-        /// Hadoop</a>. Currently supported values are: <ul> <li>"karmasphere-enterprise-utility" - tag the job flow for management by <a
-        /// href="http://aws.amazon.com/elasticmapreduce/karmasphere/">Karmasphere.</a></li> <li>"mapr-m3" - launch the job flow using MapR M3
-        /// Edition.</li> <li>"mapr-m5" - launch the job flow using MapR M5 Edition.</li> <li>"mapr" with the user arguments specifying "--edition,m3"
-        /// or "--edition,m5" - launch the job flow using MapR M3 or M5 Edition respectively.</li> </ul>
+        /// Hadoop</a>. Currently supported values are: <ul> <li>"mapr-m3" - launch the job flow using MapR M3 Edition.</li> <li>"mapr-m5" - launch the
+        /// job flow using MapR M5 Edition.</li> <li>"mapr" with the user arguments specifying "--edition,m3" or "--edition,m5" - launch the job flow
+        /// using MapR M3 or M5 Edition respectively.</li> </ul>
         ///  
         /// </summary>
         public List<SupportedProductConfig> NewSupportedProducts
@@ -311,6 +310,22 @@ namespace Amazon.ElasticMapReduce.Model
         internal bool IsSetJobFlowRole()
         {
             return this.jobFlowRole != null;
+        }
+
+        /// <summary>
+        /// A list of tags to associate with a cluster and propagate to Amazon EC2 instances.
+        ///  
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this.tags; }
+            set { this.tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this.tags.Count > 0;
         }
 
     }

@@ -28,7 +28,7 @@ namespace Amazon.ElasticMapReduce.Model
     {
         /// <summary>
         /// Gets and sets the ListBootstrapActionsResult property.
-        /// This output contains the boostrap actions detail .
+        /// This output contains the bootstrap actions detail.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the ListBootstrapActionsResult class are now available on the ListBootstrapActionsResponse class. You should use the properties on ListBootstrapActionsResponse instead of accessing them through ListBootstrapActionsResult.")]
         public ListBootstrapActionsResult ListBootstrapActionsResult

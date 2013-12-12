@@ -29,6 +29,7 @@ using Amazon.Runtime.Internal.Util;
 
 using Amazon.S3.Model;
 using Amazon.S3.Util;
+using Amazon.Runtime;
 
 namespace Amazon.S3.Transfer.Internal
 {
@@ -50,7 +51,7 @@ namespace Amazon.S3.Transfer.Internal
 
         public override void Execute()
         {
-            int timeout = this._config.DefaultTimeout;
+
 
             PutObjectRequest putRequest = new PutObjectRequest()
             {
@@ -63,7 +64,10 @@ namespace Amazon.S3.Transfer.Internal
                 AutoCloseStream = this._fileTransporterRequest.AutoCloseStream,
                 ServerSideEncryptionMethod = this._fileTransporterRequest.ServerSideEncryptionMethod,
                 Headers = this._fileTransporterRequest.Headers,
-                Metadata = this._fileTransporterRequest.Metadata
+                Metadata = this._fileTransporterRequest.Metadata,
+#if (BCL && !BCL45)
+                Timeout = ClientConfig.GetTimeoutValue(this._config.DefaultTimeout, this._fileTransporterRequest.Timeout)
+#endif
             };
             putRequest.StreamUploadProgressCallback += new EventHandler<Runtime.StreamTransferProgressArgs>(this.putObjectProgressEventCallback);
 

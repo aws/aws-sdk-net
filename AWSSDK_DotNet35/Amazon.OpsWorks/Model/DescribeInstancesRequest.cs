@@ -25,13 +25,17 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeInstances operation.
-    /// <para>Requests a description of a set of instances.</para> <para><b>NOTE:</b>You must specify at least one of the parameters.</para>
+    /// <para>Requests a description of a set of instances.</para> <para><b>NOTE:</b>You must specify at least one of the parameters.</para> <para>
+    /// <b>Required Permissions</b> : To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an
+    /// attached policy that explicitly grants permissions. For more information on user permissions, see <a
+    /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
     /// </summary>
-    public partial class DescribeInstancesRequest : AmazonWebServiceRequest
+    public partial class DescribeInstancesRequest : AmazonOpsWorksRequest
     {
         private string stackId;
         private string layerId;
         private List<string> instanceIds = new List<string>();
+
 
         /// <summary>
         /// A stack ID. If you use this parameter, <c>DescribeInstances</c> returns descriptions of the instances associated with the specified stack.

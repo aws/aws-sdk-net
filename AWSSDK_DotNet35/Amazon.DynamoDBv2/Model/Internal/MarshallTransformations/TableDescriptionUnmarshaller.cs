@@ -150,6 +150,27 @@
                 continue;
               }
   
+              if (context.TestExpression("GlobalSecondaryIndexes", targetDepth))
+              {
+                context.Read();
+                tableDescription.GlobalSecondaryIndexes = new List<GlobalSecondaryIndexDescription>();
+                        GlobalSecondaryIndexDescriptionUnmarshaller unmarshaller = GlobalSecondaryIndexDescriptionUnmarshaller.GetInstance();
+                while (context.Read())
+                {
+                  JsonToken token = context.CurrentTokenType;                
+                  if (token == JsonToken.ArrayStart)
+                  {
+                    continue;
+                  }
+                  if (token == JsonToken.ArrayEnd)
+                  {
+                    break;
+                  }
+                   tableDescription.GlobalSecondaryIndexes.Add(unmarshaller.Unmarshall(context));
+                }
+                continue;
+              }
+  
                 if (context.CurrentDepth <= originalDepth)
                 {
                     return tableDescription;

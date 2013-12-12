@@ -32,6 +32,7 @@ namespace Amazon.CloudSearch.Model
         private OptionState state;
         private bool? pendingDeletion;
 
+
         /// <summary>
         /// A timestamp for when this option was created.
         ///  

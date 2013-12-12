@@ -38,7 +38,7 @@ namespace Amazon.DynamoDBv2.Model
     /// href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDDItems.html" >Working with Items</a> in the Amazon
     /// DynamoDB Developer Guide.</para>
     /// </summary>
-    public partial class PutItemRequest : AmazonWebServiceRequest
+    public partial class PutItemRequest : AmazonDynamoDBv2Request
     {
         private string tableName;
         private Dictionary<string,AttributeValue> item = new Dictionary<string,AttributeValue>();
@@ -46,6 +46,7 @@ namespace Amazon.DynamoDBv2.Model
         private ReturnValue returnValues;
         private ReturnConsumedCapacity returnConsumedCapacity;
         private ReturnItemCollectionMetrics returnItemCollectionMetrics;
+
 
         /// <summary>
         /// The name of the table to contain the item.
@@ -164,7 +165,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <list type="definition">
         ///     <item>
         ///         <term>Allowed Values</term>
-        ///         <description>TOTAL, NONE</description>
+        ///         <description>INDEXES, TOTAL, NONE</description>
         ///     </item>
         /// </list>
         /// </para>

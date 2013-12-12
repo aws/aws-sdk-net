@@ -32,7 +32,7 @@ namespace Amazon.DynamoDBv2.Model
     /// deletes are useful for only deleting items if specific conditions are met. If those conditions are met, Amazon DynamoDB performs the delete.
     /// Otherwise, the item is not deleted. </para>
     /// </summary>
-    public partial class DeleteItemRequest : AmazonWebServiceRequest
+    public partial class DeleteItemRequest : AmazonDynamoDBv2Request
     {
         private string tableName;
         private Dictionary<string,AttributeValue> key = new Dictionary<string,AttributeValue>();
@@ -40,6 +40,7 @@ namespace Amazon.DynamoDBv2.Model
         private ReturnValue returnValues;
         private ReturnConsumedCapacity returnConsumedCapacity;
         private ReturnItemCollectionMetrics returnItemCollectionMetrics;
+
 
         /// <summary>
         /// The name of the table from which to delete the item.
@@ -153,7 +154,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <list type="definition">
         ///     <item>
         ///         <term>Allowed Values</term>
-        ///         <description>TOTAL, NONE</description>
+        ///         <description>INDEXES, TOTAL, NONE</description>
         ///     </item>
         /// </list>
         /// </para>

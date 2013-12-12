@@ -29,6 +29,7 @@ namespace Amazon.CloudSearch.Model
         
         private AccessPoliciesStatus accessPolicies;
 
+
         /// <summary>
         /// A <c>PolicyDocument</c> that specifies access policies for the search domain's services, and the current status of those policies.
         ///  

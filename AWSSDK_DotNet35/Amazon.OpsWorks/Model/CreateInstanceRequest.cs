@@ -26,9 +26,12 @@ namespace Amazon.OpsWorks.Model
     /// <summary>
     /// Container for the parameters to the CreateInstance operation.
     /// <para>Creates an instance in a specified stack. For more information, see <a
-    /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html" >Adding an Instance to a Layer</a> .</para>
+    /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html" >Adding an Instance to a Layer</a> .</para> <para>
+    /// <b>Required Permissions</b> : To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that
+    /// explicitly grants permissions. For more information on user permissions, see <a
+    /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
     /// </summary>
-    public partial class CreateInstanceRequest : AmazonWebServiceRequest
+    public partial class CreateInstanceRequest : AmazonOpsWorksRequest
     {
         private string stackId;
         private List<string> layerIds = new List<string>();
@@ -43,6 +46,7 @@ namespace Amazon.OpsWorks.Model
         private Architecture architecture;
         private RootDeviceType rootDeviceType;
         private bool? installUpdatesOnBoot;
+
 
         /// <summary>
         /// The stack ID.

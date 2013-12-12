@@ -25,14 +25,18 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeVolumes operation.
-    /// <para>Describes an instance's Amazon EBS volumes.</para> <para><b>NOTE:</b>You must specify at least one of the parameters.</para>
+    /// <para>Describes an instance's Amazon EBS volumes.</para> <para><b>NOTE:</b>You must specify at least one of the parameters.</para> <para>
+    /// <b>Required Permissions</b> : To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an
+    /// attached policy that explicitly grants permissions. For more information on user permissions, see <a
+    /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
     /// </summary>
-    public partial class DescribeVolumesRequest : AmazonWebServiceRequest
+    public partial class DescribeVolumesRequest : AmazonOpsWorksRequest
     {
         private string instanceId;
         private string stackId;
         private string raidArrayId;
         private List<string> volumeIds = new List<string>();
+
 
         /// <summary>
         /// The instance ID. If you use this parameter, <c>DescribeVolumes</c> returns descriptions of the volumes associated with the specified

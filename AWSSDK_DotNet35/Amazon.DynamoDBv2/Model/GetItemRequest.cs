@@ -30,13 +30,14 @@ namespace Amazon.DynamoDBv2.Model
     /// requires a strongly consistent read, set <i>ConsistentRead</i> to <c>true</c> . Although a strongly consistent read might take more time
     /// than an eventually consistent read, it always returns the last updated value.</para>
     /// </summary>
-    public partial class GetItemRequest : AmazonWebServiceRequest
+    public partial class GetItemRequest : AmazonDynamoDBv2Request
     {
         private string tableName;
         private Dictionary<string,AttributeValue> key = new Dictionary<string,AttributeValue>();
         private List<string> attributesToGet = new List<string>();
         private bool? consistentRead;
         private ReturnConsumedCapacity returnConsumedCapacity;
+
 
         /// <summary>
         /// The name of the table containing the requested item.
@@ -134,7 +135,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <list type="definition">
         ///     <item>
         ///         <term>Allowed Values</term>
-        ///         <description>TOTAL, NONE</description>
+        ///         <description>INDEXES, TOTAL, NONE</description>
         ///     </item>
         /// </list>
         /// </para>

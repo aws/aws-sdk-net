@@ -29,7 +29,7 @@ namespace Amazon.RDS.Model
     /// to backupRetentionPeriod days. The target database is created from the source database with the same configuration as the original database
     /// except that the DB instance is created with the default DB security group. </para>
     /// </summary>
-    public partial class RestoreDBInstanceToPointInTimeRequest : AmazonWebServiceRequest
+    public partial class RestoreDBInstanceToPointInTimeRequest : AmazonRDSRequest
     {
         private string sourceDBInstanceIdentifier;
         private string targetDBInstanceIdentifier;
@@ -48,6 +48,7 @@ namespace Amazon.RDS.Model
         private int? iops;
         private string optionGroupName;
         private List<Tag> tags = new List<Tag>();
+
 
         /// <summary>
         /// The identifier of the source DB instance from which to restore. Constraints: <ul> <li>Must be the identifier of an existing database

@@ -29,6 +29,7 @@ namespace Amazon.CloudSearch.Model
         private string sourceName;
         private string defaultValue;
 
+
         /// <summary>
         /// The name of the document source field to add to this <c>IndexField</c>.
         ///  

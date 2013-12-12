@@ -30,6 +30,7 @@ namespace Amazon.DynamoDBv2.Model
         private List<KeySchemaElement> keySchema = new List<KeySchemaElement>();
         private Projection projection;
 
+
         /// <summary>
         /// Represents the name of the secondary index. The name must be unique among all other indexes on this table.
         ///  

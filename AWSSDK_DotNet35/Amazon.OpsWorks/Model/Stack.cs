@@ -45,6 +45,7 @@ namespace Amazon.OpsWorks.Model
         private string createdAt;
         private RootDeviceType defaultRootDeviceType;
 
+
         /// <summary>
         /// The stack ID.
         ///  

@@ -29,6 +29,7 @@ namespace Amazon.CloudSearch.Model
         
         private List<IndexFieldStatus> indexFields = new List<IndexFieldStatus>();
 
+
         /// <summary>
         /// The index fields configured for the domain.
         ///  

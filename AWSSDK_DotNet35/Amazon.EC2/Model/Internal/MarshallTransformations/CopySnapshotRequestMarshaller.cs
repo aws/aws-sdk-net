@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(copySnapshotRequest, "AmazonEC2");
             request.Parameters.Add("Action", "CopySnapshot");
-            request.Parameters.Add("Version", "2013-10-01");
+            request.Parameters.Add("Version", "2013-10-15");
             if (copySnapshotRequest != null && copySnapshotRequest.IsSetSourceRegion())
             {
                 request.Parameters.Add("SourceRegion", StringUtils.FromString(copySnapshotRequest.SourceRegion));

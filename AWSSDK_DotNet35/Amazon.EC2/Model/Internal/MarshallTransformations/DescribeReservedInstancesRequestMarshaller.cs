@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(describeReservedInstancesRequest, "AmazonEC2");
             request.Parameters.Add("Action", "DescribeReservedInstances");
-            request.Parameters.Add("Version", "2013-10-01");
+            request.Parameters.Add("Version", "2013-10-15");
             if (describeReservedInstancesRequest != null)
             {
                 List<string> reservedInstancesIdsList = describeReservedInstancesRequest.ReservedInstancesIds;

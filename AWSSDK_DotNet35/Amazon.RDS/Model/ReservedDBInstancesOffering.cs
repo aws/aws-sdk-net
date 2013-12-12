@@ -37,6 +37,7 @@ namespace Amazon.RDS.Model
         private bool? multiAZ;
         private List<RecurringCharge> recurringCharges = new List<RecurringCharge>();
 
+
         /// <summary>
         /// The offering identifier.
         ///  

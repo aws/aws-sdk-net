@@ -45,6 +45,7 @@ namespace Amazon.OpsWorks.Model
         private Dictionary<string,string> saturday = new Dictionary<string,string>();
         private Dictionary<string,string> sunday = new Dictionary<string,string>();
 
+
         /// <summary>
         /// The schedule for Monday.
         ///  

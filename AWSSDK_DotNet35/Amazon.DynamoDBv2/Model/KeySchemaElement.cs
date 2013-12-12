@@ -30,6 +30,7 @@ namespace Amazon.DynamoDBv2.Model
         private string attributeName;
         private KeyType keyType;
 
+
         /// <summary>
         /// Represents the name of a key attribute.
         ///  

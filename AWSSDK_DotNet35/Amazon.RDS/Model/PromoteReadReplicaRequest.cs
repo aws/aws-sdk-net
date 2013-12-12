@@ -27,11 +27,12 @@ namespace Amazon.RDS.Model
     /// Container for the parameters to the PromoteReadReplica operation.
     /// <para> Promotes a read replica DB instance to a standalone DB instance. </para>
     /// </summary>
-    public partial class PromoteReadReplicaRequest : AmazonWebServiceRequest
+    public partial class PromoteReadReplicaRequest : AmazonRDSRequest
     {
         private string dBInstanceIdentifier;
         private int? backupRetentionPeriod;
         private string preferredBackupWindow;
+
 
         /// <summary>
         /// The DB instance identifier. This value is stored as a lowercase string. Constraints: <ul> <li>Must be the identifier for an existing read

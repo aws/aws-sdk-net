@@ -27,12 +27,13 @@ namespace Amazon.RDS.Model
     /// Container for the parameters to the DescribeOptionGroupOptions operation.
     /// <para> Describes all available options. </para>
     /// </summary>
-    public partial class DescribeOptionGroupOptionsRequest : AmazonWebServiceRequest
+    public partial class DescribeOptionGroupOptionsRequest : AmazonRDSRequest
     {
         private string engineName;
         private string majorEngineVersion;
         private int? maxRecords;
         private string marker;
+
 
         /// <summary>
         /// A required parameter. Options available for the given Engine name will be described.

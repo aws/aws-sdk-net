@@ -226,6 +226,43 @@ namespace Amazon.ElasticMapReduce
             return response;
         }
  
+		internal AddTagsResponse AddTags(AddTagsRequest request)
+        {
+            var task = AddTagsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
+        /// <summary>
+        /// <para>Adds tags to an Amazon EMR resource. Tags make it easier to associate clusters in various ways, such as grouping clusters to track
+        /// your Amazon EMR resource allocation costs. For more information, see <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html">Tagging Amazon EMR Resources</a> .
+        /// </para>
+        /// </summary>
+        /// 
+        /// <param name="addTagsRequest">Container for the necessary parameters to execute the AddTags service method on AmazonElasticMapReduce.</param>
+        /// 
+        /// <returns>The response from the AddTags service method, as returned by AmazonElasticMapReduce.</returns>
+        /// 
+        /// <exception cref="T:Amazon.ElasticMapReduce.Model.InternalServerException" />
+        /// <exception cref="T:Amazon.ElasticMapReduce.Model.InvalidRequestException" />
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+		public async Task<AddTagsResponse> AddTagsAsync(AddTagsRequest addTagsRequest, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new AddTagsRequestMarshaller();
+            var unmarshaller = AddTagsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, AddTagsRequest, AddTagsResponse>(addTagsRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
+ 
 		internal DescribeClusterResponse DescribeCluster(DescribeClusterRequest request)
         {
             var task = DescribeClusterAsync(request);
@@ -561,6 +598,44 @@ namespace Amazon.ElasticMapReduce
             var marshaller = new ModifyInstanceGroupsRequestMarshaller();
             var unmarshaller = ModifyInstanceGroupsResponseUnmarshaller.GetInstance();
             var response = await Invoke<IRequest, ModifyInstanceGroupsRequest, ModifyInstanceGroupsResponse>(modifyInstanceGroupsRequest, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
+ 
+		internal RemoveTagsResponse RemoveTags(RemoveTagsRequest request)
+        {
+            var task = RemoveTagsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+
+        /// <summary>
+        /// <para>Removes tags from an Amazon EMR resource. Tags make it easier to associate clusters in various ways, such as grouping clusters to
+        /// track your Amazon EMR resource allocation costs. For more information, see <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html">Tagging Amazon EMR Resources</a> .
+        /// </para>
+        /// </summary>
+        /// 
+        /// <param name="removeTagsRequest">Container for the necessary parameters to execute the RemoveTags service method on
+        /// AmazonElasticMapReduce.</param>
+        /// 
+        /// <returns>The response from the RemoveTags service method, as returned by AmazonElasticMapReduce.</returns>
+        /// 
+        /// <exception cref="T:Amazon.ElasticMapReduce.Model.InternalServerException" />
+        /// <exception cref="T:Amazon.ElasticMapReduce.Model.InvalidRequestException" />
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+		public async Task<RemoveTagsResponse> RemoveTagsAsync(RemoveTagsRequest removeTagsRequest, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new RemoveTagsRequestMarshaller();
+            var unmarshaller = RemoveTagsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, RemoveTagsRequest, RemoveTagsResponse>(removeTagsRequest, marshaller, unmarshaller, signer, cancellationToken)
                 .ConfigureAwait(continueOnCapturedContext: false);
             return response;
         }

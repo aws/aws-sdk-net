@@ -30,6 +30,7 @@ namespace Amazon.CloudSearch.Model
         private string options;
         private OptionStatus status;
 
+
         /// <summary>
         /// An IAM access policy as described in <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?AccessPolicyLanguage.html"
         /// target="_blank">The Access Policy Language</a> in <i>Using AWS Identity and Access Management</i>. The maximum size of an access policy

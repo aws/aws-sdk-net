@@ -29,6 +29,7 @@ namespace Amazon.CloudSearch.Model
         
         private StemmingOptionsStatus stems;
 
+
         /// <summary>
         /// The stemming options configured for this search domain and the current status of those options.
         ///  

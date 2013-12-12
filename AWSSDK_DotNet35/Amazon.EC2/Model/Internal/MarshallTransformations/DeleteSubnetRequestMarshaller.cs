@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(deleteSubnetRequest, "AmazonEC2");
             request.Parameters.Add("Action", "DeleteSubnet");
-            request.Parameters.Add("Version", "2013-10-01");
+            request.Parameters.Add("Version", "2013-10-15");
             if (deleteSubnetRequest != null && deleteSubnetRequest.IsSetSubnetId())
             {
                 request.Parameters.Add("SubnetId", StringUtils.FromString(deleteSubnetRequest.SubnetId));

@@ -30,10 +30,11 @@ namespace Amazon.RDS.Model
     /// resources, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html" >Tagging Amazon RDS Resources</a>
     /// .</para>
     /// </summary>
-    public partial class AddTagsToResourceRequest : AmazonWebServiceRequest
+    public partial class AddTagsToResourceRequest : AmazonRDSRequest
     {
         private string resourceName;
         private List<Tag> tags = new List<Tag>();
+
 
         /// <summary>
         /// The Amazon RDS resource the tags will be added to. This value is an Amazon Resource Name (ARN). For information about creating an ARN, see

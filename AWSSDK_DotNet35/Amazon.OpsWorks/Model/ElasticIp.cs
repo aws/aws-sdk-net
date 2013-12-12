@@ -32,6 +32,7 @@ namespace Amazon.OpsWorks.Model
         private string region;
         private string instanceId;
 
+
         /// <summary>
         /// The IP address.
         ///  

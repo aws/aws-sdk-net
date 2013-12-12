@@ -43,6 +43,7 @@ namespace Amazon.RDS.Model
         private string state;
         private List<RecurringCharge> recurringCharges = new List<RecurringCharge>();
 
+
         /// <summary>
         /// The unique identifier for the reservation.
         ///  

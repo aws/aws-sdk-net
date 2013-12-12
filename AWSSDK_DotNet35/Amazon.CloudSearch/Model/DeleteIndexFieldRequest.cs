@@ -27,10 +27,11 @@ namespace Amazon.CloudSearch.Model
     /// Container for the parameters to the DeleteIndexField operation.
     /// <para>Removes an <c>IndexField</c> from the search domain.</para>
     /// </summary>
-    public partial class DeleteIndexFieldRequest : AmazonWebServiceRequest
+    public partial class DeleteIndexFieldRequest : AmazonCloudSearchRequest
     {
         private string domainName;
         private string indexFieldName;
+
 
         /// <summary>
         /// A string that represents the name of a domain. Domain names must be unique across the domains owned by an account within an AWS region.

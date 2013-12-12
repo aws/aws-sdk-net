@@ -36,6 +36,7 @@ namespace Amazon.DynamoDBv2.Model
         private List<AttributeValue> attributeValueList = new List<AttributeValue>();
         private ComparisonOperator comparisonOperator;
 
+
         /// <summary>
         /// Represents one or more values to evaluate against the supplied attribute. This list contains exactly one value, except for a <c>BETWEEN</c>
         /// or <c>IN</c> comparison, in which case the list contains two values. <note> For type Number, value comparisons are numeric. String value

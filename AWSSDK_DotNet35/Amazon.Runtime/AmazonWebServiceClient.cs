@@ -252,7 +252,7 @@ namespace Amazon.Runtime
             {
                 // Handle WebException/IOExceptionexceptions/AmazonServiceException
                 // thrown after retry limit is reached.
-                asyncResult.HandleException(exception);
+                asyncResult.HandleException(exception);                
             }
         }
 
@@ -452,6 +452,11 @@ namespace Amazon.Runtime
             AmazonServiceException errorResponseException = null;
             using (HttpWebResponse httpErrorResponse = we.Response as HttpWebResponse)
             {
+                if (we != null && WebExceptionStatusesToThrowOn.Contains(we.Status))
+                {
+                    throw new AmazonServiceException(we);
+                }
+
                 if (httpErrorResponse == null ||
                         (we != null && WebExceptionStatusesToRetryOn.Contains(we.Status)))
                 {
@@ -527,12 +532,25 @@ namespace Amazon.Runtime
             Uri url = ComposeUrl(wrappedRequest, wrappedRequest.Endpoint);
             HttpWebRequest request = WebRequest.Create(url) as HttpWebRequest;
             if (request != null)
-            {
+            {   
                 if (asyncResult.Request.ContentStream != null)
                 {
                     request.Timeout = int.MaxValue;
                     request.ReadWriteTimeout = int.MaxValue;
                     request.AllowWriteStreamBuffering = false;
+                }
+
+                // Override the Timeout and ReadWriteTimeout values if set at the request or config level.
+                // Public Timeout and ReadWriteTimeout properties are present on request and client config objects for S3 and Glacier.
+                var timeout = ClientConfig.GetTimeoutValue(this.Config.TimeoutInternal, wrappedRequest.OriginalRequest.TimeoutInternal);
+                var readWriteTimeout = ClientConfig.GetTimeoutValue(this.Config.ReadWriteTimeoutInternal, wrappedRequest.OriginalRequest.ReadWriteTimeoutInternal);
+                if (timeout != null)
+                {
+                    request.Timeout = (int)timeout.Value.TotalMilliseconds;
+                }
+                if (readWriteTimeout != null)
+                {
+                    request.ReadWriteTimeout = (int)readWriteTimeout.Value.TotalMilliseconds;
                 }
 
                 request.ServicePoint.ConnectionLimit = this.Config.ConnectionLimit;

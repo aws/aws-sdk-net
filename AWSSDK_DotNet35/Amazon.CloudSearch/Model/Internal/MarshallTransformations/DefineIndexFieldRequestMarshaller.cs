@@ -166,7 +166,7 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
                                         {
                                             request.Parameters.Add("Cases.entry." + casesListIndex + ".value", StringUtils.FromString(value));
                                         }
-                                        ++casesListIndex;
+                                            ++casesListIndex;
                                     }
                                 }
                             }

@@ -32,6 +32,7 @@ namespace Amazon.RDS.Model
         private List<string> vpcSecurityGroupMemberships = new List<string>();
         private List<OptionSetting> optionSettings = new List<OptionSetting>();
 
+
         /// <summary>
         /// The configuration of options to include in a group.
         ///  

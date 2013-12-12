@@ -35,11 +35,12 @@ namespace Amazon.ElasticBeanstalk.Model
     /// 
     /// </ul>
     /// </summary>
-    public partial class DescribeConfigurationSettingsRequest : AmazonWebServiceRequest
+    public partial class DescribeConfigurationSettingsRequest : AmazonElasticBeanstalkRequest
     {
         private string applicationName;
         private string templateName;
         private string environmentName;
+
 
         /// <summary>
         /// The application for the environment or configuration template.

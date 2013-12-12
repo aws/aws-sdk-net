@@ -29,6 +29,7 @@ namespace Amazon.CloudSearch.Model
         private NamedRankExpression options;
         private OptionStatus status;
 
+
         /// <summary>
         /// The expression that is evaluated for ranking or thresholding while processing a search request.
         ///  

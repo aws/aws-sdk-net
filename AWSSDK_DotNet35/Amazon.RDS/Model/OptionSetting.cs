@@ -38,6 +38,7 @@ namespace Amazon.RDS.Model
         private bool? isModifiable;
         private bool? isCollection;
 
+
         /// <summary>
         /// The name of the option that has settings that you can set.
         ///  

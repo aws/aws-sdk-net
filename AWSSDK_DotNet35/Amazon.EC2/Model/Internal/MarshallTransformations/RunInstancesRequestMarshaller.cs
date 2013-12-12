@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(runInstancesRequest, "AmazonEC2");
             request.Parameters.Add("Action", "RunInstances");
-            request.Parameters.Add("Version", "2013-10-01");
+            request.Parameters.Add("Version", "2013-10-15");
             if (runInstancesRequest != null && runInstancesRequest.IsSetImageId())
             {
                 request.Parameters.Add("ImageId", StringUtils.FromString(runInstancesRequest.ImageId));

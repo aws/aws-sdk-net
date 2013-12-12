@@ -29,6 +29,7 @@ namespace Amazon.CloudSearch.Model
         private string options;
         private OptionStatus status;
 
+
         /// <summary>
         /// Lists stopwords serialized as a JSON document. The document has a single object with one property "stopwords" whose value is an array of
         /// strings. The maximum size of a stopwords document is 10 KB. Example: <c>{ "stopwords": ["a", "an", "the", "of"] }</c>

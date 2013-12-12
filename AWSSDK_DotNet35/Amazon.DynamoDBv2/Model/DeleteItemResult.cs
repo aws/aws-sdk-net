@@ -31,6 +31,7 @@ namespace Amazon.DynamoDBv2.Model
         private ConsumedCapacity consumedCapacity;
         private ItemCollectionMetrics itemCollectionMetrics;
 
+
         /// <summary>
         /// A map of attribute names to <i>AttributeValue</i> objects, representing the item as it appeared before the <i>DeleteItem</i> operation. This
         /// map appears in the response only if <i>ReturnValues</i> was specified as <c>ALL_OLD</c> in the request.

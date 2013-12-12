@@ -49,8 +49,14 @@
               if (context.TestExpression("JobFlows", targetDepth))
               {
                 context.Read();
-                response.JobFlows = new List<JobFlowDetail>();
-                        JobFlowDetailUnmarshaller unmarshaller = JobFlowDetailUnmarshaller.GetInstance();
+                
+                if (context.CurrentTokenType == JsonToken.Null)
+                {
+                    response.JobFlows = null;
+                    continue;
+                }
+                  response.JobFlows = new List<JobFlowDetail>();
+                  JobFlowDetailUnmarshaller unmarshaller = JobFlowDetailUnmarshaller.GetInstance();
                 while (context.Read())
                 {
                   JsonToken token = context.CurrentTokenType;                
@@ -82,7 +88,9 @@
           
           if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerErrorException"))
           {
-            return new InternalServerErrorException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            InternalServerErrorException ex = new InternalServerErrorException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            
+            return ex;
           }
   
           return new AmazonElasticMapReduceException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);

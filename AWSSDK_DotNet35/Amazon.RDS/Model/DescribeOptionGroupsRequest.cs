@@ -27,7 +27,7 @@ namespace Amazon.RDS.Model
     /// Container for the parameters to the DescribeOptionGroups operation.
     /// <para> Describes the available option groups. </para>
     /// </summary>
-    public partial class DescribeOptionGroupsRequest : AmazonWebServiceRequest
+    public partial class DescribeOptionGroupsRequest : AmazonRDSRequest
     {
         private string optionGroupName;
         private List<Filter> filters = new List<Filter>();
@@ -35,6 +35,7 @@ namespace Amazon.RDS.Model
         private int? maxRecords;
         private string engineName;
         private string majorEngineVersion;
+
 
         /// <summary>
         /// The name of the option group to describe. Cannot be supplied together with EngineName or MajorEngineVersion.
@@ -51,6 +52,11 @@ namespace Amazon.RDS.Model
         {
             return this.optionGroupName != null;
         }
+
+        /// <summary>
+        /// This parameter is not currently supported.
+        ///  
+        /// </summary>
         public List<Filter> Filters
         {
             get { return this.filters; }

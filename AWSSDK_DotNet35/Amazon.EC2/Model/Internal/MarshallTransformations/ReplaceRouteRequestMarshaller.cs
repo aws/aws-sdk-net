@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(replaceRouteRequest, "AmazonEC2");
             request.Parameters.Add("Action", "ReplaceRoute");
-            request.Parameters.Add("Version", "2013-10-01");
+            request.Parameters.Add("Version", "2013-10-15");
             if (replaceRouteRequest != null && replaceRouteRequest.IsSetRouteTableId())
             {
                 request.Parameters.Add("RouteTableId", StringUtils.FromString(replaceRouteRequest.RouteTableId));

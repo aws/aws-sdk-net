@@ -27,10 +27,11 @@ namespace Amazon.RDS.Model
     /// Container for the parameters to the RemoveSourceIdentifierFromSubscription operation.
     /// <para>Removes a source identifier from an existing RDS event notification subscription.</para>
     /// </summary>
-    public partial class RemoveSourceIdentifierFromSubscriptionRequest : AmazonWebServiceRequest
+    public partial class RemoveSourceIdentifierFromSubscriptionRequest : AmazonRDSRequest
     {
         private string subscriptionName;
         private string sourceIdentifier;
+
 
         /// <summary>
         /// The name of the RDS event notification subscription you want to remove a source identifier from.

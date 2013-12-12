@@ -27,12 +27,13 @@ namespace Amazon.RDS.Model
     /// Container for the parameters to the CreateDBSubnetGroup operation.
     /// <para> Creates a new DB subnet group. DB subnet groups must contain at least one subnet in at least two AZs in the region. </para>
     /// </summary>
-    public partial class CreateDBSubnetGroupRequest : AmazonWebServiceRequest
+    public partial class CreateDBSubnetGroupRequest : AmazonRDSRequest
     {
         private string dBSubnetGroupName;
         private string dBSubnetGroupDescription;
         private List<string> subnetIds = new List<string>();
         private List<Tag> tags = new List<Tag>();
+
 
         /// <summary>
         /// The name for the DB subnet group. This value is stored as a lowercase string. Constraints: Must contain no more than 255 alphanumeric

@@ -62,8 +62,14 @@
               if (context.TestExpression("Args", targetDepth))
               {
                 context.Read();
-                application.Args = new List<String>();
-                        StringUnmarshaller unmarshaller = StringUnmarshaller.GetInstance();
+                
+                if (context.CurrentTokenType == JsonToken.Null)
+                {
+                    application.Args = null;
+                    continue;
+                }
+                  application.Args = new List<String>();
+                  StringUnmarshaller unmarshaller = StringUnmarshaller.GetInstance();
                 while (context.Read())
                 {
                   JsonToken token = context.CurrentTokenType;                
@@ -83,7 +89,13 @@
               if (context.TestExpression("AdditionalInfo", targetDepth))
               {
                 context.Read();
-                application.AdditionalInfo = new Dictionary<String,String>();
+                
+                if (context.CurrentTokenType == JsonToken.Null)
+                {
+                    application.AdditionalInfo = null;
+                    continue;
+                }
+                  application.AdditionalInfo = new Dictionary<String,String>();
                 KeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller> unmarshaller = new KeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.GetInstance(), StringUnmarshaller.GetInstance());
                 while (context.Read())
                 {

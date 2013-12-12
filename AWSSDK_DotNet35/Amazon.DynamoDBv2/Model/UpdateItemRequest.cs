@@ -30,7 +30,7 @@ namespace Amazon.DynamoDBv2.Model
     /// name-value pair if it has certain expected attribute values).</para> <para>In addition to updating an item, you can also return the item's
     /// attribute values in the same operation, using the <i>ReturnValues</i> parameter.</para>
     /// </summary>
-    public partial class UpdateItemRequest : AmazonWebServiceRequest
+    public partial class UpdateItemRequest : AmazonDynamoDBv2Request
     {
         private string tableName;
         private Dictionary<string,AttributeValue> key = new Dictionary<string,AttributeValue>();
@@ -39,6 +39,7 @@ namespace Amazon.DynamoDBv2.Model
         private ReturnValue returnValues;
         private ReturnConsumedCapacity returnConsumedCapacity;
         private ReturnItemCollectionMetrics returnItemCollectionMetrics;
+
 
         /// <summary>
         /// The name of the table containing the item to update.
@@ -203,7 +204,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <list type="definition">
         ///     <item>
         ///         <term>Allowed Values</term>
-        ///         <description>TOTAL, NONE</description>
+        ///         <description>INDEXES, TOTAL, NONE</description>
         ///     </item>
         /// </list>
         /// </para>

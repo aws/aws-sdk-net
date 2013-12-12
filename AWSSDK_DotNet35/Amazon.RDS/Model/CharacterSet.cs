@@ -29,6 +29,7 @@ namespace Amazon.RDS.Model
         private string characterSetName;
         private string characterSetDescription;
 
+
         /// <summary>
         /// The name of the character set.
         ///  

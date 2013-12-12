@@ -30,6 +30,7 @@ namespace Amazon.RDS.Model
         private List<DescribeDBLogFilesDetails> describeDBLogFiles = new List<DescribeDBLogFilesDetails>();
         private string marker;
 
+
         /// <summary>
         /// The DB log files returned.
         ///  

@@ -29,6 +29,7 @@ namespace Amazon.OpsWorks.Model
         
         private List<Stack> stacks = new List<Stack>();
 
+
         /// <summary>
         /// An array of <c>Stack</c> objects that describe the stacks.
         ///  

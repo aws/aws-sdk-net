@@ -35,7 +35,8 @@ namespace Amazon.Runtime
         private int? connectionLimit;
         private int? maxIdleTime;
         private bool useNagleAlgorithm = false;
-
+        private TimeSpan? readWriteTimeoutInternal = null;
+        
         private static RegionEndpoint GetDefaultRegionEndpoint()
         {
             NameValueCollection appConfig = ConfigurationManager.AppSettings;
@@ -99,6 +100,29 @@ namespace Amazon.Runtime
         {
             get { return this.useNagleAlgorithm; }
             set { this.useNagleAlgorithm = value; }
+        }
+
+        /// <summary>
+        /// Overrides the default read-write timeout value.
+        /// </summary>
+        /// <remarks>
+        /// <para>
+        /// If the value is set, the value is assigned to the ReadWriteTimeout property of the HTTPWebRequest/WebRequestHandler object used
+        /// to send requests.
+        /// </para>
+        /// <exception cref="System.ArgumentNullException">The timeout specified is null.</exception>
+        /// <exception cref="System.ArgumentOutOfRangeException">The timeout specified is less than or equal to zero and is not Infinite.</exception>
+        /// </remarks>
+        /// <seealso cref="P:System.Net.HttpWebRequest.ReadWriteTimeout"/>
+        /// <seealso cref="P:System.Net.Http.WebRequestHandler.ReadWriteTimeout"/>
+        internal TimeSpan? ReadWriteTimeoutInternal
+        {
+            get { return this.readWriteTimeoutInternal; }
+            set
+            {
+                ValidateTimeout(value);
+                this.readWriteTimeoutInternal = value;
+            }
         }
     }
 }

@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(describeExportTasksRequest, "AmazonEC2");
             request.Parameters.Add("Action", "DescribeExportTasks");
-            request.Parameters.Add("Version", "2013-10-01");
+            request.Parameters.Add("Version", "2013-10-15");
             if (describeExportTasksRequest != null)
             {
                 List<string> exportTaskIdsList = describeExportTasksRequest.ExportTaskIds;

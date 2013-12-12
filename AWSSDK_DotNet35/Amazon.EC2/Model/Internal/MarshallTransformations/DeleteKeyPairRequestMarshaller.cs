@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(deleteKeyPairRequest, "AmazonEC2");
             request.Parameters.Add("Action", "DeleteKeyPair");
-            request.Parameters.Add("Version", "2013-10-01");
+            request.Parameters.Add("Version", "2013-10-15");
             if (deleteKeyPairRequest != null && deleteKeyPairRequest.IsSetKeyName())
             {
                 request.Parameters.Add("KeyName", StringUtils.FromString(deleteKeyPairRequest.KeyName));

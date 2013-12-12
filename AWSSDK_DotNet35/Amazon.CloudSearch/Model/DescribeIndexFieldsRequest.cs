@@ -28,10 +28,11 @@ namespace Amazon.CloudSearch.Model
     /// <para>Gets information about the index fields configured for the search domain. Can be limited to specific fields by name. Shows all fields
     /// by default.</para>
     /// </summary>
-    public partial class DescribeIndexFieldsRequest : AmazonWebServiceRequest
+    public partial class DescribeIndexFieldsRequest : AmazonCloudSearchRequest
     {
         private string domainName;
         private List<string> fieldNames = new List<string>();
+
 
         /// <summary>
         /// A string that represents the name of a domain. Domain names must be unique across the domains owned by an account within an AWS region.

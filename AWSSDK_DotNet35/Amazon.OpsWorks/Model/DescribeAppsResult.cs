@@ -29,6 +29,7 @@ namespace Amazon.OpsWorks.Model
         
         private List<App> apps = new List<App>();
 
+
         /// <summary>
         /// An array of <c>App</c> objects that describe the specified apps.
         ///  

@@ -73,6 +73,13 @@
                 continue;
               }
   
+              if (context.TestExpression("Level", targetDepth))
+              {
+                context.Read();
+                permission.Level = StringUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
                 if (context.CurrentDepth <= originalDepth)
                 {
                     return permission;

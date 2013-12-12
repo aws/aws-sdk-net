@@ -29,13 +29,14 @@ namespace Amazon.ElasticBeanstalk.Model
     /// specified Amazon S3 bucket and key location, you cannot change that Amazon S3 location. If you change the Amazon S3 location, you receive an
     /// exception when you attempt to launch an environment from the application version. </para>
     /// </summary>
-    public partial class CreateApplicationVersionRequest : AmazonWebServiceRequest
+    public partial class CreateApplicationVersionRequest : AmazonElasticBeanstalkRequest
     {
         private string applicationName;
         private string versionLabel;
         private string description;
         private S3Location sourceBundle;
         private bool? autoCreateApplication;
+
 
         /// <summary>
         /// The name of the application. If no application is found with this name, and <c>AutoCreateApplication</c> is <c>false</c>, returns an

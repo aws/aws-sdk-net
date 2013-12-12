@@ -27,8 +27,6 @@ namespace Amazon.ElasticMapReduce.Model
     /// href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-mapr.html" >Launch a Job Flow on the MapR Distribution for
     /// Hadoop</a> . Currently supported values are:</para>
     /// <ul>
-    /// <li>"karmasphere-enterprise-utility" - tag the job flow for management by <a href="http://aws.amazon.com/elasticmapreduce/karmasphere/"
-    /// >Karmasphere</a> .</li>
     /// <li>"mapr-m3" - launch the job flow using MapR M3 Edition.</li>
     /// <li>"mapr-m5" - launch the job flow using MapR M5 Edition.</li>
     /// <li>"mapr" with the user arguments specifying "--edition,m3" or "--edition,m5" - launch the job flow using MapR M3 or M5 Edition,
@@ -48,15 +46,6 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// The name of the application.
         ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 256</description>
-        ///     </item>
-        /// </list>
-        /// </para>
         /// </summary>
         public string Name
         {
@@ -73,15 +62,6 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// The version of the application.
         ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 256</description>
-        ///     </item>
-        /// </list>
-        /// </para>
         /// </summary>
         public string Version
         {

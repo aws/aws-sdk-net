@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(deregisterImageRequest, "AmazonEC2");
             request.Parameters.Add("Action", "DeregisterImage");
-            request.Parameters.Add("Version", "2013-10-01");
+            request.Parameters.Add("Version", "2013-10-15");
             if (deregisterImageRequest != null && deregisterImageRequest.IsSetImageId())
             {
                 request.Parameters.Add("ImageId", StringUtils.FromString(deregisterImageRequest.ImageId));

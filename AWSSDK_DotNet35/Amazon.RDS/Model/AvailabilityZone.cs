@@ -34,6 +34,7 @@ namespace Amazon.RDS.Model
         private string name;
         private bool? provisionedIopsCapable;
 
+
         /// <summary>
         /// The name of the availability zone.
         ///  

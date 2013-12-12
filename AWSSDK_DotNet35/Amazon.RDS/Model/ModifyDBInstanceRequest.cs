@@ -28,7 +28,7 @@ namespace Amazon.RDS.Model
     /// <para> Modify settings for a DB instance. You can change one or more database configuration parameters by specifying these parameters and
     /// the new values in the request. </para>
     /// </summary>
-    public partial class ModifyDBInstanceRequest : AmazonWebServiceRequest
+    public partial class ModifyDBInstanceRequest : AmazonRDSRequest
     {
         private string dBInstanceIdentifier;
         private int? allocatedStorage;
@@ -48,6 +48,7 @@ namespace Amazon.RDS.Model
         private int? iops;
         private string optionGroupName;
         private string newDBInstanceIdentifier;
+
 
         /// <summary>
         /// The DB instance identifier. This value is stored as a lowercase string. Constraints: <ul> <li>Must be the identifier for an existing DB
@@ -215,8 +216,8 @@ namespace Amazon.RDS.Model
         /// disables automated backups. Changing this parameter can result in an outage if you change from 0 to a non-zero value or from a non-zero
         /// value to 0. These changes are applied during the next maintenance window unless the <c>ApplyImmediately</c> parameter is set to <c>true</c>
         /// for this request. If you change the parameter from one non-zero value to another non-zero value, the change is asynchronously applied as
-        /// soon as possible. Default: Uses existing setting Constraints: <ul> <li>Must be a value from 0 to 8</li> <li>Cannot be set to 0 if the DB
-        /// instance is a master instance with read replicas or if the DB instance is a read replica</li> </ul>
+        /// soon as possible. Default: Uses existing setting Constraints: <ul> <li>Must be a value from 0 to 35</li> <li>Can be specified for a read
+        /// replica only if the source is running MySQL 5.6</li> <li>Cannot be set to 0 if the DB instance is a source to read replicas</li> </ul>
         ///  
         /// </summary>
         public int BackupRetentionPeriod

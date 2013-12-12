@@ -83,8 +83,14 @@
               if (context.TestExpression("InstanceGroups", targetDepth))
               {
                 context.Read();
-                jobFlowInstancesDetail.InstanceGroups = new List<InstanceGroupDetail>();
-                        InstanceGroupDetailUnmarshaller unmarshaller = InstanceGroupDetailUnmarshaller.GetInstance();
+                
+                if (context.CurrentTokenType == JsonToken.Null)
+                {
+                    jobFlowInstancesDetail.InstanceGroups = null;
+                    continue;
+                }
+                  jobFlowInstancesDetail.InstanceGroups = new List<InstanceGroupDetail>();
+                  InstanceGroupDetailUnmarshaller unmarshaller = InstanceGroupDetailUnmarshaller.GetInstance();
                 while (context.Read())
                 {
                   JsonToken token = context.CurrentTokenType;                

@@ -27,13 +27,14 @@ namespace Amazon.RDS.Model
     /// Container for the parameters to the CreateOptionGroup operation.
     /// <para> Creates a new option group. You can create up to 20 option groups. </para>
     /// </summary>
-    public partial class CreateOptionGroupRequest : AmazonWebServiceRequest
+    public partial class CreateOptionGroupRequest : AmazonRDSRequest
     {
         private string optionGroupName;
         private string engineName;
         private string majorEngineVersion;
         private string optionGroupDescription;
         private List<Tag> tags = new List<Tag>();
+
 
         /// <summary>
         /// Specifies the name of the option group to be created. Constraints: <ul> <li>Must be 1 to 255 alphanumeric characters or hyphens</li>

@@ -30,6 +30,7 @@ namespace Amazon.RDS.Model
         private string marker;
         private List<Event> events = new List<Event>();
 
+
         /// <summary>
         /// An optional pagination token provided by a previous Events request. If this parameter is specified, the response includes only records
         /// beyond the marker, up to the value specified by <c>MaxRecords</c> .

@@ -29,6 +29,7 @@ namespace Amazon.RDS.Model
         private string optionGroupName;
         private string status;
 
+
         /// <summary>
         /// The name of the option group that the instance belongs to.
         ///  

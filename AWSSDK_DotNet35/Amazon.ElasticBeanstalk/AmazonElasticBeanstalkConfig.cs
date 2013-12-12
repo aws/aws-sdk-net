@@ -29,7 +29,7 @@ namespace Amazon.ElasticBeanstalk
         /// </summary>
         public AmazonElasticBeanstalkConfig()
         {
-            
+            this.AuthenticationServiceName = "elasticbeanstalk";
         }
 
         /// <summary>

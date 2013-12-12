@@ -32,6 +32,7 @@ namespace Amazon.CloudSearch.Model
         private SourceDataTrimTitle sourceDataTrimTitle;
         private SourceDataMap sourceDataMap;
 
+
         /// <summary>
         /// Identifies the transformation to apply when copying data from a source attribute.
         ///  

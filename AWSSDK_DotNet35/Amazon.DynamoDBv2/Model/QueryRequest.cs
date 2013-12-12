@@ -35,7 +35,7 @@ namespace Amazon.DynamoDBv2.Model
     /// <i>LastEvaluatedKey</i> . The <i>LastEvaluatedKey</i> is only provided if the results exceed 1 MB, or if you have used
     /// <i>Limit</i> . </para> <para>To request a strongly consistent result, set <i>ConsistentRead</i> to true.</para>
     /// </summary>
-    public partial class QueryRequest : AmazonWebServiceRequest
+    public partial class QueryRequest : AmazonDynamoDBv2Request
     {
         private string tableName;
         private string indexName;
@@ -47,6 +47,7 @@ namespace Amazon.DynamoDBv2.Model
         private bool? scanIndexForward;
         private Dictionary<string,AttributeValue> exclusiveStartKey = new Dictionary<string,AttributeValue>();
         private ReturnConsumedCapacity returnConsumedCapacity;
+
 
         /// <summary>
         /// The name of the table containing the requested items.
@@ -321,7 +322,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <list type="definition">
         ///     <item>
         ///         <term>Allowed Values</term>
-        ///         <description>TOTAL, NONE</description>
+        ///         <description>INDEXES, TOTAL, NONE</description>
         ///     </item>
         /// </list>
         /// </para>

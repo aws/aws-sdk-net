@@ -39,6 +39,7 @@ namespace Amazon.OpsWorks.Model
         private Dictionary<string,string> attributes = new Dictionary<string,string>();
         private string createdAt;
 
+
         /// <summary>
         /// The app ID.
         ///  

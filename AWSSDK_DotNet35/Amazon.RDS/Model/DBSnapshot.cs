@@ -49,6 +49,9 @@ namespace Amazon.RDS.Model
         private string snapshotType;
         private int? iops;
         private string optionGroupName;
+        private int? percentProgress;
+        private string sourceRegion;
+
 
         /// <summary>
         /// Specifies the identifier for the DB snapshot.
@@ -304,6 +307,38 @@ namespace Amazon.RDS.Model
         internal bool IsSetOptionGroupName()
         {
             return this.optionGroupName != null;
+        }
+
+        /// <summary>
+        /// The percentage of the estimated data that has been transferred.
+        ///  
+        /// </summary>
+        public int PercentProgress
+        {
+            get { return this.percentProgress ?? default(int); }
+            set { this.percentProgress = value; }
+        }
+
+        // Check to see if PercentProgress property is set
+        internal bool IsSetPercentProgress()
+        {
+            return this.percentProgress.HasValue;
+        }
+
+        /// <summary>
+        /// The region that the DB snapshot was created in or copied from.
+        ///  
+        /// </summary>
+        public string SourceRegion
+        {
+            get { return this.sourceRegion; }
+            set { this.sourceRegion = value; }
+        }
+
+        // Check to see if SourceRegion property is set
+        internal bool IsSetSourceRegion()
+        {
+            return this.sourceRegion != null;
         }
     }
 }

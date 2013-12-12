@@ -31,6 +31,7 @@ namespace Amazon.RDS.Model
         private string marker;
         private bool? additionalDataPending;
 
+
         /// <summary>
         /// Entries from the specified log file.
         ///  

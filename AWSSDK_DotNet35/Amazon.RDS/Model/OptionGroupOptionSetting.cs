@@ -34,6 +34,7 @@ namespace Amazon.RDS.Model
         private string allowedValues;
         private bool? isModifiable;
 
+
         /// <summary>
         /// The name of the option group option.
         ///  

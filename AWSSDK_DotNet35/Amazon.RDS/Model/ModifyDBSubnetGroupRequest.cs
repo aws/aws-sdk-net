@@ -27,11 +27,12 @@ namespace Amazon.RDS.Model
     /// Container for the parameters to the ModifyDBSubnetGroup operation.
     /// <para> Modifies an existing DB subnet group. DB subnet groups must contain at least one subnet in at least two AZs in the region. </para>
     /// </summary>
-    public partial class ModifyDBSubnetGroupRequest : AmazonWebServiceRequest
+    public partial class ModifyDBSubnetGroupRequest : AmazonRDSRequest
     {
         private string dBSubnetGroupName;
         private string dBSubnetGroupDescription;
         private List<string> subnetIds = new List<string>();
+
 
         /// <summary>
         /// The name for the DB subnet group. This value is stored as a lowercase string. Constraints: Must contain no more than 255 alphanumeric

@@ -25,11 +25,14 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeUserProfiles operation.
-    /// <para>Describe specified users.</para>
+    /// <para>Describe specified users.</para> <para> <b>Required Permissions</b> : To use this action, an IAM user must have an attached policy
+    /// that explicitly grants permissions. For more information on user permissions, see <a
+    /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
     /// </summary>
-    public partial class DescribeUserProfilesRequest : AmazonWebServiceRequest
+    public partial class DescribeUserProfilesRequest : AmazonOpsWorksRequest
     {
         private List<string> iamUserArns = new List<string>();
+
 
         /// <summary>
         /// An array of IAM user ARNs that identify the users to be described.

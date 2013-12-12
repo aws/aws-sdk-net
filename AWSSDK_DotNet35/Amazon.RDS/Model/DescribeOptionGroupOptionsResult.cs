@@ -30,6 +30,7 @@ namespace Amazon.RDS.Model
         private List<OptionGroupOption> optionGroupOptions = new List<OptionGroupOption>();
         private string marker;
 
+
         /// <summary>
         /// List of available option group options.
         ///  

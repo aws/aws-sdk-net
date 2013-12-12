@@ -26,9 +26,12 @@ namespace Amazon.OpsWorks.Model
     /// <summary>
     /// Container for the parameters to the CreateApp operation.
     /// <para>Creates an app for a specified stack. For more information, see <a
-    /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html" >Creating Apps</a> .</para>
+    /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html" >Creating Apps</a> .</para> <para> <b>Required
+    /// Permissions</b> : To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly
+    /// grants permissions. For more information on user permissions, see <a
+    /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
     /// </summary>
-    public partial class CreateAppRequest : AmazonWebServiceRequest
+    public partial class CreateAppRequest : AmazonOpsWorksRequest
     {
         private string stackId;
         private string shortname;
@@ -40,6 +43,7 @@ namespace Amazon.OpsWorks.Model
         private bool? enableSsl;
         private SslConfiguration sslConfiguration;
         private Dictionary<string,string> attributes = new Dictionary<string,string>();
+
 
         /// <summary>
         /// The stack ID.

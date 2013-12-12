@@ -25,11 +25,15 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the GetHostnameSuggestion operation.
-    /// <para>Gets a generated host name for the specified layer, based on the current host name theme.</para>
+    /// <para>Gets a generated host name for the specified layer, based on the current host name theme.</para> <para> <b>Required Permissions</b> :
+    /// To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants
+    /// permissions. For more information on user permissions, see <a
+    /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
     /// </summary>
-    public partial class GetHostnameSuggestionRequest : AmazonWebServiceRequest
+    public partial class GetHostnameSuggestionRequest : AmazonOpsWorksRequest
     {
         private string layerId;
+
 
         /// <summary>
         /// The layer ID.

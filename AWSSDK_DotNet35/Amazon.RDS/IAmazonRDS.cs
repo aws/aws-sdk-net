@@ -29,11 +29,12 @@ namespace Amazon.RDS
     /// applications, and tools you already use today with your existing MySQL or Oracle databases work with Amazon RDS without modification. Amazon
     /// RDS automatically backs up your database and maintains the database software that powers your DB instance. Amazon RDS is flexible: you can
     /// scale your database instance's compute resources and storage capacity to meet your application's demand. As with all Amazon Web Services,
-    /// there are no up-front investments, and you pay only for the resources you use. </para> <para> This is the <i>Amazon RDS API Reference</i> .
-    /// It contains a comprehensive description of all Amazon RDS Query APIs and data types. Note that this API is asynchronous and some actions may
-    /// require polling to determine when an action has been applied. See the parameter description to determine if a change is applied immediately
-    /// or on the next instance reboot or during the maintenance window. For more information on Amazon RDS concepts and usage scenarios, go to the
-    /// <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/" >Amazon RDS User Guide</a> .
+    /// there are no up-front investments, and you pay only for the resources you use. </para> <para> This is an interface reference for Amazon RDS.
+    /// It contains documentation for a programming or command line interface you can use to manage Amazon RDS. Note that Amazon RDS is
+    /// asynchronous, which means that some interfaces may require techniques such as polling or callback functions to determine when a command has
+    /// been applied. In this reference, the parameter descriptions indicate whether a command is applied immediately, on the next instance reboot,
+    /// or during the maintenance window. For a summary of the Amazon RDS interfaces, go to <a
+    /// href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html#Welcome.Interfaces" >Available RDS Interfaces</a> .
     /// </para>
     /// </summary>
     public interface IAmazonRDS : IDisposable
@@ -294,13 +295,15 @@ namespace Amazon.RDS
         /// <exception cref="DBInstanceAlreadyExistsException"/>
         /// <exception cref="DBInstanceNotFoundException"/>
         /// <exception cref="InvalidVPCNetworkStateException"/>
+        /// <exception cref="InvalidDBSubnetGroupException"/>
         /// <exception cref="DBSecurityGroupNotFoundException"/>
         /// <exception cref="InvalidSubnetException"/>
         /// <exception cref="InstanceQuotaExceededException"/>
+        /// <exception cref="DBSubnetGroupNotAllowedException"/>
         /// <exception cref="StorageQuotaExceededException"/>
         /// <exception cref="InvalidDBInstanceStateException"/>
-        /// <exception cref="InsufficientDBInstanceCapacityException"/>
         /// <exception cref="DBSubnetGroupDoesNotCoverEnoughAZsException"/>
+        /// <exception cref="InsufficientDBInstanceCapacityException"/>
         /// <exception cref="OptionGroupNotFoundException"/>
         /// <exception cref="ProvisionedIopsNotAvailableInAZException"/>
         CreateDBInstanceReadReplicaResponse CreateDBInstanceReadReplica(CreateDBInstanceReadReplicaRequest createDBInstanceReadReplicaRequest);
@@ -749,7 +752,8 @@ namespace Amazon.RDS
         #region DeleteDBSnapshot
 
         /// <summary>
-        /// <para> Deletes a DBSnapshot. </para> <para><b>NOTE:</b>The DBSnapshot must be in the available state to be deleted.</para>
+        /// <para> Deletes a DBSnapshot. If the snapshot is being copied, the copy operation is terminated. </para> <para><b>NOTE:</b>The DBSnapshot
+        /// must be in the available state to be deleted.</para>
         /// </summary>
         /// 
         /// <param name="deleteDBSnapshotRequest">Container for the necessary parameters to execute the DeleteDBSnapshot service method on
@@ -2374,19 +2378,19 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the RestoreDBInstanceFromDBSnapshot service method, as returned by AmazonRDS.</returns>
         /// 
-        /// <exception cref="DBSubnetGroupNotFoundException"/>
-        /// <exception cref="DBInstanceAlreadyExistsException"/>
-        /// <exception cref="InvalidVPCNetworkStateException"/>
-        /// <exception cref="InvalidDBSnapshotStateException"/>
-        /// <exception cref="InvalidSubnetException"/>
-        /// <exception cref="DBSnapshotNotFoundException"/>
         /// <exception cref="InvalidRestoreException"/>
         /// <exception cref="InstanceQuotaExceededException"/>
+        /// <exception cref="DBSubnetGroupNotFoundException"/>
+        /// <exception cref="DBInstanceAlreadyExistsException"/>
         /// <exception cref="StorageQuotaExceededException"/>
+        /// <exception cref="InvalidVPCNetworkStateException"/>
+        /// <exception cref="InvalidDBSnapshotStateException"/>
         /// <exception cref="InsufficientDBInstanceCapacityException"/>
         /// <exception cref="DBSubnetGroupDoesNotCoverEnoughAZsException"/>
+        /// <exception cref="InvalidSubnetException"/>
         /// <exception cref="OptionGroupNotFoundException"/>
         /// <exception cref="ProvisionedIopsNotAvailableInAZException"/>
+        /// <exception cref="DBSnapshotNotFoundException"/>
         RestoreDBInstanceFromDBSnapshotResponse RestoreDBInstanceFromDBSnapshot(RestoreDBInstanceFromDBSnapshotRequest restoreDBInstanceFromDBSnapshotRequest);
 
         /// <summary>
@@ -2432,17 +2436,17 @@ namespace Amazon.RDS
         /// <returns>The response from the RestoreDBInstanceToPointInTime service method, as returned by AmazonRDS.</returns>
         /// 
         /// <exception cref="PointInTimeRestoreNotEnabledException"/>
+        /// <exception cref="InvalidRestoreException"/>
+        /// <exception cref="InstanceQuotaExceededException"/>
         /// <exception cref="DBSubnetGroupNotFoundException"/>
         /// <exception cref="DBInstanceAlreadyExistsException"/>
         /// <exception cref="DBInstanceNotFoundException"/>
-        /// <exception cref="InvalidVPCNetworkStateException"/>
-        /// <exception cref="InvalidSubnetException"/>
-        /// <exception cref="InvalidRestoreException"/>
-        /// <exception cref="InstanceQuotaExceededException"/>
         /// <exception cref="StorageQuotaExceededException"/>
+        /// <exception cref="InvalidVPCNetworkStateException"/>
         /// <exception cref="InvalidDBInstanceStateException"/>
         /// <exception cref="InsufficientDBInstanceCapacityException"/>
         /// <exception cref="DBSubnetGroupDoesNotCoverEnoughAZsException"/>
+        /// <exception cref="InvalidSubnetException"/>
         /// <exception cref="OptionGroupNotFoundException"/>
         /// <exception cref="ProvisionedIopsNotAvailableInAZException"/>
         RestoreDBInstanceToPointInTimeResponse RestoreDBInstanceToPointInTime(RestoreDBInstanceToPointInTimeRequest restoreDBInstanceToPointInTimeRequest);

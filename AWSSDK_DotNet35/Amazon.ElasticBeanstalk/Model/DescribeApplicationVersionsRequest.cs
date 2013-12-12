@@ -27,10 +27,11 @@ namespace Amazon.ElasticBeanstalk.Model
     /// Container for the parameters to the DescribeApplicationVersions operation.
     /// <para>Returns descriptions for existing application versions.</para>
     /// </summary>
-    public partial class DescribeApplicationVersionsRequest : AmazonWebServiceRequest
+    public partial class DescribeApplicationVersionsRequest : AmazonElasticBeanstalkRequest
     {
         private string applicationName;
         private List<string> versionLabels = new List<string>();
+
 
         /// <summary>
         /// If specified, AWS Elastic Beanstalk restricts the returned descriptions to only include ones that are associated with the specified

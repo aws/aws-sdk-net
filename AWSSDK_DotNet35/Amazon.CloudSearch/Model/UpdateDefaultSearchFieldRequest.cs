@@ -29,10 +29,11 @@ namespace Amazon.CloudSearch.Model
     /// request does not specify which fields to search. By default, it is configured to include the contents of all of the domain's text fields.
     /// </para>
     /// </summary>
-    public partial class UpdateDefaultSearchFieldRequest : AmazonWebServiceRequest
+    public partial class UpdateDefaultSearchFieldRequest : AmazonCloudSearchRequest
     {
         private string domainName;
         private string defaultSearchField;
+
 
         /// <summary>
         /// A string that represents the name of a domain. Domain names must be unique across the domains owned by an account within an AWS region.
@@ -67,7 +68,7 @@ namespace Amazon.CloudSearch.Model
 
         /// <summary>
         /// The text field to search if the search request does not specify which field to search. The default search field is used when search terms
-        /// are specified with the <c>q</c> parameter, or if a match expression specified with the <c>bq</c> parameter does not contstrain the search to
+        /// are specified with the <c>q</c> parameter, or if a match expression specified with the <c>bq</c> parameter does not constrain the search to
         /// a particular field. The default is an empty string, which automatically searches all text fields.
         ///  
         /// </summary>

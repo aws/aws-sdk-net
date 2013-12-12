@@ -29,12 +29,13 @@ namespace Amazon.ElasticBeanstalk.Model
     /// valid. </para> <para> This action returns a list of messages indicating any errors or warnings associated with the selection of option
     /// values. </para>
     /// </summary>
-    public partial class ValidateConfigurationSettingsRequest : AmazonWebServiceRequest
+    public partial class ValidateConfigurationSettingsRequest : AmazonElasticBeanstalkRequest
     {
         private string applicationName;
         private string templateName;
         private string environmentName;
         private List<ConfigurationOptionSetting> optionSettings = new List<ConfigurationOptionSetting>();
+
 
         /// <summary>
         /// The name of the application that the configuration template or environment belongs to.

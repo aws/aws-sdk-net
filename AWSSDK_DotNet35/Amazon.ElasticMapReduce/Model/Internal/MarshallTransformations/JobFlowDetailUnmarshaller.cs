@@ -90,8 +90,14 @@
               if (context.TestExpression("Steps", targetDepth))
               {
                 context.Read();
-                jobFlowDetail.Steps = new List<StepDetail>();
-                        StepDetailUnmarshaller unmarshaller = StepDetailUnmarshaller.GetInstance();
+                
+                if (context.CurrentTokenType == JsonToken.Null)
+                {
+                    jobFlowDetail.Steps = null;
+                    continue;
+                }
+                  jobFlowDetail.Steps = new List<StepDetail>();
+                  StepDetailUnmarshaller unmarshaller = StepDetailUnmarshaller.GetInstance();
                 while (context.Read())
                 {
                   JsonToken token = context.CurrentTokenType;                
@@ -111,8 +117,14 @@
               if (context.TestExpression("BootstrapActions", targetDepth))
               {
                 context.Read();
-                jobFlowDetail.BootstrapActions = new List<BootstrapActionDetail>();
-                        BootstrapActionDetailUnmarshaller unmarshaller = BootstrapActionDetailUnmarshaller.GetInstance();
+                
+                if (context.CurrentTokenType == JsonToken.Null)
+                {
+                    jobFlowDetail.BootstrapActions = null;
+                    continue;
+                }
+                  jobFlowDetail.BootstrapActions = new List<BootstrapActionDetail>();
+                  BootstrapActionDetailUnmarshaller unmarshaller = BootstrapActionDetailUnmarshaller.GetInstance();
                 while (context.Read())
                 {
                   JsonToken token = context.CurrentTokenType;                
@@ -132,8 +144,14 @@
               if (context.TestExpression("SupportedProducts", targetDepth))
               {
                 context.Read();
-                jobFlowDetail.SupportedProducts = new List<String>();
-                        StringUnmarshaller unmarshaller = StringUnmarshaller.GetInstance();
+                
+                if (context.CurrentTokenType == JsonToken.Null)
+                {
+                    jobFlowDetail.SupportedProducts = null;
+                    continue;
+                }
+                  jobFlowDetail.SupportedProducts = new List<String>();
+                  StringUnmarshaller unmarshaller = StringUnmarshaller.GetInstance();
                 while (context.Read())
                 {
                   JsonToken token = context.CurrentTokenType;                

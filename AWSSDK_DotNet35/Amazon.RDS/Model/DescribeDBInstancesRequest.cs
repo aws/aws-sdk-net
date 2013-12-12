@@ -27,12 +27,13 @@ namespace Amazon.RDS.Model
     /// Container for the parameters to the DescribeDBInstances operation.
     /// <para> Returns information about provisioned RDS instances. This API supports pagination. </para>
     /// </summary>
-    public partial class DescribeDBInstancesRequest : AmazonWebServiceRequest
+    public partial class DescribeDBInstancesRequest : AmazonRDSRequest
     {
         private string dBInstanceIdentifier;
         private List<Filter> filters = new List<Filter>();
         private int? maxRecords;
         private string marker;
+
 
         /// <summary>
         /// The user-supplied instance identifier. If this parameter is specified, information from only the specific DB instance is returned. This
@@ -53,7 +54,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// 
+        /// This parameter is not currently supported.
         ///  
         /// </summary>
         public List<Filter> Filters

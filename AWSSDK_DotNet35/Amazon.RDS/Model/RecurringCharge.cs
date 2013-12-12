@@ -30,6 +30,7 @@ namespace Amazon.RDS.Model
         private double? recurringChargeAmount;
         private string recurringChargeFrequency;
 
+
         /// <summary>
         /// The amount of the recurring charge.
         ///  

@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(resetImageAttributeRequest, "AmazonEC2");
             request.Parameters.Add("Action", "ResetImageAttribute");
-            request.Parameters.Add("Version", "2013-10-01");
+            request.Parameters.Add("Version", "2013-10-15");
             if (resetImageAttributeRequest != null && resetImageAttributeRequest.IsSetImageId())
             {
                 request.Parameters.Add("ImageId", StringUtils.FromString(resetImageAttributeRequest.ImageId));

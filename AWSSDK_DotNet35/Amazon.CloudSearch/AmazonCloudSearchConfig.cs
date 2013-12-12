@@ -29,7 +29,7 @@ namespace Amazon.CloudSearch
         /// </summary>
         public AmazonCloudSearchConfig()
         {
-            
+            this.AuthenticationServiceName = "cloudsearch";
         }
 
         /// <summary>

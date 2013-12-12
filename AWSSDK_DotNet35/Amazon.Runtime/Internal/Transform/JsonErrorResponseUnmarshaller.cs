@@ -71,6 +71,7 @@ namespace Amazon.Runtime.Internal.Transform
                     {
                         context.Read();
                         response.Message = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
                     }
                 }
             }

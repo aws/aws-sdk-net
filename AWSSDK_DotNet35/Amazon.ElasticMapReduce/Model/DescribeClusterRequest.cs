@@ -36,15 +36,6 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// The identifier of the cluster to describe.
         ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 64</description>
-        ///     </item>
-        /// </list>
-        /// </para>
         /// </summary>
         public string ClusterId
         {

@@ -42,6 +42,7 @@ namespace Amazon.RDS.Model
         private List<EC2SecurityGroup> eC2SecurityGroups = new List<EC2SecurityGroup>();
         private List<IPRange> iPRanges = new List<IPRange>();
 
+
         /// <summary>
         /// Provides the AWS ID of the owner of a specific DB security group.
         ///  

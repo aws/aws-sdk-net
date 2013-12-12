@@ -28,10 +28,11 @@ namespace Amazon.CloudSearch.Model
     /// <para>Configures a <c>RankExpression</c> for the search domain. Used to create new rank expressions and modify existing ones. If the
     /// expression exists, the new configuration replaces the old one. You can configure a maximum of 50 rank expressions.</para>
     /// </summary>
-    public partial class DefineRankExpressionRequest : AmazonWebServiceRequest
+    public partial class DefineRankExpressionRequest : AmazonCloudSearchRequest
     {
         private string domainName;
         private NamedRankExpression rankExpression;
+
 
         /// <summary>
         /// A string that represents the name of a domain. Domain names must be unique across the domains owned by an account within an AWS region.

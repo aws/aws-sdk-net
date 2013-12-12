@@ -29,6 +29,7 @@ namespace Amazon.CloudSearch.Model
         private string rankName;
         private string rankExpression;
 
+
         /// <summary>
         /// The name of a rank expression. Rank expression names must begin with a letter and can contain the following characters: a-z (lowercase),
         /// 0-9, and _ (underscore). Uppercase letters and hyphens are not allowed. The names "body", "docid", and "text_relevance" are reserved and
@@ -63,8 +64,8 @@ namespace Amazon.CloudSearch.Model
         /// <summary>
         /// The expression to evaluate for ranking or thresholding while processing a search request. The <c>RankExpression</c> syntax is based on
         /// JavaScript expressions and supports:<ul> <li>Integer, floating point, hex and octal literals</li> <li>Shortcut evaluation of logical
-        /// operators such that an expression <c>a || b</c> evaluates to the value <c>a</c> if <c>a</c> is <c>true</c> without evaluting <c>b</c> at
-        /// all</li> <li>JavaScript order of precendence for operators</li> <li>Arithmetic operators: <c>+ - * / %</c></li> <li>Boolean operators
+        /// operators such that an expression <c>a || b</c> evaluates to the value <c>a</c>, if <c>a</c> is true, without evaluating <c>b</c> at
+        /// all</li> <li>JavaScript order of precedence for operators</li> <li>Arithmetic operators: <c>+ - * / %</c></li> <li>Boolean operators
         /// (including the ternary operator)</li> <li>Bitwise operators</li> <li>Comparison operators</li> <li>Common mathematic functions: <c>abs ceil
         /// erf exp floor lgamma ln log2 log10 max min sqrt pow</c></li> <li>Trigonometric library functions: <c>acosh acos asinh asin atanh atan cosh
         /// cos sinh sin tanh tan</c></li> <li>Random generation of a number between 0 and 1: <c>rand</c></li> <li>Current time in epoch:

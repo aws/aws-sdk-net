@@ -27,12 +27,13 @@ namespace Amazon.RDS.Model
     /// Container for the parameters to the ModifyOptionGroup operation.
     /// <para> Modifies an existing option group. </para>
     /// </summary>
-    public partial class ModifyOptionGroupRequest : AmazonWebServiceRequest
+    public partial class ModifyOptionGroupRequest : AmazonRDSRequest
     {
         private string optionGroupName;
         private List<OptionConfiguration> optionsToInclude = new List<OptionConfiguration>();
         private List<string> optionsToRemove = new List<string>();
         private bool? applyImmediately;
+
 
         /// <summary>
         /// The name of the option group to be modified. <!-- Note that persistent options, such as the TDE_SQLServer option for Microsoft SQL Server,

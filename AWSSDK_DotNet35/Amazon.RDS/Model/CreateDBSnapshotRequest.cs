@@ -27,11 +27,12 @@ namespace Amazon.RDS.Model
     /// Container for the parameters to the CreateDBSnapshot operation.
     /// <para> Creates a DBSnapshot. The source DBInstance must be in "available" state. </para>
     /// </summary>
-    public partial class CreateDBSnapshotRequest : AmazonWebServiceRequest
+    public partial class CreateDBSnapshotRequest : AmazonRDSRequest
     {
         private string dBSnapshotIdentifier;
         private string dBInstanceIdentifier;
         private List<Tag> tags = new List<Tag>();
+
 
         /// <summary>
         /// The identifier for the DB snapshot. Constraints: <ul> <li>Cannot be null, empty, or blank</li> <li>Must contain from 1 to 255 alphanumeric

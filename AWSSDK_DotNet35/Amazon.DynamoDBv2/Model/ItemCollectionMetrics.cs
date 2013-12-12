@@ -30,6 +30,7 @@ namespace Amazon.DynamoDBv2.Model
         private Dictionary<string,AttributeValue> itemCollectionKey = new Dictionary<string,AttributeValue>();
         private List<double> sizeEstimateRangeGB = new List<double>();
 
+
         /// <summary>
         /// The hash key value of the item collection. This is the same as the hash key of the item.
         ///  

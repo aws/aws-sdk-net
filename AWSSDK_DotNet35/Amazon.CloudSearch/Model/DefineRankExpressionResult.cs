@@ -29,6 +29,7 @@ namespace Amazon.CloudSearch.Model
         
         private RankExpressionStatus rankExpression;
 
+
         /// <summary>
         /// The value of a <c>RankExpression</c> and its current status.
         ///  

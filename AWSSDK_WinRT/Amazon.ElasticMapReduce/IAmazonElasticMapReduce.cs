@@ -71,6 +71,23 @@ namespace Amazon.ElasticMapReduce
 		Task<AddJobFlowStepsResponse> AddJobFlowStepsAsync(AddJobFlowStepsRequest addJobFlowStepsRequest, CancellationToken cancellationToken = default(CancellationToken));
  
         /// <summary>
+        /// <para>Adds tags to an Amazon EMR resource. Tags make it easier to associate clusters in various ways, such as grouping clusters to track
+        /// your Amazon EMR resource allocation costs. For more information, see <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html">Tagging Amazon EMR Resources</a> .
+        /// </para>
+        /// </summary>
+        /// 
+        /// <param name="addTagsRequest">Container for the necessary parameters to execute the AddTags service method on AmazonElasticMapReduce.</param>
+        /// 
+        /// <returns>The response from the AddTags service method, as returned by AmazonElasticMapReduce.</returns>
+        /// 
+        /// <exception cref="T:Amazon.ElasticMapReduce.Model.InternalServerException" />
+        /// <exception cref="T:Amazon.ElasticMapReduce.Model.InvalidRequestException" />
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+		Task<AddTagsResponse> AddTagsAsync(AddTagsRequest addTagsRequest, CancellationToken cancellationToken = default(CancellationToken));
+ 
+        /// <summary>
         /// <para>Provides cluster-level details including status, hardware and software configuration, VPC settings, and so on. For information about
         /// the cluster steps, see ListSteps.</para>
         /// </summary>
@@ -228,6 +245,24 @@ namespace Amazon.ElasticMapReduce
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
 		Task<ModifyInstanceGroupsResponse> ModifyInstanceGroupsAsync(ModifyInstanceGroupsRequest modifyInstanceGroupsRequest, CancellationToken cancellationToken = default(CancellationToken));
+ 
+        /// <summary>
+        /// <para>Removes tags from an Amazon EMR resource. Tags make it easier to associate clusters in various ways, such as grouping clusters to
+        /// track your Amazon EMR resource allocation costs. For more information, see <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html">Tagging Amazon EMR Resources</a> .
+        /// </para>
+        /// </summary>
+        /// 
+        /// <param name="removeTagsRequest">Container for the necessary parameters to execute the RemoveTags service method on
+        /// AmazonElasticMapReduce.</param>
+        /// 
+        /// <returns>The response from the RemoveTags service method, as returned by AmazonElasticMapReduce.</returns>
+        /// 
+        /// <exception cref="T:Amazon.ElasticMapReduce.Model.InternalServerException" />
+        /// <exception cref="T:Amazon.ElasticMapReduce.Model.InvalidRequestException" />
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+		Task<RemoveTagsResponse> RemoveTagsAsync(RemoveTagsRequest removeTagsRequest, CancellationToken cancellationToken = default(CancellationToken));
  
         /// <summary>
         /// <para> RunJobFlow creates and starts running a new job flow. The job flow will run the steps specified. Once the job flow completes, the

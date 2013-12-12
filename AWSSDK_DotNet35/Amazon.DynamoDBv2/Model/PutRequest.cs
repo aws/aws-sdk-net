@@ -28,6 +28,7 @@ namespace Amazon.DynamoDBv2.Model
         
         private Dictionary<string,AttributeValue> item = new Dictionary<string,AttributeValue>();
 
+
         /// <summary>
         /// A map of attribute name to attribute values, representing the primary key of an item to be processed by <i>PutItem</i>. All of the table's
         /// primary key attributes must be specified, and their data types must match those of the table's key schema. If any attributes are present in

@@ -31,6 +31,7 @@ namespace Amazon.DynamoDBv2.Model
         private AttributeValue value;
         private bool? exists;
 
+
         /// <summary>
         /// Represents the data for an attribute. You can set one, and only one, of the elements.
         ///  

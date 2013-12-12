@@ -66,6 +66,7 @@ namespace Amazon.RDS.Model
         private bool? publiclyAccessible;
         private List<DBInstanceStatusInfo> statusInfos = new List<DBInstanceStatusInfo>();
 
+
         /// <summary>
         /// Contains a user-supplied database identifier. This is the unique key that identifies a DB instance.
         ///  
@@ -147,9 +148,11 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The meaning of this parameter differs according to the database engine you use. <b>MySQL</b> Contains the name of the initial database of
-        /// this instance that was provided at create time, if one was specified when the DB instance was created. This same name is returned for the
-        /// life of the DB instance. Type: String <b>Oracle</b> Contains the Oracle System ID (SID) of the created DB instance.
+        /// The meaning of this parameter differs according to the database engine you use. For example, this value returns only MySQL information when
+        /// returning values from CreateDBInstanceReadReplica since read replicas are only supported for MySQL. <b>MySQL</b> Contains the name of the
+        /// initial database of this instance that was provided at create time, if one was specified when the DB instance was created. This same name is
+        /// returned for the life of the DB instance. Type: String <b>Oracle</b> Contains the Oracle System ID (SID) of the created DB instance. Not
+        /// shown when the returned parameters do not apply to an Oracle DB instance.
         ///  
         /// </summary>
         public string DBName

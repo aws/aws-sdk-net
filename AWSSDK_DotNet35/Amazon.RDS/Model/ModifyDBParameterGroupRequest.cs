@@ -32,10 +32,11 @@ namespace Amazon.RDS.Model
     /// Oracle DB instances for either dynamic or static parameters. For Microsoft SQL Server DB instances, the pending-reboot method can be used
     /// only for static parameters. </para>
     /// </summary>
-    public partial class ModifyDBParameterGroupRequest : AmazonWebServiceRequest
+    public partial class ModifyDBParameterGroupRequest : AmazonRDSRequest
     {
         private string dBParameterGroupName;
         private List<Parameter> parameters = new List<Parameter>();
+
 
         /// <summary>
         /// The name of the DB parameter group. Constraints: <ul> <li>Must be the name of an existing DB parameter group</li> <li>Must be 1 to 255

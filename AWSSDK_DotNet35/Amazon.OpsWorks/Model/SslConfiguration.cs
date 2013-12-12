@@ -30,6 +30,7 @@ namespace Amazon.OpsWorks.Model
         private string privateKey;
         private string chain;
 
+
         /// <summary>
         /// The contents of the certificate's domain.crt file.
         ///  

@@ -37,6 +37,7 @@ namespace Amazon.OpsWorks.Model
         private string availabilityZone;
         private string createdAt;
 
+
         /// <summary>
         /// The array ID.
         ///  

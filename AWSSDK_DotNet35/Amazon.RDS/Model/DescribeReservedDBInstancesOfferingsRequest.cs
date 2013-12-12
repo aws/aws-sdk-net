@@ -27,7 +27,7 @@ namespace Amazon.RDS.Model
     /// Container for the parameters to the DescribeReservedDBInstancesOfferings operation.
     /// <para> Lists available reserved DB instance offerings. </para>
     /// </summary>
-    public partial class DescribeReservedDBInstancesOfferingsRequest : AmazonWebServiceRequest
+    public partial class DescribeReservedDBInstancesOfferingsRequest : AmazonRDSRequest
     {
         private string reservedDBInstancesOfferingId;
         private string dBInstanceClass;
@@ -37,6 +37,7 @@ namespace Amazon.RDS.Model
         private bool? multiAZ;
         private int? maxRecords;
         private string marker;
+
 
         /// <summary>
         /// The offering identifier filter value. Specify this parameter to show only the available offering that matches the specified reservation

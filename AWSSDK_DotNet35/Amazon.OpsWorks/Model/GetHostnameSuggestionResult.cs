@@ -30,6 +30,7 @@ namespace Amazon.OpsWorks.Model
         private string layerId;
         private string hostname;
 
+
         /// <summary>
         /// The layer ID.
         ///  

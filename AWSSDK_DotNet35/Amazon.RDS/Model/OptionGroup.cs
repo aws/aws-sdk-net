@@ -35,6 +35,7 @@ namespace Amazon.RDS.Model
         private bool? allowsVpcAndNonVpcInstanceMemberships;
         private string vpcId;
 
+
         /// <summary>
         /// Specifies the name of the option group.
         ///  

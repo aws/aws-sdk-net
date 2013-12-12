@@ -163,6 +163,57 @@ namespace Amazon.DynamoDBv2
     }
     
 
+    /// <summary>Index Status
+    /// </summary>
+    public class IndexStatus : ConstantClass
+    {
+
+
+       /// <summary>Constant ACTIVE for IndexStatus
+       /// </summary>
+        public static readonly IndexStatus ACTIVE = new IndexStatus("ACTIVE");
+    
+
+       /// <summary>Constant CREATING for IndexStatus
+       /// </summary>
+        public static readonly IndexStatus CREATING = new IndexStatus("CREATING");
+    
+
+       /// <summary>Constant DELETING for IndexStatus
+       /// </summary>
+        public static readonly IndexStatus DELETING = new IndexStatus("DELETING");
+    
+
+       /// <summary>Constant UPDATING for IndexStatus
+       /// </summary>
+        public static readonly IndexStatus UPDATING = new IndexStatus("UPDATING");
+    
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public IndexStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IndexStatus FindValue(string value)
+        {
+            return FindValue<IndexStatus>(value);
+        }
+
+        public static implicit operator IndexStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+    
+
     /// <summary>Key Type
     /// </summary>
     public class KeyType : ConstantClass
@@ -255,6 +306,11 @@ namespace Amazon.DynamoDBv2
     public class ReturnConsumedCapacity : ConstantClass
     {
 
+
+       /// <summary>Constant INDEXES for ReturnConsumedCapacity
+       /// </summary>
+        public static readonly ReturnConsumedCapacity INDEXES = new ReturnConsumedCapacity("INDEXES");
+    
 
        /// <summary>Constant NONE for ReturnConsumedCapacity
        /// </summary>

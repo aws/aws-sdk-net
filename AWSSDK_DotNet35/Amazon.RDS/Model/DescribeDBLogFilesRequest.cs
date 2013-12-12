@@ -27,7 +27,7 @@ namespace Amazon.RDS.Model
     /// Container for the parameters to the DescribeDBLogFiles operation.
     /// <para> Returns a list of DB log files for the DB instance. </para>
     /// </summary>
-    public partial class DescribeDBLogFilesRequest : AmazonWebServiceRequest
+    public partial class DescribeDBLogFilesRequest : AmazonRDSRequest
     {
         private string dBInstanceIdentifier;
         private string filenameContains;
@@ -35,6 +35,7 @@ namespace Amazon.RDS.Model
         private long? fileSize;
         private int? maxRecords;
         private string marker;
+
 
         /// <summary>
         /// The customer-assigned name of the DB instance that contains the log files you want to list. Constraints: <ul> <li>Must contain from 1 to 63

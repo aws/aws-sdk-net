@@ -33,6 +33,7 @@ namespace Amazon.DynamoDBv2.Model
         private List<string> nS = new List<string>();
         private List<MemoryStream> bS = new List<MemoryStream>();
 
+
         /// <summary>
         /// Represents a String data type
         ///  

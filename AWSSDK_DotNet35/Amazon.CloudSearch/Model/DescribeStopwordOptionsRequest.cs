@@ -27,9 +27,10 @@ namespace Amazon.CloudSearch.Model
     /// Container for the parameters to the DescribeStopwordOptions operation.
     /// <para>Gets the stopwords configured for the search domain.</para>
     /// </summary>
-    public partial class DescribeStopwordOptionsRequest : AmazonWebServiceRequest
+    public partial class DescribeStopwordOptionsRequest : AmazonCloudSearchRequest
     {
         private string domainName;
+
 
         /// <summary>
         /// A string that represents the name of a domain. Domain names must be unique across the domains owned by an account within an AWS region.

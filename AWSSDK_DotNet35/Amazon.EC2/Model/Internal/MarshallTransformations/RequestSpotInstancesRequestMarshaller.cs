@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(requestSpotInstancesRequest, "AmazonEC2");
             request.Parameters.Add("Action", "RequestSpotInstances");
-            request.Parameters.Add("Version", "2013-10-01");
+            request.Parameters.Add("Version", "2013-10-15");
             if (requestSpotInstancesRequest != null && requestSpotInstancesRequest.IsSetSpotPrice())
             {
                 request.Parameters.Add("SpotPrice", StringUtils.FromString(requestSpotInstancesRequest.SpotPrice));

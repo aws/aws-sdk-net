@@ -27,15 +27,19 @@ namespace Amazon.RDS.Model
     /// Container for the parameters to the CopyDBSnapshot operation.
     /// <para> Copies the specified DBSnapshot. The source DBSnapshot must be in the "available" state. </para>
     /// </summary>
-    public partial class CopyDBSnapshotRequest : AmazonWebServiceRequest
+    public partial class CopyDBSnapshotRequest : AmazonRDSRequest
     {
         private string sourceDBSnapshotIdentifier;
         private string targetDBSnapshotIdentifier;
         private List<Tag> tags = new List<Tag>();
 
+
         /// <summary>
-        /// The identifier for the source DB snapshot. Constraints: <ul> <li>Must be the identifier for a valid system snapshot in the "available"
-        /// state.</li> </ul> Example: <c>rds:mydb-2012-04-02-00-01</c>
+        /// The identifier for the source DB snapshot. Constraints: <ul> <li>Must specify a valid system snapshot in the "available" state.</li> <li>If
+        /// the source snapshot is in the same region as the copy, specify a valid DB snapshot identifier.</li> <li>If the source snapshot is in a
+        /// different region than the copy, specify valid DB snapshot ARN. For more information, go to <a
+        /// href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html"> Copying a DB Snapshot</a>.</li> </ul> Example:
+        /// <c>rds:mydb-2012-04-02-00-01</c> Example: <c>arn:aws:rds:rr-regn-1:123456789012:snapshot:mysql-instance1-snapshot-20130805</c>
         ///  
         /// </summary>
         public string SourceDBSnapshotIdentifier

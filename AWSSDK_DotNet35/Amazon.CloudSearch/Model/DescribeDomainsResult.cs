@@ -29,6 +29,7 @@ namespace Amazon.CloudSearch.Model
         
         private List<DomainStatus> domainStatusList = new List<DomainStatus>();
 
+
         /// <summary>
         /// The current status of all of your search domains.
         ///  

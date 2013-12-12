@@ -37,6 +37,7 @@ namespace Amazon.RDS.Model
         private List<string> eventCategoriesList = new List<string>();
         private bool? enabled;
 
+
         /// <summary>
         /// The AWS customer account associated with the RDS event notification subscription.
         ///  

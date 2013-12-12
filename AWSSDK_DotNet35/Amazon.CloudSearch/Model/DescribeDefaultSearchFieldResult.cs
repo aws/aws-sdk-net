@@ -29,6 +29,7 @@ namespace Amazon.CloudSearch.Model
         
         private DefaultSearchFieldStatus defaultSearchField;
 
+
         /// <summary>
         /// The name of the <c>IndexField</c> to use for search requests issued with the <c>q</c> parameter. The default is the empty string, which
         /// automatically searches all text fields.

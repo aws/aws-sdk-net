@@ -28,12 +28,13 @@ namespace Amazon.RDS.Model
     /// <para> Returns a list of <c>DBSecurityGroup</c> descriptions. If a <c>DBSecurityGroupName</c> is specified, the list will contain only the
     /// descriptions of the specified DB security group. </para>
     /// </summary>
-    public partial class DescribeDBSecurityGroupsRequest : AmazonWebServiceRequest
+    public partial class DescribeDBSecurityGroupsRequest : AmazonRDSRequest
     {
         private string dBSecurityGroupName;
         private List<Filter> filters = new List<Filter>();
         private int? maxRecords;
         private string marker;
+
 
         /// <summary>
         /// The name of the DB security group to return details for.
@@ -50,6 +51,11 @@ namespace Amazon.RDS.Model
         {
             return this.dBSecurityGroupName != null;
         }
+
+        /// <summary>
+        /// This parameter is not currently supported.
+        ///  
+        /// </summary>
         public List<Filter> Filters
         {
             get { return this.filters; }

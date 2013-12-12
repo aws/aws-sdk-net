@@ -34,15 +34,6 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// The name of the command.
         ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 256</description>
-        ///     </item>
-        /// </list>
-        /// </para>
         /// </summary>
         public string Name
         {

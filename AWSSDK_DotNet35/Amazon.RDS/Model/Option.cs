@@ -35,6 +35,7 @@ namespace Amazon.RDS.Model
         private List<DBSecurityGroupMembership> dBSecurityGroupMemberships = new List<DBSecurityGroupMembership>();
         private List<VpcSecurityGroupMembership> vpcSecurityGroupMemberships = new List<VpcSecurityGroupMembership>();
 
+
         /// <summary>
         /// The name of the option.
         ///  

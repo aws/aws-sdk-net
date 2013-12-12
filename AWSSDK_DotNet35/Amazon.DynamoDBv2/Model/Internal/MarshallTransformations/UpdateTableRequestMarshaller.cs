@@ -101,6 +101,57 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                     }
                 }
 
+                if (updateTableRequest != null && updateTableRequest.GlobalSecondaryIndexUpdates != null && updateTableRequest.GlobalSecondaryIndexUpdates.Count > 0)
+                {
+                    List<GlobalSecondaryIndexUpdate> globalSecondaryIndexUpdatesList = updateTableRequest.GlobalSecondaryIndexUpdates;
+                    writer.WritePropertyName("GlobalSecondaryIndexUpdates");
+                    writer.WriteArrayStart();
+
+                    foreach (GlobalSecondaryIndexUpdate globalSecondaryIndexUpdatesListValue in globalSecondaryIndexUpdatesList) 
+                    {
+                        writer.WriteObjectStart();
+
+                        if (globalSecondaryIndexUpdatesListValue != null) 
+                        {
+                            UpdateGlobalSecondaryIndexAction update = globalSecondaryIndexUpdatesListValue.Update;
+                            if (update != null)
+                            {
+                                writer.WritePropertyName("Update");
+                                writer.WriteObjectStart();
+                                if (update != null && update.IsSetIndexName()) 
+                                {
+                                    writer.WritePropertyName("IndexName");
+                                    writer.Write(update.IndexName);
+                                }
+
+                                if (update != null) 
+                                {
+                                    ProvisionedThroughput provisionedThroughput = update.ProvisionedThroughput;
+                                    if (provisionedThroughput != null)
+                                    {
+                                        writer.WritePropertyName("ProvisionedThroughput");
+                                        writer.WriteObjectStart();
+                                        if (provisionedThroughput != null && provisionedThroughput.IsSetReadCapacityUnits()) 
+                                        {
+                                            writer.WritePropertyName("ReadCapacityUnits");
+                                            writer.Write(provisionedThroughput.ReadCapacityUnits);
+                                        }
+                                        if (provisionedThroughput != null && provisionedThroughput.IsSetWriteCapacityUnits()) 
+                                        {
+                                            writer.WritePropertyName("WriteCapacityUnits");
+                                            writer.Write(provisionedThroughput.WriteCapacityUnits);
+                                        }
+                                        writer.WriteObjectEnd();
+                                    }
+                                }
+                                writer.WriteObjectEnd();
+                            }
+                        }
+                        writer.WriteObjectEnd();
+                    }
+                    writer.WriteArrayEnd();
+                }
+
                 writer.WriteObjectEnd();
                 
                 string snippet = stringWriter.ToString();

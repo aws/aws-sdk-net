@@ -28,10 +28,11 @@ namespace Amazon.CloudSearch.Model
     /// <para>Gets the rank expressions configured for the search domain. Can be limited to specific rank expressions by name. Shows all rank
     /// expressions by default. </para>
     /// </summary>
-    public partial class DescribeRankExpressionsRequest : AmazonWebServiceRequest
+    public partial class DescribeRankExpressionsRequest : AmazonCloudSearchRequest
     {
         private string domainName;
         private List<string> rankNames = new List<string>();
+
 
         /// <summary>
         /// A string that represents the name of a domain. Domain names must be unique across the domains owned by an account within an AWS region.

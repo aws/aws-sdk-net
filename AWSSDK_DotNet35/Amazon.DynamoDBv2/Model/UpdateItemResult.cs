@@ -31,6 +31,7 @@ namespace Amazon.DynamoDBv2.Model
         private ConsumedCapacity consumedCapacity;
         private ItemCollectionMetrics itemCollectionMetrics;
 
+
         /// <summary>
         /// A map of attribute values as they appeared before the <i>UpdateItem</i> operation, but only if <i>ReturnValues</i> was specified as
         /// something other than <c>NONE</c> in the request. Each element represents one attribute.

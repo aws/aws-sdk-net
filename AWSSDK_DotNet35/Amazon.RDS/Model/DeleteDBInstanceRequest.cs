@@ -31,11 +31,12 @@ namespace Amazon.RDS.Model
     /// RDS instance will be "deleting" until the DB snapshot is created. The API action <c>DescribeDBInstance</c> is used to monitor the status of
     /// this operation. The action cannot be canceled or reverted once submitted. </para>
     /// </summary>
-    public partial class DeleteDBInstanceRequest : AmazonWebServiceRequest
+    public partial class DeleteDBInstanceRequest : AmazonRDSRequest
     {
         private string dBInstanceIdentifier;
         private bool? skipFinalSnapshot;
         private string finalDBSnapshotIdentifier;
+
 
         /// <summary>
         /// The DB instance identifier for the DB instance to be deleted. This parameter isn't case sensitive. Constraints: <ul> <li>Must contain from 1
@@ -57,8 +58,8 @@ namespace Amazon.RDS.Model
 
         /// <summary>
         /// Determines whether a final DB snapshot is created before the DB instance is deleted. If <c>true</c> is specified, no DBSnapshot is created.
-        /// If false is specified, a DB snapshot is created before the DB instance is deleted. <note>The FinalDBSnapshotIdentifier parameter must be
-        /// specified if SkipFinalSnapshot is <c>false</c>.</note> Default: <c>false</c>
+        /// If <c>false</c> is specified, a DB snapshot is created before the DB instance is deleted. Specify <c>true</c> when deleting a read replica.
+        /// <note>The FinalDBSnapshotIdentifier parameter must be specified if SkipFinalSnapshot is <c>false</c>.</note> Default: <c>false</c>
         ///  
         /// </summary>
         public bool SkipFinalSnapshot
@@ -76,7 +77,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// The DBSnapshotIdentifier of the new DBSnapshot created when SkipFinalSnapshot is set to <c>false</c>. <note> Specifying this parameter and
         /// also setting the SkipFinalShapshot parameter to true results in an error. </note> Constraints: <ul> <li>Must be 1 to 255 alphanumeric
-        /// characters</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
+        /// characters</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> <li>Cannot be
+        /// specified when deleting a read replica.</li> </ul>
         ///  
         /// </summary>
         public string FinalDBSnapshotIdentifier

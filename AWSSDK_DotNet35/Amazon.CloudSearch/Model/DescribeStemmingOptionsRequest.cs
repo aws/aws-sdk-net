@@ -27,9 +27,10 @@ namespace Amazon.CloudSearch.Model
     /// Container for the parameters to the DescribeStemmingOptions operation.
     /// <para>Gets the stemming dictionary configured for the search domain.</para>
     /// </summary>
-    public partial class DescribeStemmingOptionsRequest : AmazonWebServiceRequest
+    public partial class DescribeStemmingOptionsRequest : AmazonCloudSearchRequest
     {
         private string domainName;
+
 
         /// <summary>
         /// A string that represents the name of a domain. Domain names must be unique across the domains owned by an account within an AWS region.

@@ -28,6 +28,12 @@ namespace Amazon.RDS.Model
         
         private string filterName;
         private List<string> filterValue = new List<string>();
+
+
+        /// <summary>
+        /// This parameter is not currently supported.
+        ///  
+        /// </summary>
         public string FilterName
         {
             get { return this.filterName; }
@@ -39,6 +45,11 @@ namespace Amazon.RDS.Model
         {
             return this.filterName != null;
         }
+
+        /// <summary>
+        /// This parameter is not currently supported.
+        ///  
+        /// </summary>
         public List<string> FilterValue
         {
             get { return this.filterValue; }

@@ -45,15 +45,27 @@ namespace Amazon.Runtime
             "RequestTimeout"
         };
 
-#if (!WIN_RT)
+        // Set of status codes to retry on.
         internal static ICollection<WebExceptionStatus> WebExceptionStatusesToRetryOn = new HashSet<WebExceptionStatus>
         {
             WebExceptionStatus.ConnectFailure,
+
+#if (!WIN_RT) // These statuses are not available on WinRT
             WebExceptionStatus.ConnectionClosed,
             WebExceptionStatus.KeepAliveFailure,
             WebExceptionStatus.NameResolutionFailure
-        };
 #endif
+        };
+
+        // Set of status codes where we don't retry.
+        internal static ICollection<WebExceptionStatus> WebExceptionStatusesToThrowOn = new HashSet<WebExceptionStatus>
+        {
+            WebExceptionStatus.RequestCanceled,
+#if (!WIN_RT)
+            WebExceptionStatus.Timeout,     // Timeout status not available on WinRT       
+#endif
+        };
+
         protected const int MAX_BACKOFF_IN_MILLISECONDS = 30 * 1000;
         protected ClientConfig Config { get; private set; }
         protected AWSCredentials Credentials { get; private set; }

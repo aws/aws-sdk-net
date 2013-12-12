@@ -29,12 +29,13 @@ namespace Amazon.RDS.Model
     /// SNSTopicARN, CustomerID, SourceType, SourceID, CreationTime, and Status. </para> <para>If you specify a SubscriptionName, lists the
     /// description for that subscription.</para>
     /// </summary>
-    public partial class DescribeEventSubscriptionsRequest : AmazonWebServiceRequest
+    public partial class DescribeEventSubscriptionsRequest : AmazonRDSRequest
     {
         private string subscriptionName;
         private List<Filter> filters = new List<Filter>();
         private int? maxRecords;
         private string marker;
+
 
         /// <summary>
         /// The name of the RDS event notification subscription you want to describe.
@@ -51,6 +52,11 @@ namespace Amazon.RDS.Model
         {
             return this.subscriptionName != null;
         }
+
+        /// <summary>
+        /// This parameter is not currently supported.
+        ///  
+        /// </summary>
         public List<Filter> Filters
         {
             get { return this.filters; }

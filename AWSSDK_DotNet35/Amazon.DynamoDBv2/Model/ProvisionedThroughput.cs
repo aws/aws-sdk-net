@@ -32,6 +32,7 @@ namespace Amazon.DynamoDBv2.Model
         private long? readCapacityUnits;
         private long? writeCapacityUnits;
 
+
         /// <summary>
         /// The maximum number of strongly consistent reads consumed per second before Amazon DynamoDB returns a <i>ThrottlingException</i>. For more
         /// information, see <a

@@ -28,10 +28,11 @@ namespace Amazon.CloudSearch.Model
     /// <para>Configures stopwords for the search domain. Stopwords are used during indexing and when processing search requests. The maximum size
     /// of the stopwords dictionary is 10 KB.</para>
     /// </summary>
-    public partial class UpdateStopwordOptionsRequest : AmazonWebServiceRequest
+    public partial class UpdateStopwordOptionsRequest : AmazonCloudSearchRequest
     {
         private string domainName;
         private string stopwords;
+
 
         /// <summary>
         /// A string that represents the name of a domain. Domain names must be unique across the domains owned by an account within an AWS region.

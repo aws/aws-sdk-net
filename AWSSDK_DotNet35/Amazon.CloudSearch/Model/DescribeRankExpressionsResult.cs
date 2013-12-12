@@ -29,6 +29,7 @@ namespace Amazon.CloudSearch.Model
         
         private List<RankExpressionStatus> rankExpressions = new List<RankExpressionStatus>();
 
+
         /// <summary>
         /// The rank expressions configured for the domain.
         ///  

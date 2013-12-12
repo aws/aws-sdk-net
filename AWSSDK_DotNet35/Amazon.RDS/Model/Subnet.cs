@@ -30,6 +30,7 @@ namespace Amazon.RDS.Model
         private AvailabilityZone subnetAvailabilityZone;
         private string subnetStatus;
 
+
         /// <summary>
         /// Specifies the identifier of the subnet.
         ///  

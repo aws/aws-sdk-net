@@ -1,4 +1,4 @@
-﻿/*
+﻿    /*
  * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -32,6 +32,12 @@ namespace Amazon.Runtime
     {
         private const string APP_CONFIG_REGION_KEY = "AWSRegion";
 
+        // Represents infinite timeout. http://msdn.microsoft.com/en-us/library/system.threading.timeout.infinite.aspx
+        internal static readonly TimeSpan InfiniteTimeout = TimeSpan.FromMilliseconds(-1);
+
+        // Represents max timeout.
+        internal static readonly TimeSpan MaxTimeout = TimeSpan.FromMilliseconds(int.MaxValue);
+
 // In non BCL platforms there is no app.config to read this from so just default to us-east-1.
 #if !BCL
         static readonly private RegionEndpoint DEFAULT_REGION = null;
@@ -56,6 +62,7 @@ namespace Amazon.Runtime
         private ICredentials proxyCredentials;
         private bool logMetrics = AWSConfigs.LogMetrics;
         private bool disableLogging = false;
+        private TimeSpan? timeoutInternal = null;
 
         /// <summary>
         /// Gets Service Version
@@ -281,13 +288,51 @@ namespace Amazon.Runtime
             set { this.proxyCredentials = value; }
         }
 
+        #region Constructor 
+        public ClientConfig()
+        {
+            Initialize();
+        }
+        #endregion
+
+        protected virtual void Initialize()
+        {
+        }
+
+        /// <summary>
+        /// Overrides the default request timeout value.
+        /// </summary>
+        /// <remarks>
+        /// <para>
+        /// If the value is set, the value is assigned to the Timeout property of the HTTPWebRequest/HttpClient object used
+        /// to send requests.
+        /// </para>
+        /// <para>
+        /// Please specify a timeout value only if the operation will not complete within the default intervals
+        /// specified for an HttpWebRequest/HttpClient.
+        /// </para>
+        /// </remarks>
+        /// <exception cref="System.ArgumentNullException">The timeout specified is null.</exception>
+        /// <exception cref="System.ArgumentOutOfRangeException">The timeout specified is less than or equal to zero and is not Infinite.</exception>
+        /// <seealso cref="P:System.Net.HttpWebRequest.Timeout"/>
+        /// <seealso cref="P:System.Net.Http.HttpClient.Timeout"/>
+        internal TimeSpan? TimeoutInternal
+        {
+            get { return this.timeoutInternal; }
+            set
+            {
+                ValidateTimeout(value);
+                this.timeoutInternal = value;
+            }
+        }
+
         internal void SetUseNagleIfAvailable(bool useNagle)
         {
 #if BCL
             this.UseNagleAlgorithm = useNagle;                
 #endif
         }
-
+        
         /// <summary>
         /// Performs validation on this config object.
         /// Throws exception if any of the required values are missing/invalid.
@@ -296,6 +341,29 @@ namespace Amazon.Runtime
         {
             if (RegionEndpoint == null && string.IsNullOrEmpty(this.ServiceURL))
                 throw new AmazonClientException("No RegionEndpoint or ServiceURL configured");
+        }
+
+        internal static void ValidateTimeout(TimeSpan? timeout)
+        {
+            if (!timeout.HasValue)
+            {
+                throw new ArgumentNullException("timeout");
+            }
+
+            if (timeout != InfiniteTimeout && (timeout <= TimeSpan.Zero || timeout > MaxTimeout))
+            {
+                throw new ArgumentOutOfRangeException("timeout");
+            }
+        }
+
+        /// <summary>
+        /// Returns the request timeout value if its value is set, 
+        /// else returns client timeout value.
+        /// </summary>        
+        internal static TimeSpan? GetTimeoutValue(TimeSpan? clientTimeout, TimeSpan? requestTimeout)
+        {
+            return requestTimeout.HasValue ? requestTimeout
+                : (clientTimeout.HasValue ? clientTimeout : null);
         }
     }
 }

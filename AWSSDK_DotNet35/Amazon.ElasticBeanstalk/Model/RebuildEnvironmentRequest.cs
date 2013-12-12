@@ -28,10 +28,11 @@ namespace Amazon.ElasticBeanstalk.Model
     /// <para> Deletes and recreates all of the AWS resources (for example: the Auto Scaling group, load balancer, etc.) for a specified environment
     /// and forces a restart. </para>
     /// </summary>
-    public partial class RebuildEnvironmentRequest : AmazonWebServiceRequest
+    public partial class RebuildEnvironmentRequest : AmazonElasticBeanstalkRequest
     {
         private string environmentId;
         private string environmentName;
+
 
         /// <summary>
         /// The ID of the environment to rebuild. Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either,

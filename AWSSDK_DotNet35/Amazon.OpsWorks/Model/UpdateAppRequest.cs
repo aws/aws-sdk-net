@@ -25,9 +25,11 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateApp operation.
-    /// <para>Updates a specified app.</para>
+    /// <para>Updates a specified app.</para> <para> <b>Required Permissions</b> : To use this action, an IAM user must have a Deploy or Manage
+    /// permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a
+    /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
     /// </summary>
-    public partial class UpdateAppRequest : AmazonWebServiceRequest
+    public partial class UpdateAppRequest : AmazonOpsWorksRequest
     {
         private string appId;
         private string name;
@@ -38,6 +40,7 @@ namespace Amazon.OpsWorks.Model
         private bool? enableSsl;
         private SslConfiguration sslConfiguration;
         private Dictionary<string,string> attributes = new Dictionary<string,string>();
+
 
         /// <summary>
         /// The app ID.

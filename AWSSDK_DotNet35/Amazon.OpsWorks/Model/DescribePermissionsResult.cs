@@ -29,6 +29,7 @@ namespace Amazon.OpsWorks.Model
         
         private List<Permission> permissions = new List<Permission>();
 
+
         /// <summary>
         /// An array of <c>Permission</c> objects that describe the stack permissions. <ul> <li>If the request object contains only a stack ID, the
         /// array contains a <c>Permission</c> object with permissions for each of the stack IAM ARNs.</li> <li>If the request object contains only an

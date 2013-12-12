@@ -55,7 +55,13 @@
               if (context.TestExpression("Properties", targetDepth))
               {
                 context.Read();
-                hadoopStepConfig.Properties = new Dictionary<String,String>();
+                
+                if (context.CurrentTokenType == JsonToken.Null)
+                {
+                    hadoopStepConfig.Properties = null;
+                    continue;
+                }
+                  hadoopStepConfig.Properties = new Dictionary<String,String>();
                 KeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller> unmarshaller = new KeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.GetInstance(), StringUnmarshaller.GetInstance());
                 while (context.Read())
                 {
@@ -84,8 +90,14 @@
               if (context.TestExpression("Args", targetDepth))
               {
                 context.Read();
-                hadoopStepConfig.Args = new List<String>();
-                        StringUnmarshaller unmarshaller = StringUnmarshaller.GetInstance();
+                
+                if (context.CurrentTokenType == JsonToken.Null)
+                {
+                    hadoopStepConfig.Args = null;
+                    continue;
+                }
+                  hadoopStepConfig.Args = new List<String>();
+                  StringUnmarshaller unmarshaller = StringUnmarshaller.GetInstance();
                 while (context.Read())
                 {
                   JsonToken token = context.CurrentTokenType;                

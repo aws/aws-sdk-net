@@ -26,13 +26,12 @@ namespace Amazon.ElasticBeanstalk.Model
     /// <summary>
     /// Container for the parameters to the CreateApplication operation.
     /// <para> Creates an application that has one configuration template named <c>default</c> and no application versions. </para>
-    /// <para><b>NOTE:</b> The default configuration template is for a 32-bit version of the Amazon Linux operating system running the Tomcat 6
-    /// application container. </para>
     /// </summary>
-    public partial class CreateApplicationRequest : AmazonWebServiceRequest
+    public partial class CreateApplicationRequest : AmazonElasticBeanstalkRequest
     {
         private string applicationName;
         private string description;
+
 
         /// <summary>
         /// The name of the application. Constraint: This name must be unique within your account. If the specified name already exists, the action

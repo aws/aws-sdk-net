@@ -31,6 +31,7 @@ namespace Amazon.DynamoDBv2.Model
         private ConsumedCapacity consumedCapacity;
         private ItemCollectionMetrics itemCollectionMetrics;
 
+
         /// <summary>
         /// The attribute values as they appeared before the <i>PutItem</i> operation, but only if <i>ReturnValues</i> is specified as <c>ALL_OLD</c> in
         /// the request. Each element consists of an attribute name and an attribute value.

@@ -41,6 +41,8 @@ namespace Amazon.ElasticBeanstalk.Model
         private EnvironmentStatus status;
         private EnvironmentHealth health;
         private EnvironmentResourcesDescription resources;
+        private EnvironmentTier tier;
+
 
         /// <summary>
         /// The name of this environment.
@@ -209,7 +211,7 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// The URL to the LoadBalancer for this environment.
+        /// For load-balanced, autoscaling environments, the URL to the LoadBalancer. For single-instance environments, the IP address of the instance.
         ///  
         /// </summary>
         public string EndpointURL
@@ -356,6 +358,22 @@ namespace Amazon.ElasticBeanstalk.Model
         internal bool IsSetResources()
         {
             return this.resources != null;
+        }
+
+        /// <summary>
+        /// Describes the current tier of this environment.
+        ///  
+        /// </summary>
+        public EnvironmentTier Tier
+        {
+            get { return this.tier; }
+            set { this.tier = value; }
+        }
+
+        // Check to see if Tier property is set
+        internal bool IsSetTier()
+        {
+            return this.tier != null;
         }
     }
 }

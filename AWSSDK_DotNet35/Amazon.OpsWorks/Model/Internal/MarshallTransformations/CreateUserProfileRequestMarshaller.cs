@@ -14,6 +14,7 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Text;
 using System.Xml.Serialization;
@@ -69,7 +70,7 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
             request.ResourcePath = uriResourcePath;
             
              
-            using (StringWriter stringWriter = new StringWriter(System.Globalization.CultureInfo.InvariantCulture))
+            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
@@ -88,6 +89,11 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                 {
                     writer.WritePropertyName("SshPublicKey");
                     writer.Write(createUserProfileRequest.SshPublicKey);
+                }
+                if (createUserProfileRequest != null && createUserProfileRequest.IsSetAllowSelfManagement()) 
+                {
+                    writer.WritePropertyName("AllowSelfManagement");
+                    writer.Write(createUserProfileRequest.AllowSelfManagement);
                 }
 
                 writer.WriteObjectEnd();

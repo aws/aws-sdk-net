@@ -25,12 +25,16 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribePermissions operation.
-    /// <para>Describes the permissions for a specified stack.</para>
+    /// <para>Describes the permissions for a specified stack.</para> <para> <b>Required Permissions</b> : To use this action, an IAM user must have
+    /// a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user
+    /// permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a>
+    /// .</para>
     /// </summary>
-    public partial class DescribePermissionsRequest : AmazonWebServiceRequest
+    public partial class DescribePermissionsRequest : AmazonOpsWorksRequest
     {
         private string iamUserArn;
         private string stackId;
+
 
         /// <summary>
         /// The user's IAM ARN. For more information about IAM ARNs, see <a

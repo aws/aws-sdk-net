@@ -201,6 +201,100 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                     writer.WriteArrayEnd();
                 }
 
+                if (createTableRequest != null && createTableRequest.GlobalSecondaryIndexes != null && createTableRequest.GlobalSecondaryIndexes.Count > 0)
+                {
+                    List<GlobalSecondaryIndex> globalSecondaryIndexesList = createTableRequest.GlobalSecondaryIndexes;
+                    writer.WritePropertyName("GlobalSecondaryIndexes");
+                    writer.WriteArrayStart();
+
+                    foreach (GlobalSecondaryIndex globalSecondaryIndexesListValue in globalSecondaryIndexesList) 
+                    {
+                        writer.WriteObjectStart();
+                        if (globalSecondaryIndexesListValue != null && globalSecondaryIndexesListValue.IsSetIndexName()) 
+                        {
+                            writer.WritePropertyName("IndexName");
+                            writer.Write(globalSecondaryIndexesListValue.IndexName);
+                        }
+
+                        if (globalSecondaryIndexesListValue != null && globalSecondaryIndexesListValue.KeySchema != null && globalSecondaryIndexesListValue.KeySchema.Count > 0)
+                        {
+                            List<KeySchemaElement> keySchemaList = globalSecondaryIndexesListValue.KeySchema;
+                            writer.WritePropertyName("KeySchema");
+                            writer.WriteArrayStart();
+
+                            foreach (KeySchemaElement keySchemaListValue in keySchemaList) 
+                            {
+                                writer.WriteObjectStart();
+                                if (keySchemaListValue != null && keySchemaListValue.IsSetAttributeName()) 
+                                {
+                                    writer.WritePropertyName("AttributeName");
+                                    writer.Write(keySchemaListValue.AttributeName);
+                                }
+                                if (keySchemaListValue != null && keySchemaListValue.IsSetKeyType()) 
+                                {
+                                    writer.WritePropertyName("KeyType");
+                                    writer.Write(keySchemaListValue.KeyType);
+                                }
+                                writer.WriteObjectEnd();
+                            }
+                            writer.WriteArrayEnd();
+                        }
+
+                        if (globalSecondaryIndexesListValue != null) 
+                        {
+                            Projection projection = globalSecondaryIndexesListValue.Projection;
+                            if (projection != null)
+                            {
+                                writer.WritePropertyName("Projection");
+                                writer.WriteObjectStart();
+                                if (projection != null && projection.IsSetProjectionType()) 
+                                {
+                                    writer.WritePropertyName("ProjectionType");
+                                    writer.Write(projection.ProjectionType);
+                                }
+
+                                if (projection != null && projection.NonKeyAttributes != null && projection.NonKeyAttributes.Count > 0) 
+                                {
+                                    List<string> nonKeyAttributesList = projection.NonKeyAttributes;
+                                    writer.WritePropertyName("NonKeyAttributes");
+                                    writer.WriteArrayStart();
+
+                                    foreach (string nonKeyAttributesListValue in nonKeyAttributesList) 
+                                    { 
+                                        writer.Write(StringUtils.FromString(nonKeyAttributesListValue));
+                                    }
+
+                                    writer.WriteArrayEnd();
+                                }
+                                writer.WriteObjectEnd();
+                            }
+                        }
+
+                        if (globalSecondaryIndexesListValue != null) 
+                        {
+                            ProvisionedThroughput provisionedThroughput = globalSecondaryIndexesListValue.ProvisionedThroughput;
+                            if (provisionedThroughput != null)
+                            {
+                                writer.WritePropertyName("ProvisionedThroughput");
+                                writer.WriteObjectStart();
+                                if (provisionedThroughput != null && provisionedThroughput.IsSetReadCapacityUnits()) 
+                                {
+                                    writer.WritePropertyName("ReadCapacityUnits");
+                                    writer.Write(provisionedThroughput.ReadCapacityUnits);
+                                }
+                                if (provisionedThroughput != null && provisionedThroughput.IsSetWriteCapacityUnits()) 
+                                {
+                                    writer.WritePropertyName("WriteCapacityUnits");
+                                    writer.Write(provisionedThroughput.WriteCapacityUnits);
+                                }
+                                writer.WriteObjectEnd();
+                            }
+                        }
+                        writer.WriteObjectEnd();
+                    }
+                    writer.WriteArrayEnd();
+                }
+
                 if (createTableRequest != null) 
                 {
                     ProvisionedThroughput provisionedThroughput = createTableRequest.ProvisionedThroughput;

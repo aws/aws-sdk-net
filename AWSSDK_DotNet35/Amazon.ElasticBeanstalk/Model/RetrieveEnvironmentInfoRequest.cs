@@ -31,11 +31,12 @@ namespace Amazon.ElasticBeanstalk.Model
     /// 
     /// </ul>
     /// </summary>
-    public partial class RetrieveEnvironmentInfoRequest : AmazonWebServiceRequest
+    public partial class RetrieveEnvironmentInfoRequest : AmazonElasticBeanstalkRequest
     {
         private string environmentId;
         private string environmentName;
         private EnvironmentInfoType infoType;
+
 
         /// <summary>
         /// The ID of the data's environment. If no such environment is found, returns an <c>InvalidParameterValue</c> error. Condition: You must

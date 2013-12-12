@@ -29,6 +29,7 @@ namespace Amazon.OpsWorks.Model
         
         private List<UserProfile> userProfiles = new List<UserProfile>();
 
+
         /// <summary>
         /// A <c>Users</c> object that describes the specified users.
         ///  

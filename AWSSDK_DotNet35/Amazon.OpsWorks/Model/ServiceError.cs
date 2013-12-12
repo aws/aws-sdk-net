@@ -33,6 +33,7 @@ namespace Amazon.OpsWorks.Model
         private string message;
         private string createdAt;
 
+
         /// <summary>
         /// The error ID.
         ///  

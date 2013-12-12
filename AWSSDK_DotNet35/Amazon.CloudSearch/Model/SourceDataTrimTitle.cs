@@ -31,6 +31,7 @@ namespace Amazon.CloudSearch.Model
         private string separator;
         private string language;
 
+
         /// <summary>
         /// The name of the document source field to add to this <c>IndexField</c>.
         ///  

@@ -33,6 +33,7 @@ namespace Amazon.DynamoDBv2.Model
         private Dictionary<string,AttributeValue> lastEvaluatedKey = new Dictionary<string,AttributeValue>();
         private ConsumedCapacity consumedCapacity;
 
+
         /// <summary>
         /// An array of item attributes that match the scan criteria. Each element in this array consists of an attribute name and the value for that
         /// attribute.

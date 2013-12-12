@@ -28,12 +28,13 @@ namespace Amazon.RDS.Model
     /// <para> Returns a list of <c>DBParameterGroup</c> descriptions. If a <c>DBParameterGroupName</c> is specified, the list will contain only the
     /// description of the specified DB parameter group. </para>
     /// </summary>
-    public partial class DescribeDBParameterGroupsRequest : AmazonWebServiceRequest
+    public partial class DescribeDBParameterGroupsRequest : AmazonRDSRequest
     {
         private string dBParameterGroupName;
         private List<Filter> filters = new List<Filter>();
         private int? maxRecords;
         private string marker;
+
 
         /// <summary>
         /// The name of a specific DB parameter group to return details for. Constraints: <ul> <li>Must be 1 to 255 alphanumeric characters</li>
@@ -51,6 +52,11 @@ namespace Amazon.RDS.Model
         {
             return this.dBParameterGroupName != null;
         }
+
+        /// <summary>
+        /// This parameter is not currently supported.
+        ///  
+        /// </summary>
         public List<Filter> Filters
         {
             get { return this.filters; }

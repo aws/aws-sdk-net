@@ -29,6 +29,7 @@ namespace Amazon.RDS.Model
         
         private List<EventCategoriesMap> eventCategoriesMapList = new List<EventCategoriesMap>();
 
+
         /// <summary>
         /// A list of EventCategoriesMap data types.
         ///  

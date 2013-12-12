@@ -27,7 +27,7 @@ namespace Amazon.RDS.Model
     /// Container for the parameters to the DescribeDBEngineVersions operation.
     /// <para> Returns a list of the available DB engines. </para>
     /// </summary>
-    public partial class DescribeDBEngineVersionsRequest : AmazonWebServiceRequest
+    public partial class DescribeDBEngineVersionsRequest : AmazonRDSRequest
     {
         private string engine;
         private string engineVersion;
@@ -36,6 +36,7 @@ namespace Amazon.RDS.Model
         private string marker;
         private bool? defaultOnly;
         private bool? listSupportedCharacterSets;
+
 
         /// <summary>
         /// The database engine to return.

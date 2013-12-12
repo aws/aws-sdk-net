@@ -27,7 +27,7 @@ namespace Amazon.ElasticBeanstalk.Model
     /// Container for the parameters to the DescribeEnvironments operation.
     /// <para>Returns descriptions for existing environments.</para>
     /// </summary>
-    public partial class DescribeEnvironmentsRequest : AmazonWebServiceRequest
+    public partial class DescribeEnvironmentsRequest : AmazonElasticBeanstalkRequest
     {
         private string applicationName;
         private string versionLabel;
@@ -35,6 +35,7 @@ namespace Amazon.ElasticBeanstalk.Model
         private List<string> environmentNames = new List<string>();
         private bool? includeDeleted;
         private DateTime? includedDeletedBackTo;
+
 
         /// <summary>
         /// If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those that are associated with this application.

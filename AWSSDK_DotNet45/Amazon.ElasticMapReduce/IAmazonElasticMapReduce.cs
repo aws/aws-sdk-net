@@ -92,6 +92,33 @@ namespace Amazon.ElasticMapReduce
  
 
         /// <summary>
+        /// <para>Adds tags to an Amazon EMR resource. Tags make it easier to associate clusters in various ways, such as grouping clusters to track
+        /// your Amazon EMR resource allocation costs. For more information, see <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html">Tagging Amazon EMR Resources</a> .
+        /// </para>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AddTags service method on AmazonElasticMapReduce.</param>
+        /// 
+        /// <returns>The response from the AddTags service method, as returned by AmazonElasticMapReduce.</returns>
+        /// 
+        /// <exception cref="T:Amazon.ElasticMapReduce.Model.InternalServerException" />
+        /// <exception cref="T:Amazon.ElasticMapReduce.Model.InvalidRequestException" />
+		AddTagsResponse AddTags(AddTagsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AddTags operation.
+        /// <seealso cref="Amazon.ElasticMapReduce.IAmazonElasticMapReduce.AddTags"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AddTags operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+		Task<AddTagsResponse> AddTagsAsync(AddTagsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+ 
+
+        /// <summary>
         /// <para>Provides cluster-level details including status, hardware and software configuration, VPC settings, and so on. For information about
         /// the cluster steps, see ListSteps.</para>
         /// </summary>
@@ -443,6 +470,34 @@ namespace Amazon.ElasticMapReduce
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		Task<ModifyInstanceGroupsResponse> ModifyInstanceGroupsAsync(ModifyInstanceGroupsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+ 
+
+        /// <summary>
+        /// <para>Removes tags from an Amazon EMR resource. Tags make it easier to associate clusters in various ways, such as grouping clusters to
+        /// track your Amazon EMR resource allocation costs. For more information, see <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html">Tagging Amazon EMR Resources</a> .
+        /// </para>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RemoveTags service method on
+        /// AmazonElasticMapReduce.</param>
+        /// 
+        /// <returns>The response from the RemoveTags service method, as returned by AmazonElasticMapReduce.</returns>
+        /// 
+        /// <exception cref="T:Amazon.ElasticMapReduce.Model.InternalServerException" />
+        /// <exception cref="T:Amazon.ElasticMapReduce.Model.InvalidRequestException" />
+		RemoveTagsResponse RemoveTags(RemoveTagsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RemoveTags operation.
+        /// <seealso cref="Amazon.ElasticMapReduce.IAmazonElasticMapReduce.RemoveTags"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RemoveTags operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+		Task<RemoveTagsResponse> RemoveTagsAsync(RemoveTagsRequest request, CancellationToken cancellationToken = default(CancellationToken));
  
 
         /// <summary>

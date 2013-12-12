@@ -27,10 +27,11 @@ namespace Amazon.ElasticBeanstalk.Model
     /// Container for the parameters to the DescribeEnvironmentResources operation.
     /// <para>Returns AWS resources for this environment.</para>
     /// </summary>
-    public partial class DescribeEnvironmentResourcesRequest : AmazonWebServiceRequest
+    public partial class DescribeEnvironmentResourcesRequest : AmazonElasticBeanstalkRequest
     {
         private string environmentId;
         private string environmentName;
+
 
         /// <summary>
         /// The ID of the environment to retrieve AWS resource usage data. Condition: You must specify either this or an EnvironmentName, or both. If

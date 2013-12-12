@@ -29,6 +29,7 @@ namespace Amazon.CloudSearch.Model
         
         private DefaultSearchFieldStatus defaultSearchField;
 
+
         /// <summary>
         /// The value of the <c>DefaultSearchField</c> configured for this search domain and its current status.
         ///  

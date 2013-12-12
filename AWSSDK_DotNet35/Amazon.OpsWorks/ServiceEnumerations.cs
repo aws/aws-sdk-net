@@ -342,6 +342,31 @@ namespace Amazon.OpsWorks
         public static readonly LayerAttributesKeys HaproxyStatsUser = new LayerAttributesKeys("HaproxyStatsUser");
     
 
+       /// <summary>Constant JavaAppServer for LayerAttributesKeys
+       /// </summary>
+        public static readonly LayerAttributesKeys JavaAppServer = new LayerAttributesKeys("JavaAppServer");
+    
+
+       /// <summary>Constant JavaAppServerVersion for LayerAttributesKeys
+       /// </summary>
+        public static readonly LayerAttributesKeys JavaAppServerVersion = new LayerAttributesKeys("JavaAppServerVersion");
+    
+
+       /// <summary>Constant Jvm for LayerAttributesKeys
+       /// </summary>
+        public static readonly LayerAttributesKeys Jvm = new LayerAttributesKeys("Jvm");
+    
+
+       /// <summary>Constant JvmOptions for LayerAttributesKeys
+       /// </summary>
+        public static readonly LayerAttributesKeys JvmOptions = new LayerAttributesKeys("JvmOptions");
+    
+
+       /// <summary>Constant JvmVersion for LayerAttributesKeys
+       /// </summary>
+        public static readonly LayerAttributesKeys JvmVersion = new LayerAttributesKeys("JvmVersion");
+    
+
        /// <summary>Constant ManageBundler for LayerAttributesKeys
        /// </summary>
         public static readonly LayerAttributesKeys ManageBundler = new LayerAttributesKeys("ManageBundler");

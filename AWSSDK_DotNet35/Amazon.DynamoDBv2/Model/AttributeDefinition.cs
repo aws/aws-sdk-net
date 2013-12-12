@@ -29,6 +29,7 @@ namespace Amazon.DynamoDBv2.Model
         private string attributeName;
         private ScalarAttributeType attributeType;
 
+
         /// <summary>
         /// A name for the attribute.
         ///  

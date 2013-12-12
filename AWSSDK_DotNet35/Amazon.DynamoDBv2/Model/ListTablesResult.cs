@@ -30,6 +30,7 @@ namespace Amazon.DynamoDBv2.Model
         private List<string> tableNames = new List<string>();
         private string lastEvaluatedTableName;
 
+
         /// <summary>
         /// The names of the tables associated with the current account at the current endpoint.
         ///  

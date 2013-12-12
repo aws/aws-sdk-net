@@ -29,6 +29,7 @@ namespace Amazon.RDS.Model
         private string status;
         private string cIDRIP;
 
+
         /// <summary>
         /// Specifies the status of the IP range. Status can be "authorizing", "authorized", "revoking", and "revoked".
         ///  

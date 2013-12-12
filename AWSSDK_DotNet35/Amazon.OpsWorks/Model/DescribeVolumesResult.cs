@@ -29,6 +29,7 @@ namespace Amazon.OpsWorks.Model
         
         private List<Volume> volumes = new List<Volume>();
 
+
         /// <summary>
         /// An array of volume IDs.
         ///  

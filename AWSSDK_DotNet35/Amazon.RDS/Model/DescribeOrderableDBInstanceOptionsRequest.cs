@@ -27,7 +27,7 @@ namespace Amazon.RDS.Model
     /// Container for the parameters to the DescribeOrderableDBInstanceOptions operation.
     /// <para> Returns a list of orderable DB instance options for the specified engine. </para>
     /// </summary>
-    public partial class DescribeOrderableDBInstanceOptionsRequest : AmazonWebServiceRequest
+    public partial class DescribeOrderableDBInstanceOptionsRequest : AmazonRDSRequest
     {
         private string engine;
         private string engineVersion;
@@ -36,6 +36,7 @@ namespace Amazon.RDS.Model
         private bool? vpc;
         private int? maxRecords;
         private string marker;
+
 
         /// <summary>
         /// The name of the engine to retrieve DB instance options for.

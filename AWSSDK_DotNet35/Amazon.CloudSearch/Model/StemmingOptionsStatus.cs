@@ -29,6 +29,7 @@ namespace Amazon.CloudSearch.Model
         private string options;
         private OptionStatus status;
 
+
         /// <summary>
         /// Maps terms to their stems, serialized as a JSON document. The document has a single object with one property "stems" whose value is an
         /// object mapping terms to their stems. The maximum size of a stemming document is 500 KB. Example: <c>{ "stems": {"people": "person",

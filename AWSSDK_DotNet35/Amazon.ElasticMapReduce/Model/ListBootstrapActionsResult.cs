@@ -22,7 +22,7 @@ using Amazon.Runtime;
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
-    /// <para>This output contains the boostrap actions detail .</para>
+    /// <para>This output contains the bootstrap actions detail.</para>
     /// </summary>
     public partial class ListBootstrapActionsResult : AmazonWebServiceResponse
     {
@@ -32,7 +32,7 @@ namespace Amazon.ElasticMapReduce.Model
 
 
         /// <summary>
-        /// The bootstrap actions associated with the cluster .
+        /// The bootstrap actions associated with the cluster.
         ///  
         /// </summary>
         public List<Command> BootstrapActions
@@ -48,17 +48,9 @@ namespace Amazon.ElasticMapReduce.Model
         }
 
         /// <summary>
-        /// The pagination token that indicates the next set of results to retrieve .
+        /// The pagination token is a random string indicating whether there are more results to fetch. Use the pagination token in later API calls to
+        /// retrieve the next page of results. When the value is null, all results have been returned.
         ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 512</description>
-        ///     </item>
-        /// </list>
-        /// </para>
         /// </summary>
         public string Marker
         {

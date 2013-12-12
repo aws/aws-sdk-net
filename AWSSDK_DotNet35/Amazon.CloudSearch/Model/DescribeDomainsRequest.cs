@@ -28,9 +28,10 @@ namespace Amazon.CloudSearch.Model
     /// <para>Gets information about the search domains owned by this account. Can be limited to specific domains. Shows all domains by
     /// default.</para>
     /// </summary>
-    public partial class DescribeDomainsRequest : AmazonWebServiceRequest
+    public partial class DescribeDomainsRequest : AmazonCloudSearchRequest
     {
         private List<string> domainNames = new List<string>();
+
 
         /// <summary>
         /// Limits the DescribeDomains response to the specified search domains.

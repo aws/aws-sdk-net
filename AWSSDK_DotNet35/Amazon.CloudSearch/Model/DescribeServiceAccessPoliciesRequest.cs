@@ -27,9 +27,10 @@ namespace Amazon.CloudSearch.Model
     /// Container for the parameters to the DescribeServiceAccessPolicies operation.
     /// <para>Gets information about the resource-based policies that control access to the domain's document and search services.</para>
     /// </summary>
-    public partial class DescribeServiceAccessPoliciesRequest : AmazonWebServiceRequest
+    public partial class DescribeServiceAccessPoliciesRequest : AmazonCloudSearchRequest
     {
         private string domainName;
+
 
         /// <summary>
         /// A string that represents the name of a domain. Domain names must be unique across the domains owned by an account within an AWS region.

@@ -29,6 +29,7 @@ namespace Amazon.OpsWorks.Model
         
         private List<Instance> instances = new List<Instance>();
 
+
         /// <summary>
         /// An array of <c>Instance</c> objects that describe the instances.
         ///  

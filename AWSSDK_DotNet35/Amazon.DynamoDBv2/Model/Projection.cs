@@ -30,6 +30,7 @@ namespace Amazon.DynamoDBv2.Model
         private ProjectionType projectionType;
         private List<string> nonKeyAttributes = new List<string>();
 
+
         /// <summary>
         /// Represents the set of attributes that are projected into the index: <ul> <li> <c>KEYS_ONLY</c> - Only the index and primary keys are
         /// projected into the index. </li> <li> <c>INCLUDE</c> - Only the specified table attributes are projected into the index. The list of

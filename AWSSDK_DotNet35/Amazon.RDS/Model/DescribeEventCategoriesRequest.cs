@@ -29,9 +29,10 @@ namespace Amazon.RDS.Model
     /// event categories and source types in the <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html" > Events</a> topic
     /// in the Amazon RDS User Guide.</para>
     /// </summary>
-    public partial class DescribeEventCategoriesRequest : AmazonWebServiceRequest
+    public partial class DescribeEventCategoriesRequest : AmazonRDSRequest
     {
         private string sourceType;
+
 
         /// <summary>
         /// The type of source that will be generating the events. Valid values: db-instance | db-parameter-group | db-security-group | db-snapshot

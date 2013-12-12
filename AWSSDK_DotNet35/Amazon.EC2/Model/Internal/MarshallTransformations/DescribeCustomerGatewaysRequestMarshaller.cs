@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(describeCustomerGatewaysRequest, "AmazonEC2");
             request.Parameters.Add("Action", "DescribeCustomerGateways");
-            request.Parameters.Add("Version", "2013-10-01");
+            request.Parameters.Add("Version", "2013-10-15");
             if (describeCustomerGatewaysRequest != null)
             {
                 List<string> customerGatewayIdsList = describeCustomerGatewaysRequest.CustomerGatewayIds;

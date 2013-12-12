@@ -36,6 +36,7 @@ namespace Amazon.RDS.Model
         private bool? readReplicaCapable;
         private bool? vpc;
 
+
         /// <summary>
         /// The engine type of the orderable DB instance.
         ///  

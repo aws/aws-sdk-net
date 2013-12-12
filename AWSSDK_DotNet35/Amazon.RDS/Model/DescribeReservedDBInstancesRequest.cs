@@ -27,7 +27,7 @@ namespace Amazon.RDS.Model
     /// Container for the parameters to the DescribeReservedDBInstances operation.
     /// <para> Returns information about reserved DB instances for this account, or about a specified reserved DB instance. </para>
     /// </summary>
-    public partial class DescribeReservedDBInstancesRequest : AmazonWebServiceRequest
+    public partial class DescribeReservedDBInstancesRequest : AmazonRDSRequest
     {
         private string reservedDBInstanceId;
         private string reservedDBInstancesOfferingId;
@@ -39,6 +39,7 @@ namespace Amazon.RDS.Model
         private List<Filter> filters = new List<Filter>();
         private int? maxRecords;
         private string marker;
+
 
         /// <summary>
         /// The reserved DB instance identifier filter value. Specify this parameter to show only the reservation that matches the specified reservation
@@ -154,6 +155,11 @@ namespace Amazon.RDS.Model
         {
             return this.multiAZ.HasValue;
         }
+
+        /// <summary>
+        /// This parameter is not currently supported.
+        ///  
+        /// </summary>
         public List<Filter> Filters
         {
             get { return this.filters; }

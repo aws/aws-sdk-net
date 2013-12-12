@@ -30,6 +30,7 @@ namespace Amazon.DynamoDBv2.Model
         private Dictionary<string,AttributeValue> item = new Dictionary<string,AttributeValue>();
         private ConsumedCapacity consumedCapacity;
 
+
         /// <summary>
         /// A map of attribute names to <i>AttributeValue</i> objects, as specified by <i>AttributesToGet</i>.
         ///  

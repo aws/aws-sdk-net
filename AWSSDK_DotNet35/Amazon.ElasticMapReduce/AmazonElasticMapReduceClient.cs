@@ -351,6 +351,74 @@ namespace Amazon.ElasticMapReduce
 
         #endregion
     
+        #region AddTags
+
+        /// <summary>
+        /// <para>Adds tags to an Amazon EMR resource. Tags make it easier to associate clusters in various ways, such as grouping clusters to track
+        /// your Amazon EMR resource allocation costs. For more information, see <a
+        /// href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html" >Tagging Amazon EMR Resources</a> .
+        /// </para>
+        /// </summary>
+        /// 
+        /// <param name="addTagsRequest">Container for the necessary parameters to execute the AddTags service method on AmazonElasticMapReduce.</param>
+        /// 
+        /// <returns>The response from the AddTags service method, as returned by AmazonElasticMapReduce.</returns>
+        /// 
+        /// <exception cref="InternalServerException"/>
+        /// <exception cref="InvalidRequestException"/>
+        public AddTagsResponse AddTags(AddTagsRequest addTagsRequest)
+        {
+            IAsyncResult asyncResult = invokeAddTags(addTagsRequest, null, null, true);
+            return EndAddTags(asyncResult);
+        }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AddTags operation.
+        /// <seealso cref="Amazon.ElasticMapReduce.IAmazonElasticMapReduce.AddTags"/>
+        /// </summary>
+        /// 
+        /// <param name="addTagsRequest">Container for the necessary parameters to execute the AddTags operation on AmazonElasticMapReduce.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAddTags
+        ///         operation.</returns>
+        public IAsyncResult BeginAddTags(AddTagsRequest addTagsRequest, AsyncCallback callback, object state)
+        {
+            return invokeAddTags(addTagsRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the AddTags operation.
+        /// <seealso cref="Amazon.ElasticMapReduce.IAmazonElasticMapReduce.AddTags"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAddTags.</param>
+        /// 
+        /// <returns>Returns a AddTagsResult from AmazonElasticMapReduce.</returns>
+        public AddTagsResponse EndAddTags(IAsyncResult asyncResult)
+        {
+            return endOperation<AddTagsResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeAddTags(AddTagsRequest addTagsRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new AddTagsRequestMarshaller().Marshall(addTagsRequest);
+            var unmarshaller = AddTagsResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        #endregion
+    
         #region DescribeCluster
 
         /// <summary>
@@ -1083,6 +1151,76 @@ namespace Amazon.ElasticMapReduce
         {
             IRequest irequest = new ModifyInstanceGroupsRequestMarshaller().Marshall(modifyInstanceGroupsRequest);
             var unmarshaller = ModifyInstanceGroupsResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        #endregion
+    
+        #region RemoveTags
+
+        /// <summary>
+        /// <para>Removes tags from an Amazon EMR resource. Tags make it easier to associate clusters in various ways, such as grouping clusters to
+        /// track your Amazon EMR resource allocation costs. For more information, see <a
+        /// href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-plan-tags.html" >Tagging Amazon EMR Resources</a> .
+        /// </para>
+        /// </summary>
+        /// 
+        /// <param name="removeTagsRequest">Container for the necessary parameters to execute the RemoveTags service method on
+        ///          AmazonElasticMapReduce.</param>
+        /// 
+        /// <returns>The response from the RemoveTags service method, as returned by AmazonElasticMapReduce.</returns>
+        /// 
+        /// <exception cref="InternalServerException"/>
+        /// <exception cref="InvalidRequestException"/>
+        public RemoveTagsResponse RemoveTags(RemoveTagsRequest removeTagsRequest)
+        {
+            IAsyncResult asyncResult = invokeRemoveTags(removeTagsRequest, null, null, true);
+            return EndRemoveTags(asyncResult);
+        }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RemoveTags operation.
+        /// <seealso cref="Amazon.ElasticMapReduce.IAmazonElasticMapReduce.RemoveTags"/>
+        /// </summary>
+        /// 
+        /// <param name="removeTagsRequest">Container for the necessary parameters to execute the RemoveTags operation on
+        ///          AmazonElasticMapReduce.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRemoveTags
+        ///         operation.</returns>
+        public IAsyncResult BeginRemoveTags(RemoveTagsRequest removeTagsRequest, AsyncCallback callback, object state)
+        {
+            return invokeRemoveTags(removeTagsRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the RemoveTags operation.
+        /// <seealso cref="Amazon.ElasticMapReduce.IAmazonElasticMapReduce.RemoveTags"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRemoveTags.</param>
+        /// 
+        /// <returns>Returns a RemoveTagsResult from AmazonElasticMapReduce.</returns>
+        public RemoveTagsResponse EndRemoveTags(IAsyncResult asyncResult)
+        {
+            return endOperation<RemoveTagsResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeRemoveTags(RemoveTagsRequest removeTagsRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new RemoveTagsRequestMarshaller().Marshall(removeTagsRequest);
+            var unmarshaller = RemoveTagsResponseUnmarshaller.GetInstance();
             AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
             Invoke(result);
             return result;

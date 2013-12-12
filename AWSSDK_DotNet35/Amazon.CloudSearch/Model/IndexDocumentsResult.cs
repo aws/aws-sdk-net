@@ -29,6 +29,7 @@ namespace Amazon.CloudSearch.Model
         
         private List<string> fieldNames = new List<string>();
 
+
         /// <summary>
         /// The names of the fields that are currently being processed due to an <c>IndexDocuments</c> action.
         ///  

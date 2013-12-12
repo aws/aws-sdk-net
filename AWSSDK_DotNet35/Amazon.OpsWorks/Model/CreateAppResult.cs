@@ -29,6 +29,7 @@ namespace Amazon.OpsWorks.Model
         
         private string appId;
 
+
         /// <summary>
         /// The app ID.
         ///  
