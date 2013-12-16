@@ -313,7 +313,7 @@ namespace Amazon.S3.Transfer
         private void UploadDirectoryHelper(TransferUtilityUploadDirectoryRequest request)
         {
             validate(request);
-            UploadDirectoryCommand command = new UploadDirectoryCommand(this, request);
+            UploadDirectoryCommand command = new UploadDirectoryCommand(this, this._config, request);
             command.Execute();
         }
 

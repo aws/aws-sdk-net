@@ -1,4 +1,5 @@
-﻿/*******************************************************************************
+﻿using Amazon.Runtime;
+/*******************************************************************************
  *  Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  *  this file except in compliance with the License. A copy of the License is located at
@@ -34,16 +35,18 @@ namespace Amazon.S3.Transfer.Internal
     {
         TransferUtilityUploadDirectoryRequest _request;
         TransferUtility _utility;
+        TransferUtilityConfig _config;
 
         string _currentFile;
         int _totalNumberOfFiles;
         int _numberOfFilesUploaded;
 
 
-        internal UploadDirectoryCommand(TransferUtility utility, TransferUtilityUploadDirectoryRequest request)
+        internal UploadDirectoryCommand(TransferUtility utility,TransferUtilityConfig config, TransferUtilityUploadDirectoryRequest request)
         {
             this._utility = utility;
             this._request = request;
+            this._config = config;
         }
 
         public override void Execute()
@@ -86,8 +89,8 @@ namespace Amazon.S3.Transfer.Internal
                     Metadata = this._request.Metadata,
                     StorageClass = this._request.StorageClass,
                     ServerSideEncryptionMethod = this._request.ServerSideEncryptionMethod,
-#if (BCL && !BCL45)
-                    Timeout = this._request.Timeout
+#if (BCL && !BCL45)                    
+                    Timeout = ClientConfig.GetTimeoutValue(this._config.DefaultTimeout, this._request.Timeout)                    
 #endif
                 };
                 uploadRequest.UploadProgressEvent += new EventHandler<UploadProgressArgs>(uploadProgressEventCallback);

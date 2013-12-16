@@ -143,7 +143,7 @@ namespace Amazon.S3.Transfer
         public IAsyncResult BeginUploadDirectory(TransferUtilityUploadDirectoryRequest request, AsyncCallback callback, object state)
         {
             validate(request);
-            UploadDirectoryCommand command = new UploadDirectoryCommand(this, request);
+            UploadDirectoryCommand command = new UploadDirectoryCommand(this, this._config, request);
             return beginOperation(command, callback, state);
         }
 
