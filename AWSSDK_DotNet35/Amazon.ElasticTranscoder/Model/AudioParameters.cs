@@ -30,10 +30,11 @@ namespace Amazon.ElasticTranscoder.Model
         private string sampleRate;
         private string bitRate;
         private string channels;
+        private AudioCodecOptions codecOptions;
 
 
         /// <summary>
-        /// the audio codec for the output file. Valid values include <c>aac</c>, <c>mp3</c>, and <c>vorbis</c>.
+        /// The audio codec for the output file. Valid values include <c>aac</c>, <c>mp3</c>, and <c>vorbis</c>.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -132,6 +133,24 @@ namespace Amazon.ElasticTranscoder.Model
         internal bool IsSetChannels()
         {
             return this.channels != null;
+        }
+
+        /// <summary>
+        /// If you specified <c>AAC</c> for <c>Audio:Codec</c>, this is the <c>AAC</c> compression profile to use. Valid values include: <c>auto</c>,
+        /// <c>AAC-LC</c>, <c>HE-AAC</c>, <c>HE-AACv2</c> If you specify <c>auto</c>, Elastic Transcoder chooses a profile based on the bit rate of the
+        /// output file.
+        ///  
+        /// </summary>
+        public AudioCodecOptions CodecOptions
+        {
+            get { return this.codecOptions; }
+            set { this.codecOptions = value; }
+        }
+
+        // Check to see if CodecOptions property is set
+        internal bool IsSetCodecOptions()
+        {
+            return this.codecOptions != null;
         }
     }
 }

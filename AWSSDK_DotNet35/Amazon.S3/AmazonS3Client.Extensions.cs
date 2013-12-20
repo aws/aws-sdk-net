@@ -70,19 +70,42 @@ namespace Amazon.S3
             if (!request.IsSetExpires())
                 throw new InvalidOperationException("The Expires specified is null!");
 
-            ImmutableCredentials immutableCredentials = Credentials.GetCredentials();
-            IRequest irequest = Marshall(request, immutableCredentials.AccessKey, immutableCredentials.Token);
+            var immutableCredentials = Credentials.GetCredentials();
+
+            var aws4Signing = false;
+            if (Config.RegionEndpoint != null)
+            {
+                var duration = (request.Expires.ToUniversalTime() - DateTime.UtcNow).TotalSeconds;
+                if (duration <= AWS4PreSignedUrlSigner.MaxAWS4PreSignedUrlExpiry)
+                    aws4Signing = true;
+            }
+
+            var irequest = Marshall(request, immutableCredentials.AccessKey, immutableCredentials.Token, aws4Signing);
             irequest.Endpoint = DetermineEndpoint(irequest);
             ProcessRequestHandlers(irequest);
-            RequestMetrics metrics = new RequestMetrics();
-            signer.Sign(irequest, this.Config, metrics, immutableCredentials.AccessKey, immutableCredentials.SecretKey);
+            var metrics = new RequestMetrics();
 
-            var authorization = irequest.Headers[S3QueryParameter.Authorization.ToString()];
-            authorization = authorization.Substring(authorization.IndexOf(":", StringComparison.Ordinal) + 1);
-            authorization = AmazonS3Util.UrlEncode(authorization, false);
+            string authorization;
+            if (aws4Signing)
+            {
+                var aws4Signer = new AWS4PreSignedUrlSigner();
+                var signingResult = aws4Signer.SignRequest(irequest,
+                                                           this.Config,
+                                                           metrics,
+                                                           immutableCredentials.AccessKey,
+                                                           immutableCredentials.SecretKey);
+                authorization = "&" + signingResult.ForQueryParameters;
+            }
+            else
+            {
+                signer.SignRequest(irequest, this.Config, metrics, immutableCredentials.AccessKey, immutableCredentials.SecretKey);
+                authorization = irequest.Headers[S3QueryParameter.Authorization.ToString()];
+                authorization = authorization.Substring(authorization.IndexOf(":", StringComparison.Ordinal) + 1);
+                authorization = "&Signature=" + AmazonS3Util.UrlEncode(authorization, false);
+            }
 
             Uri url = ComposeUrl(irequest, irequest.Endpoint);
-            string result = url.AbsoluteUri + "&Signature=" + authorization;
+            string result = url.AbsoluteUri + authorization;
             Protocol protocol = DetermineProtocol();
             if (request.Protocol != protocol)
             {
@@ -100,7 +123,7 @@ namespace Amazon.S3
         }
 
 
-        private static IRequest Marshall(GetPreSignedUrlRequest getPreSignedUrlRequest, string accessKey, string token)
+        private static IRequest Marshall(GetPreSignedUrlRequest getPreSignedUrlRequest, string accessKey, string token, bool aws4Signing)
         {
             IRequest request = new DefaultRequest(getPreSignedUrlRequest, "AmazonS3");
 
@@ -114,7 +137,11 @@ namespace Amazon.S3
                 request.Headers.Add("x-amz-server-side-encryption", S3Transforms.ToStringValue(getPreSignedUrlRequest.ServerSideEncryptionMethod));
 
             Dictionary<string, string> queryParameters = new Dictionary<string, string>();
-            string queryPath = "?versionId={VersionId}&x-amz-security-token={Token}&AWSAccessKeyId={AWSAccessKeyId}&Expires={Expires}&response-content-type={ResponseContentType}&response-content-language={ResponseContentLanguage}&response-expires={ResponseExpires}&response-cache-control={ResponseCacheControl}&response-content-disposition={ResponseContentDisposition}&response-content-encoding={ResponseContentEncoding}";
+            var sb = new StringBuilder("?versionId={VersionId}&x-amz-security-token={Token}&response-content-type={ResponseContentType}&response-content-language={ResponseContentLanguage}&response-expires={ResponseExpires}&response-cache-control={ResponseCacheControl}&response-content-disposition={ResponseContentDisposition}&response-content-encoding={ResponseContentEncoding}");
+            sb.Append(aws4Signing ? "&X-Amz-Expires={Expires}" : "&Expires={Expires}");
+            if (!aws4Signing)
+                sb.Append("&AWSAccessKeyId={AWSAccessKeyId}");
+            string queryPath = sb.ToString();
 
             string uriResourcePath = "/";
             if (!string.IsNullOrEmpty(getPreSignedUrlRequest.BucketName))
@@ -126,9 +153,12 @@ namespace Amazon.S3
             uriResourcePath = uriResourcePath.Replace("{Bucket}", getPreSignedUrlRequest.IsSetBucketName() ? S3Transforms.ToStringValue(getPreSignedUrlRequest.BucketName) : "");
             uriResourcePath = uriResourcePath.Replace("{Key}", getPreSignedUrlRequest.IsSetKey() ? S3Transforms.ToStringValue(getPreSignedUrlRequest.Key) : "");
             uriResourcePath = uriResourcePath.Replace("{Token}", string.IsNullOrEmpty(token) ? "" : token);
-            uriResourcePath = uriResourcePath.Replace("{AWSAccessKeyId}", accessKey);
+            if (!aws4Signing)
+                uriResourcePath = uriResourcePath.Replace("{AWSAccessKeyId}", accessKey);
             uriResourcePath = uriResourcePath.Replace("{VersionId}", getPreSignedUrlRequest.IsSetVersionId() ? S3Transforms.ToStringValue(getPreSignedUrlRequest.VersionId) : "");
-            string value = Convert.ToInt64((getPreSignedUrlRequest.Expires.ToUniversalTime() - new DateTime(1970, 1, 1)).TotalSeconds).ToString(CultureInfo.InvariantCulture);
+
+            var baselineTime = aws4Signing ? DateTime.UtcNow : new DateTime(1970, 1, 1);
+            var value = Convert.ToInt64((getPreSignedUrlRequest.Expires.ToUniversalTime() - baselineTime).TotalSeconds).ToString(CultureInfo.InvariantCulture); 
             uriResourcePath = uriResourcePath.Replace("{Expires}", value);
 
             var responseHeaderOverrides = getPreSignedUrlRequest.ResponseHeaderOverrides ?? new ResponseHeaderOverrides();
@@ -387,6 +417,14 @@ namespace Amazon.S3
                     }
                 }
 
+                if (putObjectRequest.InputStream != null)
+                {
+                    if (putObjectRequest.AutoResetStreamPosition && putObjectRequest.InputStream.CanSeek)
+                    {
+                        putObjectRequest.InputStream.Seek(0, SeekOrigin.Begin);
+                    }
+                }
+
                 if (!string.IsNullOrEmpty(putObjectRequest.FilePath))
                 {
                     putObjectRequest.SetupForFilePath();
@@ -396,7 +434,10 @@ namespace Amazon.S3
                     if (string.IsNullOrEmpty(putObjectRequest.Headers.ContentType))
                         putObjectRequest.Headers.ContentType = "text/plain";
 
-                    putObjectRequest.InputStream = new MemoryStream(Encoding.UTF8.GetBytes(putObjectRequest.ContentBody));
+                    var payload = Encoding.UTF8.GetBytes(putObjectRequest.ContentBody);
+                    //putObjectRequest.Headers[AWS4Signer.XAmzContentSha256] 
+                    //        = AWSSDKUtils.ToHex(AWS4Signer.ComputeHash(payload), true);
+                    putObjectRequest.InputStream = new MemoryStream(payload);
                 }
 #if WIN_RT || WINDOWS_PHONE
                 else if(putObjectRequest.StorageFile != null)

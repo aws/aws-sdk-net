@@ -21,6 +21,52 @@ namespace Amazon.CloudFront
 {
 
 
+    /// <summary>Geo Restriction Type
+    /// </summary>
+    public class GeoRestrictionType : ConstantClass
+    {
+
+
+       /// <summary>Constant Blacklist for GeoRestrictionType
+       /// </summary>
+        public static readonly GeoRestrictionType Blacklist = new GeoRestrictionType("blacklist");
+    
+
+       /// <summary>Constant None for GeoRestrictionType
+       /// </summary>
+        public static readonly GeoRestrictionType None = new GeoRestrictionType("none");
+    
+
+       /// <summary>Constant Whitelist for GeoRestrictionType
+       /// </summary>
+        public static readonly GeoRestrictionType Whitelist = new GeoRestrictionType("whitelist");
+    
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public GeoRestrictionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GeoRestrictionType FindValue(string value)
+        {
+            return FindValue<GeoRestrictionType>(value);
+        }
+
+        public static implicit operator GeoRestrictionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+    
+
     /// <summary>Item Selection
     /// </summary>
     public class ItemSelection : ConstantClass

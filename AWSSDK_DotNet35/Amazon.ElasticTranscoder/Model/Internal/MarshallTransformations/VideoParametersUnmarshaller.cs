@@ -61,7 +61,7 @@
                     videoParameters.CodecOptions = null;
                     continue;
                 }
-                videoParameters.CodecOptions = new Dictionary<String,String>();
+                  videoParameters.CodecOptions = new Dictionary<String,String>();
                 KeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller> unmarshaller = new KeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.GetInstance(), StringUnmarshaller.GetInstance());
                 while (context.Read())
                 {

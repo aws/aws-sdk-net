@@ -44,13 +44,14 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             request.HttpMethod = "GET";
               
             Dictionary<string, string> queryParameters = new Dictionary<string, string>();
-            string uriResourcePath = "/{Bucket}/?versions;delimiter={Delimiter};key-marker={KeyMarker};max-keys={MaxKeys};prefix={Prefix};version-id-marker={VersionIdMarker}"; 
+            string uriResourcePath = "/{Bucket}/?versions;delimiter={Delimiter};key-marker={KeyMarker};max-keys={MaxKeys};prefix={Prefix};version-id-marker={VersionIdMarker};encoding-type={Encoding}"; 
             uriResourcePath = uriResourcePath.Replace("{Bucket}", listVersionsRequest.IsSetBucketName() ? S3Transforms.ToStringValue(listVersionsRequest.BucketName) : "" ); 
             uriResourcePath = uriResourcePath.Replace("{Delimiter}", listVersionsRequest.IsSetDelimiter() ? S3Transforms.ToStringValue(listVersionsRequest.Delimiter) : "" ); 
             uriResourcePath = uriResourcePath.Replace("{KeyMarker}", listVersionsRequest.IsSetKeyMarker() ? S3Transforms.ToStringValue(listVersionsRequest.KeyMarker) : "" ); 
             uriResourcePath = uriResourcePath.Replace("{MaxKeys}", listVersionsRequest.IsSetMaxKeys() ? S3Transforms.ToStringValue(listVersionsRequest.MaxKeys) : "" ); 
             uriResourcePath = uriResourcePath.Replace("{Prefix}", listVersionsRequest.IsSetPrefix() ? S3Transforms.ToStringValue(listVersionsRequest.Prefix) : "" ); 
-            uriResourcePath = uriResourcePath.Replace("{VersionIdMarker}", listVersionsRequest.IsSetVersionIdMarker() ? S3Transforms.ToStringValue(listVersionsRequest.VersionIdMarker) : "" ); 
+            uriResourcePath = uriResourcePath.Replace("{VersionIdMarker}", listVersionsRequest.IsSetVersionIdMarker() ? S3Transforms.ToStringValue(listVersionsRequest.VersionIdMarker) : "" );
+            uriResourcePath = uriResourcePath.Replace("{Encoding}", listVersionsRequest.IsSetEncoding() ? S3Transforms.ToStringValue(listVersionsRequest.Encoding) : "");
             string path = uriResourcePath;
 
 
@@ -60,7 +61,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 string queryString = uriResourcePath.Substring(queryIndex + 1);
                 path = uriResourcePath.Substring(0, queryIndex);
 
-                S3Transforms.BuildQueryParameterMap(request, queryParameters, queryString);
+                S3Transforms.BuildQueryParameterMap(request, queryParameters, queryString,
+                                                    new string[] { "delimiter", "key-marker", "max-keys", "prefix", "version-id-marker", "encoding-type" });
             }
             
             request.CanonicalResource = S3Transforms.GetCanonicalResource(path, queryParameters);

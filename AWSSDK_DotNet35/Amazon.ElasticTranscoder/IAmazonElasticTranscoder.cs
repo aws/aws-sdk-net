@@ -724,7 +724,7 @@ namespace Amazon.ElasticTranscoder
         /// 
         /// <returns>Returns a TestRoleResult from AmazonElasticTranscoder.</returns>
         TestRoleResponse EndTestRole(IAsyncResult asyncResult);
-
+        
         #endregion
         
     
@@ -824,7 +824,7 @@ namespace Amazon.ElasticTranscoder
         /// 
         /// <returns>Returns a UpdatePipelineNotificationsResult from AmazonElasticTranscoder.</returns>
         UpdatePipelineNotificationsResponse EndUpdatePipelineNotifications(IAsyncResult asyncResult);
-
+        
         #endregion
         
     

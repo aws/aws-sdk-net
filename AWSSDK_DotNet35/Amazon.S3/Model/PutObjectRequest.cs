@@ -42,6 +42,7 @@ namespace Amazon.S3.Model
         private string filePath;
         private string contentBody;
         private bool autoCloseStream = true;
+        private bool autoResetStreamPosition = true;
 
         private string md5Digest;
 
@@ -111,6 +112,16 @@ namespace Amazon.S3.Model
         {
             get { return this.autoCloseStream; }
             set { this.autoCloseStream = value; }
+        }
+
+        /// <summary>
+        /// If this value is set to true then the stream will be seeked back to the start before being read for upload.
+        /// Default: true.
+        /// </summary>
+        public bool AutoResetStreamPosition
+        {
+            get { return this.autoResetStreamPosition; }
+            set { this.autoResetStreamPosition = value; }
         }
 
         /// <summary>

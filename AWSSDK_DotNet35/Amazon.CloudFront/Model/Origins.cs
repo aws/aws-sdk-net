@@ -29,6 +29,7 @@ namespace Amazon.CloudFront.Model
         private int? quantity;
         private List<Origin> items = new List<Origin>();
 
+
         /// <summary>
         /// The number of origins for this distribution.
         ///  

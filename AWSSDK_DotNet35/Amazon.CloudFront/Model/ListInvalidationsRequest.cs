@@ -27,11 +27,12 @@ namespace Amazon.CloudFront.Model
     /// Container for the parameters to the ListInvalidations operation.
     /// <para> List invalidation batches. </para>
     /// </summary>
-    public partial class ListInvalidationsRequest : AmazonWebServiceRequest
+    public partial class ListInvalidationsRequest : AmazonCloudFrontRequest
     {
         private string distributionId;
         private string marker;
         private string maxItems;
+
 
         /// <summary>
         /// The distribution's id.

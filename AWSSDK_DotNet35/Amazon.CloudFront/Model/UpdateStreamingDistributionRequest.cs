@@ -27,11 +27,12 @@ namespace Amazon.CloudFront.Model
     /// Container for the parameters to the UpdateStreamingDistribution operation.
     /// <para> Update a streaming distribution. </para>
     /// </summary>
-    public partial class UpdateStreamingDistributionRequest : AmazonWebServiceRequest
+    public partial class UpdateStreamingDistributionRequest : AmazonCloudFrontRequest
     {
         private StreamingDistributionConfig streamingDistributionConfig;
         private string id;
         private string ifMatch;
+
 
         /// <summary>
         /// The streaming distribution's configuration information.

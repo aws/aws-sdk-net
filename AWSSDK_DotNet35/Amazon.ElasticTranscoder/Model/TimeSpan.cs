@@ -40,7 +40,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// <list type="definition">
         ///     <item>
         ///         <term>Pattern</term>
-        ///         <description>(^\d{1,5}([.]\d{0,3})?$)|(^(((([0-1]?\d)|(2[0-3])):)?(([0-5]?\d):))?(([0-5]?\d))([.]\d{0,3})?$)</description>
+        ///         <description>(^\d{1,5}(\.\d{0,3})?$)|(^([0-1]?[0-9]:|2[0-3]:)?([0-5]?[0-9]:)?[0-5]?[0-9](\.\d{0,3})?$)</description>
         ///     </item>
         /// </list>
         /// </para>
@@ -67,7 +67,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// <list type="definition">
         ///     <item>
         ///         <term>Pattern</term>
-        ///         <description>(^\d{1,5}([.]\d{0,3})?$)|(^(((([0-1]?\d)|(2[0-3])):)?(([0-5]?\d):))?(([0-5]?\d))([.]\d{0,3})?$)</description>
+        ///         <description>(^\d{1,5}(\.\d{0,3})?$)|(^([0-1]?[0-9]:|2[0-3]:)?([0-5]?[0-9]:)?[0-5]?[0-9](\.\d{0,3})?$)</description>
         ///     </item>
         /// </list>
         /// </para>

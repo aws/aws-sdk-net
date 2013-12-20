@@ -29,6 +29,7 @@ namespace Amazon.CloudFront.Model
         
         private Invalidation invalidation;
 
+
         /// <summary>
         /// The invalidation's information.
         ///  

@@ -34,6 +34,7 @@ namespace Amazon.CloudFront.Model
         private long? minTTL;
         private AllowedMethods allowedMethods;
 
+
         /// <summary>
         /// The value of ID for the origin that you want CloudFront to route requests to when a request matches the path pattern either for a cache
         /// behavior or for the default cache behavior.

@@ -39,6 +39,8 @@ namespace Amazon.CloudFront.Model
         private PriceClass priceClass;
         private bool? enabled;
         private ViewerCertificate viewerCertificate;
+        private Restrictions restrictions;
+
 
         /// <summary>
         /// The identifier for the distribution. For example: EDFDVBD632BHDS5.
@@ -243,6 +245,22 @@ namespace Amazon.CloudFront.Model
         internal bool IsSetViewerCertificate()
         {
             return this.viewerCertificate != null;
+        }
+
+        /// <summary>
+        /// A complex type that identifies ways in which you want to restrict distribution of your content.
+        ///  
+        /// </summary>
+        public Restrictions Restrictions
+        {
+            get { return this.restrictions; }
+            set { this.restrictions = value; }
+        }
+
+        // Check to see if Restrictions property is set
+        internal bool IsSetRestrictions()
+        {
+            return this.restrictions != null;
         }
     }
 }

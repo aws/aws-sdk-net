@@ -52,6 +52,13 @@
                 continue;
               }
   
+              if (context.TestExpression("Arn", targetDepth))
+              {
+                context.Read();
+                preset.Arn = StringUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
               if (context.TestExpression("Name", targetDepth))
               {
                 context.Read();

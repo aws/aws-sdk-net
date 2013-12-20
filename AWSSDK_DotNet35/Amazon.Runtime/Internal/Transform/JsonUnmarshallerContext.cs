@@ -44,12 +44,14 @@ namespace Amazon.Runtime.Internal.Transform
     /// </summary>
     public class JsonUnmarshallerContext : UnmarshallerContext
     {
+        const string JSON_TOKEN_NAME_OBJECT_START = "ObjectStart";
+        const string JSON_TOKEN_NAME_ARRAY_START = "ArrayStart";
+
         #region Private members
 
         private StreamReader streamReader = null;
         private JsonReader jsonReader = null;
-        private Stack<string> stack = new Stack<string>();
-        private string stackString = "";
+        private JsonPathStack stack = new JsonPathStack();
         private string currentField;
         private JsonToken? currentToken = null;
 
@@ -68,7 +70,7 @@ namespace Amazon.Runtime.Internal.Transform
             this.ResponseContents = null;
 
             long contentLength;
-            if (long.TryParse(responseData.GetHeaderValue("Content-Length"), out contentLength))
+            if (responseData != null && long.TryParse(responseData.GetHeaderValue("Content-Length"), out contentLength))
             {
                 base.SetupCRCStream(responseData, responseStream, contentLength);
             }
@@ -134,20 +136,9 @@ namespace Amazon.Runtime.Internal.Transform
         {
             get
             {
-                int depth = 0;
-                foreach (string s in stack)
-                {
-                    if (!
-                            (
-                            s.Equals(JsonToken.ObjectStart.ToString(), StringComparison.OrdinalIgnoreCase) ||
-                            s.Equals(JsonToken.ArrayStart.ToString(), StringComparison.OrdinalIgnoreCase)
-                            )
-                        )
-                    {
-                        depth++;
-                    }
-                }
-                if (currentField != null) depth++;
+                int depth = this.stack.CurrentDepth;
+                if(this.currentField != null)
+                    ++depth;
                 return depth;
             }
         }
@@ -157,7 +148,13 @@ namespace Amazon.Runtime.Internal.Transform
         /// </summary>
         public override string CurrentPath
         {
-            get { return stackString; }
+            get 
+            {
+                if (this.currentField != null)
+                    return string.Concat(this.stack.CurrentPath, "/", this.currentField);
+
+                return this.stack.CurrentPath; 
+            }
         }
 
         /// <summary>
@@ -279,7 +276,10 @@ namespace Amazon.Runtime.Internal.Transform
                 if (currentField != null)
                 {
                     stack.Push(currentField);
-                    stack.Push(currentToken.ToString());
+                    if (currentToken.Value == JsonToken.ObjectStart)
+                        stack.Push(JSON_TOKEN_NAME_OBJECT_START);
+                    else
+                        stack.Push(JSON_TOKEN_NAME_ARRAY_START);
                     currentField = null;
                 }
             }
@@ -287,8 +287,8 @@ namespace Amazon.Runtime.Internal.Transform
             {
                 if (stack.Count > 0)
                 {
-                    bool squareBracketsMatch = currentToken.Value == JsonToken.ArrayEnd && stack.Peek().Equals(JsonToken.ArrayStart.ToString(), StringComparison.OrdinalIgnoreCase);
-                    bool curlyBracketsMatch = currentToken.Value == JsonToken.ObjectEnd && stack.Peek().Equals(JsonToken.ObjectStart.ToString(), StringComparison.OrdinalIgnoreCase);
+                    bool squareBracketsMatch = currentToken.Value == JsonToken.ArrayEnd && object.ReferenceEquals(stack.Peek(), JSON_TOKEN_NAME_ARRAY_START);
+                    bool curlyBracketsMatch = currentToken.Value == JsonToken.ObjectEnd && object.ReferenceEquals(stack.Peek(), JSON_TOKEN_NAME_OBJECT_START);
                     if (squareBracketsMatch || curlyBracketsMatch)
                     {
                         stack.Pop();
@@ -303,32 +303,65 @@ namespace Amazon.Runtime.Internal.Transform
                 currentField = t;
             }
 
-            RebuildStackString();
-        }
-
-        private void RebuildStackString()
-        {
-            stackString = "";
-
-            foreach (string s in stack)
-            {
-                if (
-                    !(
-                        s.Equals(JsonToken.ArrayStart.ToString(), StringComparison.OrdinalIgnoreCase) ||
-                        s.Equals(JsonToken.ObjectStart.ToString(), StringComparison.OrdinalIgnoreCase)))
-                {
-                    stackString += "/" + s;
-                }
-            }
-
-            if (currentField != null)
-            {
-                stackString += "/" + currentField;
-            }
-
-            if (string.IsNullOrEmpty(stackString)) stackString = "/";
         }
 
         #endregion
+
+        class JsonPathStack
+        {
+            private Stack<string> stack = new Stack<string>();
+            int currentDepth = 1;
+            private StringBuilder stackStringBuilder = new StringBuilder("/", 128);
+            private string stackString;
+
+            public int CurrentDepth
+            {
+                get { return this.currentDepth; }
+            }
+
+            public string CurrentPath
+            {
+                get
+                {
+                    if (this.stackString == null)
+                        this.stackString = this.stackStringBuilder.ToString();
+
+                    return this.stackString;
+                }
+            }
+
+            public void Push(string value)
+            {
+                if (value == "/")
+                    currentDepth++;
+
+                stackStringBuilder.Append(value);
+                stackString = null;
+
+                stack.Push(value);
+            }
+
+            public string Pop()
+            {
+                var value = this.stack.Pop();
+                if (value == "/")
+                    currentDepth--;
+
+                stackStringBuilder.Remove(stackStringBuilder.Length - value.Length, value.Length);
+                stackString = null;
+
+                return value;
+            }
+
+            public string Peek()
+            {
+                return this.stack.Peek();
+            }
+
+            public int Count
+            {
+                get { return this.stack.Count; }
+            }
+        }
     }
 }

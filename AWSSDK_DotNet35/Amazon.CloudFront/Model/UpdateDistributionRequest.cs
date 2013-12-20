@@ -27,11 +27,12 @@ namespace Amazon.CloudFront.Model
     /// Container for the parameters to the UpdateDistribution operation.
     /// <para> Update a distribution. </para>
     /// </summary>
-    public partial class UpdateDistributionRequest : AmazonWebServiceRequest
+    public partial class UpdateDistributionRequest : AmazonCloudFrontRequest
     {
         private DistributionConfig distributionConfig;
         private string id;
         private string ifMatch;
+
 
         /// <summary>
         /// The distribution's configuration information.

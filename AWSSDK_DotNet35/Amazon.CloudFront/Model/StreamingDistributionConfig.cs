@@ -35,6 +35,7 @@ namespace Amazon.CloudFront.Model
         private PriceClass priceClass;
         private bool? enabled;
 
+
         /// <summary>
         /// A unique number that ensures the request can't be replayed. If the CallerReference is new (no matter the content of the
         /// StreamingDistributionConfig object), a new streaming distribution is created. If the CallerReference is a value you already sent in a

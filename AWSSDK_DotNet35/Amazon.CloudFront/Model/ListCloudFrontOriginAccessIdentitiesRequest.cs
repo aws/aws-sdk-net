@@ -27,10 +27,11 @@ namespace Amazon.CloudFront.Model
     /// Container for the parameters to the ListCloudFrontOriginAccessIdentities operation.
     /// <para> List origin access identities. </para>
     /// </summary>
-    public partial class ListCloudFrontOriginAccessIdentitiesRequest : AmazonWebServiceRequest
+    public partial class ListCloudFrontOriginAccessIdentitiesRequest : AmazonCloudFrontRequest
     {
         private string marker;
         private string maxItems;
+
 
         /// <summary>
         /// Use this when paginating results to indicate where to begin in your list of origin access identities. The results include identities in the

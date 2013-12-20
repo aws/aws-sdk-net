@@ -30,6 +30,7 @@ namespace Amazon.CloudFront.Model
         private int? hTTPSPort;
         private OriginProtocolPolicy originProtocolPolicy;
 
+
         /// <summary>
         /// The HTTP port the custom origin listens on.
         ///  

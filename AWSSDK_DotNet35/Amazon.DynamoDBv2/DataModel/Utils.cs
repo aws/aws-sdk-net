@@ -91,22 +91,40 @@ namespace Amazon.DynamoDBv2.DataModel
         }
         public static DynamoDBAttribute GetAttribute(MemberInfo targetMemberInfo)
         {
-            if (targetMemberInfo == null) throw new ArgumentNullException("targetMemberInfo");
-#if (WIN_RT || WINDOWS_PHONE)
-            object[] attributes = targetMemberInfo.GetCustomAttributes(typeof(DynamoDBAttribute), true).ToArray();
-#else
-            object[] attributes = targetMemberInfo.GetCustomAttributes(typeof(DynamoDBAttribute), true);
-#endif
+            object[] attributes = GetAttributeObjects(targetMemberInfo);
             return GetSingleDDBAttribute(attributes);
         }
+        public static DynamoDBAttribute[] GetAttributes(MemberInfo targetMemberInfo)
+        {
+            object[] attObjects = GetAttributeObjects(targetMemberInfo) ?? new object[0];
+            var attributes = new List<DynamoDBAttribute>();
+            foreach (var attObj in attObjects)
+            {
+                var attribute = attObj as DynamoDBAttribute;
+                if (attribute != null)
+                    attributes.Add(attribute);
+            }
+            return attributes.ToArray();
+        }
 
-        public static DynamoDBAttribute GetSingleDDBAttribute(object[] attributes)
+        private static DynamoDBAttribute GetSingleDDBAttribute(object[] attributes)
         {
             if (attributes.Length == 0)
                 return null;
             if (attributes.Length == 1)
                 return (attributes[0] as DynamoDBAttribute);
             throw new InvalidOperationException("Cannot have multiple DynamoDBAttributes on a single member");
+        }
+
+        private static object[] GetAttributeObjects(MemberInfo targetMemberInfo)
+        {
+            if (targetMemberInfo == null) throw new ArgumentNullException("targetMemberInfo");
+#if (WIN_RT || WINDOWS_PHONE)
+            object[] attributes = targetMemberInfo.GetCustomAttributes(typeof(DynamoDBAttribute), true).ToArray();
+#else
+            object[] attributes = targetMemberInfo.GetCustomAttributes(typeof(DynamoDBAttribute), true);
+#endif
+            return attributes;
         }
 
         #endregion

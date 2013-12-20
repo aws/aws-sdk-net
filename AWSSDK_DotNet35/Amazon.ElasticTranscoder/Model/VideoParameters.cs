@@ -85,7 +85,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// 32768</li> <li>4.1 - 32768</li> </ul> <b>MaxBitRate</b> The maximum number of bits per second in a video buffer; the size of the buffer is
         /// specified by <c>BufferSize</c>. Specify a value between 16 and 62,500. You can reduce the bandwidth required to stream a video by reducing
         /// the maximum bit rate, but this also reduces the quality of the video. <b>BufferSize</b> The maximum number of bits in any x seconds of the
-        /// output video. This window is commonly 10 seconds, the standard segment duration when youâ€™re using MPEG-TS for the container type of the
+        /// output video. This window is commonly 10 seconds, the standard segment duration when you're using MPEG-TS for the container type of the
         /// output video. Specify an integer greater than 0. If you specify <c>MaxBitRate</c> and omit <c>BufferSize</c>, Elastic Transcoder sets
         /// <c>BufferSize</c> to 10 times the value of <c>MaxBitRate</c>.
         ///  

@@ -32,6 +32,7 @@ namespace Amazon.CloudFront.Model
         private int? quantity;
         private List<Signer> items = new List<Signer>();
 
+
         /// <summary>
         /// Each active trusted signer.
         ///  

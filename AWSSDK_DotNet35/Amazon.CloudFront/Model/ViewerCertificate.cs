@@ -29,6 +29,7 @@ namespace Amazon.CloudFront.Model
         private string iAMCertificateId;
         private bool? cloudFrontDefaultCertificate;
 
+
         /// <summary>
         /// The IAM certificate identifier of the custom viewer certificate for this distribution.
         ///  

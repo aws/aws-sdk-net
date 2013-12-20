@@ -30,6 +30,7 @@ namespace Amazon.CloudFront.Model
         private string domainName;
         private string originAccessIdentity;
 
+
         /// <summary>
         /// The DNS name of the S3 origin.
         ///  

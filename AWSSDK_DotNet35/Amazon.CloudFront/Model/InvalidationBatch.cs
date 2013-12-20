@@ -29,6 +29,7 @@ namespace Amazon.CloudFront.Model
         private Paths paths;
         private string callerReference;
 
+
         /// <summary>
         /// The path of the object to invalidate. The path is relative to the distribution and must begin with a slash (/). You must enclose each
         /// invalidation object with the Path element tags. If the path includes non-ASCII characters or unsafe characters as defined in RFC 1783

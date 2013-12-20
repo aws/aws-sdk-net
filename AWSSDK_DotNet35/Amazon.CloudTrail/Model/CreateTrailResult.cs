@@ -27,8 +27,68 @@ namespace Amazon.CloudTrail.Model
     public partial class CreateTrailResult : AmazonWebServiceResponse
     {
         
+        private string name;
+        private string s3BucketName;
+        private string s3KeyPrefix;
+        private string snsTopicName;
+        private bool? includeGlobalServiceEvents;
         private Trail trail;
 
+        public string Name
+        {
+            get { return this.name; }
+            set { this.name = value; }
+        }
+
+        // Check to see if Name property is set
+        internal bool IsSetName()
+        {
+            return this.name != null;
+        }
+        public string S3BucketName
+        {
+            get { return this.s3BucketName; }
+            set { this.s3BucketName = value; }
+        }
+
+        // Check to see if S3BucketName property is set
+        internal bool IsSetS3BucketName()
+        {
+            return this.s3BucketName != null;
+        }
+        public string S3KeyPrefix
+        {
+            get { return this.s3KeyPrefix; }
+            set { this.s3KeyPrefix = value; }
+        }
+
+        // Check to see if S3KeyPrefix property is set
+        internal bool IsSetS3KeyPrefix()
+        {
+            return this.s3KeyPrefix != null;
+        }
+        public string SnsTopicName
+        {
+            get { return this.snsTopicName; }
+            set { this.snsTopicName = value; }
+        }
+
+        // Check to see if SnsTopicName property is set
+        internal bool IsSetSnsTopicName()
+        {
+            return this.snsTopicName != null;
+        }
+        public bool IncludeGlobalServiceEvents
+        {
+            get { return this.includeGlobalServiceEvents ?? default(bool); }
+            set { this.includeGlobalServiceEvents = value; }
+        }
+
+        // Check to see if IncludeGlobalServiceEvents property is set
+        internal bool IsSetIncludeGlobalServiceEvents()
+        {
+            return this.includeGlobalServiceEvents.HasValue;
+        }
 
         /// <summary>
         /// Data type that represents the settings for a trail.

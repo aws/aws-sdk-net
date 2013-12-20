@@ -66,6 +66,11 @@ namespace Amazon.Runtime.Internal.Util
             algorithm.IV = IV;
         }
 
+        public void Reset()
+        {
+            CreateEncryptor();
+        }
+
         #endregion
     }
 

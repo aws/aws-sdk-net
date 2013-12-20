@@ -33,6 +33,7 @@ namespace Amazon.CloudFront.Model
         private ActiveTrustedSigners activeTrustedSigners;
         private StreamingDistributionConfig streamingDistributionConfig;
 
+
         /// <summary>
         /// The identifier for the streaming distribution. For example: EGTXBD79H29TRA8.
         ///  

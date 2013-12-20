@@ -73,6 +73,13 @@
                 continue;
               }
   
+              if (context.TestExpression("NextPageToken", targetDepth))
+              {
+                context.Read();
+                response.NextPageToken = StringUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
                 if (context.CurrentDepth <= originalDepth)
                 {                   
                     return;

@@ -15,19 +15,11 @@
 
 using System;
 using System.Collections.Generic;
-using System.Collections.Specialized;
 using System.Linq;
-using System.Security;
 using System.Text;
 using System.Globalization;
-using System.Text.RegularExpressions;
-
-
+using Amazon.EC2.Model;
 using Amazon.Util;
-using Amazon.Runtime;
-using System.Runtime.InteropServices;
-using Amazon.S3.Model;
-using System.Net;
 using Amazon.S3;
 using Amazon.S3.Util;
 using Amazon.Runtime.Internal.Util;
@@ -36,12 +28,70 @@ namespace Amazon.Runtime.Internal.Auth
 {
     internal class S3Signer : AbstractAWSSigner
     {
+        AWS4Signer _aws4Signer;
+        AWS4Signer AWS4SignerInstance 
+        {
+            get
+            {
+                if (_aws4Signer == null)
+                {
+                    lock (this)
+                    {
+                        if (_aws4Signer == null)
+                            _aws4Signer = new AWS4Signer();
+                    }
+                }
+
+                return _aws4Signer;
+            }
+        }
+
+        /// <summary>
+        /// Inspects the supplied evidence to return the signer appropriate for the operation and
+        /// precomputes the body hash for the request if AWS4 protocol is selected.
+        /// </summary>
+        /// <param name="irequest"></param>
+        /// <param name="config"></param>
+        /// <returns></returns>
+        private AbstractAWSSigner SelectSigner(IRequest irequest, ClientConfig config)
+        {
+            // do a cascading series of checks to try and arrive at whether we have
+            // a recognisable region and if it is Beijing so as to select AWS4
+            RegionEndpoint r = null;
+            if (!string.IsNullOrEmpty(config.AuthenticationRegion))
+                r = RegionEndpoint.GetBySystemName(config.AuthenticationRegion);
+
+            if (r == null && !string.IsNullOrEmpty(config.ServiceURL))
+            {
+                var parsedRegion = AWSSDKUtils.DetermineRegion(config.ServiceURL);
+                if (!string.IsNullOrEmpty(parsedRegion))
+                    r = RegionEndpoint.GetBySystemName(parsedRegion);
+            }
+
+            if (r == null && config.RegionEndpoint != null)
+                r = config.RegionEndpoint;
+
+            if (r != null && r == RegionEndpoint.CNNorth1)
+                return AWS4SignerInstance;
+
+            return this;
+        }
+
         public override ClientProtocol Protocol
         {
             get { return ClientProtocol.RestProtocol; }
         }
 
         public override void Sign(IRequest request, ClientConfig clientConfig, RequestMetrics metrics, string awsAccessKeyId, string awsSecretAccessKey)
+        {
+            var aws4Signer = SelectSigner(request, clientConfig) as AWS4Signer;
+            if (aws4Signer != null)
+                aws4Signer.Sign(request, clientConfig, metrics, awsAccessKeyId, awsSecretAccessKey);
+            else
+                SignRequest(request, clientConfig, metrics, awsAccessKeyId, awsSecretAccessKey);
+        }
+
+        internal void SignRequest(IRequest request, ClientConfig clientConfig, RequestMetrics metrics, string awsAccessKeyId, string awsSecretAccessKey)
         {
             request.Headers["x-amz-date"] = AWSSDKUtils.FormattedCurrentTimestampRFC822;
 

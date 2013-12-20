@@ -51,7 +51,7 @@ namespace Amazon.EC2
 	public partial class AmazonEC2Client : AmazonWebServiceClient, Amazon.EC2.IAmazonEC2
     {
 
-        QueryStringSigner signer = new QueryStringSigner();
+        EC2Signer signer = new EC2Signer();
 
         #region Dispose
 

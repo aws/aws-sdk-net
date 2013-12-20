@@ -49,8 +49,14 @@
               if (context.TestExpression("trailList", targetDepth))
               {
                 context.Read();
-                response.TrailList = new List<Trail>();
-                        TrailUnmarshaller unmarshaller = TrailUnmarshaller.GetInstance();
+                
+                if (context.CurrentTokenType == JsonToken.Null)
+                {
+                    response.TrailList = null;
+                    continue;
+                }
+                  response.TrailList = new List<Trail>();
+                  TrailUnmarshaller unmarshaller = TrailUnmarshaller.GetInstance();
                 while (context.Read())
                 {
                   JsonToken token = context.CurrentTokenType;                
@@ -80,11 +86,6 @@
         {
           ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);                    
           
-          if (errorResponse.Code != null && errorResponse.Code.Equals("InternalErrorException"))
-          {
-            return new InternalErrorException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-          }
-  
           return new AmazonCloudTrailException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 

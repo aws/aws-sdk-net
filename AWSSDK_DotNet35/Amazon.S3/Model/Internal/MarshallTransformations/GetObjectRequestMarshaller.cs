@@ -78,7 +78,14 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 string queryString = uriResourcePath.Substring(queryIndex + 1);
                 path = uriResourcePath.Substring(0, queryIndex);
 
-                S3Transforms.BuildQueryParameterMap(request, queryParameters, queryString);
+                S3Transforms.BuildQueryParameterMap(request, queryParameters, queryString,
+                                                    new string[] { "versionId", 
+                                                                   "response-content-type", 
+                                                                   "response-content-language", 
+                                                                   "response-expires", 
+                                                                   "response-cache-control", 
+                                                                   "response-content-disposition", 
+                                                                   "response-content-encoding" });
             }
             
             request.CanonicalResource = S3Transforms.GetCanonicalResource(path, queryParameters, S3Constants.GetObjectExtraSubResources);

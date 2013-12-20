@@ -36,6 +36,7 @@ namespace Amazon.CloudFront.Model
         private int? quantity;
         private List<string> items = new List<string>();
 
+
         /// <summary>
         /// Specifies whether you want to require end users to use signed URLs to access the files specified by PathPattern and TargetOriginId.
         ///  

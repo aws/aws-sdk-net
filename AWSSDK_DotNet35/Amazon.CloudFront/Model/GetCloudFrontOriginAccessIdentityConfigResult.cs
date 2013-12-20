@@ -30,6 +30,7 @@ namespace Amazon.CloudFront.Model
         private CloudFrontOriginAccessIdentityConfig cloudFrontOriginAccessIdentityConfig;
         private string eTag;
 
+
         /// <summary>
         /// The origin access identity's configuration information.
         ///  

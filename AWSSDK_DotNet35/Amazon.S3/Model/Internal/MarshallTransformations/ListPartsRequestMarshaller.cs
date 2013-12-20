@@ -44,12 +44,13 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             request.HttpMethod = "GET";
               
             Dictionary<string, string> queryParameters = new Dictionary<string, string>();
-            string uriResourcePath = "/{Bucket}/{Key}?uploadId={UploadId};max-parts={MaxParts};part-number-marker={PartNumberMarker}"; 
+            string uriResourcePath = "/{Bucket}/{Key}?uploadId={UploadId};max-parts={MaxParts};part-number-marker={PartNumberMarker};encoding-type={Encoding}"; 
             uriResourcePath = uriResourcePath.Replace("{Bucket}", listPartsRequest.IsSetBucketName() ? S3Transforms.ToStringValue(listPartsRequest.BucketName) : "" ); 
             uriResourcePath = uriResourcePath.Replace("{Key}", listPartsRequest.IsSetKey() ? S3Transforms.ToStringValue(listPartsRequest.Key) : "" ); 
             uriResourcePath = uriResourcePath.Replace("{MaxParts}", listPartsRequest.IsSetMaxParts() ? S3Transforms.ToStringValue(listPartsRequest.MaxParts) : "" ); 
             uriResourcePath = uriResourcePath.Replace("{PartNumberMarker}", listPartsRequest.IsSetPartNumberMarker() ? S3Transforms.ToStringValue(listPartsRequest.PartNumberMarker) : "" ); 
-            uriResourcePath = uriResourcePath.Replace("{UploadId}", listPartsRequest.IsSetUploadId() ? S3Transforms.ToStringValue(listPartsRequest.UploadId) : "" ); 
+            uriResourcePath = uriResourcePath.Replace("{UploadId}", listPartsRequest.IsSetUploadId() ? S3Transforms.ToStringValue(listPartsRequest.UploadId) : "" );
+            uriResourcePath = uriResourcePath.Replace("{Encoding}", listPartsRequest.IsSetEncoding() ? S3Transforms.ToStringValue(listPartsRequest.Encoding) : "");
             string path = uriResourcePath;
 
 
@@ -59,9 +60,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 string queryString = uriResourcePath.Substring(queryIndex + 1);
                 path = uriResourcePath.Substring(0, queryIndex);
 
-                S3Transforms.BuildQueryParameterMap(request, queryParameters, queryString);
+                S3Transforms.BuildQueryParameterMap(request, queryParameters, queryString,
+                                                    new string[] { "uploadId", "max-parts", "part-number-marker", "encoding-type" });
             }
-            
+
             request.CanonicalResource = S3Transforms.GetCanonicalResource(path, queryParameters);
             uriResourcePath = S3Transforms.FormatResourcePath(path, queryParameters);
             

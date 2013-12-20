@@ -73,6 +73,13 @@
                 continue;
               }
   
+              if (context.TestExpression("CodecOptions", targetDepth))
+              {
+                context.Read();
+                audioParameters.CodecOptions = AudioCodecOptionsUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
                 if (context.CurrentDepth <= originalDepth)
                 {
                     return audioParameters;

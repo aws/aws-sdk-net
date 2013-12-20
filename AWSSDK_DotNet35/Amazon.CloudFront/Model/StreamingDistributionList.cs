@@ -33,6 +33,7 @@ namespace Amazon.CloudFront.Model
         private int? quantity;
         private List<StreamingDistributionSummary> items = new List<StreamingDistributionSummary>();
 
+
         /// <summary>
         /// The value you provided for the Marker request parameter.
         ///  

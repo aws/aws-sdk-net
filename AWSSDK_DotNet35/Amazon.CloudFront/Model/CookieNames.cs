@@ -30,6 +30,7 @@ namespace Amazon.CloudFront.Model
         private int? quantity;
         private List<string> items = new List<string>();
 
+
         /// <summary>
         /// The number of whitelisted cookies for this cache behavior.
         ///  

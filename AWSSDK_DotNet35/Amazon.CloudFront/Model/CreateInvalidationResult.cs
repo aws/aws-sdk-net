@@ -30,6 +30,7 @@ namespace Amazon.CloudFront.Model
         private string location;
         private Invalidation invalidation;
 
+
         /// <summary>
         /// The fully qualified URI of the distribution and invalidation batch request, including the Invalidation ID.
         ///  

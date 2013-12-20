@@ -44,6 +44,7 @@ namespace Amazon.S3.Transfer
         private S3StorageClass storageClass;
         private long? partSize;
         private bool autoCloseStream = true;
+        private bool autoResetStreamPosition = true;
         private ServerSideEncryptionMethod encryption;
 
         private HeadersCollection headersCollection = new HeadersCollection();
@@ -349,7 +350,7 @@ namespace Amazon.S3.Transfer
                 }
                 else
                 {
-                    length = this.InputStream.Length;
+                    length = this.InputStream.Length - this.InputStream.Position;
                 }
 
                 return length;
@@ -370,6 +371,16 @@ namespace Amazon.S3.Transfer
         {
             get { return this.autoCloseStream; }
             set { this.autoCloseStream = value; }
+        }
+
+        /// <summary>
+        /// If this value is set to true then the stream's position will be reset to the start before being read for upload.
+        /// Default: true.
+        /// </summary>
+        public bool AutoResetStreamPosition
+        {
+            get { return this.autoResetStreamPosition; }
+            set { this.autoResetStreamPosition = value; }
         }
 
         /// <summary>

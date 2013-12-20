@@ -39,8 +39,7 @@ namespace Amazon.Runtime
         
         private static RegionEndpoint GetDefaultRegionEndpoint()
         {
-            NameValueCollection appConfig = ConfigurationManager.AppSettings;
-            var regionName = appConfig[APP_CONFIG_REGION_KEY];
+            var regionName = AWSConfigs.AWSRegion;
             if (!string.IsNullOrEmpty(regionName))
             {
                 RegionEndpoint re = RegionEndpoint.GetBySystemName(regionName);

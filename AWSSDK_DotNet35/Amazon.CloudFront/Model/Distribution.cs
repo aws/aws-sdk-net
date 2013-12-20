@@ -34,6 +34,7 @@ namespace Amazon.CloudFront.Model
         private ActiveTrustedSigners activeTrustedSigners;
         private DistributionConfig distributionConfig;
 
+
         /// <summary>
         /// The identifier for the distribution. For example: EDFDVBD632BHDS5.
         ///  

@@ -29,6 +29,7 @@ namespace Amazon.CloudFront.Model
         
         private CloudFrontOriginAccessIdentityList cloudFrontOriginAccessIdentityList;
 
+
         /// <summary>
         /// The CloudFrontOriginAccessIdentityList type.
         ///  

@@ -28,6 +28,7 @@ namespace Amazon.ElasticTranscoder.Model
     {
         
         private List<Preset> presets = new List<Preset>();
+        private string nextPageToken;
 
 
         /// <summary>
@@ -44,6 +45,32 @@ namespace Amazon.ElasticTranscoder.Model
         internal bool IsSetPresets()
         {
             return this.presets.Count > 0;
+        }
+
+        /// <summary>
+        /// A value that you use to access the second and subsequent pages of results, if any. When the presets fit on one page or when you've reached
+        /// the last page of results, the value of <c>NextPageToken</c> is <c>null</c>.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Pattern</term>
+        ///         <description>^\d{13}-\w{6}$</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
+        public string NextPageToken
+        {
+            get { return this.nextPageToken; }
+            set { this.nextPageToken = value; }
+        }
+
+        // Check to see if NextPageToken property is set
+        internal bool IsSetNextPageToken()
+        {
+            return this.nextPageToken != null;
         }
     }
 }

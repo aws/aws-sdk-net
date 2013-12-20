@@ -36,6 +36,7 @@ namespace Amazon.CloudFront.Model
         private string responseCode;
         private long? errorCachingMinTTL;
 
+
         /// <summary>
         /// The 4xx or 5xx HTTP status code that you want to customize. For a list of HTTP status codes that you can customize, see CloudFront
         /// documentation.

@@ -27,9 +27,10 @@ namespace Amazon.CloudFront.Model
     /// Container for the parameters to the CreateStreamingDistribution operation.
     /// <para> Create a new streaming distribution. </para>
     /// </summary>
-    public partial class CreateStreamingDistributionRequest : AmazonWebServiceRequest
+    public partial class CreateStreamingDistributionRequest : AmazonCloudFrontRequest
     {
         private StreamingDistributionConfig streamingDistributionConfig;
+
 
         /// <summary>
         /// The streaming distribution's configuration information.

@@ -27,9 +27,10 @@ namespace Amazon.CloudFront.Model
     /// Container for the parameters to the GetDistribution operation.
     /// <para> Get the information about a distribution. </para>
     /// </summary>
-    public partial class GetDistributionRequest : AmazonWebServiceRequest
+    public partial class GetDistributionRequest : AmazonCloudFrontRequest
     {
         private string id;
+
 
         /// <summary>
         /// The distribution's id.

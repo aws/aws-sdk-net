@@ -27,10 +27,11 @@ namespace Amazon.CloudFront.Model
     /// Container for the parameters to the DeleteCloudFrontOriginAccessIdentity operation.
     /// <para> Delete an origin access identity. </para>
     /// </summary>
-    public partial class DeleteCloudFrontOriginAccessIdentityRequest : AmazonWebServiceRequest
+    public partial class DeleteCloudFrontOriginAccessIdentityRequest : AmazonCloudFrontRequest
     {
         private string id;
         private string ifMatch;
+
 
         /// <summary>
         /// The origin access identity's id.

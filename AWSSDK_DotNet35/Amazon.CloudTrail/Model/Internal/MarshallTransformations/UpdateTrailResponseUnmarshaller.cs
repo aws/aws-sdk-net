@@ -46,6 +46,41 @@
             while (context.Read())
             {
               
+              if (context.TestExpression("Name", targetDepth))
+              {
+                context.Read();
+                response.Name = StringUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
+              if (context.TestExpression("S3BucketName", targetDepth))
+              {
+                context.Read();
+                response.S3BucketName = StringUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
+              if (context.TestExpression("S3KeyPrefix", targetDepth))
+              {
+                context.Read();
+                response.S3KeyPrefix = StringUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
+              if (context.TestExpression("SnsTopicName", targetDepth))
+              {
+                context.Read();
+                response.SnsTopicName = StringUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
+              if (context.TestExpression("IncludeGlobalServiceEvents", targetDepth))
+              {
+                context.Read();
+                response.IncludeGlobalServiceEvents = BoolUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
               if (context.TestExpression("trail", targetDepth))
               {
                 context.Read();
@@ -69,11 +104,6 @@
           if (errorResponse.Code != null && errorResponse.Code.Equals("S3BucketDoesNotExistException"))
           {
             return new S3BucketDoesNotExistException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-          }
-  
-          if (errorResponse.Code != null && errorResponse.Code.Equals("InternalErrorException"))
-          {
-            return new InternalErrorException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
           }
   
           if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidS3PrefixException"))

@@ -62,6 +62,7 @@ namespace Amazon.S3.Transfer.Internal
                 FilePath = this._fileTransporterRequest.FilePath,
                 StorageClass = this._fileTransporterRequest.StorageClass,
                 AutoCloseStream = this._fileTransporterRequest.AutoCloseStream,
+                AutoResetStreamPosition = this._fileTransporterRequest.AutoResetStreamPosition,
                 ServerSideEncryptionMethod = this._fileTransporterRequest.ServerSideEncryptionMethod,
                 Headers = this._fileTransporterRequest.Headers,
                 Metadata = this._fileTransporterRequest.Metadata,

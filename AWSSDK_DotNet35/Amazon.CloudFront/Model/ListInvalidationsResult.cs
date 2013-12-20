@@ -29,6 +29,7 @@ namespace Amazon.CloudFront.Model
         
         private InvalidationList invalidationList;
 
+
         /// <summary>
         /// Information about invalidation batches.
         ///  

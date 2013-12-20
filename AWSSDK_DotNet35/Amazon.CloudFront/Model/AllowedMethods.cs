@@ -33,6 +33,7 @@ namespace Amazon.CloudFront.Model
         private int? quantity;
         private List<string> items = new List<string>();
 
+
         /// <summary>
         /// The number of HTTP methods that you want CloudFront to forward to your origin. Valid values are 2 (for GET and HEAD requests) and 7 (for
         /// DELETE, GET, HEAD, OPTIONS, PATCH, POST, and PUT requests).

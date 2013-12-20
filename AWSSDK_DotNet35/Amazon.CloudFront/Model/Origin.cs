@@ -32,6 +32,7 @@ namespace Amazon.CloudFront.Model
         private S3OriginConfig s3OriginConfig;
         private CustomOriginConfig customOriginConfig;
 
+
         /// <summary>
         /// A unique identifier for the origin. The value of Id must be unique within the distribution. You use the value of Id when you create a cache
         /// behavior. The Id identifies the origin that CloudFront routes a request to when the request matches the path pattern for that cache

@@ -40,6 +40,35 @@ namespace Amazon
     {
         internal static event PropertyChangedEventHandler PropertyChanged;
 
+        #region Region
+
+        /// <summary>
+        /// Key for the AWSRegion property.
+        /// <seealso cref="Amazon.AWSConfigs.AWSRegion"/>
+        /// </summary>
+        public const string AWSRegionKey = "AWSRegion";
+
+        /// <summary>
+        /// Configures the default AWS region for clients which have not explicitly specified a region.
+        /// Changes to this setting will only take effect for newly constructed instances of AWS clients.
+        /// 
+        /// This setting can be configured through the App.config. For example:
+        /// <code>
+        /// &lt;appSettings>
+        ///   &lt;add key="AWSRegion" value="us-west-2"/>
+        /// &lt;appSettings>
+        /// </code>
+        /// </summary>
+        public static string AWSRegion
+        {
+            get { return _awsRegion; }
+            set { _awsRegion = value; }
+        }
+
+        private static string _awsRegion = GetConfig(AWSRegionKey);
+
+        #endregion
+
         #region Logging
 
         /// <summary>

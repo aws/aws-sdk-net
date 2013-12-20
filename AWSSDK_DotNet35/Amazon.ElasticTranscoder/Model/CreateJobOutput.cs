@@ -162,7 +162,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// <list type="definition">
         ///     <item>
         ///         <term>Pattern</term>
-        ///         <description>^\d{1,5}([.]\d{0,5})?$</description>
+        ///         <description>^\d{1,5}(\.\d{0,5})?$</description>
         ///     </item>
         /// </list>
         /// </para>

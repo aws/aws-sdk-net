@@ -41,6 +41,7 @@ namespace Amazon.CloudFront.Model
         private long? minTTL;
         private AllowedMethods allowedMethods;
 
+
         /// <summary>
         /// The pattern (for example, images/*.jpg) that specifies which requests you want this cache behavior to apply to. When CloudFront receives an
         /// end-user request, the requested path is compared with path patterns in the order in which cache behaviors are listed in the distribution.

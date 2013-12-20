@@ -46,7 +46,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         if(deleteDistributionRequest.IsSetIfMatch())
             request.Headers.Add("If-Match", deleteDistributionRequest.IfMatch);
             
-            string uriResourcePath = "2013-09-27/distribution/{Id}"; 
+            string uriResourcePath = "2013-11-11/distribution/{Id}"; 
             uriResourcePath = uriResourcePath.Replace("{Id}", deleteDistributionRequest.IsSetId() ? deleteDistributionRequest.Id.ToString() : "" ); 
 
             if (uriResourcePath.Contains("?")) 

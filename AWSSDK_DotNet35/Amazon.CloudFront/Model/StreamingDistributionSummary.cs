@@ -37,6 +37,7 @@ namespace Amazon.CloudFront.Model
         private PriceClass priceClass;
         private bool? enabled;
 
+
         /// <summary>
         /// The identifier for the distribution. For example: EDFDVBD632BHDS5.
         ///  

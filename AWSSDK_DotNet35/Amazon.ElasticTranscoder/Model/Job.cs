@@ -27,6 +27,7 @@ namespace Amazon.ElasticTranscoder.Model
     {
         
         private string id;
+        private string arn;
         private string pipelineId;
         private JobInput input;
         private JobOutput output;
@@ -59,6 +60,22 @@ namespace Amazon.ElasticTranscoder.Model
         internal bool IsSetId()
         {
             return this.id != null;
+        }
+
+        /// <summary>
+        /// The Amazon Resource Name (ARN) for the job.
+        ///  
+        /// </summary>
+        public string Arn
+        {
+            get { return this.arn; }
+            set { this.arn = value; }
+        }
+
+        // Check to see if Arn property is set
+        internal bool IsSetArn()
+        {
+            return this.arn != null;
         }
 
         /// <summary>

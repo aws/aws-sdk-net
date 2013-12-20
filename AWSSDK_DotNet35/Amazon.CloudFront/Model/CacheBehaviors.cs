@@ -29,6 +29,7 @@ namespace Amazon.CloudFront.Model
         private int? quantity;
         private List<CacheBehavior> items = new List<CacheBehavior>();
 
+
         /// <summary>
         /// The number of cache behaviors for this distribution.
         ///  

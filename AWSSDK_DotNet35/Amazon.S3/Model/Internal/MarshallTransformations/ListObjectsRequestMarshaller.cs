@@ -44,12 +44,13 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             request.HttpMethod = "GET";
               
             Dictionary<string, string> queryParameters = new Dictionary<string, string>();
-            string uriResourcePath = "/{Bucket}/?delimiter={Delimiter};marker={Marker};max-keys={MaxKeys};prefix={Prefix}"; 
+            string uriResourcePath = "/{Bucket}/?delimiter={Delimiter};marker={Marker};max-keys={MaxKeys};prefix={Prefix};encoding-type={Encoding}"; 
             uriResourcePath = uriResourcePath.Replace("{Bucket}", listObjectsRequest.IsSetBucketName() ? S3Transforms.ToStringValue(listObjectsRequest.BucketName) : "" ); 
             uriResourcePath = uriResourcePath.Replace("{Delimiter}", listObjectsRequest.IsSetDelimiter() ? S3Transforms.ToStringValue(listObjectsRequest.Delimiter) : "" ); 
             uriResourcePath = uriResourcePath.Replace("{Marker}", listObjectsRequest.IsSetMarker() ? S3Transforms.ToStringValue(listObjectsRequest.Marker) : "" ); 
             uriResourcePath = uriResourcePath.Replace("{MaxKeys}", listObjectsRequest.IsSetMaxKeys() ? S3Transforms.ToStringValue(listObjectsRequest.MaxKeys) : "" ); 
-            uriResourcePath = uriResourcePath.Replace("{Prefix}", listObjectsRequest.IsSetPrefix() ? S3Transforms.ToStringValue(listObjectsRequest.Prefix) : "" ); 
+            uriResourcePath = uriResourcePath.Replace("{Prefix}", listObjectsRequest.IsSetPrefix() ? S3Transforms.ToStringValue(listObjectsRequest.Prefix) : "" );
+            uriResourcePath = uriResourcePath.Replace("{Encoding}", listObjectsRequest.IsSetEncoding() ? S3Transforms.ToStringValue(listObjectsRequest.Encoding) : "");
             string path = uriResourcePath;
 
 
@@ -59,9 +60,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 string queryString = uriResourcePath.Substring(queryIndex + 1);
                 path = uriResourcePath.Substring(0, queryIndex);
 
-                S3Transforms.BuildQueryParameterMap(request, queryParameters, queryString);
+                S3Transforms.BuildQueryParameterMap(request, queryParameters, queryString,
+                                                    new string[] { "delimiter", "marker", "max-keys", "prefix", "encoding-type" });
             }
-            
+
             request.CanonicalResource = S3Transforms.GetCanonicalResource(path, queryParameters);
             uriResourcePath = S3Transforms.FormatResourcePath(path, queryParameters);
             

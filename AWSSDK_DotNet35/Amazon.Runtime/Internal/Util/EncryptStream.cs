@@ -179,7 +179,14 @@ namespace Amazon.Runtime.Internal.Util
         /// <returns>The new position within the current stream.</returns>
         public override long Seek(long offset, SeekOrigin origin)
         {
-            return BaseStream.Seek(offset, origin);
+            long position = BaseStream.Seek(offset, origin);
+            if (position != 0)
+                throw new ArgumentException("EncryptStream only suppports seeking to the start of the stream");
+
+            this.performedLastBlockTransform = false;
+            this.Algorithm.Reset();
+
+            return position;
         }
 
         #endregion

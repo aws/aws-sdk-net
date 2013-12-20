@@ -168,8 +168,13 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             return result;
         }
 
-        internal static void BuildQueryParameterMap(IRequest request, IDictionary<string, string> queryParameters, string queryString)
+        internal static void BuildQueryParameterMap(IRequest request, 
+                                                    IDictionary<string, string> queryParameters, 
+                                                    string queryString,
+                                                    params string[] unusedIfNullValueParams)
         {
+            var unusedIfNullValueHash = new HashSet<string>(unusedIfNullValueParams);
+
             int subStringPos = 0;
             int index = queryString.IndexOfAny(new char[] { '&', ';' }, 0);
             if (index == -1 && subStringPos < queryString.Length)
@@ -195,14 +200,17 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     }
                     else
                     {
-                        request.Parameters.Add(nameValuePair[0], null);
+                        if (!unusedIfNullValueHash.Contains(nameValuePair[0]))
+                            request.Parameters.Add(nameValuePair[0], null);
                     }
 
-                    if (nameValuePair.Length == 2)
+                    if (nameValuePair.Length == 2 && nameValuePair[1].Length > 0)
                         queryParameters.Add(nameValuePair[0], nameValuePair[1]);
                     else
-                        queryParameters.Add(nameValuePair[0], null);
-
+                    {
+                        if (!unusedIfNullValueHash.Contains(nameValuePair[0]))
+                            queryParameters.Add(nameValuePair[0], null);
+                    }
 
                     subStringPos = index + 1;
                 }

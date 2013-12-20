@@ -109,6 +109,12 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                             
                         continue;
                     }
+                    if (context.TestExpression("Restrictions", targetDepth))
+                    {
+                        distributionConfig.Restrictions = RestrictionsUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {

@@ -33,6 +33,7 @@ namespace Amazon.CloudFront.Model
         private int? quantity;
         private List<CloudFrontOriginAccessIdentitySummary> items = new List<CloudFrontOriginAccessIdentitySummary>();
 
+
         /// <summary>
         /// The value you provided for the Marker request parameter.
         ///  

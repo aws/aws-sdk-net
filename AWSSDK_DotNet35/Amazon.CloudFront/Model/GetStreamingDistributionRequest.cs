@@ -27,9 +27,10 @@ namespace Amazon.CloudFront.Model
     /// Container for the parameters to the GetStreamingDistribution operation.
     /// <para> Get the information about a streaming distribution. </para>
     /// </summary>
-    public partial class GetStreamingDistributionRequest : AmazonWebServiceRequest
+    public partial class GetStreamingDistributionRequest : AmazonCloudFrontRequest
     {
         private string id;
+
 
         /// <summary>
         /// The streaming distribution's id.

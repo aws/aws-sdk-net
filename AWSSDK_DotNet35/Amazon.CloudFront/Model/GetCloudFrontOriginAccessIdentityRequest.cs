@@ -27,9 +27,10 @@ namespace Amazon.CloudFront.Model
     /// Container for the parameters to the GetCloudFrontOriginAccessIdentity operation.
     /// <para> Get the information about an origin access identity. </para>
     /// </summary>
-    public partial class GetCloudFrontOriginAccessIdentityRequest : AmazonWebServiceRequest
+    public partial class GetCloudFrontOriginAccessIdentityRequest : AmazonCloudFrontRequest
     {
         private string id;
+
 
         /// <summary>
         /// The identity's id.

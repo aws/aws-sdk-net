@@ -78,6 +78,11 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 return new TooManyCookieNamesInWhiteListException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
     
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidGeoRestrictionParameter"))
+            {
+                return new InvalidGeoRestrictionParameterException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+    
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidResponseCode"))
             {
                 return new InvalidResponseCodeException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
@@ -91,6 +96,11 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyDistributionCNAMEs"))
             {
                 return new TooManyDistributionCNAMEsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+    
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidLocationCode"))
+            {
+                return new InvalidLocationCodeException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
     
             if (errorResponse.Code != null && errorResponse.Code.Equals("NoSuchOrigin"))

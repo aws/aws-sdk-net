@@ -67,17 +67,38 @@
                 continue;
               }
   
+              if (context.TestExpression("LatestDeliveryTime", targetDepth))
+              {
+                context.Read();
+                response.LatestDeliveryTime = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
+              if (context.TestExpression("LatestNotificationTime", targetDepth))
+              {
+                context.Read();
+                response.LatestNotificationTime = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
+              if (context.TestExpression("StartLoggingTime", targetDepth))
+              {
+                context.Read();
+                response.StartLoggingTime = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
+              if (context.TestExpression("StopLoggingTime", targetDepth))
+              {
+                context.Read();
+                response.StopLoggingTime = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
               if (context.TestExpression("LatestDeliveryAttemptTime", targetDepth))
               {
                 context.Read();
                 response.LatestDeliveryAttemptTime = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("LatestDeliveryAttemptSucceeded", targetDepth))
-              {
-                context.Read();
-                response.LatestDeliveryAttemptSucceeded = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
@@ -92,6 +113,13 @@
               {
                 context.Read();
                 response.LatestNotificationAttemptSucceeded = StringUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
+              if (context.TestExpression("LatestDeliveryAttemptSucceeded", targetDepth))
+              {
+                context.Read();
+                response.LatestDeliveryAttemptSucceeded = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
@@ -122,11 +150,6 @@
         {
           ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);                    
           
-          if (errorResponse.Code != null && errorResponse.Code.Equals("InternalErrorException"))
-          {
-            return new InternalErrorException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-          }
-  
           if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidTrailNameException"))
           {
             return new InvalidTrailNameException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);

@@ -29,6 +29,7 @@ namespace Amazon.CloudFront.Model
         private bool? queryString;
         private CookiePreference cookies;
 
+
         /// <summary>
         /// Indicates whether you want CloudFront to forward query strings to the origin that is associated with this cache behavior. If so, specify
         /// true; if not, specify false.

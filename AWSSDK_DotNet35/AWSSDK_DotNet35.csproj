@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{40E91E2D-70F3-463D-9E3E-408AE2A70BA8}</ProjectGuid>
+    <ProjectGuid>{65A7C180-38A6-48F7-B9A9-3D0322E5DEAF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>AWSSDK</RootNamespace>
@@ -1089,6 +1089,7 @@
     <Compile Include="Amazon.CloudFront\Model\ActiveTrustedSigners.cs" />
     <Compile Include="Amazon.CloudFront\Model\Aliases.cs" />
     <Compile Include="Amazon.CloudFront\Model\AllowedMethods.cs" />
+    <Compile Include="Amazon.CloudFront\Model\AmazonCloudFrontRequest.cs" />
     <Compile Include="Amazon.CloudFront\Model\BatchTooLargeException.cs" />
     <Compile Include="Amazon.CloudFront\Model\CacheBehavior.cs" />
     <Compile Include="Amazon.CloudFront\Model\CacheBehaviors.cs" />
@@ -1130,6 +1131,7 @@
     <Compile Include="Amazon.CloudFront\Model\DistributionNotDisabledException.cs" />
     <Compile Include="Amazon.CloudFront\Model\DistributionSummary.cs" />
     <Compile Include="Amazon.CloudFront\Model\ForwardedValues.cs" />
+    <Compile Include="Amazon.CloudFront\Model\GeoRestriction.cs" />
     <Compile Include="Amazon.CloudFront\Model\GetCloudFrontOriginAccessIdentityConfigRequest.cs" />
     <Compile Include="Amazon.CloudFront\Model\GetCloudFrontOriginAccessIdentityConfigResponse.cs" />
     <Compile Include="Amazon.CloudFront\Model\GetCloudFrontOriginAccessIdentityConfigResult.cs" />
@@ -1187,6 +1189,7 @@
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\DistributionSummaryUnmarshaller.cs" />
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\DistributionUnmarshaller.cs" />
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\ForwardedValuesUnmarshaller.cs" />
+    <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\GeoRestrictionUnmarshaller.cs" />
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\GetCloudFrontOriginAccessIdentityConfigRequestMarshaller.cs" />
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\GetCloudFrontOriginAccessIdentityConfigResponseUnmarshaller.cs" />
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\GetCloudFrontOriginAccessIdentityRequestMarshaller.cs" />
@@ -1218,6 +1221,7 @@
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\OriginsUnmarshaller.cs" />
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\OriginUnmarshaller.cs" />
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\PathsUnmarshaller.cs" />
+    <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\RestrictionsUnmarshaller.cs" />
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\S3OriginConfigUnmarshaller.cs" />
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\S3OriginUnmarshaller.cs" />
     <Compile Include="Amazon.CloudFront\Model\Internal\MarshallTransformations\SignerUnmarshaller.cs" />
@@ -1242,7 +1246,9 @@
     <Compile Include="Amazon.CloudFront\Model\InvalidDefaultRootObjectException.cs" />
     <Compile Include="Amazon.CloudFront\Model\InvalidErrorCodeException.cs" />
     <Compile Include="Amazon.CloudFront\Model\InvalidForwardCookiesException.cs" />
+    <Compile Include="Amazon.CloudFront\Model\InvalidGeoRestrictionParameterException.cs" />
     <Compile Include="Amazon.CloudFront\Model\InvalidIfMatchVersionException.cs" />
+    <Compile Include="Amazon.CloudFront\Model\InvalidLocationCodeException.cs" />
     <Compile Include="Amazon.CloudFront\Model\InvalidOriginAccessIdentityException.cs" />
     <Compile Include="Amazon.CloudFront\Model\InvalidOriginException.cs" />
     <Compile Include="Amazon.CloudFront\Model\InvalidRelativePathException.cs" />
@@ -1273,6 +1279,7 @@
     <Compile Include="Amazon.CloudFront\Model\Origins.cs" />
     <Compile Include="Amazon.CloudFront\Model\Paths.cs" />
     <Compile Include="Amazon.CloudFront\Model\PreconditionFailedException.cs" />
+    <Compile Include="Amazon.CloudFront\Model\Restrictions.cs" />
     <Compile Include="Amazon.CloudFront\Model\S3Origin.cs" />
     <Compile Include="Amazon.CloudFront\Model\S3OriginConfig.cs" />
     <Compile Include="Amazon.CloudFront\Model\Signer.cs" />
@@ -5947,6 +5954,7 @@
     <Compile Include="Amazon.ElasticTranscoder\Model\AccessDeniedException.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\AmazonElasticTranscoderRequest.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\Artwork.cs" />
+    <Compile Include="Amazon.ElasticTranscoder\Model\AudioCodecOptions.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\AudioParameters.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\CancelJobRequest.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\CancelJobResponse.cs" />
@@ -5972,6 +5980,7 @@
     <Compile Include="Amazon.ElasticTranscoder\Model\IncompatibleVersionException.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\InternalServiceException.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\Internal\MarshallTransformations\ArtworkUnmarshaller.cs" />
+    <Compile Include="Amazon.ElasticTranscoder\Model\Internal\MarshallTransformations\AudioCodecOptionsUnmarshaller.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\Internal\MarshallTransformations\AudioParametersUnmarshaller.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\Internal\MarshallTransformations\CancelJobRequestMarshaller.cs" />
     <Compile Include="Amazon.ElasticTranscoder\Model\Internal\MarshallTransformations\CancelJobResponseUnmarshaller.cs" />
@@ -9872,6 +9881,7 @@
     <Compile Include="Amazon.Runtime\Internal\Auth\AWS3Signer.cs" />
     <Compile Include="Amazon.Runtime\Internal\Auth\AWS4Signer.cs" />
     <Compile Include="Amazon.Runtime\Internal\Auth\CloudFrontSigner.cs" />
+    <Compile Include="Amazon.Runtime\Internal\Auth\EC2Signer.cs" />
     <Compile Include="Amazon.Runtime\Internal\Auth\QueryStringSigner.cs" />
     <Compile Include="Amazon.Runtime\Internal\Auth\S3Signer.cs" />
     <Compile Include="Amazon.Runtime\Internal\Auth\SignatureException.cs" />

@@ -91,14 +91,19 @@ namespace Amazon
         public static readonly RegionEndpoint APSoutheast2 = NewEndpoint("ap-southeast-2", "Asia Pacific (Sydney)");
 
         /// <summary>
-        /// The South America (Sao Paulo)endpoint.
+        /// The South America (Sao Paulo) endpoint.
         /// </summary>
         public static readonly RegionEndpoint SAEast1 = NewEndpoint("sa-east-1", "South America (Sao Paulo)");
 
         /// <summary>
-        /// The US GovCloud West (Oregon)endpoint.
+        /// The US GovCloud West (Oregon) endpoint.
         /// </summary>
         public static readonly RegionEndpoint USGovCloudWest1 = NewEndpoint("us-gov-west-1", "US GovCloud West (Oregon)");
+
+        /// <summary>
+        /// The China (Beijing) endpoint.
+        /// </summary>
+        public static readonly RegionEndpoint CNNorth1 = NewEndpoint("cn-north-1", "China (Beijing)", "amazonaws.com.cn");
 
         // Creates a new RegionEndpoint and stores it in the hash
         private static RegionEndpoint NewEndpoint(string systemName, string displayName)
@@ -108,6 +113,14 @@ namespace Amazon
             return regionEndpoint;
         }
 
+        // Creates a new RegionEndpoint and stores it in the hash, uses a non-standard domain
+        private static RegionEndpoint NewEndpoint(string systemName, string displayName, string domain)
+        {
+            var regionEndpoint = new RegionEndpoint(systemName, displayName);
+            regionEndpoint.regionDomain = domain;
+            hashBySystemName.Add(regionEndpoint.SystemName, regionEndpoint);
+            return regionEndpoint;
+        }
 
         /// <summary>
         /// Enumerate through all the regions.
@@ -138,7 +151,9 @@ namespace Amazon
                     return GetBySystemName(systemName);
                 }
 
-                throw new ArgumentException(string.Format(CultureInfo.InvariantCulture, "No region found for name {0}.", systemName), "systemName");
+                if (systemName.StartsWith("cn-"))
+                    return NewEndpoint(systemName, "China (Unknown)", "amazonaws.com.cn");
+                return NewEndpoint(systemName, "Unknown");
             }
 
             return region;
@@ -226,12 +241,16 @@ namespace Amazon
                 {
                     var regionSystemName = xmlRegion.Element("Name").Value;
 
+                    var regionDomainNode = xmlRegion.Element("Domain");
+
                     RegionEndpoint region = null;
                     // This version of the SDK doesn't have a constant yet for the new region
                     // so go ahead and add a new region that users can lookup by it's system name.
                     if (!RegionEndpoint.hashBySystemName.TryGetValue(regionSystemName, out region))
                     {
                         region = new RegionEndpoint(regionSystemName, regionSystemName);
+                        if (regionDomainNode != null)
+                            region.regionDomain = regionDomainNode.Value;
                         RegionEndpoint.hashBySystemName[regionSystemName] = region;
                     }
 
@@ -248,8 +267,6 @@ namespace Amazon
                         bool http = false;
                         if (xmlEndpoint.Element("Http") is XElement)
                             http = bool.Parse(xmlEndpoint.Element("Http").Value);
-
-
 
                         if (region.endpoints == null)
                             region.endpoints = new Dictionary<string, Endpoint>();
@@ -280,6 +297,7 @@ namespace Amazon
 
         #endregion
 
+        string regionDomain = "amazonaws.com";
         Dictionary<string, Endpoint> endpoints;
         private RegionEndpoint(string systemName, string displayName)
         {
@@ -317,7 +335,7 @@ namespace Amazon
                 RegionEndpoint.LoadEndpointDefinitionFromEmbeddedResource();
 
             Endpoint endpoint = null;
-            if (!this.endpoints.TryGetValue(serviceName, out endpoint))
+            if (this.endpoints !=null && !this.endpoints.TryGetValue(serviceName, out endpoint))
             {
                 // If the endpoint is not found check to see if downloading the latest definitions from the web
                 // contains a definition for the endpoint.
@@ -326,11 +344,14 @@ namespace Amazon
                     LoadEndpointDefinitionFromWeb();
                     return GetEndpointForService(serviceName);
                 }
-
-                throw new ArgumentException(string.Format(CultureInfo.InvariantCulture, "No endpoint found for service {0} for region {1}.", serviceName, this.DisplayName), "serviceName");
             }
 
-            return endpoint;
+            return endpoint ?? GuessEndpointForService(serviceName);
+        }
+
+        public Endpoint GuessEndpointForService(string serviceName)
+        {
+            return new Endpoint(String.Format("{0}.{1}.{2}", serviceName, SystemName, regionDomain), true, false);
         }
 
         public override string ToString()

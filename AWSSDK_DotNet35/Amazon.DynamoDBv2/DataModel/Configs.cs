@@ -109,6 +109,9 @@ namespace Amazon.DynamoDBv2.DataModel
         /// This value is optional if the index name can be inferred from the query call.
         /// </summary>
         public string IndexName { get; set; }
+
+        // Checks if the IndexName is set on the config
+        internal bool IsIndexOperation { get { return !string.IsNullOrEmpty(IndexName); } }
     }
 
     /// <summary>

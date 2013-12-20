@@ -275,6 +275,22 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
                             writer.WritePropertyName("Channels");
                             writer.Write(audio.Channels);
                         }
+
+                        if (audio != null) 
+                        {
+                            AudioCodecOptions codecOptions = audio.CodecOptions;
+                            if (codecOptions != null)
+                            {
+                                writer.WritePropertyName("CodecOptions");
+                                writer.WriteObjectStart();
+                                if (codecOptions != null && codecOptions.IsSetProfile()) 
+                                {
+                                    writer.WritePropertyName("Profile");
+                                    writer.Write(codecOptions.Profile);
+                                }
+                                writer.WriteObjectEnd();
+                            }
+                        }
                         writer.WriteObjectEnd();
                     }
                 }

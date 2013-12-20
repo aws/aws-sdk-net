@@ -27,10 +27,11 @@ namespace Amazon.CloudFront.Model
     /// Container for the parameters to the CreateInvalidation operation.
     /// <para> Create a new invalidation. </para>
     /// </summary>
-    public partial class CreateInvalidationRequest : AmazonWebServiceRequest
+    public partial class CreateInvalidationRequest : AmazonCloudFrontRequest
     {
         private string distributionId;
         private InvalidationBatch invalidationBatch;
+
 
         /// <summary>
         /// The distribution's id.

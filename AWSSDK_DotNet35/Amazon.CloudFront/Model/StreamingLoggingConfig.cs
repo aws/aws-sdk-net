@@ -30,6 +30,7 @@ namespace Amazon.CloudFront.Model
         private string bucket;
         private string prefix;
 
+
         /// <summary>
         /// Specifies whether you want CloudFront to save access logs to an Amazon S3 bucket. If you do not want to enable logging when you create a
         /// streaming distribution or if you want to disable logging for an existing streaming distribution, specify false for Enabled, and specify

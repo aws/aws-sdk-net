@@ -29,6 +29,7 @@ namespace Amazon.CloudFront.Model
         private ItemSelection forward;
         private CookieNames whitelistedNames;
 
+
         /// <summary>
         /// Use this element to specify whether you want CloudFront to forward cookies to the origin that is associated with this cache behavior. You
         /// can specify all, none or whitelist. If you choose All, CloudFront forwards all cookies regardless of how many your application uses.

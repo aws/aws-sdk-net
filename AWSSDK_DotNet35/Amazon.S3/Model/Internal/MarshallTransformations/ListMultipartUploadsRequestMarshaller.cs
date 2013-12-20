@@ -44,13 +44,14 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             request.HttpMethod = "GET";
               
             Dictionary<string, string> queryParameters = new Dictionary<string, string>();
-            string uriResourcePath = "/{Bucket}/?uploads;prefix={Prefix};delimiter={Delimiter};max-uploads={MaxUploads};key-marker={KeyMarker};upload-id-marker={UploadIdMarker}"; 
+            string uriResourcePath = "/{Bucket}/?uploads;prefix={Prefix};delimiter={Delimiter};max-uploads={MaxUploads};key-marker={KeyMarker};upload-id-marker={UploadIdMarker};encoding-type={Encoding}"; 
             uriResourcePath = uriResourcePath.Replace("{Bucket}", listMultipartUploadsRequest.IsSetBucketName() ? S3Transforms.ToStringValue(listMultipartUploadsRequest.BucketName) : "" ); 
             uriResourcePath = uriResourcePath.Replace("{Delimiter}", listMultipartUploadsRequest.IsSetDelimiter() ? S3Transforms.ToStringValue(listMultipartUploadsRequest.Delimiter) : "" ); 
             uriResourcePath = uriResourcePath.Replace("{KeyMarker}", listMultipartUploadsRequest.IsSetKeyMarker() ? S3Transforms.ToStringValue(listMultipartUploadsRequest.KeyMarker) : "" ); 
             uriResourcePath = uriResourcePath.Replace("{MaxUploads}", listMultipartUploadsRequest.IsSetMaxUploads() ? S3Transforms.ToStringValue(listMultipartUploadsRequest.MaxUploads) : "" ); 
             uriResourcePath = uriResourcePath.Replace("{Prefix}", listMultipartUploadsRequest.IsSetPrefix() ? S3Transforms.ToStringValue(listMultipartUploadsRequest.Prefix) : "" ); 
-            uriResourcePath = uriResourcePath.Replace("{UploadIdMarker}", listMultipartUploadsRequest.IsSetUploadIdMarker() ? S3Transforms.ToStringValue(listMultipartUploadsRequest.UploadIdMarker) : "" ); 
+            uriResourcePath = uriResourcePath.Replace("{UploadIdMarker}", listMultipartUploadsRequest.IsSetUploadIdMarker() ? S3Transforms.ToStringValue(listMultipartUploadsRequest.UploadIdMarker) : "" );
+            uriResourcePath = uriResourcePath.Replace("{Encoding}", listMultipartUploadsRequest.IsSetEncoding() ? S3Transforms.ToStringValue(listMultipartUploadsRequest.Encoding) : "");
             string path = uriResourcePath;
 
 
@@ -60,9 +61,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 string queryString = uriResourcePath.Substring(queryIndex + 1);
                 path = uriResourcePath.Substring(0, queryIndex);
 
-                S3Transforms.BuildQueryParameterMap(request, queryParameters, queryString);
+                S3Transforms.BuildQueryParameterMap(request, queryParameters, queryString,
+                                                    new string[] { "prefix", "delimiter", "max-uploads", "key-marker", "upload-id-marker", "encoding-type" });
             }
-            
+
             request.CanonicalResource = S3Transforms.GetCanonicalResource(path, queryParameters);
             uriResourcePath = S3Transforms.FormatResourcePath(path, queryParameters);
             

@@ -29,6 +29,7 @@ namespace Amazon.CloudFront.Model
         private int? quantity;
         private List<CustomErrorResponse> items = new List<CustomErrorResponse>();
 
+
         /// <summary>
         /// The number of custom error responses for this distribution.
         ///  

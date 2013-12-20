@@ -29,6 +29,7 @@ namespace Amazon.CloudFront.Model
         private int? quantity;
         private List<string> items = new List<string>();
 
+
         /// <summary>
         /// The number of active CloudFront key pairs for AwsAccountNumber.
         ///  

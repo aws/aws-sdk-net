@@ -44,9 +44,8 @@ namespace ThirdParty.Json.LitJson
     public class JsonReader
     {
         #region Fields
-        private static IDictionary<int, IDictionary<int, int[]>> parse_table;
 
-        private Stack<int>    automaton_stack;
+        private Stack<JsonToken> depth = new Stack<JsonToken>();
         private int           current_input;
         private int           current_symbol;
         private bool          end_of_json;
@@ -92,10 +91,6 @@ namespace ThirdParty.Json.LitJson
 
 
         #region Constructors
-        static JsonReader ()
-        {
-            PopulateParseTable ();
-        }
 
         public JsonReader (string json_text) :
             this (new StringReader (json_text), true)
@@ -116,9 +111,6 @@ namespace ThirdParty.Json.LitJson
             parser_return = false;
 
             read_started = false;
-            automaton_stack = new Stack<int> ();
-            automaton_stack.Push ((int) ParserToken.End);
-            automaton_stack.Push ((int) ParserToken.Text);
 
             lexer = new Lexer (reader);
 
@@ -130,125 +122,6 @@ namespace ThirdParty.Json.LitJson
         }
         #endregion
 
-
-        #region Static Methods
-        private static void PopulateParseTable ()
-        {
-            parse_table = new Dictionary<int, IDictionary<int, int[]>> ();
-
-            TableAddRow (ParserToken.Array);
-            TableAddCol (ParserToken.Array, '[',
-                         '[',
-                         (int) ParserToken.ArrayPrime);
-
-            TableAddRow (ParserToken.ArrayPrime);
-            TableAddCol (ParserToken.ArrayPrime, '"',
-                         (int) ParserToken.Value,
-
-                         (int) ParserToken.ValueRest,
-                         ']');
-            TableAddCol (ParserToken.ArrayPrime, '[',
-                         (int) ParserToken.Value,
-                         (int) ParserToken.ValueRest,
-                         ']');
-            TableAddCol (ParserToken.ArrayPrime, ']',
-                         ']');
-            TableAddCol (ParserToken.ArrayPrime, '{',
-                         (int) ParserToken.Value,
-                         (int) ParserToken.ValueRest,
-                         ']');
-            TableAddCol (ParserToken.ArrayPrime, (int) ParserToken.Number,
-                         (int) ParserToken.Value,
-                         (int) ParserToken.ValueRest,
-                         ']');
-            TableAddCol (ParserToken.ArrayPrime, (int) ParserToken.True,
-                         (int) ParserToken.Value,
-                         (int) ParserToken.ValueRest,
-                         ']');
-            TableAddCol (ParserToken.ArrayPrime, (int) ParserToken.False,
-                         (int) ParserToken.Value,
-                         (int) ParserToken.ValueRest,
-                         ']');
-            TableAddCol (ParserToken.ArrayPrime, (int) ParserToken.Null,
-                         (int) ParserToken.Value,
-                         (int) ParserToken.ValueRest,
-                         ']');
-
-            TableAddRow (ParserToken.Object);
-            TableAddCol (ParserToken.Object, '{',
-                         '{',
-                         (int) ParserToken.ObjectPrime);
-
-            TableAddRow (ParserToken.ObjectPrime);
-            TableAddCol (ParserToken.ObjectPrime, '"',
-                         (int) ParserToken.Pair,
-                         (int) ParserToken.PairRest,
-                         '}');
-            TableAddCol (ParserToken.ObjectPrime, '}',
-                         '}');
-
-            TableAddRow (ParserToken.Pair);
-            TableAddCol (ParserToken.Pair, '"',
-                         (int) ParserToken.String,
-                         ':',
-                         (int) ParserToken.Value);
-
-            TableAddRow (ParserToken.PairRest);
-            TableAddCol (ParserToken.PairRest, ',',
-                         ',',
-                         (int) ParserToken.Pair,
-                         (int) ParserToken.PairRest);
-            TableAddCol (ParserToken.PairRest, '}',
-                         (int) ParserToken.Epsilon);
-
-            TableAddRow (ParserToken.String);
-            TableAddCol (ParserToken.String, '"',
-                         '"',
-                         (int) ParserToken.CharSeq,
-                         '"');
-
-            TableAddRow (ParserToken.Text);
-            TableAddCol (ParserToken.Text, '[',
-                         (int) ParserToken.Array);
-            TableAddCol (ParserToken.Text, '{',
-                         (int) ParserToken.Object);
-
-            TableAddRow (ParserToken.Value);
-            TableAddCol (ParserToken.Value, '"',
-                         (int) ParserToken.String);
-            TableAddCol (ParserToken.Value, '[',
-                         (int) ParserToken.Array);
-            TableAddCol (ParserToken.Value, '{',
-                         (int) ParserToken.Object);
-            TableAddCol (ParserToken.Value, (int) ParserToken.Number,
-                         (int) ParserToken.Number);
-            TableAddCol (ParserToken.Value, (int) ParserToken.True,
-                         (int) ParserToken.True);
-            TableAddCol (ParserToken.Value, (int) ParserToken.False,
-                         (int) ParserToken.False);
-            TableAddCol (ParserToken.Value, (int) ParserToken.Null,
-                         (int) ParserToken.Null);
-
-            TableAddRow (ParserToken.ValueRest);
-            TableAddCol (ParserToken.ValueRest, ',',
-                         ',',
-                         (int) ParserToken.Value,
-                         (int) ParserToken.ValueRest);
-            TableAddCol (ParserToken.ValueRest, ']',
-                         (int) ParserToken.Epsilon);
-        }
-
-        private static void TableAddCol (ParserToken row, int col,
-                                         params int[] symbols)
-        {
-            parse_table[(int) row].Add (col, symbols);
-        }
-
-        private static void TableAddRow (ParserToken rule)
-        {
-            parse_table.Add ((int) rule, new Dictionary<int, int[]> ());
-        }
-        #endregion
 
 
         #region Private Methods
@@ -380,77 +253,113 @@ namespace ThirdParty.Json.LitJson
 
             reader = null;
         }
-
-        public bool Read ()
+        
+        public bool Read()
         {
             if (end_of_input)
                 return false;
 
-            if (end_of_json) {
+            if (end_of_json)
+            {
                 end_of_json = false;
-                automaton_stack.Clear ();
-                automaton_stack.Push ((int) ParserToken.End);
-                automaton_stack.Push ((int) ParserToken.Text);
             }
 
+            token = JsonToken.None;
             parser_in_string = false;
-            parser_return    = false;
+            parser_return = false;
 
-            token       = JsonToken.None;
-            token_value = null;
-
-            if (! read_started) {
+            // Check if the first read call. If so then do an extra ReadToken because Read assumes that the previous
+            // call to Read has already called ReadToken.
+            if (!read_started)
+            {
                 read_started = true;
 
-                if (! ReadToken ())
+                if (!ReadToken())
                     return false;
             }
 
+            do
+            {
+                current_symbol = current_input;
+                ProcessSymbol();
+                if (parser_return)
+                {
+                    if (this.token == JsonToken.ObjectStart || this.token == JsonToken.ArrayStart)
+                    {
+                        depth.Push(this.token);
+                    }
+                    else if (this.token == JsonToken.ObjectEnd || this.token == JsonToken.ArrayEnd)
+                    {
+                        // Clear out property name if is on top. This could happen if the value for the property was null.
+                        if (depth.Peek() == JsonToken.PropertyName)
+                            depth.Pop();
 
-            int[] entry_symbols;
+                        // Pop the opening token for this closing token. Make sure it is of the right type otherwise 
+                        // the document is invalid.
+                        var opening = depth.Pop();
+                        if (this.token == JsonToken.ObjectEnd && opening != JsonToken.ObjectStart)
+                            throw new JsonException("Error: Current token is ObjectEnd which does not match the opening " + opening.ToString());
+                        if (this.token == JsonToken.ArrayEnd && opening != JsonToken.ArrayStart)
+                            throw new JsonException("Error: Current token is ArrayEnd which does not match the opening " + opening.ToString());
 
-            while (true) {
-                if (parser_return) {
-                    if (automaton_stack.Peek () == (int) ParserToken.End)
-                        end_of_json = true;
-
-                    return true;
-                }
-
-                current_symbol = automaton_stack.Pop ();
-
-                ProcessSymbol ();
-
-                if (current_symbol == current_input) {
-                    if (! ReadToken ()) {
-                        if (automaton_stack.Peek () != (int) ParserToken.End)
-                            throw new JsonException (
-                                "Input doesn't evaluate to proper JSON text");
-
-                        if (parser_return)
-                            return true;
-
-                        return false;
+                        // If that last element is popped then we reached the end of the JSON object.
+                        if (depth.Count == 0)
+                        {
+                            end_of_json = true;
+                        }
+                    }
+                    // If the top of the stack is an object start and the next read is a string then it must be a property name
+                    // to add to the stack.
+                    else if (depth.Count > 0 && depth.Peek() != JsonToken.PropertyName &&
+                        this.token == JsonToken.String && depth.Peek() == JsonToken.ObjectStart)
+                    {
+                        this.token = JsonToken.PropertyName;
+                        depth.Push(this.token);
                     }
 
-                    continue;
+                    if (
+                        (this.token == JsonToken.ObjectEnd ||
+                        this.token == JsonToken.ArrayEnd ||
+                        this.token == JsonToken.String ||
+                        this.token == JsonToken.Boolean ||
+                        this.token == JsonToken.Double ||
+                        this.token == JsonToken.Int ||
+                        this.token == JsonToken.Long ||
+                        this.token == JsonToken.Null ||
+                        this.token == JsonToken.String
+                        ))
+                    {
+                        // If we found a value but we are not in an array or object then the document is an invalid json document.
+                        if (depth.Count == 0)
+                        {
+                            if (this.token != JsonToken.ArrayEnd && this.token != JsonToken.ObjectEnd)
+                            {
+                                throw new JsonException("Value without enclosing object or array");
+                            }
+                        }
+                        // The valud of the property has been processed so pop the property name from the stack.
+                        else if (depth.Peek() == JsonToken.PropertyName)
+                        {
+                            depth.Pop();
+                        }
+                    }
+
+                    // Read the next token that will be processed the next time the Read method is called.
+                    // This is done ahead of the next read so we can detect if we are at the end of the json document.
+                    // Otherwise EndOfInput would not return true until an attempt to read was made.
+                    if (!ReadToken() && depth.Count != 0)
+                        throw new JsonException("Incomplete JSON Document");
+                    return true;
                 }
+            } while (ReadToken());
 
-                try {
+            // If we reached the end of the document but there is still elements left in the depth stack then
+            // the document is invalid JSON.
+            if (depth.Count != 0)
+                throw new JsonException("Incomplete JSON Document");
 
-                    entry_symbols =
-                        parse_table[current_symbol][current_input];
-
-                } catch (KeyNotFoundException e) {
-                    throw new JsonException ((ParserToken) current_input, e);
-                }
-
-                if (entry_symbols[0] == (int) ParserToken.Epsilon)
-                    continue;
-
-                for (int i = entry_symbols.Length - 1; i >= 0; i--)
-                    automaton_stack.Push (entry_symbols[i]);
-            }
+            end_of_input = true;
+            return false;
         }
 
     }

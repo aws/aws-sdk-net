@@ -68,29 +68,31 @@ namespace Amazon.CloudFront
         /// <returns>The response from the CreateDistribution service method, as returned by AmazonCloudFront.</returns>
         /// 
         /// <exception cref="T:Amazon.CloudFront.Model.TooManyCookieNamesInWhiteListException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidDefaultRootObjectException" />
+        /// <exception cref="T:Amazon.CloudFront.Model.InvalidGeoRestrictionParameterException" />
         /// <exception cref="T:Amazon.CloudFront.Model.InvalidResponseCodeException" />
         /// <exception cref="T:Amazon.CloudFront.Model.MissingBodyException" />
+        /// <exception cref="T:Amazon.CloudFront.Model.InvalidLocationCodeException" />
         /// <exception cref="T:Amazon.CloudFront.Model.TooManyDistributionCNAMEsException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidForwardCookiesException" />
         /// <exception cref="T:Amazon.CloudFront.Model.TooManyDistributionsException" />
         /// <exception cref="T:Amazon.CloudFront.Model.NoSuchOriginException" />
         /// <exception cref="T:Amazon.CloudFront.Model.InconsistentQuantitiesException" />
         /// <exception cref="T:Amazon.CloudFront.Model.InvalidArgumentException" />
         /// <exception cref="T:Amazon.CloudFront.Model.CNAMEAlreadyExistsException" />
         /// <exception cref="T:Amazon.CloudFront.Model.InvalidOriginAccessIdentityException" />
+        /// <exception cref="T:Amazon.CloudFront.Model.TooManyCacheBehaviorsException" />
+        /// <exception cref="T:Amazon.CloudFront.Model.TooManyTrustedSignersException" />
+        /// <exception cref="T:Amazon.CloudFront.Model.InvalidViewerCertificateException" />
+        /// <exception cref="T:Amazon.CloudFront.Model.TooManyOriginsException" />
+        /// <exception cref="T:Amazon.CloudFront.Model.DistributionAlreadyExistsException" />
+        /// <exception cref="T:Amazon.CloudFront.Model.InvalidRequiredProtocolException" />
+        /// <exception cref="T:Amazon.CloudFront.Model.InvalidDefaultRootObjectException" />
+        /// <exception cref="T:Amazon.CloudFront.Model.InvalidForwardCookiesException" />
         /// <exception cref="T:Amazon.CloudFront.Model.TrustedSignerDoesNotExistException" />
         /// <exception cref="T:Amazon.CloudFront.Model.InvalidOriginException" />
         /// <exception cref="T:Amazon.CloudFront.Model.TooManyCertificatesException" />
         /// <exception cref="T:Amazon.CloudFront.Model.InvalidRelativePathException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.TooManyCacheBehaviorsException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.TooManyTrustedSignersException" />
         /// <exception cref="T:Amazon.CloudFront.Model.InvalidErrorCodeException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidViewerCertificateException" />
         /// <exception cref="T:Amazon.CloudFront.Model.AccessDeniedException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.TooManyOriginsException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.DistributionAlreadyExistsException" />
-        /// <exception cref="T:Amazon.CloudFront.Model.InvalidRequiredProtocolException" />
 		CreateDistributionResponse CreateDistribution(CreateDistributionRequest request);
 
         /// <summary>
@@ -713,9 +715,11 @@ namespace Amazon.CloudFront
         /// <returns>The response from the UpdateDistribution service method, as returned by AmazonCloudFront.</returns>
         /// 
         /// <exception cref="T:Amazon.CloudFront.Model.TooManyCookieNamesInWhiteListException" />
+        /// <exception cref="T:Amazon.CloudFront.Model.InvalidGeoRestrictionParameterException" />
         /// <exception cref="T:Amazon.CloudFront.Model.InvalidResponseCodeException" />
         /// <exception cref="T:Amazon.CloudFront.Model.MissingBodyException" />
         /// <exception cref="T:Amazon.CloudFront.Model.TooManyDistributionCNAMEsException" />
+        /// <exception cref="T:Amazon.CloudFront.Model.InvalidLocationCodeException" />
         /// <exception cref="T:Amazon.CloudFront.Model.NoSuchOriginException" />
         /// <exception cref="T:Amazon.CloudFront.Model.PreconditionFailedException" />
         /// <exception cref="T:Amazon.CloudFront.Model.InconsistentQuantitiesException" />

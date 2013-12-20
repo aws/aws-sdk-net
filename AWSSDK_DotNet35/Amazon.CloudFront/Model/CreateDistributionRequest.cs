@@ -27,9 +27,10 @@ namespace Amazon.CloudFront.Model
     /// Container for the parameters to the CreateDistribution operation.
     /// <para> Create a new distribution. </para>
     /// </summary>
-    public partial class CreateDistributionRequest : AmazonWebServiceRequest
+    public partial class CreateDistributionRequest : AmazonCloudFrontRequest
     {
         private DistributionConfig distributionConfig;
+
 
         /// <summary>
         /// The distribution's configuration information.

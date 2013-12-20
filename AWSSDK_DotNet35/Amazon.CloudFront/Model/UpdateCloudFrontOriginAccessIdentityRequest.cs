@@ -27,11 +27,12 @@ namespace Amazon.CloudFront.Model
     /// Container for the parameters to the UpdateCloudFrontOriginAccessIdentity operation.
     /// <para> Update an origin access identity. </para>
     /// </summary>
-    public partial class UpdateCloudFrontOriginAccessIdentityRequest : AmazonWebServiceRequest
+    public partial class UpdateCloudFrontOriginAccessIdentityRequest : AmazonCloudFrontRequest
     {
         private CloudFrontOriginAccessIdentityConfig cloudFrontOriginAccessIdentityConfig;
         private string id;
         private string ifMatch;
+
 
         /// <summary>
         /// The identity's configuration information.

@@ -30,6 +30,7 @@ namespace Amazon.CloudFront.Model
         private string awsAccountNumber;
         private KeyPairIds keyPairIds;
 
+
         /// <summary>
         /// Specifies an AWS account that can create signed URLs. Values: self, which indicates that the AWS account that was used to create the
         /// distribution can created signed URLs, or an AWS account number. Omit the dashes in the account number.

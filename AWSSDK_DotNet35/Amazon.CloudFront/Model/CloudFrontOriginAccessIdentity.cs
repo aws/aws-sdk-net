@@ -30,6 +30,7 @@ namespace Amazon.CloudFront.Model
         private string s3CanonicalUserId;
         private CloudFrontOriginAccessIdentityConfig cloudFrontOriginAccessIdentityConfig;
 
+
         /// <summary>
         /// The ID for the origin access identity. For example: E74FTE3AJFJ256A.
         ///  

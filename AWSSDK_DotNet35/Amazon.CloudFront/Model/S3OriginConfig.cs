@@ -29,6 +29,7 @@ namespace Amazon.CloudFront.Model
         
         private string originAccessIdentity;
 
+
         /// <summary>
         /// The CloudFront origin access identity to associate with the origin. Use an origin access identity to configure the origin so that end users
         /// can only access objects in an Amazon S3 bucket through CloudFront. If you want end users to be able to access objects using either the

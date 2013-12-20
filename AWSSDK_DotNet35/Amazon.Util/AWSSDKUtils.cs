@@ -38,7 +38,7 @@ namespace Amazon.Util
         internal const string DefaultRegion = "us-east-1";
         internal const string DefaultGovRegion = "us-gov-west-1";
 
-        internal const string SDKVersionNumber = "2.0.3.1";
+        internal const string SDKVersionNumber = "2.0.4.0";
 
         internal const string IfModifiedSinceHeader = "IfModifiedSince";
         internal const string IfMatchHeader = "If-Match";
@@ -135,9 +135,15 @@ namespace Amazon.Util
         public const string ISO8601BasicDateTimeFormat = "yyyyMMddTHHmmssZ";
 
         /// <summary>
+        /// The ISO8601 basic date format. Used during AWS4 signature computation.
+        /// </summary>
+        public const string ISO8601BasicDateFormat = "yyyyMMdd";
+
+        /// <summary>
         /// The RFC822Date Format string. Used when parsing date objects
         /// </summary>
         public const string RFC822DateFormat = "ddd, dd MMM yyyy HH:mm:ss \\G\\M\\T";
+
 
         #endregion
 
@@ -307,7 +313,7 @@ namespace Amazon.Util
                 return serviceAndRegion.Substring(0, queueIndex - 1);
 
             char separator;
-            if (serviceAndRegion.StartsWith("s3", StringComparison.Ordinal))
+            if (serviceAndRegion.StartsWith("s3-", StringComparison.Ordinal))
                 separator = '-';
             else
                 separator = '.';

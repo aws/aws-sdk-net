@@ -43,7 +43,15 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
             request.Headers["X-Amz-Target"] = target;
             request.HttpMethod = "GET";
               
-            string uriResourcePath = "2012-09-25/presets"; 
+            string uriResourcePath = "2012-09-25/presets?Ascending={Ascending};PageToken={PageToken}"; 
+            if(listPresetsRequest.IsSetAscending())
+                uriResourcePath = uriResourcePath.Replace("{Ascending}", StringUtils.FromString(listPresetsRequest.Ascending) ); 
+            else
+                uriResourcePath = uriResourcePath.Replace("{Ascending}", "" ); 
+            if(listPresetsRequest.IsSetPageToken())
+                uriResourcePath = uriResourcePath.Replace("{PageToken}", StringUtils.FromString(listPresetsRequest.PageToken) ); 
+            else
+                uriResourcePath = uriResourcePath.Replace("{PageToken}", "" ); 
             
             if (uriResourcePath.Contains("?")) 
             {

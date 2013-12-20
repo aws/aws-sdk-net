@@ -536,6 +536,38 @@ namespace Amazon.S3
         }
     }
 
+    /// <summary>
+    /// A list of all encoding types.
+    /// </summary>
+    public sealed class EncodingType : ConstantClass
+    {
+        /// <summary>
+        /// Url encoding.
+        /// </summary>
+        public static readonly EncodingType Url = new EncodingType("Url");
+
+        public EncodingType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static EncodingType FindValue(string value)
+        {
+            return FindValue<EncodingType>(value);
+        }
+
+        public static implicit operator EncodingType(string value)
+        {
+            return FindValue(value);
+        }
+
+    }
+
 
     internal enum S3QueryParameter
     {

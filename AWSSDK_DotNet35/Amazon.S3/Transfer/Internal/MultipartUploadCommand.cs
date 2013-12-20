@@ -90,6 +90,14 @@ namespace Amazon.S3.Transfer.Internal
             else
                 this._partSize = calculatePartSize(this._contentLength);
 
+            if (fileTransporterRequest.InputStream != null)
+            {
+                if (fileTransporterRequest.AutoResetStreamPosition && fileTransporterRequest.InputStream.CanSeek)
+                {
+                    fileTransporterRequest.InputStream.Seek(0, SeekOrigin.Begin);
+                }
+            }
+
             _logger.DebugFormat("Upload part size {0}.", this._partSize);
         }
 

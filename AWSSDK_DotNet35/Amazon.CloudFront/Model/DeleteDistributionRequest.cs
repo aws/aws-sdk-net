@@ -27,10 +27,11 @@ namespace Amazon.CloudFront.Model
     /// Container for the parameters to the DeleteDistribution operation.
     /// <para> Delete a distribution. </para>
     /// </summary>
-    public partial class DeleteDistributionRequest : AmazonWebServiceRequest
+    public partial class DeleteDistributionRequest : AmazonCloudFrontRequest
     {
         private string id;
         private string ifMatch;
+
 
         /// <summary>
         /// The distribution id.

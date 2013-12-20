@@ -18,13 +18,14 @@ using System.IO;
 using System.Xml;
 using System.Xml.Serialization;
 using System.Text;
-
+using Amazon.Runtime.Internal.Auth;
 using Amazon.S3.Model;
 using Amazon.S3.Util;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Util;
 
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
@@ -88,8 +89,18 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 // Wrap the stream in a stream that has a length
                 Stream streamWithLength = GetStreamWithLength(putObjectRequest.InputStream, putObjectRequest.Headers.ContentLength);
 
+                // MD5Stream is not rewindable, so compute the content hash before wrapping unless it's
+                // already been done
+                if (!request.Headers.ContainsKey(AWS4Signer.XAmzContentSha256))
+                {
+                    var position = streamWithLength.Position;
+                    var hash = CryptoUtilFactory.CryptoInstance.ComputeSHA256Hash(streamWithLength);
+                    streamWithLength.Seek(position, SeekOrigin.Begin);
+                    request.Headers[AWS4Signer.XAmzContentSha256] = AWSSDKUtils.ToHex(hash, true);
+                }
+
                 // Wrap input stream in MD5Stream
-                HashStream hashStream = new MD5Stream(streamWithLength, null, streamWithLength.Length);
+                HashStream hashStream = new MD5Stream(streamWithLength, null, streamWithLength.Length - streamWithLength.Position);
                 putObjectRequest.InputStream = hashStream;
             }
         
@@ -122,7 +133,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             long length = -1;
             try
             {
-                length = baseStream.Length;
+                length = baseStream.Length - baseStream.Position;
             }
             catch (NotSupportedException)
             {

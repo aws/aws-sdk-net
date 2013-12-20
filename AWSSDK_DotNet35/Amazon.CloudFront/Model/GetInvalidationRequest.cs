@@ -27,10 +27,11 @@ namespace Amazon.CloudFront.Model
     /// Container for the parameters to the GetInvalidation operation.
     /// <para> Get the information about an invalidation. </para>
     /// </summary>
-    public partial class GetInvalidationRequest : AmazonWebServiceRequest
+    public partial class GetInvalidationRequest : AmazonCloudFrontRequest
     {
         private string distributionId;
         private string id;
+
 
         /// <summary>
         /// The distribution's id.

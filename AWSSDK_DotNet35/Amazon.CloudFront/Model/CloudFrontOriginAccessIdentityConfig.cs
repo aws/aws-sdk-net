@@ -29,6 +29,7 @@ namespace Amazon.CloudFront.Model
         private string callerReference;
         private string comment;
 
+
         /// <summary>
         /// A unique number that ensures the request can't be replayed. If the CallerReference is new (no matter the content of the
         /// CloudFrontOriginAccessIdentityConfig object), a new origin access identity is created. If the CallerReference is a value you already sent in

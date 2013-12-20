@@ -30,6 +30,7 @@ namespace Amazon.CloudFront.Model
         private DateTime? createTime;
         private string status;
 
+
         /// <summary>
         /// The unique ID for an invalidation request.
         ///  

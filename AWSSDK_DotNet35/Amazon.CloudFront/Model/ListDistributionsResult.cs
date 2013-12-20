@@ -29,6 +29,7 @@ namespace Amazon.CloudFront.Model
         
         private DistributionList distributionList;
 
+
         /// <summary>
         /// The DistributionList type.
         ///  

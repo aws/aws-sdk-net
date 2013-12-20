@@ -29,6 +29,7 @@ namespace Amazon.CloudFront.Model
         
         private StreamingDistributionList streamingDistributionList;
 
+
         /// <summary>
         /// The StreamingDistributionList type.
         ///  

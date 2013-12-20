@@ -26,6 +26,8 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable 0618
+
 namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -75,6 +77,31 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 
+                if (createTrailRequest != null && createTrailRequest.IsSetName()) 
+                {
+                    writer.WritePropertyName("Name");
+                    writer.Write(createTrailRequest.Name);
+                }
+                if (createTrailRequest != null && createTrailRequest.IsSetS3BucketName()) 
+                {
+                    writer.WritePropertyName("S3BucketName");
+                    writer.Write(createTrailRequest.S3BucketName);
+                }
+                if (createTrailRequest != null && createTrailRequest.IsSetS3KeyPrefix()) 
+                {
+                    writer.WritePropertyName("S3KeyPrefix");
+                    writer.Write(createTrailRequest.S3KeyPrefix);
+                }
+                if (createTrailRequest != null && createTrailRequest.IsSetSnsTopicName()) 
+                {
+                    writer.WritePropertyName("SnsTopicName");
+                    writer.Write(createTrailRequest.SnsTopicName);
+                }
+                if (createTrailRequest != null && createTrailRequest.IsSetIncludeGlobalServiceEvents()) 
+                {
+                    writer.WritePropertyName("IncludeGlobalServiceEvents");
+                    writer.Write(createTrailRequest.IncludeGlobalServiceEvents);
+                }
 
                 if (createTrailRequest != null) 
                 {

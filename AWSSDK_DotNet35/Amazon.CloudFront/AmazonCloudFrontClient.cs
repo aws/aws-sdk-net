@@ -288,29 +288,31 @@ namespace Amazon.CloudFront
         /// <returns>The response from the CreateDistribution service method, as returned by AmazonCloudFront.</returns>
         /// 
         /// <exception cref="TooManyCookieNamesInWhiteListException"/>
-        /// <exception cref="InvalidDefaultRootObjectException"/>
+        /// <exception cref="InvalidGeoRestrictionParameterException"/>
         /// <exception cref="InvalidResponseCodeException"/>
         /// <exception cref="MissingBodyException"/>
+        /// <exception cref="InvalidLocationCodeException"/>
         /// <exception cref="TooManyDistributionCNAMEsException"/>
-        /// <exception cref="InvalidForwardCookiesException"/>
         /// <exception cref="TooManyDistributionsException"/>
         /// <exception cref="NoSuchOriginException"/>
         /// <exception cref="InconsistentQuantitiesException"/>
         /// <exception cref="InvalidArgumentException"/>
         /// <exception cref="CNAMEAlreadyExistsException"/>
         /// <exception cref="InvalidOriginAccessIdentityException"/>
+        /// <exception cref="TooManyCacheBehaviorsException"/>
+        /// <exception cref="TooManyTrustedSignersException"/>
+        /// <exception cref="InvalidViewerCertificateException"/>
+        /// <exception cref="TooManyOriginsException"/>
+        /// <exception cref="DistributionAlreadyExistsException"/>
+        /// <exception cref="InvalidRequiredProtocolException"/>
+        /// <exception cref="InvalidDefaultRootObjectException"/>
+        /// <exception cref="InvalidForwardCookiesException"/>
         /// <exception cref="TrustedSignerDoesNotExistException"/>
         /// <exception cref="InvalidOriginException"/>
         /// <exception cref="TooManyCertificatesException"/>
         /// <exception cref="InvalidRelativePathException"/>
-        /// <exception cref="TooManyCacheBehaviorsException"/>
-        /// <exception cref="TooManyTrustedSignersException"/>
         /// <exception cref="InvalidErrorCodeException"/>
-        /// <exception cref="InvalidViewerCertificateException"/>
         /// <exception cref="AccessDeniedException"/>
-        /// <exception cref="TooManyOriginsException"/>
-        /// <exception cref="DistributionAlreadyExistsException"/>
-        /// <exception cref="InvalidRequiredProtocolException"/>
         public CreateDistributionResponse CreateDistribution(CreateDistributionRequest createDistributionRequest)
         {
             IAsyncResult asyncResult = invokeCreateDistribution(createDistributionRequest, null, null, true);
@@ -1692,9 +1694,11 @@ namespace Amazon.CloudFront
         /// <returns>The response from the UpdateDistribution service method, as returned by AmazonCloudFront.</returns>
         /// 
         /// <exception cref="TooManyCookieNamesInWhiteListException"/>
+        /// <exception cref="InvalidGeoRestrictionParameterException"/>
         /// <exception cref="InvalidResponseCodeException"/>
         /// <exception cref="MissingBodyException"/>
         /// <exception cref="TooManyDistributionCNAMEsException"/>
+        /// <exception cref="InvalidLocationCodeException"/>
         /// <exception cref="NoSuchOriginException"/>
         /// <exception cref="PreconditionFailedException"/>
         /// <exception cref="InconsistentQuantitiesException"/>

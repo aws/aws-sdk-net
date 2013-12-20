@@ -216,6 +216,17 @@ namespace Amazon.Runtime.Internal.Util
             throw new NotSupportedException("HashStream does not support seeking");
         }
 
+        /// <summary>
+        /// Gets the overridden length used to construct the HashStream
+        /// </summary>
+        public override long Length
+        {
+            get
+            {
+                return this.ExpectedLength;
+            }
+        }
+
         #endregion
 
         #region Public methods

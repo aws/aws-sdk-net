@@ -27,9 +27,10 @@ namespace Amazon.CloudFront.Model
     /// Container for the parameters to the CreateCloudFrontOriginAccessIdentity operation.
     /// <para> Create a new origin access identity. </para>
     /// </summary>
-    public partial class CreateCloudFrontOriginAccessIdentityRequest : AmazonWebServiceRequest
+    public partial class CreateCloudFrontOriginAccessIdentityRequest : AmazonCloudFrontRequest
     {
         private CloudFrontOriginAccessIdentityConfig cloudFrontOriginAccessIdentityConfig;
+
 
         /// <summary>
         /// The origin access identity's configuration information.

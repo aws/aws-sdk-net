@@ -191,7 +191,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// <list type="definition">
         ///     <item>
         ///         <term>Pattern</term>
-        ///         <description>^\d{1,5}([.]\d{0,5})?$</description>
+        ///         <description>^\d{1,5}(\.\d{0,5})?$</description>
         ///     </item>
         /// </list>
         /// </para>
@@ -317,7 +317,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// <summary>
         /// Information about the watermarks that you want Elastic Transcoder to add to the video during transcoding. You can specify up to four
         /// watermarks for each output. Settings for each watermark must be defined in the preset that you specify in <c>Preset</c> for the current
-        /// output. Watermarks are added to the output video in the sequence in which you list them in the job outputâ€�?the first watermark in the list
+        /// output. Watermarks are added to the output video in the sequence in which you list them in the job outputâ€”the first watermark in the list
         /// is added to the output video first, the second watermark in the list is added next, and so on. As a result, if the settings in a preset
         /// cause Elastic Transcoder to place all watermarks in the same location, the second watermark that you add will cover the first one, the third
         /// one will cover the second, and the fourth one will cover the third.

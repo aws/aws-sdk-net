@@ -30,6 +30,7 @@ namespace Amazon.CloudFront.Model
         private Distribution distribution;
         private string eTag;
 
+
         /// <summary>
         /// The distribution's information.
         ///  

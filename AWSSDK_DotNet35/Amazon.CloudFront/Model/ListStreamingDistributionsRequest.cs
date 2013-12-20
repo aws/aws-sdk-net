@@ -27,10 +27,11 @@ namespace Amazon.CloudFront.Model
     /// Container for the parameters to the ListStreamingDistributions operation.
     /// <para> List streaming distributions. </para>
     /// </summary>
-    public partial class ListStreamingDistributionsRequest : AmazonWebServiceRequest
+    public partial class ListStreamingDistributionsRequest : AmazonCloudFrontRequest
     {
         private string marker;
         private string maxItems;
+
 
         /// <summary>
         /// Use this when paginating results to indicate where to begin in your list of streaming distributions. The results include distributions in

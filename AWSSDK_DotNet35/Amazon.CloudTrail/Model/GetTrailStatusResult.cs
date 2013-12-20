@@ -30,10 +30,14 @@ namespace Amazon.CloudTrail.Model
         private bool? isLogging;
         private string latestDeliveryError;
         private string latestNotificationError;
+        private DateTime? latestDeliveryTime;
+        private DateTime? latestNotificationTime;
+        private DateTime? startLoggingTime;
+        private DateTime? stopLoggingTime;
         private string latestDeliveryAttemptTime;
-        private string latestDeliveryAttemptSucceeded;
         private string latestNotificationAttemptTime;
         private string latestNotificationAttemptSucceeded;
+        private string latestDeliveryAttemptSucceeded;
         private string timeLoggingStarted;
         private string timeLoggingStopped;
 
@@ -85,6 +89,50 @@ namespace Amazon.CloudTrail.Model
         {
             return this.latestNotificationError != null;
         }
+        public DateTime LatestDeliveryTime
+        {
+            get { return this.latestDeliveryTime ?? default(DateTime); }
+            set { this.latestDeliveryTime = value; }
+        }
+
+        // Check to see if LatestDeliveryTime property is set
+        internal bool IsSetLatestDeliveryTime()
+        {
+            return this.latestDeliveryTime.HasValue;
+        }
+        public DateTime LatestNotificationTime
+        {
+            get { return this.latestNotificationTime ?? default(DateTime); }
+            set { this.latestNotificationTime = value; }
+        }
+
+        // Check to see if LatestNotificationTime property is set
+        internal bool IsSetLatestNotificationTime()
+        {
+            return this.latestNotificationTime.HasValue;
+        }
+        public DateTime StartLoggingTime
+        {
+            get { return this.startLoggingTime ?? default(DateTime); }
+            set { this.startLoggingTime = value; }
+        }
+
+        // Check to see if StartLoggingTime property is set
+        internal bool IsSetStartLoggingTime()
+        {
+            return this.startLoggingTime.HasValue;
+        }
+        public DateTime StopLoggingTime
+        {
+            get { return this.stopLoggingTime ?? default(DateTime); }
+            set { this.stopLoggingTime = value; }
+        }
+
+        // Check to see if StopLoggingTime property is set
+        internal bool IsSetStopLoggingTime()
+        {
+            return this.stopLoggingTime.HasValue;
+        }
 
         /// <summary>
         /// The last time CloudTrail attempted to deliver a file to an account's Amazon S3 bucket.
@@ -100,22 +148,6 @@ namespace Amazon.CloudTrail.Model
         internal bool IsSetLatestDeliveryAttemptTime()
         {
             return this.latestDeliveryAttemptTime != null;
-        }
-
-        /// <summary>
-        /// The last time CloudTrail successfully delivered a log file to an account's Amazon S3 bucket.
-        ///  
-        /// </summary>
-        public string LatestDeliveryAttemptSucceeded
-        {
-            get { return this.latestDeliveryAttemptSucceeded; }
-            set { this.latestDeliveryAttemptSucceeded = value; }
-        }
-
-        // Check to see if LatestDeliveryAttemptSucceeded property is set
-        internal bool IsSetLatestDeliveryAttemptSucceeded()
-        {
-            return this.latestDeliveryAttemptSucceeded != null;
         }
 
         /// <summary>
@@ -148,6 +180,22 @@ namespace Amazon.CloudTrail.Model
         internal bool IsSetLatestNotificationAttemptSucceeded()
         {
             return this.latestNotificationAttemptSucceeded != null;
+        }
+
+        /// <summary>
+        /// The last time CloudTrail successfully delivered a log file to an account's Amazon S3 bucket.
+        ///  
+        /// </summary>
+        public string LatestDeliveryAttemptSucceeded
+        {
+            get { return this.latestDeliveryAttemptSucceeded; }
+            set { this.latestDeliveryAttemptSucceeded = value; }
+        }
+
+        // Check to see if LatestDeliveryAttemptSucceeded property is set
+        internal bool IsSetLatestDeliveryAttemptSucceeded()
+        {
+            return this.latestDeliveryAttemptSucceeded != null;
         }
 
         /// <summary>

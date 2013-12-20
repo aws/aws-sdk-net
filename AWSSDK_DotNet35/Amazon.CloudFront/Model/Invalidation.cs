@@ -31,6 +31,7 @@ namespace Amazon.CloudFront.Model
         private DateTime? createTime;
         private InvalidationBatch invalidationBatch;
 
+
         /// <summary>
         /// The identifier for the invalidation request. For example: IDFDVBD632BHDS5.
         ///  

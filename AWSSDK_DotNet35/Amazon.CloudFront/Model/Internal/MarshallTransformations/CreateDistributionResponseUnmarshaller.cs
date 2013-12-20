@@ -80,9 +80,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 return new TooManyCookieNamesInWhiteListException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
     
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidDefaultRootObject"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidGeoRestrictionParameter"))
             {
-                return new InvalidDefaultRootObjectException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new InvalidGeoRestrictionParameterException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
     
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidResponseCode"))
@@ -95,14 +95,14 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 return new MissingBodyException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
     
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidLocationCode"))
+            {
+                return new InvalidLocationCodeException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+    
             if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyDistributionCNAMEs"))
             {
                 return new TooManyDistributionCNAMEsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-    
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidForwardCookies"))
-            {
-                return new InvalidForwardCookiesException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
     
             if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyDistributions"))
@@ -135,6 +135,46 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 return new InvalidOriginAccessIdentityException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
     
+            if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyCacheBehaviors"))
+            {
+                return new TooManyCacheBehaviorsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+    
+            if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyTrustedSigners"))
+            {
+                return new TooManyTrustedSignersException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+    
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidViewerCertificate"))
+            {
+                return new InvalidViewerCertificateException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+    
+            if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyOrigins"))
+            {
+                return new TooManyOriginsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+    
+            if (errorResponse.Code != null && errorResponse.Code.Equals("DistributionAlreadyExists"))
+            {
+                return new DistributionAlreadyExistsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+    
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidRequiredProtocol"))
+            {
+                return new InvalidRequiredProtocolException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+    
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidDefaultRootObject"))
+            {
+                return new InvalidDefaultRootObjectException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+    
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidForwardCookies"))
+            {
+                return new InvalidForwardCookiesException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+    
             if (errorResponse.Code != null && errorResponse.Code.Equals("TrustedSignerDoesNotExist"))
             {
                 return new TrustedSignerDoesNotExistException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
@@ -155,44 +195,14 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 return new InvalidRelativePathException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
     
-            if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyCacheBehaviors"))
-            {
-                return new TooManyCacheBehaviorsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-    
-            if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyTrustedSigners"))
-            {
-                return new TooManyTrustedSignersException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-    
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidErrorCode"))
             {
                 return new InvalidErrorCodeException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
     
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidViewerCertificate"))
-            {
-                return new InvalidViewerCertificateException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-    
             if (errorResponse.Code != null && errorResponse.Code.Equals("AccessDenied"))
             {
                 return new AccessDeniedException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-    
-            if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyOrigins"))
-            {
-                return new TooManyOriginsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-    
-            if (errorResponse.Code != null && errorResponse.Code.Equals("DistributionAlreadyExists"))
-            {
-                return new DistributionAlreadyExistsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-    
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidRequiredProtocol"))
-            {
-                return new InvalidRequiredProtocolException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
     
             return new AmazonCloudFrontException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);

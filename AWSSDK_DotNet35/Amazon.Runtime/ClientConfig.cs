@@ -1,4 +1,4 @@
-﻿    /*
+﻿ /*
  * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -30,22 +30,17 @@ namespace Amazon.Runtime
     /// </summary>
     public abstract partial class ClientConfig
     {
-        private const string APP_CONFIG_REGION_KEY = "AWSRegion";
-
         // Represents infinite timeout. http://msdn.microsoft.com/en-us/library/system.threading.timeout.infinite.aspx
         internal static readonly TimeSpan InfiniteTimeout = TimeSpan.FromMilliseconds(-1);
 
         // Represents max timeout.
         internal static readonly TimeSpan MaxTimeout = TimeSpan.FromMilliseconds(int.MaxValue);
 
-// In non BCL platforms there is no app.config to read this from so just default to us-east-1.
 #if !BCL
-        static readonly private RegionEndpoint DEFAULT_REGION = null;
+        private RegionEndpoint regionEndpoint = null;
 #else
-        static readonly private RegionEndpoint DEFAULT_REGION = GetDefaultRegionEndpoint();
+        private RegionEndpoint regionEndpoint = GetDefaultRegionEndpoint();
 #endif
-
-        private RegionEndpoint regionEndpoint = DEFAULT_REGION;
 
         private bool useHttp = false;
         private string serviceURL = null;
@@ -112,6 +107,7 @@ namespace Amazon.Runtime
             }
             set
             {
+                this.serviceURL = null;
                 this.regionEndpoint = value;
             }
         }
@@ -133,7 +129,11 @@ namespace Amazon.Runtime
         public string ServiceURL
         {
             get { return this.serviceURL; }
-            set { this.serviceURL = value; }
+            set 
+            {
+                this.regionEndpoint = null;
+                this.serviceURL = value; 
+            }
         }
 
         /// <summary>

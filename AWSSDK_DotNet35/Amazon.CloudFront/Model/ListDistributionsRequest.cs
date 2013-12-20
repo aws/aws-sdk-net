@@ -27,10 +27,11 @@ namespace Amazon.CloudFront.Model
     /// Container for the parameters to the ListDistributions operation.
     /// <para> List distributions. </para>
     /// </summary>
-    public partial class ListDistributionsRequest : AmazonWebServiceRequest
+    public partial class ListDistributionsRequest : AmazonCloudFrontRequest
     {
         private string marker;
         private string maxItems;
+
 
         /// <summary>
         /// Use this when paginating results to indicate where to begin in your list of distributions. The results include distributions in the list

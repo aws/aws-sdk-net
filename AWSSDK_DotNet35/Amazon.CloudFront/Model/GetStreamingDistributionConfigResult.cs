@@ -30,6 +30,7 @@ namespace Amazon.CloudFront.Model
         private StreamingDistributionConfig streamingDistributionConfig;
         private string eTag;
 
+
         /// <summary>
         /// The streaming distribution's configuration information.
         ///  

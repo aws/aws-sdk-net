@@ -30,7 +30,61 @@ namespace Amazon.ElasticTranscoder.Model
     /// </summary>
     public partial class ListPresetsRequest : AmazonElasticTranscoderRequest
     {
+        private string ascending;
+        private string pageToken;
 
+
+        /// <summary>
+        /// To list presets in chronological order by the date and time that they were created, enter <c>true</c>. To list presets in reverse
+        /// chronological order, enter <c>false</c>.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Pattern</term>
+        ///         <description>(^true$)|(^false$)</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
+        public string Ascending
+        {
+            get { return this.ascending; }
+            set { this.ascending = value; }
+        }
+
+        // Check to see if Ascending property is set
+        internal bool IsSetAscending()
+        {
+            return this.ascending != null;
+        }
+
+        /// <summary>
+        /// When Elastic Transcoder returns more than one page of results, use <c>pageToken</c> in subsequent <c>GET</c> requests to get each successive
+        /// page of results.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Pattern</term>
+        ///         <description>^\d{13}-\w{6}$</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
+        public string PageToken
+        {
+            get { return this.pageToken; }
+            set { this.pageToken = value; }
+        }
+
+        // Check to see if PageToken property is set
+        internal bool IsSetPageToken()
+        {
+            return this.pageToken != null;
+        }
 
     }
 }
