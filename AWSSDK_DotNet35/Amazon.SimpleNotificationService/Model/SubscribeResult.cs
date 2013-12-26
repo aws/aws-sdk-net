@@ -29,6 +29,7 @@ namespace Amazon.SimpleNotificationService.Model
         
         private string subscriptionArn;
 
+
         /// <summary>
         /// The ARN of the subscription, if the service was able to create a subscription immediately (without requiring endpoint owner confirmation).
         ///  

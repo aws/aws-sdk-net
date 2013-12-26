@@ -29,11 +29,12 @@ namespace Amazon.SimpleNotificationService.Model
     /// subscription, the endpoint owner must call the <c>ConfirmSubscription</c> action with the token from the confirmation message. Confirmation
     /// tokens are valid for three days.</para>
     /// </summary>
-    public partial class SubscribeRequest : AmazonWebServiceRequest
+    public partial class SubscribeRequest : AmazonSimpleNotificationServiceRequest
     {
         private string topicArn;
         private string protocol;
         private string endpoint;
+
         /// <summary>
         /// Default constructor for a new SubscribeRequest object.  Callers should use the
         /// properties to initialize this object after creating it.

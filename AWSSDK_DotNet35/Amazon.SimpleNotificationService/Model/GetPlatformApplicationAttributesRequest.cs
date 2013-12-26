@@ -30,9 +30,10 @@ namespace Amazon.SimpleNotificationService.Model
     /// >Using Amazon SNS Mobile Push Notifications</a> .
     /// </para>
     /// </summary>
-    public partial class GetPlatformApplicationAttributesRequest : AmazonWebServiceRequest
+    public partial class GetPlatformApplicationAttributesRequest : AmazonSimpleNotificationServiceRequest
     {
         private string platformApplicationArn;
+
 
         /// <summary>
         /// PlatformApplicationArn for GetPlatformApplicationAttributesInput.

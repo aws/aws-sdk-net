@@ -27,10 +27,11 @@ namespace Amazon.SimpleNotificationService.Model
     /// Container for the parameters to the RemovePermission operation.
     /// <para>The <c>RemovePermission</c> action removes a statement from a topic's access control policy.</para>
     /// </summary>
-    public partial class RemovePermissionRequest : AmazonWebServiceRequest
+    public partial class RemovePermissionRequest : AmazonSimpleNotificationServiceRequest
     {
         private string topicArn;
         private string label;
+
         /// <summary>
         /// Default constructor for a new RemovePermissionRequest object.  Callers should use the
         /// properties to initialize this object after creating it.

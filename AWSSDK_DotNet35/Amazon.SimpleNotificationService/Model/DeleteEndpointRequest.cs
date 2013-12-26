@@ -29,9 +29,10 @@ namespace Amazon.SimpleNotificationService.Model
     /// href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html" >Using Amazon SNS Mobile Push Notifications</a> .
     /// </para>
     /// </summary>
-    public partial class DeleteEndpointRequest : AmazonWebServiceRequest
+    public partial class DeleteEndpointRequest : AmazonSimpleNotificationServiceRequest
     {
         private string endpointArn;
+
 
         /// <summary>
         /// EndpointArn of endpoint to delete.

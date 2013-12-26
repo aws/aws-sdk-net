@@ -29,6 +29,7 @@ namespace Amazon.SimpleNotificationService.Model
         private string endpointArn;
         private Dictionary<string,string> attributes = new Dictionary<string,string>();
 
+
         /// <summary>
         /// EndpointArn for mobile app and device.
         ///  

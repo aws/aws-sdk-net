@@ -27,6 +27,7 @@ namespace Amazon.SimpleNotificationService.Model
     {
         
         private string topicArn;
+
         /// <summary>
         /// Default constructor for a new Topic object.  Callers should use the
         /// properties to initialize this object after creating it.

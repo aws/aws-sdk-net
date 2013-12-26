@@ -27,11 +27,12 @@ namespace Amazon.SimpleNotificationService.Model
     /// Container for the parameters to the SetSubscriptionAttributes operation.
     /// <para>The <c>SetSubscriptionAttributes</c> action allows a subscription owner to set an attribute of the topic to a new value.</para>
     /// </summary>
-    public partial class SetSubscriptionAttributesRequest : AmazonWebServiceRequest
+    public partial class SetSubscriptionAttributesRequest : AmazonSimpleNotificationServiceRequest
     {
         private string subscriptionArn;
         private string attributeName;
         private string attributeValue;
+
 
         /// <summary>
         /// The ARN of the subscription to modify.
@@ -50,7 +51,8 @@ namespace Amazon.SimpleNotificationService.Model
         }
 
         /// <summary>
-        /// The name of the attribute you want to set. Only a subset of the subscriptions attributes are mutable. Valid values: <c>DeliveryPolicy</c>
+        /// The name of the attribute you want to set. Only a subset of the subscriptions attributes are mutable. Valid values: <c>DeliveryPolicy</c> |
+        /// <c>RawMessageDelivery</c>
         ///  
         /// </summary>
         public string AttributeName

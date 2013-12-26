@@ -29,6 +29,7 @@ namespace Amazon.SimpleNotificationService.Model
         
         private Dictionary<string,string> attributes = new Dictionary<string,string>();
 
+
         /// <summary>
         /// A map of the subscription's attributes. Attributes in this map include the following: <ul> <li><c>SubscriptionArn</c> -- the subscription's
         /// ARN</li> <li><c>TopicArn</c> -- the topic ARN that the subscription is associated with</li> <li><c>Owner</c> -- the AWS account ID of the

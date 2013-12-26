@@ -30,6 +30,7 @@ namespace Amazon.SimpleNotificationService.Model
         private List<Topic> topics = new List<Topic>();
         private string nextToken;
 
+
         /// <summary>
         /// A list of topic ARNs.
         ///  

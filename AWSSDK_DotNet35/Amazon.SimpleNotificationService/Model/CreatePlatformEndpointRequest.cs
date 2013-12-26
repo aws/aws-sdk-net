@@ -25,19 +25,22 @@ namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>
     /// Container for the parameters to the CreatePlatformEndpoint operation.
-    /// <para>The <c>CreatePlatformEndpoint</c> creates an endpoint for a device and mobile app on one of the supported push notification services,
-    /// such as GCM and APNS. <c>CreatePlatformEndpoint</c> requires the PlatformApplicationArn that is returned from
+    /// <para>The <c>CreatePlatformEndpoint</c> action creates an endpoint for a device and mobile app on one of the supported push notification
+    /// services, such as GCM and APNS. <c>CreatePlatformEndpoint</c> requires the PlatformApplicationArn that is returned from
     /// <c>CreatePlatformApplication</c> . The EndpointArn that is returned when using <c>CreatePlatformEndpoint</c> can then be used by the
-    /// <c>Publish</c> action to send a message to a mobile app or by the <c>Subscribe</c> action for subscription to a topic. For more information,
-    /// see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html" >Using Amazon SNS Mobile Push Notifications</a> .
+    /// <c>Publish</c> action to send a message to a mobile app or by the <c>Subscribe</c> action for subscription to a topic. The
+    /// <c>CreatePlatformEndpoint</c> action is idempotent, so if the requester already owns an endpoint with the same device token and attributes,
+    /// that endpoint's ARN is returned without creating a new endpoint. For more information, see <a
+    /// href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html" >Using Amazon SNS Mobile Push Notifications</a> .
     /// </para>
     /// </summary>
-    public partial class CreatePlatformEndpointRequest : AmazonWebServiceRequest
+    public partial class CreatePlatformEndpointRequest : AmazonSimpleNotificationServiceRequest
     {
         private string platformApplicationArn;
         private string token;
         private string customUserData;
         private Dictionary<string,string> attributes = new Dictionary<string,string>();
+
 
         /// <summary>
         /// PlatformApplicationArn returned from CreatePlatformApplication is used to create a an endpoint.

@@ -29,6 +29,7 @@ namespace Amazon.SimpleNotificationService.Model
         
         private string platformApplicationArn;
 
+
         /// <summary>
         /// PlatformApplicationArn is returned.
         ///  

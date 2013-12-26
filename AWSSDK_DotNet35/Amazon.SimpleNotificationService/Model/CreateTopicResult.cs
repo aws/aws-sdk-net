@@ -29,6 +29,7 @@ namespace Amazon.SimpleNotificationService.Model
         
         private string topicArn;
 
+
         /// <summary>
         /// The Amazon Resource Name (ARN) assigned to the created topic.
         ///  

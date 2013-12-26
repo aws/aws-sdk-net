@@ -30,6 +30,7 @@ namespace Amazon.SimpleNotificationService.Model
         private List<Endpoint> endpoints = new List<Endpoint>();
         private string nextToken;
 
+
         /// <summary>
         /// Endpoints returned for ListEndpointsByPlatformApplication action.
         ///  

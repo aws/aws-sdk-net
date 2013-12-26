@@ -29,9 +29,10 @@ namespace Amazon.SimpleNotificationService.Model
     /// subscriptions, up to 100. If there are more subscriptions, a <c>NextToken</c> is also returned. Use the <c>NextToken</c> parameter in a new
     /// <c>ListSubscriptions</c> call to get further results.</para>
     /// </summary>
-    public partial class ListSubscriptionsRequest : AmazonWebServiceRequest
+    public partial class ListSubscriptionsRequest : AmazonSimpleNotificationServiceRequest
     {
         private string nextToken;
+
         /// <summary>
         /// Default constructor for a new ListSubscriptionsRequest object.  Callers should use the
         /// properties to initialize this object after creating it.

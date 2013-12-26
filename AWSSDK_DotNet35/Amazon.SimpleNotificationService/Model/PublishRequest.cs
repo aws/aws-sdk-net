@@ -32,13 +32,14 @@ namespace Amazon.SimpleNotificationService.Model
     /// making a call with the <c>CreatePlatformEndpoint</c> action. The second example below shows a request and response for publishing to a
     /// mobile endpoint. </para>
     /// </summary>
-    public partial class PublishRequest : AmazonWebServiceRequest
+    public partial class PublishRequest : AmazonSimpleNotificationServiceRequest
     {
         private string topicArn;
         private string targetArn;
         private string message;
         private string subject;
         private string messageStructure;
+
         /// <summary>
         /// Default constructor for a new PublishRequest object.  Callers should use the
         /// properties to initialize this object after creating it.

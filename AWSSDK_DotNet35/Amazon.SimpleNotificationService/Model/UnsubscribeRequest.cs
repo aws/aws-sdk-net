@@ -30,9 +30,10 @@ namespace Amazon.SimpleNotificationService.Model
     /// authentication and the requester is not the subscription owner, a final cancellation message is delivered to the endpoint, so that the
     /// endpoint owner can easily resubscribe to the topic if the <c>Unsubscribe</c> request was unintended.</para>
     /// </summary>
-    public partial class UnsubscribeRequest : AmazonWebServiceRequest
+    public partial class UnsubscribeRequest : AmazonSimpleNotificationServiceRequest
     {
         private string subscriptionArn;
+
         /// <summary>
         /// Default constructor for a new UnsubscribeRequest object.  Callers should use the
         /// properties to initialize this object after creating it.

@@ -29,6 +29,7 @@ namespace Amazon.SimpleNotificationService.Model
         private string platformApplicationArn;
         private Dictionary<string,string> attributes = new Dictionary<string,string>();
 
+
         /// <summary>
         /// PlatformApplicationArn for platform application object.
         ///  

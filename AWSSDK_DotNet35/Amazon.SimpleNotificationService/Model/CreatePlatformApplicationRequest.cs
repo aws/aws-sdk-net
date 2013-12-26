@@ -35,11 +35,12 @@ namespace Amazon.SimpleNotificationService.Model
     /// see <a href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html" >Using Amazon SNS Mobile Push Notifications</a> .
     /// </para>
     /// </summary>
-    public partial class CreatePlatformApplicationRequest : AmazonWebServiceRequest
+    public partial class CreatePlatformApplicationRequest : AmazonSimpleNotificationServiceRequest
     {
         private string name;
         private string platform;
         private Dictionary<string,string> attributes = new Dictionary<string,string>();
+
 
         /// <summary>
         /// Application names must be made up of only uppercase and lowercase ASCII letters, numbers, underscores, hyphens, and periods, and must be

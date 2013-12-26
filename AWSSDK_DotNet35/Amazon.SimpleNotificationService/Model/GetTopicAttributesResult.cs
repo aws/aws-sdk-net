@@ -29,6 +29,7 @@ namespace Amazon.SimpleNotificationService.Model
         
         private Dictionary<string,string> attributes = new Dictionary<string,string>();
 
+
         /// <summary>
         /// A map of the topic's attributes. Attributes in this map include the following: <ul> <li><c>TopicArn</c> -- the topic's ARN</li>
         /// <li><c>Owner</c> -- the AWS account ID of the topic's owner</li> <li><c>Policy</c> -- the JSON serialization of the topic's access control

@@ -10266,6 +10266,7 @@
     <Compile Include="Amazon.SimpleEmail\ServiceEnumerations.cs" />
     <Compile Include="Amazon.SimpleNotificationService\AmazonSimpleNotificationServiceClient.Extensions.cs" />
     <Compile Include="Amazon.SimpleNotificationService\IAmazonSimpleNotificationService.Extensions.cs" />
+    <Compile Include="Amazon.SimpleNotificationService\Model\AmazonSimpleNotificationServiceRequest.cs" />
     <Compile Include="Amazon.SimpleNotificationService\Model\CreatePlatformApplicationRequest.cs" />
     <Compile Include="Amazon.SimpleNotificationService\Model\CreatePlatformApplicationResponse.cs" />
     <Compile Include="Amazon.SimpleNotificationService\Model\CreatePlatformApplicationResult.cs" />

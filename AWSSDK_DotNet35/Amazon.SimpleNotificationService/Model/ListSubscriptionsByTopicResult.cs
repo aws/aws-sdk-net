@@ -30,6 +30,7 @@ namespace Amazon.SimpleNotificationService.Model
         private List<Subscription> subscriptions = new List<Subscription>();
         private string nextToken;
 
+
         /// <summary>
         /// A list of subscriptions.
         ///  

@@ -33,9 +33,10 @@ namespace Amazon.SimpleNotificationService.Model
     /// Mobile Push Notifications</a> .
     /// </para>
     /// </summary>
-    public partial class ListPlatformApplicationsRequest : AmazonWebServiceRequest
+    public partial class ListPlatformApplicationsRequest : AmazonSimpleNotificationServiceRequest
     {
         private string nextToken;
+
 
         /// <summary>
         /// NextToken string is used when calling ListPlatformApplications action to retrieve additional records that are available after the first page

@@ -30,6 +30,7 @@ namespace Amazon.SimpleNotificationService.Model
         private List<PlatformApplication> platformApplications = new List<PlatformApplication>();
         private string nextToken;
 
+
         /// <summary>
         /// Platform applications returned when calling ListPlatformApplications action.
         ///  

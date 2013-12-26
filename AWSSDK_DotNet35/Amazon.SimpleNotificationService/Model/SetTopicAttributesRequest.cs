@@ -27,11 +27,12 @@ namespace Amazon.SimpleNotificationService.Model
     /// Container for the parameters to the SetTopicAttributes operation.
     /// <para>The <c>SetTopicAttributes</c> action allows a topic owner to set an attribute of the topic to a new value.</para>
     /// </summary>
-    public partial class SetTopicAttributesRequest : AmazonWebServiceRequest
+    public partial class SetTopicAttributesRequest : AmazonSimpleNotificationServiceRequest
     {
         private string topicArn;
         private string attributeName;
         private string attributeValue;
+
         /// <summary>
         /// Default constructor for a new SetTopicAttributesRequest object.  Callers should use the
         /// properties to initialize this object after creating it.

@@ -30,9 +30,10 @@ namespace Amazon.SimpleNotificationService.Model
     /// Mobile Push Notifications</a> .
     /// </para>
     /// </summary>
-    public partial class GetEndpointAttributesRequest : AmazonWebServiceRequest
+    public partial class GetEndpointAttributesRequest : AmazonSimpleNotificationServiceRequest
     {
         private string endpointArn;
+
 
         /// <summary>
         /// EndpointArn for GetEndpointAttributes input.

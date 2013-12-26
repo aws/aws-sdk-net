@@ -33,10 +33,11 @@ namespace Amazon.SimpleNotificationService.Model
     /// href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html" >Using Amazon SNS Mobile Push Notifications</a> .
     /// </para>
     /// </summary>
-    public partial class ListEndpointsByPlatformApplicationRequest : AmazonWebServiceRequest
+    public partial class ListEndpointsByPlatformApplicationRequest : AmazonSimpleNotificationServiceRequest
     {
         private string platformApplicationArn;
         private string nextToken;
+
 
         /// <summary>
         /// PlatformApplicationArn for ListEndpointsByPlatformApplicationInput action.

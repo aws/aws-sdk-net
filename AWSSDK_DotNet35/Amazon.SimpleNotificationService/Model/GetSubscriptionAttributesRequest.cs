@@ -27,9 +27,10 @@ namespace Amazon.SimpleNotificationService.Model
     /// Container for the parameters to the GetSubscriptionAttributes operation.
     /// <para>The <c>GetSubscriptionAttribtues</c> action returns all of the properties of a subscription.</para>
     /// </summary>
-    public partial class GetSubscriptionAttributesRequest : AmazonWebServiceRequest
+    public partial class GetSubscriptionAttributesRequest : AmazonSimpleNotificationServiceRequest
     {
         private string subscriptionArn;
+
 
         /// <summary>
         /// The ARN of the subscription whose properties you want to get.

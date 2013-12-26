@@ -57,7 +57,7 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
                         {
                             request.Parameters.Add("Attributes.entry." + attributesListIndex + ".value", StringUtils.FromString(value));
                         }
-                        ++attributesListIndex;
+                            ++attributesListIndex;
                     }
                 }
             }

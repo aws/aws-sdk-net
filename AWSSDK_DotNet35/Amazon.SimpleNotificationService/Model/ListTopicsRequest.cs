@@ -29,9 +29,10 @@ namespace Amazon.SimpleNotificationService.Model
     /// are more topics, a <c>NextToken</c> is also returned. Use the <c>NextToken</c> parameter in a new <c>ListTopics</c> call to get further
     /// results.</para>
     /// </summary>
-    public partial class ListTopicsRequest : AmazonWebServiceRequest
+    public partial class ListTopicsRequest : AmazonSimpleNotificationServiceRequest
     {
         private string nextToken;
+
         /// <summary>
         /// Default constructor for a new ListTopicsRequest object.  Callers should use the
         /// properties to initialize this object after creating it.

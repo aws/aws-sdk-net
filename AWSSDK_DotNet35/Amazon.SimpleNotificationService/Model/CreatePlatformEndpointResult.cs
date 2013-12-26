@@ -29,6 +29,7 @@ namespace Amazon.SimpleNotificationService.Model
         
         private string endpointArn;
 
+
         /// <summary>
         /// EndpointArn returned from CreateEndpoint action.
         ///  

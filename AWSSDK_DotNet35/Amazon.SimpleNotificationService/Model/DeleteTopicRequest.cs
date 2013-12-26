@@ -29,9 +29,10 @@ namespace Amazon.SimpleNotificationService.Model
     /// to the topic from being delivered to subscribers. This action is idempotent, so deleting a topic that does not exist does not result in an
     /// error.</para>
     /// </summary>
-    public partial class DeleteTopicRequest : AmazonWebServiceRequest
+    public partial class DeleteTopicRequest : AmazonSimpleNotificationServiceRequest
     {
         private string topicArn;
+
         /// <summary>
         /// Default constructor for a new DeleteTopicRequest object.  Callers should use the
         /// properties to initialize this object after creating it.

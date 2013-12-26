@@ -29,6 +29,7 @@ namespace Amazon.SimpleNotificationService.Model
         
         private string messageId;
 
+
         /// <summary>
         /// Unique identifier assigned to the published message. Length Constraint: Maximum 100 characters
         ///  

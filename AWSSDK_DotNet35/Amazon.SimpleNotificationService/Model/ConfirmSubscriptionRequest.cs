@@ -29,11 +29,12 @@ namespace Amazon.SimpleNotificationService.Model
     /// endpoint by an earlier <c>Subscribe</c> action. If the token is valid, the action creates a new subscription and returns its Amazon Resource
     /// Name (ARN). This call requires an AWS signature only when the <c>AuthenticateOnUnsubscribe</c> flag is set to "true".</para>
     /// </summary>
-    public partial class ConfirmSubscriptionRequest : AmazonWebServiceRequest
+    public partial class ConfirmSubscriptionRequest : AmazonSimpleNotificationServiceRequest
     {
         private string topicArn;
         private string token;
         private string authenticateOnUnsubscribe;
+
         /// <summary>
         /// Default constructor for a new ConfirmSubscriptionRequest object.  Callers should use the
         /// properties to initialize this object after creating it.

@@ -30,10 +30,11 @@ namespace Amazon.SimpleNotificationService.Model
     /// >Using Amazon SNS Mobile Push Notifications</a> .
     /// </para>
     /// </summary>
-    public partial class SetPlatformApplicationAttributesRequest : AmazonWebServiceRequest
+    public partial class SetPlatformApplicationAttributesRequest : AmazonSimpleNotificationServiceRequest
     {
         private string platformApplicationArn;
         private Dictionary<string,string> attributes = new Dictionary<string,string>();
+
 
         /// <summary>
         /// PlatformApplicationArn for SetPlatformApplicationAttributes action.
@@ -52,21 +53,15 @@ namespace Amazon.SimpleNotificationService.Model
         }
 
         /// <summary>
-        /// A map of the platform application attributes. Attributes in this map include the following: <ul> <!-- AllowEndpointPolicies,
-        /// EventDeliveryAttemptFailure, and Policy are not yet supported. Will remove comments once it is available --> <li><c>PlatformCredential</c>
-        /// -- The credential received from the notification service. For APNS/APNS_SANDBOX, PlatformCredential is "private key". For GCM,
-        /// PlatformCredential is "API key". For ADM,<!-- , WNS and MPNS--> PlatformCredential is "client secret".</li> <li><c>PlatformPrincipal</c> --
-        /// The principal received from the notification service. For APNS/APNS_SANDBOX, PlatformPrincipal is "SSL certificate". For GCM,
-        /// PlatformPrincipal is not applicable. For ADM,<!-- , WNS and MPNS--> PlatformPrincipal is "client id".</li> <!--
-        /// <li><c>AllowEndpointPolicies</c> true or false (default false) - If true, then policies on endpoints will be evaluated to determine if the
-        /// topic or user has the rights to send messages to it. If false, the endpoint policy will be ignored and only the mobile app policy will be
-        /// considered.</li> --> <li><c>EventEndpointCreated</c> -- Topic ARN to which EndpointCreated event notifications should be sent.</li>
-        /// <li><c>EventEndpointDeleted</c> -- Topic ARN to which EndpointDeleted event notifications should be sent.</li>
-        /// <li><c>EventEndpointUpdated</c> -- Topic ARN to which EndpointUpdate event notifications should be sent.</li> <!--
-        /// <li><c>EventDeliveryAttemptFailure</c> Topic ARN to which DeliveryAttemptFailure event notifications should be sent upon Direct Publish
-        /// delivery attempt failures to one of the application's endpoints.</li> --> <li><c>EventDeliveryFailure</c> -- Topic ARN to which
-        /// DeliveryFailure event notifications should be sent upon Direct Publish delivery failure (permanent) to one of the application's
-        /// endpoints.</li> <!-- <li><c>Policy</c> Access policy controlling who can send messages to endpoints under this mobile app.</li> --> </ul>
+        /// A map of the platform application attributes. Attributes in this map include the following: <ul> <li><c>PlatformCredential</c> -- The
+        /// credential received from the notification service. For APNS/APNS_SANDBOX, PlatformCredential is "private key". For GCM, PlatformCredential
+        /// is "API key". For ADM, PlatformCredential is "client secret".</li> <li><c>PlatformPrincipal</c> -- The principal received from the
+        /// notification service. For APNS/APNS_SANDBOX, PlatformPrincipal is "SSL certificate". For GCM, PlatformPrincipal is not applicable. For ADM,
+        /// PlatformPrincipal is "client id".</li> <li><c>EventEndpointCreated</c> -- Topic ARN to which EndpointCreated event notifications should be
+        /// sent.</li> <li><c>EventEndpointDeleted</c> -- Topic ARN to which EndpointDeleted event notifications should be sent.</li>
+        /// <li><c>EventEndpointUpdated</c> -- Topic ARN to which EndpointUpdate event notifications should be sent.</li>
+        /// <li><c>EventDeliveryFailure</c> -- Topic ARN to which DeliveryFailure event notifications should be sent upon Direct Publish delivery
+        /// failure (permanent) to one of the application's endpoints.</li> </ul>
         ///  
         /// </summary>
         public Dictionary<string,string> Attributes

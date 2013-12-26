@@ -28,9 +28,10 @@ namespace Amazon.SimpleNotificationService.Model
     /// <para>The <c>GetTopicAttributes</c> action returns all of the properties of a topic. Topic properties returned might differ based on the
     /// authorization of the user. </para>
     /// </summary>
-    public partial class GetTopicAttributesRequest : AmazonWebServiceRequest
+    public partial class GetTopicAttributesRequest : AmazonSimpleNotificationServiceRequest
     {
         private string topicArn;
+
         /// <summary>
         /// Default constructor for a new GetTopicAttributesRequest object.  Callers should use the
         /// properties to initialize this object after creating it.

@@ -30,9 +30,10 @@ namespace Amazon.SimpleNotificationService.Model
     /// Mobile Push Notifications</a> .
     /// </para>
     /// </summary>
-    public partial class DeletePlatformApplicationRequest : AmazonWebServiceRequest
+    public partial class DeletePlatformApplicationRequest : AmazonSimpleNotificationServiceRequest
     {
         private string platformApplicationArn;
+
 
         /// <summary>
         /// PlatformApplicationArn of platform application object to delete.

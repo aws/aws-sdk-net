@@ -31,6 +31,7 @@ namespace Amazon.SimpleNotificationService.Model
         private string protocol;
         private string endpoint;
         private string topicArn;
+
         /// <summary>
         /// Default constructor for a new Subscription object.  Callers should use the
         /// properties to initialize this object after creating it.

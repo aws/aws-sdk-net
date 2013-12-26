@@ -28,12 +28,13 @@ namespace Amazon.SimpleNotificationService.Model
     /// <para>The <c>AddPermission</c> action adds a statement to a topic's access control policy, granting access for the specified AWS accounts to
     /// the specified actions.</para>
     /// </summary>
-    public partial class AddPermissionRequest : AmazonWebServiceRequest
+    public partial class AddPermissionRequest : AmazonSimpleNotificationServiceRequest
     {
         private string topicArn;
         private string label;
         private List<string> aWSAccountId = new List<string>();
         private List<string> actionName = new List<string>();
+
         /// <summary>
         /// Default constructor for a new AddPermissionRequest object.  Callers should use the
         /// properties to initialize this object after creating it.
@@ -48,9 +49,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// <param name="topicArn"> The ARN of the topic whose access control policy you wish to modify. </param>
         /// <param name="label"> A unique identifier for the new policy statement. </param>
         /// <param name="aWSAccountId"> The AWS account IDs of the users (principals) who will be given access to the specified actions. The users must
-        /// have AWS accounts, but do not need to be signed up for this service. <!--For information about locating the AWS account identification, see
-        /// <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/index.html?AWSCredentials.html">Your AWS
-        /// Identifiers</aulink> in the &service; Developer Guide.--> </param>
+        /// have AWS accounts, but do not need to be signed up for this service. </param>
         /// <param name="actionName"> The action you want to allow for the specified principal(s). Valid values: any Amazon SNS action name. </param>
         public AddPermissionRequest(string topicArn, string label, List<string> aWSAccountId, List<string> actionName)
         {
@@ -95,9 +94,7 @@ namespace Amazon.SimpleNotificationService.Model
 
         /// <summary>
         /// The AWS account IDs of the users (principals) who will be given access to the specified actions. The users must have AWS accounts, but do
-        /// not need to be signed up for this service. <!--For information about locating the AWS account identification, see <a
-        /// href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/index.html?AWSCredentials.html">Your AWS
-        /// Identifiers</aulink> in the &service; Developer Guide.-->
+        /// not need to be signed up for this service.
         ///  
         /// </summary>
         public List<string> AWSAccountId
