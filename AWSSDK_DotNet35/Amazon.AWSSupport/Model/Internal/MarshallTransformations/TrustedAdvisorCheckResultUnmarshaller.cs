@@ -83,8 +83,14 @@
               if (context.TestExpression("flaggedResources", targetDepth))
               {
                 context.Read();
-                trustedAdvisorCheckResult.FlaggedResources = new List<TrustedAdvisorResourceDetail>();
-                        TrustedAdvisorResourceDetailUnmarshaller unmarshaller = TrustedAdvisorResourceDetailUnmarshaller.GetInstance();
+                
+                if (context.CurrentTokenType == JsonToken.Null)
+                {
+                    trustedAdvisorCheckResult.FlaggedResources = null;
+                    continue;
+                }
+                  trustedAdvisorCheckResult.FlaggedResources = new List<TrustedAdvisorResourceDetail>();
+                  TrustedAdvisorResourceDetailUnmarshaller unmarshaller = TrustedAdvisorResourceDetailUnmarshaller.GetInstance();
                 while (context.Read())
                 {
                   JsonToken token = context.CurrentTokenType;                

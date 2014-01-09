@@ -76,8 +76,14 @@
               if (context.TestExpression("metadata", targetDepth))
               {
                 context.Read();
-                trustedAdvisorCheckDescription.Metadata = new List<String>();
-                        StringUnmarshaller unmarshaller = StringUnmarshaller.GetInstance();
+                
+                if (context.CurrentTokenType == JsonToken.Null)
+                {
+                    trustedAdvisorCheckDescription.Metadata = null;
+                    continue;
+                }
+                  trustedAdvisorCheckDescription.Metadata = new List<String>();
+                  StringUnmarshaller unmarshaller = StringUnmarshaller.GetInstance();
                 while (context.Read())
                 {
                   JsonToken token = context.CurrentTokenType;                

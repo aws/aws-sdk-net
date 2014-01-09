@@ -47,6 +47,7 @@ namespace Amazon.AutoScaling.Model
         private List<TagDescription> tags = new List<TagDescription>();
         private List<string> terminationPolicies = new List<string>();
 
+
         /// <summary>
         /// Specifies the name of the group.
         ///  

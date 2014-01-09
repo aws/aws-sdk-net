@@ -27,10 +27,11 @@ namespace Amazon.AutoScaling.Model
     /// Container for the parameters to the DeleteNotificationConfiguration operation.
     /// <para>Deletes notifications created by PutNotificationConfiguration.</para>
     /// </summary>
-    public partial class DeleteNotificationConfigurationRequest : AmazonWebServiceRequest
+    public partial class DeleteNotificationConfigurationRequest : AmazonAutoScalingRequest
     {
         private string autoScalingGroupName;
         private string topicARN;
+
 
         /// <summary>
         /// The name of the Auto Scaling group.

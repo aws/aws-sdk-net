@@ -27,9 +27,10 @@ namespace Amazon.AutoScaling.Model
     /// Container for the parameters to the DeleteTags operation.
     /// <para>Removes the specified tags or a set of tags from a set of resources.</para>
     /// </summary>
-    public partial class DeleteTagsRequest : AmazonWebServiceRequest
+    public partial class DeleteTagsRequest : AmazonAutoScalingRequest
     {
         private List<Tag> tags = new List<Tag>();
+
 
         /// <summary>
         /// Each tag should be defined by its resource type, resource ID, key, value, and a propagate flag. Valid values are: Resource type =

@@ -49,8 +49,14 @@
               if (context.TestExpression("summaries", targetDepth))
               {
                 context.Read();
-                response.Summaries = new List<TrustedAdvisorCheckSummary>();
-                        TrustedAdvisorCheckSummaryUnmarshaller unmarshaller = TrustedAdvisorCheckSummaryUnmarshaller.GetInstance();
+                
+                if (context.CurrentTokenType == JsonToken.Null)
+                {
+                    response.Summaries = null;
+                    continue;
+                }
+                  response.Summaries = new List<TrustedAdvisorCheckSummary>();
+                  TrustedAdvisorCheckSummaryUnmarshaller unmarshaller = TrustedAdvisorCheckSummaryUnmarshaller.GetInstance();
                 while (context.Read())
                 {
                   JsonToken token = context.CurrentTokenType;                

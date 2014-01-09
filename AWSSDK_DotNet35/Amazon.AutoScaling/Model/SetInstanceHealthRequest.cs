@@ -29,11 +29,12 @@ namespace Amazon.AutoScaling.Model
     /// see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-configure-healthcheck.html" >Configure Health Checks for Your
     /// Auto Scaling group</a> .</para>
     /// </summary>
-    public partial class SetInstanceHealthRequest : AmazonWebServiceRequest
+    public partial class SetInstanceHealthRequest : AmazonAutoScalingRequest
     {
         private string instanceId;
         private string healthStatus;
         private bool? shouldRespectGracePeriod;
+
 
         /// <summary>
         /// The identifier of the Amazon EC2 instance.

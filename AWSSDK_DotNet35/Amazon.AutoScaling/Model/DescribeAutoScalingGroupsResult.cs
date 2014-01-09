@@ -30,6 +30,7 @@ namespace Amazon.AutoScaling.Model
         private List<AutoScalingGroup> autoScalingGroups = new List<AutoScalingGroup>();
         private string nextToken;
 
+
         /// <summary>
         /// A list of Auto Scaling groups.
         ///  

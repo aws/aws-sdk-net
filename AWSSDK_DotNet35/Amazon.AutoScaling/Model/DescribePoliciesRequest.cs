@@ -28,12 +28,13 @@ namespace Amazon.AutoScaling.Model
     /// <para> Returns descriptions of what each policy does. This action supports pagination. If the response includes a token, there are more
     /// records available. To get the additional records, repeat the request with the response token as the <c>NextToken</c> parameter. </para>
     /// </summary>
-    public partial class DescribePoliciesRequest : AmazonWebServiceRequest
+    public partial class DescribePoliciesRequest : AmazonAutoScalingRequest
     {
         private string autoScalingGroupName;
         private List<string> policyNames = new List<string>();
         private string nextToken;
         private int? maxRecords;
+
 
         /// <summary>
         /// The name of the Auto Scaling group.

@@ -29,6 +29,7 @@ namespace Amazon.AutoScaling.Model
         
         private List<AdjustmentType> adjustmentTypes = new List<AdjustmentType>();
 
+
         /// <summary>
         /// A list of specific policy adjustment types.
         ///  

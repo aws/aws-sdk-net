@@ -27,10 +27,11 @@ namespace Amazon.AutoScaling.Model
     /// Container for the parameters to the DeletePolicy operation.
     /// <para>Deletes a policy created by PutScalingPolicy.</para>
     /// </summary>
-    public partial class DeletePolicyRequest : AmazonWebServiceRequest
+    public partial class DeletePolicyRequest : AmazonAutoScalingRequest
     {
         private string autoScalingGroupName;
         private string policyName;
+
 
         /// <summary>
         /// The name of the Auto Scaling group.

@@ -49,8 +49,14 @@
               if (context.TestExpression("statuses", targetDepth))
               {
                 context.Read();
-                response.Statuses = new List<TrustedAdvisorCheckRefreshStatus>();
-                        TrustedAdvisorCheckRefreshStatusUnmarshaller unmarshaller = TrustedAdvisorCheckRefreshStatusUnmarshaller.GetInstance();
+                
+                if (context.CurrentTokenType == JsonToken.Null)
+                {
+                    response.Statuses = null;
+                    continue;
+                }
+                  response.Statuses = new List<TrustedAdvisorCheckRefreshStatus>();
+                  TrustedAdvisorCheckRefreshStatusUnmarshaller unmarshaller = TrustedAdvisorCheckRefreshStatusUnmarshaller.GetInstance();
                 while (context.Read())
                 {
                   JsonToken token = context.CurrentTokenType;                

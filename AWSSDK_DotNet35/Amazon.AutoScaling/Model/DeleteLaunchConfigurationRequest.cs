@@ -28,9 +28,10 @@ namespace Amazon.AutoScaling.Model
     /// <para> Deletes the specified LaunchConfiguration. </para> <para> The specified launch configuration must not be attached to an Auto Scaling
     /// group. When this call completes, the launch configuration is no longer available for use. </para>
     /// </summary>
-    public partial class DeleteLaunchConfigurationRequest : AmazonWebServiceRequest
+    public partial class DeleteLaunchConfigurationRequest : AmazonAutoScalingRequest
     {
         private string launchConfigurationName;
+
 
         /// <summary>
         /// The name of the launch configuration.

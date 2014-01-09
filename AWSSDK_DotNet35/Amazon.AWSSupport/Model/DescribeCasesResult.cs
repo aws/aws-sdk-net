@@ -22,8 +22,7 @@ using Amazon.Runtime;
 namespace Amazon.AWSSupport.Model
 {
     /// <summary>
-    /// <para>Returns an array of <a href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_CaseDetails.html" >CaseDetails</a> objects
-    /// and a <i>NextToken</i> that defines a point for pagination in the result set.</para>
+    /// <para>Returns an array of CaseDetails objects and a <c>NextToken</c> that defines a point for pagination in the result set.</para>
     /// </summary>
     public partial class DescribeCasesResult : AmazonWebServiceResponse
     {
@@ -31,9 +30,9 @@ namespace Amazon.AWSSupport.Model
         private List<CaseDetails> cases = new List<CaseDetails>();
         private string nextToken;
 
+
         /// <summary>
-        /// Array of <a href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_CaseDetails.html" title="CaseDetails">CaseDetails</a>
-        /// objects.
+        /// The details for the cases that match the request.
         ///  
         /// </summary>
         public List<CaseDetails> Cases
@@ -49,7 +48,7 @@ namespace Amazon.AWSSupport.Model
         }
 
         /// <summary>
-        /// Defines a resumption point for pagination.
+        /// A resumption point for pagination.
         ///  
         /// </summary>
         public string NextToken

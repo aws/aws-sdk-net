@@ -28,6 +28,7 @@ namespace Amazon.AutoScaling.Model
         
         private bool? enabled;
 
+
         /// <summary>
         /// If <c>True</c>, instance monitoring is enabled.
         ///  

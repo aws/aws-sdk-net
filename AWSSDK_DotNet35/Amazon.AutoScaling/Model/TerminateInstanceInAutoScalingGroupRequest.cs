@@ -28,10 +28,11 @@ namespace Amazon.AutoScaling.Model
     /// <para> Terminates the specified instance. Optionally, the desired group size can be adjusted. </para> <para><b>NOTE:</b> This call simply
     /// registers a termination request. The termination of the instance cannot happen immediately. </para>
     /// </summary>
-    public partial class TerminateInstanceInAutoScalingGroupRequest : AmazonWebServiceRequest
+    public partial class TerminateInstanceInAutoScalingGroupRequest : AmazonAutoScalingRequest
     {
         private string instanceId;
         private bool? shouldDecrementDesiredCapacity;
+
 
         /// <summary>
         /// The ID of the Amazon EC2 instance to be terminated.

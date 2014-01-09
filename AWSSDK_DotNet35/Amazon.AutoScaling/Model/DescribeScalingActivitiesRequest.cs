@@ -30,12 +30,13 @@ namespace Amazon.AutoScaling.Model
     /// appear first on the list. </para> <para> This action supports pagination. If the response includes a token, there are more records
     /// available. To get the additional records, repeat the request with the response token as the <c>NextToken</c> parameter. </para>
     /// </summary>
-    public partial class DescribeScalingActivitiesRequest : AmazonWebServiceRequest
+    public partial class DescribeScalingActivitiesRequest : AmazonAutoScalingRequest
     {
         private List<string> activityIds = new List<string>();
         private string autoScalingGroupName;
         private int? maxRecords;
         private string nextToken;
+
 
         /// <summary>
         /// A list containing the activity IDs of the desired scaling activities. If this list is omitted, all activities are described. If an

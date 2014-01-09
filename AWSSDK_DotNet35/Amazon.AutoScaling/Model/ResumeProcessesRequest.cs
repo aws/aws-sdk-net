@@ -30,10 +30,11 @@ namespace Amazon.AutoScaling.Model
     /// Process</a> .
     /// </para>
     /// </summary>
-    public partial class ResumeProcessesRequest : AmazonWebServiceRequest
+    public partial class ResumeProcessesRequest : AmazonAutoScalingRequest
     {
         private string autoScalingGroupName;
         private List<string> scalingProcesses = new List<string>();
+
 
         /// <summary>
         /// The name or Amazon Resource Name (ARN) of the Auto Scaling group.

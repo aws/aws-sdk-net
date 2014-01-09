@@ -48,8 +48,14 @@
               if (context.TestExpression("communications", targetDepth))
               {
                 context.Read();
-                recentCaseCommunications.Communications = new List<Communication>();
-                        CommunicationUnmarshaller unmarshaller = CommunicationUnmarshaller.GetInstance();
+                
+                if (context.CurrentTokenType == JsonToken.Null)
+                {
+                    recentCaseCommunications.Communications = null;
+                    continue;
+                }
+                  recentCaseCommunications.Communications = new List<Communication>();
+                  CommunicationUnmarshaller unmarshaller = CommunicationUnmarshaller.GetInstance();
                 while (context.Read())
                 {
                   JsonToken token = context.CurrentTokenType;                

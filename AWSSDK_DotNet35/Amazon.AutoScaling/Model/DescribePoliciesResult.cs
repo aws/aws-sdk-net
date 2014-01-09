@@ -30,6 +30,7 @@ namespace Amazon.AutoScaling.Model
         private List<ScalingPolicy> scalingPolicies = new List<ScalingPolicy>();
         private string nextToken;
 
+
         /// <summary>
         /// A list of scaling policies.
         ///  

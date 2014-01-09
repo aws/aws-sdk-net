@@ -32,13 +32,14 @@ namespace Amazon.AutoScaling.Model
     /// vice versa.</para> <para><b>NOTE:</b> At this time, Auto Scaling launch configurations don't support compressed (e.g. zipped) user data
     /// files. </para>
     /// </summary>
-    public partial class CreateLaunchConfigurationRequest : AmazonWebServiceRequest
+    public partial class CreateLaunchConfigurationRequest : AmazonAutoScalingRequest
     {
         private string launchConfigurationName;
         private string imageId;
         private string keyName;
         private List<string> securityGroups = new List<string>();
         private string userData;
+        private string instanceId;
         private string instanceType;
         private string kernelId;
         private string ramdiskId;
@@ -48,6 +49,7 @@ namespace Amazon.AutoScaling.Model
         private string iamInstanceProfile;
         private bool? ebsOptimized;
         private bool? associatePublicIpAddress;
+
 
         /// <summary>
         /// The name of the launch configuration to create.
@@ -79,9 +81,9 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// Unique ID of the <i>Amazon Machine Image</i> (AMI) you want to use to launch your EC2 instances. For information about finding Amazon EC2
-        /// AMIs, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding a Suitable AMI</a> in the <i>Amazon
-        /// Elastic Compute Cloud User Guide</i>.
+        /// Unique ID of the Amazon Machine Image (AMI) you want to use to launch your EC2 instances. For information about finding Amazon EC2 AMIs, see
+        /// <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding a Suitable AMI</a> in the <i>Amazon Elastic Compute
+        /// Cloud User Guide</i>.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -191,6 +193,39 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetUserData()
         {
             return this.userData != null;
+        }
+
+        /// <summary>
+        /// The ID of the Amazon EC2 instance you want to use to create the launch configuration. When you use an instance to create a launch
+        /// configuration, by default, all the parameters are automatically derived from the instance with the exception of the following: <ul> <li>The
+        /// block device mappings are derived from the AMI that was used to launch the instance.</li> <li>The <c>AssociatePublicIpAddress</c> is not
+        /// derived if the flag is already set for the instance.</li> </ul> You can override any of the values by specifying your own values as part of
+        /// the same request.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Length</term>
+        ///         <description>1 - 16</description>
+        ///     </item>
+        ///     <item>
+        ///         <term>Pattern</term>
+        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
+        public string InstanceId
+        {
+            get { return this.instanceId; }
+            set { this.instanceId = value; }
+        }
+
+        // Check to see if InstanceId property is set
+        internal bool IsSetInstanceId()
+        {
+            return this.instanceId != null;
         }
 
         /// <summary>

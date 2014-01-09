@@ -21,8 +21,7 @@ using System.IO;
 namespace Amazon.AWSSupport.Model
 {
     /// <summary>
-    /// <para>Reports the estimated monthly savings and percentage of monthly savings determined by the Trusted Advisor check for your account.
-    /// </para>
+    /// <para>The estimated cost savings that might be realized if the recommended actions are taken.</para>
     /// </summary>
     public class TrustedAdvisorCostOptimizingSummary
     {
@@ -30,8 +29,9 @@ namespace Amazon.AWSSupport.Model
         private double? estimatedMonthlySavings;
         private double? estimatedPercentMonthlySavings;
 
+
         /// <summary>
-        /// Reports the estimated monthly savings determined by the Trusted Advisor check for your account.
+        /// The estimated monthly savings that might be realized if the recommended actions are taken.
         ///  
         /// </summary>
         public double EstimatedMonthlySavings
@@ -47,7 +47,7 @@ namespace Amazon.AWSSupport.Model
         }
 
         /// <summary>
-        /// Reports the estimated percentage of savings determined for your account by the Trusted Advisor check.
+        /// The estimated percentage of savings that might be realized if the recommended actions are taken.
         ///  
         /// </summary>
         public double EstimatedPercentMonthlySavings

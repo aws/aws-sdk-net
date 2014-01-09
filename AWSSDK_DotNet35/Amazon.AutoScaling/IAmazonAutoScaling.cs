@@ -36,13 +36,50 @@ namespace Amazon.AutoScaling
     /// href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/" >Auto Scaling Developer Guide</a> .
     /// </para> <para>This reference is based on the current WSDL, which is available at:</para> <para> <a
     /// href="http://autoscaling.amazonaws.com/doc/2011-01-01/AutoScaling.wsdl"
-    /// >http://autoscaling.amazonaws.com/doc/2011-01-01/AutoScaling.wsdl</a> </para> <para> <b>Endpoints</b> </para> <para>For information about
-    /// this product's regions and endpoints, go to <a href="http://docs.aws.amazon.com/general/latest/gr/index.html?rande.html" >Regions and
-    /// Endpoints</a> in the Amazon Web Services General Reference. </para>
+    /// >http://autoscaling.amazonaws.com/doc/2011-01-01/AutoScaling.wsdl</a> </para> <para> <b>Endpoints</b> </para> <para>The examples in this
+    /// guide assume that your instances are launched in the US East (Northern Virginia) region and use us-east-1 as the endpoint.</para> <para>You
+    /// can set up your Auto Scaling infrastructure in other AWS regions. For information about this product's regions and endpoints, see <a
+    /// href="http://docs.aws.amazon.com/general/latest/gr/index.html?rande.html" >Regions and Endpoints</a> in the Amazon Web Services General
+    /// Reference. </para>
     /// </summary>
-    public interface IAmazonAutoScaling : IDisposable
+    public partial interface IAmazonAutoScaling : IDisposable
     {
 
+
+        #region AttachInstances
+
+        /// <summary>
+        /// <para> Attaches one or more Amazon EC2 instances to an existing Auto Scaling group. </para>
+        /// </summary>
+        /// 
+        /// <param name="attachInstancesRequest">Container for the necessary parameters to execute the AttachInstances service method on
+        ///          AmazonAutoScaling.</param>
+        /// 
+        AttachInstancesResponse AttachInstances(AttachInstancesRequest attachInstancesRequest);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AttachInstances operation.
+        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling.AttachInstances"/>
+        /// </summary>
+        /// 
+        /// <param name="attachInstancesRequest">Container for the necessary parameters to execute the AttachInstances operation on
+        ///          AmazonAutoScaling.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        IAsyncResult BeginAttachInstances(AttachInstancesRequest attachInstancesRequest, AsyncCallback callback, object state);
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the AttachInstances operation.
+        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling.AttachInstances"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAttachInstances.</param>
+        AttachInstancesResponse EndAttachInstances(IAsyncResult asyncResult);
+        
+        #endregion
+        
+    
 
         #region CreateAutoScalingGroup
 
@@ -375,6 +412,56 @@ namespace Amazon.AutoScaling
         /// 
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteTags.</param>
         DeleteTagsResponse EndDeleteTags(IAsyncResult asyncResult);
+        
+        #endregion
+        
+    
+
+        #region DescribeAccountLimits
+
+        /// <summary>
+        /// <para> Returns the limits for the Auto Scaling resources set for your AWS account. </para>
+        /// </summary>
+        /// 
+        /// <param name="describeAccountLimitsRequest">Container for the necessary parameters to execute the DescribeAccountLimits service method on
+        ///          AmazonAutoScaling.</param>
+        /// 
+        /// <returns>The response from the DescribeAccountLimits service method, as returned by AmazonAutoScaling.</returns>
+        /// 
+        DescribeAccountLimitsResponse DescribeAccountLimits(DescribeAccountLimitsRequest describeAccountLimitsRequest);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeAccountLimits operation.
+        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling.DescribeAccountLimits"/>
+        /// </summary>
+        /// 
+        /// <param name="describeAccountLimitsRequest">Container for the necessary parameters to execute the DescribeAccountLimits operation on
+        ///          AmazonAutoScaling.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
+        ///         EndDescribeAccountLimits operation.</returns>
+        IAsyncResult BeginDescribeAccountLimits(DescribeAccountLimitsRequest describeAccountLimitsRequest, AsyncCallback callback, object state);
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the DescribeAccountLimits operation.
+        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling.DescribeAccountLimits"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAccountLimits.</param>
+        /// 
+        /// <returns>Returns a DescribeAccountLimitsResult from AmazonAutoScaling.</returns>
+        DescribeAccountLimitsResponse EndDescribeAccountLimits(IAsyncResult asyncResult);
+
+        /// <summary>
+        /// <para> Returns the limits for the Auto Scaling resources set for your AWS account. </para>
+        /// </summary>
+        /// 
+        /// <returns>The response from the DescribeAccountLimits service method, as returned by AmazonAutoScaling.</returns>
+        /// 
+        DescribeAccountLimitsResponse DescribeAccountLimits();
         
         #endregion
         

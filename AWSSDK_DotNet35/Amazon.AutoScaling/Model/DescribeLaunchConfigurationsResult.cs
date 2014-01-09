@@ -30,6 +30,7 @@ namespace Amazon.AutoScaling.Model
         private List<LaunchConfiguration> launchConfigurations = new List<LaunchConfiguration>();
         private string nextToken;
 
+
         /// <summary>
         /// A list of launch configurations.
         ///  

@@ -22,7 +22,7 @@ using Amazon.Runtime;
 namespace Amazon.AWSSupport.Model
 {
     /// <summary>
-    /// <para>Returns the objects or data listed below if successful. Otherwise, returns an error.</para>
+    /// <para>Contains the following objects or data if successful. Otherwise, returns an error.</para>
     /// </summary>
     public partial class ResolveCaseResult : AmazonWebServiceResponse
     {
@@ -30,9 +30,9 @@ namespace Amazon.AWSSupport.Model
         private string initialCaseStatus;
         private string finalCaseStatus;
 
+
         /// <summary>
-        /// Status of the case when the <a href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_ResolveCase.html"
-        /// title="ResolveCase">ResolveCase</a> request was sent.
+        /// The status of the case when the <a>ResolveCase</a> request was sent.
         ///  
         /// </summary>
         public string InitialCaseStatus
@@ -48,8 +48,7 @@ namespace Amazon.AWSSupport.Model
         }
 
         /// <summary>
-        /// Status of the case after the <a href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_ResolveCase.html"
-        /// title="ResolveCase">ResolveCase</a> request was processed.
+        /// The status of the case after the <a>ResolveCase</a> request was processed.
         ///  
         /// </summary>
         public string FinalCaseStatus

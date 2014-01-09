@@ -28,11 +28,12 @@ namespace Amazon.AutoScaling.Model
     /// <para> Returns a full description of the launch configurations, or the specified launch configurations, if they exist. </para> <para> If no
     /// name is specified, then the full details of all launch configurations are returned. </para>
     /// </summary>
-    public partial class DescribeLaunchConfigurationsRequest : AmazonWebServiceRequest
+    public partial class DescribeLaunchConfigurationsRequest : AmazonAutoScalingRequest
     {
         private List<string> launchConfigurationNames = new List<string>();
         private string nextToken;
         private int? maxRecords;
+
 
         /// <summary>
         /// A list of launch configuration names.

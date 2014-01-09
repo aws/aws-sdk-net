@@ -28,7 +28,7 @@ namespace Amazon.AWSSupport.Model
     {
         /// <summary>
         /// Gets and sets the CreateCaseResult property.
-        /// Contains the AWSSupport caseId returned by a successful completion of the CreateCase action.
+        /// The AWS Support case ID returned by a successful completion of the CreateCase action.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the CreateCaseResult class are now available on the CreateCaseResponse class. You should use the properties on CreateCaseResponse instead of accessing them through CreateCaseResult.")]
         public CreateCaseResult CreateCaseResult

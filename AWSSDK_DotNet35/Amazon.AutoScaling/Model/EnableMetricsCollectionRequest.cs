@@ -30,11 +30,12 @@ namespace Amazon.AutoScaling.Model
     /// can be turned on only if the <c>InstanceMonitoring</c> flag, in the Auto Scaling group's launch configuration, is set to <c>True</c> .
     /// </para>
     /// </summary>
-    public partial class EnableMetricsCollectionRequest : AmazonWebServiceRequest
+    public partial class EnableMetricsCollectionRequest : AmazonAutoScalingRequest
     {
         private string autoScalingGroupName;
         private List<string> metrics = new List<string>();
         private string granularity;
+
 
         /// <summary>
         /// The name or ARN of the Auto Scaling group.

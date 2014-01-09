@@ -30,11 +30,12 @@ namespace Amazon.AutoScaling.Model
     /// supports pagination by returning a token if there are more pages to retrieve. To get the next page, call this action again with the returned
     /// token as the <c>NextToken</c> parameter. </para>
     /// </summary>
-    public partial class DescribeAutoScalingGroupsRequest : AmazonWebServiceRequest
+    public partial class DescribeAutoScalingGroupsRequest : AmazonAutoScalingRequest
     {
         private List<string> autoScalingGroupNames = new List<string>();
         private string nextToken;
         private int? maxRecords;
+
 
         /// <summary>
         /// A list of Auto Scaling group names.

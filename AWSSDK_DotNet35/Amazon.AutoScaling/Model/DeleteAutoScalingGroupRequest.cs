@@ -29,10 +29,11 @@ namespace Amazon.AutoScaling.Model
     /// <para><b>NOTE:</b> To remove all instances before calling DeleteAutoScalingGroup, you can call UpdateAutoScalingGroup to set the minimum and
     /// maximum size of the AutoScalingGroup to zero. </para>
     /// </summary>
-    public partial class DeleteAutoScalingGroupRequest : AmazonWebServiceRequest
+    public partial class DeleteAutoScalingGroupRequest : AmazonAutoScalingRequest
     {
         private string autoScalingGroupName;
         private bool? forceDelete;
+
 
         /// <summary>
         /// The name of the Auto Scaling group to delete.

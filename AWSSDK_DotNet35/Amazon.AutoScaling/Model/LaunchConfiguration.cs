@@ -43,6 +43,7 @@ namespace Amazon.AutoScaling.Model
         private bool? ebsOptimized;
         private bool? associatePublicIpAddress;
 
+
         /// <summary>
         /// Specifies the name of the launch configuration.
         ///  

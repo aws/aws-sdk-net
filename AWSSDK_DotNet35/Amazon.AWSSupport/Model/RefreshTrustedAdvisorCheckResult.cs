@@ -22,16 +22,16 @@ using Amazon.Runtime;
 namespace Amazon.AWSSupport.Model
 {
     /// <summary>
-    /// 
+    /// <para>The current refresh status of a Trusted Advisor check.</para>
     /// </summary>
     public partial class RefreshTrustedAdvisorCheckResult : AmazonWebServiceResponse
     {
         
         private TrustedAdvisorCheckRefreshStatus status;
 
+
         /// <summary>
-        /// Returns the overall status of the <a href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_RefreshTrustedAdvisorCheck.html"
-        /// title="RefreshTrustedAdvisorCheck">RefreshTrustedAdvisorCheck</a> call.
+        /// The current refresh status for a check, including the amount of time until the check is eligible for refresh.
         ///  
         /// </summary>
         public TrustedAdvisorCheckRefreshStatus Status

@@ -22,15 +22,16 @@ using Amazon.Runtime;
 namespace Amazon.AWSSupport.Model
 {
     /// <summary>
-    /// <para>Returns the objects or data listed below if successful. Otherwise, returns an error.</para>
+    /// <para>Contains the following objects or data if successful. Otherwise, returns an error.</para>
     /// </summary>
     public partial class DescribeSeverityLevelsResult : AmazonWebServiceResponse
     {
         
         private List<SeverityLevel> severityLevels = new List<SeverityLevel>();
 
+
         /// <summary>
-        /// List of available severity levels for the support case. Available severity levels are defined by your service level agreement with AWS.
+        /// The available severity levels for the support case. Available severity levels are defined by your service level agreement with AWS.
         ///  
         /// </summary>
         public List<SeverityLevel> SeverityLevels

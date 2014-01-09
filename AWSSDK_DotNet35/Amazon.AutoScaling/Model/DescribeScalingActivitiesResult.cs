@@ -30,6 +30,7 @@ namespace Amazon.AutoScaling.Model
         private List<Activity> activities = new List<Activity>();
         private string nextToken;
 
+
         /// <summary>
         /// A list of the requested scaling activities.
         ///  

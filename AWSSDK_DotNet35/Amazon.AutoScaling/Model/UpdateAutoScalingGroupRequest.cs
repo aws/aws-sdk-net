@@ -36,7 +36,7 @@ namespace Amazon.AutoScaling.Model
     /// than the current size of the Auto Scaling Group, there will be an implicit call to SetDesiredCapacity to set the group to the new MaxSize.
     /// All other optional parameters are left unchanged if not passed in the request. </para>
     /// </summary>
-    public partial class UpdateAutoScalingGroupRequest : AmazonWebServiceRequest
+    public partial class UpdateAutoScalingGroupRequest : AmazonAutoScalingRequest
     {
         private string autoScalingGroupName;
         private string launchConfigurationName;
@@ -50,6 +50,7 @@ namespace Amazon.AutoScaling.Model
         private string placementGroup;
         private string vPCZoneIdentifier;
         private List<string> terminationPolicies = new List<string>();
+
 
         /// <summary>
         /// The name of the Auto Scaling group.

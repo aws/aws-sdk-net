@@ -31,7 +31,7 @@ namespace Amazon.AutoScaling.Model
     /// href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/schedule_time.html" >Scale Based on a Schedule</a> .</para>
     /// <para><b>NOTE:</b> Auto Scaling supports the date and time expressed in "YYYY-MM-DDThh:mm:ssZ" format in UTC/GMT only. </para>
     /// </summary>
-    public partial class PutScheduledUpdateGroupActionRequest : AmazonWebServiceRequest
+    public partial class PutScheduledUpdateGroupActionRequest : AmazonAutoScalingRequest
     {
         private string autoScalingGroupName;
         private string scheduledActionName;
@@ -42,6 +42,7 @@ namespace Amazon.AutoScaling.Model
         private int? minSize;
         private int? maxSize;
         private int? desiredCapacity;
+
 
         /// <summary>
         /// The name or ARN of the Auto Scaling group.

@@ -21,27 +21,26 @@ using System.IO;
 namespace Amazon.AWSSupport.Model
 {
     /// <summary>
-    /// <para>JSON-formatted object that contains the metadata for a support case. It is contained the response from a <a
-    /// href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeCases.html" >DescribeCases</a> request. This structure contains
-    /// the following fields:</para> <ol> <li> <b>CaseID</b> . String that indicates the AWS Support caseID requested or returned in the call. The
-    /// caseID is an alphanumeric string formatted as shown in this example CaseId: <i>case-12345678910-2013-c4c1d2bf33c5cf47</i> </li>
-    /// <li> <b>CategoryCode</b> . Specifies the category of problem for the AWS Support case. Corresponds to the CategoryCode values returned by a
-    /// call to <a href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeServices.html" >DescribeServices</a> </li>
-    /// <li> <b>DisplayId</b> . String that identifies the case on pages in the AWS Support Center</li>
-    /// <li> <b>Language</b> . Specifies the ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English
-    /// and Japanese, for which the codes are <i>en</i> and <i>ja</i> , respectively. Language parameters must be passed explicitly for operations
-    /// that take them.</li>
-    /// <li> <b>RecentCommunications</b> . One ore more <a href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_Communication.html"
-    /// >Communication</a> data types. Subfields of these structures are Body, CaseId, SubmittedBy, and TimeCreated.</li>
-    /// <li> <b>NextToken</b> . Defines a resumption point for pagination.</li>
-    /// <li> <b>ServiceCode</b> . Identifier for the AWS service that corresponds to the service code defined in the call to <a
-    /// href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeCases.html" >DescribeServices</a> </li>
-    /// <li> <b>SeverityCode. </b> Specifies the severity code assigned to the case. Contains one of the values returned by the call to <a
-    /// href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeSeverityLevels.html" >DescribeSeverityLevels</a> </li>
-    /// <li> <b>Status</b> . Represents the status of your case in the AWS Support Center</li>
-    /// <li> <b>Subject</b> . Represents the subject line of the case.</li>
-    /// <li> <b>SubmittedBy</b> .Email address of the account that submitted the case.</li>
-    /// <li> <b>TimeCreated</b> .Time the case was created, using ISO 8601 format. </li>
+    /// <para>A JSON-formatted object that contains the metadata for a support case. It is contained the response from a DescribeCases request.
+    /// <b>CaseDetails</b> contains the following fields:</para> <ol> <li> <b>CaseID.</b> The AWS Support case ID requested or returned in the call.
+    /// The case ID is an alphanumeric string formatted as shown in this example: case- <i>12345678910-2013-c4c1d2bf33c5cf47</i> .</li>
+    /// <li> <b>CategoryCode.</b> The category of problem for the AWS Support case. Corresponds to the CategoryCode values returned by a call to
+    /// DescribeServices.</li>
+    /// <li> <b>DisplayId.</b> The identifier for the case on pages in the AWS Support Center.</li>
+    /// <li> <b>Language.</b> The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English ("en") and
+    /// Japanese ("ja"). Language parameters must be passed explicitly for operations that take them.</li>
+    /// <li> <b>RecentCommunications.</b> One or more Communication objects. Fields of these objects are <c>Body</c> ,
+    /// <c>CaseId</c> ,
+    /// <c>SubmittedBy</c> , and <c>TimeCreated</c> .</li>
+    /// <li> <b>NextToken.</b> A resumption point for pagination.</li>
+    /// <li> <b>ServiceCode.</b> The identifier for the AWS service that corresponds to the service code defined in the call to
+    /// DescribeServices.</li>
+    /// <li> <b>SeverityCode. </b> The severity code assigned to the case. Contains one of the values returned by the call to
+    /// DescribeSeverityLevels.</li>
+    /// <li> <b>Status.</b> The status of the case in the AWS Support Center.</li>
+    /// <li> <b>Subject.</b> The subject line of the case.</li>
+    /// <li> <b>SubmittedBy.</b> The email address of the account that submitted the case.</li>
+    /// <li> <b>TimeCreated.</b> The time the case was created, in ISO-8601 format.</li>
     /// </ol>
     /// </summary>
     public class CaseDetails
@@ -60,9 +59,10 @@ namespace Amazon.AWSSupport.Model
         private List<string> ccEmailAddresses = new List<string>();
         private string language;
 
+
         /// <summary>
-        /// String that indicates the AWS Support caseID requested or returned in the call. The caseID is an alphanumeric string formatted as shown in
-        /// this example CaseId: <i>case-12345678910-2013-c4c1d2bf33c5cf47</i>
+        /// The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example:
+        /// case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
         ///  
         /// </summary>
         public string CaseId
@@ -78,7 +78,7 @@ namespace Amazon.AWSSupport.Model
         }
 
         /// <summary>
-        /// Represents the Id value displayed on pages for the case in AWS Support Center. This is a numeric string.
+        /// The ID displayed for the case in the AWS Support Center. This is a numeric string.
         ///  
         /// </summary>
         public string DisplayId
@@ -94,7 +94,7 @@ namespace Amazon.AWSSupport.Model
         }
 
         /// <summary>
-        /// Represents the subject line for a support case in the AWS Support Center user interface.
+        /// The subject line for the case in the AWS Support Center.
         ///  
         /// </summary>
         public string Subject
@@ -110,7 +110,7 @@ namespace Amazon.AWSSupport.Model
         }
 
         /// <summary>
-        /// Represents the status of a case submitted to AWS Support.
+        /// The status of the case.
         ///  
         /// </summary>
         public string Status
@@ -126,8 +126,7 @@ namespace Amazon.AWSSupport.Model
         }
 
         /// <summary>
-        /// Code for the AWS service returned by the call to <a
-        /// href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeServices.html" title="DescribeServices">DescribeServices</a>.
+        /// The code for the AWS service returned by the call to <a>DescribeServices</a>.
         ///  
         /// </summary>
         public string ServiceCode
@@ -143,7 +142,7 @@ namespace Amazon.AWSSupport.Model
         }
 
         /// <summary>
-        /// Specifies the category of problem for the AWS Support case.
+        /// The category of problem for the AWS Support case.
         ///  
         /// </summary>
         public string CategoryCode
@@ -159,9 +158,7 @@ namespace Amazon.AWSSupport.Model
         }
 
         /// <summary>
-        /// Code for the severity level returned by the call to <a
-        /// href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeSeverityLevels.html"
-        /// title="DescribeSeverityLevels">DescribeSeverityLevels</a>.
+        /// The code for the severity level returned by the call to <a>DescribeSeverityLevels</a>.
         ///  
         /// </summary>
         public string SeverityCode
@@ -177,7 +174,7 @@ namespace Amazon.AWSSupport.Model
         }
 
         /// <summary>
-        /// Represents the email address of the account that submitted the case to support.
+        /// The email address of the account that submitted the case.
         ///  
         /// </summary>
         public string SubmittedBy
@@ -193,7 +190,7 @@ namespace Amazon.AWSSupport.Model
         }
 
         /// <summary>
-        /// Time that the case was case created in AWS Support Center.
+        /// The time that the case was case created in the AWS Support Center.
         ///  
         /// </summary>
         public string TimeCreated
@@ -209,8 +206,8 @@ namespace Amazon.AWSSupport.Model
         }
 
         /// <summary>
-        /// Returns up to the five most recent communications between you and AWS Support Center. Includes a <i>nextToken</i> to retrieve the next set
-        /// of communications.
+        /// The five most recent communications between you and AWS Support Center. Includes a <c>nextToken</c> to retrieve the next set of
+        /// communications.
         ///  
         /// </summary>
         public RecentCaseCommunications RecentCommunications
@@ -226,7 +223,7 @@ namespace Amazon.AWSSupport.Model
         }
 
         /// <summary>
-        /// List of email addresses that are copied in any communication about the case.
+        /// The email addresses that receive copies of communication about the case.
         ///  
         /// </summary>
         public List<string> CcEmailAddresses
@@ -242,8 +239,8 @@ namespace Amazon.AWSSupport.Model
         }
 
         /// <summary>
-        /// Specifies the ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English and Japanese, for which
-        /// the codes are <i>en</i> and <i>ja</i>, respectively. Language parameters must be passed explicitly for operations that take them.
+        /// The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English ("en") and Japanese ("ja").
+        /// Language parameters must be passed explicitly for operations that take them.
         ///  
         /// </summary>
         public string Language

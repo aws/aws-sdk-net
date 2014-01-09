@@ -21,8 +21,7 @@ using System.IO;
 namespace Amazon.AWSSupport.Model
 {
     /// <summary>
-    /// <para>JSON-formatted pair of strings consisting of a code and name that represent a severity level that can be applied to a support case.
-    /// </para>
+    /// <para>A code and name pair that represent a severity level that can be applied to a support case. </para>
     /// </summary>
     public class SeverityLevel
     {
@@ -30,9 +29,10 @@ namespace Amazon.AWSSupport.Model
         private string code;
         private string name;
 
+
         /// <summary>
-        /// String that represents one of four values: "low," "medium," "high," and "urgent". These values correspond to response times returned to the
-        /// caller in the string <c>SeverityLevel.name</c>.
+        /// One of four values: "low," "medium," "high," and "urgent". These values correspond to response times returned to the caller in
+        /// <c>SeverityLevel.name</c>.
         ///  
         /// </summary>
         public string Code
@@ -48,7 +48,7 @@ namespace Amazon.AWSSupport.Model
         }
 
         /// <summary>
-        /// Name of severity levels that correspond to the severity level codes.
+        /// The name of the severity level that corresponds to the severity level code.
         ///  
         /// </summary>
         public string Name

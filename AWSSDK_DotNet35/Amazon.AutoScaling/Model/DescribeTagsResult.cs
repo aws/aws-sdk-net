@@ -30,6 +30,7 @@ namespace Amazon.AutoScaling.Model
         private List<TagDescription> tags = new List<TagDescription>();
         private string nextToken;
 
+
         /// <summary>
         /// The list of tags.
         ///  

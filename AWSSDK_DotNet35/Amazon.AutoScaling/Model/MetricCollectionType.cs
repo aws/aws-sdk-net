@@ -28,6 +28,7 @@ namespace Amazon.AutoScaling.Model
         
         private string metric;
 
+
         /// <summary>
         /// 
         ///  

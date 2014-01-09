@@ -39,6 +39,7 @@ namespace Amazon.AutoScaling.Model
         private int? progress;
         private string details;
 
+
         /// <summary>
         /// Specifies the ID of the activity.
         ///  

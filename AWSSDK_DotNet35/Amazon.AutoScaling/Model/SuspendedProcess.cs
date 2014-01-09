@@ -29,6 +29,7 @@ namespace Amazon.AutoScaling.Model
         private string processName;
         private string suspensionReason;
 
+
         /// <summary>
         /// The name of the suspended process.
         ///  

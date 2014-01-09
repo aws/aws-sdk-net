@@ -22,16 +22,16 @@ using Amazon.Runtime;
 namespace Amazon.AWSSupport.Model
 {
     /// <summary>
-    /// <para>Returns the objects or data listed below if successful. Otherwise, returns an error.</para>
+    /// <para>Contains the following objects or data if successful. Otherwise, returns an error.</para>
     /// </summary>
     public partial class DescribeTrustedAdvisorCheckResultResult : AmazonWebServiceResponse
     {
         
         private TrustedAdvisorCheckResult result;
 
+
         /// <summary>
-        /// Returns a <a href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorCheckResult.html"
-        /// title="TrustedAdvisorCheckResult">TrustedAdvisorCheckResult</a> object.
+        /// The detailed results of the Trusted Advisor check.
         ///  
         /// </summary>
         public TrustedAdvisorCheckResult Result

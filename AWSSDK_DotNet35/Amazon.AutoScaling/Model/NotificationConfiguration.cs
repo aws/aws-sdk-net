@@ -30,6 +30,7 @@ namespace Amazon.AutoScaling.Model
         private string topicARN;
         private string notificationType;
 
+
         /// <summary>
         /// Specifies the Auto Scaling group name.
         ///  

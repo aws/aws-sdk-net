@@ -22,16 +22,16 @@ using Amazon.Runtime;
 namespace Amazon.AWSSupport.Model
 {
     /// <summary>
-    /// <para>Returns the objects or data listed below if successful. Otherwise, returns an error.</para>
+    /// <para>Contains the following objects or data if successful. Otherwise, returns an error.</para>
     /// </summary>
     public partial class AddCommunicationToCaseResult : AmazonWebServiceResponse
     {
         
         private bool? result;
 
+
         /// <summary>
-        /// Returns true if the <a href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_AddCommunicationToCase.html"
-        /// title="AddCommunicationToCase">AddCommunicationToCase</a> succeeds. Returns an error otherwise.
+        /// True if <a>AddCommunicationToCase</a> succeeds. Otherwise, returns an error.
         ///  
         /// </summary>
         public bool Result

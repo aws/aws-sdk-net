@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.AWSSupport.Model
 {
     /// <summary>
-    /// <para>List of <a href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_Communication.html" >Commmunication</a> objects.</para>
+    /// <para>Contains the five most recent communications associated with the case.</para>
     /// </summary>
     public class RecentCaseCommunications
     {
@@ -29,9 +29,9 @@ namespace Amazon.AWSSupport.Model
         private List<Communication> communications = new List<Communication>();
         private string nextToken;
 
+
         /// <summary>
-        /// List of <a href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_Communication.html" title="Communication">Commmunication</a>
-        /// objects.
+        /// The five most recent communications associated with the case.
         ///  
         /// </summary>
         public List<Communication> Communications
@@ -47,7 +47,7 @@ namespace Amazon.AWSSupport.Model
         }
 
         /// <summary>
-        /// Defines a resumption point for pagination.
+        /// A resumption point for pagination.
         ///  
         /// </summary>
         public string NextToken

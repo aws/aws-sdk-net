@@ -37,6 +37,7 @@ namespace Amazon.AutoScaling.Model
         private int? maxSize;
         private int? desiredCapacity;
 
+
         /// <summary>
         /// The name of the Auto Scaling group to be updated.
         ///  

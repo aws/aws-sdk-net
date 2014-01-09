@@ -25,18 +25,18 @@ namespace Amazon.AWSSupport.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeTrustedAdvisorChecks operation.
-    /// <para>This action enables you to get a list of the available Trusted Advisor checks. You must specify a language code. English ("en") and
-    /// Japanese ("jp") are currently supported. The response contains a list of <a
-    /// href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorCheckDescription.html" >TrustedAdvisorCheckDescription</a>
-    /// objects. </para>
+    /// <para>Returns information about all available Trusted Advisor checks, including name, ID, category, description, and metadata. You must
+    /// specify a language code; English ("en") and Japanese ("ja") are currently supported. The response contains a TrustedAdvisorCheckDescription
+    /// for each check.</para>
     /// </summary>
-    public partial class DescribeTrustedAdvisorChecksRequest : AmazonWebServiceRequest
+    public partial class DescribeTrustedAdvisorChecksRequest : AmazonAWSSupportRequest
     {
         private string language;
 
+
         /// <summary>
-        /// Specifies the ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English and Japanese, for which
-        /// the codes are <i>en</i> and <i>ja</i>, respectively. Language parameters must be passed explicitly for operations that take them.
+        /// The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English ("en") and Japanese ("ja").
+        /// Language parameters must be passed explicitly for operations that take them.
         ///  
         /// </summary>
         public string Language

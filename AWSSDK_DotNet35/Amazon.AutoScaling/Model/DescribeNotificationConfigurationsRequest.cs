@@ -27,11 +27,12 @@ namespace Amazon.AutoScaling.Model
     /// Container for the parameters to the DescribeNotificationConfigurations operation.
     /// <para> Returns a list of notification actions associated with Auto Scaling groups for specified events. </para>
     /// </summary>
-    public partial class DescribeNotificationConfigurationsRequest : AmazonWebServiceRequest
+    public partial class DescribeNotificationConfigurationsRequest : AmazonAutoScalingRequest
     {
         private List<string> autoScalingGroupNames = new List<string>();
         private string nextToken;
         private int? maxRecords;
+
 
         /// <summary>
         /// The name of the Auto Scaling group.

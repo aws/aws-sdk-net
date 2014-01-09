@@ -29,6 +29,7 @@ namespace Amazon.AutoScaling.Model
         private string metric;
         private string granularity;
 
+
         /// <summary>
         /// The name of the enabled metric.
         ///  

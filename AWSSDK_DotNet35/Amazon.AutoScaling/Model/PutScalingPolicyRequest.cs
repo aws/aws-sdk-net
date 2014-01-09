@@ -29,7 +29,7 @@ namespace Amazon.AutoScaling.Model
     /// parameter(s) you want to change. Any existing parameter not changed in an update to an existing policy is not changed in this update
     /// request. </para>
     /// </summary>
-    public partial class PutScalingPolicyRequest : AmazonWebServiceRequest
+    public partial class PutScalingPolicyRequest : AmazonAutoScalingRequest
     {
         private string autoScalingGroupName;
         private string policyName;
@@ -37,6 +37,7 @@ namespace Amazon.AutoScaling.Model
         private string adjustmentType;
         private int? cooldown;
         private int? minAdjustmentStep;
+
 
         /// <summary>
         /// The name or ARN of the Auto Scaling group.

@@ -22,7 +22,7 @@ namespace Amazon.AWSSupport
     /// <summary>
     /// Configuration for accessing AWS Support service
     /// </summary>
-    public class AmazonAWSSupportConfig : ClientConfig
+    public partial class AmazonAWSSupportConfig : ClientConfig
     {
         /// <summary>
         /// Default constructor

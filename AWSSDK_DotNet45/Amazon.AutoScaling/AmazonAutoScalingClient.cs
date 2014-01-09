@@ -38,9 +38,10 @@ namespace Amazon.AutoScaling
     /// benefit of calling the service using a Query request is that you are assured of having access to the complete functionality of the API. For
     /// information about signing a a query request, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/api_requests.html">Use Query Requests to Call Auto Scaling APIs</a> </para> <para> This guide provides detailed information about Auto Scaling actions, data
     /// types, parameters, and errors. For detailed information about Auto Scaling features and their associated API actions, go to the <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/">Auto Scaling Developer Guide</a> .
-    /// </para> <para>This reference is based on the current WSDL, which is available at:</para> <para> <a href="http://autoscaling.amazonaws.com/doc/2011-01-01/AutoScaling.wsdl">http://autoscaling.amazonaws.com/doc/2011-01-01/AutoScaling.wsdl</a> </para> <para> <b>Endpoints</b> </para> <para>For information about
-    /// this product's regions and endpoints, go to <a href="http://docs.aws.amazon.com/general/latest/gr/index.html?rande.html">Regions and
-    /// Endpoints</a> in the Amazon Web Services General Reference. </para>
+    /// </para> <para>This reference is based on the current WSDL, which is available at:</para> <para> <a href="http://autoscaling.amazonaws.com/doc/2011-01-01/AutoScaling.wsdl">http://autoscaling.amazonaws.com/doc/2011-01-01/AutoScaling.wsdl</a> </para> <para> <b>Endpoints</b> </para> <para>The examples in this
+    /// guide assume that your instances are launched in the US East (Northern Virginia) region and use us-east-1 as the endpoint.</para> <para>You
+    /// can set up your Auto Scaling infrastructure in other AWS regions. For information about this product's regions and endpoints, see <a href="http://docs.aws.amazon.com/general/latest/gr/index.html?rande.html">Regions and Endpoints</a> in the Amazon Web Services General
+    /// Reference. </para>
     /// </summary>
 	public partial class AmazonAutoScalingClient : AmazonWebServiceClient, Amazon.AutoScaling.IAmazonAutoScaling
     {
@@ -224,6 +225,44 @@ namespace Amazon.AutoScaling
 
         #endregion
 
+ 
+        /// <summary>
+        /// <para> Attaches one or more Amazon EC2 instances to an existing Auto Scaling group. </para>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AttachInstances service method on
+        /// AmazonAutoScaling.</param>
+		public AttachInstancesResponse AttachInstances(AttachInstancesRequest request)
+        {
+            var task = AttachInstancesAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+          
+        /// <summary>
+        /// Initiates the asynchronous execution of the AttachInstances operation.
+        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling.AttachInstances"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AttachInstances operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+		public async Task<AttachInstancesResponse> AttachInstancesAsync(AttachInstancesRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new AttachInstancesRequestMarshaller();
+            var unmarshaller = AttachInstancesResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, AttachInstancesRequest, AttachInstancesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
  
         /// <summary>
         /// <para> Creates a new Auto Scaling group with the specified name and other attributes. When the creation request is completed, the Auto
@@ -592,6 +631,57 @@ namespace Amazon.AutoScaling
             var response = await Invoke<IRequest, DeleteTagsRequest, DeleteTagsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
                 .ConfigureAwait(continueOnCapturedContext: false);
             return response;
+        }
+ 
+        /// <summary>
+        /// <para> Returns the limits for the Auto Scaling resources set for your AWS account. </para>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAccountLimits service method on
+        /// AmazonAutoScaling.</param>
+        /// 
+        /// <returns>The response from the DescribeAccountLimits service method, as returned by AmazonAutoScaling.</returns>
+		public DescribeAccountLimitsResponse DescribeAccountLimits(DescribeAccountLimitsRequest request)
+        {
+            var task = DescribeAccountLimitsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                throw e.InnerException;
+            }
+        }
+          
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeAccountLimits operation.
+        /// <seealso cref="Amazon.AutoScaling.IAmazonAutoScaling.DescribeAccountLimits"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAccountLimits operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+		public async Task<DescribeAccountLimitsResponse> DescribeAccountLimitsAsync(DescribeAccountLimitsRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeAccountLimitsRequestMarshaller();
+            var unmarshaller = DescribeAccountLimitsResponseUnmarshaller.GetInstance();
+            var response = await Invoke<IRequest, DescribeAccountLimitsRequest, DescribeAccountLimitsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);
+            return response;
+        }
+ 
+        /// <summary>
+        /// <para> Returns the limits for the Auto Scaling resources set for your AWS account. </para>
+        /// </summary>
+        /// 
+        /// 
+        /// <returns>The response from the DescribeAccountLimits service method, as returned by AmazonAutoScaling.</returns>
+		public DescribeAccountLimitsResponse DescribeAccountLimits()
+        {
+            return this.DescribeAccountLimits(new DescribeAccountLimitsRequest());
         }
  
         /// <summary>

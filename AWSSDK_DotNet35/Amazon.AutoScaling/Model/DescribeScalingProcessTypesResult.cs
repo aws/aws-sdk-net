@@ -29,6 +29,7 @@ namespace Amazon.AutoScaling.Model
         
         private List<ProcessType> processes = new List<ProcessType>();
 
+
         /// <summary>
         /// A list of <a>ProcessType</a> names.
         ///  

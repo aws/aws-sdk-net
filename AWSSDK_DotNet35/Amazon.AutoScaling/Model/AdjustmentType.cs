@@ -29,6 +29,7 @@ namespace Amazon.AutoScaling.Model
         
         private string type;
 
+
         /// <summary>
         /// A policy adjustment type. Valid values are <c>ChangeInCapacity</c>, <c>ExactCapacity</c>, and <c>PercentChangeInCapacity</c>.
         ///  

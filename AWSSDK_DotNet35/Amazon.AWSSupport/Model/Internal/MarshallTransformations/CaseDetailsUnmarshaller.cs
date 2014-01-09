@@ -118,8 +118,14 @@
               if (context.TestExpression("ccEmailAddresses", targetDepth))
               {
                 context.Read();
-                caseDetails.CcEmailAddresses = new List<String>();
-                        StringUnmarshaller unmarshaller = StringUnmarshaller.GetInstance();
+                
+                if (context.CurrentTokenType == JsonToken.Null)
+                {
+                    caseDetails.CcEmailAddresses = null;
+                    continue;
+                }
+                  caseDetails.CcEmailAddresses = new List<String>();
+                  StringUnmarshaller unmarshaller = StringUnmarshaller.GetInstance();
                 while (context.Read())
                 {
                   JsonToken token = context.CurrentTokenType;                

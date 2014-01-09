@@ -27,11 +27,12 @@ namespace Amazon.AutoScaling.Model
     /// Container for the parameters to the ExecutePolicy operation.
     /// <para>Executes the specified policy. </para>
     /// </summary>
-    public partial class ExecutePolicyRequest : AmazonWebServiceRequest
+    public partial class ExecutePolicyRequest : AmazonAutoScalingRequest
     {
         private string autoScalingGroupName;
         private string policyName;
         private bool? honorCooldown;
+
 
         /// <summary>
         /// The name or the Amazon Resource Name (ARN) of the Auto Scaling group.

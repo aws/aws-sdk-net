@@ -147,6 +147,9 @@
     <Compile Include="Amazon.AutoScaling\Model\AlreadyExistsException.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\AmazonAutoScalingRequest.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\AttachInstancesRequest.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\AttachInstancesResponse.cs" />
     <Compile Include="Amazon.AutoScaling\Model\AutoScalingGroup.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -210,6 +213,9 @@
     <Compile Include="Amazon.AutoScaling\Model\DeleteTagsResponse.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\DescribeAccountLimitsRequest.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\DescribeAccountLimitsResponse.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\DescribeAccountLimitsResult.cs" />
     <Compile Include="Amazon.AutoScaling\Model\DescribeAdjustmentTypesRequest.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -363,6 +369,8 @@
     <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\AlarmUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\AttachInstancesRequestMarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\AttachInstancesResponseUnmarshaller.cs" />
     <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\AutoScalingGroupUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -426,6 +434,8 @@
     <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\DeleteTagsResponseUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\DescribeAccountLimitsRequestMarshaller.cs" />
+    <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\DescribeAccountLimitsResponseUnmarshaller.cs" />
     <Compile Include="Amazon.AutoScaling\Model\Internal\MarshallTransformations\DescribeAdjustmentTypesRequestMarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -721,6 +731,7 @@
     <Compile Include="Amazon.AWSSupport\Model\AddCommunicationToCaseRequest.cs" />
     <Compile Include="Amazon.AWSSupport\Model\AddCommunicationToCaseResponse.cs" />
     <Compile Include="Amazon.AWSSupport\Model\AddCommunicationToCaseResult.cs" />
+    <Compile Include="Amazon.AWSSupport\Model\AmazonAWSSupportRequest.cs" />
     <Compile Include="Amazon.AWSSupport\Model\CaseCreationLimitExceededException.cs" />
     <Compile Include="Amazon.AWSSupport\Model\CaseDetails.cs" />
     <Compile Include="Amazon.AWSSupport\Model\CaseIdNotFoundException.cs" />

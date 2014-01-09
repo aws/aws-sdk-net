@@ -49,6 +49,24 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                             
                         continue;
                     }
+                    if (context.TestExpression("VolumeType", targetDepth))
+                    {
+                        ebs.VolumeType = StringUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
+                    }
+                    if (context.TestExpression("DeleteOnTermination", targetDepth))
+                    {
+                        ebs.DeleteOnTermination = BoolUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
+                    }
+                    if (context.TestExpression("Iops", targetDepth))
+                    {
+                        ebs.Iops = IntUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {

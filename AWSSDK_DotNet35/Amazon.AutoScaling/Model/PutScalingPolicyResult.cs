@@ -29,6 +29,7 @@ namespace Amazon.AutoScaling.Model
         
         private string policyARN;
 
+
         /// <summary>
         /// A policy's Amazon Resource Name (ARN).
         ///  

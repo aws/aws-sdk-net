@@ -49,8 +49,14 @@
               if (context.TestExpression("services", targetDepth))
               {
                 context.Read();
-                response.Services = new List<Service>();
-                        ServiceUnmarshaller unmarshaller = ServiceUnmarshaller.GetInstance();
+                
+                if (context.CurrentTokenType == JsonToken.Null)
+                {
+                    response.Services = null;
+                    continue;
+                }
+                  response.Services = new List<Service>();
+                  ServiceUnmarshaller unmarshaller = ServiceUnmarshaller.GetInstance();
                 while (context.Read())
                 {
                   JsonToken token = context.CurrentTokenType;                

@@ -29,10 +29,11 @@ namespace Amazon.AutoScaling.Model
     /// Scaling group is ready to be used in other calls. </para> <para><b>NOTE:</b> The Auto Scaling group name must be unique within the scope of
     /// your AWS account. </para>
     /// </summary>
-    public partial class CreateAutoScalingGroupRequest : AmazonWebServiceRequest
+    public partial class CreateAutoScalingGroupRequest : AmazonAutoScalingRequest
     {
         private string autoScalingGroupName;
         private string launchConfigurationName;
+        private string instanceId;
         private int? minSize;
         private int? maxSize;
         private int? desiredCapacity;
@@ -45,6 +46,7 @@ namespace Amazon.AutoScaling.Model
         private string vPCZoneIdentifier;
         private List<string> terminationPolicies = new List<string>();
         private List<Tag> tags = new List<Tag>();
+
 
         /// <summary>
         /// The name of the Auto Scaling group.
@@ -102,6 +104,39 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetLaunchConfigurationName()
         {
             return this.launchConfigurationName != null;
+        }
+
+        /// <summary>
+        /// The ID of the Amazon EC2 instance you want to use to create the Auto Scaling group. When you use an instance to create an Auto Scaling
+        /// group, by default all the parameters are automatically derived from the instance with the exception of the following: <ul> <li>The block
+        /// device mappings are derived from the AMI that was used to launch the instance.</li> <li>The <c>AssociatePublicIpAddress</c> is not derived
+        /// if the flag is already set for the instance.</li> </ul> You can override any of the values by specifying your own values as part of the same
+        /// request.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Length</term>
+        ///         <description>1 - 16</description>
+        ///     </item>
+        ///     <item>
+        ///         <term>Pattern</term>
+        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
+        public string InstanceId
+        {
+            get { return this.instanceId; }
+            set { this.instanceId = value; }
+        }
+
+        // Check to see if InstanceId property is set
+        internal bool IsSetInstanceId()
+        {
+            return this.instanceId != null;
         }
 
         /// <summary>

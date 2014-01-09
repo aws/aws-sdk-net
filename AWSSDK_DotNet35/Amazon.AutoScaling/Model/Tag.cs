@@ -32,6 +32,7 @@ namespace Amazon.AutoScaling.Model
         private string value;
         private bool? propagateAtLaunch;
 
+
         /// <summary>
         /// The name of the Auto Scaling group.
         ///  

@@ -28,7 +28,7 @@ namespace Amazon.AWSSupport.Model
     {
         /// <summary>
         /// Gets and sets the RefreshTrustedAdvisorCheckResult property.
-        /// 
+        /// The current refresh status of a Trusted Advisor check.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the RefreshTrustedAdvisorCheckResult class are now available on the RefreshTrustedAdvisorCheckResponse class. You should use the properties on RefreshTrustedAdvisorCheckResponse instead of accessing them through RefreshTrustedAdvisorCheckResult.")]
         public RefreshTrustedAdvisorCheckResult RefreshTrustedAdvisorCheckResult

@@ -30,6 +30,7 @@ namespace Amazon.AutoScaling.Model
         private List<AutoScalingInstanceDetails> autoScalingInstances = new List<AutoScalingInstanceDetails>();
         private string nextToken;
 
+
         /// <summary>
         /// A list of Auto Scaling instances.
         ///  

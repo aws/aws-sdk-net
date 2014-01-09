@@ -29,6 +29,7 @@ namespace Amazon.AutoScaling.Model
         private string name;
         private List<string> values = new List<string>();
 
+
         /// <summary>
         /// The name of the filter. Valid Name values are: <c>"auto-scaling-group"</c>, <c>"key"</c>, <c>"value"</c>, and <c>"propagate-at-launch"</c>.
         ///  

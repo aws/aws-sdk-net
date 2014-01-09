@@ -28,7 +28,7 @@ namespace Amazon.AWSSupport.Model
     {
         /// <summary>
         /// Gets and sets the DescribeTrustedAdvisorCheckResultResult property.
-        /// Returns the objects or data listed below if successful. Otherwise, returns an error.
+        /// Contains the following objects or data if successful. Otherwise, returns an error.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DescribeTrustedAdvisorCheckResultResult class are now available on the DescribeTrustedAdvisorCheckResponse class. You should use the properties on DescribeTrustedAdvisorCheckResponse instead of accessing them through DescribeTrustedAdvisorCheckResultResult.")]
         public DescribeTrustedAdvisorCheckResultResult DescribeTrustedAdvisorCheckResultResult

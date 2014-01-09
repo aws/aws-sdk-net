@@ -62,8 +62,14 @@
               if (context.TestExpression("categories", targetDepth))
               {
                 context.Read();
-                service.Categories = new List<Category>();
-                        CategoryUnmarshaller unmarshaller = CategoryUnmarshaller.GetInstance();
+                
+                if (context.CurrentTokenType == JsonToken.Null)
+                {
+                    service.Categories = null;
+                    continue;
+                }
+                  service.Categories = new List<Category>();
+                  CategoryUnmarshaller unmarshaller = CategoryUnmarshaller.GetInstance();
                 while (context.Read())
                 {
                   JsonToken token = context.CurrentTokenType;                

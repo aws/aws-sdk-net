@@ -29,6 +29,7 @@ namespace Amazon.AutoScaling.Model
         
         private List<string> autoScalingNotificationTypes = new List<string>();
 
+
         /// <summary>
         /// Returns a list of all notification types supported by Auto Scaling. They are: <ul> <li><c>autoscaling:EC2_INSTANCE_LAUNCH</c></li>
         /// <li><c>autoscaling:EC2_INSTANCE_LAUNCH_ERROR</c></li> <li><c>autoscaling:EC2_INSTANCE_TERMINATE</c></li>

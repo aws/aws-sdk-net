@@ -22,18 +22,16 @@ using Amazon.Runtime;
 namespace Amazon.AWSSupport.Model
 {
     /// <summary>
-    /// <para>Returns the objects or data listed below if successful. Otherwise, returns an error.</para>
+    /// <para>Contains the following objects or data if successful. Otherwise, returns an error.</para>
     /// </summary>
     public partial class DescribeTrustedAdvisorCheckRefreshStatusesResult : AmazonWebServiceResponse
     {
         
         private List<TrustedAdvisorCheckRefreshStatus> statuses = new List<TrustedAdvisorCheckRefreshStatus>();
 
+
         /// <summary>
-        /// List of the statuses of the Trusted Advisor checks you've specified for refresh. Status values are: <ul> <li><b>in_progress</b>. The refresh
-        /// of the check is currently executing. </li> <li><b>successful</b>. The refresh of the check has completed successfully.</li>
-        /// <li><b>enqueued</b>. The refresh check is queued for execution. </li> <li><b>abandoned</b>. An error has prevented the check from
-        /// refreshing. </li> </ul>
+        /// The refresh status of the specified Trusted Advisor checks.
         ///  
         /// </summary>
         public List<TrustedAdvisorCheckRefreshStatus> Statuses

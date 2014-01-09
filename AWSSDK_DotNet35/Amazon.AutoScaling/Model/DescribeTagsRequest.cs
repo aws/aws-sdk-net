@@ -30,11 +30,12 @@ namespace Amazon.AutoScaling.Model
     /// specified values for it to be included in the results. </para> <para> You can also specify multiple filters. The result includes information
     /// for a particular tag only if it matches all your filters. If there's no match, no special message is returned. </para>
     /// </summary>
-    public partial class DescribeTagsRequest : AmazonWebServiceRequest
+    public partial class DescribeTagsRequest : AmazonAutoScalingRequest
     {
         private List<Filter> filters = new List<Filter>();
         private string nextToken;
         private int? maxRecords;
+
 
         /// <summary>
         /// The value of the filter type used to identify the tags to be returned. For example, you can filter so that tags are returned according to

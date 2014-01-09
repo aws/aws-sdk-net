@@ -25,15 +25,14 @@ namespace Amazon.AWSSupport.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeCases operation.
-    /// <para>This action returns a list of cases that you specify by passing one or more CaseIds. In addition, you can filter the cases by date by
-    /// setting values for the AfterTime and BeforeTime request parameters. </para> <para> The response returns the following in JSON format:
-    /// </para> <ol> <li>One or more <a href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_CaseDetails.html" >CaseDetails</a> data
-    /// types. </li>
-    /// <li>One or more <i>NextToken</i> objects, strings that specifies where to paginate the returned records represented by <i>CaseDetails</i>
-    /// .</li>
+    /// <para>Returns a list of cases that you specify by passing one or more case IDs. In addition, you can filter the cases by date by setting
+    /// values for the <c>AfterTime</c> and <c>BeforeTime</c> request parameters. </para> <para>The response returns the following in JSON
+    /// format:</para> <ol> <li>One or more CaseDetails data types. </li>
+    /// <li>One or more <c>NextToken</c> values, which specify where to paginate the returned records represented by the <c>CaseDetails</c>
+    /// objects.</li>
     /// </ol>
     /// </summary>
-    public partial class DescribeCasesRequest : AmazonWebServiceRequest
+    public partial class DescribeCasesRequest : AmazonAWSSupportRequest
     {
         private List<string> caseIdList = new List<string>();
         private string displayId;
@@ -44,8 +43,9 @@ namespace Amazon.AWSSupport.Model
         private int? maxResults;
         private string language;
 
+
         /// <summary>
-        /// A list of Strings comprising ID numbers for support cases you want returned. The maximum number of cases is 100.
+        /// A list of ID numbers of the support cases you want returned. The maximum number of cases is 100.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -70,7 +70,7 @@ namespace Amazon.AWSSupport.Model
         }
 
         /// <summary>
-        /// String that corresponds to the ID value displayed for a case in the AWS Support Center user interface.
+        /// The ID displayed for a case in the AWS Support Center user interface.
         ///  
         /// </summary>
         public string DisplayId
@@ -86,7 +86,7 @@ namespace Amazon.AWSSupport.Model
         }
 
         /// <summary>
-        /// Start date for a filtered date search on support case communications.
+        /// The start date for a filtered date search on support case communications.
         ///  
         /// </summary>
         public string AfterTime
@@ -102,7 +102,7 @@ namespace Amazon.AWSSupport.Model
         }
 
         /// <summary>
-        /// End date for a filtered date search on support case communications.
+        /// The end date for a filtered date search on support case communications.
         ///  
         /// </summary>
         public string BeforeTime
@@ -118,8 +118,7 @@ namespace Amazon.AWSSupport.Model
         }
 
         /// <summary>
-        /// Boolean that indicates whether or not resolved support cases should be listed in the <a
-        /// href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeCases.html" title="DescribeCases">DescribeCases</a> search.
+        /// Specifies whether resolved support cases should be included in the <a>DescribeCases</a> results.
         ///  
         /// </summary>
         public bool IncludeResolvedCases
@@ -135,7 +134,7 @@ namespace Amazon.AWSSupport.Model
         }
 
         /// <summary>
-        /// Defines a resumption point for pagination.
+        /// A resumption point for pagination.
         ///  
         /// </summary>
         public string NextToken
@@ -151,7 +150,7 @@ namespace Amazon.AWSSupport.Model
         }
 
         /// <summary>
-        /// Integer that sets the maximum number of results to return before paginating.
+        /// The maximum number of results to return before paginating.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -176,8 +175,8 @@ namespace Amazon.AWSSupport.Model
         }
 
         /// <summary>
-        /// Specifies the ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English and Japanese, for which
-        /// the codes are <i>en</i> and <i>ja</i>, respectively. Language parameters must be passed explicitly for operations that take them.
+        /// The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English ("en") and Japanese ("ja").
+        /// Language parameters must be passed explicitly for operations that take them.
         ///  
         /// </summary>
         public string Language

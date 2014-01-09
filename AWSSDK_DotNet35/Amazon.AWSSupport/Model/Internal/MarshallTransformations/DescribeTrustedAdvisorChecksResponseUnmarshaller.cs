@@ -49,8 +49,14 @@
               if (context.TestExpression("checks", targetDepth))
               {
                 context.Read();
-                response.Checks = new List<TrustedAdvisorCheckDescription>();
-                        TrustedAdvisorCheckDescriptionUnmarshaller unmarshaller = TrustedAdvisorCheckDescriptionUnmarshaller.GetInstance();
+                
+                if (context.CurrentTokenType == JsonToken.Null)
+                {
+                    response.Checks = null;
+                    continue;
+                }
+                  response.Checks = new List<TrustedAdvisorCheckDescription>();
+                  TrustedAdvisorCheckDescriptionUnmarshaller unmarshaller = TrustedAdvisorCheckDescriptionUnmarshaller.GetInstance();
                 while (context.Read())
                 {
                   JsonToken token = context.CurrentTokenType;                

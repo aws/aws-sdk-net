@@ -30,11 +30,12 @@ namespace Amazon.AutoScaling.Model
     /// href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/ASGettingNotifications.html" >Get Email Notifications When Your Auto
     /// Scaling Group Changes</a> </para> <para>A new <c>PutNotificationConfiguration</c> overwrites an existing configuration. </para>
     /// </summary>
-    public partial class PutNotificationConfigurationRequest : AmazonWebServiceRequest
+    public partial class PutNotificationConfigurationRequest : AmazonAutoScalingRequest
     {
         private string autoScalingGroupName;
         private string topicARN;
         private List<string> notificationTypes = new List<string>();
+
 
         /// <summary>
         /// The name of the Auto Scaling group.

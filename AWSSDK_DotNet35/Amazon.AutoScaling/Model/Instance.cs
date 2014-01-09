@@ -32,6 +32,7 @@ namespace Amazon.AutoScaling.Model
         private string healthStatus;
         private string launchConfigurationName;
 
+
         /// <summary>
         /// Specifies the ID of the Amazon EC2 instance.
         ///  

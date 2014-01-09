@@ -32,6 +32,7 @@ namespace Amazon.AutoScaling.Model
         private List<ScheduledUpdateGroupAction> scheduledUpdateGroupActions = new List<ScheduledUpdateGroupAction>();
         private string nextToken;
 
+
         /// <summary>
         /// A list of scheduled actions designed to update an Auto Scaling group.
         ///  

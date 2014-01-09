@@ -21,17 +21,16 @@ using System.IO;
 namespace Amazon.AWSSupport.Model
 {
     /// <summary>
-    /// <para>JSON-formatted child object of <a href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorCheckResult.html"
-    /// >TrustedAdvisorCheckResult</a> objects. </para>
+    /// <para>The container for summary information that relates to the category of the Trusted Advisor check.</para>
     /// </summary>
     public class TrustedAdvisorCategorySpecificSummary
     {
         
         private TrustedAdvisorCostOptimizingSummary costOptimizing;
 
+
         /// <summary>
-        /// Corresponds to the <i>Cost Optimizing</i> tab on the AWS Support Center Trusted Advisor page. This field is only available to checks in the
-        /// Cost Optimizing category.
+        /// The summary information about cost savings for a Trusted Advisor check that is in the Cost Optimizing category.
         ///  
         /// </summary>
         public TrustedAdvisorCostOptimizingSummary CostOptimizing

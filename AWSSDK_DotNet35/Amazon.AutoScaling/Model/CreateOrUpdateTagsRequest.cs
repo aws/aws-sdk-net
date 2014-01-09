@@ -31,9 +31,10 @@ namespace Amazon.AutoScaling.Model
     /// href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/ASTagging.html" >Tag Your Auto Scaling Groups and Amazon EC2
     /// Instances</a> .</para>
     /// </summary>
-    public partial class CreateOrUpdateTagsRequest : AmazonWebServiceRequest
+    public partial class CreateOrUpdateTagsRequest : AmazonAutoScalingRequest
     {
         private List<Tag> tags = new List<Tag>();
+
 
         /// <summary>
         /// The tag to be created or updated. Each tag should be defined by its resource type, resource ID, key, value, and a propagate flag. The

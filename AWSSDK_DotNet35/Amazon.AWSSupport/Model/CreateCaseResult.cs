@@ -22,17 +22,17 @@ using Amazon.Runtime;
 namespace Amazon.AWSSupport.Model
 {
     /// <summary>
-    /// <para>Contains the AWSSupport <i>caseId</i> returned by a successful completion of the <a
-    /// href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_CreateCase.html" >CreateCase</a> action. </para>
+    /// <para>The AWS Support case ID returned by a successful completion of the CreateCase action. </para>
     /// </summary>
     public partial class CreateCaseResult : AmazonWebServiceResponse
     {
         
         private string caseId;
 
+
         /// <summary>
-        /// String that indicates the AWS Support caseID requested or returned in the call. The caseID is an alphanumeric string formatted as shown in
-        /// this example CaseId: <i>case-12345678910-2013-c4c1d2bf33c5cf47</i>
+        /// The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example:
+        /// case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
         ///  
         /// </summary>
         public string CaseId

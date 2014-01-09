@@ -73,6 +73,7 @@ namespace Amazon.AutoScaling.Model
         
         private string processName;
 
+
         /// <summary>
         /// The name of a process.
         ///  

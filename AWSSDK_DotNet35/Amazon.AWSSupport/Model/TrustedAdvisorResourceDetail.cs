@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.AWSSupport.Model
 {
     /// <summary>
-    /// <para>Structure that contains information about the resource to which the Trusted Advisor check pertains. </para>
+    /// <para>Contains information about a resource identified by a Trusted Advisor check. </para>
     /// </summary>
     public class TrustedAdvisorResourceDetail
     {
@@ -32,8 +32,9 @@ namespace Amazon.AWSSupport.Model
         private bool? isSuppressed;
         private List<string> metadata = new List<string>();
 
+
         /// <summary>
-        /// Status code for the resource identified in the Trusted Advisor check.
+        /// The status code for the resource identified in the Trusted Advisor check.
         ///  
         /// </summary>
         public string Status
@@ -49,7 +50,7 @@ namespace Amazon.AWSSupport.Model
         }
 
         /// <summary>
-        /// AWS region in which the identified resource is located.
+        /// The AWS region in which the identified resource is located.
         ///  
         /// </summary>
         public string Region
@@ -65,7 +66,7 @@ namespace Amazon.AWSSupport.Model
         }
 
         /// <summary>
-        /// Unique identifier for the identified resource.
+        /// The unique identifier for the identified resource.
         ///  
         /// </summary>
         public string ResourceId
@@ -81,7 +82,7 @@ namespace Amazon.AWSSupport.Model
         }
 
         /// <summary>
-        /// Indicates whether the specified AWS resource has had its participation in Trusted Advisor checks suppressed.
+        /// Specifies whether the AWS resource was ignored by Trusted Advisor because it was marked as suppressed by the user.
         ///  
         /// </summary>
         public bool IsSuppressed
@@ -97,11 +98,8 @@ namespace Amazon.AWSSupport.Model
         }
 
         /// <summary>
-        /// Additional information about the identified resource. The exact metadata and its order can be obtained by inspecting the <a
-        /// href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorCheckDescription.html"
-        /// title="TrustedAdvisorCheckDescription">TrustedAdvisorCheckDescription</a> object returned by the call to <a
-        /// href="http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorChecks.html"
-        /// title="DescribeTrustedAdvisorChecks">DescribeTrustedAdvisorChecks</a>.
+        /// Additional information about the identified resource. The exact metadata and its order can be obtained by inspecting the
+        /// <a>TrustedAdvisorCheckDescription</a> object returned by the call to <a>DescribeTrustedAdvisorChecks</a>.
         ///  
         /// </summary>
         public List<string> Metadata

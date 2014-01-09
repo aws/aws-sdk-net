@@ -28,7 +28,7 @@ namespace Amazon.AutoScaling.Model
     /// <para> Lists all the actions scheduled for your Auto Scaling group that haven't been executed. To see a list of actions already executed,
     /// see the activity record returned in DescribeScalingActivities. </para>
     /// </summary>
-    public partial class DescribeScheduledActionsRequest : AmazonWebServiceRequest
+    public partial class DescribeScheduledActionsRequest : AmazonAutoScalingRequest
     {
         private string autoScalingGroupName;
         private List<string> scheduledActionNames = new List<string>();
@@ -36,6 +36,7 @@ namespace Amazon.AutoScaling.Model
         private DateTime? endTime;
         private string nextToken;
         private int? maxRecords;
+
 
         /// <summary>
         /// The name of the Auto Scaling group.

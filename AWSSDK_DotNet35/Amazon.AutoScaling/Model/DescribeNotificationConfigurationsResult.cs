@@ -30,6 +30,7 @@ namespace Amazon.AutoScaling.Model
         private List<NotificationConfiguration> notificationConfigurations = new List<NotificationConfiguration>();
         private string nextToken;
 
+
         /// <summary>
         /// The list of notification configurations.
         ///  

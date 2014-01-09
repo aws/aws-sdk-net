@@ -49,8 +49,14 @@
               if (context.TestExpression("severityLevels", targetDepth))
               {
                 context.Read();
-                response.SeverityLevels = new List<SeverityLevel>();
-                        SeverityLevelUnmarshaller unmarshaller = SeverityLevelUnmarshaller.GetInstance();
+                
+                if (context.CurrentTokenType == JsonToken.Null)
+                {
+                    response.SeverityLevels = null;
+                    continue;
+                }
+                  response.SeverityLevels = new List<SeverityLevel>();
+                  SeverityLevelUnmarshaller unmarshaller = SeverityLevelUnmarshaller.GetInstance();
                 while (context.Read())
                 {
                   JsonToken token = context.CurrentTokenType;                

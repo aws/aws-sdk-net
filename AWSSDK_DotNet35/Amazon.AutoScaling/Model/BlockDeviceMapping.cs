@@ -29,6 +29,8 @@ namespace Amazon.AutoScaling.Model
         private string virtualName;
         private string deviceName;
         private Ebs ebs;
+        private bool? noDevice;
+
 
         /// <summary>
         /// The virtual name associated with the device.
@@ -60,7 +62,7 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// The name of the device within Amazon EC2.
+        /// The name of the device within Amazon EC2 (for example, /dev/sdh or xvdh).
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -102,6 +104,22 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetEbs()
         {
             return this.ebs != null;
+        }
+
+        /// <summary>
+        /// Suppresses the device mapping.
+        ///  
+        /// </summary>
+        public bool NoDevice
+        {
+            get { return this.noDevice ?? default(bool); }
+            set { this.noDevice = value; }
+        }
+
+        // Check to see if NoDevice property is set
+        internal bool IsSetNoDevice()
+        {
+            return this.noDevice.HasValue;
         }
     }
 }

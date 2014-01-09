@@ -1669,7 +1669,14 @@ namespace Amazon.S3
         /// <summary>
         /// <para>Uploads a part in a multipart upload.</para>
         /// </summary>
-        /// 
+        /// <remarks> 
+        /// <para>        
+        /// After you initiate a multipart upload and upload one or more parts, you must either complete or abort 
+        /// the multipart upload in order to stop getting charged for storage of the uploaded parts. Once you 
+        /// complete or abort the multipart upload, Amazon S3 will release the stored parts and stop charging you 
+        /// for their storage.
+        /// </para>
+        /// </remarks> 
         /// <param name="uploadPartRequest">Container for the necessary parameters to execute the UploadPart service method on AmazonS3.</param>
         /// 
         /// <returns>The response from the UploadPart service method, as returned by AmazonS3.</returns>
@@ -1686,7 +1693,14 @@ namespace Amazon.S3
         /// Initiates the asynchronous execution of the UploadPart operation.
         /// <seealso cref="Amazon.S3.IAmazonS3.UploadPart"/>
         /// </summary>
-        /// 
+        /// <remarks> 
+        /// <para>        
+        /// After you initiate a multipart upload and upload one or more parts, you must either complete or abort 
+        /// the multipart upload in order to stop getting charged for storage of the uploaded parts. Once you 
+        /// complete or abort the multipart upload, Amazon S3 will release the stored parts and stop charging you 
+        /// for their storage.
+        /// </para>
+        /// </remarks> 
         /// <param name="uploadPartRequest">Container for the necessary parameters to execute the UploadPart operation on AmazonS3.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
@@ -1980,7 +1994,14 @@ namespace Amazon.S3
         /// <summary>
         /// <para>Initiates a multipart upload and returns an upload ID.</para>
         /// </summary>
-        /// 
+        /// <remarks> 
+        /// <para>        
+        /// After you initiate a multipart upload and upload one or more parts, you must either complete or abort 
+        /// the multipart upload in order to stop getting charged for storage of the uploaded parts. Once you 
+        /// complete or abort the multipart upload, Amazon S3 will release the stored parts and stop charging you 
+        /// for their storage.
+        /// </para>
+        /// </remarks>
         /// <param name="initiateMultipartUploadRequest">Container for the necessary parameters to execute the InitiateMultipartUpload service method on
         ///          AmazonS3.</param>
         /// 
@@ -1998,7 +2019,14 @@ namespace Amazon.S3
         /// Initiates the asynchronous execution of the InitiateMultipartUpload operation.
         /// <seealso cref="Amazon.S3.IAmazonS3.InitiateMultipartUpload"/>
         /// </summary>
-        /// 
+        /// <remarks> 
+        /// <para>        
+        /// After you initiate a multipart upload and upload one or more parts, you must either complete or abort 
+        /// the multipart upload in order to stop getting charged for storage of the uploaded parts. Once you 
+        /// complete or abort the multipart upload, Amazon S3 will release the stored parts and stop charging you 
+        /// for their storage.
+        /// </para>
+        /// </remarks> 
         /// <param name="initiateMultipartUploadRequest">Container for the necessary parameters to execute the InitiateMultipartUpload operation on
         ///          AmazonS3.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>

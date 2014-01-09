@@ -35,6 +35,7 @@ namespace Amazon.AutoScaling.Model
         private List<Alarm> alarms = new List<Alarm>();
         private int? minAdjustmentStep;
 
+
         /// <summary>
         /// The name of the Auto Scaling group associated with this scaling policy.
         ///  

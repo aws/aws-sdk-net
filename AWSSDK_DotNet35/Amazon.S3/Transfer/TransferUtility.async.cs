@@ -64,6 +64,15 @@ namespace Amazon.S3.Transfer
         /// Initiates the asynchronous execution of the UploadDirectory operation. 
         /// <seealso cref="M:Amazon.S3.Transfer.TransferUtility.UploadDirectory"/>
         /// </summary>
+        /// <remarks>
+        /// <para>
+        /// If you are uploading large files, TransferUtility will use multipart upload to fulfill the request. 
+        /// If a multipart upload is interrupted, TransferUtility will attempt to abort the multipart upload. 
+        /// Under certain circumstances (network outage, power failure, etc.), TransferUtility will not be able 
+        /// to abort the multipart upload. In this case, in order to stop getting charged for the storage of uploaded parts,
+        /// you should manually invoke TransferUtility.AbortMultipartUploads() to abort the incomplete multipart uploads.
+        /// </para>
+        /// </remarks>
         /// <param name="directory">
         /// 	The source directory, that is, the directory containing the files to upload.
         /// </param>
@@ -93,6 +102,15 @@ namespace Amazon.S3.Transfer
         /// Initiates the asynchronous execution of the UploadDirectory operation. 
         /// <seealso cref="M:Amazon.S3.Transfer.TransferUtility.UploadDirectory"/>
         /// </summary>
+        /// <remarks>
+        /// <para>
+        /// If you are uploading large files, TransferUtility will use multipart upload to fulfill the request. 
+        /// If a multipart upload is interrupted, TransferUtility will attempt to abort the multipart upload. 
+        /// Under certain circumstances (network outage, power failure, etc.), TransferUtility will not be able 
+        /// to abort the multipart upload. In this case, in order to stop getting charged for the storage of uploaded parts,
+        /// you should manually invoke TransferUtility.AbortMultipartUploads() to abort the incomplete multipart uploads.
+        /// </para>
+        /// </remarks>
         /// <param name="directory">
         /// 	The source directory, that is, the directory containing the files to upload.
         /// </param>
@@ -130,6 +148,15 @@ namespace Amazon.S3.Transfer
         /// Initiates the asynchronous execution of the UploadDirectory operation. 
         /// <seealso cref="M:Amazon.S3.Transfer.TransferUtility.UploadDirectory"/>
         /// </summary>
+        /// <remarks>
+        /// <para>
+        /// If you are uploading large files, TransferUtility will use multipart upload to fulfill the request. 
+        /// If a multipart upload is interrupted, TransferUtility will attempt to abort the multipart upload. 
+        /// Under certain circumstances (network outage, power failure, etc.), TransferUtility will not be able 
+        /// to abort the multipart upload. In this case, in order to stop getting charged for the storage of uploaded parts,
+        /// you should manually invoke TransferUtility.AbortMultipartUploads() to abort the incomplete multipart uploads.
+        /// </para>
+        /// </remarks>
         /// <param name="request">
         /// 	The request that contains all the parameters required to upload a directory.
         /// </param>
@@ -166,6 +193,15 @@ namespace Amazon.S3.Transfer
         /// Initiates the asynchronous execution of the Upload operation. 
         /// <seealso cref="M:Amazon.S3.Transfer.TransferUtility.Upload"/>
         /// </summary>
+        /// <remarks>
+        /// <para>
+        /// If you are uploading large files, TransferUtility will use multipart upload to fulfill the request. 
+        /// If a multipart upload is interrupted, TransferUtility will attempt to abort the multipart upload. 
+        /// Under certain circumstances (network outage, power failure, etc.), TransferUtility will not be able 
+        /// to abort the multipart upload. In this case, in order to stop getting charged for the storage of uploaded parts,
+        /// you should manually invoke TransferUtility.AbortMultipartUploads() to abort the incomplete multipart uploads.
+        /// </para>
+        /// </remarks>
         /// <param name="filePath">
         /// 	The file path of the file to upload.
         /// </param>
@@ -203,6 +239,15 @@ namespace Amazon.S3.Transfer
         /// Initiates the asynchronous execution of the Upload operation. 
         /// <seealso cref="M:Amazon.S3.Transfer.TransferUtility.Upload"/>
         /// </summary>
+        /// <remarks>
+        /// <para>
+        /// If you are uploading large files, TransferUtility will use multipart upload to fulfill the request. 
+        /// If a multipart upload is interrupted, TransferUtility will attempt to abort the multipart upload. 
+        /// Under certain circumstances (network outage, power failure, etc.), TransferUtility will not be able 
+        /// to abort the multipart upload. In this case, in order to stop getting charged for the storage of uploaded parts,
+        /// you should manually invoke TransferUtility.AbortMultipartUploads() to abort the incomplete multipart uploads.
+        /// </para>
+        /// </remarks>
         /// <param name="filePath">
         /// 	The file path of the file to upload.
         /// </param>
@@ -244,6 +289,15 @@ namespace Amazon.S3.Transfer
         /// Initiates the asynchronous execution of the Upload operation. 
         /// <seealso cref="M:Amazon.S3.Transfer.TransferUtility.Upload"/>
         /// </summary>
+        /// <remarks>
+        /// <para>
+        /// If you are uploading large files, TransferUtility will use multipart upload to fulfill the request. 
+        /// If a multipart upload is interrupted, TransferUtility will attempt to abort the multipart upload. 
+        /// Under certain circumstances (network outage, power failure, etc.), TransferUtility will not be able 
+        /// to abort the multipart upload. In this case, in order to stop getting charged for the storage of uploaded parts,
+        /// you should manually invoke TransferUtility.AbortMultipartUploads() to abort the incomplete multipart uploads.
+        /// </para>
+        /// </remarks>
         /// <param name="stream">
         /// 	The stream to read to obtain the content to upload.
         /// </param>
@@ -285,6 +339,15 @@ namespace Amazon.S3.Transfer
         /// Initiates the asynchronous execution of the Upload operation. 
         /// <seealso cref="M:Amazon.S3.Transfer.TransferUtility.Upload"/>
         /// </summary>
+        /// <remarks>
+        /// <para>
+        /// If you are uploading large files, TransferUtility will use multipart upload to fulfill the request. 
+        /// If a multipart upload is interrupted, TransferUtility will attempt to abort the multipart upload. 
+        /// Under certain circumstances (network outage, power failure, etc.), TransferUtility will not be able 
+        /// to abort the multipart upload. In this case, in order to stop getting charged for the storage of uploaded parts,
+        /// you should manually invoke TransferUtility.AbortMultipartUploads() to abort the incomplete multipart uploads.
+        /// </para>
+        /// </remarks>
         /// <param name="request">
         /// 	Contains all the parameters required to upload to Amazon S3.
         /// </param>

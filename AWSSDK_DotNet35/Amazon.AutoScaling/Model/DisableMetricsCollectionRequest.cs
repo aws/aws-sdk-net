@@ -28,10 +28,11 @@ namespace Amazon.AutoScaling.Model
     /// <para> Disables monitoring of group metrics for the Auto Scaling group specified in <c>AutoScalingGroupName</c> .
     /// You can specify the list of affected metrics with the <c>Metrics</c> parameter. </para>
     /// </summary>
-    public partial class DisableMetricsCollectionRequest : AmazonWebServiceRequest
+    public partial class DisableMetricsCollectionRequest : AmazonAutoScalingRequest
     {
         private string autoScalingGroupName;
         private List<string> metrics = new List<string>();
+
 
         /// <summary>
         /// The name or ARN of the Auto Scaling Group.

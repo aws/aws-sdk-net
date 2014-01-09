@@ -49,8 +49,14 @@
               if (context.TestExpression("cases", targetDepth))
               {
                 context.Read();
-                response.Cases = new List<CaseDetails>();
-                        CaseDetailsUnmarshaller unmarshaller = CaseDetailsUnmarshaller.GetInstance();
+                
+                if (context.CurrentTokenType == JsonToken.Null)
+                {
+                    response.Cases = null;
+                    continue;
+                }
+                  response.Cases = new List<CaseDetails>();
+                  CaseDetailsUnmarshaller unmarshaller = CaseDetailsUnmarshaller.GetInstance();
                 while (context.Read())
                 {
                   JsonToken token = context.CurrentTokenType;                
