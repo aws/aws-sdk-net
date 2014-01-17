@@ -192,13 +192,11 @@ namespace Amazon.StorageGateway
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<ActivateGatewayResponse> ActivateGatewayAsync(ActivateGatewayRequest activateGatewayRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<ActivateGatewayResponse> ActivateGatewayAsync(ActivateGatewayRequest activateGatewayRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ActivateGatewayRequestMarshaller();
             var unmarshaller = ActivateGatewayResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, ActivateGatewayRequest, ActivateGatewayResponse>(activateGatewayRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, ActivateGatewayRequest, ActivateGatewayResponse>(activateGatewayRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal AddCacheResponse AddCache(AddCacheRequest request)
@@ -229,13 +227,11 @@ namespace Amazon.StorageGateway
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<AddCacheResponse> AddCacheAsync(AddCacheRequest addCacheRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<AddCacheResponse> AddCacheAsync(AddCacheRequest addCacheRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AddCacheRequestMarshaller();
             var unmarshaller = AddCacheResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, AddCacheRequest, AddCacheResponse>(addCacheRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, AddCacheRequest, AddCacheResponse>(addCacheRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal AddUploadBufferResponse AddUploadBuffer(AddUploadBufferRequest request)
@@ -267,13 +263,11 @@ namespace Amazon.StorageGateway
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<AddUploadBufferResponse> AddUploadBufferAsync(AddUploadBufferRequest addUploadBufferRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<AddUploadBufferResponse> AddUploadBufferAsync(AddUploadBufferRequest addUploadBufferRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AddUploadBufferRequestMarshaller();
             var unmarshaller = AddUploadBufferResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, AddUploadBufferRequest, AddUploadBufferResponse>(addUploadBufferRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, AddUploadBufferRequest, AddUploadBufferResponse>(addUploadBufferRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal AddWorkingStorageResponse AddWorkingStorage(AddWorkingStorageRequest request)
@@ -307,13 +301,11 @@ namespace Amazon.StorageGateway
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<AddWorkingStorageResponse> AddWorkingStorageAsync(AddWorkingStorageRequest addWorkingStorageRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<AddWorkingStorageResponse> AddWorkingStorageAsync(AddWorkingStorageRequest addWorkingStorageRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AddWorkingStorageRequestMarshaller();
             var unmarshaller = AddWorkingStorageResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, AddWorkingStorageRequest, AddWorkingStorageResponse>(addWorkingStorageRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, AddWorkingStorageRequest, AddWorkingStorageResponse>(addWorkingStorageRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal CancelArchivalResponse CancelArchival(CancelArchivalRequest request)
@@ -343,13 +335,11 @@ namespace Amazon.StorageGateway
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<CancelArchivalResponse> CancelArchivalAsync(CancelArchivalRequest cancelArchivalRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<CancelArchivalResponse> CancelArchivalAsync(CancelArchivalRequest cancelArchivalRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CancelArchivalRequestMarshaller();
             var unmarshaller = CancelArchivalResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, CancelArchivalRequest, CancelArchivalResponse>(cancelArchivalRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, CancelArchivalRequest, CancelArchivalResponse>(cancelArchivalRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal CancelRetrievalResponse CancelRetrieval(CancelRetrievalRequest request)
@@ -380,13 +370,11 @@ namespace Amazon.StorageGateway
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<CancelRetrievalResponse> CancelRetrievalAsync(CancelRetrievalRequest cancelRetrievalRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<CancelRetrievalResponse> CancelRetrievalAsync(CancelRetrievalRequest cancelRetrievalRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CancelRetrievalRequestMarshaller();
             var unmarshaller = CancelRetrievalResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, CancelRetrievalRequest, CancelRetrievalResponse>(cancelRetrievalRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, CancelRetrievalRequest, CancelRetrievalResponse>(cancelRetrievalRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal CreateCachediSCSIVolumeResponse CreateCachediSCSIVolume(CreateCachediSCSIVolumeRequest request)
@@ -421,13 +409,11 @@ namespace Amazon.StorageGateway
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<CreateCachediSCSIVolumeResponse> CreateCachediSCSIVolumeAsync(CreateCachediSCSIVolumeRequest createCachediSCSIVolumeRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<CreateCachediSCSIVolumeResponse> CreateCachediSCSIVolumeAsync(CreateCachediSCSIVolumeRequest createCachediSCSIVolumeRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateCachediSCSIVolumeRequestMarshaller();
             var unmarshaller = CreateCachediSCSIVolumeResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, CreateCachediSCSIVolumeRequest, CreateCachediSCSIVolumeResponse>(createCachediSCSIVolumeRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, CreateCachediSCSIVolumeRequest, CreateCachediSCSIVolumeResponse>(createCachediSCSIVolumeRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal CreateSnapshotResponse CreateSnapshot(CreateSnapshotRequest request)
@@ -465,13 +451,11 @@ namespace Amazon.StorageGateway
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<CreateSnapshotResponse> CreateSnapshotAsync(CreateSnapshotRequest createSnapshotRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<CreateSnapshotResponse> CreateSnapshotAsync(CreateSnapshotRequest createSnapshotRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateSnapshotRequestMarshaller();
             var unmarshaller = CreateSnapshotResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, CreateSnapshotRequest, CreateSnapshotResponse>(createSnapshotRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, CreateSnapshotRequest, CreateSnapshotResponse>(createSnapshotRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal CreateSnapshotFromVolumeRecoveryPointResponse CreateSnapshotFromVolumeRecoveryPoint(CreateSnapshotFromVolumeRecoveryPointRequest request)
@@ -508,13 +492,11 @@ namespace Amazon.StorageGateway
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<CreateSnapshotFromVolumeRecoveryPointResponse> CreateSnapshotFromVolumeRecoveryPointAsync(CreateSnapshotFromVolumeRecoveryPointRequest createSnapshotFromVolumeRecoveryPointRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<CreateSnapshotFromVolumeRecoveryPointResponse> CreateSnapshotFromVolumeRecoveryPointAsync(CreateSnapshotFromVolumeRecoveryPointRequest createSnapshotFromVolumeRecoveryPointRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateSnapshotFromVolumeRecoveryPointRequestMarshaller();
             var unmarshaller = CreateSnapshotFromVolumeRecoveryPointResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, CreateSnapshotFromVolumeRecoveryPointRequest, CreateSnapshotFromVolumeRecoveryPointResponse>(createSnapshotFromVolumeRecoveryPointRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, CreateSnapshotFromVolumeRecoveryPointRequest, CreateSnapshotFromVolumeRecoveryPointResponse>(createSnapshotFromVolumeRecoveryPointRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal CreateStorediSCSIVolumeResponse CreateStorediSCSIVolume(CreateStorediSCSIVolumeRequest request)
@@ -549,13 +531,11 @@ namespace Amazon.StorageGateway
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<CreateStorediSCSIVolumeResponse> CreateStorediSCSIVolumeAsync(CreateStorediSCSIVolumeRequest createStorediSCSIVolumeRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<CreateStorediSCSIVolumeResponse> CreateStorediSCSIVolumeAsync(CreateStorediSCSIVolumeRequest createStorediSCSIVolumeRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateStorediSCSIVolumeRequestMarshaller();
             var unmarshaller = CreateStorediSCSIVolumeResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, CreateStorediSCSIVolumeRequest, CreateStorediSCSIVolumeResponse>(createStorediSCSIVolumeRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, CreateStorediSCSIVolumeRequest, CreateStorediSCSIVolumeResponse>(createStorediSCSIVolumeRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal CreateTapesResponse CreateTapes(CreateTapesRequest request)
@@ -587,13 +567,11 @@ namespace Amazon.StorageGateway
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<CreateTapesResponse> CreateTapesAsync(CreateTapesRequest createTapesRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<CreateTapesResponse> CreateTapesAsync(CreateTapesRequest createTapesRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateTapesRequestMarshaller();
             var unmarshaller = CreateTapesResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, CreateTapesRequest, CreateTapesResponse>(createTapesRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, CreateTapesRequest, CreateTapesResponse>(createTapesRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DeleteBandwidthRateLimitResponse DeleteBandwidthRateLimit(DeleteBandwidthRateLimitRequest request)
@@ -625,13 +603,11 @@ namespace Amazon.StorageGateway
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DeleteBandwidthRateLimitResponse> DeleteBandwidthRateLimitAsync(DeleteBandwidthRateLimitRequest deleteBandwidthRateLimitRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DeleteBandwidthRateLimitResponse> DeleteBandwidthRateLimitAsync(DeleteBandwidthRateLimitRequest deleteBandwidthRateLimitRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteBandwidthRateLimitRequestMarshaller();
             var unmarshaller = DeleteBandwidthRateLimitResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DeleteBandwidthRateLimitRequest, DeleteBandwidthRateLimitResponse>(deleteBandwidthRateLimitRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DeleteBandwidthRateLimitRequest, DeleteBandwidthRateLimitResponse>(deleteBandwidthRateLimitRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DeleteChapCredentialsResponse DeleteChapCredentials(DeleteChapCredentialsRequest request)
@@ -662,13 +638,11 @@ namespace Amazon.StorageGateway
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DeleteChapCredentialsResponse> DeleteChapCredentialsAsync(DeleteChapCredentialsRequest deleteChapCredentialsRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DeleteChapCredentialsResponse> DeleteChapCredentialsAsync(DeleteChapCredentialsRequest deleteChapCredentialsRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteChapCredentialsRequestMarshaller();
             var unmarshaller = DeleteChapCredentialsResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DeleteChapCredentialsRequest, DeleteChapCredentialsResponse>(deleteChapCredentialsRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DeleteChapCredentialsRequest, DeleteChapCredentialsResponse>(deleteChapCredentialsRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DeleteGatewayResponse DeleteGateway(DeleteGatewayRequest request)
@@ -705,13 +679,11 @@ namespace Amazon.StorageGateway
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DeleteGatewayResponse> DeleteGatewayAsync(DeleteGatewayRequest deleteGatewayRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DeleteGatewayResponse> DeleteGatewayAsync(DeleteGatewayRequest deleteGatewayRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteGatewayRequestMarshaller();
             var unmarshaller = DeleteGatewayResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DeleteGatewayRequest, DeleteGatewayResponse>(deleteGatewayRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DeleteGatewayRequest, DeleteGatewayResponse>(deleteGatewayRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DeleteSnapshotScheduleResponse DeleteSnapshotSchedule(DeleteSnapshotScheduleRequest request)
@@ -744,13 +716,11 @@ namespace Amazon.StorageGateway
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DeleteSnapshotScheduleResponse> DeleteSnapshotScheduleAsync(DeleteSnapshotScheduleRequest deleteSnapshotScheduleRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DeleteSnapshotScheduleResponse> DeleteSnapshotScheduleAsync(DeleteSnapshotScheduleRequest deleteSnapshotScheduleRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteSnapshotScheduleRequestMarshaller();
             var unmarshaller = DeleteSnapshotScheduleResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DeleteSnapshotScheduleRequest, DeleteSnapshotScheduleResponse>(deleteSnapshotScheduleRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DeleteSnapshotScheduleRequest, DeleteSnapshotScheduleResponse>(deleteSnapshotScheduleRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DeleteTapeResponse DeleteTape(DeleteTapeRequest request)
@@ -780,13 +750,11 @@ namespace Amazon.StorageGateway
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DeleteTapeResponse> DeleteTapeAsync(DeleteTapeRequest deleteTapeRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DeleteTapeResponse> DeleteTapeAsync(DeleteTapeRequest deleteTapeRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteTapeRequestMarshaller();
             var unmarshaller = DeleteTapeResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DeleteTapeRequest, DeleteTapeResponse>(deleteTapeRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DeleteTapeRequest, DeleteTapeResponse>(deleteTapeRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DeleteTapeArchiveResponse DeleteTapeArchive(DeleteTapeArchiveRequest request)
@@ -816,13 +784,11 @@ namespace Amazon.StorageGateway
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DeleteTapeArchiveResponse> DeleteTapeArchiveAsync(DeleteTapeArchiveRequest deleteTapeArchiveRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DeleteTapeArchiveResponse> DeleteTapeArchiveAsync(DeleteTapeArchiveRequest deleteTapeArchiveRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteTapeArchiveRequestMarshaller();
             var unmarshaller = DeleteTapeArchiveResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DeleteTapeArchiveRequest, DeleteTapeArchiveResponse>(deleteTapeArchiveRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DeleteTapeArchiveRequest, DeleteTapeArchiveResponse>(deleteTapeArchiveRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DeleteVolumeResponse DeleteVolume(DeleteVolumeRequest request)
@@ -858,13 +824,11 @@ namespace Amazon.StorageGateway
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DeleteVolumeResponse> DeleteVolumeAsync(DeleteVolumeRequest deleteVolumeRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DeleteVolumeResponse> DeleteVolumeAsync(DeleteVolumeRequest deleteVolumeRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteVolumeRequestMarshaller();
             var unmarshaller = DeleteVolumeResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DeleteVolumeRequest, DeleteVolumeResponse>(deleteVolumeRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DeleteVolumeRequest, DeleteVolumeResponse>(deleteVolumeRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DescribeBandwidthRateLimitResponse DescribeBandwidthRateLimit(DescribeBandwidthRateLimitRequest request)
@@ -897,13 +861,11 @@ namespace Amazon.StorageGateway
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DescribeBandwidthRateLimitResponse> DescribeBandwidthRateLimitAsync(DescribeBandwidthRateLimitRequest describeBandwidthRateLimitRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DescribeBandwidthRateLimitResponse> DescribeBandwidthRateLimitAsync(DescribeBandwidthRateLimitRequest describeBandwidthRateLimitRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeBandwidthRateLimitRequestMarshaller();
             var unmarshaller = DescribeBandwidthRateLimitResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DescribeBandwidthRateLimitRequest, DescribeBandwidthRateLimitResponse>(describeBandwidthRateLimitRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DescribeBandwidthRateLimitRequest, DescribeBandwidthRateLimitResponse>(describeBandwidthRateLimitRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DescribeCacheResponse DescribeCache(DescribeCacheRequest request)
@@ -935,13 +897,11 @@ namespace Amazon.StorageGateway
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DescribeCacheResponse> DescribeCacheAsync(DescribeCacheRequest describeCacheRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DescribeCacheResponse> DescribeCacheAsync(DescribeCacheRequest describeCacheRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeCacheRequestMarshaller();
             var unmarshaller = DescribeCacheResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DescribeCacheRequest, DescribeCacheResponse>(describeCacheRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DescribeCacheRequest, DescribeCacheResponse>(describeCacheRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DescribeCachediSCSIVolumesResponse DescribeCachediSCSIVolumes(DescribeCachediSCSIVolumesRequest request)
@@ -973,13 +933,11 @@ namespace Amazon.StorageGateway
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DescribeCachediSCSIVolumesResponse> DescribeCachediSCSIVolumesAsync(DescribeCachediSCSIVolumesRequest describeCachediSCSIVolumesRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DescribeCachediSCSIVolumesResponse> DescribeCachediSCSIVolumesAsync(DescribeCachediSCSIVolumesRequest describeCachediSCSIVolumesRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeCachediSCSIVolumesRequestMarshaller();
             var unmarshaller = DescribeCachediSCSIVolumesResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DescribeCachediSCSIVolumesRequest, DescribeCachediSCSIVolumesResponse>(describeCachediSCSIVolumesRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DescribeCachediSCSIVolumesRequest, DescribeCachediSCSIVolumesResponse>(describeCachediSCSIVolumesRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DescribeChapCredentialsResponse DescribeChapCredentials(DescribeChapCredentialsRequest request)
@@ -1010,13 +968,11 @@ namespace Amazon.StorageGateway
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DescribeChapCredentialsResponse> DescribeChapCredentialsAsync(DescribeChapCredentialsRequest describeChapCredentialsRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DescribeChapCredentialsResponse> DescribeChapCredentialsAsync(DescribeChapCredentialsRequest describeChapCredentialsRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeChapCredentialsRequestMarshaller();
             var unmarshaller = DescribeChapCredentialsResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DescribeChapCredentialsRequest, DescribeChapCredentialsResponse>(describeChapCredentialsRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DescribeChapCredentialsRequest, DescribeChapCredentialsResponse>(describeChapCredentialsRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DescribeGatewayInformationResponse DescribeGatewayInformation(DescribeGatewayInformationRequest request)
@@ -1047,13 +1003,11 @@ namespace Amazon.StorageGateway
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DescribeGatewayInformationResponse> DescribeGatewayInformationAsync(DescribeGatewayInformationRequest describeGatewayInformationRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DescribeGatewayInformationResponse> DescribeGatewayInformationAsync(DescribeGatewayInformationRequest describeGatewayInformationRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeGatewayInformationRequestMarshaller();
             var unmarshaller = DescribeGatewayInformationResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DescribeGatewayInformationRequest, DescribeGatewayInformationResponse>(describeGatewayInformationRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DescribeGatewayInformationRequest, DescribeGatewayInformationResponse>(describeGatewayInformationRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DescribeMaintenanceStartTimeResponse DescribeMaintenanceStartTime(DescribeMaintenanceStartTimeRequest request)
@@ -1084,13 +1038,11 @@ namespace Amazon.StorageGateway
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DescribeMaintenanceStartTimeResponse> DescribeMaintenanceStartTimeAsync(DescribeMaintenanceStartTimeRequest describeMaintenanceStartTimeRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DescribeMaintenanceStartTimeResponse> DescribeMaintenanceStartTimeAsync(DescribeMaintenanceStartTimeRequest describeMaintenanceStartTimeRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeMaintenanceStartTimeRequestMarshaller();
             var unmarshaller = DescribeMaintenanceStartTimeResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DescribeMaintenanceStartTimeRequest, DescribeMaintenanceStartTimeResponse>(describeMaintenanceStartTimeRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DescribeMaintenanceStartTimeRequest, DescribeMaintenanceStartTimeResponse>(describeMaintenanceStartTimeRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DescribeSnapshotScheduleResponse DescribeSnapshotSchedule(DescribeSnapshotScheduleRequest request)
@@ -1121,13 +1073,11 @@ namespace Amazon.StorageGateway
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DescribeSnapshotScheduleResponse> DescribeSnapshotScheduleAsync(DescribeSnapshotScheduleRequest describeSnapshotScheduleRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DescribeSnapshotScheduleResponse> DescribeSnapshotScheduleAsync(DescribeSnapshotScheduleRequest describeSnapshotScheduleRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeSnapshotScheduleRequestMarshaller();
             var unmarshaller = DescribeSnapshotScheduleResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DescribeSnapshotScheduleRequest, DescribeSnapshotScheduleResponse>(describeSnapshotScheduleRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DescribeSnapshotScheduleRequest, DescribeSnapshotScheduleResponse>(describeSnapshotScheduleRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DescribeStorediSCSIVolumesResponse DescribeStorediSCSIVolumes(DescribeStorediSCSIVolumesRequest request)
@@ -1158,13 +1108,11 @@ namespace Amazon.StorageGateway
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DescribeStorediSCSIVolumesResponse> DescribeStorediSCSIVolumesAsync(DescribeStorediSCSIVolumesRequest describeStorediSCSIVolumesRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DescribeStorediSCSIVolumesResponse> DescribeStorediSCSIVolumesAsync(DescribeStorediSCSIVolumesRequest describeStorediSCSIVolumesRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeStorediSCSIVolumesRequestMarshaller();
             var unmarshaller = DescribeStorediSCSIVolumesResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DescribeStorediSCSIVolumesRequest, DescribeStorediSCSIVolumesResponse>(describeStorediSCSIVolumesRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DescribeStorediSCSIVolumesRequest, DescribeStorediSCSIVolumesResponse>(describeStorediSCSIVolumesRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DescribeTapeArchivesResponse DescribeTapeArchives(DescribeTapeArchivesRequest request)
@@ -1195,13 +1143,11 @@ namespace Amazon.StorageGateway
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DescribeTapeArchivesResponse> DescribeTapeArchivesAsync(DescribeTapeArchivesRequest describeTapeArchivesRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DescribeTapeArchivesResponse> DescribeTapeArchivesAsync(DescribeTapeArchivesRequest describeTapeArchivesRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeTapeArchivesRequestMarshaller();
             var unmarshaller = DescribeTapeArchivesResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DescribeTapeArchivesRequest, DescribeTapeArchivesResponse>(describeTapeArchivesRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DescribeTapeArchivesRequest, DescribeTapeArchivesResponse>(describeTapeArchivesRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DescribeTapeRecoveryPointsResponse DescribeTapeRecoveryPoints(DescribeTapeRecoveryPointsRequest request)
@@ -1233,13 +1179,11 @@ namespace Amazon.StorageGateway
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DescribeTapeRecoveryPointsResponse> DescribeTapeRecoveryPointsAsync(DescribeTapeRecoveryPointsRequest describeTapeRecoveryPointsRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DescribeTapeRecoveryPointsResponse> DescribeTapeRecoveryPointsAsync(DescribeTapeRecoveryPointsRequest describeTapeRecoveryPointsRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeTapeRecoveryPointsRequestMarshaller();
             var unmarshaller = DescribeTapeRecoveryPointsResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DescribeTapeRecoveryPointsRequest, DescribeTapeRecoveryPointsResponse>(describeTapeRecoveryPointsRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DescribeTapeRecoveryPointsRequest, DescribeTapeRecoveryPointsResponse>(describeTapeRecoveryPointsRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DescribeTapesResponse DescribeTapes(DescribeTapesRequest request)
@@ -1270,13 +1214,11 @@ namespace Amazon.StorageGateway
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DescribeTapesResponse> DescribeTapesAsync(DescribeTapesRequest describeTapesRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DescribeTapesResponse> DescribeTapesAsync(DescribeTapesRequest describeTapesRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeTapesRequestMarshaller();
             var unmarshaller = DescribeTapesResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DescribeTapesRequest, DescribeTapesResponse>(describeTapesRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DescribeTapesRequest, DescribeTapesResponse>(describeTapesRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DescribeUploadBufferResponse DescribeUploadBuffer(DescribeUploadBufferRequest request)
@@ -1308,13 +1250,11 @@ namespace Amazon.StorageGateway
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DescribeUploadBufferResponse> DescribeUploadBufferAsync(DescribeUploadBufferRequest describeUploadBufferRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DescribeUploadBufferResponse> DescribeUploadBufferAsync(DescribeUploadBufferRequest describeUploadBufferRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeUploadBufferRequestMarshaller();
             var unmarshaller = DescribeUploadBufferResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DescribeUploadBufferRequest, DescribeUploadBufferResponse>(describeUploadBufferRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DescribeUploadBufferRequest, DescribeUploadBufferResponse>(describeUploadBufferRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DescribeVTLDevicesResponse DescribeVTLDevices(DescribeVTLDevicesRequest request)
@@ -1345,13 +1285,11 @@ namespace Amazon.StorageGateway
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DescribeVTLDevicesResponse> DescribeVTLDevicesAsync(DescribeVTLDevicesRequest describeVTLDevicesRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DescribeVTLDevicesResponse> DescribeVTLDevicesAsync(DescribeVTLDevicesRequest describeVTLDevicesRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeVTLDevicesRequestMarshaller();
             var unmarshaller = DescribeVTLDevicesResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DescribeVTLDevicesRequest, DescribeVTLDevicesResponse>(describeVTLDevicesRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DescribeVTLDevicesRequest, DescribeVTLDevicesResponse>(describeVTLDevicesRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DescribeWorkingStorageResponse DescribeWorkingStorage(DescribeWorkingStorageRequest request)
@@ -1385,13 +1323,11 @@ namespace Amazon.StorageGateway
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DescribeWorkingStorageResponse> DescribeWorkingStorageAsync(DescribeWorkingStorageRequest describeWorkingStorageRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DescribeWorkingStorageResponse> DescribeWorkingStorageAsync(DescribeWorkingStorageRequest describeWorkingStorageRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeWorkingStorageRequestMarshaller();
             var unmarshaller = DescribeWorkingStorageResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DescribeWorkingStorageRequest, DescribeWorkingStorageResponse>(describeWorkingStorageRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DescribeWorkingStorageRequest, DescribeWorkingStorageResponse>(describeWorkingStorageRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DisableGatewayResponse DisableGateway(DisableGatewayRequest request)
@@ -1423,13 +1359,11 @@ namespace Amazon.StorageGateway
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DisableGatewayResponse> DisableGatewayAsync(DisableGatewayRequest disableGatewayRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DisableGatewayResponse> DisableGatewayAsync(DisableGatewayRequest disableGatewayRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DisableGatewayRequestMarshaller();
             var unmarshaller = DisableGatewayResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DisableGatewayRequest, DisableGatewayResponse>(disableGatewayRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DisableGatewayRequest, DisableGatewayResponse>(disableGatewayRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal ListGatewaysResponse ListGateways(ListGatewaysRequest request)
@@ -1463,13 +1397,11 @@ namespace Amazon.StorageGateway
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<ListGatewaysResponse> ListGatewaysAsync(ListGatewaysRequest listGatewaysRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<ListGatewaysResponse> ListGatewaysAsync(ListGatewaysRequest listGatewaysRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListGatewaysRequestMarshaller();
             var unmarshaller = ListGatewaysResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, ListGatewaysRequest, ListGatewaysResponse>(listGatewaysRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, ListGatewaysRequest, ListGatewaysResponse>(listGatewaysRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal ListLocalDisksResponse ListLocalDisks(ListLocalDisksRequest request)
@@ -1501,13 +1433,11 @@ namespace Amazon.StorageGateway
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<ListLocalDisksResponse> ListLocalDisksAsync(ListLocalDisksRequest listLocalDisksRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<ListLocalDisksResponse> ListLocalDisksAsync(ListLocalDisksRequest listLocalDisksRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListLocalDisksRequestMarshaller();
             var unmarshaller = ListLocalDisksResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, ListLocalDisksRequest, ListLocalDisksResponse>(listLocalDisksRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, ListLocalDisksRequest, ListLocalDisksResponse>(listLocalDisksRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal ListVolumeRecoveryPointsResponse ListVolumeRecoveryPoints(ListVolumeRecoveryPointsRequest request)
@@ -1540,13 +1470,11 @@ namespace Amazon.StorageGateway
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<ListVolumeRecoveryPointsResponse> ListVolumeRecoveryPointsAsync(ListVolumeRecoveryPointsRequest listVolumeRecoveryPointsRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<ListVolumeRecoveryPointsResponse> ListVolumeRecoveryPointsAsync(ListVolumeRecoveryPointsRequest listVolumeRecoveryPointsRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListVolumeRecoveryPointsRequestMarshaller();
             var unmarshaller = ListVolumeRecoveryPointsResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, ListVolumeRecoveryPointsRequest, ListVolumeRecoveryPointsResponse>(listVolumeRecoveryPointsRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, ListVolumeRecoveryPointsRequest, ListVolumeRecoveryPointsResponse>(listVolumeRecoveryPointsRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal ListVolumesResponse ListVolumes(ListVolumesRequest request)
@@ -1580,13 +1508,11 @@ namespace Amazon.StorageGateway
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<ListVolumesResponse> ListVolumesAsync(ListVolumesRequest listVolumesRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<ListVolumesResponse> ListVolumesAsync(ListVolumesRequest listVolumesRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListVolumesRequestMarshaller();
             var unmarshaller = ListVolumesResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, ListVolumesRequest, ListVolumesResponse>(listVolumesRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, ListVolumesRequest, ListVolumesResponse>(listVolumesRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal RetrieveTapeArchiveResponse RetrieveTapeArchive(RetrieveTapeArchiveRequest request)
@@ -1619,13 +1545,11 @@ namespace Amazon.StorageGateway
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<RetrieveTapeArchiveResponse> RetrieveTapeArchiveAsync(RetrieveTapeArchiveRequest retrieveTapeArchiveRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<RetrieveTapeArchiveResponse> RetrieveTapeArchiveAsync(RetrieveTapeArchiveRequest retrieveTapeArchiveRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RetrieveTapeArchiveRequestMarshaller();
             var unmarshaller = RetrieveTapeArchiveResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, RetrieveTapeArchiveRequest, RetrieveTapeArchiveResponse>(retrieveTapeArchiveRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, RetrieveTapeArchiveRequest, RetrieveTapeArchiveResponse>(retrieveTapeArchiveRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal RetrieveTapeRecoveryPointResponse RetrieveTapeRecoveryPoint(RetrieveTapeRecoveryPointRequest request)
@@ -1658,13 +1582,11 @@ namespace Amazon.StorageGateway
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<RetrieveTapeRecoveryPointResponse> RetrieveTapeRecoveryPointAsync(RetrieveTapeRecoveryPointRequest retrieveTapeRecoveryPointRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<RetrieveTapeRecoveryPointResponse> RetrieveTapeRecoveryPointAsync(RetrieveTapeRecoveryPointRequest retrieveTapeRecoveryPointRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RetrieveTapeRecoveryPointRequestMarshaller();
             var unmarshaller = RetrieveTapeRecoveryPointResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, RetrieveTapeRecoveryPointRequest, RetrieveTapeRecoveryPointResponse>(retrieveTapeRecoveryPointRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, RetrieveTapeRecoveryPointRequest, RetrieveTapeRecoveryPointResponse>(retrieveTapeRecoveryPointRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal ShutdownGatewayResponse ShutdownGateway(ShutdownGatewayRequest request)
@@ -1702,13 +1624,11 @@ namespace Amazon.StorageGateway
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<ShutdownGatewayResponse> ShutdownGatewayAsync(ShutdownGatewayRequest shutdownGatewayRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<ShutdownGatewayResponse> ShutdownGatewayAsync(ShutdownGatewayRequest shutdownGatewayRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ShutdownGatewayRequestMarshaller();
             var unmarshaller = ShutdownGatewayResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, ShutdownGatewayRequest, ShutdownGatewayResponse>(shutdownGatewayRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, ShutdownGatewayRequest, ShutdownGatewayResponse>(shutdownGatewayRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal StartGatewayResponse StartGateway(StartGatewayRequest request)
@@ -1743,13 +1663,11 @@ namespace Amazon.StorageGateway
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<StartGatewayResponse> StartGatewayAsync(StartGatewayRequest startGatewayRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<StartGatewayResponse> StartGatewayAsync(StartGatewayRequest startGatewayRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new StartGatewayRequestMarshaller();
             var unmarshaller = StartGatewayResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, StartGatewayRequest, StartGatewayResponse>(startGatewayRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, StartGatewayRequest, StartGatewayResponse>(startGatewayRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal UpdateBandwidthRateLimitResponse UpdateBandwidthRateLimit(UpdateBandwidthRateLimitRequest request)
@@ -1783,13 +1701,11 @@ namespace Amazon.StorageGateway
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<UpdateBandwidthRateLimitResponse> UpdateBandwidthRateLimitAsync(UpdateBandwidthRateLimitRequest updateBandwidthRateLimitRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<UpdateBandwidthRateLimitResponse> UpdateBandwidthRateLimitAsync(UpdateBandwidthRateLimitRequest updateBandwidthRateLimitRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateBandwidthRateLimitRequestMarshaller();
             var unmarshaller = UpdateBandwidthRateLimitResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, UpdateBandwidthRateLimitRequest, UpdateBandwidthRateLimitResponse>(updateBandwidthRateLimitRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, UpdateBandwidthRateLimitRequest, UpdateBandwidthRateLimitResponse>(updateBandwidthRateLimitRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal UpdateChapCredentialsResponse UpdateChapCredentials(UpdateChapCredentialsRequest request)
@@ -1821,13 +1737,11 @@ namespace Amazon.StorageGateway
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<UpdateChapCredentialsResponse> UpdateChapCredentialsAsync(UpdateChapCredentialsRequest updateChapCredentialsRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<UpdateChapCredentialsResponse> UpdateChapCredentialsAsync(UpdateChapCredentialsRequest updateChapCredentialsRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateChapCredentialsRequestMarshaller();
             var unmarshaller = UpdateChapCredentialsResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, UpdateChapCredentialsRequest, UpdateChapCredentialsResponse>(updateChapCredentialsRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, UpdateChapCredentialsRequest, UpdateChapCredentialsResponse>(updateChapCredentialsRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal UpdateGatewayInformationResponse UpdateGatewayInformation(UpdateGatewayInformationRequest request)
@@ -1858,13 +1772,11 @@ namespace Amazon.StorageGateway
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<UpdateGatewayInformationResponse> UpdateGatewayInformationAsync(UpdateGatewayInformationRequest updateGatewayInformationRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<UpdateGatewayInformationResponse> UpdateGatewayInformationAsync(UpdateGatewayInformationRequest updateGatewayInformationRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateGatewayInformationRequestMarshaller();
             var unmarshaller = UpdateGatewayInformationResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, UpdateGatewayInformationRequest, UpdateGatewayInformationResponse>(updateGatewayInformationRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, UpdateGatewayInformationRequest, UpdateGatewayInformationResponse>(updateGatewayInformationRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal UpdateGatewaySoftwareNowResponse UpdateGatewaySoftwareNow(UpdateGatewaySoftwareNowRequest request)
@@ -1899,13 +1811,11 @@ namespace Amazon.StorageGateway
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<UpdateGatewaySoftwareNowResponse> UpdateGatewaySoftwareNowAsync(UpdateGatewaySoftwareNowRequest updateGatewaySoftwareNowRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<UpdateGatewaySoftwareNowResponse> UpdateGatewaySoftwareNowAsync(UpdateGatewaySoftwareNowRequest updateGatewaySoftwareNowRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateGatewaySoftwareNowRequestMarshaller();
             var unmarshaller = UpdateGatewaySoftwareNowResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, UpdateGatewaySoftwareNowRequest, UpdateGatewaySoftwareNowResponse>(updateGatewaySoftwareNowRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, UpdateGatewaySoftwareNowRequest, UpdateGatewaySoftwareNowResponse>(updateGatewaySoftwareNowRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal UpdateMaintenanceStartTimeResponse UpdateMaintenanceStartTime(UpdateMaintenanceStartTimeRequest request)
@@ -1936,13 +1846,11 @@ namespace Amazon.StorageGateway
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<UpdateMaintenanceStartTimeResponse> UpdateMaintenanceStartTimeAsync(UpdateMaintenanceStartTimeRequest updateMaintenanceStartTimeRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<UpdateMaintenanceStartTimeResponse> UpdateMaintenanceStartTimeAsync(UpdateMaintenanceStartTimeRequest updateMaintenanceStartTimeRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateMaintenanceStartTimeRequestMarshaller();
             var unmarshaller = UpdateMaintenanceStartTimeResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, UpdateMaintenanceStartTimeRequest, UpdateMaintenanceStartTimeResponse>(updateMaintenanceStartTimeRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, UpdateMaintenanceStartTimeRequest, UpdateMaintenanceStartTimeResponse>(updateMaintenanceStartTimeRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal UpdateSnapshotScheduleResponse UpdateSnapshotSchedule(UpdateSnapshotScheduleRequest request)
@@ -1975,13 +1883,11 @@ namespace Amazon.StorageGateway
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<UpdateSnapshotScheduleResponse> UpdateSnapshotScheduleAsync(UpdateSnapshotScheduleRequest updateSnapshotScheduleRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<UpdateSnapshotScheduleResponse> UpdateSnapshotScheduleAsync(UpdateSnapshotScheduleRequest updateSnapshotScheduleRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateSnapshotScheduleRequestMarshaller();
             var unmarshaller = UpdateSnapshotScheduleResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, UpdateSnapshotScheduleRequest, UpdateSnapshotScheduleResponse>(updateSnapshotScheduleRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, UpdateSnapshotScheduleRequest, UpdateSnapshotScheduleResponse>(updateSnapshotScheduleRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
     }
 }

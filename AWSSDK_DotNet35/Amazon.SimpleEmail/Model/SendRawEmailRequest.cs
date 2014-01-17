@@ -38,11 +38,12 @@ namespace Amazon.SimpleEmail.Model
     /// href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html" >Amazon SES Developer Guide</a> .
     /// </para>
     /// </summary>
-    public partial class SendRawEmailRequest : AmazonWebServiceRequest
+    public partial class SendRawEmailRequest : AmazonSimpleEmailServiceRequest
     {
         private string source;
         private List<string> destinations = new List<string>();
         private RawMessage rawMessage;
+
         /// <summary>
         /// Default constructor for a new SendRawEmailRequest object.  Callers should use the
         /// properties to initialize this object after creating it.

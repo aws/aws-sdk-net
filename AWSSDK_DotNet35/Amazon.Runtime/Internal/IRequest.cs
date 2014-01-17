@@ -126,12 +126,12 @@ namespace Amazon.Runtime.Internal
         }
 
         /// <summary>
-        /// Gets the SHA 256 hash of the content stream.
+        /// Computes the SHA 256 hash of the content stream. If the stream is not
+        /// seekable, it searches the parent stream hierarchy to find a seekable
+        /// stream prior to computation. Once computed, the hash is cached for future
+        /// use.
         /// </summary>
-        string ContentStreamHash
-        {
-            get;
-        }
+        string ComputeContentStreamHash();
 
         /// <summary>
         /// The name of the service to which this request is being sent.

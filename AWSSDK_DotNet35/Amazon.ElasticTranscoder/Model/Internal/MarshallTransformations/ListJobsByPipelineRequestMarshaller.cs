@@ -66,9 +66,10 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
                 foreach (string s in queryString.Split('&', ';')) 
                 {
                     string[] nameValuePair = s.Split('=');
-                    if (nameValuePair.Length == 2 && nameValuePair[1].Length > 0) 
+                    if (nameValuePair.Length == 2)
                     {
-                        request.Parameters.Add(nameValuePair[0], nameValuePair[1]);
+                        if (nameValuePair[1].Length > 0)
+                            request.Parameters.Add(nameValuePair[0], nameValuePair[1]);
                     }
                     else
                     {

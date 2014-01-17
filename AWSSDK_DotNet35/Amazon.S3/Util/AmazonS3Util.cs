@@ -393,6 +393,20 @@ namespace Amazon.S3.Util
             return true;
         }
 
+        internal static void AddQueryStringParameter(StringBuilder queryString, string parameterName, string parameterValue)
+        {
+            AddQueryStringParameter(queryString, parameterName, parameterValue, null);
+        }
+
+        internal static void AddQueryStringParameter(StringBuilder queryString, string parameterName, string parameterValue, IDictionary<string, string> parameterMap)
+        {
+            if (queryString.Length > 0)
+                queryString.Append("&");
+            queryString.AppendFormat("{0}={1}", parameterName, parameterValue);
+            if (parameterMap != null)
+                parameterMap.Add(parameterName, parameterValue);
+        }
+
         internal static void ParseAmzRestoreHeader(string header, out bool restoreInProgress, out DateTime? restoreExpiration)
         {
             const string ONGOING_REQUEST = "ongoing-request";

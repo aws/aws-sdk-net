@@ -33,9 +33,10 @@ namespace Amazon.SimpleEmail.Model
     /// creating DNS records using DKIM tokens, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html"
     /// >Amazon SES Developer Guide</a> .</para>
     /// </summary>
-    public partial class VerifyDomainDkimRequest : AmazonWebServiceRequest
+    public partial class VerifyDomainDkimRequest : AmazonSimpleEmailServiceRequest
     {
         private string domain;
+
 
         /// <summary>
         /// The name of the domain to be verified for Easy DKIM signing.

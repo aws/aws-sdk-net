@@ -12,17 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Xml;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.S3.Model;
-using Amazon.S3.Util;
-using Amazon.Runtime;
+using System.IO;
 using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Util;
@@ -34,8 +27,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// </summary>       
     public class UploadPartRequestMarshaller : IMarshaller<IRequest, UploadPartRequest>
     {
-
-
         public IRequest Marshall(UploadPartRequest uploadPartRequest)
         {
             IRequest request = new DefaultRequest(uploadPartRequest, "AmazonS3");
@@ -45,34 +36,25 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (uploadPartRequest.IsSetMD5Digest())
                 request.Headers["Content-MD5"] = uploadPartRequest.MD5Digest;
 
-            Dictionary<string, string> queryParameters = new Dictionary<string, string>();
-            string uriResourcePath = "/{Bucket}/{Key}?partNumber={PartNumber};uploadId={UploadId}";
-            uriResourcePath = uriResourcePath.Replace("{Bucket}", uploadPartRequest.IsSetBucketName() ? S3Transforms.ToStringValue(uploadPartRequest.BucketName) : "");
-            uriResourcePath = uriResourcePath.Replace("{Key}", uploadPartRequest.IsSetKey() ? S3Transforms.ToStringValue(uploadPartRequest.Key) : "");
-            uriResourcePath = uriResourcePath.Replace("{PartNumber}", uploadPartRequest.IsSetPartNumber() ? S3Transforms.ToStringValue(uploadPartRequest.PartNumber) : "");
-            uriResourcePath = uriResourcePath.Replace("{UploadId}", uploadPartRequest.IsSetUploadId() ? S3Transforms.ToStringValue(uploadPartRequest.UploadId) : "");
-            string path = uriResourcePath;
+            var uriResourcePath = string.Format("/{0}/{1}",
+                                                S3Transforms.ToStringValue(uploadPartRequest.BucketName),
+                                                S3Transforms.ToStringValue(uploadPartRequest.Key));
 
+            if (uploadPartRequest.IsSetPartNumber())
+                request.Parameters.Add("partNumber", S3Transforms.ToStringValue(uploadPartRequest.PartNumber));
+            if (uploadPartRequest.IsSetUploadId())
+                request.Parameters.Add("uploadId", S3Transforms.ToStringValue(uploadPartRequest.UploadId));
 
-            int queryIndex = uriResourcePath.IndexOf("?", StringComparison.OrdinalIgnoreCase);
-            if (queryIndex != -1)
-            {
-                string queryString = uriResourcePath.Substring(queryIndex + 1);
-                path = uriResourcePath.Substring(0, queryIndex);
+            request.CanonicalResource = S3Transforms.GetCanonicalResource(uriResourcePath, request.Parameters);
+            request.ResourcePath = S3Transforms.FormatResourcePath(uriResourcePath, request.Parameters);
 
-                S3Transforms.BuildQueryParameterMap(request, queryParameters, queryString);
-            }
-
-            request.CanonicalResource = S3Transforms.GetCanonicalResource(path, queryParameters);
-            uriResourcePath = S3Transforms.FormatResourcePath(path, queryParameters);
-
-            request.ResourcePath = uriResourcePath;
             if (uploadPartRequest.InputStream != null)
             {
                 // Wrap input stream in partial wrapper (to upload only part of the stream)
-                Stream partialStream = new PartialWrapperStream(uploadPartRequest.InputStream, uploadPartRequest.PartSize);
-                // Wrap input stream in MD5Stream
-                HashStream hashStream = new MD5Stream(partialStream, null, partialStream.Length);
+                var partialStream = new PartialWrapperStream(uploadPartRequest.InputStream, uploadPartRequest.PartSize);
+
+                // Wrap input stream in MD5Stream; after this we can no longer seek or position the stream
+                var hashStream = new MD5Stream(partialStream, null, partialStream.Length);
                 uploadPartRequest.InputStream = hashStream;
             }
 
@@ -83,13 +65,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             if (!request.UseQueryString)
             {
-                string queryString = Amazon.Util.AWSSDKUtils.GetParametersAsString(request.Parameters);
+                var queryString = AWSSDKUtils.GetParametersAsString(request.Parameters);
                 if (!string.IsNullOrEmpty(queryString))
                 {
-                    if (request.ResourcePath.Contains("?"))
-                        request.ResourcePath = string.Concat(request.ResourcePath, "&", queryString);
-                    else
-                        request.ResourcePath = string.Concat(request.ResourcePath, "?", queryString);
+                    request.ResourcePath = string.Concat(request.ResourcePath, request.ResourcePath.Contains("?") ? "&" : "?", queryString);
                 }
             }
 

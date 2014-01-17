@@ -48,11 +48,12 @@ namespace Amazon.Glacier.Model
     /// Configuration </a> in the <i>Amazon Glacier Developer Guide</i> .
     /// </para>
     /// </summary>
-    public partial class SetVaultNotificationsRequest : AmazonWebServiceRequest
+    public partial class SetVaultNotificationsRequest : AmazonGlacierRequest
     {
         private string accountId;
         private string vaultName;
         private VaultNotificationConfig vaultNotificationConfig;
+
 
         /// <summary>
         /// The <c>AccountId</c> is the AWS Account ID. You can specify either the AWS Account ID or optionally a '-', in which case Amazon Glacier uses

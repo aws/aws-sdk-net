@@ -12,19 +12,9 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Xml;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.S3.Model;
-using Amazon.S3.Util;
-using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
@@ -33,40 +23,21 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// </summary>       
     public class GetObjectTorrentRequestMarshaller : IMarshaller<IRequest, GetObjectTorrentRequest>
     {
-        
-    
         public IRequest Marshall(GetObjectTorrentRequest getObjectTorrentRequest)
         {
             IRequest request = new DefaultRequest(getObjectTorrentRequest, "AmazonS3");
 
-
-
             request.HttpMethod = "GET";
-              
-            Dictionary<string, string> queryParameters = new Dictionary<string, string>();
-            string uriResourcePath = "/{Bucket}/{Key}?torrent"; 
-            uriResourcePath = uriResourcePath.Replace("{Bucket}", getObjectTorrentRequest.IsSetBucketName() ? S3Transforms.ToStringValue(getObjectTorrentRequest.BucketName) : "" ); 
-            uriResourcePath = uriResourcePath.Replace("{Key}", getObjectTorrentRequest.IsSetKey() ? S3Transforms.ToStringValue(getObjectTorrentRequest.Key) : "" ); 
-            string path = uriResourcePath;
 
+            var uriResourcePath = string.Format("/{0}/{1}",
+                                                S3Transforms.ToStringValue(getObjectTorrentRequest.BucketName),
+                                                S3Transforms.ToStringValue(getObjectTorrentRequest.Key));
 
-            int queryIndex = uriResourcePath.IndexOf("?", StringComparison.OrdinalIgnoreCase);
-            if (queryIndex != -1)
-            {
-                string queryString = uriResourcePath.Substring(queryIndex + 1);
-                path = uriResourcePath.Substring(0, queryIndex);
+            request.Parameters.Add("torrent", null);
 
-                S3Transforms.BuildQueryParameterMap(request, queryParameters, queryString);
-            }
-            
-            request.CanonicalResource = S3Transforms.GetCanonicalResource(path, queryParameters);
-            uriResourcePath = S3Transforms.FormatResourcePath(path, queryParameters);
-            
-            request.ResourcePath = uriResourcePath;
-            
-        
+            request.CanonicalResource = S3Transforms.GetCanonicalResource(uriResourcePath, request.Parameters);
+            request.ResourcePath = S3Transforms.FormatResourcePath(uriResourcePath, request.Parameters);
             request.UseQueryString = true;
-            
             
             return request;
         }

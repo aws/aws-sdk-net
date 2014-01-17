@@ -254,13 +254,11 @@ namespace Amazon.SimpleNotificationService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<AddPermissionResponse> AddPermissionAsync(AddPermissionRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<AddPermissionResponse> AddPermissionAsync(AddPermissionRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AddPermissionRequestMarshaller();
             var unmarshaller = AddPermissionResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, AddPermissionRequest, AddPermissionResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, AddPermissionRequest, AddPermissionResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -302,13 +300,11 @@ namespace Amazon.SimpleNotificationService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<ConfirmSubscriptionResponse> ConfirmSubscriptionAsync(ConfirmSubscriptionRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<ConfirmSubscriptionResponse> ConfirmSubscriptionAsync(ConfirmSubscriptionRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ConfirmSubscriptionRequestMarshaller();
             var unmarshaller = ConfirmSubscriptionResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, ConfirmSubscriptionRequest, ConfirmSubscriptionResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, ConfirmSubscriptionRequest, ConfirmSubscriptionResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -354,13 +350,11 @@ namespace Amazon.SimpleNotificationService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<CreatePlatformApplicationResponse> CreatePlatformApplicationAsync(CreatePlatformApplicationRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<CreatePlatformApplicationResponse> CreatePlatformApplicationAsync(CreatePlatformApplicationRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreatePlatformApplicationRequestMarshaller();
             var unmarshaller = CreatePlatformApplicationResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, CreatePlatformApplicationRequest, CreatePlatformApplicationResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, CreatePlatformApplicationRequest, CreatePlatformApplicationResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -405,13 +399,11 @@ namespace Amazon.SimpleNotificationService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<CreatePlatformEndpointResponse> CreatePlatformEndpointAsync(CreatePlatformEndpointRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<CreatePlatformEndpointResponse> CreatePlatformEndpointAsync(CreatePlatformEndpointRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreatePlatformEndpointRequestMarshaller();
             var unmarshaller = CreatePlatformEndpointResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, CreatePlatformEndpointRequest, CreatePlatformEndpointResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, CreatePlatformEndpointRequest, CreatePlatformEndpointResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -453,13 +445,11 @@ namespace Amazon.SimpleNotificationService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<CreateTopicResponse> CreateTopicAsync(CreateTopicRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<CreateTopicResponse> CreateTopicAsync(CreateTopicRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateTopicRequestMarshaller();
             var unmarshaller = CreateTopicResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, CreateTopicRequest, CreateTopicResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, CreateTopicRequest, CreateTopicResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -496,13 +486,11 @@ namespace Amazon.SimpleNotificationService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<DeleteEndpointResponse> DeleteEndpointAsync(DeleteEndpointRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DeleteEndpointResponse> DeleteEndpointAsync(DeleteEndpointRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteEndpointRequestMarshaller();
             var unmarshaller = DeleteEndpointResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DeleteEndpointRequest, DeleteEndpointResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DeleteEndpointRequest, DeleteEndpointResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -541,13 +529,11 @@ namespace Amazon.SimpleNotificationService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<DeletePlatformApplicationResponse> DeletePlatformApplicationAsync(DeletePlatformApplicationRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DeletePlatformApplicationResponse> DeletePlatformApplicationAsync(DeletePlatformApplicationRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeletePlatformApplicationRequestMarshaller();
             var unmarshaller = DeletePlatformApplicationResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DeletePlatformApplicationRequest, DeletePlatformApplicationResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DeletePlatformApplicationRequest, DeletePlatformApplicationResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -586,13 +572,11 @@ namespace Amazon.SimpleNotificationService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<DeleteTopicResponse> DeleteTopicAsync(DeleteTopicRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DeleteTopicResponse> DeleteTopicAsync(DeleteTopicRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteTopicRequestMarshaller();
             var unmarshaller = DeleteTopicResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DeleteTopicRequest, DeleteTopicResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DeleteTopicRequest, DeleteTopicResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -634,13 +618,11 @@ namespace Amazon.SimpleNotificationService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<GetEndpointAttributesResponse> GetEndpointAttributesAsync(GetEndpointAttributesRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<GetEndpointAttributesResponse> GetEndpointAttributesAsync(GetEndpointAttributesRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetEndpointAttributesRequestMarshaller();
             var unmarshaller = GetEndpointAttributesResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, GetEndpointAttributesRequest, GetEndpointAttributesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, GetEndpointAttributesRequest, GetEndpointAttributesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -681,13 +663,11 @@ namespace Amazon.SimpleNotificationService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<GetPlatformApplicationAttributesResponse> GetPlatformApplicationAttributesAsync(GetPlatformApplicationAttributesRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<GetPlatformApplicationAttributesResponse> GetPlatformApplicationAttributesAsync(GetPlatformApplicationAttributesRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetPlatformApplicationAttributesRequestMarshaller();
             var unmarshaller = GetPlatformApplicationAttributesResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, GetPlatformApplicationAttributesRequest, GetPlatformApplicationAttributesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, GetPlatformApplicationAttributesRequest, GetPlatformApplicationAttributesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -726,13 +706,11 @@ namespace Amazon.SimpleNotificationService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<GetSubscriptionAttributesResponse> GetSubscriptionAttributesAsync(GetSubscriptionAttributesRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<GetSubscriptionAttributesResponse> GetSubscriptionAttributesAsync(GetSubscriptionAttributesRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetSubscriptionAttributesRequestMarshaller();
             var unmarshaller = GetSubscriptionAttributesResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, GetSubscriptionAttributesRequest, GetSubscriptionAttributesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, GetSubscriptionAttributesRequest, GetSubscriptionAttributesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -772,13 +750,11 @@ namespace Amazon.SimpleNotificationService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<GetTopicAttributesResponse> GetTopicAttributesAsync(GetTopicAttributesRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<GetTopicAttributesResponse> GetTopicAttributesAsync(GetTopicAttributesRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetTopicAttributesRequestMarshaller();
             var unmarshaller = GetTopicAttributesResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, GetTopicAttributesRequest, GetTopicAttributesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, GetTopicAttributesRequest, GetTopicAttributesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -822,13 +798,11 @@ namespace Amazon.SimpleNotificationService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<ListEndpointsByPlatformApplicationResponse> ListEndpointsByPlatformApplicationAsync(ListEndpointsByPlatformApplicationRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<ListEndpointsByPlatformApplicationResponse> ListEndpointsByPlatformApplicationAsync(ListEndpointsByPlatformApplicationRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListEndpointsByPlatformApplicationRequestMarshaller();
             var unmarshaller = ListEndpointsByPlatformApplicationResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, ListEndpointsByPlatformApplicationRequest, ListEndpointsByPlatformApplicationResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, ListEndpointsByPlatformApplicationRequest, ListEndpointsByPlatformApplicationResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -872,13 +846,11 @@ namespace Amazon.SimpleNotificationService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<ListPlatformApplicationsResponse> ListPlatformApplicationsAsync(ListPlatformApplicationsRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<ListPlatformApplicationsResponse> ListPlatformApplicationsAsync(ListPlatformApplicationsRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListPlatformApplicationsRequestMarshaller();
             var unmarshaller = ListPlatformApplicationsResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, ListPlatformApplicationsRequest, ListPlatformApplicationsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, ListPlatformApplicationsRequest, ListPlatformApplicationsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -939,13 +911,11 @@ namespace Amazon.SimpleNotificationService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<ListSubscriptionsResponse> ListSubscriptionsAsync(ListSubscriptionsRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<ListSubscriptionsResponse> ListSubscriptionsAsync(ListSubscriptionsRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListSubscriptionsRequestMarshaller();
             var unmarshaller = ListSubscriptionsResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, ListSubscriptionsRequest, ListSubscriptionsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, ListSubscriptionsRequest, ListSubscriptionsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -1003,13 +973,11 @@ namespace Amazon.SimpleNotificationService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<ListSubscriptionsByTopicResponse> ListSubscriptionsByTopicAsync(ListSubscriptionsByTopicRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<ListSubscriptionsByTopicResponse> ListSubscriptionsByTopicAsync(ListSubscriptionsByTopicRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListSubscriptionsByTopicRequestMarshaller();
             var unmarshaller = ListSubscriptionsByTopicResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, ListSubscriptionsByTopicRequest, ListSubscriptionsByTopicResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, ListSubscriptionsByTopicRequest, ListSubscriptionsByTopicResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -1049,13 +1017,11 @@ namespace Amazon.SimpleNotificationService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<ListTopicsResponse> ListTopicsAsync(ListTopicsRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<ListTopicsResponse> ListTopicsAsync(ListTopicsRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListTopicsRequestMarshaller();
             var unmarshaller = ListTopicsResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, ListTopicsRequest, ListTopicsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, ListTopicsRequest, ListTopicsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -1118,13 +1084,11 @@ namespace Amazon.SimpleNotificationService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<PublishResponse> PublishAsync(PublishRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<PublishResponse> PublishAsync(PublishRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PublishRequestMarshaller();
             var unmarshaller = PublishResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, PublishRequest, PublishResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, PublishRequest, PublishResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -1161,13 +1125,11 @@ namespace Amazon.SimpleNotificationService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<RemovePermissionResponse> RemovePermissionAsync(RemovePermissionRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<RemovePermissionResponse> RemovePermissionAsync(RemovePermissionRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RemovePermissionRequestMarshaller();
             var unmarshaller = RemovePermissionResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, RemovePermissionRequest, RemovePermissionResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, RemovePermissionRequest, RemovePermissionResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -1207,13 +1169,11 @@ namespace Amazon.SimpleNotificationService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<SetEndpointAttributesResponse> SetEndpointAttributesAsync(SetEndpointAttributesRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<SetEndpointAttributesResponse> SetEndpointAttributesAsync(SetEndpointAttributesRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new SetEndpointAttributesRequestMarshaller();
             var unmarshaller = SetEndpointAttributesResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, SetEndpointAttributesRequest, SetEndpointAttributesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, SetEndpointAttributesRequest, SetEndpointAttributesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -1252,13 +1212,11 @@ namespace Amazon.SimpleNotificationService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<SetPlatformApplicationAttributesResponse> SetPlatformApplicationAttributesAsync(SetPlatformApplicationAttributesRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<SetPlatformApplicationAttributesResponse> SetPlatformApplicationAttributesAsync(SetPlatformApplicationAttributesRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new SetPlatformApplicationAttributesRequestMarshaller();
             var unmarshaller = SetPlatformApplicationAttributesResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, SetPlatformApplicationAttributesRequest, SetPlatformApplicationAttributesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, SetPlatformApplicationAttributesRequest, SetPlatformApplicationAttributesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -1295,13 +1253,11 @@ namespace Amazon.SimpleNotificationService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<SetSubscriptionAttributesResponse> SetSubscriptionAttributesAsync(SetSubscriptionAttributesRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<SetSubscriptionAttributesResponse> SetSubscriptionAttributesAsync(SetSubscriptionAttributesRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new SetSubscriptionAttributesRequestMarshaller();
             var unmarshaller = SetSubscriptionAttributesResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, SetSubscriptionAttributesRequest, SetSubscriptionAttributesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, SetSubscriptionAttributesRequest, SetSubscriptionAttributesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -1338,13 +1294,11 @@ namespace Amazon.SimpleNotificationService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<SetTopicAttributesResponse> SetTopicAttributesAsync(SetTopicAttributesRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<SetTopicAttributesResponse> SetTopicAttributesAsync(SetTopicAttributesRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new SetTopicAttributesRequestMarshaller();
             var unmarshaller = SetTopicAttributesResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, SetTopicAttributesRequest, SetTopicAttributesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, SetTopicAttributesRequest, SetTopicAttributesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -1386,13 +1340,11 @@ namespace Amazon.SimpleNotificationService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<SubscribeResponse> SubscribeAsync(SubscribeRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<SubscribeResponse> SubscribeAsync(SubscribeRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new SubscribeRequestMarshaller();
             var unmarshaller = SubscribeResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, SubscribeRequest, SubscribeResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, SubscribeRequest, SubscribeResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -1432,13 +1384,11 @@ namespace Amazon.SimpleNotificationService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<UnsubscribeResponse> UnsubscribeAsync(UnsubscribeRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<UnsubscribeResponse> UnsubscribeAsync(UnsubscribeRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UnsubscribeRequestMarshaller();
             var unmarshaller = UnsubscribeResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, UnsubscribeRequest, UnsubscribeResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, UnsubscribeRequest, UnsubscribeResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
     }
 }

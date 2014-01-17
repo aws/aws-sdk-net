@@ -49,8 +49,14 @@
               if (context.TestExpression("JobList", targetDepth))
               {
                 context.Read();
-                response.JobList = new List<GlacierJobDescription>();
-                        GlacierJobDescriptionUnmarshaller unmarshaller = GlacierJobDescriptionUnmarshaller.GetInstance();
+                
+                if (context.CurrentTokenType == JsonToken.Null)
+                {
+                    response.JobList = null;
+                    continue;
+                }
+                  response.JobList = new List<GlacierJobDescription>();
+                  GlacierJobDescriptionUnmarshaller unmarshaller = GlacierJobDescriptionUnmarshaller.GetInstance();
                 while (context.Read())
                 {
                   JsonToken token = context.CurrentTokenType;                

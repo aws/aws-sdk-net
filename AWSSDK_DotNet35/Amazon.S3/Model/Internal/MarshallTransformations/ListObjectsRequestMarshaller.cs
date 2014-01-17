@@ -12,19 +12,9 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Xml;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.S3.Model;
-using Amazon.S3.Util;
-using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
@@ -33,45 +23,28 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// </summary>       
     public class ListObjectsRequestMarshaller : IMarshaller<IRequest, ListObjectsRequest>
     {
-        
-    
         public IRequest Marshall(ListObjectsRequest listObjectsRequest)
         {
             IRequest request = new DefaultRequest(listObjectsRequest, "AmazonS3");
 
-
-
             request.HttpMethod = "GET";
-              
-            Dictionary<string, string> queryParameters = new Dictionary<string, string>();
-            string uriResourcePath = "/{Bucket}/?delimiter={Delimiter};marker={Marker};max-keys={MaxKeys};prefix={Prefix};encoding-type={Encoding}"; 
-            uriResourcePath = uriResourcePath.Replace("{Bucket}", listObjectsRequest.IsSetBucketName() ? S3Transforms.ToStringValue(listObjectsRequest.BucketName) : "" ); 
-            uriResourcePath = uriResourcePath.Replace("{Delimiter}", listObjectsRequest.IsSetDelimiter() ? S3Transforms.ToStringValue(listObjectsRequest.Delimiter) : "" ); 
-            uriResourcePath = uriResourcePath.Replace("{Marker}", listObjectsRequest.IsSetMarker() ? S3Transforms.ToStringValue(listObjectsRequest.Marker) : "" ); 
-            uriResourcePath = uriResourcePath.Replace("{MaxKeys}", listObjectsRequest.IsSetMaxKeys() ? S3Transforms.ToStringValue(listObjectsRequest.MaxKeys) : "" ); 
-            uriResourcePath = uriResourcePath.Replace("{Prefix}", listObjectsRequest.IsSetPrefix() ? S3Transforms.ToStringValue(listObjectsRequest.Prefix) : "" );
-            uriResourcePath = uriResourcePath.Replace("{Encoding}", listObjectsRequest.IsSetEncoding() ? S3Transforms.ToStringValue(listObjectsRequest.Encoding) : "");
-            string path = uriResourcePath;
 
+            var uriResourcePath = string.Concat("/", S3Transforms.ToStringValue(listObjectsRequest.BucketName));
 
-            int queryIndex = uriResourcePath.IndexOf("?", StringComparison.OrdinalIgnoreCase);
-            if (queryIndex != -1)
-            {
-                string queryString = uriResourcePath.Substring(queryIndex + 1);
-                path = uriResourcePath.Substring(0, queryIndex);
+            if (listObjectsRequest.IsSetDelimiter())
+                request.Parameters.Add("delimiter", S3Transforms.ToStringValue(listObjectsRequest.Delimiter));
+            if (listObjectsRequest.IsSetMarker())
+                request.Parameters.Add("marker", S3Transforms.ToStringValue(listObjectsRequest.Marker));
+            if (listObjectsRequest.IsSetMaxKeys())
+                request.Parameters.Add("max-keys", S3Transforms.ToStringValue(listObjectsRequest.MaxKeys));
+            if (listObjectsRequest.IsSetPrefix())
+                request.Parameters.Add("prefix", S3Transforms.ToStringValue(listObjectsRequest.Prefix));
+            if (listObjectsRequest.IsSetEncoding())
+                request.Parameters.Add("encoding-type", S3Transforms.ToStringValue(listObjectsRequest.Encoding));
 
-                S3Transforms.BuildQueryParameterMap(request, queryParameters, queryString,
-                                                    new string[] { "delimiter", "marker", "max-keys", "prefix", "encoding-type" });
-            }
-
-            request.CanonicalResource = S3Transforms.GetCanonicalResource(path, queryParameters);
-            uriResourcePath = S3Transforms.FormatResourcePath(path, queryParameters);
-            
-            request.ResourcePath = uriResourcePath;
-            
-        
+            request.CanonicalResource = S3Transforms.GetCanonicalResource(uriResourcePath, request.Parameters);
+            request.ResourcePath = S3Transforms.FormatResourcePath(uriResourcePath, request.Parameters);
             request.UseQueryString = true;
-            
             
             return request;
         }

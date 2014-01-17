@@ -31,11 +31,12 @@ namespace Amazon.SimpleEmail.Model
     /// per second.</para> <para>For more information about feedback notification, see the <a
     /// href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/bounce-complaint-notifications.html" >Amazon SES Developer Guide</a> .</para>
     /// </summary>
-    public partial class SetIdentityNotificationTopicRequest : AmazonWebServiceRequest
+    public partial class SetIdentityNotificationTopicRequest : AmazonSimpleEmailServiceRequest
     {
         private string identity;
         private NotificationType notificationType;
         private string snsTopic;
+
 
         /// <summary>
         /// The identity for which the topic will be set. Examples: <c>user@example.com</c>, <c>example.com</c>.

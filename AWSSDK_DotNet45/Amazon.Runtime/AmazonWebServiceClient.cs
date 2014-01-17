@@ -79,7 +79,7 @@ namespace Amazon.Runtime
         #endregion
 
 
-        protected async Task<Res> Invoke<T, Req, Res>(Req request, IMarshaller<T, Req> marshaller, ResponseUnmarshaller unmarshaller, AbstractAWSSigner signer, CancellationToken cancellationToken = default(CancellationToken))
+        protected Task<Res> Invoke<T, Req, Res>(Req request, IMarshaller<T, Req> marshaller, ResponseUnmarshaller unmarshaller, AbstractAWSSigner signer, CancellationToken cancellationToken = default(CancellationToken))
             where T : IRequest
             where Req : AmazonWebServiceRequest
             where Res : AmazonWebServiceResponse
@@ -100,9 +100,7 @@ namespace Amazon.Runtime
                 state.Metrics.AddProperty(Metric.MethodName, irequest.RequestName);
             }
             ConfigureRequest(state);
-            Res response = await InvokeHelper<Res>(state, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return InvokeHelper<Res>(state, cancellationToken);
         }
 
         protected Uri DetermineEndpoint(IRequest request)
@@ -115,7 +113,7 @@ namespace Amazon.Runtime
             return endpoint;
         }
 
-        private async Task<T> InvokeHelper<T>(WebRequestState state, CancellationToken cancellationToken) where T : AmazonWebServiceResponse
+        private Task<T> InvokeHelper<T>(WebRequestState state, CancellationToken cancellationToken) where T : AmazonWebServiceResponse
         {
             if (state.RetriesAttempt == 0 || Config.ResignRetries)
             {
@@ -124,9 +122,7 @@ namespace Amazon.Runtime
             if (state.RetriesAttempt > 0)
                 HandleRetry(state);
 
-            T response = await InvokeConfiguredRequest<T>(state, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return InvokeConfiguredRequest<T>(state, cancellationToken);
         }
 
         private async Task<T> InvokeConfiguredRequest<T>(WebRequestState state, CancellationToken cancellationToken) where T : AmazonWebServiceResponse
@@ -479,7 +475,7 @@ namespace Amazon.Runtime
                 {
                     if (wrappedRequest.OriginalRequest.IncludeSHA256Header)
                     {
-                        request.Headers.TryAddWithoutValidation("x-amz-content-sha256", wrappedRequest.ContentStreamHash);
+                        request.Headers.TryAddWithoutValidation("x-amz-content-sha256", wrappedRequest.ComputeContentStreamHash());
                     }
                     request.Headers.TryAddWithoutValidation("content-length", wrappedRequest.ContentStream.Length.ToString(CultureInfo.InvariantCulture));
                 }

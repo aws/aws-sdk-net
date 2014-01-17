@@ -55,10 +55,11 @@ namespace Amazon.S3.Transfer.Internal
             }
 
             GetObjectRequest getRequest = ConvertToGetObjectRequest(this._request);
-            GetObjectResponse response = this._s3Client.GetObject(getRequest);
-            response.WriteObjectProgressEvent += this._request.EventHandler;
-
-            response.WriteResponseStreamToFile(this._request.FilePath);
+            using (GetObjectResponse response = this._s3Client.GetObject(getRequest))
+            {
+                response.WriteObjectProgressEvent += this._request.EventHandler;
+                response.WriteResponseStreamToFile(this._request.FilePath);
+            }
         }
     }
 }

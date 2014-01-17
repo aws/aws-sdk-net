@@ -30,10 +30,11 @@ namespace Amazon.SimpleEmail.Model
     /// second.</para> <para>For more information about feedback notification, see the <a
     /// href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/bounce-complaint-notifications.html" >Amazon SES Developer Guide</a> .</para>
     /// </summary>
-    public partial class SetIdentityFeedbackForwardingEnabledRequest : AmazonWebServiceRequest
+    public partial class SetIdentityFeedbackForwardingEnabledRequest : AmazonSimpleEmailServiceRequest
     {
         private string identity;
         private bool? forwardingEnabled;
+
 
         /// <summary>
         /// The identity for which to set feedback notification forwarding. Examples: <c>user@example.com</c>, <c>example.com</c>.

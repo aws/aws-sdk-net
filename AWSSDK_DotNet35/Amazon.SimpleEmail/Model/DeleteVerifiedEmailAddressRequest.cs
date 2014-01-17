@@ -29,9 +29,10 @@ namespace Amazon.SimpleEmail.Model
     /// action is deprecated as of the May 15, 2012 release of Domain Verification. The DeleteIdentity action is now preferred.</para> <para>This
     /// action is throttled at one request per second.</para>
     /// </summary>
-    public partial class DeleteVerifiedEmailAddressRequest : AmazonWebServiceRequest
+    public partial class DeleteVerifiedEmailAddressRequest : AmazonSimpleEmailServiceRequest
     {
         private string emailAddress;
+
 
         /// <summary>
         /// An email address to be removed from the list of verified addresses.

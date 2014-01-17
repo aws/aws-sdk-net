@@ -480,8 +480,10 @@ namespace Amazon.S3.IO
                 Key = S3Helper.EncodeKey(key)
             };
             getObjectRequest.BeforeRequestEvent += S3Helper.FileIORequestEventHandler;
-            s3Client.GetObject(getObjectRequest)
-                .WriteResponseStreamToFile(destFileName);
+            using (var getObjectResponse = s3Client.GetObject(getObjectRequest))
+            {
+                getObjectResponse.WriteResponseStreamToFile(destFileName);
+            }
 
             return new FileInfo(destFileName);
         }

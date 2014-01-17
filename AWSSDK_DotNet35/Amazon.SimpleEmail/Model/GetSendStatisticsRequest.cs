@@ -29,8 +29,9 @@ namespace Amazon.SimpleEmail.Model
     /// </para> <para>Each data point in the list contains statistics for a 15-minute interval.</para> <para>This action is throttled at one request
     /// per second.</para>
     /// </summary>
-    public partial class GetSendStatisticsRequest : AmazonWebServiceRequest
+    public partial class GetSendStatisticsRequest : AmazonSimpleEmailServiceRequest
     {
+
 
     }
 }

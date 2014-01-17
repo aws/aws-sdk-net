@@ -89,6 +89,7 @@ namespace Amazon.Runtime.Internal.Util
             }
             set
             {
+                
                 throw new NotSupportedException();
             }
         }

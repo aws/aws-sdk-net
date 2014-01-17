@@ -93,7 +93,14 @@ namespace Amazon.Runtime.Internal.Transform
             this.WebResponseData = responseData;
             this.ResponseContents = responseBody;
 
-            streamReader = new StreamReader(new MemoryStream(Encoding.UTF8.GetBytes(responseBody)));
+            var stream = new MemoryStream(Encoding.UTF8.GetBytes(responseBody));
+            base.SetupCRCStream(responseData, stream, stream.Length);
+
+            if (this.CrcStream != null)
+                streamReader = new StreamReader(this.CrcStream);
+            else
+                streamReader = new StreamReader(stream);
+
             jsonReader = new JsonReader(streamReader);
         }
 

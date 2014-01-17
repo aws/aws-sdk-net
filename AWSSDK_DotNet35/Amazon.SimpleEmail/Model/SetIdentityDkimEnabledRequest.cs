@@ -37,10 +37,11 @@ namespace Amazon.SimpleEmail.Model
     /// throttled at one request per second.</para> <para>For more information about Easy DKIM signing, go to the <a
     /// href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html" >Amazon SES Developer Guide</a> .</para>
     /// </summary>
-    public partial class SetIdentityDkimEnabledRequest : AmazonWebServiceRequest
+    public partial class SetIdentityDkimEnabledRequest : AmazonSimpleEmailServiceRequest
     {
         private string identity;
         private bool? dkimEnabled;
+
 
         /// <summary>
         /// The identity for which DKIM signing should be enabled or disabled.

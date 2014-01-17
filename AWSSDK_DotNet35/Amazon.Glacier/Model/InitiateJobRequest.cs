@@ -55,24 +55,38 @@ namespace Amazon.Glacier.Model
     /// might find the vault inventory useful. For example, when you upload an archive, you can provide an archive description but not an archive
     /// name. Amazon Glacier provides you a unique archive ID, an opaque string of characters. So, you might maintain your own database that maps
     /// archive names to their corresponding Amazon Glacier assigned archive IDs. You might find the vault inventory useful in the event you need to
-    /// reconcile information in your database with the actual vault inventory. </para> <para> <b>About Ranged Archive Retrieval</b> </para> <para>
-    /// You can initiate an archive retrieval for the whole archive or a range of the archive. In the case of ranged archive retrieval, you specify
-    /// a byte range to return or the whole archive. The range specified must be megabyte (MB) aligned, that is the range start value must be
-    /// divisible by 1 MB and range end value plus 1 must be divisible by 1 MB or equal the end of the archive. If the ranged archive retrieval is
-    /// not megabyte aligned, this operation returns a 400 response. Furthermore, to ensure you get checksum values for data you download using Get
-    /// Job Output API, the range must be tree hash aligned. </para> <para>An AWS account has full permission to perform all operations (actions).
-    /// However, AWS Identity and Access Management (IAM) users don't have any permissions by default. You must grant them explicit permission to
-    /// perform specific actions. For more information, see <a
+    /// reconcile information in your database with the actual vault inventory. </para> <para> <b>Range Inventory Retrieval</b> </para> <para>You
+    /// can limit the number of inventory items retrieved by filtering on the archive creation date or by setting a limit.</para> <para>
+    /// <i>Filtering by Archive Creation Date</i> </para> <para>You can retrieve inventory items for archives created between <c>StartDate</c> and
+    /// <c>EndDate</c> by specifying values for these parameters in the <b>InitiateJob</b> request. Archives created on or after the
+    /// <c>StartDate</c> and before the <c>EndDate</c> will be returned. If you only provide the <c>StartDate</c> without the <c>EndDate</c> , you
+    /// will retrieve the inventory for all archives created on or after the <c>StartDate</c> . If you only provide the <c>EndDate</c> without the
+    /// <c>StartDate</c> , you will get back the inventory for all archives created before the <c>EndDate</c> .</para> <para> <i>Limiting Inventory
+    /// Items per Retrieval</i> </para> <para>You can limit the number of inventory items returned by setting the <c>Limit</c> parameter in the
+    /// <b>InitiateJob</b> request. The inventory job output will contain inventory items up to the specified <c>Limit</c> . If there are more
+    /// inventory items available, the result is paginated. After a job is complete you can use the DescribeJob operation to get a marker that you
+    /// use in a subsequent <b>InitiateJob</b> request. The marker will indicate the starting point to retrieve the next set of inventory items. You
+    /// can page through your entire inventory by repeatedly making <b>InitiateJob</b> requests with the marker from the previous <b>DescribeJob</b>
+    /// output, until you get a marker from <b>DescribeJob</b> that returns null, indicating that there are no more inventory items
+    /// available.</para> <para>You can use the <c>Limit</c> parameter together with the date range parameters.</para> <para> <b>About Ranged
+    /// Archive Retrieval</b> </para> <para> You can initiate an archive retrieval for the whole archive or a range of the archive. In the case of
+    /// ranged archive retrieval, you specify a byte range to return or the whole archive. The range specified must be megabyte (MB) aligned, that
+    /// is the range start value must be divisible by 1 MB and range end value plus 1 must be divisible by 1 MB or equal the end of the archive. If
+    /// the ranged archive retrieval is not megabyte aligned, this operation returns a 400 response. Furthermore, to ensure you get checksum values
+    /// for data you download using Get Job Output API, the range must be tree hash aligned. </para> <para>An AWS account has full permission to
+    /// perform all operations (actions). However, AWS Identity and Access Management (IAM) users don't have any permissions by default. You must
+    /// grant them explicit permission to perform specific actions. For more information, see <a
     /// href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html" >Access Control Using AWS Identity and Access
     /// Management (IAM)</a> .</para> <para>For conceptual information and the underlying REST API, go to <a
     /// href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-initiate-job-post.html" >Initiate a Job</a> and <a
     /// href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-inventory.html" >Downloading a Vault Inventory</a> </para>
     /// </summary>
-    public partial class InitiateJobRequest : AmazonWebServiceRequest
+    public partial class InitiateJobRequest : AmazonGlacierRequest
     {
         private string accountId;
         private string vaultName;
         private JobParameters jobParameters;
+
 
         /// <summary>
         /// The <c>AccountId</c> is the AWS Account ID. You can specify either the AWS Account ID or optionally a '-', in which case Amazon Glacier uses

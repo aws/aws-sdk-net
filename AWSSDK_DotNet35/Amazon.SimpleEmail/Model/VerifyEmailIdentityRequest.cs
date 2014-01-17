@@ -28,9 +28,10 @@ namespace Amazon.SimpleEmail.Model
     /// <para>Verifies an email address. This action causes a confirmation email message to be sent to the specified address.</para> <para>This
     /// action is throttled at one request per second.</para>
     /// </summary>
-    public partial class VerifyEmailIdentityRequest : AmazonWebServiceRequest
+    public partial class VerifyEmailIdentityRequest : AmazonSimpleEmailServiceRequest
     {
         private string emailAddress;
+
 
         /// <summary>
         /// The email address to be verified.

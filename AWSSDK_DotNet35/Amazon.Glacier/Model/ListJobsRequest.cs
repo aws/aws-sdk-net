@@ -47,7 +47,7 @@ namespace Amazon.Glacier.Model
     /// Identity and Access Management (IAM)</a> .</para> <para>For the underlying REST API, go to <a
     /// href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-jobs-get.html" >List Jobs </a> </para>
     /// </summary>
-    public partial class ListJobsRequest : AmazonWebServiceRequest
+    public partial class ListJobsRequest : AmazonGlacierRequest
     {
         private string accountId;
         private string vaultName;
@@ -55,6 +55,7 @@ namespace Amazon.Glacier.Model
         private string marker;
         private string statuscode;
         private bool? completed;
+
 
         /// <summary>
         /// The <c>AccountId</c> is the AWS Account ID. You can specify either the AWS Account ID or optionally a '-', in which case Amazon Glacier uses

@@ -55,8 +55,14 @@
               if (context.TestExpression("Events", targetDepth))
               {
                 context.Read();
-                vaultNotificationConfig.Events = new List<String>();
-                        StringUnmarshaller unmarshaller = StringUnmarshaller.GetInstance();
+                
+                if (context.CurrentTokenType == JsonToken.Null)
+                {
+                    vaultNotificationConfig.Events = null;
+                    continue;
+                }
+                  vaultNotificationConfig.Events = new List<String>();
+                  StringUnmarshaller unmarshaller = StringUnmarshaller.GetInstance();
                 while (context.Read())
                 {
                   JsonToken token = context.CurrentTokenType;                

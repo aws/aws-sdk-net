@@ -38,7 +38,6 @@ namespace Amazon.Runtime.Internal.Transform
             if (context.Peek() == 60) //starts with '<' so assuming XML.
             {
                 ErrorResponseUnmarshaller xmlUnmarshaller = new ErrorResponseUnmarshaller();
-                context.Stream.Position = 0;
                 XmlUnmarshallerContext xmlContext = new XmlUnmarshallerContext(context.Stream, null);
                 response = xmlUnmarshaller.Unmarshall(xmlContext);
             }

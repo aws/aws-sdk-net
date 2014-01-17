@@ -47,5 +47,17 @@ namespace Amazon.S3
             : base(message, innerException, errorType, errorCode, requestId, statusCode)
         {
         }
+
+        internal AmazonS3Exception(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode, string amazonId2)
+            : base(message, innerException, errorType, errorCode, requestId, statusCode)
+        {
+            this.AmazonId2 = amazonId2;
+        }
+
+        /// <summary>
+        /// A special token that helps AWS troubleshoot problems.
+        /// </summary>
+        public string AmazonId2 { get; protected set; }
+
     }
 }

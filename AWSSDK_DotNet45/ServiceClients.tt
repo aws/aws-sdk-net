@@ -200,13 +200,11 @@ namespace <#= type.Namespace #>
             }
         }
           
-<#+ addAsyncDocumentation(method);#>		public async Task<<#= method.Name #>Response> <#= method.Name #>Async(<#= method.Name #>Request request, CancellationToken cancellationToken = default(CancellationToken))
+<#+ addAsyncDocumentation(method);#>		public Task<<#= method.Name #>Response> <#= method.Name #>Async(<#= method.Name #>Request request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new <#= method.Name #>RequestMarshaller();
             var unmarshaller = <#= method.Name #>ResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, <#= method.Name #>Request, <#= method.Name #>Response>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, <#= method.Name #>Request, <#= method.Name #>Response>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
 <#+          
             }     

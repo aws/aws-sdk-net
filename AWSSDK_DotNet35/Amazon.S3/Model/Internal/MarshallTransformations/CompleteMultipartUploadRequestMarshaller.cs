@@ -12,19 +12,14 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
+
 using System.IO;
 using System.Xml;
-using System.Xml.Serialization;
 using System.Text;
-
-using Amazon.S3.Model;
 using Amazon.S3.Util;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
@@ -33,83 +28,57 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// </summary>       
     public class CompleteMultipartUploadRequestMarshaller : IMarshaller<IRequest, CompleteMultipartUploadRequest>
     {
-
-
         public IRequest Marshall(CompleteMultipartUploadRequest completeMultipartUploadRequest)
         {
             IRequest request = new DefaultRequest(completeMultipartUploadRequest, "AmazonS3");
 
-
-
             request.HttpMethod = "POST";
 
-            Dictionary<string, string> queryParameters = new Dictionary<string, string>();
-            string uriResourcePath = "/{Bucket}/{Key}?uploadId={UploadId}";
-            uriResourcePath = uriResourcePath.Replace("{Bucket}", completeMultipartUploadRequest.IsSetBucketName() ? S3Transforms.ToStringValue(completeMultipartUploadRequest.BucketName) : "");
-            uriResourcePath = uriResourcePath.Replace("{Key}", completeMultipartUploadRequest.IsSetKey() ? S3Transforms.ToStringValue(completeMultipartUploadRequest.Key) : "");
-            uriResourcePath = uriResourcePath.Replace("{UploadId}", completeMultipartUploadRequest.IsSetUploadId() ? S3Transforms.ToStringValue(completeMultipartUploadRequest.UploadId) : "");
-            string path = uriResourcePath;
+            var uriResourcePath = string.Format("/{0}/{1}",
+                                                S3Transforms.ToStringValue(completeMultipartUploadRequest.BucketName),
+                                                S3Transforms.ToStringValue(completeMultipartUploadRequest.Key));
 
+            request.Parameters.Add("uploadId", S3Transforms.ToStringValue(completeMultipartUploadRequest.UploadId));
 
-            int queryIndex = uriResourcePath.IndexOf("?", StringComparison.OrdinalIgnoreCase);
-            if (queryIndex != -1)
+            request.CanonicalResource = S3Transforms.GetCanonicalResource(uriResourcePath, request.Parameters);
+            request.ResourcePath = S3Transforms.FormatResourcePath(uriResourcePath, request.Parameters);
+
+            var stringWriter = new StringWriter(System.Globalization.CultureInfo.InvariantCulture);
+            using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = Encoding.UTF8, OmitXmlDeclaration = true }))
             {
-                string queryString = uriResourcePath.Substring(queryIndex + 1);
-                path = uriResourcePath.Substring(0, queryIndex);
+                xmlWriter.WriteStartElement("CompleteMultipartUpload", "");
+                var multipartUploadMultipartUploadpartsList = completeMultipartUploadRequest.PartETags;
+                multipartUploadMultipartUploadpartsList.Sort();
 
-                S3Transforms.BuildQueryParameterMap(request, queryParameters, queryString);
-            }
-
-            request.CanonicalResource = S3Transforms.GetCanonicalResource(path, queryParameters);
-            uriResourcePath = S3Transforms.FormatResourcePath(path, queryParameters);
-
-            request.ResourcePath = uriResourcePath;
-
-
-            StringWriter stringWriter = new StringWriter(System.Globalization.CultureInfo.InvariantCulture);
-            using (XmlWriter xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true }))
-            {
-
-
-                if (completeMultipartUploadRequest != null)
+                if (multipartUploadMultipartUploadpartsList != null && multipartUploadMultipartUploadpartsList.Count > 0)
                 {
-                    xmlWriter.WriteStartElement("CompleteMultipartUpload", "");
-                    List<PartETag> multipartUploadMultipartUploadpartsList = completeMultipartUploadRequest.PartETags;
-                    multipartUploadMultipartUploadpartsList.Sort();
-
-                    if (multipartUploadMultipartUploadpartsList != null && multipartUploadMultipartUploadpartsList.Count > 0)
+                    foreach (var multipartUploadMultipartUploadpartsListValue in multipartUploadMultipartUploadpartsList)
                     {
-                        int multipartUploadMultipartUploadpartsListIndex = 1;
-                        foreach (PartETag multipartUploadMultipartUploadpartsListValue in multipartUploadMultipartUploadpartsList)
+                        xmlWriter.WriteStartElement("Part", "");
+                        if (multipartUploadMultipartUploadpartsListValue.IsSetETag())
                         {
-                            xmlWriter.WriteStartElement("Part", "");
-                            if (multipartUploadMultipartUploadpartsListValue.IsSetETag())
-                            {
-                                xmlWriter.WriteElementString("ETag", "", S3Transforms.ToXmlStringValue(multipartUploadMultipartUploadpartsListValue.ETag));
-                            }
-                            if (multipartUploadMultipartUploadpartsListValue.IsSetPartNumber())
-                            {
-                                xmlWriter.WriteElementString("PartNumber", "", S3Transforms.ToXmlStringValue(multipartUploadMultipartUploadpartsListValue.PartNumber));
-                            }
-                            xmlWriter.WriteEndElement();
-
-
-                            multipartUploadMultipartUploadpartsListIndex++;
+                            xmlWriter.WriteElementString("ETag", "",
+                                                         S3Transforms.ToXmlStringValue(multipartUploadMultipartUploadpartsListValue.ETag));
                         }
+                        if (multipartUploadMultipartUploadpartsListValue.IsSetPartNumber())
+                        {
+                            xmlWriter.WriteElementString("PartNumber", "",
+                                                         S3Transforms.ToXmlStringValue(multipartUploadMultipartUploadpartsListValue.PartNumber));
+                        }
+                        xmlWriter.WriteEndElement();
                     }
-                    xmlWriter.WriteEndElement();
                 }
+                xmlWriter.WriteEndElement();
             }
 
             try
             {
-                string content = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(content);
+                var content = stringWriter.ToString();
+                request.Content = Encoding.UTF8.GetBytes(content);
                 request.Headers["Content-Type"] = "application/xml";
 
-
                 request.Parameters[S3QueryParameter.ContentType.ToString()] = "application/xml";
-                string checksum = AmazonS3Util.GenerateChecksumForContent(content, true);
+                var checksum = AmazonS3Util.GenerateChecksumForContent(content, true);
                 request.Headers[Amazon.Util.AWSSDKUtils.ContentMD5Header] = checksum;
 
             }
@@ -120,16 +89,12 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             if (!request.UseQueryString)
             {
-                string queryString = Amazon.Util.AWSSDKUtils.GetParametersAsString(request.Parameters);
+                var queryString = Amazon.Util.AWSSDKUtils.GetParametersAsString(request.Parameters);
                 if (!string.IsNullOrEmpty(queryString))
                 {
-                    if (request.ResourcePath.Contains("?"))
-                        request.ResourcePath = string.Concat(request.ResourcePath, "&", queryString);
-                    else
-                        request.ResourcePath = string.Concat(request.ResourcePath, "?", queryString);
+                    request.ResourcePath = string.Concat(request.ResourcePath, request.ResourcePath.Contains("?") ? "&" : "?", queryString);
                 }
             }
-
 
             return request;
         }

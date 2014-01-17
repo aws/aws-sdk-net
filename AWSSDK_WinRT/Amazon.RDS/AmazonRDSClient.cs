@@ -183,13 +183,11 @@ namespace Amazon.RDS
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<AddSourceIdentifierToSubscriptionResponse> AddSourceIdentifierToSubscriptionAsync(AddSourceIdentifierToSubscriptionRequest addSourceIdentifierToSubscriptionRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<AddSourceIdentifierToSubscriptionResponse> AddSourceIdentifierToSubscriptionAsync(AddSourceIdentifierToSubscriptionRequest addSourceIdentifierToSubscriptionRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AddSourceIdentifierToSubscriptionRequestMarshaller();
             var unmarshaller = AddSourceIdentifierToSubscriptionResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, AddSourceIdentifierToSubscriptionRequest, AddSourceIdentifierToSubscriptionResponse>(addSourceIdentifierToSubscriptionRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, AddSourceIdentifierToSubscriptionRequest, AddSourceIdentifierToSubscriptionResponse>(addSourceIdentifierToSubscriptionRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal AddTagsToResourceResponse AddTagsToResource(AddTagsToResourceRequest request)
@@ -220,13 +218,11 @@ namespace Amazon.RDS
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<AddTagsToResourceResponse> AddTagsToResourceAsync(AddTagsToResourceRequest addTagsToResourceRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<AddTagsToResourceResponse> AddTagsToResourceAsync(AddTagsToResourceRequest addTagsToResourceRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AddTagsToResourceRequestMarshaller();
             var unmarshaller = AddTagsToResourceResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, AddTagsToResourceRequest, AddTagsToResourceResponse>(addTagsToResourceRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, AddTagsToResourceRequest, AddTagsToResourceResponse>(addTagsToResourceRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal AuthorizeDBSecurityGroupIngressResponse AuthorizeDBSecurityGroupIngress(AuthorizeDBSecurityGroupIngressRequest request)
@@ -264,13 +260,11 @@ namespace Amazon.RDS
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<AuthorizeDBSecurityGroupIngressResponse> AuthorizeDBSecurityGroupIngressAsync(AuthorizeDBSecurityGroupIngressRequest authorizeDBSecurityGroupIngressRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<AuthorizeDBSecurityGroupIngressResponse> AuthorizeDBSecurityGroupIngressAsync(AuthorizeDBSecurityGroupIngressRequest authorizeDBSecurityGroupIngressRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AuthorizeDBSecurityGroupIngressRequestMarshaller();
             var unmarshaller = AuthorizeDBSecurityGroupIngressResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, AuthorizeDBSecurityGroupIngressRequest, AuthorizeDBSecurityGroupIngressResponse>(authorizeDBSecurityGroupIngressRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, AuthorizeDBSecurityGroupIngressRequest, AuthorizeDBSecurityGroupIngressResponse>(authorizeDBSecurityGroupIngressRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal CopyDBSnapshotResponse CopyDBSnapshot(CopyDBSnapshotRequest request)
@@ -302,13 +296,11 @@ namespace Amazon.RDS
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<CopyDBSnapshotResponse> CopyDBSnapshotAsync(CopyDBSnapshotRequest copyDBSnapshotRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<CopyDBSnapshotResponse> CopyDBSnapshotAsync(CopyDBSnapshotRequest copyDBSnapshotRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CopyDBSnapshotRequestMarshaller();
             var unmarshaller = CopyDBSnapshotResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, CopyDBSnapshotRequest, CopyDBSnapshotResponse>(copyDBSnapshotRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, CopyDBSnapshotRequest, CopyDBSnapshotResponse>(copyDBSnapshotRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal CreateDBInstanceResponse CreateDBInstance(CreateDBInstanceRequest request)
@@ -348,13 +340,11 @@ namespace Amazon.RDS
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<CreateDBInstanceResponse> CreateDBInstanceAsync(CreateDBInstanceRequest createDBInstanceRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<CreateDBInstanceResponse> CreateDBInstanceAsync(CreateDBInstanceRequest createDBInstanceRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateDBInstanceRequestMarshaller();
             var unmarshaller = CreateDBInstanceResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, CreateDBInstanceRequest, CreateDBInstanceResponse>(createDBInstanceRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, CreateDBInstanceRequest, CreateDBInstanceResponse>(createDBInstanceRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal CreateDBInstanceReadReplicaResponse CreateDBInstanceReadReplica(CreateDBInstanceReadReplicaRequest request)
@@ -401,13 +391,11 @@ namespace Amazon.RDS
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<CreateDBInstanceReadReplicaResponse> CreateDBInstanceReadReplicaAsync(CreateDBInstanceReadReplicaRequest createDBInstanceReadReplicaRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<CreateDBInstanceReadReplicaResponse> CreateDBInstanceReadReplicaAsync(CreateDBInstanceReadReplicaRequest createDBInstanceReadReplicaRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateDBInstanceReadReplicaRequestMarshaller();
             var unmarshaller = CreateDBInstanceReadReplicaResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, CreateDBInstanceReadReplicaRequest, CreateDBInstanceReadReplicaResponse>(createDBInstanceReadReplicaRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, CreateDBInstanceReadReplicaRequest, CreateDBInstanceReadReplicaResponse>(createDBInstanceReadReplicaRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal CreateDBParameterGroupResponse CreateDBParameterGroup(CreateDBParameterGroupRequest request)
@@ -441,13 +429,11 @@ namespace Amazon.RDS
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<CreateDBParameterGroupResponse> CreateDBParameterGroupAsync(CreateDBParameterGroupRequest createDBParameterGroupRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<CreateDBParameterGroupResponse> CreateDBParameterGroupAsync(CreateDBParameterGroupRequest createDBParameterGroupRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateDBParameterGroupRequestMarshaller();
             var unmarshaller = CreateDBParameterGroupResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, CreateDBParameterGroupRequest, CreateDBParameterGroupResponse>(createDBParameterGroupRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, CreateDBParameterGroupRequest, CreateDBParameterGroupResponse>(createDBParameterGroupRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal CreateDBSecurityGroupResponse CreateDBSecurityGroup(CreateDBSecurityGroupRequest request)
@@ -478,13 +464,11 @@ namespace Amazon.RDS
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<CreateDBSecurityGroupResponse> CreateDBSecurityGroupAsync(CreateDBSecurityGroupRequest createDBSecurityGroupRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<CreateDBSecurityGroupResponse> CreateDBSecurityGroupAsync(CreateDBSecurityGroupRequest createDBSecurityGroupRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateDBSecurityGroupRequestMarshaller();
             var unmarshaller = CreateDBSecurityGroupResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, CreateDBSecurityGroupRequest, CreateDBSecurityGroupResponse>(createDBSecurityGroupRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, CreateDBSecurityGroupRequest, CreateDBSecurityGroupResponse>(createDBSecurityGroupRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal CreateDBSnapshotResponse CreateDBSnapshot(CreateDBSnapshotRequest request)
@@ -516,13 +500,11 @@ namespace Amazon.RDS
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<CreateDBSnapshotResponse> CreateDBSnapshotAsync(CreateDBSnapshotRequest createDBSnapshotRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<CreateDBSnapshotResponse> CreateDBSnapshotAsync(CreateDBSnapshotRequest createDBSnapshotRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateDBSnapshotRequestMarshaller();
             var unmarshaller = CreateDBSnapshotResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, CreateDBSnapshotRequest, CreateDBSnapshotResponse>(createDBSnapshotRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, CreateDBSnapshotRequest, CreateDBSnapshotResponse>(createDBSnapshotRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal CreateDBSubnetGroupResponse CreateDBSubnetGroup(CreateDBSubnetGroupRequest request)
@@ -555,13 +537,11 @@ namespace Amazon.RDS
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<CreateDBSubnetGroupResponse> CreateDBSubnetGroupAsync(CreateDBSubnetGroupRequest createDBSubnetGroupRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<CreateDBSubnetGroupResponse> CreateDBSubnetGroupAsync(CreateDBSubnetGroupRequest createDBSubnetGroupRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateDBSubnetGroupRequestMarshaller();
             var unmarshaller = CreateDBSubnetGroupResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, CreateDBSubnetGroupRequest, CreateDBSubnetGroupResponse>(createDBSubnetGroupRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, CreateDBSubnetGroupRequest, CreateDBSubnetGroupResponse>(createDBSubnetGroupRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal CreateEventSubscriptionResponse CreateEventSubscription(CreateEventSubscriptionRequest request)
@@ -605,13 +585,11 @@ namespace Amazon.RDS
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<CreateEventSubscriptionResponse> CreateEventSubscriptionAsync(CreateEventSubscriptionRequest createEventSubscriptionRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<CreateEventSubscriptionResponse> CreateEventSubscriptionAsync(CreateEventSubscriptionRequest createEventSubscriptionRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateEventSubscriptionRequestMarshaller();
             var unmarshaller = CreateEventSubscriptionResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, CreateEventSubscriptionRequest, CreateEventSubscriptionResponse>(createEventSubscriptionRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, CreateEventSubscriptionRequest, CreateEventSubscriptionResponse>(createEventSubscriptionRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal CreateOptionGroupResponse CreateOptionGroup(CreateOptionGroupRequest request)
@@ -641,13 +619,11 @@ namespace Amazon.RDS
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<CreateOptionGroupResponse> CreateOptionGroupAsync(CreateOptionGroupRequest createOptionGroupRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<CreateOptionGroupResponse> CreateOptionGroupAsync(CreateOptionGroupRequest createOptionGroupRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateOptionGroupRequestMarshaller();
             var unmarshaller = CreateOptionGroupResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, CreateOptionGroupRequest, CreateOptionGroupResponse>(createOptionGroupRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, CreateOptionGroupRequest, CreateOptionGroupResponse>(createOptionGroupRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DeleteDBInstanceResponse DeleteDBInstance(DeleteDBInstanceRequest request)
@@ -683,13 +659,11 @@ namespace Amazon.RDS
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DeleteDBInstanceResponse> DeleteDBInstanceAsync(DeleteDBInstanceRequest deleteDBInstanceRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DeleteDBInstanceResponse> DeleteDBInstanceAsync(DeleteDBInstanceRequest deleteDBInstanceRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteDBInstanceRequestMarshaller();
             var unmarshaller = DeleteDBInstanceResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DeleteDBInstanceRequest, DeleteDBInstanceResponse>(deleteDBInstanceRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DeleteDBInstanceRequest, DeleteDBInstanceResponse>(deleteDBInstanceRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DeleteDBParameterGroupResponse DeleteDBParameterGroup(DeleteDBParameterGroupRequest request)
@@ -718,13 +692,11 @@ namespace Amazon.RDS
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DeleteDBParameterGroupResponse> DeleteDBParameterGroupAsync(DeleteDBParameterGroupRequest deleteDBParameterGroupRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DeleteDBParameterGroupResponse> DeleteDBParameterGroupAsync(DeleteDBParameterGroupRequest deleteDBParameterGroupRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteDBParameterGroupRequestMarshaller();
             var unmarshaller = DeleteDBParameterGroupResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DeleteDBParameterGroupRequest, DeleteDBParameterGroupResponse>(deleteDBParameterGroupRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DeleteDBParameterGroupRequest, DeleteDBParameterGroupResponse>(deleteDBParameterGroupRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DeleteDBSecurityGroupResponse DeleteDBSecurityGroup(DeleteDBSecurityGroupRequest request)
@@ -753,13 +725,11 @@ namespace Amazon.RDS
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DeleteDBSecurityGroupResponse> DeleteDBSecurityGroupAsync(DeleteDBSecurityGroupRequest deleteDBSecurityGroupRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DeleteDBSecurityGroupResponse> DeleteDBSecurityGroupAsync(DeleteDBSecurityGroupRequest deleteDBSecurityGroupRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteDBSecurityGroupRequestMarshaller();
             var unmarshaller = DeleteDBSecurityGroupResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DeleteDBSecurityGroupRequest, DeleteDBSecurityGroupResponse>(deleteDBSecurityGroupRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DeleteDBSecurityGroupRequest, DeleteDBSecurityGroupResponse>(deleteDBSecurityGroupRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DeleteDBSnapshotResponse DeleteDBSnapshot(DeleteDBSnapshotRequest request)
@@ -790,13 +760,11 @@ namespace Amazon.RDS
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DeleteDBSnapshotResponse> DeleteDBSnapshotAsync(DeleteDBSnapshotRequest deleteDBSnapshotRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DeleteDBSnapshotResponse> DeleteDBSnapshotAsync(DeleteDBSnapshotRequest deleteDBSnapshotRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteDBSnapshotRequestMarshaller();
             var unmarshaller = DeleteDBSnapshotResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DeleteDBSnapshotRequest, DeleteDBSnapshotResponse>(deleteDBSnapshotRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DeleteDBSnapshotRequest, DeleteDBSnapshotResponse>(deleteDBSnapshotRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DeleteDBSubnetGroupResponse DeleteDBSubnetGroup(DeleteDBSubnetGroupRequest request)
@@ -826,13 +794,11 @@ namespace Amazon.RDS
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DeleteDBSubnetGroupResponse> DeleteDBSubnetGroupAsync(DeleteDBSubnetGroupRequest deleteDBSubnetGroupRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DeleteDBSubnetGroupResponse> DeleteDBSubnetGroupAsync(DeleteDBSubnetGroupRequest deleteDBSubnetGroupRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteDBSubnetGroupRequestMarshaller();
             var unmarshaller = DeleteDBSubnetGroupResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DeleteDBSubnetGroupRequest, DeleteDBSubnetGroupResponse>(deleteDBSubnetGroupRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DeleteDBSubnetGroupRequest, DeleteDBSubnetGroupResponse>(deleteDBSubnetGroupRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DeleteEventSubscriptionResponse DeleteEventSubscription(DeleteEventSubscriptionRequest request)
@@ -862,13 +828,11 @@ namespace Amazon.RDS
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DeleteEventSubscriptionResponse> DeleteEventSubscriptionAsync(DeleteEventSubscriptionRequest deleteEventSubscriptionRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DeleteEventSubscriptionResponse> DeleteEventSubscriptionAsync(DeleteEventSubscriptionRequest deleteEventSubscriptionRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteEventSubscriptionRequestMarshaller();
             var unmarshaller = DeleteEventSubscriptionResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DeleteEventSubscriptionRequest, DeleteEventSubscriptionResponse>(deleteEventSubscriptionRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DeleteEventSubscriptionRequest, DeleteEventSubscriptionResponse>(deleteEventSubscriptionRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DeleteOptionGroupResponse DeleteOptionGroup(DeleteOptionGroupRequest request)
@@ -896,13 +860,11 @@ namespace Amazon.RDS
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DeleteOptionGroupResponse> DeleteOptionGroupAsync(DeleteOptionGroupRequest deleteOptionGroupRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DeleteOptionGroupResponse> DeleteOptionGroupAsync(DeleteOptionGroupRequest deleteOptionGroupRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteOptionGroupRequestMarshaller();
             var unmarshaller = DeleteOptionGroupResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DeleteOptionGroupRequest, DeleteOptionGroupResponse>(deleteOptionGroupRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DeleteOptionGroupRequest, DeleteOptionGroupResponse>(deleteOptionGroupRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DescribeDBEngineVersionsResponse DescribeDBEngineVersions(DescribeDBEngineVersionsRequest request)
@@ -929,13 +891,11 @@ namespace Amazon.RDS
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DescribeDBEngineVersionsResponse> DescribeDBEngineVersionsAsync(DescribeDBEngineVersionsRequest describeDBEngineVersionsRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DescribeDBEngineVersionsResponse> DescribeDBEngineVersionsAsync(DescribeDBEngineVersionsRequest describeDBEngineVersionsRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeDBEngineVersionsRequestMarshaller();
             var unmarshaller = DescribeDBEngineVersionsResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DescribeDBEngineVersionsRequest, DescribeDBEngineVersionsResponse>(describeDBEngineVersionsRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DescribeDBEngineVersionsRequest, DescribeDBEngineVersionsResponse>(describeDBEngineVersionsRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DescribeDBInstancesResponse DescribeDBInstances(DescribeDBInstancesRequest request)
@@ -964,13 +924,11 @@ namespace Amazon.RDS
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DescribeDBInstancesResponse> DescribeDBInstancesAsync(DescribeDBInstancesRequest describeDBInstancesRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DescribeDBInstancesResponse> DescribeDBInstancesAsync(DescribeDBInstancesRequest describeDBInstancesRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeDBInstancesRequestMarshaller();
             var unmarshaller = DescribeDBInstancesResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DescribeDBInstancesRequest, DescribeDBInstancesResponse>(describeDBInstancesRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DescribeDBInstancesRequest, DescribeDBInstancesResponse>(describeDBInstancesRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DescribeDBLogFilesResponse DescribeDBLogFiles(DescribeDBLogFilesRequest request)
@@ -999,13 +957,11 @@ namespace Amazon.RDS
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DescribeDBLogFilesResponse> DescribeDBLogFilesAsync(DescribeDBLogFilesRequest describeDBLogFilesRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DescribeDBLogFilesResponse> DescribeDBLogFilesAsync(DescribeDBLogFilesRequest describeDBLogFilesRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeDBLogFilesRequestMarshaller();
             var unmarshaller = DescribeDBLogFilesResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DescribeDBLogFilesRequest, DescribeDBLogFilesResponse>(describeDBLogFilesRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DescribeDBLogFilesRequest, DescribeDBLogFilesResponse>(describeDBLogFilesRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DescribeDBParameterGroupsResponse DescribeDBParameterGroups(DescribeDBParameterGroupsRequest request)
@@ -1035,13 +991,11 @@ namespace Amazon.RDS
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DescribeDBParameterGroupsResponse> DescribeDBParameterGroupsAsync(DescribeDBParameterGroupsRequest describeDBParameterGroupsRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DescribeDBParameterGroupsResponse> DescribeDBParameterGroupsAsync(DescribeDBParameterGroupsRequest describeDBParameterGroupsRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeDBParameterGroupsRequestMarshaller();
             var unmarshaller = DescribeDBParameterGroupsResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DescribeDBParameterGroupsRequest, DescribeDBParameterGroupsResponse>(describeDBParameterGroupsRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DescribeDBParameterGroupsRequest, DescribeDBParameterGroupsResponse>(describeDBParameterGroupsRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DescribeDBParametersResponse DescribeDBParameters(DescribeDBParametersRequest request)
@@ -1070,13 +1024,11 @@ namespace Amazon.RDS
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DescribeDBParametersResponse> DescribeDBParametersAsync(DescribeDBParametersRequest describeDBParametersRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DescribeDBParametersResponse> DescribeDBParametersAsync(DescribeDBParametersRequest describeDBParametersRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeDBParametersRequestMarshaller();
             var unmarshaller = DescribeDBParametersResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DescribeDBParametersRequest, DescribeDBParametersResponse>(describeDBParametersRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DescribeDBParametersRequest, DescribeDBParametersResponse>(describeDBParametersRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DescribeDBSecurityGroupsResponse DescribeDBSecurityGroups(DescribeDBSecurityGroupsRequest request)
@@ -1106,13 +1058,11 @@ namespace Amazon.RDS
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DescribeDBSecurityGroupsResponse> DescribeDBSecurityGroupsAsync(DescribeDBSecurityGroupsRequest describeDBSecurityGroupsRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DescribeDBSecurityGroupsResponse> DescribeDBSecurityGroupsAsync(DescribeDBSecurityGroupsRequest describeDBSecurityGroupsRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeDBSecurityGroupsRequestMarshaller();
             var unmarshaller = DescribeDBSecurityGroupsResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DescribeDBSecurityGroupsRequest, DescribeDBSecurityGroupsResponse>(describeDBSecurityGroupsRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DescribeDBSecurityGroupsRequest, DescribeDBSecurityGroupsResponse>(describeDBSecurityGroupsRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DescribeDBSnapshotsResponse DescribeDBSnapshots(DescribeDBSnapshotsRequest request)
@@ -1141,13 +1091,11 @@ namespace Amazon.RDS
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DescribeDBSnapshotsResponse> DescribeDBSnapshotsAsync(DescribeDBSnapshotsRequest describeDBSnapshotsRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DescribeDBSnapshotsResponse> DescribeDBSnapshotsAsync(DescribeDBSnapshotsRequest describeDBSnapshotsRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeDBSnapshotsRequestMarshaller();
             var unmarshaller = DescribeDBSnapshotsResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DescribeDBSnapshotsRequest, DescribeDBSnapshotsResponse>(describeDBSnapshotsRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DescribeDBSnapshotsRequest, DescribeDBSnapshotsResponse>(describeDBSnapshotsRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DescribeDBSubnetGroupsResponse DescribeDBSubnetGroups(DescribeDBSubnetGroupsRequest request)
@@ -1178,13 +1126,11 @@ namespace Amazon.RDS
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DescribeDBSubnetGroupsResponse> DescribeDBSubnetGroupsAsync(DescribeDBSubnetGroupsRequest describeDBSubnetGroupsRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DescribeDBSubnetGroupsResponse> DescribeDBSubnetGroupsAsync(DescribeDBSubnetGroupsRequest describeDBSubnetGroupsRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeDBSubnetGroupsRequestMarshaller();
             var unmarshaller = DescribeDBSubnetGroupsResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DescribeDBSubnetGroupsRequest, DescribeDBSubnetGroupsResponse>(describeDBSubnetGroupsRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DescribeDBSubnetGroupsRequest, DescribeDBSubnetGroupsResponse>(describeDBSubnetGroupsRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DescribeEngineDefaultParametersResponse DescribeEngineDefaultParameters(DescribeEngineDefaultParametersRequest request)
@@ -1211,13 +1157,11 @@ namespace Amazon.RDS
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DescribeEngineDefaultParametersResponse> DescribeEngineDefaultParametersAsync(DescribeEngineDefaultParametersRequest describeEngineDefaultParametersRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DescribeEngineDefaultParametersResponse> DescribeEngineDefaultParametersAsync(DescribeEngineDefaultParametersRequest describeEngineDefaultParametersRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeEngineDefaultParametersRequestMarshaller();
             var unmarshaller = DescribeEngineDefaultParametersResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DescribeEngineDefaultParametersRequest, DescribeEngineDefaultParametersResponse>(describeEngineDefaultParametersRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DescribeEngineDefaultParametersRequest, DescribeEngineDefaultParametersResponse>(describeEngineDefaultParametersRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DescribeEventCategoriesResponse DescribeEventCategories(DescribeEventCategoriesRequest request)
@@ -1246,13 +1190,11 @@ namespace Amazon.RDS
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DescribeEventCategoriesResponse> DescribeEventCategoriesAsync(DescribeEventCategoriesRequest describeEventCategoriesRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DescribeEventCategoriesResponse> DescribeEventCategoriesAsync(DescribeEventCategoriesRequest describeEventCategoriesRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeEventCategoriesRequestMarshaller();
             var unmarshaller = DescribeEventCategoriesResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DescribeEventCategoriesRequest, DescribeEventCategoriesResponse>(describeEventCategoriesRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DescribeEventCategoriesRequest, DescribeEventCategoriesResponse>(describeEventCategoriesRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DescribeEventsResponse DescribeEvents(DescribeEventsRequest request)
@@ -1281,13 +1223,11 @@ namespace Amazon.RDS
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DescribeEventsResponse> DescribeEventsAsync(DescribeEventsRequest describeEventsRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DescribeEventsResponse> DescribeEventsAsync(DescribeEventsRequest describeEventsRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeEventsRequestMarshaller();
             var unmarshaller = DescribeEventsResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DescribeEventsRequest, DescribeEventsResponse>(describeEventsRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DescribeEventsRequest, DescribeEventsResponse>(describeEventsRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DescribeEventSubscriptionsResponse DescribeEventSubscriptions(DescribeEventSubscriptionsRequest request)
@@ -1318,13 +1258,11 @@ namespace Amazon.RDS
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DescribeEventSubscriptionsResponse> DescribeEventSubscriptionsAsync(DescribeEventSubscriptionsRequest describeEventSubscriptionsRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DescribeEventSubscriptionsResponse> DescribeEventSubscriptionsAsync(DescribeEventSubscriptionsRequest describeEventSubscriptionsRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeEventSubscriptionsRequestMarshaller();
             var unmarshaller = DescribeEventSubscriptionsResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DescribeEventSubscriptionsRequest, DescribeEventSubscriptionsResponse>(describeEventSubscriptionsRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DescribeEventSubscriptionsRequest, DescribeEventSubscriptionsResponse>(describeEventSubscriptionsRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DescribeOptionGroupOptionsResponse DescribeOptionGroupOptions(DescribeOptionGroupOptionsRequest request)
@@ -1351,13 +1289,11 @@ namespace Amazon.RDS
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DescribeOptionGroupOptionsResponse> DescribeOptionGroupOptionsAsync(DescribeOptionGroupOptionsRequest describeOptionGroupOptionsRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DescribeOptionGroupOptionsResponse> DescribeOptionGroupOptionsAsync(DescribeOptionGroupOptionsRequest describeOptionGroupOptionsRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeOptionGroupOptionsRequestMarshaller();
             var unmarshaller = DescribeOptionGroupOptionsResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DescribeOptionGroupOptionsRequest, DescribeOptionGroupOptionsResponse>(describeOptionGroupOptionsRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DescribeOptionGroupOptionsRequest, DescribeOptionGroupOptionsResponse>(describeOptionGroupOptionsRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DescribeOptionGroupsResponse DescribeOptionGroups(DescribeOptionGroupsRequest request)
@@ -1386,13 +1322,11 @@ namespace Amazon.RDS
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DescribeOptionGroupsResponse> DescribeOptionGroupsAsync(DescribeOptionGroupsRequest describeOptionGroupsRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DescribeOptionGroupsResponse> DescribeOptionGroupsAsync(DescribeOptionGroupsRequest describeOptionGroupsRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeOptionGroupsRequestMarshaller();
             var unmarshaller = DescribeOptionGroupsResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DescribeOptionGroupsRequest, DescribeOptionGroupsResponse>(describeOptionGroupsRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DescribeOptionGroupsRequest, DescribeOptionGroupsResponse>(describeOptionGroupsRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DescribeOrderableDBInstanceOptionsResponse DescribeOrderableDBInstanceOptions(DescribeOrderableDBInstanceOptionsRequest request)
@@ -1419,13 +1353,11 @@ namespace Amazon.RDS
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DescribeOrderableDBInstanceOptionsResponse> DescribeOrderableDBInstanceOptionsAsync(DescribeOrderableDBInstanceOptionsRequest describeOrderableDBInstanceOptionsRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DescribeOrderableDBInstanceOptionsResponse> DescribeOrderableDBInstanceOptionsAsync(DescribeOrderableDBInstanceOptionsRequest describeOrderableDBInstanceOptionsRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeOrderableDBInstanceOptionsRequestMarshaller();
             var unmarshaller = DescribeOrderableDBInstanceOptionsResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DescribeOrderableDBInstanceOptionsRequest, DescribeOrderableDBInstanceOptionsResponse>(describeOrderableDBInstanceOptionsRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DescribeOrderableDBInstanceOptionsRequest, DescribeOrderableDBInstanceOptionsResponse>(describeOrderableDBInstanceOptionsRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DescribeReservedDBInstancesResponse DescribeReservedDBInstances(DescribeReservedDBInstancesRequest request)
@@ -1454,13 +1386,11 @@ namespace Amazon.RDS
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DescribeReservedDBInstancesResponse> DescribeReservedDBInstancesAsync(DescribeReservedDBInstancesRequest describeReservedDBInstancesRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DescribeReservedDBInstancesResponse> DescribeReservedDBInstancesAsync(DescribeReservedDBInstancesRequest describeReservedDBInstancesRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeReservedDBInstancesRequestMarshaller();
             var unmarshaller = DescribeReservedDBInstancesResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DescribeReservedDBInstancesRequest, DescribeReservedDBInstancesResponse>(describeReservedDBInstancesRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DescribeReservedDBInstancesRequest, DescribeReservedDBInstancesResponse>(describeReservedDBInstancesRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DescribeReservedDBInstancesOfferingsResponse DescribeReservedDBInstancesOfferings(DescribeReservedDBInstancesOfferingsRequest request)
@@ -1489,13 +1419,11 @@ namespace Amazon.RDS
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DescribeReservedDBInstancesOfferingsResponse> DescribeReservedDBInstancesOfferingsAsync(DescribeReservedDBInstancesOfferingsRequest describeReservedDBInstancesOfferingsRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DescribeReservedDBInstancesOfferingsResponse> DescribeReservedDBInstancesOfferingsAsync(DescribeReservedDBInstancesOfferingsRequest describeReservedDBInstancesOfferingsRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeReservedDBInstancesOfferingsRequestMarshaller();
             var unmarshaller = DescribeReservedDBInstancesOfferingsResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DescribeReservedDBInstancesOfferingsRequest, DescribeReservedDBInstancesOfferingsResponse>(describeReservedDBInstancesOfferingsRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DescribeReservedDBInstancesOfferingsRequest, DescribeReservedDBInstancesOfferingsResponse>(describeReservedDBInstancesOfferingsRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DownloadDBLogFilePortionResponse DownloadDBLogFilePortion(DownloadDBLogFilePortionRequest request)
@@ -1524,13 +1452,11 @@ namespace Amazon.RDS
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DownloadDBLogFilePortionResponse> DownloadDBLogFilePortionAsync(DownloadDBLogFilePortionRequest downloadDBLogFilePortionRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DownloadDBLogFilePortionResponse> DownloadDBLogFilePortionAsync(DownloadDBLogFilePortionRequest downloadDBLogFilePortionRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DownloadDBLogFilePortionRequestMarshaller();
             var unmarshaller = DownloadDBLogFilePortionResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DownloadDBLogFilePortionRequest, DownloadDBLogFilePortionResponse>(downloadDBLogFilePortionRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DownloadDBLogFilePortionRequest, DownloadDBLogFilePortionResponse>(downloadDBLogFilePortionRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
@@ -1560,13 +1486,11 @@ namespace Amazon.RDS
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListTagsForResourceRequestMarshaller();
             var unmarshaller = ListTagsForResourceResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, ListTagsForResourceRequest, ListTagsForResourceResponse>(listTagsForResourceRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, ListTagsForResourceRequest, ListTagsForResourceResponse>(listTagsForResourceRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal ModifyDBInstanceResponse ModifyDBInstance(ModifyDBInstanceRequest request)
@@ -1607,13 +1531,11 @@ namespace Amazon.RDS
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<ModifyDBInstanceResponse> ModifyDBInstanceAsync(ModifyDBInstanceRequest modifyDBInstanceRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<ModifyDBInstanceResponse> ModifyDBInstanceAsync(ModifyDBInstanceRequest modifyDBInstanceRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ModifyDBInstanceRequestMarshaller();
             var unmarshaller = ModifyDBInstanceResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, ModifyDBInstanceRequest, ModifyDBInstanceResponse>(modifyDBInstanceRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, ModifyDBInstanceRequest, ModifyDBInstanceResponse>(modifyDBInstanceRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal ModifyDBParameterGroupResponse ModifyDBParameterGroup(ModifyDBParameterGroupRequest request)
@@ -1648,13 +1570,11 @@ namespace Amazon.RDS
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<ModifyDBParameterGroupResponse> ModifyDBParameterGroupAsync(ModifyDBParameterGroupRequest modifyDBParameterGroupRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<ModifyDBParameterGroupResponse> ModifyDBParameterGroupAsync(ModifyDBParameterGroupRequest modifyDBParameterGroupRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ModifyDBParameterGroupRequestMarshaller();
             var unmarshaller = ModifyDBParameterGroupResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, ModifyDBParameterGroupRequest, ModifyDBParameterGroupResponse>(modifyDBParameterGroupRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, ModifyDBParameterGroupRequest, ModifyDBParameterGroupResponse>(modifyDBParameterGroupRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal ModifyDBSubnetGroupResponse ModifyDBSubnetGroup(ModifyDBSubnetGroupRequest request)
@@ -1687,13 +1607,11 @@ namespace Amazon.RDS
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<ModifyDBSubnetGroupResponse> ModifyDBSubnetGroupAsync(ModifyDBSubnetGroupRequest modifyDBSubnetGroupRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<ModifyDBSubnetGroupResponse> ModifyDBSubnetGroupAsync(ModifyDBSubnetGroupRequest modifyDBSubnetGroupRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ModifyDBSubnetGroupRequestMarshaller();
             var unmarshaller = ModifyDBSubnetGroupResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, ModifyDBSubnetGroupRequest, ModifyDBSubnetGroupResponse>(modifyDBSubnetGroupRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, ModifyDBSubnetGroupRequest, ModifyDBSubnetGroupResponse>(modifyDBSubnetGroupRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal ModifyEventSubscriptionResponse ModifyEventSubscription(ModifyEventSubscriptionRequest request)
@@ -1730,13 +1648,11 @@ namespace Amazon.RDS
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<ModifyEventSubscriptionResponse> ModifyEventSubscriptionAsync(ModifyEventSubscriptionRequest modifyEventSubscriptionRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<ModifyEventSubscriptionResponse> ModifyEventSubscriptionAsync(ModifyEventSubscriptionRequest modifyEventSubscriptionRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ModifyEventSubscriptionRequestMarshaller();
             var unmarshaller = ModifyEventSubscriptionResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, ModifyEventSubscriptionRequest, ModifyEventSubscriptionResponse>(modifyEventSubscriptionRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, ModifyEventSubscriptionRequest, ModifyEventSubscriptionResponse>(modifyEventSubscriptionRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal ModifyOptionGroupResponse ModifyOptionGroup(ModifyOptionGroupRequest request)
@@ -1766,13 +1682,11 @@ namespace Amazon.RDS
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<ModifyOptionGroupResponse> ModifyOptionGroupAsync(ModifyOptionGroupRequest modifyOptionGroupRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<ModifyOptionGroupResponse> ModifyOptionGroupAsync(ModifyOptionGroupRequest modifyOptionGroupRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ModifyOptionGroupRequestMarshaller();
             var unmarshaller = ModifyOptionGroupResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, ModifyOptionGroupRequest, ModifyOptionGroupResponse>(modifyOptionGroupRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, ModifyOptionGroupRequest, ModifyOptionGroupResponse>(modifyOptionGroupRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal PromoteReadReplicaResponse PromoteReadReplica(PromoteReadReplicaRequest request)
@@ -1802,13 +1716,11 @@ namespace Amazon.RDS
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<PromoteReadReplicaResponse> PromoteReadReplicaAsync(PromoteReadReplicaRequest promoteReadReplicaRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<PromoteReadReplicaResponse> PromoteReadReplicaAsync(PromoteReadReplicaRequest promoteReadReplicaRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PromoteReadReplicaRequestMarshaller();
             var unmarshaller = PromoteReadReplicaResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, PromoteReadReplicaRequest, PromoteReadReplicaResponse>(promoteReadReplicaRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, PromoteReadReplicaRequest, PromoteReadReplicaResponse>(promoteReadReplicaRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal PurchaseReservedDBInstancesOfferingResponse PurchaseReservedDBInstancesOffering(PurchaseReservedDBInstancesOfferingRequest request)
@@ -1839,13 +1751,11 @@ namespace Amazon.RDS
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<PurchaseReservedDBInstancesOfferingResponse> PurchaseReservedDBInstancesOfferingAsync(PurchaseReservedDBInstancesOfferingRequest purchaseReservedDBInstancesOfferingRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<PurchaseReservedDBInstancesOfferingResponse> PurchaseReservedDBInstancesOfferingAsync(PurchaseReservedDBInstancesOfferingRequest purchaseReservedDBInstancesOfferingRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PurchaseReservedDBInstancesOfferingRequestMarshaller();
             var unmarshaller = PurchaseReservedDBInstancesOfferingResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, PurchaseReservedDBInstancesOfferingRequest, PurchaseReservedDBInstancesOfferingResponse>(purchaseReservedDBInstancesOfferingRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, PurchaseReservedDBInstancesOfferingRequest, PurchaseReservedDBInstancesOfferingResponse>(purchaseReservedDBInstancesOfferingRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal RebootDBInstanceResponse RebootDBInstance(RebootDBInstanceRequest request)
@@ -1882,13 +1792,11 @@ namespace Amazon.RDS
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<RebootDBInstanceResponse> RebootDBInstanceAsync(RebootDBInstanceRequest rebootDBInstanceRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<RebootDBInstanceResponse> RebootDBInstanceAsync(RebootDBInstanceRequest rebootDBInstanceRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RebootDBInstanceRequestMarshaller();
             var unmarshaller = RebootDBInstanceResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, RebootDBInstanceRequest, RebootDBInstanceResponse>(rebootDBInstanceRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, RebootDBInstanceRequest, RebootDBInstanceResponse>(rebootDBInstanceRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal RemoveSourceIdentifierFromSubscriptionResponse RemoveSourceIdentifierFromSubscription(RemoveSourceIdentifierFromSubscriptionRequest request)
@@ -1918,13 +1826,11 @@ namespace Amazon.RDS
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<RemoveSourceIdentifierFromSubscriptionResponse> RemoveSourceIdentifierFromSubscriptionAsync(RemoveSourceIdentifierFromSubscriptionRequest removeSourceIdentifierFromSubscriptionRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<RemoveSourceIdentifierFromSubscriptionResponse> RemoveSourceIdentifierFromSubscriptionAsync(RemoveSourceIdentifierFromSubscriptionRequest removeSourceIdentifierFromSubscriptionRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RemoveSourceIdentifierFromSubscriptionRequestMarshaller();
             var unmarshaller = RemoveSourceIdentifierFromSubscriptionResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, RemoveSourceIdentifierFromSubscriptionRequest, RemoveSourceIdentifierFromSubscriptionResponse>(removeSourceIdentifierFromSubscriptionRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, RemoveSourceIdentifierFromSubscriptionRequest, RemoveSourceIdentifierFromSubscriptionResponse>(removeSourceIdentifierFromSubscriptionRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal RemoveTagsFromResourceResponse RemoveTagsFromResource(RemoveTagsFromResourceRequest request)
@@ -1952,13 +1858,11 @@ namespace Amazon.RDS
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<RemoveTagsFromResourceResponse> RemoveTagsFromResourceAsync(RemoveTagsFromResourceRequest removeTagsFromResourceRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<RemoveTagsFromResourceResponse> RemoveTagsFromResourceAsync(RemoveTagsFromResourceRequest removeTagsFromResourceRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RemoveTagsFromResourceRequestMarshaller();
             var unmarshaller = RemoveTagsFromResourceResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, RemoveTagsFromResourceRequest, RemoveTagsFromResourceResponse>(removeTagsFromResourceRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, RemoveTagsFromResourceRequest, RemoveTagsFromResourceResponse>(removeTagsFromResourceRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal ResetDBParameterGroupResponse ResetDBParameterGroup(ResetDBParameterGroupRequest request)
@@ -1991,13 +1895,11 @@ namespace Amazon.RDS
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<ResetDBParameterGroupResponse> ResetDBParameterGroupAsync(ResetDBParameterGroupRequest resetDBParameterGroupRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<ResetDBParameterGroupResponse> ResetDBParameterGroupAsync(ResetDBParameterGroupRequest resetDBParameterGroupRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ResetDBParameterGroupRequestMarshaller();
             var unmarshaller = ResetDBParameterGroupResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, ResetDBParameterGroupRequest, ResetDBParameterGroupResponse>(resetDBParameterGroupRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, ResetDBParameterGroupRequest, ResetDBParameterGroupResponse>(resetDBParameterGroupRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal RestoreDBInstanceFromDBSnapshotResponse RestoreDBInstanceFromDBSnapshot(RestoreDBInstanceFromDBSnapshotRequest request)
@@ -2039,13 +1941,11 @@ namespace Amazon.RDS
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<RestoreDBInstanceFromDBSnapshotResponse> RestoreDBInstanceFromDBSnapshotAsync(RestoreDBInstanceFromDBSnapshotRequest restoreDBInstanceFromDBSnapshotRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<RestoreDBInstanceFromDBSnapshotResponse> RestoreDBInstanceFromDBSnapshotAsync(RestoreDBInstanceFromDBSnapshotRequest restoreDBInstanceFromDBSnapshotRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RestoreDBInstanceFromDBSnapshotRequestMarshaller();
             var unmarshaller = RestoreDBInstanceFromDBSnapshotResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, RestoreDBInstanceFromDBSnapshotRequest, RestoreDBInstanceFromDBSnapshotResponse>(restoreDBInstanceFromDBSnapshotRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, RestoreDBInstanceFromDBSnapshotRequest, RestoreDBInstanceFromDBSnapshotResponse>(restoreDBInstanceFromDBSnapshotRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal RestoreDBInstanceToPointInTimeResponse RestoreDBInstanceToPointInTime(RestoreDBInstanceToPointInTimeRequest request)
@@ -2089,13 +1989,11 @@ namespace Amazon.RDS
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<RestoreDBInstanceToPointInTimeResponse> RestoreDBInstanceToPointInTimeAsync(RestoreDBInstanceToPointInTimeRequest restoreDBInstanceToPointInTimeRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<RestoreDBInstanceToPointInTimeResponse> RestoreDBInstanceToPointInTimeAsync(RestoreDBInstanceToPointInTimeRequest restoreDBInstanceToPointInTimeRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RestoreDBInstanceToPointInTimeRequestMarshaller();
             var unmarshaller = RestoreDBInstanceToPointInTimeResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, RestoreDBInstanceToPointInTimeRequest, RestoreDBInstanceToPointInTimeResponse>(restoreDBInstanceToPointInTimeRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, RestoreDBInstanceToPointInTimeRequest, RestoreDBInstanceToPointInTimeResponse>(restoreDBInstanceToPointInTimeRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal RevokeDBSecurityGroupIngressResponse RevokeDBSecurityGroupIngress(RevokeDBSecurityGroupIngressRequest request)
@@ -2128,13 +2026,11 @@ namespace Amazon.RDS
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<RevokeDBSecurityGroupIngressResponse> RevokeDBSecurityGroupIngressAsync(RevokeDBSecurityGroupIngressRequest revokeDBSecurityGroupIngressRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<RevokeDBSecurityGroupIngressResponse> RevokeDBSecurityGroupIngressAsync(RevokeDBSecurityGroupIngressRequest revokeDBSecurityGroupIngressRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RevokeDBSecurityGroupIngressRequestMarshaller();
             var unmarshaller = RevokeDBSecurityGroupIngressResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, RevokeDBSecurityGroupIngressRequest, RevokeDBSecurityGroupIngressResponse>(revokeDBSecurityGroupIngressRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, RevokeDBSecurityGroupIngressRequest, RevokeDBSecurityGroupIngressResponse>(revokeDBSecurityGroupIngressRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
     }
 }

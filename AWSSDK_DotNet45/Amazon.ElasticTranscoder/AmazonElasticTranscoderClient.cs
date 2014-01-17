@@ -253,13 +253,11 @@ namespace Amazon.ElasticTranscoder
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<CancelJobResponse> CancelJobAsync(CancelJobRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<CancelJobResponse> CancelJobAsync(CancelJobRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CancelJobRequestMarshaller();
             var unmarshaller = CancelJobResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, CancelJobRequest, CancelJobResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, CancelJobRequest, CancelJobResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -303,13 +301,11 @@ namespace Amazon.ElasticTranscoder
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<CreateJobResponse> CreateJobAsync(CreateJobRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<CreateJobResponse> CreateJobAsync(CreateJobRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateJobRequestMarshaller();
             var unmarshaller = CreateJobResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, CreateJobRequest, CreateJobResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, CreateJobRequest, CreateJobResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -350,13 +346,11 @@ namespace Amazon.ElasticTranscoder
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<CreatePipelineResponse> CreatePipelineAsync(CreatePipelineRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<CreatePipelineResponse> CreatePipelineAsync(CreatePipelineRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreatePipelineRequestMarshaller();
             var unmarshaller = CreatePipelineResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, CreatePipelineRequest, CreatePipelineResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, CreatePipelineRequest, CreatePipelineResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -403,13 +397,11 @@ namespace Amazon.ElasticTranscoder
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<CreatePresetResponse> CreatePresetAsync(CreatePresetRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<CreatePresetResponse> CreatePresetAsync(CreatePresetRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreatePresetRequestMarshaller();
             var unmarshaller = CreatePresetResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, CreatePresetRequest, CreatePresetResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, CreatePresetRequest, CreatePresetResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -451,13 +443,11 @@ namespace Amazon.ElasticTranscoder
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<DeletePipelineResponse> DeletePipelineAsync(DeletePipelineRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DeletePipelineResponse> DeletePipelineAsync(DeletePipelineRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeletePipelineRequestMarshaller();
             var unmarshaller = DeletePipelineResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DeletePipelineRequest, DeletePipelineResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DeletePipelineRequest, DeletePipelineResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -498,13 +488,11 @@ namespace Amazon.ElasticTranscoder
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<DeletePresetResponse> DeletePresetAsync(DeletePresetRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DeletePresetResponse> DeletePresetAsync(DeletePresetRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeletePresetRequestMarshaller();
             var unmarshaller = DeletePresetResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DeletePresetRequest, DeletePresetResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DeletePresetRequest, DeletePresetResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -545,13 +533,11 @@ namespace Amazon.ElasticTranscoder
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<ListJobsByPipelineResponse> ListJobsByPipelineAsync(ListJobsByPipelineRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<ListJobsByPipelineResponse> ListJobsByPipelineAsync(ListJobsByPipelineRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListJobsByPipelineRequestMarshaller();
             var unmarshaller = ListJobsByPipelineResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, ListJobsByPipelineRequest, ListJobsByPipelineResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, ListJobsByPipelineRequest, ListJobsByPipelineResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -592,13 +578,11 @@ namespace Amazon.ElasticTranscoder
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<ListJobsByStatusResponse> ListJobsByStatusAsync(ListJobsByStatusRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<ListJobsByStatusResponse> ListJobsByStatusAsync(ListJobsByStatusRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListJobsByStatusRequestMarshaller();
             var unmarshaller = ListJobsByStatusResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, ListJobsByStatusRequest, ListJobsByStatusResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, ListJobsByStatusRequest, ListJobsByStatusResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -637,13 +621,11 @@ namespace Amazon.ElasticTranscoder
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<ListPipelinesResponse> ListPipelinesAsync(ListPipelinesRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<ListPipelinesResponse> ListPipelinesAsync(ListPipelinesRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListPipelinesRequestMarshaller();
             var unmarshaller = ListPipelinesResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, ListPipelinesRequest, ListPipelinesResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, ListPipelinesRequest, ListPipelinesResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -699,13 +681,11 @@ namespace Amazon.ElasticTranscoder
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<ListPresetsResponse> ListPresetsAsync(ListPresetsRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<ListPresetsResponse> ListPresetsAsync(ListPresetsRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListPresetsRequestMarshaller();
             var unmarshaller = ListPresetsResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, ListPresetsRequest, ListPresetsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, ListPresetsRequest, ListPresetsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -762,13 +742,11 @@ namespace Amazon.ElasticTranscoder
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<ReadJobResponse> ReadJobAsync(ReadJobRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<ReadJobResponse> ReadJobAsync(ReadJobRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ReadJobRequestMarshaller();
             var unmarshaller = ReadJobResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, ReadJobRequest, ReadJobResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, ReadJobRequest, ReadJobResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -808,13 +786,11 @@ namespace Amazon.ElasticTranscoder
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<ReadPipelineResponse> ReadPipelineAsync(ReadPipelineRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<ReadPipelineResponse> ReadPipelineAsync(ReadPipelineRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ReadPipelineRequestMarshaller();
             var unmarshaller = ReadPipelineResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, ReadPipelineRequest, ReadPipelineResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, ReadPipelineRequest, ReadPipelineResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -854,13 +830,11 @@ namespace Amazon.ElasticTranscoder
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<ReadPresetResponse> ReadPresetAsync(ReadPresetRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<ReadPresetResponse> ReadPresetAsync(ReadPresetRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ReadPresetRequestMarshaller();
             var unmarshaller = ReadPresetResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, ReadPresetRequest, ReadPresetResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, ReadPresetRequest, ReadPresetResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -903,13 +877,11 @@ namespace Amazon.ElasticTranscoder
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<TestRoleResponse> TestRoleAsync(TestRoleRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<TestRoleResponse> TestRoleAsync(TestRoleRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new TestRoleRequestMarshaller();
             var unmarshaller = TestRoleResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, TestRoleRequest, TestRoleResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, TestRoleRequest, TestRoleResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -952,13 +924,11 @@ namespace Amazon.ElasticTranscoder
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<UpdatePipelineResponse> UpdatePipelineAsync(UpdatePipelineRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<UpdatePipelineResponse> UpdatePipelineAsync(UpdatePipelineRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdatePipelineRequestMarshaller();
             var unmarshaller = UpdatePipelineResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, UpdatePipelineRequest, UpdatePipelineResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, UpdatePipelineRequest, UpdatePipelineResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -1001,13 +971,11 @@ namespace Amazon.ElasticTranscoder
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<UpdatePipelineNotificationsResponse> UpdatePipelineNotificationsAsync(UpdatePipelineNotificationsRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<UpdatePipelineNotificationsResponse> UpdatePipelineNotificationsAsync(UpdatePipelineNotificationsRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdatePipelineNotificationsRequestMarshaller();
             var unmarshaller = UpdatePipelineNotificationsResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, UpdatePipelineNotificationsRequest, UpdatePipelineNotificationsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, UpdatePipelineNotificationsRequest, UpdatePipelineNotificationsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -1051,13 +1019,11 @@ namespace Amazon.ElasticTranscoder
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<UpdatePipelineStatusResponse> UpdatePipelineStatusAsync(UpdatePipelineStatusRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<UpdatePipelineStatusResponse> UpdatePipelineStatusAsync(UpdatePipelineStatusRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdatePipelineStatusRequestMarshaller();
             var unmarshaller = UpdatePipelineStatusResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, UpdatePipelineStatusRequest, UpdatePipelineStatusResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, UpdatePipelineStatusRequest, UpdatePipelineStatusResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
     }
 }

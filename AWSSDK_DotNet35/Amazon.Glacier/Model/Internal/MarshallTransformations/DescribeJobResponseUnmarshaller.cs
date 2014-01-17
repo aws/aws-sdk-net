@@ -158,6 +158,13 @@
                 continue;
               }
   
+              if (context.TestExpression("InventoryRetrievalParameters", targetDepth))
+              {
+                context.Read();
+                response.InventoryRetrievalParameters = InventoryRetrievalJobDescriptionUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
                 if (context.CurrentDepth <= originalDepth)
                 {                   
                     return;

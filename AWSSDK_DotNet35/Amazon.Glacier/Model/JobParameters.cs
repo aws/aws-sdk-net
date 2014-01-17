@@ -32,10 +32,12 @@ namespace Amazon.Glacier.Model
         private string description;
         private string sNSTopic;
         private string retrievalByteRange;
+        private InventoryRetrievalJobInput inventoryRetrievalParameters;
+
 
         /// <summary>
         /// When initiating a job to retrieve a vault inventory, you can optionally add this parameter to your request to specify the output format. If
-        /// you are initiating an inventory job and do not specify a Format field, JSON is the default format. Valid Values are "CSV" and "JSON".
+        /// you are initiating an inventory job and do not specify a Format field, JSON is the default format. Valid values are "CSV" and "JSON".
         ///  
         /// </summary>
         public string Format
@@ -51,7 +53,7 @@ namespace Amazon.Glacier.Model
         }
 
         /// <summary>
-        /// The job type. You can initiate a job to retrieve an archive or get an inventory of a vault. Valid Values are "archive-retrieval" and
+        /// The job type. You can initiate a job to retrieve an archive or get an inventory of a vault. Valid values are "archive-retrieval" and
         /// "inventory-retrieval".
         ///  
         /// </summary>
@@ -136,6 +138,22 @@ namespace Amazon.Glacier.Model
         internal bool IsSetRetrievalByteRange()
         {
             return this.retrievalByteRange != null;
+        }
+
+        /// <summary>
+        /// Input parameters used for range inventory retrieval.
+        ///  
+        /// </summary>
+        public InventoryRetrievalJobInput InventoryRetrievalParameters
+        {
+            get { return this.inventoryRetrievalParameters; }
+            set { this.inventoryRetrievalParameters = value; }
+        }
+
+        // Check to see if InventoryRetrievalParameters property is set
+        internal bool IsSetInventoryRetrievalParameters()
+        {
+            return this.inventoryRetrievalParameters != null;
         }
     }
 }

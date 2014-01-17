@@ -49,8 +49,14 @@
               if (context.TestExpression("UploadsList", targetDepth))
               {
                 context.Read();
-                response.UploadsList = new List<UploadListElement>();
-                        UploadListElementUnmarshaller unmarshaller = UploadListElementUnmarshaller.GetInstance();
+                
+                if (context.CurrentTokenType == JsonToken.Null)
+                {
+                    response.UploadsList = null;
+                    continue;
+                }
+                  response.UploadsList = new List<UploadListElement>();
+                  UploadListElementUnmarshaller unmarshaller = UploadListElementUnmarshaller.GetInstance();
                 while (context.Read())
                 {
                   JsonToken token = context.CurrentTokenType;                

@@ -204,13 +204,11 @@ namespace Amazon.SecurityToken
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<AssumeRoleResponse> AssumeRoleAsync(AssumeRoleRequest assumeRoleRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<AssumeRoleResponse> AssumeRoleAsync(AssumeRoleRequest assumeRoleRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AssumeRoleRequestMarshaller();
             var unmarshaller = AssumeRoleResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, AssumeRoleRequest, AssumeRoleResponse>(assumeRoleRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, AssumeRoleRequest, AssumeRoleResponse>(assumeRoleRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal AssumeRoleWithSAMLResponse AssumeRoleWithSAML(AssumeRoleWithSAMLRequest request)
@@ -271,13 +269,11 @@ namespace Amazon.SecurityToken
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<AssumeRoleWithSAMLResponse> AssumeRoleWithSAMLAsync(AssumeRoleWithSAMLRequest assumeRoleWithSAMLRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<AssumeRoleWithSAMLResponse> AssumeRoleWithSAMLAsync(AssumeRoleWithSAMLRequest assumeRoleWithSAMLRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AssumeRoleWithSAMLRequestMarshaller();
             var unmarshaller = AssumeRoleWithSAMLResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, AssumeRoleWithSAMLRequest, AssumeRoleWithSAMLResponse>(assumeRoleWithSAMLRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, AssumeRoleWithSAMLRequest, AssumeRoleWithSAMLResponse>(assumeRoleWithSAMLRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal AssumeRoleWithWebIdentityResponse AssumeRoleWithWebIdentity(AssumeRoleWithWebIdentityRequest request)
@@ -341,13 +337,11 @@ namespace Amazon.SecurityToken
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<AssumeRoleWithWebIdentityResponse> AssumeRoleWithWebIdentityAsync(AssumeRoleWithWebIdentityRequest assumeRoleWithWebIdentityRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<AssumeRoleWithWebIdentityResponse> AssumeRoleWithWebIdentityAsync(AssumeRoleWithWebIdentityRequest assumeRoleWithWebIdentityRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AssumeRoleWithWebIdentityRequestMarshaller();
             var unmarshaller = AssumeRoleWithWebIdentityResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, AssumeRoleWithWebIdentityRequest, AssumeRoleWithWebIdentityResponse>(assumeRoleWithWebIdentityRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, AssumeRoleWithWebIdentityRequest, AssumeRoleWithWebIdentityResponse>(assumeRoleWithWebIdentityRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DecodeAuthorizationMessageResponse DecodeAuthorizationMessage(DecodeAuthorizationMessageRequest request)
@@ -394,13 +388,11 @@ namespace Amazon.SecurityToken
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DecodeAuthorizationMessageResponse> DecodeAuthorizationMessageAsync(DecodeAuthorizationMessageRequest decodeAuthorizationMessageRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DecodeAuthorizationMessageResponse> DecodeAuthorizationMessageAsync(DecodeAuthorizationMessageRequest decodeAuthorizationMessageRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DecodeAuthorizationMessageRequestMarshaller();
             var unmarshaller = DecodeAuthorizationMessageResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DecodeAuthorizationMessageRequest, DecodeAuthorizationMessageResponse>(decodeAuthorizationMessageRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DecodeAuthorizationMessageRequest, DecodeAuthorizationMessageResponse>(decodeAuthorizationMessageRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal GetFederationTokenResponse GetFederationToken(GetFederationTokenRequest request)
@@ -446,13 +438,11 @@ namespace Amazon.SecurityToken
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<GetFederationTokenResponse> GetFederationTokenAsync(GetFederationTokenRequest getFederationTokenRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<GetFederationTokenResponse> GetFederationTokenAsync(GetFederationTokenRequest getFederationTokenRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetFederationTokenRequestMarshaller();
             var unmarshaller = GetFederationTokenResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, GetFederationTokenRequest, GetFederationTokenResponse>(getFederationTokenRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, GetFederationTokenRequest, GetFederationTokenResponse>(getFederationTokenRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal GetSessionTokenResponse GetSessionToken(GetSessionTokenRequest request)
@@ -493,13 +483,11 @@ namespace Amazon.SecurityToken
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<GetSessionTokenResponse> GetSessionTokenAsync(GetSessionTokenRequest getSessionTokenRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<GetSessionTokenResponse> GetSessionTokenAsync(GetSessionTokenRequest getSessionTokenRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetSessionTokenRequestMarshaller();
             var unmarshaller = GetSessionTokenResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, GetSessionTokenRequest, GetSessionTokenResponse>(getSessionTokenRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, GetSessionTokenRequest, GetSessionTokenResponse>(getSessionTokenRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
     }
 }

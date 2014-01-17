@@ -51,13 +51,14 @@ namespace Amazon.Glacier.Model
     /// Upload</a> in the <i>Amazon Glacier Developer Guide</i> .
     /// </para>
     /// </summary>
-    public partial class CompleteMultipartUploadRequest : AmazonWebServiceRequest
+    public partial class CompleteMultipartUploadRequest : AmazonGlacierRequest
     {
         private string accountId;
         private string vaultName;
         private string uploadId;
         private string archiveSize;
         private string checksum;
+
 
         /// <summary>
         /// The <c>AccountId</c> is the AWS Account ID. You can specify either the AWS Account ID or optionally a '-', in which case Amazon Glacier uses

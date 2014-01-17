@@ -175,13 +175,11 @@ namespace Amazon.CloudFormation
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<CancelUpdateStackResponse> CancelUpdateStackAsync(CancelUpdateStackRequest cancelUpdateStackRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<CancelUpdateStackResponse> CancelUpdateStackAsync(CancelUpdateStackRequest cancelUpdateStackRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CancelUpdateStackRequestMarshaller();
             var unmarshaller = CancelUpdateStackResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, CancelUpdateStackRequest, CancelUpdateStackResponse>(cancelUpdateStackRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, CancelUpdateStackRequest, CancelUpdateStackResponse>(cancelUpdateStackRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal CreateStackResponse CreateStack(CreateStackRequest request)
@@ -214,13 +212,11 @@ namespace Amazon.CloudFormation
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<CreateStackResponse> CreateStackAsync(CreateStackRequest createStackRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<CreateStackResponse> CreateStackAsync(CreateStackRequest createStackRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateStackRequestMarshaller();
             var unmarshaller = CreateStackResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, CreateStackRequest, CreateStackResponse>(createStackRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, CreateStackRequest, CreateStackResponse>(createStackRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DeleteStackResponse DeleteStack(DeleteStackRequest request)
@@ -246,13 +242,11 @@ namespace Amazon.CloudFormation
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DeleteStackResponse> DeleteStackAsync(DeleteStackRequest deleteStackRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DeleteStackResponse> DeleteStackAsync(DeleteStackRequest deleteStackRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteStackRequestMarshaller();
             var unmarshaller = DeleteStackResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DeleteStackRequest, DeleteStackResponse>(deleteStackRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DeleteStackRequest, DeleteStackResponse>(deleteStackRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DescribeStackEventsResponse DescribeStackEvents(DescribeStackEventsRequest request)
@@ -280,13 +274,11 @@ namespace Amazon.CloudFormation
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DescribeStackEventsResponse> DescribeStackEventsAsync(DescribeStackEventsRequest describeStackEventsRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DescribeStackEventsResponse> DescribeStackEventsAsync(DescribeStackEventsRequest describeStackEventsRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeStackEventsRequestMarshaller();
             var unmarshaller = DescribeStackEventsResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DescribeStackEventsRequest, DescribeStackEventsResponse>(describeStackEventsRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DescribeStackEventsRequest, DescribeStackEventsResponse>(describeStackEventsRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DescribeStackResourceResponse DescribeStackResource(DescribeStackResourceRequest request)
@@ -314,13 +306,11 @@ namespace Amazon.CloudFormation
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DescribeStackResourceResponse> DescribeStackResourceAsync(DescribeStackResourceRequest describeStackResourceRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DescribeStackResourceResponse> DescribeStackResourceAsync(DescribeStackResourceRequest describeStackResourceRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeStackResourceRequestMarshaller();
             var unmarshaller = DescribeStackResourceResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DescribeStackResourceRequest, DescribeStackResourceResponse>(describeStackResourceRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DescribeStackResourceRequest, DescribeStackResourceResponse>(describeStackResourceRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DescribeStackResourcesResponse DescribeStackResources(DescribeStackResourcesRequest request)
@@ -354,13 +344,11 @@ namespace Amazon.CloudFormation
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DescribeStackResourcesResponse> DescribeStackResourcesAsync(DescribeStackResourcesRequest describeStackResourcesRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DescribeStackResourcesResponse> DescribeStackResourcesAsync(DescribeStackResourcesRequest describeStackResourcesRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeStackResourcesRequestMarshaller();
             var unmarshaller = DescribeStackResourcesResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DescribeStackResourcesRequest, DescribeStackResourcesResponse>(describeStackResourcesRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DescribeStackResourcesRequest, DescribeStackResourcesResponse>(describeStackResourcesRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DescribeStacksResponse DescribeStacks(DescribeStacksRequest request)
@@ -388,13 +376,11 @@ namespace Amazon.CloudFormation
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DescribeStacksResponse> DescribeStacksAsync(DescribeStacksRequest describeStacksRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DescribeStacksResponse> DescribeStacksAsync(DescribeStacksRequest describeStacksRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeStacksRequestMarshaller();
             var unmarshaller = DescribeStacksResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DescribeStacksRequest, DescribeStacksResponse>(describeStacksRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DescribeStacksRequest, DescribeStacksResponse>(describeStacksRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal EstimateTemplateCostResponse EstimateTemplateCost(EstimateTemplateCostRequest request)
@@ -422,13 +408,11 @@ namespace Amazon.CloudFormation
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<EstimateTemplateCostResponse> EstimateTemplateCostAsync(EstimateTemplateCostRequest estimateTemplateCostRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<EstimateTemplateCostResponse> EstimateTemplateCostAsync(EstimateTemplateCostRequest estimateTemplateCostRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new EstimateTemplateCostRequestMarshaller();
             var unmarshaller = EstimateTemplateCostResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, EstimateTemplateCostRequest, EstimateTemplateCostResponse>(estimateTemplateCostRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, EstimateTemplateCostRequest, EstimateTemplateCostResponse>(estimateTemplateCostRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal GetStackPolicyResponse GetStackPolicy(GetStackPolicyRequest request)
@@ -455,13 +439,11 @@ namespace Amazon.CloudFormation
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<GetStackPolicyResponse> GetStackPolicyAsync(GetStackPolicyRequest getStackPolicyRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<GetStackPolicyResponse> GetStackPolicyAsync(GetStackPolicyRequest getStackPolicyRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetStackPolicyRequestMarshaller();
             var unmarshaller = GetStackPolicyResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, GetStackPolicyRequest, GetStackPolicyResponse>(getStackPolicyRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, GetStackPolicyRequest, GetStackPolicyResponse>(getStackPolicyRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal GetTemplateResponse GetTemplate(GetTemplateRequest request)
@@ -490,13 +472,11 @@ namespace Amazon.CloudFormation
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<GetTemplateResponse> GetTemplateAsync(GetTemplateRequest getTemplateRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<GetTemplateResponse> GetTemplateAsync(GetTemplateRequest getTemplateRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetTemplateRequestMarshaller();
             var unmarshaller = GetTemplateResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, GetTemplateRequest, GetTemplateResponse>(getTemplateRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, GetTemplateRequest, GetTemplateResponse>(getTemplateRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal ListStackResourcesResponse ListStackResources(ListStackResourcesRequest request)
@@ -524,13 +504,11 @@ namespace Amazon.CloudFormation
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<ListStackResourcesResponse> ListStackResourcesAsync(ListStackResourcesRequest listStackResourcesRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<ListStackResourcesResponse> ListStackResourcesAsync(ListStackResourcesRequest listStackResourcesRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListStackResourcesRequestMarshaller();
             var unmarshaller = ListStackResourcesResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, ListStackResourcesRequest, ListStackResourcesResponse>(listStackResourcesRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, ListStackResourcesRequest, ListStackResourcesResponse>(listStackResourcesRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal ListStacksResponse ListStacks(ListStacksRequest request)
@@ -559,13 +537,11 @@ namespace Amazon.CloudFormation
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<ListStacksResponse> ListStacksAsync(ListStacksRequest listStacksRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<ListStacksResponse> ListStacksAsync(ListStacksRequest listStacksRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListStacksRequestMarshaller();
             var unmarshaller = ListStacksResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, ListStacksRequest, ListStacksResponse>(listStacksRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, ListStacksRequest, ListStacksResponse>(listStacksRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal SetStackPolicyResponse SetStackPolicy(SetStackPolicyRequest request)
@@ -590,13 +566,11 @@ namespace Amazon.CloudFormation
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<SetStackPolicyResponse> SetStackPolicyAsync(SetStackPolicyRequest setStackPolicyRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<SetStackPolicyResponse> SetStackPolicyAsync(SetStackPolicyRequest setStackPolicyRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new SetStackPolicyRequestMarshaller();
             var unmarshaller = SetStackPolicyResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, SetStackPolicyRequest, SetStackPolicyResponse>(setStackPolicyRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, SetStackPolicyRequest, SetStackPolicyResponse>(setStackPolicyRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal UpdateStackResponse UpdateStack(UpdateStackRequest request)
@@ -631,13 +605,11 @@ namespace Amazon.CloudFormation
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<UpdateStackResponse> UpdateStackAsync(UpdateStackRequest updateStackRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<UpdateStackResponse> UpdateStackAsync(UpdateStackRequest updateStackRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateStackRequestMarshaller();
             var unmarshaller = UpdateStackResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, UpdateStackRequest, UpdateStackResponse>(updateStackRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, UpdateStackRequest, UpdateStackResponse>(updateStackRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal ValidateTemplateResponse ValidateTemplate(ValidateTemplateRequest request)
@@ -664,13 +636,11 @@ namespace Amazon.CloudFormation
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<ValidateTemplateResponse> ValidateTemplateAsync(ValidateTemplateRequest validateTemplateRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<ValidateTemplateResponse> ValidateTemplateAsync(ValidateTemplateRequest validateTemplateRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ValidateTemplateRequestMarshaller();
             var unmarshaller = ValidateTemplateResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, ValidateTemplateRequest, ValidateTemplateResponse>(validateTemplateRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, ValidateTemplateRequest, ValidateTemplateResponse>(validateTemplateRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
     }
 }

@@ -174,13 +174,11 @@ namespace Amazon.CloudFront
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<CreateCloudFrontOriginAccessIdentityResponse> CreateCloudFrontOriginAccessIdentityAsync(CreateCloudFrontOriginAccessIdentityRequest createCloudFrontOriginAccessIdentityRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<CreateCloudFrontOriginAccessIdentityResponse> CreateCloudFrontOriginAccessIdentityAsync(CreateCloudFrontOriginAccessIdentityRequest createCloudFrontOriginAccessIdentityRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateCloudFrontOriginAccessIdentityRequestMarshaller();
             var unmarshaller = CreateCloudFrontOriginAccessIdentityResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, CreateCloudFrontOriginAccessIdentityRequest, CreateCloudFrontOriginAccessIdentityResponse>(createCloudFrontOriginAccessIdentityRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, CreateCloudFrontOriginAccessIdentityRequest, CreateCloudFrontOriginAccessIdentityResponse>(createCloudFrontOriginAccessIdentityRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal CreateDistributionResponse CreateDistribution(CreateDistributionRequest request)
@@ -234,13 +232,11 @@ namespace Amazon.CloudFront
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<CreateDistributionResponse> CreateDistributionAsync(CreateDistributionRequest createDistributionRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<CreateDistributionResponse> CreateDistributionAsync(CreateDistributionRequest createDistributionRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateDistributionRequestMarshaller();
             var unmarshaller = CreateDistributionResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, CreateDistributionRequest, CreateDistributionResponse>(createDistributionRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, CreateDistributionRequest, CreateDistributionResponse>(createDistributionRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal CreateInvalidationResponse CreateInvalidation(CreateInvalidationRequest request)
@@ -275,13 +271,11 @@ namespace Amazon.CloudFront
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<CreateInvalidationResponse> CreateInvalidationAsync(CreateInvalidationRequest createInvalidationRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<CreateInvalidationResponse> CreateInvalidationAsync(CreateInvalidationRequest createInvalidationRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateInvalidationRequestMarshaller();
             var unmarshaller = CreateInvalidationResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, CreateInvalidationRequest, CreateInvalidationResponse>(createInvalidationRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, CreateInvalidationRequest, CreateInvalidationResponse>(createInvalidationRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal CreateStreamingDistributionResponse CreateStreamingDistribution(CreateStreamingDistributionRequest request)
@@ -321,13 +315,11 @@ namespace Amazon.CloudFront
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<CreateStreamingDistributionResponse> CreateStreamingDistributionAsync(CreateStreamingDistributionRequest createStreamingDistributionRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<CreateStreamingDistributionResponse> CreateStreamingDistributionAsync(CreateStreamingDistributionRequest createStreamingDistributionRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateStreamingDistributionRequestMarshaller();
             var unmarshaller = CreateStreamingDistributionResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, CreateStreamingDistributionRequest, CreateStreamingDistributionResponse>(createStreamingDistributionRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, CreateStreamingDistributionRequest, CreateStreamingDistributionResponse>(createStreamingDistributionRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DeleteCloudFrontOriginAccessIdentityResponse DeleteCloudFrontOriginAccessIdentity(DeleteCloudFrontOriginAccessIdentityRequest request)
@@ -358,13 +350,11 @@ namespace Amazon.CloudFront
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DeleteCloudFrontOriginAccessIdentityResponse> DeleteCloudFrontOriginAccessIdentityAsync(DeleteCloudFrontOriginAccessIdentityRequest deleteCloudFrontOriginAccessIdentityRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DeleteCloudFrontOriginAccessIdentityResponse> DeleteCloudFrontOriginAccessIdentityAsync(DeleteCloudFrontOriginAccessIdentityRequest deleteCloudFrontOriginAccessIdentityRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteCloudFrontOriginAccessIdentityRequestMarshaller();
             var unmarshaller = DeleteCloudFrontOriginAccessIdentityResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DeleteCloudFrontOriginAccessIdentityRequest, DeleteCloudFrontOriginAccessIdentityResponse>(deleteCloudFrontOriginAccessIdentityRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DeleteCloudFrontOriginAccessIdentityRequest, DeleteCloudFrontOriginAccessIdentityResponse>(deleteCloudFrontOriginAccessIdentityRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DeleteDistributionResponse DeleteDistribution(DeleteDistributionRequest request)
@@ -395,13 +385,11 @@ namespace Amazon.CloudFront
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DeleteDistributionResponse> DeleteDistributionAsync(DeleteDistributionRequest deleteDistributionRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DeleteDistributionResponse> DeleteDistributionAsync(DeleteDistributionRequest deleteDistributionRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteDistributionRequestMarshaller();
             var unmarshaller = DeleteDistributionResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DeleteDistributionRequest, DeleteDistributionResponse>(deleteDistributionRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DeleteDistributionRequest, DeleteDistributionResponse>(deleteDistributionRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DeleteStreamingDistributionResponse DeleteStreamingDistribution(DeleteStreamingDistributionRequest request)
@@ -432,13 +420,11 @@ namespace Amazon.CloudFront
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DeleteStreamingDistributionResponse> DeleteStreamingDistributionAsync(DeleteStreamingDistributionRequest deleteStreamingDistributionRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DeleteStreamingDistributionResponse> DeleteStreamingDistributionAsync(DeleteStreamingDistributionRequest deleteStreamingDistributionRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteStreamingDistributionRequestMarshaller();
             var unmarshaller = DeleteStreamingDistributionResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DeleteStreamingDistributionRequest, DeleteStreamingDistributionResponse>(deleteStreamingDistributionRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DeleteStreamingDistributionRequest, DeleteStreamingDistributionResponse>(deleteStreamingDistributionRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal GetCloudFrontOriginAccessIdentityResponse GetCloudFrontOriginAccessIdentity(GetCloudFrontOriginAccessIdentityRequest request)
@@ -468,13 +454,11 @@ namespace Amazon.CloudFront
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<GetCloudFrontOriginAccessIdentityResponse> GetCloudFrontOriginAccessIdentityAsync(GetCloudFrontOriginAccessIdentityRequest getCloudFrontOriginAccessIdentityRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<GetCloudFrontOriginAccessIdentityResponse> GetCloudFrontOriginAccessIdentityAsync(GetCloudFrontOriginAccessIdentityRequest getCloudFrontOriginAccessIdentityRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetCloudFrontOriginAccessIdentityRequestMarshaller();
             var unmarshaller = GetCloudFrontOriginAccessIdentityResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, GetCloudFrontOriginAccessIdentityRequest, GetCloudFrontOriginAccessIdentityResponse>(getCloudFrontOriginAccessIdentityRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, GetCloudFrontOriginAccessIdentityRequest, GetCloudFrontOriginAccessIdentityResponse>(getCloudFrontOriginAccessIdentityRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal GetCloudFrontOriginAccessIdentityConfigResponse GetCloudFrontOriginAccessIdentityConfig(GetCloudFrontOriginAccessIdentityConfigRequest request)
@@ -504,13 +488,11 @@ namespace Amazon.CloudFront
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<GetCloudFrontOriginAccessIdentityConfigResponse> GetCloudFrontOriginAccessIdentityConfigAsync(GetCloudFrontOriginAccessIdentityConfigRequest getCloudFrontOriginAccessIdentityConfigRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<GetCloudFrontOriginAccessIdentityConfigResponse> GetCloudFrontOriginAccessIdentityConfigAsync(GetCloudFrontOriginAccessIdentityConfigRequest getCloudFrontOriginAccessIdentityConfigRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetCloudFrontOriginAccessIdentityConfigRequestMarshaller();
             var unmarshaller = GetCloudFrontOriginAccessIdentityConfigResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, GetCloudFrontOriginAccessIdentityConfigRequest, GetCloudFrontOriginAccessIdentityConfigResponse>(getCloudFrontOriginAccessIdentityConfigRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, GetCloudFrontOriginAccessIdentityConfigRequest, GetCloudFrontOriginAccessIdentityConfigResponse>(getCloudFrontOriginAccessIdentityConfigRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal GetDistributionResponse GetDistribution(GetDistributionRequest request)
@@ -540,13 +522,11 @@ namespace Amazon.CloudFront
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<GetDistributionResponse> GetDistributionAsync(GetDistributionRequest getDistributionRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<GetDistributionResponse> GetDistributionAsync(GetDistributionRequest getDistributionRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetDistributionRequestMarshaller();
             var unmarshaller = GetDistributionResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, GetDistributionRequest, GetDistributionResponse>(getDistributionRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, GetDistributionRequest, GetDistributionResponse>(getDistributionRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal GetDistributionConfigResponse GetDistributionConfig(GetDistributionConfigRequest request)
@@ -576,13 +556,11 @@ namespace Amazon.CloudFront
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<GetDistributionConfigResponse> GetDistributionConfigAsync(GetDistributionConfigRequest getDistributionConfigRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<GetDistributionConfigResponse> GetDistributionConfigAsync(GetDistributionConfigRequest getDistributionConfigRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetDistributionConfigRequestMarshaller();
             var unmarshaller = GetDistributionConfigResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, GetDistributionConfigRequest, GetDistributionConfigResponse>(getDistributionConfigRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, GetDistributionConfigRequest, GetDistributionConfigResponse>(getDistributionConfigRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal GetInvalidationResponse GetInvalidation(GetInvalidationRequest request)
@@ -613,13 +591,11 @@ namespace Amazon.CloudFront
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<GetInvalidationResponse> GetInvalidationAsync(GetInvalidationRequest getInvalidationRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<GetInvalidationResponse> GetInvalidationAsync(GetInvalidationRequest getInvalidationRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetInvalidationRequestMarshaller();
             var unmarshaller = GetInvalidationResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, GetInvalidationRequest, GetInvalidationResponse>(getInvalidationRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, GetInvalidationRequest, GetInvalidationResponse>(getInvalidationRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal GetStreamingDistributionResponse GetStreamingDistribution(GetStreamingDistributionRequest request)
@@ -649,13 +625,11 @@ namespace Amazon.CloudFront
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<GetStreamingDistributionResponse> GetStreamingDistributionAsync(GetStreamingDistributionRequest getStreamingDistributionRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<GetStreamingDistributionResponse> GetStreamingDistributionAsync(GetStreamingDistributionRequest getStreamingDistributionRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetStreamingDistributionRequestMarshaller();
             var unmarshaller = GetStreamingDistributionResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, GetStreamingDistributionRequest, GetStreamingDistributionResponse>(getStreamingDistributionRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, GetStreamingDistributionRequest, GetStreamingDistributionResponse>(getStreamingDistributionRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal GetStreamingDistributionConfigResponse GetStreamingDistributionConfig(GetStreamingDistributionConfigRequest request)
@@ -685,13 +659,11 @@ namespace Amazon.CloudFront
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<GetStreamingDistributionConfigResponse> GetStreamingDistributionConfigAsync(GetStreamingDistributionConfigRequest getStreamingDistributionConfigRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<GetStreamingDistributionConfigResponse> GetStreamingDistributionConfigAsync(GetStreamingDistributionConfigRequest getStreamingDistributionConfigRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetStreamingDistributionConfigRequestMarshaller();
             var unmarshaller = GetStreamingDistributionConfigResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, GetStreamingDistributionConfigRequest, GetStreamingDistributionConfigResponse>(getStreamingDistributionConfigRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, GetStreamingDistributionConfigRequest, GetStreamingDistributionConfigResponse>(getStreamingDistributionConfigRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal ListCloudFrontOriginAccessIdentitiesResponse ListCloudFrontOriginAccessIdentities(ListCloudFrontOriginAccessIdentitiesRequest request)
@@ -720,13 +692,11 @@ namespace Amazon.CloudFront
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<ListCloudFrontOriginAccessIdentitiesResponse> ListCloudFrontOriginAccessIdentitiesAsync(ListCloudFrontOriginAccessIdentitiesRequest listCloudFrontOriginAccessIdentitiesRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<ListCloudFrontOriginAccessIdentitiesResponse> ListCloudFrontOriginAccessIdentitiesAsync(ListCloudFrontOriginAccessIdentitiesRequest listCloudFrontOriginAccessIdentitiesRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListCloudFrontOriginAccessIdentitiesRequestMarshaller();
             var unmarshaller = ListCloudFrontOriginAccessIdentitiesResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, ListCloudFrontOriginAccessIdentitiesRequest, ListCloudFrontOriginAccessIdentitiesResponse>(listCloudFrontOriginAccessIdentitiesRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, ListCloudFrontOriginAccessIdentitiesRequest, ListCloudFrontOriginAccessIdentitiesResponse>(listCloudFrontOriginAccessIdentitiesRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal ListDistributionsResponse ListDistributions(ListDistributionsRequest request)
@@ -755,13 +725,11 @@ namespace Amazon.CloudFront
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<ListDistributionsResponse> ListDistributionsAsync(ListDistributionsRequest listDistributionsRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<ListDistributionsResponse> ListDistributionsAsync(ListDistributionsRequest listDistributionsRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListDistributionsRequestMarshaller();
             var unmarshaller = ListDistributionsResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, ListDistributionsRequest, ListDistributionsResponse>(listDistributionsRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, ListDistributionsRequest, ListDistributionsResponse>(listDistributionsRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal ListInvalidationsResponse ListInvalidations(ListInvalidationsRequest request)
@@ -792,13 +760,11 @@ namespace Amazon.CloudFront
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<ListInvalidationsResponse> ListInvalidationsAsync(ListInvalidationsRequest listInvalidationsRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<ListInvalidationsResponse> ListInvalidationsAsync(ListInvalidationsRequest listInvalidationsRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListInvalidationsRequestMarshaller();
             var unmarshaller = ListInvalidationsResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, ListInvalidationsRequest, ListInvalidationsResponse>(listInvalidationsRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, ListInvalidationsRequest, ListInvalidationsResponse>(listInvalidationsRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal ListStreamingDistributionsResponse ListStreamingDistributions(ListStreamingDistributionsRequest request)
@@ -827,13 +793,11 @@ namespace Amazon.CloudFront
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<ListStreamingDistributionsResponse> ListStreamingDistributionsAsync(ListStreamingDistributionsRequest listStreamingDistributionsRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<ListStreamingDistributionsResponse> ListStreamingDistributionsAsync(ListStreamingDistributionsRequest listStreamingDistributionsRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListStreamingDistributionsRequestMarshaller();
             var unmarshaller = ListStreamingDistributionsResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, ListStreamingDistributionsRequest, ListStreamingDistributionsResponse>(listStreamingDistributionsRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, ListStreamingDistributionsRequest, ListStreamingDistributionsResponse>(listStreamingDistributionsRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal UpdateCloudFrontOriginAccessIdentityResponse UpdateCloudFrontOriginAccessIdentity(UpdateCloudFrontOriginAccessIdentityRequest request)
@@ -869,13 +833,11 @@ namespace Amazon.CloudFront
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<UpdateCloudFrontOriginAccessIdentityResponse> UpdateCloudFrontOriginAccessIdentityAsync(UpdateCloudFrontOriginAccessIdentityRequest updateCloudFrontOriginAccessIdentityRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<UpdateCloudFrontOriginAccessIdentityResponse> UpdateCloudFrontOriginAccessIdentityAsync(UpdateCloudFrontOriginAccessIdentityRequest updateCloudFrontOriginAccessIdentityRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateCloudFrontOriginAccessIdentityRequestMarshaller();
             var unmarshaller = UpdateCloudFrontOriginAccessIdentityResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, UpdateCloudFrontOriginAccessIdentityRequest, UpdateCloudFrontOriginAccessIdentityResponse>(updateCloudFrontOriginAccessIdentityRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, UpdateCloudFrontOriginAccessIdentityRequest, UpdateCloudFrontOriginAccessIdentityResponse>(updateCloudFrontOriginAccessIdentityRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal UpdateDistributionResponse UpdateDistribution(UpdateDistributionRequest request)
@@ -930,13 +892,11 @@ namespace Amazon.CloudFront
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<UpdateDistributionResponse> UpdateDistributionAsync(UpdateDistributionRequest updateDistributionRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<UpdateDistributionResponse> UpdateDistributionAsync(UpdateDistributionRequest updateDistributionRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateDistributionRequestMarshaller();
             var unmarshaller = UpdateDistributionResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, UpdateDistributionRequest, UpdateDistributionResponse>(updateDistributionRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, UpdateDistributionRequest, UpdateDistributionResponse>(updateDistributionRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal UpdateStreamingDistributionResponse UpdateStreamingDistribution(UpdateStreamingDistributionRequest request)
@@ -977,13 +937,11 @@ namespace Amazon.CloudFront
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<UpdateStreamingDistributionResponse> UpdateStreamingDistributionAsync(UpdateStreamingDistributionRequest updateStreamingDistributionRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<UpdateStreamingDistributionResponse> UpdateStreamingDistributionAsync(UpdateStreamingDistributionRequest updateStreamingDistributionRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateStreamingDistributionRequestMarshaller();
             var unmarshaller = UpdateStreamingDistributionResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, UpdateStreamingDistributionRequest, UpdateStreamingDistributionResponse>(updateStreamingDistributionRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, UpdateStreamingDistributionRequest, UpdateStreamingDistributionResponse>(updateStreamingDistributionRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
     }
 }

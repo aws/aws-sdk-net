@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -15,6 +15,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 using System.Globalization;
 using System.Text.RegularExpressions;
@@ -24,7 +25,7 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.Runtime.Internal.Auth
 {
     /// <summary>
-    /// AWS4 protocol signer for service calls that tranmit authorization in the header field "Authorization".
+    /// AWS4 protocol signer for service calls that transmit authorization in the header field "Authorization".
     /// </summary>
     internal class AWS4Signer : AbstractAWSSigner
     {
@@ -58,14 +59,16 @@ namespace Amazon.Runtime.Internal.Auth
         /// <summary>
         /// Calculates and signs the specified request using the AWS4 signing protocol by using the
         /// AWS account credentials given in the method parameters. The resulting signature is added
-        /// to the request headers as 'Authorization'.
+        /// to the request headers as 'Authorization'. Parameters supplied in the request, either in
+        /// the resource path as a query string or in the Parameters collection must not have been
+        /// uri encoded. If they have, use the SignRequest method to obtain a signature.
         /// </summary>
         /// <param name="request">
         /// The request to compute the signature for. Additional headers mandated by the AWS4 protocol 
         /// ('host' and 'x-amz-date') will be added to the request before signing.
         /// </param>
         /// <param name="clientConfig">
-        /// Adding supporting data for the service call required by the signer (notably authentication
+        /// Client configuration data encompassing the service call (notably authentication
         /// region, endpoint and service name).
         /// </param>
         /// <param name="metrics">
@@ -75,7 +78,7 @@ namespace Amazon.Runtime.Internal.Auth
         /// The AWS public key for the account making the service call.
         /// </param>
         /// <param name="awsSecretAccessKey">
-        /// The AWS secret key for the account making the call, in clear text
+        /// The AWS secret key for the account making the call, in clear text.
         /// </param>
         /// <exception cref="Amazon.Runtime.SignatureException">
         /// If any problems are encountered while signing the request.
@@ -99,19 +102,27 @@ namespace Amazon.Runtime.Internal.Auth
         /// ('host' and 'x-amz-date') will be added to the request before signing.
         /// </param>
         /// <param name="clientConfig">
-        /// Adding supporting data for the service call required by the signer (notably authentication
+        /// Client configuration data encompassing the service call (notably authentication
         /// region, endpoint and service name).
         /// </param>
         /// <param name="metrics">
-        /// Metrics for the request
+        /// Metrics for the request.
         /// </param>
         /// <param name="awsAccessKeyId">
         /// The AWS public key for the account making the service call.
         /// </param>
         /// <param name="awsSecretAccessKey">
-        /// The AWS secret key for the account making the call, in clear text
+        /// The AWS secret key for the account making the call, in clear text.
         /// </param>
-        /// <exception cref="Amazon.Runtime.SignatureException">If any problems are encountered while signing the request.</exception>
+        /// <exception cref="Amazon.Runtime.SignatureException">
+        /// If any problems are encountered while signing the request.
+        /// </exception>
+        /// <remarks>
+        /// Parameters passed as part of the resource path should be uri-encoded prior to
+        /// entry to the signer. Parameters passed in the request.Parameters collection should
+        /// be not be encoded; encoding will be done for these parameters as part of the 
+        /// construction of the canonical request.
+        /// </remarks>
         public AWS4SigningResult SignRequest(IRequest request,
                                              ClientConfig clientConfig,
                                              RequestMetrics metrics,
@@ -121,24 +132,35 @@ namespace Amazon.Runtime.Internal.Auth
             var signedAt = InitializeHeaders(request.Headers, request.Endpoint);
             var region = DetermineRegion(clientConfig);
             var service = DetermineService(clientConfig);
+            
+            var resourcePathParamStart = -1;
+            var resourcePath = string.Empty;
 
+            // Extract the true resource path, less any query parameters or sub resource
+            if (!string.IsNullOrEmpty(request.ResourcePath))
+            {
+                resourcePathParamStart = request.ResourcePath.IndexOf('?');
+                resourcePath = resourcePathParamStart == -1 ? request.ResourcePath : request.ResourcePath.Substring(0, resourcePathParamStart);
+            }
+
+            // if UseQueryString is indicated and Parameters are present, canonicalize those (including uri encoding them)
+            // otherwise if we spotted parameters in the resource path, canonicalize those instead (which should be encoded
+            // already)
             var canonicalQueryParams = string.Empty;
             if (request.UseQueryString && request.Parameters.Count > 0)
-                canonicalQueryParams = CanonicalizeQueryParameters(request.Parameters, true, true);
-            else if (!string.IsNullOrEmpty(request.ResourcePath))
-            {
-                var paramsStart = request.ResourcePath.IndexOf('?');
-                if (paramsStart != -1)
-                    canonicalQueryParams = CanonicalizeQueryParameters(request.ResourcePath.Substring(paramsStart));
-            }
+                canonicalQueryParams = CanonicalizeQueryParameters(request.Parameters);
+            else if (resourcePathParamStart != -1)
+                canonicalQueryParams = CanonicalizeQueryParameters(request.ResourcePath.Substring(resourcePathParamStart + 1), false);
 
             var bodyHash = SetRequestBodyHash(request);
             var sortedHeaders = SortHeaders(request.Headers);
-            var canonicalRequest = CanonicalizeRequest(new Uri(request.Endpoint, request.ResourcePath),
+            var canonicalRequest = CanonicalizeRequest(resourcePath,
                                                        request.HttpMethod,
                                                        sortedHeaders,
                                                        canonicalQueryParams,
                                                        bodyHash);
+            if (metrics != null)
+                metrics.AddProperty(Metric.CanonicalRequest, canonicalRequest);
 
             return ComputeSignature(awsAccessKeyId,
                                     awsSecretAccessKey,
@@ -306,11 +328,11 @@ namespace Amazon.Runtime.Internal.Auth
         }
 
         /// <summary>
-        /// If the caller has already set the x-amz-content-sha256 header with a precomputed
-        /// content hash then call it good otherwise attempt last-gasp computation of the 
-        /// request content from a variety of sources.
-        /// If computed, the hash will be injected into the headers for canonicalization
-        /// to pick up and append to the canonicalized request string.
+        /// If the caller has already set the x-amz-content-sha256 header with a pre-computed
+        /// content hash, or it is present as ContentStreamHash on the request instance, return
+        /// the value to be used in request canonicalization. 
+        /// If not set as a header or in the request, attempt to compute a hash based on
+        /// inspection of the style of the request content.
         /// </summary>
         /// <param name="request"></param>
         /// <returns>
@@ -320,16 +342,11 @@ namespace Amazon.Runtime.Internal.Auth
         public static string SetRequestBodyHash(IRequest request)
         {
             string computedContentHash = null;
-            if (request.Headers.TryGetValue(AWS4Signer.XAmzContentSha256, out computedContentHash))
+            if (request.Headers.TryGetValue(XAmzContentSha256, out computedContentHash))
                 return computedContentHash;
 
             if (request.ContentStream != null)
-            {
-                // if the content stream is not seekable, we expect the caller to have set
-                // the relevant header with the hash before entry
-                if (request.ContentStream.CanSeek)
-                    computedContentHash = request.ContentStreamHash;
-            }
+                computedContentHash = request.ComputeContentStreamHash();
             else
             {
                 byte[] payloadHashBytes;
@@ -344,7 +361,7 @@ namespace Amazon.Runtime.Internal.Auth
             }
 
             if (computedContentHash != null)
-                request.Headers.Add(AWS4Signer.XAmzContentSha256, computedContentHash);
+                request.Headers.Add(XAmzContentSha256, computedContentHash);
 
             return computedContentHash;
         }
@@ -419,7 +436,7 @@ namespace Amazon.Runtime.Internal.Auth
 
         #region Private Signing Helpers
 
-        protected static string DetermineRegion(ClientConfig clientConfig)
+        internal static string DetermineRegion(ClientConfig clientConfig)
         {
             if (!string.IsNullOrEmpty(clientConfig.AuthenticationRegion))
                 return clientConfig.AuthenticationRegion.ToLower(CultureInfo.InvariantCulture);
@@ -436,7 +453,7 @@ namespace Amazon.Runtime.Internal.Auth
                 : string.Empty;
         }
 
-        protected static string DetermineService(ClientConfig clientConfig)
+        internal static string DetermineService(ClientConfig clientConfig)
         {
             return !string.IsNullOrEmpty(clientConfig.AuthenticationServiceName) 
                 ? clientConfig.AuthenticationServiceName.ToLower(CultureInfo.InvariantCulture) 
@@ -446,7 +463,7 @@ namespace Amazon.Runtime.Internal.Auth
         /// <summary>
         /// Computes and returns the canonical request
         /// </summary>
-        /// <param name="serviceEndPoint">The endpoint to the service being called</param>
+        /// <param name="resourcePath">the path of the resource being operated on</param>
         /// <param name="httpMethod">The http method used for the request</param>
         /// <param name="sortedHeaders">The full request headers, sorted into canonical order</param>
         /// <param name="canonicalQueryString">The query parameters for the request</param>
@@ -455,7 +472,7 @@ namespace Amazon.Runtime.Internal.Auth
         /// will look for the hash as a header on the request.
         /// </param>
         /// <returns>Canonicalised request as a string</returns>
-        protected static string CanonicalizeRequest(Uri serviceEndPoint, 
+        protected static string CanonicalizeRequest(string resourcePath, 
                                                     string httpMethod,
                                                     IDictionary<string, string> sortedHeaders,
                                                     string canonicalQueryString,
@@ -463,7 +480,7 @@ namespace Amazon.Runtime.Internal.Auth
         {
             var canonicalRequest = new StringBuilder();
             canonicalRequest.AppendFormat("{0}\n", httpMethod);
-            canonicalRequest.AppendFormat("{0}\n", CanonicalizeResourcePath(serviceEndPoint));
+            canonicalRequest.AppendFormat("{0}\n", CanonicalizeResourcePath(resourcePath));
             canonicalRequest.AppendFormat("{0}\n", canonicalQueryString);
 
             canonicalRequest.AppendFormat("{0}\n", CanonicalizeHeaders(sortedHeaders));
@@ -486,21 +503,14 @@ namespace Amazon.Runtime.Internal.Auth
         /// <summary>
         /// Returns the canonicalized resource path for the service endpoint
         /// </summary>
-        /// <param name="endpoint">Endpoint to the service</param>
-        /// <returns>Canonicalized resource path for the endpoint</returns>
-        protected static string CanonicalizeResourcePath(Uri endpoint)
-        {
-            return CanonicalizeResourcePath(endpoint.AbsolutePath);
-        }
-
-        /// <summary>
-        /// Returns the canonicalized resource path for the service endpoint
-        /// </summary>
         /// <param name="resourcePath">Resource path for the request</param>
         /// <returns>Canonicalized resource path for the endpoint</returns>
         protected static string CanonicalizeResourcePath(string resourcePath)
         {
-            return string.IsNullOrEmpty(resourcePath) ? "/" : AWSSDKUtils.UrlEncode(resourcePath, true);
+            if (string.IsNullOrEmpty(resourcePath))
+                return "/";
+            var canonicalizedPath = resourcePath.StartsWith("/") ? resourcePath : "/" + resourcePath;
+            return AWSSDKUtils.UrlEncode(canonicalizedPath, true);
         }
 
         /// <summary>
@@ -560,11 +570,18 @@ namespace Amazon.Runtime.Internal.Auth
         }
 
         /// <summary>
-        /// Computes and returns the canonicalized query string, if query parameters have been supplied
+        /// Computes and returns the canonicalized query string, if query parameters have been supplied.
+        /// Parameters with no value will be canonicalized as 'param='. The expectation is that parameters
+        /// have not already been url encoded prior to canonicalization.
         /// </summary>
-        /// <param name="queryString"></param>
-        /// <returns>The query string parameters in canonical ordering</returns>
-        protected static string CanonicalizeQueryParameters(string queryString)
+        /// <param name="queryString">The set of parameters being passed on the uri</param>
+        /// <param name="uriEncodeParameters">
+        /// Parameters must be uri encoded into the canonical request and by default the signer expects
+        /// that the supplied collection contains non-encoded data. Set this to false if the encoding was
+        /// done prior to signer entry.
+        /// </param>
+        /// <returns>The uri encoded query string parameters in canonical ordering</returns>
+        protected static string CanonicalizeQueryParameters(string queryString, bool uriEncodeParameters = true)
         {
             if (string.IsNullOrEmpty(queryString))
                 return string.Empty;
@@ -602,21 +619,23 @@ namespace Amazon.Runtime.Internal.Auth
                     index = qs.Length;
             }
 
-            return CanonicalizeQueryParameters(queryParams);
+            return CanonicalizeQueryParameters(queryParams, uriEncodeParameters);
         }
 
         /// <summary>
         /// Computes and returns the canonicalized query string, if query parameters have been supplied.
-        /// Parameters with no value must be encoded as 'param='. The expectation is that parameters
-        /// have already been url encoded.
+        /// Parameters with no value will be canonicalized as 'param='. The expectation is that parameters
+        /// have not already been url encoded prior to canonicalization.
         /// </summary>
         /// <param name="parameters">The set of parameters to be encoded in the query string</param>
-        /// <param name="uriEncodeParameters">If true, the supplied parameters need to be uri encoded during processing</param>
-        /// <param name="omitNullParameters">If true, parameters with no value are discarded</param>
-        /// <returns></returns>
+        /// <param name="uriEncodeParameters">
+        /// Parameters must be uri encoded into the canonical request and by default the signer expects
+        /// that the supplied collection contains non-encoded data. Set this to false if the encoding was
+        /// done prior to signer entry.
+        /// </param>
+        /// <returns>The uri encoded query string parameters in canonical ordering</returns>
         protected static string CanonicalizeQueryParameters(IDictionary<string, string> parameters, 
-                                                            bool uriEncodeParameters = false, 
-                                                            bool omitNullParameters = false)
+                                                            bool uriEncodeParameters = true)
         {
             if (parameters == null || parameters.Count == 0)
                 return string.Empty;
@@ -625,9 +644,6 @@ namespace Amazon.Runtime.Internal.Auth
             var queryParams = new SortedDictionary<string, string>(parameters, StringComparer.Ordinal);
             foreach (var p in queryParams)
             {
-                if (p.Value == null && omitNullParameters)
-                    continue;
-
                 if (canonicalQueryString.Length > 0)
                     canonicalQueryString.Append("&");
                 if (uriEncodeParameters)
@@ -747,7 +763,15 @@ namespace Amazon.Runtime.Internal.Auth
         /// <param name="awsSecretAccessKey">
         /// The AWS secret key for the account making the call, in clear text
         /// </param>
-        /// <exception cref="Amazon.Runtime.SignatureException">If any problems are encountered while signing the request.</exception>
+        /// <exception cref="Amazon.Runtime.SignatureException">
+        /// If any problems are encountered while signing the request.
+        /// </exception>
+        /// <remarks>
+        /// Parameters passed as part of the resource path should be uri-encoded prior to
+        /// entry to the signer. Parameters passed in the request.Parameters collection should
+        /// be not be encoded; encoding will be done for these parameters as part of the 
+        /// construction of the canonical request.
+        /// </remarks>
         public new AWS4SigningResult SignRequest(IRequest request,
                                                  ClientConfig clientConfig,
                                                  RequestMetrics metrics,
@@ -776,26 +800,30 @@ namespace Amazon.Runtime.Internal.Auth
 
             // add the auth parameters for canonicalization to a copy of the parameters so we don't
             // end up adding url encoded data to the url subsquently
-            var copiedParameters = new Dictionary<string, string>(request.Parameters);
-            copiedParameters.Add(XAmzAlgorithm, string.Format("{0}-{1}", Scheme, Algorithm));
-            copiedParameters.Add(XAmzCredential,
-                                 string.Format("{0}/{1}/{2}/{3}/{4}",
-                                               awsAccessKeyId,
-                                               FormatDateTime(signedAt, AWSSDKUtils.ISO8601BasicDateFormat),
-                                               region,
-                                               service,
-                                               Terminator));
-            copiedParameters.Add(XAmzDate, FormatDateTime(signedAt, AWSSDKUtils.ISO8601BasicDateTimeFormat));
-            copiedParameters.Add(XAmzSignedHeaders, canonicalizedHeaderNames);
-            var canonicalQueryParams = CanonicalizeQueryParameters(copiedParameters, true, true);
+            var copiedParameters = new Dictionary<string, string>(request.Parameters)
+                {
+                    {XAmzAlgorithm, string.Format("{0}-{1}", Scheme, Algorithm)},
+                    {
+                        XAmzCredential, string.Format("{0}/{1}/{2}/{3}/{4}",
+                                                      awsAccessKeyId,
+                                                      FormatDateTime(signedAt, AWSSDKUtils.ISO8601BasicDateFormat),
+                                                      region,
+                                                      service,
+                                                      Terminator)
+                    },
+                    {XAmzDate, FormatDateTime(signedAt, AWSSDKUtils.ISO8601BasicDateTimeFormat)},
+                    {XAmzSignedHeaders, canonicalizedHeaderNames}
+                };
 
-            // pass original resource path into Uri construction; the url encoded authorization parameters
-            // will be appended by the caller using the signing result we return
-            var canonicalRequest = CanonicalizeRequest(new Uri(request.Endpoint, request.ResourcePath),
+            var canonicalQueryParams = CanonicalizeQueryParameters(copiedParameters);
+
+            var canonicalRequest = CanonicalizeRequest(request.ResourcePath,
                                                        request.HttpMethod,
                                                        sortedHeaders,
                                                        canonicalQueryParams,
                                                        UnsignedPayload);
+            if (metrics != null)
+                metrics.AddProperty(Metric.CanonicalRequest, canonicalRequest);
 
             return ComputeSignature(awsAccessKeyId,
                                     awsSecretAccessKey,

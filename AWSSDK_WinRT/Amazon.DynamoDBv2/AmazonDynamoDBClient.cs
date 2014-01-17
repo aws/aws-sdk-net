@@ -194,13 +194,11 @@ namespace Amazon.DynamoDBv2
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<BatchGetItemResponse> BatchGetItemAsync(BatchGetItemRequest batchGetItemRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<BatchGetItemResponse> BatchGetItemAsync(BatchGetItemRequest batchGetItemRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new BatchGetItemRequestMarshaller();
             var unmarshaller = BatchGetItemResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, BatchGetItemRequest, BatchGetItemResponse>(batchGetItemRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, BatchGetItemRequest, BatchGetItemResponse>(batchGetItemRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal BatchWriteItemResponse BatchWriteItem(BatchWriteItemRequest request)
@@ -261,13 +259,11 @@ namespace Amazon.DynamoDBv2
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<BatchWriteItemResponse> BatchWriteItemAsync(BatchWriteItemRequest batchWriteItemRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<BatchWriteItemResponse> BatchWriteItemAsync(BatchWriteItemRequest batchWriteItemRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new BatchWriteItemRequestMarshaller();
             var unmarshaller = BatchWriteItemResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, BatchWriteItemRequest, BatchWriteItemResponse>(batchWriteItemRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, BatchWriteItemRequest, BatchWriteItemResponse>(batchWriteItemRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal CreateTableResponse CreateTable(CreateTableRequest request)
@@ -304,13 +300,11 @@ namespace Amazon.DynamoDBv2
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<CreateTableResponse> CreateTableAsync(CreateTableRequest createTableRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<CreateTableResponse> CreateTableAsync(CreateTableRequest createTableRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateTableRequestMarshaller();
             var unmarshaller = CreateTableResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, CreateTableRequest, CreateTableResponse>(createTableRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, CreateTableRequest, CreateTableResponse>(createTableRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DeleteItemResponse DeleteItem(DeleteItemRequest request)
@@ -347,13 +341,11 @@ namespace Amazon.DynamoDBv2
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DeleteItemResponse> DeleteItemAsync(DeleteItemRequest deleteItemRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DeleteItemResponse> DeleteItemAsync(DeleteItemRequest deleteItemRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteItemRequestMarshaller();
             var unmarshaller = DeleteItemResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DeleteItemRequest, DeleteItemResponse>(deleteItemRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DeleteItemRequest, DeleteItemResponse>(deleteItemRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DeleteTableResponse DeleteTable(DeleteTableRequest request)
@@ -392,13 +384,11 @@ namespace Amazon.DynamoDBv2
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DeleteTableResponse> DeleteTableAsync(DeleteTableRequest deleteTableRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DeleteTableResponse> DeleteTableAsync(DeleteTableRequest deleteTableRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteTableRequestMarshaller();
             var unmarshaller = DeleteTableResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DeleteTableRequest, DeleteTableResponse>(deleteTableRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DeleteTableRequest, DeleteTableResponse>(deleteTableRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DescribeTableResponse DescribeTable(DescribeTableRequest request)
@@ -429,13 +419,11 @@ namespace Amazon.DynamoDBv2
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DescribeTableResponse> DescribeTableAsync(DescribeTableRequest describeTableRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DescribeTableResponse> DescribeTableAsync(DescribeTableRequest describeTableRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeTableRequestMarshaller();
             var unmarshaller = DescribeTableResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DescribeTableRequest, DescribeTableResponse>(describeTableRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DescribeTableRequest, DescribeTableResponse>(describeTableRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal GetItemResponse GetItem(GetItemRequest request)
@@ -468,13 +456,11 @@ namespace Amazon.DynamoDBv2
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<GetItemResponse> GetItemAsync(GetItemRequest getItemRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<GetItemResponse> GetItemAsync(GetItemRequest getItemRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetItemRequestMarshaller();
             var unmarshaller = GetItemResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, GetItemRequest, GetItemResponse>(getItemRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, GetItemRequest, GetItemResponse>(getItemRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal ListTablesResponse ListTables(ListTablesRequest request)
@@ -502,13 +488,11 @@ namespace Amazon.DynamoDBv2
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<ListTablesResponse> ListTablesAsync(ListTablesRequest listTablesRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<ListTablesResponse> ListTablesAsync(ListTablesRequest listTablesRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListTablesRequestMarshaller();
             var unmarshaller = ListTablesResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, ListTablesRequest, ListTablesResponse>(listTablesRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, ListTablesRequest, ListTablesResponse>(listTablesRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal PutItemResponse PutItem(PutItemRequest request)
@@ -550,13 +534,11 @@ namespace Amazon.DynamoDBv2
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<PutItemResponse> PutItemAsync(PutItemRequest putItemRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<PutItemResponse> PutItemAsync(PutItemRequest putItemRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutItemRequestMarshaller();
             var unmarshaller = PutItemResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, PutItemRequest, PutItemResponse>(putItemRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, PutItemRequest, PutItemResponse>(putItemRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal QueryResponse Query(QueryRequest request)
@@ -594,13 +576,11 @@ namespace Amazon.DynamoDBv2
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<QueryResponse> QueryAsync(QueryRequest queryRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<QueryResponse> QueryAsync(QueryRequest queryRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new QueryRequestMarshaller();
             var unmarshaller = QueryResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, QueryRequest, QueryResponse>(queryRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, QueryRequest, QueryResponse>(queryRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal ScanResponse Scan(ScanRequest request)
@@ -637,13 +617,11 @@ namespace Amazon.DynamoDBv2
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<ScanResponse> ScanAsync(ScanRequest scanRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<ScanResponse> ScanAsync(ScanRequest scanRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ScanRequestMarshaller();
             var unmarshaller = ScanResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, ScanRequest, ScanResponse>(scanRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, ScanRequest, ScanResponse>(scanRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal UpdateItemResponse UpdateItem(UpdateItemRequest request)
@@ -678,13 +656,11 @@ namespace Amazon.DynamoDBv2
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<UpdateItemResponse> UpdateItemAsync(UpdateItemRequest updateItemRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<UpdateItemResponse> UpdateItemAsync(UpdateItemRequest updateItemRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateItemRequestMarshaller();
             var unmarshaller = UpdateItemResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, UpdateItemRequest, UpdateItemResponse>(updateItemRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, UpdateItemRequest, UpdateItemResponse>(updateItemRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal UpdateTableResponse UpdateTable(UpdateTableRequest request)
@@ -724,13 +700,11 @@ namespace Amazon.DynamoDBv2
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<UpdateTableResponse> UpdateTableAsync(UpdateTableRequest updateTableRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<UpdateTableResponse> UpdateTableAsync(UpdateTableRequest updateTableRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateTableRequestMarshaller();
             var unmarshaller = UpdateTableResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, UpdateTableRequest, UpdateTableResponse>(updateTableRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, UpdateTableRequest, UpdateTableResponse>(updateTableRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
     }
 }

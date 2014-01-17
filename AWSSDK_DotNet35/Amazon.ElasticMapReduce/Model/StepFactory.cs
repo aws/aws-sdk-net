@@ -168,12 +168,26 @@ namespace Amazon.ElasticMapReduce.Model
         /// <returns>HadoopJarStepConfig that can be passed to your job flow.</returns>
         public HadoopJarStepConfig NewRunHiveScriptStep(string script, params string[] args) 
         {
-            string[] argsArray = new String[args.Length + 4];
-            argsArray[0] = SWITCH_RUN_HIVE_SCRIPT;
-            argsArray[1] = SWITCH_ARGS;
-            argsArray[2] = SWITCH_F;
-            argsArray[3] = script;
-            Array.Copy(args, 0, argsArray, 4, args.Length);
+            return NewRunHiveScriptStepVersioned(script, HiveVersion.Hive_Latest.VersionString, args);
+        }
+
+        /// <summary>
+        /// Step that runs a Hive script on your job flow with a specific verson of Hive.
+        /// </summary>
+        /// <param name="script">The script to run.</param>
+        /// <param name="version">The version of Hive to run.</param>
+        /// <param name="args">Arguments that get passed to the script.</param>
+        /// <returns>HadoopJarStepConfig that can be passed to your job flow.</returns>
+        public HadoopJarStepConfig NewRunHiveScriptStepVersioned(string script, string version, params string[] args)
+        {
+            string[] argsArray = new String[args.Length + 6];
+            argsArray[0] = SWITCH_HIVE_VERSIONS;
+            argsArray[1] = version;
+            argsArray[2] = SWITCH_RUN_HIVE_SCRIPT;
+            argsArray[3] = SWITCH_ARGS;
+            argsArray[4] = SWITCH_F;
+            argsArray[5] = script;
+            Array.Copy(args, 0, argsArray, 6, args.Length);
             return newHivePigStep(TOOL_HIVE, argsArray);
         }
 

@@ -12,19 +12,9 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Xml;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.S3.Model;
-using Amazon.S3.Util;
-using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
@@ -33,46 +23,32 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// </summary>       
     public class ListMultipartUploadsRequestMarshaller : IMarshaller<IRequest, ListMultipartUploadsRequest>
     {
-        
-    
         public IRequest Marshall(ListMultipartUploadsRequest listMultipartUploadsRequest)
         {
             IRequest request = new DefaultRequest(listMultipartUploadsRequest, "AmazonS3");
 
-
-
             request.HttpMethod = "GET";
               
-            Dictionary<string, string> queryParameters = new Dictionary<string, string>();
-            string uriResourcePath = "/{Bucket}/?uploads;prefix={Prefix};delimiter={Delimiter};max-uploads={MaxUploads};key-marker={KeyMarker};upload-id-marker={UploadIdMarker};encoding-type={Encoding}"; 
-            uriResourcePath = uriResourcePath.Replace("{Bucket}", listMultipartUploadsRequest.IsSetBucketName() ? S3Transforms.ToStringValue(listMultipartUploadsRequest.BucketName) : "" ); 
-            uriResourcePath = uriResourcePath.Replace("{Delimiter}", listMultipartUploadsRequest.IsSetDelimiter() ? S3Transforms.ToStringValue(listMultipartUploadsRequest.Delimiter) : "" ); 
-            uriResourcePath = uriResourcePath.Replace("{KeyMarker}", listMultipartUploadsRequest.IsSetKeyMarker() ? S3Transforms.ToStringValue(listMultipartUploadsRequest.KeyMarker) : "" ); 
-            uriResourcePath = uriResourcePath.Replace("{MaxUploads}", listMultipartUploadsRequest.IsSetMaxUploads() ? S3Transforms.ToStringValue(listMultipartUploadsRequest.MaxUploads) : "" ); 
-            uriResourcePath = uriResourcePath.Replace("{Prefix}", listMultipartUploadsRequest.IsSetPrefix() ? S3Transforms.ToStringValue(listMultipartUploadsRequest.Prefix) : "" ); 
-            uriResourcePath = uriResourcePath.Replace("{UploadIdMarker}", listMultipartUploadsRequest.IsSetUploadIdMarker() ? S3Transforms.ToStringValue(listMultipartUploadsRequest.UploadIdMarker) : "" );
-            uriResourcePath = uriResourcePath.Replace("{Encoding}", listMultipartUploadsRequest.IsSetEncoding() ? S3Transforms.ToStringValue(listMultipartUploadsRequest.Encoding) : "");
-            string path = uriResourcePath;
+            var uriResourcePath = string.Concat("/", S3Transforms.ToStringValue(listMultipartUploadsRequest.BucketName));
 
+            request.Parameters.Add("uploads", null);
 
-            int queryIndex = uriResourcePath.IndexOf("?", StringComparison.OrdinalIgnoreCase);
-            if (queryIndex != -1)
-            {
-                string queryString = uriResourcePath.Substring(queryIndex + 1);
-                path = uriResourcePath.Substring(0, queryIndex);
+            if (listMultipartUploadsRequest.IsSetDelimiter())
+                request.Parameters.Add("delimiter", S3Transforms.ToStringValue(listMultipartUploadsRequest.Delimiter));
+            if (listMultipartUploadsRequest.IsSetKeyMarker())
+                request.Parameters.Add("key-marker", S3Transforms.ToStringValue(listMultipartUploadsRequest.KeyMarker));
+            if (listMultipartUploadsRequest.IsSetMaxUploads())
+                request.Parameters.Add("max-uploads", S3Transforms.ToStringValue(listMultipartUploadsRequest.MaxUploads));
+            if (listMultipartUploadsRequest.IsSetPrefix())
+                request.Parameters.Add("prefix", S3Transforms.ToStringValue(listMultipartUploadsRequest.Prefix));
+            if (listMultipartUploadsRequest.IsSetUploadIdMarker())
+                request.Parameters.Add("upload-id-marker", S3Transforms.ToStringValue(listMultipartUploadsRequest.UploadIdMarker));
+            if (listMultipartUploadsRequest.IsSetEncoding())
+                request.Parameters.Add("encoding-type", S3Transforms.ToStringValue(listMultipartUploadsRequest.Encoding));
 
-                S3Transforms.BuildQueryParameterMap(request, queryParameters, queryString,
-                                                    new string[] { "prefix", "delimiter", "max-uploads", "key-marker", "upload-id-marker", "encoding-type" });
-            }
-
-            request.CanonicalResource = S3Transforms.GetCanonicalResource(path, queryParameters);
-            uriResourcePath = S3Transforms.FormatResourcePath(path, queryParameters);
-            
-            request.ResourcePath = uriResourcePath;
-            
-        
+            request.CanonicalResource = S3Transforms.GetCanonicalResource(uriResourcePath, request.Parameters);
+            request.ResourcePath = S3Transforms.FormatResourcePath(uriResourcePath, request.Parameters);
             request.UseQueryString = true;
-            
             
             return request;
         }

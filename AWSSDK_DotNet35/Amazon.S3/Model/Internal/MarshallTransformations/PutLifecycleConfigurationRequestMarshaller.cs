@@ -12,19 +12,14 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
+
 using System.IO;
 using System.Xml;
-using System.Xml.Serialization;
 using System.Text;
-
-using Amazon.S3.Model;
 using Amazon.S3.Util;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
@@ -33,132 +28,105 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// </summary>       
     public class PutLifecycleConfigurationRequestMarshaller : IMarshaller<IRequest, PutLifecycleConfigurationRequest>
     {
-
-
         public IRequest Marshall(PutLifecycleConfigurationRequest putLifecycleConfigurationRequest)
         {
             IRequest request = new DefaultRequest(putLifecycleConfigurationRequest, "AmazonS3");
 
-
-
             request.HttpMethod = "PUT";
 
-            Dictionary<string, string> queryParameters = new Dictionary<string, string>();
-            string uriResourcePath = "/{Bucket}/?lifecycle";
-            uriResourcePath = uriResourcePath.Replace("{Bucket}", putLifecycleConfigurationRequest.IsSetBucketName() ? S3Transforms.ToStringValue(putLifecycleConfigurationRequest.BucketName) : "");
-            string path = uriResourcePath;
+            var uriResourcePath = string.Concat("/", S3Transforms.ToStringValue(putLifecycleConfigurationRequest.BucketName));
 
+            request.Parameters.Add("lifecycle", null);
 
-            int queryIndex = uriResourcePath.IndexOf("?", StringComparison.OrdinalIgnoreCase);
-            if (queryIndex != -1)
+            request.CanonicalResource = S3Transforms.GetCanonicalResource(uriResourcePath, request.Parameters);
+            request.ResourcePath = S3Transforms.FormatResourcePath(uriResourcePath, request.Parameters);
+
+            var stringWriter = new StringWriter(System.Globalization.CultureInfo.InvariantCulture);
+            using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings(){Encoding = Encoding.UTF8, OmitXmlDeclaration = true}))
             {
-                string queryString = uriResourcePath.Substring(queryIndex + 1);
-                path = uriResourcePath.Substring(0, queryIndex);
-
-                S3Transforms.BuildQueryParameterMap(request, queryParameters, queryString);
-            }
-
-            request.CanonicalResource = S3Transforms.GetCanonicalResource(path, queryParameters);
-            uriResourcePath = S3Transforms.FormatResourcePath(path, queryParameters);
-
-            request.ResourcePath = uriResourcePath;
-
-
-            StringWriter stringWriter = new StringWriter(System.Globalization.CultureInfo.InvariantCulture);
-            using (XmlWriter xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings(){Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true}))
-            {
-
-                if (putLifecycleConfigurationRequest != null)
+                var lifecycleConfigurationLifecycleConfiguration = putLifecycleConfigurationRequest.Configuration;
+                if (lifecycleConfigurationLifecycleConfiguration != null)
                 {
-                    LifecycleConfiguration lifecycleConfigurationLifecycleConfiguration = putLifecycleConfigurationRequest.Configuration;
+                    xmlWriter.WriteStartElement("LifecycleConfiguration", "");
+
                     if (lifecycleConfigurationLifecycleConfiguration != null)
                     {
-                        xmlWriter.WriteStartElement("LifecycleConfiguration", "");
-
-                        if (lifecycleConfigurationLifecycleConfiguration != null)
+                        var lifecycleConfigurationLifecycleConfigurationrulesList = lifecycleConfigurationLifecycleConfiguration.Rules;
+                        if (lifecycleConfigurationLifecycleConfigurationrulesList != null && lifecycleConfigurationLifecycleConfigurationrulesList.Count > 0)
                         {
-                            List<LifecycleRule> lifecycleConfigurationLifecycleConfigurationrulesList = lifecycleConfigurationLifecycleConfiguration.Rules;
-                            if (lifecycleConfigurationLifecycleConfigurationrulesList != null && lifecycleConfigurationLifecycleConfigurationrulesList.Count > 0)
+                            foreach (var lifecycleConfigurationLifecycleConfigurationrulesListValue in lifecycleConfigurationLifecycleConfigurationrulesList)
                             {
-                                int lifecycleConfigurationLifecycleConfigurationrulesListIndex = 1;
-                                foreach (LifecycleRule lifecycleConfigurationLifecycleConfigurationrulesListValue in lifecycleConfigurationLifecycleConfigurationrulesList)
+                                xmlWriter.WriteStartElement("Rule", "");
+                                if (lifecycleConfigurationLifecycleConfigurationrulesListValue != null)
                                 {
-                                    xmlWriter.WriteStartElement("Rule", "");
-                                    if (lifecycleConfigurationLifecycleConfigurationrulesListValue != null)
+                                    var expirationExpiration = lifecycleConfigurationLifecycleConfigurationrulesListValue.Expiration;
+                                    if (expirationExpiration != null)
                                     {
-                                        LifecycleRuleExpiration expirationExpiration = lifecycleConfigurationLifecycleConfigurationrulesListValue.Expiration;
-                                        if (expirationExpiration != null)
+                                        xmlWriter.WriteStartElement("Expiration", "");
+                                        if (expirationExpiration.IsSetDate())
                                         {
-                                            xmlWriter.WriteStartElement("Expiration", "");
-                                            if (expirationExpiration.IsSetDate())
-                                            {
-                                                xmlWriter.WriteElementString("Date", "", S3Transforms.ToXmlStringValue(expirationExpiration.Date));
-                                            }
-                                            if (expirationExpiration.IsSetDays())
-                                            {
-                                                xmlWriter.WriteElementString("Days", "", S3Transforms.ToXmlStringValue(expirationExpiration.Days));
-                                            }
-                                            xmlWriter.WriteEndElement();
+                                            xmlWriter.WriteElementString("Date", "", S3Transforms.ToXmlStringValue(expirationExpiration.Date));
                                         }
-                                    }
-                                    if (lifecycleConfigurationLifecycleConfigurationrulesListValue.IsSetId())
-                                    {
-                                        xmlWriter.WriteElementString("ID", "", S3Transforms.ToXmlStringValue(lifecycleConfigurationLifecycleConfigurationrulesListValue.Id));
-                                    }
-                                    if (lifecycleConfigurationLifecycleConfigurationrulesListValue.IsSetPrefix())
-                                    {
-                                        xmlWriter.WriteElementString("Prefix", "", S3Transforms.ToXmlStringValue(lifecycleConfigurationLifecycleConfigurationrulesListValue.Prefix));
-                                    }
-                                    if (lifecycleConfigurationLifecycleConfigurationrulesListValue.IsSetStatus())
-                                    {
-                                        xmlWriter.WriteElementString("Status", "", S3Transforms.ToXmlStringValue(lifecycleConfigurationLifecycleConfigurationrulesListValue.Status));
-                                    }
-                                    else
-                                    {
-                                        xmlWriter.WriteElementString("Status", "", "Disabled");
-                                    }
-                                    if (lifecycleConfigurationLifecycleConfigurationrulesListValue != null)
-                                    {
-                                        LifecycleTransition transitionTransition = lifecycleConfigurationLifecycleConfigurationrulesListValue.Transition;
-                                        if (transitionTransition != null)
+                                        if (expirationExpiration.IsSetDays())
                                         {
-                                            xmlWriter.WriteStartElement("Transition", "");
-                                            if (transitionTransition.IsSetDate())
-                                            {
-                                                xmlWriter.WriteElementString("Date", "", S3Transforms.ToXmlStringValue(transitionTransition.Date));
-                                            }
-                                            if (transitionTransition.IsSetDays())
-                                            {
-                                                xmlWriter.WriteElementString("Days", "", S3Transforms.ToXmlStringValue(transitionTransition.Days));
-                                            }
-                                            if (transitionTransition.IsSetStorageClass())
-                                            {
-                                                xmlWriter.WriteElementString("StorageClass", "", S3Transforms.ToXmlStringValue(transitionTransition.StorageClass));
-                                            }
-                                            xmlWriter.WriteEndElement();
+                                            xmlWriter.WriteElementString("Days", "", S3Transforms.ToXmlStringValue(expirationExpiration.Days));
                                         }
+                                        xmlWriter.WriteEndElement();
                                     }
-                                    xmlWriter.WriteEndElement();
-
-
-                                    lifecycleConfigurationLifecycleConfigurationrulesListIndex++;
                                 }
+                                if (lifecycleConfigurationLifecycleConfigurationrulesListValue.IsSetId())
+                                {
+                                    xmlWriter.WriteElementString("ID", "", S3Transforms.ToXmlStringValue(lifecycleConfigurationLifecycleConfigurationrulesListValue.Id));
+                                }
+                                if (lifecycleConfigurationLifecycleConfigurationrulesListValue.IsSetPrefix())
+                                {
+                                    xmlWriter.WriteElementString("Prefix", "", S3Transforms.ToXmlStringValue(lifecycleConfigurationLifecycleConfigurationrulesListValue.Prefix));
+                                }
+                                if (lifecycleConfigurationLifecycleConfigurationrulesListValue.IsSetStatus())
+                                {
+                                    xmlWriter.WriteElementString("Status", "", S3Transforms.ToXmlStringValue(lifecycleConfigurationLifecycleConfigurationrulesListValue.Status));
+                                }
+                                else
+                                {
+                                    xmlWriter.WriteElementString("Status", "", "Disabled");
+                                }
+                                if (lifecycleConfigurationLifecycleConfigurationrulesListValue != null)
+                                {
+                                    var transitionTransition = lifecycleConfigurationLifecycleConfigurationrulesListValue.Transition;
+                                    if (transitionTransition != null)
+                                    {
+                                        xmlWriter.WriteStartElement("Transition", "");
+                                        if (transitionTransition.IsSetDate())
+                                        {
+                                            xmlWriter.WriteElementString("Date", "", S3Transforms.ToXmlStringValue(transitionTransition.Date));
+                                        }
+                                        if (transitionTransition.IsSetDays())
+                                        {
+                                            xmlWriter.WriteElementString("Days", "", S3Transforms.ToXmlStringValue(transitionTransition.Days));
+                                        }
+                                        if (transitionTransition.IsSetStorageClass())
+                                        {
+                                            xmlWriter.WriteElementString("StorageClass", "", S3Transforms.ToXmlStringValue(transitionTransition.StorageClass));
+                                        }
+                                        xmlWriter.WriteEndElement();
+                                    }
+                                }
+                                xmlWriter.WriteEndElement();
                             }
                         }
-                        xmlWriter.WriteEndElement();
                     }
+                    xmlWriter.WriteEndElement();
                 }
             }
 
             try
             {
-                string content = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(content);
+                var content = stringWriter.ToString();
+                request.Content = Encoding.UTF8.GetBytes(content);
                 request.Headers["Content-Type"] = "application/xml";
 
-
                 request.Parameters[S3QueryParameter.ContentType.ToString()] = "application/xml";
-                string checksum = AmazonS3Util.GenerateChecksumForContent(content, true);
+                var checksum = AmazonS3Util.GenerateChecksumForContent(content, true);
                 request.Headers[Amazon.Util.AWSSDKUtils.ContentMD5Header] = checksum;
 
             }
@@ -169,16 +137,12 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             if (!request.UseQueryString)
             {
-                string queryString = Amazon.Util.AWSSDKUtils.GetParametersAsString(request.Parameters);
+                var queryString = Amazon.Util.AWSSDKUtils.GetParametersAsString(request.Parameters);
                 if (!string.IsNullOrEmpty(queryString))
                 {
-                    if (request.ResourcePath.Contains("?"))
-                        request.ResourcePath = string.Concat(request.ResourcePath, "&", queryString);
-                    else
-                        request.ResourcePath = string.Concat(request.ResourcePath, "?", queryString);
+                    request.ResourcePath = string.Concat(request.ResourcePath, request.ResourcePath.Contains("?") ? "&" : "?", queryString);
                 }
             }
-
 
             return request;
         }

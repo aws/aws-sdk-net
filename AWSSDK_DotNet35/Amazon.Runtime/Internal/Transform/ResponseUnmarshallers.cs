@@ -181,6 +181,35 @@ namespace Amazon.Runtime.Internal.Transform
     }
 
     /// <summary>
+    /// Class for unmarshalling S3 service responses
+    /// </summary>
+    public class S3ReponseUnmarshaller : XmlResponseUnmarshaller
+    {
+        private static string AMZ_ID_2 = "x-amz-id-2";
+
+        public override UnmarshallerContext CreateContext(IWebResponseData response, bool readEntireResponse, RequestMetrics metrics)
+        {
+            if (response.IsHeaderPresent(AMZ_ID_2))
+                metrics.AddProperty(Metric.AmzId2, response.GetHeaderValue(AMZ_ID_2));
+            return base.CreateContext(response, readEntireResponse, metrics);
+        }
+        
+        public override AmazonWebServiceResponse Unmarshall(UnmarshallerContext input)
+        {
+            // Unmarshall response
+            var response = base.Unmarshall(input);
+            
+            // Make sure ResponseMetadata is set
+            if (response.ResponseMetadata == null)
+                response.ResponseMetadata = new ResponseMetadata();
+
+            // Populate AmazonId2
+            response.ResponseMetadata.Metadata.Add(AMZ_ID_2, input.ResponseData.GetHeaderValue(AMZ_ID_2));
+            return response;
+        }
+    }
+
+    /// <summary>
     /// Class for unmarshalling JSON service responses.
     /// </summary>
     public class JsonResponseUnmarshaller : ResponseUnmarshaller

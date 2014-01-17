@@ -49,8 +49,14 @@
               if (context.TestExpression("VaultList", targetDepth))
               {
                 context.Read();
-                response.VaultList = new List<DescribeVaultOutput>();
-                        DescribeVaultOutputUnmarshaller unmarshaller = DescribeVaultOutputUnmarshaller.GetInstance();
+                
+                if (context.CurrentTokenType == JsonToken.Null)
+                {
+                    response.VaultList = null;
+                    continue;
+                }
+                  response.VaultList = new List<DescribeVaultOutput>();
+                  DescribeVaultOutputUnmarshaller unmarshaller = DescribeVaultOutputUnmarshaller.GetInstance();
                 while (context.Read())
                 {
                   JsonToken token = context.CurrentTokenType;                

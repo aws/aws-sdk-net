@@ -27,8 +27,9 @@ namespace Amazon.SimpleEmail.Model
     /// Container for the parameters to the GetSendQuota operation.
     /// <para>Returns the user's current sending limits.</para> <para>This action is throttled at one request per second.</para>
     /// </summary>
-    public partial class GetSendQuotaRequest : AmazonWebServiceRequest
+    public partial class GetSendQuotaRequest : AmazonSimpleEmailServiceRequest
     {
+
 
     }
 }

@@ -174,13 +174,11 @@ namespace Amazon.ElasticBeanstalk
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<CheckDNSAvailabilityResponse> CheckDNSAvailabilityAsync(CheckDNSAvailabilityRequest checkDNSAvailabilityRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<CheckDNSAvailabilityResponse> CheckDNSAvailabilityAsync(CheckDNSAvailabilityRequest checkDNSAvailabilityRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CheckDNSAvailabilityRequestMarshaller();
             var unmarshaller = CheckDNSAvailabilityResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, CheckDNSAvailabilityRequest, CheckDNSAvailabilityResponse>(checkDNSAvailabilityRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, CheckDNSAvailabilityRequest, CheckDNSAvailabilityResponse>(checkDNSAvailabilityRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal CreateApplicationResponse CreateApplication(CreateApplicationRequest request)
@@ -209,13 +207,11 @@ namespace Amazon.ElasticBeanstalk
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<CreateApplicationResponse> CreateApplicationAsync(CreateApplicationRequest createApplicationRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<CreateApplicationResponse> CreateApplicationAsync(CreateApplicationRequest createApplicationRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateApplicationRequestMarshaller();
             var unmarshaller = CreateApplicationResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, CreateApplicationRequest, CreateApplicationResponse>(createApplicationRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, CreateApplicationRequest, CreateApplicationResponse>(createApplicationRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal CreateApplicationVersionResponse CreateApplicationVersion(CreateApplicationVersionRequest request)
@@ -249,13 +245,11 @@ namespace Amazon.ElasticBeanstalk
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<CreateApplicationVersionResponse> CreateApplicationVersionAsync(CreateApplicationVersionRequest createApplicationVersionRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<CreateApplicationVersionResponse> CreateApplicationVersionAsync(CreateApplicationVersionRequest createApplicationVersionRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateApplicationVersionRequestMarshaller();
             var unmarshaller = CreateApplicationVersionResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, CreateApplicationVersionRequest, CreateApplicationVersionResponse>(createApplicationVersionRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, CreateApplicationVersionRequest, CreateApplicationVersionResponse>(createApplicationVersionRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal CreateConfigurationTemplateResponse CreateConfigurationTemplate(CreateConfigurationTemplateRequest request)
@@ -292,13 +286,11 @@ namespace Amazon.ElasticBeanstalk
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<CreateConfigurationTemplateResponse> CreateConfigurationTemplateAsync(CreateConfigurationTemplateRequest createConfigurationTemplateRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<CreateConfigurationTemplateResponse> CreateConfigurationTemplateAsync(CreateConfigurationTemplateRequest createConfigurationTemplateRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateConfigurationTemplateRequestMarshaller();
             var unmarshaller = CreateConfigurationTemplateResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, CreateConfigurationTemplateRequest, CreateConfigurationTemplateResponse>(createConfigurationTemplateRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, CreateConfigurationTemplateRequest, CreateConfigurationTemplateResponse>(createConfigurationTemplateRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal CreateEnvironmentResponse CreateEnvironment(CreateEnvironmentRequest request)
@@ -328,13 +320,11 @@ namespace Amazon.ElasticBeanstalk
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<CreateEnvironmentResponse> CreateEnvironmentAsync(CreateEnvironmentRequest createEnvironmentRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<CreateEnvironmentResponse> CreateEnvironmentAsync(CreateEnvironmentRequest createEnvironmentRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateEnvironmentRequestMarshaller();
             var unmarshaller = CreateEnvironmentResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, CreateEnvironmentRequest, CreateEnvironmentResponse>(createEnvironmentRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, CreateEnvironmentRequest, CreateEnvironmentResponse>(createEnvironmentRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal CreateStorageLocationResponse CreateStorageLocation(CreateStorageLocationRequest request)
@@ -365,13 +355,11 @@ namespace Amazon.ElasticBeanstalk
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<CreateStorageLocationResponse> CreateStorageLocationAsync(CreateStorageLocationRequest createStorageLocationRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<CreateStorageLocationResponse> CreateStorageLocationAsync(CreateStorageLocationRequest createStorageLocationRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateStorageLocationRequestMarshaller();
             var unmarshaller = CreateStorageLocationResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, CreateStorageLocationRequest, CreateStorageLocationResponse>(createStorageLocationRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, CreateStorageLocationRequest, CreateStorageLocationResponse>(createStorageLocationRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DeleteApplicationResponse DeleteApplication(DeleteApplicationRequest request)
@@ -399,13 +387,11 @@ namespace Amazon.ElasticBeanstalk
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DeleteApplicationResponse> DeleteApplicationAsync(DeleteApplicationRequest deleteApplicationRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DeleteApplicationResponse> DeleteApplicationAsync(DeleteApplicationRequest deleteApplicationRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteApplicationRequestMarshaller();
             var unmarshaller = DeleteApplicationResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DeleteApplicationRequest, DeleteApplicationResponse>(deleteApplicationRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DeleteApplicationRequest, DeleteApplicationResponse>(deleteApplicationRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DeleteApplicationVersionResponse DeleteApplicationVersion(DeleteApplicationVersionRequest request)
@@ -436,13 +422,11 @@ namespace Amazon.ElasticBeanstalk
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DeleteApplicationVersionResponse> DeleteApplicationVersionAsync(DeleteApplicationVersionRequest deleteApplicationVersionRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DeleteApplicationVersionResponse> DeleteApplicationVersionAsync(DeleteApplicationVersionRequest deleteApplicationVersionRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteApplicationVersionRequestMarshaller();
             var unmarshaller = DeleteApplicationVersionResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DeleteApplicationVersionRequest, DeleteApplicationVersionResponse>(deleteApplicationVersionRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DeleteApplicationVersionRequest, DeleteApplicationVersionResponse>(deleteApplicationVersionRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DeleteConfigurationTemplateResponse DeleteConfigurationTemplate(DeleteConfigurationTemplateRequest request)
@@ -471,13 +455,11 @@ namespace Amazon.ElasticBeanstalk
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DeleteConfigurationTemplateResponse> DeleteConfigurationTemplateAsync(DeleteConfigurationTemplateRequest deleteConfigurationTemplateRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DeleteConfigurationTemplateResponse> DeleteConfigurationTemplateAsync(DeleteConfigurationTemplateRequest deleteConfigurationTemplateRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteConfigurationTemplateRequestMarshaller();
             var unmarshaller = DeleteConfigurationTemplateResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DeleteConfigurationTemplateRequest, DeleteConfigurationTemplateResponse>(deleteConfigurationTemplateRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DeleteConfigurationTemplateRequest, DeleteConfigurationTemplateResponse>(deleteConfigurationTemplateRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DeleteEnvironmentConfigurationResponse DeleteEnvironmentConfiguration(DeleteEnvironmentConfigurationRequest request)
@@ -505,13 +487,11 @@ namespace Amazon.ElasticBeanstalk
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DeleteEnvironmentConfigurationResponse> DeleteEnvironmentConfigurationAsync(DeleteEnvironmentConfigurationRequest deleteEnvironmentConfigurationRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DeleteEnvironmentConfigurationResponse> DeleteEnvironmentConfigurationAsync(DeleteEnvironmentConfigurationRequest deleteEnvironmentConfigurationRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteEnvironmentConfigurationRequestMarshaller();
             var unmarshaller = DeleteEnvironmentConfigurationResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DeleteEnvironmentConfigurationRequest, DeleteEnvironmentConfigurationResponse>(deleteEnvironmentConfigurationRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DeleteEnvironmentConfigurationRequest, DeleteEnvironmentConfigurationResponse>(deleteEnvironmentConfigurationRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DescribeApplicationsResponse DescribeApplications(DescribeApplicationsRequest request)
@@ -538,13 +518,11 @@ namespace Amazon.ElasticBeanstalk
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DescribeApplicationsResponse> DescribeApplicationsAsync(DescribeApplicationsRequest describeApplicationsRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DescribeApplicationsResponse> DescribeApplicationsAsync(DescribeApplicationsRequest describeApplicationsRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeApplicationsRequestMarshaller();
             var unmarshaller = DescribeApplicationsResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DescribeApplicationsRequest, DescribeApplicationsResponse>(describeApplicationsRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DescribeApplicationsRequest, DescribeApplicationsResponse>(describeApplicationsRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DescribeApplicationVersionsResponse DescribeApplicationVersions(DescribeApplicationVersionsRequest request)
@@ -571,13 +549,11 @@ namespace Amazon.ElasticBeanstalk
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DescribeApplicationVersionsResponse> DescribeApplicationVersionsAsync(DescribeApplicationVersionsRequest describeApplicationVersionsRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DescribeApplicationVersionsResponse> DescribeApplicationVersionsAsync(DescribeApplicationVersionsRequest describeApplicationVersionsRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeApplicationVersionsRequestMarshaller();
             var unmarshaller = DescribeApplicationVersionsResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DescribeApplicationVersionsRequest, DescribeApplicationVersionsResponse>(describeApplicationVersionsRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DescribeApplicationVersionsRequest, DescribeApplicationVersionsResponse>(describeApplicationVersionsRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DescribeConfigurationOptionsResponse DescribeConfigurationOptions(DescribeConfigurationOptionsRequest request)
@@ -606,13 +582,11 @@ namespace Amazon.ElasticBeanstalk
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DescribeConfigurationOptionsResponse> DescribeConfigurationOptionsAsync(DescribeConfigurationOptionsRequest describeConfigurationOptionsRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DescribeConfigurationOptionsResponse> DescribeConfigurationOptionsAsync(DescribeConfigurationOptionsRequest describeConfigurationOptionsRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeConfigurationOptionsRequestMarshaller();
             var unmarshaller = DescribeConfigurationOptionsResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DescribeConfigurationOptionsRequest, DescribeConfigurationOptionsResponse>(describeConfigurationOptionsRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DescribeConfigurationOptionsRequest, DescribeConfigurationOptionsResponse>(describeConfigurationOptionsRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DescribeConfigurationSettingsResponse DescribeConfigurationSettings(DescribeConfigurationSettingsRequest request)
@@ -647,13 +621,11 @@ namespace Amazon.ElasticBeanstalk
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DescribeConfigurationSettingsResponse> DescribeConfigurationSettingsAsync(DescribeConfigurationSettingsRequest describeConfigurationSettingsRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DescribeConfigurationSettingsResponse> DescribeConfigurationSettingsAsync(DescribeConfigurationSettingsRequest describeConfigurationSettingsRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeConfigurationSettingsRequestMarshaller();
             var unmarshaller = DescribeConfigurationSettingsResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DescribeConfigurationSettingsRequest, DescribeConfigurationSettingsResponse>(describeConfigurationSettingsRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DescribeConfigurationSettingsRequest, DescribeConfigurationSettingsResponse>(describeConfigurationSettingsRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DescribeEnvironmentResourcesResponse DescribeEnvironmentResources(DescribeEnvironmentResourcesRequest request)
@@ -682,13 +654,11 @@ namespace Amazon.ElasticBeanstalk
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DescribeEnvironmentResourcesResponse> DescribeEnvironmentResourcesAsync(DescribeEnvironmentResourcesRequest describeEnvironmentResourcesRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DescribeEnvironmentResourcesResponse> DescribeEnvironmentResourcesAsync(DescribeEnvironmentResourcesRequest describeEnvironmentResourcesRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeEnvironmentResourcesRequestMarshaller();
             var unmarshaller = DescribeEnvironmentResourcesResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DescribeEnvironmentResourcesRequest, DescribeEnvironmentResourcesResponse>(describeEnvironmentResourcesRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DescribeEnvironmentResourcesRequest, DescribeEnvironmentResourcesResponse>(describeEnvironmentResourcesRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DescribeEnvironmentsResponse DescribeEnvironments(DescribeEnvironmentsRequest request)
@@ -715,13 +685,11 @@ namespace Amazon.ElasticBeanstalk
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DescribeEnvironmentsResponse> DescribeEnvironmentsAsync(DescribeEnvironmentsRequest describeEnvironmentsRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DescribeEnvironmentsResponse> DescribeEnvironmentsAsync(DescribeEnvironmentsRequest describeEnvironmentsRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeEnvironmentsRequestMarshaller();
             var unmarshaller = DescribeEnvironmentsResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DescribeEnvironmentsRequest, DescribeEnvironmentsResponse>(describeEnvironmentsRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DescribeEnvironmentsRequest, DescribeEnvironmentsResponse>(describeEnvironmentsRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DescribeEventsResponse DescribeEvents(DescribeEventsRequest request)
@@ -749,13 +717,11 @@ namespace Amazon.ElasticBeanstalk
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DescribeEventsResponse> DescribeEventsAsync(DescribeEventsRequest describeEventsRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DescribeEventsResponse> DescribeEventsAsync(DescribeEventsRequest describeEventsRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeEventsRequestMarshaller();
             var unmarshaller = DescribeEventsResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DescribeEventsRequest, DescribeEventsResponse>(describeEventsRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DescribeEventsRequest, DescribeEventsResponse>(describeEventsRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal ListAvailableSolutionStacksResponse ListAvailableSolutionStacks(ListAvailableSolutionStacksRequest request)
@@ -782,13 +748,11 @@ namespace Amazon.ElasticBeanstalk
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<ListAvailableSolutionStacksResponse> ListAvailableSolutionStacksAsync(ListAvailableSolutionStacksRequest listAvailableSolutionStacksRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<ListAvailableSolutionStacksResponse> ListAvailableSolutionStacksAsync(ListAvailableSolutionStacksRequest listAvailableSolutionStacksRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListAvailableSolutionStacksRequestMarshaller();
             var unmarshaller = ListAvailableSolutionStacksResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, ListAvailableSolutionStacksRequest, ListAvailableSolutionStacksResponse>(listAvailableSolutionStacksRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, ListAvailableSolutionStacksRequest, ListAvailableSolutionStacksResponse>(listAvailableSolutionStacksRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal RebuildEnvironmentResponse RebuildEnvironment(RebuildEnvironmentRequest request)
@@ -816,13 +780,11 @@ namespace Amazon.ElasticBeanstalk
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<RebuildEnvironmentResponse> RebuildEnvironmentAsync(RebuildEnvironmentRequest rebuildEnvironmentRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<RebuildEnvironmentResponse> RebuildEnvironmentAsync(RebuildEnvironmentRequest rebuildEnvironmentRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RebuildEnvironmentRequestMarshaller();
             var unmarshaller = RebuildEnvironmentResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, RebuildEnvironmentRequest, RebuildEnvironmentResponse>(rebuildEnvironmentRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, RebuildEnvironmentRequest, RebuildEnvironmentResponse>(rebuildEnvironmentRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal RequestEnvironmentInfoResponse RequestEnvironmentInfo(RequestEnvironmentInfoRequest request)
@@ -853,13 +815,11 @@ namespace Amazon.ElasticBeanstalk
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<RequestEnvironmentInfoResponse> RequestEnvironmentInfoAsync(RequestEnvironmentInfoRequest requestEnvironmentInfoRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<RequestEnvironmentInfoResponse> RequestEnvironmentInfoAsync(RequestEnvironmentInfoRequest requestEnvironmentInfoRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RequestEnvironmentInfoRequestMarshaller();
             var unmarshaller = RequestEnvironmentInfoResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, RequestEnvironmentInfoRequest, RequestEnvironmentInfoResponse>(requestEnvironmentInfoRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, RequestEnvironmentInfoRequest, RequestEnvironmentInfoResponse>(requestEnvironmentInfoRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal RestartAppServerResponse RestartAppServer(RestartAppServerRequest request)
@@ -884,13 +844,11 @@ namespace Amazon.ElasticBeanstalk
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<RestartAppServerResponse> RestartAppServerAsync(RestartAppServerRequest restartAppServerRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<RestartAppServerResponse> RestartAppServerAsync(RestartAppServerRequest restartAppServerRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RestartAppServerRequestMarshaller();
             var unmarshaller = RestartAppServerResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, RestartAppServerRequest, RestartAppServerResponse>(restartAppServerRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, RestartAppServerRequest, RestartAppServerResponse>(restartAppServerRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal RetrieveEnvironmentInfoResponse RetrieveEnvironmentInfo(RetrieveEnvironmentInfoRequest request)
@@ -921,13 +879,11 @@ namespace Amazon.ElasticBeanstalk
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<RetrieveEnvironmentInfoResponse> RetrieveEnvironmentInfoAsync(RetrieveEnvironmentInfoRequest retrieveEnvironmentInfoRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<RetrieveEnvironmentInfoResponse> RetrieveEnvironmentInfoAsync(RetrieveEnvironmentInfoRequest retrieveEnvironmentInfoRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RetrieveEnvironmentInfoRequestMarshaller();
             var unmarshaller = RetrieveEnvironmentInfoResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, RetrieveEnvironmentInfoRequest, RetrieveEnvironmentInfoResponse>(retrieveEnvironmentInfoRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, RetrieveEnvironmentInfoRequest, RetrieveEnvironmentInfoResponse>(retrieveEnvironmentInfoRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal SwapEnvironmentCNAMEsResponse SwapEnvironmentCNAMEs(SwapEnvironmentCNAMEsRequest request)
@@ -952,13 +908,11 @@ namespace Amazon.ElasticBeanstalk
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<SwapEnvironmentCNAMEsResponse> SwapEnvironmentCNAMEsAsync(SwapEnvironmentCNAMEsRequest swapEnvironmentCNAMEsRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<SwapEnvironmentCNAMEsResponse> SwapEnvironmentCNAMEsAsync(SwapEnvironmentCNAMEsRequest swapEnvironmentCNAMEsRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new SwapEnvironmentCNAMEsRequestMarshaller();
             var unmarshaller = SwapEnvironmentCNAMEsResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, SwapEnvironmentCNAMEsRequest, SwapEnvironmentCNAMEsResponse>(swapEnvironmentCNAMEsRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, SwapEnvironmentCNAMEsRequest, SwapEnvironmentCNAMEsResponse>(swapEnvironmentCNAMEsRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal TerminateEnvironmentResponse TerminateEnvironment(TerminateEnvironmentRequest request)
@@ -987,13 +941,11 @@ namespace Amazon.ElasticBeanstalk
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<TerminateEnvironmentResponse> TerminateEnvironmentAsync(TerminateEnvironmentRequest terminateEnvironmentRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<TerminateEnvironmentResponse> TerminateEnvironmentAsync(TerminateEnvironmentRequest terminateEnvironmentRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new TerminateEnvironmentRequestMarshaller();
             var unmarshaller = TerminateEnvironmentResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, TerminateEnvironmentRequest, TerminateEnvironmentResponse>(terminateEnvironmentRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, TerminateEnvironmentRequest, TerminateEnvironmentResponse>(terminateEnvironmentRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal UpdateApplicationResponse UpdateApplication(UpdateApplicationRequest request)
@@ -1021,13 +973,11 @@ namespace Amazon.ElasticBeanstalk
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<UpdateApplicationResponse> UpdateApplicationAsync(UpdateApplicationRequest updateApplicationRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<UpdateApplicationResponse> UpdateApplicationAsync(UpdateApplicationRequest updateApplicationRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateApplicationRequestMarshaller();
             var unmarshaller = UpdateApplicationResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, UpdateApplicationRequest, UpdateApplicationResponse>(updateApplicationRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, UpdateApplicationRequest, UpdateApplicationResponse>(updateApplicationRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal UpdateApplicationVersionResponse UpdateApplicationVersion(UpdateApplicationVersionRequest request)
@@ -1055,13 +1005,11 @@ namespace Amazon.ElasticBeanstalk
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<UpdateApplicationVersionResponse> UpdateApplicationVersionAsync(UpdateApplicationVersionRequest updateApplicationVersionRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<UpdateApplicationVersionResponse> UpdateApplicationVersionAsync(UpdateApplicationVersionRequest updateApplicationVersionRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateApplicationVersionRequestMarshaller();
             var unmarshaller = UpdateApplicationVersionResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, UpdateApplicationVersionRequest, UpdateApplicationVersionResponse>(updateApplicationVersionRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, UpdateApplicationVersionRequest, UpdateApplicationVersionResponse>(updateApplicationVersionRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal UpdateConfigurationTemplateResponse UpdateConfigurationTemplate(UpdateConfigurationTemplateRequest request)
@@ -1096,13 +1044,11 @@ namespace Amazon.ElasticBeanstalk
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<UpdateConfigurationTemplateResponse> UpdateConfigurationTemplateAsync(UpdateConfigurationTemplateRequest updateConfigurationTemplateRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<UpdateConfigurationTemplateResponse> UpdateConfigurationTemplateAsync(UpdateConfigurationTemplateRequest updateConfigurationTemplateRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateConfigurationTemplateRequestMarshaller();
             var unmarshaller = UpdateConfigurationTemplateResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, UpdateConfigurationTemplateRequest, UpdateConfigurationTemplateResponse>(updateConfigurationTemplateRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, UpdateConfigurationTemplateRequest, UpdateConfigurationTemplateResponse>(updateConfigurationTemplateRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal UpdateEnvironmentResponse UpdateEnvironment(UpdateEnvironmentRequest request)
@@ -1135,13 +1081,11 @@ namespace Amazon.ElasticBeanstalk
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<UpdateEnvironmentResponse> UpdateEnvironmentAsync(UpdateEnvironmentRequest updateEnvironmentRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<UpdateEnvironmentResponse> UpdateEnvironmentAsync(UpdateEnvironmentRequest updateEnvironmentRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateEnvironmentRequestMarshaller();
             var unmarshaller = UpdateEnvironmentResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, UpdateEnvironmentRequest, UpdateEnvironmentResponse>(updateEnvironmentRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, UpdateEnvironmentRequest, UpdateEnvironmentResponse>(updateEnvironmentRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal ValidateConfigurationSettingsResponse ValidateConfigurationSettings(ValidateConfigurationSettingsRequest request)
@@ -1172,13 +1116,11 @@ namespace Amazon.ElasticBeanstalk
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<ValidateConfigurationSettingsResponse> ValidateConfigurationSettingsAsync(ValidateConfigurationSettingsRequest validateConfigurationSettingsRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<ValidateConfigurationSettingsResponse> ValidateConfigurationSettingsAsync(ValidateConfigurationSettingsRequest validateConfigurationSettingsRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ValidateConfigurationSettingsRequestMarshaller();
             var unmarshaller = ValidateConfigurationSettingsResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, ValidateConfigurationSettingsRequest, ValidateConfigurationSettingsResponse>(validateConfigurationSettingsRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, ValidateConfigurationSettingsRequest, ValidateConfigurationSettingsResponse>(validateConfigurationSettingsRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
     }
 }

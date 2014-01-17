@@ -25,9 +25,9 @@ namespace Amazon.SimpleEmail
     ///  Amazon Simple Email Service <para> This is the API Reference for Amazon Simple Email Service (Amazon SES). This documentation is intended to
     /// be used in conjunction with the Amazon SES Developer Guide. </para> <para> For specific details on how to construct a service request,
     /// please consult the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide" >Amazon SES Developer Guide</a> .
-    /// </para> <para><b>NOTE:</b>The endpoint for Amazon SES is located at: https://email.us-east-1.amazonaws.com </para>
+    /// </para>
     /// </summary>
-    public interface IAmazonSimpleEmailService : IDisposable
+    public partial interface IAmazonSimpleEmailService : IDisposable
     {
 
 

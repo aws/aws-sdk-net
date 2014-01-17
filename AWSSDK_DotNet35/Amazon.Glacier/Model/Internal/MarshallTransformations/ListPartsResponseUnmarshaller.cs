@@ -84,8 +84,14 @@
               if (context.TestExpression("Parts", targetDepth))
               {
                 context.Read();
-                response.Parts = new List<PartListElement>();
-                        PartListElementUnmarshaller unmarshaller = PartListElementUnmarshaller.GetInstance();
+                
+                if (context.CurrentTokenType == JsonToken.Null)
+                {
+                    response.Parts = null;
+                    continue;
+                }
+                  response.Parts = new List<PartListElement>();
+                  PartListElementUnmarshaller unmarshaller = PartListElementUnmarshaller.GetInstance();
                 while (context.Read())
                 {
                   JsonToken token = context.CurrentTokenType;                

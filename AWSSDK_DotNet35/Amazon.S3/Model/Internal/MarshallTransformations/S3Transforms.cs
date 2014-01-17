@@ -152,7 +152,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             return string.Concat(path, "?", sb.ToString());
         }
-        internal static string FormatResourcePath(string uriResourcePath, Dictionary<string, string> queryParameters)
+        internal static string FormatResourcePath(string uriResourcePath, IDictionary<string, string> queryParameters)
         {
             if (queryParameters == null || queryParameters.Count == 0)
                 return uriResourcePath;

@@ -44,11 +44,12 @@ namespace Amazon.Glacier.Model
     /// Guide</i> .
     /// </para>
     /// </summary>
-    public partial class DeleteArchiveRequest : AmazonWebServiceRequest
+    public partial class DeleteArchiveRequest : AmazonGlacierRequest
     {
         private string accountId;
         private string vaultName;
         private string archiveId;
+
 
         /// <summary>
         /// The <c>AccountId</c> is the AWS Account ID. You can specify either the AWS Account ID or optionally a '-', in which case Amazon Glacier uses

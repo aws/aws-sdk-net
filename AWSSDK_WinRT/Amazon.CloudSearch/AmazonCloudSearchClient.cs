@@ -176,13 +176,11 @@ namespace Amazon.CloudSearch
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<CreateDomainResponse> CreateDomainAsync(CreateDomainRequest createDomainRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<CreateDomainResponse> CreateDomainAsync(CreateDomainRequest createDomainRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateDomainRequestMarshaller();
             var unmarshaller = CreateDomainResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, CreateDomainRequest, CreateDomainResponse>(createDomainRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, CreateDomainRequest, CreateDomainResponse>(createDomainRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DefineIndexFieldResponse DefineIndexField(DefineIndexFieldRequest request)
@@ -216,13 +214,11 @@ namespace Amazon.CloudSearch
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DefineIndexFieldResponse> DefineIndexFieldAsync(DefineIndexFieldRequest defineIndexFieldRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DefineIndexFieldResponse> DefineIndexFieldAsync(DefineIndexFieldRequest defineIndexFieldRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DefineIndexFieldRequestMarshaller();
             var unmarshaller = DefineIndexFieldResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DefineIndexFieldRequest, DefineIndexFieldResponse>(defineIndexFieldRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DefineIndexFieldRequest, DefineIndexFieldResponse>(defineIndexFieldRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DefineRankExpressionResponse DefineRankExpression(DefineRankExpressionRequest request)
@@ -256,13 +252,11 @@ namespace Amazon.CloudSearch
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DefineRankExpressionResponse> DefineRankExpressionAsync(DefineRankExpressionRequest defineRankExpressionRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DefineRankExpressionResponse> DefineRankExpressionAsync(DefineRankExpressionRequest defineRankExpressionRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DefineRankExpressionRequestMarshaller();
             var unmarshaller = DefineRankExpressionResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DefineRankExpressionRequest, DefineRankExpressionResponse>(defineRankExpressionRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DefineRankExpressionRequest, DefineRankExpressionResponse>(defineRankExpressionRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DeleteDomainResponse DeleteDomain(DeleteDomainRequest request)
@@ -292,13 +286,11 @@ namespace Amazon.CloudSearch
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DeleteDomainResponse> DeleteDomainAsync(DeleteDomainRequest deleteDomainRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DeleteDomainResponse> DeleteDomainAsync(DeleteDomainRequest deleteDomainRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteDomainRequestMarshaller();
             var unmarshaller = DeleteDomainResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DeleteDomainRequest, DeleteDomainResponse>(deleteDomainRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DeleteDomainRequest, DeleteDomainResponse>(deleteDomainRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DeleteIndexFieldResponse DeleteIndexField(DeleteIndexFieldRequest request)
@@ -330,13 +322,11 @@ namespace Amazon.CloudSearch
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DeleteIndexFieldResponse> DeleteIndexFieldAsync(DeleteIndexFieldRequest deleteIndexFieldRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DeleteIndexFieldResponse> DeleteIndexFieldAsync(DeleteIndexFieldRequest deleteIndexFieldRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteIndexFieldRequestMarshaller();
             var unmarshaller = DeleteIndexFieldResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DeleteIndexFieldRequest, DeleteIndexFieldResponse>(deleteIndexFieldRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DeleteIndexFieldRequest, DeleteIndexFieldResponse>(deleteIndexFieldRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DeleteRankExpressionResponse DeleteRankExpression(DeleteRankExpressionRequest request)
@@ -368,13 +358,11 @@ namespace Amazon.CloudSearch
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DeleteRankExpressionResponse> DeleteRankExpressionAsync(DeleteRankExpressionRequest deleteRankExpressionRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DeleteRankExpressionResponse> DeleteRankExpressionAsync(DeleteRankExpressionRequest deleteRankExpressionRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteRankExpressionRequestMarshaller();
             var unmarshaller = DeleteRankExpressionResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DeleteRankExpressionRequest, DeleteRankExpressionResponse>(deleteRankExpressionRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DeleteRankExpressionRequest, DeleteRankExpressionResponse>(deleteRankExpressionRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DescribeDefaultSearchFieldResponse DescribeDefaultSearchField(DescribeDefaultSearchFieldRequest request)
@@ -405,13 +393,11 @@ namespace Amazon.CloudSearch
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DescribeDefaultSearchFieldResponse> DescribeDefaultSearchFieldAsync(DescribeDefaultSearchFieldRequest describeDefaultSearchFieldRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DescribeDefaultSearchFieldResponse> DescribeDefaultSearchFieldAsync(DescribeDefaultSearchFieldRequest describeDefaultSearchFieldRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeDefaultSearchFieldRequestMarshaller();
             var unmarshaller = DescribeDefaultSearchFieldResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DescribeDefaultSearchFieldRequest, DescribeDefaultSearchFieldResponse>(describeDefaultSearchFieldRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DescribeDefaultSearchFieldRequest, DescribeDefaultSearchFieldResponse>(describeDefaultSearchFieldRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DescribeDomainsResponse DescribeDomains(DescribeDomainsRequest request)
@@ -442,13 +428,11 @@ namespace Amazon.CloudSearch
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DescribeDomainsResponse> DescribeDomainsAsync(DescribeDomainsRequest describeDomainsRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DescribeDomainsResponse> DescribeDomainsAsync(DescribeDomainsRequest describeDomainsRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeDomainsRequestMarshaller();
             var unmarshaller = DescribeDomainsResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DescribeDomainsRequest, DescribeDomainsResponse>(describeDomainsRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DescribeDomainsRequest, DescribeDomainsResponse>(describeDomainsRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DescribeIndexFieldsResponse DescribeIndexFields(DescribeIndexFieldsRequest request)
@@ -480,13 +464,11 @@ namespace Amazon.CloudSearch
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DescribeIndexFieldsResponse> DescribeIndexFieldsAsync(DescribeIndexFieldsRequest describeIndexFieldsRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DescribeIndexFieldsResponse> DescribeIndexFieldsAsync(DescribeIndexFieldsRequest describeIndexFieldsRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeIndexFieldsRequestMarshaller();
             var unmarshaller = DescribeIndexFieldsResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DescribeIndexFieldsRequest, DescribeIndexFieldsResponse>(describeIndexFieldsRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DescribeIndexFieldsRequest, DescribeIndexFieldsResponse>(describeIndexFieldsRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DescribeRankExpressionsResponse DescribeRankExpressions(DescribeRankExpressionsRequest request)
@@ -518,13 +500,11 @@ namespace Amazon.CloudSearch
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DescribeRankExpressionsResponse> DescribeRankExpressionsAsync(DescribeRankExpressionsRequest describeRankExpressionsRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DescribeRankExpressionsResponse> DescribeRankExpressionsAsync(DescribeRankExpressionsRequest describeRankExpressionsRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeRankExpressionsRequestMarshaller();
             var unmarshaller = DescribeRankExpressionsResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DescribeRankExpressionsRequest, DescribeRankExpressionsResponse>(describeRankExpressionsRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DescribeRankExpressionsRequest, DescribeRankExpressionsResponse>(describeRankExpressionsRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DescribeServiceAccessPoliciesResponse DescribeServiceAccessPolicies(DescribeServiceAccessPoliciesRequest request)
@@ -555,13 +535,11 @@ namespace Amazon.CloudSearch
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DescribeServiceAccessPoliciesResponse> DescribeServiceAccessPoliciesAsync(DescribeServiceAccessPoliciesRequest describeServiceAccessPoliciesRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DescribeServiceAccessPoliciesResponse> DescribeServiceAccessPoliciesAsync(DescribeServiceAccessPoliciesRequest describeServiceAccessPoliciesRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeServiceAccessPoliciesRequestMarshaller();
             var unmarshaller = DescribeServiceAccessPoliciesResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DescribeServiceAccessPoliciesRequest, DescribeServiceAccessPoliciesResponse>(describeServiceAccessPoliciesRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DescribeServiceAccessPoliciesRequest, DescribeServiceAccessPoliciesResponse>(describeServiceAccessPoliciesRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DescribeStemmingOptionsResponse DescribeStemmingOptions(DescribeStemmingOptionsRequest request)
@@ -592,13 +570,11 @@ namespace Amazon.CloudSearch
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DescribeStemmingOptionsResponse> DescribeStemmingOptionsAsync(DescribeStemmingOptionsRequest describeStemmingOptionsRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DescribeStemmingOptionsResponse> DescribeStemmingOptionsAsync(DescribeStemmingOptionsRequest describeStemmingOptionsRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeStemmingOptionsRequestMarshaller();
             var unmarshaller = DescribeStemmingOptionsResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DescribeStemmingOptionsRequest, DescribeStemmingOptionsResponse>(describeStemmingOptionsRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DescribeStemmingOptionsRequest, DescribeStemmingOptionsResponse>(describeStemmingOptionsRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DescribeStopwordOptionsResponse DescribeStopwordOptions(DescribeStopwordOptionsRequest request)
@@ -629,13 +605,11 @@ namespace Amazon.CloudSearch
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DescribeStopwordOptionsResponse> DescribeStopwordOptionsAsync(DescribeStopwordOptionsRequest describeStopwordOptionsRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DescribeStopwordOptionsResponse> DescribeStopwordOptionsAsync(DescribeStopwordOptionsRequest describeStopwordOptionsRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeStopwordOptionsRequestMarshaller();
             var unmarshaller = DescribeStopwordOptionsResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DescribeStopwordOptionsRequest, DescribeStopwordOptionsResponse>(describeStopwordOptionsRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DescribeStopwordOptionsRequest, DescribeStopwordOptionsResponse>(describeStopwordOptionsRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DescribeSynonymOptionsResponse DescribeSynonymOptions(DescribeSynonymOptionsRequest request)
@@ -666,13 +640,11 @@ namespace Amazon.CloudSearch
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DescribeSynonymOptionsResponse> DescribeSynonymOptionsAsync(DescribeSynonymOptionsRequest describeSynonymOptionsRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DescribeSynonymOptionsResponse> DescribeSynonymOptionsAsync(DescribeSynonymOptionsRequest describeSynonymOptionsRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeSynonymOptionsRequestMarshaller();
             var unmarshaller = DescribeSynonymOptionsResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DescribeSynonymOptionsRequest, DescribeSynonymOptionsResponse>(describeSynonymOptionsRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DescribeSynonymOptionsRequest, DescribeSynonymOptionsResponse>(describeSynonymOptionsRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal IndexDocumentsResponse IndexDocuments(IndexDocumentsRequest request)
@@ -705,13 +677,11 @@ namespace Amazon.CloudSearch
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<IndexDocumentsResponse> IndexDocumentsAsync(IndexDocumentsRequest indexDocumentsRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<IndexDocumentsResponse> IndexDocumentsAsync(IndexDocumentsRequest indexDocumentsRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new IndexDocumentsRequestMarshaller();
             var unmarshaller = IndexDocumentsResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, IndexDocumentsRequest, IndexDocumentsResponse>(indexDocumentsRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, IndexDocumentsRequest, IndexDocumentsResponse>(indexDocumentsRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal UpdateDefaultSearchFieldResponse UpdateDefaultSearchField(UpdateDefaultSearchFieldRequest request)
@@ -745,13 +715,11 @@ namespace Amazon.CloudSearch
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<UpdateDefaultSearchFieldResponse> UpdateDefaultSearchFieldAsync(UpdateDefaultSearchFieldRequest updateDefaultSearchFieldRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<UpdateDefaultSearchFieldResponse> UpdateDefaultSearchFieldAsync(UpdateDefaultSearchFieldRequest updateDefaultSearchFieldRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateDefaultSearchFieldRequestMarshaller();
             var unmarshaller = UpdateDefaultSearchFieldResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, UpdateDefaultSearchFieldRequest, UpdateDefaultSearchFieldResponse>(updateDefaultSearchFieldRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, UpdateDefaultSearchFieldRequest, UpdateDefaultSearchFieldResponse>(updateDefaultSearchFieldRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal UpdateServiceAccessPoliciesResponse UpdateServiceAccessPolicies(UpdateServiceAccessPoliciesRequest request)
@@ -785,13 +753,11 @@ namespace Amazon.CloudSearch
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<UpdateServiceAccessPoliciesResponse> UpdateServiceAccessPoliciesAsync(UpdateServiceAccessPoliciesRequest updateServiceAccessPoliciesRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<UpdateServiceAccessPoliciesResponse> UpdateServiceAccessPoliciesAsync(UpdateServiceAccessPoliciesRequest updateServiceAccessPoliciesRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateServiceAccessPoliciesRequestMarshaller();
             var unmarshaller = UpdateServiceAccessPoliciesResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, UpdateServiceAccessPoliciesRequest, UpdateServiceAccessPoliciesResponse>(updateServiceAccessPoliciesRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, UpdateServiceAccessPoliciesRequest, UpdateServiceAccessPoliciesResponse>(updateServiceAccessPoliciesRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal UpdateStemmingOptionsResponse UpdateStemmingOptions(UpdateStemmingOptionsRequest request)
@@ -825,13 +791,11 @@ namespace Amazon.CloudSearch
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<UpdateStemmingOptionsResponse> UpdateStemmingOptionsAsync(UpdateStemmingOptionsRequest updateStemmingOptionsRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<UpdateStemmingOptionsResponse> UpdateStemmingOptionsAsync(UpdateStemmingOptionsRequest updateStemmingOptionsRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateStemmingOptionsRequestMarshaller();
             var unmarshaller = UpdateStemmingOptionsResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, UpdateStemmingOptionsRequest, UpdateStemmingOptionsResponse>(updateStemmingOptionsRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, UpdateStemmingOptionsRequest, UpdateStemmingOptionsResponse>(updateStemmingOptionsRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal UpdateStopwordOptionsResponse UpdateStopwordOptions(UpdateStopwordOptionsRequest request)
@@ -865,13 +829,11 @@ namespace Amazon.CloudSearch
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<UpdateStopwordOptionsResponse> UpdateStopwordOptionsAsync(UpdateStopwordOptionsRequest updateStopwordOptionsRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<UpdateStopwordOptionsResponse> UpdateStopwordOptionsAsync(UpdateStopwordOptionsRequest updateStopwordOptionsRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateStopwordOptionsRequestMarshaller();
             var unmarshaller = UpdateStopwordOptionsResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, UpdateStopwordOptionsRequest, UpdateStopwordOptionsResponse>(updateStopwordOptionsRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, UpdateStopwordOptionsRequest, UpdateStopwordOptionsResponse>(updateStopwordOptionsRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal UpdateSynonymOptionsResponse UpdateSynonymOptions(UpdateSynonymOptionsRequest request)
@@ -905,13 +867,11 @@ namespace Amazon.CloudSearch
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<UpdateSynonymOptionsResponse> UpdateSynonymOptionsAsync(UpdateSynonymOptionsRequest updateSynonymOptionsRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<UpdateSynonymOptionsResponse> UpdateSynonymOptionsAsync(UpdateSynonymOptionsRequest updateSynonymOptionsRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateSynonymOptionsRequestMarshaller();
             var unmarshaller = UpdateSynonymOptionsResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, UpdateSynonymOptionsRequest, UpdateSynonymOptionsResponse>(updateSynonymOptionsRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, UpdateSynonymOptionsRequest, UpdateSynonymOptionsResponse>(updateSynonymOptionsRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
     }
 }

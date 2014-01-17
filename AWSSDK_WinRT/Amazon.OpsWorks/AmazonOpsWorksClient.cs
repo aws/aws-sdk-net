@@ -193,13 +193,11 @@ namespace Amazon.OpsWorks
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<AssignVolumeResponse> AssignVolumeAsync(AssignVolumeRequest assignVolumeRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<AssignVolumeResponse> AssignVolumeAsync(AssignVolumeRequest assignVolumeRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AssignVolumeRequestMarshaller();
             var unmarshaller = AssignVolumeResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, AssignVolumeRequest, AssignVolumeResponse>(assignVolumeRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, AssignVolumeRequest, AssignVolumeResponse>(assignVolumeRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal AssociateElasticIpResponse AssociateElasticIp(AssociateElasticIpRequest request)
@@ -229,13 +227,11 @@ namespace Amazon.OpsWorks
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<AssociateElasticIpResponse> AssociateElasticIpAsync(AssociateElasticIpRequest associateElasticIpRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<AssociateElasticIpResponse> AssociateElasticIpAsync(AssociateElasticIpRequest associateElasticIpRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AssociateElasticIpRequestMarshaller();
             var unmarshaller = AssociateElasticIpResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, AssociateElasticIpRequest, AssociateElasticIpResponse>(associateElasticIpRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, AssociateElasticIpRequest, AssociateElasticIpResponse>(associateElasticIpRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal AttachElasticLoadBalancerResponse AttachElasticLoadBalancer(AttachElasticLoadBalancerRequest request)
@@ -266,13 +262,11 @@ namespace Amazon.OpsWorks
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<AttachElasticLoadBalancerResponse> AttachElasticLoadBalancerAsync(AttachElasticLoadBalancerRequest attachElasticLoadBalancerRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<AttachElasticLoadBalancerResponse> AttachElasticLoadBalancerAsync(AttachElasticLoadBalancerRequest attachElasticLoadBalancerRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AttachElasticLoadBalancerRequestMarshaller();
             var unmarshaller = AttachElasticLoadBalancerResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, AttachElasticLoadBalancerRequest, AttachElasticLoadBalancerResponse>(attachElasticLoadBalancerRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, AttachElasticLoadBalancerRequest, AttachElasticLoadBalancerResponse>(attachElasticLoadBalancerRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal CloneStackResponse CloneStack(CloneStackRequest request)
@@ -304,13 +298,11 @@ namespace Amazon.OpsWorks
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<CloneStackResponse> CloneStackAsync(CloneStackRequest cloneStackRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<CloneStackResponse> CloneStackAsync(CloneStackRequest cloneStackRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CloneStackRequestMarshaller();
             var unmarshaller = CloneStackResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, CloneStackRequest, CloneStackResponse>(cloneStackRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, CloneStackRequest, CloneStackResponse>(cloneStackRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal CreateAppResponse CreateApp(CreateAppRequest request)
@@ -341,13 +333,11 @@ namespace Amazon.OpsWorks
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<CreateAppResponse> CreateAppAsync(CreateAppRequest createAppRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<CreateAppResponse> CreateAppAsync(CreateAppRequest createAppRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateAppRequestMarshaller();
             var unmarshaller = CreateAppResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, CreateAppRequest, CreateAppResponse>(createAppRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, CreateAppRequest, CreateAppResponse>(createAppRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal CreateDeploymentResponse CreateDeployment(CreateDeploymentRequest request)
@@ -387,13 +377,11 @@ namespace Amazon.OpsWorks
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<CreateDeploymentResponse> CreateDeploymentAsync(CreateDeploymentRequest createDeploymentRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<CreateDeploymentResponse> CreateDeploymentAsync(CreateDeploymentRequest createDeploymentRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateDeploymentRequestMarshaller();
             var unmarshaller = CreateDeploymentResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, CreateDeploymentRequest, CreateDeploymentResponse>(createDeploymentRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, CreateDeploymentRequest, CreateDeploymentResponse>(createDeploymentRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal CreateInstanceResponse CreateInstance(CreateInstanceRequest request)
@@ -425,13 +413,11 @@ namespace Amazon.OpsWorks
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<CreateInstanceResponse> CreateInstanceAsync(CreateInstanceRequest createInstanceRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<CreateInstanceResponse> CreateInstanceAsync(CreateInstanceRequest createInstanceRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateInstanceRequestMarshaller();
             var unmarshaller = CreateInstanceResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, CreateInstanceRequest, CreateInstanceResponse>(createInstanceRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, CreateInstanceRequest, CreateInstanceResponse>(createInstanceRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal CreateLayerResponse CreateLayer(CreateLayerRequest request)
@@ -465,13 +451,11 @@ namespace Amazon.OpsWorks
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<CreateLayerResponse> CreateLayerAsync(CreateLayerRequest createLayerRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<CreateLayerResponse> CreateLayerAsync(CreateLayerRequest createLayerRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateLayerRequestMarshaller();
             var unmarshaller = CreateLayerResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, CreateLayerRequest, CreateLayerResponse>(createLayerRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, CreateLayerRequest, CreateLayerResponse>(createLayerRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal CreateStackResponse CreateStack(CreateStackRequest request)
@@ -500,13 +484,11 @@ namespace Amazon.OpsWorks
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<CreateStackResponse> CreateStackAsync(CreateStackRequest createStackRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<CreateStackResponse> CreateStackAsync(CreateStackRequest createStackRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateStackRequestMarshaller();
             var unmarshaller = CreateStackResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, CreateStackRequest, CreateStackResponse>(createStackRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, CreateStackRequest, CreateStackResponse>(createStackRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal CreateUserProfileResponse CreateUserProfile(CreateUserProfileRequest request)
@@ -536,13 +518,11 @@ namespace Amazon.OpsWorks
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<CreateUserProfileResponse> CreateUserProfileAsync(CreateUserProfileRequest createUserProfileRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<CreateUserProfileResponse> CreateUserProfileAsync(CreateUserProfileRequest createUserProfileRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateUserProfileRequestMarshaller();
             var unmarshaller = CreateUserProfileResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, CreateUserProfileRequest, CreateUserProfileResponse>(createUserProfileRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, CreateUserProfileRequest, CreateUserProfileResponse>(createUserProfileRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DeleteAppResponse DeleteApp(DeleteAppRequest request)
@@ -570,13 +550,11 @@ namespace Amazon.OpsWorks
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DeleteAppResponse> DeleteAppAsync(DeleteAppRequest deleteAppRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DeleteAppResponse> DeleteAppAsync(DeleteAppRequest deleteAppRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteAppRequestMarshaller();
             var unmarshaller = DeleteAppResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DeleteAppRequest, DeleteAppResponse>(deleteAppRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DeleteAppRequest, DeleteAppResponse>(deleteAppRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DeleteInstanceResponse DeleteInstance(DeleteInstanceRequest request)
@@ -606,13 +584,11 @@ namespace Amazon.OpsWorks
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DeleteInstanceResponse> DeleteInstanceAsync(DeleteInstanceRequest deleteInstanceRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DeleteInstanceResponse> DeleteInstanceAsync(DeleteInstanceRequest deleteInstanceRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteInstanceRequestMarshaller();
             var unmarshaller = DeleteInstanceResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DeleteInstanceRequest, DeleteInstanceResponse>(deleteInstanceRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DeleteInstanceRequest, DeleteInstanceResponse>(deleteInstanceRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DeleteLayerResponse DeleteLayer(DeleteLayerRequest request)
@@ -641,13 +617,11 @@ namespace Amazon.OpsWorks
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DeleteLayerResponse> DeleteLayerAsync(DeleteLayerRequest deleteLayerRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DeleteLayerResponse> DeleteLayerAsync(DeleteLayerRequest deleteLayerRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteLayerRequestMarshaller();
             var unmarshaller = DeleteLayerResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DeleteLayerRequest, DeleteLayerResponse>(deleteLayerRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DeleteLayerRequest, DeleteLayerResponse>(deleteLayerRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DeleteStackResponse DeleteStack(DeleteStackRequest request)
@@ -676,13 +650,11 @@ namespace Amazon.OpsWorks
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DeleteStackResponse> DeleteStackAsync(DeleteStackRequest deleteStackRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DeleteStackResponse> DeleteStackAsync(DeleteStackRequest deleteStackRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteStackRequestMarshaller();
             var unmarshaller = DeleteStackResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DeleteStackRequest, DeleteStackResponse>(deleteStackRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DeleteStackRequest, DeleteStackResponse>(deleteStackRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DeleteUserProfileResponse DeleteUserProfile(DeleteUserProfileRequest request)
@@ -711,13 +683,11 @@ namespace Amazon.OpsWorks
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DeleteUserProfileResponse> DeleteUserProfileAsync(DeleteUserProfileRequest deleteUserProfileRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DeleteUserProfileResponse> DeleteUserProfileAsync(DeleteUserProfileRequest deleteUserProfileRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteUserProfileRequestMarshaller();
             var unmarshaller = DeleteUserProfileResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DeleteUserProfileRequest, DeleteUserProfileResponse>(deleteUserProfileRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DeleteUserProfileRequest, DeleteUserProfileResponse>(deleteUserProfileRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DeregisterElasticIpResponse DeregisterElasticIp(DeregisterElasticIpRequest request)
@@ -747,13 +717,11 @@ namespace Amazon.OpsWorks
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DeregisterElasticIpResponse> DeregisterElasticIpAsync(DeregisterElasticIpRequest deregisterElasticIpRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DeregisterElasticIpResponse> DeregisterElasticIpAsync(DeregisterElasticIpRequest deregisterElasticIpRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeregisterElasticIpRequestMarshaller();
             var unmarshaller = DeregisterElasticIpResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DeregisterElasticIpRequest, DeregisterElasticIpResponse>(deregisterElasticIpRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DeregisterElasticIpRequest, DeregisterElasticIpResponse>(deregisterElasticIpRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DeregisterVolumeResponse DeregisterVolume(DeregisterVolumeRequest request)
@@ -783,13 +751,11 @@ namespace Amazon.OpsWorks
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DeregisterVolumeResponse> DeregisterVolumeAsync(DeregisterVolumeRequest deregisterVolumeRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DeregisterVolumeResponse> DeregisterVolumeAsync(DeregisterVolumeRequest deregisterVolumeRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeregisterVolumeRequestMarshaller();
             var unmarshaller = DeregisterVolumeResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DeregisterVolumeRequest, DeregisterVolumeResponse>(deregisterVolumeRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DeregisterVolumeRequest, DeregisterVolumeResponse>(deregisterVolumeRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DescribeAppsResponse DescribeApps(DescribeAppsRequest request)
@@ -821,13 +787,11 @@ namespace Amazon.OpsWorks
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DescribeAppsResponse> DescribeAppsAsync(DescribeAppsRequest describeAppsRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DescribeAppsResponse> DescribeAppsAsync(DescribeAppsRequest describeAppsRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeAppsRequestMarshaller();
             var unmarshaller = DescribeAppsResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DescribeAppsRequest, DescribeAppsResponse>(describeAppsRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DescribeAppsRequest, DescribeAppsResponse>(describeAppsRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DescribeCommandsResponse DescribeCommands(DescribeCommandsRequest request)
@@ -859,13 +823,11 @@ namespace Amazon.OpsWorks
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DescribeCommandsResponse> DescribeCommandsAsync(DescribeCommandsRequest describeCommandsRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DescribeCommandsResponse> DescribeCommandsAsync(DescribeCommandsRequest describeCommandsRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeCommandsRequestMarshaller();
             var unmarshaller = DescribeCommandsResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DescribeCommandsRequest, DescribeCommandsResponse>(describeCommandsRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DescribeCommandsRequest, DescribeCommandsResponse>(describeCommandsRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DescribeDeploymentsResponse DescribeDeployments(DescribeDeploymentsRequest request)
@@ -897,13 +859,11 @@ namespace Amazon.OpsWorks
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DescribeDeploymentsResponse> DescribeDeploymentsAsync(DescribeDeploymentsRequest describeDeploymentsRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DescribeDeploymentsResponse> DescribeDeploymentsAsync(DescribeDeploymentsRequest describeDeploymentsRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeDeploymentsRequestMarshaller();
             var unmarshaller = DescribeDeploymentsResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DescribeDeploymentsRequest, DescribeDeploymentsResponse>(describeDeploymentsRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DescribeDeploymentsRequest, DescribeDeploymentsResponse>(describeDeploymentsRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DescribeElasticIpsResponse DescribeElasticIps(DescribeElasticIpsRequest request)
@@ -936,13 +896,11 @@ namespace Amazon.OpsWorks
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DescribeElasticIpsResponse> DescribeElasticIpsAsync(DescribeElasticIpsRequest describeElasticIpsRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DescribeElasticIpsResponse> DescribeElasticIpsAsync(DescribeElasticIpsRequest describeElasticIpsRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeElasticIpsRequestMarshaller();
             var unmarshaller = DescribeElasticIpsResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DescribeElasticIpsRequest, DescribeElasticIpsResponse>(describeElasticIpsRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DescribeElasticIpsRequest, DescribeElasticIpsResponse>(describeElasticIpsRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DescribeElasticLoadBalancersResponse DescribeElasticLoadBalancers(DescribeElasticLoadBalancersRequest request)
@@ -974,13 +932,11 @@ namespace Amazon.OpsWorks
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DescribeElasticLoadBalancersResponse> DescribeElasticLoadBalancersAsync(DescribeElasticLoadBalancersRequest describeElasticLoadBalancersRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DescribeElasticLoadBalancersResponse> DescribeElasticLoadBalancersAsync(DescribeElasticLoadBalancersRequest describeElasticLoadBalancersRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeElasticLoadBalancersRequestMarshaller();
             var unmarshaller = DescribeElasticLoadBalancersResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DescribeElasticLoadBalancersRequest, DescribeElasticLoadBalancersResponse>(describeElasticLoadBalancersRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DescribeElasticLoadBalancersRequest, DescribeElasticLoadBalancersResponse>(describeElasticLoadBalancersRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DescribeInstancesResponse DescribeInstances(DescribeInstancesRequest request)
@@ -1012,13 +968,11 @@ namespace Amazon.OpsWorks
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DescribeInstancesResponse> DescribeInstancesAsync(DescribeInstancesRequest describeInstancesRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DescribeInstancesResponse> DescribeInstancesAsync(DescribeInstancesRequest describeInstancesRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeInstancesRequestMarshaller();
             var unmarshaller = DescribeInstancesResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DescribeInstancesRequest, DescribeInstancesResponse>(describeInstancesRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DescribeInstancesRequest, DescribeInstancesResponse>(describeInstancesRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DescribeLayersResponse DescribeLayers(DescribeLayersRequest request)
@@ -1050,13 +1004,11 @@ namespace Amazon.OpsWorks
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DescribeLayersResponse> DescribeLayersAsync(DescribeLayersRequest describeLayersRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DescribeLayersResponse> DescribeLayersAsync(DescribeLayersRequest describeLayersRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeLayersRequestMarshaller();
             var unmarshaller = DescribeLayersResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DescribeLayersRequest, DescribeLayersResponse>(describeLayersRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DescribeLayersRequest, DescribeLayersResponse>(describeLayersRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DescribeLoadBasedAutoScalingResponse DescribeLoadBasedAutoScaling(DescribeLoadBasedAutoScalingRequest request)
@@ -1088,13 +1040,11 @@ namespace Amazon.OpsWorks
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DescribeLoadBasedAutoScalingResponse> DescribeLoadBasedAutoScalingAsync(DescribeLoadBasedAutoScalingRequest describeLoadBasedAutoScalingRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DescribeLoadBasedAutoScalingResponse> DescribeLoadBasedAutoScalingAsync(DescribeLoadBasedAutoScalingRequest describeLoadBasedAutoScalingRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeLoadBasedAutoScalingRequestMarshaller();
             var unmarshaller = DescribeLoadBasedAutoScalingResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DescribeLoadBasedAutoScalingRequest, DescribeLoadBasedAutoScalingResponse>(describeLoadBasedAutoScalingRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DescribeLoadBasedAutoScalingRequest, DescribeLoadBasedAutoScalingResponse>(describeLoadBasedAutoScalingRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DescribeMyUserProfileResponse DescribeMyUserProfile(DescribeMyUserProfileRequest request)
@@ -1122,13 +1072,11 @@ namespace Amazon.OpsWorks
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DescribeMyUserProfileResponse> DescribeMyUserProfileAsync(DescribeMyUserProfileRequest describeMyUserProfileRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DescribeMyUserProfileResponse> DescribeMyUserProfileAsync(DescribeMyUserProfileRequest describeMyUserProfileRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeMyUserProfileRequestMarshaller();
             var unmarshaller = DescribeMyUserProfileResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DescribeMyUserProfileRequest, DescribeMyUserProfileResponse>(describeMyUserProfileRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DescribeMyUserProfileRequest, DescribeMyUserProfileResponse>(describeMyUserProfileRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DescribePermissionsResponse DescribePermissions(DescribePermissionsRequest request)
@@ -1161,13 +1109,11 @@ namespace Amazon.OpsWorks
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DescribePermissionsResponse> DescribePermissionsAsync(DescribePermissionsRequest describePermissionsRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DescribePermissionsResponse> DescribePermissionsAsync(DescribePermissionsRequest describePermissionsRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribePermissionsRequestMarshaller();
             var unmarshaller = DescribePermissionsResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DescribePermissionsRequest, DescribePermissionsResponse>(describePermissionsRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DescribePermissionsRequest, DescribePermissionsResponse>(describePermissionsRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DescribeRaidArraysResponse DescribeRaidArrays(DescribeRaidArraysRequest request)
@@ -1199,13 +1145,11 @@ namespace Amazon.OpsWorks
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DescribeRaidArraysResponse> DescribeRaidArraysAsync(DescribeRaidArraysRequest describeRaidArraysRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DescribeRaidArraysResponse> DescribeRaidArraysAsync(DescribeRaidArraysRequest describeRaidArraysRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeRaidArraysRequestMarshaller();
             var unmarshaller = DescribeRaidArraysResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DescribeRaidArraysRequest, DescribeRaidArraysResponse>(describeRaidArraysRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DescribeRaidArraysRequest, DescribeRaidArraysResponse>(describeRaidArraysRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DescribeServiceErrorsResponse DescribeServiceErrors(DescribeServiceErrorsRequest request)
@@ -1238,13 +1182,11 @@ namespace Amazon.OpsWorks
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DescribeServiceErrorsResponse> DescribeServiceErrorsAsync(DescribeServiceErrorsRequest describeServiceErrorsRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DescribeServiceErrorsResponse> DescribeServiceErrorsAsync(DescribeServiceErrorsRequest describeServiceErrorsRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeServiceErrorsRequestMarshaller();
             var unmarshaller = DescribeServiceErrorsResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DescribeServiceErrorsRequest, DescribeServiceErrorsResponse>(describeServiceErrorsRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DescribeServiceErrorsRequest, DescribeServiceErrorsResponse>(describeServiceErrorsRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DescribeStacksResponse DescribeStacks(DescribeStacksRequest request)
@@ -1277,13 +1219,11 @@ namespace Amazon.OpsWorks
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DescribeStacksResponse> DescribeStacksAsync(DescribeStacksRequest describeStacksRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DescribeStacksResponse> DescribeStacksAsync(DescribeStacksRequest describeStacksRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeStacksRequestMarshaller();
             var unmarshaller = DescribeStacksResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DescribeStacksRequest, DescribeStacksResponse>(describeStacksRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DescribeStacksRequest, DescribeStacksResponse>(describeStacksRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DescribeStackSummaryResponse DescribeStackSummary(DescribeStackSummaryRequest request)
@@ -1315,13 +1255,11 @@ namespace Amazon.OpsWorks
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DescribeStackSummaryResponse> DescribeStackSummaryAsync(DescribeStackSummaryRequest describeStackSummaryRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DescribeStackSummaryResponse> DescribeStackSummaryAsync(DescribeStackSummaryRequest describeStackSummaryRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeStackSummaryRequestMarshaller();
             var unmarshaller = DescribeStackSummaryResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DescribeStackSummaryRequest, DescribeStackSummaryResponse>(describeStackSummaryRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DescribeStackSummaryRequest, DescribeStackSummaryResponse>(describeStackSummaryRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DescribeTimeBasedAutoScalingResponse DescribeTimeBasedAutoScaling(DescribeTimeBasedAutoScalingRequest request)
@@ -1353,13 +1291,11 @@ namespace Amazon.OpsWorks
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DescribeTimeBasedAutoScalingResponse> DescribeTimeBasedAutoScalingAsync(DescribeTimeBasedAutoScalingRequest describeTimeBasedAutoScalingRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DescribeTimeBasedAutoScalingResponse> DescribeTimeBasedAutoScalingAsync(DescribeTimeBasedAutoScalingRequest describeTimeBasedAutoScalingRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeTimeBasedAutoScalingRequestMarshaller();
             var unmarshaller = DescribeTimeBasedAutoScalingResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DescribeTimeBasedAutoScalingRequest, DescribeTimeBasedAutoScalingResponse>(describeTimeBasedAutoScalingRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DescribeTimeBasedAutoScalingRequest, DescribeTimeBasedAutoScalingResponse>(describeTimeBasedAutoScalingRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DescribeUserProfilesResponse DescribeUserProfiles(DescribeUserProfilesRequest request)
@@ -1390,13 +1326,11 @@ namespace Amazon.OpsWorks
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DescribeUserProfilesResponse> DescribeUserProfilesAsync(DescribeUserProfilesRequest describeUserProfilesRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DescribeUserProfilesResponse> DescribeUserProfilesAsync(DescribeUserProfilesRequest describeUserProfilesRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeUserProfilesRequestMarshaller();
             var unmarshaller = DescribeUserProfilesResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DescribeUserProfilesRequest, DescribeUserProfilesResponse>(describeUserProfilesRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DescribeUserProfilesRequest, DescribeUserProfilesResponse>(describeUserProfilesRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DescribeVolumesResponse DescribeVolumes(DescribeVolumesRequest request)
@@ -1428,13 +1362,11 @@ namespace Amazon.OpsWorks
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DescribeVolumesResponse> DescribeVolumesAsync(DescribeVolumesRequest describeVolumesRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DescribeVolumesResponse> DescribeVolumesAsync(DescribeVolumesRequest describeVolumesRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeVolumesRequestMarshaller();
             var unmarshaller = DescribeVolumesResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DescribeVolumesRequest, DescribeVolumesResponse>(describeVolumesRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DescribeVolumesRequest, DescribeVolumesResponse>(describeVolumesRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DetachElasticLoadBalancerResponse DetachElasticLoadBalancer(DetachElasticLoadBalancerRequest request)
@@ -1464,13 +1396,11 @@ namespace Amazon.OpsWorks
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DetachElasticLoadBalancerResponse> DetachElasticLoadBalancerAsync(DetachElasticLoadBalancerRequest detachElasticLoadBalancerRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DetachElasticLoadBalancerResponse> DetachElasticLoadBalancerAsync(DetachElasticLoadBalancerRequest detachElasticLoadBalancerRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DetachElasticLoadBalancerRequestMarshaller();
             var unmarshaller = DetachElasticLoadBalancerResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DetachElasticLoadBalancerRequest, DetachElasticLoadBalancerResponse>(detachElasticLoadBalancerRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DetachElasticLoadBalancerRequest, DetachElasticLoadBalancerResponse>(detachElasticLoadBalancerRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DisassociateElasticIpResponse DisassociateElasticIp(DisassociateElasticIpRequest request)
@@ -1500,13 +1430,11 @@ namespace Amazon.OpsWorks
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DisassociateElasticIpResponse> DisassociateElasticIpAsync(DisassociateElasticIpRequest disassociateElasticIpRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DisassociateElasticIpResponse> DisassociateElasticIpAsync(DisassociateElasticIpRequest disassociateElasticIpRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DisassociateElasticIpRequestMarshaller();
             var unmarshaller = DisassociateElasticIpResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DisassociateElasticIpRequest, DisassociateElasticIpResponse>(disassociateElasticIpRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DisassociateElasticIpRequest, DisassociateElasticIpResponse>(disassociateElasticIpRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal GetHostnameSuggestionResponse GetHostnameSuggestion(GetHostnameSuggestionRequest request)
@@ -1538,13 +1466,11 @@ namespace Amazon.OpsWorks
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<GetHostnameSuggestionResponse> GetHostnameSuggestionAsync(GetHostnameSuggestionRequest getHostnameSuggestionRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<GetHostnameSuggestionResponse> GetHostnameSuggestionAsync(GetHostnameSuggestionRequest getHostnameSuggestionRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetHostnameSuggestionRequestMarshaller();
             var unmarshaller = GetHostnameSuggestionResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, GetHostnameSuggestionRequest, GetHostnameSuggestionResponse>(getHostnameSuggestionRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, GetHostnameSuggestionRequest, GetHostnameSuggestionResponse>(getHostnameSuggestionRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal RebootInstanceResponse RebootInstance(RebootInstanceRequest request)
@@ -1574,13 +1500,11 @@ namespace Amazon.OpsWorks
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<RebootInstanceResponse> RebootInstanceAsync(RebootInstanceRequest rebootInstanceRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<RebootInstanceResponse> RebootInstanceAsync(RebootInstanceRequest rebootInstanceRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RebootInstanceRequestMarshaller();
             var unmarshaller = RebootInstanceResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, RebootInstanceRequest, RebootInstanceResponse>(rebootInstanceRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, RebootInstanceRequest, RebootInstanceResponse>(rebootInstanceRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal RegisterElasticIpResponse RegisterElasticIp(RegisterElasticIpRequest request)
@@ -1613,13 +1537,11 @@ namespace Amazon.OpsWorks
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<RegisterElasticIpResponse> RegisterElasticIpAsync(RegisterElasticIpRequest registerElasticIpRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<RegisterElasticIpResponse> RegisterElasticIpAsync(RegisterElasticIpRequest registerElasticIpRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RegisterElasticIpRequestMarshaller();
             var unmarshaller = RegisterElasticIpResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, RegisterElasticIpRequest, RegisterElasticIpResponse>(registerElasticIpRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, RegisterElasticIpRequest, RegisterElasticIpResponse>(registerElasticIpRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal RegisterVolumeResponse RegisterVolume(RegisterVolumeRequest request)
@@ -1652,13 +1574,11 @@ namespace Amazon.OpsWorks
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<RegisterVolumeResponse> RegisterVolumeAsync(RegisterVolumeRequest registerVolumeRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<RegisterVolumeResponse> RegisterVolumeAsync(RegisterVolumeRequest registerVolumeRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RegisterVolumeRequestMarshaller();
             var unmarshaller = RegisterVolumeResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, RegisterVolumeRequest, RegisterVolumeResponse>(registerVolumeRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, RegisterVolumeRequest, RegisterVolumeResponse>(registerVolumeRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal SetLoadBasedAutoScalingResponse SetLoadBasedAutoScaling(SetLoadBasedAutoScalingRequest request)
@@ -1690,13 +1610,11 @@ namespace Amazon.OpsWorks
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<SetLoadBasedAutoScalingResponse> SetLoadBasedAutoScalingAsync(SetLoadBasedAutoScalingRequest setLoadBasedAutoScalingRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<SetLoadBasedAutoScalingResponse> SetLoadBasedAutoScalingAsync(SetLoadBasedAutoScalingRequest setLoadBasedAutoScalingRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new SetLoadBasedAutoScalingRequestMarshaller();
             var unmarshaller = SetLoadBasedAutoScalingResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, SetLoadBasedAutoScalingRequest, SetLoadBasedAutoScalingResponse>(setLoadBasedAutoScalingRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, SetLoadBasedAutoScalingRequest, SetLoadBasedAutoScalingResponse>(setLoadBasedAutoScalingRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal SetPermissionResponse SetPermission(SetPermissionRequest request)
@@ -1726,13 +1644,11 @@ namespace Amazon.OpsWorks
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<SetPermissionResponse> SetPermissionAsync(SetPermissionRequest setPermissionRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<SetPermissionResponse> SetPermissionAsync(SetPermissionRequest setPermissionRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new SetPermissionRequestMarshaller();
             var unmarshaller = SetPermissionResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, SetPermissionRequest, SetPermissionResponse>(setPermissionRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, SetPermissionRequest, SetPermissionResponse>(setPermissionRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal SetTimeBasedAutoScalingResponse SetTimeBasedAutoScaling(SetTimeBasedAutoScalingRequest request)
@@ -1762,13 +1678,11 @@ namespace Amazon.OpsWorks
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<SetTimeBasedAutoScalingResponse> SetTimeBasedAutoScalingAsync(SetTimeBasedAutoScalingRequest setTimeBasedAutoScalingRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<SetTimeBasedAutoScalingResponse> SetTimeBasedAutoScalingAsync(SetTimeBasedAutoScalingRequest setTimeBasedAutoScalingRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new SetTimeBasedAutoScalingRequestMarshaller();
             var unmarshaller = SetTimeBasedAutoScalingResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, SetTimeBasedAutoScalingRequest, SetTimeBasedAutoScalingResponse>(setTimeBasedAutoScalingRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, SetTimeBasedAutoScalingRequest, SetTimeBasedAutoScalingResponse>(setTimeBasedAutoScalingRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal StartInstanceResponse StartInstance(StartInstanceRequest request)
@@ -1798,13 +1712,11 @@ namespace Amazon.OpsWorks
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<StartInstanceResponse> StartInstanceAsync(StartInstanceRequest startInstanceRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<StartInstanceResponse> StartInstanceAsync(StartInstanceRequest startInstanceRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new StartInstanceRequestMarshaller();
             var unmarshaller = StartInstanceResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, StartInstanceRequest, StartInstanceResponse>(startInstanceRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, StartInstanceRequest, StartInstanceResponse>(startInstanceRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal StartStackResponse StartStack(StartStackRequest request)
@@ -1832,13 +1744,11 @@ namespace Amazon.OpsWorks
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<StartStackResponse> StartStackAsync(StartStackRequest startStackRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<StartStackResponse> StartStackAsync(StartStackRequest startStackRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new StartStackRequestMarshaller();
             var unmarshaller = StartStackResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, StartStackRequest, StartStackResponse>(startStackRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, StartStackRequest, StartStackResponse>(startStackRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal StopInstanceResponse StopInstance(StopInstanceRequest request)
@@ -1869,13 +1779,11 @@ namespace Amazon.OpsWorks
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<StopInstanceResponse> StopInstanceAsync(StopInstanceRequest stopInstanceRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<StopInstanceResponse> StopInstanceAsync(StopInstanceRequest stopInstanceRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new StopInstanceRequestMarshaller();
             var unmarshaller = StopInstanceResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, StopInstanceRequest, StopInstanceResponse>(stopInstanceRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, StopInstanceRequest, StopInstanceResponse>(stopInstanceRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal StopStackResponse StopStack(StopStackRequest request)
@@ -1903,13 +1811,11 @@ namespace Amazon.OpsWorks
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<StopStackResponse> StopStackAsync(StopStackRequest stopStackRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<StopStackResponse> StopStackAsync(StopStackRequest stopStackRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new StopStackRequestMarshaller();
             var unmarshaller = StopStackResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, StopStackRequest, StopStackResponse>(stopStackRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, StopStackRequest, StopStackResponse>(stopStackRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal UnassignVolumeResponse UnassignVolume(UnassignVolumeRequest request)
@@ -1939,13 +1845,11 @@ namespace Amazon.OpsWorks
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<UnassignVolumeResponse> UnassignVolumeAsync(UnassignVolumeRequest unassignVolumeRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<UnassignVolumeResponse> UnassignVolumeAsync(UnassignVolumeRequest unassignVolumeRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UnassignVolumeRequestMarshaller();
             var unmarshaller = UnassignVolumeResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, UnassignVolumeRequest, UnassignVolumeResponse>(unassignVolumeRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, UnassignVolumeRequest, UnassignVolumeResponse>(unassignVolumeRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal UpdateAppResponse UpdateApp(UpdateAppRequest request)
@@ -1973,13 +1877,11 @@ namespace Amazon.OpsWorks
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<UpdateAppResponse> UpdateAppAsync(UpdateAppRequest updateAppRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<UpdateAppResponse> UpdateAppAsync(UpdateAppRequest updateAppRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateAppRequestMarshaller();
             var unmarshaller = UpdateAppResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, UpdateAppRequest, UpdateAppResponse>(updateAppRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, UpdateAppRequest, UpdateAppResponse>(updateAppRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal UpdateElasticIpResponse UpdateElasticIp(UpdateElasticIpRequest request)
@@ -2009,13 +1911,11 @@ namespace Amazon.OpsWorks
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<UpdateElasticIpResponse> UpdateElasticIpAsync(UpdateElasticIpRequest updateElasticIpRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<UpdateElasticIpResponse> UpdateElasticIpAsync(UpdateElasticIpRequest updateElasticIpRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateElasticIpRequestMarshaller();
             var unmarshaller = UpdateElasticIpResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, UpdateElasticIpRequest, UpdateElasticIpResponse>(updateElasticIpRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, UpdateElasticIpRequest, UpdateElasticIpResponse>(updateElasticIpRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal UpdateInstanceResponse UpdateInstance(UpdateInstanceRequest request)
@@ -2044,13 +1944,11 @@ namespace Amazon.OpsWorks
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<UpdateInstanceResponse> UpdateInstanceAsync(UpdateInstanceRequest updateInstanceRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<UpdateInstanceResponse> UpdateInstanceAsync(UpdateInstanceRequest updateInstanceRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateInstanceRequestMarshaller();
             var unmarshaller = UpdateInstanceResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, UpdateInstanceRequest, UpdateInstanceResponse>(updateInstanceRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, UpdateInstanceRequest, UpdateInstanceResponse>(updateInstanceRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal UpdateLayerResponse UpdateLayer(UpdateLayerRequest request)
@@ -2078,13 +1976,11 @@ namespace Amazon.OpsWorks
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<UpdateLayerResponse> UpdateLayerAsync(UpdateLayerRequest updateLayerRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<UpdateLayerResponse> UpdateLayerAsync(UpdateLayerRequest updateLayerRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateLayerRequestMarshaller();
             var unmarshaller = UpdateLayerResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, UpdateLayerRequest, UpdateLayerResponse>(updateLayerRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, UpdateLayerRequest, UpdateLayerResponse>(updateLayerRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal UpdateMyUserProfileResponse UpdateMyUserProfile(UpdateMyUserProfileRequest request)
@@ -2112,13 +2008,11 @@ namespace Amazon.OpsWorks
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<UpdateMyUserProfileResponse> UpdateMyUserProfileAsync(UpdateMyUserProfileRequest updateMyUserProfileRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<UpdateMyUserProfileResponse> UpdateMyUserProfileAsync(UpdateMyUserProfileRequest updateMyUserProfileRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateMyUserProfileRequestMarshaller();
             var unmarshaller = UpdateMyUserProfileResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, UpdateMyUserProfileRequest, UpdateMyUserProfileResponse>(updateMyUserProfileRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, UpdateMyUserProfileRequest, UpdateMyUserProfileResponse>(updateMyUserProfileRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal UpdateStackResponse UpdateStack(UpdateStackRequest request)
@@ -2146,13 +2040,11 @@ namespace Amazon.OpsWorks
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<UpdateStackResponse> UpdateStackAsync(UpdateStackRequest updateStackRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<UpdateStackResponse> UpdateStackAsync(UpdateStackRequest updateStackRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateStackRequestMarshaller();
             var unmarshaller = UpdateStackResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, UpdateStackRequest, UpdateStackResponse>(updateStackRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, UpdateStackRequest, UpdateStackResponse>(updateStackRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal UpdateUserProfileResponse UpdateUserProfile(UpdateUserProfileRequest request)
@@ -2181,13 +2073,11 @@ namespace Amazon.OpsWorks
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<UpdateUserProfileResponse> UpdateUserProfileAsync(UpdateUserProfileRequest updateUserProfileRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<UpdateUserProfileResponse> UpdateUserProfileAsync(UpdateUserProfileRequest updateUserProfileRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateUserProfileRequestMarshaller();
             var unmarshaller = UpdateUserProfileResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, UpdateUserProfileRequest, UpdateUserProfileResponse>(updateUserProfileRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, UpdateUserProfileRequest, UpdateUserProfileResponse>(updateUserProfileRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal UpdateVolumeResponse UpdateVolume(UpdateVolumeRequest request)
@@ -2217,13 +2107,11 @@ namespace Amazon.OpsWorks
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<UpdateVolumeResponse> UpdateVolumeAsync(UpdateVolumeRequest updateVolumeRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<UpdateVolumeResponse> UpdateVolumeAsync(UpdateVolumeRequest updateVolumeRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateVolumeRequestMarshaller();
             var unmarshaller = UpdateVolumeResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, UpdateVolumeRequest, UpdateVolumeResponse>(updateVolumeRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, UpdateVolumeRequest, UpdateVolumeResponse>(updateVolumeRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
     }
 }

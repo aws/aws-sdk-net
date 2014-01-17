@@ -12,19 +12,9 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Xml;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.S3.Model;
-using Amazon.S3.Util;
-using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
@@ -33,37 +23,20 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// </summary>       
     public class GetBucketTaggingRequestMarshaller : IMarshaller<IRequest, GetBucketTaggingRequest>
     {
-        
-    
         public IRequest Marshall(GetBucketTaggingRequest getBucketTaggingRequest)
         {
             IRequest request = new DefaultRequest(getBucketTaggingRequest, "AmazonS3");
+
             request.Suppress404Exceptions = true;
-
             request.HttpMethod = "GET";
-              
-            Dictionary<string, string> queryParameters = new Dictionary<string, string>();
-            string uriResourcePath = "/{Bucket}/?tagging"; 
-            uriResourcePath = uriResourcePath.Replace("{Bucket}", getBucketTaggingRequest.IsSetBucketName() ? S3Transforms.ToStringValue(getBucketTaggingRequest.BucketName) : "" ); 
-            string path = uriResourcePath;
 
+            var uriResourcePath = string.Concat("/", S3Transforms.ToStringValue(getBucketTaggingRequest.BucketName));
 
-            int queryIndex = uriResourcePath.IndexOf("?", StringComparison.OrdinalIgnoreCase);
-            if (queryIndex != -1)
-            {
-                string queryString = uriResourcePath.Substring(queryIndex + 1);
-                path = uriResourcePath.Substring(0, queryIndex);
+            request.Parameters.Add("tagging", null);
 
-                S3Transforms.BuildQueryParameterMap(request, queryParameters, queryString);
-            }
-            
-            request.CanonicalResource = S3Transforms.GetCanonicalResource(path, queryParameters);
-            uriResourcePath = S3Transforms.FormatResourcePath(path, queryParameters);
-            
-            request.ResourcePath = uriResourcePath;
-            
+            request.CanonicalResource = S3Transforms.GetCanonicalResource(uriResourcePath, request.Parameters);
+            request.ResourcePath = S3Transforms.FormatResourcePath(uriResourcePath, request.Parameters);
             request.UseQueryString = true;
-            
             
             return request;
         }

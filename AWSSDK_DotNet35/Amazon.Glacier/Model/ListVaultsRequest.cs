@@ -39,11 +39,12 @@ namespace Amazon.Glacier.Model
     /// Guide</i> .
     /// </para>
     /// </summary>
-    public partial class ListVaultsRequest : AmazonWebServiceRequest
+    public partial class ListVaultsRequest : AmazonGlacierRequest
     {
         private string accountId;
         private string marker;
         private int? limit;
+
 
         /// <summary>
         /// The <c>AccountId</c> is the AWS Account ID. You can specify either the AWS Account ID or optionally a '-', in which case Amazon Glacier uses

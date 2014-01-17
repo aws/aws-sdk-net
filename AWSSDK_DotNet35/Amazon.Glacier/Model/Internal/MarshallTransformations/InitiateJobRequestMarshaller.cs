@@ -14,6 +14,7 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Text;
 using System.Xml.Serialization;
@@ -77,7 +78,7 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
             request.ResourcePath = uriResourcePath;
             
              
-            using (StringWriter stringWriter = new StringWriter(System.Globalization.CultureInfo.InvariantCulture))
+            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
@@ -111,6 +112,37 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
                 {
                     writer.WritePropertyName("RetrievalByteRange");
                     writer.Write(initiateJobRequest.JobParameters.RetrievalByteRange);
+                }
+
+                if (initiateJobRequest.JobParameters != null) 
+                {
+                    InventoryRetrievalJobInput inventoryRetrievalParameters = initiateJobRequest.JobParameters.InventoryRetrievalParameters;
+                    if (inventoryRetrievalParameters != null)
+                    {
+                        writer.WritePropertyName("InventoryRetrievalParameters");
+                        writer.WriteObjectStart();
+                        if (inventoryRetrievalParameters != null && inventoryRetrievalParameters.IsSetStartDate()) 
+                        {
+                            writer.WritePropertyName("StartDate");
+                            writer.Write(inventoryRetrievalParameters.StartDate);
+                        }
+                        if (inventoryRetrievalParameters != null && inventoryRetrievalParameters.IsSetEndDate()) 
+                        {
+                            writer.WritePropertyName("EndDate");
+                            writer.Write(inventoryRetrievalParameters.EndDate);
+                        }
+                        if (inventoryRetrievalParameters != null && inventoryRetrievalParameters.IsSetLimit()) 
+                        {
+                            writer.WritePropertyName("Limit");
+                            writer.Write(inventoryRetrievalParameters.Limit);
+                        }
+                        if (inventoryRetrievalParameters != null && inventoryRetrievalParameters.IsSetMarker()) 
+                        {
+                            writer.WritePropertyName("Marker");
+                            writer.Write(inventoryRetrievalParameters.Marker);
+                        }
+                        writer.WriteObjectEnd();
+                    }
                 }
 
                 writer.WriteObjectEnd();

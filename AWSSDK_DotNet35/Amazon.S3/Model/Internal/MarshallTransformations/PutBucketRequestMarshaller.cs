@@ -12,19 +12,15 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
+
 using System.Collections.Generic;
 using System.IO;
 using System.Xml;
-using System.Xml.Serialization;
 using System.Text;
-
-using Amazon.S3.Model;
 using Amazon.S3.Util;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-using Amazon.Runtime.Internal.Util;
 using System.Globalization;
 
 namespace Amazon.S3.Model.Internal.MarshallTransformations
@@ -34,81 +30,55 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// </summary>       
     public class PutBucketRequestMarshaller : IMarshaller<IRequest, PutBucketRequest>
     {
-        
-    
-
         public IRequest Marshall(PutBucketRequest putBucketRequest)
         {
             IRequest request = new DefaultRequest(putBucketRequest, "AmazonS3");
 
-
-
             request.HttpMethod = "PUT";
+
             if (putBucketRequest.IsSetCannedACL())
                 request.Headers.Add("x-amz-acl", putBucketRequest.CannedACL.Value);
             else if (putBucketRequest.Grants != null && putBucketRequest.Grants.Count > 0)
                 ConvertPutWithACLRequest(putBucketRequest, request);
 
-            Dictionary<string, string> queryParameters = new Dictionary<string, string>();
-            string uriResourcePath = "/{Bucket}";
-            uriResourcePath = uriResourcePath.Replace("{Bucket}", putBucketRequest.IsSetBucketName() ? S3Transforms.ToStringValue(putBucketRequest.BucketName) : "");
-            string path = uriResourcePath;
+            var uriResourcePath = string.Concat("/", S3Transforms.ToStringValue(putBucketRequest.BucketName));
 
-
-            int queryIndex = uriResourcePath.IndexOf("?", StringComparison.OrdinalIgnoreCase);
-            if (queryIndex != -1)
-            {
-                string queryString = uriResourcePath.Substring(queryIndex + 1);
-                path = uriResourcePath.Substring(0, queryIndex);
-
-                S3Transforms.BuildQueryParameterMap(request, queryParameters, queryString);
-            }
-
-            request.CanonicalResource = S3Transforms.GetCanonicalResource(path, queryParameters);
-            uriResourcePath = S3Transforms.FormatResourcePath(path, queryParameters);
-
+            request.CanonicalResource = uriResourcePath;
             request.ResourcePath = uriResourcePath;
 
-
-            StringWriter stringWriter = new StringWriter(System.Globalization.CultureInfo.InvariantCulture);
-            using (XmlWriter xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true }))
+            var stringWriter = new StringWriter(CultureInfo.InvariantCulture);
+            using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = Encoding.UTF8, OmitXmlDeclaration = true }))
             {
-
-
-                if (putBucketRequest != null)
+                string regionCode = null;
+                var region = putBucketRequest.BucketRegion;
+                if (region != null && !string.IsNullOrEmpty(region.Value))
                 {
-                    string regionCode = null;
-                    S3Region region = putBucketRequest.BucketRegion;
-                    if (region != null && !string.IsNullOrEmpty(region.Value))
-                    {
-                        regionCode = region.Value;
-                    }
-                    else if (!string.IsNullOrEmpty(putBucketRequest.BucketRegionName))
-                    {
-                        if (putBucketRequest.BucketRegionName == "eu-west-1")
-                            regionCode = "EU";
-                        else if (putBucketRequest.BucketRegionName != "us-east-1")
-                            regionCode = putBucketRequest.BucketRegionName;
-                    }
+                    regionCode = region.Value;
+                }
+                else if (!string.IsNullOrEmpty(putBucketRequest.BucketRegionName))
+                {
+                    if (putBucketRequest.BucketRegionName == "eu-west-1")
+                        regionCode = "EU";
+                    else if (putBucketRequest.BucketRegionName != "us-east-1")
+                        regionCode = putBucketRequest.BucketRegionName;
+                }
 
-                    if (regionCode != null)
-                    {
-                        xmlWriter.WriteStartElement("PutBucketConfiguration", "");
-                        xmlWriter.WriteElementString("LocationConstraint", "", regionCode);
-                        xmlWriter.WriteEndElement();
-                    }
+                if (regionCode != null)
+                {
+                    xmlWriter.WriteStartElement("PutBucketConfiguration", "");
+                    xmlWriter.WriteElementString("LocationConstraint", "", regionCode);
+                    xmlWriter.WriteEndElement();
                 }
             }
 
             try
             {
-                string content = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(content);
+                var content = stringWriter.ToString();
+                request.Content = Encoding.UTF8.GetBytes(content);
                 request.Headers["Content-Type"] = "application/xml";
 
-
                 request.Parameters[S3QueryParameter.ContentType.ToString()] = "application/xml";
-                string checksum = AmazonS3Util.GenerateChecksumForContent(content, true);
+                var checksum = AmazonS3Util.GenerateChecksumForContent(content, true);
                 request.Headers[Amazon.Util.AWSSDKUtils.ContentMD5Header] = checksum;
 
             }
@@ -119,16 +89,14 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             if (!request.UseQueryString)
             {
-                string queryString = Amazon.Util.AWSSDKUtils.GetParametersAsString(request.Parameters);
+                var queryString = Amazon.Util.AWSSDKUtils.GetParametersAsString(request.Parameters);
                 if (!string.IsNullOrEmpty(queryString))
                 {
-                    if (request.ResourcePath.Contains("?"))
-                        request.ResourcePath = string.Concat(request.ResourcePath, "&", queryString);
-                    else
-                        request.ResourcePath = string.Concat(request.ResourcePath, "?", queryString);
+                    request.ResourcePath = string.Concat(request.ResourcePath, 
+                                                         request.ResourcePath.Contains("?") ? "&" : "?", 
+                                                         queryString);
                 }
             }
-
 
             return request;
         }

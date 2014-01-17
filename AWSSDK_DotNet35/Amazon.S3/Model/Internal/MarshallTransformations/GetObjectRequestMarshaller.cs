@@ -12,19 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Xml;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.S3.Model;
 using Amazon.S3.Util;
-using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
@@ -33,15 +24,12 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// </summary>       
     public class GetObjectRequestMarshaller : IMarshaller<IRequest, GetObjectRequest>
     {
-        
-    
         public IRequest Marshall(GetObjectRequest getObjectRequest)
         {
             IRequest request = new DefaultRequest(getObjectRequest, "AmazonS3");
 
-
-
             request.HttpMethod = "GET";
+
             if (getObjectRequest.IsSetEtagToMatch())
                 request.Headers.Add("If-Match", S3Transforms.ToStringValue(getObjectRequest.EtagToMatch));
 
@@ -57,42 +45,28 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if(getObjectRequest.IsSetByteRange())
                 request.Headers.Add("Range", getObjectRequest.ByteRange.FormattedByteRange);
 
+            var uriResourcePath = string.Format("/{0}/{1}",
+                                                S3Transforms.ToStringValue(getObjectRequest.BucketName),
+                                                S3Transforms.ToStringValue(getObjectRequest.Key));
 
-            Dictionary<string, string> queryParameters = new Dictionary<string, string>();
-            string uriResourcePath = "/{Bucket}/{Key}?versionId={VersionId};response-content-type={ResponseContentType};response-content-language={ResponseContentLanguage};response-expires={ResponseExpires};response-cache-control={ResponseCacheControl};response-content-disposition={ResponseContentDisposition};response-content-encoding={ResponseContentEncoding}"; 
-            uriResourcePath = uriResourcePath.Replace("{Bucket}", getObjectRequest.IsSetBucketName() ? S3Transforms.ToStringValue(getObjectRequest.BucketName) : "" ); 
-            uriResourcePath = uriResourcePath.Replace("{Key}", getObjectRequest.IsSetKey() ? S3Transforms.ToStringValue(getObjectRequest.Key) : "" ); 
-            uriResourcePath = uriResourcePath.Replace("{ResponseCacheControl}", S3Transforms.ToStringValue(getObjectRequest.ResponseHeaderOverrides.CacheControl));
-            uriResourcePath = uriResourcePath.Replace("{ResponseContentDisposition}", S3Transforms.ToStringValue(getObjectRequest.ResponseHeaderOverrides.ContentDisposition));
-            uriResourcePath = uriResourcePath.Replace("{ResponseContentEncoding}", S3Transforms.ToStringValue(getObjectRequest.ResponseHeaderOverrides.ContentEncoding));
-            uriResourcePath = uriResourcePath.Replace("{ResponseContentLanguage}", S3Transforms.ToStringValue(getObjectRequest.ResponseHeaderOverrides.ContentLanguage));
-            uriResourcePath = uriResourcePath.Replace("{ResponseContentType}", S3Transforms.ToStringValue(getObjectRequest.ResponseHeaderOverrides.ContentType)); 
-            uriResourcePath = uriResourcePath.Replace("{ResponseExpires}", getObjectRequest.IsSetResponseExpires() ? S3Transforms.ToStringValue(getObjectRequest.ResponseExpires) : "" ); 
-            uriResourcePath = uriResourcePath.Replace("{VersionId}", getObjectRequest.IsSetVersionId() ? S3Transforms.ToStringValue(getObjectRequest.VersionId) : "" ); 
-            string path = uriResourcePath;
+            var headerOverrides = getObjectRequest.ResponseHeaderOverrides;
+            if (headerOverrides.CacheControl != null)
+                request.Parameters.Add("response-cache-control", S3Transforms.ToStringValue(headerOverrides.CacheControl));
+            if (headerOverrides.ContentDisposition != null)
+                request.Parameters.Add("response-content-disposition", S3Transforms.ToStringValue(headerOverrides.ContentDisposition));
+            if (headerOverrides.ContentEncoding != null)
+                request.Parameters.Add("response-content-encoding", S3Transforms.ToStringValue(headerOverrides.ContentEncoding));
+            if (headerOverrides.ContentLanguage != null)
+                request.Parameters.Add("response-content-language", S3Transforms.ToStringValue(headerOverrides.ContentLanguage));
+            if (headerOverrides.ContentType != null)
+                request.Parameters.Add("response-content-type", S3Transforms.ToStringValue(headerOverrides.ContentType));
+            if (getObjectRequest.IsSetResponseExpires())
+                request.Parameters.Add("response-expires", S3Transforms.ToStringValue(getObjectRequest.ResponseExpires));
+            if (getObjectRequest.IsSetVersionId())
+                request.Parameters.Add("versionId", S3Transforms.ToStringValue(getObjectRequest.VersionId));
 
-
-            int queryIndex = uriResourcePath.IndexOf("?", StringComparison.OrdinalIgnoreCase);
-            if (queryIndex != -1) 
-            {
-                string queryString = uriResourcePath.Substring(queryIndex + 1);
-                path = uriResourcePath.Substring(0, queryIndex);
-
-                S3Transforms.BuildQueryParameterMap(request, queryParameters, queryString,
-                                                    new string[] { "versionId", 
-                                                                   "response-content-type", 
-                                                                   "response-content-language", 
-                                                                   "response-expires", 
-                                                                   "response-cache-control", 
-                                                                   "response-content-disposition", 
-                                                                   "response-content-encoding" });
-            }
-            
-            request.CanonicalResource = S3Transforms.GetCanonicalResource(path, queryParameters, S3Constants.GetObjectExtraSubResources);
-            uriResourcePath = S3Transforms.FormatResourcePath(path, queryParameters);
-            
-            request.ResourcePath = uriResourcePath;
-            
+            request.CanonicalResource = S3Transforms.GetCanonicalResource(uriResourcePath, request.Parameters, S3Constants.GetObjectExtraSubResources);
+            request.ResourcePath = S3Transforms.FormatResourcePath(uriResourcePath, request.Parameters);
             request.UseQueryString = true;
 
             return request;

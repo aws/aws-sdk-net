@@ -28,6 +28,8 @@ namespace Amazon.Runtime.Internal.Auth
 {
     internal class S3Signer : AbstractAWSSigner
     {
+        private bool _useSigV4 = false;
+
         AWS4Signer _aws4Signer;
         AWS4Signer AWS4SignerInstance 
         {
@@ -44,6 +46,14 @@ namespace Amazon.Runtime.Internal.Auth
 
                 return _aws4Signer;
             }
+        }
+
+        /// <summary>
+        /// S3 signer constructor
+        /// </summary>
+        public S3Signer()
+        {
+            _useSigV4 = AWSConfigs.S3UseSignatureVersion4;
         }
 
         /// <summary>
@@ -71,7 +81,7 @@ namespace Amazon.Runtime.Internal.Auth
             if (r == null && config.RegionEndpoint != null)
                 r = config.RegionEndpoint;
 
-            if (r != null && r == RegionEndpoint.CNNorth1)
+            if (_useSigV4 || (r != null && r == RegionEndpoint.CNNorth1))
                 return AWS4SignerInstance;
 
             return this;

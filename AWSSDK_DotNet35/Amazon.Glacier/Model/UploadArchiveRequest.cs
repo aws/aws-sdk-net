@@ -46,13 +46,14 @@ namespace Amazon.Glacier.Model
     /// Guide</i> .
     /// </para>
     /// </summary>
-    public partial class UploadArchiveRequest : AmazonWebServiceRequest
+    public partial class UploadArchiveRequest : AmazonGlacierRequest
     {
         private string vaultName;
         private string accountId;
         private string archiveDescription;
         private string checksum;
         private Stream body;
+
 
         /// <summary>
         /// The name of the vault.

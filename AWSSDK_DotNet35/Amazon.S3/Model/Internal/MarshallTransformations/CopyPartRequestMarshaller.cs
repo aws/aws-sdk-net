@@ -13,18 +13,9 @@
  * permissions and limitations under the License.
  */
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Xml;
-using System.Xml.Serialization;
-using System.Text;
-
-using Amazon.S3.Model;
 using Amazon.S3.Util;
-using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-using Amazon.Runtime.Internal.Util;
 using Amazon.Util;
 using System.Globalization;
 
@@ -35,13 +26,12 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// </summary>       
     public class CopyPartRequestMarshaller : IMarshaller<IRequest, CopyPartRequest>
     {
-
-
         public IRequest Marshall(CopyPartRequest copyPartRequest)
         {
             IRequest request = new DefaultRequest(copyPartRequest, "AmazonS3");
 
             request.HttpMethod = "PUT";
+
             if (copyPartRequest.IsSetSourceBucket())
                 request.Headers.Add("x-amz-copy-source", ConstructCopySourceHeaderValue(copyPartRequest.SourceBucket, copyPartRequest.SourceKey, copyPartRequest.SourceVersionId));
 
@@ -59,33 +49,16 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             request.Headers.Add("x-amz-copy-source-range", ConstructCopySourceRangeHeader(copyPartRequest.FirstByte, copyPartRequest.LastByte));
 
+            var uriResourcePath = string.Format("/{0}/{1}",
+                                                S3Transforms.ToStringValue(copyPartRequest.DestinationBucket),
+                                                S3Transforms.ToStringValue(copyPartRequest.DestinationKey));
 
-            Dictionary<string, string> queryParameters = new Dictionary<string, string>();
-            string uriResourcePath = "/{Bucket}/{Key}?partNumber={PartNumber};uploadId={UploadId}";
-            uriResourcePath = uriResourcePath.Replace("{Bucket}", copyPartRequest.IsSetDestinationBucket() ? S3Transforms.ToStringValue(copyPartRequest.DestinationBucket) : "");
-            uriResourcePath = uriResourcePath.Replace("{Key}", copyPartRequest.IsSetDestinationKey() ? S3Transforms.ToStringValue(copyPartRequest.DestinationKey) : "");
-            uriResourcePath = uriResourcePath.Replace("{PartNumber}", copyPartRequest.IsSetPartNumber() ? S3Transforms.ToStringValue(copyPartRequest.PartNumber) : "");
-            uriResourcePath = uriResourcePath.Replace("{UploadId}", copyPartRequest.IsSetUploadId() ? S3Transforms.ToStringValue(copyPartRequest.UploadId) : "");
-            string path = uriResourcePath;
+            request.Parameters.Add("partNumber", S3Transforms.ToStringValue(copyPartRequest.PartNumber));
+            request.Parameters.Add("uploadId", S3Transforms.ToStringValue(copyPartRequest.UploadId));
 
-
-            int queryIndex = uriResourcePath.IndexOf("?", StringComparison.OrdinalIgnoreCase);
-            if (queryIndex != -1)
-            {
-                string queryString = uriResourcePath.Substring(queryIndex + 1);
-                path = uriResourcePath.Substring(0, queryIndex);
-
-                S3Transforms.BuildQueryParameterMap(request, queryParameters, queryString);
-            }
-
-            request.CanonicalResource = S3Transforms.GetCanonicalResource(path, queryParameters);
-            uriResourcePath = S3Transforms.FormatResourcePath(path, queryParameters);
-
-            request.ResourcePath = uriResourcePath;
-
-
+            request.CanonicalResource = S3Transforms.GetCanonicalResource(uriResourcePath, request.Parameters);
+            request.ResourcePath = S3Transforms.FormatResourcePath(uriResourcePath, request.Parameters);
             request.UseQueryString = true;
-
 
             return request;
         }

@@ -14,6 +14,7 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Text;
 using System.Xml.Serialization;
@@ -77,13 +78,14 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
                 foreach (string s in queryString.Split('&', ';')) 
                 {
                     string[] nameValuePair = s.Split('=');
-                    if (nameValuePair.Length == 2 && nameValuePair[1].Length > 0) 
+                    if (nameValuePair.Length == 2) 
                     {
-                        request.Parameters.Add(nameValuePair[0], nameValuePair[1]);
+                        if (nameValuePair[1].Length > 0)
+                            request.Parameters.Add(nameValuePair[0], nameValuePair[1]);
                     }
                     else
                     {
-                        request.Parameters.Add(nameValuePair[0], null);
+                        request.Parameters.Add(nameValuePair[0], null); // possible subresource
                     }
                 }
             }

@@ -12,19 +12,9 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Xml;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.S3.Model;
-using Amazon.S3.Util;
-using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
@@ -33,57 +23,17 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// </summary>       
     public class ListBucketsRequestMarshaller : IMarshaller<IRequest, ListBucketsRequest>
     {
-        
-    
         public IRequest Marshall(ListBucketsRequest listBucketsRequest)
         {
             IRequest request = new DefaultRequest(listBucketsRequest, "AmazonS3");
 
-
-
             request.HttpMethod = "GET";
               
-            Dictionary<string, string> queryParameters = new Dictionary<string, string>();
-            string uriResourcePath = "/"; 
-            string path = uriResourcePath;
-            
+            const string uriResourcePath = "/";
 
-            if (uriResourcePath.Contains("?")) 
-            {
-                int queryIndex = uriResourcePath.IndexOf("?", StringComparison.OrdinalIgnoreCase);
-                string queryString = uriResourcePath.Substring(queryIndex + 1);
-                
-                path = uriResourcePath.Substring(0, queryIndex);
-                
-        
-                foreach (string s in queryString.Split('&', ';')) 
-                {
-                    string[] nameValuePair = s.Split('=');
-                    if (nameValuePair.Length == 2 && nameValuePair[1].Length > 0) 
-                    {
-                        request.Parameters.Add(nameValuePair[0], nameValuePair[1]);
-                    }
-                    else
-                    {
-                        request.Parameters.Add(nameValuePair[0], null);
-                    }
-                
-                    if (nameValuePair.Length == 2)
-                        queryParameters.Add(nameValuePair[0], nameValuePair[1]);
-                    else
-                        queryParameters.Add(nameValuePair[0], null);
-                
-                }
-            }
-            
-            request.CanonicalResource = S3Transforms.GetCanonicalResource(path, queryParameters);
-            uriResourcePath = S3Transforms.FormatResourcePath(path, queryParameters);
-            
-            request.ResourcePath = uriResourcePath;
-            
-        
+            request.CanonicalResource = S3Transforms.GetCanonicalResource(uriResourcePath, request.Parameters);
+            request.ResourcePath = S3Transforms.FormatResourcePath(uriResourcePath, request.Parameters);
             request.UseQueryString = true;
-            
             
             return request;
         }

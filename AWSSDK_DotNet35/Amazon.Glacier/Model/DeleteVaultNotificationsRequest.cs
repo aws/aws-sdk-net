@@ -35,10 +35,11 @@ namespace Amazon.Glacier.Model
     /// Glacier</a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-notifications-delete.html" >Delete Vault Notification
     /// Configuration </a> in the Amazon Glacier Developer Guide. </para>
     /// </summary>
-    public partial class DeleteVaultNotificationsRequest : AmazonWebServiceRequest
+    public partial class DeleteVaultNotificationsRequest : AmazonGlacierRequest
     {
         private string accountId;
         private string vaultName;
+
 
         /// <summary>
         /// The <c>AccountId</c> is the AWS Account ID. You can specify either the AWS Account ID or optionally a '-', in which case Amazon Glacier uses

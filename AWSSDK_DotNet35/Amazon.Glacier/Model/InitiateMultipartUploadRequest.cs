@@ -43,12 +43,13 @@ namespace Amazon.Glacier.Model
     /// Upload)</a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-initiate-upload.html" >Initiate Multipart
     /// Upload</a> in the <i>Amazon Glacier Developer Guide</i> .</para>
     /// </summary>
-    public partial class InitiateMultipartUploadRequest : AmazonWebServiceRequest
+    public partial class InitiateMultipartUploadRequest : AmazonGlacierRequest
     {
         private string accountId;
         private string vaultName;
         private string archiveDescription;
         private long? partSize;
+
 
         /// <summary>
         /// The <c>AccountId</c> is the AWS Account ID. You can specify either the AWS Account ID or optionally a '-', in which case Amazon Glacier uses
@@ -84,9 +85,9 @@ namespace Amazon.Glacier.Model
         }
 
         /// <summary>
-        /// The archive description that you are uploading in parts. The part size must be a megabyte (1024 KB) multiplied by a power of 2—for example,
-        /// 1048576 (1 MB), 2097152 (2 MB), 4194304 (4 MB), 8388608 (8 MB), and so on. The minimum allowable part size is 1 MB, and the maximum is 4 GB
-        /// (4096 MB).
+        /// The archive description that you are uploading in parts. The part size must be a megabyte (1024 KB) multiplied by a power of 2?????????for
+        /// example, 1048576 (1 MB), 2097152 (2 MB), 4194304 (4 MB), 8388608 (8 MB), and so on. The minimum allowable part size is 1 MB, and the maximum
+        /// is 4 GB (4096 MB).
         ///  
         /// </summary>
         public string ArchiveDescription

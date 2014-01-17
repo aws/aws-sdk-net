@@ -100,6 +100,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                                 response.RequestId = StringUnmarshaller.GetInstance().Unmarshall(context);
                                 continue;
                             }
+                            if (context.TestExpression("Error/HostId"))
+                            {
+                                response.Id2 = StringUnmarshaller.GetInstance().Unmarshall(context);
+                                continue;
+                            }
                         }
                     }
                 }

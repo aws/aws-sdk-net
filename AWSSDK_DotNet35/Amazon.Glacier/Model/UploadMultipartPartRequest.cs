@@ -53,7 +53,7 @@ namespace Amazon.Glacier.Model
     /// Upload)</a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-upload-part.html" >Upload Part </a> in the <i>Amazon
     /// Glacier Developer Guide</i> .</para>
     /// </summary>
-    public partial class UploadMultipartPartRequest : AmazonWebServiceRequest
+    public partial class UploadMultipartPartRequest : AmazonGlacierRequest
     {
         private string accountId;
         private string vaultName;
@@ -61,6 +61,7 @@ namespace Amazon.Glacier.Model
         private string checksum;
         private string range;
         private Stream body;
+
 
         /// <summary>
         /// The <c>AccountId</c> is the AWS Account ID. You can specify either the AWS Account ID or optionally a '-', in which case Amazon Glacier uses

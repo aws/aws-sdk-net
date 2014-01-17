@@ -331,6 +331,7 @@ namespace Amazon.Runtime.Internal.Util
         // response enums
         AWSErrorCode,
         AWSRequestID,
+        AmzId2,
         BytesProcessed,
         Exception,
         RedirectLocation,
@@ -347,6 +348,7 @@ namespace Amazon.Runtime.Internal.Util
         RequestSigningTime,
         RetryPauseTime,
         StringToSign,
+        CanonicalRequest,
 
         // overall enums
         AsyncCall,

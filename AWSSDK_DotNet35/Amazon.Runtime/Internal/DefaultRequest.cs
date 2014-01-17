@@ -230,25 +230,30 @@ namespace Amazon.Runtime.Internal
             set { this.originalStreamLength = value; }
         }
 
-        public string ContentStreamHash
+        /// <summary>
+        /// Computes the SHA 256 hash of the content stream. If the stream is not
+        /// seekable, it searches the parent stream hierarchy to find a seekable
+        /// stream prior to computation. Once computed, the hash is cached for future
+        /// use. If a suitable stream cannot be found to use, null is returned.
+        /// </summary>
+        public string ComputeContentStreamHash()
         {
-            get
+            if (this.contentStream == null)
+                return null;
+
+            if (this.contentStreamHash == null)
             {
-                if (this.contentStream == null)
-                    return null;
-
-                if (this.contentStreamHash == null)
+                var seekableStream = WrapperStream.SearchWrappedStream(this.contentStream, s => s.CanSeek);
+                if (seekableStream != null)
                 {
-                    long position = this.ContentStream.Position;
-
-                    Stream stream = HashStream.GetNonWrapperBaseStream(this.ContentStream);
-                    byte[] payloadHashBytes = CryptoUtilFactory.CryptoInstance.ComputeSHA256Hash(stream);
+                    var position = seekableStream.Position;
+                    byte[] payloadHashBytes = CryptoUtilFactory.CryptoInstance.ComputeSHA256Hash(seekableStream);
                     this.contentStreamHash = AWSSDKUtils.ToHex(payloadHashBytes, true);
-                    stream.Seek(position, SeekOrigin.Begin);
+                    seekableStream.Seek(position, SeekOrigin.Begin);
                 }
-
-                return this.contentStreamHash;
             }
+
+            return this.contentStreamHash;
         }
 
         /// <summary>

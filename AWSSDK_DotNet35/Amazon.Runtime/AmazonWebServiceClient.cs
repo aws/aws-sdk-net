@@ -351,6 +351,8 @@ namespace Amazon.Runtime
                 {
                     LogResponse(asyncResult.Metrics, asyncResult.Request, HttpStatusCode.Unused);
                     shouldRetry = HandleIOException(asyncResult, httpResponse, ioe);
+                    if (!shouldRetry)
+                        asyncResult.Exception = ioe;
                 }
 
                 if (shouldRetry)
@@ -578,7 +580,7 @@ namespace Amazon.Runtime
                     {
                         if (wrappedRequest.OriginalRequest.IncludeSHA256Header)
                         {
-                            request.Headers["x-amz-content-sha256"] = wrappedRequest.ContentStreamHash;
+                            request.Headers["x-amz-content-sha256"] = wrappedRequest.ComputeContentStreamHash();
                         }
                         request.ContentLength = wrappedRequest.ContentStream.Length;
                     }

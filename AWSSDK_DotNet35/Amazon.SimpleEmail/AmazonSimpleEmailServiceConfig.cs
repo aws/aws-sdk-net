@@ -22,7 +22,7 @@ namespace Amazon.SimpleEmail
     /// <summary>
     /// Configuration for accessing Amazon Simple Email Service service
     /// </summary>
-    public class AmazonSimpleEmailServiceConfig : ClientConfig
+    public partial class AmazonSimpleEmailServiceConfig : ClientConfig
     {
         /// <summary>
         /// Default constructor

@@ -273,13 +273,11 @@ namespace Amazon.CloudTrail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<CreateTrailResponse> CreateTrailAsync(CreateTrailRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<CreateTrailResponse> CreateTrailAsync(CreateTrailRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateTrailRequestMarshaller();
             var unmarshaller = CreateTrailResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, CreateTrailRequest, CreateTrailResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, CreateTrailRequest, CreateTrailResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -316,13 +314,11 @@ namespace Amazon.CloudTrail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<DeleteTrailResponse> DeleteTrailAsync(DeleteTrailRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DeleteTrailResponse> DeleteTrailAsync(DeleteTrailRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteTrailRequestMarshaller();
             var unmarshaller = DeleteTrailResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DeleteTrailRequest, DeleteTrailResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DeleteTrailRequest, DeleteTrailResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -356,13 +352,11 @@ namespace Amazon.CloudTrail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<DescribeTrailsResponse> DescribeTrailsAsync(DescribeTrailsRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DescribeTrailsResponse> DescribeTrailsAsync(DescribeTrailsRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeTrailsRequestMarshaller();
             var unmarshaller = DescribeTrailsResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DescribeTrailsRequest, DescribeTrailsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DescribeTrailsRequest, DescribeTrailsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -411,13 +405,11 @@ namespace Amazon.CloudTrail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<GetTrailStatusResponse> GetTrailStatusAsync(GetTrailStatusRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<GetTrailStatusResponse> GetTrailStatusAsync(GetTrailStatusRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetTrailStatusRequestMarshaller();
             var unmarshaller = GetTrailStatusResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, GetTrailStatusRequest, GetTrailStatusResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, GetTrailStatusRequest, GetTrailStatusResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -454,13 +446,11 @@ namespace Amazon.CloudTrail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<StartLoggingResponse> StartLoggingAsync(StartLoggingRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<StartLoggingResponse> StartLoggingAsync(StartLoggingRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new StartLoggingRequestMarshaller();
             var unmarshaller = StartLoggingResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, StartLoggingRequest, StartLoggingResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, StartLoggingRequest, StartLoggingResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -498,13 +488,11 @@ namespace Amazon.CloudTrail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<StopLoggingResponse> StopLoggingAsync(StopLoggingRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<StopLoggingResponse> StopLoggingAsync(StopLoggingRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new StopLoggingRequestMarshaller();
             var unmarshaller = StopLoggingResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, StopLoggingRequest, StopLoggingResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, StopLoggingRequest, StopLoggingResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -551,13 +539,11 @@ namespace Amazon.CloudTrail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<UpdateTrailResponse> UpdateTrailAsync(UpdateTrailRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<UpdateTrailResponse> UpdateTrailAsync(UpdateTrailRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateTrailRequestMarshaller();
             var unmarshaller = UpdateTrailResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, UpdateTrailRequest, UpdateTrailResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, UpdateTrailRequest, UpdateTrailResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
     }
 }

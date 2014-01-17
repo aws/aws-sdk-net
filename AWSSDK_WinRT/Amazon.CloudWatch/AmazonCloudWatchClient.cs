@@ -210,13 +210,11 @@ namespace Amazon.CloudWatch
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DeleteAlarmsResponse> DeleteAlarmsAsync(DeleteAlarmsRequest deleteAlarmsRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DeleteAlarmsResponse> DeleteAlarmsAsync(DeleteAlarmsRequest deleteAlarmsRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteAlarmsRequestMarshaller();
             var unmarshaller = DeleteAlarmsResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DeleteAlarmsRequest, DeleteAlarmsResponse>(deleteAlarmsRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DeleteAlarmsRequest, DeleteAlarmsResponse>(deleteAlarmsRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DescribeAlarmHistoryResponse DescribeAlarmHistory(DescribeAlarmHistoryRequest request)
@@ -247,13 +245,11 @@ namespace Amazon.CloudWatch
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DescribeAlarmHistoryResponse> DescribeAlarmHistoryAsync(DescribeAlarmHistoryRequest describeAlarmHistoryRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DescribeAlarmHistoryResponse> DescribeAlarmHistoryAsync(DescribeAlarmHistoryRequest describeAlarmHistoryRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeAlarmHistoryRequestMarshaller();
             var unmarshaller = DescribeAlarmHistoryResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DescribeAlarmHistoryRequest, DescribeAlarmHistoryResponse>(describeAlarmHistoryRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DescribeAlarmHistoryRequest, DescribeAlarmHistoryResponse>(describeAlarmHistoryRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DescribeAlarmsResponse DescribeAlarms(DescribeAlarmsRequest request)
@@ -283,13 +279,11 @@ namespace Amazon.CloudWatch
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DescribeAlarmsResponse> DescribeAlarmsAsync(DescribeAlarmsRequest describeAlarmsRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DescribeAlarmsResponse> DescribeAlarmsAsync(DescribeAlarmsRequest describeAlarmsRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeAlarmsRequestMarshaller();
             var unmarshaller = DescribeAlarmsResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DescribeAlarmsRequest, DescribeAlarmsResponse>(describeAlarmsRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DescribeAlarmsRequest, DescribeAlarmsResponse>(describeAlarmsRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DescribeAlarmsForMetricResponse DescribeAlarmsForMetric(DescribeAlarmsForMetricRequest request)
@@ -316,13 +310,11 @@ namespace Amazon.CloudWatch
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DescribeAlarmsForMetricResponse> DescribeAlarmsForMetricAsync(DescribeAlarmsForMetricRequest describeAlarmsForMetricRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DescribeAlarmsForMetricResponse> DescribeAlarmsForMetricAsync(DescribeAlarmsForMetricRequest describeAlarmsForMetricRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeAlarmsForMetricRequestMarshaller();
             var unmarshaller = DescribeAlarmsForMetricResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DescribeAlarmsForMetricRequest, DescribeAlarmsForMetricResponse>(describeAlarmsForMetricRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DescribeAlarmsForMetricRequest, DescribeAlarmsForMetricResponse>(describeAlarmsForMetricRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DisableAlarmActionsResponse DisableAlarmActions(DisableAlarmActionsRequest request)
@@ -348,13 +340,11 @@ namespace Amazon.CloudWatch
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DisableAlarmActionsResponse> DisableAlarmActionsAsync(DisableAlarmActionsRequest disableAlarmActionsRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DisableAlarmActionsResponse> DisableAlarmActionsAsync(DisableAlarmActionsRequest disableAlarmActionsRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DisableAlarmActionsRequestMarshaller();
             var unmarshaller = DisableAlarmActionsResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DisableAlarmActionsRequest, DisableAlarmActionsResponse>(disableAlarmActionsRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DisableAlarmActionsRequest, DisableAlarmActionsResponse>(disableAlarmActionsRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal EnableAlarmActionsResponse EnableAlarmActions(EnableAlarmActionsRequest request)
@@ -379,13 +369,11 @@ namespace Amazon.CloudWatch
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<EnableAlarmActionsResponse> EnableAlarmActionsAsync(EnableAlarmActionsRequest enableAlarmActionsRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<EnableAlarmActionsResponse> EnableAlarmActionsAsync(EnableAlarmActionsRequest enableAlarmActionsRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new EnableAlarmActionsRequestMarshaller();
             var unmarshaller = EnableAlarmActionsResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, EnableAlarmActionsRequest, EnableAlarmActionsResponse>(enableAlarmActionsRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, EnableAlarmActionsRequest, EnableAlarmActionsResponse>(enableAlarmActionsRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal GetMetricStatisticsResponse GetMetricStatistics(GetMetricStatisticsRequest request)
@@ -435,13 +423,11 @@ namespace Amazon.CloudWatch
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<GetMetricStatisticsResponse> GetMetricStatisticsAsync(GetMetricStatisticsRequest getMetricStatisticsRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<GetMetricStatisticsResponse> GetMetricStatisticsAsync(GetMetricStatisticsRequest getMetricStatisticsRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetMetricStatisticsRequestMarshaller();
             var unmarshaller = GetMetricStatisticsResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, GetMetricStatisticsRequest, GetMetricStatisticsResponse>(getMetricStatisticsRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, GetMetricStatisticsRequest, GetMetricStatisticsResponse>(getMetricStatisticsRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal ListMetricsResponse ListMetrics(ListMetricsRequest request)
@@ -475,13 +461,11 @@ namespace Amazon.CloudWatch
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<ListMetricsResponse> ListMetricsAsync(ListMetricsRequest listMetricsRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<ListMetricsResponse> ListMetricsAsync(ListMetricsRequest listMetricsRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListMetricsRequestMarshaller();
             var unmarshaller = ListMetricsResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, ListMetricsRequest, ListMetricsResponse>(listMetricsRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, ListMetricsRequest, ListMetricsResponse>(listMetricsRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal PutMetricAlarmResponse PutMetricAlarm(PutMetricAlarmRequest request)
@@ -512,13 +496,11 @@ namespace Amazon.CloudWatch
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<PutMetricAlarmResponse> PutMetricAlarmAsync(PutMetricAlarmRequest putMetricAlarmRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<PutMetricAlarmResponse> PutMetricAlarmAsync(PutMetricAlarmRequest putMetricAlarmRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutMetricAlarmRequestMarshaller();
             var unmarshaller = PutMetricAlarmResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, PutMetricAlarmRequest, PutMetricAlarmResponse>(putMetricAlarmRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, PutMetricAlarmRequest, PutMetricAlarmResponse>(putMetricAlarmRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal PutMetricDataResponse PutMetricData(PutMetricDataRequest request)
@@ -554,13 +536,11 @@ namespace Amazon.CloudWatch
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<PutMetricDataResponse> PutMetricDataAsync(PutMetricDataRequest putMetricDataRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<PutMetricDataResponse> PutMetricDataAsync(PutMetricDataRequest putMetricDataRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutMetricDataRequestMarshaller();
             var unmarshaller = PutMetricDataResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, PutMetricDataRequest, PutMetricDataResponse>(putMetricDataRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, PutMetricDataRequest, PutMetricDataResponse>(putMetricDataRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal SetAlarmStateResponse SetAlarmState(SetAlarmStateRequest request)
@@ -590,13 +570,11 @@ namespace Amazon.CloudWatch
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<SetAlarmStateResponse> SetAlarmStateAsync(SetAlarmStateRequest setAlarmStateRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<SetAlarmStateResponse> SetAlarmStateAsync(SetAlarmStateRequest setAlarmStateRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new SetAlarmStateRequestMarshaller();
             var unmarshaller = SetAlarmStateResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, SetAlarmStateRequest, SetAlarmStateResponse>(setAlarmStateRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, SetAlarmStateRequest, SetAlarmStateResponse>(setAlarmStateRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
     }
 }

@@ -38,9 +38,9 @@ namespace Amazon.Glacier.Model
     /// <li> <para>Repeat steps 1 and 2 for all the eight 128 MB chunks of output data, each time specifying the appropriate byte range.</para>
     /// </li>
     /// <li> <para>After downloading all the parts of the job output, you have a list of eight checksum values. Compute the tree hash of these
-    /// values to find the checksum of the entire output. Using the Describe Job API, obtain job information of the job that provided you the
-    /// output. The response includes the checksum of the entire archive stored in Amazon Glacier. You compare this value with the checksum you
-    /// computed to ensure you have downloaded the entire archive content with no errors.</para> </li>
+    /// values to find the checksum of the entire output. Using the DescribeJob API, obtain job information of the job that provided you the output.
+    /// The response includes the checksum of the entire archive stored in Amazon Glacier. You compare this value with the checksum you computed to
+    /// ensure you have downloaded the entire archive content with no errors.</para> </li>
     /// </ol> <para>An AWS account has full permission to perform all operations (actions). However, AWS Identity and Access Management (IAM) users
     /// don't have any permissions by default. You must grant them explicit permission to perform specific actions. For more information, see <a
     /// href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html" >Access Control Using AWS Identity and Access
@@ -50,12 +50,13 @@ namespace Amazon.Glacier.Model
     /// <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/downloading-an-archive.html" >Downloading an Archive</a> ,
     /// and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-job-output-get.html" >Get Job Output </a> </para>
     /// </summary>
-    public partial class GetJobOutputRequest : AmazonWebServiceRequest
+    public partial class GetJobOutputRequest : AmazonGlacierRequest
     {
         private string accountId;
         private string vaultName;
         private string jobId;
         private string range;
+
 
         /// <summary>
         /// The <c>AccountId</c> is the AWS Account ID. You can specify either the AWS Account ID or optionally a '-', in which case Amazon Glacier uses

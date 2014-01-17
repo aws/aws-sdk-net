@@ -242,13 +242,11 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<AbortMultipartUploadResponse> AbortMultipartUploadAsync(AbortMultipartUploadRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<AbortMultipartUploadResponse> AbortMultipartUploadAsync(AbortMultipartUploadRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AbortMultipartUploadRequestMarshaller();
             var unmarshaller = AbortMultipartUploadResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, AbortMultipartUploadRequest, AbortMultipartUploadResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, AbortMultipartUploadRequest, AbortMultipartUploadResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -282,13 +280,11 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<CompleteMultipartUploadResponse> CompleteMultipartUploadAsync(CompleteMultipartUploadRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<CompleteMultipartUploadResponse> CompleteMultipartUploadAsync(CompleteMultipartUploadRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CompleteMultipartUploadRequestMarshaller();
             var unmarshaller = CompleteMultipartUploadResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, CompleteMultipartUploadRequest, CompleteMultipartUploadResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, CompleteMultipartUploadRequest, CompleteMultipartUploadResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -321,13 +317,11 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<CopyObjectResponse> CopyObjectAsync(CopyObjectRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<CopyObjectResponse> CopyObjectAsync(CopyObjectRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CopyObjectRequestMarshaller();
             var unmarshaller = CopyObjectResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, CopyObjectRequest, CopyObjectResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, CopyObjectRequest, CopyObjectResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -360,13 +354,11 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<CopyPartResponse> CopyPartAsync(CopyPartRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<CopyPartResponse> CopyPartAsync(CopyPartRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CopyPartRequestMarshaller();
             var unmarshaller = CopyPartResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, CopyPartRequest, CopyPartResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, CopyPartRequest, CopyPartResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -398,13 +390,11 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<DeleteBucketResponse> DeleteBucketAsync(DeleteBucketRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DeleteBucketResponse> DeleteBucketAsync(DeleteBucketRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteBucketRequestMarshaller();
             var unmarshaller = DeleteBucketResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DeleteBucketRequest, DeleteBucketResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DeleteBucketRequest, DeleteBucketResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -436,13 +426,11 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<DeleteBucketPolicyResponse> DeleteBucketPolicyAsync(DeleteBucketPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DeleteBucketPolicyResponse> DeleteBucketPolicyAsync(DeleteBucketPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteBucketPolicyRequestMarshaller();
             var unmarshaller = DeleteBucketPolicyResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DeleteBucketPolicyRequest, DeleteBucketPolicyResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DeleteBucketPolicyRequest, DeleteBucketPolicyResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -474,13 +462,11 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<DeleteBucketTaggingResponse> DeleteBucketTaggingAsync(DeleteBucketTaggingRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DeleteBucketTaggingResponse> DeleteBucketTaggingAsync(DeleteBucketTaggingRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteBucketTaggingRequestMarshaller();
             var unmarshaller = DeleteBucketTaggingResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DeleteBucketTaggingRequest, DeleteBucketTaggingResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DeleteBucketTaggingRequest, DeleteBucketTaggingResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -512,13 +498,11 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<DeleteBucketWebsiteResponse> DeleteBucketWebsiteAsync(DeleteBucketWebsiteRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DeleteBucketWebsiteResponse> DeleteBucketWebsiteAsync(DeleteBucketWebsiteRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteBucketWebsiteRequestMarshaller();
             var unmarshaller = DeleteBucketWebsiteResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DeleteBucketWebsiteRequest, DeleteBucketWebsiteResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DeleteBucketWebsiteRequest, DeleteBucketWebsiteResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -550,13 +534,11 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<DeleteCORSConfigurationResponse> DeleteCORSConfigurationAsync(DeleteCORSConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DeleteCORSConfigurationResponse> DeleteCORSConfigurationAsync(DeleteCORSConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteCORSConfigurationRequestMarshaller();
             var unmarshaller = DeleteCORSConfigurationResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DeleteCORSConfigurationRequest, DeleteCORSConfigurationResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DeleteCORSConfigurationRequest, DeleteCORSConfigurationResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -588,13 +570,11 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<DeleteLifecycleConfigurationResponse> DeleteLifecycleConfigurationAsync(DeleteLifecycleConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DeleteLifecycleConfigurationResponse> DeleteLifecycleConfigurationAsync(DeleteLifecycleConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteLifecycleConfigurationRequestMarshaller();
             var unmarshaller = DeleteLifecycleConfigurationResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DeleteLifecycleConfigurationRequest, DeleteLifecycleConfigurationResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DeleteLifecycleConfigurationRequest, DeleteLifecycleConfigurationResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -628,13 +608,11 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<DeleteObjectResponse> DeleteObjectAsync(DeleteObjectRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DeleteObjectResponse> DeleteObjectAsync(DeleteObjectRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteObjectRequestMarshaller();
             var unmarshaller = DeleteObjectResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DeleteObjectRequest, DeleteObjectResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DeleteObjectRequest, DeleteObjectResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -668,13 +646,11 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<DeleteObjectsResponse> DeleteObjectsAsync(DeleteObjectsRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DeleteObjectsResponse> DeleteObjectsAsync(DeleteObjectsRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteObjectsRequestMarshaller();
             var unmarshaller = DeleteObjectsResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DeleteObjectsRequest, DeleteObjectsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DeleteObjectsRequest, DeleteObjectsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -707,13 +683,11 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<GetACLResponse> GetACLAsync(GetACLRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<GetACLResponse> GetACLAsync(GetACLRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetACLRequestMarshaller();
             var unmarshaller = GetACLResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, GetACLRequest, GetACLResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, GetACLRequest, GetACLResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -747,13 +721,11 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<GetBucketLocationResponse> GetBucketLocationAsync(GetBucketLocationRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<GetBucketLocationResponse> GetBucketLocationAsync(GetBucketLocationRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetBucketLocationRequestMarshaller();
             var unmarshaller = GetBucketLocationResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, GetBucketLocationRequest, GetBucketLocationResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, GetBucketLocationRequest, GetBucketLocationResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -788,13 +760,11 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<GetBucketLoggingResponse> GetBucketLoggingAsync(GetBucketLoggingRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<GetBucketLoggingResponse> GetBucketLoggingAsync(GetBucketLoggingRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetBucketLoggingRequestMarshaller();
             var unmarshaller = GetBucketLoggingResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, GetBucketLoggingRequest, GetBucketLoggingResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, GetBucketLoggingRequest, GetBucketLoggingResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -828,13 +798,11 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<GetBucketNotificationResponse> GetBucketNotificationAsync(GetBucketNotificationRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<GetBucketNotificationResponse> GetBucketNotificationAsync(GetBucketNotificationRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetBucketNotificationRequestMarshaller();
             var unmarshaller = GetBucketNotificationResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, GetBucketNotificationRequest, GetBucketNotificationResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, GetBucketNotificationRequest, GetBucketNotificationResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -868,13 +836,11 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<GetBucketPolicyResponse> GetBucketPolicyAsync(GetBucketPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<GetBucketPolicyResponse> GetBucketPolicyAsync(GetBucketPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetBucketPolicyRequestMarshaller();
             var unmarshaller = GetBucketPolicyResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, GetBucketPolicyRequest, GetBucketPolicyResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, GetBucketPolicyRequest, GetBucketPolicyResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -908,13 +874,11 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<GetBucketRequestPaymentResponse> GetBucketRequestPaymentAsync(GetBucketRequestPaymentRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<GetBucketRequestPaymentResponse> GetBucketRequestPaymentAsync(GetBucketRequestPaymentRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetBucketRequestPaymentRequestMarshaller();
             var unmarshaller = GetBucketRequestPaymentResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, GetBucketRequestPaymentRequest, GetBucketRequestPaymentResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, GetBucketRequestPaymentRequest, GetBucketRequestPaymentResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -948,13 +912,11 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<GetBucketTaggingResponse> GetBucketTaggingAsync(GetBucketTaggingRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<GetBucketTaggingResponse> GetBucketTaggingAsync(GetBucketTaggingRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetBucketTaggingRequestMarshaller();
             var unmarshaller = GetBucketTaggingResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, GetBucketTaggingRequest, GetBucketTaggingResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, GetBucketTaggingRequest, GetBucketTaggingResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -988,13 +950,11 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<GetBucketVersioningResponse> GetBucketVersioningAsync(GetBucketVersioningRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<GetBucketVersioningResponse> GetBucketVersioningAsync(GetBucketVersioningRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetBucketVersioningRequestMarshaller();
             var unmarshaller = GetBucketVersioningResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, GetBucketVersioningRequest, GetBucketVersioningResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, GetBucketVersioningRequest, GetBucketVersioningResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -1028,13 +988,11 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<GetBucketWebsiteResponse> GetBucketWebsiteAsync(GetBucketWebsiteRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<GetBucketWebsiteResponse> GetBucketWebsiteAsync(GetBucketWebsiteRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetBucketWebsiteRequestMarshaller();
             var unmarshaller = GetBucketWebsiteResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, GetBucketWebsiteRequest, GetBucketWebsiteResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, GetBucketWebsiteRequest, GetBucketWebsiteResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -1067,13 +1025,11 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<GetCORSConfigurationResponse> GetCORSConfigurationAsync(GetCORSConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<GetCORSConfigurationResponse> GetCORSConfigurationAsync(GetCORSConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetCORSConfigurationRequestMarshaller();
             var unmarshaller = GetCORSConfigurationResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, GetCORSConfigurationRequest, GetCORSConfigurationResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, GetCORSConfigurationRequest, GetCORSConfigurationResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -1107,13 +1063,11 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<GetLifecycleConfigurationResponse> GetLifecycleConfigurationAsync(GetLifecycleConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<GetLifecycleConfigurationResponse> GetLifecycleConfigurationAsync(GetLifecycleConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetLifecycleConfigurationRequestMarshaller();
             var unmarshaller = GetLifecycleConfigurationResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, GetLifecycleConfigurationRequest, GetLifecycleConfigurationResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, GetLifecycleConfigurationRequest, GetLifecycleConfigurationResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -1146,13 +1100,11 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<GetObjectResponse> GetObjectAsync(GetObjectRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<GetObjectResponse> GetObjectAsync(GetObjectRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetObjectRequestMarshaller();
             var unmarshaller = GetObjectResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, GetObjectRequest, GetObjectResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, GetObjectRequest, GetObjectResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -1188,13 +1140,11 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<GetObjectMetadataResponse> GetObjectMetadataAsync(GetObjectMetadataRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<GetObjectMetadataResponse> GetObjectMetadataAsync(GetObjectMetadataRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetObjectMetadataRequestMarshaller();
             var unmarshaller = GetObjectMetadataResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, GetObjectMetadataRequest, GetObjectMetadataResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, GetObjectMetadataRequest, GetObjectMetadataResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -1228,13 +1178,11 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<GetObjectTorrentResponse> GetObjectTorrentAsync(GetObjectTorrentRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<GetObjectTorrentResponse> GetObjectTorrentAsync(GetObjectTorrentRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetObjectTorrentRequestMarshaller();
             var unmarshaller = GetObjectTorrentResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, GetObjectTorrentRequest, GetObjectTorrentResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, GetObjectTorrentRequest, GetObjectTorrentResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -1275,13 +1223,11 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<InitiateMultipartUploadResponse> InitiateMultipartUploadAsync(InitiateMultipartUploadRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<InitiateMultipartUploadResponse> InitiateMultipartUploadAsync(InitiateMultipartUploadRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new InitiateMultipartUploadRequestMarshaller();
             var unmarshaller = InitiateMultipartUploadResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, InitiateMultipartUploadRequest, InitiateMultipartUploadResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, InitiateMultipartUploadRequest, InitiateMultipartUploadResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -1314,13 +1260,11 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<ListBucketsResponse> ListBucketsAsync(ListBucketsRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<ListBucketsResponse> ListBucketsAsync(ListBucketsRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListBucketsRequestMarshaller();
             var unmarshaller = ListBucketsResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, ListBucketsRequest, ListBucketsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, ListBucketsRequest, ListBucketsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -1365,13 +1309,11 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<ListMultipartUploadsResponse> ListMultipartUploadsAsync(ListMultipartUploadsRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<ListMultipartUploadsResponse> ListMultipartUploadsAsync(ListMultipartUploadsRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListMultipartUploadsRequestMarshaller();
             var unmarshaller = ListMultipartUploadsResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, ListMultipartUploadsRequest, ListMultipartUploadsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, ListMultipartUploadsRequest, ListMultipartUploadsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -1405,13 +1347,11 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<ListObjectsResponse> ListObjectsAsync(ListObjectsRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<ListObjectsResponse> ListObjectsAsync(ListObjectsRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListObjectsRequestMarshaller();
             var unmarshaller = ListObjectsResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, ListObjectsRequest, ListObjectsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, ListObjectsRequest, ListObjectsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -1444,13 +1384,11 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<ListPartsResponse> ListPartsAsync(ListPartsRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<ListPartsResponse> ListPartsAsync(ListPartsRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListPartsRequestMarshaller();
             var unmarshaller = ListPartsResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, ListPartsRequest, ListPartsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, ListPartsRequest, ListPartsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -1484,13 +1422,11 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<ListVersionsResponse> ListVersionsAsync(ListVersionsRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<ListVersionsResponse> ListVersionsAsync(ListVersionsRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListVersionsRequestMarshaller();
             var unmarshaller = ListVersionsResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, ListVersionsRequest, ListVersionsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, ListVersionsRequest, ListVersionsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -1521,13 +1457,11 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<PutACLResponse> PutACLAsync(PutACLRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<PutACLResponse> PutACLAsync(PutACLRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutACLRequestMarshaller();
             var unmarshaller = PutACLResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, PutACLRequest, PutACLResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, PutACLRequest, PutACLResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -1560,13 +1494,11 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<PutBucketResponse> PutBucketAsync(PutBucketRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<PutBucketResponse> PutBucketAsync(PutBucketRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutBucketRequestMarshaller();
             var unmarshaller = PutBucketResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, PutBucketRequest, PutBucketResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, PutBucketRequest, PutBucketResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -1599,13 +1531,11 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<PutBucketLoggingResponse> PutBucketLoggingAsync(PutBucketLoggingRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<PutBucketLoggingResponse> PutBucketLoggingAsync(PutBucketLoggingRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutBucketLoggingRequestMarshaller();
             var unmarshaller = PutBucketLoggingResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, PutBucketLoggingRequest, PutBucketLoggingResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, PutBucketLoggingRequest, PutBucketLoggingResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -1637,13 +1567,11 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<PutBucketNotificationResponse> PutBucketNotificationAsync(PutBucketNotificationRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<PutBucketNotificationResponse> PutBucketNotificationAsync(PutBucketNotificationRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutBucketNotificationRequestMarshaller();
             var unmarshaller = PutBucketNotificationResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, PutBucketNotificationRequest, PutBucketNotificationResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, PutBucketNotificationRequest, PutBucketNotificationResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -1675,13 +1603,11 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<PutBucketPolicyResponse> PutBucketPolicyAsync(PutBucketPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<PutBucketPolicyResponse> PutBucketPolicyAsync(PutBucketPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutBucketPolicyRequestMarshaller();
             var unmarshaller = PutBucketPolicyResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, PutBucketPolicyRequest, PutBucketPolicyResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, PutBucketPolicyRequest, PutBucketPolicyResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -1715,13 +1641,11 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<PutBucketRequestPaymentResponse> PutBucketRequestPaymentAsync(PutBucketRequestPaymentRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<PutBucketRequestPaymentResponse> PutBucketRequestPaymentAsync(PutBucketRequestPaymentRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutBucketRequestPaymentRequestMarshaller();
             var unmarshaller = PutBucketRequestPaymentResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, PutBucketRequestPaymentRequest, PutBucketRequestPaymentResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, PutBucketRequestPaymentRequest, PutBucketRequestPaymentResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -1753,13 +1677,11 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<PutBucketTaggingResponse> PutBucketTaggingAsync(PutBucketTaggingRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<PutBucketTaggingResponse> PutBucketTaggingAsync(PutBucketTaggingRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutBucketTaggingRequestMarshaller();
             var unmarshaller = PutBucketTaggingResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, PutBucketTaggingRequest, PutBucketTaggingResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, PutBucketTaggingRequest, PutBucketTaggingResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -1791,13 +1713,11 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<PutBucketVersioningResponse> PutBucketVersioningAsync(PutBucketVersioningRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<PutBucketVersioningResponse> PutBucketVersioningAsync(PutBucketVersioningRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutBucketVersioningRequestMarshaller();
             var unmarshaller = PutBucketVersioningResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, PutBucketVersioningRequest, PutBucketVersioningResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, PutBucketVersioningRequest, PutBucketVersioningResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -1829,13 +1749,11 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<PutBucketWebsiteResponse> PutBucketWebsiteAsync(PutBucketWebsiteRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<PutBucketWebsiteResponse> PutBucketWebsiteAsync(PutBucketWebsiteRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutBucketWebsiteRequestMarshaller();
             var unmarshaller = PutBucketWebsiteResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, PutBucketWebsiteRequest, PutBucketWebsiteResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, PutBucketWebsiteRequest, PutBucketWebsiteResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -1866,13 +1784,11 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<PutCORSConfigurationResponse> PutCORSConfigurationAsync(PutCORSConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<PutCORSConfigurationResponse> PutCORSConfigurationAsync(PutCORSConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutCORSConfigurationRequestMarshaller();
             var unmarshaller = PutCORSConfigurationResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, PutCORSConfigurationRequest, PutCORSConfigurationResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, PutCORSConfigurationRequest, PutCORSConfigurationResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -1904,13 +1820,11 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<PutLifecycleConfigurationResponse> PutLifecycleConfigurationAsync(PutLifecycleConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<PutLifecycleConfigurationResponse> PutLifecycleConfigurationAsync(PutLifecycleConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutLifecycleConfigurationRequestMarshaller();
             var unmarshaller = PutLifecycleConfigurationResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, PutLifecycleConfigurationRequest, PutLifecycleConfigurationResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, PutLifecycleConfigurationRequest, PutLifecycleConfigurationResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -1943,13 +1857,11 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<PutObjectResponse> PutObjectAsync(PutObjectRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<PutObjectResponse> PutObjectAsync(PutObjectRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutObjectRequestMarshaller();
             var unmarshaller = PutObjectResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, PutObjectRequest, PutObjectResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, PutObjectRequest, PutObjectResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -1980,13 +1892,11 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<RestoreObjectResponse> RestoreObjectAsync(RestoreObjectRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<RestoreObjectResponse> RestoreObjectAsync(RestoreObjectRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RestoreObjectRequestMarshaller();
             var unmarshaller = RestoreObjectResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, RestoreObjectRequest, RestoreObjectResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, RestoreObjectRequest, RestoreObjectResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -2026,13 +1936,11 @@ namespace Amazon.S3
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<UploadPartResponse> UploadPartAsync(UploadPartRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<UploadPartResponse> UploadPartAsync(UploadPartRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UploadPartRequestMarshaller();
             var unmarshaller = UploadPartResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, UploadPartRequest, UploadPartResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, UploadPartRequest, UploadPartResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
     }
 }

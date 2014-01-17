@@ -12,19 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Xml;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.S3.Model;
+using System.Collections.Generic;
 using Amazon.S3.Util;
-using Amazon.Runtime;
 using Amazon.Runtime.Internal;
-using Amazon.Runtime.Internal.Transform;
-using Amazon.Runtime.Internal.Util;
 using System.Globalization;
 
 namespace Amazon.S3.Model.Internal.MarshallTransformations
@@ -33,7 +24,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     {
         public static void Marshall(IRequest request, PutWithACLRequest aclRequest)
         {
-            Dictionary<S3Permission, string> protoHeaders = new Dictionary<S3Permission, string>();
+            var protoHeaders = new Dictionary<S3Permission, string>();
             foreach (var grant in aclRequest.Grants)
             {
                 string grantee = null;

@@ -157,6 +157,13 @@
                 continue;
               }
   
+              if (context.TestExpression("InventoryRetrievalParameters", targetDepth))
+              {
+                context.Read();
+                glacierJobDescription.InventoryRetrievalParameters = InventoryRetrievalJobDescriptionUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
                 if (context.CurrentDepth <= originalDepth)
                 {
                     return glacierJobDescription;

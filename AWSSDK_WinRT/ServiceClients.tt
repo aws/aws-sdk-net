@@ -173,13 +173,11 @@ namespace <#= type.Namespace #>
             }
         }
 
-<#= getOperationDocumentation(sdkDocs, method)#>		public async Task<<#= method.Name #>Response> <#= method.Name #>Async(<#= method.Name #>Request <#= method.Name.Substring(0, 1).ToLower() + method.Name.Substring(1) #>Request, CancellationToken cancellationToken = default(CancellationToken))
+<#= getOperationDocumentation(sdkDocs, method)#>		public Task<<#= method.Name #>Response> <#= method.Name #>Async(<#= method.Name #>Request <#= method.Name.Substring(0, 1).ToLower() + method.Name.Substring(1) #>Request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new <#= method.Name #>RequestMarshaller();
             var unmarshaller = <#= method.Name #>ResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, <#= method.Name #>Request, <#= method.Name #>Response>(<#= method.Name.Substring(0, 1).ToLower() + method.Name.Substring(1) #>Request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, <#= method.Name #>Request, <#= method.Name #>Response>(<#= method.Name.Substring(0, 1).ToLower() + method.Name.Substring(1) #>Request, marshaller, unmarshaller, signer, cancellationToken);
         }
 <#+          
             }

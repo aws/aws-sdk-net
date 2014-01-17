@@ -30,9 +30,10 @@ namespace Amazon.SimpleEmail.Model
     /// see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/bounce-complaint-notifications.html" >Amazon SES Developer Guide</a>
     /// .</para>
     /// </summary>
-    public partial class GetIdentityNotificationAttributesRequest : AmazonWebServiceRequest
+    public partial class GetIdentityNotificationAttributesRequest : AmazonSimpleEmailServiceRequest
     {
         private List<string> identities = new List<string>();
+
 
         /// <summary>
         /// A list of one or more identities.

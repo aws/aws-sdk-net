@@ -197,13 +197,11 @@ namespace Amazon.IdentityManagement
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<AddRoleToInstanceProfileResponse> AddRoleToInstanceProfileAsync(AddRoleToInstanceProfileRequest addRoleToInstanceProfileRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<AddRoleToInstanceProfileResponse> AddRoleToInstanceProfileAsync(AddRoleToInstanceProfileRequest addRoleToInstanceProfileRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AddRoleToInstanceProfileRequestMarshaller();
             var unmarshaller = AddRoleToInstanceProfileResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, AddRoleToInstanceProfileRequest, AddRoleToInstanceProfileResponse>(addRoleToInstanceProfileRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, AddRoleToInstanceProfileRequest, AddRoleToInstanceProfileResponse>(addRoleToInstanceProfileRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal AddUserToGroupResponse AddUserToGroup(AddUserToGroupRequest request)
@@ -231,13 +229,11 @@ namespace Amazon.IdentityManagement
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<AddUserToGroupResponse> AddUserToGroupAsync(AddUserToGroupRequest addUserToGroupRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<AddUserToGroupResponse> AddUserToGroupAsync(AddUserToGroupRequest addUserToGroupRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AddUserToGroupRequestMarshaller();
             var unmarshaller = AddUserToGroupResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, AddUserToGroupRequest, AddUserToGroupResponse>(addUserToGroupRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, AddUserToGroupRequest, AddUserToGroupResponse>(addUserToGroupRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal ChangePasswordResponse ChangePassword(ChangePasswordRequest request)
@@ -269,13 +265,11 @@ namespace Amazon.IdentityManagement
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<ChangePasswordResponse> ChangePasswordAsync(ChangePasswordRequest changePasswordRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<ChangePasswordResponse> ChangePasswordAsync(ChangePasswordRequest changePasswordRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ChangePasswordRequestMarshaller();
             var unmarshaller = ChangePasswordResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, ChangePasswordRequest, ChangePasswordResponse>(changePasswordRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, ChangePasswordRequest, ChangePasswordResponse>(changePasswordRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal CreateAccessKeyResponse CreateAccessKey(CreateAccessKeyRequest request)
@@ -311,13 +305,11 @@ namespace Amazon.IdentityManagement
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<CreateAccessKeyResponse> CreateAccessKeyAsync(CreateAccessKeyRequest createAccessKeyRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<CreateAccessKeyResponse> CreateAccessKeyAsync(CreateAccessKeyRequest createAccessKeyRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateAccessKeyRequestMarshaller();
             var unmarshaller = CreateAccessKeyResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, CreateAccessKeyRequest, CreateAccessKeyResponse>(createAccessKeyRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, CreateAccessKeyRequest, CreateAccessKeyResponse>(createAccessKeyRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal CreateAccountAliasResponse CreateAccountAlias(CreateAccountAliasRequest request)
@@ -346,13 +338,11 @@ namespace Amazon.IdentityManagement
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<CreateAccountAliasResponse> CreateAccountAliasAsync(CreateAccountAliasRequest createAccountAliasRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<CreateAccountAliasResponse> CreateAccountAliasAsync(CreateAccountAliasRequest createAccountAliasRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateAccountAliasRequestMarshaller();
             var unmarshaller = CreateAccountAliasResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, CreateAccountAliasRequest, CreateAccountAliasResponse>(createAccountAliasRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, CreateAccountAliasRequest, CreateAccountAliasResponse>(createAccountAliasRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal CreateGroupResponse CreateGroup(CreateGroupRequest request)
@@ -384,13 +374,11 @@ namespace Amazon.IdentityManagement
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<CreateGroupResponse> CreateGroupAsync(CreateGroupRequest createGroupRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<CreateGroupResponse> CreateGroupAsync(CreateGroupRequest createGroupRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateGroupRequestMarshaller();
             var unmarshaller = CreateGroupResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, CreateGroupRequest, CreateGroupResponse>(createGroupRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, CreateGroupRequest, CreateGroupResponse>(createGroupRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal CreateInstanceProfileResponse CreateInstanceProfile(CreateInstanceProfileRequest request)
@@ -422,13 +410,11 @@ namespace Amazon.IdentityManagement
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<CreateInstanceProfileResponse> CreateInstanceProfileAsync(CreateInstanceProfileRequest createInstanceProfileRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<CreateInstanceProfileResponse> CreateInstanceProfileAsync(CreateInstanceProfileRequest createInstanceProfileRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateInstanceProfileRequestMarshaller();
             var unmarshaller = CreateInstanceProfileResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, CreateInstanceProfileRequest, CreateInstanceProfileResponse>(createInstanceProfileRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, CreateInstanceProfileRequest, CreateInstanceProfileResponse>(createInstanceProfileRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal CreateLoginProfileResponse CreateLoginProfile(CreateLoginProfileRequest request)
@@ -462,13 +448,11 @@ namespace Amazon.IdentityManagement
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<CreateLoginProfileResponse> CreateLoginProfileAsync(CreateLoginProfileRequest createLoginProfileRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<CreateLoginProfileResponse> CreateLoginProfileAsync(CreateLoginProfileRequest createLoginProfileRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateLoginProfileRequestMarshaller();
             var unmarshaller = CreateLoginProfileResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, CreateLoginProfileRequest, CreateLoginProfileResponse>(createLoginProfileRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, CreateLoginProfileRequest, CreateLoginProfileResponse>(createLoginProfileRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal CreateRoleResponse CreateRole(CreateRoleRequest request)
@@ -503,13 +487,11 @@ namespace Amazon.IdentityManagement
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<CreateRoleResponse> CreateRoleAsync(CreateRoleRequest createRoleRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<CreateRoleResponse> CreateRoleAsync(CreateRoleRequest createRoleRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateRoleRequestMarshaller();
             var unmarshaller = CreateRoleResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, CreateRoleRequest, CreateRoleResponse>(createRoleRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, CreateRoleRequest, CreateRoleResponse>(createRoleRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal CreateSAMLProviderResponse CreateSAMLProvider(CreateSAMLProviderRequest request)
@@ -547,13 +529,11 @@ namespace Amazon.IdentityManagement
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<CreateSAMLProviderResponse> CreateSAMLProviderAsync(CreateSAMLProviderRequest createSAMLProviderRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<CreateSAMLProviderResponse> CreateSAMLProviderAsync(CreateSAMLProviderRequest createSAMLProviderRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateSAMLProviderRequestMarshaller();
             var unmarshaller = CreateSAMLProviderResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, CreateSAMLProviderRequest, CreateSAMLProviderResponse>(createSAMLProviderRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, CreateSAMLProviderRequest, CreateSAMLProviderResponse>(createSAMLProviderRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal CreateUserResponse CreateUser(CreateUserRequest request)
@@ -585,13 +565,11 @@ namespace Amazon.IdentityManagement
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<CreateUserResponse> CreateUserAsync(CreateUserRequest createUserRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<CreateUserResponse> CreateUserAsync(CreateUserRequest createUserRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateUserRequestMarshaller();
             var unmarshaller = CreateUserResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, CreateUserRequest, CreateUserResponse>(createUserRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, CreateUserRequest, CreateUserResponse>(createUserRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal CreateVirtualMFADeviceResponse CreateVirtualMFADevice(CreateVirtualMFADeviceRequest request)
@@ -626,13 +604,11 @@ namespace Amazon.IdentityManagement
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<CreateVirtualMFADeviceResponse> CreateVirtualMFADeviceAsync(CreateVirtualMFADeviceRequest createVirtualMFADeviceRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<CreateVirtualMFADeviceResponse> CreateVirtualMFADeviceAsync(CreateVirtualMFADeviceRequest createVirtualMFADeviceRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateVirtualMFADeviceRequestMarshaller();
             var unmarshaller = CreateVirtualMFADeviceResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, CreateVirtualMFADeviceRequest, CreateVirtualMFADeviceResponse>(createVirtualMFADeviceRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, CreateVirtualMFADeviceRequest, CreateVirtualMFADeviceResponse>(createVirtualMFADeviceRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DeactivateMFADeviceResponse DeactivateMFADevice(DeactivateMFADeviceRequest request)
@@ -661,13 +637,11 @@ namespace Amazon.IdentityManagement
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DeactivateMFADeviceResponse> DeactivateMFADeviceAsync(DeactivateMFADeviceRequest deactivateMFADeviceRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DeactivateMFADeviceResponse> DeactivateMFADeviceAsync(DeactivateMFADeviceRequest deactivateMFADeviceRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeactivateMFADeviceRequestMarshaller();
             var unmarshaller = DeactivateMFADeviceResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DeactivateMFADeviceRequest, DeactivateMFADeviceResponse>(deactivateMFADeviceRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DeactivateMFADeviceRequest, DeactivateMFADeviceResponse>(deactivateMFADeviceRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DeleteAccessKeyResponse DeleteAccessKey(DeleteAccessKeyRequest request)
@@ -697,13 +671,11 @@ namespace Amazon.IdentityManagement
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DeleteAccessKeyResponse> DeleteAccessKeyAsync(DeleteAccessKeyRequest deleteAccessKeyRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DeleteAccessKeyResponse> DeleteAccessKeyAsync(DeleteAccessKeyRequest deleteAccessKeyRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteAccessKeyRequestMarshaller();
             var unmarshaller = DeleteAccessKeyResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DeleteAccessKeyRequest, DeleteAccessKeyResponse>(deleteAccessKeyRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DeleteAccessKeyRequest, DeleteAccessKeyResponse>(deleteAccessKeyRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DeleteAccountAliasResponse DeleteAccountAlias(DeleteAccountAliasRequest request)
@@ -732,13 +704,11 @@ namespace Amazon.IdentityManagement
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DeleteAccountAliasResponse> DeleteAccountAliasAsync(DeleteAccountAliasRequest deleteAccountAliasRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DeleteAccountAliasResponse> DeleteAccountAliasAsync(DeleteAccountAliasRequest deleteAccountAliasRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteAccountAliasRequestMarshaller();
             var unmarshaller = DeleteAccountAliasResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DeleteAccountAliasRequest, DeleteAccountAliasResponse>(deleteAccountAliasRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DeleteAccountAliasRequest, DeleteAccountAliasResponse>(deleteAccountAliasRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DeleteAccountPasswordPolicyResponse DeleteAccountPasswordPolicy(DeleteAccountPasswordPolicyRequest request)
@@ -765,13 +735,11 @@ namespace Amazon.IdentityManagement
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DeleteAccountPasswordPolicyResponse> DeleteAccountPasswordPolicyAsync(DeleteAccountPasswordPolicyRequest deleteAccountPasswordPolicyRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DeleteAccountPasswordPolicyResponse> DeleteAccountPasswordPolicyAsync(DeleteAccountPasswordPolicyRequest deleteAccountPasswordPolicyRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteAccountPasswordPolicyRequestMarshaller();
             var unmarshaller = DeleteAccountPasswordPolicyResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DeleteAccountPasswordPolicyRequest, DeleteAccountPasswordPolicyResponse>(deleteAccountPasswordPolicyRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DeleteAccountPasswordPolicyRequest, DeleteAccountPasswordPolicyResponse>(deleteAccountPasswordPolicyRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DeleteGroupResponse DeleteGroup(DeleteGroupRequest request)
@@ -800,13 +768,11 @@ namespace Amazon.IdentityManagement
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DeleteGroupResponse> DeleteGroupAsync(DeleteGroupRequest deleteGroupRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DeleteGroupResponse> DeleteGroupAsync(DeleteGroupRequest deleteGroupRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteGroupRequestMarshaller();
             var unmarshaller = DeleteGroupResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DeleteGroupRequest, DeleteGroupResponse>(deleteGroupRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DeleteGroupRequest, DeleteGroupResponse>(deleteGroupRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DeleteGroupPolicyResponse DeleteGroupPolicy(DeleteGroupPolicyRequest request)
@@ -834,13 +800,11 @@ namespace Amazon.IdentityManagement
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DeleteGroupPolicyResponse> DeleteGroupPolicyAsync(DeleteGroupPolicyRequest deleteGroupPolicyRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DeleteGroupPolicyResponse> DeleteGroupPolicyAsync(DeleteGroupPolicyRequest deleteGroupPolicyRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteGroupPolicyRequestMarshaller();
             var unmarshaller = DeleteGroupPolicyResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DeleteGroupPolicyRequest, DeleteGroupPolicyResponse>(deleteGroupPolicyRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DeleteGroupPolicyRequest, DeleteGroupPolicyResponse>(deleteGroupPolicyRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DeleteInstanceProfileResponse DeleteInstanceProfile(DeleteInstanceProfileRequest request)
@@ -872,13 +836,11 @@ namespace Amazon.IdentityManagement
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DeleteInstanceProfileResponse> DeleteInstanceProfileAsync(DeleteInstanceProfileRequest deleteInstanceProfileRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DeleteInstanceProfileResponse> DeleteInstanceProfileAsync(DeleteInstanceProfileRequest deleteInstanceProfileRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteInstanceProfileRequestMarshaller();
             var unmarshaller = DeleteInstanceProfileResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DeleteInstanceProfileRequest, DeleteInstanceProfileResponse>(deleteInstanceProfileRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DeleteInstanceProfileRequest, DeleteInstanceProfileResponse>(deleteInstanceProfileRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DeleteLoginProfileResponse DeleteLoginProfile(DeleteLoginProfileRequest request)
@@ -910,13 +872,11 @@ namespace Amazon.IdentityManagement
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DeleteLoginProfileResponse> DeleteLoginProfileAsync(DeleteLoginProfileRequest deleteLoginProfileRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DeleteLoginProfileResponse> DeleteLoginProfileAsync(DeleteLoginProfileRequest deleteLoginProfileRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteLoginProfileRequestMarshaller();
             var unmarshaller = DeleteLoginProfileResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DeleteLoginProfileRequest, DeleteLoginProfileResponse>(deleteLoginProfileRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DeleteLoginProfileRequest, DeleteLoginProfileResponse>(deleteLoginProfileRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DeleteRoleResponse DeleteRole(DeleteRoleRequest request)
@@ -947,13 +907,11 @@ namespace Amazon.IdentityManagement
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DeleteRoleResponse> DeleteRoleAsync(DeleteRoleRequest deleteRoleRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DeleteRoleResponse> DeleteRoleAsync(DeleteRoleRequest deleteRoleRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteRoleRequestMarshaller();
             var unmarshaller = DeleteRoleResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DeleteRoleRequest, DeleteRoleResponse>(deleteRoleRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DeleteRoleRequest, DeleteRoleResponse>(deleteRoleRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DeleteRolePolicyResponse DeleteRolePolicy(DeleteRolePolicyRequest request)
@@ -981,13 +939,11 @@ namespace Amazon.IdentityManagement
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DeleteRolePolicyResponse> DeleteRolePolicyAsync(DeleteRolePolicyRequest deleteRolePolicyRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DeleteRolePolicyResponse> DeleteRolePolicyAsync(DeleteRolePolicyRequest deleteRolePolicyRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteRolePolicyRequestMarshaller();
             var unmarshaller = DeleteRolePolicyResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DeleteRolePolicyRequest, DeleteRolePolicyResponse>(deleteRolePolicyRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DeleteRolePolicyRequest, DeleteRolePolicyResponse>(deleteRolePolicyRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DeleteSAMLProviderResponse DeleteSAMLProvider(DeleteSAMLProviderRequest request)
@@ -1016,13 +972,11 @@ namespace Amazon.IdentityManagement
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DeleteSAMLProviderResponse> DeleteSAMLProviderAsync(DeleteSAMLProviderRequest deleteSAMLProviderRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DeleteSAMLProviderResponse> DeleteSAMLProviderAsync(DeleteSAMLProviderRequest deleteSAMLProviderRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteSAMLProviderRequestMarshaller();
             var unmarshaller = DeleteSAMLProviderResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DeleteSAMLProviderRequest, DeleteSAMLProviderResponse>(deleteSAMLProviderRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DeleteSAMLProviderRequest, DeleteSAMLProviderResponse>(deleteSAMLProviderRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DeleteServerCertificateResponse DeleteServerCertificate(DeleteServerCertificateRequest request)
@@ -1055,13 +1009,11 @@ namespace Amazon.IdentityManagement
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DeleteServerCertificateResponse> DeleteServerCertificateAsync(DeleteServerCertificateRequest deleteServerCertificateRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DeleteServerCertificateResponse> DeleteServerCertificateAsync(DeleteServerCertificateRequest deleteServerCertificateRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteServerCertificateRequestMarshaller();
             var unmarshaller = DeleteServerCertificateResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DeleteServerCertificateRequest, DeleteServerCertificateResponse>(deleteServerCertificateRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DeleteServerCertificateRequest, DeleteServerCertificateResponse>(deleteServerCertificateRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DeleteSigningCertificateResponse DeleteSigningCertificate(DeleteSigningCertificateRequest request)
@@ -1091,13 +1043,11 @@ namespace Amazon.IdentityManagement
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DeleteSigningCertificateResponse> DeleteSigningCertificateAsync(DeleteSigningCertificateRequest deleteSigningCertificateRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DeleteSigningCertificateResponse> DeleteSigningCertificateAsync(DeleteSigningCertificateRequest deleteSigningCertificateRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteSigningCertificateRequestMarshaller();
             var unmarshaller = DeleteSigningCertificateResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DeleteSigningCertificateRequest, DeleteSigningCertificateResponse>(deleteSigningCertificateRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DeleteSigningCertificateRequest, DeleteSigningCertificateResponse>(deleteSigningCertificateRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DeleteUserResponse DeleteUser(DeleteUserRequest request)
@@ -1127,13 +1077,11 @@ namespace Amazon.IdentityManagement
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DeleteUserResponse> DeleteUserAsync(DeleteUserRequest deleteUserRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DeleteUserResponse> DeleteUserAsync(DeleteUserRequest deleteUserRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteUserRequestMarshaller();
             var unmarshaller = DeleteUserResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DeleteUserRequest, DeleteUserResponse>(deleteUserRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DeleteUserRequest, DeleteUserResponse>(deleteUserRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DeleteUserPolicyResponse DeleteUserPolicy(DeleteUserPolicyRequest request)
@@ -1161,13 +1109,11 @@ namespace Amazon.IdentityManagement
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DeleteUserPolicyResponse> DeleteUserPolicyAsync(DeleteUserPolicyRequest deleteUserPolicyRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DeleteUserPolicyResponse> DeleteUserPolicyAsync(DeleteUserPolicyRequest deleteUserPolicyRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteUserPolicyRequestMarshaller();
             var unmarshaller = DeleteUserPolicyResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DeleteUserPolicyRequest, DeleteUserPolicyResponse>(deleteUserPolicyRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DeleteUserPolicyRequest, DeleteUserPolicyResponse>(deleteUserPolicyRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DeleteVirtualMFADeviceResponse DeleteVirtualMFADevice(DeleteVirtualMFADeviceRequest request)
@@ -1197,13 +1143,11 @@ namespace Amazon.IdentityManagement
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DeleteVirtualMFADeviceResponse> DeleteVirtualMFADeviceAsync(DeleteVirtualMFADeviceRequest deleteVirtualMFADeviceRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DeleteVirtualMFADeviceResponse> DeleteVirtualMFADeviceAsync(DeleteVirtualMFADeviceRequest deleteVirtualMFADeviceRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteVirtualMFADeviceRequestMarshaller();
             var unmarshaller = DeleteVirtualMFADeviceResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DeleteVirtualMFADeviceRequest, DeleteVirtualMFADeviceResponse>(deleteVirtualMFADeviceRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DeleteVirtualMFADeviceRequest, DeleteVirtualMFADeviceResponse>(deleteVirtualMFADeviceRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal EnableMFADeviceResponse EnableMFADevice(EnableMFADeviceRequest request)
@@ -1235,13 +1179,11 @@ namespace Amazon.IdentityManagement
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<EnableMFADeviceResponse> EnableMFADeviceAsync(EnableMFADeviceRequest enableMFADeviceRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<EnableMFADeviceResponse> EnableMFADeviceAsync(EnableMFADeviceRequest enableMFADeviceRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new EnableMFADeviceRequestMarshaller();
             var unmarshaller = EnableMFADeviceResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, EnableMFADeviceRequest, EnableMFADeviceResponse>(enableMFADeviceRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, EnableMFADeviceRequest, EnableMFADeviceResponse>(enableMFADeviceRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal GetAccountPasswordPolicyResponse GetAccountPasswordPolicy(GetAccountPasswordPolicyRequest request)
@@ -1270,13 +1212,11 @@ namespace Amazon.IdentityManagement
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<GetAccountPasswordPolicyResponse> GetAccountPasswordPolicyAsync(GetAccountPasswordPolicyRequest getAccountPasswordPolicyRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<GetAccountPasswordPolicyResponse> GetAccountPasswordPolicyAsync(GetAccountPasswordPolicyRequest getAccountPasswordPolicyRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetAccountPasswordPolicyRequestMarshaller();
             var unmarshaller = GetAccountPasswordPolicyResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, GetAccountPasswordPolicyRequest, GetAccountPasswordPolicyResponse>(getAccountPasswordPolicyRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, GetAccountPasswordPolicyRequest, GetAccountPasswordPolicyResponse>(getAccountPasswordPolicyRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal GetAccountSummaryResponse GetAccountSummary(GetAccountSummaryRequest request)
@@ -1305,13 +1245,11 @@ namespace Amazon.IdentityManagement
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<GetAccountSummaryResponse> GetAccountSummaryAsync(GetAccountSummaryRequest getAccountSummaryRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<GetAccountSummaryResponse> GetAccountSummaryAsync(GetAccountSummaryRequest getAccountSummaryRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetAccountSummaryRequestMarshaller();
             var unmarshaller = GetAccountSummaryResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, GetAccountSummaryRequest, GetAccountSummaryResponse>(getAccountSummaryRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, GetAccountSummaryRequest, GetAccountSummaryResponse>(getAccountSummaryRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal GetGroupResponse GetGroup(GetGroupRequest request)
@@ -1341,13 +1279,11 @@ namespace Amazon.IdentityManagement
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<GetGroupResponse> GetGroupAsync(GetGroupRequest getGroupRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<GetGroupResponse> GetGroupAsync(GetGroupRequest getGroupRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetGroupRequestMarshaller();
             var unmarshaller = GetGroupResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, GetGroupRequest, GetGroupResponse>(getGroupRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, GetGroupRequest, GetGroupResponse>(getGroupRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal GetGroupPolicyResponse GetGroupPolicy(GetGroupPolicyRequest request)
@@ -1377,13 +1313,11 @@ namespace Amazon.IdentityManagement
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<GetGroupPolicyResponse> GetGroupPolicyAsync(GetGroupPolicyRequest getGroupPolicyRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<GetGroupPolicyResponse> GetGroupPolicyAsync(GetGroupPolicyRequest getGroupPolicyRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetGroupPolicyRequestMarshaller();
             var unmarshaller = GetGroupPolicyResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, GetGroupPolicyRequest, GetGroupPolicyResponse>(getGroupPolicyRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, GetGroupPolicyRequest, GetGroupPolicyResponse>(getGroupPolicyRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal GetInstanceProfileResponse GetInstanceProfile(GetInstanceProfileRequest request)
@@ -1414,13 +1348,11 @@ namespace Amazon.IdentityManagement
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<GetInstanceProfileResponse> GetInstanceProfileAsync(GetInstanceProfileRequest getInstanceProfileRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<GetInstanceProfileResponse> GetInstanceProfileAsync(GetInstanceProfileRequest getInstanceProfileRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetInstanceProfileRequestMarshaller();
             var unmarshaller = GetInstanceProfileResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, GetInstanceProfileRequest, GetInstanceProfileResponse>(getInstanceProfileRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, GetInstanceProfileRequest, GetInstanceProfileResponse>(getInstanceProfileRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal GetLoginProfileResponse GetLoginProfile(GetLoginProfileRequest request)
@@ -1450,13 +1382,11 @@ namespace Amazon.IdentityManagement
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<GetLoginProfileResponse> GetLoginProfileAsync(GetLoginProfileRequest getLoginProfileRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<GetLoginProfileResponse> GetLoginProfileAsync(GetLoginProfileRequest getLoginProfileRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetLoginProfileRequestMarshaller();
             var unmarshaller = GetLoginProfileResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, GetLoginProfileRequest, GetLoginProfileResponse>(getLoginProfileRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, GetLoginProfileRequest, GetLoginProfileResponse>(getLoginProfileRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal GetRoleResponse GetRole(GetRoleRequest request)
@@ -1488,13 +1418,11 @@ namespace Amazon.IdentityManagement
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<GetRoleResponse> GetRoleAsync(GetRoleRequest getRoleRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<GetRoleResponse> GetRoleAsync(GetRoleRequest getRoleRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetRoleRequestMarshaller();
             var unmarshaller = GetRoleResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, GetRoleRequest, GetRoleResponse>(getRoleRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, GetRoleRequest, GetRoleResponse>(getRoleRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal GetRolePolicyResponse GetRolePolicy(GetRolePolicyRequest request)
@@ -1524,13 +1452,11 @@ namespace Amazon.IdentityManagement
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<GetRolePolicyResponse> GetRolePolicyAsync(GetRolePolicyRequest getRolePolicyRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<GetRolePolicyResponse> GetRolePolicyAsync(GetRolePolicyRequest getRolePolicyRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetRolePolicyRequestMarshaller();
             var unmarshaller = GetRolePolicyResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, GetRolePolicyRequest, GetRolePolicyResponse>(getRolePolicyRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, GetRolePolicyRequest, GetRolePolicyResponse>(getRolePolicyRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal GetSAMLProviderResponse GetSAMLProvider(GetSAMLProviderRequest request)
@@ -1561,13 +1487,11 @@ namespace Amazon.IdentityManagement
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<GetSAMLProviderResponse> GetSAMLProviderAsync(GetSAMLProviderRequest getSAMLProviderRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<GetSAMLProviderResponse> GetSAMLProviderAsync(GetSAMLProviderRequest getSAMLProviderRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetSAMLProviderRequestMarshaller();
             var unmarshaller = GetSAMLProviderResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, GetSAMLProviderRequest, GetSAMLProviderResponse>(getSAMLProviderRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, GetSAMLProviderRequest, GetSAMLProviderResponse>(getSAMLProviderRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal GetServerCertificateResponse GetServerCertificate(GetServerCertificateRequest request)
@@ -1596,13 +1520,11 @@ namespace Amazon.IdentityManagement
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<GetServerCertificateResponse> GetServerCertificateAsync(GetServerCertificateRequest getServerCertificateRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<GetServerCertificateResponse> GetServerCertificateAsync(GetServerCertificateRequest getServerCertificateRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetServerCertificateRequestMarshaller();
             var unmarshaller = GetServerCertificateResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, GetServerCertificateRequest, GetServerCertificateResponse>(getServerCertificateRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, GetServerCertificateRequest, GetServerCertificateResponse>(getServerCertificateRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal GetUserResponse GetUser(GetUserRequest request)
@@ -1632,13 +1554,11 @@ namespace Amazon.IdentityManagement
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<GetUserResponse> GetUserAsync(GetUserRequest getUserRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<GetUserResponse> GetUserAsync(GetUserRequest getUserRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetUserRequestMarshaller();
             var unmarshaller = GetUserResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, GetUserRequest, GetUserResponse>(getUserRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, GetUserRequest, GetUserResponse>(getUserRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal GetUserPolicyResponse GetUserPolicy(GetUserPolicyRequest request)
@@ -1668,13 +1588,11 @@ namespace Amazon.IdentityManagement
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<GetUserPolicyResponse> GetUserPolicyAsync(GetUserPolicyRequest getUserPolicyRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<GetUserPolicyResponse> GetUserPolicyAsync(GetUserPolicyRequest getUserPolicyRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetUserPolicyRequestMarshaller();
             var unmarshaller = GetUserPolicyResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, GetUserPolicyRequest, GetUserPolicyResponse>(getUserPolicyRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, GetUserPolicyRequest, GetUserPolicyResponse>(getUserPolicyRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal ListAccessKeysResponse ListAccessKeys(ListAccessKeysRequest request)
@@ -1708,13 +1626,11 @@ namespace Amazon.IdentityManagement
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<ListAccessKeysResponse> ListAccessKeysAsync(ListAccessKeysRequest listAccessKeysRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<ListAccessKeysResponse> ListAccessKeysAsync(ListAccessKeysRequest listAccessKeysRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListAccessKeysRequestMarshaller();
             var unmarshaller = ListAccessKeysResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, ListAccessKeysRequest, ListAccessKeysResponse>(listAccessKeysRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, ListAccessKeysRequest, ListAccessKeysResponse>(listAccessKeysRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal ListAccountAliasesResponse ListAccountAliases(ListAccountAliasesRequest request)
@@ -1743,13 +1659,11 @@ namespace Amazon.IdentityManagement
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<ListAccountAliasesResponse> ListAccountAliasesAsync(ListAccountAliasesRequest listAccountAliasesRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<ListAccountAliasesResponse> ListAccountAliasesAsync(ListAccountAliasesRequest listAccountAliasesRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListAccountAliasesRequestMarshaller();
             var unmarshaller = ListAccountAliasesResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, ListAccountAliasesRequest, ListAccountAliasesResponse>(listAccountAliasesRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, ListAccountAliasesRequest, ListAccountAliasesResponse>(listAccountAliasesRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal ListGroupPoliciesResponse ListGroupPolicies(ListGroupPoliciesRequest request)
@@ -1779,13 +1693,11 @@ namespace Amazon.IdentityManagement
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<ListGroupPoliciesResponse> ListGroupPoliciesAsync(ListGroupPoliciesRequest listGroupPoliciesRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<ListGroupPoliciesResponse> ListGroupPoliciesAsync(ListGroupPoliciesRequest listGroupPoliciesRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListGroupPoliciesRequestMarshaller();
             var unmarshaller = ListGroupPoliciesResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, ListGroupPoliciesRequest, ListGroupPoliciesResponse>(listGroupPoliciesRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, ListGroupPoliciesRequest, ListGroupPoliciesResponse>(listGroupPoliciesRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal ListGroupsResponse ListGroups(ListGroupsRequest request)
@@ -1813,13 +1725,11 @@ namespace Amazon.IdentityManagement
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<ListGroupsResponse> ListGroupsAsync(ListGroupsRequest listGroupsRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<ListGroupsResponse> ListGroupsAsync(ListGroupsRequest listGroupsRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListGroupsRequestMarshaller();
             var unmarshaller = ListGroupsResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, ListGroupsRequest, ListGroupsResponse>(listGroupsRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, ListGroupsRequest, ListGroupsResponse>(listGroupsRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal ListGroupsForUserResponse ListGroupsForUser(ListGroupsForUserRequest request)
@@ -1849,13 +1759,11 @@ namespace Amazon.IdentityManagement
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<ListGroupsForUserResponse> ListGroupsForUserAsync(ListGroupsForUserRequest listGroupsForUserRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<ListGroupsForUserResponse> ListGroupsForUserAsync(ListGroupsForUserRequest listGroupsForUserRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListGroupsForUserRequestMarshaller();
             var unmarshaller = ListGroupsForUserResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, ListGroupsForUserRequest, ListGroupsForUserResponse>(listGroupsForUserRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, ListGroupsForUserRequest, ListGroupsForUserResponse>(listGroupsForUserRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal ListInstanceProfilesResponse ListInstanceProfiles(ListInstanceProfilesRequest request)
@@ -1884,13 +1792,11 @@ namespace Amazon.IdentityManagement
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<ListInstanceProfilesResponse> ListInstanceProfilesAsync(ListInstanceProfilesRequest listInstanceProfilesRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<ListInstanceProfilesResponse> ListInstanceProfilesAsync(ListInstanceProfilesRequest listInstanceProfilesRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListInstanceProfilesRequestMarshaller();
             var unmarshaller = ListInstanceProfilesResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, ListInstanceProfilesRequest, ListInstanceProfilesResponse>(listInstanceProfilesRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, ListInstanceProfilesRequest, ListInstanceProfilesResponse>(listInstanceProfilesRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal ListInstanceProfilesForRoleResponse ListInstanceProfilesForRole(ListInstanceProfilesForRoleRequest request)
@@ -1921,13 +1827,11 @@ namespace Amazon.IdentityManagement
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<ListInstanceProfilesForRoleResponse> ListInstanceProfilesForRoleAsync(ListInstanceProfilesForRoleRequest listInstanceProfilesForRoleRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<ListInstanceProfilesForRoleResponse> ListInstanceProfilesForRoleAsync(ListInstanceProfilesForRoleRequest listInstanceProfilesForRoleRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListInstanceProfilesForRoleRequestMarshaller();
             var unmarshaller = ListInstanceProfilesForRoleResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, ListInstanceProfilesForRoleRequest, ListInstanceProfilesForRoleResponse>(listInstanceProfilesForRoleRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, ListInstanceProfilesForRoleRequest, ListInstanceProfilesForRoleResponse>(listInstanceProfilesForRoleRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal ListMFADevicesResponse ListMFADevices(ListMFADevicesRequest request)
@@ -1958,13 +1862,11 @@ namespace Amazon.IdentityManagement
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<ListMFADevicesResponse> ListMFADevicesAsync(ListMFADevicesRequest listMFADevicesRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<ListMFADevicesResponse> ListMFADevicesAsync(ListMFADevicesRequest listMFADevicesRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListMFADevicesRequestMarshaller();
             var unmarshaller = ListMFADevicesResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, ListMFADevicesRequest, ListMFADevicesResponse>(listMFADevicesRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, ListMFADevicesRequest, ListMFADevicesResponse>(listMFADevicesRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal ListRolePoliciesResponse ListRolePolicies(ListRolePoliciesRequest request)
@@ -1994,13 +1896,11 @@ namespace Amazon.IdentityManagement
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<ListRolePoliciesResponse> ListRolePoliciesAsync(ListRolePoliciesRequest listRolePoliciesRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<ListRolePoliciesResponse> ListRolePoliciesAsync(ListRolePoliciesRequest listRolePoliciesRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListRolePoliciesRequestMarshaller();
             var unmarshaller = ListRolePoliciesResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, ListRolePoliciesRequest, ListRolePoliciesResponse>(listRolePoliciesRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, ListRolePoliciesRequest, ListRolePoliciesResponse>(listRolePoliciesRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal ListRolesResponse ListRoles(ListRolesRequest request)
@@ -2030,13 +1930,11 @@ namespace Amazon.IdentityManagement
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<ListRolesResponse> ListRolesAsync(ListRolesRequest listRolesRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<ListRolesResponse> ListRolesAsync(ListRolesRequest listRolesRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListRolesRequestMarshaller();
             var unmarshaller = ListRolesResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, ListRolesRequest, ListRolesResponse>(listRolesRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, ListRolesRequest, ListRolesResponse>(listRolesRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal ListSAMLProvidersResponse ListSAMLProviders(ListSAMLProvidersRequest request)
@@ -2063,13 +1961,11 @@ namespace Amazon.IdentityManagement
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<ListSAMLProvidersResponse> ListSAMLProvidersAsync(ListSAMLProvidersRequest listSAMLProvidersRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<ListSAMLProvidersResponse> ListSAMLProvidersAsync(ListSAMLProvidersRequest listSAMLProvidersRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListSAMLProvidersRequestMarshaller();
             var unmarshaller = ListSAMLProvidersResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, ListSAMLProvidersRequest, ListSAMLProvidersResponse>(listSAMLProvidersRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, ListSAMLProvidersRequest, ListSAMLProvidersResponse>(listSAMLProvidersRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal ListServerCertificatesResponse ListServerCertificates(ListServerCertificatesRequest request)
@@ -2097,13 +1993,11 @@ namespace Amazon.IdentityManagement
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<ListServerCertificatesResponse> ListServerCertificatesAsync(ListServerCertificatesRequest listServerCertificatesRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<ListServerCertificatesResponse> ListServerCertificatesAsync(ListServerCertificatesRequest listServerCertificatesRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListServerCertificatesRequestMarshaller();
             var unmarshaller = ListServerCertificatesResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, ListServerCertificatesRequest, ListServerCertificatesResponse>(listServerCertificatesRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, ListServerCertificatesRequest, ListServerCertificatesResponse>(listServerCertificatesRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal ListSigningCertificatesResponse ListSigningCertificates(ListSigningCertificatesRequest request)
@@ -2136,13 +2030,11 @@ namespace Amazon.IdentityManagement
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<ListSigningCertificatesResponse> ListSigningCertificatesAsync(ListSigningCertificatesRequest listSigningCertificatesRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<ListSigningCertificatesResponse> ListSigningCertificatesAsync(ListSigningCertificatesRequest listSigningCertificatesRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListSigningCertificatesRequestMarshaller();
             var unmarshaller = ListSigningCertificatesResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, ListSigningCertificatesRequest, ListSigningCertificatesResponse>(listSigningCertificatesRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, ListSigningCertificatesRequest, ListSigningCertificatesResponse>(listSigningCertificatesRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal ListUserPoliciesResponse ListUserPolicies(ListUserPoliciesRequest request)
@@ -2172,13 +2064,11 @@ namespace Amazon.IdentityManagement
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<ListUserPoliciesResponse> ListUserPoliciesAsync(ListUserPoliciesRequest listUserPoliciesRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<ListUserPoliciesResponse> ListUserPoliciesAsync(ListUserPoliciesRequest listUserPoliciesRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListUserPoliciesRequestMarshaller();
             var unmarshaller = ListUserPoliciesResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, ListUserPoliciesRequest, ListUserPoliciesResponse>(listUserPoliciesRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, ListUserPoliciesRequest, ListUserPoliciesResponse>(listUserPoliciesRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal ListUsersResponse ListUsers(ListUsersRequest request)
@@ -2206,13 +2096,11 @@ namespace Amazon.IdentityManagement
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<ListUsersResponse> ListUsersAsync(ListUsersRequest listUsersRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<ListUsersResponse> ListUsersAsync(ListUsersRequest listUsersRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListUsersRequestMarshaller();
             var unmarshaller = ListUsersResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, ListUsersRequest, ListUsersResponse>(listUsersRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, ListUsersRequest, ListUsersResponse>(listUsersRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal ListVirtualMFADevicesResponse ListVirtualMFADevices(ListVirtualMFADevicesRequest request)
@@ -2242,13 +2130,11 @@ namespace Amazon.IdentityManagement
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<ListVirtualMFADevicesResponse> ListVirtualMFADevicesAsync(ListVirtualMFADevicesRequest listVirtualMFADevicesRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<ListVirtualMFADevicesResponse> ListVirtualMFADevicesAsync(ListVirtualMFADevicesRequest listVirtualMFADevicesRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListVirtualMFADevicesRequestMarshaller();
             var unmarshaller = ListVirtualMFADevicesResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, ListVirtualMFADevicesRequest, ListVirtualMFADevicesResponse>(listVirtualMFADevicesRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, ListVirtualMFADevicesRequest, ListVirtualMFADevicesResponse>(listVirtualMFADevicesRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal PutGroupPolicyResponse PutGroupPolicy(PutGroupPolicyRequest request)
@@ -2281,13 +2167,11 @@ namespace Amazon.IdentityManagement
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<PutGroupPolicyResponse> PutGroupPolicyAsync(PutGroupPolicyRequest putGroupPolicyRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<PutGroupPolicyResponse> PutGroupPolicyAsync(PutGroupPolicyRequest putGroupPolicyRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutGroupPolicyRequestMarshaller();
             var unmarshaller = PutGroupPolicyResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, PutGroupPolicyRequest, PutGroupPolicyResponse>(putGroupPolicyRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, PutGroupPolicyRequest, PutGroupPolicyResponse>(putGroupPolicyRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal PutRolePolicyResponse PutRolePolicy(PutRolePolicyRequest request)
@@ -2320,13 +2204,11 @@ namespace Amazon.IdentityManagement
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<PutRolePolicyResponse> PutRolePolicyAsync(PutRolePolicyRequest putRolePolicyRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<PutRolePolicyResponse> PutRolePolicyAsync(PutRolePolicyRequest putRolePolicyRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutRolePolicyRequestMarshaller();
             var unmarshaller = PutRolePolicyResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, PutRolePolicyRequest, PutRolePolicyResponse>(putRolePolicyRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, PutRolePolicyRequest, PutRolePolicyResponse>(putRolePolicyRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal PutUserPolicyResponse PutUserPolicy(PutUserPolicyRequest request)
@@ -2359,13 +2241,11 @@ namespace Amazon.IdentityManagement
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<PutUserPolicyResponse> PutUserPolicyAsync(PutUserPolicyRequest putUserPolicyRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<PutUserPolicyResponse> PutUserPolicyAsync(PutUserPolicyRequest putUserPolicyRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutUserPolicyRequestMarshaller();
             var unmarshaller = PutUserPolicyResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, PutUserPolicyRequest, PutUserPolicyResponse>(putUserPolicyRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, PutUserPolicyRequest, PutUserPolicyResponse>(putUserPolicyRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal RemoveRoleFromInstanceProfileResponse RemoveRoleFromInstanceProfile(RemoveRoleFromInstanceProfileRequest request)
@@ -2397,13 +2277,11 @@ namespace Amazon.IdentityManagement
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<RemoveRoleFromInstanceProfileResponse> RemoveRoleFromInstanceProfileAsync(RemoveRoleFromInstanceProfileRequest removeRoleFromInstanceProfileRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<RemoveRoleFromInstanceProfileResponse> RemoveRoleFromInstanceProfileAsync(RemoveRoleFromInstanceProfileRequest removeRoleFromInstanceProfileRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RemoveRoleFromInstanceProfileRequestMarshaller();
             var unmarshaller = RemoveRoleFromInstanceProfileResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, RemoveRoleFromInstanceProfileRequest, RemoveRoleFromInstanceProfileResponse>(removeRoleFromInstanceProfileRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, RemoveRoleFromInstanceProfileRequest, RemoveRoleFromInstanceProfileResponse>(removeRoleFromInstanceProfileRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal RemoveUserFromGroupResponse RemoveUserFromGroup(RemoveUserFromGroupRequest request)
@@ -2431,13 +2309,11 @@ namespace Amazon.IdentityManagement
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<RemoveUserFromGroupResponse> RemoveUserFromGroupAsync(RemoveUserFromGroupRequest removeUserFromGroupRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<RemoveUserFromGroupResponse> RemoveUserFromGroupAsync(RemoveUserFromGroupRequest removeUserFromGroupRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RemoveUserFromGroupRequestMarshaller();
             var unmarshaller = RemoveUserFromGroupResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, RemoveUserFromGroupRequest, RemoveUserFromGroupResponse>(removeUserFromGroupRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, RemoveUserFromGroupRequest, RemoveUserFromGroupResponse>(removeUserFromGroupRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal ResyncMFADeviceResponse ResyncMFADevice(ResyncMFADeviceRequest request)
@@ -2466,13 +2342,11 @@ namespace Amazon.IdentityManagement
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<ResyncMFADeviceResponse> ResyncMFADeviceAsync(ResyncMFADeviceRequest resyncMFADeviceRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<ResyncMFADeviceResponse> ResyncMFADeviceAsync(ResyncMFADeviceRequest resyncMFADeviceRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ResyncMFADeviceRequestMarshaller();
             var unmarshaller = ResyncMFADeviceResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, ResyncMFADeviceRequest, ResyncMFADeviceResponse>(resyncMFADeviceRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, ResyncMFADeviceRequest, ResyncMFADeviceResponse>(resyncMFADeviceRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal UpdateAccessKeyResponse UpdateAccessKey(UpdateAccessKeyRequest request)
@@ -2504,13 +2378,11 @@ namespace Amazon.IdentityManagement
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<UpdateAccessKeyResponse> UpdateAccessKeyAsync(UpdateAccessKeyRequest updateAccessKeyRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<UpdateAccessKeyResponse> UpdateAccessKeyAsync(UpdateAccessKeyRequest updateAccessKeyRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateAccessKeyRequestMarshaller();
             var unmarshaller = UpdateAccessKeyResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, UpdateAccessKeyRequest, UpdateAccessKeyResponse>(updateAccessKeyRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, UpdateAccessKeyRequest, UpdateAccessKeyResponse>(updateAccessKeyRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal UpdateAccountPasswordPolicyResponse UpdateAccountPasswordPolicy(UpdateAccountPasswordPolicyRequest request)
@@ -2539,13 +2411,11 @@ namespace Amazon.IdentityManagement
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<UpdateAccountPasswordPolicyResponse> UpdateAccountPasswordPolicyAsync(UpdateAccountPasswordPolicyRequest updateAccountPasswordPolicyRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<UpdateAccountPasswordPolicyResponse> UpdateAccountPasswordPolicyAsync(UpdateAccountPasswordPolicyRequest updateAccountPasswordPolicyRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateAccountPasswordPolicyRequestMarshaller();
             var unmarshaller = UpdateAccountPasswordPolicyResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, UpdateAccountPasswordPolicyRequest, UpdateAccountPasswordPolicyResponse>(updateAccountPasswordPolicyRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, UpdateAccountPasswordPolicyRequest, UpdateAccountPasswordPolicyResponse>(updateAccountPasswordPolicyRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal UpdateAssumeRolePolicyResponse UpdateAssumeRolePolicy(UpdateAssumeRolePolicyRequest request)
@@ -2576,13 +2446,11 @@ namespace Amazon.IdentityManagement
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<UpdateAssumeRolePolicyResponse> UpdateAssumeRolePolicyAsync(UpdateAssumeRolePolicyRequest updateAssumeRolePolicyRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<UpdateAssumeRolePolicyResponse> UpdateAssumeRolePolicyAsync(UpdateAssumeRolePolicyRequest updateAssumeRolePolicyRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateAssumeRolePolicyRequestMarshaller();
             var unmarshaller = UpdateAssumeRolePolicyResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, UpdateAssumeRolePolicyRequest, UpdateAssumeRolePolicyResponse>(updateAssumeRolePolicyRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, UpdateAssumeRolePolicyRequest, UpdateAssumeRolePolicyResponse>(updateAssumeRolePolicyRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal UpdateGroupResponse UpdateGroup(UpdateGroupRequest request)
@@ -2615,13 +2483,11 @@ namespace Amazon.IdentityManagement
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<UpdateGroupResponse> UpdateGroupAsync(UpdateGroupRequest updateGroupRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<UpdateGroupResponse> UpdateGroupAsync(UpdateGroupRequest updateGroupRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateGroupRequestMarshaller();
             var unmarshaller = UpdateGroupResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, UpdateGroupRequest, UpdateGroupResponse>(updateGroupRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, UpdateGroupRequest, UpdateGroupResponse>(updateGroupRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal UpdateLoginProfileResponse UpdateLoginProfile(UpdateLoginProfileRequest request)
@@ -2651,13 +2517,11 @@ namespace Amazon.IdentityManagement
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<UpdateLoginProfileResponse> UpdateLoginProfileAsync(UpdateLoginProfileRequest updateLoginProfileRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<UpdateLoginProfileResponse> UpdateLoginProfileAsync(UpdateLoginProfileRequest updateLoginProfileRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateLoginProfileRequestMarshaller();
             var unmarshaller = UpdateLoginProfileResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, UpdateLoginProfileRequest, UpdateLoginProfileResponse>(updateLoginProfileRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, UpdateLoginProfileRequest, UpdateLoginProfileResponse>(updateLoginProfileRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal UpdateSAMLProviderResponse UpdateSAMLProvider(UpdateSAMLProviderRequest request)
@@ -2689,13 +2553,11 @@ namespace Amazon.IdentityManagement
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<UpdateSAMLProviderResponse> UpdateSAMLProviderAsync(UpdateSAMLProviderRequest updateSAMLProviderRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<UpdateSAMLProviderResponse> UpdateSAMLProviderAsync(UpdateSAMLProviderRequest updateSAMLProviderRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateSAMLProviderRequestMarshaller();
             var unmarshaller = UpdateSAMLProviderResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, UpdateSAMLProviderRequest, UpdateSAMLProviderResponse>(updateSAMLProviderRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, UpdateSAMLProviderRequest, UpdateSAMLProviderResponse>(updateSAMLProviderRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal UpdateServerCertificateResponse UpdateServerCertificate(UpdateServerCertificateRequest request)
@@ -2729,13 +2591,11 @@ namespace Amazon.IdentityManagement
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<UpdateServerCertificateResponse> UpdateServerCertificateAsync(UpdateServerCertificateRequest updateServerCertificateRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<UpdateServerCertificateResponse> UpdateServerCertificateAsync(UpdateServerCertificateRequest updateServerCertificateRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateServerCertificateRequestMarshaller();
             var unmarshaller = UpdateServerCertificateResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, UpdateServerCertificateRequest, UpdateServerCertificateResponse>(updateServerCertificateRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, UpdateServerCertificateRequest, UpdateServerCertificateResponse>(updateServerCertificateRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal UpdateSigningCertificateResponse UpdateSigningCertificate(UpdateSigningCertificateRequest request)
@@ -2767,13 +2627,11 @@ namespace Amazon.IdentityManagement
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<UpdateSigningCertificateResponse> UpdateSigningCertificateAsync(UpdateSigningCertificateRequest updateSigningCertificateRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<UpdateSigningCertificateResponse> UpdateSigningCertificateAsync(UpdateSigningCertificateRequest updateSigningCertificateRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateSigningCertificateRequestMarshaller();
             var unmarshaller = UpdateSigningCertificateResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, UpdateSigningCertificateRequest, UpdateSigningCertificateResponse>(updateSigningCertificateRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, UpdateSigningCertificateRequest, UpdateSigningCertificateResponse>(updateSigningCertificateRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal UpdateUserResponse UpdateUser(UpdateUserRequest request)
@@ -2807,13 +2665,11 @@ namespace Amazon.IdentityManagement
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<UpdateUserResponse> UpdateUserAsync(UpdateUserRequest updateUserRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<UpdateUserResponse> UpdateUserAsync(UpdateUserRequest updateUserRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateUserRequestMarshaller();
             var unmarshaller = UpdateUserResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, UpdateUserRequest, UpdateUserResponse>(updateUserRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, UpdateUserRequest, UpdateUserResponse>(updateUserRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal UploadServerCertificateResponse UploadServerCertificate(UploadServerCertificateRequest request)
@@ -2850,13 +2706,11 @@ namespace Amazon.IdentityManagement
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<UploadServerCertificateResponse> UploadServerCertificateAsync(UploadServerCertificateRequest uploadServerCertificateRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<UploadServerCertificateResponse> UploadServerCertificateAsync(UploadServerCertificateRequest uploadServerCertificateRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UploadServerCertificateRequestMarshaller();
             var unmarshaller = UploadServerCertificateResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, UploadServerCertificateRequest, UploadServerCertificateResponse>(uploadServerCertificateRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, UploadServerCertificateRequest, UploadServerCertificateResponse>(uploadServerCertificateRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal UploadSigningCertificateResponse UploadSigningCertificate(UploadSigningCertificateRequest request)
@@ -2897,13 +2751,11 @@ namespace Amazon.IdentityManagement
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<UploadSigningCertificateResponse> UploadSigningCertificateAsync(UploadSigningCertificateRequest uploadSigningCertificateRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<UploadSigningCertificateResponse> UploadSigningCertificateAsync(UploadSigningCertificateRequest uploadSigningCertificateRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UploadSigningCertificateRequestMarshaller();
             var unmarshaller = UploadSigningCertificateResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, UploadSigningCertificateRequest, UploadSigningCertificateResponse>(uploadSigningCertificateRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, UploadSigningCertificateRequest, UploadSigningCertificateResponse>(uploadSigningCertificateRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
     }
 }

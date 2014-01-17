@@ -12,19 +12,14 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
+
 using System.IO;
 using System.Xml;
-using System.Xml.Serialization;
 using System.Text;
-
-using Amazon.S3.Model;
 using Amazon.S3.Util;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
@@ -38,121 +33,123 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             IRequest request = new DefaultRequest(putObjectAclRequest, "AmazonS3");
 
             request.HttpMethod = "PUT";
+
             if (putObjectAclRequest.IsSetCannedACL())
                 request.Headers.Add("x-amz-acl", S3Transforms.ToStringValue(putObjectAclRequest.CannedACL));
 
-            Dictionary<string, string> queryParameters = new Dictionary<string, string>();
-            string uriResourcePath = "/{Bucket}/{Key}?acl;versionId={VersionId}";
-            uriResourcePath = uriResourcePath.Replace("{Bucket}", putObjectAclRequest.IsSetBucketName() ? S3Transforms.ToStringValue(putObjectAclRequest.BucketName) : "");
-            uriResourcePath = uriResourcePath.Replace("{Key}", putObjectAclRequest.IsSetKey() ? S3Transforms.ToStringValue(putObjectAclRequest.Key) : "");
-            uriResourcePath = uriResourcePath.Replace("{VersionId}", putObjectAclRequest.IsSetVersionId() ? S3Transforms.ToStringValue(putObjectAclRequest.VersionId) : "");
-            string path = uriResourcePath;
+            // if we are putting the acl onto the bucket, the keyname component will collapse to empty string
+            var uriResourcePath = string.Format("/{0}/{1}",
+                                                S3Transforms.ToStringValue(putObjectAclRequest.BucketName),
+                                                S3Transforms.ToStringValue(putObjectAclRequest.Key));
 
-            int queryIndex = uriResourcePath.IndexOf("?", StringComparison.OrdinalIgnoreCase);
-            if (queryIndex != -1)
+            request.Parameters.Add("acl", null);
+            if (putObjectAclRequest.IsSetVersionId())
+                request.Parameters.Add("versionId", S3Transforms.ToStringValue(putObjectAclRequest.VersionId));
+
+            request.CanonicalResource = S3Transforms.GetCanonicalResource(uriResourcePath, request.Parameters);
+            request.ResourcePath = S3Transforms.FormatResourcePath(uriResourcePath, request.Parameters);
+
+            var stringWriter = new StringWriter(System.Globalization.CultureInfo.InvariantCulture);
+            using (
+                var xmlWriter = XmlWriter.Create(stringWriter,
+                                                 new XmlWriterSettings()
+                                                     {
+                                                         Encoding = Encoding.UTF8,
+                                                         OmitXmlDeclaration = true
+                                                     }))
             {
-                string queryString = uriResourcePath.Substring(queryIndex + 1);
-                path = uriResourcePath.Substring(0, queryIndex);
-
-                S3Transforms.BuildQueryParameterMap(request, queryParameters, queryString, "versionId");
-            }
-
-            request.CanonicalResource = S3Transforms.GetCanonicalResource(path, queryParameters);
-            uriResourcePath = S3Transforms.FormatResourcePath(path, queryParameters);
-
-            request.ResourcePath = uriResourcePath;
-
-            StringWriter stringWriter = new StringWriter(System.Globalization.CultureInfo.InvariantCulture);
-            using (XmlWriter xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true }))
-            {
-
-
-                if (putObjectAclRequest != null)
+                var accessControlPolicyAccessControlPolicy = putObjectAclRequest.AccessControlList;
+                if (accessControlPolicyAccessControlPolicy != null)
                 {
-                    S3AccessControlList accessControlPolicyAccessControlPolicy = putObjectAclRequest.AccessControlList;
-                    if (accessControlPolicyAccessControlPolicy != null)
+                    xmlWriter.WriteStartElement("AccessControlPolicy", "");
+                    var accessControlPolicyAccessControlPolicygrantsList = accessControlPolicyAccessControlPolicy.Grants;
+                    if (accessControlPolicyAccessControlPolicygrantsList != null &&
+                        accessControlPolicyAccessControlPolicygrantsList.Count > 0)
                     {
-                        xmlWriter.WriteStartElement("AccessControlPolicy", "");
-
-                        if (accessControlPolicyAccessControlPolicy != null)
+                        xmlWriter.WriteStartElement("AccessControlList", "");
+                        foreach (
+                            var accessControlPolicyAccessControlPolicygrantsListValue in
+                                accessControlPolicyAccessControlPolicygrantsList)
                         {
-                            List<S3Grant> accessControlPolicyAccessControlPolicygrantsList = accessControlPolicyAccessControlPolicy.Grants;
-                            if (accessControlPolicyAccessControlPolicygrantsList != null && accessControlPolicyAccessControlPolicygrantsList.Count > 0)
+                            xmlWriter.WriteStartElement("Grant", "");
+                            if (accessControlPolicyAccessControlPolicygrantsListValue != null)
                             {
-                                int accessControlPolicyAccessControlPolicygrantsListIndex = 1;
-                                xmlWriter.WriteStartElement("AccessControlList", "");
-                                foreach (S3Grant accessControlPolicyAccessControlPolicygrantsListValue in accessControlPolicyAccessControlPolicygrantsList)
+                                var granteeGrantee = accessControlPolicyAccessControlPolicygrantsListValue.Grantee;
+                                if (granteeGrantee != null)
                                 {
-                                    xmlWriter.WriteStartElement("Grant", "");
-                                    if (accessControlPolicyAccessControlPolicygrantsListValue != null)
+                                    xmlWriter.WriteStartElement("Grantee", "");
+                                    if (granteeGrantee.IsSetType())
                                     {
-                                        S3Grantee granteeGrantee = accessControlPolicyAccessControlPolicygrantsListValue.Grantee;
-                                        if (granteeGrantee != null)
-                                        {
-                                            xmlWriter.WriteStartElement("Grantee", "");
-                                            if (granteeGrantee.IsSetType())
-                                            {
-                                                xmlWriter.WriteAttributeString("xsi", "type", "http://www.w3.org/2001/XMLSchema-instance", granteeGrantee.Type.ToString());
-                                            }
-                                            if (granteeGrantee.IsSetDisplayName())
-                                            {
-                                                xmlWriter.WriteElementString("DisplayName", "", S3Transforms.ToXmlStringValue(granteeGrantee.DisplayName));
-                                            }
-                                            if (granteeGrantee.IsSetEmailAddress())
-                                            {
-                                                xmlWriter.WriteElementString("EmailAddress", "", S3Transforms.ToXmlStringValue(granteeGrantee.EmailAddress));
-                                            }
-                                            if (granteeGrantee.IsSetCanonicalUser())
-                                            {
-                                                xmlWriter.WriteElementString("ID", "", S3Transforms.ToXmlStringValue(granteeGrantee.CanonicalUser));
-                                            }
-                                            if (granteeGrantee.IsSetURI())
-                                            {
-                                                xmlWriter.WriteElementString("URI", "", S3Transforms.ToXmlStringValue(granteeGrantee.URI));
-                                            }
-                                            xmlWriter.WriteEndElement();
-                                        }
+                                        xmlWriter.WriteAttributeString("xsi", "type",
+                                                                       "http://www.w3.org/2001/XMLSchema-instance",
+                                                                       granteeGrantee.Type.ToString());
                                     }
-                                    if (accessControlPolicyAccessControlPolicygrantsListValue.IsSetPermission())
+                                    if (granteeGrantee.IsSetDisplayName())
                                     {
-                                        xmlWriter.WriteElementString("Permission", "", S3Transforms.ToXmlStringValue(accessControlPolicyAccessControlPolicygrantsListValue.Permission));
+                                        xmlWriter.WriteElementString("DisplayName", "",
+                                                                     S3Transforms.ToXmlStringValue(
+                                                                         granteeGrantee.DisplayName));
+                                    }
+                                    if (granteeGrantee.IsSetEmailAddress())
+                                    {
+                                        xmlWriter.WriteElementString("EmailAddress", "",
+                                                                     S3Transforms.ToXmlStringValue(
+                                                                         granteeGrantee.EmailAddress));
+                                    }
+                                    if (granteeGrantee.IsSetCanonicalUser())
+                                    {
+                                        xmlWriter.WriteElementString("ID", "",
+                                                                     S3Transforms.ToXmlStringValue(
+                                                                         granteeGrantee.CanonicalUser));
+                                    }
+                                    if (granteeGrantee.IsSetURI())
+                                    {
+                                        xmlWriter.WriteElementString("URI", "",
+                                                                     S3Transforms.ToXmlStringValue(
+                                                                         granteeGrantee.URI));
                                     }
                                     xmlWriter.WriteEndElement();
+                                }
 
+                                if (accessControlPolicyAccessControlPolicygrantsListValue.IsSetPermission())
+                                {
+                                    xmlWriter.WriteElementString("Permission", "",
+                                                                 S3Transforms.ToXmlStringValue(
+                                                                     accessControlPolicyAccessControlPolicygrantsListValue
+                                                                         .Permission));
+                                }
+                            }
+                            xmlWriter.WriteEndElement();
+                        }
 
-                                    accessControlPolicyAccessControlPolicygrantsListIndex++;
-                                }
-                                xmlWriter.WriteEndElement();
-                            }
-                        }
-                        if (accessControlPolicyAccessControlPolicy != null)
-                        {
-                            Owner ownerOwner = accessControlPolicyAccessControlPolicy.Owner;
-                            if (ownerOwner != null)
-                            {
-                                xmlWriter.WriteStartElement("Owner", "");
-                                if (ownerOwner.IsSetDisplayName())
-                                {
-                                    xmlWriter.WriteElementString("DisplayName", "", S3Transforms.ToXmlStringValue(ownerOwner.DisplayName));
-                                }
-                                if (ownerOwner.IsSetId())
-                                {
-                                    xmlWriter.WriteElementString("ID", "", S3Transforms.ToXmlStringValue(ownerOwner.Id));
-                                }
-                                xmlWriter.WriteEndElement();
-                            }
-                        }
                         xmlWriter.WriteEndElement();
+
+                        var ownerOwner = accessControlPolicyAccessControlPolicy.Owner;
+                        if (ownerOwner != null)
+                        {
+                            xmlWriter.WriteStartElement("Owner", "");
+                            if (ownerOwner.IsSetDisplayName())
+                            {
+                                xmlWriter.WriteElementString("DisplayName", "",
+                                                             S3Transforms.ToXmlStringValue(ownerOwner.DisplayName));
+                            }
+                            if (ownerOwner.IsSetId())
+                            {
+                                xmlWriter.WriteElementString("ID", "", S3Transforms.ToXmlStringValue(ownerOwner.Id));
+                            }
+                            xmlWriter.WriteEndElement();
+                        }
                     }
+
+                    xmlWriter.WriteEndElement();
                 }
             }
 
             try
             {
-                string content = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(content);
+                var content = stringWriter.ToString();
+                request.Content = Encoding.UTF8.GetBytes(content);
                 request.Headers["Content-Type"] = "application/xml";
-
 
                 request.Parameters[S3QueryParameter.ContentType.ToString()] = "application/xml";
                 string checksum = AmazonS3Util.GenerateChecksumForContent(content, true);
@@ -166,16 +163,12 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             if (!request.UseQueryString)
             {
-                string queryString = Amazon.Util.AWSSDKUtils.GetParametersAsString(request.Parameters);
+                var queryString = Amazon.Util.AWSSDKUtils.GetParametersAsString(request.Parameters);
                 if (!string.IsNullOrEmpty(queryString))
                 {
-                    if (request.ResourcePath.Contains("?"))
-                        request.ResourcePath = string.Concat(request.ResourcePath, "&", queryString);
-                    else
-                        request.ResourcePath = string.Concat(request.ResourcePath, "?", queryString);
+                    request.ResourcePath = string.Concat(request.ResourcePath, request.ResourcePath.Contains("?") ? "&" : "?", queryString);
                 }
             }
-
 
             return request;
         }

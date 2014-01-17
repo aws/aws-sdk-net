@@ -29,7 +29,7 @@ namespace Amazon.Glacier
     /// Implementation for accessing AmazonGlacier.
     /// 
     /// <para>Amazon Glacier is a storage solution for "cold data."</para> <para>Amazon Glacier is an extremely low-cost storage service that
-    /// provides secure, durable and easy-to-use storage for data backup and archival. With Amazon Glacier, customers can store their data cost
+    /// provides secure, durable, and easy-to-use storage for data backup and archival. With Amazon Glacier, customers can store their data cost
     /// effectively for months, years, or decades. Amazon Glacier also enables customers to offload the administrative burdens of operating and
     /// scaling storage to AWS, so they don't have to worry about capacity planning, hardware provisioning, data replication, hardware failure and
     /// recovery, or time-consuming hardware migrations.</para> <para>Amazon Glacier is a great storage choice when low storage cost is paramount,
@@ -294,13 +294,11 @@ namespace Amazon.Glacier
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<AbortMultipartUploadResponse> AbortMultipartUploadAsync(AbortMultipartUploadRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<AbortMultipartUploadResponse> AbortMultipartUploadAsync(AbortMultipartUploadRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AbortMultipartUploadRequestMarshaller();
             var unmarshaller = AbortMultipartUploadResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, AbortMultipartUploadRequest, AbortMultipartUploadResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, AbortMultipartUploadRequest, AbortMultipartUploadResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -360,13 +358,11 @@ namespace Amazon.Glacier
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<CompleteMultipartUploadResponse> CompleteMultipartUploadAsync(CompleteMultipartUploadRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<CompleteMultipartUploadResponse> CompleteMultipartUploadAsync(CompleteMultipartUploadRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CompleteMultipartUploadRequestMarshaller();
             var unmarshaller = CompleteMultipartUploadResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, CompleteMultipartUploadRequest, CompleteMultipartUploadResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, CompleteMultipartUploadRequest, CompleteMultipartUploadResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -417,13 +413,11 @@ namespace Amazon.Glacier
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<CreateVaultResponse> CreateVaultAsync(CreateVaultRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<CreateVaultResponse> CreateVaultAsync(CreateVaultRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateVaultRequestMarshaller();
             var unmarshaller = CreateVaultResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, CreateVaultRequest, CreateVaultResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, CreateVaultRequest, CreateVaultResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -474,13 +468,11 @@ namespace Amazon.Glacier
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<DeleteArchiveResponse> DeleteArchiveAsync(DeleteArchiveRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DeleteArchiveResponse> DeleteArchiveAsync(DeleteArchiveRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteArchiveRequestMarshaller();
             var unmarshaller = DeleteArchiveResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DeleteArchiveRequest, DeleteArchiveResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DeleteArchiveRequest, DeleteArchiveResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -526,13 +518,11 @@ namespace Amazon.Glacier
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<DeleteVaultResponse> DeleteVaultAsync(DeleteVaultRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DeleteVaultResponse> DeleteVaultAsync(DeleteVaultRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteVaultRequestMarshaller();
             var unmarshaller = DeleteVaultResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DeleteVaultRequest, DeleteVaultResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DeleteVaultRequest, DeleteVaultResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -576,13 +566,11 @@ namespace Amazon.Glacier
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<DeleteVaultNotificationsResponse> DeleteVaultNotificationsAsync(DeleteVaultNotificationsRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DeleteVaultNotificationsResponse> DeleteVaultNotificationsAsync(DeleteVaultNotificationsRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteVaultNotificationsRequestMarshaller();
             var unmarshaller = DeleteVaultNotificationsResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DeleteVaultNotificationsRequest, DeleteVaultNotificationsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DeleteVaultNotificationsRequest, DeleteVaultNotificationsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -630,13 +618,11 @@ namespace Amazon.Glacier
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<DescribeJobResponse> DescribeJobAsync(DescribeJobRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DescribeJobResponse> DescribeJobAsync(DescribeJobRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeJobRequestMarshaller();
             var unmarshaller = DescribeJobResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DescribeJobRequest, DescribeJobResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DescribeJobRequest, DescribeJobResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -686,13 +672,11 @@ namespace Amazon.Glacier
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<DescribeVaultResponse> DescribeVaultAsync(DescribeVaultRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DescribeVaultResponse> DescribeVaultAsync(DescribeVaultRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeVaultRequestMarshaller();
             var unmarshaller = DescribeVaultResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DescribeVaultRequest, DescribeVaultResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DescribeVaultRequest, DescribeVaultResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -709,9 +693,9 @@ namespace Amazon.Glacier
         /// <li> <para>Repeat steps 1 and 2 for all the eight 128 MB chunks of output data, each time specifying the appropriate byte range.</para>
         /// </li>
         /// <li> <para>After downloading all the parts of the job output, you have a list of eight checksum values. Compute the tree hash of these
-        /// values to find the checksum of the entire output. Using the Describe Job API, obtain job information of the job that provided you the
-        /// output. The response includes the checksum of the entire archive stored in Amazon Glacier. You compare this value with the checksum you
-        /// computed to ensure you have downloaded the entire archive content with no errors.</para> </li>
+        /// values to find the checksum of the entire output. Using the DescribeJob API, obtain job information of the job that provided you the output.
+        /// The response includes the checksum of the entire archive stored in Amazon Glacier. You compare this value with the checksum you computed to
+        /// ensure you have downloaded the entire archive content with no errors.</para> </li>
         /// </ol> <para>An AWS account has full permission to perform all operations (actions). However, AWS Identity and Access Management (IAM) users
         /// don't have any permissions by default. You must grant them explicit permission to perform specific actions. For more information, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html">Access Control Using AWS Identity and Access
         /// Management (IAM)</a> .</para> <para>For conceptual information and the underlying REST API, go to <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-inventory.html">Downloading a Vault Inventory</a> ,
@@ -752,13 +736,11 @@ namespace Amazon.Glacier
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<GetJobOutputResponse> GetJobOutputAsync(GetJobOutputRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<GetJobOutputResponse> GetJobOutputAsync(GetJobOutputRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetJobOutputRequestMarshaller();
             var unmarshaller = GetJobOutputResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, GetJobOutputRequest, GetJobOutputResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, GetJobOutputRequest, GetJobOutputResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -806,13 +788,11 @@ namespace Amazon.Glacier
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<GetVaultNotificationsResponse> GetVaultNotificationsAsync(GetVaultNotificationsRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<GetVaultNotificationsResponse> GetVaultNotificationsAsync(GetVaultNotificationsRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetVaultNotificationsRequestMarshaller();
             var unmarshaller = GetVaultNotificationsResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, GetVaultNotificationsRequest, GetVaultNotificationsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, GetVaultNotificationsRequest, GetVaultNotificationsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -845,14 +825,27 @@ namespace Amazon.Glacier
         /// might find the vault inventory useful. For example, when you upload an archive, you can provide an archive description but not an archive
         /// name. Amazon Glacier provides you a unique archive ID, an opaque string of characters. So, you might maintain your own database that maps
         /// archive names to their corresponding Amazon Glacier assigned archive IDs. You might find the vault inventory useful in the event you need to
-        /// reconcile information in your database with the actual vault inventory. </para> <para> <b>About Ranged Archive Retrieval</b> </para> <para>
-        /// You can initiate an archive retrieval for the whole archive or a range of the archive. In the case of ranged archive retrieval, you specify
-        /// a byte range to return or the whole archive. The range specified must be megabyte (MB) aligned, that is the range start value must be
-        /// divisible by 1 MB and range end value plus 1 must be divisible by 1 MB or equal the end of the archive. If the ranged archive retrieval is
-        /// not megabyte aligned, this operation returns a 400 response. Furthermore, to ensure you get checksum values for data you download using Get
-        /// Job Output API, the range must be tree hash aligned. </para> <para>An AWS account has full permission to perform all operations (actions).
-        /// However, AWS Identity and Access Management (IAM) users don't have any permissions by default. You must grant them explicit permission to
-        /// perform specific actions. For more information, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html">Access Control Using AWS Identity and Access
+        /// reconcile information in your database with the actual vault inventory. </para> <para> <b>Range Inventory Retrieval</b> </para> <para>You
+        /// can limit the number of inventory items retrieved by filtering on the archive creation date or by setting a limit.</para> <para>
+        /// <i>Filtering by Archive Creation Date</i> </para> <para>You can retrieve inventory items for archives created between <c>StartDate</c> and
+        /// <c>EndDate</c> by specifying values for these parameters in the <b>InitiateJob</b> request. Archives created on or after the
+        /// <c>StartDate</c> and before the <c>EndDate</c> will be returned. If you only provide the <c>StartDate</c> without the <c>EndDate</c> , you
+        /// will retrieve the inventory for all archives created on or after the <c>StartDate</c> . If you only provide the <c>EndDate</c> without the
+        /// <c>StartDate</c> , you will get back the inventory for all archives created before the <c>EndDate</c> .</para> <para> <i>Limiting Inventory
+        /// Items per Retrieval</i> </para> <para>You can limit the number of inventory items returned by setting the <c>Limit</c> parameter in the
+        /// <b>InitiateJob</b> request. The inventory job output will contain inventory items up to the specified <c>Limit</c> . If there are more
+        /// inventory items available, the result is paginated. After a job is complete you can use the DescribeJob operation to get a marker that you
+        /// use in a subsequent <b>InitiateJob</b> request. The marker will indicate the starting point to retrieve the next set of inventory items. You
+        /// can page through your entire inventory by repeatedly making <b>InitiateJob</b> requests with the marker from the previous <b>DescribeJob</b>
+        /// output, until you get a marker from <b>DescribeJob</b> that returns null, indicating that there are no more inventory items
+        /// available.</para> <para>You can use the <c>Limit</c> parameter together with the date range parameters.</para> <para> <b>About Ranged
+        /// Archive Retrieval</b> </para> <para> You can initiate an archive retrieval for the whole archive or a range of the archive. In the case of
+        /// ranged archive retrieval, you specify a byte range to return or the whole archive. The range specified must be megabyte (MB) aligned, that
+        /// is the range start value must be divisible by 1 MB and range end value plus 1 must be divisible by 1 MB or equal the end of the archive. If
+        /// the ranged archive retrieval is not megabyte aligned, this operation returns a 400 response. Furthermore, to ensure you get checksum values
+        /// for data you download using Get Job Output API, the range must be tree hash aligned. </para> <para>An AWS account has full permission to
+        /// perform all operations (actions). However, AWS Identity and Access Management (IAM) users don't have any permissions by default. You must
+        /// grant them explicit permission to perform specific actions. For more information, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html">Access Control Using AWS Identity and Access
         /// Management (IAM)</a> .</para> <para>For conceptual information and the underlying REST API, go to <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-initiate-job-post.html">Initiate a Job</a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-inventory.html">Downloading a Vault Inventory</a> </para>
         /// </summary>
         /// 
@@ -887,13 +880,11 @@ namespace Amazon.Glacier
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<InitiateJobResponse> InitiateJobAsync(InitiateJobRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<InitiateJobResponse> InitiateJobAsync(InitiateJobRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new InitiateJobRequestMarshaller();
             var unmarshaller = InitiateJobResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, InitiateJobRequest, InitiateJobResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, InitiateJobRequest, InitiateJobResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -947,13 +938,11 @@ namespace Amazon.Glacier
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<InitiateMultipartUploadResponse> InitiateMultipartUploadAsync(InitiateMultipartUploadRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<InitiateMultipartUploadResponse> InitiateMultipartUploadAsync(InitiateMultipartUploadRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new InitiateMultipartUploadRequestMarshaller();
             var unmarshaller = InitiateMultipartUploadResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, InitiateMultipartUploadRequest, InitiateMultipartUploadResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, InitiateMultipartUploadRequest, InitiateMultipartUploadResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -1010,13 +999,11 @@ namespace Amazon.Glacier
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<ListJobsResponse> ListJobsAsync(ListJobsRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<ListJobsResponse> ListJobsAsync(ListJobsRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListJobsRequestMarshaller();
             var unmarshaller = ListJobsResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, ListJobsRequest, ListJobsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, ListJobsRequest, ListJobsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -1068,13 +1055,11 @@ namespace Amazon.Glacier
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<ListMultipartUploadsResponse> ListMultipartUploadsAsync(ListMultipartUploadsRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<ListMultipartUploadsResponse> ListMultipartUploadsAsync(ListMultipartUploadsRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListMultipartUploadsRequestMarshaller();
             var unmarshaller = ListMultipartUploadsResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, ListMultipartUploadsRequest, ListMultipartUploadsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, ListMultipartUploadsRequest, ListMultipartUploadsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -1123,13 +1108,11 @@ namespace Amazon.Glacier
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<ListPartsResponse> ListPartsAsync(ListPartsRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<ListPartsResponse> ListPartsAsync(ListPartsRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListPartsRequestMarshaller();
             var unmarshaller = ListPartsResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, ListPartsRequest, ListPartsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, ListPartsRequest, ListPartsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -1178,13 +1161,11 @@ namespace Amazon.Glacier
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<ListVaultsResponse> ListVaultsAsync(ListVaultsRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<ListVaultsResponse> ListVaultsAsync(ListVaultsRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListVaultsRequestMarshaller();
             var unmarshaller = ListVaultsResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, ListVaultsRequest, ListVaultsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, ListVaultsRequest, ListVaultsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -1267,13 +1248,11 @@ namespace Amazon.Glacier
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<SetVaultNotificationsResponse> SetVaultNotificationsAsync(SetVaultNotificationsRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<SetVaultNotificationsResponse> SetVaultNotificationsAsync(SetVaultNotificationsRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new SetVaultNotificationsRequestMarshaller();
             var unmarshaller = SetVaultNotificationsResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, SetVaultNotificationsRequest, SetVaultNotificationsResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, SetVaultNotificationsRequest, SetVaultNotificationsResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -1330,13 +1309,11 @@ namespace Amazon.Glacier
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<UploadArchiveResponse> UploadArchiveAsync(UploadArchiveRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<UploadArchiveResponse> UploadArchiveAsync(UploadArchiveRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UploadArchiveRequestMarshaller();
             var unmarshaller = UploadArchiveResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, UploadArchiveRequest, UploadArchiveResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, UploadArchiveRequest, UploadArchiveResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
  
         /// <summary>
@@ -1400,13 +1377,11 @@ namespace Amazon.Glacier
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-		public async Task<UploadMultipartPartResponse> UploadMultipartPartAsync(UploadMultipartPartRequest request, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<UploadMultipartPartResponse> UploadMultipartPartAsync(UploadMultipartPartRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UploadMultipartPartRequestMarshaller();
             var unmarshaller = UploadMultipartPartResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, UploadMultipartPartRequest, UploadMultipartPartResponse>(request, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, UploadMultipartPartRequest, UploadMultipartPartResponse>(request, marshaller, unmarshaller, signer, cancellationToken);
         }
     }
 }

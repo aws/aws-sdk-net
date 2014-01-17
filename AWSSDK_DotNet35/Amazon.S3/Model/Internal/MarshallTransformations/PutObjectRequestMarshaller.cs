@@ -13,15 +13,9 @@
  * permissions and limitations under the License.
  */
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Xml;
-using System.Xml.Serialization;
-using System.Text;
 using Amazon.Runtime.Internal.Auth;
-using Amazon.S3.Model;
 using Amazon.S3.Util;
-using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
@@ -39,6 +33,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             IRequest request = new DefaultRequest(putObjectRequest, "AmazonS3");
 
             request.HttpMethod = "PUT";
+
             if(putObjectRequest.IsSetCannedACL())
                 request.Headers.Add("x-amz-acl", S3Transforms.ToStringValue(putObjectRequest.CannedACL));
 
@@ -62,45 +57,21 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             AmazonS3Util.SetMetadataHeaders(request, putObjectRequest.Metadata);
             
-              
-            Dictionary<string, string> queryParameters = new Dictionary<string, string>();
-            string uriResourcePath = "/{Bucket}/{Key}"; 
-            uriResourcePath = uriResourcePath.Replace("{Bucket}", putObjectRequest.IsSetBucket() ? S3Transforms.ToStringValue(putObjectRequest.BucketName) : "" ); 
-            uriResourcePath = uriResourcePath.Replace("{Key}", putObjectRequest.IsSetKey() ? S3Transforms.ToStringValue(putObjectRequest.Key) : "" ); 
-            string path = uriResourcePath;
+            var uriResourcePath = string.Format("/{0}/{1}",
+                                                S3Transforms.ToStringValue(putObjectRequest.BucketName),
+                                                S3Transforms.ToStringValue(putObjectRequest.Key));
 
 
-            int queryIndex = uriResourcePath.IndexOf("?", StringComparison.OrdinalIgnoreCase);
-            if (queryIndex != -1)
-            {
-                string queryString = uriResourcePath.Substring(queryIndex + 1);
-                path = uriResourcePath.Substring(0, queryIndex);
-
-                S3Transforms.BuildQueryParameterMap(request, queryParameters, queryString);
-            }
-            
-            request.CanonicalResource = S3Transforms.GetCanonicalResource(path, queryParameters);
-            uriResourcePath = S3Transforms.FormatResourcePath(path, queryParameters);
-            
-            request.ResourcePath = uriResourcePath;
+            request.CanonicalResource = S3Transforms.GetCanonicalResource(uriResourcePath, request.Parameters);
+            request.ResourcePath = S3Transforms.FormatResourcePath(uriResourcePath, request.Parameters);
 
             if (putObjectRequest.InputStream != null)
             {
                 // Wrap the stream in a stream that has a length
-                Stream streamWithLength = GetStreamWithLength(putObjectRequest.InputStream, putObjectRequest.Headers.ContentLength);
-
-                // MD5Stream is not rewindable, so compute the content hash before wrapping unless it's
-                // already been done
-                if (!request.Headers.ContainsKey(AWS4Signer.XAmzContentSha256))
-                {
-                    var position = streamWithLength.Position;
-                    var hash = CryptoUtilFactory.CryptoInstance.ComputeSHA256Hash(streamWithLength);
-                    streamWithLength.Seek(position, SeekOrigin.Begin);
-                    request.Headers[AWS4Signer.XAmzContentSha256] = AWSSDKUtils.ToHex(hash, true);
-                }
+                var streamWithLength = GetStreamWithLength(putObjectRequest.InputStream, putObjectRequest.Headers.ContentLength);
 
                 // Wrap input stream in MD5Stream
-                HashStream hashStream = new MD5Stream(streamWithLength, null, streamWithLength.Length - streamWithLength.Position);
+                var hashStream = new MD5Stream(streamWithLength, null, streamWithLength.Length - streamWithLength.Position);
                 putObjectRequest.InputStream = hashStream;
             }
         
@@ -110,13 +81,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         
             if (!request.UseQueryString)
             {
-                string queryString = Amazon.Util.AWSSDKUtils.GetParametersAsString(request.Parameters);
+                var queryString = AWSSDKUtils.GetParametersAsString(request.Parameters);
                 if (!string.IsNullOrEmpty(queryString))
                 {
-                    if (request.ResourcePath.Contains("?"))
-                        request.ResourcePath = string.Concat(request.ResourcePath, "&", queryString);
-                    else
-                        request.ResourcePath = string.Concat(request.ResourcePath, "?", queryString);
+                    request.ResourcePath = string.Concat(request.ResourcePath, request.ResourcePath.Contains("?") ? "&" : "?", queryString);
                 }
             }
                       

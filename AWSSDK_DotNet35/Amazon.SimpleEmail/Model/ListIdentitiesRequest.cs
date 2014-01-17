@@ -28,11 +28,12 @@ namespace Amazon.SimpleEmail.Model
     /// <para>Returns a list containing all of the identities (email addresses and domains) for a specific AWS Account, regardless of verification
     /// status.</para> <para>This action is throttled at one request per second.</para>
     /// </summary>
-    public partial class ListIdentitiesRequest : AmazonWebServiceRequest
+    public partial class ListIdentitiesRequest : AmazonSimpleEmailServiceRequest
     {
         private IdentityType identityType;
         private string nextToken;
         private int? maxItems;
+
 
         /// <summary>
         /// The type of the identities to list. Possible values are "EmailAddress" and "Domain". If this parameter is omitted, then all identities will

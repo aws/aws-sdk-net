@@ -296,13 +296,11 @@ namespace Amazon.SimpleWorkflow
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<CountClosedWorkflowExecutionsResponse> CountClosedWorkflowExecutionsAsync(CountClosedWorkflowExecutionsRequest countClosedWorkflowExecutionsRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<CountClosedWorkflowExecutionsResponse> CountClosedWorkflowExecutionsAsync(CountClosedWorkflowExecutionsRequest countClosedWorkflowExecutionsRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CountClosedWorkflowExecutionsRequestMarshaller();
             var unmarshaller = CountClosedWorkflowExecutionsResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, CountClosedWorkflowExecutionsRequest, CountClosedWorkflowExecutionsResponse>(countClosedWorkflowExecutionsRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, CountClosedWorkflowExecutionsRequest, CountClosedWorkflowExecutionsResponse>(countClosedWorkflowExecutionsRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal CountOpenWorkflowExecutionsResponse CountOpenWorkflowExecutions(CountOpenWorkflowExecutionsRequest request)
@@ -351,13 +349,11 @@ namespace Amazon.SimpleWorkflow
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<CountOpenWorkflowExecutionsResponse> CountOpenWorkflowExecutionsAsync(CountOpenWorkflowExecutionsRequest countOpenWorkflowExecutionsRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<CountOpenWorkflowExecutionsResponse> CountOpenWorkflowExecutionsAsync(CountOpenWorkflowExecutionsRequest countOpenWorkflowExecutionsRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CountOpenWorkflowExecutionsRequestMarshaller();
             var unmarshaller = CountOpenWorkflowExecutionsResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, CountOpenWorkflowExecutionsRequest, CountOpenWorkflowExecutionsResponse>(countOpenWorkflowExecutionsRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, CountOpenWorkflowExecutionsRequest, CountOpenWorkflowExecutionsResponse>(countOpenWorkflowExecutionsRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal CountPendingActivityTasksResponse CountPendingActivityTasks(CountPendingActivityTasksRequest request)
@@ -399,13 +395,11 @@ namespace Amazon.SimpleWorkflow
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<CountPendingActivityTasksResponse> CountPendingActivityTasksAsync(CountPendingActivityTasksRequest countPendingActivityTasksRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<CountPendingActivityTasksResponse> CountPendingActivityTasksAsync(CountPendingActivityTasksRequest countPendingActivityTasksRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CountPendingActivityTasksRequestMarshaller();
             var unmarshaller = CountPendingActivityTasksResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, CountPendingActivityTasksRequest, CountPendingActivityTasksResponse>(countPendingActivityTasksRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, CountPendingActivityTasksRequest, CountPendingActivityTasksResponse>(countPendingActivityTasksRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal CountPendingDecisionTasksResponse CountPendingDecisionTasks(CountPendingDecisionTasksRequest request)
@@ -447,13 +441,11 @@ namespace Amazon.SimpleWorkflow
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<CountPendingDecisionTasksResponse> CountPendingDecisionTasksAsync(CountPendingDecisionTasksRequest countPendingDecisionTasksRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<CountPendingDecisionTasksResponse> CountPendingDecisionTasksAsync(CountPendingDecisionTasksRequest countPendingDecisionTasksRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CountPendingDecisionTasksRequestMarshaller();
             var unmarshaller = CountPendingDecisionTasksResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, CountPendingDecisionTasksRequest, CountPendingDecisionTasksResponse>(countPendingDecisionTasksRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, CountPendingDecisionTasksRequest, CountPendingDecisionTasksResponse>(countPendingDecisionTasksRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DeprecateActivityTypeResponse DeprecateActivityType(DeprecateActivityTypeRequest request)
@@ -501,13 +493,11 @@ namespace Amazon.SimpleWorkflow
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DeprecateActivityTypeResponse> DeprecateActivityTypeAsync(DeprecateActivityTypeRequest deprecateActivityTypeRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DeprecateActivityTypeResponse> DeprecateActivityTypeAsync(DeprecateActivityTypeRequest deprecateActivityTypeRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeprecateActivityTypeRequestMarshaller();
             var unmarshaller = DeprecateActivityTypeResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DeprecateActivityTypeRequest, DeprecateActivityTypeResponse>(deprecateActivityTypeRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DeprecateActivityTypeRequest, DeprecateActivityTypeResponse>(deprecateActivityTypeRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DeprecateDomainResponse DeprecateDomain(DeprecateDomainRequest request)
@@ -550,13 +540,11 @@ namespace Amazon.SimpleWorkflow
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DeprecateDomainResponse> DeprecateDomainAsync(DeprecateDomainRequest deprecateDomainRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DeprecateDomainResponse> DeprecateDomainAsync(DeprecateDomainRequest deprecateDomainRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeprecateDomainRequestMarshaller();
             var unmarshaller = DeprecateDomainResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DeprecateDomainRequest, DeprecateDomainResponse>(deprecateDomainRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DeprecateDomainRequest, DeprecateDomainResponse>(deprecateDomainRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DeprecateWorkflowTypeResponse DeprecateWorkflowType(DeprecateWorkflowTypeRequest request)
@@ -604,13 +592,11 @@ namespace Amazon.SimpleWorkflow
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DeprecateWorkflowTypeResponse> DeprecateWorkflowTypeAsync(DeprecateWorkflowTypeRequest deprecateWorkflowTypeRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DeprecateWorkflowTypeResponse> DeprecateWorkflowTypeAsync(DeprecateWorkflowTypeRequest deprecateWorkflowTypeRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeprecateWorkflowTypeRequestMarshaller();
             var unmarshaller = DeprecateWorkflowTypeResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DeprecateWorkflowTypeRequest, DeprecateWorkflowTypeResponse>(deprecateWorkflowTypeRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DeprecateWorkflowTypeRequest, DeprecateWorkflowTypeResponse>(deprecateWorkflowTypeRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DescribeActivityTypeResponse DescribeActivityType(DescribeActivityTypeRequest request)
@@ -657,13 +643,11 @@ namespace Amazon.SimpleWorkflow
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DescribeActivityTypeResponse> DescribeActivityTypeAsync(DescribeActivityTypeRequest describeActivityTypeRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DescribeActivityTypeResponse> DescribeActivityTypeAsync(DescribeActivityTypeRequest describeActivityTypeRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeActivityTypeRequestMarshaller();
             var unmarshaller = DescribeActivityTypeResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DescribeActivityTypeRequest, DescribeActivityTypeResponse>(describeActivityTypeRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DescribeActivityTypeRequest, DescribeActivityTypeResponse>(describeActivityTypeRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DescribeDomainResponse DescribeDomain(DescribeDomainRequest request)
@@ -703,13 +687,11 @@ namespace Amazon.SimpleWorkflow
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DescribeDomainResponse> DescribeDomainAsync(DescribeDomainRequest describeDomainRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DescribeDomainResponse> DescribeDomainAsync(DescribeDomainRequest describeDomainRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeDomainRequestMarshaller();
             var unmarshaller = DescribeDomainResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DescribeDomainRequest, DescribeDomainResponse>(describeDomainRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DescribeDomainRequest, DescribeDomainResponse>(describeDomainRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DescribeWorkflowExecutionResponse DescribeWorkflowExecution(DescribeWorkflowExecutionRequest request)
@@ -750,13 +732,11 @@ namespace Amazon.SimpleWorkflow
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DescribeWorkflowExecutionResponse> DescribeWorkflowExecutionAsync(DescribeWorkflowExecutionRequest describeWorkflowExecutionRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DescribeWorkflowExecutionResponse> DescribeWorkflowExecutionAsync(DescribeWorkflowExecutionRequest describeWorkflowExecutionRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeWorkflowExecutionRequestMarshaller();
             var unmarshaller = DescribeWorkflowExecutionResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DescribeWorkflowExecutionRequest, DescribeWorkflowExecutionResponse>(describeWorkflowExecutionRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DescribeWorkflowExecutionRequest, DescribeWorkflowExecutionResponse>(describeWorkflowExecutionRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DescribeWorkflowTypeResponse DescribeWorkflowType(DescribeWorkflowTypeRequest request)
@@ -803,13 +783,11 @@ namespace Amazon.SimpleWorkflow
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DescribeWorkflowTypeResponse> DescribeWorkflowTypeAsync(DescribeWorkflowTypeRequest describeWorkflowTypeRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DescribeWorkflowTypeResponse> DescribeWorkflowTypeAsync(DescribeWorkflowTypeRequest describeWorkflowTypeRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeWorkflowTypeRequestMarshaller();
             var unmarshaller = DescribeWorkflowTypeResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DescribeWorkflowTypeRequest, DescribeWorkflowTypeResponse>(describeWorkflowTypeRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DescribeWorkflowTypeRequest, DescribeWorkflowTypeResponse>(describeWorkflowTypeRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal GetWorkflowExecutionHistoryResponse GetWorkflowExecutionHistory(GetWorkflowExecutionHistoryRequest request)
@@ -851,13 +829,11 @@ namespace Amazon.SimpleWorkflow
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<GetWorkflowExecutionHistoryResponse> GetWorkflowExecutionHistoryAsync(GetWorkflowExecutionHistoryRequest getWorkflowExecutionHistoryRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<GetWorkflowExecutionHistoryResponse> GetWorkflowExecutionHistoryAsync(GetWorkflowExecutionHistoryRequest getWorkflowExecutionHistoryRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetWorkflowExecutionHistoryRequestMarshaller();
             var unmarshaller = GetWorkflowExecutionHistoryResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, GetWorkflowExecutionHistoryRequest, GetWorkflowExecutionHistoryResponse>(getWorkflowExecutionHistoryRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, GetWorkflowExecutionHistoryRequest, GetWorkflowExecutionHistoryResponse>(getWorkflowExecutionHistoryRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal ListActivityTypesResponse ListActivityTypes(ListActivityTypesRequest request)
@@ -899,13 +875,11 @@ namespace Amazon.SimpleWorkflow
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<ListActivityTypesResponse> ListActivityTypesAsync(ListActivityTypesRequest listActivityTypesRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<ListActivityTypesResponse> ListActivityTypesAsync(ListActivityTypesRequest listActivityTypesRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListActivityTypesRequestMarshaller();
             var unmarshaller = ListActivityTypesResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, ListActivityTypesRequest, ListActivityTypesResponse>(listActivityTypesRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, ListActivityTypesRequest, ListActivityTypesResponse>(listActivityTypesRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal ListClosedWorkflowExecutionsResponse ListClosedWorkflowExecutions(ListClosedWorkflowExecutionsRequest request)
@@ -955,13 +929,11 @@ namespace Amazon.SimpleWorkflow
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<ListClosedWorkflowExecutionsResponse> ListClosedWorkflowExecutionsAsync(ListClosedWorkflowExecutionsRequest listClosedWorkflowExecutionsRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<ListClosedWorkflowExecutionsResponse> ListClosedWorkflowExecutionsAsync(ListClosedWorkflowExecutionsRequest listClosedWorkflowExecutionsRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListClosedWorkflowExecutionsRequestMarshaller();
             var unmarshaller = ListClosedWorkflowExecutionsResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, ListClosedWorkflowExecutionsRequest, ListClosedWorkflowExecutionsResponse>(listClosedWorkflowExecutionsRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, ListClosedWorkflowExecutionsRequest, ListClosedWorkflowExecutionsResponse>(listClosedWorkflowExecutionsRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal ListDomainsResponse ListDomains(ListDomainsRequest request)
@@ -1003,13 +975,11 @@ namespace Amazon.SimpleWorkflow
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<ListDomainsResponse> ListDomainsAsync(ListDomainsRequest listDomainsRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<ListDomainsResponse> ListDomainsAsync(ListDomainsRequest listDomainsRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListDomainsRequestMarshaller();
             var unmarshaller = ListDomainsResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, ListDomainsRequest, ListDomainsResponse>(listDomainsRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, ListDomainsRequest, ListDomainsResponse>(listDomainsRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal ListOpenWorkflowExecutionsResponse ListOpenWorkflowExecutions(ListOpenWorkflowExecutionsRequest request)
@@ -1059,13 +1029,11 @@ namespace Amazon.SimpleWorkflow
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<ListOpenWorkflowExecutionsResponse> ListOpenWorkflowExecutionsAsync(ListOpenWorkflowExecutionsRequest listOpenWorkflowExecutionsRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<ListOpenWorkflowExecutionsResponse> ListOpenWorkflowExecutionsAsync(ListOpenWorkflowExecutionsRequest listOpenWorkflowExecutionsRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListOpenWorkflowExecutionsRequestMarshaller();
             var unmarshaller = ListOpenWorkflowExecutionsResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, ListOpenWorkflowExecutionsRequest, ListOpenWorkflowExecutionsResponse>(listOpenWorkflowExecutionsRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, ListOpenWorkflowExecutionsRequest, ListOpenWorkflowExecutionsResponse>(listOpenWorkflowExecutionsRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal ListWorkflowTypesResponse ListWorkflowTypes(ListWorkflowTypesRequest request)
@@ -1106,13 +1074,11 @@ namespace Amazon.SimpleWorkflow
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<ListWorkflowTypesResponse> ListWorkflowTypesAsync(ListWorkflowTypesRequest listWorkflowTypesRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<ListWorkflowTypesResponse> ListWorkflowTypesAsync(ListWorkflowTypesRequest listWorkflowTypesRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListWorkflowTypesRequestMarshaller();
             var unmarshaller = ListWorkflowTypesResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, ListWorkflowTypesRequest, ListWorkflowTypesResponse>(listWorkflowTypesRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, ListWorkflowTypesRequest, ListWorkflowTypesResponse>(listWorkflowTypesRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal PollForActivityTaskResponse PollForActivityTask(PollForActivityTaskRequest request)
@@ -1160,13 +1126,11 @@ namespace Amazon.SimpleWorkflow
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<PollForActivityTaskResponse> PollForActivityTaskAsync(PollForActivityTaskRequest pollForActivityTaskRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<PollForActivityTaskResponse> PollForActivityTaskAsync(PollForActivityTaskRequest pollForActivityTaskRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PollForActivityTaskRequestMarshaller();
             var unmarshaller = PollForActivityTaskResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, PollForActivityTaskRequest, PollForActivityTaskResponse>(pollForActivityTaskRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, PollForActivityTaskRequest, PollForActivityTaskResponse>(pollForActivityTaskRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal PollForDecisionTaskResponse PollForDecisionTask(PollForDecisionTaskRequest request)
@@ -1218,13 +1182,11 @@ namespace Amazon.SimpleWorkflow
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<PollForDecisionTaskResponse> PollForDecisionTaskAsync(PollForDecisionTaskRequest pollForDecisionTaskRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<PollForDecisionTaskResponse> PollForDecisionTaskAsync(PollForDecisionTaskRequest pollForDecisionTaskRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PollForDecisionTaskRequestMarshaller();
             var unmarshaller = PollForDecisionTaskResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, PollForDecisionTaskRequest, PollForDecisionTaskResponse>(pollForDecisionTaskRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, PollForDecisionTaskRequest, PollForDecisionTaskResponse>(pollForDecisionTaskRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal RecordActivityTaskHeartbeatResponse RecordActivityTaskHeartbeat(RecordActivityTaskHeartbeatRequest request)
@@ -1277,13 +1239,11 @@ namespace Amazon.SimpleWorkflow
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<RecordActivityTaskHeartbeatResponse> RecordActivityTaskHeartbeatAsync(RecordActivityTaskHeartbeatRequest recordActivityTaskHeartbeatRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<RecordActivityTaskHeartbeatResponse> RecordActivityTaskHeartbeatAsync(RecordActivityTaskHeartbeatRequest recordActivityTaskHeartbeatRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RecordActivityTaskHeartbeatRequestMarshaller();
             var unmarshaller = RecordActivityTaskHeartbeatResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, RecordActivityTaskHeartbeatRequest, RecordActivityTaskHeartbeatResponse>(recordActivityTaskHeartbeatRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, RecordActivityTaskHeartbeatRequest, RecordActivityTaskHeartbeatResponse>(recordActivityTaskHeartbeatRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal RegisterActivityTypeResponse RegisterActivityType(RegisterActivityTypeRequest request)
@@ -1332,13 +1292,11 @@ namespace Amazon.SimpleWorkflow
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<RegisterActivityTypeResponse> RegisterActivityTypeAsync(RegisterActivityTypeRequest registerActivityTypeRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<RegisterActivityTypeResponse> RegisterActivityTypeAsync(RegisterActivityTypeRequest registerActivityTypeRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RegisterActivityTypeRequestMarshaller();
             var unmarshaller = RegisterActivityTypeResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, RegisterActivityTypeRequest, RegisterActivityTypeResponse>(registerActivityTypeRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, RegisterActivityTypeRequest, RegisterActivityTypeResponse>(registerActivityTypeRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal RegisterDomainResponse RegisterDomain(RegisterDomainRequest request)
@@ -1378,13 +1336,11 @@ namespace Amazon.SimpleWorkflow
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<RegisterDomainResponse> RegisterDomainAsync(RegisterDomainRequest registerDomainRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<RegisterDomainResponse> RegisterDomainAsync(RegisterDomainRequest registerDomainRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RegisterDomainRequestMarshaller();
             var unmarshaller = RegisterDomainResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, RegisterDomainRequest, RegisterDomainResponse>(registerDomainRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, RegisterDomainRequest, RegisterDomainResponse>(registerDomainRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal RegisterWorkflowTypeResponse RegisterWorkflowType(RegisterWorkflowTypeRequest request)
@@ -1434,13 +1390,11 @@ namespace Amazon.SimpleWorkflow
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<RegisterWorkflowTypeResponse> RegisterWorkflowTypeAsync(RegisterWorkflowTypeRequest registerWorkflowTypeRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<RegisterWorkflowTypeResponse> RegisterWorkflowTypeAsync(RegisterWorkflowTypeRequest registerWorkflowTypeRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RegisterWorkflowTypeRequestMarshaller();
             var unmarshaller = RegisterWorkflowTypeResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, RegisterWorkflowTypeRequest, RegisterWorkflowTypeResponse>(registerWorkflowTypeRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, RegisterWorkflowTypeRequest, RegisterWorkflowTypeResponse>(registerWorkflowTypeRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal RequestCancelWorkflowExecutionResponse RequestCancelWorkflowExecution(RequestCancelWorkflowExecutionRequest request)
@@ -1483,13 +1437,11 @@ namespace Amazon.SimpleWorkflow
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<RequestCancelWorkflowExecutionResponse> RequestCancelWorkflowExecutionAsync(RequestCancelWorkflowExecutionRequest requestCancelWorkflowExecutionRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<RequestCancelWorkflowExecutionResponse> RequestCancelWorkflowExecutionAsync(RequestCancelWorkflowExecutionRequest requestCancelWorkflowExecutionRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RequestCancelWorkflowExecutionRequestMarshaller();
             var unmarshaller = RequestCancelWorkflowExecutionResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, RequestCancelWorkflowExecutionRequest, RequestCancelWorkflowExecutionResponse>(requestCancelWorkflowExecutionRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, RequestCancelWorkflowExecutionRequest, RequestCancelWorkflowExecutionResponse>(requestCancelWorkflowExecutionRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal RespondActivityTaskCanceledResponse RespondActivityTaskCanceled(RespondActivityTaskCanceledRequest request)
@@ -1534,13 +1486,11 @@ namespace Amazon.SimpleWorkflow
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<RespondActivityTaskCanceledResponse> RespondActivityTaskCanceledAsync(RespondActivityTaskCanceledRequest respondActivityTaskCanceledRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<RespondActivityTaskCanceledResponse> RespondActivityTaskCanceledAsync(RespondActivityTaskCanceledRequest respondActivityTaskCanceledRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RespondActivityTaskCanceledRequestMarshaller();
             var unmarshaller = RespondActivityTaskCanceledResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, RespondActivityTaskCanceledRequest, RespondActivityTaskCanceledResponse>(respondActivityTaskCanceledRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, RespondActivityTaskCanceledRequest, RespondActivityTaskCanceledResponse>(respondActivityTaskCanceledRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal RespondActivityTaskCompletedResponse RespondActivityTaskCompleted(RespondActivityTaskCompletedRequest request)
@@ -1585,13 +1535,11 @@ namespace Amazon.SimpleWorkflow
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<RespondActivityTaskCompletedResponse> RespondActivityTaskCompletedAsync(RespondActivityTaskCompletedRequest respondActivityTaskCompletedRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<RespondActivityTaskCompletedResponse> RespondActivityTaskCompletedAsync(RespondActivityTaskCompletedRequest respondActivityTaskCompletedRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RespondActivityTaskCompletedRequestMarshaller();
             var unmarshaller = RespondActivityTaskCompletedResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, RespondActivityTaskCompletedRequest, RespondActivityTaskCompletedResponse>(respondActivityTaskCompletedRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, RespondActivityTaskCompletedRequest, RespondActivityTaskCompletedResponse>(respondActivityTaskCompletedRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal RespondActivityTaskFailedResponse RespondActivityTaskFailed(RespondActivityTaskFailedRequest request)
@@ -1634,13 +1582,11 @@ namespace Amazon.SimpleWorkflow
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<RespondActivityTaskFailedResponse> RespondActivityTaskFailedAsync(RespondActivityTaskFailedRequest respondActivityTaskFailedRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<RespondActivityTaskFailedResponse> RespondActivityTaskFailedAsync(RespondActivityTaskFailedRequest respondActivityTaskFailedRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RespondActivityTaskFailedRequestMarshaller();
             var unmarshaller = RespondActivityTaskFailedResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, RespondActivityTaskFailedRequest, RespondActivityTaskFailedResponse>(respondActivityTaskFailedRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, RespondActivityTaskFailedRequest, RespondActivityTaskFailedResponse>(respondActivityTaskFailedRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal RespondDecisionTaskCompletedResponse RespondDecisionTaskCompleted(RespondDecisionTaskCompletedRequest request)
@@ -1675,13 +1621,11 @@ namespace Amazon.SimpleWorkflow
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<RespondDecisionTaskCompletedResponse> RespondDecisionTaskCompletedAsync(RespondDecisionTaskCompletedRequest respondDecisionTaskCompletedRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<RespondDecisionTaskCompletedResponse> RespondDecisionTaskCompletedAsync(RespondDecisionTaskCompletedRequest respondDecisionTaskCompletedRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RespondDecisionTaskCompletedRequestMarshaller();
             var unmarshaller = RespondDecisionTaskCompletedResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, RespondDecisionTaskCompletedRequest, RespondDecisionTaskCompletedResponse>(respondDecisionTaskCompletedRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, RespondDecisionTaskCompletedRequest, RespondDecisionTaskCompletedResponse>(respondDecisionTaskCompletedRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal SignalWorkflowExecutionResponse SignalWorkflowExecution(SignalWorkflowExecutionRequest request)
@@ -1723,13 +1667,11 @@ namespace Amazon.SimpleWorkflow
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<SignalWorkflowExecutionResponse> SignalWorkflowExecutionAsync(SignalWorkflowExecutionRequest signalWorkflowExecutionRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<SignalWorkflowExecutionResponse> SignalWorkflowExecutionAsync(SignalWorkflowExecutionRequest signalWorkflowExecutionRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new SignalWorkflowExecutionRequestMarshaller();
             var unmarshaller = SignalWorkflowExecutionResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, SignalWorkflowExecutionRequest, SignalWorkflowExecutionResponse>(signalWorkflowExecutionRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, SignalWorkflowExecutionRequest, SignalWorkflowExecutionResponse>(signalWorkflowExecutionRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal StartWorkflowExecutionResponse StartWorkflowExecution(StartWorkflowExecutionRequest request)
@@ -1786,13 +1728,11 @@ namespace Amazon.SimpleWorkflow
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<StartWorkflowExecutionResponse> StartWorkflowExecutionAsync(StartWorkflowExecutionRequest startWorkflowExecutionRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<StartWorkflowExecutionResponse> StartWorkflowExecutionAsync(StartWorkflowExecutionRequest startWorkflowExecutionRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new StartWorkflowExecutionRequestMarshaller();
             var unmarshaller = StartWorkflowExecutionResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, StartWorkflowExecutionRequest, StartWorkflowExecutionResponse>(startWorkflowExecutionRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, StartWorkflowExecutionRequest, StartWorkflowExecutionResponse>(startWorkflowExecutionRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal TerminateWorkflowExecutionResponse TerminateWorkflowExecution(TerminateWorkflowExecutionRequest request)
@@ -1836,13 +1776,11 @@ namespace Amazon.SimpleWorkflow
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<TerminateWorkflowExecutionResponse> TerminateWorkflowExecutionAsync(TerminateWorkflowExecutionRequest terminateWorkflowExecutionRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<TerminateWorkflowExecutionResponse> TerminateWorkflowExecutionAsync(TerminateWorkflowExecutionRequest terminateWorkflowExecutionRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new TerminateWorkflowExecutionRequestMarshaller();
             var unmarshaller = TerminateWorkflowExecutionResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, TerminateWorkflowExecutionRequest, TerminateWorkflowExecutionResponse>(terminateWorkflowExecutionRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, TerminateWorkflowExecutionRequest, TerminateWorkflowExecutionResponse>(terminateWorkflowExecutionRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
     }
 }

@@ -201,13 +201,11 @@ namespace Amazon.AWSSupport
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<AddCommunicationToCaseResponse> AddCommunicationToCaseAsync(AddCommunicationToCaseRequest addCommunicationToCaseRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<AddCommunicationToCaseResponse> AddCommunicationToCaseAsync(AddCommunicationToCaseRequest addCommunicationToCaseRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AddCommunicationToCaseRequestMarshaller();
             var unmarshaller = AddCommunicationToCaseResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, AddCommunicationToCaseRequest, AddCommunicationToCaseResponse>(addCommunicationToCaseRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, AddCommunicationToCaseRequest, AddCommunicationToCaseResponse>(addCommunicationToCaseRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal CreateCaseResponse CreateCase(CreateCaseRequest request)
@@ -254,13 +252,11 @@ namespace Amazon.AWSSupport
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<CreateCaseResponse> CreateCaseAsync(CreateCaseRequest createCaseRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<CreateCaseResponse> CreateCaseAsync(CreateCaseRequest createCaseRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateCaseRequestMarshaller();
             var unmarshaller = CreateCaseResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, CreateCaseRequest, CreateCaseResponse>(createCaseRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, CreateCaseRequest, CreateCaseResponse>(createCaseRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DescribeCasesResponse DescribeCases(DescribeCasesRequest request)
@@ -295,13 +291,11 @@ namespace Amazon.AWSSupport
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DescribeCasesResponse> DescribeCasesAsync(DescribeCasesRequest describeCasesRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DescribeCasesResponse> DescribeCasesAsync(DescribeCasesRequest describeCasesRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeCasesRequestMarshaller();
             var unmarshaller = DescribeCasesResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DescribeCasesRequest, DescribeCasesResponse>(describeCasesRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DescribeCasesRequest, DescribeCasesResponse>(describeCasesRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DescribeCommunicationsResponse DescribeCommunications(DescribeCommunicationsRequest request)
@@ -334,13 +328,11 @@ namespace Amazon.AWSSupport
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DescribeCommunicationsResponse> DescribeCommunicationsAsync(DescribeCommunicationsRequest describeCommunicationsRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DescribeCommunicationsResponse> DescribeCommunicationsAsync(DescribeCommunicationsRequest describeCommunicationsRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeCommunicationsRequestMarshaller();
             var unmarshaller = DescribeCommunicationsResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DescribeCommunicationsRequest, DescribeCommunicationsResponse>(describeCommunicationsRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DescribeCommunicationsRequest, DescribeCommunicationsResponse>(describeCommunicationsRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DescribeServicesResponse DescribeServices(DescribeServicesRequest request)
@@ -373,13 +365,11 @@ namespace Amazon.AWSSupport
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DescribeServicesResponse> DescribeServicesAsync(DescribeServicesRequest describeServicesRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DescribeServicesResponse> DescribeServicesAsync(DescribeServicesRequest describeServicesRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeServicesRequestMarshaller();
             var unmarshaller = DescribeServicesResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DescribeServicesRequest, DescribeServicesResponse>(describeServicesRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DescribeServicesRequest, DescribeServicesResponse>(describeServicesRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DescribeSeverityLevelsResponse DescribeSeverityLevels(DescribeSeverityLevelsRequest request)
@@ -409,13 +399,11 @@ namespace Amazon.AWSSupport
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DescribeSeverityLevelsResponse> DescribeSeverityLevelsAsync(DescribeSeverityLevelsRequest describeSeverityLevelsRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DescribeSeverityLevelsResponse> DescribeSeverityLevelsAsync(DescribeSeverityLevelsRequest describeSeverityLevelsRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeSeverityLevelsRequestMarshaller();
             var unmarshaller = DescribeSeverityLevelsResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DescribeSeverityLevelsRequest, DescribeSeverityLevelsResponse>(describeSeverityLevelsRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DescribeSeverityLevelsRequest, DescribeSeverityLevelsResponse>(describeSeverityLevelsRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DescribeTrustedAdvisorCheckRefreshStatusesResponse DescribeTrustedAdvisorCheckRefreshStatuses(DescribeTrustedAdvisorCheckRefreshStatusesRequest request)
@@ -445,13 +433,11 @@ namespace Amazon.AWSSupport
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DescribeTrustedAdvisorCheckRefreshStatusesResponse> DescribeTrustedAdvisorCheckRefreshStatusesAsync(DescribeTrustedAdvisorCheckRefreshStatusesRequest describeTrustedAdvisorCheckRefreshStatusesRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DescribeTrustedAdvisorCheckRefreshStatusesResponse> DescribeTrustedAdvisorCheckRefreshStatusesAsync(DescribeTrustedAdvisorCheckRefreshStatusesRequest describeTrustedAdvisorCheckRefreshStatusesRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeTrustedAdvisorCheckRefreshStatusesRequestMarshaller();
             var unmarshaller = DescribeTrustedAdvisorCheckRefreshStatusesResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DescribeTrustedAdvisorCheckRefreshStatusesRequest, DescribeTrustedAdvisorCheckRefreshStatusesResponse>(describeTrustedAdvisorCheckRefreshStatusesRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DescribeTrustedAdvisorCheckRefreshStatusesRequest, DescribeTrustedAdvisorCheckRefreshStatusesResponse>(describeTrustedAdvisorCheckRefreshStatusesRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DescribeTrustedAdvisorCheckResultResponse DescribeTrustedAdvisorCheckResult(DescribeTrustedAdvisorCheckResultRequest request)
@@ -495,13 +481,11 @@ namespace Amazon.AWSSupport
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DescribeTrustedAdvisorCheckResultResponse> DescribeTrustedAdvisorCheckResultAsync(DescribeTrustedAdvisorCheckResultRequest describeTrustedAdvisorCheckResultRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DescribeTrustedAdvisorCheckResultResponse> DescribeTrustedAdvisorCheckResultAsync(DescribeTrustedAdvisorCheckResultRequest describeTrustedAdvisorCheckResultRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeTrustedAdvisorCheckResultRequestMarshaller();
             var unmarshaller = DescribeTrustedAdvisorCheckResultResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DescribeTrustedAdvisorCheckResultRequest, DescribeTrustedAdvisorCheckResultResponse>(describeTrustedAdvisorCheckResultRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DescribeTrustedAdvisorCheckResultRequest, DescribeTrustedAdvisorCheckResultResponse>(describeTrustedAdvisorCheckResultRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DescribeTrustedAdvisorChecksResponse DescribeTrustedAdvisorChecks(DescribeTrustedAdvisorChecksRequest request)
@@ -532,13 +516,11 @@ namespace Amazon.AWSSupport
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DescribeTrustedAdvisorChecksResponse> DescribeTrustedAdvisorChecksAsync(DescribeTrustedAdvisorChecksRequest describeTrustedAdvisorChecksRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DescribeTrustedAdvisorChecksResponse> DescribeTrustedAdvisorChecksAsync(DescribeTrustedAdvisorChecksRequest describeTrustedAdvisorChecksRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeTrustedAdvisorChecksRequestMarshaller();
             var unmarshaller = DescribeTrustedAdvisorChecksResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DescribeTrustedAdvisorChecksRequest, DescribeTrustedAdvisorChecksResponse>(describeTrustedAdvisorChecksRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DescribeTrustedAdvisorChecksRequest, DescribeTrustedAdvisorChecksResponse>(describeTrustedAdvisorChecksRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DescribeTrustedAdvisorCheckSummariesResponse DescribeTrustedAdvisorCheckSummaries(DescribeTrustedAdvisorCheckSummariesRequest request)
@@ -568,13 +550,11 @@ namespace Amazon.AWSSupport
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DescribeTrustedAdvisorCheckSummariesResponse> DescribeTrustedAdvisorCheckSummariesAsync(DescribeTrustedAdvisorCheckSummariesRequest describeTrustedAdvisorCheckSummariesRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DescribeTrustedAdvisorCheckSummariesResponse> DescribeTrustedAdvisorCheckSummariesAsync(DescribeTrustedAdvisorCheckSummariesRequest describeTrustedAdvisorCheckSummariesRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeTrustedAdvisorCheckSummariesRequestMarshaller();
             var unmarshaller = DescribeTrustedAdvisorCheckSummariesResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DescribeTrustedAdvisorCheckSummariesRequest, DescribeTrustedAdvisorCheckSummariesResponse>(describeTrustedAdvisorCheckSummariesRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DescribeTrustedAdvisorCheckSummariesRequest, DescribeTrustedAdvisorCheckSummariesResponse>(describeTrustedAdvisorCheckSummariesRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal RefreshTrustedAdvisorCheckResponse RefreshTrustedAdvisorCheck(RefreshTrustedAdvisorCheckRequest request)
@@ -611,13 +591,11 @@ namespace Amazon.AWSSupport
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<RefreshTrustedAdvisorCheckResponse> RefreshTrustedAdvisorCheckAsync(RefreshTrustedAdvisorCheckRequest refreshTrustedAdvisorCheckRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<RefreshTrustedAdvisorCheckResponse> RefreshTrustedAdvisorCheckAsync(RefreshTrustedAdvisorCheckRequest refreshTrustedAdvisorCheckRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RefreshTrustedAdvisorCheckRequestMarshaller();
             var unmarshaller = RefreshTrustedAdvisorCheckResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, RefreshTrustedAdvisorCheckRequest, RefreshTrustedAdvisorCheckResponse>(refreshTrustedAdvisorCheckRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, RefreshTrustedAdvisorCheckRequest, RefreshTrustedAdvisorCheckResponse>(refreshTrustedAdvisorCheckRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal ResolveCaseResponse ResolveCase(ResolveCaseRequest request)
@@ -648,13 +626,11 @@ namespace Amazon.AWSSupport
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<ResolveCaseResponse> ResolveCaseAsync(ResolveCaseRequest resolveCaseRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<ResolveCaseResponse> ResolveCaseAsync(ResolveCaseRequest resolveCaseRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ResolveCaseRequestMarshaller();
             var unmarshaller = ResolveCaseResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, ResolveCaseRequest, ResolveCaseResponse>(resolveCaseRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, ResolveCaseRequest, ResolveCaseResponse>(resolveCaseRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
     }
 }

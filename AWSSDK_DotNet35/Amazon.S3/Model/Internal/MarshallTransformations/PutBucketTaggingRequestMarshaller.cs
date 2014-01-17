@@ -12,19 +12,14 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
+
 using System.IO;
 using System.Xml;
-using System.Xml.Serialization;
 using System.Text;
-
-using Amazon.S3.Model;
 using Amazon.S3.Util;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
@@ -33,84 +28,54 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// </summary>       
     public class PutBucketTaggingRequestMarshaller : IMarshaller<IRequest, PutBucketTaggingRequest>
     {
-
-
         public IRequest Marshall(PutBucketTaggingRequest putBucketTaggingRequest)
         {
             IRequest request = new DefaultRequest(putBucketTaggingRequest, "AmazonS3");
 
-
-
             request.HttpMethod = "PUT";
 
+            var uriResourcePath = string.Concat("/", S3Transforms.ToStringValue(putBucketTaggingRequest.BucketName));
 
-            Dictionary<string, string> queryParameters = new Dictionary<string, string>();
-            string uriResourcePath = "/{Bucket}/?tagging";
-            uriResourcePath = uriResourcePath.Replace("{Bucket}", putBucketTaggingRequest.IsSetBucketName() ? S3Transforms.ToStringValue(putBucketTaggingRequest.BucketName) : "");
-            string path = uriResourcePath;
+            request.Parameters.Add("tagging", null);
 
+            request.CanonicalResource = S3Transforms.GetCanonicalResource(uriResourcePath, request.Parameters);
+            request.ResourcePath = S3Transforms.FormatResourcePath(uriResourcePath, request.Parameters);
 
-            int queryIndex = uriResourcePath.IndexOf("?", StringComparison.OrdinalIgnoreCase);
-            if (queryIndex != -1)
+            var stringWriter = new StringWriter(System.Globalization.CultureInfo.InvariantCulture);
+            using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = Encoding.UTF8, OmitXmlDeclaration = true }))
             {
-                string queryString = uriResourcePath.Substring(queryIndex + 1);
-                path = uriResourcePath.Substring(0, queryIndex);
+                xmlWriter.WriteStartElement("Tagging", "");
 
-                S3Transforms.BuildQueryParameterMap(request, queryParameters, queryString);
-            }
-
-            request.CanonicalResource = S3Transforms.GetCanonicalResource(path, queryParameters);
-            uriResourcePath = S3Transforms.FormatResourcePath(path, queryParameters);
-
-            request.ResourcePath = uriResourcePath;
-
-
-            StringWriter stringWriter = new StringWriter(System.Globalization.CultureInfo.InvariantCulture);
-            using (XmlWriter xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true }))
-            {
-
-
-                if (putBucketTaggingRequest != null)
+                var taggingTaggingtagSetList = putBucketTaggingRequest.TagSet;
+                if (taggingTaggingtagSetList != null && taggingTaggingtagSetList.Count > 0)
                 {
-                    xmlWriter.WriteStartElement("Tagging", "");
-
-                    List<Tag> taggingTaggingtagSetList = putBucketTaggingRequest.TagSet;
-                    if (taggingTaggingtagSetList != null && taggingTaggingtagSetList.Count > 0)
+                    xmlWriter.WriteStartElement("TagSet", "");
+                    foreach (var taggingTaggingtagSetListValue in taggingTaggingtagSetList)
                     {
-                        int taggingTaggingtagSetListIndex = 1;
-                        xmlWriter.WriteStartElement("TagSet", "");
-                        foreach (Tag taggingTaggingtagSetListValue in taggingTaggingtagSetList)
+                        xmlWriter.WriteStartElement("Tag", "");
+                        if (taggingTaggingtagSetListValue.IsSetKey())
                         {
-                            xmlWriter.WriteStartElement("Tag", "");
-                            if (taggingTaggingtagSetListValue.IsSetKey())
-                            {
-                                xmlWriter.WriteElementString("Key", "", S3Transforms.ToXmlStringValue(taggingTaggingtagSetListValue.Key));
-                            }
-                            if (taggingTaggingtagSetListValue.IsSetValue())
-                            {
-                                xmlWriter.WriteElementString("Value", "", S3Transforms.ToXmlStringValue(taggingTaggingtagSetListValue.Value));
-                            }
-                            xmlWriter.WriteEndElement();
-
-
-                            taggingTaggingtagSetListIndex++;
+                            xmlWriter.WriteElementString("Key", "", S3Transforms.ToXmlStringValue(taggingTaggingtagSetListValue.Key));
+                        }
+                        if (taggingTaggingtagSetListValue.IsSetValue())
+                        {
+                            xmlWriter.WriteElementString("Value", "", S3Transforms.ToXmlStringValue(taggingTaggingtagSetListValue.Value));
                         }
                         xmlWriter.WriteEndElement();
                     }
                     xmlWriter.WriteEndElement();
-
                 }
+                xmlWriter.WriteEndElement();
             }
 
             try
             {
-                string content = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(content);
+                var content = stringWriter.ToString();
+                request.Content = Encoding.UTF8.GetBytes(content);
                 request.Headers["Content-Type"] = "application/xml";
 
-
                 request.Parameters[S3QueryParameter.ContentType.ToString()] = "application/xml";
-                string checksum = AmazonS3Util.GenerateChecksumForContent(content, true);
+                var checksum = AmazonS3Util.GenerateChecksumForContent(content, true);
                 request.Headers[Amazon.Util.AWSSDKUtils.ContentMD5Header] = checksum;
 
             }
@@ -121,16 +86,12 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             if (!request.UseQueryString)
             {
-                string queryString = Amazon.Util.AWSSDKUtils.GetParametersAsString(request.Parameters);
+                var queryString = Amazon.Util.AWSSDKUtils.GetParametersAsString(request.Parameters);
                 if (!string.IsNullOrEmpty(queryString))
                 {
-                    if (request.ResourcePath.Contains("?"))
-                        request.ResourcePath = string.Concat(request.ResourcePath, "&", queryString);
-                    else
-                        request.ResourcePath = string.Concat(request.ResourcePath, "?", queryString);
+                    request.ResourcePath = string.Concat(request.ResourcePath, request.ResourcePath.Contains("?") ? "&" : "?", queryString);
                 }
             }
-
 
             return request;
         }

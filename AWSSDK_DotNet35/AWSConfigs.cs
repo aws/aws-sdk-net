@@ -188,7 +188,7 @@ namespace Amazon
         /// <seealso cref="Amazon.AWSConfigs.DynamoDBContextTableNamePrefix"/>
         /// </summary>
         public const string DynamoDBContextTableNamePrefixKey = "AWS.DynamoDBContext.TableNamePrefix";
-
+        
         /// <summary>
         /// Configures the default TableNamePrefix that the DynamoDBContext will use if
         /// not manually configured.
@@ -209,6 +209,39 @@ namespace Amazon
         }
 
         private static string _dynamoDBContextTableNamePrefix = GetConfig(DynamoDBContextTableNamePrefixKey);
+
+        #endregion
+
+        #region S3 SignatureV4
+
+        /// <summary>
+        /// Key for the S3UseSignatureVersion4 property.
+        /// <seealso cref="Amazon.AWSConfigs.S3UseSignatureVersion4"/>
+        /// </summary>
+        public const string S3UseSignatureVersion4Key = "AWS.S3.UseSignatureVersion4";
+
+        /// <summary>
+        /// Configures if the S3 client should use Signature Version 4 signing with requests.
+        /// By default, this setting is false, though Signature Version 4 may be used by default
+        /// in some cases or with some regions. When the setting is true, Signature Version 4
+        /// will be used for all requests.
+        /// 
+        /// Changes to this setting will only take effect in newly-constructed clients.
+        /// 
+        /// The setting can be configured through App.config, for example:
+        /// <code>
+        /// &lt;appSettings&gt;
+        ///   &lt;add key="AWS.S3.UseSignatureVersion4" value="true"/&gt;
+        /// &lt;/appSettings&gt;
+        /// </code>
+        /// </summary>
+        public static bool S3UseSignatureVersion4
+        {
+            get { return _s3UseSignatureVersion4; }
+            set { _s3UseSignatureVersion4 = value; }
+        }
+
+        private static bool _s3UseSignatureVersion4 = GetConfigBool(S3UseSignatureVersion4Key);
 
         #endregion
 

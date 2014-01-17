@@ -28,9 +28,10 @@ namespace Amazon.SimpleEmail.Model
     /// <para>Given a list of identities (email addresses and/or domains), returns the verification status and (for domain identities) the
     /// verification token for each identity.</para> <para>This action is throttled at one request per second.</para>
     /// </summary>
-    public partial class GetIdentityVerificationAttributesRequest : AmazonWebServiceRequest
+    public partial class GetIdentityVerificationAttributesRequest : AmazonSimpleEmailServiceRequest
     {
         private List<string> identities = new List<string>();
+
 
         /// <summary>
         /// A list of identities.

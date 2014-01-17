@@ -192,13 +192,11 @@ namespace Amazon.Kinesis
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<CreateStreamResponse> CreateStreamAsync(CreateStreamRequest createStreamRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<CreateStreamResponse> CreateStreamAsync(CreateStreamRequest createStreamRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateStreamRequestMarshaller();
             var unmarshaller = CreateStreamResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, CreateStreamRequest, CreateStreamResponse>(createStreamRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, CreateStreamRequest, CreateStreamResponse>(createStreamRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DeleteStreamResponse DeleteStream(DeleteStreamRequest request)
@@ -233,13 +231,11 @@ namespace Amazon.Kinesis
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DeleteStreamResponse> DeleteStreamAsync(DeleteStreamRequest deleteStreamRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DeleteStreamResponse> DeleteStreamAsync(DeleteStreamRequest deleteStreamRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteStreamRequestMarshaller();
             var unmarshaller = DeleteStreamResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DeleteStreamRequest, DeleteStreamResponse>(deleteStreamRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DeleteStreamRequest, DeleteStreamResponse>(deleteStreamRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DescribeStreamResponse DescribeStream(DescribeStreamRequest request)
@@ -282,13 +278,11 @@ namespace Amazon.Kinesis
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DescribeStreamResponse> DescribeStreamAsync(DescribeStreamRequest describeStreamRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DescribeStreamResponse> DescribeStreamAsync(DescribeStreamRequest describeStreamRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeStreamRequestMarshaller();
             var unmarshaller = DescribeStreamResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DescribeStreamRequest, DescribeStreamResponse>(describeStreamRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DescribeStreamRequest, DescribeStreamResponse>(describeStreamRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal GetRecordsResponse GetRecords(GetRecordsRequest request)
@@ -334,13 +328,11 @@ namespace Amazon.Kinesis
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<GetRecordsResponse> GetRecordsAsync(GetRecordsRequest getRecordsRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<GetRecordsResponse> GetRecordsAsync(GetRecordsRequest getRecordsRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetRecordsRequestMarshaller();
             var unmarshaller = GetRecordsResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, GetRecordsRequest, GetRecordsResponse>(getRecordsRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, GetRecordsRequest, GetRecordsResponse>(getRecordsRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal GetShardIteratorResponse GetShardIterator(GetShardIteratorRequest request)
@@ -390,13 +382,11 @@ namespace Amazon.Kinesis
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<GetShardIteratorResponse> GetShardIteratorAsync(GetShardIteratorRequest getShardIteratorRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<GetShardIteratorResponse> GetShardIteratorAsync(GetShardIteratorRequest getShardIteratorRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetShardIteratorRequestMarshaller();
             var unmarshaller = GetShardIteratorResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, GetShardIteratorRequest, GetShardIteratorResponse>(getShardIteratorRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, GetShardIteratorRequest, GetShardIteratorResponse>(getShardIteratorRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal ListStreamsResponse ListStreams(ListStreamsRequest request)
@@ -434,13 +424,11 @@ namespace Amazon.Kinesis
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<ListStreamsResponse> ListStreamsAsync(ListStreamsRequest listStreamsRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<ListStreamsResponse> ListStreamsAsync(ListStreamsRequest listStreamsRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListStreamsRequestMarshaller();
             var unmarshaller = ListStreamsResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, ListStreamsRequest, ListStreamsResponse>(listStreamsRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, ListStreamsRequest, ListStreamsResponse>(listStreamsRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal MergeShardsResponse MergeShards(MergeShardsRequest request)
@@ -485,13 +473,11 @@ namespace Amazon.Kinesis
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<MergeShardsResponse> MergeShardsAsync(MergeShardsRequest mergeShardsRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<MergeShardsResponse> MergeShardsAsync(MergeShardsRequest mergeShardsRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new MergeShardsRequestMarshaller();
             var unmarshaller = MergeShardsResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, MergeShardsRequest, MergeShardsResponse>(mergeShardsRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, MergeShardsRequest, MergeShardsResponse>(mergeShardsRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal PutRecordResponse PutRecord(PutRecordRequest request)
@@ -535,13 +521,11 @@ namespace Amazon.Kinesis
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<PutRecordResponse> PutRecordAsync(PutRecordRequest putRecordRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<PutRecordResponse> PutRecordAsync(PutRecordRequest putRecordRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutRecordRequestMarshaller();
             var unmarshaller = PutRecordResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, PutRecordRequest, PutRecordResponse>(putRecordRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, PutRecordRequest, PutRecordResponse>(putRecordRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal SplitShardResponse SplitShard(SplitShardRequest request)
@@ -593,13 +577,11 @@ namespace Amazon.Kinesis
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<SplitShardResponse> SplitShardAsync(SplitShardRequest splitShardRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<SplitShardResponse> SplitShardAsync(SplitShardRequest splitShardRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new SplitShardRequestMarshaller();
             var unmarshaller = SplitShardResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, SplitShardRequest, SplitShardResponse>(splitShardRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, SplitShardRequest, SplitShardResponse>(splitShardRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
     }
 }

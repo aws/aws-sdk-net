@@ -43,6 +43,8 @@ namespace Amazon.Glacier.Model
         private string sHA256TreeHash;
         private string archiveSHA256TreeHash;
         private string retrievalByteRange;
+        private InventoryRetrievalJobDescription inventoryRetrievalParameters;
+
 
         /// <summary>
         /// An opaque string that identifies an Amazon Glacier job.
@@ -324,6 +326,22 @@ namespace Amazon.Glacier.Model
         internal bool IsSetRetrievalByteRange()
         {
             return this.retrievalByteRange != null;
+        }
+
+        /// <summary>
+        /// Parameters used for range inventory retrieval.
+        ///  
+        /// </summary>
+        public InventoryRetrievalJobDescription InventoryRetrievalParameters
+        {
+            get { return this.inventoryRetrievalParameters; }
+            set { this.inventoryRetrievalParameters = value; }
+        }
+
+        // Check to see if InventoryRetrievalParameters property is set
+        internal bool IsSetInventoryRetrievalParameters()
+        {
+            return this.inventoryRetrievalParameters != null;
         }
     }
 }

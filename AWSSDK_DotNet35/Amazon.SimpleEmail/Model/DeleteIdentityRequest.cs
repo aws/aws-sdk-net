@@ -28,9 +28,10 @@ namespace Amazon.SimpleEmail.Model
     /// <para>Deletes the specified identity (email address or domain) from the list of verified identities.</para> <para>This action is throttled
     /// at one request per second.</para>
     /// </summary>
-    public partial class DeleteIdentityRequest : AmazonWebServiceRequest
+    public partial class DeleteIdentityRequest : AmazonSimpleEmailServiceRequest
     {
         private string identity;
+
 
         /// <summary>
         /// The identity to be removed from the list of identities for the AWS Account.

@@ -185,13 +185,11 @@ namespace Amazon.SimpleDB
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<BatchDeleteAttributesResponse> BatchDeleteAttributesAsync(BatchDeleteAttributesRequest batchDeleteAttributesRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<BatchDeleteAttributesResponse> BatchDeleteAttributesAsync(BatchDeleteAttributesRequest batchDeleteAttributesRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new BatchDeleteAttributesRequestMarshaller();
             var unmarshaller = BatchDeleteAttributesResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, BatchDeleteAttributesRequest, BatchDeleteAttributesResponse>(batchDeleteAttributesRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, BatchDeleteAttributesRequest, BatchDeleteAttributesResponse>(batchDeleteAttributesRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal BatchPutAttributesResponse BatchPutAttributes(BatchPutAttributesRequest request)
@@ -255,13 +253,11 @@ namespace Amazon.SimpleDB
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<BatchPutAttributesResponse> BatchPutAttributesAsync(BatchPutAttributesRequest batchPutAttributesRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<BatchPutAttributesResponse> BatchPutAttributesAsync(BatchPutAttributesRequest batchPutAttributesRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new BatchPutAttributesRequestMarshaller();
             var unmarshaller = BatchPutAttributesResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, BatchPutAttributesRequest, BatchPutAttributesResponse>(batchPutAttributesRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, BatchPutAttributesRequest, BatchPutAttributesResponse>(batchPutAttributesRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal CreateDomainResponse CreateDomain(CreateDomainRequest request)
@@ -294,13 +290,11 @@ namespace Amazon.SimpleDB
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<CreateDomainResponse> CreateDomainAsync(CreateDomainRequest createDomainRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<CreateDomainResponse> CreateDomainAsync(CreateDomainRequest createDomainRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateDomainRequestMarshaller();
             var unmarshaller = CreateDomainResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, CreateDomainRequest, CreateDomainResponse>(createDomainRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, CreateDomainRequest, CreateDomainResponse>(createDomainRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DeleteAttributesResponse DeleteAttributes(DeleteAttributesRequest request)
@@ -335,13 +329,11 @@ namespace Amazon.SimpleDB
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DeleteAttributesResponse> DeleteAttributesAsync(DeleteAttributesRequest deleteAttributesRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DeleteAttributesResponse> DeleteAttributesAsync(DeleteAttributesRequest deleteAttributesRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteAttributesRequestMarshaller();
             var unmarshaller = DeleteAttributesResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DeleteAttributesRequest, DeleteAttributesResponse>(deleteAttributesRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DeleteAttributesRequest, DeleteAttributesResponse>(deleteAttributesRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DeleteDomainResponse DeleteDomain(DeleteDomainRequest request)
@@ -370,13 +362,11 @@ namespace Amazon.SimpleDB
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DeleteDomainResponse> DeleteDomainAsync(DeleteDomainRequest deleteDomainRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DeleteDomainResponse> DeleteDomainAsync(DeleteDomainRequest deleteDomainRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteDomainRequestMarshaller();
             var unmarshaller = DeleteDomainResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DeleteDomainRequest, DeleteDomainResponse>(deleteDomainRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DeleteDomainRequest, DeleteDomainResponse>(deleteDomainRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DomainMetadataResponse DomainMetadata(DomainMetadataRequest request)
@@ -407,13 +397,11 @@ namespace Amazon.SimpleDB
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<DomainMetadataResponse> DomainMetadataAsync(DomainMetadataRequest domainMetadataRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DomainMetadataResponse> DomainMetadataAsync(DomainMetadataRequest domainMetadataRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DomainMetadataRequestMarshaller();
             var unmarshaller = DomainMetadataResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, DomainMetadataRequest, DomainMetadataResponse>(domainMetadataRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, DomainMetadataRequest, DomainMetadataResponse>(domainMetadataRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal GetAttributesResponse GetAttributes(GetAttributesRequest request)
@@ -448,13 +436,11 @@ namespace Amazon.SimpleDB
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<GetAttributesResponse> GetAttributesAsync(GetAttributesRequest getAttributesRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<GetAttributesResponse> GetAttributesAsync(GetAttributesRequest getAttributesRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetAttributesRequestMarshaller();
             var unmarshaller = GetAttributesResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, GetAttributesRequest, GetAttributesResponse>(getAttributesRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, GetAttributesRequest, GetAttributesResponse>(getAttributesRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal ListDomainsResponse ListDomains(ListDomainsRequest request)
@@ -487,13 +473,11 @@ namespace Amazon.SimpleDB
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<ListDomainsResponse> ListDomainsAsync(ListDomainsRequest listDomainsRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<ListDomainsResponse> ListDomainsAsync(ListDomainsRequest listDomainsRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListDomainsRequestMarshaller();
             var unmarshaller = ListDomainsResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, ListDomainsRequest, ListDomainsResponse>(listDomainsRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, ListDomainsRequest, ListDomainsResponse>(listDomainsRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal PutAttributesResponse PutAttributes(PutAttributesRequest request)
@@ -549,13 +533,11 @@ namespace Amazon.SimpleDB
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<PutAttributesResponse> PutAttributesAsync(PutAttributesRequest putAttributesRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<PutAttributesResponse> PutAttributesAsync(PutAttributesRequest putAttributesRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutAttributesRequestMarshaller();
             var unmarshaller = PutAttributesResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, PutAttributesRequest, PutAttributesResponse>(putAttributesRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, PutAttributesRequest, PutAttributesResponse>(putAttributesRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal SelectResponse Select(SelectRequest request)
@@ -596,13 +578,11 @@ namespace Amazon.SimpleDB
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public async Task<SelectResponse> SelectAsync(SelectRequest selectRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<SelectResponse> SelectAsync(SelectRequest selectRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new SelectRequestMarshaller();
             var unmarshaller = SelectResponseUnmarshaller.GetInstance();
-            var response = await Invoke<IRequest, SelectRequest, SelectResponse>(selectRequest, marshaller, unmarshaller, signer, cancellationToken)
-                .ConfigureAwait(continueOnCapturedContext: false);
-            return response;
+            return Invoke<IRequest, SelectRequest, SelectResponse>(selectRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
     }
 }

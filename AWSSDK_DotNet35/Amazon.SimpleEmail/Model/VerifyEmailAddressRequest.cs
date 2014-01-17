@@ -29,9 +29,10 @@ namespace Amazon.SimpleEmail.Model
     /// <para><b>IMPORTANT:</b>The VerifyEmailAddress action is deprecated as of the May 15, 2012 release of Domain Verification. The
     /// VerifyEmailIdentity action is now preferred.</para> <para>This action is throttled at one request per second.</para>
     /// </summary>
-    public partial class VerifyEmailAddressRequest : AmazonWebServiceRequest
+    public partial class VerifyEmailAddressRequest : AmazonSimpleEmailServiceRequest
     {
         private string emailAddress;
+
 
         /// <summary>
         /// The email address to be verified.

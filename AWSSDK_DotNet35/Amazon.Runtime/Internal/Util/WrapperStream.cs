@@ -56,6 +56,10 @@ namespace Amazon.Runtime.Internal.Util
             Stream baseStream = this;
             do
             {
+                var partialStream = baseStream as PartialWrapperStream;
+                if (partialStream != null)
+                    return partialStream;
+
                 baseStream = (baseStream as WrapperStream).BaseStream;
             } while (baseStream is WrapperStream);
             return baseStream;
