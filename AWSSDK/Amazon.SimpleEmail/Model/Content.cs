@@ -25,7 +25,7 @@ namespace Amazon.SimpleEmail.Model
     /// the constraints of the SMTP protocol. If the text must contain any other characters, then you must also specify a character set. Examples
     /// include UTF-8, ISO-8859-1, and Shift_JIS. </para>
     /// </summary>
-    public class Content  
+    public partial class Content
     {
         
         private string data;
@@ -43,7 +43,7 @@ namespace Amazon.SimpleEmail.Model
         /// </summary>
         /// 
         /// <param name="data"> The textual data of the content. </param>
-        public Content(string data) 
+        public Content(string data)
         {
             this.data = data;
         }
@@ -75,7 +75,7 @@ namespace Amazon.SimpleEmail.Model
         // Check to see if Data property is set
         internal bool IsSetData()
         {
-            return this.data != null;       
+            return this.data != null;
         }
 
         /// <summary>
@@ -104,7 +104,7 @@ namespace Amazon.SimpleEmail.Model
         // Check to see if Charset property is set
         internal bool IsSetCharset()
         {
-            return this.charset != null;       
+            return this.charset != null;
         }
     }
 }

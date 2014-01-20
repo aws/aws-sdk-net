@@ -25,7 +25,8 @@ namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
     /// Container for the parameters to the VerifyEmailIdentity operation.
-    /// <para>Verifies an email address. This action causes a confirmation email message to be sent to the specified address.</para>
+    /// <para>Verifies an email address. This action causes a confirmation email message to be sent to the specified address.</para> <para>This
+    /// action is throttled at one request per second.</para>
     /// </summary>
     /// <seealso cref="Amazon.SimpleEmail.AmazonSimpleEmailService.VerifyEmailIdentity"/>
     public class VerifyEmailIdentityRequest : AmazonWebServiceRequest
@@ -58,7 +59,7 @@ namespace Amazon.SimpleEmail.Model
         // Check to see if EmailAddress property is set
         internal bool IsSetEmailAddress()
         {
-            return this.emailAddress != null;       
+            return this.emailAddress != null;
         }
     }
 }

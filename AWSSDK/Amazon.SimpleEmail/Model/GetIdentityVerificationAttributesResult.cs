@@ -23,7 +23,7 @@ namespace Amazon.SimpleEmail.Model
     /// <summary>
     /// <para>Represents the verification attributes for a list of identities.</para>
     /// </summary>
-    public class GetIdentityVerificationAttributesResult  
+    public partial class GetIdentityVerificationAttributesResult
     {
         
         private Dictionary<string,IdentityVerificationAttributes> verificationAttributes = new Dictionary<string,IdentityVerificationAttributes>();
@@ -57,7 +57,7 @@ namespace Amazon.SimpleEmail.Model
         // Check to see if VerificationAttributes property is set
         internal bool IsSetVerificationAttributes()
         {
-            return this.verificationAttributes != null;       
+            return this.verificationAttributes != null;
         }
     }
 }

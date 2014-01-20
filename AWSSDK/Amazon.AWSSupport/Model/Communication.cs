@@ -21,9 +21,9 @@ using System.IO;
 namespace Amazon.AWSSupport.Model
 {
     /// <summary>
-    /// <para>Object that exposes the fields used by a communication for an AWS Support case.</para>
+    /// <para>Exposes the fields used by a communication for an AWS Support case.</para>
     /// </summary>
-    public class Communication
+    public partial class Communication
     {
         
         private string caseId;
@@ -32,8 +32,8 @@ namespace Amazon.AWSSupport.Model
         private string timeCreated;
 
         /// <summary>
-        /// String that indicates the AWS Support caseID requested or returned in the call. The caseID is an alphanumeric string formatted as shown in
-        /// this example CaseId: <i>case-12345678910-2013-c4c1d2bf33c5cf47</i>
+        /// The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example:
+        /// case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
         ///  
         /// </summary>
         public string CaseId
@@ -62,7 +62,7 @@ namespace Amazon.AWSSupport.Model
         }
 
         /// <summary>
-        /// Contains the text of the the commmunication between the customer and AWS Support.
+        /// The text of the communication between the customer and AWS Support.
         ///  
         /// </summary>
         public string Body
@@ -91,7 +91,7 @@ namespace Amazon.AWSSupport.Model
         }
 
         /// <summary>
-        /// Email address of the account that submitted the AWS Support case.
+        /// The email address of the account that submitted the AWS Support case.
         ///  
         /// </summary>
         public string SubmittedBy
@@ -120,7 +120,7 @@ namespace Amazon.AWSSupport.Model
         }
 
         /// <summary>
-        /// Time the support case was created.
+        /// The time the support case was created.
         ///  
         /// </summary>
         public string TimeCreated

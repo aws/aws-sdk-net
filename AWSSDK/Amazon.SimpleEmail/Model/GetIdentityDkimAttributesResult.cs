@@ -23,7 +23,7 @@ namespace Amazon.SimpleEmail.Model
     /// <summary>
     /// <para>Represents a list of all the DKIM attributes for the specified identity.</para>
     /// </summary>
-    public class GetIdentityDkimAttributesResult  
+    public partial class GetIdentityDkimAttributesResult
     {
         
         private Dictionary<string,IdentityDkimAttributes> dkimAttributes = new Dictionary<string,IdentityDkimAttributes>();
@@ -57,7 +57,7 @@ namespace Amazon.SimpleEmail.Model
         // Check to see if DkimAttributes property is set
         internal bool IsSetDkimAttributes()
         {
-            return this.dkimAttributes != null;       
+            return this.dkimAttributes != null;
         }
     }
 }

@@ -25,15 +25,16 @@ namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
     /// Container for the parameters to the SendEmail operation.
-    /// <para>Composes an email message based on input data, and then immediately queues the message for sending. </para> <para><b>IMPORTANT:</b>If
-    /// you have not yet requested production access to Amazon SES, then you will only be able to send email to and from verified email addresses
-    /// and domains. For more information, go to the Amazon SES Developer Guide. </para> <para>The total size of the message cannot exceed 10
-    /// MB.</para> <para>Amazon SES has a limit on the total number of recipients per message: The combined number of To:, CC: and BCC: email
-    /// addresses cannot exceed 50. If you need to send an email message to a larger audience, you can divide your recipient list into groups of 50
-    /// or fewer, and then call Amazon SES repeatedly to send the message to each group. </para> <para>For every message that you send, the total
-    /// number of recipients (To:, CC: and BCC:) is counted against your <i>sending quota</i> - the maximum number of emails you can send in a
-    /// 24-hour period. For information about your sending quota, go to the "Managing Your Sending Activity" section of theAmazon SES Developer
-    /// Guide. </para>
+    /// <para>Composes an email message based on input data, and then immediately queues the message for sending. </para> <para><b>IMPORTANT:</b>
+    /// You can only send email from verified email addresses and domains. If you have not requested production access to Amazon SES, you must also
+    /// verify every recipient email address except for the recipients provided by the Amazon SES mailbox simulator. For more information, go to the
+    /// Amazon SES Developer Guide. </para> <para>The total size of the message cannot exceed 10 MB.</para> <para>Amazon SES has a limit on the
+    /// total number of recipients per message: The combined number of To:, CC: and BCC: email addresses cannot exceed 50. If you need to send an
+    /// email message to a larger audience, you can divide your recipient list into groups of 50 or fewer, and then call Amazon SES repeatedly to
+    /// send the message to each group. </para> <para>For every message that you send, the total number of recipients (To:, CC: and BCC:) is counted
+    /// against your <i>sending quota</i> - the maximum number of emails you can send in a 24-hour period. For information about your sending quota,
+    /// go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html" >Amazon SES Developer Guide</a> .
+    /// </para>
     /// </summary>
     /// <seealso cref="Amazon.SimpleEmail.AmazonSimpleEmailService.SendEmail"/>
     public class SendEmailRequest : AmazonWebServiceRequest
@@ -55,10 +56,13 @@ namespace Amazon.SimpleEmail.Model
         /// initialize any additional object members.
         /// </summary>
         /// 
-        /// <param name="source"> The identity's email address. </param>
+        /// <param name="source"> The identity's email address. By default, the string must be 7-bit ASCII. If the text must contain any other
+        /// characters, then you must use MIME encoded-word syntax (RFC 2047) instead of a literal string. MIME encoded-word syntax uses the following
+        /// form: <c>=?charset?encoding?encoded-text?=</c>. For more information, see <a href="http://tools.ietf.org/html/rfc2047">RFC 2047</a>.
+        /// </param>
         /// <param name="destination"> The destination for this email, composed of To:, CC:, and BCC: fields. </param>
         /// <param name="message"> The message to be sent. </param>
-        public SendEmailRequest(string source, Destination destination, Message message) 
+        public SendEmailRequest(string source, Destination destination, Message message)
         {
             this.source = source;
             this.destination = destination;
@@ -67,7 +71,9 @@ namespace Amazon.SimpleEmail.Model
     
 
         /// <summary>
-        /// The identity's email address.
+        /// The identity's email address. By default, the string must be 7-bit ASCII. If the text must contain any other characters, then you must use
+        /// MIME encoded-word syntax (RFC 2047) instead of a literal string. MIME encoded-word syntax uses the following form:
+        /// <c>=?charset?encoding?encoded-text?=</c>. For more information, see <a href="http://tools.ietf.org/html/rfc2047">RFC 2047</a>.
         ///  
         /// </summary>
         public string Source
@@ -92,7 +98,7 @@ namespace Amazon.SimpleEmail.Model
         // Check to see if Source property is set
         internal bool IsSetSource()
         {
-            return this.source != null;       
+            return this.source != null;
         }
 
         /// <summary>
@@ -121,7 +127,7 @@ namespace Amazon.SimpleEmail.Model
         // Check to see if Destination property is set
         internal bool IsSetDestination()
         {
-            return this.destination != null;       
+            return this.destination != null;
         }
 
         /// <summary>
@@ -150,7 +156,7 @@ namespace Amazon.SimpleEmail.Model
         // Check to see if Message property is set
         internal bool IsSetMessage()
         {
-            return this.message != null;       
+            return this.message != null;
         }
 
         /// <summary>
@@ -177,7 +183,7 @@ namespace Amazon.SimpleEmail.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the ReplyToAddresses collection
         /// </summary>
@@ -197,7 +203,7 @@ namespace Amazon.SimpleEmail.Model
         // Check to see if ReplyToAddresses property is set
         internal bool IsSetReplyToAddresses()
         {
-            return this.replyToAddresses.Count > 0;       
+            return this.replyToAddresses.Count > 0;
         }
 
         /// <summary>
@@ -228,7 +234,7 @@ namespace Amazon.SimpleEmail.Model
         // Check to see if ReturnPath property is set
         internal bool IsSetReturnPath()
         {
-            return this.returnPath != null;       
+            return this.returnPath != null;
         }
     }
 }

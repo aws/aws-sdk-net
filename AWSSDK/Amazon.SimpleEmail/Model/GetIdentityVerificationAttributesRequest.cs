@@ -26,7 +26,7 @@ namespace Amazon.SimpleEmail.Model
     /// <summary>
     /// Container for the parameters to the GetIdentityVerificationAttributes operation.
     /// <para>Given a list of identities (email addresses and/or domains), returns the verification status and (for domain identities) the
-    /// verification token for each identity.</para>
+    /// verification token for each identity.</para> <para>This action is throttled at one request per second.</para>
     /// </summary>
     /// <seealso cref="Amazon.SimpleEmail.AmazonSimpleEmailService.GetIdentityVerificationAttributes"/>
     public class GetIdentityVerificationAttributesRequest : AmazonWebServiceRequest
@@ -57,7 +57,7 @@ namespace Amazon.SimpleEmail.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Identities collection
         /// </summary>
@@ -77,7 +77,7 @@ namespace Amazon.SimpleEmail.Model
         // Check to see if Identities property is set
         internal bool IsSetIdentities()
         {
-            return this.identities.Count > 0;       
+            return this.identities.Count > 0;
         }
     }
 }

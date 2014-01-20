@@ -23,7 +23,7 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// <para> A complex type that contains information about viewer certificates for this distribution. </para>
     /// </summary>
-    public class ViewerCertificate
+    public partial class ViewerCertificate
     {
         
         private string iAMCertificateId;

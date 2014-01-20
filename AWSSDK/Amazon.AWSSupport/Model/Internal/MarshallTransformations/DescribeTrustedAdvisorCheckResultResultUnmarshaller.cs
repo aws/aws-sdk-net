@@ -32,6 +32,8 @@
 
         public DescribeTrustedAdvisorCheckResultResult Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             DescribeTrustedAdvisorCheckResultResult describeTrustedAdvisorCheckResultResult = new DescribeTrustedAdvisorCheckResultResult();
           
             int originalDepth = context.CurrentDepth;

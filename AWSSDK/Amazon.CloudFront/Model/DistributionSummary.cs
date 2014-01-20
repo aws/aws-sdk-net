@@ -23,7 +23,7 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// <para> A summary of the information for an Amazon CloudFront distribution. </para>
     /// </summary>
-    public class DistributionSummary
+    public partial class DistributionSummary
     {
         
         private string id;
@@ -39,6 +39,7 @@ namespace Amazon.CloudFront.Model
         private string priceClass;
         private bool? enabled;
         private ViewerCertificate viewerCertificate;
+        private Restrictions restrictions;
 
         /// <summary>
         /// The identifier for the distribution. For example: EDFDVBD632BHDS5.
@@ -412,6 +413,35 @@ namespace Amazon.CloudFront.Model
         internal bool IsSetViewerCertificate()
         {
             return this.viewerCertificate != null;
+        }
+
+        /// <summary>
+        /// A complex type that identifies ways in which you want to restrict distribution of your content.
+        ///  
+        /// </summary>
+        public Restrictions Restrictions
+        {
+            get { return this.restrictions; }
+            set { this.restrictions = value; }
+        }
+
+        /// <summary>
+        /// Sets the Restrictions property
+        /// </summary>
+        /// <param name="restrictions">The value to set for the Restrictions property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public DistributionSummary WithRestrictions(Restrictions restrictions)
+        {
+            this.restrictions = restrictions;
+            return this;
+        }
+            
+
+        // Check to see if Restrictions property is set
+        internal bool IsSetRestrictions()
+        {
+            return this.restrictions != null;
         }
     }
 }

@@ -23,7 +23,7 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// <para> Origin access identity configuration. </para>
     /// </summary>
-    public class CloudFrontOriginAccessIdentityConfig
+    public partial class CloudFrontOriginAccessIdentityConfig
     {
         
         private string callerReference;

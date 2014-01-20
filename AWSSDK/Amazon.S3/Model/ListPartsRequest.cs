@@ -35,6 +35,7 @@ namespace Amazon.S3.Model
         private string uploadId;
         private int? maxParts;
         private string partNumberMarker;
+        private EncodingType encoding;
 
         #region BucketName
 
@@ -206,5 +207,42 @@ namespace Amazon.S3.Model
         }
 
         #endregion
+
+        #region Encoding
+
+        /// <summary>
+        /// Requests Amazon S3 to encode the object keys in the response and specifies
+        /// the encoding method to use. An object key may contain any Unicode character;
+        /// however, XML 1.0 parser cannot parse some characters, such as characters
+        /// with an ASCII value from 0 to 10. For characters that are not supported in
+        /// XML 1.0, you can add this parameter to request that Amazon S3 encode the
+        /// keys in the response.
+        /// </summary>
+        public EncodingType Encoding
+        {
+            get { return this.encoding; }
+            set { this.encoding = value; }
+        }
+
+        /// <summary>
+        /// Requests Amazon S3 to encode the object keys in the response and specifies
+        /// the encoding method to use. An object key may contain any Unicode character;
+        /// however, XML 1.0 parser cannot parse some characters, such as characters
+        /// with an ASCII value from 0 to 10. For characters that are not supported in
+        /// XML 1.0, you can add this parameter to request that Amazon S3 encode the
+        /// keys in the response.
+        /// </summary>
+        /// <param name="encoding">Encoding</param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public ListPartsRequest WithEncoding(EncodingType encoding)
+        {
+            this.encoding = encoding;
+            return this;
+        }
+
+
+        #endregion
+
     }
 }

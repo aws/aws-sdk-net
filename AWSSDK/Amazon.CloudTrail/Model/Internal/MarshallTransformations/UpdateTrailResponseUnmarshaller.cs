@@ -48,13 +48,6 @@
             return ex;
           }
   
-          if (errorResponse.Code != null && errorResponse.Code.Equals("InternalErrorException"))
-          {
-            InternalErrorException ex = new InternalErrorException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            
-            return ex;
-          }
-  
           if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidS3PrefixException"))
           {
             InvalidS3PrefixException ex = new InvalidS3PrefixException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);

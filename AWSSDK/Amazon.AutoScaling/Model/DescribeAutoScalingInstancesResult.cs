@@ -23,7 +23,7 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// <para> The <c>AutoScalingInstancesType</c> data type. </para>
     /// </summary>
-    public class DescribeAutoScalingInstancesResult
+    public partial class DescribeAutoScalingInstancesResult
     {
         
         private List<AutoScalingInstanceDetails> autoScalingInstances = new List<AutoScalingInstanceDetails>();

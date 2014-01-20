@@ -23,7 +23,7 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// <para> The output for the DescribeScalingActivities action. </para>
     /// </summary>
-    public class DescribeScalingActivitiesResult
+    public partial class DescribeScalingActivitiesResult
     {
         
         private List<Activity> activities = new List<Activity>();

@@ -21,17 +21,15 @@ using System.IO;
 namespace Amazon.AWSSupport.Model
 {
     /// <summary>
-    /// <para>Returns the objects or data listed below if successful. Otherwise, returns an error.</para>
+    /// <para>Contains the following objects or data if successful. Otherwise, returns an error.</para>
     /// </summary>
-    public class DescribeTrustedAdvisorCheckSummariesResult
+    public partial class DescribeTrustedAdvisorCheckSummariesResult
     {
         
         private List<TrustedAdvisorCheckSummary> summaries = new List<TrustedAdvisorCheckSummary>();
 
         /// <summary>
-        /// List of <a href="API_TrustedAdvisorCheckSummary.html" title="TrustedAdvisorCheckSummary">TrustedAdvisorCheckSummary</a> objects returned by
-        /// the <a href="API_DescribeTrustedAdvisorCheckSummaries.html"
-        /// title="DescribeTrustedAdvisorCheckSummaries">DescribeTrustedAdvisorCheckSummaries</a> request.
+        /// The summary information for the requested Trusted Advisor checks.
         ///  
         /// </summary>
         public List<TrustedAdvisorCheckSummary> Summaries

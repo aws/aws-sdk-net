@@ -34,6 +34,7 @@ namespace Amazon.AutoScaling.Model
     {
         private string autoScalingGroupName;
         private string launchConfigurationName;
+        private string instanceId;
         private int? minSize;
         private int? maxSize;
         private int? desiredCapacity;
@@ -129,6 +130,52 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetLaunchConfigurationName()
         {
             return this.launchConfigurationName != null;
+        }
+
+        /// <summary>
+        /// The ID of the Amazon EC2 instance you want to use to create the Auto Scaling group. When you use an instance to create an Auto Scaling
+        /// group, by default all the parameters are automatically derived from the instance with the exception of the following: <ul> <li>The block
+        /// device mappings are derived from the AMI that was used to launch the instance.</li> <li>The <c>AssociatePublicIpAddress</c> is not derived
+        /// if the flag is already set for the instance.</li> </ul> You can override any of the values by specifying your own values as part of the same
+        /// request.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Length</term>
+        ///         <description>1 - 16</description>
+        ///     </item>
+        ///     <item>
+        ///         <term>Pattern</term>
+        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
+        public string InstanceId
+        {
+            get { return this.instanceId; }
+            set { this.instanceId = value; }
+        }
+
+        /// <summary>
+        /// Sets the InstanceId property
+        /// </summary>
+        /// <param name="instanceId">The value to set for the InstanceId property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public CreateAutoScalingGroupRequest WithInstanceId(string instanceId)
+        {
+            this.instanceId = instanceId;
+            return this;
+        }
+            
+
+        // Check to see if InstanceId property is set
+        internal bool IsSetInstanceId()
+        {
+            return this.instanceId != null;
         }
 
         /// <summary>

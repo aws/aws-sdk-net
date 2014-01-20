@@ -23,7 +23,7 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// <para> A complex type that controls whether access logs are written for the distribution. </para>
     /// </summary>
-    public class LoggingConfig
+    public partial class LoggingConfig
     {
         
         private bool? enabled;

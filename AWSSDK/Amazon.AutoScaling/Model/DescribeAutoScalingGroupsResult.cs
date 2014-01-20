@@ -23,7 +23,7 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// <para> The <c>AutoScalingGroupsType</c> data type. </para>
     /// </summary>
-    public class DescribeAutoScalingGroupsResult
+    public partial class DescribeAutoScalingGroupsResult
     {
         
         private List<AutoScalingGroup> autoScalingGroups = new List<AutoScalingGroup>();

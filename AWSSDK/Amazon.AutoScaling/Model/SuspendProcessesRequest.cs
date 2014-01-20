@@ -29,7 +29,9 @@ namespace Amazon.AutoScaling.Model
     /// <c>ScalingProcesses.member.N</c> parameter. To suspend all process types, omit the <c>ScalingProcesses.member.N</c> parameter. </para>
     /// <para><b>IMPORTANT:</b> Suspending either of the two primary process types, Launch or Terminate, can prevent other process types from
     /// functioning properly. </para> <para> To resume processes that have been suspended, use ResumeProcesses For more information on suspending
-    /// and resuming Auto Scaling process, see Suspend and Resume Auto Scaling Process. </para>
+    /// and resuming Auto Scaling process, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US_SuspendResume.html" >Suspend
+    /// and Resume Auto Scaling Process</a> .
+    /// </para>
     /// </summary>
     /// <seealso cref="Amazon.AutoScaling.AmazonAutoScaling.SuspendProcesses"/>
     public class SuspendProcessesRequest : AmazonWebServiceRequest

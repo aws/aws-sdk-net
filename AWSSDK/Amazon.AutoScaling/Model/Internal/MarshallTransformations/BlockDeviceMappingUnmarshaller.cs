@@ -54,6 +54,12 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                         blockDeviceMapping.Ebs = EbsUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
+                    } 
+                    if (context.TestExpression("NoDevice", targetDepth))
+                    {
+                        blockDeviceMapping.NoDevice = BoolUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)

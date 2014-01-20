@@ -25,7 +25,7 @@ namespace Amazon.AutoScaling.Model
     /// group. It can also be a process to replace an instance, or a process to perform any other long-running operations supported by the API.
     /// </para>
     /// </summary>
-    public class Activity
+    public partial class Activity
     {
         
         private string activityId;

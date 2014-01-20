@@ -23,7 +23,7 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// <para> The <c>AutoScalingInstanceDetails</c> data type. </para>
     /// </summary>
-    public class AutoScalingInstanceDetails
+    public partial class AutoScalingInstanceDetails
     {
         
         private string instanceId;

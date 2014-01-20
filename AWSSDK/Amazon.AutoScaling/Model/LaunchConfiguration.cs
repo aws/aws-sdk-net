@@ -23,7 +23,7 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// <para> The <c>LaunchConfiguration</c> data type. </para>
     /// </summary>
-    public class LaunchConfiguration
+    public partial class LaunchConfiguration
     {
         
         private string launchConfigurationName;

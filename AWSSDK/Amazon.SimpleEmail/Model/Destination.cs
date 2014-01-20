@@ -21,9 +21,13 @@ using System.IO;
 namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
-    /// <para>Represents the destination of the message, consisting of To:, CC:, and BCC: fields.</para>
+    /// <para>Represents the destination of the message, consisting of To:, CC:, and BCC: fields.</para> <para> By default, the string must be 7-bit
+    /// ASCII. If the text must contain any other characters, then you must use MIME encoded-word syntax (RFC 2047) instead of a literal string.
+    /// MIME encoded-word syntax uses the following form: <c>=?charset?encoding?encoded-text?=</c> .
+    /// For more information, see <a href="http://tools.ietf.org/html/rfc2047" >RFC 2047</a> .
+    /// </para>
     /// </summary>
-    public class Destination  
+    public partial class Destination
     {
         
         private List<string> toAddresses = new List<string>();
@@ -42,7 +46,7 @@ namespace Amazon.SimpleEmail.Model
         /// </summary>
         /// 
         /// <param name="toAddresses"> The To: field(s) of the message. </param>
-        public Destination(List<string> toAddresses) 
+        public Destination(List<string> toAddresses)
         {
             this.toAddresses = toAddresses;
         }
@@ -72,7 +76,7 @@ namespace Amazon.SimpleEmail.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the ToAddresses collection
         /// </summary>
@@ -92,7 +96,7 @@ namespace Amazon.SimpleEmail.Model
         // Check to see if ToAddresses property is set
         internal bool IsSetToAddresses()
         {
-            return this.toAddresses.Count > 0;       
+            return this.toAddresses.Count > 0;
         }
 
         /// <summary>
@@ -119,7 +123,7 @@ namespace Amazon.SimpleEmail.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the CcAddresses collection
         /// </summary>
@@ -139,7 +143,7 @@ namespace Amazon.SimpleEmail.Model
         // Check to see if CcAddresses property is set
         internal bool IsSetCcAddresses()
         {
-            return this.ccAddresses.Count > 0;       
+            return this.ccAddresses.Count > 0;
         }
 
         /// <summary>
@@ -166,7 +170,7 @@ namespace Amazon.SimpleEmail.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the BccAddresses collection
         /// </summary>
@@ -186,7 +190,7 @@ namespace Amazon.SimpleEmail.Model
         // Check to see if BccAddresses property is set
         internal bool IsSetBccAddresses()
         {
-            return this.bccAddresses.Count > 0;       
+            return this.bccAddresses.Count > 0;
         }
     }
 }

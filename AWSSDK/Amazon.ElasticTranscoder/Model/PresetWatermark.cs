@@ -92,7 +92,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// <list type="definition">
         ///     <item>
         ///         <term>Pattern</term>
-        ///         <description>(^\d{1,3}([.]\d{0,5})?%$)|(^\d{2,4}?px$)</description>
+        ///         <description>(^\d{1,3}(\.\d{0,5})?%$)|(^\d{2,4}?px$)</description>
         ///     </item>
         /// </list>
         /// </para>
@@ -133,7 +133,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// <list type="definition">
         ///     <item>
         ///         <term>Pattern</term>
-        ///         <description>(^\d{1,3}([.]\d{0,5})?%$)|(^\d{2,4}?px$)</description>
+        ///         <description>(^\d{1,3}(\.\d{0,5})?%$)|(^\d{2,4}?px$)</description>
         ///     </item>
         /// </list>
         /// </para>
@@ -262,7 +262,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// <list type="definition">
         ///     <item>
         ///         <term>Pattern</term>
-        ///         <description>(^\d{1,3}([.]\d{0,5})?%$)|(^\d{2,4}?px$)</description>
+        ///         <description>(^\d{1,3}(\.\d{0,5})?%$)|(^\d{2,4}?px$)</description>
         ///     </item>
         /// </list>
         /// </para>
@@ -348,7 +348,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// <list type="definition">
         ///     <item>
         ///         <term>Pattern</term>
-        ///         <description>(^\d{1,3}([.]\d{0,5})?%$)|(^\d{2,4}?px$)</description>
+        ///         <description>(^\d{1,3}(\.\d{0,5})?%$)|(^\d{2,4}?px$)</description>
         ///     </item>
         /// </list>
         /// </para>
@@ -389,7 +389,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// <list type="definition">
         ///     <item>
         ///         <term>Pattern</term>
-        ///         <description>^\d{1,3}([.]\d{0,20})?$</description>
+        ///         <description>^\d{1,3}(\.\d{0,20})?$</description>
         ///     </item>
         /// </list>
         /// </para>

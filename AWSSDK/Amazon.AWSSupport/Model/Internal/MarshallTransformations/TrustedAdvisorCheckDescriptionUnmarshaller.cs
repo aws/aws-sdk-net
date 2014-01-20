@@ -32,6 +32,8 @@
 
         public TrustedAdvisorCheckDescription Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             TrustedAdvisorCheckDescription trustedAdvisorCheckDescription = new TrustedAdvisorCheckDescription();
           trustedAdvisorCheckDescription.Metadata = null;
                         
@@ -70,8 +72,14 @@
   
               if (context.TestExpression("Metadata", targetDepth))
               {
-                trustedAdvisorCheckDescription.Metadata = new List<String>();
-                        StringUnmarshaller unmarshaller = StringUnmarshaller.GetInstance();
+                
+                  if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                  {
+                      trustedAdvisorCheckDescription.Metadata = null;
+                      continue;
+                  }              
+                  trustedAdvisorCheckDescription.Metadata = new List<String>();
+                  StringUnmarshaller unmarshaller = StringUnmarshaller.GetInstance();
                 while (context.Read())
                 {
                   if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))

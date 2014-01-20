@@ -30,7 +30,7 @@ namespace Amazon.CloudFront.Model
     /// distribution configuration and include only an empty CacheBehaviors element. To add, change, or remove one or more cache behaviors, update
     /// the distribution configuration and specify all of the cache behaviors that you want to include in the updated distribution. </para>
     /// </summary>
-    public class CacheBehavior
+    public partial class CacheBehavior
     {
         
         private string pathPattern;

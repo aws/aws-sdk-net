@@ -23,7 +23,7 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// <para> An invalidation list. </para>
     /// </summary>
-    public class InvalidationList
+    public partial class InvalidationList
     {
         
         private string marker;

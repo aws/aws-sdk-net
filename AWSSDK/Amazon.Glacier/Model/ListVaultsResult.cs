@@ -23,7 +23,7 @@ namespace Amazon.Glacier.Model
     /// <summary>
     /// <para>Contains the Amazon Glacier response to your request.</para>
     /// </summary>
-    public class ListVaultsResult  
+    public partial class ListVaultsResult
     {
         
         private List<DescribeVaultOutput> vaultList = new List<DescribeVaultOutput>();
@@ -53,7 +53,7 @@ namespace Amazon.Glacier.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the VaultList collection
         /// </summary>
@@ -73,7 +73,7 @@ namespace Amazon.Glacier.Model
         // Check to see if VaultList property is set
         internal bool IsSetVaultList()
         {
-            return this.vaultList.Count > 0;       
+            return this.vaultList.Count > 0;
         }
 
         /// <summary>
@@ -103,7 +103,7 @@ namespace Amazon.Glacier.Model
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;       
+            return this.marker != null;
         }
     }
 }

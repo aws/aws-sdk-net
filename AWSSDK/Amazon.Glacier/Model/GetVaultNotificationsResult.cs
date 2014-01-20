@@ -23,7 +23,7 @@ namespace Amazon.Glacier.Model
     /// <summary>
     /// <para>Contains the Amazon Glacier response to your request.</para>
     /// </summary>
-    public class GetVaultNotificationsResult  
+    public partial class GetVaultNotificationsResult
     {
         
         private VaultNotificationConfig vaultNotificationConfig;
@@ -54,7 +54,7 @@ namespace Amazon.Glacier.Model
         // Check to see if VaultNotificationConfig property is set
         internal bool IsSetVaultNotificationConfig()
         {
-            return this.vaultNotificationConfig != null;       
+            return this.vaultNotificationConfig != null;
         }
     }
 }

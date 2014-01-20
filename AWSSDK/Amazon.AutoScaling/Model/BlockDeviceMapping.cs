@@ -23,12 +23,13 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// <para> The <c>BlockDeviceMapping</c> data type. </para>
     /// </summary>
-    public class BlockDeviceMapping
+    public partial class BlockDeviceMapping
     {
         
         private string virtualName;
         private string deviceName;
         private Ebs ebs;
+        private bool? noDevice;
 
         /// <summary>
         /// The virtual name associated with the device.
@@ -73,7 +74,7 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// The name of the device within Amazon EC2.
+        /// The name of the device within Amazon EC2 (for example, /dev/sdh or xvdh).
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -141,6 +142,35 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetEbs()
         {
             return this.ebs != null;
+        }
+
+        /// <summary>
+        /// Suppresses the device mapping.
+        ///  
+        /// </summary>
+        public bool NoDevice
+        {
+            get { return this.noDevice ?? default(bool); }
+            set { this.noDevice = value; }
+        }
+
+        /// <summary>
+        /// Sets the NoDevice property
+        /// </summary>
+        /// <param name="noDevice">The value to set for the NoDevice property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public BlockDeviceMapping WithNoDevice(bool noDevice)
+        {
+            this.noDevice = noDevice;
+            return this;
+        }
+            
+
+        // Check to see if NoDevice property is set
+        internal bool IsSetNoDevice()
+        {
+            return this.noDevice.HasValue;
         }
     }
 }

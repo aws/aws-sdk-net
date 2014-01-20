@@ -23,7 +23,7 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// <para> Summary of an invalidation request. </para>
     /// </summary>
-    public class InvalidationSummary
+    public partial class InvalidationSummary
     {
         
         private string id;

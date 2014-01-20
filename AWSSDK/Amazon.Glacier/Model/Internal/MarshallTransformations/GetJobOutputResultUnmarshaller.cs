@@ -11,27 +11,29 @@
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
- */ 
+ */
     using System;
     using System.Collections.Generic;
     using System.IO;
     using Amazon.Glacier.Model;
     using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.Glacier.Model.Internal.MarshallTransformations 
-    { 
-      /// <summary> 
-      /// GetJobOutputResultUnmarshaller 
-      /// </summary> 
-      internal class GetJobOutputResultUnmarshaller : IUnmarshaller<GetJobOutputResult, XmlUnmarshallerContext>, IUnmarshaller<GetJobOutputResult, JsonUnmarshallerContext> 
-      { 
+    namespace Amazon.Glacier.Model.Internal.MarshallTransformations
+    {
+      /// <summary>
+      /// GetJobOutputResultUnmarshaller
+      /// </summary>
+      internal class GetJobOutputResultUnmarshaller : IUnmarshaller<GetJobOutputResult, XmlUnmarshallerContext>, IUnmarshaller<GetJobOutputResult, JsonUnmarshallerContext>
+      {
         GetJobOutputResult IUnmarshaller<GetJobOutputResult, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
           throw new NotImplementedException();
         }
-        
-        public GetJobOutputResult Unmarshall(JsonUnmarshallerContext context) 
+
+        public GetJobOutputResult Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             GetJobOutputResult getJobOutputResult = new GetJobOutputResult();
           
 
@@ -48,17 +50,17 @@
         getJobOutputResult.Status = context.HttpStatusCode;
             getJobOutputResult.Body = context.Stream;
             
-          
-            return getJobOutputResult; 
-        } 
-        
-        private static GetJobOutputResultUnmarshaller instance; 
-        public static GetJobOutputResultUnmarshaller GetInstance() 
-        { 
-            if (instance == null) 
-                instance = new GetJobOutputResultUnmarshaller(); 
+
+            return getJobOutputResult;
+        }
+
+        private static GetJobOutputResultUnmarshaller instance;
+        public static GetJobOutputResultUnmarshaller GetInstance()
+        {
+            if (instance == null)
+                instance = new GetJobOutputResultUnmarshaller();
             return instance;
-        } 
-    } 
-} 
+        }
+    }
+}
   

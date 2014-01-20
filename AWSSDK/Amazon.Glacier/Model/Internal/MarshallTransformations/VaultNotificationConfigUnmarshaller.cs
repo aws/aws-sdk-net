@@ -11,30 +11,32 @@
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
- */ 
+ */
     using System;
     using System.Collections.Generic;
     using System.IO;
     using Amazon.Glacier.Model;
     using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.Glacier.Model.Internal.MarshallTransformations 
-    { 
-      /// <summary> 
-      /// VaultNotificationConfigUnmarshaller 
-      /// </summary> 
-      internal class VaultNotificationConfigUnmarshaller : IUnmarshaller<VaultNotificationConfig, XmlUnmarshallerContext>, IUnmarshaller<VaultNotificationConfig, JsonUnmarshallerContext> 
-      { 
+    namespace Amazon.Glacier.Model.Internal.MarshallTransformations
+    {
+      /// <summary>
+      /// VaultNotificationConfigUnmarshaller
+      /// </summary>
+      internal class VaultNotificationConfigUnmarshaller : IUnmarshaller<VaultNotificationConfig, XmlUnmarshallerContext>, IUnmarshaller<VaultNotificationConfig, JsonUnmarshallerContext>
+      {
         VaultNotificationConfig IUnmarshaller<VaultNotificationConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
           throw new NotImplementedException();
         }
-        
-        public VaultNotificationConfig Unmarshall(JsonUnmarshallerContext context) 
+
+        public VaultNotificationConfig Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             VaultNotificationConfig vaultNotificationConfig = new VaultNotificationConfig();
-          vaultNotificationConfig.Events = null; 
-                                  
+          vaultNotificationConfig.Events = null;
+                        
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             while (context.Read())
@@ -43,17 +45,23 @@
                 {
                 context.Read();
                 context.Read();
-               
-              if (context.TestExpression("SNSTopic", targetDepth)) 
+              
+              if (context.TestExpression("SNSTopic", targetDepth))
               {
                 vaultNotificationConfig.SNSTopic = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue; 
+                continue;
               }
-   
-              if (context.TestExpression("Events", targetDepth)) 
+  
+              if (context.TestExpression("Events", targetDepth))
               {
-                vaultNotificationConfig.Events = new List<String>();
-                        StringUnmarshaller unmarshaller = StringUnmarshaller.GetInstance();
+                
+                  if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                  {
+                      vaultNotificationConfig.Events = null;
+                      continue;
+                  }              
+                  vaultNotificationConfig.Events = new List<String>();
+                  StringUnmarshaller unmarshaller = StringUnmarshaller.GetInstance();
                 while (context.Read())
                 {
                   if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))
@@ -65,27 +73,27 @@
                     break;
                   }
                 }
-                continue; 
+                continue;
               }
-   
-                } 
-                else if (context.IsEndElement && context.CurrentDepth <= originalDepth) 
-                { 
-                    return vaultNotificationConfig; 
-                } 
-            } 
+  
+                }
+                else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
+                {
+                    return vaultNotificationConfig;
+                }
+            }
           
-          
-            return vaultNotificationConfig; 
-        } 
-        
-        private static VaultNotificationConfigUnmarshaller instance; 
-        public static VaultNotificationConfigUnmarshaller GetInstance() 
-        { 
-            if (instance == null) 
-                instance = new VaultNotificationConfigUnmarshaller(); 
+
+            return vaultNotificationConfig;
+        }
+
+        private static VaultNotificationConfigUnmarshaller instance;
+        public static VaultNotificationConfigUnmarshaller GetInstance()
+        {
+            if (instance == null)
+                instance = new VaultNotificationConfigUnmarshaller();
             return instance;
-        } 
-    } 
-} 
+        }
+    }
+}
   

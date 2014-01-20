@@ -32,6 +32,8 @@
 
         public CreateCaseResult Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             CreateCaseResult createCaseResult = new CreateCaseResult();
           
             int originalDepth = context.CurrentDepth;

@@ -23,7 +23,7 @@ namespace Amazon.SimpleEmail.Model
     /// <summary>
     /// <para>Represents the message to be sent, composed of a subject and a body.</para>
     /// </summary>
-    public class Message  
+    public partial class Message
     {
         
         private Content subject;
@@ -42,7 +42,7 @@ namespace Amazon.SimpleEmail.Model
         /// 
         /// <param name="subject"> The subject of the message: A short summary of the content, which will appear in the recipient's inbox. </param>
         /// <param name="body"> The message body. </param>
-        public Message(Content subject, Body body) 
+        public Message(Content subject, Body body)
         {
             this.subject = subject;
             this.body = body;
@@ -75,7 +75,7 @@ namespace Amazon.SimpleEmail.Model
         // Check to see if Subject property is set
         internal bool IsSetSubject()
         {
-            return this.subject != null;       
+            return this.subject != null;
         }
 
         /// <summary>
@@ -104,7 +104,7 @@ namespace Amazon.SimpleEmail.Model
         // Check to see if Body property is set
         internal bool IsSetBody()
         {
-            return this.body != null;       
+            return this.body != null;
         }
     }
 }

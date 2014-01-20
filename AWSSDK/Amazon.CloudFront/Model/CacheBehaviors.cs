@@ -23,7 +23,7 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// <para> A complex type that contains zero or more CacheBehavior elements. </para>
     /// </summary>
-    public class CacheBehaviors
+    public partial class CacheBehaviors
     {
         
         private int? quantity;

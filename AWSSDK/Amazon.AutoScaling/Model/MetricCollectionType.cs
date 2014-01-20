@@ -23,7 +23,7 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// <para> The MetricCollectionType data type. </para>
     /// </summary>
-    public class MetricCollectionType
+    public partial class MetricCollectionType
     {
         
         private string metric;

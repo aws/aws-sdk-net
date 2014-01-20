@@ -48,8 +48,14 @@
               
               if (context.TestExpression("TrailList", targetDepth))
               {
-                describeTrailsResult.TrailList = new List<Trail>();
-                        TrailUnmarshaller unmarshaller = TrailUnmarshaller.GetInstance();
+                
+                  if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                  {
+                      describeTrailsResult.TrailList = null;
+                      continue;
+                  }              
+                  describeTrailsResult.TrailList = new List<Trail>();
+                  TrailUnmarshaller unmarshaller = TrailUnmarshaller.GetInstance();
                 while (context.Read())
                 {
                   if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))

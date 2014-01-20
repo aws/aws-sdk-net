@@ -32,6 +32,8 @@
 
         public Service Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             Service service = new Service();
           service.Categories = null;
                         
@@ -58,8 +60,14 @@
   
               if (context.TestExpression("Categories", targetDepth))
               {
-                service.Categories = new List<Category>();
-                        CategoryUnmarshaller unmarshaller = CategoryUnmarshaller.GetInstance();
+                
+                  if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                  {
+                      service.Categories = null;
+                      continue;
+                  }              
+                  service.Categories = new List<Category>();
+                  CategoryUnmarshaller unmarshaller = CategoryUnmarshaller.GetInstance();
                 while (context.Read())
                 {
                   if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))

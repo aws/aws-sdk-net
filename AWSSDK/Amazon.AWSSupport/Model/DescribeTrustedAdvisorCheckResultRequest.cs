@@ -25,16 +25,22 @@ namespace Amazon.AWSSupport.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeTrustedAdvisorCheckResult operation.
-    /// <para>This action responds with the results of a Trusted Advisor check. Once you have obtained the list of available Trusted Advisor checks
-    /// by calling DescribeTrustedAdvisorChecks, you specify the <i>CheckId</i> for the check you want to retrieve from AWS Support.</para>
-    /// <para>The response for this action contains a JSON-formatted TrustedAdvisorCheckResult object</para> <para>, which is a container for the
-    /// following three objects:</para> <ol> <li> TrustedAdvisorCategorySpecificSummary </li>
+    /// <para>Returns the results of the Trusted Advisor check that has the specified check ID. Check IDs can be obtained by calling
+    /// DescribeTrustedAdvisorChecks.</para> <para>The response contains a TrustedAdvisorCheckResult object, which contains these three
+    /// objects:</para>
+    /// <ul>
+    /// <li> TrustedAdvisorCategorySpecificSummary </li>
     /// <li> TrustedAdvisorResourceDetail </li>
     /// <li> TrustedAdvisorResourcesSummary </li>
-    /// </ol> <para>In addition, the response contains the following fields:</para> <ol> <li> <b>Status</b> . Overall status of the check.</li>
-    /// <li> <b>Timestamp</b> . Time at which Trusted Advisor last ran the check. </li>
-    /// <li> <b>CheckId</b> . Unique identifier for the specific check returned by the request.</li>
-    /// </ol>
+    /// 
+    /// </ul>
+    /// <para>In addition, the response contains these fields:</para>
+    /// <ul>
+    /// <li> <b>Status.</b> The alert status of the check: "ok" (green), "warning" (yellow), "error" (red), or "not_available".</li>
+    /// <li> <b>Timestamp.</b> The time of the last refresh of the check.</li>
+    /// <li> <b>CheckId.</b> The unique identifier for the check.</li>
+    /// 
+    /// </ul>
     /// </summary>
     /// <seealso cref="Amazon.AWSSupport.AmazonAWSSupport.DescribeTrustedAdvisorCheckResult"/>
     public class DescribeTrustedAdvisorCheckResultRequest : AmazonWebServiceRequest
@@ -43,7 +49,7 @@ namespace Amazon.AWSSupport.Model
         private string language;
 
         /// <summary>
-        /// 
+        /// The unique identifier for the Trusted Advisor check.
         ///  
         /// </summary>
         public string CheckId
@@ -72,8 +78,8 @@ namespace Amazon.AWSSupport.Model
         }
 
         /// <summary>
-        /// Specifies the ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English and Japanese, for which
-        /// the codes are <i>en</i> and <i>ja</i>, respectively.
+        /// The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English ("en") and Japanese ("ja").
+        /// Language parameters must be passed explicitly for operations that take them.
         ///  
         /// </summary>
         public string Language

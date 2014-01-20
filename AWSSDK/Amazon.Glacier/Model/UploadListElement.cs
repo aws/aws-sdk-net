@@ -23,7 +23,7 @@ namespace Amazon.Glacier.Model
     /// <summary>
     /// <para>A list of in-progress multipart uploads for a vault.</para>
     /// </summary>
-    public class UploadListElement  
+    public partial class UploadListElement
     {
         
         private string multipartUploadId;
@@ -58,7 +58,7 @@ namespace Amazon.Glacier.Model
         // Check to see if MultipartUploadId property is set
         internal bool IsSetMultipartUploadId()
         {
-            return this.multipartUploadId != null;       
+            return this.multipartUploadId != null;
         }
 
         /// <summary>
@@ -87,7 +87,7 @@ namespace Amazon.Glacier.Model
         // Check to see if VaultARN property is set
         internal bool IsSetVaultARN()
         {
-            return this.vaultARN != null;       
+            return this.vaultARN != null;
         }
 
         /// <summary>
@@ -116,7 +116,7 @@ namespace Amazon.Glacier.Model
         // Check to see if ArchiveDescription property is set
         internal bool IsSetArchiveDescription()
         {
-            return this.archiveDescription != null;       
+            return this.archiveDescription != null;
         }
 
         /// <summary>
@@ -146,7 +146,7 @@ namespace Amazon.Glacier.Model
         // Check to see if PartSizeInBytes property is set
         internal bool IsSetPartSizeInBytes()
         {
-            return this.partSizeInBytes.HasValue;       
+            return this.partSizeInBytes.HasValue;
         }
 
         /// <summary>
@@ -175,7 +175,7 @@ namespace Amazon.Glacier.Model
         // Check to see if CreationDate property is set
         internal bool IsSetCreationDate()
         {
-            return this.creationDate.HasValue;       
+            return this.creationDate.HasValue;
         }
     }
 }

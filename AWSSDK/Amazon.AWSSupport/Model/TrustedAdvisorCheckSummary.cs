@@ -21,15 +21,9 @@ using System.IO;
 namespace Amazon.AWSSupport.Model
 {
     /// <summary>
-    /// <para>Reports a summary of the Trusted Advisor check. This object contains the following child objects that report summary information about
-    /// specific checks by category and resource: </para>
-    /// <ul>
-    /// <li> TrustedAdvisorCategorySpecificSummary </li>
-    /// <li> TrustedAdvisorResourcesSummary </li>
-    /// 
-    /// </ul>
+    /// <para>A summary of a Trusted Advisor check result, including the alert status, last refresh, and number of resources examined.</para>
     /// </summary>
-    public class TrustedAdvisorCheckSummary
+    public partial class TrustedAdvisorCheckSummary
     {
         
         private string checkId;
@@ -40,7 +34,7 @@ namespace Amazon.AWSSupport.Model
         private TrustedAdvisorCategorySpecificSummary categorySpecificSummary;
 
         /// <summary>
-        /// Unique identifier for a Trusted Advisor check.
+        /// The unique identifier for the Trusted Advisor check.
         ///  
         /// </summary>
         public string CheckId
@@ -69,7 +63,7 @@ namespace Amazon.AWSSupport.Model
         }
 
         /// <summary>
-        /// 
+        /// The time of the last refresh of the check.
         ///  
         /// </summary>
         public string Timestamp
@@ -98,7 +92,7 @@ namespace Amazon.AWSSupport.Model
         }
 
         /// <summary>
-        /// Overall status of the Trusted Advisor check.
+        /// The alert status of the check: "ok" (green), "warning" (yellow), "error" (red), or "not_available".
         ///  
         /// </summary>
         public string Status
@@ -127,7 +121,7 @@ namespace Amazon.AWSSupport.Model
         }
 
         /// <summary>
-        /// Indicates that the Trusted Advisor check returned flagged resources.
+        /// Specifies whether the Trusted Advisor check has flagged resources.
         ///  
         /// </summary>
         public bool HasFlaggedResources
@@ -156,8 +150,7 @@ namespace Amazon.AWSSupport.Model
         }
 
         /// <summary>
-        /// JSON-formatted object that lists details about AWS resources that were analyzed in a call to Trusted Advisor <a
-        /// href="API_DescribeTrustedAdvisorCheckSummaries.html" title="DescribeTrustedAdvisorCheckSummaries">DescribeTrustedAdvisorCheckSummaries</a>.
+        /// Details about AWS resources that were analyzed in a call to Trusted Advisor <a>DescribeTrustedAdvisorCheckSummaries</a>.
         ///  
         /// </summary>
         public TrustedAdvisorResourcesSummary ResourcesSummary
@@ -186,7 +179,7 @@ namespace Amazon.AWSSupport.Model
         }
 
         /// <summary>
-        /// Reports the results of a Trusted Advisor check by category. Only <i>Cost Optimizing</i> is currently supported.
+        /// Summary information that relates to the category of the check. Cost Optimizing is the only category that is currently supported.
         ///  
         /// </summary>
         public TrustedAdvisorCategorySpecificSummary CategorySpecificSummary

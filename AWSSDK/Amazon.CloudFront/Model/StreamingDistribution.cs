@@ -23,7 +23,7 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// <para> A streaming distribution. </para>
     /// </summary>
-    public class StreamingDistribution
+    public partial class StreamingDistribution
     {
         
         private string id;

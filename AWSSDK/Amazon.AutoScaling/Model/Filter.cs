@@ -23,7 +23,7 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// <para>The <c>Filter</c> data type.</para>
     /// </summary>
-    public class Filter
+    public partial class Filter
     {
         
         private string name;

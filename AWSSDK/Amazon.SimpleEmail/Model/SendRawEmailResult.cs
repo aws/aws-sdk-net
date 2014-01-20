@@ -23,7 +23,7 @@ namespace Amazon.SimpleEmail.Model
     /// <summary>
     /// <para>Represents a unique message ID returned from a successful <c>SendRawEmail</c> request. </para>
     /// </summary>
-    public class SendRawEmailResult  
+    public partial class SendRawEmailResult
     {
         
         private string messageId;
@@ -54,7 +54,7 @@ namespace Amazon.SimpleEmail.Model
         // Check to see if MessageId property is set
         internal bool IsSetMessageId()
         {
-            return this.messageId != null;       
+            return this.messageId != null;
         }
     }
 }

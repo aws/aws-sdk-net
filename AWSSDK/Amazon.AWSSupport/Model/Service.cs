@@ -21,9 +21,9 @@ using System.IO;
 namespace Amazon.AWSSupport.Model
 {
     /// <summary>
-    /// <para>JSON-formatted object that represents an AWS Service returned by the DescribeServices action. </para>
+    /// <para>Represents an AWS Service returned by the DescribeServices action. </para>
     /// </summary>
-    public class Service
+    public partial class Service
     {
         
         private string code;
@@ -31,8 +31,7 @@ namespace Amazon.AWSSupport.Model
         private List<Category> categories = new List<Category>();
 
         /// <summary>
-        /// JSON-formatted string that represents a code for an AWS service returned by <a href="API_DescribeServices.html"
-        /// title="DescribeServices">DescribeServices</a> response. Has a corrsponding name represented by a service.name string.
+        /// The code for an AWS service returned by <a>DescribeServices</a> response. Has a corresponding name represented by Service.name.
         ///  
         /// </summary>
         public string Code
@@ -61,7 +60,7 @@ namespace Amazon.AWSSupport.Model
         }
 
         /// <summary>
-        /// JSON-formatted string that represents the friendly name for an AWS service. Has a corresponding code reprsented by a Service.code string.
+        /// The friendly name for an AWS service. Has a corresponding code represented by Service.code.
         ///  
         /// </summary>
         public string Name
@@ -90,9 +89,8 @@ namespace Amazon.AWSSupport.Model
         }
 
         /// <summary>
-        /// JSON-formatted list of categories that describe the type of support issue a case describes. Categories are strings that represent a category
-        /// name and a category code. Category names and codes are passed to AWS Support when you call <a href="API_CreateCase.html"
-        /// title="CreateCase">CreateCase</a>.
+        /// A list of categories that describe the type of support issue a case describes. Categories consist of a category name and a category code.
+        /// Category names and codes are passed to AWS Support when you call <a>CreateCase</a>.
         ///  
         /// </summary>
         public List<Category> Categories

@@ -23,7 +23,7 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// <para> The <c>InstanceMonitoring</c> data type. </para>
     /// </summary>
-    public class InstanceMonitoring
+    public partial class InstanceMonitoring
     {
         
         private bool? enabled;

@@ -23,7 +23,7 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// <para> A complex type that lists the active CloudFront key pairs, if any, that are associated with AwsAccountNumber. </para>
     /// </summary>
-    public class KeyPairIds
+    public partial class KeyPairIds
     {
         
         private int? quantity;

@@ -23,7 +23,7 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// <para> The output for the TerminateInstanceInAutoScalingGroup action. </para>
     /// </summary>
-    public class TerminateInstanceInAutoScalingGroupResult
+    public partial class TerminateInstanceInAutoScalingGroupResult
     {
         
         private Activity activity;

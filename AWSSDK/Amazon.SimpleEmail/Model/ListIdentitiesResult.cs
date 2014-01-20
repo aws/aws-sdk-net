@@ -23,7 +23,7 @@ namespace Amazon.SimpleEmail.Model
     /// <summary>
     /// <para>Represents a list of all verified identities for the AWS Account.</para>
     /// </summary>
-    public class ListIdentitiesResult  
+    public partial class ListIdentitiesResult
     {
         
         private List<string> identities = new List<string>();
@@ -53,7 +53,7 @@ namespace Amazon.SimpleEmail.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Identities collection
         /// </summary>
@@ -73,7 +73,7 @@ namespace Amazon.SimpleEmail.Model
         // Check to see if Identities property is set
         internal bool IsSetIdentities()
         {
-            return this.identities.Count > 0;       
+            return this.identities.Count > 0;
         }
 
         /// <summary>
@@ -102,7 +102,7 @@ namespace Amazon.SimpleEmail.Model
         // Check to see if NextToken property is set
         internal bool IsSetNextToken()
         {
-            return this.nextToken != null;       
+            return this.nextToken != null;
         }
     }
 }

@@ -23,7 +23,7 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// <para> A complex type that controls whether access logs are written for this streaming distribution. </para>
     /// </summary>
-    public class StreamingLoggingConfig
+    public partial class StreamingLoggingConfig
     {
         
         private bool? enabled;

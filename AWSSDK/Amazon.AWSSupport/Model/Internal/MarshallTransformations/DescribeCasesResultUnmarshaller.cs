@@ -32,6 +32,8 @@
 
         public DescribeCasesResult Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             DescribeCasesResult describeCasesResult = new DescribeCasesResult();
           describeCasesResult.Cases = null;
                         
@@ -46,8 +48,14 @@
               
               if (context.TestExpression("Cases", targetDepth))
               {
-                describeCasesResult.Cases = new List<CaseDetails>();
-                        CaseDetailsUnmarshaller unmarshaller = CaseDetailsUnmarshaller.GetInstance();
+                
+                  if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                  {
+                      describeCasesResult.Cases = null;
+                      continue;
+                  }              
+                  describeCasesResult.Cases = new List<CaseDetails>();
+                  CaseDetailsUnmarshaller unmarshaller = CaseDetailsUnmarshaller.GetInstance();
                 while (context.Read())
                 {
                   if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))

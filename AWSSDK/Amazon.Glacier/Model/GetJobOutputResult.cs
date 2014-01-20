@@ -23,7 +23,7 @@ namespace Amazon.Glacier.Model
     /// <summary>
     /// <para>Contains the Amazon Glacier response to your request.</para>
     /// </summary>
-    public class GetJobOutputResult  
+    public partial class GetJobOutputResult
     {
         
         private Stream body;
@@ -60,7 +60,7 @@ namespace Amazon.Glacier.Model
         // Check to see if Body property is set
         internal bool IsSetBody()
         {
-            return this.body != null;       
+            return this.body != null;
         }
 
         /// <summary>
@@ -95,7 +95,7 @@ namespace Amazon.Glacier.Model
         // Check to see if Checksum property is set
         internal bool IsSetChecksum()
         {
-            return this.checksum != null;       
+            return this.checksum != null;
         }
 
         /// <summary>
@@ -124,7 +124,7 @@ namespace Amazon.Glacier.Model
         // Check to see if Status property is set
         internal bool IsSetStatus()
         {
-            return this.status.HasValue;       
+            return this.status.HasValue;
         }
 
         /// <summary>
@@ -154,7 +154,7 @@ namespace Amazon.Glacier.Model
         // Check to see if ContentRange property is set
         internal bool IsSetContentRange()
         {
-            return this.contentRange != null;       
+            return this.contentRange != null;
         }
 
         /// <summary>
@@ -184,7 +184,7 @@ namespace Amazon.Glacier.Model
         // Check to see if AcceptRanges property is set
         internal bool IsSetAcceptRanges()
         {
-            return this.acceptRanges != null;       
+            return this.acceptRanges != null;
         }
 
         /// <summary>
@@ -215,7 +215,7 @@ namespace Amazon.Glacier.Model
         // Check to see if ContentType property is set
         internal bool IsSetContentType()
         {
-            return this.contentType != null;       
+            return this.contentType != null;
         }
 
         /// <summary>
@@ -244,7 +244,7 @@ namespace Amazon.Glacier.Model
         // Check to see if ArchiveDescription property is set
         internal bool IsSetArchiveDescription()
         {
-            return this.archiveDescription != null;       
+            return this.archiveDescription != null;
         }
     }
 }

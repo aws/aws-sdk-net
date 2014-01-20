@@ -23,7 +23,7 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// <para> </para>
     /// </summary>
-    public class DescribeTagsResult
+    public partial class DescribeTagsResult
     {
         
         private List<TagDescription> tags = new List<TagDescription>();

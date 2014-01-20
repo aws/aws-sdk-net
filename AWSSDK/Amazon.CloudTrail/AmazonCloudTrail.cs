@@ -48,7 +48,6 @@ namespace Amazon.CloudTrail
         /// 
         /// <returns>The response from the GetTrailStatus service method, as returned by AmazonCloudTrail.</returns>
         /// 
-        /// <exception cref="InternalErrorException"/>
         /// <exception cref="InvalidTrailNameException"/>
         /// <exception cref="TrailNotFoundException"/>
         GetTrailStatusResponse GetTrailStatus(GetTrailStatusRequest getTrailStatusRequest);
@@ -93,7 +92,6 @@ namespace Amazon.CloudTrail
         /// 
         /// <returns>The response from the DeleteTrail service method, as returned by AmazonCloudTrail.</returns>
         /// 
-        /// <exception cref="InternalErrorException"/>
         /// <exception cref="InvalidTrailNameException"/>
         /// <exception cref="TrailNotFoundException"/>
         DeleteTrailResponse DeleteTrail(DeleteTrailRequest deleteTrailRequest);
@@ -148,7 +146,6 @@ namespace Amazon.CloudTrail
         /// <returns>The response from the CreateTrail service method, as returned by AmazonCloudTrail.</returns>
         /// 
         /// <exception cref="S3BucketDoesNotExistException"/>
-        /// <exception cref="InternalErrorException"/>
         /// <exception cref="InvalidS3PrefixException"/>
         /// <exception cref="InvalidTrailNameException"/>
         /// <exception cref="TrailAlreadyExistsException"/>
@@ -203,7 +200,6 @@ namespace Amazon.CloudTrail
         /// <returns>The response from the UpdateTrail service method, as returned by AmazonCloudTrail.</returns>
         /// 
         /// <exception cref="S3BucketDoesNotExistException"/>
-        /// <exception cref="InternalErrorException"/>
         /// <exception cref="InvalidS3PrefixException"/>
         /// <exception cref="InvalidTrailNameException"/>
         /// <exception cref="InvalidS3BucketNameException"/>
@@ -253,7 +249,6 @@ namespace Amazon.CloudTrail
         /// 
         /// <returns>The response from the DescribeTrails service method, as returned by AmazonCloudTrail.</returns>
         /// 
-        /// <exception cref="InternalErrorException"/>
         DescribeTrailsResponse DescribeTrails(DescribeTrailsRequest describeTrailsRequest);
 
         /// <summary>
@@ -287,7 +282,6 @@ namespace Amazon.CloudTrail
         /// 
         /// <returns>The response from the DescribeTrails service method, as returned by AmazonCloudTrail.</returns>
         /// 
-        /// <exception cref="InternalErrorException"/>
         DescribeTrailsResponse DescribeTrails();
         
         #endregion
@@ -306,7 +300,6 @@ namespace Amazon.CloudTrail
         /// 
         /// <returns>The response from the StopLogging service method, as returned by AmazonCloudTrail.</returns>
         /// 
-        /// <exception cref="InternalErrorException"/>
         /// <exception cref="InvalidTrailNameException"/>
         /// <exception cref="TrailNotFoundException"/>
         StopLoggingResponse StopLogging(StopLoggingRequest stopLoggingRequest);
@@ -350,11 +343,7 @@ namespace Amazon.CloudTrail
         /// 
         /// <returns>The response from the StartLogging service method, as returned by AmazonCloudTrail.</returns>
         /// 
-        /// <exception cref="S3BucketDoesNotExistException"/>
-        /// <exception cref="InternalErrorException"/>
         /// <exception cref="InvalidTrailNameException"/>
-        /// <exception cref="InsufficientSnsTopicPolicyException"/>
-        /// <exception cref="InsufficientS3BucketPolicyException"/>
         /// <exception cref="TrailNotFoundException"/>
         StartLoggingResponse StartLogging(StartLoggingRequest startLoggingRequest);
 

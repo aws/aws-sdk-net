@@ -166,14 +166,28 @@ namespace Amazon.ElasticMapReduce.Model
         /// <param name="script">The script to run.</param>
         /// <param name="args">Arguments that get passed to the script.</param>
         /// <returns>HadoopJarStepConfig that can be passed to your job flow.</returns>
-        public HadoopJarStepConfig NewRunHiveScriptStep(string script, params string[] args) 
+        public HadoopJarStepConfig NewRunHiveScriptStep(string script, params string[] args)
         {
-            string[] argsArray = new String[args.Length + 4];
-            argsArray[0] = SWITCH_RUN_HIVE_SCRIPT;
-            argsArray[1] = SWITCH_ARGS;
-            argsArray[2] = SWITCH_F;
-            argsArray[3] = script;
-            Array.Copy(args, 0, argsArray, 4, args.Length);
+            return NewRunHiveScriptStepVersioned(script, HiveVersion.Hive_Latest.VersionString, args);
+        }
+
+        /// <summary>
+        /// Step that runs a Hive script on your job flow with a specific verson of Hive.
+        /// </summary>
+        /// <param name="script">The script to run.</param>
+        /// <param name="version">The version of Hive to run.</param>
+        /// <param name="args">Arguments that get passed to the script.</param>
+        /// <returns>HadoopJarStepConfig that can be passed to your job flow.</returns>
+        public HadoopJarStepConfig NewRunHiveScriptStepVersioned(string script, string version, params string[] args)
+        {
+            string[] argsArray = new String[args.Length + 6];
+            argsArray[0] = SWITCH_HIVE_VERSIONS;
+            argsArray[1] = version;
+            argsArray[2] = SWITCH_RUN_HIVE_SCRIPT;
+            argsArray[3] = SWITCH_ARGS;
+            argsArray[4] = SWITCH_F;
+            argsArray[5] = script;
+            Array.Copy(args, 0, argsArray, 6, args.Length);
             return newHivePigStep(TOOL_HIVE, argsArray);
         }
 
@@ -208,6 +222,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         public class HiveVersion
         {
+            public static readonly HiveVersion Hive_0_4 = new HiveVersion("0.4");
             public static readonly HiveVersion Hive_0_5 = new HiveVersion("0.5");
             public static readonly HiveVersion Hive_0_7 = new HiveVersion("0.7");
             public static readonly HiveVersion Hive_0_7_1 = new HiveVersion("0.7.1");
@@ -216,6 +231,16 @@ namespace Amazon.ElasticMapReduce.Model
             public static readonly HiveVersion Hive_0_7_1_3 = new HiveVersion("0.7.1.3");
             public static readonly HiveVersion Hive_0_7_1_4 = new HiveVersion("0.7.1.4");
             public static readonly HiveVersion Hive_0_8_1 = new HiveVersion("0.8.1");
+            public static readonly HiveVersion Hive_0_8_1_1 = new HiveVersion("0.8.1.1");
+            public static readonly HiveVersion Hive_0_8_1_2 = new HiveVersion("0.8.1.2");
+            public static readonly HiveVersion Hive_0_8_1_3 = new HiveVersion("0.8.1.3");
+            public static readonly HiveVersion Hive_0_8_1_4 = new HiveVersion("0.8.1.4");
+            public static readonly HiveVersion Hive_0_8_1_5 = new HiveVersion("0.8.1.5");
+            public static readonly HiveVersion Hive_0_8_1_6 = new HiveVersion("0.8.1.6");
+            public static readonly HiveVersion Hive_0_8_1_7 = new HiveVersion("0.8.1.7");
+            public static readonly HiveVersion Hive_0_8_1_8 = new HiveVersion("0.8.1.8");
+            public static readonly HiveVersion Hive_0_11_0 = new HiveVersion("0.11.0");
+            public static readonly HiveVersion Hive_0_11_0_1 = new HiveVersion("0.11.0.1");
             public static readonly HiveVersion Hive_Latest = new HiveVersion("latest");
 
             string _version;

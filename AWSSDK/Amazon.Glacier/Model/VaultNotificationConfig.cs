@@ -23,7 +23,7 @@ namespace Amazon.Glacier.Model
     /// <summary>
     /// <para>Represents a vault's notification configuration.</para>
     /// </summary>
-    public class VaultNotificationConfig  
+    public partial class VaultNotificationConfig
     {
         
         private string sNSTopic;
@@ -55,7 +55,7 @@ namespace Amazon.Glacier.Model
         // Check to see if SNSTopic property is set
         internal bool IsSetSNSTopic()
         {
-            return this.sNSTopic != null;       
+            return this.sNSTopic != null;
         }
 
         /// <summary>
@@ -82,7 +82,7 @@ namespace Amazon.Glacier.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Events collection
         /// </summary>
@@ -102,7 +102,7 @@ namespace Amazon.Glacier.Model
         // Check to see if Events property is set
         internal bool IsSetEvents()
         {
-            return this.events.Count > 0;       
+            return this.events.Count > 0;
         }
     }
 }

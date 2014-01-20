@@ -32,6 +32,8 @@
 
         public DescribeTrustedAdvisorCheckRefreshStatusesResult Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             DescribeTrustedAdvisorCheckRefreshStatusesResult describeTrustedAdvisorCheckRefreshStatusesResult = new DescribeTrustedAdvisorCheckRefreshStatusesResult();
           describeTrustedAdvisorCheckRefreshStatusesResult.Statuses = null;
                         
@@ -46,8 +48,14 @@
               
               if (context.TestExpression("Statuses", targetDepth))
               {
-                describeTrustedAdvisorCheckRefreshStatusesResult.Statuses = new List<TrustedAdvisorCheckRefreshStatus>();
-                        TrustedAdvisorCheckRefreshStatusUnmarshaller unmarshaller = TrustedAdvisorCheckRefreshStatusUnmarshaller.GetInstance();
+                
+                  if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                  {
+                      describeTrustedAdvisorCheckRefreshStatusesResult.Statuses = null;
+                      continue;
+                  }              
+                  describeTrustedAdvisorCheckRefreshStatusesResult.Statuses = new List<TrustedAdvisorCheckRefreshStatus>();
+                  TrustedAdvisorCheckRefreshStatusUnmarshaller unmarshaller = TrustedAdvisorCheckRefreshStatusUnmarshaller.GetInstance();
                 while (context.Read())
                 {
                   if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))

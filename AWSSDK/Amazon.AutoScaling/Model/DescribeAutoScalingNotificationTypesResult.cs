@@ -23,7 +23,7 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// <para>The <c>AutoScalingNotificationTypes</c> data type.</para>
     /// </summary>
-    public class DescribeAutoScalingNotificationTypesResult
+    public partial class DescribeAutoScalingNotificationTypesResult
     {
         
         private List<string> autoScalingNotificationTypes = new List<string>();

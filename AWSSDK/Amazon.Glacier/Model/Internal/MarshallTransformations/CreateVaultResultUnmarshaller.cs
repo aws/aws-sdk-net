@@ -11,43 +11,45 @@
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
- */ 
+ */
     using System;
     using System.Collections.Generic;
     using System.IO;
     using Amazon.Glacier.Model;
     using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.Glacier.Model.Internal.MarshallTransformations 
-    { 
-      /// <summary> 
-      /// CreateVaultResultUnmarshaller 
-      /// </summary> 
-      internal class CreateVaultResultUnmarshaller : IUnmarshaller<CreateVaultResult, XmlUnmarshallerContext>, IUnmarshaller<CreateVaultResult, JsonUnmarshallerContext> 
-      { 
+    namespace Amazon.Glacier.Model.Internal.MarshallTransformations
+    {
+      /// <summary>
+      /// CreateVaultResultUnmarshaller
+      /// </summary>
+      internal class CreateVaultResultUnmarshaller : IUnmarshaller<CreateVaultResult, XmlUnmarshallerContext>, IUnmarshaller<CreateVaultResult, JsonUnmarshallerContext>
+      {
         CreateVaultResult IUnmarshaller<CreateVaultResult, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
           throw new NotImplementedException();
         }
-        
-        public CreateVaultResult Unmarshall(JsonUnmarshallerContext context) 
+
+        public CreateVaultResult Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             CreateVaultResult createVaultResult = new CreateVaultResult();
           
 
             if (context.Headers["Location"] != null)
                 createVaultResult.Location = context.Headers["Location"];
-          
-            return createVaultResult; 
-        } 
-        
-        private static CreateVaultResultUnmarshaller instance; 
-        public static CreateVaultResultUnmarshaller GetInstance() 
-        { 
-            if (instance == null) 
-                instance = new CreateVaultResultUnmarshaller(); 
+
+            return createVaultResult;
+        }
+
+        private static CreateVaultResultUnmarshaller instance;
+        public static CreateVaultResultUnmarshaller GetInstance()
+        {
+            if (instance == null)
+                instance = new CreateVaultResultUnmarshaller();
             return instance;
-        } 
-    } 
-} 
+        }
+    }
+}
   

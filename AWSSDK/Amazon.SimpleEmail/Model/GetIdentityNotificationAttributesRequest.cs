@@ -25,8 +25,10 @@ namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
     /// Container for the parameters to the GetIdentityNotificationAttributes operation.
-    /// <para>Given a list of verified identities (email addresses and/or domains), returns a structure describing identity notification attributes.
-    /// For more information about feedback notification, see the Amazon SES Developer Guide.</para>
+    /// <para>Given a list of verified identities (email addresses and/or domains), returns a structure describing identity notification
+    /// attributes.</para> <para>This action is throttled at one request per second.</para> <para>For more information about feedback notification,
+    /// see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/bounce-complaint-notifications.html" >Amazon SES Developer Guide</a>
+    /// .</para>
     /// </summary>
     /// <seealso cref="Amazon.SimpleEmail.AmazonSimpleEmailService.GetIdentityNotificationAttributes"/>
     public class GetIdentityNotificationAttributesRequest : AmazonWebServiceRequest
@@ -57,7 +59,7 @@ namespace Amazon.SimpleEmail.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Identities collection
         /// </summary>
@@ -77,7 +79,7 @@ namespace Amazon.SimpleEmail.Model
         // Check to see if Identities property is set
         internal bool IsSetIdentities()
         {
-            return this.identities.Count > 0;       
+            return this.identities.Count > 0;
         }
     }
 }

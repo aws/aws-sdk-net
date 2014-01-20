@@ -23,7 +23,7 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// <para> The tag applied to an Auto Scaling group. </para>
     /// </summary>
-    public class Tag
+    public partial class Tag
     {
         
         private string resourceId;

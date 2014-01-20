@@ -23,7 +23,7 @@ namespace Amazon.SimpleEmail.Model
     /// <summary>
     /// <para>Represents the raw data of the message.</para>
     /// </summary>
-    public class RawMessage  
+    public partial class RawMessage
     {
         
         private MemoryStream data;
@@ -40,9 +40,9 @@ namespace Amazon.SimpleEmail.Model
         /// </summary>
         /// 
         /// <param name="data"> The raw data of the message. The client must ensure that the message format complies with Internet email standards
-        /// regarding email header fields, MIME types, MIME encoding, and base64 encoding (if necessary). For more information, go to the<a
-        /// href="http://docs.amazonwebservices.com/ses/latest/DeveloperGuide">Amazon SES Developer Guide</a>. </param>
-        public RawMessage(MemoryStream data) 
+        /// regarding email header fields, MIME types, MIME encoding, and base64 encoding (if necessary). For more information, go to the <a
+        /// href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Amazon SES Developer Guide</a>. </param>
+        public RawMessage(MemoryStream data)
         {
             this.data = data;
         }
@@ -50,8 +50,8 @@ namespace Amazon.SimpleEmail.Model
 
         /// <summary>
         /// The raw data of the message. The client must ensure that the message format complies with Internet email standards regarding email header
-        /// fields, MIME types, MIME encoding, and base64 encoding (if necessary). For more information, go to the<a
-        /// href="http://docs.amazonwebservices.com/ses/latest/DeveloperGuide">Amazon SES Developer Guide</a>.
+        /// fields, MIME types, MIME encoding, and base64 encoding (if necessary). For more information, go to the <a
+        /// href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Amazon SES Developer Guide</a>.
         ///  
         /// </summary>
         public MemoryStream Data
@@ -76,7 +76,7 @@ namespace Amazon.SimpleEmail.Model
         // Check to see if Data property is set
         internal bool IsSetData()
         {
-            return this.data != null;       
+            return this.data != null;
         }
     }
 }

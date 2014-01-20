@@ -23,7 +23,7 @@ namespace Amazon.Glacier.Model
     /// <summary>
     /// <para>Contains the Amazon Glacier response to your request.</para>
     /// </summary>
-    public class InitiateJobResult  
+    public partial class InitiateJobResult
     {
         
         private string location;
@@ -55,7 +55,7 @@ namespace Amazon.Glacier.Model
         // Check to see if Location property is set
         internal bool IsSetLocation()
         {
-            return this.location != null;       
+            return this.location != null;
         }
 
         /// <summary>
@@ -84,7 +84,7 @@ namespace Amazon.Glacier.Model
         // Check to see if JobId property is set
         internal bool IsSetJobId()
         {
-            return this.jobId != null;       
+            return this.jobId != null;
         }
     }
 }

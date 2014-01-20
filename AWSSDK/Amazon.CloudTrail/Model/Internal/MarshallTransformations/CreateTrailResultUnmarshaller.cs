@@ -45,6 +45,36 @@
                 context.Read();
                 context.Read();
               
+              if (context.TestExpression("Name", targetDepth))
+              {
+                createTrailResult.Name = StringUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
+              if (context.TestExpression("S3BucketName", targetDepth))
+              {
+                createTrailResult.S3BucketName = StringUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
+              if (context.TestExpression("S3KeyPrefix", targetDepth))
+              {
+                createTrailResult.S3KeyPrefix = StringUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
+              if (context.TestExpression("SnsTopicName", targetDepth))
+              {
+                createTrailResult.SnsTopicName = StringUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
+              if (context.TestExpression("IncludeGlobalServiceEvents", targetDepth))
+              {
+                createTrailResult.IncludeGlobalServiceEvents = BoolUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
               if (context.TestExpression("Trail", targetDepth))
               {
                 createTrailResult.Trail = TrailUnmarshaller.GetInstance().Unmarshall(context);

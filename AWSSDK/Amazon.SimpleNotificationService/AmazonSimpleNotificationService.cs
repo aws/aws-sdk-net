@@ -128,7 +128,7 @@ namespace Amazon.SimpleNotificationService
 
         /// <summary>
         /// Creates a topic to which notifications can be published. Users can create
-        /// at most 25 topics.
+        /// at most 3000 topics.
         /// </summary>
         /// <remarks>
         /// This action is idempotent, so if the requester

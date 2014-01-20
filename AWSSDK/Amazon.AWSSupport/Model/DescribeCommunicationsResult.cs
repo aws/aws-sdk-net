@@ -21,16 +21,16 @@ using System.IO;
 namespace Amazon.AWSSupport.Model
 {
     /// <summary>
-    /// <para>Returns the objects or data listed below if successful. Otherwise, returns an error.</para>
+    /// <para>Contains the following objects or data if successful. Otherwise, returns an error.</para>
     /// </summary>
-    public class DescribeCommunicationsResult
+    public partial class DescribeCommunicationsResult
     {
         
         private List<Communication> communications = new List<Communication>();
         private string nextToken;
 
         /// <summary>
-        /// Contains a list of <a href="API_Communication.html" title="Communication">Communications</a> objects.
+        /// The communications for the case.
         ///  
         /// </summary>
         public List<Communication> Communications
@@ -77,7 +77,7 @@ namespace Amazon.AWSSupport.Model
         }
 
         /// <summary>
-        /// Defines a resumption point for pagination.
+        /// A resumption point for pagination.
         ///  
         /// </summary>
         public string NextToken

@@ -26,7 +26,7 @@ namespace Amazon.SimpleEmail.Model
     /// <summary>
     /// Container for the parameters to the ListIdentities operation.
     /// <para>Returns a list containing all of the identities (email addresses and domains) for a specific AWS Account, regardless of verification
-    /// status.</para>
+    /// status.</para> <para>This action is throttled at one request per second.</para>
     /// </summary>
     /// <seealso cref="Amazon.SimpleEmail.AmazonSimpleEmailService.ListIdentities"/>
     public class ListIdentitiesRequest : AmazonWebServiceRequest
@@ -71,7 +71,7 @@ namespace Amazon.SimpleEmail.Model
         // Check to see if IdentityType property is set
         internal bool IsSetIdentityType()
         {
-            return this.identityType != null;       
+            return this.identityType != null;
         }
 
         /// <summary>
@@ -100,7 +100,7 @@ namespace Amazon.SimpleEmail.Model
         // Check to see if NextToken property is set
         internal bool IsSetNextToken()
         {
-            return this.nextToken != null;       
+            return this.nextToken != null;
         }
 
         /// <summary>
@@ -129,7 +129,7 @@ namespace Amazon.SimpleEmail.Model
         // Check to see if MaxItems property is set
         internal bool IsSetMaxItems()
         {
-            return this.maxItems.HasValue;       
+            return this.maxItems.HasValue;
         }
     }
 }

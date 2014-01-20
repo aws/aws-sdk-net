@@ -21,10 +21,9 @@ using System.IO;
 namespace Amazon.AWSSupport.Model
 {
     /// <summary>
-    /// <para>JSON-formatted object that lists details about AWS resources that were analyzed in a call to Trusted Advisor
-    /// DescribeTrustedAdvisorCheckSummaries. </para>
+    /// <para>Details about AWS resources that were analyzed in a call to Trusted Advisor DescribeTrustedAdvisorCheckSummaries. </para>
     /// </summary>
-    public class TrustedAdvisorResourcesSummary
+    public partial class TrustedAdvisorResourcesSummary
     {
         
         private long? resourcesProcessed;
@@ -33,7 +32,7 @@ namespace Amazon.AWSSupport.Model
         private long? resourcesSuppressed;
 
         /// <summary>
-        /// Reports the number of AWS resources that were analyzed in your Trusted Advisor check.
+        /// The number of AWS resources that were analyzed by the Trusted Advisor check.
         ///  
         /// </summary>
         public long ResourcesProcessed
@@ -62,7 +61,7 @@ namespace Amazon.AWSSupport.Model
         }
 
         /// <summary>
-        /// Reports the number of AWS resources that were flagged in your Trusted Advisor check.
+        /// The number of AWS resources that were flagged (listed) by the Trusted Advisor check.
         ///  
         /// </summary>
         public long ResourcesFlagged
@@ -91,7 +90,7 @@ namespace Amazon.AWSSupport.Model
         }
 
         /// <summary>
-        /// Indicates the number of resources ignored by Trusted Advisor due to unavailability of information.
+        /// The number of AWS resources ignored by Trusted Advisor because information was unavailable.
         ///  
         /// </summary>
         public long ResourcesIgnored
@@ -120,7 +119,7 @@ namespace Amazon.AWSSupport.Model
         }
 
         /// <summary>
-        /// Indicates whether the specified AWS resource has had its participation in Trusted Advisor checks suppressed.
+        /// The number of AWS resources ignored by Trusted Advisor because they were marked as suppressed by the user.
         ///  
         /// </summary>
         public long ResourcesSuppressed

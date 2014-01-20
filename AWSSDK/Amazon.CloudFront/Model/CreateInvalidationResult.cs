@@ -23,7 +23,7 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// <para> The returned result of the corresponding request. </para>
     /// </summary>
-    public class CreateInvalidationResult
+    public partial class CreateInvalidationResult
     {
         
         private string location;

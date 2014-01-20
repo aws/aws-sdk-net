@@ -21,15 +21,15 @@ using System.IO;
 namespace Amazon.AWSSupport.Model
 {
     /// <summary>
-    /// <para>Returns the objects or data listed below if successful. Otherwise, returns an error.</para>
+    /// <para>Contains the following objects or data if successful. Otherwise, returns an error.</para>
     /// </summary>
-    public class DescribeServicesResult
+    public partial class DescribeServicesResult
     {
         
         private List<Service> services = new List<Service>();
 
         /// <summary>
-        /// JSON-formatted list of AWS services.
+        /// A JSON-formatted list of AWS services.
         ///  
         /// </summary>
         public List<Service> Services

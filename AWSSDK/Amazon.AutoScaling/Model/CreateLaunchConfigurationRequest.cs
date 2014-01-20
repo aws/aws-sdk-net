@@ -40,6 +40,7 @@ namespace Amazon.AutoScaling.Model
         private string keyName;
         private List<string> securityGroups = new List<string>();
         private string userData;
+        private string instanceId;
         private string instanceType;
         private string kernelId;
         private string ramdiskId;
@@ -93,9 +94,9 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// Unique ID of the <i>Amazon Machine Image</i> (AMI) you want to use to launch your EC2 instances. For information about finding Amazon EC2
-        /// AMIs, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding a Suitable AMI</a> in the <i>Amazon
-        /// Elastic Compute Cloud User Guide</i>.
+        /// Unique ID of the Amazon Machine Image (AMI) you want to use to launch your EC2 instances. For information about finding Amazon EC2 AMIs, see
+        /// <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding a Suitable AMI</a> in the <i>Amazon Elastic Compute
+        /// Cloud User Guide</i>.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -275,6 +276,52 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetUserData()
         {
             return this.userData != null;
+        }
+
+        /// <summary>
+        /// The ID of the Amazon EC2 instance you want to use to create the launch configuration. When you use an instance to create a launch
+        /// configuration, by default, all the parameters are automatically derived from the instance with the exception of the following: <ul> <li>The
+        /// block device mappings are derived from the AMI that was used to launch the instance.</li> <li>The <c>AssociatePublicIpAddress</c> is not
+        /// derived if the flag is already set for the instance.</li> </ul> You can override any of the values by specifying your own values as part of
+        /// the same request.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Length</term>
+        ///         <description>1 - 16</description>
+        ///     </item>
+        ///     <item>
+        ///         <term>Pattern</term>
+        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
+        public string InstanceId
+        {
+            get { return this.instanceId; }
+            set { this.instanceId = value; }
+        }
+
+        /// <summary>
+        /// Sets the InstanceId property
+        /// </summary>
+        /// <param name="instanceId">The value to set for the InstanceId property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public CreateLaunchConfigurationRequest WithInstanceId(string instanceId)
+        {
+            this.instanceId = instanceId;
+            return this;
+        }
+            
+
+        // Check to see if InstanceId property is set
+        internal bool IsSetInstanceId()
+        {
+            return this.instanceId != null;
         }
 
         /// <summary>
@@ -611,12 +658,12 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// Used for Auto Scaling groups that launch instances into a Virtual Private Cloud (VPC). Specifies whether to assign a public IP address to
-        /// each instance launched in a Amazon VPC. <note> If you specify a value for this parameter, be sure to specify at least one VPC subnet using
-        /// the <i>VPCZoneIdentifier</i> parameter when you create your Auto Scaling group. </note> Default: If the instance is launched in default VPC,
-        /// the default is <c>true</c>. If the instance is launched in EC2-VPC, the default is <c>false</c>. For more information about the platforms
-        /// supported by Auto Scaling, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US_BasicSetup.html">Basic Auto Scaling
-        /// Configuration</a>.
+        /// Used for Auto Scaling groups that launch instances into an Amazon Virtual Private Cloud (Amazon VPC). Specifies whether to assign a public
+        /// IP address to each instance launched in a Amazon VPC. <note> If you specify a value for this parameter, be sure to specify at least one VPC
+        /// subnet using the <i>VPCZoneIdentifier</i> parameter when you create your Auto Scaling group. </note> Default: If the instance is launched in
+        /// default VPC, the default is <c>true</c>. If the instance is launched in a nondefault VPC (EC2-VPC), the default is <c>false</c>. For more
+        /// information about the platforms supported by Auto Scaling, see <a
+        /// href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US_BasicSetup.html">Basic Auto Scaling Configuration</a>.
         ///  
         /// </summary>
         public bool AssociatePublicIpAddress

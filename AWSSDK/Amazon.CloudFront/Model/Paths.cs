@@ -23,7 +23,7 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// <para> A complex type that contains information about the objects that you want to invalidate. </para>
     /// </summary>
-    public class Paths
+    public partial class Paths
     {
         
         private int? quantity;

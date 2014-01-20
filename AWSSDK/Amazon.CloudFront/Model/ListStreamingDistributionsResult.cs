@@ -23,7 +23,7 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// <para> The returned result of the corresponding request. </para>
     /// </summary>
-    public class ListStreamingDistributionsResult
+    public partial class ListStreamingDistributionsResult
     {
         
         private StreamingDistributionList streamingDistributionList;

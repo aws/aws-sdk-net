@@ -11,27 +11,29 @@
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
- */ 
+ */
     using System;
     using System.Collections.Generic;
     using System.IO;
     using Amazon.Glacier.Model;
     using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.Glacier.Model.Internal.MarshallTransformations 
-    { 
-      /// <summary> 
-      /// CompleteMultipartUploadResultUnmarshaller 
-      /// </summary> 
-      internal class CompleteMultipartUploadResultUnmarshaller : IUnmarshaller<CompleteMultipartUploadResult, XmlUnmarshallerContext>, IUnmarshaller<CompleteMultipartUploadResult, JsonUnmarshallerContext> 
-      { 
+    namespace Amazon.Glacier.Model.Internal.MarshallTransformations
+    {
+      /// <summary>
+      /// CompleteMultipartUploadResultUnmarshaller
+      /// </summary>
+      internal class CompleteMultipartUploadResultUnmarshaller : IUnmarshaller<CompleteMultipartUploadResult, XmlUnmarshallerContext>, IUnmarshaller<CompleteMultipartUploadResult, JsonUnmarshallerContext>
+      {
         CompleteMultipartUploadResult IUnmarshaller<CompleteMultipartUploadResult, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
           throw new NotImplementedException();
         }
-        
-        public CompleteMultipartUploadResult Unmarshall(JsonUnmarshallerContext context) 
+
+        public CompleteMultipartUploadResult Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             CompleteMultipartUploadResult completeMultipartUploadResult = new CompleteMultipartUploadResult();
           
 
@@ -41,17 +43,17 @@
                 completeMultipartUploadResult.Checksum = context.Headers["x-amz-sha256-tree-hash"];
             if (context.Headers["x-amz-archive-id"] != null)
                 completeMultipartUploadResult.ArchiveId = context.Headers["x-amz-archive-id"];
-          
-            return completeMultipartUploadResult; 
-        } 
-        
-        private static CompleteMultipartUploadResultUnmarshaller instance; 
-        public static CompleteMultipartUploadResultUnmarshaller GetInstance() 
-        { 
-            if (instance == null) 
-                instance = new CompleteMultipartUploadResultUnmarshaller(); 
+
+            return completeMultipartUploadResult;
+        }
+
+        private static CompleteMultipartUploadResultUnmarshaller instance;
+        public static CompleteMultipartUploadResultUnmarshaller GetInstance()
+        {
+            if (instance == null)
+                instance = new CompleteMultipartUploadResultUnmarshaller();
             return instance;
-        } 
-    } 
-} 
+        }
+    }
+}
   

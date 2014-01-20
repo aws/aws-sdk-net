@@ -32,6 +32,8 @@
 
         public TrustedAdvisorCostOptimizingSummary Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             TrustedAdvisorCostOptimizingSummary trustedAdvisorCostOptimizingSummary = new TrustedAdvisorCostOptimizingSummary();
           
             int originalDepth = context.CurrentDepth;

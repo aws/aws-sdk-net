@@ -23,7 +23,7 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// <para> The output of the DescribeScalingProcessTypes action. </para>
     /// </summary>
-    public class DescribeScalingProcessTypesResult
+    public partial class DescribeScalingProcessTypesResult
     {
         
         private List<ProcessType> processes = new List<ProcessType>();

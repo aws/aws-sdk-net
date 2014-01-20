@@ -21,9 +21,9 @@ using System.IO;
 namespace Amazon.AWSSupport.Model
 {
     /// <summary>
-    /// <para>Contains the fields that indicate the statuses Trusted Advisor checks for which refreshes have been requested. </para>
+    /// <para>The refresh status of a Trusted Advisor check. </para>
     /// </summary>
-    public class TrustedAdvisorCheckRefreshStatus
+    public partial class TrustedAdvisorCheckRefreshStatus
     {
         
         private string checkId;
@@ -31,7 +31,7 @@ namespace Amazon.AWSSupport.Model
         private long? millisUntilNextRefreshable;
 
         /// <summary>
-        /// String that specifies the <i>checkId</i> value of the Trusted Advisor check.
+        /// The unique identifier for the Trusted Advisor check.
         ///  
         /// </summary>
         public string CheckId
@@ -60,7 +60,7 @@ namespace Amazon.AWSSupport.Model
         }
 
         /// <summary>
-        /// Indicates the status of the Trusted Advisor check for which a refresh has been requested.
+        /// The status of the Trusted Advisor check for which a refresh has been requested: "none", "enqueued", "processing", "success", or "abandoned".
         ///  
         /// </summary>
         public string Status
@@ -89,8 +89,7 @@ namespace Amazon.AWSSupport.Model
         }
 
         /// <summary>
-        /// Indicates the time in milliseconds until a call to <a href="API_RefreshTrustedAdvisorCheck.html"
-        /// title="RefreshTrustedAdvisorCheck">RefreshTrustedAdvisorCheck</a> can trigger a refresh.
+        /// The amount of time, in milliseconds, until the Trusted Advisor check is eligible for refresh.
         ///  
         /// </summary>
         public long MillisUntilNextRefreshable

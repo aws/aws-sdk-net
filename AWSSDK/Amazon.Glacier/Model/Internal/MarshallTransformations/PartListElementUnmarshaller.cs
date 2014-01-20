@@ -11,29 +11,31 @@
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
- */ 
+ */
     using System;
     using System.Collections.Generic;
     using System.IO;
     using Amazon.Glacier.Model;
     using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.Glacier.Model.Internal.MarshallTransformations 
-    { 
-      /// <summary> 
-      /// PartListElementUnmarshaller 
-      /// </summary> 
-      internal class PartListElementUnmarshaller : IUnmarshaller<PartListElement, XmlUnmarshallerContext>, IUnmarshaller<PartListElement, JsonUnmarshallerContext> 
-      { 
+    namespace Amazon.Glacier.Model.Internal.MarshallTransformations
+    {
+      /// <summary>
+      /// PartListElementUnmarshaller
+      /// </summary>
+      internal class PartListElementUnmarshaller : IUnmarshaller<PartListElement, XmlUnmarshallerContext>, IUnmarshaller<PartListElement, JsonUnmarshallerContext>
+      {
         PartListElement IUnmarshaller<PartListElement, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
           throw new NotImplementedException();
         }
-        
-        public PartListElement Unmarshall(JsonUnmarshallerContext context) 
+
+        public PartListElement Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             PartListElement partListElement = new PartListElement();
-                    
+          
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             while (context.Read())
@@ -42,37 +44,37 @@
                 {
                 context.Read();
                 context.Read();
-               
-              if (context.TestExpression("RangeInBytes", targetDepth)) 
+              
+              if (context.TestExpression("RangeInBytes", targetDepth))
               {
                 partListElement.RangeInBytes = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue; 
+                continue;
               }
-   
-              if (context.TestExpression("SHA256TreeHash", targetDepth)) 
+  
+              if (context.TestExpression("SHA256TreeHash", targetDepth))
               {
                 partListElement.SHA256TreeHash = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue; 
+                continue;
               }
-   
-                } 
-                else if (context.IsEndElement && context.CurrentDepth <= originalDepth) 
-                { 
-                    return partListElement; 
-                } 
-            } 
+  
+                }
+                else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
+                {
+                    return partListElement;
+                }
+            }
           
-          
-            return partListElement; 
-        } 
-        
-        private static PartListElementUnmarshaller instance; 
-        public static PartListElementUnmarshaller GetInstance() 
-        { 
-            if (instance == null) 
-                instance = new PartListElementUnmarshaller(); 
+
+            return partListElement;
+        }
+
+        private static PartListElementUnmarshaller instance;
+        public static PartListElementUnmarshaller GetInstance()
+        {
+            if (instance == null)
+                instance = new PartListElementUnmarshaller();
             return instance;
-        } 
-    } 
-} 
+        }
+    }
+}
   

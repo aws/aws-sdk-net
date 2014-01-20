@@ -23,7 +23,7 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// <para> The returned result of the corresponding request. </para>
     /// </summary>
-    public class GetCloudFrontOriginAccessIdentityResult
+    public partial class GetCloudFrontOriginAccessIdentityResult
     {
         
         private CloudFrontOriginAccessIdentity cloudFrontOriginAccessIdentity;

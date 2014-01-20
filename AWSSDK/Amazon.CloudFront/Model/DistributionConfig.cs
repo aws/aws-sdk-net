@@ -23,7 +23,7 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// <para> A distribution Configuration. </para>
     /// </summary>
-    public class DistributionConfig
+    public partial class DistributionConfig
     {
         
         private string callerReference;
@@ -38,6 +38,7 @@ namespace Amazon.CloudFront.Model
         private string priceClass;
         private bool? enabled;
         private ViewerCertificate viewerCertificate;
+        private Restrictions restrictions;
 
         /// <summary>
         /// A unique number that ensures the request can't be replayed. If the CallerReference is new (no matter the content of the DistributionConfig
@@ -405,6 +406,35 @@ namespace Amazon.CloudFront.Model
         internal bool IsSetViewerCertificate()
         {
             return this.viewerCertificate != null;
+        }
+
+        /// <summary>
+        /// A complex type that identifies ways in which you want to restrict distribution of your content.
+        ///  
+        /// </summary>
+        public Restrictions Restrictions
+        {
+            get { return this.restrictions; }
+            set { this.restrictions = value; }
+        }
+
+        /// <summary>
+        /// Sets the Restrictions property
+        /// </summary>
+        /// <param name="restrictions">The value to set for the Restrictions property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public DistributionConfig WithRestrictions(Restrictions restrictions)
+        {
+            this.restrictions = restrictions;
+            return this;
+        }
+            
+
+        // Check to see if Restrictions property is set
+        internal bool IsSetRestrictions()
+        {
+            return this.restrictions != null;
         }
     }
 }

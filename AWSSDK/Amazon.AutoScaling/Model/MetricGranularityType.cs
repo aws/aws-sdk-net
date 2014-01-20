@@ -23,7 +23,7 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// <para> The MetricGranularityType data type. </para>
     /// </summary>
-    public class MetricGranularityType
+    public partial class MetricGranularityType
     {
         
         private string granularity;

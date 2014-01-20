@@ -26,7 +26,8 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// Container for the parameters to the SetInstanceHealth operation.
     /// <para> Sets the health status of a specified instance that belongs to any of your Auto Scaling groups. </para> <para>For more information,
-    /// see Configure Health Checks for Your Auto Scaling group.</para>
+    /// see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-configure-healthcheck.html" >Configure Health Checks for Your
+    /// Auto Scaling group</a> .</para>
     /// </summary>
     /// <seealso cref="Amazon.AutoScaling.AmazonAutoScaling.SetInstanceHealth"/>
     public class SetInstanceHealthRequest : AmazonWebServiceRequest

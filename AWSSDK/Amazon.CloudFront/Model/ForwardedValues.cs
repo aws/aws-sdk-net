@@ -23,7 +23,7 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// <para> A complex type that specifies how CloudFront handles query strings. </para>
     /// </summary>
-    public class ForwardedValues
+    public partial class ForwardedValues
     {
         
         private bool? queryString;

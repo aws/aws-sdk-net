@@ -23,7 +23,7 @@ namespace Amazon.Glacier.Model
     /// <summary>
     /// <para>Contains the Amazon Glacier response to your request.</para>
     /// </summary>
-    public class ListPartsResult  
+    public partial class ListPartsResult
     {
         
         private string multipartUploadId;
@@ -60,7 +60,7 @@ namespace Amazon.Glacier.Model
         // Check to see if MultipartUploadId property is set
         internal bool IsSetMultipartUploadId()
         {
-            return this.multipartUploadId != null;       
+            return this.multipartUploadId != null;
         }
 
         /// <summary>
@@ -89,7 +89,7 @@ namespace Amazon.Glacier.Model
         // Check to see if VaultARN property is set
         internal bool IsSetVaultARN()
         {
-            return this.vaultARN != null;       
+            return this.vaultARN != null;
         }
 
         /// <summary>
@@ -118,7 +118,7 @@ namespace Amazon.Glacier.Model
         // Check to see if ArchiveDescription property is set
         internal bool IsSetArchiveDescription()
         {
-            return this.archiveDescription != null;       
+            return this.archiveDescription != null;
         }
 
         /// <summary>
@@ -147,7 +147,7 @@ namespace Amazon.Glacier.Model
         // Check to see if PartSizeInBytes property is set
         internal bool IsSetPartSizeInBytes()
         {
-            return this.partSizeInBytes.HasValue;       
+            return this.partSizeInBytes.HasValue;
         }
 
         /// <summary>
@@ -176,7 +176,7 @@ namespace Amazon.Glacier.Model
         // Check to see if CreationDate property is set
         internal bool IsSetCreationDate()
         {
-            return this.creationDate.HasValue;       
+            return this.creationDate.HasValue;
         }
 
         /// <summary>
@@ -203,7 +203,7 @@ namespace Amazon.Glacier.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Parts collection
         /// </summary>
@@ -223,7 +223,7 @@ namespace Amazon.Glacier.Model
         // Check to see if Parts property is set
         internal bool IsSetParts()
         {
-            return this.parts.Count > 0;       
+            return this.parts.Count > 0;
         }
 
         /// <summary>
@@ -253,7 +253,7 @@ namespace Amazon.Glacier.Model
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;       
+            return this.marker != null;
         }
     }
 }

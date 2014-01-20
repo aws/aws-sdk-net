@@ -26,7 +26,8 @@ namespace Amazon.SimpleEmail.Model
     /// <summary>
     /// Container for the parameters to the DeleteVerifiedEmailAddress operation.
     /// <para>Deletes the specified email address from the list of verified addresses.</para> <para><b>IMPORTANT:</b>The DeleteVerifiedEmailAddress
-    /// action is deprecated as of the May 15, 2012 release of Domain Verification. The DeleteIdentity action is now preferred.</para>
+    /// action is deprecated as of the May 15, 2012 release of Domain Verification. The DeleteIdentity action is now preferred.</para> <para>This
+    /// action is throttled at one request per second.</para>
     /// </summary>
     /// <seealso cref="Amazon.SimpleEmail.AmazonSimpleEmailService.DeleteVerifiedEmailAddress"/>
     public class DeleteVerifiedEmailAddressRequest : AmazonWebServiceRequest
@@ -59,7 +60,7 @@ namespace Amazon.SimpleEmail.Model
         // Check to see if EmailAddress property is set
         internal bool IsSetEmailAddress()
         {
-            return this.emailAddress != null;       
+            return this.emailAddress != null;
         }
     }
 }

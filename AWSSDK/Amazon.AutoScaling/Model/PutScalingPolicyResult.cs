@@ -23,7 +23,7 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// <para> The <c>PolicyARNType</c> data type. </para>
     /// </summary>
-    public class PutScalingPolicyResult
+    public partial class PutScalingPolicyResult
     {
         
         private string policyARN;

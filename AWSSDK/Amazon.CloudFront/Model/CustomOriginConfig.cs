@@ -23,7 +23,7 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// <para> A customer origin. </para>
     /// </summary>
-    public class CustomOriginConfig
+    public partial class CustomOriginConfig
     {
         
         private int? hTTPPort;

@@ -25,7 +25,7 @@ namespace Amazon.AutoScaling.Model
     /// <para> Starting with API version 2011-01-01, you can use <c>recurrence</c> to specify that a scaling action occurs regularly on a schedule.
     /// </para>
     /// </summary>
-    public class DescribeScheduledActionsResult
+    public partial class DescribeScheduledActionsResult
     {
         
         private List<ScheduledUpdateGroupAction> scheduledUpdateGroupActions = new List<ScheduledUpdateGroupAction>();

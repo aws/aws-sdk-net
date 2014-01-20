@@ -32,6 +32,8 @@
 
         public DescribeServicesResult Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             DescribeServicesResult describeServicesResult = new DescribeServicesResult();
           describeServicesResult.Services = null;
                         
@@ -46,8 +48,14 @@
               
               if (context.TestExpression("Services", targetDepth))
               {
-                describeServicesResult.Services = new List<Service>();
-                        ServiceUnmarshaller unmarshaller = ServiceUnmarshaller.GetInstance();
+                
+                  if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                  {
+                      describeServicesResult.Services = null;
+                      continue;
+                  }              
+                  describeServicesResult.Services = new List<Service>();
+                  ServiceUnmarshaller unmarshaller = ServiceUnmarshaller.GetInstance();
                 while (context.Read())
                 {
                   if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))

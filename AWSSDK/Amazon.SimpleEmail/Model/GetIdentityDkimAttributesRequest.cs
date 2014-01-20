@@ -25,18 +25,19 @@ namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
     /// Container for the parameters to the GetIdentityDkimAttributes operation.
-    /// <para>Returns the DNS records, or <i>tokens</i> , that must be present in order for Easy DKIM to sign outgoing email messages.</para>
-    /// <para>This action takes a list of verified identities as input. It then returns the following information for each identity:</para>
+    /// <para>Returns the current status of Easy DKIM signing for an entity. For domain name identities, this action also returns the DKIM tokens
+    /// that are required for Easy DKIM signing, and whether Amazon SES has successfully verified that these tokens have been published.</para>
+    /// <para>This action takes a list of identities as input and returns the following information for each:</para>
     /// <ul>
     /// <li>Whether Easy DKIM signing is enabled or disabled.</li>
-    /// <li>The set of tokens that are required for Easy DKIM signing. These tokens must be published in the domain name's DNS records in order
-    /// for DKIM verification to complete, and must remain published in order for Easy DKIM signing to operate correctly. (This information is only
-    /// returned for domain name identities, not for email addresses.)</li>
-    /// <li>Whether Amazon SES has successfully verified the DKIM tokens published in the domain name's DNS. (This information is only returned for
-    /// domain name identities, not for email addresses.)</li>
+    /// <li>A set of DKIM tokens that represent the identity. If the identity is an email address, the tokens represent the domain of that
+    /// address.</li>
+    /// <li>Whether Amazon SES has successfully verified the DKIM tokens published in the domain's DNS. This information is only returned for
+    /// domain name identities, not for email addresses.</li>
     /// 
     /// </ul>
-    /// <para>For more information about Easy DKIM signing, go to the Amazon SES Developer Guide.</para>
+    /// <para>This action is throttled at one request per second.</para> <para>For more information about creating DNS records using DKIM tokens,
+    /// go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html" >Amazon SES Developer Guide</a> .</para>
     /// </summary>
     /// <seealso cref="Amazon.SimpleEmail.AmazonSimpleEmailService.GetIdentityDkimAttributes"/>
     public class GetIdentityDkimAttributesRequest : AmazonWebServiceRequest
@@ -67,7 +68,7 @@ namespace Amazon.SimpleEmail.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Identities collection
         /// </summary>
@@ -87,7 +88,7 @@ namespace Amazon.SimpleEmail.Model
         // Check to see if Identities property is set
         internal bool IsSetIdentities()
         {
-            return this.identities.Count > 0;       
+            return this.identities.Count > 0;
         }
     }
 }

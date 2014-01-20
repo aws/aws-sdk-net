@@ -23,7 +23,7 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// <para> The returned result of the corresponding request. </para>
     /// </summary>
-    public class GetDistributionConfigResult
+    public partial class GetDistributionConfigResult
     {
         
         private DistributionConfig distributionConfig;

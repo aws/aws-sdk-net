@@ -30,7 +30,7 @@ namespace Amazon.AWSSupport.Model
 
         /// <summary>
         /// Gets and sets the CreateCaseResult property.
-        /// Contains the AWSSupport caseId returned by a successful completion of the CreateCase action.
+        /// The AWS Support case ID returned by a successful completion of the CreateCase action.
         /// </summary>
         public CreateCaseResult CreateCaseResult
         {

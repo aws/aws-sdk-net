@@ -23,7 +23,7 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// <para> The output of the DescribeAdjustmentTypes action. </para>
     /// </summary>
-    public class DescribeAdjustmentTypesResult
+    public partial class DescribeAdjustmentTypesResult
     {
         
         private List<AdjustmentType> adjustmentTypes = new List<AdjustmentType>();

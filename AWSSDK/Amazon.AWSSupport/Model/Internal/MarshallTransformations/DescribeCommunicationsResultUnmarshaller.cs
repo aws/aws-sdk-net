@@ -32,6 +32,8 @@
 
         public DescribeCommunicationsResult Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             DescribeCommunicationsResult describeCommunicationsResult = new DescribeCommunicationsResult();
           describeCommunicationsResult.Communications = null;
                         
@@ -46,8 +48,14 @@
               
               if (context.TestExpression("Communications", targetDepth))
               {
-                describeCommunicationsResult.Communications = new List<Communication>();
-                        CommunicationUnmarshaller unmarshaller = CommunicationUnmarshaller.GetInstance();
+                
+                  if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                  {
+                      describeCommunicationsResult.Communications = null;
+                      continue;
+                  }              
+                  describeCommunicationsResult.Communications = new List<Communication>();
+                  CommunicationUnmarshaller unmarshaller = CommunicationUnmarshaller.GetInstance();
                 while (context.Read())
                 {
                   if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))

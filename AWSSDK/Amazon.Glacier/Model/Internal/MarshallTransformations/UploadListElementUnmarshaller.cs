@@ -11,29 +11,31 @@
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
- */ 
+ */
     using System;
     using System.Collections.Generic;
     using System.IO;
     using Amazon.Glacier.Model;
     using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.Glacier.Model.Internal.MarshallTransformations 
-    { 
-      /// <summary> 
-      /// UploadListElementUnmarshaller 
-      /// </summary> 
-      internal class UploadListElementUnmarshaller : IUnmarshaller<UploadListElement, XmlUnmarshallerContext>, IUnmarshaller<UploadListElement, JsonUnmarshallerContext> 
-      { 
+    namespace Amazon.Glacier.Model.Internal.MarshallTransformations
+    {
+      /// <summary>
+      /// UploadListElementUnmarshaller
+      /// </summary>
+      internal class UploadListElementUnmarshaller : IUnmarshaller<UploadListElement, XmlUnmarshallerContext>, IUnmarshaller<UploadListElement, JsonUnmarshallerContext>
+      {
         UploadListElement IUnmarshaller<UploadListElement, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
           throw new NotImplementedException();
         }
-        
-        public UploadListElement Unmarshall(JsonUnmarshallerContext context) 
+
+        public UploadListElement Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             UploadListElement uploadListElement = new UploadListElement();
-                    
+          
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             while (context.Read())
@@ -42,55 +44,55 @@
                 {
                 context.Read();
                 context.Read();
-               
-              if (context.TestExpression("MultipartUploadId", targetDepth)) 
+              
+              if (context.TestExpression("MultipartUploadId", targetDepth))
               {
                 uploadListElement.MultipartUploadId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue; 
+                continue;
               }
-   
-              if (context.TestExpression("VaultARN", targetDepth)) 
+  
+              if (context.TestExpression("VaultARN", targetDepth))
               {
                 uploadListElement.VaultARN = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue; 
+                continue;
               }
-   
-              if (context.TestExpression("ArchiveDescription", targetDepth)) 
+  
+              if (context.TestExpression("ArchiveDescription", targetDepth))
               {
                 uploadListElement.ArchiveDescription = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue; 
+                continue;
               }
-   
-              if (context.TestExpression("PartSizeInBytes", targetDepth)) 
+  
+              if (context.TestExpression("PartSizeInBytes", targetDepth))
               {
                 uploadListElement.PartSizeInBytes = LongUnmarshaller.GetInstance().Unmarshall(context);
-                continue; 
+                continue;
               }
-   
-              if (context.TestExpression("CreationDate", targetDepth)) 
+  
+              if (context.TestExpression("CreationDate", targetDepth))
               {
                 uploadListElement.CreationDate = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                continue; 
+                continue;
               }
-   
-                } 
-                else if (context.IsEndElement && context.CurrentDepth <= originalDepth) 
-                { 
-                    return uploadListElement; 
-                } 
-            } 
+  
+                }
+                else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
+                {
+                    return uploadListElement;
+                }
+            }
           
-          
-            return uploadListElement; 
-        } 
-        
-        private static UploadListElementUnmarshaller instance; 
-        public static UploadListElementUnmarshaller GetInstance() 
-        { 
-            if (instance == null) 
-                instance = new UploadListElementUnmarshaller(); 
+
+            return uploadListElement;
+        }
+
+        private static UploadListElementUnmarshaller instance;
+        public static UploadListElementUnmarshaller GetInstance()
+        {
+            if (instance == null)
+                instance = new UploadListElementUnmarshaller();
             return instance;
-        } 
-    } 
-} 
+        }
+    }
+}
   

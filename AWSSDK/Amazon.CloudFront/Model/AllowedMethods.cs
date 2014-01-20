@@ -27,7 +27,7 @@ namespace Amazon.CloudFront.Model
     /// can't perform operations that you don't want them to. For example, you may not want users to have permission to delete objects from your
     /// origin. </para>
     /// </summary>
-    public class AllowedMethods
+    public partial class AllowedMethods
     {
         
         private int? quantity;

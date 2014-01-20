@@ -62,6 +62,10 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
             {
                 request.Parameters.Add("UserData", StringUtils.FromString(createLaunchConfigurationRequest.UserData));
             }
+            if (createLaunchConfigurationRequest != null && createLaunchConfigurationRequest.IsSetInstanceId())
+            {
+                request.Parameters.Add("InstanceId", StringUtils.FromString(createLaunchConfigurationRequest.InstanceId));
+            }
             if (createLaunchConfigurationRequest != null && createLaunchConfigurationRequest.IsSetInstanceType())
             {
                 request.Parameters.Add("InstanceType", StringUtils.FromString(createLaunchConfigurationRequest.InstanceType));
@@ -100,6 +104,22 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("BlockDeviceMappings.member." + blockDeviceMappingsListIndex + ".Ebs.VolumeSize", StringUtils.FromInt(ebs.VolumeSize));
                         }
+                        if (ebs != null && ebs.IsSetVolumeType())
+                        {
+                            request.Parameters.Add("BlockDeviceMappings.member." + blockDeviceMappingsListIndex + ".Ebs.VolumeType", StringUtils.FromString(ebs.VolumeType));
+                        }
+                        if (ebs != null && ebs.IsSetDeleteOnTermination())
+                        {
+                            request.Parameters.Add("BlockDeviceMappings.member." + blockDeviceMappingsListIndex + ".Ebs.DeleteOnTermination", StringUtils.FromBool(ebs.DeleteOnTermination));
+                        }
+                        if (ebs != null && ebs.IsSetIops())
+                        {
+                            request.Parameters.Add("BlockDeviceMappings.member." + blockDeviceMappingsListIndex + ".Ebs.Iops", StringUtils.FromInt(ebs.Iops));
+                        }
+                    }
+                    if (blockDeviceMappingsListValue != null && blockDeviceMappingsListValue.IsSetNoDevice())
+                    {
+                        request.Parameters.Add("BlockDeviceMappings.member." + blockDeviceMappingsListIndex + ".NoDevice", StringUtils.FromBool(blockDeviceMappingsListValue.NoDevice));
                     }
 
                     blockDeviceMappingsListIndex++;

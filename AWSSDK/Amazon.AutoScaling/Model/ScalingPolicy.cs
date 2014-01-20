@@ -23,7 +23,7 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// <para> The <c>ScalingPolicy</c> data type. </para>
     /// </summary>
-    public class ScalingPolicy
+    public partial class ScalingPolicy
     {
         
         private string autoScalingGroupName;

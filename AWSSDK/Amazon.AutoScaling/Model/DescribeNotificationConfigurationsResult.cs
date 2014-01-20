@@ -23,7 +23,7 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// <para>The output of the DescribeNotificationConfigurations action.</para>
     /// </summary>
-    public class DescribeNotificationConfigurationsResult
+    public partial class DescribeNotificationConfigurationsResult
     {
         
         private List<NotificationConfiguration> notificationConfigurations = new List<NotificationConfiguration>();

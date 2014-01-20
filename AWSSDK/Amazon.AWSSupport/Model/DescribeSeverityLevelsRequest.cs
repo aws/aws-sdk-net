@@ -25,8 +25,8 @@ namespace Amazon.AWSSupport.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeSeverityLevels operation.
-    /// <para>This action returns the list of severity levels that you can assign to an AWS Support case. The severity level for a case is also a
-    /// field in the CaseDetails data type included in any CreateCase request. </para>
+    /// <para>Returns the list of severity levels that you can assign to an AWS Support case. The severity level for a case is also a field in the
+    /// CaseDetails data type included in any CreateCase request. </para>
     /// </summary>
     /// <seealso cref="Amazon.AWSSupport.AmazonAWSSupport.DescribeSeverityLevels"/>
     public class DescribeSeverityLevelsRequest : AmazonWebServiceRequest
@@ -34,8 +34,8 @@ namespace Amazon.AWSSupport.Model
         private string language;
 
         /// <summary>
-        /// Specifies the ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English and Japanese, for which
-        /// the codes are <i>en</i> and <i>ja</i>, respectively.
+        /// The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English ("en") and Japanese ("ja").
+        /// Language parameters must be passed explicitly for operations that take them.
         ///  
         /// </summary>
         public string Language

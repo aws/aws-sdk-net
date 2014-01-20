@@ -23,7 +23,7 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// <para>The Alarm data type.</para>
     /// </summary>
-    public class Alarm
+    public partial class Alarm
     {
         
         private string alarmName;

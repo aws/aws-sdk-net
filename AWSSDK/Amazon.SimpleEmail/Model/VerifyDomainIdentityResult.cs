@@ -23,7 +23,7 @@ namespace Amazon.SimpleEmail.Model
     /// <summary>
     /// <para>Represents a token used for domain ownership verification.</para>
     /// </summary>
-    public class VerifyDomainIdentityResult  
+    public partial class VerifyDomainIdentityResult
     {
         
         private string verificationToken;
@@ -54,7 +54,7 @@ namespace Amazon.SimpleEmail.Model
         // Check to see if VerificationToken property is set
         internal bool IsSetVerificationToken()
         {
-            return this.verificationToken != null;       
+            return this.verificationToken != null;
         }
     }
 }

@@ -11,27 +11,29 @@
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
- */ 
+ */
     using System;
     using System.Collections.Generic;
     using System.IO;
     using Amazon.Glacier.Model;
     using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.Glacier.Model.Internal.MarshallTransformations 
-    { 
-      /// <summary> 
-      /// InitiateMultipartUploadResultUnmarshaller 
-      /// </summary> 
-      internal class InitiateMultipartUploadResultUnmarshaller : IUnmarshaller<InitiateMultipartUploadResult, XmlUnmarshallerContext>, IUnmarshaller<InitiateMultipartUploadResult, JsonUnmarshallerContext> 
-      { 
+    namespace Amazon.Glacier.Model.Internal.MarshallTransformations
+    {
+      /// <summary>
+      /// InitiateMultipartUploadResultUnmarshaller
+      /// </summary>
+      internal class InitiateMultipartUploadResultUnmarshaller : IUnmarshaller<InitiateMultipartUploadResult, XmlUnmarshallerContext>, IUnmarshaller<InitiateMultipartUploadResult, JsonUnmarshallerContext>
+      {
         InitiateMultipartUploadResult IUnmarshaller<InitiateMultipartUploadResult, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
           throw new NotImplementedException();
         }
-        
-        public InitiateMultipartUploadResult Unmarshall(JsonUnmarshallerContext context) 
+
+        public InitiateMultipartUploadResult Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             InitiateMultipartUploadResult initiateMultipartUploadResult = new InitiateMultipartUploadResult();
           
 
@@ -39,17 +41,17 @@
                 initiateMultipartUploadResult.Location = context.Headers["Location"];
             if (context.Headers["x-amz-multipart-upload-id"] != null)
                 initiateMultipartUploadResult.UploadId = context.Headers["x-amz-multipart-upload-id"];
-          
-            return initiateMultipartUploadResult; 
-        } 
-        
-        private static InitiateMultipartUploadResultUnmarshaller instance; 
-        public static InitiateMultipartUploadResultUnmarshaller GetInstance() 
-        { 
-            if (instance == null) 
-                instance = new InitiateMultipartUploadResultUnmarshaller(); 
+
+            return initiateMultipartUploadResult;
+        }
+
+        private static InitiateMultipartUploadResultUnmarshaller instance;
+        public static InitiateMultipartUploadResultUnmarshaller GetInstance()
+        {
+            if (instance == null)
+                instance = new InitiateMultipartUploadResultUnmarshaller();
             return instance;
-        } 
-    } 
-} 
+        }
+    }
+}
   

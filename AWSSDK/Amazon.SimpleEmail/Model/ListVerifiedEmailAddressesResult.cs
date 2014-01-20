@@ -23,7 +23,7 @@ namespace Amazon.SimpleEmail.Model
     /// <summary>
     /// <para>Represents a list of all the email addresses verified for the current user.</para>
     /// </summary>
-    public class ListVerifiedEmailAddressesResult  
+    public partial class ListVerifiedEmailAddressesResult
     {
         
         private List<string> verifiedEmailAddresses = new List<string>();
@@ -52,7 +52,7 @@ namespace Amazon.SimpleEmail.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the VerifiedEmailAddresses collection
         /// </summary>
@@ -72,7 +72,7 @@ namespace Amazon.SimpleEmail.Model
         // Check to see if VerifiedEmailAddresses property is set
         internal bool IsSetVerifiedEmailAddresses()
         {
-            return this.verifiedEmailAddresses.Count > 0;       
+            return this.verifiedEmailAddresses.Count > 0;
         }
     }
 }

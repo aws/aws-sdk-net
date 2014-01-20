@@ -23,7 +23,7 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// <para> The <c>LaunchConfigurationsType</c> data type. </para>
     /// </summary>
-    public class DescribeLaunchConfigurationsResult
+    public partial class DescribeLaunchConfigurationsResult
     {
         
         private List<LaunchConfiguration> launchConfigurations = new List<LaunchConfiguration>();

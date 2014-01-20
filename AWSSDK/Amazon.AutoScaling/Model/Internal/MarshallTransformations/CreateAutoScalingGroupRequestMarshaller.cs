@@ -43,6 +43,10 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
             {
                 request.Parameters.Add("LaunchConfigurationName", StringUtils.FromString(createAutoScalingGroupRequest.LaunchConfigurationName));
             }
+            if (createAutoScalingGroupRequest != null && createAutoScalingGroupRequest.IsSetInstanceId())
+            {
+                request.Parameters.Add("InstanceId", StringUtils.FromString(createAutoScalingGroupRequest.InstanceId));
+            }
             if (createAutoScalingGroupRequest != null && createAutoScalingGroupRequest.IsSetMinSize())
             {
                 request.Parameters.Add("MinSize", StringUtils.FromInt(createAutoScalingGroupRequest.MinSize));

@@ -23,7 +23,7 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// <para> The <c>EnabledMetric</c> data type. </para>
     /// </summary>
-    public class EnabledMetric
+    public partial class EnabledMetric
     {
         
         private string metric;

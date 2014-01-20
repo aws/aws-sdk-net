@@ -27,6 +27,7 @@ namespace Amazon.ElasticTranscoder.Model
     {
         
         private string id;
+        private string arn;
         private string pipelineId;
         private JobInput input;
         private JobOutput output;
@@ -71,6 +72,35 @@ namespace Amazon.ElasticTranscoder.Model
         internal bool IsSetId()
         {
             return this.id != null;
+        }
+
+        /// <summary>
+        /// The Amazon Resource Name (ARN) for the job.
+        ///  
+        /// </summary>
+        public string Arn
+        {
+            get { return this.arn; }
+            set { this.arn = value; }
+        }
+
+        /// <summary>
+        /// Sets the Arn property
+        /// </summary>
+        /// <param name="arn">The value to set for the Arn property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public Job WithArn(string arn)
+        {
+            this.arn = arn;
+            return this;
+        }
+            
+
+        // Check to see if Arn property is set
+        internal bool IsSetArn()
+        {
+            return this.arn != null;
         }
 
         /// <summary>

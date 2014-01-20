@@ -23,7 +23,7 @@ namespace Amazon.SimpleEmail.Model
     /// <summary>
     /// <para>Describes whether an identity has a bounce topic or complaint topic set, or feedback forwarding enabled.</para>
     /// </summary>
-    public class GetIdentityNotificationAttributesResult  
+    public partial class GetIdentityNotificationAttributesResult
     {
         
         private Dictionary<string,IdentityNotificationAttributes> notificationAttributes = new Dictionary<string,IdentityNotificationAttributes>();
@@ -57,7 +57,7 @@ namespace Amazon.SimpleEmail.Model
         // Check to see if NotificationAttributes property is set
         internal bool IsSetNotificationAttributes()
         {
-            return this.notificationAttributes != null;       
+            return this.notificationAttributes != null;
         }
     }
 }

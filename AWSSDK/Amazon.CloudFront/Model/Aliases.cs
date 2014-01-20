@@ -23,7 +23,7 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// <para> A complex type that contains information about CNAMEs (alternate domain names), if any, for this distribution. </para>
     /// </summary>
-    public class Aliases
+    public partial class Aliases
     {
         
         private int? quantity;

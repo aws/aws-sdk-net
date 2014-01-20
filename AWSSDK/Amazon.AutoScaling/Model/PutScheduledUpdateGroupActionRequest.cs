@@ -27,8 +27,9 @@ namespace Amazon.AutoScaling.Model
     /// Container for the parameters to the PutScheduledUpdateGroupAction operation.
     /// <para> Creates or updates a scheduled scaling action for an Auto Scaling group. When updating a scheduled scaling action, if you leave a
     /// parameter unspecified, the corresponding value remains unchanged in the affected Auto Scaling group. </para> <para>For information on
-    /// creating or updating a scheduled action for your Auto Scaling group, see Scale Based on a Schedule.</para> <para><b>NOTE:</b> Auto Scaling
-    /// supports the date and time expressed in "YYYY-MM-DDThh:mm:ssZ" format in UTC/GMT only. </para>
+    /// creating or updating a scheduled action for your Auto Scaling group, see <a
+    /// href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/schedule_time.html" >Scale Based on a Schedule</a> .</para>
+    /// <para><b>NOTE:</b> Auto Scaling supports the date and time expressed in "YYYY-MM-DDThh:mm:ssZ" format in UTC/GMT only. </para>
     /// </summary>
     /// <seealso cref="Amazon.AutoScaling.AmazonAutoScaling.PutScheduledUpdateGroupAction"/>
     public class PutScheduledUpdateGroupActionRequest : AmazonWebServiceRequest

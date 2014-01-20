@@ -32,6 +32,8 @@
 
         public CaseDetails Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             CaseDetails caseDetails = new CaseDetails();
           caseDetails.CcEmailAddresses = null;
                         
@@ -106,8 +108,14 @@
   
               if (context.TestExpression("CcEmailAddresses", targetDepth))
               {
-                caseDetails.CcEmailAddresses = new List<String>();
-                        StringUnmarshaller unmarshaller = StringUnmarshaller.GetInstance();
+                
+                  if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                  {
+                      caseDetails.CcEmailAddresses = null;
+                      continue;
+                  }              
+                  caseDetails.CcEmailAddresses = new List<String>();
+                  StringUnmarshaller unmarshaller = StringUnmarshaller.GetInstance();
                 while (context.Read())
                 {
                   if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))

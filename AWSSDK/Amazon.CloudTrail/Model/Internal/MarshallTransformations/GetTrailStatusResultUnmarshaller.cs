@@ -63,15 +63,33 @@
                 continue;
               }
   
-              if (context.TestExpression("LatestDeliveryAttemptTime", targetDepth))
+              if (context.TestExpression("LatestDeliveryTime", targetDepth))
               {
-                getTrailStatusResult.LatestDeliveryAttemptTime = StringUnmarshaller.GetInstance().Unmarshall(context);
+                getTrailStatusResult.LatestDeliveryTime = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
-              if (context.TestExpression("LatestDeliveryAttemptSucceeded", targetDepth))
+              if (context.TestExpression("LatestNotificationTime", targetDepth))
               {
-                getTrailStatusResult.LatestDeliveryAttemptSucceeded = StringUnmarshaller.GetInstance().Unmarshall(context);
+                getTrailStatusResult.LatestNotificationTime = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
+              if (context.TestExpression("StartLoggingTime", targetDepth))
+              {
+                getTrailStatusResult.StartLoggingTime = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
+              if (context.TestExpression("StopLoggingTime", targetDepth))
+              {
+                getTrailStatusResult.StopLoggingTime = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
+              if (context.TestExpression("LatestDeliveryAttemptTime", targetDepth))
+              {
+                getTrailStatusResult.LatestDeliveryAttemptTime = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
@@ -84,6 +102,12 @@
               if (context.TestExpression("LatestNotificationAttemptSucceeded", targetDepth))
               {
                 getTrailStatusResult.LatestNotificationAttemptSucceeded = StringUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
+              if (context.TestExpression("LatestDeliveryAttemptSucceeded", targetDepth))
+              {
+                getTrailStatusResult.LatestDeliveryAttemptSucceeded = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   

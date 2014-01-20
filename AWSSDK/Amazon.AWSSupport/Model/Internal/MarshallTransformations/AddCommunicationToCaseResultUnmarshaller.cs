@@ -32,6 +32,8 @@
 
         public AddCommunicationToCaseResult Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             AddCommunicationToCaseResult addCommunicationToCaseResult = new AddCommunicationToCaseResult();
           
             int originalDepth = context.CurrentDepth;

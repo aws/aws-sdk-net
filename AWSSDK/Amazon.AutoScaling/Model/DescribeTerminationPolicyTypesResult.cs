@@ -23,7 +23,7 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// <para>The <c>TerminationPolicyTypes</c> data type.</para>
     /// </summary>
-    public class DescribeTerminationPolicyTypesResult
+    public partial class DescribeTerminationPolicyTypesResult
     {
         
         private List<string> terminationPolicyTypes = new List<string>();

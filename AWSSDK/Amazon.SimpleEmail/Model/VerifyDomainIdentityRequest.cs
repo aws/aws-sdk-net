@@ -25,7 +25,7 @@ namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
     /// Container for the parameters to the VerifyDomainIdentity operation.
-    /// <para>Verifies a domain.</para>
+    /// <para>Verifies a domain.</para> <para>This action is throttled at one request per second.</para>
     /// </summary>
     /// <seealso cref="Amazon.SimpleEmail.AmazonSimpleEmailService.VerifyDomainIdentity"/>
     public class VerifyDomainIdentityRequest : AmazonWebServiceRequest
@@ -58,7 +58,7 @@ namespace Amazon.SimpleEmail.Model
         // Check to see if Domain property is set
         internal bool IsSetDomain()
         {
-            return this.domain != null;       
+            return this.domain != null;
         }
     }
 }

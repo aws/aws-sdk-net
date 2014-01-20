@@ -53,6 +53,12 @@
                 continue;
               }
   
+              if (context.TestExpression("Arn", targetDepth))
+              {
+                job.Arn = StringUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
               if (context.TestExpression("PipelineId", targetDepth))
               {
                 job.PipelineId = StringUnmarshaller.GetInstance().Unmarshall(context);

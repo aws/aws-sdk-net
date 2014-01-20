@@ -30,7 +30,7 @@ namespace Amazon.AWSSupport.Model
 
         /// <summary>
         /// Gets and sets the DescribeTrustedAdvisorCheckSummariesResult property.
-        /// Returns the objects or data listed below if successful. Otherwise, returns an error.
+        /// Contains the following objects or data if successful. Otherwise, returns an error.
         /// </summary>
         public DescribeTrustedAdvisorCheckSummariesResult DescribeTrustedAdvisorCheckSummariesResult
         {

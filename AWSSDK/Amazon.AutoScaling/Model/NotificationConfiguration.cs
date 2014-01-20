@@ -23,7 +23,7 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// <para> The <c>NotificationConfiguration</c> data type. </para>
     /// </summary>
-    public class NotificationConfiguration
+    public partial class NotificationConfiguration
     {
         
         private string autoScalingGroupName;

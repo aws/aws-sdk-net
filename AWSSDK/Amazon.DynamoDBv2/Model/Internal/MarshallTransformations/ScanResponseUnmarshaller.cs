@@ -24,7 +24,7 @@
       /// <summary>
       /// Response Unmarshaller for Scan operation
       /// </summary>
-      internal class ScanResponseUnmarshaller : JsonResponseUnmarshaller
+      public class ScanResponseUnmarshaller : JsonResponseUnmarshaller
       {
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {

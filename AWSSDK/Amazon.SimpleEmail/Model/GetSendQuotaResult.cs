@@ -23,7 +23,7 @@ namespace Amazon.SimpleEmail.Model
     /// <summary>
     /// <para>Represents the user's current activity limits returned from a successful <c>GetSendQuota</c> request. </para>
     /// </summary>
-    public class GetSendQuotaResult  
+    public partial class GetSendQuotaResult
     {
         
         private double? max24HourSend;
@@ -56,7 +56,7 @@ namespace Amazon.SimpleEmail.Model
         // Check to see if Max24HourSend property is set
         internal bool IsSetMax24HourSend()
         {
-            return this.max24HourSend.HasValue;       
+            return this.max24HourSend.HasValue;
         }
 
         /// <summary>
@@ -85,7 +85,7 @@ namespace Amazon.SimpleEmail.Model
         // Check to see if MaxSendRate property is set
         internal bool IsSetMaxSendRate()
         {
-            return this.maxSendRate.HasValue;       
+            return this.maxSendRate.HasValue;
         }
 
         /// <summary>
@@ -114,7 +114,7 @@ namespace Amazon.SimpleEmail.Model
         // Check to see if SentLast24Hours property is set
         internal bool IsSetSentLast24Hours()
         {
-            return this.sentLast24Hours.HasValue;       
+            return this.sentLast24Hours.HasValue;
         }
     }
 }

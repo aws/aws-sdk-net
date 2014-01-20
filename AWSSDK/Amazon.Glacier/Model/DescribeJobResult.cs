@@ -23,7 +23,7 @@ namespace Amazon.Glacier.Model
     /// <summary>
     /// <para>Describes an Amazon Glacier job.</para>
     /// </summary>
-    public class DescribeJobResult  
+    public partial class DescribeJobResult
     {
         
         private string jobId;
@@ -42,6 +42,7 @@ namespace Amazon.Glacier.Model
         private string sHA256TreeHash;
         private string archiveSHA256TreeHash;
         private string retrievalByteRange;
+        private InventoryRetrievalJobDescription inventoryRetrievalParameters;
 
         /// <summary>
         /// An opaque string that identifies an Amazon Glacier job.
@@ -69,7 +70,7 @@ namespace Amazon.Glacier.Model
         // Check to see if JobId property is set
         internal bool IsSetJobId()
         {
-            return this.jobId != null;       
+            return this.jobId != null;
         }
 
         /// <summary>
@@ -98,7 +99,7 @@ namespace Amazon.Glacier.Model
         // Check to see if JobDescription property is set
         internal bool IsSetJobDescription()
         {
-            return this.jobDescription != null;       
+            return this.jobDescription != null;
         }
 
         /// <summary>
@@ -136,7 +137,7 @@ namespace Amazon.Glacier.Model
         // Check to see if Action property is set
         internal bool IsSetAction()
         {
-            return this.action != null;       
+            return this.action != null;
         }
 
         /// <summary>
@@ -165,7 +166,7 @@ namespace Amazon.Glacier.Model
         // Check to see if ArchiveId property is set
         internal bool IsSetArchiveId()
         {
-            return this.archiveId != null;       
+            return this.archiveId != null;
         }
 
         /// <summary>
@@ -194,7 +195,7 @@ namespace Amazon.Glacier.Model
         // Check to see if VaultARN property is set
         internal bool IsSetVaultARN()
         {
-            return this.vaultARN != null;       
+            return this.vaultARN != null;
         }
 
         /// <summary>
@@ -223,7 +224,7 @@ namespace Amazon.Glacier.Model
         // Check to see if CreationDate property is set
         internal bool IsSetCreationDate()
         {
-            return this.creationDate.HasValue;       
+            return this.creationDate.HasValue;
         }
 
         /// <summary>
@@ -252,7 +253,7 @@ namespace Amazon.Glacier.Model
         // Check to see if Completed property is set
         internal bool IsSetCompleted()
         {
-            return this.completed.HasValue;       
+            return this.completed.HasValue;
         }
 
         /// <summary>
@@ -290,7 +291,7 @@ namespace Amazon.Glacier.Model
         // Check to see if StatusCode property is set
         internal bool IsSetStatusCode()
         {
-            return this.statusCode != null;       
+            return this.statusCode != null;
         }
 
         /// <summary>
@@ -319,7 +320,7 @@ namespace Amazon.Glacier.Model
         // Check to see if StatusMessage property is set
         internal bool IsSetStatusMessage()
         {
-            return this.statusMessage != null;       
+            return this.statusMessage != null;
         }
 
         /// <summary>
@@ -349,7 +350,7 @@ namespace Amazon.Glacier.Model
         // Check to see if ArchiveSizeInBytes property is set
         internal bool IsSetArchiveSizeInBytes()
         {
-            return this.archiveSizeInBytes.HasValue;       
+            return this.archiveSizeInBytes.HasValue;
         }
 
         /// <summary>
@@ -379,7 +380,7 @@ namespace Amazon.Glacier.Model
         // Check to see if InventorySizeInBytes property is set
         internal bool IsSetInventorySizeInBytes()
         {
-            return this.inventorySizeInBytes.HasValue;       
+            return this.inventorySizeInBytes.HasValue;
         }
 
         /// <summary>
@@ -408,7 +409,7 @@ namespace Amazon.Glacier.Model
         // Check to see if SNSTopic property is set
         internal bool IsSetSNSTopic()
         {
-            return this.sNSTopic != null;       
+            return this.sNSTopic != null;
         }
 
         /// <summary>
@@ -437,7 +438,7 @@ namespace Amazon.Glacier.Model
         // Check to see if CompletionDate property is set
         internal bool IsSetCompletionDate()
         {
-            return this.completionDate.HasValue;       
+            return this.completionDate.HasValue;
         }
 
         /// <summary>
@@ -470,7 +471,7 @@ namespace Amazon.Glacier.Model
         // Check to see if SHA256TreeHash property is set
         internal bool IsSetSHA256TreeHash()
         {
-            return this.sHA256TreeHash != null;       
+            return this.sHA256TreeHash != null;
         }
 
         /// <summary>
@@ -499,7 +500,7 @@ namespace Amazon.Glacier.Model
         // Check to see if ArchiveSHA256TreeHash property is set
         internal bool IsSetArchiveSHA256TreeHash()
         {
-            return this.archiveSHA256TreeHash != null;       
+            return this.archiveSHA256TreeHash != null;
         }
 
         /// <summary>
@@ -530,7 +531,36 @@ namespace Amazon.Glacier.Model
         // Check to see if RetrievalByteRange property is set
         internal bool IsSetRetrievalByteRange()
         {
-            return this.retrievalByteRange != null;       
+            return this.retrievalByteRange != null;
+        }
+
+        /// <summary>
+        /// Parameters used for range inventory retrieval.
+        ///  
+        /// </summary>
+        public InventoryRetrievalJobDescription InventoryRetrievalParameters
+        {
+            get { return this.inventoryRetrievalParameters; }
+            set { this.inventoryRetrievalParameters = value; }
+        }
+
+        /// <summary>
+        /// Sets the InventoryRetrievalParameters property
+        /// </summary>
+        /// <param name="inventoryRetrievalParameters">The value to set for the InventoryRetrievalParameters property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public DescribeJobResult WithInventoryRetrievalParameters(InventoryRetrievalJobDescription inventoryRetrievalParameters)
+        {
+            this.inventoryRetrievalParameters = inventoryRetrievalParameters;
+            return this;
+        }
+            
+
+        // Check to see if InventoryRetrievalParameters property is set
+        internal bool IsSetInventoryRetrievalParameters()
+        {
+            return this.inventoryRetrievalParameters != null;
         }
     }
 }

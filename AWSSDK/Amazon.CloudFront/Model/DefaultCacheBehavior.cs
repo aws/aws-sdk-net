@@ -24,7 +24,7 @@ namespace Amazon.CloudFront.Model
     /// <para> A complex type that describes the default cache behavior if you do not specify a CacheBehavior element or if files don't match any of
     /// the values of PathPattern in CacheBehavior elements.You must create exactly one default cache behavior. </para>
     /// </summary>
-    public class DefaultCacheBehavior
+    public partial class DefaultCacheBehavior
     {
         
         private string targetOriginId;

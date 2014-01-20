@@ -23,7 +23,7 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// <para> A complex type that contains information about origins for this distribution. </para>
     /// </summary>
-    public class Origins
+    public partial class Origins
     {
         
         private int? quantity;

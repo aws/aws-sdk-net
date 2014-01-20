@@ -32,6 +32,8 @@
 
         public TrustedAdvisorResourcesSummary Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             TrustedAdvisorResourcesSummary trustedAdvisorResourcesSummary = new TrustedAdvisorResourcesSummary();
           
             int originalDepth = context.CurrentDepth;

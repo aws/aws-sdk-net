@@ -23,7 +23,7 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// <para> This data type stores information about a scheduled update to an Auto Scaling group. </para>
     /// </summary>
-    public class ScheduledUpdateGroupAction
+    public partial class ScheduledUpdateGroupAction
     {
         
         private string autoScalingGroupName;

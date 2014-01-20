@@ -25,9 +25,8 @@ namespace Amazon.AWSSupport.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeTrustedAdvisorCheckSummaries operation.
-    /// <para>This action enables you to get the latest summaries for Trusted Advisor checks that you specify in your request. You submit the list
-    /// of Trusted Advisor checks for which you want summaries. You obtain these <i>CheckIds</i> by submitting a DescribeTrustedAdvisorChecks
-    /// request. </para> <para>The response body contains an array of TrustedAdvisorCheckSummary objects. </para>
+    /// <para>Returns the summaries of the results of the Trusted Advisor checks that have the specified check IDs. Check IDs can be obtained by
+    /// calling DescribeTrustedAdvisorChecks.</para> <para>The response contains an array of TrustedAdvisorCheckSummary objects.</para>
     /// </summary>
     /// <seealso cref="Amazon.AWSSupport.AmazonAWSSupport.DescribeTrustedAdvisorCheckSummaries"/>
     public class DescribeTrustedAdvisorCheckSummariesRequest : AmazonWebServiceRequest
@@ -35,7 +34,7 @@ namespace Amazon.AWSSupport.Model
         private List<string> checkIds = new List<string>();
 
         /// <summary>
-        /// Unique identifier for a Trusted Advisor check.
+        /// The IDs of the Trusted Advisor checks.
         ///  
         /// </summary>
         public List<string> CheckIds

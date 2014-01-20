@@ -23,7 +23,7 @@ namespace Amazon.Glacier.Model
     /// <summary>
     /// <para>Contains the Amazon Glacier response to your request.</para>
     /// </summary>
-    public class ListMultipartUploadsResult  
+    public partial class ListMultipartUploadsResult
     {
         
         private List<UploadListElement> uploadsList = new List<UploadListElement>();
@@ -53,7 +53,7 @@ namespace Amazon.Glacier.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the UploadsList collection
         /// </summary>
@@ -73,7 +73,7 @@ namespace Amazon.Glacier.Model
         // Check to see if UploadsList property is set
         internal bool IsSetUploadsList()
         {
-            return this.uploadsList.Count > 0;       
+            return this.uploadsList.Count > 0;
         }
 
         /// <summary>
@@ -103,7 +103,7 @@ namespace Amazon.Glacier.Model
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;       
+            return this.marker != null;
         }
     }
 }

@@ -32,6 +32,8 @@
 
         public DescribeSeverityLevelsResult Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             DescribeSeverityLevelsResult describeSeverityLevelsResult = new DescribeSeverityLevelsResult();
           describeSeverityLevelsResult.SeverityLevels = null;
                         
@@ -46,8 +48,14 @@
               
               if (context.TestExpression("SeverityLevels", targetDepth))
               {
-                describeSeverityLevelsResult.SeverityLevels = new List<SeverityLevel>();
-                        SeverityLevelUnmarshaller unmarshaller = SeverityLevelUnmarshaller.GetInstance();
+                
+                  if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                  {
+                      describeSeverityLevelsResult.SeverityLevels = null;
+                      continue;
+                  }              
+                  describeSeverityLevelsResult.SeverityLevels = new List<SeverityLevel>();
+                  SeverityLevelUnmarshaller unmarshaller = SeverityLevelUnmarshaller.GetInstance();
                 while (context.Read())
                 {
                   if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))

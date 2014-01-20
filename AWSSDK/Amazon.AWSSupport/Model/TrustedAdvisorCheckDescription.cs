@@ -21,9 +21,9 @@ using System.IO;
 namespace Amazon.AWSSupport.Model
 {
     /// <summary>
-    /// <para>Description of each check returned by DescribeTrustedAdvisorChecks.</para>
+    /// <para>The description and metadata for a Trusted Advisor check.</para>
     /// </summary>
-    public class TrustedAdvisorCheckDescription
+    public partial class TrustedAdvisorCheckDescription
     {
         
         private string id;
@@ -33,7 +33,7 @@ namespace Amazon.AWSSupport.Model
         private List<string> metadata = new List<string>();
 
         /// <summary>
-        /// Unique identifier for a specific Trusted Advisor check description.
+        /// The unique identifier for the Trusted Advisor check.
         ///  
         /// </summary>
         public string Id
@@ -62,7 +62,7 @@ namespace Amazon.AWSSupport.Model
         }
 
         /// <summary>
-        /// Display name for the Trusted Advisor check. Corresponds to the display name for the check in the Trusted Advisor user interface.
+        /// The display name for the Trusted Advisor check.
         ///  
         /// </summary>
         public string Name
@@ -91,7 +91,7 @@ namespace Amazon.AWSSupport.Model
         }
 
         /// <summary>
-        /// Description of the Trusted Advisor check.
+        /// The description of the Trusted Advisor check, which includes the alert criteria and recommended actions (contains HTML markup).
         ///  
         /// </summary>
         public string Description
@@ -120,7 +120,7 @@ namespace Amazon.AWSSupport.Model
         }
 
         /// <summary>
-        /// Category to which the Trusted Advisor check belongs.
+        /// The category of the Trusted Advisor check.
         ///  
         /// </summary>
         public string Category
@@ -149,8 +149,8 @@ namespace Amazon.AWSSupport.Model
         }
 
         /// <summary>
-        /// List of metadata returned in <a href="API_TrustedAdvisorResourceDetail.html"
-        /// title="TrustedAdvisorResourceDetail">TrustedAdvisorResourceDetail</a> objects for a Trusted Advisor check.
+        /// The column headings for the data returned by the Trusted Advisor check. The order of the headings corresponds to the order of the data in
+        /// the <b>Metadata</b> element of the <a>TrustedAdvisorResourceDetail</a> for the check.
         ///  
         /// </summary>
         public List<string> Metadata
