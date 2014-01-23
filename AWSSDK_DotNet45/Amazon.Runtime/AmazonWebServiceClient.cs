@@ -473,9 +473,10 @@ namespace Amazon.Runtime
             {
                 if (wrappedRequest.ContentStream != null)
                 {
-                    if (wrappedRequest.OriginalRequest.IncludeSHA256Header)
+                    if (wrappedRequest.OriginalRequest.IncludeSHA256Header 
+                        && !wrappedRequest.Headers.ContainsKey(AWS4Signer.XAmzContentSha256))
                     {
-                        request.Headers.TryAddWithoutValidation("x-amz-content-sha256", wrappedRequest.ComputeContentStreamHash());
+                        request.Headers.TryAddWithoutValidation(AWS4Signer.XAmzContentSha256, wrappedRequest.ComputeContentStreamHash());
                     }
                     request.Headers.TryAddWithoutValidation("content-length", wrappedRequest.ContentStream.Length.ToString(CultureInfo.InvariantCulture));
                 }
