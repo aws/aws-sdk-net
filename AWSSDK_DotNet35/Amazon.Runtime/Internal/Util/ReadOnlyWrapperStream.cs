@@ -147,6 +147,13 @@ namespace Amazon.Runtime.Internal.Util
             }
         }
 
+        public override long Position
+        {
+            get
+            {
+                return _currentPosition;
+            }
+        }
         #endregion
     }
 }
