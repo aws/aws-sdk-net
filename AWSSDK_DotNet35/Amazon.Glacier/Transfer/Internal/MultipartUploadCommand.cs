@@ -89,7 +89,8 @@ namespace Amazon.Glacier.Transfer.Internal
                         Checksum = checksum, 
                         Range = "bytes " + currentPosition + "-" + (currentPosition + length - 1) + "/*",
                         UploadId = uploadId,
-                        VaultName = vaultName
+                        VaultName = vaultName,
+                        Body = partStream
                     };
 
                     uploadRequest.StreamTransferProgress += this.ProgressCallback;
