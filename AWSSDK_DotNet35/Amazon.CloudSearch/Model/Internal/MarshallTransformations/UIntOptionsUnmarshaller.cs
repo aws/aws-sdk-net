@@ -22,11 +22,11 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
      /// <summary>
      ///   UIntOptions Unmarshaller
      /// </summary>
-    internal class UIntOptionsUnmarshaller : IUnmarshaller<UIntOptions, XmlUnmarshallerContext>, IUnmarshaller<UIntOptions, JsonUnmarshallerContext> 
+    internal class UIntOptionsUnmarshaller : IUnmarshaller<IntOptions, XmlUnmarshallerContext>, IUnmarshaller<IntOptions, JsonUnmarshallerContext> 
     {
-        public UIntOptions Unmarshall(XmlUnmarshallerContext context) 
+        public IntOptions Unmarshall(XmlUnmarshallerContext context) 
         {
-            UIntOptions uIntOptions = new UIntOptions();
+            IntOptions uIntOptions = new IntOptions();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -40,7 +40,31 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
                     if (context.TestExpression("DefaultValue", targetDepth))
                     {
                         uIntOptions.DefaultValue = IntUnmarshaller.GetInstance().Unmarshall(context);
-                            
+
+                        continue;
+                    }
+                    if (context.TestExpression("SearchEnabled", targetDepth))
+                    {
+                        uIntOptions.SearchEnabled = BoolUnmarshaller.GetInstance().Unmarshall(context);
+
+                        continue;
+                    }
+                    if (context.TestExpression("FacetEnabled", targetDepth))
+                    {
+                        uIntOptions.FacetEnabled = BoolUnmarshaller.GetInstance().Unmarshall(context);
+
+                        continue;
+                    }
+                    if (context.TestExpression("ReturnEnabled", targetDepth))
+                    {
+                        uIntOptions.ResultEnabled = BoolUnmarshaller.GetInstance().Unmarshall(context);
+
+                        continue;
+                    }
+                    if (context.TestExpression("SortEnabled", targetDepth))
+                    {
+                        uIntOptions.SortEnabled = BoolUnmarshaller.GetInstance().Unmarshall(context);
+
                         continue;
                     }
                 }
@@ -55,7 +79,7 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
             return uIntOptions;
         }
 
-        public UIntOptions Unmarshall(JsonUnmarshallerContext context) 
+        public IntOptions Unmarshall(JsonUnmarshallerContext context) 
         {
             return null;
         }

@@ -55,10 +55,16 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
                             
                         continue;
                     }
-                    if (context.TestExpression("ResultEnabled", targetDepth))
+                    if (context.TestExpression("ReturnEnabled", targetDepth))
                     {
                         literalOptions.ResultEnabled = BoolUnmarshaller.GetInstance().Unmarshall(context);
                             
+                        continue;
+                    }
+                    if (context.TestExpression("SortEnabled", targetDepth))
+                    {
+                        literalOptions.SortEnabled = BoolUnmarshaller.GetInstance().Unmarshall(context);
+
                         continue;
                     }
                 }

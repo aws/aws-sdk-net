@@ -27,9 +27,9 @@ namespace Amazon.CloudSearch.Model
     {
         
         private string defaultValue;
-        private bool? facetEnabled;
         private bool? resultEnabled;
         private string textProcessor;
+        private bool? sortEnabled;
 
 
         /// <summary>
@@ -57,21 +57,6 @@ namespace Amazon.CloudSearch.Model
             return this.defaultValue != null;
         }
 
-        /// <summary>
-        /// Specifies whether facets are enabled for this field. Default: False.
-        ///  
-        /// </summary>
-        public bool FacetEnabled
-        {
-            get { return this.facetEnabled ?? default(bool); }
-            set { this.facetEnabled = value; }
-        }
-
-        // Check to see if FacetEnabled property is set
-        internal bool IsSetFacetEnabled()
-        {
-            return this.facetEnabled.HasValue;
-        }
 
         /// <summary>
         /// Specifies whether values of this field can be returned in search results and used for ranking. Default: False.
@@ -117,6 +102,17 @@ namespace Amazon.CloudSearch.Model
         internal bool IsSetTextProcessor()
         {
             return this.textProcessor != null;
+        }
+
+        public bool SortEnabled
+        {
+            get { return this.sortEnabled ?? default(bool); }
+            set { this.sortEnabled = value; }
+        }
+
+        internal bool IsSortEnabled()
+        {
+            return this.sortEnabled.HasValue;
         }
     }
 }

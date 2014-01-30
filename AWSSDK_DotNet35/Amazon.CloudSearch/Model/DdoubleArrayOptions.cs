@@ -1,36 +1,16 @@
-/*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- * 
- *  http://aws.amazon.com/apache2.0
- * 
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
- */
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Linq;
 using System.Text;
-using System.IO;
 
 namespace Amazon.CloudSearch.Model
 {
-    /// <summary>
-    /// <para>Options that define a literal field in the search index.</para>
-    /// </summary>
-    public class LiteralOptions
+    public class DoubleArrayOptions
     {
-        
-        private string defaultValue;
+        private double[] defaultValue;
         private bool? searchEnabled;
         private bool? facetEnabled;
         private bool? resultEnabled;
-        private bool? sortEnabled;
 
 
         /// <summary>
@@ -46,7 +26,7 @@ namespace Amazon.CloudSearch.Model
         /// </list>
         /// </para>
         /// </summary>
-        public string DefaultValue
+        public double[] DefaultValue
         {
             get { return this.defaultValue; }
             set { this.defaultValue = value; }
@@ -105,17 +85,5 @@ namespace Amazon.CloudSearch.Model
         {
             return this.resultEnabled.HasValue;
         }
-
-        public bool SortEnabled
-        {
-            get { return this.sortEnabled ?? default(bool); }
-            set { this.sortEnabled = value; }
-        }
-
-        internal bool IsSortEnabled()
-        {
-            return this.sortEnabled.HasValue;
-        }
-
     }
 }

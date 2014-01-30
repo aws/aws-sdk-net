@@ -43,22 +43,16 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
                             
                         continue;
                     }
-                    if (context.TestExpression("FacetEnabled", targetDepth))
-                    {
-                        textOptions.FacetEnabled = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("ResultEnabled", targetDepth))
+                    if (context.TestExpression("ReturnEnabled", targetDepth))
                     {
                         textOptions.ResultEnabled = BoolUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
                     }
-                    if (context.TestExpression("TextProcessor", targetDepth))
+                    if (context.TestExpression("SortEnabled", targetDepth))
                     {
-                        textOptions.TextProcessor = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        textOptions.SortEnabled = BoolUnmarshaller.GetInstance().Unmarshall(context);
+
                         continue;
                     }
                 }
