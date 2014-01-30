@@ -279,6 +279,16 @@ namespace Amazon.SQS
         }
 
         /// <summary>
+        /// Given a queue, lists the queues that are configured to use that queue as a Dead Letter Queue.
+        /// </summary>
+        /// <param name="request">ListDeadLetterSourceQueues request</param>
+        /// <returns>ListDeadLetterSourceQueues Response from the service</returns>
+        public ListDeadLetterSourceQueuesResponse ListDeadLetterSourceQueues(ListDeadLetterSourceQueuesRequest request)
+        {
+            return Invoke<ListDeadLetterSourceQueuesResponse>(request, ConvertListDeadLetterSourceQueues(request));
+        }
+
+        /// <summary>
         /// Returns a list of your queues. The maximum number of queues that can be returned is 1000.
         /// </summary>
         /// <remarks>
@@ -1101,6 +1111,21 @@ namespace Amazon.SQS
             if (request.IsSetQueueOwnerAWSAccountId())
             {
                 parameters["QueueOwnerAWSAccountId"] = request.QueueOwnerAWSAccountId;
+            }
+
+            return parameters;
+        }
+
+        /**
+         * Convert GetQueueAttributesRequest to name value pairs
+         */
+        private static IDictionary<string, string> ConvertListDeadLetterSourceQueues(ListDeadLetterSourceQueuesRequest request)
+        {
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters["Action"] = "ListDeadLetterSourceQueues";
+            if (request.IsSetQueueUrl())
+            {
+                parameters["QueueUrl"] = request.QueueUrl;
             }
 
             return parameters;

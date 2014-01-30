@@ -145,6 +145,32 @@ namespace Amazon
 
         #endregion
 
+        #region Endpoint Configuration
+
+        /// <summary>
+        /// Key for the EndpointDefinition property.
+        /// <seealso cref="Amazon.AWSConfigs.LogMetrics"/>
+        /// </summary>
+        public const string EndpointDefinitionKey = "AWSEndpointDefinition";
+
+        /// <summary>
+        /// Configures if the SDK should use a custom configuration file that defines the regions and endpoints.
+        /// <code>
+        /// &lt;appSettings&gt;
+        ///   &lt;add key="AWSEndpointDefinition" value="c:\config\endpoints.xml"/&gt;
+        /// &lt;/appSettings&gt;
+        /// </code>
+        /// </summary>
+        public static string EndpointDefinition
+        {
+            get { return _endpointDefinition; }
+            set { _endpointDefinition = value; }
+        }
+
+        private static string _endpointDefinition = GetConfig(EndpointDefinitionKey);
+
+        #endregion
+
         #region Private general methods
 
         private static void OnPropertyChanged(string name)

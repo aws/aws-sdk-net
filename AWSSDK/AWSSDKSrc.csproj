@@ -10035,6 +10035,9 @@
     <Compile Include="Amazon.SimpleNotificationService\Model\SNSRequest.cs" />
     <Compile Include="Amazon.SimpleWorkflow\Model\Internal\MarshallTransformations\RecordMarkerFailedEventAttributesUnmarshaller.cs" />
     <Compile Include="Amazon.SimpleWorkflow\Model\RecordMarkerFailedEventAttributes.cs" />
+    <Compile Include="Amazon.SQS\Model\ListDeadLetterSourceQueuesRequest.cs" />
+    <Compile Include="Amazon.SQS\Model\ListDeadLetterSourceQueuesResponse.cs" />
+    <Compile Include="Amazon.SQS\Model\ListDeadLetterSourceQueuesResult.cs" />
     <Compile Include="Amazon.SQS\Model\SQSRequest.cs" />
     <Compile Include="Amazon.StorageGateway\Model\AddCacheRequest.cs" />
     <Compile Include="Amazon.StorageGateway\Model\AddCacheResponse.cs" />

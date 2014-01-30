@@ -23,9 +23,10 @@ namespace Amazon.SimpleEmail
     /// Interface for accessing AmazonSimpleEmailService.
     ///  
     ///  Amazon Simple Email Service <para> This is the API Reference for Amazon Simple Email Service (Amazon SES). This documentation is intended to
-    /// be used in conjunction with the Amazon SES Developer Guide. </para> <para> For specific details on how to construct a service request,
-    /// please consult the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide" >Amazon SES Developer Guide</a> .
-    /// </para>
+    /// be used in conjunction with the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html" >Amazon SES Developer Guide</a>
+    /// .
+    /// </para> <para><b>NOTE:</b>For a list of Amazon SES endpoints to use in service requests, see Regions and Amazon SES in the Amazon
+    /// SES Developer Guide. </para>
     /// </summary>
     public interface AmazonSimpleEmailService : IDisposable
     {

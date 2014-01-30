@@ -114,16 +114,14 @@ namespace Amazon.Auth.AccessControlPolicy.Internal
                     {
                         if (tok.IsString)
                         {
-                            Principal principal = new Principal((string)tok);
-                            principal.Provider = kvp.Key;
+                            Principal principal = new Principal(kvp.Key, (string)tok);
                             statement.Principals.Add(principal);
                         }
                     }
                 }
                 else if(kvp.Value.IsString)
                 {
-                    Principal principal = new Principal((string)kvp.Value);
-                    principal.Provider = kvp.Key;
+                    Principal principal = new Principal(kvp.Key, (string)kvp.Value);
                     statement.Principals.Add(principal);
                 }
             }

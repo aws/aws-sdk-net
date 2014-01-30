@@ -863,9 +863,13 @@ namespace Amazon.Runtime
     {
         #region Private members
 
-        // Set preempt expiry to 2 minutes. New access keys are available 5 minutes before expiry time.
-        // http://aws.amazon.com/iam/faqs/#How_do_i_rotate_the_access_keys_on_the_EC2_instance 
-        private static TimeSpan _preemptExpiryTime = TimeSpan.FromMinutes(2);
+        // Set preempt expiry to 15 minutes. New access keys are available at least 15 minutes before expiry time.
+        // http://docs.aws.amazon.com/IAM/latest/UserGuide/role-usecase-ec2app.html
+        private static TimeSpan _preemptExpiryTime = TimeSpan.FromMinutes(15);
+
+        private CredentialsRefreshState _currentRefreshState = null;
+        private static TimeSpan _refreshAttemptPeriod = TimeSpan.FromHours(1);
+        private static Logger _logger = Logger.GetLogger(typeof(InstanceProfileAWSCredentials));
 
         #endregion
 
@@ -883,7 +887,28 @@ namespace Amazon.Runtime
 
         protected override CredentialsRefreshState GenerateNewCredentials()
         {
-            CredentialsRefreshState state = GetRefreshState();
+            CredentialsRefreshState newState = null;
+            try
+            {
+                // Attempt to get early credentials. OK to fail at this point.
+                newState = GetRefreshState();
+            }
+            catch (Exception e)
+            {
+                _logger.InfoFormat("Error getting credentials from Instance Profile service: {0}", e);
+            }
+
+            // If successful, save new credentials
+            if (newState != null)
+                _currentRefreshState = newState;
+
+            // If still not successful (no credentials available at start), attempt once more to
+            // get credentials, but now without swallowing exception
+            if (_currentRefreshState == null)
+                _currentRefreshState = GetRefreshState();
+
+            // Return credentials that will expire in at most one hour
+            CredentialsRefreshState state = GetEarlyRefreshState(_currentRefreshState);
             return state;
         }
 
@@ -963,6 +988,21 @@ namespace Amazon.Runtime
             {
                 return new Uri(Server + InfoPath);
             }
+        }
+
+        private CredentialsRefreshState GetEarlyRefreshState(CredentialsRefreshState state)
+        {
+            // New expiry time = Now + _refreshAttemptPeriod + PreemptExpiryTime
+            var newExpiryTime = DateTime.Now + _refreshAttemptPeriod + PreemptExpiryTime;
+            // Use this only if the time is earlier than the default expiration time
+            if (newExpiryTime > state.Expiration)
+                newExpiryTime = state.Expiration;
+
+            return new CredentialsRefreshState
+            {
+                Credentials = state.Credentials.Copy(),
+                Expiration = newExpiryTime
+            };
         }
 
         private CredentialsRefreshState GetRefreshState()

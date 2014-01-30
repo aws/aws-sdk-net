@@ -278,5 +278,11 @@ namespace Amazon.SQS
         /// <returns>Set Queue Attributes  Response from the service</returns>
         SetQueueAttributesResponse SetQueueAttributes(SetQueueAttributesRequest request);
 
+        /// <summary>
+        /// Given a queue, lists the queues that are configured to use that queue as a Dead Letter Queue.
+        /// </summary>
+        /// <param name="request">ListDeadLetterSourceQueues request</param>
+        /// <returns>ListDeadLetterSourceQueues Response from the service</returns>
+        ListDeadLetterSourceQueuesResponse ListDeadLetterSourceQueues(ListDeadLetterSourceQueuesRequest request);
     }
 }
