@@ -21,13 +21,19 @@ using Amazon.Runtime;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>Replace Route Table Association Result
+    /// <summary>
+    /// 
     /// </summary>
     public partial class ReplaceRouteTableAssociationResult : AmazonWebServiceResponse
     {
         
         private string newAssociationId;
 
+
+        /// <summary>
+        /// The ID of the new association.
+        ///  
+        /// </summary>
         public string NewAssociationId
         {
             get { return this.newAssociationId; }

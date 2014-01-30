@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para> The DhcpConfiguration data type </para>
+    /// <para>Describes a DHCP configuration option.</para>
     /// </summary>
     public class DhcpConfiguration
     {
@@ -31,7 +31,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// Contains the name of a DHCP option.
+        /// The name of a DHCP option.
         ///  
         /// </summary>
         public string Key
@@ -47,7 +47,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Contains a set of values for a DHCP option.
+        /// One or more values for the DHCP option.
         ///  
         /// </summary>
         public List<string> Values

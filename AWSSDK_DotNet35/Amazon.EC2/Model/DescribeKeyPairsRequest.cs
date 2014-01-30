@@ -25,8 +25,9 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeKeyPairs operation.
-    /// <para> The DescribeKeyPairs operation returns information about key pairs available to you. If you specify key pairs, information about
-    /// those key pairs is returned. Otherwise, information for all registered key pairs is returned. </para>
+    /// <para>Describes one or more of your key pairs.</para> <para>For more information about key pairs, see <a
+    /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html" >Key Pairs</a> in the <i>Amazon Elastic Compute Cloud User
+    /// Guide</i> .</para>
     /// </summary>
     public partial class DescribeKeyPairsRequest : AmazonEC2Request
     {
@@ -35,7 +36,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The optional list of key pair names to describe.
+        /// One or more key pair names. Default: Describes all your key pairs.
         ///  
         /// </summary>
         public List<string> KeyNames
@@ -51,8 +52,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// A list of filters used to match properties for KeyPairs. For a complete reference to the available filter keys for this operation, see the
-        /// <a href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon EC2 API reference</a>.
+        /// One or more filters. <ul> <li> <c>fingerprint</c> - The fingerprint of the key pair. </li> <li> <c>key-name</c> - The name of the key pair.
+        /// </li> </ul>
         ///  
         /// </summary>
         public List<Filter> Filters

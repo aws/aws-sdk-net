@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para> The SpotDatafeedSubscriptionType data type. </para>
+    /// <para>Describes the datafeed for a Spot Instance.</para>
     /// </summary>
     public class SpotDatafeedSubscription
     {
@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// Specifies the AWS account ID of the account.
+        /// The AWS account ID of the account.
         ///  
         /// </summary>
         public string OwnerId
@@ -50,7 +50,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Specifies the Amazon S3 bucket where the Spot Instance data feed is located.
+        /// The Amazon S3 bucket where the Spot Instance datafeed is located.
         ///  
         /// </summary>
         public string Bucket
@@ -66,7 +66,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Contains the prefix that is prepended to data feed files.
+        /// The prefix that is prepended to datafeed files.
         ///  
         /// </summary>
         public string Prefix
@@ -82,7 +82,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Specifies the state of the Spot Instance request.
+        /// The state of the Spot Instance datafeed subscription.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -107,7 +107,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Specifies a fault code for the Spot Instance request, if present.
+        /// The fault codes for the Spot Instance request, if any.
         ///  
         /// </summary>
         public SpotInstanceStateFault Fault

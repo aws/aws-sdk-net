@@ -25,12 +25,8 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteVpnConnection operation.
-    /// <para> Deletes a VPN connection. Use this if you want to delete a VPC and all its associated components. Another reason to use this
-    /// operation is if you believe the tunnel credentials for your VPN connection have been compromised. In that situation, you can delete the VPN
-    /// connection and create a new one that has new keys, without needing to delete the VPC or VPN gateway. If you create a new VPN connection, you
-    /// must reconfigure the customer gateway using the new configuration information returned with the new VPN connection ID. </para> <para> If
-    /// you're deleting the VPC and all its associated parts, we recommend you detach the VPN gateway from the VPC and delete the VPC before
-    /// deleting the VPN connection. </para>
+    /// <para>Deletes the specified VPN connection.</para> <para>If you're deleting the VPC and its associated components, we recommend that you
+    /// detach the virtual private gateway from the VPC and delete the VPC before deleting the VPN connection.</para>
     /// </summary>
     public partial class DeleteVpnConnectionRequest : AmazonEC2Request
     {
@@ -38,7 +34,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The ID of the VPN connection to delete
+        /// The ID of the VPN connection.
         ///  
         /// </summary>
         public string VpnConnectionId

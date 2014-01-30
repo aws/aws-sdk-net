@@ -20,7 +20,8 @@ using System.IO;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>Instance Network Interface Specification
+    /// <summary>
+    /// <para>Describes a network interface.</para>
     /// </summary>
     public class InstanceNetworkInterfaceSpecification
     {
@@ -38,7 +39,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// An existing interface to attach to a single instance. Requires n=1 instances.
+        /// The ID of the network interface.
         ///  
         /// </summary>
         public string NetworkInterfaceId
@@ -54,8 +55,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The device index. Applies to both attaching an existing network interface and when creating a network interface. Condition: If you are
-        /// specifying a network interface in the request, you must provide the device index.
+        /// The index of the device on the instance for the network interface attachment.
         ///  
         /// </summary>
         public int DeviceIndex
@@ -71,7 +71,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The subnet ID. Applies only when creating a network interface.
+        /// The ID of the subnet associated with the network string.
         ///  
         /// </summary>
         public string SubnetId
@@ -87,7 +87,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// A description. Applies only when creating a network interface.
+        /// The description of the network interface.
         ///  
         /// </summary>
         public string Description
@@ -103,7 +103,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The primary private IP address. Applies only when creating a network interface. Requires n=1 network interfaces in launch.
+        /// The private IP address of the network interface.
         ///  
         /// </summary>
         public string PrivateIpAddress
@@ -117,6 +117,11 @@ namespace Amazon.EC2.Model
         {
             return this.privateIpAddress != null;
         }
+
+        /// <summary>
+        /// The IDs of the security groups for the network interface.
+        ///  
+        /// </summary>
         public List<string> Groups
         {
             get { return this.groups; }
@@ -128,6 +133,11 @@ namespace Amazon.EC2.Model
         {
             return this.groups.Count > 0;
         }
+
+        /// <summary>
+        /// If set to <c>true</c>, the interface is deleted when the instance is terminated.
+        ///  
+        /// </summary>
         public bool DeleteOnTermination
         {
             get { return this.deleteOnTermination ?? default(bool); }
@@ -139,6 +149,11 @@ namespace Amazon.EC2.Model
         {
             return this.deleteOnTermination.HasValue;
         }
+
+        /// <summary>
+        /// One or more private IP addresses to assign to the network interface.
+        ///  
+        /// </summary>
         public List<PrivateIpAddressSpecification> PrivateIpAddresses
         {
             get { return this.privateIpAddresses; }
@@ -150,6 +165,11 @@ namespace Amazon.EC2.Model
         {
             return this.privateIpAddresses.Count > 0;
         }
+
+        /// <summary>
+        /// The number of secondary private IP addresses.
+        ///  
+        /// </summary>
         public int SecondaryPrivateIpAddressCount
         {
             get { return this.secondaryPrivateIpAddressCount ?? default(int); }
@@ -163,12 +183,9 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Indicates whether to assign a public IP address to an instance in a VPC. The public IP address is associated with a specific network
-        /// interface. If set to <c>true</c>, the following rules apply: <ol> <li> Can only be associated with a single network interface with the
-        /// device index of 0. You can't associate a public IP address with a second network interface, and you can't associate a public IP address if
-        /// you are launching more than one network interface. </li> <li> Can only be associated with a new network interface, not an existing one.
-        /// </li> </ol> Default: If launching into a default subnet, the default value is <c>true</c>. If launching into a nondefault subnet, the
-        /// default value is <c>false</c>.
+        /// Indicates whether to auto-assign a public IP address to an instance in a VPC. This public IP address can be assigned to the network
+        /// interface for eth0 only when you launch the instance. You must create the network interface instead of using an existing network interface
+        /// for eth0, and you must not specify more than one network interface.
         ///  
         /// </summary>
         public bool AssociatePublicIpAddress

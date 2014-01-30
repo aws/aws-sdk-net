@@ -20,7 +20,8 @@ using System.IO;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>Account Attribute
+    /// <summary>
+    /// <para>Describes an account attribute.</para>
     /// </summary>
     public class AccountAttribute
     {
@@ -28,6 +29,11 @@ namespace Amazon.EC2.Model
         private string attributeName;
         private List<AccountAttributeValue> attributeValues = new List<AccountAttributeValue>();
 
+
+        /// <summary>
+        /// The name of the account attribute.
+        ///  
+        /// </summary>
         public string AttributeName
         {
             get { return this.attributeName; }
@@ -39,6 +45,11 @@ namespace Amazon.EC2.Model
         {
             return this.attributeName != null;
         }
+
+        /// <summary>
+        /// One or more values for the account attribute.
+        ///  
+        /// </summary>
         public List<AccountAttributeValue> AttributeValues
         {
             get { return this.attributeValues; }

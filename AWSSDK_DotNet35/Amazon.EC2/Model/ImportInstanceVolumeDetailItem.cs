@@ -20,7 +20,8 @@ using System.IO;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>Import Instance Volume Detail Item
+    /// <summary>
+    /// <para>Describes an import volume task.</para>
     /// </summary>
     public class ImportInstanceVolumeDetailItem
     {
@@ -33,6 +34,11 @@ namespace Amazon.EC2.Model
         private string statusMessage;
         private string description;
 
+
+        /// <summary>
+        /// The number of bytes converted so far.
+        ///  
+        /// </summary>
         public long BytesConverted
         {
             get { return this.bytesConverted ?? default(long); }
@@ -44,6 +50,11 @@ namespace Amazon.EC2.Model
         {
             return this.bytesConverted.HasValue;
         }
+
+        /// <summary>
+        /// The Availability Zone where the resulting instance will reside.
+        ///  
+        /// </summary>
         public string AvailabilityZone
         {
             get { return this.availabilityZone; }
@@ -55,6 +66,11 @@ namespace Amazon.EC2.Model
         {
             return this.availabilityZone != null;
         }
+
+        /// <summary>
+        /// The image.
+        ///  
+        /// </summary>
         public DiskImageDescription Image
         {
             get { return this.image; }
@@ -66,6 +82,11 @@ namespace Amazon.EC2.Model
         {
             return this.image != null;
         }
+
+        /// <summary>
+        /// The volume.
+        ///  
+        /// </summary>
         public DiskImageVolumeDescription Volume
         {
             get { return this.volume; }
@@ -77,6 +98,11 @@ namespace Amazon.EC2.Model
         {
             return this.volume != null;
         }
+
+        /// <summary>
+        /// The status of the import of this particular disk image.
+        ///  
+        /// </summary>
         public string Status
         {
             get { return this.status; }
@@ -88,6 +114,11 @@ namespace Amazon.EC2.Model
         {
             return this.status != null;
         }
+
+        /// <summary>
+        /// The status information or errors related to the disk image.
+        ///  
+        /// </summary>
         public string StatusMessage
         {
             get { return this.statusMessage; }
@@ -99,6 +130,11 @@ namespace Amazon.EC2.Model
         {
             return this.statusMessage != null;
         }
+
+        /// <summary>
+        /// 
+        ///  
+        /// </summary>
         public string Description
         {
             get { return this.description; }

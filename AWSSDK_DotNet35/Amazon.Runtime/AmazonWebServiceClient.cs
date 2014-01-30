@@ -250,6 +250,7 @@ namespace Amazon.Runtime
             }
             catch (Exception exception)
             {
+                ProcessExceptionHandlers(exception, asyncResult.Request);
                 // Handle WebException/IOExceptionexceptions/AmazonServiceException
                 // thrown after retry limit is reached.
                 asyncResult.HandleException(exception);                

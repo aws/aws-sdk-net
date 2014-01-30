@@ -21,13 +21,19 @@ using Amazon.Runtime;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>Cancel Spot Instance Requests Result
+    /// <summary>
+    /// 
     /// </summary>
     public partial class CancelSpotInstanceRequestsResult : AmazonWebServiceResponse
     {
         
         private List<CancelledSpotInstanceRequest> cancelledSpotInstanceRequests = new List<CancelledSpotInstanceRequest>();
 
+
+        /// <summary>
+        /// One or more Spot Instance requests.
+        ///  
+        /// </summary>
         public List<CancelledSpotInstanceRequest> CancelledSpotInstanceRequests
         {
             get { return this.cancelledSpotInstanceRequests; }

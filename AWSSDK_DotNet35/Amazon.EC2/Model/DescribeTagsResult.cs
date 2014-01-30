@@ -28,10 +28,11 @@ namespace Amazon.EC2.Model
     {
         
         private List<TagDescription> tags = new List<TagDescription>();
+        private string nextToken;
 
 
         /// <summary>
-        /// A list of the tags for the specified resources.
+        /// A list of tags.
         ///  
         /// </summary>
         public List<TagDescription> Tags
@@ -44,6 +45,22 @@ namespace Amazon.EC2.Model
         internal bool IsSetTags()
         {
             return this.tags.Count > 0;
+        }
+
+        /// <summary>
+        /// The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.
+        ///  
+        /// </summary>
+        public string NextToken
+        {
+            get { return this.nextToken; }
+            set { this.nextToken = value; }
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this.nextToken != null;
         }
     }
 }

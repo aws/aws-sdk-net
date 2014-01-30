@@ -25,11 +25,12 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the CancelSpotInstanceRequests operation.
-    /// <para> Cancels one or more Spot Instance requests. </para> <para> Spot Instances are instances that Amazon EC2 starts on your behalf when
-    /// the maximum price that you specify exceeds the current Spot Price. Amazon EC2 periodically sets the Spot Price based on available Spot
-    /// Instance capacity and current spot instance requests. </para> <para> For conceptual information about Spot Instances, refer to the Amazon
-    /// Elastic Compute Cloud Developer Guide or Amazon Elastic Compute Cloud User Guide .
-    /// </para>
+    /// <para>Cancels one or more Spot Instance requests. Spot Instances are instances that Amazon EC2 starts on your behalf when the maximum price
+    /// that you specify exceeds the current Spot Price. Amazon EC2 periodically sets the Spot Price based on available Spot Instance capacity and
+    /// current Spot Instance requests. For more information about Spot Instances, see <a
+    /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html" >Spot Instances</a> in the <i>Amazon Elastic Compute
+    /// Cloud User Guide</i> .</para> <para><b>IMPORTANT:</b> Canceling a Spot Instance request does not terminate running Spot Instances associated
+    /// with the request. </para>
     /// </summary>
     public partial class CancelSpotInstanceRequestsRequest : AmazonEC2Request
     {
@@ -37,7 +38,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// Specifies the ID of the Spot Instance request.
+        /// One or more Spot Instance request IDs.
         ///  
         /// </summary>
         public List<string> SpotInstanceRequestIds

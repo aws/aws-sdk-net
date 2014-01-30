@@ -20,7 +20,8 @@ using System.IO;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>Route
+    /// <summary>
+    /// <para>Describes a route in a route table.</para>
     /// </summary>
     public class Route
     {
@@ -32,6 +33,11 @@ namespace Amazon.EC2.Model
         private string networkInterfaceId;
         private RouteState state;
 
+
+        /// <summary>
+        /// The CIDR block used for the destination match.
+        ///  
+        /// </summary>
         public string DestinationCidrBlock
         {
             get { return this.destinationCidrBlock; }
@@ -43,6 +49,11 @@ namespace Amazon.EC2.Model
         {
             return this.destinationCidrBlock != null;
         }
+
+        /// <summary>
+        /// The ID of a gateway attached to your VPC.
+        ///  
+        /// </summary>
         public string GatewayId
         {
             get { return this.gatewayId; }
@@ -54,6 +65,11 @@ namespace Amazon.EC2.Model
         {
             return this.gatewayId != null;
         }
+
+        /// <summary>
+        /// The ID of a NAT instance in your VPC.
+        ///  
+        /// </summary>
         public string InstanceId
         {
             get { return this.instanceId; }
@@ -65,6 +81,11 @@ namespace Amazon.EC2.Model
         {
             return this.instanceId != null;
         }
+
+        /// <summary>
+        /// The AWS account ID of the owner of the instance.
+        ///  
+        /// </summary>
         public string InstanceOwnerId
         {
             get { return this.instanceOwnerId; }
@@ -76,6 +97,11 @@ namespace Amazon.EC2.Model
         {
             return this.instanceOwnerId != null;
         }
+
+        /// <summary>
+        /// The ID of the network interface.
+        ///  
+        /// </summary>
         public string NetworkInterfaceId
         {
             get { return this.networkInterfaceId; }
@@ -87,6 +113,21 @@ namespace Amazon.EC2.Model
         {
             return this.networkInterfaceId != null;
         }
+
+        /// <summary>
+        /// The state of the route. The <c>blackhole</c> state indicates that the route's target isn't available (for example, the specified gateway
+        /// isn't attached to the VPC, or the specified NAT instance has been terminated).
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>active, blackhole</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
         public RouteState State
         {
             get { return this.state; }

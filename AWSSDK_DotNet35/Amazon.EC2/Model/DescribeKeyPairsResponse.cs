@@ -28,7 +28,7 @@ namespace Amazon.EC2.Model
     {
         /// <summary>
         /// Gets and sets the DescribeKeyPairsResult property.
-        /// The result of describing a user's key pairs.
+        /// 
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DescribeKeyPairsResult class are now available on the DescribeKeyPairsResponse class. You should use the properties on DescribeKeyPairsResponse instead of accessing them through DescribeKeyPairsResult.")]
         public DescribeKeyPairsResult DescribeKeyPairsResult

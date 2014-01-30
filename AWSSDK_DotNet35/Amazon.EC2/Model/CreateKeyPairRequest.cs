@@ -25,8 +25,11 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateKeyPair operation.
-    /// <para> The CreateKeyPair operation creates a new 2048 bit RSA key pair and returns a unique ID that can be used to reference this key pair
-    /// when launching new instances. For more information, see RunInstances. </para>
+    /// <para>Creates a 2048-bit RSA key pair with the specified name. Amazon EC2 stores the public key and displays the private key for you to save
+    /// to a file. The private key is returned as an unencrypted PEM encoded PKCS#8 private key. If a key with the specified name already exists,
+    /// Amazon EC2 returns an error.</para> <para>You can have up to five thousand key pairs per region.</para> <para>For more information about key
+    /// pairs, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html" >Key Pairs</a> in the <i>Amazon Elastic Compute
+    /// Cloud User Guide</i> .</para>
     /// </summary>
     public partial class CreateKeyPairRequest : AmazonEC2Request
     {
@@ -34,7 +37,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The unique name for the new key pair.
+        /// A unique name for the key pair.
         ///  
         /// </summary>
         public string KeyName

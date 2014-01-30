@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para> </para>
+    /// <para>Describes an attachment between a virtual private gateway and a VPC.</para>
     /// </summary>
     public class VpcAttachment
     {
@@ -31,7 +31,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// 
+        /// The ID of the VPC.
         ///  
         /// </summary>
         public string VpcId
@@ -47,7 +47,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// 
+        /// The current state of the attachment.
         ///  
         /// <para>
         /// <b>Constraints:</b>

@@ -154,6 +154,7 @@ namespace Amazon.Runtime.Internal.Util
                 return _currentPosition;
             }
         }
+
         #endregion
     }
 }

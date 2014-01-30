@@ -20,19 +20,13 @@ using System.IO;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>
-    /// <para> Represents an active license in use and attached to an Amazon EC2 instance. </para>
+    /// <summary>Instance License
     /// </summary>
     public class InstanceLicense
     {
         
         private string pool;
 
-
-        /// <summary>
-        /// The license pool from which this license was used (ex: <c>'windows'</c>).
-        ///  
-        /// </summary>
         public string Pool
         {
             get { return this.pool; }

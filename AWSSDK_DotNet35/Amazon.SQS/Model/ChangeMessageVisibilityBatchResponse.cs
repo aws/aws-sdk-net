@@ -28,7 +28,8 @@ namespace Amazon.SQS.Model
     {
         /// <summary>
         /// Gets and sets the ChangeMessageVisibilityBatchResult property.
-        /// 
+        /// For each message in the batch, the response contains a ChangeMessageVisibilityBatchResultEntry tag if the message succeeds or a
+        /// BatchResultErrorEntry tag if the message fails.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the ChangeMessageVisibilityBatchResult class are now available on the ChangeMessageVisibilityBatchResponse class. You should use the properties on ChangeMessageVisibilityBatchResponse instead of accessing them through ChangeMessageVisibilityBatchResult.")]
         public ChangeMessageVisibilityBatchResult ChangeMessageVisibilityBatchResult

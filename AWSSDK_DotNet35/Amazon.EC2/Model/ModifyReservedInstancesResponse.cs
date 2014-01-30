@@ -28,7 +28,7 @@ namespace Amazon.EC2.Model
     {
         /// <summary>
         /// Gets and sets the ModifyReservedInstancesResult property.
-        /// The result of modifying Reserved Instances. Contains the ID of the modification request.
+        /// 
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the ModifyReservedInstancesResult class are now available on the ModifyReservedInstancesResponse class. You should use the properties on ModifyReservedInstancesResponse instead of accessing them through ModifyReservedInstancesResult.")]
         public ModifyReservedInstancesResult ModifyReservedInstancesResult

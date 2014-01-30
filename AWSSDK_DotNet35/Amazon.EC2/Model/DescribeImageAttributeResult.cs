@@ -22,7 +22,7 @@ using Amazon.Runtime;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para> The result of describing an AMI attribute. </para>
+    /// 
     /// </summary>
     public partial class DescribeImageAttributeResult : AmazonWebServiceResponse
     {
@@ -31,7 +31,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The described image attribute of the associated AMI.
+        /// Information about the image attribute.
         ///  
         /// </summary>
         public ImageAttribute ImageAttribute

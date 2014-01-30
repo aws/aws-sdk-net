@@ -25,7 +25,9 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateNetworkInterface operation.
-    /// 
+    /// <para>Creates a network interface in the specified subnet.</para> <para>For more information about network interfaces, see <a
+    /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html" >Elastic Network Interfaces</a> in the <i>Amazon Elastic Compute
+    /// Cloud User Guide</i> .</para>
     /// </summary>
     public partial class CreateNetworkInterfaceRequest : AmazonEC2Request
     {
@@ -36,6 +38,11 @@ namespace Amazon.EC2.Model
         private List<PrivateIpAddressSpecification> privateIpAddresses = new List<PrivateIpAddressSpecification>();
         private int? secondaryPrivateIpAddressCount;
 
+
+        /// <summary>
+        /// The ID of the subnet to associate with the network interface.
+        ///  
+        /// </summary>
         public string SubnetId
         {
             get { return this.subnetId; }
@@ -47,6 +54,11 @@ namespace Amazon.EC2.Model
         {
             return this.subnetId != null;
         }
+
+        /// <summary>
+        /// A description for the network interface.
+        ///  
+        /// </summary>
         public string Description
         {
             get { return this.description; }
@@ -58,6 +70,12 @@ namespace Amazon.EC2.Model
         {
             return this.description != null;
         }
+
+        /// <summary>
+        /// The primary private IP address of the network interface. If you don't specify an IP address, Amazon EC2 selects one for you from the subnet
+        /// range.
+        ///  
+        /// </summary>
         public string PrivateIpAddress
         {
             get { return this.privateIpAddress; }
@@ -69,6 +87,11 @@ namespace Amazon.EC2.Model
         {
             return this.privateIpAddress != null;
         }
+
+        /// <summary>
+        /// The IDs of one or more security groups.
+        ///  
+        /// </summary>
         public List<string> Groups
         {
             get { return this.groups; }
@@ -80,6 +103,11 @@ namespace Amazon.EC2.Model
         {
             return this.groups.Count > 0;
         }
+
+        /// <summary>
+        /// One or more private IP addresses.
+        ///  
+        /// </summary>
         public List<PrivateIpAddressSpecification> PrivateIpAddresses
         {
             get { return this.privateIpAddresses; }
@@ -91,6 +119,14 @@ namespace Amazon.EC2.Model
         {
             return this.privateIpAddresses.Count > 0;
         }
+
+        /// <summary>
+        /// The number of secondary private IP addresses to assign to a network interface. When you specify a number of secondary IP addresses, Amazon
+        /// EC2 selects these IP addresses within the subnet range. The number of IP addresses you can assign to a network interface varies by instance
+        /// type. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html#AvailableIpPerENI">Private IP
+        /// Addresses Per ENI Per Instance Type</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        ///  
+        /// </summary>
         public int SecondaryPrivateIpAddressCount
         {
             get { return this.secondaryPrivateIpAddressCount ?? default(int); }

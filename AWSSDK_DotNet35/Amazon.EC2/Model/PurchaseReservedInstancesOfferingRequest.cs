@@ -25,9 +25,11 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the PurchaseReservedInstancesOffering operation.
-    /// <para> The PurchaseReservedInstancesOffering operation purchases a Reserved Instance for use with your account. With Amazon EC2 Reserved
-    /// Instances, you purchase the right to launch Amazon EC2 instances for a period of time (without getting insufficient capacity errors) and pay
-    /// a lower usage rate for the actual time used. </para>
+    /// <para>Purchases a Reserved Instance for use with your account. With Amazon EC2 Reserved Instances, you obtain a capacity reservation for a
+    /// certain instance configuration over a specified period of time. You pay a lower usage rate than with On-Demand instances for the time that
+    /// you actually use the capacity reservation.</para> <para>For more information, see <a
+    /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html" >Reserved Instance Marketplace</a> in the <i>Amazon Elastic
+    /// Compute Cloud User Guide</i> .</para>
     /// </summary>
     public partial class PurchaseReservedInstancesOfferingRequest : AmazonEC2Request
     {
@@ -37,7 +39,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The unique ID of the Reserved Instances offering being purchased.
+        /// The ID of the Reserved Instance offering to purchase.
         ///  
         /// </summary>
         public string ReservedInstancesOfferingId
@@ -67,6 +69,12 @@ namespace Amazon.EC2.Model
         {
             return this.instanceCount.HasValue;
         }
+
+        /// <summary>
+        /// Specified for Reserved Instance Marketplace offerings to limit the total order and ensure that the Reserved Instances are not purchased at
+        /// unexpected prices.
+        ///  
+        /// </summary>
         public ReservedInstanceLimitPrice LimitPrice
         {
             get { return this.limitPrice; }

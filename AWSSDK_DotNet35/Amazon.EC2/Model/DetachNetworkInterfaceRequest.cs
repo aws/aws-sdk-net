@@ -25,13 +25,18 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DetachNetworkInterface operation.
-    /// 
+    /// <para>Detaches a network interface from an instance.</para>
     /// </summary>
     public partial class DetachNetworkInterfaceRequest : AmazonEC2Request
     {
         private string attachmentId;
         private bool? force;
 
+
+        /// <summary>
+        /// The ID of the attachment.
+        ///  
+        /// </summary>
         public string AttachmentId
         {
             get { return this.attachmentId; }
@@ -43,6 +48,11 @@ namespace Amazon.EC2.Model
         {
             return this.attachmentId != null;
         }
+
+        /// <summary>
+        /// Specifies whether to force a detachment.
+        ///  
+        /// </summary>
         public bool Force
         {
             get { return this.force ?? default(bool); }

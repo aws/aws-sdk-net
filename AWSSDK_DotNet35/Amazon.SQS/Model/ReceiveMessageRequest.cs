@@ -25,14 +25,32 @@ namespace Amazon.SQS.Model
 {
     /// <summary>
     /// Container for the parameters to the ReceiveMessage operation.
-    /// <para>Retrieves one or more messages from the specified queue, including the message body and message ID of each message. Messages returned
-    /// by this action stay in the queue until you delete them. However, once a message is returned to a <c>ReceiveMessage</c> request, it is not
-    /// returned on subsequent <c>ReceiveMessage</c> requests for the duration of the <c>VisibilityTimeout</c> . If you do not specify a
-    /// <c>VisibilityTimeout</c> in the request, the overall visibility timeout for the queue is used for the returned messages.</para> <para>If a
-    /// message is available in the queue, the call will return immediately. Otherwise, it will wait up to <c>WaitTimeSeconds</c> for a message to
-    /// arrive. If you do not specify <c>WaitTimeSeconds</c> in the request, the queue attribute ReceiveMessageWaitTimeSeconds is used to determine
-    /// how long to wait.</para> <para>You could ask for additional information about each message through the attributes. Attributes that can be
-    /// requested are <c>[SenderId, ApproximateFirstReceiveTimestamp, ApproximateReceiveCount, SentTimestamp]</c> .</para>
+    /// <para> Retrieves one or more messages from the specified queue. Long poll support is enabled by using the <c>WaitTimeSeconds</c> parameter.
+    /// For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-long-polling.html" >Amazon
+    /// SQS Long Poll</a> in the <i>Amazon SQS Developer Guide</i> .
+    /// </para> <para> Short poll is the default behavior where a weighted random set of machines is sampled on a <c>ReceiveMessage</c> call.
+    /// This means only the messages on the sampled machines are returned. If the number of messages in the queue is small (less than 1000), it is
+    /// likely you will get fewer messages than you requested per <c>ReceiveMessage</c> call. If the number of messages in the queue is extremely
+    /// small, you might not receive any messages in a particular <c>ReceiveMessage</c> response; in which case you should repeat the request.
+    /// </para> <para> For each message returned, the response includes the following: </para>
+    /// <ul>
+    /// <li> <para> Message body </para> </li>
+    /// <li> <para> MD5 digest of the message body. For information about MD5, go to <a href="http://www.faqs.org/rfcs/rfc1321.html"
+    /// >http://www.faqs.org/rfcs/rfc1321.html</a> .
+    /// </para> </li>
+    /// <li> <para> Message ID you received when you sent the message to the queue. </para> </li>
+    /// <li> <para> Receipt handle. </para> </li>
+    /// 
+    /// </ul>
+    /// <para> The receipt handle is the identifier you must provide when deleting the message. For more information, see <a
+    /// href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ImportantIdentifiers.html" >Queue and Message
+    /// Identifiers</a> in the <i>Amazon SQS Developer Guide</i> .
+    /// </para> <para> You can provide the <c>VisibilityTimeout</c> parameter in your request, which will be applied to the messages that Amazon
+    /// SQS returns in the response. If you do not include the parameter, the overall visibility timeout for the queue is used for the returned
+    /// messages. For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html"
+    /// >Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i> .
+    /// </para> <para><b>NOTE:</b> Going forward, new attributes might be added. If you are writing code that calls this action, we recommend
+    /// that you structure your code so that it can handle new attributes gracefully. </para>
     /// </summary>
     public partial class ReceiveMessageRequest : AmazonSQSRequest
     {
@@ -44,7 +62,7 @@ namespace Amazon.SQS.Model
 
 
         /// <summary>
-        /// The URL of the SQS queue to take action on.
+        /// The URL of the Amazon SQS queue to take action on.
         ///  
         /// </summary>
         public string QueueUrl
@@ -60,8 +78,11 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// A list of attributes that need to be returned along with each message. The set of valid attributes are [SenderId,
-        /// ApproximateFirstReceiveTimestamp, ApproximateReceiveCount, SentTimestamp].
+        /// A list of attributes that need to be returned along with each message. The following lists the names and descriptions of the attributes that
+        /// can be returned: <ul> <li><c>All</c> - returns all values.</li> <li><c>ApproximateFirstReceiveTimestamp</c> - returns the time when the
+        /// message was first received (epoch time in milliseconds).</li> <li><c>ApproximateReceiveCount</c> - returns the number of times a message has
+        /// been received but not deleted.</li> <li><c>SenderId</c> - returns the AWS account number (or the IP address, if anonymous access is allowed)
+        /// of the sender.</li> <li><c>SentTimestamp</c> - returns the time when the message was sent (epoch time in milliseconds).</li> </ul>
         ///  
         /// </summary>
         public List<string> AttributeNames

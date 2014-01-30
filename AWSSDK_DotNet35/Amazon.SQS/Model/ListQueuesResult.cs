@@ -22,7 +22,7 @@ using Amazon.Runtime;
 namespace Amazon.SQS.Model
 {
     /// <summary>
-    /// 
+    /// <para> A list of your queues. </para>
     /// </summary>
     public partial class ListQueuesResult : AmazonWebServiceResponse
     {

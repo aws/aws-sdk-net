@@ -39,7 +39,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     
                     if (context.TestExpression("attachment", targetDepth))
                     {
-                        response.VpcAttachement = VpcAttachmentUnmarshaller.GetInstance().Unmarshall(context);
+                        response.VpcAttachment = VpcAttachmentUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
                     }

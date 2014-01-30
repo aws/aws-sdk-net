@@ -25,7 +25,10 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the CopySnapshot operation.
-    /// 
+    /// <para>Copies a point-in-time snapshot of an Amazon EBS volume and stores it in Amazon S3. You can copy the snapshot within the same region
+    /// or from one region to another. You can use the snapshot to create Amazon EBS volumes or Amazon Machine Images (AMIs).</para> <para>For more
+    /// information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-copy-snapshot.html" >Copying an Amazon EBS Snapshot</a> in
+    /// the <i>Amazon Elastic Compute Cloud User Guide</i> .</para>
     /// </summary>
     public partial class CopySnapshotRequest : AmazonEC2Request
     {
@@ -33,6 +36,11 @@ namespace Amazon.EC2.Model
         private string sourceSnapshotId;
         private string description;
 
+
+        /// <summary>
+        /// The ID of the region that contains the snapshot to be copied.
+        ///  
+        /// </summary>
         public string SourceRegion
         {
             get { return this.sourceRegion; }
@@ -44,6 +52,11 @@ namespace Amazon.EC2.Model
         {
             return this.sourceRegion != null;
         }
+
+        /// <summary>
+        /// The ID of the Amazon EBS snapshot to copy.
+        ///  
+        /// </summary>
         public string SourceSnapshotId
         {
             get { return this.sourceSnapshotId; }
@@ -55,6 +68,11 @@ namespace Amazon.EC2.Model
         {
             return this.sourceSnapshotId != null;
         }
+
+        /// <summary>
+        /// A description for the new Amazon EBS snapshot.
+        ///  
+        /// </summary>
         public string Description
         {
             get { return this.description; }

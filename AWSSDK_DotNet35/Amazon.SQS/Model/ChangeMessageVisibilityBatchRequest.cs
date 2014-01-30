@@ -25,8 +25,13 @@ namespace Amazon.SQS.Model
 {
     /// <summary>
     /// Container for the parameters to the ChangeMessageVisibilityBatch operation.
-    /// <para>This is a batch version of ChangeMessageVisibility. It takes multiple receipt handles and performs the operation on each of the them.
-    /// The result of the operation on each message is reported individually in the response.</para>
+    /// <para>Changes the visibility timeout of multiple messages. This is a batch version of ChangeMessageVisibility. The result of the action on
+    /// each message is reported individually in the response. You can send up to 10 ChangeMessageVisibility requests with each
+    /// <c>ChangeMessageVisibilityBatch</c> action.</para> <para><b>IMPORTANT:</b>Because the batch request can result in a combination of
+    /// successful and unsuccessful actions, you should check for batch errors even when the call returns an HTTP status code of 200.</para>
+    /// <para><b>NOTE:</b>Some API actions take lists of parameters. These lists are specified using the param.n notation. Values of n are integers
+    /// starting from 1. For example, a parameter list with two elements looks like this: </para> <para> <c>&amp;amp;Attribute.1=this</c> </para>
+    /// <para> <c>&amp;amp;Attribute.2=that</c> </para>
     /// </summary>
     public partial class ChangeMessageVisibilityBatchRequest : AmazonSQSRequest
     {
@@ -35,7 +40,7 @@ namespace Amazon.SQS.Model
 
 
         /// <summary>
-        /// The URL of the SQS queue to take action on.
+        /// The URL of the Amazon SQS queue to take action on.
         ///  
         /// </summary>
         public string QueueUrl

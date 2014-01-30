@@ -25,13 +25,20 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeVolumeAttribute operation.
-    /// 
+    /// <para>Describes the specified attribute of the specified volume. You can specify only one attribute at a time.</para> <para>For more
+    /// information about Amazon EBS volumes, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html" >Amazon EBS
+    /// Volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .</para>
     /// </summary>
     public partial class DescribeVolumeAttributeRequest : AmazonEC2Request
     {
         private string volumeId;
         private VolumeAttributeName attribute;
 
+
+        /// <summary>
+        /// The ID of the volume.
+        ///  
+        /// </summary>
         public string VolumeId
         {
             get { return this.volumeId; }
@@ -43,6 +50,20 @@ namespace Amazon.EC2.Model
         {
             return this.volumeId != null;
         }
+
+        /// <summary>
+        /// The instance attribute.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>autoEnableIO, productCodes</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
         public VolumeAttributeName Attribute
         {
             get { return this.attribute; }

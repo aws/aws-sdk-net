@@ -22,7 +22,7 @@ using Amazon.Runtime;
 namespace Amazon.SQS.Model
 {
     /// <summary>
-    /// 
+    /// <para> A list of returned queue attributes. </para>
     /// </summary>
     public partial class GetQueueAttributesResult : AmazonWebServiceResponse
     {

@@ -25,11 +25,15 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeSpotPriceHistory operation.
-    /// <para> Describes the Spot Price history. </para> <para> Spot Instances are instances that Amazon EC2 starts on your behalf when the maximum
-    /// price that you specify exceeds the current Spot Price. Amazon EC2 periodically sets the Spot Price based on available Spot Instance capacity
-    /// and current spot instance requests. </para> <para> For conceptual information about Spot Instances, refer to the Amazon Elastic Compute
-    /// Cloud Developer Guide or Amazon Elastic Compute Cloud User Guide .
-    /// </para>
+    /// <para>Describes the Spot Price history. Spot Instances are instances that Amazon EC2 starts on your behalf when the maximum price that you
+    /// specify exceeds the current Spot Price. Amazon EC2 periodically sets the Spot Price based on available Spot Instance capacity and current
+    /// Spot Instance requests. For more information about Spot Instances, see <a
+    /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html" >Spot Instances</a> in the <i>Amazon Elastic Compute
+    /// Cloud User Guide</i> .</para> <para>When you specify an Availability Zone, this operation describes the price history for the specified
+    /// Availability Zone with the most recent set of prices listed first. If you don't specify an Availability Zone, you get the prices across all
+    /// Availability Zones, starting with the most recent set. However, if you're using an API version earlier than 2011-05-15, you get the lowest
+    /// price across the region for the specified time period. The prices returned are listed in chronological order, from the oldest to the most
+    /// recent.</para>
     /// </summary>
     public partial class DescribeSpotPriceHistoryRequest : AmazonEC2Request
     {
@@ -44,7 +48,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The start date and time of the Spot Instance price history data.
+        /// The start date and time of the Spot Price history data.
         ///  
         /// </summary>
         public DateTime StartTime
@@ -60,7 +64,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The end date and time of the Spot Instance price history data.
+        /// The end date and time of the Spot Price history data.
         ///  
         /// </summary>
         public DateTime EndTime
@@ -76,7 +80,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Specifies the instance type to return.
+        /// One or more instance types.
         ///  
         /// </summary>
         public List<string> InstanceTypes
@@ -92,7 +96,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The description of the AMI.
+        /// One or more basic product descriptions.
         ///  
         /// </summary>
         public List<string> ProductDescriptions
@@ -108,8 +112,12 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// A list of filters used to match properties for SpotPriceHistory. For a complete reference to the available filter keys for this operation,
-        /// see the <a href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon EC2 API reference</a>.
+        /// One or more filters. <ul> <li> <c>availability-zone</c> - The Availability Zone for which prices should be returned. </li> <li>
+        /// <c>instance-type</c> - The type of instance (for example, <c>m1.small</c>). </li> <li> <c>product-description</c> - The product description
+        /// for the Spot Price (<c>Linux/UNIX</c> | <c>SUSE Linux</c> | <c>Windows</c> | <c>Linux/UNIX (Amazon VPC)</c> | <c>SUSE Linux (Amazon VPC)</c>
+        /// | <c>Windows (Amazon VPC)</c>). </li> <li> <c>spot-price</c> - The Spot Price. The value must match exactly (or use wildcards; greater than
+        /// or less than comparison is not supported). </li> <li> <c>timestamp</c> - The timestamp of the Spot Price history (for example,
+        /// 2010-08-16T05:06:11.000Z). You can use wildcards (* and ?). Greater than or less than comparison is not supported. </li> </ul>
         ///  
         /// </summary>
         public List<Filter> Filters
@@ -125,7 +133,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Filters the results by availability zone (ex: 'us-east-1a').
+        /// The Availability Zone.
         ///  
         /// </summary>
         public string AvailabilityZone
@@ -141,7 +149,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Specifies the number of rows to return.
+        /// The number of rows to return.
         ///  
         /// </summary>
         public int MaxResults
@@ -157,7 +165,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Specifies the next set of rows to return.
+        /// The next set of rows to return.
         ///  
         /// </summary>
         public string NextToken

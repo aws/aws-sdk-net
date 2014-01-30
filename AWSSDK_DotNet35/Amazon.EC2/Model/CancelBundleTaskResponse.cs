@@ -28,7 +28,7 @@ namespace Amazon.EC2.Model
     {
         /// <summary>
         /// Gets and sets the CancelBundleTaskResult property.
-        /// The result of canceling an Amazon EC2 bundle task.
+        /// 
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the CancelBundleTaskResult class are now available on the CancelBundleTaskResponse class. You should use the properties on CancelBundleTaskResponse instead of accessing them through CancelBundleTaskResult.")]
         public CancelBundleTaskResult CancelBundleTaskResult

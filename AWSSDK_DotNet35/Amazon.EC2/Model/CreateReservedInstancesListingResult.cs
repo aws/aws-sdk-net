@@ -21,13 +21,19 @@ using Amazon.Runtime;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>Create Reserved Instances Listing Result
+    /// <summary>
+    /// 
     /// </summary>
     public partial class CreateReservedInstancesListingResult : AmazonWebServiceResponse
     {
         
         private List<ReservedInstancesListing> reservedInstancesListings = new List<ReservedInstancesListing>();
 
+
+        /// <summary>
+        /// Information about the Reserved Instances listing.
+        ///  
+        /// </summary>
         public List<ReservedInstancesListing> ReservedInstancesListings
         {
             get { return this.reservedInstancesListings; }

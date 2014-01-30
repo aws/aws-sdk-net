@@ -22,7 +22,7 @@ using Amazon.Runtime;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para> The result of registering a new Amazon Machine Image (AMI). Contains the ID of the new image. </para>
+    /// 
     /// </summary>
     public partial class RegisterImageResult : AmazonWebServiceResponse
     {
@@ -31,7 +31,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The ID of the new Amazon Machine Image (AMI).
+        /// The ID of the newly registered AMI.
         ///  
         /// </summary>
         public string ImageId

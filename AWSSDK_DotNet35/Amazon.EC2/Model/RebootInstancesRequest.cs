@@ -25,9 +25,9 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the RebootInstances operation.
-    /// <para> The RebootInstances operation requests a reboot of one or more instances. This operation is asynchronous; it only queues a request to
-    /// reboot the specified instance(s). The operation will succeed if the instances are valid and belong to the user. Requests to reboot
-    /// terminated instances are ignored. </para>
+    /// <para>Requests a reboot of one or more instances. This operation is asynchronous; it only queues a request to reboot the specified
+    /// instances. The operation succeeds if the instances are valid and belong to you. Requests to reboot terminated instances are ignored.</para>
+    /// <para>If a Linux/Unix instance does not cleanly shut down within four minutes, Amazon EC2 performs a hard reboot.</para>
     /// </summary>
     public partial class RebootInstancesRequest : AmazonEC2Request
     {
@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The list of instances to terminate.
+        /// One or more instance IDs.
         ///  
         /// </summary>
         public List<string> InstanceIds

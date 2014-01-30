@@ -25,12 +25,13 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the ReleaseAddress operation.
-    /// <para> The ReleaseAddress operation releases an elastic IP address associated with your account. </para> <para><b>NOTE:</b> Releasing an IP
-    /// address automatically disassociates it from any instance with which it is associated. For more information, see DisassociateAddress. </para>
-    /// <para><b>IMPORTANT:</b> After releasing an elastic IP address, it is released to the IP address pool and might no longer be available to
-    /// your account. Make sure to update your DNS records and any servers or devices that communicate with the address. If you run this operation
-    /// on an elastic IP address that is already released, the address might be assigned to another account which will cause Amazon EC2 to return an
-    /// error. </para>
+    /// <para>Releases the specified Elastic IP address.</para> <para>After releasing an Elastic IP address, it is released to the IP address pool
+    /// and might be unavailable to you. Be sure to update your DNS records and any servers or devices that communicate with the address. If you
+    /// attempt to release an Elastic IP address that you already released, you'll get an <c>AuthFailure</c> error if the address is already
+    /// allocated to another AWS account.</para> <para>[EC2-Classic, default VPC] Releasing an Elastic IP address automatically disassociates it
+    /// from any instance that it's associated with. To disassociate an Elastic IP address without releasing it, use DisassociateAddress.</para>
+    /// <para>[Nondefault VPC] You must use the DisassociateAddress to disassociate the Elastic IP address before you try to release it. Otherwise,
+    /// Amazon EC2 returns an error ( <c>InvalidIPAddress.InUse</c> ).</para>
     /// </summary>
     public partial class ReleaseAddressRequest : AmazonEC2Request
     {
@@ -39,7 +40,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The elastic IP address that you are releasing from your account.
+        /// [EC2-Classic] The Elastic IP address.
         ///  
         /// </summary>
         public string PublicIp
@@ -55,7 +56,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The allocation ID that AWS provided when you allocated the address for use with Amazon VPC.
+        /// [EC2-VPC] The allocation ID.
         ///  
         /// </summary>
         public string AllocationId

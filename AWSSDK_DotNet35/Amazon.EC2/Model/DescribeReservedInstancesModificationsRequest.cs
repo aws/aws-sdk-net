@@ -25,7 +25,9 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeReservedInstancesModifications operation.
-    /// <para> The DescribeReservedInstancesModifications operation describes modifications made to Reserved Instances in your account. </para>
+    /// <para>Describes the modifications made to your Reserved Instances. If no parameter is specified, information about all your Reserved
+    /// Instances modification requests is returned. If a modification ID is specified, only information about the specific modification is
+    /// returned.</para>
     /// </summary>
     public partial class DescribeReservedInstancesModificationsRequest : AmazonEC2Request
     {
@@ -35,7 +37,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// An optional list of Reserved Instances modification IDs to describe.
+        /// IDs for the submitted modification request.
         ///  
         /// </summary>
         public List<string> ReservedInstancesModificationIds
@@ -51,7 +53,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// A string specifying the next paginated set of results to return.
+        /// The token for the next page of data.
         ///  
         /// </summary>
         public string NextToken
@@ -67,8 +69,18 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// A list of filters used to match properties for ReservedInstancesModifications. For a complete reference to the available filter keys for
-        /// this operation, see the <a href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon EC2 API reference</a>.
+        /// One or more filters. <ul> <li> <c>client-token</c> - The idempotency token for the modification request. </li> <li> <c>create-date</c> - The
+        /// time when the modification request was created. </li> <li> <c>effective-date</c> - The time when the modification becomes effective. </li>
+        /// <li> <c>modification-result.reserved-instances-id</c> - The ID for the Reserved Instances created as part of the modification request. This
+        /// ID is only available when the status of the modification is <c>fulfilled</c>. </li> <li>
+        /// <c>modification-result.target-configuration.availability-zone</c> - The Availability Zone for the new Reserved Instances. </li> <li>
+        /// <c>modification-result.target-configuration.instance-count </c> - The number of new Reserved Instances. </li> <li>
+        /// <c>modification-result.target-configuration.instance-type</c> - The instance type of the new Reserved Instances. </li> <li>
+        /// <c>modification-result.target-configuration.platform</c> - The network platform of the new Reserved Instances (<c>EC2-Classic</c> |
+        /// <c>EC2-VPC</c>). </li> <li> <c>reserved-instances-id</c> - The ID of the Reserved Instances modified. </li> <li>
+        /// <c>reserved-instances-modification-id</c> - The ID of the modification request. </li> <li> <c>status</c> - The status of the Reserved
+        /// Instances modification request (<c>processing</c> | <c>fulfilled</c> | <c>failed</c>). </li> <li> <c>status-message</c> - The reason for the
+        /// status. </li> <li> <c>update-date</c> - The time when the modification request was last updated. </li> </ul>
         ///  
         /// </summary>
         public List<Filter> Filters

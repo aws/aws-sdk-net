@@ -25,7 +25,10 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateInstanceExportTask operation.
-    /// 
+    /// <para>Exports a running or stopped instance to an Amazon S3 bucket.</para> <para>For information about the supported operating systems,
+    /// image formats, and known limitations for the types of instances you can export, see <a
+    /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ExportingEC2Instances.html" >Exporting EC2 Instances</a> in the <i>Amazon Elastic
+    /// Compute Cloud User Guide</i> .</para>
     /// </summary>
     public partial class CreateInstanceExportTaskRequest : AmazonEC2Request
     {
@@ -34,6 +37,11 @@ namespace Amazon.EC2.Model
         private ExportEnvironment targetEnvironment;
         private ExportToS3TaskSpecification exportToS3Task;
 
+
+        /// <summary>
+        /// A description for the conversion task or the resource being exported. The maximum length is 255 bytes.
+        ///  
+        /// </summary>
         public string Description
         {
             get { return this.description; }
@@ -45,6 +53,11 @@ namespace Amazon.EC2.Model
         {
             return this.description != null;
         }
+
+        /// <summary>
+        /// The ID of the instance.
+        ///  
+        /// </summary>
         public string InstanceId
         {
             get { return this.instanceId; }
@@ -56,6 +69,20 @@ namespace Amazon.EC2.Model
         {
             return this.instanceId != null;
         }
+
+        /// <summary>
+        /// The target virtualization environment.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>citrix, vmware, microsoft</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
         public ExportEnvironment TargetEnvironment
         {
             get { return this.targetEnvironment; }
@@ -67,6 +94,11 @@ namespace Amazon.EC2.Model
         {
             return this.targetEnvironment != null;
         }
+
+        /// <summary>
+        /// 
+        ///  
+        /// </summary>
         public ExportToS3TaskSpecification ExportToS3Task
         {
             get { return this.exportToS3Task; }

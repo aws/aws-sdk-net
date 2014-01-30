@@ -25,10 +25,8 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DetachInternetGateway operation.
-    /// <para> Detaches an Internet gateway from a VPC, disabling connectivity between the Internet and the VPC. The VPC must not contain any
-    /// running instances with elastic IP addresses. For more information about your VPC and Internet gateway, go to Amazon Virtual Private Cloud
-    /// User Guide. </para> <para> For more information about Amazon Virtual Private Cloud and Internet gateways, go to the Amazon Virtual Private
-    /// Cloud User Guide. </para>
+    /// <para>Detaches an Internet gateway from a VPC, disabling connectivity between the Internet and the VPC. The VPC must not contain any running
+    /// instances with Elastic IP addresses.</para>
     /// </summary>
     public partial class DetachInternetGatewayRequest : AmazonEC2Request
     {
@@ -37,7 +35,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The ID of the Internet gateway to detach.
+        /// The ID of the Internet gateway.
         ///  
         /// </summary>
         public string InternetGatewayId

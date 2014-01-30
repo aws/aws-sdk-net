@@ -25,9 +25,11 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeAvailabilityZones operation.
-    /// <para> The DescribeAvailabilityZones operation describes availability zones that are currently available to the account and their states.
-    /// </para> <para> Availability zones are not the same across accounts. The availability zone <c>us-east-1a</c> for account A is not necessarily
-    /// the same as <c>us-east-1a</c> for account B. Zone assignments are mapped independently for each account. </para>
+    /// <para>Describes one or more of the Availability Zones that are available to you. The results include zones only for the region you're
+    /// currently using. If there is an event impacting an Availability Zone, you can use this request to view the state and any provided message
+    /// for that Availability Zone.</para> <para>For more information, see <a
+    /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html" >Regions and Availability Zones</a> in the
+    /// <i>Amazon Elastic Compute Cloud User Guide</i> .</para>
     /// </summary>
     public partial class DescribeAvailabilityZonesRequest : AmazonEC2Request
     {
@@ -36,7 +38,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// A list of the availability zone names to describe.
+        /// The names of one or more Availability Zones.
         ///  
         /// </summary>
         public List<string> ZoneNames
@@ -52,8 +54,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// A list of filters used to match properties for AvailabilityZones. For a complete reference to the available filter keys for this operation,
-        /// see the <a href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon EC2 API reference</a>.
+        /// One or more filters. <ul> <li> <c>message</c> - Information about the Availability Zone. </li> <li> <c>region-name</c> - The name of the
+        /// region for the Availability Zone (for example, <c>us-east-1</c>). </li> <li> <c>state</c> - The state of the Availability Zone
+        /// (<c>available</c> | <c>impaired</c> | <c>unavailable</c>). </li> <li> <c>zone-name</c> - The name of the Availability Zone (for example,
+        /// <c>us-east-1a</c>). </li> </ul>
         ///  
         /// </summary>
         public List<Filter> Filters

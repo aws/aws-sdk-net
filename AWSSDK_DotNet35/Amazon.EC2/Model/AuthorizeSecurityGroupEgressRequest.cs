@@ -25,15 +25,15 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the AuthorizeSecurityGroupEgress operation.
-    /// <para> This action applies only to security groups in a VPC; it's not supported for EC2 security groups. For information about Amazon
-    /// Virtual Private Cloud and VPC security groups, go to the Amazon Virtual Private Cloud User Guide. </para> <para> The action adds one or more
-    /// egress rules to a VPC security group. Specifically, this permits instances in a security group to send traffic to either one or more
-    /// destination CIDR IP address ranges, or to one or more destination security groups in the same VPC. </para> <para> Each rule consists of the
-    /// protocol (e.g., TCP), plus either a CIDR range, or a source group. For the TCP and UDP protocols, you must also specify the destination port
-    /// or port range. For the ICMP protocol, you must also specify the ICMP type and code. You can use <c>-1</c> as a wildcard for the ICMP type or
-    /// code. </para> <para> Rule changes are propagated to instances within the security group as quickly as possible. However, a small delay might
-    /// occur. </para> <para> <b>Important:</b> For VPC security groups: You can have up to 50 rules total per group (covering both ingress and
-    /// egress). </para>
+    /// <para>Adds one or more egress rules to a security group for use with a VPC. Specifically, this action permits instances to send traffic to
+    /// one or more CIDR IP address ranges, or to one or more security groups for the same VPC.</para> <para><b>IMPORTANT:</b> You can have up to 50
+    /// rules per security group (covering both ingress and egress rules). </para> <para>A security group is for use with instances either in the
+    /// EC2-Classic platform or in a specific VPC. This action doesn't apply to security groups for use in EC2-Classic. For more information, see <a
+    /// href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html" >Security Groups for Your VPC</a> in the <i>Amazon
+    /// Virtual Private Cloud User Guide</i> .</para> <para>Each rule consists of the protocol (for example, TCP), plus either a CIDR range or a
+    /// source group. For the TCP and UDP protocols, you must also specify the destination port or port range. For the ICMP protocol, you must also
+    /// specify the ICMP type and code. You can use -1 for the type or code to mean all types or all codes.</para> <para>Rule changes are propagated
+    /// to affected instances as quickly as possible. However, a small delay might occur.</para>
     /// </summary>
     public partial class AuthorizeSecurityGroupEgressRequest : AmazonEC2Request
     {
@@ -42,7 +42,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// ID of the VPC security group to modify.
+        /// The ID of the security group.
         ///  
         /// </summary>
         public string GroupId
@@ -58,8 +58,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// List of IP permissions to authorize on the specified security group. Specifying permissions through IP permissions is the preferred way of
-        /// authorizing permissions since it offers more flexibility and control.
+        /// <p/>
         ///  
         /// </summary>
         public List<IpPermission> IpPermissions

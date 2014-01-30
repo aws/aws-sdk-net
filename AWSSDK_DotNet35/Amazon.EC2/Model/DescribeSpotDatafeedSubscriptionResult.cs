@@ -21,7 +21,8 @@ using Amazon.Runtime;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>Describe Spot Datafeed Subscription Result
+    /// <summary>
+    /// 
     /// </summary>
     public partial class DescribeSpotDatafeedSubscriptionResult : AmazonWebServiceResponse
     {

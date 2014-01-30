@@ -20,13 +20,19 @@ using System.IO;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>Volume Detail
+    /// <summary>
+    /// <para>Describes an Amazon EBS volume.</para>
     /// </summary>
     public class VolumeDetail
     {
         
         private long? size;
 
+
+        /// <summary>
+        /// The size of the volume.
+        ///  
+        /// </summary>
         public long Size
         {
             get { return this.size ?? default(long); }

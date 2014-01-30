@@ -25,11 +25,11 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the RevokeSecurityGroupIngress operation.
-    /// <para> The RevokeSecurityGroupIngress operation revokes permissions from a security group. The permissions used to revoke must be specified
-    /// using the same values used to grant the permissions. </para> <para> Permissions are specified by IP protocol (TCP, UDP, or ICMP), the source
-    /// of the request (by IP range or an Amazon EC2 user-group pair), the source and destination port ranges (for TCP and UDP), and the ICMP codes
-    /// and types (for ICMP). </para> <para> Permission changes are quickly propagated to instances within the security group. However, depending on
-    /// the number of instances in the group, a small delay might occur. </para>
+    /// <para>Removes one or more ingress rules from a security group. The values that you specify in the revoke request (for example, ports) must
+    /// match the existing rule's values for the rule to be removed.</para> <para>Each rule consists of the protocol and the CIDR range or source
+    /// security group. For the TCP and UDP protocols, you must also specify the destination port or range of ports. For the ICMP protocol, you must
+    /// also specify the ICMP type and code.</para> <para>Rule changes are propagated to instances within the security group as quickly as possible.
+    /// However, a small delay might occur.</para>
     /// </summary>
     public partial class RevokeSecurityGroupIngressRequest : AmazonEC2Request
     {
@@ -39,8 +39,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// Name of the standard (EC2) security group to modify. The group must belong to your account. Can be used instead of GroupID for standard
-        /// (EC2) security groups.
+        /// [EC2-Classic, default VPC] The name of the security group.
         ///  
         /// </summary>
         public string GroupName
@@ -56,8 +55,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// ID of the standard (EC2) or VPC security group to modify. The group must belong to your account. Required for VPC security groups; can be
-        /// used instead of GroupName for standard (EC2) security groups.
+        /// The ID of the security group.
         ///  
         /// </summary>
         public string GroupId
@@ -73,9 +71,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// List of IP permissions to revoke on the specified security group. For an IP permission to be removed, it must exactly match one of the IP
-        /// permissions you specify in this list. Specifying permissions through IP permissions is the preferred way of revoking permissions since it
-        /// offers more flexibility and control.
+        /// <p/>
         ///  
         /// </summary>
         public List<IpPermission> IpPermissions

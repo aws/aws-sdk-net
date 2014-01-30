@@ -25,13 +25,19 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteVpnConnectionRoute operation.
-    /// 
+    /// <para>Deletes the specified static route associated with a VPN connection between an existing virtual private gateway and a VPN customer
+    /// gateway. The static route allows traffic to be routed from the virtual private gateway to the VPN customer gateway.</para>
     /// </summary>
     public partial class DeleteVpnConnectionRouteRequest : AmazonEC2Request
     {
         private string vpnConnectionId;
         private string destinationCidrBlock;
 
+
+        /// <summary>
+        /// The ID of the VPN connection.
+        ///  
+        /// </summary>
         public string VpnConnectionId
         {
             get { return this.vpnConnectionId; }
@@ -43,6 +49,11 @@ namespace Amazon.EC2.Model
         {
             return this.vpnConnectionId != null;
         }
+
+        /// <summary>
+        /// The CIDR block associated with the local subnet of the customer network.
+        ///  
+        /// </summary>
         public string DestinationCidrBlock
         {
             get { return this.destinationCidrBlock; }

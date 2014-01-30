@@ -21,13 +21,19 @@ using Amazon.Runtime;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>Create Route Table Result
+    /// <summary>
+    /// 
     /// </summary>
     public partial class CreateRouteTableResult : AmazonWebServiceResponse
     {
         
         private RouteTable routeTable;
 
+
+        /// <summary>
+        /// Information about the route table.
+        ///  
+        /// </summary>
         public RouteTable RouteTable
         {
             get { return this.routeTable; }

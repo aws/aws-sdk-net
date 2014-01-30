@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para> The Subnet data type. </para>
+    /// <para>Describes a subnet.</para>
     /// </summary>
     public class Subnet
     {
@@ -38,7 +38,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// Specifies the ID of the subnet.
+        /// The ID of the subnet.
         ///  
         /// </summary>
         public string SubnetId
@@ -54,7 +54,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Describes the current state of the subnet. The state of the subnet may be either <c>pending</c> or <c>available</c>.
+        /// The current state of the subnet.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -79,7 +79,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Contains the ID of the VPC the subnet is in.
+        /// The ID of the VPC the subnet is in.
         ///  
         /// </summary>
         public string VpcId
@@ -95,7 +95,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Specifies the CIDR block assigned to the subnet.
+        /// The CIDR block assigned to the subnet.
         ///  
         /// </summary>
         public string CidrBlock
@@ -111,8 +111,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Specifies the number of unused IP addresses in the subnet. <note> The IP addresses for any stopped instances are considered unavailable.
-        /// </note>
+        /// The number of unused IP addresses in the subnet. Note that the IP addresses for any stopped instances are considered unavailable.
         ///  
         /// </summary>
         public int AvailableIpAddressCount
@@ -128,7 +127,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Specifies the Availability Zone the subnet is in.
+        /// The Availability Zone of the subnet.
         ///  
         /// </summary>
         public string AvailabilityZone
@@ -142,6 +141,11 @@ namespace Amazon.EC2.Model
         {
             return this.availabilityZone != null;
         }
+
+        /// <summary>
+        /// Indicates whether this is the default subnet for the Availability Zone.
+        ///  
+        /// </summary>
         public bool DefaultForAz
         {
             get { return this.defaultForAz ?? default(bool); }
@@ -153,6 +157,11 @@ namespace Amazon.EC2.Model
         {
             return this.defaultForAz.HasValue;
         }
+
+        /// <summary>
+        /// Indicates whether instances launched in this subnet receive a public IP address.
+        ///  
+        /// </summary>
         public bool MapPublicIpOnLaunch
         {
             get { return this.mapPublicIpOnLaunch ?? default(bool); }
@@ -166,7 +175,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// A list of tags for the Subnet.
+        /// Any tags assigned to the subnet.
         ///  
         /// </summary>
         public List<Tag> Tags

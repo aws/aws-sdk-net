@@ -25,7 +25,13 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DetachVolume operation.
-    /// <para> Detach a previously attached volume from a running instance. </para>
+    /// <para>Detaches an Amazon EBS volume from an instance. Make sure to unmount any file systems on the device within your operating system
+    /// before detaching the volume. Failure to do so results in the volume being stuck in a busy state while detaching.</para> <para>If an Amazon
+    /// EBS volume is the root device of an instance, it can't be detached while the instance is running. To detach the root volume, stop the
+    /// instance first.</para> <para>If the root volume is detached from an instance with an AWS Marketplace product code, then the AWS Marketplace
+    /// product codes from that volume are no longer associated with the instance.</para> <para>For more information, see <a
+    /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-detaching-volume.html" >Detaching an Amazon EBS Volume</a> in the <i>Amazon
+    /// Elastic Compute Cloud User Guide</i> .</para>
     /// </summary>
     public partial class DetachVolumeRequest : AmazonEC2Request
     {
@@ -36,7 +42,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The ID of the volume to detach.
+        /// The ID of the volume.
         ///  
         /// </summary>
         public string VolumeId
@@ -52,7 +58,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The ID of the instance from which to detach the the specified volume.
+        /// The ID of the instance.
         ///  
         /// </summary>
         public string InstanceId
@@ -68,7 +74,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The device name to which the volume is attached on the specified instance.
+        /// The device name.
         ///  
         /// </summary>
         public string Device
@@ -84,10 +90,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Forces detachment if the previous detachment attempt did not occur cleanly (logging into an instance, unmounting the volume, and detaching
-        /// normally). This option can lead to data loss or a corrupted file system. Use this option only as a last resort to detach a volume from a
-        /// failed instance. The instance will not have an opportunity to flush file system caches nor file system meta data. If you use this option,
-        /// you must perform file system check and repair procedures.
+        /// Forces detachment if the previous detachment attempt did not occur cleanly (for example, logging into an instance, unmounting the volume,
+        /// and detaching normally). This option can lead to data loss or a corrupted file system. Use this option only as a last resort to detach a
+        /// volume from a failed instance. The instance won't have an opportunity to flush file system caches or file system metadata. If you use this
+        /// option, you must perform file system check and repair procedures.
         ///  
         /// </summary>
         public bool Force

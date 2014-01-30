@@ -110,6 +110,14 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     blockDeviceMappingsListIndex++;
                 }
             }
+            if (registerImageRequest != null && registerImageRequest.IsSetVirtualizationType())
+            {
+                request.Parameters.Add("VirtualizationType", StringUtils.FromString(registerImageRequest.VirtualizationType));
+            }
+            if (registerImageRequest != null && registerImageRequest.IsSetSriovNetSupport())
+            {
+                request.Parameters.Add("SriovNetSupport", StringUtils.FromString(registerImageRequest.SriovNetSupport));
+            }
 
             return request;
         }

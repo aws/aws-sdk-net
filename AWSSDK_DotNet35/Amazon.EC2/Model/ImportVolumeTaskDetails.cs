@@ -20,7 +20,8 @@ using System.IO;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>Import Volume Task Details
+    /// <summary>
+    /// <para>Describes an import volume task.</para>
     /// </summary>
     public class ImportVolumeTaskDetails
     {
@@ -31,6 +32,11 @@ namespace Amazon.EC2.Model
         private DiskImageDescription image;
         private DiskImageVolumeDescription volume;
 
+
+        /// <summary>
+        /// The number of bytes converted so far.
+        ///  
+        /// </summary>
         public long BytesConverted
         {
             get { return this.bytesConverted ?? default(long); }
@@ -42,6 +48,11 @@ namespace Amazon.EC2.Model
         {
             return this.bytesConverted.HasValue;
         }
+
+        /// <summary>
+        /// The Availability Zone where the resulting volume will reside.
+        ///  
+        /// </summary>
         public string AvailabilityZone
         {
             get { return this.availabilityZone; }
@@ -53,6 +64,11 @@ namespace Amazon.EC2.Model
         {
             return this.availabilityZone != null;
         }
+
+        /// <summary>
+        /// The description you provided when starting the import volume task.
+        ///  
+        /// </summary>
         public string Description
         {
             get { return this.description; }
@@ -64,6 +80,11 @@ namespace Amazon.EC2.Model
         {
             return this.description != null;
         }
+
+        /// <summary>
+        /// The image.
+        ///  
+        /// </summary>
         public DiskImageDescription Image
         {
             get { return this.image; }
@@ -75,6 +96,11 @@ namespace Amazon.EC2.Model
         {
             return this.image != null;
         }
+
+        /// <summary>
+        /// The volume.
+        ///  
+        /// </summary>
         public DiskImageVolumeDescription Volume
         {
             get { return this.volume; }

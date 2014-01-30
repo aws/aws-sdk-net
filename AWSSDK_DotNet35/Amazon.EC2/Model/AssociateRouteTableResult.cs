@@ -21,13 +21,19 @@ using Amazon.Runtime;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>Associate Route Table Result
+    /// <summary>
+    /// 
     /// </summary>
     public partial class AssociateRouteTableResult : AmazonWebServiceResponse
     {
         
         private string associationId;
 
+
+        /// <summary>
+        /// The route table association ID (needed to disassociate the route table).
+        ///  
+        /// </summary>
         public string AssociationId
         {
             get { return this.associationId; }

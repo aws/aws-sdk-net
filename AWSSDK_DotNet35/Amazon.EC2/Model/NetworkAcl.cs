@@ -20,7 +20,8 @@ using System.IO;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>Network Acl
+    /// <summary>
+    /// <para>Describes a network ACL.</para>
     /// </summary>
     public class NetworkAcl
     {
@@ -32,6 +33,11 @@ namespace Amazon.EC2.Model
         private List<NetworkAclAssociation> associations = new List<NetworkAclAssociation>();
         private List<Tag> tags = new List<Tag>();
 
+
+        /// <summary>
+        /// The ID of the network ACL.
+        ///  
+        /// </summary>
         public string NetworkAclId
         {
             get { return this.networkAclId; }
@@ -43,6 +49,11 @@ namespace Amazon.EC2.Model
         {
             return this.networkAclId != null;
         }
+
+        /// <summary>
+        /// The ID of the VPC for the network ACL.
+        ///  
+        /// </summary>
         public string VpcId
         {
             get { return this.vpcId; }
@@ -54,6 +65,11 @@ namespace Amazon.EC2.Model
         {
             return this.vpcId != null;
         }
+
+        /// <summary>
+        /// Indicates whether this is the default network ACL for the VPC.
+        ///  
+        /// </summary>
         public bool IsDefault
         {
             get { return this.isDefault ?? default(bool); }
@@ -65,6 +81,11 @@ namespace Amazon.EC2.Model
         {
             return this.isDefault.HasValue;
         }
+
+        /// <summary>
+        /// One or more entries (rules) in the network ACL.
+        ///  
+        /// </summary>
         public List<NetworkAclEntry> Entries
         {
             get { return this.entries; }
@@ -76,6 +97,11 @@ namespace Amazon.EC2.Model
         {
             return this.entries.Count > 0;
         }
+
+        /// <summary>
+        /// Any associations between the network ACL and one or more subnets
+        ///  
+        /// </summary>
         public List<NetworkAclAssociation> Associations
         {
             get { return this.associations; }
@@ -87,6 +113,11 @@ namespace Amazon.EC2.Model
         {
             return this.associations.Count > 0;
         }
+
+        /// <summary>
+        /// Any tags assigned to the network ACL.
+        ///  
+        /// </summary>
         public List<Tag> Tags
         {
             get { return this.tags; }

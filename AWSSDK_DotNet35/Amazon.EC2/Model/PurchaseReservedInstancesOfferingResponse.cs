@@ -28,7 +28,7 @@ namespace Amazon.EC2.Model
     {
         /// <summary>
         /// Gets and sets the PurchaseReservedInstancesOfferingResult property.
-        /// The result of purchasing a Reserved Instances offering. Contains the new, unique ID of the Reserved Instances purchased for your account.
+        /// 
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the PurchaseReservedInstancesOfferingResult class are now available on the PurchaseReservedInstancesOfferingResponse class. You should use the properties on PurchaseReservedInstancesOfferingResponse instead of accessing them through PurchaseReservedInstancesOfferingResult.")]
         public PurchaseReservedInstancesOfferingResult PurchaseReservedInstancesOfferingResult

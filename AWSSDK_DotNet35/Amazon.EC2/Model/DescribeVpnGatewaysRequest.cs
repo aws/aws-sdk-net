@@ -25,12 +25,9 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeVpnGateways operation.
-    /// <para> Gives you information about your VPN gateways. You can filter the results to return information only about VPN gateways that match
-    /// criteria you specify. </para> <para> For example, you could ask to get information about a particular VPN gateway (or all) only if the
-    /// gateway's state is pending or available. You can specify multiple filters (e.g., the VPN gateway is in a particular Availability Zone and
-    /// the gateway's state is pending or available). </para> <para> The result includes information for a particular VPN gateway only if the
-    /// gateway matches all your filters. If there's no match, no special message is returned; the response is simply empty. The following table
-    /// shows the available filters. </para>
+    /// <para>Describes one or more of your virtual private gateways.</para> <para>For more information about virtual private gateways, see <a
+    /// href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html" >Adding an IPsec Hardware VPN to Your VPC</a> in the <i>Amazon
+    /// Virtual Private Cloud User Guide</i> .</para>
     /// </summary>
     public partial class DescribeVpnGatewaysRequest : AmazonEC2Request
     {
@@ -39,8 +36,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// A list of filters used to match properties for VPN Gateways. For a complete reference to the available filter keys for this operation, see
-        /// the <a href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon EC2 API reference</a>.
+        /// One or more virtual private gateway IDs. Default: Describes all your virtual private gateways.
         ///  
         /// </summary>
         public List<string> VpnGatewayIds
@@ -56,8 +52,17 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// A list of filters used to match properties for VPN Gateways. For a complete reference to the available filter keys for this operation, see
-        /// the <a href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon EC2 API reference</a>.
+        /// One or more filters. <ul> <li> <c>attachment.state</c> - The current state of the attachment between the gateway and the VPC
+        /// (<c>attaching</c> | <c>attached</c> | <c>detaching</c> | <c>detached</c>). </li> <li> <c>attachment.vpc-id</c> - The ID of an attached VPC.
+        /// </li> <li> <c>availability-zone</c> - The Availability Zone for the virtual private gateway. </li> <li> <c>state</c> - The state of the
+        /// virtual private gateway (<c>pending</c> | <c>available</c> | <c>deleting</c> | <c>deleted</c>). </li> <li>
+        /// <c>tag</c>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned to the resource. </li> <li> <c>tag-key</c> - The key of a
+        /// tag assigned to the resource. This filter is independent of the <c>tag-value</c> filter. For example, if you use both the filter
+        /// "tag-key=Purpose" and the filter "tag-value=X", you get any resources assigned both the tag key Purpose (regardless of what the tag's value
+        /// is), and the tag value X (regardless of what the tag's key is). If you want to list only resources where Purpose is X, see the
+        /// <c>tag</c>:<i>key</i>=<i>value</i> filter. </li> <li> <c>tag-value</c> - The value of a tag assigned to the resource. This filter is
+        /// independent of the <c>tag-key</c> filter. </li> <li> <c>type</c> - The type of virtual private gateway. Currently the only supported type is
+        /// <c>ipsec.1</c>. </li> <li> <c>vpn-gateway-id</c> - The ID of the virtual private gateway. </li> </ul>
         ///  
         /// </summary>
         public List<Filter> Filters

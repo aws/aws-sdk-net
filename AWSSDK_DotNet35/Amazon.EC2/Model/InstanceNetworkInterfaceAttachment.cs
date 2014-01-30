@@ -20,7 +20,8 @@ using System.IO;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>Instance Network Interface Attachment
+    /// <summary>
+    /// <para>Describes a network interface attachment.</para>
     /// </summary>
     public class InstanceNetworkInterfaceAttachment
     {
@@ -31,6 +32,11 @@ namespace Amazon.EC2.Model
         private DateTime? attachTime;
         private bool? deleteOnTermination;
 
+
+        /// <summary>
+        /// The ID of the network interface attachment.
+        ///  
+        /// </summary>
         public string AttachmentId
         {
             get { return this.attachmentId; }
@@ -42,6 +48,11 @@ namespace Amazon.EC2.Model
         {
             return this.attachmentId != null;
         }
+
+        /// <summary>
+        /// The index of the device on the instance for the network interface attachment.
+        ///  
+        /// </summary>
         public int DeviceIndex
         {
             get { return this.deviceIndex ?? default(int); }
@@ -53,6 +64,20 @@ namespace Amazon.EC2.Model
         {
             return this.deviceIndex.HasValue;
         }
+
+        /// <summary>
+        /// The attachment state.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>attaching, attached, detaching, detached</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
         public AttachmentStatus Status
         {
             get { return this.status; }
@@ -64,6 +89,11 @@ namespace Amazon.EC2.Model
         {
             return this.status != null;
         }
+
+        /// <summary>
+        /// The time stamp when the attachment initiated.
+        ///  
+        /// </summary>
         public DateTime AttachTime
         {
             get { return this.attachTime ?? default(DateTime); }
@@ -75,6 +105,11 @@ namespace Amazon.EC2.Model
         {
             return this.attachTime.HasValue;
         }
+
+        /// <summary>
+        /// Indicates whether the network interface is deleted when the instance is terminated.
+        ///  
+        /// </summary>
         public bool DeleteOnTermination
         {
             get { return this.deleteOnTermination ?? default(bool); }

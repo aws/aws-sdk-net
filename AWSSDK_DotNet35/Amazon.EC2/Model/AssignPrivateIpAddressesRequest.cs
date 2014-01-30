@@ -25,7 +25,13 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the AssignPrivateIpAddresses operation.
-    /// 
+    /// <para>Assigns one or more secondary private IP addresses to the specified network interface. You can specify one or more specific secondary
+    /// IP addresses, or you can specify the number of secondary IP addresses to be automatically assigned within the subnet's CIDR block range. The
+    /// number of secondary IP addresses that you can assign to an instance varies by instance type. For information about instance types, see <a
+    /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html" >Instance Types</a> in the <i>Amazon Elastic Compute Cloud
+    /// User Guide</i> . For more information about Elastic IP addresses, see <a
+    /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html" >Elastic IP Addresses</a> in the <i>Amazon Elastic
+    /// Compute Cloud User Guide</i> .</para> <para>AssignPrivateIpAddresses is available only in EC2-VPC.</para>
     /// </summary>
     public partial class AssignPrivateIpAddressesRequest : AmazonEC2Request
     {
@@ -34,6 +40,11 @@ namespace Amazon.EC2.Model
         private int? secondaryPrivateIpAddressCount;
         private bool? allowReassignment;
 
+
+        /// <summary>
+        /// The ID of the network interface.
+        ///  
+        /// </summary>
         public string NetworkInterfaceId
         {
             get { return this.networkInterfaceId; }
@@ -45,6 +56,12 @@ namespace Amazon.EC2.Model
         {
             return this.networkInterfaceId != null;
         }
+
+        /// <summary>
+        /// One or more IP addresses to be assigned as a secondary private IP address to the network interface. If you don't specify an IP address,
+        /// Amazon EC2 automatically selects an IP address within the subnet range.
+        ///  
+        /// </summary>
         public List<string> PrivateIpAddresses
         {
             get { return this.privateIpAddresses; }
@@ -56,6 +73,11 @@ namespace Amazon.EC2.Model
         {
             return this.privateIpAddresses.Count > 0;
         }
+
+        /// <summary>
+        /// The number of secondary IP addresses to assign to the network interface.
+        ///  
+        /// </summary>
         public int SecondaryPrivateIpAddressCount
         {
             get { return this.secondaryPrivateIpAddressCount ?? default(int); }
@@ -67,6 +89,12 @@ namespace Amazon.EC2.Model
         {
             return this.secondaryPrivateIpAddressCount.HasValue;
         }
+
+        /// <summary>
+        /// Indicates whether to allow an IP address that is already assigned to another network interface or instance to be reassigned to the specified
+        /// network interface.
+        ///  
+        /// </summary>
         public bool AllowReassignment
         {
             get { return this.allowReassignment ?? default(bool); }

@@ -25,12 +25,19 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the StopInstances operation.
-    /// <para> Stops an instance that uses an Amazon EBS volume as its root device. Instances that use Amazon EBS volumes as their root devices can
-    /// be quickly stopped and started. When an instance is stopped, the compute resources are released and you are not billed for hourly instance
-    /// usage. However, your root partition Amazon EBS volume remains, continues to persist your data, and you are charged for Amazon EBS volume
-    /// usage. You can restart your instance at any time. </para> <para><b>NOTE:</b> Before stopping an instance, make sure it is in a state from
-    /// which it can be restarted. Stopping an instance does not preserve data stored in RAM. Performing this operation on an instance that uses an
-    /// instance store as its root device returns an error. </para>
+    /// <para>Stops an Amazon EBS-backed instance. Each time you transition an instance from stopped to started, Amazon EC2 charges a full instance
+    /// hour, even if transitions happen multiple times within a single hour.</para> <para>You can't start or stop Spot Instances.</para>
+    /// <para>Instances that use Amazon EBS volumes as their root devices can be quickly stopped and started. When an instance is stopped, the
+    /// compute resources are released and you are not billed for hourly instance usage. However, your root partition Amazon EBS volume remains,
+    /// continues to persist your data, and you are charged for Amazon EBS volume usage. You can restart your instance at any time.</para>
+    /// <para>Before stopping an instance, make sure it is in a state from which it can be restarted. Stopping an instance does not preserve data
+    /// stored in RAM.</para> <para>Performing this operation on an instance that uses an instance store as its root device returns an error.</para>
+    /// <para>You can stop, start, and terminate EBS-backed instances. You can only terminate instance store-backed instances. What happens to an
+    /// instance differs if you stop it or terminate it. For example, when you stop an instance, the root device and any other devices attached to
+    /// the instance persist. When you terminate an instance, the root device and any other devices attached during the instance launch are
+    /// automatically deleted. For more information about the differences between stopping and terminating instances, see <a
+    /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html" >Instance Lifecycle</a> in the <i>Amazon Elastic
+    /// Compute Cloud User Guide</i> .</para>
     /// </summary>
     public partial class StopInstancesRequest : AmazonEC2Request
     {
@@ -39,7 +46,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The list of Amazon EC2 instances to stop.
+        /// One or more instance IDs.
         ///  
         /// </summary>
         public List<string> InstanceIds
@@ -55,8 +62,9 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Forces the instance to stop. The instance will not have an opportunity to flush file system caches nor file system meta data. If you use
-        /// this option, you must perform file system check and repair procedures. This option is not recommended for Windows instances.
+        /// Forces the instances to stop. The instances do not have an opportunity to flush file system caches or file system metadata. If you use this
+        /// option, you must perform file system check and repair procedures. This option is not recommended for Windows instances. Default:
+        /// <c>false</c>
         ///  
         /// </summary>
         public bool Force

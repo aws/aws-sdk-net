@@ -22,7 +22,7 @@ using Amazon.Runtime;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para> </para>
+    /// 
     /// </summary>
     public partial class DescribeVpnConnectionsResult : AmazonWebServiceResponse
     {
@@ -31,7 +31,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// 
+        /// Information about one or more VPN connections.
         ///  
         /// </summary>
         public List<VpnConnection> VpnConnections

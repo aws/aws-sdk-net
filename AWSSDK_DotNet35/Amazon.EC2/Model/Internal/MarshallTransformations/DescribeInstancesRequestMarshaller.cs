@@ -72,6 +72,14 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     filtersListIndex++;
                 }
             }
+            if (describeInstancesRequest != null && describeInstancesRequest.IsSetNextToken())
+            {
+                request.Parameters.Add("NextToken", StringUtils.FromString(describeInstancesRequest.NextToken));
+            }
+            if (describeInstancesRequest != null && describeInstancesRequest.IsSetMaxResults())
+            {
+                request.Parameters.Add("MaxResults", StringUtils.FromInt(describeInstancesRequest.MaxResults));
+            }
 
             return request;
         }

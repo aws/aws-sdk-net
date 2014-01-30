@@ -20,7 +20,8 @@ using System.IO;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>Route Table
+    /// <summary>
+    /// <para>Describes a route table.</para>
     /// </summary>
     public class RouteTable
     {
@@ -32,6 +33,11 @@ namespace Amazon.EC2.Model
         private List<Tag> tags = new List<Tag>();
         private List<PropagatingVgw> propagatingVgws = new List<PropagatingVgw>();
 
+
+        /// <summary>
+        /// The ID of the route table.
+        ///  
+        /// </summary>
         public string RouteTableId
         {
             get { return this.routeTableId; }
@@ -43,6 +49,11 @@ namespace Amazon.EC2.Model
         {
             return this.routeTableId != null;
         }
+
+        /// <summary>
+        /// The ID of the VPC.
+        ///  
+        /// </summary>
         public string VpcId
         {
             get { return this.vpcId; }
@@ -54,6 +65,11 @@ namespace Amazon.EC2.Model
         {
             return this.vpcId != null;
         }
+
+        /// <summary>
+        /// The routes in the route table.
+        ///  
+        /// </summary>
         public List<Route> Routes
         {
             get { return this.routes; }
@@ -65,6 +81,11 @@ namespace Amazon.EC2.Model
         {
             return this.routes.Count > 0;
         }
+
+        /// <summary>
+        /// The associations between the route table and one or more subnets.
+        ///  
+        /// </summary>
         public List<RouteTableAssociation> Associations
         {
             get { return this.associations; }
@@ -76,6 +97,11 @@ namespace Amazon.EC2.Model
         {
             return this.associations.Count > 0;
         }
+
+        /// <summary>
+        /// Any tags assigned to the route table.
+        ///  
+        /// </summary>
         public List<Tag> Tags
         {
             get { return this.tags; }
@@ -87,6 +113,11 @@ namespace Amazon.EC2.Model
         {
             return this.tags.Count > 0;
         }
+
+        /// <summary>
+        /// Any virtual private gateway (VGW) propagating routes.
+        ///  
+        /// </summary>
         public List<PropagatingVgw> PropagatingVgws
         {
             get { return this.propagatingVgws; }

@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para> Provides information about an Amazon EC2 resource Tag. </para>
+    /// <para>Describes a tag.</para>
     /// </summary>
     public class TagDescription
     {
@@ -33,7 +33,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The resource ID for the tag.
+        /// The ID of the resource. For example, <c>ami-1a2b3c4d</c>.
         ///  
         /// </summary>
         public string ResourceId
@@ -49,7 +49,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The type of resource identified by the associated resource ID (ex: instance, AMI, EBS volume, etc).
+        /// The type of resource.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -74,7 +74,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The tag's key.
+        /// The key of the tag.
         ///  
         /// </summary>
         public string Key
@@ -90,7 +90,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The tag's value.
+        /// The value of the tag.
         ///  
         /// </summary>
         public string Value

@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para> Represents the monitoring state of an EC2 instance. </para>
+    /// <para>Describes the monitoring information of the instance.</para>
     /// </summary>
     public class InstanceMonitoring
     {
@@ -31,7 +31,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// Instance ID.
+        /// The ID of the instance.
         ///  
         /// </summary>
         public string InstanceId
@@ -47,7 +47,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Monitoring state for the associated instance.
+        /// The monitoring information.
         ///  
         /// </summary>
         public Monitoring Monitoring

@@ -25,7 +25,9 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeSnapshotAttribute operation.
-    /// <para> Returns information about an attribute of a snapshot. Only one attribute can be specified per call. </para>
+    /// <para>Describes an attribute of the specified snapshot. You can specify only one attribute at a time.</para> <para>For more information
+    /// about Amazon EBS snapshots, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html" >Amazon EBS Snapshots</a> in
+    /// the <i>Amazon Elastic Compute Cloud User Guide</i> .</para>
     /// </summary>
     public partial class DescribeSnapshotAttributeRequest : AmazonEC2Request
     {
@@ -34,7 +36,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The ID of the EBS snapshot whose attribute is being described.
+        /// The ID of the Amazon EBS snapshot.
         ///  
         /// </summary>
         public string SnapshotId
@@ -50,7 +52,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The name of the EBS attribute to describe. Available attribute names: createVolumePermission
+        /// The snapshot attribute.
         ///  
         /// <para>
         /// <b>Constraints:</b>

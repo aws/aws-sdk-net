@@ -21,13 +21,19 @@ using Amazon.Runtime;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>Copy Image Result
+    /// <summary>
+    /// 
     /// </summary>
     public partial class CopyImageResult : AmazonWebServiceResponse
     {
         
         private string imageId;
 
+
+        /// <summary>
+        /// The ID of the new AMI.
+        ///  
+        /// </summary>
         public string ImageId
         {
             get { return this.imageId; }

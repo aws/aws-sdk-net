@@ -25,7 +25,10 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the ImportVolume operation.
-    /// 
+    /// <para>Creates an import volume task using metadata from the specified disk image. After importing the image, you then upload it using the
+    /// ec2-upload-disk-image command in the Amazon EC2 command-line interface (CLI) tools. For more information, see <a
+    /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html" >Using the Command Line Tools to Import Your
+    /// Virtual Machine to Amazon EC2</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .</para>
     /// </summary>
     public partial class ImportVolumeRequest : AmazonEC2Request
     {
@@ -34,6 +37,11 @@ namespace Amazon.EC2.Model
         private string description;
         private VolumeDetail volume;
 
+
+        /// <summary>
+        /// The Availability Zone for the resulting Amazon EBS volume.
+        ///  
+        /// </summary>
         public string AvailabilityZone
         {
             get { return this.availabilityZone; }
@@ -45,6 +53,11 @@ namespace Amazon.EC2.Model
         {
             return this.availabilityZone != null;
         }
+
+        /// <summary>
+        /// 
+        ///  
+        /// </summary>
         public DiskImageDetail Image
         {
             get { return this.image; }
@@ -56,6 +69,11 @@ namespace Amazon.EC2.Model
         {
             return this.image != null;
         }
+
+        /// <summary>
+        /// An optional description for the volume being imported.
+        ///  
+        /// </summary>
         public string Description
         {
             get { return this.description; }
@@ -67,6 +85,11 @@ namespace Amazon.EC2.Model
         {
             return this.description != null;
         }
+
+        /// <summary>
+        /// 
+        ///  
+        /// </summary>
         public VolumeDetail Volume
         {
             get { return this.volume; }

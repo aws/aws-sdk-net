@@ -20,7 +20,8 @@ using System.IO;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>Spot Instance Status
+    /// <summary>
+    /// <para>Describes a Spot Instance request.</para>
     /// </summary>
     public class SpotInstanceStatus
     {
@@ -29,6 +30,11 @@ namespace Amazon.EC2.Model
         private DateTime? updateTime;
         private string message;
 
+
+        /// <summary>
+        /// The status code of the request.
+        ///  
+        /// </summary>
         public string Code
         {
             get { return this.code; }
@@ -40,6 +46,11 @@ namespace Amazon.EC2.Model
         {
             return this.code != null;
         }
+
+        /// <summary>
+        /// The time of the most recent status update.
+        ///  
+        /// </summary>
         public DateTime UpdateTime
         {
             get { return this.updateTime ?? default(DateTime); }
@@ -51,6 +62,11 @@ namespace Amazon.EC2.Model
         {
             return this.updateTime.HasValue;
         }
+
+        /// <summary>
+        /// The description for the status code for the Spot request.
+        ///  
+        /// </summary>
         public string Message
         {
             get { return this.message; }

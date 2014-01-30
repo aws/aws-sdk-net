@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para> </para>
+    /// <para>Describes a security group.</para>
     /// </summary>
     public class GroupIdentifier
     {
@@ -31,7 +31,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// 
+        /// The name of the security group.
         ///  
         /// </summary>
         public string GroupName
@@ -45,6 +45,11 @@ namespace Amazon.EC2.Model
         {
             return this.groupName != null;
         }
+
+        /// <summary>
+        /// The ID of the security group.
+        ///  
+        /// </summary>
         public string GroupId
         {
             get { return this.groupId; }

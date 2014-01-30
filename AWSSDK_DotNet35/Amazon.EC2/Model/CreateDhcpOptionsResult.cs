@@ -22,7 +22,7 @@ using Amazon.Runtime;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para> </para>
+    /// 
     /// </summary>
     public partial class CreateDhcpOptionsResult : AmazonWebServiceResponse
     {
@@ -31,7 +31,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// A set of one or more DHCP options.
+        /// A set of DHCP options.
         ///  
         /// </summary>
         public DhcpOptions DhcpOptions

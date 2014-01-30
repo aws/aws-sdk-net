@@ -22,7 +22,7 @@ using Amazon.Runtime;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para> The result of describing Reserved Instance offerings. </para>
+    /// 
     /// </summary>
     public partial class DescribeReservedInstancesOfferingsResult : AmazonWebServiceResponse
     {
@@ -32,7 +32,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The list of described Reserved Instance offerings.
+        /// A list of Reserved Instances offerings.
         ///  
         /// </summary>
         public List<ReservedInstancesOffering> ReservedInstancesOfferings
@@ -46,6 +46,11 @@ namespace Amazon.EC2.Model
         {
             return this.reservedInstancesOfferings.Count > 0;
         }
+
+        /// <summary>
+        /// The next paginated set of results to return.
+        ///  
+        /// </summary>
         public string NextToken
         {
             get { return this.nextToken; }

@@ -25,7 +25,9 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribePlacementGroups operation.
-    /// <para> Returns information about one or more PlacementGroup instances in a user's account. </para>
+    /// <para>Describes one or more of your placement groups. For more information about placement groups and cluster instances, see <a
+    /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html" >Cluster Instances</a> in the <i>Amazon Elastic
+    /// Compute Cloud User Guide</i> .</para>
     /// </summary>
     public partial class DescribePlacementGroupsRequest : AmazonEC2Request
     {
@@ -34,7 +36,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The name of the <c>PlacementGroup</c>.
+        /// One or more placement group names. Default: Describes all your placement groups, or only those otherwise specified.
         ///  
         /// </summary>
         public List<string> GroupNames
@@ -50,8 +52,9 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// A list of filters used to match properties for Placement Groups. For a complete reference to the available filter keys for this operation,
-        /// see the <a href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon EC2 API reference</a>.
+        /// One or more filters. <ul> <li> <c>group-name</c> - The name of the placement group. </li> <li> <c>state</c> - The state of the placement
+        /// group (<c>pending</c> | <c>available</c> | <c>deleting</c> | <c>deleted</c>). </li> <li> <c>strategy</c> - The strategy of the placement
+        /// group (<c>cluster</c>). </li> </ul>
         ///  
         /// </summary>
         public List<Filter> Filters

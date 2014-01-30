@@ -28,6 +28,8 @@ namespace Amazon.StorageGateway.Util
     {
         private const string activationKeyName = "activationKey";
         private const string locationHeaderName = "Location";
+        private const int defaultMaxRetries = 5;
+        private const int defaultMaxBackoff = 30 * 1000;
 
         /// <summary>
         /// Sends a request to the AWS Storage Gateway server running at the
@@ -40,7 +42,22 @@ namespace Amazon.StorageGateway.Util
         /// <remarks>Maximum default retry count is 5 attempts, with exponential backoff up to a max of 30 seconds.</remarks>
         public static string GetActivationKey(string gatewayAddress)
         {
-            return GetActivationKey(gatewayAddress, 5, 30 * 1000);
+            return GetActivationKey(gatewayAddress, defaultMaxRetries, defaultMaxBackoff);
+        }
+
+        /// <summary>
+        /// Sends a request to the AWS Storage Gateway server running at the
+        /// specified address, and returns the activation key for that server.
+        /// The default max retry count and max exponential backoff time will be
+        /// used.
+        /// </summary>
+        /// <param name="gatewayAddress">The DNS name or IP address of a running AWS Storage Gateway</param>
+        /// <param name="activationRegion">The region in which the gateway will be activated.</param>
+        /// <returns>The activation key required for some API calls to AWS Storage Gateway.</returns>
+        /// <remarks>Maximum default retry count is 5 attempts, with exponential backoff up to a max of 30 seconds.</remarks>
+        public static string GetActivationKey(string gatewayAddress, RegionEndpoint activationRegion)
+        {
+            return GetActivationKey(gatewayAddress, activationRegion, defaultMaxRetries, defaultMaxBackoff);
         }
 
         /// <summary>
@@ -53,10 +70,24 @@ namespace Amazon.StorageGateway.Util
         /// <returns>The activation key required for some API calls to AWS Storage Gateway.</returns>
         public static string GetActivationKey(string gatewayAddress, int maxRetries, int maxBackoff)
         {
+            return GetActivationKey(gatewayAddress, null, maxRetries, maxBackoff);
+        }
+
+        /// <summary>
+        /// Sends a request to the AWS Storage Gateway server running at the
+        /// specified address, and returns the activation key for that server.
+        /// </summary>
+        /// <param name="gatewayAddress">The DNS name or IP address of a running AWS Storage Gateway</param>
+        /// <param name="activationRegion">The region in which the gateway will be activated.</param>
+        /// <param name="maxRetries">The maximum number of retries to attempt on failure</param>
+        /// <param name="maxBackoff">The maximum backoff time, in milliseconds, for retry attempts. Backoff times between retries rise exponentially until they hit this ceiling.</param>
+        /// <returns>The activation key required for some API calls to AWS Storage Gateway.</returns>
+        public static string GetActivationKey(string gatewayAddress, RegionEndpoint activationRegion, int maxRetries, int maxBackoff)
+        {
             if (maxRetries <= 1)
-                maxRetries = 5;
+                maxRetries = defaultMaxRetries;
             if (maxBackoff <= 0)
-                maxBackoff = 30 * 1000;
+                maxBackoff = defaultMaxBackoff;
 
             int retries = 0;
             while (retries < maxRetries)
@@ -64,6 +95,8 @@ namespace Amazon.StorageGateway.Util
                 try
                 {
                     string uri = "http://" + gatewayAddress;
+                    if (activationRegion != null)
+                        uri = uri + "/?activationRegion=" + activationRegion.SystemName;
                     string locationHeader = GetHeader(uri);
                     var parameters = AWSSDKUtils.ParseQueryParameters(locationHeader);
                     string activationKey;

@@ -22,7 +22,7 @@ using Amazon.Runtime;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para> The result of calling the RunInstancesResult, contains the new reservation created by Amazon EC2. </para>
+    /// <para>The result of the RunInstances call.</para>
     /// </summary>
     public partial class RunInstancesResult : AmazonWebServiceResponse
     {
@@ -31,7 +31,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The newly created reservation, containing the new instances.
+        /// One or more reservations.
         ///  
         /// </summary>
         public Reservation Reservation

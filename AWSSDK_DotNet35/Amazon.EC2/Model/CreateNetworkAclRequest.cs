@@ -25,8 +25,10 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateNetworkAcl operation.
-    /// <para> Creates a new network ACL in a VPC. Network ACLs provide an optional layer of security (on top of security groups) for the instances
-    /// in your VPC. For more information about network ACLs, go to Network ACLs in the Amazon Virtual Private Cloud User Guide. </para>
+    /// <para>Creates a network ACL in a VPC. Network ACLs provide an optional layer of security (in addition to security groups) for the instances
+    /// in your VPC.</para> <para>For more information about network ACLs, see <a
+    /// href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html" >Network ACLs</a> in the <i>Amazon Virtual Private Cloud User
+    /// Guide</i> .</para>
     /// </summary>
     public partial class CreateNetworkAclRequest : AmazonEC2Request
     {
@@ -34,7 +36,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The ID of the VPC where the network ACL will be created.
+        /// The ID of the VPC.
         ///  
         /// </summary>
         public string VpcId

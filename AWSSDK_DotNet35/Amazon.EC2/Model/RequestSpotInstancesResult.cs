@@ -22,7 +22,7 @@ using Amazon.Runtime;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para> The RequestSpotInstancesResult data type. </para>
+    /// 
     /// </summary>
     public partial class RequestSpotInstancesResult : AmazonWebServiceResponse
     {
@@ -31,7 +31,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// Contains a list of Spot Instance requests.
+        /// Information about the Spot Instance request.
         ///  
         /// </summary>
         public List<SpotInstanceRequest> SpotInstanceRequests

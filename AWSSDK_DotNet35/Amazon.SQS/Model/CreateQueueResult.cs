@@ -22,7 +22,7 @@ using Amazon.Runtime;
 namespace Amazon.SQS.Model
 {
     /// <summary>
-    /// 
+    /// <para>Returns the QueueUrl element of the created queue.</para>
     /// </summary>
     public partial class CreateQueueResult : AmazonWebServiceResponse
     {
@@ -31,7 +31,7 @@ namespace Amazon.SQS.Model
 
 
         /// <summary>
-        /// The URL for the created SQS queue.
+        /// The URL for the created Amazon SQS queue.
         ///  
         /// </summary>
         public string QueueUrl

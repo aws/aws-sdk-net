@@ -21,7 +21,8 @@ using Amazon.Runtime;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>Describe Vpc Attribute Result
+    /// <summary>
+    /// 
     /// </summary>
     public partial class DescribeVpcAttributeResult : AmazonWebServiceResponse
     {
@@ -30,6 +31,11 @@ namespace Amazon.EC2.Model
         private bool? enableDnsSupport;
         private bool? enableDnsHostnames;
 
+
+        /// <summary>
+        /// The ID of the VPC.
+        ///  
+        /// </summary>
         public string VpcId
         {
             get { return this.vpcId; }
@@ -43,7 +49,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Boolean value
+        /// Indicates whether DNS resolution is enabled for the VPC. If this attribute is <c>true</c>, the Amazon DNS server resolves DNS hostnames for
+        /// your instances to their corresponding IP addresses; otherwise, it does not.
         ///  
         /// </summary>
         public bool EnableDnsSupport
@@ -59,7 +66,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Boolean value
+        /// Indicates whether the instances launched in the VPC get DNS hostnames. If this attribute is <c>true</c>, instances in the VPC get DNS
+        /// hostnames; otherwise, they do not.
         ///  
         /// </summary>
         public bool EnableDnsHostnames

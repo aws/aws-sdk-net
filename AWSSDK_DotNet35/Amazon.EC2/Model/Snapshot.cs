@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para> Represents a snapshot of an Amazon EC2 EBS volume. </para>
+    /// <para>Describes a snapshot.</para>
     /// </summary>
     public class Snapshot
     {
@@ -39,7 +39,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The unique ID of this snapshot.
+        /// The ID of the snapshot.
         ///  
         /// </summary>
         public string SnapshotId
@@ -55,7 +55,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The ID of the volume from which this snapshot was created.
+        /// The ID of the volume.
         ///  
         /// </summary>
         public string VolumeId
@@ -71,7 +71,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Snapshot state (e.g., pending, completed, or error).
+        /// The snapshot state.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -96,7 +96,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Time stamp when the snapshot was initiated.
+        /// The time stamp when the snapshot was initiated.
         ///  
         /// </summary>
         public DateTime StartTime
@@ -112,7 +112,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The progress of the snapshot, in percentage.
+        /// The progress of the snapshot, as a percentage.
         ///  
         /// </summary>
         public string Progress
@@ -128,7 +128,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// AWS Access Key ID of the user who owns the snapshot.
+        /// The AWS account ID of the Amazon EBS snapshot owner.
         ///  
         /// </summary>
         public string OwnerId
@@ -144,7 +144,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Description of the snapshot.
+        /// The description for the snapshot.
         ///  
         /// </summary>
         public string Description
@@ -160,7 +160,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The size of the volume, in gigabytes.
+        /// The size of the volume, in GiB.
         ///  
         /// </summary>
         public int VolumeSize
@@ -176,7 +176,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The AWS account alias (e.g., "amazon", "redhat", "self", etc.) or AWS account ID that owns the AMI.
+        /// The AWS account alias (for example, <c>amazon</c>, <c>self</c>) or AWS account ID that owns the snapshot.
         ///  
         /// </summary>
         public string OwnerAlias
@@ -192,7 +192,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// A list of tags for the Snapshot.
+        /// Any tags assigned to the snapshot.
         ///  
         /// </summary>
         public List<Tag> Tags

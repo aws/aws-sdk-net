@@ -21,7 +21,8 @@ using Amazon.Runtime;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>Describe Instance Status Result
+    /// <summary>
+    /// 
     /// </summary>
     public partial class DescribeInstanceStatusResult : AmazonWebServiceResponse
     {
@@ -31,7 +32,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// Collection of instance statuses describing the state of the requested instances.
+        /// One or more instance status descriptions.
         ///  
         /// </summary>
         public List<InstanceStatus> InstanceStatuses
@@ -47,7 +48,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// A string specifying the next paginated set of results to return.
+        /// The next paginated set of results to return.
         ///  
         /// </summary>
         public string NextToken

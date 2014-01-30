@@ -21,7 +21,8 @@ using Amazon.Runtime;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>Create Network Interface Result
+    /// <summary>
+    /// 
     /// </summary>
     public partial class CreateNetworkInterfaceResult : AmazonWebServiceResponse
     {
@@ -30,7 +31,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// Specifies the characteristics of a network interface.
+        /// Information about the network interface.
         ///  
         /// </summary>
         public NetworkInterface NetworkInterface

@@ -22,7 +22,7 @@ using Amazon.Runtime;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para> The result of describing the Amazon EC2 security groups for your account. </para>
+    /// 
     /// </summary>
     public partial class DescribeSecurityGroupsResult : AmazonWebServiceResponse
     {
@@ -31,7 +31,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The list of described Amazon EC2 security groups.
+        /// Information about one or more security groups.
         ///  
         /// </summary>
         public List<SecurityGroup> SecurityGroups

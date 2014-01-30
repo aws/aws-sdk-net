@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.SQS.Model
 {
     /// <summary>
-    /// <para>This is used in the responses of batch API to give a detailed description of the result of an operation on each entry in the
+    /// <para>This is used in the responses of batch API to give a detailed description of the result of an action on each entry in the
     /// request.</para>
     /// </summary>
     public class BatchResultErrorEntry
@@ -66,7 +66,7 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// An error code representing why the operation failed on this entry.
+        /// An error code representing why the action failed on this entry.
         ///  
         /// </summary>
         public string Code
@@ -82,7 +82,7 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// A message explaining why the operation failed on this entry.
+        /// A message explaining why the action failed on this entry.
         ///  
         /// </summary>
         public string Message

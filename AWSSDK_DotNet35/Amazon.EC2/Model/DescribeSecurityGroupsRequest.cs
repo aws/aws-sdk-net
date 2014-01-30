@@ -25,9 +25,11 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeSecurityGroups operation.
-    /// <para> The DescribeSecurityGroups operation returns information about security groups that you own. </para> <para> If you specify security
-    /// group names, information about those security group is returned. Otherwise, information for all security group is returned. If you specify a
-    /// group that does not exist, a fault is returned. </para>
+    /// <para>Describes one or more of your security groups.</para> <para>A security group is for use with instances either in the EC2-Classic
+    /// platform or in a specific VPC. For more information, see <a
+    /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html" >Amazon EC2 Security Groups</a> in the <i>Amazon
+    /// Elastic Compute Cloud User Guide</i> and <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html" >Security
+    /// Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i> .</para>
     /// </summary>
     public partial class DescribeSecurityGroupsRequest : AmazonEC2Request
     {
@@ -37,7 +39,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// An optional list of group names that specify the Amazon EC2 security groups to describe.
+        /// [EC2-Classic, default VPC] One or more security group names. Default: Describes all your security groups.
         ///  
         /// </summary>
         public List<string> GroupNames
@@ -51,6 +53,11 @@ namespace Amazon.EC2.Model
         {
             return this.groupNames.Count > 0;
         }
+
+        /// <summary>
+        /// One or more security group IDs. Default: Describes all your security groups.
+        ///  
+        /// </summary>
         public List<string> GroupIds
         {
             get { return this.groupIds; }
@@ -64,8 +71,15 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// A list of filters used to match properties for SecurityGroups. For a complete reference to the available filter keys for this operation, see
-        /// the <a href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon EC2 API reference</a>.
+        /// One or more filters. <ul> <li> <c>description</c> - The description of the security group. </li> <li> <c>group-id</c> - The ID of the
+        /// security group. </li> <li> <c>group-name</c> - The name of the security group. </li> <li> <c>ip-permission.cidr</c> - A CIDR range that has
+        /// been granted permission. </li> <li> <c>ip-permission.from-port</c> - The start of port range for the TCP and UDP protocols, or an ICMP type
+        /// number. </li> <li> <c>ip-permission.group-name</c> - The name of a security group that has been granted permission. </li> <li>
+        /// <c>ip-permission.protocol</c> - The IP protocol for the permission (<c>tcp</c> | <c>udp</c> | <c>icmp</c> or a protocol number). </li> <li>
+        /// <c>ip-permission.to-port</c> - The end of port range for the TCP and UDP protocols, or an ICMP code. </li> <li> <c>ip-permission.user-id</c>
+        /// - The ID of an AWS account that has been granted permission. </li> <li> <c>owner-id</c> - The AWS account ID of the owner of the security
+        /// group. </li> <li> <c>tag-key</c> - The key of a tag assigned to the security group. </li> <li> <c>tag-value</c> - The value of a tag
+        /// assigned to the security group. </li> <li> <c>vpc-id</c> - The ID of the VPC specified when the security group was created. </li> </ul>
         ///  
         /// </summary>
         public List<Filter> Filters

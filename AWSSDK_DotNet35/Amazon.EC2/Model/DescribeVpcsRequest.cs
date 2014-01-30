@@ -25,11 +25,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeVpcs operation.
-    /// <para> Gives you information about your VPCs. You can filter the results to return information only about VPCs that match criteria you
-    /// specify. </para> <para> For example, you could ask to get information about a particular VPC or VPCs (or all your VPCs) only if the VPC's
-    /// state is available. You can specify multiple filters (e.g., the VPC uses one of several sets of DHCP options, and the VPC's state is
-    /// available). The result includes information for a particular VPC only if the VPC matches all your filters. </para> <para> If there's no
-    /// match, no special message is returned; the response is simply empty. The following table shows the available filters. </para>
+    /// <para>Describes one or more of your VPCs.</para>
     /// </summary>
     public partial class DescribeVpcsRequest : AmazonEC2Request
     {
@@ -38,7 +34,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The ID of a VPC you want information about.
+        /// One or more VPC IDs. Default: Describes all your VPCs.
         ///  
         /// </summary>
         public List<string> VpcIds
@@ -54,8 +50,15 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// A list of filters used to match properties for VPCs. For a complete reference to the available filter keys for this operation, see the <a
-        /// href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon EC2 API reference</a>.
+        /// One or more filters. <ul> <li> <c>cidr</c> - The CIDR block of the VPC. The CIDR block you specify must exactly match the VPC's CIDR block
+        /// for information to be returned for the VPC. </li> <li> <c>dhcp-options-id</c> - The ID of a set of DHCP options. </li> <li> <c>isDefault</c>
+        /// - Indicates whether the VPC is the default VPC. </li> <li> <c>state</c> - The state of the VPC (<c>pending</c> | <c>available</c>). </li>
+        /// <li> <c>tag</c>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned to the resource. </li> <li> <c>tag-key</c> - The key
+        /// of a tag assigned to the resource. This filter is independent of the <c>tag-value</c> filter. For example, if you use both the filter
+        /// "tag-key=Purpose" and the filter "tag-value=X", you get any resources assigned both the tag key Purpose (regardless of what the tag's value
+        /// is), and the tag value X (regardless of what the tag's key is). If you want to list only resources where Purpose is X, see the
+        /// <c>tag</c>:<i>key</i>=<i>value</i> filter. </li> <li> <c>tag-value</c> - The value of a tag assigned to the resource. This filter is
+        /// independent of the <c>tag-key</c> filter. </li> <li> <c>vpc-id</c> - The ID of the VPC. </li> </ul>
         ///  
         /// </summary>
         public List<Filter> Filters

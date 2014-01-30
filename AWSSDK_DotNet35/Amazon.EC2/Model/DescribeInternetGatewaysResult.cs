@@ -21,13 +21,19 @@ using Amazon.Runtime;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>Describe Internet Gateways Result
+    /// <summary>
+    /// 
     /// </summary>
     public partial class DescribeInternetGatewaysResult : AmazonWebServiceResponse
     {
         
         private List<InternetGateway> internetGateways = new List<InternetGateway>();
 
+
+        /// <summary>
+        /// Information about one or more Internet gateways.
+        ///  
+        /// </summary>
         public List<InternetGateway> InternetGateways
         {
             get { return this.internetGateways; }

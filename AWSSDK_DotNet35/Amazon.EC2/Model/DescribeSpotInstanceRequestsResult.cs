@@ -21,13 +21,19 @@ using Amazon.Runtime;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>Describe Spot Instance Requests Result
+    /// <summary>
+    /// 
     /// </summary>
     public partial class DescribeSpotInstanceRequestsResult : AmazonWebServiceResponse
     {
         
         private List<SpotInstanceRequest> spotInstanceRequests = new List<SpotInstanceRequest>();
 
+
+        /// <summary>
+        /// One or more Spot Instance requests.
+        ///  
+        /// </summary>
         public List<SpotInstanceRequest> SpotInstanceRequests
         {
             get { return this.spotInstanceRequests; }

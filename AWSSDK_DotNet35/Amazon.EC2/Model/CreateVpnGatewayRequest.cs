@@ -25,8 +25,10 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateVpnGateway operation.
-    /// <para> Creates a new VPN gateway. A VPN gateway is the VPC-side endpoint for your VPN connection. You can create a VPN gateway before
-    /// creating the VPC itself. </para>
+    /// <para>Creates a virtual private gateway. A virtual private gateway is the endpoint on the VPC side of your VPN connection. You can create a
+    /// virtual private gateway before creating the VPC itself.</para> <para>For more information about virtual private gateways, see <a
+    /// href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html" >Adding a Hardware Virtual Private Gateway to Your VPC</a> in the
+    /// <i>Amazon Virtual Private Cloud User Guide</i> .</para>
     /// </summary>
     public partial class CreateVpnGatewayRequest : AmazonEC2Request
     {
@@ -35,7 +37,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The type of VPN connection this VPN gateway supports.
+        /// The type of VPN connection this virtual private gateway supports.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -60,7 +62,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The Availability Zone in which to create the VPN gateway.
+        /// The Availability Zone for the virtual private gateway.
         ///  
         /// </summary>
         public string AvailabilityZone

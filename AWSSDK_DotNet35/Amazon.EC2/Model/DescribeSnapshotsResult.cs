@@ -22,7 +22,7 @@ using Amazon.Runtime;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para> The result of describing EBS snapshots. </para>
+    /// 
     /// </summary>
     public partial class DescribeSnapshotsResult : AmazonWebServiceResponse
     {
@@ -31,7 +31,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The list of described EBS snapshots.
+        /// 
         ///  
         /// </summary>
         public List<Snapshot> Snapshots

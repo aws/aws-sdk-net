@@ -25,10 +25,9 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteSecurityGroup operation.
-    /// <para> The DeleteSecurityGroup operation deletes a security group. </para> <para><b>NOTE:</b> If you attempt to delete a security group that
-    /// contains instances, a fault is returned. If you attempt to delete a security group that is referenced by another security group, a fault is
-    /// returned. For example, if security group B has a rule that allows access from security group A, security group A cannot be deleted until the
-    /// allow rule is removed. </para>
+    /// <para>Deletes a security group.</para> <para>If you attempt to delete a security group that is associated with an instance, or is referenced
+    /// by another security group, the operation fails with <c>InvalidGroup.InUse</c> in EC2-Classic or <c>DependencyViolation</c> in
+    /// EC2-VPC.</para>
     /// </summary>
     public partial class DeleteSecurityGroupRequest : AmazonEC2Request
     {
@@ -37,7 +36,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The name of the Amazon EC2 security group to delete.
+        /// [EC2-Classic, default VPC] The name of the security group.
         ///  
         /// </summary>
         public string GroupName
@@ -53,7 +52,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The ID of the Amazon EC2 security group to delete.
+        /// The ID of the security group.
         ///  
         /// </summary>
         public string GroupId

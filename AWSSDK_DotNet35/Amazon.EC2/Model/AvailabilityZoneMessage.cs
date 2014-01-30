@@ -20,13 +20,19 @@ using System.IO;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>Availability Zone Message
+    /// <summary>
+    /// <para>Describes a message about an Availability Zone.</para>
     /// </summary>
     public class AvailabilityZoneMessage
     {
         
         private string message;
 
+
+        /// <summary>
+        /// The message about the Availability Zone.
+        ///  
+        /// </summary>
         public string Message
         {
             get { return this.message; }

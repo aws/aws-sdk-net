@@ -20,7 +20,8 @@ using System.IO;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>Volume Status Action
+    /// <summary>
+    /// <para>Describes a volume status operation code.</para>
     /// </summary>
     public class VolumeStatusAction
     {
@@ -30,6 +31,11 @@ namespace Amazon.EC2.Model
         private string eventType;
         private string eventId;
 
+
+        /// <summary>
+        /// The code identifying the operation, for example, <c>enable-volume-io</c>.
+        ///  
+        /// </summary>
         public string Code
         {
             get { return this.code; }
@@ -41,6 +47,11 @@ namespace Amazon.EC2.Model
         {
             return this.code != null;
         }
+
+        /// <summary>
+        /// A description of the operation.
+        ///  
+        /// </summary>
         public string Description
         {
             get { return this.description; }
@@ -52,6 +63,11 @@ namespace Amazon.EC2.Model
         {
             return this.description != null;
         }
+
+        /// <summary>
+        /// The event type associated with this operation.
+        ///  
+        /// </summary>
         public string EventType
         {
             get { return this.eventType; }
@@ -63,6 +79,11 @@ namespace Amazon.EC2.Model
         {
             return this.eventType != null;
         }
+
+        /// <summary>
+        /// The ID of the event associated with this operation.
+        ///  
+        /// </summary>
         public string EventId
         {
             get { return this.eventId; }

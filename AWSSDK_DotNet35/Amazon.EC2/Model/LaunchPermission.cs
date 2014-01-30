@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para> Describes a permission to launch an Amazon Machine Image (AMI). </para>
+    /// <para>Describes a launch permission.</para>
     /// </summary>
     public class LaunchPermission
     {
@@ -31,7 +31,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The AWS user ID of the user involved in this launch permission.
+        /// The AWS account ID.
         ///  
         /// </summary>
         public string UserId
@@ -47,7 +47,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The AWS group of the user involved in this launch permission. Available groups: <c>all</c>
+        /// The name of the group.
         ///  
         /// <para>
         /// <b>Constraints:</b>

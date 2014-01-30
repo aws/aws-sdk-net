@@ -28,7 +28,7 @@ namespace Amazon.EC2.Model
     {
         /// <summary>
         /// Gets and sets the RunInstancesResult property.
-        /// The result of calling the RunInstancesResult, contains the new reservation created by Amazon EC2.
+        /// The result of the RunInstances call.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the RunInstancesResult class are now available on the RunInstancesResponse class. You should use the properties on RunInstancesResponse instead of accessing them through RunInstancesResult.")]
         public RunInstancesResult RunInstancesResult

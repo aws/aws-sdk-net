@@ -22,8 +22,7 @@ using Amazon.Runtime;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para> The result of purchasing a Reserved Instances offering. Contains the new, unique ID of the Reserved Instances purchased for your
-    /// account. </para>
+    /// 
     /// </summary>
     public partial class PurchaseReservedInstancesOfferingResult : AmazonWebServiceResponse
     {
@@ -32,7 +31,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The unique ID of the Reserved Instances purchased for your account.
+        /// The IDs of the purchased Reserved Instances.
         ///  
         /// </summary>
         public string ReservedInstancesId

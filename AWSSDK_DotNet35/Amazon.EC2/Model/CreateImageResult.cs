@@ -22,7 +22,7 @@ using Amazon.Runtime;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para> The result of creating a new EC2 image. Contains the ID of the new image. </para>
+    /// 
     /// </summary>
     public partial class CreateImageResult : AmazonWebServiceResponse
     {

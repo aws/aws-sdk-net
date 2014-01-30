@@ -25,9 +25,14 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the AssociateAddress operation.
-    /// <para> The AssociateAddress operation associates an elastic IP address with an instance. </para> <para> If the IP address is currently
-    /// assigned to another instance, the IP address is assigned to the new instance. This is an idempotent operation. If you enter it more than
-    /// once, Amazon EC2 does not return an error. </para>
+    /// <para>Associates an Elastic IP address with an instance or a network interface.</para> <para>An Elastic IP address is for use in either the
+    /// EC2-Classic platform or in a VPC. For more information, see <a
+    /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html" >Elastic IP Addresses</a> in the <i>Amazon Elastic
+    /// Compute Cloud User Guide</i> .</para> <para>[EC2-Classic, default VPC] If the Elastic IP address is already associated with a different
+    /// instance, it is disassociated from that instance and associated with the specified instance.</para> <para>[EC2-VPC] If you don't specify a
+    /// private IP address, the Elastic IP address is associated with the primary IP address. If the Elastic IP address is already associated with a
+    /// different instance or a network interface, you get an error unless you allow reassociation.</para> <para>This is an idempotent operation. If
+    /// you perform the operation more than once, Amazon EC2 doesn't return an error.</para>
     /// </summary>
     public partial class AssociateAddressRequest : AmazonEC2Request
     {
@@ -40,7 +45,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The instance to associate with the IP address.
+        /// The ID of the instance. The operation fails if you specify an instance ID unless exactly one network interface is attached.
         ///  
         /// </summary>
         public string InstanceId
@@ -56,7 +61,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// IP address that you are assigning to the instance.
+        /// The Elastic IP address.
         ///  
         /// </summary>
         public string PublicIp
@@ -72,7 +77,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The allocation ID that AWS returned when you allocated the elastic IP address for use with Amazon VPC.
+        /// [EC2-VPC] The allocation ID. This is required for EC2-VPC.
         ///  
         /// </summary>
         public string AllocationId
@@ -86,6 +91,11 @@ namespace Amazon.EC2.Model
         {
             return this.allocationId != null;
         }
+
+        /// <summary>
+        /// [EC2-VPC] The ID of the network interface. If the instance has more than one network interface, you must specify a network interface ID.
+        ///  
+        /// </summary>
         public string NetworkInterfaceId
         {
             get { return this.networkInterfaceId; }
@@ -97,6 +107,12 @@ namespace Amazon.EC2.Model
         {
             return this.networkInterfaceId != null;
         }
+
+        /// <summary>
+        /// [EC2-VPC] The primary or secondary private IP address to associate with the Elastic IP address. If no private IP address is specified, the
+        /// Elastic IP address is associated with the primary private IP address.
+        ///  
+        /// </summary>
         public string PrivateIpAddress
         {
             get { return this.privateIpAddress; }
@@ -108,6 +124,12 @@ namespace Amazon.EC2.Model
         {
             return this.privateIpAddress != null;
         }
+
+        /// <summary>
+        /// [EC2-VPC] Allows an Elastic IP address that is already associated with an instance or network interface to be re-associated with the
+        /// specified instance or network interface. Otherwise, the operation fails. Default: <c>false</c>
+        ///  
+        /// </summary>
         public bool AllowReassociation
         {
             get { return this.allowReassociation ?? default(bool); }

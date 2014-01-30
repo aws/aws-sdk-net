@@ -22,7 +22,7 @@ using Amazon.Runtime;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para> The result of describing the Amazon EC2 availability zones in the current region. </para>
+    /// 
     /// </summary>
     public partial class DescribeAvailabilityZonesResult : AmazonWebServiceResponse
     {
@@ -31,7 +31,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The list of described Amazon EC2 availability zones.
+        /// Information about one or more Availability Zones.
         ///  
         /// </summary>
         public List<AvailabilityZone> AvailabilityZones

@@ -25,7 +25,9 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the CopyImage operation.
-    /// 
+    /// <para>Initiates the copy of an AMI from the specified source region to the region in which the request was made.</para> <para>For more
+    /// information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html" >Copying AMIs</a> in the <i>Amazon Elastic
+    /// Compute Cloud User Guide</i> .</para>
     /// </summary>
     public partial class CopyImageRequest : AmazonEC2Request
     {
@@ -35,6 +37,11 @@ namespace Amazon.EC2.Model
         private string description;
         private string clientToken;
 
+
+        /// <summary>
+        /// The name of the region that contains the AMI to copy.
+        ///  
+        /// </summary>
         public string SourceRegion
         {
             get { return this.sourceRegion; }
@@ -46,6 +53,11 @@ namespace Amazon.EC2.Model
         {
             return this.sourceRegion != null;
         }
+
+        /// <summary>
+        /// The ID of the AMI to copy.
+        ///  
+        /// </summary>
         public string SourceImageId
         {
             get { return this.sourceImageId; }
@@ -57,6 +69,11 @@ namespace Amazon.EC2.Model
         {
             return this.sourceImageId != null;
         }
+
+        /// <summary>
+        /// The name of the new AMI in the destination region.
+        ///  
+        /// </summary>
         public string Name
         {
             get { return this.name; }
@@ -68,6 +85,11 @@ namespace Amazon.EC2.Model
         {
             return this.name != null;
         }
+
+        /// <summary>
+        /// A description for the new AMI in the destination region.
+        ///  
+        /// </summary>
         public string Description
         {
             get { return this.description; }
@@ -79,6 +101,13 @@ namespace Amazon.EC2.Model
         {
             return this.description != null;
         }
+
+        /// <summary>
+        /// Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a
+        /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure Idempotency</a> in the <i>Amazon
+        /// Elastic Compute Cloud User Guide</i>.
+        ///  
+        /// </summary>
         public string ClientToken
         {
             get { return this.clientToken; }

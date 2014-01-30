@@ -25,7 +25,9 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeReservedInstancesListings operation.
-    /// 
+    /// <para>Describes your account's Reserved Instance listings in the Reserved Instance Marketplace.</para> <para>For more information, see <a
+    /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html" >Reserved Instance Marketplace</a> in the <i>Amazon Elastic
+    /// Compute Cloud User Guide</i> .</para>
     /// </summary>
     public partial class DescribeReservedInstancesListingsRequest : AmazonEC2Request
     {
@@ -33,6 +35,11 @@ namespace Amazon.EC2.Model
         private string reservedInstancesListingId;
         private List<Filter> filters = new List<Filter>();
 
+
+        /// <summary>
+        /// One or more Reserved Instance IDs.
+        ///  
+        /// </summary>
         public string ReservedInstancesId
         {
             get { return this.reservedInstancesId; }
@@ -44,6 +51,11 @@ namespace Amazon.EC2.Model
         {
             return this.reservedInstancesId != null;
         }
+
+        /// <summary>
+        /// One or more Reserved Instance Listing IDs.
+        ///  
+        /// </summary>
         public string ReservedInstancesListingId
         {
             get { return this.reservedInstancesListingId; }
@@ -55,6 +67,14 @@ namespace Amazon.EC2.Model
         {
             return this.reservedInstancesListingId != null;
         }
+
+        /// <summary>
+        /// One or more filters. <ul> <li> <c>reserved-instances-id</c> - The ID of the Reserved Instances. </li> <li>
+        /// <c>reserved-instances-listing-id</c> - The ID of the Reserved Instances listing. </li> <li> <c>status</c> - The status of the Reserved
+        /// Instance listing (<c>pending</c> | <c>active</c> | <c>cancelled</c> | <c>closed</c>). </li> <li> <c>status-message</c> - The reason for the
+        /// status. </li> </ul>
+        ///  
+        /// </summary>
         public List<Filter> Filters
         {
             get { return this.filters; }

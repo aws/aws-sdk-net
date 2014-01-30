@@ -25,12 +25,19 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the CancelReservedInstancesListing operation.
-    /// 
+    /// <para>Cancels the specified Reserved Instance listing in the Reserved Instance Marketplace.</para> <para>For more information, see <a
+    /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html" >Reserved Instance Marketplace</a> in the <i>Amazon Elastic
+    /// Compute Cloud User Guide</i> .</para>
     /// </summary>
     public partial class CancelReservedInstancesListingRequest : AmazonEC2Request
     {
         private string reservedInstancesListingId;
 
+
+        /// <summary>
+        /// The ID of the Reserved Instance listing.
+        ///  
+        /// </summary>
         public string ReservedInstancesListingId
         {
             get { return this.reservedInstancesListingId; }

@@ -28,7 +28,8 @@ namespace Amazon.SQS.Model
     {
         /// <summary>
         /// Gets and sets the DeleteMessageBatchResult property.
-        /// 
+        /// For each message in the batch, the response contains a DeleteMessageBatchResultEntry tag if the message is deleted or a
+        /// BatchResultErrorEntry tag if the message cannot be deleted.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DeleteMessageBatchResult class are now available on the DeleteMessageBatchResponse class. You should use the properties on DeleteMessageBatchResponse instead of accessing them through DeleteMessageBatchResult.")]
         public DeleteMessageBatchResult DeleteMessageBatchResult

@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para> An IP permission describing allowed incoming IP traffic to an Amazon EC2 security group. </para>
+    /// <para>Describes a security group rule.</para>
     /// </summary>
     public class IpPermission
     {
@@ -34,7 +34,9 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The IP protocol of this permission. Valid protocol values: <c>tcp</c>, <c>udp</c>, <c>icmp</c>
+        /// The protocol. When you call <a>DescribeSecurityGroups</a>, the protocol value returned is the number. Exception: For TCP, UDP, and ICMP, the
+        /// value returned is the name (for example, <c>tcp</c>, <c>udp</c>, or <c>icmp</c>). For a list of protocol numbers, see <a
+        /// href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>.
         ///  
         /// </summary>
         public string IpProtocol
@@ -50,8 +52,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Start of port range for the TCP and UDP protocols, or an ICMP type number. An ICMP type number of <c>-1</c> indicates a wildcard (i.e., any
-        /// ICMP type number).
+        /// The start of port range for the TCP and UDP protocols, or an ICMP type number. A value of <c>-1</c> indicates all ICMP types.
         ///  
         /// </summary>
         public int FromPort
@@ -67,7 +68,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// End of port range for the TCP and UDP protocols, or an ICMP code. An ICMP code of <c>-1</c> indicates a wildcard (i.e., any ICMP code).
+        /// The end of port range for the TCP and UDP protocols, or an ICMP code. A value of <c>-1</c> indicates all ICMP codes for the specified ICMP
+        /// type.
         ///  
         /// </summary>
         public int ToPort
@@ -83,7 +85,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The list of AWS user IDs and groups included in this permission.
+        /// One or more security group and AWS account ID pairs.
         ///  
         /// </summary>
         public List<UserIdGroupPair> UserIdGroupPairs
@@ -99,7 +101,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The list of CIDR IP ranges included in this permission.
+        /// One or more IP ranges.
         ///  
         /// </summary>
         public List<string> IpRanges

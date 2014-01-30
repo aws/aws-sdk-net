@@ -21,13 +21,19 @@ using Amazon.Runtime;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>Describe Account Attributes Result
+    /// <summary>
+    /// 
     /// </summary>
     public partial class DescribeAccountAttributesResult : AmazonWebServiceResponse
     {
         
         private List<AccountAttribute> accountAttributes = new List<AccountAttribute>();
 
+
+        /// <summary>
+        /// Information about one or more account attributes.
+        ///  
+        /// </summary>
         public List<AccountAttribute> AccountAttributes
         {
             get { return this.accountAttributes; }

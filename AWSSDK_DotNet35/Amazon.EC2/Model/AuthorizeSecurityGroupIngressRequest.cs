@@ -25,11 +25,14 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the AuthorizeSecurityGroupIngress operation.
-    /// <para> The AuthorizeSecurityGroupIngress operation adds permissions to a security group. </para> <para> Permissions are specified by the IP
-    /// protocol (TCP, UDP or ICMP), the source of the request (by IP range or an Amazon EC2 user-group pair), the source and destination port
-    /// ranges (for TCP and UDP), and the ICMP codes and types (for ICMP). When authorizing ICMP, <c>-1</c> can be used as a wildcard in the type
-    /// and code fields. </para> <para> Permission changes are propagated to instances within the security group as quickly as possible. However,
-    /// depending on the number of instances, a small delay might occur. </para>
+    /// <para>Adds one or more ingress rules to a security group.</para> <para><b>IMPORTANT:</b> EC2-Classic: You can have up to 100 rules per
+    /// group. EC2-VPC: You can have up to 50 rules per group (covering both ingress and egress rules). </para> <para>Rule changes are propagated to
+    /// instances within the security group as quickly as possible. However, a small delay might occur.</para> <para>[EC2-Classic] This action gives
+    /// one or more CIDR IP address ranges permission to access a security group in your account, or gives one or more security groups (called the
+    /// <i>source groups</i> ) permission to access a security group for your account. A source group can be for your own AWS account, or
+    /// another.</para> <para>[EC2-VPC] This action gives one or more CIDR IP address ranges permission to access a security group in your VPC, or
+    /// gives one or more other security groups (called the <i>source groups</i> ) permission to access a security group for your VPC. The security
+    /// groups must all be for the same VPC.</para>
     /// </summary>
     public partial class AuthorizeSecurityGroupIngressRequest : AmazonEC2Request
     {
@@ -39,8 +42,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// Name of the standard (EC2) security group to modify. The group must belong to your account. Can be used instead of GroupID for standard
-        /// (EC2) security groups.
+        /// [EC2-Classic, default VPC] The name of the security group.
         ///  
         /// </summary>
         public string GroupName
@@ -56,8 +58,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// ID of the standard (EC2) or VPC security group to modify. The group must belong to your account. Required for VPC security groups; can be
-        /// used instead of GroupName for standard (EC2) security groups.
+        /// The ID of the security group.
         ///  
         /// </summary>
         public string GroupId
@@ -73,8 +74,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// List of IP permissions to authorize on the specified security group. Specifying permissions through IP permissions is the preferred way of
-        /// authorizing permissions since it offers more flexibility and control.
+        /// <p/>
         ///  
         /// </summary>
         public List<IpPermission> IpPermissions

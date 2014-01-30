@@ -103,6 +103,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             
                         continue;
                     }
+                    if (context.TestExpression("sriovNetSupport", targetDepth))
+                    {
+                        image.SriovNetSupport = StringUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
+                    }
                     if (context.TestExpression("stateReason", targetDepth))
                     {
                         image.StateReason = StateReasonUnmarshaller.GetInstance().Unmarshall(context);

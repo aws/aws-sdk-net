@@ -22,16 +22,17 @@ using Amazon.Runtime;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para> The result of describing Amazon EC2 instances. </para>
+    /// 
     /// </summary>
     public partial class DescribeInstancesResult : AmazonWebServiceResponse
     {
         
         private List<Reservation> reservations = new List<Reservation>();
+        private string nextToken;
 
 
         /// <summary>
-        /// The list of reservations containing the describes instances.
+        /// One or more reservations.
         ///  
         /// </summary>
         public List<Reservation> Reservations
@@ -44,6 +45,22 @@ namespace Amazon.EC2.Model
         internal bool IsSetReservations()
         {
             return this.reservations.Count > 0;
+        }
+
+        /// <summary>
+        /// The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.
+        ///  
+        /// </summary>
+        public string NextToken
+        {
+            get { return this.nextToken; }
+            set { this.nextToken = value; }
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this.nextToken != null;
         }
     }
 }

@@ -22,7 +22,7 @@ using Amazon.Runtime;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para> The result of describing a user's key pairs. </para>
+    /// 
     /// </summary>
     public partial class DescribeKeyPairsResult : AmazonWebServiceResponse
     {
@@ -31,7 +31,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The list of described key pairs.
+        /// Information about one or more key pairs.
         ///  
         /// </summary>
         public List<KeyPairInfo> KeyPairs

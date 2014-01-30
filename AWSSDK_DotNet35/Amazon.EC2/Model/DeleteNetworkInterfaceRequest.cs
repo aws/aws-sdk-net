@@ -25,12 +25,17 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteNetworkInterface operation.
-    /// 
+    /// <para>Deletes the specified network interface. You must detach the network interface before you can delete it.</para>
     /// </summary>
     public partial class DeleteNetworkInterfaceRequest : AmazonEC2Request
     {
         private string networkInterfaceId;
 
+
+        /// <summary>
+        /// The ID of the network interface.
+        ///  
+        /// </summary>
         public string NetworkInterfaceId
         {
             get { return this.networkInterfaceId; }

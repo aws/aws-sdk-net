@@ -20,7 +20,8 @@ using System.IO;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>Network Interface Attachment Changes
+    /// <summary>
+    /// <para>Describes an attachment change.</para>
     /// </summary>
     public class NetworkInterfaceAttachmentChanges
     {
@@ -28,6 +29,11 @@ namespace Amazon.EC2.Model
         private string attachmentId;
         private bool? deleteOnTermination;
 
+
+        /// <summary>
+        /// The ID of the network interface attachment.
+        ///  
+        /// </summary>
         public string AttachmentId
         {
             get { return this.attachmentId; }
@@ -39,6 +45,11 @@ namespace Amazon.EC2.Model
         {
             return this.attachmentId != null;
         }
+
+        /// <summary>
+        /// Indicates whether the network interface is deleted when the instance is terminated.
+        ///  
+        /// </summary>
         public bool DeleteOnTermination
         {
             get { return this.deleteOnTermination ?? default(bool); }

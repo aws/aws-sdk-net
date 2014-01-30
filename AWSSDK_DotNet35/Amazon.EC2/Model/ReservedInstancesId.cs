@@ -20,13 +20,19 @@ using System.IO;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>Reserved Instances Id
+    /// <summary>
+    /// <para>Describes the ID of a Reserved Instance.</para>
     /// </summary>
     public class ReservedInstancesId
     {
         
         private string id;
 
+
+        /// <summary>
+        /// The ID of the Reserved Instance.
+        ///  
+        /// </summary>
         public string Id
         {
             get { return this.id; }

@@ -20,7 +20,8 @@ using System.IO;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>Volume Status Item
+    /// <summary>
+    /// <para>Describes the volume status.</para>
     /// </summary>
     public class VolumeStatusItem
     {
@@ -31,6 +32,11 @@ namespace Amazon.EC2.Model
         private List<VolumeStatusEvent> events = new List<VolumeStatusEvent>();
         private List<VolumeStatusAction> actions = new List<VolumeStatusAction>();
 
+
+        /// <summary>
+        /// The volume ID.
+        ///  
+        /// </summary>
         public string VolumeId
         {
             get { return this.volumeId; }
@@ -42,6 +48,11 @@ namespace Amazon.EC2.Model
         {
             return this.volumeId != null;
         }
+
+        /// <summary>
+        /// The Availability Zone of the volume.
+        ///  
+        /// </summary>
         public string AvailabilityZone
         {
             get { return this.availabilityZone; }
@@ -53,6 +64,11 @@ namespace Amazon.EC2.Model
         {
             return this.availabilityZone != null;
         }
+
+        /// <summary>
+        /// The volume status.
+        ///  
+        /// </summary>
         public VolumeStatusInfo VolumeStatus
         {
             get { return this.volumeStatus; }
@@ -64,6 +80,11 @@ namespace Amazon.EC2.Model
         {
             return this.volumeStatus != null;
         }
+
+        /// <summary>
+        /// A list of events associated with the volume.
+        ///  
+        /// </summary>
         public List<VolumeStatusEvent> Events
         {
             get { return this.events; }
@@ -75,6 +96,11 @@ namespace Amazon.EC2.Model
         {
             return this.events.Count > 0;
         }
+
+        /// <summary>
+        /// The details of the operation.
+        ///  
+        /// </summary>
         public List<VolumeStatusAction> Actions
         {
             get { return this.actions; }

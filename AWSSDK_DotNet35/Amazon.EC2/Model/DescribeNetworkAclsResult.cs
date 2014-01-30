@@ -21,13 +21,19 @@ using Amazon.Runtime;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>Describe Network Acls Result
+    /// <summary>
+    /// 
     /// </summary>
     public partial class DescribeNetworkAclsResult : AmazonWebServiceResponse
     {
         
         private List<NetworkAcl> networkAcls = new List<NetworkAcl>();
 
+
+        /// <summary>
+        /// Information about one or more network ACLs.
+        ///  
+        /// </summary>
         public List<NetworkAcl> NetworkAcls
         {
             get { return this.networkAcls; }

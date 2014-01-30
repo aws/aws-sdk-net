@@ -25,9 +25,11 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeReservedInstancesOfferings operation.
-    /// <para> The DescribeReservedInstancesOfferings operation describes Reserved Instance offerings that are available for purchase. With Amazon
-    /// EC2 Reserved Instances, you purchase the right to launch Amazon EC2 instances for a period of time (without getting insufficient capacity
-    /// errors) and pay a lower usage rate for the actual time used. </para>
+    /// <para>Describes Reserved Instance offerings that are available for purchase. With Reserved Instances, you purchase the right to launch
+    /// instances for a period of time. During that time period, you do not receive insufficient capacity errors, and you pay a lower usage rate
+    /// than the rate charged for On-Demand instances for the actual time used.</para> <para>For more information, see <a
+    /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html" >Reserved Instance Marketplace</a> in the <i>Amazon Elastic
+    /// Compute Cloud User Guide</i> .</para>
     /// </summary>
     public partial class DescribeReservedInstancesOfferingsRequest : AmazonEC2Request
     {
@@ -47,7 +49,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// An optional list of the unique IDs of the Reserved Instance offerings to describe.
+        /// One or more Reserved Instances offering IDs.
         ///  
         /// </summary>
         public List<string> ReservedInstancesOfferingIds
@@ -63,14 +65,16 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The instance type on which the Reserved Instance can be used.
+        /// The instance type on which the Reserved Instance can be used. For more information, see <a
+        /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a> in the <i>Amazon Elastic Compute Cloud User
+        /// Guide</i>.
         ///  
         /// <para>
         /// <b>Constraints:</b>
         /// <list type="definition">
         ///     <item>
         ///         <term>Allowed Values</term>
-        ///         <description>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, m3.xlarge, m3.2xlarge, c1.medium, c1.xlarge, hi1.4xlarge, hs1.8xlarge, cc1.4xlarge, cc2.8xlarge, cg1.4xlarge, cr1.8xlarge</description>
+        ///         <description>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m3.xlarge, m3.2xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, cr1.8xlarge, i2.xlarge, i2.2xlarge, i2.4xlarge, i2.8xlarge, hi1.4xlarge, hs1.8xlarge, c1.medium, c1.xlarge, c3.large, c3.xlarge, c3.2xlarge, c3.4xlarge, c3.8xlarge, cc1.4xlarge, cc2.8xlarge, g2.2xlarge, cg1.4xlarge</description>
         ///     </item>
         /// </list>
         /// </para>
@@ -104,7 +108,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The Reserved Instance product description.
+        /// The Reserved Instance description. Instances that include <c>(Amazon VPC)</c> in the description are for use with Amazon VPC.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -129,8 +133,14 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// A list of filters used to match properties for ReservedInstancesOfferings. For a complete reference to the available filter keys for this
-        /// operation, see the <a href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon EC2 API reference</a>.
+        /// One or more filters. <ul> <li> <c>availability-zone</c> - The Availability Zone where the Reserved Instance can be used. </li> <li>
+        /// <c>duration</c> - The duration of the Reserved Instance (for example, one year or three years), in seconds. </li> <li> <c>fixed-price</c> -
+        /// The purchase price of the Reserved Instance (for example, 9800.0). </li> <li> <c>instance-type</c> - The instance type on which the Reserved
+        /// Instance can be used. </li> <li> <c>marketplace</c> - Set to <c>true</c> to show only Reserved Instance Marketplace offerings. When this
+        /// filter is not used, which is the default behavior, all offerings from AWS and Reserved Instance Marketplace are listed. </li> <li>
+        /// <c>product-description</c> - The description of the Reserved Instance (<c>Linux/UNIX</c> | <c>Linux/UNIX (Amazon VPC)</c> | <c>Windows</c> |
+        /// <c>Windows (Amazon VPC)</c>). </li> <li> <c>reserved-instances-offering-id</c> - The Reserved Instances offering ID. </li> <li>
+        /// <c>usage-price</c> - The usage price of the Reserved Instance, per hour (for example, 0.84). </li> </ul>
         ///  
         /// </summary>
         public List<Filter> Filters
@@ -146,8 +156,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The tenancy of the Reserved Instance offering. A Reserved Instance with tenancy of dedicated will run on single-tenant hardware and can only
-        /// be launched within a VPC.
+        /// The tenancy of the Reserved Instance offering. A Reserved Instance with <c>dedicated</c> tenancy runs on single-tenant hardware and can only
+        /// be launched within a VPC. Default: <c>default</c>
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -195,6 +205,11 @@ namespace Amazon.EC2.Model
         {
             return this.offeringType != null;
         }
+
+        /// <summary>
+        /// The token to use when requesting the next paginated set of offerings.
+        ///  
+        /// </summary>
         public string NextToken
         {
             get { return this.nextToken; }
@@ -206,6 +221,11 @@ namespace Amazon.EC2.Model
         {
             return this.nextToken != null;
         }
+
+        /// <summary>
+        /// The maximum number of offerings to return.
+        ///  
+        /// </summary>
         public int MaxResults
         {
             get { return this.maxResults ?? default(int); }
@@ -235,7 +255,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Minimum duration (in seconds) to filter when searching for offerings.
+        /// The minimum duration (in seconds) to filter when searching for offerings.
         ///  
         /// </summary>
         public long MinDuration
@@ -251,7 +271,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Maximum duration (in seconds) to filter when searching for offerings.
+        /// The maximum duration (in seconds) to filter when searching for offerings.
         ///  
         /// </summary>
         public long MaxDuration
@@ -265,6 +285,11 @@ namespace Amazon.EC2.Model
         {
             return this.maxDuration.HasValue;
         }
+
+        /// <summary>
+        /// The maximum number of instances to filter when searching for offerings.
+        ///  
+        /// </summary>
         public int MaxInstanceCount
         {
             get { return this.maxInstanceCount ?? default(int); }

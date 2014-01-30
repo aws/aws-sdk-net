@@ -25,9 +25,11 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the GetPasswordData operation.
-    /// <para> Retrieves the encrypted administrator password for the instances running Windows. </para> <para><b>NOTE:</b> The Windows password is
-    /// only generated the first time an AMI is launched. It is not generated for rebundled AMIs or after the password is changed on an instance.
-    /// The password is encrypted using the key pair that you provided. </para>
+    /// <para>Retrieves the encrypted administrator password for an instance running Windows.</para> <para>The Windows password is only generated
+    /// the first time an AMI is launched. It is not generated for rebundled AMIs or after the password is changed on an instance.</para> <para>The
+    /// password is encrypted using the key pair that you specified when you launched the instance. You must provide the corresponding key pair
+    /// file.</para> <para>Password generation and encryption takes a few moments. We recommend that you wait up to 15 minutes after launching an
+    /// instance before trying to retrieve the generated password.</para>
     /// </summary>
     public partial class GetPasswordDataRequest : AmazonEC2Request
     {
@@ -35,7 +37,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The ID of the instance for which you want the Windows administrator password.
+        /// The ID of the Windows instance.
         ///  
         /// </summary>
         public string InstanceId

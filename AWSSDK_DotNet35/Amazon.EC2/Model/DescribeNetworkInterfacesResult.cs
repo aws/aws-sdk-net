@@ -21,13 +21,19 @@ using Amazon.Runtime;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>Describe Network Interfaces Result
+    /// <summary>
+    /// 
     /// </summary>
     public partial class DescribeNetworkInterfacesResult : AmazonWebServiceResponse
     {
         
         private List<NetworkInterface> networkInterfaces = new List<NetworkInterface>();
 
+
+        /// <summary>
+        /// Information about one or more network interfaces.
+        ///  
+        /// </summary>
         public List<NetworkInterface> NetworkInterfaces
         {
             get { return this.networkInterfaces; }

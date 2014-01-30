@@ -21,11 +21,7 @@ using System.IO;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para> A filter used to limit results when describing tags. Multiple values can be specified per filter. A tag must match at least one of
-    /// the specified values for it to be returned from an operation. </para> <para> Wildcards can be included in filter values; <c>*</c> specifies
-    /// that zero or more characters must match, and <c>?</c> specifies that exactly one character must match. Use a backslash to escape special
-    /// characters. For example, a filter value of <c>\*amazon\?\\</c> specifies the literal string <c>*amazon?\</c> .
-    /// </para>
+    /// 
     /// </summary>
     public class Filter
     {
@@ -35,7 +31,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// Specifies the name of the filter.
+        /// The name of the filter.
         ///  
         /// </summary>
         public string Name
@@ -51,7 +47,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Contains one or more values for the filter.
+        /// One or more filter values.
         ///  
         /// </summary>
         public List<string> Values

@@ -25,12 +25,18 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the EnableVolumeIO operation.
-    /// <para> Enable IO on the volume after an event has occured. </para>
+    /// <para>Enables I/O operations for a volume that had I/O operations disabled because the data on the volume was potentially
+    /// inconsistent.</para>
     /// </summary>
     public partial class EnableVolumeIORequest : AmazonEC2Request
     {
         private string volumeId;
 
+
+        /// <summary>
+        /// The ID of the volume.
+        ///  
+        /// </summary>
         public string VolumeId
         {
             get { return this.volumeId; }

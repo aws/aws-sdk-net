@@ -25,9 +25,11 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateImage operation.
-    /// <para> Creates an Amazon EBS-backed AMI from a "running" or "stopped" instance. AMIs that use an Amazon EBS root device boot faster than
-    /// AMIs that use instance stores. They can be up to 1 TiB in size, use storage that persists on instance failure, and can be stopped and
-    /// started. </para>
+    /// <para>Creates an Amazon EBS-backed AMI from an Amazon EBS-backed instance that is either running or stopped.</para> <para>If you customized
+    /// your instance with instance store volumes or EBS volumes in addition to the root device volume, the new AMI contains block device mapping
+    /// information for those volumes. When you launch an instance from this new AMI, the instance automatically launches with those additional
+    /// volumes.</para> <para>For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html"
+    /// >Creating Amazon EBS-Backed Linux AMIs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .</para>
     /// </summary>
     public partial class CreateImageRequest : AmazonEC2Request
     {
@@ -39,7 +41,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The ID of the instance from which to create the new image.
+        /// The ID of the instance.
         ///  
         /// </summary>
         public string InstanceId
@@ -55,7 +57,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The name for the new AMI being created.
+        /// A name for the new image. Constraints: 3-128 alphanumeric characters, parenthesis (()), periods (.), slashes (/), dashes (-), or
+        /// underscores(_)
         ///  
         /// </summary>
         public string Name
@@ -71,7 +74,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The description for the new AMI being created.
+        /// A description for the new image.
         ///  
         /// </summary>
         public string Description
@@ -87,9 +90,9 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// By default this property is set to <c>false</c>, which means Amazon EC2 attempts to cleanly shut down the instance before image creation and
-        /// reboots the instance afterwards. When set to true, Amazon EC2 will not shut down the instance before creating the image. When this option is
-        /// used, file system integrity on the created image cannot be guaranteed.
+        /// By default, this parameter is set to <c>false</c>, which means Amazon EC2 attempts to shut down the instance cleanly before image creation
+        /// and then reboots the instance. When the parameter is set to <c>true</c>, Amazon EC2 doesn't shut down the instance before creating the
+        /// image. When this option is used, file system integrity on the created image can't be guaranteed.
         ///  
         /// </summary>
         public bool NoReboot
@@ -103,6 +106,11 @@ namespace Amazon.EC2.Model
         {
             return this.noReboot.HasValue;
         }
+
+        /// <summary>
+        /// Information about one or more block device mappings.
+        ///  
+        /// </summary>
         public List<BlockDeviceMapping> BlockDeviceMappings
         {
             get { return this.blockDeviceMappings; }

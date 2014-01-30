@@ -21,7 +21,8 @@ using Amazon.Runtime;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>Create Spot Datafeed Subscription Result
+    /// <summary>
+    /// 
     /// </summary>
     public partial class CreateSpotDatafeedSubscriptionResult : AmazonWebServiceResponse
     {
@@ -30,7 +31,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The SpotDatafeedSubscriptionType data type.
+        /// The Spot Instance datafeed subscription.
         ///  
         /// </summary>
         public SpotDatafeedSubscription SpotDatafeedSubscription

@@ -22,7 +22,7 @@ using Amazon.Runtime;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para> The result of the GetPasswordData operation. </para>
+    /// 
     /// </summary>
     public partial class GetPasswordDataResult : AmazonWebServiceResponse
     {
@@ -33,7 +33,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The ID of the instance whose Windows administrator password was requested.
+        /// The ID of the Windows instance.
         ///  
         /// </summary>
         public string InstanceId
@@ -65,7 +65,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The Windows administrator password of the specified instance.
+        /// The password of the instance.
         ///  
         /// </summary>
         public string PasswordData

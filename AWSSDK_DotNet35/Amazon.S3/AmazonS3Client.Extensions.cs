@@ -264,12 +264,6 @@ namespace Amazon.S3
             var putObjectRequest = request.OriginalRequest as PutObjectRequest;
             if (putObjectRequest != null)
             {
-                if (putObjectRequest.InputStream != null
-                    && (!string.IsNullOrEmpty(putObjectRequest.FilePath) || putObjectRequest.AutoCloseStream))
-                {
-                    putObjectRequest.InputStream.Dispose();
-                }
-
                 // If InputStream was a HashStream, compare calculated hash to returned etag
                 HashStream hashStream = putObjectRequest.InputStream as HashStream;
                 if (hashStream != null)
@@ -283,16 +277,6 @@ namespace Amazon.S3
 
                     // Set InputStream to its original value
                     putObjectRequest.InputStream = hashStream.GetNonWrapperBaseStream();
-                }
-
-                // Set the input stream to null since it was created during the request to represent the filepath or content body
-                if (!string.IsNullOrEmpty(putObjectRequest.FilePath) || !string.IsNullOrEmpty(putObjectRequest.ContentBody)
-#if WIN_RT || WINDOWS_PHONE
-                    || putObjectRequest.StorageFile != null
-#endif                    
-                    )
-                {
-                    putObjectRequest.InputStream = null;
                 }
             }
 
@@ -314,12 +298,6 @@ namespace Amazon.S3
                 if (uploadPartResponse != null)
                     uploadPartResponse.PartNumber = uploadPartRequest.PartNumber;
 
-                // FilePath was set, so we created the underlying stream, so we must close it
-                if (uploadPartRequest.IsSetFilePath())
-                {
-                    uploadPartRequest.InputStream.Dispose();
-                }
-
                 // If InputStream was a HashStream, compare calculated hash to returned etag
                 HashStream hashStream = uploadPartRequest.InputStream as HashStream;
                 if (hashStream != null)
@@ -334,13 +312,6 @@ namespace Amazon.S3
                     // Set InputStream to its original value
                     uploadPartRequest.InputStream = hashStream.GetNonWrapperBaseStream();
                 }
-
-                if (uploadPartRequest.IsSetFilePath()
-#if WIN_RT || WINDOWS_PHONE
-                    || uploadPartRequest.StorageFile != null
-#endif
-)
-                    uploadPartRequest.InputStream = null;
             }
 
             var copyPartResponse = response as CopyPartResponse;
@@ -348,12 +319,19 @@ namespace Amazon.S3
             {
                 copyPartResponse.PartNumber = ((CopyPartRequest)request.OriginalRequest).PartNumber;
             }
+
+            CleanupRequest(request);
         }
 
         protected override void ProcessExceptionHandlers(Exception exception, IRequest request)
         {
             base.ProcessExceptionHandlers(exception, request);
 
+            CleanupRequest(request);
+        }
+
+        private static void CleanupRequest(IRequest request)
+        {
             var putObjectRequest = request.OriginalRequest as PutObjectRequest;
             if (putObjectRequest != null)
             {
@@ -374,6 +352,22 @@ namespace Amazon.S3
                 }
             }
 
+            var uploadPartRequest = request.OriginalRequest as UploadPartRequest;
+            if (uploadPartRequest != null)
+            {
+                // FilePath was set, so we created the underlying stream, so we must close it
+                if (uploadPartRequest.IsSetFilePath())
+                {
+                    uploadPartRequest.InputStream.Dispose();
+                }
+
+                if (uploadPartRequest.IsSetFilePath()
+#if WIN_RT || WINDOWS_PHONE
+                    || uploadPartRequest.StorageFile != null
+#endif
+)
+                    uploadPartRequest.InputStream = null;
+            }
         }
 
         protected override void ProcessPreRequestHandlers(AmazonWebServiceRequest request)

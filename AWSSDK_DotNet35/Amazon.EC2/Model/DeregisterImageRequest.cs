@@ -25,7 +25,8 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DeregisterImage operation.
-    /// <para> The DeregisterImage operation deregisters an AMI. Once deregistered, instances of the AMI can no longer be launched. </para>
+    /// <para>Deregisters the specified AMI. After you deregister an AMI, it can't be used to launch new instances.</para> <para>This command does
+    /// not delete the AMI.</para>
     /// </summary>
     public partial class DeregisterImageRequest : AmazonEC2Request
     {
@@ -33,7 +34,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The ID of the AMI to deregister.
+        /// The ID of the AMI.
         ///  
         /// </summary>
         public string ImageId

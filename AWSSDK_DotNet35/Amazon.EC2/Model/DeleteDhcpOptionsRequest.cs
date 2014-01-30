@@ -25,8 +25,8 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteDhcpOptions operation.
-    /// <para> Deletes a set of DHCP options that you specify. Amazon VPC returns an error if the set of options you specify is currently associated
-    /// with a VPC. You can disassociate the set of options by associating either a new set of options or the default options with the VPC. </para>
+    /// <para>Deletes the specified set of DHCP options. You must disassociate the set of DHCP options before you can delete it. You can
+    /// disassociate the set of DHCP options by associating either a new set of options or the default set of options with the VPC.</para>
     /// </summary>
     public partial class DeleteDhcpOptionsRequest : AmazonEC2Request
     {
@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The ID of the DHCP options set to delete.
+        /// The ID of the DHCP options set.
         ///  
         /// </summary>
         public string DhcpOptionsId

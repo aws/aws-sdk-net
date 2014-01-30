@@ -20,7 +20,8 @@ using System.IO;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>Private Ip Address Specification
+    /// <summary>
+    /// <para>Describes a secondary private IP address for a network interface.</para>
     /// </summary>
     public class PrivateIpAddressSpecification
     {
@@ -28,6 +29,11 @@ namespace Amazon.EC2.Model
         private string privateIpAddress;
         private bool? primary;
 
+
+        /// <summary>
+        /// The private IP addresses.
+        ///  
+        /// </summary>
         public string PrivateIpAddress
         {
             get { return this.privateIpAddress; }
@@ -39,6 +45,11 @@ namespace Amazon.EC2.Model
         {
             return this.privateIpAddress != null;
         }
+
+        /// <summary>
+        /// Indicates whether the private IP address is the primary private IP address.
+        ///  
+        /// </summary>
         public bool Primary
         {
             get { return this.primary ?? default(bool); }

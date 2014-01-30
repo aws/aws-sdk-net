@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para> Describes where an Amazon EC2 instance is running within an Amazon EC2 region. </para>
+    /// <para>Describes the placement for the instance.</para>
     /// </summary>
     public class Placement
     {
@@ -32,7 +32,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The availability zone in which an Amazon EC2 instance runs.
+        /// The Availability Zone of the instance.
         ///  
         /// </summary>
         public string AvailabilityZone
@@ -48,8 +48,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The name of the <a>PlacementGroup</a> in which an Amazon EC2 instance runs. Placement groups are primarily used for launching High
-        /// Performance Computing instances in the same group to ensure fast connection speeds.
+        /// The name of the placement group the instance is in (for cluster compute instances).
         ///  
         /// </summary>
         public string GroupName
@@ -65,9 +64,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The allowed tenancy of instances launched into the VPC. A value of default means instances can be launched with any tenancy; a value of
-        /// dedicated means all instances launched into the VPC will be launched as dedicated tenancy regardless of the tenancy assigned to the instance
-        /// at launch.
+        /// The tenancy of the instance (if the instance is running in a VPC). An instance with a tenancy of <c>dedicated</c> runs on single-tenant
+        /// hardware.
         ///  
         /// <para>
         /// <b>Constraints:</b>

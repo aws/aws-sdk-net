@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para> The VpnConnection data type. </para>
+    /// <para>Describes a VPN connection.</para>
     /// </summary>
     public class VpnConnection
     {
@@ -39,7 +39,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// Specifies the ID of the VPN gateway at the VPC end of the VPN connection.
+        /// The ID of the VPN connection.
         ///  
         /// </summary>
         public string VpnConnectionId
@@ -55,7 +55,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Describes the current state of the VPN connection. Valid values are <c>pending</c>, <c>available</c>, <c>deleting</c>, and <c>deleted</c>.
+        /// The current state of the VPN connection.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -80,9 +80,9 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Contains configuration information in the native XML format for the VPN connection's customer gateway. This element is always present in the
-        /// CreateVpnConnection response; however, it's present in the DescribeVpnConnections response only if the VPN connection is in the
-        /// <c>pending</c> or <c>available</c> state.
+        /// The configuration information for the VPN connection's customer gateway (in the native XML format). This element is always present in the
+        /// <a>CreateVpnConnection</a> response; however, it's present in the <a>DescribeVpnConnections</a> response only if the VPN connection is in
+        /// the <c>pending</c> or <c>available</c> state.
         ///  
         /// </summary>
         public string CustomerGatewayConfiguration
@@ -98,7 +98,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Specifies the type of VPN connection.
+        /// The type of VPN connection.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -123,7 +123,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Specifies ID of the customer gateway at the end of the VPN connection.
+        /// The ID of the customer gateway at your end of the VPN connection.
         ///  
         /// </summary>
         public string CustomerGatewayId
@@ -139,7 +139,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Specfies the ID of the VPN gateway at the VPC end of the VPN connection.
+        /// The ID of the virtual private gateway at the AWS side of the VPN connection.
         ///  
         /// </summary>
         public string VpnGatewayId
@@ -155,7 +155,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// A list of tags for the VpnConnection.
+        /// Any tags assigned to the VPN connection.
         ///  
         /// </summary>
         public List<Tag> Tags
@@ -169,6 +169,11 @@ namespace Amazon.EC2.Model
         {
             return this.tags.Count > 0;
         }
+
+        /// <summary>
+        /// Information about the VPN tunnel.
+        ///  
+        /// </summary>
         public List<VgwTelemetry> VgwTelemetry
         {
             get { return this.vgwTelemetry; }
@@ -180,6 +185,11 @@ namespace Amazon.EC2.Model
         {
             return this.vgwTelemetry.Count > 0;
         }
+
+        /// <summary>
+        /// The VPN connection options.
+        ///  
+        /// </summary>
         public VpnConnectionOptions Options
         {
             get { return this.options; }
@@ -191,6 +201,11 @@ namespace Amazon.EC2.Model
         {
             return this.options != null;
         }
+
+        /// <summary>
+        /// The static routes assoicated with the VPN connection.
+        ///  
+        /// </summary>
         public List<VpnStaticRoute> Routes
         {
             get { return this.routes; }

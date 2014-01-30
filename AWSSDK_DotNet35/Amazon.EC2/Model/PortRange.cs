@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// 
+    /// <para>Describes a range of ports.</para>
     /// </summary>
     public class PortRange
     {
@@ -31,7 +31,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The first port in the range. Required if specifying <c>tcp</c> or <c>udp</c> for the protocol.
+        /// The first port in the range.
         ///  
         /// </summary>
         public int From
@@ -47,7 +47,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The last port in the range. Required if specifying <c>tcp</c> or <c>udp</c> for the protocol.
+        /// The last port in the range.
         ///  
         /// </summary>
         public int To

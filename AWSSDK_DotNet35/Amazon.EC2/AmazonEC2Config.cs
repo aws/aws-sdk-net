@@ -20,9 +20,9 @@ namespace Amazon.EC2
 {
 
     /// <summary>
-    /// Configuration for accessing AmazonEC2 service
+    /// Configuration for accessing Amazon Elastic Compute Cloud service
     /// </summary>
-    public class AmazonEC2Config : ClientConfig
+    public partial class AmazonEC2Config : ClientConfig
     {
         /// <summary>
         /// Default constructor

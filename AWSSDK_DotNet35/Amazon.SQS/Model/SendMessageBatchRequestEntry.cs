@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.SQS.Model
 {
     /// <summary>
-    /// <para>Contains the details of a single SQS message along with a <c>Id</c> . </para>
+    /// <para>Contains the details of a single Amazon SQS message along with a <c>Id</c> . </para>
     /// </summary>
     public class SendMessageBatchRequestEntry
     {
@@ -32,8 +32,8 @@ namespace Amazon.SQS.Model
 
 
         /// <summary>
-        /// An identifier for the message in this batch. This is used to communicate the result. Note that the the <c>Id</c>s of a batch request need to
-        /// be unique within the request.
+        /// An identifier for the message in this batch. This is used to communicate the result. Note that the <c>Id</c>s of a batch request need to be
+        /// unique within the request.
         ///  
         /// </summary>
         public string Id

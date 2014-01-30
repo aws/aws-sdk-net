@@ -125,6 +125,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 request.Parameters.Add("EbsOptimized.Value", StringUtils.FromBool(modifyInstanceAttributeRequest.EbsOptimized));
             }
+            if (modifyInstanceAttributeRequest != null && modifyInstanceAttributeRequest.IsSetSriovNetSupport())
+            {
+                request.Parameters.Add("SriovNetSupport.Value", StringUtils.FromString(modifyInstanceAttributeRequest.SriovNetSupport));
+            }
 
             return request;
         }

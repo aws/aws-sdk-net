@@ -22,7 +22,7 @@ using Amazon.Runtime;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para> The result of modifying Reserved Instances. Contains the ID of the modification request. </para>
+    /// 
     /// </summary>
     public partial class ModifyReservedInstancesResult : AmazonWebServiceResponse
     {
@@ -31,7 +31,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The unique ID for the submitted modification request.
+        /// The ID for the modification.
         ///  
         /// </summary>
         public string ReservedInstancesModificationId

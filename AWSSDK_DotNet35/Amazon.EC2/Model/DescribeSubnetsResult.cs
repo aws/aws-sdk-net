@@ -22,7 +22,7 @@ using Amazon.Runtime;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para> </para>
+    /// 
     /// </summary>
     public partial class DescribeSubnetsResult : AmazonWebServiceResponse
     {
@@ -31,7 +31,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// Contains a set of one or more <a>Subnet</a> instances.
+        /// Information about one or more subnets.
         ///  
         /// </summary>
         public List<Subnet> Subnets

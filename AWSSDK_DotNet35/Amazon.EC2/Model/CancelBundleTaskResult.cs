@@ -22,7 +22,7 @@ using Amazon.Runtime;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para> The result of canceling an Amazon EC2 bundle task. </para>
+    /// 
     /// </summary>
     public partial class CancelBundleTaskResult : AmazonWebServiceResponse
     {
@@ -31,7 +31,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The canceled bundle task.
+        /// The bundle task.
         ///  
         /// </summary>
         public BundleTask BundleTask

@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para> Describes the monitoring status of an Amazon EC2 instance. </para>
+    /// <para>Describes the monitoring for the instance.</para>
     /// </summary>
     public class Monitoring
     {
@@ -30,7 +30,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The state of monitoring on an Amazon EC2 instance (ex: enabled, disabled).
+        /// Indicates whether monitoring is enabled for the instance.
         ///  
         /// <para>
         /// <b>Constraints:</b>

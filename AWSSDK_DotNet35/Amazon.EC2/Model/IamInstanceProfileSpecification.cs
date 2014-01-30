@@ -20,7 +20,8 @@ using System.IO;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>Iam Instance Profile Specification
+    /// <summary>
+    /// <para>Describes an IAM instance profile.</para>
     /// </summary>
     public class IamInstanceProfileSpecification
     {
@@ -28,6 +29,11 @@ namespace Amazon.EC2.Model
         private string arn;
         private string name;
 
+
+        /// <summary>
+        /// The Amazon Resource Name (ARN) of the instance profile.
+        ///  
+        /// </summary>
         public string Arn
         {
             get { return this.arn; }
@@ -39,6 +45,11 @@ namespace Amazon.EC2.Model
         {
             return this.arn != null;
         }
+
+        /// <summary>
+        /// The name of the instance profile.
+        ///  
+        /// </summary>
         public string Name
         {
             get { return this.name; }

@@ -25,7 +25,9 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the AllocateAddress operation.
-    /// <para> The AllocateAddress operation acquires an elastic IP address for use with your account. </para>
+    /// <para>Acquires an Elastic IP address.</para> <para>An Elastic IP address is for use either in the EC2-Classic platform or in a VPC. For more
+    /// information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html" >Elastic IP Addresses</a> in the
+    /// <i>Amazon Elastic Compute Cloud User Guide</i> .</para>
     /// </summary>
     public partial class AllocateAddressRequest : AmazonEC2Request
     {
@@ -33,7 +35,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// Set to <c>vpc</c> to allocate the address to your VPC. By default, will allocate to EC2.
+        /// Set to <c>vpc</c> to allocate the address for use with instances in a VPC. Default: The address is for use with instances in EC2-Classic.
         ///  
         /// <para>
         /// <b>Constraints:</b>

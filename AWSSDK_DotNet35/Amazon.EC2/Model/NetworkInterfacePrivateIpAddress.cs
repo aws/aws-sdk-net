@@ -20,7 +20,8 @@ using System.IO;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>Network Interface Private Ip Address
+    /// <summary>
+    /// <para>Describes the private IP address of a network interface.</para>
     /// </summary>
     public class NetworkInterfacePrivateIpAddress
     {
@@ -30,6 +31,11 @@ namespace Amazon.EC2.Model
         private bool? primary;
         private NetworkInterfaceAssociation association;
 
+
+        /// <summary>
+        /// The private IP address.
+        ///  
+        /// </summary>
         public string PrivateIpAddress
         {
             get { return this.privateIpAddress; }
@@ -41,6 +47,11 @@ namespace Amazon.EC2.Model
         {
             return this.privateIpAddress != null;
         }
+
+        /// <summary>
+        /// The private DNS name.
+        ///  
+        /// </summary>
         public string PrivateDnsName
         {
             get { return this.privateDnsName; }
@@ -52,6 +63,11 @@ namespace Amazon.EC2.Model
         {
             return this.privateDnsName != null;
         }
+
+        /// <summary>
+        /// Indicates whether this IP address is the primary private IP address of the network interface.
+        ///  
+        /// </summary>
         public bool Primary
         {
             get { return this.primary ?? default(bool); }
@@ -63,6 +79,11 @@ namespace Amazon.EC2.Model
         {
             return this.primary.HasValue;
         }
+
+        /// <summary>
+        /// The association information for an Elastic IP address associated with the network interface.
+        ///  
+        /// </summary>
         public NetworkInterfaceAssociation Association
         {
             get { return this.association; }

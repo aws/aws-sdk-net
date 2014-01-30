@@ -25,8 +25,10 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateTags operation.
-    /// <para> Adds or overwrites tags for the specified resources. Each resource can have a maximum of 10 tags. Each tag consists of a key-value
-    /// pair. Tag keys must be unique per resource. </para>
+    /// <para>Adds or overwrites one or more tags for the specified EC2 resource or resources. Each resource can have a maximum of 10 tags. Each tag
+    /// consists of a key and optional value. Tag keys must be unique per resource.</para> <para>For more information about tags, see <a
+    /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html" >Tagging Your Resources</a> in the <i>Amazon Elastic Compute Cloud
+    /// User Guide</i> .</para>
     /// </summary>
     public partial class CreateTagsRequest : AmazonEC2Request
     {
@@ -35,7 +37,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// One or more IDs of resources to tag. This could be the ID of an AMI, an instance, an EBS volume, or snapshot, etc.
+        /// The IDs of one or more resources to tag. For example, ami-1a2b3c4d.
         ///  
         /// </summary>
         public List<string> Resources
@@ -51,7 +53,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The tags to add or overwrite for the specified resources. Each tag item consists of a key-value pair.
+        /// One or more tags. The <c>value</c> parameter is required, but if you don't want the tag to have a value, specify the parameter with no
+        /// value, and we set the value to an empty string.
         ///  
         /// </summary>
         public List<Tag> Tags

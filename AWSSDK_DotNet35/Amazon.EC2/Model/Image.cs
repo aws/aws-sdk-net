@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para> Represents an <i>Amazon Machine Image</i> (AMI) that can be run on an Amazon EC2 instance. </para>
+    /// <para>Describes an image.</para>
     /// </summary>
     public class Image
     {
@@ -37,6 +37,7 @@ namespace Amazon.EC2.Model
         private string kernelId;
         private string ramdiskId;
         private PlatformValues platform;
+        private string sriovNetSupport;
         private StateReason stateReason;
         private string imageOwnerAlias;
         private string name;
@@ -50,7 +51,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The unique ID of the AMI.
+        /// The ID of the AMI.
         ///  
         /// </summary>
         public string ImageId
@@ -82,8 +83,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Current state of the AMI. If the operation returns available, the image is successfully registered and available for launching. If the
-        /// operation returns deregistered, the image is deregistered and no longer available for launching.
+        /// The current state of the AMI. If the state is <c>available</c>, the image is successfully registered and can be used to launch an instance.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -108,7 +108,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// AWS Access Key ID of the image owner.
+        /// The AWS account ID of the image owner.
         ///  
         /// </summary>
         public string OwnerId
@@ -124,7 +124,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// True if this image has public launch permissions. False if it only has implicit and explicit launch permissions.
+        /// Indicates whether the image has public launch permissions. The value is <c>true</c> if this image has public launch permissions or
+        /// <c>false</c> if it has only implicit and explicit launch permissions.
         ///  
         /// </summary>
         public bool Public
@@ -140,7 +141,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Product codes of the AMI.
+        /// Any product codes associated with the AMI.
         ///  
         /// </summary>
         public List<ProductCode> ProductCodes
@@ -181,7 +182,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The type of image (machine, kernel, or ramdisk).
+        /// The type of image.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -238,7 +239,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The operating platform of the AMI.
+        /// The value is <c>Windows</c> for Windows AMIs; otherwise blank.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -263,6 +264,22 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Specifies whether enhanced networking is enabled.
+        ///  
+        /// </summary>
+        public string SriovNetSupport
+        {
+            get { return this.sriovNetSupport; }
+            set { this.sriovNetSupport = value; }
+        }
+
+        // Check to see if SriovNetSupport property is set
+        internal bool IsSetSriovNetSupport()
+        {
+            return this.sriovNetSupport != null;
+        }
+
+        /// <summary>
         /// The reason for the state change.
         ///  
         /// </summary>
@@ -279,7 +296,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The AWS account alias (e.g., "amazon", "redhat", "self", etc.) or AWS account ID that owns the AMI.
+        /// The AWS account alias (for example, <c>amazon</c>, <c>self</c>) or the AWS account ID of the AMI owner.
         ///  
         /// </summary>
         public string ImageOwnerAlias
@@ -327,7 +344,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The root device type used by the AMI. The AMI can use an Amazon EBS or instance store root device.
+        /// The type of root device used by the AMI. The AMI can use an Amazon EBS volume or an instance store volume.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -352,7 +369,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The root device name (e.g., <c>/dev/sda1</c>).
+        /// The device name of the root device (for example, <filename>/dev/sda1</filename> or <filename>xvda</filename>).
         ///  
         /// </summary>
         public string RootDeviceName
@@ -368,7 +385,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Specifies how block devices are exposed to the instance.
+        /// Any block device mapping entries.
         ///  
         /// </summary>
         public List<BlockDeviceMapping> BlockDeviceMappings
@@ -382,6 +399,20 @@ namespace Amazon.EC2.Model
         {
             return this.blockDeviceMappings.Count > 0;
         }
+
+        /// <summary>
+        /// The type of virtualization of the AMI.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>hvm, paravirtual</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
         public VirtualizationType VirtualizationType
         {
             get { return this.virtualizationType; }
@@ -395,7 +426,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// A list of tags for the Image.
+        /// Any tags assigned to the image.
         ///  
         /// </summary>
         public List<Tag> Tags
@@ -409,6 +440,20 @@ namespace Amazon.EC2.Model
         {
             return this.tags.Count > 0;
         }
+
+        /// <summary>
+        /// The hypervisor type of the image.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>ovm, xen</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
         public HypervisorType Hypervisor
         {
             get { return this.hypervisor; }

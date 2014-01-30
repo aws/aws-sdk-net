@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para> Information about a specific modification request to your Reserved Instances. </para>
+    /// <para>Describes a Reserved Instance modification.</para>
     /// </summary>
     public class ReservedInstancesModification
     {
@@ -38,7 +38,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The unique ID for the submitted modification request.
+        /// A unique ID for the Reserved Instance modification.
         ///  
         /// </summary>
         public string ReservedInstancesModificationId
@@ -54,7 +54,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The IDs of the Reserved Instances submitted for modification.
+        /// The IDs of one or more Reserved Instances.
         ///  
         /// </summary>
         public List<ReservedInstancesId> ReservedInstancesIds
@@ -70,7 +70,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The resulting information about the modified Reserved Instances.
+        /// Contains target configurations along with their corresponding new Reserved Instance IDs.
         ///  
         /// </summary>
         public List<ReservedInstancesModificationResult> ModificationResults
@@ -86,7 +86,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The time the modification request was created.
+        /// The time when the modification request was created.
         ///  
         /// </summary>
         public DateTime CreateDate
@@ -102,7 +102,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The time the modification request was last updated.
+        /// The time when the modification request was last updated.
         ///  
         /// </summary>
         public DateTime UpdateDate
@@ -118,7 +118,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The time the modification becomes effective.
+        /// The time for the modification to become effective.
         ///  
         /// </summary>
         public DateTime EffectiveDate
@@ -134,7 +134,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The status of the modification request, which can be any of the following values: processing, fulfilled, failed.
+        /// The status of the Reserved Instances modification request.
         ///  
         /// </summary>
         public string Status
@@ -166,7 +166,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The idempotency token for the modification request.
+        /// A unique, case-sensitive key supplied by the client to ensure that the modification request is idempotent.
         ///  
         /// </summary>
         public string ClientToken

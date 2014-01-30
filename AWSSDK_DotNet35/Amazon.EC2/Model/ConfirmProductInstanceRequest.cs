@@ -25,10 +25,8 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the ConfirmProductInstance operation.
-    /// <para> The ConfirmProductInstance operation returns true if the specified product code is attached to the specified instance. The operation
-    /// returns false if the product code is not attached to the instance. </para> <para> The ConfirmProductInstance operation can only be executed
-    /// by the owner of the AMI. This feature is useful when an AMI owner is providing support and wants to verify whether a user's instance is
-    /// eligible. </para>
+    /// <para>Determines whether a product code is associated with an instance. This action can only be used by the owner of the product code. It is
+    /// useful when a product code owner needs to verify whether another user's instance is eligible for support.</para>
     /// </summary>
     public partial class ConfirmProductInstanceRequest : AmazonEC2Request
     {
@@ -37,7 +35,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The product code to confirm.
+        /// The product code. This must be an Amazon DevPay product code that you own.
         ///  
         /// </summary>
         public string ProductCode
@@ -53,7 +51,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The ID of the instance to confirm.
+        /// The ID of the instance.
         ///  
         /// </summary>
         public string InstanceId

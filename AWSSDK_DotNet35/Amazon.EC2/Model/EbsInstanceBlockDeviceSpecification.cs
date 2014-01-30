@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para> Specifies how an EBS volume should be mapped as part of a block device mapping specification when launching a new instance. </para>
+    /// 
     /// </summary>
     public class EbsInstanceBlockDeviceSpecification
     {
@@ -31,7 +31,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The ID of the EBS volume that should be mounted as a block device on an Amazon EC2 instance.
+        /// The ID of the Amazon EBS volume.
         ///  
         /// </summary>
         public string VolumeId
@@ -47,7 +47,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Specifies whether the Amazon EBS volume is deleted on instance termination.
+        /// Indicates whether the volume is deleted on instance termination.
         ///  
         /// </summary>
         public bool DeleteOnTermination

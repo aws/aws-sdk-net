@@ -127,106 +127,120 @@ namespace Amazon.Runtime
 
         private async Task<T> InvokeConfiguredRequest<T>(WebRequestState state, CancellationToken cancellationToken) where T : AmazonWebServiceResponse
         {
+            int currentRetries = state.RetriesAttempt;
             T response = null;
             bool shouldRetry = false;
             HttpResponseMessage responseMessage = null;
             var requestMessage = ConfigureRequestMessage(state);
             try
             {
-                SetContent(requestMessage, state);
+                try
+                {
+                    SetContent(requestMessage, state);
 
-                using (state.Metrics.StartEvent(Metric.HttpRequestTime))
-                {
-                    responseMessage = await httpClient.SendAsync(requestMessage, HttpCompletionOption.ResponseHeadersRead, cancellationToken)
-                        .ConfigureAwait(continueOnCapturedContext: false);
-                }
-
-                if (!IsErrorResponse(responseMessage) ||
-                    responseMessage.StatusCode == HttpStatusCode.NotFound && state.Request.Suppress404Exceptions)
-                {
-                    using (state.Metrics.StartEvent(Metric.ResponseProcessingTime))
+                    using (state.Metrics.StartEvent(Metric.HttpRequestTime))
                     {
-                        response = (T)HandleHttpContent(state, responseMessage);
-                    }
-                }
-                else
-                {
-                    bool retry = HandleHttpErrorResponse(state, responseMessage, cancellationToken);
-                    if (retry)
-                    {
-                        shouldRetry = true;
-                    }
-                }
-            }
-            catch (HttpRequestException e)
-            {
-                var we = e.InnerException as WebException;
-
-                if (we != null)
-                {
-                    if (WebExceptionStatusesToThrowOn.Contains(we.Status))
-                    {
-                        throw new AmazonServiceException(we);
+                        responseMessage = await httpClient.SendAsync(requestMessage, HttpCompletionOption.ResponseHeadersRead, cancellationToken)
+                            .ConfigureAwait(continueOnCapturedContext: false);
                     }
 
-                    // The WinRT framework doesn't break down errors, not all status values are available for WinRT.                
-                    if (
+                    if (!IsErrorResponse(responseMessage) ||
+                        responseMessage.StatusCode == HttpStatusCode.NotFound && state.Request.Suppress404Exceptions)
+                    {
+                        using (state.Metrics.StartEvent(Metric.ResponseProcessingTime))
+                        {
+                            response = (T)HandleHttpContent(state, responseMessage);
+                        }
+                    }
+                    else
+                    {
+                        bool retry = HandleHttpErrorResponse(state, responseMessage, cancellationToken);
+                        if (retry)
+                        {
+                            shouldRetry = true;
+                        }
+                    }
+                }
+                catch (HttpRequestException e)
+                {
+                    var we = e.InnerException as WebException;
+
+                    if (we != null)
+                    {
+                        if (WebExceptionStatusesToThrowOn.Contains(we.Status))
+                        {
+                            throw new AmazonServiceException(we);
+                        }
+
+                        // The WinRT framework doesn't break down errors, not all status values are available for WinRT.                
+                        if (
 #if WIN_RT                    
                     (we.Status == WebExceptionStatus.UnknownError || WebExceptionStatusesToRetryOn.Contains(we.Status))
 #else
-                        WebExceptionStatusesToRetryOn.Contains(we.Status)
+WebExceptionStatusesToRetryOn.Contains(we.Status)
 #endif
-                    )
+)
+                        {
+                            shouldRetry = RetryOrThrow(state, e);
+                        }
+                    }
+
+                    var ioe = e.InnerException as IOException;
+                    if (ioe != null)
+                    {
+#if !WIN_RT
+                        if (IsInnerExceptionThreadAbort(ioe))
+                        { throw new AmazonServiceException(e); }
+#endif
+                        shouldRetry = RetryOrThrow(state, e);
+                    }
+
+                    // Check if response is null at the end as
+                    // it can be null for both WebException and IOException.
+                    if (!shouldRetry && response == null)
                     {
                         shouldRetry = RetryOrThrow(state, e);
                     }
+
+                    // If shouldRetry is not set by any of the above checks,
+                    // re-throw the exception.
+                    if (!shouldRetry)
+                    {
+                        throw new AmazonServiceException(e);
+                    }
+                }
+                finally
+                {
+                    if (responseMessage != null && !state.Unmarshaller.HasStreamingProperty)
+                    {
+                        responseMessage.Dispose();
+                        responseMessage = null;
+                    }
                 }
 
-                var ioe = e.InnerException as IOException;
-                if (ioe != null)
+                if (shouldRetry)
                 {
-#if !WIN_RT
-                    if (IsInnerExceptionThreadAbort(ioe))
-                    { throw new AmazonServiceException(e); }
-#endif
-                    shouldRetry = RetryOrThrow(state, e);
+                    pauseExponentially(state);
+                    cancellationToken.ThrowIfCancellationRequested();
+                    state.RetriesAttempt++;
+                    var retryResponse = await InvokeHelper<T>(state, cancellationToken)
+                        .ConfigureAwait(continueOnCapturedContext: false);
+                    return (T)retryResponse;
                 }
-
-                // Check if response is null at the end as
-                // it can be null for both WebException and IOException.
-                if (!shouldRetry && response == null)
+                else
                 {
-                    shouldRetry = RetryOrThrow(state, e);
-                }
-
-                // If shouldRetry is not set by any of the above checks,
-                // re-throw the exception.
-                if (!shouldRetry)
-                {
-                    throw new AmazonServiceException(e);
+                    LogFinalMetrics(state.Metrics);
                 }
             }
-            finally
+            catch (Exception e)
             {
-                if (responseMessage != null && !state.Unmarshaller.HasStreamingProperty)
+                // On errors that are passed to the client, invoke exception handlers
+                // Do this on the last throw (first recursive call), where state.RetriesAttempt was 0
+                if (currentRetries == 0)
                 {
-                    responseMessage.Dispose();
-                    responseMessage = null;
+                    ProcessExceptionHandlers(e, state.Request);
                 }
-            }
-
-            if (shouldRetry)
-            {
-                pauseExponentially(state);
-                cancellationToken.ThrowIfCancellationRequested();
-                state.RetriesAttempt++;
-                var retryResponse = await InvokeHelper<T>(state, cancellationToken)
-                    .ConfigureAwait(continueOnCapturedContext: false);
-                return (T)retryResponse;
-            }
-            else
-            {
-                LogFinalMetrics(state.Metrics);
+                throw e;
             }
 
             return response;
@@ -337,48 +351,55 @@ namespace Amazon.Runtime
 
             IWebResponseData responseData = new HttpClientResponseData(httpErrorResponse);
 
-            statusCode = httpErrorResponse.StatusCode;
-            state.Metrics.AddProperty(Metric.StatusCode, statusCode);
-            string redirectedLocation = responseData.GetHeaderValue("location");
-            state.Metrics.AddProperty(Metric.RedirectLocation, redirectedLocation);
-
-            UnmarshallerContext errorContext = state.Unmarshaller.CreateContext(responseData, Config.LogResponse || Config.ReadEntireResponse || AWSConfigs.ResponseLogging != ResponseLoggingOption.Never, state.Metrics);
-            errorResponseException = state.Unmarshaller.UnmarshallException(errorContext, null, statusCode);
-            if (Config.LogResponse || AWSConfigs.ResponseLogging != ResponseLoggingOption.Never)
+            try
             {
-                this.logger.Error(errorResponseException, "Received error response: [{0}]", errorContext.ResponseBody);
-            }
-            state.Metrics.AddProperty(Metric.AWSRequestID, errorResponseException.RequestId);
-            state.Metrics.AddProperty(Metric.AWSErrorCode, errorResponseException.ErrorCode);
+                statusCode = httpErrorResponse.StatusCode;
+                state.Metrics.AddProperty(Metric.StatusCode, statusCode);
+                string redirectedLocation = responseData.GetHeaderValue("location");
+                state.Metrics.AddProperty(Metric.RedirectLocation, redirectedLocation);
 
-            if (CanRetry(state))
-            {
-                if (isTemporaryRedirect(statusCode, redirectedLocation))
+                UnmarshallerContext errorContext = state.Unmarshaller.CreateContext(responseData, Config.LogResponse || Config.ReadEntireResponse || AWSConfigs.ResponseLogging != ResponseLoggingOption.Never, state.Metrics);
+                errorResponseException = state.Unmarshaller.UnmarshallException(errorContext, null, statusCode);
+                if (Config.LogResponse || AWSConfigs.ResponseLogging != ResponseLoggingOption.Never)
                 {
-                    this.logger.DebugFormat("Request {0} is being redirected to {1}.", state.Request.RequestName, redirectedLocation);
-                    state.Request.Endpoint = new Uri(redirectedLocation);
-                    return true;
+                    this.logger.Error(errorResponseException, "Received error response: [{0}]", errorContext.ResponseBody);
                 }
-                else if (ShouldRetry(statusCode, this.Config, errorResponseException, state.RetriesAttempt))
+                state.Metrics.AddProperty(Metric.AWSRequestID, errorResponseException.RequestId);
+                state.Metrics.AddProperty(Metric.AWSErrorCode, errorResponseException.ErrorCode);
+
+                if (CanRetry(state))
                 {
-                    this.logger.DebugFormat("Retry number {0} for request {1}.", state.RetriesAttempt, state.Request.RequestName);
-                    pauseExponentially(state);
-                    cancellationToken.ThrowIfCancellationRequested();
-                    return true;
+                    if (isTemporaryRedirect(statusCode, redirectedLocation))
+                    {
+                        this.logger.DebugFormat("Request {0} is being redirected to {1}.", state.Request.RequestName, redirectedLocation);
+                        state.Request.Endpoint = new Uri(redirectedLocation);
+                        return true;
+                    }
+                    else if (ShouldRetry(statusCode, this.Config, errorResponseException, state.RetriesAttempt))
+                    {
+                        this.logger.DebugFormat("Retry number {0} for request {1}.", state.RetriesAttempt, state.Request.RequestName);
+                        pauseExponentially(state);
+                        cancellationToken.ThrowIfCancellationRequested();
+                        return true;
+                    }
+                }
+
+                if (errorResponseException != null)
+                {
+                    this.logger.Error(errorResponseException, "Error making request {0}.", state.Request.RequestName);
+                    state.Metrics.AddProperty(Metric.Exception, errorResponseException);
+                    throw errorResponseException;
                 }
             }
-
-            if (errorResponseException != null)
+            finally
             {
-                this.logger.Error(errorResponseException, "Error making request {0}.", state.Request.RequestName);
-                throw errorResponseException;
+                // Always invoke response handlers, even for failed requests
+                ProcessResponseHandlers(null, state.Request, responseData);
             }
 
             AmazonServiceException excep = new AmazonServiceException("Unable to make request", null, statusCode);
             this.logger.Error(excep, "Error making request {0}.", state.Request.RequestName);
             state.Metrics.AddProperty(Metric.Exception, excep);
-            ProcessResponseHandlers(null, state.Request, responseData);
-
             throw excep;
         }
 

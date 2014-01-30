@@ -21,13 +21,19 @@ using Amazon.Runtime;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>Describe Dhcp Options Result
+    /// <summary>
+    /// 
     /// </summary>
     public partial class DescribeDhcpOptionsResult : AmazonWebServiceResponse
     {
         
         private List<DhcpOptions> dhcpOptions = new List<DhcpOptions>();
 
+
+        /// <summary>
+        /// Information about one or more DHCP options sets.
+        ///  
+        /// </summary>
         public List<DhcpOptions> DhcpOptions
         {
             get { return this.dhcpOptions; }

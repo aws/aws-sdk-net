@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para> Represents an event that affects the status of an Amazon EC2 instance. </para>
+    /// <para>Describes an instance event.</para>
     /// </summary>
     public class InstanceStatusEvent
     {
@@ -33,7 +33,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The associated code of the event. Valid values: instance-reboot, system-reboot, instance-retirement
+        /// The associated code of the event.
         ///  
         /// <para>
         /// <b>Constraints:</b>

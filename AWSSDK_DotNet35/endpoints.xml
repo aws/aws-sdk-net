@@ -417,6 +417,12 @@
         <Hostname>route53.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
+        <ServiceName>email</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>email.us-west-2.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
         <ServiceName>sdb</ServiceName>
         <Http>true</Http>
         <Https>true</Https>
@@ -1164,6 +1170,12 @@
         <Hostname>route53.amazonaws.com</Hostname>
       </Endpoint>
       <Endpoint>
+        <ServiceName>email</ServiceName>
+        <Http>false</Http>
+        <Https>true</Https>
+        <Hostname>email.eu-west-1.amazonaws.com</Hostname>
+      </Endpoint>
+      <Endpoint>
         <ServiceName>sdb</ServiceName>
         <Http>true</Http>
         <Https>true</Https>
@@ -1588,6 +1600,8 @@
       <Name>email</Name>
       <FullName>Amazon Simple Email Service</FullName>
       <RegionName>us-east-1</RegionName>
+      <RegionName>us-west-2</RegionName>
+      <RegionName>eu-west-1</RegionName>
     </Service>
     <Service>
       <Name>sdb</Name>

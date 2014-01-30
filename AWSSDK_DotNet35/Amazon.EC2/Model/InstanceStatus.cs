@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para> Represents the status of an Amazon EC2 instance. </para>
+    /// <para>Describes the status of an instance.</para>
     /// </summary>
     public class InstanceStatus
     {
@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The ID of the Amazon EC2 instance.
+        /// The ID of the instance.
         ///  
         /// </summary>
         public string InstanceId
@@ -51,7 +51,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The Amazon EC2 instance's availability zone.
+        /// The Availability Zone of the instance.
         ///  
         /// </summary>
         public string AvailabilityZone
@@ -67,7 +67,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Events that affect the status of the associated Amazon EC2 instance.
+        /// Extra information regarding events associated with the instance.
         ///  
         /// </summary>
         public List<InstanceStatusEvent> Events
@@ -83,7 +83,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Represents the state of an Amazon EC2 instance.
+        /// The intended state of the instance. <a>DescribeInstanceStatus</a> requires that an instance be in the <c>running</c> state.
         ///  
         /// </summary>
         public InstanceState InstanceState
@@ -97,6 +97,12 @@ namespace Amazon.EC2.Model
         {
             return this.instanceState != null;
         }
+
+        /// <summary>
+        /// Reports impaired functionality that stems from issues related to the systems that support an instance, such as hardware failures and network
+        /// connectivity problems.
+        ///  
+        /// </summary>
         public InstanceStatusSummary SystemStatus
         {
             get { return this.systemStatus; }
@@ -108,6 +114,11 @@ namespace Amazon.EC2.Model
         {
             return this.systemStatus != null;
         }
+
+        /// <summary>
+        /// Reports impaired functionality that stems from issues internal to the instance, such as impaired reachability.
+        ///  
+        /// </summary>
         public InstanceStatusSummary Status
         {
             get { return this.status; }

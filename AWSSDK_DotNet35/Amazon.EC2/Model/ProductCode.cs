@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para> An AWS DevPay product code. </para>
+    /// <para>Describes a product code.</para>
     /// </summary>
     public class ProductCode
     {
@@ -31,7 +31,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The unique ID of an AWS DevPay product code.
+        /// The product code.
         ///  
         /// </summary>
         public string ProductCodeId
@@ -45,6 +45,20 @@ namespace Amazon.EC2.Model
         {
             return this.productCodeId != null;
         }
+
+        /// <summary>
+        /// The type of product code.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>devpay, marketplace</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
         public ProductCodeValues ProductCodeType
         {
             get { return this.productCodeType; }

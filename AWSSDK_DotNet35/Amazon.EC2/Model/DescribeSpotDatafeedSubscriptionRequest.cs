@@ -25,9 +25,9 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeSpotDatafeedSubscription operation.
-    /// <para> Describes the data feed for Spot Instances. </para> <para> For conceptual information about Spot Instances, refer to the Amazon
-    /// Elastic Compute Cloud Developer Guide or Amazon Elastic Compute Cloud User Guide .
-    /// </para>
+    /// <para>Describes the datafeed for Spot Instances. For more information, see <a
+    /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html" >Spot Instances</a> in the <i>Amazon Elastic Compute
+    /// Cloud User Guide</i> .</para>
     /// </summary>
     public partial class DescribeSpotDatafeedSubscriptionRequest : AmazonEC2Request
     {

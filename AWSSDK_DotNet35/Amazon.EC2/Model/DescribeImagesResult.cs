@@ -22,7 +22,7 @@ using Amazon.Runtime;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para> The result of describing <i>Amazon Machine Images</i> (AMIs). </para>
+    /// 
     /// </summary>
     public partial class DescribeImagesResult : AmazonWebServiceResponse
     {
@@ -31,7 +31,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The list of the described AMIs.
+        /// Information about one or more images.
         ///  
         /// </summary>
         public List<Image> Images

@@ -279,7 +279,8 @@ namespace Amazon.Runtime
                 else
                     newPath = AWSSDKUtils.UrlEncode(resourcePath, true);
 
-                url = new Uri(url, new Uri(newPath, UriKind.Relative));
+                string fullUri = url.AbsoluteUri + newPath;
+                url = new Uri(fullUri);
             }
 
             if (iRequest.UseQueryString && iRequest.Parameters.Count > 0)
@@ -359,7 +360,7 @@ namespace Amazon.Runtime
 
         protected virtual void ProcessResponseHandlers(AmazonWebServiceResponse response, IRequest request, IWebResponseData webResponseData)
         {
-            if (request == null || request == null || webResponseData == null)
+            if (request == null)
                 return;
             if (AfterResponseEvent == null)
                 return;

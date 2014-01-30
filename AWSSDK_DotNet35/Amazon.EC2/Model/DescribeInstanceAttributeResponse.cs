@@ -28,7 +28,7 @@ namespace Amazon.EC2.Model
     {
         /// <summary>
         /// Gets and sets the DescribeInstanceAttributeResult property.
-        /// The result of describing an instance's attribute.
+        /// 
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DescribeInstanceAttributeResult class are now available on the DescribeInstanceAttributeResponse class. You should use the properties on DescribeInstanceAttributeResponse instead of accessing them through DescribeInstanceAttributeResult.")]
         public DescribeInstanceAttributeResult DescribeInstanceAttributeResult

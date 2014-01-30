@@ -25,8 +25,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteNetworkAclEntry operation.
-    /// <para> Deletes an ingress or egress entry (i.e., rule) from a network ACL. For more information about network ACLs, go to Network ACLs in
-    /// the Amazon Virtual Private Cloud User Guide. </para>
+    /// <para>Deletes the specified ingress or egress entry (rule) from the specified network ACL.</para>
     /// </summary>
     public partial class DeleteNetworkAclEntryRequest : AmazonEC2Request
     {
@@ -36,7 +35,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// ID of the network ACL.
+        /// The ID of the network ACL.
         ///  
         /// </summary>
         public string NetworkAclId
@@ -52,7 +51,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Rule number for the entry to delete.
+        /// The rule number of the entry to delete.
         ///  
         /// </summary>
         public int RuleNumber
@@ -68,7 +67,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Whether the rule to delete is an egress rule (<c>true</c>) or ingress rule (<c>false</c>).
+        /// Indicates whether the rule is an egress rule.
         ///  
         /// </summary>
         public bool Egress

@@ -20,9 +20,7 @@ namespace Amazon.Runtime.Internal.Auth
 {
     internal class EC2Signer : QueryStringSigner
     {
-        internal EC2Signer()
-        {
-        }
+        private bool _useSigV4 = false;
 
         AWS4Signer _aws4Signer;
         AWS4Signer AWS4SignerInstance
@@ -40,6 +38,14 @@ namespace Amazon.Runtime.Internal.Auth
 
                 return _aws4Signer;
             }
+        }
+
+        /// <summary>
+        /// EC2 signer constructor
+        /// </summary>
+        public EC2Signer()
+        {
+            _useSigV4 = AWSConfigs.EC2UseSignatureVersion4;
         }
 
         /// <summary>
@@ -66,8 +72,7 @@ namespace Amazon.Runtime.Internal.Auth
             if (r == null && config.RegionEndpoint != null)
                 r = config.RegionEndpoint;
 
-            // currently only Beijing supports the AWS4 signing protocol
-            if (r != null && r == RegionEndpoint.CNNorth1)
+            if (_useSigV4 || r == RegionEndpoint.CNNorth1)
                 return AWS4SignerInstance;
 
             return this;

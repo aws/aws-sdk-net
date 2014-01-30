@@ -25,13 +25,22 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the CancelConversionTask operation.
-    /// 
+    /// <para>Cancels an active conversion task. The task can be the import of an instance or volume. The action removes all artifacts of the
+    /// conversion, including a partially uploaded volume or instance. If the conversion is complete or is in the process of transferring the final
+    /// disk image, the command fails and returns an exception.</para> <para>For more information, see <a
+    /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html" >Using the Command Line Tools to Import Your
+    /// Virtual Machine to Amazon EC2</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .</para>
     /// </summary>
     public partial class CancelConversionTaskRequest : AmazonEC2Request
     {
         private string conversionTaskId;
         private string reasonMessage;
 
+
+        /// <summary>
+        /// The ID of the conversion task.
+        ///  
+        /// </summary>
         public string ConversionTaskId
         {
             get { return this.conversionTaskId; }
@@ -43,6 +52,11 @@ namespace Amazon.EC2.Model
         {
             return this.conversionTaskId != null;
         }
+
+        /// <summary>
+        /// 
+        ///  
+        /// </summary>
         public string ReasonMessage
         {
             get { return this.reasonMessage; }

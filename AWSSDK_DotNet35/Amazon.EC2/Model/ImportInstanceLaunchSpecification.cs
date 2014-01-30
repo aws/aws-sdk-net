@@ -20,7 +20,8 @@ using System.IO;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>Import Instance Launch Specification
+    /// <summary>
+    /// 
     /// </summary>
     public class ImportInstanceLaunchSpecification
     {
@@ -36,6 +37,20 @@ namespace Amazon.EC2.Model
         private ShutdownBehavior instanceInitiatedShutdownBehavior;
         private string privateIpAddress;
 
+
+        /// <summary>
+        /// The architecture of the instance.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>i386, x86_64</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
         public ArchitectureValues Architecture
         {
             get { return this.architecture; }
@@ -47,6 +62,11 @@ namespace Amazon.EC2.Model
         {
             return this.architecture != null;
         }
+
+        /// <summary>
+        /// One or more security group names.
+        ///  
+        /// </summary>
         public List<string> GroupNames
         {
             get { return this.groupNames; }
@@ -58,6 +78,11 @@ namespace Amazon.EC2.Model
         {
             return this.groupNames.Count > 0;
         }
+
+        /// <summary>
+        /// 
+        ///  
+        /// </summary>
         public string AdditionalInfo
         {
             get { return this.additionalInfo; }
@@ -69,6 +94,11 @@ namespace Amazon.EC2.Model
         {
             return this.additionalInfo != null;
         }
+
+        /// <summary>
+        /// User data to be made available to the instance.
+        ///  
+        /// </summary>
         public string UserData
         {
             get { return this.userData; }
@@ -80,6 +110,21 @@ namespace Amazon.EC2.Model
         {
             return this.userData != null;
         }
+
+        /// <summary>
+        /// The instance type. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+        /// Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m3.xlarge, m3.2xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, cr1.8xlarge, i2.xlarge, i2.2xlarge, i2.4xlarge, i2.8xlarge, hi1.4xlarge, hs1.8xlarge, c1.medium, c1.xlarge, c3.large, c3.xlarge, c3.2xlarge, c3.4xlarge, c3.8xlarge, cc1.4xlarge, cc2.8xlarge, g2.2xlarge, cg1.4xlarge</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
         public InstanceType InstanceType
         {
             get { return this.instanceType; }
@@ -93,7 +138,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Describes where an Amazon EC2 instance is running within an Amazon EC2 region.
+        /// 
         ///  
         /// </summary>
         public Placement Placement
@@ -107,6 +152,11 @@ namespace Amazon.EC2.Model
         {
             return this.placement != null;
         }
+
+        /// <summary>
+        /// 
+        ///  
+        /// </summary>
         public bool Monitoring
         {
             get { return this.monitoring ?? default(bool); }
@@ -118,6 +168,11 @@ namespace Amazon.EC2.Model
         {
             return this.monitoring.HasValue;
         }
+
+        /// <summary>
+        /// [EC2-VPC] The ID of the subnet to launch the instance into.
+        ///  
+        /// </summary>
         public string SubnetId
         {
             get { return this.subnetId; }
@@ -129,6 +184,21 @@ namespace Amazon.EC2.Model
         {
             return this.subnetId != null;
         }
+
+        /// <summary>
+        /// Indicates whether an instance stops or terminates when you initiate shutdown from the instance (using the operating system command for
+        /// system shutdown).
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>stop, terminate</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
         public ShutdownBehavior InstanceInitiatedShutdownBehavior
         {
             get { return this.instanceInitiatedShutdownBehavior; }
@@ -140,6 +210,12 @@ namespace Amazon.EC2.Model
         {
             return this.instanceInitiatedShutdownBehavior != null;
         }
+
+        /// <summary>
+        /// [EC2-VPC] Optionally, you can use this parameter to assign the instance a specific available IP address from the IP address range of the
+        /// subnet.
+        ///  
+        /// </summary>
         public string PrivateIpAddress
         {
             get { return this.privateIpAddress; }

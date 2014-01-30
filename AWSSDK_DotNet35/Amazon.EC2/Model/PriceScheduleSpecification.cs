@@ -20,7 +20,8 @@ using System.IO;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>Price Schedule Specification
+    /// <summary>
+    /// <para>Describes the price for a Reserved Instance.</para>
     /// </summary>
     public class PriceScheduleSpecification
     {
@@ -29,6 +30,11 @@ namespace Amazon.EC2.Model
         private double? price;
         private CurrencyCodeValues currencyCode;
 
+
+        /// <summary>
+        /// The number of months remaining in the reservation. For example, 2 is the second to the last month before the capacity reservation expires.
+        ///  
+        /// </summary>
         public long Term
         {
             get { return this.term ?? default(long); }
@@ -40,6 +46,11 @@ namespace Amazon.EC2.Model
         {
             return this.term.HasValue;
         }
+
+        /// <summary>
+        /// The fixed price for the term.
+        ///  
+        /// </summary>
         public double Price
         {
             get { return this.price ?? default(double); }
@@ -51,6 +62,20 @@ namespace Amazon.EC2.Model
         {
             return this.price.HasValue;
         }
+
+        /// <summary>
+        /// The currency for transacting the Reserved Instance resale. At this time, the only supported currency is <c>USD</c>.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>USD</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
         public CurrencyCodeValues CurrencyCode
         {
             get { return this.currencyCode; }

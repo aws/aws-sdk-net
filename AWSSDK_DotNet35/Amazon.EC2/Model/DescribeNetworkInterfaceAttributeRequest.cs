@@ -25,7 +25,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeNetworkInterfaceAttribute operation.
-    /// 
+    /// <para>Describes a network interface attribute. You can specify only one attribute at a time.</para>
     /// </summary>
     public partial class DescribeNetworkInterfaceAttributeRequest : AmazonEC2Request
     {
@@ -35,6 +35,11 @@ namespace Amazon.EC2.Model
         private string groups;
         private string attachment;
 
+
+        /// <summary>
+        /// The ID of the network interface.
+        ///  
+        /// </summary>
         public string NetworkInterfaceId
         {
             get { return this.networkInterfaceId; }
@@ -46,6 +51,11 @@ namespace Amazon.EC2.Model
         {
             return this.networkInterfaceId != null;
         }
+
+        /// <summary>
+        /// The <c>description</c> attribute.
+        ///  
+        /// </summary>
         public string Description
         {
             get { return this.description; }
@@ -57,6 +67,11 @@ namespace Amazon.EC2.Model
         {
             return this.description != null;
         }
+
+        /// <summary>
+        /// The <c>sourceDestCheck</c> attribute.
+        ///  
+        /// </summary>
         public string SourceDestCheck
         {
             get { return this.sourceDestCheck; }
@@ -68,6 +83,11 @@ namespace Amazon.EC2.Model
         {
             return this.sourceDestCheck != null;
         }
+
+        /// <summary>
+        /// The <c>groupSet</c> attribute.
+        ///  
+        /// </summary>
         public string Groups
         {
             get { return this.groups; }
@@ -79,6 +99,11 @@ namespace Amazon.EC2.Model
         {
             return this.groups != null;
         }
+
+        /// <summary>
+        /// The <c>attachment</c> attribute.
+        ///  
+        /// </summary>
         public string Attachment
         {
             get { return this.attachment; }

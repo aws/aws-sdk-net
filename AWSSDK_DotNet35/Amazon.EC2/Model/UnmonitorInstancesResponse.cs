@@ -28,7 +28,7 @@ namespace Amazon.EC2.Model
     {
         /// <summary>
         /// Gets and sets the UnmonitorInstancesResult property.
-        /// The result of calling the UnmonitorInstances operation. Contains the updated monitoring status for each instance specified in the request.
+        /// 
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the UnmonitorInstancesResult class are now available on the UnmonitorInstancesResponse class. You should use the properties on UnmonitorInstancesResponse instead of accessing them through UnmonitorInstancesResult.")]
         public UnmonitorInstancesResult UnmonitorInstancesResult

@@ -25,7 +25,8 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyImageAttribute operation.
-    /// <para> The ModifyImageAttribute operation modifies an attribute of an AMI. </para>
+    /// <para>Modifies the specified attribute of the specified AMI. You can specify only one attribute at a time.</para> <para><b>NOTE:</b> AWS
+    /// Marketplace product codes cannot be modified. Images with an AWS Marketplace product code cannot be made public. </para>
     /// </summary>
     public partial class ModifyImageAttributeRequest : AmazonEC2Request
     {
@@ -41,7 +42,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The ID of the AMI whose attribute you want to modify.
+        /// The ID of the AMI.
         ///  
         /// </summary>
         public string ImageId
@@ -57,7 +58,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The name of the AMI attribute you want to modify. Available attributes: <c>launchPermission</c>, <c>productCodes</c>
+        /// The name of the attribute to modify.
         ///  
         /// </summary>
         public string Attribute
@@ -73,7 +74,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The type of operation being requested. Available operation types: <c>add</c>, <c>remove</c>
+        /// The operation type.
         ///  
         /// </summary>
         public string OperationType
@@ -89,8 +90,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The AWS user ID being added to or removed from the list of users with launch permissions for this AMI. Only valid when the launchPermission
-        /// attribute is being modified.
+        /// One or more AWS account IDs. This is only valid when modifying the <c>launchPermission</c> attribute.
         ///  
         /// </summary>
         public List<string> UserIds
@@ -106,8 +106,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The user group being added to or removed from the list of user groups with launch permissions for this AMI. Only valid when the
-        /// launchPermission attribute is being modified. Available user groups: <c>all</c>
+        /// One or more user groups. This is only valid when modifying the <c>launchPermission</c> attribute.
         ///  
         /// </summary>
         public List<string> UserGroups
@@ -123,7 +122,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The list of product codes being added to or removed from the specified AMI. Only valid when the productCodes attribute is being modified.
+        /// One or more product codes. After you add a product code to an AMI, it can't be removed. This is only valid when modifying the
+        /// <c>productCodes</c> attribute.
         ///  
         /// </summary>
         public List<string> ProductCodes
@@ -139,7 +139,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The value of the attribute being modified. Only valid when the description attribute is being modified.
+        /// The value of the attribute being modified. This is only valid when modifying the <c>description</c> attribute.
         ///  
         /// </summary>
         public string Value
@@ -153,6 +153,11 @@ namespace Amazon.EC2.Model
         {
             return this.value != null;
         }
+
+        /// <summary>
+        /// <p/>
+        ///  
+        /// </summary>
         public LaunchPermissionModifications LaunchPermission
         {
             get { return this.launchPermission; }
@@ -166,7 +171,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// String value
+        /// A description for the AMI.
         ///  
         /// </summary>
         public string Description

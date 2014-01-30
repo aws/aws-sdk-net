@@ -25,7 +25,9 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the ImportInstance operation.
-    /// 
+    /// <para>Creates an import instance task using metadata from the specified disk image. After importing the image, you then upload it using the
+    /// ec2-upload-disk-image command in the EC2 command line tools. For more information, see Using the Command Line Tools to Import Your Virtual
+    /// Machine to Amazon EC2 in the Amazon Elastic Compute Cloud User Guide.</para>
     /// </summary>
     public partial class ImportInstanceRequest : AmazonEC2Request
     {
@@ -34,6 +36,11 @@ namespace Amazon.EC2.Model
         private List<DiskImage> diskImages = new List<DiskImage>();
         private PlatformValues platform;
 
+
+        /// <summary>
+        /// A description for the instance being imported.
+        ///  
+        /// </summary>
         public string Description
         {
             get { return this.description; }
@@ -45,6 +52,11 @@ namespace Amazon.EC2.Model
         {
             return this.description != null;
         }
+
+        /// <summary>
+        /// <p/>
+        ///  
+        /// </summary>
         public ImportInstanceLaunchSpecification LaunchSpecification
         {
             get { return this.launchSpecification; }
@@ -56,6 +68,11 @@ namespace Amazon.EC2.Model
         {
             return this.launchSpecification != null;
         }
+
+        /// <summary>
+        /// 
+        ///  
+        /// </summary>
         public List<DiskImage> DiskImages
         {
             get { return this.diskImages; }
@@ -67,6 +84,20 @@ namespace Amazon.EC2.Model
         {
             return this.diskImages.Count > 0;
         }
+
+        /// <summary>
+        /// The instance operating system.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>Windows</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
         public PlatformValues Platform
         {
             get { return this.platform; }

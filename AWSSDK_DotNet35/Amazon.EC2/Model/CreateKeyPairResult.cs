@@ -22,7 +22,7 @@ using Amazon.Runtime;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para> The result of creating a new EC2 key pair. </para>
+    /// 
     /// </summary>
     public partial class CreateKeyPairResult : AmazonWebServiceResponse
     {
@@ -31,7 +31,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The newly created EC2 key pair.
+        /// Information about the key pair.
         ///  
         /// </summary>
         public KeyPair KeyPair

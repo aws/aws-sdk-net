@@ -20,7 +20,8 @@ using System.IO;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>Export To S3 Task
+    /// <summary>
+    /// 
     /// </summary>
     public class ExportToS3Task
     {
@@ -30,6 +31,20 @@ namespace Amazon.EC2.Model
         private string s3Bucket;
         private string s3Key;
 
+
+        /// <summary>
+        /// The format for the exported image.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>VMDK, RAW, VHD</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
         public DiskImageFormat DiskImageFormat
         {
             get { return this.diskImageFormat; }
@@ -41,6 +56,20 @@ namespace Amazon.EC2.Model
         {
             return this.diskImageFormat != null;
         }
+
+        /// <summary>
+        /// The container format used to combine disk images with metadata (such as OVF). If absent, only the disk image is exported.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>ova</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
         public ContainerFormat ContainerFormat
         {
             get { return this.containerFormat; }
@@ -52,6 +81,12 @@ namespace Amazon.EC2.Model
         {
             return this.containerFormat != null;
         }
+
+        /// <summary>
+        /// The Amazon S3 bucket for the destination image. The destination bucket must exist and grant WRITE and READ_ACL permissions to the AWS
+        /// account <c>vm-import-export@amazon.com</c>.
+        ///  
+        /// </summary>
         public string S3Bucket
         {
             get { return this.s3Bucket; }
@@ -63,6 +98,11 @@ namespace Amazon.EC2.Model
         {
             return this.s3Bucket != null;
         }
+
+        /// <summary>
+        /// 
+        ///  
+        /// </summary>
         public string S3Key
         {
             get { return this.s3Key; }

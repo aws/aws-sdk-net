@@ -10339,6 +10339,11 @@
     <Compile Include="Amazon.SimpleWorkflow\IAmazonSimpleWorkflow.cs" />
     <Compile Include="Amazon.SimpleWorkflow\ServiceEnumerations.cs" />
     <Compile Include="Amazon.SQS\Model\AmazonSQSRequest.cs" />
+    <Compile Include="Amazon.SQS\Model\Internal\MarshallTransformations\ListDeadLetterSourceQueuesRequestMarshaller.cs" />
+    <Compile Include="Amazon.SQS\Model\Internal\MarshallTransformations\ListDeadLetterSourceQueuesResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.SQS\Model\ListDeadLetterSourceQueuesRequest.cs" />
+    <Compile Include="Amazon.SQS\Model\ListDeadLetterSourceQueuesResponse.cs" />
+    <Compile Include="Amazon.SQS\Model\ListDeadLetterSourceQueuesResult.cs" />
     <Compile Include="Amazon.SQS\ServiceEnumerations.cs" />
     <Compile Include="Amazon.StorageGateway\IAmazonStorageGateway.cs" />
     <Compile Include="Amazon.StorageGateway\Model\AmazonStorageGatewayRequest.cs" />

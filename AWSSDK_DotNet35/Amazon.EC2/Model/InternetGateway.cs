@@ -20,7 +20,8 @@ using System.IO;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>Internet Gateway
+    /// <summary>
+    /// <para>Describes an Internet gateway.</para>
     /// </summary>
     public class InternetGateway
     {
@@ -29,6 +30,11 @@ namespace Amazon.EC2.Model
         private List<InternetGatewayAttachment> attachments = new List<InternetGatewayAttachment>();
         private List<Tag> tags = new List<Tag>();
 
+
+        /// <summary>
+        /// The ID of the Internet gateway.
+        ///  
+        /// </summary>
         public string InternetGatewayId
         {
             get { return this.internetGatewayId; }
@@ -40,6 +46,11 @@ namespace Amazon.EC2.Model
         {
             return this.internetGatewayId != null;
         }
+
+        /// <summary>
+        /// Any VPCs attached to the Internet gateway.
+        ///  
+        /// </summary>
         public List<InternetGatewayAttachment> Attachments
         {
             get { return this.attachments; }
@@ -51,6 +62,11 @@ namespace Amazon.EC2.Model
         {
             return this.attachments.Count > 0;
         }
+
+        /// <summary>
+        /// Any tags assigned to the Internet gateway.
+        ///  
+        /// </summary>
         public List<Tag> Tags
         {
             get { return this.tags; }

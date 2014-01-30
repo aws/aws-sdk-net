@@ -22,7 +22,7 @@ using Amazon.Runtime;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para> The result of describing an instance's attribute. </para>
+    /// 
     /// </summary>
     public partial class DescribeInstanceAttributeResult : AmazonWebServiceResponse
     {
@@ -31,7 +31,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The described instance attribute.
+        /// 
         ///  
         /// </summary>
         public InstanceAttribute InstanceAttribute

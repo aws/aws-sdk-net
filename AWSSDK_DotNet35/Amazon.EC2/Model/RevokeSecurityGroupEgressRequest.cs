@@ -25,13 +25,11 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the RevokeSecurityGroupEgress operation.
-    /// <para> This action applies only to security groups in a VPC. It doesn't work with EC2 security groups. For information about Amazon Virtual
-    /// Private Cloud and VPC security groups, go to the Amazon Virtual Private Cloud User Guide. </para> <para> The action removes one or more
-    /// egress rules from a VPC security group. The values that you specify in the revoke request (e.g., ports, etc.) must match the existing rule's
-    /// values in order for the rule to be revoked. </para> <para> Each rule consists of the protocol, and the CIDR range or destination security
-    /// group. For the TCP and UDP protocols, you must also specify the destination port or range of ports. For the ICMP protocol, you must also
-    /// specify the ICMP type and code. </para> <para> Rule changes are propagated to instances within the security group as quickly as possible.
-    /// However, a small delay might occur. </para>
+    /// <para>Removes one or more egress rules from a security group for EC2-VPC. The values that you specify in the revoke request (for example,
+    /// ports) must match the existing rule's values for the rule to be revoked.</para> <para>Each rule consists of the protocol and the CIDR range
+    /// or source security group. For the TCP and UDP protocols, you must also specify the destination port or range of ports. For the ICMP
+    /// protocol, you must also specify the ICMP type and code.</para> <para>Rule changes are propagated to instances within the security group as
+    /// quickly as possible. However, a small delay might occur.</para>
     /// </summary>
     public partial class RevokeSecurityGroupEgressRequest : AmazonEC2Request
     {
@@ -40,7 +38,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// ID of the VPC security group to modify.
+        /// The ID of the security group.
         ///  
         /// </summary>
         public string GroupId
@@ -56,8 +54,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// List of IP permissions to authorize on the specified security group. Specifying permissions through IP permissions is the preferred way of
-        /// authorizing permissions since it offers more flexibility and control.
+        /// <p/>
         ///  
         /// </summary>
         public List<IpPermission> IpPermissions

@@ -25,7 +25,9 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteTags operation.
-    /// <para> Deletes tags from the specified Amazon EC2 resources. </para>
+    /// <para>Deletes the specified set of tags from the specified set of resources. This call is designed to follow a <c>DescribeTags</c>
+    /// request.</para> <para>For more information about tags, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html"
+    /// >Tagging Your Resources</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .</para>
     /// </summary>
     public partial class DeleteTagsRequest : AmazonEC2Request
     {
@@ -34,7 +36,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// A list of one or more resource IDs. This could be the ID of an AMI, an instance, an EBS volume, or snapshot, etc.
+        /// The ID of the resource. For example, ami-1a2b3c4d. You can specify more than one resource ID.
         ///  
         /// </summary>
         public List<string> Resources
@@ -50,8 +52,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The tags to delete from the specified resources. Each tag item consists of a key-value pair. If a tag is specified without a value, the tag
-        /// and all of its values are deleted.
+        /// One or more tags to delete. If you omit the <c>value</c> parameter, we delete the tag regardless of its value. If you specify this parameter
+        /// with an empty string as the value, we delete the key only if its value is an empty string.
         ///  
         /// </summary>
         public List<Tag> Tags

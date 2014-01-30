@@ -21,7 +21,8 @@ using Amazon.Runtime;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>Describe Network Interface Attribute Result
+    /// <summary>
+    /// 
     /// </summary>
     public partial class DescribeNetworkInterfaceAttributeResult : AmazonWebServiceResponse
     {
@@ -32,6 +33,11 @@ namespace Amazon.EC2.Model
         private List<GroupIdentifier> groups = new List<GroupIdentifier>();
         private NetworkInterfaceAttachment attachment;
 
+
+        /// <summary>
+        /// The ID of the network interface.
+        ///  
+        /// </summary>
         public string NetworkInterfaceId
         {
             get { return this.networkInterfaceId; }
@@ -45,7 +51,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// String value
+        /// The description of the network interface.
         ///  
         /// </summary>
         public string Description
@@ -61,7 +67,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Boolean value
+        /// Indicates whether source/destination checking is enabled.
         ///  
         /// </summary>
         public bool SourceDestCheck
@@ -75,6 +81,11 @@ namespace Amazon.EC2.Model
         {
             return this.sourceDestCheck.HasValue;
         }
+
+        /// <summary>
+        /// The security groups associated with the network interface.
+        ///  
+        /// </summary>
         public List<GroupIdentifier> Groups
         {
             get { return this.groups; }
@@ -86,6 +97,11 @@ namespace Amazon.EC2.Model
         {
             return this.groups.Count > 0;
         }
+
+        /// <summary>
+        /// The attachment (if any) of the network interface.
+        ///  
+        /// </summary>
         public NetworkInterfaceAttachment Attachment
         {
             get { return this.attachment; }

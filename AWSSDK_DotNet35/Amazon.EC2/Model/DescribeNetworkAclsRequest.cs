@@ -25,15 +25,9 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeNetworkAcls operation.
-    /// <para> Gives you information about the network ACLs in your VPC. You can filter the results to return information only about ACLs that match
-    /// criteria you specify. For example, you could get information only the ACL associated with a particular subnet. The ACL must match at least
-    /// one of the specified values for it to be included in the results. </para> <para> You can specify multiple filters (e.g., the ACL is
-    /// associated with a particular subnet and has an egress entry that denies traffic to a particular port). The result includes information for a
-    /// particular ACL only if it matches all your filters. If there's no match, no special message is returned; the response is simply empty.
-    /// </para> <para> You can use wildcards with the filter values: an asterisk matches zero or more characters, and <c>?</c> matches exactly one
-    /// character. You can escape special characters using a backslash before the character. For example, a value of <c>\*amazon\?\\</c> searches
-    /// for the literal string <c>*amazon?\</c> .
-    /// </para>
+    /// <para>Describes one or more of your network ACLs.</para> <para>For more information about network ACLs, see <a
+    /// href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html" >Network ACLs</a> in the <i>Amazon Virtual Private Cloud User
+    /// Guide</i> .</para>
     /// </summary>
     public partial class DescribeNetworkAclsRequest : AmazonEC2Request
     {
@@ -42,7 +36,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// One or more network ACL IDs.
+        /// One or more network ACL IDs. Default: Describes all your network ACLs.
         ///  
         /// </summary>
         public List<string> NetworkAclIds
@@ -58,8 +52,22 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// A list of filters used to match properties for Network ACLs. For a complete reference to the available filter keys for this operation, see
-        /// the <a href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon EC2 API reference</a>.
+        /// One or more filters. <ul> <li> <c>association.association-id</c> - The ID of an association ID for the ACL. </li> <li>
+        /// <c>association.network-acl-id</c> - The ID of the network ACL involved in the association. </li> <li> <c>association.subnet-id</c> - The ID
+        /// of the subnet involved in the association. </li> <li> <c>default</c> - Indicates whether the ACL is the default network ACL for the VPC.
+        /// </li> <li> <c>entry.cidr</c> - The CIDR range specified in the entry. </li> <li> <c>entry.egress</c> - Indicates whether the entry applies
+        /// to egress traffic. </li> <li> <c>entry.icmp.code</c> - The ICMP code specified in the entry, if any. </li> <li> <c>entry.icmp.type</c> - The
+        /// ICMP type specified in the entry, if any. </li> <li> <c>entry.port-range.from</c> - The start of the port range specified in the entry.
+        /// </li> <li> <c>entry.port-range.to</c> - The end of the port range specified in the entry. </li> <li> <c>entry.protocol</c> - The protocol
+        /// specified in the entry (<c>tcp</c> | <c>udp</c> | <c>icmp</c> or a protocol number). </li> <li> <c>entry.rule-action</c> - Allows or denies
+        /// the matching traffic (<c>allow</c> | <c>deny</c>). </li> <li> <c>entry.rule-number</c> - The number of an entry (in other words, rule) in
+        /// the ACL's set of entries. </li> <li> <c>network-acl-id</c> - The ID of the network ACL. </li> <li> <c>tag</c>:<i>key</i>=<i>value</i> - The
+        /// key/value combination of a tag assigned to the resource. </li> <li> <c>tag-key</c> - The key of a tag assigned to the resource. This filter
+        /// is independent of the <c>tag-value</c> filter. For example, if you use both the filter "tag-key=Purpose" and the filter "tag-value=X", you
+        /// get any resources assigned both the tag key Purpose (regardless of what the tag's value is), and the tag value X (regardless of what the
+        /// tag's key is). If you want to list only resources where Purpose is X, see the <c>tag</c>:<i>key</i>=<i>value</i> filter. </li> <li>
+        /// <c>tag-value</c> - The value of a tag assigned to the resource. This filter is independent of the <c>tag-key</c> filter. </li> <li>
+        /// <c>vpc-id</c> - The ID of the VPC for the network ACL. </li> </ul>
         ///  
         /// </summary>
         public List<Filter> Filters

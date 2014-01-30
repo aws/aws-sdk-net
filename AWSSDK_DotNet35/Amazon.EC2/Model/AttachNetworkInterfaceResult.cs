@@ -21,13 +21,19 @@ using Amazon.Runtime;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>Attach Network Interface Result
+    /// <summary>
+    /// 
     /// </summary>
     public partial class AttachNetworkInterfaceResult : AmazonWebServiceResponse
     {
         
         private string attachmentId;
 
+
+        /// <summary>
+        /// The ID of the network interface attachment.
+        ///  
+        /// </summary>
         public string AttachmentId
         {
             get { return this.attachmentId; }

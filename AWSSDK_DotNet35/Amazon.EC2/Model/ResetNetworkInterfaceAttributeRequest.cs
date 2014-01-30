@@ -25,13 +25,18 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the ResetNetworkInterfaceAttribute operation.
-    /// 
+    /// <para>Resets a network interface attribute. You can specify only one attribute at a time.</para>
     /// </summary>
     public partial class ResetNetworkInterfaceAttributeRequest : AmazonEC2Request
     {
         private string networkInterfaceId;
         private string sourceDestCheck;
 
+
+        /// <summary>
+        /// The ID of the network interface.
+        ///  
+        /// </summary>
         public string NetworkInterfaceId
         {
             get { return this.networkInterfaceId; }
@@ -43,6 +48,12 @@ namespace Amazon.EC2.Model
         {
             return this.networkInterfaceId != null;
         }
+
+        /// <summary>
+        /// Indicates whether source/destination checking is enabled. A value of <c>true</c> means checking is enabled, and <c>false</c> means checking
+        /// is disabled. This value must be <c>false</c> for a NAT instance to perform NAT.
+        ///  
+        /// </summary>
         public string SourceDestCheck
         {
             get { return this.sourceDestCheck; }

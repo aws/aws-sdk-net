@@ -20,13 +20,19 @@ using System.IO;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>Account Attribute Value
+    /// <summary>
+    /// <para>Describes a value of an account attribute.</para>
     /// </summary>
     public class AccountAttributeValue
     {
         
         private string attributeValue;
 
+
+        /// <summary>
+        /// The value.
+        ///  
+        /// </summary>
         public string AttributeValue
         {
             get { return this.attributeValue; }

@@ -28,7 +28,7 @@ namespace Amazon.EC2.Model
     {
         /// <summary>
         /// Gets and sets the RequestSpotInstancesResult property.
-        /// The RequestSpotInstancesResult data type.
+        /// 
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the RequestSpotInstancesResult class are now available on the RequestSpotInstancesResponse class. You should use the properties on RequestSpotInstancesResponse instead of accessing them through RequestSpotInstancesResult.")]
         public RequestSpotInstancesResult RequestSpotInstancesResult

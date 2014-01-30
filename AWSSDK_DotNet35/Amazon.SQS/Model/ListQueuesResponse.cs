@@ -28,7 +28,7 @@ namespace Amazon.SQS.Model
     {
         /// <summary>
         /// Gets and sets the ListQueuesResult property.
-        /// 
+        /// A list of your queues.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the ListQueuesResult class are now available on the ListQueuesResponse class. You should use the properties on ListQueuesResponse instead of accessing them through ListQueuesResult.")]
         public ListQueuesResult ListQueuesResult

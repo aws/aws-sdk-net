@@ -28,7 +28,7 @@ namespace Amazon.SQS.Model
     {
         /// <summary>
         /// Gets and sets the CreateQueueResult property.
-        /// 
+        /// Returns the QueueUrl element of the created queue.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the CreateQueueResult class are now available on the CreateQueueResponse class. You should use the properties on CreateQueueResponse instead of accessing them through CreateQueueResult.")]
         public CreateQueueResult CreateQueueResult

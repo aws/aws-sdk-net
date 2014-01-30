@@ -25,8 +25,9 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeBundleTasks operation.
-    /// <para> The DescribeBundleTasks operation describes in-progress and recent bundle tasks. Complete and failed tasks are removed from the list
-    /// a short time after completion. If no bundle ids are given, all bundle tasks are returned. </para>
+    /// <para>Describes one or more of your bundling tasks.</para> <para><b>NOTE:</b> Completed bundle tasks are listed for only a limited time. If
+    /// your bundle task is no longer in the list, you can still register an AMI from it. Just use RegisterImage with the Amazon S3 bucket name and
+    /// image manifest name you provided to the bundle task. </para>
     /// </summary>
     public partial class DescribeBundleTasksRequest : AmazonEC2Request
     {
@@ -35,7 +36,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The list of bundle task IDs to describe.
+        /// One or more bundle task IDs. Default: Describes all your bundle tasks.
         ///  
         /// </summary>
         public List<string> BundleIds
@@ -51,8 +52,13 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// A list of filters used to match properties for BundleTasks. For a complete reference to the available filter keys for this operation, see
-        /// the <a href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon EC2 API reference</a>.
+        /// One or more filters. <ul> <li> <c>bundle-id</c> - The ID of the bundle task. </li> <li> <c>error-code</c> - If the task failed, the error
+        /// code returned. </li> <li> <c>error-message</c> - If the task failed, the error message returned. </li> <li> <c>instance-id</c> - The ID of
+        /// the instance. </li> <li> <c>progress</c> - The level of task completion, as a percentage (for example, 20%). </li> <li> <c>s3-bucket</c> -
+        /// The Amazon S3 bucket to store the AMI. </li> <li> <c>s3-prefix</c> - The beginning of the AMI name. </li> <li> <c>start-time</c> - The time
+        /// the task started (for example, 2013-09-15T17:15:20.000Z). </li> <li> <c>state</c> - The state of the task (<c>pending</c> |
+        /// <c>waiting-for-shutdown</c> | <c>bundling</c> | <c>storing</c> | <c>cancelling</c> | <c>complete</c> | <c>failed</c>). </li> <li>
+        /// <c>update-time</c> - The time of the most recent update for the task. </li> </ul>
         ///  
         /// </summary>
         public List<Filter> Filters

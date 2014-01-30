@@ -20,7 +20,8 @@ using System.IO;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>Cancelled Spot Instance Request
+    /// <summary>
+    /// <para>Describes a request to cancel a Spot Instance.</para>
     /// </summary>
     public class CancelledSpotInstanceRequest
     {
@@ -28,6 +29,11 @@ namespace Amazon.EC2.Model
         private string spotInstanceRequestId;
         private CancelSpotInstanceRequestState state;
 
+
+        /// <summary>
+        /// The ID of the Spot Instance request.
+        ///  
+        /// </summary>
         public string SpotInstanceRequestId
         {
             get { return this.spotInstanceRequestId; }
@@ -39,6 +45,20 @@ namespace Amazon.EC2.Model
         {
             return this.spotInstanceRequestId != null;
         }
+
+        /// <summary>
+        /// The state of the Spot Instance request.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>active, open, closed, cancelled, completed</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
         public CancelSpotInstanceRequestState State
         {
             get { return this.state; }

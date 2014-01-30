@@ -28,7 +28,7 @@ namespace Amazon.EC2.Model
     {
         /// <summary>
         /// Gets and sets the DescribeRegionsResult property.
-        /// The result of describing the available Amazon EC2 regions.
+        /// 
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DescribeRegionsResult class are now available on the DescribeRegionsResponse class. You should use the properties on DescribeRegionsResponse instead of accessing them through DescribeRegionsResult.")]
         public DescribeRegionsResult DescribeRegionsResult

@@ -25,7 +25,10 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateReservedInstancesListing operation.
-    /// 
+    /// <para>Creates a listing for Amazon EC2 Reserved Instances to be sold in the Reserved Instance Marketplace. You can submit one Reserved
+    /// Instance listing at a time.</para> <para>For more information, see <a
+    /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html" >Reserved Instance Marketplace</a> in the <i>Amazon Elastic
+    /// Compute Cloud User Guide</i> .</para>
     /// </summary>
     public partial class CreateReservedInstancesListingRequest : AmazonEC2Request
     {
@@ -34,6 +37,11 @@ namespace Amazon.EC2.Model
         private List<PriceScheduleSpecification> priceSchedules = new List<PriceScheduleSpecification>();
         private string clientToken;
 
+
+        /// <summary>
+        /// The ID of the active Reserved Instance.
+        ///  
+        /// </summary>
         public string ReservedInstancesId
         {
             get { return this.reservedInstancesId; }
@@ -45,6 +53,12 @@ namespace Amazon.EC2.Model
         {
             return this.reservedInstancesId != null;
         }
+
+        /// <summary>
+        /// The number of instances that are a part of a Reserved Instance account to be listed in the Reserved Instance Marketplace. This number should
+        /// be less than or equal to the instance count associated with the Reserved Instance ID specified in this call.
+        ///  
+        /// </summary>
         public int InstanceCount
         {
             get { return this.instanceCount ?? default(int); }
@@ -56,6 +70,11 @@ namespace Amazon.EC2.Model
         {
             return this.instanceCount.HasValue;
         }
+
+        /// <summary>
+        /// A list specifying the price of the Reserved Instance for each month remaining in the Reserved Instance term.
+        ///  
+        /// </summary>
         public List<PriceScheduleSpecification> PriceSchedules
         {
             get { return this.priceSchedules; }
@@ -67,6 +86,13 @@ namespace Amazon.EC2.Model
         {
             return this.priceSchedules.Count > 0;
         }
+
+        /// <summary>
+        /// Unique, case-sensitive identifier you provide to ensure idempotency of your listings. This helps avoid duplicate listings. For more
+        /// information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">Ensuring Idempotency</a> in the
+        /// <i>Amazon Elastic Compute Cloud User Guide</i>.
+        ///  
+        /// </summary>
         public string ClientToken
         {
             get { return this.clientToken; }

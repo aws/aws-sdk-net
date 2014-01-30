@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para> Represents an attribute of an Amazon EC2 instance. </para>
+    /// <para>Describes an instance attribute.</para>
     /// </summary>
     public class InstanceAttribute
     {
@@ -37,10 +37,11 @@ namespace Amazon.EC2.Model
         private List<InstanceBlockDeviceMapping> blockDeviceMappings = new List<InstanceBlockDeviceMapping>();
         private List<ProductCode> productCodes = new List<ProductCode>();
         private bool? ebsOptimized;
+        private string sriovNetSupport;
 
 
         /// <summary>
-        /// The ID of the associated instance.
+        /// The ID of the instance.
         ///  
         /// </summary>
         public string InstanceId
@@ -56,7 +57,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The instance type (e.g., <c>m1.small</c>, <c>c1.medium</c>, <c>m2.2xlarge</c>, and so on).
+        /// The instance type.
         ///  
         /// </summary>
         public string InstanceType
@@ -72,7 +73,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The kernel ID of the associated instance.
+        /// The kernel ID.
         ///  
         /// </summary>
         public string KernelId
@@ -88,7 +89,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The ramdisk ID of the associated instance.
+        /// The RAM disk ID.
         ///  
         /// </summary>
         public string RamdiskId
@@ -104,7 +105,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// MIME, Base64-encoded user data.
+        /// The Base64-encoded MIME user data.
         ///  
         /// </summary>
         public string UserData
@@ -120,7 +121,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Whether this instance can be terminated. You must modify this attribute before you can terminate any "locked" instances.
+        /// If the value is <c>true</c>, you can't terminate the instance through the Amazon EC2 console, CLI, or API; otherwise, you can.
         ///  
         /// </summary>
         public bool DisableApiTermination
@@ -136,7 +137,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Whether this instance's Amazon EBS volumes are deleted when the instance is shut down.
+        /// Indicates whether an instance stops or terminates when you initiate shutdown from the instance (using the operating system command for
+        /// system shutdown).
         ///  
         /// </summary>
         public string InstanceInitiatedShutdownBehavior
@@ -152,7 +154,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The root device name (e.g., <c>/dev/sda1</c>).
+        /// The name of the root device (for example, <c>/dev/sda1</c>).
         ///  
         /// </summary>
         public string RootDeviceName
@@ -168,7 +170,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// How block devices are exposed to this instance. Each mapping is made up of a virtualName and a deviceName.
+        /// The block device mapping of the instance.
         ///  
         /// </summary>
         public List<InstanceBlockDeviceMapping> BlockDeviceMappings
@@ -182,6 +184,11 @@ namespace Amazon.EC2.Model
         {
             return this.blockDeviceMappings.Count > 0;
         }
+
+        /// <summary>
+        /// A list of product codes.
+        ///  
+        /// </summary>
         public List<ProductCode> ProductCodes
         {
             get { return this.productCodes; }
@@ -195,7 +202,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Boolean value
+        /// Indicates whether the instance is optimized for EBS I/O.
         ///  
         /// </summary>
         public bool EbsOptimized
@@ -208,6 +215,22 @@ namespace Amazon.EC2.Model
         internal bool IsSetEbsOptimized()
         {
             return this.ebsOptimized.HasValue;
+        }
+
+        /// <summary>
+        /// 
+        ///  
+        /// </summary>
+        public string SriovNetSupport
+        {
+            get { return this.sriovNetSupport; }
+            set { this.sriovNetSupport = value; }
+        }
+
+        // Check to see if SriovNetSupport property is set
+        internal bool IsSetSriovNetSupport()
+        {
+            return this.sriovNetSupport != null;
         }
     }
 }

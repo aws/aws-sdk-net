@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para> An AWS user ID identifying an AWS account, and the name of a security group within that account. </para>
+    /// <para>Describes a security group and AWS account ID pair for EC2-Classic.</para>
     /// </summary>
     public class UserIdGroupPair
     {
@@ -32,7 +32,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The AWS user ID of an account.
+        /// The ID of an AWS account.
         ///  
         /// </summary>
         public string UserId
@@ -48,7 +48,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Name of the security group in the specified AWS account. Cannot be used when specifying a CIDR IP address range.
+        /// The ID of the security group owned by the specified AWS account.
         ///  
         /// </summary>
         public string GroupName
@@ -64,7 +64,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// ID of the security group in the specified AWS account. Cannot be used when specifying a CIDR IP address range.
+        /// The name of the security group in the specified AWS account.
         ///  
         /// </summary>
         public string GroupId

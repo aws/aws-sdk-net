@@ -25,8 +25,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeImageAttribute operation.
-    /// <para> The DescribeImageAttribute operation returns information about an attribute of an AMI. Only one attribute can be specified per call.
-    /// </para>
+    /// <para>Describes an attributes of an AMI. You can specify only one attribute at a time.</para>
     /// </summary>
     public partial class DescribeImageAttributeRequest : AmazonEC2Request
     {
@@ -35,7 +34,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The ID of the AMI whose attribute is to be described.
+        /// The ID of the AMI.
         ///  
         /// </summary>
         public string ImageId
@@ -51,8 +50,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The name of the attribute to describe. Available attribute names: <c>productCodes</c>, <c>kernel</c>, <c>ramdisk</c>,
-        /// <c>launchPermisson</c>, <c>blockDeviceMapping</c>
+        /// The AMI attribute.
         ///  
         /// <para>
         /// <b>Constraints:</b>

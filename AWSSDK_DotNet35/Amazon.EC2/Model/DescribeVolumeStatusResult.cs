@@ -21,7 +21,8 @@ using Amazon.Runtime;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>Describe Volume Status Result
+    /// <summary>
+    /// 
     /// </summary>
     public partial class DescribeVolumeStatusResult : AmazonWebServiceResponse
     {
@@ -29,6 +30,11 @@ namespace Amazon.EC2.Model
         private List<VolumeStatusItem> volumeStatuses = new List<VolumeStatusItem>();
         private string nextToken;
 
+
+        /// <summary>
+        /// A list of volumes.
+        ///  
+        /// </summary>
         public List<VolumeStatusItem> VolumeStatuses
         {
             get { return this.volumeStatuses; }
@@ -40,6 +46,11 @@ namespace Amazon.EC2.Model
         {
             return this.volumeStatuses.Count > 0;
         }
+
+        /// <summary>
+        /// The next paginated set of results to return.
+        ///  
+        /// </summary>
         public string NextToken
         {
             get { return this.nextToken; }

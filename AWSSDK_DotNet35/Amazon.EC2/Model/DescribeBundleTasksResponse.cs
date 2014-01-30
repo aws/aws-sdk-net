@@ -28,7 +28,7 @@ namespace Amazon.EC2.Model
     {
         /// <summary>
         /// Gets and sets the DescribeBundleTasksResult property.
-        /// The result of describing the bundle tasks for the user's account.
+        /// 
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DescribeBundleTasksResult class are now available on the DescribeBundleTasksResponse class. You should use the properties on DescribeBundleTasksResponse instead of accessing them through DescribeBundleTasksResult.")]
         public DescribeBundleTasksResult DescribeBundleTasksResult

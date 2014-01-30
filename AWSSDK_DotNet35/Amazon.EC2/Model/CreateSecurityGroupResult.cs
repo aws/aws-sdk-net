@@ -21,13 +21,19 @@ using Amazon.Runtime;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>Create Security Group Result
+    /// <summary>
+    /// 
     /// </summary>
     public partial class CreateSecurityGroupResult : AmazonWebServiceResponse
     {
         
         private string groupId;
 
+
+        /// <summary>
+        /// The ID of the security group.
+        ///  
+        /// </summary>
         public string GroupId
         {
             get { return this.groupId; }

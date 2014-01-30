@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para> Describes the storage destination for a BundleTask when bundling a Windows instance. </para>
+    /// <para>Describes the storage location for an instance store-backed AMI.</para>
     /// </summary>
     public class Storage
     {
@@ -30,7 +30,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The details of S3 storage for bundling a Windows instance.
+        /// An Amazon S3 storage location.
         ///  
         /// </summary>
         public S3Storage S3

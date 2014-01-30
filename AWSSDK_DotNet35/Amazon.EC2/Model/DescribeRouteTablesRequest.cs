@@ -25,15 +25,9 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeRouteTables operation.
-    /// <para> Gives you information about your route tables. You can filter the results to return information only about tables that match criteria
-    /// you specify. For example, you could get information only about a table associated with a particular subnet. You can specify multiple values
-    /// for the filter. The table must match at least one of the specified values for it to be included in the results. </para> <para> You can
-    /// specify multiple filters (e.g., the table has a particular route, and is associated with a particular subnet). The result includes
-    /// information for a particular table only if it matches all your filters. If there's no match, no special message is returned; the response is
-    /// simply empty. </para> <para> You can use wildcards with the filter values: an asterisk matches zero or more characters, and <c>?</c> matches
-    /// exactly one character. You can escape special characters using a backslash before the character. For example, a value of <c>\*amazon\?\\</c>
-    /// searches for the literal string <c>*amazon?\</c> .
-    /// </para>
+    /// <para>Describes one or more of your route tables.</para> <para>For more information about route tables, see <a
+    /// href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html" >Route Tables</a> in the <i>Amazon Virtual Private Cloud
+    /// User Guide</i> .</para>
     /// </summary>
     public partial class DescribeRouteTablesRequest : AmazonEC2Request
     {
@@ -42,7 +36,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// One or more route table IDs.
+        /// One or more route table IDs. Default: Describes all your route tables.
         ///  
         /// </summary>
         public List<string> RouteTableIds
@@ -58,8 +52,21 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// A list of filters used to match properties for Route Tables. For a complete reference to the available filter keys for this operation, see
-        /// the <a href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon EC2 API reference</a>.
+        /// One or more filters. <ul> <li> <c>association.route-table-association-id</c> - The ID of an association ID for the route table. </li> <li>
+        /// <c>association.route-table-id</c> - The ID of the route table involved in the association. </li> <li> <c>association.subnet-id</c> - The ID
+        /// of the subnet involved in the association. </li> <li> <c>association.main</c> - Indicates whether the route table is the main route table
+        /// for the VPC. </li> <li> <c>route-table-id</c> - The ID of the route table. </li> <li> <c>route.destination-cidr-block</c> - The CIDR range
+        /// specified in a route in the table. </li> <li> <c>route.gateway-id</c> - The ID of a gateway specified in a route in the table. </li> <li>
+        /// <c>route.instance-id</c> - The ID of an instance specified in a route in the table. </li> <li> <c>route.origin</c> - Describes how the route
+        /// was created (<c>CreateRouteTable</c> | <c>CreateRoute</c> | <c>EnableVgwRoutePropagation</c>). </li> <li> <c>route.state</c> - The state of
+        /// a route in the route table (<c>active</c> | <c>blackhole</c>). The blackhole state indicates that the route's target isn't available (for
+        /// example, the specified gateway isn't attached to the VPC, the specified NAT instance has been terminated, and so on). </li> <li>
+        /// <c>tag</c>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned to the resource. </li> <li> <c>tag-key</c> - The key of a
+        /// tag assigned to the resource. This filter is independent of the <c>tag-value</c> filter. For example, if you use both the filter
+        /// "tag-key=Purpose" and the filter "tag-value=X", you get any resources assigned both the tag key Purpose (regardless of what the tag's value
+        /// is), and the tag value X (regardless of what the tag's key is). If you want to list only resources where Purpose is X, see the
+        /// <c>tag</c>:<i>key</i>=<i>value</i> filter. </li> <li> <c>tag-value</c> - The value of a tag assigned to the resource. This filter is
+        /// independent of the <c>tag-key</c> filter. </li> <li> <c>vpc-id</c> - The ID of the VPC for the route table. </li> </ul>
         ///  
         /// </summary>
         public List<Filter> Filters

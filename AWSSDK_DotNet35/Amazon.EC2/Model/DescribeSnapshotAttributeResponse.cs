@@ -28,7 +28,7 @@ namespace Amazon.EC2.Model
     {
         /// <summary>
         /// Gets and sets the DescribeSnapshotAttributeResult property.
-        /// The result of describing an EBS snapshot attribute.
+        /// 
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DescribeSnapshotAttributeResult class are now available on the DescribeSnapshotAttributeResponse class. You should use the properties on DescribeSnapshotAttributeResponse instead of accessing them through DescribeSnapshotAttributeResult.")]
         public DescribeSnapshotAttributeResult DescribeSnapshotAttributeResult

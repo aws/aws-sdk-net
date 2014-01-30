@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// 
+    /// <para>Describes the ICMP type and code.</para>
     /// </summary>
     public class IcmpTypeCode
     {
@@ -31,8 +31,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// For the ICMP protocol, the ICMP type. A value of <c>-1</c> is a wildcard meaning all types. Required if specifying <c>icmp</c> for the
-        /// protocol.
+        /// The ICMP code. A value of -1 means all codes for the specified ICMP type.
         ///  
         /// </summary>
         public int Type
@@ -48,8 +47,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// For the ICMP protocol, the ICMP code. A value of <c>-1</c> is a wildcard meaning all codes. Required if specifying <c>icmp</c> for the
-        /// protocol.
+        /// The ICMP type. A value of -1 means all types.
         ///  
         /// </summary>
         public int Code

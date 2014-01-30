@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para> Represents an Amazon EC2 region. EC2 regions are completely isolated from each other. </para>
+    /// <para>Describes a region.</para>
     /// </summary>
     public class Region
     {
@@ -31,7 +31,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// Name of the region.
+        /// The name of the region.
         ///  
         /// </summary>
         public string RegionName
@@ -47,7 +47,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Region service endpoint.
+        /// The region service endpoint.
         ///  
         /// </summary>
         public string Endpoint

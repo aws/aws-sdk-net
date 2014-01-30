@@ -28,7 +28,7 @@ namespace Amazon.EC2.Model
     {
         /// <summary>
         /// Gets and sets the CreateKeyPairResult property.
-        /// The result of creating a new EC2 key pair.
+        /// 
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the CreateKeyPairResult class are now available on the CreateKeyPairResponse class. You should use the properties on CreateKeyPairResponse instead of accessing them through CreateKeyPairResult.")]
         public CreateKeyPairResult CreateKeyPairResult

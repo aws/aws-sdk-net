@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para> Represents a usage charge for Amazon EC2 resources that repeats on a schedule. </para>
+    /// <para>Describes a recurring charge.</para>
     /// </summary>
     public class RecurringCharge
     {

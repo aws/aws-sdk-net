@@ -25,7 +25,9 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeReservedInstances operation.
-    /// <para> The DescribeReservedInstances operation describes Reserved Instances that were purchased for use with your account. </para>
+    /// <para>Describes one or more of the Reserved Instances that you purchased.</para> <para>For more information about Reserved Instances, see <a
+    /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html" >Reserved Instances</a> in the
+    /// <i>Amazon Elastic Compute Cloud User Guide</i> .</para>
     /// </summary>
     public partial class DescribeReservedInstancesRequest : AmazonEC2Request
     {
@@ -35,7 +37,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The optional list of Reserved Instance IDs to describe.
+        /// One or more Reserved Instance IDs. Default: Describes all your Reserved Instances, or only those otherwise specified.
         ///  
         /// </summary>
         public List<string> ReservedInstancesIds
@@ -51,8 +53,20 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// A list of filters used to match properties for ReservedInstances. For a complete reference to the available filter keys for this operation,
-        /// see the <a href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon EC2 API reference</a>.
+        /// One or more filters. <ul> <li> <c>availability-zone</c> - The Availability Zone where the Reserved Instance can be used. </li> <li>
+        /// <c>duration</c> - The duration of the Reserved Instance (one year or three years), in seconds (<c>31536000</c> | <c>94608000</c>). </li>
+        /// <li> <c>end</c> - The time when the Reserved Instance expires. </li> <li> <c>fixed-price</c> - The purchase price of the Reserved Instance
+        /// (for example, 9800.0). </li> <li> <c>instance-type</c> - The instance type on which the Reserved Instance can be used. </li> <li>
+        /// <c>product-description</c> - The product description of the Reserved Instance (<c>Linux/UNIX</c> | <c>Linux/UNIX (Amazon VPC)</c> |
+        /// <c>Windows</c> | <c>Windows (Amazon VPC)</c>). </li> <li> <c>reserved-instances-id</c> - The ID of the Reserved Instance. </li> <li>
+        /// <c>start</c> - The time at which the Reserved Instance purchase request was placed. </li> <li> <c>state</c> - The state of the Reserved
+        /// Instance (<c>pending-payment</c> | <c>active</c> | <c>payment-failed</c> | <c>retired</c>). </li> <li> <c>tag</c>:<i>key</i>=<i>value</i> -
+        /// The key/value combination of a tag assigned to the resource. </li> <li> <c>tag-key</c> - The key of a tag assigned to the resource. This
+        /// filter is independent of the <c>tag-value</c> filter. For example, if you use both the filter "tag-key=Purpose" and the filter
+        /// "tag-value=X", you get any resources assigned both the tag key Purpose (regardless of what the tag's value is), and the tag value X
+        /// (regardless of what the tag's key is). If you want to list only resources where Purpose is X, see the <c>tag</c>:<i>key</i>=<i>value</i>
+        /// filter. </li> <li> <c>tag-value</c> - The value of a tag assigned to the resource. This filter is independent of the <c>tag-key</c> filter.
+        /// </li> <li> <c>usage-price</c> - The usage price of the Reserved Instance, per hour (for example, 0.84). </li> </ul>
         ///  
         /// </summary>
         public List<Filter> Filters

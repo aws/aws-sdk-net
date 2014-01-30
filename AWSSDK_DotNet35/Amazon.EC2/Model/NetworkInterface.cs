@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para> Specifies the characteristics of a network interface. </para>
+    /// <para>Describes a network interface.</para>
     /// </summary>
     public class NetworkInterface
     {
@@ -45,6 +45,11 @@ namespace Amazon.EC2.Model
         private List<Tag> tagSet = new List<Tag>();
         private List<NetworkInterfacePrivateIpAddress> privateIpAddresses = new List<NetworkInterfacePrivateIpAddress>();
 
+
+        /// <summary>
+        /// The ID of the network interface.
+        ///  
+        /// </summary>
         public string NetworkInterfaceId
         {
             get { return this.networkInterfaceId; }
@@ -56,6 +61,11 @@ namespace Amazon.EC2.Model
         {
             return this.networkInterfaceId != null;
         }
+
+        /// <summary>
+        /// The ID of the subnet.
+        ///  
+        /// </summary>
         public string SubnetId
         {
             get { return this.subnetId; }
@@ -67,6 +77,11 @@ namespace Amazon.EC2.Model
         {
             return this.subnetId != null;
         }
+
+        /// <summary>
+        /// The ID of the VPC.
+        ///  
+        /// </summary>
         public string VpcId
         {
             get { return this.vpcId; }
@@ -78,6 +93,11 @@ namespace Amazon.EC2.Model
         {
             return this.vpcId != null;
         }
+
+        /// <summary>
+        /// The Availability Zone.
+        ///  
+        /// </summary>
         public string AvailabilityZone
         {
             get { return this.availabilityZone; }
@@ -89,6 +109,11 @@ namespace Amazon.EC2.Model
         {
             return this.availabilityZone != null;
         }
+
+        /// <summary>
+        /// A description.
+        ///  
+        /// </summary>
         public string Description
         {
             get { return this.description; }
@@ -100,6 +125,11 @@ namespace Amazon.EC2.Model
         {
             return this.description != null;
         }
+
+        /// <summary>
+        /// The AWS account ID of the owner of the network interface.
+        ///  
+        /// </summary>
         public string OwnerId
         {
             get { return this.ownerId; }
@@ -111,6 +141,11 @@ namespace Amazon.EC2.Model
         {
             return this.ownerId != null;
         }
+
+        /// <summary>
+        /// The ID of the entity that launched the instance on your behalf (for example, AWS Management Console or Auto Scaling).
+        ///  
+        /// </summary>
         public string RequesterId
         {
             get { return this.requesterId; }
@@ -122,6 +157,11 @@ namespace Amazon.EC2.Model
         {
             return this.requesterId != null;
         }
+
+        /// <summary>
+        /// Indicates whether the network interface is being managed by AWS.
+        ///  
+        /// </summary>
         public bool RequesterManaged
         {
             get { return this.requesterManaged ?? default(bool); }
@@ -133,6 +173,20 @@ namespace Amazon.EC2.Model
         {
             return this.requesterManaged.HasValue;
         }
+
+        /// <summary>
+        /// The status of the network interface.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>available, attaching, in-use, detaching</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
         public NetworkInterfaceStatus Status
         {
             get { return this.status; }
@@ -144,6 +198,11 @@ namespace Amazon.EC2.Model
         {
             return this.status != null;
         }
+
+        /// <summary>
+        /// The MAC address.
+        ///  
+        /// </summary>
         public string MacAddress
         {
             get { return this.macAddress; }
@@ -155,6 +214,11 @@ namespace Amazon.EC2.Model
         {
             return this.macAddress != null;
         }
+
+        /// <summary>
+        /// The IP address of the network interface within the subnet.
+        ///  
+        /// </summary>
         public string PrivateIpAddress
         {
             get { return this.privateIpAddress; }
@@ -166,6 +230,11 @@ namespace Amazon.EC2.Model
         {
             return this.privateIpAddress != null;
         }
+
+        /// <summary>
+        /// The private DNS name.
+        ///  
+        /// </summary>
         public string PrivateDnsName
         {
             get { return this.privateDnsName; }
@@ -177,6 +246,11 @@ namespace Amazon.EC2.Model
         {
             return this.privateDnsName != null;
         }
+
+        /// <summary>
+        /// Indicates whether traffic to or from the instance is validated.
+        ///  
+        /// </summary>
         public bool SourceDestCheck
         {
             get { return this.sourceDestCheck ?? default(bool); }
@@ -188,6 +262,11 @@ namespace Amazon.EC2.Model
         {
             return this.sourceDestCheck.HasValue;
         }
+
+        /// <summary>
+        /// Any security groups for the network interface.
+        ///  
+        /// </summary>
         public List<GroupIdentifier> Groups
         {
             get { return this.groups; }
@@ -199,6 +278,11 @@ namespace Amazon.EC2.Model
         {
             return this.groups.Count > 0;
         }
+
+        /// <summary>
+        /// The network interface attachment.
+        ///  
+        /// </summary>
         public NetworkInterfaceAttachment Attachment
         {
             get { return this.attachment; }
@@ -210,6 +294,11 @@ namespace Amazon.EC2.Model
         {
             return this.attachment != null;
         }
+
+        /// <summary>
+        /// The association information for an Elastic IP associated with the network interface.
+        ///  
+        /// </summary>
         public NetworkInterfaceAssociation Association
         {
             get { return this.association; }
@@ -221,6 +310,11 @@ namespace Amazon.EC2.Model
         {
             return this.association != null;
         }
+
+        /// <summary>
+        /// Any tags assigned to the network interface.
+        ///  
+        /// </summary>
         public List<Tag> TagSet
         {
             get { return this.tagSet; }
@@ -232,6 +326,11 @@ namespace Amazon.EC2.Model
         {
             return this.tagSet.Count > 0;
         }
+
+        /// <summary>
+        /// The private IP addresses associated with the network interface.
+        ///  
+        /// </summary>
         public List<NetworkInterfacePrivateIpAddress> PrivateIpAddresses
         {
             get { return this.privateIpAddresses; }

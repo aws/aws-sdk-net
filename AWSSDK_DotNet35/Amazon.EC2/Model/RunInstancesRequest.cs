@@ -25,24 +25,17 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the RunInstances operation.
-    /// <para> The RunInstances operation launches a specified number of instances. </para> <para> If Amazon EC2 cannot launch the minimum number
-    /// AMIs you request, no instances launch. If there is insufficient capacity to launch the maximum number of AMIs you request, Amazon EC2
-    /// launches as many as possible to satisfy the requested maximum values. </para> <para> Every instance is launched in a security group. If you
-    /// do not specify a security group at launch, the instances start in your default security group. For more information on creating security
-    /// groups, see CreateSecurityGroup. </para> <para> An optional instance type can be specified. For information about instance types, see
-    /// Instance Types. </para> <para> You can provide an optional key pair ID for each image in the launch request (for more information, see
-    /// CreateKeyPair). All instances that are created from images that use this key pair will have access to the associated public key at boot. You
-    /// can use this key to provide secure access to an instance of an image on a per-instance basis. Amazon EC2 public images use this feature to
-    /// provide secure access without passwords. </para> <para><b>IMPORTANT:</b> Launching public images without a key pair ID will leave them
-    /// inaccessible. The public key material is made available to the instance at boot time by placing it in the openssh_id.pub file on a logical
-    /// device that is exposed to the instance as /dev/sda2 (the ephemeral store). The format of this file is suitable for use as an entry within
-    /// ~/.ssh/authorized_keys (the OpenSSH format). This can be done at boot (e.g., as part of rc.local) allowing for secure access without
-    /// passwords. Optional user data can be provided in the launch request. All instances that collectively comprise the launch request have access
-    /// to this data For more information, see Instance Metadata. </para> <para><b>NOTE:</b> If any of the AMIs have a product code attached for
-    /// which the user has not subscribed, the RunInstances call will fail. </para> <para><b>IMPORTANT:</b> We strongly recommend using the 2.6.18
-    /// Xen stock kernel with the c1.medium and c1.xlarge instances. Although the default Amazon EC2 kernels will work, the new kernels provide
-    /// greater stability and performance for these instance types. For more information about kernels, see Kernels, RAM Disks, and Block Device
-    /// Mappings. </para>
+    /// <para>Launches the specified number of instances using an AMI for which you have permissions.</para> <para>When you launch an instance, it
+    /// enters the <c>pending</c> state. After the instance is ready for you, it enters the <c>running</c> state. To check the state of your
+    /// instance, call DescribeInstances.</para> <para>If you don't specify a security group when launching an instance, Amazon EC2 uses the default
+    /// security group. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html" >Security
+    /// Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .</para> <para>Linux instances have access to the public key of the key
+    /// pair at boot. You can use this key to provide secure access to the instance. Amazon EC2 public images use this feature to provide secure
+    /// access without passwords. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html" >Key
+    /// Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .</para> <para>You can provide optional user data when launching an
+    /// instance. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html" >Instance
+    /// Metadata</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .</para> <para>If any of the AMIs have a product code attached for which
+    /// the user has not subscribed, <c>RunInstances</c> fails.</para>
     /// </summary>
     public partial class RunInstancesRequest : AmazonEC2Request
     {
@@ -72,7 +65,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// Unique ID of a machine image, returned by a call to DescribeImages.
+        /// The ID of the AMI, which you can get by calling <a>DescribeImages</a>.
         ///  
         /// </summary>
         public string ImageId
@@ -88,7 +81,9 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Minimum number of instances to launch. If the value is more than Amazon EC2 can launch, no instances are launched at all.
+        /// The minimum number of instances to launch. If you specify a minimum that is more instances than Amazon EC2 can launch in the target
+        /// Availability Zone, Amazon EC2 launches no instances. Constraints: Between 1 and the maximum number allowed for your account (the default for
+        /// each account is 20, but this limit can be increased).
         ///  
         /// </summary>
         public int MinCount
@@ -104,8 +99,9 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Maximum number of instances to launch. If the value is more than Amazon EC2 can launch, the largest possible number above minCount will be
-        /// launched instead. Between 1 and the maximum number allowed for your account (default: 20).
+        /// The maximum number of instances to launch. If you specify more instances than Amazon EC2 can launch in the target Availability Zone, Amazon
+        /// EC2 launches the largest possible number of instances above <c>MinCount</c>. Constraints: Between 1 and the maximum number allowed for your
+        /// account (the default limit for each account is 20, but this limit can be increased).
         ///  
         /// </summary>
         public int MaxCount
@@ -121,7 +117,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The name of the key pair.
+        /// The name of the key pair. You can create a key pair using <a>CreateKeyPair</a> or <a>ImportKeyPair</a>. <important> If you launch an
+        /// instance without specifying a key pair, you can't connect to the instance. </important>
         ///  
         /// </summary>
         public string KeyName
@@ -137,7 +134,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The names of the security groups into which the instances will be launched.
+        /// [EC2-Classic, default VPC] One or more security group names. For a nondefault VPC, you must use security group IDs instead. Default: Amazon
+        /// EC2 uses the default security group.
         ///  
         /// </summary>
         public List<string> SecurityGroups
@@ -151,6 +149,12 @@ namespace Amazon.EC2.Model
         {
             return this.securityGroups.Count > 0;
         }
+
+        /// <summary>
+        /// One or more security group IDs. You can create a security group using <a>CreateSecurityGroup</a>. Default: Amazon EC2 uses the default
+        /// security group.
+        ///  
+        /// </summary>
         public List<string> SecurityGroupIds
         {
             get { return this.securityGroupIds; }
@@ -164,7 +168,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Specifies additional information to make available to the instance(s). This parameter must be passed as a Base64-encoded string.
+        /// The Base64-encoded MIME user data for the instances.
         ///  
         /// </summary>
         public string UserData
@@ -180,14 +184,15 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Specifies the instance type for the launched instances.
+        /// The instance type. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+        /// Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. Default: <c>m1.small</c>
         ///  
         /// <para>
         /// <b>Constraints:</b>
         /// <list type="definition">
         ///     <item>
         ///         <term>Allowed Values</term>
-        ///         <description>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, m3.xlarge, m3.2xlarge, c1.medium, c1.xlarge, hi1.4xlarge, hs1.8xlarge, cc1.4xlarge, cc2.8xlarge, cg1.4xlarge, cr1.8xlarge</description>
+        ///         <description>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m3.xlarge, m3.2xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, cr1.8xlarge, i2.xlarge, i2.2xlarge, i2.4xlarge, i2.8xlarge, hi1.4xlarge, hs1.8xlarge, c1.medium, c1.xlarge, c3.large, c3.xlarge, c3.2xlarge, c3.4xlarge, c3.8xlarge, cc1.4xlarge, cc2.8xlarge, g2.2xlarge, cg1.4xlarge</description>
         ///     </item>
         /// </list>
         /// </para>
@@ -205,7 +210,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Specifies the placement constraints (Availability Zones) for launching the instances.
+        /// The placement for the instance.
         ///  
         /// </summary>
         public Placement Placement
@@ -221,7 +226,9 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The ID of the kernel with which to launch the instance.
+        /// The ID of the kernel. <important> We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information, see <a
+        /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html#pv-grub-a-new-amazon-kernel-image"> PV-GRUB: A New Amazon
+        /// Kernel Image</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. </important>
         ///  
         /// </summary>
         public string KernelId
@@ -237,9 +244,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The ID of the RAM disk with which to launch the instance. Some kernels require additional drivers at launch. Check the kernel requirements
-        /// for information on whether you need to specify a RAM disk. To find kernel requirements, go to the Resource Center and search for the kernel
-        /// ID.
+        /// The ID of the RAM disk.
         ///  
         /// </summary>
         public string RamdiskId
@@ -255,7 +260,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Specifies how block devices are exposed to the instance. Each mapping is made up of a virtualName and a deviceName.
+        /// The block device mapping.
         ///  
         /// </summary>
         public List<BlockDeviceMapping> BlockDeviceMappings
@@ -271,7 +276,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Enables monitoring for the instance.
+        /// The monitoring for the instance.
         ///  
         /// </summary>
         public bool Monitoring
@@ -287,7 +292,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Specifies the subnet ID within which to launch the instance(s) for Amazon Virtual Private Cloud.
+        /// [EC2-VPC] The ID of the subnet to launch the instance into.
         ///  
         /// </summary>
         public string SubnetId
@@ -303,8 +308,11 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Specifies whether the instance can be terminated using the APIs. You must modify this attribute before you can terminate any "locked"
-        /// instances from the APIs.
+        /// If you set this parameter to <c>true</c>, you can't terminate the instance using the Amazon EC2 console, CLI, or API; otherwise, you can. If
+        /// you set this parameter to <c>true</c> and then later want to be able to terminate the instance, you must first change the value of the
+        /// <c>disableApiTermination</c> attribute to <c>false</c> using <a>ModifyInstanceAttribute</a>. Alternatively, if you set
+        /// <c>InstanceInitiatedShutdownBehavior</c> to <c>terminate</c>, you can terminate the instance by running the shutdown command from the
+        /// instance. Default: <c>false</c>
         ///  
         /// </summary>
         public bool DisableApiTermination
@@ -320,7 +328,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Specifies whether the instance's Amazon EBS volumes are stopped or terminated when the instance is shut down.
+        /// Indicates whether an instance stops or terminates when you initiate shutdown from the instance (using the operating system command for
+        /// system shutdown). Default: <c>stop</c>
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -345,7 +354,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Specifies active licenses in use and attached to an Amazon EC2 instance.
+        /// 
         ///  
         /// </summary>
         public InstanceLicenseSpecification License
@@ -361,8 +370,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// If you're using Amazon Virtual Private Cloud, you can optionally use this parameter to assign the instance a specific available IP address
-        /// from the subnet.
+        /// [EC2-VPC] The primary IP address. You must specify a value from the IP address range of the subnet. Only one private IP address can be
+        /// designated as primary. Therefore, you can't specify this parameter if <c>PrivateIpAddresses.n.Primary</c> is set to <c>true</c> and
+        /// <c>PrivateIpAddresses.n.PrivateIpAddress</c> is set to an IP address. Default: We select an IP address from the IP address range of the
+        /// subnet.
         ///  
         /// </summary>
         public string PrivateIpAddress
@@ -378,8 +389,9 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, go to How to Ensure Idempotency in
-        /// the Amazon Elastic Compute Cloud User Guide.
+        /// Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more information, see <a
+        /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure Idempotency</a> in the <i>Amazon
+        /// Elastic Compute Cloud User Guide</i>. Constraints: Maximum 64 ASCII characters
         ///  
         /// </summary>
         public string ClientToken
@@ -395,7 +407,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Do not use. Reserved for internal use.
+        /// 
         ///  
         /// </summary>
         public string AdditionalInfo
@@ -411,7 +423,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// List of network interfaces associated with the instance.
+        /// One or more network interfaces.
         ///  
         /// </summary>
         public List<InstanceNetworkInterfaceSpecification> NetworkInterfaces
@@ -425,6 +437,11 @@ namespace Amazon.EC2.Model
         {
             return this.networkInterfaces.Count > 0;
         }
+
+        /// <summary>
+        /// The IAM instance profile.
+        ///  
+        /// </summary>
         public IamInstanceProfileSpecification IamInstanceProfile
         {
             get { return this.iamInstanceProfile; }
@@ -436,6 +453,13 @@ namespace Amazon.EC2.Model
         {
             return this.iamInstanceProfile != null;
         }
+
+        /// <summary>
+        /// Indicates whether the instance is optimized for EBS I/O. This optimization provides dedicated throughput to Amazon EBS and an optimized
+        /// configuration stack to provide optimal Amazon EBS I/O performance. This optimization isn't available with all instance types. Additional
+        /// usage charges apply when using an EBS-optimized instance. Default: <c>false</c>
+        ///  
+        /// </summary>
         public bool EbsOptimized
         {
             get { return this.ebsOptimized ?? default(bool); }

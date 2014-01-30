@@ -32,7 +32,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The specified unique key pair name.
+        /// The key pair name you provided.
         ///  
         /// </summary>
         public string KeyName
@@ -48,7 +48,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The MD5 public key fingerprint as specified in section 4 of <a href="http://tools.ietf.org/html/rfc4716"> RFC4716 </a>.
+        /// The MD5 public key fingerprint as specified in section 4 of RFC 4716.
         ///  
         /// </summary>
         public string KeyFingerprint

@@ -20,7 +20,8 @@ using System.IO;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>Instance Status Summary
+    /// <summary>
+    /// <para>Describes the status of an instance.</para>
     /// </summary>
     public class InstanceStatusSummary
     {
@@ -28,6 +29,20 @@ namespace Amazon.EC2.Model
         private SummaryStatus status;
         private List<InstanceStatusDetails> details = new List<InstanceStatusDetails>();
 
+
+        /// <summary>
+        /// The status.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>ok, impaired, insufficient-data, not-applicable</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
         public SummaryStatus Status
         {
             get { return this.status; }
@@ -39,6 +54,11 @@ namespace Amazon.EC2.Model
         {
             return this.status != null;
         }
+
+        /// <summary>
+        /// The system instance health or application instance health.
+        ///  
+        /// </summary>
         public List<InstanceStatusDetails> Details
         {
             get { return this.details; }

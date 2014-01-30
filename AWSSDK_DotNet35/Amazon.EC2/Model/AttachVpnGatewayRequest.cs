@@ -25,8 +25,9 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the AttachVpnGateway operation.
-    /// <para> Attaches a VPN gateway to a VPC. This is the last step required to get your VPC fully connected to your data center before launching
-    /// instances in it. For more information, go to Process for Using Amazon VPC in the Amazon Virtual Private Cloud Developer Guide. </para>
+    /// <para>Attaches a virtual private gateway to a VPC. For more information, see <a
+    /// href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html" >Adding a Hardware Virtual Private Gateway to Your VPC</a> in the
+    /// <i>Amazon Virtual Private Cloud User Guide</i> .</para>
     /// </summary>
     public partial class AttachVpnGatewayRequest : AmazonEC2Request
     {
@@ -35,7 +36,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The ID of the VPN gateway to attach to the VPC.
+        /// The ID of the virtual private gateway.
         ///  
         /// </summary>
         public string VpnGatewayId
@@ -51,7 +52,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The ID of the VPC to attach to the VPN gateway.
+        /// The ID of the VPC.
         ///  
         /// </summary>
         public string VpcId

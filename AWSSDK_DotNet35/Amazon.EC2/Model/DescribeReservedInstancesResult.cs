@@ -22,7 +22,7 @@ using Amazon.Runtime;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para> The result of describing the purchased Reserved Instances for your account. </para>
+    /// 
     /// </summary>
     public partial class DescribeReservedInstancesResult : AmazonWebServiceResponse
     {
@@ -31,7 +31,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The list of described Reserved Instances.
+        /// A list of Reserved Instances.
         ///  
         /// </summary>
         public List<ReservedInstances> ReservedInstances

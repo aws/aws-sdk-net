@@ -25,18 +25,18 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateRoute operation.
-    /// <para> Creates a new route in a route table within a VPC. The route's target can be either a gateway attached to the VPC or a NAT instance
-    /// in the VPC. </para> <para> When determining how to route traffic, we use the route with the most specific match. For example, let's say the
-    /// traffic is destined for <c>192.0.2.3</c> , and the route table includes the following two routes: </para>
+    /// <para>Creates a route in a route table within a VPC.</para> <para>You must specify one of the following targets: Internet gateway, NAT
+    /// instance, or network interface.</para> <para>When determining how to route traffic, we use the route with the most specific match. For
+    /// example, let's say the traffic is destined for <c>192.0.2.3</c> , and the route table includes the following two routes:</para>
     /// <ul>
-    /// <li> <c>192.0.2.0/24</c> (goes to some target A) </li>
-    /// <li> <c>192.0.2.0/28</c> (goes to some target B) </li>
+    /// <li> <para> <c>192.0.2.0/24</c> (goes to some target A)</para> </li>
+    /// <li> <para> <c>192.0.2.0/28</c> (goes to some target B)</para> </li>
     /// 
     /// </ul>
-    /// <para> Both routes apply to the traffic destined for <c>192.0.2.3</c> . However, the second route in the list is more specific, so we use
-    /// that route to determine where to target the traffic. </para> <para> For more information about route tables, go to <a
-    /// href="http://docs.amazonwebservices.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html" >Route Tables</a> in the Amazon Virtual Private
-    /// Cloud User Guide. </para>
+    /// <para>Both routes apply to the traffic destined for <c>192.0.2.3</c> . However, the second route in the list covers a smaller number of IP
+    /// addresses and is therefore more specific, so we use that route to determine where to target the traffic.</para> <para>For more information
+    /// about route tables, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html" >Route Tables</a> in the
+    /// <i>Amazon Virtual Private Cloud User Guide</i> .</para>
     /// </summary>
     public partial class CreateRouteRequest : AmazonEC2Request
     {
@@ -48,7 +48,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The ID of the route table where the route will be added.
+        /// The ID of the route table for the route.
         ///  
         /// </summary>
         public string RouteTableId
@@ -64,8 +64,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The CIDR address block used for the destination match. For example: <c>0.0.0.0/0</c>. Routing decisions are based on the most specific
-        /// match.
+        /// The CIDR address block used for the destination match. Routing decisions are based on the most specific match.
         ///  
         /// </summary>
         public string DestinationCidrBlock
@@ -81,7 +80,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The ID of a VPN or Internet gateway attached to your VPC. You must provide either <c>GatewayId</c> or <c>InstanceId</c>, but not both.
+        /// The ID of an Internet gateway attached to your VPC.
         ///  
         /// </summary>
         public string GatewayId
@@ -97,7 +96,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The ID of a NAT instance in your VPC. You must provide either <c>GatewayId</c> or <c>InstanceId</c>, but not both.
+        /// The ID of a NAT instance in your VPC. The operation fails if you specify an instance ID unless exactly one network interface is attached.
         ///  
         /// </summary>
         public string InstanceId
@@ -111,6 +110,11 @@ namespace Amazon.EC2.Model
         {
             return this.instanceId != null;
         }
+
+        /// <summary>
+        /// The ID of a network interface.
+        ///  
+        /// </summary>
         public string NetworkInterfaceId
         {
             get { return this.networkInterfaceId; }

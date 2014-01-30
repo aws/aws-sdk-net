@@ -25,12 +25,9 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeCustomerGateways operation.
-    /// <para> Gives you information about your customer gateways. You can filter the results to return information only about customer gateways
-    /// that match criteria you specify. For example, you could ask to get information about a particular customer gateway (or all) only if the
-    /// gateway's state is pending or available. You can specify multiple filters (e.g., the customer gateway has a particular IP address for the
-    /// Internet-routable external interface, and the gateway's state is pending or available). The result includes information for a particular
-    /// customer gateway only if the gateway matches all your filters. If there's no match, no special message is returned; the response is simply
-    /// empty. The following table shows the available filters. </para>
+    /// <para>Describes one or more of your VPN customer gateways.</para> <para>For more information about VPN customer gateways, see <a
+    /// href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html" >Adding a Hardware Virtual Private Gateway to Your VPC</a> in the
+    /// <i>Amazon Virtual Private Cloud User Guide</i> .</para>
     /// </summary>
     public partial class DescribeCustomerGatewaysRequest : AmazonEC2Request
     {
@@ -39,7 +36,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// A set of one or more customer gateway IDs.
+        /// One or more customer gateway IDs. Default: Describes all your customer gateways.
         ///  
         /// </summary>
         public List<string> CustomerGatewayIds
@@ -55,8 +52,16 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// A list of filters used to match properties for Customer Gateways. For a complete reference to the available filter keys for this operation,
-        /// see the <a href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon EC2 API reference</a>.
+        /// One or more filters. <ul> <li> <c>bgp-asn</c> - The customer gateway's Border Gateway Protocol (BGP) Autonomous System Number (ASN). </li>
+        /// <li> <c>customer-gateway-id</c> - The ID of the customer gateway. </li> <li> <c>ip-address</c> - The IP address of the customer gateway's
+        /// Internet-routable external interface. </li> <li> <c>state</c> - The state of the customer gateway (<c>pending</c> | <c>available</c> |
+        /// <c>deleting</c> | <c>deleted</c>). </li> <li> <c>type</c> - The type of customer gateway. Currently, the only supported type is
+        /// <c>ipsec.1</c>. </li> <li> <c>tag</c>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned to the resource. </li> <li>
+        /// <c>tag-key</c> - The key of a tag assigned to the resource. This filter is independent of the <c>tag-value</c> filter. For example, if you
+        /// use both the filter "tag-key=Purpose" and the filter "tag-value=X", you get any resources assigned both the tag key Purpose (regardless of
+        /// what the tag's value is), and the tag value X (regardless of what the tag's key is). If you want to list only resources where Purpose is X,
+        /// see the <c>tag</c>:<i>key</i>=<i>value</i> filter. </li> <li> <c>tag-value</c> - The value of a tag assigned to the resource. This filter is
+        /// independent of the <c>tag-key</c> filter. </li> </ul>
         ///  
         /// </summary>
         public List<Filter> Filters

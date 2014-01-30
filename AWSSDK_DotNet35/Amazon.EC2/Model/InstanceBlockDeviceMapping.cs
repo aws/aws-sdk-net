@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para> Describes how block devices are mapped on an Amazon EC2 instance. </para>
+    /// <para>Describes a block device mapping.</para>
     /// </summary>
     public class InstanceBlockDeviceMapping
     {
@@ -31,7 +31,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The device name (e.g., <c>/dev/sdh</c>) at which the block device is exposed on the instance.
+        /// The device name exposed to the instance (for example, <filename>/dev/sdh</filename>).
         ///  
         /// </summary>
         public string DeviceName
@@ -47,7 +47,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The optional EBS device mapped to the specified device name.
+        /// Parameters used to automatically set up Amazon EBS volumes when the instance is launched.
         ///  
         /// </summary>
         public EbsInstanceBlockDevice Ebs

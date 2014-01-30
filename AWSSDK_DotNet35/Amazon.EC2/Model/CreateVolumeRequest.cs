@@ -25,7 +25,10 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateVolume operation.
-    /// <para> Initializes an empty volume of a given size. </para>
+    /// <para>Creates an Amazon EBS volume that can be attached to any instance in the same Availability Zone.</para> <para>Any AWS Marketplace
+    /// product codes from the snapshot are propagated to the volume.</para> <para>For more information, see <a
+    /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-creating-volume.html" >Creating or Restoring an Amazon EBS Volume</a> in the
+    /// <i>Amazon Elastic Compute Cloud User Guide</i> .</para>
     /// </summary>
     public partial class CreateVolumeRequest : AmazonEC2Request
     {
@@ -37,7 +40,8 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The size of the volume, in gigabytes. Required if you are not creating a volume from a snapshot.
+        /// The size of the volume, in GiBs. Constraints: If the volume type is <c>io1</c>, the minimum size of the volume is 10 GiB. Default: If you're
+        /// creating the volume from a snapshot and don't specify a volume size, the default is the snapshot size.
         ///  
         /// </summary>
         public int Size
@@ -53,7 +57,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The ID of the snapshot from which to create the new volume.
+        /// The snapshot from which to create the volume.
         ///  
         /// </summary>
         public string SnapshotId
@@ -69,7 +73,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The Availability Zone in which to create the new volume.
+        /// The Availability Zone in which to create the volume. Use <a>DescribeAvailabilityZones</a> to list the Availability Zones that are currently
+        /// available to you.
         ///  
         /// </summary>
         public string AvailabilityZone
@@ -83,6 +88,20 @@ namespace Amazon.EC2.Model
         {
             return this.availabilityZone != null;
         }
+
+        /// <summary>
+        /// The volume type. Default: <c>standard</c>
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>standard, io1</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
         public VolumeType VolumeType
         {
             get { return this.volumeType; }
@@ -94,6 +113,12 @@ namespace Amazon.EC2.Model
         {
             return this.volumeType != null;
         }
+
+        /// <summary>
+        /// The number of I/O operations per second (IOPS) that the volume supports. This parameter is not used with standard volumes, but is required
+        /// when the volume type is <c>io1</c>.
+        ///  
+        /// </summary>
         public int Iops
         {
             get { return this.iops ?? default(int); }

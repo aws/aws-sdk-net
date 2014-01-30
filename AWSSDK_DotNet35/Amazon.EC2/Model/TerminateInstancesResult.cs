@@ -22,7 +22,7 @@ using Amazon.Runtime;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para> The result of calling the TerminateInstances operation. Contains details on how the specified instances are changing state. </para>
+    /// 
     /// </summary>
     public partial class TerminateInstancesResult : AmazonWebServiceResponse
     {
@@ -31,7 +31,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The list of the terminating instances and details on how their state has changed.
+        /// Information about one or more terminated instances.
         ///  
         /// </summary>
         public List<InstanceStateChange> TerminatingInstances

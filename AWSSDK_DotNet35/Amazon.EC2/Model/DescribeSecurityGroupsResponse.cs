@@ -28,7 +28,7 @@ namespace Amazon.EC2.Model
     {
         /// <summary>
         /// Gets and sets the DescribeSecurityGroupsResult property.
-        /// The result of describing the Amazon EC2 security groups for your account.
+        /// 
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DescribeSecurityGroupsResult class are now available on the DescribeSecurityGroupsResponse class. You should use the properties on DescribeSecurityGroupsResponse instead of accessing them through DescribeSecurityGroupsResult.")]
         public DescribeSecurityGroupsResult DescribeSecurityGroupsResult

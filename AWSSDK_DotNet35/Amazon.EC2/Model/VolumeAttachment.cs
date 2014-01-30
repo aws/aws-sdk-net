@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para> Specifies the details of a how an EC2 EBS volume is attached to an instance. </para>
+    /// <para>Describes volume attachment details.</para>
     /// </summary>
     public class VolumeAttachment
     {
@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// 
+        /// The ID of the volume.
         ///  
         /// </summary>
         public string VolumeId
@@ -51,7 +51,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// 
+        /// The ID of the instance.
         ///  
         /// </summary>
         public string InstanceId
@@ -67,7 +67,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// How the device is exposed to the instance (e.g., <c>/dev/sdh</c>).
+        /// The device name.
         ///  
         /// </summary>
         public string Device
@@ -83,7 +83,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// 
+        /// The attachment state of the volume.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -108,7 +108,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Timestamp when this attachment initiated.
+        /// The time stamp when the attachment initiated.
         ///  
         /// </summary>
         public DateTime AttachTime
@@ -124,7 +124,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// ` Whether this volume will be deleted or not when the associated instance is terminated.
+        /// Indicates whether the Amazon EBS volume is deleted on instance termination.
         ///  
         /// </summary>
         public bool DeleteOnTermination

@@ -20,7 +20,8 @@ using System.IO;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>Reserved Instance Limit Price
+    /// <summary>
+    /// <para>Describes the limit price of a Reserved Instance offering.</para>
     /// </summary>
     public class ReservedInstanceLimitPrice
     {
@@ -28,6 +29,11 @@ namespace Amazon.EC2.Model
         private double? amount;
         private CurrencyCodeValues currencyCode;
 
+
+        /// <summary>
+        /// Used for Reserved Instance Marketplace offerings. Specifies the limit price on the total order (instanceCount * price).
+        ///  
+        /// </summary>
         public double Amount
         {
             get { return this.amount ?? default(double); }
@@ -39,6 +45,20 @@ namespace Amazon.EC2.Model
         {
             return this.amount.HasValue;
         }
+
+        /// <summary>
+        /// The currency in which the <c>limitPrice</c> amount is specified. At this time, the only supported currency is <c>USD</c>.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>USD</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
         public CurrencyCodeValues CurrencyCode
         {
             get { return this.currencyCode; }

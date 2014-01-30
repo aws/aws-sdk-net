@@ -21,8 +21,7 @@ using System.IO;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para> Describes an Amazon EC2 key pair, including the private key material. </para> <para> The public key portion is stored by Amazon EC2
-    /// and the private key is returned only once, in this type, when the key is initially created. </para>
+    /// <para>Describes a key pair.</para>
     /// </summary>
     public class KeyPair
     {
@@ -65,7 +64,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The unencrypted PEM encoded RSA private key.
+        /// An unencrypted PEM encoded RSA private key.
         ///  
         /// </summary>
         public string KeyMaterial

@@ -20,7 +20,8 @@ using System.IO;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>Instance Count
+    /// <summary>
+    /// <para>Describes a Reserved Instance listing state.</para>
     /// </summary>
     public class InstanceCount
     {
@@ -28,6 +29,20 @@ namespace Amazon.EC2.Model
         private ListingState state;
         private int? count;
 
+
+        /// <summary>
+        /// The states of the listed Reserved Instances.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>available, sold, cancelled, pending</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
         public ListingState State
         {
             get { return this.state; }
@@ -39,6 +54,11 @@ namespace Amazon.EC2.Model
         {
             return this.state != null;
         }
+
+        /// <summary>
+        /// he number of listed Reserved Instances in the state specified by the <c>state</c>.
+        ///  
+        /// </summary>
         public int Count
         {
             get { return this.count ?? default(int); }

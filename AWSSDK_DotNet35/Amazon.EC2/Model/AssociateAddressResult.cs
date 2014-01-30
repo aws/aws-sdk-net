@@ -21,13 +21,19 @@ using Amazon.Runtime;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>Associate Address Result
+    /// <summary>
+    /// 
     /// </summary>
     public partial class AssociateAddressResult : AmazonWebServiceResponse
     {
         
         private string associationId;
 
+
+        /// <summary>
+        /// [EC2-VPC] The ID that represents the association of the Elastic IP address with an instance.
+        ///  
+        /// </summary>
         public string AssociationId
         {
             get { return this.associationId; }

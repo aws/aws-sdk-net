@@ -28,7 +28,7 @@ namespace Amazon.EC2.Model
     {
         /// <summary>
         /// Gets and sets the CreateVolumeResult property.
-        /// The result of creating a new EBS volume.
+        /// 
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the CreateVolumeResult class are now available on the CreateVolumeResponse class. You should use the properties on CreateVolumeResponse instead of accessing them through CreateVolumeResult.")]
         public CreateVolumeResult CreateVolumeResult

@@ -25,8 +25,10 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the CreatePlacementGroup operation.
-    /// <para> Creates a PlacementGroup into which multiple Amazon EC2 instances can be launched. Users must give the group a name unique within the
-    /// scope of the user account. </para>
+    /// <para>Creates a placement group that you launch cluster instances into. You must give the group a name that's unique within the scope of
+    /// your account.</para> <para>For more information about placement groups and cluster instances, see <a
+    /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html" >Cluster Instances</a> in the <i>Amazon Elastic
+    /// Compute Cloud User Guide</i> .</para>
     /// </summary>
     public partial class CreatePlacementGroupRequest : AmazonEC2Request
     {
@@ -35,7 +37,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The name of the <c>PlacementGroup</c>.
+        /// A name for the placement group. Constraints: Up to 255 ASCII characters
         ///  
         /// </summary>
         public string GroupName
@@ -51,7 +53,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The <c>PlacementGroup</c> strategy.
+        /// The placement strategy.
         ///  
         /// <para>
         /// <b>Constraints:</b>

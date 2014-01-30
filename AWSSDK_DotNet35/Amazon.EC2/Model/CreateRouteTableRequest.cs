@@ -25,9 +25,10 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateRouteTable operation.
-    /// <para> Creates a new route table within a VPC. After you create a new route table, you can add routes and associate the table with a subnet.
-    /// For more information about route tables, go to <a href="http://docs.amazonwebservices.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html"
-    /// >Route Tables</a> in the Amazon Virtual Private Cloud User Guide. </para>
+    /// <para>Creates a route table for the specified VPC. After you create a route table, you can add routes and associate the table with a
+    /// subnet.</para> <para>For more information about route tables, see <a
+    /// href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html" >Route Tables</a> in the <i>Amazon Virtual Private Cloud
+    /// User Guide</i> .</para>
     /// </summary>
     public partial class CreateRouteTableRequest : AmazonEC2Request
     {
@@ -35,7 +36,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The ID of the VPC where the route table will be created.
+        /// The ID of the VPC.
         ///  
         /// </summary>
         public string VpcId

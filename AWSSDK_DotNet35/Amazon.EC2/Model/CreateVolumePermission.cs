@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para> Describes a permission allowing either a user or group to create a new EBS volume from a snapshot. </para>
+    /// 
     /// </summary>
     public class CreateVolumePermission
     {
@@ -31,7 +31,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The user ID of the user that can create volumes from the snapshot.
+        /// The specific AWS account ID that is to be added or removed from a volume's list of create volume permissions.
         ///  
         /// </summary>
         public string UserId
@@ -47,7 +47,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The group that is allowed to create volumes from the snapshot (currently supports "all").
+        /// The specific group that is to be added or removed from a volume's list of create volume permissions.
         ///  
         /// <para>
         /// <b>Constraints:</b>

@@ -20,7 +20,8 @@ using System.IO;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>Export Task
+    /// <summary>
+    /// <para>Describes an export task.</para>
     /// </summary>
     public class ExportTask
     {
@@ -32,6 +33,11 @@ namespace Amazon.EC2.Model
         private InstanceExportDetails instanceExportDetails;
         private ExportToS3Task exportToS3Task;
 
+
+        /// <summary>
+        /// The ID of the export task.
+        ///  
+        /// </summary>
         public string ExportTaskId
         {
             get { return this.exportTaskId; }
@@ -43,6 +49,11 @@ namespace Amazon.EC2.Model
         {
             return this.exportTaskId != null;
         }
+
+        /// <summary>
+        /// A description of the resource being exported.
+        ///  
+        /// </summary>
         public string Description
         {
             get { return this.description; }
@@ -54,6 +65,20 @@ namespace Amazon.EC2.Model
         {
             return this.description != null;
         }
+
+        /// <summary>
+        /// The state of the conversion task.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>active, cancelling, cancelled, completed</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
         public ExportTaskState State
         {
             get { return this.state; }
@@ -65,6 +90,11 @@ namespace Amazon.EC2.Model
         {
             return this.state != null;
         }
+
+        /// <summary>
+        /// The status message related to the export task.
+        ///  
+        /// </summary>
         public string StatusMessage
         {
             get { return this.statusMessage; }
@@ -76,6 +106,11 @@ namespace Amazon.EC2.Model
         {
             return this.statusMessage != null;
         }
+
+        /// <summary>
+        /// The instance being exported.
+        ///  
+        /// </summary>
         public InstanceExportDetails InstanceExportDetails
         {
             get { return this.instanceExportDetails; }
@@ -87,6 +122,11 @@ namespace Amazon.EC2.Model
         {
             return this.instanceExportDetails != null;
         }
+
+        /// <summary>
+        /// 
+        ///  
+        /// </summary>
         public ExportToS3Task ExportToS3Task
         {
             get { return this.exportToS3Task; }

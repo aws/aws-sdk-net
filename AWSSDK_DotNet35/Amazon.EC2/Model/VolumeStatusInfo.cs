@@ -20,7 +20,8 @@ using System.IO;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>Volume Status Info
+    /// <summary>
+    /// <para>Describes the status of a volume.</para>
     /// </summary>
     public class VolumeStatusInfo
     {
@@ -28,6 +29,20 @@ namespace Amazon.EC2.Model
         private VolumeStatusInfoStatus status;
         private List<VolumeStatusDetails> details = new List<VolumeStatusDetails>();
 
+
+        /// <summary>
+        /// The status of the volume.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>ok, impaired, insufficient-data</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
         public VolumeStatusInfoStatus Status
         {
             get { return this.status; }
@@ -39,6 +54,11 @@ namespace Amazon.EC2.Model
         {
             return this.status != null;
         }
+
+        /// <summary>
+        /// The details of the volume status.
+        ///  
+        /// </summary>
         public List<VolumeStatusDetails> Details
         {
             get { return this.details; }

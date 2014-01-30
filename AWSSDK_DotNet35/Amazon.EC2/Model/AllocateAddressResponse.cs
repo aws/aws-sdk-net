@@ -28,7 +28,7 @@ namespace Amazon.EC2.Model
     {
         /// <summary>
         /// Gets and sets the AllocateAddressResult property.
-        /// Result returned from allocating an Elastic IP.
+        /// 
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the AllocateAddressResult class are now available on the AllocateAddressResponse class. You should use the properties on AllocateAddressResponse instead of accessing them through AllocateAddressResult.")]
         public AllocateAddressResult AllocateAddressResult

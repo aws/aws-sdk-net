@@ -20,7 +20,8 @@ using System.IO;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>Price Schedule
+    /// <summary>
+    /// <para>Describes the price for a Reserved Instance.</para>
     /// </summary>
     public class PriceSchedule
     {
@@ -30,6 +31,11 @@ namespace Amazon.EC2.Model
         private CurrencyCodeValues currencyCode;
         private bool? active;
 
+
+        /// <summary>
+        /// The number of months remaining in the reservation. For example, 2 is the second to the last month before the capacity reservation expires.
+        ///  
+        /// </summary>
         public long Term
         {
             get { return this.term ?? default(long); }
@@ -41,6 +47,11 @@ namespace Amazon.EC2.Model
         {
             return this.term.HasValue;
         }
+
+        /// <summary>
+        /// The fixed price for the term.
+        ///  
+        /// </summary>
         public double Price
         {
             get { return this.price ?? default(double); }
@@ -52,6 +63,20 @@ namespace Amazon.EC2.Model
         {
             return this.price.HasValue;
         }
+
+        /// <summary>
+        /// The currency for transacting the Reserved Instance resale. At this time, the only supported currency is <c>USD</c>.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>USD</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
         public CurrencyCodeValues CurrencyCode
         {
             get { return this.currencyCode; }
@@ -63,6 +88,15 @@ namespace Amazon.EC2.Model
         {
             return this.currencyCode != null;
         }
+
+        /// <summary>
+        /// The current price schedule, as determined by the term remaining for the Reserved Instance in the listing. A specific price schedule is
+        /// always in effect, but only one price schedule can be active at any time. Take, for example, a Reserved Instance listing that has five months
+        /// remaining in its term. When you specify price schedules for five months and two months, this means that schedule 1, covering the first three
+        /// months of the remaining term, will be active during months 5, 4, and 3. Then schedule 2, covering the last two months of the term, will be
+        /// active for months 2 and 1.
+        ///  
+        /// </summary>
         public bool Active
         {
             get { return this.active ?? default(bool); }

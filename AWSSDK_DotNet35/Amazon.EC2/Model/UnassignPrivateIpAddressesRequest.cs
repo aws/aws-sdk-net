@@ -25,13 +25,18 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the UnassignPrivateIpAddresses operation.
-    /// 
+    /// <para>Unassigns one or more secondary private IP addresses from a network interface.</para>
     /// </summary>
     public partial class UnassignPrivateIpAddressesRequest : AmazonEC2Request
     {
         private string networkInterfaceId;
         private List<string> privateIpAddresses = new List<string>();
 
+
+        /// <summary>
+        /// The ID of the network interface.
+        ///  
+        /// </summary>
         public string NetworkInterfaceId
         {
             get { return this.networkInterfaceId; }
@@ -43,6 +48,12 @@ namespace Amazon.EC2.Model
         {
             return this.networkInterfaceId != null;
         }
+
+        /// <summary>
+        /// The secondary private IP addresses to unassign from the network interface. You can specify this option multiple times to unassign more than
+        /// one IP address.
+        ///  
+        /// </summary>
         public List<string> PrivateIpAddresses
         {
             get { return this.privateIpAddresses; }

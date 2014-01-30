@@ -25,13 +25,21 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyVolumeAttribute operation.
-    /// 
+    /// <para>Modifies a volume attribute.</para> <para>By default, all I/O operations for the volume are suspended when the data on the volume is
+    /// determined to be potentially inconsistent, to prevent undetectable, latent data corruption. The I/O access to the volume can be resumed by
+    /// first enabling I/O access and then checking the data consistency on your volume.</para> <para>You can change the default behavior to resume
+    /// I/O operations. We recommend that you change this only for boot volumes or for volumes that are stateless or disposable.</para>
     /// </summary>
     public partial class ModifyVolumeAttributeRequest : AmazonEC2Request
     {
         private string volumeId;
         private bool? autoEnableIO;
 
+
+        /// <summary>
+        /// The ID of the volume.
+        ///  
+        /// </summary>
         public string VolumeId
         {
             get { return this.volumeId; }
@@ -43,6 +51,11 @@ namespace Amazon.EC2.Model
         {
             return this.volumeId != null;
         }
+
+        /// <summary>
+        /// Indicates whether the volume should be auto-enabled for I/O operations.
+        ///  
+        /// </summary>
         public bool AutoEnableIO
         {
             get { return this.autoEnableIO ?? default(bool); }

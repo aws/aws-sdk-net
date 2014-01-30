@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para> Represents a state change for a specific EC2 instance. </para>
+    /// <para>Describes an instance state change.</para>
     /// </summary>
     public class InstanceStateChange
     {
@@ -32,7 +32,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The ID of the instance whose state changed.
+        /// The ID of the instance.
         ///  
         /// </summary>
         public string InstanceId
@@ -48,7 +48,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The current state of the specified instance.
+        /// The current state of the instance.
         ///  
         /// </summary>
         public InstanceState CurrentState
@@ -64,7 +64,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The previous state of the specified instance.
+        /// The previous state of the instance.
         ///  
         /// </summary>
         public InstanceState PreviousState

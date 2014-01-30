@@ -28,7 +28,7 @@ namespace Amazon.EC2.Model
     {
         /// <summary>
         /// Gets and sets the GetPasswordDataResult property.
-        /// The result of the GetPasswordData operation.
+        /// 
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the GetPasswordDataResult class are now available on the GetPasswordDataResponse class. You should use the properties on GetPasswordDataResponse instead of accessing them through GetPasswordDataResult.")]
         public GetPasswordDataResult GetPasswordDataResult

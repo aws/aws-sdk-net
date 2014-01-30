@@ -22,7 +22,7 @@ using Amazon.Runtime;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para> The result of the GetConsoleOutput operation. </para>
+    /// 
     /// </summary>
     public partial class GetConsoleOutputResult : AmazonWebServiceResponse
     {
@@ -33,7 +33,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The ID of the instance whose console output was requested.
+        /// The ID of the instance.
         ///  
         /// </summary>
         public string InstanceId

@@ -21,8 +21,7 @@ using System.IO;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para> Represents metadata to associate with Amazon EC2 resources. Each tag consists of a user-defined key and value. Use tags to categorize
-    /// EC2 resources, such as by purpose, owner, or environment. </para>
+    /// <para>Describes a tag.</para>
     /// </summary>
     public class Tag
     {
@@ -32,7 +31,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The tag's key.
+        /// The key of the tag. Constraints: Tag keys are case-sensitive and accept a maximum of 127 Unicode characters. May not begin with <c>aws:</c>
         ///  
         /// </summary>
         public string Key
@@ -48,7 +47,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The tag's value.
+        /// The value of the tag. Constraints: Tag values are case-sensitive and accept a maximum of 255 Unicode characters.
         ///  
         /// </summary>
         public string Value

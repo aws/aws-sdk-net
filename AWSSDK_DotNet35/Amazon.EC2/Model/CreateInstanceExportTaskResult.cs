@@ -21,13 +21,19 @@ using Amazon.Runtime;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>Create Instance Export Task Result
+    /// <summary>
+    /// 
     /// </summary>
     public partial class CreateInstanceExportTaskResult : AmazonWebServiceResponse
     {
         
         private ExportTask exportTask;
 
+
+        /// <summary>
+        /// 
+        ///  
+        /// </summary>
         public ExportTask ExportTask
         {
             get { return this.exportTask; }

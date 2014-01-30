@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para> An EBS volume backed block device. </para>
+    /// <para>Describe an Amazon EBS block device.</para>
     /// </summary>
     public class EbsBlockDevice
     {
@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The ID of the snapshot from which the volume will be created.
+        /// The ID of the snapshot.
         ///  
         /// </summary>
         public string SnapshotId
@@ -50,7 +50,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The size of the volume, in gigabytes.
+        /// The size of the volume, in GiB. Constraints: If the volume type is <c>io1</c>, the minimum size of the volume is 10 GiB. Default: If you're
+        /// creating the volume from a snapshot and don't specify a volume size, the default is the snapshot size.
         ///  
         /// </summary>
         public int VolumeSize
@@ -66,7 +67,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Specifies whether the Amazon EBS volume is deleted on instance termination.
+        /// Indicates whether the Amazon EBS volume is deleted on instance termination.
         ///  
         /// </summary>
         public bool DeleteOnTermination
@@ -80,6 +81,20 @@ namespace Amazon.EC2.Model
         {
             return this.deleteOnTermination.HasValue;
         }
+
+        /// <summary>
+        /// The volume type. Default: <c>standard</c>
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>standard, io1</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
         public VolumeType VolumeType
         {
             get { return this.volumeType; }
@@ -91,6 +106,12 @@ namespace Amazon.EC2.Model
         {
             return this.volumeType != null;
         }
+
+        /// <summary>
+        /// The number of I/O operations per second (IOPS) that the volume supports. Constraint: Range is 100 to 4000. Condition: Required when the
+        /// volume type is <c>io1</c>; not used with <c>standard</c> volumes.
+        ///  
+        /// </summary>
         public int Iops
         {
             get { return this.iops ?? default(int); }

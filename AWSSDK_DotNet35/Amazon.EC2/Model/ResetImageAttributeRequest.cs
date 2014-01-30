@@ -25,8 +25,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the ResetImageAttribute operation.
-    /// <para> The ResetImageAttribute operation resets an attribute of an AMI to its default value. </para> <para><b>NOTE:</b> The productCodes
-    /// attribute cannot be reset. </para>
+    /// <para>Resets an attribute of an AMI to its default value.</para>
     /// </summary>
     public partial class ResetImageAttributeRequest : AmazonEC2Request
     {
@@ -35,7 +34,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The ID of the AMI whose attribute is being reset.
+        /// The ID of the AMI.
         ///  
         /// </summary>
         public string ImageId
@@ -51,7 +50,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The name of the attribute being reset. Available attribute names: <c>launchPermission</c>
+        /// The attribute to reset (currently you can only reset the launch permission attribute).
         ///  
         /// <para>
         /// <b>Constraints:</b>

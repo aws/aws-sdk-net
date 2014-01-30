@@ -25,7 +25,8 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeRegions operation.
-    /// <para> The DescribeRegions operation describes regions zones that are currently available to the account. </para>
+    /// <para>Describes one or more regions that are currently available to you.</para> <para>For a list of the regions supported by Amazon EC2, see
+    /// <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#ec2_region" >Regions and Endpoints</a> .</para>
     /// </summary>
     public partial class DescribeRegionsRequest : AmazonEC2Request
     {
@@ -34,7 +35,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The optional list of regions to describe.
+        /// The names of one or more regions.
         ///  
         /// </summary>
         public List<string> RegionNames
@@ -50,8 +51,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// A list of filters used to match properties for Regions. For a complete reference to the available filter keys for this operation, see the <a
-        /// href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon EC2 API reference</a>.
+        /// One or more filters. <ul> <li> <c>endpoint</c> - The endpoint of the region (for example, <c>ec2.us-east-1.amazonaws.com</c>). </li> <li>
+        /// <c>region-name</c> - The name of the region (for example, <c>us-east-1</c>). </li> </ul>
         ///  
         /// </summary>
         public List<Filter> Filters

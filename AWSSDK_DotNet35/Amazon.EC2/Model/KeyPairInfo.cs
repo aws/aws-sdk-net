@@ -21,8 +21,7 @@ using System.IO;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para> Describes an Amazon EC2 key pair. This is a summary of the key pair data, and will not contain the actual private key material.
-    /// </para> <para> The private key material is only available when initially creating the key pair. </para>
+    /// <para>Describes a key pair.</para>
     /// </summary>
     public class KeyPairInfo
     {
@@ -48,7 +47,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The SHA-1 digest of the DER encoded private key.
+        /// If you used <a>CreateKeyPair</a> to create the key pair, this is the SHA-1 digest of the DER encoded private key. If you used
+        /// <a>ImportKeyPair</a> to provide AWS the public key, this is the MD5 public key fingerprint as specified in section 4 of RFC4716.
         ///  
         /// </summary>
         public string KeyFingerprint

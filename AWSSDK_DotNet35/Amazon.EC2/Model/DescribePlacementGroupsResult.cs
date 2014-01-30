@@ -31,7 +31,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// Contains information about the specified <c>PlacementGroups</c>.
+        /// One or more placement groups.
         ///  
         /// </summary>
         public List<PlacementGroup> PlacementGroups

@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para> Describes the S3 storage destination for a BundleTask when bundling a Windows instance. </para>
+    /// <para>Describes the S3 bucket for an instance store-backed AMI.</para>
     /// </summary>
     public class S3Storage
     {
@@ -51,7 +51,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The prefix to use when storing the AMI in S3.
+        /// The beginning of the file name of the AMI.
         ///  
         /// </summary>
         public string Prefix
@@ -67,7 +67,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The Access Key ID of the owner of the Amazon S3 bucket.
+        /// The access key ID of the owner of the bucket.
         ///  
         /// </summary>
         public string AWSAccessKeyId
@@ -83,7 +83,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// A Base64-encoded Amazon S3 upload policy that gives Amazon EC2 permission to upload items into Amazon S3 on the user's behalf.
+        /// A Base64-encoded Amazon S3 upload policy that gives Amazon EC2 permission to upload items into Amazon S3 on your behalf.
         ///  
         /// </summary>
         public string UploadPolicy

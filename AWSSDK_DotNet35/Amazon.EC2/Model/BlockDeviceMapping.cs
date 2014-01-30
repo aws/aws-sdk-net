@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para> The BlockDeviceMappingItemType data type. </para>
+    /// <para>Describes a block device mapping.</para>
     /// </summary>
     public class BlockDeviceMapping
     {
@@ -33,7 +33,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// Specifies the virtual device name.
+        /// The virtual device name.
         ///  
         /// </summary>
         public string VirtualName
@@ -49,7 +49,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Specifies the device name (e.g., <c>/dev/sdh</c>).
+        /// The device name exposed to the instance (for example, <c>/dev/sdh</c>).
         ///  
         /// </summary>
         public string DeviceName
@@ -65,7 +65,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Specifies parameters used to automatically setup Amazon EBS volumes when the instance is launched.
+        /// Parameters used to automatically set up Amazon EBS volumes when the instance is launched.
         ///  
         /// </summary>
         public EbsBlockDevice Ebs
@@ -81,7 +81,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Specifies the device name to suppress during instance launch.
+        /// Suppresses the specified device included in the block device mapping of the AMI.
         ///  
         /// </summary>
         public string NoDevice

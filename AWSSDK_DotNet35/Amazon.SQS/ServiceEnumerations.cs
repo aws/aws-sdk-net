@@ -82,6 +82,11 @@ namespace Amazon.SQS
         public static readonly QueueAttributeName ReceiveMessageWaitTimeSeconds = new QueueAttributeName("ReceiveMessageWaitTimeSeconds");
     
 
+       /// <summary>Constant RedrivePolicy for QueueAttributeName
+       /// </summary>
+        public static readonly QueueAttributeName RedrivePolicy = new QueueAttributeName("RedrivePolicy");
+    
+
        /// <summary>Constant VisibilityTimeout for QueueAttributeName
        /// </summary>
         public static readonly QueueAttributeName VisibilityTimeout = new QueueAttributeName("VisibilityTimeout");

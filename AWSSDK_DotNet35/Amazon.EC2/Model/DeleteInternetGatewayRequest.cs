@@ -25,8 +25,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteInternetGateway operation.
-    /// <para> Deletes an Internet gateway from your AWS account. The gateway must not be attached to a VPC. For more information about your VPC and
-    /// Internet gateway, go to Amazon Virtual Private Cloud User Guide. </para>
+    /// <para>Deletes the specified Internet gateway. You must detach the Internet gateway from the VPC before you can delete it.</para>
     /// </summary>
     public partial class DeleteInternetGatewayRequest : AmazonEC2Request
     {
@@ -34,7 +33,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The ID of the Internet gateway to be deleted.
+        /// The ID of the Internet gateway.
         ///  
         /// </summary>
         public string InternetGatewayId

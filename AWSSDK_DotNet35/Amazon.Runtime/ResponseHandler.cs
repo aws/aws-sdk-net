@@ -51,11 +51,14 @@ namespace Amazon.Runtime
                 Response = response
             };
             args.ResponseHeaders = new Dictionary<string, string>();
-            var headerNames = webResponseData.GetHeaderNames();
-            foreach (var responseHeaderName in headerNames)
+            if (webResponseData != null)
             {
-                string responseHeaderValue = webResponseData.GetHeaderValue(responseHeaderName);
-                args.ResponseHeaders[responseHeaderName] = responseHeaderValue;
+                var headerNames = webResponseData.GetHeaderNames();
+                foreach (var responseHeaderName in headerNames)
+                {
+                    string responseHeaderValue = webResponseData.GetHeaderValue(responseHeaderName);
+                    args.ResponseHeaders[responseHeaderName] = responseHeaderValue;
+                }
             }
             return args;
         }

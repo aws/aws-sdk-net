@@ -22,7 +22,7 @@ using Amazon.Runtime;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para> The result of creating a snapshot from an EBS volume. </para>
+    /// 
     /// </summary>
     public partial class CreateSnapshotResult : AmazonWebServiceResponse
     {
@@ -31,7 +31,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The new snapshot.
+        /// 
         ///  
         /// </summary>
         public Snapshot Snapshot

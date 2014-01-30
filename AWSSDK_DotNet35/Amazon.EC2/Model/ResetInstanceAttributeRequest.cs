@@ -25,7 +25,12 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the ResetInstanceAttribute operation.
-    /// <para> Resets an attribute of an instance to its default value. </para>
+    /// <para>Resets an attribute of an instance to its default value. To reset the kernel or RAM disk, the instance must be in a stopped state. To
+    /// reset the <c>SourceDestCheck</c> , the instance can be either running or stopped.</para> <para>The <c>SourceDestCheck</c> attribute controls
+    /// whether source/destination checking is enabled. The default value is <c>true</c> , which means checking is enabled. This value must be
+    /// <c>false</c> for a NAT instance to perform NAT. For more information, see <a
+    /// href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html" >NAT Instances</a> in the <i>Amazon Virtual Private Cloud
+    /// User Guide</i> .</para>
     /// </summary>
     public partial class ResetInstanceAttributeRequest : AmazonEC2Request
     {
@@ -34,7 +39,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The ID of the Amazon EC2 instance whose attribute is being reset.
+        /// The ID of the instance.
         ///  
         /// </summary>
         public string InstanceId
@@ -50,7 +55,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The name of the attribute being reset. Available attribute names: <c>kernel</c>, <c>ramdisk</c>
+        /// The attribute to reset.
         ///  
         /// <para>
         /// <b>Constraints:</b>

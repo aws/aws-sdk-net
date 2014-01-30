@@ -20,7 +20,8 @@ using System.IO;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>Route Table Association
+    /// <summary>
+    /// <para>Describes an association between a route table and a subnet.</para>
     /// </summary>
     public class RouteTableAssociation
     {
@@ -30,6 +31,11 @@ namespace Amazon.EC2.Model
         private string subnetId;
         private bool? main;
 
+
+        /// <summary>
+        /// The ID of the association between a route table and a subnet.
+        ///  
+        /// </summary>
         public string RouteTableAssociationId
         {
             get { return this.routeTableAssociationId; }
@@ -41,6 +47,11 @@ namespace Amazon.EC2.Model
         {
             return this.routeTableAssociationId != null;
         }
+
+        /// <summary>
+        /// The ID of the route table.
+        ///  
+        /// </summary>
         public string RouteTableId
         {
             get { return this.routeTableId; }
@@ -52,6 +63,11 @@ namespace Amazon.EC2.Model
         {
             return this.routeTableId != null;
         }
+
+        /// <summary>
+        /// The ID of the subnet.
+        ///  
+        /// </summary>
         public string SubnetId
         {
             get { return this.subnetId; }
@@ -63,6 +79,11 @@ namespace Amazon.EC2.Model
         {
             return this.subnetId != null;
         }
+
+        /// <summary>
+        /// Indicates whether this is the main route table.
+        ///  
+        /// </summary>
         public bool Main
         {
             get { return this.main ?? default(bool); }

@@ -22,7 +22,9 @@ using Amazon.Runtime;
 namespace Amazon.SQS.Model
 {
     /// <summary>
-    /// 
+    /// <para>For more information, see <a
+    /// href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/UnderstandingResponses.html" >Responses</a> in the <i>Amazon
+    /// SQS Developer Guide</i> .</para>
     /// </summary>
     public partial class GetQueueUrlResult : AmazonWebServiceResponse
     {

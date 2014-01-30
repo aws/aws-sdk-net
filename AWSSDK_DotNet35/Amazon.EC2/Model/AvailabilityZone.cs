@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para> An EC2 availability zone, separate and fault tolerant from other availability zones. </para>
+    /// <para>Describes an Availability Zone.</para>
     /// </summary>
     public class AvailabilityZone
     {
@@ -33,7 +33,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// Name of the Availability Zone.
+        /// The name of the Availability Zone.
         ///  
         /// </summary>
         public string ZoneName
@@ -49,7 +49,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// State of the Availability Zone.
+        /// The state of the Availability Zone.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -74,7 +74,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Name of the region in which this zone resides.
+        /// The name of the region.
         ///  
         /// </summary>
         public string RegionName
@@ -90,7 +90,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// A list of messages about the Availability Zone.
+        /// Any messages about the Availability Zone.
         ///  
         /// </summary>
         public List<AvailabilityZoneMessage> Messages

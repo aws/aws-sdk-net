@@ -20,20 +20,13 @@ using System.IO;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>
-    /// <para> Part of a request to launch Amazon EC2 instances, specifying which license pool to use if a license should be attached to the new
-    /// Amazon EC2 instance. </para>
+    /// <summary>Instance License Specification
     /// </summary>
     public class InstanceLicenseSpecification
     {
         
         private string pool;
 
-
-        /// <summary>
-        /// The license pool from which to take a license when starting Amazon EC2 instances in the associated <c>RunInstances</c> request.
-        ///  
-        /// </summary>
         public string Pool
         {
             get { return this.pool; }

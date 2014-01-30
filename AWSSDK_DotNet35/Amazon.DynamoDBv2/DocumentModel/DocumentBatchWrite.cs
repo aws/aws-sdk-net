@@ -261,7 +261,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         private void SendSet(Dictionary<string, QuickList<WriteRequestDocument>> set, Table targetTable, bool isAsync)
         {
-            Dictionary<Key, Document> documentMap = null;
+            Dictionary<string, Dictionary<Key, Document>> documentMap = null;
             BatchWriteItemRequest request = ConstructRequest(set, targetTable, out documentMap, isAsync);
             if (request.RequestItems.Count == 0)
                 return;
@@ -308,10 +308,15 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return totalWrites;
         }
 
-        private BatchWriteItemRequest ConstructRequest(Dictionary<string, QuickList<WriteRequestDocument>> writeItems, Table targetTable, out Dictionary<Key, Document> documentMap, bool isAsync)
+        private BatchWriteItemRequest ConstructRequest(
+            Dictionary<string, QuickList<WriteRequestDocument>> writeItems,
+            Table targetTable,
+            out Dictionary<string, Dictionary<Key, Document>> documentMap,
+            bool isAsync)
         {
-            documentMap = new Dictionary<Key, Document>(keyComparer);
+            documentMap = new Dictionary<string, Dictionary<Key, Document>>(StringComparer.Ordinal);
             BatchWriteItemRequest request = new BatchWriteItemRequest();
+
             foreach (var writeItem in writeItems)
             {
                 string tableName = writeItem.Key;
@@ -320,6 +325,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 {
                     var table = tableMap[tableName];
                     var requestList = new List<WriteRequest>();
+                    var tableDocumentMap = new Dictionary<Key, Document>(keyComparer);
+                    documentMap.Add(tableName, tableDocumentMap);
 
                     foreach (var item in requestItems)
                     {
@@ -328,7 +335,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                         if (item.WriteRequest.PutRequest != null)
                         {
                             var key = table.MakeKey(item.Document);
-                            documentMap.Add(key, item.Document);
+                            tableDocumentMap.Add(key, item.Document);
                         }
                     }
                     request.RequestItems[tableName] = requestList;
@@ -367,9 +374,9 @@ namespace Amazon.DynamoDBv2.DocumentModel
         }
 
 #if (WIN_RT || WINDOWS_PHONE)
-        private void CallUntilCompletion(BatchWriteItemRequest request, Dictionary<Key, Document> documentMap, AmazonDynamoDBClient client)
+        private void CallUntilCompletion(BatchWriteItemRequest request, Dictionary<string, Dictionary<Key, Document>> documentMap, AmazonDynamoDBClient client)
 #else
-        private void CallUntilCompletion(BatchWriteItemRequest request, Dictionary<Key, Document> documentMap, IAmazonDynamoDB client)
+        private void CallUntilCompletion(BatchWriteItemRequest request, Dictionary<string, Dictionary<Key, Document>> documentMap, IAmazonDynamoDB client)
 #endif
         {
             do
@@ -380,7 +387,9 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 Dictionary<Key, Document> unprocessedDocuments = new Dictionary<Key, Document>(keyComparer);
                 foreach (var unprocessedItems in result.UnprocessedItems)
                 {
-                    Table table = tableMap[unprocessedItems.Key];
+                    string tableName = unprocessedItems.Key;
+                    Table table = tableMap[tableName];
+                    Dictionary<Key, Document> tableDocumentMap = documentMap[tableName];
 
                     foreach (var writeRequest in unprocessedItems.Value)
                     {
@@ -389,32 +398,36 @@ namespace Amazon.DynamoDBv2.DocumentModel
                             var key = table.MakeKey(Document.FromAttributeMap(writeRequest.PutRequest.Item));
 
                             Document document = null;
-                            if (documentMap.TryGetValue(key, out document))
+                            if (tableDocumentMap.TryGetValue(key, out document))
                             {
                                 // Remove unprocessed requests from the document map 
                                 // and copy them to unprocessed documents.
                                 unprocessedDocuments.Add(key, document);
-                                documentMap.Remove(key);
+                                tableDocumentMap.Remove(key);
                             }
                         }
                     }
-                }
 
-                // Commit the remaining documents in the document map
-                foreach (var document in documentMap.Values)
-                {
-                    document.CommitChanges();
+                    // Commit the remaining documents in the document map
+                    foreach (var document in tableDocumentMap.Values)
+                    {
+                        document.CommitChanges();
+                    }
+                    // Replace existing documents with just the unprocessed documents
+                    documentMap[tableName] = unprocessedDocuments;
                 }
-                documentMap = unprocessedDocuments;
 
             } while (request.RequestItems.Count > 0);
 
             // Commit any remaining documents in document map.
             // This would only happen if we are not able to match the items sent in the request
             // with the items returned back as unprocessed items.
-            foreach (var document in documentMap.Values)
+            foreach (var tableDocumentMap in documentMap.Values)
             {
-                document.CommitChanges();
+                foreach (var document in tableDocumentMap.Values)
+                {
+                    document.CommitChanges();
+                }
             }
         }
 

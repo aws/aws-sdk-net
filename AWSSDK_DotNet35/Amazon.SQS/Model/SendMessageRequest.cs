@@ -25,7 +25,12 @@ namespace Amazon.SQS.Model
 {
     /// <summary>
     /// Container for the parameters to the SendMessage operation.
-    /// <para>The <c>SendMessage</c> action delivers a message to the specified queue.</para>
+    /// <para> Delivers a message to the specified queue. With Amazon SQS, you now have the ability to send large payload messages that are up to
+    /// 256KB (262,144 bytes) in size. To send large payloads, you must use an AWS SDK that supports SigV4 signing. To verify whether SigV4 is
+    /// supported for an AWS SDK, check the SDK release notes. </para> <para><b>IMPORTANT:</b> The following list shows the characters (in Unicode)
+    /// allowed in your message, according to the W3C XML specification. For more information, go to http://www.w3.org/TR/REC-xml/#charsets If you
+    /// send any characters not included in the list, your request will be rejected. #x9 | #xA | #xD | [#x20 to #xD7FF] | [#xE000 to #xFFFD] |
+    /// [#x10000 to #x10FFFF] </para>
     /// </summary>
     public partial class SendMessageRequest : AmazonSQSRequest
     {
@@ -35,7 +40,7 @@ namespace Amazon.SQS.Model
 
 
         /// <summary>
-        /// The URL of the SQS queue to take action on.
+        /// The URL of the Amazon SQS queue to take action on.
         ///  
         /// </summary>
         public string QueueUrl
@@ -51,7 +56,7 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// The message to send.
+        /// The message to send. String maximum 256 KB in size. For a list of allowed characters, see the preceding important note.
         ///  
         /// </summary>
         public string MessageBody
@@ -67,7 +72,8 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// The number of seconds the message has to be delayed.
+        /// The number of seconds (0 to 900 - 15 minutes) to delay a specific message. Messages with a positive <c>DelaySeconds</c> value become
+        /// available for processing after the delay time is finished. If you don't specify a value, the default value for the queue applies.
         ///  
         /// </summary>
         public int DelaySeconds

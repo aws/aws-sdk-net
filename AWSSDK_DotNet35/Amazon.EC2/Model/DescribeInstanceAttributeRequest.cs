@@ -25,7 +25,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeInstanceAttribute operation.
-    /// <para> Returns information about an attribute of an instance. Only one attribute can be specified per call. </para>
+    /// <para>Describes an attribute of the specified instance. You can specify only one attribute at a time.</para>
     /// </summary>
     public partial class DescribeInstanceAttributeRequest : AmazonEC2Request
     {
@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The ID of the instance whose instance attribute is being described.
+        /// The ID of the instance.
         ///  
         /// </summary>
         public string InstanceId
@@ -50,8 +50,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The name of the attribute to describe. Available attribute names: <c>instanceType</c>, <c>kernel</c>, <c>ramdisk</c>, <c>userData</c>,
-        /// <c>disableApiTermination</c>, <c>instanceInitiatedShutdownBehavior</c>, <c>rootDeviceName</c>, <c>blockDeviceMapping</c>
+        /// The instance attribute.
         ///  
         /// <para>
         /// <b>Constraints:</b>

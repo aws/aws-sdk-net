@@ -25,12 +25,17 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeAccountAttributes operation.
-    /// 
+    /// <para>Describes the specified attribute of your AWS account.</para>
     /// </summary>
     public partial class DescribeAccountAttributesRequest : AmazonEC2Request
     {
         private List<string> attributeNames = new List<string>();
 
+
+        /// <summary>
+        /// One or more account attribute names.
+        ///  
+        /// </summary>
         public List<string> AttributeNames
         {
             get { return this.attributeNames; }

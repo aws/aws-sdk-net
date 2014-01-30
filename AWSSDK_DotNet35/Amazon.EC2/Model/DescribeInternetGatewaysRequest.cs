@@ -25,15 +25,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeInternetGateways operation.
-    /// <para> Gives you information about your Internet gateways. You can filter the results to return information only about Internet gateways
-    /// that match criteria you specify. For example, you could get information only about gateways with particular tags. The Internet gateway must
-    /// match at least one of the specified values for it to be included in the results. </para> <para> You can specify multiple filters (e.g., the
-    /// Internet gateway is attached to a particular VPC and is tagged with a particular value). The result includes information for a particular
-    /// Internet gateway only if the gateway matches all your filters. If there's no match, no special message is returned; the response is simply
-    /// empty. </para> <para> You can use wildcards with the filter values: an asterisk matches zero or more characters, and <c>?</c> matches
-    /// exactly one character. You can escape special characters using a backslash before the character. For example, a value of <c>\*amazon\?\\</c>
-    /// searches for the literal string <c>*amazon?\</c> .
-    /// </para>
+    /// <para>Describes one or more of your Internet gateways.</para>
     /// </summary>
     public partial class DescribeInternetGatewaysRequest : AmazonEC2Request
     {
@@ -42,7 +34,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// One or more Internet gateway IDs.
+        /// One or more Internet gateway IDs. Default: Describes all your Internet gateways.
         ///  
         /// </summary>
         public List<string> InternetGatewayIds
@@ -58,8 +50,14 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// A list of filters used to match properties for Internet Gateways. For a complete reference to the available filter keys for this operation,
-        /// see the <a href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon EC2 API reference</a>.
+        /// One or more filters. <ul> <li> <c>attachment.state</c> - The current state of the attachment between the gateway and the VPC. Present only
+        /// if a VPC is attached. </li> <li> <c>attachment.vpc-id</c> - The ID of an attached VPC. </li> <li> <c>internet-gateway-id</c> - The ID of the
+        /// Internet gateway. </li> <li> <c>tag</c>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned to the resource. </li> <li>
+        /// <c>tag-key</c> - The key of a tag assigned to the resource. This filter is independent of the <c>tag-value</c> filter. For example, if you
+        /// use both the filter "tag-key=Purpose" and the filter "tag-value=X", you get any resources assigned both the tag key Purpose (regardless of
+        /// what the tag's value is), and the tag value X (regardless of what the tag's key is). If you want to list only resources where Purpose is X,
+        /// see the <c>tag</c>:<i>key</i>=<i>value</i> filter. </li> <li> <c>tag-value</c> - The value of a tag assigned to the resource. This filter is
+        /// independent of the <c>tag-key</c> filter. </li> </ul>
         ///  
         /// </summary>
         public List<Filter> Filters

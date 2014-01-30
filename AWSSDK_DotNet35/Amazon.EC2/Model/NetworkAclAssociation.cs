@@ -20,7 +20,8 @@ using System.IO;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>Network Acl Association
+    /// <summary>
+    /// <para>Describes an association between a network ACL and a subnet.</para>
     /// </summary>
     public class NetworkAclAssociation
     {
@@ -29,6 +30,11 @@ namespace Amazon.EC2.Model
         private string networkAclId;
         private string subnetId;
 
+
+        /// <summary>
+        /// The ID of the association between a network ACL and a subnet.
+        ///  
+        /// </summary>
         public string NetworkAclAssociationId
         {
             get { return this.networkAclAssociationId; }
@@ -40,6 +46,11 @@ namespace Amazon.EC2.Model
         {
             return this.networkAclAssociationId != null;
         }
+
+        /// <summary>
+        /// The ID of the network ACL.
+        ///  
+        /// </summary>
         public string NetworkAclId
         {
             get { return this.networkAclId; }
@@ -51,6 +62,11 @@ namespace Amazon.EC2.Model
         {
             return this.networkAclId != null;
         }
+
+        /// <summary>
+        /// The ID of the subnet.
+        ///  
+        /// </summary>
         public string SubnetId
         {
             get { return this.subnetId; }

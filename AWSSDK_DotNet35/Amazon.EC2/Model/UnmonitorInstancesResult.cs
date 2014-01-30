@@ -22,8 +22,7 @@ using Amazon.Runtime;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para> The result of calling the UnmonitorInstances operation. Contains the updated monitoring status for each instance specified in the
-    /// request. </para>
+    /// 
     /// </summary>
     public partial class UnmonitorInstancesResult : AmazonWebServiceResponse
     {
@@ -32,7 +31,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// A list of updated monitoring information for the instances specified in the request.
+        /// Monitoring information for one or more instances.
         ///  
         /// </summary>
         public List<InstanceMonitoring> InstanceMonitorings

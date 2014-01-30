@@ -25,8 +25,15 @@ namespace Amazon.SQS.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteQueue operation.
-    /// <para>This action unconditionally deletes the queue specified by the queue URL. Use this operation WITH CARE! The queue is deleted even if
-    /// it is NOT empty.</para> <para>Once a queue has been deleted, the queue name is unavailable for use with new queues for 60 seconds.</para>
+    /// <para> Deletes the queue specified by the <b>queue URL</b> , regardless of whether the queue is empty. If the specified queue does not
+    /// exist, Amazon SQS returns a successful response. </para> <para><b>IMPORTANT:</b> Use DeleteQueue with care; once you delete your queue, any
+    /// messages in the queue are no longer available. </para> <para> When you delete a queue, the deletion process takes up to 60 seconds. Requests
+    /// you send involving that queue during the 60 seconds might succeed. For example, a SendMessage request might succeed, but after the 60
+    /// seconds, the queue and that message you sent no longer exist. Also, when you delete a queue, you must wait at least 60 seconds before
+    /// creating a queue with the same name. </para> <para> We reserve the right to delete queues that have had no activity for more than 30 days.
+    /// For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSConcepts.html" >How Amazon
+    /// SQS Queues Work</a> in the <i>Amazon SQS Developer Guide</i> .
+    /// </para>
     /// </summary>
     public partial class DeleteQueueRequest : AmazonSQSRequest
     {
@@ -34,7 +41,7 @@ namespace Amazon.SQS.Model
 
 
         /// <summary>
-        /// The URL of the SQS queue to take action on.
+        /// The URL of the Amazon SQS queue to take action on.
         ///  
         /// </summary>
         public string QueueUrl

@@ -25,7 +25,10 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifySnapshotAttribute operation.
-    /// <para> Adds or remove permission settings for the specified snapshot. </para>
+    /// <para>Adds or removes permission settings for the specified snapshot.</para> <para>For more information on modifying snapshot permissions,
+    /// see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html" >Sharing Snapshots</a> in the
+    /// <i>Amazon Elastic Compute Cloud User Guide</i> .</para> <para><b>NOTE:</b> Snapshots with AWS Marketplace product codes cannot be made
+    /// public. </para>
     /// </summary>
     public partial class ModifySnapshotAttributeRequest : AmazonEC2Request
     {
@@ -38,7 +41,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The ID of the EBS snapshot whose attributes are being modified.
+        /// The ID of the snapshot.
         ///  
         /// </summary>
         public string SnapshotId
@@ -54,7 +57,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The name of the attribute being modified. Available attribute names: <c>createVolumePermission</c>
+        /// 
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -79,7 +82,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The operation to perform on the attribute. Available operation names: <c>add</c>, <c>remove</c>
+        /// 
         ///  
         /// </summary>
         public string OperationType
@@ -95,8 +98,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The AWS user IDs to add to or remove from the list of users that have permission to create EBS volumes from the specified snapshot.
-        /// Currently supports "all". <note> Only valid when the <c>createVolumePermission</c> attribute is being modified. </note>
+        /// 
         ///  
         /// </summary>
         public List<string> UserIds
@@ -112,8 +114,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The AWS group names to add to or remove from the list of groups that have permission to create EBS volumes from the specified snapshot.
-        /// Currently supports "all". <note> Only valid when the <c>createVolumePermission</c> attribute is being modified. </note>
+        /// 
         ///  
         /// </summary>
         public List<string> GroupNames
@@ -127,6 +128,11 @@ namespace Amazon.EC2.Model
         {
             return this.groupNames.Count > 0;
         }
+
+        /// <summary>
+        /// 
+        ///  
+        /// </summary>
         public CreateVolumePermissionModifications CreateVolumePermission
         {
             get { return this.createVolumePermission; }

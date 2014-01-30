@@ -64,9 +64,9 @@ namespace Amazon.SQS.Model
         }
 
         /// <summary>
-        /// An MD5 digest of the non-URL-encoded message body string. This can be used to verify that SQS received the message correctly. SQS first URL
-        /// decodes the message before creating the MD5 digest. For information about MD5, go to <a
-        /// href="http://faqs.org/rfcs/rfc1321.html">http://faqs.org/rfcs/rfc1321.html</a>.
+        /// An MD5 digest of the non-URL-encoded message body string. This can be used to verify that Amazon SQS received the message correctly. Amazon
+        /// SQS first URL decodes the message before creating the MD5 digest. For information about MD5, go to <a
+        /// href="http://www.faqs.org/rfcs/rfc1321.html">http://www.faqs.org/rfcs/rfc1321.html</a>.
         ///  
         /// </summary>
         public string MD5OfMessageBody

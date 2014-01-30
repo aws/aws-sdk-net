@@ -25,8 +25,8 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteNetworkAcl operation.
-    /// <para> Deletes a network ACL from a VPC. The ACL must not have any subnets associated with it. You can't delete the default network ACL. For
-    /// more information about network ACLs, go to Network ACLs in the Amazon Virtual Private Cloud User Guide. </para>
+    /// <para>Deletes the specified network ACL. You can't delete the ACL if it's associated with any subnets. You can't delete the default network
+    /// ACL.</para>
     /// </summary>
     public partial class DeleteNetworkAclRequest : AmazonEC2Request
     {
@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The ID of the network ACL to be deleted.
+        /// The ID of the network ACL.
         ///  
         /// </summary>
         public string NetworkAclId

@@ -20,13 +20,19 @@ using System.IO;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>Vpn Connection Options
+    /// <summary>
+    /// <para>Describes VPN connection options.</para>
     /// </summary>
     public class VpnConnectionOptions
     {
         
         private bool? staticRoutesOnly;
 
+
+        /// <summary>
+        /// Indicates whether the VPN connection uses static routes only. Static routes must be used for devices that don't support BGP.
+        ///  
+        /// </summary>
         public bool StaticRoutesOnly
         {
             get { return this.staticRoutesOnly ?? default(bool); }

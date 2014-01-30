@@ -28,7 +28,7 @@ namespace Amazon.EC2.Model
     {
         /// <summary>
         /// Gets and sets the CreateImageResult property.
-        /// The result of creating a new EC2 image. Contains the ID of the new image.
+        /// 
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the CreateImageResult class are now available on the CreateImageResponse class. You should use the properties on CreateImageResponse instead of accessing them through CreateImageResult.")]
         public CreateImageResult CreateImageResult

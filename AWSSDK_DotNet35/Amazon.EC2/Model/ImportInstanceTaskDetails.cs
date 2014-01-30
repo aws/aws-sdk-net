@@ -20,7 +20,8 @@ using System.IO;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>Import Instance Task Details
+    /// <summary>
+    /// 
     /// </summary>
     public class ImportInstanceTaskDetails
     {
@@ -30,6 +31,11 @@ namespace Amazon.EC2.Model
         private PlatformValues platform;
         private string description;
 
+
+        /// <summary>
+        /// 
+        ///  
+        /// </summary>
         public List<ImportInstanceVolumeDetailItem> Volumes
         {
             get { return this.volumes; }
@@ -41,6 +47,11 @@ namespace Amazon.EC2.Model
         {
             return this.volumes.Count > 0;
         }
+
+        /// <summary>
+        /// 
+        ///  
+        /// </summary>
         public string InstanceId
         {
             get { return this.instanceId; }
@@ -52,6 +63,20 @@ namespace Amazon.EC2.Model
         {
             return this.instanceId != null;
         }
+
+        /// <summary>
+        /// The instance operating system.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>Windows</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
         public PlatformValues Platform
         {
             get { return this.platform; }
@@ -63,6 +88,11 @@ namespace Amazon.EC2.Model
         {
             return this.platform != null;
         }
+
+        /// <summary>
+        /// 
+        ///  
+        /// </summary>
         public string Description
         {
             get { return this.description; }

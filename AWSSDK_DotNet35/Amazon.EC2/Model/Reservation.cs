@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para> An Amazon EC2 reservation of requested EC2 instances. </para>
+    /// <para>Describes a reservation.</para>
     /// </summary>
     public class Reservation
     {
@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The unique ID of this reservation.
+        /// The ID of the reservation.
         ///  
         /// </summary>
         public string ReservationId
@@ -51,7 +51,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The AWS Access Key ID of the user who owns the reservation.
+        /// The ID of the AWS account that owns the reservation.
         ///  
         /// </summary>
         public string OwnerId
@@ -67,7 +67,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The unique ID of the user who requested the instances in this reservation.
+        /// The ID of the requester that launched the instances on your behalf (for example, AWS Management Console or Auto Scaling).
         ///  
         /// </summary>
         public string RequesterId
@@ -83,7 +83,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The list of security groups requested for the instances in this reservation.
+        /// One or more security groups.
         ///  
         /// </summary>
         public List<GroupIdentifier> Groups
@@ -99,7 +99,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The list of security groups requested for the instances in this reservation.
+        /// One or more security groups.
         ///  
         /// </summary>
         public List<string> GroupNames
@@ -115,7 +115,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The list of Amazon EC2 instances included in this reservation.
+        /// One or more instances.
         ///  
         /// </summary>
         public List<Instance> Instances

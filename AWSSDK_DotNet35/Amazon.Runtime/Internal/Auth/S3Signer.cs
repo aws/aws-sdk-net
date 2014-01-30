@@ -81,7 +81,7 @@ namespace Amazon.Runtime.Internal.Auth
             if (r == null && config.RegionEndpoint != null)
                 r = config.RegionEndpoint;
 
-            if (_useSigV4 || (r != null && r == RegionEndpoint.CNNorth1))
+            if (_useSigV4 || r == RegionEndpoint.CNNorth1)
                 return AWS4SignerInstance;
 
             return this;

@@ -25,9 +25,9 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteVpc operation.
-    /// <para> Deletes a VPC. You must detach or delete all gateways or other objects that are dependent on the VPC first. For example, you must
-    /// terminate all running instances, delete all VPC security groups (except the default), delete all the route tables (except the default), etc.
-    /// </para>
+    /// <para>Deletes the specified VPC. You must detach or delete all gateways and resources that are associated with the VPC before you can delete
+    /// it. For example, you must terminate all instances running in the VPC, delete all security groups associated with the VPC (except the default
+    /// one), delete all route tables associated with the VPC (except the default one), and so on.</para>
     /// </summary>
     public partial class DeleteVpcRequest : AmazonEC2Request
     {
@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The ID of the VPC you want to delete.
+        /// The ID of the VPC.
         ///  
         /// </summary>
         public string VpcId

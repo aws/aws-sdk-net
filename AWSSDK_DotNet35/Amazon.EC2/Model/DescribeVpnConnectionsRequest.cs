@@ -25,13 +25,9 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeVpnConnections operation.
-    /// <para> Gives you information about your VPN connections. </para> <para><b>IMPORTANT:</b> We strongly recommend you use HTTPS when calling
-    /// this operation because the response contains sensitive cryptographic information for configuring your customer gateway. You can filter the
-    /// results to return information only about VPN connections that match criteria you specify. For example, you could ask to get information
-    /// about a particular VPN connection (or all) only if the VPN's state is pending or available. You can specify multiple filters (e.g., the VPN
-    /// connection is associated with a particular VPN gateway, and the gateway's state is pending or available). The result includes information
-    /// for a particular VPN connection only if the VPN connection matches all your filters. If there's no match, no special message is returned;
-    /// the response is simply empty. The following table shows the available filters. </para>
+    /// <para>Describes one or more of your VPN connections.</para> <para>For more information about VPN connections, see <a
+    /// href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html" >Adding a Hardware Virtual Private Gateway to Your VPC</a> in the
+    /// <i>Amazon Virtual Private Cloud User Guide</i> .</para>
     /// </summary>
     public partial class DescribeVpnConnectionsRequest : AmazonEC2Request
     {
@@ -40,7 +36,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// A VPN connection ID. More than one may be specified per request.
+        /// One or more VPN connection IDs. Default: Describes your VPN connections.
         ///  
         /// </summary>
         public List<string> VpnConnectionIds
@@ -56,8 +52,20 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// A list of filters used to match properties for VPN Connections. For a complete reference to the available filter keys for this operation,
-        /// see the <a href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon EC2 API reference</a>.
+        /// One or more filters. <ul> <li> <c>customer-gateway-configuration</c> - The configuration information for the customer gateway. </li> <li>
+        /// <c>customer-gateway-id</c> - The ID of a customer gateway associated with the VPN connection. </li> <li> <c>state</c> - The state of the VPN
+        /// connection (<c>pending</c> | <c>available</c> | <c>deleting</c> | <c>deleted</c>). </li> <li> <c>option.static-routes-only</c> - Indicates
+        /// whether the connection has static routes only. Used for devices that do not support Border Gateway Protocol (BGP). </li> <li>
+        /// <c>route.destination-cidr-block</c> - The destination CIDR block. This corresponds to the subnet used in a customer data center. </li> <li>
+        /// <c>bgp-asn</c> - The BGP Autonomous System Number (ASN) associated with a BGP device. </li> <li> <c>tag</c>:<i>key</i>=<i>value</i> - The
+        /// key/value combination of a tag assigned to the resource. </li> <li> <c>tag-key</c> - The key of a tag assigned to the resource. This filter
+        /// is independent of the <c>tag-value</c> filter. For example, if you use both the filter "tag-key=Purpose" and the filter "tag-value=X", you
+        /// get any resources assigned both the tag key Purpose (regardless of what the tag's value is), and the tag value X (regardless of what the
+        /// tag's key is). If you want to list only resources where Purpose is X, see the <c>tag</c>:<i>key</i>=<i>value</i> filter. </li> <li>
+        /// <c>tag-value</c> - The value of a tag assigned to the resource. This filter is independent of the <c>tag-key</c> filter. </li> <li>
+        /// <c>type</c> - The type of VPN connection. Currently the only supported type is <c>ipsec.1</c>. </li> <li> <c>vpn-connection-id</c> - The ID
+        /// of the VPN connection. </li> <li> <c>vpn-gateway-id</c> - The ID of a virtual private gateway associated with the VPN connection. </li>
+        /// </ul>
         ///  
         /// </summary>
         public List<Filter> Filters

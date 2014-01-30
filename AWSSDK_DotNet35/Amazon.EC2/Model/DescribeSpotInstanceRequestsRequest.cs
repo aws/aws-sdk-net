@@ -25,21 +25,14 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeSpotInstanceRequests operation.
-    /// <para> Describes Spot Instance requests. Spot Instances are instances that Amazon EC2 starts on your behalf when the maximum price that you
-    /// specify exceeds the current Spot Price. Amazon EC2 periodically sets the Spot Price based on available Spot Instance capacity and current
-    /// spot instance requests. For conceptual information about Spot Instances, refer to the <a
-    /// href="http://docs.amazonwebservices.com/AWSEC2/2010-08-31/DeveloperGuide/" > Amazon Elastic Compute Cloud Developer Guide</a> or <a
-    /// href="http://docs.amazonwebservices.com/AWSEC2/2010-08-31/UserGuide/" > Amazon Elastic Compute Cloud User Guide</a> .
-    /// </para> <para> You can filter the results to return information only about Spot Instance requests that match criteria you specify. For
-    /// example, you could get information about requests where the Spot Price you specified is a certain value (you can't use greater than or less
-    /// than comparison, but you can use <c>*</c> and <c>?</c> wildcards). You can specify multiple values for a filter. A Spot Instance request
-    /// must match at least one of the specified values for it to be included in the results. </para> <para> You can specify multiple filters (e.g.,
-    /// the Spot Price is equal to a particular value, and the instance type is <c>m1.small</c> ). The result includes information for a particular
-    /// request only if it matches all your filters. If there's no match, no special message is returned; the response is simply empty. </para>
-    /// <para> You can use wildcards with the filter values: an asterisk matches zero or more characters, and <c>?</c> matches exactly one
-    /// character. You can escape special characters using a backslash before the character. For example, a value of <c>\*amazon\?\\</c> searches
-    /// for the literal string <c>*amazon?\</c> .
-    /// </para>
+    /// <para>Describes the Spot Instance requests that belong to your account. Spot Instances are instances that Amazon EC2 starts on your behalf
+    /// when the maximum price that you specify exceeds the current Spot Price. Amazon EC2 periodically sets the Spot Price based on available Spot
+    /// Instance capacity and current Spot Instance requests. For more information about Spot Instances, see <a
+    /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html" >Spot Instances</a> in the <i>Amazon Elastic Compute
+    /// Cloud User Guide</i> .</para> <para>You can use <c>DescribeSpotInstanceRequests</c> to find a running Spot Instance by examining the
+    /// response. If the status of the Spot Instance is <c>fulfilled</c> , the instance ID appears in the response and contains the identifier of
+    /// the instance. Alternatively, you can use DescribeInstances with a filter to look for instances where the instance lifecycle is <c>spot</c>
+    /// .</para>
     /// </summary>
     public partial class DescribeSpotInstanceRequestsRequest : AmazonEC2Request
     {
@@ -48,7 +41,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The ID of the request.
+        /// One or more Spot Instance request IDs.
         ///  
         /// </summary>
         public List<string> SpotInstanceRequestIds
@@ -64,8 +57,40 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// A list of filters used to match properties for SpotInstances. For a complete reference to the available filter keys for this operation, see
-        /// the <a href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon EC2 API reference</a>.
+        /// One or more filters. <ul> <li> <c>availability-zone-group</c> - The Availability Zone group. </li> <li> <c>create-time</c> - The time stamp
+        /// when the Spot Instance request was created. </li> <li> <c>fault-code</c> - The fault code related to the request. </li> <li>
+        /// <c>fault-message</c> - The fault message related to the request. </li> <li> <c>instance-id</c> - The ID of the instance that fulfilled the
+        /// request. </li> <li> <c>launch-group</c> - The Spot Instance launch group. </li> <li>
+        /// <c>launch.block-device-mapping.delete-on-termination</c> - Indicates whether the Amazon EBS volume is deleted on instance termination. </li>
+        /// <li> <c>launch.block-device-mapping.device-name</c> - The device name for the Amazon EBS volume (for example, <c>/dev/sdh</c>). </li> <li>
+        /// <c>launch.block-device-mapping.snapshot-id</c> - The ID of the snapshot used for the Amazon EBS volume. </li> <li>
+        /// <c>launch.block-device-mapping.volume-size</c> - The size of the Amazon EBS volume, in GiB. </li> <li>
+        /// <c>launch.block-device-mapping.volume-type</c> - The type of the Amazon EBS volume (<c>standard</c> | <c>io1</c>). </li> <li>
+        /// <c>launch.group-id</c> - The security group for the instance. </li> <li> <c>launch.image-id</c> - The ID of the AMI. </li> <li>
+        /// <c>launch.instance-type</c> - The type of instance (for example, <c>m1.small</c>). </li> <li> <c>launch.kernel-id</c> - The kernel ID. </li>
+        /// <li> <c>launch.key-name</c> - The name of the key pair the instance launched with. </li> <li> <c>launch.monitoring-enabled</c> - Whether
+        /// monitoring is enabled for the Spot Instance. </li> <li> <c>launch.ramdisk-id</c> - The RAM disk ID. </li> <li>
+        /// <c>launch.network-interface.network-interface-id</c> - The ID of the network interface. </li> <li>
+        /// <c>launch.network-interface.device-index</c> - The index of the device for the network interface attachment on the instance. </li> <li>
+        /// <c>launch.network-interface.subnet-id</c> - The ID of the subnet for the instance. </li> <li> <c>launch.network-interface.description</c> -
+        /// A description of the network interface. </li> <li> <c>launch.network-interface.private-ip-address</c> - The primary private IP address of
+        /// the network interface. </li> <li> <c>launch.network-interface.delete-on-termination</c> - Indicates whether the network interface is deleted
+        /// when the instance is terminated. </li> <li> <c>launch.network-interface.group-id</c> - The ID of the security group associated with the
+        /// network interface. </li> <li> <c>launch.network-interface.group-name</c> - The name of the security group associated with the network
+        /// interface. </li> <li> <c>launch.network-interface.addresses.primary</c> - Indicates whether the IP address is the primary private IP
+        /// address. </li> <li> <c>product-description</c> - The product description associated with the instance (<c>Linux/UNIX</c> | <c>Windows</c>).
+        /// </li> <li> <c>spot-instance-request-id</c> - The Spot Instance request ID. </li> <li> <c>spot-price</c> - The maximum hourly price for any
+        /// Spot Instance launched to fulfill the request. </li> <li> <c>state</c> - The state of the Spot Instance request (<c>open</c> | <c>active</c>
+        /// | <c>closed</c> | <c>cancelled</c> | <c>failed</c>). </li> <li> <c>status-code</c> - The short code describing the most recent evaluation of
+        /// your Spot Instance request. </li> <li> <c>status-message</c> - The message explaining the status of the Spot Instance request. </li> <li>
+        /// <c>tag</c>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned to the resource. </li> <li> <c>tag-key</c> - The key of a
+        /// tag assigned to the resource. This filter is independent of the <c>tag-value</c> filter. For example, if you use both the filter
+        /// "tag-key=Purpose" and the filter "tag-value=X", you get any resources assigned both the tag key Purpose (regardless of what the tag's value
+        /// is), and the tag value X (regardless of what the tag's key is). If you want to list only resources where Purpose is X, see the
+        /// <c>tag</c>:<i>key</i>=<i>value</i> filter. </li> <li> <c>tag-value</c> - The value of a tag assigned to the resource. This filter is
+        /// independent of the <c>tag-key</c> filter. </li> <li> <c>type</c> - The type of Spot Instance request (<c>one-time</c> | <c>persistent</c>).
+        /// </li> <li> <c>launched-availability-zone</c> - The Availability Zone in which the bid is launched. </li> <li> <c>valid-from</c> - The start
+        /// date of the request. </li> <li> <c>valid-until</c> - The end date of the request. </li> </ul>
         ///  
         /// </summary>
         public List<Filter> Filters

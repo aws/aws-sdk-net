@@ -28,7 +28,7 @@ namespace Amazon.EC2.Model
     {
         /// <summary>
         /// Gets and sets the AttachVolumeResult property.
-        /// Result of attaching an Amazon EBS volume to a running instance.
+        /// 
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the AttachVolumeResult class are now available on the AttachVolumeResponse class. You should use the properties on AttachVolumeResponse instead of accessing them through AttachVolumeResult.")]
         public AttachVolumeResult AttachVolumeResult

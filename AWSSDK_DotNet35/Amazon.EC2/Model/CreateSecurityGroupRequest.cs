@@ -25,11 +25,18 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateSecurityGroup operation.
-    /// <para> The CreateSecurityGroup operation creates a new security group. </para> <para> Every instance is launched in a security group. If no
-    /// security group is specified during launch, the instances are launched in the default security group. Instances within the same security
-    /// group have unrestricted network access to each other. Instances will reject network access attempts from other instances in a different
-    /// security group. As the owner of instances you can grant or revoke specific permissions using the AuthorizeSecurityGroupIngress and
-    /// RevokeSecurityGroupIngress operations. </para>
+    /// <para>Creates a security group.</para> <para>A security group is for use with instances either in the EC2-Classic platform or in a specific
+    /// VPC. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html" >Amazon EC2 Security
+    /// Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> and <a
+    /// href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html" >Security Groups for Your VPC</a> in the <i>Amazon
+    /// Virtual Private Cloud User Guide</i> .</para> <para><b>IMPORTANT:</b> EC2-Classic: You can have up to 500 security groups. EC2-VPC: You can
+    /// create up to 100 security groups per VPC. </para> <para>When you create a security group, you specify a friendly name of your choice. You
+    /// can have a security group for use in EC2-Classic with the same name as a security group for use in a VPC. However, you can't have two
+    /// security groups for use in EC2-Classic with the same name or two security groups for use in a VPC with the same name.</para> <para>You have
+    /// a default security group for use in EC2-Classic and a default security group for use in your VPC. If you don't specify a security group when
+    /// you launch an instance, the instance is launched into the appropriate default security group. A default security group includes a default
+    /// rule that grants instances unrestricted network access to each other.</para> <para>You can add or remove rules from your security groups
+    /// using AuthorizeSecurityGroupIngress, AuthorizeSecurityGroupEgress, RevokeSecurityGroupIngress, and RevokeSecurityGroupEgress.</para>
     /// </summary>
     public partial class CreateSecurityGroupRequest : AmazonEC2Request
     {
@@ -39,7 +46,8 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// Name of the security group.
+        /// The name of the security group. Constraints: Up to 255 characters in length Constraints for EC2-Classic: ASCII characters Constraints for
+        /// EC2-VPC: a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$*
         ///  
         /// </summary>
         public string GroupName
@@ -55,7 +63,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Description of the group. This is informational only.
+        /// A description for the security group. This is informational only.
         ///  
         /// </summary>
         public string Description
@@ -71,7 +79,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// ID of the VPC.
+        /// [EC2-VPC] The ID of the VPC.
         ///  
         /// </summary>
         public string VpcId

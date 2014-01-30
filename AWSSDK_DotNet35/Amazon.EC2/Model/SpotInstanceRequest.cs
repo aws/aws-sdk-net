@@ -20,7 +20,8 @@ using System.IO;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>Spot Instance Request
+    /// <summary>
+    /// <para>Describe a Spot Instance request.</para>
     /// </summary>
     public class SpotInstanceRequest
     {
@@ -42,6 +43,11 @@ namespace Amazon.EC2.Model
         private List<Tag> tags = new List<Tag>();
         private string launchedAvailabilityZone;
 
+
+        /// <summary>
+        /// The ID of the Spot Instance request.
+        ///  
+        /// </summary>
         public string SpotInstanceRequestId
         {
             get { return this.spotInstanceRequestId; }
@@ -53,6 +59,11 @@ namespace Amazon.EC2.Model
         {
             return this.spotInstanceRequestId != null;
         }
+
+        /// <summary>
+        /// The maximum hourly price for any Spot Instance launched to fulfill the request.
+        ///  
+        /// </summary>
         public string SpotPrice
         {
             get { return this.spotPrice; }
@@ -64,6 +75,20 @@ namespace Amazon.EC2.Model
         {
             return this.spotPrice != null;
         }
+
+        /// <summary>
+        /// The Spot Instance request type.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>one-time, persistent</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
         public SpotInstanceType Type
         {
             get { return this.type; }
@@ -75,6 +100,22 @@ namespace Amazon.EC2.Model
         {
             return this.type != null;
         }
+
+        /// <summary>
+        /// The state of the Spot Instance request. Spot bid status information can help you track your Spot Instance requests. For information, see <a
+        /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-bid-status.html">Tracking Spot Requests with Bid Status
+        /// Codes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>open, active, closed, cancelled, failed</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
         public SpotInstanceState State
         {
             get { return this.state; }
@@ -86,6 +127,11 @@ namespace Amazon.EC2.Model
         {
             return this.state != null;
         }
+
+        /// <summary>
+        /// The fault codes for the Spot Instance request, if any.
+        ///  
+        /// </summary>
         public SpotInstanceStateFault Fault
         {
             get { return this.fault; }
@@ -97,6 +143,11 @@ namespace Amazon.EC2.Model
         {
             return this.fault != null;
         }
+
+        /// <summary>
+        /// The status code and status message describing the Spot Instance request.
+        ///  
+        /// </summary>
         public SpotInstanceStatus Status
         {
             get { return this.status; }
@@ -108,6 +159,13 @@ namespace Amazon.EC2.Model
         {
             return this.status != null;
         }
+
+        /// <summary>
+        /// The start date of the request. If this is a one-time request, the request becomes active at this date and time and remains active until all
+        /// instances launch, the request expires, or the request is canceled. If the request is persistent, the request becomes active at this date and
+        /// time and remains active until it expires or is canceled.
+        ///  
+        /// </summary>
         public DateTime ValidFrom
         {
             get { return this.validFrom ?? default(DateTime); }
@@ -119,6 +177,12 @@ namespace Amazon.EC2.Model
         {
             return this.validFrom.HasValue;
         }
+
+        /// <summary>
+        /// The end date of the request. If this is a one-time request, the request remains active until all instances launch, the request is canceled,
+        /// or this date is reached. If the request is persistent, it remains active until it is canceled or this date is reached.
+        ///  
+        /// </summary>
         public DateTime ValidUntil
         {
             get { return this.validUntil ?? default(DateTime); }
@@ -130,6 +194,11 @@ namespace Amazon.EC2.Model
         {
             return this.validUntil.HasValue;
         }
+
+        /// <summary>
+        /// The instance launch group. Launch groups are Spot Instances that launch together and terminate together.
+        ///  
+        /// </summary>
         public string LaunchGroup
         {
             get { return this.launchGroup; }
@@ -141,6 +210,12 @@ namespace Amazon.EC2.Model
         {
             return this.launchGroup != null;
         }
+
+        /// <summary>
+        /// The Availability Zone group. If you specify the same Availability Zone group for all Spot Instance requests, all Spot Instances are launched
+        /// in the same Availability Zone.
+        ///  
+        /// </summary>
         public string AvailabilityZoneGroup
         {
             get { return this.availabilityZoneGroup; }
@@ -154,7 +229,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The LaunchSpecificationType data type.
+        /// Additional information for launching instances.
         ///  
         /// </summary>
         public LaunchSpecification LaunchSpecification
@@ -168,6 +243,11 @@ namespace Amazon.EC2.Model
         {
             return this.launchSpecification != null;
         }
+
+        /// <summary>
+        /// The instance ID, if an instance has been launched to fulfill the Spot Instance request.
+        ///  
+        /// </summary>
         public string InstanceId
         {
             get { return this.instanceId; }
@@ -179,6 +259,11 @@ namespace Amazon.EC2.Model
         {
             return this.instanceId != null;
         }
+
+        /// <summary>
+        /// The time stamp when the Spot Instance request was created.
+        ///  
+        /// </summary>
         public DateTime CreateTime
         {
             get { return this.createTime ?? default(DateTime); }
@@ -190,6 +275,20 @@ namespace Amazon.EC2.Model
         {
             return this.createTime.HasValue;
         }
+
+        /// <summary>
+        /// The product description associated with the Spot Instance.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>Linux/UNIX, Linux/UNIX (Amazon VPC), Windows, Windows (Amazon VPC)</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
         public RIProductDescription ProductDescription
         {
             get { return this.productDescription; }
@@ -203,7 +302,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// A list of tags for this spot instance request.
+        /// Any tags assigned to the resource.
         ///  
         /// </summary>
         public List<Tag> Tags

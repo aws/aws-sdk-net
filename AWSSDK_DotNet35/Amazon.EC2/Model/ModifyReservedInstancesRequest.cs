@@ -25,8 +25,9 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyReservedInstances operation.
-    /// <para> The ModifyReservedInstances operation modifies the Availability Zone, instance count, instance type, or network platform (EC2-Classic
-    /// or EC2-VPC) of your Reserved Instances. </para>
+    /// <para>Modifies the Availability Zone, instance count, instance type, or network platform (EC2-Classic or EC2-VPC) of your Reserved
+    /// Instances. The Reserved Instances to be modified must be identical, except for Availability Zone, network platform, and instance
+    /// type.</para>
     /// </summary>
     public partial class ModifyReservedInstancesRequest : AmazonEC2Request
     {
@@ -36,7 +37,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// A unique, case-sensitive, token you provide to ensure idempotency of your modification request.
+        /// A unique, case-sensitive token you provide to ensure idempotency of your modification request.
         ///  
         /// </summary>
         public string ClientToken

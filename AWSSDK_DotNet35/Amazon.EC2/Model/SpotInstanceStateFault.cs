@@ -20,7 +20,8 @@ using System.IO;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>Spot Instance State Fault
+    /// <summary>
+    /// <para>Describes a Spot Instance state change.</para>
     /// </summary>
     public class SpotInstanceStateFault
     {
@@ -28,6 +29,11 @@ namespace Amazon.EC2.Model
         private string code;
         private string message;
 
+
+        /// <summary>
+        /// The reason code for the Spot Instance state change.
+        ///  
+        /// </summary>
         public string Code
         {
             get { return this.code; }
@@ -39,6 +45,11 @@ namespace Amazon.EC2.Model
         {
             return this.code != null;
         }
+
+        /// <summary>
+        /// The message for the Spot Instance state change.
+        ///  
+        /// </summary>
         public string Message
         {
             get { return this.message; }

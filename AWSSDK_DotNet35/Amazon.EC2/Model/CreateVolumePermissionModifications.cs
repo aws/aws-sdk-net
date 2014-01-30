@@ -20,7 +20,8 @@ using System.IO;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>Create Volume Permission Modifications
+    /// <summary>
+    /// 
     /// </summary>
     public class CreateVolumePermissionModifications
     {
@@ -28,6 +29,11 @@ namespace Amazon.EC2.Model
         private List<CreateVolumePermission> add = new List<CreateVolumePermission>();
         private List<CreateVolumePermission> remove = new List<CreateVolumePermission>();
 
+
+        /// <summary>
+        /// Adds a specific AWS account ID or group to a volume's list of create volume permissions.
+        ///  
+        /// </summary>
         public List<CreateVolumePermission> Add
         {
             get { return this.add; }
@@ -39,6 +45,11 @@ namespace Amazon.EC2.Model
         {
             return this.add.Count > 0;
         }
+
+        /// <summary>
+        /// Removes a specific AWS account ID or group from a volume's list of create volume permissions.
+        ///  
+        /// </summary>
         public List<CreateVolumePermission> Remove
         {
             get { return this.remove; }

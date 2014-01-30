@@ -20,7 +20,8 @@ using System.IO;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>Export To S3 Task Specification
+    /// <summary>
+    /// 
     /// </summary>
     public class ExportToS3TaskSpecification
     {
@@ -30,6 +31,20 @@ namespace Amazon.EC2.Model
         private string s3Bucket;
         private string s3Prefix;
 
+
+        /// <summary>
+        /// 
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>VMDK, RAW, VHD</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
         public DiskImageFormat DiskImageFormat
         {
             get { return this.diskImageFormat; }
@@ -41,6 +56,20 @@ namespace Amazon.EC2.Model
         {
             return this.diskImageFormat != null;
         }
+
+        /// <summary>
+        /// 
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>ova</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
         public ContainerFormat ContainerFormat
         {
             get { return this.containerFormat; }
@@ -52,6 +81,11 @@ namespace Amazon.EC2.Model
         {
             return this.containerFormat != null;
         }
+
+        /// <summary>
+        /// 
+        ///  
+        /// </summary>
         public string S3Bucket
         {
             get { return this.s3Bucket; }
@@ -63,6 +97,11 @@ namespace Amazon.EC2.Model
         {
             return this.s3Bucket != null;
         }
+
+        /// <summary>
+        /// The image is written to a single object in the Amazon S3 bucket at the S3 key s3prefix + exportTaskId + '.' + diskImageFormat.
+        ///  
+        /// </summary>
         public string S3Prefix
         {
             get { return this.s3Prefix; }

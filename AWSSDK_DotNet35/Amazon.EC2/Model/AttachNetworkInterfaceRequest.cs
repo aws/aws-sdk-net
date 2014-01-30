@@ -25,7 +25,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the AttachNetworkInterface operation.
-    /// 
+    /// <para>Attaches a network interface to an instance.</para>
     /// </summary>
     public partial class AttachNetworkInterfaceRequest : AmazonEC2Request
     {
@@ -33,6 +33,11 @@ namespace Amazon.EC2.Model
         private string instanceId;
         private int? deviceIndex;
 
+
+        /// <summary>
+        /// The ID of the network interface.
+        ///  
+        /// </summary>
         public string NetworkInterfaceId
         {
             get { return this.networkInterfaceId; }
@@ -44,6 +49,11 @@ namespace Amazon.EC2.Model
         {
             return this.networkInterfaceId != null;
         }
+
+        /// <summary>
+        /// The ID of the instance.
+        ///  
+        /// </summary>
         public string InstanceId
         {
             get { return this.instanceId; }
@@ -55,6 +65,11 @@ namespace Amazon.EC2.Model
         {
             return this.instanceId != null;
         }
+
+        /// <summary>
+        /// The index of the device for the network interface attachment.
+        ///  
+        /// </summary>
         public int DeviceIndex
         {
             get { return this.deviceIndex ?? default(int); }

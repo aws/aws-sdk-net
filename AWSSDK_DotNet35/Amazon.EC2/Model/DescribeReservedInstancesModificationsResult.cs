@@ -22,7 +22,7 @@ using Amazon.Runtime;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para> The result of describing Reserved Instances modifications. </para>
+    /// 
     /// </summary>
     public partial class DescribeReservedInstancesModificationsResult : AmazonWebServiceResponse
     {
@@ -32,7 +32,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The list of Reserved Instances modification requests.
+        /// The Reserved Instance modification information.
         ///  
         /// </summary>
         public List<ReservedInstancesModification> ReservedInstancesModifications
@@ -48,7 +48,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The string specifying the next paginated set of results to return.
+        /// The token for the next page of data.
         ///  
         /// </summary>
         public string NextToken

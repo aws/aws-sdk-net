@@ -20,7 +20,8 @@ using System.IO;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>Volume Status Event
+    /// <summary>
+    /// <para>Describes a volume status event.</para>
     /// </summary>
     public class VolumeStatusEvent
     {
@@ -31,6 +32,11 @@ namespace Amazon.EC2.Model
         private DateTime? notAfter;
         private string eventId;
 
+
+        /// <summary>
+        /// The type of this event.
+        ///  
+        /// </summary>
         public string EventType
         {
             get { return this.eventType; }
@@ -42,6 +48,11 @@ namespace Amazon.EC2.Model
         {
             return this.eventType != null;
         }
+
+        /// <summary>
+        /// A description of the event.
+        ///  
+        /// </summary>
         public string Description
         {
             get { return this.description; }
@@ -53,6 +64,11 @@ namespace Amazon.EC2.Model
         {
             return this.description != null;
         }
+
+        /// <summary>
+        /// The earliest start time of the event.
+        ///  
+        /// </summary>
         public DateTime NotBefore
         {
             get { return this.notBefore ?? default(DateTime); }
@@ -64,6 +80,11 @@ namespace Amazon.EC2.Model
         {
             return this.notBefore.HasValue;
         }
+
+        /// <summary>
+        /// The latest end time of the event.
+        ///  
+        /// </summary>
         public DateTime NotAfter
         {
             get { return this.notAfter ?? default(DateTime); }
@@ -75,6 +96,11 @@ namespace Amazon.EC2.Model
         {
             return this.notAfter.HasValue;
         }
+
+        /// <summary>
+        /// The ID of this event.
+        ///  
+        /// </summary>
         public string EventId
         {
             get { return this.eventId; }

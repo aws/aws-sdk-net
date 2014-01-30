@@ -22,7 +22,7 @@ using Amazon.Runtime;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para> Result of attaching an Amazon EBS volume to a running instance. </para>
+    /// 
     /// </summary>
     public partial class AttachVolumeResult : AmazonWebServiceResponse
     {

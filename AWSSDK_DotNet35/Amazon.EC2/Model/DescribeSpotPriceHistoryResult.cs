@@ -21,7 +21,8 @@ using Amazon.Runtime;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>Describe Spot Price History Result
+    /// <summary>
+    /// 
     /// </summary>
     public partial class DescribeSpotPriceHistoryResult : AmazonWebServiceResponse
     {
@@ -29,6 +30,11 @@ namespace Amazon.EC2.Model
         private List<SpotPrice> spotPriceHistory = new List<SpotPrice>();
         private string nextToken;
 
+
+        /// <summary>
+        /// The historical Spot Prices.
+        ///  
+        /// </summary>
         public List<SpotPrice> SpotPriceHistory
         {
             get { return this.spotPriceHistory; }
@@ -42,7 +48,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The string marking the next set of results returned. Displays empty if there are no more results to be returned.
+        /// The string marking the next set of results. This is empty if there are no more results.
         ///  
         /// </summary>
         public string NextToken

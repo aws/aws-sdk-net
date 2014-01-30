@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para> Represents an Amazon EC2 instance. </para>
+    /// <para>Describes an instance.</para>
     /// </summary>
     public class Instance
     {
@@ -63,10 +63,11 @@ namespace Amazon.EC2.Model
         private List<InstanceNetworkInterface> networkInterfaces = new List<InstanceNetworkInterface>();
         private IamInstanceProfile iamInstanceProfile;
         private bool? ebsOptimized;
+        private string sriovNetSupport;
 
 
         /// <summary>
-        /// Unique ID of the instance launched.
+        /// The ID of the instance.
         ///  
         /// </summary>
         public string InstanceId
@@ -82,7 +83,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Image ID of the AMI used to launch the instance.
+        /// The ID of the AMI used to launch the instance.
         ///  
         /// </summary>
         public string ImageId
@@ -114,8 +115,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The private DNS name assigned to the instance. This DNS name can only be used inside the Amazon EC2 network. This element remains empty
-        /// until the instance enters a running state.
+        /// The private DNS name assigned to the instance. This DNS name can only be used inside the Amazon EC2 network. This name is not available
+        /// until the instance enters the <c>running</c> state.
         ///  
         /// </summary>
         public string PrivateDnsName
@@ -131,8 +132,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The public DNS name assigned to the instance. This DNS name is contactable from outside the Amazon EC2 network. This element remains empty
-        /// until the instance enters a running state.
+        /// The public DNS name assigned to the instance. This name is not available until the instance enters the <c>running</c> state.
         ///  
         /// </summary>
         public string PublicDnsName
@@ -148,7 +148,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Reason for the most recent state transition. This might be an empty string.
+        /// The reason for the most recent state transition. This might be an empty string.
         ///  
         /// </summary>
         public string StateTransitionReason
@@ -164,7 +164,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// If this instance was launched with an associated key pair, this displays the key pair name.
+        /// The name of the key pair, if this instance was launched with an associated key pair.
         ///  
         /// </summary>
         public string KeyName
@@ -180,7 +180,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The AMI launch index, which can be used to find this instance within the launch group.
+        /// The AMI launch index, which can be used to find this instance in the launch group.
         ///  
         /// </summary>
         public int AmiLaunchIndex
@@ -196,7 +196,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Product codes attached to this instance.
+        /// The product codes attached to this instance.
         ///  
         /// </summary>
         public List<ProductCode> ProductCodes
@@ -212,15 +212,14 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The instance type. For more information on instance types, please see the <a
-        /// href="http://docs.amazonwebservices.com/AWSEC2/2009-07-15/DeveloperGuide/"> Amazon Elastic Compute Cloud Developer Guide</a>.
+        /// The instance type.
         ///  
         /// <para>
         /// <b>Constraints:</b>
         /// <list type="definition">
         ///     <item>
         ///         <term>Allowed Values</term>
-        ///         <description>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, m3.xlarge, m3.2xlarge, c1.medium, c1.xlarge, hi1.4xlarge, hs1.8xlarge, cc1.4xlarge, cc2.8xlarge, cg1.4xlarge, cr1.8xlarge</description>
+        ///         <description>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m3.xlarge, m3.2xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, cr1.8xlarge, i2.xlarge, i2.2xlarge, i2.4xlarge, i2.8xlarge, hi1.4xlarge, hs1.8xlarge, c1.medium, c1.xlarge, c3.large, c3.xlarge, c3.2xlarge, c3.4xlarge, c3.8xlarge, cc1.4xlarge, cc2.8xlarge, g2.2xlarge, cg1.4xlarge</description>
         ///     </item>
         /// </list>
         /// </para>
@@ -238,7 +237,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The time this instance launched.
+        /// The time the instance was launched.
         ///  
         /// </summary>
         public DateTime LaunchTime
@@ -254,7 +253,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The location where this instance launched.
+        /// The location where the instance launched.
         ///  
         /// </summary>
         public Placement Placement
@@ -270,7 +269,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Kernel associated with this instance.
+        /// The kernel associated with this instance.
         ///  
         /// </summary>
         public string KernelId
@@ -286,7 +285,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// RAM disk associated with this instance.
+        /// The RAM disk associated with this instance.
         ///  
         /// </summary>
         public string RamdiskId
@@ -302,7 +301,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Platform of the instance (e.g., Windows).
+        /// The value is <c>Windows</c> for Windows instances; otherwise blank.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -327,7 +326,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Monitoring status for this instance.
+        /// The monitoring information for the instance.
         ///  
         /// </summary>
         public Monitoring Monitoring
@@ -343,7 +342,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Specifies the Amazon VPC subnet ID in which the instance is running.
+        /// The ID of the subnet in which the instance is running.
         ///  
         /// </summary>
         public string SubnetId
@@ -359,7 +358,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Specifies the Amazon VPC in which the instance is running.
+        /// The ID of the VPC in which the instance is running.
         ///  
         /// </summary>
         public string VpcId
@@ -375,7 +374,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Specifies the private IP address that is assigned to the instance (Amazon VPC).
+        /// The private IP address assigned to the instance.
         ///  
         /// </summary>
         public string PrivateIpAddress
@@ -391,7 +390,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Specifies the IP address of the instance.
+        /// The public IP address assigned to the instance.
         ///  
         /// </summary>
         public string PublicIpAddress
@@ -407,7 +406,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The reason for the state change.
+        /// The reason for the most recent state transition.
         ///  
         /// </summary>
         public StateReason StateReason
@@ -423,7 +422,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The architecture of this instance.
+        /// The architecture of the image.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -448,7 +447,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The root device type used by the AMI. The AMI can use an Amazon EBS or instance store root device.
+        /// The root device type used by the AMI. The AMI can use an Amazon EBS volume or an instance store volume.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -473,7 +472,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The root device name (e.g., <c>/dev/sda1</c>).
+        /// The root device name (for example, <c>/dev/sda1</c>).
         ///  
         /// </summary>
         public string RootDeviceName
@@ -489,7 +488,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Block device mapping set.
+        /// Any block device mapping entries for the instance.
         ///  
         /// </summary>
         public List<InstanceBlockDeviceMapping> BlockDeviceMappings
@@ -503,6 +502,20 @@ namespace Amazon.EC2.Model
         {
             return this.blockDeviceMappings.Count > 0;
         }
+
+        /// <summary>
+        /// The virtualization type of the instance.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>hvm, paravirtual</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
         public VirtualizationType VirtualizationType
         {
             get { return this.virtualizationType; }
@@ -516,7 +529,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// 
+        /// Indicates whether this is a Spot Instance.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -541,7 +554,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// 
+        /// The ID of the Spot Instance request.
         ///  
         /// </summary>
         public string SpotInstanceRequestId
@@ -557,7 +570,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Represents an active license in use and attached to an Amazon EC2 instance.
+        /// 
         ///  
         /// </summary>
         public InstanceLicense License
@@ -571,6 +584,11 @@ namespace Amazon.EC2.Model
         {
             return this.license != null;
         }
+
+        /// <summary>
+        /// The idempotency token you provided when you launched the instance.
+        ///  
+        /// </summary>
         public string ClientToken
         {
             get { return this.clientToken; }
@@ -584,7 +602,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// A list of tags for the Instance.
+        /// Any tags assigned to the instance.
         ///  
         /// </summary>
         public List<Tag> Tags
@@ -598,6 +616,11 @@ namespace Amazon.EC2.Model
         {
             return this.tags.Count > 0;
         }
+
+        /// <summary>
+        /// One or more security groups for the instance.
+        ///  
+        /// </summary>
         public List<GroupIdentifier> SecurityGroups
         {
             get { return this.securityGroups; }
@@ -609,6 +632,15 @@ namespace Amazon.EC2.Model
         {
             return this.securityGroups.Count > 0;
         }
+
+        /// <summary>
+        /// Specifies whether to enable an instance launched in a VPC to perform NAT. This controls whether source/destination checking is enabled on
+        /// the instance. A value of <c>true</c> means checking is enabled, and <c>false</c> means checking is disabled. The value must be <c>false</c>
+        /// for the instance to perform NAT. For more information, see <a
+        /// href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT Instances</a> in the <i>Amazon Virtual Private Cloud
+        /// User Guide</i>.
+        ///  
+        /// </summary>
         public bool SourceDestCheck
         {
             get { return this.sourceDestCheck ?? default(bool); }
@@ -620,6 +652,20 @@ namespace Amazon.EC2.Model
         {
             return this.sourceDestCheck.HasValue;
         }
+
+        /// <summary>
+        /// The hypervisor type of the instance.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>ovm, xen</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
         public HypervisorType Hypervisor
         {
             get { return this.hypervisor; }
@@ -631,6 +677,11 @@ namespace Amazon.EC2.Model
         {
             return this.hypervisor != null;
         }
+
+        /// <summary>
+        /// [EC2-VPC] One or more network interfaces for the instance.
+        ///  
+        /// </summary>
         public List<InstanceNetworkInterface> NetworkInterfaces
         {
             get { return this.networkInterfaces; }
@@ -642,6 +693,11 @@ namespace Amazon.EC2.Model
         {
             return this.networkInterfaces.Count > 0;
         }
+
+        /// <summary>
+        /// The IAM instance profile associated with the instance.
+        ///  
+        /// </summary>
         public IamInstanceProfile IamInstanceProfile
         {
             get { return this.iamInstanceProfile; }
@@ -653,6 +709,13 @@ namespace Amazon.EC2.Model
         {
             return this.iamInstanceProfile != null;
         }
+
+        /// <summary>
+        /// Indicates whether the instance is optimized for EBS I/O. This optimization provides dedicated throughput to Amazon EBS and an optimized
+        /// configuration stack to provide optimal I/O performance. This optimization isn't available with all instance types. Additional usage charges
+        /// apply when using an EBS Optimized instance.
+        ///  
+        /// </summary>
         public bool EbsOptimized
         {
             get { return this.ebsOptimized ?? default(bool); }
@@ -663,6 +726,22 @@ namespace Amazon.EC2.Model
         internal bool IsSetEbsOptimized()
         {
             return this.ebsOptimized.HasValue;
+        }
+
+        /// <summary>
+        /// Specifies whether enhanced networking is enabled.
+        ///  
+        /// </summary>
+        public string SriovNetSupport
+        {
+            get { return this.sriovNetSupport; }
+            set { this.sriovNetSupport = value; }
+        }
+
+        // Check to see if SriovNetSupport property is set
+        internal bool IsSetSriovNetSupport()
+        {
+            return this.sriovNetSupport != null;
         }
     }
 }

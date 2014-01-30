@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para> An Amazon EC2 security group, describing how EC2 instances in this group can receive network traffic. </para>
+    /// <para>Describes a security group</para>
     /// </summary>
     public class SecurityGroup
     {
@@ -37,7 +37,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The AWS Access Key ID of the owner of the security group.
+        /// The AWS account ID of the owner of the security group.
         ///  
         /// </summary>
         public string OwnerId
@@ -53,7 +53,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The name of this security group.
+        /// The name of the security group.
         ///  
         /// </summary>
         public string GroupName
@@ -67,6 +67,11 @@ namespace Amazon.EC2.Model
         {
             return this.groupName != null;
         }
+
+        /// <summary>
+        /// The ID of the security group.
+        ///  
+        /// </summary>
         public string GroupId
         {
             get { return this.groupId; }
@@ -80,7 +85,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The description of this security group.
+        /// A description of the security group.
         ///  
         /// </summary>
         public string Description
@@ -96,7 +101,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The permissions enabled for this security group.
+        /// One or more inbound rules associated with the security group.
         ///  
         /// </summary>
         public List<IpPermission> IpPermissions
@@ -110,6 +115,11 @@ namespace Amazon.EC2.Model
         {
             return this.ipPermissions.Count > 0;
         }
+
+        /// <summary>
+        /// [EC2-VPC] One or more outbound rules associated with the security group.
+        ///  
+        /// </summary>
         public List<IpPermission> IpPermissionsEgress
         {
             get { return this.ipPermissionsEgress; }
@@ -121,6 +131,11 @@ namespace Amazon.EC2.Model
         {
             return this.ipPermissionsEgress.Count > 0;
         }
+
+        /// <summary>
+        /// [EC2-VPC] The ID of the VPC for the security group.
+        ///  
+        /// </summary>
         public string VpcId
         {
             get { return this.vpcId; }
@@ -132,6 +147,11 @@ namespace Amazon.EC2.Model
         {
             return this.vpcId != null;
         }
+
+        /// <summary>
+        /// Any tags assigned to the security group.
+        ///  
+        /// </summary>
         public List<Tag> Tags
         {
             get { return this.tags; }

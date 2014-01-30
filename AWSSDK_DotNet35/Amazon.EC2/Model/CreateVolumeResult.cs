@@ -22,7 +22,7 @@ using Amazon.Runtime;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para> The result of creating a new EBS volume. </para>
+    /// 
     /// </summary>
     public partial class CreateVolumeResult : AmazonWebServiceResponse
     {
@@ -31,7 +31,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The newly created EBS volume.
+        /// 
         ///  
         /// </summary>
         public Volume Volume

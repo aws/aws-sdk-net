@@ -28,8 +28,7 @@ namespace Amazon.EC2.Model
     {
         /// <summary>
         /// Gets and sets the MonitorInstancesResult property.
-        /// The result of enabling monitoring on a set of Amazon EC2 instances. Contains the updated monitoring status for each instance specified in
-        /// the request.
+        /// 
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the MonitorInstancesResult class are now available on the MonitorInstancesResponse class. You should use the properties on MonitorInstancesResponse instead of accessing them through MonitorInstancesResult.")]
         public MonitorInstancesResult MonitorInstancesResult

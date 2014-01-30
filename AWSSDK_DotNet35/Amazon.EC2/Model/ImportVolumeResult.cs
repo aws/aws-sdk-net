@@ -21,13 +21,19 @@ using Amazon.Runtime;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>Import Volume Result
+    /// <summary>
+    /// 
     /// </summary>
     public partial class ImportVolumeResult : AmazonWebServiceResponse
     {
         
         private ConversionTask conversionTask;
 
+
+        /// <summary>
+        /// 
+        ///  
+        /// </summary>
         public ConversionTask ConversionTask
         {
             get { return this.conversionTask; }

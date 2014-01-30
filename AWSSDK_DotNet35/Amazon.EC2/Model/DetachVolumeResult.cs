@@ -22,7 +22,7 @@ using Amazon.Runtime;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para> The result of detaching an EBS volume from an instance. </para>
+    /// 
     /// </summary>
     public partial class DetachVolumeResult : AmazonWebServiceResponse
     {
@@ -31,7 +31,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The updated EBS volume attachment information after trying to detach the volume from the specified instance.
+        /// 
         ///  
         /// </summary>
         public VolumeAttachment Attachment

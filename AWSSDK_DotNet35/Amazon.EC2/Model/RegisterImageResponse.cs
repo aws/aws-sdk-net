@@ -28,7 +28,7 @@ namespace Amazon.EC2.Model
     {
         /// <summary>
         /// Gets and sets the RegisterImageResult property.
-        /// The result of registering a new Amazon Machine Image (AMI). Contains the ID of the new image.
+        /// 
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the RegisterImageResult class are now available on the RegisterImageResponse class. You should use the properties on RegisterImageResponse instead of accessing them through RegisterImageResult.")]
         public RegisterImageResult RegisterImageResult

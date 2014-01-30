@@ -21,13 +21,19 @@ using Amazon.Runtime;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>Describe Route Tables Result
+    /// <summary>
+    /// 
     /// </summary>
     public partial class DescribeRouteTablesResult : AmazonWebServiceResponse
     {
         
         private List<RouteTable> routeTables = new List<RouteTable>();
 
+
+        /// <summary>
+        /// Information about one or more route tables.
+        ///  
+        /// </summary>
         public List<RouteTable> RouteTables
         {
             get { return this.routeTables; }

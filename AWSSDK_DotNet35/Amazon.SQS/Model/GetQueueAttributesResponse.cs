@@ -28,7 +28,7 @@ namespace Amazon.SQS.Model
     {
         /// <summary>
         /// Gets and sets the GetQueueAttributesResult property.
-        /// 
+        /// A list of returned queue attributes.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the GetQueueAttributesResult class are now available on the GetQueueAttributesResponse class. You should use the properties on GetQueueAttributesResponse instead of accessing them through GetQueueAttributesResult.")]
         public GetQueueAttributesResult GetQueueAttributesResult

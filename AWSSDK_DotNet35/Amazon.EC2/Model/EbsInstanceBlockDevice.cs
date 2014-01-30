@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para> An EBS volume backed block device which is attached to an instance. </para>
+    /// <para>Describes a parameter used to set up an Amazon EBS volume in a block device mapping.</para>
     /// </summary>
     public class EbsInstanceBlockDevice
     {
@@ -33,7 +33,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The ID of the EBS volume.
+        /// The ID of the Amazon EBS volume.
         ///  
         /// </summary>
         public string VolumeId
@@ -49,7 +49,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The status of the EBS volume.
+        /// The attachment state.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -74,7 +74,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The time at which the EBS volume was attached to the associated instance.
+        /// The time stamp when the attachment initiated.
         ///  
         /// </summary>
         public DateTime AttachTime
@@ -90,7 +90,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Specifies whether the Amazon EBS volume is deleted on instance termination.
+        /// Indicates whether the volume is deleted on instance termination.
         ///  
         /// </summary>
         public bool DeleteOnTermination

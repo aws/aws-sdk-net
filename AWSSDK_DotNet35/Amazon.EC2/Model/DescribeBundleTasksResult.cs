@@ -22,7 +22,7 @@ using Amazon.Runtime;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para> The result of describing the bundle tasks for the user's account. </para>
+    /// 
     /// </summary>
     public partial class DescribeBundleTasksResult : AmazonWebServiceResponse
     {
@@ -31,7 +31,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The list of described bundle tasks.
+        /// Information about one or more bundle tasks.
         ///  
         /// </summary>
         public List<BundleTask> BundleTasks

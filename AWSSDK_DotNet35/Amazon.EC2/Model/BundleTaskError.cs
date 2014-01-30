@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para> Represents an error that occurred during a bundle task. </para>
+    /// <para>Describes an error for BundleInstance.</para>
     /// </summary>
     public class BundleTaskError
     {
@@ -31,7 +31,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// Error code.
+        /// The error code.
         ///  
         /// </summary>
         public string Code
@@ -47,7 +47,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Error message.
+        /// The error message.
         ///  
         /// </summary>
         public string Message

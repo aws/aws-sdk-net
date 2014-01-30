@@ -20,7 +20,8 @@ using System.IO;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>Vpn Static Route
+    /// <summary>
+    /// <para>Describes a static route for a VPN connection.</para>
     /// </summary>
     public class VpnStaticRoute
     {
@@ -29,6 +30,11 @@ namespace Amazon.EC2.Model
         private VpnStaticRouteSource source;
         private VpnState state;
 
+
+        /// <summary>
+        /// The CIDR block associated with the local subnet of the customer data center.
+        ///  
+        /// </summary>
         public string DestinationCidrBlock
         {
             get { return this.destinationCidrBlock; }
@@ -40,6 +46,20 @@ namespace Amazon.EC2.Model
         {
             return this.destinationCidrBlock != null;
         }
+
+        /// <summary>
+        /// Indicates how the routes were provided.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>Static</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
         public VpnStaticRouteSource Source
         {
             get { return this.source; }
@@ -51,6 +71,20 @@ namespace Amazon.EC2.Model
         {
             return this.source != null;
         }
+
+        /// <summary>
+        /// The current state of the static route.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>pending, available, deleting, deleted</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
         public VpnState State
         {
             get { return this.state; }

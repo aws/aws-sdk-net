@@ -28,7 +28,7 @@ namespace Amazon.EC2.Model
     {
         /// <summary>
         /// Gets and sets the DescribeReservedInstancesOfferingsResult property.
-        /// The result of describing Reserved Instance offerings.
+        /// 
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DescribeReservedInstancesOfferingsResult class are now available on the DescribeReservedInstancesOfferingsResponse class. You should use the properties on DescribeReservedInstancesOfferingsResponse instead of accessing them through DescribeReservedInstancesOfferingsResult.")]
         public DescribeReservedInstancesOfferingsResult DescribeReservedInstancesOfferingsResult

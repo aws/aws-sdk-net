@@ -20,7 +20,8 @@ using System.IO;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>Vgw Telemetry
+    /// <summary>
+    /// <para>Describes telemetry for a VPN tunnel.</para>
     /// </summary>
     public class VgwTelemetry
     {
@@ -31,6 +32,11 @@ namespace Amazon.EC2.Model
         private string statusMessage;
         private int? acceptedRouteCount;
 
+
+        /// <summary>
+        /// The Internet-routable IP address of the virtual private gateway's outside interface.
+        ///  
+        /// </summary>
         public string OutsideIpAddress
         {
             get { return this.outsideIpAddress; }
@@ -42,6 +48,20 @@ namespace Amazon.EC2.Model
         {
             return this.outsideIpAddress != null;
         }
+
+        /// <summary>
+        /// The status of the VPN tunnel.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>UP, DOWN</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
         public TelemetryStatus Status
         {
             get { return this.status; }
@@ -53,6 +73,11 @@ namespace Amazon.EC2.Model
         {
             return this.status != null;
         }
+
+        /// <summary>
+        /// The date and time of the last change in status.
+        ///  
+        /// </summary>
         public DateTime LastStatusChange
         {
             get { return this.lastStatusChange ?? default(DateTime); }
@@ -64,6 +89,11 @@ namespace Amazon.EC2.Model
         {
             return this.lastStatusChange.HasValue;
         }
+
+        /// <summary>
+        /// If an error occurs, a description of the error.
+        ///  
+        /// </summary>
         public string StatusMessage
         {
             get { return this.statusMessage; }
@@ -75,6 +105,11 @@ namespace Amazon.EC2.Model
         {
             return this.statusMessage != null;
         }
+
+        /// <summary>
+        /// The number of accepted routes.
+        ///  
+        /// </summary>
         public int AcceptedRouteCount
         {
             get { return this.acceptedRouteCount ?? default(int); }

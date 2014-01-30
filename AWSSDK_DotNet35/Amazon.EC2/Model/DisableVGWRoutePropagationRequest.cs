@@ -25,13 +25,18 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DisableVgwRoutePropagation operation.
-    /// 
+    /// <para>Disables a virtual private gateway (VGW) from propagating routes to the routing tables of a VPC.</para>
     /// </summary>
     public partial class DisableVgwRoutePropagationRequest : AmazonEC2Request
     {
         private string routeTableId;
         private string gatewayId;
 
+
+        /// <summary>
+        /// The ID of the routing table.
+        ///  
+        /// </summary>
         public string RouteTableId
         {
             get { return this.routeTableId; }
@@ -43,6 +48,11 @@ namespace Amazon.EC2.Model
         {
             return this.routeTableId != null;
         }
+
+        /// <summary>
+        /// The ID of the virtual private gateway.
+        ///  
+        /// </summary>
         public string GatewayId
         {
             get { return this.gatewayId; }

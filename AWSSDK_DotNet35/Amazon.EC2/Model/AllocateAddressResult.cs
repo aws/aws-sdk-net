@@ -22,7 +22,7 @@ using Amazon.Runtime;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para> Result returned from allocating an Elastic IP. </para>
+    /// 
     /// </summary>
     public partial class AllocateAddressResult : AmazonWebServiceResponse
     {
@@ -33,7 +33,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// IP address for use with your account.
+        /// The Elastic IP address.
         ///  
         /// </summary>
         public string PublicIp
@@ -47,6 +47,20 @@ namespace Amazon.EC2.Model
         {
             return this.publicIp != null;
         }
+
+        /// <summary>
+        /// Indicates whether this Elastic IP address is for use with instances in EC2-Classic (<c>standard</c>) or instances in a VPC (<c>vpc</c>).
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>vpc, standard</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
         public DomainType Domain
         {
             get { return this.domain; }
@@ -58,6 +72,11 @@ namespace Amazon.EC2.Model
         {
             return this.domain != null;
         }
+
+        /// <summary>
+        /// [EC2-VPC] The ID that AWS assigns to represent the allocation of the Elastic IP address for use with instances in a VPC.
+        ///  
+        /// </summary>
         public string AllocationId
         {
             get { return this.allocationId; }

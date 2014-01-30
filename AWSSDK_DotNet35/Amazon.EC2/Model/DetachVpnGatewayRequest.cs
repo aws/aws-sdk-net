@@ -25,10 +25,10 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DetachVpnGateway operation.
-    /// <para> Detaches a VPN gateway from a VPC. You do this if you're planning to turn off the VPC and not use it anymore. You can confirm a VPN
-    /// gateway has been completely detached from a VPC by describing the VPN gateway (any attachments to the VPN gateway are also described).
-    /// </para> <para> You must wait for the attachment's state to switch to detached before you can delete the VPC or attach a different VPC to the
-    /// VPN gateway. </para>
+    /// <para>Detaches a virtual private gateway from a VPC. You do this if you're planning to turn off the VPC and not use it anymore. You can
+    /// confirm a virtual private gateway has been completely detached from a VPC by describing the virtual private gateway (any attachments to the
+    /// virtual private gateway are also described).</para> <para>You must wait for the attachment's state to switch to <c>detached</c> before you
+    /// can delete the VPC or attach a different VPC to the virtual private gateway.</para>
     /// </summary>
     public partial class DetachVpnGatewayRequest : AmazonEC2Request
     {
@@ -37,7 +37,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The ID of the VPN gateway to detach from the VPC.
+        /// The ID of the virtual private gateway.
         ///  
         /// </summary>
         public string VpnGatewayId
@@ -53,7 +53,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The ID of the VPC to detach the VPN gateway from.
+        /// The ID of the VPC.
         ///  
         /// </summary>
         public string VpcId

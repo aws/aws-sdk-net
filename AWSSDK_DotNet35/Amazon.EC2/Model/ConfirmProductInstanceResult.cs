@@ -22,7 +22,7 @@ using Amazon.Runtime;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para> The result of calling the ConfirmProductInstance operation. </para>
+    /// 
     /// </summary>
     public partial class ConfirmProductInstanceResult : AmazonWebServiceResponse
     {
@@ -31,7 +31,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The instance owner's account ID. Only present if the product code is attached to the instance.
+        /// The AWS account ID of the instance owner. This is only present if the product code is attached to the instance.
         ///  
         /// </summary>
         public string OwnerId

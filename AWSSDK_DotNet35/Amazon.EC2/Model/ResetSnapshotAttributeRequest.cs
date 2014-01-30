@@ -25,7 +25,9 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the ResetSnapshotAttribute operation.
-    /// <para> Resets permission settings for the specified snapshot. </para>
+    /// <para>Resets permission settings for the specified snapshot.</para> <para>For more information on modifying snapshot permissions, see <a
+    /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html" >Sharing Snapshots</a> in the <i>Amazon
+    /// Elastic Compute Cloud User Guide</i> .</para>
     /// </summary>
     public partial class ResetSnapshotAttributeRequest : AmazonEC2Request
     {
@@ -34,7 +36,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The ID of the snapshot whose attribute is being reset.
+        /// The ID of the snapshot.
         ///  
         /// </summary>
         public string SnapshotId
@@ -50,7 +52,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The name of the attribute being reset. Available attribute names: <c>createVolumePermission</c>
+        /// The attribute to reset (currently only the attribute for permission to create volumes can be reset).
         ///  
         /// <para>
         /// <b>Constraints:</b>

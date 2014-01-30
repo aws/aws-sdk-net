@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para> The CustomerGateway data type. </para>
+    /// <para>Describes a customer gateway.</para>
     /// </summary>
     public class CustomerGateway
     {
@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// Specifies the ID of the customer gateway.
+        /// The ID of the customer gateway.
         ///  
         /// </summary>
         public string CustomerGatewayId
@@ -51,7 +51,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Describes the current state of the customer gateway. Valid values are <c>pending</c>, <c>available</c>, <c>deleting</c>, and <c>deleted</c>.
+        /// The current state of the customer gateway.
         ///  
         /// </summary>
         public string State
@@ -67,7 +67,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Specifies the type of VPN connection the customer gateway supports.
+        /// The type of VPN connection the customer gateway supports.
         ///  
         /// </summary>
         public string Type
@@ -83,7 +83,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Contains the Internet-routable IP address of the customer gateway's outside interface.
+        /// The Internet-routable IP address of the customer gateway's outside interface.
         ///  
         /// </summary>
         public string IpAddress
@@ -99,7 +99,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Specifies the customer gateway's Border Gateway Protocol (BGP) Autonomous System Number (ASN).
+        /// The customer gateway's Border Gateway Protocol (BGP) Autonomous System Number (ASN).
         ///  
         /// </summary>
         public string BgpAsn
@@ -115,7 +115,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// A list of tags for the CustomerGateway.
+        /// Any tags assigned to the customer gateway.
         ///  
         /// </summary>
         public List<Tag> Tags

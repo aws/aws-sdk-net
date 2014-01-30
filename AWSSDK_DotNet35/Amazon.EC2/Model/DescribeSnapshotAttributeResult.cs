@@ -22,7 +22,7 @@ using Amazon.Runtime;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para> The result of describing an EBS snapshot attribute. </para>
+    /// 
     /// </summary>
     public partial class DescribeSnapshotAttributeResult : AmazonWebServiceResponse
     {
@@ -33,7 +33,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The ID of the snapshot whose attribute is being described.
+        /// The ID of the Amazon EBS snapshot.
         ///  
         /// </summary>
         public string SnapshotId
@@ -49,8 +49,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The list of permissions describing who can create a volume from the associated EBS snapshot. Only available if the createVolumePermission
-        /// attribute is requested.
+        /// A list of permissions for creating volumes from the snapshot.
         ///  
         /// </summary>
         public List<CreateVolumePermission> CreateVolumePermissions
@@ -64,6 +63,11 @@ namespace Amazon.EC2.Model
         {
             return this.createVolumePermissions.Count > 0;
         }
+
+        /// <summary>
+        /// A list of product codes.
+        ///  
+        /// </summary>
         public List<ProductCode> ProductCodes
         {
             get { return this.productCodes; }

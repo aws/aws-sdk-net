@@ -20,7 +20,8 @@ using System.IO;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>Disk Image Description
+    /// <summary>
+    /// 
     /// </summary>
     public class DiskImageDescription
     {
@@ -30,6 +31,20 @@ namespace Amazon.EC2.Model
         private string importManifestUrl;
         private string checksum;
 
+
+        /// <summary>
+        /// The disk image format.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>VMDK, RAW, VHD</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
         public DiskImageFormat Format
         {
             get { return this.format; }
@@ -41,6 +56,11 @@ namespace Amazon.EC2.Model
         {
             return this.format != null;
         }
+
+        /// <summary>
+        /// The size of the disk image.
+        ///  
+        /// </summary>
         public long Size
         {
             get { return this.size ?? default(long); }
@@ -52,6 +72,14 @@ namespace Amazon.EC2.Model
         {
             return this.size.HasValue;
         }
+
+        /// <summary>
+        /// A presigned URL for the import manifest stored in Amazon S3. For information about creating a presigned URL for an Amazon S3 object, read
+        /// the "Query String Request Authentication Alternative" section of the <a
+        /// href="http://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">Authenticating REST Requests</a> topic in the <i>Amazon Simple
+        /// Storage Service Developer Guide</i>.
+        ///  
+        /// </summary>
         public string ImportManifestUrl
         {
             get { return this.importManifestUrl; }
@@ -63,6 +91,11 @@ namespace Amazon.EC2.Model
         {
             return this.importManifestUrl != null;
         }
+
+        /// <summary>
+        /// The checksum computed for the disk image.
+        ///  
+        /// </summary>
         public string Checksum
         {
             get { return this.checksum; }

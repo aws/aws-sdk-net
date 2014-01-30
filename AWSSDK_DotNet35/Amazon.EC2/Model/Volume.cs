@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para> Represents an Amazon <i>Elastic Block Storage</i> (EBS) volume. </para>
+    /// <para>Describes a volume.</para>
     /// </summary>
     public class Volume
     {
@@ -39,7 +39,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The unique ID of this volume.
+        /// The ID of the volume.
         ///  
         /// </summary>
         public string VolumeId
@@ -55,7 +55,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The size of this volume, in gigabytes.
+        /// The size of the volume, in GiBs.
         ///  
         /// </summary>
         public int Size
@@ -71,7 +71,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Optional snapshot from which this volume was created.
+        /// The snapshot from which the volume was created, if applicable.
         ///  
         /// </summary>
         public string SnapshotId
@@ -87,7 +87,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Availability zone in which this volume was created.
+        /// The Availability Zone for the volume.
         ///  
         /// </summary>
         public string AvailabilityZone
@@ -103,7 +103,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// State of this volume (e.g., creating, available).
+        /// The volume state.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -128,7 +128,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Timestamp when volume creation was initiated.
+        /// The time stamp when volume creation was initiated.
         ///  
         /// </summary>
         public DateTime CreateTime
@@ -144,7 +144,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Information on what this volume is attached to.
+        /// 
         ///  
         /// </summary>
         public List<VolumeAttachment> Attachments
@@ -160,7 +160,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// A list of tags for the Volume.
+        /// Any tags assigned to the volume.
         ///  
         /// </summary>
         public List<Tag> Tags
@@ -174,6 +174,20 @@ namespace Amazon.EC2.Model
         {
             return this.tags.Count > 0;
         }
+
+        /// <summary>
+        /// The volume type.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>standard, io1</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
         public VolumeType VolumeType
         {
             get { return this.volumeType; }
@@ -185,6 +199,11 @@ namespace Amazon.EC2.Model
         {
             return this.volumeType != null;
         }
+
+        /// <summary>
+        /// The number of I/O operations per second (IOPS) that the volume supports.
+        ///  
+        /// </summary>
         public int Iops
         {
             get { return this.iops ?? default(int); }

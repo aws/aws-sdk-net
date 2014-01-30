@@ -28,7 +28,7 @@ namespace Amazon.EC2.Model
     {
         /// <summary>
         /// Gets and sets the StopInstancesResult property.
-        /// The result of calling the StopInstances operation. Contains details on how the specified instances are changing state.
+        /// 
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the StopInstancesResult class are now available on the StopInstancesResponse class. You should use the properties on StopInstancesResponse instead of accessing them through StopInstancesResult.")]
         public StopInstancesResult StopInstancesResult

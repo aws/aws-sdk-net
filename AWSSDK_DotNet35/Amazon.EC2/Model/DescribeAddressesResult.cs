@@ -22,7 +22,7 @@ using Amazon.Runtime;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para> The result of describing an account's available Elastic IPs. </para>
+    /// 
     /// </summary>
     public partial class DescribeAddressesResult : AmazonWebServiceResponse
     {
@@ -31,7 +31,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The list of Elastic IPs.
+        /// Information about one or more Elastic IP addresses.
         ///  
         /// </summary>
         public List<Address> Addresses

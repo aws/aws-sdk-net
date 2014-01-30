@@ -25,7 +25,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyNetworkInterfaceAttribute operation.
-    /// 
+    /// <para>Modifies the specified network interface attribute. You can specify only one attribute at a time.</para>
     /// </summary>
     public partial class ModifyNetworkInterfaceAttributeRequest : AmazonEC2Request
     {
@@ -35,6 +35,11 @@ namespace Amazon.EC2.Model
         private List<string> groups = new List<string>();
         private NetworkInterfaceAttachmentChanges attachment;
 
+
+        /// <summary>
+        /// The ID of the network interface.
+        ///  
+        /// </summary>
         public string NetworkInterfaceId
         {
             get { return this.networkInterfaceId; }
@@ -48,7 +53,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// String value
+        /// A description for the network interface.
         ///  
         /// </summary>
         public string Description
@@ -64,7 +69,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Boolean value
+        /// Indicates whether source/destination checking is enabled. A value of <c>true</c> means checking is enabled, and <c>false</c> means checking
+        /// is disabled. This value must be <c>false</c> for a NAT instance to perform NAT. For more information, see <a
+        /// href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT Instances</a> in the <i>Amazon Virtual Private Cloud
+        /// User Guide</i>.
         ///  
         /// </summary>
         public bool SourceDestCheck
@@ -78,6 +86,12 @@ namespace Amazon.EC2.Model
         {
             return this.sourceDestCheck.HasValue;
         }
+
+        /// <summary>
+        /// Changes the security groups for the network interface. The new set of groups you specify replaces the current set. You must specify at least
+        /// one group, even if it's just the default security group in the VPC. You must specify the ID of the security group, not the name.
+        ///  
+        /// </summary>
         public List<string> Groups
         {
             get { return this.groups; }
@@ -89,6 +103,11 @@ namespace Amazon.EC2.Model
         {
             return this.groups.Count > 0;
         }
+
+        /// <summary>
+        /// The ID of the interface attachment.
+        ///  
+        /// </summary>
         public NetworkInterfaceAttachmentChanges Attachment
         {
             get { return this.attachment; }

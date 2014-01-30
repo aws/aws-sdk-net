@@ -25,13 +25,15 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateNetworkAclEntry operation.
-    /// <para> Creates an entry (i.e., rule) in a network ACL with a rule number you specify. Each network ACL has a set of numbered ingress rules
-    /// and a separate set of numbered egress rules. When determining whether a packet should be allowed in or out of a subnet associated with the
-    /// ACL, Amazon VPC processes the entries in the ACL according to the rule numbers, in ascending order. </para> <para> <b>Important:</b> We
-    /// recommend that you leave room between the rules (e.g., 100, 110, 120, etc.), and not number them sequentially (101, 102, 103, etc.). This
-    /// allows you to easily add a new rule between existing ones without having to renumber the rules. </para> <para> After you add an entry, you
-    /// can't modify it; you must either replace it, or create a new entry and delete the old one. </para> <para> For more information about network
-    /// ACLs, go to Network ACLs in the Amazon Virtual Private Cloud User Guide. </para>
+    /// <para>Creates an entry (a rule) in a network ACL with the specified rule number. Each network ACL has a set of numbered ingress rules and a
+    /// separate set of numbered egress rules. When determining whether a packet should be allowed in or out of a subnet associated with the ACL, we
+    /// process the entries in the ACL according to the rule numbers, in ascending order. Each network ACL has a set of ingress rules and a separate
+    /// set of egress rules.</para> <para>We recommend that you leave room between the rule numbers (for example, 100, 110, 120, ...), and not
+    /// number them one right after the other (for example, 101, 102, 103, ...). This makes it easier to add a rule between existing ones without
+    /// having to renumber the rules.</para> <para>After you add an entry, you can't modify it; you must either replace it, or create an entry and
+    /// delete the old one.</para> <para>For more information about network ACLs, see <a
+    /// href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html" >Network ACLs</a> in the <i>Amazon Virtual Private Cloud User
+    /// Guide</i> .</para>
     /// </summary>
     public partial class CreateNetworkAclEntryRequest : AmazonEC2Request
     {
@@ -46,7 +48,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// ID of the ACL where the entry will be created.
+        /// The ID of the ACL.
         ///  
         /// </summary>
         public string NetworkAclId
@@ -62,7 +64,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Rule number to assign to the entry (e.g., 100). ACL entries are processed in ascending order by rule number.
+        /// The rule number for the entry (for example, 100). ACL entries are processed in ascending order by rule number. Constraints: Positive integer
+        /// from 1 to 32766
         ///  
         /// </summary>
         public int RuleNumber
@@ -78,7 +81,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// IP protocol the rule applies to. Valid Values: <c>tcp</c>, <c>udp</c>, <c>icmp</c> or an IP protocol number.
+        /// The protocol. A value of -1 means all protocols.
         ///  
         /// </summary>
         public string Protocol
@@ -94,7 +97,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Whether to allow or deny traffic that matches the rule.
+        /// Indicates whether to allow or deny the traffic that matches the rule.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -119,7 +122,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Whether this rule applies to egress traffic from the subnet (<c>true</c>) or ingress traffic to the subnet (<c>false</c>).
+        /// Indicates whether this is an egress rule (rule is applied to traffic leaving the subnet).
         ///  
         /// </summary>
         public bool Egress
@@ -135,7 +138,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The CIDR range to allow or deny, in CIDR notation (e.g., <c>172.16.0.0/24</c>).
+        /// The network range to allow or deny, in CIDR notation.
         ///  
         /// </summary>
         public string CidrBlock
@@ -151,7 +154,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// ICMP values.
+        /// ICMP protocol: The ICMP type and code.
         ///  
         /// </summary>
         public IcmpTypeCode IcmpTypeCode
@@ -167,7 +170,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Port ranges.
+        /// TCP or UDP protocols: The range of ports the rule applies to.
         ///  
         /// </summary>
         public PortRange PortRange

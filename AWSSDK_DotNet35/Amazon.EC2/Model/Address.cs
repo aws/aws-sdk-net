@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para> </para>
+    /// <para>Describes an Elastic IP address.</para>
     /// </summary>
     public class Address
     {
@@ -37,7 +37,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// 
+        /// The ID of the instance the address is associated with (if any).
         ///  
         /// </summary>
         public string InstanceId
@@ -53,7 +53,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// 
+        /// The Elastic IP address.
         ///  
         /// </summary>
         public string PublicIp
@@ -67,6 +67,11 @@ namespace Amazon.EC2.Model
         {
             return this.publicIp != null;
         }
+
+        /// <summary>
+        /// The ID representing the allocation of the address for use with EC2-VPC.
+        ///  
+        /// </summary>
         public string AllocationId
         {
             get { return this.allocationId; }
@@ -78,6 +83,11 @@ namespace Amazon.EC2.Model
         {
             return this.allocationId != null;
         }
+
+        /// <summary>
+        /// The ID representing the association of the address with an instance in a VPC.
+        ///  
+        /// </summary>
         public string AssociationId
         {
             get { return this.associationId; }
@@ -89,6 +99,20 @@ namespace Amazon.EC2.Model
         {
             return this.associationId != null;
         }
+
+        /// <summary>
+        /// Indicates whether this Elastic IP address is for use with instances in EC2-Classic (<c>standard</c>) or instances in a VPC (<c>vpc</c>).
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>vpc, standard</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
         public DomainType Domain
         {
             get { return this.domain; }
@@ -100,6 +124,11 @@ namespace Amazon.EC2.Model
         {
             return this.domain != null;
         }
+
+        /// <summary>
+        /// The ID of the network interface.
+        ///  
+        /// </summary>
         public string NetworkInterfaceId
         {
             get { return this.networkInterfaceId; }
@@ -111,6 +140,11 @@ namespace Amazon.EC2.Model
         {
             return this.networkInterfaceId != null;
         }
+
+        /// <summary>
+        /// The ID of the AWS account that owns the network interface.
+        ///  
+        /// </summary>
         public string NetworkInterfaceOwnerId
         {
             get { return this.networkInterfaceOwnerId; }
@@ -122,6 +156,11 @@ namespace Amazon.EC2.Model
         {
             return this.networkInterfaceOwnerId != null;
         }
+
+        /// <summary>
+        /// The private IP address associated with the Elastic IP address.
+        ///  
+        /// </summary>
         public string PrivateIpAddress
         {
             get { return this.privateIpAddress; }

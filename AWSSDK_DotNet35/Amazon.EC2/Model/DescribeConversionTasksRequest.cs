@@ -25,13 +25,20 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeConversionTasks operation.
-    /// 
+    /// <para>Describes one or more of your conversion tasks. For more information, see <a
+    /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html" >Using the Command Line Tools to Import Your
+    /// Virtual Machine to Amazon EC2</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .</para>
     /// </summary>
     public partial class DescribeConversionTasksRequest : AmazonEC2Request
     {
         private List<Filter> filters = new List<Filter>();
         private List<string> conversionTaskIds = new List<string>();
 
+
+        /// <summary>
+        /// 
+        ///  
+        /// </summary>
         public List<Filter> Filters
         {
             get { return this.filters; }
@@ -43,6 +50,11 @@ namespace Amazon.EC2.Model
         {
             return this.filters.Count > 0;
         }
+
+        /// <summary>
+        /// One or more conversion task IDs.
+        ///  
+        /// </summary>
         public List<string> ConversionTaskIds
         {
             get { return this.conversionTaskIds; }

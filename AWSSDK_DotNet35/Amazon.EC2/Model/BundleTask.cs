@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para> Represents a task to bundle an EC2 Windows instance into a new image. </para>
+    /// <para>Describes a bundle task.</para>
     /// </summary>
     public class BundleTask
     {
@@ -37,7 +37,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// Instance associated with this bundle task.
+        /// The ID of the instance associated with this bundle task.
         ///  
         /// </summary>
         public string InstanceId
@@ -53,7 +53,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Unique identifier for this task.
+        /// The ID for this bundle task.
         ///  
         /// </summary>
         public string BundleId
@@ -69,7 +69,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The state of this task.
+        /// The state of the task.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -126,7 +126,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Amazon S3 storage locations.
+        /// The Amazon S3 storage locations.
         ///  
         /// </summary>
         public Storage Storage
@@ -142,7 +142,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The level of task completion, in percent (e.g., 20%).
+        /// The level of task completion, as a percent (for example, 20%).
         ///  
         /// </summary>
         public string Progress

@@ -25,9 +25,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteCustomerGateway operation.
-    /// <para> Deletes a customer gateway. You must delete the VPN connection before deleting the customer gateway. </para> <para> You can have a
-    /// single active customer gateway per AWS account (active means that you've created a VPN connection with that customer gateway). AWS might
-    /// delete any customer gateway you leave inactive for an extended period of time. </para>
+    /// <para>Deletes the specified customer gateway. You must delete the VPN connection before you can delete the customer gateway.</para>
     /// </summary>
     public partial class DeleteCustomerGatewayRequest : AmazonEC2Request
     {
@@ -35,7 +33,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The ID of the customer gateway to delete.
+        /// The ID of the customer gateway.
         ///  
         /// </summary>
         public string CustomerGatewayId

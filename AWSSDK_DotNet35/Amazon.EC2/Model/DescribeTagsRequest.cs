@@ -25,15 +25,23 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeTags operation.
-    /// <para> Describes the tags for the specified resources. </para>
+    /// <para>Describes one or more of the tags for your EC2 resources.</para> <para>For more information about tags, see <a
+    /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html" >Tagging Your Resources</a> in the <i>Amazon Elastic Compute Cloud
+    /// User Guide</i> .</para>
     /// </summary>
     public partial class DescribeTagsRequest : AmazonEC2Request
     {
         private List<Filter> filters = new List<Filter>();
+        private int? maxResults;
+        private string nextToken;
 
 
         /// <summary>
-        /// A list of filters used to match properties for tags.
+        /// One or more filters. <ul> <li> <c>key</c> - The tag key. </li> <li> <c>resource-id</c> - The resource ID. </li> <li> <c>resource-type</c> -
+        /// The resource type (<c>customer-gateway</c> | <c>dhcp-options</c> | <c>image</c> | <c>instance</c> | <c>internet-gateway</c> |
+        /// <c>network-acl</c> | <c>network-interface</c> | <c>reserved-instances</c> | <c>route-table</c> | <c>security-group</c> | <c>snapshot</c> |
+        /// <c>spot-instances-request</c> | <c>subnet</c> | <c>volume</c> | <c>vpc</c> | <c>vpn-connection</c> | <c>vpn-gateway</c>). </li> <li>
+        /// <c>value</c> - The tag value. </li> </ul>
         ///  
         /// </summary>
         public List<Filter> Filters
@@ -46,6 +54,39 @@ namespace Amazon.EC2.Model
         internal bool IsSetFilters()
         {
             return this.filters.Count > 0;
+        }
+
+        /// <summary>
+        /// The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next
+        /// set of results. If the value is greater than 1000, we return only 1000 items.
+        ///  
+        /// </summary>
+        public int MaxResults
+        {
+            get { return this.maxResults ?? default(int); }
+            set { this.maxResults = value; }
+        }
+
+        // Check to see if MaxResults property is set
+        internal bool IsSetMaxResults()
+        {
+            return this.maxResults.HasValue;
+        }
+
+        /// <summary>
+        /// The token for the next set of items to return. (You received this token from a prior call.)
+        ///  
+        /// </summary>
+        public string NextToken
+        {
+            get { return this.nextToken; }
+            set { this.nextToken = value; }
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this.nextToken != null;
         }
 
     }

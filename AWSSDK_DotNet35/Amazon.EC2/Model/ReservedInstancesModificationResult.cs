@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para> The resulting information about the modified Reserved Instances. </para>
+    /// 
     /// </summary>
     public class ReservedInstancesModificationResult
     {
@@ -31,7 +31,8 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The ID for the Reserved Instances created as part of the modification request.
+        /// The ID for the Reserved Instances that were created as part of the modification request. This field is only available when the modification
+        /// is fulfilled.
         ///  
         /// </summary>
         public string ReservedInstancesId
@@ -47,7 +48,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The configuration settings for the modified Reserved Instances.
+        /// The target Reserved Instances configurations supplied as part of the modification request.
         ///  
         /// </summary>
         public ReservedInstancesConfiguration TargetConfiguration

@@ -21,7 +21,8 @@ using Amazon.Runtime;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>Describe Volume Attribute Result
+    /// <summary>
+    /// 
     /// </summary>
     public partial class DescribeVolumeAttributeResult : AmazonWebServiceResponse
     {
@@ -30,6 +31,11 @@ namespace Amazon.EC2.Model
         private bool? autoEnableIO;
         private List<ProductCode> productCodes = new List<ProductCode>();
 
+
+        /// <summary>
+        /// The ID of the volume.
+        ///  
+        /// </summary>
         public string VolumeId
         {
             get { return this.volumeId; }
@@ -43,7 +49,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Boolean value
+        /// The state of <c>autoEnableIO</c> attribute.
         ///  
         /// </summary>
         public bool AutoEnableIO
@@ -57,6 +63,11 @@ namespace Amazon.EC2.Model
         {
             return this.autoEnableIO.HasValue;
         }
+
+        /// <summary>
+        /// A list of product codes.
+        ///  
+        /// </summary>
         public List<ProductCode> ProductCodes
         {
             get { return this.productCodes; }

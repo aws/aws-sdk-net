@@ -20,7 +20,8 @@ using System.IO;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>Instance Status Details
+    /// <summary>
+    /// <para>Describes the instance status.</para>
     /// </summary>
     public class InstanceStatusDetails
     {
@@ -29,6 +30,20 @@ namespace Amazon.EC2.Model
         private StatusType status;
         private DateTime? impairedSince;
 
+
+        /// <summary>
+        /// The type of instance status.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>reachability</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
         public StatusName Name
         {
             get { return this.name; }
@@ -40,6 +55,20 @@ namespace Amazon.EC2.Model
         {
             return this.name != null;
         }
+
+        /// <summary>
+        /// The status.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>passed, failed, insufficient-data</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
         public StatusType Status
         {
             get { return this.status; }
@@ -51,6 +80,11 @@ namespace Amazon.EC2.Model
         {
             return this.status != null;
         }
+
+        /// <summary>
+        /// The time when a status check failed. For an instance that was launched and impaired, this is the time when the instance was launched.
+        ///  
+        /// </summary>
         public DateTime ImpairedSince
         {
             get { return this.impairedSince ?? default(DateTime); }

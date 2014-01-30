@@ -25,18 +25,11 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the ImportKeyPair operation.
-    /// <para> Imports the public key from an RSA key pair created with a third-party tool. This operation differs from CreateKeyPair as the private
-    /// key is never transferred between the caller and AWS servers. </para> <para> RSA key pairs are easily created on Microsoft Windows and Linux
-    /// OS systems using the <c>ssh-keygen</c> command line tool provided with the standard OpenSSH installation. Standard library support for RSA
-    /// key pair creation is also available for Java, Ruby, Python, and many other programming languages. </para> <para>The following formats are
-    /// supported:</para>
-    /// <ul>
-    /// <li> OpenSSH public key format, </li>
-    /// <li> Base64 encoded DER format. </li>
-    /// <li> SSH public key file format as specified in <a href="http://tools.ietf.org/html/rfc4716" > RFC4716 </a> .
-    /// </li>
-    /// 
-    /// </ul>
+    /// <para>Imports the public key from an RSA key pair that you created with a third-party tool. Compare this with CreateKeyPair, in which AWS
+    /// creates the key pair and gives the keys to you (AWS keeps a copy of the public key). With ImportKeyPair, you create the key pair and give
+    /// AWS just the public key. The private key is never transferred between you and AWS.</para> <para>For more information about key pairs, see <a
+    /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html" >Key Pairs</a> in the <i>Amazon Elastic Compute Cloud User
+    /// Guide</i> .</para>
     /// </summary>
     public partial class ImportKeyPairRequest : AmazonEC2Request
     {
@@ -45,7 +38,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The unique name for the key pair.
+        /// A unique name for the key pair.
         ///  
         /// </summary>
         public string KeyName
@@ -61,7 +54,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The public key portion of the key pair being imported.
+        /// The public key. You must base64 encode the public key material before sending it to AWS.
         ///  
         /// </summary>
         public string PublicKeyMaterial

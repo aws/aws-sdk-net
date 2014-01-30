@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para> Describes where an Amazon EC2 instance is running within an Amazon EC2 region. </para>
+    /// <para>Describes Spot Instance placement.</para>
     /// </summary>
     public class SpotPlacement
     {
@@ -31,7 +31,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The availability zone in which an Amazon EC2 instance runs.
+        /// The Availability Zone.
         ///  
         /// </summary>
         public string AvailabilityZone
@@ -47,8 +47,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The name of the <a>PlacementGroup</a> in which an Amazon EC2 instance runs. Placement groups are primarily used for launching High
-        /// Performance Computing instances in the same group to ensure fast connection speeds.
+        /// The Availability Zone group name.
         ///  
         /// </summary>
         public string GroupName

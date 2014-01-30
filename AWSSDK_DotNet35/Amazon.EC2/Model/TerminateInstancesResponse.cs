@@ -28,7 +28,7 @@ namespace Amazon.EC2.Model
     {
         /// <summary>
         /// Gets and sets the TerminateInstancesResult property.
-        /// The result of calling the TerminateInstances operation. Contains details on how the specified instances are changing state.
+        /// 
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the TerminateInstancesResult class are now available on the TerminateInstancesResponse class. You should use the properties on TerminateInstancesResponse instead of accessing them through TerminateInstancesResult.")]
         public TerminateInstancesResult TerminateInstancesResult

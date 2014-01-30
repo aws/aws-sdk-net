@@ -20,13 +20,19 @@ using System.IO;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>Propagating Vgw
+    /// <summary>
+    /// <para>Describes a virtual private gateway propagating route.</para>
     /// </summary>
     public class PropagatingVgw
     {
         
         private string gatewayId;
 
+
+        /// <summary>
+        /// The ID of the virtual private gateway (VGW).
+        ///  
+        /// </summary>
         public string GatewayId
         {
             get { return this.gatewayId; }

@@ -28,7 +28,7 @@ namespace Amazon.EC2.Model
     {
         /// <summary>
         /// Gets and sets the ConfirmProductInstanceResult property.
-        /// The result of calling the ConfirmProductInstance operation.
+        /// 
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the ConfirmProductInstanceResult class are now available on the ConfirmProductInstanceResponse class. You should use the properties on ConfirmProductInstanceResponse instead of accessing them through ConfirmProductInstanceResult.")]
         public ConfirmProductInstanceResult ConfirmProductInstanceResult

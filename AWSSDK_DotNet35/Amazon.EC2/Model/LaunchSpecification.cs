@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para> The LaunchSpecificationType data type. </para>
+    /// <para>Describes the launch specification of a Spot Instance.</para>
     /// </summary>
     public class LaunchSpecification
     {
@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The AMI ID.
+        /// The ID of the AMI.
         ///  
         /// </summary>
         public string ImageId
@@ -75,6 +75,11 @@ namespace Amazon.EC2.Model
         {
             return this.keyName != null;
         }
+
+        /// <summary>
+        /// One or more security groups.
+        ///  
+        /// </summary>
         public List<GroupIdentifier> AllSecurityGroups
         {
             get { return this.allSecurityGroups; }
@@ -86,6 +91,11 @@ namespace Amazon.EC2.Model
         {
             return this.allSecurityGroups.Count > 0;
         }
+
+        /// <summary>
+        /// One or more security groups.
+        ///  
+        /// </summary>
         public List<string> SecurityGroups
         {
             get { return this.securityGroups; }
@@ -99,8 +109,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Optional data, specific to a user's application, to provide in the launch request. All instances that collectively comprise the launch
-        /// request have access to this data. User data is never returned through API responses.
+        /// The Base64-encoded MIME user data to make available to the instances.
         ///  
         /// </summary>
         public string UserData
@@ -116,7 +125,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Deprecated.
+        /// <p/>
         ///  
         /// </summary>
         public string AddressingType
@@ -132,14 +141,14 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Specifies the instance type.
+        /// The instance type.
         ///  
         /// <para>
         /// <b>Constraints:</b>
         /// <list type="definition">
         ///     <item>
         ///         <term>Allowed Values</term>
-        ///         <description>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, m3.xlarge, m3.2xlarge, c1.medium, c1.xlarge, hi1.4xlarge, hs1.8xlarge, cc1.4xlarge, cc2.8xlarge, cg1.4xlarge, cr1.8xlarge</description>
+        ///         <description>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m3.xlarge, m3.2xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, cr1.8xlarge, i2.xlarge, i2.2xlarge, i2.4xlarge, i2.8xlarge, hi1.4xlarge, hs1.8xlarge, c1.medium, c1.xlarge, c3.large, c3.xlarge, c3.2xlarge, c3.4xlarge, c3.8xlarge, cc1.4xlarge, cc2.8xlarge, g2.2xlarge, cg1.4xlarge</description>
         ///     </item>
         /// </list>
         /// </para>
@@ -157,7 +166,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Defines a placement item.
+        /// The placement information for the instance.
         ///  
         /// </summary>
         public SpotPlacement Placement
@@ -173,7 +182,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Specifies the ID of the kernel to select.
+        /// The ID of the kernel.
         ///  
         /// </summary>
         public string KernelId
@@ -189,8 +198,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Specifies the ID of the RAM disk to select. Some kernels require additional drivers at launch. Check the kernel requirements for information
-        /// on whether or not you need to specify a RAM disk and search for the kernel ID.
+        /// The ID of the RAM disk.
         ///  
         /// </summary>
         public string RamdiskId
@@ -206,7 +214,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Specifies how block devices are exposed to the instance. Each mapping is made up of a virtualName and a deviceName.
+        /// One or more block device mapping entries.
         ///  
         /// </summary>
         public List<BlockDeviceMapping> BlockDeviceMappings
@@ -222,7 +230,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Enables monitoring for the instance.
+        /// Enables monitoring for the instance. Default: Disabled
         ///  
         /// </summary>
         public bool MonitoringEnabled
@@ -238,7 +246,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Specifies the Amazon VPC subnet ID within which to launch the instance(s) for Amazon Virtual Private Cloud.
+        /// The ID of the subnet in which to launch the Spot Instance.
         ///  
         /// </summary>
         public string SubnetId
@@ -252,6 +260,11 @@ namespace Amazon.EC2.Model
         {
             return this.subnetId != null;
         }
+
+        /// <summary>
+        /// One or more network interfaces.
+        ///  
+        /// </summary>
         public List<InstanceNetworkInterfaceSpecification> NetworkInterfaces
         {
             get { return this.networkInterfaces; }
@@ -263,6 +276,11 @@ namespace Amazon.EC2.Model
         {
             return this.networkInterfaces.Count > 0;
         }
+
+        /// <summary>
+        /// The IAM instance profile.
+        ///  
+        /// </summary>
         public IamInstanceProfileSpecification IamInstanceProfile
         {
             get { return this.iamInstanceProfile; }
@@ -274,6 +292,13 @@ namespace Amazon.EC2.Model
         {
             return this.iamInstanceProfile != null;
         }
+
+        /// <summary>
+        /// Indicates whether the instance is optimized for EBS I/O. This optimization provides dedicated throughput to Amazon EBS and an optimized
+        /// configuration stack to provide optimal EBS I/O performance. This optimization isn't available with all instance types. Additional usage
+        /// charges apply when using an EBS Optimized instance. Default: <c>false</c>
+        ///  
+        /// </summary>
         public bool EbsOptimized
         {
             get { return this.ebsOptimized ?? default(bool); }

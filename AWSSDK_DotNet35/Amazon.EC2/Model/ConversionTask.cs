@@ -20,7 +20,8 @@ using System.IO;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>Conversion Task
+    /// <summary>
+    /// <para>Describes a conversion task.</para>
     /// </summary>
     public class ConversionTask
     {
@@ -33,6 +34,11 @@ namespace Amazon.EC2.Model
         private string statusMessage;
         private List<Tag> tags = new List<Tag>();
 
+
+        /// <summary>
+        /// The ID of the conversion task.
+        ///  
+        /// </summary>
         public string ConversionTaskId
         {
             get { return this.conversionTaskId; }
@@ -44,6 +50,11 @@ namespace Amazon.EC2.Model
         {
             return this.conversionTaskId != null;
         }
+
+        /// <summary>
+        /// The time when the task expires. If the upload isn't complete before the expiration time, we automatically cancel the task.
+        ///  
+        /// </summary>
         public string ExpirationTime
         {
             get { return this.expirationTime; }
@@ -55,6 +66,11 @@ namespace Amazon.EC2.Model
         {
             return this.expirationTime != null;
         }
+
+        /// <summary>
+        /// If the task is for importing an instance, this contains information about the import instance task.
+        ///  
+        /// </summary>
         public ImportInstanceTaskDetails ImportInstance
         {
             get { return this.importInstance; }
@@ -66,6 +82,11 @@ namespace Amazon.EC2.Model
         {
             return this.importInstance != null;
         }
+
+        /// <summary>
+        /// If the task is for importing a volume, this contains information about the import volume task.
+        ///  
+        /// </summary>
         public ImportVolumeTaskDetails ImportVolume
         {
             get { return this.importVolume; }
@@ -77,6 +98,20 @@ namespace Amazon.EC2.Model
         {
             return this.importVolume != null;
         }
+
+        /// <summary>
+        /// The state of the conversion task.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>active, cancelling, cancelled, completed</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
         public ConversionTaskState State
         {
             get { return this.state; }
@@ -88,6 +123,11 @@ namespace Amazon.EC2.Model
         {
             return this.state != null;
         }
+
+        /// <summary>
+        /// The status message related to the conversion task.
+        ///  
+        /// </summary>
         public string StatusMessage
         {
             get { return this.statusMessage; }
@@ -99,6 +139,11 @@ namespace Amazon.EC2.Model
         {
             return this.statusMessage != null;
         }
+
+        /// <summary>
+        /// 
+        ///  
+        /// </summary>
         public List<Tag> Tags
         {
             get { return this.tags; }

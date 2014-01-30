@@ -28,7 +28,7 @@ namespace Amazon.EC2.Model
     {
         /// <summary>
         /// Gets and sets the DescribeVolumesResult property.
-        /// The result of describing your EBS volumes.
+        /// 
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DescribeVolumesResult class are now available on the DescribeVolumesResponse class. You should use the properties on DescribeVolumesResponse instead of accessing them through DescribeVolumesResult.")]
         public DescribeVolumesResult DescribeVolumesResult

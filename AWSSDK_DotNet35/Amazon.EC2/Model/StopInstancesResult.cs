@@ -22,7 +22,7 @@ using Amazon.Runtime;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para> The result of calling the StopInstances operation. Contains details on how the specified instances are changing state. </para>
+    /// 
     /// </summary>
     public partial class StopInstancesResult : AmazonWebServiceResponse
     {
@@ -31,7 +31,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The list of the stopping instances and details on how their state has changed.
+        /// Information about one or more stopped instances.
         ///  
         /// </summary>
         public List<InstanceStateChange> StoppingInstances

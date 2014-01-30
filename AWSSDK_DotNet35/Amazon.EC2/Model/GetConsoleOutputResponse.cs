@@ -28,7 +28,7 @@ namespace Amazon.EC2.Model
     {
         /// <summary>
         /// Gets and sets the GetConsoleOutputResult property.
-        /// The result of the GetConsoleOutput operation.
+        /// 
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the GetConsoleOutputResult class are now available on the GetConsoleOutputResponse class. You should use the properties on GetConsoleOutputResponse instead of accessing them through GetConsoleOutputResult.")]
         public GetConsoleOutputResult GetConsoleOutputResult

@@ -22,7 +22,7 @@ namespace Amazon.SQS
     /// <summary>
     /// Configuration for accessing Amazon Simple Queue Service service
     /// </summary>
-    public class AmazonSQSConfig : ClientConfig
+    public partial class AmazonSQSConfig : ClientConfig
     {
         /// <summary>
         /// Default constructor

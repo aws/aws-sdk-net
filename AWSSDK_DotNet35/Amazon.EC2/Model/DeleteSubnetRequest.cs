@@ -25,8 +25,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteSubnet operation.
-    /// <para> Deletes a subnet from a VPC. You must terminate all running instances in the subnet before deleting it, otherwise Amazon VPC returns
-    /// an error. </para>
+    /// <para>Deletes the specified subnet. You must terminate all running instances in the subnet before you can delete the subnet.</para>
     /// </summary>
     public partial class DeleteSubnetRequest : AmazonEC2Request
     {
@@ -34,7 +33,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The ID of the subnet you want to delete.
+        /// The ID of the subnet.
         ///  
         /// </summary>
         public string SubnetId

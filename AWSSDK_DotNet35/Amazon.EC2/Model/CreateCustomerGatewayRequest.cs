@@ -25,15 +25,15 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateCustomerGateway operation.
-    /// <para> Provides information to AWS about your customer gateway device. The customer gateway is the appliance at your end of the VPN
-    /// connection (compared to the VPN gateway, which is the device at the AWS side of the VPN connection). You can have a single active customer
-    /// gateway per AWS account (active means that you've created a VPN connection to use with the customer gateway). AWS might delete any customer
-    /// gateway that you create with this operation if you leave it inactive for an extended period of time. </para> <para> You must provide the
-    /// Internet-routable IP address of the customer gateway's external interface. The IP address must be static. </para> <para> You must also
-    /// provide the device's Border Gateway Protocol (BGP) Autonomous System Number (ASN). You can use an existing ASN assigned to your network. If
-    /// you don't have an ASN already, you can use a private ASN (in the 64512 - 65534 range). For more information about ASNs, go to <a
-    /// href="http://en.wikipedia.org/wiki/Autonomous_system_%28Internet%29" > http://en.wikipedia.org/wiki/Autonomous_system_%28Internet%29</a> .
-    /// </para>
+    /// <para>Provides information to AWS about your VPN customer gateway device. The customer gateway is the appliance at your end of the VPN
+    /// connection. (The device on the AWS side of the VPN connection is the virtual private gateway.) You must provide the Internet-routable IP
+    /// address of the customer gateway's external interface. The IP address must be static and can't be behind a device performing network address
+    /// translation (NAT).</para> <para>For devices that use Border Gateway Protocol (BGP), you can also provide the device's BGP Autonomous System
+    /// Number (ASN). You can use an existing ASN assigned to your network. If you don't have an ASN already, you can use a private ASN (in the
+    /// 64512 - 65534 range).</para> <para><b>NOTE:</b> Amazon EC2 supports all 2-byte ASN numbers in the range of 1 - 65534, with the exception of
+    /// 7224, which is reserved in the us-east-1 region, and 9059, which is reserved in the eu-west-1 region. </para> <para>For more information
+    /// about VPN customer gateways, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html" >Adding a Hardware Virtual
+    /// Private Gateway to Your VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i> .</para>
     /// </summary>
     public partial class CreateCustomerGatewayRequest : AmazonEC2Request
     {
@@ -43,7 +43,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The type of VPN connection this customer gateway supports.
+        /// The type of VPN connection that this customer gateway supports.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -68,7 +68,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The Internet-routable IP address for the customer gateway's outside interface. The address must be static
+        /// The Internet-routable IP address for the customer gateway's outside interface. The address must be static.
         ///  
         /// </summary>
         public string PublicIp
@@ -84,7 +84,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The customer gateway's Border Gateway Protocol (BGP) Autonomous System Number (ASN).
+        /// For devices that support BGP, the customer gateway's BGP ASN. Default: 65000
         ///  
         /// </summary>
         public int BgpAsn

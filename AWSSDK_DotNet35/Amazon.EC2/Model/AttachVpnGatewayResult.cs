@@ -22,28 +22,28 @@ using Amazon.Runtime;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para> </para>
+    /// 
     /// </summary>
     public partial class AttachVpnGatewayResult : AmazonWebServiceResponse
     {
         
-        private VpcAttachment vpcAttachement;
+        private VpcAttachment vpcAttachment;
 
 
         /// <summary>
-        /// 
+        /// Information about the attachment.
         ///  
         /// </summary>
-        public VpcAttachment VpcAttachement
+        public VpcAttachment VpcAttachment
         {
-            get { return this.vpcAttachement; }
-            set { this.vpcAttachement = value; }
+            get { return this.vpcAttachment; }
+            set { this.vpcAttachment = value; }
         }
 
-        // Check to see if VpcAttachement property is set
-        internal bool IsSetVpcAttachement()
+        // Check to see if VpcAttachment property is set
+        internal bool IsSetVpcAttachment()
         {
-            return this.vpcAttachement != null;
+            return this.vpcAttachment != null;
         }
     }
 }

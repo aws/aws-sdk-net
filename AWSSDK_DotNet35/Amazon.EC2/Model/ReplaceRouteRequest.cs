@@ -25,9 +25,10 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the ReplaceRoute operation.
-    /// <para> Replaces an existing route within a route table in a VPC. For more information about route tables, go to <a
-    /// href="http://docs.amazonwebservices.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html" >Route Tables</a> in the Amazon Virtual Private
-    /// Cloud User Guide. </para>
+    /// <para>Replaces an existing route within a route table in a VPC. You must provide only one of the following: Internet gateway, NAT instance,
+    /// or network interface.</para> <para>For more information about route tables, see <a
+    /// href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html" >Route Tables</a> in the <i>Amazon Virtual Private Cloud
+    /// User Guide</i> .</para>
     /// </summary>
     public partial class ReplaceRouteRequest : AmazonEC2Request
     {
@@ -39,7 +40,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The ID of the route table where the route will be replaced.
+        /// The ID of the route table.
         ///  
         /// </summary>
         public string RouteTableId
@@ -55,8 +56,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The CIDR address block used for the destination match. For example: <c>0.0.0.0/0</c>. The value you provide must match the CIDR of an
-        /// existing route in the table.
+        /// The CIDR address block used for the destination match. The value you provide must match the CIDR of an existing route in the table.
         ///  
         /// </summary>
         public string DestinationCidrBlock
@@ -72,7 +72,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The ID of a VPN or Internet gateway attached to your VPC.
+        /// The ID of an Internet gateway attached to your VPC.
         ///  
         /// </summary>
         public string GatewayId
@@ -102,6 +102,11 @@ namespace Amazon.EC2.Model
         {
             return this.instanceId != null;
         }
+
+        /// <summary>
+        /// The ID of a network interface.
+        ///  
+        /// </summary>
         public string NetworkInterfaceId
         {
             get { return this.networkInterfaceId; }

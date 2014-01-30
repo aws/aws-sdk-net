@@ -20,7 +20,8 @@ using System.IO;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>Disk Image
+    /// <summary>
+    /// <para>Describes a disk image.</para>
     /// </summary>
     public class DiskImage
     {
@@ -29,6 +30,11 @@ namespace Amazon.EC2.Model
         private string description;
         private VolumeDetail volume;
 
+
+        /// <summary>
+        /// 
+        ///  
+        /// </summary>
         public DiskImageDetail Image
         {
             get { return this.image; }
@@ -40,6 +46,11 @@ namespace Amazon.EC2.Model
         {
             return this.image != null;
         }
+
+        /// <summary>
+        /// 
+        ///  
+        /// </summary>
         public string Description
         {
             get { return this.description; }
@@ -51,6 +62,11 @@ namespace Amazon.EC2.Model
         {
             return this.description != null;
         }
+
+        /// <summary>
+        /// 
+        ///  
+        /// </summary>
         public VolumeDetail Volume
         {
             get { return this.volume; }

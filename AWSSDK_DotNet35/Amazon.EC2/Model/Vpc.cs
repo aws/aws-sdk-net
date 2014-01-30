@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para> The Vpc data type. </para>
+    /// <para>Describes a VPC.</para>
     /// </summary>
     public class Vpc
     {
@@ -36,7 +36,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// Specifies the ID of the VPC.
+        /// The ID of the VPC.
         ///  
         /// </summary>
         public string VpcId
@@ -52,7 +52,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Describes the current state of the VPC. The state of the subnet may be either <c>pending</c> or <c>available</c>.
+        /// The current state of the VPC.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -77,7 +77,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Specifies the CIDR block the VPC covers.
+        /// The CIDR block for the VPC.
         ///  
         /// </summary>
         public string CidrBlock
@@ -93,8 +93,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Specifies the ID of the set of DHCP options associated with the VPC. Contains a value of <c>default</c> if the default options are
-        /// associated with the VPC.
+        /// The ID of the set of DHCP options you've associated with the VPC (or <c>default</c> if the default options are associated with the VPC).
         ///  
         /// </summary>
         public string DhcpOptionsId
@@ -110,7 +109,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// A list of tags for the VPC.
+        /// Any tags assigned to the VPC.
         ///  
         /// </summary>
         public List<Tag> Tags
@@ -151,7 +150,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// 
+        /// Indicates whether the VPC is the default VPC.
         ///  
         /// </summary>
         public bool IsDefault

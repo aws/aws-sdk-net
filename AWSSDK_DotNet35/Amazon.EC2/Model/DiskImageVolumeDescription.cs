@@ -20,7 +20,8 @@ using System.IO;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>Disk Image Volume Description
+    /// <summary>
+    /// 
     /// </summary>
     public class DiskImageVolumeDescription
     {
@@ -28,6 +29,11 @@ namespace Amazon.EC2.Model
         private long? size;
         private string id;
 
+
+        /// <summary>
+        /// The size of the volume.
+        ///  
+        /// </summary>
         public long Size
         {
             get { return this.size ?? default(long); }
@@ -39,6 +45,11 @@ namespace Amazon.EC2.Model
         {
             return this.size.HasValue;
         }
+
+        /// <summary>
+        /// The volume identifier.
+        ///  
+        /// </summary>
         public string Id
         {
             get { return this.id; }

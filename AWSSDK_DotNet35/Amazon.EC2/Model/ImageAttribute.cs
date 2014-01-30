@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para> Represents an attribute of an <i>Amazon Machine Image</i> (AMI). </para>
+    /// <para>Describes an image attribute.</para>
     /// </summary>
     public class ImageAttribute
     {
@@ -32,11 +32,12 @@ namespace Amazon.EC2.Model
         private string kernelId;
         private string ramdiskId;
         private string description;
+        private string sriovNetSupport;
         private List<BlockDeviceMapping> blockDeviceMappings = new List<BlockDeviceMapping>();
 
 
         /// <summary>
-        /// The ID of the associated AMI.
+        /// The ID of the AMI.
         ///  
         /// </summary>
         public string ImageId
@@ -52,7 +53,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Launch permissions for the associated AMI.
+        /// One or more launch permissions.
         ///  
         /// </summary>
         public List<LaunchPermission> LaunchPermissions
@@ -68,7 +69,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Product codes for the associated AMI.
+        /// One or more product codes.
         ///  
         /// </summary>
         public List<ProductCode> ProductCodes
@@ -84,7 +85,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Kernel ID of the associated AMI.
+        /// The kernel ID.
         ///  
         /// </summary>
         public string KernelId
@@ -100,7 +101,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Ramdisk ID of the associated AMI.
+        /// The RAM disk ID.
         ///  
         /// </summary>
         public string RamdiskId
@@ -116,7 +117,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// User-created description of the associated AMI.
+        /// A description for the AMI.
         ///  
         /// </summary>
         public string Description
@@ -132,7 +133,23 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Block device mappings for the associated AMI.
+        /// 
+        ///  
+        /// </summary>
+        public string SriovNetSupport
+        {
+            get { return this.sriovNetSupport; }
+            set { this.sriovNetSupport = value; }
+        }
+
+        // Check to see if SriovNetSupport property is set
+        internal bool IsSetSriovNetSupport()
+        {
+            return this.sriovNetSupport != null;
+        }
+
+        /// <summary>
+        /// One or more block device mapping entries.
         ///  
         /// </summary>
         public List<BlockDeviceMapping> BlockDeviceMappings

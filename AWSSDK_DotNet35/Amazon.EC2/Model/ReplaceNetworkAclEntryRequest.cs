@@ -25,8 +25,9 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the ReplaceNetworkAclEntry operation.
-    /// <para> Replaces an entry (i.e., rule) in a network ACL. For more information about network ACLs, go to Network ACLs in the Amazon Virtual
-    /// Private Cloud User Guide. </para>
+    /// <para>Replaces an entry (rule) in a network ACL. For more information about network ACLs, see <a
+    /// href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html" >Network ACLs</a> in the <i>Amazon Virtual Private Cloud User
+    /// Guide</i> .</para>
     /// </summary>
     public partial class ReplaceNetworkAclEntryRequest : AmazonEC2Request
     {
@@ -41,7 +42,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// ID of the ACL where the entry will be replaced.
+        /// The ID of the ACL.
         ///  
         /// </summary>
         public string NetworkAclId
@@ -57,7 +58,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Rule number of the entry to replace.
+        /// The rule number of the entry to replace.
         ///  
         /// </summary>
         public int RuleNumber
@@ -73,7 +74,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// IP protocol the rule applies to. Valid Values: <c>tcp</c>, <c>udp</c>, <c>icmp</c> or an IP protocol number.
+        /// The IP protocol. You can specify <c>all</c> or <c>-1</c> to mean all protocols.
         ///  
         /// </summary>
         public string Protocol
@@ -89,7 +90,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Whether to allow or deny traffic that matches the rule.
+        /// Indicates whether to allow or deny the traffic that matches the rule.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -114,7 +115,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Whether this rule applies to egress traffic from the subnet (<c>true</c>) or ingress traffic (<c>false</c>).
+        /// Indicates whether to replace the egress rule. Default: If no value is specified, we replace the ingress rule.
         ///  
         /// </summary>
         public bool Egress
@@ -130,7 +131,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The CIDR range to allow or deny, in CIDR notation (e.g., <c>172.16.0.0/24</c>).
+        /// The network range to allow or deny, in CIDR notation.
         ///  
         /// </summary>
         public string CidrBlock
@@ -146,7 +147,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// ICMP values.
+        /// ICMP protocol: The ICMP type and code.
         ///  
         /// </summary>
         public IcmpTypeCode IcmpTypeCode
@@ -162,7 +163,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Port ranges.
+        /// TCP or UDP protocols: The range of ports the rule applies to.
         ///  
         /// </summary>
         public PortRange PortRange

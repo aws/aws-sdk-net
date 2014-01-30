@@ -21,13 +21,19 @@ using Amazon.Runtime;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>Copy Snapshot Result
+    /// <summary>
+    /// 
     /// </summary>
     public partial class CopySnapshotResult : AmazonWebServiceResponse
     {
         
         private string snapshotId;
 
+
+        /// <summary>
+        /// The ID of the new snapshot.
+        ///  
+        /// </summary>
         public string SnapshotId
         {
             get { return this.snapshotId; }

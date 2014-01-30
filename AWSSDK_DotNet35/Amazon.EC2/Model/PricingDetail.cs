@@ -20,7 +20,8 @@ using System.IO;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>Pricing Detail
+    /// <summary>
+    /// <para>Describes a Reserved Instance offering.</para>
     /// </summary>
     public class PricingDetail
     {
@@ -28,6 +29,11 @@ namespace Amazon.EC2.Model
         private double? price;
         private int? count;
 
+
+        /// <summary>
+        /// The price per instance.
+        ///  
+        /// </summary>
         public double Price
         {
             get { return this.price ?? default(double); }
@@ -39,6 +45,11 @@ namespace Amazon.EC2.Model
         {
             return this.price.HasValue;
         }
+
+        /// <summary>
+        /// The number of instances available for the price.
+        ///  
+        /// </summary>
         public int Count
         {
             get { return this.count ?? default(int); }

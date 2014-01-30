@@ -25,9 +25,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the CancelBundleTask operation.
-    /// <para> CancelBundleTask operation cancels a pending or in-progress bundling task. This is an asynchronous call and it make take a while for
-    /// the task to be canceled. If a task is canceled while it is storing items, there may be parts of the incomplete AMI stored in S3. It is up to
-    /// the caller to clean up these parts from S3. </para>
+    /// <para>Cancels a bundling operation for an instance store-backed Windows instance.</para>
     /// </summary>
     public partial class CancelBundleTaskRequest : AmazonEC2Request
     {
@@ -35,7 +33,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The ID of the bundle task to cancel.
+        /// The ID of the bundle task.
         ///  
         /// </summary>
         public string BundleId

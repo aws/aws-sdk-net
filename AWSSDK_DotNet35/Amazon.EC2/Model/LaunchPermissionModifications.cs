@@ -20,7 +20,8 @@ using System.IO;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>Launch Permission Modifications
+    /// <summary>
+    /// <para>Describes a launch permission modification.</para>
     /// </summary>
     public class LaunchPermissionModifications
     {
@@ -28,6 +29,11 @@ namespace Amazon.EC2.Model
         private List<LaunchPermission> add = new List<LaunchPermission>();
         private List<LaunchPermission> remove = new List<LaunchPermission>();
 
+
+        /// <summary>
+        /// The AWS account ID to add to the list of launch permissions for the AMI.
+        ///  
+        /// </summary>
         public List<LaunchPermission> Add
         {
             get { return this.add; }
@@ -39,6 +45,11 @@ namespace Amazon.EC2.Model
         {
             return this.add.Count > 0;
         }
+
+        /// <summary>
+        /// The AWS account ID to remove from the list of launch permissions for the AMI.
+        ///  
+        /// </summary>
         public List<LaunchPermission> Remove
         {
             get { return this.remove; }

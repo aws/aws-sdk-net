@@ -20,7 +20,8 @@ using System.IO;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>Instance Export Details
+    /// <summary>
+    /// <para>Describes an instance export task.</para>
     /// </summary>
     public class InstanceExportDetails
     {
@@ -28,6 +29,11 @@ namespace Amazon.EC2.Model
         private string instanceId;
         private ExportEnvironment targetEnvironment;
 
+
+        /// <summary>
+        /// The ID of the resource being exported.
+        ///  
+        /// </summary>
         public string InstanceId
         {
             get { return this.instanceId; }
@@ -39,6 +45,20 @@ namespace Amazon.EC2.Model
         {
             return this.instanceId != null;
         }
+
+        /// <summary>
+        /// The target virtualization environment.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>citrix, vmware, microsoft</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
         public ExportEnvironment TargetEnvironment
         {
             get { return this.targetEnvironment; }

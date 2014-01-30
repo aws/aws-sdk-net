@@ -25,11 +25,17 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateSnapshot operation.
-    /// <para> Create a snapshot of the volume identified by volume ID. A volume does not have to be detached at the time the snapshot is taken.
-    /// </para> <para><b>NOTE:</b> Snapshot creation requires that the system is in a consistent state. For instance, this means that if taking a
-    /// snapshot of a database, the tables must be read-only locked to ensure that the snapshot will not contain a corrupted version of the
-    /// database. Therefore, be careful when using this API to ensure that the system remains in the consistent state until the create snapshot
-    /// status has returned. </para>
+    /// <para>Creates a snapshot of an Amazon EBS volume and stores it in Amazon S3. You can use snapshots for backups, to make copies of Amazon EBS
+    /// volumes, and to save data before shutting down an instance.</para> <para>When a snapshot is created, any AWS Marketplace product codes that
+    /// are associated with the source volume are propagated to the snapshot.</para> <para>You can take a snapshot of an attached volume that is in
+    /// use. However, snapshots only capture data that has been written to your Amazon EBS volume at the time the snapshot command is issued; this
+    /// may exclude any data that has been cached by any applications or the operating system. If you can pause any file writes to the volume long
+    /// enough to take a snapshot, your snapshot should be complete. However, if you cannot pause all file writes to the volume, you should unmount
+    /// the volume from within the instance, issue the snapshot command, and then remount the volume to ensure a consistent and complete snapshot.
+    /// You may remount and use your volume while the snapshot status is <c>pending</c> .</para> <para>To create a snapshot for Amazon EBS volumes
+    /// that serve as root devices, you should stop the instance before taking the snapshot.</para> <para>For more information, see <a
+    /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-creating-snapshot.html" >Creating an Amazon EBS Snapshot</a> in the <i>Amazon
+    /// Elastic Compute Cloud User Guide</i> .</para>
     /// </summary>
     public partial class CreateSnapshotRequest : AmazonEC2Request
     {
@@ -38,7 +44,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The ID of the volume from which to create the snapshot.
+        /// The ID of the Amazon EBS volume.
         ///  
         /// </summary>
         public string VolumeId
@@ -54,7 +60,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The description for the new snapshot.
+        /// A description for the snapshot.
         ///  
         /// </summary>
         public string Description

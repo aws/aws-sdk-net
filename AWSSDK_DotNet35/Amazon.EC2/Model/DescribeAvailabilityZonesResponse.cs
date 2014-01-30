@@ -28,7 +28,7 @@ namespace Amazon.EC2.Model
     {
         /// <summary>
         /// Gets and sets the DescribeAvailabilityZonesResult property.
-        /// The result of describing the Amazon EC2 availability zones in the current region.
+        /// 
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DescribeAvailabilityZonesResult class are now available on the DescribeAvailabilityZonesResponse class. You should use the properties on DescribeAvailabilityZonesResponse instead of accessing them through DescribeAvailabilityZonesResult.")]
         public DescribeAvailabilityZonesResult DescribeAvailabilityZonesResult

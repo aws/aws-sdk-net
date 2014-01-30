@@ -28,7 +28,7 @@ namespace Amazon.SQS.Model
     {
         /// <summary>
         /// Gets and sets the GetQueueUrlResult property.
-        /// 
+        /// For more information, see Responses in the Amazon SQS Developer Guide.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the GetQueueUrlResult class are now available on the GetQueueUrlResponse class. You should use the properties on GetQueueUrlResponse instead of accessing them through GetQueueUrlResult.")]
         public GetQueueUrlResult GetQueueUrlResult

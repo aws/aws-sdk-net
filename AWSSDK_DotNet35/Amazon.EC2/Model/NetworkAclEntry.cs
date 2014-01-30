@@ -20,7 +20,8 @@ using System.IO;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>Network Acl Entry
+    /// <summary>
+    /// <para>Describes an entry in a network ACL.</para>
     /// </summary>
     public class NetworkAclEntry
     {
@@ -33,6 +34,11 @@ namespace Amazon.EC2.Model
         private IcmpTypeCode icmpTypeCode;
         private PortRange portRange;
 
+
+        /// <summary>
+        /// The rule number for the entry. ACL entries are processed in ascending order by rule number.
+        ///  
+        /// </summary>
         public int RuleNumber
         {
             get { return this.ruleNumber ?? default(int); }
@@ -44,6 +50,11 @@ namespace Amazon.EC2.Model
         {
             return this.ruleNumber.HasValue;
         }
+
+        /// <summary>
+        /// The protocol. A value of <c>-1</c> means all protocols.
+        ///  
+        /// </summary>
         public string Protocol
         {
             get { return this.protocol; }
@@ -55,6 +66,20 @@ namespace Amazon.EC2.Model
         {
             return this.protocol != null;
         }
+
+        /// <summary>
+        /// Indicates whether to allow or deny the traffic that matches the rule.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>allow, deny</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
         public RuleAction RuleAction
         {
             get { return this.ruleAction; }
@@ -66,6 +91,11 @@ namespace Amazon.EC2.Model
         {
             return this.ruleAction != null;
         }
+
+        /// <summary>
+        /// Indicates whether the rule is an egress rule (applied to traffic leaving the subnet).
+        ///  
+        /// </summary>
         public bool Egress
         {
             get { return this.egress ?? default(bool); }
@@ -77,6 +107,11 @@ namespace Amazon.EC2.Model
         {
             return this.egress.HasValue;
         }
+
+        /// <summary>
+        /// The network range to allow or deny, in CIDR notation.
+        ///  
+        /// </summary>
         public string CidrBlock
         {
             get { return this.cidrBlock; }
@@ -90,7 +125,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// 
+        /// ICMP protocol: The ICMP type and code.
         ///  
         /// </summary>
         public IcmpTypeCode IcmpTypeCode
@@ -106,7 +141,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// 
+        /// TCP or UDP protocols: The range of ports the rule applies to.
         ///  
         /// </summary>
         public PortRange PortRange

@@ -28,7 +28,7 @@ namespace Amazon.EC2.Model
     {
         /// <summary>
         /// Gets and sets the DetachVolumeResult property.
-        /// The result of detaching an EBS volume from an instance.
+        /// 
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DetachVolumeResult class are now available on the DetachVolumeResponse class. You should use the properties on DetachVolumeResponse instead of accessing them through DetachVolumeResult.")]
         public DetachVolumeResult DetachVolumeResult

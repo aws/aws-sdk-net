@@ -25,9 +25,11 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the BundleInstance operation.
-    /// <para> The BundleInstance operation request that an instance is bundled the next time it boots. The bundling process creates a new image
-    /// from a running instance and stores the AMI data in S3. Once bundled, the image must be registered in the normal way using the RegisterImage
-    /// API. </para>
+    /// <para>Bundles an Amazon instance store-backed Windows instance.</para> <para>During bundling, only the root device volume (C:\) is bundled.
+    /// Data on other instance store volumes is not preserved.</para> <para><b>NOTE:</b> This procedure is not applicable for Linux/Unix instances
+    /// or Windows instances that are backed by Amazon EBS. </para> <para>For more information, see <a
+    /// href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/Creating_InstanceStoreBacked_WinAMI.html" >Creating an Instance Store-Backed
+    /// Windows AMI</a> .</para>
     /// </summary>
     public partial class BundleInstanceRequest : AmazonEC2Request
     {
@@ -52,7 +54,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// 
+        /// The bucket in which to store the AMI. You can specify a bucket that you already own or a new bucket that Amazon EC2 creates on your behalf.
+        /// If you specify a bucket that belongs to someone else, Amazon EC2 returns an error.
         ///  
         /// </summary>
         public Storage Storage

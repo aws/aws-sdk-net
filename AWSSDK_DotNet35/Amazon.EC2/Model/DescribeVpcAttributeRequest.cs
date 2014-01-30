@@ -25,13 +25,18 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeVpcAttribute operation.
-    /// 
+    /// <para>Describes the specified attribute of the specified VPC. You can specify only one attribute at a time.</para>
     /// </summary>
     public partial class DescribeVpcAttributeRequest : AmazonEC2Request
     {
         private string vpcId;
         private VpcAttributeName attribute;
 
+
+        /// <summary>
+        /// The ID of the VPC.
+        ///  
+        /// </summary>
         public string VpcId
         {
             get { return this.vpcId; }
@@ -43,6 +48,20 @@ namespace Amazon.EC2.Model
         {
             return this.vpcId != null;
         }
+
+        /// <summary>
+        /// The VPC attribute.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>enableDnsSupport, enableDnsHostnames</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
         public VpcAttributeName Attribute
         {
             get { return this.attribute; }

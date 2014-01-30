@@ -20,7 +20,8 @@ using System.IO;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>Instance Network Interface Association
+    /// <summary>
+    /// <para>Describes association information for an Elastic IP address.</para>
     /// </summary>
     public class InstanceNetworkInterfaceAssociation
     {
@@ -29,6 +30,11 @@ namespace Amazon.EC2.Model
         private string publicDnsName;
         private string ipOwnerId;
 
+
+        /// <summary>
+        /// The address of the Elastic IP address bound to the network interface.
+        ///  
+        /// </summary>
         public string PublicIp
         {
             get { return this.publicIp; }
@@ -40,6 +46,11 @@ namespace Amazon.EC2.Model
         {
             return this.publicIp != null;
         }
+
+        /// <summary>
+        /// The public DNS name.
+        ///  
+        /// </summary>
         public string PublicDnsName
         {
             get { return this.publicDnsName; }
@@ -51,6 +62,11 @@ namespace Amazon.EC2.Model
         {
             return this.publicDnsName != null;
         }
+
+        /// <summary>
+        /// The ID of the owner of the Elastic IP address.
+        ///  
+        /// </summary>
         public string IpOwnerId
         {
             get { return this.ipOwnerId; }

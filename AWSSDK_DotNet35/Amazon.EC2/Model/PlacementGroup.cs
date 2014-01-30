@@ -21,9 +21,7 @@ using System.IO;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para> Represents a placement group into which multiple Amazon EC2 instances can be launched. A placement group ensures that Amazon EC2
-    /// instances are physically located close enough to support HPC features, such as higher IO network connections between instances in the group.
-    /// </para>
+    /// <para>Describes a placement group.</para>
     /// </summary>
     public class PlacementGroup
     {
@@ -34,7 +32,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The name of this <c>PlacementGroup</c>.
+        /// The name of the placement group.
         ///  
         /// </summary>
         public string GroupName
@@ -50,7 +48,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The strategy to use when allocating Amazon EC2 instances for the <c>PlacementGroup</c>.
+        /// The placement strategy.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -75,7 +73,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The state of this <c>PlacementGroup</c>.
+        /// The state of the placement group.
         ///  
         /// <para>
         /// <b>Constraints:</b>

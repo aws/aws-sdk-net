@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para> A group of Amazon EC2 Reserved Instances purchased by this account. </para>
+    /// <para>Describes a Reserved Instance.</para>
     /// </summary>
     public class ReservedInstances
     {
@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The unique ID of the Reserved Instances purchase.
+        /// The ID of the Reserved Instance.
         ///  
         /// </summary>
         public string ReservedInstancesId
@@ -61,14 +61,14 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The instance type on which the Reserved Instances can be used.
+        /// The instance type on which the Reserved Instance can be used.
         ///  
         /// <para>
         /// <b>Constraints:</b>
         /// <list type="definition">
         ///     <item>
         ///         <term>Allowed Values</term>
-        ///         <description>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, m3.xlarge, m3.2xlarge, c1.medium, c1.xlarge, hi1.4xlarge, hs1.8xlarge, cc1.4xlarge, cc2.8xlarge, cg1.4xlarge, cr1.8xlarge</description>
+        ///         <description>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m3.xlarge, m3.2xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, cr1.8xlarge, i2.xlarge, i2.2xlarge, i2.4xlarge, i2.8xlarge, hi1.4xlarge, hs1.8xlarge, c1.medium, c1.xlarge, c3.large, c3.xlarge, c3.2xlarge, c3.4xlarge, c3.8xlarge, cc1.4xlarge, cc2.8xlarge, g2.2xlarge, cg1.4xlarge</description>
         ///     </item>
         /// </list>
         /// </para>
@@ -86,7 +86,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The Availability Zone in which the Reserved Instances can be used.
+        /// The Availability Zone in which the Reserved Instance can be used.
         ///  
         /// </summary>
         public string AvailabilityZone
@@ -102,7 +102,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The date and time the Reserved Instances started.
+        /// The date and time the Reserved Instance started.
         ///  
         /// </summary>
         public DateTime Start
@@ -116,6 +116,11 @@ namespace Amazon.EC2.Model
         {
             return this.start.HasValue;
         }
+
+        /// <summary>
+        /// The time when the Reserved Instance expires.
+        ///  
+        /// </summary>
         public DateTime End
         {
             get { return this.end ?? default(DateTime); }
@@ -129,7 +134,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The duration of the Reserved Instances, in seconds.
+        /// The duration of the Reserved Instance, in seconds.
         ///  
         /// </summary>
         public long Duration
@@ -145,7 +150,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The usage price of the Reserved Instances, per hour.
+        /// The usage price of the Reserved Instance, per hour.
         ///  
         /// </summary>
         public float UsagePrice
@@ -161,7 +166,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The purchase price of the Reserved Instances.
+        /// The purchase price of the Reserved Instance.
         ///  
         /// </summary>
         public float FixedPrice
@@ -193,7 +198,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The Reserved Instances product description (ex: Windows or Unix/Linux).
+        /// The Reserved Instance description.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -218,7 +223,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The state of the Reserved Instances purchase.
+        /// The state of the Reserved Instance purchase.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -243,7 +248,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// A list of tags for the ReservedInstances.
+        /// Any tags assigned to the resource.
         ///  
         /// </summary>
         public List<Tag> Tags
@@ -259,7 +264,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The tenancy of the reserved instance (ex: default or dedicated).
+        /// The tenancy of the reserved instance.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -284,7 +289,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The currency of the reserved instance. Specified using ISO 4217 standard (e.g., USD, JPY).
+        /// The currency of the Reserved Instance. It's specified using ISO 4217 standard currency codes. At this time, the only supported currency is
+        /// <c>USD</c>.
         ///  
         /// <para>
         /// <b>Constraints:</b>

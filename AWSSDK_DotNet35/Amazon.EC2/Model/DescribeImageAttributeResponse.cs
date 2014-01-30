@@ -28,7 +28,7 @@ namespace Amazon.EC2.Model
     {
         /// <summary>
         /// Gets and sets the DescribeImageAttributeResult property.
-        /// The result of describing an AMI attribute.
+        /// 
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DescribeImageAttributeResult class are now available on the DescribeImageAttributeResponse class. You should use the properties on DescribeImageAttributeResponse instead of accessing them through DescribeImageAttributeResult.")]
         public DescribeImageAttributeResult DescribeImageAttributeResult

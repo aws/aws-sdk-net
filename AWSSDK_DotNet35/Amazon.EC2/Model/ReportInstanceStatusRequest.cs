@@ -25,7 +25,9 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the ReportInstanceStatus operation.
-    /// 
+    /// <para>Submits feedback about the status of an instance. The instance must be in the <c>running</c> state. If your experience with the
+    /// instance differs from the instance status returned by DescribeInstanceStatus, use ReportInstanceStatus to report your experience with the
+    /// instance. Amazon EC2 collects this information to improve the accuracy of status checks.</para>
     /// </summary>
     public partial class ReportInstanceStatusRequest : AmazonEC2Request
     {
@@ -36,6 +38,11 @@ namespace Amazon.EC2.Model
         private List<string> reasonCodes = new List<string>();
         private string description;
 
+
+        /// <summary>
+        /// One or more instances.
+        ///  
+        /// </summary>
         public List<string> Instances
         {
             get { return this.instances; }
@@ -47,6 +54,20 @@ namespace Amazon.EC2.Model
         {
             return this.instances.Count > 0;
         }
+
+        /// <summary>
+        /// The status of all instances listed.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>ok, impaired</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
         public ReportStatusType Status
         {
             get { return this.status; }
@@ -58,6 +79,11 @@ namespace Amazon.EC2.Model
         {
             return this.status != null;
         }
+
+        /// <summary>
+        /// The time at which the reported instance health state began.
+        ///  
+        /// </summary>
         public DateTime StartTime
         {
             get { return this.startTime ?? default(DateTime); }
@@ -69,6 +95,11 @@ namespace Amazon.EC2.Model
         {
             return this.startTime.HasValue;
         }
+
+        /// <summary>
+        /// The time at which the reported instance health state ended.
+        ///  
+        /// </summary>
         public DateTime EndTime
         {
             get { return this.endTime ?? default(DateTime); }
@@ -80,6 +111,17 @@ namespace Amazon.EC2.Model
         {
             return this.endTime.HasValue;
         }
+
+        /// <summary>
+        /// One or more reason codes that describes the health state of your instance. <ul> <li><c>instance-stuck-in-state</c>: My instance is stuck in
+        /// a state.</li> <li><c>unresponsive</c>: My instance is unresponsive.</li> <li><c>not-accepting-credentials</c>: My instance is not accepting
+        /// my credentials.</li> <li><c>password-not-available</c>: A password is not available for my instance.</li> <li><c>performance-network</c>: My
+        /// instance is experiencing performance problems which I believe are network related.</li> <li><c>performance-instance-store</c>: My instance
+        /// is experiencing performance problems which I believe are related to the instance stores.</li> <li><c>performance-ebs-volume</c>: My instance
+        /// is experiencing performance problems which I believe are related to an EBS volume.</li> <li><c>performance-other</c>: My instance is
+        /// experiencing performance problems.</li> <li><c>other</c>: [explain using the description parameter]</li> </ul>
+        ///  
+        /// </summary>
         public List<string> ReasonCodes
         {
             get { return this.reasonCodes; }
@@ -91,6 +133,11 @@ namespace Amazon.EC2.Model
         {
             return this.reasonCodes.Count > 0;
         }
+
+        /// <summary>
+        /// Descriptive text about the health state of your instance.
+        ///  
+        /// </summary>
         public string Description
         {
             get { return this.description; }

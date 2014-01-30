@@ -25,8 +25,8 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DisassociateAddress operation.
-    /// <para> The DisassociateAddress operation disassociates the specified elastic IP address from the instance to which it is assigned. This is
-    /// an idempotent operation. If you enter it more than once, Amazon EC2 does not return an error. </para>
+    /// <para>Disassociates an Elastic IP address from the instance or network interface it's associated with.</para> <para>This is an idempotent
+    /// operation. If you perform the operation more than once, Amazon EC2 doesn't return an error.</para>
     /// </summary>
     public partial class DisassociateAddressRequest : AmazonEC2Request
     {
@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The elastic IP address that you are disassociating from the instance.
+        /// [EC2-Classic] The Elastic IP address.
         ///  
         /// </summary>
         public string PublicIp
@@ -51,7 +51,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Association ID corresponding to the VPC elastic IP address you want to disassociate.
+        /// [EC2-VPC] The association ID.
         ///  
         /// </summary>
         public string AssociationId

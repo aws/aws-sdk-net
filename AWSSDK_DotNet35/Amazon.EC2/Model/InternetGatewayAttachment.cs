@@ -20,7 +20,8 @@ using System.IO;
 
 namespace Amazon.EC2.Model
 {
-    /// <summary>Internet Gateway Attachment
+    /// <summary>
+    /// <para>Describes the attachment of a VPC to an Internet gateway.</para>
     /// </summary>
     public class InternetGatewayAttachment
     {
@@ -28,6 +29,11 @@ namespace Amazon.EC2.Model
         private string vpcId;
         private AttachmentStatus state;
 
+
+        /// <summary>
+        /// The ID of the VPC.
+        ///  
+        /// </summary>
         public string VpcId
         {
             get { return this.vpcId; }
@@ -39,6 +45,20 @@ namespace Amazon.EC2.Model
         {
             return this.vpcId != null;
         }
+
+        /// <summary>
+        /// The current state of the attachment.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>attaching, attached, detaching, detached</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
         public AttachmentStatus State
         {
             get { return this.state; }

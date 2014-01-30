@@ -25,7 +25,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteKeyPair operation.
-    /// <para> The DeleteKeyPair operation deletes a key pair. </para>
+    /// <para>Deletes the specified key pair, by removing the public key from Amazon EC2.</para>
     /// </summary>
     public partial class DeleteKeyPairRequest : AmazonEC2Request
     {
@@ -33,7 +33,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The name of the Amazon EC2 key pair to delete.
+        /// The name of the key pair.
         ///  
         /// </summary>
         public string KeyName

@@ -25,26 +25,9 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeImages operation.
-    /// <para> The DescribeImages operation returns information about AMIs, AKIs, and ARIs available to the user. Information returned includes
-    /// image type, product codes, architecture, and kernel and RAM disk IDs. Images available to the user include public images available for any
-    /// user to launch, private images owned by the user making the request, and private images owned by other users for which the user has explicit
-    /// launch permissions. </para> <para> Launch permissions fall into three categories: </para>
-    /// <ul>
-    /// <li> <b>Public:</b> The owner of the AMI granted launch permissions for the AMI to the all group. All users have launch permissions for
-    /// these AMIs. </li>
-    /// <li> <b>Explicit:</b> The owner of the AMI granted launch permissions to a specific user. </li>
-    /// <li> <b>Implicit:</b> A user has implicit launch permissions for all AMIs he or she owns. </li>
-    /// 
-    /// </ul>
-    /// <para> The list of AMIs returned can be modified by specifying AMI IDs, AMI owners, or users with launch permissions. If no options are
-    /// specified, Amazon EC2 returns all AMIs for which the user has launch permissions. </para> <para> If you specify one or more AMI IDs, only
-    /// AMIs that have the specified IDs are returned. If you specify an invalid AMI ID, a fault is returned. If you specify an AMI ID for which you
-    /// do not have access, it will not be included in the returned results. </para> <para> If you specify one or more AMI owners, only AMIs from
-    /// the specified owners and for which you have access are returned. The results can include the account IDs of the specified owners, amazon for
-    /// AMIs owned by Amazon or self for AMIs that you own. </para> <para> If you specify a list of executable users, only users that have launch
-    /// permissions for the AMIs are returned. You can specify account IDs (if you own the AMI(s)), self for AMIs for which you own or have explicit
-    /// permissions, or all for public AMIs. </para> <para><b>NOTE:</b> Deregistered images are included in the returned results for an unspecified
-    /// interval after deregistration. </para>
+    /// <para>Describes one or more of the images (AMIs, AKIs, and ARIs) available to you. Images available to you include public images, private
+    /// images that you own, and private images owned by other AWS accounts but for which you have explicit launch permissions.</para>
+    /// <para><b>NOTE:</b> Deregistered images are included in the returned results for an unspecified interval after deregistration. </para>
     /// </summary>
     public partial class DescribeImagesRequest : AmazonEC2Request
     {
@@ -55,7 +38,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// An optional list of the AMI IDs to describe. If not specified, all AMIs will be described.
+        /// One or more image IDs. Default: Describes all images available to you.
         ///  
         /// </summary>
         public List<string> ImageIds
@@ -71,10 +54,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// An optional list of owners by which to scope the described AMIs. Valid values are: <ul> <li> <c>self</c> : AMIs owned by you </li> <li>
-        /// <i>AWS account ID</i> : AMIs owned by this account ID </li> <li> <c>aws-marketplace</c> : AMIs owned by the AWS Marketplace </li> <li>
-        /// <c>amazon</c> : AMIs owned by Amazon </li> <li> <c>all</c> : Do not scope the AMIs returned by owner </li> </ul> The values <c>self</c>,
-        /// <c>aws-marketplace</c>, <c>amazon</c>, and <c>all</c> are literals.
+        /// Filters the images by the owner. Specify an AWS account ID, <c>amazon</c> (owner is Amazon), <c>aws-marketplace</c> (owner is AWS
+        /// Marketplace), <c>self</c> (owner is the sender of the request), or <c>all</c> (all owners).
         ///  
         /// </summary>
         public List<string> Owners
@@ -90,9 +71,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// An optional list of users whose launch permissions will be used to scope the described AMIs. Valid values are: <ul> <li> <c>self</c> : AMIs
-        /// for which you have explicit launch permissions </li> <li> <c>AWS account ID</c> : AMIs for which this account ID has launch permissions
-        /// </li> <li> <c>all</c> : AMIs that have public launch permissions </li> </ul> The values <c>self</c> and <c>all</c> are literals.
+        /// Scopes the images by users with explicit launch permissions. Specify an AWS account ID, <c>self</c> (the sender of the request), or
+        /// <c>all</c> (public AMIs).
         ///  
         /// </summary>
         public List<string> ExecutableUsers
@@ -108,8 +88,30 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// A list of filters used to match properties for Images. For a complete reference to the available filter keys for this operation, see the <a
-        /// href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon EC2 API reference</a>.
+        /// One or more filters. <ul> <li> <c>architecture</c> - The image architecture (<c>i386</c> | <c>x86_64</c>). </li> <li>
+        /// <c>block-device-mapping.delete-on-termination</c> - A Boolean value that indicates whether the Amazon EBS volume is deleted on instance
+        /// termination. </li> <li> <c>block-device-mapping.device-name</c> - The device name for the Amazon EBS volume (for example, <c>/dev/sdh</c>).
+        /// </li> <li> <c>block-device-mapping.snapshot-id</c> - The ID of the snapshot used for the Amazon EBS volume. </li> <li>
+        /// <c>block-device-mapping.volume-size</c> - The volume size of the Amazon EBS volume, in GiB. </li> <li>
+        /// <c>block-device-mapping.volume-type</c> - The volume type of the Amazon EBS volume (<c>standard</c> | <c>io1</c>). </li> <li>
+        /// <c>description</c> - The description of the image (provided during image creation). </li> <li> <c>hypervisor</c> - The hypervisor type
+        /// (<c>ovm</c> | <c>xen</c>). </li> <li> <c>image-id</c> - The ID of the image. </li> <li> <c>image-type</c> - The image type (<c>machine</c> |
+        /// <c>kernel</c> | <c>ramdisk</c>). </li> <li> <c>is-public</c> - A Boolean that indicates whether the image is public. </li> <li>
+        /// <c>kernel-id</c> - The kernel ID. </li> <li> <c>manifest-location</c> - The location of the image manifest. </li> <li> <c>name</c> - The
+        /// name of the AMI (provided during image creation). </li> <li> <c>owner-alias</c> - The AWS account alias (for example, <c>amazon</c>). </li>
+        /// <li> <c>owner-id</c> - The AWS account ID of the image owner. </li> <li> <c>platform</c> - The platform. To only list Windows-based AMIs,
+        /// use <c>windows</c>. </li> <li> <c>product-code</c> - The product code. </li> <li> <c>product-code.type</c> - The type of the product code
+        /// (<c>devpay</c> | <c>marketplace</c>). </li> <li> <c>ramdisk-id</c> - The RAM disk ID. </li> <li> <c>root-device-name</c> - The name of the
+        /// root device volume (for example, <c>/dev/sda1</c>). </li> <li> <c>root-device-type</c> - The type of the root device volume (<c>ebs</c> |
+        /// <c>instance-store</c>). </li> <li> <c>state</c> - The state of the image (<c>available</c> | <c>pending</c> | <c>failed</c>). </li> <li>
+        /// <c>state-reason-code</c> - The reason code for the state change. </li> <li> <c>state-reason-message</c> - The message for the state change.
+        /// </li> <li> <c>tag</c>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned to the resource. </li> <li> <c>tag-key</c> - The
+        /// key of a tag assigned to the resource. This filter is independent of the tag-value filter. For example, if you use both the filter
+        /// "tag-key=Purpose" and the filter "tag-value=X", you get any resources assigned both the tag key Purpose (regardless of what the tag's value
+        /// is), and the tag value X (regardless of what the tag's key is). If you want to list only resources where Purpose is X, see the
+        /// <c>tag</c>:<i>key</i>=<i>value</i> filter. </li> <li> <c>tag-value</c> - The value of a tag assigned to the resource. This filter is
+        /// independent of the <c>tag-key</c> filter. </li> <li> <c>virtualization-type</c> - The virtualization type (<c>paravirtual</c> | <c>hvm</c>).
+        /// </li> </ul>
         ///  
         /// </summary>
         public List<Filter> Filters

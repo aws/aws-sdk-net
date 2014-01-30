@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para> Represents the state of an Amazon EC2 instance. </para>
+    /// <para>Describes the current state of the instance.</para>
     /// </summary>
     public class InstanceState
     {
@@ -31,8 +31,9 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// A 16-bit unsigned integer. The high byte is an opaque internal value and should be ignored. The low byte is set based on the state
-        /// represented.
+        /// The low byte represents the state. The high byte is an opaque internal value and should be ignored. <ul> <li><c>0</c> : <c>pending</c></li>
+        /// <li><c>16</c> : <c>running</c></li> <li><c>32</c> : <c>shutting-down</c></li> <li><c>48</c> : <c>terminated</c></li> <li><c>64</c> :
+        /// <c>stopping</c></li> <li><c>80</c> : <c>stopped</c></li> </ul>
         ///  
         /// </summary>
         public int Code

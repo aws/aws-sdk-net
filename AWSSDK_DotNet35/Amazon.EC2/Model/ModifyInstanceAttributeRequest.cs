@@ -25,7 +25,10 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyInstanceAttribute operation.
-    /// <para> Modifies an attribute of an instance. </para>
+    /// <para>Modifies the specified attribute of the specified instance. You can specify only one attribute at a time.</para> <para>To modify some
+    /// attributes, the instance must be stopped. For more information, see <a
+    /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_ChangingAttributesWhileInstanceStopped.html" >Modifying Attributes of a
+    /// Stopped Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .</para>
     /// </summary>
     public partial class ModifyInstanceAttributeRequest : AmazonEC2Request
     {
@@ -42,10 +45,11 @@ namespace Amazon.EC2.Model
         private string instanceInitiatedShutdownBehavior;
         private List<string> groups = new List<string>();
         private bool? ebsOptimized;
+        private string sriovNetSupport;
 
 
         /// <summary>
-        /// The ID of the instance whose attribute is being modified.
+        /// The ID of the instance.
         ///  
         /// </summary>
         public string InstanceId
@@ -61,8 +65,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The name of the attribute being modified. Available attribute names: <c>instanceType</c>, <c>kernel</c>, <c>ramdisk</c>, <c>userData</c>,
-        /// <c>disableApiTermination</c>, <c>instanceInitiatedShutdownBehavior</c>, <c>rootDevice</c>, <c>blockDeviceMapping</c>
+        /// The name of the attribute.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -87,8 +90,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The new value of the instance attribute being modified. Only valid when <c>kernel</c>, <c>ramdisk</c>, <c>userData</c>,
-        /// <c>disableApiTermination</c> or <c>instanceInitiateShutdownBehavior</c> is specified as the attribute being modified.
+        /// A new value for the attribute. Use only with the <c>kernel</c>, <c>ramdisk</c>, <c>userData</c>, <c>disableApiTermination</c>, or
+        /// <c>intanceInitiateShutdownBehavior</c> attribute.
         ///  
         /// </summary>
         public string Value
@@ -104,8 +107,11 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The new block device mappings for the instance whose attributes are being modified. Only valid when blockDeviceMapping is specified as the
-        /// attribute being modified.
+        /// Modifies the <c>DeleteOnTermination</c> attribute for volumes that are currently attached. The volume must be owned by the caller. If no
+        /// value is specified for <c>DeleteOnTermination</c>, the default is <c>true</c> and the volume is deleted when the instance is terminated. To
+        /// add instance store volumes to an Amazon EBS-backed instance, you must add them when you launch the instance. For more information, see <a
+        /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html#Using_OverridingAMIBDM">Updating the Block
+        /// Device Mapping when Launching an Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         ///  
         /// </summary>
         public List<InstanceBlockDeviceMappingSpecification> BlockDeviceMappings
@@ -121,7 +127,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Boolean value
+        /// Specifies whether source/destination checking is enabled. A value of <c>true</c> means that checking is enabled, and <c>false</c> means
+        /// checking is disabled. This value must be <c>false</c> for a NAT instance to perform NAT.
         ///  
         /// </summary>
         public bool SourceDestCheck
@@ -137,7 +144,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Boolean value
+        /// Specifies whether to disable the ability to terminate the instance using the Amazon EC2 console, CLI, and API.
         ///  
         /// </summary>
         public bool DisableApiTermination
@@ -153,7 +160,9 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// String value
+        /// Changes the instance type to the specified value. For more information, see <a
+        /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a>. If the instance type is not valid, the
+        /// error returned is <c>InvalidInstanceAttributeValue</c>.
         ///  
         /// </summary>
         public string InstanceType
@@ -169,7 +178,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// String value
+        /// Changes the instance's kernel to the specified value.
         ///  
         /// </summary>
         public string Kernel
@@ -185,7 +194,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// String value
+        /// Changes the instance's RAM disk to the specified value.
         ///  
         /// </summary>
         public string Ramdisk
@@ -201,7 +210,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// String value
+        /// Changes the instance's user data to the specified value.
         ///  
         /// </summary>
         public string UserData
@@ -217,7 +226,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// String value
+        /// Specifies whether an instance stops or terminates when you initiate shutdown from the instance (using the operating system command for
+        /// system shutdown).
         ///  
         /// </summary>
         public string InstanceInitiatedShutdownBehavior
@@ -231,6 +241,13 @@ namespace Amazon.EC2.Model
         {
             return this.instanceInitiatedShutdownBehavior != null;
         }
+
+        /// <summary>
+        /// [EC2-VPC] Changes the security groups of the instance. You must specify at least one security group, even if it's just the default security
+        /// group for the VPC. You must specify the security group ID, not the security group name. For example, if you want the instance to be in
+        /// sg-1a1a1a1a and sg-9b9b9b9b, specify <c>GroupId.1=sg-1a1a1a1a</c> and <c>GroupId.2=sg-9b9b9b9b</c>.
+        ///  
+        /// </summary>
         public List<string> Groups
         {
             get { return this.groups; }
@@ -244,7 +261,9 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Boolean value
+        /// Specifies whether the instance is optimized for EBS I/O. This optimization provides dedicated throughput to Amazon EBS and an optimized
+        /// configuration stack to provide optimal EBS I/O performance. This optimization isn't available with all instance types. Additional usage
+        /// charges apply when using an EBS Optimized instance.
         ///  
         /// </summary>
         public bool EbsOptimized
@@ -257,6 +276,22 @@ namespace Amazon.EC2.Model
         internal bool IsSetEbsOptimized()
         {
             return this.ebsOptimized.HasValue;
+        }
+
+        /// <summary>
+        /// 
+        ///  
+        /// </summary>
+        public string SriovNetSupport
+        {
+            get { return this.sriovNetSupport; }
+            set { this.sriovNetSupport = value; }
+        }
+
+        // Check to see if SriovNetSupport property is set
+        internal bool IsSetSriovNetSupport()
+        {
+            return this.sriovNetSupport != null;
         }
 
     }

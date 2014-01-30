@@ -28,7 +28,7 @@ namespace Amazon.EC2.Model
     {
         /// <summary>
         /// Gets and sets the StartInstancesResult property.
-        /// The result of calling the StartInstances operation. Contains details on how the specified instances are changing state.
+        /// 
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the StartInstancesResult class are now available on the StartInstancesResponse class. You should use the properties on StartInstancesResponse instead of accessing them through StartInstancesResult.")]
         public StartInstancesResult StartInstancesResult

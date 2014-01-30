@@ -25,14 +25,14 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateVpnConnection operation.
-    /// <para> Creates a new VPN connection between an existing VPN gateway and customer gateway. The only supported connection type is ipsec.1.
-    /// </para> <para> The response includes information that you need to configure your customer gateway, in XML format. We recommend you use the
-    /// command line version of this operation ( <c>ec2-create-vpn-connection</c> ), which takes an <c>-f</c> option (for format) and returns
-    /// configuration information formatted as expected by the vendor you specified, or in a generic, human readable format. For information about
-    /// the command, go to <c>ec2-create-vpn-connection</c> in the Amazon Virtual Private Cloud Command Line Reference. </para>
-    /// <para><b>IMPORTANT:</b> We strongly recommend you use HTTPS when calling this operation because the response contains sensitive
-    /// cryptographic information for configuring your customer gateway. If you decide to shut down your VPN connection for any reason and then
-    /// create a new one, you must re-configure your customer gateway with the new information returned from this call. </para>
+    /// <para>Creates a VPN connection between an existing virtual private gateway and a VPN customer gateway. The only supported connection type is
+    /// <c>ipsec.1</c> .</para> <para>The response includes information that you need to give to your network administrator to configure your
+    /// customer gateway.</para> <para><b>IMPORTANT:</b> We strongly recommend that you use HTTPS when calling this operation because the response
+    /// contains sensitive cryptographic information for configuring your customer gateway. </para> <para>If you decide to shut down your VPN
+    /// connection for any reason and later create a new VPN connection, you must reconfigure your customer gateway with the new information
+    /// returned from this call.</para> <para>For more information about VPN connections, see <a
+    /// href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html" >Adding a Hardware Virtual Private Gateway to Your VPC</a> in the
+    /// <i>Amazon Virtual Private Cloud User Guide</i> .</para>
     /// </summary>
     public partial class CreateVpnConnectionRequest : AmazonEC2Request
     {
@@ -75,7 +75,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The ID of the VPN gateway.
+        /// The ID of the virtual private gateway.
         ///  
         /// </summary>
         public string VpnGatewayId
@@ -89,6 +89,12 @@ namespace Amazon.EC2.Model
         {
             return this.vpnGatewayId != null;
         }
+
+        /// <summary>
+        /// Indicates whether the VPN connection requires static routes. If you are creating a VPN connection for a device that does not support BGP,
+        /// you must specify <c>true</c>. Default: <c>false</c>
+        ///  
+        /// </summary>
         public VpnConnectionOptionsSpecification Options
         {
             get { return this.options; }

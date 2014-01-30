@@ -28,7 +28,7 @@ namespace Amazon.EC2.Model
     {
         /// <summary>
         /// Gets and sets the DescribeAddressesResult property.
-        /// The result of describing an account's available Elastic IPs.
+        /// 
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DescribeAddressesResult class are now available on the DescribeAddressesResponse class. You should use the properties on DescribeAddressesResponse instead of accessing them through DescribeAddressesResult.")]
         public DescribeAddressesResult DescribeAddressesResult

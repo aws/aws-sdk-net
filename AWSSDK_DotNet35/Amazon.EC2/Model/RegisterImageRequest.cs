@@ -25,12 +25,16 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the RegisterImage operation.
-    /// <para> The RegisterImage operation registers an AMI with Amazon EC2. Images must be registered before they can be launched. For more
-    /// information, see RunInstances. </para> <para> Each AMI is associated with an unique ID which is provided by the Amazon EC2 service through
-    /// the RegisterImage operation. During registration, Amazon EC2 retrieves the specified image manifest from Amazon S3 and verifies that the
-    /// image is owned by the user registering the image. </para> <para> The image manifest is retrieved once and stored within the Amazon EC2. Any
-    /// modifications to an image in Amazon S3 invalidates this registration. If you make changes to an image, deregister the previous image and
-    /// register the new image. For more information, see DeregisterImage. </para>
+    /// <para>Registers an AMI. When you're creating an AMI, this is the final step you must complete before you can launch an instance from the
+    /// AMI. For more information about creating AMIs, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami.html"
+    /// >Creating Your Own AMIs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .</para> <para><b>NOTE:</b> For Amazon EBS-backed
+    /// instances, CreateImage creates and registers the AMI in a single request, so you don't have to register the AMI yourself. </para> <para>You
+    /// can also use <c>RegisterImage</c> to create an Amazon EBS-backed AMI from a snapshot of a root device volume. For more information, see <a
+    /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_LaunchingInstanceFromSnapshot.html" >Launching an Instance from a
+    /// Snapshot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .</para> <para>If needed, you can deregister an AMI at any time. Any
+    /// modifications you make to an AMI backed by an instance store volume invalidates its registration. If you make changes to an image,
+    /// deregister the previous image and register the new image.</para> <para><b>NOTE:</b> You can't register an image where a secondary (non-root)
+    /// snapshot has AWS Marketplace product codes. </para>
     /// </summary>
     public partial class RegisterImageRequest : AmazonEC2Request
     {
@@ -42,6 +46,8 @@ namespace Amazon.EC2.Model
         private string ramdiskId;
         private string rootDeviceName;
         private List<BlockDeviceMapping> blockDeviceMappings = new List<BlockDeviceMapping>();
+        private string virtualizationType;
+        private string sriovNetSupport;
 
 
         /// <summary>
@@ -61,8 +67,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The name to give the new Amazon Machine Image. Constraints: 3-128 alphanumeric characters, parenthesis (<c>()</c>), commas (<c>,</c>),
-        /// slashes (<c>/</c>), dashes (<c>-</c>), or underscores(<c>_</c>)
+        /// A name for your AMI. Constraints: 3-128 alphanumeric characters, parenthesis (()), commas (,), slashes (/), dashes (-), or underscores (_)
         ///  
         /// </summary>
         public string Name
@@ -78,7 +83,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The description describing the new AMI.
+        /// A description for your AMI.
         ///  
         /// </summary>
         public string Description
@@ -94,7 +99,8 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The architecture of the image. Valid Values: <c>i386</c>, <c>x86_64</c>
+        /// The architecture of the AMI. Default: For Amazon EBS-backed AMIs, <c>i386</c>. For instance store-backed AMIs, the architecture specified in
+        /// the manifest file.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -119,7 +125,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The optional ID of a specific kernel to register with the new AMI.
+        /// The ID of the kernel.
         ///  
         /// </summary>
         public string KernelId
@@ -135,8 +141,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The optional ID of a specific ramdisk to register with the new AMI. Some kernels require additional drivers at launch. Check the kernel
-        /// requirements for information on whether you need to specify a RAM disk.
+        /// The ID of the RAM disk.
         ///  
         /// </summary>
         public string RamdiskId
@@ -152,7 +157,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The root device name (e.g., <c>/dev/sda1</c>).
+        /// The name of the root device (for example, <c>/dev/sda1</c>, or <c>xvda</c>).
         ///  
         /// </summary>
         public string RootDeviceName
@@ -168,8 +173,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The block device mappings for the new AMI, which specify how different block devices (ex: EBS volumes and ephemeral drives) will be exposed
-        /// on instances launched from the new image.
+        /// One or more block device mapping entries.
         ///  
         /// </summary>
         public List<BlockDeviceMapping> BlockDeviceMappings
@@ -182,6 +186,38 @@ namespace Amazon.EC2.Model
         internal bool IsSetBlockDeviceMappings()
         {
             return this.blockDeviceMappings.Count > 0;
+        }
+
+        /// <summary>
+        /// The type of virtualization. Default: <c>paravirtual</c>
+        ///  
+        /// </summary>
+        public string VirtualizationType
+        {
+            get { return this.virtualizationType; }
+            set { this.virtualizationType = value; }
+        }
+
+        // Check to see if VirtualizationType property is set
+        internal bool IsSetVirtualizationType()
+        {
+            return this.virtualizationType != null;
+        }
+
+        /// <summary>
+        /// Set to <c>simple</c> to enable enhanced networking for the AMI and any instances that you launch from the AMI.
+        ///  
+        /// </summary>
+        public string SriovNetSupport
+        {
+            get { return this.sriovNetSupport; }
+            set { this.sriovNetSupport = value; }
+        }
+
+        // Check to see if SriovNetSupport property is set
+        internal bool IsSetSriovNetSupport()
+        {
+            return this.sriovNetSupport != null;
         }
 
     }

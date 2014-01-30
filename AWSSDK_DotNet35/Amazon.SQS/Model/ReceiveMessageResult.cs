@@ -22,7 +22,7 @@ using Amazon.Runtime;
 namespace Amazon.SQS.Model
 {
     /// <summary>
-    /// 
+    /// <para> A list of received messages. </para>
     /// </summary>
     public partial class ReceiveMessageResult : AmazonWebServiceResponse
     {

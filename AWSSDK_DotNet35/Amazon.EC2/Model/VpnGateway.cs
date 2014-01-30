@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <para> The VpnGateway data type. </para>
+    /// <para>Describes a virtual private gateway.</para>
     /// </summary>
     public class VpnGateway
     {
@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// Specifies the ID of the VPN gateway.
+        /// The ID of the virtual private gateway.
         ///  
         /// </summary>
         public string VpnGatewayId
@@ -51,7 +51,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Describes the current state of the VPN gateway. Valid values are <c>pending</c>, <c>available</c>, <c>deleting</c>, and <c>deleted</c>.
+        /// The current state of the virtual private gateway.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -76,7 +76,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Specifies the type of VPN connection the VPN gateway supports.
+        /// The type of VPN connection the virtual private gateway supports.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -101,7 +101,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Specifies the Availability Zone where the VPN gateway was created.
+        /// The Availability Zone where the virtual private gateway was created.
         ///  
         /// </summary>
         public string AvailabilityZone
@@ -117,7 +117,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Contains information about the VPCs attached to the VPN gateway.
+        /// Any VPCs attached to the virtual private gateway.
         ///  
         /// </summary>
         public List<VpcAttachment> VpcAttachments
@@ -133,7 +133,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// A list of tags for the VpnGateway.
+        /// Any tags assigned to the virtual private gateway.
         ///  
         /// </summary>
         public List<Tag> Tags

@@ -28,7 +28,8 @@ namespace Amazon.SQS.Model
     {
         /// <summary>
         /// Gets and sets the SendMessageBatchResult property.
-        /// 
+        /// For each message in the batch, the response contains a SendMessageBatchResultEntry tag if the message succeeds or a BatchResultErrorEntry
+        /// tag if the message fails.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the SendMessageBatchResult class are now available on the SendMessageBatchResponse class. You should use the properties on SendMessageBatchResponse instead of accessing them through SendMessageBatchResult.")]
         public SendMessageBatchResult SendMessageBatchResult

@@ -25,9 +25,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteRoute operation.
-    /// <para> Deletes a route from a route table in a VPC. For more information about route tables, go to <a
-    /// href="http://docs.amazonwebservices.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html" >Route Tables</a> in the Amazon Virtual Private
-    /// Cloud User Guide. </para>
+    /// <para>Deletes the specified route from the specified route table.</para>
     /// </summary>
     public partial class DeleteRouteRequest : AmazonEC2Request
     {
@@ -36,7 +34,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The ID of the route table where the route will be deleted.
+        /// The ID of the route table.
         ///  
         /// </summary>
         public string RouteTableId
@@ -52,7 +50,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The CIDR range for the route you want to delete. The value you specify must exactly match the CIDR for the route you want to delete.
+        /// The CIDR range for the route. The value you specify must match the CIDR for the route exactly.
         ///  
         /// </summary>
         public string DestinationCidrBlock

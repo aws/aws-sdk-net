@@ -25,11 +25,12 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the AssociateDhcpOptions operation.
-    /// <para> Associates a set of DHCP options (that you've previously created) with the specified VPC. Or, associates the default DHCP options
-    /// with the VPC. The default set consists of the standard EC2 host name, no domain name, no DNS server, no NTP server, and no NetBIOS server or
-    /// node type. After you associate the options with the VPC, any existing instances and all new instances that you launch in that VPC use the
-    /// options. For more information about the supported DHCP options and using them with Amazon VPC, go to Using DHCP Options in the Amazon
-    /// Virtual Private Cloud Developer Guide. </para>
+    /// <para>Associates a set of DHCP options (that you've previously created) with the specified VPC, or associates no DHCP options with the
+    /// VPC.</para> <para>After you associate the options with the VPC, any existing instances and all new instances that you launch in that VPC use
+    /// the options. You don't need to restart or relaunch the instances. They automatically pick up the changes within a few hours, depending on
+    /// how frequently the instance renews its DHCP lease. You can explicitly renew the lease using the operating system on the instance.</para>
+    /// <para>For more information, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html" >DHCP Options Sets</a>
+    /// in the <i>Amazon Virtual Private Cloud User Guide</i> .</para>
     /// </summary>
     public partial class AssociateDhcpOptionsRequest : AmazonEC2Request
     {
@@ -38,7 +39,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// The ID of the DHCP options to associate with the VPC. Specify "default" to associate the default DHCP options with the VPC.
+        /// The ID of the DHCP options set, or <c>default</c> to associate no DHCP options with the VPC.
         ///  
         /// </summary>
         public string DhcpOptionsId
@@ -54,7 +55,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The ID of the VPC to associate the DHCP options with.
+        /// The ID of the VPC.
         ///  
         /// </summary>
         public string VpcId

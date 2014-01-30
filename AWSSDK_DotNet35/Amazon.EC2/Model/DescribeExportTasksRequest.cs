@@ -25,12 +25,17 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeExportTasks operation.
-    /// 
+    /// <para>Describes one or more of your export tasks.</para>
     /// </summary>
     public partial class DescribeExportTasksRequest : AmazonEC2Request
     {
         private List<string> exportTaskIds = new List<string>();
 
+
+        /// <summary>
+        /// One or more export task IDs.
+        ///  
+        /// </summary>
         public List<string> ExportTaskIds
         {
             get { return this.exportTaskIds; }

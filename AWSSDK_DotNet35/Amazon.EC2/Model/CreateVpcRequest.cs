@@ -25,10 +25,13 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateVpc operation.
-    /// <para> Creates a VPC with the CIDR block you specify. The smallest VPC you can create uses a <c>/28</c> netmask (16 IP addresses), and the
-    /// largest uses a <c>/18</c> netmask (16,384 IP addresses). To help you decide how big to make your VPC, go to the topic about creating VPCs in
-    /// the Amazon Virtual Private Cloud Developer Guide. </para> <para> By default, each instance you launch in the VPC has the default DHCP
-    /// options (the standard EC2 host name, no domain name, no DNS server, no NTP server, and no NetBIOS server or node type). </para>
+    /// <para>Creates a VPC with the specified CIDR block.</para> <para>The smallest VPC you can create uses a /28 netmask (16 IP addresses), and
+    /// the largest uses a /16 netmask (65,536 IP addresses). To help you decide how big to make your VPC, see <a
+    /// href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html" >Your VPC and Subnets</a> in the <i>Amazon Virtual Private
+    /// Cloud User Guide</i> .</para> <para>By default, each instance you launch in the VPC has the default DHCP options, which includes only a
+    /// default DNS server that we provide (AmazonProvidedDNS). For more information about DHCP options, see <a
+    /// href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html" >DHCP Options Sets</a> in the <i>Amazon Virtual Private
+    /// Cloud User Guide</i> .</para>
     /// </summary>
     public partial class CreateVpcRequest : AmazonEC2Request
     {
@@ -37,7 +40,7 @@ namespace Amazon.EC2.Model
 
 
         /// <summary>
-        /// A valid CIDR block.
+        /// The network range for the VPC, in CIDR notation. For example, <c>10.0.0.0/16</c>.
         ///  
         /// </summary>
         public string CidrBlock
@@ -53,8 +56,9 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The allowed tenancy of instances launched into the VPC. A value of default means instances can be launched with any tenancy; a value of
-        /// dedicated means instances must be launched with tenancy as dedicated.
+        /// The supported tenancy options for instances launched into the VPC. A value of <c>default</c> means that instances can be launched with any
+        /// tenancy; a value of <c>dedicated</c> means all instances launched into the VPC are launched as dedicated tenancy instances regardless of the
+        /// tenancy assigned to the instance at launch. Dedicated tenancy instances runs on single-tenant hardware. Default: <c>default</c>
         ///  
         /// <para>
         /// <b>Constraints:</b>
