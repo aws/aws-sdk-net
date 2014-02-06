@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -31,8 +31,9 @@ namespace Amazon.CloudFormation.Model
 
 
         /// <summary>
-        /// Structure containing the stack policy body. (For more information, go to the <a
-        /// href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html"> AWS CloudFormation User Guide</a>.)
+        /// Structure containing the stack policy body. (For more information, go to <a
+        /// href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html"> Prevent Updates to Stack Resources</a> in
+        /// the AWS CloudFormation User Guide.)
         ///  
         /// <para>
         /// <b>Constraints:</b>

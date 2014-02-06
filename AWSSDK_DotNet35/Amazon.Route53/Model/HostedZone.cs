@@ -32,6 +32,7 @@ namespace Amazon.Route53.Model
         private HostedZoneConfig config;
         private long? resourceRecordSetCount;
 
+
         /// <summary>
         /// The ID of the specified hosted zone.
         ///  

@@ -29,6 +29,7 @@ namespace Amazon.Route53.Model
         
         private string comment;
 
+
         /// <summary>
         /// An optional comment about your hosted zone. If you don't want to specify a comment, you can omit the <c>HostedZoneConfig</c> and
         /// <c>Comment</c> elements from the XML document.

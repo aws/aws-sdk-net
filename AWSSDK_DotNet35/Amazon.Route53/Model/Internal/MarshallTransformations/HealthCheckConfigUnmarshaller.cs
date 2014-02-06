@@ -67,6 +67,12 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                             
                         continue;
                     }
+                    if (context.TestExpression("SearchString", targetDepth))
+                    {
+                        healthCheckConfig.SearchString = StringUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {

@@ -26,7 +26,7 @@ namespace Amazon.Route53.Model
     /// <summary>
     /// Container for the parameters to the ChangeResourceRecordSets operation.
     /// <para>Use this action to create or change your authoritative DNS information. To use this action, send a <c>POST</c> request to the
-    /// <c>2012-12-12/hostedzone/hosted Zone ID/rrset</c> resource. The request body must include an XML document with a
+    /// <c>2013-04-01/hostedzone/hosted Zone ID/rrset</c> resource. The request body must include an XML document with a
     /// <c>ChangeResourceRecordSetsRequest</c> element.</para> <para>Changes are a list of change items and are considered transactional. For more
     /// information on transactional changes, also known as change batches, see <a
     /// href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/RRSchanges.html#RRSchanges_API" >Creating, Changing, and Deleting Resource
@@ -40,16 +40,14 @@ namespace Amazon.Route53.Model
     /// cannot contain more than 1000 ResourceRecord elements.</para> <para>The sum of the number of characters (including spaces) in all
     /// <c>Value</c> elements in a request cannot exceed 32,000 characters.</para>
     /// </summary>
-    public partial class ChangeResourceRecordSetsRequest : AmazonWebServiceRequest
+    public partial class ChangeResourceRecordSetsRequest : AmazonRoute53Request
     {
         private string hostedZoneId;
         private ChangeBatch changeBatch;
 
+
         /// <summary>
-        /// <i>Alias resource record sets only:</i> The value of the hosted zone ID for the AWS resource. For more information, an example, and several
-        /// ways to get the hosted zone ID for the LoadBalancer, see <a
-        /// href="http://docs.amazonwebservices.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating Alias Resource Record Sets for
-        /// Elastic Load Balancing</a> in the <i>Amazon Route 53 Developer Guide</i>.
+        /// The ID of the hosted zone that contains the resource record sets that you want to change.
         ///  
         /// <para>
         /// <b>Constraints:</b>

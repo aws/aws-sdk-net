@@ -29,6 +29,7 @@ namespace Amazon.Route53.Model
         
         private ChangeInfo changeInfo;
 
+
         /// <summary>
         /// A complex type that contains the ID, the status, and the date and time of your delete request.
         ///  

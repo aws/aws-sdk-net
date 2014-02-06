@@ -26,13 +26,14 @@ namespace Amazon.Route53.Model
     /// <summary>
     /// Container for the parameters to the CreateHealthCheck operation.
     /// <para> This action creates a new health check.</para> <para> To create a new health check, send a <c>POST</c> request to the
-    /// <c>2012-12-12/healthcheck</c> resource. The request body must include an XML document with a <c>CreateHealthCheckRequest</c> element. The
+    /// <c>2013-04-01/healthcheck</c> resource. The request body must include an XML document with a <c>CreateHealthCheckRequest</c> element. The
     /// response returns the <c>CreateHealthCheckResponse</c> element that contains metadata about the health check.</para>
     /// </summary>
-    public partial class CreateHealthCheckRequest : AmazonWebServiceRequest
+    public partial class CreateHealthCheckRequest : AmazonRoute53Request
     {
         private string callerReference;
         private HealthCheckConfig healthCheckConfig;
+
 
         /// <summary>
         /// A unique string that identifies the request and that allows failed <c>CreateHealthCheck</c> requests to be retried without the risk of

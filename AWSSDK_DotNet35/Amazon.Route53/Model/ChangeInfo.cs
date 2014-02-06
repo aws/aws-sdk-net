@@ -32,6 +32,7 @@ namespace Amazon.Route53.Model
         private DateTime? submittedAt;
         private string comment;
 
+
         /// <summary>
         /// The ID of the request. Use this ID to track when the change has completed across all Amazon Route 53 DNS servers.
         ///  

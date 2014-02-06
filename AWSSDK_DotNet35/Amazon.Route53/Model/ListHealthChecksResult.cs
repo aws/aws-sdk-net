@@ -33,6 +33,7 @@ namespace Amazon.Route53.Model
         private string nextMarker;
         private string maxItems;
 
+
         /// <summary>
         /// A complex type that contains information about the health checks associated with the current AWS account.
         ///  

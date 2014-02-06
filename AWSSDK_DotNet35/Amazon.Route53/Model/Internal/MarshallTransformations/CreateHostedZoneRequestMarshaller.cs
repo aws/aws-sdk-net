@@ -43,7 +43,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
 
 
             request.HttpMethod = "POST";
-            string uriResourcePath = "/2012-12-12/hostedzone"; 
+            string uriResourcePath = "/2013-04-01/hostedzone"; 
 
             if (uriResourcePath.Contains("?")) 
             {
@@ -71,29 +71,29 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             request.ResourcePath = uriResourcePath;
             
              
-            StringWriter stringWriter = new StringWriter(System.Globalization.CultureInfo.InvariantCulture);
+            StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture);
                 using (XmlWriter xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true }))
                 {
                        
             
-            xmlWriter.WriteStartElement("CreateHostedZoneRequest", "https://route53.amazonaws.com/doc/2012-12-12/");
+            xmlWriter.WriteStartElement("CreateHostedZoneRequest", "https://route53.amazonaws.com/doc/2013-04-01/");
                     if (createHostedZoneRequest.IsSetName()) 
         {
-            xmlWriter.WriteElementString("Name", "https://route53.amazonaws.com/doc/2012-12-12/", createHostedZoneRequest.Name.ToString(CultureInfo.InvariantCulture));
+            xmlWriter.WriteElementString("Name", "https://route53.amazonaws.com/doc/2013-04-01/", createHostedZoneRequest.Name.ToString(CultureInfo.InvariantCulture));
           }
         if (createHostedZoneRequest.IsSetCallerReference()) 
         {
-            xmlWriter.WriteElementString("CallerReference", "https://route53.amazonaws.com/doc/2012-12-12/", createHostedZoneRequest.CallerReference.ToString(CultureInfo.InvariantCulture));
+            xmlWriter.WriteElementString("CallerReference", "https://route53.amazonaws.com/doc/2013-04-01/", createHostedZoneRequest.CallerReference.ToString(CultureInfo.InvariantCulture));
           }
         if (createHostedZoneRequest != null) 
         {
             HostedZoneConfig hostedZoneConfigHostedZoneConfig = createHostedZoneRequest.HostedZoneConfig;
             if (hostedZoneConfigHostedZoneConfig != null) 
             {
-                xmlWriter.WriteStartElement("HostedZoneConfig", "https://route53.amazonaws.com/doc/2012-12-12/");
+                xmlWriter.WriteStartElement("HostedZoneConfig", "https://route53.amazonaws.com/doc/2013-04-01/");
                 if (hostedZoneConfigHostedZoneConfig.IsSetComment()) 
                 {
-                    xmlWriter.WriteElementString("Comment", "https://route53.amazonaws.com/doc/2012-12-12/", hostedZoneConfigHostedZoneConfig.Comment.ToString(CultureInfo.InvariantCulture));
+                    xmlWriter.WriteElementString("Comment", "https://route53.amazonaws.com/doc/2013-04-01/", hostedZoneConfigHostedZoneConfig.Comment.ToString(CultureInfo.InvariantCulture));
                   }
                 xmlWriter.WriteEndElement();
             }

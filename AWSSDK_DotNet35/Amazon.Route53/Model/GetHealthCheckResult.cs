@@ -29,6 +29,7 @@ namespace Amazon.Route53.Model
         
         private HealthCheck healthCheck;
 
+
         /// <summary>
         /// A complex type that contains the information about the specified health check.
         ///  

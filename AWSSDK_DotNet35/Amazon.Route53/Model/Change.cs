@@ -29,15 +29,16 @@ namespace Amazon.Route53.Model
         private ChangeAction action;
         private ResourceRecordSet resourceRecordSet;
 
+
         /// <summary>
-        /// The action to perform. Valid values: <c>CREATE</c> | <c>DELETE</c>
+        /// The action to perform. Valid values: <c>CREATE</c> | <c>DELETE</c> | <c>UPSERT</c>
         ///  
         /// <para>
         /// <b>Constraints:</b>
         /// <list type="definition">
         ///     <item>
         ///         <term>Allowed Values</term>
-        ///         <description>CREATE, DELETE</description>
+        ///         <description>CREATE, DELETE, UPSERT</description>
         ///     </item>
         /// </list>
         /// </para>

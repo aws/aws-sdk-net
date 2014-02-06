@@ -26,7 +26,7 @@ namespace Amazon.Route53.Model
     /// <summary>
     /// Container for the parameters to the CreateHostedZone operation.
     /// <para> This action creates a new hosted zone.</para> <para>To create a new hosted zone, send a <c>POST</c> request to the
-    /// <c>2012-12-12/hostedzone</c> resource. The request body must include an XML document with a <c>CreateHostedZoneRequest</c> element. The
+    /// <c>2013-04-01/hostedzone</c> resource. The request body must include an XML document with a <c>CreateHostedZoneRequest</c> element. The
     /// response returns the <c>CreateHostedZoneResponse</c> element that contains metadata about the hosted zone.</para> <para>Route 53
     /// automatically creates a default SOA record and four NS records for the zone. The NS records in the hosted zone are the name servers you give
     /// your registrar to delegate your domain to. For more information about SOA and NS records, see <a
@@ -35,11 +35,12 @@ namespace Amazon.Route53.Model
     /// means that it is not yet available on all DNS servers. The status of the zone changes to <c>INSYNC</c> when the NS and SOA records are
     /// available on all Route 53 DNS servers. </para>
     /// </summary>
-    public partial class CreateHostedZoneRequest : AmazonWebServiceRequest
+    public partial class CreateHostedZoneRequest : AmazonRoute53Request
     {
         private string name;
         private string callerReference;
         private HostedZoneConfig hostedZoneConfig;
+
 
         /// <summary>
         /// The name of the domain. This must be a fully-specified domain, for example, www.example.com. The trailing dot is optional; Route 53 assumes

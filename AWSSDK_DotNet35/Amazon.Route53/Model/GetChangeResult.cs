@@ -29,6 +29,7 @@ namespace Amazon.Route53.Model
         
         private ChangeInfo changeInfo;
 
+
         /// <summary>
         /// A complex type that contains information about the specified change batch, including the change batch ID, the status of the change, and the
         /// date and time of the request.

@@ -43,7 +43,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
 
 
             request.HttpMethod = "GET";
-            string uriResourcePath = "/2012-12-12/healthcheck?marker={Marker}&maxitems={MaxItems}"; 
+            string uriResourcePath = "/2013-04-01/healthcheck?marker={Marker}&maxitems={MaxItems}"; 
             uriResourcePath = uriResourcePath.Replace("{Marker}", listHealthChecksRequest.IsSetMarker() ? listHealthChecksRequest.Marker.ToString() : "" ); 
             uriResourcePath = uriResourcePath.Replace("{MaxItems}", listHealthChecksRequest.IsSetMaxItems() ? listHealthChecksRequest.MaxItems.ToString() : "" ); 
 
@@ -58,14 +58,13 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                 foreach (string s in queryString.Split('&', ';')) 
                 {
                     string[] nameValuePair = s.Split('=');
-                    if (nameValuePair.Length == 2) 
+                    if (nameValuePair.Length == 2 && nameValuePair[1].Length > 0) 
                     {
-                        if (nameValuePair[1].Length > 0)
-                            request.Parameters.Add(nameValuePair[0], nameValuePair[1]);
+                        request.Parameters.Add(nameValuePair[0], nameValuePair[1]);
                     }
                     else
                     {
-                        request.Parameters.Add(nameValuePair[0], null); // possible subresource
+                        request.Parameters.Add(nameValuePair[0], null);
                     }
                 
                 }

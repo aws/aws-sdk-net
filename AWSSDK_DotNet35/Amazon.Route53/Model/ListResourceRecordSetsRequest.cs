@@ -49,13 +49,14 @@ namespace Amazon.Route53.Model
     /// precise, if a single process makes a call to ChangeResourceRecordSets and receives a successful response, the effects of that change will be
     /// visible in a subsequent call to ListResourceRecordSets by that process.</para>
     /// </summary>
-    public partial class ListResourceRecordSetsRequest : AmazonWebServiceRequest
+    public partial class ListResourceRecordSetsRequest : AmazonRoute53Request
     {
         private string hostedZoneId;
         private string startRecordName;
         private RRType startRecordType;
         private string startRecordIdentifier;
         private string maxItems;
+
 
         /// <summary>
         /// The ID of the hosted zone that contains the resource record sets that you want to get.

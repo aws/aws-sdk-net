@@ -30,13 +30,12 @@ namespace Amazon.CloudFormation
     /// 
     /// AWS CloudFormation <para>AWS CloudFormation enables you to create and manage AWS infrastructure deployments predictably and repeatedly. AWS
     /// CloudFormation helps you leverage AWS products such as Amazon EC2, EBS, Amazon SNS, ELB, and Auto Scaling to build highly-reliable, highly
-    /// scalable, cost effective applications without worrying about creating and configuring the underlying the AWS infrastructure.</para>
-    /// <para>With AWS CloudFormation, you declare all of your resources and dependencies in a template file. The template defines a collection of
-    /// resources as a single unit called a stack. AWS CloudFormation creates and deletes all member resources of the stack together and manages all
-    /// dependencies between the resources for you.</para> <para>For more information about this product, go to the <a href="http://aws.amazon.com/cloudformation/">CloudFormation Product Page</a> .</para> <para>Amazon CloudFormation makes use of other AWS
+    /// scalable, cost effective applications without worrying about creating and configuring the underlying AWS infrastructure.</para> <para>With
+    /// AWS CloudFormation, you declare all of your resources and dependencies in a template file. The template defines a collection of resources as
+    /// a single unit called a stack. AWS CloudFormation creates and deletes all member resources of the stack together and manages all dependencies
+    /// between the resources for you.</para> <para>For more information about this product, go to the <a href="http://aws.amazon.com/cloudformation/">CloudFormation Product Page</a> .</para> <para>Amazon CloudFormation makes use of other AWS
     /// products. If you need additional technical information about a specific AWS product, you can find the product's technical documentation at
-    /// <a href="http://aws.amazon.com/documentation/">http://aws.amazon.com/documentation/</a> .</para> <para><b>NOTE:</b>You must call the AWS
-    /// CloudFormation API as a regular IAM user. AWS CloudFormation does not support calling the API with an IAM role </para>
+    /// <a href="http://aws.amazon.com/documentation/">http://aws.amazon.com/documentation/</a> .</para>
     /// </summary>
 	public partial class AmazonCloudFormationClient : AmazonWebServiceClient, Amazon.CloudFormation.IAmazonCloudFormation
     {
@@ -263,8 +262,8 @@ namespace Amazon.CloudFormation
         }
 
         /// <summary>
-        /// <para>Returns all stack related events for a specified stack. For more information about a stack's event history, go to the <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide">AWS CloudFormation User Guide</a> .</para> <para><b>NOTE:</b>Events
-        /// are returned, even if the stack never existed or has been successfully deleted.</para>
+        /// <para>Returns all stack related events for a specified stack. For more information about a stack's event history, go to <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/concept-stack.html">Stacks</a> in the AWS CloudFormation User
+        /// Guide.</para> <para><b>NOTE:</b>Events are returned, even if the stack never existed or has been successfully deleted.</para>
         /// </summary>
         /// 
         /// <param name="describeStackEventsRequest">Container for the necessary parameters to execute the DescribeStackEvents service method on

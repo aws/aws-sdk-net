@@ -28,6 +28,7 @@ namespace Amazon.Route53.Model
         
         private List<string> nameServers = new List<string>();
 
+
         /// <summary>
         /// A complex type that contains the authoritative name servers for the hosted zone. Use the method provided by your domain registrar to add an
         /// NS record to your domain for each <c>NameServer</c> that is assigned to your hosted zone.

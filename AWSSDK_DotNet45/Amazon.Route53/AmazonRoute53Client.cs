@@ -218,7 +218,7 @@ namespace Amazon.Route53
  
         /// <summary>
         /// <para>Use this action to create or change your authoritative DNS information. To use this action, send a <c>POST</c> request to the
-        /// <c>2012-12-12/hostedzone/hosted Zone ID/rrset</c> resource. The request body must include an XML document with a
+        /// <c>2013-04-01/hostedzone/hosted Zone ID/rrset</c> resource. The request body must include an XML document with a
         /// <c>ChangeResourceRecordSetsRequest</c> element.</para> <para>Changes are a list of change items and are considered transactional. For more
         /// information on transactional changes, also known as change batches, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/RRSchanges.html#RRSchanges_API">Creating, Changing, and Deleting Resource
         /// Record Sets Using the Route 53 API</a> in the <i>Amazon Route 53 Developer Guide</i> .</para> <para><b>IMPORTANT:</b>Due to the nature of
@@ -237,11 +237,11 @@ namespace Amazon.Route53
         /// 
         /// <returns>The response from the ChangeResourceRecordSets service method, as returned by AmazonRoute53.</returns>
         /// 
-        /// <exception cref="T:Amazon.Route53.Model.InvalidInputException" />
-        /// <exception cref="T:Amazon.Route53.Model.NoSuchHostedZoneException" />
-        /// <exception cref="T:Amazon.Route53.Model.InvalidChangeBatchException" />
-        /// <exception cref="T:Amazon.Route53.Model.NoSuchHealthCheckException" />
         /// <exception cref="T:Amazon.Route53.Model.PriorRequestNotCompleteException" />
+        /// <exception cref="T:Amazon.Route53.Model.NoSuchHealthCheckException" />
+        /// <exception cref="T:Amazon.Route53.Model.NoSuchHostedZoneException" />
+        /// <exception cref="T:Amazon.Route53.Model.InvalidInputException" />
+        /// <exception cref="T:Amazon.Route53.Model.InvalidChangeBatchException" />
 		public ChangeResourceRecordSetsResponse ChangeResourceRecordSets(ChangeResourceRecordSetsRequest request)
         {
             var task = ChangeResourceRecordSetsAsync(request);
@@ -274,7 +274,7 @@ namespace Amazon.Route53
  
         /// <summary>
         /// <para> This action creates a new health check.</para> <para> To create a new health check, send a <c>POST</c> request to the
-        /// <c>2012-12-12/healthcheck</c> resource. The request body must include an XML document with a <c>CreateHealthCheckRequest</c> element. The
+        /// <c>2013-04-01/healthcheck</c> resource. The request body must include an XML document with a <c>CreateHealthCheckRequest</c> element. The
         /// response returns the <c>CreateHealthCheckResponse</c> element that contains metadata about the health check.</para>
         /// </summary>
         /// 
@@ -283,8 +283,8 @@ namespace Amazon.Route53
         /// 
         /// <returns>The response from the CreateHealthCheck service method, as returned by AmazonRoute53.</returns>
         /// 
-        /// <exception cref="T:Amazon.Route53.Model.InvalidInputException" />
         /// <exception cref="T:Amazon.Route53.Model.HealthCheckAlreadyExistsException" />
+        /// <exception cref="T:Amazon.Route53.Model.InvalidInputException" />
         /// <exception cref="T:Amazon.Route53.Model.TooManyHealthChecksException" />
 		public CreateHealthCheckResponse CreateHealthCheck(CreateHealthCheckRequest request)
         {
@@ -318,7 +318,7 @@ namespace Amazon.Route53
  
         /// <summary>
         /// <para> This action creates a new hosted zone.</para> <para>To create a new hosted zone, send a <c>POST</c> request to the
-        /// <c>2012-12-12/hostedzone</c> resource. The request body must include an XML document with a <c>CreateHostedZoneRequest</c> element. The
+        /// <c>2013-04-01/hostedzone</c> resource. The request body must include an XML document with a <c>CreateHostedZoneRequest</c> element. The
         /// response returns the <c>CreateHostedZoneResponse</c> element that contains metadata about the hosted zone.</para> <para>Route 53
         /// automatically creates a default SOA record and four NS records for the zone. The NS records in the hosted zone are the name servers you give
         /// your registrar to delegate your domain to. For more information about SOA and NS records, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/SOA-NSrecords.html">NS and SOA Records that Route 53 Creates for a Hosted
@@ -332,11 +332,11 @@ namespace Amazon.Route53
         /// 
         /// <returns>The response from the CreateHostedZone service method, as returned by AmazonRoute53.</returns>
         /// 
-        /// <exception cref="T:Amazon.Route53.Model.HostedZoneAlreadyExistsException" />
-        /// <exception cref="T:Amazon.Route53.Model.InvalidInputException" />
-        /// <exception cref="T:Amazon.Route53.Model.InvalidDomainNameException" />
         /// <exception cref="T:Amazon.Route53.Model.TooManyHostedZonesException" />
         /// <exception cref="T:Amazon.Route53.Model.DelegationSetNotAvailableException" />
+        /// <exception cref="T:Amazon.Route53.Model.InvalidDomainNameException" />
+        /// <exception cref="T:Amazon.Route53.Model.InvalidInputException" />
+        /// <exception cref="T:Amazon.Route53.Model.HostedZoneAlreadyExistsException" />
 		public CreateHostedZoneResponse CreateHostedZone(CreateHostedZoneRequest request)
         {
             var task = CreateHostedZoneAsync(request);
@@ -368,7 +368,7 @@ namespace Amazon.Route53
         }
  
         /// <summary>
-        /// <para>This action deletes a health check. To delete a health check, send a <c>DELETE</c> request to the <c>2012-12-12/healthcheck/health
+        /// <para>This action deletes a health check. To delete a health check, send a <c>DELETE</c> request to the <c>2013-04-01/healthcheck/health
         /// check ID </c> resource.</para> <para><b>IMPORTANT:</b> You can delete a health check only if there are no resource record sets associated
         /// with this health check. If resource record sets are associated with this health check, you must disassociate them before you can delete your
         /// health check. If you try to delete a health check that is associated with resource record sets, Route 53 will deny your request with a
@@ -380,9 +380,9 @@ namespace Amazon.Route53
         /// 
         /// <returns>The response from the DeleteHealthCheck service method, as returned by AmazonRoute53.</returns>
         /// 
-        /// <exception cref="T:Amazon.Route53.Model.InvalidInputException" />
-        /// <exception cref="T:Amazon.Route53.Model.HealthCheckInUseException" />
         /// <exception cref="T:Amazon.Route53.Model.NoSuchHealthCheckException" />
+        /// <exception cref="T:Amazon.Route53.Model.HealthCheckInUseException" />
+        /// <exception cref="T:Amazon.Route53.Model.InvalidInputException" />
 		public DeleteHealthCheckResponse DeleteHealthCheck(DeleteHealthCheckRequest request)
         {
             var task = DeleteHealthCheckAsync(request);
@@ -414,7 +414,7 @@ namespace Amazon.Route53
         }
  
         /// <summary>
-        /// <para>This action deletes a hosted zone. To delete a hosted zone, send a <c>DELETE</c> request to the <c>2012-12-12/hostedzone/hosted zone
+        /// <para>This action deletes a hosted zone. To delete a hosted zone, send a <c>DELETE</c> request to the <c>2013-04-01/hostedzone/hosted zone
         /// ID </c> resource.</para> <para>For more information about deleting a hosted zone, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DeleteHostedZone.html">Deleting a Hosted Zone</a> in the <i>Amazon Route 53
         /// Developer Guide</i> .</para> <para><b>IMPORTANT:</b> You can delete a hosted zone only if there are no resource record sets other than the
         /// default SOA record and NS resource record sets. If your hosted zone contains other resource record sets, you must delete them before you can
@@ -427,10 +427,10 @@ namespace Amazon.Route53
         /// 
         /// <returns>The response from the DeleteHostedZone service method, as returned by AmazonRoute53.</returns>
         /// 
-        /// <exception cref="T:Amazon.Route53.Model.HostedZoneNotEmptyException" />
-        /// <exception cref="T:Amazon.Route53.Model.InvalidInputException" />
-        /// <exception cref="T:Amazon.Route53.Model.NoSuchHostedZoneException" />
         /// <exception cref="T:Amazon.Route53.Model.PriorRequestNotCompleteException" />
+        /// <exception cref="T:Amazon.Route53.Model.HostedZoneNotEmptyException" />
+        /// <exception cref="T:Amazon.Route53.Model.NoSuchHostedZoneException" />
+        /// <exception cref="T:Amazon.Route53.Model.InvalidInputException" />
 		public DeleteHostedZoneResponse DeleteHostedZone(DeleteHostedZoneRequest request)
         {
             var task = DeleteHostedZoneAsync(request);
@@ -504,7 +504,7 @@ namespace Amazon.Route53
         }
  
         /// <summary>
-        /// <para> To retrieve the health check, send a <c>GET</c> request to the <c>2012-12-12/healthcheck/health check ID </c> resource. </para>
+        /// <para> To retrieve the health check, send a <c>GET</c> request to the <c>2013-04-01/healthcheck/health check ID </c> resource. </para>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetHealthCheck service method on
@@ -512,8 +512,9 @@ namespace Amazon.Route53
         /// 
         /// <returns>The response from the GetHealthCheck service method, as returned by AmazonRoute53.</returns>
         /// 
-        /// <exception cref="T:Amazon.Route53.Model.InvalidInputException" />
         /// <exception cref="T:Amazon.Route53.Model.NoSuchHealthCheckException" />
+        /// <exception cref="T:Amazon.Route53.Model.IncompatibleVersionException" />
+        /// <exception cref="T:Amazon.Route53.Model.InvalidInputException" />
 		public GetHealthCheckResponse GetHealthCheck(GetHealthCheckRequest request)
         {
             var task = GetHealthCheckAsync(request);
@@ -545,7 +546,7 @@ namespace Amazon.Route53
         }
  
         /// <summary>
-        /// <para> To retrieve the delegation set for a hosted zone, send a <c>GET</c> request to the <c>2012-12-12/hostedzone/hosted zone ID </c>
+        /// <para> To retrieve the delegation set for a hosted zone, send a <c>GET</c> request to the <c>2013-04-01/hostedzone/hosted zone ID </c>
         /// resource. The delegation set is the four Route 53 name servers that were assigned to the hosted zone when you created it.</para>
         /// </summary>
         /// 
@@ -554,8 +555,8 @@ namespace Amazon.Route53
         /// 
         /// <returns>The response from the GetHostedZone service method, as returned by AmazonRoute53.</returns>
         /// 
-        /// <exception cref="T:Amazon.Route53.Model.InvalidInputException" />
         /// <exception cref="T:Amazon.Route53.Model.NoSuchHostedZoneException" />
+        /// <exception cref="T:Amazon.Route53.Model.InvalidInputException" />
 		public GetHostedZoneResponse GetHostedZone(GetHostedZoneRequest request)
         {
             var task = GetHostedZoneAsync(request);
@@ -587,7 +588,7 @@ namespace Amazon.Route53
         }
  
         /// <summary>
-        /// <para> To retrieve a list of your health checks, send a <c>GET</c> request to the <c>2012-12-12/healthcheck</c> resource. The response to
+        /// <para> To retrieve a list of your health checks, send a <c>GET</c> request to the <c>2013-04-01/healthcheck</c> resource. The response to
         /// this request includes a <c>HealthChecks</c> element with zero, one, or multiple <c>HealthCheck</c> child elements. By default, the list of
         /// health checks is displayed on a single page. You can control the length of the page that is displayed by using the <c>MaxItems</c>
         /// parameter. You can use the <c>Marker</c> parameter to control the health check that the list begins with. </para> <para><b>NOTE:</b> Amazon
@@ -599,6 +600,7 @@ namespace Amazon.Route53
         /// 
         /// <returns>The response from the ListHealthChecks service method, as returned by AmazonRoute53.</returns>
         /// 
+        /// <exception cref="T:Amazon.Route53.Model.IncompatibleVersionException" />
         /// <exception cref="T:Amazon.Route53.Model.InvalidInputException" />
 		public ListHealthChecksResponse ListHealthChecks(ListHealthChecksRequest request)
         {
@@ -631,7 +633,7 @@ namespace Amazon.Route53
         }
  
         /// <summary>
-        /// <para> To retrieve a list of your health checks, send a <c>GET</c> request to the <c>2012-12-12/healthcheck</c> resource. The response to
+        /// <para> To retrieve a list of your health checks, send a <c>GET</c> request to the <c>2013-04-01/healthcheck</c> resource. The response to
         /// this request includes a <c>HealthChecks</c> element with zero, one, or multiple <c>HealthCheck</c> child elements. By default, the list of
         /// health checks is displayed on a single page. You can control the length of the page that is displayed by using the <c>MaxItems</c>
         /// parameter. You can use the <c>Marker</c> parameter to control the health check that the list begins with. </para> <para><b>NOTE:</b> Amazon
@@ -641,6 +643,7 @@ namespace Amazon.Route53
         /// 
         /// <returns>The response from the ListHealthChecks service method, as returned by AmazonRoute53.</returns>
         /// 
+        /// <exception cref="T:Amazon.Route53.Model.IncompatibleVersionException" />
         /// <exception cref="T:Amazon.Route53.Model.InvalidInputException" />
 		public ListHealthChecksResponse ListHealthChecks()
         {
@@ -648,7 +651,7 @@ namespace Amazon.Route53
         }
  
         /// <summary>
-        /// <para> To retrieve a list of your hosted zones, send a <c>GET</c> request to the <c>2012-12-12/hostedzone</c> resource. The response to this
+        /// <para> To retrieve a list of your hosted zones, send a <c>GET</c> request to the <c>2013-04-01/hostedzone</c> resource. The response to this
         /// request includes a <c>HostedZones</c> element with zero, one, or multiple <c>HostedZone</c> child elements. By default, the list of hosted
         /// zones is displayed on a single page. You can control the length of the page that is displayed by using the <c>MaxItems</c> parameter. You
         /// can use the <c>Marker</c> parameter to control the hosted zone that the list begins with. </para> <para><b>NOTE:</b> Amazon Route 53 returns
@@ -692,7 +695,7 @@ namespace Amazon.Route53
         }
  
         /// <summary>
-        /// <para> To retrieve a list of your hosted zones, send a <c>GET</c> request to the <c>2012-12-12/hostedzone</c> resource. The response to this
+        /// <para> To retrieve a list of your hosted zones, send a <c>GET</c> request to the <c>2013-04-01/hostedzone</c> resource. The response to this
         /// request includes a <c>HostedZones</c> element with zero, one, or multiple <c>HostedZone</c> child elements. By default, the list of hosted
         /// zones is displayed on a single page. You can control the length of the page that is displayed by using the <c>MaxItems</c> parameter. You
         /// can use the <c>Marker</c> parameter to control the hosted zone that the list begins with. </para> <para><b>NOTE:</b> Amazon Route 53 returns
@@ -739,8 +742,8 @@ namespace Amazon.Route53
         /// 
         /// <returns>The response from the ListResourceRecordSets service method, as returned by AmazonRoute53.</returns>
         /// 
-        /// <exception cref="T:Amazon.Route53.Model.InvalidInputException" />
         /// <exception cref="T:Amazon.Route53.Model.NoSuchHostedZoneException" />
+        /// <exception cref="T:Amazon.Route53.Model.InvalidInputException" />
 		public ListResourceRecordSetsResponse ListResourceRecordSets(ListResourceRecordSetsRequest request)
         {
             var task = ListResourceRecordSetsAsync(request);

@@ -22,7 +22,7 @@ namespace Amazon.Route53
     /// <summary>
     /// Configuration for accessing AmazonRoute53 service
     /// </summary>
-    public class AmazonRoute53Config : ClientConfig
+    public partial class AmazonRoute53Config : ClientConfig
     {
         /// <summary>
         /// Default constructor
@@ -52,7 +52,7 @@ namespace Amazon.Route53
         {
             get
             {
-                return "2012-12-12";
+                return "2013-04-01";
             }
         }
     }

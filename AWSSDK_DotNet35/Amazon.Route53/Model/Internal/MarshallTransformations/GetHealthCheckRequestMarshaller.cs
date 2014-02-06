@@ -43,7 +43,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
 
 
             request.HttpMethod = "GET";
-            string uriResourcePath = "/2012-12-12/healthcheck/{HealthCheckId}"; 
+            string uriResourcePath = "/2013-04-01/healthcheck/{HealthCheckId}"; 
             uriResourcePath = uriResourcePath.Replace("{HealthCheckId}", getHealthCheckRequest.IsSetHealthCheckId() ? getHealthCheckRequest.HealthCheckId.ToString() : "" ); 
 
             if (uriResourcePath.Contains("?")) 

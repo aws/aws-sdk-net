@@ -43,7 +43,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
 
 
             request.HttpMethod = "GET";
-            string uriResourcePath = "/2012-12-12/hostedzone/{Id}/rrset?type={Type}&name={Name}&identifier={Identifier}&maxitems={MaxItems}"; 
+            string uriResourcePath = "/2013-04-01/hostedzone/{Id}/rrset?type={Type}&name={Name}&identifier={Identifier}&maxitems={MaxItems}"; 
             uriResourcePath = uriResourcePath.Replace("{Id}", listResourceRecordSetsRequest.IsSetHostedZoneId() ? listResourceRecordSetsRequest.HostedZoneId.ToString() : "" ); 
             uriResourcePath = uriResourcePath.Replace("{Name}", listResourceRecordSetsRequest.IsSetStartRecordName() ? listResourceRecordSetsRequest.StartRecordName.ToString() : "" ); 
             uriResourcePath = uriResourcePath.Replace("{Type}", listResourceRecordSetsRequest.IsSetStartRecordType() ? listResourceRecordSetsRequest.StartRecordType.ToString() : "" ); 
@@ -61,14 +61,13 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                 foreach (string s in queryString.Split('&', ';')) 
                 {
                     string[] nameValuePair = s.Split('=');
-                    if (nameValuePair.Length == 2) 
+                    if (nameValuePair.Length == 2 && nameValuePair[1].Length > 0) 
                     {
-                        if (nameValuePair[1].Length > 0)
-                            request.Parameters.Add(nameValuePair[0], nameValuePair[1]);
+                        request.Parameters.Add(nameValuePair[0], nameValuePair[1]);
                     }
                     else
                     {
-                        request.Parameters.Add(nameValuePair[0], null); // possible subresource
+                        request.Parameters.Add(nameValuePair[0], null);
                     }
                 
                 }

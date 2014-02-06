@@ -29,9 +29,10 @@ namespace Amazon.Route53.Model
     /// <c>PENDING</c> indicates that the changes in this request have not replicated to all Route 53 DNS servers. This is the initial status of all
     /// change batch requests.</para> <para>- <c>INSYNC</c> indicates that the changes have replicated to all Amazon Route 53 DNS servers. </para>
     /// </summary>
-    public partial class GetChangeRequest : AmazonWebServiceRequest
+    public partial class GetChangeRequest : AmazonRoute53Request
     {
         private string id;
+
 
         /// <summary>
         /// The ID of the change batch request. The value that you specify here is the value that <c>ChangeResourceRecordSets</c> returned in the Id

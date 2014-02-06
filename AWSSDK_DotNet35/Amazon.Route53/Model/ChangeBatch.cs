@@ -29,6 +29,7 @@ namespace Amazon.Route53.Model
         private string comment;
         private List<Change> changes = new List<Change>();
 
+
         /// <summary>
         /// <i>Optional:</i> Any comments you want to include about a change batch request.
         ///  

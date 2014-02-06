@@ -32,6 +32,7 @@ namespace Amazon.Route53.Model
         private string dNSName;
         private bool? evaluateTargetHealth;
 
+
         /// <summary>
         /// <i>Alias resource record sets only:</i> The value of the hosted zone ID for the AWS resource. For more information and an example, see <a
         /// href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating Alias Resource Record Sets</a> in the

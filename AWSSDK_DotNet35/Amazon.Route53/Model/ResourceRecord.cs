@@ -28,6 +28,7 @@ namespace Amazon.Route53.Model
         
         private string value;
 
+
         /// <summary>
         /// The value of the <c>Value</c> element for the current resource record set.
         ///  

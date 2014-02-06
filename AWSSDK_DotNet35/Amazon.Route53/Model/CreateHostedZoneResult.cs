@@ -32,6 +32,7 @@ namespace Amazon.Route53.Model
         private DelegationSet delegationSet;
         private string location;
 
+
         /// <summary>
         /// A complex type that contains identifying information about the hosted zone.
         ///  

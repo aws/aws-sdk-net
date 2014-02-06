@@ -37,6 +37,11 @@ namespace Amazon.Route53
         public static readonly ChangeAction DELETE = new ChangeAction("DELETE");
     
 
+       /// <summary>Constant UPSERT for ChangeAction
+       /// </summary>
+        public static readonly ChangeAction UPSERT = new ChangeAction("UPSERT");
+    
+
         /// <summary>
         /// Default Constructor
         /// </summary>
@@ -112,6 +117,21 @@ namespace Amazon.Route53
        /// <summary>Constant HTTP for HealthCheckType
        /// </summary>
         public static readonly HealthCheckType HTTP = new HealthCheckType("HTTP");
+    
+
+       /// <summary>Constant HTTPS for HealthCheckType
+       /// </summary>
+        public static readonly HealthCheckType HTTPS = new HealthCheckType("HTTPS");
+    
+
+       /// <summary>Constant HTTPS_STR_MATCH for HealthCheckType
+       /// </summary>
+        public static readonly HealthCheckType HTTPS_STR_MATCH = new HealthCheckType("HTTPS_STR_MATCH");
+    
+
+       /// <summary>Constant HTTP_STR_MATCH for HealthCheckType
+       /// </summary>
+        public static readonly HealthCheckType HTTP_STR_MATCH = new HealthCheckType("HTTP_STR_MATCH");
     
 
        /// <summary>Constant TCP for HealthCheckType
@@ -285,6 +305,11 @@ namespace Amazon.Route53
        /// <summary>Constant ApSoutheast2 for ResourceRecordSetRegion
        /// </summary>
         public static readonly ResourceRecordSetRegion ApSoutheast2 = new ResourceRecordSetRegion("ap-southeast-2");
+    
+
+       /// <summary>Constant CnNorth1 for ResourceRecordSetRegion
+       /// </summary>
+        public static readonly ResourceRecordSetRegion CnNorth1 = new ResourceRecordSetRegion("cn-north-1");
     
 
        /// <summary>Constant EuWest1 for ResourceRecordSetRegion

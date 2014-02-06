@@ -30,6 +30,7 @@ namespace Amazon.Route53.Model
         private HostedZone hostedZone;
         private DelegationSet delegationSet;
 
+
         /// <summary>
         /// A complex type that contains the information about the specified hosted zone.
         ///  

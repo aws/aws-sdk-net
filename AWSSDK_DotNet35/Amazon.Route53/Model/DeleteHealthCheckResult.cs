@@ -27,5 +27,6 @@ namespace Amazon.Route53.Model
     public partial class DeleteHealthCheckResult : AmazonWebServiceResponse
     {
         
+
     }
 }

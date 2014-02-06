@@ -30,6 +30,7 @@ namespace Amazon.Route53.Model
         private string callerReference;
         private HealthCheckConfig healthCheckConfig;
 
+
         /// <summary>
         /// The ID of the specified health check.
         ///  
