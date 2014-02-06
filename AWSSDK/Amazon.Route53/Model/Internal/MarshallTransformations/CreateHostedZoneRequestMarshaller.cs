@@ -42,7 +42,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
 
             request.HttpMethod = "POST";
               
-            string uriResourcePath = "/2012-12-12/hostedzone"; 
+            string uriResourcePath = "/2013-04-01/hostedzone"; 
             
             if (uriResourcePath.Contains("?")) 
             {
@@ -71,24 +71,24 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             xmlWriter.Namespaces = true;
                        
             
-            xmlWriter.WriteStartElement("CreateHostedZoneRequest", "https://route53.amazonaws.com/doc/2012-12-12/");
+            xmlWriter.WriteStartElement("CreateHostedZoneRequest", "https://route53.amazonaws.com/doc/2013-04-01/");
                     if (createHostedZoneRequest.IsSetName()) 
         {
-            xmlWriter.WriteElementString("Name", "https://route53.amazonaws.com/doc/2012-12-12/", createHostedZoneRequest.Name.ToString());
+            xmlWriter.WriteElementString("Name", "https://route53.amazonaws.com/doc/2013-04-01/", createHostedZoneRequest.Name.ToString());
           }
         if (createHostedZoneRequest.IsSetCallerReference()) 
         {
-            xmlWriter.WriteElementString("CallerReference", "https://route53.amazonaws.com/doc/2012-12-12/", createHostedZoneRequest.CallerReference.ToString());
+            xmlWriter.WriteElementString("CallerReference", "https://route53.amazonaws.com/doc/2013-04-01/", createHostedZoneRequest.CallerReference.ToString());
           }
         if (createHostedZoneRequest != null) 
         {
             HostedZoneConfig hostedZoneConfigHostedZoneConfig = createHostedZoneRequest.HostedZoneConfig;
             if (hostedZoneConfigHostedZoneConfig != null) 
             {
-                xmlWriter.WriteStartElement("HostedZoneConfig", "https://route53.amazonaws.com/doc/2012-12-12/");
+                xmlWriter.WriteStartElement("HostedZoneConfig", "https://route53.amazonaws.com/doc/2013-04-01/");
                 if (hostedZoneConfigHostedZoneConfig.IsSetComment()) 
                 {
-                    xmlWriter.WriteElementString("Comment", "https://route53.amazonaws.com/doc/2012-12-12/", hostedZoneConfigHostedZoneConfig.Comment.ToString());
+                    xmlWriter.WriteElementString("Comment", "https://route53.amazonaws.com/doc/2013-04-01/", hostedZoneConfigHostedZoneConfig.Comment.ToString());
                   }
                 xmlWriter.WriteEndElement();
             }

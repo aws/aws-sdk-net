@@ -23,7 +23,7 @@ namespace Amazon.Route53.Model
     /// <summary>
     /// <para>A complex type that contains the <c>ChangeInfo</c> element.</para>
     /// </summary>
-    public class GetChangeResult
+    public partial class GetChangeResult
     {
         
         private ChangeInfo changeInfo;

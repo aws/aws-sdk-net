@@ -23,7 +23,7 @@ namespace Amazon.Route53.Model
     /// <summary>
     /// <para>A complex type that contains an optional comment and the changes that you want to make with a change batch request.</para>
     /// </summary>
-    public class ChangeBatch
+    public partial class ChangeBatch
     {
         
         private string comment;

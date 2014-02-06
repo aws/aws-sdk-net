@@ -23,7 +23,7 @@ namespace Amazon.Route53.Model
     /// <summary>
     /// <para>A complex type containing the response for the request.</para>
     /// </summary>
-    public class ChangeResourceRecordSetsResult
+    public partial class ChangeResourceRecordSetsResult
     {
         
         private ChangeInfo changeInfo;

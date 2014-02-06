@@ -23,7 +23,7 @@ namespace Amazon.Route53.Model
     /// <summary>
     /// <para>A complex type that contains the health check configuration.</para>
     /// </summary>
-    public class HealthCheckConfig
+    public partial class HealthCheckConfig
     {
         
         private string iPAddress;
@@ -31,6 +31,7 @@ namespace Amazon.Route53.Model
         private string type;
         private string resourcePath;
         private string fullyQualifiedDomainName;
+        private string searchString;
 
         /// <summary>
         /// IP Address of the instance being checked.
@@ -75,7 +76,8 @@ namespace Amazon.Route53.Model
         }
 
         /// <summary>
-        /// Port on which connection will be opened to the instance to health check. For HTTP this defaults to 80 if the port is not specified.
+        /// Port on which connection will be opened to the instance to health check. For HTTP and HTTP_STR_MATCH this defaults to 80 if the port is not
+        /// specified. For HTTPS and HTTPS_STR_MATCH this defaults to 443 if the port is not specified.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -113,14 +115,14 @@ namespace Amazon.Route53.Model
         }
 
         /// <summary>
-        /// The type of health check to be performed. Currently supported protocols are TCP and HTTP.
+        /// The type of health check to be performed. Currently supported types are TCP, HTTP, HTTPS, HTTP_STR_MATCH, and HTTPS_STR_MATCH.
         ///  
         /// <para>
         /// <b>Constraints:</b>
         /// <list type="definition">
         ///     <item>
         ///         <term>Allowed Values</term>
-        ///         <description>HTTP, TCP</description>
+        ///         <description>HTTP, HTTPS, HTTP_STR_MATCH, HTTPS_STR_MATCH, TCP</description>
         ///     </item>
         /// </list>
         /// </para>
@@ -151,8 +153,8 @@ namespace Amazon.Route53.Model
         }
 
         /// <summary>
-        /// Path to ping on the instance to check the health. Required only for HTTP health checks, HTTP request is issued to the instance on the given
-        /// port and path.
+        /// Path to ping on the instance to check the health. Required for HTTP, HTTPS, HTTP_STR_MATCH, and HTTPS_STR_MATCH health checks, HTTP request
+        /// is issued to the instance on the given port and path.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -225,6 +227,44 @@ namespace Amazon.Route53.Model
         internal bool IsSetFullyQualifiedDomainName()
         {
             return this.fullyQualifiedDomainName != null;
+        }
+
+        /// <summary>
+        /// A string to search for in the body of a health check response. Required for HTTP_STR_MATCH and HTTPS_STR_MATCH health checks.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Length</term>
+        ///         <description>0 - 255</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
+        public string SearchString
+        {
+            get { return this.searchString; }
+            set { this.searchString = value; }
+        }
+
+        /// <summary>
+        /// Sets the SearchString property
+        /// </summary>
+        /// <param name="searchString">The value to set for the SearchString property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public HealthCheckConfig WithSearchString(string searchString)
+        {
+            this.searchString = searchString;
+            return this;
+        }
+            
+
+        // Check to see if SearchString property is set
+        internal bool IsSetSearchString()
+        {
+            return this.searchString != null;
         }
     }
 }

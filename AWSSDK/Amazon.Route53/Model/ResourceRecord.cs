@@ -23,7 +23,7 @@ namespace Amazon.Route53.Model
     /// <summary>
     /// <para>A complex type that contains the value of the <c>Value</c> element for the current resource record set.</para>
     /// </summary>
-    public class ResourceRecord
+    public partial class ResourceRecord
     {
         
         private string value;

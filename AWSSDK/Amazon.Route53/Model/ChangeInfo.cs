@@ -24,7 +24,7 @@ namespace Amazon.Route53.Model
     /// <para>A complex type that describes change information about changes made to your hosted zone.</para> <para>This element contains an ID that
     /// you use when performing a GetChange action to get detailed information about the change.</para>
     /// </summary>
-    public class ChangeInfo
+    public partial class ChangeInfo
     {
         
         private string id;

@@ -23,7 +23,7 @@ namespace Amazon.Route53.Model
     /// <summary>
     /// <para>A complex type containing the response information for the new hosted zone.</para>
     /// </summary>
-    public class CreateHostedZoneResult
+    public partial class CreateHostedZoneResult
     {
         
         private HostedZone hostedZone;

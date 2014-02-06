@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -75,6 +75,20 @@ namespace Amazon.CloudFormation.Model
         {
             return this.stacks.Count > 0;
         }
+
+        /// <summary>
+        /// String that identifies the start of the next list of stacks, if there is one.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Length</term>
+        ///         <description>1 - 1024</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
         public string NextToken
         {
             get { return this.nextToken; }

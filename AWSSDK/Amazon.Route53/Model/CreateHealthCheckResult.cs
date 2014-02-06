@@ -23,7 +23,7 @@ namespace Amazon.Route53.Model
     /// <summary>
     /// <para>A complex type containing the response information for the new health check.</para>
     /// </summary>
-    public class CreateHealthCheckResult
+    public partial class CreateHealthCheckResult
     {
         
         private HealthCheck healthCheck;

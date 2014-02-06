@@ -23,7 +23,7 @@ namespace Amazon.Route53.Model
     /// <summary>
     /// <para>A complex type that contain information about the specified hosted zone.</para>
     /// </summary>
-    public class HostedZone
+    public partial class HostedZone
     {
         
         private string id;

@@ -9726,6 +9726,7 @@
     </Compile>
     <Compile Include="Amazon.Route53\AmazonRoute53.cs" />
     <Compile Include="Amazon.Route53\AmazonRoute53Client.cs" />
+    <Compile Include="Amazon.Route53\AmazonRoute53Client.Extensions.cs" />
     <Compile Include="Amazon.Route53\AmazonRoute53Config.cs" />
     <Compile Include="Amazon.Route53\AmazonRoute53Exception.cs" />
     <Compile Include="Amazon.Route53\Model\AliasTarget.cs" />
@@ -9766,6 +9767,7 @@
     <Compile Include="Amazon.Route53\Model\HostedZoneAlreadyExistsException.cs" />
     <Compile Include="Amazon.Route53\Model\HostedZoneConfig.cs" />
     <Compile Include="Amazon.Route53\Model\HostedZoneNotEmptyException.cs" />
+    <Compile Include="Amazon.Route53\Model\IncompatibleVersionException.cs" />
     <Compile Include="Amazon.Route53\Model\Internal\MarshallTransformations\AliasTargetUnmarshaller.cs" />
     <Compile Include="Amazon.Route53\Model\Internal\MarshallTransformations\ChangeInfoUnmarshaller.cs" />
     <Compile Include="Amazon.Route53\Model\Internal\MarshallTransformations\ChangeResourceRecordSetsRequestMarshaller.cs" />

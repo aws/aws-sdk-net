@@ -25,7 +25,7 @@ namespace Amazon.Route53.Model
 {
     /// <summary>
     /// Container for the parameters to the ListHealthChecks operation.
-    /// <para> To retrieve a list of your health checks, send a <c>GET</c> request to the <c>2012-12-12/healthcheck</c> resource. The response to
+    /// <para> To retrieve a list of your health checks, send a <c>GET</c> request to the <c>2013-04-01/healthcheck</c> resource. The response to
     /// this request includes a <c>HealthChecks</c> element with zero, one, or multiple <c>HealthCheck</c> child elements. By default, the list of
     /// health checks is displayed on a single page. You can control the length of the page that is displayed by using the <c>MaxItems</c>
     /// parameter. You can use the <c>Marker</c> parameter to control the health check that the list begins with. </para> <para><b>NOTE:</b> Amazon

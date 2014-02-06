@@ -23,7 +23,7 @@ namespace Amazon.Route53.Model
     /// <summary>
     /// <para>A complex type that contains name server information.</para>
     /// </summary>
-    public class DelegationSet
+    public partial class DelegationSet
     {
         
         private List<string> nameServers = new List<string>();

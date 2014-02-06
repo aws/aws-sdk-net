@@ -24,7 +24,7 @@ namespace Amazon.Route53.Model
     /// <para>A complex type that contains information about the resource record sets that are returned by the request and information about the
     /// response.</para>
     /// </summary>
-    public class ListResourceRecordSetsResult
+    public partial class ListResourceRecordSetsResult
     {
         
         private List<ResourceRecordSet> resourceRecordSets = new List<ResourceRecordSet>();

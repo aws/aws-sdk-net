@@ -23,7 +23,7 @@ namespace Amazon.Route53.Model
     /// <summary>
     /// <para> A complex type that contains the response for the request.</para>
     /// </summary>
-    public class ListHostedZonesResult
+    public partial class ListHostedZonesResult
     {
         
         private List<HostedZone> hostedZones = new List<HostedZone>();

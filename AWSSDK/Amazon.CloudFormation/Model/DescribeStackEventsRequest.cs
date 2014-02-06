@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,9 +25,9 @@ namespace Amazon.CloudFormation.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeStackEvents operation.
-    /// <para>Returns all stack related events for a specified stack. For more information about a stack's event history, go to the <a
-    /// href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide" >AWS CloudFormation User Guide</a> .</para> <para><b>NOTE:</b>Events
-    /// are returned, even if the stack never existed or has been successfully deleted.</para>
+    /// <para>Returns all stack related events for a specified stack. For more information about a stack's event history, go to <a
+    /// href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/concept-stack.html" >Stacks</a> in the AWS CloudFormation User
+    /// Guide.</para> <para><b>NOTE:</b>Events are returned, even if the stack never existed or has been successfully deleted.</para>
     /// </summary>
     /// <seealso cref="Amazon.CloudFormation.AmazonCloudFormation.DescribeStackEvents"/>
     public class DescribeStackEventsRequest : AmazonWebServiceRequest
