@@ -41,9 +41,12 @@ namespace Amazon.Runtime.Internal.Transform
 
         public Stream OpenResponse()
         {
-            var taskStream = this._response.Content.ReadAsStreamAsync();
-            taskStream.Wait();
-            return taskStream.Result;
+            return OpenResponseAsync().Result;
+        }
+        
+        public async Task<Stream> OpenResponseAsync()
+        {
+            return await this._response.Content.ReadAsStreamAsync().ConfigureAwait(false);
         }
 
         public string ContentType
