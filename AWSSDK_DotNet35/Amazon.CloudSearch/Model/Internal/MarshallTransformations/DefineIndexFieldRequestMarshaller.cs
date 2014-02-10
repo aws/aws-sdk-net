@@ -52,7 +52,7 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
                 }
                 if (indexField != null)
                 {
-                    UIntOptions uIntOptions = indexField.UIntOptions;
+                    IntOptions uIntOptions = indexField.IntOptions;
                     if (uIntOptions != null && uIntOptions.IsSetDefaultValue())
                     {
                         request.Parameters.Add("IndexField.UIntOptions.DefaultValue", StringUtils.FromInt(uIntOptions.DefaultValue));
@@ -75,7 +75,11 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
                     }
                     if (literalOptions != null && literalOptions.IsSetResultEnabled())
                     {
-                        request.Parameters.Add("IndexField.LiteralOptions.ResultEnabled", StringUtils.FromBool(literalOptions.ResultEnabled));
+                        request.Parameters.Add("IndexField.LiteralOptions.ReturnEnabled", StringUtils.FromBool(literalOptions.ResultEnabled));
+                    }
+                    if (literalOptions != null && literalOptions.IsSortEnabled())
+                    {
+                        request.Parameters.Add("IndexField.LiteralOptions.SortEnabled", StringUtils.FromBool(literalOptions.SortEnabled));
                     }
                 }
                 if (indexField != null)
@@ -85,17 +89,38 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
                     {
                         request.Parameters.Add("IndexField.TextOptions.DefaultValue", StringUtils.FromString(textOptions.DefaultValue));
                     }
-                    if (textOptions != null && textOptions.IsSetFacetEnabled())
-                    {
-                        request.Parameters.Add("IndexField.TextOptions.FacetEnabled", StringUtils.FromBool(textOptions.FacetEnabled));
-                    }
                     if (textOptions != null && textOptions.IsSetResultEnabled())
                     {
-                        request.Parameters.Add("IndexField.TextOptions.ResultEnabled", StringUtils.FromBool(textOptions.ResultEnabled));
+                        request.Parameters.Add("IndexField.TextOptions.ReturnEnabled", StringUtils.FromBool(textOptions.ResultEnabled));
                     }
                     if (textOptions != null && textOptions.IsSetTextProcessor())
                     {
                         request.Parameters.Add("IndexField.TextOptions.TextProcessor", StringUtils.FromString(textOptions.TextProcessor));
+                    }
+                }
+
+                if (indexField != null)
+                {
+                    DateOptions dateOptions = indexField.DateOptions;
+                    if (dateOptions != null && dateOptions.IsSetDefaultValue())
+                    {
+                        request.Parameters.Add("IndexField.DateOptions.DefaultValue", StringUtils.FromString(dateOptions.DefaultValue.ToString()));
+                    }
+                    if (dateOptions != null && dateOptions.IsSetSearchEnabled())
+                    {
+                        request.Parameters.Add("IndexField.DateOptions.SearchEnabled", StringUtils.FromBool(dateOptions.SearchEnabled));
+                    }
+                    if (dateOptions != null && dateOptions.IsSetFacetEnabled())
+                    {
+                        request.Parameters.Add("IndexField.DateOptions.FacetEnabled", StringUtils.FromBool(dateOptions.FacetEnabled));
+                    }
+                    if (dateOptions != null && dateOptions.IsSetResultEnabled())
+                    {
+                        request.Parameters.Add("IndexField.DateOptions.ReturnEnabled", StringUtils.FromBool(dateOptions.ResultEnabled));
+                    }
+                    if (dateOptions != null && dateOptions.IsSortEnabled())
+                    {
+                        request.Parameters.Add("IndexField.DateOptions.SortEnabled", StringUtils.FromBool(dateOptions.SortEnabled));
                     }
                 }
 

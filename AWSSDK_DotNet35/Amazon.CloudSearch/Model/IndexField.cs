@@ -17,6 +17,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using Amazon.CloudSearch.Model;
 
 namespace Amazon.CloudSearch.Model
 {
@@ -28,10 +29,17 @@ namespace Amazon.CloudSearch.Model
     {
         
         private string indexFieldName;
+        private DateOptions dateOptions;
+        private DateArrayOptions dateArrayOptions;
+        private DoubleOptions doubleOptions;
+        private DoubleArrayOptions doubleArrayOptions;
         private IndexFieldType indexFieldType;
-        private UIntOptions uIntOptions;
+        private IntOptions intOptions;
+        private IntArrayOptions intArrayOptions;
         private LiteralOptions literalOptions;
+        private LiteralArrayOptions literalArrayOptions;
         private TextOptions textOptions;
+        private TextArrayOptions textArrayOptions;
         private List<SourceAttribute> sourceAttributes = new List<SourceAttribute>();
 
 
@@ -95,16 +103,16 @@ namespace Amazon.CloudSearch.Model
         /// Options for an unsigned integer field. Present if <c>IndexFieldType</c> specifies the field is of type unsigned integer.
         ///  
         /// </summary>
-        public UIntOptions UIntOptions
+        public IntOptions IntOptions
         {
-            get { return this.uIntOptions; }
-            set { this.uIntOptions = value; }
+            get { return this.intOptions; }
+            set { this.intOptions = value; }
         }
 
         // Check to see if UIntOptions property is set
         internal bool IsSetUIntOptions()
         {
-            return this.uIntOptions != null;
+            return this.intOptions != null;
         }
 
         /// <summary>
@@ -137,6 +145,95 @@ namespace Amazon.CloudSearch.Model
         internal bool IsSetTextOptions()
         {
             return this.textOptions != null;
+        }
+
+        public DateOptions DateOptions
+        {
+            get { return this.dateOptions; }
+            set { this.dateOptions = value; }
+        }
+
+        internal bool IsSetDateOptions()
+        {
+            return this.dateOptions != null;
+        }
+
+        public DoubleOptions DoubleOptions
+        {
+            get { return this.doubleOptions; }
+            set { this.doubleOptions = value; }
+        }
+
+        internal bool IsSetDoubleOptions()
+        {
+            return this.doubleOptions != null;
+        }
+
+
+        public IntArrayOptions IntArrayOptions
+        {
+            get { return this.intArrayOptions; }
+            set { this.intArrayOptions = value; }
+        }
+
+        // Check to see if UIntOptions property is set
+        internal bool IsSetUIntArrayOptions()
+        {
+            return this.intArrayOptions != null;
+        }
+
+        /// <summary>
+        /// Options for literal field. Present if <c>IndexFieldType</c> specifies the field is of type literal.
+        ///  
+        /// </summary>
+        public LiteralArrayOptions LiteralArrayOptions
+        {
+            get { return this.literalArrayOptions; }
+            set { this.literalArrayOptions = value; }
+        }
+
+        // Check to see if LiteralOptions property is set
+        internal bool IsSetLiteralArrayOptions()
+        {
+            return this.literalArrayOptions != null;
+        }
+
+        /// <summary>
+        /// Options for text field. Present if <c>IndexFieldType</c> specifies the field is of type text.
+        ///  
+        /// </summary>
+        public TextArrayOptions TextArrayOptions
+        {
+            get { return this.textArrayOptions; }
+            set { this.textArrayOptions = value; }
+        }
+
+        // Check to see if TextOptions property is set
+        internal bool IsSetTextArrayOptions()
+        {
+            return this.textArrayOptions != null;
+        }
+
+        public DateArrayOptions DateArrayOptions
+        {
+            get { return this.dateArrayOptions; }
+            set { this.dateArrayOptions = value; }
+        }
+
+        internal bool IsSetDateArrayOptions()
+        {
+            return this.dateArrayOptions != null;
+        }
+
+        public DoubleArrayOptions DoubleArrayOptions
+        {
+            get { return this.doubleArrayOptions; }
+            set { this.doubleArrayOptions = value; }
+        }
+
+        internal bool IsSetDoubleArrayOptions()
+        {
+            return this.doubleArrayOptions != null;
         }
 
         /// <summary>

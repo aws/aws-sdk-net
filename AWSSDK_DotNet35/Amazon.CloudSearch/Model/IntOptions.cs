@@ -21,12 +21,11 @@ using System.IO;
 namespace Amazon.CloudSearch.Model
 {
     /// <summary>
-    /// <para>Options that define a literal field in the search index.</para>
+    /// <para>Options that define a <c>uint</c> field in the search index.</para>
     /// </summary>
-    public class LiteralOptions
+    public class IntOptions
     {
-        
-        private string defaultValue;
+        private int? defaultValue;
         private bool? searchEnabled;
         private bool? facetEnabled;
         private bool? resultEnabled;
@@ -46,16 +45,16 @@ namespace Amazon.CloudSearch.Model
         /// </list>
         /// </para>
         /// </summary>
-        public string DefaultValue
+        public int DefaultValue
         {
-            get { return this.defaultValue; }
+            get { return this.defaultValue ?? default(int); }
             set { this.defaultValue = value; }
         }
 
         // Check to see if DefaultValue property is set
         internal bool IsSetDefaultValue()
         {
-            return this.defaultValue != null;
+            return this.defaultValue.HasValue;
         }
 
         /// <summary>
@@ -116,6 +115,5 @@ namespace Amazon.CloudSearch.Model
         {
             return this.sortEnabled.HasValue;
         }
-
     }
 }
