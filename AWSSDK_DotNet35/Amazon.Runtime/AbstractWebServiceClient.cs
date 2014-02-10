@@ -403,7 +403,7 @@ namespace Amazon.Runtime
         protected void LogFinishedResponse(RequestMetrics metrics, UnmarshallerContext context, long contentLength)
         {
             metrics.AddProperty(Metric.BytesProcessed, contentLength);
-            if (Config.LogResponse || AWSConfigs.ResponseLogging == ResponseLoggingOption.Always)
+            if (SupportResponseLogging && (Config.LogResponse || AWSConfigs.ResponseLogging == ResponseLoggingOption.Always))
             {
                 this.logger.DebugFormat("Received response: [{0}]", context.ResponseBody);
             }

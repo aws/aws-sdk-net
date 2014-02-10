@@ -39,11 +39,9 @@ namespace Amazon.Runtime.Internal.Transform
             get { return this._response.StatusCode; }
         }
 
-        public Stream OpenResponse()
+        public Task<Stream> OpenResponseAsync()
         {
-            var taskStream = this._response.Content.ReadAsStreamAsync();
-            taskStream.Wait();
-            return taskStream.Result;
+            return this._response.Content.ReadAsStreamAsync();
         }
 
         public string ContentType

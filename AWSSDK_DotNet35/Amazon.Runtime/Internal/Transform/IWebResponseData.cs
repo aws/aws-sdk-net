@@ -24,7 +24,6 @@ namespace Amazon.Runtime.Internal.Transform
     public interface IWebResponseData
     {
         string ContentType { get; }
-        Stream OpenResponse();
         HttpStatusCode StatusCode { get; }
         string[] GetHeaderNames();
         bool IsHeaderPresent(string headerName);

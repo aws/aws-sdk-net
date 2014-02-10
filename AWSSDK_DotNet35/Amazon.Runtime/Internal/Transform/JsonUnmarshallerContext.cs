@@ -18,6 +18,7 @@ using System.Globalization;
 using System.IO;
 using System.Text;
 using ThirdParty.Json.LitJson;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.Runtime.Internal.Transform
 {
@@ -53,7 +54,7 @@ namespace Amazon.Runtime.Internal.Transform
         private JsonReader jsonReader = null;
         private JsonPathStack stack = new JsonPathStack();
         private string currentField;
-        private JsonToken? currentToken = null;
+        private JsonToken? currentToken = null;        
 
         #endregion
 
@@ -63,11 +64,18 @@ namespace Amazon.Runtime.Internal.Transform
         /// Wrap the jsonstring for unmarshalling.
         /// </summary>
         /// <param name="responseStream">Stream that contains the JSON for unmarshalling</param>
+        /// <param name="maintainResponseBody"> If set to true, maintains a copy of the complete response body as the stream is being read.</param>
         /// <param name="responseData">Response data coming back from the request</param>
-        public JsonUnmarshallerContext(Stream responseStream, IWebResponseData responseData)
+        public JsonUnmarshallerContext(Stream responseStream, bool maintainResponseBody, IWebResponseData responseData)
         {
+            if (maintainResponseBody)
+            {
+                this.WrappingStream = new CachingWrapperStream(responseStream);
+                responseStream = this.WrappingStream;
+            }
+            
             this.WebResponseData = responseData;
-            this.ResponseContents = null;
+            this.MaintainResponseBody = maintainResponseBody;
 
             long contentLength;
             if (responseData != null && long.TryParse(responseData.GetHeaderValue("Content-Length"), out contentLength))
@@ -79,27 +87,6 @@ namespace Amazon.Runtime.Internal.Transform
                 streamReader = new StreamReader(this.CrcStream);
             else
                 streamReader = new StreamReader(responseStream);
-
-            jsonReader = new JsonReader(streamReader);
-        }
-
-        /// <summary>
-        /// Wrap the jsonstring for unmarshalling.
-        /// </summary>
-        /// <param name="responseBody">String that contains the JSON for unmarshalling</param>
-        /// <param name="responseData">Response data coming back from the request</param>
-        public JsonUnmarshallerContext(string responseBody, IWebResponseData responseData)
-        {
-            this.WebResponseData = responseData;
-            this.ResponseContents = responseBody;
-
-            var stream = new MemoryStream(Encoding.UTF8.GetBytes(responseBody));
-            base.SetupCRCStream(responseData, stream, stream.Length);
-
-            if (this.CrcStream != null)
-                streamReader = new StreamReader(this.CrcStream);
-            else
-                streamReader = new StreamReader(stream);
 
             jsonReader = new JsonReader(streamReader);
         }

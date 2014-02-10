@@ -541,7 +541,7 @@ namespace Amazon.S3.Encryption
         }
 
         /// <summary>
-        /// Turn off response logging because it will interfer with decrypt of the data coming back from S3.
+        /// Turn off response logging because it will interfere with decrypt of the data coming back from S3.
         /// </summary>
         protected override bool SupportResponseLogging
         {

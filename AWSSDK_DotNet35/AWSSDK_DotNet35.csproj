@@ -9909,6 +9909,7 @@
     <Compile Include="Amazon.Runtime\Internal\IRequest.cs" />
     <Compile Include="Amazon.Runtime\Internal\IRequestData.cs" />
     <Compile Include="Amazon.Runtime\Internal\IRequestEvents.cs" />
+    <Compile Include="Amazon.Runtime\Internal\Util\CachingWrapperStream.cs" />
     <Compile Include="Amazon.Runtime\Internal\Util\Metrics.cs" />
     <Compile Include="Amazon.Runtime\Internal\Transform\ErrorResponseUnmarshaller.cs" />
     <Compile Include="Amazon.Runtime\Internal\Transform\HttpWebRequestResponseData.cs" />

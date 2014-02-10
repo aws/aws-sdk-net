@@ -285,7 +285,12 @@ namespace Amazon.Runtime
 
                         try
                         {
-                            context = unmarshaller.CreateContext(new HttpWebRequestResponseData(httpResponse), this.SupportResponseLogging && (Config.LogResponse || Config.ReadEntireResponse || AWSConfigs.ResponseLogging != ResponseLoggingOption.Never), asyncResult.Metrics);
+                            var httpResponseData = new HttpWebRequestResponseData(httpResponse);
+                            context = unmarshaller.CreateContext(httpResponseData, 
+                                this.SupportResponseLogging && 
+                                (Config.LogResponse || Config.ReadEntireResponse || AWSConfigs.ResponseLogging != ResponseLoggingOption.Never),
+                                httpResponseData.OpenResponse(),
+                                asyncResult.Metrics);
                             
                             using (asyncResult.Metrics.StartEvent(Metric.ResponseUnmarshallTime))
                             {
@@ -320,11 +325,16 @@ namespace Amazon.Runtime
                         asyncResult.Request.Suppress404Exceptions)
                     {
                         var unmarshaller = asyncResult.Unmarshaller;
-                        context = unmarshaller.CreateContext(new HttpWebRequestResponseData(exceptionHttpResponse), Config.LogResponse || Config.ReadEntireResponse || AWSConfigs.ResponseLogging != ResponseLoggingOption.Never, asyncResult.Metrics);
+                        var httpResponseData = new HttpWebRequestResponseData(exceptionHttpResponse);
+                        UnmarshallerContext errorContext = unmarshaller.CreateContext(
+                            httpResponseData, 
+                            Config.LogResponse || Config.ReadEntireResponse || AWSConfigs.ResponseLogging != ResponseLoggingOption.Never, 
+                            httpResponseData.OpenResponse(),
+                            asyncResult.Metrics);
 
                         try
                         {
-                            response = unmarshaller.Unmarshall(context);
+                            response = unmarshaller.Unmarshall(errorContext);
                             response.ContentLength = exceptionHttpResponse.ContentLength;
                             response.HttpStatusCode = exceptionHttpResponse.StatusCode;
                         }
@@ -482,7 +492,12 @@ namespace Amazon.Runtime
                 using (httpErrorResponse)
                 {
                     var unmarshaller = asyncResult.Unmarshaller;
-                    UnmarshallerContext errorContext = unmarshaller.CreateContext(new HttpWebRequestResponseData(httpErrorResponse), Config.LogResponse || Config.ReadEntireResponse || AWSConfigs.ResponseLogging != ResponseLoggingOption.Never, asyncResult.Metrics);
+                    var httpResponseData = new HttpWebRequestResponseData(httpErrorResponse);
+                    UnmarshallerContext errorContext = unmarshaller.CreateContext(httpResponseData,
+                        Config.LogResponse || Config.ReadEntireResponse || AWSConfigs.ResponseLogging != ResponseLoggingOption.Never,
+                        httpResponseData.OpenResponse(),
+                        asyncResult.Metrics);
+
                     errorResponseException = unmarshaller.UnmarshallException(errorContext, we, statusCode);
                     if (Config.LogResponse || AWSConfigs.ResponseLogging != ResponseLoggingOption.Never)
                     {

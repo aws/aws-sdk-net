@@ -29,9 +29,18 @@ namespace Amazon.Runtime.Internal.Transform
     /// </summary>
     public abstract class ResponseUnmarshaller : IResponseUnmarshaller<AmazonWebServiceResponse, UnmarshallerContext>
     {
-        public virtual UnmarshallerContext CreateContext(IWebResponseData response, bool readEntireResponse, RequestMetrics metrics)
+        public virtual UnmarshallerContext CreateContext(IWebResponseData response, bool readEntireResponse, Stream stream, RequestMetrics metrics)
         {
-            throw new NotImplementedException();
+            if (response == null)
+            {
+                throw new WebException("The Web Response for a successful request is null!");
+            }
+
+            UnmarshallerContext context = ConstructUnmarshallerContext(stream,
+                ShouldReadEntireResponse(response,readEntireResponse),
+                response);
+
+            return context;
         }
 
         internal virtual bool HasStreamingProperty
@@ -56,6 +65,13 @@ namespace Amazon.Runtime.Internal.Transform
         }
 
         #endregion
+
+        protected abstract UnmarshallerContext ConstructUnmarshallerContext(Stream responseStream, bool maintainResponseBody, IWebResponseData response);
+        
+        protected virtual bool ShouldReadEntireResponse(IWebResponseData response, bool readEntireResponse)
+        {
+            return readEntireResponse;
+        }
     }
 
     /// <summary>
@@ -63,30 +79,6 @@ namespace Amazon.Runtime.Internal.Transform
     /// </summary>
     public class XmlResponseUnmarshaller : ResponseUnmarshaller
     {
-        public override UnmarshallerContext CreateContext(IWebResponseData response, bool readEntireResponse, RequestMetrics metrics)
-        {
-            if (response == null)
-            {
-                throw new WebException("The Web Response for a successful request is null!");
-            }
-
-            XmlUnmarshallerContext context;
-            if (readEntireResponse)
-            {
-                string responseBody;
-                using (metrics.StartEvent(Metric.ResponseReadTime))
-                {
-                    responseBody = new StreamReader(response.OpenResponse()).ReadToEnd();
-                }
-                context = new XmlUnmarshallerContext(responseBody, response);
-            }
-            else
-            {
-                context = new XmlUnmarshallerContext(response.OpenResponse(), response);
-            }
-            return context;
-        }
-
         public override AmazonWebServiceResponse Unmarshall(UnmarshallerContext input)
         {
             XmlUnmarshallerContext context = input as XmlUnmarshallerContext;
@@ -127,6 +119,11 @@ namespace Amazon.Runtime.Internal.Transform
         {
             throw new NotImplementedException();
         }
+
+        protected override UnmarshallerContext ConstructUnmarshallerContext(Stream responseStream, bool maintainResponseBody, IWebResponseData response)
+        {
+            return new XmlUnmarshallerContext(responseStream, maintainResponseBody, response);
+        }
     }
 
     /// <summary>
@@ -134,32 +131,6 @@ namespace Amazon.Runtime.Internal.Transform
     /// </summary>
     public class EC2ResponseUnmarshaller : XmlResponseUnmarshaller
     {
-        public override UnmarshallerContext CreateContext(IWebResponseData response, bool readEntireResponse, RequestMetrics metrics)
-        {
-            if (response == null)
-            {
-                throw new WebException(
-                    "The Web Response for a successful request is null!"
-                    );
-            }
-
-            EC2UnmarshallerContext context;
-            if (readEntireResponse)
-            {
-                string responseBody;
-                using (metrics.StartEvent(Metric.ResponseReadTime))
-                {
-                    responseBody = new StreamReader(response.OpenResponse()).ReadToEnd();
-                }
-                context = new EC2UnmarshallerContext(responseBody, response);
-            }
-            else
-            {
-                context = new EC2UnmarshallerContext(response.OpenResponse(), response);
-            }
-            return context;
-        }
-
         public override AmazonWebServiceResponse Unmarshall(UnmarshallerContext input)
         {
             // Unmarshall response
@@ -178,6 +149,11 @@ namespace Amazon.Runtime.Internal.Transform
 
             return response;
         }
+
+        protected override UnmarshallerContext ConstructUnmarshallerContext(Stream responseStream, bool maintainResponseBody, IWebResponseData response)
+        {
+            return new EC2UnmarshallerContext(responseStream, maintainResponseBody, response);
+        }
     }
 
     /// <summary>
@@ -187,13 +163,13 @@ namespace Amazon.Runtime.Internal.Transform
     {
         private static string AMZ_ID_2 = "x-amz-id-2";
 
-        public override UnmarshallerContext CreateContext(IWebResponseData response, bool readEntireResponse, RequestMetrics metrics)
+        public override UnmarshallerContext CreateContext(IWebResponseData response, bool readEntireResponse,Stream stream, RequestMetrics metrics)
         {
             if (response.IsHeaderPresent(AMZ_ID_2))
                 metrics.AddProperty(Metric.AmzId2, response.GetHeaderValue(AMZ_ID_2));
-            return base.CreateContext(response, readEntireResponse, metrics);
+            return base.CreateContext(response, readEntireResponse, stream, metrics);
         }
-        
+
         public override AmazonWebServiceResponse Unmarshall(UnmarshallerContext input)
         {
             // Unmarshall response
@@ -214,33 +190,6 @@ namespace Amazon.Runtime.Internal.Transform
     /// </summary>
     public class JsonResponseUnmarshaller : ResponseUnmarshaller
     {
-        public override UnmarshallerContext CreateContext(IWebResponseData response, bool readEntireResponse, RequestMetrics metrics)
-        {
-            if (response == null)
-            {
-                throw new WebException(
-                    "The Web Response for a successful request is null!"
-                    );
-            }
-
-            JsonUnmarshallerContext context;
-            if (readEntireResponse && response.ContentType != "application/octet-stream")
-            {
-                string responseBody;
-                using (metrics.StartEvent(Metric.ResponseReadTime))
-                {
-                    responseBody = new StreamReader(response.OpenResponse()).ReadToEnd();
-                }
-                context = new JsonUnmarshallerContext(responseBody, response);
-            }
-            else
-            {
-                context = new JsonUnmarshallerContext(response.OpenResponse(), response);
-            }
-
-            return context;
-        }
-
         public override AmazonWebServiceResponse Unmarshall(UnmarshallerContext input)
         {
             JsonUnmarshallerContext context = input as JsonUnmarshallerContext;
@@ -280,5 +229,14 @@ namespace Amazon.Runtime.Internal.Transform
             throw new NotImplementedException();
         }
 
+        protected override UnmarshallerContext ConstructUnmarshallerContext(Stream responseStream, bool maintainResponseBody, IWebResponseData response)
+        {
+            return new JsonUnmarshallerContext(responseStream, maintainResponseBody, response);
+        }
+
+        protected override bool ShouldReadEntireResponse(IWebResponseData response, bool readEntireResponse)
+        {
+            return readEntireResponse && response.ContentType != "application/octet-stream";
+        }
     }
 }

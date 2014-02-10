@@ -149,12 +149,14 @@ namespace Amazon.Runtime
                     {
                         using (state.Metrics.StartEvent(Metric.ResponseProcessingTime))
                         {
-                            response = (T)HandleHttpContent(state, responseMessage);
+                            response = (T)await HandleHttpContentAsync(state, responseMessage)
+                                .ConfigureAwait(continueOnCapturedContext: false);
                         }
                     }
                     else
                     {
-                        bool retry = HandleHttpErrorResponse(state, responseMessage, cancellationToken);
+                        bool retry = await HandleHttpErrorResponseAsync(state, responseMessage, cancellationToken)
+                            .ConfigureAwait(continueOnCapturedContext: false);
                         if (retry)
                         {
                             shouldRetry = true;
@@ -209,6 +211,31 @@ WebExceptionStatusesToRetryOn.Contains(we.Status)
                         throw new AmazonServiceException(e);
                     }
                 }
+                catch (TaskCanceledException taskCancelledException)
+                {
+                    if (cancellationToken.IsCancellationRequested)
+                    {
+                        throw;
+                    }
+                    else
+                    {
+                        // It's a timeout exception.
+                        throw new AmazonServiceException(taskCancelledException);
+                    }
+                }
+                catch (OperationCanceledException operationCancelledException)
+                {                    
+                    if (cancellationToken.IsCancellationRequested)
+                    {
+                        // Throw an exception with the original cancellation token.
+                        throw new OperationCanceledException(operationCancelledException.Message, cancellationToken);
+                    }
+                    else
+                    {
+                        // It's a timeout exception.
+                        throw new AmazonServiceException(operationCancelledException);
+                    }
+                }
                 finally
                 {
                     if (responseMessage != null && !state.Unmarshaller.HasStreamingProperty)
@@ -240,7 +267,7 @@ WebExceptionStatusesToRetryOn.Contains(we.Status)
                 {
                     ProcessExceptionHandlers(e, state.Request);
                 }
-                throw e;
+                throw;
             }
 
             return response;
@@ -303,16 +330,21 @@ WebExceptionStatusesToRetryOn.Contains(we.Status)
             }
         }
 
-        AmazonWebServiceResponse HandleHttpContent(WebRequestState state, HttpResponseMessage httpResponse)
+        private async Task<AmazonWebServiceResponse> HandleHttpContentAsync(WebRequestState state, HttpResponseMessage httpResponse)
         {
             LogResponse(state.Metrics, state.Request, httpResponse.StatusCode);
             AmazonWebServiceResponse response = null;
-            IWebResponseData responseData = new HttpClientResponseData(httpResponse);
+            HttpClientResponseData responseData = new HttpClientResponseData(httpResponse);
+            UnmarshallerContext context = null;
             try
             {
-                var context = state.Unmarshaller.CreateContext(responseData,
-                    this.SupportResponseLogging && (Config.LogResponse || Config.ReadEntireResponse || AWSConfigs.ResponseLogging != ResponseLoggingOption.Never)
-                    , state.Metrics);
+                var responseStream = await responseData.OpenResponseAsync()
+                    .ConfigureAwait(continueOnCapturedContext: false);
+                context = state.Unmarshaller.CreateContext(responseData,
+                    this.SupportResponseLogging &&
+                    (Config.LogResponse || Config.ReadEntireResponse || AWSConfigs.ResponseLogging != ResponseLoggingOption.Never),
+                    responseStream,
+                    state.Metrics);
 
                 using (state.Metrics.StartEvent(Metric.ResponseUnmarshallTime))
                 {
@@ -344,13 +376,14 @@ WebExceptionStatusesToRetryOn.Contains(we.Status)
             }
         }
 
-        private bool HandleHttpErrorResponse(WebRequestState state, HttpResponseMessage httpErrorResponse, CancellationToken cancellationToken)
+        private async Task<bool> HandleHttpErrorResponseAsync(WebRequestState state, HttpResponseMessage httpErrorResponse, CancellationToken cancellationToken)
         {
             HttpStatusCode statusCode;
             AmazonServiceException errorResponseException = null;
 
-            IWebResponseData responseData = new HttpClientResponseData(httpErrorResponse);
+            HttpClientResponseData responseData = new HttpClientResponseData(httpErrorResponse);
 
+            UnmarshallerContext errorContext = null;
             try
             {
                 statusCode = httpErrorResponse.StatusCode;
@@ -358,7 +391,12 @@ WebExceptionStatusesToRetryOn.Contains(we.Status)
                 string redirectedLocation = responseData.GetHeaderValue("location");
                 state.Metrics.AddProperty(Metric.RedirectLocation, redirectedLocation);
 
-                UnmarshallerContext errorContext = state.Unmarshaller.CreateContext(responseData, Config.LogResponse || Config.ReadEntireResponse || AWSConfigs.ResponseLogging != ResponseLoggingOption.Never, state.Metrics);
+                var responseStream = await responseData.OpenResponseAsync()
+                    .ConfigureAwait(continueOnCapturedContext: false);
+                errorContext = state.Unmarshaller.CreateContext(responseData,
+                    Config.LogResponse || Config.ReadEntireResponse || AWSConfigs.ResponseLogging != ResponseLoggingOption.Never,
+                    responseStream,
+                    state.Metrics);
                 errorResponseException = state.Unmarshaller.UnmarshallException(errorContext, null, statusCode);
                 if (Config.LogResponse || AWSConfigs.ResponseLogging != ResponseLoggingOption.Never)
                 {

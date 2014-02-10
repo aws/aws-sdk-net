@@ -31,14 +31,28 @@ namespace Amazon.Runtime.Internal.Transform
     /// </summary>
     public abstract class UnmarshallerContext
     {
+        protected bool MaintainResponseBody { get; set; }
         protected CrcCalculatorStream CrcStream { get; set; }
-        protected int Crc32Result { get; set; }
-        protected string ResponseContents { get; set; }
+        protected int Crc32Result { get; set; }        
         protected IWebResponseData WebResponseData { get; set; }
+
+        protected CachingWrapperStream WrappingStream { get; set; }
 
         public string ResponseBody
         {
-            get { return ResponseContents; }
+            get
+            {
+                if (MaintainResponseBody)
+                {
+                    var bytes = this.WrappingStream.AllReadBytes.ToArray();
+                    return System.Text.UTF8Encoding.UTF8.GetString(
+                        bytes, 0, bytes.Length);
+                }
+                else
+                {
+                    return string.Empty;
+                }                
+            }
         }
 
         public IWebResponseData ResponseData
@@ -170,7 +184,7 @@ namespace Amazon.Runtime.Internal.Transform
         public abstract bool IsStartOfDocument { get; }
 
         #endregion
-
+        
     }
 
     /// <summary>
@@ -240,27 +254,19 @@ namespace Amazon.Runtime.Internal.Transform
         /// <summary>
         /// Wrap an XmlTextReader with state for event-based parsing of an XML stream.
         /// </summary>
-        /// <param name="responseBody">String with the XML from a service response.</param>
-        /// <param name="responseData">Response data coming back from the request</param>
-        public XmlUnmarshallerContext(string responseBody, IWebResponseData responseData)
-        {
-            byte[] bytes = Encoding.UTF8.GetBytes(responseBody);
-            Stream stream = new MemoryStream(bytes);
-            this.streamReader = new StreamReader(stream);
-            this.WebResponseData = responseData;
-            this.ResponseContents = responseBody;
-        }
-        
-        /// <summary>
-        /// Wrap an XmlTextReader with state for event-based parsing of an XML stream.
-        /// </summary>
         /// <param name="responseStream"><c>Stream</c> with the XML from a service response.</param>
+        /// <param name="maintainResponseBody"> If set to true, maintains a copy of the complete response body as the stream is being read.</param>
         /// <param name="responseData">Response data coming back from the request</param>
-        public XmlUnmarshallerContext(Stream responseStream, IWebResponseData responseData)
+        public XmlUnmarshallerContext(Stream responseStream, bool maintainResponseBody, IWebResponseData responseData)
         {
-            this.streamReader = new StreamReader(responseStream);
+            if (maintainResponseBody)
+            {
+                this.WrappingStream = new CachingWrapperStream(responseStream);
+                responseStream = this.WrappingStream;                
+            }
+            streamReader = new StreamReader(responseStream);
             this.WebResponseData = responseData;
-            this.ResponseContents = null;
+            this.MaintainResponseBody = maintainResponseBody;
         }        
 
         #endregion
@@ -424,24 +430,15 @@ namespace Amazon.Runtime.Internal.Transform
     }
 
     public class EC2UnmarshallerContext : XmlUnmarshallerContext
-    {
-        /// <summary>
-        /// Wrap an XmlTextReader with state for event-based parsing of an XML stream.
-        /// </summary>
-        /// <param name="responseBody">String with the XML from a service response.</param>
-        /// <param name="responseData">Response data coming back from the request</param>
-        public EC2UnmarshallerContext(string responseBody, IWebResponseData responseData)
-            : base(responseBody, responseData)
-        {
-        }
-        
+    {        
         /// <summary>
         /// Wrap an XmlTextReader with state for event-based parsing of an XML stream.
         /// </summary>
         /// <param name="responseStream"><c>Stream</c> with the XML from a service response.</param>
+        /// <param name="maintainResponseBody"> If set to true, maintains a copy of the complete response body as the stream is being read.</param>
         /// <param name="responseData">Response data coming back from the request</param>
-        public EC2UnmarshallerContext(Stream responseStream, IWebResponseData responseData)
-            : base(responseStream, responseData)
+        public EC2UnmarshallerContext(Stream responseStream, bool maintainResponseBody, IWebResponseData responseData)
+            : base(responseStream, maintainResponseBody, responseData)
         {
         }
 
