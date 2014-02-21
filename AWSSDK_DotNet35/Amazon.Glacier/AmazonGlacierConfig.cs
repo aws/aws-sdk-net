@@ -52,7 +52,7 @@ namespace Amazon.Glacier
         {
             get
             {
-                return "";
+                return "2012-06-01";
             }
         }
     }

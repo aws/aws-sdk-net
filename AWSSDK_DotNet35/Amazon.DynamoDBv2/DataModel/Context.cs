@@ -108,7 +108,7 @@ namespace Amazon.DynamoDBv2.DataModel
         #region Dispose Pattern Implementation
 
         /// <summary>
-        /// Implements the Dispose pattern for the AmazonWebServiceClient
+        /// Implements the Dispose pattern
         /// </summary>
         /// <param name="disposing">Whether this object is being disposed via a call to Dispose
         /// or garbage collected.</param>

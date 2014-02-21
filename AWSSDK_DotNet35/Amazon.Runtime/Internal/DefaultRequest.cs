@@ -20,6 +20,7 @@ using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Runtime.Internal.Auth;
 using Amazon.Util;
 
 namespace Amazon.Runtime.Internal
@@ -291,5 +292,19 @@ namespace Amazon.Runtime.Internal
             get;
             set;
         }
+
+        /// <summary>
+        /// If using AWS4 signing protocol, contains the resultant parts of the
+        /// signature that we may need to make use of if we elect to do a chunked
+        /// encoding upload.
+        /// </summary>
+        public AWS4SigningResult AWS4SignerResult { get; set; }
+
+        /// <summary>
+        /// Determine whether to use a chunked encoding upload for the request
+        /// (applies to Amazon S3 PutObject and UploadPart requests only). 
+        /// </summary>
+        /// <returns></returns>
+        public bool UseChunkEncoding { get; set; }
     }
 }

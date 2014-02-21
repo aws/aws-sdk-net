@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -26,13 +26,13 @@ namespace Amazon.DynamoDBv2.Model
     /// <summary>
     /// Container for the parameters to the DeleteTable operation.
     /// <para>The <i>DeleteTable</i> operation deletes a table and all of its items. After a <i>DeleteTable</i> request, the specified table is in
-    /// the <c>DELETING</c> state until Amazon DynamoDB completes the deletion. If the table is in the <c>ACTIVE</c> state, you can delete it. If a
-    /// table is in <c>CREATING</c> or <c>UPDATING</c> states, then Amazon DynamoDB returns a
-    /// <i>ResourceInUseException</i> . If the specified table does not exist, Amazon DynamoDB returns a
-    /// <i>ResourceNotFoundException</i> . If table is already in the <c>DELETING</c> state, no error is returned. </para> <para><b>NOTE:</b> Amazon
+    /// the <c>DELETING</c> state until DynamoDB completes the deletion. If the table is in the <c>ACTIVE</c> state, you can delete it. If a table
+    /// is in <c>CREATING</c> or <c>UPDATING</c> states, then DynamoDB returns a
+    /// <i>ResourceInUseException</i> . If the specified table does not exist, DynamoDB returns a
+    /// <i>ResourceNotFoundException</i> . If table is already in the <c>DELETING</c> state, no error is returned. </para> <para><b>NOTE:</b>
     /// DynamoDB might continue to accept data read and write operations, such as GetItem and PutItem, on a table in the DELETING state until the
-    /// table deletion is complete. </para> <para>When you delete a table, any local secondary indexes on that table are also deleted.</para>
-    /// <para>Use the <i>DescribeTable</i> API to check the status of the table. </para>
+    /// table deletion is complete. </para> <para>When you delete a table, any indexes on that table are also deleted.</para> <para>Use the
+    /// <i>DescribeTable</i> API to check the status of the table. </para>
     /// </summary>
     public partial class DeleteTableRequest : AmazonDynamoDBv2Request
     {

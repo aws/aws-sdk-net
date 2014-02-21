@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -58,7 +58,7 @@ namespace Amazon.Kinesis.Model
 
         /// <summary>
         /// The data blob. The data in the blob is both opaque and immutable to the Amazon Kinesis service, which does not inspect, interpret, or change
-        /// the data in the blob in any way. The maximum size of the data blob is 50 kilobytes (KB).
+        /// the data in the blob in any way. The maximum size of the data blob (the payload after Base64-decoding) is 50 kilobytes (KB)
         ///  
         /// <para>
         /// <b>Constraints:</b>

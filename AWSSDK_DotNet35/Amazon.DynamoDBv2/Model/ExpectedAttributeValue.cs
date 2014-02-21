@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -21,9 +21,9 @@ using System.IO;
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
-    /// <para>An attribute value used with conditional <i>DeleteItem</i> ,
-    /// <i>PutItem</i> or <i>UpdateItem</i> operations. Amazon DynamoDB will check to see if the attribute value already
-    /// exists; or if the attribute exists and has a particular value before updating it.</para>
+    /// <para>Represents an attribute value used with conditional <i>DeleteItem</i> ,
+    /// <i>PutItem</i> or <i>UpdateItem</i> operations. DynamoDB will check to see if the attribute value already exists; or if
+    /// the attribute exists and has a particular value before updating it.</para>
     /// </summary>
     public class ExpectedAttributeValue
     {
@@ -49,16 +49,16 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// Causes Amazon DynamoDB to evaluate the value before attempting a conditional operation: <ul> <li> If <i>Exists</i> is <c>true</c>, Amazon
-        /// DynamoDB will check to see if that attribute value already exists in the table. If it is found, then the operation succeeds. If it is not
-        /// found, the operation fails with a <i>ConditionalCheckFailedException</i>. </li> <li> If <i>Exists</i> is <c>false</c>, Amazon DynamoDB
-        /// assumes that the attribute value does <i>not</i> exist in the table. If in fact the value does not exist, then the assumption is valid and
-        /// the operation succeeds. If the value is found, despite the assumption that it does not exist, the operation fails with a
+        /// Causes DynamoDB to evaluate the value before attempting a conditional operation: <ul> <li> If <i>Exists</i> is <c>true</c>, DynamoDB will
+        /// check to see if that attribute value already exists in the table. If it is found, then the operation succeeds. If it is not found, the
+        /// operation fails with a <i>ConditionalCheckFailedException</i>. </li> <li> If <i>Exists</i> is <c>false</c>, DynamoDB assumes that the
+        /// attribute value does <i>not</i> exist in the table. If in fact the value does not exist, then the assumption is valid and the operation
+        /// succeeds. If the value is found, despite the assumption that it does not exist, the operation fails with a
         /// <i>ConditionalCheckFailedException</i>. </li> </ul> The default setting for <i>Exists</i> is <c>true</c>. If you supply a <i>Value</i> all
-        /// by itself, Amazon DynamoDB assumes the attribute exists: You don't have to set <i>Exists</i> to <c>true</c>, because it is implied. Amazon
-        /// DynamoDB returns a <i>ValidationException</i> if: <ul> <li> <i>Exists</i> is <c>true</c> but there is no <i>Value</i> to check. (You expect
-        /// a value to exist, but don't specify what that value is.) </li> <li> <i>Exists</i> is <c>false</c> but you also specify a <i>Value</i>. (You
-        /// cannot expect an attribute to have a value, while also expecting it not to exist.) </li> </ul> If you specify more than one condition for
+        /// by itself, DynamoDB assumes the attribute exists: You don't have to set <i>Exists</i> to <c>true</c>, because it is implied. DynamoDB
+        /// returns a <i>ValidationException</i> if: <ul> <li> <i>Exists</i> is <c>true</c> but there is no <i>Value</i> to check. (You expect a value
+        /// to exist, but don't specify what that value is.) </li> <li> <i>Exists</i> is <c>false</c> but you also specify a <i>Value</i>. (You cannot
+        /// expect an attribute to have a value, while also expecting it not to exist.) </li> </ul> If you specify more than one condition for
         /// <i>Exists</i>, then all of the conditions must evaluate to true. (In other words, the conditions are ANDed together.) Otherwise, the
         /// conditional operation will fail.
         ///  

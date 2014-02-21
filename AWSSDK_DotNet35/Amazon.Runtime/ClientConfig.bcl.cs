@@ -35,7 +35,7 @@ namespace Amazon.Runtime
         private int? connectionLimit;
         private int? maxIdleTime;
         private bool useNagleAlgorithm = false;
-        private TimeSpan? readWriteTimeoutInternal = null;
+        private TimeSpan? readWriteTimeout = null;
         
         private static RegionEndpoint GetDefaultRegionEndpoint()
         {
@@ -114,13 +114,13 @@ namespace Amazon.Runtime
         /// </remarks>
         /// <seealso cref="P:System.Net.HttpWebRequest.ReadWriteTimeout"/>
         /// <seealso cref="P:System.Net.Http.WebRequestHandler.ReadWriteTimeout"/>
-        internal TimeSpan? ReadWriteTimeoutInternal
+        public TimeSpan? ReadWriteTimeout
         {
-            get { return this.readWriteTimeoutInternal; }
+            get { return this.readWriteTimeout; }
             set
             {
                 ValidateTimeout(value);
-                this.readWriteTimeoutInternal = value;
+                this.readWriteTimeout = value;
             }
         }
     }

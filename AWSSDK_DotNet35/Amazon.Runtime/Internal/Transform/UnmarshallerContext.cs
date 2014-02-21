@@ -29,8 +29,10 @@ namespace Amazon.Runtime.Internal.Transform
     /// Base class for the UnmarshallerContext objects that are used
     /// to unmarshall a web-service response.
     /// </summary>
-    public abstract class UnmarshallerContext
+    public abstract class UnmarshallerContext : IDisposable
     {
+        private bool disposed = false;
+
         protected bool MaintainResponseBody { get; set; }
         protected CrcCalculatorStream CrcStream { get; set; }
         protected int Crc32Result { get; set; }        
@@ -184,7 +186,45 @@ namespace Amazon.Runtime.Internal.Transform
         public abstract bool IsStartOfDocument { get; }
 
         #endregion
-        
+
+        #region Dispose Pattern Implementation
+
+        /// <summary>
+        /// Implements the Dispose pattern
+        /// </summary>
+        /// <param name="disposing">Whether this object is being disposed via a call to Dispose
+        /// or garbage collected.</param>
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!this.disposed)
+            {
+                if (disposing)
+                {
+                    if (this.CrcStream != null)
+                    {
+                        CrcStream.Dispose();
+                        CrcStream = null;
+                    }
+                    if (this.WrappingStream != null)
+                    {
+                        WrappingStream.Dispose();
+                        WrappingStream = null;
+                    }
+                }
+                this.disposed = true;
+            }
+        }
+
+        /// <summary>
+        /// Disposes of all managed and unmanaged resources.
+        /// </summary>
+        public void Dispose()
+        {
+            this.Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        #endregion
     }
 
     /// <summary>
@@ -226,6 +266,7 @@ namespace Amazon.Runtime.Internal.Transform
         private IEnumerator<string> attributeEnumerator;
         private XmlNodeType nodeType;
         private string nodeContent = String.Empty;
+        private bool disposed = false;
 
         internal Stream Stream
         {
@@ -427,6 +468,32 @@ namespace Amazon.Runtime.Internal.Transform
         }
 
         #endregion
+
+        protected override void Dispose(bool disposing)
+        {
+            if (!this.disposed)
+            {
+                if (disposing)
+                {
+                    if (streamReader != null)
+                    {
+                        streamReader.Dispose();
+                        streamReader = null;
+                    }
+                    if (_xmlReader != null)
+                    {
+#if WIN_RT
+                        _xmlReader.Dispose();
+#else
+                        _xmlReader.Close();
+#endif
+                        _xmlReader = null;
+                    }
+                }
+                disposed = true;
+            }
+            base.Dispose(disposing);
+        }
     }
 
     public class EC2UnmarshallerContext : XmlUnmarshallerContext

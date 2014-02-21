@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -49,7 +49,11 @@
               {
                 context.Read();
                 tableDescription.AttributeDefinitions = new List<AttributeDefinition>();
-                        AttributeDefinitionUnmarshaller unmarshaller = AttributeDefinitionUnmarshaller.GetInstance();
+                if (context.CurrentTokenType == JsonToken.Null)
+                {
+                    continue;
+                }
+                  AttributeDefinitionUnmarshaller unmarshaller = AttributeDefinitionUnmarshaller.GetInstance();
                 while (context.Read())
                 {
                   JsonToken token = context.CurrentTokenType;                
@@ -77,7 +81,11 @@
               {
                 context.Read();
                 tableDescription.KeySchema = new List<KeySchemaElement>();
-                        KeySchemaElementUnmarshaller unmarshaller = KeySchemaElementUnmarshaller.GetInstance();
+                if (context.CurrentTokenType == JsonToken.Null)
+                {
+                    continue;
+                }
+                  KeySchemaElementUnmarshaller unmarshaller = KeySchemaElementUnmarshaller.GetInstance();
                 while (context.Read())
                 {
                   JsonToken token = context.CurrentTokenType;                
@@ -133,7 +141,11 @@
               {
                 context.Read();
                 tableDescription.LocalSecondaryIndexes = new List<LocalSecondaryIndexDescription>();
-                        LocalSecondaryIndexDescriptionUnmarshaller unmarshaller = LocalSecondaryIndexDescriptionUnmarshaller.GetInstance();
+                if (context.CurrentTokenType == JsonToken.Null)
+                {
+                    continue;
+                }
+                  LocalSecondaryIndexDescriptionUnmarshaller unmarshaller = LocalSecondaryIndexDescriptionUnmarshaller.GetInstance();
                 while (context.Read())
                 {
                   JsonToken token = context.CurrentTokenType;                
@@ -154,7 +166,11 @@
               {
                 context.Read();
                 tableDescription.GlobalSecondaryIndexes = new List<GlobalSecondaryIndexDescription>();
-                        GlobalSecondaryIndexDescriptionUnmarshaller unmarshaller = GlobalSecondaryIndexDescriptionUnmarshaller.GetInstance();
+                if (context.CurrentTokenType == JsonToken.Null)
+                {
+                    continue;
+                }
+                  GlobalSecondaryIndexDescriptionUnmarshaller unmarshaller = GlobalSecondaryIndexDescriptionUnmarshaller.GetInstance();
                 while (context.Read())
                 {
                   JsonToken token = context.CurrentTokenType;                

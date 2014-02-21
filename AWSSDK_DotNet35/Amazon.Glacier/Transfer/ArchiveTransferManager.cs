@@ -56,7 +56,7 @@ namespace Amazon.Glacier.Transfer
         #region Dispose Pattern Implementation
 
         /// <summary>
-        /// Implements the Dispose pattern for the AmazonWebServiceClient
+        /// Implements the Dispose pattern
         /// </summary>
         /// <param name="disposing">Whether this object is being disposed via a call to Dispose
         /// or garbage collected.</param>
@@ -291,8 +291,10 @@ namespace Amazon.Glacier.Transfer
         /// <param name="options">Additional options that can be used for the download.</param>
         public void Download(string vaultName, string archiveId, string filePath, DownloadOptions options)
         {
-            var command = new DownloadFileCommand(this, vaultName, archiveId, filePath, options);
-            command.Execute();
+            using (var command = new DownloadFileCommand(this, vaultName, archiveId, filePath, options))
+            {
+                command.Execute();
+            }
         }
 
         #endregion

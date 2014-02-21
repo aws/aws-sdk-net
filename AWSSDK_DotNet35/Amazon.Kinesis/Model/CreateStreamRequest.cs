@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -43,10 +43,10 @@ namespace Amazon.Kinesis.Model
     /// <li>Create more shards than are authorized for your account.</li>
     /// 
     /// </ul>
-    /// <para> <b>Note:</b> The default limit for an AWS account is two shards per stream. If you need to create a stream with more than two
-    /// shards, contact AWS Support to increase the limit on your account.</para> <para>You can use the <c>DescribeStream</c> operation to check the
-    /// stream status, which is returned in <c>StreamStatus</c> .</para> <para> <c>CreateStream</c> has a limit of 5 transactions per second per
-    /// account.</para>
+    /// <para> <b>Note:</b> The default limit for an AWS account is five shards per stream. If you need to create a stream with more than five
+    /// shards, <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html" >contact AWS Support</a> to increase the limit on
+    /// your account.</para> <para>You can use the <c>DescribeStream</c> operation to check the stream status, which is returned in
+    /// <c>StreamStatus</c> .</para> <para> <c>CreateStream</c> has a limit of 5 transactions per second per account.</para>
     /// </summary>
     public partial class CreateStreamRequest : AmazonKinesisRequest
     {
@@ -87,8 +87,9 @@ namespace Amazon.Kinesis.Model
 
         /// <summary>
         /// The number of shards that the stream will use. The throughput of the stream is a function of the number of shards; more shards are required
-        /// for greater provisioned throughput. <b>Note:</b> The default limit for an AWS account is two shards per stream. If you need to create a
-        /// stream with more than two shards, contact AWS Support to increase the limit on your account.
+        /// for greater provisioned throughput. <b>Note:</b> The default limit for an AWS account is five shards per stream. If you need to create a
+        /// stream with more than five shards, <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">contact AWS Support</a> to
+        /// increase the limit on your account.
         ///  
         /// <para>
         /// <b>Constraints:</b>

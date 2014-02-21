@@ -633,12 +633,10 @@ namespace Amazon.S3.Transfer
 
         static IAsyncResult beginOperation(BaseCommand command, AsyncCallback callback, object state)
         {
-            TransferAsyncResult result = new TransferAsyncResult(callback, state);
-
-            Executer exe = new Executer(result, command);
+            Executer exe = new Executer(callback, state, command);
             ThreadPool.QueueUserWorkItem(s => exe.Execute());
 
-            return result;
+            return exe.AsyncResult;
         }
 
         static object endOperation(IAsyncResult result)
@@ -647,18 +645,21 @@ namespace Amazon.S3.Transfer
             if (transferAsyncResult == null)
                 return null;
 
-            if (!transferAsyncResult.CompletedSynchronously)
+            using (transferAsyncResult)
             {
-                WaitHandle.WaitAll(new WaitHandle[] { transferAsyncResult.AsyncWaitHandle });
-            }
+                if (!transferAsyncResult.CompletedSynchronously)
+                {
+                    WaitHandle.WaitAll(new WaitHandle[] { transferAsyncResult.AsyncWaitHandle });
+                }
 
-            if (transferAsyncResult.LastException != null)
-            {
-                AWSSDKUtils.PreserveStackTrace(transferAsyncResult.LastException);
-                throw transferAsyncResult.LastException;
-            }
+                if (transferAsyncResult.LastException != null)
+                {
+                    AWSSDKUtils.PreserveStackTrace(transferAsyncResult.LastException);
+                    throw transferAsyncResult.LastException;
+                }
 
-            return transferAsyncResult.Return;
+                return transferAsyncResult.Return;
+            }
         }
 
         #endregion
@@ -669,11 +670,14 @@ namespace Amazon.S3.Transfer
         TransferAsyncResult _asyncResult;
         BaseCommand _command;
 
-        internal Executer(TransferAsyncResult asyncResult, BaseCommand command)
+        private Executer(TransferAsyncResult asyncResult, BaseCommand command)
         {
             this._asyncResult = asyncResult;
             this._command = command;
         }
+        internal Executer(AsyncCallback callback, object state, BaseCommand command)
+            : this(new TransferAsyncResult(callback, state), command)
+        { }
 
         internal void Execute()
         {
@@ -696,9 +700,14 @@ namespace Amazon.S3.Transfer
                 }
             }
         }
+
+        internal TransferAsyncResult AsyncResult
+        {
+            get { return _asyncResult; }
+        }
     }
 
-    internal class TransferAsyncResult : IAsyncResult
+    internal class TransferAsyncResult : IAsyncResult, IDisposable
     {
         AsyncCallback _callback;
         object _state;
@@ -706,6 +715,7 @@ namespace Amazon.S3.Transfer
         ManualResetEvent _waitHandle;
         Exception _lastException;
         object _return;
+        bool _disposed = false;
 
         internal TransferAsyncResult(AsyncCallback callback, object state)
         {
@@ -756,6 +766,38 @@ namespace Amazon.S3.Transfer
             get { return this._return; }
             set { this._return = value; }
         }
+
+        #region Dispose Pattern Implementation
+
+        /// <summary>
+        /// Implements the Dispose pattern
+        /// </summary>
+        /// <param name="disposing">Whether this object is being disposed via a call to Dispose
+        /// or garbage collected.</param>
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!this._disposed)
+            {
+                if (disposing && _waitHandle != null)
+                {
+                    _waitHandle.Close();
+                    _waitHandle = null;
+                }
+                this._disposed = true;
+            }
+        }
+
+        /// <summary>
+        /// Disposes of all managed and unmanaged resources.
+        /// </summary>
+        public void Dispose()
+        {
+            this.Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        #endregion
+
     }
 
 }

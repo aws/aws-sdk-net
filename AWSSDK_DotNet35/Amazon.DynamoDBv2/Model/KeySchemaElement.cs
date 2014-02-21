@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -21,8 +21,8 @@ using System.IO;
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
-    /// <para>Represents a key schema. Specifies the attributes that make up the primary key of a table, or the key attributes of a secondary
-    /// index.</para>
+    /// <para>Represents a single element of a key schema. A key schema specifies the attributes that make up the primary key of a table, or the key
+    /// attributes of an index.</para>
     /// </summary>
     public class KeySchemaElement
     {
@@ -32,7 +32,7 @@ namespace Amazon.DynamoDBv2.Model
 
 
         /// <summary>
-        /// Represents the name of a key attribute.
+        /// The name of a key attribute.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -57,7 +57,7 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// Represents the attribute data, consisting of the data type and the attribute value itself.
+        /// The attribute data, consisting of the data type and the attribute value itself.
         ///  
         /// <para>
         /// <b>Constraints:</b>

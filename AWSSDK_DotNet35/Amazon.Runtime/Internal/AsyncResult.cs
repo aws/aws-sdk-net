@@ -28,7 +28,7 @@ using Amazon.MissingTypes;
 
 namespace Amazon.Runtime.Internal
 {
-    public class AsyncResult : IAsyncResult, IRequestData
+    public class AsyncResult : IAsyncResult, IRequestData, IDisposable
     {
         // Private members
 
@@ -36,6 +36,7 @@ namespace Amazon.Runtime.Internal
         private object _lockObj;
         private Stopwatch _stopWatch;
         private bool _callbackInvoked = false;
+        private bool _disposed = false;
 
 
         // Constructor
@@ -172,5 +173,40 @@ namespace Amazon.Runtime.Internal
 
             internal bool GetResponseCallbackCalled { get; set; }
         }
+
+        #region Dispose Pattern Implementation
+
+        /// <summary>
+        /// Implements the Dispose pattern
+        /// </summary>
+        /// <param name="disposing">Whether this object is being disposed via a call to Dispose
+        /// or garbage collected.</param>
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!this._disposed)
+            {
+                if (disposing && _waitHandle != null)
+                {
+#if WIN_RT
+                    _waitHandle.Dispose();
+#else
+                    _waitHandle.Close();
+#endif
+                    _waitHandle = null;
+                }
+                this._disposed = true;
+            }
+        }
+
+        /// <summary>
+        /// Disposes of all managed and unmanaged resources.
+        /// </summary>
+        public void Dispose()
+        {
+            this.Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        #endregion
     }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -20,7 +20,8 @@ using System.IO;
 
 namespace Amazon.DynamoDBv2.Model
 {
-    /// <summary>Global Secondary Index
+    /// <summary>
+    /// <para>Represents a global secondary index.</para>
     /// </summary>
     public class GlobalSecondaryIndex
     {
@@ -30,6 +31,24 @@ namespace Amazon.DynamoDBv2.Model
         private Projection projection;
         private ProvisionedThroughput provisionedThroughput;
 
+
+        /// <summary>
+        /// The name of the global secondary index. The name must be unique among all other indexes on this table.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Length</term>
+        ///         <description>3 - 255</description>
+        ///     </item>
+        ///     <item>
+        ///         <term>Pattern</term>
+        ///         <description>[a-zA-Z0-9_.-]+</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
         public string IndexName
         {
             get { return this.indexName; }
@@ -41,6 +60,21 @@ namespace Amazon.DynamoDBv2.Model
         {
             return this.indexName != null;
         }
+
+        /// <summary>
+        /// The complete key schema for a global secondary index, which consists of one or more pairs of attribute names and key types (<c>HASH</c> or
+        /// <c>RANGE</c>).
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Length</term>
+        ///         <description>1 - 2</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
         public List<KeySchemaElement> KeySchema
         {
             get { return this.keySchema; }
@@ -54,7 +88,7 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// Represents attributes that are copied (projected) from the table into the index. These are in addition to the primary key attributes and
+        /// Represents attributes that are copied (projected) from the table into an index. These are in addition to the primary key attributes and
         /// index key attributes, which are automatically projected.
         ///  
         /// </summary>
@@ -71,8 +105,8 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// The provisioned throughput settings for the specified table. The settings can be modified using the <i>UpdateTable</i> operation. For
-        /// current minimum and maximum provisioned throughput values, see <a
+        /// Represents the provisioned throughput settings for a specified table or index. The settings can be modified using the <i>UpdateTable</i>
+        /// operation. For current minimum and maximum provisioned throughput values, see <a
         /// href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the Amazon DynamoDB Developer Guide.
         ///  
         /// </summary>

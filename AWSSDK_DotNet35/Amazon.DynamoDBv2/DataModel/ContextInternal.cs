@@ -584,7 +584,7 @@ namespace Amazon.DynamoDBv2.DataModel
             PropertyStorage propertyStorage = storageConfig.GetPropertyStorage(hashKeyProperty);
             string hashAttributeName = propertyStorage.AttributeName;
 
-            DynamoDBEntry hashKeyEntry = ValueToDynamoDBEntry(propertyStorage, hashKeyValue, storageConfig);
+            DynamoDBEntry hashKeyEntry = ValueToDynamoDBEntry(propertyStorage, hashKeyValue);
             if (hashKeyEntry == null) throw new InvalidOperationException("Unable to convert hash key value for property " + hashKeyProperty);
             
             Document hashKey = new Document();
@@ -694,7 +694,7 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
         // Key creation
-        private static DynamoDBEntry ValueToDynamoDBEntry(PropertyStorage propertyStorage, object value, ItemStorageConfig storageConfig)
+        private static DynamoDBEntry ValueToDynamoDBEntry(PropertyStorage propertyStorage, object value)
         {
             var entry = ToDynamoDBEntry(propertyStorage, value);
             return entry;
@@ -729,7 +729,7 @@ namespace Amazon.DynamoDBv2.DataModel
             string hashKeyPropertyName = storageConfig.HashKeyPropertyNames[0];
             PropertyStorage hashKeyProperty = storageConfig.GetPropertyStorage(hashKeyPropertyName);
 
-            DynamoDBEntry hashKeyEntry = ValueToDynamoDBEntry(hashKeyProperty, hashKey, storageConfig);
+            DynamoDBEntry hashKeyEntry = ValueToDynamoDBEntry(hashKeyProperty, hashKey);
             if (hashKeyEntry == null) throw new InvalidOperationException("Unable to convert hash key value for property " + hashKeyPropertyName);
             key[hashKeyProperty.AttributeName] = hashKeyEntry.ConvertToAttributeValue();
 
@@ -741,7 +741,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 string rangeKeyPropertyName = storageConfig.RangeKeyPropertyNames[0];
                 PropertyStorage rangeKeyProperty = storageConfig.GetPropertyStorage(rangeKeyPropertyName);
 
-                DynamoDBEntry rangeKeyEntry = ValueToDynamoDBEntry(rangeKeyProperty, rangeKey, storageConfig);
+                DynamoDBEntry rangeKeyEntry = ValueToDynamoDBEntry(rangeKeyProperty, rangeKey);
                 if (rangeKeyEntry == null) throw new InvalidOperationException("Unable to convert range key value for property " + rangeKeyPropertyName);
                 key[rangeKeyProperty.AttributeName] = rangeKeyEntry.ConvertToAttributeValue();
             }

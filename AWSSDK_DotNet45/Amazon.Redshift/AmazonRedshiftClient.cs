@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 using System;
+using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -252,7 +253,8 @@ namespace Amazon.Redshift
             }
             catch(AggregateException e)
             {
-                throw e.InnerException;
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+                return null;
             }
         }
           
@@ -297,7 +299,8 @@ namespace Amazon.Redshift
             }
             catch(AggregateException e)
             {
-                throw e.InnerException;
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+                return null;
             }
         }
           
@@ -345,7 +348,8 @@ namespace Amazon.Redshift
             }
             catch(AggregateException e)
             {
-                throw e.InnerException;
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+                return null;
             }
         }
           
@@ -403,7 +407,8 @@ namespace Amazon.Redshift
             }
             catch(AggregateException e)
             {
-                throw e.InnerException;
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+                return null;
             }
         }
           
@@ -449,7 +454,8 @@ namespace Amazon.Redshift
             }
             catch(AggregateException e)
             {
-                throw e.InnerException;
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+                return null;
             }
         }
           
@@ -493,7 +499,8 @@ namespace Amazon.Redshift
             }
             catch(AggregateException e)
             {
-                throw e.InnerException;
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+                return null;
             }
         }
           
@@ -539,7 +546,8 @@ namespace Amazon.Redshift
             }
             catch(AggregateException e)
             {
-                throw e.InnerException;
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+                return null;
             }
         }
           
@@ -586,7 +594,8 @@ namespace Amazon.Redshift
             }
             catch(AggregateException e)
             {
-                throw e.InnerException;
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+                return null;
             }
         }
           
@@ -644,7 +653,8 @@ namespace Amazon.Redshift
             }
             catch(AggregateException e)
             {
-                throw e.InnerException;
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+                return null;
             }
         }
           
@@ -689,7 +699,8 @@ namespace Amazon.Redshift
             }
             catch(AggregateException e)
             {
-                throw e.InnerException;
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+                return null;
             }
         }
           
@@ -733,7 +744,8 @@ namespace Amazon.Redshift
             }
             catch(AggregateException e)
             {
-                throw e.InnerException;
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+                return null;
             }
         }
           
@@ -781,7 +793,8 @@ namespace Amazon.Redshift
             }
             catch(AggregateException e)
             {
-                throw e.InnerException;
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+                return null;
             }
         }
           
@@ -821,7 +834,8 @@ namespace Amazon.Redshift
             }
             catch(AggregateException e)
             {
-                throw e.InnerException;
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+                return null;
             }
         }
           
@@ -863,7 +877,8 @@ namespace Amazon.Redshift
             }
             catch(AggregateException e)
             {
-                throw e.InnerException;
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+                return null;
             }
         }
           
@@ -907,7 +922,8 @@ namespace Amazon.Redshift
             }
             catch(AggregateException e)
             {
-                throw e.InnerException;
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+                return null;
             }
         }
           
@@ -947,7 +963,8 @@ namespace Amazon.Redshift
             }
             catch(AggregateException e)
             {
-                throw e.InnerException;
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+                return null;
             }
         }
           
@@ -985,7 +1002,8 @@ namespace Amazon.Redshift
             }
             catch(AggregateException e)
             {
-                throw e.InnerException;
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+                return null;
             }
         }
           
@@ -1024,7 +1042,8 @@ namespace Amazon.Redshift
             }
             catch(AggregateException e)
             {
-                throw e.InnerException;
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+                return null;
             }
         }
           
@@ -1063,7 +1082,8 @@ namespace Amazon.Redshift
             }
             catch(AggregateException e)
             {
-                throw e.InnerException;
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+                return null;
             }
         }
           
@@ -1108,7 +1128,8 @@ namespace Amazon.Redshift
             }
             catch(AggregateException e)
             {
-                throw e.InnerException;
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+                return null;
             }
         }
           
@@ -1172,7 +1193,8 @@ namespace Amazon.Redshift
             }
             catch(AggregateException e)
             {
-                throw e.InnerException;
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+                return null;
             }
         }
           
@@ -1215,7 +1237,8 @@ namespace Amazon.Redshift
             }
             catch(AggregateException e)
             {
-                throw e.InnerException;
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+                return null;
             }
         }
           
@@ -1274,7 +1297,8 @@ namespace Amazon.Redshift
             }
             catch(AggregateException e)
             {
-                throw e.InnerException;
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+                return null;
             }
         }
           
@@ -1332,7 +1356,8 @@ namespace Amazon.Redshift
             }
             catch(AggregateException e)
             {
-                throw e.InnerException;
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+                return null;
             }
         }
           
@@ -1388,7 +1413,8 @@ namespace Amazon.Redshift
             }
             catch(AggregateException e)
             {
-                throw e.InnerException;
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+                return null;
             }
         }
           
@@ -1442,7 +1468,8 @@ namespace Amazon.Redshift
             }
             catch(AggregateException e)
             {
-                throw e.InnerException;
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+                return null;
             }
         }
           
@@ -1496,7 +1523,8 @@ namespace Amazon.Redshift
             }
             catch(AggregateException e)
             {
-                throw e.InnerException;
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+                return null;
             }
         }
           
@@ -1536,7 +1564,8 @@ namespace Amazon.Redshift
             }
             catch(AggregateException e)
             {
-                throw e.InnerException;
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+                return null;
             }
         }
           
@@ -1589,7 +1618,8 @@ namespace Amazon.Redshift
             }
             catch(AggregateException e)
             {
-                throw e.InnerException;
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+                return null;
             }
         }
           
@@ -1643,7 +1673,8 @@ namespace Amazon.Redshift
             }
             catch(AggregateException e)
             {
-                throw e.InnerException;
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+                return null;
             }
         }
           
@@ -1698,7 +1729,8 @@ namespace Amazon.Redshift
             }
             catch(AggregateException e)
             {
-                throw e.InnerException;
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+                return null;
             }
         }
           
@@ -1753,7 +1785,8 @@ namespace Amazon.Redshift
             }
             catch(AggregateException e)
             {
-                throw e.InnerException;
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+                return null;
             }
         }
           
@@ -1808,7 +1841,8 @@ namespace Amazon.Redshift
             }
             catch(AggregateException e)
             {
-                throw e.InnerException;
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+                return null;
             }
         }
           
@@ -1850,7 +1884,8 @@ namespace Amazon.Redshift
             }
             catch(AggregateException e)
             {
-                throw e.InnerException;
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+                return null;
             }
         }
           
@@ -1911,7 +1946,8 @@ namespace Amazon.Redshift
             }
             catch(AggregateException e)
             {
-                throw e.InnerException;
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+                return null;
             }
         }
           
@@ -1970,7 +2006,8 @@ namespace Amazon.Redshift
             }
             catch(AggregateException e)
             {
-                throw e.InnerException;
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+                return null;
             }
         }
           
@@ -2027,7 +2064,8 @@ namespace Amazon.Redshift
             }
             catch(AggregateException e)
             {
-                throw e.InnerException;
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+                return null;
             }
         }
           
@@ -2067,7 +2105,8 @@ namespace Amazon.Redshift
             }
             catch(AggregateException e)
             {
-                throw e.InnerException;
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+                return null;
             }
         }
           
@@ -2109,7 +2148,8 @@ namespace Amazon.Redshift
             }
             catch(AggregateException e)
             {
-                throw e.InnerException;
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+                return null;
             }
         }
           
@@ -2153,7 +2193,8 @@ namespace Amazon.Redshift
             }
             catch(AggregateException e)
             {
-                throw e.InnerException;
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+                return null;
             }
         }
           
@@ -2199,7 +2240,8 @@ namespace Amazon.Redshift
             }
             catch(AggregateException e)
             {
-                throw e.InnerException;
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+                return null;
             }
         }
           
@@ -2255,7 +2297,8 @@ namespace Amazon.Redshift
             }
             catch(AggregateException e)
             {
-                throw e.InnerException;
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+                return null;
             }
         }
           
@@ -2298,7 +2341,8 @@ namespace Amazon.Redshift
             }
             catch(AggregateException e)
             {
-                throw e.InnerException;
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+                return null;
             }
         }
           
@@ -2343,7 +2387,8 @@ namespace Amazon.Redshift
             }
             catch(AggregateException e)
             {
-                throw e.InnerException;
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+                return null;
             }
         }
           
@@ -2390,7 +2435,8 @@ namespace Amazon.Redshift
             }
             catch(AggregateException e)
             {
-                throw e.InnerException;
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+                return null;
             }
         }
           
@@ -2433,7 +2479,8 @@ namespace Amazon.Redshift
             }
             catch(AggregateException e)
             {
-                throw e.InnerException;
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+                return null;
             }
         }
           
@@ -2481,7 +2528,8 @@ namespace Amazon.Redshift
             }
             catch(AggregateException e)
             {
-                throw e.InnerException;
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+                return null;
             }
         }
           
@@ -2525,7 +2573,8 @@ namespace Amazon.Redshift
             }
             catch(AggregateException e)
             {
-                throw e.InnerException;
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+                return null;
             }
         }
           
@@ -2568,7 +2617,8 @@ namespace Amazon.Redshift
             }
             catch(AggregateException e)
             {
-                throw e.InnerException;
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+                return null;
             }
         }
           
@@ -2631,7 +2681,8 @@ namespace Amazon.Redshift
             }
             catch(AggregateException e)
             {
-                throw e.InnerException;
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+                return null;
             }
         }
           
@@ -2676,7 +2727,8 @@ namespace Amazon.Redshift
             }
             catch(AggregateException e)
             {
-                throw e.InnerException;
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+                return null;
             }
         }
           
@@ -2721,7 +2773,8 @@ namespace Amazon.Redshift
             }
             catch(AggregateException e)
             {
-                throw e.InnerException;
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+                return null;
             }
         }
           
@@ -2762,7 +2815,8 @@ namespace Amazon.Redshift
             }
             catch(AggregateException e)
             {
-                throw e.InnerException;
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+                return null;
             }
         }
           

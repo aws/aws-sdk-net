@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -21,8 +21,8 @@ using System.IO;
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
-    /// <para>The provisioned throughput settings for the specified table. The settings can be modified using the <i>UpdateTable</i>
-    /// operation.</para> <para>For current minimum and maximum provisioned throughput values, see <a
+    /// <para>Represents the provisioned throughput settings for a specified table or index. The settings can be modified using the
+    /// <i>UpdateTable</i> operation.</para> <para>For current minimum and maximum provisioned throughput values, see <a
     /// href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html" >Limits</a> in the Amazon DynamoDB Developer
     /// Guide.</para>
     /// </summary>
@@ -34,7 +34,7 @@ namespace Amazon.DynamoDBv2.Model
 
 
         /// <summary>
-        /// The maximum number of strongly consistent reads consumed per second before Amazon DynamoDB returns a <i>ThrottlingException</i>. For more
+        /// The maximum number of strongly consistent reads consumed per second before DynamoDB returns a <i>ThrottlingException</i>. For more
         /// information, see <a
         /// href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDDTables.html#ProvisionedThroughput">Specifying Read and
         /// Write Requirements</a> in the Amazon DynamoDB Developer Guide.
@@ -62,7 +62,7 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// The maximum number of writes consumed per second before Amazon DynamoDB returns a <i>ThrottlingException</i>. For more information, see <a
+        /// The maximum number of writes consumed per second before DynamoDB returns a <i>ThrottlingException</i>. For more information, see <a
         /// href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDDTables.html#ProvisionedThroughput">Specifying Read and
         /// Write Requirements</a> in the Amazon DynamoDB Developer Guide.
         ///  

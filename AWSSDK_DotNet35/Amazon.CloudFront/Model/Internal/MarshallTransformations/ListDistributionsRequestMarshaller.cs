@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -43,7 +43,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 
 
             request.HttpMethod = "GET";
-            string uriResourcePath = "2013-11-11/distribution?Marker={Marker}&MaxItems={MaxItems}"; 
+            string uriResourcePath = "2013-11-22/distribution?Marker={Marker}&MaxItems={MaxItems}"; 
             uriResourcePath = uriResourcePath.Replace("{Marker}", listDistributionsRequest.IsSetMarker() ? listDistributionsRequest.Marker.ToString() : "" ); 
             uriResourcePath = uriResourcePath.Replace("{MaxItems}", listDistributionsRequest.IsSetMaxItems() ? listDistributionsRequest.MaxItems.ToString() : "" ); 
 
@@ -53,12 +53,12 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 string queryString = uriResourcePath.Substring(queryIndex + 1);
                 
                 uriResourcePath    = uriResourcePath.Substring(0, queryIndex);
-                
-        
-                foreach (string s in queryString.Split('&', ';')) 
+
+
+                foreach (string s in queryString.Split('&', ';'))
                 {
                     string[] nameValuePair = s.Split('=');
-                    if (nameValuePair.Length == 2) 
+                    if (nameValuePair.Length == 2)
                     {
                         if (nameValuePair[1].Length > 0)
                             request.Parameters.Add(nameValuePair[0], nameValuePair[1]);
@@ -67,7 +67,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     {
                         request.Parameters.Add(nameValuePair[0], null);
                     }
-                
+
                 }
             }
             

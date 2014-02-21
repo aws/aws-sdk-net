@@ -24,9 +24,10 @@ namespace Amazon.DynamoDBv2
 {
     internal delegate object AsyncCall();
 
-    internal class DynamoDBAsyncResult : IAsyncResult
+    internal class DynamoDBAsyncResult : IAsyncResult, IDisposable
     {
         private ManualResetEvent _waitHandle;
+        private bool _disposed = false;
 
         public DynamoDBAsyncResult(AsyncCallback callback, object state)
         {
@@ -64,6 +65,41 @@ namespace Amazon.DynamoDBv2
         public Exception LastException { get; set; }
 
         public object Return { get; set; }
+
+        #region Dispose Pattern Implementation
+
+        /// <summary>
+        /// Implements the Dispose pattern
+        /// </summary>
+        /// <param name="disposing">Whether this object is being disposed via a call to Dispose
+        /// or garbage collected.</param>
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!this._disposed)
+            {
+                if (disposing && _waitHandle != null)
+                {
+#if WIN_RT
+                    _waitHandle.Dispose();
+#else
+                    _waitHandle.Close();
+#endif
+                    _waitHandle = null;
+                }
+                this._disposed = true;
+            }
+        }
+
+        /// <summary>
+        /// Disposes of all managed and unmanaged resources.
+        /// </summary>
+        public void Dispose()
+        {
+            this.Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        #endregion
     }
 
     internal static class DynamoDBAsyncExecutor
@@ -111,18 +147,21 @@ namespace Amazon.DynamoDBv2
             if (asyncResult == null)
                 return default(T);
 
-            if (!asyncResult.CompletedSynchronously)
+            using (asyncResult)
             {
-                WaitHandle.WaitAll(new WaitHandle[] { asyncResult.AsyncWaitHandle });
-            }
+                if (!asyncResult.CompletedSynchronously)
+                {
+                    WaitHandle.WaitAll(new WaitHandle[] { asyncResult.AsyncWaitHandle });
+                }
 
-            if (asyncResult.LastException != null)
-            {
-                AWSSDKUtils.PreserveStackTrace(asyncResult.LastException);
-                throw asyncResult.LastException;
-            }
+                if (asyncResult.LastException != null)
+                {
+                    AWSSDKUtils.PreserveStackTrace(asyncResult.LastException);
+                    throw asyncResult.LastException;
+                }
 
-            return (T)asyncResult.Return;
+                return (T)asyncResult.Return;
+            }
         }
     }
 }

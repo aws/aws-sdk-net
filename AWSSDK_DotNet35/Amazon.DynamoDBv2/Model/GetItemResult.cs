@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -48,8 +48,9 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// The table name that consumed provisioned throughput, and the number of capacity units consumed by it. <i>ConsumedCapacity</i> is only
-        /// returned if it was asked for in the request. For more information, see <a
+        /// Represents the capacity units consumed by an operation. The data returned includes the total provisioned throughput consumed, along with
+        /// statistics for the table and any indexes involved in the operation. <i>ConsumedCapacity</i> is only returned if it was asked for in the
+        /// request. For more information, see <a
         /// href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned Throughput</a> in the
         /// Amazon DynamoDB Developer Guide.
         ///  

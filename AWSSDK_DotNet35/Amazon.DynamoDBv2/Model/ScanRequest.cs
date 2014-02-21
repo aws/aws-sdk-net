@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,13 +25,13 @@ namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
     /// Container for the parameters to the Scan operation.
-    /// <para>The <i>Scan</i> operation returns one or more items and item attributes by accessing every item in the table. To have Amazon DynamoDB
-    /// return fewer items, you can provide a <i>ScanFilter</i> .</para> <para>If the total number of scanned items exceeds the maximum data set
-    /// size limit of 1 MB, the scan stops and results are returned to the user with a <i>LastEvaluatedKey</i> to continue the scan in a subsequent
-    /// operation. The results also include the number of items exceeding the limit. A scan can result in no table data meeting the filter criteria.
-    /// </para> <para>The result set is eventually consistent. </para> <para>By default, <i>Scan</i> operations proceed sequentially; however, for
-    /// faster performance on large tables, applications can request a parallel <i>Scan</i> by specifying the <i>Segment</i> and
-    /// <i>TotalSegments</i> parameters. For more information, see <a
+    /// <para>The <i>Scan</i> operation returns one or more items and item attributes by accessing every item in the table. To have DynamoDB return
+    /// fewer items, you can provide a <i>ScanFilter</i> .</para> <para>If the total number of scanned items exceeds the maximum data set size limit
+    /// of 1 MB, the scan stops and results are returned to the user with a <i>LastEvaluatedKey</i> to continue the scan in a subsequent operation.
+    /// The results also include the number of items exceeding the limit. A scan can result in no table data meeting the filter criteria. </para>
+    /// <para>The result set is eventually consistent. </para> <para>By default, <i>Scan</i> operations proceed sequentially; however, for faster
+    /// performance on large tables, applications can request a parallel <i>Scan</i> by specifying the <i>Segment</i> and <i>TotalSegments</i>
+    /// parameters. For more information, see <a
     /// href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#QueryAndScanParallelScan" >Parallel Scan</a> in the
     /// Amazon DynamoDB Developer Guide.</para>
     /// </summary>
@@ -104,11 +104,11 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// The maximum number of items to evaluate (not necessarily the number of matching items). If Amazon DynamoDB processes the number of items up
-        /// to the limit while processing the results, it stops the operation and returns the matching values up to that point, and a
-        /// <i>LastEvaluatedKey</i> to apply in a subsequent operation, so that you can pick up where you left off. Also, if the processed data set size
-        /// exceeds 1 MB before Amazon DynamoDB reaches this limit, it stops the operation and returns the matching values up to the limit, and a
-        /// <i>LastEvaluatedKey</i> to apply in a subsequent operation to continue the operation. For more information see <a
+        /// The maximum number of items to evaluate (not necessarily the number of matching items). If DynamoDB processes the number of items up to the
+        /// limit while processing the results, it stops the operation and returns the matching values up to that point, and a <i>LastEvaluatedKey</i>
+        /// to apply in a subsequent operation, so that you can pick up where you left off. Also, if the processed data set size exceeds 1 MB before
+        /// DynamoDB reaches this limit, it stops the operation and returns the matching values up to the limit, and a <i>LastEvaluatedKey</i> to apply
+        /// in a subsequent operation to continue the operation. For more information see <a
         /// href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query and Scan</a> in the Amazon DynamoDB Developer
         /// Guide.
         ///  
@@ -135,21 +135,13 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// The attributes to be returned in the result. You can retrieve all item attributes, specific item attributes, the count of matching items, or
-        /// in the case of an index, some or all of the attributes projected into the index. <ul> <li> <c>ALL_ATTRIBUTES</c>: Returns all of the item
-        /// attributes. For a table, this is the default. For an index, this mode causes Amazon DynamoDB to fetch the full item from the table for each
-        /// matching item in the index. If the index is configured to project all item attributes, the matching items will not be fetched from the
-        /// table. Fetching items from the table incurs additional throughput cost and latency. </li> <li> <c>ALL_PROJECTED_ATTRIBUTES</c>: Retrieves
-        /// all attributes which have been projected into the index. If the index is configured to project all attributes, this is equivalent to
-        /// specifying <i>ALL_ATTRIBUTES</i>. </li> <li> <c>COUNT</c>: Returns the number of matching items, rather than the matching items themselves.
-        /// </li> <li> <c>SPECIFIC_ATTRIBUTES</c> : Returns only the attributes listed in <i>AttributesToGet</i>. This is equivalent to specifying
-        /// <i>AttributesToGet</i> without specifying any value for <i>Select</i>. If you are querying an index and request only attributes that are
-        /// projected into that index, the operation will read only the index and not the table. If any of the requested attributes are not projected
-        /// into the index, Amazon DynamoDB will need to fetch each matching item from the table. This extra fetching incurs additional throughput cost
-        /// and latency. </li> </ul> When neither <i>Select</i> nor <i>AttributesToGet</i> are specified, Amazon DynamoDB defaults to
-        /// <c>ALL_ATTRIBUTES</c> when accessing a table, and <c>ALL_PROJECTED_ATTRIBUTES</c> when accessing an index. You cannot use both <i>Select</i>
-        /// and <i>AttributesToGet</i> together in a single request, <i>unless</i> the value for <i>Select</i> is <c>SPECIFIC_ATTRIBUTES</c>. (This
-        /// usage is equivalent to specifying <i>AttributesToGet</i> without any value for <i>Select</i>.)
+        /// The attributes to be returned in the result. You can retrieve all item attributes, specific item attributes, or the count of matching items.
+        /// <ul> <li> <c>ALL_ATTRIBUTES</c>: Returns all of the item attributes. </li> <li> <c>COUNT</c>: Returns the number of matching items, rather
+        /// than the matching items themselves. </li> <li> <c>SPECIFIC_ATTRIBUTES</c> : Returns only the attributes listed in <i>AttributesToGet</i>.
+        /// This is equivalent to specifying <i>AttributesToGet</i> without specifying any value for <i>Select</i>. </li> </ul> If neither <i>Select</i>
+        /// nor <i>AttributesToGet</i> are specified, DynamoDB defaults to <c>ALL_ATTRIBUTES</c>. You cannot use both <i>Select</i> and
+        /// <i>AttributesToGet</i> together in a single request, <i>unless</i> the value for <i>Select</i> is <c>SPECIFIC_ATTRIBUTES</c>. (This usage is
+        /// equivalent to specifying <i>AttributesToGet</i> without any value for <i>Select</i>.)
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -181,7 +173,7 @@ namespace Amazon.DynamoDBv2.Model
         /// are numeric. String value comparisons for greater than, equals, or less than are based on ASCII character code values. For example, <c>a</c>
         /// is greater than <c>A</c>, and <c>aa</c> is greater than <c>B</c>. For a list of code values, see <a
         /// href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>. For
-        /// Binary, Amazon DynamoDB treats each byte of the binary data as unsigned when it compares binary values, for example when evaluating query
+        /// Binary, DynamoDB treats each byte of the binary data as unsigned when it compares binary values, for example when evaluating query
         /// expressions. </note> </li> <li><i>ComparisonOperator</i> - A comparator for evaluating attributes. For example, equals, greater than, less
         /// than, etc. Valid comparison operators for Scan: <c>EQ | NE | LE | LT | GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH |
         /// IN | BETWEEN</c> For information on specifying data types in JSON, see <a
@@ -189,36 +181,36 @@ namespace Amazon.DynamoDBv2.Model
         /// Guide. The following are descriptions of each comparison operator. <ul> <li> <c>EQ</c> : Equal. <i>AttributeValueList</i> can contain only
         /// one <i>AttributeValue</i> of type String, Number, or Binary (not a set). If an item contains an <i>AttributeValue</i> of a different type
         /// than the one specified in the request, the value does not match. For example, <c>{"S":"6"}</c> does not equal <c>{"N":"6"}</c>. Also,
-        /// <c>{"N":"6"}</c> does not equal <c>{"NS":["6", "2", "1"]}</c>. </li> <li> <c>NE</c> : Not equal. <i>AttributeValueList</i> can contain only
-        /// one <i>AttributeValue</i> of type String, Number, or Binary (not a set). If an item contains an <i>AttributeValue</i> of a different type
-        /// than the one specified in the request, the value does not match. For example, <c>{"S":"6"}</c> does not equal <c>{"N":"6"}</c>. Also,
-        /// <c>{"N":"6"}</c> does not equal <c>{"NS":["6", "2", "1"]}</c>. </li> <li> <c>LE</c> : Less than or equal. <i>AttributeValueList</i> can
+        /// <c>{"N":"6"}</c> does not equal <c>{"NS":["6", "2", "1"]}</c>. <p/> </li> <li> <c>NE</c> : Not equal. <i>AttributeValueList</i> can contain
+        /// only one <i>AttributeValue</i> of type String, Number, or Binary (not a set). If an item contains an <i>AttributeValue</i> of a different
+        /// type than the one specified in the request, the value does not match. For example, <c>{"S":"6"}</c> does not equal <c>{"N":"6"}</c>. Also,
+        /// <c>{"N":"6"}</c> does not equal <c>{"NS":["6", "2", "1"]}</c>. <p/> </li> <li> <c>LE</c> : Less than or equal. <i>AttributeValueList</i> can
         /// contain only one <i>AttributeValue</i> of type String, Number, or Binary (not a set). If an item contains an <i>AttributeValue</i> of a
         /// different type than the one specified in the request, the value does not match. For example, <c>{"S":"6"}</c> does not equal
-        /// <c>{"N":"6"}</c>. Also, <c>{"N":"6"}</c> does not compare to <c>{"NS":["6", "2", "1"]}</c>. </li> <li> <c>LT</c> : Less than.
+        /// <c>{"N":"6"}</c>. Also, <c>{"N":"6"}</c> does not compare to <c>{"NS":["6", "2", "1"]}</c>. <p/> </li> <li> <c>LT</c> : Less than.
         /// <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type String, Number, or Binary (not a set). If an item contains an
         /// <i>AttributeValue</i> of a different type than the one specified in the request, the value does not match. For example, <c>{"S":"6"}</c>
-        /// does not equal <c>{"N":"6"}</c>. Also, <c>{"N":"6"}</c> does not compare to <c>{"NS":["6", "2", "1"]}</c>. </li> <li> <c>GE</c> : Greater
-        /// than or equal. <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type String, Number, or Binary (not a set). If an
-        /// item contains an <i>AttributeValue</i> of a different type than the one specified in the request, the value does not match. For example,
-        /// <c>{"S":"6"}</c> does not equal <c>{"N":"6"}</c>. Also, <c>{"N":"6"}</c> does not compare to <c>{"NS":["6", "2", "1"]}</c>. </li> <li>
-        /// <c>GT</c> : Greater than. <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type String, Number, or Binary (not a
-        /// set). If an item contains an <i>AttributeValue</i> of a different type than the one specified in the request, the value does not match. For
-        /// example, <c>{"S":"6"}</c> does not equal <c>{"N":"6"}</c>. Also, <c>{"N":"6"}</c> does not compare to <c>{"NS":["6", "2", "1"]}</c>. </li>
-        /// <li> <c>NOT_NULL</c> : The attribute exists. </li> <li> <c>NULL</c> : The attribute does not exist. </li> <li> <c>CONTAINS</c> : checks for
-        /// a subsequence, or value in a set. <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type String, Number, or Binary
-        /// (not a set). If the target attribute of the comparison is a String, then the operation checks for a substring match. If the target attribute
-        /// of the comparison is Binary, then the operation looks for a subsequence of the target that matches the input. If the target attribute of the
-        /// comparison is a set ("SS", "NS", or "BS"), then the operation checks for a member of the set (not as a substring). </li> <li>
-        /// <c>NOT_CONTAINS</c> : checks for absence of a subsequence, or absence of a value in a set. <i>AttributeValueList</i> can contain only one
-        /// <i>AttributeValue</i> of type String, Number, or Binary (not a set). If the target attribute of the comparison is a String, then the
-        /// operation checks for the absence of a substring match. If the target attribute of the comparison is Binary, then the operation checks for
-        /// the absence of a subsequence of the target that matches the input. If the target attribute of the comparison is a set ("SS", "NS", or "BS"),
-        /// then the operation checks for the absence of a member of the set (not as a substring). </li> <li> <c>BEGINS_WITH</c> : checks for a prefix.
-        /// <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type String or Binary (not a Number or a set). The target attribute
-        /// of the comparison must be a String or Binary (not a Number or a set). </li> <li> <c>IN</c> : checks for exact matches.
-        /// <i>AttributeValueList</i> can contain more than one <i>AttributeValue</i> of type String, Number, or Binary (not a set). The target
-        /// attribute of the comparison must be of the same type and exact value to match. A String never matches a String set. </li> <li>
+        /// does not equal <c>{"N":"6"}</c>. Also, <c>{"N":"6"}</c> does not compare to <c>{"NS":["6", "2", "1"]}</c>. <p/> </li> <li> <c>GE</c> :
+        /// Greater than or equal. <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type String, Number, or Binary (not a set).
+        /// If an item contains an <i>AttributeValue</i> of a different type than the one specified in the request, the value does not match. For
+        /// example, <c>{"S":"6"}</c> does not equal <c>{"N":"6"}</c>. Also, <c>{"N":"6"}</c> does not compare to <c>{"NS":["6", "2", "1"]}</c>. <p/>
+        /// </li> <li> <c>GT</c> : Greater than. <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type String, Number, or Binary
+        /// (not a set). If an item contains an <i>AttributeValue</i> of a different type than the one specified in the request, the value does not
+        /// match. For example, <c>{"S":"6"}</c> does not equal <c>{"N":"6"}</c>. Also, <c>{"N":"6"}</c> does not compare to <c>{"NS":["6", "2",
+        /// "1"]}</c>. <p/> </li> <li> <c>NOT_NULL</c> : The attribute exists. </li> <li> <c>NULL</c> : The attribute does not exist. </li> <li>
+        /// <c>CONTAINS</c> : checks for a subsequence, or value in a set. <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type
+        /// String, Number, or Binary (not a set). If the target attribute of the comparison is a String, then the operation checks for a substring
+        /// match. If the target attribute of the comparison is Binary, then the operation looks for a subsequence of the target that matches the input.
+        /// If the target attribute of the comparison is a set ("SS", "NS", or "BS"), then the operation checks for a member of the set (not as a
+        /// substring). </li> <li> <c>NOT_CONTAINS</c> : checks for absence of a subsequence, or absence of a value in a set. <i>AttributeValueList</i>
+        /// can contain only one <i>AttributeValue</i> of type String, Number, or Binary (not a set). If the target attribute of the comparison is a
+        /// String, then the operation checks for the absence of a substring match. If the target attribute of the comparison is Binary, then the
+        /// operation checks for the absence of a subsequence of the target that matches the input. If the target attribute of the comparison is a set
+        /// ("SS", "NS", or "BS"), then the operation checks for the absence of a member of the set (not as a substring). </li> <li> <c>BEGINS_WITH</c>
+        /// : checks for a prefix. <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type String or Binary (not a Number or a
+        /// set). The target attribute of the comparison must be a String or Binary (not a Number or a set). <p/> </li> <li> <c>IN</c> : checks for
+        /// exact matches. <i>AttributeValueList</i> can contain more than one <i>AttributeValue</i> of type String, Number, or Binary (not a set). The
+        /// target attribute of the comparison must be of the same type and exact value to match. A String never matches a String set. </li> <li>
         /// <c>BETWEEN</c> : Greater than or equal to the first value, and less than or equal to the second value. <i>AttributeValueList</i> must
         /// contain two <i>AttributeValue</i> elements of the same type, either String, Number, or Binary (not a set). A target attribute matches if the
         /// target value is greater than, or equal to, the first element and less than, or equal to, the second element. If an item contains an
@@ -258,8 +250,8 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// If set to <c>TOTAL</c>, <i>ConsumedCapacity</i> is included in the response; if set to <c>NONE</c> (the default), <i>ConsumedCapacity</i> is
-        /// not included.
+        /// If set to <c>TOTAL</c>, the response includes <i>ConsumedCapacity</i> data for tables and indexes. If set to <c>INDEXES</c>, the response
+        /// includes <i>ConsumedCapacity</i> for indexes. If set to <c>NONE</c> (the default), <i>ConsumedCapacity</i> is not included in the response.
         ///  
         /// <para>
         /// <b>Constraints:</b>

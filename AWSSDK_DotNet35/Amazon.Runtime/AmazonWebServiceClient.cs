@@ -17,7 +17,6 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Net;
-using System.Threading;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
@@ -182,25 +181,29 @@ namespace Amazon.Runtime
                             }
                             else
                             {
+                                var originalStream = asyncResult.RequestState.RequestStream;
                                 var callback = asyncResult.Request.OriginalRequest.StreamUploadProgressCallback;
-                                byte[] buffer = new byte[this.Config.BufferSize];
+                                if(callback != null)
+                                {
+                                    var eventStream = new EventStream(originalStream, true);
+                                    var tracker = new StreamReadTracker(this, callback, originalStream.Length);
+                                    eventStream.OnRead += tracker.ReadProgress;
+                                    originalStream = eventStream;
+                                }
+
+                                var buffer = new byte[this.Config.BufferSize];
+                                var inputStream = asyncResult.Request.UseChunkEncoding && asyncResult.Request.AWS4SignerResult != null
+                                    ? new ChunkedUploadWrapperStream(originalStream, 
+                                                                     Config.BufferSize, 
+                                                                     asyncResult.Request.AWS4SignerResult)
+                                    : originalStream;
+
                                 int bytesRead = 0;
-                                long totalBytesWritten = 0;
-                                Stream inputStream = asyncResult.RequestState.RequestStream;
                                 int bytesToRead = buffer.Length;
 
                                 while ((bytesRead = inputStream.Read(buffer, 0, bytesToRead)) > 0)
                                 {
                                     requestStream.Write(buffer, 0, bytesRead);
-                                    totalBytesWritten += bytesRead;
-
-                                    if (callback != null)
-                                    {
-                                        AWSSDKUtils.InvokeInBackground(
-                                            callback,
-                                            new StreamTransferProgressArgs(bytesRead, totalBytesWritten, inputStream.Length),
-                                            this);
-                                    }
                                 }
                             }
                         }
@@ -411,19 +414,21 @@ namespace Amazon.Runtime
             if (asyncResult == null)
                 return default(T);
 
-
-            if (!asyncResult.IsCompleted)
+            using (asyncResult)
             {
-                asyncResult.AsyncWaitHandle.WaitOne();
-            }
+                if (!asyncResult.IsCompleted)
+                {
+                    asyncResult.AsyncWaitHandle.WaitOne();
+                }
 
-            if (asyncResult.Exception != null)
-            {
-                AWSSDKUtils.PreserveStackTrace(asyncResult.Exception);
-                throw asyncResult.Exception;
-            }
+                if (asyncResult.Exception != null)
+                {
+                    AWSSDKUtils.PreserveStackTrace(asyncResult.Exception);
+                    throw asyncResult.Exception;
+                }
 
-            return asyncResult.FinalResponse as T;
+                return asyncResult.FinalResponse as T;
+            }
         }
 
 
@@ -559,9 +564,9 @@ namespace Amazon.Runtime
                 }
 
                 // Override the Timeout and ReadWriteTimeout values if set at the request or config level.
-                // Public Timeout and ReadWriteTimeout properties are present on request and client config objects for S3 and Glacier.
-                var timeout = ClientConfig.GetTimeoutValue(this.Config.TimeoutInternal, wrappedRequest.OriginalRequest.TimeoutInternal);
-                var readWriteTimeout = ClientConfig.GetTimeoutValue(this.Config.ReadWriteTimeoutInternal, wrappedRequest.OriginalRequest.ReadWriteTimeoutInternal);
+                // Public Timeout and ReadWriteTimeout properties are present on client config objects.
+                var timeout = ClientConfig.GetTimeoutValue(this.Config.Timeout, wrappedRequest.OriginalRequest.TimeoutInternal);
+                var readWriteTimeout = ClientConfig.GetTimeoutValue(this.Config.ReadWriteTimeout, wrappedRequest.OriginalRequest.ReadWriteTimeoutInternal);
                 if (timeout != null)
                 {
                     request.Timeout = (int)timeout.Value.TotalMilliseconds;

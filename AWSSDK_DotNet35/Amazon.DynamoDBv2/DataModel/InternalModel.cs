@@ -354,10 +354,10 @@ namespace Amazon.DynamoDBv2.DataModel
                             if (propertyAttribute.Converter == null && !Utils.IsPrimitive(memberType))
                                 throw new InvalidOperationException("Hash key " + propertyName + " must be of primitive type");
 
-                            if (propertyAttribute is DynamoDBGlobalSecondaryIndexHashKeyAttribute)
+                            var gsiHashAttribute = propertyAttribute as DynamoDBGlobalSecondaryIndexHashKeyAttribute;
+                            if (gsiHashAttribute != null)
                             {
                                 propertyStorage.IsGSIHashKey = true;
-                                var gsiHashAttribute = propertyAttribute as DynamoDBGlobalSecondaryIndexHashKeyAttribute;
                                 if (gsiHashAttribute.IndexNames == null || gsiHashAttribute.IndexNames.Length == 0)
                                     throw new InvalidOperationException("Global Secondary Index must not be null or empty");
                                 propertyStorage.Indexes.AddRange(gsiHashAttribute.IndexNames);
@@ -371,10 +371,10 @@ namespace Amazon.DynamoDBv2.DataModel
                             if (propertyAttribute.Converter == null && !Utils.IsPrimitive(memberType))
                                 throw new InvalidOperationException("Range key " + propertyName + " must be of primitive type");
 
-                            if (propertyAttribute is DynamoDBGlobalSecondaryIndexRangeKeyAttribute)
+                            var gsiRangeAttribute = propertyAttribute as DynamoDBGlobalSecondaryIndexRangeKeyAttribute;
+                            if (gsiRangeAttribute != null)
                             {
                                 propertyStorage.IsGSIRangeKey = true;
-                                var gsiRangeAttribute = propertyAttribute as DynamoDBGlobalSecondaryIndexRangeKeyAttribute;
                                 if (gsiRangeAttribute.IndexNames == null || gsiRangeAttribute.IndexNames.Length == 0)
                                     throw new InvalidOperationException("Global Secondary Index must not be null or empty");
                                 propertyStorage.Indexes.AddRange(gsiRangeAttribute.IndexNames);
@@ -383,9 +383,10 @@ namespace Amazon.DynamoDBv2.DataModel
                             else
                                 propertyStorage.IsRangeKey = true;
                         }
-                        if (propertyAttribute is DynamoDBLocalSecondaryIndexRangeKeyAttribute)
+
+                        DynamoDBLocalSecondaryIndexRangeKeyAttribute lsiRangeKeyAttribute = propertyAttribute as DynamoDBLocalSecondaryIndexRangeKeyAttribute;
+                        if (lsiRangeKeyAttribute != null)
                         {
-                            DynamoDBLocalSecondaryIndexRangeKeyAttribute lsiRangeKeyAttribute = propertyAttribute as DynamoDBLocalSecondaryIndexRangeKeyAttribute;
                             if (lsiRangeKeyAttribute.IndexNames == null || lsiRangeKeyAttribute.IndexNames.Length == 0)
                                 throw new InvalidOperationException("Local Secondary Index must not be null or empty");
                             propertyStorage.Indexes.AddRange(lsiRangeKeyAttribute.IndexNames);

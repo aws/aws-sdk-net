@@ -68,7 +68,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             AmazonS3Util.SetMetadataHeaders(request, copyObjectRequest.Metadata);
 
-            var uriResourcePath = string.Format("/{0}/{1}",
+            var uriResourcePath = string.Format(CultureInfo.InvariantCulture, "/{0}/{1}",
                                                 S3Transforms.ToStringValue(copyObjectRequest.DestinationBucket),
                                                 S3Transforms.ToStringValue(copyObjectRequest.DestinationKey));
 

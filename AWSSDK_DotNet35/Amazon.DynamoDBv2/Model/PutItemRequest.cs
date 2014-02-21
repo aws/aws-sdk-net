@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -35,8 +35,8 @@ namespace Amazon.DynamoDBv2.Model
     /// copy of the new item (after the update). For more information, see the <i>ReturnValues</i> description.</para> <para><b>NOTE:</b> To prevent
     /// a new item from replacing an existing item, use a conditional put operation with Exists set to false for the primary key attribute, or
     /// attributes. </para> <para>For more information about using this API, see <a
-    /// href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDDItems.html" >Working with Items</a> in the Amazon
-    /// DynamoDB Developer Guide.</para>
+    /// href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html" >Working with Items</a> in the Amazon DynamoDB
+    /// Developer Guide.</para>
     /// </summary>
     public partial class PutItemRequest : AmazonDynamoDBv2Request
     {
@@ -99,21 +99,21 @@ namespace Amazon.DynamoDBv2.Model
 
         /// <summary>
         /// A map of attribute/condition pairs. This is the conditional block for the <i>PutItem</i> operation. All the conditions must be met for the
-        /// operation to succeed. <i>Expected</i> allows you to provide an attribute name, and whether or not Amazon DynamoDB should check to see if the
+        /// operation to succeed. <i>Expected</i> allows you to provide an attribute name, and whether or not DynamoDB should check to see if the
         /// attribute value already exists; or if the attribute value exists and has a particular value before changing it. Each item in <i>Expected</i>
-        /// represents an attribute name for Amazon DynamoDB to check, along with the following: <ul> <li> <i>Value</i> - The attribute value for Amazon
-        /// DynamoDB to check. </li> <li> <i>Exists</i> - Causes Amazon DynamoDB to evaluate the value before attempting a conditional operation: <ul>
-        /// <li> If <i>Exists</i> is <c>true</c>, Amazon DynamoDB will check to see if that attribute value already exists in the table. If it is found,
-        /// then the operation succeeds. If it is not found, the operation fails with a <i>ConditionalCheckFailedException</i>. </li> <li> If
-        /// <i>Exists</i> is <c>false</c>, Amazon DynamoDB assumes that the attribute value does <i>not</i> exist in the table. If in fact the value
-        /// does not exist, then the assumption is valid and the operation succeeds. If the value is found, despite the assumption that it does not
-        /// exist, the operation fails with a <i>ConditionalCheckFailedException</i>. </li> </ul> The default setting for <i>Exists</i> is <c>true</c>.
-        /// If you supply a <i>Value</i> all by itself, Amazon DynamoDB assumes the attribute exists: You don't have to set <i>Exists</i> to
-        /// <c>true</c>, because it is implied. Amazon DynamoDB returns a <i>ValidationException</i> if: <ul> <li> <i>Exists</i> is <c>true</c> but
-        /// there is no <i>Value</i> to check. (You expect a value to exist, but don't specify what that value is.) </li> <li> <i>Exists</i> is
-        /// <c>false</c> but you also specify a <i>Value</i>. (You cannot expect an attribute to have a value, while also expecting it not to exist.)
-        /// </li> </ul> </li> </ul> If you specify more than one condition for <i>Exists</i>, then all of the conditions must evaluate to true. (In
-        /// other words, the conditions are ANDed together.) Otherwise, the conditional operation will fail.
+        /// represents an attribute name for DynamoDB to check, along with the following: <ul> <li> <i>Value</i> - A value for DynamoDB to compare with
+        /// an attribute. When performing the comparison, strongly consistent reads are used. </li> <li> <i>Exists</i> - Causes DynamoDB to evaluate the
+        /// value before attempting a conditional operation: <ul> <li> If <i>Exists</i> is <c>true</c>, DynamoDB will check to see if that attribute
+        /// value already exists in the table. If it is found, then the operation succeeds. If it is not found, the operation fails with a
+        /// <i>ConditionalCheckFailedException</i>. </li> <li> If <i>Exists</i> is <c>false</c>, DynamoDB assumes that the attribute value does
+        /// <i>not</i> exist in the table. If in fact the value does not exist, then the assumption is valid and the operation succeeds. If the value is
+        /// found, despite the assumption that it does not exist, the operation fails with a <i>ConditionalCheckFailedException</i>. </li> </ul> The
+        /// default setting for <i>Exists</i> is <c>true</c>. If you supply a <i>Value</i> all by itself, DynamoDB assumes the attribute exists: You
+        /// don't have to set <i>Exists</i> to <c>true</c>, because it is implied. DynamoDB returns a <i>ValidationException</i> if: <ul> <li>
+        /// <i>Exists</i> is <c>true</c> but there is no <i>Value</i> to check. (You expect a value to exist, but don't specify what that value is.)
+        /// </li> <li> <i>Exists</i> is <c>false</c> but you also specify a <i>Value</i>. (You cannot expect an attribute to have a value, while also
+        /// expecting it not to exist.) </li> </ul> </li> </ul> If you specify more than one condition for <i>Exists</i>, then all of the conditions
+        /// must evaluate to true. (In other words, the conditions are ANDed together.) Otherwise, the conditional operation will fail.
         ///  
         /// </summary>
         public Dictionary<string,ExpectedAttributeValue> Expected
@@ -157,8 +157,8 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// If set to <c>TOTAL</c>, <i>ConsumedCapacity</i> is included in the response; if set to <c>NONE</c> (the default), <i>ConsumedCapacity</i> is
-        /// not included.
+        /// If set to <c>TOTAL</c>, the response includes <i>ConsumedCapacity</i> data for tables and indexes. If set to <c>INDEXES</c>, the response
+        /// includes <i>ConsumedCapacity</i> for indexes. If set to <c>NONE</c> (the default), <i>ConsumedCapacity</i> is not included in the response.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -184,7 +184,7 @@ namespace Amazon.DynamoDBv2.Model
 
         /// <summary>
         /// If set to <c>SIZE</c>, statistics about item collections, if any, that were modified during the operation are returned in the response. If
-        /// set to <c>NONE</c> (the default), no statistics are returned..
+        /// set to <c>NONE</c> (the default), no statistics are returned.
         ///  
         /// <para>
         /// <b>Constraints:</b>

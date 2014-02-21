@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -20,13 +20,19 @@ using System.IO;
 
 namespace Amazon.DynamoDBv2.Model
 {
-    /// <summary>Capacity
+    /// <summary>
+    /// <para>Represents the amount of provisioned throughput capacity consumed on a table or an index. </para>
     /// </summary>
     public class Capacity
     {
         
         private double? capacityUnits;
 
+
+        /// <summary>
+        /// The total number of capacity units consumed on a table or an index.
+        ///  
+        /// </summary>
         public double CapacityUnits
         {
             get { return this.capacityUnits ?? default(double); }

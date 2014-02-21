@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -22,7 +22,7 @@ namespace Amazon.CloudFront
     /// <summary>
     /// Configuration for accessing AmazonCloudFront service
     /// </summary>
-    public class AmazonCloudFrontConfig : ClientConfig
+    public partial class AmazonCloudFrontConfig : ClientConfig
     {
         /// <summary>
         /// Default constructor
@@ -53,7 +53,7 @@ namespace Amazon.CloudFront
         {
             get
             {
-                return "2013-11-11";
+                return "2013-11-22";
             }
         }
     }

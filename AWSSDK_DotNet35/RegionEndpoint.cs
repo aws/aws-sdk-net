@@ -140,7 +140,7 @@ namespace Amazon
             RegionEndpoint region = null;
             if (!hashBySystemName.TryGetValue(systemName.ToLower(CultureInfo.InvariantCulture), out region))
             {
-                if (systemName.StartsWith("cn-"))
+                if (systemName.StartsWith("cn-", StringComparison.Ordinal))
                     return NewEndpoint(systemName, "China (Unknown)", "amazonaws.com.cn");
                 return NewEndpoint(systemName, "Unknown");
             }
@@ -180,7 +180,7 @@ namespace Amazon
         static void LoadEndpointDefinitionFromFilePath(string path)
         {
             if (!System.IO.File.Exists(path))
-                throw new AmazonServiceException(string.Format("Local endpoint configuration file {0} override was not found.", path));
+                throw new AmazonServiceException(string.Format(CultureInfo.InvariantCulture, "Local endpoint configuration file {0} override was not found.", path));
 
             using (StreamReader reader = new StreamReader(path))
             {
@@ -216,7 +216,7 @@ namespace Amazon
                 {
                     retries++;
                     if (retries == MAX_DOWNLOAD_RETRIES)
-                        throw new AmazonServiceException(string.Format("Error downloading regions definition file from {0}.", url), e);
+                        throw new AmazonServiceException(string.Format(CultureInfo.InvariantCulture, "Error downloading regions definition file from {0}.", url), e);
                 }
 
                 int delay = (int)(Math.Pow(4, retries) * 100);
@@ -229,7 +229,7 @@ namespace Amazon
         /// Parse the endpoint definition.  This method is only meant to be called directly for testing purposes.
         /// </summary>
         /// <param name="reader">A reader of the endpoint definitions</param>
-        public static void LoadEndpointDefinitions(StreamReader reader)
+        public static void LoadEndpointDefinitions(TextReader reader)
         {
             if (loaded)
             {
@@ -345,14 +345,14 @@ namespace Amazon
             if (this.endpoints ==null || !this.endpoints.TryGetValue(serviceName, out endpoint))
             {
                 endpoint = GuessEndpointForService(serviceName);
-                }
+            }
 
             return endpoint;
         }
 
         public Endpoint GuessEndpointForService(string serviceName)
         {
-            return new Endpoint(String.Format("{0}.{1}.{2}", serviceName, SystemName, regionDomain), true, false);
+            return new Endpoint(String.Format(CultureInfo.InvariantCulture, "{0}.{1}.{2}", serviceName, SystemName, regionDomain), true, false);
         }
 
         public override string ToString()

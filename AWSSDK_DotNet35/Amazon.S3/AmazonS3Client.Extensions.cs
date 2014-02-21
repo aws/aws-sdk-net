@@ -98,7 +98,7 @@ namespace Amazon.S3
             }
             else
             {
-                signer.SignRequest(irequest, this.Config, metrics, immutableCredentials.AccessKey, immutableCredentials.SecretKey);
+                signer.SignRequest(irequest, metrics, immutableCredentials.AccessKey, immutableCredentials.SecretKey);
                 authorization = irequest.Headers[S3QueryParameter.Authorization.ToString()];
                 authorization = authorization.Substring(authorization.IndexOf(":", StringComparison.Ordinal) + 1);
                 authorization = "&Signature=" + AmazonS3Util.UrlEncode(authorization, false);
@@ -166,7 +166,7 @@ namespace Amazon.S3
 
             if (aws4Signing && expires > AWS4PreSignedUrlSigner.MaxAWS4PreSignedUrlExpiry)
             {
-                var msg = string.Format("The maximum expiry period for a presigned url using AWS4 signing is {0} seconds",
+                var msg = string.Format(CultureInfo.InvariantCulture, "The maximum expiry period for a presigned url using AWS4 signing is {0} seconds",
                                         AWS4PreSignedUrlSigner.MaxAWS4PreSignedUrlExpiry);
                 throw new ArgumentException(msg);
             }

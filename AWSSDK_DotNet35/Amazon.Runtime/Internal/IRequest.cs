@@ -16,6 +16,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using Amazon.Runtime.Internal.Auth;
 
 namespace Amazon.Runtime.Internal
 {
@@ -166,6 +167,28 @@ namespace Amazon.Runtime.Internal
         bool Suppress404Exceptions
         {
             get;
+            set;
+        }
+
+        /// <summary>
+        /// If using AWS4 signing protocol, contains the resultant parts of the
+        /// signature that we may need to make use of if we elect to do a chunked
+        /// encoding upload.
+        /// </summary>
+        AWS4SigningResult AWS4SignerResult
+        {
+            get; 
+            set;
+        }
+
+        /// <summary>
+        /// Determine whether to use a chunked encoding upload for the request
+        /// (applies to Amazon S3 PutObject and UploadPart requests only). 
+        /// </summary>
+        /// <returns></returns>
+        bool UseChunkEncoding
+        {
+            get; 
             set;
         }
     }

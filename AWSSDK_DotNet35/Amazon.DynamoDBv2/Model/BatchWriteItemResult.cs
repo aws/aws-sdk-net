@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -33,7 +33,7 @@ namespace Amazon.DynamoDBv2.Model
 
 
         /// <summary>
-        /// A map of tables and requests against those tables that were not processed. The <i>UnprocessedKeys</i> value is in the same form as
+        /// A map of tables and requests against those tables that were not processed. The <i>UnprocessedItems</i> value is in the same form as
         /// <i>RequestItems</i>, so you can provide this value directly to a subsequent <i>BatchGetItem</i> operation. For more information, see
         /// <i>RequestItems</i> in the Request Parameters section. Each <i>UnprocessedItems</i> entry consists of a table name and, for that table, a
         /// list of operations to perform (<i>DeleteRequest</i> or <i>PutRequest</i>). <ul> <li> <i>DeleteRequest</i> - Perform a <i>DeleteItem</i>
@@ -44,7 +44,7 @@ namespace Amazon.DynamoDBv2.Model
         /// and an attribute value. Attribute values must not be null; string and binary type attributes must have lengths greater than zero; and set
         /// type attributes must not be empty. Requests that contain empty values will be rejected with a <i>ValidationException</i>. If you specify any
         /// attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute
-        /// definition.</li> </ul> </li> </ul>
+        /// definition.</li> </ul> </li> </ul> If there are no unprocessed items remaining, the response contains an empty <i>UnprocessedItems</i> map.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -74,8 +74,8 @@ namespace Amazon.DynamoDBv2.Model
         /// <i>ItemCollectionKey</i> - The hash key value of the item collection. This is the same as the hash key of the item. </li> <li>
         /// <i>SizeEstimateRange</i> - An estimate of item collection size, expressed in GB. This is a two-element array containing a lower bound and an
         /// upper bound for the estimate. The estimate includes the size of all the items in the table, plus the size of all attributes projected into
-        /// all of the secondary indexes on the table. Use this estimate to measure whether a secondary index is approaching its size limit. The
-        /// estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate. </li> </ul>
+        /// all of the local secondary indexes on the table. Use this estimate to measure whether a local secondary index is approaching its size limit.
+        /// The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate. </li> </ul>
         ///  
         /// </summary>
         public Dictionary<string,List<ItemCollectionMetrics>> ItemCollectionMetrics

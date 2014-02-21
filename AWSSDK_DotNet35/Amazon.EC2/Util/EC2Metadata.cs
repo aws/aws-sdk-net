@@ -27,6 +27,7 @@ using System.Threading;
 
 using Amazon.Runtime;
 using ThirdParty.Json.LitJson;
+using System.Globalization;
 
 namespace Amazon.EC2.Util
 {
@@ -382,14 +383,14 @@ namespace Amazon.EC2.Util
         private static List<string> GetItems(string path, int tries, bool slurp)
         {
             if (tries <= 0)
-                throw new Exception("Unable to contact EC2 metadata service");
+                throw new InvalidOperationException("Unable to contact EC2 metadata service");
 
             var items = new List<string>();
 
             try
             {
                 HttpWebRequest request;
-                if (path.StartsWith("http"))
+                if (path.StartsWith("http", StringComparison.Ordinal))
                     request = WebRequest.Create(path) as HttpWebRequest;
                 else
                     request = WebRequest.Create(EC2_METADATA_ROOT + path) as HttpWebRequest;
@@ -530,7 +531,7 @@ namespace Amazon.EC2.Util
         public NetworkInterface(string macAddress)
         {
             _mac = macAddress;
-            _path = String.Format("/network/interfaces/macs/{0}/", _mac);
+            _path = string.Format(CultureInfo.InvariantCulture, "/network/interfaces/macs/{0}/", _mac);
         }
 
         /// <summary>
@@ -652,7 +653,7 @@ namespace Amazon.EC2.Util
         /// <returns>Private IPv4 address(es) associated with the public IP address</returns>
         public IEnumerable<string> GetIpV4Association(string publicIp)
         {
-            return EC2Metadata.GetItems(String.Format("{0}ipv4-associations/{1}", _path, publicIp));
+            return EC2Metadata.GetItems(string.Format(CultureInfo.InvariantCulture, "{0}ipv4-associations/{1}", _path, publicIp));
         }
 
         private string GetData(string key)

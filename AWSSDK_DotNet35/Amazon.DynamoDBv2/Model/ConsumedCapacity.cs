@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -21,10 +21,10 @@ using System.IO;
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
-    /// <para>The table name that consumed provisioned throughput, and the number of capacity units consumed by it. <i>ConsumedCapacity</i> is only
-    /// returned if it was asked for in the request. For more information, see <a
-    /// href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html" >Provisioned Throughput</a> in the
-    /// Amazon DynamoDB Developer Guide.</para>
+    /// <para>Represents the capacity units consumed by an operation. The data returned includes the total provisioned throughput consumed, along
+    /// with statistics for the table and any indexes involved in the operation. <i>ConsumedCapacity</i> is only returned if it was asked for in the
+    /// request. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html"
+    /// >Provisioned Throughput</a> in the Amazon DynamoDB Developer Guide.</para>
     /// </summary>
     public class ConsumedCapacity
     {
@@ -37,7 +37,7 @@ namespace Amazon.DynamoDBv2.Model
 
 
         /// <summary>
-        /// The table that consumed the provisioned throughput.
+        /// The name of the table that was affected by the operation.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -66,7 +66,7 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// The total number of capacity units consumed.
+        /// The total number of capacity units consumed by the operation.
         ///  
         /// </summary>
         public double CapacityUnits
@@ -80,6 +80,11 @@ namespace Amazon.DynamoDBv2.Model
         {
             return this.capacityUnits.HasValue;
         }
+
+        /// <summary>
+        /// The amount of throughput consumed on the table affected by the operation.
+        ///  
+        /// </summary>
         public Capacity Table
         {
             get { return this.table; }
@@ -91,6 +96,11 @@ namespace Amazon.DynamoDBv2.Model
         {
             return this.table != null;
         }
+
+        /// <summary>
+        /// The amount of throughput consumed on each local index affected by the operation.
+        ///  
+        /// </summary>
         public Dictionary<string,Capacity> LocalSecondaryIndexes
         {
             get { return this.localSecondaryIndexes; }
@@ -102,6 +112,11 @@ namespace Amazon.DynamoDBv2.Model
         {
             return this.localSecondaryIndexes != null;
         }
+
+        /// <summary>
+        /// The amount of throughput consumed on each global index affected by the operation.
+        ///  
+        /// </summary>
         public Dictionary<string,Capacity> GlobalSecondaryIndexes
         {
             get { return this.globalSecondaryIndexes; }

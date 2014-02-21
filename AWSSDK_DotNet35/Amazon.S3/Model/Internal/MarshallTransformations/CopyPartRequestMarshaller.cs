@@ -49,7 +49,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             request.Headers.Add("x-amz-copy-source-range", ConstructCopySourceRangeHeader(copyPartRequest.FirstByte, copyPartRequest.LastByte));
 
-            var uriResourcePath = string.Format("/{0}/{1}",
+            var uriResourcePath = string.Format(CultureInfo.InvariantCulture, "/{0}/{1}",
                                                 S3Transforms.ToStringValue(copyPartRequest.DestinationBucket),
                                                 S3Transforms.ToStringValue(copyPartRequest.DestinationKey));
 

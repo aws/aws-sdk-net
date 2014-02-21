@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -20,7 +20,8 @@ using System.IO;
 
 namespace Amazon.DynamoDBv2.Model
 {
-    /// <summary>Update Global Secondary Index Action
+    /// <summary>
+    /// <para>Represents the new provisioned throughput settings to be applied to a global secondary index.</para>
     /// </summary>
     public class UpdateGlobalSecondaryIndexAction
     {
@@ -28,6 +29,24 @@ namespace Amazon.DynamoDBv2.Model
         private string indexName;
         private ProvisionedThroughput provisionedThroughput;
 
+
+        /// <summary>
+        /// The name of the global secondary index to be updated.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Length</term>
+        ///         <description>3 - 255</description>
+        ///     </item>
+        ///     <item>
+        ///         <term>Pattern</term>
+        ///         <description>[a-zA-Z0-9_.-]+</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
         public string IndexName
         {
             get { return this.indexName; }
@@ -41,8 +60,8 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// The provisioned throughput settings for the specified table. The settings can be modified using the <i>UpdateTable</i> operation. For
-        /// current minimum and maximum provisioned throughput values, see <a
+        /// Represents the provisioned throughput settings for a specified table or index. The settings can be modified using the <i>UpdateTable</i>
+        /// operation. For current minimum and maximum provisioned throughput values, see <a
         /// href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the Amazon DynamoDB Developer Guide.
         ///  
         /// </summary>

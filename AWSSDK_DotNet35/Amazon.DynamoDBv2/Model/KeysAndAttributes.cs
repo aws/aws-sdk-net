@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -32,7 +32,7 @@ namespace Amazon.DynamoDBv2.Model
 
 
         /// <summary>
-        /// Represents the primary key attribute values that define the items and the attributes associated with the items.
+        /// The primary key attribute values that define the items and the attributes associated with the items.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -57,11 +57,8 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// Represents one or more attributes to retrieve from the table or index. If no attribute names are specified then all attributes will be
-        /// returned. If any of the specified attributes are not found, they will not appear in the result. If you are querying an index and request
-        /// only attributes that are projected into that index, the operation will read only the index and not the table. If any of the requested
-        /// attributes are not projected into the index, Amazon DynamoDB will need to fetch each matching item from the table. This extra fetching
-        /// incurs additional throughput cost and latency.
+        /// One or more attributes to retrieve from the table or index. If no attribute names are specified then all attributes will be returned. If any
+        /// of the specified attributes are not found, they will not appear in the result.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -86,8 +83,8 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// Represents the consistency of a read operation. If set to <c>true</c>, then a strongly consistent read is used; otherwise, an eventually
-        /// consistent read is used.
+        /// The consistency of a read operation. If set to <c>true</c>, then a strongly consistent read is used; otherwise, an eventually consistent
+        /// read is used.
         ///  
         /// </summary>
         public bool ConsistentRead

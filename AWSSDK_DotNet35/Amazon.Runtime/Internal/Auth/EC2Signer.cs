@@ -51,10 +51,9 @@ namespace Amazon.Runtime.Internal.Auth
         /// <summary>
         /// Inspects the supplied evidence to return the signer appropriate for the operation
         /// </summary>
-        /// <param name="irequest"></param>
         /// <param name="config"></param>
         /// <returns></returns>
-        AbstractAWSSigner SelectSigner(IRequest irequest, ClientConfig config)
+        AbstractAWSSigner SelectSigner(ClientConfig config)
         {
             // do a cascading series of checks to try and arrive at whether we have
             // a recognisable region; this is required to use the AWS4 signer
@@ -89,7 +88,7 @@ namespace Amazon.Runtime.Internal.Auth
         /// <exception cref="Amazon.Runtime.SignatureException">If any problems are encountered while signing the request</exception>
         public override void Sign(IRequest request, ClientConfig clientConfig, RequestMetrics metrics, string awsAccessKeyId, string awsSecretAccessKey)
         {
-            var aws4Signer = SelectSigner(request, clientConfig) as AWS4Signer;
+            var aws4Signer = SelectSigner(clientConfig) as AWS4Signer;
             if (aws4Signer != null)
                 aws4Signer.Sign(request, clientConfig, metrics, awsAccessKeyId, awsSecretAccessKey);
             else

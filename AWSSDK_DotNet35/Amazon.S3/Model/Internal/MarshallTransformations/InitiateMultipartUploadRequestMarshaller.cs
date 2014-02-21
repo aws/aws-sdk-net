@@ -16,6 +16,7 @@
 using Amazon.S3.Util;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using System.Globalization;
 
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
@@ -50,7 +51,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             AmazonS3Util.SetMetadataHeaders(request, initiateMultipartUploadRequest.Metadata);
 
-            var uriResourcePath = string.Format("/{0}/{1}",
+            var uriResourcePath = string.Format(CultureInfo.InvariantCulture, "/{0}/{1}",
                                                 S3Transforms.ToStringValue(initiateMultipartUploadRequest.BucketName),
                                                 S3Transforms.ToStringValue(initiateMultipartUploadRequest.Key));
 

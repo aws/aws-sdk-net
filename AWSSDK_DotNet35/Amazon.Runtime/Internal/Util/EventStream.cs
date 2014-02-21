@@ -1,25 +1,39 @@
-﻿using System;
+﻿/*
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 
-namespace Amazon.Runtime.Internal
+namespace Amazon.Runtime.Internal.Util
 {
-    internal class EventStream : Stream
+    internal class EventStream : WrapperStream
     {
         internal delegate void ReadProgress(int bytesRead);
         internal event ReadProgress OnRead;
         bool disableClose;
 
-        Stream wrappedStream;
+        //Stream wrappedStream;
 
         internal EventStream(Stream stream, bool disableClose)
+            : base(stream)
         {
-            this.wrappedStream = stream;
+            //this.wrappedStream = stream;
             this.disableClose = disableClose;
         }
 
@@ -29,55 +43,55 @@ namespace Amazon.Runtime.Internal
 
         public override bool CanRead
         {
-            get { return this.wrappedStream.CanRead; }
+            get { return BaseStream.CanRead; }
         }
 
         public override bool CanSeek
         {
-            get { return this.wrappedStream.CanSeek; }
+            get { return BaseStream.CanSeek; }
         }
 
         public override bool CanTimeout
         {
-            get { return this.wrappedStream.CanTimeout; }
+            get { return BaseStream.CanTimeout; }
         }
 
         public override bool CanWrite
         {
-            get { return this.wrappedStream.CanWrite; }
+            get { return BaseStream.CanWrite; }
         }
 
         public override long Length
         {
-            get { return this.wrappedStream.Length; }
+            get { return BaseStream.Length; }
         }
 
         public override long Position
         {
-            get { return this.wrappedStream.Position; }
-            set { this.wrappedStream.Position = value; }
+            get { return BaseStream.Position; }
+            set { BaseStream.Position = value; }
         }
 
         public override int ReadTimeout
         {
-            get { return this.wrappedStream.ReadTimeout; }
-            set { this.wrappedStream.ReadTimeout = value; }
+            get { return BaseStream.ReadTimeout; }
+            set { BaseStream.ReadTimeout = value; }
         }
 
         public override int WriteTimeout
         {
-            get { return this.wrappedStream.WriteTimeout; }
-            set { this.wrappedStream.WriteTimeout = value; }
+            get { return BaseStream.WriteTimeout; }
+            set { BaseStream.WriteTimeout = value; }
         }
 
         public override void Flush()
         {
-            this.wrappedStream.Flush();
+            BaseStream.Flush();
         }
 
         public override int Read(byte[] buffer, int offset, int count)
         {
-            int bytesRead = this.wrappedStream.Read(buffer, offset, count);
+            int bytesRead = BaseStream.Read(buffer, offset, count);
             if (this.OnRead != null)
             {
                 this.OnRead(bytesRead);
@@ -88,12 +102,12 @@ namespace Amazon.Runtime.Internal
 
         public override long Seek(long offset, SeekOrigin origin)
         {
-            return this.wrappedStream.Seek(offset, origin);
+            return BaseStream.Seek(offset, origin);
         }
 
         public override void SetLength(long value)
         {
-            this.wrappedStream.SetLength(value);
+            BaseStream.SetLength(value);
         }
 
         public override void Write(byte[] buffer, int offset, int count)
@@ -142,7 +156,7 @@ namespace Amazon.Runtime.Internal
         {
             if (!disableClose)
             {
-                this.wrappedStream.Close();
+                BaseStream.Close();
             }
         }
 
@@ -159,7 +173,6 @@ namespace Amazon.Runtime.Internal
         {
             throw new NotImplementedException();
         }
-#endif
 
         class AsyncResult : IAsyncResult
         {
@@ -170,5 +183,8 @@ namespace Amazon.Runtime.Internal
 
             internal object Return { get; set; }
         }
+
+#endif
+
     }
 }

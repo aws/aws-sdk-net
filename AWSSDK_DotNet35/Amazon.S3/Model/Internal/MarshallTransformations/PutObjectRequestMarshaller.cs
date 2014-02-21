@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 using System;
+using System.Globalization;
 using System.IO;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.S3.Util;
@@ -57,7 +58,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             AmazonS3Util.SetMetadataHeaders(request, putObjectRequest.Metadata);
             
-            var uriResourcePath = string.Format("/{0}/{1}",
+            var uriResourcePath = string.Format(CultureInfo.InvariantCulture, "/{0}/{1}",
                                                 S3Transforms.ToStringValue(putObjectRequest.BucketName),
                                                 S3Transforms.ToStringValue(putObjectRequest.Key));
 
@@ -69,9 +70,14 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             {
                 // Wrap the stream in a stream that has a length
                 var streamWithLength = GetStreamWithLength(putObjectRequest.InputStream, putObjectRequest.Headers.ContentLength);
+                if (streamWithLength.Length > 0)
+                    request.UseChunkEncoding = true;
+                var length = streamWithLength.Length - streamWithLength.Position;
+                if (!request.Headers.ContainsKey("Content-Length"))
+                    request.Headers.Add("Content-Length", length.ToString(CultureInfo.InvariantCulture));
 
                 // Wrap input stream in MD5Stream
-                var hashStream = new MD5Stream(streamWithLength, null, streamWithLength.Length - streamWithLength.Position);
+                var hashStream = new MD5Stream(streamWithLength, null, length);
                 putObjectRequest.InputStream = hashStream;
             }
         

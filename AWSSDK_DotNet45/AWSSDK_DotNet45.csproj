@@ -50,6 +50,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -144,7 +145,6 @@
     <Compile Include="Amazon.Route53\AmazonRoute53Client.cs" />
     <Compile Include="Amazon.Route53\IAmazonRoute53.cs" />
     <Compile Include="Amazon.Runtime\AmazonWebServiceClient.cs" />
-    <Compile Include="Amazon.Runtime\Internal\EventStream.cs" />
     <Compile Include="Amazon.Runtime\Internal\AsyncRunner.cs" />
     <Compile Include="Amazon.Runtime\Internal\Transform\HttpClientResponseData.cs" />
     <Compile Include="Amazon.Runtime\Internal\WebRequestState.cs" />

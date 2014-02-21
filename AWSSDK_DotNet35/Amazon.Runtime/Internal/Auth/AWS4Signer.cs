@@ -15,7 +15,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Text;
 using System.Globalization;
 using System.Text.RegularExpressions;
@@ -47,6 +46,7 @@ namespace Amazon.Runtime.Internal.Auth
         internal const string XAmzDate = "X-Amz-Date";
         internal const string XAmzSignedHeaders = "X-Amz-SignedHeaders";
         internal const string XAmzContentSha256 = "X-Amz-Content-SHA256";
+        internal const string XAmzDecodedContentLength = "X-Amz-Decoded-Content-Length";
 
         static readonly Regex CompressWhitespaceRegex = new Regex("\\s+");
         const SigningAlgorithm SignerAlgorithm = SigningAlgorithm.HmacSHA256;
@@ -207,7 +207,7 @@ namespace Amazon.Runtime.Internal.Auth
                 headers.Add(HostHeader, hostHeader);
             }
 
-            var dt = DateTime.UtcNow;
+            var dt = requestDateTime;
             headers[XAmzDate] = dt.ToString(AWSSDKUtils.ISO8601BasicDateTimeFormat, CultureInfo.InvariantCulture);
 
             return dt;
@@ -261,10 +261,10 @@ namespace Amazon.Runtime.Internal.Auth
                                                          RequestMetrics metrics = null)
         {
             var dateStamp = FormatDateTime(signedAt, AWSSDKUtils.ISO8601BasicDateFormat);
-            var scope = string.Format("{0}/{1}/{2}/{3}", dateStamp, region, service, Terminator);
+            var scope = string.Format(CultureInfo.InvariantCulture, "{0}/{1}/{2}/{3}", dateStamp, region, service, Terminator);
 
             var stringToSign = new StringBuilder();
-            stringToSign.AppendFormat("{0}-{1}\n{2}\n{3}\n",
+            stringToSign.AppendFormat(CultureInfo.InvariantCulture, "{0}-{1}\n{2}\n{3}\n",
                                       Scheme,
                                       Algorithm,
                                       FormatDateTime(signedAt, AWSSDKUtils.ISO8601BasicDateTimeFormat),
@@ -276,8 +276,7 @@ namespace Amazon.Runtime.Internal.Auth
             if (metrics != null)
                 metrics.AddProperty(Metric.StringToSign, stringToSign);
 
-            var key = ComposeSigningKey(SignerAlgorithm.ToString().ToUpper(),
-                                        awsSecretAccessKey,
+            var key = ComposeSigningKey(awsSecretAccessKey,
                                         region,
                                         dateStamp,
                                         service);
@@ -300,13 +299,12 @@ namespace Amazon.Runtime.Internal.Auth
         /// <summary>
         /// Compute and return the multi-stage signing key for the request.
         /// </summary>
-        /// <param name="algorithm">Hashing algorithm to use</param>
         /// <param name="awsSecretAccessKey">The clear-text AWS secret key, if not held in secureKey</param>
         /// <param name="region">The region in which the service request will be processed</param>
         /// <param name="date">Date of the request, in yyyyMMdd format</param>
         /// <param name="service">The name of the service being called by the request</param>
         /// <returns>Computed signing key</returns>
-        public static byte[] ComposeSigningKey(string algorithm, string awsSecretAccessKey, string region, string date, string service)
+        public static byte[] ComposeSigningKey(string awsSecretAccessKey, string region, string date, string service)
         {
             char[] ksecret = null;
 
@@ -345,19 +343,36 @@ namespace Amazon.Runtime.Internal.Auth
             if (request.Headers.TryGetValue(XAmzContentSha256, out computedContentHash))
                 return computedContentHash;
 
-            if (request.ContentStream != null)
-                computedContentHash = request.ComputeContentStreamHash();
+            if (request.UseChunkEncoding)
+            {
+                computedContentHash = StreamingBodySha256;
+                if (request.Headers.ContainsKey("Content-Length"))
+                {
+                    // substitute the originally declared content length with the true size of
+                    // the data we'll upload, which is inflated with chunk metadata
+                    request.Headers[XAmzDecodedContentLength] = request.Headers["Content-Length"];
+                    var originalContentLength = long.Parse(request.Headers["Content-Length"], CultureInfo.InvariantCulture);
+                    request.Headers["Content-Length"]
+                        = ChunkedUploadWrapperStream.ComputeChunkedContentLength(originalContentLength).ToString(CultureInfo.InvariantCulture);
+                }
+                request.Headers["Content-Encoding"] = "aws-chunked";
+            }
             else
             {
-                byte[] payloadHashBytes;
-                if (request.Content != null)
-                    payloadHashBytes = CryptoUtilFactory.CryptoInstance.ComputeSHA256Hash(request.Content);
+                if (request.ContentStream != null)
+                    computedContentHash = request.ComputeContentStreamHash();
                 else
                 {
-                    var payload = request.UseQueryString ? "" : GetRequestPayload(request);
-                    payloadHashBytes = CryptoUtilFactory.CryptoInstance.ComputeSHA256Hash(Encoding.UTF8.GetBytes(payload));
+                    byte[] payloadHashBytes;
+                    if (request.Content != null)
+                        payloadHashBytes = CryptoUtilFactory.CryptoInstance.ComputeSHA256Hash(request.Content);
+                    else
+                    {
+                        var payload = request.UseQueryString ? "" : GetRequestPayload(request);
+                        payloadHashBytes = CryptoUtilFactory.CryptoInstance.ComputeSHA256Hash(Encoding.UTF8.GetBytes(payload));
+                    }
+                    computedContentHash = AWSSDKUtils.ToHex(payloadHashBytes, true);
                 }
-                computedContentHash = AWSSDKUtils.ToHex(payloadHashBytes, true);
             }
 
             if (computedContentHash != null)
@@ -509,7 +524,7 @@ namespace Amazon.Runtime.Internal.Auth
         {
             if (string.IsNullOrEmpty(resourcePath))
                 return "/";
-            var canonicalizedPath = resourcePath.StartsWith("/") ? resourcePath : "/" + resourcePath;
+            var canonicalizedPath = resourcePath.StartsWith("/", StringComparison.Ordinal) ? resourcePath : "/" + resourcePath;
             return AWSSDKUtils.UrlEncode(canonicalizedPath, true);
         }
 
@@ -802,9 +817,9 @@ namespace Amazon.Runtime.Internal.Auth
             // end up adding url encoded data to the url subsquently
             var copiedParameters = new Dictionary<string, string>(request.Parameters)
                 {
-                    {XAmzAlgorithm, string.Format("{0}-{1}", Scheme, Algorithm)},
+                    {XAmzAlgorithm, string.Format(CultureInfo.InvariantCulture, "{0}-{1}", Scheme, Algorithm)},
                     {
-                        XAmzCredential, string.Format("{0}/{1}/{2}/{3}/{4}",
+                        XAmzCredential, string.Format(CultureInfo.InvariantCulture, "{0}/{1}/{2}/{3}/{4}",
                                                       awsAccessKeyId,
                                                       FormatDateTime(signedAt, AWSSDKUtils.ISO8601BasicDateFormat),
                                                       region,
@@ -842,7 +857,7 @@ namespace Amazon.Runtime.Internal.Auth
     /// or authorization query parameters for the final request as well as hold ongoing
     /// signature computations for subsequent calls related to the initial signing.
     /// </summary>
-    internal class AWS4SigningResult
+    public class AWS4SigningResult
     {
         private readonly string _awsAccessKeyId;
         private readonly DateTime _originalDateTime;
@@ -983,10 +998,10 @@ namespace Amazon.Runtime.Internal.Auth
 
                 authParams.AppendFormat("{0}={1}",
                                         AWS4PreSignedUrlSigner.XAmzAlgorithm,
-                                        string.Format("{0}-{1}", AWS4Signer.Scheme, AWS4Signer.Algorithm));
+                                        string.Format(CultureInfo.InvariantCulture, "{0}-{1}", AWS4Signer.Scheme, AWS4Signer.Algorithm));
                 authParams.AppendFormat("&{0}={1}",
                                         AWS4PreSignedUrlSigner.XAmzCredential,
-                                        string.Format("{0}/{1}", AccessKeyId, Scope));
+                                        string.Format(CultureInfo.InvariantCulture, "{0}/{1}", AccessKeyId, Scope));
                 authParams.AppendFormat("&{0}={1}", AWS4Signer.XAmzDate, ISO8601DateTime);
                 authParams.AppendFormat("&{0}={1}", AWS4Signer.XAmzSignedHeaders, SignedHeaders);
                 authParams.AppendFormat("&{0}={1}", AWS4PreSignedUrlSigner.XAmzSignature, Signature);

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -32,7 +32,7 @@ namespace Amazon.DynamoDBv2.Model
 
 
         /// <summary>
-        /// Represents the name of the secondary index. The name must be unique among all other indexes on this table.
+        /// The name of the local secondary index. The name must be unique among all other indexes on this table.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -61,7 +61,7 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// Represents the complete index key schema, which consists of one or more pairs of attribute names and key types (<c>HASH</c> or
+        /// The complete key schema for the local secondary index, consisting of one or more pairs of attribute names and key types (<c>HASH</c> or
         /// <c>RANGE</c>).
         ///  
         /// <para>
@@ -87,7 +87,7 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// Represents attributes that are copied (projected) from the table into the index. These are in addition to the primary key attributes and
+        /// Represents attributes that are copied (projected) from the table into an index. These are in addition to the primary key attributes and
         /// index key attributes, which are automatically projected.
         ///  
         /// </summary>

@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 
+using System.Globalization;
 using System.IO;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -36,7 +37,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (uploadPartRequest.IsSetMD5Digest())
                 request.Headers["Content-MD5"] = uploadPartRequest.MD5Digest;
 
-            var uriResourcePath = string.Format("/{0}/{1}",
+            var uriResourcePath = string.Format(CultureInfo.InvariantCulture, "/{0}/{1}",
                                                 S3Transforms.ToStringValue(uploadPartRequest.BucketName),
                                                 S3Transforms.ToStringValue(uploadPartRequest.Key));
 
@@ -52,6 +53,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             {
                 // Wrap input stream in partial wrapper (to upload only part of the stream)
                 var partialStream = new PartialWrapperStream(uploadPartRequest.InputStream, uploadPartRequest.PartSize);
+                if (partialStream.Length > 0)
+                    request.UseChunkEncoding = true;
+                if (!request.Headers.ContainsKey("Content-Length"))
+                    request.Headers.Add("Content-Length", partialStream.Length.ToString(CultureInfo.InvariantCulture));
 
                 // Wrap input stream in MD5Stream; after this we can no longer seek or position the stream
                 var hashStream = new MD5Stream(partialStream, null, partialStream.Length);

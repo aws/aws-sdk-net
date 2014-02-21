@@ -57,7 +57,7 @@ namespace Amazon.Runtime
         private ICredentials proxyCredentials;
         private bool logMetrics = AWSConfigs.LogMetrics;
         private bool disableLogging = false;
-        private TimeSpan? timeoutInternal = null;
+        private TimeSpan? timeout = null;
 
         /// <summary>
         /// Gets Service Version
@@ -316,13 +316,13 @@ namespace Amazon.Runtime
         /// <exception cref="System.ArgumentOutOfRangeException">The timeout specified is less than or equal to zero and is not Infinite.</exception>
         /// <seealso cref="P:System.Net.HttpWebRequest.Timeout"/>
         /// <seealso cref="P:System.Net.Http.HttpClient.Timeout"/>
-        internal TimeSpan? TimeoutInternal
+        public TimeSpan? Timeout
         {
-            get { return this.timeoutInternal; }
+            get { return this.timeout; }
             set
             {
                 ValidateTimeout(value);
-                this.timeoutInternal = value;
+                this.timeout = value;
             }
         }
 

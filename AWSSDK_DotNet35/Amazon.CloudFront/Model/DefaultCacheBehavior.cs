@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -33,6 +33,7 @@ namespace Amazon.CloudFront.Model
         private ViewerProtocolPolicy viewerProtocolPolicy;
         private long? minTTL;
         private AllowedMethods allowedMethods;
+        private bool? smoothStreaming;
 
 
         /// <summary>
@@ -151,6 +152,23 @@ namespace Amazon.CloudFront.Model
         internal bool IsSetAllowedMethods()
         {
             return this.allowedMethods != null;
+        }
+
+        /// <summary>
+        /// Indicates whether you want to distribute media files in Microsoft Smooth Streaming format using the origin that is associated with this
+        /// cache behavior. If so, specify true; if not, specify false.
+        ///  
+        /// </summary>
+        public bool SmoothStreaming
+        {
+            get { return this.smoothStreaming ?? default(bool); }
+            set { this.smoothStreaming = value; }
+        }
+
+        // Check to see if SmoothStreaming property is set
+        internal bool IsSetSmoothStreaming()
+        {
+            return this.smoothStreaming.HasValue;
         }
     }
 }

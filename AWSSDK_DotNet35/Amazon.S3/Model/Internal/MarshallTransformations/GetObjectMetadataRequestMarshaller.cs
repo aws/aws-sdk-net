@@ -15,6 +15,7 @@
 
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using System.Globalization;
 
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
@@ -41,7 +42,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if(headObjectRequest.IsSetUnmodifiedSinceDate())
                 request.Headers.Add("If-Unmodified-Since", S3Transforms.ToStringValue(headObjectRequest.UnmodifiedSinceDate));
 
-            var uriResourcePath = string.Format("/{0}/{1}",
+            var uriResourcePath = string.Format(CultureInfo.InvariantCulture, "/{0}/{1}",
                                                 S3Transforms.ToStringValue(headObjectRequest.BucketName),
                                                 S3Transforms.ToStringValue(headObjectRequest.Key));
 

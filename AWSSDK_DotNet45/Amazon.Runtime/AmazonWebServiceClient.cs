@@ -298,8 +298,21 @@ WebExceptionStatusesToRetryOn.Contains(we.Status)
                 var eventStream = new EventStream(request.ContentStream, true);
                 var tracker = new StreamReadTracker(this, request.OriginalRequest.StreamUploadProgressCallback, request.ContentStream.Length);
                 eventStream.OnRead += tracker.ReadProgress;
-                requestMessage.Content = new StreamContent(eventStream, this.Config.BufferSize);
-                requestMessage.Content.Headers.ContentLength = request.ContentStream.Length;
+
+                Stream finalStream;
+                StreamContent content;
+                if (state.Request.UseChunkEncoding && state.Request.AWS4SignerResult != null)
+                {
+                    finalStream = new ChunkedUploadWrapperStream(eventStream, Config.BufferSize, state.Request.AWS4SignerResult);
+                }
+                else
+                {
+                    finalStream = eventStream;
+                }
+
+                content = new StreamContent(finalStream, this.Config.BufferSize);
+                requestMessage.Content = content;
+                requestMessage.Content.Headers.ContentLength = finalStream.Length;
             }
             else if ((requestData = GetRequestData(request)) != null)
             {
@@ -445,11 +458,11 @@ WebExceptionStatusesToRetryOn.Contains(we.Status)
         {
 #if BCL45
             var httpMessageHandler = new WebRequestHandler();
-            if (this.Config.ReadWriteTimeoutInternal.HasValue)
+            if (this.Config.ReadWriteTimeout.HasValue)
             {
                 // ReadWriteTimeout value is set to ClientConfig.MaxTimeout for S3 and Glacier.
                 // Use default value (300 seconds) for other services.
-                httpMessageHandler.ReadWriteTimeout = (int)this.Config.ReadWriteTimeoutInternal.Value.TotalMilliseconds;
+                httpMessageHandler.ReadWriteTimeout = (int)this.Config.ReadWriteTimeout.Value.TotalMilliseconds;
             }            
 #else
             var httpMessageHandler = new HttpClientHandler();
@@ -486,11 +499,11 @@ WebExceptionStatusesToRetryOn.Contains(we.Status)
             }
 
             var httpClient = new HttpClient(httpMessageHandler);            
-            if (this.Config.TimeoutInternal.HasValue)
+            if (this.Config.Timeout.HasValue)
             {
                 // Timeout value is set to ClientConfig.MaxTimeout for S3 and Glacier.
                 // Use default value (100 seconds) for other services.
-                httpClient.Timeout = this.Config.TimeoutInternal.Value;
+                httpClient.Timeout = this.Config.Timeout.Value;
             }
             
             return httpClient;
@@ -572,32 +585,7 @@ WebExceptionStatusesToRetryOn.Contains(we.Status)
             return request;
         }
 
-        internal class StreamReadTracker
-        {
-            AmazonWebServiceClient client;
-            EventHandler<StreamTransferProgressArgs> callback;
-            long contentLength;
-            long totalBytesRead;
 
-            internal StreamReadTracker(AmazonWebServiceClient client, EventHandler<StreamTransferProgressArgs> callback, long contentLength)
-            {
-                this.client = client;
-                this.callback = callback;
-                this.contentLength = contentLength;
-            }
-
-            public void ReadProgress(int bytesRead)
-            {
-                if (callback == null)
-                    return;
-
-                totalBytesRead += bytesRead;
-                AWSSDKUtils.InvokeInBackground(
-                                    callback,
-                                    new StreamTransferProgressArgs(bytesRead, totalBytesRead, contentLength),
-                                    client);
-            }
-        }
 
         protected static void LogResponse(RequestMetrics metrics, IRequest request, HttpStatusCode statusCode)
         {

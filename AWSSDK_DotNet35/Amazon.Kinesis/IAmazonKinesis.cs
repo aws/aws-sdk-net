@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,7 +25,7 @@ namespace Amazon.Kinesis
     ///  Amazon Kinesis Service API Reference <para>Amazon Kinesis is a managed service that scales elastically for real time processing of streaming
     /// big data.</para>
     /// </summary>
-    public interface IAmazonKinesis : IDisposable
+    public partial interface IAmazonKinesis : IDisposable
     {
 
 
@@ -50,10 +50,10 @@ namespace Amazon.Kinesis
         /// <li>Create more shards than are authorized for your account.</li>
         /// 
         /// </ul>
-        /// <para> <b>Note:</b> The default limit for an AWS account is two shards per stream. If you need to create a stream with more than two
-        /// shards, contact AWS Support to increase the limit on your account.</para> <para>You can use the <c>DescribeStream</c> operation to check the
-        /// stream status, which is returned in <c>StreamStatus</c> .</para> <para> <c>CreateStream</c> has a limit of 5 transactions per second per
-        /// account.</para>
+        /// <para> <b>Note:</b> The default limit for an AWS account is five shards per stream. If you need to create a stream with more than five
+        /// shards, <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html" >contact AWS Support</a> to increase the limit on
+        /// your account.</para> <para>You can use the <c>DescribeStream</c> operation to check the stream status, which is returned in
+        /// <c>StreamStatus</c> .</para> <para> <c>CreateStream</c> has a limit of 5 transactions per second per account.</para>
         /// </summary>
         /// 
         /// <param name="createStreamRequest">Container for the necessary parameters to execute the CreateStream service method on
@@ -446,12 +446,12 @@ namespace Amazon.Kinesis
         /// to map associated data records to shards using the hash key ranges of the shards. You can override hashing the partition key to determine
         /// the shard by explicitly specifying a hash value using the <c>ExplicitHashKey</c> parameter. For more information, see the <a
         /// href="http://docs.aws.amazon.com/kinesis/latest/dev/" >Amazon Kinesis Developer Guide</a> .</para> <para> <c>PutRecord</c> returns the shard
-        /// ID of where the data record was placed and the sequence number that was assigned to the data record.</para> <para>The
-        /// <c>SequenceNumberForOrdering</c> sets the initial sequence number for the partition key. Later <c>PutRecord</c> requests to the same
-        /// partition key (from the same client) will automatically increase from <c>SequenceNumberForOrdering</c> , ensuring strict sequential
-        /// ordering.</para> <para>If a <c>PutRecord</c> request cannot be processed because of insufficient provisioned throughput on the shard
-        /// involved in the request, <c>PutRecord</c> throws <c>ProvisionedThroughputExceededException</c> . </para> <para>Data records are accessible
-        /// for only 24 hours from the time that they are added to an Amazon Kinesis stream.</para>
+        /// ID of where the data record was placed and the sequence number that was assigned to the data record.</para> <para>Sequence numbers generally
+        /// increase over time. To guarantee strictly increasing ordering, use the <c>SequenceNumberForOrdering</c> parameter. For more information, see
+        /// the <a href="http://docs.aws.amazon.com/kinesis/latest/dev/" >Amazon Kinesis Developer Guide</a> .</para> <para>If a <c>PutRecord</c>
+        /// request cannot be processed because of insufficient provisioned throughput on the shard involved in the request, <c>PutRecord</c> throws
+        /// <c>ProvisionedThroughputExceededException</c> . </para> <para>Data records are accessible for only 24 hours from the time that they are
+        /// added to an Amazon Kinesis stream.</para>
         /// </summary>
         /// 
         /// <param name="putRecordRequest">Container for the necessary parameters to execute the PutRecord service method on AmazonKinesis.</param>
@@ -514,10 +514,11 @@ namespace Amazon.Kinesis
         /// If a stream is in CREATING or UPDATING or DELETING states, then Amazon Kinesis returns a <c>ResourceInUseException</c> .</para>
         /// <para>If the specified stream does not exist, Amazon Kinesis returns a <c>ResourceNotFoundException</c> .
         /// If you try to create more shards than are authorized for your account, you receive a <c>LimitExceededException</c> .
-        /// </para> <para> <b>Note:</b> The default limit for an AWS account is two shards per stream. If you need to create a stream with more than two
-        /// shards, contact AWS Support to increase the limit on your account.</para> <para>If you try to operate on too many streams in parallel using
-        /// CreateStream, DeleteStream, MergeShards or SplitShard, you will receive a <c>LimitExceededException</c> . </para> <para> <c>SplitShard</c>
-        /// has limit of 5 transactions per second per account.</para>
+        /// </para> <para> <b>Note:</b> The default limit for an AWS account is five shards per stream. If you need to create a stream with more than
+        /// five shards, <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html" >contact AWS Support</a> to increase the limit
+        /// on your account.</para> <para>If you try to operate on too many streams in parallel using CreateStream, DeleteStream, MergeShards or
+        /// SplitShard, you will receive a <c>LimitExceededException</c> . </para> <para> <c>SplitShard</c> has limit of 5 transactions per second per
+        /// account.</para>
         /// </summary>
         /// 
         /// <param name="splitShardRequest">Container for the necessary parameters to execute the SplitShard service method on AmazonKinesis.</param>

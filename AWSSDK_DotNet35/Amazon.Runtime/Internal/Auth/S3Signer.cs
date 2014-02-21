@@ -60,10 +60,9 @@ namespace Amazon.Runtime.Internal.Auth
         /// Inspects the supplied evidence to return the signer appropriate for the operation and
         /// precomputes the body hash for the request if AWS4 protocol is selected.
         /// </summary>
-        /// <param name="irequest"></param>
         /// <param name="config"></param>
         /// <returns></returns>
-        private AbstractAWSSigner SelectSigner(IRequest irequest, ClientConfig config)
+        private AbstractAWSSigner SelectSigner(ClientConfig config)
         {
             // do a cascading series of checks to try and arrive at whether we have
             // a recognisable region and if it is Beijing so as to select AWS4
@@ -94,14 +93,19 @@ namespace Amazon.Runtime.Internal.Auth
 
         public override void Sign(IRequest request, ClientConfig clientConfig, RequestMetrics metrics, string awsAccessKeyId, string awsSecretAccessKey)
         {
-            var aws4Signer = SelectSigner(request, clientConfig) as AWS4Signer;
+            var aws4Signer = SelectSigner(clientConfig) as AWS4Signer;
             if (aws4Signer != null)
-                aws4Signer.Sign(request, clientConfig, metrics, awsAccessKeyId, awsSecretAccessKey);
+            {
+                var signingResult = aws4Signer.SignRequest(request, clientConfig, metrics, awsAccessKeyId, awsSecretAccessKey);
+                request.Headers[AWS4Signer.AuthorizationHeader] = signingResult.ForAuthorizationHeader;
+                if (request.UseChunkEncoding)
+                    request.AWS4SignerResult = signingResult;
+            }
             else
-                SignRequest(request, clientConfig, metrics, awsAccessKeyId, awsSecretAccessKey);
+                SignRequest(request, metrics, awsAccessKeyId, awsSecretAccessKey);
         }
 
-        internal void SignRequest(IRequest request, ClientConfig clientConfig, RequestMetrics metrics, string awsAccessKeyId, string awsSecretAccessKey)
+        internal void SignRequest(IRequest request, RequestMetrics metrics, string awsAccessKeyId, string awsSecretAccessKey)
         {
             request.Headers["x-amz-date"] = AWSSDKUtils.FormattedCurrentTimestampRFC822;
 

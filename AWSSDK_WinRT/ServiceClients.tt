@@ -128,6 +128,7 @@ namespace <#= type.Namespace #>
             baseName = baseName.Substring(1);
 #>
 using System;
+using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -169,7 +170,8 @@ namespace <#= type.Namespace #>
             }
             catch(AggregateException e)
             {
-                throw e.InnerException;
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+                return null;
             }
         }
 

@@ -54,7 +54,8 @@ namespace Amazon.Runtime.Internal.Transform
         private JsonReader jsonReader = null;
         private JsonPathStack stack = new JsonPathStack();
         private string currentField;
-        private JsonToken? currentToken = null;        
+        private JsonToken? currentToken = null;
+        private bool disposed = false;
 
         #endregion
 
@@ -300,6 +301,24 @@ namespace Amazon.Runtime.Internal.Transform
         }
 
         #endregion
+
+        protected override void Dispose(bool disposing)
+        {
+            if (!disposed)
+            {
+                if (disposing)
+                {
+                    if (streamReader != null)
+                    {
+                        streamReader.Dispose();
+                        streamReader = null;
+                    }
+                }
+                disposed = true;
+            }
+
+            base.Dispose(disposing);
+        }
 
         class JsonPathStack
         {

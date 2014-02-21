@@ -35,7 +35,7 @@ using System.Globalization;
 
 namespace Amazon.Glacier.Transfer.Internal
 {
-    internal class DownloadFileCommand
+    internal class DownloadFileCommand : IDisposable
     {
         internal const int MAX_OPERATION_RETRY = 5;
         const string SQS_POLICY = 
@@ -71,6 +71,8 @@ namespace Amazon.Glacier.Transfer.Internal
         string topicArn;
         string queueUrl;
         string queueArn;
+
+        bool disposed = false;
 
         internal DownloadFileCommand(ArchiveTransferManager manager, string vaultName, string archiveId, string filePath, DownloadOptions options)
         {
@@ -241,5 +243,44 @@ namespace Amazon.Glacier.Transfer.Internal
             this.snsClient.DeleteTopic(new DeleteTopicRequest() { TopicArn = this.topicArn });
             this.sqsClient.DeleteQueue(new DeleteQueueRequest() { QueueUrl = this.queueUrl });
         }
+
+        #region Dispose Pattern Implementation
+
+        /// <summary>
+        /// Implements the Dispose pattern
+        /// </summary>
+        /// <param name="disposing">Whether this object is being disposed via a call to Dispose
+        /// or garbage collected.</param>
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!this.disposed)
+            {
+                if (disposing)
+                {
+                    if (snsClient != null)
+                    {
+                        snsClient.Dispose();
+                        snsClient = null;
+                    }
+                    if (sqsClient != null)
+                    {
+                        sqsClient.Dispose();
+                        sqsClient = null;
+                    }
+                }
+                this.disposed = true;
+            }
+        }
+
+        /// <summary>
+        /// Disposes of all managed and unmanaged resources.
+        /// </summary>
+        public void Dispose()
+        {
+            this.Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        #endregion
     }
 }
