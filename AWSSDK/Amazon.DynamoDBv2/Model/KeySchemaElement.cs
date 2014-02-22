@@ -21,8 +21,8 @@ using System.IO;
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
-    /// <para>Represents a single element of a key schema. A key schema specifies the attributes that make up the primary key of a table, or the key
-    /// attributes of an index.</para>
+    /// <para>Represents a key schema. Specifies the attributes that make up the primary key of a table, or the key attributes of a secondary
+    /// index.</para>
     /// </summary>
     public class KeySchemaElement
     {
@@ -31,7 +31,7 @@ namespace Amazon.DynamoDBv2.Model
         private string keyType;
 
         /// <summary>
-        /// The name of a key attribute.
+        /// Represents the name of a key attribute.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -69,7 +69,7 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// The attribute data, consisting of the data type and the attribute value itself.
+        /// Represents the attribute data, consisting of the data type and the attribute value itself.
         ///  
         /// <para>
         /// <b>Constraints:</b>

@@ -32,8 +32,6 @@
 
         public QueryResult Unmarshall(JsonUnmarshallerContext context)
         {
-            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
-                return null;
             QueryResult queryResult = new QueryResult();
           queryResult.Items = null;
                         queryResult.LastEvaluatedKey = null;

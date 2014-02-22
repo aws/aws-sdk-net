@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -29,7 +29,7 @@ namespace Amazon.Kinesis
         /// </summary>
         public AmazonKinesisConfig()
         {
-            this.ServiceURL = "https://kinesis.us-east-1.amazonaws.com";
+            this.ServiceURL = "https://kinesis.us-east-1.amazonaws.com/";
             this.AuthenticationServiceName = "kinesis";
         }
 

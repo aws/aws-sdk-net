@@ -34,7 +34,7 @@ namespace Amazon.DynamoDBv2.Model
         private List<MemoryStream> bS = new List<MemoryStream>();
 
         /// <summary>
-        /// A String data type
+        /// Represents a String data type
         ///  
         /// </summary>
         public string S
@@ -63,7 +63,7 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// A Number data type
+        /// Represents a Number data type
         ///  
         /// </summary>
         public string N
@@ -92,7 +92,7 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// A Binary data type
+        /// Represents a Binary data type
         ///  
         /// </summary>
         public MemoryStream B
@@ -121,7 +121,7 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// A String set data type
+        /// Represents a String set data type
         ///  
         /// </summary>
         public List<string> SS
@@ -168,7 +168,7 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// Number set data type
+        /// Represents a Number set data type
         ///  
         /// </summary>
         public List<string> NS
@@ -215,7 +215,7 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// A Binary set data type
+        /// Represents a Binary set data type
         ///  
         /// </summary>
         public List<MemoryStream> BS

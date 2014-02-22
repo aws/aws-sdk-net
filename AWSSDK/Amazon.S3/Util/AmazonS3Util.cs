@@ -1018,22 +1018,8 @@ namespace Amazon.S3.Util
             // Continue listing objects and deleting them until the bucket is empty.
             while (listVersionsResponse.IsTruncated);
 
-            for (int attempts = 0; true; attempts++)
-            {
-                try
-                {
-                    // Bucket is empty, delete the bucket.
-                    s3Client.DeleteBucket( new DeleteBucketRequest { BucketName = bucketName } );
-                    
-                    break;
-                }
-                catch (AmazonS3Exception e)
-                {
-                    if (!string.Equals(e.ErrorCode, S3Constants.BucketNotEmpty) || attempts >= 3)
-                        throw;
-                    Thread.Sleep(5 * 1000);
-                }
-            }
+            // Bucket is empty, delete the bucket.
+            s3Client.DeleteBucket(new DeleteBucketRequest { BucketName = bucketName });
 
             // Signal that the operation is completed.
             asyncCancelableResult.SignalWaitHandleOnCompleted();            

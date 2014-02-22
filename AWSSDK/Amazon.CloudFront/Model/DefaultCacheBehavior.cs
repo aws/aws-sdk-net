@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -33,6 +33,7 @@ namespace Amazon.CloudFront.Model
         private string viewerProtocolPolicy;
         private long? minTTL;
         private AllowedMethods allowedMethods;
+        private bool? smoothStreaming;
 
         /// <summary>
         /// The value of ID for the origin that you want CloudFront to route requests to when a request matches the path pattern either for a cache
@@ -228,6 +229,36 @@ namespace Amazon.CloudFront.Model
         internal bool IsSetAllowedMethods()
         {
             return this.allowedMethods != null;
+        }
+
+        /// <summary>
+        /// Indicates whether you want to distribute media files in Microsoft Smooth Streaming format using the origin that is associated with this
+        /// cache behavior. If so, specify true; if not, specify false.
+        ///  
+        /// </summary>
+        public bool SmoothStreaming
+        {
+            get { return this.smoothStreaming ?? default(bool); }
+            set { this.smoothStreaming = value; }
+        }
+
+        /// <summary>
+        /// Sets the SmoothStreaming property
+        /// </summary>
+        /// <param name="smoothStreaming">The value to set for the SmoothStreaming property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public DefaultCacheBehavior WithSmoothStreaming(bool smoothStreaming)
+        {
+            this.smoothStreaming = smoothStreaming;
+            return this;
+        }
+            
+
+        // Check to see if SmoothStreaming property is set
+        internal bool IsSetSmoothStreaming()
+        {
+            return this.smoothStreaming.HasValue;
         }
     }
 }

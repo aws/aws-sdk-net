@@ -34,9 +34,8 @@ namespace Amazon.DynamoDBv2.Model
     /// <i>ValidationException</i> .</para> <para>You can request that <i>PutItem</i> return either a copy of the old item (before the update) or a
     /// copy of the new item (after the update). For more information, see the <i>ReturnValues</i> description.</para> <para><b>NOTE:</b> To prevent
     /// a new item from replacing an existing item, use a conditional put operation with Exists set to false for the primary key attribute, or
-    /// attributes. </para> <para>For more information about using this API, see <a
-    /// href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDDItems.html" >Working with Items</a> in the Amazon
-    /// DynamoDB Developer Guide.</para>
+    /// attributes. </para> <para>For more information about using this API, see Working with Items in the <i>Amazon DynamoDB Developer Guide</i>
+    /// .</para>
     /// </summary>
     /// <seealso cref="Amazon.DynamoDBv2.AmazonDynamoDB.PutItem"/>
     public class PutItemRequest : AmazonWebServiceRequest
@@ -94,8 +93,8 @@ namespace Amazon.DynamoDBv2.Model
         /// A map of attribute name/value pairs, one for each attribute. Only the primary key attributes are required; you can optionally provide other
         /// attribute name-value pairs for the item. If you specify any attributes that are part of an index key, then the data types for those
         /// attributes must match those of the schema in the table's attribute definition. For more information about primary keys, see <a
-        /// href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary Key</a> in the Amazon
-        /// DynamoDB Developer Guide. Each element in the <i>Item</i> map is an <i>AttributeValue</i> object.
+        /// href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary Key</a> in the <i>Amazon
+        /// DynamoDB Developer Guide</i>. Each element in the <i>Item</i> map is an <i>AttributeValue</i> object.
         ///  
         /// </summary>
         public Dictionary<string,AttributeValue> Item
@@ -215,15 +214,15 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// If set to <c>TOTAL</c>, the response includes <i>ConsumedCapacity</i> data for tables and indexes. If set to <c>INDEXES</c>, the repsonse
-        /// includes <i>ConsumedCapacity</i> for indexes. If set to <c>NONE</c> (the default), <i>ConsumedCapacity</i> is not included in the response.
+        /// If set to <c>TOTAL</c>, <i>ConsumedCapacity</i> is included in the response; if set to <c>NONE</c> (the default), <i>ConsumedCapacity</i> is
+        /// not included.
         ///  
         /// <para>
         /// <b>Constraints:</b>
         /// <list type="definition">
         ///     <item>
         ///         <term>Allowed Values</term>
-        ///         <description>INDEXES, TOTAL, NONE</description>
+        ///         <description>TOTAL, NONE</description>
         ///     </item>
         /// </list>
         /// </para>

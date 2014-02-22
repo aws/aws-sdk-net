@@ -32,8 +32,6 @@
 
         public KeySchemaElement Unmarshall(JsonUnmarshallerContext context)
         {
-            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
-                return null;
             KeySchemaElement keySchemaElement = new KeySchemaElement();
           
             int originalDepth = context.CurrentDepth;

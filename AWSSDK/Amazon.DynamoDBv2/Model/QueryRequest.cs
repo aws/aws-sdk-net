@@ -33,9 +33,7 @@ namespace Amazon.DynamoDBv2.Model
     /// user with a <i>LastEvaluatedKey</i> to continue the query in a subsequent operation. Unlike a <i>Scan</i> operation, a <i>Query</i>
     /// operation never returns an empty result set <i>and</i> a
     /// <i>LastEvaluatedKey</i> . The <i>LastEvaluatedKey</i> is only provided if the results exceed 1 MB, or if you have used
-    /// <i>Limit</i> . </para> <para>You can query a table, a local secondary index (LSI), or a global secondary index (GSI).. For a query on a
-    /// table or on an LSI, you can set <i>ConsistentRead</i> to true and obtain a strongly consistent result. GSIs support eventually consistent
-    /// reads only, so do not specify <i>ConsistentRead</i> when querying a GSI.</para>
+    /// <i>Limit</i> . </para> <para>To request a strongly consistent result, set <i>ConsistentRead</i> to true.</para>
     /// </summary>
     /// <seealso cref="Amazon.DynamoDBv2.AmazonDynamoDB.Query"/>
     public class QueryRequest : AmazonWebServiceRequest
@@ -94,7 +92,7 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// The name of an index to query. This can be any local secondary index or global secondary index on the table.
+        /// The name of an index on the table to query.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -147,7 +145,7 @@ namespace Amazon.DynamoDBv2.Model
         /// This is equivalent to specifying <i>AttributesToGet</i> without specifying any value for <i>Select</i>. If you are querying an index and
         /// request only attributes that are projected into that index, the operation will read only the index and not the table. If any of the
         /// requested attributes are not projected into the index, Amazon DynamoDB will need to fetch each matching item from the table. This extra
-        /// fetching incurs additional throughput cost and latency. </li> </ul> If neither <i>Select</i> nor <i>AttributesToGet</i> are specified,
+        /// fetching incurs additional throughput cost and latency. </li> </ul> When neither <i>Select</i> nor <i>AttributesToGet</i> are specified,
         /// Amazon DynamoDB defaults to <c>ALL_ATTRIBUTES</c> when accessing a table, and <c>ALL_PROJECTED_ATTRIBUTES</c> when accessing an index. You
         /// cannot use both <i>Select</i> and <i>AttributesToGet</i> together in a single request, <i>unless</i> the value for <i>Select</i> is
         /// <c>SPECIFIC_ATTRIBUTES</c>. (This usage is equivalent to specifying <i>AttributesToGet</i> without any value for <i>Select</i>.)
@@ -255,8 +253,8 @@ namespace Amazon.DynamoDBv2.Model
         /// <i>LastEvaluatedKey</i> to apply in a subsequent operation, so that you can pick up where you left off. Also, if the processed data set size
         /// exceeds 1 MB before Amazon DynamoDB reaches this limit, it stops the operation and returns the matching values up to the limit, and a
         /// <i>LastEvaluatedKey</i> to apply in a subsequent operation to continue the operation. For more information see <a
-        /// href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query and Scan</a> in the Amazon DynamoDB Developer
-        /// Guide.
+        /// href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query and Scan</a> in the <i>Amazon DynamoDB
+        /// Developer Guide</i>.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -294,9 +292,7 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// If set to <c>true</c>, then the operation uses strongly consistent reads; otherwise, eventually consistent reads are used. Strongly
-        /// consistent reads are not supported on global secondary indexes. If you query a global secondary index with <i>ConsistentRead</i> set to
-        /// <c>true</c>, you will receive an error message.
+        /// If set to <c>true</c>, then the operation uses strongly consistent reads; otherwise, eventually consistent reads are used.
         ///  
         /// </summary>
         public bool ConsistentRead
@@ -325,22 +321,22 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// The selection criteria for the query. For a query on a table, you can only have conditions on the table primary key attributes. You must
+        /// The selection criteria for the query. For a query on a table, you can only have conditions on the table primary key attributes. you must
         /// specify the hash key attribute name and value as an <c>EQ</c> condition. You can optionally specify a second condition, referring to the
-        /// range key attribute. For a query on an index, you can only have conditions on the index key attributes. You must specify the index hash
-        /// attribute name and value as an EQ condition. You can optionally specify a second condition, referring to the index key range attribute.
+        /// range key attribute. For a query on a secondary index, you can only have conditions on the index key attributes. You must specify the index
+        /// hash attribute name and value as an EQ condition. You can optionally specify a second condition, referring to the index key range attribute.
         /// Multiple conditions are evaluated using "AND"; in other words, all of the conditions must be met in order for an item to appear in the
         /// results results. Each <i>KeyConditions</i> element consists of an attribute name to compare, along with the following: <ul>
         /// <li><i>AttributeValueList</i> - One or more values to evaluate against the supplied attribute. This list contains exactly one value, except
-        /// for a <c>BETWEEN</c> comparison, in which case the list contains two values. <note> For type Number, value comparisons are numeric. String
-        /// value comparisons for greater than, equals, or less than are based on ASCII character code values. For example, <c>a</c> is greater than
-        /// <c>A</c>, and <c>aa</c> is greater than <c>B</c>. For a list of code values, see <a
+        /// for a <c>BETWEEN</c> or <c>IN</c> comparison, in which case the list contains two values. <note> For type Number, value comparisons are
+        /// numeric. String value comparisons for greater than, equals, or less than are based on ASCII character code values. For example, <c>a</c> is
+        /// greater than <c>A</c>, and <c>aa</c> is greater than <c>B</c>. For a list of code values, see <a
         /// href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>. For
         /// Binary, Amazon DynamoDB treats each byte of the binary data as unsigned when it compares binary values, for example when evaluating query
         /// expressions. </note> </li> <li><i>ComparisonOperator</i> - A comparator for evaluating attributes. For example, equals, greater than, less
         /// than, etc. Valid comparison operators for Query: <c>EQ | LE | LT | GE | GT | BEGINS_WITH | BETWEEN</c> For information on specifying data
         /// types in JSON, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON Data Format</a> in the
-        /// Amazon DynamoDB Developer Guide. The following are descriptions of each comparison operator. <ul> <li> <c>EQ</c> : Equal.
+        /// <i>Amazon DynamoDB Developer Guide</i>. The following are descriptions of each comparison operator. <ul> <li> <c>EQ</c> : Equal.
         /// <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type String, Number, or Binary (not a set). If an item contains an
         /// <i>AttributeValue</i> of a different type than the one specified in the request, the value does not match. For example, <c>{"S":"6"}</c>
         /// does not equal <c>{"N":"6"}</c>. Also, <c>{"N":"6"}</c> does not equal <c>{"NS":["6", "2", "1"]}</c>. </li> <li> <c>LE</c> : Less than or
@@ -426,8 +422,10 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// The primary key of the first item that this operation will evalute. Use the value that was returned for <i>LastEvaluatedKey</i> in the
-        /// previous operation. The data type for <i>ExclusiveStartKey</i> must be String, Number or Binary. No set data types are allowed.
+        /// The primary key of the item from which to continue an earlier operation. An earlier operation might provide this value as the
+        /// <i>LastEvaluatedKey</i> if that operation was interrupted before completion; either because of the result set size or because of the setting
+        /// for <i>Limit</i>. The <i>LastEvaluatedKey</i> can be passed back in a new request to continue the operation from that point. The data type
+        /// for <i>ExclusiveStartKey</i> must be String, Number or Binary. No set data types are allowed.
         ///  
         /// </summary>
         public Dictionary<string,AttributeValue> ExclusiveStartKey
@@ -459,15 +457,15 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// If set to <c>TOTAL</c>, the response includes <i>ConsumedCapacity</i> data for tables and indexes. If set to <c>INDEXES</c>, the repsonse
-        /// includes <i>ConsumedCapacity</i> for indexes. If set to <c>NONE</c> (the default), <i>ConsumedCapacity</i> is not included in the response.
+        /// If set to <c>TOTAL</c>, <i>ConsumedCapacity</i> is included in the response; if set to <c>NONE</c> (the default), <i>ConsumedCapacity</i> is
+        /// not included.
         ///  
         /// <para>
         /// <b>Constraints:</b>
         /// <list type="definition">
         ///     <item>
         ///         <term>Allowed Values</term>
-        ///         <description>INDEXES, TOTAL, NONE</description>
+        ///         <description>TOTAL, NONE</description>
         ///     </item>
         /// </list>
         /// </para>

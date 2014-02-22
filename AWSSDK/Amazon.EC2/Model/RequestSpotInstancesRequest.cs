@@ -111,9 +111,9 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The instance type.
-        /// Valid values: m1.small|m1.medium|m1.large|m1.xlarge|c1.medium|c1.xlarge|m2.2xlarge|m4.4xlarge
-        /// Default - m1.small.
+        /// The Spot Instance request type.
+        /// Valid values: one-time | persistent
+        /// Default - one-time.
         /// </summary>
         [XmlElementAttribute(ElementName = "Type")]
         public string Type
@@ -123,11 +123,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Sets the instance type.
+        /// Sets the Spot Instance request type.
         /// </summary>
-        /// <param name="type">The instance type. Valid values:
-        /// m1.small|m1.medium|m1.large|m1.xlarge|c1.medium|c1.xlarge|m2.2xlarge|m4.4xlarge.
-        /// Default - m1.small.</param>
+        /// <param name="type">The instance type. Valid values: one-time | persistent.
+        /// Default - one-time.</param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RequestSpotInstancesRequest WithType(string type)

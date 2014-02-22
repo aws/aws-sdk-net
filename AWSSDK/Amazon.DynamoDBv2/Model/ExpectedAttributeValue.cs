@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
-    /// <para>Represents an attribute value used with conditional <i>DeleteItem</i> ,
+    /// <para>An attribute value used with conditional <i>DeleteItem</i> ,
     /// <i>PutItem</i> or <i>UpdateItem</i> operations. Amazon DynamoDB will check to see if the attribute value already
     /// exists; or if the attribute exists and has a particular value before updating it.</para>
     /// </summary>

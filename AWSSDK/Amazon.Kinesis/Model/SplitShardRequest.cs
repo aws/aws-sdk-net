@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -45,10 +45,11 @@ namespace Amazon.Kinesis.Model
     /// If a stream is in CREATING or UPDATING or DELETING states, then Amazon Kinesis returns a <c>ResourceInUseException</c> .</para>
     /// <para>If the specified stream does not exist, Amazon Kinesis returns a <c>ResourceNotFoundException</c> .
     /// If you try to create more shards than are authorized for your account, you receive a <c>LimitExceededException</c> .
-    /// </para> <para> <b>Note:</b> The default limit for an AWS account is two shards per stream. If you need to create a stream with more than two
-    /// shards, contact AWS Support to increase the limit on your account.</para> <para>If you try to operate on too many streams in parallel using
-    /// CreateStream, DeleteStream, MergeShards or SplitShard, you will receive a <c>LimitExceededException</c> . </para> <para> <c>SplitShard</c>
-    /// has limit of 5 transactions per second per account.</para>
+    /// </para> <para> <b>Note:</b> The default limit for an AWS account is five shards per stream. If you need to create a stream with more than
+    /// five shards, <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html" >contact AWS Support</a> to increase the limit
+    /// on your account.</para> <para>If you try to operate on too many streams in parallel using CreateStream, DeleteStream, MergeShards or
+    /// SplitShard, you will receive a <c>LimitExceededException</c> . </para> <para> <c>SplitShard</c> has limit of 5 transactions per second per
+    /// account.</para>
     /// </summary>
     /// <seealso cref="Amazon.Kinesis.AmazonKinesis.SplitShard"/>
     public class SplitShardRequest : AmazonWebServiceRequest

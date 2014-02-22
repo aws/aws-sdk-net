@@ -453,7 +453,7 @@ namespace Amazon.Runtime.Internal.Transform
             if (expression.Equals("."))
                 return true;
 
-            return keyChainString.EndsWith("/" + expression);
+            return keyChainString.EndsWith("/" + expression, StringComparison.OrdinalIgnoreCase);
         }
 
         /// <summary>
@@ -479,7 +479,7 @@ namespace Amazon.Runtime.Internal.Transform
                 startingStackDepth++;
             }
             return (startingStackDepth == this.CurrentDepth
-                    && keyChainString.ToLower().EndsWith("/" + expression.ToLower()));
+                    && keyChainString.EndsWith("/" + expression, StringComparison.OrdinalIgnoreCase));
         }
         #endregion
 

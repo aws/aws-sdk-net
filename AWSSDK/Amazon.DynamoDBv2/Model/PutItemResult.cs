@@ -64,11 +64,10 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// Represents the capacity units consumed by an operation. The data returned includes the total provisioned throughput consumed, along with
-        /// statistics for the table and any indexes involved in the operation. <i>ConsumedCapacity</i> is only returned if it was asked for in the
-        /// request. For more information, see <a
+        /// The table name that consumed provisioned throughput, and the number of capacity units consumed by it. <i>ConsumedCapacity</i> is only
+        /// returned if it was asked for in the request. For more information, see <a
         /// href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned Throughput</a> in the
-        /// Amazon DynamoDB Developer Guide.
+        /// <i>Amazon DynamoDB Developer Guide</i>.
         ///  
         /// </summary>
         public ConsumedCapacity ConsumedCapacity
@@ -98,13 +97,13 @@ namespace Amazon.DynamoDBv2.Model
 
         /// <summary>
         /// Information about item collections, if any, that were affected by the operation. <i>ItemCollectionMetrics</i> is only returned if it was
-        /// asked for in the request. If the table does not have any local secondary indexes, this information is not returned in the response. Each
+        /// asked for in the request. If the table does not have any secondary indexes, this information is not returned in the response. Each
         /// <i>ItemCollectionMetrics</i> element consists of: <ul> <li><i>ItemCollectionKey</i> - The hash key value of the item collection. This is the
         /// same as the hash key of the item.</li> <li><i>SizeEstimateRange</i> - An estimate of item collection size, measured in gigabytes. This is a
         /// two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the items in the
-        /// table, plus the size of all attributes projected into all of the local secondary indexes on that table. Use this estimate to measure whether
-        /// a local secondary index is approaching its size limit. The estimate is subject to change over time; therefore, do not rely on the precision
-        /// or accuracy of the estimate. </li> </ul>
+        /// table, plus the size of all attributes projected into all of the secondary indexes on that table. Use this estimate to measure whether a
+        /// secondary index is approaching its size limit. The estimate is subject to change over time; therefore, do not rely on the precision or
+        /// accuracy of the estimate. </li> </ul>
         ///  
         /// </summary>
         public ItemCollectionMetrics ItemCollectionMetrics

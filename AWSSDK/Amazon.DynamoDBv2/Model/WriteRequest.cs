@@ -32,7 +32,7 @@ namespace Amazon.DynamoDBv2.Model
         private DeleteRequest deleteRequest;
 
         /// <summary>
-        /// A request to perform a <i>PutItem</i> operation.
+        /// Represents a request to perform a <i>DeleteItem</i> operation.
         ///  
         /// </summary>
         public PutRequest PutRequest
@@ -61,7 +61,7 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// A request to perform a <i>DeleteItem</i> operation.
+        /// Represents a request to perform a <i>PutItem</i> operation.
         ///  
         /// </summary>
         public DeleteRequest DeleteRequest

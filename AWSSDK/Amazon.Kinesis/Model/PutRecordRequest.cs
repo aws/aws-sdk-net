@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -35,12 +35,12 @@ namespace Amazon.Kinesis.Model
     /// to map associated data records to shards using the hash key ranges of the shards. You can override hashing the partition key to determine
     /// the shard by explicitly specifying a hash value using the <c>ExplicitHashKey</c> parameter. For more information, see the <a
     /// href="http://docs.aws.amazon.com/kinesis/latest/dev/" >Amazon Kinesis Developer Guide</a> .</para> <para> <c>PutRecord</c> returns the shard
-    /// ID of where the data record was placed and the sequence number that was assigned to the data record.</para> <para>The
-    /// <c>SequenceNumberForOrdering</c> sets the initial sequence number for the partition key. Later <c>PutRecord</c> requests to the same
-    /// partition key (from the same client) will automatically increase from <c>SequenceNumberForOrdering</c> , ensuring strict sequential
-    /// ordering.</para> <para>If a <c>PutRecord</c> request cannot be processed because of insufficient provisioned throughput on the shard
-    /// involved in the request, <c>PutRecord</c> throws <c>ProvisionedThroughputExceededException</c> . </para> <para>Data records are accessible
-    /// for only 24 hours from the time that they are added to an Amazon Kinesis stream.</para>
+    /// ID of where the data record was placed and the sequence number that was assigned to the data record.</para> <para>Sequence numbers generally
+    /// increase over time. To guarantee strictly increasing ordering, use the <c>SequenceNumberForOrdering</c> parameter. For more information, see
+    /// the <a href="http://docs.aws.amazon.com/kinesis/latest/dev/" >Amazon Kinesis Developer Guide</a> .</para> <para>If a <c>PutRecord</c>
+    /// request cannot be processed because of insufficient provisioned throughput on the shard involved in the request, <c>PutRecord</c> throws
+    /// <c>ProvisionedThroughputExceededException</c> . </para> <para>Data records are accessible for only 24 hours from the time that they are
+    /// added to an Amazon Kinesis stream.</para>
     /// </summary>
     /// <seealso cref="Amazon.Kinesis.AmazonKinesis.PutRecord"/>
     public class PutRecordRequest : AmazonWebServiceRequest
@@ -94,7 +94,8 @@ namespace Amazon.Kinesis.Model
         }
 
         /// <summary>
-        /// The data blob to put into the record, which must be Base64 encoded. The maximum size of the data blob is 50 kilobytes (KB).
+        /// The data blob to put into the record, which is Base64-encoded by the AWS SDK for Java when the blob is serialized. The maximum size of the
+        /// data blob (the payload after Base64-decoding) is 50 kilobytes (KB)
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -211,8 +212,9 @@ namespace Amazon.Kinesis.Model
         }
 
         /// <summary>
-        /// The sequence number to use as the initial number for the partition key. Subsequent calls to <c>PutRecord</c> from the same client and for
-        /// the same partition key will increase from the <c>SequenceNumberForOrdering</c> value.
+        /// Guarantees strictly increasing sequence numbers, for puts from the same client and to the same partition key. Usage: set the
+        /// <c>SequenceNumberForOrdering</c> of record <i>n</i> to the sequence number of record <i>n-1</i> (as returned in the <a>PutRecordResult</a>
+        /// when putting record <i>n-1</i>). If this parameter is not set, records will be coarsely ordered based on arrival time.
         ///  
         /// <para>
         /// <b>Constraints:</b>

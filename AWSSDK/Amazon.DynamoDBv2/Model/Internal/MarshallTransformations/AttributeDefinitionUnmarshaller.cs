@@ -32,8 +32,6 @@
 
         public AttributeDefinition Unmarshall(JsonUnmarshallerContext context)
         {
-            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
-                return null;
             AttributeDefinition attributeDefinition = new AttributeDefinition();
           
             int originalDepth = context.CurrentDepth;

@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
-    /// <para>Represents an attribute for describing the key schema for the table and indexes.</para>
+    /// <para>Specifies an attribute for describing the key schema for the table and indexes.</para>
     /// </summary>
     public class AttributeDefinition
     {

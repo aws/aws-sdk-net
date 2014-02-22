@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -42,7 +42,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 
             request.HttpMethod = "GET";
               
-            string uriResourcePath = "2013-11-11/streaming-distribution/{Id}"; 
+            string uriResourcePath = "2013-11-22/streaming-distribution/{Id}"; 
             uriResourcePath = uriResourcePath.Replace("{Id}", getStreamingDistributionRequest.Id ?? "" ); 
             
             if (uriResourcePath.Contains("?")) 

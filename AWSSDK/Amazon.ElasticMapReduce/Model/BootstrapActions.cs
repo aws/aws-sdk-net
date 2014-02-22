@@ -85,10 +85,10 @@ namespace Amazon.ElasticMapReduce.Model
             {
                 Name = "Run If, " + config.Name,
                 ScriptBootstrapAction = new ScriptBootstrapActionConfig
-                {
-                    Path = "s3://" + bucket + "/bootstrap-actions/run-if",
-                    Args = args
-                }
+                    {
+                        Path = "s3://" + bucket + "/bootstrap-actions/run-if",
+                        Args = args
+                    }
             };
         }
 

@@ -504,6 +504,10 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
             foreach (var batch in batches)
             {
+                string tableName = batch.TargetTable.TableName;
+                if (result.ContainsKey(tableName))
+                    throw new AmazonDynamoDBException("More than one batch request against a single table is not supported.");
+
                 List<WriteRequestDocument> writeRequests = new List<WriteRequestDocument>();
                 if (batch.ToDelete != null)
                 {
@@ -514,8 +518,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                             {
                                 DeleteRequest = new DeleteRequest { Key = toDelete }
                             }
-                        }
-                        );
+                        });
                 }
                 if (batch.ToPut != null)
                 {
@@ -533,8 +536,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 if (writeRequests.Count > 0)
                 {
                     QuickList<WriteRequestDocument> qlWriteRequests = new QuickList<WriteRequestDocument>(writeRequests);
-                    result.Add(batch.TargetTable.TableName, qlWriteRequests);
-                    tableMap.Add(batch.TargetTable.TableName, batch.TargetTable);
+                    result.Add(tableName, qlWriteRequests);
+                    tableMap.Add(tableName, batch.TargetTable);
                 }
             }
 
@@ -606,15 +609,15 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 return true;
             }
 
-            if (x.Count!=y.Count)
+            if (x.Count != y.Count)
             {
                 return false;
             }
 
             foreach (var item in x)
             {
-                AttributeValue valueY=null;
-                if(y.TryGetValue(item.Key,out valueY))
+                AttributeValue valueY = null;
+                if (y.TryGetValue(item.Key, out valueY))
                 {
                     if (!CompareAttributeValue(item.Value, valueY))
                     {

@@ -32,8 +32,6 @@
 
         public ListTablesResult Unmarshall(JsonUnmarshallerContext context)
         {
-            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
-                return null;
             ListTablesResult listTablesResult = new ListTablesResult();
           listTablesResult.TableNames = null;
                         

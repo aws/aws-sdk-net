@@ -32,8 +32,6 @@
 
         public WriteRequest Unmarshall(JsonUnmarshallerContext context)
         {
-            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
-                return null;
             WriteRequest writeRequest = new WriteRequest();
           
             int originalDepth = context.CurrentDepth;

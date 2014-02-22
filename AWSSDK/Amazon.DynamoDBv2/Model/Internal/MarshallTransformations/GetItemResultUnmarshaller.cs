@@ -32,8 +32,6 @@
 
         public GetItemResult Unmarshall(JsonUnmarshallerContext context)
         {
-            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
-                return null;
             GetItemResult getItemResult = new GetItemResult();
           getItemResult.Item = null;
                         

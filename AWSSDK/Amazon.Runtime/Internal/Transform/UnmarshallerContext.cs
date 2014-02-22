@@ -213,7 +213,7 @@ namespace Amazon.Runtime.Internal.Transform
             if (expression.Equals("."))
                 return true;
 
-            return stackString.EndsWith(expression);
+            return stackString.EndsWith(expression, StringComparison.OrdinalIgnoreCase);
         }
 
         /// <summary>
@@ -246,7 +246,7 @@ namespace Amazon.Runtime.Internal.Transform
                 }
             }
             return (startingStackDepth == this.CurrentDepth 
-                    && stackString.EndsWith("/" + expression));
+                    && stackString.EndsWith("/" + expression, StringComparison.OrdinalIgnoreCase));
         }
 
         /// <summary>

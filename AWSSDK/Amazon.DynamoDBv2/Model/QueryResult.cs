@@ -110,9 +110,8 @@ namespace Amazon.DynamoDBv2.Model
 
         /// <summary>
         /// The primary key of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation,
-        /// excluding this value in the new request. If <i>LastEvaluatedKey</i> is null, then the "last page" of results has been processed and there is
-        /// no more data to be retrieved. If <i>LastEvaluatedKey</i> is anything other than null, this does not necessarily mean that there is more data
-        /// in the result set. The only way to know when you have reached the end of the result set is when <i>LastEvaluatedKey</i> is null.
+        /// excluding this value in the new request. <i>LastEvaluatedKey</i> is null when the entire result set is complete (in other words, when the
+        /// operation processed the "last page" of results).
         ///  
         /// </summary>
         public Dictionary<string,AttributeValue> LastEvaluatedKey
@@ -144,11 +143,10 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// Represents the capacity units consumed by an operation. The data returned includes the total provisioned throughput consumed, along with
-        /// statistics for the table and any indexes involved in the operation. <i>ConsumedCapacity</i> is only returned if it was asked for in the
-        /// request. For more information, see <a
+        /// The table name that consumed provisioned throughput, and the number of capacity units consumed by it. <i>ConsumedCapacity</i> is only
+        /// returned if it was asked for in the request. For more information, see <a
         /// href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned Throughput</a> in the
-        /// Amazon DynamoDB Developer Guide.
+        /// <i>Amazon DynamoDB Developer Guide</i>.
         ///  
         /// </summary>
         public ConsumedCapacity ConsumedCapacity

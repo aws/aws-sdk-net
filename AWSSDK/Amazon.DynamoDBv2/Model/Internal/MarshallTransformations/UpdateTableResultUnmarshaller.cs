@@ -32,8 +32,6 @@
 
         public UpdateTableResult Unmarshall(JsonUnmarshallerContext context)
         {
-            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
-                return null;
             UpdateTableResult updateTableResult = new UpdateTableResult();
           
             int originalDepth = context.CurrentDepth;

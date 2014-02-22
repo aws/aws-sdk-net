@@ -32,8 +32,6 @@
 
         public UpdateItemResult Unmarshall(JsonUnmarshallerContext context)
         {
-            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
-                return null;
             UpdateItemResult updateItemResult = new UpdateItemResult();
           updateItemResult.Attributes = null;
                         

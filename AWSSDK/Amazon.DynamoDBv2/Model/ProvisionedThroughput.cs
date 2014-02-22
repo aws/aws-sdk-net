@@ -21,10 +21,9 @@ using System.IO;
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
-    /// <para>Represents the provisioned throughput settings for a specified table or index. The settings can be modified using the
-    /// <i>UpdateTable</i> operation.</para> <para>For current minimum and maximum provisioned throughput values, see <a
-    /// href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html" >Limits</a> in the Amazon DynamoDB Developer
-    /// Guide.</para>
+    /// <para>The provisioned throughput settings for the specified table. The settings can be modified using the <i>UpdateTable</i>
+    /// operation.</para> <para>For current minimum and maximum provisioned throughput values, see Limits in the <i>Amazon DynamoDB Developer
+    /// Guide</i> .</para>
     /// </summary>
     public class ProvisionedThroughput
     {
@@ -36,7 +35,7 @@ namespace Amazon.DynamoDBv2.Model
         /// The maximum number of strongly consistent reads consumed per second before Amazon DynamoDB returns a <i>ThrottlingException</i>. For more
         /// information, see <a
         /// href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDDTables.html#ProvisionedThroughput">Specifying Read and
-        /// Write Requirements</a> in the Amazon DynamoDB Developer Guide.
+        /// Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -76,7 +75,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// The maximum number of writes consumed per second before Amazon DynamoDB returns a <i>ThrottlingException</i>. For more information, see <a
         /// href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDDTables.html#ProvisionedThroughput">Specifying Read and
-        /// Write Requirements</a> in the Amazon DynamoDB Developer Guide.
+        /// Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         ///  
         /// <para>
         /// <b>Constraints:</b>

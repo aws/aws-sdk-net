@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
-    /// <para>Represents the properties of a local secondary index.</para>
+    /// <para>Represents the properties of a secondary index.</para>
     /// </summary>
     public class LocalSecondaryIndexDescription
     {
@@ -33,7 +33,7 @@ namespace Amazon.DynamoDBv2.Model
         private long? itemCount;
 
         /// <summary>
-        /// Represents the name of the local secondary index.
+        /// Represents the name of the secondary index.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -75,7 +75,8 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// The complete index key schema, which consists of one or more pairs of attribute names and key types (<c>HASH</c> or <c>RANGE</c>).
+        /// Represents the complete index key schema, which consists of one or more pairs of attribute names and key types (<c>HASH</c> or
+        /// <c>RANGE</c>).
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -131,7 +132,7 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// Represents attributes that are copied (projected) from the table into an index. These are in addition to the primary key attributes and
+        /// Represents attributes that are copied (projected) from the table into the index. These are in addition to the primary key attributes and
         /// index key attributes, which are automatically projected.
         ///  
         /// </summary>
@@ -161,7 +162,7 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// The total size of the specified index, in bytes. Amazon DynamoDB updates this value approximately every six hours. Recent changes might not
+        /// Represents the total size of the index, in bytes. Amazon DynamoDB updates this value approximately every six hours. Recent changes might not
         /// be reflected in this value.
         ///  
         /// </summary>
@@ -191,7 +192,7 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// The number of items in the specified index. Amazon DynamoDB updates this value approximately every six hours. Recent changes might not be
+        /// Represents the number of items in the index. Amazon DynamoDB updates this value approximately every six hours. Recent changes might not be
         /// reflected in this value.
         ///  
         /// </summary>

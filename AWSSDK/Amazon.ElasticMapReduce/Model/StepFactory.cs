@@ -107,7 +107,7 @@ namespace Amazon.ElasticMapReduce.Model
             return new HadoopJarStepConfig
             {
                 Jar = String.Format("s3://{0}/libs/script-runner/script-runner.jar", bucket),
-                Args = appendedArgs.ToList()
+                Args = appendedArgs
             };
         }
 

@@ -31,7 +31,7 @@ namespace Amazon.DynamoDBv2.Model
         private Projection projection;
 
         /// <summary>
-        /// The name of the local secondary index. The name must be unique among all other indexes on this table.
+        /// Represents the name of the secondary index. The name must be unique among all other indexes on this table.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -73,7 +73,7 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// The complete key schema for the local secondary index, consisting of one or more pairs of attribute names and key types (<c>HASH</c> or
+        /// Represents the complete index key schema, which consists of one or more pairs of attribute names and key types (<c>HASH</c> or
         /// <c>RANGE</c>).
         ///  
         /// <para>
@@ -130,7 +130,7 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// Represents attributes that are copied (projected) from the table into an index. These are in addition to the primary key attributes and
+        /// Represents attributes that are copied (projected) from the table into the index. These are in addition to the primary key attributes and
         /// index key attributes, which are automatically projected.
         ///  
         /// </summary>
