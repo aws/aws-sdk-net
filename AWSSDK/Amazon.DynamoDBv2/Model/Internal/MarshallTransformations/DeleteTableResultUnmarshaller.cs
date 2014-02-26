@@ -32,6 +32,8 @@
 
         public DeleteTableResult Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             DeleteTableResult deleteTableResult = new DeleteTableResult();
           
             int originalDepth = context.CurrentDepth;

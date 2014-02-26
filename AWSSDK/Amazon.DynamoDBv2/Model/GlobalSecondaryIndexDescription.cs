@@ -21,19 +21,21 @@ using System.IO;
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
-    /// <para>Represents the properties of a local secondary index.</para>
+    /// <para>Represents the properties of a global secondary index.</para>
     /// </summary>
-    public class LocalSecondaryIndexDescription
+    public class GlobalSecondaryIndexDescription
     {
         
         private string indexName;
         private List<KeySchemaElement> keySchema = new List<KeySchemaElement>();
         private Projection projection;
+        private string indexStatus;
+        private ProvisionedThroughputDescription provisionedThroughput;
         private long? indexSizeBytes;
         private long? itemCount;
 
         /// <summary>
-        /// Represents the name of the local secondary index.
+        /// The name of the global secondary index.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -61,7 +63,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <param name="indexName">The value to set for the IndexName property </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public LocalSecondaryIndexDescription WithIndexName(string indexName)
+        public GlobalSecondaryIndexDescription WithIndexName(string indexName)
         {
             this.indexName = indexName;
             return this;
@@ -75,7 +77,8 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// The complete index key schema, which consists of one or more pairs of attribute names and key types (<c>HASH</c> or <c>RANGE</c>).
+        /// The complete key schema for the global secondary index, consisting of one or more pairs of attribute names and key types (<c>HASH</c> or
+        /// <c>RANGE</c>).
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -98,7 +101,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <param name="keySchema">The values to add to the KeySchema collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public LocalSecondaryIndexDescription WithKeySchema(params KeySchemaElement[] keySchema)
+        public GlobalSecondaryIndexDescription WithKeySchema(params KeySchemaElement[] keySchema)
         {
             foreach (KeySchemaElement element in keySchema)
             {
@@ -114,7 +117,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <param name="keySchema">The values to add to the KeySchema collection </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public LocalSecondaryIndexDescription WithKeySchema(IEnumerable<KeySchemaElement> keySchema)
+        public GlobalSecondaryIndexDescription WithKeySchema(IEnumerable<KeySchemaElement> keySchema)
         {
             foreach (KeySchemaElement element in keySchema)
             {
@@ -147,7 +150,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <param name="projection">The value to set for the Projection property </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public LocalSecondaryIndexDescription WithProjection(Projection projection)
+        public GlobalSecondaryIndexDescription WithProjection(Projection projection)
         {
             this.projection = projection;
             return this;
@@ -158,6 +161,77 @@ namespace Amazon.DynamoDBv2.Model
         internal bool IsSetProjection()
         {
             return this.projection != null;
+        }
+
+        /// <summary>
+        /// The current state of the global secondary index: <ul> <li> <i>CREATING</i> - The index is being created, as the result of a
+        /// <i>CreateTable</i> or <i>UpdateTable</i> operation. </li> <li> <i>UPDATING</i> - The index is being updated, as the result of a
+        /// <i>CreateTable</i> or <i>UpdateTable</i> operation. </li> <li> <i>DELETING</i> - The index is being deleted, as the result of a
+        /// <i>DeleteTable</i> operation. </li> <li> <i>ACTIVE</i> - The index is ready for use. </li> </ul>
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>CREATING, UPDATING, DELETING, ACTIVE</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
+        public string IndexStatus
+        {
+            get { return this.indexStatus; }
+            set { this.indexStatus = value; }
+        }
+
+        /// <summary>
+        /// Sets the IndexStatus property
+        /// </summary>
+        /// <param name="indexStatus">The value to set for the IndexStatus property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public GlobalSecondaryIndexDescription WithIndexStatus(string indexStatus)
+        {
+            this.indexStatus = indexStatus;
+            return this;
+        }
+            
+
+        // Check to see if IndexStatus property is set
+        internal bool IsSetIndexStatus()
+        {
+            return this.indexStatus != null;
+        }
+
+        /// <summary>
+        /// Represents the provisioned throughput settings for the table, consisting of read and write capacity units, along with data about increases
+        /// and decreases.
+        ///  
+        /// </summary>
+        public ProvisionedThroughputDescription ProvisionedThroughput
+        {
+            get { return this.provisionedThroughput; }
+            set { this.provisionedThroughput = value; }
+        }
+
+        /// <summary>
+        /// Sets the ProvisionedThroughput property
+        /// </summary>
+        /// <param name="provisionedThroughput">The value to set for the ProvisionedThroughput property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public GlobalSecondaryIndexDescription WithProvisionedThroughput(ProvisionedThroughputDescription provisionedThroughput)
+        {
+            this.provisionedThroughput = provisionedThroughput;
+            return this;
+        }
+            
+
+        // Check to see if ProvisionedThroughput property is set
+        internal bool IsSetProvisionedThroughput()
+        {
+            return this.provisionedThroughput != null;
         }
 
         /// <summary>
@@ -177,7 +251,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <param name="indexSizeBytes">The value to set for the IndexSizeBytes property </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public LocalSecondaryIndexDescription WithIndexSizeBytes(long indexSizeBytes)
+        public GlobalSecondaryIndexDescription WithIndexSizeBytes(long indexSizeBytes)
         {
             this.indexSizeBytes = indexSizeBytes;
             return this;
@@ -207,7 +281,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <param name="itemCount">The value to set for the ItemCount property </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public LocalSecondaryIndexDescription WithItemCount(long itemCount)
+        public GlobalSecondaryIndexDescription WithItemCount(long itemCount)
         {
             this.itemCount = itemCount;
             return this;

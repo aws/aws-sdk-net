@@ -21,40 +21,40 @@ using System.IO;
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
-    /// <para>Represents the output of an <i>UpdateTable</i> operation.</para>
+    /// <para>Represents the new provisioned throughput settings to apply to a global secondary index.</para>
     /// </summary>
-    public class UpdateTableResult
+    public class GlobalSecondaryIndexUpdate
     {
         
-        private TableDescription tableDescription;
+        private UpdateGlobalSecondaryIndexAction update;
 
         /// <summary>
-        /// Represents the properties of a table.
+        /// The name of a global secondary index, along with the updated provisioned throughput settings that are to be applied to that index.
         ///  
         /// </summary>
-        public TableDescription TableDescription
+        public UpdateGlobalSecondaryIndexAction Update
         {
-            get { return this.tableDescription; }
-            set { this.tableDescription = value; }
+            get { return this.update; }
+            set { this.update = value; }
         }
 
         /// <summary>
-        /// Sets the TableDescription property
+        /// Sets the Update property
         /// </summary>
-        /// <param name="tableDescription">The value to set for the TableDescription property </param>
+        /// <param name="update">The value to set for the Update property </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public UpdateTableResult WithTableDescription(TableDescription tableDescription)
+        public GlobalSecondaryIndexUpdate WithUpdate(UpdateGlobalSecondaryIndexAction update)
         {
-            this.tableDescription = tableDescription;
+            this.update = update;
             return this;
         }
             
 
-        // Check to see if TableDescription property is set
-        internal bool IsSetTableDescription()
+        // Check to see if Update property is set
+        internal bool IsSetUpdate()
         {
-            return this.tableDescription != null;
+            return this.update != null;
         }
     }
 }

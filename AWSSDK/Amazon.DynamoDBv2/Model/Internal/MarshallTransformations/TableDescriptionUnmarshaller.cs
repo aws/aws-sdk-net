@@ -32,10 +32,13 @@
 
         public TableDescription Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             TableDescription tableDescription = new TableDescription();
           tableDescription.AttributeDefinitions = null;
                         tableDescription.KeySchema = null;
                         tableDescription.LocalSecondaryIndexes = null;
+                        tableDescription.GlobalSecondaryIndexes = null;
                         
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
@@ -127,6 +130,24 @@
                   if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))
                   {
                      tableDescription.LocalSecondaryIndexes.Add(unmarshaller.Unmarshall(context));
+                  }
+                  else if (context.IsEndArray)
+                  {
+                    break;
+                  }
+                }
+                continue;
+              }
+  
+              if (context.TestExpression("GlobalSecondaryIndexes", targetDepth))
+              {
+                tableDescription.GlobalSecondaryIndexes = new List<GlobalSecondaryIndexDescription>();
+                        GlobalSecondaryIndexDescriptionUnmarshaller unmarshaller = GlobalSecondaryIndexDescriptionUnmarshaller.GetInstance();
+                while (context.Read())
+                {
+                  if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))
+                  {
+                     tableDescription.GlobalSecondaryIndexes.Add(unmarshaller.Unmarshall(context));
                   }
                   else if (context.IsEndArray)
                   {

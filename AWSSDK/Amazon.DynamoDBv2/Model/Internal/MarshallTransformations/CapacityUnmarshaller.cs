@@ -21,20 +21,20 @@
     namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
     {
       /// <summary>
-      /// UpdateTableResultUnmarshaller
+      /// CapacityUnmarshaller
       /// </summary>
-      internal class UpdateTableResultUnmarshaller : IUnmarshaller<UpdateTableResult, XmlUnmarshallerContext>, IUnmarshaller<UpdateTableResult, JsonUnmarshallerContext>
+      internal class CapacityUnmarshaller : IUnmarshaller<Capacity, XmlUnmarshallerContext>, IUnmarshaller<Capacity, JsonUnmarshallerContext>
       {
-        UpdateTableResult IUnmarshaller<UpdateTableResult, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        Capacity IUnmarshaller<Capacity, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
           throw new NotImplementedException();
         }
 
-        public UpdateTableResult Unmarshall(JsonUnmarshallerContext context)
+        public Capacity Unmarshall(JsonUnmarshallerContext context)
         {
             if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
                 return null;
-            UpdateTableResult updateTableResult = new UpdateTableResult();
+            Capacity capacity = new Capacity();
           
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
@@ -45,28 +45,28 @@
                 context.Read();
                 context.Read();
               
-              if (context.TestExpression("TableDescription", targetDepth))
+              if (context.TestExpression("CapacityUnits", targetDepth))
               {
-                updateTableResult.TableDescription = TableDescriptionUnmarshaller.GetInstance().Unmarshall(context);
+                capacity.CapacityUnits = DoubleUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
                 }
                 else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
                 {
-                    return updateTableResult;
+                    return capacity;
                 }
             }
           
 
-            return updateTableResult;
+            return capacity;
         }
 
-        private static UpdateTableResultUnmarshaller instance;
-        public static UpdateTableResultUnmarshaller GetInstance()
+        private static CapacityUnmarshaller instance;
+        public static CapacityUnmarshaller GetInstance()
         {
             if (instance == null)
-                instance = new UpdateTableResultUnmarshaller();
+                instance = new CapacityUnmarshaller();
             return instance;
         }
     }

@@ -31,12 +31,8 @@ namespace Amazon.DynamoDBv2.Model
     /// <i>ResourceInUseException</i> . If the specified table does not exist, Amazon DynamoDB returns a
     /// <i>ResourceNotFoundException</i> . If table is already in the <c>DELETING</c> state, no error is returned. </para> <para><b>NOTE:</b> Amazon
     /// DynamoDB might continue to accept data read and write operations, such as GetItem and PutItem, on a table in the DELETING state until the
-    /// table deletion is complete. </para> <para>Tables are unique among those associated with the AWS Account issuing the request, and the AWS
-    /// region that receives the request (such as dynamodb.us-east-1.amazonaws.com). Each Amazon DynamoDB endpoint is entirely independent. For
-    /// example, if you have two tables called "MyTable," one in dynamodb.us-east-1.amazonaws.com and one in dynamodb.us-west-1.amazonaws.com, they
-    /// are completely independent and do not share any data; deleting one does not delete the other.</para> <para>When you delete a table, any
-    /// local secondary indexes on that table are also deleted.</para> <para>Use the <i>DescribeTable</i> API to check the status of the table.
-    /// </para>
+    /// table deletion is complete. </para> <para>When you delete a table, any indexes on that table are also deleted.</para> <para>Use the
+    /// <i>DescribeTable</i> API to check the status of the table. </para>
     /// </summary>
     /// <seealso cref="Amazon.DynamoDBv2.AmazonDynamoDB.DeleteTable"/>
     public class DeleteTableRequest : AmazonWebServiceRequest

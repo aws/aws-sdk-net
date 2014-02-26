@@ -32,6 +32,8 @@
 
         public CreateTableResult Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             CreateTableResult createTableResult = new CreateTableResult();
           
             int originalDepth = context.CurrentDepth;

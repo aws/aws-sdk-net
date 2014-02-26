@@ -2538,6 +2538,7 @@
     <Compile Include="Amazon.DynamoDBv2\Model\BatchWriteItemRequest.cs" />
     <Compile Include="Amazon.DynamoDBv2\Model\BatchWriteItemResponse.cs" />
     <Compile Include="Amazon.DynamoDBv2\Model\BatchWriteItemResult.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\Capacity.cs" />
     <Compile Include="Amazon.DynamoDBv2\Model\Condition.cs" />
     <Compile Include="Amazon.DynamoDBv2\Model\ConditionalCheckFailedException.cs" />
     <Compile Include="Amazon.DynamoDBv2\Model\ConsumedCapacity.cs" />
@@ -2558,6 +2559,9 @@
     <Compile Include="Amazon.DynamoDBv2\Model\GetItemRequest.cs" />
     <Compile Include="Amazon.DynamoDBv2\Model\GetItemResponse.cs" />
     <Compile Include="Amazon.DynamoDBv2\Model\GetItemResult.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\GlobalSecondaryIndex.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\GlobalSecondaryIndexDescription.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\GlobalSecondaryIndexUpdate.cs" />
     <Compile Include="Amazon.DynamoDBv2\Model\InternalServerErrorException.cs" />
     <Compile Include="Amazon.DynamoDBv2\Model\Internal\MarshallTransformations\AttributeDefinitionUnmarshaller.cs" />
     <Compile Include="Amazon.DynamoDBv2\Model\Internal\MarshallTransformations\AttributeValueUnmarshaller.cs" />
@@ -2567,6 +2571,7 @@
     <Compile Include="Amazon.DynamoDBv2\Model\Internal\MarshallTransformations\BatchWriteItemRequestMarshaller.cs" />
     <Compile Include="Amazon.DynamoDBv2\Model\Internal\MarshallTransformations\BatchWriteItemResponseUnmarshaller.cs" />
     <Compile Include="Amazon.DynamoDBv2\Model\Internal\MarshallTransformations\BatchWriteItemResultUnmarshaller.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\Internal\MarshallTransformations\CapacityUnmarshaller.cs" />
     <Compile Include="Amazon.DynamoDBv2\Model\Internal\MarshallTransformations\ConsumedCapacityUnmarshaller.cs" />
     <Compile Include="Amazon.DynamoDBv2\Model\Internal\MarshallTransformations\CreateTableRequestMarshaller.cs" />
     <Compile Include="Amazon.DynamoDBv2\Model\Internal\MarshallTransformations\CreateTableResponseUnmarshaller.cs" />
@@ -2584,6 +2589,7 @@
     <Compile Include="Amazon.DynamoDBv2\Model\Internal\MarshallTransformations\GetItemRequestMarshaller.cs" />
     <Compile Include="Amazon.DynamoDBv2\Model\Internal\MarshallTransformations\GetItemResponseUnmarshaller.cs" />
     <Compile Include="Amazon.DynamoDBv2\Model\Internal\MarshallTransformations\GetItemResultUnmarshaller.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\Internal\MarshallTransformations\GlobalSecondaryIndexDescriptionUnmarshaller.cs" />
     <Compile Include="Amazon.DynamoDBv2\Model\Internal\MarshallTransformations\ItemCollectionMetricsUnmarshaller.cs" />
     <Compile Include="Amazon.DynamoDBv2\Model\Internal\MarshallTransformations\KeysAndAttributesUnmarshaller.cs" />
     <Compile Include="Amazon.DynamoDBv2\Model\Internal\MarshallTransformations\KeySchemaElementUnmarshaller.cs" />
@@ -2638,6 +2644,7 @@
     <Compile Include="Amazon.DynamoDBv2\Model\ScanResponse.cs" />
     <Compile Include="Amazon.DynamoDBv2\Model\ScanResult.cs" />
     <Compile Include="Amazon.DynamoDBv2\Model\TableDescription.cs" />
+    <Compile Include="Amazon.DynamoDBv2\Model\UpdateGlobalSecondaryIndexAction.cs" />
     <Compile Include="Amazon.DynamoDBv2\Model\UpdateItemRequest.cs" />
     <Compile Include="Amazon.DynamoDBv2\Model\UpdateItemResponse.cs" />
     <Compile Include="Amazon.DynamoDBv2\Model\UpdateItemResult.cs" />

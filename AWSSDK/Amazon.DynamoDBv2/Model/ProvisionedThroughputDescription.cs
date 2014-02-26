@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
-    /// <para>Describes the provisioned throughput settings for the table, consisting of read and write capacity units, along with data about
+    /// <para>Represents the provisioned throughput settings for the table, consisting of read and write capacity units, along with data about
     /// increases and decreases.</para>
     /// </summary>
     public class ProvisionedThroughputDescription
@@ -93,8 +93,8 @@ namespace Amazon.DynamoDBv2.Model
 
         /// <summary>
         /// The number of provisioned throughput decreases for this table during this UTC calendar day. For current maximums on provisioned throughput
-        /// decreases, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the <i>Amazon DynamoDB
-        /// Developer Guide</i>.
+        /// decreases, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the Amazon DynamoDB
+        /// Developer Guide.
         ///  
         /// <para>
         /// <b>Constraints:</b>

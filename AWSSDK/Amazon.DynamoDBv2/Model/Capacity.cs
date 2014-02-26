@@ -21,40 +21,40 @@ using System.IO;
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
-    /// <para>Represents the output of an <i>UpdateTable</i> operation.</para>
+    /// <para>Represents the amount of provisioned throughput capacity consumed on a table or an index. </para>
     /// </summary>
-    public class UpdateTableResult
+    public class Capacity
     {
         
-        private TableDescription tableDescription;
+        private double? capacityUnits;
 
         /// <summary>
-        /// Represents the properties of a table.
+        /// The total number of capacity units consumed on a table or an index.
         ///  
         /// </summary>
-        public TableDescription TableDescription
+        public double CapacityUnits
         {
-            get { return this.tableDescription; }
-            set { this.tableDescription = value; }
+            get { return this.capacityUnits ?? default(double); }
+            set { this.capacityUnits = value; }
         }
 
         /// <summary>
-        /// Sets the TableDescription property
+        /// Sets the CapacityUnits property
         /// </summary>
-        /// <param name="tableDescription">The value to set for the TableDescription property </param>
+        /// <param name="capacityUnits">The value to set for the CapacityUnits property </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public UpdateTableResult WithTableDescription(TableDescription tableDescription)
+        public Capacity WithCapacityUnits(double capacityUnits)
         {
-            this.tableDescription = tableDescription;
+            this.capacityUnits = capacityUnits;
             return this;
         }
             
 
-        // Check to see if TableDescription property is set
-        internal bool IsSetTableDescription()
+        // Check to see if CapacityUnits property is set
+        internal bool IsSetCapacityUnits()
         {
-            return this.tableDescription != null;
+            return this.capacityUnits.HasValue;
         }
     }
 }
