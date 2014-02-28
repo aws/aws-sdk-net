@@ -35,11 +35,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         internal Search(SearchType searchMethod)
         {
-            IsDone = false;
-            NextKey = null;
-            Matches = new List<Document>();
             SearchMethod = searchMethod;
-            CollectResults = true;
+            Reset();
         }
 
         #endregion
@@ -350,7 +347,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         #region Private/internal properties
 
-        private int count = -1;
+        private int count;
 
         private SearchType SearchMethod { get; set; }
 
@@ -412,6 +409,18 @@ namespace Amazon.DynamoDBv2.DocumentModel
                     }
                 }
             }
+        }
+
+        /// <summary>
+        /// Resets the Search object to default state.
+        /// </summary>
+        internal void Reset()
+        {
+            count = -1;
+            IsDone = false;
+            NextKey = null;
+            Matches = new List<Document>();
+            CollectResults = true;
         }
 
         #endregion

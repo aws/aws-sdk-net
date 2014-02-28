@@ -165,6 +165,44 @@ namespace Amazon.ImportExport
         {
         }
         
+        /// <summary>
+        /// Constructs AmazonImportExportClient with AWS Access Key ID and AWS Secret Key
+        /// </summary>
+        /// <param name="awsAccessKeyId">AWS Access Key ID</param>
+        /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        /// <param name="awsSessionToken">AWS Session Token</param>
+        public AmazonImportExportClient(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken)
+            : this(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, new AmazonImportExportConfig())
+        {
+        }
+
+        /// <summary>
+        /// Constructs AmazonImportExportClient with AWS Access Key ID and AWS Secret Key
+        /// </summary>
+        /// <param name="awsAccessKeyId">AWS Access Key ID</param>
+        /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        /// <param name="awsSessionToken">AWS Session Token</param>
+        /// <param name="region">The region to connect.</param>
+        public AmazonImportExportClient(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken, RegionEndpoint region)
+            : this(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, new AmazonImportExportConfig() { RegionEndpoint = region })
+        {
+        }
+
+        /// <summary>
+        /// Constructs AmazonImportExportClient with AWS Access Key ID, AWS Secret Key and an
+        /// AmazonImportExportConfig Configuration object. If the config object's
+        /// UseSecureStringForAwsSecretKey is false, the AWS Secret Key
+        /// is stored as a clear-text string. Please use this option only
+        /// if the application environment doesn't allow the use of SecureStrings.
+        /// </summary>
+        /// <param name="awsAccessKeyId">AWS Access Key ID</param>
+        /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        /// <param name="awsSessionToken">AWS Session Token</param>
+        /// <param name="clientConfig">The AmazonImportExportConfig Configuration Object</param>
+        public AmazonImportExportClient(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken, AmazonImportExportConfig clientConfig)
+            : base(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, clientConfig, AuthenticationTypes.User | AuthenticationTypes.Session)
+        {
+        }
 
         #endregion
    

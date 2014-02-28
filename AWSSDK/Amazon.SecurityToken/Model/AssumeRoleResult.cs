@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -32,7 +32,7 @@ namespace Amazon.SecurityToken.Model
         private int? packedPolicySize;
 
         /// <summary>
-        /// The temporary security credentials, which include an access key ID, a secret access key, and a security token.
+        /// The temporary security credentials, which include an access key ID, a secret access key, and a security (or session) token.
         ///  
         /// </summary>
         public Credentials Credentials

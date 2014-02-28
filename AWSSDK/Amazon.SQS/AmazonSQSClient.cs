@@ -241,6 +241,45 @@ namespace Amazon.SQS
         public AmazonSQSClient(AWSCredentials credentials, AmazonSQSConfig config)
             : this(credentials, config, false) { }
 
+        /// <summary>
+        /// Constructs AmazonSQSClient with AWS Access Key ID and AWS Secret Key
+        /// </summary>
+        /// <param name="awsAccessKeyId">AWS Access Key ID</param>
+        /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        /// <param name="awsSessionToken">AWS Session Token</param>
+        public AmazonSQSClient(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken)
+            : this(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, new AmazonSQSConfig())
+        {
+        }
+
+        /// <summary>
+        /// Constructs AmazonSQSClient with AWS Access Key ID and AWS Secret Key
+        /// </summary>
+        /// <param name="awsAccessKeyId">AWS Access Key ID</param>
+        /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        /// <param name="awsSessionToken">AWS Session Token</param>
+        /// <param name="region">The region to connect.</param>
+        public AmazonSQSClient(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken, RegionEndpoint region)
+            : this(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, new AmazonSQSConfig() { RegionEndpoint = region })
+        {
+        }
+
+        /// <summary>
+        /// Constructs AmazonSQSClient with AWS Access Key ID, AWS Secret Key and an
+        /// AmazonSQSConfig Configuration object. If the config object's
+        /// UseSecureStringForAwsSecretKey is false, the AWS Secret Key
+        /// is stored as a clear-text string. Please use this option only
+        /// if the application environment doesn't allow the use of SecureStrings.
+        /// </summary>
+        /// <param name="awsAccessKeyId">AWS Access Key ID</param>
+        /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        /// <param name="awsSessionToken">AWS Session Token</param>
+        /// <param name="clientConfig">The AmazonSQSConfig Configuration Object</param>
+        public AmazonSQSClient(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken, AmazonSQSConfig clientConfig)
+            : this(new SessionAWSCredentials(awsAccessKeyId, awsSecretAccessKey, awsSessionToken), clientConfig, false)
+        {
+        }
+
 
         // Constructs an AmazonSQSClient with credentials, config and flag which
         // specifies if the credentials are owned by the client or not

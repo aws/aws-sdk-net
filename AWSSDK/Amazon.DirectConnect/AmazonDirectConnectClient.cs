@@ -203,7 +203,7 @@ namespace Amazon.DirectConnect
 
         /// <summary>
         /// Constructs AmazonDirectConnectClient with AWS Access Key ID, AWS Secret Key and an
-        /// AmazonDirectConnectClient Configuration object. If the config object's
+        /// AmazonDirectConnectConfig Configuration object. If the config object's
         /// UseSecureStringForAwsSecretKey is false, the AWS Secret Key
         /// is stored as a clear-text string. Please use this option only
         /// if the application environment doesn't allow the use of SecureStrings.

@@ -229,6 +229,45 @@ namespace Amazon.SimpleNotificationService
         public AmazonSimpleNotificationServiceClient(AWSCredentials credentials, AmazonSimpleNotificationServiceConfig config)
             : this(credentials, config, false) { }
 
+        /// <summary>
+        /// Constructs AmazonSimpleNotificationServiceClient with AWS Access Key ID and AWS Secret Key
+        /// </summary>
+        /// <param name="awsAccessKeyId">AWS Access Key ID</param>
+        /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        /// <param name="awsSessionToken">AWS Session Token</param>
+        public AmazonSimpleNotificationServiceClient(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken)
+            : this(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, new AmazonSimpleNotificationServiceConfig())
+        {
+        }
+
+        /// <summary>
+        /// Constructs AmazonSimpleNotificationServiceClient with AWS Access Key ID and AWS Secret Key
+        /// </summary>
+        /// <param name="awsAccessKeyId">AWS Access Key ID</param>
+        /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        /// <param name="awsSessionToken">AWS Session Token</param>
+        /// <param name="region">The region to connect.</param>
+        public AmazonSimpleNotificationServiceClient(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken, RegionEndpoint region)
+            : this(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, new AmazonSimpleNotificationServiceConfig() { RegionEndpoint = region })
+        {
+        }
+
+        /// <summary>
+        /// Constructs AmazonSimpleNotificationServiceClient with AWS Access Key ID, AWS Secret Key and an
+        /// AmazonSimpleNotificationServiceConfig Configuration object. If the config object's
+        /// UseSecureStringForAwsSecretKey is false, the AWS Secret Key
+        /// is stored as a clear-text string. Please use this option only
+        /// if the application environment doesn't allow the use of SecureStrings.
+        /// </summary>
+        /// <param name="awsAccessKeyId">AWS Access Key ID</param>
+        /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        /// <param name="awsSessionToken">AWS Session Token</param>
+        /// <param name="clientConfig">The AmazonSimpleNotificationServiceConfig Configuration Object</param>
+        public AmazonSimpleNotificationServiceClient(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken, AmazonSimpleNotificationServiceConfig clientConfig)
+            : this(new SessionAWSCredentials(awsAccessKeyId, awsSecretAccessKey, awsSessionToken), clientConfig, false)
+        {
+        }
+
         // Constructs an AmazonSimpleNotificationServiceClient with credentials, config and flag which
         // specifies if the credentials are owned by the client or not
         private AmazonSimpleNotificationServiceClient(AWSCredentials credentials, AmazonSimpleNotificationServiceConfig config, bool ownCredentials)

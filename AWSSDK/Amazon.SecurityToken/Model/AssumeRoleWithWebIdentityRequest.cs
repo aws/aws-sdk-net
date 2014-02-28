@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -26,17 +26,18 @@ namespace Amazon.SecurityToken.Model
     /// <summary>
     /// Container for the parameters to the AssumeRoleWithWebIdentity operation.
     /// <para> Returns a set of temporary security credentials for users who have been authenticated in a mobile or web application with a web
-    /// identity provider, such as Login with Amazon, Facebook, or Google. <c>AssumeRoleWithWebIdentity</c> is an API call that does not require the
-    /// use of AWS security credentials. Therefore, you can distribute an application (for example, on mobile devices) that requests temporary
-    /// security credentials without including long-term AWS credentials in the application or by deploying server-based proxy services that use
-    /// long-term AWS credentials. </para> <para> The temporary security credentials consist of an access key ID, a secret access key, and a
-    /// security token. Applications can use these temporary security credentials to sign calls to AWS service APIs. The credentials are valid for
-    /// the duration that you specified when calling <c>AssumeRoleWithWebIdentity</c> , which can be from 900 seconds (15 minutes) to 3600 seconds
-    /// (1 hour). By default, the temporary security credentials are valid for 1 hour. </para> <para>Optionally, you can pass an AWS IAM access
-    /// policy to this operation. The temporary security credentials that are returned by the operation have the permissions that are associated
-    /// with the access policy of the role being assumed, except for any permissions explicitly denied by the policy you pass. This gives you a way
-    /// to further restrict the permissions for the federated user. These policies and any applicable resource-based policies are evaluated when
-    /// calls to AWS are made using the temporary security credentials. </para> <para> Before your application can call
+    /// identity provider, such as Login with Amazon, Facebook, or Google. </para> <para> Calling <c>AssumeRoleWithWebIdentity</c> does not require
+    /// the use of AWS security credentials. Therefore, you can distribute an application (for example, on mobile devices) that requests temporary
+    /// security credentials without including long-term AWS credentials in the application, and without deploying server-based proxy services that
+    /// use long-term AWS credentials. Instead, the identity of the caller is validated by using a token from the web identity provider. </para>
+    /// <para> The temporary security credentials returned by this API consist of an access key ID, a secret access key, and a security token.
+    /// Applications can use these temporary security credentials to sign calls to AWS service APIs. The credentials are valid for the duration that
+    /// you specified when calling <c>AssumeRoleWithWebIdentity</c> , which can be from 900 seconds (15 minutes) to 3600 seconds (1 hour). By
+    /// default, the temporary security credentials are valid for 1 hour. </para> <para>Optionally, you can pass an AWS IAM access policy to this
+    /// operation. The temporary security credentials that are returned by the operation have the permissions that are associated with the access
+    /// policy of the role being assumed, except for any permissions explicitly denied by the policy you pass. This gives you a way to further
+    /// restrict the permissions for the resulting temporary security credentials. These policies and any applicable resource-based policies are
+    /// evaluated when calls to AWS are made using the temporary security credentials. </para> <para> Before your application can call
     /// <c>AssumeRoleWithWebIdentity</c> , you must have an identity token from a supported identity provider and create a role that the application
     /// can assume. The role that your application assumes must trust the identity provider that is associated with the identity token. In other
     /// words, the identity provider must be specified in the role's trust policy. </para> <para> For more information about how to use web identity
@@ -232,8 +233,8 @@ namespace Amazon.SecurityToken.Model
         /// <summary>
         /// An AWS IAM policy in JSON format. The temporary security credentials that are returned by the operation have the permissions that are
         /// associated with the access policy of the role being assumed, except for any permissions explicitly denied by the policy you pass. This gives
-        /// you a way to further restrict the permissions for the federated user. These policies and any applicable resource-based policies are
-        /// evaluated when calls to AWS are made using the temporary security credentials.
+        /// you a way to further restrict the permissions for the resulting temporary security credentials. These policies and any applicable
+        /// resource-based policies are evaluated when calls to AWS are made using the temporary security credentials.
         ///  
         /// <para>
         /// <b>Constraints:</b>

@@ -11294,7 +11294,11 @@
     <Compile Include="Amazon.StorageGateway\Util\AmazonStorageGatewayUtil.cs" />
     <Compile Include="Amazon.Util\PaginatedResource.cs" />
     <Compile Include="Amazon.Util\PaginatedResourceFactory.cs" />
-    <Compile Include="AWSClientFactory.cs" />
+    <Compile Include="AWSClientFactory.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AWSClientFactory.tt</DependentUpon>
+    </Compile>
     <Compile Include="AWSConfigs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Amazon.Util\AWSSDKUtils.cs" />
@@ -11614,7 +11618,11 @@
   <ItemGroup>
     <EmbeddedResource Include="Amazon.EC2\Model\ModifyReservedInstancesResponse.xslt" />
   </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\TextTemplating\v10.0\Microsoft.TextTemplating.targets')" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\TextTemplating\v10.0\Microsoft.TextTemplating.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
