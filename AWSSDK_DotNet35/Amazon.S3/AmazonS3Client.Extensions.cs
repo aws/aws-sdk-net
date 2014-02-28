@@ -448,7 +448,9 @@ namespace Amazon.S3
             var putBucketRequest = request as PutBucketRequest;
             if (putBucketRequest != null)
             {
-                if (putBucketRequest.UseClientRegion)
+                // UseClientRegion only applies if neither BucketRegionName and BucketRegion are set.
+                if (putBucketRequest.UseClientRegion &&
+                    !(putBucketRequest.IsSetBucketRegionName() || putBucketRequest.IsSetBucketRegion()))
                 {
                     var regionCode = Amazon.Util.AWSSDKUtils.DetermineRegion(this.Config.DetermineServiceURL());
                     if (regionCode == S3Constants.REGION_US_EAST_1)
@@ -463,7 +465,7 @@ namespace Amazon.S3
             var deleteBucketRequest = request as DeleteBucketRequest;
             if (deleteBucketRequest != null)
             {
-                if (deleteBucketRequest.UseClientRegion)
+                if (deleteBucketRequest.UseClientRegion && !deleteBucketRequest.IsSetBucketRegion())
                 {
                     var regionCode = Amazon.Util.AWSSDKUtils.DetermineRegion(this.Config.DetermineServiceURL());
                     if (regionCode == S3Constants.REGION_US_EAST_1)

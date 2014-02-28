@@ -32,7 +32,7 @@ namespace Amazon.S3.Model
     {
         private string bucketName;
         private S3Region bucketRegion;
-        private bool useClientRegion;
+        private bool useClientRegion = true;
 
         /// <summary>
         /// The name of the bucket to be created.
@@ -71,7 +71,8 @@ namespace Amazon.S3.Model
 
         /// <summary>
         /// If set to true the bucket will be deleted in the same region as the configuration of the AmazonS3 client.
-        /// Default: false.
+        /// DeleteBucketRequest.BucketRegion takes precedence over this property if both are set.
+        /// Default: true.
         /// </summary>
         public bool UseClientRegion
         {

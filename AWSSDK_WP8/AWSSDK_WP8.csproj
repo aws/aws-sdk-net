@@ -135,7 +135,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\AWSSDK_DotNet35\Amazon.Runtime\*" Exclude="..\AWSSDK_DotNet35\Amazon.Runtime\AmazonWebServiceClient.cs;..\AWSSDK_DotNet35\Amazon.Runtime\ClientConfig.bcl.cs">
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.Runtime\*" Exclude="..\AWSSDK_DotNet35\Amazon.Runtime\AmazonWebServiceClient.cs;..\AWSSDK_DotNet35\Amazon.Runtime\ClientConfig.bcl.cs;..\AWSSDK_DotNet35\Amazon.Runtime\*.bcl35.cs">
       <Visible>false</Visible>
     </Compile>
     <Compile Include="..\AWSSDK_DotNet45\Amazon.Runtime\*">

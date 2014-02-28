@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -34,14 +34,14 @@ namespace Amazon.SecurityToken.Model
     /// <para><b>NOTE:</b>The maximum duration for a session is 1 hour, and the minimum duration is 15 minutes, even if values outside this range
     /// are specified. </para> <para>Optionally, you can pass an AWS IAM access policy to this operation. The temporary security credentials that
     /// are returned by the operation have the permissions that are associated with the access policy of the role being assumed, except for any
-    /// permissions explicitly denied by the policy you pass. This gives you a way to further restrict the permissions for the federated user. These
-    /// policies and any applicable resource-based policies are evaluated when calls to AWS are made using the temporary security credentials.
-    /// </para> <para> Before your application can call <c>AssumeRoleWithSAML</c> , you must configure your SAML identity provider (IdP) to issue
-    /// the claims required by AWS. Additionally, you must use AWS Identity and Access Management (AWS IAM) to create a SAML provider entity in your
-    /// AWS account that represents your identity provider, and create an AWS IAM role that specifies this SAML provider in its trust policy.
-    /// </para> <para> Calling <c>AssumeRoleWithSAML</c> does not require the use of AWS security credentials. The identity of the caller is
-    /// validated by using keys in the metadata document that is uploaded for the SAML provider entity for your identity provider. </para> <para>For
-    /// more information, see the following resources:</para>
+    /// permissions explicitly denied by the policy you pass. This gives you a way to further restrict the permissions for the resulting temporary
+    /// security credentials. These policies and any applicable resource-based policies are evaluated when calls to AWS are made using the temporary
+    /// security credentials. </para> <para> Before your application can call <c>AssumeRoleWithSAML</c> , you must configure your SAML identity
+    /// provider (IdP) to issue the claims required by AWS. Additionally, you must use AWS Identity and Access Management (AWS IAM) to create a SAML
+    /// provider entity in your AWS account that represents your identity provider, and create an AWS IAM role that specifies this SAML provider in
+    /// its trust policy. </para> <para> Calling <c>AssumeRoleWithSAML</c> does not require the use of AWS security credentials. The identity of the
+    /// caller is validated by using keys in the metadata document that is uploaded for the SAML provider entity for your identity provider. </para>
+    /// <para>For more information, see the following resources:</para>
     /// <ul>
     /// <li> <a href="http://docs.aws.amazon.com/STS/latest/UsingSTS/CreatingSAML.html" >Creating Temporary Security Credentials for SAML
     /// Federation</a> in the <i>Using Temporary Security Credentials</i> guide. </li>

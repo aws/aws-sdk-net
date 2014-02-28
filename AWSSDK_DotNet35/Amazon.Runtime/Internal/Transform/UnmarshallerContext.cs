@@ -78,7 +78,7 @@ namespace Amazon.Runtime.Internal.Transform
             this.CrcStream = null;
 
             UInt32 parsed;
-            if (UInt32.TryParse(responseData.GetHeaderValue("x-amz-crc32"), out parsed))
+            if (responseData != null && UInt32.TryParse(responseData.GetHeaderValue("x-amz-crc32"), out parsed))
             {
                 this.Crc32Result = (int)parsed;
                 this.CrcStream = new CrcCalculatorStream(responseStream, contentLength);

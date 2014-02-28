@@ -209,6 +209,18 @@ namespace Amazon.Runtime.Internal.Transform
 
         #endregion
 
+        #region Public properties
+
+        /// <summary>
+        /// The type of the current token
+        /// </summary>
+        public JsonToken CurrentTokenType
+        {
+            get { return currentToken.Value; }
+        }
+
+        #endregion
+
         #region Internal methods/properties
 
         /// <summary>
@@ -231,14 +243,6 @@ namespace Amazon.Runtime.Internal.Transform
             }
             return StreamPeek();
 
-        }
-
-        /// <summary>
-        /// The type of the current token
-        /// </summary>
-        internal JsonToken CurrentTokenType
-        {
-            get { return currentToken.Value; }
         }
 
         #endregion

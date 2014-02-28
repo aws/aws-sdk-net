@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -36,12 +36,13 @@ namespace Amazon.SecurityToken.Model
     /// account credentials have a maximum duration of 3600 seconds (1 hour). </para> <para>Optionally, you can pass an AWS IAM access policy to
     /// this operation. The temporary security credentials that are returned by the operation have the permissions that are associated with the
     /// entity that is making the <c>GetFederationToken</c> call, except for any permissions explicitly denied by the policy you pass. This gives
-    /// you a way to further restrict the permissions for the federated user. These policies and any applicable resource-based policies are
-    /// evaluated when calls to AWS are made using the temporary security credentials. </para> <para> For more information about how permissions
-    /// work, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/TokenPermissions.html" >Controlling Permissions in Temporary
-    /// Credentials</a> in <i>Using Temporary Security Credentials</i> . For information about using <c>GetFederationToken</c> to create temporary
-    /// security credentials, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/CreatingFedTokens.html" >Creating Temporary Credentials
-    /// to Enable Access for Federated Users</a> in <i>Using Temporary Security Credentials</i> . </para>
+    /// you a way to further restrict the permissions for the resulting temporary security credentials. These policies and any applicable
+    /// resource-based policies are evaluated when calls to AWS are made using the temporary security credentials. </para> <para> For more
+    /// information about how permissions work, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/TokenPermissions.html" >Controlling
+    /// Permissions in Temporary Credentials</a> in <i>Using Temporary Security Credentials</i> . For information about using
+    /// <c>GetFederationToken</c> to create temporary security credentials, see <a
+    /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/CreatingFedTokens.html" >Creating Temporary Credentials to Enable Access for Federated
+    /// Users</a> in <i>Using Temporary Security Credentials</i> . </para>
     /// </summary>
     public partial class GetFederationTokenRequest : AmazonSecurityTokenServiceRequest
     {

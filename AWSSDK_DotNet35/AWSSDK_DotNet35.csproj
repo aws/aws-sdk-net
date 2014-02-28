@@ -9884,6 +9884,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.Runtime\AmazonWebServiceRequest.cs" />
+    <Compile Include="Amazon.Runtime\AWSCredentials.bcl35.cs" />
     <Compile Include="Amazon.Runtime\Internal\AmazonWebServiceRequest.bcl35.cs" />
     <Compile Include="Amazon.Runtime\AmazonWebServiceResponse.cs" />
     <Compile Include="Amazon.Runtime\AWSCredentials.cs" />
@@ -10271,6 +10272,7 @@
     <Compile Include="Amazon.SecurityToken\Model\AssumeRoleWithSAMLRequest.cs" />
     <Compile Include="Amazon.SecurityToken\Model\AssumeRoleWithSAMLResponse.cs" />
     <Compile Include="Amazon.SecurityToken\Model\AssumeRoleWithSAMLResult.cs" />
+    <Compile Include="Amazon.SecurityToken\Model\Credentials.Extensions.cs" />
     <Compile Include="Amazon.SecurityToken\Model\DecodeAuthorizationMessageRequest.cs" />
     <Compile Include="Amazon.SecurityToken\Model\DecodeAuthorizationMessageResponse.cs" />
     <Compile Include="Amazon.SecurityToken\Model\DecodeAuthorizationMessageResult.cs" />
@@ -11720,6 +11722,7 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\TextTemplating\v10.0\Microsoft.TextTemplating.targets')" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\TextTemplating\v10.0\Microsoft.TextTemplating.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

@@ -16,29 +16,27 @@ using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
-
+using System.IO;
 using Amazon.Runtime;
 
 namespace Amazon.SecurityToken.Model
 {
     /// <summary>
-    /// Returns information about the  GetFederationToken response and response metadata.
+    /// <para>AWS credentials for API authentication.</para>
     /// </summary>
-    public partial class GetFederationTokenResponse : GetFederationTokenResult
+    public partial class Credentials : AWSCredentials
     {
+        private ImmutableCredentials _credentials = null;
+
         /// <summary>
-        /// Gets and sets the GetFederationTokenResult property.
-        /// Contains the result of a successful call to the GetFederationToken action, including temporary AWS credentials that can be used to make AWS
-        /// requests.
+        /// Returns a copy of ImmutableCredentials corresponding to these credentials
         /// </summary>
-        [Obsolete(@"This property has been deprecated. All properties of the GetFederationTokenResult class are now available on the GetFederationTokenResponse class. You should use the properties on GetFederationTokenResponse instead of accessing them through GetFederationTokenResult.")]
-        public GetFederationTokenResult GetFederationTokenResult
+        /// <returns></returns>
+        public override ImmutableCredentials GetCredentials()
         {
-            get
-            {
-                return this;
-            }
+            if (_credentials == null)
+                _credentials = new ImmutableCredentials(AccessKeyId, SecretAccessKey, SessionToken);
+            return _credentials.Copy();
         }
     }
 }
-    

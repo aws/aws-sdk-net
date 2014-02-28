@@ -32,7 +32,7 @@ namespace Amazon.S3.Model
         private string bucketName;
         private S3Region bucketRegion;
         private string bucketRegionName;
-        private bool useClientRegion;
+        private bool useClientRegion = true;
         private S3CannedACL cannedAcl;
 
         /// <summary>
@@ -54,7 +54,9 @@ namespace Amazon.S3.Model
         /// <summary>
         /// If set to true the bucket will be created in the same region
         /// as the configuration of the AmazonS3 client.
-        /// Default: false.
+        /// If PutBucketRequest.BucketRegion or PutBucketRequest.BucketRegionName are set they take precedence over
+        /// this property.
+        /// Default: true.
         /// </summary>
         public bool UseClientRegion
         {
@@ -113,6 +115,12 @@ namespace Amazon.S3.Model
             {
                 this.bucketRegionName = value;
             }
+        }
+
+        // Check to see if BucketRegionName property is set
+        internal bool IsSetBucketRegionName()
+        {
+            return !string.IsNullOrEmpty(this.bucketRegionName);
         }
     }
 }

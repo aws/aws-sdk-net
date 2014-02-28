@@ -45,7 +45,7 @@ namespace Amazon.Runtime
         public long ContentLength
         {
             get { return this.contentLength; }
-            internal set { this.contentLength = value; }
+            set { this.contentLength = value; }
         }
 
         /// <summary>
@@ -54,7 +54,7 @@ namespace Amazon.Runtime
         public HttpStatusCode HttpStatusCode
         {
             get { return this.httpStatusCode; }
-            internal set { this.httpStatusCode = value; }
+            set { this.httpStatusCode = value; }
         }
     }
 }

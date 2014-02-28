@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -54,6 +54,14 @@ namespace Amazon.SecurityToken.Model.Internal.MarshallTransformations
             if (assumeRoleRequest != null && assumeRoleRequest.IsSetExternalId())
             {
                 request.Parameters.Add("ExternalId", StringUtils.FromString(assumeRoleRequest.ExternalId));
+            }
+            if (assumeRoleRequest != null && assumeRoleRequest.IsSetSerialNumber())
+            {
+                request.Parameters.Add("SerialNumber", StringUtils.FromString(assumeRoleRequest.SerialNumber));
+            }
+            if (assumeRoleRequest != null && assumeRoleRequest.IsSetTokenCode())
+            {
+                request.Parameters.Add("TokenCode", StringUtils.FromString(assumeRoleRequest.TokenCode));
             }
 
             return request;
