@@ -34,14 +34,14 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         public DescribeAutoScalingInstancesResult DescribeAutoScalingInstancesResult
         {
-            get 
+            get
             {
                 if(this.describeAutoScalingInstancesResult == null)
                 {
                     this.describeAutoScalingInstancesResult = new DescribeAutoScalingInstancesResult();
                 }
 
-                return this.describeAutoScalingInstancesResult; 
+                return this.describeAutoScalingInstancesResult;
             }
             set { this.describeAutoScalingInstancesResult = value; }
         }

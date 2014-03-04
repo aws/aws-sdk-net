@@ -21,9 +21,9 @@ using System.IO;
 namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
-    /// 
+    /// <para>The <c>ReadPresetResponse</c> structure.</para>
     /// </summary>
-    public class ReadPresetResult
+    public partial class ReadPresetResult
     {
         
         private Preset preset;
@@ -43,6 +43,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="preset">The value to set for the Preset property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ReadPresetResult WithPreset(Preset preset)
         {
             this.preset = preset;

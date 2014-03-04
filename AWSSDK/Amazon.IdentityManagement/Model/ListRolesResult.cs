@@ -21,9 +21,9 @@ using System.IO;
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// <para>Contains the result of a successful invocation of the ListRolesResponse action.</para>
+    /// <para>Contains the result of a successful invocation of the ListRoles action.</para>
     /// </summary>
-    public class ListRolesResult  
+    public partial class ListRolesResult
     {
         
         private List<Role> roles = new List<Role>();
@@ -44,6 +44,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="roles">The values to add to the Roles collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListRolesResult WithRoles(params Role[] roles)
         {
             foreach (Role element in roles)
@@ -53,12 +54,13 @@ namespace Amazon.IdentityManagement.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Roles collection
         /// </summary>
         /// <param name="roles">The values to add to the Roles collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListRolesResult WithRoles(IEnumerable<Role> roles)
         {
             foreach (Role element in roles)
@@ -72,7 +74,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if Roles property is set
         internal bool IsSetRoles()
         {
-            return this.roles.Count > 0;       
+            return this.roles.Count > 0;
         }
 
         /// <summary>
@@ -91,6 +93,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="isTruncated">The value to set for the IsTruncated property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListRolesResult WithIsTruncated(bool isTruncated)
         {
             this.isTruncated = isTruncated;
@@ -101,7 +104,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if IsTruncated property is set
         internal bool IsSetIsTruncated()
         {
-            return this.isTruncated.HasValue;       
+            return this.isTruncated.HasValue;
         }
 
         /// <summary>
@@ -133,6 +136,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="marker">The value to set for the Marker property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListRolesResult WithMarker(string marker)
         {
             this.marker = marker;
@@ -143,7 +147,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;       
+            return this.marker != null;
         }
     }
 }

@@ -30,18 +30,18 @@ namespace Amazon.StorageGateway.Model
 
         /// <summary>
         /// Gets and sets the UpdateChapCredentialsResult property.
-        /// A JSON object containing the following fields: UpdateChapCredentialsOutput$InitiatorName UpdateChapCredentialsOutput$TargetARN
+        /// A JSON object containing the following fields:
         /// </summary>
         public UpdateChapCredentialsResult UpdateChapCredentialsResult
         {
-            get 
+            get
             {
                 if(this.updateChapCredentialsResult == null)
                 {
                     this.updateChapCredentialsResult = new UpdateChapCredentialsResult();
                 }
 
-                return this.updateChapCredentialsResult; 
+                return this.updateChapCredentialsResult;
             }
             set { this.updateChapCredentialsResult = value; }
         }

@@ -43,7 +43,7 @@ namespace Amazon.EC2.Model
     /// the response is simply empty
     /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
-    public class DescribeCustomerGatewaysRequest
+    public class DescribeCustomerGatewaysRequest : EC2Request
     {    
         private List<string> customerGatewayIdField;
         private List<Filter> filterField;
@@ -72,6 +72,7 @@ namespace Amazon.EC2.Model
         /// than one in the
         /// request</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeCustomerGatewaysRequest WithCustomerGatewayId(params string[] list)
         {
             foreach (string item in list)
@@ -128,6 +129,7 @@ namespace Amazon.EC2.Model
         /// c. ipAddress - The IP address of the customer gateway's
         /// Internet-routable external interface (e.g., 12.1.2.3).</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeCustomerGatewaysRequest WithFilter(params Filter[] list)
         {
             foreach (Filter item in list)

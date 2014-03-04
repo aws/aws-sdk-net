@@ -23,13 +23,13 @@ namespace Amazon.CloudSearch.Model
     /// <summary>
     /// <para>Options that define a <c>uint</c> field in the search index.</para>
     /// </summary>
-    public class UIntOptions  
+    public partial class UIntOptions
     {
         
         private int? defaultValue;
 
         /// <summary>
-        /// The default value for an unsigned integer field.
+        /// The default value for an unsigned integer field. Optional.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -52,6 +52,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="defaultValue">The value to set for the DefaultValue property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UIntOptions WithDefaultValue(int defaultValue)
         {
             this.defaultValue = defaultValue;
@@ -62,7 +63,7 @@ namespace Amazon.CloudSearch.Model
         // Check to see if DefaultValue property is set
         internal bool IsSetDefaultValue()
         {
-            return this.defaultValue.HasValue;       
+            return this.defaultValue.HasValue;
         }
     }
 }

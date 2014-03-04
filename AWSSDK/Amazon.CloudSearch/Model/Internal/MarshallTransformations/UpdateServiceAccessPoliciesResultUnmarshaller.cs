@@ -22,13 +22,14 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
      /// <summary>
      ///   UpdateServiceAccessPoliciesResult Unmarshaller
      /// </summary>
-    internal class UpdateServiceAccessPoliciesResultUnmarshaller : IUnmarshaller<UpdateServiceAccessPoliciesResult, XmlUnmarshallerContext> 
+    internal class UpdateServiceAccessPoliciesResultUnmarshaller : IUnmarshaller<UpdateServiceAccessPoliciesResult, XmlUnmarshallerContext>, IUnmarshaller<UpdateServiceAccessPoliciesResult, JsonUnmarshallerContext> 
     {
         public UpdateServiceAccessPoliciesResult Unmarshall(XmlUnmarshallerContext context) 
         {
             UpdateServiceAccessPoliciesResult updateServiceAccessPoliciesResult = new UpdateServiceAccessPoliciesResult();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -52,6 +53,11 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
 
 
             return updateServiceAccessPoliciesResult;
+        }
+
+        public UpdateServiceAccessPoliciesResult Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static UpdateServiceAccessPoliciesResultUnmarshaller instance;

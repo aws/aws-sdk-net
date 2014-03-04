@@ -21,16 +21,16 @@ using System.IO;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// <para> Contains a list of CacheParameterGroups. </para>
+    /// <para>Represents the output of a <i>DescribeCacheParameterGroups</i> operation.</para>
     /// </summary>
-    public class DescribeCacheParameterGroupsResult
+    public partial class DescribeCacheParameterGroupsResult
     {
         
         private string marker;
         private List<CacheParameterGroup> cacheParameterGroups = new List<CacheParameterGroup>();
 
         /// <summary>
-        /// The marker obtained from a previous operation response.
+        /// Provides an identifier to allow retrieval of paginated results.
         ///  
         /// </summary>
         public string Marker
@@ -44,6 +44,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="marker">The value to set for the Marker property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeCacheParameterGroupsResult WithMarker(string marker)
         {
             this.marker = marker;
@@ -58,7 +59,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// A list of <a>CacheParameterGroup</a> instances.
+        /// A list of cache parameter groups. Each element in the list contains detailed information about one cache parameter group.
         ///  
         /// </summary>
         public List<CacheParameterGroup> CacheParameterGroups
@@ -71,6 +72,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="cacheParameterGroups">The values to add to the CacheParameterGroups collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeCacheParameterGroupsResult WithCacheParameterGroups(params CacheParameterGroup[] cacheParameterGroups)
         {
             foreach (CacheParameterGroup element in cacheParameterGroups)
@@ -86,6 +88,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="cacheParameterGroups">The values to add to the CacheParameterGroups collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeCacheParameterGroupsResult WithCacheParameterGroups(IEnumerable<CacheParameterGroup> cacheParameterGroups)
         {
             foreach (CacheParameterGroup element in cacheParameterGroups)

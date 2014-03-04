@@ -25,10 +25,11 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the RebootCacheCluster operation.
-    /// <para> Reboots some (or all) of the cache cluster nodes within a previously provisioned ElastiCache cluster. This API results in the
-    /// application of modified CacheParameterGroup parameters to the cache cluster. This action is taken as soon as possible, and results in a
-    /// momentary outage to the cache cluster during which the cache cluster status is set to rebooting. During that momentary outage, the contents
-    /// of the cache (for each cache cluster node being rebooted) are lost. A CacheCluster event is created when the reboot is completed. </para>
+    /// <para>The <i>RebootCacheCluster</i> operation reboots some, or all, of the cache cluster nodes within a provisioned cache cluster. This API
+    /// will apply any modified cache parameter groups to the cache cluster. The reboot action takes place as soon as possible, and results in a
+    /// momentary outage to the cache cluster. During the reboot, the cache cluster status is set to REBOOTING.</para> <para>The reboot causes the
+    /// contents of the cache (for each cache cluster node being rebooted) to be lost.</para> <para>When the reboot is complete, a cache cluster
+    /// event is created.</para>
     /// </summary>
     /// <seealso cref="Amazon.ElastiCache.AmazonElastiCache.RebootCacheCluster"/>
     public class RebootCacheClusterRequest : AmazonWebServiceRequest
@@ -37,7 +38,7 @@ namespace Amazon.ElastiCache.Model
         private List<string> cacheNodeIdsToReboot = new List<string>();
 
         /// <summary>
-        /// The Cache Cluster identifier. This parameter is stored as a lowercase string.
+        /// The cache cluster identifier. This parameter is stored as a lowercase string.
         ///  
         /// </summary>
         public string CacheClusterId
@@ -51,6 +52,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="cacheClusterId">The value to set for the CacheClusterId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RebootCacheClusterRequest WithCacheClusterId(string cacheClusterId)
         {
             this.cacheClusterId = cacheClusterId;
@@ -65,7 +67,8 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// A list of Cache Cluster Node Ids to reboot. To reboot an entire cache cluster, specify all cache cluster node Ids.
+        /// A list of cache cluster node IDs to reboot. A node ID is a numeric identifier (0001, 0002, etc.). To reboot an entire cache cluster, specify
+        /// all of the cache cluster node IDs.
         ///  
         /// </summary>
         public List<string> CacheNodeIdsToReboot
@@ -78,6 +81,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="cacheNodeIdsToReboot">The values to add to the CacheNodeIdsToReboot collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RebootCacheClusterRequest WithCacheNodeIdsToReboot(params string[] cacheNodeIdsToReboot)
         {
             foreach (string element in cacheNodeIdsToReboot)
@@ -93,6 +97,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="cacheNodeIdsToReboot">The values to add to the CacheNodeIdsToReboot collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RebootCacheClusterRequest WithCacheNodeIdsToReboot(IEnumerable<string> cacheNodeIdsToReboot)
         {
             foreach (string element in cacheNodeIdsToReboot)

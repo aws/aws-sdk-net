@@ -25,7 +25,7 @@ namespace Amazon.Route53.Model
 {
     /// <summary>
     /// Container for the parameters to the ListHostedZones operation.
-    /// <para> To retrieve a list of your hosted zones, send a <c>GET</c> request to the <c>2012-12-12/hostedzone</c> resource. The response to this
+    /// <para> To retrieve a list of your hosted zones, send a <c>GET</c> request to the <c>2013-04-01/hostedzone</c> resource. The response to this
     /// request includes a <c>HostedZones</c> element with zero, one, or multiple <c>HostedZone</c> child elements. By default, the list of hosted
     /// zones is displayed on a single page. You can control the length of the page that is displayed by using the <c>MaxItems</c> parameter. You
     /// can use the <c>Marker</c> parameter to control the hosted zone that the list begins with. </para> <para><b>NOTE:</b> Amazon Route 53 returns
@@ -62,6 +62,7 @@ namespace Amazon.Route53.Model
         /// </summary>
         /// <param name="marker">The value to set for the Marker property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListHostedZonesRequest WithMarker(string marker)
         {
             this.marker = marker;
@@ -90,6 +91,7 @@ namespace Amazon.Route53.Model
         /// </summary>
         /// <param name="maxItems">The value to set for the MaxItems property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListHostedZonesRequest WithMaxItems(string maxItems)
         {
             this.maxItems = maxItems;

@@ -25,7 +25,9 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the AddRoleToInstanceProfile operation.
-    /// <para>Adds the specified role to the specified instance profile.</para>
+    /// <para>Adds the specified role to the specified instance profile. For more information about roles, go to <a
+    /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html" >Working with Roles</a> . For more information about instance
+    /// profiles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html" >About Instance Profiles</a> .</para>
     /// </summary>
     /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.AddRoleToInstanceProfile"/>
     public class AddRoleToInstanceProfileRequest : AmazonWebServiceRequest
@@ -61,6 +63,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="instanceProfileName">The value to set for the InstanceProfileName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AddRoleToInstanceProfileRequest WithInstanceProfileName(string instanceProfileName)
         {
             this.instanceProfileName = instanceProfileName;
@@ -71,7 +74,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if InstanceProfileName property is set
         internal bool IsSetInstanceProfileName()
         {
-            return this.instanceProfileName != null;       
+            return this.instanceProfileName != null;
         }
 
         /// <summary>
@@ -102,6 +105,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="roleName">The value to set for the RoleName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AddRoleToInstanceProfileRequest WithRoleName(string roleName)
         {
             this.roleName = roleName;
@@ -112,7 +116,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if RoleName property is set
         internal bool IsSetRoleName()
         {
-            return this.roleName != null;       
+            return this.roleName != null;
         }
     }
 }

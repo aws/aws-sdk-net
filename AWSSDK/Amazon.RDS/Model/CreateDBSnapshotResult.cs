@@ -23,7 +23,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// The results from the CreateDBSnapshot action.
     /// </summary>
-    public class CreateDBSnapshotResult
+    public partial class CreateDBSnapshotResult
     {
         private DBSnapshot dBSnapshotValue;
 

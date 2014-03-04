@@ -22,13 +22,14 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
      /// <summary>
      ///   EnvironmentResourceDescription Unmarshaller
      /// </summary>
-    internal class EnvironmentResourceDescriptionUnmarshaller : IUnmarshaller<EnvironmentResourceDescription, XmlUnmarshallerContext> 
+    internal class EnvironmentResourceDescriptionUnmarshaller : IUnmarshaller<EnvironmentResourceDescription, XmlUnmarshallerContext>, IUnmarshaller<EnvironmentResourceDescription, JsonUnmarshallerContext> 
     {
         public EnvironmentResourceDescription Unmarshall(XmlUnmarshallerContext context) 
         {
             EnvironmentResourceDescription environmentResourceDescription = new EnvironmentResourceDescription();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -71,6 +72,12 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                         environmentResourceDescription.Triggers.Add(TriggerUnmarshaller.GetInstance().Unmarshall(context));
                             
                         continue;
+                    } 
+                    if (context.TestExpression("Queues/member", targetDepth))
+                    {
+                        environmentResourceDescription.Queues.Add(QueueUnmarshaller.GetInstance().Unmarshall(context));
+                            
+                        continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
@@ -82,6 +89,11 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
 
 
             return environmentResourceDescription;
+        }
+
+        public EnvironmentResourceDescription Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static EnvironmentResourceDescriptionUnmarshaller instance;

@@ -30,7 +30,7 @@ namespace Amazon.ElastiCache.Model
 
         /// <summary>
         /// Gets and sets the DescribeEventsResult property.
-        /// Contains a list of Events.
+        /// Represents the output of a DescribeEvents operation.
         /// </summary>
         public DescribeEventsResult DescribeEventsResult
         {

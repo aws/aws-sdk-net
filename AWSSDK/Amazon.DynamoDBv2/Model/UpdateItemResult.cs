@@ -31,8 +31,8 @@ namespace Amazon.DynamoDBv2.Model
         private ItemCollectionMetrics itemCollectionMetrics;
 
         /// <summary>
-        /// A map of attribute values as they appeard before the <i>UpdateItem</i> operation, but only if <i>ReturnValues</i> was specified as something
-        /// other than <c>NONE</c> in the request. Each element represents one attribute.
+        /// A map of attribute values as they appeared before the <i>UpdateItem</i> operation, but only if <i>ReturnValues</i> was specified as
+        /// something other than <c>NONE</c> in the request. Each element represents one attribute.
         ///  
         /// </summary>
         public Dictionary<string,AttributeValue> Attributes
@@ -46,6 +46,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="pairs">The pairs to be added to the Attributes dictionary.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateItemResult WithAttributes(params KeyValuePair<string, AttributeValue>[] pairs)
         {
             foreach (KeyValuePair<string, AttributeValue> pair in pairs)
@@ -63,10 +64,11 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// The table name that consumed provisioned throughput, and the number of capacity units consumed by it. <i>ConsumedCapacity</i> is only
-        /// returned if it was asked for in the request. For more information, see <a
+        /// Represents the capacity units consumed by an operation. The data returned includes the total provisioned throughput consumed, along with
+        /// statistics for the table and any indexes involved in the operation. <i>ConsumedCapacity</i> is only returned if it was asked for in the
+        /// request. For more information, see <a
         /// href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned Throughput</a> in the
-        /// <i>Amazon DynamoDB Developer Guide</i>.
+        /// Amazon DynamoDB Developer Guide.
         ///  
         /// </summary>
         public ConsumedCapacity ConsumedCapacity
@@ -80,6 +82,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="consumedCapacity">The value to set for the ConsumedCapacity property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateItemResult WithConsumedCapacity(ConsumedCapacity consumedCapacity)
         {
             this.consumedCapacity = consumedCapacity;
@@ -95,7 +98,7 @@ namespace Amazon.DynamoDBv2.Model
 
         /// <summary>
         /// Information about item collections, if any, that were affected by the operation. <i>ItemCollectionMetrics</i> is only returned if it was
-        /// asked for in the request. If the table does not have any secondary indexes, this information is not returned in the response.
+        /// asked for in the request. If the table does not have any local secondary indexes, this information is not returned in the response.
         ///  
         /// </summary>
         public ItemCollectionMetrics ItemCollectionMetrics
@@ -109,6 +112,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="itemCollectionMetrics">The value to set for the ItemCollectionMetrics property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateItemResult WithItemCollectionMetrics(ItemCollectionMetrics itemCollectionMetrics)
         {
             this.itemCollectionMetrics = itemCollectionMetrics;

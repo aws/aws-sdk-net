@@ -30,18 +30,18 @@ namespace Amazon.StorageGateway.Model
 
         /// <summary>
         /// Gets and sets the DeleteSnapshotScheduleResult property.
-        /// A JSON object containing the following fields: DeleteSnapshotScheduleOutput$VolumeARN
+        /// 
         /// </summary>
         public DeleteSnapshotScheduleResult DeleteSnapshotScheduleResult
         {
-            get 
+            get
             {
                 if(this.deleteSnapshotScheduleResult == null)
                 {
                     this.deleteSnapshotScheduleResult = new DeleteSnapshotScheduleResult();
                 }
 
-                return this.deleteSnapshotScheduleResult; 
+                return this.deleteSnapshotScheduleResult;
             }
             set { this.deleteSnapshotScheduleResult = value; }
         }

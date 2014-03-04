@@ -1,4 +1,4 @@
-﻿/*******************************************************************************
+/*******************************************************************************
  * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
     /// Copies a image from a source region to the current region.
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
-    public class CopyImageRequest
+    public class CopyImageRequest : EC2Request
     {
         private string sourceRegionField;
         private string sourceImageIdField;
@@ -52,6 +52,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="sourceRegion">Source region.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CopyImageRequest WithSourceRegion(string sourceRegion)
         {
             this.sourceRegionField = sourceRegion;
@@ -83,6 +84,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="sourceImageId">Image id.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CopyImageRequest WithSourceImageId(string sourceImageId)
         {
             this.sourceImageIdField = sourceImageId;
@@ -114,6 +116,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="description">Description.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CopyImageRequest WithDescription(string description)
         {
             this.descriptionField = description;
@@ -144,6 +147,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="name">Name.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CopyImageRequest WithName(string name)
         {
             this.nameField = name;
@@ -175,6 +179,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="clientToken">ClientToken.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CopyImageRequest WithClientToken(string clientToken)
         {
             this.clientTokenField = clientToken;

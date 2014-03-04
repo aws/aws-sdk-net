@@ -25,7 +25,10 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeStacks operation.
-    /// <para>Requests a description of one or more stacks.</para>
+    /// <para>Requests a description of one or more stacks.</para> <para> <b>Required Permissions</b> : To use this action, an IAM user must have a
+    /// Show, Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on
+    /// user permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User
+    /// Permissions</a> .</para>
     /// </summary>
     /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.DescribeStacks"/>
     public class DescribeStacksRequest : AmazonWebServiceRequest
@@ -47,6 +50,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="stackIds">The values to add to the StackIds collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeStacksRequest WithStackIds(params string[] stackIds)
         {
             foreach (string element in stackIds)
@@ -62,6 +66,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="stackIds">The values to add to the StackIds collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeStacksRequest WithStackIds(IEnumerable<string> stackIds)
         {
             foreach (string element in stackIds)

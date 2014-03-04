@@ -70,7 +70,24 @@ namespace Amazon.Auth.AccessControlPolicy
             {
                 throw new ArgumentNullException("accountId");
             }
+            
+            
             this.id = accountId.Replace("-", "");
+        }
+
+        /// <summary>
+        /// Constructs a new principal with the specified provider and id
+        /// </summary>
+        /// <param name="provider">The provider of the principal</param>
+        /// <param name="id">The unique ID of the Principal within the provider</param>
+        public Principal(string provider, string id)
+        {
+            this.provider = provider;
+            if (string.Equals(provider, AWS_PROVIDER))
+            {
+                id = id.Replace("-", "");
+            }
+            this.id = id;
         }
 
         /// <summary>

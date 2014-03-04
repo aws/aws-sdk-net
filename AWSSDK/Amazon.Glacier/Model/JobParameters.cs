@@ -23,7 +23,7 @@ namespace Amazon.Glacier.Model
     /// <summary>
     /// <para>Provides options for defining a job.</para>
     /// </summary>
-    public class JobParameters  
+    public partial class JobParameters
     {
         
         private string format;
@@ -32,10 +32,11 @@ namespace Amazon.Glacier.Model
         private string description;
         private string sNSTopic;
         private string retrievalByteRange;
+        private InventoryRetrievalJobInput inventoryRetrievalParameters;
 
         /// <summary>
         /// When initiating a job to retrieve a vault inventory, you can optionally add this parameter to your request to specify the output format. If
-        /// you are initiating an inventory job and do not specify a Format field, JSON is the default format. Valid Values are "CSV" and "JSON".
+        /// you are initiating an inventory job and do not specify a Format field, JSON is the default format. Valid values are "CSV" and "JSON".
         ///  
         /// </summary>
         public string Format
@@ -49,6 +50,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="format">The value to set for the Format property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public JobParameters WithFormat(string format)
         {
             this.format = format;
@@ -59,11 +61,11 @@ namespace Amazon.Glacier.Model
         // Check to see if Format property is set
         internal bool IsSetFormat()
         {
-            return this.format != null;       
+            return this.format != null;
         }
 
         /// <summary>
-        /// The job type. You can initiate a job to retrieve an archive or get an inventory of a vault. Valid Values are "archive-retrieval" and
+        /// The job type. You can initiate a job to retrieve an archive or get an inventory of a vault. Valid values are "archive-retrieval" and
         /// "inventory-retrieval".
         ///  
         /// </summary>
@@ -78,6 +80,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="type">The value to set for the Type property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public JobParameters WithType(string type)
         {
             this.type = type;
@@ -88,7 +91,7 @@ namespace Amazon.Glacier.Model
         // Check to see if Type property is set
         internal bool IsSetType()
         {
-            return this.type != null;       
+            return this.type != null;
         }
 
         /// <summary>
@@ -107,6 +110,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="archiveId">The value to set for the ArchiveId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public JobParameters WithArchiveId(string archiveId)
         {
             this.archiveId = archiveId;
@@ -117,7 +121,7 @@ namespace Amazon.Glacier.Model
         // Check to see if ArchiveId property is set
         internal bool IsSetArchiveId()
         {
-            return this.archiveId != null;       
+            return this.archiveId != null;
         }
 
         /// <summary>
@@ -136,6 +140,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="description">The value to set for the Description property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public JobParameters WithDescription(string description)
         {
             this.description = description;
@@ -146,7 +151,7 @@ namespace Amazon.Glacier.Model
         // Check to see if Description property is set
         internal bool IsSetDescription()
         {
-            return this.description != null;       
+            return this.description != null;
         }
 
         /// <summary>
@@ -165,6 +170,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="sNSTopic">The value to set for the SNSTopic property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public JobParameters WithSNSTopic(string sNSTopic)
         {
             this.sNSTopic = sNSTopic;
@@ -175,7 +181,7 @@ namespace Amazon.Glacier.Model
         // Check to see if SNSTopic property is set
         internal bool IsSetSNSTopic()
         {
-            return this.sNSTopic != null;       
+            return this.sNSTopic != null;
         }
 
         /// <summary>
@@ -197,6 +203,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="retrievalByteRange">The value to set for the RetrievalByteRange property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public JobParameters WithRetrievalByteRange(string retrievalByteRange)
         {
             this.retrievalByteRange = retrievalByteRange;
@@ -207,7 +214,36 @@ namespace Amazon.Glacier.Model
         // Check to see if RetrievalByteRange property is set
         internal bool IsSetRetrievalByteRange()
         {
-            return this.retrievalByteRange != null;       
+            return this.retrievalByteRange != null;
+        }
+
+        /// <summary>
+        /// Input parameters used for range inventory retrieval.
+        ///  
+        /// </summary>
+        public InventoryRetrievalJobInput InventoryRetrievalParameters
+        {
+            get { return this.inventoryRetrievalParameters; }
+            set { this.inventoryRetrievalParameters = value; }
+        }
+
+        /// <summary>
+        /// Sets the InventoryRetrievalParameters property
+        /// </summary>
+        /// <param name="inventoryRetrievalParameters">The value to set for the InventoryRetrievalParameters property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public JobParameters WithInventoryRetrievalParameters(InventoryRetrievalJobInput inventoryRetrievalParameters)
+        {
+            this.inventoryRetrievalParameters = inventoryRetrievalParameters;
+            return this;
+        }
+            
+
+        // Check to see if InventoryRetrievalParameters property is set
+        internal bool IsSetInventoryRetrievalParameters()
+        {
+            return this.inventoryRetrievalParameters != null;
         }
     }
 }

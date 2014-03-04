@@ -26,7 +26,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// Container for the parameters to the DeleteDBParameterGroup operation.
     /// <para> Deletes a specified DBParameterGroup. The DBParameterGroup cannot be associated with any RDS instances to be deleted. </para>
-    /// <para><b>NOTE:</b> The specified DB Parameter Group cannot be associated with any DB Instances. </para>
+    /// <para><b>NOTE:</b> The specified DB parameter group cannot be associated with any DB instances. </para>
     /// </summary>
     /// <seealso cref="Amazon.RDS.AmazonRDS.DeleteDBParameterGroup"/>
     public class DeleteDBParameterGroupRequest : AmazonWebServiceRequest
@@ -34,8 +34,8 @@ namespace Amazon.RDS.Model
         private string dBParameterGroupName;
 
         /// <summary>
-        /// The name of the DB Parameter Group. Constraints: <ul> <li>Must be the name of an existing DB Parameter Group</li> <li>You cannot delete a
-        /// default DB Parameter Group</li> <li>Cannot be associated with any DB Instances</li> </ul>
+        /// The name of the DB parameter group. Constraints: <ul> <li>Must be the name of an existing DB parameter group</li> <li>You cannot delete a
+        /// default DB parameter group</li> <li>Cannot be associated with any DB instances</li> </ul>
         ///  
         /// </summary>
         public string DBParameterGroupName
@@ -49,6 +49,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="dBParameterGroupName">The value to set for the DBParameterGroupName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeleteDBParameterGroupRequest WithDBParameterGroupName(string dBParameterGroupName)
         {
             this.dBParameterGroupName = dBParameterGroupName;

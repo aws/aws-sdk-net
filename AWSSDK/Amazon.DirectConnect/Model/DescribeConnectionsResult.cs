@@ -21,9 +21,9 @@ using System.IO;
 namespace Amazon.DirectConnect.Model
 {
     /// <summary>
-    /// <para> A list of connections. </para>
+    /// <para>A structure containing a list of connections.</para>
     /// </summary>
-    public class DescribeConnectionsResult  
+    public class DescribeConnectionsResult
     {
         
         private List<Connection> connections = new List<Connection>();
@@ -42,6 +42,7 @@ namespace Amazon.DirectConnect.Model
         /// </summary>
         /// <param name="connections">The values to add to the Connections collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeConnectionsResult WithConnections(params Connection[] connections)
         {
             foreach (Connection element in connections)
@@ -51,12 +52,13 @@ namespace Amazon.DirectConnect.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Connections collection
         /// </summary>
         /// <param name="connections">The values to add to the Connections collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeConnectionsResult WithConnections(IEnumerable<Connection> connections)
         {
             foreach (Connection element in connections)
@@ -70,7 +72,7 @@ namespace Amazon.DirectConnect.Model
         // Check to see if Connections property is set
         internal bool IsSetConnections()
         {
-            return this.connections.Count > 0;       
+            return this.connections.Count > 0;
         }
     }
 }

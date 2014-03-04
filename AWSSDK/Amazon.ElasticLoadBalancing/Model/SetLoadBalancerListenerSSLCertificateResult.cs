@@ -23,7 +23,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// <summary>
     /// <para> The output for the SetLoadBalancerListenerSSLCertificate action. </para>
     /// </summary>
-    public class SetLoadBalancerListenerSSLCertificateResult  
+    public partial class SetLoadBalancerListenerSSLCertificateResult
     {
         
     }

@@ -25,23 +25,27 @@ namespace Amazon.AWSSupport.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateCase operation.
-    /// <para>Creates a new case in the AWS Support Center. This action is modeled on the behavior of the AWS Support Center Open a new case page.
-    /// Its parameters require you to specify the following information: </para> <ol> <li> <b>ServiceCode.</b> Represents a code for an AWS service.
-    /// You obtain the <i>ServiceCode</i> by calling DescribeServices. </li>
-    /// <li> <b>CategoryCode</b> . Represents a category for the service defined for the ServiceCode value. You also obtain the cateogory code for
-    /// a service by calling DescribeServices. Each AWS service defines its own set of category codes. </li>
-    /// <li> <b>SeverityCode</b> . Represents a value that specifies the urgency of the case, and the time interval in which your service level
-    /// agreement specifies a response from AWS Support. You obtain the SeverityCode by calling DescribeSeverityLevels.</li>
-    /// <li> <b>Subject</b> . Represents the <b>Subject</b> field on the AWS Support Center Open a new case page.</li>
-    /// <li> <b>CommunicationBody</b> . Represents the <b>Description</b> field on the AWS Support Center Open a new case page.</li>
-    /// <li> <b>Language</b> . Specifies the human language in which AWS Support handles the case. The API currently supports English and
-    /// Japanese.</li>
-    /// <li> <b>CcEmailAddresses</b> . Represents the AWS Support Center <b>CC</b> field on the Open a new case page. You can list email
-    /// addresses to be copied on any correspondence about the case. The account that opens the case is already identified by passing the AWS
-    /// Credentials in the HTTP POST method or in a method or function call from one of the programming languages supported by an AWS SDK. </li>
-    /// </ol> <para><b>NOTE:</b>The AWS Support API does not currently support the ability to add attachments to cases. You can, however, call
+    /// <para>Creates a new case in the AWS Support Center. This operation is modeled on the behavior of the AWS Support Center <a
+    /// href="https://aws.amazon.com/support/createCase" >Open a new case</a> page. Its parameters require you to specify the following information:
+    /// </para> <ol> <li> <b>ServiceCode.</b> The code for an AWS service. You obtain the <c>ServiceCode</c> by calling DescribeServices. </li>
+    /// <li> <b>CategoryCode.</b> The category for the service defined for the <c>ServiceCode</c> value. You also obtain the category code for a
+    /// service by calling DescribeServices. Each AWS service defines its own set of category codes. </li>
+    /// <li> <b>SeverityCode.</b> A value that indicates the urgency of the case, which in turn determines the response time according to your
+    /// service level agreement with AWS Support. You obtain the SeverityCode by calling DescribeSeverityLevels.</li>
+    /// <li> <b>Subject.</b> The <b>Subject</b> field on the AWS Support Center <a href="https://aws.amazon.com/support/createCase" >Open a new
+    /// case</a> page.</li>
+    /// <li> <b>CommunicationBody.</b> The <b>Description</b> field on the AWS Support Center <a href="https://aws.amazon.com/support/createCase"
+    /// >Open a new case</a> page.</li>
+    /// <li> <b>Language.</b> The human language in which AWS Support handles the case. English and Japanese are currently supported.</li>
+    /// <li> <b>CcEmailAddresses.</b> The AWS Support Center <b>CC</b> field on the <a href="https://aws.amazon.com/support/createCase" >Open a
+    /// new case</a> page. You can list email addresses to be copied on any correspondence about the case. The account that opens the case is
+    /// already identified by passing the AWS Credentials in the HTTP POST method or in a method or function call from one of the programming
+    /// languages supported by an <a href="http://aws.amazon.com/tools/" >AWS SDK</a> . </li>
+    /// <li> <b>IssueType.</b> The type of issue for the case. You can specify either "customer-service" or "technical." If you do not indicate a
+    /// value, the default is "technical." </li>
+    /// </ol> <para><b>NOTE:</b> The AWS Support API does not currently support the ability to add attachments to cases. You can, however, call
     /// AddCommunicationToCase to add information to an open case. </para> <para>A successful CreateCase request returns an AWS Support case number.
-    /// Case numbers are used by DescribeCases request to retrieve existing AWS Support support cases. </para>
+    /// Case numbers are used by the DescribeCases action to retrieve existing AWS Support cases. </para>
     /// </summary>
     /// <seealso cref="Amazon.AWSSupport.AmazonAWSSupport.CreateCase"/>
     public class CreateCaseRequest : AmazonWebServiceRequest
@@ -56,7 +60,7 @@ namespace Amazon.AWSSupport.Model
         private string issueType;
 
         /// <summary>
-        /// Title of the AWS Support case.
+        /// The title of the AWS Support case.
         ///  
         /// </summary>
         public string Subject
@@ -70,6 +74,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="subject">The value to set for the Subject property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateCaseRequest WithSubject(string subject)
         {
             this.subject = subject;
@@ -84,7 +89,7 @@ namespace Amazon.AWSSupport.Model
         }
 
         /// <summary>
-        /// Code for the AWS service returned by the call to <a href="API_DescribeServices.html" title="DescribeServices">DescribeServices</a>.
+        /// The code for the AWS service returned by the call to <a>DescribeServices</a>.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -107,6 +112,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="serviceCode">The value to set for the ServiceCode property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateCaseRequest WithServiceCode(string serviceCode)
         {
             this.serviceCode = serviceCode;
@@ -121,9 +127,9 @@ namespace Amazon.AWSSupport.Model
         }
 
         /// <summary>
-        /// Code for the severity level returned by the call to <a href="API_DescribeSeverityLevels.html"
-        /// title="DescribeSeverityLevels">DescribeSeverityLevels</a>. <note>The availability of severity levels depends on each customer's support
-        /// subscription. In other words, your subscription may not necessarily require the urgent level of response time.</note>
+        /// The code for the severity level returned by the call to <a>DescribeSeverityLevels</a>. <note>The availability of severity levels depends on
+        /// each customer's support subscription. In other words, your subscription may not necessarily require the urgent level of response
+        /// time.</note>
         ///  
         /// </summary>
         public string SeverityCode
@@ -137,6 +143,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="severityCode">The value to set for the SeverityCode property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateCaseRequest WithSeverityCode(string severityCode)
         {
             this.severityCode = severityCode;
@@ -151,7 +158,7 @@ namespace Amazon.AWSSupport.Model
         }
 
         /// <summary>
-        /// Specifies the category of problem for the AWS Support case.
+        /// The category of problem for the AWS Support case.
         ///  
         /// </summary>
         public string CategoryCode
@@ -165,6 +172,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="categoryCode">The value to set for the CategoryCode property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateCaseRequest WithCategoryCode(string categoryCode)
         {
             this.categoryCode = categoryCode;
@@ -179,8 +187,7 @@ namespace Amazon.AWSSupport.Model
         }
 
         /// <summary>
-        /// Parameter that represents the communication body text when you create an AWS Support case by calling <a href="API_CreateCase.html"
-        /// title="CreateCase">CreateCase</a>.
+        /// The communication body text when you create an AWS Support case by calling <a>CreateCase</a>.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -203,6 +210,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="communicationBody">The value to set for the CommunicationBody property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateCaseRequest WithCommunicationBody(string communicationBody)
         {
             this.communicationBody = communicationBody;
@@ -217,7 +225,7 @@ namespace Amazon.AWSSupport.Model
         }
 
         /// <summary>
-        /// List of email addresses that AWS Support copies on case correspondence.
+        /// A list of email addresses that AWS Support copies on case correspondence.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -239,6 +247,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="ccEmailAddresses">The values to add to the CcEmailAddresses collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateCaseRequest WithCcEmailAddresses(params string[] ccEmailAddresses)
         {
             foreach (string element in ccEmailAddresses)
@@ -254,6 +263,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="ccEmailAddresses">The values to add to the CcEmailAddresses collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateCaseRequest WithCcEmailAddresses(IEnumerable<string> ccEmailAddresses)
         {
             foreach (string element in ccEmailAddresses)
@@ -271,8 +281,8 @@ namespace Amazon.AWSSupport.Model
         }
 
         /// <summary>
-        /// Specifies the ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English and Japanese, for which
-        /// the codes are <i>en</i> and <i>ja</i>, respectively.
+        /// The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English ("en") and Japanese ("ja").
+        /// Language parameters must be passed explicitly for operations that take them.
         ///  
         /// </summary>
         public string Language
@@ -286,6 +296,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="language">The value to set for the Language property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateCaseRequest WithLanguage(string language)
         {
             this.language = language;
@@ -300,7 +311,8 @@ namespace Amazon.AWSSupport.Model
         }
 
         /// <summary>
-        /// Field passed as a parameter in a <a href="API_CreateCase.html" title="CreateCase">CreateCase</a> call.
+        /// The type of issue for the case. You can specify either "customer-service" or "technical." If you do not indicate a value, the default is
+        /// "technical."
         ///  
         /// </summary>
         public string IssueType
@@ -314,6 +326,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="issueType">The value to set for the IssueType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateCaseRequest WithIssueType(string issueType)
         {
             this.issueType = issueType;

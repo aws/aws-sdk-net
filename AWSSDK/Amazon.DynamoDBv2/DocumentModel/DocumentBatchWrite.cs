@@ -331,7 +331,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         private void SendSet(Dictionary<string, QuickList<WriteRequestDocument>> set, Table targetTable, bool isAsync)
         {
-            Dictionary<Key, Document> documentMap = null;
+            Dictionary<string, Dictionary<Key, Document>> documentMap = null;
             BatchWriteItemRequest request = ConstructRequest(set, targetTable, out documentMap, isAsync);
             if (request.RequestItems.Count == 0)
                 return;
@@ -378,9 +378,13 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return totalWrites;
         }
 
-        private BatchWriteItemRequest ConstructRequest(Dictionary<string, QuickList<WriteRequestDocument>> writeItems, Table targetTable, out Dictionary<Key, Document> documentMap, bool isAsync)
+        private BatchWriteItemRequest ConstructRequest(
+            Dictionary<string, QuickList<WriteRequestDocument>> writeItems,
+            Table targetTable,
+            out Dictionary<string, Dictionary<Key, Document>> documentMap,
+            bool isAsync)
         {
-            documentMap = new Dictionary<Key, Document>(keyComparer);
+            documentMap = new Dictionary<string, Dictionary<Key, Document>>(StringComparer.Ordinal);
             BatchWriteItemRequest request = new BatchWriteItemRequest();
 
             foreach (var writeItem in writeItems)
@@ -391,6 +395,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 {
                     var table = tableMap[tableName];
                     var requestList = new List<WriteRequest>();
+                    var tableDocumentMap = new Dictionary<Key, Document>(keyComparer);
+                    documentMap.Add(tableName, tableDocumentMap);
 
                     foreach (var item in requestItems)
                     {
@@ -399,7 +405,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                         if (item.WriteRequest.PutRequest != null)
                         {
                             var key = table.MakeKey(item.Document);
-                            documentMap.Add(key, item.Document);
+                            tableDocumentMap.Add(key, item.Document);
                         }
                     }
                     request.RequestItems[tableName] = requestList;
@@ -437,7 +443,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return nextItems;
         }
 
-        private void CallUntilCompletion(BatchWriteItemRequest request, Dictionary<Key, Document> documentMap, AmazonDynamoDB client)
+        private void CallUntilCompletion(BatchWriteItemRequest request, Dictionary<string, Dictionary<Key, Document>> documentMap, AmazonDynamoDB client)
         {
             do
             {
@@ -448,7 +454,9 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 Dictionary<Key, Document> unprocessedDocuments = new Dictionary<Key, Document>(keyComparer);
                 foreach (var unprocessedItems in result.UnprocessedItems)
                 {
-                    Table table = tableMap[unprocessedItems.Key];
+                    string tableName = unprocessedItems.Key;
+                    Table table = tableMap[tableName];
+                    Dictionary<Key, Document> tableDocumentMap = documentMap[tableName];
 
                     foreach (var writeRequest in unprocessedItems.Value)
                     {
@@ -457,32 +465,36 @@ namespace Amazon.DynamoDBv2.DocumentModel
                             var key = table.MakeKey(Document.FromAttributeMap(writeRequest.PutRequest.Item));
 
                             Document document = null;
-                            if (documentMap.TryGetValue(key, out document))
+                            if (tableDocumentMap.TryGetValue(key, out document))
                             {
                                 // Remove unprocessed requests from the document map 
                                 // and copy them to unprocessed documents.
                                 unprocessedDocuments.Add(key, document);
-                                documentMap.Remove(key);
+                                tableDocumentMap.Remove(key);
                             }
                         }
                     }
-                }
 
-                // Commit the remaining documents in the document map
-                foreach (var document in documentMap.Values)
-                {
-                    document.CommitChanges();
+                    // Commit the remaining documents in the document map
+                    foreach (var document in tableDocumentMap.Values)
+                    {
+                        document.CommitChanges();
+                    }
+                    // Replace existing documents with just the unprocessed documents
+                    documentMap[tableName] = unprocessedDocuments;
                 }
-                documentMap = unprocessedDocuments;
 
             } while (request.RequestItems.Count > 0);
 
             // Commit any remaining documents in document map.
             // This would only happen if we are not able to match the items sent in the request
             // with the items returned back as unprocessed items.
-            foreach (var document in documentMap.Values)
+            foreach (var tableDocumentMap in documentMap.Values)
             {
-                document.CommitChanges();
+                foreach (var document in tableDocumentMap.Values)
+                {
+                    document.CommitChanges();
+                }
             }
         }
 
@@ -492,6 +504,10 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
             foreach (var batch in batches)
             {
+                string tableName = batch.TargetTable.TableName;
+                if (result.ContainsKey(tableName))
+                    throw new AmazonDynamoDBException("More than one batch request against a single table is not supported.");
+
                 List<WriteRequestDocument> writeRequests = new List<WriteRequestDocument>();
                 if (batch.ToDelete != null)
                 {
@@ -502,8 +518,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                             {
                                 DeleteRequest = new DeleteRequest { Key = toDelete }
                             }
-                        }
-                        );
+                        });
                 }
                 if (batch.ToPut != null)
                 {
@@ -521,8 +536,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 if (writeRequests.Count > 0)
                 {
                     QuickList<WriteRequestDocument> qlWriteRequests = new QuickList<WriteRequestDocument>(writeRequests);
-                    result.Add(batch.TargetTable.TableName, qlWriteRequests);
-                    tableMap.Add(batch.TargetTable.TableName, batch.TargetTable);
+                    result.Add(tableName, qlWriteRequests);
+                    tableMap.Add(tableName, batch.TargetTable);
                 }
             }
 
@@ -594,15 +609,15 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 return true;
             }
 
-            if (x.Count!=y.Count)
+            if (x.Count != y.Count)
             {
                 return false;
             }
 
             foreach (var item in x)
             {
-                AttributeValue valueY=null;
-                if(y.TryGetValue(item.Key,out valueY))
+                AttributeValue valueY = null;
+                if (y.TryGetValue(item.Key, out valueY))
                 {
                     if (!CompareAttributeValue(item.Value, valueY))
                     {

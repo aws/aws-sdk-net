@@ -25,7 +25,7 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the RestoreDBInstanceFromDBSnapshot operation.
-    /// <para> Creates a new DB Instance from a DB snapshot. The target database is created from the source database restore point with the same
+    /// <para> Creates a new DB instance from a DB snapshot. The target database is created from the source database restore point with the same
     /// configuration as the original source database, except that the new RDS instance is created with the default security group. </para>
     /// </summary>
     /// <seealso cref="Amazon.RDS.AmazonRDS.RestoreDBInstanceFromDBSnapshot"/>
@@ -45,9 +45,10 @@ namespace Amazon.RDS.Model
         private string engine;
         private int? iops;
         private string optionGroupName;
+        private List<Tag> tags = new List<Tag>();
 
         /// <summary>
-        /// The identifier for the DB Snapshot to restore from. Constraints: <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
+        /// The identifier for the DB snapshot to restore from. Constraints: <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li>
         /// <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
         ///  
         /// </summary>
@@ -62,6 +63,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="dBInstanceIdentifier">The value to set for the DBInstanceIdentifier property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RestoreDBInstanceFromDBSnapshotRequest WithDBInstanceIdentifier(string dBInstanceIdentifier)
         {
             this.dBInstanceIdentifier = dBInstanceIdentifier;
@@ -76,7 +78,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Name of the DB Instance to create from the DB Snapshot. This parameter isn't case sensitive. Constraints: <ul> <li>Must contain from 1 to
+        /// Name of the DB instance to create from the DB snapshot. This parameter isn't case sensitive. Constraints: <ul> <li>Must contain from 1 to
         /// 255 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two
         /// consecutive hyphens</li> </ul> Example: <c>my-snapshot-id</c>
         ///  
@@ -92,6 +94,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="dBSnapshotIdentifier">The value to set for the DBSnapshotIdentifier property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RestoreDBInstanceFromDBSnapshotRequest WithDBSnapshotIdentifier(string dBSnapshotIdentifier)
         {
             this.dBSnapshotIdentifier = dBSnapshotIdentifier;
@@ -121,6 +124,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="dBInstanceClass">The value to set for the DBInstanceClass property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RestoreDBInstanceFromDBSnapshotRequest WithDBInstanceClass(string dBInstanceClass)
         {
             this.dBInstanceClass = dBInstanceClass;
@@ -135,7 +139,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The port number on which the database accepts connections. Default: The same port as the original DB Instance Constraints: Value must be
+        /// The port number on which the database accepts connections. Default: The same port as the original DB instance Constraints: Value must be
         /// <c>1150-65535</c>
         ///  
         /// </summary>
@@ -150,6 +154,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="port">The value to set for the Port property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RestoreDBInstanceFromDBSnapshotRequest WithPort(int port)
         {
             this.port = port;
@@ -179,6 +184,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="availabilityZone">The value to set for the AvailabilityZone property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RestoreDBInstanceFromDBSnapshotRequest WithAvailabilityZone(string availabilityZone)
         {
             this.availabilityZone = availabilityZone;
@@ -193,7 +199,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The DB Subnet Group name to use for the new instance.
+        /// The DB subnet group name to use for the new instance.
         ///  
         /// </summary>
         public string DBSubnetGroupName
@@ -207,6 +213,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="dBSubnetGroupName">The value to set for the DBSubnetGroupName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RestoreDBInstanceFromDBSnapshotRequest WithDBSubnetGroupName(string dBSubnetGroupName)
         {
             this.dBSubnetGroupName = dBSubnetGroupName;
@@ -221,7 +228,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Specifies if the DB Instance is a Multi-AZ deployment. Constraint: You cannot specify the AvailabilityZone parameter if the MultiAZ
+        /// Specifies if the DB instance is a Multi-AZ deployment. Constraint: You cannot specify the AvailabilityZone parameter if the MultiAZ
         /// parameter is set to <c>true</c>.
         ///  
         /// </summary>
@@ -236,6 +243,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="multiAZ">The value to set for the MultiAZ property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RestoreDBInstanceFromDBSnapshotRequest WithMultiAZ(bool multiAZ)
         {
             this.multiAZ = multiAZ;
@@ -250,7 +258,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Specifies the accessibility options for the DB Instance. A value of true specifies an Internet-facing instance with a publicly resolvable
+        /// Specifies the accessibility options for the DB instance. A value of true specifies an Internet-facing instance with a publicly resolvable
         /// DNS name, which resolves to a public IP address. A value of false specifies an internal instance with a DNS name that resolves to a private
         /// IP address. Default: The default behavior varies depending on whether a VPC has been requested or not. The following list shows the default
         /// behavior in each case. <ul> <li><b>Default VPC:</b>true</li> <li><b>VPC:</b>false</li> </ul> If no DB subnet group has been specified as
@@ -269,6 +277,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="publiclyAccessible">The value to set for the PubliclyAccessible property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RestoreDBInstanceFromDBSnapshotRequest WithPubliclyAccessible(bool publiclyAccessible)
         {
             this.publiclyAccessible = publiclyAccessible;
@@ -283,7 +292,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Indicates that minor version upgrades will be applied automatically to the DB Instance during the maintenance window.
+        /// Indicates that minor version upgrades will be applied automatically to the DB instance during the maintenance window.
         ///  
         /// </summary>
         public bool AutoMinorVersionUpgrade
@@ -297,6 +306,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="autoMinorVersionUpgrade">The value to set for the AutoMinorVersionUpgrade property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RestoreDBInstanceFromDBSnapshotRequest WithAutoMinorVersionUpgrade(bool autoMinorVersionUpgrade)
         {
             this.autoMinorVersionUpgrade = autoMinorVersionUpgrade;
@@ -311,7 +321,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// License model information for the restored DB Instance. Default: Same as source. Valid values: <c>license-included</c> |
+        /// License model information for the restored DB instance. Default: Same as source. Valid values: <c>license-included</c> |
         /// <c>bring-your-own-license</c> | <c>general-public-license</c>
         ///  
         /// </summary>
@@ -326,6 +336,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="licenseModel">The value to set for the LicenseModel property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RestoreDBInstanceFromDBSnapshotRequest WithLicenseModel(string licenseModel)
         {
             this.licenseModel = licenseModel;
@@ -340,7 +351,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The database name for the restored DB Instance. <note> This parameter doesn't apply to the MySQL engine. </note>
+        /// The database name for the restored DB instance. <note> This parameter doesn't apply to the MySQL engine. </note>
         ///  
         /// </summary>
         public string DBName
@@ -354,6 +365,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="dBName">The value to set for the DBName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RestoreDBInstanceFromDBSnapshotRequest WithDBName(string dBName)
         {
             this.dBName = dBName;
@@ -383,6 +395,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="engine">The value to set for the Engine property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RestoreDBInstanceFromDBSnapshotRequest WithEngine(string engine)
         {
             this.engine = engine;
@@ -397,8 +410,10 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for the DB Instance. Constraints: Must be an
-        /// integer greater than 1000.
+        /// Specifies the amount of provisioned IOPS for the DB instance, expressed in I/O operations per second. If this parameter is not specified,
+        /// the IOPS value will be taken from the backup. If this parameter is set to 0, the new instance will be converted to a non-PIOPS instance,
+        /// which will take additional time, though your DB instance will be available for connections before the conversion starts. Constraints: Must
+        /// be an integer greater than 1000.
         ///  
         /// </summary>
         public int Iops
@@ -412,6 +427,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="iops">The value to set for the Iops property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RestoreDBInstanceFromDBSnapshotRequest WithIops(int iops)
         {
             this.iops = iops;
@@ -426,7 +442,10 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The name of the option group to be used for the restored DB instance.
+        /// The name of the option group to be used for the restored DB instance. <!-- Note that persistent options, such as the TDE_SQLServer option
+        /// for Microsoft SQL Server, cannot be removed from an option group while DB instances are associated with the option group. --> Permanent
+        /// options, such as the TDE option for Oracle Advanced Security TDE, cannot be removed from an option group, and that option group cannot be
+        /// removed from a DB instance once it is associated with a DB instance
         ///  
         /// </summary>
         public string OptionGroupName
@@ -440,6 +459,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="optionGroupName">The value to set for the OptionGroupName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RestoreDBInstanceFromDBSnapshotRequest WithOptionGroupName(string optionGroupName)
         {
             this.optionGroupName = optionGroupName;
@@ -451,6 +471,53 @@ namespace Amazon.RDS.Model
         internal bool IsSetOptionGroupName()
         {
             return this.optionGroupName != null;
+        }
+
+        /// <summary>
+        /// A list of tags.
+        ///  
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this.tags; }
+            set { this.tags = value; }
+        }
+        /// <summary>
+        /// Adds elements to the Tags collection
+        /// </summary>
+        /// <param name="tags">The values to add to the Tags collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public RestoreDBInstanceFromDBSnapshotRequest WithTags(params Tag[] tags)
+        {
+            foreach (Tag element in tags)
+            {
+                this.tags.Add(element);
+            }
+
+            return this;
+        }
+
+        /// <summary>
+        /// Adds elements to the Tags collection
+        /// </summary>
+        /// <param name="tags">The values to add to the Tags collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public RestoreDBInstanceFromDBSnapshotRequest WithTags(IEnumerable<Tag> tags)
+        {
+            foreach (Tag element in tags)
+            {
+                this.tags.Add(element);
+            }
+
+            return this;
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this.tags.Count > 0;
         }
     }
 }

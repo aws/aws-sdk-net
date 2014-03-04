@@ -34,14 +34,14 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         public DetachLoadBalancerFromSubnetsResult DetachLoadBalancerFromSubnetsResult
         {
-            get 
+            get
             {
                 if(this.detachLoadBalancerFromSubnetsResult == null)
                 {
                     this.detachLoadBalancerFromSubnetsResult = new DetachLoadBalancerFromSubnetsResult();
                 }
 
-                return this.detachLoadBalancerFromSubnetsResult; 
+                return this.detachLoadBalancerFromSubnetsResult;
             }
             set { this.detachLoadBalancerFromSubnetsResult = value; }
         }

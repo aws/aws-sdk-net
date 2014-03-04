@@ -25,11 +25,11 @@ namespace Amazon.AWSSupport.Model
 {
     /// <summary>
     /// Container for the parameters to the AddCommunicationToCase operation.
-    /// <para>This action adds additional customer communication to an AWS Support case. You use the <i>CaseId</i> value to identify the case to
-    /// which you want to add communication. You can list a set of email addresses to copy on the communication using the <i>CcEmailAddresses</i>
-    /// value. The <i>CommunicationBody</i> value contains the text of the communication.</para> <para>This action's response indicates the success
-    /// or failure of the request.</para> <para>This action implements a subset of the behavior on the AWS Support Your Support Cases web
-    /// form.</para>
+    /// <para>Adds additional customer communication to an AWS Support case. You use the <c>CaseId</c> value to identify the case to add
+    /// communication to. You can list a set of email addresses to copy on the communication using the <c>CcEmailAddresses</c> value. The
+    /// <c>CommunicationBody</c> value contains the text of the communication.</para> <para>The response indicates the success or failure of the
+    /// request.</para> <para>This operation implements a subset of the behavior on the AWS Support <a href="https://aws.amazon.com/support" >Your
+    /// Support Cases</a> web form.</para>
     /// </summary>
     /// <seealso cref="Amazon.AWSSupport.AmazonAWSSupport.AddCommunicationToCase"/>
     public class AddCommunicationToCaseRequest : AmazonWebServiceRequest
@@ -39,8 +39,8 @@ namespace Amazon.AWSSupport.Model
         private List<string> ccEmailAddresses = new List<string>();
 
         /// <summary>
-        /// String that indicates the AWS Support caseID requested or returned in the call. The caseID is an alphanumeric string formatted as shown in
-        /// this example CaseId: <i>case-12345678910-2013-c4c1d2bf33c5cf47</i>
+        /// The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example:
+        /// case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
         ///  
         /// </summary>
         public string CaseId
@@ -54,6 +54,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="caseId">The value to set for the CaseId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AddCommunicationToCaseRequest WithCaseId(string caseId)
         {
             this.caseId = caseId;
@@ -68,7 +69,7 @@ namespace Amazon.AWSSupport.Model
         }
 
         /// <summary>
-        /// Represents the body of an email communication added to the support case.
+        /// The body of an email communication to add to the support case.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -91,6 +92,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="communicationBody">The value to set for the CommunicationBody property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AddCommunicationToCaseRequest WithCommunicationBody(string communicationBody)
         {
             this.communicationBody = communicationBody;
@@ -105,7 +107,7 @@ namespace Amazon.AWSSupport.Model
         }
 
         /// <summary>
-        /// Represents any email addresses contained in the CC line of an email added to the support case.
+        /// The email addresses in the CC line of an email to be added to the support case.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -127,6 +129,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="ccEmailAddresses">The values to add to the CcEmailAddresses collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AddCommunicationToCaseRequest WithCcEmailAddresses(params string[] ccEmailAddresses)
         {
             foreach (string element in ccEmailAddresses)
@@ -142,6 +145,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="ccEmailAddresses">The values to add to the CcEmailAddresses collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AddCommunicationToCaseRequest WithCcEmailAddresses(IEnumerable<string> ccEmailAddresses)
         {
             foreach (string element in ccEmailAddresses)

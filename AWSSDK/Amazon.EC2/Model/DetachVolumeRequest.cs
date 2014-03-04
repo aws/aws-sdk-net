@@ -41,7 +41,7 @@ namespace Amazon.EC2.Model
     /// in lost data and will corrupt the file system.
     /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
-    public class DetachVolumeRequest
+    public class DetachVolumeRequest : EC2Request
     {    
         private string volumeIdField;
         private string instanceIdField;
@@ -63,6 +63,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="volumeId">The ID of the volume.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DetachVolumeRequest WithVolumeId(string volumeId)
         {
             this.volumeIdField = volumeId;
@@ -93,6 +94,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="instanceId">The ID of the instance.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DetachVolumeRequest WithInstanceId(string instanceId)
         {
             this.instanceIdField = instanceId;
@@ -123,6 +125,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="device">The device name.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DetachVolumeRequest WithDevice(string device)
         {
             this.deviceField = device;
@@ -175,6 +178,7 @@ namespace Amazon.EC2.Model
         /// system meta data. If you use this option, you
         /// must perform file system check and repair procedures.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DetachVolumeRequest WithForce(bool force)
         {
             this.forceField = force;

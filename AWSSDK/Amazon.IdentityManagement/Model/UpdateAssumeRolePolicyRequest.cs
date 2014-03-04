@@ -25,7 +25,9 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateAssumeRolePolicy operation.
-    /// <para>Updates the policy governing how the given role can be assumed.</para>
+    /// <para>Updates the policy that grants an entity permission to assume a role. Currently, only an Amazon EC2 instance can assume a role. For
+    /// more information about roles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html" >Working with Roles</a>
+    /// .</para>
     /// </summary>
     /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.UpdateAssumeRolePolicy"/>
     public class UpdateAssumeRolePolicyRequest : AmazonWebServiceRequest
@@ -61,6 +63,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="roleName">The value to set for the RoleName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateAssumeRolePolicyRequest WithRoleName(string roleName)
         {
             this.roleName = roleName;
@@ -71,11 +74,11 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if RoleName property is set
         internal bool IsSetRoleName()
         {
-            return this.roleName != null;       
+            return this.roleName != null;
         }
 
         /// <summary>
-        /// The policy govering by who and under what conditions the role can be assumed.
+        /// The policy that grants an entity permission to assume the role.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -102,6 +105,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="policyDocument">The value to set for the PolicyDocument property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateAssumeRolePolicyRequest WithPolicyDocument(string policyDocument)
         {
             this.policyDocument = policyDocument;
@@ -112,7 +116,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if PolicyDocument property is set
         internal bool IsSetPolicyDocument()
         {
-            return this.policyDocument != null;       
+            return this.policyDocument != null;
         }
     }
 }

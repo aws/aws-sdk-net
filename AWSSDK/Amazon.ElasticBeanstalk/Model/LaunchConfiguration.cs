@@ -23,7 +23,7 @@ namespace Amazon.ElasticBeanstalk.Model
     /// <summary>
     /// <para>Describes an Auto Scaling launch configuration.</para>
     /// </summary>
-    public class LaunchConfiguration  
+    public partial class LaunchConfiguration
     {
         
         private string name;
@@ -43,6 +43,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="name">The value to set for the Name property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LaunchConfiguration WithName(string name)
         {
             this.name = name;
@@ -53,7 +54,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if Name property is set
         internal bool IsSetName()
         {
-            return this.name != null;       
+            return this.name != null;
         }
     }
 }

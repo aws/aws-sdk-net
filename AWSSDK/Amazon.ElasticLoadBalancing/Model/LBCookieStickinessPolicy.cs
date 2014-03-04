@@ -23,7 +23,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// <summary>
     /// <para>The LBCookieStickinessPolicy data type. </para>
     /// </summary>
-    public class LBCookieStickinessPolicy  
+    public partial class LBCookieStickinessPolicy
     {
         
         private string policyName;
@@ -40,11 +40,11 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// initialize any additional object members.
         /// </summary>
         /// 
-        /// <param name="policyName"> The name for the policy being created. The name must be unique within the set of policies for this LoadBalancer.
+        /// <param name="policyName"> The name for the policy being created. The name must be unique within the set of policies for this load balancer.
         /// </param>
         /// <param name="cookieExpirationPeriod"> The time period in seconds after which the cookie should be considered stale. Not specifying this
         /// parameter indicates that the stickiness session will last for the duration of the browser session. </param>
-        public LBCookieStickinessPolicy(string policyName, long cookieExpirationPeriod) 
+        public LBCookieStickinessPolicy(string policyName, long cookieExpirationPeriod)
         {
             this.policyName = policyName;
             this.cookieExpirationPeriod = cookieExpirationPeriod;
@@ -52,7 +52,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     
 
         /// <summary>
-        /// The name for the policy being created. The name must be unique within the set of policies for this LoadBalancer.
+        /// The name for the policy being created. The name must be unique within the set of policies for this load balancer.
         ///  
         /// </summary>
         public string PolicyName
@@ -66,6 +66,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="policyName">The value to set for the PolicyName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LBCookieStickinessPolicy WithPolicyName(string policyName)
         {
             this.policyName = policyName;
@@ -76,7 +77,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if PolicyName property is set
         internal bool IsSetPolicyName()
         {
-            return this.policyName != null;       
+            return this.policyName != null;
         }
 
         /// <summary>
@@ -95,6 +96,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="cookieExpirationPeriod">The value to set for the CookieExpirationPeriod property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LBCookieStickinessPolicy WithCookieExpirationPeriod(long cookieExpirationPeriod)
         {
             this.cookieExpirationPeriod = cookieExpirationPeriod;
@@ -105,7 +107,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if CookieExpirationPeriod property is set
         internal bool IsSetCookieExpirationPeriod()
         {
-            return this.cookieExpirationPeriod.HasValue;       
+            return this.cookieExpirationPeriod.HasValue;
         }
     }
 }

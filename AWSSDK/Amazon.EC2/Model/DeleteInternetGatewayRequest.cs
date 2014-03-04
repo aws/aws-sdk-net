@@ -30,7 +30,7 @@ namespace Amazon.EC2.Model
     /// more information about your VPC and Internet gateway, go to Amazon Virtual Private Cloud User Guide.
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
-    public class DeleteInternetGatewayRequest
+    public class DeleteInternetGatewayRequest : EC2Request
     {    
         private string internetGatewayIdField;
 
@@ -49,6 +49,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="internetGatewayId">The ID of the Internet gateway to be deleted.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeleteInternetGatewayRequest WithInternetGatewayId(string internetGatewayId)
         {
             this.internetGatewayIdField = internetGatewayId;

@@ -22,13 +22,14 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
      /// <summary>
      ///   RetrieveEnvironmentInfoResult Unmarshaller
      /// </summary>
-    internal class RetrieveEnvironmentInfoResultUnmarshaller : IUnmarshaller<RetrieveEnvironmentInfoResult, XmlUnmarshallerContext> 
+    internal class RetrieveEnvironmentInfoResultUnmarshaller : IUnmarshaller<RetrieveEnvironmentInfoResult, XmlUnmarshallerContext>, IUnmarshaller<RetrieveEnvironmentInfoResult, JsonUnmarshallerContext> 
     {
         public RetrieveEnvironmentInfoResult Unmarshall(XmlUnmarshallerContext context) 
         {
             RetrieveEnvironmentInfoResult retrieveEnvironmentInfoResult = new RetrieveEnvironmentInfoResult();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -52,6 +53,11 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
 
 
             return retrieveEnvironmentInfoResult;
+        }
+
+        public RetrieveEnvironmentInfoResult Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static RetrieveEnvironmentInfoResultUnmarshaller instance;

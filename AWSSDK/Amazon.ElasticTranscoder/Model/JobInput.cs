@@ -23,7 +23,7 @@ namespace Amazon.ElasticTranscoder.Model
     /// <summary>
     /// <para>Information about the file that you're transcoding.</para>
     /// </summary>
-    public class JobInput
+    public partial class JobInput
     {
         
         private string key;
@@ -60,6 +60,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="key">The value to set for the Key property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public JobInput WithKey(string key)
         {
             this.key = key;
@@ -84,7 +85,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// <list type="definition">
         ///     <item>
         ///         <term>Pattern</term>
-        ///         <description>(^auto$)|(^10$)|(^15$)|(^23.97$)|(^24$)|(^25$)|(^29.97$)|(^30$)|(^60$)</description>
+        ///         <description>(^auto$)|(^10$)|(^15$)|(^23.97$)|(^24$)|(^25$)|(^29.97$)|(^30$)|(^50$)|(^60$)</description>
         ///     </item>
         /// </list>
         /// </para>
@@ -100,6 +101,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="frameRate">The value to set for the FrameRate property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public JobInput WithFrameRate(string frameRate)
         {
             this.frameRate = frameRate;
@@ -137,6 +139,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="resolution">The value to set for the Resolution property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public JobInput WithResolution(string resolution)
         {
             this.resolution = resolution;
@@ -176,6 +179,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="aspectRatio">The value to set for the AspectRatio property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public JobInput WithAspectRatio(string aspectRatio)
         {
             this.aspectRatio = aspectRatio;
@@ -215,6 +219,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="interlaced">The value to set for the Interlaced property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public JobInput WithInterlaced(string interlaced)
         {
             this.interlaced = interlaced;
@@ -230,16 +235,16 @@ namespace Amazon.ElasticTranscoder.Model
 
         /// <summary>
         /// The container type for the input file. If you want Elastic Transcoder to automatically detect the container type of the input file, specify
-        /// <c>auto</c>. If you want to specify the container type for the input file, enter one of the following values: <c>3gp</c>, <c>asf</c>,
-        /// <c>avi</c>, <c>divx</c>, <c>flv</c>, <c>mkv</c>, <c>mov</c>, <c>mp4</c>, <c>mpeg</c>, <c>mpeg-ps</c>, <c>mpeg-ts</c>, <c>mxf</c>,
-        /// <c>ogg</c>, <c>vob</c>, <c>wav</c>, <c>webm</c>
+        /// <c>auto</c>. If you want to specify the container type for the input file, enter one of the following values: <c>3gp</c>, <c>aac</c>,
+        /// <c>asf</c>, <c>avi</c>, <c>divx</c>, <c>flv</c>, <c>m4a</c>, <c>mkv</c>, <c>mov</c>, <c>mp3</c>, <c>mp4</c>, <c>mpeg</c>, <c>mpeg-ps</c>,
+        /// <c>mpeg-ts</c>, <c>mxf</c>, <c>ogg</c>, <c>vob</c>, <c>wav</c>, <c>webm</c>
         ///  
         /// <para>
         /// <b>Constraints:</b>
         /// <list type="definition">
         ///     <item>
         ///         <term>Pattern</term>
-        ///         <description>(^auto$)|(^3gp$)|(^asf$)|(^avi$)|(^divx$)|(^flv$)|(^mkv$)|(^mov$)|(^mp4$)|(^mpeg$)|(^mpeg-ps$)|(^mpeg-ts$)|(^mxf$)|(^ogg$)|(^ts$)|(^vob$)|(^wav$)|(^webm$)</description>
+        ///         <description>(^auto$)|(^3gp$)|(^asf$)|(^avi$)|(^divx$)|(^flv$)|(^mkv$)|(^mov$)|(^mp4$)|(^mpeg$)|(^mpeg-ps$)|(^mpeg-ts$)|(^mxf$)|(^ogg$)|(^ts$)|(^vob$)|(^wav$)|(^webm$)|(^mp3$)|(^m4a$)|(^aac$)</description>
         ///     </item>
         /// </list>
         /// </para>
@@ -255,6 +260,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="container">The value to set for the Container property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public JobInput WithContainer(string container)
         {
             this.container = container;

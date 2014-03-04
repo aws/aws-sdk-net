@@ -21,9 +21,9 @@ using System.IO;
 namespace Amazon.AWSSupport.Model
 {
     /// <summary>
-    /// <para>Contains the fields that indicate the statuses Trusted Advisor checks for which refreshes have been requested. </para>
+    /// <para>The refresh status of a Trusted Advisor check. </para>
     /// </summary>
-    public class TrustedAdvisorCheckRefreshStatus
+    public partial class TrustedAdvisorCheckRefreshStatus
     {
         
         private string checkId;
@@ -31,7 +31,7 @@ namespace Amazon.AWSSupport.Model
         private long? millisUntilNextRefreshable;
 
         /// <summary>
-        /// String that specifies the <i>checkId</i> value of the Trusted Advisor check.
+        /// The unique identifier for the Trusted Advisor check.
         ///  
         /// </summary>
         public string CheckId
@@ -45,6 +45,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="checkId">The value to set for the CheckId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TrustedAdvisorCheckRefreshStatus WithCheckId(string checkId)
         {
             this.checkId = checkId;
@@ -59,7 +60,7 @@ namespace Amazon.AWSSupport.Model
         }
 
         /// <summary>
-        /// Indicates the status of the Trusted Advisor check for which a refresh has been requested.
+        /// The status of the Trusted Advisor check for which a refresh has been requested: "none", "enqueued", "processing", "success", or "abandoned".
         ///  
         /// </summary>
         public string Status
@@ -73,6 +74,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="status">The value to set for the Status property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TrustedAdvisorCheckRefreshStatus WithStatus(string status)
         {
             this.status = status;
@@ -87,8 +89,7 @@ namespace Amazon.AWSSupport.Model
         }
 
         /// <summary>
-        /// Indicates the time in milliseconds until a call to <a href="API_RefreshTrustedAdvisorCheck.html"
-        /// title="RefreshTrustedAdvisorCheck">RefreshTrustedAdvisorCheck</a> can trigger a refresh.
+        /// The amount of time, in milliseconds, until the Trusted Advisor check is eligible for refresh.
         ///  
         /// </summary>
         public long MillisUntilNextRefreshable
@@ -102,6 +103,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="millisUntilNextRefreshable">The value to set for the MillisUntilNextRefreshable property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TrustedAdvisorCheckRefreshStatus WithMillisUntilNextRefreshable(long millisUntilNextRefreshable)
         {
             this.millisUntilNextRefreshable = millisUntilNextRefreshable;

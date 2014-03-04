@@ -34,7 +34,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(createDBInstanceReadReplicaRequest, "AmazonRDS");
             request.Parameters.Add("Action", "CreateDBInstanceReadReplica");
-            request.Parameters.Add("Version", "2013-02-12");
+            request.Parameters.Add("Version", "2013-09-09");
             if (createDBInstanceReadReplicaRequest != null && createDBInstanceReadReplicaRequest.IsSetDBInstanceIdentifier())
             {
                 request.Parameters.Add("DBInstanceIdentifier", StringUtils.FromString(createDBInstanceReadReplicaRequest.DBInstanceIdentifier));
@@ -70,6 +70,29 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             if (createDBInstanceReadReplicaRequest != null && createDBInstanceReadReplicaRequest.IsSetPubliclyAccessible())
             {
                 request.Parameters.Add("PubliclyAccessible", StringUtils.FromBool(createDBInstanceReadReplicaRequest.PubliclyAccessible));
+            }
+
+            if (createDBInstanceReadReplicaRequest != null)
+            {
+                List<Tag> tagsList = createDBInstanceReadReplicaRequest.Tags;
+                int tagsListIndex = 1;
+                foreach (Tag tagsListValue in tagsList)
+                {
+                    if (tagsListValue != null && tagsListValue.IsSetKey())
+                    {
+                        request.Parameters.Add("Tags.member." + tagsListIndex + ".Key", StringUtils.FromString(tagsListValue.Key));
+                    }
+                    if (tagsListValue != null && tagsListValue.IsSetValue())
+                    {
+                        request.Parameters.Add("Tags.member." + tagsListIndex + ".Value", StringUtils.FromString(tagsListValue.Value));
+                    }
+
+                    tagsListIndex++;
+                }
+            }
+            if (createDBInstanceReadReplicaRequest != null && createDBInstanceReadReplicaRequest.IsSetDBSubnetGroupName())
+            {
+                request.Parameters.Add("DBSubnetGroupName", StringUtils.FromString(createDBInstanceReadReplicaRequest.DBSubnetGroupName));
             }
 
             return request;

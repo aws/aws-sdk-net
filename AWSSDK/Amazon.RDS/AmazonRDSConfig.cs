@@ -29,8 +29,8 @@ namespace Amazon.RDS
         /// </summary>
         public AmazonRDSConfig()
         {
-            this.ServiceURL = "https://rds.amazonaws.com";
-            
+            this.ServiceURL = "https://rds.amazonaws.com/";
+            this.AuthenticationServiceName = "rds";
         }
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Amazon.RDS
         {
             get
             {
-                return "2013-02-12";
+                return "2013-09-09";
             }
         }
     }

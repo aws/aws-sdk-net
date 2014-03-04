@@ -34,14 +34,14 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         public DeleteLoadBalancerListenersResult DeleteLoadBalancerListenersResult
         {
-            get 
+            get
             {
                 if(this.deleteLoadBalancerListenersResult == null)
                 {
                     this.deleteLoadBalancerListenersResult = new DeleteLoadBalancerListenersResult();
                 }
 
-                return this.deleteLoadBalancerListenersResult; 
+                return this.deleteLoadBalancerListenersResult;
             }
             set { this.deleteLoadBalancerListenersResult = value; }
         }

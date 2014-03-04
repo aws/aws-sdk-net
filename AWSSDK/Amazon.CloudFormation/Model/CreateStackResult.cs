@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ namespace Amazon.CloudFormation.Model
     /// <summary>
     /// <para>The output for a CreateStack action.</para>
     /// </summary>
-    public class CreateStackResult
+    public partial class CreateStackResult
     {
         
         private string stackId;
@@ -43,6 +43,7 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         /// <param name="stackId">The value to set for the StackId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateStackResult WithStackId(string stackId)
         {
             this.stackId = stackId;

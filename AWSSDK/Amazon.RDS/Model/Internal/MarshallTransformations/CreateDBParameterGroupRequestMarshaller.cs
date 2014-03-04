@@ -34,7 +34,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(createDBParameterGroupRequest, "AmazonRDS");
             request.Parameters.Add("Action", "CreateDBParameterGroup");
-            request.Parameters.Add("Version", "2013-02-12");
+            request.Parameters.Add("Version", "2013-09-09");
             if (createDBParameterGroupRequest != null && createDBParameterGroupRequest.IsSetDBParameterGroupName())
             {
                 request.Parameters.Add("DBParameterGroupName", StringUtils.FromString(createDBParameterGroupRequest.DBParameterGroupName));
@@ -46,6 +46,25 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             if (createDBParameterGroupRequest != null && createDBParameterGroupRequest.IsSetDescription())
             {
                 request.Parameters.Add("Description", StringUtils.FromString(createDBParameterGroupRequest.Description));
+            }
+
+            if (createDBParameterGroupRequest != null)
+            {
+                List<Tag> tagsList = createDBParameterGroupRequest.Tags;
+                int tagsListIndex = 1;
+                foreach (Tag tagsListValue in tagsList)
+                {
+                    if (tagsListValue != null && tagsListValue.IsSetKey())
+                    {
+                        request.Parameters.Add("Tags.member." + tagsListIndex + ".Key", StringUtils.FromString(tagsListValue.Key));
+                    }
+                    if (tagsListValue != null && tagsListValue.IsSetValue())
+                    {
+                        request.Parameters.Add("Tags.member." + tagsListIndex + ".Value", StringUtils.FromString(tagsListValue.Value));
+                    }
+
+                    tagsListIndex++;
+                }
             }
 
             return request;

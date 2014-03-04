@@ -21,15 +21,15 @@ using System.IO;
 namespace Amazon.DirectConnect.Model
 {
     /// <summary>
-    /// <para> A structure containing a list of virtual gateways. </para>
+    /// <para>A structure containing a list of virtual private gateways.</para>
     /// </summary>
-    public class DescribeVirtualGatewaysResult  
+    public class DescribeVirtualGatewaysResult
     {
         
         private List<VirtualGateway> virtualGateways = new List<VirtualGateway>();
 
         /// <summary>
-        /// A list of virtual gateways.
+        /// A list of virtual private gateways.
         ///  
         /// </summary>
         public List<VirtualGateway> VirtualGateways
@@ -42,6 +42,7 @@ namespace Amazon.DirectConnect.Model
         /// </summary>
         /// <param name="virtualGateways">The values to add to the VirtualGateways collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeVirtualGatewaysResult WithVirtualGateways(params VirtualGateway[] virtualGateways)
         {
             foreach (VirtualGateway element in virtualGateways)
@@ -51,12 +52,13 @@ namespace Amazon.DirectConnect.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the VirtualGateways collection
         /// </summary>
         /// <param name="virtualGateways">The values to add to the VirtualGateways collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeVirtualGatewaysResult WithVirtualGateways(IEnumerable<VirtualGateway> virtualGateways)
         {
             foreach (VirtualGateway element in virtualGateways)
@@ -70,7 +72,7 @@ namespace Amazon.DirectConnect.Model
         // Check to see if VirtualGateways property is set
         internal bool IsSetVirtualGateways()
         {
-            return this.virtualGateways.Count > 0;       
+            return this.virtualGateways.Count > 0;
         }
     }
 }

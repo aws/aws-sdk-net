@@ -63,6 +63,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="userName">The value to set for the UserName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ResyncMFADeviceRequest WithUserName(string userName)
         {
             this.userName = userName;
@@ -104,6 +105,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="serialNumber">The value to set for the SerialNumber property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ResyncMFADeviceRequest WithSerialNumber(string serialNumber)
         {
             this.serialNumber = serialNumber;
@@ -145,6 +147,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="authenticationCode1">The value to set for the AuthenticationCode1 property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ResyncMFADeviceRequest WithAuthenticationCode1(string authenticationCode1)
         {
             this.authenticationCode1 = authenticationCode1;
@@ -186,6 +189,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="authenticationCode2">The value to set for the AuthenticationCode2 property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ResyncMFADeviceRequest WithAuthenticationCode2(string authenticationCode2)
         {
             this.authenticationCode2 = authenticationCode2;

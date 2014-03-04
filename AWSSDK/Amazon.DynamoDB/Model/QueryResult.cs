@@ -39,6 +39,7 @@ namespace Amazon.DynamoDB.Model
         /// </summary>
         /// <param name="items">The values to add to the Items collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public QueryResult WithItems(params Dictionary<string,AttributeValue>[] items)
         {
             foreach (Dictionary<string,AttributeValue> element in items)
@@ -54,6 +55,7 @@ namespace Amazon.DynamoDB.Model
         /// </summary>
         /// <param name="items">The values to add to the Items collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public QueryResult WithItems(IEnumerable<Dictionary<string,AttributeValue>> items)
         {
             foreach (Dictionary<string,AttributeValue> element in items)
@@ -85,6 +87,7 @@ namespace Amazon.DynamoDB.Model
         /// </summary>
         /// <param name="count">The value to set for the Count property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public QueryResult WithCount(int count)
         {
             this.count = count;
@@ -115,6 +118,7 @@ namespace Amazon.DynamoDB.Model
         /// </summary>
         /// <param name="lastEvaluatedKey">The value to set for the LastEvaluatedKey property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public QueryResult WithLastEvaluatedKey(Key lastEvaluatedKey)
         {
             this.lastEvaluatedKey = lastEvaluatedKey;
@@ -145,6 +149,7 @@ namespace Amazon.DynamoDB.Model
         /// </summary>
         /// <param name="consumedCapacityUnits">The value to set for the ConsumedCapacityUnits property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public QueryResult WithConsumedCapacityUnits(double consumedCapacityUnits)
         {
             this.consumedCapacityUnits = consumedCapacityUnits;

@@ -32,6 +32,8 @@
 
         public ListJobsByStatusResult Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             ListJobsByStatusResult listJobsByStatusResult = new ListJobsByStatusResult();
           listJobsByStatusResult.Jobs = null;
                         
@@ -46,8 +48,14 @@
               
               if (context.TestExpression("Jobs", targetDepth))
               {
-                listJobsByStatusResult.Jobs = new List<Job>();
-                        JobUnmarshaller unmarshaller = JobUnmarshaller.GetInstance();
+                
+                  if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                  {
+                      listJobsByStatusResult.Jobs = null;
+                      continue;
+                  }              
+                  listJobsByStatusResult.Jobs = new List<Job>();
+                  JobUnmarshaller unmarshaller = JobUnmarshaller.GetInstance();
                 while (context.Read())
                 {
                   if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))

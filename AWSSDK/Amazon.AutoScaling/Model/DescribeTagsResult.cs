@@ -23,7 +23,7 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// <para> </para>
     /// </summary>
-    public class DescribeTagsResult  
+    public partial class DescribeTagsResult
     {
         
         private List<TagDescription> tags = new List<TagDescription>();
@@ -43,6 +43,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="tags">The values to add to the Tags collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeTagsResult WithTags(params TagDescription[] tags)
         {
             foreach (TagDescription element in tags)
@@ -52,12 +53,13 @@ namespace Amazon.AutoScaling.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Tags collection
         /// </summary>
         /// <param name="tags">The values to add to the Tags collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeTagsResult WithTags(IEnumerable<TagDescription> tags)
         {
             foreach (TagDescription element in tags)
@@ -71,7 +73,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this.tags.Count > 0;       
+            return this.tags.Count > 0;
         }
 
         /// <summary>
@@ -98,6 +100,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="nextToken">The value to set for the NextToken property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeTagsResult WithNextToken(string nextToken)
         {
             this.nextToken = nextToken;
@@ -108,7 +111,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if NextToken property is set
         internal bool IsSetNextToken()
         {
-            return this.nextToken != null;       
+            return this.nextToken != null;
         }
     }
 }

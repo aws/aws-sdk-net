@@ -23,7 +23,7 @@ namespace Amazon.Redshift.Model
     /// <summary>
     /// The results from the AuthorizeClusterSecurityGroupIngress action.
     /// </summary>
-    public class AuthorizeClusterSecurityGroupIngressResult
+    public partial class AuthorizeClusterSecurityGroupIngressResult
     {
         private ClusterSecurityGroup clusterSecurityGroupValue;
 

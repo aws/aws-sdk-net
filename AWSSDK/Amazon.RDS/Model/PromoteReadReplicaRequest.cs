@@ -25,7 +25,7 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the PromoteReadReplica operation.
-    /// <para> Promotes a Read Replica DB Instance to a standalone DB Instance. </para>
+    /// <para> Promotes a read replica DB instance to a standalone DB instance. </para>
     /// </summary>
     /// <seealso cref="Amazon.RDS.AmazonRDS.PromoteReadReplica"/>
     public class PromoteReadReplicaRequest : AmazonWebServiceRequest
@@ -35,8 +35,8 @@ namespace Amazon.RDS.Model
         private string preferredBackupWindow;
 
         /// <summary>
-        /// The DB Instance identifier. This value is stored as a lowercase string. Constraints: <ul> <li>Must be the identifier for an existing Read
-        /// Replica DB Instance</li> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First character must be a letter</li>
+        /// The DB instance identifier. This value is stored as a lowercase string. Constraints: <ul> <li>Must be the identifier for an existing read
+        /// replica DB instance</li> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First character must be a letter</li>
         /// <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul> Example: <copy>mydbinstance</copy>
         ///  
         /// </summary>
@@ -51,6 +51,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="dBInstanceIdentifier">The value to set for the DBInstanceIdentifier property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PromoteReadReplicaRequest WithDBInstanceIdentifier(string dBInstanceIdentifier)
         {
             this.dBInstanceIdentifier = dBInstanceIdentifier;
@@ -80,6 +81,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="backupRetentionPeriod">The value to set for the BackupRetentionPeriod property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PromoteReadReplicaRequest WithBackupRetentionPeriod(int backupRetentionPeriod)
         {
             this.backupRetentionPeriod = backupRetentionPeriod;
@@ -95,12 +97,9 @@ namespace Amazon.RDS.Model
 
         /// <summary>
         /// The daily time range during which automated backups are created if automated backups are enabled, using the <c>BackupRetentionPeriod</c>
-        /// parameter. Default: A 30-minute window selected at random from an 8-hour block of time per region. The following list shows the time blocks
-        /// for each region from which the default backup windows are assigned. <ul> <li><b>US-East (Northern Virginia) Region:</b> 03:00-11:00 UTC</li>
-        /// <li><b>US-West (Northern California) Region:</b> 06:00-14:00 UTC</li> <li><b>EU (Ireland) Region:</b> 22:00-06:00 UTC</li> <li><b>Asia
-        /// Pacific (Singapore) Region:</b> 14:00-22:00 UTC</li> <li><b>Asia Pacific (Tokyo) Region: </b> 17:00-03:00 UTC</li> </ul> Constraints: Must
-        /// be in the format <c>hh24:mi-hh24:mi</c>. Times should be Universal Time Coordinated (UTC). Must not conflict with the preferred maintenance
-        /// window. Must be at least 30 minutes.
+        /// parameter. Default: A 30-minute window selected at random from an 8-hour block of time per region. See the Amazon RDS User Guide for the
+        /// time blocks for each region from which the default backup windows are assigned. Constraints: Must be in the format <c>hh24:mi-hh24:mi</c>.
+        /// Times should be Universal Time Coordinated (UTC). Must not conflict with the preferred maintenance window. Must be at least 30 minutes.
         ///  
         /// </summary>
         public string PreferredBackupWindow
@@ -114,6 +113,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="preferredBackupWindow">The value to set for the PreferredBackupWindow property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PromoteReadReplicaRequest WithPreferredBackupWindow(string preferredBackupWindow)
         {
             this.preferredBackupWindow = preferredBackupWindow;

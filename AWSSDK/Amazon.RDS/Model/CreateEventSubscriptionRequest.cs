@@ -45,6 +45,7 @@ namespace Amazon.RDS.Model
         private List<string> eventCategories = new List<string>();
         private List<string> sourceIds = new List<string>();
         private bool? enabled;
+        private List<Tag> tags = new List<Tag>();
 
         /// <summary>
         /// The name of the subscription. Constraints: The name must be less than 255 characters.
@@ -61,6 +62,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="subscriptionName">The value to set for the SubscriptionName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateEventSubscriptionRequest WithSubscriptionName(string subscriptionName)
         {
             this.subscriptionName = subscriptionName;
@@ -90,6 +92,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="snsTopicArn">The value to set for the SnsTopicArn property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateEventSubscriptionRequest WithSnsTopicArn(string snsTopicArn)
         {
             this.snsTopicArn = snsTopicArn;
@@ -120,6 +123,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="sourceType">The value to set for the SourceType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateEventSubscriptionRequest WithSourceType(string sourceType)
         {
             this.sourceType = sourceType;
@@ -149,6 +153,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="eventCategories">The values to add to the EventCategories collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateEventSubscriptionRequest WithEventCategories(params string[] eventCategories)
         {
             foreach (string element in eventCategories)
@@ -164,6 +169,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="eventCategories">The values to add to the EventCategories collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateEventSubscriptionRequest WithEventCategories(IEnumerable<string> eventCategories)
         {
             foreach (string element in eventCategories)
@@ -184,9 +190,9 @@ namespace Amazon.RDS.Model
         /// The list of identifiers of the event sources for which events will be returned. If not specified, then all sources are included in the
         /// response. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it cannot end with a hyphen or
         /// contain two consecutive hyphens. Constraints: <ul> <li>If SourceIds are supplied, SourceType must also be provided.</li> <li>If the source
-        /// type is a DB instance, then a DBInstanceIdentifier must be supplied.</li> <li>If the source type is a DB security group, a
-        /// DBSecurityGroupName must be supplied.</li> <li>If the source type is a DB parameter group, a DBParameterGroupName must be supplied.</li>
-        /// <li>If the source type is a DB Snapshot, a DBSnapshotIdentifier must be supplied.</li> </ul>
+        /// type is a DB instance, then a <c>DBInstanceIdentifier</c> must be supplied.</li> <li>If the source type is a DB security group, a
+        /// <c>DBSecurityGroupName</c> must be supplied.</li> <li>If the source type is a DB parameter group, a <c>DBParameterGroupName</c> must be
+        /// supplied.</li> <li>If the source type is a DB snapshot, a <c>DBSnapshotIdentifier</c> must be supplied.</li> </ul>
         ///  
         /// </summary>
         public List<string> SourceIds
@@ -199,6 +205,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="sourceIds">The values to add to the SourceIds collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateEventSubscriptionRequest WithSourceIds(params string[] sourceIds)
         {
             foreach (string element in sourceIds)
@@ -214,6 +221,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="sourceIds">The values to add to the SourceIds collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateEventSubscriptionRequest WithSourceIds(IEnumerable<string> sourceIds)
         {
             foreach (string element in sourceIds)
@@ -245,6 +253,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="enabled">The value to set for the Enabled property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateEventSubscriptionRequest WithEnabled(bool enabled)
         {
             this.enabled = enabled;
@@ -256,6 +265,53 @@ namespace Amazon.RDS.Model
         internal bool IsSetEnabled()
         {
             return this.enabled.HasValue;
+        }
+
+        /// <summary>
+        /// A list of tags.
+        ///  
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this.tags; }
+            set { this.tags = value; }
+        }
+        /// <summary>
+        /// Adds elements to the Tags collection
+        /// </summary>
+        /// <param name="tags">The values to add to the Tags collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public CreateEventSubscriptionRequest WithTags(params Tag[] tags)
+        {
+            foreach (Tag element in tags)
+            {
+                this.tags.Add(element);
+            }
+
+            return this;
+        }
+
+        /// <summary>
+        /// Adds elements to the Tags collection
+        /// </summary>
+        /// <param name="tags">The values to add to the Tags collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public CreateEventSubscriptionRequest WithTags(IEnumerable<Tag> tags)
+        {
+            foreach (Tag element in tags)
+            {
+                this.tags.Add(element);
+            }
+
+            return this;
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this.tags.Count > 0;
         }
     }
 }

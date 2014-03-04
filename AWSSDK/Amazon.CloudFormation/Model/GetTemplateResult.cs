@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,21 +23,22 @@ namespace Amazon.CloudFormation.Model
     /// <summary>
     /// <para>The output for GetTemplate action.</para>
     /// </summary>
-    public class GetTemplateResult
+    public partial class GetTemplateResult
     {
         
         private string templateBody;
 
         /// <summary>
-        /// Structure containing the template body. (For more information, go to the <a
-        /// href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/">AWS CloudFormation User Guide</a>.)
+        /// Structure containing the template body. (For more information, go to <a
+        /// href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a> in the AWS CloudFormation
+        /// User Guide.)
         ///  
         /// <para>
         /// <b>Constraints:</b>
         /// <list type="definition">
         ///     <item>
         ///         <term>Length</term>
-        ///         <description>1 - 51200</description>
+        ///         <description>1 - </description>
         ///     </item>
         /// </list>
         /// </para>
@@ -53,6 +54,7 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         /// <param name="templateBody">The value to set for the TemplateBody property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetTemplateResult WithTemplateBody(string templateBody)
         {
             this.templateBody = templateBody;

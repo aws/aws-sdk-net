@@ -23,7 +23,7 @@ namespace Amazon.Glacier.Model
     /// <summary>
     /// <para>Contains the Amazon Glacier response to your request.</para>
     /// </summary>
-    public class ListMultipartUploadsResult  
+    public partial class ListMultipartUploadsResult
     {
         
         private List<UploadListElement> uploadsList = new List<UploadListElement>();
@@ -43,6 +43,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="uploadsList">The values to add to the UploadsList collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListMultipartUploadsResult WithUploadsList(params UploadListElement[] uploadsList)
         {
             foreach (UploadListElement element in uploadsList)
@@ -52,12 +53,13 @@ namespace Amazon.Glacier.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the UploadsList collection
         /// </summary>
         /// <param name="uploadsList">The values to add to the UploadsList collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListMultipartUploadsResult WithUploadsList(IEnumerable<UploadListElement> uploadsList)
         {
             foreach (UploadListElement element in uploadsList)
@@ -71,7 +73,7 @@ namespace Amazon.Glacier.Model
         // Check to see if UploadsList property is set
         internal bool IsSetUploadsList()
         {
-            return this.uploadsList.Count > 0;       
+            return this.uploadsList.Count > 0;
         }
 
         /// <summary>
@@ -90,6 +92,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="marker">The value to set for the Marker property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListMultipartUploadsResult WithMarker(string marker)
         {
             this.marker = marker;
@@ -100,7 +103,7 @@ namespace Amazon.Glacier.Model
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;       
+            return this.marker != null;
         }
     }
 }

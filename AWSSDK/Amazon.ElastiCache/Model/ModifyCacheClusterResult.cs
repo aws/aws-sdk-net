@@ -23,7 +23,7 @@ namespace Amazon.ElastiCache.Model
     /// <summary>
     /// The results from the ModifyCacheCluster action.
     /// </summary>
-    public class ModifyCacheClusterResult
+    public partial class ModifyCacheClusterResult
     {
         private CacheCluster cacheClusterValue;
 

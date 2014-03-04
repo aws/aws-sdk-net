@@ -22,10 +22,12 @@ namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
     /// <para> This data type is used as a response element in the DescribeLoadBalancers action. For information about Elastic Load Balancing
-    /// security groups, go to Using Security Groups With Elastic Load Balancing in the <i>Elastic Load Balancing Developer Guide</i> .
+    /// security groups, go to <a
+    /// href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-security-features.html#using-elb-security-groups" >Using
+    /// Security Groups With Elastic Load Balancing</a> in the <i>Elastic Load Balancing Developer Guide</i> .
     /// </para>
     /// </summary>
-    public class SourceSecurityGroup  
+    public partial class SourceSecurityGroup
     {
         
         private string ownerAlias;
@@ -47,6 +49,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="ownerAlias">The value to set for the OwnerAlias property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SourceSecurityGroup WithOwnerAlias(string ownerAlias)
         {
             this.ownerAlias = ownerAlias;
@@ -57,7 +60,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if OwnerAlias property is set
         internal bool IsSetOwnerAlias()
         {
-            return this.ownerAlias != null;       
+            return this.ownerAlias != null;
         }
 
         /// <summary>
@@ -76,6 +79,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="groupName">The value to set for the GroupName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SourceSecurityGroup WithGroupName(string groupName)
         {
             this.groupName = groupName;
@@ -86,7 +90,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if GroupName property is set
         internal bool IsSetGroupName()
         {
-            return this.groupName != null;       
+            return this.groupName != null;
         }
     }
 }

@@ -56,7 +56,8 @@ namespace Amazon.EC2.Util
 
         private static int
             DEFAULT_RETRIES = 3,
-            MIN_PAUSE_MS = 250; 
+            MIN_PAUSE_MS = 250,
+            MAX_RETRIES = 10; 
 
         private static Dictionary<string, string> _cache = new Dictionary<string, string>();
 
@@ -94,6 +95,16 @@ namespace Amazon.EC2.Util
         }
 
         /// <summary>
+        /// The private hostname of the instance.
+        /// In cases where multiple network interfaces are present,
+        /// this refers to the eth0 device (the device for which the device number is 0).
+        /// </summary>
+        public static string Hostname
+        {
+            get { return GetData("hostname"); }
+        }
+
+        /// <summary>
         /// Notifies the instance that it should reboot in preparation for bundling. 
         /// Valid values: none | shutdown | bundle-pending.
         /// </summary>
@@ -116,6 +127,14 @@ namespace Amazon.EC2.Util
         public static string InstanceType
         {
             get { return FetchData("/instance-type"); }
+        }
+
+        /// <summary>
+        /// The ID of the kernel launched with this instance, if applicable.
+        /// </summary>
+        public static string KernelId
+        {
+            get { return GetData("kernel-id"); }
         }
 
         /// <summary>
@@ -359,9 +378,10 @@ namespace Amazon.EC2.Util
             }
         }
 
+        private static int timeoutMilliseconds = (int)TimeSpan.FromSeconds(1).TotalMilliseconds;
         private static List<string> GetItems(string path, int tries, bool slurp)
         {
-            if (tries == 0)
+            if (tries <= 0)
                 throw new Exception("Unable to contact EC2 metadata service");
 
             var items = new List<string>();
@@ -373,6 +393,7 @@ namespace Amazon.EC2.Util
                     request = WebRequest.Create(path) as HttpWebRequest;
                 else
                     request = WebRequest.Create(EC2_METADATA_ROOT + path) as HttpWebRequest;
+                request.Timeout = timeoutMilliseconds;
                
                 using (var response = request.GetResponse())
                 {
@@ -399,15 +420,19 @@ namespace Amazon.EC2.Util
                 var response = wex.Response as HttpWebResponse;
                 if (response != null && response.StatusCode == HttpStatusCode.NotFound)
                     return null;
-            }
-            catch
-            {
-                var pause = (int) (Math.Pow(2, DEFAULT_RETRIES - tries) * MIN_PAUSE_MS);
-                Thread.Sleep(pause < MIN_PAUSE_MS ? MIN_PAUSE_MS : pause);
+
+                PauseExponentially(tries);
                 return GetItems(path, tries - 1, slurp);
             }
 
             return items;
+        }
+
+        private static void PauseExponentially(int tries)
+        {
+            tries = Math.Min(tries, MAX_RETRIES);
+            var pause = (int)(Math.Pow(2, DEFAULT_RETRIES - tries) * MIN_PAUSE_MS);
+            Thread.Sleep(pause < MIN_PAUSE_MS ? MIN_PAUSE_MS : pause);
         }
     }
 

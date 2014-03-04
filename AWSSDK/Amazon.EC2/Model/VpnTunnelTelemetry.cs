@@ -52,6 +52,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="outsideIpAddress">The Internet-routable address of the virtual private gateway.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VpnTunnelTelemetry WithOutsideIpAddress(string outsideIpAddress)
         {
             this.outsideIpAddressField = outsideIpAddress;
@@ -82,6 +83,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="status">The status of the VPN tunnel.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VpnTunnelTelemetry WithStatus(string status)
         {
             this.statusField = status;
@@ -112,6 +114,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="lastStatusChange">The date and time of the last change in status.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VpnTunnelTelemetry WithLastStatusChange(string lastStatusChange)
         {
             this.lastStatusChangeField = lastStatusChange;
@@ -142,6 +145,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="statusMessage">The description of the error.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VpnTunnelTelemetry WithStatusMessage(string statusMessage)
         {
             this.statusMessageField = statusMessage;
@@ -172,6 +176,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="acceptedRouteCount">The number of accepted routes.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VpnTunnelTelemetry WithAcceptedRouteCount(int acceptedRouteCount)
         {
             this.acceptedRouteCountField = acceptedRouteCount;

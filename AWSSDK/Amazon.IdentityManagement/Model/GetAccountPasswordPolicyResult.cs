@@ -20,12 +20,19 @@ using System.IO;
 
 namespace Amazon.IdentityManagement.Model
 {
-    /// <summary>Get Account Password Policy Result
+    /// <summary>
+    /// <para>Contains the result of a successful invocation of the GetAccountPasswordPolicy action.</para>
     /// </summary>
-    public class GetAccountPasswordPolicyResult  
+    public partial class GetAccountPasswordPolicyResult
     {
         
         private PasswordPolicy passwordPolicy;
+
+        /// <summary>
+        /// The PasswordPolicy data type contains information about the account password policy. This data type is used as a response element in the
+        /// action <a>GetAccountPasswordPolicy</a>.
+        ///  
+        /// </summary>
         public PasswordPolicy PasswordPolicy
         {
             get { return this.passwordPolicy; }
@@ -37,6 +44,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="passwordPolicy">The value to set for the PasswordPolicy property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetAccountPasswordPolicyResult WithPasswordPolicy(PasswordPolicy passwordPolicy)
         {
             this.passwordPolicy = passwordPolicy;
@@ -47,7 +55,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if PasswordPolicy property is set
         internal bool IsSetPasswordPolicy()
         {
-            return this.passwordPolicy != null;       
+            return this.passwordPolicy != null;
         }
     }
 }

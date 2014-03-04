@@ -23,7 +23,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// <summary>
     /// <para> The PolicyAttribute data type. This data type contains a key/value pair that defines properties of a specific policy. </para>
     /// </summary>
-    public class PolicyAttribute  
+    public partial class PolicyAttribute
     {
         
         private string attributeName;
@@ -42,7 +42,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// 
         /// <param name="attributeName"> The name of the attribute associated with the policy. </param>
         /// <param name="attributeValue"> The value of the attribute associated with the policy. </param>
-        public PolicyAttribute(string attributeName, string attributeValue) 
+        public PolicyAttribute(string attributeName, string attributeValue)
         {
             this.attributeName = attributeName;
             this.attributeValue = attributeValue;
@@ -64,6 +64,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="attributeName">The value to set for the AttributeName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PolicyAttribute WithAttributeName(string attributeName)
         {
             this.attributeName = attributeName;
@@ -74,7 +75,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if AttributeName property is set
         internal bool IsSetAttributeName()
         {
-            return this.attributeName != null;       
+            return this.attributeName != null;
         }
 
         /// <summary>
@@ -92,6 +93,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="attributeValue">The value to set for the AttributeValue property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PolicyAttribute WithAttributeValue(string attributeValue)
         {
             this.attributeValue = attributeValue;
@@ -102,7 +104,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if AttributeValue property is set
         internal bool IsSetAttributeValue()
         {
-            return this.attributeValue != null;       
+            return this.attributeValue != null;
         }
     }
 }

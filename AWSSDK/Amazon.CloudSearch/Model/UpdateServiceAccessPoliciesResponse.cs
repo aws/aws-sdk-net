@@ -34,14 +34,14 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         public UpdateServiceAccessPoliciesResult UpdateServiceAccessPoliciesResult
         {
-            get 
+            get
             {
                 if(this.updateServiceAccessPoliciesResult == null)
                 {
                     this.updateServiceAccessPoliciesResult = new UpdateServiceAccessPoliciesResult();
                 }
 
-                return this.updateServiceAccessPoliciesResult; 
+                return this.updateServiceAccessPoliciesResult;
             }
             set { this.updateServiceAccessPoliciesResult = value; }
         }

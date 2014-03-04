@@ -30,18 +30,18 @@ namespace Amazon.StorageGateway.Model
 
         /// <summary>
         /// Gets and sets the DescribeCachediSCSIVolumesResult property.
-        /// A JSON object containing the following fields: DescribeCachediSCSIVolumesOutput$CachediSCSIVolumes
+        /// A JSON object containing the following fields:
         /// </summary>
         public DescribeCachediSCSIVolumesResult DescribeCachediSCSIVolumesResult
         {
-            get 
+            get
             {
                 if(this.describeCachediSCSIVolumesResult == null)
                 {
                     this.describeCachediSCSIVolumesResult = new DescribeCachediSCSIVolumesResult();
                 }
 
-                return this.describeCachediSCSIVolumesResult; 
+                return this.describeCachediSCSIVolumesResult;
             }
             set { this.describeCachediSCSIVolumesResult = value; }
         }

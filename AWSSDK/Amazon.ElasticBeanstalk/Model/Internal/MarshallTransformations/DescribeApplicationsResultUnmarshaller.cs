@@ -22,13 +22,14 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
      /// <summary>
      ///   DescribeApplicationsResult Unmarshaller
      /// </summary>
-    internal class DescribeApplicationsResultUnmarshaller : IUnmarshaller<DescribeApplicationsResult, XmlUnmarshallerContext> 
+    internal class DescribeApplicationsResultUnmarshaller : IUnmarshaller<DescribeApplicationsResult, XmlUnmarshallerContext>, IUnmarshaller<DescribeApplicationsResult, JsonUnmarshallerContext> 
     {
         public DescribeApplicationsResult Unmarshall(XmlUnmarshallerContext context) 
         {
             DescribeApplicationsResult describeApplicationsResult = new DescribeApplicationsResult();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -52,6 +53,11 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
 
 
             return describeApplicationsResult;
+        }
+
+        public DescribeApplicationsResult Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static DescribeApplicationsResultUnmarshaller instance;

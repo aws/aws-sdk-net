@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -21,9 +21,10 @@ using System.IO;
 namespace Amazon.SecurityToken.Model
 {
     /// <summary>
-    /// <para>Contains the result of a successful invocation of the GetSessionToken action.</para>
+    /// <para> Contains the result of a successful call to the GetSessionToken action, including temporary AWS credentials that can be used to make
+    /// AWS requests. </para>
     /// </summary>
-    public class GetSessionTokenResult
+    public partial class GetSessionTokenResult
     {
         
         private Credentials credentials;
@@ -43,6 +44,7 @@ namespace Amazon.SecurityToken.Model
         /// </summary>
         /// <param name="credentials">The value to set for the Credentials property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetSessionTokenResult WithCredentials(Credentials credentials)
         {
             this.credentials = credentials;

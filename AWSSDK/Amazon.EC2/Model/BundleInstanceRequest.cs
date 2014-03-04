@@ -31,7 +31,7 @@ namespace Amazon.EC2.Model
     /// During bundling, only the root device volume (C:\) is bundled. Data on other instance store volumes is not preserved.
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
-    public class BundleInstanceRequest
+    public class BundleInstanceRequest : EC2Request
     {    
         private string instanceIdField;
         private Storage storageField;
@@ -51,6 +51,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="instanceId">The ID of the instance to bundle.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public BundleInstanceRequest WithInstanceId(string instanceId)
         {
             this.instanceIdField = instanceId;
@@ -81,6 +82,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="storage">Storage</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public BundleInstanceRequest WithStorage(Storage storage)
         {
             this.storageField = storage;

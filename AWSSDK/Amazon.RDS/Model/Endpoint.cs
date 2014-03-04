@@ -29,14 +29,14 @@ namespace Amazon.RDS.Model
     /// 
     /// </ul>
     /// </summary>
-    public class Endpoint
+    public partial class Endpoint
     {
         
         private string address;
         private int? port;
 
         /// <summary>
-        /// Specifies the DNS address of the DB Instance.
+        /// Specifies the DNS address of the DB instance.
         ///  
         /// </summary>
         public string Address
@@ -50,6 +50,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="address">The value to set for the Address property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Endpoint WithAddress(string address)
         {
             this.address = address;
@@ -78,6 +79,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="port">The value to set for the Port property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Endpoint WithPort(int port)
         {
             this.port = port;

@@ -23,13 +23,13 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// <summary>
     /// <para> The output for the AttachLoadBalancerToSubnets action. </para>
     /// </summary>
-    public class AttachLoadBalancerToSubnetsResult  
+    public partial class AttachLoadBalancerToSubnetsResult
     {
         
         private List<string> subnets = new List<string>();
 
         /// <summary>
-        /// A list of subnet IDs added for the LoadBalancer.
+        /// A list of subnet IDs attached to the load balancer.
         ///  
         /// </summary>
         public List<string> Subnets
@@ -42,6 +42,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="subnets">The values to add to the Subnets collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AttachLoadBalancerToSubnetsResult WithSubnets(params string[] subnets)
         {
             foreach (string element in subnets)
@@ -51,12 +52,13 @@ namespace Amazon.ElasticLoadBalancing.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Subnets collection
         /// </summary>
         /// <param name="subnets">The values to add to the Subnets collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AttachLoadBalancerToSubnetsResult WithSubnets(IEnumerable<string> subnets)
         {
             foreach (string element in subnets)
@@ -70,7 +72,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if Subnets property is set
         internal bool IsSetSubnets()
         {
-            return this.subnets.Count > 0;       
+            return this.subnets.Count > 0;
         }
     }
 }

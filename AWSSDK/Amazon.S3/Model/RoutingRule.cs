@@ -1,4 +1,4 @@
-﻿/*******************************************************************************
+/*******************************************************************************
  *  Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  *  this file except in compliance with the License. A copy of the License is located at
@@ -55,6 +55,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="condition">A container for describing a condition that must be met for the specified redirect to apply. </param>
         /// <returns>the RoutingRuleCondition with the Condition set</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RoutingRule WithCondition(RoutingRuleCondition condition)
         {
             this._condition = condition;
@@ -90,6 +91,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="redirect">The redirect settings for the routing rule.</param>
         /// <returns>the RoutingRuleCondition with the Redirect set</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RoutingRule WithRedirect(RoutingRuleRedirect redirect)
         {
             this._redirect = redirect;

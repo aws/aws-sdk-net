@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -21,9 +21,10 @@ using System.IO;
 namespace Amazon.SecurityToken.Model
 {
     /// <summary>
-    /// <para>Contains the result of a successful invocation of the AssumeRole action.</para>
+    /// <para> Contains the result of a successful call to the AssumeRole action, including temporary AWS credentials that can be used to make AWS
+    /// requests. </para>
     /// </summary>
-    public class AssumeRoleResult
+    public partial class AssumeRoleResult
     {
         
         private Credentials credentials;
@@ -31,7 +32,7 @@ namespace Amazon.SecurityToken.Model
         private int? packedPolicySize;
 
         /// <summary>
-        /// The temporary security credentials, which include an access key ID, a secret access key, and a security token.
+        /// The temporary security credentials, which include an access key ID, a secret access key, and a security (or session) token.
         ///  
         /// </summary>
         public Credentials Credentials
@@ -45,6 +46,7 @@ namespace Amazon.SecurityToken.Model
         /// </summary>
         /// <param name="credentials">The value to set for the Credentials property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AssumeRoleResult WithCredentials(Credentials credentials)
         {
             this.credentials = credentials;
@@ -75,6 +77,7 @@ namespace Amazon.SecurityToken.Model
         /// </summary>
         /// <param name="assumedRoleUser">The value to set for the AssumedRoleUser property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AssumeRoleResult WithAssumedRoleUser(AssumedRoleUser assumedRoleUser)
         {
             this.assumedRoleUser = assumedRoleUser;
@@ -113,6 +116,7 @@ namespace Amazon.SecurityToken.Model
         /// </summary>
         /// <param name="packedPolicySize">The value to set for the PackedPolicySize property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AssumeRoleResult WithPackedPolicySize(int packedPolicySize)
         {
             this.packedPolicySize = packedPolicySize;

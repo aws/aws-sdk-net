@@ -24,7 +24,7 @@ namespace Amazon.Redshift.Model
     /// <para> Describes cluster attributes that are in a pending state. A change to one or more the attributes was requested and is in progress or
     /// will be applied. </para>
     /// </summary>
-    public class PendingModifiedValues
+    public partial class PendingModifiedValues
     {
         
         private string masterUserPassword;
@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model
         private int? automatedSnapshotRetentionPeriod;
 
         /// <summary>
-        /// The pending or in-progress change of the master credentials for the cluster.
+        /// The pending or in-progress change of the master password for the cluster.
         ///  
         /// </summary>
         public string MasterUserPassword
@@ -49,6 +49,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="masterUserPassword">The value to set for the MasterUserPassword property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PendingModifiedValues WithMasterUserPassword(string masterUserPassword)
         {
             this.masterUserPassword = masterUserPassword;
@@ -77,6 +78,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="nodeType">The value to set for the NodeType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PendingModifiedValues WithNodeType(string nodeType)
         {
             this.nodeType = nodeType;
@@ -105,6 +107,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="numberOfNodes">The value to set for the NumberOfNodes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PendingModifiedValues WithNumberOfNodes(int numberOfNodes)
         {
             this.numberOfNodes = numberOfNodes;
@@ -133,6 +136,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="clusterType">The value to set for the ClusterType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PendingModifiedValues WithClusterType(string clusterType)
         {
             this.clusterType = clusterType;
@@ -161,6 +165,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="clusterVersion">The value to set for the ClusterVersion property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PendingModifiedValues WithClusterVersion(string clusterVersion)
         {
             this.clusterVersion = clusterVersion;
@@ -189,6 +194,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="automatedSnapshotRetentionPeriod">The value to set for the AutomatedSnapshotRetentionPeriod property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PendingModifiedValues WithAutomatedSnapshotRetentionPeriod(int automatedSnapshotRetentionPeriod)
         {
             this.automatedSnapshotRetentionPeriod = automatedSnapshotRetentionPeriod;

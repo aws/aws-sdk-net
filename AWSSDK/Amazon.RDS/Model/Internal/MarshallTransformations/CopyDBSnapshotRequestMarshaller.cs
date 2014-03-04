@@ -34,7 +34,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(copyDBSnapshotRequest, "AmazonRDS");
             request.Parameters.Add("Action", "CopyDBSnapshot");
-            request.Parameters.Add("Version", "2013-02-12");
+            request.Parameters.Add("Version", "2013-09-09");
             if (copyDBSnapshotRequest != null && copyDBSnapshotRequest.IsSetSourceDBSnapshotIdentifier())
             {
                 request.Parameters.Add("SourceDBSnapshotIdentifier", StringUtils.FromString(copyDBSnapshotRequest.SourceDBSnapshotIdentifier));
@@ -42,6 +42,25 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             if (copyDBSnapshotRequest != null && copyDBSnapshotRequest.IsSetTargetDBSnapshotIdentifier())
             {
                 request.Parameters.Add("TargetDBSnapshotIdentifier", StringUtils.FromString(copyDBSnapshotRequest.TargetDBSnapshotIdentifier));
+            }
+
+            if (copyDBSnapshotRequest != null)
+            {
+                List<Tag> tagsList = copyDBSnapshotRequest.Tags;
+                int tagsListIndex = 1;
+                foreach (Tag tagsListValue in tagsList)
+                {
+                    if (tagsListValue != null && tagsListValue.IsSetKey())
+                    {
+                        request.Parameters.Add("Tags.member." + tagsListIndex + ".Key", StringUtils.FromString(tagsListValue.Key));
+                    }
+                    if (tagsListValue != null && tagsListValue.IsSetValue())
+                    {
+                        request.Parameters.Add("Tags.member." + tagsListIndex + ".Value", StringUtils.FromString(tagsListValue.Value));
+                    }
+
+                    tagsListIndex++;
+                }
             }
 
             return request;

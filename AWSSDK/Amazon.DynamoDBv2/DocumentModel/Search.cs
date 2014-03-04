@@ -35,10 +35,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         internal Search(SearchType searchMethod)
         {
-            IsDone = false;
-            NextKey = null;
-            Matches = new List<Document>();
             SearchMethod = searchMethod;
+            Reset();
         }
 
         #endregion
@@ -50,6 +48,12 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// Name of the table being searched
         /// </summary>
         public String TableName { get; internal set; }
+
+        /// <summary>
+        /// Whether to collect GetNextSet and GetRemaining results in Matches property.
+        /// Default is true. If set to false, Matches will always be empty.
+        /// </summary>
+        public bool CollectResults { get; internal set; }
 
         /// <summary>
         /// Upper limit on the number of items returned.
@@ -96,19 +100,50 @@ namespace Amazon.DynamoDBv2.DocumentModel
         public List<Document> Matches { get; private set; }
 
         /// <summary>
-        /// TODO: Add docs 
+        /// For parallel <i>Scan</i> requests, <i>TotalSegments</i>represents the total number of segments for a table that is being scanned. Segments
+        /// are a way to logically divide a table into equally sized portions, for the duration of the <i>Scan</i> request. The value of
+        /// <i>TotalSegments</i> corresponds to the number of application "workers" (such as threads or processes) that will perform the parallel
+        /// <i>Scan</i>. For example, if you want to scan a table using four application threads, you would specify a <i>TotalSegments</i> value of 4.
+        /// The value for <i>TotalSegments</i> must be greater than or equal to 1, and less than or equal to 4096. If you specify a <i>TotalSegments</i>
+        /// value of 1, the <i>Scan</i> will be sequential rather than parallel. If you specify <i>TotalSegments</i>, you must also specify
+        /// <i>Segment</i>.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Range</term>
+        ///         <description>1 - 4096</description>
+        ///     </item>
+        /// </list>
+        /// </para>
         /// </summary>
         public int TotalSegments { get; set; }
 
         /// <summary>
-        /// TODO: Add docs 
+        /// For parallel <i>Scan</i> requests, <i>Segment</i> identifies an individual segment to be scanned by an application "worker" (such as a
+        /// thread or a process). Each worker issues a <i>Scan</i> request with a distinct value for the segment it will scan. Segment IDs are
+        /// zero-based, so the first segment is always 0. For example, if you want to scan a table using four application threads, the first thread
+        /// would specify a <i>Segment</i> value of 0, the second thread would specify 1, and so on. LastEvaluatedKey returned from a parallel scan
+        /// request must be used with same Segment id in a subsequent operation. The value for <i>Segment</i> must be less than or equal to 0, and less
+        /// than the value provided for <i>TotalSegments</i>. If you specify <i>Segment</i>, you must also specify <i>TotalSegments</i>.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Range</term>
+        ///         <description>0 - 4095</description>
+        ///     </item>
+        /// </list>
+        /// </para>
         /// </summary>
         public int Segment { get; set; }
 
         /// <summary>
-        /// Gets the total number of items that match the search parameters
+        /// Gets the total number of items that match the search parameters.
         /// 
-        /// If IsDone is true, returns Matches.Count
+        /// If IsDone is true and CollectResults is true, returns Matches.Count.
         /// Otherwise, makes a call to DynamoDB to find out the number of
         /// matching items, without retrieving the items. Count is then cached.
         /// </summary>
@@ -178,7 +213,10 @@ namespace Amazon.DynamoDBv2.DocumentModel
                         {
                             Document doc = Document.FromAttributeMap(item);
                             ret.Add(doc);
-                            Matches.Add(doc);
+                            if (CollectResults)
+                            {
+                                Matches.Add(doc);
+                            }
                         }
                         NextKey = scanResult.LastEvaluatedKey;
                         if (NextKey == null)
@@ -208,7 +246,10 @@ namespace Amazon.DynamoDBv2.DocumentModel
                         {
                             Document doc = Document.FromAttributeMap(item);
                             ret.Add(doc);
-                            Matches.Add(doc);
+                            if (CollectResults)
+                            {
+                                Matches.Add(doc);
+                            }
                         }
                         NextKey = queryResult.LastEvaluatedKey;
                         if (NextKey == null)
@@ -306,7 +347,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         #region Private/internal properties
 
-        private int count = -1;
+        private int count;
 
         private SearchType SearchMethod { get; set; }
 
@@ -314,7 +355,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         private int GetCount()
         {
-            if (IsDone)
+            if (IsDone && CollectResults)
             {
                 return Matches.Count;
             }
@@ -368,6 +409,18 @@ namespace Amazon.DynamoDBv2.DocumentModel
                     }
                 }
             }
+        }
+
+        /// <summary>
+        /// Resets the Search object to default state.
+        /// </summary>
+        internal void Reset()
+        {
+            count = -1;
+            IsDone = false;
+            NextKey = null;
+            Matches = new List<Document>();
+            CollectResults = true;
         }
 
         #endregion

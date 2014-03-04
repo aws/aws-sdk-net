@@ -23,7 +23,7 @@ namespace Amazon.SimpleEmail.Model
     /// <summary>
     /// <para>Represents the verification attributes for a list of identities.</para>
     /// </summary>
-    public class GetIdentityVerificationAttributesResult  
+    public partial class GetIdentityVerificationAttributesResult
     {
         
         private Dictionary<string,IdentityVerificationAttributes> verificationAttributes = new Dictionary<string,IdentityVerificationAttributes>();
@@ -43,6 +43,7 @@ namespace Amazon.SimpleEmail.Model
         /// </summary>
         /// <param name="pairs">The pairs to be added to the VerificationAttributes dictionary.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetIdentityVerificationAttributesResult WithVerificationAttributes(params KeyValuePair<string, IdentityVerificationAttributes>[] pairs)
         {
             foreach (KeyValuePair<string, IdentityVerificationAttributes> pair in pairs)
@@ -56,7 +57,7 @@ namespace Amazon.SimpleEmail.Model
         // Check to see if VerificationAttributes property is set
         internal bool IsSetVerificationAttributes()
         {
-            return this.verificationAttributes != null;       
+            return this.verificationAttributes != null;
         }
     }
 }

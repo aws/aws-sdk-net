@@ -20,16 +20,9 @@ using System.IO;
 
 namespace Amazon.StorageGateway.Model
 {
-    /// <summary>
-    /// <para>A JSON object containing the following fields:</para>
-    /// <ul>
-    /// <li> GatewayARN </li>
-    /// <li> ListVolumesOutput$Marker </li>
-    /// <li> ListVolumesOutput$VolumeInfos </li>
-    /// 
-    /// </ul>
+    /// <summary>List Volumes Result
     /// </summary>
-    public class ListVolumesResult  
+    public partial class ListVolumesResult
     {
         
         private string gatewayARN;
@@ -61,6 +54,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="gatewayARN">The value to set for the GatewayARN property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListVolumesResult WithGatewayARN(string gatewayARN)
         {
             this.gatewayARN = gatewayARN;
@@ -71,23 +65,8 @@ namespace Amazon.StorageGateway.Model
         // Check to see if GatewayARN property is set
         internal bool IsSetGatewayARN()
         {
-            return this.gatewayARN != null;       
+            return this.gatewayARN != null;
         }
-
-        /// <summary>
-        /// Use the marker in your next request to continue pagination of iSCSI volumes. If there are no more volumes to list, this field does not
-        /// appear in the response body.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 1000</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
         public string Marker
         {
             get { return this.marker; }
@@ -99,6 +78,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="marker">The value to set for the Marker property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListVolumesResult WithMarker(string marker)
         {
             this.marker = marker;
@@ -109,14 +89,8 @@ namespace Amazon.StorageGateway.Model
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;       
+            return this.marker != null;
         }
-
-        /// <summary>
-        /// An array of <a>VolumeInfo</a> objects, where each object describes an iSCSI volume. If no volumes are defined for the gateway, then
-        /// <c>VolumeInfos</c> is an empty array "[]".
-        ///  
-        /// </summary>
         public List<VolumeInfo> VolumeInfos
         {
             get { return this.volumeInfos; }
@@ -127,6 +101,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="volumeInfos">The values to add to the VolumeInfos collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListVolumesResult WithVolumeInfos(params VolumeInfo[] volumeInfos)
         {
             foreach (VolumeInfo element in volumeInfos)
@@ -136,12 +111,13 @@ namespace Amazon.StorageGateway.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the VolumeInfos collection
         /// </summary>
         /// <param name="volumeInfos">The values to add to the VolumeInfos collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListVolumesResult WithVolumeInfos(IEnumerable<VolumeInfo> volumeInfos)
         {
             foreach (VolumeInfo element in volumeInfos)
@@ -155,7 +131,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if VolumeInfos property is set
         internal bool IsSetVolumeInfos()
         {
-            return this.volumeInfos.Count > 0;       
+            return this.volumeInfos.Count > 0;
         }
     }
 }

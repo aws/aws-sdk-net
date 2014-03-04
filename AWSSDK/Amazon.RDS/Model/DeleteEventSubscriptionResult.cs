@@ -23,7 +23,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// The results from the DeleteEventSubscription action.
     /// </summary>
-    public class DeleteEventSubscriptionResult
+    public partial class DeleteEventSubscriptionResult
     {
         private EventSubscription eventSubscriptionValue;
 

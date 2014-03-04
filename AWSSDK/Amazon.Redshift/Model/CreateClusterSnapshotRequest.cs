@@ -26,7 +26,8 @@ namespace Amazon.Redshift.Model
     /// <summary>
     /// Container for the parameters to the CreateClusterSnapshot operation.
     /// <para> Creates a manual snapshot of the specified cluster. The cluster must be in the "available" state. </para> <para> For more information
-    /// about working with snapshots, go to Amazon Redshift Snapshots in the <i>Amazon Redshift Management Guide</i> .
+    /// about working with snapshots, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html" >Amazon Redshift
+    /// Snapshots</a> in the <i>Amazon Redshift Management Guide</i> .
     /// </para>
     /// </summary>
     /// <seealso cref="Amazon.Redshift.AmazonRedshift.CreateClusterSnapshot"/>
@@ -52,6 +53,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="snapshotIdentifier">The value to set for the SnapshotIdentifier property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateClusterSnapshotRequest WithSnapshotIdentifier(string snapshotIdentifier)
         {
             this.snapshotIdentifier = snapshotIdentifier;
@@ -80,6 +82,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="clusterIdentifier">The value to set for the ClusterIdentifier property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateClusterSnapshotRequest WithClusterIdentifier(string clusterIdentifier)
         {
             this.clusterIdentifier = clusterIdentifier;

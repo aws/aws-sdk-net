@@ -30,8 +30,7 @@ namespace Amazon.AWSSupport.Model
 
         /// <summary>
         /// Gets and sets the TrustedAdvisorCheckResult property.
-        /// JSON-formatted object contained in the DescribeTrustedAdvisorCheckResult response. This object has three child objects:
-        /// TrustedAdvisorCategorySpecificSummary TrustedAdvisorResourceDetail TrustedAdvisorResourcesSummary
+        /// The results of a Trusted Advisor check returned by DescribeTrustedAdvisorCheckResult.
         /// </summary>
         public TrustedAdvisorCheckResult TrustedAdvisorCheckResult
         {

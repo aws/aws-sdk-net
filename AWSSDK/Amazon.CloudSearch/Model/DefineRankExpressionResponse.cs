@@ -34,14 +34,14 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         public DefineRankExpressionResult DefineRankExpressionResult
         {
-            get 
+            get
             {
                 if(this.defineRankExpressionResult == null)
                 {
                     this.defineRankExpressionResult = new DefineRankExpressionResult();
                 }
 
-                return this.defineRankExpressionResult; 
+                return this.defineRankExpressionResult;
             }
             set { this.defineRankExpressionResult = value; }
         }

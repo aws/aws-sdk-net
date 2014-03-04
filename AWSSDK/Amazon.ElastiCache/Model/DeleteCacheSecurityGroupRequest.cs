@@ -25,8 +25,8 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteCacheSecurityGroup operation.
-    /// <para> Deletes a Cache Security Group. </para> <para><b>NOTE:</b>The specified Cache Security Group must not be associated with any Cache
-    /// Clusters.</para>
+    /// <para>The <i>DeleteCacheSecurityGroup</i> operation deletes a cache security group.</para> <para><b>NOTE:</b>You cannot delete a cache
+    /// security group if it is associated with any cache clusters.</para>
     /// </summary>
     /// <seealso cref="Amazon.ElastiCache.AmazonElastiCache.DeleteCacheSecurityGroup"/>
     public class DeleteCacheSecurityGroupRequest : AmazonWebServiceRequest
@@ -34,7 +34,7 @@ namespace Amazon.ElastiCache.Model
         private string cacheSecurityGroupName;
 
         /// <summary>
-        /// The name of the Cache Security Group to delete. <note>You cannot delete the default security group.</note>
+        /// The name of the cache security group to delete. <note>You cannot delete the default security group.</note>
         ///  
         /// </summary>
         public string CacheSecurityGroupName
@@ -48,6 +48,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="cacheSecurityGroupName">The value to set for the CacheSecurityGroupName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeleteCacheSecurityGroupRequest WithCacheSecurityGroupName(string cacheSecurityGroupName)
         {
             this.cacheSecurityGroupName = cacheSecurityGroupName;

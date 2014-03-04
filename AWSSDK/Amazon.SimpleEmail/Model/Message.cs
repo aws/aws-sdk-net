@@ -23,7 +23,7 @@ namespace Amazon.SimpleEmail.Model
     /// <summary>
     /// <para>Represents the message to be sent, composed of a subject and a body.</para>
     /// </summary>
-    public class Message  
+    public partial class Message
     {
         
         private Content subject;
@@ -42,7 +42,7 @@ namespace Amazon.SimpleEmail.Model
         /// 
         /// <param name="subject"> The subject of the message: A short summary of the content, which will appear in the recipient's inbox. </param>
         /// <param name="body"> The message body. </param>
-        public Message(Content subject, Body body) 
+        public Message(Content subject, Body body)
         {
             this.subject = subject;
             this.body = body;
@@ -64,6 +64,7 @@ namespace Amazon.SimpleEmail.Model
         /// </summary>
         /// <param name="subject">The value to set for the Subject property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Message WithSubject(Content subject)
         {
             this.subject = subject;
@@ -74,7 +75,7 @@ namespace Amazon.SimpleEmail.Model
         // Check to see if Subject property is set
         internal bool IsSetSubject()
         {
-            return this.subject != null;       
+            return this.subject != null;
         }
 
         /// <summary>
@@ -92,6 +93,7 @@ namespace Amazon.SimpleEmail.Model
         /// </summary>
         /// <param name="body">The value to set for the Body property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Message WithBody(Body body)
         {
             this.body = body;
@@ -102,7 +104,7 @@ namespace Amazon.SimpleEmail.Model
         // Check to see if Body property is set
         internal bool IsSetBody()
         {
-            return this.body != null;       
+            return this.body != null;
         }
     }
 }

@@ -30,7 +30,7 @@ namespace Amazon.IdentityManagement.Model
     /// 
     /// </ul>
     /// </summary>
-    public class Group  
+    public partial class Group
     {
         
         private string path;
@@ -41,8 +41,8 @@ namespace Amazon.IdentityManagement.Model
 
         /// <summary>
         /// Path to the group. For more information about paths, see <a
-        /// href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM
-        /// Entities</a> in <i>Using AWS Identity and Access Management</i>.
+        /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in
+        /// <i>Using AWS Identity and Access Management</i>.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -69,6 +69,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="path">The value to set for the Path property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Group WithPath(string path)
         {
             this.path = path;
@@ -79,7 +80,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if Path property is set
         internal bool IsSetPath()
         {
-            return this.path != null;       
+            return this.path != null;
         }
 
         /// <summary>
@@ -110,6 +111,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="groupName">The value to set for the GroupName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Group WithGroupName(string groupName)
         {
             this.groupName = groupName;
@@ -120,13 +122,13 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if GroupName property is set
         internal bool IsSetGroupName()
         {
-            return this.groupName != null;       
+            return this.groupName != null;
         }
 
         /// <summary>
         /// The stable and unique string identifying the group. For more information about IDs, see <a
-        /// href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM
-        /// Entities</a> in <i>Using AWS Identity and Access Management</i>.
+        /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in
+        /// <i>Using AWS Identity and Access Management</i>.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -153,6 +155,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="groupId">The value to set for the GroupId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Group WithGroupId(string groupId)
         {
             this.groupId = groupId;
@@ -163,13 +166,13 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if GroupId property is set
         internal bool IsSetGroupId()
         {
-            return this.groupId != null;       
+            return this.groupId != null;
         }
 
         /// <summary>
         /// The Amazon Resource Name (ARN) specifying the group. For more information about ARNs and how to use them in policies, see <a
-        /// href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM
-        /// Entities</a> in <i>Using AWS Identity and Access Management</i>.
+        /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in
+        /// <i>Using AWS Identity and Access Management</i>.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -192,6 +195,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="arn">The value to set for the Arn property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Group WithArn(string arn)
         {
             this.arn = arn;
@@ -202,7 +206,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if Arn property is set
         internal bool IsSetArn()
         {
-            return this.arn != null;       
+            return this.arn != null;
         }
 
         /// <summary>
@@ -220,6 +224,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="createDate">The value to set for the CreateDate property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Group WithCreateDate(DateTime createDate)
         {
             this.createDate = createDate;
@@ -230,7 +235,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if CreateDate property is set
         internal bool IsSetCreateDate()
         {
-            return this.createDate.HasValue;       
+            return this.createDate.HasValue;
         }
     }
 }

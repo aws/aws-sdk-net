@@ -22,18 +22,14 @@ namespace Amazon.StorageGateway.Model
 {
     /// <summary>
     /// <para>A JSON object containing the following fields:</para>
-    /// <ul>
-    /// <li> DescribeCachediSCSIVolumesOutput$CachediSCSIVolumes </li>
-    /// 
-    /// </ul>
     /// </summary>
-    public class DescribeCachediSCSIVolumesResult  
+    public partial class DescribeCachediSCSIVolumesResult
     {
         
         private List<CachediSCSIVolume> cachediSCSIVolumes = new List<CachediSCSIVolume>();
 
         /// <summary>
-        /// An array of <a>CachediSCSIVolume</a> objects where each object contains metadata about one cached volume.
+        /// An array of objects where each object contains metadata about one cached volume.
         ///  
         /// </summary>
         public List<CachediSCSIVolume> CachediSCSIVolumes
@@ -46,6 +42,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="cachediSCSIVolumes">The values to add to the CachediSCSIVolumes collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeCachediSCSIVolumesResult WithCachediSCSIVolumes(params CachediSCSIVolume[] cachediSCSIVolumes)
         {
             foreach (CachediSCSIVolume element in cachediSCSIVolumes)
@@ -55,12 +52,13 @@ namespace Amazon.StorageGateway.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the CachediSCSIVolumes collection
         /// </summary>
         /// <param name="cachediSCSIVolumes">The values to add to the CachediSCSIVolumes collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeCachediSCSIVolumesResult WithCachediSCSIVolumes(IEnumerable<CachediSCSIVolume> cachediSCSIVolumes)
         {
             foreach (CachediSCSIVolume element in cachediSCSIVolumes)
@@ -74,7 +72,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if CachediSCSIVolumes property is set
         internal bool IsSetCachediSCSIVolumes()
         {
-            return this.cachediSCSIVolumes.Count > 0;       
+            return this.cachediSCSIVolumes.Count > 0;
         }
     }
 }

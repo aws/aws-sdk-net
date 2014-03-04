@@ -32,6 +32,8 @@
 
         public ServiceError Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             ServiceError serviceError = new ServiceError();
           
             int originalDepth = context.CurrentDepth;

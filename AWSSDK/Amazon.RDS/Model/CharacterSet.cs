@@ -23,7 +23,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// <para> This data type is used as a response element in the action DescribeDBEngineVersions. </para>
     /// </summary>
-    public class CharacterSet
+    public partial class CharacterSet
     {
         
         private string characterSetName;
@@ -44,6 +44,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="characterSetName">The value to set for the CharacterSetName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CharacterSet WithCharacterSetName(string characterSetName)
         {
             this.characterSetName = characterSetName;
@@ -72,6 +73,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="characterSetDescription">The value to set for the CharacterSetDescription property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CharacterSet WithCharacterSetDescription(string characterSetDescription)
         {
             this.characterSetDescription = characterSetDescription;

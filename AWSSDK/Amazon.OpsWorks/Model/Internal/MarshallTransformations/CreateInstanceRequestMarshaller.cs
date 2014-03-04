@@ -112,6 +112,11 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                     writer.WritePropertyName("Os");
                     writer.Write(createInstanceRequest.Os);
                 }
+                if (createInstanceRequest != null && createInstanceRequest.IsSetAmiId()) 
+                {
+                    writer.WritePropertyName("AmiId");
+                    writer.Write(createInstanceRequest.AmiId);
+                }
                 if (createInstanceRequest != null && createInstanceRequest.IsSetSshKeyName()) 
                 {
                     writer.WritePropertyName("SshKeyName");
@@ -122,6 +127,11 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                     writer.WritePropertyName("AvailabilityZone");
                     writer.Write(createInstanceRequest.AvailabilityZone);
                 }
+                if (createInstanceRequest != null && createInstanceRequest.IsSetSubnetId()) 
+                {
+                    writer.WritePropertyName("SubnetId");
+                    writer.Write(createInstanceRequest.SubnetId);
+                }
                 if (createInstanceRequest != null && createInstanceRequest.IsSetArchitecture()) 
                 {
                     writer.WritePropertyName("Architecture");
@@ -131,6 +141,11 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                 {
                     writer.WritePropertyName("RootDeviceType");
                     writer.Write(createInstanceRequest.RootDeviceType);
+                }
+                if (createInstanceRequest != null && createInstanceRequest.IsSetInstallUpdatesOnBoot()) 
+                {
+                    writer.WritePropertyName("InstallUpdatesOnBoot");
+                    writer.Write(createInstanceRequest.InstallUpdatesOnBoot);
                 }
 
                 writer.WriteObjectEnd();

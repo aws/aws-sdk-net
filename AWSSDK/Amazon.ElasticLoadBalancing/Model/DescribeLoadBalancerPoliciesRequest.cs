@@ -25,10 +25,10 @@ namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeLoadBalancerPolicies operation.
-    /// <para>Returns detailed descriptions of the policies. If you specify a LoadBalancer name, the operation returns either the descriptions of
-    /// the specified policies, or descriptions of all the policies created for the LoadBalancer. If you don't specify a LoadBalancer name, the
-    /// operation returns descriptions of the specified sample policies, or descriptions of all the sample policies. The names of the sample
-    /// policies have the <c>ELBSample-</c> prefix. </para>
+    /// <para>Returns detailed descriptions of the policies. If you specify a load balancer name, the action returns the descriptions of all the
+    /// policies created for the load balancer. If you specify a policy name associated with your load balancer, the action returns the description
+    /// of that policy. If you don't specify a load balancer name, the action returns descriptions of the specified sample policies, or descriptions
+    /// of all the sample policies. The names of the sample policies have the <c>ELBSample-</c> prefix. </para>
     /// </summary>
     /// <seealso cref="Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancing.DescribeLoadBalancerPolicies"/>
     public class DescribeLoadBalancerPoliciesRequest : AmazonWebServiceRequest
@@ -37,7 +37,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         private List<string> policyNames = new List<string>();
 
         /// <summary>
-        /// The mnemonic name associated with the LoadBalancer. If no name is specified, the operation returns the attributes of either all the sample
+        /// The mnemonic name associated with the load balancer. If no name is specified, the operation returns the attributes of either all the sample
         /// policies pre-defined by Elastic Load Balancing or the specified sample polices.
         ///  
         /// </summary>
@@ -52,6 +52,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="loadBalancerName">The value to set for the LoadBalancerName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeLoadBalancerPoliciesRequest WithLoadBalancerName(string loadBalancerName)
         {
             this.loadBalancerName = loadBalancerName;
@@ -62,11 +63,11 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if LoadBalancerName property is set
         internal bool IsSetLoadBalancerName()
         {
-            return this.loadBalancerName != null;       
+            return this.loadBalancerName != null;
         }
 
         /// <summary>
-        /// The names of LoadBalancer policies you've created or Elastic Load Balancing sample policy names.
+        /// The names of load balancer policies you've created or Elastic Load Balancing sample policy names.
         ///  
         /// </summary>
         public List<string> PolicyNames
@@ -79,6 +80,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="policyNames">The values to add to the PolicyNames collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeLoadBalancerPoliciesRequest WithPolicyNames(params string[] policyNames)
         {
             foreach (string element in policyNames)
@@ -88,12 +90,13 @@ namespace Amazon.ElasticLoadBalancing.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the PolicyNames collection
         /// </summary>
         /// <param name="policyNames">The values to add to the PolicyNames collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeLoadBalancerPoliciesRequest WithPolicyNames(IEnumerable<string> policyNames)
         {
             foreach (string element in policyNames)
@@ -107,7 +110,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if PolicyNames property is set
         internal bool IsSetPolicyNames()
         {
-            return this.policyNames.Count > 0;       
+            return this.policyNames.Count > 0;
         }
     }
 }

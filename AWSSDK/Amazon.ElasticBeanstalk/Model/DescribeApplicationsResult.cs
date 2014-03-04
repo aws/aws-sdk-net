@@ -23,7 +23,7 @@ namespace Amazon.ElasticBeanstalk.Model
     /// <summary>
     /// <para>Result message containing a list of application descriptions.</para>
     /// </summary>
-    public class DescribeApplicationsResult  
+    public partial class DescribeApplicationsResult
     {
         
         private List<ApplicationDescription> applications = new List<ApplicationDescription>();
@@ -42,6 +42,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="applications">The values to add to the Applications collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeApplicationsResult WithApplications(params ApplicationDescription[] applications)
         {
             foreach (ApplicationDescription element in applications)
@@ -51,12 +52,13 @@ namespace Amazon.ElasticBeanstalk.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Applications collection
         /// </summary>
         /// <param name="applications">The values to add to the Applications collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeApplicationsResult WithApplications(IEnumerable<ApplicationDescription> applications)
         {
             foreach (ApplicationDescription element in applications)
@@ -70,7 +72,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if Applications property is set
         internal bool IsSetApplications()
         {
-            return this.applications.Count > 0;       
+            return this.applications.Count > 0;
         }
     }
 }

@@ -21,16 +21,16 @@ using System.IO;
 namespace Amazon.AWSSupport.Model
 {
     /// <summary>
-    /// <para>List of Commmunication objects.</para>
+    /// <para>Contains the five most recent communications associated with the case.</para>
     /// </summary>
-    public class RecentCaseCommunications
+    public partial class RecentCaseCommunications
     {
         
         private List<Communication> communications = new List<Communication>();
         private string nextToken;
 
         /// <summary>
-        /// List of <a href="API_Communication.html" title="Communication">Commmunication</a> objects.
+        /// The five most recent communications associated with the case.
         ///  
         /// </summary>
         public List<Communication> Communications
@@ -43,6 +43,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="communications">The values to add to the Communications collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RecentCaseCommunications WithCommunications(params Communication[] communications)
         {
             foreach (Communication element in communications)
@@ -58,6 +59,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="communications">The values to add to the Communications collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RecentCaseCommunications WithCommunications(IEnumerable<Communication> communications)
         {
             foreach (Communication element in communications)
@@ -75,7 +77,7 @@ namespace Amazon.AWSSupport.Model
         }
 
         /// <summary>
-        /// Defines a resumption point for pagination.
+        /// A resumption point for pagination.
         ///  
         /// </summary>
         public string NextToken
@@ -89,6 +91,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="nextToken">The value to set for the NextToken property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RecentCaseCommunications WithNextToken(string nextToken)
         {
             this.nextToken = nextToken;

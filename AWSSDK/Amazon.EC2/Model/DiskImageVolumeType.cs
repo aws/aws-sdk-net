@@ -48,6 +48,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="size">The size, in GB (2^30 bytes), of the Amazon EBS volume that will hold the converted image.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DiskImageVolumeType WithSize(Decimal size)
         {
             this.sizeField = size;

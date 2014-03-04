@@ -21,18 +21,17 @@ using System.IO;
 namespace Amazon.AWSSupport.Model
 {
     /// <summary>
-    /// <para>JSON-formatted pair of strings consisting of a code and name that represent a severity level that can be applied to a support case.
-    /// </para>
+    /// <para>A code and name pair that represent a severity level that can be applied to a support case. </para>
     /// </summary>
-    public class SeverityLevel
+    public partial class SeverityLevel
     {
         
         private string code;
         private string name;
 
         /// <summary>
-        /// String that represents one of four values: "low," "medium," "high," and "urgent". These values correspond to response times returned to the
-        /// caller in the string <c>SeverityLevel.name</c>.
+        /// One of four values: "low," "medium," "high," and "urgent". These values correspond to response times returned to the caller in
+        /// <c>SeverityLevel.name</c>.
         ///  
         /// </summary>
         public string Code
@@ -46,6 +45,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="code">The value to set for the Code property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SeverityLevel WithCode(string code)
         {
             this.code = code;
@@ -60,7 +60,7 @@ namespace Amazon.AWSSupport.Model
         }
 
         /// <summary>
-        /// Name of severity levels that correspond to the severity level codes.
+        /// The name of the severity level that corresponds to the severity level code.
         ///  
         /// </summary>
         public string Name
@@ -74,6 +74,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="name">The value to set for the Name property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SeverityLevel WithName(string name)
         {
             this.name = name;

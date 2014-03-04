@@ -23,7 +23,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// <para> Contains the result of a successful invocation of the DescribeReservedDBInstancesOfferings action. </para>
     /// </summary>
-    public class DescribeReservedDBInstancesOfferingsResult
+    public partial class DescribeReservedDBInstancesOfferingsResult
     {
         
         private string marker;
@@ -45,6 +45,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="marker">The value to set for the Marker property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeReservedDBInstancesOfferingsResult WithMarker(string marker)
         {
             this.marker = marker;
@@ -59,7 +60,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// A list of reserved DB Instance offerings.
+        /// A list of reserved DB instance offerings.
         ///  
         /// </summary>
         public List<ReservedDBInstancesOffering> ReservedDBInstancesOfferings
@@ -72,6 +73,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="reservedDBInstancesOfferings">The values to add to the ReservedDBInstancesOfferings collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeReservedDBInstancesOfferingsResult WithReservedDBInstancesOfferings(params ReservedDBInstancesOffering[] reservedDBInstancesOfferings)
         {
             foreach (ReservedDBInstancesOffering element in reservedDBInstancesOfferings)
@@ -87,6 +89,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="reservedDBInstancesOfferings">The values to add to the ReservedDBInstancesOfferings collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeReservedDBInstancesOfferingsResult WithReservedDBInstancesOfferings(IEnumerable<ReservedDBInstancesOffering> reservedDBInstancesOfferings)
         {
             foreach (ReservedDBInstancesOffering element in reservedDBInstancesOfferings)

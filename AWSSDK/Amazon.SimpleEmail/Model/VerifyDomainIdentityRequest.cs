@@ -25,7 +25,7 @@ namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
     /// Container for the parameters to the VerifyDomainIdentity operation.
-    /// <para>Verifies a domain.</para>
+    /// <para>Verifies a domain.</para> <para>This action is throttled at one request per second.</para>
     /// </summary>
     /// <seealso cref="Amazon.SimpleEmail.AmazonSimpleEmailService.VerifyDomainIdentity"/>
     public class VerifyDomainIdentityRequest : AmazonWebServiceRequest
@@ -47,6 +47,7 @@ namespace Amazon.SimpleEmail.Model
         /// </summary>
         /// <param name="domain">The value to set for the Domain property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VerifyDomainIdentityRequest WithDomain(string domain)
         {
             this.domain = domain;
@@ -57,7 +58,7 @@ namespace Amazon.SimpleEmail.Model
         // Check to see if Domain property is set
         internal bool IsSetDomain()
         {
-            return this.domain != null;       
+            return this.domain != null;
         }
     }
 }

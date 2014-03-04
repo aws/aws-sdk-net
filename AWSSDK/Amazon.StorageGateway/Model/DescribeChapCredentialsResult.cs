@@ -21,9 +21,9 @@ using System.IO;
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
-    /// <para>A JSON object containing a DescribeChapCredentialsOutput$ChapCredentials.</para>
+    /// <para>A JSON object containing a .</para>
     /// </summary>
-    public class DescribeChapCredentialsResult  
+    public partial class DescribeChapCredentialsResult
     {
         
         private List<ChapInfo> chapCredentials = new List<ChapInfo>();
@@ -47,6 +47,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="chapCredentials">The values to add to the ChapCredentials collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeChapCredentialsResult WithChapCredentials(params ChapInfo[] chapCredentials)
         {
             foreach (ChapInfo element in chapCredentials)
@@ -56,12 +57,13 @@ namespace Amazon.StorageGateway.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the ChapCredentials collection
         /// </summary>
         /// <param name="chapCredentials">The values to add to the ChapCredentials collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeChapCredentialsResult WithChapCredentials(IEnumerable<ChapInfo> chapCredentials)
         {
             foreach (ChapInfo element in chapCredentials)
@@ -75,7 +77,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if ChapCredentials property is set
         internal bool IsSetChapCredentials()
         {
-            return this.chapCredentials.Count > 0;       
+            return this.chapCredentials.Count > 0;
         }
     }
 }

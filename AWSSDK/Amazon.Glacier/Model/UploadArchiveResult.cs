@@ -21,10 +21,12 @@ using System.IO;
 namespace Amazon.Glacier.Model
 {
     /// <summary>
-    /// <para>Contains the Amazon Glacier response to your request.</para> <para>For information about the underlying REST API, go to Upload
-    /// Archive. For conceptual information, go to Working with Archives in Amazon Glacier.</para>
+    /// <para>Contains the Amazon Glacier response to your request.</para> <para>For information about the underlying REST API, go to <a
+    /// href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-archive-post.html" >Upload Archive</a> .
+    /// For conceptual information, go to <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html" >Working
+    /// with Archives in Amazon Glacier</a> .</para>
     /// </summary>
-    public class UploadArchiveResult  
+    public partial class UploadArchiveResult
     {
         
         private string location;
@@ -46,6 +48,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="location">The value to set for the Location property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UploadArchiveResult WithLocation(string location)
         {
             this.location = location;
@@ -56,7 +59,7 @@ namespace Amazon.Glacier.Model
         // Check to see if Location property is set
         internal bool IsSetLocation()
         {
-            return this.location != null;       
+            return this.location != null;
         }
 
         /// <summary>
@@ -74,6 +77,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="checksum">The value to set for the Checksum property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UploadArchiveResult WithChecksum(string checksum)
         {
             this.checksum = checksum;
@@ -84,7 +88,7 @@ namespace Amazon.Glacier.Model
         // Check to see if Checksum property is set
         internal bool IsSetChecksum()
         {
-            return this.checksum != null;       
+            return this.checksum != null;
         }
 
         /// <summary>
@@ -102,6 +106,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="archiveId">The value to set for the ArchiveId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UploadArchiveResult WithArchiveId(string archiveId)
         {
             this.archiveId = archiveId;
@@ -112,7 +117,7 @@ namespace Amazon.Glacier.Model
         // Check to see if ArchiveId property is set
         internal bool IsSetArchiveId()
         {
-            return this.archiveId != null;       
+            return this.archiveId != null;
         }
     }
 }

@@ -25,7 +25,9 @@ namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
     /// Container for the parameters to the ConfigureHealthCheck operation.
-    /// <para> Enables the client to define an application healthcheck for the instances. </para>
+    /// <para> Specifies the health check settings to use for evaluating the health state of your back-end instances. </para> <para>For more
+    /// information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#healthcheck"
+    /// >Health Check</a> in the <i>Elastic Load Balancing Developer Guide</i> .</para>
     /// </summary>
     /// <seealso cref="Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancing.ConfigureHealthCheck"/>
     public class ConfigureHealthCheckRequest : AmazonWebServiceRequest
@@ -44,10 +46,10 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// initialize any additional object members.
         /// </summary>
         /// 
-        /// <param name="loadBalancerName"> The mnemonic name associated with the LoadBalancer. This name must be unique within the client AWS account.
-        /// </param>
+        /// <param name="loadBalancerName"> The mnemonic name associated with the load balancer. The name must be unique within the set of load
+        /// balancers associated with your AWS account. </param>
         /// <param name="healthCheck"> A structure containing the configuration information for the new healthcheck. </param>
-        public ConfigureHealthCheckRequest(string loadBalancerName, HealthCheck healthCheck) 
+        public ConfigureHealthCheckRequest(string loadBalancerName, HealthCheck healthCheck)
         {
             this.loadBalancerName = loadBalancerName;
             this.healthCheck = healthCheck;
@@ -55,7 +57,8 @@ namespace Amazon.ElasticLoadBalancing.Model
     
 
         /// <summary>
-        /// The mnemonic name associated with the LoadBalancer. This name must be unique within the client AWS account.
+        /// The mnemonic name associated with the load balancer. The name must be unique within the set of load balancers associated with your AWS
+        /// account.
         ///  
         /// </summary>
         public string LoadBalancerName
@@ -69,6 +72,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="loadBalancerName">The value to set for the LoadBalancerName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ConfigureHealthCheckRequest WithLoadBalancerName(string loadBalancerName)
         {
             this.loadBalancerName = loadBalancerName;
@@ -79,7 +83,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if LoadBalancerName property is set
         internal bool IsSetLoadBalancerName()
         {
-            return this.loadBalancerName != null;       
+            return this.loadBalancerName != null;
         }
 
         /// <summary>
@@ -97,6 +101,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="healthCheck">The value to set for the HealthCheck property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ConfigureHealthCheckRequest WithHealthCheck(HealthCheck healthCheck)
         {
             this.healthCheck = healthCheck;
@@ -107,7 +112,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if HealthCheck property is set
         internal bool IsSetHealthCheck()
         {
-            return this.healthCheck != null;       
+            return this.healthCheck != null;
         }
     }
 }

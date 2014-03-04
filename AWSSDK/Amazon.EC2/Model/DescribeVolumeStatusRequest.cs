@@ -1,4 +1,4 @@
-﻿/*******************************************************************************
+/*******************************************************************************
  * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
     /// Returns the status of one or more volumes.
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
-    public class DescribeVolumeStatusRequest
+    public class DescribeVolumeStatusRequest : EC2Request
     {
         private List<string> volumeIdField;
         private List<Filter> filterField;
@@ -59,6 +59,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">Volume IDs to describe.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeVolumeStatusRequest WithVolumeId(params string[] list)
         {
             foreach (string item in list)
@@ -104,6 +105,7 @@ namespace Amazon.EC2.Model
         /// For a complete reference to the available filter keys for this operation, see the
         /// Amazon EC2 API reference.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeVolumeStatusRequest WithFilter(params Filter[] list)
         {
             foreach (Filter item in list)
@@ -137,6 +139,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="nextToken"></param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeVolumeStatusRequest WithNextToken(string nextToken)
         {
             this.nextTokenField = nextToken;
@@ -167,6 +170,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="maxResults">Maximum number of paginated volume items</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeVolumeStatusRequest WithMaxResults(int maxResults)
         {
             this.maxResultsField = maxResults;

@@ -55,6 +55,7 @@ namespace Amazon.SQS.Model
         /// </summary>
         /// <param name="queueUrl">The URL associated with the Amazon SQS queue.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AddPermissionRequest WithQueueUrl(string queueUrl)
         {
             this.queueUrlField = queueUrl;
@@ -91,6 +92,7 @@ namespace Amazon.SQS.Model
         /// </summary>
         /// <param name="label">The unique identification of the permission you're setting.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AddPermissionRequest WithLabel(string label)
         {
             this.labelField = label;
@@ -134,6 +136,7 @@ namespace Amazon.SQS.Model
         /// </remarks>
         /// <param name="list">The AWS account number of the principal who will be given permission.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AddPermissionRequest WithAWSAccountId(params string[] list)
         {
             foreach (string item in list)
@@ -182,6 +185,7 @@ namespace Amazon.SQS.Model
         /// </remarks>
         /// <param name="list">The action you want to allow for the specified principal.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AddPermissionRequest WithActionName(params string[] list)
         {
             foreach (string item in list)

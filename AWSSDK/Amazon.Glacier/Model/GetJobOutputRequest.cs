@@ -38,13 +38,17 @@ namespace Amazon.Glacier.Model
     /// <li> <para>Repeat steps 1 and 2 for all the eight 128 MB chunks of output data, each time specifying the appropriate byte range.</para>
     /// </li>
     /// <li> <para>After downloading all the parts of the job output, you have a list of eight checksum values. Compute the tree hash of these
-    /// values to find the checksum of the entire output. Using the Describe Job API, obtain job information of the job that provided you the
-    /// output. The response includes the checksum of the entire archive stored in Amazon Glacier. You compare this value with the checksum you
-    /// computed to ensure you have downloaded the entire archive content with no errors.</para> </li>
+    /// values to find the checksum of the entire output. Using the DescribeJob API, obtain job information of the job that provided you the output.
+    /// The response includes the checksum of the entire archive stored in Amazon Glacier. You compare this value with the checksum you computed to
+    /// ensure you have downloaded the entire archive content with no errors.</para> </li>
     /// </ol> <para>An AWS account has full permission to perform all operations (actions). However, AWS Identity and Access Management (IAM) users
-    /// don't have any permissions by default. You must grant them explicit permission to perform specific actions. For more information, see Access
-    /// Control Using AWS Identity and Access Management (IAM).</para> <para>For conceptual information and the underlying REST API, go to
-    /// Downloading a Vault Inventory, Downloading an Archive, and Get Job Output </para>
+    /// don't have any permissions by default. You must grant them explicit permission to perform specific actions. For more information, see <a
+    /// href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html" >Access Control Using AWS Identity and Access
+    /// Management (IAM)</a> .</para> <para>For conceptual information and the underlying REST API, go to <a
+    /// href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-inventory.html" >Downloading a Vault Inventory</a> ,
+    /// 
+    /// <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/downloading-an-archive.html" >Downloading an Archive</a> ,
+    /// and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-job-output-get.html" >Get Job Output </a> </para>
     /// </summary>
     /// <seealso cref="Amazon.Glacier.AmazonGlacier.GetJobOutput"/>
     public class GetJobOutputRequest : AmazonWebServiceRequest
@@ -70,6 +74,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="accountId">The value to set for the AccountId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetJobOutputRequest WithAccountId(string accountId)
         {
             this.accountId = accountId;
@@ -80,7 +85,7 @@ namespace Amazon.Glacier.Model
         // Check to see if AccountId property is set
         internal bool IsSetAccountId()
         {
-            return this.accountId != null;       
+            return this.accountId != null;
         }
 
         /// <summary>
@@ -98,6 +103,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="vaultName">The value to set for the VaultName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetJobOutputRequest WithVaultName(string vaultName)
         {
             this.vaultName = vaultName;
@@ -108,7 +114,7 @@ namespace Amazon.Glacier.Model
         // Check to see if VaultName property is set
         internal bool IsSetVaultName()
         {
-            return this.vaultName != null;       
+            return this.vaultName != null;
         }
 
         /// <summary>
@@ -126,6 +132,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="jobId">The value to set for the JobId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetJobOutputRequest WithJobId(string jobId)
         {
             this.jobId = jobId;
@@ -136,7 +143,7 @@ namespace Amazon.Glacier.Model
         // Check to see if JobId property is set
         internal bool IsSetJobId()
         {
-            return this.jobId != null;       
+            return this.jobId != null;
         }
 
         /// <summary>
@@ -155,6 +162,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="range">The value to set for the Range property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetJobOutputRequest WithRange(string range)
         {
             this.range = range;
@@ -165,7 +173,7 @@ namespace Amazon.Glacier.Model
         // Check to see if Range property is set
         internal bool IsSetRange()
         {
-            return this.range != null;       
+            return this.range != null;
         }
     }
 }

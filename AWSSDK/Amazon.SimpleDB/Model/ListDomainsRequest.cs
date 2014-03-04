@@ -53,6 +53,7 @@ namespace Amazon.SimpleDB.Model
         /// </summary>
         /// <param name="maxNumberOfDomains">The maximum number of domain names you want returned. The range is 1 to 100. The default setting is 100.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListDomainsRequest WithMaxNumberOfDomains(Decimal maxNumberOfDomains)
         {
             this.maxNumberOfDomainsField = maxNumberOfDomains;
@@ -84,6 +85,7 @@ namespace Amazon.SimpleDB.Model
         /// </summary>
         /// <param name="nextToken">String that tells Amazon SimpleDB where to start the next list of domain names.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListDomainsRequest WithNextToken(string nextToken)
         {
             this.nextTokenField = nextToken;

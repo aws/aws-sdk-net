@@ -31,7 +31,7 @@ namespace Amazon.DynamoDBv2.Model
         private Projection projection;
 
         /// <summary>
-        /// Represents the name of the secondary index. The name must be unique among all other indexes on this table.
+        /// The name of the local secondary index. The name must be unique among all other indexes on this table.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -58,6 +58,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="indexName">The value to set for the IndexName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LocalSecondaryIndex WithIndexName(string indexName)
         {
             this.indexName = indexName;
@@ -72,7 +73,7 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// Represents the complete index key schema, which consists of one or more pairs of attribute names and key types (<c>HASH</c> or
+        /// The complete key schema for the local secondary index, consisting of one or more pairs of attribute names and key types (<c>HASH</c> or
         /// <c>RANGE</c>).
         ///  
         /// <para>
@@ -95,6 +96,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="keySchema">The values to add to the KeySchema collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LocalSecondaryIndex WithKeySchema(params KeySchemaElement[] keySchema)
         {
             foreach (KeySchemaElement element in keySchema)
@@ -110,6 +112,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="keySchema">The values to add to the KeySchema collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LocalSecondaryIndex WithKeySchema(IEnumerable<KeySchemaElement> keySchema)
         {
             foreach (KeySchemaElement element in keySchema)
@@ -127,7 +130,7 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// Represents attributes that are copied (projected) from the table into the index. These are in addition to the primary key attributes and
+        /// Represents attributes that are copied (projected) from the table into an index. These are in addition to the primary key attributes and
         /// index key attributes, which are automatically projected.
         ///  
         /// </summary>
@@ -142,6 +145,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="projection">The value to set for the Projection property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LocalSecondaryIndex WithProjection(Projection projection)
         {
             this.projection = projection;

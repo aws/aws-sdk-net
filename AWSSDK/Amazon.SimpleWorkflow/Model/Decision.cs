@@ -151,6 +151,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="decisionType">The value to set for the DecisionType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Decision WithDecisionType(string decisionType)
         {
             this.decisionType = decisionType;
@@ -179,6 +180,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="scheduleActivityTaskDecisionAttributes">The value to set for the ScheduleActivityTaskDecisionAttributes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Decision WithScheduleActivityTaskDecisionAttributes(ScheduleActivityTaskDecisionAttributes scheduleActivityTaskDecisionAttributes)
         {
             this.scheduleActivityTaskDecisionAttributes = scheduleActivityTaskDecisionAttributes;
@@ -207,6 +209,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="requestCancelActivityTaskDecisionAttributes">The value to set for the RequestCancelActivityTaskDecisionAttributes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Decision WithRequestCancelActivityTaskDecisionAttributes(RequestCancelActivityTaskDecisionAttributes requestCancelActivityTaskDecisionAttributes)
         {
             this.requestCancelActivityTaskDecisionAttributes = requestCancelActivityTaskDecisionAttributes;
@@ -235,6 +238,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="completeWorkflowExecutionDecisionAttributes">The value to set for the CompleteWorkflowExecutionDecisionAttributes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Decision WithCompleteWorkflowExecutionDecisionAttributes(CompleteWorkflowExecutionDecisionAttributes completeWorkflowExecutionDecisionAttributes)
         {
             this.completeWorkflowExecutionDecisionAttributes = completeWorkflowExecutionDecisionAttributes;
@@ -263,6 +267,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="failWorkflowExecutionDecisionAttributes">The value to set for the FailWorkflowExecutionDecisionAttributes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Decision WithFailWorkflowExecutionDecisionAttributes(FailWorkflowExecutionDecisionAttributes failWorkflowExecutionDecisionAttributes)
         {
             this.failWorkflowExecutionDecisionAttributes = failWorkflowExecutionDecisionAttributes;
@@ -291,6 +296,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="cancelWorkflowExecutionDecisionAttributes">The value to set for the CancelWorkflowExecutionDecisionAttributes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Decision WithCancelWorkflowExecutionDecisionAttributes(CancelWorkflowExecutionDecisionAttributes cancelWorkflowExecutionDecisionAttributes)
         {
             this.cancelWorkflowExecutionDecisionAttributes = cancelWorkflowExecutionDecisionAttributes;
@@ -319,6 +325,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="continueAsNewWorkflowExecutionDecisionAttributes">The value to set for the ContinueAsNewWorkflowExecutionDecisionAttributes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Decision WithContinueAsNewWorkflowExecutionDecisionAttributes(ContinueAsNewWorkflowExecutionDecisionAttributes continueAsNewWorkflowExecutionDecisionAttributes)
         {
             this.continueAsNewWorkflowExecutionDecisionAttributes = continueAsNewWorkflowExecutionDecisionAttributes;
@@ -347,6 +354,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="recordMarkerDecisionAttributes">The value to set for the RecordMarkerDecisionAttributes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Decision WithRecordMarkerDecisionAttributes(RecordMarkerDecisionAttributes recordMarkerDecisionAttributes)
         {
             this.recordMarkerDecisionAttributes = recordMarkerDecisionAttributes;
@@ -375,6 +383,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="startTimerDecisionAttributes">The value to set for the StartTimerDecisionAttributes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Decision WithStartTimerDecisionAttributes(StartTimerDecisionAttributes startTimerDecisionAttributes)
         {
             this.startTimerDecisionAttributes = startTimerDecisionAttributes;
@@ -403,6 +412,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="cancelTimerDecisionAttributes">The value to set for the CancelTimerDecisionAttributes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Decision WithCancelTimerDecisionAttributes(CancelTimerDecisionAttributes cancelTimerDecisionAttributes)
         {
             this.cancelTimerDecisionAttributes = cancelTimerDecisionAttributes;
@@ -431,6 +441,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="signalExternalWorkflowExecutionDecisionAttributes">The value to set for the SignalExternalWorkflowExecutionDecisionAttributes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Decision WithSignalExternalWorkflowExecutionDecisionAttributes(SignalExternalWorkflowExecutionDecisionAttributes signalExternalWorkflowExecutionDecisionAttributes)
         {
             this.signalExternalWorkflowExecutionDecisionAttributes = signalExternalWorkflowExecutionDecisionAttributes;
@@ -459,6 +470,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="requestCancelExternalWorkflowExecutionDecisionAttributes">The value to set for the RequestCancelExternalWorkflowExecutionDecisionAttributes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Decision WithRequestCancelExternalWorkflowExecutionDecisionAttributes(RequestCancelExternalWorkflowExecutionDecisionAttributes requestCancelExternalWorkflowExecutionDecisionAttributes)
         {
             this.requestCancelExternalWorkflowExecutionDecisionAttributes = requestCancelExternalWorkflowExecutionDecisionAttributes;
@@ -487,6 +499,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="startChildWorkflowExecutionDecisionAttributes">The value to set for the StartChildWorkflowExecutionDecisionAttributes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Decision WithStartChildWorkflowExecutionDecisionAttributes(StartChildWorkflowExecutionDecisionAttributes startChildWorkflowExecutionDecisionAttributes)
         {
             this.startChildWorkflowExecutionDecisionAttributes = startChildWorkflowExecutionDecisionAttributes;

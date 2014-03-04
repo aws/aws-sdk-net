@@ -21,9 +21,9 @@ using System.IO;
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// <para>Contains the result of a successful invocation of the CreateRoleResponse action.</para>
+    /// <para>Contains the result of a successful invocation of the CreateRole action.</para>
     /// </summary>
-    public class CreateRoleResult  
+    public partial class CreateRoleResult
     {
         
         private Role role;
@@ -43,6 +43,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="role">The value to set for the Role property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateRoleResult WithRole(Role role)
         {
             this.role = role;
@@ -53,7 +54,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if Role property is set
         internal bool IsSetRole()
         {
-            return this.role != null;       
+            return this.role != null;
         }
     }
 }

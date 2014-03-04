@@ -26,8 +26,9 @@ namespace Amazon.Redshift.Model
     /// <summary>
     /// Container for the parameters to the CreateClusterSubnetGroup operation.
     /// <para> Creates a new Amazon Redshift subnet group. You must provide a list of one or more subnets in your existing Amazon Virtual Private
-    /// Cloud (Amazon VPC) when creating Amazon Redshift subnet group. </para> <para> For information about subnet groups, go to Amazon Redshift
-    /// Cluster Subnet Groups in the <i>Amazon Redshift Management Guide</i> .
+    /// Cloud (Amazon VPC) when creating Amazon Redshift subnet group. </para> <para> For information about subnet groups, go to <a
+    /// href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-cluster-subnet-groups.html" >Amazon Redshift Cluster Subnet Groups</a> in
+    /// the <i>Amazon Redshift Management Guide</i> .
     /// </para>
     /// </summary>
     /// <seealso cref="Amazon.Redshift.AmazonRedshift.CreateClusterSubnetGroup"/>
@@ -54,6 +55,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="clusterSubnetGroupName">The value to set for the ClusterSubnetGroupName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateClusterSubnetGroupRequest WithClusterSubnetGroupName(string clusterSubnetGroupName)
         {
             this.clusterSubnetGroupName = clusterSubnetGroupName;
@@ -82,6 +84,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="description">The value to set for the Description property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateClusterSubnetGroupRequest WithDescription(string description)
         {
             this.description = description;
@@ -109,6 +112,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="subnetIds">The values to add to the SubnetIds collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateClusterSubnetGroupRequest WithSubnetIds(params string[] subnetIds)
         {
             foreach (string element in subnetIds)
@@ -124,6 +128,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="subnetIds">The values to add to the SubnetIds collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateClusterSubnetGroupRequest WithSubnetIds(IEnumerable<string> subnetIds)
         {
             foreach (string element in subnetIds)

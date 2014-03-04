@@ -23,7 +23,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// <summary>
     /// <para> The HealthCheck data type. </para>
     /// </summary>
-    public class HealthCheck  
+    public partial class HealthCheck
     {
         
         private string target;
@@ -58,7 +58,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <i>Unhealthy</i> state. </param>
         /// <param name="healthyThreshold"> Specifies the number of consecutive health probe successes required before moving the instance to the
         /// <i>Healthy</i> state. </param>
-        public HealthCheck(string target, int interval, int timeout, int unhealthyThreshold, int healthyThreshold) 
+        public HealthCheck(string target, int interval, int timeout, int unhealthyThreshold, int healthyThreshold)
         {
             this.target = target;
             this.interval = interval;
@@ -89,6 +89,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="target">The value to set for the Target property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public HealthCheck WithTarget(string target)
         {
             this.target = target;
@@ -99,7 +100,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if Target property is set
         internal bool IsSetTarget()
         {
-            return this.target != null;       
+            return this.target != null;
         }
 
         /// <summary>
@@ -126,6 +127,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="interval">The value to set for the Interval property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public HealthCheck WithInterval(int interval)
         {
             this.interval = interval;
@@ -136,7 +138,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if Interval property is set
         internal bool IsSetInterval()
         {
-            return this.interval.HasValue;       
+            return this.interval.HasValue;
         }
 
         /// <summary>
@@ -164,6 +166,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="timeout">The value to set for the Timeout property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public HealthCheck WithTimeout(int timeout)
         {
             this.timeout = timeout;
@@ -174,7 +177,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if Timeout property is set
         internal bool IsSetTimeout()
         {
-            return this.timeout.HasValue;       
+            return this.timeout.HasValue;
         }
 
         /// <summary>
@@ -201,6 +204,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="unhealthyThreshold">The value to set for the UnhealthyThreshold property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public HealthCheck WithUnhealthyThreshold(int unhealthyThreshold)
         {
             this.unhealthyThreshold = unhealthyThreshold;
@@ -211,7 +215,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if UnhealthyThreshold property is set
         internal bool IsSetUnhealthyThreshold()
         {
-            return this.unhealthyThreshold.HasValue;       
+            return this.unhealthyThreshold.HasValue;
         }
 
         /// <summary>
@@ -238,6 +242,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="healthyThreshold">The value to set for the HealthyThreshold property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public HealthCheck WithHealthyThreshold(int healthyThreshold)
         {
             this.healthyThreshold = healthyThreshold;
@@ -248,7 +253,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if HealthyThreshold property is set
         internal bool IsSetHealthyThreshold()
         {
-            return this.healthyThreshold.HasValue;       
+            return this.healthyThreshold.HasValue;
         }
     }
 }

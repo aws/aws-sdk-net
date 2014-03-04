@@ -25,7 +25,8 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteDBSnapshot operation.
-    /// <para> Deletes a DBSnapshot. </para> <para><b>NOTE:</b>The DBSnapshot must be in the available state to be deleted.</para>
+    /// <para> Deletes a DBSnapshot. If the snapshot is being copied, the copy operation is terminated. </para> <para><b>NOTE:</b>The DBSnapshot
+    /// must be in the available state to be deleted.</para>
     /// </summary>
     /// <seealso cref="Amazon.RDS.AmazonRDS.DeleteDBSnapshot"/>
     public class DeleteDBSnapshotRequest : AmazonWebServiceRequest
@@ -33,7 +34,7 @@ namespace Amazon.RDS.Model
         private string dBSnapshotIdentifier;
 
         /// <summary>
-        /// The DBSnapshot identifier. Constraints: Must be the name of an existing DB Snapshot in the <c>available</c> state.
+        /// The DBSnapshot identifier. Constraints: Must be the name of an existing DB snapshot in the <c>available</c> state.
         ///  
         /// </summary>
         public string DBSnapshotIdentifier
@@ -47,6 +48,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="dBSnapshotIdentifier">The value to set for the DBSnapshotIdentifier property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeleteDBSnapshotRequest WithDBSnapshotIdentifier(string dBSnapshotIdentifier)
         {
             this.dBSnapshotIdentifier = dBSnapshotIdentifier;

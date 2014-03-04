@@ -11,29 +11,31 @@
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
- */ 
+ */
     using System;
     using System.Collections.Generic;
     using System.IO;
     using Amazon.DirectConnect.Model;
     using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations 
-    { 
-      /// <summary> 
-      /// DeleteVirtualInterfaceResultUnmarshaller 
-      /// </summary> 
-      internal class DeleteVirtualInterfaceResultUnmarshaller : IUnmarshaller<DeleteVirtualInterfaceResult, XmlUnmarshallerContext>, IUnmarshaller<DeleteVirtualInterfaceResult, JsonUnmarshallerContext> 
-      { 
+    namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
+    {
+      /// <summary>
+      /// DeleteVirtualInterfaceResultUnmarshaller
+      /// </summary>
+      internal class DeleteVirtualInterfaceResultUnmarshaller : IUnmarshaller<DeleteVirtualInterfaceResult, XmlUnmarshallerContext>, IUnmarshaller<DeleteVirtualInterfaceResult, JsonUnmarshallerContext>
+      {
         DeleteVirtualInterfaceResult IUnmarshaller<DeleteVirtualInterfaceResult, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
           throw new NotImplementedException();
         }
-        
-        public DeleteVirtualInterfaceResult Unmarshall(JsonUnmarshallerContext context) 
+
+        public DeleteVirtualInterfaceResult Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             DeleteVirtualInterfaceResult deleteVirtualInterfaceResult = new DeleteVirtualInterfaceResult();
-                    
+          
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             while (context.Read())
@@ -42,31 +44,31 @@
                 {
                 context.Read();
                 context.Read();
-               
-              if (context.TestExpression("VirtualInterfaceState", targetDepth)) 
+              
+              if (context.TestExpression("VirtualInterfaceState", targetDepth))
               {
                 deleteVirtualInterfaceResult.VirtualInterfaceState = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue; 
+                continue;
               }
-   
-                } 
-                else if (context.IsEndElement && context.CurrentDepth <= originalDepth) 
-                { 
-                    return deleteVirtualInterfaceResult; 
-                } 
-            } 
+  
+                }
+                else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
+                {
+                    return deleteVirtualInterfaceResult;
+                }
+            }
           
-          
-            return deleteVirtualInterfaceResult; 
-        } 
-        
-        private static DeleteVirtualInterfaceResultUnmarshaller instance; 
-        public static DeleteVirtualInterfaceResultUnmarshaller GetInstance() 
-        { 
-            if (instance == null) 
-                instance = new DeleteVirtualInterfaceResultUnmarshaller(); 
+
+            return deleteVirtualInterfaceResult;
+        }
+
+        private static DeleteVirtualInterfaceResultUnmarshaller instance;
+        public static DeleteVirtualInterfaceResultUnmarshaller GetInstance()
+        {
+            if (instance == null)
+                instance = new DeleteVirtualInterfaceResultUnmarshaller();
             return instance;
-        } 
-    } 
-} 
+        }
+    }
+}
   

@@ -46,6 +46,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         /// <param name="properties">The values to add to the Properties collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public HadoopJarStepConfig WithProperties(params KeyValue[] properties)
         {
             foreach (KeyValue element in properties)
@@ -61,6 +62,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         /// <param name="properties">The values to add to the Properties collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public HadoopJarStepConfig WithProperties(IEnumerable<KeyValue> properties)
         {
             foreach (KeyValue element in properties)
@@ -105,6 +107,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         /// <param name="jar">The value to set for the Jar property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public HadoopJarStepConfig WithJar(string jar)
         {
             this.jar = jar;
@@ -146,6 +149,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         /// <param name="mainClass">The value to set for the MainClass property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public HadoopJarStepConfig WithMainClass(string mainClass)
         {
             this.mainClass = mainClass;
@@ -173,6 +177,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         /// <param name="args">The values to add to the Args collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public HadoopJarStepConfig WithArgs(params string[] args)
         {
             foreach (string element in args)
@@ -188,6 +193,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         /// <param name="args">The values to add to the Args collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public HadoopJarStepConfig WithArgs(IEnumerable<string> args)
         {
             foreach (string element in args)

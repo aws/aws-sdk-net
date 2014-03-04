@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Xml.Serialization;
@@ -30,6 +30,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="ipAddress">Private IP address.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public NetworkInterfacePrivateIpAddress WithIpAddress(string ipAddress)
         {
             this.ipAddressField = ipAddress;
@@ -61,6 +62,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="privateDnsName">Private DNS name.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public NetworkInterfacePrivateIpAddress WithPrivateDnsName(string privateDnsName)
         {
             this.privateDnsNameField = privateDnsName;
@@ -92,6 +94,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="primary">Whether this is a primary IP.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public NetworkInterfacePrivateIpAddress WithPrimary(bool primary)
         {
             this.primaryField = primary;
@@ -123,6 +126,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="association">Instance Network Interface Association.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public NetworkInterfacePrivateIpAddress WithAssociation(NetworkInterfaceAssociation association)
         {
             this.associationField = association;

@@ -19,15 +19,16 @@ using System.Threading;
 namespace Amazon.Runtime.Internal.Util
 {
     /// <summary>
-    /// Class to invoke actions on a background thread.
-    /// Uses a single background thread and invokes actions
-    /// on it in the order they were invoked through the instance.
+    /// Class to perform actions on a background thread.
+    /// Uses a single background thread and performs actions
+    /// on it in the order the data was sent through the instance.
     /// </summary>
-    internal class BackgroundDispatcher
+    internal class BackgroundDispatcher<T>
     {
         #region Properties
 
-        private Queue<Action> queue;
+        private Action<T> action;
+        private Queue<T> queue;
         private Thread backgroundThread;
         private AutoResetEvent resetEvent;
         private bool shouldStop;
@@ -38,11 +39,15 @@ namespace Amazon.Runtime.Internal.Util
 
         #region Constructor/destructor
 
-        public BackgroundDispatcher()
+        public BackgroundDispatcher(Action<T> action)
         {
-            queue = new Queue<Action>();
+            if (action == null)
+                throw new ArgumentNullException("action");
+
+            queue = new Queue<T>();
             resetEvent = new AutoResetEvent(false);
             shouldStop = false;
+            this.action = action;
 
             backgroundThread = new Thread(Run);
             backgroundThread.IsBackground = true;
@@ -59,14 +64,14 @@ namespace Amazon.Runtime.Internal.Util
 
         #region Public Methods
 
-        public void Invoke(Action action)
+        public void Dispatch(T data)
         {
             if (!IsRunning)
                 throw new InvalidOperationException("Dispatcher not running");
 
             lock (queue)
             {
-                queue.Enqueue(action);
+                queue.Enqueue(data);
             }
             resetEvent.Set();
         }
@@ -87,36 +92,52 @@ namespace Amazon.Runtime.Internal.Util
             IsRunning = true;
             while (!shouldStop)
             {
-                RunInvoked();
+                HandleInvoked();
                 resetEvent.WaitOne();
             }
-            RunInvoked();
+            HandleInvoked();
             IsRunning = false;
         }
 
-        private void RunInvoked()
+        private void HandleInvoked()
         {
             while (true)
             {
-                Action action = null;
+                bool dataPresent = false;
+                T data = default(T);
                 lock (queue)
                 {
                     if (queue.Count > 0)
                     {
-                        action = queue.Dequeue();
+                        data = queue.Dequeue();
+                        dataPresent = true;
                     }
                 }
-                if (action == null)
+
+                if (!dataPresent)
                     break;
 
                 try
                 {
-                    action();
+                    action(data);
                 }
                 catch { }
             }
         }
 
         #endregion
+    }
+
+    /// <summary>
+    /// Class to invoke actions on a background thread.
+    /// Uses a single background thread and invokes actions
+    /// on it in the order they were invoked through the instance.
+    /// </summary>
+    internal class BackgroundInvoker : BackgroundDispatcher<Action>
+    {
+        public BackgroundInvoker()
+            : base(action => action())
+        {
+        }
     }
 }

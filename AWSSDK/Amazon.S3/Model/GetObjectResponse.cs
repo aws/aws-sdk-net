@@ -301,6 +301,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="handler">A method that consumes the put object progress notification</param>
         /// <returns>this instance of the PutObjectRequest</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetObjectResponse WithSubscriber(EventHandler<WriteObjectProgressArgs> handler)
         {
             this.WriteObjectProgressEvent += handler;

@@ -31,7 +31,8 @@ namespace Amazon.SimpleWorkflow.Model
     /// <ul>
     /// <li>Use a <c>Resource</c> element with the domain name to limit the action to only specified domains.</li>
     /// <li>Use an <c>Action</c> element to allow or deny permission to call this action.</li>
-    /// <li>Use a <b>Condition</b> element with the <c>swf:taskList.name</c> key to allow the action to access only certain task lists.</li>
+    /// <li>Constrain the <c>taskList.name</c> parameter by using a <b>Condition</b> element with the <c>swf:taskList.name</c> key to allow the
+    /// action to access only certain task lists.</li>
     /// 
     /// </ul>
     /// <para>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified
@@ -68,6 +69,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="domain">The value to set for the Domain property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CountPendingActivityTasksRequest WithDomain(string domain)
         {
             this.domain = domain;
@@ -96,6 +98,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="taskList">The value to set for the TaskList property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CountPendingActivityTasksRequest WithTaskList(TaskList taskList)
         {
             this.taskList = taskList;

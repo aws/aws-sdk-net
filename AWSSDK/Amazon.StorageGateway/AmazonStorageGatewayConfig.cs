@@ -51,7 +51,7 @@ namespace Amazon.StorageGateway
         {
             get
             {
-                return "2012-06-30";
+                return "2013-06-30";
             }
         }
     }

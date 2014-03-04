@@ -22,13 +22,14 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
      /// <summary>
      ///   ValidationMessage Unmarshaller
      /// </summary>
-    internal class ValidationMessageUnmarshaller : IUnmarshaller<ValidationMessage, XmlUnmarshallerContext> 
+    internal class ValidationMessageUnmarshaller : IUnmarshaller<ValidationMessage, XmlUnmarshallerContext>, IUnmarshaller<ValidationMessage, JsonUnmarshallerContext> 
     {
         public ValidationMessage Unmarshall(XmlUnmarshallerContext context) 
         {
             ValidationMessage validationMessage = new ValidationMessage();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -70,6 +71,11 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
 
 
             return validationMessage;
+        }
+
+        public ValidationMessage Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static ValidationMessageUnmarshaller instance;

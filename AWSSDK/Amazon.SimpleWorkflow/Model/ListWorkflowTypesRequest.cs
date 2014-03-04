@@ -72,6 +72,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="domain">The value to set for the Domain property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListWorkflowTypesRequest WithDomain(string domain)
         {
             this.domain = domain;
@@ -109,6 +110,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="name">The value to set for the Name property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListWorkflowTypesRequest WithName(string name)
         {
             this.name = name;
@@ -146,6 +148,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="registrationStatus">The value to set for the RegistrationStatus property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListWorkflowTypesRequest WithRegistrationStatus(string registrationStatus)
         {
             this.registrationStatus = registrationStatus;
@@ -184,6 +187,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="nextPageToken">The value to set for the NextPageToken property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListWorkflowTypesRequest WithNextPageToken(string nextPageToken)
         {
             this.nextPageToken = nextPageToken;
@@ -223,6 +227,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="maximumPageSize">The value to set for the MaximumPageSize property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListWorkflowTypesRequest WithMaximumPageSize(int maximumPageSize)
         {
             this.maximumPageSize = maximumPageSize;
@@ -252,6 +257,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="reverseOrder">The value to set for the ReverseOrder property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListWorkflowTypesRequest WithReverseOrder(bool reverseOrder)
         {
             this.reverseOrder = reverseOrder;

@@ -21,16 +21,16 @@ using System.IO;
 namespace Amazon.AWSSupport.Model
 {
     /// <summary>
-    /// <para>Contains the AWSSupport <i>caseId</i> returned by a successful completion of the CreateCase action. </para>
+    /// <para>The AWS Support case ID returned by a successful completion of the CreateCase action. </para>
     /// </summary>
-    public class CreateCaseResult
+    public partial class CreateCaseResult
     {
         
         private string caseId;
 
         /// <summary>
-        /// String that indicates the AWS Support caseID requested or returned in the call. The caseID is an alphanumeric string formatted as shown in
-        /// this example CaseId: <i>case-12345678910-2013-c4c1d2bf33c5cf47</i>
+        /// The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example:
+        /// case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
         ///  
         /// </summary>
         public string CaseId
@@ -44,6 +44,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="caseId">The value to set for the CaseId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateCaseResult WithCaseId(string caseId)
         {
             this.caseId = caseId;

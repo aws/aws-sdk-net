@@ -21,16 +21,16 @@ using System.IO;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// <para>Represents one or more Cache Security Groups to which a Cache Cluster belongs.</para>
+    /// <para>Represents a single cache security group and its status..</para>
     /// </summary>
-    public class SecurityGroupMembership
+    public partial class SecurityGroupMembership
     {
         
         private string securityGroupId;
         private string status;
 
         /// <summary>
-        /// The identifier of the Cache Security Group.
+        /// The identifier of the cache security group.
         ///  
         /// </summary>
         public string SecurityGroupId
@@ -44,6 +44,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="securityGroupId">The value to set for the SecurityGroupId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SecurityGroupMembership WithSecurityGroupId(string securityGroupId)
         {
             this.securityGroupId = securityGroupId;
@@ -58,8 +59,8 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// The status of the Cache Security Group membership. The status changes whenever a Cache Security Group is modified, or when the Cache
-        /// Security Groups assigned to a Cache Cluster are modified.
+        /// The status of the cache security group membership. The status changes whenever a cache security group is modified, or when the cache
+        /// security groups assigned to a cache cluster are modified.
         ///  
         /// </summary>
         public string Status
@@ -73,6 +74,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="status">The value to set for the Status property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SecurityGroupMembership WithStatus(string status)
         {
             this.status = status;

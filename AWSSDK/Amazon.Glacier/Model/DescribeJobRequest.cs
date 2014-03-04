@@ -32,8 +32,10 @@ namespace Amazon.Glacier.Model
     /// topic after it completes the job. </para> <para>A job ID will not expire for at least 24 hours after Amazon Glacier completes the job.
     /// </para> <para>An AWS account has full permission to perform all operations (actions). However, AWS Identity and Access Management (IAM)
     /// users don't have any permissions by default. You must grant them explicit permission to perform specific actions. For more information, see
-    /// Access Control Using AWS Identity and Access Management (IAM).</para> <para> For information about the underlying REST API, go to Working
-    /// with Archives in Amazon Glacier in the <i>Amazon Glacier Developer Guide</i> .
+    /// <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html"> Access Control Using AWS Identity and
+    /// Access Management (IAM) </a> .</para> <para> For information about the underlying REST API, go to <a
+    /// href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-describe-job-get.html"> Working with Archives in Amazon Glacier </a> in the
+    /// <i>Amazon Glacier Developer Guide</i> .
     /// </para>
     /// </summary>
     /// <seealso cref="Amazon.Glacier.AmazonGlacier.DescribeJob"/>
@@ -59,6 +61,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="accountId">The value to set for the AccountId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeJobRequest WithAccountId(string accountId)
         {
             this.accountId = accountId;
@@ -69,7 +72,7 @@ namespace Amazon.Glacier.Model
         // Check to see if AccountId property is set
         internal bool IsSetAccountId()
         {
-            return this.accountId != null;       
+            return this.accountId != null;
         }
 
         /// <summary>
@@ -87,6 +90,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="vaultName">The value to set for the VaultName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeJobRequest WithVaultName(string vaultName)
         {
             this.vaultName = vaultName;
@@ -97,7 +101,7 @@ namespace Amazon.Glacier.Model
         // Check to see if VaultName property is set
         internal bool IsSetVaultName()
         {
-            return this.vaultName != null;       
+            return this.vaultName != null;
         }
 
         /// <summary>
@@ -115,6 +119,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="jobId">The value to set for the JobId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeJobRequest WithJobId(string jobId)
         {
             this.jobId = jobId;
@@ -125,7 +130,7 @@ namespace Amazon.Glacier.Model
         // Check to see if JobId property is set
         internal bool IsSetJobId()
         {
-            return this.jobId != null;       
+            return this.jobId != null;
         }
     }
 }

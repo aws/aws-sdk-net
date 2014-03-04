@@ -30,7 +30,7 @@ namespace Amazon.EC2.Model
     /// Only one attribute can be specified per call.
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
-    public class DescribeImageAttributeRequest
+    public class DescribeImageAttributeRequest : EC2Request
     {    
         private string imageIdField;
         private string attributeField;
@@ -53,6 +53,7 @@ namespace Amazon.EC2.Model
         /// <param name="imageId">The ID of the AMI for which an attribute will
         /// be described.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeImageAttributeRequest WithImageId(string imageId)
         {
             this.imageIdField = imageId;
@@ -72,8 +73,7 @@ namespace Amazon.EC2.Model
         /// Attribute name to be described.
         /// </summary>
         /// <remarks>
-        /// Valid values: launchPermission | productCodes | kernel
-        /// | ramdisk | blockDeviceMapping | platform
+        /// Valid values: description | kernel | ramdisk | launchPermission | productCodes | blockDeviceMapping
         /// </remarks>
         [XmlElementAttribute(ElementName = "Attribute")]
         public string Attribute
@@ -85,10 +85,16 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Sets the attribute name to be described.
         /// </summary>
-        /// <param name="attribute">Attribute name to be described.Valid values:
-        /// launchPermission | productCodes | kernel
-        /// | ramdisk | blockDeviceMapping | platform</param>
+        /// <param name="attribute">
+        /// <para>
+        /// Attribute name to be described.
+        /// </para>
+        /// <para>
+        /// Valid values: description | kernel | ramdisk | launchPermission | productCodes | blockDeviceMapping
+        /// </para>
+        /// </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeImageAttributeRequest WithAttribute(string attribute)
         {
             this.attributeField = attribute;

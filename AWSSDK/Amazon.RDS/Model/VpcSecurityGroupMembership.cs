@@ -23,7 +23,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// <para>This data type is used as a response element for queries on VPC security group membership.</para>
     /// </summary>
-    public class VpcSecurityGroupMembership
+    public partial class VpcSecurityGroupMembership
     {
         
         private string vpcSecurityGroupId;
@@ -44,6 +44,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="vpcSecurityGroupId">The value to set for the VpcSecurityGroupId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VpcSecurityGroupMembership WithVpcSecurityGroupId(string vpcSecurityGroupId)
         {
             this.vpcSecurityGroupId = vpcSecurityGroupId;
@@ -58,7 +59,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The status of the VPC Security Group.
+        /// The status of the VPC security group.
         ///  
         /// </summary>
         public string Status
@@ -72,6 +73,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="status">The value to set for the Status property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VpcSecurityGroupMembership WithStatus(string status)
         {
             this.status = status;

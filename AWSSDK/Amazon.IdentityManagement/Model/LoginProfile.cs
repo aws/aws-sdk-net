@@ -24,7 +24,7 @@ namespace Amazon.IdentityManagement.Model
     /// <para>The LoginProfile data type contains the user name and password create date for a user.</para> <para> This data type is used as a
     /// response element in the actions CreateLoginProfile and GetLoginProfile. </para>
     /// </summary>
-    public class LoginProfile  
+    public partial class LoginProfile
     {
         
         private string userName;
@@ -58,6 +58,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="userName">The value to set for the UserName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LoginProfile WithUserName(string userName)
         {
             this.userName = userName;
@@ -68,7 +69,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if UserName property is set
         internal bool IsSetUserName()
         {
-            return this.userName != null;       
+            return this.userName != null;
         }
 
         /// <summary>
@@ -86,6 +87,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="createDate">The value to set for the CreateDate property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LoginProfile WithCreateDate(DateTime createDate)
         {
             this.createDate = createDate;
@@ -96,7 +98,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if CreateDate property is set
         internal bool IsSetCreateDate()
         {
-            return this.createDate.HasValue;       
+            return this.createDate.HasValue;
         }
     }
 }

@@ -56,6 +56,7 @@ namespace Amazon.CloudWatch.Model
         /// </summary>
         /// <param name="alarmNames">The values to add to the AlarmNames collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DisableAlarmActionsRequest WithAlarmNames(params string[] alarmNames)
         {
             foreach (string element in alarmNames)
@@ -71,6 +72,7 @@ namespace Amazon.CloudWatch.Model
         /// </summary>
         /// <param name="alarmNames">The values to add to the AlarmNames collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DisableAlarmActionsRequest WithAlarmNames(IEnumerable<string> alarmNames)
         {
             foreach (string element in alarmNames)

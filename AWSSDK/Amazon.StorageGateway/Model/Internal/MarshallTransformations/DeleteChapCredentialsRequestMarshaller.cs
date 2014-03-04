@@ -38,7 +38,7 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
         {
 
             IRequest request = new DefaultRequest(deleteChapCredentialsRequest, "AmazonStorageGateway");
-            string target = "StorageGateway_20120630.DeleteChapCredentials";
+            string target = "StorageGateway_20130630.DeleteChapCredentials";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
 

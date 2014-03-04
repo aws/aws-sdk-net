@@ -1043,14 +1043,14 @@ namespace Amazon.DynamoDBv2.DataModel
                 storageConfig = ItemStorageConfigCache.GetConfig<T>();
 
             List<string> indexNames;
-            QueryFilter filter = ComposeQueryFilter(hashKeyValue, conditions, storageConfig, out indexNames);
-            return QueryHelper<T>(operationConfig, storageConfig, filter, indexNames);
-        }
-        private IEnumerable<T> QueryHelper<T>(DynamoDBOperationConfig operationConfig, ItemStorageConfig storageConfig, QueryFilter filter, List<string> indexNames)
-        {
             DynamoDBFlatConfig currentConfig = new DynamoDBFlatConfig(operationConfig, this.config);
+            QueryFilter filter = ComposeQueryFilter(currentConfig, hashKeyValue, conditions, storageConfig, out indexNames);
+            return QueryHelper<T>(currentConfig, storageConfig, filter, indexNames);
+        }
+        private IEnumerable<T> QueryHelper<T>(DynamoDBFlatConfig currentConfig, ItemStorageConfig storageConfig, QueryFilter filter, List<string> indexNames)
+        {
             Table table = GetTargetTable(storageConfig, currentConfig);
-            string indexName = GetQueryIndexName(storageConfig, filter, currentConfig, indexNames);
+            string indexName = GetQueryIndexName(currentConfig, indexNames);
             var queryConfig = new QueryOperationConfig
             {
                 Filter = filter,
@@ -1061,7 +1061,8 @@ namespace Amazon.DynamoDBv2.DataModel
             if (string.IsNullOrEmpty(indexName))
             {
                 queryConfig.Select = SelectValues.SpecificAttributes;
-                queryConfig.AttributesToGet = storageConfig.AttributesToGet;
+                List<string> attributesToGet = storageConfig.AttributesToGet;
+                queryConfig.AttributesToGet = attributesToGet;
             }
             else
             {
@@ -1093,11 +1094,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <returns>Table object</returns>
         public Table GetTargetTable<T>(DynamoDBOperationConfig operationConfig)
         {
-            Type type = typeof(T);
-            ItemStorageConfig storageConfig = ItemStorageConfigCache.GetConfig(type);
-            Table table = GetTargetTable(storageConfig, new DynamoDBFlatConfig(operationConfig, this.config));
-            Table copy = table.Copy(Table.DynamoDBConsumer.DocumentModel);
-            return table;
+            return GetTargetTableInternal<T>(operationConfig);
         }
 
         #endregion

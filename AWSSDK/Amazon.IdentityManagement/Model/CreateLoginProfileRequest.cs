@@ -26,7 +26,9 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Container for the parameters to the CreateLoginProfile operation.
     /// <para>Creates a password for the specified user, giving the user the ability to access AWS services through the AWS Management Console. For
-    /// more information about managing passwords, see Managing Passwords in <i>Using IAM</i> .</para>
+    /// more information about managing passwords, see <a
+    /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_ManagingLogins.html" >Managing Passwords</a> in <i>Using IAM</i>
+    /// .</para>
     /// </summary>
     /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.CreateLoginProfile"/>
     public class CreateLoginProfileRequest : AmazonWebServiceRequest
@@ -62,6 +64,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="userName">The value to set for the UserName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateLoginProfileRequest WithUserName(string userName)
         {
             this.userName = userName;
@@ -72,7 +75,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if UserName property is set
         internal bool IsSetUserName()
         {
-            return this.userName != null;       
+            return this.userName != null;
         }
 
         /// <summary>
@@ -103,6 +106,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="password">The value to set for the Password property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateLoginProfileRequest WithPassword(string password)
         {
             this.password = password;
@@ -113,7 +117,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if Password property is set
         internal bool IsSetPassword()
         {
-            return this.password != null;       
+            return this.password != null;
         }
     }
 }

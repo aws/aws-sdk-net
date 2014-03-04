@@ -60,6 +60,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="gatewayARN">The value to set for the GatewayARN property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeleteBandwidthRateLimitRequest WithGatewayARN(string gatewayARN)
         {
             this.gatewayARN = gatewayARN;
@@ -70,23 +71,8 @@ namespace Amazon.StorageGateway.Model
         // Check to see if GatewayARN property is set
         internal bool IsSetGatewayARN()
         {
-            return this.gatewayARN != null;       
+            return this.gatewayARN != null;
         }
-
-        /// <summary>
-        /// One of the <a>BandwidthType</a> values that indicates the gateway bandwidth rate limit to delete. <i>Valid Values</i>: <c>Upload</c>,
-        /// <c>Download</c>, <c>All</c>
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>UPLOAD, DOWNLOAD, ALL</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
         public string BandwidthType
         {
             get { return this.bandwidthType; }
@@ -98,6 +84,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="bandwidthType">The value to set for the BandwidthType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeleteBandwidthRateLimitRequest WithBandwidthType(string bandwidthType)
         {
             this.bandwidthType = bandwidthType;
@@ -108,7 +95,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if BandwidthType property is set
         internal bool IsSetBandwidthType()
         {
-            return this.bandwidthType != null;       
+            return this.bandwidthType != null;
         }
     }
 }

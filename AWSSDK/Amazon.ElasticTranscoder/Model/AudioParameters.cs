@@ -21,25 +21,26 @@ using System.IO;
 namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
-    /// 
+    /// <para>Parameters required for transcoding audio.</para>
     /// </summary>
-    public class AudioParameters
+    public partial class AudioParameters
     {
         
         private string codec;
         private string sampleRate;
         private string bitRate;
         private string channels;
+        private AudioCodecOptions codecOptions;
 
         /// <summary>
-        /// The audio codec for the output file. This value must be <c>AAC</c>.
+        /// The audio codec for the output file. Valid values include <c>aac</c>, <c>mp3</c>, and <c>vorbis</c>.
         ///  
         /// <para>
         /// <b>Constraints:</b>
         /// <list type="definition">
         ///     <item>
         ///         <term>Pattern</term>
-        ///         <description>(^AAC$)|(^vorbis$)</description>
+        ///         <description>(^AAC$)|(^vorbis$)|(^mp3$)</description>
         ///     </item>
         /// </list>
         /// </para>
@@ -55,6 +56,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="codec">The value to set for the Codec property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AudioParameters WithCodec(string codec)
         {
             this.codec = codec;
@@ -93,6 +95,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="sampleRate">The value to set for the SampleRate property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AudioParameters WithSampleRate(string sampleRate)
         {
             this.sampleRate = sampleRate;
@@ -130,6 +133,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="bitRate">The value to set for the BitRate property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AudioParameters WithBitRate(string bitRate)
         {
             this.bitRate = bitRate;
@@ -168,6 +172,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="channels">The value to set for the Channels property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AudioParameters WithChannels(string channels)
         {
             this.channels = channels;
@@ -179,6 +184,37 @@ namespace Amazon.ElasticTranscoder.Model
         internal bool IsSetChannels()
         {
             return this.channels != null;
+        }
+
+        /// <summary>
+        /// If you specified <c>AAC</c> for <c>Audio:Codec</c>, this is the <c>AAC</c> compression profile to use. Valid values include: <c>auto</c>,
+        /// <c>AAC-LC</c>, <c>HE-AAC</c>, <c>HE-AACv2</c> If you specify <c>auto</c>, Elastic Transcoder chooses a profile based on the bit rate of the
+        /// output file.
+        ///  
+        /// </summary>
+        public AudioCodecOptions CodecOptions
+        {
+            get { return this.codecOptions; }
+            set { this.codecOptions = value; }
+        }
+
+        /// <summary>
+        /// Sets the CodecOptions property
+        /// </summary>
+        /// <param name="codecOptions">The value to set for the CodecOptions property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public AudioParameters WithCodecOptions(AudioCodecOptions codecOptions)
+        {
+            this.codecOptions = codecOptions;
+            return this;
+        }
+            
+
+        // Check to see if CodecOptions property is set
+        internal bool IsSetCodecOptions()
+        {
+            return this.codecOptions != null;
         }
     }
 }

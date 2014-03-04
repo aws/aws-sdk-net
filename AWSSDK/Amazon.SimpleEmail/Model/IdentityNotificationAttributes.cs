@@ -24,7 +24,7 @@ namespace Amazon.SimpleEmail.Model
     /// <para>Represents the notification attributes of an identity, including whether a bounce or complaint topic are set, and whether feedback
     /// forwarding is enabled.</para>
     /// </summary>
-    public class IdentityNotificationAttributes  
+    public partial class IdentityNotificationAttributes
     {
         
         private string bounceTopic;
@@ -46,6 +46,7 @@ namespace Amazon.SimpleEmail.Model
         /// </summary>
         /// <param name="bounceTopic">The value to set for the BounceTopic property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public IdentityNotificationAttributes WithBounceTopic(string bounceTopic)
         {
             this.bounceTopic = bounceTopic;
@@ -56,7 +57,7 @@ namespace Amazon.SimpleEmail.Model
         // Check to see if BounceTopic property is set
         internal bool IsSetBounceTopic()
         {
-            return this.bounceTopic != null;       
+            return this.bounceTopic != null;
         }
 
         /// <summary>
@@ -74,6 +75,7 @@ namespace Amazon.SimpleEmail.Model
         /// </summary>
         /// <param name="complaintTopic">The value to set for the ComplaintTopic property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public IdentityNotificationAttributes WithComplaintTopic(string complaintTopic)
         {
             this.complaintTopic = complaintTopic;
@@ -84,7 +86,7 @@ namespace Amazon.SimpleEmail.Model
         // Check to see if ComplaintTopic property is set
         internal bool IsSetComplaintTopic()
         {
-            return this.complaintTopic != null;       
+            return this.complaintTopic != null;
         }
 
         /// <summary>
@@ -103,6 +105,7 @@ namespace Amazon.SimpleEmail.Model
         /// </summary>
         /// <param name="forwardingEnabled">The value to set for the ForwardingEnabled property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public IdentityNotificationAttributes WithForwardingEnabled(bool forwardingEnabled)
         {
             this.forwardingEnabled = forwardingEnabled;
@@ -113,7 +116,7 @@ namespace Amazon.SimpleEmail.Model
         // Check to see if ForwardingEnabled property is set
         internal bool IsSetForwardingEnabled()
         {
-            return this.forwardingEnabled.HasValue;       
+            return this.forwardingEnabled.HasValue;
         }
     }
 }

@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
     /// Resets an attribute of an instance to its default value.
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
-    public class ResetInstanceAttributeRequest
+    public class ResetInstanceAttributeRequest : EC2Request
     {    
         private string instanceIdField;
         private string attributeField;
@@ -50,6 +50,7 @@ namespace Amazon.EC2.Model
         /// <param name="instanceId">ID of the instance on which the attribute will
         /// be reset.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ResetInstanceAttributeRequest WithInstanceId(string instanceId)
         {
             this.instanceIdField = instanceId;
@@ -82,6 +83,7 @@ namespace Amazon.EC2.Model
         /// <param name="attribute">Name of the attribute to reset. Values are
         /// "sourceDestCheck", "kernel" and "ramdisk".</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ResetInstanceAttributeRequest WithAttribute(string attribute)
         {
             this.attributeField = attribute;

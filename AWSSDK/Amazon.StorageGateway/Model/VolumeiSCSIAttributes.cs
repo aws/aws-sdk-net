@@ -23,7 +23,7 @@ namespace Amazon.StorageGateway.Model
     /// <summary>
     /// <para>Lists iSCSI information about a volume.</para>
     /// </summary>
-    public class VolumeiSCSIAttributes  
+    public partial class VolumeiSCSIAttributes
     {
         
         private string targetARN;
@@ -56,6 +56,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="targetARN">The value to set for the TargetARN property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VolumeiSCSIAttributes WithTargetARN(string targetARN)
         {
             this.targetARN = targetARN;
@@ -66,7 +67,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if TargetARN property is set
         internal bool IsSetTargetARN()
         {
-            return this.targetARN != null;       
+            return this.targetARN != null;
         }
 
         /// <summary>
@@ -93,6 +94,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="networkInterfaceId">The value to set for the NetworkInterfaceId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VolumeiSCSIAttributes WithNetworkInterfaceId(string networkInterfaceId)
         {
             this.networkInterfaceId = networkInterfaceId;
@@ -103,7 +105,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if NetworkInterfaceId property is set
         internal bool IsSetNetworkInterfaceId()
         {
-            return this.networkInterfaceId != null;       
+            return this.networkInterfaceId != null;
         }
 
         /// <summary>
@@ -121,6 +123,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="networkInterfacePort">The value to set for the NetworkInterfacePort property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VolumeiSCSIAttributes WithNetworkInterfacePort(int networkInterfacePort)
         {
             this.networkInterfacePort = networkInterfacePort;
@@ -131,7 +134,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if NetworkInterfacePort property is set
         internal bool IsSetNetworkInterfacePort()
         {
-            return this.networkInterfacePort.HasValue;       
+            return this.networkInterfacePort.HasValue;
         }
 
         /// <summary>
@@ -158,6 +161,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="lunNumber">The value to set for the LunNumber property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VolumeiSCSIAttributes WithLunNumber(int lunNumber)
         {
             this.lunNumber = lunNumber;
@@ -168,7 +172,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if LunNumber property is set
         internal bool IsSetLunNumber()
         {
-            return this.lunNumber.HasValue;       
+            return this.lunNumber.HasValue;
         }
 
         /// <summary>
@@ -186,6 +190,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="chapEnabled">The value to set for the ChapEnabled property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VolumeiSCSIAttributes WithChapEnabled(bool chapEnabled)
         {
             this.chapEnabled = chapEnabled;
@@ -196,7 +201,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if ChapEnabled property is set
         internal bool IsSetChapEnabled()
         {
-            return this.chapEnabled.HasValue;       
+            return this.chapEnabled.HasValue;
         }
     }
 }

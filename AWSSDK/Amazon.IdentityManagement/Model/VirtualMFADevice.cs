@@ -23,7 +23,7 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// <para>The <c>VirtualMFADevice</c> data type contains information about a virtual MFA device.</para>
     /// </summary>
-    public class VirtualMFADevice  
+    public partial class VirtualMFADevice
     {
         
         private string serialNumber;
@@ -60,6 +60,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="serialNumber">The value to set for the SerialNumber property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VirtualMFADevice WithSerialNumber(string serialNumber)
         {
             this.serialNumber = serialNumber;
@@ -70,7 +71,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if SerialNumber property is set
         internal bool IsSetSerialNumber()
         {
-            return this.serialNumber != null;       
+            return this.serialNumber != null;
         }
 
         /// <summary>
@@ -89,6 +90,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="base32StringSeed">The value to set for the Base32StringSeed property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VirtualMFADevice WithBase32StringSeed(MemoryStream base32StringSeed)
         {
             this.base32StringSeed = base32StringSeed;
@@ -99,7 +101,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if Base32StringSeed property is set
         internal bool IsSetBase32StringSeed()
         {
-            return this.base32StringSeed != null;       
+            return this.base32StringSeed != null;
         }
 
         /// <summary>
@@ -119,6 +121,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="qRCodePNG">The value to set for the QRCodePNG property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VirtualMFADevice WithQRCodePNG(MemoryStream qRCodePNG)
         {
             this.qRCodePNG = qRCodePNG;
@@ -129,7 +132,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if QRCodePNG property is set
         internal bool IsSetQRCodePNG()
         {
-            return this.qRCodePNG != null;       
+            return this.qRCodePNG != null;
         }
 
         /// <summary>
@@ -148,6 +151,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="user">The value to set for the User property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VirtualMFADevice WithUser(User user)
         {
             this.user = user;
@@ -158,7 +162,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if User property is set
         internal bool IsSetUser()
         {
-            return this.user != null;       
+            return this.user != null;
         }
         public DateTime EnableDate
         {
@@ -171,6 +175,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="enableDate">The value to set for the EnableDate property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VirtualMFADevice WithEnableDate(DateTime enableDate)
         {
             this.enableDate = enableDate;
@@ -181,7 +186,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if EnableDate property is set
         internal bool IsSetEnableDate()
         {
-            return this.enableDate.HasValue;       
+            return this.enableDate.HasValue;
         }
     }
 }

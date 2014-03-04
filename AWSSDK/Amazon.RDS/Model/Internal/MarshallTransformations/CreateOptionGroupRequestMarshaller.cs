@@ -34,7 +34,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(createOptionGroupRequest, "AmazonRDS");
             request.Parameters.Add("Action", "CreateOptionGroup");
-            request.Parameters.Add("Version", "2013-02-12");
+            request.Parameters.Add("Version", "2013-09-09");
             if (createOptionGroupRequest != null && createOptionGroupRequest.IsSetOptionGroupName())
             {
                 request.Parameters.Add("OptionGroupName", StringUtils.FromString(createOptionGroupRequest.OptionGroupName));
@@ -50,6 +50,25 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             if (createOptionGroupRequest != null && createOptionGroupRequest.IsSetOptionGroupDescription())
             {
                 request.Parameters.Add("OptionGroupDescription", StringUtils.FromString(createOptionGroupRequest.OptionGroupDescription));
+            }
+
+            if (createOptionGroupRequest != null)
+            {
+                List<Tag> tagsList = createOptionGroupRequest.Tags;
+                int tagsListIndex = 1;
+                foreach (Tag tagsListValue in tagsList)
+                {
+                    if (tagsListValue != null && tagsListValue.IsSetKey())
+                    {
+                        request.Parameters.Add("Tags.member." + tagsListIndex + ".Key", StringUtils.FromString(tagsListValue.Key));
+                    }
+                    if (tagsListValue != null && tagsListValue.IsSetValue())
+                    {
+                        request.Parameters.Add("Tags.member." + tagsListIndex + ".Value", StringUtils.FromString(tagsListValue.Value));
+                    }
+
+                    tagsListIndex++;
+                }
             }
 
             return request;

@@ -32,6 +32,8 @@
 
         public TrustedAdvisorCheckResult Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             TrustedAdvisorCheckResult trustedAdvisorCheckResult = new TrustedAdvisorCheckResult();
           trustedAdvisorCheckResult.FlaggedResources = null;
                         
@@ -76,8 +78,14 @@
   
               if (context.TestExpression("FlaggedResources", targetDepth))
               {
-                trustedAdvisorCheckResult.FlaggedResources = new List<TrustedAdvisorResourceDetail>();
-                        TrustedAdvisorResourceDetailUnmarshaller unmarshaller = TrustedAdvisorResourceDetailUnmarshaller.GetInstance();
+                
+                  if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                  {
+                      trustedAdvisorCheckResult.FlaggedResources = null;
+                      continue;
+                  }              
+                  trustedAdvisorCheckResult.FlaggedResources = new List<TrustedAdvisorResourceDetail>();
+                  TrustedAdvisorResourceDetailUnmarshaller unmarshaller = TrustedAdvisorResourceDetailUnmarshaller.GetInstance();
                 while (context.Read())
                 {
                   if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))

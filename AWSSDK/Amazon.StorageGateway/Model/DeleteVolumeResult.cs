@@ -21,9 +21,9 @@ using System.IO;
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
-    /// <para>A JSON object containing the DeleteVolumeOutput$VolumeARN of the storage volume that was deleted</para>
+    /// <para>A JSON object containing the of the storage volume that was deleted</para>
     /// </summary>
-    public class DeleteVolumeResult  
+    public partial class DeleteVolumeResult
     {
         
         private string volumeARN;
@@ -52,6 +52,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="volumeARN">The value to set for the VolumeARN property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeleteVolumeResult WithVolumeARN(string volumeARN)
         {
             this.volumeARN = volumeARN;
@@ -62,7 +63,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if VolumeARN property is set
         internal bool IsSetVolumeARN()
         {
-            return this.volumeARN != null;       
+            return this.volumeARN != null;
         }
     }
 }

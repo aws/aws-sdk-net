@@ -32,7 +32,7 @@ namespace Amazon.EC2.Model
     /// Tag keys must be unique per resource.
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
-    public class CreateTagsRequest
+    public class CreateTagsRequest : EC2Request
     {    
         private List<string> resourceIdField;
         private List<Tag> tagField;
@@ -59,6 +59,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">One or more IDs of resources to tag.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateTagsRequest WithResourceId(params string[] list)
         {
             foreach (string item in list)
@@ -102,6 +103,7 @@ namespace Amazon.EC2.Model
         /// Each tag item consists of a 
         /// key-value pair.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateTagsRequest WithTag(params Tag[] list)
         {
             foreach (Tag item in list)

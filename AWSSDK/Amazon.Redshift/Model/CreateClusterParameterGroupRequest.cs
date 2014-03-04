@@ -28,8 +28,9 @@ namespace Amazon.Redshift.Model
     /// <para> Creates an Amazon Redshift parameter group. </para> <para>Creating parameter groups is independent of creating clusters. You can
     /// associate a cluster with a parameter group when you create the cluster. You can also associate an existing cluster with a parameter group
     /// after the cluster is created by using ModifyCluster. </para> <para> Parameters in the parameter group define specific behavior that applies
-    /// to the databases you create on the cluster. For more information about managing parameter groups, go to Amazon Redshift Parameter Groups in
-    /// the <i>Amazon Redshift Management Guide</i> .
+    /// to the databases you create on the cluster. For more information about managing parameter groups, go to <a
+    /// href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html" >Amazon Redshift Parameter Groups</a> in the
+    /// <i>Amazon Redshift Management Guide</i> .
     /// </para>
     /// </summary>
     /// <seealso cref="Amazon.Redshift.AmazonRedshift.CreateClusterParameterGroup"/>
@@ -56,6 +57,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="parameterGroupName">The value to set for the ParameterGroupName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateClusterParameterGroupRequest WithParameterGroupName(string parameterGroupName)
         {
             this.parameterGroupName = parameterGroupName;
@@ -88,6 +90,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="parameterGroupFamily">The value to set for the ParameterGroupFamily property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateClusterParameterGroupRequest WithParameterGroupFamily(string parameterGroupFamily)
         {
             this.parameterGroupFamily = parameterGroupFamily;
@@ -116,6 +119,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="description">The value to set for the Description property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateClusterParameterGroupRequest WithDescription(string description)
         {
             this.description = description;

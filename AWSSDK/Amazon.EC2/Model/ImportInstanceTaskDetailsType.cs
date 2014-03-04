@@ -58,6 +58,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">A list of instance volumes for import. Each volume's information is wrapped in an item element.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ImportInstanceTaskDetailsType WithVolumes(params ImportInstanceVolumeDetailItemType[] list)
         {
             foreach (ImportInstanceVolumeDetailItemType item in list)
@@ -91,6 +92,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="instanceId">The ID of the resulting instance in Amazon EC2.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ImportInstanceTaskDetailsType WithInstanceId(string instanceId)
         {
             this.instanceIdField = instanceId;
@@ -121,6 +123,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="platform">Instance operating system.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ImportInstanceTaskDetailsType WithPlatform(string platform)
         {
             this.platformField = platform;
@@ -151,6 +154,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="description">Optional description of the instance.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ImportInstanceTaskDetailsType WithDescription(string description)
         {
             this.descriptionField = description;

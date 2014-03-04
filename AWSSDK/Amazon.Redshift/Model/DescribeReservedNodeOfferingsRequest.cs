@@ -28,8 +28,9 @@ namespace Amazon.Redshift.Model
     /// <para> Returns a list of the available reserved node offerings by Amazon Redshift with their descriptions including the node type, the fixed
     /// and recurring costs of reserving the node and duration the node will be reserved for you. These descriptions help you determine which
     /// reserve node offering you want to purchase. You then use the unique offering ID in you call to PurchaseReservedNodeOffering to reserve one
-    /// or more nodes for your Amazon Redshift cluster. </para> <para> For more information about managing parameter groups, go to Purchasing
-    /// Reserved Nodes in the <i>Amazon Redshift Management Guide</i> .
+    /// or more nodes for your Amazon Redshift cluster. </para> <para> For more information about managing parameter groups, go to <a
+    /// href="http://docs.aws.amazon.com/redshift/latest/mgmt/purchase-reserved-node-instance.html" >Purchasing Reserved Nodes</a> in the <i>Amazon
+    /// Redshift Management Guide</i> .
     /// 
     /// </para>
     /// </summary>
@@ -55,6 +56,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="reservedNodeOfferingId">The value to set for the ReservedNodeOfferingId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeReservedNodeOfferingsRequest WithReservedNodeOfferingId(string reservedNodeOfferingId)
         {
             this.reservedNodeOfferingId = reservedNodeOfferingId;
@@ -84,6 +86,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="maxRecords">The value to set for the MaxRecords property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeReservedNodeOfferingsRequest WithMaxRecords(int maxRecords)
         {
             this.maxRecords = maxRecords;
@@ -114,6 +117,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="marker">The value to set for the Marker property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeReservedNodeOfferingsRequest WithMarker(string marker)
         {
             this.marker = marker;

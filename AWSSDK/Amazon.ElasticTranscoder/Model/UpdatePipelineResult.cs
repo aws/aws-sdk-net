@@ -21,9 +21,9 @@ using System.IO;
 namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
-    /// 
+    /// <para>When you update a pipeline, Elastic Transcoder returns the values that you specified in the request. </para>
     /// </summary>
-    public class UpdatePipelineResult
+    public partial class UpdatePipelineResult
     {
         
         private Pipeline pipeline;
@@ -43,6 +43,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="pipeline">The value to set for the Pipeline property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdatePipelineResult WithPipeline(Pipeline pipeline)
         {
             this.pipeline = pipeline;

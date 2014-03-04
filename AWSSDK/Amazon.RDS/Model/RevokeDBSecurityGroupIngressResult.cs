@@ -23,7 +23,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// The results from the RevokeDBSecurityGroupIngress action.
     /// </summary>
-    public class RevokeDBSecurityGroupIngressResult
+    public partial class RevokeDBSecurityGroupIngressResult
     {
         private DBSecurityGroup dBSecurityGroupValue;
 

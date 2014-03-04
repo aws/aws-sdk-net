@@ -25,7 +25,7 @@ namespace Amazon.StorageGateway.Model
     /// account, gateway name, and region. This ARN is used to reference the gateway in other API operations as well as resource-based
     /// authorization.</para>
     /// </summary>
-    public class ActivateGatewayResult  
+    public partial class ActivateGatewayResult
     {
         
         private string gatewayARN;
@@ -55,6 +55,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="gatewayARN">The value to set for the GatewayARN property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ActivateGatewayResult WithGatewayARN(string gatewayARN)
         {
             this.gatewayARN = gatewayARN;
@@ -65,7 +66,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if GatewayARN property is set
         internal bool IsSetGatewayARN()
         {
-            return this.gatewayARN != null;       
+            return this.gatewayARN != null;
         }
     }
 }

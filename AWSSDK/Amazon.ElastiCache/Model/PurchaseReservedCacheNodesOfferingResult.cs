@@ -23,7 +23,7 @@ namespace Amazon.ElastiCache.Model
     /// <summary>
     /// The results from the PurchaseReservedCacheNodesOffering action.
     /// </summary>
-    public class PurchaseReservedCacheNodesOfferingResult
+    public partial class PurchaseReservedCacheNodesOfferingResult
     {
         private ReservedCacheNode reservedCacheNodeValue;
 

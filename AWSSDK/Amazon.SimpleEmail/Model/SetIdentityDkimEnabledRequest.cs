@@ -33,8 +33,9 @@ namespace Amazon.SimpleEmail.Model
     /// 
     /// </ul>
     /// <para>For email addresses (e.g., <c>user@example.com</c> ), you can only enable Easy DKIM signing if the corresponding domain (e.g.,
-    /// <c>example.com</c> ) has been set up for Easy DKIM using the AWS Console or the <c>VerifyDomainDkim</c> action.</para> <para>For more
-    /// information about Easy DKIM signing, go to the Amazon SES Developer Guide.</para>
+    /// <c>example.com</c> ) has been set up for Easy DKIM using the AWS Console or the <c>VerifyDomainDkim</c> action.</para> <para>This action is
+    /// throttled at one request per second.</para> <para>For more information about Easy DKIM signing, go to the <a
+    /// href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html" >Amazon SES Developer Guide</a> .</para>
     /// </summary>
     /// <seealso cref="Amazon.SimpleEmail.AmazonSimpleEmailService.SetIdentityDkimEnabled"/>
     public class SetIdentityDkimEnabledRequest : AmazonWebServiceRequest
@@ -57,6 +58,7 @@ namespace Amazon.SimpleEmail.Model
         /// </summary>
         /// <param name="identity">The value to set for the Identity property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SetIdentityDkimEnabledRequest WithIdentity(string identity)
         {
             this.identity = identity;
@@ -67,7 +69,7 @@ namespace Amazon.SimpleEmail.Model
         // Check to see if Identity property is set
         internal bool IsSetIdentity()
         {
-            return this.identity != null;       
+            return this.identity != null;
         }
 
         /// <summary>
@@ -86,6 +88,7 @@ namespace Amazon.SimpleEmail.Model
         /// </summary>
         /// <param name="dkimEnabled">The value to set for the DkimEnabled property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SetIdentityDkimEnabledRequest WithDkimEnabled(bool dkimEnabled)
         {
             this.dkimEnabled = dkimEnabled;
@@ -96,7 +99,7 @@ namespace Amazon.SimpleEmail.Model
         // Check to see if DkimEnabled property is set
         internal bool IsSetDkimEnabled()
         {
-            return this.dkimEnabled.HasValue;       
+            return this.dkimEnabled.HasValue;
         }
     }
 }

@@ -25,8 +25,9 @@ namespace Amazon.Route53.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteHostedZone operation.
-    /// <para>This action deletes a hosted zone. To delete a hosted zone, send a <c>DELETE</c> request to the <c>2012-12-12/hostedzone/hosted zone
-    /// ID </c> resource.</para> <para>For more information about deleting a hosted zone, see Deleting a Hosted Zone in the <i>Amazon Route 53
+    /// <para>This action deletes a hosted zone. To delete a hosted zone, send a <c>DELETE</c> request to the <c>2013-04-01/hostedzone/hosted zone
+    /// ID </c> resource.</para> <para>For more information about deleting a hosted zone, see <a
+    /// href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DeleteHostedZone.html" >Deleting a Hosted Zone</a> in the <i>Amazon Route 53
     /// Developer Guide</i> .</para> <para><b>IMPORTANT:</b> You can delete a hosted zone only if there are no resource record sets other than the
     /// default SOA record and NS resource record sets. If your hosted zone contains other resource record sets, you must delete them before you can
     /// delete your hosted zone. If you try to delete a hosted zone that contains other resource record sets, Route 53 will deny your request with a
@@ -61,6 +62,7 @@ namespace Amazon.Route53.Model
         /// </summary>
         /// <param name="id">The value to set for the Id property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeleteHostedZoneRequest WithId(string id)
         {
             this.id = id;

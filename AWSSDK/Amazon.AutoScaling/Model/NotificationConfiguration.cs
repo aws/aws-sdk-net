@@ -23,7 +23,7 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// <para> The <c>NotificationConfiguration</c> data type. </para>
     /// </summary>
-    public class NotificationConfiguration  
+    public partial class NotificationConfiguration
     {
         
         private string autoScalingGroupName;
@@ -58,6 +58,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="autoScalingGroupName">The value to set for the AutoScalingGroupName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public NotificationConfiguration WithAutoScalingGroupName(string autoScalingGroupName)
         {
             this.autoScalingGroupName = autoScalingGroupName;
@@ -68,7 +69,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if AutoScalingGroupName property is set
         internal bool IsSetAutoScalingGroupName()
         {
-            return this.autoScalingGroupName != null;       
+            return this.autoScalingGroupName != null;
         }
 
         /// <summary>
@@ -99,6 +100,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="topicARN">The value to set for the TopicARN property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public NotificationConfiguration WithTopicARN(string topicARN)
         {
             this.topicARN = topicARN;
@@ -109,7 +111,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if TopicARN property is set
         internal bool IsSetTopicARN()
         {
-            return this.topicARN != null;       
+            return this.topicARN != null;
         }
 
         /// <summary>
@@ -140,6 +142,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="notificationType">The value to set for the NotificationType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public NotificationConfiguration WithNotificationType(string notificationType)
         {
             this.notificationType = notificationType;
@@ -150,7 +153,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if NotificationType property is set
         internal bool IsSetNotificationType()
         {
-            return this.notificationType != null;       
+            return this.notificationType != null;
         }
     }
 }

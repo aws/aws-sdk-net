@@ -30,20 +30,18 @@ namespace Amazon.StorageGateway.Model
 
         /// <summary>
         /// Gets and sets the DescribeGatewayInformationResult property.
-        /// A JSON object containing the following fields: GatewayARN DescribeGatewayInformationOutput$GatewayId
-        /// DescribeGatewayInformationOutput$GatewayNetworkInterfaces DescribeGatewayInformationOutput$GatewayState
-        /// DescribeGatewayInformationOutput$GatewayTimezone DescribeGatewayInformationOutput$NextUpdateAvailabilityDate
+        /// A JSON object containing the following fields:
         /// </summary>
         public DescribeGatewayInformationResult DescribeGatewayInformationResult
         {
-            get 
+            get
             {
                 if(this.describeGatewayInformationResult == null)
                 {
                     this.describeGatewayInformationResult = new DescribeGatewayInformationResult();
                 }
 
-                return this.describeGatewayInformationResult; 
+                return this.describeGatewayInformationResult;
             }
             set { this.describeGatewayInformationResult = value; }
         }

@@ -25,7 +25,8 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeReservedCacheNodes operation.
-    /// <para> Returns information about reserved Cache Nodes for this account, or about a specified reserved Cache Node. </para>
+    /// <para>The <i>DescribeReservedCacheNodes</i> operation returns information about reserved cache nodes for this account, or about a specified
+    /// reserved cache node.</para>
     /// </summary>
     /// <seealso cref="Amazon.ElastiCache.AmazonElastiCache.DescribeReservedCacheNodes"/>
     public class DescribeReservedCacheNodesRequest : AmazonWebServiceRequest
@@ -40,8 +41,7 @@ namespace Amazon.ElastiCache.Model
         private string marker;
 
         /// <summary>
-        /// The reserved Cache Node identifier filter value. Specify this parameter to show only the reservation that matches the specified reservation
-        /// ID.
+        /// The reserved cache node identifier filter value. Use this parameter to show only the reservation that matches the specified reservation ID.
         ///  
         /// </summary>
         public string ReservedCacheNodeId
@@ -55,6 +55,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="reservedCacheNodeId">The value to set for the ReservedCacheNodeId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeReservedCacheNodesRequest WithReservedCacheNodeId(string reservedCacheNodeId)
         {
             this.reservedCacheNodeId = reservedCacheNodeId;
@@ -69,7 +70,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// The offering identifier filter value. Specify this parameter to show only purchased reservations matching the specified offering identifier.
+        /// The offering identifier filter value. Use this parameter to show only purchased reservations matching the specified offering identifier.
         ///  
         /// </summary>
         public string ReservedCacheNodesOfferingId
@@ -83,6 +84,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="reservedCacheNodesOfferingId">The value to set for the ReservedCacheNodesOfferingId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeReservedCacheNodesRequest WithReservedCacheNodesOfferingId(string reservedCacheNodesOfferingId)
         {
             this.reservedCacheNodesOfferingId = reservedCacheNodesOfferingId;
@@ -97,7 +99,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// The Cache Node type filter value. Specify this parameter to show only those reservations matching the specified Cache Nodes type.
+        /// The cache node type filter value. Use this parameter to show only those reservations matching the specified cache node type.
         ///  
         /// </summary>
         public string CacheNodeType
@@ -111,6 +113,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="cacheNodeType">The value to set for the CacheNodeType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeReservedCacheNodesRequest WithCacheNodeType(string cacheNodeType)
         {
             this.cacheNodeType = cacheNodeType;
@@ -125,8 +128,8 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// The duration filter value, specified in years or seconds. Specify this parameter to show only reservations for this duration. Valid Values:
-        /// <c>1 | 3 | 31536000 | 94608000</c>
+        /// The duration filter value, specified in years or seconds. Use this parameter to show only reservations for this duration. Valid Values: <c>1
+        /// | 3 | 31536000 | 94608000</c>
         ///  
         /// </summary>
         public string Duration
@@ -140,6 +143,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="duration">The value to set for the Duration property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeReservedCacheNodesRequest WithDuration(string duration)
         {
             this.duration = duration;
@@ -154,7 +158,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// The product description filter value. Specify this parameter to show only those reservations matching the specified product description.
+        /// The product description filter value. Use this parameter to show only those reservations matching the specified product description.
         ///  
         /// </summary>
         public string ProductDescription
@@ -168,6 +172,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="productDescription">The value to set for the ProductDescription property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeReservedCacheNodesRequest WithProductDescription(string productDescription)
         {
             this.productDescription = productDescription;
@@ -182,8 +187,8 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// The offering type filter value. Specify this parameter to show only the available offerings matching the specified offering type. Valid
-        /// Values: <c>"Light Utilization" | "Medium Utilization" | "Heavy Utilization" </c>
+        /// The offering type filter value. Use this parameter to show only the available offerings matching the specified offering type. Valid values:
+        /// <c>"Light Utilization" | "Medium Utilization" | "Heavy Utilization" </c>
         ///  
         /// </summary>
         public string OfferingType
@@ -197,6 +202,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="offeringType">The value to set for the OfferingType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeReservedCacheNodesRequest WithOfferingType(string offeringType)
         {
             this.offeringType = offeringType;
@@ -211,8 +217,8 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// The maximum number of records to include in the response. If more than the <c>MaxRecords</c> value is available, a marker is included in the
-        /// response so that the following results can be retrieved. Default: 100 Constraints: minimum 20, maximum 100
+        /// The maximum number of records to include in the response. If more records exist than the specified <c>MaxRecords</c> value, a marker is
+        /// included in the response so that the remaining results can be retrieved. Default: 100Constraints: minimum 20; maximum 100.
         ///  
         /// </summary>
         public int MaxRecords
@@ -226,6 +232,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="maxRecords">The value to set for the MaxRecords property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeReservedCacheNodesRequest WithMaxRecords(int maxRecords)
         {
             this.maxRecords = maxRecords;
@@ -240,8 +247,8 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// The marker provided in the previous request. If this parameter is specified, the response includes records beyond the marker only, up to
-        /// <c>MaxRecords</c>.
+        /// An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is
+        /// specified, the response includes only records beyond the marker, up to the value specified by <i>MaxRecords</i>.
         ///  
         /// </summary>
         public string Marker
@@ -255,6 +262,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="marker">The value to set for the Marker property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeReservedCacheNodesRequest WithMarker(string marker)
         {
             this.marker = marker;

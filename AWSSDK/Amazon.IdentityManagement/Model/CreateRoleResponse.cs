@@ -30,18 +30,18 @@ namespace Amazon.IdentityManagement.Model
 
         /// <summary>
         /// Gets and sets the CreateRoleResult property.
-        /// Contains the result of a successful invocation of the CreateRoleResponse action.
+        /// Contains the result of a successful invocation of the CreateRole action.
         /// </summary>
         public CreateRoleResult CreateRoleResult
         {
-            get 
+            get
             {
                 if(this.createRoleResult == null)
                 {
                     this.createRoleResult = new CreateRoleResult();
                 }
 
-                return this.createRoleResult; 
+                return this.createRoleResult;
             }
             set { this.createRoleResult = value; }
         }

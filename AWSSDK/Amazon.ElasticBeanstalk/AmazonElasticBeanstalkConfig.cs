@@ -34,17 +34,6 @@ namespace Amazon.ElasticBeanstalk
         }
 
         /// <summary>
-        /// Gets the ServiceVersion property.
-        /// </summary>
-        public override string ServiceVersion
-        {
-            get
-            {
-                return "2010-12-01";
-            }
-        }
-
-        /// <summary>
         /// The constant used to lookup in the region hash the endpoint.
         /// </summary>
         internal override string RegionEndpointServiceName
@@ -52,6 +41,17 @@ namespace Amazon.ElasticBeanstalk
             get
             {
                 return "elasticbeanstalk";
+            }
+        }
+
+        /// <summary>
+        /// Gets the ServiceVersion property.
+        /// </summary>
+        public override string ServiceVersion
+        {
+            get
+            {
+                return "2010-12-01";
             }
         }
     }

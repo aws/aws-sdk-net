@@ -34,14 +34,14 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         public IndexDocumentsResult IndexDocumentsResult
         {
-            get 
+            get
             {
                 if(this.indexDocumentsResult == null)
                 {
                     this.indexDocumentsResult = new IndexDocumentsResult();
                 }
 
-                return this.indexDocumentsResult; 
+                return this.indexDocumentsResult;
             }
             set { this.indexDocumentsResult = value; }
         }

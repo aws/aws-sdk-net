@@ -25,7 +25,7 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyOptionGroup operation.
-    /// <para> Modifies an existing Option Group. </para>
+    /// <para> Modifies an existing option group. </para>
     /// </summary>
     /// <seealso cref="Amazon.RDS.AmazonRDS.ModifyOptionGroup"/>
     public class ModifyOptionGroupRequest : AmazonWebServiceRequest
@@ -36,7 +36,10 @@ namespace Amazon.RDS.Model
         private bool? applyImmediately;
 
         /// <summary>
-        /// The name of the option group to be modified.
+        /// The name of the option group to be modified. <!-- Note that persistent options, such as the TDE_SQLServer option for Microsoft SQL Server,
+        /// cannot be removed from an option group while DB instances are associated with the option group. --> Permanent options, such as the TDE
+        /// option for Oracle Advanced Security TDE, cannot be removed from an option group, and that option group cannot be removed from a DB instance
+        /// once it is associated with a DB instance
         ///  
         /// </summary>
         public string OptionGroupName
@@ -50,6 +53,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="optionGroupName">The value to set for the OptionGroupName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyOptionGroupRequest WithOptionGroupName(string optionGroupName)
         {
             this.optionGroupName = optionGroupName;
@@ -64,7 +68,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Options in this list are added to the Option Group or, if already present, the specified configuration is used to update the existing
+        /// Options in this list are added to the option group or, if already present, the specified configuration is used to update the existing
         /// configuration.
         ///  
         /// </summary>
@@ -78,6 +82,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="optionsToInclude">The values to add to the OptionsToInclude collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyOptionGroupRequest WithOptionsToInclude(params OptionConfiguration[] optionsToInclude)
         {
             foreach (OptionConfiguration element in optionsToInclude)
@@ -93,6 +98,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="optionsToInclude">The values to add to the OptionsToInclude collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyOptionGroupRequest WithOptionsToInclude(IEnumerable<OptionConfiguration> optionsToInclude)
         {
             foreach (OptionConfiguration element in optionsToInclude)
@@ -110,7 +116,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Options in this list are removed from the Option Group.
+        /// Options in this list are removed from the option group.
         ///  
         /// </summary>
         public List<string> OptionsToRemove
@@ -123,6 +129,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="optionsToRemove">The values to add to the OptionsToRemove collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyOptionGroupRequest WithOptionsToRemove(params string[] optionsToRemove)
         {
             foreach (string element in optionsToRemove)
@@ -138,6 +145,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="optionsToRemove">The values to add to the OptionsToRemove collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyOptionGroupRequest WithOptionsToRemove(IEnumerable<string> optionsToRemove)
         {
             foreach (string element in optionsToRemove)
@@ -156,7 +164,7 @@ namespace Amazon.RDS.Model
 
         /// <summary>
         /// Indicates whether the changes should be applied immediately, or during the next maintenance window for each instance associated with the
-        /// Option Group.
+        /// option group.
         ///  
         /// </summary>
         public bool ApplyImmediately
@@ -170,6 +178,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="applyImmediately">The value to set for the ApplyImmediately property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyOptionGroupRequest WithApplyImmediately(bool applyImmediately)
         {
             this.applyImmediately = applyImmediately;

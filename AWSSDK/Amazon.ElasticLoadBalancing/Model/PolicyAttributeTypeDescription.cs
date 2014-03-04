@@ -24,7 +24,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// <para> The <c>PolicyAttributeTypeDescription</c> data type. This data type is used to describe values that are acceptable for the policy
     /// attribute. </para>
     /// </summary>
-    public class PolicyAttributeTypeDescription  
+    public partial class PolicyAttributeTypeDescription
     {
         
         private string attributeName;
@@ -48,6 +48,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="attributeName">The value to set for the AttributeName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PolicyAttributeTypeDescription WithAttributeName(string attributeName)
         {
             this.attributeName = attributeName;
@@ -58,7 +59,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if AttributeName property is set
         internal bool IsSetAttributeName()
         {
-            return this.attributeName != null;       
+            return this.attributeName != null;
         }
 
         /// <summary>
@@ -76,6 +77,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="attributeType">The value to set for the AttributeType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PolicyAttributeTypeDescription WithAttributeType(string attributeType)
         {
             this.attributeType = attributeType;
@@ -86,7 +88,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if AttributeType property is set
         internal bool IsSetAttributeType()
         {
-            return this.attributeType != null;       
+            return this.attributeType != null;
         }
 
         /// <summary>
@@ -104,6 +106,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="description">The value to set for the Description property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PolicyAttributeTypeDescription WithDescription(string description)
         {
             this.description = description;
@@ -114,7 +117,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if Description property is set
         internal bool IsSetDescription()
         {
-            return this.description != null;       
+            return this.description != null;
         }
 
         /// <summary>
@@ -132,6 +135,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="defaultValue">The value to set for the DefaultValue property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PolicyAttributeTypeDescription WithDefaultValue(string defaultValue)
         {
             this.defaultValue = defaultValue;
@@ -142,7 +146,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if DefaultValue property is set
         internal bool IsSetDefaultValue()
         {
-            return this.defaultValue != null;       
+            return this.defaultValue != null;
         }
 
         /// <summary>
@@ -162,6 +166,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="cardinality">The value to set for the Cardinality property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PolicyAttributeTypeDescription WithCardinality(string cardinality)
         {
             this.cardinality = cardinality;
@@ -172,7 +177,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if Cardinality property is set
         internal bool IsSetCardinality()
         {
-            return this.cardinality != null;       
+            return this.cardinality != null;
         }
     }
 }

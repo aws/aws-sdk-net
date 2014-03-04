@@ -55,6 +55,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="signalName">The value to set for the SignalName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public WorkflowExecutionSignaledEventAttributes WithSignalName(string signalName)
         {
             this.signalName = signalName;
@@ -92,6 +93,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="input">The value to set for the Input property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public WorkflowExecutionSignaledEventAttributes WithInput(string input)
         {
             this.input = input;
@@ -120,6 +122,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="externalWorkflowExecution">The value to set for the ExternalWorkflowExecution property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public WorkflowExecutionSignaledEventAttributes WithExternalWorkflowExecution(WorkflowExecution externalWorkflowExecution)
         {
             this.externalWorkflowExecution = externalWorkflowExecution;
@@ -151,6 +154,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="externalInitiatedEventId">The value to set for the ExternalInitiatedEventId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public WorkflowExecutionSignaledEventAttributes WithExternalInitiatedEventId(long externalInitiatedEventId)
         {
             this.externalInitiatedEventId = externalInitiatedEventId;

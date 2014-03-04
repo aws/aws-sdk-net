@@ -23,7 +23,7 @@ namespace Amazon.Redshift.Model
     /// <summary>
     /// The results from the RestoreFromClusterSnapshot action.
     /// </summary>
-    public class RestoreFromClusterSnapshotResult
+    public partial class RestoreFromClusterSnapshotResult
     {
         private Cluster clusterValue;
 

@@ -43,22 +43,30 @@
           
           if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceInUseException"))
           {
-            return new ResourceInUseException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            ResourceInUseException ex = new ResourceInUseException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            
+            return ex;
           }
   
           if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
           {
-            return new ResourceNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            ResourceNotFoundException ex = new ResourceNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            
+            return ex;
           }
   
           if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceededException"))
           {
-            return new LimitExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            LimitExceededException ex = new LimitExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            
+            return ex;
           }
   
           if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerErrorException"))
           {
-            return new InternalServerErrorException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            InternalServerErrorException ex = new InternalServerErrorException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            
+            return ex;
           }
   
           return new AmazonDynamoDBException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);

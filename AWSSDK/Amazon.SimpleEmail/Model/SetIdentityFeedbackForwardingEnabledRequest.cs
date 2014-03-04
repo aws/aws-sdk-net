@@ -26,8 +26,9 @@ namespace Amazon.SimpleEmail.Model
     /// <summary>
     /// Container for the parameters to the SetIdentityFeedbackForwardingEnabled operation.
     /// <para>Given an identity (email address or domain), enables or disables whether Amazon SES forwards feedback notifications as email. Feedback
-    /// forwarding may only be disabled when both complaint and bounce topics are set. For more information about feedback notification, see the
-    /// Amazon SES Developer Guide.</para>
+    /// forwarding may only be disabled when both complaint and bounce topics are set.</para> <para>This action is throttled at one request per
+    /// second.</para> <para>For more information about feedback notification, see the <a
+    /// href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/bounce-complaint-notifications.html" >Amazon SES Developer Guide</a> .</para>
     /// </summary>
     /// <seealso cref="Amazon.SimpleEmail.AmazonSimpleEmailService.SetIdentityFeedbackForwardingEnabled"/>
     public class SetIdentityFeedbackForwardingEnabledRequest : AmazonWebServiceRequest
@@ -50,6 +51,7 @@ namespace Amazon.SimpleEmail.Model
         /// </summary>
         /// <param name="identity">The value to set for the Identity property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SetIdentityFeedbackForwardingEnabledRequest WithIdentity(string identity)
         {
             this.identity = identity;
@@ -60,7 +62,7 @@ namespace Amazon.SimpleEmail.Model
         // Check to see if Identity property is set
         internal bool IsSetIdentity()
         {
-            return this.identity != null;       
+            return this.identity != null;
         }
 
         /// <summary>
@@ -81,6 +83,7 @@ namespace Amazon.SimpleEmail.Model
         /// </summary>
         /// <param name="forwardingEnabled">The value to set for the ForwardingEnabled property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SetIdentityFeedbackForwardingEnabledRequest WithForwardingEnabled(bool forwardingEnabled)
         {
             this.forwardingEnabled = forwardingEnabled;
@@ -91,7 +94,7 @@ namespace Amazon.SimpleEmail.Model
         // Check to see if ForwardingEnabled property is set
         internal bool IsSetForwardingEnabled()
         {
-            return this.forwardingEnabled.HasValue;       
+            return this.forwardingEnabled.HasValue;
         }
     }
 }

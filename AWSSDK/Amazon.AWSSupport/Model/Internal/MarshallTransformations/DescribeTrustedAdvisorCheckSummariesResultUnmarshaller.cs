@@ -32,6 +32,8 @@
 
         public DescribeTrustedAdvisorCheckSummariesResult Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             DescribeTrustedAdvisorCheckSummariesResult describeTrustedAdvisorCheckSummariesResult = new DescribeTrustedAdvisorCheckSummariesResult();
           describeTrustedAdvisorCheckSummariesResult.Summaries = null;
                         
@@ -46,8 +48,14 @@
               
               if (context.TestExpression("Summaries", targetDepth))
               {
-                describeTrustedAdvisorCheckSummariesResult.Summaries = new List<TrustedAdvisorCheckSummary>();
-                        TrustedAdvisorCheckSummaryUnmarshaller unmarshaller = TrustedAdvisorCheckSummaryUnmarshaller.GetInstance();
+                
+                  if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                  {
+                      describeTrustedAdvisorCheckSummariesResult.Summaries = null;
+                      continue;
+                  }              
+                  describeTrustedAdvisorCheckSummariesResult.Summaries = new List<TrustedAdvisorCheckSummary>();
+                  TrustedAdvisorCheckSummaryUnmarshaller unmarshaller = TrustedAdvisorCheckSummaryUnmarshaller.GetInstance();
                 while (context.Read())
                 {
                   if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))

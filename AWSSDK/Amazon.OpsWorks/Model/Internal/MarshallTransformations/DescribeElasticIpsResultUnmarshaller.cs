@@ -32,6 +32,8 @@
 
         public DescribeElasticIpsResult Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             DescribeElasticIpsResult describeElasticIpsResult = new DescribeElasticIpsResult();
           describeElasticIpsResult.ElasticIps = null;
                         

@@ -23,7 +23,7 @@ namespace Amazon.ElasticBeanstalk.Model
     /// <summary>
     /// <para> Describes the solution stack. </para>
     /// </summary>
-    public class SolutionStackDescription  
+    public partial class SolutionStackDescription
     {
         
         private string solutionStackName;
@@ -53,6 +53,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="solutionStackName">The value to set for the SolutionStackName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SolutionStackDescription WithSolutionStackName(string solutionStackName)
         {
             this.solutionStackName = solutionStackName;
@@ -63,7 +64,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if SolutionStackName property is set
         internal bool IsSetSolutionStackName()
         {
-            return this.solutionStackName != null;       
+            return this.solutionStackName != null;
         }
 
         /// <summary>
@@ -80,6 +81,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="permittedFileTypes">The values to add to the PermittedFileTypes collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SolutionStackDescription WithPermittedFileTypes(params string[] permittedFileTypes)
         {
             foreach (string element in permittedFileTypes)
@@ -89,12 +91,13 @@ namespace Amazon.ElasticBeanstalk.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the PermittedFileTypes collection
         /// </summary>
         /// <param name="permittedFileTypes">The values to add to the PermittedFileTypes collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SolutionStackDescription WithPermittedFileTypes(IEnumerable<string> permittedFileTypes)
         {
             foreach (string element in permittedFileTypes)
@@ -108,7 +111,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if PermittedFileTypes property is set
         internal bool IsSetPermittedFileTypes()
         {
-            return this.permittedFileTypes.Count > 0;       
+            return this.permittedFileTypes.Count > 0;
         }
     }
 }

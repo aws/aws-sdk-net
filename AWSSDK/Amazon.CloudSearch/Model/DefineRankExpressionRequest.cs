@@ -64,6 +64,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="domainName">The value to set for the DomainName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DefineRankExpressionRequest WithDomainName(string domainName)
         {
             this.domainName = domainName;
@@ -74,7 +75,7 @@ namespace Amazon.CloudSearch.Model
         // Check to see if DomainName property is set
         internal bool IsSetDomainName()
         {
-            return this.domainName != null;       
+            return this.domainName != null;
         }
 
         /// <summary>
@@ -92,6 +93,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="rankExpression">The value to set for the RankExpression property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DefineRankExpressionRequest WithRankExpression(NamedRankExpression rankExpression)
         {
             this.rankExpression = rankExpression;
@@ -102,7 +104,7 @@ namespace Amazon.CloudSearch.Model
         // Check to see if RankExpression property is set
         internal bool IsSetRankExpression()
         {
-            return this.rankExpression != null;       
+            return this.rankExpression != null;
         }
     }
 }

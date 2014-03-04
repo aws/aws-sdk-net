@@ -23,7 +23,7 @@ namespace Amazon.CloudSearch.Model
     /// <summary>
     /// <para>A response message that contains the status of an updated <c>RankExpression</c> .</para>
     /// </summary>
-    public class DefineRankExpressionResult  
+    public partial class DefineRankExpressionResult
     {
         
         private RankExpressionStatus rankExpression;
@@ -43,6 +43,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="rankExpression">The value to set for the RankExpression property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DefineRankExpressionResult WithRankExpression(RankExpressionStatus rankExpression)
         {
             this.rankExpression = rankExpression;
@@ -53,7 +54,7 @@ namespace Amazon.CloudSearch.Model
         // Check to see if RankExpression property is set
         internal bool IsSetRankExpression()
         {
-            return this.rankExpression != null;       
+            return this.rankExpression != null;
         }
     }
 }

@@ -41,7 +41,7 @@ namespace Amazon.EC2.Model
     /// operations.
     /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
-    public class CreateSecurityGroupRequest
+    public class CreateSecurityGroupRequest : EC2Request
     {    
         private string groupNameField;
         private string groupDescriptionField;
@@ -62,6 +62,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="groupName">Name of the security group.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateSecurityGroupRequest WithGroupName(string groupName)
         {
             this.groupNameField = groupName;
@@ -92,6 +93,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="groupDescription">Description of the group.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateSecurityGroupRequest WithGroupDescription(string groupDescription)
         {
             this.groupDescriptionField = groupDescription;
@@ -122,6 +124,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="vpcId">ID of the VPC.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateSecurityGroupRequest WithVpcId(string vpcId)
         {
             this.vpcIdField = vpcId;

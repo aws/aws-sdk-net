@@ -59,6 +59,7 @@ namespace Amazon.DataPipeline.Model
         /// </summary>
         /// <param name="key">The value to set for the Key property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Field WithKey(string key)
         {
             this.key = key;
@@ -100,6 +101,7 @@ namespace Amazon.DataPipeline.Model
         /// </summary>
         /// <param name="stringValue">The value to set for the StringValue property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Field WithStringValue(string stringValue)
         {
             this.stringValue = stringValue;
@@ -141,6 +143,7 @@ namespace Amazon.DataPipeline.Model
         /// </summary>
         /// <param name="refValue">The value to set for the RefValue property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Field WithRefValue(string refValue)
         {
             this.refValue = refValue;

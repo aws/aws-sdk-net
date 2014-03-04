@@ -67,6 +67,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="autoScalingGroupName">The value to set for the AutoScalingGroupName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PutScalingPolicyRequest WithAutoScalingGroupName(string autoScalingGroupName)
         {
             this.autoScalingGroupName = autoScalingGroupName;
@@ -77,7 +78,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if AutoScalingGroupName property is set
         internal bool IsSetAutoScalingGroupName()
         {
-            return this.autoScalingGroupName != null;       
+            return this.autoScalingGroupName != null;
         }
 
         /// <summary>
@@ -108,6 +109,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="policyName">The value to set for the PolicyName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PutScalingPolicyRequest WithPolicyName(string policyName)
         {
             this.policyName = policyName;
@@ -118,7 +120,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if PolicyName property is set
         internal bool IsSetPolicyName()
         {
-            return this.policyName != null;       
+            return this.policyName != null;
         }
 
         /// <summary>
@@ -138,6 +140,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="scalingAdjustment">The value to set for the ScalingAdjustment property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PutScalingPolicyRequest WithScalingAdjustment(int scalingAdjustment)
         {
             this.scalingAdjustment = scalingAdjustment;
@@ -148,12 +151,14 @@ namespace Amazon.AutoScaling.Model
         // Check to see if ScalingAdjustment property is set
         internal bool IsSetScalingAdjustment()
         {
-            return this.scalingAdjustment.HasValue;       
+            return this.scalingAdjustment.HasValue;
         }
 
         /// <summary>
         /// Specifies whether the <c>ScalingAdjustment</c> is an absolute number or a percentage of the current capacity. Valid values are
-        /// <c>ChangeInCapacity</c>, <c>ExactCapacity</c>, and <c>PercentChangeInCapacity</c>.
+        /// <c>ChangeInCapacity</c>, <c>ExactCapacity</c>, and <c>PercentChangeInCapacity</c>. For more information about the adjustment types supported
+        /// by Auto Scaling, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-scale-based-on-demand.html">Scale Based on
+        /// Demand</a>.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -180,6 +185,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="adjustmentType">The value to set for the AdjustmentType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PutScalingPolicyRequest WithAdjustmentType(string adjustmentType)
         {
             this.adjustmentType = adjustmentType;
@@ -190,11 +196,12 @@ namespace Amazon.AutoScaling.Model
         // Check to see if AdjustmentType property is set
         internal bool IsSetAdjustmentType()
         {
-            return this.adjustmentType != null;       
+            return this.adjustmentType != null;
         }
 
         /// <summary>
-        /// The amount of time, in seconds, after a scaling activity completes and before the next scaling acitvity can start.
+        /// The amount of time, in seconds, after a scaling activity completes and before the next scaling activity can start. For more information, see
+        /// <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AS_Concepts.html#Cooldown">Cooldown Period</a>
         ///  
         /// </summary>
         public int Cooldown
@@ -208,6 +215,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="cooldown">The value to set for the Cooldown property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PutScalingPolicyRequest WithCooldown(int cooldown)
         {
             this.cooldown = cooldown;
@@ -218,7 +226,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if Cooldown property is set
         internal bool IsSetCooldown()
         {
-            return this.cooldown.HasValue;       
+            return this.cooldown.HasValue;
         }
 
         /// <summary>
@@ -238,6 +246,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="minAdjustmentStep">The value to set for the MinAdjustmentStep property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PutScalingPolicyRequest WithMinAdjustmentStep(int minAdjustmentStep)
         {
             this.minAdjustmentStep = minAdjustmentStep;
@@ -248,7 +257,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if MinAdjustmentStep property is set
         internal bool IsSetMinAdjustmentStep()
         {
-            return this.minAdjustmentStep.HasValue;       
+            return this.minAdjustmentStep.HasValue;
         }
     }
 }

@@ -23,7 +23,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// <summary>
     /// <para> The <c>PolicyDescription</c> data type. </para>
     /// </summary>
-    public class PolicyDescription  
+    public partial class PolicyDescription
     {
         
         private string policyName;
@@ -31,7 +31,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         private List<PolicyAttributeDescription> policyAttributeDescriptions = new List<PolicyAttributeDescription>();
 
         /// <summary>
-        /// The name mof the policy associated with the LoadBalancer.
+        /// The name of the policy associated with the load balancer.
         ///  
         /// </summary>
         public string PolicyName
@@ -45,6 +45,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="policyName">The value to set for the PolicyName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PolicyDescription WithPolicyName(string policyName)
         {
             this.policyName = policyName;
@@ -55,11 +56,11 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if PolicyName property is set
         internal bool IsSetPolicyName()
         {
-            return this.policyName != null;       
+            return this.policyName != null;
         }
 
         /// <summary>
-        /// The name of the policy type associated with the LoadBalancer.
+        /// The name of the policy type associated with the load balancer.
         ///  
         /// </summary>
         public string PolicyTypeName
@@ -73,6 +74,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="policyTypeName">The value to set for the PolicyTypeName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PolicyDescription WithPolicyTypeName(string policyTypeName)
         {
             this.policyTypeName = policyTypeName;
@@ -83,7 +85,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if PolicyTypeName property is set
         internal bool IsSetPolicyTypeName()
         {
-            return this.policyTypeName != null;       
+            return this.policyTypeName != null;
         }
 
         /// <summary>
@@ -100,6 +102,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="policyAttributeDescriptions">The values to add to the PolicyAttributeDescriptions collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PolicyDescription WithPolicyAttributeDescriptions(params PolicyAttributeDescription[] policyAttributeDescriptions)
         {
             foreach (PolicyAttributeDescription element in policyAttributeDescriptions)
@@ -109,12 +112,13 @@ namespace Amazon.ElasticLoadBalancing.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the PolicyAttributeDescriptions collection
         /// </summary>
         /// <param name="policyAttributeDescriptions">The values to add to the PolicyAttributeDescriptions collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PolicyDescription WithPolicyAttributeDescriptions(IEnumerable<PolicyAttributeDescription> policyAttributeDescriptions)
         {
             foreach (PolicyAttributeDescription element in policyAttributeDescriptions)
@@ -128,7 +132,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if PolicyAttributeDescriptions property is set
         internal bool IsSetPolicyAttributeDescriptions()
         {
-            return this.policyAttributeDescriptions.Count > 0;       
+            return this.policyAttributeDescriptions.Count > 0;
         }
     }
 }

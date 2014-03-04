@@ -27,8 +27,9 @@ namespace Amazon.Redshift.Model
     /// Container for the parameters to the CreateCluster operation.
     /// <para> Creates a new cluster. To create the cluster in virtual private cloud (VPC), you must provide cluster subnet group name. If you don't
     /// provide a cluster subnet group name or the cluster security group parameter, Amazon Redshift creates a non-VPC cluster, it associates the
-    /// default cluster security group with the cluster. For more information about managing clusters, go to Amazon Redshift Clusters in the
-    /// <i>Amazon Redshift Management Guide</i> .
+    /// default cluster security group with the cluster. For more information about managing clusters, go to <a
+    /// href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html" >Amazon Redshift Clusters</a> in the <i>Amazon Redshift
+    /// Management Guide</i> .
     /// </para>
     /// </summary>
     /// <seealso cref="Amazon.Redshift.AmazonRedshift.CreateCluster"/>
@@ -53,15 +54,18 @@ namespace Amazon.Redshift.Model
         private int? numberOfNodes;
         private bool? publiclyAccessible;
         private bool? encrypted;
+        private string hsmClientCertificateIdentifier;
+        private string hsmConfigurationIdentifier;
+        private string elasticIp;
 
         /// <summary>
         /// The name of the first database to be created when the cluster is created. To create additional databases after the cluster is created,
         /// connect to the cluster with a SQL client and use SQL commands to create a database. For more information, go to <a
-        /// href="http://docs.aws.amazon.com/redshift/latest/dg/t_creating_database.html">Create a Database</a> in the Amazon Redshift Developer Guide.
-        /// Default: <c>dev</c> Constraints: <ul> <li>Must contain 1 to 64 alphanumeric characters.</li> <li>Must contain only lowercase letters.</li>
-        /// <li>Cannot be a word that is reserved by the service. A list of reserved words can be found in <a
-        /// href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Developer Guide. </li>
-        /// </ul>
+        /// href="http://docs.aws.amazon.com/redshift/latest/dg/t_creating_database.html">Create a Database</a> in the Amazon Redshift Database
+        /// Developer Guide. Default: <c>dev</c> Constraints: <ul> <li>Must contain 1 to 64 alphanumeric characters.</li> <li>Must contain only
+        /// lowercase letters.</li> <li>Cannot be a word that is reserved by the service. A list of reserved words can be found in <a
+        /// href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database Developer Guide.
+        /// </li> </ul>
         ///  
         /// </summary>
         public string DBName
@@ -75,6 +79,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="dBName">The value to set for the DBName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateClusterRequest WithDBName(string dBName)
         {
             this.dBName = dBName;
@@ -107,6 +112,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="clusterIdentifier">The value to set for the ClusterIdentifier property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateClusterRequest WithClusterIdentifier(string clusterIdentifier)
         {
             this.clusterIdentifier = clusterIdentifier;
@@ -137,6 +143,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="clusterType">The value to set for the ClusterType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateClusterRequest WithClusterType(string clusterType)
         {
             this.clusterType = clusterType;
@@ -167,6 +174,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="nodeType">The value to set for the NodeType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateClusterRequest WithNodeType(string nodeType)
         {
             this.nodeType = nodeType;
@@ -183,8 +191,8 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// The user name associated with the master user account for the cluster that is being created. Constraints: <ul> <li>Must be 1 - 128
         /// alphanumeric characters.</li> <li>First character must be a letter.</li> <li>Cannot be a reserved word. A list of reserved words can be
-        /// found in <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Developer
-        /// Guide. </li> </ul>
+        /// found in <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved Words</a> in the Amazon Redshift Database
+        /// Developer Guide. </li> </ul>
         ///  
         /// </summary>
         public string MasterUsername
@@ -198,6 +206,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="masterUsername">The value to set for the MasterUsername property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateClusterRequest WithMasterUsername(string masterUsername)
         {
             this.masterUsername = masterUsername;
@@ -214,7 +223,8 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// The password associated with the master user account for the cluster that is being created. Constraints: <ul> <li>Must be between 8 and 64
         /// characters in length.</li> <li>Must contain at least one uppercase letter.</li> <li>Must contain at least one lowercase letter.</li>
-        /// <li>Must contain one number.</li> </ul>
+        /// <li>Must contain one number.</li> <li>Can be any printable ASCII character (ASCII code 33 to 126) except ' (single quote), " (double quote),
+        /// \, /, @, or space.</li> </ul>
         ///  
         /// </summary>
         public string MasterUserPassword
@@ -228,6 +238,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="masterUserPassword">The value to set for the MasterUserPassword property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateClusterRequest WithMasterUserPassword(string masterUserPassword)
         {
             this.masterUserPassword = masterUserPassword;
@@ -255,6 +266,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="clusterSecurityGroups">The values to add to the ClusterSecurityGroups collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateClusterRequest WithClusterSecurityGroups(params string[] clusterSecurityGroups)
         {
             foreach (string element in clusterSecurityGroups)
@@ -270,6 +282,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="clusterSecurityGroups">The values to add to the ClusterSecurityGroups collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateClusterRequest WithClusterSecurityGroups(IEnumerable<string> clusterSecurityGroups)
         {
             foreach (string element in clusterSecurityGroups)
@@ -301,6 +314,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="vpcSecurityGroupIds">The values to add to the VpcSecurityGroupIds collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateClusterRequest WithVpcSecurityGroupIds(params string[] vpcSecurityGroupIds)
         {
             foreach (string element in vpcSecurityGroupIds)
@@ -316,6 +330,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="vpcSecurityGroupIds">The values to add to the VpcSecurityGroupIds collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateClusterRequest WithVpcSecurityGroupIds(IEnumerable<string> vpcSecurityGroupIds)
         {
             foreach (string element in vpcSecurityGroupIds)
@@ -348,6 +363,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="clusterSubnetGroupName">The value to set for the ClusterSubnetGroupName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateClusterRequest WithClusterSubnetGroupName(string clusterSubnetGroupName)
         {
             this.clusterSubnetGroupName = clusterSubnetGroupName;
@@ -379,6 +395,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="availabilityZone">The value to set for the AvailabilityZone property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateClusterRequest WithAvailabilityZone(string availabilityZone)
         {
             this.availabilityZone = availabilityZone;
@@ -396,9 +413,8 @@ namespace Amazon.Redshift.Model
         /// The weekly time range (in UTC) during which automated cluster maintenance can occur. Format: <c>ddd:hh24:mi-ddd:hh24:mi</c> Default: A
         /// 30-minute window selected at random from an 8-hour block of time per region, occurring on a random day of the week. The following list shows
         /// the time blocks for each region from which the default maintenance windows are assigned. <ul> <li><b>US-East (Northern Virginia) Region:</b>
-        /// 03:00-11:00 UTC</li> <li><b>US-West (Northern California) Region:</b> 06:00-14:00 UTC</li> <li><b>EU (Ireland) Region:</b> 22:00-06:00
-        /// UTC</li> <li><b>Asia Pacific (Singapore) Region:</b> 14:00-22:00 UTC</li> <li><b>Asia Pacific (Tokyo) Region: </b> 17:00-03:00 UTC</li>
-        /// </ul> Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun Constraints: Minimum 30-minute window.
+        /// 03:00-11:00 UTC</li> <li><b>US-West (Oregon) Region</b> 06:00-14:00 UTC</li> </ul> Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun
+        /// Constraints: Minimum 30-minute window.
         ///  
         /// </summary>
         public string PreferredMaintenanceWindow
@@ -412,6 +428,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="preferredMaintenanceWindow">The value to set for the PreferredMaintenanceWindow property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateClusterRequest WithPreferredMaintenanceWindow(string preferredMaintenanceWindow)
         {
             this.preferredMaintenanceWindow = preferredMaintenanceWindow;
@@ -444,6 +461,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="clusterParameterGroupName">The value to set for the ClusterParameterGroupName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateClusterRequest WithClusterParameterGroupName(string clusterParameterGroupName)
         {
             this.clusterParameterGroupName = clusterParameterGroupName;
@@ -474,6 +492,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="automatedSnapshotRetentionPeriod">The value to set for the AutomatedSnapshotRetentionPeriod property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateClusterRequest WithAutomatedSnapshotRetentionPeriod(int automatedSnapshotRetentionPeriod)
         {
             this.automatedSnapshotRetentionPeriod = automatedSnapshotRetentionPeriod;
@@ -504,6 +523,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="port">The value to set for the Port property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateClusterRequest WithPort(int port)
         {
             this.port = port;
@@ -533,6 +553,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="clusterVersion">The value to set for the ClusterVersion property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateClusterRequest WithClusterVersion(string clusterVersion)
         {
             this.clusterVersion = clusterVersion;
@@ -563,6 +584,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="allowVersionUpgrade">The value to set for the AllowVersionUpgrade property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateClusterRequest WithAllowVersionUpgrade(bool allowVersionUpgrade)
         {
             this.allowVersionUpgrade = allowVersionUpgrade;
@@ -595,6 +617,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="numberOfNodes">The value to set for the NumberOfNodes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateClusterRequest WithNumberOfNodes(int numberOfNodes)
         {
             this.numberOfNodes = numberOfNodes;
@@ -623,6 +646,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="publiclyAccessible">The value to set for the PubliclyAccessible property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateClusterRequest WithPubliclyAccessible(bool publiclyAccessible)
         {
             this.publiclyAccessible = publiclyAccessible;
@@ -651,6 +675,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="encrypted">The value to set for the Encrypted property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateClusterRequest WithEncrypted(bool encrypted)
         {
             this.encrypted = encrypted;
@@ -662,6 +687,97 @@ namespace Amazon.Redshift.Model
         internal bool IsSetEncrypted()
         {
             return this.encrypted.HasValue;
+        }
+
+        /// <summary>
+        /// Specifies the name of the HSM client certificate the Amazon Redshift cluster uses to retrieve the data encryption keys stored in an HSM.
+        ///  
+        /// </summary>
+        public string HsmClientCertificateIdentifier
+        {
+            get { return this.hsmClientCertificateIdentifier; }
+            set { this.hsmClientCertificateIdentifier = value; }
+        }
+
+        /// <summary>
+        /// Sets the HsmClientCertificateIdentifier property
+        /// </summary>
+        /// <param name="hsmClientCertificateIdentifier">The value to set for the HsmClientCertificateIdentifier property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public CreateClusterRequest WithHsmClientCertificateIdentifier(string hsmClientCertificateIdentifier)
+        {
+            this.hsmClientCertificateIdentifier = hsmClientCertificateIdentifier;
+            return this;
+        }
+            
+
+        // Check to see if HsmClientCertificateIdentifier property is set
+        internal bool IsSetHsmClientCertificateIdentifier()
+        {
+            return this.hsmClientCertificateIdentifier != null;
+        }
+
+        /// <summary>
+        /// Specifies the name of the HSM configuration that contains the information the Amazon Redshift cluster can use to retrieve and store keys in
+        /// an HSM.
+        ///  
+        /// </summary>
+        public string HsmConfigurationIdentifier
+        {
+            get { return this.hsmConfigurationIdentifier; }
+            set { this.hsmConfigurationIdentifier = value; }
+        }
+
+        /// <summary>
+        /// Sets the HsmConfigurationIdentifier property
+        /// </summary>
+        /// <param name="hsmConfigurationIdentifier">The value to set for the HsmConfigurationIdentifier property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public CreateClusterRequest WithHsmConfigurationIdentifier(string hsmConfigurationIdentifier)
+        {
+            this.hsmConfigurationIdentifier = hsmConfigurationIdentifier;
+            return this;
+        }
+            
+
+        // Check to see if HsmConfigurationIdentifier property is set
+        internal bool IsSetHsmConfigurationIdentifier()
+        {
+            return this.hsmConfigurationIdentifier != null;
+        }
+
+        /// <summary>
+        /// The Elastic IP (EIP) address for the cluster. Constraints: The cluster must be provisioned in EC2-VPC and publicly-accessible through an
+        /// Internet gateway. For more information about provisioning clusters in EC2-VPC, go to <a
+        /// href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported Platforms to Launch Your
+        /// Cluster</a> in the Amazon Redshift Management Guide.
+        ///  
+        /// </summary>
+        public string ElasticIp
+        {
+            get { return this.elasticIp; }
+            set { this.elasticIp = value; }
+        }
+
+        /// <summary>
+        /// Sets the ElasticIp property
+        /// </summary>
+        /// <param name="elasticIp">The value to set for the ElasticIp property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public CreateClusterRequest WithElasticIp(string elasticIp)
+        {
+            this.elasticIp = elasticIp;
+            return this;
+        }
+            
+
+        // Check to see if ElasticIp property is set
+        internal bool IsSetElasticIp()
+        {
+            return this.elasticIp != null;
         }
     }
 }

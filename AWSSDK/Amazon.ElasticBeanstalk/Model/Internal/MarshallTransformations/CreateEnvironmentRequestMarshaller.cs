@@ -39,13 +39,37 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
             {
                 request.Parameters.Add("ApplicationName", StringUtils.FromString(createEnvironmentRequest.ApplicationName));
             }
-            if (createEnvironmentRequest != null && createEnvironmentRequest.IsSetVersionLabel())
-            {
-                request.Parameters.Add("VersionLabel", StringUtils.FromString(createEnvironmentRequest.VersionLabel));
-            }
             if (createEnvironmentRequest != null && createEnvironmentRequest.IsSetEnvironmentName())
             {
                 request.Parameters.Add("EnvironmentName", StringUtils.FromString(createEnvironmentRequest.EnvironmentName));
+            }
+            if (createEnvironmentRequest != null && createEnvironmentRequest.IsSetDescription())
+            {
+                request.Parameters.Add("Description", StringUtils.FromString(createEnvironmentRequest.Description));
+            }
+            if (createEnvironmentRequest != null && createEnvironmentRequest.IsSetCNAMEPrefix())
+            {
+                request.Parameters.Add("CNAMEPrefix", StringUtils.FromString(createEnvironmentRequest.CNAMEPrefix));
+            }
+            if (createEnvironmentRequest != null)
+            {
+                EnvironmentTier tier = createEnvironmentRequest.Tier;
+                if (tier != null && tier.IsSetName())
+                {
+                    request.Parameters.Add("Tier.Name", StringUtils.FromString(tier.Name));
+                }
+                if (tier != null && tier.IsSetType())
+                {
+                    request.Parameters.Add("Tier.Type", StringUtils.FromString(tier.Type));
+                }
+                if (tier != null && tier.IsSetVersion())
+                {
+                    request.Parameters.Add("Tier.Version", StringUtils.FromString(tier.Version));
+                }
+            }
+            if (createEnvironmentRequest != null && createEnvironmentRequest.IsSetVersionLabel())
+            {
+                request.Parameters.Add("VersionLabel", StringUtils.FromString(createEnvironmentRequest.VersionLabel));
             }
             if (createEnvironmentRequest != null && createEnvironmentRequest.IsSetTemplateName())
             {
@@ -54,14 +78,6 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
             if (createEnvironmentRequest != null && createEnvironmentRequest.IsSetSolutionStackName())
             {
                 request.Parameters.Add("SolutionStackName", StringUtils.FromString(createEnvironmentRequest.SolutionStackName));
-            }
-            if (createEnvironmentRequest != null && createEnvironmentRequest.IsSetCNAMEPrefix())
-            {
-                request.Parameters.Add("CNAMEPrefix", StringUtils.FromString(createEnvironmentRequest.CNAMEPrefix));
-            }
-            if (createEnvironmentRequest != null && createEnvironmentRequest.IsSetDescription())
-            {
-                request.Parameters.Add("Description", StringUtils.FromString(createEnvironmentRequest.Description));
             }
 
             if (createEnvironmentRequest != null)

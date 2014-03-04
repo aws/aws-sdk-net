@@ -57,6 +57,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="snapshotId">The ID of the snapshot.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Snapshot WithSnapshotId(string snapshotId)
         {
             this.snapshotIdField = snapshotId;
@@ -88,6 +89,7 @@ namespace Amazon.EC2.Model
         /// <param name="volumeId">The ID of the volume from which the snapshot
         /// was created.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Snapshot WithVolumeId(string volumeId)
         {
             this.volumeIdField = volumeId;
@@ -119,6 +121,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="status">Snapshot state - can be one of pending | completed | error</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Snapshot WithStatus(string status)
         {
             this.statusField = status;
@@ -149,6 +152,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="startTime">Time stamp when the snapshot was initiated.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Snapshot WithStartTime(string startTime)
         {
             this.startTimeField = startTime;
@@ -179,6 +183,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="progress">The progress of the snapshot, in percentage.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Snapshot WithProgress(string progress)
         {
             this.progressField = progress;
@@ -210,6 +215,7 @@ namespace Amazon.EC2.Model
         /// <param name="ownerId">AWS Access Key ID of the user who owns the
         /// snapshot.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Snapshot WithOwnerId(string ownerId)
         {
             this.ownerIdField = ownerId;
@@ -240,6 +246,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="volumeSize">Size of the volume</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Snapshot WithVolumeSize(string volumeSize)
         {
             this.volumeSizeField = volumeSize;
@@ -270,6 +277,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="description">Description of the snapshot.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Snapshot WithDescription(string description)
         {
             this.descriptionField = description;
@@ -300,6 +308,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="ownerAlias">OwnerAlias property</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Snapshot WithOwnerAlias(string ownerAlias)
         {
             this.ownerAliasField = ownerAlias;
@@ -337,6 +346,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">A list of tags for the Snapshot.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Snapshot WithTag(params Tag[] list)
         {
             foreach (Tag item in list)

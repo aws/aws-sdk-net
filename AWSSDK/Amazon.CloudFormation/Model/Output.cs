@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ namespace Amazon.CloudFormation.Model
     /// <summary>
     /// <para>The Output data type.</para>
     /// </summary>
-    public class Output
+    public partial class Output
     {
         
         private string outputKey;
@@ -45,6 +45,7 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         /// <param name="outputKey">The value to set for the OutputKey property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Output WithOutputKey(string outputKey)
         {
             this.outputKey = outputKey;
@@ -73,6 +74,7 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         /// <param name="outputValue">The value to set for the OutputValue property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Output WithOutputValue(string outputValue)
         {
             this.outputValue = outputValue;
@@ -101,6 +103,7 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         /// <param name="description">The value to set for the Description property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Output WithDescription(string description)
         {
             this.description = description;

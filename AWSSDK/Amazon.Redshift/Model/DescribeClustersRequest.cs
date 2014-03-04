@@ -26,8 +26,9 @@ namespace Amazon.Redshift.Model
     /// <summary>
     /// Container for the parameters to the DescribeClusters operation.
     /// <para> Returns properties of provisioned clusters including general cluster properties, cluster database properties, maintenance and backup
-    /// properties, and security and access properties. This operation supports pagination. For more information about managing clusters, go to
-    /// Amazon Redshift Clusters in the <i>Amazon Redshift Management Guide</i> .
+    /// properties, and security and access properties. This operation supports pagination. For more information about managing clusters, go to <a
+    /// href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html" >Amazon Redshift Clusters</a> in the <i>Amazon Redshift
+    /// Management Guide</i> .
     /// </para>
     /// </summary>
     /// <seealso cref="Amazon.Redshift.AmazonRedshift.DescribeClusters"/>
@@ -53,6 +54,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="clusterIdentifier">The value to set for the ClusterIdentifier property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeClustersRequest WithClusterIdentifier(string clusterIdentifier)
         {
             this.clusterIdentifier = clusterIdentifier;
@@ -83,6 +85,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="maxRecords">The value to set for the MaxRecords property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeClustersRequest WithMaxRecords(int maxRecords)
         {
             this.maxRecords = maxRecords;
@@ -113,6 +116,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="marker">The value to set for the Marker property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeClustersRequest WithMarker(string marker)
         {
             this.marker = marker;

@@ -25,8 +25,9 @@ namespace Amazon.CloudSearch.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateDefaultSearchField operation.
-    /// <para>Configures the default search field for the search domain. The default search field is used when a search request does not specify
-    /// which fields to search. By default, it is configured to include the contents of all of the domain's text fields.</para>
+    /// <para>Configures the default search field for the search domain. The default search field is the text field that is searched when a search
+    /// request does not specify which fields to search. By default, it is configured to include the contents of all of the domain's text fields.
+    /// </para>
     /// </summary>
     /// <seealso cref="Amazon.CloudSearch.AmazonCloudSearch.UpdateDefaultSearchField"/>
     public class UpdateDefaultSearchFieldRequest : AmazonWebServiceRequest
@@ -64,6 +65,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="domainName">The value to set for the DomainName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateDefaultSearchFieldRequest WithDomainName(string domainName)
         {
             this.domainName = domainName;
@@ -74,12 +76,13 @@ namespace Amazon.CloudSearch.Model
         // Check to see if DomainName property is set
         internal bool IsSetDomainName()
         {
-            return this.domainName != null;       
+            return this.domainName != null;
         }
 
         /// <summary>
-        /// The <c>IndexField</c> to use for search requests issued with the <c>q</c> parameter. The default is an empty string, which automatically
-        /// searches all text fields.
+        /// The text field to search if the search request does not specify which field to search. The default search field is used when search terms
+        /// are specified with the <c>q</c> parameter, or if a match expression specified with the <c>bq</c> parameter does not constrain the search to
+        /// a particular field. The default is an empty string, which automatically searches all text fields.
         ///  
         /// </summary>
         public string DefaultSearchField
@@ -93,6 +96,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="defaultSearchField">The value to set for the DefaultSearchField property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateDefaultSearchFieldRequest WithDefaultSearchField(string defaultSearchField)
         {
             this.defaultSearchField = defaultSearchField;
@@ -103,7 +107,7 @@ namespace Amazon.CloudSearch.Model
         // Check to see if DefaultSearchField property is set
         internal bool IsSetDefaultSearchField()
         {
-            return this.defaultSearchField != null;       
+            return this.defaultSearchField != null;
         }
     }
 }

@@ -25,7 +25,7 @@ namespace Amazon.DirectConnect.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteVirtualInterface operation.
-    /// <para> Deletes a virtual interface. </para>
+    /// <para>Deletes a virtual interface.</para>
     /// </summary>
     /// <seealso cref="Amazon.DirectConnect.AmazonDirectConnect.DeleteVirtualInterface"/>
     public class DeleteVirtualInterfaceRequest : AmazonWebServiceRequest
@@ -47,6 +47,7 @@ namespace Amazon.DirectConnect.Model
         /// </summary>
         /// <param name="virtualInterfaceId">The value to set for the VirtualInterfaceId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeleteVirtualInterfaceRequest WithVirtualInterfaceId(string virtualInterfaceId)
         {
             this.virtualInterfaceId = virtualInterfaceId;
@@ -57,7 +58,7 @@ namespace Amazon.DirectConnect.Model
         // Check to see if VirtualInterfaceId property is set
         internal bool IsSetVirtualInterfaceId()
         {
-            return this.virtualInterfaceId != null;       
+            return this.virtualInterfaceId != null;
         }
     }
 }

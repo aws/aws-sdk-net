@@ -34,14 +34,14 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         public UpdateSynonymOptionsResult UpdateSynonymOptionsResult
         {
-            get 
+            get
             {
                 if(this.updateSynonymOptionsResult == null)
                 {
                     this.updateSynonymOptionsResult = new UpdateSynonymOptionsResult();
                 }
 
-                return this.updateSynonymOptionsResult; 
+                return this.updateSynonymOptionsResult;
             }
             set { this.updateSynonymOptionsResult = value; }
         }

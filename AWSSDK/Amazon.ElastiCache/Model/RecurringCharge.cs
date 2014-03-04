@@ -21,17 +21,17 @@ using System.IO;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// <para> This data type is used as a response element in the DescribeReservedCacheNodes and DescribeReservedCacheNodesOfferings actions.
-    /// </para>
+    /// <para>Contains the specific price and frequency of a recurring charges for a reserved cache node, or for a reserved cache node
+    /// offering.</para>
     /// </summary>
-    public class RecurringCharge
+    public partial class RecurringCharge
     {
         
         private double? recurringChargeAmount;
         private string recurringChargeFrequency;
 
         /// <summary>
-        /// The amount of the recurring charge.
+        /// The monetary amount of the recurring charge.
         ///  
         /// </summary>
         public double RecurringChargeAmount
@@ -45,6 +45,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="recurringChargeAmount">The value to set for the RecurringChargeAmount property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RecurringCharge WithRecurringChargeAmount(double recurringChargeAmount)
         {
             this.recurringChargeAmount = recurringChargeAmount;
@@ -73,6 +74,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="recurringChargeFrequency">The value to set for the RecurringChargeFrequency property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RecurringCharge WithRecurringChargeFrequency(string recurringChargeFrequency)
         {
             this.recurringChargeFrequency = recurringChargeFrequency;

@@ -39,7 +39,9 @@ namespace Amazon.DynamoDBv2.Model
     /// application, keep in mind that Amazon DynamoDB does not return attributes in any particular order. To help parse the response by item,
     /// include the primary key values for the items in your request in the <i>AttributesToGet</i> parameter.</para> <para>If a requested item does
     /// not exist, it is not returned in the result. Requests for nonexistent items consume the minimum read capacity units according to the type of
-    /// read. For more information, see Capacity Units Calculations in the <i>Amazon DynamoDB Developer Guide</i> .</para>
+    /// read. For more information, see <a
+    /// href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDDTables.html#CapacityUnitCalculations" >Capacity Units
+    /// Calculations</a> in the Amazon DynamoDB Developer Guide.</para>
     /// </summary>
     /// <seealso cref="Amazon.DynamoDBv2.AmazonDynamoDB.BatchGetItem"/>
     public class BatchGetItemRequest : AmazonWebServiceRequest
@@ -76,6 +78,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="pairs">The pairs to be added to the RequestItems dictionary.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public BatchGetItemRequest WithRequestItems(params KeyValuePair<string, KeysAndAttributes>[] pairs)
         {
             foreach (KeyValuePair<string, KeysAndAttributes> pair in pairs)
@@ -93,15 +96,15 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// If set to <c>TOTAL</c>, <i>ConsumedCapacity</i> is included in the response; if set to <c>NONE</c> (the default), <i>ConsumedCapacity</i> is
-        /// not included.
+        /// If set to <c>TOTAL</c>, the response includes <i>ConsumedCapacity</i> data for tables and indexes. If set to <c>INDEXES</c>, the repsonse
+        /// includes <i>ConsumedCapacity</i> for indexes. If set to <c>NONE</c> (the default), <i>ConsumedCapacity</i> is not included in the response.
         ///  
         /// <para>
         /// <b>Constraints:</b>
         /// <list type="definition">
         ///     <item>
         ///         <term>Allowed Values</term>
-        ///         <description>TOTAL, NONE</description>
+        ///         <description>INDEXES, TOTAL, NONE</description>
         ///     </item>
         /// </list>
         /// </para>
@@ -117,6 +120,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="returnConsumedCapacity">The value to set for the ReturnConsumedCapacity property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public BatchGetItemRequest WithReturnConsumedCapacity(string returnConsumedCapacity)
         {
             this.returnConsumedCapacity = returnConsumedCapacity;

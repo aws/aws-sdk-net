@@ -25,10 +25,7 @@ namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTables operation.
-    /// <para>Returns an array of all the tables associated with the current account and endpoint. </para> <para>Each Amazon DynamoDB endpoint is
-    /// entirely independent. For example, if you have two tables called "MyTable," one in <i>dynamodb.us-east-1.amazonaws.com</i> and one in
-    /// <i>dynamodb.us-west-1.amazonaws.com</i> , they are completely independent and do not share any data. The <i>ListTables</i> operation returns
-    /// all of the table names associated with the account making the request, for the endpoint that receives the request.</para>
+    /// <para>Returns an array of all the tables associated with the current account and endpoint. </para>
     /// </summary>
     /// <seealso cref="Amazon.DynamoDBv2.AmazonDynamoDB.ListTables"/>
     public class ListTablesRequest : AmazonWebServiceRequest
@@ -65,6 +62,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="exclusiveStartTableName">The value to set for the ExclusiveStartTableName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListTablesRequest WithExclusiveStartTableName(string exclusiveStartTableName)
         {
             this.exclusiveStartTableName = exclusiveStartTableName;
@@ -102,6 +100,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="limit">The value to set for the Limit property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListTablesRequest WithLimit(int limit)
         {
             this.limit = limit;

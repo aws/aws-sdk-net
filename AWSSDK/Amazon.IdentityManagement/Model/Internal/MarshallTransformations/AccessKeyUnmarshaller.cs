@@ -22,13 +22,14 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
      /// <summary>
      ///   AccessKey Unmarshaller
      /// </summary>
-    internal class AccessKeyUnmarshaller : IUnmarshaller<AccessKey, XmlUnmarshallerContext> 
+    internal class AccessKeyUnmarshaller : IUnmarshaller<AccessKey, XmlUnmarshallerContext>, IUnmarshaller<AccessKey, JsonUnmarshallerContext> 
     {
         public AccessKey Unmarshall(XmlUnmarshallerContext context) 
         {
             AccessKey accessKey = new AccessKey();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -76,6 +77,11 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 
 
             return accessKey;
+        }
+
+        public AccessKey Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static AccessKeyUnmarshaller instance;

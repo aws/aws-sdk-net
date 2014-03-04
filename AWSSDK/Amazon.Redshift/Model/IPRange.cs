@@ -23,7 +23,7 @@ namespace Amazon.Redshift.Model
     /// <summary>
     /// <para> Describes an IP range used in a security group. </para>
     /// </summary>
-    public class IPRange
+    public partial class IPRange
     {
         
         private string status;
@@ -44,6 +44,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="status">The value to set for the Status property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public IPRange WithStatus(string status)
         {
             this.status = status;
@@ -72,6 +73,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="cIDRIP">The value to set for the CIDRIP property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public IPRange WithCIDRIP(string cIDRIP)
         {
             this.cIDRIP = cIDRIP;

@@ -53,11 +53,13 @@ namespace Amazon.Glacier.Transfer.Internal
                 this.currentUploadProgressArgs = new StreamTransferProgressArgs(0, 0, fileInfo.Length);
 
                 long partSize = CalculatePartSize(fileInfo.Length);
-                InitiateMultipartUploadRequest initiateRequest = new InitiateMultipartUploadRequest()
-                    .WithAccountId(this.options.AccountId)
-                    .WithArchiveDescription(archiveDescription)
-                    .WithVaultName(vaultName)
-                    .WithPartSize(partSize);
+                InitiateMultipartUploadRequest initiateRequest = new InitiateMultipartUploadRequest
+                {
+                    AccountId = this.options.AccountId,
+                    ArchiveDescription = archiveDescription,
+                    VaultName = vaultName,
+                    PartSize = partSize
+                };
                 initiateRequest.BeforeRequestEvent += new UserAgentPostFix("MultiUpload").UserAgentRequestEventHandlerSync;
                 InitiateMultipartUploadResult initiateResult = this.manager.GlacierClient.InitiateMultipartUpload(initiateRequest).InitiateMultipartUploadResult;
 
@@ -79,13 +81,15 @@ namespace Amazon.Glacier.Transfer.Internal
                     string checksum = TreeHashGenerator.CalculateTreeHash(partStream);
                     partTreeHashs.Add(checksum);
 
-                    UploadMultipartPartRequest uploadRequest = new UploadMultipartPartRequest()
-                        .WithAccountId(this.options.AccountId)
-                        .WithChecksum(checksum)
-                        .WithBody(partStream)
-                        .WithRange("bytes " + currentPosition + "-" + (currentPosition + length - 1) + "/*")
-                        .WithUploadId(uploadId)
-                        .WithVaultName(vaultName);
+                    UploadMultipartPartRequest uploadRequest = new UploadMultipartPartRequest
+                    {
+                        AccountId=this.options.AccountId,
+                        Checksum=checksum,
+                        Body=partStream,
+                        Range = ("bytes " + currentPosition + "-" + (currentPosition + length - 1) + "/*"),
+                        UploadId=uploadId,
+                        VaultName=vaultName
+                    };
                     uploadRequest.StreamTransferProgress += this.ProgressCallback;
                     uploadRequest.BeforeRequestEvent += new UserAgentPostFix("MultiUpload").UserAgentRequestEventHandlerSync;
 
@@ -95,12 +99,14 @@ namespace Amazon.Glacier.Transfer.Internal
 
                 string totalFileChecksum = TreeHashGenerator.CalculateTreeHash(partTreeHashs);
                 string archiveSize = fileInfo.Length.ToString();
-                CompleteMultipartUploadRequest compRequest = new CompleteMultipartUploadRequest()
-                        .WithAccountId(this.options.AccountId)
-                        .WithArchiveSize(archiveSize)
-                        .WithVaultName(vaultName)
-                        .WithChecksum(totalFileChecksum)
-                        .WithUploadId(uploadId);
+                CompleteMultipartUploadRequest compRequest = new CompleteMultipartUploadRequest
+                {
+                    AccountId=this.options.AccountId,
+                    ArchiveSize=archiveSize,
+                    VaultName=vaultName,
+                    Checksum=totalFileChecksum,
+                    UploadId=uploadId
+                };
                 compRequest.BeforeRequestEvent += new UserAgentPostFix("MultiUpload").UserAgentRequestEventHandlerSync;
                 CompleteMultipartUploadResult completeMultipartUploadResult = this.manager.GlacierClient.CompleteMultipartUpload(compRequest).CompleteMultipartUploadResult;
 
@@ -158,13 +164,13 @@ namespace Amazon.Glacier.Transfer.Internal
         {
             long partSize = MINIMUM_PART_SIZE;
             int approxNumParts = 1;
-	        while (partSize * approxNumParts < fileSize && partSize*2 <= MAXIMUM_PART_SIZE) 
+            while (partSize * approxNumParts < fileSize && partSize * 2 <= MAXIMUM_PART_SIZE)
             {
                 partSize *= 2;
                 approxNumParts *= 2;
             }
-	
-            return partSize;        
+
+            return partSize;
         }
     }
 }

@@ -31,7 +31,7 @@ namespace Amazon.EC2.Model
     /// Any AWS Marketplace product codes from the snapshot are propagated to the volume.
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
-    public class CreateVolumeRequest
+    public class CreateVolumeRequest : EC2Request
     {    
         private string sizeField;
         private string snapshotIdField;
@@ -61,6 +61,7 @@ namespace Amazon.EC2.Model
         ///
         /// Valid Values: 1-1024</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateVolumeRequest WithSize(string size)
         {
             this.sizeField = size;
@@ -92,6 +93,7 @@ namespace Amazon.EC2.Model
         /// <param name="snapshotId">The snapshot from which to create the new
         /// volume.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateVolumeRequest WithSnapshotId(string snapshotId)
         {
             this.snapshotIdField = snapshotId;
@@ -123,6 +125,7 @@ namespace Amazon.EC2.Model
         /// <param name="availabilityZone">The Availability Zone in which to create the
         /// new volume.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateVolumeRequest WithAvailabilityZone(string availabilityZone)
         {
             this.availabilityZoneField = availabilityZone;
@@ -154,6 +157,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="iops">Quantity of desired throughput in IOPS</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateVolumeRequest WithIOPS(string iops)
         {
             this.iopsField = iops;
@@ -189,6 +193,7 @@ namespace Amazon.EC2.Model
         /// If VolumeType != "io1", IOPS property cannot be set.
         /// </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateVolumeRequest WithVolumeType(string volumeType)
         {
             this.volumeTypeField = volumeType;

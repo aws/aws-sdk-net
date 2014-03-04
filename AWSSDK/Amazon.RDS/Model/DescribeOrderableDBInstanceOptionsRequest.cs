@@ -25,7 +25,7 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeOrderableDBInstanceOptions operation.
-    /// <para> Returns a list of orderable DB Instance options for the specified engine. </para>
+    /// <para> Returns a list of orderable DB instance options for the specified engine. </para>
     /// </summary>
     /// <seealso cref="Amazon.RDS.AmazonRDS.DescribeOrderableDBInstanceOptions"/>
     public class DescribeOrderableDBInstanceOptionsRequest : AmazonWebServiceRequest
@@ -39,7 +39,7 @@ namespace Amazon.RDS.Model
         private string marker;
 
         /// <summary>
-        /// The name of the engine to retrieve DB Instance options for.
+        /// The name of the engine to retrieve DB instance options for.
         ///  
         /// </summary>
         public string Engine
@@ -53,6 +53,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="engine">The value to set for the Engine property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeOrderableDBInstanceOptionsRequest WithEngine(string engine)
         {
             this.engine = engine;
@@ -81,6 +82,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="engineVersion">The value to set for the EngineVersion property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeOrderableDBInstanceOptionsRequest WithEngineVersion(string engineVersion)
         {
             this.engineVersion = engineVersion;
@@ -95,7 +97,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The DB Instance class filter value. Specify this parameter to show only the available offerings matching the specified DB Instance class.
+        /// The DB instance class filter value. Specify this parameter to show only the available offerings matching the specified DB instance class.
         ///  
         /// </summary>
         public string DBInstanceClass
@@ -109,6 +111,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="dBInstanceClass">The value to set for the DBInstanceClass property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeOrderableDBInstanceOptionsRequest WithDBInstanceClass(string dBInstanceClass)
         {
             this.dBInstanceClass = dBInstanceClass;
@@ -137,6 +140,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="licenseModel">The value to set for the LicenseModel property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeOrderableDBInstanceOptionsRequest WithLicenseModel(string licenseModel)
         {
             this.licenseModel = licenseModel;
@@ -165,6 +169,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="vpc">The value to set for the Vpc property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeOrderableDBInstanceOptionsRequest WithVpc(bool vpc)
         {
             this.vpc = vpc;
@@ -195,6 +200,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="maxRecords">The value to set for the MaxRecords property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeOrderableDBInstanceOptionsRequest WithMaxRecords(int maxRecords)
         {
             this.maxRecords = maxRecords;
@@ -224,6 +230,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="marker">The value to set for the Marker property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeOrderableDBInstanceOptionsRequest WithMarker(string marker)
         {
             this.marker = marker;

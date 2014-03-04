@@ -23,7 +23,7 @@ namespace Amazon.OpsWorks.Model
     /// <summary>
     /// <para>Describes a command.</para>
     /// </summary>
-    public class Command
+    public partial class Command
     {
         
         private string commandId;
@@ -52,6 +52,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="commandId">The value to set for the CommandId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Command WithCommandId(string commandId)
         {
             this.commandId = commandId;
@@ -80,6 +81,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="instanceId">The value to set for the InstanceId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Command WithInstanceId(string instanceId)
         {
             this.instanceId = instanceId;
@@ -108,6 +110,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="deploymentId">The value to set for the DeploymentId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Command WithDeploymentId(string deploymentId)
         {
             this.deploymentId = deploymentId;
@@ -136,6 +139,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="createdAt">The value to set for the CreatedAt property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Command WithCreatedAt(string createdAt)
         {
             this.createdAt = createdAt;
@@ -164,6 +168,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="acknowledgedAt">The value to set for the AcknowledgedAt property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Command WithAcknowledgedAt(string acknowledgedAt)
         {
             this.acknowledgedAt = acknowledgedAt;
@@ -192,6 +197,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="completedAt">The value to set for the CompletedAt property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Command WithCompletedAt(string completedAt)
         {
             this.completedAt = completedAt;
@@ -220,6 +226,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="status">The value to set for the Status property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Command WithStatus(string status)
         {
             this.status = status;
@@ -248,6 +255,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="exitCode">The value to set for the ExitCode property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Command WithExitCode(int exitCode)
         {
             this.exitCode = exitCode;
@@ -276,6 +284,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="logUrl">The value to set for the LogUrl property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Command WithLogUrl(string logUrl)
         {
             this.logUrl = logUrl;
@@ -290,8 +299,9 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// The command type: <ul> <li>deploy</li> <li>rollback</li> <li>start</li> <li>stop</li> <li>restart</li> <li>undeploy</li>
-        /// <li>update_dependencies</li> <li>install_dependencies</li> <li>update_custom_cookbooks</li> <li>execute_recipes</li> </ul>
+        /// The command type: <ul> <li><c>deploy</c></li> <li><c>rollback</c></li> <li><c>start</c></li> <li><c>stop</c></li> <li><c>restart</c></li>
+        /// <li><c>undeploy</c></li> <li><c>update_dependencies</c></li> <li><c>install_dependencies</c></li> <li><c>update_custom_cookbooks</c></li>
+        /// <li><c>execute_recipes</c></li> </ul>
         ///  
         /// </summary>
         public string Type
@@ -305,6 +315,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="type">The value to set for the Type property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Command WithType(string type)
         {
             this.type = type;

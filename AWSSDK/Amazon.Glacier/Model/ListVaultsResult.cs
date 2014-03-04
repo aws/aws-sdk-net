@@ -23,7 +23,7 @@ namespace Amazon.Glacier.Model
     /// <summary>
     /// <para>Contains the Amazon Glacier response to your request.</para>
     /// </summary>
-    public class ListVaultsResult  
+    public partial class ListVaultsResult
     {
         
         private List<DescribeVaultOutput> vaultList = new List<DescribeVaultOutput>();
@@ -43,6 +43,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="vaultList">The values to add to the VaultList collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListVaultsResult WithVaultList(params DescribeVaultOutput[] vaultList)
         {
             foreach (DescribeVaultOutput element in vaultList)
@@ -52,12 +53,13 @@ namespace Amazon.Glacier.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the VaultList collection
         /// </summary>
         /// <param name="vaultList">The values to add to the VaultList collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListVaultsResult WithVaultList(IEnumerable<DescribeVaultOutput> vaultList)
         {
             foreach (DescribeVaultOutput element in vaultList)
@@ -71,7 +73,7 @@ namespace Amazon.Glacier.Model
         // Check to see if VaultList property is set
         internal bool IsSetVaultList()
         {
-            return this.vaultList.Count > 0;       
+            return this.vaultList.Count > 0;
         }
 
         /// <summary>
@@ -90,6 +92,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="marker">The value to set for the Marker property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListVaultsResult WithMarker(string marker)
         {
             this.marker = marker;
@@ -100,7 +103,7 @@ namespace Amazon.Glacier.Model
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;       
+            return this.marker != null;
         }
     }
 }

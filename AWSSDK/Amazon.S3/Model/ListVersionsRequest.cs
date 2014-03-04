@@ -39,6 +39,7 @@ namespace Amazon.S3.Model
         private string versionIdMarker;
         private int maxKeys = -1;
         private string delimiter;
+        private EncodingType encoding;
 
         #endregion
 
@@ -59,6 +60,7 @@ namespace Amazon.S3.Model
        /// </summary>
         /// <param name="bucketName">The bucket name</param>
         /// <returns>this instance</returns>
+        [System.Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListVersionsRequest WithBucketName(string bucketName)
         {
             this.bucketName = bucketName;
@@ -105,6 +107,7 @@ namespace Amazon.S3.Model
         /// </remarks>
         /// <param name="prefix">The prefix value</param>
         /// <returns>this instance</returns>
+        [System.Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListVersionsRequest WithPrefix(string prefix)
         {
             this.prefix = prefix;
@@ -139,6 +142,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="marker">The key marker value</param>
         /// <returns>this instance</returns>
+        [System.Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListVersionsRequest WithKeyMarker(string marker)
         {
             this.keyMarker = marker;
@@ -173,6 +177,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="marker">The version id marker</param>
         /// <returns>this instance</returns>
+        [System.Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListVersionsRequest WithVersionIdMarker(string marker)
         {
             this.versionIdMarker = marker;
@@ -223,6 +228,7 @@ namespace Amazon.S3.Model
         /// </remarks>
         /// <param name="maxKeys">The maximum keys to return</param>
         /// <returns>this instance</returns>
+        [System.Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListVersionsRequest WithMaxKeys(int maxKeys)
         {
             this.maxKeys = maxKeys;
@@ -271,6 +277,7 @@ namespace Amazon.S3.Model
         /// </remarks>
         /// <param name="delimiter">The delimiter value</param>
         /// <returns>this instance</returns>
+        [System.Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListVersionsRequest WithDelimiter(string delimiter)
         {
             this.delimiter = delimiter;
@@ -287,5 +294,42 @@ namespace Amazon.S3.Model
         }
 
         #endregion
+
+        #region Encoding
+
+        /// <summary>
+        /// Requests Amazon S3 to encode the object keys in the response and specifies
+        /// the encoding method to use. An object key may contain any Unicode character;
+        /// however, XML 1.0 parser cannot parse some characters, such as characters
+        /// with an ASCII value from 0 to 10. For characters that are not supported in
+        /// XML 1.0, you can add this parameter to request that Amazon S3 encode the
+        /// keys in the response.
+        /// </summary>
+        public EncodingType Encoding
+        {
+            get { return this.encoding; }
+            set { this.encoding = value; }
+        }
+
+        /// <summary>
+        /// Requests Amazon S3 to encode the object keys in the response and specifies
+        /// the encoding method to use. An object key may contain any Unicode character;
+        /// however, XML 1.0 parser cannot parse some characters, such as characters
+        /// with an ASCII value from 0 to 10. For characters that are not supported in
+        /// XML 1.0, you can add this parameter to request that Amazon S3 encode the
+        /// keys in the response.
+        /// </summary>
+        /// <param name="encoding">Encoding</param>
+        /// <returns>this instance</returns>
+        [System.Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public ListVersionsRequest WithEncoding(EncodingType encoding)
+        {
+            this.encoding = encoding;
+            return this;
+        }
+
+
+        #endregion
+
     }
 }

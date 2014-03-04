@@ -23,7 +23,7 @@ namespace Amazon.CloudSearch.Model
     /// <summary>
     /// <para>A response message that contains the status of updated stemming options.</para>
     /// </summary>
-    public class UpdateStemmingOptionsResult  
+    public partial class UpdateStemmingOptionsResult
     {
         
         private StemmingOptionsStatus stems;
@@ -43,6 +43,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="stems">The value to set for the Stems property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateStemmingOptionsResult WithStems(StemmingOptionsStatus stems)
         {
             this.stems = stems;
@@ -53,7 +54,7 @@ namespace Amazon.CloudSearch.Model
         // Check to see if Stems property is set
         internal bool IsSetStems()
         {
-            return this.stems != null;       
+            return this.stems != null;
         }
     }
 }

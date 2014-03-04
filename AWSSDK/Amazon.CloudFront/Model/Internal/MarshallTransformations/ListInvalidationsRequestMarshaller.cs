@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -42,7 +42,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 
             request.HttpMethod = "GET";
               
-            string uriResourcePath = "2012-07-01/distribution/{DistributionId}/invalidation?Marker={Marker}&MaxItems={MaxItems}"; 
+            string uriResourcePath = "2013-11-22/distribution/{DistributionId}/invalidation?Marker={Marker}&MaxItems={MaxItems}"; 
             uriResourcePath = uriResourcePath.Replace("{DistributionId}", listInvalidationsRequest.DistributionId ?? "" ); 
             uriResourcePath = uriResourcePath.Replace("{Marker}", listInvalidationsRequest.Marker ?? "" ); 
             uriResourcePath = uriResourcePath.Replace("{MaxItems}", listInvalidationsRequest.MaxItems ?? "" ); 

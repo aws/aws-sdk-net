@@ -32,6 +32,8 @@
 
         public AudioParameters Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             AudioParameters audioParameters = new AudioParameters();
           
             int originalDepth = context.CurrentDepth;
@@ -64,6 +66,12 @@
               if (context.TestExpression("Channels", targetDepth))
               {
                 audioParameters.Channels = StringUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
+              if (context.TestExpression("CodecOptions", targetDepth))
+              {
+                audioParameters.CodecOptions = AudioCodecOptionsUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   

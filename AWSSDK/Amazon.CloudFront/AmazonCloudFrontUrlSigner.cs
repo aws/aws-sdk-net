@@ -98,7 +98,7 @@ namespace Amazon.CloudFront
                                                 string s3ObjectKey,
                                                 string keyPairId,
                                                 DateTime dateLessThan,
-                                                DateTime dateGreaterThan,
+                                                DateTime? dateGreaterThan,
                                                 string ipRange) 
         {
             using (StreamReader reader = new StreamReader(privateKey.FullName))
@@ -125,7 +125,7 @@ namespace Amazon.CloudFront
                                                 string s3ObjectKey,
                                                 string keyPairId,
                                                 DateTime dateLessThan,
-                                                DateTime dateGreaterThan,
+                                                DateTime? dateGreaterThan,
                                                 string ipRange)
         {
             string resourcePath = GenerateResourcePath(protocol, distributionDomain, s3ObjectKey);
@@ -301,12 +301,8 @@ namespace Amazon.CloudFront
         public static string BuildPolicyForSignedUrl(string resourcePath,
                                                      DateTime epochDateLessThan,
                                                      string limitToIpAddressCIDR,
-                                                     DateTime epochDateGreaterThan)
+                                                     DateTime? epochDateGreaterThan)
         {
-            if (epochDateLessThan == null)
-            {
-                throw new AmazonClientException("epochDateLessThan must be provided to sign CloudFront URLs");
-            }
             if (resourcePath == null)
             {
                 resourcePath = "*";
@@ -314,6 +310,9 @@ namespace Amazon.CloudFront
             string ipAddress = (limitToIpAddressCIDR == null ? "0.0.0.0/0" // No IP
                 // restriction
                     : limitToIpAddressCIDR);
+            string epochDateGreaterThanValue = !epochDateGreaterThan.HasValue ? "" :
+                ",\"DateGreaterThan\":{\"AWS:EpochTime\":" +
+                    AWSSDKUtils.ConvertToUnixEpochSeconds(epochDateGreaterThan.Value.ToUniversalTime()) + "}";
 
             string policy = "{\"Statement\": [{"
                     + "\"Resource\":\""
@@ -326,8 +325,8 @@ namespace Amazon.CloudFront
                     + ",\"IpAddress\":{\"AWS:SourceIp\":\""
                     + ipAddress
                     + "\"}"
-                    + (epochDateGreaterThan == null ? "" : ",\"DateGreaterThan\":{\"AWS:EpochTime\":"
-                            + AWSSDKUtils.ConvertToUnixEpochSeconds(epochDateGreaterThan.ToUniversalTime()) + "}") + "}}]}";
+                    + epochDateGreaterThanValue
+                    + "}}]}";
             return policy;
         }
 

@@ -30,7 +30,7 @@ namespace Amazon.ElasticTranscoder.Model
 
         /// <summary>
         /// Gets and sets the ListJobsByPipelineResult property.
-        /// 
+        /// The ListJobsByPipelineResponse structure.
         /// </summary>
         public ListJobsByPipelineResult ListJobsByPipelineResult
         {

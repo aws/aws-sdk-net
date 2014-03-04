@@ -34,7 +34,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(describeReservedDBInstancesOfferingsRequest, "AmazonRDS");
             request.Parameters.Add("Action", "DescribeReservedDBInstancesOfferings");
-            request.Parameters.Add("Version", "2013-02-12");
+            request.Parameters.Add("Version", "2013-09-09");
             if (describeReservedDBInstancesOfferingsRequest != null && describeReservedDBInstancesOfferingsRequest.IsSetReservedDBInstancesOfferingId())
             {
                 request.Parameters.Add("ReservedDBInstancesOfferingId", StringUtils.FromString(describeReservedDBInstancesOfferingsRequest.ReservedDBInstancesOfferingId));

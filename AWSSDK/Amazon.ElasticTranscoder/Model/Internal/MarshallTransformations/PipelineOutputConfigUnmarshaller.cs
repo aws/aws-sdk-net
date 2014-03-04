@@ -32,6 +32,8 @@
 
         public PipelineOutputConfig Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             PipelineOutputConfig pipelineOutputConfig = new PipelineOutputConfig();
           pipelineOutputConfig.Permissions = null;
                         
@@ -58,8 +60,14 @@
   
               if (context.TestExpression("Permissions", targetDepth))
               {
-                pipelineOutputConfig.Permissions = new List<Permission>();
-                        PermissionUnmarshaller unmarshaller = PermissionUnmarshaller.GetInstance();
+                
+                  if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                  {
+                      pipelineOutputConfig.Permissions = null;
+                      continue;
+                  }              
+                  pipelineOutputConfig.Permissions = new List<Permission>();
+                  PermissionUnmarshaller unmarshaller = PermissionUnmarshaller.GetInstance();
                 while (context.Read())
                 {
                   if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))

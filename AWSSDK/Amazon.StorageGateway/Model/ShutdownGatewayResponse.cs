@@ -30,18 +30,18 @@ namespace Amazon.StorageGateway.Model
 
         /// <summary>
         /// Gets and sets the ShutdownGatewayResult property.
-        /// A JSON object containing the GatewayARN of the gateway that was shut down.
+        /// A JSON object containing the of the gateway that was shut down.
         /// </summary>
         public ShutdownGatewayResult ShutdownGatewayResult
         {
-            get 
+            get
             {
                 if(this.shutdownGatewayResult == null)
                 {
                     this.shutdownGatewayResult = new ShutdownGatewayResult();
                 }
 
-                return this.shutdownGatewayResult; 
+                return this.shutdownGatewayResult;
             }
             set { this.shutdownGatewayResult = value; }
         }

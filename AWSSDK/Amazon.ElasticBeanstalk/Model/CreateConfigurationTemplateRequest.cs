@@ -70,6 +70,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="applicationName">The value to set for the ApplicationName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateConfigurationTemplateRequest WithApplicationName(string applicationName)
         {
             this.applicationName = applicationName;
@@ -80,7 +81,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if ApplicationName property is set
         internal bool IsSetApplicationName()
         {
-            return this.applicationName != null;       
+            return this.applicationName != null;
         }
 
         /// <summary>
@@ -108,6 +109,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="templateName">The value to set for the TemplateName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateConfigurationTemplateRequest WithTemplateName(string templateName)
         {
             this.templateName = templateName;
@@ -118,15 +120,16 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if TemplateName property is set
         internal bool IsSetTemplateName()
         {
-            return this.templateName != null;       
+            return this.templateName != null;
         }
 
         /// <summary>
         /// The name of the solution stack used by this configuration. The solution stack specifies the operating system, architecture, and application
         /// server for a configuration template. It determines the set of configuration options as well as the possible and default values. Use
-        /// <a>ListAvailableSolutionStacks</a> to obtain a list of available solution stacks. Default: If the <c>SolutionStackName</c> is not specified
-        /// and the source configuration parameter is blank, AWS Elastic Beanstalk uses the default solution stack. If not specified and the source
-        /// configuration parameter is specified, AWS Elastic Beanstalk uses the same solution stack as the source configuration template.
+        /// <a>ListAvailableSolutionStacks</a> to obtain a list of available solution stacks. A solution stack name or a source configuration parameter
+        /// must be specified, otherwise AWS Elastic Beanstalk returns an <c>InvalidParameterValue</c> error. If a solution stack name is not specified
+        /// and the source configuration parameter is specified, AWS Elastic Beanstalk uses the same solution stack as the source configuration
+        /// template.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -149,6 +152,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="solutionStackName">The value to set for the SolutionStackName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateConfigurationTemplateRequest WithSolutionStackName(string solutionStackName)
         {
             this.solutionStackName = solutionStackName;
@@ -159,7 +163,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if SolutionStackName property is set
         internal bool IsSetSolutionStackName()
         {
-            return this.solutionStackName != null;       
+            return this.solutionStackName != null;
         }
 
         /// <summary>
@@ -181,6 +185,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="sourceConfiguration">The value to set for the SourceConfiguration property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateConfigurationTemplateRequest WithSourceConfiguration(SourceConfiguration sourceConfiguration)
         {
             this.sourceConfiguration = sourceConfiguration;
@@ -191,7 +196,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if SourceConfiguration property is set
         internal bool IsSetSourceConfiguration()
         {
-            return this.sourceConfiguration != null;       
+            return this.sourceConfiguration != null;
         }
 
         /// <summary>
@@ -209,6 +214,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="environmentId">The value to set for the EnvironmentId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateConfigurationTemplateRequest WithEnvironmentId(string environmentId)
         {
             this.environmentId = environmentId;
@@ -219,7 +225,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if EnvironmentId property is set
         internal bool IsSetEnvironmentId()
         {
-            return this.environmentId != null;       
+            return this.environmentId != null;
         }
 
         /// <summary>
@@ -246,6 +252,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="description">The value to set for the Description property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateConfigurationTemplateRequest WithDescription(string description)
         {
             this.description = description;
@@ -256,7 +263,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if Description property is set
         internal bool IsSetDescription()
         {
-            return this.description != null;       
+            return this.description != null;
         }
 
         /// <summary>
@@ -274,6 +281,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="optionSettings">The values to add to the OptionSettings collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateConfigurationTemplateRequest WithOptionSettings(params ConfigurationOptionSetting[] optionSettings)
         {
             foreach (ConfigurationOptionSetting element in optionSettings)
@@ -283,12 +291,13 @@ namespace Amazon.ElasticBeanstalk.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the OptionSettings collection
         /// </summary>
         /// <param name="optionSettings">The values to add to the OptionSettings collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateConfigurationTemplateRequest WithOptionSettings(IEnumerable<ConfigurationOptionSetting> optionSettings)
         {
             foreach (ConfigurationOptionSetting element in optionSettings)
@@ -302,7 +311,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if OptionSettings property is set
         internal bool IsSetOptionSettings()
         {
-            return this.optionSettings.Count > 0;       
+            return this.optionSettings.Count > 0;
         }
     }
 }

@@ -14,6 +14,7 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Amazon.ElasticMapReduce.Model
@@ -26,33 +27,37 @@ namespace Amazon.ElasticMapReduce.Model
     /// </summary>
     /// <example>Create an interactive Hive job flow with debugging enabled:
     /// <code>
-    ///  AmazonElasticMapReduce emr = AWSClientFactory.CreateAmazonElasticMapReduceClient(accessKey, secretKey);
+    ///    AmazonElasticMapReduce emr = AWSClientFactory.CreateAmazonElasticMapReduceClient(accessKey, secretKey);
     ///
-    ///  StepFactory stepFactory = new StepFactory();
+    ///    StepFactory stepFactory = new StepFactory();
     ///
-    ///  StepConfig enableDebugging = new StepConfig()
-    ///     .WithName("Enable Debugging")
-    ///     .WithActionOnFailure("TERMINATE_JOB_FLOW")
-    ///     .WithHadoopJarStep(stepFactory.NewEnableDebuggingStep());
+    ///  StepConfig enableDebugging = new StepConfig {
+    ///     Name = "Enable Debugging",
+    ///     ActionOnFailure = "TERMINATE_JOB_FLOW",
+    ///     HadoopJarStep = stepFactory.NewEnableDebuggingStep()
+    ///  };
     ///
-    ///  StepConfig installHive = new StepConfig()
-    ///     .WithName("Install Hive")
-    ///     .WithActionOnFailure("TERMINATE_JOB_FLOW")
-    ///     .WithHadoopJarStep(stepFactory.NewInstallHiveStep());
+    ///  StepConfig installHive = new StepConfig {
+    ///     Name = "Install Hive",
+    ///     ActionOnFailure = "TERMINATE_JOB_FLOW",
+    ///     HadoopJarStep = stepFactory.NewInstallHiveStep()
+    ///  };
     ///
-    ///  RunJobFlowRequest request = new RunJobFlowRequest()
-    ///     .WithName("Hive Interactive")
-    ///     .WithSteps(enableDebugging, installHive)
-    ///     .WithLogUri("s3://log-bucket/")
-    ///     .WithInstances(new JobFlowInstancesConfig()
-    ///         .WithEc2KeyName("keypair")
-    ///         .WithHadoopVersion("0.20")
-    ///         .WithInstanceCount(5)
-    ///         .WithKeepJobFlowAliveWhenNoSteps(true)
-    ///         .WithMasterInstanceType("m1.small")
-    ///         .WithSlaveInstanceType("m1.small"));
+    ///  RunJobFlowRequest request = new RunJobFlowRequest {
+    ///     Name = "Hive Interactive",
+    ///     Steps = new List&lt;StepConfig> { enableDebugging, installHive },
+    ///     LogUri = "s3://log-bucket/",
+    ///     Instances = new JobFlowInstancesConfig {
+    ///         Ec2KeyName = "keypair",
+    ///         HadoopVersion = "0.20",
+    ///         InstanceCount = 5,
+    ///         KeepJobFlowAliveWhenNoSteps = true,
+    ///         MasterInstanceType = "m1.small",
+    ///         SlaveInstanceType = "m1.small"
+    ///     }
+    ///  };
     ///
-    /// RunJobFlowResponse response = emr.RunJobFlow(request);
+    ///    RunJobFlowResponse response = emr.RunJobFlow(request);
     /// </code>
     /// </example>
     public class StepFactory
@@ -94,13 +99,16 @@ namespace Amazon.ElasticMapReduce.Model
         /// <returns>HadoopJarStepConfig that can be passed to your job flow.</returns>
         public HadoopJarStepConfig NewScriptRunnerStep(string script, params string[] args)
         {
-            string[] appendedArgs = new string[args.Length + 1];
-            appendedArgs[0] = script;
-            Array.Copy(args, 0, appendedArgs, 1, args.Length);
+            List<string> appendedArgs = new List<string>();
+            appendedArgs.Add(script);
+            foreach (var a in args)
+                appendedArgs.Add(a);
 
-            return new HadoopJarStepConfig()
-                .WithJar(String.Format("s3://{0}/libs/script-runner/script-runner.jar", bucket))
-                .WithArgs(appendedArgs);
+            return new HadoopJarStepConfig
+            {
+                Jar = String.Format("s3://{0}/libs/script-runner/script-runner.jar", bucket),
+                Args = appendedArgs
+            };
         }
 
         /// <summary>
@@ -158,14 +166,28 @@ namespace Amazon.ElasticMapReduce.Model
         /// <param name="script">The script to run.</param>
         /// <param name="args">Arguments that get passed to the script.</param>
         /// <returns>HadoopJarStepConfig that can be passed to your job flow.</returns>
-        public HadoopJarStepConfig NewRunHiveScriptStep(string script, params string[] args) 
+        public HadoopJarStepConfig NewRunHiveScriptStep(string script, params string[] args)
         {
-            string[] argsArray = new String[args.Length + 4];
-            argsArray[0] = SWITCH_RUN_HIVE_SCRIPT;
-            argsArray[1] = SWITCH_ARGS;
-            argsArray[2] = SWITCH_F;
-            argsArray[3] = script;
-            Array.Copy(args, 0, argsArray, 4, args.Length);
+            return NewRunHiveScriptStepVersioned(script, HiveVersion.Hive_Latest.VersionString, args);
+        }
+
+        /// <summary>
+        /// Step that runs a Hive script on your job flow with a specific verson of Hive.
+        /// </summary>
+        /// <param name="script">The script to run.</param>
+        /// <param name="version">The version of Hive to run.</param>
+        /// <param name="args">Arguments that get passed to the script.</param>
+        /// <returns>HadoopJarStepConfig that can be passed to your job flow.</returns>
+        public HadoopJarStepConfig NewRunHiveScriptStepVersioned(string script, string version, params string[] args)
+        {
+            string[] argsArray = new String[args.Length + 6];
+            argsArray[0] = SWITCH_HIVE_VERSIONS;
+            argsArray[1] = version;
+            argsArray[2] = SWITCH_RUN_HIVE_SCRIPT;
+            argsArray[3] = SWITCH_ARGS;
+            argsArray[4] = SWITCH_F;
+            argsArray[5] = script;
+            Array.Copy(args, 0, argsArray, 6, args.Length);
             return newHivePigStep(TOOL_HIVE, argsArray);
         }
 
@@ -200,6 +222,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         public class HiveVersion
         {
+            public static readonly HiveVersion Hive_0_4 = new HiveVersion("0.4");
             public static readonly HiveVersion Hive_0_5 = new HiveVersion("0.5");
             public static readonly HiveVersion Hive_0_7 = new HiveVersion("0.7");
             public static readonly HiveVersion Hive_0_7_1 = new HiveVersion("0.7.1");
@@ -208,6 +231,16 @@ namespace Amazon.ElasticMapReduce.Model
             public static readonly HiveVersion Hive_0_7_1_3 = new HiveVersion("0.7.1.3");
             public static readonly HiveVersion Hive_0_7_1_4 = new HiveVersion("0.7.1.4");
             public static readonly HiveVersion Hive_0_8_1 = new HiveVersion("0.8.1");
+            public static readonly HiveVersion Hive_0_8_1_1 = new HiveVersion("0.8.1.1");
+            public static readonly HiveVersion Hive_0_8_1_2 = new HiveVersion("0.8.1.2");
+            public static readonly HiveVersion Hive_0_8_1_3 = new HiveVersion("0.8.1.3");
+            public static readonly HiveVersion Hive_0_8_1_4 = new HiveVersion("0.8.1.4");
+            public static readonly HiveVersion Hive_0_8_1_5 = new HiveVersion("0.8.1.5");
+            public static readonly HiveVersion Hive_0_8_1_6 = new HiveVersion("0.8.1.6");
+            public static readonly HiveVersion Hive_0_8_1_7 = new HiveVersion("0.8.1.7");
+            public static readonly HiveVersion Hive_0_8_1_8 = new HiveVersion("0.8.1.8");
+            public static readonly HiveVersion Hive_0_11_0 = new HiveVersion("0.11.0");
+            public static readonly HiveVersion Hive_0_11_0_1 = new HiveVersion("0.11.0.1");
             public static readonly HiveVersion Hive_Latest = new HiveVersion("latest");
 
             string _version;

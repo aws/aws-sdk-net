@@ -30,7 +30,7 @@ namespace Amazon.ElasticTranscoder.Model
 
         /// <summary>
         /// Gets and sets the ListPipelinesResult property.
-        /// 
+        /// A list of the pipelines associated with the current AWS account.
         /// </summary>
         public ListPipelinesResult ListPipelinesResult
         {

@@ -36,9 +36,10 @@ namespace Amazon.ElasticBeanstalk.Model
     {
         private string environmentId;
         private string environmentName;
+        private string description;
+        private EnvironmentTier tier;
         private string versionLabel;
         private string templateName;
-        private string description;
         private List<ConfigurationOptionSetting> optionSettings = new List<ConfigurationOptionSetting>();
         private List<OptionSpecification> optionsToRemove = new List<OptionSpecification>();
 
@@ -59,6 +60,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="environmentId">The value to set for the EnvironmentId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateEnvironmentRequest WithEnvironmentId(string environmentId)
         {
             this.environmentId = environmentId;
@@ -69,7 +71,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if EnvironmentId property is set
         internal bool IsSetEnvironmentId()
         {
-            return this.environmentId != null;       
+            return this.environmentId != null;
         }
 
         /// <summary>
@@ -98,6 +100,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="environmentName">The value to set for the EnvironmentName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateEnvironmentRequest WithEnvironmentName(string environmentName)
         {
             this.environmentName = environmentName;
@@ -108,7 +111,75 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if EnvironmentName property is set
         internal bool IsSetEnvironmentName()
         {
-            return this.environmentName != null;       
+            return this.environmentName != null;
+        }
+
+        /// <summary>
+        /// If this parameter is specified, AWS Elastic Beanstalk updates the description of this environment.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Length</term>
+        ///         <description>0 - 200</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
+        public string Description
+        {
+            get { return this.description; }
+            set { this.description = value; }
+        }
+
+        /// <summary>
+        /// Sets the Description property
+        /// </summary>
+        /// <param name="description">The value to set for the Description property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public UpdateEnvironmentRequest WithDescription(string description)
+        {
+            this.description = description;
+            return this;
+        }
+            
+
+        // Check to see if Description property is set
+        internal bool IsSetDescription()
+        {
+            return this.description != null;
+        }
+
+        /// <summary>
+        /// This specifies the tier to use to update the environment. Condition: You can only update the tier version for an environment. If you change
+        /// the name of the type, AWS Elastic Beanstalk returns <c>InvalidParameterValue</c> error.
+        ///  
+        /// </summary>
+        public EnvironmentTier Tier
+        {
+            get { return this.tier; }
+            set { this.tier = value; }
+        }
+
+        /// <summary>
+        /// Sets the Tier property
+        /// </summary>
+        /// <param name="tier">The value to set for the Tier property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public UpdateEnvironmentRequest WithTier(EnvironmentTier tier)
+        {
+            this.tier = tier;
+            return this;
+        }
+            
+
+        // Check to see if Tier property is set
+        internal bool IsSetTier()
+        {
+            return this.tier != null;
         }
 
         /// <summary>
@@ -136,6 +207,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="versionLabel">The value to set for the VersionLabel property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateEnvironmentRequest WithVersionLabel(string versionLabel)
         {
             this.versionLabel = versionLabel;
@@ -146,7 +218,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if VersionLabel property is set
         internal bool IsSetVersionLabel()
         {
-            return this.versionLabel != null;       
+            return this.versionLabel != null;
         }
 
         /// <summary>
@@ -174,6 +246,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="templateName">The value to set for the TemplateName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateEnvironmentRequest WithTemplateName(string templateName)
         {
             this.templateName = templateName;
@@ -184,44 +257,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if TemplateName property is set
         internal bool IsSetTemplateName()
         {
-            return this.templateName != null;       
-        }
-
-        /// <summary>
-        /// If this parameter is specified, AWS Elastic Beanstalk updates the description of this environment.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 200</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string Description
-        {
-            get { return this.description; }
-            set { this.description = value; }
-        }
-
-        /// <summary>
-        /// Sets the Description property
-        /// </summary>
-        /// <param name="description">The value to set for the Description property </param>
-        /// <returns>this instance</returns>
-        public UpdateEnvironmentRequest WithDescription(string description)
-        {
-            this.description = description;
-            return this;
-        }
-            
-
-        // Check to see if Description property is set
-        internal bool IsSetDescription()
-        {
-            return this.description != null;       
+            return this.templateName != null;
         }
 
         /// <summary>
@@ -239,6 +275,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="optionSettings">The values to add to the OptionSettings collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateEnvironmentRequest WithOptionSettings(params ConfigurationOptionSetting[] optionSettings)
         {
             foreach (ConfigurationOptionSetting element in optionSettings)
@@ -248,12 +285,13 @@ namespace Amazon.ElasticBeanstalk.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the OptionSettings collection
         /// </summary>
         /// <param name="optionSettings">The values to add to the OptionSettings collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateEnvironmentRequest WithOptionSettings(IEnumerable<ConfigurationOptionSetting> optionSettings)
         {
             foreach (ConfigurationOptionSetting element in optionSettings)
@@ -267,7 +305,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if OptionSettings property is set
         internal bool IsSetOptionSettings()
         {
-            return this.optionSettings.Count > 0;       
+            return this.optionSettings.Count > 0;
         }
 
         /// <summary>
@@ -284,6 +322,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="optionsToRemove">The values to add to the OptionsToRemove collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateEnvironmentRequest WithOptionsToRemove(params OptionSpecification[] optionsToRemove)
         {
             foreach (OptionSpecification element in optionsToRemove)
@@ -293,12 +332,13 @@ namespace Amazon.ElasticBeanstalk.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the OptionsToRemove collection
         /// </summary>
         /// <param name="optionsToRemove">The values to add to the OptionsToRemove collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateEnvironmentRequest WithOptionsToRemove(IEnumerable<OptionSpecification> optionsToRemove)
         {
             foreach (OptionSpecification element in optionsToRemove)
@@ -312,7 +352,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if OptionsToRemove property is set
         internal bool IsSetOptionsToRemove()
         {
-            return this.optionsToRemove.Count > 0;       
+            return this.optionsToRemove.Count > 0;
         }
     }
 }

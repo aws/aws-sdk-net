@@ -67,6 +67,7 @@ namespace Amazon.SQS
         /// </summary>
         /// <param name="signatureMethod">SignatureMethod property</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AmazonSQSConfig WithSignatureMethod(string signatureMethod)
         {
             this.signatureMethod = signatureMethod;
@@ -95,6 +96,7 @@ namespace Amazon.SQS
         /// </summary>
         /// <param name="signatureVersion">SignatureVersion property</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AmazonSQSConfig WithSignatureVersion(string signatureVersion)
         {
             this.signatureVersion = signatureVersion;
@@ -124,6 +126,7 @@ namespace Amazon.SQS
         /// </summary>
         /// <param name="userAgent">UserAgent property</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AmazonSQSConfig WithUserAgent(string userAgent)
         {
             this.userAgent = userAgent;
@@ -193,6 +196,7 @@ namespace Amazon.SQS
         /// </summary>
         /// <param name="serviceURL">ServiceURL property</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AmazonSQSConfig WithServiceURL(string serviceURL)
         {
             this.serviceURL = serviceURL;
@@ -222,6 +226,7 @@ namespace Amazon.SQS
         /// </summary>
         /// <param name="proxyHost">ProxyHost property</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AmazonSQSConfig WithProxyHost(string proxyHost)
         {
             this.proxyHost = proxyHost;
@@ -251,6 +256,7 @@ namespace Amazon.SQS
         /// </summary>
         /// <param name="proxyPort">ProxyPort property</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AmazonSQSConfig WithProxyPort(int proxyPort)
         {
             this.proxyPort = proxyPort;
@@ -280,6 +286,7 @@ namespace Amazon.SQS
         /// </summary>
         /// <param name="maxErrorRetry">MaxErrorRetry property</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AmazonSQSConfig WithMaxErrorRetry(int maxErrorRetry)
         {
             this.maxErrorRetry = maxErrorRetry;
@@ -339,6 +346,7 @@ namespace Amazon.SQS
         /// recommended unless absolutely necessary.
         /// </remarks>
         /// <seealso cref="T:System.Security.SecureString"/>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AmazonSQSConfig WithUseSecureStringForAwsSecretKey(bool fSecure)
         {
             fUseSecureString = fSecure;
@@ -448,6 +456,7 @@ namespace Amazon.SQS
         /// </summary>
         /// <param name="proxyCredentials">ProxyCredentials property</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AmazonSQSConfig WithProxyCredentials(ICredentials proxyCredentials)
         {
             this.proxyCredentials = proxyCredentials;

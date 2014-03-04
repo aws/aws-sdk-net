@@ -26,17 +26,19 @@ namespace Amazon.Route53.Model
     /// <summary>
     /// Container for the parameters to the ChangeResourceRecordSets operation.
     /// <para>Use this action to create or change your authoritative DNS information. To use this action, send a <c>POST</c> request to the
-    /// <c>2012-12-12/hostedzone/hosted Zone ID/rrset</c> resource. The request body must include an XML document with a
+    /// <c>2013-04-01/hostedzone/hosted Zone ID/rrset</c> resource. The request body must include an XML document with a
     /// <c>ChangeResourceRecordSetsRequest</c> element.</para> <para>Changes are a list of change items and are considered transactional. For more
-    /// information on transactional changes, also known as change batches, see Creating, Changing, and Deleting Resource Record Sets Using the
-    /// Route 53 API in the <i>Amazon Route 53 Developer Guide</i> .</para> <para><b>IMPORTANT:</b>Due to the nature of transactional changes, you
-    /// cannot delete the same resource record set more than once in a single change batch. If you attempt to delete the same change batch more than
-    /// once, Route 53 returns an InvalidChangeBatch error.</para> <para>In response to a <c>ChangeResourceRecordSets</c> request, your DNS data is
-    /// changed on all Route 53 DNS servers. Initially, the status of a change is <c>PENDING</c> . This means the change has not yet propagated to
-    /// all the authoritative Route 53 DNS servers. When the change is propagated to all hosts, the change returns a status of <c>INSYNC</c>
-    /// .</para> <para>Note the following limitations on a <c>ChangeResourceRecordSets</c> request:</para> <para>- A request cannot contain more
-    /// than 100 Change elements.</para> <para>- A request cannot contain more than 1000 ResourceRecord elements.</para> <para>The sum of the number
-    /// of characters (including spaces) in all <c>Value</c> elements in a request cannot exceed 32,000 characters.</para>
+    /// information on transactional changes, also known as change batches, see <a
+    /// href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/RRSchanges.html#RRSchanges_API" >Creating, Changing, and Deleting Resource
+    /// Record Sets Using the Route 53 API</a> in the <i>Amazon Route 53 Developer Guide</i> .</para> <para><b>IMPORTANT:</b>Due to the nature of
+    /// transactional changes, you cannot delete the same resource record set more than once in a single change batch. If you attempt to delete the
+    /// same change batch more than once, Route 53 returns an InvalidChangeBatch error.</para> <para>In response to a
+    /// <c>ChangeResourceRecordSets</c> request, your DNS data is changed on all Route 53 DNS servers. Initially, the status of a change is
+    /// <c>PENDING</c> . This means the change has not yet propagated to all the authoritative Route 53 DNS servers. When the change is propagated
+    /// to all hosts, the change returns a status of <c>INSYNC</c> .</para> <para>Note the following limitations on a
+    /// <c>ChangeResourceRecordSets</c> request:</para> <para>- A request cannot contain more than 100 Change elements.</para> <para>- A request
+    /// cannot contain more than 1000 ResourceRecord elements.</para> <para>The sum of the number of characters (including spaces) in all
+    /// <c>Value</c> elements in a request cannot exceed 32,000 characters.</para>
     /// </summary>
     /// <seealso cref="Amazon.Route53.AmazonRoute53.ChangeResourceRecordSets"/>
     public class ChangeResourceRecordSetsRequest : AmazonWebServiceRequest
@@ -45,10 +47,7 @@ namespace Amazon.Route53.Model
         private ChangeBatch changeBatch;
 
         /// <summary>
-        /// <i>Alias resource record sets only:</i> The value of the hosted zone ID for the AWS resource. For more information, an example, and several
-        /// ways to get the hosted zone ID for the LoadBalancer, see <a
-        /// href="http://docs.amazonwebservices.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating Alias Resource Record Sets for
-        /// Elastic Load Balancing</a> in the <i>Amazon Route 53 Developer Guide</i>.
+        /// The ID of the hosted zone that contains the resource record sets that you want to change.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -71,6 +70,7 @@ namespace Amazon.Route53.Model
         /// </summary>
         /// <param name="hostedZoneId">The value to set for the HostedZoneId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ChangeResourceRecordSetsRequest WithHostedZoneId(string hostedZoneId)
         {
             this.hostedZoneId = hostedZoneId;
@@ -99,6 +99,7 @@ namespace Amazon.Route53.Model
         /// </summary>
         /// <param name="changeBatch">The value to set for the ChangeBatch property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ChangeResourceRecordSetsRequest WithChangeBatch(ChangeBatch changeBatch)
         {
             this.changeBatch = changeBatch;

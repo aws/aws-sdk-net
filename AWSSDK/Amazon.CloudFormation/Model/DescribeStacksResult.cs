@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ namespace Amazon.CloudFormation.Model
     /// <summary>
     /// <para>The output for a DescribeStacks action.</para>
     /// </summary>
-    public class DescribeStacksResult
+    public partial class DescribeStacksResult
     {
         
         private List<Stack> stacks = new List<Stack>();
@@ -43,6 +43,7 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         /// <param name="stacks">The values to add to the Stacks collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeStacksResult WithStacks(params Stack[] stacks)
         {
             foreach (Stack element in stacks)
@@ -58,6 +59,7 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         /// <param name="stacks">The values to add to the Stacks collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeStacksResult WithStacks(IEnumerable<Stack> stacks)
         {
             foreach (Stack element in stacks)
@@ -73,6 +75,20 @@ namespace Amazon.CloudFormation.Model
         {
             return this.stacks.Count > 0;
         }
+
+        /// <summary>
+        /// String that identifies the start of the next list of stacks, if there is one.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Length</term>
+        ///         <description>1 - 1024</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
         public string NextToken
         {
             get { return this.nextToken; }
@@ -84,6 +100,7 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         /// <param name="nextToken">The value to set for the NextToken property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeStacksResult WithNextToken(string nextToken)
         {
             this.nextToken = nextToken;

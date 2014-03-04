@@ -34,7 +34,7 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(deleteCacheSubnetGroupRequest, "AmazonElastiCache");
             request.Parameters.Add("Action", "DeleteCacheSubnetGroup");
-            request.Parameters.Add("Version", "2012-11-15");
+            request.Parameters.Add("Version", "2013-06-15");
             if (deleteCacheSubnetGroupRequest != null && deleteCacheSubnetGroupRequest.IsSetCacheSubnetGroupName())
             {
                 request.Parameters.Add("CacheSubnetGroupName", StringUtils.FromString(deleteCacheSubnetGroupRequest.CacheSubnetGroupName));

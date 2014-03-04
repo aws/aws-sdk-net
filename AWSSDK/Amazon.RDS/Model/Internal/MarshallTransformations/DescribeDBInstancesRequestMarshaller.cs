@@ -34,10 +34,36 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(describeDBInstancesRequest, "AmazonRDS");
             request.Parameters.Add("Action", "DescribeDBInstances");
-            request.Parameters.Add("Version", "2013-02-12");
+            request.Parameters.Add("Version", "2013-09-09");
             if (describeDBInstancesRequest != null && describeDBInstancesRequest.IsSetDBInstanceIdentifier())
             {
                 request.Parameters.Add("DBInstanceIdentifier", StringUtils.FromString(describeDBInstancesRequest.DBInstanceIdentifier));
+            }
+
+            if (describeDBInstancesRequest != null)
+            {
+                List<Filter> filtersList = describeDBInstancesRequest.Filters;
+                int filtersListIndex = 1;
+                foreach (Filter filtersListValue in filtersList)
+                {
+                    if (filtersListValue != null && filtersListValue.IsSetFilterName())
+                    {
+                        request.Parameters.Add("Filters.member." + filtersListIndex + ".FilterName", StringUtils.FromString(filtersListValue.FilterName));
+                    }
+                    if (filtersListValue != null)
+                    {
+                        List<string> filterValueList = filtersListValue.FilterValue;
+
+                        int filterValueListIndex = 1;
+                        foreach (string filterValueListValue in filterValueList)
+                        { 
+                            request.Parameters.Add("Filters.member." + filtersListIndex + ".FilterValue.member." + filterValueListIndex, StringUtils.FromString(filterValueListValue));
+                            filterValueListIndex++;
+                        }
+                    }
+
+                    filtersListIndex++;
+                }
             }
             if (describeDBInstancesRequest != null && describeDBInstancesRequest.IsSetMaxRecords())
             {

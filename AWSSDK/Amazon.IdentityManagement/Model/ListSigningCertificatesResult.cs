@@ -23,7 +23,7 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// <para>Contains the result of a successful invocation of the ListSigningCertificates action.</para>
     /// </summary>
-    public class ListSigningCertificatesResult  
+    public partial class ListSigningCertificatesResult
     {
         
         private List<SigningCertificate> certificates = new List<SigningCertificate>();
@@ -44,6 +44,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="certificates">The values to add to the Certificates collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListSigningCertificatesResult WithCertificates(params SigningCertificate[] certificates)
         {
             foreach (SigningCertificate element in certificates)
@@ -53,12 +54,13 @@ namespace Amazon.IdentityManagement.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Certificates collection
         /// </summary>
         /// <param name="certificates">The values to add to the Certificates collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListSigningCertificatesResult WithCertificates(IEnumerable<SigningCertificate> certificates)
         {
             foreach (SigningCertificate element in certificates)
@@ -72,7 +74,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if Certificates property is set
         internal bool IsSetCertificates()
         {
-            return this.certificates.Count > 0;       
+            return this.certificates.Count > 0;
         }
 
         /// <summary>
@@ -91,6 +93,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="isTruncated">The value to set for the IsTruncated property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListSigningCertificatesResult WithIsTruncated(bool isTruncated)
         {
             this.isTruncated = isTruncated;
@@ -101,7 +104,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if IsTruncated property is set
         internal bool IsSetIsTruncated()
         {
-            return this.isTruncated.HasValue;       
+            return this.isTruncated.HasValue;
         }
 
         /// <summary>
@@ -133,6 +136,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="marker">The value to set for the Marker property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListSigningCertificatesResult WithMarker(string marker)
         {
             this.marker = marker;
@@ -143,7 +147,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;       
+            return this.marker != null;
         }
     }
 }

@@ -21,9 +21,9 @@ using System.IO;
 namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
-    /// 
+    /// <para>The <c>Permission</c> structure.</para>
     /// </summary>
-    public class Permission
+    public partial class Permission
     {
         
         private string granteeType;
@@ -31,7 +31,10 @@ namespace Amazon.ElasticTranscoder.Model
         private List<string> access = new List<string>();
 
         /// <summary>
-        /// 
+        /// The type of value that appears in the Grantee object: <ul> <li><c>Canonical</c>: Either the canonical user ID for an AWS account or an
+        /// origin access identity for an Amazon CloudFront distribution. <important>A canonical user ID is not the same as an AWS account
+        /// number.</important></li> <li><c>Email</c>: The registered email address of an AWS account.</li> <li><c>Group</c>: One of the following
+        /// predefined Amazon S3 groups: <c>AllUsers</c>, <c>AuthenticatedUsers</c>, or <c>LogDelivery</c>.</li> </ul>
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -54,6 +57,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="granteeType">The value to set for the GranteeType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Permission WithGranteeType(string granteeType)
         {
             this.granteeType = granteeType;
@@ -68,7 +72,9 @@ namespace Amazon.ElasticTranscoder.Model
         }
 
         /// <summary>
-        /// 
+        /// The AWS user or group that you want to have access to transcoded files and playlists. To identify the user or group, you can specify the
+        /// canonical user ID for an AWS account, an origin access identity for a CloudFront distribution, the registered email address of an AWS
+        /// account, or a predefined Amazon S3 group.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -91,6 +97,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="grantee">The value to set for the Grantee property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Permission WithGrantee(string grantee)
         {
             this.grantee = grantee;
@@ -105,7 +112,11 @@ namespace Amazon.ElasticTranscoder.Model
         }
 
         /// <summary>
-        /// 
+        /// The permission that you want to give to the AWS user that is listed in Grantee. Valid values include: <ul> <li><c>READ</c>: The grantee can
+        /// read the thumbnails and metadata for thumbnails that Elastic Transcoder adds to the Amazon S3 bucket.</li> <li><c>READ_ACP</c>: The grantee
+        /// can read the object ACL for thumbnails that Elastic Transcoder adds to the Amazon S3 bucket.</li> <li><c>WRITE_ACP</c>: The grantee can
+        /// write the ACL for the thumbnails that Elastic Transcoder adds to the Amazon S3 bucket.</li> <li><c>FULL_CONTROL</c>: The grantee has READ,
+        /// READ_ACP, and WRITE_ACP permissions for the thumbnails that Elastic Transcoder adds to the Amazon S3 bucket.</li> </ul>
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -127,6 +138,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="access">The values to add to the Access collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Permission WithAccess(params string[] access)
         {
             foreach (string element in access)
@@ -142,6 +154,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="access">The values to add to the Access collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Permission WithAccess(IEnumerable<string> access)
         {
             foreach (string element in access)

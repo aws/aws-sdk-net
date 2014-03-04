@@ -26,7 +26,7 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Container for the parameters to the GetUserPolicy operation.
     /// <para>Retrieves the specified policy document for the specified user. The returned policy is URL-encoded according to RFC 3986. For more
-    /// information about RFC 3986, go to http://www.faqs.org/rfcs/rfc3986.html.</para>
+    /// information about RFC 3986, go to <a href="http://www.faqs.org/rfcs/rfc3986.html" >http://www.faqs.org/rfcs/rfc3986.html</a> .</para>
     /// </summary>
     /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.GetUserPolicy"/>
     public class GetUserPolicyRequest : AmazonWebServiceRequest
@@ -62,6 +62,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="userName">The value to set for the UserName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetUserPolicyRequest WithUserName(string userName)
         {
             this.userName = userName;
@@ -72,7 +73,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if UserName property is set
         internal bool IsSetUserName()
         {
-            return this.userName != null;       
+            return this.userName != null;
         }
 
         /// <summary>
@@ -103,6 +104,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="policyName">The value to set for the PolicyName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetUserPolicyRequest WithPolicyName(string policyName)
         {
             this.policyName = policyName;
@@ -113,7 +115,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if PolicyName property is set
         internal bool IsSetPolicyName()
         {
-            return this.policyName != null;       
+            return this.policyName != null;
         }
     }
 }

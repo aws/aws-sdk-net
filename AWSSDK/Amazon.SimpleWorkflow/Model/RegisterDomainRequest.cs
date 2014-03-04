@@ -71,6 +71,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="name">The value to set for the Name property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RegisterDomainRequest WithName(string name)
         {
             this.name = name;
@@ -108,6 +109,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="description">The value to set for the Description property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RegisterDomainRequest WithDescription(string description)
         {
             this.description = description;
@@ -122,9 +124,9 @@ namespace Amazon.SimpleWorkflow.Model
         }
 
         /// <summary>
-        /// Specifies the duration--<b><i>in days</i></b>--for which the record (including the history) of workflow executions in this domain should be
-        /// kept by the service. After the retention period, the workflow execution will not be available in the results of visibility calls. If a
-        /// duration of <c>NONE</c> is specified, the records for workflow executions in this domain are not retained at all.
+        /// A duration (in days) for which the record (including the history) of workflow executions in this domain should be kept by the service. After
+        /// the retention period, the workflow execution will not be available in the results of visibility calls. If you pass the value <c>NONE</c>
+        /// then there is no expiration for workflow execution history (effectively an infinite retention period).
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -147,6 +149,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="workflowExecutionRetentionPeriodInDays">The value to set for the WorkflowExecutionRetentionPeriodInDays property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RegisterDomainRequest WithWorkflowExecutionRetentionPeriodInDays(string workflowExecutionRetentionPeriodInDays)
         {
             this.workflowExecutionRetentionPeriodInDays = workflowExecutionRetentionPeriodInDays;

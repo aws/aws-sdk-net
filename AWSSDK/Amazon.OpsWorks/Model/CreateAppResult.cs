@@ -23,7 +23,7 @@ namespace Amazon.OpsWorks.Model
     /// <summary>
     /// <para>Contains the response to a <c>CreateApp</c> request.</para>
     /// </summary>
-    public class CreateAppResult
+    public partial class CreateAppResult
     {
         
         private string appId;
@@ -43,6 +43,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="appId">The value to set for the AppId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateAppResult WithAppId(string appId)
         {
             this.appId = appId;

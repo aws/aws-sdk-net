@@ -34,14 +34,14 @@ namespace Amazon.DirectConnect.Model
         /// </summary>
         public CreatePublicVirtualInterfaceResult CreatePublicVirtualInterfaceResult
         {
-            get 
+            get
             {
                 if(this.createPublicVirtualInterfaceResult == null)
                 {
                     this.createPublicVirtualInterfaceResult = new CreatePublicVirtualInterfaceResult();
                 }
 
-                return this.createPublicVirtualInterfaceResult; 
+                return this.createPublicVirtualInterfaceResult;
             }
             set { this.createPublicVirtualInterfaceResult = value; }
         }

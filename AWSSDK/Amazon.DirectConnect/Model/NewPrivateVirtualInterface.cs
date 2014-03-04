@@ -21,9 +21,9 @@ using System.IO;
 namespace Amazon.DirectConnect.Model
 {
     /// <summary>
-    /// 
+    /// <para>A structure containing information about a new private virtual interface.</para>
     /// </summary>
-    public class NewPrivateVirtualInterface  
+    public class NewPrivateVirtualInterface
     {
         
         private string virtualInterfaceName;
@@ -35,7 +35,7 @@ namespace Amazon.DirectConnect.Model
         private string virtualGatewayId;
 
         /// <summary>
-        /// The name of the virtual interface assigned by the customer Example: "Dev VPC"
+        /// The name of the virtual interface assigned by the customer Example: "My VPC"
         ///  
         /// </summary>
         public string VirtualInterfaceName
@@ -49,6 +49,7 @@ namespace Amazon.DirectConnect.Model
         /// </summary>
         /// <param name="virtualInterfaceName">The value to set for the VirtualInterfaceName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public NewPrivateVirtualInterface WithVirtualInterfaceName(string virtualInterfaceName)
         {
             this.virtualInterfaceName = virtualInterfaceName;
@@ -59,7 +60,7 @@ namespace Amazon.DirectConnect.Model
         // Check to see if VirtualInterfaceName property is set
         internal bool IsSetVirtualInterfaceName()
         {
-            return this.virtualInterfaceName != null;       
+            return this.virtualInterfaceName != null;
         }
 
         /// <summary>
@@ -77,6 +78,7 @@ namespace Amazon.DirectConnect.Model
         /// </summary>
         /// <param name="vlan">The value to set for the Vlan property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public NewPrivateVirtualInterface WithVlan(int vlan)
         {
             this.vlan = vlan;
@@ -87,11 +89,11 @@ namespace Amazon.DirectConnect.Model
         // Check to see if Vlan property is set
         internal bool IsSetVlan()
         {
-            return this.vlan.HasValue;       
+            return this.vlan.HasValue;
         }
 
         /// <summary>
-        /// AS number for BGP configuration Example: 65000
+        /// Autonomous system (AS) number for Border Gateway Protocol (BGP) configuration Example: 65000
         ///  
         /// </summary>
         public int Asn
@@ -105,6 +107,7 @@ namespace Amazon.DirectConnect.Model
         /// </summary>
         /// <param name="asn">The value to set for the Asn property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public NewPrivateVirtualInterface WithAsn(int asn)
         {
             this.asn = asn;
@@ -115,11 +118,11 @@ namespace Amazon.DirectConnect.Model
         // Check to see if Asn property is set
         internal bool IsSetAsn()
         {
-            return this.asn.HasValue;       
+            return this.asn.HasValue;
         }
 
         /// <summary>
-        /// Authentication key for BGP configuration Example: asdf345vjkl12
+        /// Authentication key for BGP configuration Example: asdf34example
         ///  
         /// </summary>
         public string AuthKey
@@ -133,6 +136,7 @@ namespace Amazon.DirectConnect.Model
         /// </summary>
         /// <param name="authKey">The value to set for the AuthKey property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public NewPrivateVirtualInterface WithAuthKey(string authKey)
         {
             this.authKey = authKey;
@@ -143,11 +147,11 @@ namespace Amazon.DirectConnect.Model
         // Check to see if AuthKey property is set
         internal bool IsSetAuthKey()
         {
-            return this.authKey != null;       
+            return this.authKey != null;
         }
 
         /// <summary>
-        /// Address assigned to the Amazon interface. Example: 192.168.1.1
+        /// IP address assigned to the Amazon interface. Example: 192.168.1.1/30
         ///  
         /// </summary>
         public string AmazonAddress
@@ -161,6 +165,7 @@ namespace Amazon.DirectConnect.Model
         /// </summary>
         /// <param name="amazonAddress">The value to set for the AmazonAddress property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public NewPrivateVirtualInterface WithAmazonAddress(string amazonAddress)
         {
             this.amazonAddress = amazonAddress;
@@ -171,8 +176,13 @@ namespace Amazon.DirectConnect.Model
         // Check to see if AmazonAddress property is set
         internal bool IsSetAmazonAddress()
         {
-            return this.amazonAddress != null;       
+            return this.amazonAddress != null;
         }
+
+        /// <summary>
+        /// IP address assigned to the customer interface. Example: 192.168.1.2/30
+        ///  
+        /// </summary>
         public string CustomerAddress
         {
             get { return this.customerAddress; }
@@ -184,6 +194,7 @@ namespace Amazon.DirectConnect.Model
         /// </summary>
         /// <param name="customerAddress">The value to set for the CustomerAddress property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public NewPrivateVirtualInterface WithCustomerAddress(string customerAddress)
         {
             this.customerAddress = customerAddress;
@@ -194,11 +205,11 @@ namespace Amazon.DirectConnect.Model
         // Check to see if CustomerAddress property is set
         internal bool IsSetCustomerAddress()
         {
-            return this.customerAddress != null;       
+            return this.customerAddress != null;
         }
 
         /// <summary>
-        /// Virtual private gateway to a VPC. Example: vgw-123er56
+        /// The ID of the virtual private gateway to a VPC. Only applies to private virtual interfaces. Example: vgw-123er56
         ///  
         /// </summary>
         public string VirtualGatewayId
@@ -212,6 +223,7 @@ namespace Amazon.DirectConnect.Model
         /// </summary>
         /// <param name="virtualGatewayId">The value to set for the VirtualGatewayId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public NewPrivateVirtualInterface WithVirtualGatewayId(string virtualGatewayId)
         {
             this.virtualGatewayId = virtualGatewayId;
@@ -222,7 +234,7 @@ namespace Amazon.DirectConnect.Model
         // Check to see if VirtualGatewayId property is set
         internal bool IsSetVirtualGatewayId()
         {
-            return this.virtualGatewayId != null;       
+            return this.virtualGatewayId != null;
         }
     }
 }

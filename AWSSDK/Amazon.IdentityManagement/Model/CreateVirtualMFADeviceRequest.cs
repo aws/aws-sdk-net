@@ -25,12 +25,15 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateVirtualMFADevice operation.
-    /// <para>Creates a new virtual MFA device for the AWS account. After creating the virtual MFA, use EnableMFADevice to attach the MFA device to
-    /// an IAM user. For more information about creating and working with virtual MFA devices, go to Using a Virtual MFA Device in <i>Using AWS
-    /// Identity and Access Management</i> .</para> <para>For information about limits on the number of MFA devices you can create, see Limitations
-    /// on Entities in <i>Using AWS Identity and Access Management</i> .</para> <para><b>IMPORTANT:</b>The seed information contained in the QR code
-    /// and the Base32 string should be treated like any other secret access information, such as your AWS access keys or your passwords. After you
-    /// provision your virtual device, you should ensure that the information is destroyed following secure procedures.</para>
+    /// <para>Creates a new virtual MFA device for the AWS account. After creating the virtual MFA, use <a
+    /// href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_EnableMFADevice.html" >EnableMFADevice</a> to attach the MFA device to an IAM
+    /// user. For more information about creating and working with virtual MFA devices, go to <a
+    /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_VirtualMFA.html" >Using a Virtual MFA Device</a> in <i>Using AWS
+    /// Identity and Access Management</i> .</para> <para>For information about limits on the number of MFA devices you can create, see <a
+    /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?LimitationsOnEntities.html" >Limitations on Entities</a> in <i>Using AWS
+    /// Identity and Access Management</i> .</para> <para><b>IMPORTANT:</b>The seed information contained in the QR code and the Base32 string
+    /// should be treated like any other secret access information, such as your AWS access keys or your passwords. After you provision your virtual
+    /// device, you should ensure that the information is destroyed following secure procedures.</para>
     /// </summary>
     /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.CreateVirtualMFADevice"/>
     public class CreateVirtualMFADeviceRequest : AmazonWebServiceRequest
@@ -40,9 +43,8 @@ namespace Amazon.IdentityManagement.Model
 
         /// <summary>
         /// The path for the virtual MFA device. For more information about paths, see <a
-        /// href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM
-        /// Entities</a> in <i>Using AWS Identity and Access Management</i>. This parameter is optional. If it is not included, it defaults to a slash
-        /// (/).
+        /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in
+        /// <i>Using AWS Identity and Access Management</i>. This parameter is optional. If it is not included, it defaults to a slash (/).
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -69,6 +71,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="path">The value to set for the Path property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateVirtualMFADeviceRequest WithPath(string path)
         {
             this.path = path;
@@ -79,7 +82,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if Path property is set
         internal bool IsSetPath()
         {
-            return this.path != null;       
+            return this.path != null;
         }
 
         /// <summary>
@@ -110,6 +113,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="virtualMFADeviceName">The value to set for the VirtualMFADeviceName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateVirtualMFADeviceRequest WithVirtualMFADeviceName(string virtualMFADeviceName)
         {
             this.virtualMFADeviceName = virtualMFADeviceName;
@@ -120,7 +124,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if VirtualMFADeviceName property is set
         internal bool IsSetVirtualMFADeviceName()
         {
-            return this.virtualMFADeviceName != null;       
+            return this.virtualMFADeviceName != null;
         }
     }
 }

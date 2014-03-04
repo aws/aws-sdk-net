@@ -32,6 +32,8 @@
 
         public ProvisionedThroughputDescription Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             ProvisionedThroughputDescription provisionedThroughputDescription = new ProvisionedThroughputDescription();
           
             int originalDepth = context.CurrentDepth;

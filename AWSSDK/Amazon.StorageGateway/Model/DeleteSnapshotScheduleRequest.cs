@@ -26,29 +26,15 @@ namespace Amazon.StorageGateway.Model
     /// <summary>
     /// Container for the parameters to the DeleteSnapshotSchedule operation.
     /// <para> This operation deletes a snapshot of a volume. </para> <para> You can take snapshots of your gateway volumes on a scheduled or ad-hoc
-    /// basis. This API enables you to delete a snapshot schedule for a volume. For more information, see Working with Snapshots. In the
+    /// basis. This API enables you to delete a snapshot schedule for a volume. For more information, see <a
+    /// href="http://docs.aws.amazon.com/storagegateway/latest/userguide/WorkingWithSnapshots.html" >Working with Snapshots</a> . In the
     /// <c>DeleteSnapshotSchedule</c> request, you identify the volume by providing its Amazon Resource Name (ARN). </para> <para><b>NOTE:</b> To
-    /// list or delete a snapshot, you must use the Amazon EC2 API. For more information, go to DeleteSnapshot and DescribeSnapshots in Amazon
-    /// Elastic Compute Cloud API Reference. </para>
+    /// list or delete a snapshot, you must use the Amazon EC2 API. in Amazon Elastic Compute Cloud API Reference. </para>
     /// </summary>
     /// <seealso cref="Amazon.StorageGateway.AmazonStorageGateway.DeleteSnapshotSchedule"/>
     public class DeleteSnapshotScheduleRequest : AmazonWebServiceRequest
     {
         private string volumeARN;
-
-        /// <summary>
-        /// The Amazon Resource Name (ARN) of the volume. Use the <a>ListVolumes</a> operation to return a list of gateway volumes.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>50 - 500</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
         public string VolumeARN
         {
             get { return this.volumeARN; }
@@ -60,6 +46,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="volumeARN">The value to set for the VolumeARN property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeleteSnapshotScheduleRequest WithVolumeARN(string volumeARN)
         {
             this.volumeARN = volumeARN;
@@ -70,7 +57,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if VolumeARN property is set
         internal bool IsSetVolumeARN()
         {
-            return this.volumeARN != null;       
+            return this.volumeARN != null;
         }
     }
 }

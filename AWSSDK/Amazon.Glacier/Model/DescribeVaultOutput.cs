@@ -23,7 +23,7 @@ namespace Amazon.Glacier.Model
     /// <summary>
     /// <para>Contains the Amazon Glacier response to your request.</para>
     /// </summary>
-    public class DescribeVaultOutput  
+    public partial class DescribeVaultOutput
     {
         
         private string vaultARN;
@@ -48,6 +48,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="vaultARN">The value to set for the VaultARN property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeVaultOutput WithVaultARN(string vaultARN)
         {
             this.vaultARN = vaultARN;
@@ -58,7 +59,7 @@ namespace Amazon.Glacier.Model
         // Check to see if VaultARN property is set
         internal bool IsSetVaultARN()
         {
-            return this.vaultARN != null;       
+            return this.vaultARN != null;
         }
 
         /// <summary>
@@ -76,6 +77,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="vaultName">The value to set for the VaultName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeVaultOutput WithVaultName(string vaultName)
         {
             this.vaultName = vaultName;
@@ -86,7 +88,7 @@ namespace Amazon.Glacier.Model
         // Check to see if VaultName property is set
         internal bool IsSetVaultName()
         {
-            return this.vaultName != null;       
+            return this.vaultName != null;
         }
 
         /// <summary>
@@ -104,6 +106,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="creationDate">The value to set for the CreationDate property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeVaultOutput WithCreationDate(DateTime creationDate)
         {
             this.creationDate = creationDate;
@@ -114,7 +117,7 @@ namespace Amazon.Glacier.Model
         // Check to see if CreationDate property is set
         internal bool IsSetCreationDate()
         {
-            return this.creationDate.HasValue;       
+            return this.creationDate.HasValue;
         }
 
         /// <summary>
@@ -133,6 +136,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="lastInventoryDate">The value to set for the LastInventoryDate property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeVaultOutput WithLastInventoryDate(DateTime lastInventoryDate)
         {
             this.lastInventoryDate = lastInventoryDate;
@@ -143,7 +147,7 @@ namespace Amazon.Glacier.Model
         // Check to see if LastInventoryDate property is set
         internal bool IsSetLastInventoryDate()
         {
-            return this.lastInventoryDate.HasValue;       
+            return this.lastInventoryDate.HasValue;
         }
 
         /// <summary>
@@ -162,6 +166,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="numberOfArchives">The value to set for the NumberOfArchives property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeVaultOutput WithNumberOfArchives(long numberOfArchives)
         {
             this.numberOfArchives = numberOfArchives;
@@ -172,7 +177,7 @@ namespace Amazon.Glacier.Model
         // Check to see if NumberOfArchives property is set
         internal bool IsSetNumberOfArchives()
         {
-            return this.numberOfArchives.HasValue;       
+            return this.numberOfArchives.HasValue;
         }
 
         /// <summary>
@@ -191,6 +196,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="sizeInBytes">The value to set for the SizeInBytes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeVaultOutput WithSizeInBytes(long sizeInBytes)
         {
             this.sizeInBytes = sizeInBytes;
@@ -201,7 +207,7 @@ namespace Amazon.Glacier.Model
         // Check to see if SizeInBytes property is set
         internal bool IsSetSizeInBytes()
         {
-            return this.sizeInBytes.HasValue;       
+            return this.sizeInBytes.HasValue;
         }
     }
 }

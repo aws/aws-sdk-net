@@ -25,8 +25,11 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateInstanceProfile operation.
-    /// <para>Creates a new instance profile.</para> <para>For information about the number of instance profiles you can create, see Limitations on
-    /// IAM Entities in <i>Using AWS Identity and Access Management</i> .</para>
+    /// <para>Creates a new instance profile. For information about instance profiles, go to <a
+    /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html" >About Instance Profiles</a> .</para> <para>For
+    /// information about the number of instance profiles you can create, see <a
+    /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?LimitationsOnEntities.html" >Limitations on IAM Entities</a> in <i>Using
+    /// AWS Identity and Access Management</i> .</para>
     /// </summary>
     /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.CreateInstanceProfile"/>
     public class CreateInstanceProfileRequest : AmazonWebServiceRequest
@@ -62,6 +65,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="instanceProfileName">The value to set for the InstanceProfileName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateInstanceProfileRequest WithInstanceProfileName(string instanceProfileName)
         {
             this.instanceProfileName = instanceProfileName;
@@ -72,14 +76,13 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if InstanceProfileName property is set
         internal bool IsSetInstanceProfileName()
         {
-            return this.instanceProfileName != null;       
+            return this.instanceProfileName != null;
         }
 
         /// <summary>
         /// The path to the instance profile. For more information about paths, see <a
-        /// href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM
-        /// Entities</a> in <i>Using AWS Identity and Access Management</i>. This parameter is optional. If it is not included, it defaults to a slash
-        /// (/).
+        /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in
+        /// <i>Using AWS Identity and Access Management</i>. This parameter is optional. If it is not included, it defaults to a slash (/).
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -106,6 +109,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="path">The value to set for the Path property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateInstanceProfileRequest WithPath(string path)
         {
             this.path = path;
@@ -116,7 +120,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if Path property is set
         internal bool IsSetPath()
         {
-            return this.path != null;       
+            return this.path != null;
         }
     }
 }

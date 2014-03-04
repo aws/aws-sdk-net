@@ -22,13 +22,14 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
      /// <summary>
      ///   MFADevice Unmarshaller
      /// </summary>
-    internal class MFADeviceUnmarshaller : IUnmarshaller<MFADevice, XmlUnmarshallerContext> 
+    internal class MFADeviceUnmarshaller : IUnmarshaller<MFADevice, XmlUnmarshallerContext>, IUnmarshaller<MFADevice, JsonUnmarshallerContext> 
     {
         public MFADevice Unmarshall(XmlUnmarshallerContext context) 
         {
             MFADevice mFADevice = new MFADevice();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -64,6 +65,11 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 
 
             return mFADevice;
+        }
+
+        public MFADevice Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static MFADeviceUnmarshaller instance;

@@ -53,6 +53,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="publicIp">Public Ip</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public NetworkInterfaceAssociation WithPublicIp(string publicIp)
         {
             this.publicIpField = publicIp;
@@ -83,6 +84,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="publicDnsName">PublicDnsName</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public NetworkInterfaceAssociation WithPublicDnsName(string publicDnsName)
         {
             this.publicDnsNameField = publicDnsName;
@@ -113,6 +115,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="ipOwnerId">Ip Owner Id</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public NetworkInterfaceAssociation WithIpOwnerId(string ipOwnerId)
         {
             this.ipOwnerIdField = ipOwnerId;
@@ -143,6 +146,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="allocationId">Allocation Id</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public NetworkInterfaceAssociation WithAllocationId(string allocationId)
         {
             this.allocationIdField = allocationId;
@@ -173,6 +177,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="associationId">Association Id</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public NetworkInterfaceAssociation WithAssociationId(string associationId)
         {
             this.associationIdField = associationId;

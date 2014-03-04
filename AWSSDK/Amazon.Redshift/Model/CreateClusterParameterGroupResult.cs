@@ -23,7 +23,7 @@ namespace Amazon.Redshift.Model
     /// <summary>
     /// The results from the CreateClusterParameterGroup action.
     /// </summary>
-    public class CreateClusterParameterGroupResult
+    public partial class CreateClusterParameterGroupResult
     {
         private ClusterParameterGroup clusterParameterGroupValue;
 

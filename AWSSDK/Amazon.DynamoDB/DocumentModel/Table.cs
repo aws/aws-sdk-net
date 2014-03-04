@@ -448,7 +448,7 @@ namespace Amazon.DynamoDB.DocumentModel
                 new RequestEventHandler(UserAgentRequestEventHandlerAsync) :
                 new RequestEventHandler(UserAgentRequestEventHandlerSync);
             if (currentConfig.AttributesToGet != null)
-                request.WithAttributesToGet(currentConfig.AttributesToGet);
+                request.AttributesToGet = currentConfig.AttributesToGet;
 
             var result = DDBClient.GetItem(request);
             var attributeMap = result.GetItemResult.Item;

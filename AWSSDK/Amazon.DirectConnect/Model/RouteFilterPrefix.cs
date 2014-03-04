@@ -21,9 +21,9 @@ using System.IO;
 namespace Amazon.DirectConnect.Model
 {
     /// <summary>
-    /// <para>A route filter prefix that the customer can advertise through BGP over a public virtual interface.</para>
+    /// <para>A route filter prefix that the customer can advertise through Border Gateway Protocol (BGP) over a public virtual interface.</para>
     /// </summary>
-    public class RouteFilterPrefix  
+    public class RouteFilterPrefix
     {
         
         private string cidr;
@@ -43,6 +43,7 @@ namespace Amazon.DirectConnect.Model
         /// </summary>
         /// <param name="cidr">The value to set for the Cidr property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RouteFilterPrefix WithCidr(string cidr)
         {
             this.cidr = cidr;
@@ -53,7 +54,7 @@ namespace Amazon.DirectConnect.Model
         // Check to see if Cidr property is set
         internal bool IsSetCidr()
         {
-            return this.cidr != null;       
+            return this.cidr != null;
         }
     }
 }

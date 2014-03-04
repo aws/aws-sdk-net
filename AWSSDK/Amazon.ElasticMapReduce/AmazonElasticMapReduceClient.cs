@@ -36,7 +36,7 @@ namespace Amazon.ElasticMapReduce
     public class AmazonElasticMapReduceClient : AmazonWebServiceClient, AmazonElasticMapReduce
     {
     
-        AbstractAWSSigner signer = new QueryStringSigner();
+        AbstractAWSSigner signer = new AWS4Signer();
 
         #region Constructors
 

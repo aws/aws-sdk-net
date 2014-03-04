@@ -50,6 +50,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="code">The code for the Spot Instance request status</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SpotInstanceStatusMessage WithCode(string code)
         {
             this.codeField = code;
@@ -82,6 +83,7 @@ namespace Amazon.EC2.Model
         /// <param name="updateTime">The time of the most recent update for the
         /// status.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SpotInstanceStatusMessage WithUpdateTime(string updateTime)
         {
             this.updateTimeField = updateTime;
@@ -114,6 +116,7 @@ namespace Amazon.EC2.Model
         /// <param name="message">The message for the Spot Instance request
         /// status.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SpotInstanceStatusMessage WithMessage(string message)
         {
             this.messageField = message;

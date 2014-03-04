@@ -23,7 +23,7 @@ namespace Amazon.Glacier.Model
     /// <summary>
     /// <para>Contains the Amazon Glacier response to your request.</para>
     /// </summary>
-    public class UploadMultipartPartResult  
+    public partial class UploadMultipartPartResult
     {
         
         private string checksum;
@@ -43,6 +43,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="checksum">The value to set for the Checksum property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UploadMultipartPartResult WithChecksum(string checksum)
         {
             this.checksum = checksum;
@@ -53,7 +54,7 @@ namespace Amazon.Glacier.Model
         // Check to see if Checksum property is set
         internal bool IsSetChecksum()
         {
-            return this.checksum != null;       
+            return this.checksum != null;
         }
     }
 }

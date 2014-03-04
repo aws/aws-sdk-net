@@ -11,29 +11,31 @@
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
- */ 
+ */
     using System;
     using System.Collections.Generic;
     using System.IO;
     using Amazon.DirectConnect.Model;
     using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations 
-    { 
-      /// <summary> 
-      /// DeleteConnectionResultUnmarshaller 
-      /// </summary> 
-      internal class DeleteConnectionResultUnmarshaller : IUnmarshaller<DeleteConnectionResult, XmlUnmarshallerContext>, IUnmarshaller<DeleteConnectionResult, JsonUnmarshallerContext> 
-      { 
+    namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
+    {
+      /// <summary>
+      /// DeleteConnectionResultUnmarshaller
+      /// </summary>
+      internal class DeleteConnectionResultUnmarshaller : IUnmarshaller<DeleteConnectionResult, XmlUnmarshallerContext>, IUnmarshaller<DeleteConnectionResult, JsonUnmarshallerContext>
+      {
         DeleteConnectionResult IUnmarshaller<DeleteConnectionResult, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
           throw new NotImplementedException();
         }
-        
-        public DeleteConnectionResult Unmarshall(JsonUnmarshallerContext context) 
+
+        public DeleteConnectionResult Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             DeleteConnectionResult deleteConnectionResult = new DeleteConnectionResult();
-                    
+          
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             while (context.Read())
@@ -42,55 +44,79 @@
                 {
                 context.Read();
                 context.Read();
-               
-              if (context.TestExpression("ConnectionId", targetDepth)) 
+              
+              if (context.TestExpression("OwnerAccount", targetDepth))
+              {
+                deleteConnectionResult.OwnerAccount = StringUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
+              if (context.TestExpression("ConnectionId", targetDepth))
               {
                 deleteConnectionResult.ConnectionId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue; 
+                continue;
               }
-   
-              if (context.TestExpression("ConnectionName", targetDepth)) 
+  
+              if (context.TestExpression("ConnectionName", targetDepth))
               {
                 deleteConnectionResult.ConnectionName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue; 
+                continue;
               }
-   
-              if (context.TestExpression("ConnectionState", targetDepth)) 
+  
+              if (context.TestExpression("ConnectionState", targetDepth))
               {
                 deleteConnectionResult.ConnectionState = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue; 
+                continue;
               }
-   
-              if (context.TestExpression("Region", targetDepth)) 
+  
+              if (context.TestExpression("Region", targetDepth))
               {
                 deleteConnectionResult.Region = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue; 
+                continue;
               }
-   
-              if (context.TestExpression("Location", targetDepth)) 
+  
+              if (context.TestExpression("Location", targetDepth))
               {
                 deleteConnectionResult.Location = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue; 
+                continue;
               }
-   
-                } 
-                else if (context.IsEndElement && context.CurrentDepth <= originalDepth) 
-                { 
-                    return deleteConnectionResult; 
-                } 
-            } 
+  
+              if (context.TestExpression("Bandwidth", targetDepth))
+              {
+                deleteConnectionResult.Bandwidth = StringUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
+              if (context.TestExpression("Vlan", targetDepth))
+              {
+                deleteConnectionResult.Vlan = IntUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
+              if (context.TestExpression("PartnerName", targetDepth))
+              {
+                deleteConnectionResult.PartnerName = StringUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
+                }
+                else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
+                {
+                    return deleteConnectionResult;
+                }
+            }
           
-          
-            return deleteConnectionResult; 
-        } 
-        
-        private static DeleteConnectionResultUnmarshaller instance; 
-        public static DeleteConnectionResultUnmarshaller GetInstance() 
-        { 
-            if (instance == null) 
-                instance = new DeleteConnectionResultUnmarshaller(); 
+
+            return deleteConnectionResult;
+        }
+
+        private static DeleteConnectionResultUnmarshaller instance;
+        public static DeleteConnectionResultUnmarshaller GetInstance()
+        {
+            if (instance == null)
+                instance = new DeleteConnectionResultUnmarshaller();
             return instance;
-        } 
-    } 
-} 
+        }
+    }
+}
   

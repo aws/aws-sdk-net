@@ -11,27 +11,29 @@
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
- */ 
+ */
     using System;
     using System.Collections.Generic;
     using System.IO;
     using Amazon.Glacier.Model;
     using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.Glacier.Model.Internal.MarshallTransformations 
-    { 
-      /// <summary> 
-      /// UploadArchiveResultUnmarshaller 
-      /// </summary> 
-      internal class UploadArchiveResultUnmarshaller : IUnmarshaller<UploadArchiveResult, XmlUnmarshallerContext>, IUnmarshaller<UploadArchiveResult, JsonUnmarshallerContext> 
-      { 
+    namespace Amazon.Glacier.Model.Internal.MarshallTransformations
+    {
+      /// <summary>
+      /// UploadArchiveResultUnmarshaller
+      /// </summary>
+      internal class UploadArchiveResultUnmarshaller : IUnmarshaller<UploadArchiveResult, XmlUnmarshallerContext>, IUnmarshaller<UploadArchiveResult, JsonUnmarshallerContext>
+      {
         UploadArchiveResult IUnmarshaller<UploadArchiveResult, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
           throw new NotImplementedException();
         }
-        
-        public UploadArchiveResult Unmarshall(JsonUnmarshallerContext context) 
+
+        public UploadArchiveResult Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             UploadArchiveResult uploadArchiveResult = new UploadArchiveResult();
           
 
@@ -41,17 +43,17 @@
                 uploadArchiveResult.Checksum = context.Headers["x-amz-sha256-tree-hash"];
             if (context.Headers["x-amz-archive-id"] != null)
                 uploadArchiveResult.ArchiveId = context.Headers["x-amz-archive-id"];
-          
-            return uploadArchiveResult; 
-        } 
-        
-        private static UploadArchiveResultUnmarshaller instance; 
-        public static UploadArchiveResultUnmarshaller GetInstance() 
-        { 
-            if (instance == null) 
-                instance = new UploadArchiveResultUnmarshaller(); 
+
+            return uploadArchiveResult;
+        }
+
+        private static UploadArchiveResultUnmarshaller instance;
+        public static UploadArchiveResultUnmarshaller GetInstance()
+        {
+            if (instance == null)
+                instance = new UploadArchiveResultUnmarshaller();
             return instance;
-        } 
-    } 
-} 
+        }
+    }
+}
   

@@ -23,13 +23,13 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// <summary>
     /// <para> The output for the CreateLoadBalancer action. </para>
     /// </summary>
-    public class CreateLoadBalancerResult  
+    public partial class CreateLoadBalancerResult
     {
         
         private string dNSName;
 
         /// <summary>
-        /// The DNS name for the LoadBalancer.
+        /// The DNS name for the load balancer.
         ///  
         /// </summary>
         public string DNSName
@@ -43,6 +43,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="dNSName">The value to set for the DNSName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateLoadBalancerResult WithDNSName(string dNSName)
         {
             this.dNSName = dNSName;
@@ -53,7 +54,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if DNSName property is set
         internal bool IsSetDNSName()
         {
-            return this.dNSName != null;       
+            return this.dNSName != null;
         }
     }
 }

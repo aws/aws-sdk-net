@@ -21,15 +21,15 @@ using System.IO;
 namespace Amazon.AWSSupport.Model
 {
     /// <summary>
-    /// <para>Returns the objects or data listed below if successful. Otherwise, returns an error.</para>
+    /// <para>Contains the following objects or data if successful. Otherwise, returns an error.</para>
     /// </summary>
-    public class DescribeServicesResult
+    public partial class DescribeServicesResult
     {
         
         private List<Service> services = new List<Service>();
 
         /// <summary>
-        /// JSON-formatted list of AWS services.
+        /// A JSON-formatted list of AWS services.
         ///  
         /// </summary>
         public List<Service> Services
@@ -42,6 +42,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="services">The values to add to the Services collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeServicesResult WithServices(params Service[] services)
         {
             foreach (Service element in services)
@@ -57,6 +58,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="services">The values to add to the Services collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeServicesResult WithServices(IEnumerable<Service> services)
         {
             foreach (Service element in services)

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -35,7 +35,9 @@ namespace Amazon.CloudFormation.Model
         private string nextToken;
 
         /// <summary>
-        /// The name or the unique identifier associated with the stack. Default: There is no default value.
+        /// The name or the unique identifier associated with the stack, which are not always interchangeable: <ul> <li>Running stacks: You can specify
+        /// either the stack's name or its unique stack ID.</li> <li>Deleted stacks: You must specify the unique stack ID.</li> </ul> Default: There is
+        /// no default value.
         ///  
         /// </summary>
         public string StackName
@@ -49,6 +51,7 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         /// <param name="stackName">The value to set for the StackName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListStackResourcesRequest WithStackName(string stackName)
         {
             this.stackName = stackName;
@@ -86,6 +89,7 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         /// <param name="nextToken">The value to set for the NextToken property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListStackResourcesRequest WithNextToken(string nextToken)
         {
             this.nextToken = nextToken;

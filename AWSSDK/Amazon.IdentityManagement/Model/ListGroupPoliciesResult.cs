@@ -23,7 +23,7 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// <para>Contains the result of a successful invocation of the ListGroupPolicies action.</para>
     /// </summary>
-    public class ListGroupPoliciesResult  
+    public partial class ListGroupPoliciesResult
     {
         
         private List<string> policyNames = new List<string>();
@@ -44,6 +44,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="policyNames">The values to add to the PolicyNames collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListGroupPoliciesResult WithPolicyNames(params string[] policyNames)
         {
             foreach (string element in policyNames)
@@ -53,12 +54,13 @@ namespace Amazon.IdentityManagement.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the PolicyNames collection
         /// </summary>
         /// <param name="policyNames">The values to add to the PolicyNames collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListGroupPoliciesResult WithPolicyNames(IEnumerable<string> policyNames)
         {
             foreach (string element in policyNames)
@@ -72,7 +74,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if PolicyNames property is set
         internal bool IsSetPolicyNames()
         {
-            return this.policyNames.Count > 0;       
+            return this.policyNames.Count > 0;
         }
 
         /// <summary>
@@ -91,6 +93,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="isTruncated">The value to set for the IsTruncated property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListGroupPoliciesResult WithIsTruncated(bool isTruncated)
         {
             this.isTruncated = isTruncated;
@@ -101,7 +104,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if IsTruncated property is set
         internal bool IsSetIsTruncated()
         {
-            return this.isTruncated.HasValue;       
+            return this.isTruncated.HasValue;
         }
 
         /// <summary>
@@ -133,6 +136,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="marker">The value to set for the Marker property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListGroupPoliciesResult WithMarker(string marker)
         {
             this.marker = marker;
@@ -143,7 +147,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;       
+            return this.marker != null;
         }
     }
 }

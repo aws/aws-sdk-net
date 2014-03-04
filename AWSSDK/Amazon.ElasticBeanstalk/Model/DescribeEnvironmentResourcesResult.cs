@@ -23,7 +23,7 @@ namespace Amazon.ElasticBeanstalk.Model
     /// <summary>
     /// <para>Result message containing a list of environment resource descriptions. </para>
     /// </summary>
-    public class DescribeEnvironmentResourcesResult  
+    public partial class DescribeEnvironmentResourcesResult
     {
         
         private EnvironmentResourceDescription environmentResources;
@@ -43,6 +43,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="environmentResources">The value to set for the EnvironmentResources property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeEnvironmentResourcesResult WithEnvironmentResources(EnvironmentResourceDescription environmentResources)
         {
             this.environmentResources = environmentResources;
@@ -53,7 +54,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if EnvironmentResources property is set
         internal bool IsSetEnvironmentResources()
         {
-            return this.environmentResources != null;       
+            return this.environmentResources != null;
         }
     }
 }

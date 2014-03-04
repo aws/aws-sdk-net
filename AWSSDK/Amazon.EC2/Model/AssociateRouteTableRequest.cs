@@ -37,7 +37,7 @@ namespace Amazon.EC2.Model
     /// later. A route table can be associated with multiple subnets.
     /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
-    public class AssociateRouteTableRequest
+    public class AssociateRouteTableRequest : EC2Request
     {    
         private string routeTableIdField;
         private string subnetIdField;
@@ -57,6 +57,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="routeTableId">The ID of the route table.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AssociateRouteTableRequest WithRouteTableId(string routeTableId)
         {
             this.routeTableIdField = routeTableId;
@@ -87,6 +88,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="subnetId">The ID of the subnet.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AssociateRouteTableRequest WithSubnetId(string subnetId)
         {
             this.subnetIdField = subnetId;

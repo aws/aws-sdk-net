@@ -23,7 +23,7 @@ namespace Amazon.ElasticBeanstalk.Model
     /// <summary>
     /// <para>Result message containing a list of environment descriptions.</para>
     /// </summary>
-    public class DescribeEnvironmentsResult  
+    public partial class DescribeEnvironmentsResult
     {
         
         private List<EnvironmentDescription> environments = new List<EnvironmentDescription>();
@@ -42,6 +42,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="environments">The values to add to the Environments collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeEnvironmentsResult WithEnvironments(params EnvironmentDescription[] environments)
         {
             foreach (EnvironmentDescription element in environments)
@@ -51,12 +52,13 @@ namespace Amazon.ElasticBeanstalk.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Environments collection
         /// </summary>
         /// <param name="environments">The values to add to the Environments collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeEnvironmentsResult WithEnvironments(IEnumerable<EnvironmentDescription> environments)
         {
             foreach (EnvironmentDescription element in environments)
@@ -70,7 +72,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if Environments property is set
         internal bool IsSetEnvironments()
         {
-            return this.environments.Count > 0;       
+            return this.environments.Count > 0;
         }
     }
 }

@@ -20,9 +20,11 @@ using System.IO;
 
 namespace Amazon.IdentityManagement.Model
 {
-    /// <summary>Password Policy
+    /// <summary>
+    /// <para>The PasswordPolicy data type contains information about the account password policy.</para> <para> This data type is used as a
+    /// response element in the action GetAccountPasswordPolicy. </para>
     /// </summary>
-    public class PasswordPolicy  
+    public partial class PasswordPolicy
     {
         
         private int? minimumPasswordLength;
@@ -31,6 +33,22 @@ namespace Amazon.IdentityManagement.Model
         private bool? requireUppercaseCharacters;
         private bool? requireLowercaseCharacters;
         private bool? allowUsersToChangePassword;
+        private bool? expirePasswords;
+        private int? maxPasswordAge;
+
+        /// <summary>
+        /// Minimum length to require for IAM user passwords.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Range</term>
+        ///         <description>6 - 128</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
         public int MinimumPasswordLength
         {
             get { return this.minimumPasswordLength ?? default(int); }
@@ -42,6 +60,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="minimumPasswordLength">The value to set for the MinimumPasswordLength property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PasswordPolicy WithMinimumPasswordLength(int minimumPasswordLength)
         {
             this.minimumPasswordLength = minimumPasswordLength;
@@ -52,8 +71,13 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if MinimumPasswordLength property is set
         internal bool IsSetMinimumPasswordLength()
         {
-            return this.minimumPasswordLength.HasValue;       
+            return this.minimumPasswordLength.HasValue;
         }
+
+        /// <summary>
+        /// Specifies whether to require symbols for IAM user passwords.
+        ///  
+        /// </summary>
         public bool RequireSymbols
         {
             get { return this.requireSymbols ?? default(bool); }
@@ -65,6 +89,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="requireSymbols">The value to set for the RequireSymbols property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PasswordPolicy WithRequireSymbols(bool requireSymbols)
         {
             this.requireSymbols = requireSymbols;
@@ -75,8 +100,13 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if RequireSymbols property is set
         internal bool IsSetRequireSymbols()
         {
-            return this.requireSymbols.HasValue;       
+            return this.requireSymbols.HasValue;
         }
+
+        /// <summary>
+        /// Specifies whether to require numbers for IAM user passwords.
+        ///  
+        /// </summary>
         public bool RequireNumbers
         {
             get { return this.requireNumbers ?? default(bool); }
@@ -88,6 +118,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="requireNumbers">The value to set for the RequireNumbers property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PasswordPolicy WithRequireNumbers(bool requireNumbers)
         {
             this.requireNumbers = requireNumbers;
@@ -98,8 +129,13 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if RequireNumbers property is set
         internal bool IsSetRequireNumbers()
         {
-            return this.requireNumbers.HasValue;       
+            return this.requireNumbers.HasValue;
         }
+
+        /// <summary>
+        /// Specifies whether to require uppercase characters for IAM user passwords.
+        ///  
+        /// </summary>
         public bool RequireUppercaseCharacters
         {
             get { return this.requireUppercaseCharacters ?? default(bool); }
@@ -111,6 +147,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="requireUppercaseCharacters">The value to set for the RequireUppercaseCharacters property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PasswordPolicy WithRequireUppercaseCharacters(bool requireUppercaseCharacters)
         {
             this.requireUppercaseCharacters = requireUppercaseCharacters;
@@ -121,8 +158,13 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if RequireUppercaseCharacters property is set
         internal bool IsSetRequireUppercaseCharacters()
         {
-            return this.requireUppercaseCharacters.HasValue;       
+            return this.requireUppercaseCharacters.HasValue;
         }
+
+        /// <summary>
+        /// Specifies whether to require lowercase characters for IAM user passwords.
+        ///  
+        /// </summary>
         public bool RequireLowercaseCharacters
         {
             get { return this.requireLowercaseCharacters ?? default(bool); }
@@ -134,6 +176,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="requireLowercaseCharacters">The value to set for the RequireLowercaseCharacters property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PasswordPolicy WithRequireLowercaseCharacters(bool requireLowercaseCharacters)
         {
             this.requireLowercaseCharacters = requireLowercaseCharacters;
@@ -144,8 +187,13 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if RequireLowercaseCharacters property is set
         internal bool IsSetRequireLowercaseCharacters()
         {
-            return this.requireLowercaseCharacters.HasValue;       
+            return this.requireLowercaseCharacters.HasValue;
         }
+
+        /// <summary>
+        /// Specifies whether to allow IAM users to change their own password.
+        ///  
+        /// </summary>
         public bool AllowUsersToChangePassword
         {
             get { return this.allowUsersToChangePassword ?? default(bool); }
@@ -157,6 +205,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="allowUsersToChangePassword">The value to set for the AllowUsersToChangePassword property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PasswordPolicy WithAllowUsersToChangePassword(bool allowUsersToChangePassword)
         {
             this.allowUsersToChangePassword = allowUsersToChangePassword;
@@ -167,7 +216,55 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if AllowUsersToChangePassword property is set
         internal bool IsSetAllowUsersToChangePassword()
         {
-            return this.allowUsersToChangePassword.HasValue;       
+            return this.allowUsersToChangePassword.HasValue;
+        }
+        public bool ExpirePasswords
+        {
+            get { return this.expirePasswords ?? default(bool); }
+            set { this.expirePasswords = value; }
+        }
+
+        /// <summary>
+        /// Sets the ExpirePasswords property
+        /// </summary>
+        /// <param name="expirePasswords">The value to set for the ExpirePasswords property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public PasswordPolicy WithExpirePasswords(bool expirePasswords)
+        {
+            this.expirePasswords = expirePasswords;
+            return this;
+        }
+            
+
+        // Check to see if ExpirePasswords property is set
+        internal bool IsSetExpirePasswords()
+        {
+            return this.expirePasswords.HasValue;
+        }
+        public int MaxPasswordAge
+        {
+            get { return this.maxPasswordAge ?? default(int); }
+            set { this.maxPasswordAge = value; }
+        }
+
+        /// <summary>
+        /// Sets the MaxPasswordAge property
+        /// </summary>
+        /// <param name="maxPasswordAge">The value to set for the MaxPasswordAge property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public PasswordPolicy WithMaxPasswordAge(int maxPasswordAge)
+        {
+            this.maxPasswordAge = maxPasswordAge;
+            return this;
+        }
+            
+
+        // Check to see if MaxPasswordAge property is set
+        internal bool IsSetMaxPasswordAge()
+        {
+            return this.maxPasswordAge.HasValue;
         }
     }
 }

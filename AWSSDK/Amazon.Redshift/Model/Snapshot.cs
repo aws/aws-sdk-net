@@ -23,7 +23,7 @@ namespace Amazon.Redshift.Model
     /// <summary>
     /// <para>Describes a snapshot.</para>
     /// </summary>
-    public class Snapshot
+    public partial class Snapshot
     {
         
         private string snapshotIdentifier;
@@ -41,6 +41,16 @@ namespace Amazon.Redshift.Model
         private string dBName;
         private string vpcId;
         private bool? encrypted;
+        private bool? encryptedWithHSM;
+        private List<AccountWithRestoreAccess> accountsWithRestoreAccess = new List<AccountWithRestoreAccess>();
+        private string ownerAccount;
+        private double? totalBackupSizeInMegaBytes;
+        private double? actualIncrementalBackupSizeInMegaBytes;
+        private double? backupProgressInMegaBytes;
+        private double? currentBackupRateInMegaBytesPerSecond;
+        private long? estimatedSecondsToCompletion;
+        private long? elapsedTimeInSeconds;
+        private string sourceRegion;
 
         /// <summary>
         /// The snapshot identifier that is provided in the request.
@@ -57,6 +67,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="snapshotIdentifier">The value to set for the SnapshotIdentifier property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Snapshot WithSnapshotIdentifier(string snapshotIdentifier)
         {
             this.snapshotIdentifier = snapshotIdentifier;
@@ -85,6 +96,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="clusterIdentifier">The value to set for the ClusterIdentifier property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Snapshot WithClusterIdentifier(string clusterIdentifier)
         {
             this.clusterIdentifier = clusterIdentifier;
@@ -113,6 +125,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="snapshotCreateTime">The value to set for the SnapshotCreateTime property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Snapshot WithSnapshotCreateTime(DateTime snapshotCreateTime)
         {
             this.snapshotCreateTime = snapshotCreateTime;
@@ -143,6 +156,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="status">The value to set for the Status property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Snapshot WithStatus(string status)
         {
             this.status = status;
@@ -171,6 +185,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="port">The value to set for the Port property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Snapshot WithPort(int port)
         {
             this.port = port;
@@ -199,6 +214,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="availabilityZone">The value to set for the AvailabilityZone property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Snapshot WithAvailabilityZone(string availabilityZone)
         {
             this.availabilityZone = availabilityZone;
@@ -227,6 +243,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="clusterCreateTime">The value to set for the ClusterCreateTime property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Snapshot WithClusterCreateTime(DateTime clusterCreateTime)
         {
             this.clusterCreateTime = clusterCreateTime;
@@ -255,6 +272,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="masterUsername">The value to set for the MasterUsername property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Snapshot WithMasterUsername(string masterUsername)
         {
             this.masterUsername = masterUsername;
@@ -283,6 +301,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="clusterVersion">The value to set for the ClusterVersion property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Snapshot WithClusterVersion(string clusterVersion)
         {
             this.clusterVersion = clusterVersion;
@@ -311,6 +330,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="snapshotType">The value to set for the SnapshotType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Snapshot WithSnapshotType(string snapshotType)
         {
             this.snapshotType = snapshotType;
@@ -339,6 +359,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="nodeType">The value to set for the NodeType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Snapshot WithNodeType(string nodeType)
         {
             this.nodeType = nodeType;
@@ -367,6 +388,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="numberOfNodes">The value to set for the NumberOfNodes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Snapshot WithNumberOfNodes(int numberOfNodes)
         {
             this.numberOfNodes = numberOfNodes;
@@ -395,6 +417,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="dBName">The value to set for the DBName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Snapshot WithDBName(string dBName)
         {
             this.dBName = dBName;
@@ -423,6 +446,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="vpcId">The value to set for the VpcId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Snapshot WithVpcId(string vpcId)
         {
             this.vpcId = vpcId;
@@ -451,6 +475,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="encrypted">The value to set for the Encrypted property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Snapshot WithEncrypted(bool encrypted)
         {
             this.encrypted = encrypted;
@@ -462,6 +487,317 @@ namespace Amazon.Redshift.Model
         internal bool IsSetEncrypted()
         {
             return this.encrypted.HasValue;
+        }
+
+        /// <summary>
+        /// A boolean that indicates whether the snapshot data is encrypted using the HSM keys of the source cluster. <c>true</c> indicates that the
+        /// data is encrypted using HSM keys.
+        ///  
+        /// </summary>
+        public bool EncryptedWithHSM
+        {
+            get { return this.encryptedWithHSM ?? default(bool); }
+            set { this.encryptedWithHSM = value; }
+        }
+
+        /// <summary>
+        /// Sets the EncryptedWithHSM property
+        /// </summary>
+        /// <param name="encryptedWithHSM">The value to set for the EncryptedWithHSM property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public Snapshot WithEncryptedWithHSM(bool encryptedWithHSM)
+        {
+            this.encryptedWithHSM = encryptedWithHSM;
+            return this;
+        }
+            
+
+        // Check to see if EncryptedWithHSM property is set
+        internal bool IsSetEncryptedWithHSM()
+        {
+            return this.encryptedWithHSM.HasValue;
+        }
+
+        /// <summary>
+        /// A list of the AWS customer accounts authorized to restore the snapshot. Returns <c>null</c> if no accounts are authorized. Visible only to
+        /// the snapshot owner.
+        ///  
+        /// </summary>
+        public List<AccountWithRestoreAccess> AccountsWithRestoreAccess
+        {
+            get { return this.accountsWithRestoreAccess; }
+            set { this.accountsWithRestoreAccess = value; }
+        }
+        /// <summary>
+        /// Adds elements to the AccountsWithRestoreAccess collection
+        /// </summary>
+        /// <param name="accountsWithRestoreAccess">The values to add to the AccountsWithRestoreAccess collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public Snapshot WithAccountsWithRestoreAccess(params AccountWithRestoreAccess[] accountsWithRestoreAccess)
+        {
+            foreach (AccountWithRestoreAccess element in accountsWithRestoreAccess)
+            {
+                this.accountsWithRestoreAccess.Add(element);
+            }
+
+            return this;
+        }
+
+        /// <summary>
+        /// Adds elements to the AccountsWithRestoreAccess collection
+        /// </summary>
+        /// <param name="accountsWithRestoreAccess">The values to add to the AccountsWithRestoreAccess collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public Snapshot WithAccountsWithRestoreAccess(IEnumerable<AccountWithRestoreAccess> accountsWithRestoreAccess)
+        {
+            foreach (AccountWithRestoreAccess element in accountsWithRestoreAccess)
+            {
+                this.accountsWithRestoreAccess.Add(element);
+            }
+
+            return this;
+        }
+
+        // Check to see if AccountsWithRestoreAccess property is set
+        internal bool IsSetAccountsWithRestoreAccess()
+        {
+            return this.accountsWithRestoreAccess.Count > 0;
+        }
+
+        /// <summary>
+        /// For manual snapshots, the AWS customer account used to create or copy the snapshot. For automatic snapshots, the owner of the cluster. The
+        /// owner can perform all snapshot actions, such as sharing a manual snapshot.
+        ///  
+        /// </summary>
+        public string OwnerAccount
+        {
+            get { return this.ownerAccount; }
+            set { this.ownerAccount = value; }
+        }
+
+        /// <summary>
+        /// Sets the OwnerAccount property
+        /// </summary>
+        /// <param name="ownerAccount">The value to set for the OwnerAccount property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public Snapshot WithOwnerAccount(string ownerAccount)
+        {
+            this.ownerAccount = ownerAccount;
+            return this;
+        }
+            
+
+        // Check to see if OwnerAccount property is set
+        internal bool IsSetOwnerAccount()
+        {
+            return this.ownerAccount != null;
+        }
+
+        /// <summary>
+        /// The size of the complete set of backup data that would be used to restore the cluster.
+        ///  
+        /// </summary>
+        public double TotalBackupSizeInMegaBytes
+        {
+            get { return this.totalBackupSizeInMegaBytes ?? default(double); }
+            set { this.totalBackupSizeInMegaBytes = value; }
+        }
+
+        /// <summary>
+        /// Sets the TotalBackupSizeInMegaBytes property
+        /// </summary>
+        /// <param name="totalBackupSizeInMegaBytes">The value to set for the TotalBackupSizeInMegaBytes property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public Snapshot WithTotalBackupSizeInMegaBytes(double totalBackupSizeInMegaBytes)
+        {
+            this.totalBackupSizeInMegaBytes = totalBackupSizeInMegaBytes;
+            return this;
+        }
+            
+
+        // Check to see if TotalBackupSizeInMegaBytes property is set
+        internal bool IsSetTotalBackupSizeInMegaBytes()
+        {
+            return this.totalBackupSizeInMegaBytes.HasValue;
+        }
+
+        /// <summary>
+        /// The size of the incremental backup.
+        ///  
+        /// </summary>
+        public double ActualIncrementalBackupSizeInMegaBytes
+        {
+            get { return this.actualIncrementalBackupSizeInMegaBytes ?? default(double); }
+            set { this.actualIncrementalBackupSizeInMegaBytes = value; }
+        }
+
+        /// <summary>
+        /// Sets the ActualIncrementalBackupSizeInMegaBytes property
+        /// </summary>
+        /// <param name="actualIncrementalBackupSizeInMegaBytes">The value to set for the ActualIncrementalBackupSizeInMegaBytes property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public Snapshot WithActualIncrementalBackupSizeInMegaBytes(double actualIncrementalBackupSizeInMegaBytes)
+        {
+            this.actualIncrementalBackupSizeInMegaBytes = actualIncrementalBackupSizeInMegaBytes;
+            return this;
+        }
+            
+
+        // Check to see if ActualIncrementalBackupSizeInMegaBytes property is set
+        internal bool IsSetActualIncrementalBackupSizeInMegaBytes()
+        {
+            return this.actualIncrementalBackupSizeInMegaBytes.HasValue;
+        }
+
+        /// <summary>
+        /// The number of megabytes that have been transferred to the snapshot backup.
+        ///  
+        /// </summary>
+        public double BackupProgressInMegaBytes
+        {
+            get { return this.backupProgressInMegaBytes ?? default(double); }
+            set { this.backupProgressInMegaBytes = value; }
+        }
+
+        /// <summary>
+        /// Sets the BackupProgressInMegaBytes property
+        /// </summary>
+        /// <param name="backupProgressInMegaBytes">The value to set for the BackupProgressInMegaBytes property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public Snapshot WithBackupProgressInMegaBytes(double backupProgressInMegaBytes)
+        {
+            this.backupProgressInMegaBytes = backupProgressInMegaBytes;
+            return this;
+        }
+            
+
+        // Check to see if BackupProgressInMegaBytes property is set
+        internal bool IsSetBackupProgressInMegaBytes()
+        {
+            return this.backupProgressInMegaBytes.HasValue;
+        }
+
+        /// <summary>
+        /// The number of megabytes per second being transferred to the snapshot backup. Returns <c>0</c> for a completed backup.
+        ///  
+        /// </summary>
+        public double CurrentBackupRateInMegaBytesPerSecond
+        {
+            get { return this.currentBackupRateInMegaBytesPerSecond ?? default(double); }
+            set { this.currentBackupRateInMegaBytesPerSecond = value; }
+        }
+
+        /// <summary>
+        /// Sets the CurrentBackupRateInMegaBytesPerSecond property
+        /// </summary>
+        /// <param name="currentBackupRateInMegaBytesPerSecond">The value to set for the CurrentBackupRateInMegaBytesPerSecond property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public Snapshot WithCurrentBackupRateInMegaBytesPerSecond(double currentBackupRateInMegaBytesPerSecond)
+        {
+            this.currentBackupRateInMegaBytesPerSecond = currentBackupRateInMegaBytesPerSecond;
+            return this;
+        }
+            
+
+        // Check to see if CurrentBackupRateInMegaBytesPerSecond property is set
+        internal bool IsSetCurrentBackupRateInMegaBytesPerSecond()
+        {
+            return this.currentBackupRateInMegaBytesPerSecond.HasValue;
+        }
+
+        /// <summary>
+        /// The estimate of the time remaining before the snapshot backup will complete. Returns <c>0</c> for a completed backup.
+        ///  
+        /// </summary>
+        public long EstimatedSecondsToCompletion
+        {
+            get { return this.estimatedSecondsToCompletion ?? default(long); }
+            set { this.estimatedSecondsToCompletion = value; }
+        }
+
+        /// <summary>
+        /// Sets the EstimatedSecondsToCompletion property
+        /// </summary>
+        /// <param name="estimatedSecondsToCompletion">The value to set for the EstimatedSecondsToCompletion property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public Snapshot WithEstimatedSecondsToCompletion(long estimatedSecondsToCompletion)
+        {
+            this.estimatedSecondsToCompletion = estimatedSecondsToCompletion;
+            return this;
+        }
+            
+
+        // Check to see if EstimatedSecondsToCompletion property is set
+        internal bool IsSetEstimatedSecondsToCompletion()
+        {
+            return this.estimatedSecondsToCompletion.HasValue;
+        }
+
+        /// <summary>
+        /// The amount of time an in-progress snapshot backup has been running, or the amount of time it took a completed backup to finish.
+        ///  
+        /// </summary>
+        public long ElapsedTimeInSeconds
+        {
+            get { return this.elapsedTimeInSeconds ?? default(long); }
+            set { this.elapsedTimeInSeconds = value; }
+        }
+
+        /// <summary>
+        /// Sets the ElapsedTimeInSeconds property
+        /// </summary>
+        /// <param name="elapsedTimeInSeconds">The value to set for the ElapsedTimeInSeconds property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public Snapshot WithElapsedTimeInSeconds(long elapsedTimeInSeconds)
+        {
+            this.elapsedTimeInSeconds = elapsedTimeInSeconds;
+            return this;
+        }
+            
+
+        // Check to see if ElapsedTimeInSeconds property is set
+        internal bool IsSetElapsedTimeInSeconds()
+        {
+            return this.elapsedTimeInSeconds.HasValue;
+        }
+
+        /// <summary>
+        /// The source region from which the snapshot was copied.
+        ///  
+        /// </summary>
+        public string SourceRegion
+        {
+            get { return this.sourceRegion; }
+            set { this.sourceRegion = value; }
+        }
+
+        /// <summary>
+        /// Sets the SourceRegion property
+        /// </summary>
+        /// <param name="sourceRegion">The value to set for the SourceRegion property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public Snapshot WithSourceRegion(string sourceRegion)
+        {
+            this.sourceRegion = sourceRegion;
+            return this;
+        }
+            
+
+        // Check to see if SourceRegion property is set
+        internal bool IsSetSourceRegion()
+        {
+            return this.sourceRegion != null;
         }
     }
 }

@@ -26,8 +26,11 @@ namespace Amazon.OpsWorks.Model
     /// <summary>
     /// Container for the parameters to the StopInstance operation.
     /// <para>Stops a specified instance. When you stop a standard instance, the data disappears and must be reinstalled when you restart the
-    /// instance. You can stop an Amazon EBS-backed instance without losing data. For more information, see Starting, Stopping, and Rebooting
-    /// Instances.</para>
+    /// instance. You can stop an Amazon EBS-backed instance without losing data. For more information, see <a
+    /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-starting.html" >Starting, Stopping, and Rebooting Instances</a>
+    /// .</para> <para> <b>Required Permissions</b> : To use this action, an IAM user must have a Manage permissions level for the stack, or an
+    /// attached policy that explicitly grants permissions. For more information on user permissions, see <a
+    /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
     /// </summary>
     /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.StopInstance"/>
     public class StopInstanceRequest : AmazonWebServiceRequest
@@ -49,6 +52,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="instanceId">The value to set for the InstanceId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StopInstanceRequest WithInstanceId(string instanceId)
         {
             this.instanceId = instanceId;

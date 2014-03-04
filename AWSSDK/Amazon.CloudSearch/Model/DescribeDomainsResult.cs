@@ -23,7 +23,7 @@ namespace Amazon.CloudSearch.Model
     /// <summary>
     /// <para>A response message that contains the status of one or more domains.</para>
     /// </summary>
-    public class DescribeDomainsResult  
+    public partial class DescribeDomainsResult
     {
         
         private List<DomainStatus> domainStatusList = new List<DomainStatus>();
@@ -42,6 +42,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="domainStatusList">The values to add to the DomainStatusList collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeDomainsResult WithDomainStatusList(params DomainStatus[] domainStatusList)
         {
             foreach (DomainStatus element in domainStatusList)
@@ -51,12 +52,13 @@ namespace Amazon.CloudSearch.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the DomainStatusList collection
         /// </summary>
         /// <param name="domainStatusList">The values to add to the DomainStatusList collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeDomainsResult WithDomainStatusList(IEnumerable<DomainStatus> domainStatusList)
         {
             foreach (DomainStatus element in domainStatusList)
@@ -70,7 +72,7 @@ namespace Amazon.CloudSearch.Model
         // Check to see if DomainStatusList property is set
         internal bool IsSetDomainStatusList()
         {
-            return this.domainStatusList.Count > 0;       
+            return this.domainStatusList.Count > 0;
         }
     }
 }

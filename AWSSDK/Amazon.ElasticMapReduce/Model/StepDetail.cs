@@ -44,6 +44,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         /// <param name="stepConfig">The value to set for the StepConfig property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StepDetail WithStepConfig(StepConfig stepConfig)
         {
             this.stepConfig = stepConfig;
@@ -72,6 +73,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         /// <param name="executionStatusDetail">The value to set for the ExecutionStatusDetail property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StepDetail WithExecutionStatusDetail(StepExecutionStatusDetail executionStatusDetail)
         {
             this.executionStatusDetail = executionStatusDetail;

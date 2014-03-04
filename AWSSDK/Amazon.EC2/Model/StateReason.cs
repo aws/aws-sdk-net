@@ -49,6 +49,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="code">Reason code for the state change.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StateReason WithCode(string code)
         {
             this.codeField = code;
@@ -79,6 +80,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="message">Message for the state change.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StateReason WithMessage(string message)
         {
             this.messageField = message;

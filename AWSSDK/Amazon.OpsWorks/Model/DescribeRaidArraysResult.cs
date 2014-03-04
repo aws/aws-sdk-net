@@ -23,7 +23,7 @@ namespace Amazon.OpsWorks.Model
     /// <summary>
     /// <para>Contains the response to a <c>DescribeRaidArrays</c> request.</para>
     /// </summary>
-    public class DescribeRaidArraysResult
+    public partial class DescribeRaidArraysResult
     {
         
         private List<RaidArray> raidArrays = new List<RaidArray>();
@@ -42,6 +42,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="raidArrays">The values to add to the RaidArrays collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeRaidArraysResult WithRaidArrays(params RaidArray[] raidArrays)
         {
             foreach (RaidArray element in raidArrays)
@@ -57,6 +58,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="raidArrays">The values to add to the RaidArrays collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeRaidArraysResult WithRaidArrays(IEnumerable<RaidArray> raidArrays)
         {
             foreach (RaidArray element in raidArrays)

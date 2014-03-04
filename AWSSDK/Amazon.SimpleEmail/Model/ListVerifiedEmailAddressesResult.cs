@@ -23,7 +23,7 @@ namespace Amazon.SimpleEmail.Model
     /// <summary>
     /// <para>Represents a list of all the email addresses verified for the current user.</para>
     /// </summary>
-    public class ListVerifiedEmailAddressesResult  
+    public partial class ListVerifiedEmailAddressesResult
     {
         
         private List<string> verifiedEmailAddresses = new List<string>();
@@ -42,6 +42,7 @@ namespace Amazon.SimpleEmail.Model
         /// </summary>
         /// <param name="verifiedEmailAddresses">The values to add to the VerifiedEmailAddresses collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListVerifiedEmailAddressesResult WithVerifiedEmailAddresses(params string[] verifiedEmailAddresses)
         {
             foreach (string element in verifiedEmailAddresses)
@@ -51,12 +52,13 @@ namespace Amazon.SimpleEmail.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the VerifiedEmailAddresses collection
         /// </summary>
         /// <param name="verifiedEmailAddresses">The values to add to the VerifiedEmailAddresses collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListVerifiedEmailAddressesResult WithVerifiedEmailAddresses(IEnumerable<string> verifiedEmailAddresses)
         {
             foreach (string element in verifiedEmailAddresses)
@@ -70,7 +72,7 @@ namespace Amazon.SimpleEmail.Model
         // Check to see if VerifiedEmailAddresses property is set
         internal bool IsSetVerifiedEmailAddresses()
         {
-            return this.verifiedEmailAddresses.Count > 0;       
+            return this.verifiedEmailAddresses.Count > 0;
         }
     }
 }

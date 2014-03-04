@@ -30,18 +30,18 @@ namespace Amazon.DirectConnect.Model
 
         /// <summary>
         /// Gets and sets the DeleteVirtualInterfaceResult property.
-        /// The response of calling DeleteVirtualInterface.
+        /// The response received when DeleteVirtualInterface is called.
         /// </summary>
         public DeleteVirtualInterfaceResult DeleteVirtualInterfaceResult
         {
-            get 
+            get
             {
                 if(this.deleteVirtualInterfaceResult == null)
                 {
                     this.deleteVirtualInterfaceResult = new DeleteVirtualInterfaceResult();
                 }
 
-                return this.deleteVirtualInterfaceResult; 
+                return this.deleteVirtualInterfaceResult;
             }
             set { this.deleteVirtualInterfaceResult = value; }
         }

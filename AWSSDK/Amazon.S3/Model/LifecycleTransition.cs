@@ -1,4 +1,4 @@
-﻿/*******************************************************************************
+/*******************************************************************************
  *  Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  *  this file except in compliance with the License. A copy of the License is located at
@@ -54,6 +54,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="days">the value that Days is set to.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LifecycleTransition WithDays(int days)
         {
             this.Days = days;
@@ -76,6 +77,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="date">the value that Date is set to.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LifecycleTransition WithDate(DateTime date)
         {
             this.Date = date;
@@ -96,6 +98,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="storageClass">the value that StorageClass is set to.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LifecycleTransition WithStorageClass(S3StorageClass storageClass)
         {
             this.StorageClass = storageClass;

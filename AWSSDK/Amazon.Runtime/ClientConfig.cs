@@ -100,9 +100,10 @@ namespace Amazon.Runtime
         }
 
         /// <summary>
-        /// Gets and sets the RegionEndpoint property.  The region constant to use that 
-        /// determines the endpoint to use.  If this is not set
-        /// then the client will fallback to the value of ServiceURL.
+        /// Gets and sets the RegionEndpoint property. 
+        /// This value is the region constant that 
+        /// determines the service endpoint to use.  If this value is not set,
+        /// then the client will use the value of ServiceURL.
         /// </summary>
         public RegionEndpoint RegionEndpoint
         {
@@ -139,7 +140,9 @@ namespace Amazon.Runtime
         }
 
         /// <summary>
-        /// Gets and sets of the ServiceURL property.
+        /// Gets and sets the ServiceURL property.
+        /// This value specifies the endpoint to access with the client.
+        /// ServiceURL is ignored if RegionEndpoint is set.
         /// This is an optional property; change it
         /// only if you want to try a different service
         /// endpoint or want to switch between https and http.

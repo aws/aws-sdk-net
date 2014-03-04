@@ -23,7 +23,7 @@ namespace Amazon.Route53.Model
     /// <summary>
     /// <para>A complex type that contains the <c>ChangeInfo</c> element.</para>
     /// </summary>
-    public class GetChangeResult
+    public partial class GetChangeResult
     {
         
         private ChangeInfo changeInfo;
@@ -44,6 +44,7 @@ namespace Amazon.Route53.Model
         /// </summary>
         /// <param name="changeInfo">The value to set for the ChangeInfo property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetChangeResult WithChangeInfo(ChangeInfo changeInfo)
         {
             this.changeInfo = changeInfo;

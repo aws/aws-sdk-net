@@ -32,6 +32,8 @@
 
         public CreatePresetResult Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             CreatePresetResult createPresetResult = new CreatePresetResult();
           
             int originalDepth = context.CurrentDepth;

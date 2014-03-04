@@ -53,6 +53,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="ipProtocol">IP protocol. Valid Values: tcp | udp | icmp</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public IpPermission WithIpProtocol(string ipProtocol)
         {
             this.ipProtocolField = ipProtocol;
@@ -87,6 +88,7 @@ namespace Amazon.EC2.Model
         /// protocols, or an ICMP type number. An ICMP type number of -1
         /// indicates a wildcard (i.e., any ICMP type number).</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public IpPermission WithFromPort(Decimal fromPort)
         {
             this.fromPortField = fromPort;
@@ -121,6 +123,7 @@ namespace Amazon.EC2.Model
         /// An ICMP code of -1 indicates a
         /// wildcard (i.e., any ICMP code).</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public IpPermission WithToPort(Decimal toPort)
         {
             this.toPortField = toPort;
@@ -158,6 +161,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">List of security group and user ID pairs.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public IpPermission WithUserIdGroupPair(params UserIdGroupPair[] list)
         {
             foreach (UserIdGroupPair item in list)
@@ -198,6 +202,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">IP ranges.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public IpPermission WithIpRange(params string[] list)
         {
             foreach (string item in list)

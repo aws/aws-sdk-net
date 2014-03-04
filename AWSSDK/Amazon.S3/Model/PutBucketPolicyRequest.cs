@@ -64,6 +64,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="bucketName">The bucket name</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PutBucketPolicyRequest WithBucketName(string bucketName)
         {
             this.BucketName = bucketName;
@@ -102,6 +103,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="policy">The JSON string for the policy</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PutBucketPolicyRequest WithPolicy(string policy)
         {
             this.Policy = policy;

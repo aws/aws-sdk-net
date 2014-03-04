@@ -26,7 +26,8 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Container for the parameters to the ChangePassword operation.
     /// <para>Changes the password of the IAM user calling <c>ChangePassword</c> . The root account password is not affected by this action. For
-    /// information about modifying passwords, see Managing Passwords.</para>
+    /// information about modifying passwords, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingLogins.html" >Managing
+    /// Passwords</a> .</para>
     /// </summary>
     /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.ChangePassword"/>
     public class ChangePasswordRequest : AmazonWebServiceRequest
@@ -44,6 +45,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="oldPassword">The value to set for the OldPassword property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ChangePasswordRequest WithOldPassword(string oldPassword)
         {
             this.oldPassword = oldPassword;
@@ -54,7 +56,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if OldPassword property is set
         internal bool IsSetOldPassword()
         {
-            return this.oldPassword != null;       
+            return this.oldPassword != null;
         }
         public string NewPassword
         {
@@ -67,6 +69,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="newPassword">The value to set for the NewPassword property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ChangePasswordRequest WithNewPassword(string newPassword)
         {
             this.newPassword = newPassword;
@@ -77,7 +80,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if NewPassword property is set
         internal bool IsSetNewPassword()
         {
-            return this.newPassword != null;       
+            return this.newPassword != null;
         }
     }
 }

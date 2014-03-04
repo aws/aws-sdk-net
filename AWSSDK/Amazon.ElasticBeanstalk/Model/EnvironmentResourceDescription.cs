@@ -23,7 +23,7 @@ namespace Amazon.ElasticBeanstalk.Model
     /// <summary>
     /// <para>Describes the AWS resources in use by this environment. This data is live.</para>
     /// </summary>
-    public class EnvironmentResourceDescription  
+    public partial class EnvironmentResourceDescription
     {
         
         private string environmentName;
@@ -32,6 +32,7 @@ namespace Amazon.ElasticBeanstalk.Model
         private List<LaunchConfiguration> launchConfigurations = new List<LaunchConfiguration>();
         private List<LoadBalancer> loadBalancers = new List<LoadBalancer>();
         private List<Trigger> triggers = new List<Trigger>();
+        private List<Queue> queues = new List<Queue>();
 
         /// <summary>
         /// The name of the environment.
@@ -57,6 +58,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="environmentName">The value to set for the EnvironmentName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EnvironmentResourceDescription WithEnvironmentName(string environmentName)
         {
             this.environmentName = environmentName;
@@ -67,7 +69,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if EnvironmentName property is set
         internal bool IsSetEnvironmentName()
         {
-            return this.environmentName != null;       
+            return this.environmentName != null;
         }
 
         /// <summary>
@@ -84,6 +86,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="autoScalingGroups">The values to add to the AutoScalingGroups collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EnvironmentResourceDescription WithAutoScalingGroups(params AutoScalingGroup[] autoScalingGroups)
         {
             foreach (AutoScalingGroup element in autoScalingGroups)
@@ -93,12 +96,13 @@ namespace Amazon.ElasticBeanstalk.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the AutoScalingGroups collection
         /// </summary>
         /// <param name="autoScalingGroups">The values to add to the AutoScalingGroups collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EnvironmentResourceDescription WithAutoScalingGroups(IEnumerable<AutoScalingGroup> autoScalingGroups)
         {
             foreach (AutoScalingGroup element in autoScalingGroups)
@@ -112,7 +116,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if AutoScalingGroups property is set
         internal bool IsSetAutoScalingGroups()
         {
-            return this.autoScalingGroups.Count > 0;       
+            return this.autoScalingGroups.Count > 0;
         }
 
         /// <summary>
@@ -129,6 +133,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="instances">The values to add to the Instances collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EnvironmentResourceDescription WithInstances(params Instance[] instances)
         {
             foreach (Instance element in instances)
@@ -138,12 +143,13 @@ namespace Amazon.ElasticBeanstalk.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Instances collection
         /// </summary>
         /// <param name="instances">The values to add to the Instances collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EnvironmentResourceDescription WithInstances(IEnumerable<Instance> instances)
         {
             foreach (Instance element in instances)
@@ -157,7 +163,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if Instances property is set
         internal bool IsSetInstances()
         {
-            return this.instances.Count > 0;       
+            return this.instances.Count > 0;
         }
 
         /// <summary>
@@ -174,6 +180,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="launchConfigurations">The values to add to the LaunchConfigurations collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EnvironmentResourceDescription WithLaunchConfigurations(params LaunchConfiguration[] launchConfigurations)
         {
             foreach (LaunchConfiguration element in launchConfigurations)
@@ -183,12 +190,13 @@ namespace Amazon.ElasticBeanstalk.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the LaunchConfigurations collection
         /// </summary>
         /// <param name="launchConfigurations">The values to add to the LaunchConfigurations collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EnvironmentResourceDescription WithLaunchConfigurations(IEnumerable<LaunchConfiguration> launchConfigurations)
         {
             foreach (LaunchConfiguration element in launchConfigurations)
@@ -202,7 +210,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if LaunchConfigurations property is set
         internal bool IsSetLaunchConfigurations()
         {
-            return this.launchConfigurations.Count > 0;       
+            return this.launchConfigurations.Count > 0;
         }
 
         /// <summary>
@@ -219,6 +227,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="loadBalancers">The values to add to the LoadBalancers collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EnvironmentResourceDescription WithLoadBalancers(params LoadBalancer[] loadBalancers)
         {
             foreach (LoadBalancer element in loadBalancers)
@@ -228,12 +237,13 @@ namespace Amazon.ElasticBeanstalk.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the LoadBalancers collection
         /// </summary>
         /// <param name="loadBalancers">The values to add to the LoadBalancers collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EnvironmentResourceDescription WithLoadBalancers(IEnumerable<LoadBalancer> loadBalancers)
         {
             foreach (LoadBalancer element in loadBalancers)
@@ -247,7 +257,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if LoadBalancers property is set
         internal bool IsSetLoadBalancers()
         {
-            return this.loadBalancers.Count > 0;       
+            return this.loadBalancers.Count > 0;
         }
 
         /// <summary>
@@ -264,6 +274,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="triggers">The values to add to the Triggers collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EnvironmentResourceDescription WithTriggers(params Trigger[] triggers)
         {
             foreach (Trigger element in triggers)
@@ -273,12 +284,13 @@ namespace Amazon.ElasticBeanstalk.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Triggers collection
         /// </summary>
         /// <param name="triggers">The values to add to the Triggers collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EnvironmentResourceDescription WithTriggers(IEnumerable<Trigger> triggers)
         {
             foreach (Trigger element in triggers)
@@ -292,7 +304,54 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if Triggers property is set
         internal bool IsSetTriggers()
         {
-            return this.triggers.Count > 0;       
+            return this.triggers.Count > 0;
+        }
+
+        /// <summary>
+        /// The queues used by this environment.
+        ///  
+        /// </summary>
+        public List<Queue> Queues
+        {
+            get { return this.queues; }
+            set { this.queues = value; }
+        }
+        /// <summary>
+        /// Adds elements to the Queues collection
+        /// </summary>
+        /// <param name="queues">The values to add to the Queues collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public EnvironmentResourceDescription WithQueues(params Queue[] queues)
+        {
+            foreach (Queue element in queues)
+            {
+                this.queues.Add(element);
+            }
+
+            return this;
+        }
+
+        /// <summary>
+        /// Adds elements to the Queues collection
+        /// </summary>
+        /// <param name="queues">The values to add to the Queues collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public EnvironmentResourceDescription WithQueues(IEnumerable<Queue> queues)
+        {
+            foreach (Queue element in queues)
+            {
+                this.queues.Add(element);
+            }
+
+            return this;
+        }
+
+        // Check to see if Queues property is set
+        internal bool IsSetQueues()
+        {
+            return this.queues.Count > 0;
         }
     }
 }

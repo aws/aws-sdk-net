@@ -52,6 +52,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="snapshotId">The ID of the snapshot.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EbsBlockDevice WithSnapshotId(string snapshotId)
         {
             this.snapshotIdField = snapshotId;
@@ -82,6 +83,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="volumeSize">Size of the volume.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EbsBlockDevice WithVolumeSize(Decimal volumeSize)
         {
             this.volumeSizeField = volumeSize;
@@ -113,6 +115,7 @@ namespace Amazon.EC2.Model
         /// <param name="deleteOnTermination">Whether the EBS block device is deleted on
         /// instance termination.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EbsBlockDevice WithDeleteOnTermination(bool deleteOnTermination)
         {
             this.deleteOnTerminationField = deleteOnTermination;
@@ -143,6 +146,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="iops">Quantity of desired throughput in IOPS</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EbsBlockDevice WithIOPS(string iops)
         {
             this.iopsField = iops;
@@ -178,6 +182,7 @@ namespace Amazon.EC2.Model
         /// If VolumeType != "io1", IOPS property cannot be set.
         /// </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EbsBlockDevice WithVolumeType(string volumeType)
         {
             this.volumeTypeField = volumeType;

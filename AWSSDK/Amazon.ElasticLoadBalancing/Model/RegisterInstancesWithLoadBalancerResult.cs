@@ -23,13 +23,13 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// <summary>
     /// <para> The output for the RegisterInstancesWithLoadBalancer action. </para>
     /// </summary>
-    public class RegisterInstancesWithLoadBalancerResult  
+    public partial class RegisterInstancesWithLoadBalancerResult
     {
         
         private List<Instance> instances = new List<Instance>();
 
         /// <summary>
-        /// An updated list of instances for the LoadBalancer.
+        /// An updated list of instances for the load balancer.
         ///  
         /// </summary>
         public List<Instance> Instances
@@ -42,6 +42,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="instances">The values to add to the Instances collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RegisterInstancesWithLoadBalancerResult WithInstances(params Instance[] instances)
         {
             foreach (Instance element in instances)
@@ -51,12 +52,13 @@ namespace Amazon.ElasticLoadBalancing.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Instances collection
         /// </summary>
         /// <param name="instances">The values to add to the Instances collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RegisterInstancesWithLoadBalancerResult WithInstances(IEnumerable<Instance> instances)
         {
             foreach (Instance element in instances)
@@ -70,7 +72,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if Instances property is set
         internal bool IsSetInstances()
         {
-            return this.instances.Count > 0;       
+            return this.instances.Count > 0;
         }
     }
 }

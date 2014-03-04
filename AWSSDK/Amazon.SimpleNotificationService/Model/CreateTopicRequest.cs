@@ -28,7 +28,7 @@ namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>
     /// Creates a topic to which notifications can be published. Users can create
-    /// at most 25 topics.
+    /// at most 3000 topics.
     /// </summary>
     /// <remarks>
     /// This action is idempotent, so if the requester
@@ -55,6 +55,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// </summary>
         /// <param name="name">Name property</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateTopicRequest WithName(string name)
         {
             this.nameField = name;

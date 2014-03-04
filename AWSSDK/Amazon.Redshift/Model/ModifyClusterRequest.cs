@@ -28,10 +28,10 @@ namespace Amazon.Redshift.Model
     /// <para> Modifies the settings for a cluster. For example, you can add another security or parameter group, update the preferred maintenance
     /// window, or change the master user password. Resetting a cluster password or modifying the security groups associated with a cluster do not
     /// need a reboot. However, modifying parameter group requires a reboot for parameters to take effect. For more information about managing
-    /// clusters, go to Amazon Redshift Clusters in the <i>Amazon Redshift Management Guide</i> </para> <para>You can also change node type and the
-    /// number of nodes to scale up or down the cluster. When resizing a cluster, you must specify both the number of nodes and the node type even
-    /// if one of the parameters does not change. If you specify the same number of nodes and node type that are already configured for the cluster,
-    /// an error is returned.</para>
+    /// clusters, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html" >Amazon Redshift Clusters</a> in the
+    /// <i>Amazon Redshift Management Guide</i> </para> <para>You can also change node type and the number of nodes to scale up or down the cluster.
+    /// When resizing a cluster, you must specify both the number of nodes and the node type even if one of the parameters does not change. If you
+    /// specify the same number of nodes and node type that are already configured for the cluster, an error is returned.</para>
     /// </summary>
     /// <seealso cref="Amazon.Redshift.AmazonRedshift.ModifyCluster"/>
     public class ModifyClusterRequest : AmazonWebServiceRequest
@@ -48,6 +48,8 @@ namespace Amazon.Redshift.Model
         private string preferredMaintenanceWindow;
         private string clusterVersion;
         private bool? allowVersionUpgrade;
+        private string hsmClientCertificateIdentifier;
+        private string hsmConfigurationIdentifier;
 
         /// <summary>
         /// The unique identifier of the cluster to be modified. Example: <c>examplecluster</c>
@@ -64,6 +66,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="clusterIdentifier">The value to set for the ClusterIdentifier property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyClusterRequest WithClusterIdentifier(string clusterIdentifier)
         {
             this.clusterIdentifier = clusterIdentifier;
@@ -95,6 +98,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="clusterType">The value to set for the ClusterType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyClusterRequest WithClusterType(string clusterType)
         {
             this.clusterType = clusterType;
@@ -127,6 +131,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="nodeType">The value to set for the NodeType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyClusterRequest WithNodeType(string nodeType)
         {
             this.nodeType = nodeType;
@@ -159,6 +164,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="numberOfNodes">The value to set for the NumberOfNodes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyClusterRequest WithNumberOfNodes(int numberOfNodes)
         {
             this.numberOfNodes = numberOfNodes;
@@ -189,6 +195,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="clusterSecurityGroups">The values to add to the ClusterSecurityGroups collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyClusterRequest WithClusterSecurityGroups(params string[] clusterSecurityGroups)
         {
             foreach (string element in clusterSecurityGroups)
@@ -204,6 +211,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="clusterSecurityGroups">The values to add to the ClusterSecurityGroups collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyClusterRequest WithClusterSecurityGroups(IEnumerable<string> clusterSecurityGroups)
         {
             foreach (string element in clusterSecurityGroups)
@@ -234,6 +242,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="vpcSecurityGroupIds">The values to add to the VpcSecurityGroupIds collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyClusterRequest WithVpcSecurityGroupIds(params string[] vpcSecurityGroupIds)
         {
             foreach (string element in vpcSecurityGroupIds)
@@ -249,6 +258,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="vpcSecurityGroupIds">The values to add to the VpcSecurityGroupIds collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyClusterRequest WithVpcSecurityGroupIds(IEnumerable<string> vpcSecurityGroupIds)
         {
             foreach (string element in vpcSecurityGroupIds)
@@ -271,7 +281,8 @@ namespace Amazon.Redshift.Model
         /// response. <note> Operations never return the password, so this operation provides a way to regain access to the master user account for a
         /// cluster if the password is lost. </note> Default: Uses existing setting. Constraints: <ul> <li>Must be between 8 and 64 characters in
         /// length.</li> <li>Must contain at least one uppercase letter.</li> <li>Must contain at least one lowercase letter.</li> <li>Must contain one
-        /// number.</li> </ul>
+        /// number.</li> <li>Can be any printable ASCII character (ASCII code 33 to 126) except ' (single quote), " (double quote), \, /, @, or
+        /// space.</li> </ul>
         ///  
         /// </summary>
         public string MasterUserPassword
@@ -285,6 +296,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="masterUserPassword">The value to set for the MasterUserPassword property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyClusterRequest WithMasterUserPassword(string masterUserPassword)
         {
             this.masterUserPassword = masterUserPassword;
@@ -315,6 +327,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="clusterParameterGroupName">The value to set for the ClusterParameterGroupName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyClusterRequest WithClusterParameterGroupName(string clusterParameterGroupName)
         {
             this.clusterParameterGroupName = clusterParameterGroupName;
@@ -346,6 +359,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="automatedSnapshotRetentionPeriod">The value to set for the AutomatedSnapshotRetentionPeriod property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyClusterRequest WithAutomatedSnapshotRetentionPeriod(int automatedSnapshotRetentionPeriod)
         {
             this.automatedSnapshotRetentionPeriod = automatedSnapshotRetentionPeriod;
@@ -378,6 +392,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="preferredMaintenanceWindow">The value to set for the PreferredMaintenanceWindow property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyClusterRequest WithPreferredMaintenanceWindow(string preferredMaintenanceWindow)
         {
             this.preferredMaintenanceWindow = preferredMaintenanceWindow;
@@ -410,6 +425,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="clusterVersion">The value to set for the ClusterVersion property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyClusterRequest WithClusterVersion(string clusterVersion)
         {
             this.clusterVersion = clusterVersion;
@@ -438,6 +454,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="allowVersionUpgrade">The value to set for the AllowVersionUpgrade property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyClusterRequest WithAllowVersionUpgrade(bool allowVersionUpgrade)
         {
             this.allowVersionUpgrade = allowVersionUpgrade;
@@ -449,6 +466,65 @@ namespace Amazon.Redshift.Model
         internal bool IsSetAllowVersionUpgrade()
         {
             return this.allowVersionUpgrade.HasValue;
+        }
+
+        /// <summary>
+        /// Specifies the name of the HSM client certificate the Amazon Redshift cluster uses to retrieve the data encryption keys stored in an HSM.
+        ///  
+        /// </summary>
+        public string HsmClientCertificateIdentifier
+        {
+            get { return this.hsmClientCertificateIdentifier; }
+            set { this.hsmClientCertificateIdentifier = value; }
+        }
+
+        /// <summary>
+        /// Sets the HsmClientCertificateIdentifier property
+        /// </summary>
+        /// <param name="hsmClientCertificateIdentifier">The value to set for the HsmClientCertificateIdentifier property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public ModifyClusterRequest WithHsmClientCertificateIdentifier(string hsmClientCertificateIdentifier)
+        {
+            this.hsmClientCertificateIdentifier = hsmClientCertificateIdentifier;
+            return this;
+        }
+            
+
+        // Check to see if HsmClientCertificateIdentifier property is set
+        internal bool IsSetHsmClientCertificateIdentifier()
+        {
+            return this.hsmClientCertificateIdentifier != null;
+        }
+
+        /// <summary>
+        /// Specifies the name of the HSM configuration that contains the information the Amazon Redshift cluster can use to retrieve and store keys in
+        /// an HSM.
+        ///  
+        /// </summary>
+        public string HsmConfigurationIdentifier
+        {
+            get { return this.hsmConfigurationIdentifier; }
+            set { this.hsmConfigurationIdentifier = value; }
+        }
+
+        /// <summary>
+        /// Sets the HsmConfigurationIdentifier property
+        /// </summary>
+        /// <param name="hsmConfigurationIdentifier">The value to set for the HsmConfigurationIdentifier property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public ModifyClusterRequest WithHsmConfigurationIdentifier(string hsmConfigurationIdentifier)
+        {
+            this.hsmConfigurationIdentifier = hsmConfigurationIdentifier;
+            return this;
+        }
+            
+
+        // Check to see if HsmConfigurationIdentifier property is set
+        internal bool IsSetHsmConfigurationIdentifier()
+        {
+            return this.hsmConfigurationIdentifier != null;
         }
     }
 }

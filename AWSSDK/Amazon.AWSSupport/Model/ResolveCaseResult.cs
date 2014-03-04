@@ -21,16 +21,16 @@ using System.IO;
 namespace Amazon.AWSSupport.Model
 {
     /// <summary>
-    /// <para>Returns the objects or data listed below if successful. Otherwise, returns an error.</para>
+    /// <para>Contains the following objects or data if successful. Otherwise, returns an error.</para>
     /// </summary>
-    public class ResolveCaseResult
+    public partial class ResolveCaseResult
     {
         
         private string initialCaseStatus;
         private string finalCaseStatus;
 
         /// <summary>
-        /// Status of the case when the <a href="API_ResolveCase.html" title="ResolveCase">ResolveCase</a> request was sent.
+        /// The status of the case when the <a>ResolveCase</a> request was sent.
         ///  
         /// </summary>
         public string InitialCaseStatus
@@ -44,6 +44,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="initialCaseStatus">The value to set for the InitialCaseStatus property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ResolveCaseResult WithInitialCaseStatus(string initialCaseStatus)
         {
             this.initialCaseStatus = initialCaseStatus;
@@ -58,7 +59,7 @@ namespace Amazon.AWSSupport.Model
         }
 
         /// <summary>
-        /// Status of the case after the <a href="API_ResolveCase.html" title="ResolveCase">ResolveCase</a> request was processed.
+        /// The status of the case after the <a>ResolveCase</a> request was processed.
         ///  
         /// </summary>
         public string FinalCaseStatus
@@ -72,6 +73,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="finalCaseStatus">The value to set for the FinalCaseStatus property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ResolveCaseResult WithFinalCaseStatus(string finalCaseStatus)
         {
             this.finalCaseStatus = finalCaseStatus;

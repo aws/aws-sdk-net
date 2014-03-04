@@ -23,7 +23,7 @@ namespace Amazon.CloudSearch.Model
     /// <summary>
     /// <para>A response message that contains the status of an updated index field.</para>
     /// </summary>
-    public class DefineIndexFieldResult  
+    public partial class DefineIndexFieldResult
     {
         
         private IndexFieldStatus indexField;
@@ -43,6 +43,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="indexField">The value to set for the IndexField property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DefineIndexFieldResult WithIndexField(IndexFieldStatus indexField)
         {
             this.indexField = indexField;
@@ -53,7 +54,7 @@ namespace Amazon.CloudSearch.Model
         // Check to see if IndexField property is set
         internal bool IsSetIndexField()
         {
-            return this.indexField != null;       
+            return this.indexField != null;
         }
     }
 }

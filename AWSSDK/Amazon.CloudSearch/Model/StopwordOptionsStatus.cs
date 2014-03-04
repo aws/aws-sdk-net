@@ -23,7 +23,7 @@ namespace Amazon.CloudSearch.Model
     /// <summary>
     /// <para>The stopword options configured for this search domain and the current status of those options.</para>
     /// </summary>
-    public class StopwordOptionsStatus  
+    public partial class StopwordOptionsStatus
     {
         
         private string options;
@@ -31,7 +31,7 @@ namespace Amazon.CloudSearch.Model
 
         /// <summary>
         /// Lists stopwords serialized as a JSON document. The document has a single object with one property "stopwords" whose value is an array of
-        /// strings. The maximum size of a stopwords document is 10KB. Example: <c>{ "stopwords": ["a", "an", "the", "of"] }</c>
+        /// strings. The maximum size of a stopwords document is 10 KB. Example: <c>{ "stopwords": ["a", "an", "the", "of"] }</c>
         ///  
         /// </summary>
         public string Options
@@ -45,6 +45,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="options">The value to set for the Options property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StopwordOptionsStatus WithOptions(string options)
         {
             this.options = options;
@@ -55,7 +56,7 @@ namespace Amazon.CloudSearch.Model
         // Check to see if Options property is set
         internal bool IsSetOptions()
         {
-            return this.options != null;       
+            return this.options != null;
         }
 
         /// <summary>
@@ -73,6 +74,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="status">The value to set for the Status property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StopwordOptionsStatus WithStatus(OptionStatus status)
         {
             this.status = status;
@@ -83,7 +85,7 @@ namespace Amazon.CloudSearch.Model
         // Check to see if Status property is set
         internal bool IsSetStatus()
         {
-            return this.status != null;       
+            return this.status != null;
         }
     }
 }

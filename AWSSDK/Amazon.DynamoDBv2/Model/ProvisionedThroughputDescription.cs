@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
-    /// <para>Describes the provisioned throughput settings for the table, consisting of read and write capacity units, along with data about
+    /// <para>Represents the provisioned throughput settings for the table, consisting of read and write capacity units, along with data about
     /// increases and decreases.</para>
     /// </summary>
     public class ProvisionedThroughputDescription
@@ -48,6 +48,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="lastIncreaseDateTime">The value to set for the LastIncreaseDateTime property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ProvisionedThroughputDescription WithLastIncreaseDateTime(DateTime lastIncreaseDateTime)
         {
             this.lastIncreaseDateTime = lastIncreaseDateTime;
@@ -76,6 +77,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="lastDecreaseDateTime">The value to set for the LastDecreaseDateTime property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ProvisionedThroughputDescription WithLastDecreaseDateTime(DateTime lastDecreaseDateTime)
         {
             this.lastDecreaseDateTime = lastDecreaseDateTime;
@@ -91,8 +93,8 @@ namespace Amazon.DynamoDBv2.Model
 
         /// <summary>
         /// The number of provisioned throughput decreases for this table during this UTC calendar day. For current maximums on provisioned throughput
-        /// decreases, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the <i>Amazon DynamoDB
-        /// Developer Guide</i>.
+        /// decreases, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the Amazon DynamoDB
+        /// Developer Guide.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -115,6 +117,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="numberOfDecreasesToday">The value to set for the NumberOfDecreasesToday property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ProvisionedThroughputDescription WithNumberOfDecreasesToday(long numberOfDecreasesToday)
         {
             this.numberOfDecreasesToday = numberOfDecreasesToday;
@@ -154,6 +157,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="readCapacityUnits">The value to set for the ReadCapacityUnits property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ProvisionedThroughputDescription WithReadCapacityUnits(long readCapacityUnits)
         {
             this.readCapacityUnits = readCapacityUnits;
@@ -191,6 +195,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="writeCapacityUnits">The value to set for the WriteCapacityUnits property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ProvisionedThroughputDescription WithWriteCapacityUnits(long writeCapacityUnits)
         {
             this.writeCapacityUnits = writeCapacityUnits;

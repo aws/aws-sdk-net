@@ -29,7 +29,7 @@ namespace Amazon.DynamoDBv2.Model
         private TableDescription tableDescription;
 
         /// <summary>
-        /// Contains the properties of a table.
+        /// Represents the properties of a table.
         ///  
         /// </summary>
         public TableDescription TableDescription
@@ -43,6 +43,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="tableDescription">The value to set for the TableDescription property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateTableResult WithTableDescription(TableDescription tableDescription)
         {
             this.tableDescription = tableDescription;

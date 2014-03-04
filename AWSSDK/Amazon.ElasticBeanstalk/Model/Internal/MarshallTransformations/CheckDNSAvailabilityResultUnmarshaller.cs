@@ -22,13 +22,14 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
      /// <summary>
      ///   CheckDNSAvailabilityResult Unmarshaller
      /// </summary>
-    internal class CheckDNSAvailabilityResultUnmarshaller : IUnmarshaller<CheckDNSAvailabilityResult, XmlUnmarshallerContext> 
+    internal class CheckDNSAvailabilityResultUnmarshaller : IUnmarshaller<CheckDNSAvailabilityResult, XmlUnmarshallerContext>, IUnmarshaller<CheckDNSAvailabilityResult, JsonUnmarshallerContext> 
     {
         public CheckDNSAvailabilityResult Unmarshall(XmlUnmarshallerContext context) 
         {
             CheckDNSAvailabilityResult checkDNSAvailabilityResult = new CheckDNSAvailabilityResult();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -58,6 +59,11 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
 
 
             return checkDNSAvailabilityResult;
+        }
+
+        public CheckDNSAvailabilityResult Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static CheckDNSAvailabilityResultUnmarshaller instance;

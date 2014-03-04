@@ -11,30 +11,32 @@
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
- */ 
+ */
     using System;
     using System.Collections.Generic;
     using System.IO;
     using Amazon.DirectConnect.Model;
     using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations 
-    { 
-      /// <summary> 
-      /// DescribeVirtualGatewaysResultUnmarshaller 
-      /// </summary> 
-      internal class DescribeVirtualGatewaysResultUnmarshaller : IUnmarshaller<DescribeVirtualGatewaysResult, XmlUnmarshallerContext>, IUnmarshaller<DescribeVirtualGatewaysResult, JsonUnmarshallerContext> 
-      { 
+    namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
+    {
+      /// <summary>
+      /// DescribeVirtualGatewaysResultUnmarshaller
+      /// </summary>
+      internal class DescribeVirtualGatewaysResultUnmarshaller : IUnmarshaller<DescribeVirtualGatewaysResult, XmlUnmarshallerContext>, IUnmarshaller<DescribeVirtualGatewaysResult, JsonUnmarshallerContext>
+      {
         DescribeVirtualGatewaysResult IUnmarshaller<DescribeVirtualGatewaysResult, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
           throw new NotImplementedException();
         }
-        
-        public DescribeVirtualGatewaysResult Unmarshall(JsonUnmarshallerContext context) 
+
+        public DescribeVirtualGatewaysResult Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             DescribeVirtualGatewaysResult describeVirtualGatewaysResult = new DescribeVirtualGatewaysResult();
-          describeVirtualGatewaysResult.VirtualGateways = null; 
-                                  
+          describeVirtualGatewaysResult.VirtualGateways = null;
+                        
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             while (context.Read())
@@ -43,8 +45,8 @@
                 {
                 context.Read();
                 context.Read();
-               
-              if (context.TestExpression("VirtualGateways", targetDepth)) 
+              
+              if (context.TestExpression("VirtualGateways", targetDepth))
               {
                 describeVirtualGatewaysResult.VirtualGateways = new List<VirtualGateway>();
                         VirtualGatewayUnmarshaller unmarshaller = VirtualGatewayUnmarshaller.GetInstance();
@@ -59,27 +61,27 @@
                     break;
                   }
                 }
-                continue; 
+                continue;
               }
-   
-                } 
-                else if (context.IsEndElement && context.CurrentDepth <= originalDepth) 
-                { 
-                    return describeVirtualGatewaysResult; 
-                } 
-            } 
+  
+                }
+                else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
+                {
+                    return describeVirtualGatewaysResult;
+                }
+            }
           
-          
-            return describeVirtualGatewaysResult; 
-        } 
-        
-        private static DescribeVirtualGatewaysResultUnmarshaller instance; 
-        public static DescribeVirtualGatewaysResultUnmarshaller GetInstance() 
-        { 
-            if (instance == null) 
-                instance = new DescribeVirtualGatewaysResultUnmarshaller(); 
+
+            return describeVirtualGatewaysResult;
+        }
+
+        private static DescribeVirtualGatewaysResultUnmarshaller instance;
+        public static DescribeVirtualGatewaysResultUnmarshaller GetInstance()
+        {
+            if (instance == null)
+                instance = new DescribeVirtualGatewaysResultUnmarshaller();
             return instance;
-        } 
-    } 
-} 
+        }
+    }
+}
   

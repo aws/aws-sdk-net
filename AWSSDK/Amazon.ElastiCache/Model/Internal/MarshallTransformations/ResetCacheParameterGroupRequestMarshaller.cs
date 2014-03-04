@@ -34,7 +34,7 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(resetCacheParameterGroupRequest, "AmazonElastiCache");
             request.Parameters.Add("Action", "ResetCacheParameterGroup");
-            request.Parameters.Add("Version", "2012-11-15");
+            request.Parameters.Add("Version", "2013-06-15");
             if (resetCacheParameterGroupRequest != null && resetCacheParameterGroupRequest.IsSetCacheParameterGroupName())
             {
                 request.Parameters.Add("CacheParameterGroupName", StringUtils.FromString(resetCacheParameterGroupRequest.CacheParameterGroupName));

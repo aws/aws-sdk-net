@@ -23,7 +23,7 @@ namespace Amazon.SimpleEmail.Model
     /// <summary>
     /// <para>Represents a unique message ID returned from a successful <c>SendEmail</c> request. </para>
     /// </summary>
-    public class SendEmailResult  
+    public partial class SendEmailResult
     {
         
         private string messageId;
@@ -43,6 +43,7 @@ namespace Amazon.SimpleEmail.Model
         /// </summary>
         /// <param name="messageId">The value to set for the MessageId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SendEmailResult WithMessageId(string messageId)
         {
             this.messageId = messageId;
@@ -53,7 +54,7 @@ namespace Amazon.SimpleEmail.Model
         // Check to see if MessageId property is set
         internal bool IsSetMessageId()
         {
-            return this.messageId != null;       
+            return this.messageId != null;
         }
     }
 }

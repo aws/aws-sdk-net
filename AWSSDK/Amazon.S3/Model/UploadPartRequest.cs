@@ -1,4 +1,4 @@
-﻿/*******************************************************************************
+/*******************************************************************************
  *  Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  *  this file except in compliance with the License. A copy of the License is located at
@@ -67,6 +67,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="bucketName">The bucket name</param>
         /// <returns>the request with the BucketName set</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UploadPartRequest WithBucketName(string bucketName)
         {
             this.bucketName = bucketName;
@@ -99,6 +100,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="key">Object key</param>
         /// <returns>the request with the Key set</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UploadPartRequest WithKey(string key)
         {
             this.key = key;
@@ -131,6 +133,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="uploadId">The ID of the in-progress upload</param>
         /// <returns>the request with the UploadId set</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UploadPartRequest WithUploadId(string uploadId)
         {
             this.uploadId = uploadId;
@@ -163,6 +166,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="partNumber">Part ideentifier</param>
         /// <returns>the request with the PartNumber set</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UploadPartRequest WithPartNumber(int partNumber)
         {
             this.partNumber = partNumber;
@@ -195,6 +199,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="partSize">The size of the part</param>
         /// <returns>the request with the PartSize set</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UploadPartRequest WithPartSize(long partSize)
         {
             this.partSize = partSize;
@@ -227,6 +232,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="md5Digest">Digest value</param>
         /// <returns>the request with the Md5Digest set</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UploadPartRequest WithMD5Digest(string md5Digest)
         {
             this.md5Digest = md5Digest;
@@ -269,6 +275,7 @@ namespace Amazon.S3.Model
         /// </remarks>
         /// <param name="fGenerateMD5Digest">True to automatically compute an MD5 digest for the part</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UploadPartRequest WithGenerateChecksum(bool fGenerateMD5Digest)
         {
             this.fGenerateMD5Digest = fGenerateMD5Digest;
@@ -292,6 +299,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="filePath">Full path and name of the file</param>
         /// <returns>the request with the FilePath set</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UploadPartRequest WithFilePath(string filePath)
         {
             this.filePath = filePath;
@@ -326,6 +334,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="filePosition">The value that FilePosition is set to</param>
         /// <returns>the request with the FilePosition set</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UploadPartRequest WithFilePosition(long filePosition)
         {
             this.filePosition = filePosition;
@@ -365,6 +374,7 @@ namespace Amazon.S3.Model
         /// </remarks>
         /// <seealso cref="P:System.Net.HttpWebRequest.ReadWriteTimeout"/>
         /// <seealso cref="P:System.Net.HttpWebRequest.Timeout"/>
+ [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         new public UploadPartRequest WithTimeout(int timeout)
         {
             Timeout = timeout;
@@ -389,6 +399,7 @@ namespace Amazon.S3.Model
         /// </para>
         /// </remarks>
         /// <seealso cref="P:System.Net.HttpWebRequest.ReadWriteTimeout"/>
+ [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         new public UploadPartRequest WithReadWriteTimeout(int readWriteTimeout)
         {
             ReadWriteTimeout = readWriteTimeout;
@@ -426,6 +437,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="handler">A method that consumes the put object progress notification</param>
         /// <returns>this instance of the PutObjectRequest</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UploadPartRequest WithSubscriber(EventHandler<UploadPartProgressArgs> handler)
         {
             this.UploadPartProgressEvent += handler;

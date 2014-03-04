@@ -21,16 +21,15 @@ using System.IO;
 namespace Amazon.AWSSupport.Model
 {
     /// <summary>
-    /// 
+    /// <para>The current refresh status of a Trusted Advisor check.</para>
     /// </summary>
-    public class RefreshTrustedAdvisorCheckResult
+    public partial class RefreshTrustedAdvisorCheckResult
     {
         
         private TrustedAdvisorCheckRefreshStatus status;
 
         /// <summary>
-        /// Returns the overall status of the <a href="API_RefreshTrustedAdvisorCheck.html"
-        /// title="RefreshTrustedAdvisorCheck">RefreshTrustedAdvisorCheck</a> call.
+        /// The current refresh status for a check, including the amount of time until the check is eligible for refresh.
         ///  
         /// </summary>
         public TrustedAdvisorCheckRefreshStatus Status
@@ -44,6 +43,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="status">The value to set for the Status property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RefreshTrustedAdvisorCheckResult WithStatus(TrustedAdvisorCheckRefreshStatus status)
         {
             this.status = status;

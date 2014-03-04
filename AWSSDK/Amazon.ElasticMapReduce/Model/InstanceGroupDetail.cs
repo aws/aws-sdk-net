@@ -69,6 +69,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         /// <param name="instanceGroupId">The value to set for the InstanceGroupId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceGroupDetail WithInstanceGroupId(string instanceGroupId)
         {
             this.instanceGroupId = instanceGroupId;
@@ -110,6 +111,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         /// <param name="name">The value to set for the Name property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceGroupDetail WithName(string name)
         {
             this.name = name;
@@ -147,6 +149,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         /// <param name="market">The value to set for the Market property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceGroupDetail WithMarket(string market)
         {
             this.market = market;
@@ -184,6 +187,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         /// <param name="instanceRole">The value to set for the InstanceRole property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceGroupDetail WithInstanceRole(string instanceRole)
         {
             this.instanceRole = instanceRole;
@@ -225,6 +229,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         /// <param name="bidPrice">The value to set for the BidPrice property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceGroupDetail WithBidPrice(string bidPrice)
         {
             this.bidPrice = bidPrice;
@@ -266,6 +271,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         /// <param name="instanceType">The value to set for the InstanceType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceGroupDetail WithInstanceType(string instanceType)
         {
             this.instanceType = instanceType;
@@ -294,6 +300,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         /// <param name="instanceRequestCount">The value to set for the InstanceRequestCount property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceGroupDetail WithInstanceRequestCount(int instanceRequestCount)
         {
             this.instanceRequestCount = instanceRequestCount;
@@ -322,6 +329,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         /// <param name="instanceRunningCount">The value to set for the InstanceRunningCount property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceGroupDetail WithInstanceRunningCount(int instanceRunningCount)
         {
             this.instanceRunningCount = instanceRunningCount;
@@ -359,6 +367,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         /// <param name="state">The value to set for the State property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceGroupDetail WithState(string state)
         {
             this.state = state;
@@ -400,6 +409,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         /// <param name="lastStateChangeReason">The value to set for the LastStateChangeReason property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceGroupDetail WithLastStateChangeReason(string lastStateChangeReason)
         {
             this.lastStateChangeReason = lastStateChangeReason;
@@ -428,6 +438,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         /// <param name="creationDateTime">The value to set for the CreationDateTime property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceGroupDetail WithCreationDateTime(DateTime creationDateTime)
         {
             this.creationDateTime = creationDateTime;
@@ -456,6 +467,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         /// <param name="startDateTime">The value to set for the StartDateTime property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceGroupDetail WithStartDateTime(DateTime startDateTime)
         {
             this.startDateTime = startDateTime;
@@ -484,6 +496,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         /// <param name="readyDateTime">The value to set for the ReadyDateTime property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceGroupDetail WithReadyDateTime(DateTime readyDateTime)
         {
             this.readyDateTime = readyDateTime;
@@ -512,6 +525,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         /// <param name="endDateTime">The value to set for the EndDateTime property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceGroupDetail WithEndDateTime(DateTime endDateTime)
         {
             this.endDateTime = endDateTime;

@@ -43,6 +43,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="tableNames">The values to add to the TableNames collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListTablesResult WithTableNames(params string[] tableNames)
         {
             foreach (string element in tableNames)
@@ -58,6 +59,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="tableNames">The values to add to the TableNames collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListTablesResult WithTableNames(IEnumerable<string> tableNames)
         {
             foreach (string element in tableNames)
@@ -104,6 +106,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="lastEvaluatedTableName">The value to set for the LastEvaluatedTableName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListTablesResult WithLastEvaluatedTableName(string lastEvaluatedTableName)
         {
             this.lastEvaluatedTableName = lastEvaluatedTableName;

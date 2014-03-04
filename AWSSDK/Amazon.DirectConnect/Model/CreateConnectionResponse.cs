@@ -34,14 +34,14 @@ namespace Amazon.DirectConnect.Model
         /// </summary>
         public CreateConnectionResult CreateConnectionResult
         {
-            get 
+            get
             {
                 if(this.createConnectionResult == null)
                 {
                     this.createConnectionResult = new CreateConnectionResult();
                 }
 
-                return this.createConnectionResult; 
+                return this.createConnectionResult;
             }
             set { this.createConnectionResult = value; }
         }

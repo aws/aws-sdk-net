@@ -23,7 +23,7 @@ namespace Amazon.ElasticBeanstalk.Model
     /// <summary>
     /// <para>The results from a request to change the configuration settings of an environment.</para>
     /// </summary>
-    public class DescribeConfigurationSettingsResult  
+    public partial class DescribeConfigurationSettingsResult
     {
         
         private List<ConfigurationSettingsDescription> configurationSettings = new List<ConfigurationSettingsDescription>();
@@ -42,6 +42,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="configurationSettings">The values to add to the ConfigurationSettings collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeConfigurationSettingsResult WithConfigurationSettings(params ConfigurationSettingsDescription[] configurationSettings)
         {
             foreach (ConfigurationSettingsDescription element in configurationSettings)
@@ -51,12 +52,13 @@ namespace Amazon.ElasticBeanstalk.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the ConfigurationSettings collection
         /// </summary>
         /// <param name="configurationSettings">The values to add to the ConfigurationSettings collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeConfigurationSettingsResult WithConfigurationSettings(IEnumerable<ConfigurationSettingsDescription> configurationSettings)
         {
             foreach (ConfigurationSettingsDescription element in configurationSettings)
@@ -70,7 +72,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if ConfigurationSettings property is set
         internal bool IsSetConfigurationSettings()
         {
-            return this.configurationSettings.Count > 0;       
+            return this.configurationSettings.Count > 0;
         }
     }
 }

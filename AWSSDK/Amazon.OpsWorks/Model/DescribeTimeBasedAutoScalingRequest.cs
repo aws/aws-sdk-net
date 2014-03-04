@@ -25,7 +25,10 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeTimeBasedAutoScaling operation.
-    /// <para>Describes time-based auto scaling configurations for specified instances.</para>
+    /// <para>Describes time-based auto scaling configurations for specified instances.</para> <para><b>NOTE:</b>You must specify at least one of
+    /// the parameters.</para> <para> <b>Required Permissions</b> : To use this action, an IAM user must have a Show, Deploy, or Manage permissions
+    /// level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a
+    /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
     /// </summary>
     /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.DescribeTimeBasedAutoScaling"/>
     public class DescribeTimeBasedAutoScalingRequest : AmazonWebServiceRequest
@@ -46,6 +49,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="instanceIds">The values to add to the InstanceIds collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeTimeBasedAutoScalingRequest WithInstanceIds(params string[] instanceIds)
         {
             foreach (string element in instanceIds)
@@ -61,6 +65,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="instanceIds">The values to add to the InstanceIds collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeTimeBasedAutoScalingRequest WithInstanceIds(IEnumerable<string> instanceIds)
         {
             foreach (string element in instanceIds)

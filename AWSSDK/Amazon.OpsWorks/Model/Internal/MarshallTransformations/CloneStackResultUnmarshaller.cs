@@ -32,6 +32,8 @@
 
         public CloneStackResult Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             CloneStackResult cloneStackResult = new CloneStackResult();
           
             int originalDepth = context.CurrentDepth;

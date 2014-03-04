@@ -25,7 +25,8 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the RevokeCacheSecurityGroupIngress operation.
-    /// <para> Revokes ingress from a CacheSecurityGroup for previously authorized EC2 Security Groups. </para>
+    /// <para>The <i>RevokeCacheSecurityGroupIngress</i> operation revokes ingress from a cache security group. Use this operation to disallow
+    /// access from an Amazon EC2 security group that had been previously authorized.</para>
     /// </summary>
     /// <seealso cref="Amazon.ElastiCache.AmazonElastiCache.RevokeCacheSecurityGroupIngress"/>
     public class RevokeCacheSecurityGroupIngressRequest : AmazonWebServiceRequest
@@ -35,7 +36,7 @@ namespace Amazon.ElastiCache.Model
         private string eC2SecurityGroupOwnerId;
 
         /// <summary>
-        /// The name of the Cache Security Group to revoke ingress from.
+        /// The name of the cache security group to revoke ingress from.
         ///  
         /// </summary>
         public string CacheSecurityGroupName
@@ -49,6 +50,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="cacheSecurityGroupName">The value to set for the CacheSecurityGroupName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RevokeCacheSecurityGroupIngressRequest WithCacheSecurityGroupName(string cacheSecurityGroupName)
         {
             this.cacheSecurityGroupName = cacheSecurityGroupName;
@@ -63,7 +65,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// The name of the EC2 Security Group to revoke access from.
+        /// The name of the Amazon EC2 security group to revoke access from.
         ///  
         /// </summary>
         public string EC2SecurityGroupName
@@ -77,6 +79,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="eC2SecurityGroupName">The value to set for the EC2SecurityGroupName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RevokeCacheSecurityGroupIngressRequest WithEC2SecurityGroupName(string eC2SecurityGroupName)
         {
             this.eC2SecurityGroupName = eC2SecurityGroupName;
@@ -91,8 +94,8 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// The AWS Account Number of the owner of the security group specified in the <i>EC2SecurityGroupName</i> parameter. The AWS Access Key ID is
-        /// not an acceptable value.
+        /// The AWS account number of the Amazon EC2 security group owner. Note that this is not the same thing as an AWS access key ID - you must
+        /// provide a valid AWS account number for this parameter.
         ///  
         /// </summary>
         public string EC2SecurityGroupOwnerId
@@ -106,6 +109,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="eC2SecurityGroupOwnerId">The value to set for the EC2SecurityGroupOwnerId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RevokeCacheSecurityGroupIngressRequest WithEC2SecurityGroupOwnerId(string eC2SecurityGroupOwnerId)
         {
             this.eC2SecurityGroupOwnerId = eC2SecurityGroupOwnerId;

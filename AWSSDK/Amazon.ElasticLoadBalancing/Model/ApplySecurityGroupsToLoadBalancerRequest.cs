@@ -25,8 +25,10 @@ namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
     /// Container for the parameters to the ApplySecurityGroupsToLoadBalancer operation.
-    /// <para> Associates one or more security groups with your LoadBalancer in VPC. The provided security group IDs will override any currently
-    /// applied security groups. </para>
+    /// <para> Associates one or more security groups with your load balancer in Amazon Virtual Private Cloud (Amazon VPC). The provided security
+    /// group IDs will override any currently applied security groups. </para> <para>For more information, see <a
+    /// href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/USVPC_ApplySG.html" >Manage Security Groups in Amazon VPC</a> in
+    /// the <i>Elastic Load Balancing Developer Guide</i> .</para>
     /// </summary>
     /// <seealso cref="Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancing.ApplySecurityGroupsToLoadBalancer"/>
     public class ApplySecurityGroupsToLoadBalancerRequest : AmazonWebServiceRequest
@@ -35,7 +37,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         private List<string> securityGroups = new List<string>();
 
         /// <summary>
-        /// The name associated with the LoadBalancer. The name must be unique within the client AWS account.
+        /// The name associated with the load balancer. The name must be unique within the set of load balancers associated with your AWS account.
         ///  
         /// </summary>
         public string LoadBalancerName
@@ -49,6 +51,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="loadBalancerName">The value to set for the LoadBalancerName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ApplySecurityGroupsToLoadBalancerRequest WithLoadBalancerName(string loadBalancerName)
         {
             this.loadBalancerName = loadBalancerName;
@@ -59,11 +62,11 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if LoadBalancerName property is set
         internal bool IsSetLoadBalancerName()
         {
-            return this.loadBalancerName != null;       
+            return this.loadBalancerName != null;
         }
 
         /// <summary>
-        /// A list of security group IDs to associate with your LoadBalancer in VPC. The security group IDs must be provided as the ID and not the
+        /// A list of security group IDs to associate with your load balancer in VPC. The security group IDs must be provided as the ID and not the
         /// security group name (For example, sg-1234).
         ///  
         /// </summary>
@@ -77,6 +80,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="securityGroups">The values to add to the SecurityGroups collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ApplySecurityGroupsToLoadBalancerRequest WithSecurityGroups(params string[] securityGroups)
         {
             foreach (string element in securityGroups)
@@ -86,12 +90,13 @@ namespace Amazon.ElasticLoadBalancing.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the SecurityGroups collection
         /// </summary>
         /// <param name="securityGroups">The values to add to the SecurityGroups collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ApplySecurityGroupsToLoadBalancerRequest WithSecurityGroups(IEnumerable<string> securityGroups)
         {
             foreach (string element in securityGroups)
@@ -105,7 +110,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if SecurityGroups property is set
         internal bool IsSetSecurityGroups()
         {
-            return this.securityGroups.Count > 0;       
+            return this.securityGroups.Count > 0;
         }
     }
 }

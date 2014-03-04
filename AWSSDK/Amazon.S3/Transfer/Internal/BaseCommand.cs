@@ -39,12 +39,14 @@ namespace Amazon.S3.Transfer.Internal
 
         protected GetObjectRequest ConvertToGetObjectRequest(BaseDownloadRequest request)
         {
-            GetObjectRequest getRequest = new GetObjectRequest()
-                .WithBucketName(request.BucketName)
-                .WithKey(request.Key)
-                .WithTimeout(request.Timeout)
-                .WithVersionId(request.VersionId)
-                .WithBeforeRequestHandler(RequestEventHandler) as GetObjectRequest;
+            GetObjectRequest getRequest = new GetObjectRequest
+            {
+                BucketName=request.BucketName,
+                Key=request.Key,
+                Timeout=request.Timeout,
+                VersionId=request.VersionId,
+            };
+            getRequest.BeforeRequestEvent += RequestEventHandler;
 
             if (request.IsSetModifiedSinceDate())
             {

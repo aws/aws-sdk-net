@@ -29,7 +29,9 @@ namespace Amazon.Redshift.Model
     /// includes information such as parameter name, description, data type, value, whether the parameter value is modifiable, and so on. </para>
     /// <para>You can specify <i>source</i> filter to retrieve parameters of only specific type. For example, to retrieve parameters that were
     /// modified by a user action such as from ModifyClusterParameterGroup, you can specify <i>source</i> equal to <i>user</i> .</para> <para> For
-    /// more information about managing parameter groups, go to Amazon Redshift Parameter Groups in the <i>Amazon Redshift Management Guide</i> .
+    /// more information about managing parameter groups, go to <a
+    /// href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html" >Amazon Redshift Parameter Groups</a> in the
+    /// <i>Amazon Redshift Management Guide</i> .
     /// </para>
     /// </summary>
     /// <seealso cref="Amazon.Redshift.AmazonRedshift.DescribeClusterParameters"/>
@@ -55,6 +57,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="parameterGroupName">The value to set for the ParameterGroupName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeClusterParametersRequest WithParameterGroupName(string parameterGroupName)
         {
             this.parameterGroupName = parameterGroupName;
@@ -85,6 +88,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="source">The value to set for the Source property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeClusterParametersRequest WithSource(string source)
         {
             this.source = source;
@@ -115,6 +119,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="maxRecords">The value to set for the MaxRecords property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeClusterParametersRequest WithMaxRecords(int maxRecords)
         {
             this.maxRecords = maxRecords;
@@ -144,6 +149,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="marker">The value to set for the Marker property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeClusterParametersRequest WithMarker(string marker)
         {
             this.marker = marker;

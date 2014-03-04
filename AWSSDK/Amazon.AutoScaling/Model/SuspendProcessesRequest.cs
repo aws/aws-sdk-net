@@ -28,8 +28,10 @@ namespace Amazon.AutoScaling.Model
     /// <para> Suspends Auto Scaling processes for an Auto Scaling group. To suspend specific process types, specify them by name with the
     /// <c>ScalingProcesses.member.N</c> parameter. To suspend all process types, omit the <c>ScalingProcesses.member.N</c> parameter. </para>
     /// <para><b>IMPORTANT:</b> Suspending either of the two primary process types, Launch or Terminate, can prevent other process types from
-    /// functioning properly. For more information about processes and their dependencies, see ProcessType. </para> <para> To resume processes that
-    /// have been suspended, use ResumeProcesses. </para>
+    /// functioning properly. </para> <para> To resume processes that have been suspended, use ResumeProcesses For more information on suspending
+    /// and resuming Auto Scaling process, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US_SuspendResume.html" >Suspend
+    /// and Resume Auto Scaling Process</a> .
+    /// </para>
     /// </summary>
     /// <seealso cref="Amazon.AutoScaling.AmazonAutoScaling.SuspendProcesses"/>
     public class SuspendProcessesRequest : AmazonWebServiceRequest
@@ -65,6 +67,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="autoScalingGroupName">The value to set for the AutoScalingGroupName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SuspendProcessesRequest WithAutoScalingGroupName(string autoScalingGroupName)
         {
             this.autoScalingGroupName = autoScalingGroupName;
@@ -75,7 +78,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if AutoScalingGroupName property is set
         internal bool IsSetAutoScalingGroupName()
         {
-            return this.autoScalingGroupName != null;       
+            return this.autoScalingGroupName != null;
         }
 
         /// <summary>
@@ -94,6 +97,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="scalingProcesses">The values to add to the ScalingProcesses collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SuspendProcessesRequest WithScalingProcesses(params string[] scalingProcesses)
         {
             foreach (string element in scalingProcesses)
@@ -103,12 +107,13 @@ namespace Amazon.AutoScaling.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the ScalingProcesses collection
         /// </summary>
         /// <param name="scalingProcesses">The values to add to the ScalingProcesses collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SuspendProcessesRequest WithScalingProcesses(IEnumerable<string> scalingProcesses)
         {
             foreach (string element in scalingProcesses)
@@ -122,7 +127,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if ScalingProcesses property is set
         internal bool IsSetScalingProcesses()
         {
-            return this.scalingProcesses.Count > 0;       
+            return this.scalingProcesses.Count > 0;
         }
     }
 }

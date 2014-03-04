@@ -48,6 +48,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="autoScalingGroupNames">The values to add to the AutoScalingGroupNames collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeNotificationConfigurationsRequest WithAutoScalingGroupNames(params string[] autoScalingGroupNames)
         {
             foreach (string element in autoScalingGroupNames)
@@ -57,12 +58,13 @@ namespace Amazon.AutoScaling.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the AutoScalingGroupNames collection
         /// </summary>
         /// <param name="autoScalingGroupNames">The values to add to the AutoScalingGroupNames collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeNotificationConfigurationsRequest WithAutoScalingGroupNames(IEnumerable<string> autoScalingGroupNames)
         {
             foreach (string element in autoScalingGroupNames)
@@ -76,7 +78,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if AutoScalingGroupNames property is set
         internal bool IsSetAutoScalingGroupNames()
         {
-            return this.autoScalingGroupNames.Count > 0;       
+            return this.autoScalingGroupNames.Count > 0;
         }
 
         /// <summary>
@@ -103,6 +105,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="nextToken">The value to set for the NextToken property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeNotificationConfigurationsRequest WithNextToken(string nextToken)
         {
             this.nextToken = nextToken;
@@ -113,7 +116,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if NextToken property is set
         internal bool IsSetNextToken()
         {
-            return this.nextToken != null;       
+            return this.nextToken != null;
         }
 
         /// <summary>
@@ -140,6 +143,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="maxRecords">The value to set for the MaxRecords property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeNotificationConfigurationsRequest WithMaxRecords(int maxRecords)
         {
             this.maxRecords = maxRecords;
@@ -150,7 +154,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if MaxRecords property is set
         internal bool IsSetMaxRecords()
         {
-            return this.maxRecords.HasValue;       
+            return this.maxRecords.HasValue;
         }
     }
 }

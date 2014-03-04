@@ -49,6 +49,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="size">Size of the volume.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DiskImageVolumeDescriptionType WithSize(Decimal size)
         {
             this.sizeField = size;
@@ -79,6 +80,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="id">Volume identifier.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DiskImageVolumeDescriptionType WithId(string id)
         {
             this.idField = id;

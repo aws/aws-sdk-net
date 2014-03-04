@@ -25,7 +25,8 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
-    /// <para> Lists all tags on a DB Instance.</para> <para>For an overview on tagging DB Instances, see DB Instance Tags. </para>
+    /// <para> Lists all tags on an Amazon RDS resource.</para> <para>For an overview on tagging an Amazon RDS resource, see <a
+    /// href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html" >Tagging Amazon RDS Resources</a> .</para>
     /// </summary>
     /// <seealso cref="Amazon.RDS.AmazonRDS.ListTagsForResource"/>
     public class ListTagsForResourceRequest : AmazonWebServiceRequest
@@ -33,7 +34,9 @@ namespace Amazon.RDS.Model
         private string resourceName;
 
         /// <summary>
-        /// The DB Instance with tags to be listed.
+        /// The Amazon RDS resource with tags to be listed. This value is an Amazon Resource Name (ARN). For information about creating an ARN, see <a
+        /// href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN"> Constructing an RDS Amazon Resource Name
+        /// (ARN)</a>.
         ///  
         /// </summary>
         public string ResourceName
@@ -47,6 +50,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="resourceName">The value to set for the ResourceName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListTagsForResourceRequest WithResourceName(string resourceName)
         {
             this.resourceName = resourceName;

@@ -25,7 +25,8 @@ namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteIdentity operation.
-    /// <para>Deletes the specified identity (email address or domain) from the list of verified identities.</para>
+    /// <para>Deletes the specified identity (email address or domain) from the list of verified identities.</para> <para>This action is throttled
+    /// at one request per second.</para>
     /// </summary>
     /// <seealso cref="Amazon.SimpleEmail.AmazonSimpleEmailService.DeleteIdentity"/>
     public class DeleteIdentityRequest : AmazonWebServiceRequest
@@ -47,6 +48,7 @@ namespace Amazon.SimpleEmail.Model
         /// </summary>
         /// <param name="identity">The value to set for the Identity property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeleteIdentityRequest WithIdentity(string identity)
         {
             this.identity = identity;
@@ -57,7 +59,7 @@ namespace Amazon.SimpleEmail.Model
         // Check to see if Identity property is set
         internal bool IsSetIdentity()
         {
-            return this.identity != null;       
+            return this.identity != null;
         }
     }
 }

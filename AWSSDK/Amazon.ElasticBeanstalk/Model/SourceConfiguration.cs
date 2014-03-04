@@ -23,7 +23,7 @@ namespace Amazon.ElasticBeanstalk.Model
     /// <summary>
     /// <para>A specification for an environment configuration</para>
     /// </summary>
-    public class SourceConfiguration  
+    public partial class SourceConfiguration
     {
         
         private string applicationName;
@@ -53,6 +53,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="applicationName">The value to set for the ApplicationName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SourceConfiguration WithApplicationName(string applicationName)
         {
             this.applicationName = applicationName;
@@ -63,7 +64,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if ApplicationName property is set
         internal bool IsSetApplicationName()
         {
-            return this.applicationName != null;       
+            return this.applicationName != null;
         }
 
         /// <summary>
@@ -90,6 +91,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="templateName">The value to set for the TemplateName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SourceConfiguration WithTemplateName(string templateName)
         {
             this.templateName = templateName;
@@ -100,7 +102,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if TemplateName property is set
         internal bool IsSetTemplateName()
         {
-            return this.templateName != null;       
+            return this.templateName != null;
         }
     }
 }

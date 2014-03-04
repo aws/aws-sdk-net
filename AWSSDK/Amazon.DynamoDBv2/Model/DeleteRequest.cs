@@ -44,6 +44,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="pairs">The pairs to be added to the Key dictionary.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeleteRequest WithKey(params KeyValuePair<string, AttributeValue>[] pairs)
         {
             foreach (KeyValuePair<string, AttributeValue> pair in pairs)

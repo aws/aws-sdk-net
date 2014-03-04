@@ -70,6 +70,7 @@ namespace Amazon.DataPipeline.Model
         /// </summary>
         /// <param name="workerGroup">The value to set for the WorkerGroup property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PollForTaskRequest WithWorkerGroup(string workerGroup)
         {
             this.workerGroup = workerGroup;
@@ -111,6 +112,7 @@ namespace Amazon.DataPipeline.Model
         /// </summary>
         /// <param name="hostname">The value to set for the Hostname property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PollForTaskRequest WithHostname(string hostname)
         {
             this.hostname = hostname;
@@ -143,6 +145,7 @@ namespace Amazon.DataPipeline.Model
         /// </summary>
         /// <param name="instanceIdentity">The value to set for the InstanceIdentity property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PollForTaskRequest WithInstanceIdentity(InstanceIdentity instanceIdentity)
         {
             this.instanceIdentity = instanceIdentity;

@@ -63,6 +63,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="userName">The value to set for the UserName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListUserPoliciesRequest WithUserName(string userName)
         {
             this.userName = userName;
@@ -73,7 +74,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if UserName property is set
         internal bool IsSetUserName()
         {
-            return this.userName != null;       
+            return this.userName != null;
         }
 
         /// <summary>
@@ -105,6 +106,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="marker">The value to set for the Marker property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListUserPoliciesRequest WithMarker(string marker)
         {
             this.marker = marker;
@@ -115,12 +117,13 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;       
+            return this.marker != null;
         }
 
         /// <summary>
         /// Use this only when paginating results to indicate the maximum number of policy names you want in the response. If there are additional
-        /// policy names beyond the maximum you specify, the <c>IsTruncated</c> response element is <c>true</c>.
+        /// policy names beyond the maximum you specify, the <c>IsTruncated</c> response element is <c>true</c>. This parameter is optional. If you do
+        /// not include it, it defaults to 100.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -143,6 +146,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="maxItems">The value to set for the MaxItems property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListUserPoliciesRequest WithMaxItems(int maxItems)
         {
             this.maxItems = maxItems;
@@ -153,7 +157,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if MaxItems property is set
         internal bool IsSetMaxItems()
         {
-            return this.maxItems.HasValue;       
+            return this.maxItems.HasValue;
         }
     }
 }

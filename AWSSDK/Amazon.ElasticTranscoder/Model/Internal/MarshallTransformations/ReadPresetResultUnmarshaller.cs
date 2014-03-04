@@ -32,6 +32,8 @@
 
         public ReadPresetResult Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             ReadPresetResult readPresetResult = new ReadPresetResult();
           
             int originalDepth = context.CurrentDepth;

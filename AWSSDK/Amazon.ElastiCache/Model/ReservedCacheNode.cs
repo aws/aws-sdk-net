@@ -21,10 +21,9 @@ using System.IO;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// <para> This data type is used as a response element in the DescribeReservedCacheNodes and PurchaseReservedCacheNodesOffering actions.
-    /// </para>
+    /// <para>Represents the output of a <i>PurchaseReservedCacheNodesOffering</i> operation.</para>
     /// </summary>
-    public class ReservedCacheNode
+    public partial class ReservedCacheNode
     {
         
         private string reservedCacheNodeId;
@@ -55,6 +54,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="reservedCacheNodeId">The value to set for the ReservedCacheNodeId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ReservedCacheNode WithReservedCacheNodeId(string reservedCacheNodeId)
         {
             this.reservedCacheNodeId = reservedCacheNodeId;
@@ -83,6 +83,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="reservedCacheNodesOfferingId">The value to set for the ReservedCacheNodesOfferingId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ReservedCacheNode WithReservedCacheNodesOfferingId(string reservedCacheNodesOfferingId)
         {
             this.reservedCacheNodesOfferingId = reservedCacheNodesOfferingId;
@@ -97,7 +98,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// The cache node type for the reserved Cache Node.
+        /// The cache node type for the reserved cache nodes.
         ///  
         /// </summary>
         public string CacheNodeType
@@ -111,6 +112,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="cacheNodeType">The value to set for the CacheNodeType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ReservedCacheNode WithCacheNodeType(string cacheNodeType)
         {
             this.cacheNodeType = cacheNodeType;
@@ -139,6 +141,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="startTime">The value to set for the StartTime property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ReservedCacheNode WithStartTime(DateTime startTime)
         {
             this.startTime = startTime;
@@ -167,6 +170,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="duration">The value to set for the Duration property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ReservedCacheNode WithDuration(int duration)
         {
             this.duration = duration;
@@ -181,7 +185,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// The fixed price charged for this reserved Cache Node.
+        /// The fixed price charged for this reserved cache node.
         ///  
         /// </summary>
         public double FixedPrice
@@ -195,6 +199,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="fixedPrice">The value to set for the FixedPrice property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ReservedCacheNode WithFixedPrice(double fixedPrice)
         {
             this.fixedPrice = fixedPrice;
@@ -209,7 +214,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// The hourly price charged for this reserved Cache Node.
+        /// The hourly price charged for this reserved cache node.
         ///  
         /// </summary>
         public double UsagePrice
@@ -223,6 +228,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="usagePrice">The value to set for the UsagePrice property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ReservedCacheNode WithUsagePrice(double usagePrice)
         {
             this.usagePrice = usagePrice;
@@ -237,7 +243,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// The number of reserved Cache Nodes.
+        /// The number of cache nodes that have been reserved.
         ///  
         /// </summary>
         public int CacheNodeCount
@@ -251,6 +257,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="cacheNodeCount">The value to set for the CacheNodeCount property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ReservedCacheNode WithCacheNodeCount(int cacheNodeCount)
         {
             this.cacheNodeCount = cacheNodeCount;
@@ -265,7 +272,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// The description of the reserved Cache Node.
+        /// The description of the reserved cache node.
         ///  
         /// </summary>
         public string ProductDescription
@@ -279,6 +286,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="productDescription">The value to set for the ProductDescription property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ReservedCacheNode WithProductDescription(string productDescription)
         {
             this.productDescription = productDescription;
@@ -293,7 +301,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// The offering type of this reserved Cache Node.
+        /// The offering type of this reserved cache node.
         ///  
         /// </summary>
         public string OfferingType
@@ -307,6 +315,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="offeringType">The value to set for the OfferingType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ReservedCacheNode WithOfferingType(string offeringType)
         {
             this.offeringType = offeringType;
@@ -321,7 +330,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// The state of the reserved Cache Node.
+        /// The state of the reserved cache node.
         ///  
         /// </summary>
         public string State
@@ -335,6 +344,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="state">The value to set for the State property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ReservedCacheNode WithState(string state)
         {
             this.state = state;
@@ -349,7 +359,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// The recurring price charged to run this reserved Cache Node.
+        /// The recurring price charged to run this reserved cache node.
         ///  
         /// </summary>
         public List<RecurringCharge> RecurringCharges
@@ -362,6 +372,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="recurringCharges">The values to add to the RecurringCharges collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ReservedCacheNode WithRecurringCharges(params RecurringCharge[] recurringCharges)
         {
             foreach (RecurringCharge element in recurringCharges)
@@ -377,6 +388,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="recurringCharges">The values to add to the RecurringCharges collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ReservedCacheNode WithRecurringCharges(IEnumerable<RecurringCharge> recurringCharges)
         {
             foreach (RecurringCharge element in recurringCharges)

@@ -23,7 +23,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// <summary>
     /// <para> The output for the ConfigureHealthCheck action. </para>
     /// </summary>
-    public class ConfigureHealthCheckResult  
+    public partial class ConfigureHealthCheckResult
     {
         
         private HealthCheck healthCheck;
@@ -43,6 +43,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="healthCheck">The value to set for the HealthCheck property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ConfigureHealthCheckResult WithHealthCheck(HealthCheck healthCheck)
         {
             this.healthCheck = healthCheck;
@@ -53,7 +54,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if HealthCheck property is set
         internal bool IsSetHealthCheck()
         {
-            return this.healthCheck != null;       
+            return this.healthCheck != null;
         }
     }
 }

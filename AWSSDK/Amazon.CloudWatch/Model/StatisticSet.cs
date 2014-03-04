@@ -47,6 +47,7 @@ namespace Amazon.CloudWatch.Model
         /// </summary>
         /// <param name="sampleCount">The value to set for the SampleCount property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StatisticSet WithSampleCount(double sampleCount)
         {
             this.sampleCount = sampleCount;
@@ -75,6 +76,7 @@ namespace Amazon.CloudWatch.Model
         /// </summary>
         /// <param name="sum">The value to set for the Sum property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StatisticSet WithSum(double sum)
         {
             this.sum = sum;
@@ -103,6 +105,7 @@ namespace Amazon.CloudWatch.Model
         /// </summary>
         /// <param name="minimum">The value to set for the Minimum property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StatisticSet WithMinimum(double minimum)
         {
             this.minimum = minimum;
@@ -131,6 +134,7 @@ namespace Amazon.CloudWatch.Model
         /// </summary>
         /// <param name="maximum">The value to set for the Maximum property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StatisticSet WithMaximum(double maximum)
         {
             this.maximum = maximum;

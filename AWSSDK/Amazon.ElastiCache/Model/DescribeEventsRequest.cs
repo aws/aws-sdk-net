@@ -25,9 +25,10 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeEvents operation.
-    /// <para> Returns events related to Cache Clusters, Cache Security Groups, and Cache Parameter Groups for the past 14 days. Events specific to
-    /// a particular Cache Cluster, Cache Security Group, or Cache Parameter Group can be obtained by providing the name as a parameter. By default,
-    /// the past hour of events are returned. </para>
+    /// <para>The <i>DescribeEvents</i> operation returns events related to cache clusters, cache security groups, and cache parameter groups. You
+    /// can obtain events specific to a particular cache cluster, cache security group, or cache parameter group by providing the name as a
+    /// parameter.</para> <para>By default, only the events occurring within the last hour are returned; however, you can retrieve up to 14 days'
+    /// worth of events if necessary.</para>
     /// </summary>
     /// <seealso cref="Amazon.ElastiCache.AmazonElastiCache.DescribeEvents"/>
     public class DescribeEventsRequest : AmazonWebServiceRequest
@@ -55,6 +56,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="sourceIdentifier">The value to set for the SourceIdentifier property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeEventsRequest WithSourceIdentifier(string sourceIdentifier)
         {
             this.sourceIdentifier = sourceIdentifier;
@@ -69,7 +71,8 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// The event source to retrieve events for. If no value is specified, all events are returned.
+        /// The event source to retrieve events for. If no value is specified, all events are returned. Valid values are: <c>cache-cluster</c> |
+        /// <c>cache-parameter-group</c> | <c>cache-security-group</c> | <c>cache-subnet-group</c>
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -92,6 +95,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="sourceType">The value to set for the SourceType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeEventsRequest WithSourceType(string sourceType)
         {
             this.sourceType = sourceType;
@@ -120,6 +124,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="startTime">The value to set for the StartTime property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeEventsRequest WithStartTime(DateTime startTime)
         {
             this.startTime = startTime;
@@ -148,6 +153,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="endTime">The value to set for the EndTime property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeEventsRequest WithEndTime(DateTime endTime)
         {
             this.endTime = endTime;
@@ -162,7 +168,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// The number of minutes to retrieve events for.
+        /// The number of minutes' worth of events to retrieve.
         ///  
         /// </summary>
         public int Duration
@@ -176,6 +182,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="duration">The value to set for the Duration property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeEventsRequest WithDuration(int duration)
         {
             this.duration = duration;
@@ -190,8 +197,8 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// The maximum number of records to include in the response. If more records exist than the specified <i>MaxRecords</i> value, a marker is
-        /// included in the response so that the remaining results may be retrieved.
+        /// The maximum number of records to include in the response. If more records exist than the specified <c>MaxRecords</c> value, a marker is
+        /// included in the response so that the remaining results can be retrieved. Default: 100Constraints: minimum 20; maximum 100.
         ///  
         /// </summary>
         public int MaxRecords
@@ -205,6 +212,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="maxRecords">The value to set for the MaxRecords property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeEventsRequest WithMaxRecords(int maxRecords)
         {
             this.maxRecords = maxRecords;
@@ -219,8 +227,8 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// An optional marker provided in the previous DescribeCacheClusters request. If this parameter is specified, the response includes only
-        /// records beyond the marker, up to the value specified by <i>MaxRecords</i>.
+        /// An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is
+        /// specified, the response includes only records beyond the marker, up to the value specified by <i>MaxRecords</i>.
         ///  
         /// </summary>
         public string Marker
@@ -234,6 +242,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="marker">The value to set for the Marker property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeEventsRequest WithMarker(string marker)
         {
             this.marker = marker;

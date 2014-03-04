@@ -55,6 +55,7 @@ namespace Amazon.EC2.Model
         /// <param name="destinationCidrBlock">The CIDR address block used for the destination match.
         /// For example: 0.0.0.0/0.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Route WithDestinationCidrBlock(string destinationCidrBlock)
         {
             this.destinationCidrBlockField = destinationCidrBlock;
@@ -85,6 +86,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="gatewayId">The ID of a gateway attached to your VPC.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Route WithGatewayId(string gatewayId)
         {
             this.gatewayIdField = gatewayId;
@@ -115,6 +117,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="instanceId">The ID of a NAT instance in your VPC.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Route WithInstanceId(string instanceId)
         {
             this.instanceIdField = instanceId;
@@ -150,6 +153,7 @@ namespace Amazon.EC2.Model
         /// target isn't available (e.g., the specified gateway isn't attached to the
         /// VPC, the specified NAT instance has been terminated, etc.).</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Route WithState(string state)
         {
             this.stateField = state;
@@ -180,6 +184,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="instanceOwnerId">The owner of the instance.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Route WithInstanceOwnerId(string instanceOwnerId)
         {
             this.instanceOwnerIdField = instanceOwnerId;
@@ -210,6 +215,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="networkInterfaceId">Network interface ID</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Route WithNetworkInterfaceId(string networkInterfaceId)
         {
             this.networkInterfaceIdField = networkInterfaceId;

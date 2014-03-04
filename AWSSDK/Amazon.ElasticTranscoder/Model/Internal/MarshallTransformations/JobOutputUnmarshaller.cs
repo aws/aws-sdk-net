@@ -32,8 +32,12 @@
 
         public JobOutput Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             JobOutput jobOutput = new JobOutput();
-          
+          jobOutput.Watermarks = null;
+                        jobOutput.Composition = null;
+                        
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             while (context.Read())
@@ -106,6 +110,60 @@
               if (context.TestExpression("Height", targetDepth))
               {
                 jobOutput.Height = IntUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
+              if (context.TestExpression("Watermarks", targetDepth))
+              {
+                
+                  if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                  {
+                      jobOutput.Watermarks = null;
+                      continue;
+                  }              
+                  jobOutput.Watermarks = new List<JobWatermark>();
+                  JobWatermarkUnmarshaller unmarshaller = JobWatermarkUnmarshaller.GetInstance();
+                while (context.Read())
+                {
+                  if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))
+                  {
+                     jobOutput.Watermarks.Add(unmarshaller.Unmarshall(context));
+                  }
+                  else if (context.IsEndArray)
+                  {
+                    break;
+                  }
+                }
+                continue;
+              }
+  
+              if (context.TestExpression("AlbumArt", targetDepth))
+              {
+                jobOutput.AlbumArt = JobAlbumArtUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
+              if (context.TestExpression("Composition", targetDepth))
+              {
+                
+                  if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                  {
+                      jobOutput.Composition = null;
+                      continue;
+                  }              
+                  jobOutput.Composition = new List<Clip>();
+                  ClipUnmarshaller unmarshaller = ClipUnmarshaller.GetInstance();
+                while (context.Read())
+                {
+                  if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))
+                  {
+                     jobOutput.Composition.Add(unmarshaller.Unmarshall(context));
+                  }
+                  else if (context.IsEndArray)
+                  {
+                    break;
+                  }
+                }
                 continue;
               }
   

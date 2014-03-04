@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
-    /// <para>An attribute value used with conditional <i>DeleteItem</i> ,
+    /// <para>Represents an attribute value used with conditional <i>DeleteItem</i> ,
     /// <i>PutItem</i> or <i>UpdateItem</i> operations. Amazon DynamoDB will check to see if the attribute value already
     /// exists; or if the attribute exists and has a particular value before updating it.</para>
     /// </summary>
@@ -46,6 +46,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="value">The value to set for the Value property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ExpectedAttributeValue WithValue(AttributeValue value)
         {
             this.value = value;
@@ -85,6 +86,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="exists">The value to set for the Exists property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ExpectedAttributeValue WithExists(bool exists)
         {
             this.exists = exists;

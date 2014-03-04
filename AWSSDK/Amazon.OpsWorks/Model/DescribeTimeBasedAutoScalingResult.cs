@@ -23,7 +23,7 @@ namespace Amazon.OpsWorks.Model
     /// <summary>
     /// <para>Contains the response to a <c>DescribeTimeBasedAutoScaling</c> request.</para>
     /// </summary>
-    public class DescribeTimeBasedAutoScalingResult
+    public partial class DescribeTimeBasedAutoScalingResult
     {
         
         private List<TimeBasedAutoScalingConfiguration> timeBasedAutoScalingConfigurations = new List<TimeBasedAutoScalingConfiguration>();
@@ -42,6 +42,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="timeBasedAutoScalingConfigurations">The values to add to the TimeBasedAutoScalingConfigurations collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeTimeBasedAutoScalingResult WithTimeBasedAutoScalingConfigurations(params TimeBasedAutoScalingConfiguration[] timeBasedAutoScalingConfigurations)
         {
             foreach (TimeBasedAutoScalingConfiguration element in timeBasedAutoScalingConfigurations)
@@ -57,6 +58,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="timeBasedAutoScalingConfigurations">The values to add to the TimeBasedAutoScalingConfigurations collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeTimeBasedAutoScalingResult WithTimeBasedAutoScalingConfigurations(IEnumerable<TimeBasedAutoScalingConfiguration> timeBasedAutoScalingConfigurations)
         {
             foreach (TimeBasedAutoScalingConfiguration element in timeBasedAutoScalingConfigurations)

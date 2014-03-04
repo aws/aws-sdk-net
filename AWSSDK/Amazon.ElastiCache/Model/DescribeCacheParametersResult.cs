@@ -21,9 +21,9 @@ using System.IO;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// <para> Contains a list of Parametes and CacheNodeTypeSpecificParameters. </para>
+    /// <para>Represents the output of a <i>DescribeCacheParameters</i> operation.</para>
     /// </summary>
-    public class DescribeCacheParametersResult
+    public partial class DescribeCacheParametersResult
     {
         
         private string marker;
@@ -31,7 +31,7 @@ namespace Amazon.ElastiCache.Model
         private List<CacheNodeTypeSpecificParameter> cacheNodeTypeSpecificParameters = new List<CacheNodeTypeSpecificParameter>();
 
         /// <summary>
-        /// The marker obtained from a previous operation response.
+        /// Provides an identifier to allow retrieval of paginated results.
         ///  
         /// </summary>
         public string Marker
@@ -45,6 +45,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="marker">The value to set for the Marker property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeCacheParametersResult WithMarker(string marker)
         {
             this.marker = marker;
@@ -72,6 +73,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="parameters">The values to add to the Parameters collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeCacheParametersResult WithParameters(params Parameter[] parameters)
         {
             foreach (Parameter element in parameters)
@@ -87,6 +89,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="parameters">The values to add to the Parameters collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeCacheParametersResult WithParameters(IEnumerable<Parameter> parameters)
         {
             foreach (Parameter element in parameters)
@@ -104,7 +107,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// A list of <a>CacheNodeTypeSpecificParameter</a> instances.
+        /// A list of parameters specific to a particular cache node type. Each element in the list contains detailed information about one parameter.
         ///  
         /// </summary>
         public List<CacheNodeTypeSpecificParameter> CacheNodeTypeSpecificParameters
@@ -117,6 +120,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="cacheNodeTypeSpecificParameters">The values to add to the CacheNodeTypeSpecificParameters collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeCacheParametersResult WithCacheNodeTypeSpecificParameters(params CacheNodeTypeSpecificParameter[] cacheNodeTypeSpecificParameters)
         {
             foreach (CacheNodeTypeSpecificParameter element in cacheNodeTypeSpecificParameters)
@@ -132,6 +136,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="cacheNodeTypeSpecificParameters">The values to add to the CacheNodeTypeSpecificParameters collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeCacheParametersResult WithCacheNodeTypeSpecificParameters(IEnumerable<CacheNodeTypeSpecificParameter> cacheNodeTypeSpecificParameters)
         {
             foreach (CacheNodeTypeSpecificParameter element in cacheNodeTypeSpecificParameters)

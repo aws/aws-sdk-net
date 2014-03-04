@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -51,6 +51,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// A reference to this updated object so that method calls can be chained
         /// together.
         /// </returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ConfigureDaemons WithHeapSize(Daemon daemon, int megabytes)
         {
             args.Add("--" + daemon.ToString().ToLower() + "-heap-size=" + megabytes);
@@ -66,6 +67,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// A reference to this updated object so that method calls can be chained
         /// together.
         /// </returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ConfigureDaemons WithOpts(Daemon daemon, String opts)
         {
             args.Add("--" + daemon.ToString().ToLower() + "-opts=\"" + opts + "\"");
@@ -80,6 +82,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// A reference to this updated object so that method calls can be chained
         /// together.
         /// </returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ConfigureDaemons WithReplace(bool replace)
         {
             this.replace = replace;
@@ -97,11 +100,15 @@ namespace Amazon.ElasticMapReduce.Model
                 args.Add("--replace");
             }
 
-            return new BootstrapActionConfig()
-              .WithName("Configure Daemons")
-              .WithScriptBootstrapAction(new ScriptBootstrapActionConfig()
-                .WithPath("s3://" + bucket + "/bootstrap-actions/configure-daemons")
-                .WithArgs(args.ToArray()));
+            return new BootstrapActionConfig
+            {
+                Name = "Configure Daemons",
+                ScriptBootstrapAction = new ScriptBootstrapActionConfig
+                {
+                    Path = "s3://" + bucket + "/bootstrap-actions/configure-daemons",
+                    Args = args
+                }
+            };
         }
     }
 }

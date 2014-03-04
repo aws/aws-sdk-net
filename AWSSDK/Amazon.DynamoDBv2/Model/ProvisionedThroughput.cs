@@ -21,9 +21,10 @@ using System.IO;
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
-    /// <para>The provisioned throughput settings for the specified table. The settings can be modified using the <i>UpdateTable</i>
-    /// operation.</para> <para>For current minimum and maximum provisioned throughput values, see Limits in the <i>Amazon DynamoDB Developer
-    /// Guide</i> .</para>
+    /// <para>Represents the provisioned throughput settings for a specified table or index. The settings can be modified using the
+    /// <i>UpdateTable</i> operation.</para> <para>For current minimum and maximum provisioned throughput values, see <a
+    /// href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html" >Limits</a> in the Amazon DynamoDB Developer
+    /// Guide.</para>
     /// </summary>
     public class ProvisionedThroughput
     {
@@ -35,7 +36,7 @@ namespace Amazon.DynamoDBv2.Model
         /// The maximum number of strongly consistent reads consumed per second before Amazon DynamoDB returns a <i>ThrottlingException</i>. For more
         /// information, see <a
         /// href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDDTables.html#ProvisionedThroughput">Specifying Read and
-        /// Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+        /// Write Requirements</a> in the Amazon DynamoDB Developer Guide.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -58,6 +59,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="readCapacityUnits">The value to set for the ReadCapacityUnits property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ProvisionedThroughput WithReadCapacityUnits(long readCapacityUnits)
         {
             this.readCapacityUnits = readCapacityUnits;
@@ -74,7 +76,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// The maximum number of writes consumed per second before Amazon DynamoDB returns a <i>ThrottlingException</i>. For more information, see <a
         /// href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDDTables.html#ProvisionedThroughput">Specifying Read and
-        /// Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+        /// Write Requirements</a> in the Amazon DynamoDB Developer Guide.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -97,6 +99,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="writeCapacityUnits">The value to set for the WriteCapacityUnits property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ProvisionedThroughput WithWriteCapacityUnits(long writeCapacityUnits)
         {
             this.writeCapacityUnits = writeCapacityUnits;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -24,7 +24,7 @@ namespace Amazon.CloudFront.Model
     /// <para> A complex type that lists the AWS accounts that were included in the TrustedSigners complex type, as well as their active CloudFront
     /// key pair IDs, if any. </para>
     /// </summary>
-    public class Signer  
+    public partial class Signer
     {
         
         private string awsAccountNumber;
@@ -46,6 +46,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="awsAccountNumber">The value to set for the AwsAccountNumber property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Signer WithAwsAccountNumber(string awsAccountNumber)
         {
             this.awsAccountNumber = awsAccountNumber;
@@ -56,7 +57,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if AwsAccountNumber property is set
         internal bool IsSetAwsAccountNumber()
         {
-            return this.awsAccountNumber != null;       
+            return this.awsAccountNumber != null;
         }
 
         /// <summary>
@@ -74,6 +75,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="keyPairIds">The value to set for the KeyPairIds property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Signer WithKeyPairIds(KeyPairIds keyPairIds)
         {
             this.keyPairIds = keyPairIds;
@@ -84,7 +86,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if KeyPairIds property is set
         internal bool IsSetKeyPairIds()
         {
-            return this.keyPairIds != null;       
+            return this.keyPairIds != null;
         }
     }
 }

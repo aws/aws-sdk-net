@@ -25,9 +25,9 @@ namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeLoadBalancerPolicyTypes operation.
-    /// <para> Returns meta-information on the specified LoadBalancer policies defined by the Elastic Load Balancing service. The policy types that
-    /// are returned from this action can be used in a CreateLoadBalancerPolicy action to instantiate specific policy configurations that will be
-    /// applied to an Elastic LoadBalancer. </para>
+    /// <para> Returns meta-information on the specified load balancer policies defined by the Elastic Load Balancing service. The policy types
+    /// that are returned from this action can be used in a CreateLoadBalancerPolicy action to instantiate specific policy configurations that will
+    /// be applied to a load balancer. </para>
     /// </summary>
     /// <seealso cref="Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancing.DescribeLoadBalancerPolicyTypes"/>
     public class DescribeLoadBalancerPolicyTypesRequest : AmazonWebServiceRequest
@@ -49,6 +49,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="policyTypeNames">The values to add to the PolicyTypeNames collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeLoadBalancerPolicyTypesRequest WithPolicyTypeNames(params string[] policyTypeNames)
         {
             foreach (string element in policyTypeNames)
@@ -58,12 +59,13 @@ namespace Amazon.ElasticLoadBalancing.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the PolicyTypeNames collection
         /// </summary>
         /// <param name="policyTypeNames">The values to add to the PolicyTypeNames collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeLoadBalancerPolicyTypesRequest WithPolicyTypeNames(IEnumerable<string> policyTypeNames)
         {
             foreach (string element in policyTypeNames)
@@ -77,7 +79,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if PolicyTypeNames property is set
         internal bool IsSetPolicyTypeNames()
         {
-            return this.policyTypeNames.Count > 0;       
+            return this.policyTypeNames.Count > 0;
         }
     }
 }

@@ -12,69 +12,67 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System.Collections.Generic;
+    using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using Amazon.ElasticMapReduce.Model;
+    using Amazon.Runtime.Internal.Transform;
 
-using Amazon.ElasticMapReduce.Model;
-using Amazon.Runtime.Internal.Transform;
-
-namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
-{
-     /// <summary>
-     ///   StepDetail Unmarshaller
-     /// </summary>
-    internal class StepDetailUnmarshaller : IUnmarshaller<StepDetail, XmlUnmarshallerContext>, IUnmarshaller<StepDetail, JsonUnmarshallerContext> 
+    namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
     {
-        public StepDetail Unmarshall(XmlUnmarshallerContext context) 
+      /// <summary>
+      /// StepDetailUnmarshaller
+      /// </summary>
+      internal class StepDetailUnmarshaller : IUnmarshaller<StepDetail, XmlUnmarshallerContext>, IUnmarshaller<StepDetail, JsonUnmarshallerContext>
+      {
+        StepDetail IUnmarshaller<StepDetail, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        {
+          throw new NotImplementedException();
+        }
+
+        public StepDetail Unmarshall(JsonUnmarshallerContext context)
         {
             StepDetail stepDetail = new StepDetail();
+          
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
-            
-            if (context.IsStartOfDocument) 
-               targetDepth += 2;
-            
             while (context.Read())
             {
-                if (context.IsStartElement || context.IsAttribute)
-                { 
-                    if (context.TestExpression("StepConfig", targetDepth))
-                    {
-                        stepDetail.StepConfig = StepConfigUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("ExecutionStatusDetail", targetDepth))
-                    {
-                        stepDetail.ExecutionStatusDetail = StepExecutionStatusDetailUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
+                if ((context.IsKey) && (context.CurrentDepth == targetDepth))
+                {
+                context.Read();
+                context.Read();
+              
+              if (context.TestExpression("StepConfig", targetDepth))
+              {
+                stepDetail.StepConfig = StepConfigUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
+              if (context.TestExpression("ExecutionStatusDetail", targetDepth))
+              {
+                stepDetail.ExecutionStatusDetail = StepExecutionStatusDetailUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
                 }
-                else if (context.IsEndElement && context.CurrentDepth < originalDepth)
+                else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
                 {
                     return stepDetail;
                 }
             }
-                        
-
+          
 
             return stepDetail;
         }
 
-        public StepDetail Unmarshall(JsonUnmarshallerContext context) 
-        {
-            return null;
-        }
-
         private static StepDetailUnmarshaller instance;
-
-        public static StepDetailUnmarshaller GetInstance() 
+        public static StepDetailUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new StepDetailUnmarshaller();
-
+            if (instance == null)
+                instance = new StepDetailUnmarshaller();
             return instance;
         }
     }
 }
-    
+  

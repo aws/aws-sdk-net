@@ -32,6 +32,8 @@
 
         public CreateStackResult Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             CreateStackResult createStackResult = new CreateStackResult();
           
             int originalDepth = context.CurrentDepth;

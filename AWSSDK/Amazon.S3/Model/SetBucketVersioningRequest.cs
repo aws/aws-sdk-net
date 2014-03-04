@@ -63,6 +63,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="bucketName">The value that BucketName is set to</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SetBucketVersioningRequest WithBucketName(string bucketName)
         {
             this.bucketName = bucketName;
@@ -132,6 +133,7 @@ namespace Amazon.S3.Model
         /// </remarks>
         /// <param name="config">The versioning configuration to apply</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SetBucketVersioningRequest WithVersioningConfig(S3BucketVersioningConfig config)
         {
             VersioningConfig = config;
@@ -180,6 +182,7 @@ namespace Amazon.S3.Model
         /// <param name="serial">Serial number of the authentication device</param>
         /// <param name="token">Token displayed on the authentication device</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SetBucketVersioningRequest WithMfaCodes(string serial, string token)
         {
             mfaCodes = new Tuple<string, string>(serial, token);

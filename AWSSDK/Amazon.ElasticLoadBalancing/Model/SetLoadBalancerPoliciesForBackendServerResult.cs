@@ -23,7 +23,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// <summary>
     /// <para> The output for the SetLoadBalancerPoliciesForBackendServer action. </para>
     /// </summary>
-    public class SetLoadBalancerPoliciesForBackendServerResult  
+    public partial class SetLoadBalancerPoliciesForBackendServerResult
     {
         
     }

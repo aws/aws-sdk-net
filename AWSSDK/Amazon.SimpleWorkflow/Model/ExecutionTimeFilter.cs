@@ -46,6 +46,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="oldestDate">The value to set for the OldestDate property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ExecutionTimeFilter WithOldestDate(DateTime oldestDate)
         {
             this.oldestDate = oldestDate;
@@ -74,6 +75,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="latestDate">The value to set for the LatestDate property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ExecutionTimeFilter WithLatestDate(DateTime latestDate)
         {
             this.latestDate = latestDate;

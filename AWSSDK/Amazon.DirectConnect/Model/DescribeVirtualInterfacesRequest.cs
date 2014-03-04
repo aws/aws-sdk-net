@@ -25,9 +25,12 @@ namespace Amazon.DirectConnect.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeVirtualInterfaces operation.
-    /// <para>Displays all virtual interfaces for an AWS account. Virtual interfaces deleted for less than 15 minutes are also returned. If virtual
-    /// interface ID is included then only a single virtual interface will be returned.</para> <para> A virtual interface (VLAN) transmits the
-    /// traffic between the Direct Connect location and the customer.</para>
+    /// <para>Displays all virtual interfaces for an AWS account. Virtual interfaces deleted fewer than 15 minutes before DescribeVirtualInterfaces
+    /// is called are also returned. If a connection ID is included then only virtual interfaces associated with this connection will be returned.
+    /// If a virtual interface ID is included then only a single virtual interface will be returned.</para> <para> A virtual interface (VLAN)
+    /// transmits the traffic between the Direct Connect location and the customer.</para> <para>If a connection ID is provided, only virtual
+    /// interfaces provisioned on the specified connection will be returned. If a virtual interface ID is provided, only this particular virtual
+    /// interface will be returned.</para>
     /// </summary>
     /// <seealso cref="Amazon.DirectConnect.AmazonDirectConnect.DescribeVirtualInterfaces"/>
     public class DescribeVirtualInterfacesRequest : AmazonWebServiceRequest
@@ -50,6 +53,7 @@ namespace Amazon.DirectConnect.Model
         /// </summary>
         /// <param name="connectionId">The value to set for the ConnectionId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeVirtualInterfacesRequest WithConnectionId(string connectionId)
         {
             this.connectionId = connectionId;
@@ -60,7 +64,7 @@ namespace Amazon.DirectConnect.Model
         // Check to see if ConnectionId property is set
         internal bool IsSetConnectionId()
         {
-            return this.connectionId != null;       
+            return this.connectionId != null;
         }
 
         /// <summary>
@@ -78,6 +82,7 @@ namespace Amazon.DirectConnect.Model
         /// </summary>
         /// <param name="virtualInterfaceId">The value to set for the VirtualInterfaceId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeVirtualInterfacesRequest WithVirtualInterfaceId(string virtualInterfaceId)
         {
             this.virtualInterfaceId = virtualInterfaceId;
@@ -88,7 +93,7 @@ namespace Amazon.DirectConnect.Model
         // Check to see if VirtualInterfaceId property is set
         internal bool IsSetVirtualInterfaceId()
         {
-            return this.virtualInterfaceId != null;       
+            return this.virtualInterfaceId != null;
         }
     }
 }

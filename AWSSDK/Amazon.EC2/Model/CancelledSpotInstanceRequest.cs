@@ -49,6 +49,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="spotInstanceRequestId">The ID of the Spot Instance Request.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CancelledSpotInstanceRequest WithSpotInstanceRequestId(string spotInstanceRequestId)
         {
             this.spotInstanceRequestIdField = spotInstanceRequestId;
@@ -80,6 +81,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="state">The State of the Spot Instance Request.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CancelledSpotInstanceRequest WithState(string state)
         {
             this.stateField = state;

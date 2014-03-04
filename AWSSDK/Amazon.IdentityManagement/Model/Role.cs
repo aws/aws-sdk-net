@@ -30,7 +30,7 @@ namespace Amazon.IdentityManagement.Model
     /// 
     /// </ul>
     /// </summary>
-    public class Role  
+    public partial class Role
     {
         
         private string path;
@@ -42,8 +42,8 @@ namespace Amazon.IdentityManagement.Model
 
         /// <summary>
         /// Path to the role. For more information about paths, see <a
-        /// href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM
-        /// Entities</a> in <i>Using AWS Identity and Access Management</i>.
+        /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in
+        /// <i>Using AWS Identity and Access Management</i>.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -70,6 +70,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="path">The value to set for the Path property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Role WithPath(string path)
         {
             this.path = path;
@@ -80,7 +81,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if Path property is set
         internal bool IsSetPath()
         {
-            return this.path != null;       
+            return this.path != null;
         }
 
         /// <summary>
@@ -111,6 +112,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="roleName">The value to set for the RoleName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Role WithRoleName(string roleName)
         {
             this.roleName = roleName;
@@ -121,13 +123,13 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if RoleName property is set
         internal bool IsSetRoleName()
         {
-            return this.roleName != null;       
+            return this.roleName != null;
         }
 
         /// <summary>
         /// The stable and unique string identifying the role. For more information about IDs, see <a
-        /// href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM
-        /// Entities</a> in <i>Using AWS Identity and Access Management</i>.
+        /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in
+        /// <i>Using AWS Identity and Access Management</i>.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -154,6 +156,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="roleId">The value to set for the RoleId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Role WithRoleId(string roleId)
         {
             this.roleId = roleId;
@@ -164,13 +167,13 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if RoleId property is set
         internal bool IsSetRoleId()
         {
-            return this.roleId != null;       
+            return this.roleId != null;
         }
 
         /// <summary>
         /// The Amazon Resource Name (ARN) specifying the role. For more information about ARNs and how to use them in policies, see <a
-        /// href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM
-        /// Entities</a> in <i>Using AWS Identity and Access Management</i>.
+        /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in
+        /// <i>Using AWS Identity and Access Management</i>.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -193,6 +196,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="arn">The value to set for the Arn property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Role WithArn(string arn)
         {
             this.arn = arn;
@@ -203,7 +207,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if Arn property is set
         internal bool IsSetArn()
         {
-            return this.arn != null;       
+            return this.arn != null;
         }
 
         /// <summary>
@@ -221,6 +225,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="createDate">The value to set for the CreateDate property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Role WithCreateDate(DateTime createDate)
         {
             this.createDate = createDate;
@@ -231,11 +236,12 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if CreateDate property is set
         internal bool IsSetCreateDate()
         {
-            return this.createDate.HasValue;       
+            return this.createDate.HasValue;
         }
 
         /// <summary>
-        /// The policy govering by who and under what conditions the role can be assumed.
+        /// The policy that grants an entity permission to assume the role. The returned policy is URL-encoded according to RFC 3986. For more
+        /// information about RFC 3986, go to <a href="http://www.faqs.org/rfcs/rfc3986.html">http://www.faqs.org/rfcs/rfc3986.html</a>.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -262,6 +268,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="assumeRolePolicyDocument">The value to set for the AssumeRolePolicyDocument property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Role WithAssumeRolePolicyDocument(string assumeRolePolicyDocument)
         {
             this.assumeRolePolicyDocument = assumeRolePolicyDocument;
@@ -272,7 +279,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if AssumeRolePolicyDocument property is set
         internal bool IsSetAssumeRolePolicyDocument()
         {
-            return this.assumeRolePolicyDocument != null;       
+            return this.assumeRolePolicyDocument != null;
         }
     }
 }

@@ -32,6 +32,8 @@
 
         public DeletePresetResult Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             DeletePresetResult deletePresetResult = new DeletePresetResult();
           
 

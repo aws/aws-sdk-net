@@ -25,8 +25,9 @@ namespace Amazon.AWSSupport.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeTrustedAdvisorChecks operation.
-    /// <para>This action enables you to get a list of the available Trusted Advisor checks. You must specify a language code. English ("en") and
-    /// Japanese ("jp") are currently supported. The response contains a list of TrustedAdvisorCheckDescription objects. </para>
+    /// <para>Returns information about all available Trusted Advisor checks, including name, ID, category, description, and metadata. You must
+    /// specify a language code; English ("en") and Japanese ("ja") are currently supported. The response contains a TrustedAdvisorCheckDescription
+    /// for each check.</para>
     /// </summary>
     /// <seealso cref="Amazon.AWSSupport.AmazonAWSSupport.DescribeTrustedAdvisorChecks"/>
     public class DescribeTrustedAdvisorChecksRequest : AmazonWebServiceRequest
@@ -34,8 +35,8 @@ namespace Amazon.AWSSupport.Model
         private string language;
 
         /// <summary>
-        /// Specifies the ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English and Japanese, for which
-        /// the codes are <i>en</i> and <i>ja</i>, respectively.
+        /// The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English ("en") and Japanese ("ja").
+        /// Language parameters must be passed explicitly for operations that take them.
         ///  
         /// </summary>
         public string Language
@@ -49,6 +50,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="language">The value to set for the Language property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeTrustedAdvisorChecksRequest WithLanguage(string language)
         {
             this.language = language;

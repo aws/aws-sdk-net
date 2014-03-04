@@ -21,16 +21,16 @@ using System.IO;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// <para> An endpoint completely specifies enough information to connect to a Cache Node. </para>
+    /// <para>Represents the information required for client programs to connect to a cache node.</para>
     /// </summary>
-    public class Endpoint
+    public partial class Endpoint
     {
         
         private string address;
         private int? port;
 
         /// <summary>
-        /// Specifies the DNS address of the Cache Node.
+        /// The DNS hostname of the cache node.
         ///  
         /// </summary>
         public string Address
@@ -44,6 +44,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="address">The value to set for the Address property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Endpoint WithAddress(string address)
         {
             this.address = address;
@@ -58,7 +59,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// Specifies the port that the cache engine is listening on.
+        /// The port number that the cache engine is listening on.
         ///  
         /// </summary>
         public int Port
@@ -72,6 +73,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="port">The value to set for the Port property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Endpoint WithPort(int port)
         {
             this.port = port;

@@ -39,6 +39,10 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
             {
                 request.Parameters.Add("ApplicationName", StringUtils.FromString(deleteApplicationRequest.ApplicationName));
             }
+            if (deleteApplicationRequest != null && deleteApplicationRequest.IsSetTerminateEnvByForce())
+            {
+                request.Parameters.Add("TerminateEnvByForce", StringUtils.FromBool(deleteApplicationRequest.TerminateEnvByForce));
+            }
 
             return request;
         }

@@ -23,7 +23,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// <summary>
     /// <para> The output for the DescribeInstanceHealth action. </para>
     /// </summary>
-    public class DescribeInstanceHealthResult  
+    public partial class DescribeInstanceHealthResult
     {
         
         private List<InstanceState> instanceStates = new List<InstanceState>();
@@ -42,6 +42,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="instanceStates">The values to add to the InstanceStates collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeInstanceHealthResult WithInstanceStates(params InstanceState[] instanceStates)
         {
             foreach (InstanceState element in instanceStates)
@@ -51,12 +52,13 @@ namespace Amazon.ElasticLoadBalancing.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the InstanceStates collection
         /// </summary>
         /// <param name="instanceStates">The values to add to the InstanceStates collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeInstanceHealthResult WithInstanceStates(IEnumerable<InstanceState> instanceStates)
         {
             foreach (InstanceState element in instanceStates)
@@ -70,7 +72,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if InstanceStates property is set
         internal bool IsSetInstanceStates()
         {
-            return this.instanceStates.Count > 0;       
+            return this.instanceStates.Count > 0;
         }
     }
 }

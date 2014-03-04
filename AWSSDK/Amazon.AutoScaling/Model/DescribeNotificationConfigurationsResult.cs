@@ -23,7 +23,7 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// <para>The output of the DescribeNotificationConfigurations action.</para>
     /// </summary>
-    public class DescribeNotificationConfigurationsResult  
+    public partial class DescribeNotificationConfigurationsResult
     {
         
         private List<NotificationConfiguration> notificationConfigurations = new List<NotificationConfiguration>();
@@ -43,6 +43,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="notificationConfigurations">The values to add to the NotificationConfigurations collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeNotificationConfigurationsResult WithNotificationConfigurations(params NotificationConfiguration[] notificationConfigurations)
         {
             foreach (NotificationConfiguration element in notificationConfigurations)
@@ -52,12 +53,13 @@ namespace Amazon.AutoScaling.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the NotificationConfigurations collection
         /// </summary>
         /// <param name="notificationConfigurations">The values to add to the NotificationConfigurations collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeNotificationConfigurationsResult WithNotificationConfigurations(IEnumerable<NotificationConfiguration> notificationConfigurations)
         {
             foreach (NotificationConfiguration element in notificationConfigurations)
@@ -71,7 +73,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if NotificationConfigurations property is set
         internal bool IsSetNotificationConfigurations()
         {
-            return this.notificationConfigurations.Count > 0;       
+            return this.notificationConfigurations.Count > 0;
         }
 
         /// <summary>
@@ -98,6 +100,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="nextToken">The value to set for the NextToken property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeNotificationConfigurationsResult WithNextToken(string nextToken)
         {
             this.nextToken = nextToken;
@@ -108,7 +111,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if NextToken property is set
         internal bool IsSetNextToken()
         {
-            return this.nextToken != null;       
+            return this.nextToken != null;
         }
     }
 }

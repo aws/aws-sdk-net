@@ -29,9 +29,9 @@ namespace Amazon.DynamoDBv2.Model
     /// That is, you can have two tables with same name if you create the tables in different regions.</para> <para> <i>CreateTable</i> is an
     /// asynchronous operation. Upon receiving a <i>CreateTable</i> request, Amazon DynamoDB immediately returns a response with a
     /// <i>TableStatus</i> of <c>CREATING</c> . After the table is created, Amazon DynamoDB sets the <i>TableStatus</i> to <c>ACTIVE</c> . You can
-    /// perform read and write operations only on an <c>ACTIVE</c> table. </para> <para>If you want to create multiple tables with local secondary
-    /// indexes on them, you must create them sequentially. Only one table with local secondary indexes can be in the <c>CREATING</c> state at any
-    /// given time.</para> <para>You can use the <i>DescribeTable</i> API to check the table status.</para>
+    /// perform read and write operations only on an <c>ACTIVE</c> table. </para> <para>If you want to create multiple tables with secondary indexes
+    /// on them, you must create them sequentially. Only one table with secondary indexes can be in the <c>CREATING</c> state at any given
+    /// time.</para> <para>You can use the <i>DescribeTable</i> API to check the table status.</para>
     /// </summary>
     /// <seealso cref="Amazon.DynamoDBv2.AmazonDynamoDB.CreateTable"/>
     public class CreateTableRequest : AmazonWebServiceRequest
@@ -40,6 +40,7 @@ namespace Amazon.DynamoDBv2.Model
         private string tableName;
         private List<KeySchemaElement> keySchema = new List<KeySchemaElement>();
         private List<LocalSecondaryIndex> localSecondaryIndexes = new List<LocalSecondaryIndex>();
+        private List<GlobalSecondaryIndex> globalSecondaryIndexes = new List<GlobalSecondaryIndex>();
         private ProvisionedThroughput provisionedThroughput;
 
         /// <summary>
@@ -56,6 +57,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="attributeDefinitions">The values to add to the AttributeDefinitions collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateTableRequest WithAttributeDefinitions(params AttributeDefinition[] attributeDefinitions)
         {
             foreach (AttributeDefinition element in attributeDefinitions)
@@ -71,6 +73,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="attributeDefinitions">The values to add to the AttributeDefinitions collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateTableRequest WithAttributeDefinitions(IEnumerable<AttributeDefinition> attributeDefinitions)
         {
             foreach (AttributeDefinition element in attributeDefinitions)
@@ -115,6 +118,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="tableName">The value to set for the TableName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateTableRequest WithTableName(string tableName)
         {
             this.tableName = tableName;
@@ -129,16 +133,16 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// Specifies the attributes that make up the primary key for the table. The attributes in <i>KeySchema</i> must also be defined in the
-        /// <i>AttributeDefinitions</i> array. For more information, see <a
-        /// href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data Model</a> in the <i>Amazon DynamoDB Developer
-        /// Guide</i>. Each <i>KeySchemaElement</i> in the array is composed of: <ul> <li> <i>AttributeName</i> - The name of this key attribute. </li>
-        /// <li> <i>KeyType</i> - Determines whether the key attribute is <c>HASH</c> or <c>RANGE</c>. </li> </ul> For a primary key that consists of a
-        /// hash attribute, you must specify exactly one element with a <i>KeyType</i> of <c>HASH</c>. For a primary key that consists of hash and range
+        /// Specifies the attributes that make up the primary key for a table or an index. The attributes in <i>KeySchema</i> must also be defined in
+        /// the <i>AttributeDefinitions</i> array. For more information, see <a
+        /// href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data Model</a> in the Amazon DynamoDB Developer Guide.
+        /// Each <i>KeySchemaElement</i> in the array is composed of: <ul> <li> <i>AttributeName</i> - The name of this key attribute. </li> <li>
+        /// <i>KeyType</i> - Determines whether the key attribute is <c>HASH</c> or <c>RANGE</c>. </li> </ul> For a primary key that consists of a hash
+        /// attribute, you must specify exactly one element with a <i>KeyType</i> of <c>HASH</c>. For a primary key that consists of hash and range
         /// attributes, you must specify exactly two elements, in this order: The first element must have a <i>KeyType</i> of <c>HASH</c>, and the
         /// second element must have a <i>KeyType</i> of <c>RANGE</c>. For more information, see <a
         /// href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDDTables.html#WorkingWithDDTables.primary.key">Specifying
-        /// the Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+        /// the Primary Key</a> in the Amazon DynamoDB Developer Guide.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -160,6 +164,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="keySchema">The values to add to the KeySchema collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateTableRequest WithKeySchema(params KeySchemaElement[] keySchema)
         {
             foreach (KeySchemaElement element in keySchema)
@@ -175,6 +180,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="keySchema">The values to add to the KeySchema collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateTableRequest WithKeySchema(IEnumerable<KeySchemaElement> keySchema)
         {
             foreach (KeySchemaElement element in keySchema)
@@ -192,17 +198,17 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// One or more secondary indexes (the maximum is five) to be created on the table. Each index is scoped to a given hash key value. There is a
-        /// 10 gigabyte size limit per hash key; otherwise, the size of a local secondary index is unconstrained. Each secondary index in the array
-        /// includes the following: <ul> <li> <i>IndexName</i> - The name of the secondary index. Must be unique only for this table. </li> <li>
-        /// <i>KeySchema</i> - Specifies the key schema for the index. The key schema must begin with the same hash key attribute as the table. </li>
-        /// <li> <i>Projection</i> - Specifies attributes that are copied (projected) from the table into the index. These are in addition to the
-        /// primary key attributes and index key attributes, which are automatically projected. Each attribute specification is composed of: <ul> <li>
-        /// <i>ProjectionType</i> - One of the following: <ul> <li> <c>KEYS_ONLY</c> - Only the index and primary keys are projected into the index.
-        /// </li> <li> <c>INCLUDE</c> - Only the specified table attributes are projected into the index. The list of projected attributes are in
-        /// <i>NonKeyAttributes</i>. </li> <li> <c>ALL</c> - All of the table attributes are projected into the index. </li> </ul> </li> <li>
-        /// <i>NonKeyAttributes</i> - A list of one or more non-key attribute names that are projected into the index. The total count of attributes
-        /// specified in <i>NonKeyAttributes</i>, summed across all of the local secondary indexes, must not exceed 20. If you project the same
+        /// One or more local secondary indexes (the maximum is five) to be created on the table. Each index is scoped to a given hash key value. There
+        /// is a 10 gigabyte size limit per hash key; otherwise, the size of a local secondary index is unconstrained. Each local secondary index in the
+        /// array includes the following: <ul> <li> <i>IndexName</i> - The name of the local secondary index. Must be unique only for this table. </li>
+        /// <li> <i>KeySchema</i> - Specifies the key schema for the local secondary index. The key schema must begin with the same hash key attribute
+        /// as the table. </li> <li> <i>Projection</i> - Specifies attributes that are copied (projected) from the table into the index. These are in
+        /// addition to the primary key attributes and index key attributes, which are automatically projected. Each attribute specification is composed
+        /// of: <ul> <li> <i>ProjectionType</i> - One of the following: <ul> <li> <c>KEYS_ONLY</c> - Only the index and primary keys are projected into
+        /// the index. </li> <li> <c>INCLUDE</c> - Only the specified table attributes are projected into the index. The list of projected attributes
+        /// are in <i>NonKeyAttributes</i>. </li> <li> <c>ALL</c> - All of the table attributes are projected into the index. </li> </ul> </li> <li>
+        /// <i>NonKeyAttributes</i> - A list of one or more non-key attribute names that are projected into the secondary index. The total count of
+        /// attributes specified in <i>NonKeyAttributes</i>, summed across all of the secondary indexes, must not exceed 20. If you project the same
         /// attribute into two different indexes, this counts as two distinct attributes when determining the total. </li> </ul> </li> </ul>
         ///  
         /// </summary>
@@ -216,6 +222,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="localSecondaryIndexes">The values to add to the LocalSecondaryIndexes collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateTableRequest WithLocalSecondaryIndexes(params LocalSecondaryIndex[] localSecondaryIndexes)
         {
             foreach (LocalSecondaryIndex element in localSecondaryIndexes)
@@ -231,6 +238,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="localSecondaryIndexes">The values to add to the LocalSecondaryIndexes collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateTableRequest WithLocalSecondaryIndexes(IEnumerable<LocalSecondaryIndex> localSecondaryIndexes)
         {
             foreach (LocalSecondaryIndex element in localSecondaryIndexes)
@@ -248,9 +256,67 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// The provisioned throughput settings for the specified table. The settings can be modified using the <i>UpdateTable</i> operation. For
-        /// current minimum and maximum provisioned throughput values, see <a
-        /// href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+        /// One or more global secondary indexes (the maximum is five) to be created on the table. Each global secondary index in the array includes the
+        /// following: <ul> <li> <i>IndexName</i> - The name of the global secondary index. Must be unique only for this table. </li> <li>
+        /// <i>KeySchema</i> - Specifies the key schema for the global secondary index. </li> <li> <i>Projection</i> - Specifies attributes that are
+        /// copied (projected) from the table into the index. These are in addition to the primary key attributes and index key attributes, which are
+        /// automatically projected. Each attribute specification is composed of: <ul> <li> <i>ProjectionType</i> - One of the following: <ul> <li>
+        /// <c>KEYS_ONLY</c> - Only the index and primary keys are projected into the index. </li> <li> <c>INCLUDE</c> - Only the specified table
+        /// attributes are projected into the index. The list of projected attributes are in <i>NonKeyAttributes</i>. </li> <li> <c>ALL</c> - All of the
+        /// table attributes are projected into the index. </li> </ul> </li> <li> <i>NonKeyAttributes</i> - A list of one or more non-key attribute
+        /// names that are projected into the secondary index. The total count of attributes specified in <i>NonKeyAttributes</i>, summed across all of
+        /// the secondary indexes, must not exceed 20. If you project the same attribute into two different indexes, this counts as two distinct
+        /// attributes when determining the total. </li> </ul> </li> <li> <i>ProvisionedThroughput</i> - The provisioned throughput settings for the
+        /// global secondary index, consisting of read and write capacity units. </li> </ul>
+        ///  
+        /// </summary>
+        public List<GlobalSecondaryIndex> GlobalSecondaryIndexes
+        {
+            get { return this.globalSecondaryIndexes; }
+            set { this.globalSecondaryIndexes = value; }
+        }
+        /// <summary>
+        /// Adds elements to the GlobalSecondaryIndexes collection
+        /// </summary>
+        /// <param name="globalSecondaryIndexes">The values to add to the GlobalSecondaryIndexes collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public CreateTableRequest WithGlobalSecondaryIndexes(params GlobalSecondaryIndex[] globalSecondaryIndexes)
+        {
+            foreach (GlobalSecondaryIndex element in globalSecondaryIndexes)
+            {
+                this.globalSecondaryIndexes.Add(element);
+            }
+
+            return this;
+        }
+
+        /// <summary>
+        /// Adds elements to the GlobalSecondaryIndexes collection
+        /// </summary>
+        /// <param name="globalSecondaryIndexes">The values to add to the GlobalSecondaryIndexes collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public CreateTableRequest WithGlobalSecondaryIndexes(IEnumerable<GlobalSecondaryIndex> globalSecondaryIndexes)
+        {
+            foreach (GlobalSecondaryIndex element in globalSecondaryIndexes)
+            {
+                this.globalSecondaryIndexes.Add(element);
+            }
+
+            return this;
+        }
+
+        // Check to see if GlobalSecondaryIndexes property is set
+        internal bool IsSetGlobalSecondaryIndexes()
+        {
+            return this.globalSecondaryIndexes.Count > 0;
+        }
+
+        /// <summary>
+        /// Represents the provisioned throughput settings for a specified table or index. The settings can be modified using the <i>UpdateTable</i>
+        /// operation. For current minimum and maximum provisioned throughput values, see <a
+        /// href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the Amazon DynamoDB Developer Guide.
         ///  
         /// </summary>
         public ProvisionedThroughput ProvisionedThroughput
@@ -264,6 +330,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="provisionedThroughput">The value to set for the ProvisionedThroughput property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateTableRequest WithProvisionedThroughput(ProvisionedThroughput provisionedThroughput)
         {
             this.provisionedThroughput = provisionedThroughput;

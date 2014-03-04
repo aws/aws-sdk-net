@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
-    /// <para>Represents attributes that are copied (projected) from the table into the index. These are in addition to the primary key attributes
+    /// <para>Represents attributes that are copied (projected) from the table into an index. These are in addition to the primary key attributes
     /// and index key attributes, which are automatically projected.</para>
     /// </summary>
     public class Projection
@@ -31,10 +31,9 @@ namespace Amazon.DynamoDBv2.Model
         private List<string> nonKeyAttributes = new List<string>();
 
         /// <summary>
-        /// Represents the set of attributes that are projected into the index: <ul> <li> <c>KEYS_ONLY</c> - Only the index and primary keys are
-        /// projected into the index. </li> <li> <c>INCLUDE</c> - Only the specified table attributes are projected into the index. The list of
-        /// projected attributes are in <i>NonKeyAttributes</i>. </li> <li> <c>ALL</c> - All of the table attributes are projected into the index. </li>
-        /// </ul>
+        /// The set of attributes that are projected into the index: <ul> <li> <c>KEYS_ONLY</c> - Only the index and primary keys are projected into the
+        /// index. </li> <li> <c>INCLUDE</c> - Only the specified table attributes are projected into the index. The list of projected attributes are in
+        /// <i>NonKeyAttributes</i>. </li> <li> <c>ALL</c> - All of the table attributes are projected into the index. </li> </ul>
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -57,6 +56,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="projectionType">The value to set for the ProjectionType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Projection WithProjectionType(string projectionType)
         {
             this.projectionType = projectionType;
@@ -71,8 +71,8 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// Represents the non-key attribute names which will be projected into the index. The total count of attributes specified in
-        /// <i>NonKeyAttributes</i>, summed across all of the local secondary indexes, must not exceed 20. If you project the same attribute into two
+        /// Represents the non-key attribute names which will be projected into the index. For local secondary indexes, the total count of
+        /// <i>NonKeyAttributes</i> summed across all of the local secondary indexes, must not exceed 20. If you project the same attribute into two
         /// different indexes, this counts as two distinct attributes when determining the total.
         ///  
         /// <para>
@@ -95,6 +95,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="nonKeyAttributes">The values to add to the NonKeyAttributes collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Projection WithNonKeyAttributes(params string[] nonKeyAttributes)
         {
             foreach (string element in nonKeyAttributes)
@@ -110,6 +111,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="nonKeyAttributes">The values to add to the NonKeyAttributes collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Projection WithNonKeyAttributes(IEnumerable<string> nonKeyAttributes)
         {
             foreach (string element in nonKeyAttributes)

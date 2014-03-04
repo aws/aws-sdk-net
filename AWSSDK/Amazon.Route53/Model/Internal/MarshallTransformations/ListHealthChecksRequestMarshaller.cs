@@ -42,7 +42,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
 
             request.HttpMethod = "GET";
               
-            string uriResourcePath = "/2012-12-12/healthcheck?marker={Marker}&maxitems={MaxItems}"; 
+            string uriResourcePath = "/2013-04-01/healthcheck?marker={Marker}&maxitems={MaxItems}"; 
             uriResourcePath = uriResourcePath.Replace("{Marker}", listHealthChecksRequest.Marker ?? "" ); 
             uriResourcePath = uriResourcePath.Replace("{MaxItems}", listHealthChecksRequest.MaxItems ?? "" ); 
             

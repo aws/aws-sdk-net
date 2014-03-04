@@ -23,7 +23,7 @@ namespace Amazon.ElasticBeanstalk.Model
     /// <summary>
     /// <para> Result message wrapping a single description of an application version. </para>
     /// </summary>
-    public class UpdateApplicationVersionResult  
+    public partial class UpdateApplicationVersionResult
     {
         
         private ApplicationVersionDescription applicationVersion;
@@ -43,6 +43,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="applicationVersion">The value to set for the ApplicationVersion property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateApplicationVersionResult WithApplicationVersion(ApplicationVersionDescription applicationVersion)
         {
             this.applicationVersion = applicationVersion;
@@ -53,7 +54,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if ApplicationVersion property is set
         internal bool IsSetApplicationVersion()
         {
-            return this.applicationVersion != null;       
+            return this.applicationVersion != null;
         }
     }
 }

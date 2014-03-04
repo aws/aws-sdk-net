@@ -30,14 +30,14 @@ namespace Amazon.RDS.Model
     /// 
     /// </ul>
     /// </summary>
-    public class DBSecurityGroupMembership
+    public partial class DBSecurityGroupMembership
     {
         
         private string dBSecurityGroupName;
         private string status;
 
         /// <summary>
-        /// The name of the DB Security Group.
+        /// The name of the DB security group.
         ///  
         /// </summary>
         public string DBSecurityGroupName
@@ -51,6 +51,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="dBSecurityGroupName">The value to set for the DBSecurityGroupName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DBSecurityGroupMembership WithDBSecurityGroupName(string dBSecurityGroupName)
         {
             this.dBSecurityGroupName = dBSecurityGroupName;
@@ -65,7 +66,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The status of the DB Security Group.
+        /// The status of the DB security group.
         ///  
         /// </summary>
         public string Status
@@ -79,6 +80,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="status">The value to set for the Status property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DBSecurityGroupMembership WithStatus(string status)
         {
             this.status = status;

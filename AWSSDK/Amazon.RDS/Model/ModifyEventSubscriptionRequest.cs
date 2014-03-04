@@ -27,8 +27,9 @@ namespace Amazon.RDS.Model
     /// Container for the parameters to the ModifyEventSubscription operation.
     /// <para>Modifies an existing RDS event notification subscription. Note that you cannot modify the source identifiers using this call; to
     /// change source identifiers for a subscription, use the AddSourceIdentifierToSubscription and RemoveSourceIdentifierFromSubscription
-    /// calls.</para> <para>You can see a list of the event categories for a given SourceType in the Events topic in the Amazon RDS User Guide or by
-    /// using the <b>DescribeEventCategories</b> action.</para>
+    /// calls.</para> <para>You can see a list of the event categories for a given SourceType in the <a
+    /// href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html" >Events</a> topic in the Amazon RDS User Guide or by using the
+    /// <b>DescribeEventCategories</b> action.</para>
     /// </summary>
     /// <seealso cref="Amazon.RDS.AmazonRDS.ModifyEventSubscription"/>
     public class ModifyEventSubscriptionRequest : AmazonWebServiceRequest
@@ -54,6 +55,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="subscriptionName">The value to set for the SubscriptionName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyEventSubscriptionRequest WithSubscriptionName(string subscriptionName)
         {
             this.subscriptionName = subscriptionName;
@@ -83,6 +85,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="snsTopicArn">The value to set for the SnsTopicArn property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyEventSubscriptionRequest WithSnsTopicArn(string snsTopicArn)
         {
             this.snsTopicArn = snsTopicArn;
@@ -113,6 +116,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="sourceType">The value to set for the SourceType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyEventSubscriptionRequest WithSourceType(string sourceType)
         {
             this.sourceType = sourceType;
@@ -142,6 +146,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="eventCategories">The values to add to the EventCategories collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyEventSubscriptionRequest WithEventCategories(params string[] eventCategories)
         {
             foreach (string element in eventCategories)
@@ -157,6 +162,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="eventCategories">The values to add to the EventCategories collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyEventSubscriptionRequest WithEventCategories(IEnumerable<string> eventCategories)
         {
             foreach (string element in eventCategories)
@@ -188,6 +194,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="enabled">The value to set for the Enabled property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyEventSubscriptionRequest WithEnabled(bool enabled)
         {
             this.enabled = enabled;

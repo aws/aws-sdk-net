@@ -30,7 +30,7 @@ namespace Amazon.SimpleWorkflow
         public AmazonSimpleWorkflowConfig()
         {
             this.ServiceURL = "https://swf.us-east-1.amazonaws.com";
-            
+            this.AuthenticationServiceName = "swf";
         }
 
         /// <summary>

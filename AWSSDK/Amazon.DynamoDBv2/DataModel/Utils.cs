@@ -14,6 +14,7 @@
  */
 
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 using System.Text;
@@ -84,18 +85,36 @@ namespace Amazon.DynamoDBv2.DataModel
         }
         public static DynamoDBAttribute GetAttribute(MemberInfo targetMemberInfo)
         {
-            if (targetMemberInfo == null) throw new ArgumentNullException("targetMemberInfo");
-            object[] attributes = targetMemberInfo.GetCustomAttributes(typeof(DynamoDBAttribute), true);
+            object[] attributes = GetAttributeObjects(targetMemberInfo);
             return GetSingleDDBAttribute(attributes);
         }
+        public static DynamoDBAttribute[] GetAttributes(MemberInfo targetMemberInfo)
+        {
+            object[] attObjects = GetAttributeObjects(targetMemberInfo) ?? new object[0];
+            var attributes = new List<DynamoDBAttribute>();
+            foreach (var attObj in attObjects)
+            {
+                var attribute = attObj as DynamoDBAttribute;
+                if (attribute != null)
+                    attributes.Add(attribute);
+            }
+            return attributes.ToArray();
+        }
 
-        public static DynamoDBAttribute GetSingleDDBAttribute(object[] attributes)
+        private static DynamoDBAttribute GetSingleDDBAttribute(object[] attributes)
         {
             if (attributes.Length == 0)
                 return null;
             if (attributes.Length == 1)
                 return (attributes[0] as DynamoDBAttribute);
             throw new InvalidOperationException("Cannot have multiple DynamoDBAttributes on a single member");
+        }
+
+        private static object[] GetAttributeObjects(MemberInfo targetMemberInfo)
+        {
+            if (targetMemberInfo == null) throw new ArgumentNullException("targetMemberInfo");
+            object[] attributes = targetMemberInfo.GetCustomAttributes(typeof(DynamoDBAttribute), true);
+            return attributes;
         }
 
         #endregion

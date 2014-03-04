@@ -30,20 +30,18 @@ namespace Amazon.StorageGateway.Model
 
         /// <summary>
         /// Gets and sets the DescribeCacheResult property.
-        /// A JSON object containing the following fields: DescribeCacheOutput$CacheAllocatedInBytes DescribeCacheOutput$CacheDirtyPercentage
-        /// DescribeCacheOutput$CacheHitPercentage DescribeCacheOutput$CacheMissPercentage DescribeCacheOutput$CacheUsedPercentage
-        /// DescribeCacheOutput$DiskIds DescribeCacheOutput$GatewayARN
+        /// 
         /// </summary>
         public DescribeCacheResult DescribeCacheResult
         {
-            get 
+            get
             {
                 if(this.describeCacheResult == null)
                 {
                     this.describeCacheResult = new DescribeCacheResult();
                 }
 
-                return this.describeCacheResult; 
+                return this.describeCacheResult;
             }
             set { this.describeCacheResult = value; }
         }

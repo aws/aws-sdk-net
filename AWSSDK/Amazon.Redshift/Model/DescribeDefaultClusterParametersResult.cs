@@ -23,7 +23,7 @@ namespace Amazon.Redshift.Model
     /// <summary>
     /// The results from the DescribeDefaultClusterParameters action.
     /// </summary>
-    public class DescribeDefaultClusterParametersResult
+    public partial class DescribeDefaultClusterParametersResult
     {
         private DefaultClusterParameters defaultClusterParametersValue;
 

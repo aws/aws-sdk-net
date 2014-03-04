@@ -30,7 +30,7 @@ namespace Amazon.ElasticTranscoder.Model
 
         /// <summary>
         /// Gets and sets the TestRoleResult property.
-        /// 
+        /// The TestRoleResponse structure.
         /// </summary>
         public TestRoleResult TestRoleResult
         {

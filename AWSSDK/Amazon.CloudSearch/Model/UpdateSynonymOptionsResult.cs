@@ -23,7 +23,7 @@ namespace Amazon.CloudSearch.Model
     /// <summary>
     /// <para>A response message that contains the status of updated synonym options.</para>
     /// </summary>
-    public class UpdateSynonymOptionsResult  
+    public partial class UpdateSynonymOptionsResult
     {
         
         private SynonymOptionsStatus synonyms;
@@ -43,6 +43,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="synonyms">The value to set for the Synonyms property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateSynonymOptionsResult WithSynonyms(SynonymOptionsStatus synonyms)
         {
             this.synonyms = synonyms;
@@ -53,7 +54,7 @@ namespace Amazon.CloudSearch.Model
         // Check to see if Synonyms property is set
         internal bool IsSetSynonyms()
         {
-            return this.synonyms != null;       
+            return this.synonyms != null;
         }
     }
 }

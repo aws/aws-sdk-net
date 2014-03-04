@@ -26,7 +26,7 @@ namespace Amazon.SimpleEmail.Model
     /// <summary>
     /// Container for the parameters to the ListIdentities operation.
     /// <para>Returns a list containing all of the identities (email addresses and domains) for a specific AWS Account, regardless of verification
-    /// status.</para>
+    /// status.</para> <para>This action is throttled at one request per second.</para>
     /// </summary>
     /// <seealso cref="Amazon.SimpleEmail.AmazonSimpleEmailService.ListIdentities"/>
     public class ListIdentitiesRequest : AmazonWebServiceRequest
@@ -60,6 +60,7 @@ namespace Amazon.SimpleEmail.Model
         /// </summary>
         /// <param name="identityType">The value to set for the IdentityType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListIdentitiesRequest WithIdentityType(string identityType)
         {
             this.identityType = identityType;
@@ -70,7 +71,7 @@ namespace Amazon.SimpleEmail.Model
         // Check to see if IdentityType property is set
         internal bool IsSetIdentityType()
         {
-            return this.identityType != null;       
+            return this.identityType != null;
         }
 
         /// <summary>
@@ -88,6 +89,7 @@ namespace Amazon.SimpleEmail.Model
         /// </summary>
         /// <param name="nextToken">The value to set for the NextToken property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListIdentitiesRequest WithNextToken(string nextToken)
         {
             this.nextToken = nextToken;
@@ -98,7 +100,7 @@ namespace Amazon.SimpleEmail.Model
         // Check to see if NextToken property is set
         internal bool IsSetNextToken()
         {
-            return this.nextToken != null;       
+            return this.nextToken != null;
         }
 
         /// <summary>
@@ -116,6 +118,7 @@ namespace Amazon.SimpleEmail.Model
         /// </summary>
         /// <param name="maxItems">The value to set for the MaxItems property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListIdentitiesRequest WithMaxItems(int maxItems)
         {
             this.maxItems = maxItems;
@@ -126,7 +129,7 @@ namespace Amazon.SimpleEmail.Model
         // Check to see if MaxItems property is set
         internal bool IsSetMaxItems()
         {
-            return this.maxItems.HasValue;       
+            return this.maxItems.HasValue;
         }
     }
 }

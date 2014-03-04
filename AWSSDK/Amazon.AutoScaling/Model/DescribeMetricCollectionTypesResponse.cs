@@ -34,14 +34,14 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         public DescribeMetricCollectionTypesResult DescribeMetricCollectionTypesResult
         {
-            get 
+            get
             {
                 if(this.describeMetricCollectionTypesResult == null)
                 {
                     this.describeMetricCollectionTypesResult = new DescribeMetricCollectionTypesResult();
                 }
 
-                return this.describeMetricCollectionTypesResult; 
+                return this.describeMetricCollectionTypesResult;
             }
             set { this.describeMetricCollectionTypesResult = value; }
         }

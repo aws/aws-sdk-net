@@ -25,8 +25,9 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateAccountAlias operation.
-    /// <para>This action creates an alias for your AWS account. For information about using an AWS account alias, see Using an Alias for Your AWS
-    /// Account ID in <i>Using AWS Identity and Access Management</i> .</para>
+    /// <para>This action creates an alias for your AWS account. For information about using an AWS account alias, see <a
+    /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html" >Using an Alias for Your AWS Account ID</a> in <i>Using AWS
+    /// Identity and Access Management</i> .</para>
     /// </summary>
     /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.CreateAccountAlias"/>
     public class CreateAccountAliasRequest : AmazonWebServiceRequest
@@ -61,6 +62,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="accountAlias">The value to set for the AccountAlias property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateAccountAliasRequest WithAccountAlias(string accountAlias)
         {
             this.accountAlias = accountAlias;
@@ -71,7 +73,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if AccountAlias property is set
         internal bool IsSetAccountAlias()
         {
-            return this.accountAlias != null;       
+            return this.accountAlias != null;
         }
     }
 }

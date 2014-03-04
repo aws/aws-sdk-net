@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// <para> A customer origin. </para>
     /// </summary>
-    public class CustomOriginConfig  
+    public partial class CustomOriginConfig
     {
         
         private int? hTTPPort;
@@ -45,6 +45,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="hTTPPort">The value to set for the HTTPPort property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CustomOriginConfig WithHTTPPort(int hTTPPort)
         {
             this.hTTPPort = hTTPPort;
@@ -55,7 +56,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if HTTPPort property is set
         internal bool IsSetHTTPPort()
         {
-            return this.hTTPPort.HasValue;       
+            return this.hTTPPort.HasValue;
         }
 
         /// <summary>
@@ -73,6 +74,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="hTTPSPort">The value to set for the HTTPSPort property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CustomOriginConfig WithHTTPSPort(int hTTPSPort)
         {
             this.hTTPSPort = hTTPSPort;
@@ -83,7 +85,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if HTTPSPort property is set
         internal bool IsSetHTTPSPort()
         {
-            return this.hTTPSPort.HasValue;       
+            return this.hTTPSPort.HasValue;
         }
 
         /// <summary>
@@ -110,6 +112,7 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         /// <param name="originProtocolPolicy">The value to set for the OriginProtocolPolicy property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CustomOriginConfig WithOriginProtocolPolicy(string originProtocolPolicy)
         {
             this.originProtocolPolicy = originProtocolPolicy;
@@ -120,7 +123,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if OriginProtocolPolicy property is set
         internal bool IsSetOriginProtocolPolicy()
         {
-            return this.originProtocolPolicy != null;       
+            return this.originProtocolPolicy != null;
         }
     }
 }

@@ -25,14 +25,16 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteClusterSnapshot operation.
-    /// <para> Deletes the specified manual snapshot. The snapshot must be in the "available" state. </para> <para> Unlike automated snapshots,
-    /// manual snapshots are retained even after you delete your cluster. Amazon Redshift does not delete your manual snapshots. You must delete
-    /// manual snapshot explicitly to avoid getting charged. </para>
+    /// <para> Deletes the specified manual snapshot. The snapshot must be in the "available" state, with no other users authorized to access the
+    /// snapshot. </para> <para> Unlike automated snapshots, manual snapshots are retained even after you delete your cluster. Amazon Redshift does
+    /// not delete your manual snapshots. You must delete manual snapshot explicitly to avoid getting charged. If other accounts are authorized to
+    /// access the snapshot, you must revoke all of the authorizations before you can delete the snapshot. </para>
     /// </summary>
     /// <seealso cref="Amazon.Redshift.AmazonRedshift.DeleteClusterSnapshot"/>
     public class DeleteClusterSnapshotRequest : AmazonWebServiceRequest
     {
         private string snapshotIdentifier;
+        private string snapshotClusterIdentifier;
 
         /// <summary>
         /// The unique identifier of the manual snapshot to be deleted. Constraints: Must be the name of an existing snapshot that is in the
@@ -50,6 +52,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="snapshotIdentifier">The value to set for the SnapshotIdentifier property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeleteClusterSnapshotRequest WithSnapshotIdentifier(string snapshotIdentifier)
         {
             this.snapshotIdentifier = snapshotIdentifier;
@@ -61,6 +64,36 @@ namespace Amazon.Redshift.Model
         internal bool IsSetSnapshotIdentifier()
         {
             return this.snapshotIdentifier != null;
+        }
+
+        /// <summary>
+        /// The unique identifier of the cluster the snapshot was created from. This parameter is required if your IAM user has a policy containing a
+        /// snapshot resource element that specifies anything other than * for the cluster name. Constraints: Must be the name of valid cluster.
+        ///  
+        /// </summary>
+        public string SnapshotClusterIdentifier
+        {
+            get { return this.snapshotClusterIdentifier; }
+            set { this.snapshotClusterIdentifier = value; }
+        }
+
+        /// <summary>
+        /// Sets the SnapshotClusterIdentifier property
+        /// </summary>
+        /// <param name="snapshotClusterIdentifier">The value to set for the SnapshotClusterIdentifier property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public DeleteClusterSnapshotRequest WithSnapshotClusterIdentifier(string snapshotClusterIdentifier)
+        {
+            this.snapshotClusterIdentifier = snapshotClusterIdentifier;
+            return this;
+        }
+            
+
+        // Check to see if SnapshotClusterIdentifier property is set
+        internal bool IsSetSnapshotClusterIdentifier()
+        {
+            return this.snapshotClusterIdentifier != null;
         }
     }
 }

@@ -24,7 +24,7 @@ namespace Amazon.SimpleEmail.Model
     /// <para>Represents the body of the message. You can specify text, HTML, or both. If you use both, then the message should display correctly in
     /// the widest variety of email clients. </para>
     /// </summary>
-    public class Body  
+    public partial class Body
     {
         
         private Content text;
@@ -43,7 +43,7 @@ namespace Amazon.SimpleEmail.Model
         /// 
         /// <param name="text"> The content of the message, in text format. Use this for text-based email clients, or clients on high-latency networks
         /// (such as mobile devices). </param>
-        public Body(Content text) 
+        public Body(Content text)
         {
             this.text = text;
         }
@@ -65,6 +65,7 @@ namespace Amazon.SimpleEmail.Model
         /// </summary>
         /// <param name="text">The value to set for the Text property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Body WithText(Content text)
         {
             this.text = text;
@@ -75,7 +76,7 @@ namespace Amazon.SimpleEmail.Model
         // Check to see if Text property is set
         internal bool IsSetText()
         {
-            return this.text != null;       
+            return this.text != null;
         }
 
         /// <summary>
@@ -94,6 +95,7 @@ namespace Amazon.SimpleEmail.Model
         /// </summary>
         /// <param name="html">The value to set for the Html property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Body WithHtml(Content html)
         {
             this.html = html;
@@ -104,7 +106,7 @@ namespace Amazon.SimpleEmail.Model
         // Check to see if Html property is set
         internal bool IsSetHtml()
         {
-            return this.html != null;       
+            return this.html != null;
         }
     }
 }

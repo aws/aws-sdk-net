@@ -21,9 +21,9 @@ using System.IO;
 namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
-    /// 
+    /// <para>The <c>CreateJobOutput</c> structure.</para>
     /// </summary>
-    public class CreateJobOutput
+    public partial class CreateJobOutput
     {
         
         private string key;
@@ -31,6 +31,9 @@ namespace Amazon.ElasticTranscoder.Model
         private string rotate;
         private string presetId;
         private string segmentDuration;
+        private List<JobWatermark> watermarks = new List<JobWatermark>();
+        private JobAlbumArt albumArt;
+        private List<Clip> composition = new List<Clip>();
 
         /// <summary>
         /// The name to assign to the transcoded file. Elastic Transcoder saves the file in the Amazon S3 bucket specified by the <c>OutputBucket</c>
@@ -58,6 +61,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="key">The value to set for the Key property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateJobOutput WithKey(string key)
         {
             this.key = key;
@@ -107,6 +111,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="thumbnailPattern">The value to set for the ThumbnailPattern property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateJobOutput WithThumbnailPattern(string thumbnailPattern)
         {
             this.thumbnailPattern = thumbnailPattern;
@@ -146,6 +151,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="rotate">The value to set for the Rotate property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateJobOutput WithRotate(string rotate)
         {
             this.rotate = rotate;
@@ -184,6 +190,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="presetId">The value to set for the PresetId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateJobOutput WithPresetId(string presetId)
         {
             this.presetId = presetId;
@@ -206,7 +213,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// <list type="definition">
         ///     <item>
         ///         <term>Pattern</term>
-        ///         <description>^\d{1,5}([.]\d{0,5})?$</description>
+        ///         <description>^\d{1,5}(\.\d{0,5})?$</description>
         ///     </item>
         /// </list>
         /// </para>
@@ -222,6 +229,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="segmentDuration">The value to set for the SegmentDuration property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateJobOutput WithSegmentDuration(string segmentDuration)
         {
             this.segmentDuration = segmentDuration;
@@ -233,6 +241,133 @@ namespace Amazon.ElasticTranscoder.Model
         internal bool IsSetSegmentDuration()
         {
             return this.segmentDuration != null;
+        }
+
+        /// <summary>
+        /// Information about the watermarks that you want Elastic Transcoder to add to the video during transcoding. You can specify up to four
+        /// watermarks for each output. Settings for each watermark must be defined in the preset for the current output.
+        ///  
+        /// </summary>
+        public List<JobWatermark> Watermarks
+        {
+            get { return this.watermarks; }
+            set { this.watermarks = value; }
+        }
+        /// <summary>
+        /// Adds elements to the Watermarks collection
+        /// </summary>
+        /// <param name="watermarks">The values to add to the Watermarks collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public CreateJobOutput WithWatermarks(params JobWatermark[] watermarks)
+        {
+            foreach (JobWatermark element in watermarks)
+            {
+                this.watermarks.Add(element);
+            }
+
+            return this;
+        }
+
+        /// <summary>
+        /// Adds elements to the Watermarks collection
+        /// </summary>
+        /// <param name="watermarks">The values to add to the Watermarks collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public CreateJobOutput WithWatermarks(IEnumerable<JobWatermark> watermarks)
+        {
+            foreach (JobWatermark element in watermarks)
+            {
+                this.watermarks.Add(element);
+            }
+
+            return this;
+        }
+
+        // Check to see if Watermarks property is set
+        internal bool IsSetWatermarks()
+        {
+            return this.watermarks.Count > 0;
+        }
+
+        /// <summary>
+        /// Information about the album art that you want Elastic Transcoder to add to the file during transcoding. You can specify up to twenty album
+        /// artworks for each output. Settings for each artwork must be defined in the job for the current output.
+        ///  
+        /// </summary>
+        public JobAlbumArt AlbumArt
+        {
+            get { return this.albumArt; }
+            set { this.albumArt = value; }
+        }
+
+        /// <summary>
+        /// Sets the AlbumArt property
+        /// </summary>
+        /// <param name="albumArt">The value to set for the AlbumArt property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public CreateJobOutput WithAlbumArt(JobAlbumArt albumArt)
+        {
+            this.albumArt = albumArt;
+            return this;
+        }
+            
+
+        // Check to see if AlbumArt property is set
+        internal bool IsSetAlbumArt()
+        {
+            return this.albumArt != null;
+        }
+
+        /// <summary>
+        /// You can create an output file that contains an excerpt from the input file. This excerpt, called a clip, can come from the beginning,
+        /// middle, or end of the file. The Composition object contains settings for the clips that make up an output file. For the current release, you
+        /// can only specify settings for a single clip per output file. The Composition object cannot be null.
+        ///  
+        /// </summary>
+        public List<Clip> Composition
+        {
+            get { return this.composition; }
+            set { this.composition = value; }
+        }
+        /// <summary>
+        /// Adds elements to the Composition collection
+        /// </summary>
+        /// <param name="composition">The values to add to the Composition collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public CreateJobOutput WithComposition(params Clip[] composition)
+        {
+            foreach (Clip element in composition)
+            {
+                this.composition.Add(element);
+            }
+
+            return this;
+        }
+
+        /// <summary>
+        /// Adds elements to the Composition collection
+        /// </summary>
+        /// <param name="composition">The values to add to the Composition collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public CreateJobOutput WithComposition(IEnumerable<Clip> composition)
+        {
+            foreach (Clip element in composition)
+            {
+                this.composition.Add(element);
+            }
+
+            return this;
+        }
+
+        // Check to see if Composition property is set
+        internal bool IsSetComposition()
+        {
+            return this.composition.Count > 0;
         }
     }
 }

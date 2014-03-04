@@ -21,16 +21,16 @@ using System.IO;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// <para> Contains one or more Cache Clusters. </para>
+    /// <para>Represents the output of a <i>DescribeCacheClusters</i> operation.</para>
     /// </summary>
-    public class DescribeCacheClustersResult
+    public partial class DescribeCacheClustersResult
     {
         
         private string marker;
         private List<CacheCluster> cacheClusters = new List<CacheCluster>();
 
         /// <summary>
-        /// The marker obtained from a previous operation response.
+        /// Provides an identifier to allow retrieval of paginated results.
         ///  
         /// </summary>
         public string Marker
@@ -44,6 +44,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="marker">The value to set for the Marker property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeCacheClustersResult WithMarker(string marker)
         {
             this.marker = marker;
@@ -58,7 +59,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// A list of CacheClusters.
+        /// A list of cache clusters. Each item in the list contains detailed information about one cache cluster.
         ///  
         /// </summary>
         public List<CacheCluster> CacheClusters
@@ -71,6 +72,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="cacheClusters">The values to add to the CacheClusters collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeCacheClustersResult WithCacheClusters(params CacheCluster[] cacheClusters)
         {
             foreach (CacheCluster element in cacheClusters)
@@ -86,6 +88,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="cacheClusters">The values to add to the CacheClusters collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeCacheClustersResult WithCacheClusters(IEnumerable<CacheCluster> cacheClusters)
         {
             foreach (CacheCluster element in cacheClusters)

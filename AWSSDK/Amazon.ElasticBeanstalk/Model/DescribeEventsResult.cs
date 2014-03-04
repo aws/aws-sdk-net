@@ -23,7 +23,7 @@ namespace Amazon.ElasticBeanstalk.Model
     /// <summary>
     /// <para>Result message wrapping a list of event descriptions.</para>
     /// </summary>
-    public class DescribeEventsResult  
+    public partial class DescribeEventsResult
     {
         
         private List<EventDescription> events = new List<EventDescription>();
@@ -43,6 +43,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="events">The values to add to the Events collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeEventsResult WithEvents(params EventDescription[] events)
         {
             foreach (EventDescription element in events)
@@ -52,12 +53,13 @@ namespace Amazon.ElasticBeanstalk.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Events collection
         /// </summary>
         /// <param name="events">The values to add to the Events collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeEventsResult WithEvents(IEnumerable<EventDescription> events)
         {
             foreach (EventDescription element in events)
@@ -71,7 +73,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if Events property is set
         internal bool IsSetEvents()
         {
-            return this.events.Count > 0;       
+            return this.events.Count > 0;
         }
 
         /// <summary>
@@ -90,6 +92,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="nextToken">The value to set for the NextToken property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeEventsResult WithNextToken(string nextToken)
         {
             this.nextToken = nextToken;
@@ -100,7 +103,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if NextToken property is set
         internal bool IsSetNextToken()
         {
-            return this.nextToken != null;       
+            return this.nextToken != null;
         }
     }
 }

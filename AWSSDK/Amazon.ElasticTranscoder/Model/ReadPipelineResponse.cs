@@ -30,7 +30,7 @@ namespace Amazon.ElasticTranscoder.Model
 
         /// <summary>
         /// Gets and sets the ReadPipelineResult property.
-        /// 
+        /// The ReadPipelineResponse structure.
         /// </summary>
         public ReadPipelineResult ReadPipelineResult
         {

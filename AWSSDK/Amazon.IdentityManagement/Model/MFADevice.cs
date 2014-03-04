@@ -24,7 +24,7 @@ namespace Amazon.IdentityManagement.Model
     /// <para>The <c>MFADevice</c> data type contains information about an MFA device.</para> <para> This data type is used as a response element in
     /// the action ListMFADevices. </para>
     /// </summary>
-    public class MFADevice  
+    public partial class MFADevice
     {
         
         private string userName;
@@ -59,6 +59,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="userName">The value to set for the UserName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public MFADevice WithUserName(string userName)
         {
             this.userName = userName;
@@ -69,7 +70,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if UserName property is set
         internal bool IsSetUserName()
         {
-            return this.userName != null;       
+            return this.userName != null;
         }
 
         /// <summary>
@@ -100,6 +101,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="serialNumber">The value to set for the SerialNumber property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public MFADevice WithSerialNumber(string serialNumber)
         {
             this.serialNumber = serialNumber;
@@ -110,7 +112,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if SerialNumber property is set
         internal bool IsSetSerialNumber()
         {
-            return this.serialNumber != null;       
+            return this.serialNumber != null;
         }
 
         /// <summary>
@@ -128,6 +130,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="enableDate">The value to set for the EnableDate property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public MFADevice WithEnableDate(DateTime enableDate)
         {
             this.enableDate = enableDate;
@@ -138,7 +141,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if EnableDate property is set
         internal bool IsSetEnableDate()
         {
-            return this.enableDate.HasValue;       
+            return this.enableDate.HasValue;
         }
     }
 }

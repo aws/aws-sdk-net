@@ -1,4 +1,4 @@
-﻿/*******************************************************************************
+/*******************************************************************************
  * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
@@ -36,7 +36,7 @@ namespace Amazon.EC2.Model
     /// Amazon S3 bucket.
     /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
-    public class CreateInstanceExportTaskRequest
+    public class CreateInstanceExportTaskRequest : EC2Request
     {
         private string descriptionField;
         private string instanceIdField;
@@ -58,6 +58,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="description">Description</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateInstanceExportTaskRequest WithDescription(string description)
         {
             this.descriptionField = description;
@@ -88,6 +89,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="instanceId">Id of the instance to export</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateInstanceExportTaskRequest WithInstanceId(string instanceId)
         {
             this.instanceIdField = instanceId;
@@ -119,6 +121,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="targetEnvironment">Target environment; valid values: vmware | citrix | microsoft</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateInstanceExportTaskRequest WithTargetEnvironment(string targetEnvironment)
         {
             this.targetEnvironmentField = targetEnvironment;
@@ -149,6 +152,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="exportToS3TaskType"></param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateInstanceExportTaskRequest WithExportToS3Task(ExportToS3TaskType exportToS3TaskType)
         {
             this.exportToS3TaskTypeField = exportToS3TaskType;

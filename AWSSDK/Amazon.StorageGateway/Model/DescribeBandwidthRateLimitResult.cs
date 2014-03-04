@@ -22,14 +22,8 @@ namespace Amazon.StorageGateway.Model
 {
     /// <summary>
     /// <para>A JSON object containing the following fields:</para>
-    /// <ul>
-    /// <li> GatewayARN </li>
-    /// <li> DescribeBandwidthRateLimitOutput$AverageDownloadRateLimitInBitsPerSec </li>
-    /// <li> DescribeBandwidthRateLimitOutput$AverageDownloadRateLimitInBitsPerSec </li>
-    /// 
-    /// </ul>
     /// </summary>
-    public class DescribeBandwidthRateLimitResult  
+    public partial class DescribeBandwidthRateLimitResult
     {
         
         private string gatewayARN;
@@ -61,6 +55,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="gatewayARN">The value to set for the GatewayARN property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeBandwidthRateLimitResult WithGatewayARN(string gatewayARN)
         {
             this.gatewayARN = gatewayARN;
@@ -71,7 +66,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if GatewayARN property is set
         internal bool IsSetGatewayARN()
         {
-            return this.gatewayARN != null;       
+            return this.gatewayARN != null;
         }
 
         /// <summary>
@@ -98,6 +93,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="averageUploadRateLimitInBitsPerSec">The value to set for the AverageUploadRateLimitInBitsPerSec property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeBandwidthRateLimitResult WithAverageUploadRateLimitInBitsPerSec(long averageUploadRateLimitInBitsPerSec)
         {
             this.averageUploadRateLimitInBitsPerSec = averageUploadRateLimitInBitsPerSec;
@@ -108,7 +104,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if AverageUploadRateLimitInBitsPerSec property is set
         internal bool IsSetAverageUploadRateLimitInBitsPerSec()
         {
-            return this.averageUploadRateLimitInBitsPerSec.HasValue;       
+            return this.averageUploadRateLimitInBitsPerSec.HasValue;
         }
 
         /// <summary>
@@ -136,6 +132,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="averageDownloadRateLimitInBitsPerSec">The value to set for the AverageDownloadRateLimitInBitsPerSec property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeBandwidthRateLimitResult WithAverageDownloadRateLimitInBitsPerSec(long averageDownloadRateLimitInBitsPerSec)
         {
             this.averageDownloadRateLimitInBitsPerSec = averageDownloadRateLimitInBitsPerSec;
@@ -146,7 +143,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if AverageDownloadRateLimitInBitsPerSec property is set
         internal bool IsSetAverageDownloadRateLimitInBitsPerSec()
         {
-            return this.averageDownloadRateLimitInBitsPerSec.HasValue;       
+            return this.averageDownloadRateLimitInBitsPerSec.HasValue;
         }
     }
 }

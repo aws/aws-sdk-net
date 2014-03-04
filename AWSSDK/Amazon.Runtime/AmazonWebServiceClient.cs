@@ -433,15 +433,17 @@ namespace Amazon.Runtime
             }
             catch (WebException e)
             {
-                asyncResult.RequestState.WebRequest.Abort();
-                if (handleHttpWebErrorResponse(asyncResult, e))
+                try
                 {
+                    asyncResult.RequestState.WebRequest.Abort();
+                    handleHttpWebErrorResponse(asyncResult, e);
+                    
                     asyncResult.RetriesAttempt++;
                     InvokeHelper(asyncResult);
                 }
-                else
+                catch(Exception ei)
                 {
-                    asyncResult.Exception = e;
+                    asyncResult.Exception = ei;
 
                     asyncResult.SignalWaitHandle();
                     if (asyncResult.Callback != null)
@@ -641,7 +643,8 @@ namespace Amazon.Runtime
                     asyncResult.RequestState.WebRequest.Abort();
 
                     // If it is a keep alive error or name resolution error then attempt a retry
-                    if (we != null && asyncResult.RetriesAttempt < config.MaxErrorRetry && (we.Status == WebExceptionStatus.KeepAliveFailure || we.Status == WebExceptionStatus.NameResolutionFailure))
+                    if (we != null && asyncResult.RetriesAttempt < config.MaxErrorRetry &&
+                        (we.Status == WebExceptionStatus.KeepAliveFailure || we.Status == WebExceptionStatus.NameResolutionFailure || we.Status == WebExceptionStatus.ConnectionClosed))
                     {
                         pauseExponentially(asyncResult);
                         return true;
@@ -905,7 +908,7 @@ namespace Amazon.Runtime
                             throw new InvalidDataException("Cannot determine protocol");
                     }
                 }
-                signer.Sign(request, this.config, immutableCredentials.AccessKey, immutableCredentials.ClearSecretKey, immutableCredentials.SecureSecretKey);
+                signer.Sign(request, this.config, metrics, immutableCredentials.AccessKey, immutableCredentials.ClearSecretKey, immutableCredentials.SecureSecretKey);
             }
         }
 

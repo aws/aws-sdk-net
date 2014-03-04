@@ -32,6 +32,8 @@
 
         public Permission Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             Permission permission = new Permission();
           
             int originalDepth = context.CurrentDepth;
@@ -64,6 +66,12 @@
               if (context.TestExpression("AllowSudo", targetDepth))
               {
                 permission.AllowSudo = BoolUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
+              if (context.TestExpression("Level", targetDepth))
+              {
+                permission.Level = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   

@@ -30,18 +30,18 @@ namespace Amazon.StorageGateway.Model
 
         /// <summary>
         /// Gets and sets the UpdateGatewayInformationResult property.
-        /// A JSON object containing the GatewayARN of the gateway that was updated.
+        /// A JSON object containing the of the gateway that was updated.
         /// </summary>
         public UpdateGatewayInformationResult UpdateGatewayInformationResult
         {
-            get 
+            get
             {
                 if(this.updateGatewayInformationResult == null)
                 {
                     this.updateGatewayInformationResult = new UpdateGatewayInformationResult();
                 }
 
-                return this.updateGatewayInformationResult; 
+                return this.updateGatewayInformationResult;
             }
             set { this.updateGatewayInformationResult = value; }
         }

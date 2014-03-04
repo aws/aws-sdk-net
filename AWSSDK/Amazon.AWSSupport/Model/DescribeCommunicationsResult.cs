@@ -21,16 +21,16 @@ using System.IO;
 namespace Amazon.AWSSupport.Model
 {
     /// <summary>
-    /// <para>Returns the objects or data listed below if successful. Otherwise, returns an error.</para>
+    /// <para>Contains the following objects or data if successful. Otherwise, returns an error.</para>
     /// </summary>
-    public class DescribeCommunicationsResult
+    public partial class DescribeCommunicationsResult
     {
         
         private List<Communication> communications = new List<Communication>();
         private string nextToken;
 
         /// <summary>
-        /// Contains a list of <a href="API_Communication.html" title="Communication">Communications</a> objects.
+        /// The communications for the case.
         ///  
         /// </summary>
         public List<Communication> Communications
@@ -43,6 +43,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="communications">The values to add to the Communications collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeCommunicationsResult WithCommunications(params Communication[] communications)
         {
             foreach (Communication element in communications)
@@ -58,6 +59,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="communications">The values to add to the Communications collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeCommunicationsResult WithCommunications(IEnumerable<Communication> communications)
         {
             foreach (Communication element in communications)
@@ -75,7 +77,7 @@ namespace Amazon.AWSSupport.Model
         }
 
         /// <summary>
-        /// Defines a resumption point for pagination.
+        /// A resumption point for pagination.
         ///  
         /// </summary>
         public string NextToken
@@ -89,6 +91,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="nextToken">The value to set for the NextToken property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeCommunicationsResult WithNextToken(string nextToken)
         {
             this.nextToken = nextToken;

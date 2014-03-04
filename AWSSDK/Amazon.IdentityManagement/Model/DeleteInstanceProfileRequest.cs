@@ -25,7 +25,10 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteInstanceProfile operation.
-    /// <para>Deletes the specified instance profile. The instance profile must have an associated role.</para>
+    /// <para>Deletes the specified instance profile. The instance profile must not have an associated role.</para> <para><b>IMPORTANT:</b>Make sure
+    /// you do not have any Amazon EC2 instances running with the instance profile you are about to delete. Deleting a role or instance profile that
+    /// is associated with a running instance will break any applications running on the instance.</para> <para>For more information about instance
+    /// profiles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html" >About Instance Profiles</a> .</para>
     /// </summary>
     /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.DeleteInstanceProfile"/>
     public class DeleteInstanceProfileRequest : AmazonWebServiceRequest
@@ -60,6 +63,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="instanceProfileName">The value to set for the InstanceProfileName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeleteInstanceProfileRequest WithInstanceProfileName(string instanceProfileName)
         {
             this.instanceProfileName = instanceProfileName;
@@ -70,7 +74,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if InstanceProfileName property is set
         internal bool IsSetInstanceProfileName()
         {
-            return this.instanceProfileName != null;       
+            return this.instanceProfileName != null;
         }
     }
 }

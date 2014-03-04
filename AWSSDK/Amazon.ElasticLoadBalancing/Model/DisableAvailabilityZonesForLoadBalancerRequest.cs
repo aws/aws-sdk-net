@@ -25,13 +25,13 @@ namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
     /// Container for the parameters to the DisableAvailabilityZonesForLoadBalancer operation.
-    /// <para> Removes the specified EC2 Availability Zones from the set of configured Availability Zones for the LoadBalancer. </para> <para> There
-    /// must be at least one Availability Zone registered with a LoadBalancer at all times. A client cannot remove all the Availability Zones from a
-    /// LoadBalancer. Once an Availability Zone is removed, all the instances registered with the LoadBalancer that are in the removed Availability
-    /// Zone go into the OutOfService state. Upon Availability Zone removal, the LoadBalancer attempts to equally balance the traffic among its
-    /// remaining usable Availability Zones. Trying to remove an Availability Zone that was not associated with the LoadBalancer does nothing.
-    /// </para> <para><b>NOTE:</b> In order for this call to be successful, the client must have created the LoadBalancer. The client must provide
-    /// the same account credentials as those that were used to create the LoadBalancer. </para>
+    /// <para> Removes the specified EC2 Availability Zones from the set of configured Availability Zones for the load balancer. </para> <para>
+    /// There must be at least one Availability Zone registered with a load balancer at all times. Once an Availability Zone is removed, all the
+    /// instances registered with the load balancer that are in the removed Availability Zone go into the <i>OutOfService</i> state. Upon
+    /// Availability Zone removal, the load balancer attempts to equally balance the traffic among its remaining usable Availability Zones. Trying
+    /// to remove an Availability Zone that was not associated with the load balancer does nothing. </para> <para>For more information, see <a
+    /// href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/US_ShrinkLBApp04.html" >Disable an Availability Zone from a
+    /// Load-Balanced Application</a> in the <i>Elastic Load Balancing Developer Guide</i> .</para>
     /// </summary>
     /// <seealso cref="Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancing.DisableAvailabilityZonesForLoadBalancer"/>
     public class DisableAvailabilityZonesForLoadBalancerRequest : AmazonWebServiceRequest
@@ -50,11 +50,10 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// initialize any additional object members.
         /// </summary>
         /// 
-        /// <param name="loadBalancerName"> The name associated with the LoadBalancer. The name must be unique within the client AWS account. </param>
-        /// <param name="availabilityZones"> A list of Availability Zones to be removed from the LoadBalancer. <note> There must be at least one
-        /// Availability Zone registered with a LoadBalancer at all times. The client cannot remove all the Availability Zones from a LoadBalancer.
-        /// Specified Availability Zones must be in the same Region. </note> </param>
-        public DisableAvailabilityZonesForLoadBalancerRequest(string loadBalancerName, List<string> availabilityZones) 
+        /// <param name="loadBalancerName"> The name associated with the load balancer. </param>
+        /// <param name="availabilityZones"> A list of Availability Zones to be removed from the load balancer. <note> There must be at least one
+        /// Availability Zone registered with a load balancer at all times. Specified Availability Zones must be in the same region. </note> </param>
+        public DisableAvailabilityZonesForLoadBalancerRequest(string loadBalancerName, List<string> availabilityZones)
         {
             this.loadBalancerName = loadBalancerName;
             this.availabilityZones = availabilityZones;
@@ -62,7 +61,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     
 
         /// <summary>
-        /// The name associated with the LoadBalancer. The name must be unique within the client AWS account.
+        /// The name associated with the load balancer.
         ///  
         /// </summary>
         public string LoadBalancerName
@@ -76,6 +75,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="loadBalancerName">The value to set for the LoadBalancerName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DisableAvailabilityZonesForLoadBalancerRequest WithLoadBalancerName(string loadBalancerName)
         {
             this.loadBalancerName = loadBalancerName;
@@ -86,13 +86,12 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if LoadBalancerName property is set
         internal bool IsSetLoadBalancerName()
         {
-            return this.loadBalancerName != null;       
+            return this.loadBalancerName != null;
         }
 
         /// <summary>
-        /// A list of Availability Zones to be removed from the LoadBalancer. <note> There must be at least one Availability Zone registered with a
-        /// LoadBalancer at all times. The client cannot remove all the Availability Zones from a LoadBalancer. Specified Availability Zones must be in
-        /// the same Region. </note>
+        /// A list of Availability Zones to be removed from the load balancer. <note> There must be at least one Availability Zone registered with a
+        /// load balancer at all times. Specified Availability Zones must be in the same region. </note>
         ///  
         /// </summary>
         public List<string> AvailabilityZones
@@ -105,6 +104,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="availabilityZones">The values to add to the AvailabilityZones collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DisableAvailabilityZonesForLoadBalancerRequest WithAvailabilityZones(params string[] availabilityZones)
         {
             foreach (string element in availabilityZones)
@@ -114,12 +114,13 @@ namespace Amazon.ElasticLoadBalancing.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the AvailabilityZones collection
         /// </summary>
         /// <param name="availabilityZones">The values to add to the AvailabilityZones collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DisableAvailabilityZonesForLoadBalancerRequest WithAvailabilityZones(IEnumerable<string> availabilityZones)
         {
             foreach (string element in availabilityZones)
@@ -133,7 +134,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if AvailabilityZones property is set
         internal bool IsSetAvailabilityZones()
         {
-            return this.availabilityZones.Count > 0;       
+            return this.availabilityZones.Count > 0;
         }
     }
 }

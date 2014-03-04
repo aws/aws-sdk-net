@@ -32,6 +32,8 @@
 
         public DescribeInstancesResult Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             DescribeInstancesResult describeInstancesResult = new DescribeInstancesResult();
           describeInstancesResult.Instances = null;
                         

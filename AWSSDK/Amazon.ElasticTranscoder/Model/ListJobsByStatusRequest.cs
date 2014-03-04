@@ -25,9 +25,8 @@ namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
     /// Container for the parameters to the ListJobsByStatus operation.
-    /// <para>To get a list of the jobs that have a specified status, send a GET request to the <c>/2012-09-25/jobsByStatus/[status] </c>
-    /// resource.</para> <para>Elastic Transcoder returns all of the jobs that have the specified status. The response body contains one element for
-    /// each job that satisfies the search criteria.</para>
+    /// <para>The ListJobsByStatus operation gets a list of jobs that have a specified status. The response body contains one element for each job
+    /// that satisfies the search criteria.</para>
     /// </summary>
     /// <seealso cref="Amazon.ElasticTranscoder.AmazonElasticTranscoder.ListJobsByStatus"/>
     public class ListJobsByStatusRequest : AmazonWebServiceRequest
@@ -61,6 +60,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="status">The value to set for the Status property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListJobsByStatusRequest WithStatus(string status)
         {
             this.status = status;
@@ -99,6 +99,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="ascending">The value to set for the Ascending property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListJobsByStatusRequest WithAscending(string ascending)
         {
             this.ascending = ascending;
@@ -137,6 +138,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="pageToken">The value to set for the PageToken property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListJobsByStatusRequest WithPageToken(string pageToken)
         {
             this.pageToken = pageToken;

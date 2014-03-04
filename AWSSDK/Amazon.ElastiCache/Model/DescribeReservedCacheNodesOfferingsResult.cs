@@ -21,16 +21,16 @@ using System.IO;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// <para> Contains the result of a successful invocation of the DescribeReservedCacheNodesOfferings action. </para>
+    /// <para>Represents the output of a <i>DescribeReservedCacheNodesOfferings</i> operation.</para>
     /// </summary>
-    public class DescribeReservedCacheNodesOfferingsResult
+    public partial class DescribeReservedCacheNodesOfferingsResult
     {
         
         private string marker;
         private List<ReservedCacheNodesOffering> reservedCacheNodesOfferings = new List<ReservedCacheNodesOffering>();
 
         /// <summary>
-        /// A marker provided for paginated results.
+        /// Provides an identifier to allow retrieval of paginated results.
         ///  
         /// </summary>
         public string Marker
@@ -44,6 +44,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="marker">The value to set for the Marker property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeReservedCacheNodesOfferingsResult WithMarker(string marker)
         {
             this.marker = marker;
@@ -58,7 +59,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// A list of reserved Cache Node offerings.
+        /// A list of reserved cache node offerings. Each element in the list contains detailed information about one offering.
         ///  
         /// </summary>
         public List<ReservedCacheNodesOffering> ReservedCacheNodesOfferings
@@ -71,6 +72,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="reservedCacheNodesOfferings">The values to add to the ReservedCacheNodesOfferings collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeReservedCacheNodesOfferingsResult WithReservedCacheNodesOfferings(params ReservedCacheNodesOffering[] reservedCacheNodesOfferings)
         {
             foreach (ReservedCacheNodesOffering element in reservedCacheNodesOfferings)
@@ -86,6 +88,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="reservedCacheNodesOfferings">The values to add to the ReservedCacheNodesOfferings collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeReservedCacheNodesOfferingsResult WithReservedCacheNodesOfferings(IEnumerable<ReservedCacheNodesOffering> reservedCacheNodesOfferings)
         {
             foreach (ReservedCacheNodesOffering element in reservedCacheNodesOfferings)

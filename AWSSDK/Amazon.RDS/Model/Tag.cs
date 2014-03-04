@@ -21,17 +21,17 @@ using System.IO;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// <para>Metadata assigned to a DB Instance consisting of a key-value pair.</para>
+    /// <para>Metadata assigned to an Amazon RDS resource consisting of a key-value pair.</para>
     /// </summary>
-    public class Tag
+    public partial class Tag
     {
         
         private string key;
         private string value;
 
         /// <summary>
-        /// A key is the required name of the tag. The string value can be from 1 to 128 Unicode characters in length and cannot be prefixed with
-        /// "aws:". The string may only contain only the set of Unicode letters, digits, white-space, '_', '.', '/', '=', '+', '-' (Java regex:
+        /// A key is the required name of the tag. The string value can be from 1 to 128 Unicode characters in length and cannot be prefixed with "aws:"
+        /// or "rds:". The string may only contain only the set of Unicode letters, digits, white-space, '_', '.', '/', '=', '+', '-' (Java regex:
         /// "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").
         ///  
         /// </summary>
@@ -46,6 +46,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="key">The value to set for the Key property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Tag WithKey(string key)
         {
             this.key = key;
@@ -61,8 +62,8 @@ namespace Amazon.RDS.Model
 
         /// <summary>
         /// A value is the optional value of the tag. The string value can be from 1 to 256 Unicode characters in length and cannot be prefixed with
-        /// "aws:". The string may only contain only the set of Unicode letters, digits, white-space, '_', '.', '/', '=', '+', '-' (Java regex:
-        /// "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").
+        /// "aws:" or "rds:". The string may only contain only the set of Unicode letters, digits, white-space, '_', '.', '/', '=', '+', '-' (Java
+        /// regex: "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").
         ///  
         /// </summary>
         public string Value
@@ -76,6 +77,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="value">The value to set for the Value property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Tag WithValue(string value)
         {
             this.value = value;

@@ -51,6 +51,7 @@ namespace Amazon.EC2.Model
         /// <param name="pool">The license pool from which to take a license when starting
         /// Amazon EC2 instances in the associated RunInstances request.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceLicense WithPool(string pool)
         {
             this.poolField = pool;

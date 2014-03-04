@@ -23,14 +23,14 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// <summary>
     /// <para> The output for the DescribeLoadBalancers action. </para>
     /// </summary>
-    public class DescribeLoadBalancersResult  
+    public partial class DescribeLoadBalancersResult
     {
         
         private List<LoadBalancerDescription> loadBalancerDescriptions = new List<LoadBalancerDescription>();
         private string nextMarker;
 
         /// <summary>
-        /// A list of LoadBalancer description structures.
+        /// A list of load balancer description structures.
         ///  
         /// </summary>
         public List<LoadBalancerDescription> LoadBalancerDescriptions
@@ -43,6 +43,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="loadBalancerDescriptions">The values to add to the LoadBalancerDescriptions collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeLoadBalancersResult WithLoadBalancerDescriptions(params LoadBalancerDescription[] loadBalancerDescriptions)
         {
             foreach (LoadBalancerDescription element in loadBalancerDescriptions)
@@ -52,12 +53,13 @@ namespace Amazon.ElasticLoadBalancing.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the LoadBalancerDescriptions collection
         /// </summary>
         /// <param name="loadBalancerDescriptions">The values to add to the LoadBalancerDescriptions collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeLoadBalancersResult WithLoadBalancerDescriptions(IEnumerable<LoadBalancerDescription> loadBalancerDescriptions)
         {
             foreach (LoadBalancerDescription element in loadBalancerDescriptions)
@@ -71,7 +73,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if LoadBalancerDescriptions property is set
         internal bool IsSetLoadBalancerDescriptions()
         {
-            return this.loadBalancerDescriptions.Count > 0;       
+            return this.loadBalancerDescriptions.Count > 0;
         }
 
         /// <summary>
@@ -89,6 +91,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="nextMarker">The value to set for the NextMarker property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeLoadBalancersResult WithNextMarker(string nextMarker)
         {
             this.nextMarker = nextMarker;
@@ -99,7 +102,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if NextMarker property is set
         internal bool IsSetNextMarker()
         {
-            return this.nextMarker != null;       
+            return this.nextMarker != null;
         }
     }
 }

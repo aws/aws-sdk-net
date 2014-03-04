@@ -22,13 +22,14 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
      /// <summary>
      ///   LoadBalancer Unmarshaller
      /// </summary>
-    internal class LoadBalancerUnmarshaller : IUnmarshaller<LoadBalancer, XmlUnmarshallerContext> 
+    internal class LoadBalancerUnmarshaller : IUnmarshaller<LoadBalancer, XmlUnmarshallerContext>, IUnmarshaller<LoadBalancer, JsonUnmarshallerContext> 
     {
         public LoadBalancer Unmarshall(XmlUnmarshallerContext context) 
         {
             LoadBalancer loadBalancer = new LoadBalancer();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -52,6 +53,11 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
 
 
             return loadBalancer;
+        }
+
+        public LoadBalancer Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static LoadBalancerUnmarshaller instance;

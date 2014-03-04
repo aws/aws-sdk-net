@@ -21,17 +21,16 @@ using System.IO;
 namespace Amazon.AWSSupport.Model
 {
     /// <summary>
-    /// <para>Reports the estimated monthly savings and percentage of monthly savings determined by the Trusted Advisor check for your account.
-    /// </para>
+    /// <para>The estimated cost savings that might be realized if the recommended actions are taken.</para>
     /// </summary>
-    public class TrustedAdvisorCostOptimizingSummary
+    public partial class TrustedAdvisorCostOptimizingSummary
     {
         
         private double? estimatedMonthlySavings;
         private double? estimatedPercentMonthlySavings;
 
         /// <summary>
-        /// Reports the estimated monthly savings determined by the Trusted Advisor check for your account.
+        /// The estimated monthly savings that might be realized if the recommended actions are taken.
         ///  
         /// </summary>
         public double EstimatedMonthlySavings
@@ -45,6 +44,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="estimatedMonthlySavings">The value to set for the EstimatedMonthlySavings property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TrustedAdvisorCostOptimizingSummary WithEstimatedMonthlySavings(double estimatedMonthlySavings)
         {
             this.estimatedMonthlySavings = estimatedMonthlySavings;
@@ -59,7 +59,7 @@ namespace Amazon.AWSSupport.Model
         }
 
         /// <summary>
-        /// Reports the estimated percentage of savings determined for your account by the Trusted Advisor check.
+        /// The estimated percentage of savings that might be realized if the recommended actions are taken.
         ///  
         /// </summary>
         public double EstimatedPercentMonthlySavings
@@ -73,6 +73,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="estimatedPercentMonthlySavings">The value to set for the EstimatedPercentMonthlySavings property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TrustedAdvisorCostOptimizingSummary WithEstimatedPercentMonthlySavings(double estimatedPercentMonthlySavings)
         {
             this.estimatedPercentMonthlySavings = estimatedPercentMonthlySavings;

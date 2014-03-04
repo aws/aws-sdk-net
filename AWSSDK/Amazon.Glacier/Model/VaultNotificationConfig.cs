@@ -23,7 +23,7 @@ namespace Amazon.Glacier.Model
     /// <summary>
     /// <para>Represents a vault's notification configuration.</para>
     /// </summary>
-    public class VaultNotificationConfig  
+    public partial class VaultNotificationConfig
     {
         
         private string sNSTopic;
@@ -44,6 +44,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="sNSTopic">The value to set for the SNSTopic property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VaultNotificationConfig WithSNSTopic(string sNSTopic)
         {
             this.sNSTopic = sNSTopic;
@@ -54,7 +55,7 @@ namespace Amazon.Glacier.Model
         // Check to see if SNSTopic property is set
         internal bool IsSetSNSTopic()
         {
-            return this.sNSTopic != null;       
+            return this.sNSTopic != null;
         }
 
         /// <summary>
@@ -71,6 +72,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="events">The values to add to the Events collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VaultNotificationConfig WithEvents(params string[] events)
         {
             foreach (string element in events)
@@ -80,12 +82,13 @@ namespace Amazon.Glacier.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Events collection
         /// </summary>
         /// <param name="events">The values to add to the Events collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VaultNotificationConfig WithEvents(IEnumerable<string> events)
         {
             foreach (string element in events)
@@ -99,7 +102,7 @@ namespace Amazon.Glacier.Model
         // Check to see if Events property is set
         internal bool IsSetEvents()
         {
-            return this.events.Count > 0;       
+            return this.events.Count > 0;
         }
     }
 }

@@ -22,9 +22,10 @@ namespace Amazon.Route53.Model
 {
     /// <summary>
     /// <para> <i>Alias resource record sets only:</i> Information about the domain to which you are redirecting traffic.</para> <para>For more
-    /// information and an example, see Creating Alias Resource Record Sets in the <i>Amazon Route 53 Developer Guide</i> </para> <para>. </para>
+    /// information and an example, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html" >Creating Alias
+    /// Resource Record Sets</a> in the <i>Amazon Route 53 Developer Guide</i> </para> <para>. </para>
     /// </summary>
-    public class AliasTarget
+    public partial class AliasTarget
     {
         
         private string hostedZoneId;
@@ -57,6 +58,7 @@ namespace Amazon.Route53.Model
         /// </summary>
         /// <param name="hostedZoneId">The value to set for the HostedZoneId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AliasTarget WithHostedZoneId(string hostedZoneId)
         {
             this.hostedZoneId = hostedZoneId;
@@ -96,6 +98,7 @@ namespace Amazon.Route53.Model
         /// </summary>
         /// <param name="dNSName">The value to set for the DNSName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AliasTarget WithDNSName(string dNSName)
         {
             this.dNSName = dNSName;
@@ -127,6 +130,7 @@ namespace Amazon.Route53.Model
         /// </summary>
         /// <param name="evaluateTargetHealth">The value to set for the EvaluateTargetHealth property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AliasTarget WithEvaluateTargetHealth(bool evaluateTargetHealth)
         {
             this.evaluateTargetHealth = evaluateTargetHealth;

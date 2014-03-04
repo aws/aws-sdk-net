@@ -30,18 +30,18 @@ namespace Amazon.StorageGateway.Model
 
         /// <summary>
         /// Gets and sets the StartGatewayResult property.
-        /// A JSON object containing the GatewayARN of the gateway that was restarted.
+        /// A JSON object containing the of the gateway that was restarted.
         /// </summary>
         public StartGatewayResult StartGatewayResult
         {
-            get 
+            get
             {
                 if(this.startGatewayResult == null)
                 {
                     this.startGatewayResult = new StartGatewayResult();
                 }
 
-                return this.startGatewayResult; 
+                return this.startGatewayResult;
             }
             set { this.startGatewayResult = value; }
         }

@@ -67,6 +67,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="bucketName">The bucket name</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetPreSignedUrlRequest WithBucketName(string bucketName)
         {
             this.bucketName = bucketName;
@@ -101,6 +102,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="key">The object key</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetPreSignedUrlRequest WithKey(string key)
         {
             this.key = key;
@@ -142,6 +144,7 @@ namespace Amazon.S3.Model
         /// </remarks>
         /// <param name="contentType">The content type required</param>
         /// <returns>The request with the ContentType set</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetPreSignedUrlRequest WithContentType(string contentType)
         {
             this.contentType = contentType;
@@ -175,6 +178,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="expires">Expiry date</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetPreSignedUrlRequest WithExpires(DateTime expires)
         {
             this.expires = expires;
@@ -215,6 +219,7 @@ namespace Amazon.S3.Model
         /// </remarks>
         /// <param name="protocol">Protocol type for the url</param>
         /// <returns>the response with the Protocol set</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetPreSignedUrlRequest WithProtocol(Protocol protocol)
         {
             this.protocol = protocol;
@@ -228,7 +233,7 @@ namespace Amazon.S3.Model
         /// The verb for the pre-signed url. 
         /// </summary>
         /// <remarks>
-        /// Accepted verbs are GET, PUT and HEAD.
+        /// Accepted verbs are GET, PUT, DELETE and HEAD.
         /// Default is GET.
         /// </remarks>
         [XmlElementAttribute(ElementName = "Verb")]
@@ -242,11 +247,12 @@ namespace Amazon.S3.Model
         /// Sets the verb for the pre-signed url. 
         /// </summary>
         /// <remarks>
-        /// Accepted verbs are GET, PUT and HEAD.
+        /// Accepted verbs are GET, PUT, DELETE and HEAD.
         /// Default is GET.
         /// </remarks>
         /// <param name="verb">Requested verb</param>
         /// <returns>the response with the Verb set</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetPreSignedUrlRequest WithVerb(HttpVerb verb)
         {
             Verb = verb;
@@ -285,6 +291,7 @@ namespace Amazon.S3.Model
         /// </remarks>
         /// <param name="versionId">The object version id</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetPreSignedUrlRequest WithVersionId(string versionId)
         {
             this.versionId = versionId;
@@ -336,6 +343,7 @@ namespace Amazon.S3.Model
         /// </remarks>
         /// <param name="encryption">The value of the ServerSideEncryptionMethod to set.</param>
         /// <returns>The response with the ServerSideEncryptionMethod set.</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetPreSignedUrlRequest WithServerSideEncryptionMethod(ServerSideEncryptionMethod encryption)
         {
             this.ServerSideEncryptionMethod = encryption;
@@ -370,6 +378,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="responseHeaderOverrides">Requested response headers</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetPreSignedUrlRequest WithResponseHeaderOverrides(ResponseHeaderOverrides responseHeaderOverrides)
         {
             this.ResponseHeaderOverrides = responseHeaderOverrides;

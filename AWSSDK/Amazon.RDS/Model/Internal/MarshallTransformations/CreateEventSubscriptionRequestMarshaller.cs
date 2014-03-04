@@ -34,7 +34,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(createEventSubscriptionRequest, "AmazonRDS");
             request.Parameters.Add("Action", "CreateEventSubscription");
-            request.Parameters.Add("Version", "2013-02-12");
+            request.Parameters.Add("Version", "2013-09-09");
             if (createEventSubscriptionRequest != null && createEventSubscriptionRequest.IsSetSubscriptionName())
             {
                 request.Parameters.Add("SubscriptionName", StringUtils.FromString(createEventSubscriptionRequest.SubscriptionName));
@@ -72,6 +72,25 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             if (createEventSubscriptionRequest != null && createEventSubscriptionRequest.IsSetEnabled())
             {
                 request.Parameters.Add("Enabled", StringUtils.FromBool(createEventSubscriptionRequest.Enabled));
+            }
+
+            if (createEventSubscriptionRequest != null)
+            {
+                List<Tag> tagsList = createEventSubscriptionRequest.Tags;
+                int tagsListIndex = 1;
+                foreach (Tag tagsListValue in tagsList)
+                {
+                    if (tagsListValue != null && tagsListValue.IsSetKey())
+                    {
+                        request.Parameters.Add("Tags.member." + tagsListIndex + ".Key", StringUtils.FromString(tagsListValue.Key));
+                    }
+                    if (tagsListValue != null && tagsListValue.IsSetValue())
+                    {
+                        request.Parameters.Add("Tags.member." + tagsListIndex + ".Value", StringUtils.FromString(tagsListValue.Value));
+                    }
+
+                    tagsListIndex++;
+                }
             }
 
             return request;

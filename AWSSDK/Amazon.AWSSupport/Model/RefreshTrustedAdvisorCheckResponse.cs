@@ -30,7 +30,7 @@ namespace Amazon.AWSSupport.Model
 
         /// <summary>
         /// Gets and sets the RefreshTrustedAdvisorCheckResult property.
-        /// 
+        /// The current refresh status of a Trusted Advisor check.
         /// </summary>
         public RefreshTrustedAdvisorCheckResult RefreshTrustedAdvisorCheckResult
         {

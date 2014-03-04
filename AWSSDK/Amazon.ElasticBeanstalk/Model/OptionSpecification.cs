@@ -23,7 +23,7 @@ namespace Amazon.ElasticBeanstalk.Model
     /// <summary>
     /// <para> A specification identifying an individual configuration option. </para>
     /// </summary>
-    public class OptionSpecification  
+    public partial class OptionSpecification
     {
         
         private string namespaceValue;
@@ -44,6 +44,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="namespaceValue">The value to set for the Namespace property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public OptionSpecification WithNamespace(string namespaceValue)
         {
             this.namespaceValue = namespaceValue;
@@ -54,7 +55,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if Namespace property is set
         internal bool IsSetNamespace()
         {
-            return this.namespaceValue != null;       
+            return this.namespaceValue != null;
         }
 
         /// <summary>
@@ -72,6 +73,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="optionName">The value to set for the OptionName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public OptionSpecification WithOptionName(string optionName)
         {
             this.optionName = optionName;
@@ -82,7 +84,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if OptionName property is set
         internal bool IsSetOptionName()
         {
-            return this.optionName != null;       
+            return this.optionName != null;
         }
     }
 }

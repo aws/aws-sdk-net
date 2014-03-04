@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -99,6 +99,14 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
             if (createStackRequest != null && createStackRequest.IsSetOnFailure())
             {
                 request.Parameters.Add("OnFailure", StringUtils.FromString(createStackRequest.OnFailure));
+            }
+            if (createStackRequest != null && createStackRequest.IsSetStackPolicyBody())
+            {
+                request.Parameters.Add("StackPolicyBody", StringUtils.FromString(createStackRequest.StackPolicyBody));
+            }
+            if (createStackRequest != null && createStackRequest.IsSetStackPolicyURL())
+            {
+                request.Parameters.Add("StackPolicyURL", StringUtils.FromString(createStackRequest.StackPolicyURL));
             }
 
             if (createStackRequest != null)

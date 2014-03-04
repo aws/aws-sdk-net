@@ -23,7 +23,7 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// <para>Contains the result of a successful invocation of the UploadServerCertificate action.</para>
     /// </summary>
-    public class UploadServerCertificateResult  
+    public partial class UploadServerCertificateResult
     {
         
         private ServerCertificateMetadata serverCertificateMetadata;
@@ -43,6 +43,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="serverCertificateMetadata">The value to set for the ServerCertificateMetadata property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UploadServerCertificateResult WithServerCertificateMetadata(ServerCertificateMetadata serverCertificateMetadata)
         {
             this.serverCertificateMetadata = serverCertificateMetadata;
@@ -53,7 +54,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if ServerCertificateMetadata property is set
         internal bool IsSetServerCertificateMetadata()
         {
-            return this.serverCertificateMetadata != null;       
+            return this.serverCertificateMetadata != null;
         }
     }
 }

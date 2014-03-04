@@ -78,6 +78,11 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                     writer.WritePropertyName("InstanceId");
                     writer.Write(describeElasticIpsRequest.InstanceId);
                 }
+                if (describeElasticIpsRequest != null && describeElasticIpsRequest.IsSetStackId()) 
+                {
+                    writer.WritePropertyName("StackId");
+                    writer.Write(describeElasticIpsRequest.StackId);
+                }
 
                 if (describeElasticIpsRequest != null && describeElasticIpsRequest.Ips != null && describeElasticIpsRequest.Ips.Count > 0) 
                 {

@@ -25,8 +25,9 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyClusterParameterGroup operation.
-    /// <para> Modifies the parameters of a parameter group. </para> <para> For more information about managing parameter groups, go to Amazon
-    /// Redshift Parameter Groups in the <i>Amazon Redshift Management Guide</i> .
+    /// <para> Modifies the parameters of a parameter group. </para> <para> For more information about managing parameter groups, go to <a
+    /// href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html" >Amazon Redshift Parameter Groups</a> in the
+    /// <i>Amazon Redshift Management Guide</i> .
     /// </para>
     /// </summary>
     /// <seealso cref="Amazon.Redshift.AmazonRedshift.ModifyClusterParameterGroup"/>
@@ -50,6 +51,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="parameterGroupName">The value to set for the ParameterGroupName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyClusterParameterGroupRequest WithParameterGroupName(string parameterGroupName)
         {
             this.parameterGroupName = parameterGroupName;
@@ -78,6 +80,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="parameters">The values to add to the Parameters collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyClusterParameterGroupRequest WithParameters(params Parameter[] parameters)
         {
             foreach (Parameter element in parameters)
@@ -93,6 +96,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="parameters">The values to add to the Parameters collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyClusterParameterGroupRequest WithParameters(IEnumerable<Parameter> parameters)
         {
             foreach (Parameter element in parameters)

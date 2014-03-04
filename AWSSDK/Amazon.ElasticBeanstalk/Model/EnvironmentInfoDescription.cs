@@ -23,7 +23,7 @@ namespace Amazon.ElasticBeanstalk.Model
     /// <summary>
     /// <para>The information retrieved from the Amazon EC2 instances.</para>
     /// </summary>
-    public class EnvironmentInfoDescription  
+    public partial class EnvironmentInfoDescription
     {
         
         private string infoType;
@@ -55,6 +55,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="infoType">The value to set for the InfoType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EnvironmentInfoDescription WithInfoType(string infoType)
         {
             this.infoType = infoType;
@@ -65,7 +66,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if InfoType property is set
         internal bool IsSetInfoType()
         {
-            return this.infoType != null;       
+            return this.infoType != null;
         }
 
         /// <summary>
@@ -83,6 +84,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="ec2InstanceId">The value to set for the Ec2InstanceId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EnvironmentInfoDescription WithEc2InstanceId(string ec2InstanceId)
         {
             this.ec2InstanceId = ec2InstanceId;
@@ -93,7 +95,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if Ec2InstanceId property is set
         internal bool IsSetEc2InstanceId()
         {
-            return this.ec2InstanceId != null;       
+            return this.ec2InstanceId != null;
         }
 
         /// <summary>
@@ -111,6 +113,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="sampleTimestamp">The value to set for the SampleTimestamp property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EnvironmentInfoDescription WithSampleTimestamp(DateTime sampleTimestamp)
         {
             this.sampleTimestamp = sampleTimestamp;
@@ -121,7 +124,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if SampleTimestamp property is set
         internal bool IsSetSampleTimestamp()
         {
-            return this.sampleTimestamp.HasValue;       
+            return this.sampleTimestamp.HasValue;
         }
 
         /// <summary>
@@ -139,6 +142,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="message">The value to set for the Message property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EnvironmentInfoDescription WithMessage(string message)
         {
             this.message = message;
@@ -149,7 +153,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if Message property is set
         internal bool IsSetMessage()
         {
-            return this.message != null;       
+            return this.message != null;
         }
     }
 }

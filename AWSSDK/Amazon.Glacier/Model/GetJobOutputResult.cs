@@ -23,7 +23,7 @@ namespace Amazon.Glacier.Model
     /// <summary>
     /// <para>Contains the Amazon Glacier response to your request.</para>
     /// </summary>
-    public class GetJobOutputResult  
+    public partial class GetJobOutputResult
     {
         
         private Stream body;
@@ -49,6 +49,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="body">The value to set for the Body property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetJobOutputResult WithBody(Stream body)
         {
             this.body = body;
@@ -59,7 +60,7 @@ namespace Amazon.Glacier.Model
         // Check to see if Body property is set
         internal bool IsSetBody()
         {
-            return this.body != null;       
+            return this.body != null;
         }
 
         /// <summary>
@@ -83,6 +84,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="checksum">The value to set for the Checksum property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetJobOutputResult WithChecksum(string checksum)
         {
             this.checksum = checksum;
@@ -93,7 +95,7 @@ namespace Amazon.Glacier.Model
         // Check to see if Checksum property is set
         internal bool IsSetChecksum()
         {
-            return this.checksum != null;       
+            return this.checksum != null;
         }
 
         /// <summary>
@@ -111,6 +113,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="status">The value to set for the Status property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetJobOutputResult WithStatus(int status)
         {
             this.status = status;
@@ -121,7 +124,7 @@ namespace Amazon.Glacier.Model
         // Check to see if Status property is set
         internal bool IsSetStatus()
         {
-            return this.status.HasValue;       
+            return this.status.HasValue;
         }
 
         /// <summary>
@@ -140,6 +143,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="contentRange">The value to set for the ContentRange property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetJobOutputResult WithContentRange(string contentRange)
         {
             this.contentRange = contentRange;
@@ -150,7 +154,7 @@ namespace Amazon.Glacier.Model
         // Check to see if ContentRange property is set
         internal bool IsSetContentRange()
         {
-            return this.contentRange != null;       
+            return this.contentRange != null;
         }
 
         /// <summary>
@@ -169,6 +173,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="acceptRanges">The value to set for the AcceptRanges property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetJobOutputResult WithAcceptRanges(string acceptRanges)
         {
             this.acceptRanges = acceptRanges;
@@ -179,7 +184,7 @@ namespace Amazon.Glacier.Model
         // Check to see if AcceptRanges property is set
         internal bool IsSetAcceptRanges()
         {
-            return this.acceptRanges != null;       
+            return this.acceptRanges != null;
         }
 
         /// <summary>
@@ -199,6 +204,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="contentType">The value to set for the ContentType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetJobOutputResult WithContentType(string contentType)
         {
             this.contentType = contentType;
@@ -209,7 +215,7 @@ namespace Amazon.Glacier.Model
         // Check to see if ContentType property is set
         internal bool IsSetContentType()
         {
-            return this.contentType != null;       
+            return this.contentType != null;
         }
 
         /// <summary>
@@ -227,6 +233,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="archiveDescription">The value to set for the ArchiveDescription property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetJobOutputResult WithArchiveDescription(string archiveDescription)
         {
             this.archiveDescription = archiveDescription;
@@ -237,7 +244,7 @@ namespace Amazon.Glacier.Model
         // Check to see if ArchiveDescription property is set
         internal bool IsSetArchiveDescription()
         {
-            return this.archiveDescription != null;       
+            return this.archiveDescription != null;
         }
     }
 }

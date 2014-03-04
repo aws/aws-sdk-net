@@ -21,15 +21,15 @@ using System.IO;
 namespace Amazon.AWSSupport.Model
 {
     /// <summary>
-    /// <para>Returns the objects or data listed below if successful. Otherwise, returns an error.</para>
+    /// <para>Contains the following objects or data if successful. Otherwise, returns an error.</para>
     /// </summary>
-    public class DescribeSeverityLevelsResult
+    public partial class DescribeSeverityLevelsResult
     {
         
         private List<SeverityLevel> severityLevels = new List<SeverityLevel>();
 
         /// <summary>
-        /// List of available severity levels for the support case. Available severity levels are defined by your service level agreement with AWS.
+        /// The available severity levels for the support case. Available severity levels are defined by your service level agreement with AWS.
         ///  
         /// </summary>
         public List<SeverityLevel> SeverityLevels
@@ -42,6 +42,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="severityLevels">The values to add to the SeverityLevels collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeSeverityLevelsResult WithSeverityLevels(params SeverityLevel[] severityLevels)
         {
             foreach (SeverityLevel element in severityLevels)
@@ -57,6 +58,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="severityLevels">The values to add to the SeverityLevels collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeSeverityLevelsResult WithSeverityLevels(IEnumerable<SeverityLevel> severityLevels)
         {
             foreach (SeverityLevel element in severityLevels)

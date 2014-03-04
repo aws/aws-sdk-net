@@ -64,6 +64,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="domainName">The value to set for the DomainName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DefineIndexFieldRequest WithDomainName(string domainName)
         {
             this.domainName = domainName;
@@ -74,7 +75,7 @@ namespace Amazon.CloudSearch.Model
         // Check to see if DomainName property is set
         internal bool IsSetDomainName()
         {
-            return this.domainName != null;       
+            return this.domainName != null;
         }
 
         /// <summary>
@@ -93,6 +94,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="indexField">The value to set for the IndexField property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DefineIndexFieldRequest WithIndexField(IndexField indexField)
         {
             this.indexField = indexField;
@@ -103,7 +105,7 @@ namespace Amazon.CloudSearch.Model
         // Check to see if IndexField property is set
         internal bool IsSetIndexField()
         {
-            return this.indexField != null;       
+            return this.indexField != null;
         }
     }
 }

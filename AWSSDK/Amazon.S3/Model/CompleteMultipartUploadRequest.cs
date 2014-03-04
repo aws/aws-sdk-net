@@ -1,4 +1,4 @@
-﻿/*******************************************************************************
+/*******************************************************************************
  *  Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  *  this file except in compliance with the License. A copy of the License is located at
@@ -53,6 +53,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="bucketName">S3 bucket name</param>
         /// <returns>the request with the BucketName set</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CompleteMultipartUploadRequest WithBucketName(string bucketName)
         {
             this.bucketName = bucketName;
@@ -85,6 +86,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="key">S3 object key</param>
         /// <returns>the request with the Key set</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CompleteMultipartUploadRequest WithKey(string key)
         {
             this.key = key;
@@ -117,6 +119,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="uploadId">Id of the multipart upload</param>
         /// <returns>the request with the UploadId set</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CompleteMultipartUploadRequest WithUploadId(string uploadId)
         {
             this.uploadId = uploadId;
@@ -158,6 +161,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="partETags">PartETags that will added to this request.</param>
         /// <returns>the request with the PartETags set</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CompleteMultipartUploadRequest WithPartETags(params PartETag[] partETags)
         {
             foreach (PartETag part in partETags)
@@ -172,6 +176,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="partETags">PartETags that will added to this request.</param>
         /// <returns>The request with the PartETags set</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CompleteMultipartUploadRequest WithPartETags(IEnumerable<PartETag> partETags)
         {
             foreach (PartETag part in partETags)

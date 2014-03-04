@@ -22,13 +22,14 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
      /// <summary>
      ///   ListVirtualMFADevicesResult Unmarshaller
      /// </summary>
-    internal class ListVirtualMFADevicesResultUnmarshaller : IUnmarshaller<ListVirtualMFADevicesResult, XmlUnmarshallerContext> 
+    internal class ListVirtualMFADevicesResultUnmarshaller : IUnmarshaller<ListVirtualMFADevicesResult, XmlUnmarshallerContext>, IUnmarshaller<ListVirtualMFADevicesResult, JsonUnmarshallerContext> 
     {
         public ListVirtualMFADevicesResult Unmarshall(XmlUnmarshallerContext context) 
         {
             ListVirtualMFADevicesResult listVirtualMFADevicesResult = new ListVirtualMFADevicesResult();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -64,6 +65,11 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 
 
             return listVirtualMFADevicesResult;
+        }
+
+        public ListVirtualMFADevicesResult Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static ListVirtualMFADevicesResultUnmarshaller instance;

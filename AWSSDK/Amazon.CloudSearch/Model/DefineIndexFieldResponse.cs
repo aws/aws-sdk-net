@@ -34,14 +34,14 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         public DefineIndexFieldResult DefineIndexFieldResult
         {
-            get 
+            get
             {
                 if(this.defineIndexFieldResult == null)
                 {
                     this.defineIndexFieldResult = new DefineIndexFieldResult();
                 }
 
-                return this.defineIndexFieldResult; 
+                return this.defineIndexFieldResult;
             }
             set { this.defineIndexFieldResult = value; }
         }

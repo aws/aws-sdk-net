@@ -23,7 +23,7 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// <para>Contains the result of a successful invocation of the UploadSigningCertificate action.</para>
     /// </summary>
-    public class UploadSigningCertificateResult  
+    public partial class UploadSigningCertificateResult
     {
         
         private SigningCertificate certificate;
@@ -43,6 +43,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="certificate">The value to set for the Certificate property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UploadSigningCertificateResult WithCertificate(SigningCertificate certificate)
         {
             this.certificate = certificate;
@@ -53,7 +54,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if Certificate property is set
         internal bool IsSetCertificate()
         {
-            return this.certificate != null;       
+            return this.certificate != null;
         }
     }
 }

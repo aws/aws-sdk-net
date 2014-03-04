@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model
         private string marker;
 
         /// <summary>
-        /// The name of the DB Parameter Group Family.
+        /// The name of the DB parameter group family.
         ///  
         /// </summary>
         public string DBParameterGroupFamily
@@ -49,6 +49,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="dBParameterGroupFamily">The value to set for the DBParameterGroupFamily property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeEngineDefaultParametersRequest WithDBParameterGroupFamily(string dBParameterGroupFamily)
         {
             this.dBParameterGroupFamily = dBParameterGroupFamily;
@@ -79,6 +80,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="maxRecords">The value to set for the MaxRecords property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeEngineDefaultParametersRequest WithMaxRecords(int maxRecords)
         {
             this.maxRecords = maxRecords;
@@ -93,8 +95,8 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// An optional pagination token provided by a previous DescribeEngineDefaultParameters request. If this parameter is specified, the response
-        /// includes only records beyond the marker, up to the value specified by <c>MaxRecords</c>.
+        /// An optional pagination token provided by a previous <c>DescribeEngineDefaultParameters</c> request. If this parameter is specified, the
+        /// response includes only records beyond the marker, up to the value specified by <c>MaxRecords</c>.
         ///  
         /// </summary>
         public string Marker
@@ -108,6 +110,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="marker">The value to set for the Marker property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeEngineDefaultParametersRequest WithMarker(string marker)
         {
             this.marker = marker;

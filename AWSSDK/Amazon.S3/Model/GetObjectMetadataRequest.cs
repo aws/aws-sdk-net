@@ -59,6 +59,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="bucketName">The bucket name</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetObjectMetadataRequest WithBucketName(string bucketName)
         {
             this.bucketName = bucketName;
@@ -93,6 +94,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="key">The value that Key is set to</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetObjectMetadataRequest WithKey(string key)
         {
             this.key = key;
@@ -133,6 +135,7 @@ namespace Amazon.S3.Model
         /// </remarks>
         /// <param name="modifiedSinceDate">Date and time to be tested</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetObjectMetadataRequest WithModifiedSinceDate(DateTime modifiedSinceDate)
         {
             this.modifiedSinceDate = modifiedSinceDate;
@@ -173,6 +176,7 @@ namespace Amazon.S3.Model
         /// </remarks>
         /// <param name="unmodifiedSinceDate">The date and time to test against</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetObjectMetadataRequest WithUnmodifiedSinceDate(DateTime unmodifiedSinceDate)
         {
             this.unmodifiedSinceDate = unmodifiedSinceDate;
@@ -212,6 +216,7 @@ namespace Amazon.S3.Model
         /// specified, otherwise return a 412 (precondition failed).
         /// <param name="etagToMatch">The value of the ETag to test</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetObjectMetadataRequest WithETagToMatch(string etagToMatch)
         {
             this.etagToMatch = etagToMatch;
@@ -250,6 +255,7 @@ namespace Amazon.S3.Model
         /// specified, otherwise return a 304 (not modified).
         /// <param name="etagToNotMatch">The value of the ETag to test</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetObjectMetadataRequest WithETagToNotMatch(string etagToNotMatch)
         {
             this.etagToNotMatch = etagToNotMatch;
@@ -284,6 +290,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="versionId">The id of the object version</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetObjectMetadataRequest WithVersionId(string versionId)
         {
             this.versionId = versionId;

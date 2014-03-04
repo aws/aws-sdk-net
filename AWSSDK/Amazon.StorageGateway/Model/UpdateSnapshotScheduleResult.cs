@@ -21,16 +21,15 @@ using System.IO;
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
-    /// <para>A JSON object containing the UpdateSnapshotScheduleOutput$VolumeARN of the updated storage volume.</para>
+    /// <para>A JSON object containing the of the updated storage volume.</para>
     /// </summary>
-    public class UpdateSnapshotScheduleResult  
+    public partial class UpdateSnapshotScheduleResult
     {
         
         private string volumeARN;
 
         /// <summary>
-        /// The <a>UpdateSnapshotScheduleOutput$VolumeARN</a> of the storage volume whose snapshot schedule was updated. It is the same value you
-        /// provided in your request.
+        /// 
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -53,6 +52,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="volumeARN">The value to set for the VolumeARN property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateSnapshotScheduleResult WithVolumeARN(string volumeARN)
         {
             this.volumeARN = volumeARN;
@@ -63,7 +63,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if VolumeARN property is set
         internal bool IsSetVolumeARN()
         {
-            return this.volumeARN != null;       
+            return this.volumeARN != null;
         }
     }
 }

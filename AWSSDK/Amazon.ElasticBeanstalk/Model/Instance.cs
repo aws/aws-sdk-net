@@ -23,7 +23,7 @@ namespace Amazon.ElasticBeanstalk.Model
     /// <summary>
     /// <para>The description of an Amazon EC2 instance.</para>
     /// </summary>
-    public class Instance  
+    public partial class Instance
     {
         
         private string id;
@@ -43,6 +43,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="id">The value to set for the Id property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Instance WithId(string id)
         {
             this.id = id;
@@ -53,7 +54,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if Id property is set
         internal bool IsSetId()
         {
-            return this.id != null;       
+            return this.id != null;
         }
     }
 }

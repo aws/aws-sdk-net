@@ -32,6 +32,8 @@
 
         public RecentCaseCommunications Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             RecentCaseCommunications recentCaseCommunications = new RecentCaseCommunications();
           recentCaseCommunications.Communications = null;
                         
@@ -46,8 +48,14 @@
               
               if (context.TestExpression("Communications", targetDepth))
               {
-                recentCaseCommunications.Communications = new List<Communication>();
-                        CommunicationUnmarshaller unmarshaller = CommunicationUnmarshaller.GetInstance();
+                
+                  if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                  {
+                      recentCaseCommunications.Communications = null;
+                      continue;
+                  }              
+                  recentCaseCommunications.Communications = new List<Communication>();
+                  CommunicationUnmarshaller unmarshaller = CommunicationUnmarshaller.GetInstance();
                 while (context.Read())
                 {
                   if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))

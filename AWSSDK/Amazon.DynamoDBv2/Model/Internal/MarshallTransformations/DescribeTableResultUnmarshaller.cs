@@ -32,6 +32,8 @@
 
         public DescribeTableResult Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             DescribeTableResult describeTableResult = new DescribeTableResult();
           
             int originalDepth = context.CurrentDepth;

@@ -24,7 +24,7 @@ namespace Amazon.RDS.Model
     /// <para> Contains the result of a successful invocation of the CreateDBParameterGroup action. </para> <para> This data type is used as a
     /// request parameter in the DeleteDBParameterGroup action, and as a response element in the DescribeDBParameterGroups action. </para>
     /// </summary>
-    public class DBParameterGroup
+    public partial class DBParameterGroup
     {
         
         private string dBParameterGroupName;
@@ -32,7 +32,7 @@ namespace Amazon.RDS.Model
         private string description;
 
         /// <summary>
-        /// Provides the name of the DB Parameter Group.
+        /// Provides the name of the DB parameter group.
         ///  
         /// </summary>
         public string DBParameterGroupName
@@ -46,6 +46,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="dBParameterGroupName">The value to set for the DBParameterGroupName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DBParameterGroup WithDBParameterGroupName(string dBParameterGroupName)
         {
             this.dBParameterGroupName = dBParameterGroupName;
@@ -60,7 +61,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Provides the name of the DB Parameter Group Family that this DB Parameter Group is compatible with.
+        /// Provides the name of the DB parameter group family that this DB parameter group is compatible with.
         ///  
         /// </summary>
         public string DBParameterGroupFamily
@@ -74,6 +75,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="dBParameterGroupFamily">The value to set for the DBParameterGroupFamily property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DBParameterGroup WithDBParameterGroupFamily(string dBParameterGroupFamily)
         {
             this.dBParameterGroupFamily = dBParameterGroupFamily;
@@ -88,7 +90,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Provides the customer-specified description for this DB Parameter Group.
+        /// Provides the customer-specified description for this DB parameter group.
         ///  
         /// </summary>
         public string Description
@@ -102,6 +104,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="description">The value to set for the Description property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DBParameterGroup WithDescription(string description)
         {
             this.description = description;

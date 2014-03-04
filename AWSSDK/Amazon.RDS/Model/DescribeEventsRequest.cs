@@ -25,8 +25,8 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeEvents operation.
-    /// <para> Returns events related to DB Instances, DB Security Groups, DB Snapshots and DB Parameter Groups for the past 14 days. Events
-    /// specific to a particular DB Instance, DB Security Group, database snapshot or DB Parameter Group can be obtained by providing the name as a
+    /// <para> Returns events related to DB instances, DB security groups, DB snapshots, and DB parameter groups for the past 14 days. Events
+    /// specific to a particular DB instance, DB security group, database snapshot, or DB parameter group can be obtained by providing the name as a
     /// parameter. By default, the past hour of events are returned. </para>
     /// </summary>
     /// <seealso cref="Amazon.RDS.AmazonRDS.DescribeEvents"/>
@@ -43,10 +43,11 @@ namespace Amazon.RDS.Model
 
         /// <summary>
         /// The identifier of the event source for which events will be returned. If not specified, then all sources are included in the response.
-        /// Constraints: <ul> <li>If SourceIdentifier is supplied, SourceType must also be provided.</li> <li>If the source type is DBInstance, then a
-        /// DBInstanceIdentifier must be supplied.</li> <li>If the source type is DBSecurityGroup, a DBSecurityGroupName must be supplied.</li> <li>If
-        /// the source type is DBParameterGroup, a DBParameterGroupName must be supplied.</li> <li>If the source type is DBSnapshot, a
-        /// DBSnapshotIdentifier must be supplied.</li> <li>Cannot end with a hyphen or contain two consecutive hyphens.</li> </ul>
+        /// Constraints: <ul> <li>If SourceIdentifier is supplied, SourceType must also be provided.</li> <li>If the source type is <c>DBInstance</c>,
+        /// then a <c>DBInstanceIdentifier</c> must be supplied.</li> <li>If the source type is <c>DBSecurityGroup</c>, a <c>DBSecurityGroupName</c>
+        /// must be supplied.</li> <li>If the source type is <c>DBParameterGroup</c>, a <c>DBParameterGroupName</c> must be supplied.</li> <li>If the
+        /// source type is <c>DBSnapshot</c>, a <c>DBSnapshotIdentifier</c> must be supplied.</li> <li>Cannot end with a hyphen or contain two
+        /// consecutive hyphens.</li> </ul>
         ///  
         /// </summary>
         public string SourceIdentifier
@@ -60,6 +61,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="sourceIdentifier">The value to set for the SourceIdentifier property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeEventsRequest WithSourceIdentifier(string sourceIdentifier)
         {
             this.sourceIdentifier = sourceIdentifier;
@@ -97,6 +99,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="sourceType">The value to set for the SourceType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeEventsRequest WithSourceType(string sourceType)
         {
             this.sourceType = sourceType;
@@ -126,6 +129,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="startTime">The value to set for the StartTime property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeEventsRequest WithStartTime(DateTime startTime)
         {
             this.startTime = startTime;
@@ -155,6 +159,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="endTime">The value to set for the EndTime property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeEventsRequest WithEndTime(DateTime endTime)
         {
             this.endTime = endTime;
@@ -183,6 +188,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="duration">The value to set for the Duration property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeEventsRequest WithDuration(int duration)
         {
             this.duration = duration;
@@ -210,6 +216,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="eventCategories">The values to add to the EventCategories collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeEventsRequest WithEventCategories(params string[] eventCategories)
         {
             foreach (string element in eventCategories)
@@ -225,6 +232,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="eventCategories">The values to add to the EventCategories collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeEventsRequest WithEventCategories(IEnumerable<string> eventCategories)
         {
             foreach (string element in eventCategories)
@@ -258,6 +266,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="maxRecords">The value to set for the MaxRecords property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeEventsRequest WithMaxRecords(int maxRecords)
         {
             this.maxRecords = maxRecords;
@@ -287,6 +296,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="marker">The value to set for the Marker property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeEventsRequest WithMarker(string marker)
         {
             this.marker = marker;

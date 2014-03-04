@@ -41,12 +41,14 @@ namespace Amazon.Glacier.Transfer.Internal
 
             try
             {
-                UploadArchiveRequest uploadRequest = new UploadArchiveRequest()
-                        .WithAccountId(this.options.AccountId)
-                        .WithArchiveDescription(archiveDescription)
-                        .WithVaultName(vaultName)
-                        .WithChecksum(checksum)
-                        .WithBody(input);
+                UploadArchiveRequest uploadRequest = new UploadArchiveRequest
+                {
+                    AccountId = this.options.AccountId,
+                    ArchiveDescription = archiveDescription,
+                    VaultName = vaultName,
+                    Checksum = checksum,
+                    Body = input
+                };
                 uploadRequest.StreamTransferProgress += this.ProgressCallback;
                 uploadRequest.BeforeRequestEvent += new UserAgentPostFix("SingleUpload").UserAgentRequestEventHandlerSync;
 

@@ -26,7 +26,7 @@ namespace Amazon.CloudSearch.Model
     /// <summary>
     /// Container for the parameters to the UpdateStemmingOptions operation.
     /// <para>Configures a stemming dictionary for the search domain. The stemming dictionary is used during indexing and when processing search
-    /// requests. The maximum size of the stemming dictionary is 500KB.</para>
+    /// requests. The maximum size of the stemming dictionary is 500 KB.</para>
     /// </summary>
     /// <seealso cref="Amazon.CloudSearch.AmazonCloudSearch.UpdateStemmingOptions"/>
     public class UpdateStemmingOptionsRequest : AmazonWebServiceRequest
@@ -64,6 +64,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="domainName">The value to set for the DomainName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateStemmingOptionsRequest WithDomainName(string domainName)
         {
             this.domainName = domainName;
@@ -74,12 +75,12 @@ namespace Amazon.CloudSearch.Model
         // Check to see if DomainName property is set
         internal bool IsSetDomainName()
         {
-            return this.domainName != null;       
+            return this.domainName != null;
         }
 
         /// <summary>
         /// Maps terms to their stems, serialized as a JSON document. The document has a single object with one property "stems" whose value is an
-        /// object mapping terms to their stems. The maximum size of a stemming document is 500KB. Example: <c>{ "stems": {"people": "person",
+        /// object mapping terms to their stems. The maximum size of a stemming document is 500 KB. Example: <c>{ "stems": {"people": "person",
         /// "walking": "walk"} }</c>
         ///  
         /// </summary>
@@ -94,6 +95,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="stems">The value to set for the Stems property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateStemmingOptionsRequest WithStems(string stems)
         {
             this.stems = stems;
@@ -104,7 +106,7 @@ namespace Amazon.CloudSearch.Model
         // Check to see if Stems property is set
         internal bool IsSetStems()
         {
-            return this.stems != null;       
+            return this.stems != null;
         }
     }
 }

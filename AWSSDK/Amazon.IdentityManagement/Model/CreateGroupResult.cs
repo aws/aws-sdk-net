@@ -23,7 +23,7 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// <para>Contains the result of a successful invocation of the CreateGroup action.</para>
     /// </summary>
-    public class CreateGroupResult  
+    public partial class CreateGroupResult
     {
         
         private Group group;
@@ -43,6 +43,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="group">The value to set for the Group property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateGroupResult WithGroup(Group group)
         {
             this.group = group;
@@ -53,7 +54,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if Group property is set
         internal bool IsSetGroup()
         {
-            return this.group != null;       
+            return this.group != null;
         }
     }
 }

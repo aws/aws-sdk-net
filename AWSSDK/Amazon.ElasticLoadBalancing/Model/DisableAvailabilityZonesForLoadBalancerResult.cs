@@ -23,13 +23,13 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// <summary>
     /// <para> The output for the DisableAvailabilityZonesForLoadBalancer action. </para>
     /// </summary>
-    public class DisableAvailabilityZonesForLoadBalancerResult  
+    public partial class DisableAvailabilityZonesForLoadBalancerResult
     {
         
         private List<string> availabilityZones = new List<string>();
 
         /// <summary>
-        /// A list of updated Availability Zones for the LoadBalancer.
+        /// A list of updated Availability Zones for the load balancer.
         ///  
         /// </summary>
         public List<string> AvailabilityZones
@@ -42,6 +42,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="availabilityZones">The values to add to the AvailabilityZones collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DisableAvailabilityZonesForLoadBalancerResult WithAvailabilityZones(params string[] availabilityZones)
         {
             foreach (string element in availabilityZones)
@@ -51,12 +52,13 @@ namespace Amazon.ElasticLoadBalancing.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the AvailabilityZones collection
         /// </summary>
         /// <param name="availabilityZones">The values to add to the AvailabilityZones collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DisableAvailabilityZonesForLoadBalancerResult WithAvailabilityZones(IEnumerable<string> availabilityZones)
         {
             foreach (string element in availabilityZones)
@@ -70,7 +72,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if AvailabilityZones property is set
         internal bool IsSetAvailabilityZones()
         {
-            return this.availabilityZones.Count > 0;       
+            return this.availabilityZones.Count > 0;
         }
     }
 }

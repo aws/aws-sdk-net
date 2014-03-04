@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -48,9 +48,14 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 return new TooManyCookieNamesInWhiteListException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
     
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidDefaultRootObject"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidGeoRestrictionParameter"))
             {
-                return new InvalidDefaultRootObjectException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new InvalidGeoRestrictionParameterException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+    
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidResponseCode"))
+            {
+                return new InvalidResponseCodeException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
     
             if (errorResponse.Code != null && errorResponse.Code.Equals("MissingBody"))
@@ -58,14 +63,14 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 return new MissingBodyException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
     
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidLocationCode"))
+            {
+                return new InvalidLocationCodeException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+    
             if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyDistributionCNAMEs"))
             {
                 return new TooManyDistributionCNAMEsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-    
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidForwardCookies"))
-            {
-                return new InvalidForwardCookiesException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
     
             if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyDistributions"))
@@ -83,29 +88,19 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 return new InconsistentQuantitiesException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
     
-            if (errorResponse.Code != null && errorResponse.Code.Equals("CNAMEAlreadyExists"))
-            {
-                return new CNAMEAlreadyExistsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-    
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidArgument"))
             {
                 return new InvalidArgumentException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
     
+            if (errorResponse.Code != null && errorResponse.Code.Equals("CNAMEAlreadyExists"))
+            {
+                return new CNAMEAlreadyExistsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+    
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidOriginAccessIdentity"))
             {
                 return new InvalidOriginAccessIdentityException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-    
-            if (errorResponse.Code != null && errorResponse.Code.Equals("TrustedSignerDoesNotExist"))
-            {
-                return new TrustedSignerDoesNotExistException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-    
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidOrigin"))
-            {
-                return new InvalidOriginException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
     
             if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyCacheBehaviors"))
@@ -118,9 +113,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 return new TooManyTrustedSignersException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
     
-            if (errorResponse.Code != null && errorResponse.Code.Equals("AccessDenied"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidViewerCertificate"))
             {
-                return new AccessDeniedException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new InvalidViewerCertificateException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
     
             if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyOrigins"))
@@ -136,6 +131,46 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidRequiredProtocol"))
             {
                 return new InvalidRequiredProtocolException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+    
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidDefaultRootObject"))
+            {
+                return new InvalidDefaultRootObjectException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+    
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidForwardCookies"))
+            {
+                return new InvalidForwardCookiesException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+    
+            if (errorResponse.Code != null && errorResponse.Code.Equals("TrustedSignerDoesNotExist"))
+            {
+                return new TrustedSignerDoesNotExistException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+    
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidOrigin"))
+            {
+                return new InvalidOriginException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+    
+            if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyCertificates"))
+            {
+                return new TooManyCertificatesException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+    
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidRelativePath"))
+            {
+                return new InvalidRelativePathException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+    
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidErrorCode"))
+            {
+                return new InvalidErrorCodeException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+    
+            if (errorResponse.Code != null && errorResponse.Code.Equals("AccessDenied"))
+            {
+                return new AccessDeniedException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
     
             return new AmazonCloudFrontException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);

@@ -53,6 +53,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="id">Owner's unique identifier</param>
         /// <returns>this instance</returns>
+        [System.Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Owner WithId(string id)
         {
             this.id = id;
@@ -78,6 +79,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="displayName">Owner's display name</param>
         /// <returns>this instance</returns>
+        [System.Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Owner WithDisplayName(string displayName)
         {
             this.displayName = displayName;

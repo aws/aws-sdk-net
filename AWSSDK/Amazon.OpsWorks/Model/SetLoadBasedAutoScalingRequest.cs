@@ -25,10 +25,13 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the SetLoadBasedAutoScaling operation.
-    /// <para>Specify the load-based auto scaling configuration for a specified layer. For more information, see Managing Load with Time-based and
-    /// Load-based Instances.</para> <para><b>NOTE:</b>To use load-based auto scaling, you must create a set of load-based auto scaling instances.
+    /// <para>Specify the load-based auto scaling configuration for a specified layer. For more information, see <a
+    /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-autoscaling.html" >Managing Load with Time-based and Load-based
+    /// Instances</a> .</para> <para><b>NOTE:</b>To use load-based auto scaling, you must create a set of load-based auto scaling instances.
     /// Load-based auto scaling operates only on the instances from that set, so you must ensure that you have created enough instances to handle
-    /// the maximum anticipated load.</para>
+    /// the maximum anticipated load.</para> <para> <b>Required Permissions</b> : To use this action, an IAM user must have a Manage permissions
+    /// level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a
+    /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
     /// </summary>
     /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.SetLoadBasedAutoScaling"/>
     public class SetLoadBasedAutoScalingRequest : AmazonWebServiceRequest
@@ -53,6 +56,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="layerId">The value to set for the LayerId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SetLoadBasedAutoScalingRequest WithLayerId(string layerId)
         {
             this.layerId = layerId;
@@ -81,6 +85,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="enable">The value to set for the Enable property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SetLoadBasedAutoScalingRequest WithEnable(bool enable)
         {
             this.enable = enable;
@@ -96,7 +101,7 @@ namespace Amazon.OpsWorks.Model
 
         /// <summary>
         /// An <c>AutoScalingThresholds</c> object with the upscaling threshold configuration. If the load exceeds these thresholds for a specified
-        /// amount of time, OpsWorks starts a specified number of instances.
+        /// amount of time, AWS OpsWorks starts a specified number of instances.
         ///  
         /// </summary>
         public AutoScalingThresholds UpScaling
@@ -110,6 +115,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="upScaling">The value to set for the UpScaling property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SetLoadBasedAutoScalingRequest WithUpScaling(AutoScalingThresholds upScaling)
         {
             this.upScaling = upScaling;
@@ -125,7 +131,7 @@ namespace Amazon.OpsWorks.Model
 
         /// <summary>
         /// An <c>AutoScalingThresholds</c> object with the downscaling threshold configuration. If the load falls below these thresholds for a
-        /// specified amount of time, OpsWorks stops a specified number of instances.
+        /// specified amount of time, AWS OpsWorks stops a specified number of instances.
         ///  
         /// </summary>
         public AutoScalingThresholds DownScaling
@@ -139,6 +145,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="downScaling">The value to set for the DownScaling property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SetLoadBasedAutoScalingRequest WithDownScaling(AutoScalingThresholds downScaling)
         {
             this.downScaling = downScaling;

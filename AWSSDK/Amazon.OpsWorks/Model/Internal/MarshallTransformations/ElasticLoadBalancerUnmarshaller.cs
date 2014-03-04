@@ -32,8 +32,11 @@
 
         public ElasticLoadBalancer Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             ElasticLoadBalancer elasticLoadBalancer = new ElasticLoadBalancer();
           elasticLoadBalancer.AvailabilityZones = null;
+                        elasticLoadBalancer.SubnetIds = null;
                         elasticLoadBalancer.Ec2InstanceIds = null;
                         
             int originalDepth = context.CurrentDepth;
@@ -75,6 +78,12 @@
                 continue;
               }
   
+              if (context.TestExpression("VpcId", targetDepth))
+              {
+                elasticLoadBalancer.VpcId = StringUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
               if (context.TestExpression("AvailabilityZones", targetDepth))
               {
                 elasticLoadBalancer.AvailabilityZones = new List<String>();
@@ -84,6 +93,24 @@
                   if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))
                   {
                      elasticLoadBalancer.AvailabilityZones.Add(unmarshaller.Unmarshall(context));
+                  }
+                  else if (context.IsEndArray)
+                  {
+                    break;
+                  }
+                }
+                continue;
+              }
+  
+              if (context.TestExpression("SubnetIds", targetDepth))
+              {
+                elasticLoadBalancer.SubnetIds = new List<String>();
+                        StringUnmarshaller unmarshaller = StringUnmarshaller.GetInstance();
+                while (context.Read())
+                {
+                  if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))
+                  {
+                     elasticLoadBalancer.SubnetIds.Add(unmarshaller.Unmarshall(context));
                   }
                   else if (context.IsEndArray)
                   {

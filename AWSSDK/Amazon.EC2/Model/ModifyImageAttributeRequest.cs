@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
     /// Modifies an attribute of an AMI
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
-    public class ModifyImageAttributeRequest
+    public class ModifyImageAttributeRequest : EC2Request
     {    
         private string imageIdField;
         private string attributeField;
@@ -54,6 +54,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="imageId">The AMI ID.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyImageAttributeRequest WithImageId(string imageId)
         {
             this.imageIdField = imageId;
@@ -87,6 +88,7 @@ namespace Amazon.EC2.Model
         /// Values: launchPermission |
         /// productCodes</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyImageAttributeRequest WithAttribute(string attribute)
         {
             this.attributeField = attribute;
@@ -119,6 +121,7 @@ namespace Amazon.EC2.Model
         /// <param name="operationType">Specifies the operation to perform on the
         /// attribute. Valid Values: add | remove</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyImageAttributeRequest WithOperationType(string operationType)
         {
             this.operationTypeField = operationType;
@@ -156,6 +159,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">AWS Access Key ID.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyImageAttributeRequest WithUserId(params string[] list)
         {
             foreach (string item in list)
@@ -197,6 +201,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">Name of the group. Currently supports "all."</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyImageAttributeRequest WithUserGroup(params string[] list)
         {
             foreach (string item in list)
@@ -237,6 +242,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">Product code.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyImageAttributeRequest WithProductCode(params string[] list)
         {
             foreach (string item in list)
@@ -270,6 +276,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="description">Description property</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyImageAttributeRequest WithDescription(string description)
         {
             this.descriptionField = description;

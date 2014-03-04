@@ -52,7 +52,7 @@ namespace Amazon.EC2.Model
     /// EC2 instances in the subnet).
     /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
-    public class CreateSubnetRequest
+    public class CreateSubnetRequest : EC2Request
     {    
         private string vpcIdField;
         private string cidrBlockField;
@@ -74,6 +74,7 @@ namespace Amazon.EC2.Model
         /// <param name="vpcId">The ID of the VPC where you want to create the
         /// subnet.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateSubnetRequest WithVpcId(string vpcId)
         {
             this.vpcIdField = vpcId;
@@ -104,6 +105,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="cidrBlock">The CIDR block you want the subnet to cover.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateSubnetRequest WithCidrBlock(string cidrBlock)
         {
             this.cidrBlockField = cidrBlock;
@@ -134,6 +136,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="availabilityZone">The Availability Zone you want the subnet in.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateSubnetRequest WithAvailabilityZone(string availabilityZone)
         {
             this.availabilityZoneField = availabilityZone;

@@ -23,7 +23,7 @@ namespace Amazon.OpsWorks.Model
     /// <summary>
     /// <para>Contains the response to a <c>CreateDeployment</c> request.</para>
     /// </summary>
-    public class CreateDeploymentResult
+    public partial class CreateDeploymentResult
     {
         
         private string deploymentId;
@@ -43,6 +43,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="deploymentId">The value to set for the DeploymentId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateDeploymentResult WithDeploymentId(string deploymentId)
         {
             this.deploymentId = deploymentId;

@@ -55,6 +55,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="attachmentId">Attachment Id</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public NetworkInterfaceAttachment WithAttachmentId(string attachmentId)
         {
             this.attachmentIdField = attachmentId;
@@ -85,6 +86,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="instanceId">Instance ID</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public NetworkInterfaceAttachment WithInstanceId(string instanceId)
         {
             this.instanceIdField = instanceId;
@@ -115,6 +117,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="instanceOwnerId">Instance Owner ID</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public NetworkInterfaceAttachment WithInstanceOwnerId(string instanceOwnerId)
         {
             this.instanceOwnerIdField = instanceOwnerId;
@@ -145,6 +148,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="deviceIndex">Device Index</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public NetworkInterfaceAttachment WithDeviceIndex(int deviceIndex)
         {
             this.deviceIndexField = deviceIndex;
@@ -175,6 +179,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="status">Status</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public NetworkInterfaceAttachment WithStatus(string status)
         {
             this.statusField = status;
@@ -205,6 +210,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="attachTime">Attach Time</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public NetworkInterfaceAttachment WithAttachTime(string attachTime)
         {
             this.attachTimeField = attachTime;
@@ -235,6 +241,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="deleteOnTermination">True if the attachment should be deleted on termination</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public NetworkInterfaceAttachment WithDeleteOnTermination(bool deleteOnTermination)
         {
             this.deleteOnTerminationField = deleteOnTermination;

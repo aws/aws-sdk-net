@@ -43,6 +43,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             {
                 request.Parameters.Add("SnapshotIdentifier", StringUtils.FromString(restoreFromClusterSnapshotRequest.SnapshotIdentifier));
             }
+            if (restoreFromClusterSnapshotRequest != null && restoreFromClusterSnapshotRequest.IsSetSnapshotClusterIdentifier())
+            {
+                request.Parameters.Add("SnapshotClusterIdentifier", StringUtils.FromString(restoreFromClusterSnapshotRequest.SnapshotClusterIdentifier));
+            }
             if (restoreFromClusterSnapshotRequest != null && restoreFromClusterSnapshotRequest.IsSetPort())
             {
                 request.Parameters.Add("Port", StringUtils.FromInt(restoreFromClusterSnapshotRequest.Port));
@@ -62,6 +66,22 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             if (restoreFromClusterSnapshotRequest != null && restoreFromClusterSnapshotRequest.IsSetPubliclyAccessible())
             {
                 request.Parameters.Add("PubliclyAccessible", StringUtils.FromBool(restoreFromClusterSnapshotRequest.PubliclyAccessible));
+            }
+            if (restoreFromClusterSnapshotRequest != null && restoreFromClusterSnapshotRequest.IsSetOwnerAccount())
+            {
+                request.Parameters.Add("OwnerAccount", StringUtils.FromString(restoreFromClusterSnapshotRequest.OwnerAccount));
+            }
+            if (restoreFromClusterSnapshotRequest != null && restoreFromClusterSnapshotRequest.IsSetHsmClientCertificateIdentifier())
+            {
+                request.Parameters.Add("HsmClientCertificateIdentifier", StringUtils.FromString(restoreFromClusterSnapshotRequest.HsmClientCertificateIdentifier));
+            }
+            if (restoreFromClusterSnapshotRequest != null && restoreFromClusterSnapshotRequest.IsSetHsmConfigurationIdentifier())
+            {
+                request.Parameters.Add("HsmConfigurationIdentifier", StringUtils.FromString(restoreFromClusterSnapshotRequest.HsmConfigurationIdentifier));
+            }
+            if (restoreFromClusterSnapshotRequest != null && restoreFromClusterSnapshotRequest.IsSetElasticIp())
+            {
+                request.Parameters.Add("ElasticIp", StringUtils.FromString(restoreFromClusterSnapshotRequest.ElasticIp));
             }
 
             return request;

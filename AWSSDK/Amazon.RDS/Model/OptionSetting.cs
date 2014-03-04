@@ -22,9 +22,10 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// <para> Option settings are the actual settings being applied or configured for that option. It is used when you modify an option group or
-    /// describe option groups. </para>
+    /// describe option groups. For example, the NATIVE_NETWORK_ENCRYPTION option has a setting called SQLNET.ENCRYPTION_SERVER that can have
+    /// several different values. </para>
     /// </summary>
-    public class OptionSetting
+    public partial class OptionSetting
     {
         
         private string name;
@@ -38,7 +39,7 @@ namespace Amazon.RDS.Model
         private bool? isCollection;
 
         /// <summary>
-        /// The name of the option.
+        /// The name of the option that has settings that you can set.
         ///  
         /// </summary>
         public string Name
@@ -52,6 +53,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="name">The value to set for the Name property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public OptionSetting WithName(string name)
         {
             this.name = name;
@@ -66,7 +68,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The current value of the option.
+        /// The current value of the option setting.
         ///  
         /// </summary>
         public string Value
@@ -80,6 +82,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="value">The value to set for the Value property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public OptionSetting WithValue(string value)
         {
             this.value = value;
@@ -94,7 +97,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The default value of the option.
+        /// The default value of the option setting.
         ///  
         /// </summary>
         public string DefaultValue
@@ -108,6 +111,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="defaultValue">The value to set for the DefaultValue property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public OptionSetting WithDefaultValue(string defaultValue)
         {
             this.defaultValue = defaultValue;
@@ -122,7 +126,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The description of the option.
+        /// The description of the option setting.
         ///  
         /// </summary>
         public string Description
@@ -136,6 +140,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="description">The value to set for the Description property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public OptionSetting WithDescription(string description)
         {
             this.description = description;
@@ -164,6 +169,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="applyType">The value to set for the ApplyType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public OptionSetting WithApplyType(string applyType)
         {
             this.applyType = applyType;
@@ -178,7 +184,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The data type of the option.
+        /// The data type of the option setting.
         ///  
         /// </summary>
         public string DataType
@@ -192,6 +198,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="dataType">The value to set for the DataType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public OptionSetting WithDataType(string dataType)
         {
             this.dataType = dataType;
@@ -206,7 +213,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The allowed values of the option.
+        /// The allowed values of the option setting.
         ///  
         /// </summary>
         public string AllowedValues
@@ -220,6 +227,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="allowedValues">The value to set for the AllowedValues property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public OptionSetting WithAllowedValues(string allowedValues)
         {
             this.allowedValues = allowedValues;
@@ -234,7 +242,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// A Boolean value that, when true, indicates the option can be modified from the default.
+        /// A Boolean value that, when true, indicates the option setting can be modified from the default.
         ///  
         /// </summary>
         public bool IsModifiable
@@ -248,6 +256,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="isModifiable">The value to set for the IsModifiable property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public OptionSetting WithIsModifiable(bool isModifiable)
         {
             this.isModifiable = isModifiable;
@@ -276,6 +285,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="isCollection">The value to set for the IsCollection property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public OptionSetting WithIsCollection(bool isCollection)
         {
             this.isCollection = isCollection;

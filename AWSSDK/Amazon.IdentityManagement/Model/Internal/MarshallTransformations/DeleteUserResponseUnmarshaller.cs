@@ -63,6 +63,11 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                 return new DeleteConflictException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
     
+            if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceeded"))
+            {
+                return new LimitExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+    
             return new AmazonIdentityManagementServiceException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
         

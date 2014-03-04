@@ -32,7 +32,11 @@ namespace Amazon.OpsWorks.Model
     /// <li>Stack deployment runs the <c>deploy</c> recipes but does not raise an event.</li>
     /// 
     /// </ul>
-    /// <para>For more information, see Deploying Apps and Run Stack Commands.</para>
+    /// <para>For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-deploying.html" >Deploying
+    /// Apps</a> and <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-commands.html" >Run Stack Commands</a> .</para>
+    /// <para> <b>Required Permissions</b> : To use this action, an IAM user must have a Deploy or Manage permissions level for the stack, or an
+    /// attached policy that explicitly grants permissions. For more information on user permissions, see <a
+    /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
     /// </summary>
     /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.CreateDeployment"/>
     public class CreateDeploymentRequest : AmazonWebServiceRequest
@@ -59,6 +63,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="stackId">The value to set for the StackId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateDeploymentRequest WithStackId(string stackId)
         {
             this.stackId = stackId;
@@ -87,6 +92,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="appId">The value to set for the AppId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateDeploymentRequest WithAppId(string appId)
         {
             this.appId = appId;
@@ -114,6 +120,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="instanceIds">The values to add to the InstanceIds collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateDeploymentRequest WithInstanceIds(params string[] instanceIds)
         {
             foreach (string element in instanceIds)
@@ -129,6 +136,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="instanceIds">The values to add to the InstanceIds collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateDeploymentRequest WithInstanceIds(IEnumerable<string> instanceIds)
         {
             foreach (string element in instanceIds)
@@ -160,6 +168,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="command">The value to set for the Command property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateDeploymentRequest WithCommand(DeploymentCommand command)
         {
             this.command = command;
@@ -188,6 +197,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="comment">The value to set for the Comment property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateDeploymentRequest WithComment(string comment)
         {
             this.comment = comment;
@@ -204,7 +214,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// A string that contains user-defined, custom JSON. It is used to override the corresponding default stack configuration JSON values. The
         /// string should be in the following format and must escape characters such as '"'.: <c>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</c>
-        /// For more information on custom JSON, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html"> Use Custom
+        /// For more information on custom JSON, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom
         /// JSON to Modify the Stack Configuration JSON</a>.
         ///  
         /// </summary>
@@ -219,6 +229,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="customJson">The value to set for the CustomJson property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateDeploymentRequest WithCustomJson(string customJson)
         {
             this.customJson = customJson;

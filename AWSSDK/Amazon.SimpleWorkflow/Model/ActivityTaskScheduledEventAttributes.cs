@@ -52,6 +52,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="activityType">The value to set for the ActivityType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ActivityTaskScheduledEventAttributes WithActivityType(ActivityType activityType)
         {
             this.activityType = activityType;
@@ -89,6 +90,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="activityId">The value to set for the ActivityId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ActivityTaskScheduledEventAttributes WithActivityId(string activityId)
         {
             this.activityId = activityId;
@@ -126,6 +128,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="input">The value to set for the Input property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ActivityTaskScheduledEventAttributes WithInput(string input)
         {
             this.input = input;
@@ -163,6 +166,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="control">The value to set for the Control property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ActivityTaskScheduledEventAttributes WithControl(string control)
         {
             this.control = control;
@@ -200,6 +204,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="scheduleToStartTimeout">The value to set for the ScheduleToStartTimeout property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ActivityTaskScheduledEventAttributes WithScheduleToStartTimeout(string scheduleToStartTimeout)
         {
             this.scheduleToStartTimeout = scheduleToStartTimeout;
@@ -237,6 +242,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="scheduleToCloseTimeout">The value to set for the ScheduleToCloseTimeout property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ActivityTaskScheduledEventAttributes WithScheduleToCloseTimeout(string scheduleToCloseTimeout)
         {
             this.scheduleToCloseTimeout = scheduleToCloseTimeout;
@@ -274,6 +280,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="startToCloseTimeout">The value to set for the StartToCloseTimeout property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ActivityTaskScheduledEventAttributes WithStartToCloseTimeout(string startToCloseTimeout)
         {
             this.startToCloseTimeout = startToCloseTimeout;
@@ -302,6 +309,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="taskList">The value to set for the TaskList property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ActivityTaskScheduledEventAttributes WithTaskList(TaskList taskList)
         {
             this.taskList = taskList;
@@ -331,6 +339,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="decisionTaskCompletedEventId">The value to set for the DecisionTaskCompletedEventId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ActivityTaskScheduledEventAttributes WithDecisionTaskCompletedEventId(long decisionTaskCompletedEventId)
         {
             this.decisionTaskCompletedEventId = decisionTaskCompletedEventId;
@@ -370,6 +379,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="heartbeatTimeout">The value to set for the HeartbeatTimeout property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ActivityTaskScheduledEventAttributes WithHeartbeatTimeout(string heartbeatTimeout)
         {
             this.heartbeatTimeout = heartbeatTimeout;

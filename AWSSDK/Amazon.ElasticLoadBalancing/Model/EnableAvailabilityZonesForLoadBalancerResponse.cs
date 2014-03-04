@@ -34,14 +34,14 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         public EnableAvailabilityZonesForLoadBalancerResult EnableAvailabilityZonesForLoadBalancerResult
         {
-            get 
+            get
             {
                 if(this.enableAvailabilityZonesForLoadBalancerResult == null)
                 {
                     this.enableAvailabilityZonesForLoadBalancerResult = new EnableAvailabilityZonesForLoadBalancerResult();
                 }
 
-                return this.enableAvailabilityZonesForLoadBalancerResult; 
+                return this.enableAvailabilityZonesForLoadBalancerResult;
             }
             set { this.enableAvailabilityZonesForLoadBalancerResult = value; }
         }

@@ -63,6 +63,7 @@ namespace Amazon.DataPipeline.Model
         /// </summary>
         /// <param name="pipelineId">The value to set for the PipelineId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SetStatusRequest WithPipelineId(string pipelineId)
         {
             this.pipelineId = pipelineId;
@@ -90,6 +91,7 @@ namespace Amazon.DataPipeline.Model
         /// </summary>
         /// <param name="objectIds">The values to add to the ObjectIds collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SetStatusRequest WithObjectIds(params string[] objectIds)
         {
             foreach (string element in objectIds)
@@ -105,6 +107,7 @@ namespace Amazon.DataPipeline.Model
         /// </summary>
         /// <param name="objectIds">The values to add to the ObjectIds collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SetStatusRequest WithObjectIds(IEnumerable<string> objectIds)
         {
             foreach (string element in objectIds)
@@ -150,6 +153,7 @@ namespace Amazon.DataPipeline.Model
         /// </summary>
         /// <param name="status">The value to set for the Status property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SetStatusRequest WithStatus(string status)
         {
             this.status = status;

@@ -29,13 +29,15 @@ namespace Amazon.Redshift.Model
     /// must be in the available state. </para> <para> When you delete a cluster, Amazon Redshift deletes any automated snapshots of the cluster.
     /// Also, when the retention period of the snapshot expires, Amazon Redshift automatically deletes it. If you want to keep an automated snapshot
     /// for a longer period, you can make a manual copy of the snapshot. Manual snapshots are retained until you delete them. </para> <para> For
-    /// more information about working with snapshots, go to Amazon Redshift Snapshots in the <i>Amazon Redshift Management Guide</i> .
+    /// more information about working with snapshots, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html"
+    /// >Amazon Redshift Snapshots</a> in the <i>Amazon Redshift Management Guide</i> .
     /// </para>
     /// </summary>
     /// <seealso cref="Amazon.Redshift.AmazonRedshift.CopyClusterSnapshot"/>
     public class CopyClusterSnapshotRequest : AmazonWebServiceRequest
     {
         private string sourceSnapshotIdentifier;
+        private string sourceSnapshotClusterIdentifier;
         private string targetSnapshotIdentifier;
 
         /// <summary>
@@ -54,6 +56,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="sourceSnapshotIdentifier">The value to set for the SourceSnapshotIdentifier property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CopyClusterSnapshotRequest WithSourceSnapshotIdentifier(string sourceSnapshotIdentifier)
         {
             this.sourceSnapshotIdentifier = sourceSnapshotIdentifier;
@@ -65,6 +68,37 @@ namespace Amazon.Redshift.Model
         internal bool IsSetSourceSnapshotIdentifier()
         {
             return this.sourceSnapshotIdentifier != null;
+        }
+
+        /// <summary>
+        /// The identifier of the cluster the source snapshot was created from. This parameter is required if your IAM user has a policy containing a
+        /// snapshot resource element that specifies anything other than * for the cluster name. Constraints: <ul> <li>Must be the identifier for a
+        /// valid cluster.</li> </ul>
+        ///  
+        /// </summary>
+        public string SourceSnapshotClusterIdentifier
+        {
+            get { return this.sourceSnapshotClusterIdentifier; }
+            set { this.sourceSnapshotClusterIdentifier = value; }
+        }
+
+        /// <summary>
+        /// Sets the SourceSnapshotClusterIdentifier property
+        /// </summary>
+        /// <param name="sourceSnapshotClusterIdentifier">The value to set for the SourceSnapshotClusterIdentifier property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public CopyClusterSnapshotRequest WithSourceSnapshotClusterIdentifier(string sourceSnapshotClusterIdentifier)
+        {
+            this.sourceSnapshotClusterIdentifier = sourceSnapshotClusterIdentifier;
+            return this;
+        }
+            
+
+        // Check to see if SourceSnapshotClusterIdentifier property is set
+        internal bool IsSetSourceSnapshotClusterIdentifier()
+        {
+            return this.sourceSnapshotClusterIdentifier != null;
         }
 
         /// <summary>
@@ -84,6 +118,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="targetSnapshotIdentifier">The value to set for the TargetSnapshotIdentifier property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CopyClusterSnapshotRequest WithTargetSnapshotIdentifier(string targetSnapshotIdentifier)
         {
             this.targetSnapshotIdentifier = targetSnapshotIdentifier;

@@ -21,13 +21,9 @@ using System.IO;
 namespace Amazon.AWSSupport.Model
 {
     /// <summary>
-    /// <para>JSON-formatted object contained in the DescribeTrustedAdvisorCheckResult response. This object has three child objects:</para> <ol>
-    /// <li> TrustedAdvisorCategorySpecificSummary </li>
-    /// <li> TrustedAdvisorResourceDetail </li>
-    /// <li> TrustedAdvisorResourcesSummary </li>
-    /// </ol>
+    /// <para>The results of a Trusted Advisor check returned by DescribeTrustedAdvisorCheckResult.</para>
     /// </summary>
-    public class TrustedAdvisorCheckResult
+    public partial class TrustedAdvisorCheckResult
     {
         
         private string checkId;
@@ -38,7 +34,7 @@ namespace Amazon.AWSSupport.Model
         private List<TrustedAdvisorResourceDetail> flaggedResources = new List<TrustedAdvisorResourceDetail>();
 
         /// <summary>
-        /// Unique identifier for a Trusted Advisor check.
+        /// The unique identifier for the Trusted Advisor check.
         ///  
         /// </summary>
         public string CheckId
@@ -52,6 +48,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="checkId">The value to set for the CheckId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TrustedAdvisorCheckResult WithCheckId(string checkId)
         {
             this.checkId = checkId;
@@ -66,7 +63,7 @@ namespace Amazon.AWSSupport.Model
         }
 
         /// <summary>
-        /// Time at which Trusted Advisor ran the check.
+        /// The time of the last refresh of the check.
         ///  
         /// </summary>
         public string Timestamp
@@ -80,6 +77,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="timestamp">The value to set for the Timestamp property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TrustedAdvisorCheckResult WithTimestamp(string timestamp)
         {
             this.timestamp = timestamp;
@@ -94,7 +92,7 @@ namespace Amazon.AWSSupport.Model
         }
 
         /// <summary>
-        /// Overall status of the check. Status values are "ok," "warning," "error," or "not_available."
+        /// The alert status of the check: "ok" (green), "warning" (yellow), "error" (red), or "not_available".
         ///  
         /// </summary>
         public string Status
@@ -108,6 +106,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="status">The value to set for the Status property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TrustedAdvisorCheckResult WithStatus(string status)
         {
             this.status = status;
@@ -122,8 +121,7 @@ namespace Amazon.AWSSupport.Model
         }
 
         /// <summary>
-        /// JSON-formatted object that lists details about AWS resources that were analyzed in a call to Trusted Advisor <a
-        /// href="API_DescribeTrustedAdvisorCheckSummaries.html" title="DescribeTrustedAdvisorCheckSummaries">DescribeTrustedAdvisorCheckSummaries</a>.
+        /// Details about AWS resources that were analyzed in a call to Trusted Advisor <a>DescribeTrustedAdvisorCheckSummaries</a>.
         ///  
         /// </summary>
         public TrustedAdvisorResourcesSummary ResourcesSummary
@@ -137,6 +135,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="resourcesSummary">The value to set for the ResourcesSummary property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TrustedAdvisorCheckResult WithResourcesSummary(TrustedAdvisorResourcesSummary resourcesSummary)
         {
             this.resourcesSummary = resourcesSummary;
@@ -151,8 +150,7 @@ namespace Amazon.AWSSupport.Model
         }
 
         /// <summary>
-        /// Reports summaries for each Trusted Advisor category. Only the category <i>cost optimizing</i> is currently supported. The other categories
-        /// are security, fault tolerance, and performance.
+        /// Summary information that relates to the category of the check. Cost Optimizing is the only category that is currently supported.
         ///  
         /// </summary>
         public TrustedAdvisorCategorySpecificSummary CategorySpecificSummary
@@ -166,6 +164,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="categorySpecificSummary">The value to set for the CategorySpecificSummary property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TrustedAdvisorCheckResult WithCategorySpecificSummary(TrustedAdvisorCategorySpecificSummary categorySpecificSummary)
         {
             this.categorySpecificSummary = categorySpecificSummary;
@@ -180,7 +179,7 @@ namespace Amazon.AWSSupport.Model
         }
 
         /// <summary>
-        /// List of AWS resources flagged by the Trusted Advisor check.
+        /// The details about each resource listed in the check result.
         ///  
         /// </summary>
         public List<TrustedAdvisorResourceDetail> FlaggedResources
@@ -193,6 +192,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="flaggedResources">The values to add to the FlaggedResources collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TrustedAdvisorCheckResult WithFlaggedResources(params TrustedAdvisorResourceDetail[] flaggedResources)
         {
             foreach (TrustedAdvisorResourceDetail element in flaggedResources)
@@ -208,6 +208,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="flaggedResources">The values to add to the FlaggedResources collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TrustedAdvisorCheckResult WithFlaggedResources(IEnumerable<TrustedAdvisorResourceDetail> flaggedResources)
         {
             foreach (TrustedAdvisorResourceDetail element in flaggedResources)

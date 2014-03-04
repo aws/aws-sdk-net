@@ -32,6 +32,8 @@
 
         public Permission Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             Permission permission = new Permission();
           permission.Access = null;
                         
@@ -58,8 +60,14 @@
   
               if (context.TestExpression("Access", targetDepth))
               {
-                permission.Access = new List<String>();
-                        StringUnmarshaller unmarshaller = StringUnmarshaller.GetInstance();
+                
+                  if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                  {
+                      permission.Access = null;
+                      continue;
+                  }              
+                  permission.Access = new List<String>();
+                  StringUnmarshaller unmarshaller = StringUnmarshaller.GetInstance();
                 while (context.Read())
                 {
                   if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))

@@ -55,6 +55,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="groupName">The name of the PlacementGroup.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PlacementGroupInfo WithGroupName(string groupName)
         {
             this.groupNameField = groupName;
@@ -87,6 +88,7 @@ namespace Amazon.EC2.Model
         /// instances for the
         /// PlacementGroup.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PlacementGroupInfo WithStrategy(string strategy)
         {
             this.strategyField = strategy;
@@ -117,6 +119,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="state">The state of this PlacementGroup.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PlacementGroupInfo WithState(string state)
         {
             this.stateField = state;

@@ -26,7 +26,7 @@ namespace Amazon.Route53.Model
     /// <summary>
     /// Container for the parameters to the CreateHealthCheck operation.
     /// <para> This action creates a new health check.</para> <para> To create a new health check, send a <c>POST</c> request to the
-    /// <c>2012-12-12/healthcheck</c> resource. The request body must include an XML document with a <c>CreateHealthCheckRequest</c> element. The
+    /// <c>2013-04-01/healthcheck</c> resource. The request body must include an XML document with a <c>CreateHealthCheckRequest</c> element. The
     /// response returns the <c>CreateHealthCheckResponse</c> element that contains metadata about the health check.</para>
     /// </summary>
     /// <seealso cref="Amazon.Route53.AmazonRoute53.CreateHealthCheck"/>
@@ -62,6 +62,7 @@ namespace Amazon.Route53.Model
         /// </summary>
         /// <param name="callerReference">The value to set for the CallerReference property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateHealthCheckRequest WithCallerReference(string callerReference)
         {
             this.callerReference = callerReference;
@@ -90,6 +91,7 @@ namespace Amazon.Route53.Model
         /// </summary>
         /// <param name="healthCheckConfig">The value to set for the HealthCheckConfig property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateHealthCheckRequest WithHealthCheckConfig(HealthCheckConfig healthCheckConfig)
         {
             this.healthCheckConfig = healthCheckConfig;

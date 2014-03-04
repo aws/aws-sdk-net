@@ -32,8 +32,11 @@
 
         public VideoParameters Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             VideoParameters videoParameters = new VideoParameters();
           videoParameters.CodecOptions = null;
+                        videoParameters.Watermarks = null;
                         
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
@@ -52,7 +55,13 @@
   
               if (context.TestExpression("CodecOptions", targetDepth))
               {
-                videoParameters.CodecOptions = new Dictionary<String,String>();
+                
+                  if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                  {
+                      videoParameters.CodecOptions = null;
+                      continue;
+                  }              
+                  videoParameters.CodecOptions = new Dictionary<String,String>();
                 KeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller> unmarshaller = new KeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.GetInstance(), StringUnmarshaller.GetInstance());
                 while (context.Read())
                 {
@@ -91,6 +100,12 @@
               if (context.TestExpression("FrameRate", targetDepth))
               {
                 videoParameters.FrameRate = StringUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
+              if (context.TestExpression("MaxFrameRate", targetDepth))
+              {
+                videoParameters.MaxFrameRate = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
@@ -133,6 +148,30 @@
               if (context.TestExpression("PaddingPolicy", targetDepth))
               {
                 videoParameters.PaddingPolicy = StringUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
+              if (context.TestExpression("Watermarks", targetDepth))
+              {
+                
+                  if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                  {
+                      videoParameters.Watermarks = null;
+                      continue;
+                  }              
+                  videoParameters.Watermarks = new List<PresetWatermark>();
+                  PresetWatermarkUnmarshaller unmarshaller = PresetWatermarkUnmarshaller.GetInstance();
+                while (context.Read())
+                {
+                  if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))
+                  {
+                     videoParameters.Watermarks.Add(unmarshaller.Unmarshall(context));
+                  }
+                  else if (context.IsEndArray)
+                  {
+                    break;
+                  }
+                }
                 continue;
               }
   

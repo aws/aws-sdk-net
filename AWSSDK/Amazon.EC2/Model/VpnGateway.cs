@@ -53,6 +53,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="vpnGatewayId">The ID of the VPN gateway</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VpnGateway WithVpnGatewayId(string vpnGatewayId)
         {
             this.vpnGatewayIdField = vpnGatewayId;
@@ -85,6 +86,7 @@ namespace Amazon.EC2.Model
         /// <param name="vpnGatewayState">The current state of the VPN gateway (pending,
         /// available, deleting, deleted)</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VpnGateway WithVpnGatewayState(string vpnGatewayState)
         {
             this.vpnGatewayStateField = vpnGatewayState;
@@ -115,6 +117,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="type">The type of VPN connection the VPN gateway supports (ipsec.1)</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VpnGateway WithType(string type)
         {
             this.typeField = type;
@@ -145,6 +148,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="availabilityZone">The Availability Zone where the VPN gateway was created</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VpnGateway WithAvailabilityZone(string availabilityZone)
         {
             this.availabilityZoneField = availabilityZone;
@@ -182,6 +186,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">list of VPC attachments</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VpnGateway WithVpcAttachment(params VpcAttachment[] list)
         {
             foreach (VpcAttachment item in list)
@@ -222,6 +227,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">A list of tags for the VpnGateway.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VpnGateway WithTag(params Tag[] list)
         {
             foreach (Tag item in list)

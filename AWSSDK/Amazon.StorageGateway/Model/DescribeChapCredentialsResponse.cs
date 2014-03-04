@@ -30,18 +30,18 @@ namespace Amazon.StorageGateway.Model
 
         /// <summary>
         /// Gets and sets the DescribeChapCredentialsResult property.
-        /// A JSON object containing a DescribeChapCredentialsOutput$ChapCredentials.
+        /// A JSON object containing a .
         /// </summary>
         public DescribeChapCredentialsResult DescribeChapCredentialsResult
         {
-            get 
+            get
             {
                 if(this.describeChapCredentialsResult == null)
                 {
                     this.describeChapCredentialsResult = new DescribeChapCredentialsResult();
                 }
 
-                return this.describeChapCredentialsResult; 
+                return this.describeChapCredentialsResult;
             }
             set { this.describeChapCredentialsResult = value; }
         }

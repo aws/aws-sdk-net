@@ -55,6 +55,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="timeoutType">The value to set for the TimeoutType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ActivityTaskTimedOutEventAttributes WithTimeoutType(string timeoutType)
         {
             this.timeoutType = timeoutType;
@@ -84,6 +85,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="scheduledEventId">The value to set for the ScheduledEventId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ActivityTaskTimedOutEventAttributes WithScheduledEventId(long scheduledEventId)
         {
             this.scheduledEventId = scheduledEventId;
@@ -113,6 +115,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="startedEventId">The value to set for the StartedEventId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ActivityTaskTimedOutEventAttributes WithStartedEventId(long startedEventId)
         {
             this.startedEventId = startedEventId;
@@ -150,6 +153,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="details">The value to set for the Details property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ActivityTaskTimedOutEventAttributes WithDetails(string details)
         {
             this.details = details;

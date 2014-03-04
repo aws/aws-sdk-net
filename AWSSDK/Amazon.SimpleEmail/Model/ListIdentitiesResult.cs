@@ -23,7 +23,7 @@ namespace Amazon.SimpleEmail.Model
     /// <summary>
     /// <para>Represents a list of all verified identities for the AWS Account.</para>
     /// </summary>
-    public class ListIdentitiesResult  
+    public partial class ListIdentitiesResult
     {
         
         private List<string> identities = new List<string>();
@@ -43,6 +43,7 @@ namespace Amazon.SimpleEmail.Model
         /// </summary>
         /// <param name="identities">The values to add to the Identities collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListIdentitiesResult WithIdentities(params string[] identities)
         {
             foreach (string element in identities)
@@ -52,12 +53,13 @@ namespace Amazon.SimpleEmail.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Identities collection
         /// </summary>
         /// <param name="identities">The values to add to the Identities collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListIdentitiesResult WithIdentities(IEnumerable<string> identities)
         {
             foreach (string element in identities)
@@ -71,7 +73,7 @@ namespace Amazon.SimpleEmail.Model
         // Check to see if Identities property is set
         internal bool IsSetIdentities()
         {
-            return this.identities.Count > 0;       
+            return this.identities.Count > 0;
         }
 
         /// <summary>
@@ -89,6 +91,7 @@ namespace Amazon.SimpleEmail.Model
         /// </summary>
         /// <param name="nextToken">The value to set for the NextToken property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListIdentitiesResult WithNextToken(string nextToken)
         {
             this.nextToken = nextToken;
@@ -99,7 +102,7 @@ namespace Amazon.SimpleEmail.Model
         // Check to see if NextToken property is set
         internal bool IsSetNextToken()
         {
-            return this.nextToken != null;       
+            return this.nextToken != null;
         }
     }
 }

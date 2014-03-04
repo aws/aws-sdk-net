@@ -23,7 +23,7 @@ namespace Amazon.Glacier.Model
     /// <summary>
     /// <para>A list of in-progress multipart uploads for a vault.</para>
     /// </summary>
-    public class UploadListElement  
+    public partial class UploadListElement
     {
         
         private string multipartUploadId;
@@ -47,6 +47,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="multipartUploadId">The value to set for the MultipartUploadId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UploadListElement WithMultipartUploadId(string multipartUploadId)
         {
             this.multipartUploadId = multipartUploadId;
@@ -57,7 +58,7 @@ namespace Amazon.Glacier.Model
         // Check to see if MultipartUploadId property is set
         internal bool IsSetMultipartUploadId()
         {
-            return this.multipartUploadId != null;       
+            return this.multipartUploadId != null;
         }
 
         /// <summary>
@@ -75,6 +76,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="vaultARN">The value to set for the VaultARN property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UploadListElement WithVaultARN(string vaultARN)
         {
             this.vaultARN = vaultARN;
@@ -85,7 +87,7 @@ namespace Amazon.Glacier.Model
         // Check to see if VaultARN property is set
         internal bool IsSetVaultARN()
         {
-            return this.vaultARN != null;       
+            return this.vaultARN != null;
         }
 
         /// <summary>
@@ -103,6 +105,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="archiveDescription">The value to set for the ArchiveDescription property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UploadListElement WithArchiveDescription(string archiveDescription)
         {
             this.archiveDescription = archiveDescription;
@@ -113,7 +116,7 @@ namespace Amazon.Glacier.Model
         // Check to see if ArchiveDescription property is set
         internal bool IsSetArchiveDescription()
         {
-            return this.archiveDescription != null;       
+            return this.archiveDescription != null;
         }
 
         /// <summary>
@@ -132,6 +135,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="partSizeInBytes">The value to set for the PartSizeInBytes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UploadListElement WithPartSizeInBytes(long partSizeInBytes)
         {
             this.partSizeInBytes = partSizeInBytes;
@@ -142,7 +146,7 @@ namespace Amazon.Glacier.Model
         // Check to see if PartSizeInBytes property is set
         internal bool IsSetPartSizeInBytes()
         {
-            return this.partSizeInBytes.HasValue;       
+            return this.partSizeInBytes.HasValue;
         }
 
         /// <summary>
@@ -160,6 +164,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="creationDate">The value to set for the CreationDate property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UploadListElement WithCreationDate(DateTime creationDate)
         {
             this.creationDate = creationDate;
@@ -170,7 +175,7 @@ namespace Amazon.Glacier.Model
         // Check to see if CreationDate property is set
         internal bool IsSetCreationDate()
         {
-            return this.creationDate.HasValue;       
+            return this.creationDate.HasValue;
         }
     }
 }

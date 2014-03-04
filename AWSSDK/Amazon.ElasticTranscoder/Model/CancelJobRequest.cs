@@ -25,9 +25,9 @@ namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
     /// Container for the parameters to the CancelJob operation.
-    /// <para>To cancel a job, send a DELETE request to the <c>/2012-09-25/jobs/[jobId] </c> resource.</para> <para><b>NOTE:</b>You can only cancel
-    /// a job that has a status of Submitted. To prevent a pipeline from starting to process a job while you're getting the job identifier, use
-    /// UpdatePipelineStatus to temporarily pause the pipeline.</para>
+    /// <para>The CancelJob operation cancels an unfinished job.</para> <para><b>NOTE:</b>You can only cancel a job that has a status of Submitted.
+    /// To prevent a pipeline from starting to process a job while you're getting the job identifier, use UpdatePipelineStatus to temporarily pause
+    /// the pipeline.</para>
     /// </summary>
     /// <seealso cref="Amazon.ElasticTranscoder.AmazonElasticTranscoder.CancelJob"/>
     public class CancelJobRequest : AmazonWebServiceRequest
@@ -35,7 +35,7 @@ namespace Amazon.ElasticTranscoder.Model
         private string id;
 
         /// <summary>
-        /// The identifier of the job that you want to delete. To get a list of the jobs (including their <c>jobId</c>) that have a status of
+        /// The identifier of the job that you want to cancel. To get a list of the jobs (including their <c>jobId</c>) that have a status of
         /// <c>Submitted</c>, use the <a>ListJobsByStatus</a> API action.
         ///  
         /// <para>
@@ -59,6 +59,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="id">The value to set for the Id property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CancelJobRequest WithId(string id)
         {
             this.id = id;

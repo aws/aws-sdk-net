@@ -29,8 +29,9 @@ namespace Amazon.SimpleWorkflow.Model
     /// <c>decisions</c> argument specifies the list of decisions made while processing the task. </para> <para> A
     /// <c>DecisionTaskCompleted</c> event is added to the workflow history. The <c>executionContext</c> specified is attached
     /// to the event in the workflow execution history. </para> <para> <b>Access Control</b> </para> <para>If an IAM policy grants permission to use
-    /// <c>RespondDecisionTaskCompleted</c> , it can express permissions for the list of decisions in the <c>decisions</c> parameter in the same way
-    /// as for the regular API. This approach maintains a uniform conceptual model and helps keep policies readable. For more information, see Using
+    /// <c>RespondDecisionTaskCompleted</c> , it can express permissions for the list of decisions in the <c>decisions</c> parameter. Each of the
+    /// decisions has one or more parameters, much like a regular API call. To allow for policies to be as readable as possible, you can express
+    /// permissions on decisions as if they were actual API calls, including applying conditions to some parameters. For more information, see Using
     /// IAM to Manage Access to Amazon SWF Workflows.</para>
     /// </summary>
     /// <seealso cref="Amazon.SimpleWorkflow.AmazonSimpleWorkflow.RespondDecisionTaskCompleted"/>
@@ -66,6 +67,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="taskToken">The value to set for the TaskToken property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RespondDecisionTaskCompletedRequest WithTaskToken(string taskToken)
         {
             this.taskToken = taskToken;
@@ -94,6 +96,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="decisions">The values to add to the Decisions collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RespondDecisionTaskCompletedRequest WithDecisions(params Decision[] decisions)
         {
             foreach (Decision element in decisions)
@@ -109,6 +112,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="decisions">The values to add to the Decisions collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RespondDecisionTaskCompletedRequest WithDecisions(IEnumerable<Decision> decisions)
         {
             foreach (Decision element in decisions)
@@ -149,6 +153,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="executionContext">The value to set for the ExecutionContext property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RespondDecisionTaskCompletedRequest WithExecutionContext(string executionContext)
         {
             this.executionContext = executionContext;

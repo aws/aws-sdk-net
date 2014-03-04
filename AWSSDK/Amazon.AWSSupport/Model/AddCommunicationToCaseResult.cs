@@ -21,16 +21,15 @@ using System.IO;
 namespace Amazon.AWSSupport.Model
 {
     /// <summary>
-    /// <para>Returns the objects or data listed below if successful. Otherwise, returns an error.</para>
+    /// <para>Contains the following objects or data if successful. Otherwise, returns an error.</para>
     /// </summary>
-    public class AddCommunicationToCaseResult
+    public partial class AddCommunicationToCaseResult
     {
         
         private bool? result;
 
         /// <summary>
-        /// Returns true if the <a href="API_AddCommunicationToCase.html" title="AddCommunicationToCase">AddCommunicationToCase</a> succeeds. Returns an
-        /// error otherwise.
+        /// True if <a>AddCommunicationToCase</a> succeeds. Otherwise, returns an error.
         ///  
         /// </summary>
         public bool Result
@@ -44,6 +43,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="result">The value to set for the Result property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AddCommunicationToCaseResult WithResult(bool result)
         {
             this.result = result;

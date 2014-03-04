@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -34,14 +34,14 @@ namespace Amazon.CloudFront.Model
         /// </summary>
         public ListCloudFrontOriginAccessIdentitiesResult ListCloudFrontOriginAccessIdentitiesResult
         {
-            get 
+            get
             {
                 if(this.listCloudFrontOriginAccessIdentitiesResult == null)
                 {
                     this.listCloudFrontOriginAccessIdentitiesResult = new ListCloudFrontOriginAccessIdentitiesResult();
                 }
 
-                return this.listCloudFrontOriginAccessIdentitiesResult; 
+                return this.listCloudFrontOriginAccessIdentitiesResult;
             }
             set { this.listCloudFrontOriginAccessIdentitiesResult = value; }
         }

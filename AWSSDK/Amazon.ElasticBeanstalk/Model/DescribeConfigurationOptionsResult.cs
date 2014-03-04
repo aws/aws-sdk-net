@@ -23,7 +23,7 @@ namespace Amazon.ElasticBeanstalk.Model
     /// <summary>
     /// <para>Describes the settings for a specified configuration set.</para>
     /// </summary>
-    public class DescribeConfigurationOptionsResult  
+    public partial class DescribeConfigurationOptionsResult
     {
         
         private string solutionStackName;
@@ -53,6 +53,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="solutionStackName">The value to set for the SolutionStackName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeConfigurationOptionsResult WithSolutionStackName(string solutionStackName)
         {
             this.solutionStackName = solutionStackName;
@@ -63,7 +64,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if SolutionStackName property is set
         internal bool IsSetSolutionStackName()
         {
-            return this.solutionStackName != null;       
+            return this.solutionStackName != null;
         }
 
         /// <summary>
@@ -80,6 +81,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="options">The values to add to the Options collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeConfigurationOptionsResult WithOptions(params ConfigurationOptionDescription[] options)
         {
             foreach (ConfigurationOptionDescription element in options)
@@ -89,12 +91,13 @@ namespace Amazon.ElasticBeanstalk.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Options collection
         /// </summary>
         /// <param name="options">The values to add to the Options collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeConfigurationOptionsResult WithOptions(IEnumerable<ConfigurationOptionDescription> options)
         {
             foreach (ConfigurationOptionDescription element in options)
@@ -108,7 +111,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if Options property is set
         internal bool IsSetOptions()
         {
-            return this.options.Count > 0;       
+            return this.options.Count > 0;
         }
     }
 }

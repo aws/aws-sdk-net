@@ -23,7 +23,7 @@ namespace Amazon.OpsWorks.Model
     /// <summary>
     /// <para>Contains the response to a <c>DescribeElasticLoadBalancers</c> request.</para>
     /// </summary>
-    public class DescribeElasticLoadBalancersResult
+    public partial class DescribeElasticLoadBalancersResult
     {
         
         private List<ElasticLoadBalancer> elasticLoadBalancers = new List<ElasticLoadBalancer>();
@@ -42,6 +42,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="elasticLoadBalancers">The values to add to the ElasticLoadBalancers collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeElasticLoadBalancersResult WithElasticLoadBalancers(params ElasticLoadBalancer[] elasticLoadBalancers)
         {
             foreach (ElasticLoadBalancer element in elasticLoadBalancers)
@@ -57,6 +58,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="elasticLoadBalancers">The values to add to the ElasticLoadBalancers collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeElasticLoadBalancersResult WithElasticLoadBalancers(IEnumerable<ElasticLoadBalancer> elasticLoadBalancers)
         {
             foreach (ElasticLoadBalancer element in elasticLoadBalancers)

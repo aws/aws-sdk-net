@@ -23,7 +23,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// The results from the RemoveSourceIdentifierFromSubscription action.
     /// </summary>
-    public class RemoveSourceIdentifierFromSubscriptionResult
+    public partial class RemoveSourceIdentifierFromSubscriptionResult
     {
         private EventSubscription eventSubscriptionValue;
 

@@ -23,7 +23,7 @@ namespace Amazon.ElasticBeanstalk.Model
     /// <summary>
     /// <para> Describes the possible values for a configuration option. </para>
     /// </summary>
-    public class ConfigurationOptionDescription  
+    public partial class ConfigurationOptionDescription
     {
         
         private string namespaceValue;
@@ -53,6 +53,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="namespaceValue">The value to set for the Namespace property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ConfigurationOptionDescription WithNamespace(string namespaceValue)
         {
             this.namespaceValue = namespaceValue;
@@ -63,7 +64,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if Namespace property is set
         internal bool IsSetNamespace()
         {
-            return this.namespaceValue != null;       
+            return this.namespaceValue != null;
         }
 
         /// <summary>
@@ -81,6 +82,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="name">The value to set for the Name property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ConfigurationOptionDescription WithName(string name)
         {
             this.name = name;
@@ -91,7 +93,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if Name property is set
         internal bool IsSetName()
         {
-            return this.name != null;       
+            return this.name != null;
         }
 
         /// <summary>
@@ -109,6 +111,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="defaultValue">The value to set for the DefaultValue property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ConfigurationOptionDescription WithDefaultValue(string defaultValue)
         {
             this.defaultValue = defaultValue;
@@ -119,7 +122,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if DefaultValue property is set
         internal bool IsSetDefaultValue()
         {
-            return this.defaultValue != null;       
+            return this.defaultValue != null;
         }
 
         /// <summary>
@@ -145,6 +148,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="changeSeverity">The value to set for the ChangeSeverity property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ConfigurationOptionDescription WithChangeSeverity(string changeSeverity)
         {
             this.changeSeverity = changeSeverity;
@@ -155,7 +159,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if ChangeSeverity property is set
         internal bool IsSetChangeSeverity()
         {
-            return this.changeSeverity != null;       
+            return this.changeSeverity != null;
         }
 
         /// <summary>
@@ -178,6 +182,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="userDefined">The value to set for the UserDefined property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ConfigurationOptionDescription WithUserDefined(bool userDefined)
         {
             this.userDefined = userDefined;
@@ -188,7 +193,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if UserDefined property is set
         internal bool IsSetUserDefined()
         {
-            return this.userDefined.HasValue;       
+            return this.userDefined.HasValue;
         }
 
         /// <summary>
@@ -222,6 +227,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="valueType">The value to set for the ValueType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ConfigurationOptionDescription WithValueType(string valueType)
         {
             this.valueType = valueType;
@@ -232,7 +238,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if ValueType property is set
         internal bool IsSetValueType()
         {
-            return this.valueType != null;       
+            return this.valueType != null;
         }
 
         /// <summary>
@@ -249,6 +255,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="valueOptions">The values to add to the ValueOptions collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ConfigurationOptionDescription WithValueOptions(params string[] valueOptions)
         {
             foreach (string element in valueOptions)
@@ -258,12 +265,13 @@ namespace Amazon.ElasticBeanstalk.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the ValueOptions collection
         /// </summary>
         /// <param name="valueOptions">The values to add to the ValueOptions collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ConfigurationOptionDescription WithValueOptions(IEnumerable<string> valueOptions)
         {
             foreach (string element in valueOptions)
@@ -277,7 +285,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if ValueOptions property is set
         internal bool IsSetValueOptions()
         {
-            return this.valueOptions.Count > 0;       
+            return this.valueOptions.Count > 0;
         }
 
         /// <summary>
@@ -295,6 +303,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="minValue">The value to set for the MinValue property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ConfigurationOptionDescription WithMinValue(int minValue)
         {
             this.minValue = minValue;
@@ -305,7 +314,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if MinValue property is set
         internal bool IsSetMinValue()
         {
-            return this.minValue.HasValue;       
+            return this.minValue.HasValue;
         }
 
         /// <summary>
@@ -323,6 +332,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="maxValue">The value to set for the MaxValue property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ConfigurationOptionDescription WithMaxValue(int maxValue)
         {
             this.maxValue = maxValue;
@@ -333,7 +343,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if MaxValue property is set
         internal bool IsSetMaxValue()
         {
-            return this.maxValue.HasValue;       
+            return this.maxValue.HasValue;
         }
 
         /// <summary>
@@ -351,6 +361,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="maxLength">The value to set for the MaxLength property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ConfigurationOptionDescription WithMaxLength(int maxLength)
         {
             this.maxLength = maxLength;
@@ -361,7 +372,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if MaxLength property is set
         internal bool IsSetMaxLength()
         {
-            return this.maxLength.HasValue;       
+            return this.maxLength.HasValue;
         }
 
         /// <summary>
@@ -379,6 +390,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="regex">The value to set for the Regex property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ConfigurationOptionDescription WithRegex(OptionRestrictionRegex regex)
         {
             this.regex = regex;
@@ -389,7 +401,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if Regex property is set
         internal bool IsSetRegex()
         {
-            return this.regex != null;       
+            return this.regex != null;
         }
     }
 }

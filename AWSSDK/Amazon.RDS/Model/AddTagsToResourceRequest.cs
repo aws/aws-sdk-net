@@ -25,8 +25,10 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the AddTagsToResource operation.
-    /// <para> Adds metadata tags to a DB Instance. These tags can also be used with cost allocation reporting to track cost associated with a DB
-    /// Instance.</para> <para>For an overview on tagging DB Instances, see DB Instance Tags. </para>
+    /// <para> Adds metadata tags to an Amazon RDS resource. These tags can also be used with cost allocation reporting to track cost associated
+    /// with Amazon RDS resources, or used in Condition statement in IAM policy for Amazon RDS.</para> <para>For an overview on tagging Amazon RDS
+    /// resources, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html" >Tagging Amazon RDS Resources</a>
+    /// .</para>
     /// </summary>
     /// <seealso cref="Amazon.RDS.AmazonRDS.AddTagsToResource"/>
     public class AddTagsToResourceRequest : AmazonWebServiceRequest
@@ -35,7 +37,9 @@ namespace Amazon.RDS.Model
         private List<Tag> tags = new List<Tag>();
 
         /// <summary>
-        /// The DB Instance the tags will be added to.
+        /// The Amazon RDS resource the tags will be added to. This value is an Amazon Resource Name (ARN). For information about creating an ARN, see
+        /// <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN"> Constructing an RDS Amazon Resource Name
+        /// (ARN)</a>.
         ///  
         /// </summary>
         public string ResourceName
@@ -49,6 +53,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="resourceName">The value to set for the ResourceName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AddTagsToResourceRequest WithResourceName(string resourceName)
         {
             this.resourceName = resourceName;
@@ -63,7 +68,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The tags to be assigned to the DB Instance.
+        /// The tags to be assigned to the Amazon RDS resource.
         ///  
         /// </summary>
         public List<Tag> Tags
@@ -76,6 +81,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="tags">The values to add to the Tags collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AddTagsToResourceRequest WithTags(params Tag[] tags)
         {
             foreach (Tag element in tags)
@@ -91,6 +97,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="tags">The values to add to the Tags collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AddTagsToResourceRequest WithTags(IEnumerable<Tag> tags)
         {
             foreach (Tag element in tags)

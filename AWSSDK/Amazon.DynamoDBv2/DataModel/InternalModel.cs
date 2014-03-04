@@ -45,14 +45,19 @@ namespace Amazon.DynamoDBv2.DataModel
         public bool IsHashKey { get; set; }
         public bool IsRangeKey { get; set; }
         public bool IsVersion { get; set; }
-        public bool IsLSIRangeKey { get { return (Indexes != null && Indexes.Count > 0); } }
+        public bool IsLSIRangeKey { get; set; }
+        public bool IsGSIHashKey { get; set; }
+        public bool IsGSIRangeKey { get; set; }
+        public bool IsGSIKey { get { return IsGSIHashKey || IsGSIRangeKey; } }
 
         // corresponding IndexName, if applicable
         public List<string> Indexes { get; set; }
 
-        public PropertyStorage()
+        public PropertyStorage(MemberInfo member, Type memberType)
         {
             Indexes = new List<string>();
+            Member = member;
+            MemberType = memberType;
         }
     }
 
@@ -68,6 +73,41 @@ namespace Amazon.DynamoDBv2.DataModel
             Document = new Document();
             Config = storageConfig;
         }
+    }
+
+    internal class GSIConfig
+    {
+        public GSIConfig(string indexName)
+        {
+            IndexName = indexName;
+        }
+
+        // index name
+        public string IndexName { get; set; }
+
+        // keys
+        public string HashKeyPropertyName { get; set; }
+        public string RangeKeyPropertyName { get; set; }
+
+        //public List<string> GetAttributesToGet(ItemStorageConfig storageConfig, Table table, List<string> attributesToGet)
+        //{
+        //    var gsi = table.GlobalSecondaryIndexes[this.IndexName];
+        //    var projection = gsi.Projection;
+        //    if (projection.ProjectionType == ProjectionType.INCLUDE)
+        //    {
+        //        attributesToGet = new List<string>();
+
+        //        // add keys
+        //        var gsiHashProperty = storageConfig.GetPropertyStorage(this.HashKeyPropertyName);
+        //        attributesToGet.Add(gsiHashProperty.AttributeName);
+        //        var gsiRangeProperty = storageConfig.GetPropertyStorage(this.RangeKeyPropertyName);
+        //        attributesToGet.Add(gsiRangeProperty.AttributeName);
+
+        //        // add non-keys
+        //        attributesToGet.AddRange(projection.NonKeyAttributes);
+        //    }
+        //    return attributesToGet;
+        //}
     }
 
     internal class ItemStorageConfig
@@ -94,7 +134,10 @@ namespace Amazon.DynamoDBv2.DataModel
         public Dictionary<string, List<string>> AttributeToIndexesNameMapping { get; set; }
 
         // indexName to LSI range key properties mapping
-        public Dictionary<string, List<string>> IndexNameToRangePropertiesMapping { get; set; }
+        public Dictionary<string, List<string>> IndexNameToLSIRangePropertiesMapping { get; set; }
+
+        // indexName to GSIConfig mapping
+        public Dictionary<string, GSIConfig> IndexNameToGSIMapping { get; set; }
 
         // storage mappings
         private Dictionary<string, PropertyStorage> PropertyToPropertyStorageMapping { get; set; }
@@ -105,6 +148,49 @@ namespace Amazon.DynamoDBv2.DataModel
             if (PropertyToPropertyStorageMapping.TryGetValue(propertyName, out storage))
                 return storage;
             throw new InvalidOperationException("Unable to find storage information for property [" + propertyName + "]");
+        }
+        public GSIConfig GetGSIConfig(string indexName)
+        {
+            GSIConfig gsiConfig;
+            if (!this.IndexNameToGSIMapping.TryGetValue(indexName, out gsiConfig))
+                gsiConfig = null;
+            return gsiConfig;
+        }
+        public string GetCorrectHashKeyProperty(DynamoDBFlatConfig currentConfig, string hashKeyProperty)
+        {
+            if (currentConfig.IsIndexOperation)
+            {
+                string indexName = currentConfig.IndexName;
+                GSIConfig gsiConfig = this.GetGSIConfig(indexName);
+                // Use GSI hash key if GSI is found AND GSI hash-key is set
+                if (gsiConfig != null && !string.IsNullOrEmpty(gsiConfig.HashKeyPropertyName))
+                    hashKeyProperty = gsiConfig.HashKeyPropertyName;
+            }
+            return hashKeyProperty;
+        }
+        public string GetRangeKeyByIndex(string indexName)
+        {
+            string rangeKeyPropertyName = null;
+
+            // test LSI first
+            List<string> rangeProperties;
+            if (IndexNameToLSIRangePropertiesMapping.TryGetValue(indexName, out rangeProperties) &&
+                rangeProperties != null &&
+                rangeProperties.Count == 1)
+            {
+                rangeKeyPropertyName = rangeProperties[0];
+            }
+
+            GSIConfig gsiConfig = GetGSIConfig(indexName);
+            if (gsiConfig != null)
+            {
+                rangeKeyPropertyName = gsiConfig.RangeKeyPropertyName;
+            }
+
+            if (string.IsNullOrEmpty(rangeKeyPropertyName))
+                throw new InvalidOperationException("Unable to determine range key from index name");
+
+            return rangeKeyPropertyName;
         }
         public PropertyStorage VersionPropertyStorage
         {
@@ -126,7 +212,7 @@ namespace Amazon.DynamoDBv2.DataModel
             PropertyToPropertyStorageMapping[propertyName] = value;
             if (!AttributesToGet.Contains(attributeName))
                 AttributesToGet.Add(attributeName);
-            if (value.IsLSIRangeKey)
+            if (value.IsLSIRangeKey || value.IsGSIKey)
             {
                 List<string> indexes;
                 if (!AttributeToIndexesNameMapping.TryGetValue(attributeName, out indexes))
@@ -138,17 +224,6 @@ namespace Amazon.DynamoDBv2.DataModel
                 {
                     if (!indexes.Contains(index))
                         indexes.Add(index);
-                }
-
-                foreach (var index in value.Indexes)
-                {
-                    List<string> properties;
-                    if (!IndexNameToRangePropertiesMapping.TryGetValue(index, out properties))
-                    {
-                        properties = new List<string>();
-                        IndexNameToRangePropertiesMapping[index] = properties;
-                    }
-                    properties.Add(propertyName);
                 }
             }
             if (value.IsHashKey)
@@ -169,7 +244,8 @@ namespace Amazon.DynamoDBv2.DataModel
             TargetType = targetType;
             PropertyToPropertyStorageMapping = new Dictionary<string, PropertyStorage>(StringComparer.Ordinal);
             AttributeToIndexesNameMapping = new Dictionary<string, List<string>>(StringComparer.Ordinal);
-            IndexNameToRangePropertiesMapping = new Dictionary<string, List<string>>(StringComparer.Ordinal);
+            IndexNameToLSIRangePropertiesMapping = new Dictionary<string, List<string>>(StringComparer.Ordinal);
+            IndexNameToGSIMapping = new Dictionary<string, GSIConfig>(StringComparer.Ordinal);
             AttributesToGet = new List<string>();
             HashKeyPropertyNames = new List<string>();
             RangeKeyPropertyNames = new List<string>();
@@ -209,6 +285,22 @@ namespace Amazon.DynamoDBv2.DataModel
         {
             return (config.LowerCamelCaseProperties ? Utils.ToLowerCamelCase(value) : value);
         }
+        private static void AddGSIConfigs(ItemStorageConfig config, string[] gsiIndexNames, string propertyName, bool isHashKey)
+        {
+            foreach (var index in gsiIndexNames)
+            {
+                GSIConfig gsiConfig = config.GetGSIConfig(index);
+                if (gsiConfig == null)
+                {
+                    gsiConfig = new GSIConfig(index);
+                    config.IndexNameToGSIMapping[index] = gsiConfig;
+                }
+                if (isHashKey)
+                    gsiConfig.HashKeyPropertyName = propertyName;
+                else
+                    gsiConfig.RangeKeyPropertyName = propertyName;
+            }
+        }
         internal static ItemStorageConfig CreateStorageConfig(Type type)
         {
             if (type == null) throw new ArgumentNullException("type");
@@ -230,69 +322,107 @@ namespace Amazon.DynamoDBv2.DataModel
                 // filter out properties that aren't both read and write
                 if (!Utils.IsReadWrite(member)) continue;
 
-                DynamoDBAttribute attribute = Utils.GetAttribute(member);
-
-                // filter out ignored properties
-                if (attribute is DynamoDBIgnoreAttribute) continue;
+                // prepare basic info
 
                 Type memberType = Utils.GetType(member);
                 string attributeName = GetAccurateCase(config, member.Name);
                 string propertyName = member.Name;
+                PropertyStorage propertyStorage = new PropertyStorage(member, memberType);
 
-                PropertyStorage propertyStorage = new PropertyStorage
+                // run through all DDB attributes
+                bool ignorePresent = false;
+                var allAttributes = Utils.GetAttributes(member);
+                foreach (var attribute in allAttributes)
                 {
-                    Member = member,
-                    MemberType = memberType,
-                };
+                    // filter out ignored properties
+                    if (attribute is DynamoDBIgnoreAttribute)
+                        ignorePresent |= true;
 
-                if (attribute is DynamoDBVersionAttribute)
-                {
-                    Utils.ValidateVersionType(memberType);    // no conversion is possible, so type must be a nullable primitive
+                    // if ignore attribute is present, ignore other attributes
+                    if (ignorePresent) continue;
 
-                    propertyStorage.IsVersion = true;
+                    if (attribute is DynamoDBVersionAttribute)
+                    {
+                        Utils.ValidateVersionType(memberType);    // no conversion is possible, so type must be a nullable primitive
+
+                        propertyStorage.IsVersion = true;
+                    }
+
+                    DynamoDBPropertyAttribute propertyAttribute = attribute as DynamoDBPropertyAttribute;
+                    if (propertyAttribute != null)
+                    {
+                        if (!string.IsNullOrEmpty(propertyAttribute.AttributeName))
+                            attributeName = GetAccurateCase(config, propertyAttribute.AttributeName);
+
+                        if (propertyAttribute is DynamoDBHashKeyAttribute)
+                        {
+                            if (propertyAttribute.Converter == null && !Utils.IsPrimitive(memberType))
+                                throw new InvalidOperationException("Hash key " + propertyName + " must be of primitive type");
+
+                            if (propertyAttribute is DynamoDBGlobalSecondaryIndexHashKeyAttribute)
+                            {
+                                propertyStorage.IsGSIHashKey = true;
+                                var gsiHashAttribute = propertyAttribute as DynamoDBGlobalSecondaryIndexHashKeyAttribute;
+                                if (gsiHashAttribute.IndexNames == null || gsiHashAttribute.IndexNames.Length == 0)
+                                    throw new InvalidOperationException("Global Secondary Index must not be null or empty");
+                                propertyStorage.Indexes.AddRange(gsiHashAttribute.IndexNames);
+                                AddGSIConfigs(config, gsiHashAttribute.IndexNames, propertyName, true);
+                            }
+                            else
+                                propertyStorage.IsHashKey = true;
+                        }
+                        if (propertyAttribute is DynamoDBRangeKeyAttribute)
+                        {
+                            if (propertyAttribute.Converter == null && !Utils.IsPrimitive(memberType))
+                                throw new InvalidOperationException("Range key " + propertyName + " must be of primitive type");
+
+                            if (propertyAttribute is DynamoDBGlobalSecondaryIndexRangeKeyAttribute)
+                            {
+                                propertyStorage.IsGSIRangeKey = true;
+                                var gsiRangeAttribute = propertyAttribute as DynamoDBGlobalSecondaryIndexRangeKeyAttribute;
+                                if (gsiRangeAttribute.IndexNames == null || gsiRangeAttribute.IndexNames.Length == 0)
+                                    throw new InvalidOperationException("Global Secondary Index must not be null or empty");
+                                propertyStorage.Indexes.AddRange(gsiRangeAttribute.IndexNames);
+                                AddGSIConfigs(config, gsiRangeAttribute.IndexNames, propertyName, false);
+                            }
+                            else
+                                propertyStorage.IsRangeKey = true;
+                        }
+                        if (propertyAttribute is DynamoDBLocalSecondaryIndexRangeKeyAttribute)
+                        {
+                            DynamoDBLocalSecondaryIndexRangeKeyAttribute lsiRangeKeyAttribute = propertyAttribute as DynamoDBLocalSecondaryIndexRangeKeyAttribute;
+                            if (lsiRangeKeyAttribute.IndexNames == null || lsiRangeKeyAttribute.IndexNames.Length == 0)
+                                throw new InvalidOperationException("Local Secondary Index must not be null or empty");
+                            propertyStorage.Indexes.AddRange(lsiRangeKeyAttribute.IndexNames);
+                            propertyStorage.IsLSIRangeKey = true;
+
+                            foreach (var index in lsiRangeKeyAttribute.IndexNames)
+                            {
+                                List<string> properties;
+                                if (!config.IndexNameToLSIRangePropertiesMapping.TryGetValue(index, out properties))
+                                {
+                                    properties = new List<string>();
+                                    config.IndexNameToLSIRangePropertiesMapping[index] = properties;
+                                }
+                                properties.Add(propertyName);
+                            }
+                        }
+
+                        if (propertyAttribute.Converter != null)
+                        {
+                            if (!Utils.CanInstantiate(propertyAttribute.Converter) || !Utils.ImplementsInterface(propertyAttribute.Converter, typeof(IPropertyConverter)))
+                                throw new InvalidOperationException("Converter for " + propertyName + " must be instantiable with no parameters and must implement IPropertyConverter");
+
+                            propertyStorage.Converter = Utils.Instantiate(propertyAttribute.Converter) as IPropertyConverter;
+                        }
+                    }
                 }
-
-                DynamoDBPropertyAttribute propertyAttribute = attribute as DynamoDBPropertyAttribute;
-                if (propertyAttribute != null)
-                {
-                    if (!string.IsNullOrEmpty(propertyAttribute.AttributeName))
-                        attributeName = GetAccurateCase(config, propertyAttribute.AttributeName);
-
-                    if (propertyAttribute is DynamoDBHashKeyAttribute)
-                    {
-                        if (propertyAttribute.Converter == null && !Utils.IsPrimitive(memberType))
-                            throw new InvalidOperationException("Hash key " + propertyName + " must be of primitive type");
-
-                        propertyStorage.IsHashKey = true;
-                    }
-                    if (propertyAttribute is DynamoDBRangeKeyAttribute)
-                    {
-                        if (propertyAttribute.Converter == null && !Utils.IsPrimitive(memberType))
-                            throw new InvalidOperationException("Range key " + propertyName + " must be of primitive type");
-
-                        propertyStorage.IsRangeKey = true;
-                    }
-                    if (propertyAttribute is DynamoDBLocalSecondaryIndexRangeKeyAttribute)
-                    {
-                        DynamoDBLocalSecondaryIndexRangeKeyAttribute lsiRangeKeyAttribute = propertyAttribute as DynamoDBLocalSecondaryIndexRangeKeyAttribute;
-                        if (lsiRangeKeyAttribute.IndexNames == null || lsiRangeKeyAttribute.IndexNames.Length == 0)
-                            throw new InvalidOperationException("Local Secondary Index must not be null or empty");
-                        propertyStorage.Indexes.AddRange(lsiRangeKeyAttribute.IndexNames);
-                    }
-
-                    if (propertyAttribute.Converter != null)
-                    {
-                        if (!Utils.CanInstantiate(propertyAttribute.Converter) || !Utils.ImplementsInterface(propertyAttribute.Converter, typeof(IPropertyConverter)))
-                            throw new InvalidOperationException("Converter for " + propertyName + " must be instantiable with no parameters and must implement IPropertyConverter");
-
-                        propertyStorage.Converter = Utils.Instantiate(propertyAttribute.Converter) as IPropertyConverter;
-                    }
-                }
-
                 propertyStorage.PropertyName = propertyName;
                 propertyStorage.AttributeName = attributeName;
-                
-                config.AddPropertyStorage(propertyStorage);
+
+                // only add property storage if no ignore attribute was present
+                if (!ignorePresent)
+                    config.AddPropertyStorage(propertyStorage);
             }
 
             if (config.HashKeyPropertyNames.Count == 0)

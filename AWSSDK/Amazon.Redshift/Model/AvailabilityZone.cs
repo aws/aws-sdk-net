@@ -23,7 +23,7 @@ namespace Amazon.Redshift.Model
     /// <summary>
     /// <para> Describes an availability zone. </para>
     /// </summary>
-    public class AvailabilityZone
+    public partial class AvailabilityZone
     {
         
         private string name;
@@ -43,6 +43,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="name">The value to set for the Name property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AvailabilityZone WithName(string name)
         {
             this.name = name;

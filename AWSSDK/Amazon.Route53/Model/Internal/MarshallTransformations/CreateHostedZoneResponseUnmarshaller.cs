@@ -48,21 +48,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
             
-            if (errorResponse.Code != null && errorResponse.Code.Equals("HostedZoneAlreadyExists"))
-            {
-                return new HostedZoneAlreadyExistsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-    
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidInput"))
-            {
-                return new InvalidInputException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-    
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidDomainName"))
-            {
-                return new InvalidDomainNameException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-    
             if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyHostedZones"))
             {
                 return new TooManyHostedZonesException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
@@ -71,6 +56,21 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             if (errorResponse.Code != null && errorResponse.Code.Equals("DelegationSetNotAvailable"))
             {
                 return new DelegationSetNotAvailableException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+    
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidDomainName"))
+            {
+                return new InvalidDomainNameException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+    
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidInput"))
+            {
+                return new InvalidInputException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+    
+            if (errorResponse.Code != null && errorResponse.Code.Equals("HostedZoneAlreadyExists"))
+            {
+                return new HostedZoneAlreadyExistsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
     
             return new AmazonRoute53Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);

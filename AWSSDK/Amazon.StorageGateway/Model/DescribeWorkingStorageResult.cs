@@ -22,15 +22,8 @@ namespace Amazon.StorageGateway.Model
 {
     /// <summary>
     /// <para>A JSON object containing the following fields:</para>
-    /// <ul>
-    /// <li> DescribeWorkingStorageOutput$DiskIds </li>
-    /// <li> GatewayARN </li>
-    /// <li> DescribeWorkingStorageOutput$WorkingStorageAllocatedInBytes </li>
-    /// <li> DescribeWorkingStorageOutput$WorkingStorageUsedInBytes </li>
-    /// 
-    /// </ul>
     /// </summary>
-    public class DescribeWorkingStorageResult  
+    public partial class DescribeWorkingStorageResult
     {
         
         private string gatewayARN;
@@ -63,6 +56,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="gatewayARN">The value to set for the GatewayARN property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeWorkingStorageResult WithGatewayARN(string gatewayARN)
         {
             this.gatewayARN = gatewayARN;
@@ -73,7 +67,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if GatewayARN property is set
         internal bool IsSetGatewayARN()
         {
-            return this.gatewayARN != null;       
+            return this.gatewayARN != null;
         }
 
         /// <summary>
@@ -91,6 +85,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="diskIds">The values to add to the DiskIds collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeWorkingStorageResult WithDiskIds(params string[] diskIds)
         {
             foreach (string element in diskIds)
@@ -100,12 +95,13 @@ namespace Amazon.StorageGateway.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the DiskIds collection
         /// </summary>
         /// <param name="diskIds">The values to add to the DiskIds collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeWorkingStorageResult WithDiskIds(IEnumerable<string> diskIds)
         {
             foreach (string element in diskIds)
@@ -119,7 +115,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if DiskIds property is set
         internal bool IsSetDiskIds()
         {
-            return this.diskIds.Count > 0;       
+            return this.diskIds.Count > 0;
         }
 
         /// <summary>
@@ -137,6 +133,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="workingStorageUsedInBytes">The value to set for the WorkingStorageUsedInBytes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeWorkingStorageResult WithWorkingStorageUsedInBytes(long workingStorageUsedInBytes)
         {
             this.workingStorageUsedInBytes = workingStorageUsedInBytes;
@@ -147,7 +144,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if WorkingStorageUsedInBytes property is set
         internal bool IsSetWorkingStorageUsedInBytes()
         {
-            return this.workingStorageUsedInBytes.HasValue;       
+            return this.workingStorageUsedInBytes.HasValue;
         }
 
         /// <summary>
@@ -165,6 +162,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="workingStorageAllocatedInBytes">The value to set for the WorkingStorageAllocatedInBytes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeWorkingStorageResult WithWorkingStorageAllocatedInBytes(long workingStorageAllocatedInBytes)
         {
             this.workingStorageAllocatedInBytes = workingStorageAllocatedInBytes;
@@ -175,7 +173,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if WorkingStorageAllocatedInBytes property is set
         internal bool IsSetWorkingStorageAllocatedInBytes()
         {
-            return this.workingStorageAllocatedInBytes.HasValue;       
+            return this.workingStorageAllocatedInBytes.HasValue;
         }
     }
 }

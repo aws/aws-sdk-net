@@ -32,6 +32,8 @@
 
         public TimeBasedAutoScalingConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             TimeBasedAutoScalingConfiguration timeBasedAutoScalingConfiguration = new TimeBasedAutoScalingConfiguration();
           
             int originalDepth = context.CurrentDepth;

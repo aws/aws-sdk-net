@@ -23,7 +23,7 @@ namespace Amazon.CloudSearch.Model
     /// <summary>
     /// <para>A response message that contains the default search field for a search domain.</para>
     /// </summary>
-    public class DescribeDefaultSearchFieldResult  
+    public partial class DescribeDefaultSearchFieldResult
     {
         
         private DefaultSearchFieldStatus defaultSearchField;
@@ -44,6 +44,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="defaultSearchField">The value to set for the DefaultSearchField property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeDefaultSearchFieldResult WithDefaultSearchField(DefaultSearchFieldStatus defaultSearchField)
         {
             this.defaultSearchField = defaultSearchField;
@@ -54,7 +55,7 @@ namespace Amazon.CloudSearch.Model
         // Check to see if DefaultSearchField property is set
         internal bool IsSetDefaultSearchField()
         {
-            return this.defaultSearchField != null;       
+            return this.defaultSearchField != null;
         }
     }
 }

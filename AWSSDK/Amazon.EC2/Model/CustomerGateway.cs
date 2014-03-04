@@ -53,6 +53,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="customerGatewayId">The ID of the customer gateway</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CustomerGateway WithCustomerGatewayId(string customerGatewayId)
         {
             this.customerGatewayIdField = customerGatewayId;
@@ -85,6 +86,7 @@ namespace Amazon.EC2.Model
         /// <param name="customerGatewayState">The current state of the customer gateway
         /// (pending, available, deleting, deleted)</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CustomerGateway WithCustomerGatewayState(string customerGatewayState)
         {
             this.customerGatewayStateField = customerGatewayState;
@@ -116,6 +118,7 @@ namespace Amazon.EC2.Model
         /// <param name="type">The type of VPN connection the customer gateway
         /// supports (ipsec.1).</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CustomerGateway WithType(string type)
         {
             this.typeField = type;
@@ -150,6 +153,7 @@ namespace Amazon.EC2.Model
         /// customer gateway's outside
         /// interface</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CustomerGateway WithIpAddress(string ipAddress)
         {
             this.ipAddressField = ipAddress;
@@ -183,6 +187,7 @@ namespace Amazon.EC2.Model
         /// <param name="bgpAsn">The customer gateway's Border Gateway Protocol
         /// (BGP) Autonomous System Number (ASN).</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CustomerGateway WithBgpAsn(string bgpAsn)
         {
             this.bgpAsnField = bgpAsn;
@@ -220,6 +225,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">A list of tags for the CustomerGateway.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CustomerGateway WithTag(params Tag[] list)
         {
             foreach (Tag item in list)

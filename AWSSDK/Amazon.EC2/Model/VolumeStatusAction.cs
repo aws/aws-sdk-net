@@ -57,6 +57,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="code">The new code</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VolumeStatusAction WithCode(string code)
         {
             this.codeField = code;
@@ -84,6 +85,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="eventId">The new event id</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VolumeStatusAction WithEventId(string eventId)
         {
             this.eventIdField = eventId;
@@ -111,6 +113,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="eventType">The new event type</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VolumeStatusAction WithEventType(string eventType)
         {
             this.eventTypeField = eventType;
@@ -138,6 +141,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="description">The new description</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VolumeStatusAction WithDescription(string description)
         {
             this.descriptionField = description;

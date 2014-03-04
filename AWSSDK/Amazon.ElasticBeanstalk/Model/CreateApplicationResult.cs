@@ -23,7 +23,7 @@ namespace Amazon.ElasticBeanstalk.Model
     /// <summary>
     /// <para>Result message containing a single description of an application.</para>
     /// </summary>
-    public class CreateApplicationResult  
+    public partial class CreateApplicationResult
     {
         
         private ApplicationDescription application;
@@ -43,6 +43,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="application">The value to set for the Application property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateApplicationResult WithApplication(ApplicationDescription application)
         {
             this.application = application;
@@ -53,7 +54,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if Application property is set
         internal bool IsSetApplication()
         {
-            return this.application != null;       
+            return this.application != null;
         }
     }
 }

@@ -32,6 +32,8 @@
 
         public ElasticIp Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             ElasticIp elasticIp = new ElasticIp();
           
             int originalDepth = context.CurrentDepth;
@@ -55,9 +57,21 @@
                 continue;
               }
   
+              if (context.TestExpression("Domain", targetDepth))
+              {
+                elasticIp.Domain = StringUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
               if (context.TestExpression("Region", targetDepth))
               {
                 elasticIp.Region = StringUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
+              if (context.TestExpression("InstanceId", targetDepth))
+              {
+                elasticIp.InstanceId = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   

@@ -26,8 +26,9 @@ namespace Amazon.Redshift.Model
     /// <summary>
     /// Container for the parameters to the DescribeClusterSecurityGroups operation.
     /// <para> Returns information about Amazon Redshift security groups. If the name of a security group is specified, the response will contain
-    /// only information about only that security group. </para> <para> For information about managing security groups, go to Amazon Redshift
-    /// Cluster Security Groups in the <i>Amazon Redshift Management Guide</i> .
+    /// only information about only that security group. </para> <para> For information about managing security groups, go to <a
+    /// href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html" >Amazon Redshift Cluster Security Groups</a> in the
+    /// <i>Amazon Redshift Management Guide</i> .
     /// </para>
     /// </summary>
     /// <seealso cref="Amazon.Redshift.AmazonRedshift.DescribeClusterSecurityGroups"/>
@@ -53,6 +54,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="clusterSecurityGroupName">The value to set for the ClusterSecurityGroupName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeClusterSecurityGroupsRequest WithClusterSecurityGroupName(string clusterSecurityGroupName)
         {
             this.clusterSecurityGroupName = clusterSecurityGroupName;
@@ -83,6 +85,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="maxRecords">The value to set for the MaxRecords property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeClusterSecurityGroupsRequest WithMaxRecords(int maxRecords)
         {
             this.maxRecords = maxRecords;
@@ -112,6 +115,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="marker">The value to set for the Marker property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeClusterSecurityGroupsRequest WithMarker(string marker)
         {
             this.marker = marker;

@@ -11,30 +11,32 @@
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
- */ 
+ */
     using System;
     using System.Collections.Generic;
     using System.IO;
     using Amazon.StorageGateway.Model;
     using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations 
-    { 
-      /// <summary> 
-      /// DescribeStorediSCSIVolumesResultUnmarshaller 
-      /// </summary> 
-      internal class DescribeStorediSCSIVolumesResultUnmarshaller : IUnmarshaller<DescribeStorediSCSIVolumesResult, XmlUnmarshallerContext>, IUnmarshaller<DescribeStorediSCSIVolumesResult, JsonUnmarshallerContext> 
-      { 
+    namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
+    {
+      /// <summary>
+      /// DescribeStorediSCSIVolumesResultUnmarshaller
+      /// </summary>
+      internal class DescribeStorediSCSIVolumesResultUnmarshaller : IUnmarshaller<DescribeStorediSCSIVolumesResult, XmlUnmarshallerContext>, IUnmarshaller<DescribeStorediSCSIVolumesResult, JsonUnmarshallerContext>
+      {
         DescribeStorediSCSIVolumesResult IUnmarshaller<DescribeStorediSCSIVolumesResult, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
           throw new NotImplementedException();
         }
-        
-        public DescribeStorediSCSIVolumesResult Unmarshall(JsonUnmarshallerContext context) 
+
+        public DescribeStorediSCSIVolumesResult Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             DescribeStorediSCSIVolumesResult describeStorediSCSIVolumesResult = new DescribeStorediSCSIVolumesResult();
-          describeStorediSCSIVolumesResult.StorediSCSIVolumes = null; 
-                                  
+          describeStorediSCSIVolumesResult.StorediSCSIVolumes = null;
+                        
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             while (context.Read())
@@ -43,8 +45,8 @@
                 {
                 context.Read();
                 context.Read();
-               
-              if (context.TestExpression("StorediSCSIVolumes", targetDepth)) 
+              
+              if (context.TestExpression("StorediSCSIVolumes", targetDepth))
               {
                 describeStorediSCSIVolumesResult.StorediSCSIVolumes = new List<StorediSCSIVolume>();
                         StorediSCSIVolumeUnmarshaller unmarshaller = StorediSCSIVolumeUnmarshaller.GetInstance();
@@ -59,27 +61,27 @@
                     break;
                   }
                 }
-                continue; 
+                continue;
               }
-   
-                } 
-                else if (context.IsEndElement && context.CurrentDepth <= originalDepth) 
-                { 
-                    return describeStorediSCSIVolumesResult; 
-                } 
-            } 
+  
+                }
+                else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
+                {
+                    return describeStorediSCSIVolumesResult;
+                }
+            }
           
-          
-            return describeStorediSCSIVolumesResult; 
-        } 
-        
-        private static DescribeStorediSCSIVolumesResultUnmarshaller instance; 
-        public static DescribeStorediSCSIVolumesResultUnmarshaller GetInstance() 
-        { 
-            if (instance == null) 
-                instance = new DescribeStorediSCSIVolumesResultUnmarshaller(); 
+
+            return describeStorediSCSIVolumesResult;
+        }
+
+        private static DescribeStorediSCSIVolumesResultUnmarshaller instance;
+        public static DescribeStorediSCSIVolumesResultUnmarshaller GetInstance()
+        {
+            if (instance == null)
+                instance = new DescribeStorediSCSIVolumesResultUnmarshaller();
             return instance;
-        } 
-    } 
-} 
+        }
+    }
+}
   

@@ -61,6 +61,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="gatewayARN">The value to set for the GatewayARN property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateMaintenanceStartTimeRequest WithGatewayARN(string gatewayARN)
         {
             this.gatewayARN = gatewayARN;
@@ -99,6 +100,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="hourOfDay">The value to set for the HourOfDay property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateMaintenanceStartTimeRequest WithHourOfDay(int hourOfDay)
         {
             this.hourOfDay = hourOfDay;
@@ -137,6 +139,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="minuteOfHour">The value to set for the MinuteOfHour property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateMaintenanceStartTimeRequest WithMinuteOfHour(int minuteOfHour)
         {
             this.minuteOfHour = minuteOfHour;
@@ -174,6 +177,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="dayOfWeek">The value to set for the DayOfWeek property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateMaintenanceStartTimeRequest WithDayOfWeek(int dayOfWeek)
         {
             this.dayOfWeek = dayOfWeek;

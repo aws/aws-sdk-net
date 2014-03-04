@@ -30,7 +30,7 @@ namespace Amazon.EC2.Model
     /// After you create a new route table, you can add routes and associate the table with a subnet.
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
-    public class CreateRouteTableRequest
+    public class CreateRouteTableRequest : EC2Request
     {    
         private string vpcIdField;
 
@@ -49,6 +49,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="vpcId">The ID of the VPC.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateRouteTableRequest WithVpcId(string vpcId)
         {
             this.vpcIdField = vpcId;

@@ -22,12 +22,8 @@ namespace Amazon.StorageGateway.Model
 {
     /// <summary>
     /// <para>A JSON object containing the following fields:</para>
-    /// <ul>
-    /// <li> UpdateChapCredentialsOutput$InitiatorName </li>
-    /// UpdateChapCredentialsOutput$TargetARN
-    /// </ul>
     /// </summary>
-    public class UpdateChapCredentialsResult  
+    public partial class UpdateChapCredentialsResult
     {
         
         private string targetARN;
@@ -57,6 +53,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="targetARN">The value to set for the TargetARN property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateChapCredentialsResult WithTargetARN(string targetARN)
         {
             this.targetARN = targetARN;
@@ -67,7 +64,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if TargetARN property is set
         internal bool IsSetTargetARN()
         {
-            return this.targetARN != null;       
+            return this.targetARN != null;
         }
 
         /// <summary>
@@ -98,6 +95,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="initiatorName">The value to set for the InitiatorName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateChapCredentialsResult WithInitiatorName(string initiatorName)
         {
             this.initiatorName = initiatorName;
@@ -108,7 +106,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if InitiatorName property is set
         internal bool IsSetInitiatorName()
         {
-            return this.initiatorName != null;       
+            return this.initiatorName != null;
         }
     }
 }

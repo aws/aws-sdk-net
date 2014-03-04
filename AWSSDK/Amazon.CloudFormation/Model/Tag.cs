@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -24,7 +24,7 @@ namespace Amazon.CloudFormation.Model
     /// <para>The Tag type is used by <c>CreateStack</c> in the <c>Tags</c> parameter. It allows you to specify a key/value pair that can be used to
     /// store information related to cost allocation for an AWS CloudFormation stack.</para>
     /// </summary>
-    public class Tag
+    public partial class Tag
     {
         
         private string key;
@@ -46,6 +46,7 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         /// <param name="key">The value to set for the Key property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Tag WithKey(string key)
         {
             this.key = key;
@@ -74,6 +75,7 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         /// <param name="value">The value to set for the Value property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Tag WithValue(string value)
         {
             this.value = value;

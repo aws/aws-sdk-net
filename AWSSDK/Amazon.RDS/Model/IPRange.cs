@@ -23,7 +23,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// <para> This data type is used as a response element in the DescribeDBSecurityGroups action. </para>
     /// </summary>
-    public class IPRange
+    public partial class IPRange
     {
         
         private string status;
@@ -44,6 +44,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="status">The value to set for the Status property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public IPRange WithStatus(string status)
         {
             this.status = status;
@@ -72,6 +73,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="cIDRIP">The value to set for the CIDRIP property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public IPRange WithCIDRIP(string cIDRIP)
         {
             this.cIDRIP = cIDRIP;

@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
     /// Modifies a network interface attribute. Only one attribute can be specified per call.
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
-    public class ModifyNetworkInterfaceAttributeRequest
+    public class ModifyNetworkInterfaceAttributeRequest : EC2Request
     {
         private string networkInterfaceIdField;
         private string descriptionField;
@@ -52,6 +52,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="networkInterfaceId">The network interface ID.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyNetworkInterfaceAttributeRequest WithNetworkInterfaceId(string networkInterfaceId)
         {
             this.networkInterfaceIdField = networkInterfaceId;
@@ -82,6 +83,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="description">Network interface description</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyNetworkInterfaceAttributeRequest WithDescription(string description)
         {
             this.descriptionField = description;
@@ -121,6 +123,7 @@ namespace Amazon.EC2.Model
         /// to perform NAT.
         /// </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyNetworkInterfaceAttributeRequest WithSourceDestCheck(bool sourceDestCheck)
         {
             this.sourceDestCheckField = sourceDestCheck;
@@ -160,6 +163,7 @@ namespace Amazon.EC2.Model
         /// The full set of group IDs to associate with the network interface.
         /// </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyNetworkInterfaceAttributeRequest WithGroupId(params string[] list)
         {
             foreach (string item in list)
@@ -193,6 +197,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="attachment">Modify network interface attachment</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyNetworkInterfaceAttributeRequest WithModifyNetworkInterfaceAttachment(ModifyNetworkInterfaceAttachment attachment)
         {
             this.attachmentField = attachment;

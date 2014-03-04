@@ -84,6 +84,7 @@ namespace Amazon.CloudWatch.Model
         /// </summary>
         /// <param name="namespaceValue">The value to set for the Namespace property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetMetricStatisticsRequest WithNamespace(string namespaceValue)
         {
             this.namespaceValue = namespaceValue;
@@ -121,6 +122,7 @@ namespace Amazon.CloudWatch.Model
         /// </summary>
         /// <param name="metricName">The value to set for the MetricName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetMetricStatisticsRequest WithMetricName(string metricName)
         {
             this.metricName = metricName;
@@ -157,6 +159,7 @@ namespace Amazon.CloudWatch.Model
         /// </summary>
         /// <param name="dimensions">The values to add to the Dimensions collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetMetricStatisticsRequest WithDimensions(params Dimension[] dimensions)
         {
             foreach (Dimension element in dimensions)
@@ -172,6 +175,7 @@ namespace Amazon.CloudWatch.Model
         /// </summary>
         /// <param name="dimensions">The values to add to the Dimensions collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetMetricStatisticsRequest WithDimensions(IEnumerable<Dimension> dimensions)
         {
             foreach (Dimension element in dimensions)
@@ -206,6 +210,7 @@ namespace Amazon.CloudWatch.Model
         /// </summary>
         /// <param name="startTime">The value to set for the StartTime property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetMetricStatisticsRequest WithStartTime(DateTime startTime)
         {
             this.startTime = startTime;
@@ -235,6 +240,7 @@ namespace Amazon.CloudWatch.Model
         /// </summary>
         /// <param name="endTime">The value to set for the EndTime property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetMetricStatisticsRequest WithEndTime(DateTime endTime)
         {
             this.endTime = endTime;
@@ -273,6 +279,7 @@ namespace Amazon.CloudWatch.Model
         /// </summary>
         /// <param name="period">The value to set for the Period property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetMetricStatisticsRequest WithPeriod(int period)
         {
             this.period = period;
@@ -311,6 +318,7 @@ namespace Amazon.CloudWatch.Model
         /// </summary>
         /// <param name="statistics">The values to add to the Statistics collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetMetricStatisticsRequest WithStatistics(params string[] statistics)
         {
             foreach (string element in statistics)
@@ -326,6 +334,7 @@ namespace Amazon.CloudWatch.Model
         /// </summary>
         /// <param name="statistics">The values to add to the Statistics collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetMetricStatisticsRequest WithStatistics(IEnumerable<string> statistics)
         {
             foreach (string element in statistics)
@@ -366,6 +375,7 @@ namespace Amazon.CloudWatch.Model
         /// </summary>
         /// <param name="unit">The value to set for the Unit property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetMetricStatisticsRequest WithUnit(string unit)
         {
             this.unit = unit;

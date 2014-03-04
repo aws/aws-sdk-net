@@ -24,7 +24,7 @@ namespace Amazon.CloudSearch.Model
     /// <para>Identifies the source data for an index field. An optional data transformation can be applied to the source data when populating the
     /// index field. By default, the value of the source attribute is copied to the index field.</para>
     /// </summary>
-    public class SourceAttribute  
+    public partial class SourceAttribute
     {
         
         private string sourceDataFunction;
@@ -56,6 +56,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="sourceDataFunction">The value to set for the SourceDataFunction property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SourceAttribute WithSourceDataFunction(string sourceDataFunction)
         {
             this.sourceDataFunction = sourceDataFunction;
@@ -66,7 +67,7 @@ namespace Amazon.CloudSearch.Model
         // Check to see if SourceDataFunction property is set
         internal bool IsSetSourceDataFunction()
         {
-            return this.sourceDataFunction != null;       
+            return this.sourceDataFunction != null;
         }
 
         /// <summary>
@@ -84,6 +85,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="sourceDataCopy">The value to set for the SourceDataCopy property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SourceAttribute WithSourceDataCopy(SourceData sourceDataCopy)
         {
             this.sourceDataCopy = sourceDataCopy;
@@ -94,7 +96,7 @@ namespace Amazon.CloudSearch.Model
         // Check to see if SourceDataCopy property is set
         internal bool IsSetSourceDataCopy()
         {
-            return this.sourceDataCopy != null;       
+            return this.sourceDataCopy != null;
         }
 
         /// <summary>
@@ -113,6 +115,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="sourceDataTrimTitle">The value to set for the SourceDataTrimTitle property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SourceAttribute WithSourceDataTrimTitle(SourceDataTrimTitle sourceDataTrimTitle)
         {
             this.sourceDataTrimTitle = sourceDataTrimTitle;
@@ -123,7 +126,7 @@ namespace Amazon.CloudSearch.Model
         // Check to see if SourceDataTrimTitle property is set
         internal bool IsSetSourceDataTrimTitle()
         {
-            return this.sourceDataTrimTitle != null;       
+            return this.sourceDataTrimTitle != null;
         }
 
         /// <summary>
@@ -141,6 +144,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="sourceDataMap">The value to set for the SourceDataMap property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SourceAttribute WithSourceDataMap(SourceDataMap sourceDataMap)
         {
             this.sourceDataMap = sourceDataMap;
@@ -151,7 +155,7 @@ namespace Amazon.CloudSearch.Model
         // Check to see if SourceDataMap property is set
         internal bool IsSetSourceDataMap()
         {
-            return this.sourceDataMap != null;       
+            return this.sourceDataMap != null;
         }
     }
 }

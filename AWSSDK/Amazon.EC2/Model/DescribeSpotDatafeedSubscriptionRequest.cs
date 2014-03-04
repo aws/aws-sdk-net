@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
     /// Describes the datafeed for Spot Instances.
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
-    public class DescribeSpotDatafeedSubscriptionRequest
+    public class DescribeSpotDatafeedSubscriptionRequest : EC2Request
     {    
 
     }

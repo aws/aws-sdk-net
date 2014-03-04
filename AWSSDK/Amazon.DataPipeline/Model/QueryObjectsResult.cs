@@ -44,6 +44,7 @@ namespace Amazon.DataPipeline.Model
         /// </summary>
         /// <param name="ids">The values to add to the Ids collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public QueryObjectsResult WithIds(params string[] ids)
         {
             foreach (string element in ids)
@@ -59,6 +60,7 @@ namespace Amazon.DataPipeline.Model
         /// </summary>
         /// <param name="ids">The values to add to the Ids collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public QueryObjectsResult WithIds(IEnumerable<string> ids)
         {
             foreach (string element in ids)
@@ -104,6 +106,7 @@ namespace Amazon.DataPipeline.Model
         /// </summary>
         /// <param name="marker">The value to set for the Marker property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public QueryObjectsResult WithMarker(string marker)
         {
             this.marker = marker;
@@ -132,6 +135,7 @@ namespace Amazon.DataPipeline.Model
         /// </summary>
         /// <param name="hasMoreResults">The value to set for the HasMoreResults property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public QueryObjectsResult WithHasMoreResults(bool hasMoreResults)
         {
             this.hasMoreResults = hasMoreResults;

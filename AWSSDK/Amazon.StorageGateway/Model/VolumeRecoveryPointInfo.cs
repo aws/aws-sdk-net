@@ -20,30 +20,15 @@ using System.IO;
 
 namespace Amazon.StorageGateway.Model
 {
-    /// <summary>
-    /// <para>Lists information about the recovery points of a cached volume.</para>
+    /// <summary>Volume Recovery Point Info
     /// </summary>
-    public class VolumeRecoveryPointInfo  
+    public partial class VolumeRecoveryPointInfo
     {
         
         private string volumeARN;
         private long? volumeSizeInBytes;
         private long? volumeUsageInBytes;
         private string volumeRecoveryPointTime;
-
-        /// <summary>
-        /// The Amazon Resource Name (ARN) of the volume associated with the recovery point.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>50 - 500</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
         public string VolumeARN
         {
             get { return this.volumeARN; }
@@ -55,6 +40,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="volumeARN">The value to set for the VolumeARN property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VolumeRecoveryPointInfo WithVolumeARN(string volumeARN)
         {
             this.volumeARN = volumeARN;
@@ -65,13 +51,8 @@ namespace Amazon.StorageGateway.Model
         // Check to see if VolumeARN property is set
         internal bool IsSetVolumeARN()
         {
-            return this.volumeARN != null;       
+            return this.volumeARN != null;
         }
-
-        /// <summary>
-        /// The size, in bytes, of the volume to which the recovery point is associated.
-        ///  
-        /// </summary>
         public long VolumeSizeInBytes
         {
             get { return this.volumeSizeInBytes ?? default(long); }
@@ -83,6 +64,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="volumeSizeInBytes">The value to set for the VolumeSizeInBytes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VolumeRecoveryPointInfo WithVolumeSizeInBytes(long volumeSizeInBytes)
         {
             this.volumeSizeInBytes = volumeSizeInBytes;
@@ -93,13 +75,8 @@ namespace Amazon.StorageGateway.Model
         // Check to see if VolumeSizeInBytes property is set
         internal bool IsSetVolumeSizeInBytes()
         {
-            return this.volumeSizeInBytes.HasValue;       
+            return this.volumeSizeInBytes.HasValue;
         }
-
-        /// <summary>
-        /// The size, in bytes, of the volume in use at the time of the recovery point.
-        ///  
-        /// </summary>
         public long VolumeUsageInBytes
         {
             get { return this.volumeUsageInBytes ?? default(long); }
@@ -111,6 +88,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="volumeUsageInBytes">The value to set for the VolumeUsageInBytes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VolumeRecoveryPointInfo WithVolumeUsageInBytes(long volumeUsageInBytes)
         {
             this.volumeUsageInBytes = volumeUsageInBytes;
@@ -121,13 +99,8 @@ namespace Amazon.StorageGateway.Model
         // Check to see if VolumeUsageInBytes property is set
         internal bool IsSetVolumeUsageInBytes()
         {
-            return this.volumeUsageInBytes.HasValue;       
+            return this.volumeUsageInBytes.HasValue;
         }
-
-        /// <summary>
-        /// The time of the recovery point. The format of the time is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.
-        ///  
-        /// </summary>
         public string VolumeRecoveryPointTime
         {
             get { return this.volumeRecoveryPointTime; }
@@ -139,6 +112,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="volumeRecoveryPointTime">The value to set for the VolumeRecoveryPointTime property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VolumeRecoveryPointInfo WithVolumeRecoveryPointTime(string volumeRecoveryPointTime)
         {
             this.volumeRecoveryPointTime = volumeRecoveryPointTime;
@@ -149,7 +123,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if VolumeRecoveryPointTime property is set
         internal bool IsSetVolumeRecoveryPointTime()
         {
-            return this.volumeRecoveryPointTime != null;       
+            return this.volumeRecoveryPointTime != null;
         }
     }
 }

@@ -93,6 +93,11 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                     writer.WritePropertyName("AllowSudo");
                     writer.Write(setPermissionRequest.AllowSudo);
                 }
+                if (setPermissionRequest != null && setPermissionRequest.IsSetLevel()) 
+                {
+                    writer.WritePropertyName("Level");
+                    writer.Write(setPermissionRequest.Level);
+                }
 
                 writer.WriteObjectEnd();
                 

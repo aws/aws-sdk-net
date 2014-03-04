@@ -28,15 +28,27 @@ namespace Amazon.AutoScaling
     /// <summary>
     /// Implementation for accessing AmazonAutoScaling.
     ///  
-    /// Auto Scaling <para> This guide provides detailed information about Auto Scaling actions, data types, parameters, and errors. For detailed
-    /// information about Auto Scaling features and their associated API calls, go to the Auto Scaling Developer Guide. </para> <para> Auto Scaling
-    /// is a web service designed to automatically launch or terminate Amazon Elastic Compute Cloud (Amazon EC2) instances based on user-defined
-    /// policies, schedules, and health checks. This service is used in conjunction with Amazon CloudWatch and Elastic Load Balancing services.
-    /// </para> <para>This reference is based on the current WSDL, which is available at:</para> <para>
-    /// http://autoscaling.amazonaws.com/doc/2011-01-01/AutoScaling.wsdl </para> <para> <b>Endpoints</b> </para> <para>For information about this
-    /// product's regions and endpoints, go to Regions and Endpoints in the Amazon Web Services General Reference. </para>
+    /// Auto Scaling <para> Auto Scaling is a web service designed to automatically launch or terminate Amazon Elastic Compute Cloud (Amazon EC2)
+    /// instances based on user-defined policies, schedules, and health checks. This service is used in conjunction with Amazon CloudWatch and
+    /// Elastic Load Balancing services. </para> <para>Auto Scaling provides APIs that you can call by submitting a Query Request. Query requests
+    /// are HTTP or HTTPS requests that use the HTTP verbs GET or POST and a Query parameter named <i>Action</i> or <i>Operation</i> that specifies
+    /// the API you are calling. Action is used throughout this documentation, although Operation is also supported for backward compatibility with
+    /// other Amazon Web Services (AWS) Query APIs. </para> <para>Calling the API using a Query request is the most direct way to access the web
+    /// service, but requires that your application handle low-level details such as generating the hash to sign the request and error handling. The
+    /// benefit of calling the service using a Query request is that you are assured of having access to the complete functionality of the API. For
+    /// information about signing a a query request, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/api_requests.html"
+    /// >Use Query Requests to Call Auto Scaling APIs</a> </para> <para> This guide provides detailed information about Auto Scaling actions, data
+    /// types, parameters, and errors. For detailed information about Auto Scaling features and their associated API actions, go to the <a
+    /// href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/" >Auto Scaling Developer Guide</a> .
+    /// </para> <para>This reference is based on the current WSDL, which is available at:</para> <para> <a
+    /// href="http://autoscaling.amazonaws.com/doc/2011-01-01/AutoScaling.wsdl"
+    /// >http://autoscaling.amazonaws.com/doc/2011-01-01/AutoScaling.wsdl</a> </para> <para> <b>Endpoints</b> </para> <para>The examples in this
+    /// guide assume that your instances are launched in the US East (Northern Virginia) region and use us-east-1 as the endpoint.</para> <para>You
+    /// can set up your Auto Scaling infrastructure in other AWS regions. For information about this product's regions and endpoints, see <a
+    /// href="http://docs.aws.amazon.com/general/latest/gr/index.html?rande.html" >Regions and Endpoints</a> in the Amazon Web Services General
+    /// Reference. </para>
     /// </summary>
-    public class AmazonAutoScalingClient : AmazonWebServiceClient, AmazonAutoScaling
+    public partial class AmazonAutoScalingClient : AmazonWebServiceClient, AmazonAutoScaling
     {
     
         AbstractAWSSigner signer = new AWS4Signer();
@@ -209,6 +221,83 @@ namespace Amazon.AutoScaling
 
         #endregion
    
+        #region DescribeAccountLimits
+
+        /// <summary>
+        /// <para> Returns the limits for the Auto Scaling resources set for your AWS account. </para>
+        /// </summary>
+        /// 
+        /// <param name="describeAccountLimitsRequest">Container for the necessary parameters to execute the DescribeAccountLimits service method on
+        ///          AmazonAutoScaling.</param>
+        /// 
+        /// <returns>The response from the DescribeAccountLimits service method, as returned by AmazonAutoScaling.</returns>
+        /// 
+        public DescribeAccountLimitsResponse DescribeAccountLimits(DescribeAccountLimitsRequest describeAccountLimitsRequest)
+        {
+            IAsyncResult asyncResult = invokeDescribeAccountLimits(describeAccountLimitsRequest, null, null, true);
+            return EndDescribeAccountLimits(asyncResult);
+        }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeAccountLimits operation.
+        /// <seealso cref="Amazon.AutoScaling.AmazonAutoScaling.DescribeAccountLimits"/>
+        /// </summary>
+        /// 
+        /// <param name="describeAccountLimitsRequest">Container for the necessary parameters to execute the DescribeAccountLimits operation on
+        ///          AmazonAutoScaling.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
+        ///         EndDescribeAccountLimits operation.</returns>
+        public IAsyncResult BeginDescribeAccountLimits(DescribeAccountLimitsRequest describeAccountLimitsRequest, AsyncCallback callback, object state)
+        {
+            return invokeDescribeAccountLimits(describeAccountLimitsRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the DescribeAccountLimits operation.
+        /// <seealso cref="Amazon.AutoScaling.AmazonAutoScaling.DescribeAccountLimits"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAccountLimits.</param>
+        /// 
+        /// <returns>Returns a DescribeAccountLimitsResult from AmazonAutoScaling.</returns>
+        public DescribeAccountLimitsResponse EndDescribeAccountLimits(IAsyncResult asyncResult)
+        {
+            return endOperation<DescribeAccountLimitsResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeDescribeAccountLimits(DescribeAccountLimitsRequest describeAccountLimitsRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new DescribeAccountLimitsRequestMarshaller().Marshall(describeAccountLimitsRequest);
+            var unmarshaller = DescribeAccountLimitsResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        /// <summary>
+        /// <para> Returns the limits for the Auto Scaling resources set for your AWS account. </para>
+        /// </summary>
+        /// 
+        /// <returns>The response from the DescribeAccountLimits service method, as returned by AmazonAutoScaling.</returns>
+        /// 
+        public DescribeAccountLimitsResponse DescribeAccountLimits()
+        {
+            return DescribeAccountLimits(new DescribeAccountLimitsRequest());
+        }
+        
+
+        #endregion
+    
         #region DescribeAutoScalingGroups
 
         /// <summary>
@@ -298,7 +387,7 @@ namespace Amazon.AutoScaling
 
         /// <summary>
         /// <para> Enables monitoring of group metrics for the Auto Scaling group specified in <c>AutoScalingGroupName</c> .
-        /// You can specify the list of enabled metrics with the <c>Metrics</c> parameter. </para> <para> Auto scaling metrics collection
+        /// You can specify the list of enabled metrics with the <c>Metrics</c> parameter. </para> <para> Auto Scaling metrics collection
         /// can be turned on only if the <c>InstanceMonitoring</c> flag, in the Auto Scaling group's launch configuration, is set to <c>True</c> .
         /// </para>
         /// </summary>
@@ -358,7 +447,10 @@ namespace Amazon.AutoScaling
         #region ResumeProcesses
 
         /// <summary>
-        /// <para> Resumes Auto Scaling processes for an Auto Scaling group. For more information, see SuspendProcesses and ProcessType. </para>
+        /// <para> Resumes all suspended Auto Scaling processes for an Auto Scaling group. For information on suspending and resuming Auto Scaling
+        /// process, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US_SuspendResume.html" >Suspend and Resume Auto Scaling
+        /// Process</a> .
+        /// </para>
         /// </summary>
         /// 
         /// <param name="resumeProcessesRequest">Container for the necessary parameters to execute the ResumeProcesses service method on
@@ -636,7 +728,7 @@ namespace Amazon.AutoScaling
         /// <summary>
         /// <para> Creates a new Auto Scaling group with the specified name and other attributes. When the creation request is completed, the Auto
         /// Scaling group is ready to be used in other calls. </para> <para><b>NOTE:</b> The Auto Scaling group name must be unique within the scope of
-        /// your AWS account, and under the quota of Auto Scaling groups allowed for your account. </para>
+        /// your AWS account. </para>
         /// </summary>
         /// 
         /// <param name="createAutoScalingGroupRequest">Container for the necessary parameters to execute the CreateAutoScalingGroup service method on
@@ -684,6 +776,64 @@ namespace Amazon.AutoScaling
         {
             IRequest irequest = new CreateAutoScalingGroupRequestMarshaller().Marshall(createAutoScalingGroupRequest);
             var unmarshaller = CreateAutoScalingGroupResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        #endregion
+    
+        #region AttachInstances
+
+        /// <summary>
+        /// <para> Attaches one or more Amazon EC2 instances to an existing Auto Scaling group. </para>
+        /// </summary>
+        /// 
+        /// <param name="attachInstancesRequest">Container for the necessary parameters to execute the AttachInstances service method on
+        ///          AmazonAutoScaling.</param>
+        /// 
+        public AttachInstancesResponse AttachInstances(AttachInstancesRequest attachInstancesRequest)
+        {
+            IAsyncResult asyncResult = invokeAttachInstances(attachInstancesRequest, null, null, true);
+            return EndAttachInstances(asyncResult);
+        }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AttachInstances operation.
+        /// <seealso cref="Amazon.AutoScaling.AmazonAutoScaling.AttachInstances"/>
+        /// </summary>
+        /// 
+        /// <param name="attachInstancesRequest">Container for the necessary parameters to execute the AttachInstances operation on
+        ///          AmazonAutoScaling.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        public IAsyncResult BeginAttachInstances(AttachInstancesRequest attachInstancesRequest, AsyncCallback callback, object state)
+        {
+            return invokeAttachInstances(attachInstancesRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the AttachInstances operation.
+        /// <seealso cref="Amazon.AutoScaling.AmazonAutoScaling.AttachInstances"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAttachInstances.</param>
+        public AttachInstancesResponse EndAttachInstances(IAsyncResult asyncResult)
+        {
+            return endOperation<AttachInstancesResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeAttachInstances(AttachInstancesRequest attachInstancesRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new AttachInstancesRequestMarshaller().Marshall(attachInstancesRequest);
+            var unmarshaller = AttachInstancesResponseUnmarshaller.GetInstance();
             AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
             Invoke(result);
             return result;
@@ -1078,7 +1228,7 @@ namespace Amazon.AutoScaling
         #region ExecutePolicy
 
         /// <summary>
-        /// <para>Runs the policy you create for your Auto Scaling group in PutScalingPolicy.</para>
+        /// <para>Executes the specified policy. </para>
         /// </summary>
         /// 
         /// <param name="executePolicyRequest">Container for the necessary parameters to execute the ExecutePolicy service method on
@@ -1206,8 +1356,9 @@ namespace Amazon.AutoScaling
 
         /// <summary>
         /// <para> Configures an Auto Scaling group to send notifications when specified events take place. Subscribers to this topic can have messages
-        /// for events delivered to an endpoint such as a web server or email address. </para> <para> A new <c>PutNotificationConfiguration</c>
-        /// overwrites an existing configuration.</para>
+        /// for events delivered to an endpoint such as a web server or email address. </para> <para>For more information see <a
+        /// href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/ASGettingNotifications.html" >Get Email Notifications When Your Auto
+        /// Scaling Group Changes</a> </para> <para>A new <c>PutNotificationConfiguration</c> overwrites an existing configuration. </para>
         /// </summary>
         /// 
         /// <param name="putNotificationConfigurationRequest">Container for the necessary parameters to execute the PutNotificationConfiguration service
@@ -1439,7 +1590,9 @@ namespace Amazon.AutoScaling
         #region SetInstanceHealth
 
         /// <summary>
-        /// <para> Sets the health status of an instance. </para>
+        /// <para> Sets the health status of a specified instance that belongs to any of your Auto Scaling groups. </para> <para>For more information,
+        /// see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-configure-healthcheck.html" >Configure Health Checks for Your
+        /// Auto Scaling group</a> .</para>
         /// </summary>
         /// 
         /// <param name="setInstanceHealthRequest">Container for the necessary parameters to execute the SetInstanceHealth service method on
@@ -1576,7 +1729,9 @@ namespace Amazon.AutoScaling
         /// <summary>
         /// <para> Creates new tags or updates existing tags for an Auto Scaling group. </para> <para><b>NOTE:</b> A tag's definition is composed of a
         /// resource ID, resource type, key and value, and the propagate flag. Value and the propagate flag are optional parameters. See the Request
-        /// Parameters for more information. </para>
+        /// Parameters for more information. </para> <para>For information on creating tags for your Auto Scaling group, see <a
+        /// href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/ASTagging.html" >Tag Your Auto Scaling Groups and Amazon EC2
+        /// Instances</a> .</para>
         /// </summary>
         /// 
         /// <param name="createOrUpdateTagsRequest">Container for the necessary parameters to execute the CreateOrUpdateTags service method on
@@ -1639,8 +1794,10 @@ namespace Amazon.AutoScaling
         /// <para> Suspends Auto Scaling processes for an Auto Scaling group. To suspend specific process types, specify them by name with the
         /// <c>ScalingProcesses.member.N</c> parameter. To suspend all process types, omit the <c>ScalingProcesses.member.N</c> parameter. </para>
         /// <para><b>IMPORTANT:</b> Suspending either of the two primary process types, Launch or Terminate, can prevent other process types from
-        /// functioning properly. For more information about processes and their dependencies, see ProcessType. </para> <para> To resume processes that
-        /// have been suspended, use ResumeProcesses. </para>
+        /// functioning properly. </para> <para> To resume processes that have been suspended, use ResumeProcesses For more information on suspending
+        /// and resuming Auto Scaling process, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US_SuspendResume.html" >Suspend
+        /// and Resume Auto Scaling Process</a> .
+        /// </para>
         /// </summary>
         /// 
         /// <param name="suspendProcessesRequest">Container for the necessary parameters to execute the SuspendProcesses service method on
@@ -1686,6 +1843,71 @@ namespace Amazon.AutoScaling
         {
             IRequest irequest = new SuspendProcessesRequestMarshaller().Marshall(suspendProcessesRequest);
             var unmarshaller = SuspendProcessesResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        #endregion
+    
+        #region CreateLaunchConfiguration
+
+        /// <summary>
+        /// <para> Creates a new launch configuration. The launch configuration name must be unique within the scope of the client's AWS account. The
+        /// maximum limit of launch configurations, which by default is 100, must not yet have been met; otherwise, the call will fail. When created,
+        /// the new launch configuration is available for immediate use. </para> <para>You can create a launch configuration with Amazon EC2 security
+        /// groups or with Amazon VPC security groups. However, you can't use Amazon EC2 security groups together with Amazon VPC security groups, or
+        /// vice versa.</para> <para><b>NOTE:</b> At this time, Auto Scaling launch configurations don't support compressed (e.g. zipped) user data
+        /// files. </para>
+        /// </summary>
+        /// 
+        /// <param name="createLaunchConfigurationRequest">Container for the necessary parameters to execute the CreateLaunchConfiguration service
+        ///          method on AmazonAutoScaling.</param>
+        /// 
+        /// <exception cref="LimitExceededException"/>
+        /// <exception cref="AlreadyExistsException"/>
+        public CreateLaunchConfigurationResponse CreateLaunchConfiguration(CreateLaunchConfigurationRequest createLaunchConfigurationRequest)
+        {
+            IAsyncResult asyncResult = invokeCreateLaunchConfiguration(createLaunchConfigurationRequest, null, null, true);
+            return EndCreateLaunchConfiguration(asyncResult);
+        }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateLaunchConfiguration operation.
+        /// <seealso cref="Amazon.AutoScaling.AmazonAutoScaling.CreateLaunchConfiguration"/>
+        /// </summary>
+        /// 
+        /// <param name="createLaunchConfigurationRequest">Container for the necessary parameters to execute the CreateLaunchConfiguration operation on
+        ///          AmazonAutoScaling.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        public IAsyncResult BeginCreateLaunchConfiguration(CreateLaunchConfigurationRequest createLaunchConfigurationRequest, AsyncCallback callback, object state)
+        {
+            return invokeCreateLaunchConfiguration(createLaunchConfigurationRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the CreateLaunchConfiguration operation.
+        /// <seealso cref="Amazon.AutoScaling.AmazonAutoScaling.CreateLaunchConfiguration"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateLaunchConfiguration.</param>
+        public CreateLaunchConfigurationResponse EndCreateLaunchConfiguration(IAsyncResult asyncResult)
+        {
+            return endOperation<CreateLaunchConfigurationResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeCreateLaunchConfiguration(CreateLaunchConfigurationRequest createLaunchConfigurationRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new CreateLaunchConfigurationRequestMarshaller().Marshall(createLaunchConfigurationRequest);
+            var unmarshaller = CreateLaunchConfigurationResponseUnmarshaller.GetInstance();
             AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
             Invoke(result);
             return result;
@@ -1776,71 +1998,6 @@ namespace Amazon.AutoScaling
         {
             return DescribeAutoScalingInstances(new DescribeAutoScalingInstancesRequest());
         }
-        
-
-        #endregion
-    
-        #region CreateLaunchConfiguration
-
-        /// <summary>
-        /// <para> Creates a new launch configuration. The launch configuration name must be unique within the scope of the client's AWS account. The
-        /// maximum limit of launch configurations, which by default is 100, must not yet have been met; otherwise, the call will fail. When created,
-        /// the new launch configuration is available for immediate use. </para> <para>You can create a launch configuration with Amazon EC2 security
-        /// groups or with Amazon VPC security groups. However, you can't use Amazon EC2 security groups together with Amazon VPC security groups, or
-        /// vice versa.</para> <para><b>NOTE:</b> At this time, Auto Scaling launch configurations don't support compressed (e.g. zipped) user data
-        /// files. </para>
-        /// </summary>
-        /// 
-        /// <param name="createLaunchConfigurationRequest">Container for the necessary parameters to execute the CreateLaunchConfiguration service
-        ///          method on AmazonAutoScaling.</param>
-        /// 
-        /// <exception cref="LimitExceededException"/>
-        /// <exception cref="AlreadyExistsException"/>
-        public CreateLaunchConfigurationResponse CreateLaunchConfiguration(CreateLaunchConfigurationRequest createLaunchConfigurationRequest)
-        {
-            IAsyncResult asyncResult = invokeCreateLaunchConfiguration(createLaunchConfigurationRequest, null, null, true);
-            return EndCreateLaunchConfiguration(asyncResult);
-        }
-
-        
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the CreateLaunchConfiguration operation.
-        /// <seealso cref="Amazon.AutoScaling.AmazonAutoScaling.CreateLaunchConfiguration"/>
-        /// </summary>
-        /// 
-        /// <param name="createLaunchConfigurationRequest">Container for the necessary parameters to execute the CreateLaunchConfiguration operation on
-        ///          AmazonAutoScaling.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        public IAsyncResult BeginCreateLaunchConfiguration(CreateLaunchConfigurationRequest createLaunchConfigurationRequest, AsyncCallback callback, object state)
-        {
-            return invokeCreateLaunchConfiguration(createLaunchConfigurationRequest, callback, state, false);
-        }
-
-        
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the CreateLaunchConfiguration operation.
-        /// <seealso cref="Amazon.AutoScaling.AmazonAutoScaling.CreateLaunchConfiguration"/>
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateLaunchConfiguration.</param>
-        public CreateLaunchConfigurationResponse EndCreateLaunchConfiguration(IAsyncResult asyncResult)
-        {
-            return endOperation<CreateLaunchConfigurationResponse>(asyncResult);
-        }
-        
-        IAsyncResult invokeCreateLaunchConfiguration(CreateLaunchConfigurationRequest createLaunchConfigurationRequest, AsyncCallback callback, object state, bool synchronized)
-        {
-            IRequest irequest = new CreateLaunchConfigurationRequestMarshaller().Marshall(createLaunchConfigurationRequest);
-            var unmarshaller = CreateLaunchConfigurationResponseUnmarshaller.GetInstance();
-            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
-            Invoke(result);
-            return result;
-        }
-        
         
 
         #endregion
@@ -1973,12 +2130,12 @@ namespace Amazon.AutoScaling
         /// launch configuration that has the InstanceMonitoring flag set to False, you must first ensure that collection of group metrics is disabled.
         /// Otherwise, calls to UpdateAutoScalingGroup will fail. If you have previously enabled group metrics collection, you can disable collection of
         /// all group metrics by calling DisableMetricsCollection. </para> <para> The new settings are registered upon the completion of this call. Any
-        /// launch configuration settings take effect on any triggers after this call returns. Triggers that are currently in progress aren't affected.
-        /// </para> <para><b>NOTE:</b> If a new value is specified for MinSize without specifying the value for DesiredCapacity, and if the new MinSize
-        /// is larger than the current size of the Auto Scaling Group, there will be an implicit call to SetDesiredCapacity to set the group to the new
-        /// MinSize. If a new value is specified for MaxSize without specifying the value for DesiredCapacity, and the new MaxSize is smaller than the
-        /// current size of the Auto Scaling Group, there will be an implicit call to SetDesiredCapacity to set the group to the new MaxSize. All other
-        /// optional parameters are left unchanged if not passed in the request. </para>
+        /// launch configuration settings take effect on any triggers after this call returns. Scaling activities that are currently in progress aren't
+        /// affected. </para> <para><b>NOTE:</b> If a new value is specified for MinSize without specifying the value for DesiredCapacity, and if the
+        /// new MinSize is larger than the current size of the Auto Scaling Group, there will be an implicit call to SetDesiredCapacity to set the group
+        /// to the new MinSize. If a new value is specified for MaxSize without specifying the value for DesiredCapacity, and the new MaxSize is smaller
+        /// than the current size of the Auto Scaling Group, there will be an implicit call to SetDesiredCapacity to set the group to the new MaxSize.
+        /// All other optional parameters are left unchanged if not passed in the request. </para>
         /// </summary>
         /// 
         /// <param name="updateAutoScalingGroupRequest">Container for the necessary parameters to execute the UpdateAutoScalingGroup service method on
@@ -2276,8 +2433,11 @@ namespace Amazon.AutoScaling
         #region PutScheduledUpdateGroupAction
 
         /// <summary>
-        /// <para> Creates a scheduled scaling action for an Auto Scaling group. If you leave a parameter unspecified, the corresponding value remains
-        /// unchanged in the affected Auto Scaling group. </para>
+        /// <para> Creates or updates a scheduled scaling action for an Auto Scaling group. When updating a scheduled scaling action, if you leave a
+        /// parameter unspecified, the corresponding value remains unchanged in the affected Auto Scaling group. </para> <para>For information on
+        /// creating or updating a scheduled action for your Auto Scaling group, see <a
+        /// href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/schedule_time.html" >Scale Based on a Schedule</a> .</para>
+        /// <para><b>NOTE:</b> Auto Scaling supports the date and time expressed in "YYYY-MM-DDThh:mm:ssZ" format in UTC/GMT only. </para>
         /// </summary>
         /// 
         /// <param name="putScheduledUpdateGroupActionRequest">Container for the necessary parameters to execute the PutScheduledUpdateGroupAction
@@ -2414,19 +2574,7 @@ namespace Amazon.AutoScaling
         #region SetDesiredCapacity
 
         /// <summary>
-        /// <para> Adjusts the desired size of the AutoScalingGroup by initiating scaling activities. When reducing the size of the group, it is not
-        /// possible to define which Amazon EC2 instances will be terminated. This applies to any Auto Scaling decisions that might result in
-        /// terminating instances. </para> <para> There are two common use cases for <c>SetDesiredCapacity</c> :
-        /// one for users of the Auto Scaling triggering system, and another for developers who write their own triggering systems. Both use
-        /// cases relate to the concept of cooldown. </para> <para> In the first case, if you use the Auto Scaling triggering system,
-        /// <c>SetDesiredCapacity</c> changes the size of your Auto Scaling group without regard to the cooldown period. This could be useful, for
-        /// example, if Auto Scaling did something unexpected for some reason. If your cooldown period is 10 minutes, Auto Scaling would normally reject
-        /// requests to change the size of the group for that entire 10-minute period. The <c>SetDesiredCapacity</c> command allows you to circumvent
-        /// this restriction and change the size of the group before the end of the cooldown period. </para> <para> In the second case, if you write
-        /// your own triggering system, you can use <c>SetDesiredCapacity</c> to control the size of your Auto Scaling group. If you want the same
-        /// cooldown functionality that Auto Scaling offers, you can configure <c>SetDesiredCapacity</c> to honor cooldown by setting the
-        /// <c>HonorCooldown</c> parameter to <c>true</c> .
-        /// </para>
+        /// <para> Sets the desired size of the specified AutoScalingGroup. </para>
         /// </summary>
         /// 
         /// <param name="setDesiredCapacityRequest">Container for the necessary parameters to execute the SetDesiredCapacity service method on

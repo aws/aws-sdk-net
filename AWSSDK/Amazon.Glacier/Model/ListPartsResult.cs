@@ -23,7 +23,7 @@ namespace Amazon.Glacier.Model
     /// <summary>
     /// <para>Contains the Amazon Glacier response to your request.</para>
     /// </summary>
-    public class ListPartsResult  
+    public partial class ListPartsResult
     {
         
         private string multipartUploadId;
@@ -49,6 +49,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="multipartUploadId">The value to set for the MultipartUploadId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListPartsResult WithMultipartUploadId(string multipartUploadId)
         {
             this.multipartUploadId = multipartUploadId;
@@ -59,7 +60,7 @@ namespace Amazon.Glacier.Model
         // Check to see if MultipartUploadId property is set
         internal bool IsSetMultipartUploadId()
         {
-            return this.multipartUploadId != null;       
+            return this.multipartUploadId != null;
         }
 
         /// <summary>
@@ -77,6 +78,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="vaultARN">The value to set for the VaultARN property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListPartsResult WithVaultARN(string vaultARN)
         {
             this.vaultARN = vaultARN;
@@ -87,7 +89,7 @@ namespace Amazon.Glacier.Model
         // Check to see if VaultARN property is set
         internal bool IsSetVaultARN()
         {
-            return this.vaultARN != null;       
+            return this.vaultARN != null;
         }
 
         /// <summary>
@@ -105,6 +107,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="archiveDescription">The value to set for the ArchiveDescription property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListPartsResult WithArchiveDescription(string archiveDescription)
         {
             this.archiveDescription = archiveDescription;
@@ -115,7 +118,7 @@ namespace Amazon.Glacier.Model
         // Check to see if ArchiveDescription property is set
         internal bool IsSetArchiveDescription()
         {
-            return this.archiveDescription != null;       
+            return this.archiveDescription != null;
         }
 
         /// <summary>
@@ -133,6 +136,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="partSizeInBytes">The value to set for the PartSizeInBytes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListPartsResult WithPartSizeInBytes(long partSizeInBytes)
         {
             this.partSizeInBytes = partSizeInBytes;
@@ -143,7 +147,7 @@ namespace Amazon.Glacier.Model
         // Check to see if PartSizeInBytes property is set
         internal bool IsSetPartSizeInBytes()
         {
-            return this.partSizeInBytes.HasValue;       
+            return this.partSizeInBytes.HasValue;
         }
 
         /// <summary>
@@ -161,6 +165,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="creationDate">The value to set for the CreationDate property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListPartsResult WithCreationDate(DateTime creationDate)
         {
             this.creationDate = creationDate;
@@ -171,7 +176,7 @@ namespace Amazon.Glacier.Model
         // Check to see if CreationDate property is set
         internal bool IsSetCreationDate()
         {
-            return this.creationDate.HasValue;       
+            return this.creationDate.HasValue;
         }
 
         /// <summary>
@@ -188,6 +193,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="parts">The values to add to the Parts collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListPartsResult WithParts(params PartListElement[] parts)
         {
             foreach (PartListElement element in parts)
@@ -197,12 +203,13 @@ namespace Amazon.Glacier.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Parts collection
         /// </summary>
         /// <param name="parts">The values to add to the Parts collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListPartsResult WithParts(IEnumerable<PartListElement> parts)
         {
             foreach (PartListElement element in parts)
@@ -216,7 +223,7 @@ namespace Amazon.Glacier.Model
         // Check to see if Parts property is set
         internal bool IsSetParts()
         {
-            return this.parts.Count > 0;       
+            return this.parts.Count > 0;
         }
 
         /// <summary>
@@ -235,6 +242,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="marker">The value to set for the Marker property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListPartsResult WithMarker(string marker)
         {
             this.marker = marker;
@@ -245,7 +253,7 @@ namespace Amazon.Glacier.Model
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;       
+            return this.marker != null;
         }
     }
 }

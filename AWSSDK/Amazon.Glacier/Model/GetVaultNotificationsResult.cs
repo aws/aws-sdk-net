@@ -23,7 +23,7 @@ namespace Amazon.Glacier.Model
     /// <summary>
     /// <para>Contains the Amazon Glacier response to your request.</para>
     /// </summary>
-    public class GetVaultNotificationsResult  
+    public partial class GetVaultNotificationsResult
     {
         
         private VaultNotificationConfig vaultNotificationConfig;
@@ -43,6 +43,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="vaultNotificationConfig">The value to set for the VaultNotificationConfig property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetVaultNotificationsResult WithVaultNotificationConfig(VaultNotificationConfig vaultNotificationConfig)
         {
             this.vaultNotificationConfig = vaultNotificationConfig;
@@ -53,7 +54,7 @@ namespace Amazon.Glacier.Model
         // Check to see if VaultNotificationConfig property is set
         internal bool IsSetVaultNotificationConfig()
         {
-            return this.vaultNotificationConfig != null;       
+            return this.vaultNotificationConfig != null;
         }
     }
 }

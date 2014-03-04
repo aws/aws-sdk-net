@@ -34,14 +34,14 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         public UpdateStemmingOptionsResult UpdateStemmingOptionsResult
         {
-            get 
+            get
             {
                 if(this.updateStemmingOptionsResult == null)
                 {
                     this.updateStemmingOptionsResult = new UpdateStemmingOptionsResult();
                 }
 
-                return this.updateStemmingOptionsResult; 
+                return this.updateStemmingOptionsResult;
             }
             set { this.updateStemmingOptionsResult = value; }
         }

@@ -25,7 +25,7 @@ namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteLoadBalancerListeners operation.
-    /// <para> Deletes listeners from the LoadBalancer for the specified port. </para>
+    /// <para> Deletes listeners from the load balancer for the specified port. </para>
     /// </summary>
     /// <seealso cref="Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancing.DeleteLoadBalancerListeners"/>
     public class DeleteLoadBalancerListenersRequest : AmazonWebServiceRequest
@@ -44,9 +44,9 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// initialize any additional object members.
         /// </summary>
         /// 
-        /// <param name="loadBalancerName"> The mnemonic name associated with the LoadBalancer. </param>
-        /// <param name="loadBalancerPorts"> The client port number(s) of the LoadBalancerListener(s) to be removed. </param>
-        public DeleteLoadBalancerListenersRequest(string loadBalancerName, List<int> loadBalancerPorts) 
+        /// <param name="loadBalancerName"> The mnemonic name associated with the load balancer. </param>
+        /// <param name="loadBalancerPorts"> The client port number(s) of the load balancer listener(s) to be removed. </param>
+        public DeleteLoadBalancerListenersRequest(string loadBalancerName, List<int> loadBalancerPorts)
         {
             this.loadBalancerName = loadBalancerName;
             this.loadBalancerPorts = loadBalancerPorts;
@@ -54,7 +54,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     
 
         /// <summary>
-        /// The mnemonic name associated with the LoadBalancer.
+        /// The mnemonic name associated with the load balancer.
         ///  
         /// </summary>
         public string LoadBalancerName
@@ -68,6 +68,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="loadBalancerName">The value to set for the LoadBalancerName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeleteLoadBalancerListenersRequest WithLoadBalancerName(string loadBalancerName)
         {
             this.loadBalancerName = loadBalancerName;
@@ -78,11 +79,11 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if LoadBalancerName property is set
         internal bool IsSetLoadBalancerName()
         {
-            return this.loadBalancerName != null;       
+            return this.loadBalancerName != null;
         }
 
         /// <summary>
-        /// The client port number(s) of the LoadBalancerListener(s) to be removed.
+        /// The client port number(s) of the load balancer listener(s) to be removed.
         ///  
         /// </summary>
         public List<int> LoadBalancerPorts
@@ -95,6 +96,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="loadBalancerPorts">The values to add to the LoadBalancerPorts collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeleteLoadBalancerListenersRequest WithLoadBalancerPorts(params int[] loadBalancerPorts)
         {
             foreach (int element in loadBalancerPorts)
@@ -104,12 +106,13 @@ namespace Amazon.ElasticLoadBalancing.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the LoadBalancerPorts collection
         /// </summary>
         /// <param name="loadBalancerPorts">The values to add to the LoadBalancerPorts collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeleteLoadBalancerListenersRequest WithLoadBalancerPorts(IEnumerable<int> loadBalancerPorts)
         {
             foreach (int element in loadBalancerPorts)
@@ -123,7 +126,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if LoadBalancerPorts property is set
         internal bool IsSetLoadBalancerPorts()
         {
-            return this.loadBalancerPorts.Count > 0;       
+            return this.loadBalancerPorts.Count > 0;
         }
     }
 }

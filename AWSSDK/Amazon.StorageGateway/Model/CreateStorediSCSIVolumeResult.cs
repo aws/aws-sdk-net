@@ -22,14 +22,8 @@ namespace Amazon.StorageGateway.Model
 {
     /// <summary>
     /// <para>A JSON object containing the following fields:</para>
-    /// <ul>
-    /// <li> CreateStorediSCSIVolumeOutput$TargetARN </li>
-    /// <li> CreateStorediSCSIVolumeOutput$VolumeARN </li>
-    /// <li> CreateStorediSCSIVolumeOutput$VolumeSizeInBytes </li>
-    /// 
-    /// </ul>
     /// </summary>
-    public class CreateStorediSCSIVolumeResult  
+    public partial class CreateStorediSCSIVolumeResult
     {
         
         private string volumeARN;
@@ -60,6 +54,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="volumeARN">The value to set for the VolumeARN property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateStorediSCSIVolumeResult WithVolumeARN(string volumeARN)
         {
             this.volumeARN = volumeARN;
@@ -70,7 +65,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if VolumeARN property is set
         internal bool IsSetVolumeARN()
         {
-            return this.volumeARN != null;       
+            return this.volumeARN != null;
         }
 
         /// <summary>
@@ -88,6 +83,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="volumeSizeInBytes">The value to set for the VolumeSizeInBytes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateStorediSCSIVolumeResult WithVolumeSizeInBytes(long volumeSizeInBytes)
         {
             this.volumeSizeInBytes = volumeSizeInBytes;
@@ -98,7 +94,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if VolumeSizeInBytes property is set
         internal bool IsSetVolumeSizeInBytes()
         {
-            return this.volumeSizeInBytes.HasValue;       
+            return this.volumeSizeInBytes.HasValue;
         }
 
         /// <summary>
@@ -125,6 +121,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="targetARN">The value to set for the TargetARN property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateStorediSCSIVolumeResult WithTargetARN(string targetARN)
         {
             this.targetARN = targetARN;
@@ -135,7 +132,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if TargetARN property is set
         internal bool IsSetTargetARN()
         {
-            return this.targetARN != null;       
+            return this.targetARN != null;
         }
     }
 }

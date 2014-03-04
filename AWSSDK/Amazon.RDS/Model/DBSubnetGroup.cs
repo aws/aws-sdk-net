@@ -31,7 +31,7 @@ namespace Amazon.RDS.Model
     /// </ul>
     /// <para>This data type is used as a response element in the DescribeDBSubnetGroups action.</para>
     /// </summary>
-    public class DBSubnetGroup
+    public partial class DBSubnetGroup
     {
         
         private string dBSubnetGroupName;
@@ -41,7 +41,7 @@ namespace Amazon.RDS.Model
         private List<Subnet> subnets = new List<Subnet>();
 
         /// <summary>
-        /// Specifies the name of the DB Subnet Group.
+        /// Specifies the name of the DB subnet group.
         ///  
         /// </summary>
         public string DBSubnetGroupName
@@ -55,6 +55,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="dBSubnetGroupName">The value to set for the DBSubnetGroupName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DBSubnetGroup WithDBSubnetGroupName(string dBSubnetGroupName)
         {
             this.dBSubnetGroupName = dBSubnetGroupName;
@@ -69,7 +70,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Provides the description of the DB Subnet Group.
+        /// Provides the description of the DB subnet group.
         ///  
         /// </summary>
         public string DBSubnetGroupDescription
@@ -83,6 +84,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="dBSubnetGroupDescription">The value to set for the DBSubnetGroupDescription property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DBSubnetGroup WithDBSubnetGroupDescription(string dBSubnetGroupDescription)
         {
             this.dBSubnetGroupDescription = dBSubnetGroupDescription;
@@ -97,7 +99,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Provides the VpcId of the DB Subnet Group.
+        /// Provides the VpcId of the DB subnet group.
         ///  
         /// </summary>
         public string VpcId
@@ -111,6 +113,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="vpcId">The value to set for the VpcId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DBSubnetGroup WithVpcId(string vpcId)
         {
             this.vpcId = vpcId;
@@ -125,7 +128,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Provides the status of the DB Subnet Group.
+        /// Provides the status of the DB subnet group.
         ///  
         /// </summary>
         public string SubnetGroupStatus
@@ -139,6 +142,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="subnetGroupStatus">The value to set for the SubnetGroupStatus property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DBSubnetGroup WithSubnetGroupStatus(string subnetGroupStatus)
         {
             this.subnetGroupStatus = subnetGroupStatus;
@@ -166,6 +170,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="subnets">The values to add to the Subnets collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DBSubnetGroup WithSubnets(params Subnet[] subnets)
         {
             foreach (Subnet element in subnets)
@@ -181,6 +186,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="subnets">The values to add to the Subnets collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DBSubnetGroup WithSubnets(IEnumerable<Subnet> subnets)
         {
             foreach (Subnet element in subnets)

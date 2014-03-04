@@ -23,7 +23,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// The results from the CreateDBSubnetGroup action.
     /// </summary>
-    public class CreateDBSubnetGroupResult
+    public partial class CreateDBSubnetGroupResult
     {
         private DBSubnetGroup dBSubnetGroupValue;
 

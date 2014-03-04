@@ -24,7 +24,7 @@ namespace Amazon.CloudSearch.Model
     /// <para>Defines a field in the index, including its name, type, and the source of its data. The <c>IndexFieldType</c> indicates which of the
     /// options will be present. It is invalid to specify options for a type other than the <c>IndexFieldType</c> .</para>
     /// </summary>
-    public class IndexField  
+    public partial class IndexField
     {
         
         private string indexFieldName;
@@ -64,6 +64,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="indexFieldName">The value to set for the IndexFieldName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public IndexField WithIndexFieldName(string indexFieldName)
         {
             this.indexFieldName = indexFieldName;
@@ -74,7 +75,7 @@ namespace Amazon.CloudSearch.Model
         // Check to see if IndexFieldName property is set
         internal bool IsSetIndexFieldName()
         {
-            return this.indexFieldName != null;       
+            return this.indexFieldName != null;
         }
 
         /// <summary>
@@ -101,6 +102,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="indexFieldType">The value to set for the IndexFieldType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public IndexField WithIndexFieldType(string indexFieldType)
         {
             this.indexFieldType = indexFieldType;
@@ -111,7 +113,7 @@ namespace Amazon.CloudSearch.Model
         // Check to see if IndexFieldType property is set
         internal bool IsSetIndexFieldType()
         {
-            return this.indexFieldType != null;       
+            return this.indexFieldType != null;
         }
 
         /// <summary>
@@ -129,6 +131,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="uIntOptions">The value to set for the UIntOptions property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public IndexField WithUIntOptions(UIntOptions uIntOptions)
         {
             this.uIntOptions = uIntOptions;
@@ -139,7 +142,7 @@ namespace Amazon.CloudSearch.Model
         // Check to see if UIntOptions property is set
         internal bool IsSetUIntOptions()
         {
-            return this.uIntOptions != null;       
+            return this.uIntOptions != null;
         }
 
         /// <summary>
@@ -157,6 +160,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="literalOptions">The value to set for the LiteralOptions property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public IndexField WithLiteralOptions(LiteralOptions literalOptions)
         {
             this.literalOptions = literalOptions;
@@ -167,7 +171,7 @@ namespace Amazon.CloudSearch.Model
         // Check to see if LiteralOptions property is set
         internal bool IsSetLiteralOptions()
         {
-            return this.literalOptions != null;       
+            return this.literalOptions != null;
         }
 
         /// <summary>
@@ -185,6 +189,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="textOptions">The value to set for the TextOptions property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public IndexField WithTextOptions(TextOptions textOptions)
         {
             this.textOptions = textOptions;
@@ -195,7 +200,7 @@ namespace Amazon.CloudSearch.Model
         // Check to see if TextOptions property is set
         internal bool IsSetTextOptions()
         {
-            return this.textOptions != null;       
+            return this.textOptions != null;
         }
 
         /// <summary>
@@ -214,6 +219,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="sourceAttributes">The values to add to the SourceAttributes collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public IndexField WithSourceAttributes(params SourceAttribute[] sourceAttributes)
         {
             foreach (SourceAttribute element in sourceAttributes)
@@ -223,12 +229,13 @@ namespace Amazon.CloudSearch.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the SourceAttributes collection
         /// </summary>
         /// <param name="sourceAttributes">The values to add to the SourceAttributes collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public IndexField WithSourceAttributes(IEnumerable<SourceAttribute> sourceAttributes)
         {
             foreach (SourceAttribute element in sourceAttributes)
@@ -242,7 +249,7 @@ namespace Amazon.CloudSearch.Model
         // Check to see if SourceAttributes property is set
         internal bool IsSetSourceAttributes()
         {
-            return this.sourceAttributes.Count > 0;       
+            return this.sourceAttributes.Count > 0;
         }
     }
 }

@@ -71,6 +71,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         /// <param name="jobFlowId">The value to set for the JobFlowId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AddJobFlowStepsRequest WithJobFlowId(string jobFlowId)
         {
             this.jobFlowId = jobFlowId;
@@ -98,6 +99,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         /// <param name="steps">The values to add to the Steps collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AddJobFlowStepsRequest WithSteps(params StepConfig[] steps)
         {
             foreach (StepConfig element in steps)
@@ -113,6 +115,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         /// <param name="steps">The values to add to the Steps collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AddJobFlowStepsRequest WithSteps(IEnumerable<StepConfig> steps)
         {
             foreach (StepConfig element in steps)

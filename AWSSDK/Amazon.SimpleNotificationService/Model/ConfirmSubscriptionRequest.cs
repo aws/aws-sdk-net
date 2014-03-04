@@ -58,6 +58,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// </summary>
         /// <param name="topicArn">The ARN of the topic for which you wish to confirm a subscription.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ConfirmSubscriptionRequest WithTopicArn(string topicArn)
         {
             this.topicArnField = topicArn;
@@ -88,6 +89,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// </summary>
         /// <param name="token">Short-lived token sent to an endpoint during the Subscribe action.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ConfirmSubscriptionRequest WithToken(string token)
         {
             this.tokenField = token;
@@ -124,6 +126,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// Value that indicates that you want to disable unauthenticated unsubsciption of the subscription.
         /// </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ConfirmSubscriptionRequest WithAuthenticateOnUnsubscribe(string authenticateOnUnsubscribe)
         {
             this.authenticateOnUnsubscribeField = authenticateOnUnsubscribe;

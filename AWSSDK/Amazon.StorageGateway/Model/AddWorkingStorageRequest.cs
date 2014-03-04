@@ -26,9 +26,10 @@ namespace Amazon.StorageGateway.Model
     /// <summary>
     /// Container for the parameters to the AddWorkingStorage operation.
     /// <para>This operation configures one or more gateway local disks as working storage for a gateway. This operation is supported only for the
-    /// gateway-stored volume architecture.</para> <para><b>NOTE:</b> Working storage is also referred to as upload buffer. You can also use the
-    /// AddUploadBuffer operation to add upload buffer to a stored-volume gateway. </para> <para>In the request, you specify the gateway Amazon
-    /// Resource Name (ARN) to which you want to add working storage, and one or more disk IDs that you want to configure as working storage.</para>
+    /// gateway-stored volume architecture. This operation is deprecated method in cached-volumes API version (20120630). Use AddUploadBuffer
+    /// instead.</para> <para><b>NOTE:</b> Working storage is also referred to as upload buffer. You can also use the AddUploadBuffer operation to
+    /// add upload buffer to a stored-volume gateway. </para> <para>In the request, you specify the gateway Amazon Resource Name (ARN) to which you
+    /// want to add working storage, and one or more disk IDs that you want to configure as working storage.</para>
     /// </summary>
     /// <seealso cref="Amazon.StorageGateway.AmazonStorageGateway.AddWorkingStorage"/>
     public class AddWorkingStorageRequest : AmazonWebServiceRequest
@@ -61,6 +62,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="gatewayARN">The value to set for the GatewayARN property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AddWorkingStorageRequest WithGatewayARN(string gatewayARN)
         {
             this.gatewayARN = gatewayARN;
@@ -71,7 +73,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if GatewayARN property is set
         internal bool IsSetGatewayARN()
         {
-            return this.gatewayARN != null;       
+            return this.gatewayARN != null;
         }
 
         /// <summary>
@@ -89,6 +91,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="diskIds">The values to add to the DiskIds collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AddWorkingStorageRequest WithDiskIds(params string[] diskIds)
         {
             foreach (string element in diskIds)
@@ -98,12 +101,13 @@ namespace Amazon.StorageGateway.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the DiskIds collection
         /// </summary>
         /// <param name="diskIds">The values to add to the DiskIds collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AddWorkingStorageRequest WithDiskIds(IEnumerable<string> diskIds)
         {
             foreach (string element in diskIds)
@@ -117,7 +121,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if DiskIds property is set
         internal bool IsSetDiskIds()
         {
-            return this.diskIds.Count > 0;       
+            return this.diskIds.Count > 0;
         }
     }
 }

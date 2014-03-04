@@ -23,7 +23,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// The results from the ModifyDBInstance action.
     /// </summary>
-    public class ModifyDBInstanceResult
+    public partial class ModifyDBInstanceResult
     {
         private DBInstance dBInstanceValue;
 

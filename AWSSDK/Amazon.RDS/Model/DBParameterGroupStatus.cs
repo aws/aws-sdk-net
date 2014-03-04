@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// <para> The status of the DB Parameter Group. </para> <para>This data type is used as a response element in the following actions:</para>
+    /// <para> The status of the DB parameter group. </para> <para>This data type is used as a response element in the following actions:</para>
     /// <ul>
     /// <li> CreateDBInstance </li>
     /// <li> CreateDBInstanceReadReplica </li>
@@ -32,14 +32,14 @@ namespace Amazon.RDS.Model
     /// 
     /// </ul>
     /// </summary>
-    public class DBParameterGroupStatus
+    public partial class DBParameterGroupStatus
     {
         
         private string dBParameterGroupName;
         private string parameterApplyStatus;
 
         /// <summary>
-        /// The name of the DP Parameter Group.
+        /// The name of the DP parameter group.
         ///  
         /// </summary>
         public string DBParameterGroupName
@@ -53,6 +53,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="dBParameterGroupName">The value to set for the DBParameterGroupName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DBParameterGroupStatus WithDBParameterGroupName(string dBParameterGroupName)
         {
             this.dBParameterGroupName = dBParameterGroupName;
@@ -81,6 +82,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="parameterApplyStatus">The value to set for the ParameterApplyStatus property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DBParameterGroupStatus WithParameterApplyStatus(string parameterApplyStatus)
         {
             this.parameterApplyStatus = parameterApplyStatus;

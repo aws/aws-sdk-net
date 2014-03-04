@@ -23,13 +23,14 @@ namespace Amazon.OpsWorks.Model
     /// <summary>
     /// <para>Describes stack or user permissions.</para>
     /// </summary>
-    public class Permission
+    public partial class Permission
     {
         
         private string stackId;
         private string iamUserArn;
         private bool? allowSsh;
         private bool? allowSudo;
+        private string level;
 
         /// <summary>
         /// A stack ID.
@@ -46,6 +47,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="stackId">The value to set for the StackId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Permission WithStackId(string stackId)
         {
             this.stackId = stackId;
@@ -75,6 +77,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="iamUserArn">The value to set for the IamUserArn property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Permission WithIamUserArn(string iamUserArn)
         {
             this.iamUserArn = iamUserArn;
@@ -103,6 +106,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="allowSsh">The value to set for the AllowSsh property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Permission WithAllowSsh(bool allowSsh)
         {
             this.allowSsh = allowSsh;
@@ -131,6 +135,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="allowSudo">The value to set for the AllowSudo property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Permission WithAllowSudo(bool allowSudo)
         {
             this.allowSudo = allowSudo;
@@ -142,6 +147,37 @@ namespace Amazon.OpsWorks.Model
         internal bool IsSetAllowSudo()
         {
             return this.allowSudo.HasValue;
+        }
+
+        /// <summary>
+        /// The user's permission level, which must be the following: <ul> <li><c>deny</c></li> <li><c>show</c></li> <li><c>deploy</c></li>
+        /// <li><c>manage</c></li> <li><c>iam_only</c></li> </ul> For more information on the permissions associated with these levels, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>
+        ///  
+        /// </summary>
+        public string Level
+        {
+            get { return this.level; }
+            set { this.level = value; }
+        }
+
+        /// <summary>
+        /// Sets the Level property
+        /// </summary>
+        /// <param name="level">The value to set for the Level property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public Permission WithLevel(string level)
+        {
+            this.level = level;
+            return this;
+        }
+            
+
+        // Check to see if Level property is set
+        internal bool IsSetLevel()
+        {
+            return this.level != null;
         }
     }
 }

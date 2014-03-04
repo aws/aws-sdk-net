@@ -45,6 +45,7 @@ namespace Amazon.DataPipeline.Model
         /// </summary>
         /// <param name="pipelineIdList">The values to add to the PipelineIdList collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListPipelinesResult WithPipelineIdList(params PipelineIdName[] pipelineIdList)
         {
             foreach (PipelineIdName element in pipelineIdList)
@@ -60,6 +61,7 @@ namespace Amazon.DataPipeline.Model
         /// </summary>
         /// <param name="pipelineIdList">The values to add to the PipelineIdList collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListPipelinesResult WithPipelineIdList(IEnumerable<PipelineIdName> pipelineIdList)
         {
             foreach (PipelineIdName element in pipelineIdList)
@@ -105,6 +107,7 @@ namespace Amazon.DataPipeline.Model
         /// </summary>
         /// <param name="marker">The value to set for the Marker property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListPipelinesResult WithMarker(string marker)
         {
             this.marker = marker;
@@ -133,6 +136,7 @@ namespace Amazon.DataPipeline.Model
         /// </summary>
         /// <param name="hasMoreResults">The value to set for the HasMoreResults property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListPipelinesResult WithHasMoreResults(bool hasMoreResults)
         {
             this.hasMoreResults = hasMoreResults;

@@ -32,6 +32,8 @@
 
         public DeleteRequest Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             DeleteRequest deleteRequest = new DeleteRequest();
           deleteRequest.Key = null;
                         

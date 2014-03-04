@@ -23,7 +23,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// <summary>
     /// <para> The policies data type. </para>
     /// </summary>
-    public class Policies  
+    public partial class Policies
     {
         
         private List<AppCookieStickinessPolicy> appCookieStickinessPolicies = new List<AppCookieStickinessPolicy>();
@@ -50,6 +50,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="appCookieStickinessPolicies">The values to add to the AppCookieStickinessPolicies collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Policies WithAppCookieStickinessPolicies(params AppCookieStickinessPolicy[] appCookieStickinessPolicies)
         {
             foreach (AppCookieStickinessPolicy element in appCookieStickinessPolicies)
@@ -59,12 +60,13 @@ namespace Amazon.ElasticLoadBalancing.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the AppCookieStickinessPolicies collection
         /// </summary>
         /// <param name="appCookieStickinessPolicies">The values to add to the AppCookieStickinessPolicies collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Policies WithAppCookieStickinessPolicies(IEnumerable<AppCookieStickinessPolicy> appCookieStickinessPolicies)
         {
             foreach (AppCookieStickinessPolicy element in appCookieStickinessPolicies)
@@ -78,7 +80,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if AppCookieStickinessPolicies property is set
         internal bool IsSetAppCookieStickinessPolicies()
         {
-            return this.appCookieStickinessPolicies.Count > 0;       
+            return this.appCookieStickinessPolicies.Count > 0;
         }
 
         /// <summary>
@@ -95,6 +97,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="lBCookieStickinessPolicies">The values to add to the LBCookieStickinessPolicies collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Policies WithLBCookieStickinessPolicies(params LBCookieStickinessPolicy[] lBCookieStickinessPolicies)
         {
             foreach (LBCookieStickinessPolicy element in lBCookieStickinessPolicies)
@@ -104,12 +107,13 @@ namespace Amazon.ElasticLoadBalancing.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the LBCookieStickinessPolicies collection
         /// </summary>
         /// <param name="lBCookieStickinessPolicies">The values to add to the LBCookieStickinessPolicies collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Policies WithLBCookieStickinessPolicies(IEnumerable<LBCookieStickinessPolicy> lBCookieStickinessPolicies)
         {
             foreach (LBCookieStickinessPolicy element in lBCookieStickinessPolicies)
@@ -123,7 +127,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if LBCookieStickinessPolicies property is set
         internal bool IsSetLBCookieStickinessPolicies()
         {
-            return this.lBCookieStickinessPolicies.Count > 0;       
+            return this.lBCookieStickinessPolicies.Count > 0;
         }
 
         /// <summary>
@@ -140,6 +144,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="otherPolicies">The values to add to the OtherPolicies collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Policies WithOtherPolicies(params string[] otherPolicies)
         {
             foreach (string element in otherPolicies)
@@ -149,12 +154,13 @@ namespace Amazon.ElasticLoadBalancing.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the OtherPolicies collection
         /// </summary>
         /// <param name="otherPolicies">The values to add to the OtherPolicies collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Policies WithOtherPolicies(IEnumerable<string> otherPolicies)
         {
             foreach (string element in otherPolicies)
@@ -168,7 +174,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if OtherPolicies property is set
         internal bool IsSetOtherPolicies()
         {
-            return this.otherPolicies.Count > 0;       
+            return this.otherPolicies.Count > 0;
         }
     }
 }

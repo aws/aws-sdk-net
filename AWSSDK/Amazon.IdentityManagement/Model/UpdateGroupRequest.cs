@@ -66,6 +66,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="groupName">The value to set for the GroupName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateGroupRequest WithGroupName(string groupName)
         {
             this.groupName = groupName;
@@ -107,6 +108,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="newPath">The value to set for the NewPath property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateGroupRequest WithNewPath(string newPath)
         {
             this.newPath = newPath;
@@ -148,6 +150,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="newGroupName">The value to set for the NewGroupName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateGroupRequest WithNewGroupName(string newGroupName)
         {
             this.newGroupName = newGroupName;

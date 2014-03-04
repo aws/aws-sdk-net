@@ -25,7 +25,7 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteOptionGroup operation.
-    /// <para> Deletes an existing Option Group. </para>
+    /// <para> Deletes an existing option group. </para>
     /// </summary>
     /// <seealso cref="Amazon.RDS.AmazonRDS.DeleteOptionGroup"/>
     public class DeleteOptionGroupRequest : AmazonWebServiceRequest
@@ -33,7 +33,7 @@ namespace Amazon.RDS.Model
         private string optionGroupName;
 
         /// <summary>
-        /// The name of the option group to be deleted. <note>You cannot delete default Option Groups.</note>
+        /// The name of the option group to be deleted. <note>You cannot delete default option groups.</note>
         ///  
         /// </summary>
         public string OptionGroupName
@@ -47,6 +47,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="optionGroupName">The value to set for the OptionGroupName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeleteOptionGroupRequest WithOptionGroupName(string optionGroupName)
         {
             this.optionGroupName = optionGroupName;

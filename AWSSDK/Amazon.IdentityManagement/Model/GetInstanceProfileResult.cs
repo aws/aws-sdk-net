@@ -21,9 +21,9 @@ using System.IO;
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// <para>Contains the result of a successful invocation of the GetInstanceProfileResponse action.</para>
+    /// <para>Contains the result of a successful invocation of the GetInstanceProfile action.</para>
     /// </summary>
-    public class GetInstanceProfileResult  
+    public partial class GetInstanceProfileResult
     {
         
         private InstanceProfile instanceProfile;
@@ -43,6 +43,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="instanceProfile">The value to set for the InstanceProfile property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetInstanceProfileResult WithInstanceProfile(InstanceProfile instanceProfile)
         {
             this.instanceProfile = instanceProfile;
@@ -53,7 +54,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if InstanceProfile property is set
         internal bool IsSetInstanceProfile()
         {
-            return this.instanceProfile != null;       
+            return this.instanceProfile != null;
         }
     }
 }

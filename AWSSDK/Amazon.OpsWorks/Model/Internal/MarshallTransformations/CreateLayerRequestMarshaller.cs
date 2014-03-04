@@ -187,6 +187,11 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                     writer.WritePropertyName("AutoAssignElasticIps");
                     writer.Write(createLayerRequest.AutoAssignElasticIps);
                 }
+                if (createLayerRequest != null && createLayerRequest.IsSetAutoAssignPublicIps()) 
+                {
+                    writer.WritePropertyName("AutoAssignPublicIps");
+                    writer.Write(createLayerRequest.AutoAssignPublicIps);
+                }
 
                 if (createLayerRequest != null) 
                 {
@@ -267,6 +272,11 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                         }
                         writer.WriteObjectEnd();
                     }
+                }
+                if (createLayerRequest != null && createLayerRequest.IsSetInstallUpdatesOnBoot()) 
+                {
+                    writer.WritePropertyName("InstallUpdatesOnBoot");
+                    writer.Write(createLayerRequest.InstallUpdatesOnBoot);
                 }
 
                 writer.WriteObjectEnd();

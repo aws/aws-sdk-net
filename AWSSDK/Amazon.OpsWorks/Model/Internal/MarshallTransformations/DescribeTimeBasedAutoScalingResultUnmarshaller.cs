@@ -32,6 +32,8 @@
 
         public DescribeTimeBasedAutoScalingResult Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             DescribeTimeBasedAutoScalingResult describeTimeBasedAutoScalingResult = new DescribeTimeBasedAutoScalingResult();
           describeTimeBasedAutoScalingResult.TimeBasedAutoScalingConfigurations = null;
                         

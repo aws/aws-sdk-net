@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
     /// Creates a new import instance task using metadata from the specified disk image.
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
-    public class ImportInstanceRequest
+    public class ImportInstanceRequest : EC2Request
     {    
         private string descriptionField;
         private ImportInstanceLaunchSpecificationType launchSpecificationField;
@@ -51,6 +51,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="description">Description of the instance being imported</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ImportInstanceRequest WithDescription(string description)
         {
             this.descriptionField = description;
@@ -81,6 +82,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="launchSpecification">Specifies additional launch instance information.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ImportInstanceRequest WithLaunchSpecification(ImportInstanceLaunchSpecificationType launchSpecification)
         {
             this.launchSpecificationField = launchSpecification;
@@ -118,6 +120,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">Details about the image.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ImportInstanceRequest WithDiskImage(params DiskImageType[] list)
         {
             foreach (DiskImageType item in list)
@@ -155,6 +158,7 @@ namespace Amazon.EC2.Model
         /// 
         /// Valid Value: Windows</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ImportInstanceRequest WithPlatform(string platform)
         {
             this.platformField = platform;

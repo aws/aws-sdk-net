@@ -21,17 +21,17 @@ using System.IO;
 namespace Amazon.AWSSupport.Model
 {
     /// <summary>
-    /// <para>JSON-formatted name/value pair that represents the name and category of problem selected from the DescribeServices response for each
-    /// AWS service.</para>
+    /// <para>A JSON-formatted name/value pair that represents the category name and category code of the problem, selected from the
+    /// DescribeServices response for each AWS service.</para>
     /// </summary>
-    public class Category
+    public partial class Category
     {
         
         private string code;
         private string name;
 
         /// <summary>
-        /// Category code for the support case.
+        /// The category code for the support case.
         ///  
         /// </summary>
         public string Code
@@ -45,6 +45,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="code">The value to set for the Code property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Category WithCode(string code)
         {
             this.code = code;
@@ -59,7 +60,7 @@ namespace Amazon.AWSSupport.Model
         }
 
         /// <summary>
-        /// Category name for the support case.
+        /// The category name for the support case.
         ///  
         /// </summary>
         public string Name
@@ -73,6 +74,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="name">The value to set for the Name property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Category WithName(string name)
         {
             this.name = name;

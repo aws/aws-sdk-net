@@ -23,7 +23,7 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// <para>Contains the result of a successful invocation of the GetServerCertificate action.</para>
     /// </summary>
-    public class GetServerCertificateResult  
+    public partial class GetServerCertificateResult
     {
         
         private ServerCertificate serverCertificate;
@@ -43,6 +43,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="serverCertificate">The value to set for the ServerCertificate property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetServerCertificateResult WithServerCertificate(ServerCertificate serverCertificate)
         {
             this.serverCertificate = serverCertificate;
@@ -53,7 +54,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if ServerCertificate property is set
         internal bool IsSetServerCertificate()
         {
-            return this.serverCertificate != null;       
+            return this.serverCertificate != null;
         }
     }
 }

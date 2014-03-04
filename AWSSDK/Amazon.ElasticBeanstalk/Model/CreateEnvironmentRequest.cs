@@ -31,12 +31,13 @@ namespace Amazon.ElasticBeanstalk.Model
     public class CreateEnvironmentRequest : AmazonWebServiceRequest
     {
         private string applicationName;
-        private string versionLabel;
         private string environmentName;
+        private string description;
+        private string cNAMEPrefix;
+        private EnvironmentTier tier;
+        private string versionLabel;
         private string templateName;
         private string solutionStackName;
-        private string cNAMEPrefix;
-        private string description;
         private List<ConfigurationOptionSetting> optionSettings = new List<ConfigurationOptionSetting>();
         private List<OptionSpecification> optionsToRemove = new List<OptionSpecification>();
 
@@ -65,6 +66,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="applicationName">The value to set for the ApplicationName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateEnvironmentRequest WithApplicationName(string applicationName)
         {
             this.applicationName = applicationName;
@@ -75,46 +77,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if ApplicationName property is set
         internal bool IsSetApplicationName()
         {
-            return this.applicationName != null;       
-        }
-
-        /// <summary>
-        /// The name of the application version to deploy. If the specified application has no associated application versions, AWS Elastic Beanstalk
-        /// <c>UpdateEnvironment</c> returns an <c>InvalidParameterValue</c> error. Default: If not specified, AWS Elastic Beanstalk attempts to launch
-        /// the most recently created application version.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>1 - 100</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string VersionLabel
-        {
-            get { return this.versionLabel; }
-            set { this.versionLabel = value; }
-        }
-
-        /// <summary>
-        /// Sets the VersionLabel property
-        /// </summary>
-        /// <param name="versionLabel">The value to set for the VersionLabel property </param>
-        /// <returns>this instance</returns>
-        public CreateEnvironmentRequest WithVersionLabel(string versionLabel)
-        {
-            this.versionLabel = versionLabel;
-            return this;
-        }
-            
-
-        // Check to see if VersionLabel property is set
-        internal bool IsSetVersionLabel()
-        {
-            return this.versionLabel != null;       
+            return this.applicationName != null;
         }
 
         /// <summary>
@@ -144,6 +107,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="environmentName">The value to set for the EnvironmentName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateEnvironmentRequest WithEnvironmentName(string environmentName)
         {
             this.environmentName = environmentName;
@@ -154,7 +118,153 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if EnvironmentName property is set
         internal bool IsSetEnvironmentName()
         {
-            return this.environmentName != null;       
+            return this.environmentName != null;
+        }
+
+        /// <summary>
+        /// Describes this environment.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Length</term>
+        ///         <description>0 - 200</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
+        public string Description
+        {
+            get { return this.description; }
+            set { this.description = value; }
+        }
+
+        /// <summary>
+        /// Sets the Description property
+        /// </summary>
+        /// <param name="description">The value to set for the Description property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public CreateEnvironmentRequest WithDescription(string description)
+        {
+            this.description = description;
+            return this;
+        }
+            
+
+        // Check to see if Description property is set
+        internal bool IsSetDescription()
+        {
+            return this.description != null;
+        }
+
+        /// <summary>
+        /// If specified, the environment attempts to use this value as the prefix for the CNAME. If not specified, the CNAME is generated automatically
+        /// by appending a random alphanumeric string to the environment name.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Length</term>
+        ///         <description>4 - 63</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
+        public string CNAMEPrefix
+        {
+            get { return this.cNAMEPrefix; }
+            set { this.cNAMEPrefix = value; }
+        }
+
+        /// <summary>
+        /// Sets the CNAMEPrefix property
+        /// </summary>
+        /// <param name="cNAMEPrefix">The value to set for the CNAMEPrefix property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public CreateEnvironmentRequest WithCNAMEPrefix(string cNAMEPrefix)
+        {
+            this.cNAMEPrefix = cNAMEPrefix;
+            return this;
+        }
+            
+
+        // Check to see if CNAMEPrefix property is set
+        internal bool IsSetCNAMEPrefix()
+        {
+            return this.cNAMEPrefix != null;
+        }
+
+        /// <summary>
+        /// This specifies the tier to use for creating this environment.
+        ///  
+        /// </summary>
+        public EnvironmentTier Tier
+        {
+            get { return this.tier; }
+            set { this.tier = value; }
+        }
+
+        /// <summary>
+        /// Sets the Tier property
+        /// </summary>
+        /// <param name="tier">The value to set for the Tier property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public CreateEnvironmentRequest WithTier(EnvironmentTier tier)
+        {
+            this.tier = tier;
+            return this;
+        }
+            
+
+        // Check to see if Tier property is set
+        internal bool IsSetTier()
+        {
+            return this.tier != null;
+        }
+
+        /// <summary>
+        /// The name of the application version to deploy. If the specified application has no associated application versions, AWS Elastic Beanstalk
+        /// <c>UpdateEnvironment</c> returns an <c>InvalidParameterValue</c> error. Default: If not specified, AWS Elastic Beanstalk attempts to launch
+        /// the sample application in the container.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Length</term>
+        ///         <description>1 - 100</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
+        public string VersionLabel
+        {
+            get { return this.versionLabel; }
+            set { this.versionLabel = value; }
+        }
+
+        /// <summary>
+        /// Sets the VersionLabel property
+        /// </summary>
+        /// <param name="versionLabel">The value to set for the VersionLabel property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public CreateEnvironmentRequest WithVersionLabel(string versionLabel)
+        {
+            this.versionLabel = versionLabel;
+            return this;
+        }
+            
+
+        // Check to see if VersionLabel property is set
+        internal bool IsSetVersionLabel()
+        {
+            return this.versionLabel != null;
         }
 
         /// <summary>
@@ -184,6 +294,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="templateName">The value to set for the TemplateName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateEnvironmentRequest WithTemplateName(string templateName)
         {
             this.templateName = templateName;
@@ -194,7 +305,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if TemplateName property is set
         internal bool IsSetTemplateName()
         {
-            return this.templateName != null;       
+            return this.templateName != null;
         }
 
         /// <summary>
@@ -224,6 +335,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="solutionStackName">The value to set for the SolutionStackName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateEnvironmentRequest WithSolutionStackName(string solutionStackName)
         {
             this.solutionStackName = solutionStackName;
@@ -234,82 +346,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if SolutionStackName property is set
         internal bool IsSetSolutionStackName()
         {
-            return this.solutionStackName != null;       
-        }
-
-        /// <summary>
-        /// If specified, the environment attempts to use this value as the prefix for the CNAME. If not specified, the environment uses the environment
-        /// name.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>4 - 63</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string CNAMEPrefix
-        {
-            get { return this.cNAMEPrefix; }
-            set { this.cNAMEPrefix = value; }
-        }
-
-        /// <summary>
-        /// Sets the CNAMEPrefix property
-        /// </summary>
-        /// <param name="cNAMEPrefix">The value to set for the CNAMEPrefix property </param>
-        /// <returns>this instance</returns>
-        public CreateEnvironmentRequest WithCNAMEPrefix(string cNAMEPrefix)
-        {
-            this.cNAMEPrefix = cNAMEPrefix;
-            return this;
-        }
-            
-
-        // Check to see if CNAMEPrefix property is set
-        internal bool IsSetCNAMEPrefix()
-        {
-            return this.cNAMEPrefix != null;       
-        }
-
-        /// <summary>
-        /// Describes this environment.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Length</term>
-        ///         <description>0 - 200</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public string Description
-        {
-            get { return this.description; }
-            set { this.description = value; }
-        }
-
-        /// <summary>
-        /// Sets the Description property
-        /// </summary>
-        /// <param name="description">The value to set for the Description property </param>
-        /// <returns>this instance</returns>
-        public CreateEnvironmentRequest WithDescription(string description)
-        {
-            this.description = description;
-            return this;
-        }
-            
-
-        // Check to see if Description property is set
-        internal bool IsSetDescription()
-        {
-            return this.description != null;       
+            return this.solutionStackName != null;
         }
 
         /// <summary>
@@ -327,6 +364,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="optionSettings">The values to add to the OptionSettings collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateEnvironmentRequest WithOptionSettings(params ConfigurationOptionSetting[] optionSettings)
         {
             foreach (ConfigurationOptionSetting element in optionSettings)
@@ -336,12 +374,13 @@ namespace Amazon.ElasticBeanstalk.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the OptionSettings collection
         /// </summary>
         /// <param name="optionSettings">The values to add to the OptionSettings collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateEnvironmentRequest WithOptionSettings(IEnumerable<ConfigurationOptionSetting> optionSettings)
         {
             foreach (ConfigurationOptionSetting element in optionSettings)
@@ -355,7 +394,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if OptionSettings property is set
         internal bool IsSetOptionSettings()
         {
-            return this.optionSettings.Count > 0;       
+            return this.optionSettings.Count > 0;
         }
 
         /// <summary>
@@ -372,6 +411,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="optionsToRemove">The values to add to the OptionsToRemove collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateEnvironmentRequest WithOptionsToRemove(params OptionSpecification[] optionsToRemove)
         {
             foreach (OptionSpecification element in optionsToRemove)
@@ -381,12 +421,13 @@ namespace Amazon.ElasticBeanstalk.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the OptionsToRemove collection
         /// </summary>
         /// <param name="optionsToRemove">The values to add to the OptionsToRemove collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateEnvironmentRequest WithOptionsToRemove(IEnumerable<OptionSpecification> optionsToRemove)
         {
             foreach (OptionSpecification element in optionsToRemove)
@@ -400,7 +441,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if OptionsToRemove property is set
         internal bool IsSetOptionsToRemove()
         {
-            return this.optionsToRemove.Count > 0;       
+            return this.optionsToRemove.Count > 0;
         }
     }
 }

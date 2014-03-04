@@ -67,6 +67,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="applicationName">The value to set for the ApplicationName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateConfigurationTemplateRequest WithApplicationName(string applicationName)
         {
             this.applicationName = applicationName;
@@ -105,6 +106,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="templateName">The value to set for the TemplateName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateConfigurationTemplateRequest WithTemplateName(string templateName)
         {
             this.templateName = templateName;
@@ -142,6 +144,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="description">The value to set for the Description property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateConfigurationTemplateRequest WithDescription(string description)
         {
             this.description = description;
@@ -169,6 +172,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="optionSettings">The values to add to the OptionSettings collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateConfigurationTemplateRequest WithOptionSettings(params ConfigurationOptionSetting[] optionSettings)
         {
             foreach (ConfigurationOptionSetting element in optionSettings)
@@ -184,6 +188,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="optionSettings">The values to add to the OptionSettings collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateConfigurationTemplateRequest WithOptionSettings(IEnumerable<ConfigurationOptionSetting> optionSettings)
         {
             foreach (ConfigurationOptionSetting element in optionSettings)
@@ -215,6 +220,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="optionsToRemove">The values to add to the OptionsToRemove collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateConfigurationTemplateRequest WithOptionsToRemove(params OptionSpecification[] optionsToRemove)
         {
             foreach (OptionSpecification element in optionsToRemove)
@@ -230,6 +236,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="optionsToRemove">The values to add to the OptionsToRemove collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateConfigurationTemplateRequest WithOptionsToRemove(IEnumerable<OptionSpecification> optionsToRemove)
         {
             foreach (OptionSpecification element in optionsToRemove)

@@ -23,7 +23,7 @@ namespace Amazon.Glacier.Model
     /// <summary>
     /// <para>Contains the Amazon Glacier response to your request.</para>
     /// </summary>
-    public class ListJobsResult  
+    public partial class ListJobsResult
     {
         
         private List<GlacierJobDescription> jobList = new List<GlacierJobDescription>();
@@ -43,6 +43,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="jobList">The values to add to the JobList collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListJobsResult WithJobList(params GlacierJobDescription[] jobList)
         {
             foreach (GlacierJobDescription element in jobList)
@@ -52,12 +53,13 @@ namespace Amazon.Glacier.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the JobList collection
         /// </summary>
         /// <param name="jobList">The values to add to the JobList collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListJobsResult WithJobList(IEnumerable<GlacierJobDescription> jobList)
         {
             foreach (GlacierJobDescription element in jobList)
@@ -71,7 +73,7 @@ namespace Amazon.Glacier.Model
         // Check to see if JobList property is set
         internal bool IsSetJobList()
         {
-            return this.jobList.Count > 0;       
+            return this.jobList.Count > 0;
         }
 
         /// <summary>
@@ -90,6 +92,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="marker">The value to set for the Marker property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListJobsResult WithMarker(string marker)
         {
             this.marker = marker;
@@ -100,7 +103,7 @@ namespace Amazon.Glacier.Model
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;       
+            return this.marker != null;
         }
     }
 }

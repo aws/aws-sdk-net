@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
     /// Cancels a bundling operation for an instance store-backed Windows instance.
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
-    public class CancelBundleTaskRequest
+    public class CancelBundleTaskRequest : EC2Request
     {    
         private string bundleIdField;
 
@@ -48,6 +48,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="bundleId">The ID of the bundle task to cancel.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CancelBundleTaskRequest WithBundleId(string bundleId)
         {
             this.bundleIdField = bundleId;

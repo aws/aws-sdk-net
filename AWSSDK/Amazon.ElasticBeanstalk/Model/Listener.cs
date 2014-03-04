@@ -23,7 +23,7 @@ namespace Amazon.ElasticBeanstalk.Model
     /// <summary>
     /// <para>Describes the properties of a Listener for the LoadBalancer.</para>
     /// </summary>
-    public class Listener  
+    public partial class Listener
     {
         
         private string protocol;
@@ -44,6 +44,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="protocol">The value to set for the Protocol property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Listener WithProtocol(string protocol)
         {
             this.protocol = protocol;
@@ -54,7 +55,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if Protocol property is set
         internal bool IsSetProtocol()
         {
-            return this.protocol != null;       
+            return this.protocol != null;
         }
 
         /// <summary>
@@ -72,6 +73,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="port">The value to set for the Port property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Listener WithPort(int port)
         {
             this.port = port;
@@ -82,7 +84,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if Port property is set
         internal bool IsSetPort()
         {
-            return this.port.HasValue;       
+            return this.port.HasValue;
         }
     }
 }

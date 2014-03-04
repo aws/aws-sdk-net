@@ -45,6 +45,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="externalWorkflowExecution">The value to set for the ExternalWorkflowExecution property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public WorkflowExecutionCancelRequestedEventAttributes WithExternalWorkflowExecution(WorkflowExecution externalWorkflowExecution)
         {
             this.externalWorkflowExecution = externalWorkflowExecution;
@@ -76,6 +77,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="externalInitiatedEventId">The value to set for the ExternalInitiatedEventId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public WorkflowExecutionCancelRequestedEventAttributes WithExternalInitiatedEventId(long externalInitiatedEventId)
         {
             this.externalInitiatedEventId = externalInitiatedEventId;
@@ -114,6 +116,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="cause">The value to set for the Cause property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public WorkflowExecutionCancelRequestedEventAttributes WithCause(string cause)
         {
             this.cause = cause;

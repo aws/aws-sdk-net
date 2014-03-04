@@ -22,13 +22,14 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
      /// <summary>
      ///   EnvironmentDescription Unmarshaller
      /// </summary>
-    internal class EnvironmentDescriptionUnmarshaller : IUnmarshaller<EnvironmentDescription, XmlUnmarshallerContext> 
+    internal class EnvironmentDescriptionUnmarshaller : IUnmarshaller<EnvironmentDescription, XmlUnmarshallerContext>, IUnmarshaller<EnvironmentDescription, JsonUnmarshallerContext> 
     {
         public EnvironmentDescription Unmarshall(XmlUnmarshallerContext context) 
         {
             EnvironmentDescription environmentDescription = new EnvironmentDescription();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -119,6 +120,12 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                         environmentDescription.Resources = EnvironmentResourcesDescriptionUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
+                    } 
+                    if (context.TestExpression("Tier", targetDepth))
+                    {
+                        environmentDescription.Tier = EnvironmentTierUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
@@ -130,6 +137,11 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
 
 
             return environmentDescription;
+        }
+
+        public EnvironmentDescription Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static EnvironmentDescriptionUnmarshaller instance;

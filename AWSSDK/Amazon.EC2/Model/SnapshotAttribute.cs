@@ -50,6 +50,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="snapshotId">The ID of the Amazon EBS snapshot.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SnapshotAttribute WithSnapshotId(string snapshotId)
         {
             this.snapshotIdField = snapshotId;
@@ -87,6 +88,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">list of create volume permissions</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SnapshotAttribute WithCreateVolumePermission(params CreateVolumePermission[] list)
         {
             foreach (CreateVolumePermission item in list)
@@ -127,6 +129,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">Product codes.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SnapshotAttribute WithProductCodes(params ProductCode[] list)
         {
             foreach (ProductCode item in list)

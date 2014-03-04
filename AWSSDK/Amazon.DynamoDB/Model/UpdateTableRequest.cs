@@ -63,6 +63,7 @@ namespace Amazon.DynamoDB.Model
         /// </summary>
         /// <param name="tableName">The value to set for the TableName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateTableRequest WithTableName(string tableName)
         {
             this.tableName = tableName;
@@ -94,6 +95,7 @@ namespace Amazon.DynamoDB.Model
         /// </summary>
         /// <param name="provisionedThroughput">The value to set for the ProvisionedThroughput property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateTableRequest WithProvisionedThroughput(ProvisionedThroughput provisionedThroughput)
         {
             this.provisionedThroughput = provisionedThroughput;

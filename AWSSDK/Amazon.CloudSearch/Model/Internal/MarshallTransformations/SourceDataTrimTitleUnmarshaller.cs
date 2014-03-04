@@ -22,13 +22,14 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
      /// <summary>
      ///   SourceDataTrimTitle Unmarshaller
      /// </summary>
-    internal class SourceDataTrimTitleUnmarshaller : IUnmarshaller<SourceDataTrimTitle, XmlUnmarshallerContext> 
+    internal class SourceDataTrimTitleUnmarshaller : IUnmarshaller<SourceDataTrimTitle, XmlUnmarshallerContext>, IUnmarshaller<SourceDataTrimTitle, JsonUnmarshallerContext> 
     {
         public SourceDataTrimTitle Unmarshall(XmlUnmarshallerContext context) 
         {
             SourceDataTrimTitle sourceDataTrimTitle = new SourceDataTrimTitle();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -70,6 +71,11 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
 
 
             return sourceDataTrimTitle;
+        }
+
+        public SourceDataTrimTitle Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static SourceDataTrimTitleUnmarshaller instance;

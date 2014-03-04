@@ -60,6 +60,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="gatewayARN">The value to set for the GatewayARN property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateGatewayInformationRequest WithGatewayARN(string gatewayARN)
         {
             this.gatewayARN = gatewayARN;
@@ -70,7 +71,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if GatewayARN property is set
         internal bool IsSetGatewayARN()
         {
-            return this.gatewayARN != null;       
+            return this.gatewayARN != null;
         }
 
         /// <summary>
@@ -102,6 +103,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="gatewayName">The value to set for the GatewayName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateGatewayInformationRequest WithGatewayName(string gatewayName)
         {
             this.gatewayName = gatewayName;
@@ -112,23 +114,8 @@ namespace Amazon.StorageGateway.Model
         // Check to see if GatewayName property is set
         internal bool IsSetGatewayName()
         {
-            return this.gatewayName != null;       
+            return this.gatewayName != null;
         }
-
-        /// <summary>
-        /// One of the <a>GatewayTimezone</a> values that represents the time zone for your gateway. The time zone is used, for example, when a time
-        /// stamp is given to a snapshot.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Allowed Values</term>
-        ///         <description>GMT-12:00, GMT-11:00, GMT-10:00, GMT-9:00, GMT-8:00, GMT-7:00, GMT-6:00, GMT-5:00, GMT-4:00, GMT-3:30, GMT-3:00, GMT-2:00, GMT-1:00, GMT, GMT+1:00, GMT+2:00, GMT+3:00, GMT+3:30, GMT+4:00, GMT+4:30, GMT+5:00, GMT+5:30, GMT+5:45, GMT+6:00, GMT+7:00, GMT+8:00, GMT+9:00, GMT+9:30, GMT+10:00, GMT+11:00, GMT+12:00</description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
         public string GatewayTimezone
         {
             get { return this.gatewayTimezone; }
@@ -140,6 +127,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="gatewayTimezone">The value to set for the GatewayTimezone property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateGatewayInformationRequest WithGatewayTimezone(string gatewayTimezone)
         {
             this.gatewayTimezone = gatewayTimezone;
@@ -150,7 +138,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if GatewayTimezone property is set
         internal bool IsSetGatewayTimezone()
         {
-            return this.gatewayTimezone != null;       
+            return this.gatewayTimezone != null;
         }
     }
 }

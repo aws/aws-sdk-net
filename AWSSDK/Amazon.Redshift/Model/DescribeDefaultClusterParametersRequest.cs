@@ -26,7 +26,8 @@ namespace Amazon.Redshift.Model
     /// <summary>
     /// Container for the parameters to the DescribeDefaultClusterParameters operation.
     /// <para> Returns a list of parameter settings for the specified parameter group family. </para> <para> For more information about managing
-    /// parameter groups, go to Amazon Redshift Parameter Groups in the <i>Amazon Redshift Management Guide</i> .
+    /// parameter groups, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html" >Amazon Redshift
+    /// Parameter Groups</a> in the <i>Amazon Redshift Management Guide</i> .
     /// </para>
     /// </summary>
     /// <seealso cref="Amazon.Redshift.AmazonRedshift.DescribeDefaultClusterParameters"/>
@@ -51,6 +52,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="parameterGroupFamily">The value to set for the ParameterGroupFamily property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeDefaultClusterParametersRequest WithParameterGroupFamily(string parameterGroupFamily)
         {
             this.parameterGroupFamily = parameterGroupFamily;
@@ -81,6 +83,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="maxRecords">The value to set for the MaxRecords property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeDefaultClusterParametersRequest WithMaxRecords(int maxRecords)
         {
             this.maxRecords = maxRecords;
@@ -110,6 +113,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="marker">The value to set for the Marker property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeDefaultClusterParametersRequest WithMarker(string marker)
         {
             this.marker = marker;

@@ -137,7 +137,7 @@ namespace Amazon.SimpleWorkflow
     public class AmazonSimpleWorkflowClient : AmazonWebServiceClient, AmazonSimpleWorkflow
     {
     
-        AbstractAWSSigner signer = new AWS3Signer();
+        AbstractAWSSigner signer = new AWS4Signer();
 
         #region Constructors
 
@@ -475,7 +475,7 @@ namespace Amazon.SimpleWorkflow
         /// <li>Use an <c>Action</c> element to allow or deny permission to call this action.</li>
         /// <li>Constrain the following parameters by using a <c>Condition</c> element with the appropriate keys.
         /// <ul>
-        /// <li> <c>defaultTaskList</c> : String constraint. The key is <c>swf:defaultTaskList.name</c> .</li>
+        /// <li> <c>defaultTaskList.name</c> : String constraint. The key is <c>swf:defaultTaskList.name</c> .</li>
         /// <li> <c>name</c> : String constraint. The key is <c>swf:name</c> .</li>
         /// <li> <c>version</c> : String constraint. The key is <c>swf:version</c> .</li>
         /// 
@@ -633,7 +633,11 @@ namespace Amazon.SimpleWorkflow
         /// <li>Use an <c>Action</c> element to allow or deny permission to call this action.</li>
         /// <li>Constrain the following parameters by using a <c>Condition</c> element with the appropriate keys.
         /// <ul>
-        /// <li> <c>tagList.member.0</c> : TBD</li>
+        /// <li> <c>tagList.member.0</c> : The key is <c>swf:tagList.member.0</c> .</li>
+        /// <li> <c>tagList.member.1</c> : The key is <c>swf:tagList.member.1</c> .</li>
+        /// <li> <c>tagList.member.2</c> : The key is <c>swf:tagList.member.2</c> .</li>
+        /// <li> <c>tagList.member.3</c> : The key is <c>swf:tagList.member.3</c> .</li>
+        /// <li> <c>tagList.member.4</c> : The key is <c>swf:tagList.member.4</c> .</li>
         /// <li> <c>taskList</c> : String constraint. The key is <c>swf:taskList.name</c> .</li>
         /// <li> <c>name</c> : String constraint. The key is <c>swf:workflowType.name</c> .</li>
         /// <li> <c>version</c> : String constraint. The key is <c>swf:workflowType.version</c> .</li>
@@ -1116,9 +1120,9 @@ namespace Amazon.SimpleWorkflow
         /// <li>Use an <c>Action</c> element to allow or deny permission to call this action.</li>
         /// <li>Constrain the following parameters by using a <c>Condition</c> element with the appropriate keys.
         /// <ul>
-        /// <li> <c>tag</c> : String constraint. The key is <c>swf:tagFilter.tag</c> and you can specify a set of values.</li>
-        /// <li> <c>typeFilter.name</c> : String constraint. String constraint. The key is <c>swf:typeFilter.name</c> .</li>
-        /// <li> <c>typeFilter.version</c> : String constraint. String constraint. The key is <c>swf:typeFilter.version</c> .</li>
+        /// <li> <c>tagFilter.tag</c> : String constraint. The key is <c>swf:tagFilter.tag</c> .</li>
+        /// <li> <c>typeFilter.name</c> : String constraint. The key is <c>swf:typeFilter.name</c> .</li>
+        /// <li> <c>typeFilter.version</c> : String constraint. The key is <c>swf:typeFilter.version</c> .</li>
         /// 
         /// </ul>
         /// </li>
@@ -1199,7 +1203,8 @@ namespace Amazon.SimpleWorkflow
         /// <ul>
         /// <li>Use a <c>Resource</c> element with the domain name to limit the action to only specified domains.</li>
         /// <li>Use an <c>Action</c> element to allow or deny permission to call this action.</li>
-        /// <li>Use a <b>Condition</b> element with the <c>swf:taskList.name</c> key to allow the action to access only certain task lists.</li>
+        /// <li>Constrain the <c>taskList.name</c> parameter by using a <b>Condition</b> element with the <c>swf:taskList.name</c> key to allow the
+        /// action to access only certain task lists.</li>
         /// 
         /// </ul>
         /// <para>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified
@@ -1351,8 +1356,9 @@ namespace Amazon.SimpleWorkflow
         /// <c>decisions</c> argument specifies the list of decisions made while processing the task. </para> <para> A
         /// <c>DecisionTaskCompleted</c> event is added to the workflow history. The <c>executionContext</c> specified is attached
         /// to the event in the workflow execution history. </para> <para> <b>Access Control</b> </para> <para>If an IAM policy grants permission to use
-        /// <c>RespondDecisionTaskCompleted</c> , it can express permissions for the list of decisions in the <c>decisions</c> parameter in the same way
-        /// as for the regular API. This approach maintains a uniform conceptual model and helps keep policies readable. For more information, see Using
+        /// <c>RespondDecisionTaskCompleted</c> , it can express permissions for the list of decisions in the <c>decisions</c> parameter. Each of the
+        /// decisions has one or more parameters, much like a regular API call. To allow for policies to be as readable as possible, you can express
+        /// permissions on decisions as if they were actual API calls, including applying conditions to some parameters. For more information, see Using
         /// IAM to Manage Access to Amazon SWF Workflows.</para>
         /// </summary>
         /// 
@@ -1500,7 +1506,8 @@ namespace Amazon.SimpleWorkflow
         /// <ul>
         /// <li>Use a <c>Resource</c> element with the domain name to limit the action to only specified domains.</li>
         /// <li>Use an <c>Action</c> element to allow or deny permission to call this action.</li>
-        /// <li>Use a <b>Condition</b> element with the <c>swf:taskList.name</c> key to allow the action to access only certain task lists.</li>
+        /// <li>Constrain the <c>taskList.name</c> parameter by using a <b>Condition</b> element with the <c>swf:taskList.name</c> key to allow the
+        /// action to access only certain task lists.</li>
         /// 
         /// </ul>
         /// <para>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified
@@ -1582,9 +1589,9 @@ namespace Amazon.SimpleWorkflow
         /// <li>Use an <c>Action</c> element to allow or deny permission to call this action.</li>
         /// <li>Constrain the following parameters by using a <c>Condition</c> element with the appropriate keys.
         /// <ul>
-        /// <li> <c>tag</c> : String constraint. The key is <c>swf:tagFilter.tag</c> and you can specify a set of values.</li>
-        /// <li> <c>typeFilter.name</c> : String constraint. String constraint. The key is <c>swf:typeFilter.name</c> .</li>
-        /// <li> <c>typeFilter.version</c> : String constraint. String constraint. The key is <c>swf:typeFilter.version</c> .</li>
+        /// <li> <c>tagFilter.tag</c> : String constraint. The key is <c>swf:tagFilter.tag</c> .</li>
+        /// <li> <c>typeFilter.name</c> : String constraint. The key is <c>swf:typeFilter.name</c> .</li>
+        /// <li> <c>typeFilter.version</c> : String constraint. The key is <c>swf:typeFilter.version</c> .</li>
         /// 
         /// </ul>
         /// </li>
@@ -1753,9 +1760,9 @@ namespace Amazon.SimpleWorkflow
         /// <li>Use an <c>Action</c> element to allow or deny permission to call this action.</li>
         /// <li>Constrain the following parameters by using a <c>Condition</c> element with the appropriate keys.
         /// <ul>
-        /// <li> <c>tag</c> : String constraint. The key is <c>swf:tagFilter.tag</c> and you can specify a set of values.</li>
-        /// <li> <c>typeFilter.name</c> : String constraint. String constraint. The key is <c>swf:typeFilter.name</c> .</li>
-        /// <li> <c>typeFilter.version</c> : String constraint. String constraint. The key is <c>swf:typeFilter.version</c> .</li>
+        /// <li> <c>tagFilter.tag</c> : String constraint. The key is <c>swf:tagFilter.tag</c> .</li>
+        /// <li> <c>typeFilter.name</c> : String constraint. The key is <c>swf:typeFilter.name</c> .</li>
+        /// <li> <c>typeFilter.version</c> : String constraint. The key is <c>swf:typeFilter.version</c> .</li>
         /// 
         /// </ul>
         /// </li>
@@ -1990,7 +1997,7 @@ namespace Amazon.SimpleWorkflow
         /// <li>Use an <c>Action</c> element to allow or deny permission to call this action.</li>
         /// <li>Constrain the following parameters by using a <c>Condition</c> element with the appropriate keys.
         /// <ul>
-        /// <li> <c>defaultTaskList</c> : String constraint. The key is <c>swf:defaultTaskList.name</c> .</li>
+        /// <li> <c>defaultTaskList.name</c> : String constraint. The key is <c>swf:defaultTaskList.name</c> .</li>
         /// <li> <c>name</c> : String constraint. The key is <c>swf:name</c> .</li>
         /// <li> <c>version</c> : String constraint. The key is <c>swf:version</c> .</li>
         /// 
@@ -2072,9 +2079,9 @@ namespace Amazon.SimpleWorkflow
         /// <li>Use an <c>Action</c> element to allow or deny permission to call this action.</li>
         /// <li>Constrain the following parameters by using a <c>Condition</c> element with the appropriate keys.
         /// <ul>
-        /// <li> <c>tag</c> : String constraint. The key is <c>swf:tagFilter.tag</c> and you can specify a set of values.</li>
-        /// <li> <c>typeFilter.name</c> : String constraint. String constraint. The key is <c>swf:typeFilter.name</c> .</li>
-        /// <li> <c>typeFilter.version</c> : String constraint. String constraint. The key is <c>swf:typeFilter.version</c> .</li>
+        /// <li> <c>tagFilter.tag</c> : String constraint. The key is <c>swf:tagFilter.tag</c> .</li>
+        /// <li> <c>typeFilter.name</c> : String constraint. The key is <c>swf:typeFilter.name</c> .</li>
+        /// <li> <c>typeFilter.version</c> : String constraint. The key is <c>swf:typeFilter.version</c> .</li>
         /// 
         /// </ul>
         /// </li>
@@ -2254,7 +2261,8 @@ namespace Amazon.SimpleWorkflow
         /// <ul>
         /// <li>Use a <c>Resource</c> element with the domain name to limit the action to only specified domains.</li>
         /// <li>Use an <c>Action</c> element to allow or deny permission to call this action.</li>
-        /// <li>Use a <b>Condition</b> element with the <c>swf:taskList.name</c> key to allow the action to access only certain task lists.</li>
+        /// <li>Constrain the <c>taskList.name</c> parameter by using a <b>Condition</b> element with the <c>swf:taskList.name</c> key to allow the
+        /// action to access only certain task lists.</li>
         /// 
         /// </ul>
         /// <para>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified
@@ -2563,7 +2571,8 @@ namespace Amazon.SimpleWorkflow
         /// <ul>
         /// <li>Use a <c>Resource</c> element with the domain name to limit the action to only specified domains.</li>
         /// <li>Use an <c>Action</c> element to allow or deny permission to call this action.</li>
-        /// <li>Use a <b>Condition</b> element with the <c>swf:taskList.name</c> key to allow the action to access only certain task lists.</li>
+        /// <li>Constrain the <c>taskList.name</c> parameter by using a <b>Condition</b> element with the <c>swf:taskList.name</c> key to allow the
+        /// action to access only certain task lists.</li>
         /// 
         /// </ul>
         /// <para>If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified

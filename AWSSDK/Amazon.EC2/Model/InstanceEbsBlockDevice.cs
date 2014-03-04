@@ -51,6 +51,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="volumeId">The ID of the Amazon EBS volume.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceEbsBlockDevice WithVolumeId(string volumeId)
         {
             this.volumeIdField = volumeId;
@@ -81,6 +82,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="status">Attachment state of the EBS volume.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceEbsBlockDevice WithStatus(string status)
         {
             this.statusField = status;
@@ -111,6 +113,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="attachTime">Time the volume was attached.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceEbsBlockDevice WithAttachTime(string attachTime)
         {
             this.attachTimeField = attachTime;
@@ -142,6 +145,7 @@ namespace Amazon.EC2.Model
         /// <param name="deleteOnTermination">Whether the volume will be deleted on instance
         /// termination.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceEbsBlockDevice WithDeleteOnTermination(bool deleteOnTermination)
         {
             this.deleteOnTerminationField = deleteOnTermination;

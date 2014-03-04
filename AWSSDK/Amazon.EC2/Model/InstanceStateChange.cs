@@ -50,6 +50,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="instanceId">Instance ID</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceStateChange WithInstanceId(string instanceId)
         {
             this.instanceIdField = instanceId;
@@ -80,6 +81,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="currentState">Current state</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceStateChange WithCurrentState(InstanceState currentState)
         {
             this.currentStateField = currentState;
@@ -110,6 +112,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="previousState">Previous state</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceStateChange WithPreviousState(InstanceState previousState)
         {
             this.previousStateField = previousState;

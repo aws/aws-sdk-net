@@ -23,7 +23,7 @@ namespace Amazon.ElasticBeanstalk.Model
     /// <summary>
     /// <para>Describes an event.</para>
     /// </summary>
-    public class EventDescription  
+    public partial class EventDescription
     {
         
         private DateTime? eventDate;
@@ -50,6 +50,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="eventDate">The value to set for the EventDate property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EventDescription WithEventDate(DateTime eventDate)
         {
             this.eventDate = eventDate;
@@ -60,7 +61,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if EventDate property is set
         internal bool IsSetEventDate()
         {
-            return this.eventDate.HasValue;       
+            return this.eventDate.HasValue;
         }
 
         /// <summary>
@@ -78,6 +79,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="message">The value to set for the Message property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EventDescription WithMessage(string message)
         {
             this.message = message;
@@ -88,7 +90,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if Message property is set
         internal bool IsSetMessage()
         {
-            return this.message != null;       
+            return this.message != null;
         }
 
         /// <summary>
@@ -115,6 +117,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="applicationName">The value to set for the ApplicationName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EventDescription WithApplicationName(string applicationName)
         {
             this.applicationName = applicationName;
@@ -125,7 +128,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if ApplicationName property is set
         internal bool IsSetApplicationName()
         {
-            return this.applicationName != null;       
+            return this.applicationName != null;
         }
 
         /// <summary>
@@ -152,6 +155,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="versionLabel">The value to set for the VersionLabel property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EventDescription WithVersionLabel(string versionLabel)
         {
             this.versionLabel = versionLabel;
@@ -162,7 +166,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if VersionLabel property is set
         internal bool IsSetVersionLabel()
         {
-            return this.versionLabel != null;       
+            return this.versionLabel != null;
         }
 
         /// <summary>
@@ -189,6 +193,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="templateName">The value to set for the TemplateName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EventDescription WithTemplateName(string templateName)
         {
             this.templateName = templateName;
@@ -199,7 +204,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if TemplateName property is set
         internal bool IsSetTemplateName()
         {
-            return this.templateName != null;       
+            return this.templateName != null;
         }
 
         /// <summary>
@@ -226,6 +231,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="environmentName">The value to set for the EnvironmentName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EventDescription WithEnvironmentName(string environmentName)
         {
             this.environmentName = environmentName;
@@ -236,7 +242,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if EnvironmentName property is set
         internal bool IsSetEnvironmentName()
         {
-            return this.environmentName != null;       
+            return this.environmentName != null;
         }
 
         /// <summary>
@@ -254,6 +260,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="requestId">The value to set for the RequestId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EventDescription WithRequestId(string requestId)
         {
             this.requestId = requestId;
@@ -264,7 +271,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if RequestId property is set
         internal bool IsSetRequestId()
         {
-            return this.requestId != null;       
+            return this.requestId != null;
         }
 
         /// <summary>
@@ -291,6 +298,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="severity">The value to set for the Severity property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EventDescription WithSeverity(string severity)
         {
             this.severity = severity;
@@ -301,7 +309,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if Severity property is set
         internal bool IsSetSeverity()
         {
-            return this.severity != null;       
+            return this.severity != null;
         }
     }
 }

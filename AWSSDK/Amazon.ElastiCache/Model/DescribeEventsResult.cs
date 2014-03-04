@@ -21,16 +21,16 @@ using System.IO;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// <para> Contains a list of Events. </para>
+    /// <para>Represents the output of a <i>DescribeEvents</i> operation.</para>
     /// </summary>
-    public class DescribeEventsResult
+    public partial class DescribeEventsResult
     {
         
         private string marker;
         private List<Event> events = new List<Event>();
 
         /// <summary>
-        /// The marker obtained from a previous operation response.
+        /// Provides an identifier to allow retrieval of paginated results.
         ///  
         /// </summary>
         public string Marker
@@ -44,6 +44,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="marker">The value to set for the Marker property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeEventsResult WithMarker(string marker)
         {
             this.marker = marker;
@@ -58,7 +59,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// A list of <a>Event</a> instances.
+        /// A list of events. Each element in the list contains detailed information about one event.
         ///  
         /// </summary>
         public List<Event> Events
@@ -71,6 +72,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="events">The values to add to the Events collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeEventsResult WithEvents(params Event[] events)
         {
             foreach (Event element in events)
@@ -86,6 +88,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="events">The values to add to the Events collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeEventsResult WithEvents(IEnumerable<Event> events)
         {
             foreach (Event element in events)

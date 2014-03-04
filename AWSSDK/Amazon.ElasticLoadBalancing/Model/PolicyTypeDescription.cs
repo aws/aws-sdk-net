@@ -23,7 +23,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// <summary>
     /// <para> The PolicyTypeDescription data type. </para>
     /// </summary>
-    public class PolicyTypeDescription  
+    public partial class PolicyTypeDescription
     {
         
         private string policyTypeName;
@@ -45,6 +45,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="policyTypeName">The value to set for the PolicyTypeName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PolicyTypeDescription WithPolicyTypeName(string policyTypeName)
         {
             this.policyTypeName = policyTypeName;
@@ -55,7 +56,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if PolicyTypeName property is set
         internal bool IsSetPolicyTypeName()
         {
-            return this.policyTypeName != null;       
+            return this.policyTypeName != null;
         }
 
         /// <summary>
@@ -73,6 +74,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="description">The value to set for the Description property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PolicyTypeDescription WithDescription(string description)
         {
             this.description = description;
@@ -83,11 +85,11 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if Description property is set
         internal bool IsSetDescription()
         {
-            return this.description != null;       
+            return this.description != null;
         }
 
         /// <summary>
-        /// The description of the policy attributes associated with the LoadBalancer policies defined by the Elastic Load Balancing service.
+        /// The description of the policy attributes associated with the load balancer policies defined by the Elastic Load Balancing service.
         ///  
         /// </summary>
         public List<PolicyAttributeTypeDescription> PolicyAttributeTypeDescriptions
@@ -100,6 +102,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="policyAttributeTypeDescriptions">The values to add to the PolicyAttributeTypeDescriptions collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PolicyTypeDescription WithPolicyAttributeTypeDescriptions(params PolicyAttributeTypeDescription[] policyAttributeTypeDescriptions)
         {
             foreach (PolicyAttributeTypeDescription element in policyAttributeTypeDescriptions)
@@ -109,12 +112,13 @@ namespace Amazon.ElasticLoadBalancing.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the PolicyAttributeTypeDescriptions collection
         /// </summary>
         /// <param name="policyAttributeTypeDescriptions">The values to add to the PolicyAttributeTypeDescriptions collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PolicyTypeDescription WithPolicyAttributeTypeDescriptions(IEnumerable<PolicyAttributeTypeDescription> policyAttributeTypeDescriptions)
         {
             foreach (PolicyAttributeTypeDescription element in policyAttributeTypeDescriptions)
@@ -128,7 +132,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if PolicyAttributeTypeDescriptions property is set
         internal bool IsSetPolicyAttributeTypeDescriptions()
         {
-            return this.policyAttributeTypeDescriptions.Count > 0;       
+            return this.policyAttributeTypeDescriptions.Count > 0;
         }
     }
 }

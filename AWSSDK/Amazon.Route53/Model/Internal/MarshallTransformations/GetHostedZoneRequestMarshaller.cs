@@ -42,7 +42,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
 
             request.HttpMethod = "GET";
               
-            string uriResourcePath = "/2012-12-12/hostedzone/{Id}"; 
+            string uriResourcePath = "/2013-04-01/hostedzone/{Id}"; 
             uriResourcePath = uriResourcePath.Replace("{Id}", getHostedZoneRequest.Id ?? "" ); 
             
             if (uriResourcePath.Contains("?")) 

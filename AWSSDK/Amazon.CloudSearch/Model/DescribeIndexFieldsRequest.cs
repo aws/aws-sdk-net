@@ -64,6 +64,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="domainName">The value to set for the DomainName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeIndexFieldsRequest WithDomainName(string domainName)
         {
             this.domainName = domainName;
@@ -74,7 +75,7 @@ namespace Amazon.CloudSearch.Model
         // Check to see if DomainName property is set
         internal bool IsSetDomainName()
         {
-            return this.domainName != null;       
+            return this.domainName != null;
         }
 
         /// <summary>
@@ -91,6 +92,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="fieldNames">The values to add to the FieldNames collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeIndexFieldsRequest WithFieldNames(params string[] fieldNames)
         {
             foreach (string element in fieldNames)
@@ -100,12 +102,13 @@ namespace Amazon.CloudSearch.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the FieldNames collection
         /// </summary>
         /// <param name="fieldNames">The values to add to the FieldNames collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeIndexFieldsRequest WithFieldNames(IEnumerable<string> fieldNames)
         {
             foreach (string element in fieldNames)
@@ -119,7 +122,7 @@ namespace Amazon.CloudSearch.Model
         // Check to see if FieldNames property is set
         internal bool IsSetFieldNames()
         {
-            return this.fieldNames.Count > 0;       
+            return this.fieldNames.Count > 0;
         }
     }
 }

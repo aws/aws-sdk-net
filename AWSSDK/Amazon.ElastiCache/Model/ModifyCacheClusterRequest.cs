@@ -25,8 +25,8 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyCacheCluster operation.
-    /// <para> Modifies the Cache Cluster settings. You can change one or more Cache Cluster configuration parameters by specifying the parameters
-    /// and the new values in the request. </para>
+    /// <para>The <i>ModifyCacheCluster</i> operation modifies the settings for a cache cluster. You can use this operation to change one or more
+    /// cluster configuration parameters by specifying the parameters and the new values.</para>
     /// </summary>
     /// <seealso cref="Amazon.ElastiCache.AmazonElastiCache.ModifyCacheCluster"/>
     public class ModifyCacheClusterRequest : AmazonWebServiceRequest
@@ -45,7 +45,7 @@ namespace Amazon.ElastiCache.Model
         private bool? autoMinorVersionUpgrade;
 
         /// <summary>
-        /// The Cache Cluster identifier. This value is stored as a lowercase string.
+        /// The cache cluster identifier. This value is stored as a lowercase string.
         ///  
         /// </summary>
         public string CacheClusterId
@@ -59,6 +59,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="cacheClusterId">The value to set for the CacheClusterId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyCacheClusterRequest WithCacheClusterId(string cacheClusterId)
         {
             this.cacheClusterId = cacheClusterId;
@@ -73,9 +74,10 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// The number of Cache Nodes the Cache Cluster should have. If NumCacheNodes is greater than the existing number of Cache Nodes, Cache Nodes
-        /// will be added. If NumCacheNodes is less than the existing number of Cache Nodes, Cache Nodes will be removed. When removing Cache Nodes, the
-        /// Ids of the specific Cache Nodes to be removed must be supplied using the CacheNodeIdsToRemove parameter.
+        /// The number of cache nodes that the cache cluster should have. If the value for <i>NumCacheNodes</i> is greater than the existing number of
+        /// cache nodes, then more nodes will be added. If the value is less than the existing number of cache nodes, then cache nodes will be removed.
+        /// If you are removing cache nodes, you must use the <i>CacheNodeIdsToRemove</i> parameter to provide the IDs of the specific cache nodes to be
+        /// removed.
         ///  
         /// </summary>
         public int NumCacheNodes
@@ -89,6 +91,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="numCacheNodes">The value to set for the NumCacheNodes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyCacheClusterRequest WithNumCacheNodes(int numCacheNodes)
         {
             this.numCacheNodes = numCacheNodes;
@@ -103,9 +106,9 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// The list of Cache Node IDs to be removed. This parameter is only valid when NumCacheNodes is less than the existing number of Cache Nodes.
-        /// The number of Cache Node Ids supplied in this parameter must match the difference between the existing number of Cache Nodes in the cluster
-        /// and the new NumCacheNodes requested.
+        /// A list of cache node IDs to be removed. A node ID is a numeric identifier (0001, 0002, etc.). This parameter is only valid when
+        /// NumCacheNodes is less than the existing number of cache nodes. The number of cache node IDs supplied in this parameter must match the
+        /// difference between the existing number of cache nodes in the cluster and the value of <i>NumCacheNodes</i> in the request.
         ///  
         /// </summary>
         public List<string> CacheNodeIdsToRemove
@@ -118,6 +121,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="cacheNodeIdsToRemove">The values to add to the CacheNodeIdsToRemove collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyCacheClusterRequest WithCacheNodeIdsToRemove(params string[] cacheNodeIdsToRemove)
         {
             foreach (string element in cacheNodeIdsToRemove)
@@ -133,6 +137,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="cacheNodeIdsToRemove">The values to add to the CacheNodeIdsToRemove collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyCacheClusterRequest WithCacheNodeIdsToRemove(IEnumerable<string> cacheNodeIdsToRemove)
         {
             foreach (string element in cacheNodeIdsToRemove)
@@ -150,7 +155,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// A list of Cache Security Group Names to authorize on this Cache Cluster. This change is asynchronously applied as soon as possible. This
+        /// A list of cache security group names to authorize on this cache cluster. This change is asynchronously applied as soon as possible. This
         /// parameter can be used only with clusters that are created outside of an Amazon Virtual Private Cloud (VPC). Constraints: Must contain no
         /// more than 255 alphanumeric characters. Must not be "Default".
         ///  
@@ -165,6 +170,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="cacheSecurityGroupNames">The values to add to the CacheSecurityGroupNames collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyCacheClusterRequest WithCacheSecurityGroupNames(params string[] cacheSecurityGroupNames)
         {
             foreach (string element in cacheSecurityGroupNames)
@@ -180,6 +186,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="cacheSecurityGroupNames">The values to add to the CacheSecurityGroupNames collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyCacheClusterRequest WithCacheSecurityGroupNames(IEnumerable<string> cacheSecurityGroupNames)
         {
             foreach (string element in cacheSecurityGroupNames)
@@ -197,7 +204,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// Specifies the VPC Security Groups associated with the Cache Cluster. This parameter can be used only with clusters that are created in an
+        /// Specifies the VPC Security Groups associated with the cache cluster. This parameter can be used only with clusters that are created in an
         /// Amazon Virtual Private Cloud (VPC).
         ///  
         /// </summary>
@@ -211,6 +218,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="securityGroupIds">The values to add to the SecurityGroupIds collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyCacheClusterRequest WithSecurityGroupIds(params string[] securityGroupIds)
         {
             foreach (string element in securityGroupIds)
@@ -226,6 +234,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="securityGroupIds">The values to add to the SecurityGroupIds collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyCacheClusterRequest WithSecurityGroupIds(IEnumerable<string> securityGroupIds)
         {
             foreach (string element in securityGroupIds)
@@ -243,9 +252,9 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// The weekly time range (in UTC) during which system maintenance can occur, which may result in an outage. This change is made immediately. If
-        /// moving this window to the current time, there must be at least 120 minutes between the current time and end of the window to ensure pending
-        /// changes are applied.
+        /// The weekly time range (in UTC) during which system maintenance can occur. Note that system maintenance may result in an outage. This change
+        /// is made immediately. If you are moving this window to the current time, there must be at least 120 minutes between the current time and end
+        /// of the window to ensure that pending changes are applied.
         ///  
         /// </summary>
         public string PreferredMaintenanceWindow
@@ -259,6 +268,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="preferredMaintenanceWindow">The value to set for the PreferredMaintenanceWindow property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyCacheClusterRequest WithPreferredMaintenanceWindow(string preferredMaintenanceWindow)
         {
             this.preferredMaintenanceWindow = preferredMaintenanceWindow;
@@ -273,8 +283,8 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// The Amazon Resource Name (ARN) of the SNS topic to which notifications will be sent. <note> The SNS topic owner must be same as the Cache
-        /// Cluster owner. </note>
+        /// The Amazon Resource Name (ARN) of the SNS topic to which notifications will be sent. <note> The SNS topic owner must be same as the cache
+        /// cluster owner. </note>
         ///  
         /// </summary>
         public string NotificationTopicArn
@@ -288,6 +298,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="notificationTopicArn">The value to set for the NotificationTopicArn property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyCacheClusterRequest WithNotificationTopicArn(string notificationTopicArn)
         {
             this.notificationTopicArn = notificationTopicArn;
@@ -302,7 +313,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// The name of the Cache Parameter Group to apply to this Cache Cluster. This change is asynchronously applied as soon as possible for
+        /// The name of the cache parameter group to apply to this cache cluster. This change is asynchronously applied as soon as possible for
         /// parameters when the <i>ApplyImmediately</i> parameter is specified as <i>true</i> for this request.
         ///  
         /// </summary>
@@ -317,6 +328,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="cacheParameterGroupName">The value to set for the CacheParameterGroupName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyCacheClusterRequest WithCacheParameterGroupName(string cacheParameterGroupName)
         {
             this.cacheParameterGroupName = cacheParameterGroupName;
@@ -331,8 +343,8 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// The status of the Amazon SNS notification topic. The value can be <i>active</i> or <i>inactive</i>. Notifications are sent only if the
-        /// status is <i>active</i>.
+        /// The status of the Amazon SNS notification topic. Notifications are sent only if the status is <i>active</i>. Valid values: <c>active</c> |
+        /// <c>inactive</c>
         ///  
         /// </summary>
         public string NotificationTopicStatus
@@ -346,6 +358,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="notificationTopicStatus">The value to set for the NotificationTopicStatus property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyCacheClusterRequest WithNotificationTopicStatus(string notificationTopicStatus)
         {
             this.notificationTopicStatus = notificationTopicStatus;
@@ -360,9 +373,10 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// Specifies whether or not the modifications in this request and any pending modifications are asynchronously applied as soon as possible,
-        /// regardless of the <i>PreferredMaintenanceWindow</i> setting for the Cache Cluster. If this parameter is passed as <c>false</c>, changes to
-        /// the Cache Cluster are applied on the next maintenance reboot, or the next failure reboot, whichever occurs first. Default: <c>false</c>
+        /// If <c>true</c>, this parameter causes the modifications in this request and any pending modifications to be applied, asynchronously and as
+        /// soon as possible, regardless of the <i>PreferredMaintenanceWindow</i> setting for the cache cluster. If <c>false</c>, then changes to the
+        /// cache cluster are applied on the next maintenance reboot, or the next failure reboot, whichever occurs first. Valid values: <c>true</c> |
+        /// <c>false</c> Default: <c>false</c>
         ///  
         /// </summary>
         public bool ApplyImmediately
@@ -376,6 +390,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="applyImmediately">The value to set for the ApplyImmediately property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyCacheClusterRequest WithApplyImmediately(bool applyImmediately)
         {
             this.applyImmediately = applyImmediately;
@@ -390,7 +405,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// The version of the cache engine to upgrade this cluster to.
+        /// The upgraded version of the cache engine to be run on the cache cluster nodes.
         ///  
         /// </summary>
         public string EngineVersion
@@ -404,6 +419,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="engineVersion">The value to set for the EngineVersion property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyCacheClusterRequest WithEngineVersion(string engineVersion)
         {
             this.engineVersion = engineVersion;
@@ -418,7 +434,8 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// Indicates that minor engine upgrades will be applied automatically to the Cache Cluster during the maintenance window. Default: <c>true</c>
+        /// If <c>true</c>, then minor engine upgrades will be applied automatically to the cache cluster during the maintenance window. Valid values:
+        /// <c>true</c> | <c>false</c> Default: <c>true</c>
         ///  
         /// </summary>
         public bool AutoMinorVersionUpgrade
@@ -432,6 +449,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="autoMinorVersionUpgrade">The value to set for the AutoMinorVersionUpgrade property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyCacheClusterRequest WithAutoMinorVersionUpgrade(bool autoMinorVersionUpgrade)
         {
             this.autoMinorVersionUpgrade = autoMinorVersionUpgrade;

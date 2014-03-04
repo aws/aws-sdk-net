@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
     /// use the DeregisterImage operation.
     /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
-    public class RegisterImageRequest
+    public class RegisterImageRequest : EC2Request
     {    
         private string imageLocationField;
         private string nameField;
@@ -72,6 +72,7 @@ namespace Amazon.EC2.Model
         /// <param name="imageLocation">Full path to your AMI manifest in Amazon S3
         /// storage.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RegisterImageRequest WithImageLocation(string imageLocation)
         {
             this.imageLocationField = imageLocation;
@@ -103,6 +104,7 @@ namespace Amazon.EC2.Model
         /// <param name="name">The name of the AMI that was provided during
         /// image creation.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RegisterImageRequest WithName(string name)
         {
             this.nameField = name;
@@ -139,6 +141,7 @@ namespace Amazon.EC2.Model
         /// alphanumeric characters, parenthesis (()), commas (,), slashes
         /// (/), dashes (-), or underscores(_).</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RegisterImageRequest WithDescription(string description)
         {
             this.descriptionField = description;
@@ -170,6 +173,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="architecture">Architecture property</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RegisterImageRequest WithArchitecture(string architecture)
         {
             this.architectureField = architecture;
@@ -200,6 +204,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="kernelId">The ID of the kernel to select.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RegisterImageRequest WithKernelId(string kernelId)
         {
             this.kernelIdField = kernelId;
@@ -238,6 +243,7 @@ namespace Amazon.EC2.Model
         /// requirements for information on whether you need to
         /// specify a RAM disk.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RegisterImageRequest WithRamdiskId(string ramdiskId)
         {
             this.ramdiskIdField = ramdiskId;
@@ -268,6 +274,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="rootDeviceName">The root device name (e.g., /dev/sda1).</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RegisterImageRequest WithRootDeviceName(string rootDeviceName)
         {
             this.rootDeviceNameField = rootDeviceName;
@@ -305,6 +312,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">BlockDeviceMapping property</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RegisterImageRequest WithBlockDeviceMapping(params BlockDeviceMapping[] list)
         {
             foreach (BlockDeviceMapping item in list)

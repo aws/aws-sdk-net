@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -143,6 +143,7 @@ namespace Amazon.Auth.AccessControlPolicy
         /// </summary>
         /// <paraparam name="id">The polich ID for this policy</paraparam>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Policy WithId(string id)
         {
             Id = id;
@@ -192,6 +193,7 @@ namespace Amazon.Auth.AccessControlPolicy
         /// </summary>
         /// <param name="statements">The collection of statements included in this policy.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Policy WithStatements(params Statement[] statements)
         {
             if (this.Statements == null)

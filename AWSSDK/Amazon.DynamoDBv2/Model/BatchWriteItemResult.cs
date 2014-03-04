@@ -65,6 +65,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="pairs">The pairs to be added to the UnprocessedItems dictionary.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public BatchWriteItemResult WithUnprocessedItems(params KeyValuePair<string, List<WriteRequest>>[] pairs)
         {
             foreach (KeyValuePair<string, List<WriteRequest>> pair in pairs)
@@ -87,8 +88,8 @@ namespace Amazon.DynamoDBv2.Model
         /// <i>ItemCollectionKey</i> - The hash key value of the item collection. This is the same as the hash key of the item. </li> <li>
         /// <i>SizeEstimateRange</i> - An estimate of item collection size, expressed in GB. This is a two-element array containing a lower bound and an
         /// upper bound for the estimate. The estimate includes the size of all the items in the table, plus the size of all attributes projected into
-        /// all of the secondary indexes on the table. Use this estimate to measure whether a secondary index is approaching its size limit. The
-        /// estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate. </li> </ul>
+        /// all of the local secondary indexes on the table. Use this estimate to measure whether a local secondary index is approaching its size limit.
+        /// The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate. </li> </ul>
         ///  
         /// </summary>
         public Dictionary<string,List<ItemCollectionMetrics>> ItemCollectionMetrics
@@ -102,6 +103,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="pairs">The pairs to be added to the ItemCollectionMetrics dictionary.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public BatchWriteItemResult WithItemCollectionMetrics(params KeyValuePair<string, List<ItemCollectionMetrics>>[] pairs)
         {
             foreach (KeyValuePair<string, List<ItemCollectionMetrics>> pair in pairs)
@@ -133,6 +135,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="consumedCapacity">The values to add to the ConsumedCapacity collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public BatchWriteItemResult WithConsumedCapacity(params ConsumedCapacity[] consumedCapacity)
         {
             foreach (ConsumedCapacity element in consumedCapacity)
@@ -148,6 +151,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="consumedCapacity">The values to add to the ConsumedCapacity collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public BatchWriteItemResult WithConsumedCapacity(IEnumerable<ConsumedCapacity> consumedCapacity)
         {
             foreach (ConsumedCapacity element in consumedCapacity)

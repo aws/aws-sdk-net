@@ -30,18 +30,18 @@ namespace Amazon.IdentityManagement.Model
 
         /// <summary>
         /// Gets and sets the ListInstanceProfilesResult property.
-        /// Contains the result of a successful invocation of the ListInstanceProfilesResponse action.
+        /// Contains the result of a successful invocation of the ListInstanceProfiles action.
         /// </summary>
         public ListInstanceProfilesResult ListInstanceProfilesResult
         {
-            get 
+            get
             {
                 if(this.listInstanceProfilesResult == null)
                 {
                     this.listInstanceProfilesResult = new ListInstanceProfilesResult();
                 }
 
-                return this.listInstanceProfilesResult; 
+                return this.listInstanceProfilesResult;
             }
             set { this.listInstanceProfilesResult = value; }
         }

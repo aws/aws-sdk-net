@@ -23,7 +23,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// <summary>
     /// <para> The InstanceState data type. </para>
     /// </summary>
-    public class InstanceState  
+    public partial class InstanceState
     {
         
         private string instanceId;
@@ -52,6 +52,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="instanceId">The value to set for the InstanceId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceState WithInstanceId(string instanceId)
         {
             this.instanceId = instanceId;
@@ -62,11 +63,11 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if InstanceId property is set
         internal bool IsSetInstanceId()
         {
-            return this.instanceId != null;       
+            return this.instanceId != null;
         }
 
         /// <summary>
-        /// Specifies the current status of the instance.
+        /// Specifies the current state of the instance. Valid value: <c>InService</c>|<c>OutOfService</c>
         ///  
         /// </summary>
         public string State
@@ -80,6 +81,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="state">The value to set for the State property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceState WithState(string state)
         {
             this.state = state;
@@ -90,12 +92,12 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if State property is set
         internal bool IsSetState()
         {
-            return this.state != null;       
+            return this.state != null;
         }
 
         /// <summary>
         /// Provides information about the cause of <i>OutOfService</i> instances. Specifically, it indicates whether the cause is Elastic Load
-        /// Balancing or the instance behind the LoadBalancer.
+        /// Balancing or the instance behind the load balancer. Valid value: <c>ELB</c>|<c>Instance</c>|<c>N/A</c>
         ///  
         /// </summary>
         public string ReasonCode
@@ -109,6 +111,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="reasonCode">The value to set for the ReasonCode property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceState WithReasonCode(string reasonCode)
         {
             this.reasonCode = reasonCode;
@@ -119,11 +122,11 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if ReasonCode property is set
         internal bool IsSetReasonCode()
         {
-            return this.reasonCode != null;       
+            return this.reasonCode != null;
         }
 
         /// <summary>
-        /// Provides a description of the instance.
+        /// Provides a description of the instance state.
         ///  
         /// </summary>
         public string Description
@@ -137,6 +140,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="description">The value to set for the Description property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceState WithDescription(string description)
         {
             this.description = description;
@@ -147,7 +151,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if Description property is set
         internal bool IsSetDescription()
         {
-            return this.description != null;       
+            return this.description != null;
         }
     }
 }

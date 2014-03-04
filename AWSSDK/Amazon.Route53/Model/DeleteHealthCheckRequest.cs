@@ -25,7 +25,7 @@ namespace Amazon.Route53.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteHealthCheck operation.
-    /// <para>This action deletes a health check. To delete a health check, send a <c>DELETE</c> request to the <c>2012-12-12/healthcheck/health
+    /// <para>This action deletes a health check. To delete a health check, send a <c>DELETE</c> request to the <c>2013-04-01/healthcheck/health
     /// check ID </c> resource.</para> <para><b>IMPORTANT:</b> You can delete a health check only if there are no resource record sets associated
     /// with this health check. If resource record sets are associated with this health check, you must disassociate them before you can delete your
     /// health check. If you try to delete a health check that is associated with resource record sets, Route 53 will deny your request with a
@@ -60,6 +60,7 @@ namespace Amazon.Route53.Model
         /// </summary>
         /// <param name="healthCheckId">The value to set for the HealthCheckId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeleteHealthCheckRequest WithHealthCheckId(string healthCheckId)
         {
             this.healthCheckId = healthCheckId;

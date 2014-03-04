@@ -55,6 +55,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="name">The new name</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VolumeStatusDetail WithName(string name)
         {
             this.nameField = name;
@@ -82,6 +83,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="status">The new status</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VolumeStatusDetail WithStatus(string status)
         {
             this.statusField = status;

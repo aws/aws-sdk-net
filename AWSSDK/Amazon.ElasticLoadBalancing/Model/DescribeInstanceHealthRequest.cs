@@ -25,10 +25,9 @@ namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeInstanceHealth operation.
-    /// <para> Returns the current state of the instances of the specified LoadBalancer. If no instances are specified, the state of all the
-    /// instances for the LoadBalancer is returned. </para> <para><b>NOTE:</b> The client must have created the specified input LoadBalancer in
-    /// order to retrieve this information; the client must provide the same account credentials as those that were used to create the LoadBalancer.
-    /// </para>
+    /// <para> Returns the current state of the specified instances registered with the specified load balancer. If no instances are specified, the
+    /// state of all the instances registered with the load balancer is returned. </para> <para><b>NOTE:</b> You must provide the same account
+    /// credentials as those that were used to create the load balancer. </para>
     /// </summary>
     /// <seealso cref="Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancing.DescribeInstanceHealth"/>
     public class DescribeInstanceHealthRequest : AmazonWebServiceRequest
@@ -47,15 +46,15 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// initialize any additional object members.
         /// </summary>
         /// 
-        /// <param name="loadBalancerName"> The name associated with the LoadBalancer. The name must be unique within the client AWS account. </param>
-        public DescribeInstanceHealthRequest(string loadBalancerName) 
+        /// <param name="loadBalancerName"> The name of the load balancer. </param>
+        public DescribeInstanceHealthRequest(string loadBalancerName)
         {
             this.loadBalancerName = loadBalancerName;
         }
     
 
         /// <summary>
-        /// The name associated with the LoadBalancer. The name must be unique within the client AWS account.
+        /// The name of the load balancer.
         ///  
         /// </summary>
         public string LoadBalancerName
@@ -69,6 +68,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="loadBalancerName">The value to set for the LoadBalancerName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeInstanceHealthRequest WithLoadBalancerName(string loadBalancerName)
         {
             this.loadBalancerName = loadBalancerName;
@@ -79,7 +79,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if LoadBalancerName property is set
         internal bool IsSetLoadBalancerName()
         {
-            return this.loadBalancerName != null;       
+            return this.loadBalancerName != null;
         }
 
         /// <summary>
@@ -96,6 +96,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="instances">The values to add to the Instances collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeInstanceHealthRequest WithInstances(params Instance[] instances)
         {
             foreach (Instance element in instances)
@@ -105,12 +106,13 @@ namespace Amazon.ElasticLoadBalancing.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Instances collection
         /// </summary>
         /// <param name="instances">The values to add to the Instances collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeInstanceHealthRequest WithInstances(IEnumerable<Instance> instances)
         {
             foreach (Instance element in instances)
@@ -124,7 +126,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if Instances property is set
         internal bool IsSetInstances()
         {
-            return this.instances.Count > 0;       
+            return this.instances.Count > 0;
         }
     }
 }

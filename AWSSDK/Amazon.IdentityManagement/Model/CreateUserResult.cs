@@ -23,7 +23,7 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// <para>Contains the result of a successful invocation of the CreateUser action.</para>
     /// </summary>
-    public class CreateUserResult  
+    public partial class CreateUserResult
     {
         
         private User user;
@@ -43,6 +43,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="user">The value to set for the User property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateUserResult WithUser(User user)
         {
             this.user = user;
@@ -53,7 +54,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if User property is set
         internal bool IsSetUser()
         {
-            return this.user != null;       
+            return this.user != null;
         }
     }
 }

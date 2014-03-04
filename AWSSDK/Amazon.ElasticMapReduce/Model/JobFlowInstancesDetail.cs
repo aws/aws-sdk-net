@@ -68,6 +68,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         /// <param name="masterInstanceType">The value to set for the MasterInstanceType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public JobFlowInstancesDetail WithMasterInstanceType(string masterInstanceType)
         {
             this.masterInstanceType = masterInstanceType;
@@ -109,6 +110,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         /// <param name="masterPublicDnsName">The value to set for the MasterPublicDnsName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public JobFlowInstancesDetail WithMasterPublicDnsName(string masterPublicDnsName)
         {
             this.masterPublicDnsName = masterPublicDnsName;
@@ -150,6 +152,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         /// <param name="masterInstanceId">The value to set for the MasterInstanceId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public JobFlowInstancesDetail WithMasterInstanceId(string masterInstanceId)
         {
             this.masterInstanceId = masterInstanceId;
@@ -191,6 +194,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         /// <param name="slaveInstanceType">The value to set for the SlaveInstanceType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public JobFlowInstancesDetail WithSlaveInstanceType(string slaveInstanceType)
         {
             this.slaveInstanceType = slaveInstanceType;
@@ -220,6 +224,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         /// <param name="instanceCount">The value to set for the InstanceCount property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public JobFlowInstancesDetail WithInstanceCount(int instanceCount)
         {
             this.instanceCount = instanceCount;
@@ -247,6 +252,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         /// <param name="instanceGroups">The values to add to the InstanceGroups collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public JobFlowInstancesDetail WithInstanceGroups(params InstanceGroupDetail[] instanceGroups)
         {
             foreach (InstanceGroupDetail element in instanceGroups)
@@ -262,6 +268,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         /// <param name="instanceGroups">The values to add to the InstanceGroups collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public JobFlowInstancesDetail WithInstanceGroups(IEnumerable<InstanceGroupDetail> instanceGroups)
         {
             foreach (InstanceGroupDetail element in instanceGroups)
@@ -295,6 +302,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         /// <param name="normalizedInstanceHours">The value to set for the NormalizedInstanceHours property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public JobFlowInstancesDetail WithNormalizedInstanceHours(int normalizedInstanceHours)
         {
             this.normalizedInstanceHours = normalizedInstanceHours;
@@ -336,6 +344,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         /// <param name="ec2KeyName">The value to set for the Ec2KeyName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public JobFlowInstancesDetail WithEc2KeyName(string ec2KeyName)
         {
             this.ec2KeyName = ec2KeyName;
@@ -378,6 +387,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         /// <param name="ec2SubnetId">The value to set for the Ec2SubnetId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public JobFlowInstancesDetail WithEc2SubnetId(string ec2SubnetId)
         {
             this.ec2SubnetId = ec2SubnetId;
@@ -406,6 +416,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         /// <param name="placement">The value to set for the Placement property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public JobFlowInstancesDetail WithPlacement(PlacementType placement)
         {
             this.placement = placement;
@@ -434,6 +445,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         /// <param name="keepJobFlowAliveWhenNoSteps">The value to set for the KeepJobFlowAliveWhenNoSteps property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public JobFlowInstancesDetail WithKeepJobFlowAliveWhenNoSteps(bool keepJobFlowAliveWhenNoSteps)
         {
             this.keepJobFlowAliveWhenNoSteps = keepJobFlowAliveWhenNoSteps;
@@ -463,6 +475,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         /// <param name="terminationProtected">The value to set for the TerminationProtected property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public JobFlowInstancesDetail WithTerminationProtected(bool terminationProtected)
         {
             this.terminationProtected = terminationProtected;
@@ -504,6 +517,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         /// <param name="hadoopVersion">The value to set for the HadoopVersion property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public JobFlowInstancesDetail WithHadoopVersion(string hadoopVersion)
         {
             this.hadoopVersion = hadoopVersion;

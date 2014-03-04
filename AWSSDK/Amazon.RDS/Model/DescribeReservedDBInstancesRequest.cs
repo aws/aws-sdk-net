@@ -25,7 +25,7 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeReservedDBInstances operation.
-    /// <para> Returns information about reserved DB Instances for this account, or about a specified reserved DB Instance. </para>
+    /// <para> Returns information about reserved DB instances for this account, or about a specified reserved DB instance. </para>
     /// </summary>
     /// <seealso cref="Amazon.RDS.AmazonRDS.DescribeReservedDBInstances"/>
     public class DescribeReservedDBInstancesRequest : AmazonWebServiceRequest
@@ -37,11 +37,12 @@ namespace Amazon.RDS.Model
         private string productDescription;
         private string offeringType;
         private bool? multiAZ;
+        private List<Filter> filters = new List<Filter>();
         private int? maxRecords;
         private string marker;
 
         /// <summary>
-        /// The reserved DB Instance identifier filter value. Specify this parameter to show only the reservation that matches the specified reservation
+        /// The reserved DB instance identifier filter value. Specify this parameter to show only the reservation that matches the specified reservation
         /// ID.
         ///  
         /// </summary>
@@ -56,6 +57,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="reservedDBInstanceId">The value to set for the ReservedDBInstanceId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeReservedDBInstancesRequest WithReservedDBInstanceId(string reservedDBInstanceId)
         {
             this.reservedDBInstanceId = reservedDBInstanceId;
@@ -84,6 +86,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="reservedDBInstancesOfferingId">The value to set for the ReservedDBInstancesOfferingId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeReservedDBInstancesRequest WithReservedDBInstancesOfferingId(string reservedDBInstancesOfferingId)
         {
             this.reservedDBInstancesOfferingId = reservedDBInstancesOfferingId;
@@ -98,7 +101,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The DB Instance class filter value. Specify this parameter to show only those reservations matching the specified DB Instances class.
+        /// The DB instance class filter value. Specify this parameter to show only those reservations matching the specified DB instances class.
         ///  
         /// </summary>
         public string DBInstanceClass
@@ -112,6 +115,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="dBInstanceClass">The value to set for the DBInstanceClass property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeReservedDBInstancesRequest WithDBInstanceClass(string dBInstanceClass)
         {
             this.dBInstanceClass = dBInstanceClass;
@@ -141,6 +145,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="duration">The value to set for the Duration property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeReservedDBInstancesRequest WithDuration(string duration)
         {
             this.duration = duration;
@@ -169,6 +174,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="productDescription">The value to set for the ProductDescription property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeReservedDBInstancesRequest WithProductDescription(string productDescription)
         {
             this.productDescription = productDescription;
@@ -198,6 +204,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="offeringType">The value to set for the OfferingType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeReservedDBInstancesRequest WithOfferingType(string offeringType)
         {
             this.offeringType = offeringType;
@@ -226,6 +233,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="multiAZ">The value to set for the MultiAZ property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeReservedDBInstancesRequest WithMultiAZ(bool multiAZ)
         {
             this.multiAZ = multiAZ;
@@ -237,6 +245,53 @@ namespace Amazon.RDS.Model
         internal bool IsSetMultiAZ()
         {
             return this.multiAZ.HasValue;
+        }
+
+        /// <summary>
+        /// This parameter is not currently supported.
+        ///  
+        /// </summary>
+        public List<Filter> Filters
+        {
+            get { return this.filters; }
+            set { this.filters = value; }
+        }
+        /// <summary>
+        /// Adds elements to the Filters collection
+        /// </summary>
+        /// <param name="filters">The values to add to the Filters collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public DescribeReservedDBInstancesRequest WithFilters(params Filter[] filters)
+        {
+            foreach (Filter element in filters)
+            {
+                this.filters.Add(element);
+            }
+
+            return this;
+        }
+
+        /// <summary>
+        /// Adds elements to the Filters collection
+        /// </summary>
+        /// <param name="filters">The values to add to the Filters collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public DescribeReservedDBInstancesRequest WithFilters(IEnumerable<Filter> filters)
+        {
+            foreach (Filter element in filters)
+            {
+                this.filters.Add(element);
+            }
+
+            return this;
+        }
+
+        // Check to see if Filters property is set
+        internal bool IsSetFilters()
+        {
+            return this.filters.Count > 0;
         }
 
         /// <summary>
@@ -255,6 +310,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="maxRecords">The value to set for the MaxRecords property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeReservedDBInstancesRequest WithMaxRecords(int maxRecords)
         {
             this.maxRecords = maxRecords;
@@ -284,6 +340,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="marker">The value to set for the Marker property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeReservedDBInstancesRequest WithMarker(string marker)
         {
             this.marker = marker;

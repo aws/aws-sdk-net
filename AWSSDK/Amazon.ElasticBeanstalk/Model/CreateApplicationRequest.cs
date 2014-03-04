@@ -26,8 +26,6 @@ namespace Amazon.ElasticBeanstalk.Model
     /// <summary>
     /// Container for the parameters to the CreateApplication operation.
     /// <para> Creates an application that has one configuration template named <c>default</c> and no application versions. </para>
-    /// <para><b>NOTE:</b> The default configuration template is for a 32-bit version of the Amazon Linux operating system running the Tomcat 6
-    /// application container. </para>
     /// </summary>
     /// <seealso cref="Amazon.ElasticBeanstalk.AmazonElasticBeanstalk.CreateApplication"/>
     public class CreateApplicationRequest : AmazonWebServiceRequest
@@ -60,6 +58,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="applicationName">The value to set for the ApplicationName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateApplicationRequest WithApplicationName(string applicationName)
         {
             this.applicationName = applicationName;
@@ -70,7 +69,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if ApplicationName property is set
         internal bool IsSetApplicationName()
         {
-            return this.applicationName != null;       
+            return this.applicationName != null;
         }
 
         /// <summary>
@@ -97,6 +96,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="description">The value to set for the Description property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateApplicationRequest WithDescription(string description)
         {
             this.description = description;
@@ -107,7 +107,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if Description property is set
         internal bool IsSetDescription()
         {
-            return this.description != null;       
+            return this.description != null;
         }
     }
 }

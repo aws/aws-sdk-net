@@ -136,6 +136,5 @@ namespace Amazon.S3.Util
         internal const string NoSuchWebsiteConfiguration = "NoSuchWebsiteConfiguration";
         internal const string NoSuchLifecycleConfiguration = "NoSuchLifecycleConfiguration";
         internal const string NoSuchCORSConfiguration = "NoSuchCORSConfiguration";
-        internal const string BucketNotEmpty = "BucketNotEmpty";
     }
 }

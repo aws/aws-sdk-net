@@ -57,6 +57,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="taskStartToCloseTimeout">The value to set for the TaskStartToCloseTimeout property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public WorkflowExecutionConfiguration WithTaskStartToCloseTimeout(string taskStartToCloseTimeout)
         {
             this.taskStartToCloseTimeout = taskStartToCloseTimeout;
@@ -95,6 +96,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="executionStartToCloseTimeout">The value to set for the ExecutionStartToCloseTimeout property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public WorkflowExecutionConfiguration WithExecutionStartToCloseTimeout(string executionStartToCloseTimeout)
         {
             this.executionStartToCloseTimeout = executionStartToCloseTimeout;
@@ -123,6 +125,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="taskList">The value to set for the TaskList property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public WorkflowExecutionConfiguration WithTaskList(TaskList taskList)
         {
             this.taskList = taskList;
@@ -165,6 +168,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="childPolicy">The value to set for the ChildPolicy property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public WorkflowExecutionConfiguration WithChildPolicy(string childPolicy)
         {
             this.childPolicy = childPolicy;

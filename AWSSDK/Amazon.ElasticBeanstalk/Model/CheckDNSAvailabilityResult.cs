@@ -23,7 +23,7 @@ namespace Amazon.ElasticBeanstalk.Model
     /// <summary>
     /// <para>Indicates if the specified CNAME is available.</para>
     /// </summary>
-    public class CheckDNSAvailabilityResult  
+    public partial class CheckDNSAvailabilityResult
     {
         
         private bool? available;
@@ -46,6 +46,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="available">The value to set for the Available property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CheckDNSAvailabilityResult WithAvailable(bool available)
         {
             this.available = available;
@@ -56,7 +57,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if Available property is set
         internal bool IsSetAvailable()
         {
-            return this.available.HasValue;       
+            return this.available.HasValue;
         }
 
         /// <summary>
@@ -83,6 +84,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="fullyQualifiedCNAME">The value to set for the FullyQualifiedCNAME property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CheckDNSAvailabilityResult WithFullyQualifiedCNAME(string fullyQualifiedCNAME)
         {
             this.fullyQualifiedCNAME = fullyQualifiedCNAME;
@@ -93,7 +95,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if FullyQualifiedCNAME property is set
         internal bool IsSetFullyQualifiedCNAME()
         {
-            return this.fullyQualifiedCNAME != null;       
+            return this.fullyQualifiedCNAME != null;
         }
     }
 }

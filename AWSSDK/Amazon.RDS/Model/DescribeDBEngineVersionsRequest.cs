@@ -53,6 +53,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="engine">The value to set for the Engine property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeDBEngineVersionsRequest WithEngine(string engine)
         {
             this.engine = engine;
@@ -81,6 +82,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="engineVersion">The value to set for the EngineVersion property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeDBEngineVersionsRequest WithEngineVersion(string engineVersion)
         {
             this.engineVersion = engineVersion;
@@ -95,7 +97,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The name of a specific DB Parameter Group family to return details for. Constraints: <ul> <li>Must be 1 to 255 alphanumeric characters</li>
+        /// The name of a specific DB parameter group family to return details for. Constraints: <ul> <li>Must be 1 to 255 alphanumeric characters</li>
         /// <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
         ///  
         /// </summary>
@@ -110,6 +112,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="dBParameterGroupFamily">The value to set for the DBParameterGroupFamily property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeDBEngineVersionsRequest WithDBParameterGroupFamily(string dBParameterGroupFamily)
         {
             this.dBParameterGroupFamily = dBParameterGroupFamily;
@@ -139,6 +142,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="maxRecords">The value to set for the MaxRecords property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeDBEngineVersionsRequest WithMaxRecords(int maxRecords)
         {
             this.maxRecords = maxRecords;
@@ -168,6 +172,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="marker">The value to set for the Marker property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeDBEngineVersionsRequest WithMarker(string marker)
         {
             this.marker = marker;
@@ -196,6 +201,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="defaultOnly">The value to set for the DefaultOnly property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeDBEngineVersionsRequest WithDefaultOnly(bool defaultOnly)
         {
             this.defaultOnly = defaultOnly;
@@ -225,6 +231,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="listSupportedCharacterSets">The value to set for the ListSupportedCharacterSets property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeDBEngineVersionsRequest WithListSupportedCharacterSets(bool listSupportedCharacterSets)
         {
             this.listSupportedCharacterSets = listSupportedCharacterSets;

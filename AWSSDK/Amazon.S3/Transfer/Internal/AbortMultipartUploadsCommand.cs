@@ -51,22 +51,27 @@ namespace Amazon.S3.Transfer.Internal
             ListMultipartUploadsResponse listResponse = new ListMultipartUploadsResponse();
             do
             {
-                ListMultipartUploadsRequest listRequest = new ListMultipartUploadsRequest()
-                    .WithBucketName(this._bucketName)
-                    .WithKeyMarker(listResponse.KeyMarker)
-                    .WithUploadIdMarker(listResponse.NextUploadIdMarker)
-                    .WithBeforeRequestHandler(RequestEventHandler) as ListMultipartUploadsRequest;
+                ListMultipartUploadsRequest listRequest = new ListMultipartUploadsRequest
+                {
+                    BucketName=this._bucketName,
+                    KeyMarker=listResponse.KeyMarker,
+                    UploadIdMarker=listResponse.NextUploadIdMarker
+                };
+                listRequest.BeforeRequestEvent += RequestEventHandler;
 
                 listResponse = this._s3Client.ListMultipartUploads(listRequest);
                 foreach (MultipartUpload upload in listResponse.MultipartUploads)
                 {
                     if (upload.Initiated < this._initiatedDate)
                     {
-                        this._s3Client.AbortMultipartUpload(new AbortMultipartUploadRequest()
-                            .WithBucketName(this._bucketName)
-                            .WithKey(upload.Key)
-                            .WithUploadId(upload.UploadId)
-                            .WithBeforeRequestHandler(RequestEventHandler) as AbortMultipartUploadRequest);
+                        AbortMultipartUploadRequest abortMultipartUploadRequest = new AbortMultipartUploadRequest
+                        {
+                            BucketName=this._bucketName,
+                            Key=upload.Key,
+                            UploadId=upload.UploadId
+                        };
+                        abortMultipartUploadRequest.BeforeRequestEvent += RequestEventHandler;
+                        this._s3Client.AbortMultipartUpload(abortMultipartUploadRequest);
                     }
                 }
             }

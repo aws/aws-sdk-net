@@ -23,7 +23,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// <para> Provides information on the option groups the DB instance is a member of. </para>
     /// </summary>
-    public class OptionGroupMembership
+    public partial class OptionGroupMembership
     {
         
         private string optionGroupName;
@@ -44,6 +44,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="optionGroupName">The value to set for the OptionGroupName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public OptionGroupMembership WithOptionGroupName(string optionGroupName)
         {
             this.optionGroupName = optionGroupName;
@@ -58,7 +59,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The status of the DB Instance's option group membership (e.g. in-sync, pending, pending-maintenance, applying).
+        /// The status of the DB instance's option group membership (e.g. in-sync, pending, pending-maintenance, applying).
         ///  
         /// </summary>
         public string Status
@@ -72,6 +73,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="status">The value to set for the Status property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public OptionGroupMembership WithStatus(string status)
         {
             this.status = status;

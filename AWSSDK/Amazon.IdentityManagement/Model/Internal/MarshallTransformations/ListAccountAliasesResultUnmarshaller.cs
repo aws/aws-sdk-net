@@ -22,13 +22,14 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
      /// <summary>
      ///   ListAccountAliasesResult Unmarshaller
      /// </summary>
-    internal class ListAccountAliasesResultUnmarshaller : IUnmarshaller<ListAccountAliasesResult, XmlUnmarshallerContext> 
+    internal class ListAccountAliasesResultUnmarshaller : IUnmarshaller<ListAccountAliasesResult, XmlUnmarshallerContext>, IUnmarshaller<ListAccountAliasesResult, JsonUnmarshallerContext> 
     {
         public ListAccountAliasesResult Unmarshall(XmlUnmarshallerContext context) 
         {
             ListAccountAliasesResult listAccountAliasesResult = new ListAccountAliasesResult();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -64,6 +65,11 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 
 
             return listAccountAliasesResult;
+        }
+
+        public ListAccountAliasesResult Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static ListAccountAliasesResultUnmarshaller instance;

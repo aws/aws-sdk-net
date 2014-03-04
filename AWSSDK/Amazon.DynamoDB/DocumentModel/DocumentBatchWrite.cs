@@ -484,6 +484,10 @@ namespace Amazon.DynamoDB.DocumentModel
 
             foreach (var batch in batches)
             {
+                string tableName = batch.TargetTable.TableName;
+                if (result.ContainsKey(tableName))
+                    throw new AmazonDynamoDBException("More than one batch request against a single table is not supported.");
+
                 List<WriteRequestDocument> writeRequests = new List<WriteRequestDocument>();
                 if (batch.ToDelete != null)
                 {
@@ -494,8 +498,7 @@ namespace Amazon.DynamoDB.DocumentModel
                             {
                                 DeleteRequest = new DeleteRequest { Key = toDelete }
                             }
-                        }
-                        );
+                        });
                 }
                 if (batch.ToPut != null)
                 {
@@ -513,8 +516,8 @@ namespace Amazon.DynamoDB.DocumentModel
                 if (writeRequests.Count > 0)
                 {
                     QuickList<WriteRequestDocument> qlWriteRequests = new QuickList<WriteRequestDocument>(writeRequests);
-                    result.Add(batch.TargetTable.TableName, qlWriteRequests);
-                    tableMap.Add(batch.TargetTable.TableName, batch.TargetTable);
+                    result.Add(tableName, qlWriteRequests);
+                    tableMap.Add(tableName, batch.TargetTable);
                 }
             }
 

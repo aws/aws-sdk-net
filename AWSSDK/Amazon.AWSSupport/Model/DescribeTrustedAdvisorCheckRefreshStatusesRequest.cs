@@ -25,7 +25,8 @@ namespace Amazon.AWSSupport.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeTrustedAdvisorCheckRefreshStatuses operation.
-    /// <para>Returns the status of all refresh requests Trusted Advisor checks called using RefreshTrustedAdvisorCheck. </para>
+    /// <para>Returns the refresh status of the Trusted Advisor checks that have the specified check IDs. Check IDs can be obtained by calling
+    /// DescribeTrustedAdvisorChecks.</para>
     /// </summary>
     /// <seealso cref="Amazon.AWSSupport.AmazonAWSSupport.DescribeTrustedAdvisorCheckRefreshStatuses"/>
     public class DescribeTrustedAdvisorCheckRefreshStatusesRequest : AmazonWebServiceRequest
@@ -33,8 +34,7 @@ namespace Amazon.AWSSupport.Model
         private List<string> checkIds = new List<string>();
 
         /// <summary>
-        /// List of the <i>CheckId</i> values for the Trusted Advisor checks for which you want to refresh the status. You obtain the <i>CheckId</i>
-        /// values by calling <a href="API_DescribeTrustedAdviserChecks.html" title="DescribeTrustedAdvisorChecks">DescribeTrustedAdvisorChecks</a>.
+        /// The IDs of the Trusted Advisor checks.
         ///  
         /// </summary>
         public List<string> CheckIds
@@ -47,6 +47,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="checkIds">The values to add to the CheckIds collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeTrustedAdvisorCheckRefreshStatusesRequest WithCheckIds(params string[] checkIds)
         {
             foreach (string element in checkIds)
@@ -62,6 +63,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="checkIds">The values to add to the CheckIds collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeTrustedAdvisorCheckRefreshStatusesRequest WithCheckIds(IEnumerable<string> checkIds)
         {
             foreach (string element in checkIds)

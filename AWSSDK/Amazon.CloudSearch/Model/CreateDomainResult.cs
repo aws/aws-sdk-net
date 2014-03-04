@@ -23,7 +23,7 @@ namespace Amazon.CloudSearch.Model
     /// <summary>
     /// <para>A response message that contains the status of a newly created domain.</para>
     /// </summary>
-    public class CreateDomainResult  
+    public partial class CreateDomainResult
     {
         
         private DomainStatus domainStatus;
@@ -43,6 +43,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="domainStatus">The value to set for the DomainStatus property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateDomainResult WithDomainStatus(DomainStatus domainStatus)
         {
             this.domainStatus = domainStatus;
@@ -53,7 +54,7 @@ namespace Amazon.CloudSearch.Model
         // Check to see if DomainStatus property is set
         internal bool IsSetDomainStatus()
         {
-            return this.domainStatus != null;       
+            return this.domainStatus != null;
         }
     }
 }

@@ -57,6 +57,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="volumeId">The ID of the volume.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Volume WithVolumeId(string volumeId)
         {
             this.volumeIdField = volumeId;
@@ -87,6 +88,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="size">The size of the volume, in GiBs.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Volume WithSize(string size)
         {
             this.sizeField = size;
@@ -117,6 +119,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="snapshotId">Snapshot from which the volume was created (optional).</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Volume WithSnapshotId(string snapshotId)
         {
             this.snapshotIdField = snapshotId;
@@ -147,6 +150,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="availabilityZone">Availability Zone in which the volume was created.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Volume WithAvailabilityZone(string availabilityZone)
         {
             this.availabilityZoneField = availabilityZone;
@@ -177,6 +181,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="status">Volume state</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Volume WithStatus(string status)
         {
             this.statusField = status;
@@ -207,6 +212,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="createTime">Time stamp when volume creation was initiated.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Volume WithCreateTime(string createTime)
         {
             this.createTimeField = createTime;
@@ -244,6 +250,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">List of attachments</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Volume WithAttachment(params Attachment[] list)
         {
             foreach (Attachment item in list)
@@ -284,6 +291,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">A list of tags for the Volume.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Volume WithTag(params Tag[] list)
         {
             foreach (Tag item in list)
@@ -317,6 +325,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="iops">Quantity of desired throughput in IOPS</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Volume WithIOPS(string iops)
         {
             this.iopsField = iops;
@@ -352,6 +361,7 @@ namespace Amazon.EC2.Model
         /// If VolumeType != "io1", IOPS property cannot be set.
         /// </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Volume WithVolumeType(string volumeType)
         {
             this.volumeTypeField = volumeType;

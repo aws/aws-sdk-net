@@ -23,7 +23,7 @@ namespace Amazon.ElasticBeanstalk.Model
     /// <summary>
     /// <para>Provides a list of validation messages.</para>
     /// </summary>
-    public class ValidateConfigurationSettingsResult  
+    public partial class ValidateConfigurationSettingsResult
     {
         
         private List<ValidationMessage> messages = new List<ValidationMessage>();
@@ -42,6 +42,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="messages">The values to add to the Messages collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ValidateConfigurationSettingsResult WithMessages(params ValidationMessage[] messages)
         {
             foreach (ValidationMessage element in messages)
@@ -51,12 +52,13 @@ namespace Amazon.ElasticBeanstalk.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Messages collection
         /// </summary>
         /// <param name="messages">The values to add to the Messages collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ValidateConfigurationSettingsResult WithMessages(IEnumerable<ValidationMessage> messages)
         {
             foreach (ValidationMessage element in messages)
@@ -70,7 +72,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if Messages property is set
         internal bool IsSetMessages()
         {
-            return this.messages.Count > 0;       
+            return this.messages.Count > 0;
         }
     }
 }

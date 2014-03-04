@@ -23,7 +23,7 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// <para>The <c>Filter</c> data type.</para>
     /// </summary>
-    public class Filter  
+    public partial class Filter
     {
         
         private string name;
@@ -53,6 +53,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="name">The value to set for the Name property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Filter WithName(string name)
         {
             this.name = name;
@@ -63,7 +64,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if Name property is set
         internal bool IsSetName()
         {
-            return this.name != null;       
+            return this.name != null;
         }
 
         /// <summary>
@@ -80,6 +81,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="values">The values to add to the Values collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Filter WithValues(params string[] values)
         {
             foreach (string element in values)
@@ -89,12 +91,13 @@ namespace Amazon.AutoScaling.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Values collection
         /// </summary>
         /// <param name="values">The values to add to the Values collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Filter WithValues(IEnumerable<string> values)
         {
             foreach (string element in values)
@@ -108,7 +111,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if Values property is set
         internal bool IsSetValues()
         {
-            return this.values.Count > 0;       
+            return this.values.Count > 0;
         }
     }
 }

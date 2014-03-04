@@ -51,6 +51,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="from">The first port in the range. A value of -1 indicates all ports.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PortRange WithFrom(Decimal from)
         {
             this.fromField = from;
@@ -83,6 +84,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="to">The last port in the range. A value of -1 indicates all ports</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PortRange WithTo(Decimal to)
         {
             this.toField = to;

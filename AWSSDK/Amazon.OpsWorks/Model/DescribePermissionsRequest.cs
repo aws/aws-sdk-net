@@ -25,7 +25,10 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribePermissions operation.
-    /// <para>Describes the permissions for a specified stack.</para>
+    /// <para>Describes the permissions for a specified stack.</para> <para> <b>Required Permissions</b> : To use this action, an IAM user must have
+    /// a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user
+    /// permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a>
+    /// .</para>
     /// </summary>
     /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.DescribePermissions"/>
     public class DescribePermissionsRequest : AmazonWebServiceRequest
@@ -49,6 +52,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="iamUserArn">The value to set for the IamUserArn property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribePermissionsRequest WithIamUserArn(string iamUserArn)
         {
             this.iamUserArn = iamUserArn;
@@ -77,6 +81,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="stackId">The value to set for the StackId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribePermissionsRequest WithStackId(string stackId)
         {
             this.stackId = stackId;

@@ -30,19 +30,18 @@ namespace Amazon.StorageGateway.Model
 
         /// <summary>
         /// Gets and sets the DescribeWorkingStorageResult property.
-        /// A JSON object containing the following fields: DescribeWorkingStorageOutput$DiskIds GatewayARN
-        /// DescribeWorkingStorageOutput$WorkingStorageAllocatedInBytes DescribeWorkingStorageOutput$WorkingStorageUsedInBytes
+        /// A JSON object containing the following fields:
         /// </summary>
         public DescribeWorkingStorageResult DescribeWorkingStorageResult
         {
-            get 
+            get
             {
                 if(this.describeWorkingStorageResult == null)
                 {
                     this.describeWorkingStorageResult = new DescribeWorkingStorageResult();
                 }
 
-                return this.describeWorkingStorageResult; 
+                return this.describeWorkingStorageResult;
             }
             set { this.describeWorkingStorageResult = value; }
         }

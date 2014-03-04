@@ -24,7 +24,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// <para> The <c>PolicyAttributeDescription</c> data type. This data type is used to describe the attributes and values associated with a
     /// policy. </para>
     /// </summary>
-    public class PolicyAttributeDescription  
+    public partial class PolicyAttributeDescription
     {
         
         private string attributeName;
@@ -45,6 +45,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="attributeName">The value to set for the AttributeName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PolicyAttributeDescription WithAttributeName(string attributeName)
         {
             this.attributeName = attributeName;
@@ -55,7 +56,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if AttributeName property is set
         internal bool IsSetAttributeName()
         {
-            return this.attributeName != null;       
+            return this.attributeName != null;
         }
 
         /// <summary>
@@ -73,6 +74,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="attributeValue">The value to set for the AttributeValue property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PolicyAttributeDescription WithAttributeValue(string attributeValue)
         {
             this.attributeValue = attributeValue;
@@ -83,7 +85,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if AttributeValue property is set
         internal bool IsSetAttributeValue()
         {
-            return this.attributeValue != null;       
+            return this.attributeValue != null;
         }
     }
 }

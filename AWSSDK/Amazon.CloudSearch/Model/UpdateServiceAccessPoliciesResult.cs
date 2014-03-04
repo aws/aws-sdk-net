@@ -23,7 +23,7 @@ namespace Amazon.CloudSearch.Model
     /// <summary>
     /// <para>A response message that contains the status of updated access policies.</para>
     /// </summary>
-    public class UpdateServiceAccessPoliciesResult  
+    public partial class UpdateServiceAccessPoliciesResult
     {
         
         private AccessPoliciesStatus accessPolicies;
@@ -43,6 +43,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="accessPolicies">The value to set for the AccessPolicies property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateServiceAccessPoliciesResult WithAccessPolicies(AccessPoliciesStatus accessPolicies)
         {
             this.accessPolicies = accessPolicies;
@@ -53,7 +54,7 @@ namespace Amazon.CloudSearch.Model
         // Check to see if AccessPolicies property is set
         internal bool IsSetAccessPolicies()
         {
-            return this.accessPolicies != null;       
+            return this.accessPolicies != null;
         }
     }
 }

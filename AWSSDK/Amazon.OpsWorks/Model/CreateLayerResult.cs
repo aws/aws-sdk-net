@@ -23,7 +23,7 @@ namespace Amazon.OpsWorks.Model
     /// <summary>
     /// <para>Contains the response to a <c>CreateLayer</c> request.</para>
     /// </summary>
-    public class CreateLayerResult
+    public partial class CreateLayerResult
     {
         
         private string layerId;
@@ -43,6 +43,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="layerId">The value to set for the LayerId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateLayerResult WithLayerId(string layerId)
         {
             this.layerId = layerId;

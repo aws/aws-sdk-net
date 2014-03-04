@@ -23,7 +23,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// The results from the RestoreDBInstanceToPointInTime action.
     /// </summary>
-    public class RestoreDBInstanceToPointInTimeResult
+    public partial class RestoreDBInstanceToPointInTimeResult
     {
         private DBInstance dBInstanceValue;
 

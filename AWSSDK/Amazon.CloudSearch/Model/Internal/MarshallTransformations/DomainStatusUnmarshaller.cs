@@ -22,13 +22,14 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
      /// <summary>
      ///   DomainStatus Unmarshaller
      /// </summary>
-    internal class DomainStatusUnmarshaller : IUnmarshaller<DomainStatus, XmlUnmarshallerContext> 
+    internal class DomainStatusUnmarshaller : IUnmarshaller<DomainStatus, XmlUnmarshallerContext>, IUnmarshaller<DomainStatus, JsonUnmarshallerContext> 
     {
         public DomainStatus Unmarshall(XmlUnmarshallerContext context) 
         {
             DomainStatus domainStatus = new DomainStatus();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -62,7 +63,7 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
                     } 
                     if (context.TestExpression("NumSearchableDocs", targetDepth))
                     {
-                        domainStatus.NumSearchableDocs = IntUnmarshaller.GetInstance().Unmarshall(context);
+                        domainStatus.NumSearchableDocs = LongUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
                     } 
@@ -118,6 +119,11 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
 
 
             return domainStatus;
+        }
+
+        public DomainStatus Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static DomainStatusUnmarshaller instance;

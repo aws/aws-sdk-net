@@ -25,8 +25,11 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the ListRoles operation.
-    /// <para>Lists the roles have the specified path prefix. If there are none, the action returns an empty list.</para> <para>You can paginate the
-    /// results using the <c>MaxItems</c> and <c>Marker</c> parameters.</para>
+    /// <para>Lists the roles that have the specified path prefix. If there are none, the action returns an empty list. For more information about
+    /// roles, go to <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html" >Working with Roles</a> .</para> <para>You can
+    /// paginate the results using the <c>MaxItems</c> and <c>Marker</c> parameters.</para> <para>The returned policy is URL-encoded according to
+    /// RFC 3986. For more information about RFC 3986, go to <a href="http://www.faqs.org/rfcs/rfc3986.html"
+    /// >http://www.faqs.org/rfcs/rfc3986.html</a> .</para>
     /// </summary>
     /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.ListRoles"/>
     public class ListRolesRequest : AmazonWebServiceRequest
@@ -65,6 +68,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="pathPrefix">The value to set for the PathPrefix property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListRolesRequest WithPathPrefix(string pathPrefix)
         {
             this.pathPrefix = pathPrefix;
@@ -75,7 +79,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if PathPrefix property is set
         internal bool IsSetPathPrefix()
         {
-            return this.pathPrefix != null;       
+            return this.pathPrefix != null;
         }
 
         /// <summary>
@@ -107,6 +111,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="marker">The value to set for the Marker property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListRolesRequest WithMarker(string marker)
         {
             this.marker = marker;
@@ -117,12 +122,13 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;       
+            return this.marker != null;
         }
 
         /// <summary>
         /// Use this parameter only when paginating results to indicate the maximum number of user names you want in the response. If there are
-        /// additional user names beyond the maximum you specify, the <c>IsTruncated</c> response element is <c>true</c>.
+        /// additional user names beyond the maximum you specify, the <c>IsTruncated</c> response element is <c>true</c>. This parameter is optional. If
+        /// you do not include it, it defaults to 100.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -145,6 +151,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="maxItems">The value to set for the MaxItems property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListRolesRequest WithMaxItems(int maxItems)
         {
             this.maxItems = maxItems;
@@ -155,7 +162,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if MaxItems property is set
         internal bool IsSetMaxItems()
         {
-            return this.maxItems.HasValue;       
+            return this.maxItems.HasValue;
         }
     }
 }

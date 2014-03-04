@@ -32,6 +32,8 @@
 
         public Layer Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             Layer layer = new Layer();
           layer.Attributes = null;
                         layer.CustomSecurityGroupIds = null;
@@ -188,6 +190,12 @@
                 continue;
               }
   
+              if (context.TestExpression("AutoAssignPublicIps", targetDepth))
+              {
+                layer.AutoAssignPublicIps = BoolUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
               if (context.TestExpression("DefaultRecipes", targetDepth))
               {
                 layer.DefaultRecipes = RecipesUnmarshaller.GetInstance().Unmarshall(context);
@@ -203,6 +211,12 @@
               if (context.TestExpression("CreatedAt", targetDepth))
               {
                 layer.CreatedAt = StringUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
+              if (context.TestExpression("InstallUpdatesOnBoot", targetDepth))
+              {
+                layer.InstallUpdatesOnBoot = BoolUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   

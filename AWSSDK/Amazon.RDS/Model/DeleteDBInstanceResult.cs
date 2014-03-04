@@ -23,7 +23,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// The results from the DeleteDBInstance action.
     /// </summary>
-    public class DeleteDBInstanceResult
+    public partial class DeleteDBInstanceResult
     {
         private DBInstance dBInstanceValue;
 

@@ -23,7 +23,7 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// <para>Contains the result of a successful invocation of the GetLoginProfile action.</para>
     /// </summary>
-    public class GetLoginProfileResult  
+    public partial class GetLoginProfileResult
     {
         
         private LoginProfile loginProfile;
@@ -43,6 +43,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="loginProfile">The value to set for the LoginProfile property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetLoginProfileResult WithLoginProfile(LoginProfile loginProfile)
         {
             this.loginProfile = loginProfile;
@@ -53,7 +54,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if LoginProfile property is set
         internal bool IsSetLoginProfile()
         {
-            return this.loginProfile != null;       
+            return this.loginProfile != null;
         }
     }
 }

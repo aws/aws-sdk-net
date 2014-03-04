@@ -112,6 +112,7 @@ namespace Amazon.S3.Util
             extensionToMime[".lsp"] = "application/x-lisp";
             extensionToMime[".lzh"] = "application/octet-stream";
             extensionToMime[".m"] = "text/plain";
+            extensionToMime[".m3u8"] = "application/x-mpegURL";
             extensionToMime[".man"] = "application/x-troff-man";
             extensionToMime[".me"] = "application/x-troff-me";
             extensionToMime[".mesh"] = "model/mesh";
@@ -188,6 +189,7 @@ namespace Amazon.S3.Util
             extensionToMime[".tif"] = "image/tiff";
             extensionToMime[".tiff"] = "image/tiff";
             extensionToMime[".tr"] = "application/x-troff";
+            extensionToMime[".ts"] = "video/MP2T";
             extensionToMime[".tsi"] = "audio/TSP-audio";
             extensionToMime[".tsp"] = "application/dsptype";
             extensionToMime[".tsv"] = "text/tab-separated-values";
@@ -936,8 +938,7 @@ namespace Amazon.S3.Util
                 throw new ArgumentNullException("bucketName", "The bucketName cannot be null or empty string!");
             }
             
-            var listVersionsRequest = new ListVersionsRequest()
-                                        .WithBucketName(bucketName);
+            var listVersionsRequest = new ListVersionsRequest { BucketName=bucketName };
             
             ListVersionsResponse listVersionsResponse;
 
@@ -961,23 +962,25 @@ namespace Amazon.S3.Util
                     break;
                 }
 
-                var keyVersionList = new KeyVersion[listVersionsResponse.Versions.Count];
+                var keyVersionList = new List<KeyVersion>(listVersionsResponse.Versions.Count);
                 for (int index = 0; index < listVersionsResponse.Versions.Count; index++)
                 {
-                    keyVersionList[index] = new KeyVersion(
+                    keyVersionList.Add(new KeyVersion(
                                                 listVersionsResponse.Versions[index].Key,
                                                 listVersionsResponse.Versions[index].VersionId
-                                            );
+                                            ));
                 }
 
                 try
                 {
                     // Delete the current set of objects.
                     var deleteObjectsResponse =
-                        s3Client.DeleteObjects(new DeleteObjectsRequest()
-                                            .WithBucketName(bucketName)
-                                            .WithQuiet(deleteOptions.QuietMode)
-                                            .WithKeys(keyVersionList));
+                        s3Client.DeleteObjects(new DeleteObjectsRequest
+                        {
+                            BucketName=bucketName,
+                            Quiet=deleteOptions.QuietMode,
+                            Keys=keyVersionList
+                        });
 
                     if (!deleteOptions.QuietMode)
                     {
@@ -1022,24 +1025,8 @@ namespace Amazon.S3.Util
             // Continue listing objects and deleting them until the bucket is empty.
             while (listVersionsResponse.IsTruncated);
 
-            for (int attempts = 0; true; attempts++)
-            {
-                try
-                {
-                    // Bucket is empty, delete the bucket.
-                    s3Client.DeleteBucket(
-                        new DeleteBucketRequest().WithBucketName(bucketName)
-                        );
-                    
-                    break;
-                }
-                catch (AmazonS3Exception e)
-                {
-                    if (!string.Equals(e.ErrorCode, S3Constants.BucketNotEmpty) || attempts >= 3)
-                        throw;
-                    Thread.Sleep(5 * 1000);
-                }
-            }
+            // Bucket is empty, delete the bucket.
+            s3Client.DeleteBucket(new DeleteBucketRequest { BucketName = bucketName });
 
             // Signal that the operation is completed.
             asyncCancelableResult.SignalWaitHandleOnCompleted();            
@@ -1090,10 +1077,12 @@ namespace Amazon.S3.Util
             setACLRequest.ACL = getACLResponse.AccessControlList;
 
 
-            ListObjectsResponse listObjectResponse = s3Client.ListObjects(new ListObjectsRequest()
-                .WithBucketName(bucketName)
-                .WithPrefix(key)
-                .WithMaxKeys(1));
+            ListObjectsResponse listObjectResponse = s3Client.ListObjects(new ListObjectsRequest
+            {
+                BucketName = bucketName,
+                Prefix = key,
+                MaxKeys = 1
+            });
 
             if (listObjectResponse.S3Objects.Count != 1)
             {

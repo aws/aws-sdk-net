@@ -25,8 +25,10 @@ namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateLoadBalancerListeners operation.
-    /// <para> Creates one or more listeners on a LoadBalancer for the specified port. If a listener with the given port does not already exist, it
-    /// will be created; otherwise, the properties of the new listener must match the properties of the existing listener. </para>
+    /// <para> Creates one or more listeners on a load balancer for the specified port. If a listener with the given port does not already exist, it
+    /// will be created; otherwise, the properties of the new listener must match the properties of the existing listener. </para> <para>For more
+    /// information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/us-add-listener.html" >Add a Listener to
+    /// Your Load Balancer</a> in the <i>Elastic Load Balancing Developer Guide</i> .</para>
     /// </summary>
     /// <seealso cref="Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancing.CreateLoadBalancerListeners"/>
     public class CreateLoadBalancerListenersRequest : AmazonWebServiceRequest
@@ -45,10 +47,10 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// initialize any additional object members.
         /// </summary>
         /// 
-        /// <param name="loadBalancerName"> The name of the new LoadBalancer. The name must be unique within your AWS account. </param>
+        /// <param name="loadBalancerName"> The name of the load balancer. </param>
         /// <param name="listeners"> A list of <c>LoadBalancerPort</c>, <c>InstancePort</c>, <c>Protocol</c>, and <c>SSLCertificateId</c> items.
         /// </param>
-        public CreateLoadBalancerListenersRequest(string loadBalancerName, List<Listener> listeners) 
+        public CreateLoadBalancerListenersRequest(string loadBalancerName, List<Listener> listeners)
         {
             this.loadBalancerName = loadBalancerName;
             this.listeners = listeners;
@@ -56,7 +58,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     
 
         /// <summary>
-        /// The name of the new LoadBalancer. The name must be unique within your AWS account.
+        /// The name of the load balancer.
         ///  
         /// </summary>
         public string LoadBalancerName
@@ -70,6 +72,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="loadBalancerName">The value to set for the LoadBalancerName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateLoadBalancerListenersRequest WithLoadBalancerName(string loadBalancerName)
         {
             this.loadBalancerName = loadBalancerName;
@@ -80,7 +83,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if LoadBalancerName property is set
         internal bool IsSetLoadBalancerName()
         {
-            return this.loadBalancerName != null;       
+            return this.loadBalancerName != null;
         }
 
         /// <summary>
@@ -97,6 +100,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="listeners">The values to add to the Listeners collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateLoadBalancerListenersRequest WithListeners(params Listener[] listeners)
         {
             foreach (Listener element in listeners)
@@ -106,12 +110,13 @@ namespace Amazon.ElasticLoadBalancing.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Listeners collection
         /// </summary>
         /// <param name="listeners">The values to add to the Listeners collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateLoadBalancerListenersRequest WithListeners(IEnumerable<Listener> listeners)
         {
             foreach (Listener element in listeners)
@@ -125,7 +130,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if Listeners property is set
         internal bool IsSetListeners()
         {
-            return this.listeners.Count > 0;       
+            return this.listeners.Count > 0;
         }
     }
 }

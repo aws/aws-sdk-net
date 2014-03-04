@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ namespace Amazon.CloudFormation.Model
     /// <summary>
     /// <para>The StackSummary Data Type</para>
     /// </summary>
-    public class StackSummary
+    public partial class StackSummary
     {
         
         private string stackId;
@@ -50,6 +50,7 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         /// <param name="stackId">The value to set for the StackId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StackSummary WithStackId(string stackId)
         {
             this.stackId = stackId;
@@ -78,6 +79,7 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         /// <param name="stackName">The value to set for the StackName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StackSummary WithStackName(string stackName)
         {
             this.stackName = stackName;
@@ -106,6 +108,7 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         /// <param name="templateDescription">The value to set for the TemplateDescription property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StackSummary WithTemplateDescription(string templateDescription)
         {
             this.templateDescription = templateDescription;
@@ -134,6 +137,7 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         /// <param name="creationTime">The value to set for the CreationTime property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StackSummary WithCreationTime(DateTime creationTime)
         {
             this.creationTime = creationTime;
@@ -162,6 +166,7 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         /// <param name="lastUpdatedTime">The value to set for the LastUpdatedTime property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StackSummary WithLastUpdatedTime(DateTime lastUpdatedTime)
         {
             this.lastUpdatedTime = lastUpdatedTime;
@@ -190,6 +195,7 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         /// <param name="deletionTime">The value to set for the DeletionTime property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StackSummary WithDeletionTime(DateTime deletionTime)
         {
             this.deletionTime = deletionTime;
@@ -227,6 +233,7 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         /// <param name="stackStatus">The value to set for the StackStatus property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StackSummary WithStackStatus(string stackStatus)
         {
             this.stackStatus = stackStatus;
@@ -255,6 +262,7 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         /// <param name="stackStatusReason">The value to set for the StackStatusReason property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StackSummary WithStackStatusReason(string stackStatusReason)
         {
             this.stackStatusReason = stackStatusReason;

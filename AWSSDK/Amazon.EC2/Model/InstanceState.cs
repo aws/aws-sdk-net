@@ -62,6 +62,7 @@ namespace Amazon.EC2.Model
         /// 48 (terminated) | 64 (stopping) | 80 (stopped)
         /// </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceState WithCode(Decimal code)
         {
             this.codeField = code;
@@ -96,6 +97,7 @@ namespace Amazon.EC2.Model
         ///
         /// Valid values are: pending | running | shutting-down | terminated | stopping | stopped</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceState WithName(string name)
         {
             this.nameField = name;

@@ -37,7 +37,7 @@ namespace Amazon.EC2.Model
     /// there's no VPN connection in use with the VPN gateway)
     /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
-    public class CreateVpnGatewayRequest
+    public class CreateVpnGatewayRequest : EC2Request
     {    
         private string typeField;
         private string availabilityZoneField;
@@ -59,6 +59,7 @@ namespace Amazon.EC2.Model
         /// <param name="type">The type of VPN connection this VPN gateway
         /// supports. The only supported type is ipsec.1.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateVpnGatewayRequest WithType(string type)
         {
             this.typeField = type;
@@ -91,6 +92,7 @@ namespace Amazon.EC2.Model
         /// gateway.
         /// Default: AWS selects a zone for you (recommended)</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateVpnGatewayRequest WithAvailabilityZone(string availabilityZone)
         {
             this.availabilityZoneField = availabilityZone;

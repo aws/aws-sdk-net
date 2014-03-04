@@ -30,7 +30,7 @@ namespace Amazon.ElasticTranscoder.Model
 
         /// <summary>
         /// Gets and sets the DeletePipelineResult property.
-        /// 
+        /// The DeletePipelineResponse structure.
         /// </summary>
         public DeletePipelineResult DeletePipelineResult
         {

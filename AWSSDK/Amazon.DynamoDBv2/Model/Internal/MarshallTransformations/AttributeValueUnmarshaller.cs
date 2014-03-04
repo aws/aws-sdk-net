@@ -32,6 +32,8 @@
 
         public AttributeValue Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             AttributeValue attributeValue = new AttributeValue();
           attributeValue.SS = null;
                         attributeValue.NS = null;

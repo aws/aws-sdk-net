@@ -21,16 +21,16 @@ using System.IO;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// <para> A value that applies only to a certain Cache Node Type. </para>
+    /// <para>A value that applies only to a certain cache node type.</para>
     /// </summary>
-    public class CacheNodeTypeSpecificValue
+    public partial class CacheNodeTypeSpecificValue
     {
         
         private string cacheNodeType;
         private string value;
 
         /// <summary>
-        /// Specifies the Cache Node type for which this value applies.
+        /// The cache node type for which this value applies.
         ///  
         /// </summary>
         public string CacheNodeType
@@ -44,6 +44,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="cacheNodeType">The value to set for the CacheNodeType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CacheNodeTypeSpecificValue WithCacheNodeType(string cacheNodeType)
         {
             this.cacheNodeType = cacheNodeType;
@@ -58,7 +59,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// Specifies the value for the Cache Node type.
+        /// The value for the cache node type.
         ///  
         /// </summary>
         public string Value
@@ -72,6 +73,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="value">The value to set for the Value property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CacheNodeTypeSpecificValue WithValue(string value)
         {
             this.value = value;

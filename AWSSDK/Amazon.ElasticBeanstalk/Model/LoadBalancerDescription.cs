@@ -23,7 +23,7 @@ namespace Amazon.ElasticBeanstalk.Model
     /// <summary>
     /// <para>Describes the details of a LoadBalancer.</para>
     /// </summary>
-    public class LoadBalancerDescription  
+    public partial class LoadBalancerDescription
     {
         
         private string loadBalancerName;
@@ -45,6 +45,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="loadBalancerName">The value to set for the LoadBalancerName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LoadBalancerDescription WithLoadBalancerName(string loadBalancerName)
         {
             this.loadBalancerName = loadBalancerName;
@@ -55,7 +56,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if LoadBalancerName property is set
         internal bool IsSetLoadBalancerName()
         {
-            return this.loadBalancerName != null;       
+            return this.loadBalancerName != null;
         }
 
         /// <summary>
@@ -73,6 +74,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="domain">The value to set for the Domain property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LoadBalancerDescription WithDomain(string domain)
         {
             this.domain = domain;
@@ -83,7 +85,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if Domain property is set
         internal bool IsSetDomain()
         {
-            return this.domain != null;       
+            return this.domain != null;
         }
 
         /// <summary>
@@ -100,6 +102,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="listeners">The values to add to the Listeners collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LoadBalancerDescription WithListeners(params Listener[] listeners)
         {
             foreach (Listener element in listeners)
@@ -109,12 +112,13 @@ namespace Amazon.ElasticBeanstalk.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Listeners collection
         /// </summary>
         /// <param name="listeners">The values to add to the Listeners collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LoadBalancerDescription WithListeners(IEnumerable<Listener> listeners)
         {
             foreach (Listener element in listeners)
@@ -128,7 +132,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if Listeners property is set
         internal bool IsSetListeners()
         {
-            return this.listeners.Count > 0;       
+            return this.listeners.Count > 0;
         }
     }
 }

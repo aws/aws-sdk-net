@@ -23,7 +23,7 @@ namespace Amazon.Redshift.Model
     /// <summary>
     /// <para>Describes a cluster version, including the parameter group family and description of the version.</para>
     /// </summary>
-    public class ClusterVersion
+    public partial class ClusterVersion
     {
         
         private string clusterVersion;
@@ -44,6 +44,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="name">The value to set for the Name property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ClusterVersion WithName(string name)
         {
             this.clusterVersion = name;
@@ -71,6 +72,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="clusterParameterGroupFamily">The value to set for the ClusterParameterGroupFamily property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ClusterVersion WithClusterParameterGroupFamily(string clusterParameterGroupFamily)
         {
             this.clusterParameterGroupFamily = clusterParameterGroupFamily;
@@ -99,6 +101,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="description">The value to set for the Description property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ClusterVersion WithDescription(string description)
         {
             this.description = description;

@@ -1,4 +1,4 @@
-﻿/*******************************************************************************
+/*******************************************************************************
  * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
@@ -29,7 +29,7 @@ namespace Amazon.EC2.Model
     /// Attaches a network interface to an instance.
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
-    public class AttachNetworkInterfaceRequest
+    public class AttachNetworkInterfaceRequest : EC2Request
     {
         private string networkInterfaceIdField;
         private string instanceIdField;
@@ -50,6 +50,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="interfaceId">The network interface ID</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AttachNetworkInterfaceRequest WithNetworkInterfaceId(string interfaceId)
         {
             this.networkInterfaceIdField = interfaceId;
@@ -80,6 +81,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="instanceId">The instance ID</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AttachNetworkInterfaceRequest WithInstanceId(string instanceId)
         {
             this.instanceIdField = instanceId;
@@ -110,6 +112,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="deviceIndex">The device index</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AttachNetworkInterfaceRequest WithDeviceIndex(int deviceIndex)
         {
             this.deviceIndexField = deviceIndex;

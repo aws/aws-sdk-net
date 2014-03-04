@@ -50,6 +50,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// </summary>
         /// <param name="key">The key in the key/value pair.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TopicAttribute WithKey(string key)
         {
             this.keyField = key;
@@ -80,6 +81,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// </summary>
         /// <param name="value">The value in the key/value pair.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TopicAttribute WithValue(string value)
         {
             this.valueField = value;

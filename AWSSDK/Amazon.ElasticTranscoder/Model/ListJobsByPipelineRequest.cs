@@ -25,9 +25,8 @@ namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
     /// Container for the parameters to the ListJobsByPipeline operation.
-    /// <para>To get a list of the jobs currently in a pipeline, send a GET request to the <c>/2012-09-25/jobsByPipeline/[pipelineId] </c>
-    /// resource.</para> <para>Elastic Transcoder returns all of the jobs currently in the specified pipeline. The response body contains one
-    /// element for each job that satisfies the search criteria.</para>
+    /// <para>The ListJobsByPipeline operation gets a list of the jobs currently in a pipeline.</para> <para>Elastic Transcoder returns all of the
+    /// jobs currently in the specified pipeline. The response body contains one element for each job that satisfies the search criteria.</para>
     /// </summary>
     /// <seealso cref="Amazon.ElasticTranscoder.AmazonElasticTranscoder.ListJobsByPipeline"/>
     public class ListJobsByPipelineRequest : AmazonWebServiceRequest
@@ -60,6 +59,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="pipelineId">The value to set for the PipelineId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListJobsByPipelineRequest WithPipelineId(string pipelineId)
         {
             this.pipelineId = pipelineId;
@@ -98,6 +98,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="ascending">The value to set for the Ascending property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListJobsByPipelineRequest WithAscending(string ascending)
         {
             this.ascending = ascending;
@@ -136,6 +137,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="pageToken">The value to set for the PageToken property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListJobsByPipelineRequest WithPageToken(string pageToken)
         {
             this.pageToken = pageToken;

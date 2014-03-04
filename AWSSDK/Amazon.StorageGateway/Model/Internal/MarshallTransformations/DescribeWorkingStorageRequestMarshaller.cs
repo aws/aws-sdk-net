@@ -38,7 +38,7 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
         {
 
             IRequest request = new DefaultRequest(describeWorkingStorageRequest, "AmazonStorageGateway");
-            string target = "StorageGateway_20120630.DescribeWorkingStorage";
+            string target = "StorageGateway_20130630.DescribeWorkingStorage";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
 

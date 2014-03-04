@@ -27,7 +27,7 @@ namespace Amazon.IdentityManagement.Model
     /// Container for the parameters to the UploadSigningCertificate operation.
     /// <para>Uploads an X.509 signing certificate and associates it with the specified user. Some AWS services use X.509 signing certificates to
     /// validate requests that are signed with a corresponding private key. When you upload the certificate, its default status is <c>Active</c>
-    /// .</para> <para>If the <c>UserName</c> field is not specified, the user name is determined implicitly based on the AWS Access Key ID used to
+    /// .</para> <para>If the <c>UserName</c> field is not specified, the user name is determined implicitly based on the AWS access key ID used to
     /// sign the request. Because this action works for access keys under the AWS account, this API can be used to manage root credentials even if
     /// the AWS account has no associated users.</para> <para><b>NOTE:</b>Because the body of a X.509 certificate can be large, you should use POST
     /// rather than GET when calling UploadSigningCertificate. For information about setting up signatures and authorization through the API, go to
@@ -68,6 +68,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="userName">The value to set for the UserName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UploadSigningCertificateRequest WithUserName(string userName)
         {
             this.userName = userName;
@@ -78,7 +79,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if UserName property is set
         internal bool IsSetUserName()
         {
-            return this.userName != null;       
+            return this.userName != null;
         }
 
         /// <summary>
@@ -109,6 +110,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="certificateBody">The value to set for the CertificateBody property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UploadSigningCertificateRequest WithCertificateBody(string certificateBody)
         {
             this.certificateBody = certificateBody;
@@ -119,7 +121,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if CertificateBody property is set
         internal bool IsSetCertificateBody()
         {
-            return this.certificateBody != null;       
+            return this.certificateBody != null;
         }
     }
 }

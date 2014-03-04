@@ -219,6 +219,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         dBInstance.PubliclyAccessible = BoolUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
+                    } 
+                    if (context.TestExpression("StatusInfos/DBInstanceStatusInfo", targetDepth))
+                    {
+                        dBInstance.StatusInfos.Add(DBInstanceStatusInfoUnmarshaller.GetInstance().Unmarshall(context));
+                            
+                        continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)

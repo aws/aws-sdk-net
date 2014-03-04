@@ -22,13 +22,14 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
      /// <summary>
      ///   GetAccountPasswordPolicyResult Unmarshaller
      /// </summary>
-    internal class GetAccountPasswordPolicyResultUnmarshaller : IUnmarshaller<GetAccountPasswordPolicyResult, XmlUnmarshallerContext> 
+    internal class GetAccountPasswordPolicyResultUnmarshaller : IUnmarshaller<GetAccountPasswordPolicyResult, XmlUnmarshallerContext>, IUnmarshaller<GetAccountPasswordPolicyResult, JsonUnmarshallerContext> 
     {
         public GetAccountPasswordPolicyResult Unmarshall(XmlUnmarshallerContext context) 
         {
             GetAccountPasswordPolicyResult getAccountPasswordPolicyResult = new GetAccountPasswordPolicyResult();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -52,6 +53,11 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 
 
             return getAccountPasswordPolicyResult;
+        }
+
+        public GetAccountPasswordPolicyResult Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static GetAccountPasswordPolicyResultUnmarshaller instance;

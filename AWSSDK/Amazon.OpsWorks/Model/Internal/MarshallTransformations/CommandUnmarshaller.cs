@@ -32,6 +32,8 @@
 
         public Command Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             Command command = new Command();
           
             int originalDepth = context.CurrentDepth;

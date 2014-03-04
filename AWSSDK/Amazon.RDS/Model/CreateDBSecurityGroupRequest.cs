@@ -25,17 +25,19 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDBSecurityGroup operation.
-    /// <para> Creates a new DB Security Group. DB Security Groups control access to a DB Instance. </para>
+    /// <para> Creates a new DB security group. DB security groups control access to a DB instance. </para>
     /// </summary>
     /// <seealso cref="Amazon.RDS.AmazonRDS.CreateDBSecurityGroup"/>
     public class CreateDBSecurityGroupRequest : AmazonWebServiceRequest
     {
         private string dBSecurityGroupName;
         private string dBSecurityGroupDescription;
+        private List<Tag> tags = new List<Tag>();
 
         /// <summary>
-        /// The name for the DB Security Group. This value is stored as a lowercase string. Constraints: Must contain no more than 255 alphanumeric
-        /// characters or hyphens. Must not be "Default". Example: <c>mysecuritygroup</c>
+        /// The name for the DB security group. This value is stored as a lowercase string. Constraints: <ul> <li>Must be 1 to 255 alphanumeric
+        /// characters</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> <li>Must not
+        /// be "Default"</li> <li>May not contain spaces</li> </ul> Example: <c>mysecuritygroup</c>
         ///  
         /// </summary>
         public string DBSecurityGroupName
@@ -49,6 +51,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="dBSecurityGroupName">The value to set for the DBSecurityGroupName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateDBSecurityGroupRequest WithDBSecurityGroupName(string dBSecurityGroupName)
         {
             this.dBSecurityGroupName = dBSecurityGroupName;
@@ -63,7 +66,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The description for the DB Security Group.
+        /// The description for the DB security group.
         ///  
         /// </summary>
         public string DBSecurityGroupDescription
@@ -77,6 +80,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="dBSecurityGroupDescription">The value to set for the DBSecurityGroupDescription property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateDBSecurityGroupRequest WithDBSecurityGroupDescription(string dBSecurityGroupDescription)
         {
             this.dBSecurityGroupDescription = dBSecurityGroupDescription;
@@ -88,6 +92,53 @@ namespace Amazon.RDS.Model
         internal bool IsSetDBSecurityGroupDescription()
         {
             return this.dBSecurityGroupDescription != null;
+        }
+
+        /// <summary>
+        /// A list of tags.
+        ///  
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this.tags; }
+            set { this.tags = value; }
+        }
+        /// <summary>
+        /// Adds elements to the Tags collection
+        /// </summary>
+        /// <param name="tags">The values to add to the Tags collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public CreateDBSecurityGroupRequest WithTags(params Tag[] tags)
+        {
+            foreach (Tag element in tags)
+            {
+                this.tags.Add(element);
+            }
+
+            return this;
+        }
+
+        /// <summary>
+        /// Adds elements to the Tags collection
+        /// </summary>
+        /// <param name="tags">The values to add to the Tags collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public CreateDBSecurityGroupRequest WithTags(IEnumerable<Tag> tags)
+        {
+            foreach (Tag element in tags)
+            {
+                this.tags.Add(element);
+            }
+
+            return this;
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this.tags.Count > 0;
         }
     }
 }

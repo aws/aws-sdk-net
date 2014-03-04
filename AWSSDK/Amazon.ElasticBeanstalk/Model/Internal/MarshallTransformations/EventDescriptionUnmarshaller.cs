@@ -22,13 +22,14 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
      /// <summary>
      ///   EventDescription Unmarshaller
      /// </summary>
-    internal class EventDescriptionUnmarshaller : IUnmarshaller<EventDescription, XmlUnmarshallerContext> 
+    internal class EventDescriptionUnmarshaller : IUnmarshaller<EventDescription, XmlUnmarshallerContext>, IUnmarshaller<EventDescription, JsonUnmarshallerContext> 
     {
         public EventDescription Unmarshall(XmlUnmarshallerContext context) 
         {
             EventDescription eventDescription = new EventDescription();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -94,6 +95,11 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
 
 
             return eventDescription;
+        }
+
+        public EventDescription Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static EventDescriptionUnmarshaller instance;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -34,16 +34,16 @@ namespace Amazon.CloudFormation.Model
         private string templateURL;
 
         /// <summary>
-        /// String containing the template body. (For more information, go to the <a
-        /// href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS CloudFormation User Guide</a>.) Conditional: You must pass
-        /// <c>TemplateURL</c> or <c>TemplateBody</c>. If both are passed, only <c>TemplateBody</c> is used.
+        /// String containing the template body. (For more information, go to <a
+        /// href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a> in the AWS CloudFormation
+        /// User Guide.) Conditional: You must pass <c>TemplateURL</c> or <c>TemplateBody</c>. If both are passed, only <c>TemplateBody</c> is used.
         ///  
         /// <para>
         /// <b>Constraints:</b>
         /// <list type="definition">
         ///     <item>
         ///         <term>Length</term>
-        ///         <description>1 - 51200</description>
+        ///         <description>1 - </description>
         ///     </item>
         /// </list>
         /// </para>
@@ -59,6 +59,7 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         /// <param name="templateBody">The value to set for the TemplateBody property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ValidateTemplateRequest WithTemplateBody(string templateBody)
         {
             this.templateBody = templateBody;
@@ -74,9 +75,9 @@ namespace Amazon.CloudFormation.Model
 
         /// <summary>
         /// Location of file containing the template body. The URL must point to a template (max size: 307,200 bytes) located in an S3 bucket in the
-        /// same region as the stack. For more information, go to the <a href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
-        /// CloudFormation User Guide</a>. Conditional: You must pass <c>TemplateURL</c> or <c>TemplateBody</c>. If both are passed, only
-        /// <c>TemplateBody</c> is used.
+        /// same region as the stack. For more information, go to <a
+        /// href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a> in the AWS CloudFormation
+        /// User Guide. Conditional: You must pass <c>TemplateURL</c> or <c>TemplateBody</c>. If both are passed, only <c>TemplateBody</c> is used.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -99,6 +100,7 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         /// <param name="templateURL">The value to set for the TemplateURL property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ValidateTemplateRequest WithTemplateURL(string templateURL)
         {
             this.templateURL = templateURL;

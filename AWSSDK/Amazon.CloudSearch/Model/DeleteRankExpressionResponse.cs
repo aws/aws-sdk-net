@@ -34,14 +34,14 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         public DeleteRankExpressionResult DeleteRankExpressionResult
         {
-            get 
+            get
             {
                 if(this.deleteRankExpressionResult == null)
                 {
                     this.deleteRankExpressionResult = new DeleteRankExpressionResult();
                 }
 
-                return this.deleteRankExpressionResult; 
+                return this.deleteRankExpressionResult;
             }
             set { this.deleteRankExpressionResult = value; }
         }

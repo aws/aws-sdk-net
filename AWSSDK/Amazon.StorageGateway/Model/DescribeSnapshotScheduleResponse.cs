@@ -30,19 +30,18 @@ namespace Amazon.StorageGateway.Model
 
         /// <summary>
         /// Gets and sets the DescribeSnapshotScheduleResult property.
-        /// A JSON object containing the following fields: DescribeSnapshotScheduleOutput$Description DescribeSnapshotScheduleOutput$RecurrenceInHours
-        /// DescribeSnapshotScheduleOutput$StartAt DescribeSnapshotScheduleOutput$Timezone DescribeSnapshotScheduleOutput$VolumeARN
+        /// 
         /// </summary>
         public DescribeSnapshotScheduleResult DescribeSnapshotScheduleResult
         {
-            get 
+            get
             {
                 if(this.describeSnapshotScheduleResult == null)
                 {
                     this.describeSnapshotScheduleResult = new DescribeSnapshotScheduleResult();
                 }
 
-                return this.describeSnapshotScheduleResult; 
+                return this.describeSnapshotScheduleResult;
             }
             set { this.describeSnapshotScheduleResult = value; }
         }

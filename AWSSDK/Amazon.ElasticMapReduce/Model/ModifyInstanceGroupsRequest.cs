@@ -47,6 +47,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         /// <param name="instanceGroups">The values to add to the InstanceGroups collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyInstanceGroupsRequest WithInstanceGroups(params InstanceGroupModifyConfig[] instanceGroups)
         {
             foreach (InstanceGroupModifyConfig element in instanceGroups)
@@ -62,6 +63,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         /// <param name="instanceGroups">The values to add to the InstanceGroups collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyInstanceGroupsRequest WithInstanceGroups(IEnumerable<InstanceGroupModifyConfig> instanceGroups)
         {
             foreach (InstanceGroupModifyConfig element in instanceGroups)

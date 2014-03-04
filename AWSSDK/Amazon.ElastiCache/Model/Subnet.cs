@@ -21,16 +21,17 @@ using System.IO;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// <para> Network Subnet associated with a Cache Cluster </para>
+    /// <para>Represents the subnet associated with a cache cluster. This parameter refers to subnets defined in Amazon Virtual Private Cloud
+    /// (Amazon VPC) and used with ElastiCache.</para>
     /// </summary>
-    public class Subnet
+    public partial class Subnet
     {
         
         private string subnetIdentifier;
         private AvailabilityZone subnetAvailabilityZone;
 
         /// <summary>
-        /// Specifies the unique identifier for the Subnet
+        /// The unique identifier for the subnet
         ///  
         /// </summary>
         public string SubnetIdentifier
@@ -44,6 +45,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="subnetIdentifier">The value to set for the SubnetIdentifier property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Subnet WithSubnetIdentifier(string subnetIdentifier)
         {
             this.subnetIdentifier = subnetIdentifier;
@@ -58,7 +60,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// Specifies the Availability Zone associated with the Subnet
+        /// The Availability Zone associated with the subnet
         ///  
         /// </summary>
         public AvailabilityZone SubnetAvailabilityZone
@@ -72,6 +74,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="subnetAvailabilityZone">The value to set for the SubnetAvailabilityZone property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Subnet WithSubnetAvailabilityZone(AvailabilityZone subnetAvailabilityZone)
         {
             this.subnetAvailabilityZone = subnetAvailabilityZone;

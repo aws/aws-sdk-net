@@ -88,6 +88,11 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                     writer.WritePropertyName("SshPublicKey");
                     writer.Write(updateUserProfileRequest.SshPublicKey);
                 }
+                if (updateUserProfileRequest != null && updateUserProfileRequest.IsSetAllowSelfManagement()) 
+                {
+                    writer.WritePropertyName("AllowSelfManagement");
+                    writer.Write(updateUserProfileRequest.AllowSelfManagement);
+                }
 
                 writer.WriteObjectEnd();
                 

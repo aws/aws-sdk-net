@@ -25,11 +25,11 @@ namespace Amazon.AWSSupport.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeCases operation.
-    /// <para>This action returns a list of cases that you specify by passing one or more CaseIds. In addition, you can filter the cases by date by
-    /// setting values for the AfterTime and BeforeTime request parameters. </para> <para> The response returns the following in JSON format:
-    /// </para> <ol> <li>One or more CaseDetails data types. </li>
-    /// <li>One or more <i>NextToken</i> objects, strings that specifies where to paginate the returned records represented by <i>CaseDetails</i>
-    /// .</li>
+    /// <para>Returns a list of cases that you specify by passing one or more case IDs. In addition, you can filter the cases by date by setting
+    /// values for the <c>AfterTime</c> and <c>BeforeTime</c> request parameters. </para> <para>The response returns the following in JSON
+    /// format:</para> <ol> <li>One or more CaseDetails data types. </li>
+    /// <li>One or more <c>NextToken</c> values, which specify where to paginate the returned records represented by the <c>CaseDetails</c>
+    /// objects.</li>
     /// </ol>
     /// </summary>
     /// <seealso cref="Amazon.AWSSupport.AmazonAWSSupport.DescribeCases"/>
@@ -45,7 +45,7 @@ namespace Amazon.AWSSupport.Model
         private string language;
 
         /// <summary>
-        /// A list of Strings comprising ID numbers for support cases you want returned. The maximum number of cases is 100.
+        /// A list of ID numbers of the support cases you want returned. The maximum number of cases is 100.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -67,6 +67,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="caseIdList">The values to add to the CaseIdList collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeCasesRequest WithCaseIdList(params string[] caseIdList)
         {
             foreach (string element in caseIdList)
@@ -82,6 +83,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="caseIdList">The values to add to the CaseIdList collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeCasesRequest WithCaseIdList(IEnumerable<string> caseIdList)
         {
             foreach (string element in caseIdList)
@@ -99,7 +101,7 @@ namespace Amazon.AWSSupport.Model
         }
 
         /// <summary>
-        /// String that corresponds to the ID value displayed for a case in the AWS Support Center user interface.
+        /// The ID displayed for a case in the AWS Support Center user interface.
         ///  
         /// </summary>
         public string DisplayId
@@ -113,6 +115,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="displayId">The value to set for the DisplayId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeCasesRequest WithDisplayId(string displayId)
         {
             this.displayId = displayId;
@@ -127,7 +130,7 @@ namespace Amazon.AWSSupport.Model
         }
 
         /// <summary>
-        /// Start date for a filtered date search on support case communications.
+        /// The start date for a filtered date search on support case communications.
         ///  
         /// </summary>
         public string AfterTime
@@ -141,6 +144,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="afterTime">The value to set for the AfterTime property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeCasesRequest WithAfterTime(string afterTime)
         {
             this.afterTime = afterTime;
@@ -155,7 +159,7 @@ namespace Amazon.AWSSupport.Model
         }
 
         /// <summary>
-        /// End date for a filtered date search on support case communications.
+        /// The end date for a filtered date search on support case communications.
         ///  
         /// </summary>
         public string BeforeTime
@@ -169,6 +173,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="beforeTime">The value to set for the BeforeTime property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeCasesRequest WithBeforeTime(string beforeTime)
         {
             this.beforeTime = beforeTime;
@@ -183,8 +188,7 @@ namespace Amazon.AWSSupport.Model
         }
 
         /// <summary>
-        /// Boolean that indicates whether or not resolved support cases should be listed in the <a href="API_DescribeCases.html"
-        /// title="DescribeCases">DescribeCases</a> search.
+        /// Specifies whether resolved support cases should be included in the <a>DescribeCases</a> results.
         ///  
         /// </summary>
         public bool IncludeResolvedCases
@@ -198,6 +202,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="includeResolvedCases">The value to set for the IncludeResolvedCases property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeCasesRequest WithIncludeResolvedCases(bool includeResolvedCases)
         {
             this.includeResolvedCases = includeResolvedCases;
@@ -212,7 +217,7 @@ namespace Amazon.AWSSupport.Model
         }
 
         /// <summary>
-        /// Defines a resumption point for pagination.
+        /// A resumption point for pagination.
         ///  
         /// </summary>
         public string NextToken
@@ -226,6 +231,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="nextToken">The value to set for the NextToken property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeCasesRequest WithNextToken(string nextToken)
         {
             this.nextToken = nextToken;
@@ -240,7 +246,7 @@ namespace Amazon.AWSSupport.Model
         }
 
         /// <summary>
-        /// Integer that sets the maximum number of results to return before paginating.
+        /// The maximum number of results to return before paginating.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -263,6 +269,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="maxResults">The value to set for the MaxResults property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeCasesRequest WithMaxResults(int maxResults)
         {
             this.maxResults = maxResults;
@@ -277,8 +284,8 @@ namespace Amazon.AWSSupport.Model
         }
 
         /// <summary>
-        /// Specifies the ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English and Japanese, for which
-        /// the codes are <i>en</i> and <i>ja</i>, respectively.
+        /// The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English ("en") and Japanese ("ja").
+        /// Language parameters must be passed explicitly for operations that take them.
         ///  
         /// </summary>
         public string Language
@@ -292,6 +299,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="language">The value to set for the Language property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeCasesRequest WithLanguage(string language)
         {
             this.language = language;

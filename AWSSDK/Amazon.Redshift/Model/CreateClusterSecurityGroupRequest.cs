@@ -26,7 +26,9 @@ namespace Amazon.Redshift.Model
     /// <summary>
     /// Container for the parameters to the CreateClusterSecurityGroup operation.
     /// <para> Creates a new Amazon Redshift security group. You use security groups to control access to non-VPC clusters. </para> <para> For
-    /// information about managing security groups, go to Amazon Redshift Cluster Security Groups in the <i>Amazon Redshift Management Guide</i> .
+    /// information about managing security groups, go to <a
+    /// href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html" >Amazon Redshift Cluster Security Groups</a> in the
+    /// <i>Amazon Redshift Management Guide</i> .
     /// </para>
     /// </summary>
     /// <seealso cref="Amazon.Redshift.AmazonRedshift.CreateClusterSecurityGroup"/>
@@ -52,6 +54,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="clusterSecurityGroupName">The value to set for the ClusterSecurityGroupName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateClusterSecurityGroupRequest WithClusterSecurityGroupName(string clusterSecurityGroupName)
         {
             this.clusterSecurityGroupName = clusterSecurityGroupName;
@@ -80,6 +83,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="description">The value to set for the Description property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateClusterSecurityGroupRequest WithDescription(string description)
         {
             this.description = description;

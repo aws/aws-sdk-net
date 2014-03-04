@@ -21,9 +21,9 @@ using System.IO;
 namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
-    /// 
+    /// <para>The <c>ListJobsByPipelineResponse</c> structure.</para>
     /// </summary>
-    public class ListJobsByPipelineResult
+    public partial class ListJobsByPipelineResult
     {
         
         private List<Job> jobs = new List<Job>();
@@ -43,6 +43,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="jobs">The values to add to the Jobs collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListJobsByPipelineResult WithJobs(params Job[] jobs)
         {
             foreach (Job element in jobs)
@@ -58,6 +59,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="jobs">The values to add to the Jobs collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListJobsByPipelineResult WithJobs(IEnumerable<Job> jobs)
         {
             foreach (Job element in jobs)
@@ -99,6 +101,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="nextPageToken">The value to set for the NextPageToken property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListJobsByPipelineResult WithNextPageToken(string nextPageToken)
         {
             this.nextPageToken = nextPageToken;

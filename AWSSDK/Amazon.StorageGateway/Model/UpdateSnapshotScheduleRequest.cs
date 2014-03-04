@@ -26,7 +26,7 @@ namespace Amazon.StorageGateway.Model
     /// <summary>
     /// Container for the parameters to the UpdateSnapshotSchedule operation.
     /// <para>This operation updates a snapshot schedule configured for a gateway volume.</para> <para>The default snapshot schedule for volume is
-    /// once every 24 hours, starting at the creation time of the volume. You can use this API to change the shapshot schedule configured for the
+    /// once every 24 hours, starting at the creation time of the volume. You can use this API to change the snapshot schedule configured for the
     /// volume.</para> <para>In the request you must identify the gateway volume whose snapshot schedule you want to update, and the schedule
     /// information, including when you want the snapshot to begin on a day and the frequency (in hours) of snapshots.</para>
     /// </summary>
@@ -62,6 +62,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="volumeARN">The value to set for the VolumeARN property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateSnapshotScheduleRequest WithVolumeARN(string volumeARN)
         {
             this.volumeARN = volumeARN;
@@ -72,7 +73,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if VolumeARN property is set
         internal bool IsSetVolumeARN()
         {
-            return this.volumeARN != null;       
+            return this.volumeARN != null;
         }
 
         /// <summary>
@@ -100,6 +101,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="startAt">The value to set for the StartAt property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateSnapshotScheduleRequest WithStartAt(int startAt)
         {
             this.startAt = startAt;
@@ -110,7 +112,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if StartAt property is set
         internal bool IsSetStartAt()
         {
-            return this.startAt.HasValue;       
+            return this.startAt.HasValue;
         }
 
         /// <summary>
@@ -137,6 +139,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="recurrenceInHours">The value to set for the RecurrenceInHours property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateSnapshotScheduleRequest WithRecurrenceInHours(int recurrenceInHours)
         {
             this.recurrenceInHours = recurrenceInHours;
@@ -147,7 +150,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if RecurrenceInHours property is set
         internal bool IsSetRecurrenceInHours()
         {
-            return this.recurrenceInHours.HasValue;       
+            return this.recurrenceInHours.HasValue;
         }
 
         /// <summary>
@@ -174,6 +177,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="description">The value to set for the Description property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateSnapshotScheduleRequest WithDescription(string description)
         {
             this.description = description;
@@ -184,7 +188,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if Description property is set
         internal bool IsSetDescription()
         {
-            return this.description != null;       
+            return this.description != null;
         }
     }
 }

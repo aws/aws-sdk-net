@@ -28,7 +28,8 @@ namespace Amazon.Redshift.Model
     /// <para> Returns a list of Amazon Redshift parameter groups, including parameter groups you created and the default parameter group. For each
     /// parameter group, the response includes the parameter group name, description, and parameter group family name. You can optionally specify a
     /// name to retrieve the description of a specific parameter group. </para> <para> For more information about managing parameter groups, go to
-    /// Amazon Redshift Parameter Groups in the <i>Amazon Redshift Management Guide</i> .
+    /// <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html" >Amazon Redshift Parameter Groups</a> in the
+    /// <i>Amazon Redshift Management Guide</i> .
     /// </para>
     /// </summary>
     /// <seealso cref="Amazon.Redshift.AmazonRedshift.DescribeClusterParameterGroups"/>
@@ -54,6 +55,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="parameterGroupName">The value to set for the ParameterGroupName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeClusterParameterGroupsRequest WithParameterGroupName(string parameterGroupName)
         {
             this.parameterGroupName = parameterGroupName;
@@ -84,6 +86,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="maxRecords">The value to set for the MaxRecords property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeClusterParameterGroupsRequest WithMaxRecords(int maxRecords)
         {
             this.maxRecords = maxRecords;
@@ -113,6 +116,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="marker">The value to set for the Marker property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeClusterParameterGroupsRequest WithMarker(string marker)
         {
             this.marker = marker;

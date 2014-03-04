@@ -23,7 +23,7 @@ namespace Amazon.ElasticBeanstalk.Model
     /// <summary>
     /// <para>A list of available AWS Elastic Beanstalk solution stacks. </para>
     /// </summary>
-    public class ListAvailableSolutionStacksResult  
+    public partial class ListAvailableSolutionStacksResult
     {
         
         private List<string> solutionStacks = new List<string>();
@@ -43,6 +43,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="solutionStacks">The values to add to the SolutionStacks collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListAvailableSolutionStacksResult WithSolutionStacks(params string[] solutionStacks)
         {
             foreach (string element in solutionStacks)
@@ -52,12 +53,13 @@ namespace Amazon.ElasticBeanstalk.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the SolutionStacks collection
         /// </summary>
         /// <param name="solutionStacks">The values to add to the SolutionStacks collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListAvailableSolutionStacksResult WithSolutionStacks(IEnumerable<string> solutionStacks)
         {
             foreach (string element in solutionStacks)
@@ -71,7 +73,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if SolutionStacks property is set
         internal bool IsSetSolutionStacks()
         {
-            return this.solutionStacks.Count > 0;       
+            return this.solutionStacks.Count > 0;
         }
 
         /// <summary>
@@ -88,6 +90,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="solutionStackDetails">The values to add to the SolutionStackDetails collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListAvailableSolutionStacksResult WithSolutionStackDetails(params SolutionStackDescription[] solutionStackDetails)
         {
             foreach (SolutionStackDescription element in solutionStackDetails)
@@ -97,12 +100,13 @@ namespace Amazon.ElasticBeanstalk.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the SolutionStackDetails collection
         /// </summary>
         /// <param name="solutionStackDetails">The values to add to the SolutionStackDetails collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListAvailableSolutionStacksResult WithSolutionStackDetails(IEnumerable<SolutionStackDescription> solutionStackDetails)
         {
             foreach (SolutionStackDescription element in solutionStackDetails)
@@ -116,7 +120,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if SolutionStackDetails property is set
         internal bool IsSetSolutionStackDetails()
         {
-            return this.solutionStackDetails.Count > 0;       
+            return this.solutionStackDetails.Count > 0;
         }
     }
 }

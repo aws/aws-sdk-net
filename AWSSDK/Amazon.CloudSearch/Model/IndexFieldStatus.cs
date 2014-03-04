@@ -23,7 +23,7 @@ namespace Amazon.CloudSearch.Model
     /// <summary>
     /// <para>The value of an <c>IndexField</c> and its current status.</para>
     /// </summary>
-    public class IndexFieldStatus  
+    public partial class IndexFieldStatus
     {
         
         private IndexField options;
@@ -45,6 +45,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="options">The value to set for the Options property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public IndexFieldStatus WithOptions(IndexField options)
         {
             this.options = options;
@@ -55,7 +56,7 @@ namespace Amazon.CloudSearch.Model
         // Check to see if Options property is set
         internal bool IsSetOptions()
         {
-            return this.options != null;       
+            return this.options != null;
         }
 
         /// <summary>
@@ -73,6 +74,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="status">The value to set for the Status property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public IndexFieldStatus WithStatus(OptionStatus status)
         {
             this.status = status;
@@ -83,7 +85,7 @@ namespace Amazon.CloudSearch.Model
         // Check to see if Status property is set
         internal bool IsSetStatus()
         {
-            return this.status != null;       
+            return this.status != null;
         }
     }
 }

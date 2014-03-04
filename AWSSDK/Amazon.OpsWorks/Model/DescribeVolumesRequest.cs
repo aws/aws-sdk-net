@@ -25,12 +25,16 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeVolumes operation.
-    /// <para>Describes an instance's Amazon EBS volumes.</para>
+    /// <para>Describes an instance's Amazon EBS volumes.</para> <para><b>NOTE:</b>You must specify at least one of the parameters.</para> <para>
+    /// <b>Required Permissions</b> : To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an
+    /// attached policy that explicitly grants permissions. For more information on user permissions, see <a
+    /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
     /// </summary>
     /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.DescribeVolumes"/>
     public class DescribeVolumesRequest : AmazonWebServiceRequest
     {
         private string instanceId;
+        private string stackId;
         private string raidArrayId;
         private List<string> volumeIds = new List<string>();
 
@@ -50,6 +54,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="instanceId">The value to set for the InstanceId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeVolumesRequest WithInstanceId(string instanceId)
         {
             this.instanceId = instanceId;
@@ -61,6 +66,35 @@ namespace Amazon.OpsWorks.Model
         internal bool IsSetInstanceId()
         {
             return this.instanceId != null;
+        }
+
+        /// <summary>
+        /// A stack ID. The action describes the stack's registered Amazon EBS volumes.
+        ///  
+        /// </summary>
+        public string StackId
+        {
+            get { return this.stackId; }
+            set { this.stackId = value; }
+        }
+
+        /// <summary>
+        /// Sets the StackId property
+        /// </summary>
+        /// <param name="stackId">The value to set for the StackId property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public DescribeVolumesRequest WithStackId(string stackId)
+        {
+            this.stackId = stackId;
+            return this;
+        }
+            
+
+        // Check to see if StackId property is set
+        internal bool IsSetStackId()
+        {
+            return this.stackId != null;
         }
 
         /// <summary>
@@ -79,6 +113,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="raidArrayId">The value to set for the RaidArrayId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeVolumesRequest WithRaidArrayId(string raidArrayId)
         {
             this.raidArrayId = raidArrayId;
@@ -107,6 +142,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="volumeIds">The values to add to the VolumeIds collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeVolumesRequest WithVolumeIds(params string[] volumeIds)
         {
             foreach (string element in volumeIds)
@@ -122,6 +158,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="volumeIds">The values to add to the VolumeIds collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeVolumesRequest WithVolumeIds(IEnumerable<string> volumeIds)
         {
             foreach (string element in volumeIds)

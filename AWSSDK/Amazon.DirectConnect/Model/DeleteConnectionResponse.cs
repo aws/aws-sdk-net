@@ -34,14 +34,14 @@ namespace Amazon.DirectConnect.Model
         /// </summary>
         public DeleteConnectionResult DeleteConnectionResult
         {
-            get 
+            get
             {
                 if(this.deleteConnectionResult == null)
                 {
                     this.deleteConnectionResult = new DeleteConnectionResult();
                 }
 
-                return this.deleteConnectionResult; 
+                return this.deleteConnectionResult;
             }
             set { this.deleteConnectionResult = value; }
         }

@@ -21,16 +21,15 @@ using System.IO;
 namespace Amazon.AWSSupport.Model
 {
     /// <summary>
-    /// <para>Returns the objects or data listed below if successful. Otherwise, returns an error.</para>
+    /// <para>Contains the following objects or data if successful. Otherwise, returns an error.</para>
     /// </summary>
-    public class DescribeTrustedAdvisorChecksResult
+    public partial class DescribeTrustedAdvisorChecksResult
     {
         
         private List<TrustedAdvisorCheckDescription> checks = new List<TrustedAdvisorCheckDescription>();
 
         /// <summary>
-        /// List of the checks returned by calling <a href="API_DescribeTrustedAdvisorChecks.html"
-        /// title="DescribeTrustedAdvisorChecks">DescribeTrustedAdvisorChecks</a>
+        /// Information about all available Trusted Advisor checks.
         ///  
         /// </summary>
         public List<TrustedAdvisorCheckDescription> Checks
@@ -43,6 +42,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="checks">The values to add to the Checks collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeTrustedAdvisorChecksResult WithChecks(params TrustedAdvisorCheckDescription[] checks)
         {
             foreach (TrustedAdvisorCheckDescription element in checks)
@@ -58,6 +58,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="checks">The values to add to the Checks collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeTrustedAdvisorChecksResult WithChecks(IEnumerable<TrustedAdvisorCheckDescription> checks)
         {
             foreach (TrustedAdvisorCheckDescription element in checks)

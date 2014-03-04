@@ -55,6 +55,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// </summary>
         /// <param name="topicArn">The ARN of topic you want to subscribe to.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SubscribeRequest WithTopicArn(string topicArn)
         {
             this.topicArnField = topicArn;
@@ -96,6 +97,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// </summary>
         /// <param name="protocol">The protocol you want to use.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SubscribeRequest WithProtocol(string protocol)
         {
             this.protocolField = protocol;
@@ -137,6 +139,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// </summary>
         /// <param name="endpoint">The endpoint that you want to receive notifications.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SubscribeRequest WithEndpoint(string endpoint)
         {
             this.endpointField = endpoint;

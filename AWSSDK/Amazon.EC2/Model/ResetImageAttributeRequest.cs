@@ -30,7 +30,7 @@ namespace Amazon.EC2.Model
     /// Note - The productCodes attribute cannot be reset.
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
-    public class ResetImageAttributeRequest
+    public class ResetImageAttributeRequest : EC2Request
     {    
         private string imageIdField;
         private string attributeField;
@@ -51,6 +51,7 @@ namespace Amazon.EC2.Model
         /// <param name="imageId">ID of the AMI on which the attribute will be
         /// reset</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ResetImageAttributeRequest WithImageId(string imageId)
         {
             this.imageIdField = imageId;
@@ -81,6 +82,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="attribute">Specifies the attribute to reset</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ResetImageAttributeRequest WithAttribute(string attribute)
         {
             this.attributeField = attribute;

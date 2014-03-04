@@ -34,14 +34,14 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         public DescribeTerminationPolicyTypesResult DescribeTerminationPolicyTypesResult
         {
-            get 
+            get
             {
                 if(this.describeTerminationPolicyTypesResult == null)
                 {
                     this.describeTerminationPolicyTypesResult = new DescribeTerminationPolicyTypesResult();
                 }
 
-                return this.describeTerminationPolicyTypesResult; 
+                return this.describeTerminationPolicyTypesResult;
             }
             set { this.describeTerminationPolicyTypesResult = value; }
         }

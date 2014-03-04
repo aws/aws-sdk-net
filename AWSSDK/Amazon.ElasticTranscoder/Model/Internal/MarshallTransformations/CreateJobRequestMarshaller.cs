@@ -152,6 +152,125 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
                             writer.WritePropertyName("SegmentDuration");
                             writer.Write(output.SegmentDuration);
                         }
+
+                        if (output != null && output.Watermarks != null && output.Watermarks.Count > 0)
+                        {
+                            List<JobWatermark> watermarksList = output.Watermarks;
+                            writer.WritePropertyName("Watermarks");
+                            writer.WriteArrayStart();
+
+                            foreach (JobWatermark watermarksListValue in watermarksList) 
+                            {
+                                writer.WriteObjectStart();
+                                if (watermarksListValue != null && watermarksListValue.IsSetPresetWatermarkId()) 
+                                {
+                                    writer.WritePropertyName("PresetWatermarkId");
+                                    writer.Write(watermarksListValue.PresetWatermarkId);
+                                }
+                                if (watermarksListValue != null && watermarksListValue.IsSetInputKey()) 
+                                {
+                                    writer.WritePropertyName("InputKey");
+                                    writer.Write(watermarksListValue.InputKey);
+                                }
+                                writer.WriteObjectEnd();
+                            }
+                            writer.WriteArrayEnd();
+                        }
+
+                        if (output != null) 
+                        {
+                            JobAlbumArt albumArt = output.AlbumArt;
+                            if (albumArt != null)
+                            {
+                                writer.WritePropertyName("AlbumArt");
+                                writer.WriteObjectStart();
+                                if (albumArt != null && albumArt.IsSetMergePolicy()) 
+                                {
+                                    writer.WritePropertyName("MergePolicy");
+                                    writer.Write(albumArt.MergePolicy);
+                                }
+
+                                if (albumArt != null && albumArt.Artwork != null && albumArt.Artwork.Count > 0)
+                                {
+                                    List<Artwork> artworkList = albumArt.Artwork;
+                                    writer.WritePropertyName("Artwork");
+                                    writer.WriteArrayStart();
+
+                                    foreach (Artwork artworkListValue in artworkList) 
+                                    {
+                                        writer.WriteObjectStart();
+                                        if (artworkListValue != null && artworkListValue.IsSetInputKey()) 
+                                        {
+                                            writer.WritePropertyName("InputKey");
+                                            writer.Write(artworkListValue.InputKey);
+                                        }
+                                        if (artworkListValue != null && artworkListValue.IsSetMaxWidth()) 
+                                        {
+                                            writer.WritePropertyName("MaxWidth");
+                                            writer.Write(artworkListValue.MaxWidth);
+                                        }
+                                        if (artworkListValue != null && artworkListValue.IsSetMaxHeight()) 
+                                        {
+                                            writer.WritePropertyName("MaxHeight");
+                                            writer.Write(artworkListValue.MaxHeight);
+                                        }
+                                        if (artworkListValue != null && artworkListValue.IsSetSizingPolicy()) 
+                                        {
+                                            writer.WritePropertyName("SizingPolicy");
+                                            writer.Write(artworkListValue.SizingPolicy);
+                                        }
+                                        if (artworkListValue != null && artworkListValue.IsSetPaddingPolicy()) 
+                                        {
+                                            writer.WritePropertyName("PaddingPolicy");
+                                            writer.Write(artworkListValue.PaddingPolicy);
+                                        }
+                                        if (artworkListValue != null && artworkListValue.IsSetAlbumArtFormat()) 
+                                        {
+                                            writer.WritePropertyName("AlbumArtFormat");
+                                            writer.Write(artworkListValue.AlbumArtFormat);
+                                        }
+                                        writer.WriteObjectEnd();
+                                    }
+                                    writer.WriteArrayEnd();
+                                }
+                                writer.WriteObjectEnd();
+                            }
+                        }
+
+                        if (output != null && output.Composition != null && output.Composition.Count > 0)
+                        {
+                            List<Clip> compositionList = output.Composition;
+                            writer.WritePropertyName("Composition");
+                            writer.WriteArrayStart();
+
+                            foreach (Clip compositionListValue in compositionList) 
+                            {
+                                writer.WriteObjectStart();
+
+                                if (compositionListValue != null) 
+                                {
+                                    TimeSpan timeSpan = compositionListValue.TimeSpan;
+                                    if (timeSpan != null)
+                                    {
+                                        writer.WritePropertyName("TimeSpan");
+                                        writer.WriteObjectStart();
+                                        if (timeSpan != null && timeSpan.IsSetStartTime()) 
+                                        {
+                                            writer.WritePropertyName("StartTime");
+                                            writer.Write(timeSpan.StartTime);
+                                        }
+                                        if (timeSpan != null && timeSpan.IsSetDuration()) 
+                                        {
+                                            writer.WritePropertyName("Duration");
+                                            writer.Write(timeSpan.Duration);
+                                        }
+                                        writer.WriteObjectEnd();
+                                    }
+                                }
+                                writer.WriteObjectEnd();
+                            }
+                            writer.WriteArrayEnd();
+                        }
                         writer.WriteObjectEnd();
                     }
                 }
@@ -189,6 +308,125 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
                         {
                             writer.WritePropertyName("SegmentDuration");
                             writer.Write(outputsListValue.SegmentDuration);
+                        }
+
+                        if (outputsListValue != null && outputsListValue.Watermarks != null && outputsListValue.Watermarks.Count > 0)
+                        {
+                            List<JobWatermark> watermarksList = outputsListValue.Watermarks;
+                            writer.WritePropertyName("Watermarks");
+                            writer.WriteArrayStart();
+
+                            foreach (JobWatermark watermarksListValue in watermarksList) 
+                            {
+                                writer.WriteObjectStart();
+                                if (watermarksListValue != null && watermarksListValue.IsSetPresetWatermarkId()) 
+                                {
+                                    writer.WritePropertyName("PresetWatermarkId");
+                                    writer.Write(watermarksListValue.PresetWatermarkId);
+                                }
+                                if (watermarksListValue != null && watermarksListValue.IsSetInputKey()) 
+                                {
+                                    writer.WritePropertyName("InputKey");
+                                    writer.Write(watermarksListValue.InputKey);
+                                }
+                                writer.WriteObjectEnd();
+                            }
+                            writer.WriteArrayEnd();
+                        }
+
+                        if (outputsListValue != null) 
+                        {
+                            JobAlbumArt albumArt = outputsListValue.AlbumArt;
+                            if (albumArt != null)
+                            {
+                                writer.WritePropertyName("AlbumArt");
+                                writer.WriteObjectStart();
+                                if (albumArt != null && albumArt.IsSetMergePolicy()) 
+                                {
+                                    writer.WritePropertyName("MergePolicy");
+                                    writer.Write(albumArt.MergePolicy);
+                                }
+
+                                if (albumArt != null && albumArt.Artwork != null && albumArt.Artwork.Count > 0)
+                                {
+                                    List<Artwork> artworkList = albumArt.Artwork;
+                                    writer.WritePropertyName("Artwork");
+                                    writer.WriteArrayStart();
+
+                                    foreach (Artwork artworkListValue in artworkList) 
+                                    {
+                                        writer.WriteObjectStart();
+                                        if (artworkListValue != null && artworkListValue.IsSetInputKey()) 
+                                        {
+                                            writer.WritePropertyName("InputKey");
+                                            writer.Write(artworkListValue.InputKey);
+                                        }
+                                        if (artworkListValue != null && artworkListValue.IsSetMaxWidth()) 
+                                        {
+                                            writer.WritePropertyName("MaxWidth");
+                                            writer.Write(artworkListValue.MaxWidth);
+                                        }
+                                        if (artworkListValue != null && artworkListValue.IsSetMaxHeight()) 
+                                        {
+                                            writer.WritePropertyName("MaxHeight");
+                                            writer.Write(artworkListValue.MaxHeight);
+                                        }
+                                        if (artworkListValue != null && artworkListValue.IsSetSizingPolicy()) 
+                                        {
+                                            writer.WritePropertyName("SizingPolicy");
+                                            writer.Write(artworkListValue.SizingPolicy);
+                                        }
+                                        if (artworkListValue != null && artworkListValue.IsSetPaddingPolicy()) 
+                                        {
+                                            writer.WritePropertyName("PaddingPolicy");
+                                            writer.Write(artworkListValue.PaddingPolicy);
+                                        }
+                                        if (artworkListValue != null && artworkListValue.IsSetAlbumArtFormat()) 
+                                        {
+                                            writer.WritePropertyName("AlbumArtFormat");
+                                            writer.Write(artworkListValue.AlbumArtFormat);
+                                        }
+                                        writer.WriteObjectEnd();
+                                    }
+                                    writer.WriteArrayEnd();
+                                }
+                                writer.WriteObjectEnd();
+                            }
+                        }
+
+                        if (outputsListValue != null && outputsListValue.Composition != null && outputsListValue.Composition.Count > 0)
+                        {
+                            List<Clip> compositionList = outputsListValue.Composition;
+                            writer.WritePropertyName("Composition");
+                            writer.WriteArrayStart();
+
+                            foreach (Clip compositionListValue in compositionList) 
+                            {
+                                writer.WriteObjectStart();
+
+                                if (compositionListValue != null) 
+                                {
+                                    TimeSpan timeSpan = compositionListValue.TimeSpan;
+                                    if (timeSpan != null)
+                                    {
+                                        writer.WritePropertyName("TimeSpan");
+                                        writer.WriteObjectStart();
+                                        if (timeSpan != null && timeSpan.IsSetStartTime()) 
+                                        {
+                                            writer.WritePropertyName("StartTime");
+                                            writer.Write(timeSpan.StartTime);
+                                        }
+                                        if (timeSpan != null && timeSpan.IsSetDuration()) 
+                                        {
+                                            writer.WritePropertyName("Duration");
+                                            writer.Write(timeSpan.Duration);
+                                        }
+                                        writer.WriteObjectEnd();
+                                    }
+                                }
+                                writer.WriteObjectEnd();
+                            }
+                            writer.WriteArrayEnd();
                         }
                         writer.WriteObjectEnd();
                     }

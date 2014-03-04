@@ -32,6 +32,8 @@
 
         public ReadJobResult Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             ReadJobResult readJobResult = new ReadJobResult();
           
             int originalDepth = context.CurrentDepth;

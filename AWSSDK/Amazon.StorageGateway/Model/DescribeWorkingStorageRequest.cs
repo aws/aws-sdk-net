@@ -26,9 +26,10 @@ namespace Amazon.StorageGateway.Model
     /// <summary>
     /// Container for the parameters to the DescribeWorkingStorage operation.
     /// <para>This operation returns information about the working storage of a gateway. This operation is supported only for the gateway-stored
-    /// volume architecture. </para> <para><b>NOTE:</b> Working storage is also referred to as upload buffer. You can also use the
-    /// DescribeUploadBuffer operation to add upload buffer to a stored-volume gateway. </para> <para>The response includes disk IDs that are
-    /// configured as working storage, and it includes the amount of working storage allocated and used.</para>
+    /// volume architecture. This operation is deprecated in cached-volumes API version (20120630). Use DescribeUploadBuffer instead.</para>
+    /// <para><b>NOTE:</b> Working storage is also referred to as upload buffer. You can also use the DescribeUploadBuffer operation to add upload
+    /// buffer to a stored-volume gateway. </para> <para>The response includes disk IDs that are configured as working storage, and it includes the
+    /// amount of working storage allocated and used.</para>
     /// </summary>
     /// <seealso cref="Amazon.StorageGateway.AmazonStorageGateway.DescribeWorkingStorage"/>
     public class DescribeWorkingStorageRequest : AmazonWebServiceRequest
@@ -60,6 +61,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="gatewayARN">The value to set for the GatewayARN property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeWorkingStorageRequest WithGatewayARN(string gatewayARN)
         {
             this.gatewayARN = gatewayARN;
@@ -70,7 +72,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if GatewayARN property is set
         internal bool IsSetGatewayARN()
         {
-            return this.gatewayARN != null;       
+            return this.gatewayARN != null;
         }
     }
 }

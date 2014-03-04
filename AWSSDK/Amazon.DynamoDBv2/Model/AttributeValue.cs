@@ -34,7 +34,7 @@ namespace Amazon.DynamoDBv2.Model
         private List<MemoryStream> bS = new List<MemoryStream>();
 
         /// <summary>
-        /// Represents a String data type
+        /// A String data type
         ///  
         /// </summary>
         public string S
@@ -48,6 +48,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="s">The value to set for the S property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AttributeValue WithS(string s)
         {
             this.s = s;
@@ -62,7 +63,7 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// Represents a Number data type
+        /// A Number data type
         ///  
         /// </summary>
         public string N
@@ -76,6 +77,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="n">The value to set for the N property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AttributeValue WithN(string n)
         {
             this.n = n;
@@ -90,7 +92,7 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// Represents a Binary data type
+        /// A Binary data type
         ///  
         /// </summary>
         public MemoryStream B
@@ -104,6 +106,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="b">The value to set for the B property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AttributeValue WithB(MemoryStream b)
         {
             this.b = b;
@@ -118,7 +121,7 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// Represents a String set data type
+        /// A String set data type
         ///  
         /// </summary>
         public List<string> SS
@@ -131,6 +134,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="sS">The values to add to the SS collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AttributeValue WithSS(params string[] sS)
         {
             foreach (string element in sS)
@@ -146,6 +150,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="sS">The values to add to the SS collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AttributeValue WithSS(IEnumerable<string> sS)
         {
             foreach (string element in sS)
@@ -163,7 +168,7 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// Represents a Number set data type
+        /// Number set data type
         ///  
         /// </summary>
         public List<string> NS
@@ -176,6 +181,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="nS">The values to add to the NS collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AttributeValue WithNS(params string[] nS)
         {
             foreach (string element in nS)
@@ -191,6 +197,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="nS">The values to add to the NS collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AttributeValue WithNS(IEnumerable<string> nS)
         {
             foreach (string element in nS)
@@ -208,7 +215,7 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// Represents a Binary set data type
+        /// A Binary set data type
         ///  
         /// </summary>
         public List<MemoryStream> BS
@@ -221,6 +228,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="bS">The values to add to the BS collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AttributeValue WithBS(params MemoryStream[] bS)
         {
             foreach (MemoryStream element in bS)
@@ -236,6 +244,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="bS">The values to add to the BS collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AttributeValue WithBS(IEnumerable<MemoryStream> bS)
         {
             foreach (MemoryStream element in bS)

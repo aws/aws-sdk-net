@@ -34,7 +34,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(rebootDBInstanceRequest, "AmazonRDS");
             request.Parameters.Add("Action", "RebootDBInstance");
-            request.Parameters.Add("Version", "2013-02-12");
+            request.Parameters.Add("Version", "2013-09-09");
             if (rebootDBInstanceRequest != null && rebootDBInstanceRequest.IsSetDBInstanceIdentifier())
             {
                 request.Parameters.Add("DBInstanceIdentifier", StringUtils.FromString(rebootDBInstanceRequest.DBInstanceIdentifier));

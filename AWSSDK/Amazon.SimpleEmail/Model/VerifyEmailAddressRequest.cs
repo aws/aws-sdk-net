@@ -27,7 +27,7 @@ namespace Amazon.SimpleEmail.Model
     /// Container for the parameters to the VerifyEmailAddress operation.
     /// <para>Verifies an email address. This action causes a confirmation email message to be sent to the specified address.</para>
     /// <para><b>IMPORTANT:</b>The VerifyEmailAddress action is deprecated as of the May 15, 2012 release of Domain Verification. The
-    /// VerifyEmailIdentity action is now preferred.</para>
+    /// VerifyEmailIdentity action is now preferred.</para> <para>This action is throttled at one request per second.</para>
     /// </summary>
     /// <seealso cref="Amazon.SimpleEmail.AmazonSimpleEmailService.VerifyEmailAddress"/>
     public class VerifyEmailAddressRequest : AmazonWebServiceRequest
@@ -49,6 +49,7 @@ namespace Amazon.SimpleEmail.Model
         /// </summary>
         /// <param name="emailAddress">The value to set for the EmailAddress property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public VerifyEmailAddressRequest WithEmailAddress(string emailAddress)
         {
             this.emailAddress = emailAddress;
@@ -59,7 +60,7 @@ namespace Amazon.SimpleEmail.Model
         // Check to see if EmailAddress property is set
         internal bool IsSetEmailAddress()
         {
-            return this.emailAddress != null;       
+            return this.emailAddress != null;
         }
     }
 }

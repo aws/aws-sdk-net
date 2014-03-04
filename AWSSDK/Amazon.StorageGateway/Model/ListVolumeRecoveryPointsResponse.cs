@@ -30,19 +30,18 @@ namespace Amazon.StorageGateway.Model
 
         /// <summary>
         /// Gets and sets the ListVolumeRecoveryPointsResult property.
-        /// A JSON object containing the following fields: ListVolumeRecoveryPointsOutput$GatewayARN
-        /// ListVolumeRecoveryPointsOutput$VolumeRecoveryPointInfos
+        /// 
         /// </summary>
         public ListVolumeRecoveryPointsResult ListVolumeRecoveryPointsResult
         {
-            get 
+            get
             {
                 if(this.listVolumeRecoveryPointsResult == null)
                 {
                     this.listVolumeRecoveryPointsResult = new ListVolumeRecoveryPointsResult();
                 }
 
-                return this.listVolumeRecoveryPointsResult; 
+                return this.listVolumeRecoveryPointsResult;
             }
             set { this.listVolumeRecoveryPointsResult = value; }
         }

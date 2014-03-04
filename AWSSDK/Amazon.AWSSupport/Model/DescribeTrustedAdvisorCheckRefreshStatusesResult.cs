@@ -21,18 +21,15 @@ using System.IO;
 namespace Amazon.AWSSupport.Model
 {
     /// <summary>
-    /// <para>Returns the objects or data listed below if successful. Otherwise, returns an error.</para>
+    /// <para>Contains the following objects or data if successful. Otherwise, returns an error.</para>
     /// </summary>
-    public class DescribeTrustedAdvisorCheckRefreshStatusesResult
+    public partial class DescribeTrustedAdvisorCheckRefreshStatusesResult
     {
         
         private List<TrustedAdvisorCheckRefreshStatus> statuses = new List<TrustedAdvisorCheckRefreshStatus>();
 
         /// <summary>
-        /// List of the statuses of the Trusted Advisor checks you've specified for refresh. Status values are: <ul> <li><b>in_progress</b>. The refresh
-        /// of the check is currently executing. </li> <li><b>successful</b>. The refresh of the check has completed successfully.</li>
-        /// <li><b>enqueued</b>. The refresh check is queued for execution. </li> <li><b>abandoned</b>. An error has prevented the check from
-        /// refreshing. </li> </ul>
+        /// The refresh status of the specified Trusted Advisor checks.
         ///  
         /// </summary>
         public List<TrustedAdvisorCheckRefreshStatus> Statuses
@@ -45,6 +42,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="statuses">The values to add to the Statuses collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeTrustedAdvisorCheckRefreshStatusesResult WithStatuses(params TrustedAdvisorCheckRefreshStatus[] statuses)
         {
             foreach (TrustedAdvisorCheckRefreshStatus element in statuses)
@@ -60,6 +58,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="statuses">The values to add to the Statuses collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeTrustedAdvisorCheckRefreshStatusesResult WithStatuses(IEnumerable<TrustedAdvisorCheckRefreshStatus> statuses)
         {
             foreach (TrustedAdvisorCheckRefreshStatus element in statuses)

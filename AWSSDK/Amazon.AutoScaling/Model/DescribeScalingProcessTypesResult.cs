@@ -23,7 +23,7 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// <para> The output of the DescribeScalingProcessTypes action. </para>
     /// </summary>
-    public class DescribeScalingProcessTypesResult  
+    public partial class DescribeScalingProcessTypesResult
     {
         
         private List<ProcessType> processes = new List<ProcessType>();
@@ -42,6 +42,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="processes">The values to add to the Processes collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeScalingProcessTypesResult WithProcesses(params ProcessType[] processes)
         {
             foreach (ProcessType element in processes)
@@ -51,12 +52,13 @@ namespace Amazon.AutoScaling.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Processes collection
         /// </summary>
         /// <param name="processes">The values to add to the Processes collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeScalingProcessTypesResult WithProcesses(IEnumerable<ProcessType> processes)
         {
             foreach (ProcessType element in processes)
@@ -70,7 +72,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if Processes property is set
         internal bool IsSetProcesses()
         {
-            return this.processes.Count > 0;       
+            return this.processes.Count > 0;
         }
     }
 }

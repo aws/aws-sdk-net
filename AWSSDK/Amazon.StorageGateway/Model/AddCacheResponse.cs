@@ -30,18 +30,18 @@ namespace Amazon.StorageGateway.Model
 
         /// <summary>
         /// Gets and sets the AddCacheResult property.
-        /// The Amazon Resource Name (ARN) of the gateway for which cache storage was configured.
+        /// 
         /// </summary>
         public AddCacheResult AddCacheResult
         {
-            get 
+            get
             {
                 if(this.addCacheResult == null)
                 {
                     this.addCacheResult = new AddCacheResult();
                 }
 
-                return this.addCacheResult; 
+                return this.addCacheResult;
             }
             set { this.addCacheResult = value; }
         }

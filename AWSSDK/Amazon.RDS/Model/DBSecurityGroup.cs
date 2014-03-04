@@ -31,7 +31,7 @@ namespace Amazon.RDS.Model
     /// </ul>
     /// <para>This data type is used as a response element in the DescribeDBSecurityGroups action.</para>
     /// </summary>
-    public class DBSecurityGroup
+    public partial class DBSecurityGroup
     {
         
         private string ownerId;
@@ -42,7 +42,7 @@ namespace Amazon.RDS.Model
         private List<IPRange> iPRanges = new List<IPRange>();
 
         /// <summary>
-        /// Provides the AWS ID of the owner of a specific DB Security Group.
+        /// Provides the AWS ID of the owner of a specific DB security group.
         ///  
         /// </summary>
         public string OwnerId
@@ -56,6 +56,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="ownerId">The value to set for the OwnerId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DBSecurityGroup WithOwnerId(string ownerId)
         {
             this.ownerId = ownerId;
@@ -70,7 +71,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Specifies the name of the DB Security Group.
+        /// Specifies the name of the DB security group.
         ///  
         /// </summary>
         public string DBSecurityGroupName
@@ -84,6 +85,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="dBSecurityGroupName">The value to set for the DBSecurityGroupName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DBSecurityGroup WithDBSecurityGroupName(string dBSecurityGroupName)
         {
             this.dBSecurityGroupName = dBSecurityGroupName;
@@ -98,7 +100,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Provides the description of the DB Security Group.
+        /// Provides the description of the DB security group.
         ///  
         /// </summary>
         public string DBSecurityGroupDescription
@@ -112,6 +114,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="dBSecurityGroupDescription">The value to set for the DBSecurityGroupDescription property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DBSecurityGroup WithDBSecurityGroupDescription(string dBSecurityGroupDescription)
         {
             this.dBSecurityGroupDescription = dBSecurityGroupDescription;
@@ -126,7 +129,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Provides the VpcId of the DB Security Group.
+        /// Provides the VpcId of the DB security group.
         ///  
         /// </summary>
         public string VpcId
@@ -140,6 +143,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="vpcId">The value to set for the VpcId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DBSecurityGroup WithVpcId(string vpcId)
         {
             this.vpcId = vpcId;
@@ -167,6 +171,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="eC2SecurityGroups">The values to add to the EC2SecurityGroups collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DBSecurityGroup WithEC2SecurityGroups(params EC2SecurityGroup[] eC2SecurityGroups)
         {
             foreach (EC2SecurityGroup element in eC2SecurityGroups)
@@ -182,6 +187,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="eC2SecurityGroups">The values to add to the EC2SecurityGroups collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DBSecurityGroup WithEC2SecurityGroups(IEnumerable<EC2SecurityGroup> eC2SecurityGroups)
         {
             foreach (EC2SecurityGroup element in eC2SecurityGroups)
@@ -212,6 +218,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="iPRanges">The values to add to the IPRanges collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DBSecurityGroup WithIPRanges(params IPRange[] iPRanges)
         {
             foreach (IPRange element in iPRanges)
@@ -227,6 +234,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="iPRanges">The values to add to the IPRanges collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DBSecurityGroup WithIPRanges(IEnumerable<IPRange> iPRanges)
         {
             foreach (IPRange element in iPRanges)

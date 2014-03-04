@@ -61,6 +61,7 @@ namespace Amazon.CloudWatch.Model
         /// </summary>
         /// <param name="alarmNames">The values to add to the AlarmNames collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeAlarmsRequest WithAlarmNames(params string[] alarmNames)
         {
             foreach (string element in alarmNames)
@@ -76,6 +77,7 @@ namespace Amazon.CloudWatch.Model
         /// </summary>
         /// <param name="alarmNames">The values to add to the AlarmNames collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeAlarmsRequest WithAlarmNames(IEnumerable<string> alarmNames)
         {
             foreach (string element in alarmNames)
@@ -116,6 +118,7 @@ namespace Amazon.CloudWatch.Model
         /// </summary>
         /// <param name="alarmNamePrefix">The value to set for the AlarmNamePrefix property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeAlarmsRequest WithAlarmNamePrefix(string alarmNamePrefix)
         {
             this.alarmNamePrefix = alarmNamePrefix;
@@ -153,6 +156,7 @@ namespace Amazon.CloudWatch.Model
         /// </summary>
         /// <param name="stateValue">The value to set for the StateValue property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeAlarmsRequest WithStateValue(string stateValue)
         {
             this.stateValue = stateValue;
@@ -190,6 +194,7 @@ namespace Amazon.CloudWatch.Model
         /// </summary>
         /// <param name="actionPrefix">The value to set for the ActionPrefix property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeAlarmsRequest WithActionPrefix(string actionPrefix)
         {
             this.actionPrefix = actionPrefix;
@@ -227,6 +232,7 @@ namespace Amazon.CloudWatch.Model
         /// </summary>
         /// <param name="maxRecords">The value to set for the MaxRecords property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeAlarmsRequest WithMaxRecords(int maxRecords)
         {
             this.maxRecords = maxRecords;
@@ -255,6 +261,7 @@ namespace Amazon.CloudWatch.Model
         /// </summary>
         /// <param name="nextToken">The value to set for the NextToken property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeAlarmsRequest WithNextToken(string nextToken)
         {
             this.nextToken = nextToken;

@@ -25,10 +25,10 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the ListAccessKeys operation.
-    /// <para>Returns information about the Access Key IDs associated with the specified user. If there are none, the action returns an empty
+    /// <para>Returns information about the access key IDs associated with the specified user. If there are none, the action returns an empty
     /// list.</para> <para>Although each user is limited to a small number of keys, you can still paginate the results using the <c>MaxItems</c> and
     /// <c>Marker</c> parameters.</para> <para>If the <c>UserName</c> field is not specified, the UserName is determined implicitly based on the AWS
-    /// Access Key ID used to sign the request. Because this action works for access keys under the AWS account, this API can be used to manage root
+    /// access key ID used to sign the request. Because this action works for access keys under the AWS account, this API can be used to manage root
     /// credentials even if the AWS account has no associated users.</para> <para><b>NOTE:</b>To ensure the security of your AWS account, the secret
     /// access key is accessible only during key and user creation.</para>
     /// </summary>
@@ -67,6 +67,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="userName">The value to set for the UserName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListAccessKeysRequest WithUserName(string userName)
         {
             this.userName = userName;
@@ -77,7 +78,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if UserName property is set
         internal bool IsSetUserName()
         {
-            return this.userName != null;       
+            return this.userName != null;
         }
 
         /// <summary>
@@ -109,6 +110,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="marker">The value to set for the Marker property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListAccessKeysRequest WithMarker(string marker)
         {
             this.marker = marker;
@@ -119,12 +121,13 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;       
+            return this.marker != null;
         }
 
         /// <summary>
         /// Use this parameter only when paginating results to indicate the maximum number of keys you want in the response. If there are additional
-        /// keys beyond the maximum you specify, the <c>IsTruncated</c> response element is <c>true</c>.
+        /// keys beyond the maximum you specify, the <c>IsTruncated</c> response element is <c>true</c>. This parameter is optional. If you do not
+        /// include it, it defaults to 100.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -147,6 +150,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="maxItems">The value to set for the MaxItems property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListAccessKeysRequest WithMaxItems(int maxItems)
         {
             this.maxItems = maxItems;
@@ -157,7 +161,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if MaxItems property is set
         internal bool IsSetMaxItems()
         {
-            return this.maxItems.HasValue;       
+            return this.maxItems.HasValue;
         }
     }
 }

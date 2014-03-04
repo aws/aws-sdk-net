@@ -94,7 +94,7 @@ namespace Amazon.EC2.Model
     /// information about kernels, go the Amazon Elastic Compute Cloud Developer Guide
     /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
-    public class RunInstancesRequest
+    public class RunInstancesRequest : EC2Request
     {    
         private string imageIdField;
         private Decimal? minCountField;
@@ -134,6 +134,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="imageId">Unique ID of a machine image,</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RunInstancesRequest WithImageId(string imageId)
         {
             this.imageIdField = imageId;
@@ -174,6 +175,7 @@ namespace Amazon.EC2.Model
         /// Constraints: Between 1 and the maximum number
         /// allowed for your account (default: 20).</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RunInstancesRequest WithMinCount(Decimal minCount)
         {
             this.minCountField = minCount;
@@ -217,6 +219,7 @@ namespace Amazon.EC2.Model
         /// Between 1 and the maximum number allowed for your account
         /// (default: 20).</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RunInstancesRequest WithMaxCount(Decimal maxCount)
         {
             this.maxCountField = maxCount;
@@ -247,6 +250,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="keyName">The name of the key pair.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RunInstancesRequest WithKeyName(string keyName)
         {
             this.keyNameField = keyName;
@@ -284,6 +288,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">Names of the security group.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RunInstancesRequest WithSecurityGroup(params string[] list)
         {
             foreach (string item in list)
@@ -324,6 +329,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">IDs of the security group.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RunInstancesRequest WithSecurityGroupId(params string[] list)
         {
             foreach (string item in list)
@@ -357,6 +363,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="userData">MIME, Base64-encoded user data.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RunInstancesRequest WithUserData(string userData)
         {
             this.userDataField = userData;
@@ -399,6 +406,7 @@ namespace Amazon.EC2.Model
         ///
         /// Default: m1.small</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RunInstancesRequest WithInstanceType(string instanceType)
         {
             this.instanceTypeField = instanceType;
@@ -429,6 +437,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="placement">Specifies the placement constraints.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RunInstancesRequest WithPlacement(Placement placement)
         {
             this.placementField = placement;
@@ -460,6 +469,7 @@ namespace Amazon.EC2.Model
         /// <param name="kernelId">The ID of the kernel with which to launch the
         /// instance.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RunInstancesRequest WithKernelId(string kernelId)
         {
             this.kernelIdField = kernelId;
@@ -502,6 +512,7 @@ namespace Amazon.EC2.Model
         /// Resource Center and search for the
         /// kernel ID.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RunInstancesRequest WithRamdiskId(string ramdiskId)
         {
             this.ramdiskIdField = ramdiskId;
@@ -539,6 +550,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">Block device mapping.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RunInstancesRequest WithBlockDeviceMapping(params BlockDeviceMapping[] list)
         {
             foreach (BlockDeviceMapping item in list)
@@ -572,6 +584,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="monitoring">Enables monitoring for the instance.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RunInstancesRequest WithMonitoring(MonitoringSpecification monitoring)
         {
             this.monitoringField = monitoring;
@@ -606,6 +619,7 @@ namespace Amazon.EC2.Model
         /// the instance(s) for
         /// Amazon Virtual Private Cloud.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RunInstancesRequest WithSubnetId(string subnetId)
         {
             this.subnetIdField = subnetId;
@@ -640,6 +654,7 @@ namespace Amazon.EC2.Model
         /// terminated using the APIs. You must modify this attribute before
         /// you can terminate any "locked" instances from the APIs.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RunInstancesRequest WithDisableApiTermination(bool disableApiTermination)
         {
             this.disableApiTerminationField = disableApiTermination;
@@ -674,6 +689,7 @@ namespace Amazon.EC2.Model
         /// volumes are stopped or terminated when the instance is shut
         /// down.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RunInstancesRequest WithInstanceInitiatedShutdownBehavior(string instanceInitiatedShutdownBehavior)
         {
             this.instanceInitiatedShutdownBehaviorField = instanceInitiatedShutdownBehavior;
@@ -705,6 +721,7 @@ namespace Amazon.EC2.Model
         /// <param name="license">Specifies active licenses in use and attached
         /// to an Amazon EC2 instance.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RunInstancesRequest WithLicense(InstanceLicenseSpecification license)
         {
             this.licenseField = license;
@@ -744,6 +761,7 @@ namespace Amazon.EC2.Model
         /// specific available IP address from the
         /// subnet.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RunInstancesRequest WithPrivateIpAddress(string privateIpAddress)
         {
             this.privateIpAddressField = privateIpAddress;
@@ -774,6 +792,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="clientToken">ClientToken property</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RunInstancesRequest WithClientToken(string clientToken)
         {
             this.clientTokenField = clientToken;
@@ -811,6 +830,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">A set of one or more existing network interfaces to attach to the instance.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RunInstancesRequest WithNetworkInterfaceSet(params InstanceNetworkInterfaceSpecification[] list)
         {
             foreach (InstanceNetworkInterfaceSpecification item in list)
@@ -845,6 +865,7 @@ namespace Amazon.EC2.Model
         /// <param name="ebsOptimized">Specifies whether to use the EBS
         /// IOPS optimized option.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RunInstancesRequest WithEbsOptimized(bool ebsOptimized)
         {
             this.ebsOptimizedField = ebsOptimized;
@@ -878,6 +899,7 @@ namespace Amazon.EC2.Model
         /// An Identity and Access Management Instance Profile to associate with the instance.
         /// </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RunInstancesRequest WithInstanceProfile(IAMInstanceProfile instanceProfile)
         {
             this.instanceProfileField = instanceProfile;

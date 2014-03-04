@@ -48,6 +48,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="tags">The values to add to the Tags collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeleteTagsRequest WithTags(params Tag[] tags)
         {
             foreach (Tag element in tags)
@@ -57,12 +58,13 @@ namespace Amazon.AutoScaling.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Tags collection
         /// </summary>
         /// <param name="tags">The values to add to the Tags collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeleteTagsRequest WithTags(IEnumerable<Tag> tags)
         {
             foreach (Tag element in tags)
@@ -76,7 +78,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this.tags.Count > 0;       
+            return this.tags.Count > 0;
         }
     }
 }

@@ -23,16 +23,17 @@ namespace Amazon.OpsWorks.Model
     /// <summary>
     /// <para>Describes a user's SSH information.</para>
     /// </summary>
-    public class UserProfile
+    public partial class UserProfile
     {
         
         private string iamUserArn;
         private string name;
         private string sshUsername;
         private string sshPublicKey;
+        private bool? allowSelfManagement;
 
         /// <summary>
-        /// The user IAM ARN.
+        /// The user's IAM ARN.
         ///  
         /// </summary>
         public string IamUserArn
@@ -46,6 +47,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="iamUserArn">The value to set for the IamUserArn property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UserProfile WithIamUserArn(string iamUserArn)
         {
             this.iamUserArn = iamUserArn;
@@ -60,7 +62,7 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// The user name.
+        /// The user's name.
         ///  
         /// </summary>
         public string Name
@@ -74,6 +76,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="name">The value to set for the Name property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UserProfile WithName(string name)
         {
             this.name = name;
@@ -102,6 +105,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="sshUsername">The value to set for the SshUsername property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UserProfile WithSshUsername(string sshUsername)
         {
             this.sshUsername = sshUsername;
@@ -130,6 +134,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="sshPublicKey">The value to set for the SshPublicKey property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UserProfile WithSshPublicKey(string sshPublicKey)
         {
             this.sshPublicKey = sshPublicKey;
@@ -141,6 +146,36 @@ namespace Amazon.OpsWorks.Model
         internal bool IsSetSshPublicKey()
         {
             return this.sshPublicKey != null;
+        }
+
+        /// <summary>
+        /// Whether users can specify their own SSH public key through the My Settings page. For more information, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing User Permissions</a>.
+        ///  
+        /// </summary>
+        public bool AllowSelfManagement
+        {
+            get { return this.allowSelfManagement ?? default(bool); }
+            set { this.allowSelfManagement = value; }
+        }
+
+        /// <summary>
+        /// Sets the AllowSelfManagement property
+        /// </summary>
+        /// <param name="allowSelfManagement">The value to set for the AllowSelfManagement property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public UserProfile WithAllowSelfManagement(bool allowSelfManagement)
+        {
+            this.allowSelfManagement = allowSelfManagement;
+            return this;
+        }
+            
+
+        // Check to see if AllowSelfManagement property is set
+        internal bool IsSetAllowSelfManagement()
+        {
+            return this.allowSelfManagement.HasValue;
         }
     }
 }

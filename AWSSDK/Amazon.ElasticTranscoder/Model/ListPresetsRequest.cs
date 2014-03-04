@@ -25,12 +25,92 @@ namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
     /// Container for the parameters to the ListPresets operation.
-    /// <para>To get a list of all presets associated with the current AWS account, send a GET request to the <c>/2012-09-25/presets</c>
-    /// resource.</para>
+    /// <para>The ListPresets operation gets a list of the default presets included with Elastic Transcoder and the presets that you've added in an
+    /// AWS region.</para>
     /// </summary>
     /// <seealso cref="Amazon.ElasticTranscoder.AmazonElasticTranscoder.ListPresets"/>
     public class ListPresetsRequest : AmazonWebServiceRequest
     {
+        private string ascending;
+        private string pageToken;
+
+        /// <summary>
+        /// To list presets in chronological order by the date and time that they were created, enter <c>true</c>. To list presets in reverse
+        /// chronological order, enter <c>false</c>.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Pattern</term>
+        ///         <description>(^true$)|(^false$)</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
+        public string Ascending
+        {
+            get { return this.ascending; }
+            set { this.ascending = value; }
+        }
+
+        /// <summary>
+        /// Sets the Ascending property
+        /// </summary>
+        /// <param name="ascending">The value to set for the Ascending property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public ListPresetsRequest WithAscending(string ascending)
+        {
+            this.ascending = ascending;
+            return this;
+        }
+            
+
+        // Check to see if Ascending property is set
+        internal bool IsSetAscending()
+        {
+            return this.ascending != null;
+        }
+
+        /// <summary>
+        /// When Elastic Transcoder returns more than one page of results, use <c>pageToken</c> in subsequent <c>GET</c> requests to get each successive
+        /// page of results.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Pattern</term>
+        ///         <description>^\d{13}-\w{6}$</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
+        public string PageToken
+        {
+            get { return this.pageToken; }
+            set { this.pageToken = value; }
+        }
+
+        /// <summary>
+        /// Sets the PageToken property
+        /// </summary>
+        /// <param name="pageToken">The value to set for the PageToken property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public ListPresetsRequest WithPageToken(string pageToken)
+        {
+            this.pageToken = pageToken;
+            return this;
+        }
+            
+
+        // Check to see if PageToken property is set
+        internal bool IsSetPageToken()
+        {
+            return this.pageToken != null;
+        }
     }
 }
     

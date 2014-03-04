@@ -23,7 +23,7 @@ namespace Amazon.CloudSearch.Model
     /// <summary>
     /// <para>The stemming options configured for this search domain and the current status of those options.</para>
     /// </summary>
-    public class StemmingOptionsStatus  
+    public partial class StemmingOptionsStatus
     {
         
         private string options;
@@ -31,7 +31,7 @@ namespace Amazon.CloudSearch.Model
 
         /// <summary>
         /// Maps terms to their stems, serialized as a JSON document. The document has a single object with one property "stems" whose value is an
-        /// object mapping terms to their stems. The maximum size of a stemming document is 500KB. Example: <c>{ "stems": {"people": "person",
+        /// object mapping terms to their stems. The maximum size of a stemming document is 500 KB. Example: <c>{ "stems": {"people": "person",
         /// "walking": "walk"} }</c>
         ///  
         /// </summary>
@@ -46,6 +46,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="options">The value to set for the Options property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StemmingOptionsStatus WithOptions(string options)
         {
             this.options = options;
@@ -56,7 +57,7 @@ namespace Amazon.CloudSearch.Model
         // Check to see if Options property is set
         internal bool IsSetOptions()
         {
-            return this.options != null;       
+            return this.options != null;
         }
 
         /// <summary>
@@ -74,6 +75,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="status">The value to set for the Status property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public StemmingOptionsStatus WithStatus(OptionStatus status)
         {
             this.status = status;
@@ -84,7 +86,7 @@ namespace Amazon.CloudSearch.Model
         // Check to see if Status property is set
         internal bool IsSetStatus()
         {
-            return this.status != null;       
+            return this.status != null;
         }
     }
 }

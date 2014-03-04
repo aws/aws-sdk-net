@@ -87,6 +87,15 @@ namespace Amazon.DynamoDBv2.DataModel
 
         #region Table methods
 
+        internal Table GetTargetTableInternal<T>(DynamoDBOperationConfig operationConfig)
+        {
+            Type type = typeof(T);
+            ItemStorageConfig storageConfig = ItemStorageConfigCache.GetConfig(type);
+            Table table = GetTargetTable(storageConfig, new DynamoDBFlatConfig(operationConfig, this.config));
+            Table copy = table.Copy(Table.DynamoDBConsumer.DocumentModel);
+            return table;
+        }
+
         internal Table GetTargetTable(ItemStorageConfig storageConfig, DynamoDBFlatConfig flatConfig)
         {
             if (flatConfig == null)
@@ -378,10 +387,11 @@ namespace Amazon.DynamoDBv2.DataModel
                 return false;
             }
 
-            ICollection collection = value as ICollection;
+            IEnumerable enumerable = value as IEnumerable;
 
             Primitive primitive;
-            if (collection == null)
+            // Strings are collections of chars, don't treat them as collections
+            if (enumerable == null || value is string)
             {
                 if (canReturnPrimitive &&
                     value.GetType().IsAssignableFrom(elementType) &&
@@ -397,7 +407,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
             PrimitiveList primitiveList = new PrimitiveList();
             DynamoDBEntryType? listType = null;
-            foreach (var item in collection)
+            foreach (var item in enumerable)
             {
                 if (TryToPrimitive(elementType, item, out primitive))
                 {
@@ -550,38 +560,45 @@ namespace Amazon.DynamoDBv2.DataModel
             return filter;
         }
 
-        private static QueryFilter ComposeQueryFilter(object hashKeyValue, IEnumerable<QueryCondition> conditions, ItemStorageConfig storageConfig, out List<string> indexNames)
+        private static QueryFilter ComposeQueryFilter(DynamoDBFlatConfig currentConfig, object hashKeyValue, IEnumerable<QueryCondition> conditions, ItemStorageConfig storageConfig, out List<string> indexNames)
         {
             if (hashKeyValue == null)
                 throw new ArgumentNullException("hashKeyValue");
 
+            // Set hash key property name
+            // In case of index queries, if GSI, different key could be used
             string hashKeyProperty = storageConfig.HashKeyPropertyNames[0];
-            DynamoDBEntry hashKeyEntry = ValueToDynamoDBEntry(hashKeyProperty, hashKeyValue, storageConfig);
+            hashKeyProperty = storageConfig.GetCorrectHashKeyProperty(currentConfig, hashKeyProperty);
+
+            PropertyStorage propertyStorage = storageConfig.GetPropertyStorage(hashKeyProperty);
+            string hashAttributeName = propertyStorage.AttributeName;
+
+            DynamoDBEntry hashKeyEntry = ValueToDynamoDBEntry(propertyStorage, hashKeyValue, storageConfig);
             if (hashKeyEntry == null) throw new InvalidOperationException("Unable to convert hash key value for property " + hashKeyProperty);
-            string hashAttributeName = storageConfig.GetPropertyStorage(hashKeyProperty).AttributeName;
+            
             Document hashKey = new Document();
             hashKey[hashAttributeName] = hashKeyEntry;
 
-            return ComposeQueryFilterHelper(hashKey, conditions, storageConfig, out indexNames);
+            return ComposeQueryFilterHelper(hashKey, conditions, storageConfig, currentConfig, out indexNames);
         }
-        private static QueryFilter ComposeQueryFilterHelper(Document hashKey, IEnumerable<QueryCondition> conditions, ItemStorageConfig storageConfig, out List<string> indexNames)
+        private static QueryFilter ComposeQueryFilterHelper(Document hashKey, IEnumerable<QueryCondition> conditions, ItemStorageConfig storageConfig, DynamoDBFlatConfig currentConfig, out List<string> indexNames)
         {
             if (hashKey == null)
                 throw new ArgumentNullException("hashKey");
 
             if (storageConfig.HashKeyPropertyNames.Count != 1)
                 throw new InvalidOperationException("Must have one hash key defined for the table " + storageConfig.TableName);
-            if (storageConfig.RangeKeyPropertyNames.Count != 1)
-                throw new InvalidOperationException("Must have one range key defined for the table " + storageConfig.TableName);
+            if (storageConfig.RangeKeyPropertyNames.Count != 1 && storageConfig.IndexNameToGSIMapping.Count == 0)
+                throw new InvalidOperationException("Must have one range key or a GSI index defined for the table " + storageConfig.TableName);
 
             QueryFilter filter = new QueryFilter();
-            foreach (string hashKeyProperty in storageConfig.HashKeyPropertyNames)
-            {
-                PropertyStorage propertyStorage = storageConfig.GetPropertyStorage(hashKeyProperty);
-                string attributeName = propertyStorage.AttributeName;
-                DynamoDBEntry hashValue = hashKey[attributeName];
-                filter.AddCondition(attributeName, QueryOperator.Equal, hashValue);
-            }
+            // Configure hash-key equality condition
+            string hashKeyProperty = storageConfig.HashKeyPropertyNames[0];
+            hashKeyProperty = storageConfig.GetCorrectHashKeyProperty(currentConfig, hashKeyProperty);
+            PropertyStorage propertyStorage = storageConfig.GetPropertyStorage(hashKeyProperty);
+            string attributeName = propertyStorage.AttributeName;
+            DynamoDBEntry hashValue = hashKey[attributeName];
+            filter.AddCondition(attributeName, QueryOperator.Equal, hashValue);
 
             indexNames = new List<string>();
             if (conditions != null)
@@ -589,23 +606,23 @@ namespace Amazon.DynamoDBv2.DataModel
                 foreach (QueryCondition condition in conditions)
                 {
                     object[] conditionValues = condition.Values;
-                    PropertyStorage propertyStorage = storageConfig.GetPropertyStorage(condition.PropertyName);
-                    if (propertyStorage.IsLSIRangeKey)
-                        indexNames.AddRange(propertyStorage.Indexes);
+                    PropertyStorage conditionProperty = storageConfig.GetPropertyStorage(condition.PropertyName);
+                    if (conditionProperty.IsLSIRangeKey || conditionProperty.IsGSIKey)
+                        indexNames.AddRange(conditionProperty.Indexes);
                     List<AttributeValue> attributeValues = new List<AttributeValue>();
                     foreach (var conditionValue in conditionValues)
                     {
-                        DynamoDBEntry entry = ToDynamoDBEntry(propertyStorage, conditionValue);
+                        DynamoDBEntry entry = ToDynamoDBEntry(conditionProperty, conditionValue);
                         AttributeValue attributeValue = entry.ConvertToAttributeValue();
                         attributeValues.Add(attributeValue);
                     }
-                    filter.AddCondition(propertyStorage.AttributeName, condition.Operator, attributeValues);
+                    filter.AddCondition(conditionProperty.AttributeName, condition.Operator, attributeValues);
                 }
             }
             return filter;
         }
 
-        private static string GetQueryIndexName(ItemStorageConfig storageConfig, QueryFilter filter, DynamoDBFlatConfig flatConfig, List<string> indexNames)
+        private static string GetQueryIndexName(DynamoDBFlatConfig flatConfig, List<string> indexNames)
         {
             string specifiedIndexName = flatConfig.IndexName;
 
@@ -623,7 +640,7 @@ namespace Amazon.DynamoDBv2.DataModel
             }
 
             if (string.IsNullOrEmpty(inferredIndexName) && indexNames.Count > 0)
-                throw new InvalidOperationException("Local Secondary Index range key conditions are used but no index could be inferred from model. Specified index name = " + specifiedIndexName);
+                throw new InvalidOperationException("Index range key conditions are used but no index could be inferred from model. Specified index name = " + specifiedIndexName);
 
             // index is both specified and inferred
             if (!string.IsNullOrEmpty(specifiedIndexName) && !string.IsNullOrEmpty(inferredIndexName))
@@ -654,13 +671,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 rangeKeyPropertyName = storageConfig.RangeKeyPropertyNames.FirstOrDefault();
             else
             {
-                List<string> rangeProperties;
-                if (!storageConfig.IndexNameToRangePropertiesMapping.TryGetValue(indexName, out rangeProperties))
-                    rangeProperties = null;
-
-                if (rangeProperties == null || rangeProperties.Count != 1)
-                    throw new InvalidOperationException("Unable to determine range key from index name");
-                rangeKeyPropertyName = rangeProperties[0];
+                rangeKeyPropertyName = storageConfig.GetRangeKeyByIndex(indexName);
             }
             List<QueryCondition> conditions = new List<QueryCondition>
             {
@@ -671,9 +682,8 @@ namespace Amazon.DynamoDBv2.DataModel
 
 
         // Key creation
-        private static DynamoDBEntry ValueToDynamoDBEntry(string propertyName, object value, ItemStorageConfig storageConfig)
+        private static DynamoDBEntry ValueToDynamoDBEntry(PropertyStorage propertyStorage, object value, ItemStorageConfig storageConfig)
         {
-            PropertyStorage propertyStorage = storageConfig.GetPropertyStorage(propertyName);
             var entry = ToDynamoDBEntry(propertyStorage, value);
             return entry;
         }
@@ -701,12 +711,12 @@ namespace Amazon.DynamoDBv2.DataModel
         {
             if (storageConfig.HashKeyPropertyNames.Count != 1)
                 throw new InvalidOperationException("Must have one hash key defined for the table " + storageConfig.TableName);
-            string hashKeyPropertyName = storageConfig.HashKeyPropertyNames[0];
             Key key = new Key();
 
-            DynamoDBEntry hashKeyEntry = ValueToDynamoDBEntry(hashKeyPropertyName, hashKey, storageConfig);
-            if (hashKeyEntry == null) throw new InvalidOperationException("Unable to convert hash key value for property " + hashKeyPropertyName);
+            string hashKeyPropertyName = storageConfig.HashKeyPropertyNames[0];
             PropertyStorage hashKeyProperty = storageConfig.GetPropertyStorage(hashKeyPropertyName);
+            DynamoDBEntry hashKeyEntry = ValueToDynamoDBEntry(hashKeyProperty, hashKey, storageConfig);
+            if (hashKeyEntry == null) throw new InvalidOperationException("Unable to convert hash key value for property " + hashKeyPropertyName);
             key[hashKeyProperty.AttributeName] = hashKeyEntry.ConvertToAttributeValue();
 
             if (storageConfig.RangeKeyPropertyNames.Count > 0)
@@ -715,9 +725,10 @@ namespace Amazon.DynamoDBv2.DataModel
                     throw new InvalidOperationException("Must have one range key defined for the table");
 
                 string rangeKeyPropertyName = storageConfig.RangeKeyPropertyNames[0];
-                DynamoDBEntry rangeKeyEntry = ValueToDynamoDBEntry(rangeKeyPropertyName, rangeKey, storageConfig);
-                if (rangeKeyEntry == null) throw new InvalidOperationException("Unable to convert range key value for property " + rangeKeyPropertyName);
                 PropertyStorage rangeKeyProperty = storageConfig.GetPropertyStorage(rangeKeyPropertyName);
+
+                DynamoDBEntry rangeKeyEntry = ValueToDynamoDBEntry(rangeKeyProperty, rangeKey, storageConfig);
+                if (rangeKeyEntry == null) throw new InvalidOperationException("Unable to convert range key value for property " + rangeKeyPropertyName);
                 key[rangeKeyProperty.AttributeName] = rangeKeyEntry.ConvertToAttributeValue();
             }
 
@@ -740,8 +751,10 @@ namespace Amazon.DynamoDBv2.DataModel
         {
             if (search == null) throw new ArgumentNullException("search");
 
-            ItemStorageConfig storageConfig = ItemStorageConfigCache.GetConfig<T>();
+            // Configure search to not collect results
+            search.CollectResults = false;
 
+            ItemStorageConfig storageConfig = ItemStorageConfigCache.GetConfig<T>();
             while (!search.IsDone)
             {
                 List<Document> set = search.GetNextSet();
@@ -753,6 +766,88 @@ namespace Amazon.DynamoDBv2.DataModel
                     yield return instance;
                 }
             }
+
+            // Reset search to allow retrieving items more than once
+            search.Reset();
+        }
+
+        #endregion
+
+        #region Scan/Query
+
+        private Search ConvertScan<T>(IEnumerable<ScanCondition> conditions, DynamoDBOperationConfig operationConfig)
+        {
+            ItemStorageConfig storageConfig = ItemStorageConfigCache.GetConfig<T>();
+            ScanFilter filter = ComposeScanFilter(conditions, storageConfig);
+
+            DynamoDBFlatConfig config = new DynamoDBFlatConfig(operationConfig, this.config);
+            Table table = GetTargetTable(storageConfig, config);
+            ScanOperationConfig scanConfig = new ScanOperationConfig
+            {
+                AttributesToGet = storageConfig.AttributesToGet,
+                Select = SelectValues.SpecificAttributes,
+                Filter = filter
+            };
+            Search scan = table.Scan(scanConfig);
+            return scan;
+        }
+
+        private Search ConvertFromScan<T>(ScanOperationConfig scanConfig, DynamoDBOperationConfig operationConfig)
+        {
+            Table table = GetTargetTableInternal<T>(operationConfig);
+            Search search = table.Scan(scanConfig);
+            return search;
+        }
+
+        private Search ConvertFromQuery<T>(QueryOperationConfig queryConfig, DynamoDBOperationConfig operationConfig)
+        {
+            Table table = GetTargetTableInternal<T>(operationConfig);
+            Search search = table.Query(queryConfig);
+            return search;
+        }
+
+        private Search ConvertQueryByValue<T>(object hashKeyValue, QueryOperator op, IEnumerable<object> values, DynamoDBOperationConfig operationConfig)
+        {
+            ItemStorageConfig storageConfig = ItemStorageConfigCache.GetConfig<T>();
+            List<QueryCondition> conditions = CreateQueryConditions(operationConfig, op, values, storageConfig);
+            Search query = ConvertQueryByValue<T>(hashKeyValue, conditions, operationConfig, storageConfig);
+            return query;
+        }
+
+        private Search ConvertQueryByValue<T>(object hashKeyValue, IEnumerable<QueryCondition> conditions, DynamoDBOperationConfig operationConfig, ItemStorageConfig storageConfig = null)
+        {
+            if (storageConfig == null)
+                storageConfig = ItemStorageConfigCache.GetConfig<T>();
+
+            List<string> indexNames;
+            DynamoDBFlatConfig currentConfig = new DynamoDBFlatConfig(operationConfig, this.config);
+            QueryFilter filter = ComposeQueryFilter(currentConfig, hashKeyValue, conditions, storageConfig, out indexNames);
+            return ConvertQueryHelper<T>(currentConfig, storageConfig, filter, indexNames);
+        }
+        private Search ConvertQueryHelper<T>(DynamoDBFlatConfig currentConfig, ItemStorageConfig storageConfig, QueryFilter filter, List<string> indexNames)
+        {
+            Table table = GetTargetTable(storageConfig, currentConfig);
+            string indexName = GetQueryIndexName(currentConfig, indexNames);
+            var queryConfig = new QueryOperationConfig
+            {
+                Filter = filter,
+                ConsistentRead = currentConfig.ConsistentRead.Value,
+                BackwardSearch = currentConfig.BackwardQuery.Value,
+                IndexName = indexName
+            };
+            if (string.IsNullOrEmpty(indexName))
+            {
+                queryConfig.Select = SelectValues.SpecificAttributes;
+                List<string> attributesToGet = storageConfig.AttributesToGet;
+                queryConfig.AttributesToGet = attributesToGet;
+            }
+            else
+            {
+                queryConfig.Select = SelectValues.AllProjectedAttributes;
+            }
+            Search query = table.Query(queryConfig);
+
+            return query;
         }
 
         #endregion

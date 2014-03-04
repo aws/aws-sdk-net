@@ -52,6 +52,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// </summary>
         /// <param name="topicArn">The ARN of the topic whose access control policy you wish to modify.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AddPermissionRequest WithTopicArn(string topicArn)
         {
             this.topicArnField = topicArn;
@@ -82,6 +83,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// </summary>
         /// <param name="label">A unique identifier for the new policy statement.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AddPermissionRequest WithLabel(string label)
         {
             this.labelField = label;
@@ -123,6 +125,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// <param name="list">The AWS account IDs of the users (principals) who will be given access to the specified
         /// actions.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AddPermissionRequest WithAWSAccountIds(params string[] list)
         {
             foreach (string item in list)
@@ -167,6 +170,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// </summary>
         /// <param name="list">The action you want to allow for the specified principal(s).</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AddPermissionRequest WithActionNames(params string[] list)
         {
             foreach (string item in list)

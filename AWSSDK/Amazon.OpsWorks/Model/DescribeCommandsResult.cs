@@ -23,7 +23,7 @@ namespace Amazon.OpsWorks.Model
     /// <summary>
     /// <para>Contains the response to a <c>DescribeCommands</c> request.</para>
     /// </summary>
-    public class DescribeCommandsResult
+    public partial class DescribeCommandsResult
     {
         
         private List<Command> commands = new List<Command>();
@@ -42,6 +42,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="commands">The values to add to the Commands collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeCommandsResult WithCommands(params Command[] commands)
         {
             foreach (Command element in commands)
@@ -57,6 +58,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="commands">The values to add to the Commands collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeCommandsResult WithCommands(IEnumerable<Command> commands)
         {
             foreach (Command element in commands)

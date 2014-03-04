@@ -21,9 +21,9 @@ using System.IO;
 namespace Amazon.AWSSupport.Model
 {
     /// <summary>
-    /// <para>JSON-formatted object that represents an AWS Service returned by the DescribeServices action. </para>
+    /// <para>Represents an AWS Service returned by the DescribeServices action. </para>
     /// </summary>
-    public class Service
+    public partial class Service
     {
         
         private string code;
@@ -31,8 +31,7 @@ namespace Amazon.AWSSupport.Model
         private List<Category> categories = new List<Category>();
 
         /// <summary>
-        /// JSON-formatted string that represents a code for an AWS service returned by <a href="API_DescribeServices.html"
-        /// title="DescribeServices">DescribeServices</a> response. Has a corrsponding name represented by a service.name string.
+        /// The code for an AWS service returned by <a>DescribeServices</a> response. Has a corresponding name represented by Service.name.
         ///  
         /// </summary>
         public string Code
@@ -46,6 +45,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="code">The value to set for the Code property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Service WithCode(string code)
         {
             this.code = code;
@@ -60,7 +60,7 @@ namespace Amazon.AWSSupport.Model
         }
 
         /// <summary>
-        /// JSON-formatted string that represents the friendly name for an AWS service. Has a corresponding code reprsented by a Service.code string.
+        /// The friendly name for an AWS service. Has a corresponding code represented by Service.code.
         ///  
         /// </summary>
         public string Name
@@ -74,6 +74,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="name">The value to set for the Name property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Service WithName(string name)
         {
             this.name = name;
@@ -88,9 +89,8 @@ namespace Amazon.AWSSupport.Model
         }
 
         /// <summary>
-        /// JSON-formatted list of categories that describe the type of support issue a case describes. Categories are strings that represent a category
-        /// name and a category code. Category names and codes are passed to AWS Support when you call <a href="API_CreateCase.html"
-        /// title="CreateCase">CreateCase</a>.
+        /// A list of categories that describe the type of support issue a case describes. Categories consist of a category name and a category code.
+        /// Category names and codes are passed to AWS Support when you call <a>CreateCase</a>.
         ///  
         /// </summary>
         public List<Category> Categories
@@ -103,6 +103,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="categories">The values to add to the Categories collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Service WithCategories(params Category[] categories)
         {
             foreach (Category element in categories)
@@ -118,6 +119,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="categories">The values to add to the Categories collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Service WithCategories(IEnumerable<Category> categories)
         {
             foreach (Category element in categories)

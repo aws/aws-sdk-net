@@ -35,11 +35,12 @@ namespace Amazon.AutoScaling.Model
     /// </ul>
     /// </para> <para><b>IMPORTANT:</b> If you suspend Launch or Terminate, all other process types are affected to varying degrees. The following
     /// descriptions discuss how each process type is affected by a suspension of Launch or Terminate. </para> <para> The <c>AddToLoadBalancer</c>
-    /// process type adds instances to the the load balancer when the instances are launched. If you suspend this process, Auto Scaling will launch
-    /// the instances but will not add them to the load balancer. If you resume the <c>AddToLoadBalancer</c> process, Auto Scaling will also resume
+    /// process type adds instances to the load balancer when the instances are launched. If you suspend this process, Auto Scaling will launch the
+    /// instances but will not add them to the load balancer. If you resume the <c>AddToLoadBalancer</c> process, Auto Scaling will also resume
     /// adding new instances to the load balancer when they are launched. However, Auto Scaling will not add running instances that were launched
-    /// while the process was suspended; those instances must be added manually using the the RegisterInstancesWithLoadBalancer call in the
-    /// <i>Elastic Load Balancing API Reference</i> .
+    /// while the process was suspended; those instances must be added manually using the the <a
+    /// href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/APIReference/API_RegisterInstancesWithLoadBalancer.html" >
+    /// RegisterInstancesWithLoadBalancer</a> call in the <i>Elastic Load Balancing API Reference</i> .
     /// </para> <para> The <c>AlarmNotification</c> process type accepts notifications from Amazon CloudWatch alarms that are associated
     /// with the Auto Scaling group. If you suspend the <c>AlarmNotification</c> process type, Auto Scaling will not automatically execute scaling
     /// policies that would be triggered by alarms. </para> <para> Although the <c>AlarmNotification</c> process type is not directly affected by a
@@ -67,7 +68,7 @@ namespace Amazon.AutoScaling.Model
     /// actions often involve launching new instances or terminating existing instances. If you suspend either <c>Launch</c> or <c>Terminate</c> ,
     /// your scheduled actions might not function as expected. </para>
     /// </summary>
-    public class ProcessType  
+    public partial class ProcessType
     {
         
         private string processName;
@@ -100,6 +101,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="processName">The value to set for the ProcessName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ProcessType WithProcessName(string processName)
         {
             this.processName = processName;
@@ -110,7 +112,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if ProcessName property is set
         internal bool IsSetProcessName()
         {
-            return this.processName != null;       
+            return this.processName != null;
         }
     }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -31,8 +31,9 @@ namespace Amazon.CloudFormation.Model
     /// you should use ListStackResources instead.</para> <para>For deleted stacks, <c>DescribeStackResources</c> returns resource information for
     /// up to 90 days after the stack has been deleted.</para> <para>You must specify either <c>StackName</c> or <c>PhysicalResourceId</c> , but not
     /// both. In addition, you can specify <c>LogicalResourceId</c> to filter the returned result. For more information about resources, the
-    /// <c>LogicalResourceId</c> and <c>PhysicalResourceId</c> , go to the AWS CloudFormation User Guide.</para> <para><b>NOTE:</b>A ValidationError
-    /// is returned if you specify both StackName and PhysicalResourceId in the same request.</para>
+    /// <c>LogicalResourceId</c> and <c>PhysicalResourceId</c> , go to the <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide"
+    /// >AWS CloudFormation User Guide</a> .</para> <para><b>NOTE:</b>A ValidationError is returned if you specify both StackName and
+    /// PhysicalResourceId in the same request.</para>
     /// </summary>
     /// <seealso cref="Amazon.CloudFormation.AmazonCloudFormation.DescribeStackResources"/>
     public class DescribeStackResourcesRequest : AmazonWebServiceRequest
@@ -57,6 +58,7 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         /// <param name="stackName">The value to set for the StackName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeStackResourcesRequest WithStackName(string stackName)
         {
             this.stackName = stackName;
@@ -85,6 +87,7 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         /// <param name="logicalResourceId">The value to set for the LogicalResourceId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeStackResourcesRequest WithLogicalResourceId(string logicalResourceId)
         {
             this.logicalResourceId = logicalResourceId;
@@ -117,6 +120,7 @@ namespace Amazon.CloudFormation.Model
         /// </summary>
         /// <param name="physicalResourceId">The value to set for the PhysicalResourceId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeStackResourcesRequest WithPhysicalResourceId(string physicalResourceId)
         {
             this.physicalResourceId = physicalResourceId;

@@ -34,14 +34,14 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         public TerminateInstanceInAutoScalingGroupResult TerminateInstanceInAutoScalingGroupResult
         {
-            get 
+            get
             {
                 if(this.terminateInstanceInAutoScalingGroupResult == null)
                 {
                     this.terminateInstanceInAutoScalingGroupResult = new TerminateInstanceInAutoScalingGroupResult();
                 }
 
-                return this.terminateInstanceInAutoScalingGroupResult; 
+                return this.terminateInstanceInAutoScalingGroupResult;
             }
             set { this.terminateInstanceInAutoScalingGroupResult = value; }
         }

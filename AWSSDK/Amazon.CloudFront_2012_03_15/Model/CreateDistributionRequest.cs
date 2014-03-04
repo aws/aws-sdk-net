@@ -55,6 +55,7 @@ namespace Amazon.CloudFront_2012_03_15.Model
         /// </summary>
         /// <param name="distributionConfig">The value that DistributionConfig is set to</param>
         /// <returns>the request with the Id set</returns>
+        [System.Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateDistributionRequest WithDistributionConfig(CloudFrontDistributionConfig distributionConfig)
         {
             this.dConfig = distributionConfig;

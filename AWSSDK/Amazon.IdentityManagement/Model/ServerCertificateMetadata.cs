@@ -24,7 +24,7 @@ namespace Amazon.IdentityManagement.Model
     /// <para>ServerCertificateMetadata contains information about a server certificate without its certificate body, certificate chain, and private
     /// key.</para> <para>This data type is used as a response element in the action UploadServerCertificate and ListServerCertificates.</para>
     /// </summary>
-    public class ServerCertificateMetadata  
+    public partial class ServerCertificateMetadata
     {
         
         private string path;
@@ -35,8 +35,8 @@ namespace Amazon.IdentityManagement.Model
 
         /// <summary>
         /// Path to the server certificate. For more information about paths, see <a
-        /// href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM
-        /// Entities</a> in <i>Using AWS Identity and Access Management</i>.
+        /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in
+        /// <i>Using AWS Identity and Access Management</i>.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -63,6 +63,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="path">The value to set for the Path property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ServerCertificateMetadata WithPath(string path)
         {
             this.path = path;
@@ -73,7 +74,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if Path property is set
         internal bool IsSetPath()
         {
-            return this.path != null;       
+            return this.path != null;
         }
 
         /// <summary>
@@ -104,6 +105,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="serverCertificateName">The value to set for the ServerCertificateName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ServerCertificateMetadata WithServerCertificateName(string serverCertificateName)
         {
             this.serverCertificateName = serverCertificateName;
@@ -114,13 +116,13 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if ServerCertificateName property is set
         internal bool IsSetServerCertificateName()
         {
-            return this.serverCertificateName != null;       
+            return this.serverCertificateName != null;
         }
 
         /// <summary>
         /// The stable and unique string identifying the server certificate. For more information about IDs, see <a
-        /// href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM
-        /// Entities</a> in <i>Using AWS Identity and Access Management</i>.
+        /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in
+        /// <i>Using AWS Identity and Access Management</i>.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -147,6 +149,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="serverCertificateId">The value to set for the ServerCertificateId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ServerCertificateMetadata WithServerCertificateId(string serverCertificateId)
         {
             this.serverCertificateId = serverCertificateId;
@@ -157,13 +160,13 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if ServerCertificateId property is set
         internal bool IsSetServerCertificateId()
         {
-            return this.serverCertificateId != null;       
+            return this.serverCertificateId != null;
         }
 
         /// <summary>
         /// The Amazon Resource Name (ARN) specifying the server certificate. For more information about ARNs and how to use them in policies, see <a
-        /// href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM
-        /// Entities</a> in <i>Using AWS Identity and Access Management</i>.
+        /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in
+        /// <i>Using AWS Identity and Access Management</i>.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -186,6 +189,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="arn">The value to set for the Arn property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ServerCertificateMetadata WithArn(string arn)
         {
             this.arn = arn;
@@ -196,7 +200,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if Arn property is set
         internal bool IsSetArn()
         {
-            return this.arn != null;       
+            return this.arn != null;
         }
 
         /// <summary>
@@ -214,6 +218,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="uploadDate">The value to set for the UploadDate property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ServerCertificateMetadata WithUploadDate(DateTime uploadDate)
         {
             this.uploadDate = uploadDate;
@@ -224,7 +229,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if UploadDate property is set
         internal bool IsSetUploadDate()
         {
-            return this.uploadDate.HasValue;       
+            return this.uploadDate.HasValue;
         }
     }
 }

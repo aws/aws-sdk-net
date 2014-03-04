@@ -24,6 +24,7 @@ using System.Security;
 using Amazon.SecurityToken;
 using Amazon.SecurityToken.Model;
 using ThirdParty.Json.LitJson;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.Runtime
 {
@@ -516,6 +517,29 @@ namespace Amazon.Runtime
 
         private CredentialsRefreshState _currentState = null;
         private object _refreshLock = new object();
+        #endregion
+
+        #region Private members
+        private static Logger _logger = Logger.GetLogger(typeof(RefreshingAWSCredentials));
+        private TimeSpan _preemptExpiryTime = TimeSpan.FromMinutes(0);
+
+        #endregion
+
+        #region Properties
+
+        /// <summary>
+        /// The time before actual expiration to expire the credentials.        
+        /// Property cannot be set to a negative TimeSpan.
+        /// </summary>
+        public TimeSpan PreemptExpiryTime
+        {
+            get { return _preemptExpiryTime; }
+            set
+            {
+                if (value < TimeSpan.Zero) throw new ArgumentOutOfRangeException("PreemptExpiryTime cannot be negative");
+                _preemptExpiryTime = value;
+            }
+        }
 
         #endregion
 
@@ -543,6 +567,17 @@ namespace Amazon.Runtime
                     if (ShouldUpdate)
                     {
                         throw new AmazonClientException("The retrieved credentials have already expired");
+                    }
+
+                    // Offset the Expiration by PreemptExpiryTime
+                    _currentState.Expiration -= PreemptExpiryTime;
+
+                    if (ShouldUpdate)
+                    {
+                        // This should happen if the default value of PreemptExpiryTime is
+                        // overriden and set too high such that ShouldUpdate returns true.
+                        _logger.InfoFormat("The preempt expiry time is set too high: {0}.",
+                            PreemptExpiryTime);
                     }
                 }
 
@@ -597,6 +632,10 @@ namespace Amazon.Runtime
                         _currentState.Dispose();
                         _currentState = null;
                     }
+                    if (_logger!=null)
+                    {
+                        _logger.Flush();
+                    }
                 }
 
                 _disposed = true;
@@ -614,29 +653,14 @@ namespace Amazon.Runtime
     {
         #region Private members
 
+        private static TimeSpan _preemptExpiryTime = TimeSpan.FromMinutes(15);
         private bool _ownStsClient;
         private AmazonSecurityTokenService _stsClient;
-        private TimeSpan _preemptExpiryTime = TimeSpan.FromMinutes(15);
-
+ 
         #endregion
 
 
         #region Properties
-
-        /// <summary>
-        /// The time before actual expiration to expire the credentials.
-        /// Default PreemptExpiryTime is 15 minutes.
-        /// Property cannot be set to a negative TimeSpan.
-        /// </summary>
-        public TimeSpan PreemptExpiryTime
-        {
-            get { return _preemptExpiryTime; }
-            set
-            {
-                if (value < TimeSpan.Zero) throw new ArgumentOutOfRangeException("PreemptExpiryTime cannot be negative");
-                _preemptExpiryTime = value;
-            }
-        }
 
         internal string UniqueIdentifier
         {
@@ -660,6 +684,7 @@ namespace Amazon.Runtime
         {
             _stsClient = stsClient;
             _ownStsClient = ownStsClient;
+            this.PreemptExpiryTime = _preemptExpiryTime;
         }
 
         /// <summary>
@@ -808,7 +833,7 @@ namespace Amazon.Runtime
             var state = new CredentialsRefreshState
             {
                 Credentials = new ImmutableCredentials(sessionCredentials.AccessKeyId, sessionCredentials.SecretAccessKey, sessionCredentials.SessionToken, false),
-                Expiration = sessionCredentials.Expiration - PreemptExpiryTime
+                Expiration = sessionCredentials.Expiration
             };
 
             return state;
@@ -836,6 +861,18 @@ namespace Amazon.Runtime
     /// </summary>
     public class InstanceProfileAWSCredentials : RefreshingAWSCredentials
     {
+        #region Private members
+
+        // Set preempt expiry to 15 minutes. New access keys are available at least 15 minutes before expiry time.
+        // http://docs.aws.amazon.com/IAM/latest/UserGuide/role-usecase-ec2app.html
+        private static TimeSpan _preemptExpiryTime = TimeSpan.FromMinutes(15);
+
+        private CredentialsRefreshState _currentRefreshState = null;
+        private static TimeSpan _refreshAttemptPeriod = TimeSpan.FromHours(1);
+        private static Logger _logger = Logger.GetLogger(typeof(InstanceProfileAWSCredentials));
+
+        #endregion
+
         #region Properties
 
         /// <summary>
@@ -850,7 +887,28 @@ namespace Amazon.Runtime
 
         protected override CredentialsRefreshState GenerateNewCredentials()
         {
-            CredentialsRefreshState state = GetRefreshState();
+            CredentialsRefreshState newState = null;
+            try
+            {
+                // Attempt to get early credentials. OK to fail at this point.
+                newState = GetRefreshState();
+            }
+            catch (Exception e)
+            {
+                _logger.InfoFormat("Error getting credentials from Instance Profile service: {0}", e);
+            }
+
+            // If successful, save new credentials
+            if (newState != null)
+                _currentRefreshState = newState;
+
+            // If still not successful (no credentials available at start), attempt once more to
+            // get credentials, but now without swallowing exception
+            if (_currentRefreshState == null)
+                _currentRefreshState = GetRefreshState();
+
+            // Return credentials that will expire in at most one hour
+            CredentialsRefreshState state = GetEarlyRefreshState(_currentRefreshState);
             return state;
         }
 
@@ -866,6 +924,7 @@ namespace Amazon.Runtime
         public InstanceProfileAWSCredentials(string role)
         {
             Role = role;
+            this.PreemptExpiryTime = _preemptExpiryTime;
         }
 
         /// <summary>
@@ -929,6 +988,21 @@ namespace Amazon.Runtime
             {
                 return new Uri(Server + InfoPath);
             }
+        }
+
+        private CredentialsRefreshState GetEarlyRefreshState(CredentialsRefreshState state)
+        {
+            // New expiry time = Now + _refreshAttemptPeriod + PreemptExpiryTime
+            var newExpiryTime = DateTime.Now + _refreshAttemptPeriod + PreemptExpiryTime;
+            // Use this only if the time is earlier than the default expiration time
+            if (newExpiryTime > state.Expiration)
+                newExpiryTime = state.Expiration;
+
+            return new CredentialsRefreshState
+            {
+                Credentials = state.Credentials.Copy(),
+                Expiration = newExpiryTime
+            };
         }
 
         private CredentialsRefreshState GetRefreshState()

@@ -1,4 +1,4 @@
-﻿/*******************************************************************************
+/*******************************************************************************
  *  Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  *  this file except in compliance with the License. A copy of the License is located at
@@ -61,6 +61,7 @@ namespace Amazon.S3.Model
         /// </remarks>
         /// <param name="id">Rule identifier</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CORSRule WithId(string id)
         {
             this.id = id;
@@ -106,6 +107,7 @@ namespace Amazon.S3.Model
         /// </remarks>
         /// <param name="args">AllowedMethods property</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CORSRule WithAllowedMethods(params string[] args)
         {
             foreach (string arg in args)
@@ -159,6 +161,7 @@ namespace Amazon.S3.Model
         /// </remarks>
         /// <param name="args">AllowedOrigins property</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CORSRule WithAllowedOrigins(params string[] args)
         {
             foreach (string arg in args)
@@ -198,6 +201,7 @@ namespace Amazon.S3.Model
         /// </remarks>
         /// <param name="maxAgeSeconds">MaxAgeSeconds property</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CORSRule WithMaxAgeSeconds(int maxAgeSeconds)
         {
             this.maxAgeSeconds = maxAgeSeconds;
@@ -244,6 +248,7 @@ namespace Amazon.S3.Model
         /// </remarks>
         /// <param name="args">ExposeHeaders property</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CORSRule WithExposeHeaders(params string[] args)
         {
             foreach (string arg in args)
@@ -297,6 +302,7 @@ namespace Amazon.S3.Model
         /// </remarks>
         /// <param name="args">AllowedHeaders property</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CORSRule WithAllowedHeaders(params string[] args)
         {
             foreach (string arg in args)

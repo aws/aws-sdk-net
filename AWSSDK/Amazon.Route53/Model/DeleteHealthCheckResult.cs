@@ -23,7 +23,7 @@ namespace Amazon.Route53.Model
     /// <summary>
     /// <para>Empty response for the request.</para>
     /// </summary>
-    public class DeleteHealthCheckResult
+    public partial class DeleteHealthCheckResult
     {
         
     }

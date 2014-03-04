@@ -11,29 +11,31 @@
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
- */ 
+ */
     using System;
     using System.Collections.Generic;
     using System.IO;
     using Amazon.Glacier.Model;
     using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.Glacier.Model.Internal.MarshallTransformations 
-    { 
-      /// <summary> 
-      /// DescribeVaultOutputUnmarshaller 
-      /// </summary> 
-      internal class DescribeVaultOutputUnmarshaller : IUnmarshaller<DescribeVaultOutput, XmlUnmarshallerContext>, IUnmarshaller<DescribeVaultOutput, JsonUnmarshallerContext> 
-      { 
+    namespace Amazon.Glacier.Model.Internal.MarshallTransformations
+    {
+      /// <summary>
+      /// DescribeVaultOutputUnmarshaller
+      /// </summary>
+      internal class DescribeVaultOutputUnmarshaller : IUnmarshaller<DescribeVaultOutput, XmlUnmarshallerContext>, IUnmarshaller<DescribeVaultOutput, JsonUnmarshallerContext>
+      {
         DescribeVaultOutput IUnmarshaller<DescribeVaultOutput, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
           throw new NotImplementedException();
         }
-        
-        public DescribeVaultOutput Unmarshall(JsonUnmarshallerContext context) 
+
+        public DescribeVaultOutput Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             DescribeVaultOutput describeVaultOutput = new DescribeVaultOutput();
-                    
+          
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             while (context.Read())
@@ -42,61 +44,61 @@
                 {
                 context.Read();
                 context.Read();
-               
-              if (context.TestExpression("VaultARN", targetDepth)) 
+              
+              if (context.TestExpression("VaultARN", targetDepth))
               {
                 describeVaultOutput.VaultARN = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue; 
+                continue;
               }
-   
-              if (context.TestExpression("VaultName", targetDepth)) 
+  
+              if (context.TestExpression("VaultName", targetDepth))
               {
                 describeVaultOutput.VaultName = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue; 
+                continue;
               }
-   
-              if (context.TestExpression("CreationDate", targetDepth)) 
+  
+              if (context.TestExpression("CreationDate", targetDepth))
               {
                 describeVaultOutput.CreationDate = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                continue; 
+                continue;
               }
-   
-              if (context.TestExpression("LastInventoryDate", targetDepth)) 
+  
+              if (context.TestExpression("LastInventoryDate", targetDepth))
               {
                 describeVaultOutput.LastInventoryDate = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
-                continue; 
+                continue;
               }
-   
-              if (context.TestExpression("NumberOfArchives", targetDepth)) 
+  
+              if (context.TestExpression("NumberOfArchives", targetDepth))
               {
                 describeVaultOutput.NumberOfArchives = LongUnmarshaller.GetInstance().Unmarshall(context);
-                continue; 
+                continue;
               }
-   
-              if (context.TestExpression("SizeInBytes", targetDepth)) 
+  
+              if (context.TestExpression("SizeInBytes", targetDepth))
               {
                 describeVaultOutput.SizeInBytes = LongUnmarshaller.GetInstance().Unmarshall(context);
-                continue; 
+                continue;
               }
-   
-                } 
-                else if (context.IsEndElement && context.CurrentDepth <= originalDepth) 
-                { 
-                    return describeVaultOutput; 
-                } 
-            } 
+  
+                }
+                else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
+                {
+                    return describeVaultOutput;
+                }
+            }
           
-          
-            return describeVaultOutput; 
-        } 
-        
-        private static DescribeVaultOutputUnmarshaller instance; 
-        public static DescribeVaultOutputUnmarshaller GetInstance() 
-        { 
-            if (instance == null) 
-                instance = new DescribeVaultOutputUnmarshaller(); 
+
+            return describeVaultOutput;
+        }
+
+        private static DescribeVaultOutputUnmarshaller instance;
+        public static DescribeVaultOutputUnmarshaller GetInstance()
+        {
+            if (instance == null)
+                instance = new DescribeVaultOutputUnmarshaller();
             return instance;
-        } 
-    } 
-} 
+        }
+    }
+}
   

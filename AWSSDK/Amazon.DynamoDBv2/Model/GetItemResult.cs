@@ -44,6 +44,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="pairs">The pairs to be added to the Item dictionary.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetItemResult WithItem(params KeyValuePair<string, AttributeValue>[] pairs)
         {
             foreach (KeyValuePair<string, AttributeValue> pair in pairs)
@@ -61,10 +62,11 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// The table name that consumed provisioned throughput, and the number of capacity units consumed by it. <i>ConsumedCapacity</i> is only
-        /// returned if it was asked for in the request. For more information, see <a
+        /// Represents the capacity units consumed by an operation. The data returned includes the total provisioned throughput consumed, along with
+        /// statistics for the table and any indexes involved in the operation. <i>ConsumedCapacity</i> is only returned if it was asked for in the
+        /// request. For more information, see <a
         /// href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned Throughput</a> in the
-        /// <i>Amazon DynamoDB Developer Guide</i>.
+        /// Amazon DynamoDB Developer Guide.
         ///  
         /// </summary>
         public ConsumedCapacity ConsumedCapacity
@@ -78,6 +80,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="consumedCapacity">The value to set for the ConsumedCapacity property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetItemResult WithConsumedCapacity(ConsumedCapacity consumedCapacity)
         {
             this.consumedCapacity = consumedCapacity;

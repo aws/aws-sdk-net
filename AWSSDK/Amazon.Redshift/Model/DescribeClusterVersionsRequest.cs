@@ -26,8 +26,9 @@ namespace Amazon.Redshift.Model
     /// <summary>
     /// Container for the parameters to the DescribeClusterVersions operation.
     /// <para> Returns descriptions of the available Amazon Redshift cluster versions. You can call this operation even before creating any
-    /// clusters to learn more about the Amazon Redshift versions. For more information about managing clusters, go to Amazon Redshift Clusters in
-    /// the <i>Amazon Redshift Management Guide</i> </para>
+    /// clusters to learn more about the Amazon Redshift versions. For more information about managing clusters, go to <a
+    /// href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html" >Amazon Redshift Clusters</a> in the <i>Amazon Redshift
+    /// Management Guide</i> </para>
     /// </summary>
     /// <seealso cref="Amazon.Redshift.AmazonRedshift.DescribeClusterVersions"/>
     public class DescribeClusterVersionsRequest : AmazonWebServiceRequest
@@ -52,6 +53,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="clusterVersion">The value to set for the ClusterVersion property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeClusterVersionsRequest WithClusterVersion(string clusterVersion)
         {
             this.clusterVersion = clusterVersion;
@@ -81,6 +83,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="clusterParameterGroupFamily">The value to set for the ClusterParameterGroupFamily property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeClusterVersionsRequest WithClusterParameterGroupFamily(string clusterParameterGroupFamily)
         {
             this.clusterParameterGroupFamily = clusterParameterGroupFamily;
@@ -110,6 +113,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="maxRecords">The value to set for the MaxRecords property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeClusterVersionsRequest WithMaxRecords(int maxRecords)
         {
             this.maxRecords = maxRecords;
@@ -139,6 +143,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="marker">The value to set for the Marker property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeClusterVersionsRequest WithMarker(string marker)
         {
             this.marker = marker;

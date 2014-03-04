@@ -21,16 +21,16 @@ using System.IO;
 namespace Amazon.AWSSupport.Model
 {
     /// <summary>
-    /// <para>Returns an array of CaseDetails objects and a <i>NextToken</i> that defines a point for pagination in the result set.</para>
+    /// <para>Returns an array of CaseDetails objects and a <c>NextToken</c> that defines a point for pagination in the result set.</para>
     /// </summary>
-    public class DescribeCasesResult
+    public partial class DescribeCasesResult
     {
         
         private List<CaseDetails> cases = new List<CaseDetails>();
         private string nextToken;
 
         /// <summary>
-        /// Array of <a href="API_CaseDetails.html" title="CaseDetails">CaseDetails</a> objects.
+        /// The details for the cases that match the request.
         ///  
         /// </summary>
         public List<CaseDetails> Cases
@@ -43,6 +43,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="cases">The values to add to the Cases collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeCasesResult WithCases(params CaseDetails[] cases)
         {
             foreach (CaseDetails element in cases)
@@ -58,6 +59,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="cases">The values to add to the Cases collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeCasesResult WithCases(IEnumerable<CaseDetails> cases)
         {
             foreach (CaseDetails element in cases)
@@ -75,7 +77,7 @@ namespace Amazon.AWSSupport.Model
         }
 
         /// <summary>
-        /// Defines a resumption point for pagination.
+        /// A resumption point for pagination.
         ///  
         /// </summary>
         public string NextToken
@@ -89,6 +91,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="nextToken">The value to set for the NextToken property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeCasesResult WithNextToken(string nextToken)
         {
             this.nextToken = nextToken;

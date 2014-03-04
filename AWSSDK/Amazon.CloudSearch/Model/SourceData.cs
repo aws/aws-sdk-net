@@ -23,7 +23,7 @@ namespace Amazon.CloudSearch.Model
     /// <summary>
     /// <para>The source attribute name and an optional default value to use if a document doesn't have an attribute of that name.</para>
     /// </summary>
-    public class SourceData  
+    public partial class SourceData
     {
         
         private string sourceName;
@@ -57,6 +57,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="sourceName">The value to set for the SourceName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SourceData WithSourceName(string sourceName)
         {
             this.sourceName = sourceName;
@@ -67,11 +68,11 @@ namespace Amazon.CloudSearch.Model
         // Check to see if SourceName property is set
         internal bool IsSetSourceName()
         {
-            return this.sourceName != null;       
+            return this.sourceName != null;
         }
 
         /// <summary>
-        /// The value of a field or source document attribute.
+        /// The default value to use if the source attribute is not specified in a document. Optional.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -94,6 +95,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="defaultValue">The value to set for the DefaultValue property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SourceData WithDefaultValue(string defaultValue)
         {
             this.defaultValue = defaultValue;
@@ -104,7 +106,7 @@ namespace Amazon.CloudSearch.Model
         // Check to see if DefaultValue property is set
         internal bool IsSetDefaultValue()
         {
-            return this.defaultValue != null;       
+            return this.defaultValue != null;
         }
     }
 }

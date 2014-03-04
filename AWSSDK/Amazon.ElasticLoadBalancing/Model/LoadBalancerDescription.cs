@@ -23,7 +23,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// <summary>
     /// <para> Contains the result of a successful invocation of DescribeLoadBalancers. </para>
     /// </summary>
-    public class LoadBalancerDescription  
+    public partial class LoadBalancerDescription
     {
         
         private string loadBalancerName;
@@ -50,7 +50,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     
 
         /// <summary>
-        /// Specifies the name associated with the LoadBalancer.
+        /// Specifies the name associated with the load balancer.
         ///  
         /// </summary>
         public string LoadBalancerName
@@ -64,6 +64,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="loadBalancerName">The value to set for the LoadBalancerName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LoadBalancerDescription WithLoadBalancerName(string loadBalancerName)
         {
             this.loadBalancerName = loadBalancerName;
@@ -74,11 +75,11 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if LoadBalancerName property is set
         internal bool IsSetLoadBalancerName()
         {
-            return this.loadBalancerName != null;       
+            return this.loadBalancerName != null;
         }
 
         /// <summary>
-        /// Specifies the external DNS name associated with the LoadBalancer.
+        /// Specifies the external DNS name associated with the load balancer.
         ///  
         /// </summary>
         public string DNSName
@@ -92,6 +93,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="dNSName">The value to set for the DNSName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LoadBalancerDescription WithDNSName(string dNSName)
         {
             this.dNSName = dNSName;
@@ -102,13 +104,13 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if DNSName property is set
         internal bool IsSetDNSName()
         {
-            return this.dNSName != null;       
+            return this.dNSName != null;
         }
 
         /// <summary>
-        /// Provides the name of the Amazon Route 53 hosted zone that is associated with the LoadBalancer. For information on how to associate your load
-        /// balancer with a hosted zone, go to <a
-        /// href="http://docs.amazonwebservices.com/ElasticLoadBalancing/latest/DeveloperGuide/using-domain-names-with-elb.html">Using Domain Names With
+        /// Provides the name of the Amazon Route 53 hosted zone that is associated with the load balancer. For information on how to associate your
+        /// load balancer with a hosted zone, go to <a
+        /// href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/using-domain-names-with-elb.html">Using Domain Names With
         /// Elastic Load Balancing</a> in the <i>Elastic Load Balancing Developer Guide</i>.
         ///  
         /// </summary>
@@ -123,6 +125,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="canonicalHostedZoneName">The value to set for the CanonicalHostedZoneName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LoadBalancerDescription WithCanonicalHostedZoneName(string canonicalHostedZoneName)
         {
             this.canonicalHostedZoneName = canonicalHostedZoneName;
@@ -133,13 +136,13 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if CanonicalHostedZoneName property is set
         internal bool IsSetCanonicalHostedZoneName()
         {
-            return this.canonicalHostedZoneName != null;       
+            return this.canonicalHostedZoneName != null;
         }
 
         /// <summary>
-        /// Provides the ID of the Amazon Route 53 hosted zone name that is associated with the LoadBalancer. For information on how to associate or
+        /// Provides the ID of the Amazon Route 53 hosted zone name that is associated with the load balancer. For information on how to associate or
         /// disassociate your load balancer with a hosted zone, go to <a
-        /// href="http://docs.amazonwebservices.com/ElasticLoadBalancing/latest/DeveloperGuide/using-domain-names-with-elb.html">Using Domain Names With
+        /// href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/using-domain-names-with-elb.html">Using Domain Names With
         /// Elastic Load Balancing</a> in the <i>Elastic Load Balancing Developer Guide</i>.
         ///  
         /// </summary>
@@ -154,6 +157,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="canonicalHostedZoneNameID">The value to set for the CanonicalHostedZoneNameID property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LoadBalancerDescription WithCanonicalHostedZoneNameID(string canonicalHostedZoneNameID)
         {
             this.canonicalHostedZoneNameID = canonicalHostedZoneNameID;
@@ -164,7 +168,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if CanonicalHostedZoneNameID property is set
         internal bool IsSetCanonicalHostedZoneNameID()
         {
-            return this.canonicalHostedZoneNameID != null;       
+            return this.canonicalHostedZoneNameID != null;
         }
 
         /// <summary>
@@ -182,6 +186,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="listenerDescriptions">The values to add to the ListenerDescriptions collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LoadBalancerDescription WithListenerDescriptions(params ListenerDescription[] listenerDescriptions)
         {
             foreach (ListenerDescription element in listenerDescriptions)
@@ -191,12 +196,13 @@ namespace Amazon.ElasticLoadBalancing.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the ListenerDescriptions collection
         /// </summary>
         /// <param name="listenerDescriptions">The values to add to the ListenerDescriptions collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LoadBalancerDescription WithListenerDescriptions(IEnumerable<ListenerDescription> listenerDescriptions)
         {
             foreach (ListenerDescription element in listenerDescriptions)
@@ -210,11 +216,11 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if ListenerDescriptions property is set
         internal bool IsSetListenerDescriptions()
         {
-            return this.listenerDescriptions.Count > 0;       
+            return this.listenerDescriptions.Count > 0;
         }
 
         /// <summary>
-        /// Provides a list of policies defined for the LoadBalancer.
+        /// Provides a list of policies defined for the load balancer.
         ///  
         /// </summary>
         public Policies Policies
@@ -228,6 +234,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="policies">The value to set for the Policies property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LoadBalancerDescription WithPolicies(Policies policies)
         {
             this.policies = policies;
@@ -238,7 +245,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if Policies property is set
         internal bool IsSetPolicies()
         {
-            return this.policies != null;       
+            return this.policies != null;
         }
 
         /// <summary>
@@ -255,6 +262,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="backendServerDescriptions">The values to add to the BackendServerDescriptions collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LoadBalancerDescription WithBackendServerDescriptions(params BackendServerDescription[] backendServerDescriptions)
         {
             foreach (BackendServerDescription element in backendServerDescriptions)
@@ -264,12 +272,13 @@ namespace Amazon.ElasticLoadBalancing.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the BackendServerDescriptions collection
         /// </summary>
         /// <param name="backendServerDescriptions">The values to add to the BackendServerDescriptions collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LoadBalancerDescription WithBackendServerDescriptions(IEnumerable<BackendServerDescription> backendServerDescriptions)
         {
             foreach (BackendServerDescription element in backendServerDescriptions)
@@ -283,7 +292,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if BackendServerDescriptions property is set
         internal bool IsSetBackendServerDescriptions()
         {
-            return this.backendServerDescriptions.Count > 0;       
+            return this.backendServerDescriptions.Count > 0;
         }
 
         /// <summary>
@@ -300,6 +309,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="availabilityZones">The values to add to the AvailabilityZones collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LoadBalancerDescription WithAvailabilityZones(params string[] availabilityZones)
         {
             foreach (string element in availabilityZones)
@@ -309,12 +319,13 @@ namespace Amazon.ElasticLoadBalancing.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the AvailabilityZones collection
         /// </summary>
         /// <param name="availabilityZones">The values to add to the AvailabilityZones collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LoadBalancerDescription WithAvailabilityZones(IEnumerable<string> availabilityZones)
         {
             foreach (string element in availabilityZones)
@@ -328,11 +339,11 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if AvailabilityZones property is set
         internal bool IsSetAvailabilityZones()
         {
-            return this.availabilityZones.Count > 0;       
+            return this.availabilityZones.Count > 0;
         }
 
         /// <summary>
-        /// Provides a list of VPC subnet IDs for the LoadBalancer.
+        /// Provides a list of VPC subnet IDs for the load balancer.
         ///  
         /// </summary>
         public List<string> Subnets
@@ -345,6 +356,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="subnets">The values to add to the Subnets collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LoadBalancerDescription WithSubnets(params string[] subnets)
         {
             foreach (string element in subnets)
@@ -354,12 +366,13 @@ namespace Amazon.ElasticLoadBalancing.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Subnets collection
         /// </summary>
         /// <param name="subnets">The values to add to the Subnets collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LoadBalancerDescription WithSubnets(IEnumerable<string> subnets)
         {
             foreach (string element in subnets)
@@ -373,11 +386,11 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if Subnets property is set
         internal bool IsSetSubnets()
         {
-            return this.subnets.Count > 0;       
+            return this.subnets.Count > 0;
         }
 
         /// <summary>
-        /// Provides the ID of the VPC attached to the LoadBalancer.
+        /// Provides the ID of the VPC attached to the load balancer.
         ///  
         /// </summary>
         public string VPCId
@@ -391,6 +404,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="vPCId">The value to set for the VPCId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LoadBalancerDescription WithVPCId(string vPCId)
         {
             this.vPCId = vPCId;
@@ -401,11 +415,11 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if VPCId property is set
         internal bool IsSetVPCId()
         {
-            return this.vPCId != null;       
+            return this.vPCId != null;
         }
 
         /// <summary>
-        /// Provides a list of EC2 instance IDs for the LoadBalancer.
+        /// Provides a list of EC2 instance IDs for the load balancer.
         ///  
         /// </summary>
         public List<Instance> Instances
@@ -418,6 +432,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="instances">The values to add to the Instances collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LoadBalancerDescription WithInstances(params Instance[] instances)
         {
             foreach (Instance element in instances)
@@ -427,12 +442,13 @@ namespace Amazon.ElasticLoadBalancing.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Instances collection
         /// </summary>
         /// <param name="instances">The values to add to the Instances collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LoadBalancerDescription WithInstances(IEnumerable<Instance> instances)
         {
             foreach (Instance element in instances)
@@ -446,11 +462,11 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if Instances property is set
         internal bool IsSetInstances()
         {
-            return this.instances.Count > 0;       
+            return this.instances.Count > 0;
         }
 
         /// <summary>
-        /// Specifies information regarding the various health probes conducted on the LoadBalancer.
+        /// Specifies information regarding the various health probes conducted on the load balancer.
         ///  
         /// </summary>
         public HealthCheck HealthCheck
@@ -464,6 +480,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="healthCheck">The value to set for the HealthCheck property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LoadBalancerDescription WithHealthCheck(HealthCheck healthCheck)
         {
             this.healthCheck = healthCheck;
@@ -474,12 +491,12 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if HealthCheck property is set
         internal bool IsSetHealthCheck()
         {
-            return this.healthCheck != null;       
+            return this.healthCheck != null;
         }
 
         /// <summary>
-        /// The security group that you can use as part of your inbound rules for your LoadBalancer's back-end Amazon EC2 application instances. To only
-        /// allow traffic from LoadBalancers, add a security group rule to your back end instance that specifies this source security group as the
+        /// The security group that you can use as part of your inbound rules for your load balancer's back-end Amazon EC2 application instances. To
+        /// only allow traffic from load balancers, add a security group rule to your back end instance that specifies this source security group as the
         /// inbound source.
         ///  
         /// </summary>
@@ -494,6 +511,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="sourceSecurityGroup">The value to set for the SourceSecurityGroup property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LoadBalancerDescription WithSourceSecurityGroup(SourceSecurityGroup sourceSecurityGroup)
         {
             this.sourceSecurityGroup = sourceSecurityGroup;
@@ -504,11 +522,11 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if SourceSecurityGroup property is set
         internal bool IsSetSourceSecurityGroup()
         {
-            return this.sourceSecurityGroup != null;       
+            return this.sourceSecurityGroup != null;
         }
 
         /// <summary>
-        /// The security groups the LoadBalancer is a member of (VPC only).
+        /// The security groups the load balancer is a member of (VPC only).
         ///  
         /// </summary>
         public List<string> SecurityGroups
@@ -521,6 +539,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="securityGroups">The values to add to the SecurityGroups collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LoadBalancerDescription WithSecurityGroups(params string[] securityGroups)
         {
             foreach (string element in securityGroups)
@@ -530,12 +549,13 @@ namespace Amazon.ElasticLoadBalancing.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the SecurityGroups collection
         /// </summary>
         /// <param name="securityGroups">The values to add to the SecurityGroups collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LoadBalancerDescription WithSecurityGroups(IEnumerable<string> securityGroups)
         {
             foreach (string element in securityGroups)
@@ -549,11 +569,11 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if SecurityGroups property is set
         internal bool IsSetSecurityGroups()
         {
-            return this.securityGroups.Count > 0;       
+            return this.securityGroups.Count > 0;
         }
 
         /// <summary>
-        /// Provides the date and time the LoadBalancer was created.
+        /// Provides the date and time the load balancer was created.
         ///  
         /// </summary>
         public DateTime CreatedTime
@@ -567,6 +587,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="createdTime">The value to set for the CreatedTime property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LoadBalancerDescription WithCreatedTime(DateTime createdTime)
         {
             this.createdTime = createdTime;
@@ -577,13 +598,13 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if CreatedTime property is set
         internal bool IsSetCreatedTime()
         {
-            return this.createdTime.HasValue;       
+            return this.createdTime.HasValue;
         }
 
         /// <summary>
-        /// Specifies the type of LoadBalancer. If the <c>Scheme</c> is <c>internet-facing</c>, the LoadBalancer has a publicly resolvable DNS name that
-        /// resolves to public IP addresses. If the <c>Scheme</c> is <c>internal</c>, the LoadBalancer has a publicly resolvable DNS name that resolves
-        /// to private IP addresses. This option is only available for LoadBalancers attached to an Amazon VPC.
+        /// Specifies the type of load balancer. If the <c>Scheme</c> is <c>internet-facing</c>, the load balancer has a publicly resolvable DNS name
+        /// that resolves to public IP addresses. If the <c>Scheme</c> is <c>internal</c>, the load balancer has a publicly resolvable DNS name that
+        /// resolves to private IP addresses. This option is only available for load balancers attached to an Amazon VPC.
         ///  
         /// </summary>
         public string Scheme
@@ -597,6 +618,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="scheme">The value to set for the Scheme property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LoadBalancerDescription WithScheme(string scheme)
         {
             this.scheme = scheme;
@@ -607,7 +629,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if Scheme property is set
         internal bool IsSetScheme()
         {
-            return this.scheme != null;       
+            return this.scheme != null;
         }
     }
 }

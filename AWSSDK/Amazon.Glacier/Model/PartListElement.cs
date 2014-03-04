@@ -23,7 +23,7 @@ namespace Amazon.Glacier.Model
     /// <summary>
     /// <para>A list of the part sizes of the multipart upload.</para>
     /// </summary>
-    public class PartListElement  
+    public partial class PartListElement
     {
         
         private string rangeInBytes;
@@ -44,6 +44,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="rangeInBytes">The value to set for the RangeInBytes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PartListElement WithRangeInBytes(string rangeInBytes)
         {
             this.rangeInBytes = rangeInBytes;
@@ -54,7 +55,7 @@ namespace Amazon.Glacier.Model
         // Check to see if RangeInBytes property is set
         internal bool IsSetRangeInBytes()
         {
-            return this.rangeInBytes != null;       
+            return this.rangeInBytes != null;
         }
 
         /// <summary>
@@ -72,6 +73,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="sHA256TreeHash">The value to set for the SHA256TreeHash property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PartListElement WithSHA256TreeHash(string sHA256TreeHash)
         {
             this.sHA256TreeHash = sHA256TreeHash;
@@ -82,7 +84,7 @@ namespace Amazon.Glacier.Model
         // Check to see if SHA256TreeHash property is set
         internal bool IsSetSHA256TreeHash()
         {
-            return this.sHA256TreeHash != null;       
+            return this.sHA256TreeHash != null;
         }
     }
 }

@@ -32,6 +32,8 @@
 
         public DescribeLoadBasedAutoScalingResult Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             DescribeLoadBasedAutoScalingResult describeLoadBasedAutoScalingResult = new DescribeLoadBasedAutoScalingResult();
           describeLoadBasedAutoScalingResult.LoadBasedAutoScalingConfigurations = null;
                         

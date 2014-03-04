@@ -32,6 +32,8 @@
 
         public App Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             App app = new App();
           app.Domains = null;
                         app.Attributes = null;

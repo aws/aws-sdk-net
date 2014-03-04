@@ -22,13 +22,14 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
      /// <summary>
      ///   Trigger Unmarshaller
      /// </summary>
-    internal class TriggerUnmarshaller : IUnmarshaller<Trigger, XmlUnmarshallerContext> 
+    internal class TriggerUnmarshaller : IUnmarshaller<Trigger, XmlUnmarshallerContext>, IUnmarshaller<Trigger, JsonUnmarshallerContext> 
     {
         public Trigger Unmarshall(XmlUnmarshallerContext context) 
         {
             Trigger trigger = new Trigger();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -52,6 +53,11 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
 
 
             return trigger;
+        }
+
+        public Trigger Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static TriggerUnmarshaller instance;

@@ -24,7 +24,7 @@ namespace Amazon.IdentityManagement.Model
     /// <para>The ServerCertificate data type contains information about a server certificate.</para> <para>This data type is used as a response
     /// element in the action GetServerCertificate.</para>
     /// </summary>
-    public class ServerCertificate  
+    public partial class ServerCertificate
     {
         
         private ServerCertificateMetadata serverCertificateMetadata;
@@ -46,6 +46,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="serverCertificateMetadata">The value to set for the ServerCertificateMetadata property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ServerCertificate WithServerCertificateMetadata(ServerCertificateMetadata serverCertificateMetadata)
         {
             this.serverCertificateMetadata = serverCertificateMetadata;
@@ -56,7 +57,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if ServerCertificateMetadata property is set
         internal bool IsSetServerCertificateMetadata()
         {
-            return this.serverCertificateMetadata != null;       
+            return this.serverCertificateMetadata != null;
         }
 
         /// <summary>
@@ -87,6 +88,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="certificateBody">The value to set for the CertificateBody property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ServerCertificate WithCertificateBody(string certificateBody)
         {
             this.certificateBody = certificateBody;
@@ -97,7 +99,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if CertificateBody property is set
         internal bool IsSetCertificateBody()
         {
-            return this.certificateBody != null;       
+            return this.certificateBody != null;
         }
 
         /// <summary>
@@ -128,6 +130,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="certificateChain">The value to set for the CertificateChain property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ServerCertificate WithCertificateChain(string certificateChain)
         {
             this.certificateChain = certificateChain;
@@ -138,7 +141,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if CertificateChain property is set
         internal bool IsSetCertificateChain()
         {
-            return this.certificateChain != null;       
+            return this.certificateChain != null;
         }
     }
 }

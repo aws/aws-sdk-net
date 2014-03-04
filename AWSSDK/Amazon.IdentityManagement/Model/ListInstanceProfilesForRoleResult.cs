@@ -21,9 +21,9 @@ using System.IO;
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// <para>Contains the result of a successful invocation of the ListInstanceProfilesForRoleResponse action.</para>
+    /// <para>Contains the result of a successful invocation of the ListInstanceProfilesForRole action.</para>
     /// </summary>
-    public class ListInstanceProfilesForRoleResult  
+    public partial class ListInstanceProfilesForRoleResult
     {
         
         private List<InstanceProfile> instanceProfiles = new List<InstanceProfile>();
@@ -44,6 +44,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="instanceProfiles">The values to add to the InstanceProfiles collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListInstanceProfilesForRoleResult WithInstanceProfiles(params InstanceProfile[] instanceProfiles)
         {
             foreach (InstanceProfile element in instanceProfiles)
@@ -53,12 +54,13 @@ namespace Amazon.IdentityManagement.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the InstanceProfiles collection
         /// </summary>
         /// <param name="instanceProfiles">The values to add to the InstanceProfiles collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListInstanceProfilesForRoleResult WithInstanceProfiles(IEnumerable<InstanceProfile> instanceProfiles)
         {
             foreach (InstanceProfile element in instanceProfiles)
@@ -72,7 +74,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if InstanceProfiles property is set
         internal bool IsSetInstanceProfiles()
         {
-            return this.instanceProfiles.Count > 0;       
+            return this.instanceProfiles.Count > 0;
         }
 
         /// <summary>
@@ -91,6 +93,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="isTruncated">The value to set for the IsTruncated property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListInstanceProfilesForRoleResult WithIsTruncated(bool isTruncated)
         {
             this.isTruncated = isTruncated;
@@ -101,7 +104,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if IsTruncated property is set
         internal bool IsSetIsTruncated()
         {
-            return this.isTruncated.HasValue;       
+            return this.isTruncated.HasValue;
         }
 
         /// <summary>
@@ -133,6 +136,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="marker">The value to set for the Marker property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListInstanceProfilesForRoleResult WithMarker(string marker)
         {
             this.marker = marker;
@@ -143,7 +147,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;       
+            return this.marker != null;
         }
     }
 }

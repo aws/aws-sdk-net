@@ -25,7 +25,7 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeCacheEngineVersions operation.
-    /// <para> Returns a list of the available cache engines and their versions. </para>
+    /// <para>The <i>DescribeCacheEngineVersions</i> operation returns a list of the available cache engines and their versions.</para>
     /// </summary>
     /// <seealso cref="Amazon.ElastiCache.AmazonElastiCache.DescribeCacheEngineVersions"/>
     public class DescribeCacheEngineVersionsRequest : AmazonWebServiceRequest
@@ -38,7 +38,7 @@ namespace Amazon.ElastiCache.Model
         private bool? defaultOnly;
 
         /// <summary>
-        /// The cache engine to return.
+        /// The cache engine to return. Valid values: <c>memcached</c> | <c>redis</c>
         ///  
         /// </summary>
         public string Engine
@@ -52,6 +52,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="engine">The value to set for the Engine property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeCacheEngineVersionsRequest WithEngine(string engine)
         {
             this.engine = engine;
@@ -80,6 +81,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="engineVersion">The value to set for the EngineVersion property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeCacheEngineVersionsRequest WithEngineVersion(string engineVersion)
         {
             this.engineVersion = engineVersion;
@@ -94,7 +96,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// The name of a specific Cache Parameter Group family to return details for. Constraints: <ul> <li>Must be 1 to 255 alphanumeric
+        /// The name of a specific cache parameter group family to return details for. Constraints: <ul> <li>Must be 1 to 255 alphanumeric
         /// characters</li> <li>First character must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li> </ul>
         ///  
         /// </summary>
@@ -109,6 +111,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="cacheParameterGroupFamily">The value to set for the CacheParameterGroupFamily property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeCacheEngineVersionsRequest WithCacheParameterGroupFamily(string cacheParameterGroupFamily)
         {
             this.cacheParameterGroupFamily = cacheParameterGroupFamily;
@@ -123,8 +126,8 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// The maximum number of records to include in the response. If more records exist than the specified <i>MaxRecords</i> value, a marker is
-        /// included in the response so that the remaining results may be retrieved.
+        /// The maximum number of records to include in the response. If more records exist than the specified <c>MaxRecords</c> value, a marker is
+        /// included in the response so that the remaining results can be retrieved. Default: 100Constraints: minimum 20; maximum 100.
         ///  
         /// </summary>
         public int MaxRecords
@@ -138,6 +141,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="maxRecords">The value to set for the MaxRecords property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeCacheEngineVersionsRequest WithMaxRecords(int maxRecords)
         {
             this.maxRecords = maxRecords;
@@ -152,8 +156,8 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// An optional marker provided in the previous DescribeCacheParameterGroups request. If this parameter is specified, the response includes only
-        /// records beyond the marker, up to the value specified by <i>MaxRecords</i>.
+        /// An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is
+        /// specified, the response includes only records beyond the marker, up to the value specified by <i>MaxRecords</i>.
         ///  
         /// </summary>
         public string Marker
@@ -167,6 +171,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="marker">The value to set for the Marker property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeCacheEngineVersionsRequest WithMarker(string marker)
         {
             this.marker = marker;
@@ -181,7 +186,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// Indicates that only the default version of the specified engine or engine and major version combination is returned.
+        /// If <i>true</i>, specifies that only the default version of the specified engine or engine and major version combination is to be returned.
         ///  
         /// </summary>
         public bool DefaultOnly
@@ -195,6 +200,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="defaultOnly">The value to set for the DefaultOnly property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeCacheEngineVersionsRequest WithDefaultOnly(bool defaultOnly)
         {
             this.defaultOnly = defaultOnly;

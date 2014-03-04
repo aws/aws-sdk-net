@@ -43,6 +43,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="executionInfos">The values to add to the ExecutionInfos collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public WorkflowExecutionInfos WithExecutionInfos(params WorkflowExecutionInfo[] executionInfos)
         {
             foreach (WorkflowExecutionInfo element in executionInfos)
@@ -58,6 +59,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="executionInfos">The values to add to the ExecutionInfos collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public WorkflowExecutionInfos WithExecutionInfos(IEnumerable<WorkflowExecutionInfo> executionInfos)
         {
             foreach (WorkflowExecutionInfo element in executionInfos)
@@ -99,6 +101,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="nextPageToken">The value to set for the NextPageToken property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public WorkflowExecutionInfos WithNextPageToken(string nextPageToken)
         {
             this.nextPageToken = nextPageToken;

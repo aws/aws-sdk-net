@@ -23,7 +23,7 @@ namespace Amazon.Route53.Model
     /// <summary>
     /// <para>A complex type containing information about the specified health check.</para>
     /// </summary>
-    public class GetHealthCheckResult
+    public partial class GetHealthCheckResult
     {
         
         private HealthCheck healthCheck;
@@ -43,6 +43,7 @@ namespace Amazon.Route53.Model
         /// </summary>
         /// <param name="healthCheck">The value to set for the HealthCheck property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetHealthCheckResult WithHealthCheck(HealthCheck healthCheck)
         {
             this.healthCheck = healthCheck;

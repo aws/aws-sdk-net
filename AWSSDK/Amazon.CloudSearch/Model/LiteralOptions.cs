@@ -23,7 +23,7 @@ namespace Amazon.CloudSearch.Model
     /// <summary>
     /// <para>Options that define a literal field in the search index.</para>
     /// </summary>
-    public class LiteralOptions  
+    public partial class LiteralOptions
     {
         
         private string defaultValue;
@@ -32,7 +32,7 @@ namespace Amazon.CloudSearch.Model
         private bool? resultEnabled;
 
         /// <summary>
-        /// The default value for a literal field.
+        /// The default value for a literal field. Optional.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -55,6 +55,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="defaultValue">The value to set for the DefaultValue property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LiteralOptions WithDefaultValue(string defaultValue)
         {
             this.defaultValue = defaultValue;
@@ -65,11 +66,11 @@ namespace Amazon.CloudSearch.Model
         // Check to see if DefaultValue property is set
         internal bool IsSetDefaultValue()
         {
-            return this.defaultValue != null;       
+            return this.defaultValue != null;
         }
 
         /// <summary>
-        /// Specifies whether search is enabled for this field.
+        /// Specifies whether search is enabled for this field. Default: False.
         ///  
         /// </summary>
         public bool SearchEnabled
@@ -83,6 +84,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="searchEnabled">The value to set for the SearchEnabled property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LiteralOptions WithSearchEnabled(bool searchEnabled)
         {
             this.searchEnabled = searchEnabled;
@@ -93,11 +95,11 @@ namespace Amazon.CloudSearch.Model
         // Check to see if SearchEnabled property is set
         internal bool IsSetSearchEnabled()
         {
-            return this.searchEnabled.HasValue;       
+            return this.searchEnabled.HasValue;
         }
 
         /// <summary>
-        /// Specifies whether facets are enabled for this field.
+        /// Specifies whether facets are enabled for this field. Default: False.
         ///  
         /// </summary>
         public bool FacetEnabled
@@ -111,6 +113,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="facetEnabled">The value to set for the FacetEnabled property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LiteralOptions WithFacetEnabled(bool facetEnabled)
         {
             this.facetEnabled = facetEnabled;
@@ -121,11 +124,11 @@ namespace Amazon.CloudSearch.Model
         // Check to see if FacetEnabled property is set
         internal bool IsSetFacetEnabled()
         {
-            return this.facetEnabled.HasValue;       
+            return this.facetEnabled.HasValue;
         }
 
         /// <summary>
-        /// Specifies whether values of this field can be returned in search results and used for ranking.
+        /// Specifies whether values of this field can be returned in search results and used for ranking. Default: False.
         ///  
         /// </summary>
         public bool ResultEnabled
@@ -139,6 +142,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="resultEnabled">The value to set for the ResultEnabled property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LiteralOptions WithResultEnabled(bool resultEnabled)
         {
             this.resultEnabled = resultEnabled;
@@ -149,7 +153,7 @@ namespace Amazon.CloudSearch.Model
         // Check to see if ResultEnabled property is set
         internal bool IsSetResultEnabled()
         {
-            return this.resultEnabled.HasValue;       
+            return this.resultEnabled.HasValue;
         }
     }
 }

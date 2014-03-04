@@ -21,12 +21,13 @@ using System.IO;
 namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
-    /// 
+    /// <para>The <c>ListPresetsResponse</c> structure.</para>
     /// </summary>
-    public class ListPresetsResult
+    public partial class ListPresetsResult
     {
         
         private List<Preset> presets = new List<Preset>();
+        private string nextPageToken;
 
         /// <summary>
         /// An array of <c>Preset</c> objects.
@@ -42,6 +43,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="presets">The values to add to the Presets collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListPresetsResult WithPresets(params Preset[] presets)
         {
             foreach (Preset element in presets)
@@ -57,6 +59,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="presets">The values to add to the Presets collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListPresetsResult WithPresets(IEnumerable<Preset> presets)
         {
             foreach (Preset element in presets)
@@ -71,6 +74,45 @@ namespace Amazon.ElasticTranscoder.Model
         internal bool IsSetPresets()
         {
             return this.presets.Count > 0;
+        }
+
+        /// <summary>
+        /// A value that you use to access the second and subsequent pages of results, if any. When the presets fit on one page or when you've reached
+        /// the last page of results, the value of <c>NextPageToken</c> is <c>null</c>.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Pattern</term>
+        ///         <description>^\d{13}-\w{6}$</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
+        public string NextPageToken
+        {
+            get { return this.nextPageToken; }
+            set { this.nextPageToken = value; }
+        }
+
+        /// <summary>
+        /// Sets the NextPageToken property
+        /// </summary>
+        /// <param name="nextPageToken">The value to set for the NextPageToken property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public ListPresetsResult WithNextPageToken(string nextPageToken)
+        {
+            this.nextPageToken = nextPageToken;
+            return this;
+        }
+            
+
+        // Check to see if NextPageToken property is set
+        internal bool IsSetNextPageToken()
+        {
+            return this.nextPageToken != null;
         }
     }
 }

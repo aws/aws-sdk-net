@@ -26,12 +26,12 @@ namespace Amazon.IdentityManagement.Model
     /// <ul>
     /// <li> <para> CreateInstanceProfile </para> </li>
     /// <li> <para> GetInstanceProfile </para> </li>
-    /// <li> <para> ListsInstanceProfile </para> </li>
-    /// <li> <para> ListsInstanceProfilesForRole </para> </li>
+    /// <li> <para> ListInstanceProfiles </para> </li>
+    /// <li> <para> ListInstanceProfilesForRole </para> </li>
     /// 
     /// </ul>
     /// </summary>
-    public class InstanceProfile  
+    public partial class InstanceProfile
     {
         
         private string path;
@@ -43,8 +43,8 @@ namespace Amazon.IdentityManagement.Model
 
         /// <summary>
         /// Path to the instance profile. For more information about paths, see <a
-        /// href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM
-        /// Entities</a> in <i>Using AWS Identity and Access Management</i>.
+        /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in
+        /// <i>Using AWS Identity and Access Management</i>.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -71,6 +71,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="path">The value to set for the Path property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceProfile WithPath(string path)
         {
             this.path = path;
@@ -81,7 +82,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if Path property is set
         internal bool IsSetPath()
         {
-            return this.path != null;       
+            return this.path != null;
         }
 
         /// <summary>
@@ -112,6 +113,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="instanceProfileName">The value to set for the InstanceProfileName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceProfile WithInstanceProfileName(string instanceProfileName)
         {
             this.instanceProfileName = instanceProfileName;
@@ -122,13 +124,13 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if InstanceProfileName property is set
         internal bool IsSetInstanceProfileName()
         {
-            return this.instanceProfileName != null;       
+            return this.instanceProfileName != null;
         }
 
         /// <summary>
         /// The stable and unique string identifying the instance profile. For more information about IDs, see <a
-        /// href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM
-        /// Entities</a> in <i>Using AWS Identity and Access Management</i>.
+        /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in
+        /// <i>Using AWS Identity and Access Management</i>.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -155,6 +157,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="instanceProfileId">The value to set for the InstanceProfileId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceProfile WithInstanceProfileId(string instanceProfileId)
         {
             this.instanceProfileId = instanceProfileId;
@@ -165,13 +168,13 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if InstanceProfileId property is set
         internal bool IsSetInstanceProfileId()
         {
-            return this.instanceProfileId != null;       
+            return this.instanceProfileId != null;
         }
 
         /// <summary>
         /// The Amazon Resource Name (ARN) specifying the instance profile. For more information about ARNs and how to use them in policies, see <a
-        /// href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM
-        /// Entities</a> in <i>Using AWS Identity and Access Management</i>.
+        /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in
+        /// <i>Using AWS Identity and Access Management</i>.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -194,6 +197,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="arn">The value to set for the Arn property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceProfile WithArn(string arn)
         {
             this.arn = arn;
@@ -204,7 +208,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if Arn property is set
         internal bool IsSetArn()
         {
-            return this.arn != null;       
+            return this.arn != null;
         }
 
         /// <summary>
@@ -222,6 +226,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="createDate">The value to set for the CreateDate property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceProfile WithCreateDate(DateTime createDate)
         {
             this.createDate = createDate;
@@ -232,7 +237,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if CreateDate property is set
         internal bool IsSetCreateDate()
         {
-            return this.createDate.HasValue;       
+            return this.createDate.HasValue;
         }
 
         /// <summary>
@@ -249,6 +254,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="roles">The values to add to the Roles collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceProfile WithRoles(params Role[] roles)
         {
             foreach (Role element in roles)
@@ -258,12 +264,13 @@ namespace Amazon.IdentityManagement.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Roles collection
         /// </summary>
         /// <param name="roles">The values to add to the Roles collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceProfile WithRoles(IEnumerable<Role> roles)
         {
             foreach (Role element in roles)
@@ -277,7 +284,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if Roles property is set
         internal bool IsSetRoles()
         {
-            return this.roles.Count > 0;       
+            return this.roles.Count > 0;
         }
     }
 }

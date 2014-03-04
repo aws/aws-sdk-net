@@ -122,6 +122,7 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
                             List<RouteFilterPrefix> routeFilterPrefixesList = newPublicVirtualInterface.RouteFilterPrefixes;
                             writer.WritePropertyName("routeFilterPrefixes");
                             writer.WriteArrayStart();
+
                             foreach (RouteFilterPrefix routeFilterPrefixesListValue in routeFilterPrefixesList) 
                             {
                                 writer.WriteObjectStart();

@@ -53,6 +53,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="instanceId">Unique ID of the instance launched.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceStatus WithInstanceId(string instanceId)
         {
             this.instanceIdField = instanceId;
@@ -83,6 +84,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="availabilityZone">The value to set for the AvailabilityZone property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceStatus WithAvailabilityZone(string availabilityZone)
         {
             this.availabilityZoneField = availabilityZone;
@@ -116,6 +118,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="instanceStatusEvent">Collection of InstanceStatusEvent instances</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceStatus WithInstanceStatusEvent(List<InstanceStatusEvent> instanceStatusEvent)
         {
             this.instanceStatusEventField = instanceStatusEvent;
@@ -146,6 +149,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="instanceState">The current state of the instance.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceStatus WithInstanceState(InstanceState instanceState)
         {
             this.instanceStateField = instanceState;
@@ -176,6 +180,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="systemStatusDetail">System status</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceStatus WithSystemStatusDetail(InstanceStatusDetail systemStatusDetail)
         {
             this.systemStatusDetailField = systemStatusDetail;
@@ -206,6 +211,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="instanceStatusDetail">Instance status</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceStatus WithInstanceStatusDetail(InstanceStatusDetail instanceStatusDetail)
         {
             this.instanceStatusDetailField = instanceStatusDetail;

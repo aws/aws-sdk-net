@@ -24,7 +24,7 @@ namespace Amazon.IdentityManagement.Model
     /// <para>The AccessKey data type contains information about an AWS access key, without its secret key.</para> <para> This data type is used as
     /// a response element in the action ListAccessKeys. </para>
     /// </summary>
-    public class AccessKeyMetadata  
+    public partial class AccessKeyMetadata
     {
         
         private string userName;
@@ -60,6 +60,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="userName">The value to set for the UserName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AccessKeyMetadata WithUserName(string userName)
         {
             this.userName = userName;
@@ -70,7 +71,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if UserName property is set
         internal bool IsSetUserName()
         {
-            return this.userName != null;       
+            return this.userName != null;
         }
 
         /// <summary>
@@ -101,6 +102,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="accessKeyId">The value to set for the AccessKeyId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AccessKeyMetadata WithAccessKeyId(string accessKeyId)
         {
             this.accessKeyId = accessKeyId;
@@ -111,7 +113,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if AccessKeyId property is set
         internal bool IsSetAccessKeyId()
         {
-            return this.accessKeyId != null;       
+            return this.accessKeyId != null;
         }
 
         /// <summary>
@@ -138,6 +140,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="status">The value to set for the Status property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AccessKeyMetadata WithStatus(string status)
         {
             this.status = status;
@@ -148,7 +151,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if Status property is set
         internal bool IsSetStatus()
         {
-            return this.status != null;       
+            return this.status != null;
         }
 
         /// <summary>
@@ -166,6 +169,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="createDate">The value to set for the CreateDate property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AccessKeyMetadata WithCreateDate(DateTime createDate)
         {
             this.createDate = createDate;
@@ -176,7 +180,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if CreateDate property is set
         internal bool IsSetCreateDate()
         {
-            return this.createDate.HasValue;       
+            return this.createDate.HasValue;
         }
     }
 }

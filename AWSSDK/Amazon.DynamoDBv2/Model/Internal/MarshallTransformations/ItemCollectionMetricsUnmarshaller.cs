@@ -32,6 +32,8 @@
 
         public ItemCollectionMetrics Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             ItemCollectionMetrics itemCollectionMetrics = new ItemCollectionMetrics();
           itemCollectionMetrics.ItemCollectionKey = null;
                         itemCollectionMetrics.SizeEstimateRangeGB = null;

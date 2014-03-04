@@ -32,6 +32,8 @@
 
         public UserProfile Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             UserProfile userProfile = new UserProfile();
           
             int originalDepth = context.CurrentDepth;
@@ -64,6 +66,12 @@
               if (context.TestExpression("SshPublicKey", targetDepth))
               {
                 userProfile.SshPublicKey = StringUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
+              if (context.TestExpression("AllowSelfManagement", targetDepth))
+              {
+                userProfile.AllowSelfManagement = BoolUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   

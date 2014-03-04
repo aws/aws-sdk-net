@@ -25,7 +25,7 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the RestoreDBInstanceToPointInTime operation.
-    /// <para> Restores a DB Instance to an arbitrary point-in-time. Users can restore to any point in time before the latestRestorableTime for up
+    /// <para> Restores a DB instance to an arbitrary point-in-time. Users can restore to any point in time before the latestRestorableTime for up
     /// to backupRetentionPeriod days. The target database is created from the source database with the same configuration as the original database
     /// except that the DB instance is created with the default DB security group. </para>
     /// </summary>
@@ -48,9 +48,10 @@ namespace Amazon.RDS.Model
         private string engine;
         private int? iops;
         private string optionGroupName;
+        private List<Tag> tags = new List<Tag>();
 
         /// <summary>
-        /// The identifier of the source DB Instance from which to restore. Constraints: <ul> <li>Must be the identifier of an existing database
+        /// The identifier of the source DB instance from which to restore. Constraints: <ul> <li>Must be the identifier of an existing database
         /// instance</li> <li>Must contain from 1 to 63 alphanumeric characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end
         /// with a hyphen or contain two consecutive hyphens</li> </ul>
         ///  
@@ -66,6 +67,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="sourceDBInstanceIdentifier">The value to set for the SourceDBInstanceIdentifier property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RestoreDBInstanceToPointInTimeRequest WithSourceDBInstanceIdentifier(string sourceDBInstanceIdentifier)
         {
             this.sourceDBInstanceIdentifier = sourceDBInstanceIdentifier;
@@ -95,6 +97,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="targetDBInstanceIdentifier">The value to set for the TargetDBInstanceIdentifier property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RestoreDBInstanceToPointInTimeRequest WithTargetDBInstanceIdentifier(string targetDBInstanceIdentifier)
         {
             this.targetDBInstanceIdentifier = targetDBInstanceIdentifier;
@@ -110,7 +113,7 @@ namespace Amazon.RDS.Model
 
         /// <summary>
         /// The date and time to restore from. Valid Values: Value must be a UTC time Constraints: <ul> <li>Must be before the latest restorable time
-        /// for the DB Instance</li> <li>Cannot be specified if UseLatestRestorableTime parameter is true</li> </ul> Example:
+        /// for the DB instance</li> <li>Cannot be specified if UseLatestRestorableTime parameter is true</li> </ul> Example:
         /// <c>2009-09-07T23:45:00Z</c>
         ///  
         /// </summary>
@@ -125,6 +128,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="restoreTime">The value to set for the RestoreTime property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RestoreDBInstanceToPointInTimeRequest WithRestoreTime(DateTime restoreTime)
         {
             this.restoreTime = restoreTime;
@@ -139,7 +143,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Specifies whether (<c>true</c>) or not (<c>false</c>) the DB Instance is restored from the latest backup time. Default: <c>false</c>
+        /// Specifies whether (<c>true</c>) or not (<c>false</c>) the DB instance is restored from the latest backup time. Default: <c>false</c>
         /// Constraints: Cannot be specified if RestoreTime parameter is provided.
         ///  
         /// </summary>
@@ -154,6 +158,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="useLatestRestorableTime">The value to set for the UseLatestRestorableTime property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RestoreDBInstanceToPointInTimeRequest WithUseLatestRestorableTime(bool useLatestRestorableTime)
         {
             this.useLatestRestorableTime = useLatestRestorableTime;
@@ -169,7 +174,7 @@ namespace Amazon.RDS.Model
 
         /// <summary>
         /// The compute and memory capacity of the Amazon RDS DB instance. Valid Values: <c>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large |
-        /// db.m1.xlarge | db.m2.2xlarge | db.m2.4xlarge</c> Default: The same DBInstanceClass as the original DB Instance.
+        /// db.m1.xlarge | db.m2.2xlarge | db.m2.4xlarge</c> Default: The same DBInstanceClass as the original DB instance.
         ///  
         /// </summary>
         public string DBInstanceClass
@@ -183,6 +188,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="dBInstanceClass">The value to set for the DBInstanceClass property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RestoreDBInstanceToPointInTimeRequest WithDBInstanceClass(string dBInstanceClass)
         {
             this.dBInstanceClass = dBInstanceClass;
@@ -198,7 +204,7 @@ namespace Amazon.RDS.Model
 
         /// <summary>
         /// The port number on which the database accepts connections. Constraints: Value must be <c>1150-65535</c> Default: The same port as the
-        /// original DB Instance.
+        /// original DB instance.
         ///  
         /// </summary>
         public int Port
@@ -212,6 +218,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="port">The value to set for the Port property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RestoreDBInstanceToPointInTimeRequest WithPort(int port)
         {
             this.port = port;
@@ -241,6 +248,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="availabilityZone">The value to set for the AvailabilityZone property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RestoreDBInstanceToPointInTimeRequest WithAvailabilityZone(string availabilityZone)
         {
             this.availabilityZone = availabilityZone;
@@ -269,6 +277,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="dBSubnetGroupName">The value to set for the DBSubnetGroupName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RestoreDBInstanceToPointInTimeRequest WithDBSubnetGroupName(string dBSubnetGroupName)
         {
             this.dBSubnetGroupName = dBSubnetGroupName;
@@ -283,7 +292,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Specifies if the DB Instance is a Multi-AZ deployment. Constraint: You cannot specify the AvailabilityZone parameter if the MultiAZ
+        /// Specifies if the DB instance is a Multi-AZ deployment. Constraint: You cannot specify the AvailabilityZone parameter if the MultiAZ
         /// parameter is set to <c>true</c>.
         ///  
         /// </summary>
@@ -298,6 +307,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="multiAZ">The value to set for the MultiAZ property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RestoreDBInstanceToPointInTimeRequest WithMultiAZ(bool multiAZ)
         {
             this.multiAZ = multiAZ;
@@ -312,7 +322,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Specifies the accessibility options for the DB Instance. A value of true specifies an Internet-facing instance with a publicly resolvable
+        /// Specifies the accessibility options for the DB instance. A value of true specifies an Internet-facing instance with a publicly resolvable
         /// DNS name, which resolves to a public IP address. A value of false specifies an internal instance with a DNS name that resolves to a private
         /// IP address. Default: The default behavior varies depending on whether a VPC has been requested or not. The following list shows the default
         /// behavior in each case. <ul> <li><b>Default VPC:</b>true</li> <li><b>VPC:</b>false</li> </ul> If no DB subnet group has been specified as
@@ -331,6 +341,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="publiclyAccessible">The value to set for the PubliclyAccessible property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RestoreDBInstanceToPointInTimeRequest WithPubliclyAccessible(bool publiclyAccessible)
         {
             this.publiclyAccessible = publiclyAccessible;
@@ -345,7 +356,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Indicates that minor version upgrades will be applied automatically to the DB Instance during the maintenance window.
+        /// Indicates that minor version upgrades will be applied automatically to the DB instance during the maintenance window.
         ///  
         /// </summary>
         public bool AutoMinorVersionUpgrade
@@ -359,6 +370,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="autoMinorVersionUpgrade">The value to set for the AutoMinorVersionUpgrade property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RestoreDBInstanceToPointInTimeRequest WithAutoMinorVersionUpgrade(bool autoMinorVersionUpgrade)
         {
             this.autoMinorVersionUpgrade = autoMinorVersionUpgrade;
@@ -373,7 +385,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// License model information for the restored DB Instance. Default: Same as source. Valid values: <c>license-included</c> |
+        /// License model information for the restored DB instance. Default: Same as source. Valid values: <c>license-included</c> |
         /// <c>bring-your-own-license</c> | <c>general-public-license</c>
         ///  
         /// </summary>
@@ -388,6 +400,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="licenseModel">The value to set for the LicenseModel property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RestoreDBInstanceToPointInTimeRequest WithLicenseModel(string licenseModel)
         {
             this.licenseModel = licenseModel;
@@ -402,7 +415,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The database name for the restored DB Instance. <note> This parameter is not used for the MySQL engine. </note>
+        /// The database name for the restored DB instance. <note> This parameter is not used for the MySQL engine. </note>
         ///  
         /// </summary>
         public string DBName
@@ -416,6 +429,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="dBName">The value to set for the DBName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RestoreDBInstanceToPointInTimeRequest WithDBName(string dBName)
         {
             this.dBName = dBName;
@@ -445,6 +459,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="engine">The value to set for the Engine property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RestoreDBInstanceToPointInTimeRequest WithEngine(string engine)
         {
             this.engine = engine;
@@ -459,7 +474,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for the DB Instance. Constraints: Must be an
+        /// The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for the DB instance. Constraints: Must be an
         /// integer greater than 1000.
         ///  
         /// </summary>
@@ -474,6 +489,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="iops">The value to set for the Iops property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RestoreDBInstanceToPointInTimeRequest WithIops(int iops)
         {
             this.iops = iops;
@@ -488,7 +504,10 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The name of the option group to be used for the restored DB instance.
+        /// The name of the option group to be used for the restored DB instance. <!-- Note that persistent options, such as the TDE_SQLServer option
+        /// for Microsoft SQL Server, cannot be removed from an option group while DB instances are associated with the option group. --> Permanent
+        /// options, such as the TDE option for Oracle Advanced Security TDE, cannot be removed from an option group, and that option group cannot be
+        /// removed from a DB instance once it is associated with a DB instance
         ///  
         /// </summary>
         public string OptionGroupName
@@ -502,6 +521,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="optionGroupName">The value to set for the OptionGroupName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RestoreDBInstanceToPointInTimeRequest WithOptionGroupName(string optionGroupName)
         {
             this.optionGroupName = optionGroupName;
@@ -513,6 +533,53 @@ namespace Amazon.RDS.Model
         internal bool IsSetOptionGroupName()
         {
             return this.optionGroupName != null;
+        }
+
+        /// <summary>
+        /// A list of tags.
+        ///  
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this.tags; }
+            set { this.tags = value; }
+        }
+        /// <summary>
+        /// Adds elements to the Tags collection
+        /// </summary>
+        /// <param name="tags">The values to add to the Tags collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public RestoreDBInstanceToPointInTimeRequest WithTags(params Tag[] tags)
+        {
+            foreach (Tag element in tags)
+            {
+                this.tags.Add(element);
+            }
+
+            return this;
+        }
+
+        /// <summary>
+        /// Adds elements to the Tags collection
+        /// </summary>
+        /// <param name="tags">The values to add to the Tags collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public RestoreDBInstanceToPointInTimeRequest WithTags(IEnumerable<Tag> tags)
+        {
+            foreach (Tag element in tags)
+            {
+                this.tags.Add(element);
+            }
+
+            return this;
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this.tags.Count > 0;
         }
     }
 }

@@ -23,7 +23,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// <para> Available option. </para>
     /// </summary>
-    public class OptionGroupOption
+    public partial class OptionGroupOption
     {
         
         private string name;
@@ -35,6 +35,7 @@ namespace Amazon.RDS.Model
         private int? defaultPort;
         private List<string> optionsDependedOn = new List<string>();
         private bool? persistent;
+        private bool? permanent;
         private List<OptionGroupOptionSetting> optionGroupOptionSettings = new List<OptionGroupOptionSetting>();
 
         /// <summary>
@@ -52,6 +53,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="name">The value to set for the Name property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public OptionGroupOption WithName(string name)
         {
             this.name = name;
@@ -80,6 +82,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="description">The value to set for the Description property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public OptionGroupOption WithDescription(string description)
         {
             this.description = description;
@@ -108,6 +111,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="engineName">The value to set for the EngineName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public OptionGroupOption WithEngineName(string engineName)
         {
             this.engineName = engineName;
@@ -136,6 +140,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="majorEngineVersion">The value to set for the MajorEngineVersion property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public OptionGroupOption WithMajorEngineVersion(string majorEngineVersion)
         {
             this.majorEngineVersion = majorEngineVersion;
@@ -164,6 +169,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="minimumRequiredMinorEngineVersion">The value to set for the MinimumRequiredMinorEngineVersion property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public OptionGroupOption WithMinimumRequiredMinorEngineVersion(string minimumRequiredMinorEngineVersion)
         {
             this.minimumRequiredMinorEngineVersion = minimumRequiredMinorEngineVersion;
@@ -192,6 +198,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="portRequired">The value to set for the PortRequired property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public OptionGroupOption WithPortRequired(bool portRequired)
         {
             this.portRequired = portRequired;
@@ -220,6 +227,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="defaultPort">The value to set for the DefaultPort property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public OptionGroupOption WithDefaultPort(int defaultPort)
         {
             this.defaultPort = defaultPort;
@@ -247,6 +255,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="optionsDependedOn">The values to add to the OptionsDependedOn collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public OptionGroupOption WithOptionsDependedOn(params string[] optionsDependedOn)
         {
             foreach (string element in optionsDependedOn)
@@ -262,6 +271,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="optionsDependedOn">The values to add to the OptionsDependedOn collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public OptionGroupOption WithOptionsDependedOn(IEnumerable<string> optionsDependedOn)
         {
             foreach (string element in optionsDependedOn)
@@ -279,7 +289,8 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Specifies whether the option is persistent in an option group.
+        /// A persistent option cannot be removed from the option group once the option group is used, but this option can be removed from the db
+        /// instance while modifying the related data and assigning another option group without this option.
         ///  
         /// </summary>
         public bool Persistent
@@ -293,6 +304,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="persistent">The value to set for the Persistent property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public OptionGroupOption WithPersistent(bool persistent)
         {
             this.persistent = persistent;
@@ -307,7 +319,37 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Specifies the option settings for the entire option group.
+        /// A permanent option cannot be removed from the option group once the option group is used, and it cannot be removed from the db instance
+        /// after assigning an option group with this permanent option.
+        ///  
+        /// </summary>
+        public bool Permanent
+        {
+            get { return this.permanent ?? default(bool); }
+            set { this.permanent = value; }
+        }
+
+        /// <summary>
+        /// Sets the Permanent property
+        /// </summary>
+        /// <param name="permanent">The value to set for the Permanent property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public OptionGroupOption WithPermanent(bool permanent)
+        {
+            this.permanent = permanent;
+            return this;
+        }
+            
+
+        // Check to see if Permanent property is set
+        internal bool IsSetPermanent()
+        {
+            return this.permanent.HasValue;
+        }
+
+        /// <summary>
+        /// Specifies the option settings that are available (and the default value) for each option in an option group.
         ///  
         /// </summary>
         public List<OptionGroupOptionSetting> OptionGroupOptionSettings
@@ -320,6 +362,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="optionGroupOptionSettings">The values to add to the OptionGroupOptionSettings collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public OptionGroupOption WithOptionGroupOptionSettings(params OptionGroupOptionSetting[] optionGroupOptionSettings)
         {
             foreach (OptionGroupOptionSetting element in optionGroupOptionSettings)
@@ -335,6 +378,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="optionGroupOptionSettings">The values to add to the OptionGroupOptionSettings collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public OptionGroupOption WithOptionGroupOptionSettings(IEnumerable<OptionGroupOptionSetting> optionGroupOptionSettings)
         {
             foreach (OptionGroupOptionSetting element in optionGroupOptionSettings)

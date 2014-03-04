@@ -23,7 +23,7 @@ namespace Amazon.Glacier.Model
     /// <summary>
     /// <para>Contains the Amazon Glacier response to your request.</para>
     /// </summary>
-    public class InitiateMultipartUploadResult  
+    public partial class InitiateMultipartUploadResult
     {
         
         private string location;
@@ -44,6 +44,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="location">The value to set for the Location property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InitiateMultipartUploadResult WithLocation(string location)
         {
             this.location = location;
@@ -54,7 +55,7 @@ namespace Amazon.Glacier.Model
         // Check to see if Location property is set
         internal bool IsSetLocation()
         {
-            return this.location != null;       
+            return this.location != null;
         }
 
         /// <summary>
@@ -72,6 +73,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="uploadId">The value to set for the UploadId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InitiateMultipartUploadResult WithUploadId(string uploadId)
         {
             this.uploadId = uploadId;
@@ -82,7 +84,7 @@ namespace Amazon.Glacier.Model
         // Check to see if UploadId property is set
         internal bool IsSetUploadId()
         {
-            return this.uploadId != null;       
+            return this.uploadId != null;
         }
     }
 }

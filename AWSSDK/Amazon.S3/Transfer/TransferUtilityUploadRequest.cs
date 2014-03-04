@@ -1,4 +1,4 @@
-﻿/*******************************************************************************
+/*******************************************************************************
  *  Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  *  this file except in compliance with the License. A copy of the License is located at
@@ -74,6 +74,7 @@ namespace Amazon.S3.Transfer
         /// <returns>
         /// 	This object instance, enabling additional method calls to be chained together.
         /// </returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TransferUtilityUploadRequest WithBucketName(string bucketName)
         {
             this.bucketName = bucketName;
@@ -115,6 +116,7 @@ namespace Amazon.S3.Transfer
         /// <returns>
         /// 	This object instance, enabling additional method calls to be chained together.
         /// </returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TransferUtilityUploadRequest WithKey(string key)
         {
             this.key = key;
@@ -162,6 +164,7 @@ namespace Amazon.S3.Transfer
         /// 	The canned access control list (ACL)
         /// 	for the uploaded object.
         /// </value>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TransferUtilityUploadRequest WithCannedACL(S3CannedACL acl)
         {
             this.cannedACL = acl;
@@ -211,6 +214,7 @@ namespace Amazon.S3.Transfer
         /// <returns>
         /// 	This object instance, enabling additional method calls to be chained together.
         /// </returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TransferUtilityUploadRequest WithContentType(string contentType)
         {
             this.contentType = contentType;
@@ -356,6 +360,7 @@ namespace Amazon.S3.Transfer
         /// <returns>
         /// 	This object instance, enabling additional method calls to be chained together.
         /// </returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TransferUtilityUploadRequest WithStorageClass(S3StorageClass sClass)
         {
             this.storageClass = sClass;
@@ -389,6 +394,7 @@ namespace Amazon.S3.Transfer
         /// <returns>
         /// The response with the ServerSideEncryptionMethod set.
         /// </returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TransferUtilityUploadRequest WithServerSideEncryptionMethod(ServerSideEncryptionMethod encryption)
         {
             this.ServerSideEncryptionMethod = encryption;
@@ -420,6 +426,7 @@ namespace Amazon.S3.Transfer
         /// <returns>
         /// 	This object instance, enabling additional method calls to be chained together.
         /// </returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TransferUtilityUploadRequest WithFilePath(string filePath)
         {
             this.filePath = filePath;
@@ -454,6 +461,7 @@ namespace Amazon.S3.Transfer
         /// </returns>
         /// <seealso cref="P:System.Net.HttpWebRequest.ReadWriteTimeout"/>
         /// <seealso cref="P:System.Net.HttpWebRequest.Timeout"/>
+ [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         new public TransferUtilityUploadRequest WithTimeout(int timeout)
         {
             Timeout = timeout;
@@ -489,6 +497,7 @@ namespace Amazon.S3.Transfer
         /// <returns>
         /// 	This object instance, enabling additional method calls to be chained together.
         /// </returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TransferUtilityUploadRequest WithPartSize(long partSize)
         {
             this.partSize = partSize;
@@ -540,6 +549,7 @@ namespace Amazon.S3.Transfer
         /// </summary>
         /// <param name="handler">A method that is called when UploadProgressEvent is fired.</param>
         /// <returns>this instance of the TransferUtilityUploadRequest</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TransferUtilityUploadRequest WithSubscriber(EventHandler<UploadProgressArgs> handler)
         {
             this.UploadProgressEvent += handler;
@@ -612,6 +622,7 @@ namespace Amazon.S3.Transfer
         /// <returns>
         /// 	This object instance, enabling additional method calls to be chained together.
         /// </returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TransferUtilityUploadRequest WithAutoCloseStream(bool autoCloseStream)
         {
             this.autoCloseStream = autoCloseStream;

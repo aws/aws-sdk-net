@@ -32,6 +32,8 @@
 
         public Preset Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             Preset preset = new Preset();
           
             int originalDepth = context.CurrentDepth;
@@ -46,6 +48,12 @@
               if (context.TestExpression("Id", targetDepth))
               {
                 preset.Id = StringUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
+              if (context.TestExpression("Arn", targetDepth))
+              {
+                preset.Arn = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   

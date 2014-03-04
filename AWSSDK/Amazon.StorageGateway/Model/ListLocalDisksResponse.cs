@@ -30,18 +30,18 @@ namespace Amazon.StorageGateway.Model
 
         /// <summary>
         /// Gets and sets the ListLocalDisksResult property.
-        /// A JSON object containing the following fields: ListLocalDisksOutput$Disks GatewayARN
+        /// 
         /// </summary>
         public ListLocalDisksResult ListLocalDisksResult
         {
-            get 
+            get
             {
                 if(this.listLocalDisksResult == null)
                 {
                     this.listLocalDisksResult = new ListLocalDisksResult();
                 }
 
-                return this.listLocalDisksResult; 
+                return this.listLocalDisksResult;
             }
             set { this.listLocalDisksResult = value; }
         }

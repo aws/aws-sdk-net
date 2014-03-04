@@ -23,10 +23,11 @@ namespace Amazon.ElasticTranscoder.Model
     /// <summary>
     /// <para>A section of the response body that provides information about the job that is created.</para>
     /// </summary>
-    public class Job
+    public partial class Job
     {
         
         private string id;
+        private string arn;
         private string pipelineId;
         private JobInput input;
         private JobOutput output;
@@ -59,6 +60,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="id">The value to set for the Id property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Job WithId(string id)
         {
             this.id = id;
@@ -70,6 +72,35 @@ namespace Amazon.ElasticTranscoder.Model
         internal bool IsSetId()
         {
             return this.id != null;
+        }
+
+        /// <summary>
+        /// The Amazon Resource Name (ARN) for the job.
+        ///  
+        /// </summary>
+        public string Arn
+        {
+            get { return this.arn; }
+            set { this.arn = value; }
+        }
+
+        /// <summary>
+        /// Sets the Arn property
+        /// </summary>
+        /// <param name="arn">The value to set for the Arn property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public Job WithArn(string arn)
+        {
+            this.arn = arn;
+            return this;
+        }
+            
+
+        // Check to see if Arn property is set
+        internal bool IsSetArn()
+        {
+            return this.arn != null;
         }
 
         /// <summary>
@@ -98,6 +129,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="pipelineId">The value to set for the PipelineId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Job WithPipelineId(string pipelineId)
         {
             this.pipelineId = pipelineId;
@@ -126,6 +158,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="input">The value to set for the Input property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Job WithInput(JobInput input)
         {
             this.input = input;
@@ -157,6 +190,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="output">The value to set for the Output property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Job WithOutput(JobOutput output)
         {
             this.output = output;
@@ -187,6 +221,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="outputs">The values to add to the Outputs collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Job WithOutputs(params JobOutput[] outputs)
         {
             foreach (JobOutput element in outputs)
@@ -202,6 +237,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="outputs">The values to add to the Outputs collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Job WithOutputs(IEnumerable<JobOutput> outputs)
         {
             foreach (JobOutput element in outputs)
@@ -243,6 +279,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="outputKeyPrefix">The value to set for the OutputKeyPrefix property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Job WithOutputKeyPrefix(string outputKeyPrefix)
         {
             this.outputKeyPrefix = outputKeyPrefix;
@@ -272,6 +309,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="playlists">The values to add to the Playlists collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Job WithPlaylists(params Playlist[] playlists)
         {
             foreach (Playlist element in playlists)
@@ -287,6 +325,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="playlists">The values to add to the Playlists collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Job WithPlaylists(IEnumerable<Playlist> playlists)
         {
             foreach (Playlist element in playlists)
@@ -304,7 +343,7 @@ namespace Amazon.ElasticTranscoder.Model
         }
 
         /// <summary>
-        /// The status of the job: <c>Submitted</c>, <c>Progressing</c>, <c>l</c>, <c>Canceled</c>, or <c>Error</c>.
+        /// The status of the job: <c>Submitted</c>, <c>Progressing</c>, <c>Complete</c>, <c>Canceled</c>, or <c>Error</c>.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -327,6 +366,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="status">The value to set for the Status property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Job WithStatus(string status)
         {
             this.status = status;

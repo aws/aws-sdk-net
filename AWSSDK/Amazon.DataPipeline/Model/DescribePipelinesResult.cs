@@ -42,6 +42,7 @@ namespace Amazon.DataPipeline.Model
         /// </summary>
         /// <param name="pipelineDescriptionList">The values to add to the PipelineDescriptionList collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribePipelinesResult WithPipelineDescriptionList(params PipelineDescription[] pipelineDescriptionList)
         {
             foreach (PipelineDescription element in pipelineDescriptionList)
@@ -57,6 +58,7 @@ namespace Amazon.DataPipeline.Model
         /// </summary>
         /// <param name="pipelineDescriptionList">The values to add to the PipelineDescriptionList collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribePipelinesResult WithPipelineDescriptionList(IEnumerable<PipelineDescription> pipelineDescriptionList)
         {
             foreach (PipelineDescription element in pipelineDescriptionList)

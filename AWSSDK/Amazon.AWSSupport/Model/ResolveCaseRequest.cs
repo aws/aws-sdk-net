@@ -25,7 +25,7 @@ namespace Amazon.AWSSupport.Model
 {
     /// <summary>
     /// Container for the parameters to the ResolveCase operation.
-    /// <para>Takes a <i>CaseId</i> and returns the initial state of the case along with the state of the case after the call to ResolveCase
+    /// <para>Takes a <c>CaseId</c> and returns the initial state of the case along with the state of the case after the call to ResolveCase
     /// completed.</para>
     /// </summary>
     /// <seealso cref="Amazon.AWSSupport.AmazonAWSSupport.ResolveCase"/>
@@ -34,8 +34,8 @@ namespace Amazon.AWSSupport.Model
         private string caseId;
 
         /// <summary>
-        /// String that indicates the AWS Support caseID requested or returned in the call. The caseID is an alphanumeric string formatted as shown in
-        /// this example CaseId: <i>case-12345678910-2013-c4c1d2bf33c5cf47</i>
+        /// The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example:
+        /// case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
         ///  
         /// </summary>
         public string CaseId
@@ -49,6 +49,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="caseId">The value to set for the CaseId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ResolveCaseRequest WithCaseId(string caseId)
         {
             this.caseId = caseId;

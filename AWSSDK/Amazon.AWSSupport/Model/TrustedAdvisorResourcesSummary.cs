@@ -21,10 +21,9 @@ using System.IO;
 namespace Amazon.AWSSupport.Model
 {
     /// <summary>
-    /// <para>JSON-formatted object that lists details about AWS resources that were analyzed in a call to Trusted Advisor
-    /// DescribeTrustedAdvisorCheckSummaries. </para>
+    /// <para>Details about AWS resources that were analyzed in a call to Trusted Advisor DescribeTrustedAdvisorCheckSummaries. </para>
     /// </summary>
-    public class TrustedAdvisorResourcesSummary
+    public partial class TrustedAdvisorResourcesSummary
     {
         
         private long? resourcesProcessed;
@@ -33,7 +32,7 @@ namespace Amazon.AWSSupport.Model
         private long? resourcesSuppressed;
 
         /// <summary>
-        /// Reports the number of AWS resources that were analyzed in your Trusted Advisor check.
+        /// The number of AWS resources that were analyzed by the Trusted Advisor check.
         ///  
         /// </summary>
         public long ResourcesProcessed
@@ -47,6 +46,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="resourcesProcessed">The value to set for the ResourcesProcessed property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TrustedAdvisorResourcesSummary WithResourcesProcessed(long resourcesProcessed)
         {
             this.resourcesProcessed = resourcesProcessed;
@@ -61,7 +61,7 @@ namespace Amazon.AWSSupport.Model
         }
 
         /// <summary>
-        /// Reports the number of AWS resources that were flagged in your Trusted Advisor check.
+        /// The number of AWS resources that were flagged (listed) by the Trusted Advisor check.
         ///  
         /// </summary>
         public long ResourcesFlagged
@@ -75,6 +75,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="resourcesFlagged">The value to set for the ResourcesFlagged property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TrustedAdvisorResourcesSummary WithResourcesFlagged(long resourcesFlagged)
         {
             this.resourcesFlagged = resourcesFlagged;
@@ -89,7 +90,7 @@ namespace Amazon.AWSSupport.Model
         }
 
         /// <summary>
-        /// Indicates the number of resources ignored by Trusted Advisor due to unavailability of information.
+        /// The number of AWS resources ignored by Trusted Advisor because information was unavailable.
         ///  
         /// </summary>
         public long ResourcesIgnored
@@ -103,6 +104,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="resourcesIgnored">The value to set for the ResourcesIgnored property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TrustedAdvisorResourcesSummary WithResourcesIgnored(long resourcesIgnored)
         {
             this.resourcesIgnored = resourcesIgnored;
@@ -117,7 +119,7 @@ namespace Amazon.AWSSupport.Model
         }
 
         /// <summary>
-        /// Indicates whether the specified AWS resource has had its participation in Trusted Advisor checks suppressed.
+        /// The number of AWS resources ignored by Trusted Advisor because they were marked as suppressed by the user.
         ///  
         /// </summary>
         public long ResourcesSuppressed
@@ -131,6 +133,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="resourcesSuppressed">The value to set for the ResourcesSuppressed property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TrustedAdvisorResourcesSummary WithResourcesSuppressed(long resourcesSuppressed)
         {
             this.resourcesSuppressed = resourcesSuppressed;

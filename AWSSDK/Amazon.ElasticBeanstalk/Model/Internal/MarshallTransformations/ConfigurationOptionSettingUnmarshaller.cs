@@ -22,13 +22,14 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
      /// <summary>
      ///   ConfigurationOptionSetting Unmarshaller
      /// </summary>
-    internal class ConfigurationOptionSettingUnmarshaller : IUnmarshaller<ConfigurationOptionSetting, XmlUnmarshallerContext> 
+    internal class ConfigurationOptionSettingUnmarshaller : IUnmarshaller<ConfigurationOptionSetting, XmlUnmarshallerContext>, IUnmarshaller<ConfigurationOptionSetting, JsonUnmarshallerContext> 
     {
         public ConfigurationOptionSetting Unmarshall(XmlUnmarshallerContext context) 
         {
             ConfigurationOptionSetting configurationOptionSetting = new ConfigurationOptionSetting();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -64,6 +65,11 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
 
 
             return configurationOptionSetting;
+        }
+
+        public ConfigurationOptionSetting Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static ConfigurationOptionSettingUnmarshaller instance;

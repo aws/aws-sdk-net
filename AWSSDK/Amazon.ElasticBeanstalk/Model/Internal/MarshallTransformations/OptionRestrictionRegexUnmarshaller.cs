@@ -22,13 +22,14 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
      /// <summary>
      ///   OptionRestrictionRegex Unmarshaller
      /// </summary>
-    internal class OptionRestrictionRegexUnmarshaller : IUnmarshaller<OptionRestrictionRegex, XmlUnmarshallerContext> 
+    internal class OptionRestrictionRegexUnmarshaller : IUnmarshaller<OptionRestrictionRegex, XmlUnmarshallerContext>, IUnmarshaller<OptionRestrictionRegex, JsonUnmarshallerContext> 
     {
         public OptionRestrictionRegex Unmarshall(XmlUnmarshallerContext context) 
         {
             OptionRestrictionRegex optionRestrictionRegex = new OptionRestrictionRegex();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -58,6 +59,11 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
 
 
             return optionRestrictionRegex;
+        }
+
+        public OptionRestrictionRegex Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static OptionRestrictionRegexUnmarshaller instance;

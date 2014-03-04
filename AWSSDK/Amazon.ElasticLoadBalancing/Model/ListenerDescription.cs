@@ -23,7 +23,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// <summary>
     /// <para> The ListenerDescription data type. </para>
     /// </summary>
-    public class ListenerDescription  
+    public partial class ListenerDescription
     {
         
         private Listener listener;
@@ -50,6 +50,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="listener">The value to set for the Listener property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListenerDescription WithListener(Listener listener)
         {
             this.listener = listener;
@@ -60,7 +61,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if Listener property is set
         internal bool IsSetListener()
         {
-            return this.listener != null;       
+            return this.listener != null;
         }
 
         /// <summary>
@@ -77,6 +78,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="policyNames">The values to add to the PolicyNames collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListenerDescription WithPolicyNames(params string[] policyNames)
         {
             foreach (string element in policyNames)
@@ -86,12 +88,13 @@ namespace Amazon.ElasticLoadBalancing.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the PolicyNames collection
         /// </summary>
         /// <param name="policyNames">The values to add to the PolicyNames collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListenerDescription WithPolicyNames(IEnumerable<string> policyNames)
         {
             foreach (string element in policyNames)
@@ -105,7 +108,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if PolicyNames property is set
         internal bool IsSetPolicyNames()
         {
-            return this.policyNames.Count > 0;       
+            return this.policyNames.Count > 0;
         }
     }
 }

@@ -23,7 +23,7 @@ namespace Amazon.CloudSearch.Model
     /// <summary>
     /// <para>A response message that contains the status of updated stopword options.</para>
     /// </summary>
-    public class UpdateStopwordOptionsResult  
+    public partial class UpdateStopwordOptionsResult
     {
         
         private StopwordOptionsStatus stopwords;
@@ -43,6 +43,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="stopwords">The value to set for the Stopwords property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateStopwordOptionsResult WithStopwords(StopwordOptionsStatus stopwords)
         {
             this.stopwords = stopwords;
@@ -53,7 +54,7 @@ namespace Amazon.CloudSearch.Model
         // Check to see if Stopwords property is set
         internal bool IsSetStopwords()
         {
-            return this.stopwords != null;       
+            return this.stopwords != null;
         }
     }
 }

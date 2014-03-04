@@ -50,6 +50,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="image">Details about the format of the image.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DiskImageType WithImage(DiskImageDetailType image)
         {
             this.imageField = image;
@@ -80,6 +81,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="description">Optional description of the disk image.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DiskImageType WithDescription(string description)
         {
             this.descriptionField = description;
@@ -110,6 +112,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="volume">Details about the size of the image.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DiskImageType WithVolume(DiskImageVolumeType volume)
         {
             this.volumeField = volume;

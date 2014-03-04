@@ -28,9 +28,9 @@ namespace Amazon.IdentityManagement.Model
     /// <para>Updates the name and/or the path of the specified server certificate.</para> <para><b>IMPORTANT:</b> You should understand the
     /// implications of changing a server certificate's path or name. For more information, see Managing Server Certificates in Using AWS Identity
     /// and Access Management. </para> <para><b>NOTE:</b>To change a server certificate name the requester must have appropriate permissions on both
-    /// the source object and the target object. For example, to change the name from ProductionCert to ProdCert, the entity making the request
-    /// must have permission on ProductionCert and ProdCert, or must have permission on all (*). For more information about permissions, see
-    /// Permissions and Policies. </para>
+    /// the source object and the target object. For example, to change the name from ProductionCert to ProdCert, the entity making the request must
+    /// have permission on ProductionCert and ProdCert, or must have permission on all (*). For more information about permissions, see Permissions
+    /// and Policies. </para>
     /// </summary>
     /// <seealso cref="Amazon.IdentityManagement.AmazonIdentityManagementService.UpdateServerCertificate"/>
     public class UpdateServerCertificateRequest : AmazonWebServiceRequest
@@ -67,6 +67,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="serverCertificateName">The value to set for the ServerCertificateName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateServerCertificateRequest WithServerCertificateName(string serverCertificateName)
         {
             this.serverCertificateName = serverCertificateName;
@@ -77,7 +78,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if ServerCertificateName property is set
         internal bool IsSetServerCertificateName()
         {
-            return this.serverCertificateName != null;       
+            return this.serverCertificateName != null;
         }
 
         /// <summary>
@@ -108,6 +109,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="newPath">The value to set for the NewPath property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateServerCertificateRequest WithNewPath(string newPath)
         {
             this.newPath = newPath;
@@ -118,7 +120,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if NewPath property is set
         internal bool IsSetNewPath()
         {
-            return this.newPath != null;       
+            return this.newPath != null;
         }
 
         /// <summary>
@@ -149,6 +151,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="newServerCertificateName">The value to set for the NewServerCertificateName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UpdateServerCertificateRequest WithNewServerCertificateName(string newServerCertificateName)
         {
             this.newServerCertificateName = newServerCertificateName;
@@ -159,7 +162,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if NewServerCertificateName property is set
         internal bool IsSetNewServerCertificateName()
         {
-            return this.newServerCertificateName != null;       
+            return this.newServerCertificateName != null;
         }
     }
 }

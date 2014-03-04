@@ -23,13 +23,13 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// <summary>
     /// <para> The out for the ApplySecurityGroupsToLoadBalancer action. </para>
     /// </summary>
-    public class ApplySecurityGroupsToLoadBalancerResult  
+    public partial class ApplySecurityGroupsToLoadBalancerResult
     {
         
         private List<string> securityGroups = new List<string>();
 
         /// <summary>
-        /// A list of security group IDs associated with your LoadBalancer.
+        /// A list of security group IDs associated with your load balancer.
         ///  
         /// </summary>
         public List<string> SecurityGroups
@@ -42,6 +42,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="securityGroups">The values to add to the SecurityGroups collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ApplySecurityGroupsToLoadBalancerResult WithSecurityGroups(params string[] securityGroups)
         {
             foreach (string element in securityGroups)
@@ -51,12 +52,13 @@ namespace Amazon.ElasticLoadBalancing.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the SecurityGroups collection
         /// </summary>
         /// <param name="securityGroups">The values to add to the SecurityGroups collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ApplySecurityGroupsToLoadBalancerResult WithSecurityGroups(IEnumerable<string> securityGroups)
         {
             foreach (string element in securityGroups)
@@ -70,7 +72,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if SecurityGroups property is set
         internal bool IsSetSecurityGroups()
         {
-            return this.securityGroups.Count > 0;       
+            return this.securityGroups.Count > 0;
         }
     }
 }

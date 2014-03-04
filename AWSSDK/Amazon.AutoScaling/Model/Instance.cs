@@ -23,7 +23,7 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// <para> The <c>Instance</c> data type. </para>
     /// </summary>
-    public class Instance  
+    public partial class Instance
     {
         
         private string instanceId;
@@ -60,6 +60,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="instanceId">The value to set for the InstanceId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Instance WithInstanceId(string instanceId)
         {
             this.instanceId = instanceId;
@@ -70,7 +71,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if InstanceId property is set
         internal bool IsSetInstanceId()
         {
-            return this.instanceId != null;       
+            return this.instanceId != null;
         }
 
         /// <summary>
@@ -101,6 +102,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="availabilityZone">The value to set for the AvailabilityZone property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Instance WithAvailabilityZone(string availabilityZone)
         {
             this.availabilityZone = availabilityZone;
@@ -111,11 +113,11 @@ namespace Amazon.AutoScaling.Model
         // Check to see if AvailabilityZone property is set
         internal bool IsSetAvailabilityZone()
         {
-            return this.availabilityZone != null;       
+            return this.availabilityZone != null;
         }
 
         /// <summary>
-        /// Contains a description of the current <i>lifecycle</i> state.
+        /// Contains a description of the current <i>lifecycle</i> state. <note> The <c>Quarantined</c> lifecycle state is currently not used. </note>
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -138,6 +140,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="lifecycleState">The value to set for the LifecycleState property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Instance WithLifecycleState(string lifecycleState)
         {
             this.lifecycleState = lifecycleState;
@@ -148,7 +151,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if LifecycleState property is set
         internal bool IsSetLifecycleState()
         {
-            return this.lifecycleState != null;       
+            return this.lifecycleState != null;
         }
 
         /// <summary>
@@ -179,6 +182,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="healthStatus">The value to set for the HealthStatus property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Instance WithHealthStatus(string healthStatus)
         {
             this.healthStatus = healthStatus;
@@ -189,7 +193,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if HealthStatus property is set
         internal bool IsSetHealthStatus()
         {
-            return this.healthStatus != null;       
+            return this.healthStatus != null;
         }
 
         /// <summary>
@@ -220,6 +224,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="launchConfigurationName">The value to set for the LaunchConfigurationName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Instance WithLaunchConfigurationName(string launchConfigurationName)
         {
             this.launchConfigurationName = launchConfigurationName;
@@ -230,7 +235,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if LaunchConfigurationName property is set
         internal bool IsSetLaunchConfigurationName()
         {
-            return this.launchConfigurationName != null;       
+            return this.launchConfigurationName != null;
         }
     }
 }

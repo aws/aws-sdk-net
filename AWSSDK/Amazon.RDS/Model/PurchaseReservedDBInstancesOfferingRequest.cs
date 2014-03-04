@@ -25,7 +25,7 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the PurchaseReservedDBInstancesOffering operation.
-    /// <para> Purchases a reserved DB Instance offering. </para>
+    /// <para> Purchases a reserved DB instance offering. </para>
     /// </summary>
     /// <seealso cref="Amazon.RDS.AmazonRDS.PurchaseReservedDBInstancesOffering"/>
     public class PurchaseReservedDBInstancesOfferingRequest : AmazonWebServiceRequest
@@ -33,9 +33,10 @@ namespace Amazon.RDS.Model
         private string reservedDBInstancesOfferingId;
         private string reservedDBInstanceId;
         private int? dBInstanceCount;
+        private List<Tag> tags = new List<Tag>();
 
         /// <summary>
-        /// The ID of the Reserved DB Instance offering to purchase. Example: 438012d3-4052-4cc7-b2e3-8d3372e0e706
+        /// The ID of the Reserved DB instance offering to purchase. Example: 438012d3-4052-4cc7-b2e3-8d3372e0e706
         ///  
         /// </summary>
         public string ReservedDBInstancesOfferingId
@@ -49,6 +50,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="reservedDBInstancesOfferingId">The value to set for the ReservedDBInstancesOfferingId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PurchaseReservedDBInstancesOfferingRequest WithReservedDBInstancesOfferingId(string reservedDBInstancesOfferingId)
         {
             this.reservedDBInstancesOfferingId = reservedDBInstancesOfferingId;
@@ -77,6 +79,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="reservedDBInstanceId">The value to set for the ReservedDBInstanceId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PurchaseReservedDBInstancesOfferingRequest WithReservedDBInstanceId(string reservedDBInstanceId)
         {
             this.reservedDBInstanceId = reservedDBInstanceId;
@@ -105,6 +108,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="dBInstanceCount">The value to set for the DBInstanceCount property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PurchaseReservedDBInstancesOfferingRequest WithDBInstanceCount(int dBInstanceCount)
         {
             this.dBInstanceCount = dBInstanceCount;
@@ -116,6 +120,53 @@ namespace Amazon.RDS.Model
         internal bool IsSetDBInstanceCount()
         {
             return this.dBInstanceCount.HasValue;
+        }
+
+        /// <summary>
+        /// A list of tags.
+        ///  
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this.tags; }
+            set { this.tags = value; }
+        }
+        /// <summary>
+        /// Adds elements to the Tags collection
+        /// </summary>
+        /// <param name="tags">The values to add to the Tags collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public PurchaseReservedDBInstancesOfferingRequest WithTags(params Tag[] tags)
+        {
+            foreach (Tag element in tags)
+            {
+                this.tags.Add(element);
+            }
+
+            return this;
+        }
+
+        /// <summary>
+        /// Adds elements to the Tags collection
+        /// </summary>
+        /// <param name="tags">The values to add to the Tags collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public PurchaseReservedDBInstancesOfferingRequest WithTags(IEnumerable<Tag> tags)
+        {
+            foreach (Tag element in tags)
+            {
+                this.tags.Add(element);
+            }
+
+            return this;
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this.tags.Count > 0;
         }
     }
 }

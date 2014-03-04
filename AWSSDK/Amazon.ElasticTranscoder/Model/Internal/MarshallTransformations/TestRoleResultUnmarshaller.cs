@@ -32,6 +32,8 @@
 
         public TestRoleResult Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             TestRoleResult testRoleResult = new TestRoleResult();
           testRoleResult.Messages = null;
                         
@@ -52,8 +54,14 @@
   
               if (context.TestExpression("Messages", targetDepth))
               {
-                testRoleResult.Messages = new List<String>();
-                        StringUnmarshaller unmarshaller = StringUnmarshaller.GetInstance();
+                
+                  if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                  {
+                      testRoleResult.Messages = null;
+                      continue;
+                  }              
+                  testRoleResult.Messages = new List<String>();
+                  StringUnmarshaller unmarshaller = StringUnmarshaller.GetInstance();
                 while (context.Read())
                 {
                   if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))

@@ -26,7 +26,7 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// Container for the parameters to the EnableMetricsCollection operation.
     /// <para> Enables monitoring of group metrics for the Auto Scaling group specified in <c>AutoScalingGroupName</c> .
-    /// You can specify the list of enabled metrics with the <c>Metrics</c> parameter. </para> <para> Auto scaling metrics collection
+    /// You can specify the list of enabled metrics with the <c>Metrics</c> parameter. </para> <para> Auto Scaling metrics collection
     /// can be turned on only if the <c>InstanceMonitoring</c> flag, in the Auto Scaling group's launch configuration, is set to <c>True</c> .
     /// </para>
     /// </summary>
@@ -65,6 +65,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="autoScalingGroupName">The value to set for the AutoScalingGroupName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EnableMetricsCollectionRequest WithAutoScalingGroupName(string autoScalingGroupName)
         {
             this.autoScalingGroupName = autoScalingGroupName;
@@ -75,7 +76,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if AutoScalingGroupName property is set
         internal bool IsSetAutoScalingGroupName()
         {
-            return this.autoScalingGroupName != null;       
+            return this.autoScalingGroupName != null;
         }
 
         /// <summary>
@@ -94,6 +95,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="metrics">The values to add to the Metrics collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EnableMetricsCollectionRequest WithMetrics(params string[] metrics)
         {
             foreach (string element in metrics)
@@ -103,12 +105,13 @@ namespace Amazon.AutoScaling.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Metrics collection
         /// </summary>
         /// <param name="metrics">The values to add to the Metrics collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EnableMetricsCollectionRequest WithMetrics(IEnumerable<string> metrics)
         {
             foreach (string element in metrics)
@@ -122,7 +125,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if Metrics property is set
         internal bool IsSetMetrics()
         {
-            return this.metrics.Count > 0;       
+            return this.metrics.Count > 0;
         }
 
         /// <summary>
@@ -153,6 +156,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="granularity">The value to set for the Granularity property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EnableMetricsCollectionRequest WithGranularity(string granularity)
         {
             this.granularity = granularity;
@@ -163,7 +167,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if Granularity property is set
         internal bool IsSetGranularity()
         {
-            return this.granularity != null;       
+            return this.granularity != null;
         }
     }
 }

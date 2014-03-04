@@ -1,4 +1,4 @@
-﻿/*******************************************************************************
+/*******************************************************************************
  * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
@@ -33,7 +33,7 @@ namespace Amazon.EC2.Model
     /// The number of secondary IP addresses that you can assign to an instance varies by instance type.
     /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
-    public class AssignPrivateIpAddressesRequest
+    public class AssignPrivateIpAddressesRequest : EC2Request
     {
         private string networkInterfaceIdField;
         private List<string> privateIpAddressesField;
@@ -55,6 +55,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="networkInterfaceId">Network interface ID.</param>
         /// <returns>this instance</returns>
+        [System.Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AssignPrivateIpAddressesRequest WithNetworkInterfaceId(string networkInterfaceId)
         {
             this.networkInterfaceIdField = networkInterfaceId;
@@ -87,6 +88,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="secondaryPrivateIpAddressCount">Instance Network Interface Association.</param>
         /// <returns>this instance</returns>
+        [System.Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AssignPrivateIpAddressesRequest WithSecondaryPrivateIpAddressCount(int secondaryPrivateIpAddressCount)
         {
             this.secondaryPrivateIpAddressCountField = secondaryPrivateIpAddressCount;
@@ -120,6 +122,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="allowReassignment">Whether reassignment is allowed.</param>
         /// <returns>this instance</returns>
+        [System.Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AssignPrivateIpAddressesRequest WithAllowReassignment(bool allowReassignment)
         {
             this.allowReassignmentField = allowReassignment;
@@ -158,6 +161,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="privateIpAddresses">List of private IP addresses.</param>
         /// <returns>this instance</returns>
+        [System.Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AssignPrivateIpAddressesRequest WithPrivateIpAddresses(params string[] privateIpAddresses)
         {
             foreach (string privateIpAddress in privateIpAddresses)

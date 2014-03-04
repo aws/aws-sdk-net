@@ -43,12 +43,16 @@
           
           if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerErrorException"))
           {
-            return new InternalServerErrorException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            InternalServerErrorException ex = new InternalServerErrorException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            
+            return ex;
           }
   
           if (errorResponse.Code != null && errorResponse.Code.Equals("CaseCreationLimitExceededException"))
           {
-            return new CaseCreationLimitExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            CaseCreationLimitExceededException ex = new CaseCreationLimitExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            
+            return ex;
           }
   
           return new AmazonAWSSupportException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);

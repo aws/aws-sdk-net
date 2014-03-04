@@ -34,14 +34,14 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         public DescribeAutoScalingNotificationTypesResult DescribeAutoScalingNotificationTypesResult
         {
-            get 
+            get
             {
                 if(this.describeAutoScalingNotificationTypesResult == null)
                 {
                     this.describeAutoScalingNotificationTypesResult = new DescribeAutoScalingNotificationTypesResult();
                 }
 
-                return this.describeAutoScalingNotificationTypesResult; 
+                return this.describeAutoScalingNotificationTypesResult;
             }
             set { this.describeAutoScalingNotificationTypesResult = value; }
         }

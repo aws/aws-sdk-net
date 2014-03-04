@@ -30,7 +30,7 @@ namespace Amazon.ElasticTranscoder.Model
 
         /// <summary>
         /// Gets and sets the UpdatePipelineNotificationsResult property.
-        /// 
+        /// The UpdatePipelineNotificationsResponse structure.
         /// </summary>
         public UpdatePipelineNotificationsResult UpdatePipelineNotificationsResult
         {

@@ -34,7 +34,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(createDBInstanceRequest, "AmazonRDS");
             request.Parameters.Add("Action", "CreateDBInstance");
-            request.Parameters.Add("Version", "2013-02-12");
+            request.Parameters.Add("Version", "2013-09-09");
             if (createDBInstanceRequest != null && createDBInstanceRequest.IsSetDBName())
             {
                 request.Parameters.Add("DBName", StringUtils.FromString(createDBInstanceRequest.DBName));
@@ -144,6 +144,25 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             if (createDBInstanceRequest != null && createDBInstanceRequest.IsSetPubliclyAccessible())
             {
                 request.Parameters.Add("PubliclyAccessible", StringUtils.FromBool(createDBInstanceRequest.PubliclyAccessible));
+            }
+
+            if (createDBInstanceRequest != null)
+            {
+                List<Tag> tagsList = createDBInstanceRequest.Tags;
+                int tagsListIndex = 1;
+                foreach (Tag tagsListValue in tagsList)
+                {
+                    if (tagsListValue != null && tagsListValue.IsSetKey())
+                    {
+                        request.Parameters.Add("Tags.member." + tagsListIndex + ".Key", StringUtils.FromString(tagsListValue.Key));
+                    }
+                    if (tagsListValue != null && tagsListValue.IsSetValue())
+                    {
+                        request.Parameters.Add("Tags.member." + tagsListIndex + ".Value", StringUtils.FromString(tagsListValue.Value));
+                    }
+
+                    tagsListIndex++;
+                }
             }
 
             return request;

@@ -30,8 +30,9 @@ namespace Amazon.Redshift.Model
     /// After Amazon Redshift creates the cluster you can use the ModifyCluster API to associate a different security group and different parameter
     /// group with the restored cluster. </para> <para> If a snapshot is taken of a cluster in VPC, you can restore it only in VPC. In this case,
     /// you must provide a cluster subnet group where you want the cluster restored. If snapshot is taken of a cluster outside VPC, then you can
-    /// restore it only outside VPC.</para> <para> For more information about working with snapshots, go to Amazon Redshift Snapshots in the
-    /// <i>Amazon Redshift Management Guide</i> .
+    /// restore it only outside VPC.</para> <para> For more information about working with snapshots, go to <a
+    /// href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html" >Amazon Redshift Snapshots</a> in the <i>Amazon Redshift
+    /// Management Guide</i> .
     /// </para>
     /// </summary>
     /// <seealso cref="Amazon.Redshift.AmazonRedshift.RestoreFromClusterSnapshot"/>
@@ -39,11 +40,16 @@ namespace Amazon.Redshift.Model
     {
         private string clusterIdentifier;
         private string snapshotIdentifier;
+        private string snapshotClusterIdentifier;
         private int? port;
         private string availabilityZone;
         private bool? allowVersionUpgrade;
         private string clusterSubnetGroupName;
         private bool? publiclyAccessible;
+        private string ownerAccount;
+        private string hsmClientCertificateIdentifier;
+        private string hsmConfigurationIdentifier;
+        private string elasticIp;
 
         /// <summary>
         /// The identifier of the cluster that will be created from restoring the snapshot. Constraints: <ul> <li>Must contain from 1 to 63 alphanumeric
@@ -62,6 +68,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="clusterIdentifier">The value to set for the ClusterIdentifier property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RestoreFromClusterSnapshotRequest WithClusterIdentifier(string clusterIdentifier)
         {
             this.clusterIdentifier = clusterIdentifier;
@@ -90,6 +97,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="snapshotIdentifier">The value to set for the SnapshotIdentifier property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RestoreFromClusterSnapshotRequest WithSnapshotIdentifier(string snapshotIdentifier)
         {
             this.snapshotIdentifier = snapshotIdentifier;
@@ -101,6 +109,36 @@ namespace Amazon.Redshift.Model
         internal bool IsSetSnapshotIdentifier()
         {
             return this.snapshotIdentifier != null;
+        }
+
+        /// <summary>
+        /// The name of the cluster the source snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot
+        /// resource element that specifies anything other than * for the cluster name.
+        ///  
+        /// </summary>
+        public string SnapshotClusterIdentifier
+        {
+            get { return this.snapshotClusterIdentifier; }
+            set { this.snapshotClusterIdentifier = value; }
+        }
+
+        /// <summary>
+        /// Sets the SnapshotClusterIdentifier property
+        /// </summary>
+        /// <param name="snapshotClusterIdentifier">The value to set for the SnapshotClusterIdentifier property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public RestoreFromClusterSnapshotRequest WithSnapshotClusterIdentifier(string snapshotClusterIdentifier)
+        {
+            this.snapshotClusterIdentifier = snapshotClusterIdentifier;
+            return this;
+        }
+            
+
+        // Check to see if SnapshotClusterIdentifier property is set
+        internal bool IsSetSnapshotClusterIdentifier()
+        {
+            return this.snapshotClusterIdentifier != null;
         }
 
         /// <summary>
@@ -119,6 +157,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="port">The value to set for the Port property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RestoreFromClusterSnapshotRequest WithPort(int port)
         {
             this.port = port;
@@ -148,6 +187,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="availabilityZone">The value to set for the AvailabilityZone property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RestoreFromClusterSnapshotRequest WithAvailabilityZone(string availabilityZone)
         {
             this.availabilityZone = availabilityZone;
@@ -177,6 +217,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="allowVersionUpgrade">The value to set for the AllowVersionUpgrade property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RestoreFromClusterSnapshotRequest WithAllowVersionUpgrade(bool allowVersionUpgrade)
         {
             this.allowVersionUpgrade = allowVersionUpgrade;
@@ -206,6 +247,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="clusterSubnetGroupName">The value to set for the ClusterSubnetGroupName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RestoreFromClusterSnapshotRequest WithClusterSubnetGroupName(string clusterSubnetGroupName)
         {
             this.clusterSubnetGroupName = clusterSubnetGroupName;
@@ -234,6 +276,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="publiclyAccessible">The value to set for the PubliclyAccessible property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RestoreFromClusterSnapshotRequest WithPubliclyAccessible(bool publiclyAccessible)
         {
             this.publiclyAccessible = publiclyAccessible;
@@ -245,6 +288,124 @@ namespace Amazon.Redshift.Model
         internal bool IsSetPubliclyAccessible()
         {
             return this.publiclyAccessible.HasValue;
+        }
+
+        /// <summary>
+        /// The AWS customer account used to create or copy the snapshot. Required if you are restoring a snapshot you do not own, optional if you own
+        /// the snapshot.
+        ///  
+        /// </summary>
+        public string OwnerAccount
+        {
+            get { return this.ownerAccount; }
+            set { this.ownerAccount = value; }
+        }
+
+        /// <summary>
+        /// Sets the OwnerAccount property
+        /// </summary>
+        /// <param name="ownerAccount">The value to set for the OwnerAccount property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public RestoreFromClusterSnapshotRequest WithOwnerAccount(string ownerAccount)
+        {
+            this.ownerAccount = ownerAccount;
+            return this;
+        }
+            
+
+        // Check to see if OwnerAccount property is set
+        internal bool IsSetOwnerAccount()
+        {
+            return this.ownerAccount != null;
+        }
+
+        /// <summary>
+        /// Specifies the name of the HSM client certificate the Amazon Redshift cluster uses to retrieve the data encryption keys stored in an HSM.
+        ///  
+        /// </summary>
+        public string HsmClientCertificateIdentifier
+        {
+            get { return this.hsmClientCertificateIdentifier; }
+            set { this.hsmClientCertificateIdentifier = value; }
+        }
+
+        /// <summary>
+        /// Sets the HsmClientCertificateIdentifier property
+        /// </summary>
+        /// <param name="hsmClientCertificateIdentifier">The value to set for the HsmClientCertificateIdentifier property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public RestoreFromClusterSnapshotRequest WithHsmClientCertificateIdentifier(string hsmClientCertificateIdentifier)
+        {
+            this.hsmClientCertificateIdentifier = hsmClientCertificateIdentifier;
+            return this;
+        }
+            
+
+        // Check to see if HsmClientCertificateIdentifier property is set
+        internal bool IsSetHsmClientCertificateIdentifier()
+        {
+            return this.hsmClientCertificateIdentifier != null;
+        }
+
+        /// <summary>
+        /// Specifies the name of the HSM configuration that contains the information the Amazon Redshift cluster can use to retrieve and store keys in
+        /// an HSM.
+        ///  
+        /// </summary>
+        public string HsmConfigurationIdentifier
+        {
+            get { return this.hsmConfigurationIdentifier; }
+            set { this.hsmConfigurationIdentifier = value; }
+        }
+
+        /// <summary>
+        /// Sets the HsmConfigurationIdentifier property
+        /// </summary>
+        /// <param name="hsmConfigurationIdentifier">The value to set for the HsmConfigurationIdentifier property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public RestoreFromClusterSnapshotRequest WithHsmConfigurationIdentifier(string hsmConfigurationIdentifier)
+        {
+            this.hsmConfigurationIdentifier = hsmConfigurationIdentifier;
+            return this;
+        }
+            
+
+        // Check to see if HsmConfigurationIdentifier property is set
+        internal bool IsSetHsmConfigurationIdentifier()
+        {
+            return this.hsmConfigurationIdentifier != null;
+        }
+
+        /// <summary>
+        /// The elastic IP (EIP) address for the cluster.
+        ///  
+        /// </summary>
+        public string ElasticIp
+        {
+            get { return this.elasticIp; }
+            set { this.elasticIp = value; }
+        }
+
+        /// <summary>
+        /// Sets the ElasticIp property
+        /// </summary>
+        /// <param name="elasticIp">The value to set for the ElasticIp property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public RestoreFromClusterSnapshotRequest WithElasticIp(string elasticIp)
+        {
+            this.elasticIp = elasticIp;
+            return this;
+        }
+            
+
+        // Check to see if ElasticIp property is set
+        internal bool IsSetElasticIp()
+        {
+            return this.elasticIp != null;
         }
     }
 }

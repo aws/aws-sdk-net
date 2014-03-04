@@ -23,7 +23,7 @@ namespace Amazon.ElasticBeanstalk.Model
     /// <summary>
     /// <para>Result message wrapping a list of application version descriptions.</para>
     /// </summary>
-    public class DescribeApplicationVersionsResult  
+    public partial class DescribeApplicationVersionsResult
     {
         
         private List<ApplicationVersionDescription> applicationVersions = new List<ApplicationVersionDescription>();
@@ -42,6 +42,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="applicationVersions">The values to add to the ApplicationVersions collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeApplicationVersionsResult WithApplicationVersions(params ApplicationVersionDescription[] applicationVersions)
         {
             foreach (ApplicationVersionDescription element in applicationVersions)
@@ -51,12 +52,13 @@ namespace Amazon.ElasticBeanstalk.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the ApplicationVersions collection
         /// </summary>
         /// <param name="applicationVersions">The values to add to the ApplicationVersions collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeApplicationVersionsResult WithApplicationVersions(IEnumerable<ApplicationVersionDescription> applicationVersions)
         {
             foreach (ApplicationVersionDescription element in applicationVersions)
@@ -70,7 +72,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if ApplicationVersions property is set
         internal bool IsSetApplicationVersions()
         {
-            return this.applicationVersions.Count > 0;       
+            return this.applicationVersions.Count > 0;
         }
     }
 }

@@ -23,7 +23,7 @@ namespace Amazon.CloudSearch.Model
     /// <summary>
     /// <para>The result of an <c>IndexDocuments</c> action.</para>
     /// </summary>
-    public class IndexDocumentsResult  
+    public partial class IndexDocumentsResult
     {
         
         private List<string> fieldNames = new List<string>();
@@ -42,6 +42,7 @@ namespace Amazon.CloudSearch.Model
         /// </summary>
         /// <param name="fieldNames">The values to add to the FieldNames collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public IndexDocumentsResult WithFieldNames(params string[] fieldNames)
         {
             foreach (string element in fieldNames)
@@ -51,12 +52,13 @@ namespace Amazon.CloudSearch.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the FieldNames collection
         /// </summary>
         /// <param name="fieldNames">The values to add to the FieldNames collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public IndexDocumentsResult WithFieldNames(IEnumerable<string> fieldNames)
         {
             foreach (string element in fieldNames)
@@ -70,7 +72,7 @@ namespace Amazon.CloudSearch.Model
         // Check to see if FieldNames property is set
         internal bool IsSetFieldNames()
         {
-            return this.fieldNames.Count > 0;       
+            return this.fieldNames.Count > 0;
         }
     }
 }

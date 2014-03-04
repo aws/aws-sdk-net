@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ namespace Amazon.SecurityToken.Model
     /// <summary>
     /// <para>AWS credentials for API authentication.</para>
     /// </summary>
-    public class Credentials
+    public partial class Credentials
     {
         
         private string accessKeyId;
@@ -32,7 +32,7 @@ namespace Amazon.SecurityToken.Model
         private DateTime? expiration;
 
         /// <summary>
-        /// AccessKeyId ID that identifies the temporary credentials.
+        /// The access key ID that identifies the temporary security credentials.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -59,6 +59,7 @@ namespace Amazon.SecurityToken.Model
         /// </summary>
         /// <param name="accessKeyId">The value to set for the AccessKeyId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Credentials WithAccessKeyId(string accessKeyId)
         {
             this.accessKeyId = accessKeyId;
@@ -73,7 +74,7 @@ namespace Amazon.SecurityToken.Model
         }
 
         /// <summary>
-        /// The secret access key to sign requests.
+        /// The secret access key that can be used to sign requests.
         ///  
         /// </summary>
         public string SecretAccessKey
@@ -87,6 +88,7 @@ namespace Amazon.SecurityToken.Model
         /// </summary>
         /// <param name="secretAccessKey">The value to set for the SecretAccessKey property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Credentials WithSecretAccessKey(string secretAccessKey)
         {
             this.secretAccessKey = secretAccessKey;
@@ -101,7 +103,7 @@ namespace Amazon.SecurityToken.Model
         }
 
         /// <summary>
-        /// The security token that users must pass to the service API to use the temporary credentials.
+        /// The token that users must pass to the service API to use the temporary credentials.
         ///  
         /// </summary>
         public string SessionToken
@@ -115,6 +117,7 @@ namespace Amazon.SecurityToken.Model
         /// </summary>
         /// <param name="sessionToken">The value to set for the SessionToken property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Credentials WithSessionToken(string sessionToken)
         {
             this.sessionToken = sessionToken;
@@ -129,7 +132,7 @@ namespace Amazon.SecurityToken.Model
         }
 
         /// <summary>
-        /// The date on which these credentials expire.
+        /// The date on which the current credentials expire.
         ///  
         /// </summary>
         public DateTime Expiration
@@ -143,6 +146,7 @@ namespace Amazon.SecurityToken.Model
         /// </summary>
         /// <param name="expiration">The value to set for the Expiration property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Credentials WithExpiration(DateTime expiration)
         {
             this.expiration = expiration;

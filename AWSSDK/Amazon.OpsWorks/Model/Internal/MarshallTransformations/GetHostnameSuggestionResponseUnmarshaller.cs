@@ -41,9 +41,18 @@
         {
           ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
           
+          if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
+          {
+            ResourceNotFoundException ex = new ResourceNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            
+            return ex;
+          }
+  
           if (errorResponse.Code != null && errorResponse.Code.Equals("ValidationException"))
           {
-            return new ValidationException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            ValidationException ex = new ValidationException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            
+            return ex;
           }
   
           return new AmazonOpsWorksException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);

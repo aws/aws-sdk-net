@@ -97,6 +97,14 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             {
                 request.Parameters.Add("AllowVersionUpgrade", StringUtils.FromBool(modifyClusterRequest.AllowVersionUpgrade));
             }
+            if (modifyClusterRequest != null && modifyClusterRequest.IsSetHsmClientCertificateIdentifier())
+            {
+                request.Parameters.Add("HsmClientCertificateIdentifier", StringUtils.FromString(modifyClusterRequest.HsmClientCertificateIdentifier));
+            }
+            if (modifyClusterRequest != null && modifyClusterRequest.IsSetHsmConfigurationIdentifier())
+            {
+                request.Parameters.Add("HsmConfigurationIdentifier", StringUtils.FromString(modifyClusterRequest.HsmConfigurationIdentifier));
+            }
 
             return request;
         }

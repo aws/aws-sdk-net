@@ -39,7 +39,7 @@ namespace Amazon.RDS.Model
         private string eC2SecurityGroupOwnerId;
 
         /// <summary>
-        /// The name of the DB Security Group to revoke ingress from.
+        /// The name of the DB security group to revoke ingress from.
         ///  
         /// </summary>
         public string DBSecurityGroupName
@@ -53,6 +53,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="dBSecurityGroupName">The value to set for the DBSecurityGroupName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RevokeDBSecurityGroupIngressRequest WithDBSecurityGroupName(string dBSecurityGroupName)
         {
             this.dBSecurityGroupName = dBSecurityGroupName;
@@ -82,6 +83,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="cIDRIP">The value to set for the CIDRIP property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RevokeDBSecurityGroupIngressRequest WithCIDRIP(string cIDRIP)
         {
             this.cIDRIP = cIDRIP;
@@ -96,7 +98,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The name of the EC2 Security Group to revoke access from. For VPC DB Security Groups, <c>EC2SecurityGroupId</c> must be provided. Otherwise,
+        /// The name of the EC2 security group to revoke access from. For VPC DB security groups, <c>EC2SecurityGroupId</c> must be provided. Otherwise,
         /// EC2SecurityGroupOwnerId and either <c>EC2SecurityGroupName</c> or <c>EC2SecurityGroupId</c> must be provided.
         ///  
         /// </summary>
@@ -111,6 +113,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="eC2SecurityGroupName">The value to set for the EC2SecurityGroupName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RevokeDBSecurityGroupIngressRequest WithEC2SecurityGroupName(string eC2SecurityGroupName)
         {
             this.eC2SecurityGroupName = eC2SecurityGroupName;
@@ -125,7 +128,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The id of the EC2 Security Group to revoke access from. For VPC DB Security Groups, <c>EC2SecurityGroupId</c> must be provided. Otherwise,
+        /// The id of the EC2 security group to revoke access from. For VPC DB security groups, <c>EC2SecurityGroupId</c> must be provided. Otherwise,
         /// EC2SecurityGroupOwnerId and either <c>EC2SecurityGroupName</c> or <c>EC2SecurityGroupId</c> must be provided.
         ///  
         /// </summary>
@@ -140,6 +143,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="eC2SecurityGroupId">The value to set for the EC2SecurityGroupId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RevokeDBSecurityGroupIngressRequest WithEC2SecurityGroupId(string eC2SecurityGroupId)
         {
             this.eC2SecurityGroupId = eC2SecurityGroupId;
@@ -155,7 +159,7 @@ namespace Amazon.RDS.Model
 
         /// <summary>
         /// The AWS Account Number of the owner of the EC2 security group specified in the <c>EC2SecurityGroupName</c> parameter. The AWS Access Key ID
-        /// is not an acceptable value. For VPC DB Security Groups, <c>EC2SecurityGroupId</c> must be provided. Otherwise, EC2SecurityGroupOwnerId and
+        /// is not an acceptable value. For VPC DB security groups, <c>EC2SecurityGroupId</c> must be provided. Otherwise, EC2SecurityGroupOwnerId and
         /// either <c>EC2SecurityGroupName</c> or <c>EC2SecurityGroupId</c> must be provided.
         ///  
         /// </summary>
@@ -170,6 +174,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="eC2SecurityGroupOwnerId">The value to set for the EC2SecurityGroupOwnerId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RevokeDBSecurityGroupIngressRequest WithEC2SecurityGroupOwnerId(string eC2SecurityGroupOwnerId)
         {
             this.eC2SecurityGroupOwnerId = eC2SecurityGroupOwnerId;

@@ -30,7 +30,7 @@ namespace Amazon.ElasticTranscoder.Model
 
         /// <summary>
         /// Gets and sets the ReadJobResult property.
-        /// 
+        /// The ReadJobResponse structure.
         /// </summary>
         public ReadJobResult ReadJobResult
         {

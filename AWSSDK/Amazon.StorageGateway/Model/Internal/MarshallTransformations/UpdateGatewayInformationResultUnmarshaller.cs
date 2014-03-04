@@ -11,29 +11,31 @@
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
- */ 
+ */
     using System;
     using System.Collections.Generic;
     using System.IO;
     using Amazon.StorageGateway.Model;
     using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations 
-    { 
-      /// <summary> 
-      /// UpdateGatewayInformationResultUnmarshaller 
-      /// </summary> 
-      internal class UpdateGatewayInformationResultUnmarshaller : IUnmarshaller<UpdateGatewayInformationResult, XmlUnmarshallerContext>, IUnmarshaller<UpdateGatewayInformationResult, JsonUnmarshallerContext> 
-      { 
+    namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
+    {
+      /// <summary>
+      /// UpdateGatewayInformationResultUnmarshaller
+      /// </summary>
+      internal class UpdateGatewayInformationResultUnmarshaller : IUnmarshaller<UpdateGatewayInformationResult, XmlUnmarshallerContext>, IUnmarshaller<UpdateGatewayInformationResult, JsonUnmarshallerContext>
+      {
         UpdateGatewayInformationResult IUnmarshaller<UpdateGatewayInformationResult, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
           throw new NotImplementedException();
         }
-        
-        public UpdateGatewayInformationResult Unmarshall(JsonUnmarshallerContext context) 
+
+        public UpdateGatewayInformationResult Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             UpdateGatewayInformationResult updateGatewayInformationResult = new UpdateGatewayInformationResult();
-                    
+          
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             while (context.Read())
@@ -42,31 +44,31 @@
                 {
                 context.Read();
                 context.Read();
-               
-              if (context.TestExpression("GatewayARN", targetDepth)) 
+              
+              if (context.TestExpression("GatewayARN", targetDepth))
               {
                 updateGatewayInformationResult.GatewayARN = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue; 
+                continue;
               }
-   
-                } 
-                else if (context.IsEndElement && context.CurrentDepth <= originalDepth) 
-                { 
-                    return updateGatewayInformationResult; 
-                } 
-            } 
+  
+                }
+                else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
+                {
+                    return updateGatewayInformationResult;
+                }
+            }
           
-          
-            return updateGatewayInformationResult; 
-        } 
-        
-        private static UpdateGatewayInformationResultUnmarshaller instance; 
-        public static UpdateGatewayInformationResultUnmarshaller GetInstance() 
-        { 
-            if (instance == null) 
-                instance = new UpdateGatewayInformationResultUnmarshaller(); 
+
+            return updateGatewayInformationResult;
+        }
+
+        private static UpdateGatewayInformationResultUnmarshaller instance;
+        public static UpdateGatewayInformationResultUnmarshaller GetInstance()
+        {
+            if (instance == null)
+                instance = new UpdateGatewayInformationResultUnmarshaller();
             return instance;
-        } 
-    } 
-} 
+        }
+    }
+}
   

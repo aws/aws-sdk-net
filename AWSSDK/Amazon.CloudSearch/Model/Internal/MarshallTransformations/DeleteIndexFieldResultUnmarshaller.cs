@@ -22,13 +22,14 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
      /// <summary>
      ///   DeleteIndexFieldResult Unmarshaller
      /// </summary>
-    internal class DeleteIndexFieldResultUnmarshaller : IUnmarshaller<DeleteIndexFieldResult, XmlUnmarshallerContext> 
+    internal class DeleteIndexFieldResultUnmarshaller : IUnmarshaller<DeleteIndexFieldResult, XmlUnmarshallerContext>, IUnmarshaller<DeleteIndexFieldResult, JsonUnmarshallerContext> 
     {
         public DeleteIndexFieldResult Unmarshall(XmlUnmarshallerContext context) 
         {
             DeleteIndexFieldResult deleteIndexFieldResult = new DeleteIndexFieldResult();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -52,6 +53,11 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
 
 
             return deleteIndexFieldResult;
+        }
+
+        public DeleteIndexFieldResult Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static DeleteIndexFieldResultUnmarshaller instance;

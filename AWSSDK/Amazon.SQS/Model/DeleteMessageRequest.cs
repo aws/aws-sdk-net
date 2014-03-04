@@ -52,6 +52,7 @@ namespace Amazon.SQS.Model
         /// </summary>
         /// <param name="queueUrl">The URL associated with the Amazon SQS queue.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeleteMessageRequest WithQueueUrl(string queueUrl)
         {
             this.queueUrlField = queueUrl;
@@ -82,6 +83,7 @@ namespace Amazon.SQS.Model
         /// </summary>
         /// <param name="receiptHandle">The receipt handle associated with the message you want to delete.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeleteMessageRequest WithReceiptHandle(string receiptHandle)
         {
             this.receiptHandleField = receiptHandle;
@@ -119,6 +121,7 @@ namespace Amazon.SQS.Model
         /// </summary>
         /// <param name="list">Name and value pair of an attribute associated with the queue.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DeleteMessageRequest WithAttribute(params Attribute[] list)
         {
             foreach (Attribute item in list)

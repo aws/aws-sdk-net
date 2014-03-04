@@ -59,6 +59,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="bucketName">The bucket name</param>
         /// <returns>the request with the BucketName set</returns>
+        [System.Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SetACLRequest WithBucketName(string bucketName)
         {
             this.bucketName = bucketName;
@@ -95,6 +96,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="key">The object key</param>
         /// <returns>the request with the Key set</returns>
+        [System.Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SetACLRequest WithKey(string key)
         {
             this.key = key;
@@ -128,6 +130,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="acl">The Canned ACL to be set</param>
         /// <returns>The request with the CannedACL set</returns>
+        [System.Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SetACLRequest WithCannedACL(S3CannedACL acl)
         {
             this.cannedACL = acl;
@@ -171,6 +174,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="acl">The custom ACLs to be</param>
         /// <returns>The request with the ACL set</returns>
+        [System.Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SetACLRequest WithACL(S3AccessControlList acl)
         {
             this.acl = acl;
@@ -209,6 +213,7 @@ namespace Amazon.S3.Model
         /// </summary>
         /// <param name="versionId">The object version identifier</param>
         /// <returns>this instance</returns>
+        [System.Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SetACLRequest WithVersionId(string versionId)
         {
             this.versionId = versionId;

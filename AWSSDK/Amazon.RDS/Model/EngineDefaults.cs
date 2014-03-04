@@ -23,7 +23,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// <para> Contains the result of a successful invocation of the DescribeEngineDefaultParameters action. </para>
     /// </summary>
-    public class EngineDefaults
+    public partial class EngineDefaults
     {
         
         private string dBParameterGroupFamily;
@@ -31,7 +31,7 @@ namespace Amazon.RDS.Model
         private List<Parameter> parameters = new List<Parameter>();
 
         /// <summary>
-        /// Specifies the name of the DB Parameter Group Family which the engine default parameters apply to.
+        /// Specifies the name of the DB parameter group family which the engine default parameters apply to.
         ///  
         /// </summary>
         public string DBParameterGroupFamily
@@ -45,6 +45,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="dBParameterGroupFamily">The value to set for the DBParameterGroupFamily property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EngineDefaults WithDBParameterGroupFamily(string dBParameterGroupFamily)
         {
             this.dBParameterGroupFamily = dBParameterGroupFamily;
@@ -74,6 +75,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="marker">The value to set for the Marker property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EngineDefaults WithMarker(string marker)
         {
             this.marker = marker;
@@ -101,6 +103,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="parameters">The values to add to the Parameters collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EngineDefaults WithParameters(params Parameter[] parameters)
         {
             foreach (Parameter element in parameters)
@@ -116,6 +119,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="parameters">The values to add to the Parameters collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EngineDefaults WithParameters(IEnumerable<Parameter> parameters)
         {
             foreach (Parameter element in parameters)

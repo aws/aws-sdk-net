@@ -21,16 +21,15 @@ using System.IO;
 namespace Amazon.AWSSupport.Model
 {
     /// <summary>
-    /// <para>JSON-formatted child object of TrustedAdvisorCheckResult objects. </para>
+    /// <para>The container for summary information that relates to the category of the Trusted Advisor check.</para>
     /// </summary>
-    public class TrustedAdvisorCategorySpecificSummary
+    public partial class TrustedAdvisorCategorySpecificSummary
     {
         
         private TrustedAdvisorCostOptimizingSummary costOptimizing;
 
         /// <summary>
-        /// Corresponds to the <i>Cost Optimizing</i> tab on the AWS Support Center Trusted Advisor page. This field is only available to checks in the
-        /// Cost Optimizing category.
+        /// The summary information about cost savings for a Trusted Advisor check that is in the Cost Optimizing category.
         ///  
         /// </summary>
         public TrustedAdvisorCostOptimizingSummary CostOptimizing
@@ -44,6 +43,7 @@ namespace Amazon.AWSSupport.Model
         /// </summary>
         /// <param name="costOptimizing">The value to set for the CostOptimizing property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TrustedAdvisorCategorySpecificSummary WithCostOptimizing(TrustedAdvisorCostOptimizingSummary costOptimizing)
         {
             this.costOptimizing = costOptimizing;

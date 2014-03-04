@@ -39,6 +39,7 @@ namespace Amazon.SimpleNotificationService.Model
     public class PublishRequest : SNSRequest
     {    
         private string topicArnField;
+        private string targetArnField;
         private string messageField;
         private string messageStructureField;
         private string subjectField;
@@ -52,12 +53,13 @@ namespace Amazon.SimpleNotificationService.Model
             get { return this.topicArnField; }
             set { this.topicArnField = value; }
         }
-
+        
         /// <summary>
         /// Sets the ARN of the topic you want to publish to.
         /// </summary>
         /// <param name="topicArn">The topic you want to publish to.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PublishRequest WithTopicArn(string topicArn)
         {
             this.topicArnField = topicArn;
@@ -71,6 +73,37 @@ namespace Amazon.SimpleNotificationService.Model
         public bool IsSetTopicArn()
         {
             return this.topicArnField != null;
+        }
+
+        /// <summary>
+        /// Either TopicArn or EndpointArn, but not both.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "TargetArn")]
+        public string TargetArn
+        {
+            get { return this.targetArnField; }
+            set { this.targetArnField = value; }
+        }
+
+        /// <summary>
+        /// Sets the ARN of the target you want to publish to.
+        /// </summary>
+        /// <param name="targetArn">The target you want to publish to.</param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public PublishRequest WithTargetArn(string targetArn)
+        {
+            this.targetArnField = targetArn;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if TargetArn property is set
+        /// </summary>
+        /// <returns>true if TargetArn property is set</returns>
+        public bool IsSetTargetArn()
+        {
+            return this.targetArnField != null;
         }
 
         /// <summary>
@@ -88,6 +121,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// </summary>
         /// <param name="message">The message you want to send to the topic.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PublishRequest WithMessage(string message)
         {
             this.messageField = message;
@@ -140,6 +174,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// </summary>
         /// <param name="messageStructure">The structure of the message.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PublishRequest WithMessageStructure(string messageStructure)
         {
             this.messageStructureField = messageStructure;
@@ -176,6 +211,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// </summary>
         /// <param name="subject">Subject of the message.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PublishRequest WithSubject(string subject)
         {
             this.subjectField = subject;

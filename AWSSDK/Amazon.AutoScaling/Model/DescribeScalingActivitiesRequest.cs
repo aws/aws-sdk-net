@@ -54,6 +54,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="activityIds">The values to add to the ActivityIds collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeScalingActivitiesRequest WithActivityIds(params string[] activityIds)
         {
             foreach (string element in activityIds)
@@ -63,12 +64,13 @@ namespace Amazon.AutoScaling.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the ActivityIds collection
         /// </summary>
         /// <param name="activityIds">The values to add to the ActivityIds collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeScalingActivitiesRequest WithActivityIds(IEnumerable<string> activityIds)
         {
             foreach (string element in activityIds)
@@ -82,7 +84,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if ActivityIds property is set
         internal bool IsSetActivityIds()
         {
-            return this.activityIds.Count > 0;       
+            return this.activityIds.Count > 0;
         }
 
         /// <summary>
@@ -113,6 +115,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="autoScalingGroupName">The value to set for the AutoScalingGroupName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeScalingActivitiesRequest WithAutoScalingGroupName(string autoScalingGroupName)
         {
             this.autoScalingGroupName = autoScalingGroupName;
@@ -123,7 +126,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if AutoScalingGroupName property is set
         internal bool IsSetAutoScalingGroupName()
         {
-            return this.autoScalingGroupName != null;       
+            return this.autoScalingGroupName != null;
         }
 
         /// <summary>
@@ -150,6 +153,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="maxRecords">The value to set for the MaxRecords property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeScalingActivitiesRequest WithMaxRecords(int maxRecords)
         {
             this.maxRecords = maxRecords;
@@ -160,7 +164,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if MaxRecords property is set
         internal bool IsSetMaxRecords()
         {
-            return this.maxRecords.HasValue;       
+            return this.maxRecords.HasValue;
         }
 
         /// <summary>
@@ -187,6 +191,7 @@ namespace Amazon.AutoScaling.Model
         /// </summary>
         /// <param name="nextToken">The value to set for the NextToken property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public DescribeScalingActivitiesRequest WithNextToken(string nextToken)
         {
             this.nextToken = nextToken;
@@ -197,7 +202,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if NextToken property is set
         internal bool IsSetNextToken()
         {
-            return this.nextToken != null;       
+            return this.nextToken != null;
         }
     }
 }

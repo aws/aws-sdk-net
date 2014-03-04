@@ -57,6 +57,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         /// <param name="instanceGroupId">The value to set for the InstanceGroupId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceGroupModifyConfig WithInstanceGroupId(string instanceGroupId)
         {
             this.instanceGroupId = instanceGroupId;
@@ -85,6 +86,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </summary>
         /// <param name="instanceCount">The value to set for the InstanceCount property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public InstanceGroupModifyConfig WithInstanceCount(int instanceCount)
         {
             this.instanceCount = instanceCount;

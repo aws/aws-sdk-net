@@ -23,7 +23,7 @@ namespace Amazon.SimpleEmail.Model
     /// <summary>
     /// <para>Represents the verification attributes of a single identity.</para>
     /// </summary>
-    public class IdentityVerificationAttributes  
+    public partial class IdentityVerificationAttributes
     {
         
         private string verificationStatus;
@@ -37,7 +37,7 @@ namespace Amazon.SimpleEmail.Model
         /// <list type="definition">
         ///     <item>
         ///         <term>Allowed Values</term>
-        ///         <description>Pending, Success, Failed, TemporaryFailure</description>
+        ///         <description>Pending, Success, Failed, TemporaryFailure, NotStarted</description>
         ///     </item>
         /// </list>
         /// </para>
@@ -53,6 +53,7 @@ namespace Amazon.SimpleEmail.Model
         /// </summary>
         /// <param name="verificationStatus">The value to set for the VerificationStatus property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public IdentityVerificationAttributes WithVerificationStatus(string verificationStatus)
         {
             this.verificationStatus = verificationStatus;
@@ -63,7 +64,7 @@ namespace Amazon.SimpleEmail.Model
         // Check to see if VerificationStatus property is set
         internal bool IsSetVerificationStatus()
         {
-            return this.verificationStatus != null;       
+            return this.verificationStatus != null;
         }
 
         /// <summary>
@@ -81,6 +82,7 @@ namespace Amazon.SimpleEmail.Model
         /// </summary>
         /// <param name="verificationToken">The value to set for the VerificationToken property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public IdentityVerificationAttributes WithVerificationToken(string verificationToken)
         {
             this.verificationToken = verificationToken;
@@ -91,7 +93,7 @@ namespace Amazon.SimpleEmail.Model
         // Check to see if VerificationToken property is set
         internal bool IsSetVerificationToken()
         {
-            return this.verificationToken != null;       
+            return this.verificationToken != null;
         }
     }
 }

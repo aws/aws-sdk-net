@@ -20,15 +20,9 @@ using System.IO;
 
 namespace Amazon.StorageGateway.Model
 {
-    /// <summary>
-    /// <para>A JSON object containing the following fields:</para>
-    /// <ul>
-    /// <li> ListLocalDisksOutput$Disks </li>
-    /// <li> GatewayARN </li>
-    /// 
-    /// </ul>
+    /// <summary>List Local Disks Result
     /// </summary>
-    public class ListLocalDisksResult  
+    public partial class ListLocalDisksResult
     {
         
         private string gatewayARN;
@@ -59,6 +53,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="gatewayARN">The value to set for the GatewayARN property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListLocalDisksResult WithGatewayARN(string gatewayARN)
         {
             this.gatewayARN = gatewayARN;
@@ -69,13 +64,8 @@ namespace Amazon.StorageGateway.Model
         // Check to see if GatewayARN property is set
         internal bool IsSetGatewayARN()
         {
-            return this.gatewayARN != null;       
+            return this.gatewayARN != null;
         }
-
-        /// <summary>
-        /// An array of <a>Disk</a> objects.
-        ///  
-        /// </summary>
         public List<Disk> Disks
         {
             get { return this.disks; }
@@ -86,6 +76,7 @@ namespace Amazon.StorageGateway.Model
         /// </summary>
         /// <param name="disks">The values to add to the Disks collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListLocalDisksResult WithDisks(params Disk[] disks)
         {
             foreach (Disk element in disks)
@@ -95,12 +86,13 @@ namespace Amazon.StorageGateway.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Disks collection
         /// </summary>
         /// <param name="disks">The values to add to the Disks collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListLocalDisksResult WithDisks(IEnumerable<Disk> disks)
         {
             foreach (Disk element in disks)
@@ -114,7 +106,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if Disks property is set
         internal bool IsSetDisks()
         {
-            return this.disks.Count > 0;       
+            return this.disks.Count > 0;
         }
     }
 }

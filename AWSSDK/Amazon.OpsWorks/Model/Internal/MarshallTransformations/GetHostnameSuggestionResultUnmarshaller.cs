@@ -32,6 +32,8 @@
 
         public GetHostnameSuggestionResult Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             GetHostnameSuggestionResult getHostnameSuggestionResult = new GetHostnameSuggestionResult();
           
             int originalDepth = context.CurrentDepth;

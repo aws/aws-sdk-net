@@ -23,7 +23,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// The results from the ModifyEventSubscription action.
     /// </summary>
-    public class ModifyEventSubscriptionResult
+    public partial class ModifyEventSubscriptionResult
     {
         private EventSubscription eventSubscriptionValue;
 

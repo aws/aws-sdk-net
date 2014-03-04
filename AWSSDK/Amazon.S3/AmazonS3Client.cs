@@ -23,8 +23,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Collections.Specialized;
-using System.Diagnostics;
+using System.Globalization;
 using System.IO;
 using System.Net;
 using System.Reflection;
@@ -35,17 +34,14 @@ using System.Threading;
 using System.Xml;
 using System.Xml.Serialization;
 using System.Xml.Xsl;
-
-
-using Amazon.Util;
-using Amazon.S3.Model;
-using Amazon.S3.Util;
+using Map = System.Collections.Generic.IDictionary<Amazon.S3.Model.S3QueryParameter, string>;
 
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Util;
-
-using Map = System.Collections.Generic.IDictionary<Amazon.S3.Model.S3QueryParameter, string>;
-using System.Globalization;
+using Amazon.S3.Model;
+using Amazon.S3.Util;
+using Amazon.Util;
 
 namespace Amazon.S3
 {
@@ -253,6 +249,45 @@ namespace Amazon.S3
         public AmazonS3Client(AWSCredentials credentials, RegionEndpoint region)
             : this(credentials, new AmazonS3Config() { RegionEndpoint = region }, false) { }
 
+        /// <summary>
+        /// Constructs AmazonS3Client with AWS Access Key ID and AWS Secret Key
+        /// </summary>
+        /// <param name="awsAccessKeyId">AWS Access Key ID</param>
+        /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        /// <param name="awsSessionToken">AWS Session Token</param>
+        public AmazonS3Client(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken)
+            : this(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, new AmazonS3Config())
+        {
+        }
+
+        /// <summary>
+        /// Constructs AmazonS3Client with AWS Access Key ID and AWS Secret Key
+        /// </summary>
+        /// <param name="awsAccessKeyId">AWS Access Key ID</param>
+        /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        /// <param name="awsSessionToken">AWS Session Token</param>
+        /// <param name="region">The region to connect.</param>
+        public AmazonS3Client(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken, RegionEndpoint region)
+            : this(awsAccessKeyId, awsSecretAccessKey, awsSessionToken, new AmazonS3Config() { RegionEndpoint = region })
+        {
+        }
+
+        /// <summary>
+        /// Constructs AmazonS3Client with AWS Access Key ID, AWS Secret Key and an
+        /// AmazonS3Config Configuration object. If the config object's
+        /// UseSecureStringForAwsSecretKey is false, the AWS Secret Key
+        /// is stored as a clear-text string. Please use this option only
+        /// if the application environment doesn't allow the use of SecureStrings.
+        /// </summary>
+        /// <param name="awsAccessKeyId">AWS Access Key ID</param>
+        /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
+        /// <param name="awsSessionToken">AWS Session Token</param>
+        /// <param name="clientConfig">The AmazonS3Config Configuration Object</param>
+        public AmazonS3Client(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken, AmazonS3Config clientConfig)
+            : this(new SessionAWSCredentials(awsAccessKeyId, awsSecretAccessKey, awsSessionToken), clientConfig, false)
+        {
+        }
+
         private AmazonS3Client(AWSCredentials credentials, AmazonS3Config config, bool ownCredentials)
         {
             this.config = config;
@@ -277,7 +312,7 @@ namespace Amazon.S3
         /// the request to a user or embed the request in a web page.
         /// </para>
         /// <para>
-        /// A PreSigned URL can be generated for GET, PUT and HEAD
+        /// A PreSigned URL can be generated for GET, PUT, DELETE and HEAD
         /// operations on your bucket, keys, and versions.
         /// </para>
         /// </remarks>
@@ -301,14 +336,6 @@ namespace Amazon.S3
             if (!request.IsSetExpires())
             {
                 throw new ArgumentNullException(S3Constants.RequestParam, "The Expires Specified is null!");
-            }
-
-            if (request.Verb > HttpVerb.PUT)
-            {
-                throw new ArgumentException(
-                    "An Invalid HttpVerb was specified for the GetPreSignedURL request. Valid - GET, HEAD, PUT",
-                    S3Constants.RequestParam
-                    );
             }
 
             ConvertGetPreSignedUrl(request);
@@ -2537,6 +2564,19 @@ namespace Amazon.S3
         /// Initiates the asynchronous execution of the InitiateMultipartUpload operation. 
         /// <seealso cref="M:Amazon.S3.AmazonS3.InitiateMultipartUpload"/>
         /// </summary>
+        /// <remarks>
+        /// <para>
+        /// The upload ID associates all the parts in the specific upload. You specify this upload ID in each of 
+        /// your subsequent Upload Part requests. You also include this upload ID in the final request to either 
+        /// complete, or abort the multipart upload request.
+        /// </para>
+        /// <para>        
+        /// After you initiate a multipart upload and upload one or more parts, you must either complete or abort 
+        /// the multipart upload in order to stop getting charged for storage of the uploaded parts. Once you 
+        /// complete or abort the multipart upload, Amazon S3 will release the stored parts and stop charging you 
+        /// for their storage.
+        /// </para>
+        /// </remarks>
         /// <param name="request">The InitiateMultipartUploadRequest that defines the parameters of
         /// the operation.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
@@ -2569,12 +2609,20 @@ namespace Amazon.S3
         /// Initiates a multipart upload and returns an InitiateMultipartUploadResponse which contains an upload ID.
         /// </summary>
         /// <remarks>
+        /// <para>
         /// The upload ID associates all the parts in the specific upload. You specify this upload ID in each of 
         /// your subsequent Upload Part requests. You also include this upload ID in the final request to either 
         /// complete, or abort the multipart upload request.
+        /// </para>
+        /// <para>        
+        /// After you initiate a multipart upload and upload one or more parts, you must either complete or abort 
+        /// the multipart upload in order to stop getting charged for storage of the uploaded parts. Once you 
+        /// complete or abort the multipart upload, Amazon S3 will release the stored parts and stop charging you 
+        /// for their storage.
+        /// </para>
         /// </remarks>
         /// <param name="request">
-        /// The CopyObjectRequest that defines the parameters of the operation.
+        /// The InitiateMultipartUploadRequest that defines the parameters of the operation.
         /// </param>
         /// <returns>Returns a InitiateMultipartUploadResponse from S3.</returns>
         public InitiateMultipartUploadResponse InitiateMultipartUpload(InitiateMultipartUploadRequest request)
@@ -2615,6 +2663,41 @@ namespace Amazon.S3
         /// Initiates the asynchronous execution of the UploadPart operation. 
         /// <seealso cref="M:Amazon.S3.AmazonS3.UploadPart"/>
         /// </summary>
+        /// <remarks>
+        /// <para>
+        /// You must initiate a multipart upload before you can upload any part.
+        /// </para>
+        /// <para>
+        /// Your UploadPart request must include an upload ID and a part number. 
+        /// The upload ID is the ID returned by Amazon S3 in response to your 
+        /// Initiate Multipart Upload request. Part number can be any number between 1 and
+        /// 10,000, inclusive. A part number uniquely identifies a part and also 
+        /// defines its position within the object being uploaded. If you 
+        /// upload a new part using the same part number as an existing
+        /// part, that part is overwritten.
+        /// </para>
+        /// <para>
+        /// To ensure data is not corrupted traversing the network, specify the 
+        /// Content-MD5 header in the Upload Part request. Amazon S3 checks 
+        /// the part data against the provided MD5 value. If they do not match,
+        /// Amazon S3 returns an error.
+        /// </para>
+        /// <para>
+        /// When you upload a part, the UploadPartResponse response contains an ETag property.
+        /// You should record this ETag property value and the part 
+        /// number. After uploading all parts, you must send a CompleteMultipartUpload
+        /// request. At that time Amazon S3 constructs a complete object by 
+        /// concatenating all the parts you uploaded, in ascending order based on 
+        /// the part numbers. The CompleteMultipartUpload request requires you to
+        /// send all the part numbers and the corresponding ETag values.
+        /// </para>
+        /// <para>        
+        /// After you initiate a multipart upload and upload one or more parts, you must either complete or abort 
+        /// the multipart upload in order to stop getting charged for storage of the uploaded parts. Once you 
+        /// complete or abort the multipart upload, Amazon S3 will release the stored parts and stop charging you 
+        /// for their storage.
+        /// </para>
+        /// </remarks>
         /// <param name="request">The UploadPartRequest that defines the parameters of
         /// the operation.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
@@ -2695,6 +2778,12 @@ namespace Amazon.S3
         /// concatenating all the parts you uploaded, in ascending order based on 
         /// the part numbers. The CompleteMultipartUpload request requires you to
         /// send all the part numbers and the corresponding ETag values.
+        /// </para>
+        /// <para>        
+        /// After you initiate a multipart upload and upload one or more parts, you must either complete or abort 
+        /// the multipart upload in order to stop getting charged for storage of the uploaded parts. Once you 
+        /// complete or abort the multipart upload, Amazon S3 will release the stored parts and stop charging you 
+        /// for their storage.
         /// </para>
         /// </remarks>
         /// <param name="request">
@@ -4382,6 +4471,10 @@ namespace Amazon.S3
             {
                 sb.Append(String.Concat("max-keys=", request.MaxKeys, "&"));
             }
+            if (request.Encoding != EncodingType.None)
+            {
+                sb.Append(String.Concat("encoding-type=", AmazonS3Util.UrlEncode(request.Encoding.ToString(), false), "&"));
+            }
 
             string query = sb.ToString();
 
@@ -4436,6 +4529,10 @@ namespace Amazon.S3
             if (request.IsSetMaxKeys())
             {
                 sb.Append(String.Concat("&max-keys=", request.MaxKeys));
+            }
+            if (request.Encoding != EncodingType.None)
+            {
+                sb.Append(String.Concat("&encoding-type=", AmazonS3Util.UrlEncode(request.Encoding.ToString(), false)));
             }
 
             parameters[S3QueryParameter.Query] = sb.ToString();
@@ -4990,15 +5087,8 @@ namespace Amazon.S3
                 queryStr.Append(value);
                 parameters[S3QueryParameter.Expires] = value;
 
-
                 StringBuilder encodedQueryStrToSign = new StringBuilder();
                 StringBuilder queryStrToSign = new StringBuilder();
-                if (request.IsSetKey() &&
-                    request.IsSetVersionId() &&
-                    request.Verb < HttpVerb.PUT)
-                {
-                    addParameter(queryStrToSign, encodedQueryStrToSign, "versionId", request.VersionId);
-                }
 
                 addParameter(queryStrToSign, encodedQueryStrToSign, ResponseHeaderOverrides.RESPONSE_CACHE_CONTROL, request.ResponseHeaderOverrides.CacheControl);
                 addParameter(queryStrToSign, encodedQueryStrToSign, ResponseHeaderOverrides.RESPONSE_CONTENT_DISPOSITION, request.ResponseHeaderOverrides.ContentDisposition);
@@ -5006,6 +5096,13 @@ namespace Amazon.S3
                 addParameter(queryStrToSign, encodedQueryStrToSign, ResponseHeaderOverrides.RESPONSE_CONTENT_LANGUAGE, request.ResponseHeaderOverrides.ContentLanguage);
                 addParameter(queryStrToSign, encodedQueryStrToSign, ResponseHeaderOverrides.RESPONSE_CONTENT_TYPE, request.ResponseHeaderOverrides.ContentType);
                 addParameter(queryStrToSign, encodedQueryStrToSign, ResponseHeaderOverrides.RESPONSE_EXPIRES, request.ResponseHeaderOverrides.Expires);
+
+                if (request.IsSetKey() &&
+                    request.IsSetVersionId() &&
+                    request.Verb < HttpVerb.PUT)
+                {
+                    addParameter(queryStrToSign, encodedQueryStrToSign, "versionId", request.VersionId);
+                }
 
                 if (queryStrToSign.Length > 0)
                 {
@@ -5361,7 +5458,7 @@ namespace Amazon.S3
             }
             if (request.IsSetUploadIdMarker())
             {
-                sb.Append(String.Concat("upload-idmarker=", AmazonS3Util.UrlEncode(request.UploadIdMarker, false), "&"));
+                sb.Append(String.Concat("upload-id-marker=", AmazonS3Util.UrlEncode(request.UploadIdMarker, false), "&"));
             }
             if (request.IsSetPrefix())
             {
@@ -5370,6 +5467,10 @@ namespace Amazon.S3
             if (request.IsSetDelimiter())
             {
                 sb.Append(String.Concat("delimiter=", AmazonS3Util.UrlEncode(request.Delimiter, false), "&"));
+            }
+            if (request.Encoding != EncodingType.None)
+            {
+                sb.Append(String.Concat("encoding-type=", AmazonS3Util.UrlEncode(request.Encoding.ToString(), false), "&"));
             }
 
             string query = sb.ToString();
@@ -5408,6 +5509,10 @@ namespace Amazon.S3
             if (request.IsSetPartNumberMarker())
             {
                 sb.Append(String.Concat("part-number-marker=", AmazonS3Util.UrlEncode(request.PartNumberMarker, false), "&"));
+            }
+            if (request.Encoding != EncodingType.None)
+            {
+                sb.Append(String.Concat("encoding-type=", AmazonS3Util.UrlEncode(request.Encoding.ToString(), false), "&"));
             }
 
             string query = sb.ToString();
@@ -6309,10 +6414,8 @@ namespace Amazon.S3
             {
                 if (httpResponse != null && string.IsNullOrEmpty(httpResponse.Headers["Location"]))
                 {
-                    throw new WebException(
-                        "A redirect was returned without a new location.  This can be caused by attempting to access buckets with periods in the name in a different region then the client is configured for.",
-                        WebExceptionStatus.ProtocolError
-                        );
+                    throw new AmazonS3Exception(
+                        "A redirect was returned without a new location. This can be caused by attempting to access buckets with periods in the name in a different region then the client is configured for.");
                 }
 
                 shouldRetry = true;

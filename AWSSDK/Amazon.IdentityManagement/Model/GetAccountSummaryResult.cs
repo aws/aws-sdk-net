@@ -23,7 +23,7 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// <para>Contains the result of a successful invocation of the GetAccountSummary action.</para>
     /// </summary>
-    public class GetAccountSummaryResult  
+    public partial class GetAccountSummaryResult
     {
         
         private Dictionary<string,int> summaryMap = new Dictionary<string,int>();
@@ -56,6 +56,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="pairs">The pairs to be added to the SummaryMap dictionary.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public GetAccountSummaryResult WithSummaryMap(params KeyValuePair<string, int>[] pairs)
         {
             foreach (KeyValuePair<string, int> pair in pairs)
@@ -69,7 +70,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if SummaryMap property is set
         internal bool IsSetSummaryMap()
         {
-            return this.summaryMap != null;       
+            return this.summaryMap != null;
         }
     }
 }

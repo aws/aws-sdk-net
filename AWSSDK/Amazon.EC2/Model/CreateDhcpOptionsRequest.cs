@@ -52,7 +52,7 @@ namespace Amazon.EC2.Model
     /// Value indicating the NetBIOS node type (1, 2, 4, or 8).
     /// </remarks>
     [XmlRootAttribute(IsNullable = false)]
-    public class CreateDhcpOptionsRequest
+    public class CreateDhcpOptionsRequest : EC2Request
     {    
         private List<DhcpConfiguration> dhcpConfigurationField;
 
@@ -78,6 +78,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">DHCP Configuration</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateDhcpOptionsRequest WithDhcpConfiguration(params DhcpConfiguration[] list)
         {
             foreach (DhcpConfiguration item in list)

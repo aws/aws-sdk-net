@@ -33,9 +33,10 @@ namespace Amazon.RDS.Model
         private string dBSubnetGroupName;
         private string dBSubnetGroupDescription;
         private List<string> subnetIds = new List<string>();
+        private List<Tag> tags = new List<Tag>();
 
         /// <summary>
-        /// The name for the DB Subnet Group. This value is stored as a lowercase string. Constraints: Must contain no more than 255 alphanumeric
+        /// The name for the DB subnet group. This value is stored as a lowercase string. Constraints: Must contain no more than 255 alphanumeric
         /// characters or hyphens. Must not be "Default". Example: <c>mySubnetgroup</c>
         ///  
         /// </summary>
@@ -50,6 +51,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="dBSubnetGroupName">The value to set for the DBSubnetGroupName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateDBSubnetGroupRequest WithDBSubnetGroupName(string dBSubnetGroupName)
         {
             this.dBSubnetGroupName = dBSubnetGroupName;
@@ -64,7 +66,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The description for the DB Subnet Group.
+        /// The description for the DB subnet group.
         ///  
         /// </summary>
         public string DBSubnetGroupDescription
@@ -78,6 +80,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="dBSubnetGroupDescription">The value to set for the DBSubnetGroupDescription property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateDBSubnetGroupRequest WithDBSubnetGroupDescription(string dBSubnetGroupDescription)
         {
             this.dBSubnetGroupDescription = dBSubnetGroupDescription;
@@ -92,7 +95,7 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// The EC2 Subnet IDs for the DB Subnet Group.
+        /// The EC2 Subnet IDs for the DB subnet group.
         ///  
         /// </summary>
         public List<string> SubnetIds
@@ -105,6 +108,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="subnetIds">The values to add to the SubnetIds collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateDBSubnetGroupRequest WithSubnetIds(params string[] subnetIds)
         {
             foreach (string element in subnetIds)
@@ -120,6 +124,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="subnetIds">The values to add to the SubnetIds collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateDBSubnetGroupRequest WithSubnetIds(IEnumerable<string> subnetIds)
         {
             foreach (string element in subnetIds)
@@ -134,6 +139,53 @@ namespace Amazon.RDS.Model
         internal bool IsSetSubnetIds()
         {
             return this.subnetIds.Count > 0;
+        }
+
+        /// <summary>
+        /// A list of tags.
+        ///  
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this.tags; }
+            set { this.tags = value; }
+        }
+        /// <summary>
+        /// Adds elements to the Tags collection
+        /// </summary>
+        /// <param name="tags">The values to add to the Tags collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public CreateDBSubnetGroupRequest WithTags(params Tag[] tags)
+        {
+            foreach (Tag element in tags)
+            {
+                this.tags.Add(element);
+            }
+
+            return this;
+        }
+
+        /// <summary>
+        /// Adds elements to the Tags collection
+        /// </summary>
+        /// <param name="tags">The values to add to the Tags collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public CreateDBSubnetGroupRequest WithTags(IEnumerable<Tag> tags)
+        {
+            foreach (Tag element in tags)
+            {
+                this.tags.Add(element);
+            }
+
+            return this;
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this.tags.Count > 0;
         }
     }
 }

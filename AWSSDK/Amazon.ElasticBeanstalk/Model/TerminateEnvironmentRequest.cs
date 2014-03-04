@@ -50,6 +50,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="environmentId">The value to set for the EnvironmentId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TerminateEnvironmentRequest WithEnvironmentId(string environmentId)
         {
             this.environmentId = environmentId;
@@ -60,7 +61,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if EnvironmentId property is set
         internal bool IsSetEnvironmentId()
         {
-            return this.environmentId != null;       
+            return this.environmentId != null;
         }
 
         /// <summary>
@@ -88,6 +89,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="environmentName">The value to set for the EnvironmentName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TerminateEnvironmentRequest WithEnvironmentName(string environmentName)
         {
             this.environmentName = environmentName;
@@ -98,7 +100,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if EnvironmentName property is set
         internal bool IsSetEnvironmentName()
         {
-            return this.environmentName != null;       
+            return this.environmentName != null;
         }
 
         /// <summary>
@@ -108,8 +110,8 @@ namespace Amazon.ElasticBeanstalk.Model
         /// continue to operate. </value> </enumValues> <ul> <li> <c>true</c>: The specified environment as well as the associated AWS resources, such
         /// as Auto Scaling group and LoadBalancer, are terminated. </li> <li> <c>false</c>: AWS Elastic Beanstalk resource management is removed from
         /// the environment, but the AWS resources continue to operate. </li> </ul> For more information, see the <a
-        /// href="http://docs.amazonwebservices.com/elasticbeanstalk/latest/ug/"> AWS Elastic Beanstalk User Guide. </a> Default: <c>true</c> Valid
-        /// Values: <c>true</c> | <c>false</c>
+        /// href="http://docs.aws.amazon.com/elasticbeanstalk/latest/ug/"> AWS Elastic Beanstalk User Guide. </a> Default: <c>true</c> Valid Values:
+        /// <c>true</c> | <c>false</c>
         ///  
         /// </summary>
         public bool TerminateResources
@@ -123,6 +125,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="terminateResources">The value to set for the TerminateResources property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public TerminateEnvironmentRequest WithTerminateResources(bool terminateResources)
         {
             this.terminateResources = terminateResources;
@@ -133,7 +136,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if TerminateResources property is set
         internal bool IsSetTerminateResources()
         {
-            return this.terminateResources.HasValue;       
+            return this.terminateResources.HasValue;
         }
     }
 }

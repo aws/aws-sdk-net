@@ -51,6 +51,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="execution">The value to set for the Execution property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public WorkflowExecutionInfo WithExecution(WorkflowExecution execution)
         {
             this.execution = execution;
@@ -79,6 +80,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="workflowType">The value to set for the WorkflowType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public WorkflowExecutionInfo WithWorkflowType(WorkflowType workflowType)
         {
             this.workflowType = workflowType;
@@ -107,6 +109,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="startTimestamp">The value to set for the StartTimestamp property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public WorkflowExecutionInfo WithStartTimestamp(DateTime startTimestamp)
         {
             this.startTimestamp = startTimestamp;
@@ -135,6 +138,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="closeTimestamp">The value to set for the CloseTimestamp property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public WorkflowExecutionInfo WithCloseTimestamp(DateTime closeTimestamp)
         {
             this.closeTimestamp = closeTimestamp;
@@ -172,6 +176,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="executionStatus">The value to set for the ExecutionStatus property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public WorkflowExecutionInfo WithExecutionStatus(string executionStatus)
         {
             this.executionStatus = executionStatus;
@@ -213,6 +218,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="closeStatus">The value to set for the CloseStatus property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public WorkflowExecutionInfo WithCloseStatus(string closeStatus)
         {
             this.closeStatus = closeStatus;
@@ -241,6 +247,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="parent">The value to set for the Parent property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public WorkflowExecutionInfo WithParent(WorkflowExecution parent)
         {
             this.parent = parent;
@@ -278,6 +285,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="tagList">The values to add to the TagList collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public WorkflowExecutionInfo WithTagList(params string[] tagList)
         {
             foreach (string element in tagList)
@@ -293,6 +301,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="tagList">The values to add to the TagList collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public WorkflowExecutionInfo WithTagList(IEnumerable<string> tagList)
         {
             foreach (string element in tagList)
@@ -324,6 +333,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="cancelRequested">The value to set for the CancelRequested property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public WorkflowExecutionInfo WithCancelRequested(bool cancelRequested)
         {
             this.cancelRequested = cancelRequested;

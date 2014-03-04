@@ -34,17 +34,6 @@ namespace Amazon.IdentityManagement
         }
 
         /// <summary>
-        /// Gets the ServiceVersion property.
-        /// </summary>
-        public override string ServiceVersion
-        {
-            get
-            {
-                return "2010-05-08";
-            }
-        }
-
-        /// <summary>
         /// The constant used to lookup in the region hash the endpoint.
         /// </summary>
         internal override string RegionEndpointServiceName
@@ -52,6 +41,17 @@ namespace Amazon.IdentityManagement
             get
             {
                 return "iam";
+            }
+        }
+
+        /// <summary>
+        /// Gets the ServiceVersion property.
+        /// </summary>
+        public override string ServiceVersion
+        {
+            get
+            {
+                return "2010-05-08";
             }
         }
     }

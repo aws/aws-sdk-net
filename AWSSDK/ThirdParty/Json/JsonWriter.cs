@@ -391,8 +391,8 @@ namespace ThirdParty.Json.LitJson
             DoValidation(Condition.Value);
             PutNewline();
 
-            
-            Put(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochMilliSeconds(date).ToString());
+
+            Put(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochMilliSeconds(date).ToString(CultureInfo.InvariantCulture));
 
             context.ExpectingValue = false;
         }

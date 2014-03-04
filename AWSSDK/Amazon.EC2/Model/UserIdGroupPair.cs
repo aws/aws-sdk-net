@@ -52,6 +52,7 @@ namespace Amazon.EC2.Model
         /// <param name="userId">AWS User ID of an account. Cannot be used when
         /// specifying a CIDR IP address.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UserIdGroupPair WithUserId(string userId)
         {
             this.userIdField = userId;
@@ -84,6 +85,7 @@ namespace Amazon.EC2.Model
         /// <param name="userId">AWS Group ID of a Security Group. Cannot be used when
         /// specifying a CIDR IP address.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UserIdGroupPair WithGroupId(string userId)
         {
             this.groupIdField = userId;
@@ -116,6 +118,7 @@ namespace Amazon.EC2.Model
         /// <param name="groupName">Name of the security group. Cannot be used when
         /// specifying a CIDR IP address.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public UserIdGroupPair WithGroupName(string groupName)
         {
             this.groupNameField = groupName;

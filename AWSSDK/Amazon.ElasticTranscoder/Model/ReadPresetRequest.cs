@@ -25,7 +25,7 @@ namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
     /// Container for the parameters to the ReadPreset operation.
-    /// <para>To get detailed information about a preset, send a GET request to the <c>/2012-09-25/presets/[presetId] </c> resource.</para>
+    /// <para>The ReadPreset operation gets detailed information about a preset.</para>
     /// </summary>
     /// <seealso cref="Amazon.ElasticTranscoder.AmazonElasticTranscoder.ReadPreset"/>
     public class ReadPresetRequest : AmazonWebServiceRequest
@@ -56,6 +56,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="id">The value to set for the Id property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ReadPresetRequest WithId(string id)
         {
             this.id = id;

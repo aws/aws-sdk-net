@@ -29,9 +29,11 @@ namespace Amazon.Redshift.Model
     /// running on the Internet or an EC2 instance, you can authorize inbound access to either a Classless Interdomain Routing (CIDR) IP address
     /// range or an EC2 security group. You can add as many as 20 ingress rules to an Amazon Redshift security group. </para> <para><b>NOTE:</b> The
     /// EC2 security group must be defined in the AWS region where the cluster resides. </para> <para>For an overview of CIDR blocks, see the
-    /// Wikipedia article on Classless Inter-Domain Routing. </para> <para> You must also associate the security group with a cluster so that
-    /// clients running on these IP addresses or the EC2 instance are authorized to connect to the cluster. For information about managing security
-    /// groups, go to Working with Security Groups in the <i>Amazon Redshift Management Guide</i> .</para>
+    /// Wikipedia article on <a href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing" >Classless Inter-Domain Routing</a> .
+    /// </para> <para> You must also associate the security group with a cluster so that clients running on these IP addresses or the EC2
+    /// instance are authorized to connect to the cluster. For information about managing security groups, go to <a
+    /// href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html" >Working with Security Groups</a> in the <i>Amazon
+    /// Redshift Management Guide</i> .</para>
     /// </summary>
     /// <seealso cref="Amazon.Redshift.AmazonRedshift.AuthorizeClusterSecurityGroupIngress"/>
     public class AuthorizeClusterSecurityGroupIngressRequest : AmazonWebServiceRequest
@@ -56,6 +58,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="clusterSecurityGroupName">The value to set for the ClusterSecurityGroupName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AuthorizeClusterSecurityGroupIngressRequest WithClusterSecurityGroupName(string clusterSecurityGroupName)
         {
             this.clusterSecurityGroupName = clusterSecurityGroupName;
@@ -84,6 +87,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="cIDRIP">The value to set for the CIDRIP property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AuthorizeClusterSecurityGroupIngressRequest WithCIDRIP(string cIDRIP)
         {
             this.cIDRIP = cIDRIP;
@@ -112,6 +116,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="eC2SecurityGroupName">The value to set for the EC2SecurityGroupName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AuthorizeClusterSecurityGroupIngressRequest WithEC2SecurityGroupName(string eC2SecurityGroupName)
         {
             this.eC2SecurityGroupName = eC2SecurityGroupName;
@@ -141,6 +146,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="eC2SecurityGroupOwnerId">The value to set for the EC2SecurityGroupOwnerId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AuthorizeClusterSecurityGroupIngressRequest WithEC2SecurityGroupOwnerId(string eC2SecurityGroupOwnerId)
         {
             this.eC2SecurityGroupOwnerId = eC2SecurityGroupOwnerId;

@@ -28,7 +28,8 @@ namespace Amazon.Redshift.Model
     /// <para> Allows you to purchase reserved nodes. Amazon Redshift offers a predefined set of reserved node offerings. You can purchase one of
     /// the offerings. You can call the DescribeReservedNodeOfferings API to obtain the available reserved node offerings. You can call this API by
     /// providing a specific reserved node offering and the number of nodes you want to reserve. </para> <para> For more information about managing
-    /// parameter groups, go to Purchasing Reserved Nodes in the <i>Amazon Redshift Management Guide</i> .
+    /// parameter groups, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/purchase-reserved-node-instance.html" >Purchasing Reserved
+    /// Nodes</a> in the <i>Amazon Redshift Management Guide</i> .
     /// 
     /// </para>
     /// </summary>
@@ -53,6 +54,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="reservedNodeOfferingId">The value to set for the ReservedNodeOfferingId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PurchaseReservedNodeOfferingRequest WithReservedNodeOfferingId(string reservedNodeOfferingId)
         {
             this.reservedNodeOfferingId = reservedNodeOfferingId;
@@ -81,6 +83,7 @@ namespace Amazon.Redshift.Model
         /// </summary>
         /// <param name="nodeCount">The value to set for the NodeCount property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public PurchaseReservedNodeOfferingRequest WithNodeCount(int nodeCount)
         {
             this.nodeCount = nodeCount;

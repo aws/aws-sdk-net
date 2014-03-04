@@ -23,7 +23,7 @@ namespace Amazon.ElasticBeanstalk.Model
     /// <summary>
     /// <para>Describes the properties of an application.</para>
     /// </summary>
-    public class ApplicationDescription  
+    public partial class ApplicationDescription
     {
         
         private string applicationName;
@@ -57,6 +57,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="applicationName">The value to set for the ApplicationName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ApplicationDescription WithApplicationName(string applicationName)
         {
             this.applicationName = applicationName;
@@ -67,7 +68,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if ApplicationName property is set
         internal bool IsSetApplicationName()
         {
-            return this.applicationName != null;       
+            return this.applicationName != null;
         }
 
         /// <summary>
@@ -94,6 +95,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="description">The value to set for the Description property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ApplicationDescription WithDescription(string description)
         {
             this.description = description;
@@ -104,7 +106,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if Description property is set
         internal bool IsSetDescription()
         {
-            return this.description != null;       
+            return this.description != null;
         }
 
         /// <summary>
@@ -122,6 +124,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="dateCreated">The value to set for the DateCreated property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ApplicationDescription WithDateCreated(DateTime dateCreated)
         {
             this.dateCreated = dateCreated;
@@ -132,7 +135,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if DateCreated property is set
         internal bool IsSetDateCreated()
         {
-            return this.dateCreated.HasValue;       
+            return this.dateCreated.HasValue;
         }
 
         /// <summary>
@@ -150,6 +153,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="dateUpdated">The value to set for the DateUpdated property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ApplicationDescription WithDateUpdated(DateTime dateUpdated)
         {
             this.dateUpdated = dateUpdated;
@@ -160,7 +164,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if DateUpdated property is set
         internal bool IsSetDateUpdated()
         {
-            return this.dateUpdated.HasValue;       
+            return this.dateUpdated.HasValue;
         }
 
         /// <summary>
@@ -177,6 +181,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="versions">The values to add to the Versions collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ApplicationDescription WithVersions(params string[] versions)
         {
             foreach (string element in versions)
@@ -186,12 +191,13 @@ namespace Amazon.ElasticBeanstalk.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the Versions collection
         /// </summary>
         /// <param name="versions">The values to add to the Versions collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ApplicationDescription WithVersions(IEnumerable<string> versions)
         {
             foreach (string element in versions)
@@ -205,7 +211,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if Versions property is set
         internal bool IsSetVersions()
         {
-            return this.versions.Count > 0;       
+            return this.versions.Count > 0;
         }
 
         /// <summary>
@@ -222,6 +228,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="configurationTemplates">The values to add to the ConfigurationTemplates collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ApplicationDescription WithConfigurationTemplates(params string[] configurationTemplates)
         {
             foreach (string element in configurationTemplates)
@@ -231,12 +238,13 @@ namespace Amazon.ElasticBeanstalk.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the ConfigurationTemplates collection
         /// </summary>
         /// <param name="configurationTemplates">The values to add to the ConfigurationTemplates collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ApplicationDescription WithConfigurationTemplates(IEnumerable<string> configurationTemplates)
         {
             foreach (string element in configurationTemplates)
@@ -250,7 +258,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if ConfigurationTemplates property is set
         internal bool IsSetConfigurationTemplates()
         {
-            return this.configurationTemplates.Count > 0;       
+            return this.configurationTemplates.Count > 0;
         }
     }
 }

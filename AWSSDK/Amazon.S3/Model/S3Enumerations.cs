@@ -314,4 +314,14 @@ namespace Amazon.S3.Model
         None,
         AES256
     }
+
+    /// <summary>
+    /// A list of all encoding types.
+    /// </summary>
+    public enum EncodingType
+    {
+        None,
+        Url
+    }
+
 }

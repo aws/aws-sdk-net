@@ -54,6 +54,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="vpcId">The VPC's ID</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Vpc WithVpcId(string vpcId)
         {
             this.vpcIdField = vpcId;
@@ -84,6 +85,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="vpcState">The current state of the VPC (pending or available).</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Vpc WithVpcState(string vpcState)
         {
             this.vpcStateField = vpcState;
@@ -114,6 +116,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="cidrBlock">The CIDR block the VPC covers</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Vpc WithCidrBlock(string cidrBlock)
         {
             this.cidrBlockField = cidrBlock;
@@ -148,6 +151,7 @@ namespace Amazon.EC2.Model
         /// associated with the VPC (or "default" if the default options are
         /// associated with the VPC).</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Vpc WithDhcpOptionsId(string dhcpOptionsId)
         {
             this.dhcpOptionsIdField = dhcpOptionsId;
@@ -185,6 +189,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="list">A list of tags for the Vpc.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Vpc WithTag(params Tag[] list)
         {
             foreach (Tag item in list)
@@ -229,6 +234,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="instanceTenancy">The allowed tenancy of instances launched into the VPC.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Vpc WithInstanceTenancy(string instanceTenancy)
         {
             this.instanceTenancyField = instanceTenancy;
@@ -251,6 +257,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="isDefault">Whether this is a default VPC.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Vpc WithIsDefault(bool isDefault)
         {
             this.isDefaultField = isDefault;

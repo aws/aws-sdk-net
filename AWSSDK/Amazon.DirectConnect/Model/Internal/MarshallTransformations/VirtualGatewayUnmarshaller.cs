@@ -11,29 +11,31 @@
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
- */ 
+ */
     using System;
     using System.Collections.Generic;
     using System.IO;
     using Amazon.DirectConnect.Model;
     using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations 
-    { 
-      /// <summary> 
-      /// VirtualGatewayUnmarshaller 
-      /// </summary> 
-      internal class VirtualGatewayUnmarshaller : IUnmarshaller<VirtualGateway, XmlUnmarshallerContext>, IUnmarshaller<VirtualGateway, JsonUnmarshallerContext> 
-      { 
+    namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
+    {
+      /// <summary>
+      /// VirtualGatewayUnmarshaller
+      /// </summary>
+      internal class VirtualGatewayUnmarshaller : IUnmarshaller<VirtualGateway, XmlUnmarshallerContext>, IUnmarshaller<VirtualGateway, JsonUnmarshallerContext>
+      {
         VirtualGateway IUnmarshaller<VirtualGateway, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
           throw new NotImplementedException();
         }
-        
-        public VirtualGateway Unmarshall(JsonUnmarshallerContext context) 
+
+        public VirtualGateway Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             VirtualGateway virtualGateway = new VirtualGateway();
-                    
+          
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             while (context.Read())
@@ -42,37 +44,37 @@
                 {
                 context.Read();
                 context.Read();
-               
-              if (context.TestExpression("VirtualGatewayId", targetDepth)) 
+              
+              if (context.TestExpression("VirtualGatewayId", targetDepth))
               {
                 virtualGateway.VirtualGatewayId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue; 
+                continue;
               }
-   
-              if (context.TestExpression("VirtualGatewayState", targetDepth)) 
+  
+              if (context.TestExpression("VirtualGatewayState", targetDepth))
               {
                 virtualGateway.VirtualGatewayState = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue; 
+                continue;
               }
-   
-                } 
-                else if (context.IsEndElement && context.CurrentDepth <= originalDepth) 
-                { 
-                    return virtualGateway; 
-                } 
-            } 
+  
+                }
+                else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
+                {
+                    return virtualGateway;
+                }
+            }
           
-          
-            return virtualGateway; 
-        } 
-        
-        private static VirtualGatewayUnmarshaller instance; 
-        public static VirtualGatewayUnmarshaller GetInstance() 
-        { 
-            if (instance == null) 
-                instance = new VirtualGatewayUnmarshaller(); 
+
+            return virtualGateway;
+        }
+
+        private static VirtualGatewayUnmarshaller instance;
+        public static VirtualGatewayUnmarshaller GetInstance()
+        {
+            if (instance == null)
+                instance = new VirtualGatewayUnmarshaller();
             return instance;
-        } 
-    } 
-} 
+        }
+    }
+}
   

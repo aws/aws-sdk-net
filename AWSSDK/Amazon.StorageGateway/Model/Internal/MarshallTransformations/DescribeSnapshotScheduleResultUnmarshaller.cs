@@ -11,29 +11,31 @@
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
- */ 
+ */
     using System;
     using System.Collections.Generic;
     using System.IO;
     using Amazon.StorageGateway.Model;
     using Amazon.Runtime.Internal.Transform;
 
-    namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations 
-    { 
-      /// <summary> 
-      /// DescribeSnapshotScheduleResultUnmarshaller 
-      /// </summary> 
-      internal class DescribeSnapshotScheduleResultUnmarshaller : IUnmarshaller<DescribeSnapshotScheduleResult, XmlUnmarshallerContext>, IUnmarshaller<DescribeSnapshotScheduleResult, JsonUnmarshallerContext> 
-      { 
+    namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
+    {
+      /// <summary>
+      /// DescribeSnapshotScheduleResultUnmarshaller
+      /// </summary>
+      internal class DescribeSnapshotScheduleResultUnmarshaller : IUnmarshaller<DescribeSnapshotScheduleResult, XmlUnmarshallerContext>, IUnmarshaller<DescribeSnapshotScheduleResult, JsonUnmarshallerContext>
+      {
         DescribeSnapshotScheduleResult IUnmarshaller<DescribeSnapshotScheduleResult, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
           throw new NotImplementedException();
         }
-        
-        public DescribeSnapshotScheduleResult Unmarshall(JsonUnmarshallerContext context) 
+
+        public DescribeSnapshotScheduleResult Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             DescribeSnapshotScheduleResult describeSnapshotScheduleResult = new DescribeSnapshotScheduleResult();
-                    
+          
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             while (context.Read())
@@ -42,55 +44,55 @@
                 {
                 context.Read();
                 context.Read();
-               
-              if (context.TestExpression("VolumeARN", targetDepth)) 
+              
+              if (context.TestExpression("VolumeARN", targetDepth))
               {
                 describeSnapshotScheduleResult.VolumeARN = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue; 
+                continue;
               }
-   
-              if (context.TestExpression("StartAt", targetDepth)) 
+  
+              if (context.TestExpression("StartAt", targetDepth))
               {
                 describeSnapshotScheduleResult.StartAt = IntUnmarshaller.GetInstance().Unmarshall(context);
-                continue; 
+                continue;
               }
-   
-              if (context.TestExpression("RecurrenceInHours", targetDepth)) 
+  
+              if (context.TestExpression("RecurrenceInHours", targetDepth))
               {
                 describeSnapshotScheduleResult.RecurrenceInHours = IntUnmarshaller.GetInstance().Unmarshall(context);
-                continue; 
+                continue;
               }
-   
-              if (context.TestExpression("Description", targetDepth)) 
+  
+              if (context.TestExpression("Description", targetDepth))
               {
                 describeSnapshotScheduleResult.Description = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue; 
+                continue;
               }
-   
-              if (context.TestExpression("Timezone", targetDepth)) 
+  
+              if (context.TestExpression("Timezone", targetDepth))
               {
                 describeSnapshotScheduleResult.Timezone = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue; 
+                continue;
               }
-   
-                } 
-                else if (context.IsEndElement && context.CurrentDepth <= originalDepth) 
-                { 
-                    return describeSnapshotScheduleResult; 
-                } 
-            } 
+  
+                }
+                else if (context.IsEndElement && context.CurrentDepth <= originalDepth)
+                {
+                    return describeSnapshotScheduleResult;
+                }
+            }
           
-          
-            return describeSnapshotScheduleResult; 
-        } 
-        
-        private static DescribeSnapshotScheduleResultUnmarshaller instance; 
-        public static DescribeSnapshotScheduleResultUnmarshaller GetInstance() 
-        { 
-            if (instance == null) 
-                instance = new DescribeSnapshotScheduleResultUnmarshaller(); 
+
+            return describeSnapshotScheduleResult;
+        }
+
+        private static DescribeSnapshotScheduleResultUnmarshaller instance;
+        public static DescribeSnapshotScheduleResultUnmarshaller GetInstance()
+        {
+            if (instance == null)
+                instance = new DescribeSnapshotScheduleResultUnmarshaller();
             return instance;
-        } 
-    } 
-} 
+        }
+    }
+}
   

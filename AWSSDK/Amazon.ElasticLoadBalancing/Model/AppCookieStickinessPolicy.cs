@@ -23,7 +23,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// <summary>
     /// <para>The AppCookieStickinessPolicy data type. </para>
     /// </summary>
-    public class AppCookieStickinessPolicy  
+    public partial class AppCookieStickinessPolicy
     {
         
         private string policyName;
@@ -40,10 +40,10 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// initialize any additional object members.
         /// </summary>
         /// 
-        /// <param name="policyName"> The mnemonic name for the policy being created. The name must be unique within a set of policies for this
-        /// LoadBalancer. </param>
+        /// <param name="policyName"> The mnemonic name for the policy being created. The name must be unique within a set of policies for this load
+        /// balancer. </param>
         /// <param name="cookieName"> The name of the application cookie used for stickiness. </param>
-        public AppCookieStickinessPolicy(string policyName, string cookieName) 
+        public AppCookieStickinessPolicy(string policyName, string cookieName)
         {
             this.policyName = policyName;
             this.cookieName = cookieName;
@@ -51,7 +51,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     
 
         /// <summary>
-        /// The mnemonic name for the policy being created. The name must be unique within a set of policies for this LoadBalancer.
+        /// The mnemonic name for the policy being created. The name must be unique within a set of policies for this load balancer.
         ///  
         /// </summary>
         public string PolicyName
@@ -65,6 +65,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="policyName">The value to set for the PolicyName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AppCookieStickinessPolicy WithPolicyName(string policyName)
         {
             this.policyName = policyName;
@@ -75,7 +76,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if PolicyName property is set
         internal bool IsSetPolicyName()
         {
-            return this.policyName != null;       
+            return this.policyName != null;
         }
 
         /// <summary>
@@ -93,6 +94,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="cookieName">The value to set for the CookieName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public AppCookieStickinessPolicy WithCookieName(string cookieName)
         {
             this.cookieName = cookieName;
@@ -103,7 +105,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if CookieName property is set
         internal bool IsSetCookieName()
         {
-            return this.cookieName != null;       
+            return this.cookieName != null;
         }
     }
 }

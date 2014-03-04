@@ -21,12 +21,15 @@ using System.IO;
 namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
-    /// 
+    /// <para>Presets are templates that contain most of the settings for transcoding media files from one format to another. Elastic Transcoder
+    /// includes some default presets for common formats, for example, several iPod and iPhone versions. You can also create your own presets for
+    /// formats that aren't included among the default presets. You specify which preset you want to use when you create a job.</para>
     /// </summary>
-    public class Preset
+    public partial class Preset
     {
         
         private string id;
+        private string arn;
         private string name;
         private string description;
         private string container;
@@ -59,6 +62,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="id">The value to set for the Id property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Preset WithId(string id)
         {
             this.id = id;
@@ -70,6 +74,35 @@ namespace Amazon.ElasticTranscoder.Model
         internal bool IsSetId()
         {
             return this.id != null;
+        }
+
+        /// <summary>
+        /// The Amazon Resource Name (ARN) for the preset.
+        ///  
+        /// </summary>
+        public string Arn
+        {
+            get { return this.arn; }
+            set { this.arn = value; }
+        }
+
+        /// <summary>
+        /// Sets the Arn property
+        /// </summary>
+        /// <param name="arn">The value to set for the Arn property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public Preset WithArn(string arn)
+        {
+            this.arn = arn;
+            return this;
+        }
+            
+
+        // Check to see if Arn property is set
+        internal bool IsSetArn()
+        {
+            return this.arn != null;
         }
 
         /// <summary>
@@ -96,6 +129,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="name">The value to set for the Name property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Preset WithName(string name)
         {
             this.name = name;
@@ -133,6 +167,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="description">The value to set for the Description property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Preset WithDescription(string description)
         {
             this.description = description;
@@ -147,14 +182,14 @@ namespace Amazon.ElasticTranscoder.Model
         }
 
         /// <summary>
-        /// The container type for the output file. This value must be <c>mp4</c>.
+        /// The container type for the output file. Valid values include <c>mp3</c>, <c>mp4</c>, <c>ogg</c>, <c>ts</c>, and <c>webm</c>.
         ///  
         /// <para>
         /// <b>Constraints:</b>
         /// <list type="definition">
         ///     <item>
         ///         <term>Pattern</term>
-        ///         <description>(^mp4$)|(^ts$)|(^webm$)</description>
+        ///         <description>(^mp4$)|(^ts$)|(^webm$)|(^mp3$)|(^ogg$)</description>
         ///     </item>
         /// </list>
         /// </para>
@@ -170,6 +205,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="container">The value to set for the Container property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Preset WithContainer(string container)
         {
             this.container = container;
@@ -198,6 +234,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="audio">The value to set for the Audio property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Preset WithAudio(AudioParameters audio)
         {
             this.audio = audio;
@@ -226,6 +263,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="video">The value to set for the Video property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Preset WithVideo(VideoParameters video)
         {
             this.video = video;
@@ -254,6 +292,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="thumbnails">The value to set for the Thumbnails property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Preset WithThumbnails(Thumbnails thumbnails)
         {
             this.thumbnails = thumbnails;
@@ -291,6 +330,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </summary>
         /// <param name="type">The value to set for the Type property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Preset WithType(string type)
         {
             this.type = type;

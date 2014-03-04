@@ -22,13 +22,14 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
      /// <summary>
      ///   CreateUserResult Unmarshaller
      /// </summary>
-    internal class CreateUserResultUnmarshaller : IUnmarshaller<CreateUserResult, XmlUnmarshallerContext> 
+    internal class CreateUserResultUnmarshaller : IUnmarshaller<CreateUserResult, XmlUnmarshallerContext>, IUnmarshaller<CreateUserResult, JsonUnmarshallerContext> 
     {
         public CreateUserResult Unmarshall(XmlUnmarshallerContext context) 
         {
             CreateUserResult createUserResult = new CreateUserResult();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -52,6 +53,11 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 
 
             return createUserResult;
+        }
+
+        public CreateUserResult Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static CreateUserResultUnmarshaller instance;

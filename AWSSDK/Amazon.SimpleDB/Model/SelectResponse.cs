@@ -70,6 +70,7 @@ namespace Amazon.SimpleDB.Model
         /// and empty result sets contains a next token which allow you to continue the operation from where it left off.
         /// Responses larger than one megabyte return a partial result set.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SelectResponse WithSelectResult(SelectResult selectResult)
         {
             this.selectResultField = selectResult;
@@ -101,6 +102,7 @@ namespace Amazon.SimpleDB.Model
         /// </summary>
         /// <param name="responseMetadata">Information about the request provided by Amazon SimpleDB.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SelectResponse WithResponseMetadata(ResponseMetadata responseMetadata)
         {
             this.responseMetadataField = responseMetadata;

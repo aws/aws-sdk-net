@@ -47,6 +47,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="items">The values to add to the Items collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ScanResult WithItems(params Dictionary<string,AttributeValue>[] items)
         {
             foreach (Dictionary<string,AttributeValue> element in items)
@@ -62,6 +63,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="items">The values to add to the Items collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ScanResult WithItems(IEnumerable<Dictionary<string,AttributeValue>> items)
         {
             foreach (Dictionary<string,AttributeValue> element in items)
@@ -93,6 +95,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="count">The value to set for the Count property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ScanResult WithCount(int count)
         {
             this.count = count;
@@ -109,8 +112,8 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// The number of items in the complete scan, before any filters are applied. A high <i>ScannedCount</i> value with few, or no, <i>Count</i>
         /// results indicates an inefficient <i>Scan</i> operation. For more information, see <a
-        /// href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count and ScannedCount</a> in the <i>Amazon
-        /// DynamoDB Developer Guide</i>.
+        /// href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count and ScannedCount</a> in the Amazon
+        /// DynamoDB Developer Guide.
         ///  
         /// </summary>
         public int ScannedCount
@@ -124,6 +127,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="scannedCount">The value to set for the ScannedCount property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ScanResult WithScannedCount(int scannedCount)
         {
             this.scannedCount = scannedCount;
@@ -139,9 +143,9 @@ namespace Amazon.DynamoDBv2.Model
 
         /// <summary>
         /// The primary key of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation,
-        /// excluding this value in the new request. <i>LastEvaluatedKey</i> is null when the entire result set is complete (in other words, when the
-        /// operation processed the "last page" of results). If you are performing a parallel scan, <i>LastEvaluatedKey</i> is null if the requested
-        /// <i>Segment</i> has been completely scanned. It does not indicate that any other segments have been scanned.
+        /// excluding this value in the new request. If <i>LastEvaluatedKey</i> is null, then the "last page" of results has been processed and there is
+        /// no more data to be retrieved. If <i>LastEvaluatedKey</i> is anything other than null, this does not necessarily mean that there is more data
+        /// in the result set. The only way to know when you have reached the end of the result set is when <i>LastEvaluatedKey</i> is null.
         ///  
         /// </summary>
         public Dictionary<string,AttributeValue> LastEvaluatedKey
@@ -155,6 +159,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="pairs">The pairs to be added to the LastEvaluatedKey dictionary.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ScanResult WithLastEvaluatedKey(params KeyValuePair<string, AttributeValue>[] pairs)
         {
             foreach (KeyValuePair<string, AttributeValue> pair in pairs)
@@ -172,10 +177,11 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// The table name that consumed provisioned throughput, and the number of capacity units consumed by it. <i>ConsumedCapacity</i> is only
-        /// returned if it was asked for in the request. For more information, see <a
+        /// Represents the capacity units consumed by an operation. The data returned includes the total provisioned throughput consumed, along with
+        /// statistics for the table and any indexes involved in the operation. <i>ConsumedCapacity</i> is only returned if it was asked for in the
+        /// request. For more information, see <a
         /// href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned Throughput</a> in the
-        /// <i>Amazon DynamoDB Developer Guide</i>.
+        /// Amazon DynamoDB Developer Guide.
         ///  
         /// </summary>
         public ConsumedCapacity ConsumedCapacity
@@ -189,6 +195,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="consumedCapacity">The value to set for the ConsumedCapacity property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ScanResult WithConsumedCapacity(ConsumedCapacity consumedCapacity)
         {
             this.consumedCapacity = consumedCapacity;

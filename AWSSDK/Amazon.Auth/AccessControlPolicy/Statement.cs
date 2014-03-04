@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -135,6 +135,7 @@ namespace Amazon.Auth.AccessControlPolicy
         /// </summary>
         /// <param name="id">The new statement ID for this statement.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Statement WithId(string id) 
         {
             this.Id = id;
@@ -191,6 +192,7 @@ namespace Amazon.Auth.AccessControlPolicy
         /// </summary>
         /// <param name="actions">The list of actions to which this statement applies.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Statement WithActionIdentifiers(params ActionIdentifier[] actions) 
         {
             if (this.actions == null)
@@ -241,6 +243,7 @@ namespace Amazon.Auth.AccessControlPolicy
         /// </summary>
         /// <param name="resources">The resources associated with this policy statement.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Statement WithResources(params Resource[] resources) 
         {
             if (this.resources == null)
@@ -305,6 +308,7 @@ namespace Amazon.Auth.AccessControlPolicy
         /// </summary>
         /// <param name="conditions">The conditions associated with this policy statement.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Statement WithConditions(params Condition[] conditions) 
         {
             if (this.Conditions == null)
@@ -347,6 +351,7 @@ namespace Amazon.Auth.AccessControlPolicy
         /// </summary>
         /// <param name="principals">The list of principals associated with this policy statement.</param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public Statement WithPrincipals(params Principal[] principals) 
         {
             if (this.principals == null)

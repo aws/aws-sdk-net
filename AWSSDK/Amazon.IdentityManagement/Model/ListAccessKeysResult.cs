@@ -23,7 +23,7 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// <para>Contains the result of a successful invocation of the ListAccessKeys action.</para>
     /// </summary>
-    public class ListAccessKeysResult  
+    public partial class ListAccessKeysResult
     {
         
         private List<AccessKeyMetadata> accessKeyMetadata = new List<AccessKeyMetadata>();
@@ -44,6 +44,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="accessKeyMetadata">The values to add to the AccessKeyMetadata collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListAccessKeysResult WithAccessKeyMetadata(params AccessKeyMetadata[] accessKeyMetadata)
         {
             foreach (AccessKeyMetadata element in accessKeyMetadata)
@@ -53,12 +54,13 @@ namespace Amazon.IdentityManagement.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the AccessKeyMetadata collection
         /// </summary>
         /// <param name="accessKeyMetadata">The values to add to the AccessKeyMetadata collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListAccessKeysResult WithAccessKeyMetadata(IEnumerable<AccessKeyMetadata> accessKeyMetadata)
         {
             foreach (AccessKeyMetadata element in accessKeyMetadata)
@@ -72,7 +74,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if AccessKeyMetadata property is set
         internal bool IsSetAccessKeyMetadata()
         {
-            return this.accessKeyMetadata.Count > 0;       
+            return this.accessKeyMetadata.Count > 0;
         }
 
         /// <summary>
@@ -91,6 +93,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="isTruncated">The value to set for the IsTruncated property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListAccessKeysResult WithIsTruncated(bool isTruncated)
         {
             this.isTruncated = isTruncated;
@@ -101,7 +104,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if IsTruncated property is set
         internal bool IsSetIsTruncated()
         {
-            return this.isTruncated.HasValue;       
+            return this.isTruncated.HasValue;
         }
 
         /// <summary>
@@ -133,6 +136,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="marker">The value to set for the Marker property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ListAccessKeysResult WithMarker(string marker)
         {
             this.marker = marker;
@@ -143,7 +147,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if Marker property is set
         internal bool IsSetMarker()
         {
-            return this.marker != null;       
+            return this.marker != null;
         }
     }
 }

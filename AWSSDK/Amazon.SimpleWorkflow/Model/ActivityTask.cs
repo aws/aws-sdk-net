@@ -58,6 +58,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="taskToken">The value to set for the TaskToken property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ActivityTask WithTaskToken(string taskToken)
         {
             this.taskToken = taskToken;
@@ -95,6 +96,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="activityId">The value to set for the ActivityId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ActivityTask WithActivityId(string activityId)
         {
             this.activityId = activityId;
@@ -123,6 +125,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="startedEventId">The value to set for the StartedEventId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ActivityTask WithStartedEventId(long startedEventId)
         {
             this.startedEventId = startedEventId;
@@ -151,6 +154,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="workflowExecution">The value to set for the WorkflowExecution property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ActivityTask WithWorkflowExecution(WorkflowExecution workflowExecution)
         {
             this.workflowExecution = workflowExecution;
@@ -179,6 +183,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="activityType">The value to set for the ActivityType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ActivityTask WithActivityType(ActivityType activityType)
         {
             this.activityType = activityType;
@@ -217,6 +222,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </summary>
         /// <param name="input">The value to set for the Input property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ActivityTask WithInput(string input)
         {
             this.input = input;

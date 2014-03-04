@@ -22,13 +22,14 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
      /// <summary>
      ///   CreateRoleResult Unmarshaller
      /// </summary>
-    internal class CreateRoleResultUnmarshaller : IUnmarshaller<CreateRoleResult, XmlUnmarshallerContext> 
+    internal class CreateRoleResultUnmarshaller : IUnmarshaller<CreateRoleResult, XmlUnmarshallerContext>, IUnmarshaller<CreateRoleResult, JsonUnmarshallerContext> 
     {
         public CreateRoleResult Unmarshall(XmlUnmarshallerContext context) 
         {
             CreateRoleResult createRoleResult = new CreateRoleResult();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -52,6 +53,11 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 
 
             return createRoleResult;
+        }
+
+        public CreateRoleResult Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static CreateRoleResultUnmarshaller instance;

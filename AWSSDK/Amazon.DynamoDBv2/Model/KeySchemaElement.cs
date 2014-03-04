@@ -21,8 +21,8 @@ using System.IO;
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
-    /// <para>Represents a key schema. Specifies the attributes that make up the primary key of a table, or the key attributes of a secondary
-    /// index.</para>
+    /// <para>Represents a single element of a key schema. A key schema specifies the attributes that make up the primary key of a table, or the key
+    /// attributes of an index.</para>
     /// </summary>
     public class KeySchemaElement
     {
@@ -31,7 +31,7 @@ namespace Amazon.DynamoDBv2.Model
         private string keyType;
 
         /// <summary>
-        /// Represents the name of a key attribute.
+        /// The name of a key attribute.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -54,6 +54,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="attributeName">The value to set for the AttributeName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public KeySchemaElement WithAttributeName(string attributeName)
         {
             this.attributeName = attributeName;
@@ -68,7 +69,7 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// Represents the attribute data, consisting of the data type and the attribute value itself.
+        /// The attribute data, consisting of the data type and the attribute value itself.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -91,6 +92,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="keyType">The value to set for the KeyType property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public KeySchemaElement WithKeyType(string keyType)
         {
             this.keyType = keyType;

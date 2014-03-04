@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
-    /// <para>Represents the properties of a secondary index.</para>
+    /// <para>Represents the properties of a local secondary index.</para>
     /// </summary>
     public class LocalSecondaryIndexDescription
     {
@@ -33,7 +33,7 @@ namespace Amazon.DynamoDBv2.Model
         private long? itemCount;
 
         /// <summary>
-        /// Represents the name of the secondary index.
+        /// Represents the name of the local secondary index.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -60,6 +60,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="indexName">The value to set for the IndexName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LocalSecondaryIndexDescription WithIndexName(string indexName)
         {
             this.indexName = indexName;
@@ -74,8 +75,7 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// Represents the complete index key schema, which consists of one or more pairs of attribute names and key types (<c>HASH</c> or
-        /// <c>RANGE</c>).
+        /// The complete index key schema, which consists of one or more pairs of attribute names and key types (<c>HASH</c> or <c>RANGE</c>).
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -97,6 +97,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="keySchema">The values to add to the KeySchema collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LocalSecondaryIndexDescription WithKeySchema(params KeySchemaElement[] keySchema)
         {
             foreach (KeySchemaElement element in keySchema)
@@ -112,6 +113,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="keySchema">The values to add to the KeySchema collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LocalSecondaryIndexDescription WithKeySchema(IEnumerable<KeySchemaElement> keySchema)
         {
             foreach (KeySchemaElement element in keySchema)
@@ -129,7 +131,7 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// Represents attributes that are copied (projected) from the table into the index. These are in addition to the primary key attributes and
+        /// Represents attributes that are copied (projected) from the table into an index. These are in addition to the primary key attributes and
         /// index key attributes, which are automatically projected.
         ///  
         /// </summary>
@@ -144,6 +146,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="projection">The value to set for the Projection property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LocalSecondaryIndexDescription WithProjection(Projection projection)
         {
             this.projection = projection;
@@ -158,7 +161,7 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// Represents the total size of the index, in bytes. Amazon DynamoDB updates this value approximately every six hours. Recent changes might not
+        /// The total size of the specified index, in bytes. Amazon DynamoDB updates this value approximately every six hours. Recent changes might not
         /// be reflected in this value.
         ///  
         /// </summary>
@@ -173,6 +176,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="indexSizeBytes">The value to set for the IndexSizeBytes property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LocalSecondaryIndexDescription WithIndexSizeBytes(long indexSizeBytes)
         {
             this.indexSizeBytes = indexSizeBytes;
@@ -187,7 +191,7 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// Represents the number of items in the index. Amazon DynamoDB updates this value approximately every six hours. Recent changes might not be
+        /// The number of items in the specified index. Amazon DynamoDB updates this value approximately every six hours. Recent changes might not be
         /// reflected in this value.
         ///  
         /// </summary>
@@ -202,6 +206,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="itemCount">The value to set for the ItemCount property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public LocalSecondaryIndexDescription WithItemCount(long itemCount)
         {
             this.itemCount = itemCount;

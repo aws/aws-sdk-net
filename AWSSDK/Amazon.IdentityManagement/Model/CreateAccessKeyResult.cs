@@ -23,7 +23,7 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// <para>Contains the result of a successful invocation of the CreateAccessKey action.</para>
     /// </summary>
-    public class CreateAccessKeyResult  
+    public partial class CreateAccessKeyResult
     {
         
         private AccessKey accessKey;
@@ -43,6 +43,7 @@ namespace Amazon.IdentityManagement.Model
         /// </summary>
         /// <param name="accessKey">The value to set for the AccessKey property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreateAccessKeyResult WithAccessKey(AccessKey accessKey)
         {
             this.accessKey = accessKey;
@@ -53,7 +54,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if AccessKey property is set
         internal bool IsSetAccessKey()
         {
-            return this.accessKey != null;       
+            return this.accessKey != null;
         }
     }
 }

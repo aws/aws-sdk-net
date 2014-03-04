@@ -32,10 +32,14 @@ namespace Amazon.RDS.Model
     {
         private string sourceDBSnapshotIdentifier;
         private string targetDBSnapshotIdentifier;
+        private List<Tag> tags = new List<Tag>();
 
         /// <summary>
-        /// The identifier for the source DB snapshot. Constraints: <ul> <li>Must be the identifier for a valid system snapshot in the "available"
-        /// state.</li> </ul> Example: <c>rds:mydb-2012-04-02-00-01</c>
+        /// The identifier for the source DB snapshot. Constraints: <ul> <li>Must specify a valid system snapshot in the "available" state.</li> <li>If
+        /// the source snapshot is in the same region as the copy, specify a valid DB snapshot identifier.</li> <li>If the source snapshot is in a
+        /// different region than the copy, specify valid DB snapshot ARN. For more information, go to <a
+        /// href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html"> Copying a DB Snapshot</a>.</li> </ul> Example:
+        /// <c>rds:mydb-2012-04-02-00-01</c> Example: <c>arn:aws:rds:rr-regn-1:123456789012:snapshot:mysql-instance1-snapshot-20130805</c>
         ///  
         /// </summary>
         public string SourceDBSnapshotIdentifier
@@ -49,6 +53,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="sourceDBSnapshotIdentifier">The value to set for the SourceDBSnapshotIdentifier property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CopyDBSnapshotRequest WithSourceDBSnapshotIdentifier(string sourceDBSnapshotIdentifier)
         {
             this.sourceDBSnapshotIdentifier = sourceDBSnapshotIdentifier;
@@ -79,6 +84,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="targetDBSnapshotIdentifier">The value to set for the TargetDBSnapshotIdentifier property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CopyDBSnapshotRequest WithTargetDBSnapshotIdentifier(string targetDBSnapshotIdentifier)
         {
             this.targetDBSnapshotIdentifier = targetDBSnapshotIdentifier;
@@ -90,6 +96,53 @@ namespace Amazon.RDS.Model
         internal bool IsSetTargetDBSnapshotIdentifier()
         {
             return this.targetDBSnapshotIdentifier != null;
+        }
+
+        /// <summary>
+        /// A list of tags.
+        ///  
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this.tags; }
+            set { this.tags = value; }
+        }
+        /// <summary>
+        /// Adds elements to the Tags collection
+        /// </summary>
+        /// <param name="tags">The values to add to the Tags collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public CopyDBSnapshotRequest WithTags(params Tag[] tags)
+        {
+            foreach (Tag element in tags)
+            {
+                this.tags.Add(element);
+            }
+
+            return this;
+        }
+
+        /// <summary>
+        /// Adds elements to the Tags collection
+        /// </summary>
+        /// <param name="tags">The values to add to the Tags collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public CopyDBSnapshotRequest WithTags(IEnumerable<Tag> tags)
+        {
+            foreach (Tag element in tags)
+            {
+                this.tags.Add(element);
+            }
+
+            return this;
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this.tags.Count > 0;
         }
     }
 }

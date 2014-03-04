@@ -32,6 +32,8 @@
 
         public DescribeElasticLoadBalancersResult Unmarshall(JsonUnmarshallerContext context)
         {
+            if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                return null;
             DescribeElasticLoadBalancersResult describeElasticLoadBalancersResult = new DescribeElasticLoadBalancersResult();
           describeElasticLoadBalancersResult.ElasticLoadBalancers = null;
                         

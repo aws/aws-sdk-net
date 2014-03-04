@@ -28,7 +28,10 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// <para> Replaces the current set of policies associated with a port on which the back-end server is listening with a new set of policies.
     /// After the policies have been created using CreateLoadBalancerPolicy, they can be applied here as a list. At this time, only the back-end
     /// server authentication policy type can be applied to the back-end ports; this policy type is composed of multiple public key policies.
-    /// </para>
+    /// </para> <para><b>NOTE:</b> The SetLoadBalancerPoliciesForBackendServer replaces the current set of policies associated with the specified
+    /// instance port. Every time you use this action to enable the policies, use the PolicyNames parameter to list all the policies you want to
+    /// enable. </para> <para>You can use DescribeLoadBalancers or DescribeLoadBalancerPolicies action to verify that the policy has been associated
+    /// with the back-end server.</para>
     /// </summary>
     /// <seealso cref="Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancing.SetLoadBalancerPoliciesForBackendServer"/>
     public class SetLoadBalancerPoliciesForBackendServerRequest : AmazonWebServiceRequest
@@ -38,7 +41,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         private List<string> policyNames = new List<string>();
 
         /// <summary>
-        /// The mnemonic name associated with the LoadBalancer. This name must be unique within the client AWS account.
+        /// The mnemonic name associated with the load balancer. This name must be unique within the set of your load balancers.
         ///  
         /// </summary>
         public string LoadBalancerName
@@ -52,6 +55,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="loadBalancerName">The value to set for the LoadBalancerName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SetLoadBalancerPoliciesForBackendServerRequest WithLoadBalancerName(string loadBalancerName)
         {
             this.loadBalancerName = loadBalancerName;
@@ -62,7 +66,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if LoadBalancerName property is set
         internal bool IsSetLoadBalancerName()
         {
-            return this.loadBalancerName != null;       
+            return this.loadBalancerName != null;
         }
 
         /// <summary>
@@ -80,6 +84,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="instancePort">The value to set for the InstancePort property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SetLoadBalancerPoliciesForBackendServerRequest WithInstancePort(int instancePort)
         {
             this.instancePort = instancePort;
@@ -90,7 +95,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if InstancePort property is set
         internal bool IsSetInstancePort()
         {
-            return this.instancePort.HasValue;       
+            return this.instancePort.HasValue;
         }
 
         /// <summary>
@@ -107,6 +112,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </summary>
         /// <param name="policyNames">The values to add to the PolicyNames collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SetLoadBalancerPoliciesForBackendServerRequest WithPolicyNames(params string[] policyNames)
         {
             foreach (string element in policyNames)
@@ -116,12 +122,13 @@ namespace Amazon.ElasticLoadBalancing.Model
 
             return this;
         }
-        
+
         /// <summary>
         /// Adds elements to the PolicyNames collection
         /// </summary>
         /// <param name="policyNames">The values to add to the PolicyNames collection </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public SetLoadBalancerPoliciesForBackendServerRequest WithPolicyNames(IEnumerable<string> policyNames)
         {
             foreach (string element in policyNames)
@@ -135,7 +142,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if PolicyNames property is set
         internal bool IsSetPolicyNames()
         {
-            return this.policyNames.Count > 0;       
+            return this.policyNames.Count > 0;
         }
     }
 }

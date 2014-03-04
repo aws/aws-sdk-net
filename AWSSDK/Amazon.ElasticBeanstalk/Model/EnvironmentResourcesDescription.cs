@@ -23,7 +23,7 @@ namespace Amazon.ElasticBeanstalk.Model
     /// <summary>
     /// <para>Describes the AWS resources in use by this environment. This data is not live data.</para>
     /// </summary>
-    public class EnvironmentResourcesDescription  
+    public partial class EnvironmentResourcesDescription
     {
         
         private LoadBalancerDescription loadBalancer;
@@ -43,6 +43,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </summary>
         /// <param name="loadBalancer">The value to set for the LoadBalancer property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public EnvironmentResourcesDescription WithLoadBalancer(LoadBalancerDescription loadBalancer)
         {
             this.loadBalancer = loadBalancer;
@@ -53,7 +54,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if LoadBalancer property is set
         internal bool IsSetLoadBalancer()
         {
-            return this.loadBalancer != null;       
+            return this.loadBalancer != null;
         }
     }
 }

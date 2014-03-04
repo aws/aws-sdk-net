@@ -22,13 +22,14 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
      /// <summary>
      ///   Instance Unmarshaller
      /// </summary>
-    internal class InstanceUnmarshaller : IUnmarshaller<Instance, XmlUnmarshallerContext> 
+    internal class InstanceUnmarshaller : IUnmarshaller<Instance, XmlUnmarshallerContext>, IUnmarshaller<Instance, JsonUnmarshallerContext> 
     {
         public Instance Unmarshall(XmlUnmarshallerContext context) 
         {
             Instance instance = new Instance();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
+            
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
@@ -52,6 +53,11 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
 
 
             return instance;
+        }
+
+        public Instance Unmarshall(JsonUnmarshallerContext context) 
+        {
+            return null;
         }
 
         private static InstanceUnmarshaller instance;

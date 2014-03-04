@@ -25,7 +25,11 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the RebootInstance operation.
-    /// <para>Reboots a specified instance. For more information, see Starting, Stopping, and Rebooting Instances.</para>
+    /// <para>Reboots a specified instance. For more information, see <a
+    /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-starting.html" >Starting, Stopping, and Rebooting Instances</a>
+    /// .</para> <para> <b>Required Permissions</b> : To use this action, an IAM user must have a Manage permissions level for the stack, or an
+    /// attached policy that explicitly grants permissions. For more information on user permissions, see <a
+    /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
     /// </summary>
     /// <seealso cref="Amazon.OpsWorks.AmazonOpsWorks.RebootInstance"/>
     public class RebootInstanceRequest : AmazonWebServiceRequest
@@ -47,6 +51,7 @@ namespace Amazon.OpsWorks.Model
         /// </summary>
         /// <param name="instanceId">The value to set for the InstanceId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public RebootInstanceRequest WithInstanceId(string instanceId)
         {
             this.instanceId = instanceId;

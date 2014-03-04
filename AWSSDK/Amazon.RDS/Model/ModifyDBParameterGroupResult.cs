@@ -23,13 +23,13 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// <para> Contains the result of a successful invocation of the ModifyDBParameterGroup or ResetDBParameterGroup action. </para>
     /// </summary>
-    public class ModifyDBParameterGroupResult
+    public partial class ModifyDBParameterGroupResult
     {
         
         private string dBParameterGroupName;
 
         /// <summary>
-        /// The name of the DB Parameter Group.
+        /// The name of the DB parameter group.
         ///  
         /// </summary>
         public string DBParameterGroupName
@@ -43,6 +43,7 @@ namespace Amazon.RDS.Model
         /// </summary>
         /// <param name="dBParameterGroupName">The value to set for the DBParameterGroupName property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public ModifyDBParameterGroupResult WithDBParameterGroupName(string dBParameterGroupName)
         {
             this.dBParameterGroupName = dBParameterGroupName;

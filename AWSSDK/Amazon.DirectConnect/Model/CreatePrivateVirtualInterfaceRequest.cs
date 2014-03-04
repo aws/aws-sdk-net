@@ -25,8 +25,8 @@ namespace Amazon.DirectConnect.Model
 {
     /// <summary>
     /// Container for the parameters to the CreatePrivateVirtualInterface operation.
-    /// <para> Creates a new private virtual interface. A virtual interface is the VLAN that transports Direct Connect traffic. A private virtual
-    /// interface supports sending traffic to a single VPC. </para>
+    /// <para>Creates a new private virtual interface. A virtual interface is the VLAN that transports AWS Direct Connect traffic. A private
+    /// virtual interface supports sending traffic to a single Virtual Private Cloud (VPC).</para>
     /// </summary>
     /// <seealso cref="Amazon.DirectConnect.AmazonDirectConnect.CreatePrivateVirtualInterface"/>
     public class CreatePrivateVirtualInterfaceRequest : AmazonWebServiceRequest
@@ -49,6 +49,7 @@ namespace Amazon.DirectConnect.Model
         /// </summary>
         /// <param name="connectionId">The value to set for the ConnectionId property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreatePrivateVirtualInterfaceRequest WithConnectionId(string connectionId)
         {
             this.connectionId = connectionId;
@@ -59,7 +60,7 @@ namespace Amazon.DirectConnect.Model
         // Check to see if ConnectionId property is set
         internal bool IsSetConnectionId()
         {
-            return this.connectionId != null;       
+            return this.connectionId != null;
         }
 
         /// <summary>
@@ -77,6 +78,7 @@ namespace Amazon.DirectConnect.Model
         /// </summary>
         /// <param name="newPrivateVirtualInterface">The value to set for the NewPrivateVirtualInterface property </param>
         /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
         public CreatePrivateVirtualInterfaceRequest WithNewPrivateVirtualInterface(NewPrivateVirtualInterface newPrivateVirtualInterface)
         {
             this.newPrivateVirtualInterface = newPrivateVirtualInterface;
@@ -87,7 +89,7 @@ namespace Amazon.DirectConnect.Model
         // Check to see if NewPrivateVirtualInterface property is set
         internal bool IsSetNewPrivateVirtualInterface()
         {
-            return this.newPrivateVirtualInterface != null;       
+            return this.newPrivateVirtualInterface != null;
         }
     }
 }

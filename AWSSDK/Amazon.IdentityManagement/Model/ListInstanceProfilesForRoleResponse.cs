@@ -30,18 +30,18 @@ namespace Amazon.IdentityManagement.Model
 
         /// <summary>
         /// Gets and sets the ListInstanceProfilesForRoleResult property.
-        /// Contains the result of a successful invocation of the ListInstanceProfilesForRoleResponse action.
+        /// Contains the result of a successful invocation of the ListInstanceProfilesForRole action.
         /// </summary>
         public ListInstanceProfilesForRoleResult ListInstanceProfilesForRoleResult
         {
-            get 
+            get
             {
                 if(this.listInstanceProfilesForRoleResult == null)
                 {
                     this.listInstanceProfilesForRoleResult = new ListInstanceProfilesForRoleResult();
                 }
 
-                return this.listInstanceProfilesForRoleResult; 
+                return this.listInstanceProfilesForRoleResult;
             }
             set { this.listInstanceProfilesForRoleResult = value; }
         }
