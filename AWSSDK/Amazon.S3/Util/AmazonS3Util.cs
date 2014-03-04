@@ -468,33 +468,40 @@ namespace Amazon.S3.Util
 
             HttpWebRequest httpRequest = WebRequest.Create(url) as HttpWebRequest;
             httpRequest.Method = "HEAD";
+            httpRequest.KeepAlive = false;
             AmazonS3Client concreteClient = s3Client as AmazonS3Client;
             if (concreteClient != null)
             {
                 concreteClient.ConfigureProxy(httpRequest);
             }
 
+            HttpWebResponse httpResponse = null;
             try
             {
-                HttpWebResponse httpResponse = httpRequest.GetResponse() as HttpWebResponse;
+                httpResponse = httpRequest.GetResponse() as HttpWebResponse;
                 // If all went well, the bucket was found!
                 return true;
             }
             catch (WebException we)
-            {
+            {                
                 using (HttpWebResponse errorResponse = we.Response as HttpWebResponse)
                 {
                     if (errorResponse != null)
                     {
                         HttpStatusCode code = errorResponse.StatusCode;
                         return code != HttpStatusCode.NotFound &&
-                            code != HttpStatusCode.BadRequest;
+                               code != HttpStatusCode.BadRequest;
                     }
 
                     // The Error Response is null which is indicative of either
                     // a bad request or some other problem
                     return false;
                 }
+            }
+            finally
+            {
+                if (httpResponse != null)
+                    httpResponse.Close();
             }
         }
 
