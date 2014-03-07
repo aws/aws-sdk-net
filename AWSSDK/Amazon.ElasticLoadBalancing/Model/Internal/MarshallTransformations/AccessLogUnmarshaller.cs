@@ -20,13 +20,13 @@ using Amazon.Runtime.Internal.Transform;
 namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
 {
      /// <summary>
-     ///   Listener Unmarshaller
+     ///   AccessLog Unmarshaller
      /// </summary>
-    internal class ListenerUnmarshaller : IUnmarshaller<Listener, XmlUnmarshallerContext>, IUnmarshaller<Listener, JsonUnmarshallerContext> 
+    internal class AccessLogUnmarshaller : IUnmarshaller<AccessLog, XmlUnmarshallerContext>, IUnmarshaller<AccessLog, JsonUnmarshallerContext> 
     {
-        public Listener Unmarshall(XmlUnmarshallerContext context) 
+        public AccessLog Unmarshall(XmlUnmarshallerContext context) 
         {
-            Listener listener = new Listener();
+            AccessLog accessLog = new AccessLog();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -37,59 +37,53 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 { 
-                    if (context.TestExpression("Protocol", targetDepth))
+                    if (context.TestExpression("Enabled", targetDepth))
                     {
-                        listener.Protocol = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        accessLog.Enabled = BoolUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
                     } 
-                    if (context.TestExpression("LoadBalancerPort", targetDepth))
+                    if (context.TestExpression("S3BucketName", targetDepth))
                     {
-                        listener.LoadBalancerPort = IntUnmarshaller.GetInstance().Unmarshall(context);
+                        accessLog.S3BucketName = StringUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
                     } 
-                    if (context.TestExpression("InstanceProtocol", targetDepth))
+                    if (context.TestExpression("EmitInterval", targetDepth))
                     {
-                        listener.InstanceProtocol = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        accessLog.EmitInterval = IntUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
                     } 
-                    if (context.TestExpression("InstancePort", targetDepth))
+                    if (context.TestExpression("S3BucketPrefix", targetDepth))
                     {
-                        listener.InstancePort = IntUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("SSLCertificateId", targetDepth))
-                    {
-                        listener.SSLCertificateId = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        accessLog.S3BucketPrefix = StringUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return listener;
+                    return accessLog;
                 }
             }
                         
 
 
-            return listener;
+            return accessLog;
         }
 
-        public Listener Unmarshall(JsonUnmarshallerContext context) 
+        public AccessLog Unmarshall(JsonUnmarshallerContext context) 
         {
             return null;
         }
 
-        private static ListenerUnmarshaller instance;
+        private static AccessLogUnmarshaller instance;
 
-        public static ListenerUnmarshaller GetInstance() 
+        public static AccessLogUnmarshaller GetInstance() 
         {
             if (instance == null) 
-               instance = new ListenerUnmarshaller();
+               instance = new AccessLogUnmarshaller();
 
             return instance;
         }

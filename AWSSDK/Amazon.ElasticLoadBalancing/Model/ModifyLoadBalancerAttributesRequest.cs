@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,7 +25,13 @@ namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyLoadBalancerAttributes operation.
-    /// <para>Modifies the attributes of a specified load balancer.</para>
+    /// <para>Modifies the attributes of a specified load balancer.</para> <para>You can modify the attributes, such as cross-zone load balancing
+    /// and access logs, by either enabling or disabling them.</para> <para>For information on modifying the cross-zone load balancing attribute,
+    /// see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/enable-disable-crosszone-lb.html" >Enable or Disable
+    /// Cross-Zone Load Balancing for Your Load balancer</a> in the <i>Elastic Load Balancing Developer Guide</i> .</para> <para>For information on
+    /// modifying the access log attribute, see <a
+    /// href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/access-log-collection.html" >Enable or Disable Access Log
+    /// Collection for Your Load Balancer</a> in the <i>Elastic Load Balancing Developer Guide</i> .</para>
     /// </summary>
     /// <seealso cref="Amazon.ElasticLoadBalancing.AmazonElasticLoadBalancing.ModifyLoadBalancerAttributes"/>
     public class ModifyLoadBalancerAttributesRequest : AmazonWebServiceRequest

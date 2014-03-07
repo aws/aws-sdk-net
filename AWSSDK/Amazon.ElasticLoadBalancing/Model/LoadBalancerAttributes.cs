@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -27,6 +27,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     {
         
         private CrossZoneLoadBalancing crossZoneLoadBalancing;
+        private AccessLog accessLog;
 
         /// <summary>
         /// The name of the load balancer attribute.
@@ -55,6 +56,35 @@ namespace Amazon.ElasticLoadBalancing.Model
         internal bool IsSetCrossZoneLoadBalancing()
         {
             return this.crossZoneLoadBalancing != null;
+        }
+
+        /// <summary>
+        /// The name of the load balancer attribute.
+        ///  
+        /// </summary>
+        public AccessLog AccessLog
+        {
+            get { return this.accessLog; }
+            set { this.accessLog = value; }
+        }
+
+        /// <summary>
+        /// Sets the AccessLog property
+        /// </summary>
+        /// <param name="accessLog">The value to set for the AccessLog property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public LoadBalancerAttributes WithAccessLog(AccessLog accessLog)
+        {
+            this.accessLog = accessLog;
+            return this;
+        }
+            
+
+        // Check to see if AccessLog property is set
+        internal bool IsSetAccessLog()
+        {
+            return this.accessLog != null;
         }
     }
 }

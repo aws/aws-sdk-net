@@ -4646,6 +4646,7 @@
     <Compile Include="Amazon.ElasticLoadBalancing\AmazonElasticLoadBalancingException.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\AccessLog.cs" />
     <Compile Include="Amazon.ElasticLoadBalancing\Model\AppCookieStickinessPolicy.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -4830,6 +4831,7 @@
     <Compile Include="Amazon.ElasticLoadBalancing\Model\InstanceState.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\AccessLogUnmarshaller.cs" />
     <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\AppCookieStickinessPolicyUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>

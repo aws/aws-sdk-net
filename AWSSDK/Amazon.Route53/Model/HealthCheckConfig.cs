@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -32,6 +32,8 @@ namespace Amazon.Route53.Model
         private string resourcePath;
         private string fullyQualifiedDomainName;
         private string searchString;
+        private int? requestInterval;
+        private int? failureThreshold;
 
         /// <summary>
         /// IP Address of the instance being checked.
@@ -265,6 +267,85 @@ namespace Amazon.Route53.Model
         internal bool IsSetSearchString()
         {
             return this.searchString != null;
+        }
+
+        /// <summary>
+        /// The number of seconds between the time that Route 53 gets a response from your endpoint and the time that it sends the next health-check
+        /// request. Each Route 53 health checker makes requests at this interval. Valid values are 10 and 30. The default value is 30.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Range</term>
+        ///         <description>10 - 30</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
+        public int RequestInterval
+        {
+            get { return this.requestInterval ?? default(int); }
+            set { this.requestInterval = value; }
+        }
+
+        /// <summary>
+        /// Sets the RequestInterval property
+        /// </summary>
+        /// <param name="requestInterval">The value to set for the RequestInterval property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public HealthCheckConfig WithRequestInterval(int requestInterval)
+        {
+            this.requestInterval = requestInterval;
+            return this;
+        }
+            
+
+        // Check to see if RequestInterval property is set
+        internal bool IsSetRequestInterval()
+        {
+            return this.requestInterval.HasValue;
+        }
+
+        /// <summary>
+        /// The number of consecutive health checks that an endpoint must pass or fail for Route 53 to change the current status of the endpoint from
+        /// unhealthy to healthy or vice versa. Valid values are integers between 1 and 10. For more information, see "How Amazon Route 53 Determines
+        /// Whether an Endpoint Is Healthy" in the Amazon Route 53 Developer Guide.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Range</term>
+        ///         <description>1 - 10</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
+        public int FailureThreshold
+        {
+            get { return this.failureThreshold ?? default(int); }
+            set { this.failureThreshold = value; }
+        }
+
+        /// <summary>
+        /// Sets the FailureThreshold property
+        /// </summary>
+        /// <param name="failureThreshold">The value to set for the FailureThreshold property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public HealthCheckConfig WithFailureThreshold(int failureThreshold)
+        {
+            this.failureThreshold = failureThreshold;
+            return this;
+        }
+            
+
+        // Check to see if FailureThreshold property is set
+        internal bool IsSetFailureThreshold()
+        {
+            return this.failureThreshold.HasValue;
         }
     }
 }

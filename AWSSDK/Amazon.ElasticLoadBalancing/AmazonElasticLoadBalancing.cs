@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -34,12 +34,12 @@ namespace Amazon.ElasticLoadBalancing
     /// Load Balancing Developer Guide</i> .</para> <para>For detailed information about Elastic Load Balancing features and their associated
     /// actions, go to <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/UserScenarios.html" >Using Elastic Load
     /// Balancing</a> in the <i>Elastic Load Balancing Developer Guide</i> .</para> <para>This reference guide is based on the current WSDL, which
-    /// is available at: <a href="http://elasticloadbalancing.amazonaws.com/doc/2012-06-01/ElasticLoadBalancing.wsdl"
-    /// >http://elasticloadbalancing.amazonaws.com/doc/2012-06-01/ElasticLoadBalancing.wsdl</a> </para> <para> <b>Endpoints</b> </para> <para>The
-    /// examples in this guide assume that your load balancers are created in the US East (Northern Virginia) region and use us-east-1 as the
-    /// endpoint.</para> <para>You can create your load balancers in other AWS regions. For information about regions and endpoints supported by
-    /// Elastic Load Balancing, see <a href="http://docs.aws.amazon.com/general/latest/gr/index.html?rande.html" >Regions and Endpoints</a> in the
-    /// Amazon Web Services General Reference. </para>
+    /// is available at: <a href="http://ec2-downloads.s3.amazonaws.com/ElasticLoadBalancing.wsdl"
+    /// >http://ec2-downloads.s3.amazonaws.com/ElasticLoadBalancing.wsdl</a> </para> <para> <b>Endpoints</b> </para> <para>The examples in this
+    /// guide assume that your load balancers are created in the US East (Northern Virginia) region and use us-east-1 as the endpoint.</para>
+    /// <para>You can create your load balancers in other AWS regions. For information about regions and endpoints supported by Elastic Load
+    /// Balancing, see <a href="http://docs.aws.amazon.com/general/latest/gr/index.html?rande.html" >Regions and Endpoints</a> in the Amazon Web
+    /// Services General Reference. </para>
     /// </summary>
     public interface AmazonElasticLoadBalancing : IDisposable
     {
@@ -196,7 +196,13 @@ namespace Amazon.ElasticLoadBalancing
         #region ModifyLoadBalancerAttributes
 
         /// <summary>
-        /// <para>Modifies the attributes of a specified load balancer.</para>
+        /// <para>Modifies the attributes of a specified load balancer.</para> <para>You can modify the attributes, such as cross-zone load balancing
+        /// and access logs, by either enabling or disabling them.</para> <para>For information on modifying the cross-zone load balancing attribute,
+        /// see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/enable-disable-crosszone-lb.html" >Enable or Disable
+        /// Cross-Zone Load Balancing for Your Load balancer</a> in the <i>Elastic Load Balancing Developer Guide</i> .</para> <para>For information on
+        /// modifying the access log attribute, see <a
+        /// href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/access-log-collection.html" >Enable or Disable Access Log
+        /// Collection for Your Load Balancer</a> in the <i>Elastic Load Balancing Developer Guide</i> .</para>
         /// </summary>
         /// 
         /// <param name="modifyLoadBalancerAttributesRequest">Container for the necessary parameters to execute the ModifyLoadBalancerAttributes service
@@ -835,7 +841,7 @@ namespace Amazon.ElasticLoadBalancing
         /// 
         /// </ul>
         /// <para>For information about the AWS regions supported by Elastic Load Balancing, see <a
-        /// href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elb_region" >Regions and Endpoints</a> .</para> <para>You can create up to 10
+        /// href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elb_region" >Regions and Endpoints</a> .</para> <para>You can create up to 20
         /// load balancers per region per account.</para> <para>Elastic Load Balancing supports load balancing your Amazon EC2 instances launched within
         /// any one of the following platforms:</para>
         /// <ul>
