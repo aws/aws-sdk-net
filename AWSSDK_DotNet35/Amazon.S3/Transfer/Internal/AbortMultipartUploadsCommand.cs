@@ -28,7 +28,7 @@ using Amazon.S3.Model;
 
 namespace Amazon.S3.Transfer.Internal
 {
-    internal class AbortMultipartUploadsCommand : BaseCommand
+    internal partial class AbortMultipartUploadsCommand : BaseCommand
     {
         IAmazonS3 _s3Client;
         string _bucketName; 
@@ -41,15 +41,7 @@ namespace Amazon.S3.Transfer.Internal
             this._initiatedDate = initiateDate;
         }
 
-        public override void Execute()
-        {
-            if (string.IsNullOrEmpty(this._bucketName))
-            {
-                throw new InvalidOperationException("The bucketName Specified is null or empty!");
-            }
-
-            ListMultipartUploadsResponse listResponse = new ListMultipartUploadsResponse();
-            do
+        private ListMultipartUploadsRequest ConstructListMultipartUploadsRequest(ListMultipartUploadsResponse listResponse)
             {
                 ListMultipartUploadsRequest listRequest = new ListMultipartUploadsRequest()
                 {
@@ -58,11 +50,10 @@ namespace Amazon.S3.Transfer.Internal
                     UploadIdMarker = listResponse.NextUploadIdMarker,
                 };
                 listRequest.BeforeRequestEvent += this.RequestEventHandler;
+            return listRequest;
+        }
 
-                listResponse = this._s3Client.ListMultipartUploads(listRequest);
-                foreach (MultipartUpload upload in listResponse.MultipartUploads)
-                {
-                    if (upload.Initiated < this._initiatedDate)
+        private AbortMultipartUploadRequest ConstructAbortMultipartUploadRequest(MultipartUpload upload)
                     {
                         var abortRequest = new AbortMultipartUploadRequest()
                         {
@@ -71,12 +62,7 @@ namespace Amazon.S3.Transfer.Internal
                             UploadId = upload.UploadId,
                         };
                         abortRequest.BeforeRequestEvent += this.RequestEventHandler;
-
-                        this._s3Client.AbortMultipartUpload(abortRequest);
-                    }
-                }
-            }
-            while (listResponse.IsTruncated);
+            return abortRequest;
         }
     }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,19 +30,19 @@ namespace Amazon.ElastiCache.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal AuthorizationNotFoundException(string message) 
+        public AuthorizationNotFoundException(string message) 
             : base(message) {}
           
-        internal AuthorizationNotFoundException(string message, Exception innerException) 
+        public AuthorizationNotFoundException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal AuthorizationNotFoundException(Exception innerException) 
+        public AuthorizationNotFoundException(Exception innerException) 
             : base(innerException) {}
             
-        internal AuthorizationNotFoundException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public AuthorizationNotFoundException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal AuthorizationNotFoundException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public AuthorizationNotFoundException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
 
         

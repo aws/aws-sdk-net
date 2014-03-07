@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,19 +30,19 @@ namespace Amazon.RDS.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal InvalidEventSubscriptionStateException(string message) 
+        public InvalidEventSubscriptionStateException(string message) 
             : base(message) {}
           
-        internal InvalidEventSubscriptionStateException(string message, Exception innerException) 
+        public InvalidEventSubscriptionStateException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal InvalidEventSubscriptionStateException(Exception innerException) 
+        public InvalidEventSubscriptionStateException(Exception innerException) 
             : base(innerException) {}
             
-        internal InvalidEventSubscriptionStateException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public InvalidEventSubscriptionStateException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal InvalidEventSubscriptionStateException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public InvalidEventSubscriptionStateException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
 
         

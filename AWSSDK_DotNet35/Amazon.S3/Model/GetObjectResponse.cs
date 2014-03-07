@@ -27,7 +27,7 @@ namespace Amazon.S3.Model
     /// <summary>
     /// Returns information about the  GetObject response and response metadata.
     /// </summary>
-    public class GetObjectResponse : StreamResponse
+    public partial class GetObjectResponse : StreamResponse
     {
         private string deleteMarker;
         private string acceptRanges;
@@ -298,9 +298,9 @@ namespace Amazon.S3.Model
 
             Stream downloadStream;
             if (append && File.Exists(filePath))
-                downloadStream = new BufferedStream(new FileStream(filePath, FileMode.Append));
+                downloadStream = new FileStream(filePath, FileMode.Append, FileAccess.Write, FileShare.Read, S3Constants.DefaultBufferSize);
             else
-                downloadStream = new BufferedStream(new FileStream(filePath, FileMode.Create));
+                downloadStream = new FileStream(filePath, FileMode.Create, FileAccess.ReadWrite, FileShare.Read, S3Constants.DefaultBufferSize);
 
             try
             {
@@ -308,12 +308,20 @@ namespace Amazon.S3.Model
                 BufferedStream bufferedStream = new BufferedStream(this.ResponseStream);
                 byte[] buffer = new byte[S3Constants.DefaultBufferSize];
                 int bytesRead = 0;
+
+                long totalIncrementTransferred = 0;
                 while ((bytesRead = bufferedStream.Read(buffer, 0, buffer.Length)) > 0)
                 {
                     downloadStream.Write(buffer, 0, bytesRead);
                     current += bytesRead;
+                    totalIncrementTransferred += bytesRead;
 
-                    this.OnRaiseProgressEvent(bytesRead, current, this.ContentLength);
+                    if (totalIncrementTransferred >= AWSSDKUtils.DefaultProgressUpdateInterval ||
+                        current == this.ContentLength)
+                    {
+                        this.OnRaiseProgressEvent(filePath, totalIncrementTransferred, current, this.ContentLength);
+                        totalIncrementTransferred = 0;
+                    }
                 }
             }
             finally
@@ -321,6 +329,7 @@ namespace Amazon.S3.Model
                 downloadStream.Close();
             }
         }
+#endif
 
         #region Progress Event
 
@@ -354,14 +363,14 @@ namespace Amazon.S3.Model
         /// notifications. When called, all the subscribers in the 
         /// invocation list will be called sequentially.
         /// </summary>
+        /// <param name="file">The file being written.</param>
         /// <param name="incrementTransferred">The number of bytes transferred since last event</param>
         /// <param name="transferred">The number of bytes transferred</param>
         /// <param name="total">The total number of bytes to be transferred</param>
-        internal void OnRaiseProgressEvent(long incrementTransferred, long transferred, long total)
+        internal void OnRaiseProgressEvent(string file, long incrementTransferred, long transferred, long total)
         {
-            AWSSDKUtils.InvokeInBackground(WriteObjectProgressEvent, new WriteObjectProgressArgs(this.BucketName, this.Key, this.VersionId, incrementTransferred, transferred, total), this);
+            AWSSDKUtils.InvokeInBackground(WriteObjectProgressEvent, new WriteObjectProgressArgs(this.BucketName, this.Key, file, this.VersionId, incrementTransferred, transferred, total), this);
         }
-#endif
     }
 
     /// <summary>
@@ -370,10 +379,6 @@ namespace Amazon.S3.Model
     /// </summary>
     public class WriteObjectProgressArgs : TransferProgressArgs
     {
-        string bucketName;
-        string key;
-        string versionId;
-
         /// <summary>
         /// The constructor takes the number of
         /// currently transferred bytes and the
@@ -388,34 +393,51 @@ namespace Amazon.S3.Model
         internal WriteObjectProgressArgs(string bucketName, string key, string versionId, long incrementTransferred, long transferred, long total)
             : base(incrementTransferred, transferred, total)
         {
-            this.bucketName = bucketName;
-            this.key = key;
-            this.versionId = versionId;
+            this.BucketName = bucketName;
+            this.Key = key;
+            this.VersionId = versionId;
+        }
+
+        /// <summary>
+        /// The constructor takes the number of
+        /// currently transferred bytes and the
+        /// total number of bytes to be transferred
+        /// </summary>
+        /// <param name="bucketName">The bucket name for the S3 object being written.</param>
+        /// <param name="key">The object key for the S3 object being written.</param>
+        /// <param name="filePath">The file for the S3 object being written.</param>
+        /// <param name="versionId">The version-id of the S3 object.</param>
+        /// <param name="incrementTransferred">The number of bytes transferred since last event</param>
+        /// <param name="transferred">The number of bytes transferred</param>
+        /// <param name="total">The total number of bytes to be transferred</param>
+        internal WriteObjectProgressArgs(string bucketName, string key, string filePath, string versionId, long incrementTransferred, long transferred, long total)
+            : base(incrementTransferred, transferred, total)
+        {
+            this.BucketName = bucketName;
+            this.Key = key;
+            this.VersionId = versionId;
+            this.FilePath = filePath;
         }
 
         /// <summary>
         /// Gets the bucket name for the S3 object being written.
         /// </summary>
-        public string BucketName
-        {
-            get { return this.bucketName; }
-        }
+        public string BucketName { get; private set; }
 
         /// <summary>
         /// Gets the object key for the S3 object being written.
         /// </summary>
-        public string Key
-        {
-            get { return this.key; }
-        }
+        public string Key { get; private set; }
 
         /// <summary>
         /// Gets the version-id of the S3 object.
         /// </summary>
-        public string VersionId
-        {
-            get { return this.versionId; }
-        }
+        public string VersionId { get; private set; }
+
+        /// <summary>
+        /// The file for the S3 object being written.
+        /// </summary>
+        public string FilePath { get; private set; }
     }
 }
     

@@ -30,19 +30,19 @@ namespace Amazon.CloudFront.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal BatchTooLargeException(string message) 
+        public BatchTooLargeException(string message) 
             : base(message) {}
           
-        internal BatchTooLargeException(string message, Exception innerException) 
+        public BatchTooLargeException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal BatchTooLargeException(Exception innerException) 
+        public BatchTooLargeException(Exception innerException) 
             : base(innerException) {}
             
-        internal BatchTooLargeException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public BatchTooLargeException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal BatchTooLargeException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public BatchTooLargeException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
 
         

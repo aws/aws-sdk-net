@@ -1,23 +1,16 @@
-﻿/*******************************************************************************
- *  Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use
- *  this file except in compliance with the License. A copy of the License is located at
+﻿/*
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
  *
  *  http://aws.amazon.com/apache2.0
  *
- *  or in the "license" file accompanying this file.
- *  This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
- *  CONDITIONS OF ANY KIND, either express or implied. See the License for the
- *  specific language governing permissions and limitations under the License.
- * *****************************************************************************
- *    __  _    _  ___
- *   (  )( \/\/ )/ __)
- *   /__\ \    / \__ \
- *  (_)(_) \/\/  (___/
- *
- *  AWS SDK for .NET
- *  API Version: 2006-03-01
- *
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
  */
 using System;
 using System.Collections.Generic;
@@ -59,102 +52,14 @@ namespace Amazon.S3.Transfer
     /// </remarks>
     public partial class TransferUtility : IDisposable
     {
-
-        #region UploadDirectory
-        /// <summary>
-        /// Initiates the asynchronous execution of the UploadDirectory operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.AbortMultipartUpload"/>
-        /// </summary>
-        /// <remarks>
-        /// <para>
-        /// If you are uploading large files, TransferUtility will use multipart upload to fulfill the request. 
-        /// If a multipart upload is interrupted, TransferUtility will attempt to abort the multipart upload. 
-        /// Under certain circumstances (network outage, power failure, etc.), TransferUtility will not be able 
-        /// to abort the multipart upload. In this case, in order to stop getting charged for the storage of uploaded parts,
-        /// you should manually invoke TransferUtility.AbortMultipartUploads() to abort the incomplete multipart uploads.
-        /// </para>
-        /// </remarks>
-        /// <param name="directory">
-        /// 	The source directory, that is, the directory containing the files to upload.
-        /// </param>
-        /// <param name="bucketName">
-        /// 	The target Amazon S3 bucket, that is, the name of the bucket to upload the files to.
-        /// </param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task UploadDirectoryAsync(string directory, string bucketName, CancellationToken cancellationToken = default(CancellationToken))
-        {
-            return ExecuteAsync(() => UploadDirectoryHelper(directory, bucketName), cancellationToken);
-        }
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the UploadDirectory operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.AbortMultipartUpload"/>
-        /// </summary>
-        /// <remarks>
-        /// <para>
-        /// If you are uploading large files, TransferUtility will use multipart upload to fulfill the request. 
-        /// If a multipart upload is interrupted, TransferUtility will attempt to abort the multipart upload. 
-        /// Under certain circumstances (network outage, power failure, etc.), TransferUtility will not be able 
-        /// to abort the multipart upload. In this case, in order to stop getting charged for the storage of uploaded parts,
-        /// you should manually invoke TransferUtility.AbortMultipartUploads() to abort the incomplete multipart uploads.
-        /// </para>
-        /// </remarks>
-        /// <param name="directory">
-        /// 	The source directory, that is, the directory containing the files to upload.
-        /// </param>
-        /// <param name="bucketName">
-        /// 	The target Amazon S3 bucket, that is, the name of the bucket to upload the files to.
-        /// </param>
-        /// <param name="searchPattern">
-        /// 	A pattern used to identify the files from the source directory to upload.
-        /// </param>                                                                 
-        /// <param name="searchOption">
-        /// 	A search option that specifies whether to recursively search for files to upload
-        /// 	in subdirectories.
-        /// </param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task UploadDirectoryAsync(string directory, string bucketName, string searchPattern, SearchOption searchOption, CancellationToken cancellationToken = default(CancellationToken))
-        {
-            return ExecuteAsync(() => UploadDirectoryHelper(directory, bucketName, searchPattern, searchOption), cancellationToken);
-        }
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the UploadDirectory operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.AbortMultipartUpload"/>
-        /// </summary>
-        /// <remarks>
-        /// <para>
-        /// If you are uploading large files, TransferUtility will use multipart upload to fulfill the request. 
-        /// If a multipart upload is interrupted, TransferUtility will attempt to abort the multipart upload. 
-        /// Under certain circumstances (network outage, power failure, etc.), TransferUtility will not be able 
-        /// to abort the multipart upload. In this case, in order to stop getting charged for the storage of uploaded parts,
-        /// you should manually invoke TransferUtility.AbortMultipartUploads() to abort the incomplete multipart uploads.
-        /// </para>
-        /// </remarks>
-        /// <param name="request">
-        /// 	The request that contains all the parameters required to upload a directory.
-        /// </param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task UploadDirectoryAsync(TransferUtilityUploadDirectoryRequest request, CancellationToken cancellationToken = default(CancellationToken))
-        {
-            return ExecuteAsync(() => UploadDirectoryHelper(request), cancellationToken);
-        }
-
-        #endregion
-
         #region Upload
         /// <summary>
-        /// Initiates the asynchronous execution of the Upload operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.AbortMultipartUpload"/>
+        /// 	Uploads the specified file.  
+        /// 	The object key is derived from the file's name.
+        /// 	Multiple threads are used to read the file and perform multiple uploads in parallel.  
+        /// 	For large uploads, the file will be divided and uploaded in parts using 
+        /// 	Amazon S3's multipart API.  The parts will be reassembled as one object in
+        /// 	Amazon S3.
         /// </summary>
         /// <remarks>
         /// <para>
@@ -162,7 +67,7 @@ namespace Amazon.S3.Transfer
         /// If a multipart upload is interrupted, TransferUtility will attempt to abort the multipart upload. 
         /// Under certain circumstances (network outage, power failure, etc.), TransferUtility will not be able 
         /// to abort the multipart upload. In this case, in order to stop getting charged for the storage of uploaded parts,
-        /// you should manually invoke TransferUtility.AbortMultipartUploads() to abort the incomplete multipart uploads.
+        /// you should manually invoke TransferUtility.AbortMultipartUploadsAsync() to abort the incomplete multipart uploads.
         /// </para>
         /// </remarks>
         /// <param name="filePath">
@@ -177,12 +82,16 @@ namespace Amazon.S3.Transfer
         /// <returns>The task object representing the asynchronous operation.</returns>
         public Task UploadAsync(string filePath, string bucketName, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return ExecuteAsync(() => UploadHelper(filePath, bucketName), cancellationToken);
+            var request = ConstructUploadRequest(filePath, bucketName);
+            return UploadAsync(request, cancellationToken);
         }
 
         /// <summary>
-        /// Initiates the asynchronous execution of the Upload operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.AbortMultipartUpload"/>
+        /// 	Uploads the specified file.  
+        /// 	Multiple threads are used to read the file and perform multiple uploads in parallel.  
+        /// 	For large uploads, the file will be divided and uploaded in parts using 
+        /// 	Amazon S3's multipart API.  The parts will be reassembled as one object in
+        /// 	Amazon S3.
         /// </summary>
         /// <remarks>
         /// <para>
@@ -190,7 +99,7 @@ namespace Amazon.S3.Transfer
         /// If a multipart upload is interrupted, TransferUtility will attempt to abort the multipart upload. 
         /// Under certain circumstances (network outage, power failure, etc.), TransferUtility will not be able 
         /// to abort the multipart upload. In this case, in order to stop getting charged for the storage of uploaded parts,
-        /// you should manually invoke TransferUtility.AbortMultipartUploads() to abort the incomplete multipart uploads.
+        /// you should manually invoke TransferUtility.AbortMultipartUploadsAsync() to abort the incomplete multipart uploads.
         /// </para>
         /// </remarks>
         /// <param name="filePath">
@@ -208,12 +117,15 @@ namespace Amazon.S3.Transfer
         /// <returns>The task object representing the asynchronous operation.</returns>
         public Task UploadAsync(string filePath, string bucketName, string key, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return ExecuteAsync(() => UploadHelper(filePath, bucketName, key), cancellationToken);
+            var request = ConstructUploadRequest(filePath, bucketName,key);
+            return UploadAsync(request, cancellationToken);            
         }
 
         /// <summary>
-        /// Initiates the asynchronous execution of the Upload operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.AbortMultipartUpload"/>
+        /// 	Uploads the contents of the specified stream.  
+        /// 	For large uploads, the file will be divided and uploaded in parts using 
+        /// 	Amazon S3's multipart API.  The parts will be reassembled as one object in
+        /// 	Amazon S3.
         /// </summary>
         /// <remarks>
         /// <para>
@@ -221,7 +133,7 @@ namespace Amazon.S3.Transfer
         /// If a multipart upload is interrupted, TransferUtility will attempt to abort the multipart upload. 
         /// Under certain circumstances (network outage, power failure, etc.), TransferUtility will not be able 
         /// to abort the multipart upload. In this case, in order to stop getting charged for the storage of uploaded parts,
-        /// you should manually invoke TransferUtility.AbortMultipartUploads() to abort the incomplete multipart uploads.
+        /// you should manually invoke TransferUtility.AbortMultipartUploadsAsync() to abort the incomplete multipart uploads.
         /// </para>
         /// </remarks>
         /// <param name="stream">
@@ -239,12 +151,17 @@ namespace Amazon.S3.Transfer
         /// <returns>The task object representing the asynchronous operation.</returns>
         public Task UploadAsync(Stream stream, string bucketName, string key, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return ExecuteAsync(() => UploadHelper(stream, bucketName, key), cancellationToken);
+            var request = ConstructUploadRequest(stream, bucketName, key);
+            return UploadAsync(request, cancellationToken);                    
         }
 
         /// <summary>
-        /// Initiates the asynchronous execution of the Upload operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.AbortMultipartUpload"/>
+        /// 	Uploads the file or stream specified by the request.  
+        /// 	To track the progress of the upload,
+        /// 	add an event listener to the request's <c>UploadProgressEvent</c>.
+        /// 	For large uploads, the file will be divided and uploaded in parts using 
+        /// 	Amazon S3's multipart API.  The parts will be reassembled as one object in
+        /// 	Amazon S3.
         /// </summary>
         /// <remarks>
         /// <para>
@@ -252,7 +169,7 @@ namespace Amazon.S3.Transfer
         /// If a multipart upload is interrupted, TransferUtility will attempt to abort the multipart upload. 
         /// Under certain circumstances (network outage, power failure, etc.), TransferUtility will not be able 
         /// to abort the multipart upload. In this case, in order to stop getting charged for the storage of uploaded parts,
-        /// you should manually invoke TransferUtility.AbortMultipartUploads() to abort the incomplete multipart uploads.
+        /// you should manually invoke TransferUtility.AbortMultipartUploadsAsync() to abort the incomplete multipart uploads.
         /// </para>
         /// </remarks>
         /// <param name="request">
@@ -264,118 +181,14 @@ namespace Amazon.S3.Transfer
         /// <returns>The task object representing the asynchronous operation.</returns>
         public Task UploadAsync(TransferUtilityUploadRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return ExecuteAsync(() => UploadHelper(request), cancellationToken);
-        }
-        #endregion
-
-        #region OpenStream
-        /// <summary>
-        /// Initiates the asynchronous execution of the OpenStream operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.AbortMultipartUpload"/>
-        /// </summary>
-        /// <param name="bucketName">
-        /// 	The name of the bucket.
-        /// </param>
-        /// <param name="key">
-        /// 	The object key.
-        /// </param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task<Stream> OpenStreamAsync(string bucketName, string key, CancellationToken cancellationToken = default(CancellationToken))
-        {
-            return ExecuteAsync<Stream>(() => OpenStreamHelper(bucketName, key), cancellationToken);
-        }
-
-        #endregion
-
-        #region Download
-        /// <summary>
-        /// Initiates the asynchronous execution of the Download operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.AbortMultipartUpload"/>
-        /// </summary>
-        /// <param name="filePath">
-        /// 	The file path where the content from Amazon S3 will be written to.
-        /// </param>
-        /// <param name="bucketName">
-        /// 	The name of the bucket containing the Amazon S3 object to download.
-        /// </param>
-        /// <param name="key">
-        /// 	The key under which the Amazon S3 object is stored.
-        /// </param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task DownloadAsync(string filePath, string bucketName, string key, CancellationToken cancellationToken = default(CancellationToken))
-        {
-            return ExecuteAsync(() => DownloadHelper(filePath, bucketName, key), cancellationToken);
-        }
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the Download operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.AbortMultipartUpload"/>
-        /// </summary>
-        /// <param name="request">
-        /// 	Contains all the parameters required to download an Amazon S3 object.
-        /// </param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task DownloadAsync(TransferUtilityDownloadRequest request, CancellationToken cancellationToken = default(CancellationToken))
-        {
-            return ExecuteAsync(() => DownloadHelper(request), cancellationToken);
-        }
-
-        #endregion
-
-        #region DownloadDirectory
-        /// <summary>
-        /// Initiates the asynchronous execution of the DownloadDirectory operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.AbortMultipartUpload"/>
-        /// </summary>
-        /// <param name="bucketName">
-        /// 	The name of the bucket containing the Amazon S3 objects to download.
-        /// </param>
-        /// <param name="s3Directory">
-        /// 	The directory in Amazon S3 to download.
-        /// </param>
-        /// <param name="localDirectory">
-        /// 	The local directory to download the objects to.
-        /// </param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task DownloadDirectoryAsync(string bucketName, string s3Directory, string localDirectory, CancellationToken cancellationToken = default(CancellationToken))
-        {
-            return ExecuteAsync(() => DownloadDirectoryHelper(bucketName, s3Directory, localDirectory), cancellationToken);
-        }
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the DownloadDirectory operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.AbortMultipartUpload"/>
-        /// </summary>
-        /// <param name="request">
-        /// 	Contains all the parameters required to download objects from Amazon S3 
-        /// 	into a local directory.
-        /// </param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
-        public Task DownloadDirectoryAsync(TransferUtilityDownloadDirectoryRequest request, CancellationToken cancellationToken = default(CancellationToken))
-        {
-            return ExecuteAsync(() => DownloadDirectoryHelper(request), cancellationToken);
+            var command = GetUploadCommand(request, null);
+            return command.ExecuteAsync(cancellationToken);
         }
         #endregion
 
         #region AbortMultipartUploads
         /// <summary>
-        /// Initiates the asynchronous execution of the AbortMultipartUploads operation.
-        /// <seealso cref="Amazon.S3.IAmazonS3.AbortMultipartUpload"/>
+        /// 	Aborts the multipart uploads that were initiated before the specified date.
         /// </summary>
         /// <param name="bucketName">
         /// 	The name of the bucket containing multipart uploads.
@@ -389,60 +202,95 @@ namespace Amazon.S3.Transfer
         /// <returns>The task object representing the asynchronous operation.</returns>
         public Task AbortMultipartUploadsAsync(string bucketName, DateTime initiatedDate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return ExecuteAsync(() => AbortMultipartUploadsHelper(bucketName, initiatedDate), cancellationToken);
+            var command = new AbortMultipartUploadsCommand(this._s3Client, bucketName, initiatedDate, this._config);
+            return command.ExecuteAsync(cancellationToken);
         }
         #endregion
 
-        #region Private methods
+        #region Download
 
-        private static Task ExecuteAsync(Action action, CancellationToken cancellationToken)
+        /// <summary>
+        /// 	Downloads the content from Amazon S3 and writes it to the specified file.    
+        /// 	If the key is not specified in the request parameter,
+        /// 	the file name will used as the key name.
+        /// </summary>
+        /// <param name="request">
+        /// 	Contains all the parameters required to download an Amazon S3 object.
+        /// </param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task DownloadAsync(TransferUtilityDownloadRequest request, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return ExecuteAsync<object>(() =>
-            {
-                action();
-                return null;
-            }, cancellationToken);
-        }
-
-        private static Task<T> ExecuteAsync<T>(Func<T> action, CancellationToken cancellationToken)
-        {
-            return Task<T>.Run(() =>
-            {
-                Exception exception = null;
-                T result = default(T);
-                Thread thread = new Thread(() => 
-                    {
-                        try
-                        {
-                            result = action();
-                        }
-                        catch (Exception e)
-                        {
-                            exception = e;
-                        }
-                    });
-                if (cancellationToken != null)
-                {
-                    cancellationToken.Register(() =>
-                    {
-                        if (thread.IsAlive)
-                            thread.Abort();
-                    });
-                }
-
-                thread.Start();
-                thread.Join();
-
-                if (exception != null)
-                {
-                    cancellationToken.ThrowIfCancellationRequested();
-                    throw exception;
-                }
-
-                return result;
-            }, cancellationToken);
+            var command = new DownloadCommand(this._s3Client, request);
+            return command.ExecuteAsync(cancellationToken);
         }
 
         #endregion
+
+        #region OpenStream
+        /// <summary>
+        /// 	Returns a stream from which the caller can read the content from the specified
+        /// 	Amazon S3  bucket and key.
+        /// 	The caller of this method is responsible for closing the stream.
+        /// </summary>
+        /// <param name="bucketName">
+        /// 	The name of the bucket.
+        /// </param>
+        /// <param name="key">
+        /// 	The object key.
+        /// </param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<Stream> OpenStreamAsync(string bucketName, string key, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            TransferUtilityOpenStreamRequest request = new TransferUtilityOpenStreamRequest()
+            {
+                BucketName = bucketName,
+                Key = key
+            };
+            return OpenStreamAsync(request, cancellationToken);
+        }
+
+        /// <summary>
+        /// 	Returns a stream to read the contents from Amazon S3 as 
+        /// 	specified by the <c>TransferUtilityOpenStreamRequest</c>.
+        /// 	The caller of this method is responsible for closing the stream.
+        /// </summary>
+        /// <param name="request">
+        /// 	Contains all the parameters required for the OpenStream operation.
+        /// </param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public async Task<Stream> OpenStreamAsync(TransferUtilityOpenStreamRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            OpenStreamCommand command = new OpenStreamCommand(this._s3Client, request);
+            await command.ExecuteAsync(cancellationToken).ConfigureAwait(continueOnCapturedContext: false);
+            return command.ResponseStream;
+        }
+
+        #endregion
+
+        internal BaseCommand GetUploadCommand(TransferUtilityUploadRequest request, SemaphoreSlim asyncThrottler)
+        {
+            validate(request);            
+            if (IsMultipartUpload(request))
+            {
+                var command = new MultipartUploadCommand(this._s3Client, this._config, request);
+                command.AsyncThrottler = asyncThrottler;
+                return command;
+        }
+            else
+                {
+                var command = new SimpleUploadCommand(this._s3Client, this._config, request);
+                command.AsyncThrottler = asyncThrottler;
+                return command;
+                }
+        }
     }
 }

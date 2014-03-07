@@ -35,7 +35,7 @@ namespace Amazon.S3.Transfer
     /// that can be set when making a this request with the 
     /// <c>TransferUtility</c> method.
     /// </summary>
-    public class TransferUtilityUploadRequest : BaseUploadRequest
+    public partial class TransferUtilityUploadRequest : BaseUploadRequest
     {
         private string bucketName;
         private string key;
@@ -51,7 +51,6 @@ namespace Amazon.S3.Transfer
         private MetadataCollection metadataCollection = new MetadataCollection();
 
         private Stream inputStream;
-        private string filePath;
 
         #region BucketName
 
@@ -218,17 +217,18 @@ namespace Amazon.S3.Transfer
         }
 
         /// <summary>
+        /// <para>
         /// 	Gets or sets the file path
         /// 	where the Amazon S3 object will be uploaded from.
+        /// </para>
+        /// <para>
+        ///     For WinRT and Windows Phone this property must be in the form of "ms-appdata:///local/file.txt".
+        /// </para>
         /// </summary>
         /// <value>
         /// 	The file path where the Amazon S3 object will be uploaded from.
         /// </value>
-        public string FilePath
-        {
-            get { return this.filePath; }
-            set { this.filePath = value; }
-        }
+        public string FilePath { get; set; }
 
         /// <summary>
         /// Checks if FilePath property is set.
@@ -236,7 +236,7 @@ namespace Amazon.S3.Transfer
         /// <returns>true if FilePath property is set.</returns>
         internal bool IsSetFilePath()
         {
-            return !string.IsNullOrEmpty(this.filePath);
+            return !string.IsNullOrEmpty(this.FilePath);
         }
 
         /// <summary>
@@ -325,12 +325,10 @@ namespace Amazon.S3.Transfer
         /// <summary>
         /// Causes the UploadProgressEvent event to be fired.
         /// </summary>
-        /// <param name="incrementTransferred">The how many bytes were transferred since last event.</param>
-        /// <param name="transferred">How many bytes have been transferred.</param>
-        /// <param name="total">The total number of bytes to be tranferred.</param>
-        internal void OnRaiseProgressEvent(long incrementTransferred, long transferred, long total)
+        /// <param name="progressArgs">Progress data for the file being uploaded.</param>        
+        internal void OnRaiseProgressEvent(UploadProgressArgs progressArgs)
         {
-            AWSSDKUtils.InvokeInBackground(UploadProgressEvent, new UploadProgressArgs(incrementTransferred, transferred, total), this);
+            AWSSDKUtils.InvokeInBackground(UploadProgressEvent, progressArgs, this);
         }
 
 
@@ -343,11 +341,20 @@ namespace Amazon.S3.Transfer
             get
             {
                 long length;
+#if BCL
                 if (this.IsSetFilePath())
                 {
                     FileInfo fileInfo = new FileInfo(this.FilePath);
                     length = fileInfo.Length;
                 }
+#elif WIN_RT || WINDOWS_PHONE
+                if (IsSetStorageFile())
+                {
+                    var result = System.Threading.Tasks.Task.Run(() =>
+                        this.StorageFile.GetBasicPropertiesAsync().AsTask()).Result;
+                    length = checked((long)result.Size);
+                }
+#endif
                 else
                 {
                     length = this.InputStream.Length - this.InputStream.Position;
@@ -403,8 +410,6 @@ namespace Amazon.S3.Transfer
             return this;
         }
         #endregion
-
-
     }
 
     /// <summary>
@@ -426,5 +431,41 @@ namespace Amazon.S3.Transfer
             : base(incrementTransferred, transferred, total)
         {
         }
+
+        /// <summary>
+        /// The constructor takes the number of
+        /// currently transferred bytes and the
+        /// total number of bytes to be transferred
+        /// </summary>
+        /// <param name="incrementTransferred">The how many bytes were transferred since last event.</param>
+        /// <param name="transferred">The number of bytes transferred</param>
+        /// <param name="total">The total number of bytes to be transferred</param>        
+        /// <param name="filePath">The file being uploaded</param>
+        public UploadProgressArgs(long incrementTransferred, long transferred, long total, string filePath)
+            : this(incrementTransferred, transferred, total, 0, filePath)
+        {
+        }
+
+        /// <summary>
+        /// The constructor takes the number of
+        /// currently transferred bytes and the
+        /// total number of bytes to be transferred
+        /// </summary>
+        /// <param name="incrementTransferred">The how many bytes were transferred since last event.</param>
+        /// <param name="transferred">The number of bytes transferred</param>
+        /// <param name="total">The total number of bytes to be transferred</param>
+        /// <param name="compensationForRetry">A compensation for any upstream aggregators if this event to correct theit totalTransferred count,
+        /// in case the underlying request is retried.</param>
+        /// <param name="filePath">The file being uploaded</param>
+        internal UploadProgressArgs(long incrementTransferred, long transferred, long total, long compensationForRetry, string filePath)
+            : base(incrementTransferred, transferred, total)
+        {
+            this.FilePath = filePath;
+            this.CompensationForRetry = compensationForRetry;
+        }
+
+        public string FilePath { get; private set; }
+
+        internal long CompensationForRetry { get; set; }
     }
 }

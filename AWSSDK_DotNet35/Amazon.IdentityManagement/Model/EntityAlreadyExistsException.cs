@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,19 +30,19 @@ namespace Amazon.IdentityManagement.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal EntityAlreadyExistsException(string message) 
+        public EntityAlreadyExistsException(string message) 
             : base(message) {}
           
-        internal EntityAlreadyExistsException(string message, Exception innerException) 
+        public EntityAlreadyExistsException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal EntityAlreadyExistsException(Exception innerException) 
+        public EntityAlreadyExistsException(Exception innerException) 
             : base(innerException) {}
             
-        internal EntityAlreadyExistsException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public EntityAlreadyExistsException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal EntityAlreadyExistsException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public EntityAlreadyExistsException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
 
         

@@ -30,19 +30,19 @@ namespace Amazon.CloudFront.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal PreconditionFailedException(string message) 
+        public PreconditionFailedException(string message) 
             : base(message) {}
           
-        internal PreconditionFailedException(string message, Exception innerException) 
+        public PreconditionFailedException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal PreconditionFailedException(Exception innerException) 
+        public PreconditionFailedException(Exception innerException) 
             : base(innerException) {}
             
-        internal PreconditionFailedException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public PreconditionFailedException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal PreconditionFailedException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public PreconditionFailedException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
 
         

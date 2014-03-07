@@ -30,19 +30,19 @@ namespace Amazon.DynamoDBv2.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal InternalServerErrorException(string message) 
+        public InternalServerErrorException(string message) 
             : base(message) {}
           
-        internal InternalServerErrorException(string message, Exception innerException) 
+        public InternalServerErrorException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal InternalServerErrorException(Exception innerException) 
+        public InternalServerErrorException(Exception innerException) 
             : base(innerException) {}
             
-        internal InternalServerErrorException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public InternalServerErrorException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal InternalServerErrorException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public InternalServerErrorException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
 
         

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ namespace Amazon.Route53.Model
     /// <summary>
     /// <para>A complex type that contains the health check configuration.</para>
     /// </summary>
-    public class HealthCheckConfig
+    public partial class HealthCheckConfig
     {
         
         private string iPAddress;
@@ -32,6 +32,8 @@ namespace Amazon.Route53.Model
         private string resourcePath;
         private string fullyQualifiedDomainName;
         private string searchString;
+        private int? requestInterval;
+        private int? failureThreshold;
 
 
         /// <summary>
@@ -188,6 +190,59 @@ namespace Amazon.Route53.Model
         internal bool IsSetSearchString()
         {
             return this.searchString != null;
+        }
+
+        /// <summary>
+        /// The number of seconds between the time that Route 53 gets a response from your endpoint and the time that it sends the next health-check
+        /// request. Each Route 53 health checker makes requests at this interval. Valid values are 10 and 30. The default value is 30.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Range</term>
+        ///         <description>10 - 30</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
+        public int RequestInterval
+        {
+            get { return this.requestInterval ?? default(int); }
+            set { this.requestInterval = value; }
+        }
+
+        // Check to see if RequestInterval property is set
+        internal bool IsSetRequestInterval()
+        {
+            return this.requestInterval.HasValue;
+        }
+
+        /// <summary>
+        /// The number of consecutive health checks that an endpoint must pass or fail for Route 53 to change the current status of the endpoint from
+        /// unhealthy to healthy or vice versa. Valid values are integers between 1 and 10. For more information, see "How Amazon Route 53 Determines
+        /// Whether an Endpoint Is Healthy" in the Amazon Route 53 Developer Guide.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Range</term>
+        ///         <description>1 - 10</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
+        public int FailureThreshold
+        {
+            get { return this.failureThreshold ?? default(int); }
+            set { this.failureThreshold = value; }
+        }
+
+        // Check to see if FailureThreshold property is set
+        internal bool IsSetFailureThreshold()
+        {
+            return this.failureThreshold.HasValue;
         }
     }
 }

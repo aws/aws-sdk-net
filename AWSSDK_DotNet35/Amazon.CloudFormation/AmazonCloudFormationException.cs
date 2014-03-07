@@ -23,27 +23,27 @@ namespace Amazon.CloudFormation
 {
     public class AmazonCloudFormationException : AmazonServiceException
     {
-        internal AmazonCloudFormationException(string message)
+        public AmazonCloudFormationException(string message)
             : base(message)
         {
         }
 
-        internal AmazonCloudFormationException(string message, Exception innerException)
+        public AmazonCloudFormationException(string message, Exception innerException)
             : base(message, innerException)
         {
         }
 
-        internal AmazonCloudFormationException(Exception innerException)
+        public AmazonCloudFormationException(Exception innerException)
             : base(innerException.Message, innerException)
         {
         }
 
-        internal AmazonCloudFormationException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
+        public AmazonCloudFormationException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
             : base(message, errorType, errorCode, requestId, statusCode)
         {
         }
 
-        internal AmazonCloudFormationException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
+        public AmazonCloudFormationException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
             : base(message, innerException, errorType, errorCode, requestId, statusCode)
         {
         }

@@ -30,19 +30,19 @@ namespace Amazon.DynamoDBv2.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal ConditionalCheckFailedException(string message) 
+        public ConditionalCheckFailedException(string message) 
             : base(message) {}
           
-        internal ConditionalCheckFailedException(string message, Exception innerException) 
+        public ConditionalCheckFailedException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal ConditionalCheckFailedException(Exception innerException) 
+        public ConditionalCheckFailedException(Exception innerException) 
             : base(innerException) {}
             
-        internal ConditionalCheckFailedException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public ConditionalCheckFailedException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal ConditionalCheckFailedException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public ConditionalCheckFailedException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
 
         

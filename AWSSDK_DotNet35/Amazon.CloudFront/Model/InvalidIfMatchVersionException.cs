@@ -30,19 +30,19 @@ namespace Amazon.CloudFront.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal InvalidIfMatchVersionException(string message) 
+        public InvalidIfMatchVersionException(string message) 
             : base(message) {}
           
-        internal InvalidIfMatchVersionException(string message, Exception innerException) 
+        public InvalidIfMatchVersionException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal InvalidIfMatchVersionException(Exception innerException) 
+        public InvalidIfMatchVersionException(Exception innerException) 
             : base(innerException) {}
             
-        internal InvalidIfMatchVersionException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public InvalidIfMatchVersionException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal InvalidIfMatchVersionException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public InvalidIfMatchVersionException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
 
         

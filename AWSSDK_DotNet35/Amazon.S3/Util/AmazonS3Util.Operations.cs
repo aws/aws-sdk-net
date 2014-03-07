@@ -81,9 +81,11 @@ namespace Amazon.S3.Util
 
             try
             {
-                HttpWebResponse httpResponse = httpRequest.GetResponse() as HttpWebResponse;
-                // If all went well, the bucket was found!
-                return true;
+                using (HttpWebResponse httpResponse = httpRequest.GetResponse() as HttpWebResponse)
+                {
+                    // If all went well, the bucket was found!
+                    return true;
+                }
             }
             catch (WebException we)
             {

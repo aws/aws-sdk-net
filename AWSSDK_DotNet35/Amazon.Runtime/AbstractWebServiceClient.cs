@@ -67,7 +67,7 @@ namespace Amazon.Runtime
         };
 
         protected const int MAX_BACKOFF_IN_MILLISECONDS = 30 * 1000;
-        protected ClientConfig Config { get; private set; }
+        protected internal ClientConfig Config { get; private set; }
         protected AWSCredentials Credentials { get; private set; }
         internal AuthenticationTypes AuthenticationType;
         internal Logger logger;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -32,19 +32,19 @@ namespace Amazon.SimpleDB.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal NumberDomainBytesExceededException(string message) 
+        public NumberDomainBytesExceededException(string message) 
             : base(message) {}
           
-        internal NumberDomainBytesExceededException(string message, Exception innerException) 
+        public NumberDomainBytesExceededException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal NumberDomainBytesExceededException(Exception innerException) 
+        public NumberDomainBytesExceededException(Exception innerException) 
             : base(innerException) {}
             
-        internal NumberDomainBytesExceededException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public NumberDomainBytesExceededException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal NumberDomainBytesExceededException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public NumberDomainBytesExceededException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
 
         

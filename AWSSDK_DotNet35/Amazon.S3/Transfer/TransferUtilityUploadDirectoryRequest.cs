@@ -27,6 +27,7 @@ using System.Text;
 
 using Amazon.S3.Model;
 using Amazon.Util;
+using System.Globalization;
 
 namespace Amazon.S3.Transfer
 {
@@ -41,11 +42,13 @@ namespace Amazon.S3.Transfer
         string _bucketname;
         string _searchPattern = "*";
         string _keyPrefix;
+        private bool _uploadFilesConcurrently = false;
         SearchOption _searchOption = SearchOption.TopDirectoryOnly;
         S3CannedACL _cannedACL;
         S3StorageClass _storageClass;
         MetadataCollection metadataCollection;
         ServerSideEncryptionMethod encryption;
+
 
 
         /// <summary>
@@ -104,7 +107,7 @@ namespace Amazon.S3.Transfer
         /// </value>
         public string SearchPattern
         {
-            get { return this._searchPattern; }
+            get { return string.IsNullOrEmpty(this._searchPattern) ? "*" : this._searchPattern; }
             set { this._searchPattern = value; }
         }
 
@@ -217,7 +220,7 @@ namespace Amazon.S3.Transfer
 
 
         /// <summary>
-        /// Gets and sets the ServerSideEncryptionMethod property.
+        /// Gets or sets the ServerSideEncryptionMethod property.
         /// Specifies the encryption used on the server to
         /// store the content.
         /// </summary>
@@ -226,6 +229,25 @@ namespace Amazon.S3.Transfer
             get { return this.encryption; }
             set { this.encryption = value; }
         }
+
+
+        /// <summary>
+        /// Gets or sets the UploadFilesConcurrently property.
+        /// Specifies if multiple files will be uploaded concurrently.
+        /// The number of concurrent web requests used is controlled 
+        /// by the TransferUtilityConfig.ConcurrencyLevel property.
+        /// </summary>
+#if BCL45 || WIN_RT || WINDOWS_PHONE
+        public
+#else
+        internal 
+#endif
+            bool UploadFilesConcurrently
+        {
+            get { return _uploadFilesConcurrently; }
+            set { _uploadFilesConcurrently = value; }
+        }
+        
 
 
         /// <summary>
@@ -261,16 +283,10 @@ namespace Amazon.S3.Transfer
         /// <summary>
         /// Causes the UploadDirectoryProgressEvent event to be fired.
         /// </summary>
-        /// <param name="numberOfFilesUploaded">The number of files uploaded.</param>
-        /// <param name="totalNumberOfFiles">The total number of files.</param>
-        /// <param name="currentFile">The current file.</param>
-        /// <param name="transferredBytesForCurrentFile">The transferred bytes for current file.</param>
-        /// <param name="totalNumberOfBytesForCurrentFile">The total number of bytes for current file.</param>
-        internal void OnRaiseProgressEvent(int numberOfFilesUploaded, int totalNumberOfFiles,
-            string currentFile, long transferredBytesForCurrentFile, long totalNumberOfBytesForCurrentFile)
+        /// <param name="uploadDirectoryProgress">Progress data for files currently being uploaded.</param>
+        internal void OnRaiseProgressEvent(UploadDirectoryProgressArgs uploadDirectoryProgress)
         {
-            AWSSDKUtils.InvokeInBackground(UploadDirectoryProgressEvent, new UploadDirectoryProgressArgs(numberOfFilesUploaded, totalNumberOfFiles, currentFile,
-                        transferredBytesForCurrentFile, totalNumberOfBytesForCurrentFile), this);
+            AWSSDKUtils.InvokeInBackground(UploadDirectoryProgressEvent, uploadDirectoryProgress, this);
         }
     }
 
@@ -281,12 +297,6 @@ namespace Amazon.S3.Transfer
     /// </summary>
     public class UploadDirectoryProgressArgs : EventArgs
     {
-        int _totalNumberOfFiles;
-        int _numberOfFilesUploaded;
-        string _currentFile;
-        long _transferredBytesForCurrentFile;
-        long _totalNumberOfBytesForCurrentFile;
-
         /// <summary>
         /// Constructs a new instance of <c>UploadDirectoryProgressArgs</c>.
         /// </summary>
@@ -308,62 +318,136 @@ namespace Amazon.S3.Transfer
         public UploadDirectoryProgressArgs(int numberOfFilesUploaded, int totalNumberOfFiles, 
             string currentFile, long transferredBytesForCurrentFile, long totalNumberOfBytesForCurrentFile)
         {
-            this._numberOfFilesUploaded = numberOfFilesUploaded;
-            this._totalNumberOfFiles = totalNumberOfFiles;
-            this._currentFile = currentFile;
-            this._transferredBytesForCurrentFile = transferredBytesForCurrentFile;
-            this._totalNumberOfBytesForCurrentFile = totalNumberOfBytesForCurrentFile;
+            this.NumberOfFilesUploaded = numberOfFilesUploaded;
+            this.TotalNumberOfFiles = totalNumberOfFiles;
+            this.CurrentFile = currentFile;
+            this.TransferredBytesForCurrentFile = transferredBytesForCurrentFile;
+            this.TotalNumberOfBytesForCurrentFile = totalNumberOfBytesForCurrentFile;
+        }
+
+        /// <summary>
+        /// Constructs a new instance of <c>UploadDirectoryProgressArgs</c>.
+        /// </summary>
+        /// <param name="numberOfFilesUploaded">
+        /// The number of files uploaded.
+        /// </param>
+        /// <param name="totalNumberOfFiles">
+        /// The total number of files to upload.
+        /// </param>
+        /// <param name="transferredBytes">
+        /// The bytes transferred across all files being uploaded.
+        /// </param>
+        /// <param name="totalBytes">
+        /// The total number of bytes across all files being uploaded.
+        /// </param>
+        /// <param name="currentFile">
+        /// The current file being uploaded.
+        /// </param>
+        /// <param name="transferredBytesForCurrentFile">
+        /// The number of transferred bytes for current file.
+        /// </param>
+        /// <param name="totalNumberOfBytesForCurrentFile">
+        /// The size of the current file in bytes.
+        /// </param>
+        public UploadDirectoryProgressArgs(int numberOfFilesUploaded, int totalNumberOfFiles, long transferredBytes, long totalBytes,
+            string currentFile, long transferredBytesForCurrentFile, long totalNumberOfBytesForCurrentFile)
+        {
+            this.NumberOfFilesUploaded = numberOfFilesUploaded;
+            this.TotalNumberOfFiles = totalNumberOfFiles;
+            this.TransferredBytes = transferredBytes;
+            this.TotalBytes = totalBytes;
+            this.CurrentFile = currentFile;
+            this.TransferredBytesForCurrentFile = transferredBytesForCurrentFile;
+            this.TotalNumberOfBytesForCurrentFile = totalNumberOfBytesForCurrentFile;
         }
 
         /// <summary>
         /// Gets or sets the total number of files.
         /// </summary>
         /// <value>The total number of files.</value>
-        public int TotalNumberOfFiles
-        {
-            get { return this._totalNumberOfFiles; }
-            set { this._totalNumberOfFiles = value; }
-        }
+        public int TotalNumberOfFiles { get; set; }
 
         /// <summary>
         /// Gets or sets the number of files uploaded.
         /// </summary>
         /// <value>The number of files uploaded.</value>
-        public int NumberOfFilesUploaded
-        {
-            get { return this._numberOfFilesUploaded; }
-            set { this._numberOfFilesUploaded = value; }
-        }
+        public int NumberOfFilesUploaded { get; set; }
 
+        /// <summary>
+        /// Gets or sets the total number of bytes across all files being uploaded.
+        /// </summary>
+        /// <value>The total number of bytes across all files being uploaded.</value>
+        public long TotalBytes { get; set; }
+
+        /// <summary>
+        /// Gets or sets the bytes transferred across all files being uploaded.
+        /// </summary>
+        /// <value>The bytes transferred across all files being uploaded.</value>
+        public long TransferredBytes { get; set; }
+
+#if BCL45 || WIN_RT || WINDOWS_PHONE
+        /// <summary>
+        /// Gets or sets the current file.
+        /// </summary>
+        /// <remarks>
+        /// This property is only valid if UploadDirectory is used without enabling concurrent file uploads (by default concurrent upload is disabled).
+        /// If concurrent file uploads are enabled by setting TransferUtilityUploadDirectoryRequest.UploadFilesConcurrently to true, this property
+        /// will return null.
+        /// </remarks>
+        /// <value>The current file.</value>
+#else
         /// <summary>
         /// Gets or sets the current file.
         /// </summary>
         /// <value>The current file.</value>
-        public string CurrentFile
-        {
-            get { return this._currentFile; }
-            set { this._currentFile = value; }
-        }
+#endif
+        public string CurrentFile { get; set; }
 
+        
+#if BCL45 || WIN_RT || WINDOWS_PHONE
+        /// <summary>
+        /// Gets or sets the transferred bytes for current file.
+        /// </summary>
+        /// <remarks>
+        /// This property is only valid if UploadDirectory is used without enabling concurrent file uploads (by default concurrent upload is disabled).
+        /// If concurrent file uploads are enabled by setting TransferUtilityUploadDirectoryRequest.UploadFilesConcurrently to true, this property
+        /// will return 0.
+        /// </remarks>
+        /// <value>The transferred bytes for current file.</value>
+#else
         /// <summary>
         /// Gets or sets the transferred bytes for current file.
         /// </summary>
         /// <value>The transferred bytes for current file.</value>
-        public long TransferredBytesForCurrentFile
-        {
-            get { return this._transferredBytesForCurrentFile; }
-            set { this._transferredBytesForCurrentFile = value; }
-        }
+#endif
+        public long TransferredBytesForCurrentFile { get; set; }
 
+#if BCL45 || WIN_RT || WINDOWS_PHONE
+        /// <summary>
+        /// Gets or sets the total number of bytes for current file.
+        /// </summary>
+        /// <remarks>
+        /// This property is only valid if UploadDirectory is used without enabling concurrent file uploads (by default concurrent upload is disabled).
+        /// If concurrent file uploads are enabled by setting TransferUtilityUploadDirectoryRequest.UploadFilesConcurrently to true, this property
+        /// will return 0.
+        /// </remarks>
+        /// <value>The total number of bytes for current file.</value>
+#else
         /// <summary>
         /// Gets or sets the total number of bytes for current file.
         /// </summary>
         /// <value>The total number of bytes for current file.</value>
-        public long TotalNumberOfBytesForCurrentFile
+#endif
+        public long TotalNumberOfBytesForCurrentFile { get; set; }
+
+        /// <summary>
+        /// The string representation of this instance of UploadDirectoryProgressArgs.
+        /// </summary>
+        /// <returns>The string representation of this instance of UploadDirectoryProgressArgs.</returns>
+        public override string ToString()
         {
-            get { return this._totalNumberOfBytesForCurrentFile; }
-            set { this._totalNumberOfBytesForCurrentFile = value; }
+            return string.Format(CultureInfo.InvariantCulture, "Total Files: {0}, Uploaded Files {1}, Total Bytes: {2}, Transferred Bytes: {3}",
+                this.TotalNumberOfFiles, this.NumberOfFilesUploaded, this.TotalBytes, this.TransferredBytes);
         }
     }
-
 }

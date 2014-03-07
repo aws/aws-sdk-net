@@ -30,19 +30,19 @@ namespace Amazon.DynamoDBv2.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal ProvisionedThroughputExceededException(string message) 
+        public ProvisionedThroughputExceededException(string message) 
             : base(message) {}
           
-        internal ProvisionedThroughputExceededException(string message, Exception innerException) 
+        public ProvisionedThroughputExceededException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal ProvisionedThroughputExceededException(Exception innerException) 
+        public ProvisionedThroughputExceededException(Exception innerException) 
             : base(innerException) {}
             
-        internal ProvisionedThroughputExceededException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public ProvisionedThroughputExceededException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal ProvisionedThroughputExceededException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public ProvisionedThroughputExceededException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
 
         

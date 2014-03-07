@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,19 +30,19 @@ namespace Amazon.SimpleWorkflow.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal TypeDeprecatedException(string message) 
+        public TypeDeprecatedException(string message) 
             : base(message) {}
           
-        internal TypeDeprecatedException(string message, Exception innerException) 
+        public TypeDeprecatedException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal TypeDeprecatedException(Exception innerException) 
+        public TypeDeprecatedException(Exception innerException) 
             : base(innerException) {}
             
-        internal TypeDeprecatedException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public TypeDeprecatedException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal TypeDeprecatedException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public TypeDeprecatedException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
 
         

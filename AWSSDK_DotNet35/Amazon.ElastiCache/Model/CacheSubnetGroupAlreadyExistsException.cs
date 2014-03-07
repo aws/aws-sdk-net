@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,19 +30,19 @@ namespace Amazon.ElastiCache.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal CacheSubnetGroupAlreadyExistsException(string message) 
+        public CacheSubnetGroupAlreadyExistsException(string message) 
             : base(message) {}
           
-        internal CacheSubnetGroupAlreadyExistsException(string message, Exception innerException) 
+        public CacheSubnetGroupAlreadyExistsException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal CacheSubnetGroupAlreadyExistsException(Exception innerException) 
+        public CacheSubnetGroupAlreadyExistsException(Exception innerException) 
             : base(innerException) {}
             
-        internal CacheSubnetGroupAlreadyExistsException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public CacheSubnetGroupAlreadyExistsException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal CacheSubnetGroupAlreadyExistsException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public CacheSubnetGroupAlreadyExistsException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
 
         

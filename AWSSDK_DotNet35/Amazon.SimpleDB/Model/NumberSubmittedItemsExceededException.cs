@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -32,19 +32,19 @@ namespace Amazon.SimpleDB.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal NumberSubmittedItemsExceededException(string message) 
+        public NumberSubmittedItemsExceededException(string message) 
             : base(message) {}
           
-        internal NumberSubmittedItemsExceededException(string message, Exception innerException) 
+        public NumberSubmittedItemsExceededException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal NumberSubmittedItemsExceededException(Exception innerException) 
+        public NumberSubmittedItemsExceededException(Exception innerException) 
             : base(innerException) {}
             
-        internal NumberSubmittedItemsExceededException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public NumberSubmittedItemsExceededException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal NumberSubmittedItemsExceededException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public NumberSubmittedItemsExceededException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
 
         

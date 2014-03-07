@@ -5381,6 +5381,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Amazon.ElasticLoadBalancing\IAmazonElasticLoadBalancing.cs" />
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\AccessLog.cs" />
     <Compile Include="Amazon.ElasticLoadBalancing\Model\AmazonElasticLoadBalancingRequest.cs" />
     <Compile Include="Amazon.ElasticLoadBalancing\Model\AppCookieStickinessPolicy.cs">
       <SubType>Code</SubType>
@@ -5566,6 +5567,7 @@
     <Compile Include="Amazon.ElasticLoadBalancing\Model\InstanceState.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\AccessLogUnmarshaller.cs" />
     <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\AppCookieStickinessPolicyUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -10241,18 +10243,45 @@
     <Compile Include="Amazon.S3\S3Enumerations.cs" />
     <Compile Include="Amazon.S3\Transfer\BaseDownloadRequest.cs" />
     <Compile Include="Amazon.S3\Transfer\BaseUploadRequest.cs" />
+    <Compile Include="Amazon.S3\Transfer\Internal\AbortMultipartUploadsCommand.bcl35.cs">
+      <DependentUpon>AbortMultipartUploadsCommand.cs</DependentUpon>
+    </Compile>
     <Compile Include="Amazon.S3\Transfer\Internal\AbortMultipartUploadsCommand.cs" />
     <Compile Include="Amazon.S3\Transfer\Internal\BaseCommand.cs" />
+    <Compile Include="Amazon.S3\Transfer\Internal\DownloadCommand.bcl35.cs">
+      <DependentUpon>DownloadCommand.cs</DependentUpon>
+    </Compile>
     <Compile Include="Amazon.S3\Transfer\Internal\DownloadCommand.cs" />
-    <Compile Include="Amazon.S3\Transfer\Internal\DownloadDirectoryCommand.cs" />
+    <Compile Include="Amazon.S3\Transfer\Internal\DownloadDirectoryCommand.bcl.cs" />
+    <Compile Include="Amazon.S3\Transfer\Internal\DownloadDirectoryCommand.bcl35.cs">
+      <DependentUpon>DownloadDirectoryCommand.bcl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Amazon.S3\Transfer\Internal\MultipartUploadCommand.bcl35.cs">
+      <DependentUpon>MultipartUploadCommand.cs</DependentUpon>
+    </Compile>
     <Compile Include="Amazon.S3\Transfer\Internal\MultipartUploadCommand.cs" />
+    <Compile Include="Amazon.S3\Transfer\Internal\OpenStreamCommand.bcl35.cs">
+      <DependentUpon>OpenStreamCommand.cs</DependentUpon>
+    </Compile>
     <Compile Include="Amazon.S3\Transfer\Internal\OpenStreamCommand.cs" />
+    <Compile Include="Amazon.S3\Transfer\Internal\SimpleUploadCommand.bcl35.cs">
+      <DependentUpon>SimpleUploadCommand.cs</DependentUpon>
+    </Compile>
     <Compile Include="Amazon.S3\Transfer\Internal\SimpleUploadCommand.cs" />
-    <Compile Include="Amazon.S3\Transfer\Internal\UploadDirectoryCommand.cs" />
-    <Compile Include="Amazon.S3\Transfer\TransferUtility.async.cs" />
+    <Compile Include="Amazon.S3\Transfer\Internal\UploadDirectoryCommand.bcl.cs" />
+    <Compile Include="Amazon.S3\Transfer\Internal\UploadDirectoryCommand.bcl35.cs">
+      <DependentUpon>UploadDirectoryCommand.bcl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Amazon.S3\Transfer\TransferUtility.bcl.cs">
+      <DependentUpon>TransferUtility.cs</DependentUpon>
+    </Compile>
     <Compile Include="Amazon.S3\Transfer\TransferUtility.cs" />
-    <Compile Include="Amazon.S3\Transfer\TransferUtility.sync.cs" />
-    <Compile Include="Amazon.S3\Transfer\TransferUtilityConfig.bcl35.cs" />
+    <Compile Include="Amazon.S3\Transfer\TransferUtility.bcl35.cs">
+      <DependentUpon>TransferUtility.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Amazon.S3\Transfer\TransferUtilityConfig.bcl35.cs">
+      <DependentUpon>TransferUtilityConfig.cs</DependentUpon>
+    </Compile>
     <Compile Include="Amazon.S3\Transfer\TransferUtilityConfig.cs" />
     <Compile Include="Amazon.S3\Transfer\TransferUtilityDownloadDirectoryRequest.cs" />
     <Compile Include="Amazon.S3\Transfer\TransferUtilityDownloadRequest.cs" />

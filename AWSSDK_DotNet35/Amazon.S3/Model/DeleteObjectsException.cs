@@ -43,7 +43,7 @@ namespace Amazon.S3
         }
 
 
-        internal DeleteObjectsException(DeleteObjectsResponse response)
+        public DeleteObjectsException(DeleteObjectsResponse response)
             : base(CreateMessage(response))
         {
             this.response = response;

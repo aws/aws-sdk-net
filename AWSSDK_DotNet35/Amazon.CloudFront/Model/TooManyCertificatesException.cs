@@ -30,19 +30,19 @@ namespace Amazon.CloudFront.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal TooManyCertificatesException(string message) 
+        public TooManyCertificatesException(string message) 
             : base(message) {}
           
-        internal TooManyCertificatesException(string message, Exception innerException) 
+        public TooManyCertificatesException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal TooManyCertificatesException(Exception innerException) 
+        public TooManyCertificatesException(Exception innerException) 
             : base(innerException) {}
             
-        internal TooManyCertificatesException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public TooManyCertificatesException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal TooManyCertificatesException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public TooManyCertificatesException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
 
         

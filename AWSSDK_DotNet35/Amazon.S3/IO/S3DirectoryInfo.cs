@@ -41,6 +41,11 @@ namespace Amazon.S3.IO
     /// Mimics the System.IO.DirectoryInfo for a virtual directory in S3.  It exposes properties and methods for enumerating directories and files as well as 
     /// methods manipulate directories.
     /// </summary>
+    /// <remarks>
+    /// <note type='note'>It is important to keep in mind that S3 is not a filesystem. It is possible for S3 object keys to contain 
+    /// characters which are not not legal file path characters, and so some pre-existing objects in a bucket that were created with 
+    /// other software may not be compatible with this class.</note> 
+    /// </remarks>
     public sealed class S3DirectoryInfo : IS3FileSystemInfo
     {
         const int EVENTUAL_CONSISTENCY_SUCCESS_IN_ROW = 10;

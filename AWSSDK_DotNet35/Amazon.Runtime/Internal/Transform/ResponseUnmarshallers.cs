@@ -216,7 +216,7 @@ namespace Amazon.Runtime.Internal.Transform
                 throw new InvalidOperationException("Unsupported UnmarshallerContext");
 
             var responseException = this.UnmarshallException(context, innerException, statusCode);
-            responseException.SetRequestId(context.ResponseData.GetHeaderValue(AWSSDKUtils.RequestIdHeader));
+            responseException.RequestId = context.ResponseData.GetHeaderValue(AWSSDKUtils.RequestIdHeader);
             return responseException;
         }
 

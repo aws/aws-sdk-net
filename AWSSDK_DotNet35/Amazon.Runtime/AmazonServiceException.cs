@@ -33,33 +33,33 @@ namespace Amazon.Runtime
         private string requestId;
         private HttpStatusCode statusCode;
 
-        protected internal AmazonServiceException()
+        public AmazonServiceException()
             : base()
         {
         }
 
-        protected internal AmazonServiceException(string message)
+        public AmazonServiceException(string message)
             : base(message)
         {
         }
 
-        protected internal AmazonServiceException(string message, Exception innerException)
+        public AmazonServiceException(string message, Exception innerException)
             : base(message, innerException)
         {
         }
 
-        protected internal AmazonServiceException(string message, Exception innerException, HttpStatusCode statusCode)
+        public AmazonServiceException(string message, Exception innerException, HttpStatusCode statusCode)
             : base(message, innerException)
         {
             this.statusCode = statusCode;
         }
 
-        protected internal AmazonServiceException(Exception innerException)
+        public AmazonServiceException(Exception innerException)
             : base(innerException.Message, innerException)
         {
         }
 
-        protected internal AmazonServiceException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
+        public AmazonServiceException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
             : base(message)
         {
             this.errorCode = errorCode;
@@ -68,7 +68,7 @@ namespace Amazon.Runtime
             this.statusCode = statusCode;
         }
 
-        protected internal AmazonServiceException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
+        public AmazonServiceException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
             : base(message, innerException)
         {
             this.errorCode = errorCode;
@@ -83,7 +83,7 @@ namespace Amazon.Runtime
         public ErrorType ErrorType
         {
             get { return this.errorType; }
-            protected set { this.errorType = value; }
+            set { this.errorType = value; }
         }
 
         /// <summary>
@@ -92,7 +92,7 @@ namespace Amazon.Runtime
         public string ErrorCode
         {
             get { return this.errorCode; }
-            protected set { this.errorCode = value; }
+            set { this.errorCode = value; }
         }
 
         /// <summary>
@@ -101,7 +101,7 @@ namespace Amazon.Runtime
         public string RequestId
         {
             get { return this.requestId; }
-            protected set { this.requestId = value; }
+            set { this.requestId = value; }
         }
 
         /// <summary>
@@ -110,29 +110,7 @@ namespace Amazon.Runtime
         public HttpStatusCode StatusCode
         {
             get { return this.statusCode; }
-            protected set { this.statusCode = value; }
+            set { this.statusCode = value; }
         }
-
-
-        #region Internal Set methods
-
-        internal void SetErrorType(ErrorType errorType)
-        {
-            this.ErrorType = errorType;
-        }
-        internal void SetErrorCode(string errorCode)
-        {
-            this.ErrorCode = errorCode;
-        }
-        internal void SetRequestId(string requestId)
-        {
-            this.RequestId = requestId;
-        }
-        internal void SetStatusCode(HttpStatusCode StatusCode)
-        {
-            this.StatusCode = StatusCode;
-        }
-
-        #endregion
     }
 }

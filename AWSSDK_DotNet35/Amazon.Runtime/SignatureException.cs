@@ -21,14 +21,14 @@ namespace Amazon.Runtime
     /// <summary>
     /// This exception is thrown if there are problems signing the request.
     /// </summary>
-    public class SignatureException : Exception
+    public class SignatureException : Amazon.Runtime.Internal.Auth.SignatureException
     {
-        internal SignatureException(string message)
+        public SignatureException(string message)
             : base(message)
         {
         }
 
-        internal SignatureException(string message, Exception innerException)
+        public SignatureException(string message, Exception innerException)
             : base(message, innerException)
         {
         }

@@ -535,8 +535,11 @@ namespace Amazon.S3.IO
         }
 
         /// <summary>
-        /// Returns a Stream that can be used to write data to S3.  The content is persisted to S3 once the Stream is closed.
+        /// Returns a Stream that can be used to write data to S3. 
         /// </summary>
+        /// <remarks>
+        /// <note>The content will not be written to S3 until the Stream is closed.</note>
+        /// </remarks>
         /// <exception cref="T:System.Net.WebException"></exception>
         /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
         /// <returns>Stream to write content to.</returns>
@@ -546,8 +549,11 @@ namespace Amazon.S3.IO
         }
 
         /// <summary>
-        /// Returns a StreamWriter that can be used to write data to S3.  The content is persisted to S3 once the StreamWriter is closed.
+        /// Returns a StreamWriter that can be used to write data to S3. 
         /// </summary>
+        /// <remarks>
+        /// <note>The content will not be written to S3 until the Stream is closed.</note>
+        /// </remarks>
         /// <exception cref="T:System.Net.WebException"></exception>
         /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>
         /// <returns>Stream to write content to.</returns>
@@ -705,6 +711,9 @@ namespace Amazon.S3.IO
         /// <summary>
         /// Returns a Stream for writing to S3.  If the file already exists it will be overwritten.
         /// </summary>
+        /// <remarks>
+        /// <note>The content will not be written to S3 until the Stream is closed.</note>
+        /// </remarks>
         /// <exception cref="T:System.IO.IOException">The file is already open.</exception>
         /// <exception cref="T:System.Net.WebException"></exception>
         /// <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>

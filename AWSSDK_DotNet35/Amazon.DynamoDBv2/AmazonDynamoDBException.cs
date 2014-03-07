@@ -23,27 +23,27 @@ namespace Amazon.DynamoDBv2
 {
     public class AmazonDynamoDBException : AmazonServiceException
     {
-        internal AmazonDynamoDBException(string message)
+        public AmazonDynamoDBException(string message)
             : base(message)
         {
         }
 
-        internal AmazonDynamoDBException(string message, Exception innerException)
+        public AmazonDynamoDBException(string message, Exception innerException)
             : base(message, innerException)
         {
         }
 
-        internal AmazonDynamoDBException(Exception innerException)
+        public AmazonDynamoDBException(Exception innerException)
             : base(innerException.Message, innerException)
         {
         }
 
-        internal AmazonDynamoDBException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
+        public AmazonDynamoDBException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
             : base(message, errorType, errorCode, requestId, statusCode)
         {
         }
 
-        internal AmazonDynamoDBException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
+        public AmazonDynamoDBException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
             : base(message, innerException, errorType, errorCode, requestId, statusCode)
         {
         }

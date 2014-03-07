@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,27 +23,27 @@ namespace Amazon.EC2
 {
     public class AmazonEC2Exception : AmazonServiceException
     {
-        internal AmazonEC2Exception(string message)
+        public AmazonEC2Exception(string message)
             : base(message)
         {
         }
 
-        internal AmazonEC2Exception(string message, Exception innerException)
+        public AmazonEC2Exception(string message, Exception innerException)
             : base(message, innerException)
         {
         }
 
-        internal AmazonEC2Exception(Exception innerException)
+        public AmazonEC2Exception(Exception innerException)
             : base(innerException.Message, innerException)
         {
         }
 
-        internal AmazonEC2Exception(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
+        public AmazonEC2Exception(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
             : base(message, errorType, errorCode, requestId, statusCode)
         {
         }
 
-        internal AmazonEC2Exception(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
+        public AmazonEC2Exception(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
             : base(message, innerException, errorType, errorCode, requestId, statusCode)
         {
         }

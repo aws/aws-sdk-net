@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -32,19 +32,19 @@ namespace Amazon.SimpleDB.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal InvalidQueryExpressionException(string message) 
+        public InvalidQueryExpressionException(string message) 
             : base(message) {}
           
-        internal InvalidQueryExpressionException(string message, Exception innerException) 
+        public InvalidQueryExpressionException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal InvalidQueryExpressionException(Exception innerException) 
+        public InvalidQueryExpressionException(Exception innerException) 
             : base(innerException) {}
             
-        internal InvalidQueryExpressionException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public InvalidQueryExpressionException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal InvalidQueryExpressionException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public InvalidQueryExpressionException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
 
         

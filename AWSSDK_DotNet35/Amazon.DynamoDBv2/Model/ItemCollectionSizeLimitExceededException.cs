@@ -30,19 +30,19 @@ namespace Amazon.DynamoDBv2.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal ItemCollectionSizeLimitExceededException(string message) 
+        public ItemCollectionSizeLimitExceededException(string message) 
             : base(message) {}
           
-        internal ItemCollectionSizeLimitExceededException(string message, Exception innerException) 
+        public ItemCollectionSizeLimitExceededException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal ItemCollectionSizeLimitExceededException(Exception innerException) 
+        public ItemCollectionSizeLimitExceededException(Exception innerException) 
             : base(innerException) {}
             
-        internal ItemCollectionSizeLimitExceededException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public ItemCollectionSizeLimitExceededException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal ItemCollectionSizeLimitExceededException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public ItemCollectionSizeLimitExceededException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
 
         

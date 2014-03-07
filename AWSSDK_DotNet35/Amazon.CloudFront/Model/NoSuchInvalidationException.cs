@@ -30,19 +30,19 @@ namespace Amazon.CloudFront.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal NoSuchInvalidationException(string message) 
+        public NoSuchInvalidationException(string message) 
             : base(message) {}
           
-        internal NoSuchInvalidationException(string message, Exception innerException) 
+        public NoSuchInvalidationException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal NoSuchInvalidationException(Exception innerException) 
+        public NoSuchInvalidationException(Exception innerException) 
             : base(innerException) {}
             
-        internal NoSuchInvalidationException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public NoSuchInvalidationException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal NoSuchInvalidationException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public NoSuchInvalidationException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
 
         

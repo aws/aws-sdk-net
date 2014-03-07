@@ -1,64 +1,35 @@
-﻿/*******************************************************************************
- *  Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use
- *  this file except in compliance with the License. A copy of the License is located at
- *
+﻿/*
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
  *  http://aws.amazon.com/apache2.0
- *
- *  or in the "license" file accompanying this file.
- *  This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
- *  CONDITIONS OF ANY KIND, either express or implied. See the License for the
- *  specific language governing permissions and limitations under the License.
- * *****************************************************************************
- *    __  _    _  ___
- *   (  )( \/\/ )/ __)
- *   /__\ \    / \__ \
- *  (_)(_) \/\/  (___/
- *
- *  AWS SDK for .NET
- *  API Version: 2006-03-01
- *
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
  */
+
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using System.Threading;
+using System.Threading.Tasks;
 
 using Amazon.Runtime.Internal.Util;
 using Amazon.S3.Model;
 using Amazon.S3.Transfer.Internal;
 using Amazon.Util;
+using System.Runtime.ExceptionServices;
 
 namespace Amazon.S3.Transfer
 {
-    /// <summary>
-    /// 	<para>
-    /// 	Provides a high level utility for managing transfers to and from Amazon S3.
-    /// 	</para>
-    /// 	<para>
-    /// 	<c>TransferUtility</c> provides a simple API for 
-    /// 	uploading content to and downloading content
-    /// 	from Amazon S3. It makes extensive use of Amazon S3 multipart uploads to
-    /// 	achieve enhanced throughput, performance, and reliability. 
-    /// 	</para>
-    /// 	<para>
-    /// 	When uploading large files by specifying file paths instead of a stream, 
-    /// 	<c>TransferUtility</c> uses multiple threads to upload
-    /// 	multiple parts of a single upload at once. When dealing with large content
-    /// 	sizes and high bandwidth, this can increase throughput significantly.
-    /// 	</para>
-    /// </summary>
-    /// <remarks>
-    /// 	<para>
-    /// 	Transfers are stored in memory. If the application is restarted, 
-    /// 	previous transfers are no longer accessible.  In this situation, if necessary, 
-    /// 	you should clean up any multipart uploads	that are incomplete.
-    /// 	</para>
-    /// </remarks>
-    public partial class TransferUtility : IDisposable
+    public partial class TransferUtility
     {
-
         #region UploadDirectory
         /// <summary>
         /// 	Uploads files from a specified directory.  
@@ -85,7 +56,14 @@ namespace Amazon.S3.Transfer
         /// </param>
         public void UploadDirectory(string directory, string bucketName)
         {
-            UploadDirectoryHelper(directory, bucketName);
+            try
+            {
+                UploadDirectoryAsync(directory, bucketName).Wait();
+            }
+            catch (AggregateException e)
+            {
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+            }
         }
 
 
@@ -121,7 +99,14 @@ namespace Amazon.S3.Transfer
         /// </param>
         public void UploadDirectory(string directory, string bucketName, string searchPattern, SearchOption searchOption)
         {
-            UploadDirectoryHelper(directory, bucketName, searchPattern, searchOption);
+            try
+            {
+                UploadDirectoryAsync(directory, bucketName, searchPattern, searchOption).Wait();
+            }
+            catch (AggregateException e)
+            {
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+            }
         }
 
         /// <summary>
@@ -146,7 +131,14 @@ namespace Amazon.S3.Transfer
         /// </param>
         public void UploadDirectory(TransferUtilityUploadDirectoryRequest request)
         {
-            UploadDirectoryHelper(request);
+            try
+            {
+                UploadDirectoryAsync(request).Wait();
+            }
+            catch (AggregateException e)
+            {
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+            }
         }
         #endregion
 
@@ -177,7 +169,14 @@ namespace Amazon.S3.Transfer
         /// </param>
         public void Upload(string filePath, string bucketName)
         {
-            UploadHelper(filePath, bucketName);
+            try
+            {
+                UploadAsync(filePath, bucketName).Wait();
+            }
+            catch (AggregateException e)
+            {
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+            }
         }
 
         /// <summary>
@@ -207,7 +206,14 @@ namespace Amazon.S3.Transfer
         /// </param>
         public void Upload(string filePath, string bucketName, string key)
         {
-            UploadHelper(filePath, bucketName, key);
+            try
+            {
+                UploadAsync(filePath, bucketName, key).Wait();
+            }
+            catch (AggregateException e)
+            {
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+            }
         }
 
 
@@ -237,7 +243,14 @@ namespace Amazon.S3.Transfer
         /// </param>
         public void Upload(Stream stream, string bucketName, string key)
         {
-            UploadHelper(stream, bucketName, key);
+            try
+            {
+                UploadAsync(stream, bucketName, key).Wait();
+            }
+            catch (AggregateException e)
+            {
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+            }
         }
 
         /// <summary>
@@ -262,7 +275,14 @@ namespace Amazon.S3.Transfer
         /// </param>
         public void Upload(TransferUtilityUploadRequest request)
         {
-            this.UploadHelper(request);
+            try
+            {
+                UploadAsync(request).Wait();
+            }
+            catch (AggregateException e)
+            {
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+            }
         }
 
         #endregion
@@ -285,7 +305,15 @@ namespace Amazon.S3.Transfer
         /// </returns>
         public Stream OpenStream(string bucketName, string key)
         {
-            return OpenStreamHelper(bucketName, key);
+            try
+            {
+                return OpenStreamAsync(bucketName, key).Result;
+            }
+            catch (AggregateException e)
+            {
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+                return null;
+            }
         }
 
         /// <summary>
@@ -301,7 +329,15 @@ namespace Amazon.S3.Transfer
         /// </returns>
         public Stream OpenStream(TransferUtilityOpenStreamRequest request)
         {
-            return OpenStreamHelper(request);
+            try
+            {
+                return OpenStreamAsync(request).Result;
+            }
+            catch (AggregateException e)
+            {
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+                return null;
+            }
         }
 
         #endregion
@@ -309,7 +345,6 @@ namespace Amazon.S3.Transfer
         #region Download
         /// <summary>
         /// 	Downloads the content from Amazon S3 and writes it to the specified file.  
-        /// 	The object key is derived from the file name.
         /// </summary>
         /// <param name="filePath">
         /// 	The file path where the content from Amazon S3 will be written to.
@@ -322,7 +357,14 @@ namespace Amazon.S3.Transfer
         /// </param>
         public void Download(string filePath, string bucketName, string key)
         {
-            DownloadHelper(filePath, bucketName, key);
+            try
+            {
+                DownloadAsync(filePath, bucketName, key).Wait();
+            }
+            catch (AggregateException e)
+            {
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+            }
         }
 
         /// <summary>
@@ -335,7 +377,14 @@ namespace Amazon.S3.Transfer
         /// </param>
         public void Download(TransferUtilityDownloadRequest request)
         {
-            DownloadHelper(request);
+            try
+            {
+                DownloadAsync(request).Wait();
+            }
+            catch (AggregateException e)
+            {
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+            }
         }
         #endregion
 
@@ -355,7 +404,14 @@ namespace Amazon.S3.Transfer
         /// </param>
         public void DownloadDirectory(string bucketName, string s3Directory, string localDirectory)
         {
-            DownloadDirectoryHelper(bucketName, s3Directory, localDirectory);
+            try
+            {
+                DownloadDirectoryAsync(bucketName, s3Directory, localDirectory).Wait();
+            }
+            catch (AggregateException e)
+            {
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+            }
         }
 
         /// <summary>
@@ -369,7 +425,14 @@ namespace Amazon.S3.Transfer
         /// </param>
         public void DownloadDirectory(TransferUtilityDownloadDirectoryRequest request)
         {
-            DownloadDirectoryHelper(request);
+            try
+            {
+                DownloadDirectoryAsync(request).Wait();
+            }
+            catch (AggregateException e)
+            {
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+            }
         }
         #endregion
 
@@ -386,7 +449,14 @@ namespace Amazon.S3.Transfer
         /// </param>
         public void AbortMultipartUploads(string bucketName, DateTime initiatedDate)
         {
-            AbortMultipartUploadsHelper(bucketName, initiatedDate);
+            try
+            {
+                AbortMultipartUploadsAsync(bucketName, initiatedDate).Wait();
+            }
+            catch (AggregateException e)
+            {
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+            }
         }
 
         #endregion

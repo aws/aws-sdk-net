@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,19 +30,19 @@ namespace Amazon.Redshift.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal SubscriptionAlreadyExistException(string message) 
+        public SubscriptionAlreadyExistException(string message) 
             : base(message) {}
           
-        internal SubscriptionAlreadyExistException(string message, Exception innerException) 
+        public SubscriptionAlreadyExistException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal SubscriptionAlreadyExistException(Exception innerException) 
+        public SubscriptionAlreadyExistException(Exception innerException) 
             : base(innerException) {}
             
-        internal SubscriptionAlreadyExistException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public SubscriptionAlreadyExistException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal SubscriptionAlreadyExistException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public SubscriptionAlreadyExistException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
 
         

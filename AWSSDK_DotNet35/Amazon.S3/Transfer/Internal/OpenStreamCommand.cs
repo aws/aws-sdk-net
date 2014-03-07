@@ -29,7 +29,7 @@ using Amazon.S3.Model;
 
 namespace Amazon.S3.Transfer.Internal
 {
-    internal class OpenStreamCommand : BaseCommand
+    internal partial class OpenStreamCommand : BaseCommand
     {
         IAmazonS3 _s3Client;
         TransferUtilityOpenStreamRequest _request;
@@ -41,7 +41,7 @@ namespace Amazon.S3.Transfer.Internal
             this._request = request;
         }
 
-        public override void Execute()
+        private GetObjectRequest ConstructRequest()
         {
             if (!this._request.IsSetBucketName())
             {
@@ -52,9 +52,7 @@ namespace Amazon.S3.Transfer.Internal
                 throw new InvalidOperationException("The key Specified is null or empty!");
             }
 
-            GetObjectRequest getRequest = ConvertToGetObjectRequest(this._request);
-            GetObjectResponse response = this._s3Client.GetObject(getRequest);
-            this._responseStream = response.ResponseStream;
+             return ConvertToGetObjectRequest(this._request);
         }
 
         internal Stream ResponseStream

@@ -36,7 +36,7 @@ namespace Amazon.S3.Transfer.Internal
     /// <summary>
     /// This command is for doing regular PutObject requests.
     /// </summary>
-    internal class SimpleUploadCommand : BaseCommand
+    internal partial class SimpleUploadCommand : BaseCommand
     {
         IAmazonS3 _s3Client;
         TransferUtilityConfig _config;
@@ -47,19 +47,17 @@ namespace Amazon.S3.Transfer.Internal
             this._s3Client = s3Client;
             this._config = config;
             this._fileTransporterRequest = fileTransporterRequest;
+            var fileName = fileTransporterRequest.FilePath;
         }
 
-        public override void Execute()
+        private PutObjectRequest ConstructRequest()
         {
-
-
             PutObjectRequest putRequest = new PutObjectRequest()
             {
                 BucketName = this._fileTransporterRequest.BucketName,
                 Key = this._fileTransporterRequest.Key,
                 CannedACL = this._fileTransporterRequest.CannedACL,
                 ContentType = this._fileTransporterRequest.ContentType,
-                FilePath = this._fileTransporterRequest.FilePath,
                 StorageClass = this._fileTransporterRequest.StorageClass,
                 AutoCloseStream = this._fileTransporterRequest.AutoCloseStream,
                 AutoResetStreamPosition = this._fileTransporterRequest.AutoResetStreamPosition,
@@ -70,16 +68,27 @@ namespace Amazon.S3.Transfer.Internal
                 Timeout = ClientConfig.GetTimeoutValue(this._config.DefaultTimeout, this._fileTransporterRequest.Timeout)
 #endif
             };
-            putRequest.StreamUploadProgressCallback += new EventHandler<Runtime.StreamTransferProgressArgs>(this.putObjectProgressEventCallback);
+
+#if BCL
+            putRequest.FilePath = this._fileTransporterRequest.FilePath;
+#elif WIN_RT || WINDOWS_PHONE
+            if (this._fileTransporterRequest.IsSetStorageFile())
+            {
+                putRequest.StorageFile = this._fileTransporterRequest.StorageFile;
+            }
+#endif
+            var progressHandler = new ProgressHandler(this.PutObjectProgressEventCallback);
+            putRequest.StreamUploadProgressCallback += progressHandler.OnTransferProgress;
 
             putRequest.InputStream = this._fileTransporterRequest.InputStream;
-
-            this._s3Client.PutObject(putRequest);
+            return putRequest;
         }
 
-        private void putObjectProgressEventCallback(object sender, Amazon.Runtime.StreamTransferProgressArgs e)
+        private void PutObjectProgressEventCallback(object sender, UploadProgressArgs e)
         {
-            this._fileTransporterRequest.OnRaiseProgressEvent(e.IncrementTransferred, e.TransferredBytes, e.TotalBytes);
+            var progressArgs = new UploadProgressArgs(e.IncrementTransferred, e.TransferredBytes, e.TotalBytes, 
+                e.CompensationForRetry, _fileTransporterRequest.FilePath);
+            this._fileTransporterRequest.OnRaiseProgressEvent(progressArgs);
         }
     }
 }

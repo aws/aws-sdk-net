@@ -27,6 +27,7 @@ namespace Amazon.Runtime.Internal
         EventHandler<StreamTransferProgressArgs> callback;
         long contentLength;
         long totalBytesRead;
+        long totalIncrementTransferred;
 
         internal StreamReadTracker(AmazonWebServiceClient client, EventHandler<StreamTransferProgressArgs> callback, long contentLength)
         {
@@ -40,11 +41,23 @@ namespace Amazon.Runtime.Internal
             if (callback == null)
                 return;
 
-            totalBytesRead += bytesRead;
-            AWSSDKUtils.InvokeInBackground(
-                                callback,
-                                new StreamTransferProgressArgs(bytesRead, totalBytesRead, contentLength),
-                                client);
+            // Invoke the progress callback only if bytes read > 0
+            if (bytesRead > 0)
+            {
+                totalBytesRead += bytesRead;
+                totalIncrementTransferred += bytesRead;
+
+                if (totalIncrementTransferred >= this.client.Config.ProgressUpdateInterval ||
+                    totalBytesRead == contentLength)
+                {
+
+                    AWSSDKUtils.InvokeInBackground(
+                                        callback,
+                                        new StreamTransferProgressArgs(totalIncrementTransferred, totalBytesRead, contentLength),
+                                        client);
+                    totalIncrementTransferred = 0;
+                }
+            }
         }
     }
 }

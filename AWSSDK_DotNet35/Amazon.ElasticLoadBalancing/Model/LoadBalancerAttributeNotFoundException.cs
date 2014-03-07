@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,19 +30,19 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal LoadBalancerAttributeNotFoundException(string message) 
+        public LoadBalancerAttributeNotFoundException(string message) 
             : base(message) {}
           
-        internal LoadBalancerAttributeNotFoundException(string message, Exception innerException) 
+        public LoadBalancerAttributeNotFoundException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal LoadBalancerAttributeNotFoundException(Exception innerException) 
+        public LoadBalancerAttributeNotFoundException(Exception innerException) 
             : base(innerException) {}
             
-        internal LoadBalancerAttributeNotFoundException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public LoadBalancerAttributeNotFoundException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal LoadBalancerAttributeNotFoundException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public LoadBalancerAttributeNotFoundException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
 
         

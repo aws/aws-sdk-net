@@ -150,7 +150,18 @@
     <Compile Include="Amazon.Runtime\Internal\WebRequestState.cs" />
     <Compile Include="Amazon.S3\AmazonS3Client.cs" />
     <Compile Include="Amazon.S3\IAmazonS3.cs" />
+    <Compile Include="Amazon.S3\Model\GetObjectResponse.async.cs" />
+    <Compile Include="Amazon.S3\Transfer\Internal\BaseCommand.async.cs" />
+    <Compile Include="Amazon.S3\Transfer\Internal\AbortMultipartUploadsCommand.async.cs" />
+    <Compile Include="Amazon.S3\Transfer\Internal\DownloadCommand.async.cs" />
+    <Compile Include="Amazon.S3\Transfer\Internal\DownloadDirectoryCommand.async.bcl45.cs" />
+    <Compile Include="Amazon.S3\Transfer\Internal\MultipartUploadCommand.async.cs" />
+    <Compile Include="Amazon.S3\Transfer\Internal\OpenStreamCommand.async.cs" />
+    <Compile Include="Amazon.S3\Transfer\Internal\SimpleUploadCommand.async.cs" />
+    <Compile Include="Amazon.S3\Transfer\Internal\UploadDirectoryCommand.async.bcl45.cs" />
+    <Compile Include="Amazon.S3\Transfer\TransferUtility.async.bcl45.cs" />
     <Compile Include="Amazon.S3\Transfer\TransferUtility.async.cs" />
+    <Compile Include="Amazon.S3\Transfer\TransferUtility.sync.cs" />
     <Compile Include="Amazon.SecurityToken\AmazonSecurityTokenServiceClient.cs" />
     <Compile Include="Amazon.SecurityToken\IAmazonSecurityTokenService.cs" />
     <Compile Include="Amazon.SimpleDB\AmazonSimpleDBClient.cs" />
@@ -541,10 +552,10 @@
     <Compile Include="..\AWSSDK_DotNet35\Amazon.S3\Model\Internal\MarshallTransformations\*">
       <Visible>false</Visible>
     </Compile>
-    <Compile Include="..\AWSSDK_DotNet35\Amazon.S3\Transfer\*" Exclude="..\AWSSDK_DotNet35\Amazon.S3\Transfer\TransferUtility.async.cs;..\AWSSDK_DotNet35\Amazon.S3\Transfer\*.bcl35.cs">
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.S3\Transfer\*" Exclude="..\AWSSDK_DotNet35\Amazon.S3\Transfer\*.bcl35.cs">
       <Visible>false</Visible>
     </Compile>
-    <Compile Include="..\AWSSDK_DotNet35\Amazon.S3\Transfer\Internal\*">
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.S3\Transfer\Internal\*" Exclude="..\AWSSDK_DotNet35\Amazon.S3\Transfer\Internal\*.bcl35.cs">
       <Visible>false</Visible>
     </Compile>
     <Compile Include="..\AWSSDK_DotNet35\Amazon.S3\Util\*">

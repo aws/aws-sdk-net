@@ -30,19 +30,19 @@ namespace Amazon.CloudFront.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal CNAMEAlreadyExistsException(string message) 
+        public CNAMEAlreadyExistsException(string message) 
             : base(message) {}
           
-        internal CNAMEAlreadyExistsException(string message, Exception innerException) 
+        public CNAMEAlreadyExistsException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal CNAMEAlreadyExistsException(Exception innerException) 
+        public CNAMEAlreadyExistsException(Exception innerException) 
             : base(innerException) {}
             
-        internal CNAMEAlreadyExistsException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public CNAMEAlreadyExistsException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal CNAMEAlreadyExistsException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public CNAMEAlreadyExistsException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
 
         

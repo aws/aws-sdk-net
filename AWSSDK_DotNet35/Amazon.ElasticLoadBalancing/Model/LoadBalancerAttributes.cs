@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,10 +23,11 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// <summary>
     /// <para>The <c>LoadBalancerAttributes</c> data type.</para>
     /// </summary>
-    public class LoadBalancerAttributes
+    public partial class LoadBalancerAttributes
     {
         
         private CrossZoneLoadBalancing crossZoneLoadBalancing;
+        private AccessLog accessLog;
 
 
         /// <summary>
@@ -43,6 +44,22 @@ namespace Amazon.ElasticLoadBalancing.Model
         internal bool IsSetCrossZoneLoadBalancing()
         {
             return this.crossZoneLoadBalancing != null;
+        }
+
+        /// <summary>
+        /// The name of the load balancer attribute.
+        ///  
+        /// </summary>
+        public AccessLog AccessLog
+        {
+            get { return this.accessLog; }
+            set { this.accessLog = value; }
+        }
+
+        // Check to see if AccessLog property is set
+        internal bool IsSetAccessLog()
+        {
+            return this.accessLog != null;
         }
     }
 }

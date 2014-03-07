@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,19 +30,19 @@ namespace Amazon.ImportExport.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal MissingParameterException(string message) 
+        public MissingParameterException(string message) 
             : base(message) {}
           
-        internal MissingParameterException(string message, Exception innerException) 
+        public MissingParameterException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal MissingParameterException(Exception innerException) 
+        public MissingParameterException(Exception innerException) 
             : base(innerException) {}
             
-        internal MissingParameterException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public MissingParameterException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal MissingParameterException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public MissingParameterException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
 
         

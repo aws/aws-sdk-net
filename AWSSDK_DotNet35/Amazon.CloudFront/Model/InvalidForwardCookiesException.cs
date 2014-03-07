@@ -30,19 +30,19 @@ namespace Amazon.CloudFront.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal InvalidForwardCookiesException(string message) 
+        public InvalidForwardCookiesException(string message) 
             : base(message) {}
           
-        internal InvalidForwardCookiesException(string message, Exception innerException) 
+        public InvalidForwardCookiesException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal InvalidForwardCookiesException(Exception innerException) 
+        public InvalidForwardCookiesException(Exception innerException) 
             : base(innerException) {}
             
-        internal InvalidForwardCookiesException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public InvalidForwardCookiesException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal InvalidForwardCookiesException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public InvalidForwardCookiesException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
 
         

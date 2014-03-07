@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,19 +30,19 @@ namespace Amazon.RDS.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal InvalidDBSnapshotStateException(string message) 
+        public InvalidDBSnapshotStateException(string message) 
             : base(message) {}
           
-        internal InvalidDBSnapshotStateException(string message, Exception innerException) 
+        public InvalidDBSnapshotStateException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal InvalidDBSnapshotStateException(Exception innerException) 
+        public InvalidDBSnapshotStateException(Exception innerException) 
             : base(innerException) {}
             
-        internal InvalidDBSnapshotStateException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public InvalidDBSnapshotStateException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal InvalidDBSnapshotStateException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public InvalidDBSnapshotStateException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
 
         

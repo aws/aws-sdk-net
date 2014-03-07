@@ -24,6 +24,7 @@ using System.Collections.Generic;
 using System.Text;
 
 using Amazon.S3.Model;
+using Amazon.Util;
 
 namespace Amazon.S3.Transfer
 {
@@ -32,12 +33,9 @@ namespace Amazon.S3.Transfer
     /// that can be set when making a this request with the 
     /// <c>TransferUtility</c> method.
     /// </summary>
-    public class TransferUtilityDownloadRequest : BaseDownloadRequest
+    public partial class TransferUtilityDownloadRequest : BaseDownloadRequest
     {
-
-        string _filePath;
-
-
+#if BCL
         /// <summary>
         /// 	Get or sets the file path location of where the
         /// 	downloaded Amazon S3 object will be written to.
@@ -45,22 +43,17 @@ namespace Amazon.S3.Transfer
         /// <value>
         /// 	The file path location of where the downloaded Amazon S3 object will be written to.
         /// </value>
-        public string FilePath
-        {
-            get { return this._filePath; }
-            set { this._filePath = value; }
-        }
+        public string FilePath { get; set; }
 
         /// <summary>
         /// Checks if FilePath property is set.
         /// </summary>
-        /// <returns>true if FilePath property is set.</returns>
+        /// <returns>True if FilePath property is set.</returns>
         internal bool IsSetFilePath()
         {
-            return !System.String.IsNullOrEmpty(this._filePath);
+            return !System.String.IsNullOrEmpty(this.FilePath);
         }
-
-
+#endif
         /// <summary>
         /// The event for WriteObjectProgressEvent notifications. All
         /// subscribers will be notified when a new progress
@@ -90,12 +83,13 @@ namespace Amazon.S3.Transfer
         /// </remarks>
         public event EventHandler<WriteObjectProgressArgs> WriteObjectProgressEvent;
 
-        internal EventHandler<WriteObjectProgressArgs> EventHandler
+        /// <summary>
+        /// Causes the WriteObjectProgressEvent event to be fired.
+        /// </summary>
+        /// <param name="progressArgs">Progress data for the stream being written to file.</param>        
+        internal void OnRaiseProgressEvent(WriteObjectProgressArgs progressArgs)
         {
-            get
-            {
-                return this.WriteObjectProgressEvent;
-            }
+            AWSSDKUtils.InvokeInBackground(WriteObjectProgressEvent, progressArgs, this);
         }
     }
 }

@@ -30,19 +30,19 @@ namespace Amazon.CloudFront.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal InvalidRelativePathException(string message) 
+        public InvalidRelativePathException(string message) 
             : base(message) {}
           
-        internal InvalidRelativePathException(string message, Exception innerException) 
+        public InvalidRelativePathException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal InvalidRelativePathException(Exception innerException) 
+        public InvalidRelativePathException(Exception innerException) 
             : base(innerException) {}
             
-        internal InvalidRelativePathException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public InvalidRelativePathException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal InvalidRelativePathException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public InvalidRelativePathException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
 
         

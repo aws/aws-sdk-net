@@ -25,10 +25,11 @@ using System.Text;
 
 using Amazon.S3;
 using Amazon.S3.Model;
+using System.Threading;
 
 namespace Amazon.S3.Transfer.Internal
 {
-    internal class DownloadCommand : BaseCommand
+    internal partial class DownloadCommand : BaseCommand
     {
         IAmazonS3 _s3Client;
         TransferUtilityDownloadRequest _request;
@@ -39,27 +40,33 @@ namespace Amazon.S3.Transfer.Internal
             this._request = request;
         }
 
-        public override void Execute()
+        private void ValidateRequest()
         {
             if (!this._request.IsSetBucketName())
             {
-                throw new InvalidOperationException("The bucketName Specified is null or empty!");
+                throw new InvalidOperationException("The BucketName specified is null or empty!");
             }
+#if BCL
             if (!this._request.IsSetFilePath())
             {
-                throw new InvalidOperationException("The filepath Specified is null or empty!");
+                throw new InvalidOperationException("The filepath specified is null or empty!");
             }
+#elif WIN_RT || WINDOWS_PHONE
+            if (!this._request.IsSetStorageFile())
+            {
+                throw new InvalidOperationException("The StorageFile specified is null or empty!");
+            }
+#endif
             if (!this._request.IsSetKey())
             {
-                throw new InvalidOperationException("The Key Specified is null or empty!");
+                throw new InvalidOperationException("The Key specified is null or empty!");
+            }
             }
 
-            GetObjectRequest getRequest = ConvertToGetObjectRequest(this._request);
-            using (GetObjectResponse response = this._s3Client.GetObject(getRequest))
+        void OnWriteObjectProgressEvent(object sender, WriteObjectProgressArgs e)
             {
-                response.WriteObjectProgressEvent += this._request.EventHandler;
-                response.WriteResponseStreamToFile(this._request.FilePath);
-            }
+            this._request.OnRaiseProgressEvent(e);
         }
     }
 }
+

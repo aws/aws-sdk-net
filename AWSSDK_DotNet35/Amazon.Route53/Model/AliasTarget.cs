@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,7 +25,7 @@ namespace Amazon.Route53.Model
     /// information and an example, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html" >Creating Alias
     /// Resource Record Sets</a> in the <i>Amazon Route 53 Developer Guide</i> </para> <para>. </para>
     /// </summary>
-    public class AliasTarget
+    public partial class AliasTarget
     {
         
         private string hostedZoneId;

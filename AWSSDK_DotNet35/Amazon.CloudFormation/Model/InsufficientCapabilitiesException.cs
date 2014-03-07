@@ -30,19 +30,19 @@ namespace Amazon.CloudFormation.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal InsufficientCapabilitiesException(string message) 
+        public InsufficientCapabilitiesException(string message) 
             : base(message) {}
           
-        internal InsufficientCapabilitiesException(string message, Exception innerException) 
+        public InsufficientCapabilitiesException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal InsufficientCapabilitiesException(Exception innerException) 
+        public InsufficientCapabilitiesException(Exception innerException) 
             : base(innerException) {}
             
-        internal InsufficientCapabilitiesException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public InsufficientCapabilitiesException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal InsufficientCapabilitiesException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public InsufficientCapabilitiesException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
 
         

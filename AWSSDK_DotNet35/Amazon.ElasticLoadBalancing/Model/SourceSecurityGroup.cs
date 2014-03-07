@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// Security Groups With Elastic Load Balancing</a> in the <i>Elastic Load Balancing Developer Guide</i> .
     /// </para>
     /// </summary>
-    public class SourceSecurityGroup
+    public partial class SourceSecurityGroup
     {
         
         private string ownerAlias;

@@ -30,19 +30,19 @@ namespace Amazon.CloudFront.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal TooManyStreamingDistributionCNAMEsException(string message) 
+        public TooManyStreamingDistributionCNAMEsException(string message) 
             : base(message) {}
           
-        internal TooManyStreamingDistributionCNAMEsException(string message, Exception innerException) 
+        public TooManyStreamingDistributionCNAMEsException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal TooManyStreamingDistributionCNAMEsException(Exception innerException) 
+        public TooManyStreamingDistributionCNAMEsException(Exception innerException) 
             : base(innerException) {}
             
-        internal TooManyStreamingDistributionCNAMEsException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public TooManyStreamingDistributionCNAMEsException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal TooManyStreamingDistributionCNAMEsException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public TooManyStreamingDistributionCNAMEsException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
 
         

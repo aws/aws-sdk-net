@@ -30,19 +30,19 @@ namespace Amazon.SecurityToken.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal PackedPolicyTooLargeException(string message) 
+        public PackedPolicyTooLargeException(string message) 
             : base(message) {}
           
-        internal PackedPolicyTooLargeException(string message, Exception innerException) 
+        public PackedPolicyTooLargeException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal PackedPolicyTooLargeException(Exception innerException) 
+        public PackedPolicyTooLargeException(Exception innerException) 
             : base(innerException) {}
             
-        internal PackedPolicyTooLargeException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public PackedPolicyTooLargeException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal PackedPolicyTooLargeException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public PackedPolicyTooLargeException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
 
         

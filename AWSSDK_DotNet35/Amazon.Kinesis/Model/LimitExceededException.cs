@@ -30,19 +30,19 @@ namespace Amazon.Kinesis.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal LimitExceededException(string message) 
+        public LimitExceededException(string message) 
             : base(message) {}
           
-        internal LimitExceededException(string message, Exception innerException) 
+        public LimitExceededException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal LimitExceededException(Exception innerException) 
+        public LimitExceededException(Exception innerException) 
             : base(innerException) {}
             
-        internal LimitExceededException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public LimitExceededException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal LimitExceededException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public LimitExceededException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
 
         

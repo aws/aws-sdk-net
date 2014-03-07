@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -24,7 +24,7 @@ namespace Amazon.Route53.Model
     /// <para>A complex type that contains an optional comment about your hosted zone. If you don't want to specify a comment, you can omit the
     /// <c>HostedZoneConfig</c> and <c>Comment</c> elements from the XML document.</para>
     /// </summary>
-    public class HostedZoneConfig
+    public partial class HostedZoneConfig
     {
         
         private string comment;

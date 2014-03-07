@@ -30,19 +30,19 @@ namespace Amazon.ImportExport.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal CreateJobQuotaExceededException(string message) 
+        public CreateJobQuotaExceededException(string message) 
             : base(message) {}
           
-        internal CreateJobQuotaExceededException(string message, Exception innerException) 
+        public CreateJobQuotaExceededException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal CreateJobQuotaExceededException(Exception innerException) 
+        public CreateJobQuotaExceededException(Exception innerException) 
             : base(innerException) {}
             
-        internal CreateJobQuotaExceededException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public CreateJobQuotaExceededException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal CreateJobQuotaExceededException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public CreateJobQuotaExceededException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
 
         

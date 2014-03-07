@@ -30,19 +30,19 @@ namespace Amazon.CloudFront.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal InconsistentQuantitiesException(string message) 
+        public InconsistentQuantitiesException(string message) 
             : base(message) {}
           
-        internal InconsistentQuantitiesException(string message, Exception innerException) 
+        public InconsistentQuantitiesException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal InconsistentQuantitiesException(Exception innerException) 
+        public InconsistentQuantitiesException(Exception innerException) 
             : base(innerException) {}
             
-        internal InconsistentQuantitiesException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public InconsistentQuantitiesException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal InconsistentQuantitiesException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public InconsistentQuantitiesException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
 
         

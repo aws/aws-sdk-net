@@ -23,8 +23,8 @@ namespace Amazon.Runtime
     /// </summary>
     public class AmazonClientException : Exception
     {
-        internal AmazonClientException(string message) : base(message) { }
+        public AmazonClientException(string message) : base(message) { }
 
-        internal AmazonClientException(string message, Exception innerException) : base(message, innerException) { }
+        public AmazonClientException(string message, Exception innerException) : base(message, innerException) { }
     }
 }

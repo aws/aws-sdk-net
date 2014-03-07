@@ -23,27 +23,27 @@ namespace Amazon.Kinesis
 {
     public class AmazonKinesisException : AmazonServiceException
     {
-        internal AmazonKinesisException(string message)
+        public AmazonKinesisException(string message)
             : base(message)
         {
         }
 
-        internal AmazonKinesisException(string message, Exception innerException)
+        public AmazonKinesisException(string message, Exception innerException)
             : base(message, innerException)
         {
         }
 
-        internal AmazonKinesisException(Exception innerException)
+        public AmazonKinesisException(Exception innerException)
             : base(innerException.Message, innerException)
         {
         }
 
-        internal AmazonKinesisException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
+        public AmazonKinesisException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
             : base(message, errorType, errorCode, requestId, statusCode)
         {
         }
 
-        internal AmazonKinesisException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
+        public AmazonKinesisException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
             : base(message, innerException, errorType, errorCode, requestId, statusCode)
         {
         }

@@ -29,7 +29,6 @@ using Amazon.Runtime.Internal.Util;
 
 using Amazon.S3.Model;
 using Amazon.S3.Util;
-using Amazon.S3.Encryption;
 using Amazon.Runtime;
 
 namespace Amazon.S3.Transfer.Internal
@@ -37,12 +36,8 @@ namespace Amazon.S3.Transfer.Internal
     /// <summary>
     /// The command to manage an upload using the S3 multipart API.
     /// </summary>
-    internal class MultipartUploadCommand : BaseCommand
+    internal partial class MultipartUploadCommand : BaseCommand
     {
-        readonly object COUNTER_LOCK = new object();
-        readonly object QUEUE_ACECSS_LOCK = new object();
-        readonly object WAIT_FOR_COMPLETION_LOCK = new object();
-
         IAmazonS3 _s3Client;
         long _partSize;
         int _totalNumberOfParts;
@@ -50,14 +45,11 @@ namespace Amazon.S3.Transfer.Internal
         TransferUtilityUploadRequest _fileTransporterRequest;
 
         List<UploadPartResponse> _uploadResponses = new List<UploadPartResponse>();
-        long _totalTransferredBytes = 0;
+        long _totalTransferredBytes;
         Queue<UploadPartRequest> _partsToUpload = new Queue<UploadPartRequest>();
 
 
         long _contentLength;
-        Thread[] _executedThreads;
-        UploadPartInvoker[] _invokers;
-
         static Logger _logger = Logger.GetLogger(typeof(TransferUtility));
 
         /// <summary>
@@ -82,8 +74,6 @@ namespace Amazon.S3.Transfer.Internal
             this._s3Client = s3Client;
             this._fileTransporterRequest = fileTransporterRequest;
             this._contentLength = this._fileTransporterRequest.ContentLength;
-
-
 
             if (fileTransporterRequest.IsSetPartSize())
                 this._partSize = fileTransporterRequest.PartSize;
@@ -132,17 +122,19 @@ namespace Amazon.S3.Transfer.Internal
                 string type = AmazonS3Util.MimeTypeFromExtension(ext);
                 return type;
             }
-
             return null;
         }
 
-
-        private void startInvokerPool()
+        private int CalculateConcurrentServiceRequests()
         {
             int threadCount;
-            if (this._fileTransporterRequest.IsSetFilePath() && !(_s3Client is AmazonS3EncryptionClient))
+            if (this._fileTransporterRequest.IsSetFilePath()
+#if BCL
+ && !(_s3Client is Amazon.S3.Encryption.AmazonS3EncryptionClient)
+#endif
+)
             {
-                threadCount = this._config.NumberOfUploadThreads;
+                threadCount = this._config.ConcurrentServiceRequests;
             }
             else
             {
@@ -153,28 +145,75 @@ namespace Amazon.S3.Transfer.Internal
             {
                 threadCount = this._totalNumberOfParts;
             }
-
-            this._executedThreads = new Thread[threadCount];
-            this._invokers = new UploadPartInvoker[threadCount];
-
-            for (int i = 0; i < threadCount; i++)
-            {
-                this._invokers[i] = new UploadPartInvoker(this);
-                Thread thread = new Thread(new ThreadStart(this._invokers[i].Execute));
-                thread.Name = "Uploader " + i;
-                thread.IsBackground = true;
-                this._executedThreads[i] = thread;
-                thread.Start();
-            }
+            return threadCount;
         }
 
-        /// <summary>
-        /// Runs the multipart upload.
-        /// </summary>
-        public override void Execute()
+        private CompleteMultipartUploadRequest ConstructCompleteMultipartUploadRequest(InitiateMultipartUploadResponse initResponse)
         {
+            var compRequest = new CompleteMultipartUploadRequest()
+            {
+                BucketName = this._fileTransporterRequest.BucketName,
+                Key = this._fileTransporterRequest.Key,
+                UploadId = initResponse.UploadId
+            };
+            compRequest.AddPartETags(this._uploadResponses);
+            compRequest.BeforeRequestEvent += this.RequestEventHandler;
+            return compRequest;
+        }
 
-            InitiateMultipartUploadRequest initRequest = new InitiateMultipartUploadRequest()
+        private UploadPartRequest ConstructUploadPartRequest(int partNumber, long filePosition, InitiateMultipartUploadResponse initResponse)
+        {
+            var uploadRequest = new UploadPartRequest()
+                    {
+                        BucketName = this._fileTransporterRequest.BucketName,
+                        Key = this._fileTransporterRequest.Key,
+                        UploadId = initResponse.UploadId,
+                        PartNumber = partNumber,
+                        PartSize = this._partSize,
+#if (BCL && !BCL45)
+                        Timeout = ClientConfig.GetTimeoutValue(this._config.DefaultTimeout, this._fileTransporterRequest.Timeout)
+#endif
+                    };
+
+#if BCL
+            if ((filePosition + this._partSize >= this._contentLength)
+                && _s3Client is Amazon.S3.Encryption.AmazonS3EncryptionClient
+
+                )
+            {
+                uploadRequest.IsLastPart = true;
+                uploadRequest.PartSize = 0;
+            }
+#endif
+
+            var progressHandler = new ProgressHandler(this.UploadPartProgressEventCallback);
+            uploadRequest.StreamUploadProgressCallback += progressHandler.OnTransferProgress;
+            uploadRequest.BeforeRequestEvent += this.RequestEventHandler;
+
+#if BCL
+            if (this._fileTransporterRequest.IsSetFilePath())
+            {
+                uploadRequest.FilePosition = filePosition;
+                uploadRequest.FilePath = this._fileTransporterRequest.FilePath;
+            }
+#elif WIN_RT || WINDOWS_PHONE
+            if (this._fileTransporterRequest.IsSetStorageFile())
+            {
+                uploadRequest.FilePosition = filePosition;
+                uploadRequest.StorageFile = this._fileTransporterRequest.StorageFile;
+            }
+#endif
+            else
+            {
+                uploadRequest.InputStream = this._fileTransporterRequest.InputStream;
+            }
+
+            return uploadRequest;
+        }
+
+        private InitiateMultipartUploadRequest ConstructInitiateMultipartUploadRequest()
+        {
+            var initRequest = new InitiateMultipartUploadRequest()
             {
                 BucketName = this._fileTransporterRequest.BucketName,
                 Key = this._fileTransporterRequest.Key,
@@ -190,230 +229,50 @@ namespace Amazon.S3.Transfer.Internal
             if (this._fileTransporterRequest.Headers != null && this._fileTransporterRequest.Headers.Count > 0)
                 initRequest.Headers = this._fileTransporterRequest.Headers;
 
-            InitiateMultipartUploadResponse initResponse = this._s3Client.InitiateMultipartUpload(initRequest);
-            _logger.DebugFormat("Initiated upload: {0}", initResponse.UploadId);
-
-            try
-            {
-                _logger.DebugFormat("Queue up the UploadPartRequests to be executed");
-
-                
-                long filePosition = 0;
-                for (int i = 1; filePosition < this._contentLength; i++)
-                {
-                    UploadPartRequest uploadRequest = new UploadPartRequest()
-                    {
-                        BucketName = this._fileTransporterRequest.BucketName,
-                        Key = this._fileTransporterRequest.Key,
-                        UploadId = initResponse.UploadId,
-                        PartNumber = i,
-                        PartSize = this._partSize,
-#if (BCL && !BCL45)
-                        Timeout = ClientConfig.GetTimeoutValue(this._config.DefaultTimeout,this._fileTransporterRequest.Timeout)
-#endif
-                    };
-
-                    if ((filePosition + this._partSize >= this._contentLength) && _s3Client is AmazonS3EncryptionClient)
-                    {
-                        uploadRequest.IsLastPart = true;
-                        uploadRequest.PartSize = 0;
-                    }
-
-                    uploadRequest.StreamUploadProgressCallback += this.uploadPartProgressEventCallback;
-                    uploadRequest.BeforeRequestEvent += this.RequestEventHandler;
-
-                    if (this._fileTransporterRequest.IsSetFilePath())
-                    {
-                        uploadRequest.FilePosition = filePosition;
-                        uploadRequest.FilePath = this._fileTransporterRequest.FilePath;
-                    }
-                    else
-                    {
-                        uploadRequest.InputStream = this._fileTransporterRequest.InputStream;
-                    }
-
-                    this._partsToUpload.Enqueue(uploadRequest);
-                    filePosition += this._partSize;
-                }
-
-                this._totalNumberOfParts = this._partsToUpload.Count;
-                _logger.DebugFormat("Starting threads to execute the {0} UploadPartRequests in the queue", this._totalNumberOfParts);
-                startInvokerPool();
-
-                _logger.DebugFormat("Waiting for threads to complete. ({0})", initResponse.UploadId);
-                waitTillAllThreadsComplete();
-
-                _logger.DebugFormat("Beginning completing multipart. ({0})", initResponse.UploadId);
-
-                CompleteMultipartUploadRequest compRequest = new CompleteMultipartUploadRequest()
-                {
-                    BucketName = this._fileTransporterRequest.BucketName,
-                    Key = this._fileTransporterRequest.Key,
-                    UploadId = initResponse.UploadId
-                };
-                compRequest.AddPartETags(this._uploadResponses);
-                compRequest.BeforeRequestEvent += this.RequestEventHandler;
-
-                this._s3Client.CompleteMultipartUpload(compRequest);
-                _logger.DebugFormat("Done completing multipart. ({0})", initResponse.UploadId);
-
-            }
-            catch (Exception e)
-            {
-                _logger.Error(e, "Exception while uploading. ({0})", initResponse.UploadId);
-                shutdown(initResponse.UploadId);
-                throw;
-            }
-            finally
-            {
-                if (this._fileTransporterRequest.InputStream != null && !this._fileTransporterRequest.IsSetFilePath() && this._fileTransporterRequest.AutoCloseStream)
-                {
-                    this._fileTransporterRequest.InputStream.Close();
-                }
-                if (_logger != null)
-                {
-                    _logger.Flush();
-                }
-            }
+            return initRequest;
         }
 
-        private void waitTillAllThreadsComplete()
+        private void UploadPartProgressEventCallback(object sender, UploadProgressArgs e)
         {
-            lock (this.WAIT_FOR_COMPLETION_LOCK)
-            {
-                while (this._uploadResponses.Count != this._totalNumberOfParts)
-                {
-                    Monitor.Wait(this.WAIT_FOR_COMPLETION_LOCK, 100);
+            long transferredBytes = Interlocked.Add(ref _totalTransferredBytes, e.IncrementTransferred - e.CompensationForRetry);
 
-                    // Look for any exceptions from the upload threads.
-                    foreach (UploadPartInvoker invoker in this._invokers)
-                    {
-                        checkForLastException(invoker);
-                    }
-                }
-            }
+            var progressArgs = new UploadProgressArgs(e.IncrementTransferred, transferredBytes, this._contentLength,
+                e.CompensationForRetry, this._fileTransporterRequest.FilePath);
+            this._fileTransporterRequest.OnRaiseProgressEvent(progressArgs);
+        }
+    }
+
+    internal class ProgressHandler
+    {
+        private StreamTransferProgressArgs _lastProgressArgs;
+        private EventHandler<UploadProgressArgs> _callback;
+
+        public ProgressHandler(EventHandler<UploadProgressArgs> callback)
+        {
+            if (callback == null)
+                throw new ArgumentNullException("callback");
+
+            _callback = callback;
         }
 
-        private static void checkForLastException(UploadPartInvoker invoker)
+        public void OnTransferProgress(object sender, StreamTransferProgressArgs e)
         {
-            if (invoker.LastException != null)
-                throw invoker.LastException;
-        }
+            var compensationForRetry = 0L;
 
-        private void shutdown(string uploadId)
-        {
-            // To get the AbortMultipartUpload the best chance of actually being able to 
-            // abort the upload look through the list of threads multiple times
-            // to make sure they have been successfully aborted.
-            bool anyAlive = true;
-            for (int i = 0; anyAlive && i < 5; i++)
+            if (_lastProgressArgs != null)
             {
-                anyAlive = false;
-                foreach (Thread thread in this._executedThreads)
+                if (_lastProgressArgs.TransferredBytes >= e.TransferredBytes)
                 {
-                    try
-                    {
-                        if (thread.IsAlive)
-                        {
-                            thread.Abort();
-                            anyAlive = true;
-                        }
-                    }
-                    catch { }
+                    // The request was retried
+                    compensationForRetry = _lastProgressArgs.TransferredBytes;
                 }
             }
 
-            try
-            {
-                this._s3Client.AbortMultipartUpload(new AbortMultipartUploadRequest()
-                {
-                    BucketName = this._fileTransporterRequest.BucketName,
-                    Key = this._fileTransporterRequest.Key,
-                    UploadId = uploadId
-                });
-            }
-            catch (Exception e)
-            {
-                _logger.InfoFormat("Error attempting to about multipart for key {0}: {1}", this._fileTransporterRequest.Key, e.Message);
-            }
-        }
+            var progressArgs = new UploadProgressArgs(e.IncrementTransferred, e.TransferredBytes, e.TotalBytes,
+            compensationForRetry, null);
+            _callback(this, progressArgs);
 
-        private void addResponse(UploadPartResponse response)
-        {
-            lock (this.WAIT_FOR_COMPLETION_LOCK)
-            {
-                this._uploadResponses.Add(response);
-            }
-        }
-
-        private void uploadPartProgressEventCallback(object sender, Amazon.Runtime.StreamTransferProgressArgs e)
-        {
-            lock (this.COUNTER_LOCK)
-            {
-                this._totalTransferredBytes += e.IncrementTransferred;
-            }
-
-            this._fileTransporterRequest.OnRaiseProgressEvent(e.IncrementTransferred, this._totalTransferredBytes, this._contentLength);
-        }
-
-        /// <summary>
-        /// Used as the ThreadStart for the threads doing the upload.
-        /// </summary>
-        class UploadPartInvoker
-        {
-            IAmazonS3 _s3Client;
-
-            MultipartUploadCommand _uploader;
-            Exception _lastException;
-
-            internal UploadPartInvoker(MultipartUploadCommand uploader)
-            {
-                this._uploader = uploader;
-                this._s3Client = this._uploader._s3Client;
-            }
-
-            internal Exception LastException
-            {
-                get { return this._lastException; }
-            }
-
-            private UploadPartRequest getNextPartRequest()
-            {
-                lock (this._uploader.QUEUE_ACECSS_LOCK)
-                {
-                    if (this._uploader._partsToUpload.Count == 0)
-                    {
-                        return null;
-                    }
-                    return this._uploader._partsToUpload.Dequeue();
-                }
-            }
-
-            internal void Execute()
-            {
-                UploadPartRequest request = null;
-                while ((request = getNextPartRequest()) != null)
-                {
-                    this._lastException = null;
-                    try
-                    {
-                        this._uploader.addResponse(this._s3Client.UploadPart(request));
-                    }
-                    catch (ThreadAbortException)
-                    {
-                        throw;
-                    }
-                    catch (Exception e)
-                    {
-                        this._lastException = e;
-                        lock (this._uploader.WAIT_FOR_COMPLETION_LOCK)
-                        {
-                            Monitor.Pulse(this._uploader.WAIT_FOR_COMPLETION_LOCK);
-                        }
-                        break;
-                    }
-                }
-            }
+            _lastProgressArgs = e;
         }
     }
 }

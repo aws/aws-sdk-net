@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,19 +30,19 @@ namespace Amazon.ImportExport.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal InvalidJobIdException(string message) 
+        public InvalidJobIdException(string message) 
             : base(message) {}
           
-        internal InvalidJobIdException(string message, Exception innerException) 
+        public InvalidJobIdException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal InvalidJobIdException(Exception innerException) 
+        public InvalidJobIdException(Exception innerException) 
             : base(innerException) {}
             
-        internal InvalidJobIdException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public InvalidJobIdException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal InvalidJobIdException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public InvalidJobIdException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
 
         

@@ -30,19 +30,19 @@ namespace Amazon.RDS.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal DBSubnetGroupNotAllowedException(string message) 
+        public DBSubnetGroupNotAllowedException(string message) 
             : base(message) {}
           
-        internal DBSubnetGroupNotAllowedException(string message, Exception innerException) 
+        public DBSubnetGroupNotAllowedException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal DBSubnetGroupNotAllowedException(Exception innerException) 
+        public DBSubnetGroupNotAllowedException(Exception innerException) 
             : base(innerException) {}
             
-        internal DBSubnetGroupNotAllowedException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public DBSubnetGroupNotAllowedException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal DBSubnetGroupNotAllowedException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public DBSubnetGroupNotAllowedException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
 
         

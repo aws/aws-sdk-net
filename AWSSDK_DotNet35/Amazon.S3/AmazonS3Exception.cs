@@ -23,32 +23,32 @@ namespace Amazon.S3
 {
     public class AmazonS3Exception : AmazonServiceException
     {
-        internal AmazonS3Exception(string message)
+        public AmazonS3Exception(string message)
             : base(message)
         {
         }
 
-        internal AmazonS3Exception(string message, Exception innerException)
+        public AmazonS3Exception(string message, Exception innerException)
             : base(message, innerException)
         {
         }
 
-        internal AmazonS3Exception(Exception innerException)
+        public AmazonS3Exception(Exception innerException)
             : base(innerException.Message, innerException)
         {
         }
 
-        internal AmazonS3Exception(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
+        public AmazonS3Exception(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
             : base(message, errorType, errorCode, requestId, statusCode)
         {
         }
 
-        internal AmazonS3Exception(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
+        public AmazonS3Exception(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
             : base(message, innerException, errorType, errorCode, requestId, statusCode)
         {
         }
 
-        internal AmazonS3Exception(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode, string amazonId2)
+        public AmazonS3Exception(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode, string amazonId2)
             : base(message, innerException, errorType, errorCode, requestId, statusCode)
         {
             this.AmazonId2 = amazonId2;

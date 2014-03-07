@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,19 +30,19 @@ namespace Amazon.CloudTrail.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal InvalidSnsTopicNameException(string message) 
+        public InvalidSnsTopicNameException(string message) 
             : base(message) {}
           
-        internal InvalidSnsTopicNameException(string message, Exception innerException) 
+        public InvalidSnsTopicNameException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal InvalidSnsTopicNameException(Exception innerException) 
+        public InvalidSnsTopicNameException(Exception innerException) 
             : base(innerException) {}
             
-        internal InvalidSnsTopicNameException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public InvalidSnsTopicNameException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal InvalidSnsTopicNameException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public InvalidSnsTopicNameException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
 
         

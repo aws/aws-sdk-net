@@ -30,19 +30,19 @@ namespace Amazon.Kinesis.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal ResourceInUseException(string message) 
+        public ResourceInUseException(string message) 
             : base(message) {}
           
-        internal ResourceInUseException(string message, Exception innerException) 
+        public ResourceInUseException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal ResourceInUseException(Exception innerException) 
+        public ResourceInUseException(Exception innerException) 
             : base(innerException) {}
             
-        internal ResourceInUseException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public ResourceInUseException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal ResourceInUseException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public ResourceInUseException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
 
         

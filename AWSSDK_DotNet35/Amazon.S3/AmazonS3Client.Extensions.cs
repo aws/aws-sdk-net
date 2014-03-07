@@ -32,6 +32,10 @@ using Amazon.Util;
 using Map = System.Collections.Generic.Dictionary<Amazon.S3.S3QueryParameter, string>;
 using System.Globalization;
 
+#if BCL45 || WIN_RT || WINDOWS_PHONE
+using System.Threading.Tasks;
+#endif
+
 namespace Amazon.S3
 {
     public partial class AmazonS3Client : AmazonWebServiceClient, IAmazonS3
@@ -393,7 +397,7 @@ namespace Amazon.S3
                         ext = Path.GetExtension(putObjectRequest.FilePath);
 #if WIN_RT || WINDOWS_PHONE
                     if(putObjectRequest.StorageFile != null)
-                        ext = putObjectRequest.StorageFile.FileType;
+                        ext = Path.GetExtension(putObjectRequest.StorageFile.Path);
 #endif
                     if (String.IsNullOrEmpty(ext) && putObjectRequest.IsSetKey())
                     {
@@ -418,31 +422,28 @@ namespace Amazon.S3
                 {
                     putObjectRequest.SetupForFilePath();
                 }
-                else if (null == putObjectRequest.InputStream)
-                {
-                    if (string.IsNullOrEmpty(putObjectRequest.Headers.ContentType))
-                        putObjectRequest.Headers.ContentType = "text/plain";
-
-                    var payload = Encoding.UTF8.GetBytes(putObjectRequest.ContentBody ?? "");
-                    //putObjectRequest.Headers[AWS4Signer.XAmzContentSha256] 
-                    //        = AWSSDKUtils.ToHex(AWS4Signer.ComputeHash(payload), true);
-                    putObjectRequest.InputStream = new MemoryStream(payload);
-                }
 #if WIN_RT || WINDOWS_PHONE
                 else if(putObjectRequest.StorageFile != null)
                 {
-                    var openAsyncTask = putObjectRequest.StorageFile.OpenAsync(Windows.Storage.FileAccessMode.Read);
-                    openAsyncTask.AsTask().Wait();
-                    var openAsyncResult = openAsyncTask.GetResults();
-
-                    putObjectRequest.InputStream = openAsyncResult.AsStreamForRead();
+                    putObjectRequest.InputStream = Task.Run(() =>
+                        putObjectRequest.StorageFile.OpenAsync(Windows.Storage.FileAccessMode.Read).AsTask())
+                        .Result.AsStreamForRead();
                     if (string.IsNullOrEmpty(putObjectRequest.Key))
                     {
                         putObjectRequest.Key = Path.GetFileName(putObjectRequest.StorageFile.Name);
                     }
                 }
 #endif
+                else if (null == putObjectRequest.InputStream)
+                {
+                    if (string.IsNullOrEmpty(putObjectRequest.Headers.ContentType))
+                        putObjectRequest.Headers.ContentType = "text/plain";
                
+                    var payload = Encoding.UTF8.GetBytes(putObjectRequest.ContentBody ?? "");
+                    //putObjectRequest.Headers[AWS4Signer.XAmzContentSha256] 
+                    //        = AWSSDKUtils.ToHex(AWS4Signer.ComputeHash(payload), true);
+                    putObjectRequest.InputStream = new MemoryStream(payload);
+                }
             }
 
             var putBucketRequest = request as PutBucketRequest;
@@ -491,15 +492,12 @@ namespace Amazon.S3
 #if WIN_RT || WINDOWS_PHONE
                 else if(uploadPartRequest.StorageFile != null)
                 {
-                    var openAsyncTask = uploadPartRequest.StorageFile.OpenAsync(Windows.Storage.FileAccessMode.Read);
-                    openAsyncTask.AsTask().Wait();
-                    var openAsyncResult = openAsyncTask.GetResults();
-
-                    uploadPartRequest.InputStream = openAsyncResult.AsStreamForRead();
+                    uploadPartRequest.InputStream = Task.Run(() =>
+                        uploadPartRequest.StorageFile.OpenAsync(Windows.Storage.FileAccessMode.Read).AsTask())
+                        .Result.AsStreamForRead();
                     uploadPartRequest.InputStream.Position = uploadPartRequest.FilePosition;
                 }
 #endif
-                
             }
 
             var initMultipartRequest = request as InitiateMultipartUploadRequest;

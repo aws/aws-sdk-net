@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -32,19 +32,19 @@ namespace Amazon.SimpleDB.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal RequestTimeoutException(string message) 
+        public RequestTimeoutException(string message) 
             : base(message) {}
           
-        internal RequestTimeoutException(string message, Exception innerException) 
+        public RequestTimeoutException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal RequestTimeoutException(Exception innerException) 
+        public RequestTimeoutException(Exception innerException) 
             : base(innerException) {}
             
-        internal RequestTimeoutException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public RequestTimeoutException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal RequestTimeoutException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public RequestTimeoutException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
 
         

@@ -30,19 +30,19 @@ namespace Amazon.CloudFront.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal CloudFrontOriginAccessIdentityAlreadyExistsException(string message) 
+        public CloudFrontOriginAccessIdentityAlreadyExistsException(string message) 
             : base(message) {}
           
-        internal CloudFrontOriginAccessIdentityAlreadyExistsException(string message, Exception innerException) 
+        public CloudFrontOriginAccessIdentityAlreadyExistsException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal CloudFrontOriginAccessIdentityAlreadyExistsException(Exception innerException) 
+        public CloudFrontOriginAccessIdentityAlreadyExistsException(Exception innerException) 
             : base(innerException) {}
             
-        internal CloudFrontOriginAccessIdentityAlreadyExistsException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public CloudFrontOriginAccessIdentityAlreadyExistsException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal CloudFrontOriginAccessIdentityAlreadyExistsException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public CloudFrontOriginAccessIdentityAlreadyExistsException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
 
         

@@ -41,14 +41,14 @@ namespace Amazon.S3.Transfer
     public partial class TransferUtilityConfig
     {
         long _minSizeBeforePartUpload = 16 * (long)Math.Pow(2, 20);
-        int _numberOfThreads;
+        int _concurrentServiceRequests;
 
         /// <summary>
         /// Default constructor.
         /// </summary>
         public TransferUtilityConfig()
         {
-            this.NumberOfUploadThreads = 10;
+            this.ConcurrentServiceRequests = 10;
         }
 
         /// <summary>
@@ -66,6 +66,27 @@ namespace Amazon.S3.Transfer
         }
 
         /// <summary>
+        /// This property determines how many active threads
+        /// or the number of concurrent asynchronous web requests 
+        /// will be used to upload/download the file .
+        /// The default value is 10.
+        /// </summary>
+        /// <remarks>
+        /// 	A value less than or equal to 0 will be silently ignored.
+        /// </remarks>
+        public int ConcurrentServiceRequests
+        {
+            get { return this._concurrentServiceRequests; }
+            set
+            {
+                if (value < 1)
+                    value = 1;
+
+                this._concurrentServiceRequests = value;
+            }
+        }
+
+        /// <summary>
         /// 	Gets or sets the number of executing threads.
         /// 	This property determines how many active threads will be used to upload 
         /// 	the file. The default value is 10 threads.
@@ -73,16 +94,11 @@ namespace Amazon.S3.Transfer
         /// <remarks>
         /// 	A value less than or equal to 0 will be silently ignored.
         /// </remarks>
+        [Obsolete("This property has been deprecated, use TransferUtilityConfig.ConcurrentServiceRequests instead.")]
         public int NumberOfUploadThreads
         {
-            get { return this._numberOfThreads; }
-            set
-            {
-                if (value < 1)
-                    value = 1;
-
-                this._numberOfThreads = value;
-            }
+            get { return this.ConcurrentServiceRequests; }
+            set { this.ConcurrentServiceRequests = value;}
         }
     }
 }

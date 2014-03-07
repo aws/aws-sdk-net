@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -24,7 +24,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// <para> This data type is used as a response element in the DescribeLoadBalancers action to describe the configuration of the back-end
     /// server. </para>
     /// </summary>
-    public class BackendServerDescription
+    public partial class BackendServerDescription
     {
         
         private int? instancePort;

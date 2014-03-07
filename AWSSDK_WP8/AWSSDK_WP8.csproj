@@ -277,6 +277,39 @@
     <Compile Include="..\AWSSDK_DotNet35\Amazon.S3\Model\Internal\MarshallTransformations\*">
       <Visible>false</Visible>
     </Compile>
+	<Compile Include="..\AWSSDK_DotNet35\Amazon.S3\Transfer\BaseDownloadRequest.cs">
+      <Visible>false</Visible>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.S3\Transfer\BaseUploadRequest.cs">
+      <Visible>false</Visible>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.S3\Transfer\TransferUtility.cs">
+      <Visible>false</Visible>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.S3\Transfer\TransferUtilityConfig.cs">
+      <Visible>false</Visible>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.S3\Transfer\TransferUtilityUploadRequest.cs">
+      <Visible>false</Visible>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.S3\Transfer\TransferUtilityDownloadRequest.cs">
+      <Visible>false</Visible>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.S3\Transfer\TransferUtilityOpenStreamRequest.cs">
+      <Visible>false</Visible>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet35\Amazon.S3\Transfer\Internal\*.cs" Exclude="..\AWSSDK_DotNet35\Amazon.S3\Transfer\Internal\*.bcl*.cs">
+      <Visible>false</Visible>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet45\Amazon.S3\Transfer\TransferUtility.async.cs">
+      <Visible>false</Visible>
+    </Compile>
+    <Compile Include="..\AWSSDK_DotNet45\Amazon.S3\Transfer\Internal\*.cs" Exclude="..\AWSSDK_DotNet45\Amazon.S3\Transfer\Internal\*.bcl45.cs">
+      <Visible>false</Visible>
+    </Compile>
+	<Compile Include="..\AWSSDK_WinRT\Amazon.S3\TransferUtility\*.cs">
+      <Visible>false</Visible>
+    </Compile>
     <Compile Include="..\AWSSDK_DotNet35\Amazon.S3\Util\AmazonS3Util.cs">
       <Visible>false</Visible>
     </Compile>

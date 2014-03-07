@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -48,6 +48,26 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
                     if (crossZoneLoadBalancing != null && crossZoneLoadBalancing.IsSetEnabled())
                     {
                         request.Parameters.Add("LoadBalancerAttributes.CrossZoneLoadBalancing.Enabled", StringUtils.FromBool(crossZoneLoadBalancing.Enabled));
+                    }
+                }
+                if (loadBalancerAttributes != null)
+                {
+                    AccessLog accessLog = loadBalancerAttributes.AccessLog;
+                    if (accessLog != null && accessLog.IsSetEnabled())
+                    {
+                        request.Parameters.Add("LoadBalancerAttributes.AccessLog.Enabled", StringUtils.FromBool(accessLog.Enabled));
+                    }
+                    if (accessLog != null && accessLog.IsSetS3BucketName())
+                    {
+                        request.Parameters.Add("LoadBalancerAttributes.AccessLog.S3BucketName", StringUtils.FromString(accessLog.S3BucketName));
+                    }
+                    if (accessLog != null && accessLog.IsSetEmitInterval())
+                    {
+                        request.Parameters.Add("LoadBalancerAttributes.AccessLog.EmitInterval", StringUtils.FromInt(accessLog.EmitInterval));
+                    }
+                    if (accessLog != null && accessLog.IsSetS3BucketPrefix())
+                    {
+                        request.Parameters.Add("LoadBalancerAttributes.AccessLog.S3BucketPrefix", StringUtils.FromString(accessLog.S3BucketPrefix));
                     }
                 }
             }

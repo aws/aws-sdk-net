@@ -23,27 +23,27 @@ namespace Amazon.CloudFront
 {
     public class AmazonCloudFrontException : AmazonServiceException
     {
-        internal AmazonCloudFrontException(string message)
+        public AmazonCloudFrontException(string message)
             : base(message)
         {
         }
 
-        internal AmazonCloudFrontException(string message, Exception innerException)
+        public AmazonCloudFrontException(string message, Exception innerException)
             : base(message, innerException)
         {
         }
 
-        internal AmazonCloudFrontException(Exception innerException)
+        public AmazonCloudFrontException(Exception innerException)
             : base(innerException.Message, innerException)
         {
         }
 
-        internal AmazonCloudFrontException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
+        public AmazonCloudFrontException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
             : base(message, errorType, errorCode, requestId, statusCode)
         {
         }
 
-        internal AmazonCloudFrontException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
+        public AmazonCloudFrontException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
             : base(message, innerException, errorType, errorCode, requestId, statusCode)
         {
         }

@@ -69,39 +69,6 @@ namespace Amazon.S3.Transfer
         /// <summary>
         /// 	Constructs a new <see cref="TransferUtility"/> class.
         /// </summary>
-        /// <remarks>
-        /// <para>
-        /// If a Timeout needs to be specified, use the constructor which takes an <see cref="Amazon.S3.AmazonS3Client"/> as a paramater.
-        /// Use an instance of <see cref="Amazon.S3.AmazonS3Client"/> constructed with an <see cref="Amazon.S3.AmazonS3Config"/> object with the Timeout specified. 
-        /// </para>        
-        /// </remarks>
-        public TransferUtility()
-            : this(new AmazonS3Client())
-        {
-            this._shouldDispose = true;
-        }
-
-        /// <summary>
-        /// 	Constructs a new <see cref="TransferUtility"/> class.
-        /// </summary>
-        /// <param name="region">
-        ///     The region to configure the transfer utility for.
-        /// </param>
-        /// <remarks>
-        /// <para>
-        /// If a Timeout needs to be specified, use the constructor which takes an <see cref="Amazon.S3.AmazonS3Client"/> as a paramater.
-        /// Use an instance of <see cref="Amazon.S3.AmazonS3Client"/> constructed with an <see cref="Amazon.S3.AmazonS3Config"/> object with the Timeout specified. 
-        /// </para>        
-        /// </remarks>
-        public TransferUtility(RegionEndpoint region)
-            : this(new AmazonS3Client(region))
-        {
-            this._shouldDispose = true;
-        }
-
-        /// <summary>
-        /// 	Constructs a new <see cref="TransferUtility"/> class.
-        /// </summary>
         /// <param name="awsAccessKeyId">
         /// 	The AWS Access Key ID.
         /// </param>
@@ -285,132 +252,46 @@ namespace Amazon.S3.Transfer
 
         #endregion
 
-        #region UploadDirectory
-
-
-        private void UploadDirectoryHelper(string directory, string bucketName)
-        {
-            TransferUtilityUploadDirectoryRequest request = new TransferUtilityUploadDirectoryRequest()
-            {
-                BucketName = bucketName,
-                Directory = directory
-            };
-            UploadDirectoryHelper(request);
-        }
-
-        private void UploadDirectoryHelper(string directory, string bucketName, string searchPattern, SearchOption searchOption)
-        {
-            TransferUtilityUploadDirectoryRequest request = new TransferUtilityUploadDirectoryRequest()
-            {
-                BucketName = bucketName,
-                Directory = directory,
-                SearchPattern = searchPattern,
-                SearchOption = searchOption
-            };
-            UploadDirectoryHelper(request);
-        }
-
-        private void UploadDirectoryHelper(TransferUtilityUploadDirectoryRequest request)
-        {
-            validate(request);
-            UploadDirectoryCommand command = new UploadDirectoryCommand(this, this._config, request);
-            command.Execute();
-        }
-
-        static void validate(TransferUtilityUploadDirectoryRequest request)
-        {
-            if (!request.IsSetDirectory())
-            {
-                throw new InvalidOperationException("Directory not specified");
-            }
-            if (!request.IsSetBucketName())
-            {
-                throw new InvalidOperationException("BucketName not specified");
-            }
-            if (!Directory.Exists(request.Directory))
-            {
-                throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture, "The directory {0} does not exists!",
-                    request.Directory));
-            }
-        }
-        #endregion
-
-        #region Upload
-
-        private void UploadHelper(string filePath, string bucketName)
+        private static TransferUtilityUploadRequest ConstructUploadRequest(string filePath, string bucketName)
         {
             if (string.IsNullOrEmpty(filePath))
             {
                 throw new ArgumentNullException("filePath");
             }
+#if BCL     // Validations for Win RT/Win Phone are done in GetUploadCommand method's call to validate.
             if (!File.Exists(filePath))
             {
                 throw new ArgumentException(string.Format(CultureInfo.InvariantCulture, "The file {0} does not exists!", filePath));
             }
-
-            TransferUtilityUploadRequest request = new TransferUtilityUploadRequest()
+#endif
+            return new TransferUtilityUploadRequest()
             {
                 BucketName = bucketName,
                 FilePath = filePath
             };
-
-            UploadHelper(request);
         }
 
-        /// <summary>
-        /// 	Uploads the specified file.  
-        /// 	Multiple threads are used to read the file and perform multiple uploads in parallel.  
-        /// 	For large uploads, the file will be divided and uploaded in parts using 
-        /// 	Amazon S3's multipart API.  The parts will be reassembled as one object in
-        /// 	Amazon S3.
-        /// </summary>
-        /// <param name="filePath">
-        /// 	The file path of the file to upload.
-        /// </param>
-        /// <param name="bucketName">
-        /// 	The target Amazon S3 bucket, that is, the name of the bucket to upload the file to.
-        /// </param>
-        /// <param name="key">
-        /// 	The key under which the Amazon S3 object is stored.
-        /// </param>
-        private void UploadHelper(string filePath, string bucketName, string key)
+        private static TransferUtilityUploadRequest ConstructUploadRequest(string filePath, string bucketName, string key)
         {
             if (string.IsNullOrEmpty(filePath))
             {
                 throw new ArgumentNullException("filePath");
             }
+#if BCL     // Validations for Win RT/Win Phone are done in GetUploadCommand method's call to validate.
             if (!File.Exists(filePath))
             {
                 throw new ArgumentException(string.Format(CultureInfo.InvariantCulture, "The file {0} does not exists!", filePath));
             }
-
-            TransferUtilityUploadRequest request = new TransferUtilityUploadRequest()
+# endif
+            return new TransferUtilityUploadRequest()
             {
                 BucketName = bucketName,
                 Key = key,
                 FilePath = filePath
             };
-
-            UploadHelper(request);
         }
 
-
-        /// <summary>
-        /// 	Uploads the contents of the specified stream.  
-        /// 	For large uploads, the file will be divided and uploaded in parts using 
-        /// 	Amazon S3's multipart API.  The parts will be reassembled as one object in
-        /// 	Amazon S3.
-        /// </summary>
-        /// <param name="stream">
-        /// 	The stream to read to obtain the content to upload.
-        /// </param>
-        /// <param name="bucketName">
-        /// 	The target Amazon S3 bucket, that is, the name of the bucket to upload the stream to.
-        /// </param>
-        /// <param name="key">
-        /// 	The key under which the Amazon S3 object is stored.
-        /// </param>
-        private void UploadHelper(Stream stream, string bucketName, string key)
+        private static TransferUtilityUploadRequest ConstructUploadRequest(Stream stream, string bucketName, string key)
         {
             if (stream == null)
             {
@@ -421,41 +302,31 @@ namespace Amazon.S3.Transfer
                 throw new ArgumentNullException("key");
             }
 
-            TransferUtilityUploadRequest request = new TransferUtilityUploadRequest()
+            return new TransferUtilityUploadRequest()
             {
                 BucketName = bucketName,
                 Key = key,
                 InputStream = stream
             };
-
-            UploadHelper(request);
         }
 
-        /// <summary>
-        /// 	Uploads the file or stream specified by the request.  
-        /// 	To track the progress of the upload,
-        /// 	add an event listener to the request's <c>UploadProgressEvent</c>.
-        /// 	For large uploads, the file will be divided and uploaded in parts using 
-        /// 	Amazon S3's multipart API.  The parts will be reassembled as one object in
-        /// 	Amazon S3.
-        /// </summary>
-        /// <param name="request">
-        /// 	Contains all the parameters required to upload to Amazon S3.
-        /// </param>
-        private void UploadHelper(TransferUtilityUploadRequest request)
+        internal BaseCommand GetUploadCommand(TransferUtilityUploadRequest request)
         {
             validate(request);
-            BaseCommand command;
-            if (request.ContentLength < this._config.MinSizeBeforePartUpload)
+
+            if (IsMultipartUpload(request))
             {
-                command = new SimpleUploadCommand(this._s3Client, this._config, request);
+                return new MultipartUploadCommand(this._s3Client, this._config, request);
             }
             else
             {
-                command = new MultipartUploadCommand(this._s3Client, this._config, request);
+                return new SimpleUploadCommand(this._s3Client, this._config, request);
+            }
             }
 
-            command.Execute();
+        bool IsMultipartUpload(TransferUtilityUploadRequest request)
+        {
+            return request.ContentLength >= this._config.MinSizeBeforePartUpload;
         }
 
         static void validate(TransferUtilityUploadRequest request)
@@ -469,104 +340,58 @@ namespace Amazon.S3.Transfer
             {
                 throw new InvalidOperationException("Please specify BucketName to PUT an object into Amazon S3.");
             }
-
+#if BCL
             if (!request.IsSetFilePath() &&
                 !request.IsSetInputStream())
             {
                 throw new InvalidOperationException(
                     "Please specify either a Filename or provide a Stream to PUT an object into Amazon S3.");
             }
+#elif WIN_RT || WINDOWS_PHONE
+            if (!request.IsSetFilePath() &&
+                !request.IsSetStorageFile() &&
+                !request.IsSetInputStream())
+            {
+                throw new InvalidOperationException(
+                    "Please specify either a StorageFile, FilePath or provide a Stream to PUT an object into Amazon S3.");
+            }
+#endif
             if (!request.IsSetKey())
             {
                 if (request.IsSetFilePath())
                 {
-                    request.Key = new FileInfo(request.FilePath).Name;
+                    request.Key = Path.GetFileName(request.FilePath);
                 }
+#if WIN_RT || WINDOWS_PHONE
+                else if (request.IsSetStorageFile())
+                {
+                    request.Key = request.StorageFile.Name;
+                }
+#endif
                 else
                 {
                     throw new ArgumentException(
                         "The Key property must be specified when using a Stream to upload into Amazon S3.");
                 }
             }
-
+#if BCL
             if (request.IsSetFilePath() && !File.Exists(request.FilePath))
                 throw new ArgumentException("The file indicated by the FilePath property does not exist!");
-        }
-        #endregion
-
-        #region OpenStream
-
-        private Stream OpenStreamHelper(string bucketName, string key)
+#elif WIN_RT || WINDOWS_PHONE
+            if (request.IsSetFilePath() && !request.IsSetStorageFile())
         {
-            TransferUtilityOpenStreamRequest request = new TransferUtilityOpenStreamRequest()
+                try
             {
-                BucketName = bucketName,
-                Key = key
-            };
-
-            return OpenStreamHelper(request);
+                    request.StorageFile = System.Threading.Tasks.Task.Run(() =>
+                        Windows.Storage.StorageFile.GetFileFromApplicationUriAsync(new Uri(request.FilePath)).AsTask()).Result;
         }
-
-
-        private Stream OpenStreamHelper(TransferUtilityOpenStreamRequest request)
+                catch (Exception exception)
         {
-            OpenStreamCommand command = new OpenStreamCommand(this._s3Client, request);
-            command.Execute();
-            return command.ResponseStream;
+                    throw new ArgumentException("An error occured while loading the file indicated by the FilePath property.", exception);
         }
-        #endregion
-
-        #region Download
-
-        private void DownloadHelper(string filePath, string bucketName, string key)
-        {
-            TransferUtilityDownloadRequest request = new TransferUtilityDownloadRequest()
-            {
-                BucketName = bucketName,
-                Key = key,
-                FilePath = filePath
-            };
-
-            DownloadHelper(request);
+        }
+#endif
         }
 
-        private void DownloadHelper(TransferUtilityDownloadRequest request)
-        {
-            BaseCommand command = new DownloadCommand(this._s3Client, request);
-            command.Execute();
-        }
-        #endregion
-
-        #region DownloadDirectory
-
-        private void DownloadDirectoryHelper(string bucketName, string s3Directory, string localDirectory)
-        {
-            TransferUtilityDownloadDirectoryRequest request = new TransferUtilityDownloadDirectoryRequest()
-            {
-                BucketName = bucketName,
-                S3Directory = s3Directory,
-                LocalDirectory = localDirectory
-            };
-
-
-            DownloadDirectoryHelper(request);
-        }
-
-        private void DownloadDirectoryHelper(TransferUtilityDownloadDirectoryRequest request)
-        {
-            BaseCommand command = new DownloadDirectoryCommand(this._s3Client, request);
-            command.Execute();
-        }
-        #endregion
-
-        #region AbortMultipartUploads
-
-        private void AbortMultipartUploadsHelper(string bucketName, DateTime initiatedDate)
-        {
-            BaseCommand command = new AbortMultipartUploadsCommand(this._s3Client, bucketName, initiatedDate);
-            command.Execute();
-        }
-
-        #endregion
     }
 }

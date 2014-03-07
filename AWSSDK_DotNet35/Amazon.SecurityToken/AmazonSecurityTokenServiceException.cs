@@ -23,27 +23,27 @@ namespace Amazon.SecurityToken
 {
     public class AmazonSecurityTokenServiceException : AmazonServiceException
     {
-        internal AmazonSecurityTokenServiceException(string message)
+        public AmazonSecurityTokenServiceException(string message)
             : base(message)
         {
         }
 
-        internal AmazonSecurityTokenServiceException(string message, Exception innerException)
+        public AmazonSecurityTokenServiceException(string message, Exception innerException)
             : base(message, innerException)
         {
         }
 
-        internal AmazonSecurityTokenServiceException(Exception innerException)
+        public AmazonSecurityTokenServiceException(Exception innerException)
             : base(innerException.Message, innerException)
         {
         }
 
-        internal AmazonSecurityTokenServiceException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
+        public AmazonSecurityTokenServiceException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
             : base(message, errorType, errorCode, requestId, statusCode)
         {
         }
 
-        internal AmazonSecurityTokenServiceException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
+        public AmazonSecurityTokenServiceException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
             : base(message, innerException, errorType, errorCode, requestId, statusCode)
         {
         }

@@ -30,19 +30,19 @@ namespace Amazon.CloudFront.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal NoSuchCloudFrontOriginAccessIdentityException(string message) 
+        public NoSuchCloudFrontOriginAccessIdentityException(string message) 
             : base(message) {}
           
-        internal NoSuchCloudFrontOriginAccessIdentityException(string message, Exception innerException) 
+        public NoSuchCloudFrontOriginAccessIdentityException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal NoSuchCloudFrontOriginAccessIdentityException(Exception innerException) 
+        public NoSuchCloudFrontOriginAccessIdentityException(Exception innerException) 
             : base(innerException) {}
             
-        internal NoSuchCloudFrontOriginAccessIdentityException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public NoSuchCloudFrontOriginAccessIdentityException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal NoSuchCloudFrontOriginAccessIdentityException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public NoSuchCloudFrontOriginAccessIdentityException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
 
         

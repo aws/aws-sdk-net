@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -27,6 +27,40 @@ namespace Amazon.ElasticLoadBalancing.Model
     public partial class ModifyLoadBalancerAttributesResult : AmazonWebServiceResponse
     {
         
+        private string loadBalancerName;
+        private LoadBalancerAttributes loadBalancerAttributes;
 
+
+        /// <summary>
+        /// The name of the load balancer.
+        ///  
+        /// </summary>
+        public string LoadBalancerName
+        {
+            get { return this.loadBalancerName; }
+            set { this.loadBalancerName = value; }
+        }
+
+        // Check to see if LoadBalancerName property is set
+        internal bool IsSetLoadBalancerName()
+        {
+            return this.loadBalancerName != null;
+        }
+
+        /// <summary>
+        /// The <c>LoadBalancerAttributes</c> data type.
+        ///  
+        /// </summary>
+        public LoadBalancerAttributes LoadBalancerAttributes
+        {
+            get { return this.loadBalancerAttributes; }
+            set { this.loadBalancerAttributes = value; }
+        }
+
+        // Check to see if LoadBalancerAttributes property is set
+        internal bool IsSetLoadBalancerAttributes()
+        {
+            return this.loadBalancerAttributes != null;
+        }
     }
 }

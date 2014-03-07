@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,19 +30,19 @@ namespace Amazon.Redshift.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal ClusterParameterGroupQuotaExceededException(string message) 
+        public ClusterParameterGroupQuotaExceededException(string message) 
             : base(message) {}
           
-        internal ClusterParameterGroupQuotaExceededException(string message, Exception innerException) 
+        public ClusterParameterGroupQuotaExceededException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal ClusterParameterGroupQuotaExceededException(Exception innerException) 
+        public ClusterParameterGroupQuotaExceededException(Exception innerException) 
             : base(innerException) {}
             
-        internal ClusterParameterGroupQuotaExceededException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public ClusterParameterGroupQuotaExceededException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal ClusterParameterGroupQuotaExceededException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public ClusterParameterGroupQuotaExceededException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
 
         

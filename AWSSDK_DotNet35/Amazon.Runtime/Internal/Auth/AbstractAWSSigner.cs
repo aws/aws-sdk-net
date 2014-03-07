@@ -41,7 +41,7 @@ namespace Amazon.Runtime.Internal.Auth
             } 
             catch (Exception e) 
             {
-                throw new SignatureException("Failed to generate signature: " + e.Message, e);
+                throw new Amazon.Runtime.SignatureException("Failed to generate signature: " + e.Message, e);
             }
         }
 
@@ -58,7 +58,7 @@ namespace Amazon.Runtime.Internal.Auth
             }
             catch (Exception e)
             {
-                throw new SignatureException("Failed to generate signature: " + e.Message, e);
+                throw new Amazon.Runtime.SignatureException("Failed to generate signature: " + e.Message, e);
             }
         }
 

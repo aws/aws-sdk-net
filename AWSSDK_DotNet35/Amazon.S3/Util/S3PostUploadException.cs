@@ -51,22 +51,22 @@ namespace Amazon.S3.Util
         /// <summary>
         /// The error code returned by S3
         /// </summary>
-        public string ErrorCode { get; internal set; }
+        public string ErrorCode { get; set; }
 
         /// <summary>
         /// The S3 request id
         /// </summary>
-        public string RequestId { get; internal set; }
+        public string RequestId { get; set; }
 
         /// <summary>
         /// The S3 host id
         /// </summary>
-        public string HostId { get; internal set; }
+        public string HostId { get; set; }
 
         /// <summary>
         /// The HTTP error status code returned by S3
         /// </summary>
-        public HttpStatusCode StatusCode { get; internal set; }
+        public HttpStatusCode StatusCode { get; set; }
 
         /// <summary>
         /// Additional information about the error
@@ -74,7 +74,7 @@ namespace Amazon.S3.Util
         /// <remarks>
         /// Some errors are accompanied by more specific information, which vary from error to error
         /// </remarks>
-        public IDictionary<string, string> ExtraFields { get; internal set; }
+        public IDictionary<string, string> ExtraFields { get; set; }
 
         /// <summary>
         /// Parse an S3 Error response and create an S3PostUploadException

@@ -30,19 +30,19 @@ namespace Amazon.ImportExport.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal UnableToUpdateJobIdException(string message) 
+        public UnableToUpdateJobIdException(string message) 
             : base(message) {}
           
-        internal UnableToUpdateJobIdException(string message, Exception innerException) 
+        public UnableToUpdateJobIdException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal UnableToUpdateJobIdException(Exception innerException) 
+        public UnableToUpdateJobIdException(Exception innerException) 
             : base(innerException) {}
             
-        internal UnableToUpdateJobIdException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public UnableToUpdateJobIdException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal UnableToUpdateJobIdException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public UnableToUpdateJobIdException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
 
         

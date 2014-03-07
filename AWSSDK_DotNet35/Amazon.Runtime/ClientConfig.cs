@@ -53,6 +53,7 @@ namespace Amazon.Runtime
         private bool readEntireResponse = false;
         private bool logResponse = false;
         private int bufferSize = AWSSDKUtils.DefaultBufferSize;
+        private long progressUpdateInterval = AWSSDKUtils.DefaultProgressUpdateInterval;
         private bool resignRetries = false;
         private ICredentials proxyCredentials;
         private bool logMetrics = AWSConfigs.LogMetrics;
@@ -241,6 +242,24 @@ namespace Amazon.Runtime
             get { return this.bufferSize; }
             set { this.bufferSize = value; }
         }
+
+        /// <summary>
+        /// <para>
+        /// Gets or sets the interval at which progress update events are raised
+        /// for upload operations. By default, the progress update events are 
+        /// raised at every 100KB of data transferred. 
+        /// </para>
+        /// <para>
+        /// If the value of this property is set less than ClientConfig.BufferSize, 
+        /// progress updates events will be raised at the interval specified by ClientConfig.BufferSize.
+        /// </para>
+        /// </summary>
+        public long ProgressUpdateInterval
+        {
+            get { return progressUpdateInterval; }
+            set { progressUpdateInterval = value; }
+        }
+        
 
         /// <summary>
         /// Flag on whether to resign requests on retry or not.

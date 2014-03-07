@@ -29,9 +29,11 @@ using Amazon.Util;
 
 namespace Amazon.S3.Transfer.Internal
 {
-    internal abstract class BaseCommand
+    internal abstract partial class BaseCommand
     {
+#if BCL && !BCL45
         public abstract void Execute();
+#endif 
 
         public virtual object Return
         {

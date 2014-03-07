@@ -30,19 +30,19 @@ namespace Amazon.CloudFront.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal TrustedSignerDoesNotExistException(string message) 
+        public TrustedSignerDoesNotExistException(string message) 
             : base(message) {}
           
-        internal TrustedSignerDoesNotExistException(string message, Exception innerException) 
+        public TrustedSignerDoesNotExistException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal TrustedSignerDoesNotExistException(Exception innerException) 
+        public TrustedSignerDoesNotExistException(Exception innerException) 
             : base(innerException) {}
             
-        internal TrustedSignerDoesNotExistException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public TrustedSignerDoesNotExistException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal TrustedSignerDoesNotExistException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public TrustedSignerDoesNotExistException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
 
         

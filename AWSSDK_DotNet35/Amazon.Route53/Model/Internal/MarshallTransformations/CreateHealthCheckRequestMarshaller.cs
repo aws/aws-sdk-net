@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -110,6 +110,14 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                 if (healthCheckConfigHealthCheckConfig.IsSetSearchString()) 
                 {
                     xmlWriter.WriteElementString("SearchString", "https://route53.amazonaws.com/doc/2013-04-01/", healthCheckConfigHealthCheckConfig.SearchString.ToString(CultureInfo.InvariantCulture));
+                  }
+                if (healthCheckConfigHealthCheckConfig.IsSetRequestInterval()) 
+                {
+                    xmlWriter.WriteElementString("RequestInterval", "https://route53.amazonaws.com/doc/2013-04-01/", healthCheckConfigHealthCheckConfig.RequestInterval.ToString(CultureInfo.InvariantCulture));
+                  }
+                if (healthCheckConfigHealthCheckConfig.IsSetFailureThreshold()) 
+                {
+                    xmlWriter.WriteElementString("FailureThreshold", "https://route53.amazonaws.com/doc/2013-04-01/", healthCheckConfigHealthCheckConfig.FailureThreshold.ToString(CultureInfo.InvariantCulture));
                   }
                 xmlWriter.WriteEndElement();
             }

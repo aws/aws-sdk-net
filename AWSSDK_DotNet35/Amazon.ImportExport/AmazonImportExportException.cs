@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,27 +23,27 @@ namespace Amazon.ImportExport
 {
     public class AmazonImportExportException : AmazonServiceException
     {
-        internal AmazonImportExportException(string message)
+        public AmazonImportExportException(string message)
             : base(message)
         {
         }
 
-        internal AmazonImportExportException(string message, Exception innerException)
+        public AmazonImportExportException(string message, Exception innerException)
             : base(message, innerException)
         {
         }
 
-        internal AmazonImportExportException(Exception innerException)
+        public AmazonImportExportException(Exception innerException)
             : base(innerException.Message, innerException)
         {
         }
 
-        internal AmazonImportExportException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
+        public AmazonImportExportException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
             : base(message, errorType, errorCode, requestId, statusCode)
         {
         }
 
-        internal AmazonImportExportException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
+        public AmazonImportExportException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
             : base(message, innerException, errorType, errorCode, requestId, statusCode)
         {
         }

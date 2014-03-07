@@ -30,19 +30,19 @@ namespace Amazon.Kinesis.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal ExpiredIteratorException(string message) 
+        public ExpiredIteratorException(string message) 
             : base(message) {}
           
-        internal ExpiredIteratorException(string message, Exception innerException) 
+        public ExpiredIteratorException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal ExpiredIteratorException(Exception innerException) 
+        public ExpiredIteratorException(Exception innerException) 
             : base(innerException) {}
             
-        internal ExpiredIteratorException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public ExpiredIteratorException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal ExpiredIteratorException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public ExpiredIteratorException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
 
         

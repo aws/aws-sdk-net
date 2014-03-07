@@ -22,6 +22,7 @@ using Windows.Storage;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
+using System.Threading.Tasks;
 
 namespace Amazon.S3.Model
 {
@@ -45,14 +46,12 @@ namespace Amazon.S3.Model
 
         internal void SetupForFilePath()
         {
-            var getTask = Windows.Storage.StorageFile.GetFileFromApplicationUriAsync(new Uri(this.FilePath));
-            getTask.AsTask().Wait();
-            var storageFile = getTask.GetResults();
+            var storageFile = Task.Run(
+                () => Windows.Storage.StorageFile.GetFileFromApplicationUriAsync(new Uri(this.FilePath)).AsTask()
+                ).Result;
 
-            var openTask = storageFile.OpenAsync(Windows.Storage.FileAccessMode.Read);
-            openTask.AsTask().Wait();
-
-            this.InputStream = openTask.GetResults().AsStreamForRead();
+            this.InputStream = Task.Run(
+                () => storageFile.OpenAsync(Windows.Storage.FileAccessMode.Read).AsTask()).Result.AsStreamForRead();
 
             if (string.IsNullOrEmpty(this.Key))
             {

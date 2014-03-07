@@ -30,19 +30,19 @@ namespace Amazon.SecurityToken.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal IDPRejectedClaimException(string message) 
+        public IDPRejectedClaimException(string message) 
             : base(message) {}
           
-        internal IDPRejectedClaimException(string message, Exception innerException) 
+        public IDPRejectedClaimException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal IDPRejectedClaimException(Exception innerException) 
+        public IDPRejectedClaimException(Exception innerException) 
             : base(innerException) {}
             
-        internal IDPRejectedClaimException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public IDPRejectedClaimException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal IDPRejectedClaimException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public IDPRejectedClaimException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
 
         

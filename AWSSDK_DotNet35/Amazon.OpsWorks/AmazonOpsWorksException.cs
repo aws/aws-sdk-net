@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,27 +23,27 @@ namespace Amazon.OpsWorks
 {
     public class AmazonOpsWorksException : AmazonServiceException
     {
-        internal AmazonOpsWorksException(string message)
+        public AmazonOpsWorksException(string message)
             : base(message)
         {
         }
 
-        internal AmazonOpsWorksException(string message, Exception innerException)
+        public AmazonOpsWorksException(string message, Exception innerException)
             : base(message, innerException)
         {
         }
 
-        internal AmazonOpsWorksException(Exception innerException)
+        public AmazonOpsWorksException(Exception innerException)
             : base(innerException.Message, innerException)
         {
         }
 
-        internal AmazonOpsWorksException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
+        public AmazonOpsWorksException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
             : base(message, errorType, errorCode, requestId, statusCode)
         {
         }
 
-        internal AmazonOpsWorksException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
+        public AmazonOpsWorksException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode)
             : base(message, innerException, errorType, errorCode, requestId, statusCode)
         {
         }

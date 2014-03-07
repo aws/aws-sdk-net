@@ -30,19 +30,19 @@ namespace Amazon.CloudTrail.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal InternalErrorException(string message) 
+        public InternalErrorException(string message) 
             : base(message) {}
           
-        internal InternalErrorException(string message, Exception innerException) 
+        public InternalErrorException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal InternalErrorException(Exception innerException) 
+        public InternalErrorException(Exception innerException) 
             : base(innerException) {}
             
-        internal InternalErrorException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public InternalErrorException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal InternalErrorException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public InternalErrorException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
 
         

@@ -30,19 +30,19 @@ namespace Amazon.CloudFront.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal InvalidErrorCodeException(string message) 
+        public InvalidErrorCodeException(string message) 
             : base(message) {}
           
-        internal InvalidErrorCodeException(string message, Exception innerException) 
+        public InvalidErrorCodeException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal InvalidErrorCodeException(Exception innerException) 
+        public InvalidErrorCodeException(Exception innerException) 
             : base(innerException) {}
             
-        internal InvalidErrorCodeException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public InvalidErrorCodeException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal InvalidErrorCodeException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public InvalidErrorCodeException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
 
         

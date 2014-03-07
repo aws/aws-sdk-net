@@ -38,7 +38,7 @@ namespace Amazon.Util
         internal const string DefaultRegion = "us-east-1";
         internal const string DefaultGovRegion = "us-gov-west-1";
 
-        internal const string SDKVersionNumber = "2.0.10.0";
+        internal const string SDKVersionNumber = "2.0.11.0";
 
         internal const string IfModifiedSinceHeader = "IfModifiedSince";
         internal const string IfMatchHeader = "If-Match";
@@ -55,6 +55,9 @@ namespace Amazon.Util
         private static readonly DateTime EPOCH_START = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
 
         internal const int DefaultBufferSize = 8192;
+
+        // Default value of progress update interval for streaming is 100KB.
+        internal const long DefaultProgressUpdateInterval = 102400;
 
         internal static Dictionary<int, string> RFCEncodingSchemes = new Dictionary<int, string>
         {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -34,7 +34,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// 
     /// </ul>
     /// <para>For information about the AWS regions supported by Elastic Load Balancing, see <a
-    /// href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elb_region" >Regions and Endpoints</a> .</para> <para>You can create up to 10
+    /// href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elb_region" >Regions and Endpoints</a> .</para> <para>You can create up to 20
     /// load balancers per region per account.</para> <para>Elastic Load Balancing supports load balancing your Amazon EC2 instances launched within
     /// any one of the following platforms:</para>
     /// <ul>

@@ -30,19 +30,19 @@ namespace Amazon.CloudFront.Model
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        internal NoSuchOriginException(string message) 
+        public NoSuchOriginException(string message) 
             : base(message) {}
           
-        internal NoSuchOriginException(string message, Exception innerException) 
+        public NoSuchOriginException(string message, Exception innerException) 
             : base(message, innerException) {}
             
-        internal NoSuchOriginException(Exception innerException) 
+        public NoSuchOriginException(Exception innerException) 
             : base(innerException) {}
             
-        internal NoSuchOriginException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public NoSuchOriginException(string message, Exception innerException, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, RequestId, statusCode) {}
 
-        internal NoSuchOriginException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
+        public NoSuchOriginException(string message, ErrorType errorType, string errorCode, string RequestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, RequestId, statusCode) {}
 
         
