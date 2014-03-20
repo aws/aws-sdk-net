@@ -23,7 +23,7 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// <para> A complex type that identifies ways in which you want to restrict distribution of your content. </para>
     /// </summary>
-    public class Restrictions
+    public partial class Restrictions
     {
         
         private GeoRestriction geoRestriction;

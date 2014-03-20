@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,56 +30,26 @@
       {
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-          DescribeServicesResponse response = new DescribeServicesResponse();          
+            DescribeServicesResponse response = new DescribeServicesResponse();       
           
-          context.Read();
-          
-          UnmarshallResult(context,response);
-          return response;
-        }
-        
-        private static void UnmarshallResult(JsonUnmarshallerContext context,DescribeServicesResponse response)
-        {
-          
-            int originalDepth = context.CurrentDepth;
-            int targetDepth = originalDepth + 1;
-            while (context.Read())
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
             {
               
               if (context.TestExpression("services", targetDepth))
               {
-                context.Read();
                 
-                if (context.CurrentTokenType == JsonToken.Null)
-                {
-                    response.Services = null;
-                    continue;
-                }
-                  response.Services = new List<Service>();
-                  ServiceUnmarshaller unmarshaller = ServiceUnmarshaller.GetInstance();
-                while (context.Read())
-                {
-                  JsonToken token = context.CurrentTokenType;                
-                  if (token == JsonToken.ArrayStart)
-                  {
-                    continue;
-                  }
-                  if (token == JsonToken.ArrayEnd)
-                  {
-                    break;
-                  }
-                   response.Services.Add(unmarshaller.Unmarshall(context));
-                }
+                var unmarshaller = new ListUnmarshaller<Service,ServiceUnmarshaller>(
+                    ServiceUnmarshaller.GetInstance());                  
+                response.Services = unmarshaller.Unmarshall(context);
+                
                 continue;
               }
   
-                if (context.CurrentDepth <= originalDepth)
-                {                   
-                    return;
-                }
             }
                         
-            return;
+            return response;
         }                        
         
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)

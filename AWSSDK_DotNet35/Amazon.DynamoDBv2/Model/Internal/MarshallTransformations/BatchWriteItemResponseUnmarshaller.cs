@@ -30,106 +30,46 @@
       {
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-          BatchWriteItemResponse response = new BatchWriteItemResponse();          
+            BatchWriteItemResponse response = new BatchWriteItemResponse();       
           
-          context.Read();
-          
-          UnmarshallResult(context,response);
-          return response;
-        }
-        
-        private static void UnmarshallResult(JsonUnmarshallerContext context,BatchWriteItemResponse response)
-        {
-          
-            int originalDepth = context.CurrentDepth;
-            int targetDepth = originalDepth + 1;
-            while (context.Read())
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
             {
               
               if (context.TestExpression("UnprocessedItems", targetDepth))
               {
-                context.Read();
-                response.UnprocessedItems = new Dictionary<String,List<WriteRequest>>();
-                if (context.CurrentTokenType == JsonToken.Null)
-                {
-                    continue;
-                }
-                KeyValueUnmarshaller<string, List<WriteRequest>, StringUnmarshaller, ListUnmarshaller<WriteRequest, WriteRequestUnmarshaller>> unmarshaller = new KeyValueUnmarshaller<string, List<WriteRequest>, StringUnmarshaller, ListUnmarshaller<WriteRequest, WriteRequestUnmarshaller>>(StringUnmarshaller.GetInstance(), new ListUnmarshaller<WriteRequest, WriteRequestUnmarshaller>(WriteRequestUnmarshaller.GetInstance()));
-                while (context.Read())
-                {
-                  JsonToken token = context.CurrentTokenType;
-                  if (token == JsonToken.ArrayStart || token == JsonToken.ObjectStart)
-                  {
-                      continue;
-                  }
-                  if (token == JsonToken.ArrayEnd || token == JsonToken.ObjectEnd)
-                  {
-                      break;
-                  }
-                  KeyValuePair<string, List<WriteRequest>> kvp = unmarshaller.Unmarshall(context);
-                    response.UnprocessedItems.Add(kvp.Key, kvp.Value);
-                }
+                
+                var unmarshaller =  new DictionaryUnmarshaller<String,List<WriteRequest>,StringUnmarshaller,ListUnmarshaller<WriteRequest, WriteRequestUnmarshaller>>(
+                    StringUnmarshaller.GetInstance(),new ListUnmarshaller<WriteRequest, WriteRequestUnmarshaller>(WriteRequestUnmarshaller.GetInstance()));               
+                response.UnprocessedItems = unmarshaller.Unmarshall(context);
+                
                 continue;
               }
   
               if (context.TestExpression("ItemCollectionMetrics", targetDepth))
               {
-                context.Read();
-                response.ItemCollectionMetrics = new Dictionary<String,List<ItemCollectionMetrics>>();
-                if (context.CurrentTokenType == JsonToken.Null)
-                {
-                    continue;
-                }
-                KeyValueUnmarshaller<string, List<ItemCollectionMetrics>, StringUnmarshaller, ListUnmarshaller<ItemCollectionMetrics, ItemCollectionMetricsUnmarshaller>> unmarshaller = new KeyValueUnmarshaller<string, List<ItemCollectionMetrics>, StringUnmarshaller, ListUnmarshaller<ItemCollectionMetrics, ItemCollectionMetricsUnmarshaller>>(StringUnmarshaller.GetInstance(), new ListUnmarshaller<ItemCollectionMetrics, ItemCollectionMetricsUnmarshaller>(ItemCollectionMetricsUnmarshaller.GetInstance()));
-                while (context.Read())
-                {
-                  JsonToken token = context.CurrentTokenType;
-                  if (token == JsonToken.ArrayStart || token == JsonToken.ObjectStart)
-                  {
-                      continue;
-                  }
-                  if (token == JsonToken.ArrayEnd || token == JsonToken.ObjectEnd)
-                  {
-                      break;
-                  }
-                  KeyValuePair<string, List<ItemCollectionMetrics>> kvp = unmarshaller.Unmarshall(context);
-                    response.ItemCollectionMetrics.Add(kvp.Key, kvp.Value);
-                }
+                
+                var unmarshaller =  new DictionaryUnmarshaller<String,List<ItemCollectionMetrics>,StringUnmarshaller,ListUnmarshaller<ItemCollectionMetrics, ItemCollectionMetricsUnmarshaller>>(
+                    StringUnmarshaller.GetInstance(),new ListUnmarshaller<ItemCollectionMetrics, ItemCollectionMetricsUnmarshaller>(ItemCollectionMetricsUnmarshaller.GetInstance()));               
+                response.ItemCollectionMetrics = unmarshaller.Unmarshall(context);
+                
                 continue;
               }
   
               if (context.TestExpression("ConsumedCapacity", targetDepth))
               {
-                context.Read();
-                response.ConsumedCapacity = new List<ConsumedCapacity>();
-                if (context.CurrentTokenType == JsonToken.Null)
-                {
-                    continue;
-                }
-                  ConsumedCapacityUnmarshaller unmarshaller = ConsumedCapacityUnmarshaller.GetInstance();
-                while (context.Read())
-                {
-                  JsonToken token = context.CurrentTokenType;                
-                  if (token == JsonToken.ArrayStart)
-                  {
-                    continue;
-                  }
-                  if (token == JsonToken.ArrayEnd)
-                  {
-                    break;
-                  }
-                   response.ConsumedCapacity.Add(unmarshaller.Unmarshall(context));
-                }
+                
+                var unmarshaller = new ListUnmarshaller<ConsumedCapacity,ConsumedCapacityUnmarshaller>(
+                    ConsumedCapacityUnmarshaller.GetInstance());                  
+                response.ConsumedCapacity = unmarshaller.Unmarshall(context);
+                
                 continue;
               }
   
-                if (context.CurrentDepth <= originalDepth)
-                {                   
-                    return;
-                }
             }
                         
-            return;
+            return response;
         }                        
         
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)

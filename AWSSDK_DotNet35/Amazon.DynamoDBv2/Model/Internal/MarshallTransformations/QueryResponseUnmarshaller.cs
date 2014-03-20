@@ -30,94 +30,48 @@
       {
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-          QueryResponse response = new QueryResponse();          
+            QueryResponse response = new QueryResponse();       
           
-          context.Read();
-          
-          UnmarshallResult(context,response);
-          return response;
-        }
-        
-        private static void UnmarshallResult(JsonUnmarshallerContext context,QueryResponse response)
-        {
-          
-            int originalDepth = context.CurrentDepth;
-            int targetDepth = originalDepth + 1;
-            while (context.Read())
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
             {
               
               if (context.TestExpression("Items", targetDepth))
               {
-                context.Read();
-                response.Items = new List<Dictionary<string,AttributeValue>>();
-                if (context.CurrentTokenType == JsonToken.Null)
-                {
-                    continue;
-                }
-                  DictionaryUnmarshaller<string, AttributeValue, StringUnmarshaller, AttributeValueUnmarshaller> unmarshaller = new DictionaryUnmarshaller<string, AttributeValue, StringUnmarshaller, AttributeValueUnmarshaller>(StringUnmarshaller.GetInstance(),AttributeValueUnmarshaller.GetInstance());
-                while (context.Read())
-                {
-                  JsonToken token = context.CurrentTokenType;                
-                  if (token == JsonToken.ArrayStart)
-                  {
-                    continue;
-                  }
-                  if (token == JsonToken.ArrayEnd)
-                  {
-                    break;
-                  }
-                   response.Items.Add(unmarshaller.Unmarshall(context));
-                }
+                
+                var unmarshaller = new ListUnmarshaller<Dictionary<string,AttributeValue>,DictionaryUnmarshaller<string, AttributeValue, StringUnmarshaller, AttributeValueUnmarshaller>>(
+                    new DictionaryUnmarshaller<string, AttributeValue, StringUnmarshaller, AttributeValueUnmarshaller>(StringUnmarshaller.GetInstance(),AttributeValueUnmarshaller.GetInstance()));                  
+                response.Items = unmarshaller.Unmarshall(context);
+                
                 continue;
               }
   
               if (context.TestExpression("Count", targetDepth))
               {
-                context.Read();
                 response.Count = IntUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("LastEvaluatedKey", targetDepth))
               {
-                context.Read();
-                response.LastEvaluatedKey = new Dictionary<String,AttributeValue>();
-                if (context.CurrentTokenType == JsonToken.Null)
-                {
-                    continue;
-                }
-                KeyValueUnmarshaller<string, AttributeValue, StringUnmarshaller, AttributeValueUnmarshaller> unmarshaller = new KeyValueUnmarshaller<string, AttributeValue, StringUnmarshaller, AttributeValueUnmarshaller>(StringUnmarshaller.GetInstance(), AttributeValueUnmarshaller.GetInstance());
-                while (context.Read())
-                {
-                  JsonToken token = context.CurrentTokenType;
-                  if (token == JsonToken.ArrayStart || token == JsonToken.ObjectStart)
-                  {
-                      continue;
-                  }
-                  if (token == JsonToken.ArrayEnd || token == JsonToken.ObjectEnd)
-                  {
-                      break;
-                  }
-                  KeyValuePair<string, AttributeValue> kvp = unmarshaller.Unmarshall(context);
-                    response.LastEvaluatedKey.Add(kvp.Key, kvp.Value);
-                }
+                
+                var unmarshaller =  new DictionaryUnmarshaller<String,AttributeValue,StringUnmarshaller,AttributeValueUnmarshaller>(
+                    StringUnmarshaller.GetInstance(),AttributeValueUnmarshaller.GetInstance());               
+                response.LastEvaluatedKey = unmarshaller.Unmarshall(context);
+                
                 continue;
               }
   
               if (context.TestExpression("ConsumedCapacity", targetDepth))
               {
-                context.Read();
                 response.ConsumedCapacity = ConsumedCapacityUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
-                if (context.CurrentDepth <= originalDepth)
-                {                   
-                    return;
-                }
             }
                         
-            return;
+            return response;
         }                        
         
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)

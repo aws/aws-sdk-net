@@ -24,7 +24,7 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// Returns information about the  CreateDistribution response and response metadata.
     /// </summary>
-    public class CreateDistributionResponse : CreateDistributionResult
+    public partial class CreateDistributionResponse : CreateDistributionResult
     {
         /// <summary>
         /// Gets and sets the CreateDistributionResult property.

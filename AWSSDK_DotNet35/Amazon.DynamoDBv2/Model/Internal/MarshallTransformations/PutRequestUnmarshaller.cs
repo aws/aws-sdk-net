@@ -33,51 +33,27 @@
 
         public PutRequest Unmarshall(JsonUnmarshallerContext context)
         {
-            if (context.CurrentTokenType == JsonToken.Null)
-                return null;
-
+            context.Read();
+            if (context.CurrentTokenType == JsonToken.Null) return null;
             PutRequest putRequest = new PutRequest();
-
         
         
-            int originalDepth = context.CurrentDepth;
-            int targetDepth = originalDepth + 1;
-            while (context.Read())
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
             {
               
               if (context.TestExpression("Item", targetDepth))
               {
-                context.Read();
-                putRequest.Item = new Dictionary<String,AttributeValue>();
-                if (context.CurrentTokenType == JsonToken.Null)
-                {
-                    continue;
-                }
-                KeyValueUnmarshaller<string, AttributeValue, StringUnmarshaller, AttributeValueUnmarshaller> unmarshaller = new KeyValueUnmarshaller<string, AttributeValue, StringUnmarshaller, AttributeValueUnmarshaller>(StringUnmarshaller.GetInstance(), AttributeValueUnmarshaller.GetInstance());
-                while (context.Read())
-                {
-                  JsonToken token = context.CurrentTokenType;
-                  if (token == JsonToken.ArrayStart || token == JsonToken.ObjectStart)
-                  {
-                      continue;
-                  }
-                  if (token == JsonToken.ArrayEnd || token == JsonToken.ObjectEnd)
-                  {
-                      break;
-                  }
-                  KeyValuePair<string, AttributeValue> kvp = unmarshaller.Unmarshall(context);
-                    putRequest.Item.Add(kvp.Key, kvp.Value);
-                }
+                
+                var unmarshaller =  new DictionaryUnmarshaller<String,AttributeValue,StringUnmarshaller,AttributeValueUnmarshaller>(
+                    StringUnmarshaller.GetInstance(),AttributeValueUnmarshaller.GetInstance());               
+                putRequest.Item = unmarshaller.Unmarshall(context);
+                
                 continue;
               }
   
-                if (context.CurrentDepth <= originalDepth)
-                {
-                    return putRequest;
-                }
             }
           
-
             return putRequest;
         }
 

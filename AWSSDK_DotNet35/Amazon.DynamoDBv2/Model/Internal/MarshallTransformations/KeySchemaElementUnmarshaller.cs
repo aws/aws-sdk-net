@@ -33,39 +33,29 @@
 
         public KeySchemaElement Unmarshall(JsonUnmarshallerContext context)
         {
-            if (context.CurrentTokenType == JsonToken.Null)
-                return null;
-
+            context.Read();
+            if (context.CurrentTokenType == JsonToken.Null) return null;
             KeySchemaElement keySchemaElement = new KeySchemaElement();
-
         
         
-            int originalDepth = context.CurrentDepth;
-            int targetDepth = originalDepth + 1;
-            while (context.Read())
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
             {
               
               if (context.TestExpression("AttributeName", targetDepth))
               {
-                context.Read();
                 keySchemaElement.AttributeName = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("KeyType", targetDepth))
               {
-                context.Read();
                 keySchemaElement.KeyType = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
-                if (context.CurrentDepth <= originalDepth)
-                {
-                    return keySchemaElement;
-                }
             }
           
-
             return keySchemaElement;
         }
 

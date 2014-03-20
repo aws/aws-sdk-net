@@ -33,60 +33,47 @@
 
         public Shard Unmarshall(JsonUnmarshallerContext context)
         {
-            if (context.CurrentTokenType == JsonToken.Null)
-                return null;
-
+            context.Read();
+            if (context.CurrentTokenType == JsonToken.Null) return null;
             Shard shard = new Shard();
-
         
         
-            int originalDepth = context.CurrentDepth;
-            int targetDepth = originalDepth + 1;
-            while (context.Read())
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
             {
               
               if (context.TestExpression("ShardId", targetDepth))
               {
-                context.Read();
                 shard.ShardId = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("ParentShardId", targetDepth))
               {
-                context.Read();
                 shard.ParentShardId = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("AdjacentParentShardId", targetDepth))
               {
-                context.Read();
                 shard.AdjacentParentShardId = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("HashKeyRange", targetDepth))
               {
-                context.Read();
                 shard.HashKeyRange = HashKeyRangeUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("SequenceNumberRange", targetDepth))
               {
-                context.Read();
                 shard.SequenceNumberRange = SequenceNumberRangeUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
-                if (context.CurrentDepth <= originalDepth)
-                {
-                    return shard;
-                }
             }
           
-
             return shard;
         }
 

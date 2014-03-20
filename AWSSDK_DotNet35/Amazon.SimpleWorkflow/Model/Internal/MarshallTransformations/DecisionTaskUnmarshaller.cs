@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -33,88 +33,63 @@
 
         public DecisionTask Unmarshall(JsonUnmarshallerContext context)
         {
-            if (context.CurrentTokenType == JsonToken.Null)
-                return null;
-
+            context.Read();
+            if (context.CurrentTokenType == JsonToken.Null) return null;
             DecisionTask decisionTask = new DecisionTask();
-
         
         
-            int originalDepth = context.CurrentDepth;
-            int targetDepth = originalDepth + 1;
-            while (context.Read())
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
             {
               
               if (context.TestExpression("taskToken", targetDepth))
               {
-                context.Read();
                 decisionTask.TaskToken = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("startedEventId", targetDepth))
               {
-                context.Read();
                 decisionTask.StartedEventId = LongUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("workflowExecution", targetDepth))
               {
-                context.Read();
                 decisionTask.WorkflowExecution = WorkflowExecutionUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("workflowType", targetDepth))
               {
-                context.Read();
                 decisionTask.WorkflowType = WorkflowTypeUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("events", targetDepth))
               {
-                context.Read();
-                decisionTask.Events = new List<HistoryEvent>();
-                        HistoryEventUnmarshaller unmarshaller = HistoryEventUnmarshaller.GetInstance();
-                while (context.Read())
-                {
-                  JsonToken token = context.CurrentTokenType;                
-                  if (token == JsonToken.ArrayStart)
-                  {
-                    continue;
-                  }
-                  if (token == JsonToken.ArrayEnd)
-                  {
-                    break;
-                  }
-                   decisionTask.Events.Add(unmarshaller.Unmarshall(context));
-                }
+                
+                var unmarshaller = new ListUnmarshaller<HistoryEvent,HistoryEventUnmarshaller>(
+                    HistoryEventUnmarshaller.GetInstance());                  
+                decisionTask.Events = unmarshaller.Unmarshall(context);
+                
                 continue;
               }
   
               if (context.TestExpression("nextPageToken", targetDepth))
               {
-                context.Read();
                 decisionTask.NextPageToken = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("previousStartedEventId", targetDepth))
               {
-                context.Read();
                 decisionTask.PreviousStartedEventId = LongUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
-                if (context.CurrentDepth <= originalDepth)
-                {
-                    return decisionTask;
-                }
             }
           
-
             return decisionTask;
         }
 

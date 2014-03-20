@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -33,60 +33,47 @@
 
         public WorkflowExecutionDetail Unmarshall(JsonUnmarshallerContext context)
         {
-            if (context.CurrentTokenType == JsonToken.Null)
-                return null;
-
+            context.Read();
+            if (context.CurrentTokenType == JsonToken.Null) return null;
             WorkflowExecutionDetail workflowExecutionDetail = new WorkflowExecutionDetail();
-
         
         
-            int originalDepth = context.CurrentDepth;
-            int targetDepth = originalDepth + 1;
-            while (context.Read())
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
             {
               
               if (context.TestExpression("executionInfo", targetDepth))
               {
-                context.Read();
                 workflowExecutionDetail.ExecutionInfo = WorkflowExecutionInfoUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("executionConfiguration", targetDepth))
               {
-                context.Read();
                 workflowExecutionDetail.ExecutionConfiguration = WorkflowExecutionConfigurationUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("openCounts", targetDepth))
               {
-                context.Read();
                 workflowExecutionDetail.OpenCounts = WorkflowExecutionOpenCountsUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("latestActivityTaskTimestamp", targetDepth))
               {
-                context.Read();
                 workflowExecutionDetail.LatestActivityTaskTimestamp = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("latestExecutionContext", targetDepth))
               {
-                context.Read();
                 workflowExecutionDetail.LatestExecutionContext = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
-                if (context.CurrentDepth <= originalDepth)
-                {
-                    return workflowExecutionDetail;
-                }
             }
           
-
             return workflowExecutionDetail;
         }
 

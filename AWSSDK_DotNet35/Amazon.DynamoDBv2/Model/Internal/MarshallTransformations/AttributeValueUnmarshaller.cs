@@ -33,121 +33,65 @@
 
         public AttributeValue Unmarshall(JsonUnmarshallerContext context)
         {
-            if (context.CurrentTokenType == JsonToken.Null)
-                return null;
-
+            context.Read();
+            if (context.CurrentTokenType == JsonToken.Null) return null;
             AttributeValue attributeValue = new AttributeValue();
-
         
         
-            int originalDepth = context.CurrentDepth;
-            int targetDepth = originalDepth + 1;
-            while (context.Read())
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
             {
               
               if (context.TestExpression("S", targetDepth))
               {
-                context.Read();
                 attributeValue.S = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("N", targetDepth))
               {
-                context.Read();
                 attributeValue.N = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("B", targetDepth))
               {
-                context.Read();
                 attributeValue.B = MemoryStreamUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("SS", targetDepth))
               {
-                context.Read();
-                attributeValue.SS = new List<String>();
-                if (context.CurrentTokenType == JsonToken.Null)
-                {
-                    continue;
-                }
-                  StringUnmarshaller unmarshaller = StringUnmarshaller.GetInstance();
-                while (context.Read())
-                {
-                  JsonToken token = context.CurrentTokenType;                
-                  if (token == JsonToken.ArrayStart)
-                  {
-                    continue;
-                  }
-                  if (token == JsonToken.ArrayEnd)
-                  {
-                    break;
-                  }
-                   attributeValue.SS.Add(unmarshaller.Unmarshall(context));
-                }
+                
+                var unmarshaller = new ListUnmarshaller<String,StringUnmarshaller>(
+                    StringUnmarshaller.GetInstance());                  
+                attributeValue.SS = unmarshaller.Unmarshall(context);
+                
                 continue;
               }
   
               if (context.TestExpression("NS", targetDepth))
               {
-                context.Read();
-                attributeValue.NS = new List<String>();
-                if (context.CurrentTokenType == JsonToken.Null)
-                {
-                    continue;
-                }
-                  StringUnmarshaller unmarshaller = StringUnmarshaller.GetInstance();
-                while (context.Read())
-                {
-                  JsonToken token = context.CurrentTokenType;                
-                  if (token == JsonToken.ArrayStart)
-                  {
-                    continue;
-                  }
-                  if (token == JsonToken.ArrayEnd)
-                  {
-                    break;
-                  }
-                   attributeValue.NS.Add(unmarshaller.Unmarshall(context));
-                }
+                
+                var unmarshaller = new ListUnmarshaller<String,StringUnmarshaller>(
+                    StringUnmarshaller.GetInstance());                  
+                attributeValue.NS = unmarshaller.Unmarshall(context);
+                
                 continue;
               }
   
               if (context.TestExpression("BS", targetDepth))
               {
-                context.Read();
-                attributeValue.BS = new List<MemoryStream>();
-                if (context.CurrentTokenType == JsonToken.Null)
-                {
-                    continue;
-                }
-                  MemoryStreamUnmarshaller unmarshaller = MemoryStreamUnmarshaller.GetInstance();
-                while (context.Read())
-                {
-                  JsonToken token = context.CurrentTokenType;                
-                  if (token == JsonToken.ArrayStart)
-                  {
-                    continue;
-                  }
-                  if (token == JsonToken.ArrayEnd)
-                  {
-                    break;
-                  }
-                   attributeValue.BS.Add(unmarshaller.Unmarshall(context));
-                }
+                
+                var unmarshaller = new ListUnmarshaller<MemoryStream,MemoryStreamUnmarshaller>(
+                    MemoryStreamUnmarshaller.GetInstance());                  
+                attributeValue.BS = unmarshaller.Unmarshall(context);
+                
                 continue;
               }
   
-                if (context.CurrentDepth <= originalDepth)
-                {
-                    return attributeValue;
-                }
             }
           
-
             return attributeValue;
         }
 

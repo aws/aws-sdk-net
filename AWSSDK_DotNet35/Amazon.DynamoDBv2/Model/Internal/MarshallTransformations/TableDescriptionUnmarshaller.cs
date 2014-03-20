@@ -33,167 +33,93 @@
 
         public TableDescription Unmarshall(JsonUnmarshallerContext context)
         {
-            if (context.CurrentTokenType == JsonToken.Null)
-                return null;
-
+            context.Read();
+            if (context.CurrentTokenType == JsonToken.Null) return null;
             TableDescription tableDescription = new TableDescription();
-
         
         
-            int originalDepth = context.CurrentDepth;
-            int targetDepth = originalDepth + 1;
-            while (context.Read())
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
             {
               
               if (context.TestExpression("AttributeDefinitions", targetDepth))
               {
-                context.Read();
-                tableDescription.AttributeDefinitions = new List<AttributeDefinition>();
-                if (context.CurrentTokenType == JsonToken.Null)
-                {
-                    continue;
-                }
-                  AttributeDefinitionUnmarshaller unmarshaller = AttributeDefinitionUnmarshaller.GetInstance();
-                while (context.Read())
-                {
-                  JsonToken token = context.CurrentTokenType;                
-                  if (token == JsonToken.ArrayStart)
-                  {
-                    continue;
-                  }
-                  if (token == JsonToken.ArrayEnd)
-                  {
-                    break;
-                  }
-                   tableDescription.AttributeDefinitions.Add(unmarshaller.Unmarshall(context));
-                }
+                
+                var unmarshaller = new ListUnmarshaller<AttributeDefinition,AttributeDefinitionUnmarshaller>(
+                    AttributeDefinitionUnmarshaller.GetInstance());                  
+                tableDescription.AttributeDefinitions = unmarshaller.Unmarshall(context);
+                
                 continue;
               }
   
               if (context.TestExpression("TableName", targetDepth))
               {
-                context.Read();
                 tableDescription.TableName = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("KeySchema", targetDepth))
               {
-                context.Read();
-                tableDescription.KeySchema = new List<KeySchemaElement>();
-                if (context.CurrentTokenType == JsonToken.Null)
-                {
-                    continue;
-                }
-                  KeySchemaElementUnmarshaller unmarshaller = KeySchemaElementUnmarshaller.GetInstance();
-                while (context.Read())
-                {
-                  JsonToken token = context.CurrentTokenType;                
-                  if (token == JsonToken.ArrayStart)
-                  {
-                    continue;
-                  }
-                  if (token == JsonToken.ArrayEnd)
-                  {
-                    break;
-                  }
-                   tableDescription.KeySchema.Add(unmarshaller.Unmarshall(context));
-                }
+                
+                var unmarshaller = new ListUnmarshaller<KeySchemaElement,KeySchemaElementUnmarshaller>(
+                    KeySchemaElementUnmarshaller.GetInstance());                  
+                tableDescription.KeySchema = unmarshaller.Unmarshall(context);
+                
                 continue;
               }
   
               if (context.TestExpression("TableStatus", targetDepth))
               {
-                context.Read();
                 tableDescription.TableStatus = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("CreationDateTime", targetDepth))
               {
-                context.Read();
                 tableDescription.CreationDateTime = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("ProvisionedThroughput", targetDepth))
               {
-                context.Read();
                 tableDescription.ProvisionedThroughput = ProvisionedThroughputDescriptionUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("TableSizeBytes", targetDepth))
               {
-                context.Read();
                 tableDescription.TableSizeBytes = LongUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("ItemCount", targetDepth))
               {
-                context.Read();
                 tableDescription.ItemCount = LongUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("LocalSecondaryIndexes", targetDepth))
               {
-                context.Read();
-                tableDescription.LocalSecondaryIndexes = new List<LocalSecondaryIndexDescription>();
-                if (context.CurrentTokenType == JsonToken.Null)
-                {
-                    continue;
-                }
-                  LocalSecondaryIndexDescriptionUnmarshaller unmarshaller = LocalSecondaryIndexDescriptionUnmarshaller.GetInstance();
-                while (context.Read())
-                {
-                  JsonToken token = context.CurrentTokenType;                
-                  if (token == JsonToken.ArrayStart)
-                  {
-                    continue;
-                  }
-                  if (token == JsonToken.ArrayEnd)
-                  {
-                    break;
-                  }
-                   tableDescription.LocalSecondaryIndexes.Add(unmarshaller.Unmarshall(context));
-                }
+                
+                var unmarshaller = new ListUnmarshaller<LocalSecondaryIndexDescription,LocalSecondaryIndexDescriptionUnmarshaller>(
+                    LocalSecondaryIndexDescriptionUnmarshaller.GetInstance());                  
+                tableDescription.LocalSecondaryIndexes = unmarshaller.Unmarshall(context);
+                
                 continue;
               }
   
               if (context.TestExpression("GlobalSecondaryIndexes", targetDepth))
               {
-                context.Read();
-                tableDescription.GlobalSecondaryIndexes = new List<GlobalSecondaryIndexDescription>();
-                if (context.CurrentTokenType == JsonToken.Null)
-                {
-                    continue;
-                }
-                  GlobalSecondaryIndexDescriptionUnmarshaller unmarshaller = GlobalSecondaryIndexDescriptionUnmarshaller.GetInstance();
-                while (context.Read())
-                {
-                  JsonToken token = context.CurrentTokenType;                
-                  if (token == JsonToken.ArrayStart)
-                  {
-                    continue;
-                  }
-                  if (token == JsonToken.ArrayEnd)
-                  {
-                    break;
-                  }
-                   tableDescription.GlobalSecondaryIndexes.Add(unmarshaller.Unmarshall(context));
-                }
+                
+                var unmarshaller = new ListUnmarshaller<GlobalSecondaryIndexDescription,GlobalSecondaryIndexDescriptionUnmarshaller>(
+                    GlobalSecondaryIndexDescriptionUnmarshaller.GetInstance());                  
+                tableDescription.GlobalSecondaryIndexes = unmarshaller.Unmarshall(context);
+                
                 continue;
               }
   
-                if (context.CurrentDepth <= originalDepth)
-                {
-                    return tableDescription;
-                }
             }
           
-
             return tableDescription;
         }
 

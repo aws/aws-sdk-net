@@ -23,7 +23,7 @@ namespace Amazon.Kinesis.Model
     /// <summary>
     /// <para>The range of possible sequence numbers for the shard.</para>
     /// </summary>
-    public class SequenceNumberRange
+    public partial class SequenceNumberRange
     {
         
         private string startingSequenceNumber;

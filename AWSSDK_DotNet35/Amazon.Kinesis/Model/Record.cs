@@ -23,7 +23,7 @@ namespace Amazon.Kinesis.Model
     /// <summary>
     /// <para>The unit of data of the Amazon Kinesis stream, which is composed of a sequence number, a partition key, and a data blob.</para>
     /// </summary>
-    public class Record
+    public partial class Record
     {
         
         private string sequenceNumber;

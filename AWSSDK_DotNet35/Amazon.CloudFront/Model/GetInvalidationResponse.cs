@@ -24,7 +24,7 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// Returns information about the  GetInvalidation response and response metadata.
     /// </summary>
-    public class GetInvalidationResponse : GetInvalidationResult
+    public partial class GetInvalidationResponse : GetInvalidationResult
     {
         /// <summary>
         /// Gets and sets the GetInvalidationResult property.

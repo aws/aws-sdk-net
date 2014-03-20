@@ -33,39 +33,29 @@
 
         public WriteRequest Unmarshall(JsonUnmarshallerContext context)
         {
-            if (context.CurrentTokenType == JsonToken.Null)
-                return null;
-
+            context.Read();
+            if (context.CurrentTokenType == JsonToken.Null) return null;
             WriteRequest writeRequest = new WriteRequest();
-
         
         
-            int originalDepth = context.CurrentDepth;
-            int targetDepth = originalDepth + 1;
-            while (context.Read())
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
             {
               
               if (context.TestExpression("PutRequest", targetDepth))
               {
-                context.Read();
                 writeRequest.PutRequest = PutRequestUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("DeleteRequest", targetDepth))
               {
-                context.Read();
                 writeRequest.DeleteRequest = DeleteRequestUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
-                if (context.CurrentDepth <= originalDepth)
-                {
-                    return writeRequest;
-                }
             }
           
-
             return writeRequest;
         }
 

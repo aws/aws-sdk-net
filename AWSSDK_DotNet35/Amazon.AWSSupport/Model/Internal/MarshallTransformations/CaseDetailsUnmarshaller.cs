@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -33,129 +33,93 @@
 
         public CaseDetails Unmarshall(JsonUnmarshallerContext context)
         {
-            if (context.CurrentTokenType == JsonToken.Null)
-                return null;
-
+            context.Read();
+            if (context.CurrentTokenType == JsonToken.Null) return null;
             CaseDetails caseDetails = new CaseDetails();
-
         
         
-            int originalDepth = context.CurrentDepth;
-            int targetDepth = originalDepth + 1;
-            while (context.Read())
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
             {
               
               if (context.TestExpression("caseId", targetDepth))
               {
-                context.Read();
                 caseDetails.CaseId = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("displayId", targetDepth))
               {
-                context.Read();
                 caseDetails.DisplayId = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("subject", targetDepth))
               {
-                context.Read();
                 caseDetails.Subject = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("status", targetDepth))
               {
-                context.Read();
                 caseDetails.Status = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("serviceCode", targetDepth))
               {
-                context.Read();
                 caseDetails.ServiceCode = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("categoryCode", targetDepth))
               {
-                context.Read();
                 caseDetails.CategoryCode = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("severityCode", targetDepth))
               {
-                context.Read();
                 caseDetails.SeverityCode = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("submittedBy", targetDepth))
               {
-                context.Read();
                 caseDetails.SubmittedBy = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("timeCreated", targetDepth))
               {
-                context.Read();
                 caseDetails.TimeCreated = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("recentCommunications", targetDepth))
               {
-                context.Read();
                 caseDetails.RecentCommunications = RecentCaseCommunicationsUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("ccEmailAddresses", targetDepth))
               {
-                context.Read();
                 
-                if (context.CurrentTokenType == JsonToken.Null)
-                {
-                    caseDetails.CcEmailAddresses = null;
-                    continue;
-                }
-                  caseDetails.CcEmailAddresses = new List<String>();
-                  StringUnmarshaller unmarshaller = StringUnmarshaller.GetInstance();
-                while (context.Read())
-                {
-                  JsonToken token = context.CurrentTokenType;                
-                  if (token == JsonToken.ArrayStart)
-                  {
-                    continue;
-                  }
-                  if (token == JsonToken.ArrayEnd)
-                  {
-                    break;
-                  }
-                   caseDetails.CcEmailAddresses.Add(unmarshaller.Unmarshall(context));
-                }
+                var unmarshaller = new ListUnmarshaller<String,StringUnmarshaller>(
+                    StringUnmarshaller.GetInstance());                  
+                caseDetails.CcEmailAddresses = unmarshaller.Unmarshall(context);
+                
                 continue;
               }
   
               if (context.TestExpression("language", targetDepth))
               {
-                context.Read();
                 caseDetails.Language = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
-                if (context.CurrentDepth <= originalDepth)
-                {
-                    return caseDetails;
-                }
             }
           
-
             return caseDetails;
         }
 

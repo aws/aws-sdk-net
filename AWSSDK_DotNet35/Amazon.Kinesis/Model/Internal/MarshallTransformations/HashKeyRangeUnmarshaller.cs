@@ -33,39 +33,29 @@
 
         public HashKeyRange Unmarshall(JsonUnmarshallerContext context)
         {
-            if (context.CurrentTokenType == JsonToken.Null)
-                return null;
-
+            context.Read();
+            if (context.CurrentTokenType == JsonToken.Null) return null;
             HashKeyRange hashKeyRange = new HashKeyRange();
-
         
         
-            int originalDepth = context.CurrentDepth;
-            int targetDepth = originalDepth + 1;
-            while (context.Read())
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
             {
               
               if (context.TestExpression("StartingHashKey", targetDepth))
               {
-                context.Read();
                 hashKeyRange.StartingHashKey = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("EndingHashKey", targetDepth))
               {
-                context.Read();
                 hashKeyRange.EndingHashKey = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
-                if (context.CurrentDepth <= originalDepth)
-                {
-                    return hashKeyRange;
-                }
             }
           
-
             return hashKeyRange;
         }
 

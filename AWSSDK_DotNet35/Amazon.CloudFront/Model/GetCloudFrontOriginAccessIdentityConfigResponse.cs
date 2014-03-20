@@ -24,7 +24,7 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// Returns information about the  GetCloudFrontOriginAccessIdentityConfig response and response metadata.
     /// </summary>
-    public class GetCloudFrontOriginAccessIdentityConfigResponse : GetCloudFrontOriginAccessIdentityConfigResult
+    public partial class GetCloudFrontOriginAccessIdentityConfigResponse : GetCloudFrontOriginAccessIdentityConfigResult
     {
         /// <summary>
         /// Gets and sets the GetCloudFrontOriginAccessIdentityConfigResult property.

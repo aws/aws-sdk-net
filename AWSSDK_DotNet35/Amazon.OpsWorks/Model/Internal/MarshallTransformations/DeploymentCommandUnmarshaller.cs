@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -33,54 +33,33 @@
 
         public DeploymentCommand Unmarshall(JsonUnmarshallerContext context)
         {
-            if (context.CurrentTokenType == JsonToken.Null)
-                return null;
-
+            context.Read();
+            if (context.CurrentTokenType == JsonToken.Null) return null;
             DeploymentCommand deploymentCommand = new DeploymentCommand();
-
         
         
-            int originalDepth = context.CurrentDepth;
-            int targetDepth = originalDepth + 1;
-            while (context.Read())
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
             {
               
               if (context.TestExpression("Name", targetDepth))
               {
-                context.Read();
                 deploymentCommand.Name = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("Args", targetDepth))
               {
-                context.Read();
-                deploymentCommand.Args = new Dictionary<String,List<string>>();
-                KeyValueUnmarshaller<string, List<string>, StringUnmarshaller, ListUnmarshaller<string, StringUnmarshaller>> unmarshaller = new KeyValueUnmarshaller<string, List<string>, StringUnmarshaller, ListUnmarshaller<string, StringUnmarshaller>>(StringUnmarshaller.GetInstance(), new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.GetInstance()));
-                while (context.Read())
-                {
-                  JsonToken token = context.CurrentTokenType;
-                  if (token == JsonToken.ArrayStart || token == JsonToken.ObjectStart)
-                  {
-                      continue;
-                  }
-                  if (token == JsonToken.ArrayEnd || token == JsonToken.ObjectEnd)
-                  {
-                      break;
-                  }
-                  KeyValuePair<string, List<string>> kvp = unmarshaller.Unmarshall(context);
-                    deploymentCommand.Args.Add(kvp.Key, kvp.Value);
-                }
+                
+                var unmarshaller =  new DictionaryUnmarshaller<String,List<string>,StringUnmarshaller,ListUnmarshaller<string, StringUnmarshaller>>(
+                    StringUnmarshaller.GetInstance(),new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.GetInstance()));               
+                deploymentCommand.Args = unmarshaller.Unmarshall(context);
+                
                 continue;
               }
   
-                if (context.CurrentDepth <= originalDepth)
-                {
-                    return deploymentCommand;
-                }
             }
           
-
             return deploymentCommand;
         }
 

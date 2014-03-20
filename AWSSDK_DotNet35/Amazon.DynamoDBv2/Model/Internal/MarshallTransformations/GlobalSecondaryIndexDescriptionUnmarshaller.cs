@@ -33,92 +33,63 @@
 
         public GlobalSecondaryIndexDescription Unmarshall(JsonUnmarshallerContext context)
         {
-            if (context.CurrentTokenType == JsonToken.Null)
-                return null;
-
+            context.Read();
+            if (context.CurrentTokenType == JsonToken.Null) return null;
             GlobalSecondaryIndexDescription globalSecondaryIndexDescription = new GlobalSecondaryIndexDescription();
-
         
         
-            int originalDepth = context.CurrentDepth;
-            int targetDepth = originalDepth + 1;
-            while (context.Read())
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
             {
               
               if (context.TestExpression("IndexName", targetDepth))
               {
-                context.Read();
                 globalSecondaryIndexDescription.IndexName = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("KeySchema", targetDepth))
               {
-                context.Read();
-                globalSecondaryIndexDescription.KeySchema = new List<KeySchemaElement>();
-                if (context.CurrentTokenType == JsonToken.Null)
-                {
-                    continue;
-                }
-                  KeySchemaElementUnmarshaller unmarshaller = KeySchemaElementUnmarshaller.GetInstance();
-                while (context.Read())
-                {
-                  JsonToken token = context.CurrentTokenType;                
-                  if (token == JsonToken.ArrayStart)
-                  {
-                    continue;
-                  }
-                  if (token == JsonToken.ArrayEnd)
-                  {
-                    break;
-                  }
-                   globalSecondaryIndexDescription.KeySchema.Add(unmarshaller.Unmarshall(context));
-                }
+                
+                var unmarshaller = new ListUnmarshaller<KeySchemaElement,KeySchemaElementUnmarshaller>(
+                    KeySchemaElementUnmarshaller.GetInstance());                  
+                globalSecondaryIndexDescription.KeySchema = unmarshaller.Unmarshall(context);
+                
                 continue;
               }
   
               if (context.TestExpression("Projection", targetDepth))
               {
-                context.Read();
                 globalSecondaryIndexDescription.Projection = ProjectionUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("IndexStatus", targetDepth))
               {
-                context.Read();
                 globalSecondaryIndexDescription.IndexStatus = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("ProvisionedThroughput", targetDepth))
               {
-                context.Read();
                 globalSecondaryIndexDescription.ProvisionedThroughput = ProvisionedThroughputDescriptionUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("IndexSizeBytes", targetDepth))
               {
-                context.Read();
                 globalSecondaryIndexDescription.IndexSizeBytes = LongUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("ItemCount", targetDepth))
               {
-                context.Read();
                 globalSecondaryIndexDescription.ItemCount = LongUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
-                if (context.CurrentDepth <= originalDepth)
-                {
-                    return globalSecondaryIndexDescription;
-                }
             }
           
-
             return globalSecondaryIndexDescription;
         }
 

@@ -23,7 +23,7 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// <para> Summary of the information about a CloudFront origin access identity. </para>
     /// </summary>
-    public class CloudFrontOriginAccessIdentitySummary
+    public partial class CloudFrontOriginAccessIdentitySummary
     {
         
         private string id;

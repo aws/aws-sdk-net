@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -33,53 +33,41 @@
 
         public WorkflowTypeConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
-            if (context.CurrentTokenType == JsonToken.Null)
-                return null;
-
+            context.Read();
+            if (context.CurrentTokenType == JsonToken.Null) return null;
             WorkflowTypeConfiguration workflowTypeConfiguration = new WorkflowTypeConfiguration();
-
         
         
-            int originalDepth = context.CurrentDepth;
-            int targetDepth = originalDepth + 1;
-            while (context.Read())
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
             {
               
               if (context.TestExpression("defaultTaskStartToCloseTimeout", targetDepth))
               {
-                context.Read();
                 workflowTypeConfiguration.DefaultTaskStartToCloseTimeout = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("defaultExecutionStartToCloseTimeout", targetDepth))
               {
-                context.Read();
                 workflowTypeConfiguration.DefaultExecutionStartToCloseTimeout = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("defaultTaskList", targetDepth))
               {
-                context.Read();
                 workflowTypeConfiguration.DefaultTaskList = TaskListUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("defaultChildPolicy", targetDepth))
               {
-                context.Read();
                 workflowTypeConfiguration.DefaultChildPolicy = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
-                if (context.CurrentDepth <= originalDepth)
-                {
-                    return workflowTypeConfiguration;
-                }
             }
           
-
             return workflowTypeConfiguration;
         }
 

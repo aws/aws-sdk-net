@@ -24,7 +24,7 @@ namespace Amazon.CloudFront.Model
     /// <para> A complex type that contains information about the Amazon S3 bucket from which you want CloudFront to get your media files for
     /// distribution. </para>
     /// </summary>
-    public class S3Origin
+    public partial class S3Origin
     {
         
         private string domainName;

@@ -24,7 +24,7 @@ namespace Amazon.Kinesis.Model
     /// <summary>
     /// Returns information about the  ListStreams response and response metadata.
     /// </summary>
-    public class ListStreamsResponse : ListStreamsResult
+    public partial class ListStreamsResponse : ListStreamsResult
     {
         /// <summary>
         /// Gets and sets the ListStreamsResult property.

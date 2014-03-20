@@ -340,6 +340,10 @@ WebExceptionStatusesToRetryOn.Contains(we.Status)
                 if (request.Headers.ContainsKey("Content-Disposition"))
                     requestMessage.Content.Headers.TryAddWithoutValidation("Content-Disposition", request.Headers["Content-Disposition"]);
 
+                DateTime expires;
+                if (request.Headers.ContainsKey("Expires") &&
+                    DateTime.TryParse(request.Headers["Expires"], CultureInfo.InvariantCulture, DateTimeStyles.None, out expires))
+                    requestMessage.Content.Headers.Expires = expires;
             }
         }
 

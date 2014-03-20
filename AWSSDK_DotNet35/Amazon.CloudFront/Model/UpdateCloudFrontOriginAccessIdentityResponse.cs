@@ -24,7 +24,7 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// Returns information about the  UpdateCloudFrontOriginAccessIdentity response and response metadata.
     /// </summary>
-    public class UpdateCloudFrontOriginAccessIdentityResponse : UpdateCloudFrontOriginAccessIdentityResult
+    public partial class UpdateCloudFrontOriginAccessIdentityResponse : UpdateCloudFrontOriginAccessIdentityResult
     {
         /// <summary>
         /// Gets and sets the UpdateCloudFrontOriginAccessIdentityResult property.

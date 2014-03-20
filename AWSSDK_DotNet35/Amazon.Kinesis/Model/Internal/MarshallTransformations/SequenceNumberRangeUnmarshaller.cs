@@ -33,39 +33,29 @@
 
         public SequenceNumberRange Unmarshall(JsonUnmarshallerContext context)
         {
-            if (context.CurrentTokenType == JsonToken.Null)
-                return null;
-
+            context.Read();
+            if (context.CurrentTokenType == JsonToken.Null) return null;
             SequenceNumberRange sequenceNumberRange = new SequenceNumberRange();
-
         
         
-            int originalDepth = context.CurrentDepth;
-            int targetDepth = originalDepth + 1;
-            while (context.Read())
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
             {
               
               if (context.TestExpression("StartingSequenceNumber", targetDepth))
               {
-                context.Read();
                 sequenceNumberRange.StartingSequenceNumber = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("EndingSequenceNumber", targetDepth))
               {
-                context.Read();
                 sequenceNumberRange.EndingSequenceNumber = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
-                if (context.CurrentDepth <= originalDepth)
-                {
-                    return sequenceNumberRange;
-                }
             }
           
-
             return sequenceNumberRange;
         }
 

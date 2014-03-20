@@ -25,7 +25,7 @@ namespace Amazon.CloudFront.Model
     /// Customizing Error Responses in the Amazon CloudFront Developer Guide. CloudFront determines the location of your users using MaxMind GeoIP
     /// databases. For information about the accuracy of these databases, see How accurate are your GeoIP databases? on the MaxMind website. </para>
     /// </summary>
-    public class GeoRestriction
+    public partial class GeoRestriction
     {
         
         private GeoRestrictionType restrictionType;

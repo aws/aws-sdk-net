@@ -23,7 +23,7 @@ namespace Amazon.Kinesis.Model
     /// <summary>
     /// <para>The range of possible hash key values for the shard, which is a set of ordered contiguous positive integers.</para>
     /// </summary>
-    public class HashKeyRange
+    public partial class HashKeyRange
     {
         
         private string startingHashKey;

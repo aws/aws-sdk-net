@@ -24,7 +24,7 @@ namespace Amazon.Kinesis.Model
     /// <summary>
     /// Returns information about the  DescribeStream response and response metadata.
     /// </summary>
-    public class DescribeStreamResponse : DescribeStreamResult
+    public partial class DescribeStreamResponse : DescribeStreamResult
     {
         /// <summary>
         /// Gets and sets the DescribeStreamResult property.

@@ -24,7 +24,7 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// Returns information about the  ListCloudFrontOriginAccessIdentities response and response metadata.
     /// </summary>
-    public class ListCloudFrontOriginAccessIdentitiesResponse : ListCloudFrontOriginAccessIdentitiesResult
+    public partial class ListCloudFrontOriginAccessIdentitiesResponse : ListCloudFrontOriginAccessIdentitiesResult
     {
         /// <summary>
         /// Gets and sets the ListCloudFrontOriginAccessIdentitiesResult property.

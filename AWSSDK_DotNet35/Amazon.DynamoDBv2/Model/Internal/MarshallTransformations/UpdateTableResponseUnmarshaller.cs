@@ -30,36 +30,22 @@
       {
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-          UpdateTableResponse response = new UpdateTableResponse();          
+            UpdateTableResponse response = new UpdateTableResponse();       
           
-          context.Read();
-          
-          UnmarshallResult(context,response);
-          return response;
-        }
-        
-        private static void UnmarshallResult(JsonUnmarshallerContext context,UpdateTableResponse response)
-        {
-          
-            int originalDepth = context.CurrentDepth;
-            int targetDepth = originalDepth + 1;
-            while (context.Read())
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
             {
               
               if (context.TestExpression("TableDescription", targetDepth))
               {
-                context.Read();
                 response.TableDescription = TableDescriptionUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
-                if (context.CurrentDepth <= originalDepth)
-                {                   
-                    return;
-                }
             }
                         
-            return;
+            return response;
         }                        
         
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)

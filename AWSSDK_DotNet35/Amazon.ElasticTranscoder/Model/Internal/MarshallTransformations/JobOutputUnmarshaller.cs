@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -33,163 +33,109 @@
 
         public JobOutput Unmarshall(JsonUnmarshallerContext context)
         {
-            if (context.CurrentTokenType == JsonToken.Null)
-                return null;
-
+            context.Read();
+            if (context.CurrentTokenType == JsonToken.Null) return null;
             JobOutput jobOutput = new JobOutput();
-
         
         
-            int originalDepth = context.CurrentDepth;
-            int targetDepth = originalDepth + 1;
-            while (context.Read())
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
             {
               
               if (context.TestExpression("Id", targetDepth))
               {
-                context.Read();
                 jobOutput.Id = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("Key", targetDepth))
               {
-                context.Read();
                 jobOutput.Key = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("ThumbnailPattern", targetDepth))
               {
-                context.Read();
                 jobOutput.ThumbnailPattern = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("Rotate", targetDepth))
               {
-                context.Read();
                 jobOutput.Rotate = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("PresetId", targetDepth))
               {
-                context.Read();
                 jobOutput.PresetId = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("SegmentDuration", targetDepth))
               {
-                context.Read();
                 jobOutput.SegmentDuration = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("Status", targetDepth))
               {
-                context.Read();
                 jobOutput.Status = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("StatusDetail", targetDepth))
               {
-                context.Read();
                 jobOutput.StatusDetail = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("Duration", targetDepth))
               {
-                context.Read();
                 jobOutput.Duration = LongUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("Width", targetDepth))
               {
-                context.Read();
                 jobOutput.Width = IntUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("Height", targetDepth))
               {
-                context.Read();
                 jobOutput.Height = IntUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("Watermarks", targetDepth))
               {
-                context.Read();
                 
-                if (context.CurrentTokenType == JsonToken.Null)
-                {
-                    jobOutput.Watermarks = null;
-                    continue;
-                }
-                  jobOutput.Watermarks = new List<JobWatermark>();
-                  JobWatermarkUnmarshaller unmarshaller = JobWatermarkUnmarshaller.GetInstance();
-                while (context.Read())
-                {
-                  JsonToken token = context.CurrentTokenType;                
-                  if (token == JsonToken.ArrayStart)
-                  {
-                    continue;
-                  }
-                  if (token == JsonToken.ArrayEnd)
-                  {
-                    break;
-                  }
-                   jobOutput.Watermarks.Add(unmarshaller.Unmarshall(context));
-                }
+                var unmarshaller = new ListUnmarshaller<JobWatermark,JobWatermarkUnmarshaller>(
+                    JobWatermarkUnmarshaller.GetInstance());                  
+                jobOutput.Watermarks = unmarshaller.Unmarshall(context);
+                
                 continue;
               }
   
               if (context.TestExpression("AlbumArt", targetDepth))
               {
-                context.Read();
                 jobOutput.AlbumArt = JobAlbumArtUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("Composition", targetDepth))
               {
-                context.Read();
                 
-                if (context.CurrentTokenType == JsonToken.Null)
-                {
-                    jobOutput.Composition = null;
-                    continue;
-                }
-                  jobOutput.Composition = new List<Clip>();
-                  ClipUnmarshaller unmarshaller = ClipUnmarshaller.GetInstance();
-                while (context.Read())
-                {
-                  JsonToken token = context.CurrentTokenType;                
-                  if (token == JsonToken.ArrayStart)
-                  {
-                    continue;
-                  }
-                  if (token == JsonToken.ArrayEnd)
-                  {
-                    break;
-                  }
-                   jobOutput.Composition.Add(unmarshaller.Unmarshall(context));
-                }
+                var unmarshaller = new ListUnmarshaller<Clip,ClipUnmarshaller>(
+                    ClipUnmarshaller.GetInstance());                  
+                jobOutput.Composition = unmarshaller.Unmarshall(context);
+                
                 continue;
               }
   
-                if (context.CurrentDepth <= originalDepth)
-                {
-                    return jobOutput;
-                }
             }
           
-
             return jobOutput;
         }
 

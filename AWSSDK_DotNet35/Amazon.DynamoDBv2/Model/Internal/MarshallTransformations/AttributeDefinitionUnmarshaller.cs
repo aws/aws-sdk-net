@@ -33,39 +33,29 @@
 
         public AttributeDefinition Unmarshall(JsonUnmarshallerContext context)
         {
-            if (context.CurrentTokenType == JsonToken.Null)
-                return null;
-
+            context.Read();
+            if (context.CurrentTokenType == JsonToken.Null) return null;
             AttributeDefinition attributeDefinition = new AttributeDefinition();
-
         
         
-            int originalDepth = context.CurrentDepth;
-            int targetDepth = originalDepth + 1;
-            while (context.Read())
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
             {
               
               if (context.TestExpression("AttributeName", targetDepth))
               {
-                context.Read();
                 attributeDefinition.AttributeName = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("AttributeType", targetDepth))
               {
-                context.Read();
                 attributeDefinition.AttributeType = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
-                if (context.CurrentDepth <= originalDepth)
-                {
-                    return attributeDefinition;
-                }
             }
           
-
             return attributeDefinition;
         }
 

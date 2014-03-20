@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,18 +30,9 @@
       {
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-          StopLoggingResponse response = new StopLoggingResponse();          
-          
-          context.Read();
-          
-          UnmarshallResult(context,response);
-          return response;
-        }
-        
-        private static void UnmarshallResult(JsonUnmarshallerContext context,StopLoggingResponse response)
-        {
+            StopLoggingResponse response = new StopLoggingResponse();       
                         
-            return;
+            return response;
         }                        
         
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)

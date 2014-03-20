@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -33,66 +33,39 @@
 
         public Command Unmarshall(JsonUnmarshallerContext context)
         {
-            if (context.CurrentTokenType == JsonToken.Null)
-                return null;
-
+            context.Read();
+            if (context.CurrentTokenType == JsonToken.Null) return null;
             Command command = new Command();
-
         
         
-            int originalDepth = context.CurrentDepth;
-            int targetDepth = originalDepth + 1;
-            while (context.Read())
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
             {
               
               if (context.TestExpression("Name", targetDepth))
               {
-                context.Read();
                 command.Name = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("ScriptPath", targetDepth))
               {
-                context.Read();
                 command.ScriptPath = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("Args", targetDepth))
               {
-                context.Read();
                 
-                if (context.CurrentTokenType == JsonToken.Null)
-                {
-                    command.Args = null;
-                    continue;
-                }
-                  command.Args = new List<String>();
-                  StringUnmarshaller unmarshaller = StringUnmarshaller.GetInstance();
-                while (context.Read())
-                {
-                  JsonToken token = context.CurrentTokenType;                
-                  if (token == JsonToken.ArrayStart)
-                  {
-                    continue;
-                  }
-                  if (token == JsonToken.ArrayEnd)
-                  {
-                    break;
-                  }
-                   command.Args.Add(unmarshaller.Unmarshall(context));
-                }
+                var unmarshaller = new ListUnmarshaller<String,StringUnmarshaller>(
+                    StringUnmarshaller.GetInstance());                  
+                command.Args = unmarshaller.Unmarshall(context);
+                
                 continue;
               }
   
-                if (context.CurrentDepth <= originalDepth)
-                {
-                    return command;
-                }
             }
           
-
             return command;
         }
 

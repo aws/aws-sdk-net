@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -42,7 +42,6 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
             string target = "Glacier.AbortMultipartUpload";
             request.Headers["X-Amz-Target"] = target;
             request.HttpMethod = "DELETE";
-              
             string uriResourcePath = "/{accountId}/vaults/{vaultName}/multipart-uploads/{uploadId}"; 
             if(abortMultipartUploadRequest.IsSetAccountId())
                 uriResourcePath = uriResourcePath.Replace("{accountId}", StringUtils.FromString(abortMultipartUploadRequest.AccountId) ); 
@@ -56,27 +55,6 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
                 uriResourcePath = uriResourcePath.Replace("{uploadId}", StringUtils.FromString(abortMultipartUploadRequest.UploadId) ); 
             else
                 uriResourcePath = uriResourcePath.Replace("{uploadId}", "" ); 
-            
-            if (uriResourcePath.Contains("?")) 
-            {
-                int queryPosition = uriResourcePath.IndexOf("?", StringComparison.OrdinalIgnoreCase);
-                string queryString = uriResourcePath.Substring(queryPosition + 1);
-                uriResourcePath    = uriResourcePath.Substring(0, queryPosition);
-        
-                foreach (string s in queryString.Split('&', ';')) 
-                {
-                    string[] nameValuePair = s.Split('=');
-                    if (nameValuePair.Length == 2 && nameValuePair[1].Length > 0) 
-                    {
-                        request.Parameters.Add(nameValuePair[0], nameValuePair[1]);
-                    }
-                    else
-                    {
-                        request.Parameters.Add(nameValuePair[0], null);
-                    }
-                }
-            }
-            
             request.ResourcePath = uriResourcePath;
             
         

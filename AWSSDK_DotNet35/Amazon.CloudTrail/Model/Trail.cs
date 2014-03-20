@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -21,9 +21,9 @@ using System.IO;
 namespace Amazon.CloudTrail.Model
 {
     /// <summary>
-    /// <para> The settings for a trail. </para>
+    /// <para>The settings for a trail.</para>
     /// </summary>
-    public class Trail
+    public partial class Trail
     {
         
         private string name;
@@ -34,7 +34,7 @@ namespace Amazon.CloudTrail.Model
 
 
         /// <summary>
-        /// Name of the trail defined when you call when you call <a>CreateTrail</a>
+        /// Name of the trail set by calling <a>CreateTrail</a>.
         ///  
         /// </summary>
         public string Name
@@ -50,7 +50,7 @@ namespace Amazon.CloudTrail.Model
         }
 
         /// <summary>
-        /// Name of the Amazon S3 bucket into which CloudTrail delivers your trail files. Passed when you call <a>CreateTrail</a>.
+        /// Name of the Amazon S3 bucket into which CloudTrail delivers your trail files.
         ///  
         /// </summary>
         public string S3BucketName
@@ -66,7 +66,7 @@ namespace Amazon.CloudTrail.Model
         }
 
         /// <summary>
-        /// Value of the Amazon S3 prefix
+        /// Value of the Amazon S3 prefix.
         ///  
         /// </summary>
         public string S3KeyPrefix

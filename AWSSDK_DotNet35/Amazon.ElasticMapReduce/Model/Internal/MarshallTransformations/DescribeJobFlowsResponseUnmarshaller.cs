@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,56 +30,26 @@
       {
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-          DescribeJobFlowsResponse response = new DescribeJobFlowsResponse();          
+            DescribeJobFlowsResponse response = new DescribeJobFlowsResponse();       
           
-          context.Read();
-          
-          UnmarshallResult(context,response);
-          return response;
-        }
-        
-        private static void UnmarshallResult(JsonUnmarshallerContext context,DescribeJobFlowsResponse response)
-        {
-          
-            int originalDepth = context.CurrentDepth;
-            int targetDepth = originalDepth + 1;
-            while (context.Read())
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
             {
               
               if (context.TestExpression("JobFlows", targetDepth))
               {
-                context.Read();
                 
-                if (context.CurrentTokenType == JsonToken.Null)
-                {
-                    response.JobFlows = null;
-                    continue;
-                }
-                  response.JobFlows = new List<JobFlowDetail>();
-                  JobFlowDetailUnmarshaller unmarshaller = JobFlowDetailUnmarshaller.GetInstance();
-                while (context.Read())
-                {
-                  JsonToken token = context.CurrentTokenType;                
-                  if (token == JsonToken.ArrayStart)
-                  {
-                    continue;
-                  }
-                  if (token == JsonToken.ArrayEnd)
-                  {
-                    break;
-                  }
-                   response.JobFlows.Add(unmarshaller.Unmarshall(context));
-                }
+                var unmarshaller = new ListUnmarshaller<JobFlowDetail,JobFlowDetailUnmarshaller>(
+                    JobFlowDetailUnmarshaller.GetInstance());                  
+                response.JobFlows = unmarshaller.Unmarshall(context);
+                
                 continue;
               }
   
-                if (context.CurrentDepth <= originalDepth)
-                {                   
-                    return;
-                }
             }
                         
-            return;
+            return response;
         }                        
         
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
@@ -88,9 +58,7 @@
           
           if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerErrorException"))
           {
-            InternalServerErrorException ex = new InternalServerErrorException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            
-            return ex;
+            return new InternalServerErrorException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
           }
   
           return new AmazonElasticMapReduceException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);

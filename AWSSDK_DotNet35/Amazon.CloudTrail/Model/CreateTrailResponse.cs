@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -24,11 +24,11 @@ namespace Amazon.CloudTrail.Model
     /// <summary>
     /// Returns information about the  CreateTrail response and response metadata.
     /// </summary>
-    public class CreateTrailResponse : CreateTrailResult
+    public partial class CreateTrailResponse : CreateTrailResult
     {
         /// <summary>
         /// Gets and sets the CreateTrailResult property.
-        /// A JSON-formatted Trail object that represents the settings for the requested trail.
+        /// Returns the objects or data listed below if successful. Otherwise, returns an error.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the CreateTrailResult class are now available on the CreateTrailResponse class. You should use the properties on CreateTrailResponse instead of accessing them through CreateTrailResult.")]
         public CreateTrailResult CreateTrailResult

@@ -28,10 +28,14 @@ namespace Amazon.ElasticLoadBalancing.Model
         
         private CrossZoneLoadBalancing crossZoneLoadBalancing;
         private AccessLog accessLog;
+        private ConnectionDraining connectionDraining;
 
 
         /// <summary>
-        /// The name of the load balancer attribute.
+        /// The name of the load balancer attribute. If enabled, the load balancer routes the request traffic evenly across all back-end instances
+        /// regardless of the Availability Zones. For more information, see <a
+        /// href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/enable-disable-crosszone-lb.html">Enable Cross-Zone Load
+        /// Balancing</a>.
         ///  
         /// </summary>
         public CrossZoneLoadBalancing CrossZoneLoadBalancing
@@ -47,7 +51,9 @@ namespace Amazon.ElasticLoadBalancing.Model
         }
 
         /// <summary>
-        /// The name of the load balancer attribute.
+        /// The name of the load balancer attribute. If enabled, the load balancer captures detailed information of all the requests and delivers the
+        /// information to the Amazon S3 bucket you specify. For more information, see <a
+        /// href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/enable-access-logs.html">Enable Access Logs</a>.
         ///  
         /// </summary>
         public AccessLog AccessLog
@@ -60,6 +66,24 @@ namespace Amazon.ElasticLoadBalancing.Model
         internal bool IsSetAccessLog()
         {
             return this.accessLog != null;
+        }
+
+        /// <summary>
+        /// The name of the load balancer attribute. If enabled, the load balancer allows existing requests to complete before the load balancer shifts
+        /// traffic away from a deregistered or unhealthy back-end instance. For more information, see <a
+        /// href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/config-conn-drain.html">Enable Connection Draining</a>.
+        ///  
+        /// </summary>
+        public ConnectionDraining ConnectionDraining
+        {
+            get { return this.connectionDraining; }
+            set { this.connectionDraining = value; }
+        }
+
+        // Check to see if ConnectionDraining property is set
+        internal bool IsSetConnectionDraining()
+        {
+            return this.connectionDraining != null;
         }
     }
 }

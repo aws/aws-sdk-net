@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -26,8 +26,6 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
-#pragma warning disable 0618
-
 namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -46,29 +44,7 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
             
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             
-              
             string uriResourcePath = ""; 
-            
-            if (uriResourcePath.Contains("?")) 
-            {
-                int queryPosition = uriResourcePath.IndexOf("?", StringComparison.OrdinalIgnoreCase);
-                string queryString = uriResourcePath.Substring(queryPosition + 1);
-                uriResourcePath    = uriResourcePath.Substring(0, queryPosition);
-        
-                foreach (string s in queryString.Split('&', ';')) 
-                {
-                    string[] nameValuePair = s.Split('=');
-                    if (nameValuePair.Length == 2 && nameValuePair[1].Length > 0) 
-                    {
-                        request.Parameters.Add(nameValuePair[0], nameValuePair[1]);
-                    }
-                    else
-                    {
-                        request.Parameters.Add(nameValuePair[0], null);
-                    }
-                }
-            }
-            
             request.ResourcePath = uriResourcePath;
             
              
@@ -101,42 +77,6 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
                 {
                     writer.WritePropertyName("IncludeGlobalServiceEvents");
                     writer.Write(updateTrailRequest.IncludeGlobalServiceEvents);
-                }
-
-                if (updateTrailRequest != null) 
-                {
-                    Trail trail = updateTrailRequest.Trail;
-                    if (trail != null)
-                    {
-                        writer.WritePropertyName("trail");
-                        writer.WriteObjectStart();
-                        if (trail != null && trail.IsSetName()) 
-                        {
-                            writer.WritePropertyName("Name");
-                            writer.Write(trail.Name);
-                        }
-                        if (trail != null && trail.IsSetS3BucketName()) 
-                        {
-                            writer.WritePropertyName("S3BucketName");
-                            writer.Write(trail.S3BucketName);
-                        }
-                        if (trail != null && trail.IsSetS3KeyPrefix()) 
-                        {
-                            writer.WritePropertyName("S3KeyPrefix");
-                            writer.Write(trail.S3KeyPrefix);
-                        }
-                        if (trail != null && trail.IsSetSnsTopicName()) 
-                        {
-                            writer.WritePropertyName("SnsTopicName");
-                            writer.Write(trail.SnsTopicName);
-                        }
-                        if (trail != null && trail.IsSetIncludeGlobalServiceEvents()) 
-                        {
-                            writer.WritePropertyName("IncludeGlobalServiceEvents");
-                            writer.Write(trail.IncludeGlobalServiceEvents);
-                        }
-                        writer.WriteObjectEnd();
-                    }
                 }
 
                 writer.WriteObjectEnd();

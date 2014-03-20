@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -33,60 +33,47 @@
 
         public ActivityTypeConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
-            if (context.CurrentTokenType == JsonToken.Null)
-                return null;
-
+            context.Read();
+            if (context.CurrentTokenType == JsonToken.Null) return null;
             ActivityTypeConfiguration activityTypeConfiguration = new ActivityTypeConfiguration();
-
         
         
-            int originalDepth = context.CurrentDepth;
-            int targetDepth = originalDepth + 1;
-            while (context.Read())
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
             {
               
               if (context.TestExpression("defaultTaskStartToCloseTimeout", targetDepth))
               {
-                context.Read();
                 activityTypeConfiguration.DefaultTaskStartToCloseTimeout = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("defaultTaskHeartbeatTimeout", targetDepth))
               {
-                context.Read();
                 activityTypeConfiguration.DefaultTaskHeartbeatTimeout = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("defaultTaskList", targetDepth))
               {
-                context.Read();
                 activityTypeConfiguration.DefaultTaskList = TaskListUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("defaultTaskScheduleToStartTimeout", targetDepth))
               {
-                context.Read();
                 activityTypeConfiguration.DefaultTaskScheduleToStartTimeout = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("defaultTaskScheduleToCloseTimeout", targetDepth))
               {
-                context.Read();
                 activityTypeConfiguration.DefaultTaskScheduleToCloseTimeout = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
-                if (context.CurrentDepth <= originalDepth)
-                {
-                    return activityTypeConfiguration;
-                }
             }
           
-
             return activityTypeConfiguration;
         }
 

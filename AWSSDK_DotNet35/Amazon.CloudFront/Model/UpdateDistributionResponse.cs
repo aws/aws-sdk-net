@@ -24,7 +24,7 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// Returns information about the  UpdateDistribution response and response metadata.
     /// </summary>
-    public class UpdateDistributionResponse : UpdateDistributionResult
+    public partial class UpdateDistributionResponse : UpdateDistributionResult
     {
         /// <summary>
         /// Gets and sets the UpdateDistributionResult property.

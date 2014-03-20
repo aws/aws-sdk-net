@@ -24,7 +24,7 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// Returns information about the  GetDistribution response and response metadata.
     /// </summary>
-    public class GetDistributionResponse : GetDistributionResult
+    public partial class GetDistributionResponse : GetDistributionResult
     {
         /// <summary>
         /// Gets and sets the GetDistributionResult property.

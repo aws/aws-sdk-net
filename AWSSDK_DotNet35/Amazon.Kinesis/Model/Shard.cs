@@ -23,7 +23,7 @@ namespace Amazon.Kinesis.Model
     /// <summary>
     /// <para>A uniquely identified group of data records in an Amazon Kinesis stream.</para>
     /// </summary>
-    public class Shard
+    public partial class Shard
     {
         
         private string shardId;

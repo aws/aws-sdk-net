@@ -45,9 +45,9 @@ namespace Amazon.Kinesis.Model
     /// If a stream is in CREATING or UPDATING or DELETING states, then Amazon Kinesis returns a <c>ResourceInUseException</c> .</para>
     /// <para>If the specified stream does not exist, Amazon Kinesis returns a <c>ResourceNotFoundException</c> .
     /// If you try to create more shards than are authorized for your account, you receive a <c>LimitExceededException</c> .
-    /// </para> <para> <b>Note:</b> The default limit for an AWS account is five shards per stream. If you need to create a stream with more than
-    /// five shards, <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html" >contact AWS Support</a> to increase the limit
-    /// on your account.</para> <para>If you try to operate on too many streams in parallel using CreateStream, DeleteStream, MergeShards or
+    /// </para> <para> <b>Note:</b> The default limit for an AWS account is 10 shards per stream. If you need to create a stream with more than 10
+    /// shards, <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html" >contact AWS Support</a> to increase the limit on
+    /// your account.</para> <para>If you try to operate on too many streams in parallel using CreateStream, DeleteStream, MergeShards or
     /// SplitShard, you will receive a <c>LimitExceededException</c> . </para> <para> <c>SplitShard</c> has limit of 5 transactions per second per
     /// account.</para>
     /// </summary>

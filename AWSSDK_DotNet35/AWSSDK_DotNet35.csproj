@@ -1495,7 +1495,6 @@
     <Compile Include="Amazon.CloudTrail\Model\GetTrailStatusResult.cs" />
     <Compile Include="Amazon.CloudTrail\Model\InsufficientS3BucketPolicyException.cs" />
     <Compile Include="Amazon.CloudTrail\Model\InsufficientSnsTopicPolicyException.cs" />
-    <Compile Include="Amazon.CloudTrail\Model\InternalErrorException.cs" />
     <Compile Include="Amazon.CloudTrail\Model\Internal\MarshallTransformations\CreateTrailRequestMarshaller.cs" />
     <Compile Include="Amazon.CloudTrail\Model\Internal\MarshallTransformations\CreateTrailResponseUnmarshaller.cs" />
     <Compile Include="Amazon.CloudTrail\Model\Internal\MarshallTransformations\DeleteTrailRequestMarshaller.cs" />
@@ -1526,7 +1525,6 @@
     <Compile Include="Amazon.CloudTrail\Model\Trail.cs" />
     <Compile Include="Amazon.CloudTrail\Model\TrailAlreadyExistsException.cs" />
     <Compile Include="Amazon.CloudTrail\Model\TrailNotFoundException.cs" />
-    <Compile Include="Amazon.CloudTrail\Model\TrailNotProvidedException.cs" />
     <Compile Include="Amazon.CloudTrail\Model\UpdateTrailRequest.cs" />
     <Compile Include="Amazon.CloudTrail\Model\UpdateTrailResponse.cs" />
     <Compile Include="Amazon.CloudTrail\Model\UpdateTrailResult.cs" />
@@ -5407,6 +5405,7 @@
     <Compile Include="Amazon.ElasticLoadBalancing\Model\ConfigureHealthCheckResult.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\ConnectionDraining.cs" />
     <Compile Include="Amazon.ElasticLoadBalancing\Model\CreateAppCookieStickinessPolicyRequest.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -5584,6 +5583,7 @@
     <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\ConfigureHealthCheckResponseUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\ConnectionDrainingUnmarshaller.cs" />
     <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\CreateAppCookieStickinessPolicyRequestMarshaller.cs" />
     <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\CreateAppCookieStickinessPolicyResponseUnmarshaller.cs" />
     <Compile Include="Amazon.ElasticLoadBalancing\Model\Internal\MarshallTransformations\CreateLBCookieStickinessPolicyRequestMarshaller.cs" />
@@ -9909,6 +9909,7 @@
     <Compile Include="Amazon.Runtime\Internal\ErrorResponse.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.Runtime\Internal\Transform\SimpleTypeUnmarshaller.cs" />
     <Compile Include="Amazon.Runtime\Internal\Util\EventStream.cs" />
     <Compile Include="Amazon.Runtime\Internal\IRequest.cs" />
     <Compile Include="Amazon.Runtime\Internal\IRequestData.cs" />
@@ -9947,7 +9948,6 @@
     </Compile>
     <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\S3ErrorResponseUnmarshaller.cs" />
     <Compile Include="Amazon.S3\Model\Internal\MarshallTransformations\S3Transforms.cs" />
-    <Compile Include="Amazon.Runtime\Internal\Transform\SimpleTypeUnmarhaller.cs" />
     <Compile Include="Amazon.Runtime\Internal\Transform\UnmarshallerContext.cs" />
     <Compile Include="Amazon.Runtime\Internal\Util\Dispatcher.cs" />
     <Compile Include="Amazon.Runtime\Internal\Util\Extensions.cs" />

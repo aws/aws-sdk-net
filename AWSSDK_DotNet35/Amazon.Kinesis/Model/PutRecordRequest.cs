@@ -81,8 +81,8 @@ namespace Amazon.Kinesis.Model
         }
 
         /// <summary>
-        /// The data blob to put into the record, which is Base64-encoded by the AWS SDK for Java when the blob is serialized. The maximum size of the
-        /// data blob (the payload after Base64-decoding) is 50 kilobytes (KB)
+        /// The data blob to put into the record, which is Base64-encoded when the blob is serialized. The maximum size of the data blob (the payload
+        /// after Base64-decoding) is 50 kilobytes (KB)
         ///  
         /// <para>
         /// <b>Constraints:</b>

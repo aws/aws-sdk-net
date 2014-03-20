@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -33,93 +33,49 @@
 
         public HadoopJarStepConfig Unmarshall(JsonUnmarshallerContext context)
         {
-            if (context.CurrentTokenType == JsonToken.Null)
-                return null;
-
+            context.Read();
+            if (context.CurrentTokenType == JsonToken.Null) return null;
             HadoopJarStepConfig hadoopJarStepConfig = new HadoopJarStepConfig();
-
         
         
-            int originalDepth = context.CurrentDepth;
-            int targetDepth = originalDepth + 1;
-            while (context.Read())
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
             {
               
               if (context.TestExpression("Properties", targetDepth))
               {
-                context.Read();
                 
-                if (context.CurrentTokenType == JsonToken.Null)
-                {
-                    hadoopJarStepConfig.Properties = null;
-                    continue;
-                }
-                  hadoopJarStepConfig.Properties = new List<KeyValue>();
-                  KeyValueUnmarshaller unmarshaller = KeyValueUnmarshaller.GetInstance();
-                while (context.Read())
-                {
-                  JsonToken token = context.CurrentTokenType;                
-                  if (token == JsonToken.ArrayStart)
-                  {
-                    continue;
-                  }
-                  if (token == JsonToken.ArrayEnd)
-                  {
-                    break;
-                  }
-                   hadoopJarStepConfig.Properties.Add(unmarshaller.Unmarshall(context));
-                }
+                var unmarshaller = new ListUnmarshaller<KeyValue,KeyValueUnmarshaller>(
+                    KeyValueUnmarshaller.GetInstance());                  
+                hadoopJarStepConfig.Properties = unmarshaller.Unmarshall(context);
+                
                 continue;
               }
   
               if (context.TestExpression("Jar", targetDepth))
               {
-                context.Read();
                 hadoopJarStepConfig.Jar = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("MainClass", targetDepth))
               {
-                context.Read();
                 hadoopJarStepConfig.MainClass = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("Args", targetDepth))
               {
-                context.Read();
                 
-                if (context.CurrentTokenType == JsonToken.Null)
-                {
-                    hadoopJarStepConfig.Args = null;
-                    continue;
-                }
-                  hadoopJarStepConfig.Args = new List<String>();
-                  StringUnmarshaller unmarshaller = StringUnmarshaller.GetInstance();
-                while (context.Read())
-                {
-                  JsonToken token = context.CurrentTokenType;                
-                  if (token == JsonToken.ArrayStart)
-                  {
-                    continue;
-                  }
-                  if (token == JsonToken.ArrayEnd)
-                  {
-                    break;
-                  }
-                   hadoopJarStepConfig.Args.Add(unmarshaller.Unmarshall(context));
-                }
+                var unmarshaller = new ListUnmarshaller<String,StringUnmarshaller>(
+                    StringUnmarshaller.GetInstance());                  
+                hadoopJarStepConfig.Args = unmarshaller.Unmarshall(context);
+                
                 continue;
               }
   
-                if (context.CurrentDepth <= originalDepth)
-                {
-                    return hadoopJarStepConfig;
-                }
             }
           
-
             return hadoopJarStepConfig;
         }
 

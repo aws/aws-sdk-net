@@ -33,74 +33,51 @@
 
         public StreamDescription Unmarshall(JsonUnmarshallerContext context)
         {
-            if (context.CurrentTokenType == JsonToken.Null)
-                return null;
-
+            context.Read();
+            if (context.CurrentTokenType == JsonToken.Null) return null;
             StreamDescription streamDescription = new StreamDescription();
-
         
         
-            int originalDepth = context.CurrentDepth;
-            int targetDepth = originalDepth + 1;
-            while (context.Read())
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
             {
               
               if (context.TestExpression("StreamName", targetDepth))
               {
-                context.Read();
                 streamDescription.StreamName = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("StreamARN", targetDepth))
               {
-                context.Read();
                 streamDescription.StreamARN = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("StreamStatus", targetDepth))
               {
-                context.Read();
                 streamDescription.StreamStatus = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("Shards", targetDepth))
               {
-                context.Read();
-                streamDescription.Shards = new List<Shard>();
-                        ShardUnmarshaller unmarshaller = ShardUnmarshaller.GetInstance();
-                while (context.Read())
-                {
-                  JsonToken token = context.CurrentTokenType;                
-                  if (token == JsonToken.ArrayStart)
-                  {
-                    continue;
-                  }
-                  if (token == JsonToken.ArrayEnd)
-                  {
-                    break;
-                  }
-                   streamDescription.Shards.Add(unmarshaller.Unmarshall(context));
-                }
+                
+                var unmarshaller = new ListUnmarshaller<Shard,ShardUnmarshaller>(
+                    ShardUnmarshaller.GetInstance());                  
+                streamDescription.Shards = unmarshaller.Unmarshall(context);
+                
                 continue;
               }
   
               if (context.TestExpression("HasMoreShards", targetDepth))
               {
-                context.Read();
                 streamDescription.HasMoreShards = BoolUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
-                if (context.CurrentDepth <= originalDepth)
-                {
-                    return streamDescription;
-                }
             }
           
-
             return streamDescription;
         }
 

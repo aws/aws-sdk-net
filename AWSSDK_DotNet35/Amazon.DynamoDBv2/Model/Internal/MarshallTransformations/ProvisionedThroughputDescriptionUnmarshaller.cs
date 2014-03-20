@@ -33,60 +33,47 @@
 
         public ProvisionedThroughputDescription Unmarshall(JsonUnmarshallerContext context)
         {
-            if (context.CurrentTokenType == JsonToken.Null)
-                return null;
-
+            context.Read();
+            if (context.CurrentTokenType == JsonToken.Null) return null;
             ProvisionedThroughputDescription provisionedThroughputDescription = new ProvisionedThroughputDescription();
-
         
         
-            int originalDepth = context.CurrentDepth;
-            int targetDepth = originalDepth + 1;
-            while (context.Read())
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
             {
               
               if (context.TestExpression("LastIncreaseDateTime", targetDepth))
               {
-                context.Read();
                 provisionedThroughputDescription.LastIncreaseDateTime = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("LastDecreaseDateTime", targetDepth))
               {
-                context.Read();
                 provisionedThroughputDescription.LastDecreaseDateTime = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("NumberOfDecreasesToday", targetDepth))
               {
-                context.Read();
                 provisionedThroughputDescription.NumberOfDecreasesToday = LongUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("ReadCapacityUnits", targetDepth))
               {
-                context.Read();
                 provisionedThroughputDescription.ReadCapacityUnits = LongUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("WriteCapacityUnits", targetDepth))
               {
-                context.Read();
                 provisionedThroughputDescription.WriteCapacityUnits = LongUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
-                if (context.CurrentDepth <= originalDepth)
-                {
-                    return provisionedThroughputDescription;
-                }
             }
           
-
             return provisionedThroughputDescription;
         }
 

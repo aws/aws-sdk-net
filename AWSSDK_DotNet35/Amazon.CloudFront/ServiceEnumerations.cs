@@ -266,6 +266,47 @@ namespace Amazon.CloudFront
     }
     
 
+    /// <summary>S S L Support Method
+    /// </summary>
+    public class SSLSupportMethod : ConstantClass
+    {
+
+
+       /// <summary>Constant SniOnly for SSLSupportMethod
+       /// </summary>
+        public static readonly SSLSupportMethod SniOnly = new SSLSupportMethod("sni-only");
+    
+
+       /// <summary>Constant Vip for SSLSupportMethod
+       /// </summary>
+        public static readonly SSLSupportMethod Vip = new SSLSupportMethod("vip");
+    
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public SSLSupportMethod(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SSLSupportMethod FindValue(string value)
+        {
+            return FindValue<SSLSupportMethod>(value);
+        }
+
+        public static implicit operator SSLSupportMethod(string value)
+        {
+            return FindValue(value);
+        }
+    }
+    
+
     /// <summary>Viewer Protocol Policy
     /// </summary>
     public class ViewerProtocolPolicy : ConstantClass
@@ -280,6 +321,11 @@ namespace Amazon.CloudFront
        /// <summary>Constant HttpsOnly for ViewerProtocolPolicy
        /// </summary>
         public static readonly ViewerProtocolPolicy HttpsOnly = new ViewerProtocolPolicy("https-only");
+    
+
+       /// <summary>Constant RedirectToHttps for ViewerProtocolPolicy
+       /// </summary>
+        public static readonly ViewerProtocolPolicy RedirectToHttps = new ViewerProtocolPolicy("redirect-to-https");
     
 
         /// <summary>

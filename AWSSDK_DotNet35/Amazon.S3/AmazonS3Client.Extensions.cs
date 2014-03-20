@@ -360,7 +360,7 @@ namespace Amazon.S3
             if (uploadPartRequest != null)
             {
                 // FilePath was set, so we created the underlying stream, so we must close it
-                if (uploadPartRequest.IsSetFilePath())
+                if (uploadPartRequest.IsSetFilePath() && uploadPartRequest.InputStream != null)
                 {
                     uploadPartRequest.InputStream.Dispose();
                 }

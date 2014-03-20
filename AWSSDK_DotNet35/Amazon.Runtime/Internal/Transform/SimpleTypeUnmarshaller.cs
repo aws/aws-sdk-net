@@ -33,6 +33,7 @@ namespace Amazon.Runtime.Internal.Transform
 
         public static T Unmarshall(JsonUnmarshallerContext context)
         {
+            context.Read();
             string text = context.ReadText();
             if (text == null)
                 return default(T);
@@ -239,6 +240,7 @@ namespace Amazon.Runtime.Internal.Transform
         {
             DateTime ret;
             Double seconds;
+            context.Read();
             string text = context.ReadText();
             if (Double.TryParse(text, NumberStyles.Any, CultureInfo.InvariantCulture, out seconds))
             {
@@ -247,7 +249,10 @@ namespace Amazon.Runtime.Internal.Transform
             }
             else
             {
-                ret = SimpleTypeUnmarshaller<DateTime>.Unmarshall(context);
+                if (text == null)
+                    return default(DateTime);
+
+                return (DateTime)Convert.ChangeType(text, typeof(DateTime), CultureInfo.InvariantCulture);
             }
             return ret;
         }
@@ -276,6 +281,7 @@ namespace Amazon.Runtime.Internal.Transform
         }
         public MemoryStream Unmarshall(JsonUnmarshallerContext context)
         {
+            context.Read();
             byte[] bytes = Convert.FromBase64String(context.ReadText());
             MemoryStream stream = new MemoryStream(bytes);
             return stream;
@@ -322,7 +328,7 @@ namespace Amazon.Runtime.Internal.Transform
             ResponseMetadata metadata = new ResponseMetadata();
             int depth = context.CurrentDepth;
 
-            while (depth == context.CurrentDepth)
+            while (context.CurrentDepth >= depth)
             {
                 context.Read();
                 if (context.TestExpression("ResponseMetadata/RequestId"))
@@ -380,10 +386,10 @@ namespace Amazon.Runtime.Internal.Transform
 
             return new KeyValuePair<K, V>(key, value);
         }
+
         public KeyValuePair<K, V> Unmarshall(JsonUnmarshallerContext context)
         {
             K key = this.keyUnmarshaller.Unmarshall(context);
-            context.Read(); 
             V value = this.valueUnmarshaller.Unmarshall(context);
 
             return new KeyValuePair<K, V>(key, value);
@@ -406,18 +412,16 @@ namespace Amazon.Runtime.Internal.Transform
         }
         public List<I> Unmarshall(JsonUnmarshallerContext context)
         {
+            context.Read(); // Read [ or null
             List<I> list = new List<I>();
+            if (context.CurrentTokenType == JsonToken.Null)
+                return list;
 
-            while (context.Read())
+            while (!context.Peek(JsonToken.ArrayEnd)) // Peek for ]
             {
-                JsonToken token = context.CurrentTokenType;
-                if (token == JsonToken.ArrayStart)
-                    continue;
-                if (token == JsonToken.ArrayEnd)
-                    break;
                 list.Add(iUnmarshaller.Unmarshall(context));
             }
-
+            context.Read(); // Read ]
             return list;
         }
     }
@@ -439,26 +443,19 @@ namespace Amazon.Runtime.Internal.Transform
         }
         public Dictionary<K, V> Unmarshall(JsonUnmarshallerContext context)
         {
+            context.Read(); // Read { or null
             Dictionary<K, V> dictionary = new Dictionary<K, V>();
+            if (context.CurrentTokenType == JsonToken.Null)
+                return dictionary;
 
-            int originalDepth = context.CurrentDepth;
-            int targetDepth = originalDepth;
-
-            while (context.Read())
-            {
-                JsonToken token = context.CurrentTokenType;
-                if (token == JsonToken.PropertyName && (context.CurrentDepth == targetDepth + 1))
+            while (!context.Peek(JsonToken.ObjectEnd)) // Peek }
                 {
                     KeyValuePair<K, V> item = KVUnmarshaller.Unmarshall(context);
                     dictionary.Add(item.Key, item.Value);
                 }
-                else if (context.IsEndElement || (context.CurrentDepth < originalDepth))
-                {
-                    break;
-                }
-            }
-
+            context.Read(); // Read }
             return dictionary;
+
         }
     }
 }

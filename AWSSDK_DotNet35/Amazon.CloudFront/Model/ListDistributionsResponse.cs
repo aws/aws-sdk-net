@@ -24,7 +24,7 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// Returns information about the  ListDistributions response and response metadata.
     /// </summary>
-    public class ListDistributionsResponse : ListDistributionsResult
+    public partial class ListDistributionsResponse : ListDistributionsResult
     {
         /// <summary>
         /// Gets and sets the ListDistributionsResult property.

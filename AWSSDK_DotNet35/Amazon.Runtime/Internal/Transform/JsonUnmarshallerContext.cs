@@ -45,9 +45,7 @@ namespace Amazon.Runtime.Internal.Transform
     /// </summary>
     public class JsonUnmarshallerContext : UnmarshallerContext
     {
-        const string JSON_TOKEN_NAME_OBJECT_START = "ObjectStart";
-        const string JSON_TOKEN_NAME_ARRAY_START = "ArrayStart";
-
+        private const string DELIMITER = "/";
         #region Private members
 
         private StreamReader streamReader = null;
@@ -56,7 +54,7 @@ namespace Amazon.Runtime.Internal.Transform
         private string currentField;
         private JsonToken? currentToken = null;
         private bool disposed = false;
-
+        private bool wasPeeked = false;
         #endregion
 
         #region Constructors
@@ -131,10 +129,7 @@ namespace Amazon.Runtime.Internal.Transform
         {
             get
             {
-                int depth = this.stack.CurrentDepth;
-                if(this.currentField != null)
-                    ++depth;
-                return depth;
+                return this.stack.CurrentDepth;
             }
         }
 
@@ -145,9 +140,6 @@ namespace Amazon.Runtime.Internal.Transform
         {
             get 
             {
-                if (this.currentField != null)
-                    return string.Concat(this.stack.CurrentPath, "/", this.currentField);
-
                 return this.stack.CurrentPath; 
             }
         }
@@ -157,18 +149,60 @@ namespace Amazon.Runtime.Internal.Transform
         ///     accordingly.
         /// </summary>
         /// <returns>
-        ///     True if a token was read, false if there are no more tokens to read./
+        ///     True if a token was read, false if there are no more tokens to read.
         /// </returns>
         public override bool Read()
         {
+            if (wasPeeked)
+            {
+                wasPeeked = false;
+                return currentToken == null;
+            }
+            
             bool result = jsonReader.Read();
-
             if (result)
             {
                 currentToken = jsonReader.Token;
                 UpdateContext();
             }
+            else
+            {
+                currentToken = null;
+            }
+            wasPeeked = false;
             return result;
+        }
+
+        /// <summary>
+        /// Reads the next token at depth greater than or equal to terget depth.
+        /// </summary>
+        /// <param name="targetDepth">Tokens are read at depth greater than or equal to terget depth.</param>
+        /// <returns>True if a token was read and current depth is greater than or equal to target depth.</returns>
+        public bool ReadAtDepth(int targetDepth)
+        {
+            return Read() && this.CurrentDepth >= targetDepth;
+        }
+
+        /// <summary>
+        /// Peeks at the next token. This peek implementation
+        /// reads the next token and makes the subsequent Read() return the same data.
+        /// If Peek is called successively, it will return the same data.
+        /// Only the first one calls Read(), subsequent calls 
+        /// will return the same data until a Read() call is made.
+        /// </summary>
+        /// <param name="token">Token to peek.</param>
+        /// <returns>Returns true if the peeked token matches given token.</returns>
+        public bool Peek(JsonToken token)
+        {
+            if (wasPeeked)
+                return currentToken != null && currentToken == token;
+
+            if (Read())
+            {
+                wasPeeked = true;
+                return currentToken == token;
+            }
+            return false;
         }
 
         /// <summary>
@@ -272,25 +306,20 @@ namespace Amazon.Runtime.Internal.Transform
 
             if (currentToken.Value == JsonToken.ObjectStart || currentToken.Value == JsonToken.ArrayStart)
             {
-                if (currentField != null)
-                {
-                    stack.Push(currentField);
-                    if (currentToken.Value == JsonToken.ObjectStart)
-                        stack.Push(JSON_TOKEN_NAME_OBJECT_START);
-                    else
-                        stack.Push(JSON_TOKEN_NAME_ARRAY_START);
-                    currentField = null;
-                }
+                // Push '/' for object start and array start.
+                stack.Push(DELIMITER);
             }
             else if (currentToken.Value == JsonToken.ObjectEnd || currentToken.Value == JsonToken.ArrayEnd)
             {
-                if (stack.Count > 0)
+                if (object.ReferenceEquals(stack.Peek(),DELIMITER))
                 {
-                    bool squareBracketsMatch = currentToken.Value == JsonToken.ArrayEnd && object.ReferenceEquals(stack.Peek(), JSON_TOKEN_NAME_ARRAY_START);
-                    bool curlyBracketsMatch = currentToken.Value == JsonToken.ObjectEnd && object.ReferenceEquals(stack.Peek(), JSON_TOKEN_NAME_OBJECT_START);
-                    if (squareBracketsMatch || curlyBracketsMatch)
+                    // Pop '/' associated with corresponding object start and array start.
+                    stack.Pop();
+                    if (stack.Count > 0 && ! object.ReferenceEquals(stack.Peek(),DELIMITER))
                     {
-                        stack.Pop();
+                        // Pop the property name associated with the
+                        // object or array if present.
+                        // e.g. {"a":["1","2","3"]}
                         stack.Pop();
                     }
                 }
@@ -300,6 +329,17 @@ namespace Amazon.Runtime.Internal.Transform
             {
                 string t = ReadText();
                 currentField = t;
+                // Push property name, it's appended to the stack's CurrentPath,
+                // it this does not affect the depth.
+                stack.Push(currentField);
+            }
+            else if (currentToken.Value != JsonToken.None && !stack.CurrentPath.EndsWith(DELIMITER, StringComparison.OrdinalIgnoreCase))
+            {
+                // Pop if you encounter a simple data type or null
+                // This will pop the property name associated with it in cases like  {"a":"b"}.
+                // Exclude the case where it's a value in an array so we dont end poping the start of array and
+                // property name e.g. {"a":["1","2","3"]}
+                stack.Pop();
             }
 
         }
@@ -327,8 +367,8 @@ namespace Amazon.Runtime.Internal.Transform
         class JsonPathStack
         {
             private Stack<string> stack = new Stack<string>();
-            int currentDepth = 1;
-            private StringBuilder stackStringBuilder = new StringBuilder("/", 128);
+            int currentDepth = 0;
+            private StringBuilder stackStringBuilder = new StringBuilder(128);
             private string stackString;
 
             public int CurrentDepth

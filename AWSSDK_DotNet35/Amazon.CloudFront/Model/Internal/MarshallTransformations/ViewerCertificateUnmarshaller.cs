@@ -49,6 +49,12 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                             
                         continue;
                     }
+                    if (context.TestExpression("SSLSupportMethod", targetDepth))
+                    {
+                        viewerCertificate.SSLSupportMethod = StringUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {

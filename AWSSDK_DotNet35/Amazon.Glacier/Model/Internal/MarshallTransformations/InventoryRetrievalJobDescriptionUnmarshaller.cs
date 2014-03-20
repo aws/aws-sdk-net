@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -33,60 +33,47 @@
 
         public InventoryRetrievalJobDescription Unmarshall(JsonUnmarshallerContext context)
         {
-            if (context.CurrentTokenType == JsonToken.Null)
-                return null;
-
+            context.Read();
+            if (context.CurrentTokenType == JsonToken.Null) return null;
             InventoryRetrievalJobDescription inventoryRetrievalJobDescription = new InventoryRetrievalJobDescription();
-
         
         
-            int originalDepth = context.CurrentDepth;
-            int targetDepth = originalDepth + 1;
-            while (context.Read())
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
             {
               
               if (context.TestExpression("Format", targetDepth))
               {
-                context.Read();
                 inventoryRetrievalJobDescription.Format = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("StartDate", targetDepth))
               {
-                context.Read();
                 inventoryRetrievalJobDescription.StartDate = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("EndDate", targetDepth))
               {
-                context.Read();
                 inventoryRetrievalJobDescription.EndDate = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("Limit", targetDepth))
               {
-                context.Read();
                 inventoryRetrievalJobDescription.Limit = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("Marker", targetDepth))
               {
-                context.Read();
                 inventoryRetrievalJobDescription.Marker = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
-                if (context.CurrentDepth <= originalDepth)
-                {
-                    return inventoryRetrievalJobDescription;
-                }
             }
           
-
             return inventoryRetrievalJobDescription;
         }
 

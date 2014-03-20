@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -34,12 +34,6 @@ namespace Amazon.CloudTrail.Model
         private DateTime? latestNotificationTime;
         private DateTime? startLoggingTime;
         private DateTime? stopLoggingTime;
-        private string latestDeliveryAttemptTime;
-        private string latestNotificationAttemptTime;
-        private string latestNotificationAttemptSucceeded;
-        private string latestDeliveryAttemptSucceeded;
-        private string timeLoggingStarted;
-        private string timeLoggingStopped;
 
 
         /// <summary>
@@ -59,7 +53,9 @@ namespace Amazon.CloudTrail.Model
         }
 
         /// <summary>
-        /// Information about the most recent error CloudTrail encountered when attempting to deliver log files to the account's Amazon S3 bucket.
+        /// Displays any Amazon S3 error that CloudTrail encountered when attempting to deliver log files to the designated bucket. For more information
+        /// see the topic <a href="http://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error Responses</a> in the Amazon S3 API
+        /// Reference.
         ///  
         /// </summary>
         public string LatestDeliveryError
@@ -75,7 +71,8 @@ namespace Amazon.CloudTrail.Model
         }
 
         /// <summary>
-        /// Information about the most recent error CloudTrail encountered when attempting to send an Amazon SNS notification.
+        /// Displays any Amazon SNS error that CloudTrail encountered when attempting to send a notification. For more information about Amazon SNS
+        /// errors, see the <a href="http://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon SNS Developer Guide</a>.
         ///  
         /// </summary>
         public string LatestNotificationError
@@ -89,6 +86,11 @@ namespace Amazon.CloudTrail.Model
         {
             return this.latestNotificationError != null;
         }
+
+        /// <summary>
+        /// Specifies the date and time that CloudTrail last delivered log files to an account's Amazon S3 bucket.
+        ///  
+        /// </summary>
         public DateTime LatestDeliveryTime
         {
             get { return this.latestDeliveryTime ?? default(DateTime); }
@@ -100,6 +102,12 @@ namespace Amazon.CloudTrail.Model
         {
             return this.latestDeliveryTime.HasValue;
         }
+
+        /// <summary>
+        /// Specifies the date and time of the most recent Amazon SNS notification that CloudTrail has written a new log file to an account's Amazon S3
+        /// bucket.
+        ///  
+        /// </summary>
         public DateTime LatestNotificationTime
         {
             get { return this.latestNotificationTime ?? default(DateTime); }
@@ -111,6 +119,11 @@ namespace Amazon.CloudTrail.Model
         {
             return this.latestNotificationTime.HasValue;
         }
+
+        /// <summary>
+        /// Specifies the most recent date and time when CloudTrail started recording API calls for an AWS account.
+        ///  
+        /// </summary>
         public DateTime StartLoggingTime
         {
             get { return this.startLoggingTime ?? default(DateTime); }
@@ -122,6 +135,11 @@ namespace Amazon.CloudTrail.Model
         {
             return this.startLoggingTime.HasValue;
         }
+
+        /// <summary>
+        /// Specifies the most recent date and time when CloudTrail stopped recording API calls for an AWS account.
+        ///  
+        /// </summary>
         public DateTime StopLoggingTime
         {
             get { return this.stopLoggingTime ?? default(DateTime); }
@@ -132,102 +150,6 @@ namespace Amazon.CloudTrail.Model
         internal bool IsSetStopLoggingTime()
         {
             return this.stopLoggingTime.HasValue;
-        }
-
-        /// <summary>
-        /// The last time CloudTrail attempted to deliver a file to an account's Amazon S3 bucket.
-        ///  
-        /// </summary>
-        public string LatestDeliveryAttemptTime
-        {
-            get { return this.latestDeliveryAttemptTime; }
-            set { this.latestDeliveryAttemptTime = value; }
-        }
-
-        // Check to see if LatestDeliveryAttemptTime property is set
-        internal bool IsSetLatestDeliveryAttemptTime()
-        {
-            return this.latestDeliveryAttemptTime != null;
-        }
-
-        /// <summary>
-        /// The last time CloudTrail attempted to notify an account's owner of a log delivery to the account's Amazon S3 bucket.
-        ///  
-        /// </summary>
-        public string LatestNotificationAttemptTime
-        {
-            get { return this.latestNotificationAttemptTime; }
-            set { this.latestNotificationAttemptTime = value; }
-        }
-
-        // Check to see if LatestNotificationAttemptTime property is set
-        internal bool IsSetLatestNotificationAttemptTime()
-        {
-            return this.latestNotificationAttemptTime != null;
-        }
-
-        /// <summary>
-        /// The last time CloudTrail successfully notified an account's owner of a log delivery to the account's Amazon S3 bucket.
-        ///  
-        /// </summary>
-        public string LatestNotificationAttemptSucceeded
-        {
-            get { return this.latestNotificationAttemptSucceeded; }
-            set { this.latestNotificationAttemptSucceeded = value; }
-        }
-
-        // Check to see if LatestNotificationAttemptSucceeded property is set
-        internal bool IsSetLatestNotificationAttemptSucceeded()
-        {
-            return this.latestNotificationAttemptSucceeded != null;
-        }
-
-        /// <summary>
-        /// The last time CloudTrail successfully delivered a log file to an account's Amazon S3 bucket.
-        ///  
-        /// </summary>
-        public string LatestDeliveryAttemptSucceeded
-        {
-            get { return this.latestDeliveryAttemptSucceeded; }
-            set { this.latestDeliveryAttemptSucceeded = value; }
-        }
-
-        // Check to see if LatestDeliveryAttemptSucceeded property is set
-        internal bool IsSetLatestDeliveryAttemptSucceeded()
-        {
-            return this.latestDeliveryAttemptSucceeded != null;
-        }
-
-        /// <summary>
-        /// The time at which CloudTrail started logging AWS API calls for an account.
-        ///  
-        /// </summary>
-        public string TimeLoggingStarted
-        {
-            get { return this.timeLoggingStarted; }
-            set { this.timeLoggingStarted = value; }
-        }
-
-        // Check to see if TimeLoggingStarted property is set
-        internal bool IsSetTimeLoggingStarted()
-        {
-            return this.timeLoggingStarted != null;
-        }
-
-        /// <summary>
-        /// The time at which CloudTrail stopped logging AWS API calls for an account.
-        ///  
-        /// </summary>
-        public string TimeLoggingStopped
-        {
-            get { return this.timeLoggingStopped; }
-            set { this.timeLoggingStopped = value; }
-        }
-
-        // Check to see if TimeLoggingStopped property is set
-        internal bool IsSetTimeLoggingStopped()
-        {
-            return this.timeLoggingStopped != null;
         }
     }
 }

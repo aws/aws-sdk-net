@@ -23,7 +23,7 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// <para> A complex type that specifies the cookie preferences associated with this cache behavior. </para>
     /// </summary>
-    public class CookiePreference
+    public partial class CookiePreference
     {
         
         private ItemSelection forward;

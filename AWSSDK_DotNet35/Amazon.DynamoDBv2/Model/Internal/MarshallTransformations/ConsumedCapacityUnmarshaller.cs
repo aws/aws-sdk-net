@@ -33,98 +33,55 @@
 
         public ConsumedCapacity Unmarshall(JsonUnmarshallerContext context)
         {
-            if (context.CurrentTokenType == JsonToken.Null)
-                return null;
-
+            context.Read();
+            if (context.CurrentTokenType == JsonToken.Null) return null;
             ConsumedCapacity consumedCapacity = new ConsumedCapacity();
-
         
         
-            int originalDepth = context.CurrentDepth;
-            int targetDepth = originalDepth + 1;
-            while (context.Read())
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
             {
               
               if (context.TestExpression("TableName", targetDepth))
               {
-                context.Read();
                 consumedCapacity.TableName = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("CapacityUnits", targetDepth))
               {
-                context.Read();
                 consumedCapacity.CapacityUnits = DoubleUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("Table", targetDepth))
               {
-                context.Read();
                 consumedCapacity.Table = CapacityUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("LocalSecondaryIndexes", targetDepth))
               {
-                context.Read();
-                consumedCapacity.LocalSecondaryIndexes = new Dictionary<String,Capacity>();
-                if (context.CurrentTokenType == JsonToken.Null)
-                {
-                    continue;
-                }
-                KeyValueUnmarshaller<string, Capacity, StringUnmarshaller, CapacityUnmarshaller> unmarshaller = new KeyValueUnmarshaller<string, Capacity, StringUnmarshaller, CapacityUnmarshaller>(StringUnmarshaller.GetInstance(), CapacityUnmarshaller.GetInstance());
-                while (context.Read())
-                {
-                  JsonToken token = context.CurrentTokenType;
-                  if (token == JsonToken.ArrayStart || token == JsonToken.ObjectStart)
-                  {
-                      continue;
-                  }
-                  if (token == JsonToken.ArrayEnd || token == JsonToken.ObjectEnd)
-                  {
-                      break;
-                  }
-                  KeyValuePair<string, Capacity> kvp = unmarshaller.Unmarshall(context);
-                    consumedCapacity.LocalSecondaryIndexes.Add(kvp.Key, kvp.Value);
-                }
+                
+                var unmarshaller =  new DictionaryUnmarshaller<String,Capacity,StringUnmarshaller,CapacityUnmarshaller>(
+                    StringUnmarshaller.GetInstance(),CapacityUnmarshaller.GetInstance());               
+                consumedCapacity.LocalSecondaryIndexes = unmarshaller.Unmarshall(context);
+                
                 continue;
               }
   
               if (context.TestExpression("GlobalSecondaryIndexes", targetDepth))
               {
-                context.Read();
-                consumedCapacity.GlobalSecondaryIndexes = new Dictionary<String,Capacity>();
-                if (context.CurrentTokenType == JsonToken.Null)
-                {
-                    continue;
-                }
-                KeyValueUnmarshaller<string, Capacity, StringUnmarshaller, CapacityUnmarshaller> unmarshaller = new KeyValueUnmarshaller<string, Capacity, StringUnmarshaller, CapacityUnmarshaller>(StringUnmarshaller.GetInstance(), CapacityUnmarshaller.GetInstance());
-                while (context.Read())
-                {
-                  JsonToken token = context.CurrentTokenType;
-                  if (token == JsonToken.ArrayStart || token == JsonToken.ObjectStart)
-                  {
-                      continue;
-                  }
-                  if (token == JsonToken.ArrayEnd || token == JsonToken.ObjectEnd)
-                  {
-                      break;
-                  }
-                  KeyValuePair<string, Capacity> kvp = unmarshaller.Unmarshall(context);
-                    consumedCapacity.GlobalSecondaryIndexes.Add(kvp.Key, kvp.Value);
-                }
+                
+                var unmarshaller =  new DictionaryUnmarshaller<String,Capacity,StringUnmarshaller,CapacityUnmarshaller>(
+                    StringUnmarshaller.GetInstance(),CapacityUnmarshaller.GetInstance());               
+                consumedCapacity.GlobalSecondaryIndexes = unmarshaller.Unmarshall(context);
+                
                 continue;
               }
   
-                if (context.CurrentDepth <= originalDepth)
-                {
-                    return consumedCapacity;
-                }
             }
           
-
             return consumedCapacity;
         }
 

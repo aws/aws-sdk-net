@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -33,67 +33,53 @@
 
         public DescribeVaultOutput Unmarshall(JsonUnmarshallerContext context)
         {
-            if (context.CurrentTokenType == JsonToken.Null)
-                return null;
-
+            context.Read();
+            if (context.CurrentTokenType == JsonToken.Null) return null;
             DescribeVaultOutput describeVaultOutput = new DescribeVaultOutput();
-
         
         
-            int originalDepth = context.CurrentDepth;
-            int targetDepth = originalDepth + 1;
-            while (context.Read())
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
             {
               
               if (context.TestExpression("VaultARN", targetDepth))
               {
-                context.Read();
                 describeVaultOutput.VaultARN = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("VaultName", targetDepth))
               {
-                context.Read();
                 describeVaultOutput.VaultName = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("CreationDate", targetDepth))
               {
-                context.Read();
                 describeVaultOutput.CreationDate = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("LastInventoryDate", targetDepth))
               {
-                context.Read();
                 describeVaultOutput.LastInventoryDate = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("NumberOfArchives", targetDepth))
               {
-                context.Read();
                 describeVaultOutput.NumberOfArchives = LongUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("SizeInBytes", targetDepth))
               {
-                context.Read();
                 describeVaultOutput.SizeInBytes = LongUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
-                if (context.CurrentDepth <= originalDepth)
-                {
-                    return describeVaultOutput;
-                }
             }
           
-
             return describeVaultOutput;
         }
 

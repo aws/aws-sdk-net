@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -32,8 +32,12 @@ namespace Amazon.CloudTrail.Model
         private string s3KeyPrefix;
         private string snsTopicName;
         private bool? includeGlobalServiceEvents;
-        private Trail trail;
 
+
+        /// <summary>
+        /// Specifies the name of the trail.
+        ///  
+        /// </summary>
         public string Name
         {
             get { return this.name; }
@@ -45,6 +49,11 @@ namespace Amazon.CloudTrail.Model
         {
             return this.name != null;
         }
+
+        /// <summary>
+        /// Specifies the name of the Amazon S3 bucket designated for publishing log files.
+        ///  
+        /// </summary>
         public string S3BucketName
         {
             get { return this.s3BucketName; }
@@ -56,6 +65,11 @@ namespace Amazon.CloudTrail.Model
         {
             return this.s3BucketName != null;
         }
+
+        /// <summary>
+        /// Specifies the Amazon S3 key prefix that precedes the name of the bucket you have designated for log file delivery.
+        ///  
+        /// </summary>
         public string S3KeyPrefix
         {
             get { return this.s3KeyPrefix; }
@@ -67,6 +81,11 @@ namespace Amazon.CloudTrail.Model
         {
             return this.s3KeyPrefix != null;
         }
+
+        /// <summary>
+        /// Specifies the name of the Amazon SNS topic defined for notification of log file delivery.
+        ///  
+        /// </summary>
         public string SnsTopicName
         {
             get { return this.snsTopicName; }
@@ -78,6 +97,11 @@ namespace Amazon.CloudTrail.Model
         {
             return this.snsTopicName != null;
         }
+
+        /// <summary>
+        /// Specifies whether the trail is publishing events from global services such as IAM to the log files.
+        ///  
+        /// </summary>
         public bool IncludeGlobalServiceEvents
         {
             get { return this.includeGlobalServiceEvents ?? default(bool); }
@@ -88,22 +112,6 @@ namespace Amazon.CloudTrail.Model
         internal bool IsSetIncludeGlobalServiceEvents()
         {
             return this.includeGlobalServiceEvents.HasValue;
-        }
-
-        /// <summary>
-        /// Represents the CloudTrail settings that were updated by calling <a>UpdateTrail</a>.
-        ///  
-        /// </summary>
-        public Trail Trail
-        {
-            get { return this.trail; }
-            set { this.trail = value; }
-        }
-
-        // Check to see if Trail property is set
-        internal bool IsSetTrail()
-        {
-            return this.trail != null;
         }
     }
 }

@@ -23,7 +23,7 @@ namespace Amazon.Kinesis.Model
     /// <summary>
     /// <para>Represents the output of a <c>DescribeStream</c> operation.</para>
     /// </summary>
-    public class StreamDescription
+    public partial class StreamDescription
     {
         
         private string streamName;

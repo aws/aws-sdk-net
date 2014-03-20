@@ -167,10 +167,7 @@ namespace Amazon.CloudTrail
 
         /// <summary>
         /// Constructs AmazonCloudTrailClient with AWS Access Key ID, AWS Secret Key and an
-        /// AmazonCloudTrailClient Configuration object. If the config object's
-        /// UseSecureStringForAwsSecretKey is false, the AWS Secret Key
-        /// is stored as a clear-text string. Please use this option only
-        /// if the application environment doesn't allow the use of SecureStrings.
+        /// AmazonCloudTrailClient Configuration object.
         /// </summary>
         /// <param name="awsAccessKeyId">AWS Access Key ID</param>
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
@@ -205,10 +202,7 @@ namespace Amazon.CloudTrail
 
         /// <summary>
         /// Constructs AmazonCloudTrailClient with AWS Access Key ID, AWS Secret Key and an
-        /// AmazonCloudTrailClient Configuration object. If the config object's
-        /// UseSecureStringForAwsSecretKey is false, the AWS Secret Key
-        /// is stored as a clear-text string. Please use this option only
-        /// if the application environment doesn't allow the use of SecureStrings.
+        /// AmazonCloudTrailClient Configuration object.
         /// </summary>
         /// <param name="awsAccessKeyId">AWS Access Key ID</param>
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
@@ -223,17 +217,8 @@ namespace Amazon.CloudTrail
 
  
         /// <summary>
-        /// <para>From the command line, use create-subscription. </para> <para>Creates a trail that specifies the settings for delivery of log data to
-        /// an Amazon S3 bucket. The request includes a Trail structure that specifies the following:</para>
-        /// <ul>
-        /// <li>Trail name.</li>
-        /// <li>The name of an existing Amazon S3 bucket to which CloudTrail delivers your log files.</li>
-        /// <li>The name of the Amazon S3 key prefix that precedes each log file.</li>
-        /// <li>The name of an existing Amazon SNS topic that notifies you that a new file is available in your bucket.</li>
-        /// <li>Whether the log file should include AWS API calls from global services. Currently, the only global AWS API calls included in CloudTrail
-        /// log files are from IAM and AWS STS.</li>
-        /// 
-        /// </ul>
+        /// <para>From the command line, use <c>create-subscription</c> . </para> <para>Creates a trail that specifies the settings for delivery of log
+        /// data to an Amazon S3 bucket. </para>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateTrail service method on
@@ -247,7 +232,6 @@ namespace Amazon.CloudTrail
         /// <exception cref="T:Amazon.CloudTrail.Model.TrailAlreadyExistsException" />
         /// <exception cref="T:Amazon.CloudTrail.Model.MaximumNumberOfTrailsExceededException" />
         /// <exception cref="T:Amazon.CloudTrail.Model.InvalidS3BucketNameException" />
-        /// <exception cref="T:Amazon.CloudTrail.Model.TrailNotProvidedException" />
         /// <exception cref="T:Amazon.CloudTrail.Model.InsufficientSnsTopicPolicyException" />
         /// <exception cref="T:Amazon.CloudTrail.Model.InvalidSnsTopicNameException" />
         /// <exception cref="T:Amazon.CloudTrail.Model.InsufficientS3BucketPolicyException" />
@@ -325,7 +309,7 @@ namespace Amazon.CloudTrail
         }
  
         /// <summary>
-        /// <para>Retrieves the settings for some or all trails associated with an account. Returns a list of Trail structures in JSON format.</para>
+        /// <para>Retrieves the settings for some or all trails associated with an account. </para>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeTrails service method on
@@ -364,7 +348,7 @@ namespace Amazon.CloudTrail
         }
  
         /// <summary>
-        /// <para>Retrieves the settings for some or all trails associated with an account. Returns a list of Trail structures in JSON format.</para>
+        /// <para>Retrieves the settings for some or all trails associated with an account. </para>
         /// </summary>
         /// 
         /// 
@@ -375,8 +359,8 @@ namespace Amazon.CloudTrail
         }
  
         /// <summary>
-        /// <para>Returns a JSON-formatted list of information about the specified trail. Fields include information such as delivery errors, Amazon SNS
-        /// and Amazon S3 errors, and times that logging started and stopped for each trail.</para>
+        /// <para>Returns a JSON-formatted list of information about the specified trail. Fields include information on delivery errors, Amazon SNS and
+        /// Amazon S3 errors, and start and stop logging times for each trail. </para>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the GetTrailStatus service method on
@@ -503,10 +487,9 @@ namespace Amazon.CloudTrail
         }
  
         /// <summary>
-        /// <para>From the command line, use update-subscription.</para> <para>Updates the settings that specify delivery of log files. Changes to a
-        /// trail do not require stopping the CloudTrail service. You use this action to designate an existing bucket for log delivery. If the existing
-        /// bucket has previously been a target for CloudTrail log files, an IAM policy exists for the bucket. Use a Trail data type to pass updated
-        /// bucket or topic names.</para>
+        /// <para>From the command line, use <c>update-subscription</c> .</para> <para>Updates the settings that specify delivery of log files. Changes
+        /// to a trail do not require stopping the CloudTrail service. Use this action to designate an existing bucket for log delivery. If the existing
+        /// bucket has previously been a target for CloudTrail log files, an IAM policy exists for the bucket. </para>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the UpdateTrail service method on
@@ -518,7 +501,6 @@ namespace Amazon.CloudTrail
         /// <exception cref="T:Amazon.CloudTrail.Model.InvalidS3PrefixException" />
         /// <exception cref="T:Amazon.CloudTrail.Model.InvalidTrailNameException" />
         /// <exception cref="T:Amazon.CloudTrail.Model.InvalidS3BucketNameException" />
-        /// <exception cref="T:Amazon.CloudTrail.Model.TrailNotProvidedException" />
         /// <exception cref="T:Amazon.CloudTrail.Model.InsufficientSnsTopicPolicyException" />
         /// <exception cref="T:Amazon.CloudTrail.Model.InvalidSnsTopicNameException" />
         /// <exception cref="T:Amazon.CloudTrail.Model.InsufficientS3BucketPolicyException" />

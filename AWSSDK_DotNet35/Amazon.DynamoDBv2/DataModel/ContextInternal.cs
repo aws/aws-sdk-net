@@ -593,7 +593,16 @@ namespace Amazon.DynamoDBv2.DataModel
             return ComposeQueryFilterHelper(hashKey, conditions, storageConfig, currentConfig, out indexNames);
         }
 
-        private static QueryFilter ComposeQueryFilterHelper(Document hashKey, IEnumerable<QueryCondition> conditions, ItemStorageConfig storageConfig, DynamoDBFlatConfig currentConfig, out List<string> indexNames)
+        private static string NO_INDEX = DynamoDBFlatConfig.DefaultIndexName;
+        // This method composes the query filter and determines the possible indexes that the filter
+        // may be used against. In the case where the condition property is also a RANGE key on the
+        // table and not just on LSI/GSI, the potential index will be "" (absent).
+        private static QueryFilter ComposeQueryFilterHelper(
+            Document hashKey,
+            IEnumerable<QueryCondition> conditions,
+            ItemStorageConfig storageConfig,
+            DynamoDBFlatConfig currentConfig,
+            out List<string> indexNames)
         {
             if (hashKey == null)
                 throw new ArgumentNullException("hashKey");
@@ -622,6 +631,8 @@ namespace Amazon.DynamoDBv2.DataModel
                     PropertyStorage conditionProperty = storageConfig.GetPropertyStorage(condition.PropertyName);
                     if (conditionProperty.IsLSIRangeKey || conditionProperty.IsGSIKey)
                         indexNames.AddRange(conditionProperty.Indexes);
+                    if (conditionProperty.IsRangeKey)
+                        indexNames.Add(NO_INDEX);
                     List<AttributeValue> attributeValues = new List<AttributeValue>();
                     foreach (var conditionValue in conditionValues)
                     {
@@ -651,8 +662,7 @@ namespace Amazon.DynamoDBv2.DataModel
             {
                 inferredIndexName = specifiedIndexName;
             }
-
-            if (string.IsNullOrEmpty(inferredIndexName) && indexNames.Count > 0)
+            else if (string.IsNullOrEmpty(inferredIndexName) && indexNames.Count > 0)
                 throw new InvalidOperationException("Local Secondary Index range key conditions are used but no index could be inferred from model. Specified index name = " + specifiedIndexName);
 
             // index is both specified and inferred
@@ -662,7 +672,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 if (string.Equals(inferredIndexName, specifiedIndexName, StringComparison.Ordinal))
                     return inferredIndexName;
                 else
-                    throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture, 
+                    throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture,
                         "Specified index name {0} does not match with inferred index name {1}", specifiedIndexName, inferredIndexName));
             }
 
@@ -674,6 +684,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
             return null;
         }
+
         private List<QueryCondition> CreateQueryConditions(DynamoDBOperationConfig config, QueryOperator op, IEnumerable<object> values, ItemStorageConfig storageConfig)
         {
             string rangeKeyPropertyName;

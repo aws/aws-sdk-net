@@ -23,15 +23,18 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// <para> A complex type that contains information about viewer certificates for this distribution. </para>
     /// </summary>
-    public class ViewerCertificate
+    public partial class ViewerCertificate
     {
         
         private string iAMCertificateId;
         private bool? cloudFrontDefaultCertificate;
+        private SSLSupportMethod sSLSupportMethod;
 
 
         /// <summary>
-        /// The IAM certificate identifier of the custom viewer certificate for this distribution.
+        /// If you want viewers to use HTTPS to request your objects and you're using an alternate domain name in your object URLs (for example,
+        /// https://example.com/logo.jpg), specify the IAM certificate identifier of the custom viewer certificate for this distribution. Specify either
+        /// this value or CloudFrontDefaultCertificate.
         ///  
         /// </summary>
         public string IAMCertificateId
@@ -47,8 +50,8 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Set to true if you want to use the default *.cloudfront.net viewer certificate for this distribution. Omit this value if you are setting an
-        /// IAMCertificateId.
+        /// If you want viewers to use HTTPS to request your objects and you're using the CloudFront domain name of your distribution in your object
+        /// URLs (for example, https://d111111abcdef8.cloudfront.net/logo.jpg), set to true. Omit this value if you are setting an IAMCertificateId.
         ///  
         /// </summary>
         public bool CloudFrontDefaultCertificate
@@ -61,6 +64,35 @@ namespace Amazon.CloudFront.Model
         internal bool IsSetCloudFrontDefaultCertificate()
         {
             return this.cloudFrontDefaultCertificate.HasValue;
+        }
+
+        /// <summary>
+        /// If you specify a value for IAMCertificateId, you must also specify how you want CloudFront to serve HTTPS requests. Valid values are vip and
+        /// sni-only. If you specify vip, CloudFront uses dedicated IP addresses for your content and can respond to HTTPS requests from any viewer.
+        /// However, you must request permission to use this feature, and you incur additional monthly charges. If you specify sni-only, CloudFront can
+        /// only respond to HTTPS requests from viewers that support Server Name Indication (SNI). All modern browsers support SNI, but some browsers
+        /// still in use don't support SNI. Do not specify a value for SSLSupportMethod if you specified true for CloudFrontDefaultCertificate.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>sni-only, vip</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
+        public SSLSupportMethod SSLSupportMethod
+        {
+            get { return this.sSLSupportMethod; }
+            set { this.sSLSupportMethod = value; }
+        }
+
+        // Check to see if SSLSupportMethod property is set
+        internal bool IsSetSSLSupportMethod()
+        {
+            return this.sSLSupportMethod != null;
         }
     }
 }

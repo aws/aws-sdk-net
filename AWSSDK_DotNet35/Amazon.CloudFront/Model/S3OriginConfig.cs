@@ -24,7 +24,7 @@ namespace Amazon.CloudFront.Model
     /// <para> A complex type that contains information about the Amazon S3 origin. If the origin is a custom origin, use the CustomOriginConfig
     /// element instead. </para>
     /// </summary>
-    public class S3OriginConfig
+    public partial class S3OriginConfig
     {
         
         private string originAccessIdentity;
@@ -35,7 +35,9 @@ namespace Amazon.CloudFront.Model
         /// can only access objects in an Amazon S3 bucket through CloudFront. If you want end users to be able to access objects using either the
         /// CloudFront URL or the Amazon S3 URL, specify an empty OriginAccessIdentity element. To delete the origin access identity from an existing
         /// distribution, update the distribution configuration and include an empty OriginAccessIdentity element. To replace the origin access
-        /// identity, update the distribution configuration and specify the new origin access identity.
+        /// identity, update the distribution configuration and specify the new origin access identity. Use the format
+        /// origin-access-identity/cloudfront/Id where Id is the value that CloudFront returned in the Id element when you created the origin access
+        /// identity.
         ///  
         /// </summary>
         public string OriginAccessIdentity

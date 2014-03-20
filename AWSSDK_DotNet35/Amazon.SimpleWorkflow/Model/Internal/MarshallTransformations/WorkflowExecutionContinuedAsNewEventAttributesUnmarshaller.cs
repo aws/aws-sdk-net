@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -33,102 +33,75 @@
 
         public WorkflowExecutionContinuedAsNewEventAttributes Unmarshall(JsonUnmarshallerContext context)
         {
-            if (context.CurrentTokenType == JsonToken.Null)
-                return null;
-
+            context.Read();
+            if (context.CurrentTokenType == JsonToken.Null) return null;
             WorkflowExecutionContinuedAsNewEventAttributes workflowExecutionContinuedAsNewEventAttributes = new WorkflowExecutionContinuedAsNewEventAttributes();
-
         
         
-            int originalDepth = context.CurrentDepth;
-            int targetDepth = originalDepth + 1;
-            while (context.Read())
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
             {
               
               if (context.TestExpression("input", targetDepth))
               {
-                context.Read();
                 workflowExecutionContinuedAsNewEventAttributes.Input = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("decisionTaskCompletedEventId", targetDepth))
               {
-                context.Read();
                 workflowExecutionContinuedAsNewEventAttributes.DecisionTaskCompletedEventId = LongUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("newExecutionRunId", targetDepth))
               {
-                context.Read();
                 workflowExecutionContinuedAsNewEventAttributes.NewExecutionRunId = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("executionStartToCloseTimeout", targetDepth))
               {
-                context.Read();
                 workflowExecutionContinuedAsNewEventAttributes.ExecutionStartToCloseTimeout = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("taskList", targetDepth))
               {
-                context.Read();
                 workflowExecutionContinuedAsNewEventAttributes.TaskList = TaskListUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("taskStartToCloseTimeout", targetDepth))
               {
-                context.Read();
                 workflowExecutionContinuedAsNewEventAttributes.TaskStartToCloseTimeout = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("childPolicy", targetDepth))
               {
-                context.Read();
                 workflowExecutionContinuedAsNewEventAttributes.ChildPolicy = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("tagList", targetDepth))
               {
-                context.Read();
-                workflowExecutionContinuedAsNewEventAttributes.TagList = new List<String>();
-                        StringUnmarshaller unmarshaller = StringUnmarshaller.GetInstance();
-                while (context.Read())
-                {
-                  JsonToken token = context.CurrentTokenType;                
-                  if (token == JsonToken.ArrayStart)
-                  {
-                    continue;
-                  }
-                  if (token == JsonToken.ArrayEnd)
-                  {
-                    break;
-                  }
-                   workflowExecutionContinuedAsNewEventAttributes.TagList.Add(unmarshaller.Unmarshall(context));
-                }
+                
+                var unmarshaller = new ListUnmarshaller<String,StringUnmarshaller>(
+                    StringUnmarshaller.GetInstance());                  
+                workflowExecutionContinuedAsNewEventAttributes.TagList = unmarshaller.Unmarshall(context);
+                
                 continue;
               }
   
               if (context.TestExpression("workflowType", targetDepth))
               {
-                context.Read();
                 workflowExecutionContinuedAsNewEventAttributes.WorkflowType = WorkflowTypeUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
-                if (context.CurrentDepth <= originalDepth)
-                {
-                    return workflowExecutionContinuedAsNewEventAttributes;
-                }
             }
           
-
             return workflowExecutionContinuedAsNewEventAttributes;
         }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -33,81 +33,65 @@
 
         public CachediSCSIVolume Unmarshall(JsonUnmarshallerContext context)
         {
-            if (context.CurrentTokenType == JsonToken.Null)
-                return null;
-
+            context.Read();
+            if (context.CurrentTokenType == JsonToken.Null) return null;
             CachediSCSIVolume cachediSCSIVolume = new CachediSCSIVolume();
-
         
         
-            int originalDepth = context.CurrentDepth;
-            int targetDepth = originalDepth + 1;
-            while (context.Read())
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
             {
               
               if (context.TestExpression("VolumeARN", targetDepth))
               {
-                context.Read();
                 cachediSCSIVolume.VolumeARN = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("VolumeId", targetDepth))
               {
-                context.Read();
                 cachediSCSIVolume.VolumeId = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("VolumeType", targetDepth))
               {
-                context.Read();
                 cachediSCSIVolume.VolumeType = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("VolumeStatus", targetDepth))
               {
-                context.Read();
                 cachediSCSIVolume.VolumeStatus = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("VolumeSizeInBytes", targetDepth))
               {
-                context.Read();
                 cachediSCSIVolume.VolumeSizeInBytes = LongUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("VolumeProgress", targetDepth))
               {
-                context.Read();
                 cachediSCSIVolume.VolumeProgress = DoubleUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("SourceSnapshotId", targetDepth))
               {
-                context.Read();
                 cachediSCSIVolume.SourceSnapshotId = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("VolumeiSCSIAttributes", targetDepth))
               {
-                context.Read();
                 cachediSCSIVolume.VolumeiSCSIAttributes = VolumeiSCSIAttributesUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
-                if (context.CurrentDepth <= originalDepth)
-                {
-                    return cachediSCSIVolume;
-                }
             }
           
-
             return cachediSCSIVolume;
         }
 

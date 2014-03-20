@@ -23,7 +23,7 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// <para> An invalidation batch. </para>
     /// </summary>
-    public class InvalidationBatch
+    public partial class InvalidationBatch
     {
         
         private Paths paths;

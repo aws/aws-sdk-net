@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,8 +25,8 @@ namespace Amazon.CloudTrail.Model
 {
     /// <summary>
     /// Container for the parameters to the GetTrailStatus operation.
-    /// <para>Returns a JSON-formatted list of information about the specified trail. Fields include information such as delivery errors, Amazon SNS
-    /// and Amazon S3 errors, and times that logging started and stopped for each trail.</para>
+    /// <para>Returns a JSON-formatted list of information about the specified trail. Fields include information on delivery errors, Amazon SNS and
+    /// Amazon S3 errors, and start and stop logging times for each trail. </para>
     /// </summary>
     public partial class GetTrailStatusRequest : AmazonCloudTrailRequest
     {

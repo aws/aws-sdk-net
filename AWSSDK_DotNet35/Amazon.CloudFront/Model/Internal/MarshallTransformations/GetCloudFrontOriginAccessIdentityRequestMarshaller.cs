@@ -43,32 +43,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 
 
             request.HttpMethod = "GET";
-            string uriResourcePath = "2013-11-22/origin-access-identity/cloudfront/{Id}"; 
+            string uriResourcePath = "2014-01-31/origin-access-identity/cloudfront/{Id}"; 
             uriResourcePath = uriResourcePath.Replace("{Id}", getCloudFrontOriginAccessIdentityRequest.IsSetId() ? getCloudFrontOriginAccessIdentityRequest.Id.ToString() : "" ); 
-
-            if (uriResourcePath.Contains("?")) 
-            {
-                int queryIndex = uriResourcePath.IndexOf("?", StringComparison.OrdinalIgnoreCase);
-                string queryString = uriResourcePath.Substring(queryIndex + 1);
-                
-                uriResourcePath    = uriResourcePath.Substring(0, queryIndex);
-                
-        
-                foreach (string s in queryString.Split('&', ';')) 
-                {
-                    string[] nameValuePair = s.Split('=');
-                    if (nameValuePair.Length == 2 && nameValuePair[1].Length > 0) 
-                    {
-                        request.Parameters.Add(nameValuePair[0], nameValuePair[1]);
-                    }
-                    else
-                    {
-                        request.Parameters.Add(nameValuePair[0], null);
-                    }
-                
-                }
-            }
-            
             request.ResourcePath = uriResourcePath;
             
         

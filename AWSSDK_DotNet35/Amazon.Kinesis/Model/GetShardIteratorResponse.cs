@@ -24,7 +24,7 @@ namespace Amazon.Kinesis.Model
     /// <summary>
     /// Returns information about the  GetShardIterator response and response metadata.
     /// </summary>
-    public class GetShardIteratorResponse : GetShardIteratorResult
+    public partial class GetShardIteratorResponse : GetShardIteratorResult
     {
         /// <summary>
         /// Gets and sets the GetShardIteratorResult property.

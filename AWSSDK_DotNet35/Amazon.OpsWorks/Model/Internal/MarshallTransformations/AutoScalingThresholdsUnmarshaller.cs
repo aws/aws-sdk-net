@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -33,67 +33,53 @@
 
         public AutoScalingThresholds Unmarshall(JsonUnmarshallerContext context)
         {
-            if (context.CurrentTokenType == JsonToken.Null)
-                return null;
-
+            context.Read();
+            if (context.CurrentTokenType == JsonToken.Null) return null;
             AutoScalingThresholds autoScalingThresholds = new AutoScalingThresholds();
-
         
         
-            int originalDepth = context.CurrentDepth;
-            int targetDepth = originalDepth + 1;
-            while (context.Read())
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
             {
               
               if (context.TestExpression("InstanceCount", targetDepth))
               {
-                context.Read();
                 autoScalingThresholds.InstanceCount = IntUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("ThresholdsWaitTime", targetDepth))
               {
-                context.Read();
                 autoScalingThresholds.ThresholdsWaitTime = IntUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("IgnoreMetricsTime", targetDepth))
               {
-                context.Read();
                 autoScalingThresholds.IgnoreMetricsTime = IntUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("CpuThreshold", targetDepth))
               {
-                context.Read();
                 autoScalingThresholds.CpuThreshold = DoubleUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("MemoryThreshold", targetDepth))
               {
-                context.Read();
                 autoScalingThresholds.MemoryThreshold = DoubleUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("LoadThreshold", targetDepth))
               {
-                context.Read();
                 autoScalingThresholds.LoadThreshold = DoubleUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
-                if (context.CurrentDepth <= originalDepth)
-                {
-                    return autoScalingThresholds;
-                }
             }
           
-
             return autoScalingThresholds;
         }
 

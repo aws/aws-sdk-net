@@ -23,7 +23,7 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// <para> The configuration for the streaming distribution. </para>
     /// </summary>
-    public class StreamingDistributionConfig
+    public partial class StreamingDistributionConfig
     {
         
         private string callerReference;

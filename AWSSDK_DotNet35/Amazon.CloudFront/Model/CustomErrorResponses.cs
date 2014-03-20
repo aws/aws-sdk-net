@@ -23,7 +23,7 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// <para> A complex type that contains zero or more CustomErrorResponse elements. </para>
     /// </summary>
-    public class CustomErrorResponses
+    public partial class CustomErrorResponses
     {
         
         private int? quantity;

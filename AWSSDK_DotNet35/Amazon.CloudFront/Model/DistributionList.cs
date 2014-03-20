@@ -23,7 +23,7 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// <para> A distribution list. </para>
     /// </summary>
-    public class DistributionList
+    public partial class DistributionList
     {
         
         private string marker;

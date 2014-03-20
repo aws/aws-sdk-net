@@ -24,7 +24,7 @@ namespace Amazon.Kinesis.Model
     /// <summary>
     /// Returns information about the  GetRecords response and response metadata.
     /// </summary>
-    public class GetRecordsResponse : GetRecordsResult
+    public partial class GetRecordsResponse : GetRecordsResult
     {
         /// <summary>
         /// Gets and sets the GetRecordsResult property.

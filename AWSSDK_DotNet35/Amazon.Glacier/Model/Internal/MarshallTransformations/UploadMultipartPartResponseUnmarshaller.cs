@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,21 +30,12 @@
       {
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-          UploadMultipartPartResponse response = new UploadMultipartPartResponse();          
-          
-          context.Read();
-          
-          UnmarshallResult(context,response);
-          return response;
-        }
-        
-        private static void UnmarshallResult(JsonUnmarshallerContext context,UploadMultipartPartResponse response)
-        {
+            UploadMultipartPartResponse response = new UploadMultipartPartResponse();       
           
 
             if (context.ResponseData.GetHeaderValue("x-amz-sha256-tree-hash") != null)
                 response.Checksum = context.ResponseData.GetHeaderValue("x-amz-sha256-tree-hash");              
-            return;
+            return response;
         }                        
         
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)

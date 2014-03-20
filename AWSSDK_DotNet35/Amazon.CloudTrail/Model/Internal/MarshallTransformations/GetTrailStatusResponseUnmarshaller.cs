@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,120 +30,58 @@
       {
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-          GetTrailStatusResponse response = new GetTrailStatusResponse();          
+            GetTrailStatusResponse response = new GetTrailStatusResponse();       
           
-          context.Read();
-          
-          UnmarshallResult(context,response);
-          return response;
-        }
-        
-        private static void UnmarshallResult(JsonUnmarshallerContext context,GetTrailStatusResponse response)
-        {
-          
-            int originalDepth = context.CurrentDepth;
-            int targetDepth = originalDepth + 1;
-            while (context.Read())
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
             {
               
               if (context.TestExpression("IsLogging", targetDepth))
               {
-                context.Read();
                 response.IsLogging = BoolUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("LatestDeliveryError", targetDepth))
               {
-                context.Read();
                 response.LatestDeliveryError = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("LatestNotificationError", targetDepth))
               {
-                context.Read();
                 response.LatestNotificationError = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("LatestDeliveryTime", targetDepth))
               {
-                context.Read();
                 response.LatestDeliveryTime = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("LatestNotificationTime", targetDepth))
               {
-                context.Read();
                 response.LatestNotificationTime = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("StartLoggingTime", targetDepth))
               {
-                context.Read();
                 response.StartLoggingTime = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("StopLoggingTime", targetDepth))
               {
-                context.Read();
                 response.StopLoggingTime = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
-              if (context.TestExpression("LatestDeliveryAttemptTime", targetDepth))
-              {
-                context.Read();
-                response.LatestDeliveryAttemptTime = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("LatestNotificationAttemptTime", targetDepth))
-              {
-                context.Read();
-                response.LatestNotificationAttemptTime = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("LatestNotificationAttemptSucceeded", targetDepth))
-              {
-                context.Read();
-                response.LatestNotificationAttemptSucceeded = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("LatestDeliveryAttemptSucceeded", targetDepth))
-              {
-                context.Read();
-                response.LatestDeliveryAttemptSucceeded = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("TimeLoggingStarted", targetDepth))
-              {
-                context.Read();
-                response.TimeLoggingStarted = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-              if (context.TestExpression("TimeLoggingStopped", targetDepth))
-              {
-                context.Read();
-                response.TimeLoggingStopped = StringUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-                if (context.CurrentDepth <= originalDepth)
-                {                   
-                    return;
-                }
             }
                         
-            return;
+            return response;
         }                        
         
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)

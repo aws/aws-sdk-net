@@ -29,7 +29,7 @@ namespace Amazon.CloudFront.Model
     /// currently false), change Quantity as applicable, and specify all of the trusted signers that you want to include in the updated
     /// distribution. </para>
     /// </summary>
-    public class TrustedSigners
+    public partial class TrustedSigners
     {
         
         private bool? enabled;

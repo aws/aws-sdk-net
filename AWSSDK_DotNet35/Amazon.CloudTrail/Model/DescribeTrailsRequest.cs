@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,7 +25,7 @@ namespace Amazon.CloudTrail.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeTrails operation.
-    /// <para>Retrieves the settings for some or all trails associated with an account. Returns a list of Trail structures in JSON format.</para>
+    /// <para>Retrieves the settings for some or all trails associated with an account. </para>
     /// </summary>
     public partial class DescribeTrailsRequest : AmazonCloudTrailRequest
     {
@@ -33,7 +33,7 @@ namespace Amazon.CloudTrail.Model
 
 
         /// <summary>
-        /// The list of <a>Trail</a> object names.
+        /// The list of trails.
         ///  
         /// </summary>
         public List<string> TrailNameList

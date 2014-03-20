@@ -23,7 +23,7 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// <para> A streaming distribution list. </para>
     /// </summary>
-    public class StreamingDistributionList
+    public partial class StreamingDistributionList
     {
         
         private string marker;

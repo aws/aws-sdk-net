@@ -25,7 +25,7 @@ namespace Amazon.CloudFront.Model
     /// behavior or for any of the other cache behaviors for this distribution. These are accounts that you want to allow to create signed URLs for
     /// private content. </para>
     /// </summary>
-    public class ActiveTrustedSigners
+    public partial class ActiveTrustedSigners
     {
         
         private bool? enabled;

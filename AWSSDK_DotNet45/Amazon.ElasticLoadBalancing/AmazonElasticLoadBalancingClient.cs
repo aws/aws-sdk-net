@@ -189,10 +189,7 @@ namespace Amazon.ElasticLoadBalancing
 
         /// <summary>
         /// Constructs AmazonElasticLoadBalancingClient with AWS Access Key ID, AWS Secret Key and an
-        /// AmazonElasticLoadBalancingClient Configuration object. If the config object's
-        /// UseSecureStringForAwsSecretKey is false, the AWS Secret Key
-        /// is stored as a clear-text string. Please use this option only
-        /// if the application environment doesn't allow the use of SecureStrings.
+        /// AmazonElasticLoadBalancingClient Configuration object.
         /// </summary>
         /// <param name="awsAccessKeyId">AWS Access Key ID</param>
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
@@ -227,10 +224,7 @@ namespace Amazon.ElasticLoadBalancing
 
         /// <summary>
         /// Constructs AmazonElasticLoadBalancingClient with AWS Access Key ID, AWS Secret Key and an
-        /// AmazonElasticLoadBalancingClient Configuration object. If the config object's
-        /// UseSecureStringForAwsSecretKey is false, the AWS Secret Key
-        /// is stored as a clear-text string. Please use this option only
-        /// if the application environment doesn't allow the use of SecureStrings.
+        /// AmazonElasticLoadBalancingClient Configuration object.
         /// </summary>
         /// <param name="awsAccessKeyId">AWS Access Key ID</param>
         /// <param name="awsSecretAccessKey">AWS Secret Access Key</param>
@@ -1212,12 +1206,11 @@ namespace Amazon.ElasticLoadBalancing
         }
  
         /// <summary>
-        /// <para>Modifies the attributes of a specified load balancer.</para> <para>You can modify the attributes, such as cross-zone load balancing
-        /// and access logs, by either enabling or disabling them.</para> <para>For information on modifying the cross-zone load balancing attribute,
-        /// see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/enable-disable-crosszone-lb.html">Enable or Disable
-        /// Cross-Zone Load Balancing for Your Load balancer</a> in the <i>Elastic Load Balancing Developer Guide</i> .</para> <para>For information on
-        /// modifying the access log attribute, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/access-log-collection.html">Enable or Disable Access Log
-        /// Collection for Your Load Balancer</a> in the <i>Elastic Load Balancing Developer Guide</i> .</para>
+        /// <para>Modifies the attributes of a specified load balancer.</para> <para>You can modify the load balancer attributes, such as
+        /// <c>AccessLogs</c> ,
+        /// <c>ConnectionDraining</c> , and <c>CrossZoneLoadBalancing</c> by either enabling or disabling them.</para> <para>For
+        /// information on cross-zone load balancing, see <b>Request Routing</b> and for information on connection draining, see <b>Connection
+        /// Draining</b> in the <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html">Concepts</a> section of the <i>Elastic Load Balancer Developer Guide</i> . For information on access logs, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/access-log-collection.html">Access Logs</a> .</para>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the ModifyLoadBalancerAttributes service

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -33,128 +33,79 @@
 
         public Job Unmarshall(JsonUnmarshallerContext context)
         {
-            if (context.CurrentTokenType == JsonToken.Null)
-                return null;
-
+            context.Read();
+            if (context.CurrentTokenType == JsonToken.Null) return null;
             Job job = new Job();
-
         
         
-            int originalDepth = context.CurrentDepth;
-            int targetDepth = originalDepth + 1;
-            while (context.Read())
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
             {
               
               if (context.TestExpression("Id", targetDepth))
               {
-                context.Read();
                 job.Id = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("Arn", targetDepth))
               {
-                context.Read();
                 job.Arn = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("PipelineId", targetDepth))
               {
-                context.Read();
                 job.PipelineId = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("Input", targetDepth))
               {
-                context.Read();
                 job.Input = JobInputUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("Output", targetDepth))
               {
-                context.Read();
                 job.Output = JobOutputUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("Outputs", targetDepth))
               {
-                context.Read();
                 
-                if (context.CurrentTokenType == JsonToken.Null)
-                {
-                    job.Outputs = null;
-                    continue;
-                }
-                  job.Outputs = new List<JobOutput>();
-                  JobOutputUnmarshaller unmarshaller = JobOutputUnmarshaller.GetInstance();
-                while (context.Read())
-                {
-                  JsonToken token = context.CurrentTokenType;                
-                  if (token == JsonToken.ArrayStart)
-                  {
-                    continue;
-                  }
-                  if (token == JsonToken.ArrayEnd)
-                  {
-                    break;
-                  }
-                   job.Outputs.Add(unmarshaller.Unmarshall(context));
-                }
+                var unmarshaller = new ListUnmarshaller<JobOutput,JobOutputUnmarshaller>(
+                    JobOutputUnmarshaller.GetInstance());                  
+                job.Outputs = unmarshaller.Unmarshall(context);
+                
                 continue;
               }
   
               if (context.TestExpression("OutputKeyPrefix", targetDepth))
               {
-                context.Read();
                 job.OutputKeyPrefix = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("Playlists", targetDepth))
               {
-                context.Read();
                 
-                if (context.CurrentTokenType == JsonToken.Null)
-                {
-                    job.Playlists = null;
-                    continue;
-                }
-                  job.Playlists = new List<Playlist>();
-                  PlaylistUnmarshaller unmarshaller = PlaylistUnmarshaller.GetInstance();
-                while (context.Read())
-                {
-                  JsonToken token = context.CurrentTokenType;                
-                  if (token == JsonToken.ArrayStart)
-                  {
-                    continue;
-                  }
-                  if (token == JsonToken.ArrayEnd)
-                  {
-                    break;
-                  }
-                   job.Playlists.Add(unmarshaller.Unmarshall(context));
-                }
+                var unmarshaller = new ListUnmarshaller<Playlist,PlaylistUnmarshaller>(
+                    PlaylistUnmarshaller.GetInstance());                  
+                job.Playlists = unmarshaller.Unmarshall(context);
+                
                 continue;
               }
   
               if (context.TestExpression("Status", targetDepth))
               {
-                context.Read();
                 job.Status = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
-                if (context.CurrentDepth <= originalDepth)
-                {
-                    return job;
-                }
             }
           
-
             return job;
         }
 

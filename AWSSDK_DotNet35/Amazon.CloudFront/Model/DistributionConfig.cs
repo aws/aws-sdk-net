@@ -23,7 +23,7 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// <para> A distribution Configuration. </para>
     /// </summary>
-    public class DistributionConfig
+    public partial class DistributionConfig
     {
         
         private string callerReference;

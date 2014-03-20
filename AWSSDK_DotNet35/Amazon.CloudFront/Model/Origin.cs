@@ -24,7 +24,7 @@ namespace Amazon.CloudFront.Model
     /// <para> A complex type that describes the Amazon S3 bucket or the HTTP server (for example, a web server) from which CloudFront gets your
     /// files.You must create at least one origin. </para>
     /// </summary>
-    public class Origin
+    public partial class Origin
     {
         
         private string id;

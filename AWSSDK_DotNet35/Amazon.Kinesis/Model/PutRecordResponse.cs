@@ -24,7 +24,7 @@ namespace Amazon.Kinesis.Model
     /// <summary>
     /// Returns information about the  PutRecord response and response metadata.
     /// </summary>
-    public class PutRecordResponse : PutRecordResult
+    public partial class PutRecordResponse : PutRecordResult
     {
         /// <summary>
         /// Gets and sets the PutRecordResult property.

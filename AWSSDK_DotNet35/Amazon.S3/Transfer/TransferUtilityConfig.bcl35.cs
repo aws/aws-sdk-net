@@ -38,10 +38,10 @@ namespace Amazon.S3.Transfer
     /// </summary>
     public partial class TransferUtilityConfig
     {
-        private TimeSpan? _defaultTimeout = TimeSpan.FromMinutes(5); // Default value is 5 minutes.
+        private TimeSpan? _defaultTimeout = ClientConfig.MaxTimeout; // Use max timeout
         
         /// <summary>
-        /// Gets or sets the default timeout in milliseconds used for writing objects to S3.  The default value is 5 minutes.
+        /// Gets or sets the default timeout in milliseconds used for writing objects to S3.
         /// </summary>
         public TimeSpan? DefaultTimeout
         {

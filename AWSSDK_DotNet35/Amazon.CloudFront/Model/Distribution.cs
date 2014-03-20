@@ -23,7 +23,7 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// <para> A distribution. </para>
     /// </summary>
-    public class Distribution
+    public partial class Distribution
     {
         
         private string id;

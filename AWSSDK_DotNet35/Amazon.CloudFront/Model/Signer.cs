@@ -24,7 +24,7 @@ namespace Amazon.CloudFront.Model
     /// <para> A complex type that lists the AWS accounts that were included in the TrustedSigners complex type, as well as their active CloudFront
     /// key pair IDs, if any. </para>
     /// </summary>
-    public class Signer
+    public partial class Signer
     {
         
         private string awsAccountNumber;

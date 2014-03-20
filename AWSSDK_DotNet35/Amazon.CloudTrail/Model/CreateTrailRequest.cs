@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,17 +25,8 @@ namespace Amazon.CloudTrail.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateTrail operation.
-    /// <para>From the command line, use create-subscription. </para> <para>Creates a trail that specifies the settings for delivery of log data to
-    /// an Amazon S3 bucket. The request includes a Trail structure that specifies the following:</para>
-    /// <ul>
-    /// <li>Trail name.</li>
-    /// <li>The name of an existing Amazon S3 bucket to which CloudTrail delivers your log files.</li>
-    /// <li>The name of the Amazon S3 key prefix that precedes each log file.</li>
-    /// <li>The name of an existing Amazon SNS topic that notifies you that a new file is available in your bucket.</li>
-    /// <li>Whether the log file should include AWS API calls from global services. Currently, the only global AWS API calls included in CloudTrail
-    /// log files are from IAM and AWS STS.</li>
-    /// 
-    /// </ul>
+    /// <para>From the command line, use <c>create-subscription</c> . </para> <para>Creates a trail that specifies the settings for delivery of log
+    /// data to an Amazon S3 bucket. </para>
     /// </summary>
     public partial class CreateTrailRequest : AmazonCloudTrailRequest
     {
@@ -44,8 +35,12 @@ namespace Amazon.CloudTrail.Model
         private string s3KeyPrefix;
         private string snsTopicName;
         private bool? includeGlobalServiceEvents;
-        private Trail trail;
 
+
+        /// <summary>
+        /// Specifies the name of the trail.
+        ///  
+        /// </summary>
         public string Name
         {
             get { return this.name; }
@@ -57,6 +52,11 @@ namespace Amazon.CloudTrail.Model
         {
             return this.name != null;
         }
+
+        /// <summary>
+        /// Specifies the name of the Amazon S3 bucket designated for publishing log files.
+        ///  
+        /// </summary>
         public string S3BucketName
         {
             get { return this.s3BucketName; }
@@ -68,6 +68,11 @@ namespace Amazon.CloudTrail.Model
         {
             return this.s3BucketName != null;
         }
+
+        /// <summary>
+        /// Specifies the Amazon S3 key prefix that precedes the name of the bucket you have designated for log file delivery.
+        ///  
+        /// </summary>
         public string S3KeyPrefix
         {
             get { return this.s3KeyPrefix; }
@@ -79,6 +84,11 @@ namespace Amazon.CloudTrail.Model
         {
             return this.s3KeyPrefix != null;
         }
+
+        /// <summary>
+        /// Specifies the name of the Amazon SNS topic defined for notification of log file delivery.
+        ///  
+        /// </summary>
         public string SnsTopicName
         {
             get { return this.snsTopicName; }
@@ -90,6 +100,11 @@ namespace Amazon.CloudTrail.Model
         {
             return this.snsTopicName != null;
         }
+
+        /// <summary>
+        /// Specifies whether the trail is publishing events from global services such as IAM to the log files.
+        ///  
+        /// </summary>
         public bool IncludeGlobalServiceEvents
         {
             get { return this.includeGlobalServiceEvents ?? default(bool); }
@@ -100,23 +115,6 @@ namespace Amazon.CloudTrail.Model
         internal bool IsSetIncludeGlobalServiceEvents()
         {
             return this.includeGlobalServiceEvents.HasValue;
-        }
-
-        /// <summary>
-        /// Contains the <a>Trail</a> structure that specifies the settings for each trail.
-        ///  
-        /// </summary>
-        [Obsolete("The Trail property is obsolete in favor of properties being added to the request class. It will be removed in a future release.")]
-        public Trail Trail
-        {
-            get { return this.trail; }
-            set { this.trail = value; }
-        }
-
-        // Check to see if Trail property is set
-        internal bool IsSetTrail()
-        {
-            return this.trail != null;
         }
 
     }

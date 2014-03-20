@@ -28,7 +28,7 @@ namespace Amazon.CloudFront.Model
     /// include only an empty CustomErrorResponses element. To add, change, or remove one or more custom error responses, update the distribution
     /// configuration and specify all of the custom error responses that you want to include in the updated distribution. </para>
     /// </summary>
-    public class CustomErrorResponse
+    public partial class CustomErrorResponse
     {
         
         private int? errorCode;

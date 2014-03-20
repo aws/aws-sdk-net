@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -34,7 +34,7 @@ namespace Amazon.CloudTrail.Model
 
 
         /// <summary>
-        /// Communicates to CloudTrail the name of the <a>Trail</a> for which to stop logging AWS API calls.
+        /// Communicates to CloudTrail the name of the trail for which to stop logging AWS API calls.
         ///  
         /// </summary>
         public string Name

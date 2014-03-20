@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,92 +30,62 @@
       {
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-          DescribeGatewayInformationResponse response = new DescribeGatewayInformationResponse();          
+            DescribeGatewayInformationResponse response = new DescribeGatewayInformationResponse();       
           
-          context.Read();
-          
-          UnmarshallResult(context,response);
-          return response;
-        }
-        
-        private static void UnmarshallResult(JsonUnmarshallerContext context,DescribeGatewayInformationResponse response)
-        {
-          
-            int originalDepth = context.CurrentDepth;
-            int targetDepth = originalDepth + 1;
-            while (context.Read())
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
             {
               
               if (context.TestExpression("GatewayARN", targetDepth))
               {
-                context.Read();
                 response.GatewayARN = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("GatewayId", targetDepth))
               {
-                context.Read();
                 response.GatewayId = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("GatewayTimezone", targetDepth))
               {
-                context.Read();
                 response.GatewayTimezone = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("GatewayState", targetDepth))
               {
-                context.Read();
                 response.GatewayState = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("GatewayNetworkInterfaces", targetDepth))
               {
-                context.Read();
-                response.GatewayNetworkInterfaces = new List<NetworkInterface>();
-                        NetworkInterfaceUnmarshaller unmarshaller = NetworkInterfaceUnmarshaller.GetInstance();
-                while (context.Read())
-                {
-                  JsonToken token = context.CurrentTokenType;                
-                  if (token == JsonToken.ArrayStart)
-                  {
-                    continue;
-                  }
-                  if (token == JsonToken.ArrayEnd)
-                  {
-                    break;
-                  }
-                   response.GatewayNetworkInterfaces.Add(unmarshaller.Unmarshall(context));
-                }
+                
+                var unmarshaller = new ListUnmarshaller<NetworkInterface,NetworkInterfaceUnmarshaller>(
+                    NetworkInterfaceUnmarshaller.GetInstance());                  
+                response.GatewayNetworkInterfaces = unmarshaller.Unmarshall(context);
+                
                 continue;
               }
   
               if (context.TestExpression("GatewayType", targetDepth))
               {
-                context.Read();
                 response.GatewayType = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("NextUpdateAvailabilityDate", targetDepth))
               {
-                context.Read();
                 response.NextUpdateAvailabilityDate = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
-                if (context.CurrentDepth <= originalDepth)
-                {                   
-                    return;
-                }
             }
                         
-            return;
+            return response;
         }                        
         
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)

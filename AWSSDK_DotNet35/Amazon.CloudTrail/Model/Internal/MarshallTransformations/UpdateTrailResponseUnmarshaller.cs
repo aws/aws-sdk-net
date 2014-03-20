@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,71 +30,46 @@
       {
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-          UpdateTrailResponse response = new UpdateTrailResponse();          
+            UpdateTrailResponse response = new UpdateTrailResponse();       
           
-          context.Read();
-          
-          UnmarshallResult(context,response);
-          return response;
-        }
-        
-        private static void UnmarshallResult(JsonUnmarshallerContext context,UpdateTrailResponse response)
-        {
-          
-            int originalDepth = context.CurrentDepth;
-            int targetDepth = originalDepth + 1;
-            while (context.Read())
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
             {
               
               if (context.TestExpression("Name", targetDepth))
               {
-                context.Read();
                 response.Name = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("S3BucketName", targetDepth))
               {
-                context.Read();
                 response.S3BucketName = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("S3KeyPrefix", targetDepth))
               {
-                context.Read();
                 response.S3KeyPrefix = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("SnsTopicName", targetDepth))
               {
-                context.Read();
                 response.SnsTopicName = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("IncludeGlobalServiceEvents", targetDepth))
               {
-                context.Read();
                 response.IncludeGlobalServiceEvents = BoolUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
-              if (context.TestExpression("trail", targetDepth))
-              {
-                context.Read();
-                response.Trail = TrailUnmarshaller.GetInstance().Unmarshall(context);
-                continue;
-              }
-  
-                if (context.CurrentDepth <= originalDepth)
-                {                   
-                    return;
-                }
             }
                         
-            return;
+            return response;
         }                        
         
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
@@ -119,11 +94,6 @@
           if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidS3BucketNameException"))
           {
             return new InvalidS3BucketNameException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-          }
-  
-          if (errorResponse.Code != null && errorResponse.Code.Equals("TrailNotProvidedException"))
-          {
-            return new TrailNotProvidedException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
           }
   
           if (errorResponse.Code != null && errorResponse.Code.Equals("InsufficientSnsTopicPolicyException"))

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -33,53 +33,33 @@
 
         public WorkflowExecutionInfos Unmarshall(JsonUnmarshallerContext context)
         {
-            if (context.CurrentTokenType == JsonToken.Null)
-                return null;
-
+            context.Read();
+            if (context.CurrentTokenType == JsonToken.Null) return null;
             WorkflowExecutionInfos workflowExecutionInfos = new WorkflowExecutionInfos();
-
         
         
-            int originalDepth = context.CurrentDepth;
-            int targetDepth = originalDepth + 1;
-            while (context.Read())
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
             {
               
               if (context.TestExpression("executionInfos", targetDepth))
               {
-                context.Read();
-                workflowExecutionInfos.ExecutionInfos = new List<WorkflowExecutionInfo>();
-                        WorkflowExecutionInfoUnmarshaller unmarshaller = WorkflowExecutionInfoUnmarshaller.GetInstance();
-                while (context.Read())
-                {
-                  JsonToken token = context.CurrentTokenType;                
-                  if (token == JsonToken.ArrayStart)
-                  {
-                    continue;
-                  }
-                  if (token == JsonToken.ArrayEnd)
-                  {
-                    break;
-                  }
-                   workflowExecutionInfos.ExecutionInfos.Add(unmarshaller.Unmarshall(context));
-                }
+                
+                var unmarshaller = new ListUnmarshaller<WorkflowExecutionInfo,WorkflowExecutionInfoUnmarshaller>(
+                    WorkflowExecutionInfoUnmarshaller.GetInstance());                  
+                workflowExecutionInfos.ExecutionInfos = unmarshaller.Unmarshall(context);
+                
                 continue;
               }
   
               if (context.TestExpression("nextPageToken", targetDepth))
               {
-                context.Read();
                 workflowExecutionInfos.NextPageToken = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
-                if (context.CurrentDepth <= originalDepth)
-                {
-                    return workflowExecutionInfos;
-                }
             }
           
-
             return workflowExecutionInfos;
         }
 

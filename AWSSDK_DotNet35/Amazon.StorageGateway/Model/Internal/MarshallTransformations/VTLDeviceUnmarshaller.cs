@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -33,60 +33,47 @@
 
         public VTLDevice Unmarshall(JsonUnmarshallerContext context)
         {
-            if (context.CurrentTokenType == JsonToken.Null)
-                return null;
-
+            context.Read();
+            if (context.CurrentTokenType == JsonToken.Null) return null;
             VTLDevice vTLDevice = new VTLDevice();
-
         
         
-            int originalDepth = context.CurrentDepth;
-            int targetDepth = originalDepth + 1;
-            while (context.Read())
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
             {
               
               if (context.TestExpression("VTLDeviceARN", targetDepth))
               {
-                context.Read();
                 vTLDevice.VTLDeviceARN = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("VTLDeviceType", targetDepth))
               {
-                context.Read();
                 vTLDevice.VTLDeviceType = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("VTLDeviceVendor", targetDepth))
               {
-                context.Read();
                 vTLDevice.VTLDeviceVendor = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("VTLDeviceProductIdentifier", targetDepth))
               {
-                context.Read();
                 vTLDevice.VTLDeviceProductIdentifier = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("DeviceiSCSIAttributes", targetDepth))
               {
-                context.Read();
                 vTLDevice.DeviceiSCSIAttributes = DeviceiSCSIAttributesUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
-                if (context.CurrentDepth <= originalDepth)
-                {
-                    return vTLDevice;
-                }
             }
           
-
             return vTLDevice;
         }
 

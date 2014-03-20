@@ -44,29 +44,7 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             
             request.Headers["Content-Type"] = "application/x-amz-json-1.0";
             
-              
             string uriResourcePath = ""; 
-            
-            if (uriResourcePath.Contains("?")) 
-            {
-                int queryPosition = uriResourcePath.IndexOf("?", StringComparison.OrdinalIgnoreCase);
-                string queryString = uriResourcePath.Substring(queryPosition + 1);
-                uriResourcePath    = uriResourcePath.Substring(0, queryPosition);
-        
-                foreach (string s in queryString.Split('&', ';')) 
-                {
-                    string[] nameValuePair = s.Split('=');
-                    if (nameValuePair.Length == 2 && nameValuePair[1].Length > 0) 
-                    {
-                        request.Parameters.Add(nameValuePair[0], nameValuePair[1]);
-                    }
-                    else
-                    {
-                        request.Parameters.Add(nameValuePair[0], null);
-                    }
-                }
-            }
-            
             request.ResourcePath = uriResourcePath;
             
              

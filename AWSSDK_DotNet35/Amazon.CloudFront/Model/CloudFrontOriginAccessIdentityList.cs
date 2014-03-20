@@ -23,7 +23,7 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// <para> The CloudFrontOriginAccessIdentityList type. </para>
     /// </summary>
-    public class CloudFrontOriginAccessIdentityList
+    public partial class CloudFrontOriginAccessIdentityList
     {
         
         private string marker;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -33,53 +33,41 @@
 
         public WorkflowExecutionSignaledEventAttributes Unmarshall(JsonUnmarshallerContext context)
         {
-            if (context.CurrentTokenType == JsonToken.Null)
-                return null;
-
+            context.Read();
+            if (context.CurrentTokenType == JsonToken.Null) return null;
             WorkflowExecutionSignaledEventAttributes workflowExecutionSignaledEventAttributes = new WorkflowExecutionSignaledEventAttributes();
-
         
         
-            int originalDepth = context.CurrentDepth;
-            int targetDepth = originalDepth + 1;
-            while (context.Read())
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
             {
               
               if (context.TestExpression("signalName", targetDepth))
               {
-                context.Read();
                 workflowExecutionSignaledEventAttributes.SignalName = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("input", targetDepth))
               {
-                context.Read();
                 workflowExecutionSignaledEventAttributes.Input = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("externalWorkflowExecution", targetDepth))
               {
-                context.Read();
                 workflowExecutionSignaledEventAttributes.ExternalWorkflowExecution = WorkflowExecutionUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("externalInitiatedEventId", targetDepth))
               {
-                context.Read();
                 workflowExecutionSignaledEventAttributes.ExternalInitiatedEventId = LongUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
-                if (context.CurrentDepth <= originalDepth)
-                {
-                    return workflowExecutionSignaledEventAttributes;
-                }
             }
           
-
             return workflowExecutionSignaledEventAttributes;
         }
 

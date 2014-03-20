@@ -47,7 +47,6 @@ namespace Amazon.Runtime.Internal.Transform
                 {
                     if (context.TestExpression("__type"))
                     {
-                        context.Read();
                         string type = StringUnmarshaller.GetInstance().Unmarshall(context);
                         response.Code = type.Substring(type.LastIndexOf("#", StringComparison.Ordinal) + 1);
                         if (Enum.IsDefined(typeof(ErrorType), type))
@@ -62,13 +61,11 @@ namespace Amazon.Runtime.Internal.Transform
                     }
                     if (context.TestExpression("code"))
                     {
-                        context.Read();
                         response.Code = StringUnmarshaller.GetInstance().Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("message"))
                     {
-                        context.Read();
                         response.Message = StringUnmarshaller.GetInstance().Unmarshall(context);
                         continue;
                     }

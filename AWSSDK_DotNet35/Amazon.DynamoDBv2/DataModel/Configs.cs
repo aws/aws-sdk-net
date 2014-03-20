@@ -225,6 +225,8 @@ namespace Amazon.DynamoDBv2.DataModel
 
     internal class DynamoDBFlatConfig : DynamoDBOperationConfig
     {
+        public static string DefaultIndexName = string.Empty;
+
         private static DynamoDBOperationConfig _emptyOperationConfig = new DynamoDBOperationConfig
         {
             ConsistentRead = null,
@@ -260,7 +262,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 !string.IsNullOrEmpty(contextConfig.TableNamePrefix) ? contextConfig.TableNamePrefix : string.Empty;
             bool backwardQuery = operationConfig.BackwardQuery ?? false;
             string indexName =
-                !string.IsNullOrEmpty(operationConfig.IndexName) ? operationConfig.IndexName : string.Empty;
+                !string.IsNullOrEmpty(operationConfig.IndexName) ? operationConfig.IndexName : DefaultIndexName;
 
             ConsistentRead = consistentRead;
             SkipVersionCheck = skipVersionCheck;

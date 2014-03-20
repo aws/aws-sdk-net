@@ -49,6 +49,12 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
                             
                         continue;
                     }
+                    if (context.TestExpression("ConnectionDraining", targetDepth))
+                    {
+                        loadBalancerAttributes.ConnectionDraining = ConnectionDrainingUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {

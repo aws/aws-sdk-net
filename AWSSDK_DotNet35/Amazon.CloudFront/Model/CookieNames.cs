@@ -24,7 +24,7 @@ namespace Amazon.CloudFront.Model
     /// <para> A complex type that specifies the whitelisted cookies, if any, that you want CloudFront to forward to your origin that is associated
     /// with this cache behavior. </para>
     /// </summary>
-    public class CookieNames
+    public partial class CookieNames
     {
         
         private int? quantity;

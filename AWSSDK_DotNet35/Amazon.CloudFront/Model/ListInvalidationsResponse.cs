@@ -24,7 +24,7 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// Returns information about the  ListInvalidations response and response metadata.
     /// </summary>
-    public class ListInvalidationsResponse : ListInvalidationsResult
+    public partial class ListInvalidationsResponse : ListInvalidationsResult
     {
         /// <summary>
         /// Gets and sets the ListInvalidationsResult property.

@@ -24,7 +24,7 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// Returns information about the  GetStreamingDistribution response and response metadata.
     /// </summary>
-    public class GetStreamingDistributionResponse : GetStreamingDistributionResult
+    public partial class GetStreamingDistributionResponse : GetStreamingDistributionResult
     {
         /// <summary>
         /// Gets and sets the GetStreamingDistributionResult property.

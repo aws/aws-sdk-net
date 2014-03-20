@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -33,53 +33,41 @@
 
         public Ec2InstanceAttributes Unmarshall(JsonUnmarshallerContext context)
         {
-            if (context.CurrentTokenType == JsonToken.Null)
-                return null;
-
+            context.Read();
+            if (context.CurrentTokenType == JsonToken.Null) return null;
             Ec2InstanceAttributes ec2InstanceAttributes = new Ec2InstanceAttributes();
-
         
         
-            int originalDepth = context.CurrentDepth;
-            int targetDepth = originalDepth + 1;
-            while (context.Read())
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
             {
               
               if (context.TestExpression("Ec2KeyName", targetDepth))
               {
-                context.Read();
                 ec2InstanceAttributes.Ec2KeyName = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("Ec2SubnetId", targetDepth))
               {
-                context.Read();
                 ec2InstanceAttributes.Ec2SubnetId = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("Ec2AvailabilityZone", targetDepth))
               {
-                context.Read();
                 ec2InstanceAttributes.Ec2AvailabilityZone = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
               if (context.TestExpression("IamInstanceProfile", targetDepth))
               {
-                context.Read();
                 ec2InstanceAttributes.IamInstanceProfile = StringUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   
-                if (context.CurrentDepth <= originalDepth)
-                {
-                    return ec2InstanceAttributes;
-                }
             }
           
-
             return ec2InstanceAttributes;
         }
 

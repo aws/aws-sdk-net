@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,23 +30,14 @@
       {
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-          InitiateMultipartUploadResponse response = new InitiateMultipartUploadResponse();          
-          
-          context.Read();
-          
-          UnmarshallResult(context,response);
-          return response;
-        }
-        
-        private static void UnmarshallResult(JsonUnmarshallerContext context,InitiateMultipartUploadResponse response)
-        {
+            InitiateMultipartUploadResponse response = new InitiateMultipartUploadResponse();       
           
 
             if (context.ResponseData.GetHeaderValue("Location") != null)
                 response.Location = context.ResponseData.GetHeaderValue("Location");
             if (context.ResponseData.GetHeaderValue("x-amz-multipart-upload-id") != null)
                 response.UploadId = context.ResponseData.GetHeaderValue("x-amz-multipart-upload-id");           
-            return;
+            return response;
         }                        
         
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
