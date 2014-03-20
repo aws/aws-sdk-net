@@ -42,7 +42,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 
             request.HttpMethod = "GET";
               
-            string uriResourcePath = "2013-11-22/distribution/{DistributionId}/invalidation/{Id}"; 
+            string uriResourcePath = "2014-01-31/distribution/{DistributionId}/invalidation/{Id}"; 
             uriResourcePath = uriResourcePath.Replace("{DistributionId}", getInvalidationRequest.DistributionId ?? "" ); 
             uriResourcePath = uriResourcePath.Replace("{Id}", getInvalidationRequest.Id ?? "" ); 
             

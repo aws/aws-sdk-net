@@ -48,8 +48,13 @@
               
               if (context.TestExpression("StreamNames", targetDepth))
               {
-                listStreamsResult.StreamNames = new List<String>();
-                        StringUnmarshaller unmarshaller = StringUnmarshaller.GetInstance();
+                listStreamsResult.StreamNames = new List<String>();   
+                if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                {
+                  continue;
+                }              
+
+                  StringUnmarshaller unmarshaller = StringUnmarshaller.GetInstance();
                 while (context.Read())
                 {
                   if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))

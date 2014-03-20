@@ -70,6 +70,18 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
                         request.Parameters.Add("LoadBalancerAttributes.AccessLog.S3BucketPrefix", StringUtils.FromString(accessLog.S3BucketPrefix));
                     }
                 }
+                if (loadBalancerAttributes != null)
+                {
+                    ConnectionDraining connectionDraining = loadBalancerAttributes.ConnectionDraining;
+                    if (connectionDraining != null && connectionDraining.IsSetEnabled())
+                    {
+                        request.Parameters.Add("LoadBalancerAttributes.ConnectionDraining.Enabled", StringUtils.FromBool(connectionDraining.Enabled));
+                    }
+                    if (connectionDraining != null && connectionDraining.IsSetTimeout())
+                    {
+                        request.Parameters.Add("LoadBalancerAttributes.ConnectionDraining.Timeout", StringUtils.FromInt(connectionDraining.Timeout));
+                    }
+                }
             }
 
             return request;

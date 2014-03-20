@@ -132,14 +132,15 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Use this element to specify the protocol that users can use to access the files in the origin specified by TargetOriginId when a request
         /// matches the path pattern in PathPattern. If you want CloudFront to allow end users to use any available protocol, specify allow-all. If you
-        /// want CloudFront to require HTTPS, specify https.
+        /// want CloudFront to require HTTPS, specify https. If you want CloudFront to respond to an HTTP request with an HTTP status code of 301 (Moved
+        /// Permanently) and the HTTPS URL, specify redirect-to-https. The viewer then resubmits the request using the HTTPS URL.
         ///  
         /// <para>
         /// <b>Constraints:</b>
         /// <list type="definition">
         ///     <item>
         ///         <term>Allowed Values</term>
-        ///         <description>allow-all, https-only</description>
+        ///         <description>allow-all, https-only, redirect-to-https</description>
         ///     </item>
         /// </list>
         /// </para>

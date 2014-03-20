@@ -305,7 +305,7 @@ namespace Amazon.Kinesis
         /// For more information about throughput limits, see the <a href="http://docs.aws.amazon.com/kinesis/latest/dev/" >Amazon Kinesis
         /// Developer Guide</a> . </para> <para> <c>GetShardIterator</c> can return <c>null</c> for its <c>ShardIterator</c> to indicate that the shard
         /// has been closed and that the requested iterator will return no more data. A shard can be closed by a SplitShard or MergeShards
-        /// operation.</para> <para> <c>GetShardIterator</c> has a limit of 5 transactions per second per account per shard.</para>
+        /// operation.</para> <para> <c>GetShardIterator</c> has a limit of 5 transactions per second per account per open shard.</para>
         /// </summary>
         /// 
         /// <param name="getShardIteratorRequest">Container for the necessary parameters to execute the GetShardIterator service method on
@@ -556,9 +556,9 @@ namespace Amazon.Kinesis
         /// If a stream is in CREATING or UPDATING or DELETING states, then Amazon Kinesis returns a <c>ResourceInUseException</c> .</para>
         /// <para>If the specified stream does not exist, Amazon Kinesis returns a <c>ResourceNotFoundException</c> .
         /// If you try to create more shards than are authorized for your account, you receive a <c>LimitExceededException</c> .
-        /// </para> <para> <b>Note:</b> The default limit for an AWS account is five shards per stream. If you need to create a stream with more than
-        /// five shards, <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html" >contact AWS Support</a> to increase the limit
-        /// on your account.</para> <para>If you try to operate on too many streams in parallel using CreateStream, DeleteStream, MergeShards or
+        /// </para> <para> <b>Note:</b> The default limit for an AWS account is 10 shards per stream. If you need to create a stream with more than 10
+        /// shards, <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html" >contact AWS Support</a> to increase the limit on
+        /// your account.</para> <para>If you try to operate on too many streams in parallel using CreateStream, DeleteStream, MergeShards or
         /// SplitShard, you will receive a <c>LimitExceededException</c> . </para> <para> <c>SplitShard</c> has limit of 5 transactions per second per
         /// account.</para>
         /// </summary>
@@ -623,12 +623,12 @@ namespace Amazon.Kinesis
         /// <para>This operation adds a new Amazon Kinesis stream to your AWS account. A stream captures and transports data records that are
         /// continuously emitted from different data sources or <i>producers</i> .
         /// Scale-out within an Amazon Kinesis stream is explicitly supported by means of shards, which are uniquely identified groups of
-        /// data records in an Amazon Kinesis stream.</para> <para>You specify and control the number of shards that a stream is composed of. Each shard
-        /// can support up to 5 read transactions per second up to a maximum total of 2 MB of data read per second. Each shard can support up to 1000
-        /// write transactions per second up to a maximum total of 1 MB data written per second. You can add shards to a stream if the amount of data
-        /// input increases and you can remove shards if the amount of data input decreases.</para> <para>The stream name identifies the stream. The
-        /// name is scoped to the AWS account used by the application. It is also scoped by region. That is, two streams in two different accounts can
-        /// have the same name, and two streams in the same account, but in two different regions, can have the same name. </para> <para>
+        /// data records in an Amazon Kinesis stream.</para> <para>You specify and control the number of shards that a stream is composed of. Each open
+        /// shard can support up to 5 read transactions per second, up to a maximum total of 2 MB of data read per second. Each shard can support up to
+        /// 1000 write transactions per second, up to a maximum total of 1 MB data written per second. You can add shards to a stream if the amount of
+        /// data input increases and you can remove shards if the amount of data input decreases.</para> <para>The stream name identifies the stream.
+        /// The name is scoped to the AWS account used by the application. It is also scoped by region. That is, two streams in two different accounts
+        /// can have the same name, and two streams in the same account, but in two different regions, can have the same name. </para> <para>
         /// <c>CreateStream</c> is an asynchronous operation. Upon receiving a <c>CreateStream</c> request, Amazon Kinesis immediately returns and sets
         /// the stream status to CREATING. After the stream is created, Amazon Kinesis sets the stream status to ACTIVE. You should perform read and
         /// write operations only on an ACTIVE stream. </para> <para>You receive a <c>LimitExceededException</c> when making a <c>CreateStream</c>
@@ -638,10 +638,10 @@ namespace Amazon.Kinesis
         /// <li>Create more shards than are authorized for your account.</li>
         /// 
         /// </ul>
-        /// <para> <b>Note:</b> The default limit for an AWS account is five shards per stream. If you need to create a stream with more than five
-        /// shards, <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html" >contact AWS Support</a> to increase the limit on
-        /// your account.</para> <para>You can use the <c>DescribeStream</c> operation to check the stream status, which is returned in
-        /// <c>StreamStatus</c> .</para> <para> <c>CreateStream</c> has a limit of 5 transactions per second per account.</para>
+        /// <para> <b>Note:</b> The default limit for an AWS account is 10 shards per stream. If you need to create a stream with more than 10 shards,
+        /// <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html" >contact AWS Support</a> to increase the limit on your
+        /// account.</para> <para>You can use the <c>DescribeStream</c> operation to check the stream status, which is returned in <c>StreamStatus</c>
+        /// .</para> <para> <c>CreateStream</c> has a limit of 5 transactions per second per account.</para>
         /// </summary>
         /// 
         /// <param name="createStreamRequest">Container for the necessary parameters to execute the CreateStream service method on

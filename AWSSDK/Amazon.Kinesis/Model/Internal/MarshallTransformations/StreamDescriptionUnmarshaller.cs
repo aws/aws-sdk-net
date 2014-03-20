@@ -66,8 +66,13 @@
   
               if (context.TestExpression("Shards", targetDepth))
               {
-                streamDescription.Shards = new List<Shard>();
-                        ShardUnmarshaller unmarshaller = ShardUnmarshaller.GetInstance();
+                streamDescription.Shards = new List<Shard>();   
+                if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                {
+                  continue;
+                }              
+
+                  ShardUnmarshaller unmarshaller = ShardUnmarshaller.GetInstance();
                 while (context.Read())
                 {
                   if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))

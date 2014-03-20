@@ -46,7 +46,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 
             
               
-            string uriResourcePath = "2013-11-22/streaming-distribution/{Id}"; 
+            string uriResourcePath = "2014-01-31/streaming-distribution/{Id}"; 
             uriResourcePath = uriResourcePath.Replace("{Id}", deleteStreamingDistributionRequest.Id ?? "" ); 
             
             if (uriResourcePath.Contains("?")) 

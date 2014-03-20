@@ -119,7 +119,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         }
 
         /// <summary>
-        /// The logical hierarchy you created for your Amazon S3 bucket, for example <c>/my-bucket-prefix/prod</c>. If the prefix is not provided, the
+        /// The logical hierarchy you created for your Amazon S3 bucket, for example <c>my-bucket-prefix/prod</c>. If the prefix is not provided, the
         /// log is placed at the root level of the bucket.
         ///  
         /// </summary>

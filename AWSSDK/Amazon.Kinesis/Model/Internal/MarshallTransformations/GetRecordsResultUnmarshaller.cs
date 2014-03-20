@@ -48,8 +48,13 @@
               
               if (context.TestExpression("Records", targetDepth))
               {
-                getRecordsResult.Records = new List<Record>();
-                        RecordUnmarshaller unmarshaller = RecordUnmarshaller.GetInstance();
+                getRecordsResult.Records = new List<Record>();   
+                if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                {
+                  continue;
+                }              
+
+                  RecordUnmarshaller unmarshaller = RecordUnmarshaller.GetInstance();
                 while (context.Read())
                 {
                   if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))

@@ -46,7 +46,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 
             
               
-            string uriResourcePath = "2013-11-22/origin-access-identity/cloudfront/{Id}/config"; 
+            string uriResourcePath = "2014-01-31/origin-access-identity/cloudfront/{Id}/config"; 
             uriResourcePath = uriResourcePath.Replace("{Id}", updateCloudFrontOriginAccessIdentityRequest.Id ?? "" ); 
             
             if (uriResourcePath.Contains("?")) 
@@ -80,14 +80,14 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             CloudFrontOriginAccessIdentityConfig cloudFrontOriginAccessIdentityConfigCloudFrontOriginAccessIdentityConfig = updateCloudFrontOriginAccessIdentityRequest.CloudFrontOriginAccessIdentityConfig;
             if (cloudFrontOriginAccessIdentityConfigCloudFrontOriginAccessIdentityConfig != null) 
             {
-                xmlWriter.WriteStartElement("CloudFrontOriginAccessIdentityConfig", "http://cloudfront.amazonaws.com/doc/2013-11-22/");
+                xmlWriter.WriteStartElement("CloudFrontOriginAccessIdentityConfig", "http://cloudfront.amazonaws.com/doc/2014-01-31/");
                 if (cloudFrontOriginAccessIdentityConfigCloudFrontOriginAccessIdentityConfig.IsSetCallerReference()) 
                 {
-                    xmlWriter.WriteElementString("CallerReference", "http://cloudfront.amazonaws.com/doc/2013-11-22/", cloudFrontOriginAccessIdentityConfigCloudFrontOriginAccessIdentityConfig.CallerReference.ToString());
+                    xmlWriter.WriteElementString("CallerReference", "http://cloudfront.amazonaws.com/doc/2014-01-31/", cloudFrontOriginAccessIdentityConfigCloudFrontOriginAccessIdentityConfig.CallerReference.ToString());
                   }
                 if (cloudFrontOriginAccessIdentityConfigCloudFrontOriginAccessIdentityConfig.IsSetComment()) 
                 {
-                    xmlWriter.WriteElementString("Comment", "http://cloudfront.amazonaws.com/doc/2013-11-22/", cloudFrontOriginAccessIdentityConfigCloudFrontOriginAccessIdentityConfig.Comment.ToString());
+                    xmlWriter.WriteElementString("Comment", "http://cloudfront.amazonaws.com/doc/2014-01-31/", cloudFrontOriginAccessIdentityConfigCloudFrontOriginAccessIdentityConfig.Comment.ToString());
                   }
                 xmlWriter.WriteEndElement();
             }

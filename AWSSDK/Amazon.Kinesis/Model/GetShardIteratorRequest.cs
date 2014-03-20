@@ -44,7 +44,7 @@ namespace Amazon.Kinesis.Model
     /// For more information about throughput limits, see the <a href="http://docs.aws.amazon.com/kinesis/latest/dev/" >Amazon Kinesis
     /// Developer Guide</a> . </para> <para> <c>GetShardIterator</c> can return <c>null</c> for its <c>ShardIterator</c> to indicate that the shard
     /// has been closed and that the requested iterator will return no more data. A shard can be closed by a SplitShard or MergeShards
-    /// operation.</para> <para> <c>GetShardIterator</c> has a limit of 5 transactions per second per account per shard.</para>
+    /// operation.</para> <para> <c>GetShardIterator</c> has a limit of 5 transactions per second per account per open shard.</para>
     /// </summary>
     /// <seealso cref="Amazon.Kinesis.AmazonKinesis.GetShardIterator"/>
     public class GetShardIteratorRequest : AmazonWebServiceRequest

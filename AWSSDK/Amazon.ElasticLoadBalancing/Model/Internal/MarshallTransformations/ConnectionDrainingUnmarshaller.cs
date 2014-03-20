@@ -14,19 +14,19 @@
  */
 using System.Collections.Generic;
 
-using Amazon.CloudFront.Model;
+using Amazon.ElasticLoadBalancing.Model;
 using Amazon.Runtime.Internal.Transform;
 
-namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
+namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
 {
      /// <summary>
-     ///   ViewerCertificate Unmarshaller
+     ///   ConnectionDraining Unmarshaller
      /// </summary>
-    internal class ViewerCertificateUnmarshaller : IUnmarshaller<ViewerCertificate, XmlUnmarshallerContext>, IUnmarshaller<ViewerCertificate, JsonUnmarshallerContext> 
+    internal class ConnectionDrainingUnmarshaller : IUnmarshaller<ConnectionDraining, XmlUnmarshallerContext>, IUnmarshaller<ConnectionDraining, JsonUnmarshallerContext> 
     {
-        public ViewerCertificate Unmarshall(XmlUnmarshallerContext context) 
+        public ConnectionDraining Unmarshall(XmlUnmarshallerContext context) 
         {
-            ViewerCertificate viewerCertificate = new ViewerCertificate();
+            ConnectionDraining connectionDraining = new ConnectionDraining();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -37,47 +37,41 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 { 
-                    if (context.TestExpression("IAMCertificateId", targetDepth))
+                    if (context.TestExpression("Enabled", targetDepth))
                     {
-                        viewerCertificate.IAMCertificateId = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        connectionDraining.Enabled = BoolUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
                     } 
-                    if (context.TestExpression("CloudFrontDefaultCertificate", targetDepth))
+                    if (context.TestExpression("Timeout", targetDepth))
                     {
-                        viewerCertificate.CloudFrontDefaultCertificate = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    } 
-                    if (context.TestExpression("SSLSupportMethod", targetDepth))
-                    {
-                        viewerCertificate.SSLSupportMethod = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        connectionDraining.Timeout = IntUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return viewerCertificate;
+                    return connectionDraining;
                 }
             }
                         
 
 
-            return viewerCertificate;
+            return connectionDraining;
         }
 
-        public ViewerCertificate Unmarshall(JsonUnmarshallerContext context) 
+        public ConnectionDraining Unmarshall(JsonUnmarshallerContext context) 
         {
             return null;
         }
 
-        private static ViewerCertificateUnmarshaller instance;
+        private static ConnectionDrainingUnmarshaller instance;
 
-        public static ViewerCertificateUnmarshaller GetInstance() 
+        public static ConnectionDrainingUnmarshaller GetInstance() 
         {
             if (instance == null) 
-               instance = new ViewerCertificateUnmarshaller();
+               instance = new ConnectionDrainingUnmarshaller();
 
             return instance;
         }
