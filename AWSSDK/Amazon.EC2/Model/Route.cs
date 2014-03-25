@@ -37,6 +37,8 @@ namespace Amazon.EC2.Model
         private string stateField;
         private string instanceOwnerIdField;
         private string networkInterfaceIdField;
+        private string vpcPeeringConnectionIdField;
+        private string originField;
 
         /// <summary>
         /// The CIDR address block used for the destination match.
@@ -231,5 +233,78 @@ namespace Amazon.EC2.Model
             return !string.IsNullOrEmpty(this.networkInterfaceIdField);
         }
 
+        /// <summary>
+        /// The ID of the VPC peering connection.
+        ///  
+        /// </summary>
+        public string VpcPeeringConnectionId
+        {
+            get { return this.vpcPeeringConnectionIdField; }
+            set { this.vpcPeeringConnectionIdField = value; }
+        }
+
+        /// <summary>
+        /// Sets the VpcPeeringConnectionId
+        /// <param name="vpcPeeringConnectionId">The VpcPeeringConnectionId.</param>
+        /// </summary>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public Route WithVpcPeeringConnectionId(string vpcPeeringConnectionId)
+        {
+            this.vpcPeeringConnectionIdField = vpcPeeringConnectionId;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if VpcPeeringConnectionId is set
+        /// </summary>
+        /// <returns>true if VpcPeeringConnectionId property is set</returns>
+        public bool IsSetVpcPeeringConnectionId()
+        {
+            return this.vpcPeeringConnectionIdField != null;
+        }
+
+        /// <summary>
+        /// Describes how the route was created. <ul> <li><c>CreateRouteTable</c> indicates that route was automatically created when the route table
+        /// was created.</li> <li><c>CreateRoute</c> indicates that the route was manually added to the route table.</li>
+        /// <li><c>EnableVgwRoutePropagation</c> indicates that the route was propagated by route propagation.</li> </ul>
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>CreateRouteTable, CreateRoute, EnableVgwRoutePropagation</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
+        public string Origin
+        {
+            get { return this.originField; }
+            set { this.originField = value; }
+        }
+
+        /// <summary>
+        /// Sets the Origin
+        /// <param name="origin">The Origin.</param>
+        /// </summary>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public Route WithOrigin(string origin)
+        {
+            this.originField = origin;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if Origin is set
+        /// </summary>
+        /// <returns>true if Origin property is set</returns>
+        public bool IsSetOrigin()
+        {
+            return this.originField != null;
+        }
+        
     }
 }

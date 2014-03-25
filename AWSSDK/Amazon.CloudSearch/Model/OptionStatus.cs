@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.CloudSearch.Model
 {
     /// <summary>
-    /// <para>The status of an option, including when it was last updated and whether it is actively in use for searches.</para>
+    /// <para>The status of domain configuration option.</para>
     /// </summary>
     public partial class OptionStatus
     {
@@ -130,16 +130,17 @@ namespace Amazon.CloudSearch.Model
 
         /// <summary>
         /// The state of processing a change to an option. Possible values:<ul> <li><c>RequiresIndexDocuments</c>: the option's latest value will not be
-        /// visible in searches until <a>IndexDocuments</a> has been called and indexing is complete.</li> <li><c>Processing</c>: the option's latest
-        /// value is not yet visible in all searches but is in the process of being activated. </li> <li><c>Active</c>: the option's latest value is
-        /// completely visible. Any warnings or messages generated during processing are provided in <c>Diagnostics</c>.</li> </ul>
+        /// deployed until <a>IndexDocuments</a> has been called and indexing is complete.</li> <li><c>Processing</c>: the option's latest value is in
+        /// the process of being activated. </li> <li><c>Active</c>: the option's latest value is completely deployed.</li> <li><c>FailedToValidate</c>:
+        /// the option value is not compatible with the domain's data and cannot be used to index the data. You must either modify the option value or
+        /// update or remove the incompatible documents.</li> </ul>
         ///  
         /// <para>
         /// <b>Constraints:</b>
         /// <list type="definition">
         ///     <item>
         ///         <term>Allowed Values</term>
-        ///         <description>RequiresIndexDocuments, Processing, Active</description>
+        ///         <description>RequiresIndexDocuments, Processing, Active, FailedToValidate</description>
         ///     </item>
         /// </list>
         /// </para>

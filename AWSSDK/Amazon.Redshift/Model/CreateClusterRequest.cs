@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -160,7 +160,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// The node type to be provisioned for the cluster. For information about node types, go to <a
         /// href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes"> Working with Clusters</a> in the <i>Amazon
-        /// Redshift Management Guide</i>. Valid Values: <c>dw.hs1.xlarge</c> | <c>dw.hs1.8xlarge</c>.
+        /// Redshift Management Guide</i>. Valid Values: <c>dw1.xlarge</c> | <c>dw1.8xlarge</c> | <c>dw2.large</c> | <c>dw2.8xlarge</c>.
         ///  
         /// </summary>
         public string NodeType
@@ -413,8 +413,9 @@ namespace Amazon.Redshift.Model
         /// The weekly time range (in UTC) during which automated cluster maintenance can occur. Format: <c>ddd:hh24:mi-ddd:hh24:mi</c> Default: A
         /// 30-minute window selected at random from an 8-hour block of time per region, occurring on a random day of the week. The following list shows
         /// the time blocks for each region from which the default maintenance windows are assigned. <ul> <li><b>US-East (Northern Virginia) Region:</b>
-        /// 03:00-11:00 UTC</li> <li><b>US-West (Oregon) Region</b> 06:00-14:00 UTC</li> </ul> Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun
-        /// Constraints: Minimum 30-minute window.
+        /// 03:00-11:00 UTC</li> <li><b>US-West (Oregon) Region</b> 06:00-14:00 UTC</li> <li><b>EU (Ireland) Region</b> 22:00-06:00 UTC</li> <li><b>Asia
+        /// Pacific (Singapore) Region</b> 14:00-22:00 UTC</li> <li><b>Asia Pacific (Sydney) Region</b> 12:00-20:00 UTC</li> <li><b>Asia Pacific (Tokyo)
+        /// Region</b> 17:00-03:00 UTC</li> </ul> Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun Constraints: Minimum 30-minute window.
         ///  
         /// </summary>
         public string PreferredMaintenanceWindow

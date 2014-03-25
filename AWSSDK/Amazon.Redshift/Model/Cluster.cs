@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -54,6 +54,7 @@ namespace Amazon.Redshift.Model
         private string clusterPublicKey;
         private List<ClusterNode> clusterNodes = new List<ClusterNode>();
         private ElasticIpStatus elasticIpStatus;
+        private string clusterRevisionNumber;
 
         /// <summary>
         /// The unique identifier of the cluster.
@@ -944,6 +945,35 @@ namespace Amazon.Redshift.Model
         internal bool IsSetElasticIpStatus()
         {
             return this.elasticIpStatus != null;
+        }
+
+        /// <summary>
+        /// The specific revision number of the database in the cluster.
+        ///  
+        /// </summary>
+        public string ClusterRevisionNumber
+        {
+            get { return this.clusterRevisionNumber; }
+            set { this.clusterRevisionNumber = value; }
+        }
+
+        /// <summary>
+        /// Sets the ClusterRevisionNumber property
+        /// </summary>
+        /// <param name="clusterRevisionNumber">The value to set for the ClusterRevisionNumber property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public Cluster WithClusterRevisionNumber(string clusterRevisionNumber)
+        {
+            this.clusterRevisionNumber = clusterRevisionNumber;
+            return this;
+        }
+            
+
+        // Check to see if ClusterRevisionNumber property is set
+        internal bool IsSetClusterRevisionNumber()
+        {
+            return this.clusterRevisionNumber != null;
         }
     }
 }

@@ -3350,6 +3350,76 @@ namespace Amazon.EC2
             return Invoke<ModifyReservedInstancesResponse>(ConvertModifyReservedInstances(request));
         }
 
+        /// <summary>
+        /// <para>Rejects a VPC peering connection request. The VPC peering connection must be in the <c>pending-acceptance</c> state. Use the
+        /// <c>DescribeVpcPeeringConnections</c> request to view your outstanding VPC peering connection requests.</para>
+        /// </summary>
+        /// <param name="request">RejectVpcPeeringConnection request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
+        /// <returns>RejectVpcPeeringConnection Response from the service</returns>
+        public RejectVpcPeeringConnectionResponse RejectVpcPeeringConnection(RejectVpcPeeringConnectionRequest request)
+        {
+            return Invoke<RejectVpcPeeringConnectionResponse>(ConvertRejectVpcPeeringConnection(request));
+        }
+
+        /// <summary>
+        /// <para>Describes one or more of your VPC peering connections.</para>
+        /// </summary>
+        /// <param name="request">DescribeVpcPeeringConnections request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
+        /// <returns>DescribeVpcPeeringConnections Response from the service</returns>
+        public DescribeVpcPeeringConnectionsResponse DescribeVpcPeeringConnections(DescribeVpcPeeringConnectionsRequest request)
+        {
+            return Invoke<DescribeVpcPeeringConnectionsResponse>(ConvertDescribeVpcPeeringConnections(request));
+        }
+
+        /// <summary>
+        /// <para>Deletes a VPC peering connection. Either the owner of the requester VPC or the owner of the peer VPC can delete the VPC peering
+        /// connection if it's in the <c>active</c> state. The owner of the requester VPC can delete a VPC peering connection in the
+        /// <c>pending-acceptance</c> state.</para>
+        /// </summary>
+        /// <param name="request">DeleteVpcPeeringConnection request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
+        /// <returns>DeleteVpcPeeringConnection Response from the service</returns>
+        public DeleteVpcPeeringConnectionResponse DeleteVpcPeeringConnection(DeleteVpcPeeringConnectionRequest request)
+        {
+            return Invoke<DeleteVpcPeeringConnectionResponse>(ConvertDeleteVpcPeeringConnection(request));
+        }
+
+        /// <summary>
+        /// <para>Requests a VPC peering connection between two VPCs: a requester VPC that you own and a peer VPC with which to create the connection.
+        /// The peer VPC can belong to another AWS account. The requester VPC and peer VPC cannot have overlapping CIDR blocks.</para> <para>The owner
+        /// of the peer VPC must accept the the peering request to activate the peering connection. The VPC peering connection request expires after 7
+        /// days, after which it cannot be accepted or rejected.</para> <para>A <c>CreateVpcPeeringConnection</c> request between VPCs with overlapping
+        /// CIDR blocks results in the VPC peering connection having a status of <c>failed</c> .</para>
+        /// </summary>
+        /// <param name="request">CreateVpcPeeringConnection request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
+        /// <returns>CreateVpcPeeringConnection Response from the service</returns>
+        public CreateVpcPeeringConnectionResponse CreateVpcPeeringConnection(CreateVpcPeeringConnectionRequest request)
+        {
+            return Invoke<CreateVpcPeeringConnectionResponse>(ConvertCreateVpcPeeringConnection(request));
+        }
+
+        /// <summary>
+        /// <para>Accept a VPC peering connection request. To accept a request, the VPC peering connection must be in the <c>pending-acceptance</c>
+        /// state, and you must be the owner of the peer VPC. Use the <c>DescribeVpcPeeringConnections</c> request to view your outstanding VPC peering
+        /// connection requests.</para>
+        /// </summary>
+        /// <param name="request">AcceptVpcPeeringConnection request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
+        /// <returns>AcceptVpcPeeringConnection Response from the service</returns>
+        public AcceptVpcPeeringConnectionResponse AcceptVpcPeeringConnection(AcceptVpcPeeringConnectionRequest request)
+        {
+            return Invoke<AcceptVpcPeeringConnectionResponse>(ConvertAcceptVpcPeeringConnection(request));
+        }
+
+
         #endregion
 
         #region Private API
@@ -7363,25 +7433,28 @@ namespace Amazon.EC2
             parameters["Action"] = "CreateRoute";
             if (request.IsSetRouteTableId())
             {
-                parameters["RouteTableId"] = request.RouteTableId;
+                parameters[String.Concat("RouteTableId")] = request.RouteTableId;
             }
             if (request.IsSetDestinationCidrBlock())
             {
-                parameters["DestinationCidrBlock"] = request.DestinationCidrBlock;
+                parameters[String.Concat("DestinationCidrBlock")] = request.DestinationCidrBlock;
             }
             if (request.IsSetGatewayId())
             {
-                parameters["GatewayId"] = request.GatewayId;
+                parameters[String.Concat("GatewayId")] = request.GatewayId;
             }
             if (request.IsSetInstanceId())
             {
-                parameters["InstanceId"] = request.InstanceId;
+                parameters[String.Concat("InstanceId")] = request.InstanceId;
             }
             if (request.IsSetNetworkInterfaceId())
             {
-                parameters["NetworkInterfaceId"] = request.NetworkInterfaceId;
+                parameters[String.Concat("NetworkInterfaceId")] = request.NetworkInterfaceId;
             }
-
+            if (request.IsSetVpcPeeringConnectionId())
+            {
+                parameters[String.Concat("VpcPeeringConnectionId")] = request.VpcPeeringConnectionId;
+            }
             return parameters;
         }
 
@@ -7394,25 +7467,28 @@ namespace Amazon.EC2
             parameters["Action"] = "ReplaceRoute";
             if (request.IsSetRouteTableId())
             {
-                parameters["RouteTableId"] = request.RouteTableId;
+                parameters[String.Concat("RouteTableId")] = request.RouteTableId;
             }
             if (request.IsSetDestinationCidrBlock())
             {
-                parameters["DestinationCidrBlock"] = request.DestinationCidrBlock;
+                parameters[String.Concat("DestinationCidrBlock")] = request.DestinationCidrBlock;
             }
             if (request.IsSetGatewayId())
             {
-                parameters["GatewayId"] = request.GatewayId;
+                parameters[String.Concat("GatewayId")] = request.GatewayId;
             }
             if (request.IsSetInstanceId())
             {
-                parameters["InstanceId"] = request.InstanceId;
+                parameters[String.Concat("InstanceId")] = request.InstanceId;
             }
             if (request.IsSetNetworkInterfaceId())
             {
-                parameters["NetworkInterfaceid"] = request.NetworkInterfaceId;
+                parameters[String.Concat("NetworkInterfaceId")] = request.NetworkInterfaceId;
             }
-
+            if (request.IsSetVpcPeeringConnectionId())
+            {
+                parameters[String.Concat("VpcPeeringConnectionId")] = request.VpcPeeringConnectionId;
+            }
             return parameters;
         }
 
@@ -8554,6 +8630,103 @@ namespace Amazon.EC2
             return parameters;
         }
 
+        /**
+         * Convert RejectVpcPeeringConnectionRequest to name value pairs
+         */
+        private static IDictionary<string, string> ConvertRejectVpcPeeringConnection(RejectVpcPeeringConnectionRequest request)
+        {
+            IDictionary<string, string> parameters = ConvertBase(request);
+            parameters["Action"] = "RejectVpcPeeringConnection";
+            if (request.IsSetVpcPeeringConnectionId())
+            {
+                parameters[String.Concat("VpcPeeringConnectionId")] = request.VpcPeeringConnectionId;
+            }
+            return parameters;
+        }
+
+        /**
+         * Convert DescribeVpcPeeringConnectionsRequest to name value pairs
+         */
+        private static IDictionary<string, string> ConvertDescribeVpcPeeringConnections(DescribeVpcPeeringConnectionsRequest request)
+        {
+            IDictionary<string, string> parameters = ConvertBase(request);
+            parameters["Action"] = "DescribeVpcPeeringConnections";
+            List<string> describeVpcPeeringConnectionsVpcPeeringConnectionIdList = request.VpcPeeringConnectionIds;
+            int describeVpcPeeringConnectionsVpcPeeringConnectionIdIndex = 1;
+            foreach (string describeVpcPeeringConnectionsVpcPeeringConnectionIdItem in describeVpcPeeringConnectionsVpcPeeringConnectionIdList)
+            {
+                parameters[String.Concat("VpcPeeringConnectionId", ".", describeVpcPeeringConnectionsVpcPeeringConnectionIdIndex)] = describeVpcPeeringConnectionsVpcPeeringConnectionIdItem;
+                describeVpcPeeringConnectionsVpcPeeringConnectionIdIndex++;
+            }
+            List<Filter> describeVpcPeeringConnectionsFilterList = request.Filters;
+            int describeVpcPeeringConnectionsFilterIndex = 1;
+            foreach (Filter describeVpcPeeringConnectionsFilterItem in describeVpcPeeringConnectionsFilterList)
+            {
+                if (describeVpcPeeringConnectionsFilterItem.IsSetName())
+                {
+                    parameters[String.Concat("Filter", ".", describeVpcPeeringConnectionsFilterIndex, ".", "Name")] = describeVpcPeeringConnectionsFilterItem.Name;
+                }
+                List<string> describeVpcPeeringConnectionsFilterFilterList = describeVpcPeeringConnectionsFilterItem.Value;
+                int describeVpcPeeringConnectionsFilterFilterIndex = 1;
+                foreach (string describeVpcPeeringConnectionsFilterFilterItem in describeVpcPeeringConnectionsFilterFilterList)
+                {
+                    parameters[String.Concat("Filter", ".", describeVpcPeeringConnectionsFilterIndex, ".", "Value", ".", describeVpcPeeringConnectionsFilterFilterIndex)] = describeVpcPeeringConnectionsFilterFilterItem;
+                    describeVpcPeeringConnectionsFilterFilterIndex++;
+                }
+                describeVpcPeeringConnectionsFilterIndex++;
+            }
+            return parameters;
+        }
+
+        /**
+         * Convert DeleteVpcPeeringConnectionRequest to name value pairs
+         */
+        private static IDictionary<string, string> ConvertDeleteVpcPeeringConnection(DeleteVpcPeeringConnectionRequest request)
+        {
+            IDictionary<string, string> parameters = ConvertBase(request);
+            parameters["Action"] = "DeleteVpcPeeringConnection";
+            if (request.IsSetVpcPeeringConnectionId())
+            {
+                parameters[String.Concat("VpcPeeringConnectionId")] = request.VpcPeeringConnectionId;
+            }
+            return parameters;
+        }
+
+        /**
+         * Convert CreateVpcPeeringConnectionRequest to name value pairs
+         */
+        private static IDictionary<string, string> ConvertCreateVpcPeeringConnection(CreateVpcPeeringConnectionRequest request)
+        {
+            IDictionary<string, string> parameters = ConvertBase(request);
+            parameters["Action"] = "CreateVpcPeeringConnection";
+            if (request.IsSetVpcId())
+            {
+                parameters[String.Concat("VpcId")] = request.VpcId;
+            }
+            if (request.IsSetPeerVpcId())
+            {
+                parameters[String.Concat("PeerVpcId")] = request.PeerVpcId;
+            }
+            if (request.IsSetPeerOwnerId())
+            {
+                parameters[String.Concat("PeerOwnerId")] = request.PeerOwnerId;
+            }
+            return parameters;
+        }
+
+        /**
+         * Convert AcceptVpcPeeringConnectionRequest to name value pairs
+         */
+        private static IDictionary<string, string> ConvertAcceptVpcPeeringConnection(AcceptVpcPeeringConnectionRequest request)
+        {
+            IDictionary<string, string> parameters = ConvertBase(request);
+            parameters["Action"] = "AcceptVpcPeeringConnection";
+            if (request.IsSetVpcPeeringConnectionId())
+            {
+                parameters[String.Concat("VpcPeeringConnectionId")] = request.VpcPeeringConnectionId;
+            }
+            return parameters;
+        }
 
         /*
          *  Transforms response based on xslt template

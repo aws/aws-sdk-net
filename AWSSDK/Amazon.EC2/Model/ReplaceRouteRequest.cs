@@ -40,6 +40,7 @@ namespace Amazon.EC2.Model
         private string gatewayIdField;
         private string instanceIdField;
         private string networkInterfaceIdField;
+        private string vpcPeeringConnectionIdField;
 
         /// <summary>
         /// The ID of the route table where the route will be replaced.
@@ -202,5 +203,37 @@ namespace Amazon.EC2.Model
         {
             return !string.IsNullOrEmpty(this.networkInterfaceIdField);
         }
+
+        /// <summary>
+        /// The ID of a VPC peering connection.
+        ///  
+        /// </summary>
+        public string VpcPeeringConnectionId
+        {
+            get { return this.vpcPeeringConnectionIdField; }
+            set { this.vpcPeeringConnectionIdField = value; }
+        }
+
+        /// <summary>
+        /// Sets the VpcPeeringConnectionId
+        /// <param name="vpcPeeringConnectionId">The VpcPeeringConnectionId.</param>
+        /// </summary>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public ReplaceRouteRequest WithVpcPeeringConnectionId(string vpcPeeringConnectionId)
+        {
+            this.vpcPeeringConnectionIdField = vpcPeeringConnectionId;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if VpcPeeringConnectionId is set
+        /// </summary>
+        /// <returns>true if VpcPeeringConnectionId property is set</returns>
+        public bool IsSetVpcPeeringConnectionId()
+        {
+            return this.vpcPeeringConnectionIdField != null;
+        }
+        
     }
 }

@@ -55,6 +55,9 @@
           <xsl:element name="NetworkInterfaceId">
             <xsl:value-of select="ec2:networkInterfaceId" />
           </xsl:element>
+          <xsl:element name="VpcPeeringConnectionId">
+            <xsl:value-of select="ec2:vpcPeeringConnectionId"/>
+          </xsl:element>
         </xsl:element>
       </xsl:for-each>
   </xsl:template>

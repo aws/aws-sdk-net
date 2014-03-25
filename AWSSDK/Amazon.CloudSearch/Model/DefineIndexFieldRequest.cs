@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,8 +25,12 @@ namespace Amazon.CloudSearch.Model
 {
     /// <summary>
     /// Container for the parameters to the DefineIndexField operation.
-    /// <para>Configures an <c>IndexField</c> for the search domain. Used to create new fields and modify existing ones. If the field exists, the
-    /// new configuration replaces the old one. You can configure a maximum of 200 index fields.</para>
+    /// <para>Configures an <c> IndexField </c> for the search domain. Used to create new fields and modify existing ones. You must specify the name
+    /// of the domain you are configuring and an index field configuration. The index field configuration specifies a unique name, the index field
+    /// type, and the options you want to configure for the field. The options you can specify depend on the <c> IndexFieldType </c> . If the field
+    /// exists, the new configuration replaces the old one. For more information, see <a
+    /// href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-index-fields.html" >Configuring Index Fields</a> in the
+    /// <i>Amazon CloudSearch Developer Guide</i> . </para>
     /// </summary>
     /// <seealso cref="Amazon.CloudSearch.AmazonCloudSearch.DefineIndexField"/>
     public class DefineIndexFieldRequest : AmazonWebServiceRequest
@@ -35,9 +39,8 @@ namespace Amazon.CloudSearch.Model
         private IndexField indexField;
 
         /// <summary>
-        /// A string that represents the name of a domain. Domain names must be unique across the domains owned by an account within an AWS region.
-        /// Domain names must start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). Uppercase
-        /// letters and underscores are not allowed.
+        /// A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain
+        /// names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -79,8 +82,7 @@ namespace Amazon.CloudSearch.Model
         }
 
         /// <summary>
-        /// Defines a field in the index, including its name, type, and the source of its data. The <c>IndexFieldType</c> indicates which of the options
-        /// will be present. It is invalid to specify options for a type other than the <c>IndexFieldType</c>.
+        /// The index field and field options you want to configure.
         ///  
         /// </summary>
         public IndexField IndexField

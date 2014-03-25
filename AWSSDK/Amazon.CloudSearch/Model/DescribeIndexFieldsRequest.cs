@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,19 +25,21 @@ namespace Amazon.CloudSearch.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeIndexFields operation.
-    /// <para>Gets information about the index fields configured for the search domain. Can be limited to specific fields by name. Shows all fields
-    /// by default.</para>
+    /// <para>Gets information about the index fields configured for the search domain. Can be limited to specific fields by name. By default,
+    /// shows all fields and includes any pending changes to the configuration. Set the <c>Deployed</c> option to <c>true</c> to show the active
+    /// configuration and exclude pending changes. For more information, see <a
+    /// href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getdomainstatus.html" >Getting Domain Information</a> in the <i>Amazon
+    /// CloudSearch Developer Guide</i> .</para>
     /// </summary>
     /// <seealso cref="Amazon.CloudSearch.AmazonCloudSearch.DescribeIndexFields"/>
     public class DescribeIndexFieldsRequest : AmazonWebServiceRequest
     {
         private string domainName;
         private List<string> fieldNames = new List<string>();
+        private bool? deployed;
 
         /// <summary>
-        /// A string that represents the name of a domain. Domain names must be unique across the domains owned by an account within an AWS region.
-        /// Domain names must start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). Uppercase
-        /// letters and underscores are not allowed.
+        /// The name of the domain you want to describe.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -79,7 +81,7 @@ namespace Amazon.CloudSearch.Model
         }
 
         /// <summary>
-        /// Limits the <c>DescribeIndexFields</c> response to the specified fields.
+        /// A list of the index fields you want to describe. If not specified, information is returned for all configured index fields.
         ///  
         /// </summary>
         public List<string> FieldNames
@@ -123,6 +125,35 @@ namespace Amazon.CloudSearch.Model
         internal bool IsSetFieldNames()
         {
             return this.fieldNames.Count > 0;
+        }
+
+        /// <summary>
+        /// Whether to display the deployed configuration (<c>true</c>) or include any pending changes (<c>false</c>). Defaults to <c>false</c>.
+        ///  
+        /// </summary>
+        public bool Deployed
+        {
+            get { return this.deployed ?? default(bool); }
+            set { this.deployed = value; }
+        }
+
+        /// <summary>
+        /// Sets the Deployed property
+        /// </summary>
+        /// <param name="deployed">The value to set for the Deployed property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public DescribeIndexFieldsRequest WithDeployed(bool deployed)
+        {
+            this.deployed = deployed;
+            return this;
+        }
+            
+
+        // Check to see if Deployed property is set
+        internal bool IsSetDeployed()
+        {
+            return this.deployed.HasValue;
         }
     }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,7 +30,7 @@ namespace Amazon.CloudSearch.Model
 
         /// <summary>
         /// Gets and sets the UpdateServiceAccessPoliciesResult property.
-        /// A response message that contains the status of updated access policies.
+        /// The result of an UpdateServiceAccessPolicies request. Contains the new access policies.
         /// </summary>
         public UpdateServiceAccessPoliciesResult UpdateServiceAccessPoliciesResult
         {

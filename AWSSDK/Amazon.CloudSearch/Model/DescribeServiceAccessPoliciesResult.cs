@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -21,7 +21,7 @@ using System.IO;
 namespace Amazon.CloudSearch.Model
 {
     /// <summary>
-    /// <para>A response message that contains the access policies for a domain.</para>
+    /// <para>The result of a <c>DescribeServiceAccessPolicies</c> request.</para>
     /// </summary>
     public partial class DescribeServiceAccessPoliciesResult
     {
@@ -29,7 +29,7 @@ namespace Amazon.CloudSearch.Model
         private AccessPoliciesStatus accessPolicies;
 
         /// <summary>
-        /// A <c>PolicyDocument</c> that specifies access policies for the search domain's services, and the current status of those policies.
+        /// The access rules configured for the domain specified in the request.
         ///  
         /// </summary>
         public AccessPoliciesStatus AccessPolicies

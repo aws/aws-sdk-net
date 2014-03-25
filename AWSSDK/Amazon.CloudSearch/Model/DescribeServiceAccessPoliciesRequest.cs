@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,17 +25,19 @@ namespace Amazon.CloudSearch.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeServiceAccessPolicies operation.
-    /// <para>Gets information about the resource-based policies that control access to the domain's document and search services.</para>
+    /// <para>Gets information about the access policies that control access to the domain's document and search endpoints. By default, shows the
+    /// configuration with any pending changes. Set the <c>Deployed</c> option to <c>true</c> to show the active configuration and exclude pending
+    /// changes. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html"
+    /// >Configuring Access for a Search Domain</a> in the <i>Amazon CloudSearch Developer Guide</i> .</para>
     /// </summary>
     /// <seealso cref="Amazon.CloudSearch.AmazonCloudSearch.DescribeServiceAccessPolicies"/>
     public class DescribeServiceAccessPoliciesRequest : AmazonWebServiceRequest
     {
         private string domainName;
+        private bool? deployed;
 
         /// <summary>
-        /// A string that represents the name of a domain. Domain names must be unique across the domains owned by an account within an AWS region.
-        /// Domain names must start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). Uppercase
-        /// letters and underscores are not allowed.
+        /// The name of the domain you want to describe.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -74,6 +76,35 @@ namespace Amazon.CloudSearch.Model
         internal bool IsSetDomainName()
         {
             return this.domainName != null;
+        }
+
+        /// <summary>
+        /// Whether to display the deployed configuration (<c>true</c>) or include any pending changes (<c>false</c>). Defaults to <c>false</c>.
+        ///  
+        /// </summary>
+        public bool Deployed
+        {
+            get { return this.deployed ?? default(bool); }
+            set { this.deployed = value; }
+        }
+
+        /// <summary>
+        /// Sets the Deployed property
+        /// </summary>
+        /// <param name="deployed">The value to set for the Deployed property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public DescribeServiceAccessPoliciesRequest WithDeployed(bool deployed)
+        {
+            this.deployed = deployed;
+            return this;
+        }
+            
+
+        // Check to see if Deployed property is set
+        internal bool IsSetDeployed()
+        {
+            return this.deployed.HasValue;
         }
     }
 }

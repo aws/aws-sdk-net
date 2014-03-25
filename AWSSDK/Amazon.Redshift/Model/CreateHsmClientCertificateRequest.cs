@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -26,10 +26,11 @@ namespace Amazon.Redshift.Model
     /// <summary>
     /// Container for the parameters to the CreateHsmClientCertificate operation.
     /// <para>Creates an HSM client certificate that an Amazon Redshift cluster will use to connect to the client's HSM in order to store and
-    /// retrieve the keys used to encrypt the cluster databases.</para> <para>The command returns a public key, which you must store in the HSM.
-    /// After creating the HSM certificate, you must create an Amazon Redshift HSM configuration that provides a cluster the information needed to
-    /// store and retrieve database encryption keys in the HSM. For more information, go to aLinkToHSMTopic in the Amazon Redshift Management
-    /// Guide.</para>
+    /// retrieve the keys used to encrypt the cluster databases.</para> <para>The command returns a public key, which you must store in the HSM. In
+    /// addition to creating the HSM certificate, you must create an Amazon Redshift HSM configuration that provides a cluster the information
+    /// needed to store and use encryption keys in the HSM. For more information, go to <a
+    /// href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-HSM.html" >Hardware Security Modules</a> in the Amazon Redshift
+    /// Management Guide.</para>
     /// </summary>
     /// <seealso cref="Amazon.Redshift.AmazonRedshift.CreateHsmClientCertificate"/>
     public class CreateHsmClientCertificateRequest : AmazonWebServiceRequest
@@ -37,7 +38,7 @@ namespace Amazon.Redshift.Model
         private string hsmClientCertificateIdentifier;
 
         /// <summary>
-        /// The identifier to be assigned to the new HSM client certificate that the cluster will use to connect to the HSM to retrieve the database
+        /// The identifier to be assigned to the new HSM client certificate that the cluster will use to connect to the HSM to use the database
         /// encryption keys.
         ///  
         /// </summary>

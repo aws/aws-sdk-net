@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -43,9 +43,9 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
                             
                         continue;
                     } 
-                    if (context.TestExpression("SearchEnabled", targetDepth))
+                    if (context.TestExpression("SourceField", targetDepth))
                     {
-                        literalOptions.SearchEnabled = BoolUnmarshaller.GetInstance().Unmarshall(context);
+                        literalOptions.SourceField = StringUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
                     } 
@@ -55,9 +55,21 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
                             
                         continue;
                     } 
-                    if (context.TestExpression("ResultEnabled", targetDepth))
+                    if (context.TestExpression("SearchEnabled", targetDepth))
                     {
-                        literalOptions.ResultEnabled = BoolUnmarshaller.GetInstance().Unmarshall(context);
+                        literalOptions.SearchEnabled = BoolUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
+                    } 
+                    if (context.TestExpression("ReturnEnabled", targetDepth))
+                    {
+                        literalOptions.ReturnEnabled = BoolUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
+                    } 
+                    if (context.TestExpression("SortEnabled", targetDepth))
+                    {
+                        literalOptions.SortEnabled = BoolUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
                     }

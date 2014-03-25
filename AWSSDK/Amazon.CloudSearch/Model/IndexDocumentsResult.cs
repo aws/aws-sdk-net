@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -21,7 +21,8 @@ using System.IO;
 namespace Amazon.CloudSearch.Model
 {
     /// <summary>
-    /// <para>The result of an <c>IndexDocuments</c> action.</para>
+    /// <para>The result of an <c>IndexDocuments</c> request. Contains the status of the indexing operation, including the fields being
+    /// indexed.</para>
     /// </summary>
     public partial class IndexDocumentsResult
     {
@@ -29,7 +30,7 @@ namespace Amazon.CloudSearch.Model
         private List<string> fieldNames = new List<string>();
 
         /// <summary>
-        /// The names of the fields that are currently being processed due to an <c>IndexDocuments</c> action.
+        /// The names of the fields that are currently being indexed.
         ///  
         /// </summary>
         public List<string> FieldNames

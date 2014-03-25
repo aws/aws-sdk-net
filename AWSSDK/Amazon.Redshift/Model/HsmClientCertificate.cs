@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -60,8 +60,7 @@ namespace Amazon.Redshift.Model
         }
 
         /// <summary>
-        /// The public key that the Amazon Redshift cluster will use to retrieve the client certificate from the HSM. You must register the public key
-        /// in the HSM.
+        /// The public key that the Amazon Redshift cluster will use to connect to the HSM. You must register the public key in the HSM.
         ///  
         /// </summary>
         public string HsmClientCertificatePublicKey

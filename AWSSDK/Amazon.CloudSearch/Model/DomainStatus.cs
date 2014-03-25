@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -28,9 +28,9 @@ namespace Amazon.CloudSearch.Model
         
         private string domainId;
         private string domainName;
+        private string aRN;
         private bool? created;
         private bool? deleted;
-        private long? numSearchableDocs;
         private ServiceEndpoint docService;
         private ServiceEndpoint searchService;
         private bool? requiresIndexDocuments;
@@ -78,9 +78,8 @@ namespace Amazon.CloudSearch.Model
         }
 
         /// <summary>
-        /// A string that represents the name of a domain. Domain names must be unique across the domains owned by an account within an AWS region.
-        /// Domain names must start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). Uppercase
-        /// letters and underscores are not allowed.
+        /// A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain
+        /// names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -119,6 +118,37 @@ namespace Amazon.CloudSearch.Model
         internal bool IsSetDomainName()
         {
             return this.domainName != null;
+        }
+
+        /// <summary>
+        /// The Amazon Resource Name (ARN) of the search domain. See <a
+        /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in
+        /// <i>Using AWS Identity and Access Management</i> for more information.
+        ///  
+        /// </summary>
+        public string ARN
+        {
+            get { return this.aRN; }
+            set { this.aRN = value; }
+        }
+
+        /// <summary>
+        /// Sets the ARN property
+        /// </summary>
+        /// <param name="aRN">The value to set for the ARN property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public DomainStatus WithARN(string aRN)
+        {
+            this.aRN = aRN;
+            return this;
+        }
+            
+
+        // Check to see if ARN property is set
+        internal bool IsSetARN()
+        {
+            return this.aRN != null;
         }
 
         /// <summary>
@@ -180,44 +210,6 @@ namespace Amazon.CloudSearch.Model
         internal bool IsSetDeleted()
         {
             return this.deleted.HasValue;
-        }
-
-        /// <summary>
-        /// The number of documents that have been submitted to the domain and indexed.
-        ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Range</term>
-        ///         <description>0 - </description>
-        ///     </item>
-        /// </list>
-        /// </para>
-        /// </summary>
-        public long NumSearchableDocs
-        {
-            get { return this.numSearchableDocs ?? default(long); }
-            set { this.numSearchableDocs = value; }
-        }
-
-        /// <summary>
-        /// Sets the NumSearchableDocs property
-        /// </summary>
-        /// <param name="numSearchableDocs">The value to set for the NumSearchableDocs property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public DomainStatus WithNumSearchableDocs(long numSearchableDocs)
-        {
-            this.numSearchableDocs = numSearchableDocs;
-            return this;
-        }
-            
-
-        // Check to see if NumSearchableDocs property is set
-        internal bool IsSetNumSearchableDocs()
-        {
-            return this.numSearchableDocs.HasValue;
         }
 
         /// <summary>
@@ -337,7 +329,7 @@ namespace Amazon.CloudSearch.Model
         }
 
         /// <summary>
-        /// The instance type (such as search.m1.small) that is being used to process search requests.
+        /// The instance type that is being used to process search requests.
         ///  
         /// </summary>
         public string SearchInstanceType

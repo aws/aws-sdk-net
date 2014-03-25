@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -34,7 +34,7 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(deleteIndexFieldRequest, "AmazonCloudSearch");
             request.Parameters.Add("Action", "DeleteIndexField");
-            request.Parameters.Add("Version", "2011-02-01");
+            request.Parameters.Add("Version", "2013-01-01");
             if (deleteIndexFieldRequest != null && deleteIndexFieldRequest.IsSetDomainName())
             {
                 request.Parameters.Add("DomainName", StringUtils.FromString(deleteIndexFieldRequest.DomainName));

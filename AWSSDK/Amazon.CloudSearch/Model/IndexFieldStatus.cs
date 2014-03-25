@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,8 +30,8 @@ namespace Amazon.CloudSearch.Model
         private OptionStatus status;
 
         /// <summary>
-        /// Defines a field in the index, including its name, type, and the source of its data. The <c>IndexFieldType</c> indicates which of the options
-        /// will be present. It is invalid to specify options for a type other than the <c>IndexFieldType</c>.
+        /// Configuration information for a field in the index, including its name, type, and options. The supported options depend on the
+        /// <c><a>IndexFieldType</a></c>.
         ///  
         /// </summary>
         public IndexField Options
@@ -60,7 +60,7 @@ namespace Amazon.CloudSearch.Model
         }
 
         /// <summary>
-        /// The status of an option, including when it was last updated and whether it is actively in use for searches.
+        /// The status of domain configuration option.
         ///  
         /// </summary>
         public OptionStatus Status

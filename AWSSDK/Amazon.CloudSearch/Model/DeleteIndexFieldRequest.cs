@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,7 +25,9 @@ namespace Amazon.CloudSearch.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteIndexField operation.
-    /// <para>Removes an <c>IndexField</c> from the search domain.</para>
+    /// <para>Removes an <c> IndexField </c> from the search domain. For more information, see <a
+    /// href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-index-fields.html" >Configuring Index Fields</a> in the
+    /// <i>Amazon CloudSearch Developer Guide</i> .</para>
     /// </summary>
     /// <seealso cref="Amazon.CloudSearch.AmazonCloudSearch.DeleteIndexField"/>
     public class DeleteIndexFieldRequest : AmazonWebServiceRequest
@@ -34,9 +36,8 @@ namespace Amazon.CloudSearch.Model
         private string indexFieldName;
 
         /// <summary>
-        /// A string that represents the name of a domain. Domain names must be unique across the domains owned by an account within an AWS region.
-        /// Domain names must start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). Uppercase
-        /// letters and underscores are not allowed.
+        /// A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain
+        /// names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -78,9 +79,7 @@ namespace Amazon.CloudSearch.Model
         }
 
         /// <summary>
-        /// A string that represents the name of an index field. Field names must begin with a letter and can contain the following characters: a-z
-        /// (lowercase), 0-9, and _ (underscore). Uppercase letters and hyphens are not allowed. The names "body", "docid", and "text_relevance" are
-        /// reserved and cannot be specified as field or rank expression names.
+        /// The name of the index field your want to remove from the domain's indexing options.
         ///  
         /// <para>
         /// <b>Constraints:</b>

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -20,9 +20,9 @@
 
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Xml.Serialization;
 using System.Text;
+using System.IO;
 
 namespace Amazon.EC2.Model
 {
@@ -32,9 +32,9 @@ namespace Amazon.EC2.Model
     /// </summary>
     [XmlRootAttribute(IsNullable = false)]
     public class ReplaceRouteResponse
-    {    
+    {
         private ResponseMetadata responseMetadataField;
-
+        
         /// <summary>
         /// Gets and sets the ResponseMetadata property.
         /// Response Metadata
@@ -45,7 +45,7 @@ namespace Amazon.EC2.Model
             get { return this.responseMetadataField; }
             set { this.responseMetadataField = value; }
         }
-
+        
         /// <summary>
         /// Checks if ResponseMetadata property is set
         /// </summary>
@@ -54,7 +54,7 @@ namespace Amazon.EC2.Model
         {
             return this.responseMetadataField != null;
         }
-
+        
         /// <summary>
         /// XML Representation of this object
         /// </summary>
@@ -69,7 +69,7 @@ namespace Amazon.EC2.Model
             }
             return xml.ToString();
         }
-
+        
         /// <summary>
         /// String Representation of this object. Overrides Object.ToString()
         /// </summary>

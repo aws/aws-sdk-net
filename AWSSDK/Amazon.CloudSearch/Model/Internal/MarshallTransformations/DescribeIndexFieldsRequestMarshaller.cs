@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -34,7 +34,7 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(describeIndexFieldsRequest, "AmazonCloudSearch");
             request.Parameters.Add("Action", "DescribeIndexFields");
-            request.Parameters.Add("Version", "2011-02-01");
+            request.Parameters.Add("Version", "2013-01-01");
             if (describeIndexFieldsRequest != null && describeIndexFieldsRequest.IsSetDomainName())
             {
                 request.Parameters.Add("DomainName", StringUtils.FromString(describeIndexFieldsRequest.DomainName));
@@ -49,6 +49,10 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
                     request.Parameters.Add("FieldNames.member." + fieldNamesListIndex, StringUtils.FromString(fieldNamesListValue));
                     fieldNamesListIndex++;
                 }
+            }
+            if (describeIndexFieldsRequest != null && describeIndexFieldsRequest.IsSetDeployed())
+            {
+                request.Parameters.Add("Deployed", StringUtils.FromBool(describeIndexFieldsRequest.Deployed));
             }
 
             return request;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -70,9 +70,9 @@ namespace Amazon.Redshift.Model
         }
 
         /// <summary>
-        /// The maximum number of parameter group records to include in the response. If more records exist than the specified <c>MaxRecords</c> value,
-        /// the response includes a marker that you can use in a subsequent <a>DescribeClusterParameterGroups</a> request to retrieve the next set of
-        /// records. Default: <c>100</c> Constraints: Value must be at least 20 and no more than 100.
+        /// The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified
+        /// <c>MaxRecords</c> value, a value is returned in a <c>marker</c> field of the response. You can retrieve the next set of records by retrying
+        /// the command with the returned marker value. Default: <c>100</c> Constraints: minimum 20, maximum 100.
         ///  
         /// </summary>
         public int MaxRecords
@@ -101,8 +101,10 @@ namespace Amazon.Redshift.Model
         }
 
         /// <summary>
-        /// An optional marker returned by a previous <a>DescribeClusterParameterGroups</a> request to indicate the first parameter group that the
-        /// current request will return.
+        /// An optional parameter that specifies the starting point to return a set of response records. When the results of a
+        /// <a>DescribeClusterParameterGroups</a> request exceed the value specified in <c>MaxRecords</c>, AWS returns a value in the <c>Marker</c>
+        /// field of the response. You can retrieve the next set of response records by providing the returned marker value in the <c>Marker</c>
+        /// parameter and retrying the request.
         ///  
         /// </summary>
         public string Marker

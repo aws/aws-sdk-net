@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2008-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  * this file except in compliance with the License. A copy of the License is located at
  *
@@ -20,9 +20,9 @@
 
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Xml.Serialization;
 using System.Text;
+using System.IO;
 
 namespace Amazon.EC2.Model
 {

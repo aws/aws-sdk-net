@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -117,7 +117,8 @@ namespace Amazon.Redshift.Model
         /// your request to resize a cluster, Amazon Redshift sets access permissions for the cluster to read-only. After Amazon Redshift provisions a
         /// new cluster according to your resize requirements, there will be a temporary outage while the old cluster is deleted and your connection is
         /// switched to the new cluster. When the new connection is complete, the original access permissions for the cluster are restored. You can use
-        /// the <a>DescribeResize</a> to track the progress of the resize request. Valid Values: <c> dw.hs1.xlarge</c> | <c>dw.hs1.8xlarge</c>
+        /// the <a>DescribeResize</a> to track the progress of the resize request. Valid Values: <c> dw1.xlarge</c> | <c>dw1.8xlarge</c> |
+        /// <c>dw2.large</c> | <c>dw2.8xlarge</c>.
         ///  
         /// </summary>
         public string NodeType

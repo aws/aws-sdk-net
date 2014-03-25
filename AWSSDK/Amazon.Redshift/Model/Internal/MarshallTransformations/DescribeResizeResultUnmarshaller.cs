@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -76,6 +76,36 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ImportTablesNotStarted/member", targetDepth))
                     {
                         describeResizeResult.ImportTablesNotStarted.Add(StringUnmarshaller.GetInstance().Unmarshall(context));
+                            
+                        continue;
+                    } 
+                    if (context.TestExpression("AvgResizeRateInMegaBytesPerSecond", targetDepth))
+                    {
+                        describeResizeResult.AvgResizeRateInMegaBytesPerSecond = DoubleUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
+                    } 
+                    if (context.TestExpression("TotalResizeDataInMegaBytes", targetDepth))
+                    {
+                        describeResizeResult.TotalResizeDataInMegaBytes = LongUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
+                    } 
+                    if (context.TestExpression("ProgressInMegaBytes", targetDepth))
+                    {
+                        describeResizeResult.ProgressInMegaBytes = LongUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
+                    } 
+                    if (context.TestExpression("ElapsedTimeInSeconds", targetDepth))
+                    {
+                        describeResizeResult.ElapsedTimeInSeconds = LongUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
+                    } 
+                    if (context.TestExpression("EstimatedTimeToCompletionInSeconds", targetDepth))
+                    {
+                        describeResizeResult.EstimatedTimeToCompletionInSeconds = LongUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
                     }

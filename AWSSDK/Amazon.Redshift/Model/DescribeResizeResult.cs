@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -33,9 +33,14 @@ namespace Amazon.Redshift.Model
         private List<string> importTablesCompleted = new List<string>();
         private List<string> importTablesInProgress = new List<string>();
         private List<string> importTablesNotStarted = new List<string>();
+        private double? avgResizeRateInMegaBytesPerSecond;
+        private long? totalResizeDataInMegaBytes;
+        private long? progressInMegaBytes;
+        private long? elapsedTimeInSeconds;
+        private long? estimatedTimeToCompletionInSeconds;
 
         /// <summary>
-        /// The node type that the cluster will have after the resize is complete.
+        /// The node type that the cluster will have after the resize operation is complete.
         ///  
         /// </summary>
         public string TargetNodeType
@@ -64,7 +69,7 @@ namespace Amazon.Redshift.Model
         }
 
         /// <summary>
-        /// The number of nodes that the cluster will have after the resize is complete.
+        /// The number of nodes that the cluster will have after the resize operation is complete.
         ///  
         /// </summary>
         public int TargetNumberOfNodes
@@ -93,7 +98,7 @@ namespace Amazon.Redshift.Model
         }
 
         /// <summary>
-        /// The cluster type after the resize is complete. Valid Values: <c>multi-node</c> | <c>single-node</c>
+        /// The cluster type after the resize operation is complete. Valid Values: <c>multi-node</c> | <c>single-node</c>
         ///  
         /// </summary>
         public string TargetClusterType
@@ -289,6 +294,156 @@ namespace Amazon.Redshift.Model
         internal bool IsSetImportTablesNotStarted()
         {
             return this.importTablesNotStarted.Count > 0;
+        }
+
+        /// <summary>
+        /// The average rate of the resize operation over the last few minutes, measured in megabytes per second. After the resize operation completes,
+        /// this value shows the average rate of the entire resize operation.
+        ///  
+        /// </summary>
+        public double AvgResizeRateInMegaBytesPerSecond
+        {
+            get { return this.avgResizeRateInMegaBytesPerSecond ?? default(double); }
+            set { this.avgResizeRateInMegaBytesPerSecond = value; }
+        }
+
+        /// <summary>
+        /// Sets the AvgResizeRateInMegaBytesPerSecond property
+        /// </summary>
+        /// <param name="avgResizeRateInMegaBytesPerSecond">The value to set for the AvgResizeRateInMegaBytesPerSecond property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public DescribeResizeResult WithAvgResizeRateInMegaBytesPerSecond(double avgResizeRateInMegaBytesPerSecond)
+        {
+            this.avgResizeRateInMegaBytesPerSecond = avgResizeRateInMegaBytesPerSecond;
+            return this;
+        }
+            
+
+        // Check to see if AvgResizeRateInMegaBytesPerSecond property is set
+        internal bool IsSetAvgResizeRateInMegaBytesPerSecond()
+        {
+            return this.avgResizeRateInMegaBytesPerSecond.HasValue;
+        }
+
+        /// <summary>
+        /// The estimated total amount of data, in megabytes, on the cluster before the resize operation began.
+        ///  
+        /// </summary>
+        public long TotalResizeDataInMegaBytes
+        {
+            get { return this.totalResizeDataInMegaBytes ?? default(long); }
+            set { this.totalResizeDataInMegaBytes = value; }
+        }
+
+        /// <summary>
+        /// Sets the TotalResizeDataInMegaBytes property
+        /// </summary>
+        /// <param name="totalResizeDataInMegaBytes">The value to set for the TotalResizeDataInMegaBytes property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public DescribeResizeResult WithTotalResizeDataInMegaBytes(long totalResizeDataInMegaBytes)
+        {
+            this.totalResizeDataInMegaBytes = totalResizeDataInMegaBytes;
+            return this;
+        }
+            
+
+        // Check to see if TotalResizeDataInMegaBytes property is set
+        internal bool IsSetTotalResizeDataInMegaBytes()
+        {
+            return this.totalResizeDataInMegaBytes.HasValue;
+        }
+
+        /// <summary>
+        /// While the resize operation is in progress, this value shows the current amount of data, in megabytes, that has been processed so far. When
+        /// the resize operation is complete, this value shows the total amount of data, in megabytes, on the cluster, which may be more or less than
+        /// TotalResizeDataInMegaBytes (the estimated total amount of data before resize).
+        ///  
+        /// </summary>
+        public long ProgressInMegaBytes
+        {
+            get { return this.progressInMegaBytes ?? default(long); }
+            set { this.progressInMegaBytes = value; }
+        }
+
+        /// <summary>
+        /// Sets the ProgressInMegaBytes property
+        /// </summary>
+        /// <param name="progressInMegaBytes">The value to set for the ProgressInMegaBytes property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public DescribeResizeResult WithProgressInMegaBytes(long progressInMegaBytes)
+        {
+            this.progressInMegaBytes = progressInMegaBytes;
+            return this;
+        }
+            
+
+        // Check to see if ProgressInMegaBytes property is set
+        internal bool IsSetProgressInMegaBytes()
+        {
+            return this.progressInMegaBytes.HasValue;
+        }
+
+        /// <summary>
+        /// The amount of seconds that have elapsed since the resize operation began. After the resize operation completes, this value shows the total
+        /// actual time, in seconds, for the resize operation.
+        ///  
+        /// </summary>
+        public long ElapsedTimeInSeconds
+        {
+            get { return this.elapsedTimeInSeconds ?? default(long); }
+            set { this.elapsedTimeInSeconds = value; }
+        }
+
+        /// <summary>
+        /// Sets the ElapsedTimeInSeconds property
+        /// </summary>
+        /// <param name="elapsedTimeInSeconds">The value to set for the ElapsedTimeInSeconds property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public DescribeResizeResult WithElapsedTimeInSeconds(long elapsedTimeInSeconds)
+        {
+            this.elapsedTimeInSeconds = elapsedTimeInSeconds;
+            return this;
+        }
+            
+
+        // Check to see if ElapsedTimeInSeconds property is set
+        internal bool IsSetElapsedTimeInSeconds()
+        {
+            return this.elapsedTimeInSeconds.HasValue;
+        }
+
+        /// <summary>
+        /// The estimated time remaining, in seconds, until the resize operation is complete. This value is calculated based on the average resize rate
+        /// and the estimated amount of data remaining to be processed. Once the resize operation is complete, this value will be 0.
+        ///  
+        /// </summary>
+        public long EstimatedTimeToCompletionInSeconds
+        {
+            get { return this.estimatedTimeToCompletionInSeconds ?? default(long); }
+            set { this.estimatedTimeToCompletionInSeconds = value; }
+        }
+
+        /// <summary>
+        /// Sets the EstimatedTimeToCompletionInSeconds property
+        /// </summary>
+        /// <param name="estimatedTimeToCompletionInSeconds">The value to set for the EstimatedTimeToCompletionInSeconds property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public DescribeResizeResult WithEstimatedTimeToCompletionInSeconds(long estimatedTimeToCompletionInSeconds)
+        {
+            this.estimatedTimeToCompletionInSeconds = estimatedTimeToCompletionInSeconds;
+            return this;
+        }
+            
+
+        // Check to see if EstimatedTimeToCompletionInSeconds property is set
+        internal bool IsSetEstimatedTimeToCompletionInSeconds()
+        {
+            return this.estimatedTimeToCompletionInSeconds.HasValue;
         }
     }
 }

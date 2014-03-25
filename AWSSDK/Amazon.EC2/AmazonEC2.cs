@@ -2505,5 +2505,60 @@ namespace Amazon.EC2
         /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
         /// <returns>Modify Reserved Instances response from the service</returns>
         ModifyReservedInstancesResponse ModifyReservedInstances(ModifyReservedInstancesRequest request);
+
+        /// <summary>
+        /// <para>Rejects a VPC peering connection request. The VPC peering connection must be in the <c>pending-acceptance</c> state. Use the
+        /// <c>DescribeVpcPeeringConnections</c> request to view your outstanding VPC peering connection requests.</para>
+        /// </summary>
+        /// <param name="request">RejectVpcPeeringConnection request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
+        /// <returns>RejectVpcPeeringConnection Response from the service</returns>
+        RejectVpcPeeringConnectionResponse RejectVpcPeeringConnection(RejectVpcPeeringConnectionRequest request);
+
+        /// <summary>
+        /// <para>Describes one or more of your VPC peering connections.</para>
+        /// </summary>
+        /// <param name="request">DescribeVpcPeeringConnections request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
+        /// <returns>DescribeVpcPeeringConnections Response from the service</returns>
+        DescribeVpcPeeringConnectionsResponse DescribeVpcPeeringConnections(DescribeVpcPeeringConnectionsRequest request);
+
+        /// <summary>
+        /// <para>Deletes a VPC peering connection. Either the owner of the requester VPC or the owner of the peer VPC can delete the VPC peering
+        /// connection if it's in the <c>active</c> state. The owner of the requester VPC can delete a VPC peering connection in the
+        /// <c>pending-acceptance</c> state.</para>
+        /// </summary>
+        /// <param name="request">DeleteVpcPeeringConnection request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
+        /// <returns>DeleteVpcPeeringConnection Response from the service</returns>
+        DeleteVpcPeeringConnectionResponse DeleteVpcPeeringConnection(DeleteVpcPeeringConnectionRequest request);
+
+        /// <summary>
+        /// <para>Requests a VPC peering connection between two VPCs: a requester VPC that you own and a peer VPC with which to create the connection.
+        /// The peer VPC can belong to another AWS account. The requester VPC and peer VPC cannot have overlapping CIDR blocks.</para> <para>The owner
+        /// of the peer VPC must accept the the peering request to activate the peering connection. The VPC peering connection request expires after 7
+        /// days, after which it cannot be accepted or rejected.</para> <para>A <c>CreateVpcPeeringConnection</c> request between VPCs with overlapping
+        /// CIDR blocks results in the VPC peering connection having a status of <c>failed</c> .</para>
+        /// </summary>
+        /// <param name="request">CreateVpcPeeringConnection request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
+        /// <returns>CreateVpcPeeringConnection Response from the service</returns>
+        CreateVpcPeeringConnectionResponse CreateVpcPeeringConnection(CreateVpcPeeringConnectionRequest request);
+
+        /// <summary>
+        /// <para>Accept a VPC peering connection request. To accept a request, the VPC peering connection must be in the <c>pending-acceptance</c>
+        /// state, and you must be the owner of the peer VPC. Use the <c>DescribeVpcPeeringConnections</c> request to view your outstanding VPC peering
+        /// connection requests.</para>
+        /// </summary>
+        /// <param name="request">AcceptVpcPeeringConnection request</param>
+        /// <exception cref="T:System.Net.WebException"></exception>
+        /// <exception cref="T:Amazon.EC2.AmazonEC2Exception"></exception>
+        /// <returns>AcceptVpcPeeringConnection Response from the service</returns>
+        AcceptVpcPeeringConnectionResponse AcceptVpcPeeringConnection(AcceptVpcPeeringConnectionRequest request);
+
     }
 }

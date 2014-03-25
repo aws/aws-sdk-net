@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -21,18 +21,21 @@ using System.IO;
 namespace Amazon.CloudSearch.Model
 {
     /// <summary>
-    /// <para>Options that define a literal field in the search index.</para>
+    /// <para>Options for literal field. Present if <c>IndexFieldType</c> specifies the field is of type <c>literal</c> . All options are enabled
+    /// by default.</para>
     /// </summary>
     public partial class LiteralOptions
     {
         
         private string defaultValue;
-        private bool? searchEnabled;
+        private string sourceField;
         private bool? facetEnabled;
-        private bool? resultEnabled;
+        private bool? searchEnabled;
+        private bool? returnEnabled;
+        private bool? sortEnabled;
 
         /// <summary>
-        /// The default value for a literal field. Optional.
+        /// A value to use for the field if the field isn't specified for a document.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -70,36 +73,51 @@ namespace Amazon.CloudSearch.Model
         }
 
         /// <summary>
-        /// Specifies whether search is enabled for this field. Default: False.
+        /// A string that represents the name of an index field. Field names begin with a letter and can contain the following characters: a-z
+        /// (lowercase), 0-9, and _ (underscore). The name "score" is reserved and cannot be used as a field name. To reference a document's ID, you can
+        /// use the name <c>_id</c>.
         ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Length</term>
+        ///         <description>1 - 64</description>
+        ///     </item>
+        ///     <item>
+        ///         <term>Pattern</term>
+        ///         <description>[a-z][a-z0-9_]*</description>
+        ///     </item>
+        /// </list>
+        /// </para>
         /// </summary>
-        public bool SearchEnabled
+        public string SourceField
         {
-            get { return this.searchEnabled ?? default(bool); }
-            set { this.searchEnabled = value; }
+            get { return this.sourceField; }
+            set { this.sourceField = value; }
         }
 
         /// <summary>
-        /// Sets the SearchEnabled property
+        /// Sets the SourceField property
         /// </summary>
-        /// <param name="searchEnabled">The value to set for the SearchEnabled property </param>
+        /// <param name="sourceField">The value to set for the SourceField property </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public LiteralOptions WithSearchEnabled(bool searchEnabled)
+        public LiteralOptions WithSourceField(string sourceField)
         {
-            this.searchEnabled = searchEnabled;
+            this.sourceField = sourceField;
             return this;
         }
             
 
-        // Check to see if SearchEnabled property is set
-        internal bool IsSetSearchEnabled()
+        // Check to see if SourceField property is set
+        internal bool IsSetSourceField()
         {
-            return this.searchEnabled.HasValue;
+            return this.sourceField != null;
         }
 
         /// <summary>
-        /// Specifies whether facets are enabled for this field. Default: False.
+        /// Whether facet information can be returned for the field.
         ///  
         /// </summary>
         public bool FacetEnabled
@@ -128,32 +146,90 @@ namespace Amazon.CloudSearch.Model
         }
 
         /// <summary>
-        /// Specifies whether values of this field can be returned in search results and used for ranking. Default: False.
+        /// Whether the contents of the field are searchable.
         ///  
         /// </summary>
-        public bool ResultEnabled
+        public bool SearchEnabled
         {
-            get { return this.resultEnabled ?? default(bool); }
-            set { this.resultEnabled = value; }
+            get { return this.searchEnabled ?? default(bool); }
+            set { this.searchEnabled = value; }
         }
 
         /// <summary>
-        /// Sets the ResultEnabled property
+        /// Sets the SearchEnabled property
         /// </summary>
-        /// <param name="resultEnabled">The value to set for the ResultEnabled property </param>
+        /// <param name="searchEnabled">The value to set for the SearchEnabled property </param>
         /// <returns>this instance</returns>
         [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public LiteralOptions WithResultEnabled(bool resultEnabled)
+        public LiteralOptions WithSearchEnabled(bool searchEnabled)
         {
-            this.resultEnabled = resultEnabled;
+            this.searchEnabled = searchEnabled;
             return this;
         }
             
 
-        // Check to see if ResultEnabled property is set
-        internal bool IsSetResultEnabled()
+        // Check to see if SearchEnabled property is set
+        internal bool IsSetSearchEnabled()
         {
-            return this.resultEnabled.HasValue;
+            return this.searchEnabled.HasValue;
+        }
+
+        /// <summary>
+        /// Whether the contents of the field can be returned in the search results.
+        ///  
+        /// </summary>
+        public bool ReturnEnabled
+        {
+            get { return this.returnEnabled ?? default(bool); }
+            set { this.returnEnabled = value; }
+        }
+
+        /// <summary>
+        /// Sets the ReturnEnabled property
+        /// </summary>
+        /// <param name="returnEnabled">The value to set for the ReturnEnabled property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public LiteralOptions WithReturnEnabled(bool returnEnabled)
+        {
+            this.returnEnabled = returnEnabled;
+            return this;
+        }
+            
+
+        // Check to see if ReturnEnabled property is set
+        internal bool IsSetReturnEnabled()
+        {
+            return this.returnEnabled.HasValue;
+        }
+
+        /// <summary>
+        /// Whether the field can be used to sort the search results.
+        ///  
+        /// </summary>
+        public bool SortEnabled
+        {
+            get { return this.sortEnabled ?? default(bool); }
+            set { this.sortEnabled = value; }
+        }
+
+        /// <summary>
+        /// Sets the SortEnabled property
+        /// </summary>
+        /// <param name="sortEnabled">The value to set for the SortEnabled property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public LiteralOptions WithSortEnabled(bool sortEnabled)
+        {
+            this.sortEnabled = sortEnabled;
+            return this;
+        }
+            
+
+        // Check to see if SortEnabled property is set
+        internal bool IsSetSortEnabled()
+        {
+            return this.sortEnabled.HasValue;
         }
     }
 }

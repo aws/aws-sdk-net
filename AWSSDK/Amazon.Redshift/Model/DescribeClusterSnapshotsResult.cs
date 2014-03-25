@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,8 +30,9 @@ namespace Amazon.Redshift.Model
         private List<Snapshot> snapshots = new List<Snapshot>();
 
         /// <summary>
-        /// A marker that indicates the first snapshot that a subsequent <a>DescribeClusterSnapshots</a> request will return. The response returns a
-        /// marker only if there are more snapshots to list than the current response can return.
+        /// A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a
+        /// response, you can retrieve the next set of records by providing this returned marker value in the <c>Marker</c> parameter and retrying the
+        /// command. If the <c>Marker</c> field is empty, all response records have been retrieved for the request.
         ///  
         /// </summary>
         public string Marker

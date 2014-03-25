@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -27,41 +27,12 @@ namespace Amazon.CloudSearch.Model
     public partial class ServiceEndpoint
     {
         
-        private string arn;
         private string endpoint;
 
         /// <summary>
-        /// An Amazon Resource Name (ARN). See <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
-        /// target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS Identity and Access Management</i> for more information.
-        ///  
-        /// </summary>
-        public string Arn
-        {
-            get { return this.arn; }
-            set { this.arn = value; }
-        }
-
-        /// <summary>
-        /// Sets the Arn property
-        /// </summary>
-        /// <param name="arn">The value to set for the Arn property </param>
-        /// <returns>this instance</returns>
-        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
-        public ServiceEndpoint WithArn(string arn)
-        {
-            this.arn = arn;
-            return this;
-        }
-            
-
-        // Check to see if Arn property is set
-        internal bool IsSetArn()
-        {
-            return this.arn != null;
-        }
-
-        /// <summary>
-        /// The URL (including /version/pathPrefix) to which service requests can be submitted.
+        /// The URL to which service requests can be submitted. Includes the API version and path prefix. For example,
+        /// <c>search-imdb-movies-oopcnjfn6ugofer3zx5iadxxca.eu-west-1.cloudsearch.amazonaws.com/2013-01-01/search</c> or
+        /// <c>doc-imdb-movies-oopcnjfn6ugofer3zx5iadxxca.eu-west-1.cloudsearch.amazonaws.com/2013-01-01/documents/batch</c>.
         ///  
         /// </summary>
         public string Endpoint

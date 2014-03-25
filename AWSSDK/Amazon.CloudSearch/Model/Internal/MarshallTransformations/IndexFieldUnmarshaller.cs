@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -49,9 +49,15 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
                             
                         continue;
                     } 
-                    if (context.TestExpression("UIntOptions", targetDepth))
+                    if (context.TestExpression("IntOptions", targetDepth))
                     {
-                        indexField.UIntOptions = UIntOptionsUnmarshaller.GetInstance().Unmarshall(context);
+                        indexField.IntOptions = IntOptionsUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
+                    } 
+                    if (context.TestExpression("DoubleOptions", targetDepth))
+                    {
+                        indexField.DoubleOptions = DoubleOptionsUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
                     } 
@@ -67,9 +73,45 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
                             
                         continue;
                     } 
-                    if (context.TestExpression("SourceAttributes/member", targetDepth))
+                    if (context.TestExpression("DateOptions", targetDepth))
                     {
-                        indexField.SourceAttributes.Add(SourceAttributeUnmarshaller.GetInstance().Unmarshall(context));
+                        indexField.DateOptions = DateOptionsUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
+                    } 
+                    if (context.TestExpression("LatLonOptions", targetDepth))
+                    {
+                        indexField.LatLonOptions = LatLonOptionsUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
+                    } 
+                    if (context.TestExpression("IntArrayOptions", targetDepth))
+                    {
+                        indexField.IntArrayOptions = IntArrayOptionsUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
+                    } 
+                    if (context.TestExpression("DoubleArrayOptions", targetDepth))
+                    {
+                        indexField.DoubleArrayOptions = DoubleArrayOptionsUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
+                    } 
+                    if (context.TestExpression("LiteralArrayOptions", targetDepth))
+                    {
+                        indexField.LiteralArrayOptions = LiteralArrayOptionsUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
+                    } 
+                    if (context.TestExpression("TextArrayOptions", targetDepth))
+                    {
+                        indexField.TextArrayOptions = TextArrayOptionsUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
+                    } 
+                    if (context.TestExpression("DateArrayOptions", targetDepth))
+                    {
+                        indexField.DateArrayOptions = DateArrayOptionsUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
                     }

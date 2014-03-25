@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,7 +25,9 @@ namespace Amazon.CloudSearch.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteDomain operation.
-    /// <para>Permanently deletes a search domain and all of its data.</para>
+    /// <para>Permanently deletes a search domain and all of its data. Once a domain has been deleted, it cannot be recovered. For more information,
+    /// see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/deleting-domains.html" >Deleting a Search Domain</a> in the
+    /// <i>Amazon CloudSearch Developer Guide</i> . </para>
     /// </summary>
     /// <seealso cref="Amazon.CloudSearch.AmazonCloudSearch.DeleteDomain"/>
     public class DeleteDomainRequest : AmazonWebServiceRequest
@@ -33,9 +35,7 @@ namespace Amazon.CloudSearch.Model
         private string domainName;
 
         /// <summary>
-        /// A string that represents the name of a domain. Domain names must be unique across the domains owned by an account within an AWS region.
-        /// Domain names must start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). Uppercase
-        /// letters and underscores are not allowed.
+        /// The name of the domain you want to permanently delete.
         ///  
         /// <para>
         /// <b>Constraints:</b>

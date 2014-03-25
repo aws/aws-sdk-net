@@ -44,6 +44,12 @@
         <xsl:element name="NetworkInterfaceId">
           <xsl:value-of select="ec2:networkInterfaceId" />
         </xsl:element>
+        <xsl:element name="VpcPeeringConnectionId">
+          <xsl:value-of select="ec2:vpcPeeringConnectionId"/>
+        </xsl:element>
+        <xsl:element name="Origin">
+          <xsl:value-of select="ec2:origin"/>
+        </xsl:element>
         <xsl:element name="InstanceOwnerId">
           <xsl:value-of select="ec2:instanceOwnerId" />
         </xsl:element>
