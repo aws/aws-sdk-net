@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -39,8 +39,8 @@ namespace Amazon.Redshift.Model
 
 
         /// <summary>
-        /// The unique identifier of a cluster whose properties you are requesting. This parameter isn't case sensitive. The default is that all
-        /// clusters defined for an account are returned.
+        /// The unique identifier of a cluster whose properties you are requesting. This parameter is case sensitive. The default is that all clusters
+        /// defined for an account are returned.
         ///  
         /// </summary>
         public string ClusterIdentifier
@@ -56,9 +56,9 @@ namespace Amazon.Redshift.Model
         }
 
         /// <summary>
-        /// The maximum number of records that the response can include. If more records exist than the specified <c>MaxRecords</c> value, a
-        /// <c>marker</c> is included in the response that can be used in a new <b>DescribeClusters</b> request to continue listing results. Default:
-        /// <c>100</c> Constraints: Value must be at least 20 and no more than 100.
+        /// The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified
+        /// <c>MaxRecords</c> value, a value is returned in a <c>marker</c> field of the response. You can retrieve the next set of records by retrying
+        /// the command with the returned marker value. Default: <c>100</c> Constraints: minimum 20, maximum 100.
         ///  
         /// </summary>
         public int MaxRecords
@@ -74,9 +74,10 @@ namespace Amazon.Redshift.Model
         }
 
         /// <summary>
-        /// An optional marker returned by a previous <b>DescribeClusters</b> request to indicate the first cluster that the current
-        /// <b>DescribeClusters</b> request will return. You can specify either a <b>Marker</b> parameter or a <b>ClusterIdentifier</b> parameter in a
-        /// <b>DescribeClusters</b> request, but not both.
+        /// An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeClusters</a>
+        /// request exceed the value specified in <c>MaxRecords</c>, AWS returns a value in the <c>Marker</c> field of the response. You can retrieve
+        /// the next set of response records by providing the returned marker value in the <c>Marker</c> parameter and retrying the request.
+        /// Constraints: You can specify either the <b>ClusterIdentifier</b> parameter or the <b>Marker</b> parameter, but not both.
         ///  
         /// </summary>
         public string Marker

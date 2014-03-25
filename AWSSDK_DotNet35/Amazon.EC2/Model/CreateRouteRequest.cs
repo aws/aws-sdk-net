@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -26,8 +26,9 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Container for the parameters to the CreateRoute operation.
     /// <para>Creates a route in a route table within a VPC.</para> <para>You must specify one of the following targets: Internet gateway, NAT
-    /// instance, or network interface.</para> <para>When determining how to route traffic, we use the route with the most specific match. For
-    /// example, let's say the traffic is destined for <c>192.0.2.3</c> , and the route table includes the following two routes:</para>
+    /// instance, VPC peering connection, or network interface.</para> <para>When determining how to route traffic, we use the route with the most
+    /// specific match. For example, let's say the traffic is destined for <c>192.0.2.3</c> , and the route table includes the following two
+    /// routes:</para>
     /// <ul>
     /// <li> <para> <c>192.0.2.0/24</c> (goes to some target A)</para> </li>
     /// <li> <para> <c>192.0.2.0/28</c> (goes to some target B)</para> </li>
@@ -45,6 +46,7 @@ namespace Amazon.EC2.Model
         private string gatewayId;
         private string instanceId;
         private string networkInterfaceId;
+        private string vpcPeeringConnectionId;
 
 
         /// <summary>
@@ -125,6 +127,22 @@ namespace Amazon.EC2.Model
         internal bool IsSetNetworkInterfaceId()
         {
             return this.networkInterfaceId != null;
+        }
+
+        /// <summary>
+        /// The ID of a VPC peering connection.
+        ///  
+        /// </summary>
+        public string VpcPeeringConnectionId
+        {
+            get { return this.vpcPeeringConnectionId; }
+            set { this.vpcPeeringConnectionId = value; }
+        }
+
+        // Check to see if VpcPeeringConnectionId property is set
+        internal bool IsSetVpcPeeringConnectionId()
+        {
+            return this.vpcPeeringConnectionId != null;
         }
 
     }

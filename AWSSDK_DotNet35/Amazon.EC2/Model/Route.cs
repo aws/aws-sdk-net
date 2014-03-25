@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// <para>Describes a route in a route table.</para>
     /// </summary>
-    public class Route
+    public partial class Route
     {
         
         private string destinationCidrBlock;
@@ -31,7 +31,9 @@ namespace Amazon.EC2.Model
         private string instanceId;
         private string instanceOwnerId;
         private string networkInterfaceId;
+        private string vpcPeeringConnectionId;
         private RouteState state;
+        private RouteOrigin origin;
 
 
         /// <summary>
@@ -115,6 +117,22 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// The ID of the VPC peering connection.
+        ///  
+        /// </summary>
+        public string VpcPeeringConnectionId
+        {
+            get { return this.vpcPeeringConnectionId; }
+            set { this.vpcPeeringConnectionId = value; }
+        }
+
+        // Check to see if VpcPeeringConnectionId property is set
+        internal bool IsSetVpcPeeringConnectionId()
+        {
+            return this.vpcPeeringConnectionId != null;
+        }
+
+        /// <summary>
         /// The state of the route. The <c>blackhole</c> state indicates that the route's target isn't available (for example, the specified gateway
         /// isn't attached to the VPC, or the specified NAT instance has been terminated).
         ///  
@@ -138,6 +156,33 @@ namespace Amazon.EC2.Model
         internal bool IsSetState()
         {
             return this.state != null;
+        }
+
+        /// <summary>
+        /// Describes how the route was created. <ul> <li><c>CreateRouteTable</c> indicates that route was automatically created when the route table
+        /// was created.</li> <li><c>CreateRoute</c> indicates that the route was manually added to the route table.</li>
+        /// <li><c>EnableVgwRoutePropagation</c> indicates that the route was propagated by route propagation.</li> </ul>
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>CreateRouteTable, CreateRoute, EnableVgwRoutePropagation</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
+        public RouteOrigin Origin
+        {
+            get { return this.origin; }
+            set { this.origin = value; }
+        }
+
+        // Check to see if Origin property is set
+        internal bool IsSetOrigin()
+        {
+            return this.origin != null;
         }
     }
 }

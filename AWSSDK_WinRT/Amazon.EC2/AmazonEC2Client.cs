@@ -158,6 +158,40 @@ namespace Amazon.EC2
         #endregion
 
  
+		internal AcceptVpcPeeringConnectionResponse AcceptVpcPeeringConnection(AcceptVpcPeeringConnectionRequest request)
+        {
+            var task = AcceptVpcPeeringConnectionAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// <para>Accept a VPC peering connection request. To accept a request, the VPC peering connection must be in the <c>pending-acceptance</c>
+        /// state, and you must be the owner of the peer VPC. Use the <c>DescribeVpcPeeringConnections</c> request to view your outstanding VPC peering
+        /// connection requests.</para>
+        /// </summary>
+        /// 
+        /// <param name="acceptVpcPeeringConnectionRequest">Container for the necessary parameters to execute the AcceptVpcPeeringConnection service
+        /// method on AmazonEC2.</param>
+        /// 
+        /// <returns>The response from the AcceptVpcPeeringConnection service method, as returned by AmazonEC2.</returns>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+		public Task<AcceptVpcPeeringConnectionResponse> AcceptVpcPeeringConnectionAsync(AcceptVpcPeeringConnectionRequest acceptVpcPeeringConnectionRequest, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new AcceptVpcPeeringConnectionRequestMarshaller();
+            var unmarshaller = AcceptVpcPeeringConnectionResponseUnmarshaller.GetInstance();
+            return Invoke<IRequest, AcceptVpcPeeringConnectionRequest, AcceptVpcPeeringConnectionResponse>(acceptVpcPeeringConnectionRequest, marshaller, unmarshaller, signer, cancellationToken);
+        }
+ 
 		internal AllocateAddressResponse AllocateAddress(AllocateAddressRequest request)
         {
             var task = AllocateAddressAsync(request);
@@ -1249,8 +1283,9 @@ namespace Amazon.EC2
 
         /// <summary>
         /// <para>Creates a route in a route table within a VPC.</para> <para>You must specify one of the following targets: Internet gateway, NAT
-        /// instance, or network interface.</para> <para>When determining how to route traffic, we use the route with the most specific match. For
-        /// example, let's say the traffic is destined for <c>192.0.2.3</c> , and the route table includes the following two routes:</para>
+        /// instance, VPC peering connection, or network interface.</para> <para>When determining how to route traffic, we use the route with the most
+        /// specific match. For example, let's say the traffic is destined for <c>192.0.2.3</c> , and the route table includes the following two
+        /// routes:</para>
         /// <ul>
         /// <li> <para> <c>192.0.2.0/24</c> (goes to some target A)</para> </li>
         /// <li> <para> <c>192.0.2.0/28</c> (goes to some target B)</para> </li>
@@ -1559,6 +1594,42 @@ namespace Amazon.EC2
             var marshaller = new CreateVpcRequestMarshaller();
             var unmarshaller = CreateVpcResponseUnmarshaller.GetInstance();
             return Invoke<IRequest, CreateVpcRequest, CreateVpcResponse>(createVpcRequest, marshaller, unmarshaller, signer, cancellationToken);
+        }
+ 
+		internal CreateVpcPeeringConnectionResponse CreateVpcPeeringConnection(CreateVpcPeeringConnectionRequest request)
+        {
+            var task = CreateVpcPeeringConnectionAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// <para>Requests a VPC peering connection between two VPCs: a requester VPC that you own and a peer VPC with which to create the connection.
+        /// The peer VPC can belong to another AWS account. The requester VPC and peer VPC cannot have overlapping CIDR blocks.</para> <para>The owner
+        /// of the peer VPC must accept the the peering request to activate the peering connection. The VPC peering connection request expires after 7
+        /// days, after which it cannot be accepted or rejected.</para> <para>A <c>CreateVpcPeeringConnection</c> request between VPCs with overlapping
+        /// CIDR blocks results in the VPC peering connection having a status of <c>failed</c> .</para>
+        /// </summary>
+        /// 
+        /// <param name="createVpcPeeringConnectionRequest">Container for the necessary parameters to execute the CreateVpcPeeringConnection service
+        /// method on AmazonEC2.</param>
+        /// 
+        /// <returns>The response from the CreateVpcPeeringConnection service method, as returned by AmazonEC2.</returns>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+		public Task<CreateVpcPeeringConnectionResponse> CreateVpcPeeringConnectionAsync(CreateVpcPeeringConnectionRequest createVpcPeeringConnectionRequest, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateVpcPeeringConnectionRequestMarshaller();
+            var unmarshaller = CreateVpcPeeringConnectionResponseUnmarshaller.GetInstance();
+            return Invoke<IRequest, CreateVpcPeeringConnectionRequest, CreateVpcPeeringConnectionResponse>(createVpcPeeringConnectionRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal CreateVpnConnectionResponse CreateVpnConnection(CreateVpnConnectionRequest request)
@@ -2188,6 +2259,38 @@ namespace Amazon.EC2
             return Invoke<IRequest, DeleteVpcRequest, DeleteVpcResponse>(deleteVpcRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
+		internal DeleteVpcPeeringConnectionResponse DeleteVpcPeeringConnection(DeleteVpcPeeringConnectionRequest request)
+        {
+            var task = DeleteVpcPeeringConnectionAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// <para>Deletes a VPC peering connection. Either the owner of the requester VPC or the owner of the peer VPC can delete the VPC peering
+        /// connection if it's in the <c>active</c> state. The owner of the requester VPC can delete a VPC peering connection in the
+        /// <c>pending-acceptance</c> state.</para>
+        /// </summary>
+        /// 
+        /// <param name="deleteVpcPeeringConnectionRequest">Container for the necessary parameters to execute the DeleteVpcPeeringConnection service
+        /// method on AmazonEC2.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+		public Task<DeleteVpcPeeringConnectionResponse> DeleteVpcPeeringConnectionAsync(DeleteVpcPeeringConnectionRequest deleteVpcPeeringConnectionRequest, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteVpcPeeringConnectionRequestMarshaller();
+            var unmarshaller = DeleteVpcPeeringConnectionResponseUnmarshaller.GetInstance();
+            return Invoke<IRequest, DeleteVpcPeeringConnectionRequest, DeleteVpcPeeringConnectionResponse>(deleteVpcPeeringConnectionRequest, marshaller, unmarshaller, signer, cancellationToken);
+        }
+ 
 		internal DeleteVpnConnectionResponse DeleteVpnConnection(DeleteVpnConnectionRequest request)
         {
             var task = DeleteVpnConnectionAsync(request);
@@ -2594,7 +2697,7 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// <para>Describes an attributes of an AMI. You can specify only one attribute at a time.</para>
+        /// <para>Describes the specified attribute of the specified AMI. You can specify only one attribute at a time.</para>
         /// </summary>
         /// 
         /// <param name="describeImageAttributeRequest">Container for the necessary parameters to execute the DescribeImageAttribute service method on
@@ -2660,7 +2763,7 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// <para>Describes an attribute of the specified instance. You can specify only one attribute at a time.</para>
+        /// <para>Describes the specified attribute of the specified instance. You can specify only one attribute at a time.</para>
         /// </summary>
         /// 
         /// <param name="describeInstanceAttributeRequest">Container for the necessary parameters to execute the DescribeInstanceAttribute service
@@ -3225,9 +3328,9 @@ namespace Amazon.EC2
         }
 
         /// <summary>
-        /// <para>Describes an attribute of the specified snapshot. You can specify only one attribute at a time.</para> <para>For more information
-        /// about Amazon EBS snapshots, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html">Amazon EBS Snapshots</a> in
-        /// the <i>Amazon Elastic Compute Cloud User Guide</i> .</para>
+        /// <para>Describes the specified attribute of the specified snapshot. You can specify only one attribute at a time.</para> <para>For more
+        /// information about Amazon EBS snapshots, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html">Amazon EBS
+        /// Snapshots</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .</para>
         /// </summary>
         /// 
         /// <param name="describeSnapshotAttributeRequest">Container for the necessary parameters to execute the DescribeSnapshotAttribute service
@@ -3616,6 +3719,38 @@ namespace Amazon.EC2
             var marshaller = new DescribeVpcAttributeRequestMarshaller();
             var unmarshaller = DescribeVpcAttributeResponseUnmarshaller.GetInstance();
             return Invoke<IRequest, DescribeVpcAttributeRequest, DescribeVpcAttributeResponse>(describeVpcAttributeRequest, marshaller, unmarshaller, signer, cancellationToken);
+        }
+ 
+		internal DescribeVpcPeeringConnectionsResponse DescribeVpcPeeringConnections(DescribeVpcPeeringConnectionsRequest request)
+        {
+            var task = DescribeVpcPeeringConnectionsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// <para>Describes one or more of your VPC peering connections.</para>
+        /// </summary>
+        /// 
+        /// <param name="describeVpcPeeringConnectionsRequest">Container for the necessary parameters to execute the DescribeVpcPeeringConnections
+        /// service method on AmazonEC2.</param>
+        /// 
+        /// <returns>The response from the DescribeVpcPeeringConnections service method, as returned by AmazonEC2.</returns>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+		public Task<DescribeVpcPeeringConnectionsResponse> DescribeVpcPeeringConnectionsAsync(DescribeVpcPeeringConnectionsRequest describeVpcPeeringConnectionsRequest, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeVpcPeeringConnectionsRequestMarshaller();
+            var unmarshaller = DescribeVpcPeeringConnectionsResponseUnmarshaller.GetInstance();
+            return Invoke<IRequest, DescribeVpcPeeringConnectionsRequest, DescribeVpcPeeringConnectionsResponse>(describeVpcPeeringConnectionsRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DescribeVpcsResponse DescribeVpcs(DescribeVpcsRequest request)
@@ -4536,6 +4671,37 @@ namespace Amazon.EC2
             return Invoke<IRequest, RegisterImageRequest, RegisterImageResponse>(registerImageRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
+		internal RejectVpcPeeringConnectionResponse RejectVpcPeeringConnection(RejectVpcPeeringConnectionRequest request)
+        {
+            var task = RejectVpcPeeringConnectionAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// <para>Rejects a VPC peering connection request. The VPC peering connection must be in the <c>pending-acceptance</c> state. Use the
+        /// <c>DescribeVpcPeeringConnections</c> request to view your outstanding VPC peering connection requests.</para>
+        /// </summary>
+        /// 
+        /// <param name="rejectVpcPeeringConnectionRequest">Container for the necessary parameters to execute the RejectVpcPeeringConnection service
+        /// method on AmazonEC2.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+		public Task<RejectVpcPeeringConnectionResponse> RejectVpcPeeringConnectionAsync(RejectVpcPeeringConnectionRequest rejectVpcPeeringConnectionRequest, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new RejectVpcPeeringConnectionRequestMarshaller();
+            var unmarshaller = RejectVpcPeeringConnectionResponseUnmarshaller.GetInstance();
+            return Invoke<IRequest, RejectVpcPeeringConnectionRequest, RejectVpcPeeringConnectionResponse>(rejectVpcPeeringConnectionRequest, marshaller, unmarshaller, signer, cancellationToken);
+        }
+ 
 		internal ReleaseAddressResponse ReleaseAddress(ReleaseAddressRequest request)
         {
             var task = ReleaseAddressAsync(request);
@@ -4653,7 +4819,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// <para>Replaces an existing route within a route table in a VPC. You must provide only one of the following: Internet gateway, NAT instance,
-        /// or network interface.</para> <para>For more information about route tables, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route Tables</a> in the <i>Amazon Virtual Private Cloud
+        /// VPC peering connection, or network interface.</para> <para>For more information about route tables, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route Tables</a> in the <i>Amazon Virtual Private Cloud
         /// User Guide</i> .</para>
         /// </summary>
         /// 

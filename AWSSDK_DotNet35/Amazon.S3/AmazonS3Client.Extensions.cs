@@ -110,6 +110,7 @@ namespace Amazon.S3
 
             Uri url = ComposeUrl(irequest, irequest.Endpoint);
             string result = url.AbsoluteUri + authorization;
+
             Protocol protocol = DetermineProtocol();
             if (request.Protocol != protocol)
             {
@@ -145,6 +146,7 @@ namespace Amazon.S3
             IRequest request = new DefaultRequest(getPreSignedUrlRequest, "AmazonS3");
 
             request.HttpMethod = getPreSignedUrlRequest.Verb.ToString();
+
             if (!string.IsNullOrEmpty(getPreSignedUrlRequest.ContentType))
                 request.Parameters[S3QueryParameter.ContentType.ToString()] = getPreSignedUrlRequest.ContentType;
             if (!string.IsNullOrEmpty(token))

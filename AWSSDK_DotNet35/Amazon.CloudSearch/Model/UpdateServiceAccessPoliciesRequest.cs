@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,8 +25,9 @@ namespace Amazon.CloudSearch.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateServiceAccessPolicies operation.
-    /// <para>Configures the policies that control access to the domain's document and search services. The maximum size of an access policy
-    /// document is 100 KB.</para>
+    /// <para>Configures the access rules that control access to the domain's document and search endpoints. For more information, see <a
+    /// href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html" > Configuring Access for an Amazon CloudSearch
+    /// Domain</a> .</para>
     /// </summary>
     public partial class UpdateServiceAccessPoliciesRequest : AmazonCloudSearchRequest
     {
@@ -35,9 +36,8 @@ namespace Amazon.CloudSearch.Model
 
 
         /// <summary>
-        /// A string that represents the name of a domain. Domain names must be unique across the domains owned by an account within an AWS region.
-        /// Domain names must start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). Uppercase
-        /// letters and underscores are not allowed.
+        /// A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain
+        /// names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -66,12 +66,7 @@ namespace Amazon.CloudSearch.Model
         }
 
         /// <summary>
-        /// An IAM access policy as described in <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?AccessPolicyLanguage.html"
-        /// target="_blank">The Access Policy Language</a> in <i>Using AWS Identity and Access Management</i>. The maximum size of an access policy
-        /// document is 100 KB. Example: <c>{"Statement": [{"Effect":"Allow", "Action": "*", "Resource":
-        /// "arn:aws:cs:us-east-1:1234567890:search/movies", "Condition": { "IpAddress": { "aws:SourceIp": ["203.0.113.1/32"] } }}, {"Effect":"Allow",
-        /// "Action": "*", "Resource": "arn:aws:cs:us-east-1:1234567890:documents/movies", "Condition": { "IpAddress": { "aws:SourceIp":
-        /// ["203.0.113.1/32"] } }} ] }</c>
+        /// The access rules you want to configure. These rules replace any existing rules.
         ///  
         /// </summary>
         public string AccessPolicies

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -24,11 +24,11 @@ namespace Amazon.CloudSearch.Model
     /// <summary>
     /// Returns information about the  DescribeServiceAccessPolicies response and response metadata.
     /// </summary>
-    public class DescribeServiceAccessPoliciesResponse : DescribeServiceAccessPoliciesResult
+    public partial class DescribeServiceAccessPoliciesResponse : DescribeServiceAccessPoliciesResult
     {
         /// <summary>
         /// Gets and sets the DescribeServiceAccessPoliciesResult property.
-        /// A response message that contains the access policies for a domain.
+        /// The result of a DescribeServiceAccessPolicies request.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DescribeServiceAccessPoliciesResult class are now available on the DescribeServiceAccessPoliciesResponse class. You should use the properties on DescribeServiceAccessPoliciesResponse instead of accessing them through DescribeServiceAccessPoliciesResult.")]
         public DescribeServiceAccessPoliciesResult DescribeServiceAccessPoliciesResult

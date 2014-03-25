@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -52,9 +52,9 @@ namespace Amazon.Redshift.Model
         }
 
         /// <summary>
-        /// The maximum number of records to include in the response. If more records exist than the specified MaxRecords value, a pagination token
-        /// called a marker is included in the response so that the remaining results can be retrieved. Default: 100 Constraints: minimum 20, maximum
-        /// 100
+        /// The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified
+        /// <c>MaxRecords</c> value, a value is returned in a <c>marker</c> field of the response. You can retrieve the next set of records by retrying
+        /// the command with the returned marker value. Default: <c>100</c> Constraints: minimum 20, maximum 100.
         ///  
         /// </summary>
         public int MaxRecords
@@ -70,8 +70,10 @@ namespace Amazon.Redshift.Model
         }
 
         /// <summary>
-        /// An optional pagination token provided by a previous DescribeOrderableClusterOptions request. If this parameter is specified, the response
-        /// includes only records beyond the marker, up to the value specified by MaxRecords.
+        /// An optional parameter that specifies the starting point to return a set of response records. When the results of a
+        /// <a>DescribeEventSubscriptions</a> request exceed the value specified in <c>MaxRecords</c>, AWS returns a value in the <c>Marker</c> field of
+        /// the response. You can retrieve the next set of response records by providing the returned marker value in the <c>Marker</c> parameter and
+        /// retrying the request.
         ///  
         /// </summary>
         public string Marker

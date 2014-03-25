@@ -30,6 +30,9 @@ using System.Configuration;
 
 using Amazon.Util;
 using System.Globalization;
+using System.Diagnostics;
+using Amazon.Runtime.Internal.Util;
+using System.Collections.Generic;
 
 namespace Amazon
 {

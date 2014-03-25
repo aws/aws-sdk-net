@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -1304,14 +1304,17 @@ namespace Amazon.EC2
        /// <summary>Constant M32xlarge for InstanceType
        /// </summary>
         public static readonly InstanceType M32xlarge = new InstanceType("m3.2xlarge");
+    
 
-        /// <summary>Constant M3Large for InstanceType
-        /// </summary>
+       /// <summary>Constant M3Large for InstanceType
+       /// </summary>
         public static readonly InstanceType M3Large = new InstanceType("m3.large");
+    
 
-        /// <summary>Constant M3Medium for InstanceType
-        /// </summary>
+       /// <summary>Constant M3Medium for InstanceType
+       /// </summary>
         public static readonly InstanceType M3Medium = new InstanceType("m3.medium");
+    
 
        /// <summary>Constant M3Xlarge for InstanceType
        /// </summary>
@@ -2194,6 +2197,52 @@ namespace Amazon.EC2
         }
 
         public static implicit operator ResourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+    
+
+    /// <summary>Route Origin
+    /// </summary>
+    public class RouteOrigin : ConstantClass
+    {
+
+
+       /// <summary>Constant CreateRoute for RouteOrigin
+       /// </summary>
+        public static readonly RouteOrigin CreateRoute = new RouteOrigin("CreateRoute");
+    
+
+       /// <summary>Constant CreateRouteTable for RouteOrigin
+       /// </summary>
+        public static readonly RouteOrigin CreateRouteTable = new RouteOrigin("CreateRouteTable");
+    
+
+       /// <summary>Constant EnableVgwRoutePropagation for RouteOrigin
+       /// </summary>
+        public static readonly RouteOrigin EnableVgwRoutePropagation = new RouteOrigin("EnableVgwRoutePropagation");
+    
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public RouteOrigin(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RouteOrigin FindValue(string value)
+        {
+            return FindValue<RouteOrigin>(value);
+        }
+
+        public static implicit operator RouteOrigin(string value)
         {
             return FindValue(value);
         }

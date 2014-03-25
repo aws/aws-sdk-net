@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,10 +25,11 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateHsmConfiguration operation.
-    /// <para>Creates an HSM configuration that contains the information required by an Amazon Redshift cluster to store and retrieve database
-    /// encryption keys in a Hardware Storeage Module (HSM). After creating the HSM configuration, you can specify it as a parameter when creating a
-    /// cluster. The cluster will then store its encryption keys in the HSM.</para> <para>Before creating an HSM configuration, you must have first
-    /// created an HSM client certificate. For more information, go to aLinkToHSMTopic in the Amazon Redshift Management Guide.</para>
+    /// <para>Creates an HSM configuration that contains the information required by an Amazon Redshift cluster to store and use database encryption
+    /// keys in a Hardware Security Module (HSM). After creating the HSM configuration, you can specify it as a parameter when creating a cluster.
+    /// The cluster will then store its encryption keys in the HSM.</para> <para>In addition to creating an HSM configuration, you must also create
+    /// an HSM client certificate. For more information, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-HSM.html"
+    /// >Hardware Security Modules</a> in the Amazon Redshift Management Guide.</para>
     /// </summary>
     public partial class CreateHsmConfigurationRequest : AmazonRedshiftRequest
     {
@@ -121,7 +122,7 @@ namespace Amazon.Redshift.Model
         }
 
         /// <summary>
-        /// The public key used to access the HSM client certificate, which was created by calling the Amazon Redshift create HSM certificate command.
+        /// The HSMs public certificate file. When using Cloud HSM, the file name is server.pem.
         ///  
         /// </summary>
         public string HsmServerPublicCertificate

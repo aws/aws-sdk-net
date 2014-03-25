@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -24,11 +24,11 @@ namespace Amazon.CloudSearch.Model
     /// <summary>
     /// Returns information about the  IndexDocuments response and response metadata.
     /// </summary>
-    public class IndexDocumentsResponse : IndexDocumentsResult
+    public partial class IndexDocumentsResponse : IndexDocumentsResult
     {
         /// <summary>
         /// Gets and sets the IndexDocumentsResult property.
-        /// The result of an IndexDocuments action.
+        /// The result of an IndexDocuments request. Contains the status of the indexing operation, including the fields being indexed.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the IndexDocumentsResult class are now available on the IndexDocumentsResponse class. You should use the properties on IndexDocumentsResponse instead of accessing them through IndexDocumentsResult.")]
         public IndexDocumentsResult IndexDocumentsResult

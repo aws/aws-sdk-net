@@ -32,6 +32,8 @@ using Amazon.Runtime;
 <#
 foreach(var interfaceName in supportedServicesInterfaces)
 {
+	if(interfaceName.Equals("Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch"))
+	  continue;
 #>
 using <#=interfaceName.Substring(0, interfaceName.LastIndexOf('.'))#>;
 <#
@@ -55,6 +57,8 @@ namespace Amazon
 <#
 foreach(var interfaceFullName in supportedServicesInterfaces)
 {
+	if(interfaceFullName.Equals("Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch"))
+	  continue;
     var interfaceName = interfaceFullName.Substring(interfaceFullName.LastIndexOf('.') + 1);
     var baseName = interfaceName.Substring(1);
     var clientName = baseName + "Client";

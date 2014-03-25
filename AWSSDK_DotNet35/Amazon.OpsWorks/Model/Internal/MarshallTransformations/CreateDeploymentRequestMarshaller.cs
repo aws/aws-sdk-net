@@ -96,12 +96,17 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                             {
                                 writer.WritePropertyName("Args");
                                 writer.WriteObjectStart();
-                                foreach (string commandArgsKey in command.Args.Keys)
+                                foreach (var commandArg in command.Args)
                                 {
-                                    List<string> argsListValue;
-                                    bool argsListValueHasValue = command.Args.TryGetValue(commandArgsKey, out argsListValue);
-                                    writer.WritePropertyName(commandArgsKey);
+                                    writer.WritePropertyName(commandArg.Key);
 
+                                    var commandArgValue = commandArg.Value;
+                                    writer.WriteArrayStart();
+                                    foreach (var listValue in commandArgValue)
+                                    {
+                                        writer.Write(listValue);
+                                    }
+                                    writer.WriteArrayEnd();
                                 }
                                 writer.WriteObjectEnd();
                             }

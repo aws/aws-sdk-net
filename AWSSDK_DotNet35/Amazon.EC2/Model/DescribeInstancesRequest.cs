@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -97,20 +97,20 @@ namespace Amazon.EC2.Model
         /// must be <c>false</c> for the instance to perform network address translation (NAT) in your VPC. </li> <li> <c>spot-instance-request-id</c> -
         /// The ID of the Spot Instance request. </li> <li> <c>state-reason-code</c> - The reason code for the state change. </li> <li>
         /// <c>state-reason-message</c> - A message that describes the state change. </li> <li> <c>subnet-id</c> - The ID of the subnet for the
-        /// instance. </li> <li> <c>tag</c>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned to the resource. </li> <li>
-        /// <c>tag-key</c> - The key of a tag assigned to the resource. This filter is independent of the <c>tag-value</c> filter. For example, if you
-        /// use both the filter "tag-key=Purpose" and the filter "tag-value=X", you get any resources assigned both the tag key Purpose (regardless of
-        /// what the tag's value is), and the tag value X (regardless of what the tag's key is). If you want to list only resources where Purpose is X,
-        /// see the <c>tag</c>:<i>key</i>=<i>value</i> filter. </li> <li> <c>tag-value</c> - The value of a tag assigned to the resource. This filter is
-        /// independent of the <c>tag-key</c> filter. </li> <li> <c>virtualization-type</c> - The virtualization type of the instance
-        /// (<c>paravirtual</c> | <c>hvm</c>). </li> <li> <c>vpc-id</c> - The ID of the VPC that the instance is running in. </li> <li>
-        /// <c>network-interface.description</c> - The description of the network interface. </li> <li> <c>network-interface.subnet-id</c> - The ID of
-        /// the subnet for the network interface. </li> <li> <c>network-interface.vpc-id</c> - The ID of the VPC for the network interface. </li> <li>
-        /// <c>network-interface.network-interface.id</c> - The ID of the network interface. </li> <li> <c>network-interface.owner-id</c> - The ID of
-        /// the owner of the network interface. </li> <li> <c>network-interface.availability-zone</c> - The Availability Zone for the network interface.
-        /// </li> <li> <c>network-interface.requester-id</c> - The requester ID for the network interface. </li> <li>
-        /// <c>network-interface.requester-managed</c> - Indicates whether the network interface is being managed by AWS. </li> <li>
-        /// <c>network-interface.status</c> - The status of the network interface (<c>available</c>) | <c>in-use</c>). </li> <li>
+        /// instance. </li> <li> <c>tag</c>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned to the resource, where
+        /// <c>tag</c>:<i>key</i> is the tag's key. </li> <li> <c>tag-key</c> - The key of a tag assigned to the resource. This filter is independent of
+        /// the <c>tag-value</c> filter. For example, if you use both the filter "tag-key=Purpose" and the filter "tag-value=X", you get any resources
+        /// assigned both the tag key Purpose (regardless of what the tag's value is), and the tag value X (regardless of what the tag's key is). If you
+        /// want to list only resources where Purpose is X, see the <c>tag</c>:<i>key</i>=<i>value</i> filter. </li> <li> <c>tag-value</c> - The value
+        /// of a tag assigned to the resource. This filter is independent of the <c>tag-key</c> filter. </li> <li> <c>virtualization-type</c> - The
+        /// virtualization type of the instance (<c>paravirtual</c> | <c>hvm</c>). </li> <li> <c>vpc-id</c> - The ID of the VPC that the instance is
+        /// running in. </li> <li> <c>network-interface.description</c> - The description of the network interface. </li> <li>
+        /// <c>network-interface.subnet-id</c> - The ID of the subnet for the network interface. </li> <li> <c>network-interface.vpc-id</c> - The ID of
+        /// the VPC for the network interface. </li> <li> <c>network-interface.network-interface.id</c> - The ID of the network interface. </li> <li>
+        /// <c>network-interface.owner-id</c> - The ID of the owner of the network interface. </li> <li> <c>network-interface.availability-zone</c> -
+        /// The Availability Zone for the network interface. </li> <li> <c>network-interface.requester-id</c> - The requester ID for the network
+        /// interface. </li> <li> <c>network-interface.requester-managed</c> - Indicates whether the network interface is being managed by AWS. </li>
+        /// <li> <c>network-interface.status</c> - The status of the network interface (<c>available</c>) | <c>in-use</c>). </li> <li>
         /// <c>network-interface.mac-address</c> - The MAC address of the network interface. </li> <li> <c>network-interface-private-dns-name</c> - The
         /// private DNS name of the network interface. </li> <li> <c>network-interface.source-destination-check</c> - Whether the network interface
         /// performs source/destination checking. A value of <c>true</c> means checking is enabled, and <c>false</c> means checking is disabled. The

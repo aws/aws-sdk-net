@@ -85,13 +85,6 @@ namespace Amazon.Runtime.Internal.Util
     /// </summary>
     internal static class TraceSourceUtil
     {
-        #region Private members
-
-        private static object cacheLock = new object();
-        private static Dictionary<string, string> sourceToSourceWithListenersMap = new Dictionary<string, string>();
-
-        #endregion
-
         #region Public methods
 
         /// <summary>
@@ -125,27 +118,6 @@ namespace Amazon.Runtime.Internal.Util
         // Gets the name of the closest "parent" TraceRoute that has listeners, or null otherwise.
         private static TraceSource GetTraceSourceWithListeners(string name, SourceLevels sourceLevels)
         {
-            lock (cacheLock)
-            {
-                TraceSource traceSource = null;
-                string targetName;
-                if (!sourceToSourceWithListenersMap.TryGetValue(name, out targetName))
-                {
-                    traceSource = GetTraceSourceWithListeners_Locked(name, sourceLevels);
-                    targetName = traceSource == null ? null : traceSource.Name;
-                    sourceToSourceWithListenersMap[name] = targetName;
-                }
-                else if (targetName != null)
-                {
-                    traceSource = new TraceSource(targetName, sourceLevels);
-                }
-                return traceSource;
-            }
-        }
-
-        // Gets the name of the closest "parent" TraceRoute that has listeners, or null otherwise.
-        private static TraceSource GetTraceSourceWithListeners_Locked(string name, SourceLevels sourceLevels)
-        {
             string[] parts = name.Split(new char[] { '.' }, StringSplitOptions.None);
 
             List<string> namesToTest = new List<string>();
@@ -163,8 +135,10 @@ namespace Amazon.Runtime.Internal.Util
             namesToTest.Reverse();
             foreach (var testName in namesToTest)
             {
-                TraceSource ts = null;
-                ts = new TraceSource(testName, sourceLevels);
+                TraceSource ts = new TraceSource(testName, sourceLevels);
+
+                ts.Listeners.AddRange(AWSConfigs.TraceListeners(testName));
+
                 // no listeners? skip
                 if (ts.Listeners == null || ts.Listeners.Count == 0)
                 {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(authorizeSecurityGroupIngressRequest, "AmazonEC2");
             request.Parameters.Add("Action", "AuthorizeSecurityGroupIngress");
-            request.Parameters.Add("Version", "2013-10-15");
+            request.Parameters.Add("Version", "2014-02-01");
             if (authorizeSecurityGroupIngressRequest != null && authorizeSecurityGroupIngressRequest.IsSetGroupName())
             {
                 request.Parameters.Add("GroupName", StringUtils.FromString(authorizeSecurityGroupIngressRequest.GroupName));

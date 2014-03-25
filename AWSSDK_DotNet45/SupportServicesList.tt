@@ -9,6 +9,7 @@
 		"Amazon.CloudFormation.IAmazonCloudFormation",
 		"Amazon.CloudFront.IAmazonCloudFront",
 		"Amazon.CloudSearch.IAmazonCloudSearch",
+		"Amazon.CloudSearch_2011_02_01.IAmazonCloudSearch",
 		"Amazon.CloudTrail.IAmazonCloudTrail",
 		"Amazon.CloudWatch.IAmazonCloudWatch",
 		"Amazon.DataPipeline.IAmazonDataPipeline",

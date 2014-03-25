@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,9 +25,8 @@ namespace Amazon.CloudSearch.Model
 {
     /// <summary>
     /// Container for the parameters to the IndexDocuments operation.
-    /// <para>Tells the search domain to start indexing its documents using the latest text processing options and <c>IndexFields</c> . This
-    /// operation must be invoked to make options whose OptionStatus has <c>OptionState</c> of <c>RequiresIndexDocuments</c> visible in search
-    /// results.</para>
+    /// <para>Tells the search domain to start indexing its documents using the latest indexing options. This operation must be invoked to activate
+    /// options whose OptionStatus is <c>RequiresIndexDocuments</c> .</para>
     /// </summary>
     public partial class IndexDocumentsRequest : AmazonCloudSearchRequest
     {
@@ -35,9 +34,8 @@ namespace Amazon.CloudSearch.Model
 
 
         /// <summary>
-        /// A string that represents the name of a domain. Domain names must be unique across the domains owned by an account within an AWS region.
-        /// Domain names must start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen). Uppercase
-        /// letters and underscores are not allowed.
+        /// A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain
+        /// names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
         ///  
         /// <para>
         /// <b>Constraints:</b>

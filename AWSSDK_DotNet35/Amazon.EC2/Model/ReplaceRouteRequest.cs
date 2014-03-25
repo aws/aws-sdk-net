@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -26,7 +26,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Container for the parameters to the ReplaceRoute operation.
     /// <para>Replaces an existing route within a route table in a VPC. You must provide only one of the following: Internet gateway, NAT instance,
-    /// or network interface.</para> <para>For more information about route tables, see <a
+    /// VPC peering connection, or network interface.</para> <para>For more information about route tables, see <a
     /// href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html" >Route Tables</a> in the <i>Amazon Virtual Private Cloud
     /// User Guide</i> .</para>
     /// </summary>
@@ -37,6 +37,7 @@ namespace Amazon.EC2.Model
         private string gatewayId;
         private string instanceId;
         private string networkInterfaceId;
+        private string vpcPeeringConnectionId;
 
 
         /// <summary>
@@ -117,6 +118,22 @@ namespace Amazon.EC2.Model
         internal bool IsSetNetworkInterfaceId()
         {
             return this.networkInterfaceId != null;
+        }
+
+        /// <summary>
+        /// The ID of a VPC peering connection.
+        ///  
+        /// </summary>
+        public string VpcPeeringConnectionId
+        {
+            get { return this.vpcPeeringConnectionId; }
+            set { this.vpcPeeringConnectionId = value; }
+        }
+
+        // Check to see if VpcPeeringConnectionId property is set
+        internal bool IsSetVpcPeeringConnectionId()
+        {
+            return this.vpcPeeringConnectionId != null;
         }
 
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -822,9 +822,9 @@ namespace Amazon.Redshift
         /// create a topic in Amazon SNS and subscribe to the topic. The ARN is displayed in the SNS console. </para> <para> You can specify the source
         /// type, and lists of Amazon Redshift source IDs, event categories, and event severities. Notifications will be sent for all events you want
         /// that match those criteria. For example, you can specify source type = cluster, source ID = my-cluster-1 and mycluster2, event categories =
-        /// Availability, Backup, and severity = ERROR. The subsription will only send notifications for those ERROR events in the Availability and
-        /// Backup categores for the specified clusters. </para> <para> If you specify both the source type and source IDs, such as source type =
-        /// cluster and source identifier = my-cluster-1, notifiactions will be sent for all the cluster events for my-cluster-1. If you specify a
+        /// Availability, Backup, and severity = ERROR. The subscription will only send notifications for those ERROR events in the Availability and
+        /// Backup categories for the specified clusters. </para> <para> If you specify both the source type and source IDs, such as source type =
+        /// cluster and source identifier = my-cluster-1, notifications will be sent for all the cluster events for my-cluster-1. If you specify a
         /// source type but do not specify a source identifier, you will receive notice of the events for the objects of that type in your AWS account.
         /// If you do not specify either the SourceType nor the SourceIdentifier, you will be notified of events generated from all Amazon Redshift
         /// sources belonging to your AWS account. You must specify a source type if you specify a source ID. </para>
@@ -902,10 +902,11 @@ namespace Amazon.Redshift
 
         /// <summary>
         /// <para>Creates an HSM client certificate that an Amazon Redshift cluster will use to connect to the client's HSM in order to store and
-        /// retrieve the keys used to encrypt the cluster databases.</para> <para>The command returns a public key, which you must store in the HSM.
-        /// After creating the HSM certificate, you must create an Amazon Redshift HSM configuration that provides a cluster the information needed to
-        /// store and retrieve database encryption keys in the HSM. For more information, go to aLinkToHSMTopic in the Amazon Redshift Management
-        /// Guide.</para>
+        /// retrieve the keys used to encrypt the cluster databases.</para> <para>The command returns a public key, which you must store in the HSM. In
+        /// addition to creating the HSM certificate, you must create an Amazon Redshift HSM configuration that provides a cluster the information
+        /// needed to store and use encryption keys in the HSM. For more information, go to <a
+        /// href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-HSM.html" >Hardware Security Modules</a> in the Amazon Redshift
+        /// Management Guide.</para>
         /// </summary>
         /// 
         /// <param name="createHsmClientCertificateRequest">Container for the necessary parameters to execute the CreateHsmClientCertificate service
@@ -972,10 +973,11 @@ namespace Amazon.Redshift
         #region CreateHsmConfiguration
 
         /// <summary>
-        /// <para>Creates an HSM configuration that contains the information required by an Amazon Redshift cluster to store and retrieve database
-        /// encryption keys in a Hardware Storeage Module (HSM). After creating the HSM configuration, you can specify it as a parameter when creating a
-        /// cluster. The cluster will then store its encryption keys in the HSM.</para> <para>Before creating an HSM configuration, you must have first
-        /// created an HSM client certificate. For more information, go to aLinkToHSMTopic in the Amazon Redshift Management Guide.</para>
+        /// <para>Creates an HSM configuration that contains the information required by an Amazon Redshift cluster to store and use database encryption
+        /// keys in a Hardware Security Module (HSM). After creating the HSM configuration, you can specify it as a parameter when creating a cluster.
+        /// The cluster will then store its encryption keys in the HSM.</para> <para>In addition to creating an HSM configuration, you must also create
+        /// an HSM client certificate. For more information, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-HSM.html"
+        /// >Hardware Security Modules</a> in the Amazon Redshift Management Guide.</para>
         /// </summary>
         /// 
         /// <param name="createHsmConfigurationRequest">Container for the necessary parameters to execute the CreateHsmConfiguration service method on
@@ -3079,6 +3081,7 @@ namespace Amazon.Redshift
         /// 
         /// <exception cref="SnapshotCopyAlreadyDisabledException"/>
         /// <exception cref="UnauthorizedOperationException"/>
+        /// <exception cref="InvalidClusterStateException"/>
         /// <exception cref="ClusterNotFoundException"/>
         public DisableSnapshotCopyResponse DisableSnapshotCopy(DisableSnapshotCopyRequest disableSnapshotCopyRequest)
         {
@@ -3584,6 +3587,7 @@ namespace Amazon.Redshift
         /// 
         /// <exception cref="SnapshotCopyDisabledException"/>
         /// <exception cref="UnauthorizedOperationException"/>
+        /// <exception cref="InvalidClusterStateException"/>
         /// <exception cref="ClusterNotFoundException"/>
         public ModifySnapshotCopyRetentionPeriodResponse ModifySnapshotCopyRetentionPeriod(ModifySnapshotCopyRetentionPeriodRequest modifySnapshotCopyRetentionPeriodRequest)
         {

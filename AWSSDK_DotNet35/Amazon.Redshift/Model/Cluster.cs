@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -55,6 +55,7 @@ namespace Amazon.Redshift.Model
         private string clusterPublicKey;
         private List<ClusterNode> clusterNodes = new List<ClusterNode>();
         private ElasticIpStatus elasticIpStatus;
+        private string clusterRevisionNumber;
 
 
         /// <summary>
@@ -510,6 +511,22 @@ namespace Amazon.Redshift.Model
         internal bool IsSetElasticIpStatus()
         {
             return this.elasticIpStatus != null;
+        }
+
+        /// <summary>
+        /// The specific revision number of the database in the cluster.
+        ///  
+        /// </summary>
+        public string ClusterRevisionNumber
+        {
+            get { return this.clusterRevisionNumber; }
+            set { this.clusterRevisionNumber = value; }
+        }
+
+        // Check to see if ClusterRevisionNumber property is set
+        internal bool IsSetClusterRevisionNumber()
+        {
+            return this.clusterRevisionNumber != null;
         }
     }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -22,7 +22,7 @@ namespace Amazon.CloudSearch
     /// <summary>
     /// Configuration for accessing Amazon CloudSearch Configuration Service service
     /// </summary>
-    public class AmazonCloudSearchConfig : ClientConfig
+    public partial class AmazonCloudSearchConfig : ClientConfig
     {
         /// <summary>
         /// Default constructor
@@ -52,7 +52,7 @@ namespace Amazon.CloudSearch
         {
             get
             {
-                return "2011-02-01";
+                return "2013-01-01";
             }
         }
     }

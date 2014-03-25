@@ -32,6 +32,31 @@ namespace Amazon.EC2
  
 
         /// <summary>
+        /// <para>Accept a VPC peering connection request. To accept a request, the VPC peering connection must be in the <c>pending-acceptance</c>
+        /// state, and you must be the owner of the peer VPC. Use the <c>DescribeVpcPeeringConnections</c> request to view your outstanding VPC peering
+        /// connection requests.</para>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AcceptVpcPeeringConnection service
+        /// method on AmazonEC2.</param>
+        /// 
+        /// <returns>The response from the AcceptVpcPeeringConnection service method, as returned by AmazonEC2.</returns>
+		AcceptVpcPeeringConnectionResponse AcceptVpcPeeringConnection(AcceptVpcPeeringConnectionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AcceptVpcPeeringConnection operation.
+        /// <seealso cref="Amazon.EC2.IAmazonEC2.AcceptVpcPeeringConnection"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AcceptVpcPeeringConnection operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+		Task<AcceptVpcPeeringConnectionResponse> AcceptVpcPeeringConnectionAsync(AcceptVpcPeeringConnectionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+ 
+
+        /// <summary>
         /// <para>Acquires an Elastic IP address.</para> <para>An Elastic IP address is for use either in the EC2-Classic platform or in a VPC. For more
         /// information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP Addresses</a> in the
         /// <i>Amazon Elastic Compute Cloud User Guide</i> .</para>
@@ -848,8 +873,9 @@ namespace Amazon.EC2
 
         /// <summary>
         /// <para>Creates a route in a route table within a VPC.</para> <para>You must specify one of the following targets: Internet gateway, NAT
-        /// instance, or network interface.</para> <para>When determining how to route traffic, we use the route with the most specific match. For
-        /// example, let's say the traffic is destined for <c>192.0.2.3</c> , and the route table includes the following two routes:</para>
+        /// instance, VPC peering connection, or network interface.</para> <para>When determining how to route traffic, we use the route with the most
+        /// specific match. For example, let's say the traffic is destined for <c>192.0.2.3</c> , and the route table includes the following two
+        /// routes:</para>
         /// <ul>
         /// <li> <para> <c>192.0.2.0/24</c> (goes to some target A)</para> </li>
         /// <li> <para> <c>192.0.2.0/28</c> (goes to some target B)</para> </li>
@@ -1091,6 +1117,33 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		Task<CreateVpcResponse> CreateVpcAsync(CreateVpcRequest request, CancellationToken cancellationToken = default(CancellationToken));
+ 
+
+        /// <summary>
+        /// <para>Requests a VPC peering connection between two VPCs: a requester VPC that you own and a peer VPC with which to create the connection.
+        /// The peer VPC can belong to another AWS account. The requester VPC and peer VPC cannot have overlapping CIDR blocks.</para> <para>The owner
+        /// of the peer VPC must accept the the peering request to activate the peering connection. The VPC peering connection request expires after 7
+        /// days, after which it cannot be accepted or rejected.</para> <para>A <c>CreateVpcPeeringConnection</c> request between VPCs with overlapping
+        /// CIDR blocks results in the VPC peering connection having a status of <c>failed</c> .</para>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateVpcPeeringConnection service
+        /// method on AmazonEC2.</param>
+        /// 
+        /// <returns>The response from the CreateVpcPeeringConnection service method, as returned by AmazonEC2.</returns>
+		CreateVpcPeeringConnectionResponse CreateVpcPeeringConnection(CreateVpcPeeringConnectionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateVpcPeeringConnection operation.
+        /// <seealso cref="Amazon.EC2.IAmazonEC2.CreateVpcPeeringConnection"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateVpcPeeringConnection operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+		Task<CreateVpcPeeringConnectionResponse> CreateVpcPeeringConnectionAsync(CreateVpcPeeringConnectionRequest request, CancellationToken cancellationToken = default(CancellationToken));
  
 
         /// <summary>
@@ -1548,6 +1601,29 @@ namespace Amazon.EC2
  
 
         /// <summary>
+        /// <para>Deletes a VPC peering connection. Either the owner of the requester VPC or the owner of the peer VPC can delete the VPC peering
+        /// connection if it's in the <c>active</c> state. The owner of the requester VPC can delete a VPC peering connection in the
+        /// <c>pending-acceptance</c> state.</para>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVpcPeeringConnection service
+        /// method on AmazonEC2.</param>
+		DeleteVpcPeeringConnectionResponse DeleteVpcPeeringConnection(DeleteVpcPeeringConnectionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteVpcPeeringConnection operation.
+        /// <seealso cref="Amazon.EC2.IAmazonEC2.DeleteVpcPeeringConnection"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVpcPeeringConnection operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+		Task<DeleteVpcPeeringConnectionResponse> DeleteVpcPeeringConnectionAsync(DeleteVpcPeeringConnectionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+ 
+
+        /// <summary>
         /// <para>Deletes the specified VPN connection.</para> <para>If you're deleting the VPC and its associated components, we recommend that you
         /// detach the virtual private gateway from the VPC and delete the VPC before deleting the VPN connection.</para>
         /// </summary>
@@ -1905,7 +1981,7 @@ namespace Amazon.EC2
  
 
         /// <summary>
-        /// <para>Describes an attributes of an AMI. You can specify only one attribute at a time.</para>
+        /// <para>Describes the specified attribute of the specified AMI. You can specify only one attribute at a time.</para>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeImageAttribute service method on
@@ -1963,7 +2039,7 @@ namespace Amazon.EC2
  
 
         /// <summary>
-        /// <para>Describes an attribute of the specified instance. You can specify only one attribute at a time.</para>
+        /// <para>Describes the specified attribute of the specified instance. You can specify only one attribute at a time.</para>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceAttribute service
@@ -2122,6 +2198,14 @@ namespace Amazon.EC2
         /// <returns>The response from the DescribeInstanceStatus service method, as returned by AmazonEC2.</returns>
 		DescribeInstanceStatusResponse DescribeInstanceStatus();
  
+        /// <summary>
+        /// <para>Describes one or more of your Internet gateways.</para>
+        /// </summary>
+        /// 
+        /// 
+        /// <returns>The response from the DescribeInternetGateways service method, as returned by AmazonEC2.</returns>
+		DescribeInternetGatewaysResponse DescribeInternetGateways();
+ 
 
         /// <summary>
         /// <para>Describes one or more of your Internet gateways.</para>
@@ -2144,14 +2228,6 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		Task<DescribeInternetGatewaysResponse> DescribeInternetGatewaysAsync(DescribeInternetGatewaysRequest request, CancellationToken cancellationToken = default(CancellationToken));
- 
-        /// <summary>
-        /// <para>Describes one or more of your Internet gateways.</para>
-        /// </summary>
-        /// 
-        /// 
-        /// <returns>The response from the DescribeInternetGateways service method, as returned by AmazonEC2.</returns>
-		DescribeInternetGatewaysResponse DescribeInternetGateways();
  
 
         /// <summary>
@@ -2186,15 +2262,6 @@ namespace Amazon.EC2
         /// <returns>The response from the DescribeKeyPairs service method, as returned by AmazonEC2.</returns>
 		DescribeKeyPairsResponse DescribeKeyPairs();
  
-        /// <summary>
-        /// <para>Describes one or more of your network ACLs.</para> <para>For more information about network ACLs, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">Network ACLs</a> in the <i>Amazon Virtual Private Cloud User
-        /// Guide</i> .</para>
-        /// </summary>
-        /// 
-        /// 
-        /// <returns>The response from the DescribeNetworkAcls service method, as returned by AmazonEC2.</returns>
-		DescribeNetworkAclsResponse DescribeNetworkAcls();
- 
 
         /// <summary>
         /// <para>Describes one or more of your network ACLs.</para> <para>For more information about network ACLs, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">Network ACLs</a> in the <i>Amazon Virtual Private Cloud User
@@ -2218,6 +2285,15 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		Task<DescribeNetworkAclsResponse> DescribeNetworkAclsAsync(DescribeNetworkAclsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+ 
+        /// <summary>
+        /// <para>Describes one or more of your network ACLs.</para> <para>For more information about network ACLs, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">Network ACLs</a> in the <i>Amazon Virtual Private Cloud User
+        /// Guide</i> .</para>
+        /// </summary>
+        /// 
+        /// 
+        /// <returns>The response from the DescribeNetworkAcls service method, as returned by AmazonEC2.</returns>
+		DescribeNetworkAclsResponse DescribeNetworkAcls();
  
 
         /// <summary>
@@ -2549,9 +2625,9 @@ namespace Amazon.EC2
  
 
         /// <summary>
-        /// <para>Describes an attribute of the specified snapshot. You can specify only one attribute at a time.</para> <para>For more information
-        /// about Amazon EBS snapshots, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html">Amazon EBS Snapshots</a> in
-        /// the <i>Amazon Elastic Compute Cloud User Guide</i> .</para>
+        /// <para>Describes the specified attribute of the specified snapshot. You can specify only one attribute at a time.</para> <para>For more
+        /// information about Amazon EBS snapshots, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html">Amazon EBS
+        /// Snapshots</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .</para>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeSnapshotAttribute service
@@ -2972,6 +3048,37 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 		Task<DescribeVpcAttributeResponse> DescribeVpcAttributeAsync(DescribeVpcAttributeRequest request, CancellationToken cancellationToken = default(CancellationToken));
+ 
+
+        /// <summary>
+        /// <para>Describes one or more of your VPC peering connections.</para>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVpcPeeringConnections
+        /// service method on AmazonEC2.</param>
+        /// 
+        /// <returns>The response from the DescribeVpcPeeringConnections service method, as returned by AmazonEC2.</returns>
+		DescribeVpcPeeringConnectionsResponse DescribeVpcPeeringConnections(DescribeVpcPeeringConnectionsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeVpcPeeringConnections operation.
+        /// <seealso cref="Amazon.EC2.IAmazonEC2.DescribeVpcPeeringConnections"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVpcPeeringConnections operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+		Task<DescribeVpcPeeringConnectionsResponse> DescribeVpcPeeringConnectionsAsync(DescribeVpcPeeringConnectionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+ 
+        /// <summary>
+        /// <para>Describes one or more of your VPC peering connections.</para>
+        /// </summary>
+        /// 
+        /// 
+        /// <returns>The response from the DescribeVpcPeeringConnections service method, as returned by AmazonEC2.</returns>
+		DescribeVpcPeeringConnectionsResponse DescribeVpcPeeringConnections();
  
 
         /// <summary>
@@ -3667,6 +3774,28 @@ namespace Amazon.EC2
  
 
         /// <summary>
+        /// <para>Rejects a VPC peering connection request. The VPC peering connection must be in the <c>pending-acceptance</c> state. Use the
+        /// <c>DescribeVpcPeeringConnections</c> request to view your outstanding VPC peering connection requests.</para>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RejectVpcPeeringConnection service
+        /// method on AmazonEC2.</param>
+		RejectVpcPeeringConnectionResponse RejectVpcPeeringConnection(RejectVpcPeeringConnectionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RejectVpcPeeringConnection operation.
+        /// <seealso cref="Amazon.EC2.IAmazonEC2.RejectVpcPeeringConnection"/>
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RejectVpcPeeringConnection operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+		Task<RejectVpcPeeringConnectionResponse> RejectVpcPeeringConnectionAsync(RejectVpcPeeringConnectionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+ 
+
+        /// <summary>
         /// <para>Releases the specified Elastic IP address.</para> <para>After releasing an Elastic IP address, it is released to the IP address pool
         /// and might be unavailable to you. Be sure to update your DNS records and any servers or devices that communicate with the address. If you
         /// attempt to release an Elastic IP address that you already released, you'll get an <c>AuthFailure</c> error if the address is already
@@ -3742,7 +3871,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// <para>Replaces an existing route within a route table in a VPC. You must provide only one of the following: Internet gateway, NAT instance,
-        /// or network interface.</para> <para>For more information about route tables, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route Tables</a> in the <i>Amazon Virtual Private Cloud
+        /// VPC peering connection, or network interface.</para> <para>For more information about route tables, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route Tables</a> in the <i>Amazon Virtual Private Cloud
         /// User Guide</i> .</para>
         /// </summary>
         /// 

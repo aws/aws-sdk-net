@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -61,6 +61,7 @@ namespace Amazon.EC2.Model
         /// was created (<c>CreateRouteTable</c> | <c>CreateRoute</c> | <c>EnableVgwRoutePropagation</c>). </li> <li> <c>route.state</c> - The state of
         /// a route in the route table (<c>active</c> | <c>blackhole</c>). The blackhole state indicates that the route's target isn't available (for
         /// example, the specified gateway isn't attached to the VPC, the specified NAT instance has been terminated, and so on). </li> <li>
+        /// <c>route.vpc-peering-connection-id</c> - The ID of a VPC peering connection specified in a route in the table. </li> <li>
         /// <c>tag</c>:<i>key</i>=<i>value</i> - The key/value combination of a tag assigned to the resource. </li> <li> <c>tag-key</c> - The key of a
         /// tag assigned to the resource. This filter is independent of the <c>tag-value</c> filter. For example, if you use both the filter
         /// "tag-key=Purpose" and the filter "tag-value=X", you get any resources assigned both the tag key Purpose (regardless of what the tag's value

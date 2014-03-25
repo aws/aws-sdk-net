@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -43,21 +43,33 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
                             
                         continue;
                     }
-                    if (context.TestExpression("FacetEnabled", targetDepth))
+                    if (context.TestExpression("SourceField", targetDepth))
                     {
-                        textOptions.FacetEnabled = BoolUnmarshaller.GetInstance().Unmarshall(context);
+                        textOptions.SourceField = StringUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
                     }
-                    if (context.TestExpression("ResultEnabled", targetDepth))
+                    if (context.TestExpression("ReturnEnabled", targetDepth))
                     {
-                        textOptions.ResultEnabled = BoolUnmarshaller.GetInstance().Unmarshall(context);
+                        textOptions.ReturnEnabled = BoolUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
                     }
-                    if (context.TestExpression("TextProcessor", targetDepth))
+                    if (context.TestExpression("SortEnabled", targetDepth))
                     {
-                        textOptions.TextProcessor = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        textOptions.SortEnabled = BoolUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
+                    }
+                    if (context.TestExpression("HighlightEnabled", targetDepth))
+                    {
+                        textOptions.HighlightEnabled = BoolUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
+                    }
+                    if (context.TestExpression("AnalysisScheme", targetDepth))
+                    {
+                        textOptions.AnalysisScheme = StringUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
                     }

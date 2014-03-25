@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -21,10 +21,9 @@ using System.IO;
 namespace Amazon.CloudSearch.Model
 {
     /// <summary>
-    /// <para>A <c>PolicyDocument</c> that specifies access policies for the search domain's services, and the current status of those
-    /// policies.</para>
+    /// <para>The configured access rules for the domain's document and search endpoints, and the current status of those rules.</para>
     /// </summary>
-    public class AccessPoliciesStatus
+    public partial class AccessPoliciesStatus
     {
         
         private string options;
@@ -32,12 +31,9 @@ namespace Amazon.CloudSearch.Model
 
 
         /// <summary>
-        /// An IAM access policy as described in <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?AccessPolicyLanguage.html"
-        /// target="_blank">The Access Policy Language</a> in <i>Using AWS Identity and Access Management</i>. The maximum size of an access policy
-        /// document is 100 KB. Example: <c>{"Statement": [{"Effect":"Allow", "Action": "*", "Resource":
-        /// "arn:aws:cs:us-east-1:1234567890:search/movies", "Condition": { "IpAddress": { "aws:SourceIp": ["203.0.113.1/32"] } }}, {"Effect":"Allow",
-        /// "Action": "*", "Resource": "arn:aws:cs:us-east-1:1234567890:documents/movies", "Condition": { "IpAddress": { "aws:SourceIp":
-        /// ["203.0.113.1/32"] } }} ] }</c>
+        /// Access rules for a domain's document or search service endpoints. For more information, see <a
+        /// href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html" target="_blank">Configuring Access for a Search
+        /// Domain</a> in the <i>Amazon CloudSearch Developer Guide</i>. The maximum size of a policy document is 100 KB.
         ///  
         /// </summary>
         public string Options
@@ -53,7 +49,7 @@ namespace Amazon.CloudSearch.Model
         }
 
         /// <summary>
-        /// The status of an option, including when it was last updated and whether it is actively in use for searches.
+        /// The status of domain configuration option.
         ///  
         /// </summary>
         public OptionStatus Status

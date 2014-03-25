@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -21,19 +21,22 @@ using System.IO;
 namespace Amazon.CloudSearch.Model
 {
     /// <summary>
-    /// <para>Options that define a text field in the search index.</para>
+    /// <para>Options for text field. Present if <c>IndexFieldType</c> specifies the field is of type <c>text</c> . A <c>text</c> field is always
+    /// searchable. All options are enabled by default.</para>
     /// </summary>
-    public class TextOptions
+    public partial class TextOptions
     {
         
         private string defaultValue;
-        private bool? facetEnabled;
-        private bool? resultEnabled;
-        private string textProcessor;
+        private string sourceField;
+        private bool? returnEnabled;
+        private bool? sortEnabled;
+        private bool? highlightEnabled;
+        private string analysisScheme;
 
 
         /// <summary>
-        /// The default value for a text field. Optional.
+        /// A value to use for the field if the field isn't specified for a document.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -58,40 +61,9 @@ namespace Amazon.CloudSearch.Model
         }
 
         /// <summary>
-        /// Specifies whether facets are enabled for this field. Default: False.
-        ///  
-        /// </summary>
-        public bool FacetEnabled
-        {
-            get { return this.facetEnabled ?? default(bool); }
-            set { this.facetEnabled = value; }
-        }
-
-        // Check to see if FacetEnabled property is set
-        internal bool IsSetFacetEnabled()
-        {
-            return this.facetEnabled.HasValue;
-        }
-
-        /// <summary>
-        /// Specifies whether values of this field can be returned in search results and used for ranking. Default: False.
-        ///  
-        /// </summary>
-        public bool ResultEnabled
-        {
-            get { return this.resultEnabled ?? default(bool); }
-            set { this.resultEnabled = value; }
-        }
-
-        // Check to see if ResultEnabled property is set
-        internal bool IsSetResultEnabled()
-        {
-            return this.resultEnabled.HasValue;
-        }
-
-        /// <summary>
-        /// The text processor to apply to this field. Optional. Possible values: <ul> <li><c>cs_text_no_stemming</c>: turns off stemming for the
-        /// field.</li> </ul> Default: none
+        /// A string that represents the name of an index field. Field names begin with a letter and can contain the following characters: a-z
+        /// (lowercase), 0-9, and _ (underscore). The name "score" is reserved and cannot be used as a field name. To reference a document's ID, you can
+        /// use the name <c>_id</c>.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -107,16 +79,89 @@ namespace Amazon.CloudSearch.Model
         /// </list>
         /// </para>
         /// </summary>
-        public string TextProcessor
+        public string SourceField
         {
-            get { return this.textProcessor; }
-            set { this.textProcessor = value; }
+            get { return this.sourceField; }
+            set { this.sourceField = value; }
         }
 
-        // Check to see if TextProcessor property is set
-        internal bool IsSetTextProcessor()
+        // Check to see if SourceField property is set
+        internal bool IsSetSourceField()
         {
-            return this.textProcessor != null;
+            return this.sourceField != null;
+        }
+
+        /// <summary>
+        /// Whether the contents of the field can be returned in the search results.
+        ///  
+        /// </summary>
+        public bool ReturnEnabled
+        {
+            get { return this.returnEnabled ?? default(bool); }
+            set { this.returnEnabled = value; }
+        }
+
+        // Check to see if ReturnEnabled property is set
+        internal bool IsSetReturnEnabled()
+        {
+            return this.returnEnabled.HasValue;
+        }
+
+        /// <summary>
+        /// Whether the field can be used to sort the search results.
+        ///  
+        /// </summary>
+        public bool SortEnabled
+        {
+            get { return this.sortEnabled ?? default(bool); }
+            set { this.sortEnabled = value; }
+        }
+
+        // Check to see if SortEnabled property is set
+        internal bool IsSetSortEnabled()
+        {
+            return this.sortEnabled.HasValue;
+        }
+
+        /// <summary>
+        /// Whether highlights can be returned for the field.
+        ///  
+        /// </summary>
+        public bool HighlightEnabled
+        {
+            get { return this.highlightEnabled ?? default(bool); }
+            set { this.highlightEnabled = value; }
+        }
+
+        // Check to see if HighlightEnabled property is set
+        internal bool IsSetHighlightEnabled()
+        {
+            return this.highlightEnabled.HasValue;
+        }
+
+        /// <summary>
+        /// The name of an analysis scheme for a <c>text</c> field.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Pattern</term>
+        ///         <description>[\S]+</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
+        public string AnalysisScheme
+        {
+            get { return this.analysisScheme; }
+            set { this.analysisScheme = value; }
+        }
+
+        // Check to see if AnalysisScheme property is set
+        internal bool IsSetAnalysisScheme()
+        {
+            return this.analysisScheme != null;
         }
     }
 }

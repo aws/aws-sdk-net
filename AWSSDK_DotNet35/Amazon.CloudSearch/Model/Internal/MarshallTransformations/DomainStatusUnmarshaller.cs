@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -49,6 +49,12 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
                             
                         continue;
                     }
+                    if (context.TestExpression("ARN", targetDepth))
+                    {
+                        domainStatus.ARN = StringUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
+                    }
                     if (context.TestExpression("Created", targetDepth))
                     {
                         domainStatus.Created = BoolUnmarshaller.GetInstance().Unmarshall(context);
@@ -58,12 +64,6 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Deleted", targetDepth))
                     {
                         domainStatus.Deleted = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("NumSearchableDocs", targetDepth))
-                    {
-                        domainStatus.NumSearchableDocs = LongUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
                     }

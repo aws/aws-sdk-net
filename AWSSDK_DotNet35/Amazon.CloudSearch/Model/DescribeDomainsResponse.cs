@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -24,11 +24,11 @@ namespace Amazon.CloudSearch.Model
     /// <summary>
     /// Returns information about the  DescribeDomains response and response metadata.
     /// </summary>
-    public class DescribeDomainsResponse : DescribeDomainsResult
+    public partial class DescribeDomainsResponse : DescribeDomainsResult
     {
         /// <summary>
         /// Gets and sets the DescribeDomainsResult property.
-        /// A response message that contains the status of one or more domains.
+        /// The result of a DescribeDomains request. Contains the status of the domains specified in the request or all domains owned by the account.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DescribeDomainsResult class are now available on the DescribeDomainsResponse class. You should use the properties on DescribeDomainsResponse instead of accessing them through DescribeDomainsResult.")]
         public DescribeDomainsResult DescribeDomainsResult

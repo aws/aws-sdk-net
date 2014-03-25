@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -21,15 +21,307 @@ namespace Amazon.CloudSearch
 {
 
 
+    /// <summary>Algorithmic Stemming
+    /// </summary>
+    public class AlgorithmicStemming : ConstantClass
+    {
+
+
+       /// <summary>Constant Full for AlgorithmicStemming
+       /// </summary>
+        public static readonly AlgorithmicStemming Full = new AlgorithmicStemming("full");
+    
+
+       /// <summary>Constant Light for AlgorithmicStemming
+       /// </summary>
+        public static readonly AlgorithmicStemming Light = new AlgorithmicStemming("light");
+    
+
+       /// <summary>Constant Minimal for AlgorithmicStemming
+       /// </summary>
+        public static readonly AlgorithmicStemming Minimal = new AlgorithmicStemming("minimal");
+    
+
+       /// <summary>Constant None for AlgorithmicStemming
+       /// </summary>
+        public static readonly AlgorithmicStemming None = new AlgorithmicStemming("none");
+    
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public AlgorithmicStemming(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AlgorithmicStemming FindValue(string value)
+        {
+            return FindValue<AlgorithmicStemming>(value);
+        }
+
+        public static implicit operator AlgorithmicStemming(string value)
+        {
+            return FindValue(value);
+        }
+    }
+    
+
+    /// <summary>Analysis Scheme Language
+    /// </summary>
+    public class AnalysisSchemeLanguage : ConstantClass
+    {
+
+
+       /// <summary>Constant Ar for AnalysisSchemeLanguage
+       /// </summary>
+        public static readonly AnalysisSchemeLanguage Ar = new AnalysisSchemeLanguage("ar");
+    
+
+       /// <summary>Constant Bg for AnalysisSchemeLanguage
+       /// </summary>
+        public static readonly AnalysisSchemeLanguage Bg = new AnalysisSchemeLanguage("bg");
+    
+
+       /// <summary>Constant Ca for AnalysisSchemeLanguage
+       /// </summary>
+        public static readonly AnalysisSchemeLanguage Ca = new AnalysisSchemeLanguage("ca");
+    
+
+       /// <summary>Constant Cs for AnalysisSchemeLanguage
+       /// </summary>
+        public static readonly AnalysisSchemeLanguage Cs = new AnalysisSchemeLanguage("cs");
+    
+
+       /// <summary>Constant Da for AnalysisSchemeLanguage
+       /// </summary>
+        public static readonly AnalysisSchemeLanguage Da = new AnalysisSchemeLanguage("da");
+    
+
+       /// <summary>Constant De for AnalysisSchemeLanguage
+       /// </summary>
+        public static readonly AnalysisSchemeLanguage De = new AnalysisSchemeLanguage("de");
+    
+
+       /// <summary>Constant El for AnalysisSchemeLanguage
+       /// </summary>
+        public static readonly AnalysisSchemeLanguage El = new AnalysisSchemeLanguage("el");
+    
+
+       /// <summary>Constant En for AnalysisSchemeLanguage
+       /// </summary>
+        public static readonly AnalysisSchemeLanguage En = new AnalysisSchemeLanguage("en");
+    
+
+       /// <summary>Constant Es for AnalysisSchemeLanguage
+       /// </summary>
+        public static readonly AnalysisSchemeLanguage Es = new AnalysisSchemeLanguage("es");
+    
+
+       /// <summary>Constant Eu for AnalysisSchemeLanguage
+       /// </summary>
+        public static readonly AnalysisSchemeLanguage Eu = new AnalysisSchemeLanguage("eu");
+    
+
+       /// <summary>Constant Fa for AnalysisSchemeLanguage
+       /// </summary>
+        public static readonly AnalysisSchemeLanguage Fa = new AnalysisSchemeLanguage("fa");
+    
+
+       /// <summary>Constant Fi for AnalysisSchemeLanguage
+       /// </summary>
+        public static readonly AnalysisSchemeLanguage Fi = new AnalysisSchemeLanguage("fi");
+    
+
+       /// <summary>Constant Fr for AnalysisSchemeLanguage
+       /// </summary>
+        public static readonly AnalysisSchemeLanguage Fr = new AnalysisSchemeLanguage("fr");
+    
+
+       /// <summary>Constant Ga for AnalysisSchemeLanguage
+       /// </summary>
+        public static readonly AnalysisSchemeLanguage Ga = new AnalysisSchemeLanguage("ga");
+    
+
+       /// <summary>Constant Gl for AnalysisSchemeLanguage
+       /// </summary>
+        public static readonly AnalysisSchemeLanguage Gl = new AnalysisSchemeLanguage("gl");
+    
+
+       /// <summary>Constant Hi for AnalysisSchemeLanguage
+       /// </summary>
+        public static readonly AnalysisSchemeLanguage Hi = new AnalysisSchemeLanguage("hi");
+    
+
+       /// <summary>Constant Hu for AnalysisSchemeLanguage
+       /// </summary>
+        public static readonly AnalysisSchemeLanguage Hu = new AnalysisSchemeLanguage("hu");
+    
+
+       /// <summary>Constant Hy for AnalysisSchemeLanguage
+       /// </summary>
+        public static readonly AnalysisSchemeLanguage Hy = new AnalysisSchemeLanguage("hy");
+    
+
+       /// <summary>Constant Id for AnalysisSchemeLanguage
+       /// </summary>
+        public static readonly AnalysisSchemeLanguage Id = new AnalysisSchemeLanguage("id");
+    
+
+       /// <summary>Constant It for AnalysisSchemeLanguage
+       /// </summary>
+        public static readonly AnalysisSchemeLanguage It = new AnalysisSchemeLanguage("it");
+    
+
+       /// <summary>Constant Ja for AnalysisSchemeLanguage
+       /// </summary>
+        public static readonly AnalysisSchemeLanguage Ja = new AnalysisSchemeLanguage("ja");
+    
+
+       /// <summary>Constant Ko for AnalysisSchemeLanguage
+       /// </summary>
+        public static readonly AnalysisSchemeLanguage Ko = new AnalysisSchemeLanguage("ko");
+    
+
+       /// <summary>Constant Lv for AnalysisSchemeLanguage
+       /// </summary>
+        public static readonly AnalysisSchemeLanguage Lv = new AnalysisSchemeLanguage("lv");
+    
+
+       /// <summary>Constant Mul for AnalysisSchemeLanguage
+       /// </summary>
+        public static readonly AnalysisSchemeLanguage Mul = new AnalysisSchemeLanguage("mul");
+    
+
+       /// <summary>Constant Nl for AnalysisSchemeLanguage
+       /// </summary>
+        public static readonly AnalysisSchemeLanguage Nl = new AnalysisSchemeLanguage("nl");
+    
+
+       /// <summary>Constant No for AnalysisSchemeLanguage
+       /// </summary>
+        public static readonly AnalysisSchemeLanguage No = new AnalysisSchemeLanguage("no");
+    
+
+       /// <summary>Constant Pt for AnalysisSchemeLanguage
+       /// </summary>
+        public static readonly AnalysisSchemeLanguage Pt = new AnalysisSchemeLanguage("pt");
+    
+
+       /// <summary>Constant Ro for AnalysisSchemeLanguage
+       /// </summary>
+        public static readonly AnalysisSchemeLanguage Ro = new AnalysisSchemeLanguage("ro");
+    
+
+       /// <summary>Constant Ru for AnalysisSchemeLanguage
+       /// </summary>
+        public static readonly AnalysisSchemeLanguage Ru = new AnalysisSchemeLanguage("ru");
+    
+
+       /// <summary>Constant Sv for AnalysisSchemeLanguage
+       /// </summary>
+        public static readonly AnalysisSchemeLanguage Sv = new AnalysisSchemeLanguage("sv");
+    
+
+       /// <summary>Constant Th for AnalysisSchemeLanguage
+       /// </summary>
+        public static readonly AnalysisSchemeLanguage Th = new AnalysisSchemeLanguage("th");
+    
+
+       /// <summary>Constant Tr for AnalysisSchemeLanguage
+       /// </summary>
+        public static readonly AnalysisSchemeLanguage Tr = new AnalysisSchemeLanguage("tr");
+    
+
+       /// <summary>Constant ZhHans for AnalysisSchemeLanguage
+       /// </summary>
+        public static readonly AnalysisSchemeLanguage ZhHans = new AnalysisSchemeLanguage("zh-Hans");
+    
+
+       /// <summary>Constant ZhHant for AnalysisSchemeLanguage
+       /// </summary>
+        public static readonly AnalysisSchemeLanguage ZhHant = new AnalysisSchemeLanguage("zh-Hant");
+    
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public AnalysisSchemeLanguage(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AnalysisSchemeLanguage FindValue(string value)
+        {
+            return FindValue<AnalysisSchemeLanguage>(value);
+        }
+
+        public static implicit operator AnalysisSchemeLanguage(string value)
+        {
+            return FindValue(value);
+        }
+    }
+    
+
     /// <summary>Index Field Type
     /// </summary>
     public class IndexFieldType : ConstantClass
     {
 
 
+       /// <summary>Constant Date for IndexFieldType
+       /// </summary>
+        public static readonly IndexFieldType Date = new IndexFieldType("date");
+    
+
+       /// <summary>Constant DateArray for IndexFieldType
+       /// </summary>
+        public static readonly IndexFieldType DateArray = new IndexFieldType("date-array");
+    
+
+       /// <summary>Constant Double for IndexFieldType
+       /// </summary>
+        public static readonly IndexFieldType Double = new IndexFieldType("double");
+    
+
+       /// <summary>Constant DoubleArray for IndexFieldType
+       /// </summary>
+        public static readonly IndexFieldType DoubleArray = new IndexFieldType("double-array");
+    
+
+       /// <summary>Constant Int for IndexFieldType
+       /// </summary>
+        public static readonly IndexFieldType Int = new IndexFieldType("int");
+    
+
+       /// <summary>Constant IntArray for IndexFieldType
+       /// </summary>
+        public static readonly IndexFieldType IntArray = new IndexFieldType("int-array");
+    
+
+       /// <summary>Constant Latlon for IndexFieldType
+       /// </summary>
+        public static readonly IndexFieldType Latlon = new IndexFieldType("latlon");
+    
+
        /// <summary>Constant Literal for IndexFieldType
        /// </summary>
         public static readonly IndexFieldType Literal = new IndexFieldType("literal");
+    
+
+       /// <summary>Constant LiteralArray for IndexFieldType
+       /// </summary>
+        public static readonly IndexFieldType LiteralArray = new IndexFieldType("literal-array");
     
 
        /// <summary>Constant Text for IndexFieldType
@@ -37,9 +329,9 @@ namespace Amazon.CloudSearch
         public static readonly IndexFieldType Text = new IndexFieldType("text");
     
 
-       /// <summary>Constant Uint for IndexFieldType
+       /// <summary>Constant TextArray for IndexFieldType
        /// </summary>
-        public static readonly IndexFieldType Uint = new IndexFieldType("uint");
+        public static readonly IndexFieldType TextArray = new IndexFieldType("text-array");
     
 
         /// <summary>
@@ -78,6 +370,11 @@ namespace Amazon.CloudSearch
         public static readonly OptionState Active = new OptionState("Active");
     
 
+       /// <summary>Constant FailedToValidate for OptionState
+       /// </summary>
+        public static readonly OptionState FailedToValidate = new OptionState("FailedToValidate");
+    
+
        /// <summary>Constant Processing for OptionState
        /// </summary>
         public static readonly OptionState Processing = new OptionState("Processing");
@@ -113,31 +410,36 @@ namespace Amazon.CloudSearch
     }
     
 
-    /// <summary>Source Data Function
+    /// <summary>Partition Instance Type
     /// </summary>
-    public class SourceDataFunction : ConstantClass
+    public class PartitionInstanceType : ConstantClass
     {
 
 
-       /// <summary>Constant Copy for SourceDataFunction
+       /// <summary>Constant SearchM1Large for PartitionInstanceType
        /// </summary>
-        public static readonly SourceDataFunction Copy = new SourceDataFunction("Copy");
+        public static readonly PartitionInstanceType SearchM1Large = new PartitionInstanceType("search.m1.large");
     
 
-       /// <summary>Constant Map for SourceDataFunction
+       /// <summary>Constant SearchM1Small for PartitionInstanceType
        /// </summary>
-        public static readonly SourceDataFunction Map = new SourceDataFunction("Map");
+        public static readonly PartitionInstanceType SearchM1Small = new PartitionInstanceType("search.m1.small");
     
 
-       /// <summary>Constant TrimTitle for SourceDataFunction
+       /// <summary>Constant SearchM22xlarge for PartitionInstanceType
        /// </summary>
-        public static readonly SourceDataFunction TrimTitle = new SourceDataFunction("TrimTitle");
+        public static readonly PartitionInstanceType SearchM22xlarge = new PartitionInstanceType("search.m2.2xlarge");
+    
+
+       /// <summary>Constant SearchM2Xlarge for PartitionInstanceType
+       /// </summary>
+        public static readonly PartitionInstanceType SearchM2Xlarge = new PartitionInstanceType("search.m2.xlarge");
     
 
         /// <summary>
         /// Default Constructor
         /// </summary>
-        public SourceDataFunction(string value)
+        public PartitionInstanceType(string value)
             : base(value)
         {
         }
@@ -147,12 +449,58 @@ namespace Amazon.CloudSearch
         /// </summary>
         /// <param name="value">The unique value for the constant</param>
         /// <returns>The constant for the unique value</returns>
-        public static SourceDataFunction FindValue(string value)
+        public static PartitionInstanceType FindValue(string value)
         {
-            return FindValue<SourceDataFunction>(value);
+            return FindValue<PartitionInstanceType>(value);
         }
 
-        public static implicit operator SourceDataFunction(string value)
+        public static implicit operator PartitionInstanceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+    
+
+    /// <summary>Suggester Fuzzy Matching
+    /// </summary>
+    public class SuggesterFuzzyMatching : ConstantClass
+    {
+
+
+       /// <summary>Constant High for SuggesterFuzzyMatching
+       /// </summary>
+        public static readonly SuggesterFuzzyMatching High = new SuggesterFuzzyMatching("high");
+    
+
+       /// <summary>Constant Low for SuggesterFuzzyMatching
+       /// </summary>
+        public static readonly SuggesterFuzzyMatching Low = new SuggesterFuzzyMatching("low");
+    
+
+       /// <summary>Constant None for SuggesterFuzzyMatching
+       /// </summary>
+        public static readonly SuggesterFuzzyMatching None = new SuggesterFuzzyMatching("none");
+    
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public SuggesterFuzzyMatching(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SuggesterFuzzyMatching FindValue(string value)
+        {
+            return FindValue<SuggesterFuzzyMatching>(value);
+        }
+
+        public static implicit operator SuggesterFuzzyMatching(string value)
         {
             return FindValue(value);
         }

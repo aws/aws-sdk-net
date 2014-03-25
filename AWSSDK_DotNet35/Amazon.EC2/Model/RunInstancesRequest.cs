@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -82,8 +82,10 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// The minimum number of instances to launch. If you specify a minimum that is more instances than Amazon EC2 can launch in the target
-        /// Availability Zone, Amazon EC2 launches no instances. Constraints: Between 1 and the maximum number allowed for your account (the default for
-        /// each account is 20, but this limit can be increased).
+        /// Availability Zone, Amazon EC2 launches no instances. Constraints: Between 1 and the maximum number you're allowed for the specified instance
+        /// type. For more information about the default limits, and how to request an increase, see <a
+        /// href="http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2">How many instances can I run in Amazon EC2</a> in the
+        /// Amazon EC2 General FAQ.
         ///  
         /// </summary>
         public int MinCount
@@ -100,8 +102,10 @@ namespace Amazon.EC2.Model
 
         /// <summary>
         /// The maximum number of instances to launch. If you specify more instances than Amazon EC2 can launch in the target Availability Zone, Amazon
-        /// EC2 launches the largest possible number of instances above <c>MinCount</c>. Constraints: Between 1 and the maximum number allowed for your
-        /// account (the default limit for each account is 20, but this limit can be increased).
+        /// EC2 launches the largest possible number of instances above <c>MinCount</c>. Constraints: Between 1 and the maximum number you're allowed
+        /// for the specified instance type. For more information about the default limits, and how to request an increase, see <a
+        /// href="http://aws.amazon.com/ec2/faqs/#How_many_instances_can_I_run_in_Amazon_EC2">How many instances can I run in Amazon EC2</a> in the
+        /// Amazon EC2 General FAQ.
         ///  
         /// </summary>
         public int MaxCount
@@ -192,7 +196,7 @@ namespace Amazon.EC2.Model
         /// <list type="definition">
         ///     <item>
         ///         <term>Allowed Values</term>
-        ///         <description>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m3.xlarge, m3.2xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, cr1.8xlarge, i2.xlarge, i2.2xlarge, i2.4xlarge, i2.8xlarge, hi1.4xlarge, hs1.8xlarge, c1.medium, c1.xlarge, c3.large, c3.xlarge, c3.2xlarge, c3.4xlarge, c3.8xlarge, cc1.4xlarge, cc2.8xlarge, g2.2xlarge, cg1.4xlarge</description>
+        ///         <description>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m3.medium, m3.large, m3.xlarge, m3.2xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, cr1.8xlarge, i2.xlarge, i2.2xlarge, i2.4xlarge, i2.8xlarge, hi1.4xlarge, hs1.8xlarge, c1.medium, c1.xlarge, c3.large, c3.xlarge, c3.2xlarge, c3.4xlarge, c3.8xlarge, cc1.4xlarge, cc2.8xlarge, g2.2xlarge, cg1.4xlarge</description>
         ///     </item>
         /// </list>
         /// </para>

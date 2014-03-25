@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -22,7 +22,8 @@ using Amazon.Runtime;
 namespace Amazon.CloudSearch.Model
 {
     /// <summary>
-    /// <para>A response message that contains the status of one or more domains.</para>
+    /// <para>The result of a <c>DescribeDomains</c> request. Contains the status of the domains specified in the request or all domains owned by
+    /// the account.</para>
     /// </summary>
     public partial class DescribeDomainsResult : AmazonWebServiceResponse
     {
@@ -31,7 +32,7 @@ namespace Amazon.CloudSearch.Model
 
 
         /// <summary>
-        /// The current status of all of your search domains.
+        /// A list that contains the status of each requested domain.
         ///  
         /// </summary>
         public List<DomainStatus> DomainStatusList

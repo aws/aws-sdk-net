@@ -112,6 +112,15 @@ namespace Amazon.Runtime.Internal.Util
             }
             return l;
         }
+
+        public static void ClearLoggerCache()
+        {
+            lock (cachedLoggers)
+            {
+                cachedLoggers = new Dictionary<Type, Logger>();
+            }
+        }
+
         public static Logger EmptyLogger { get { return emptyLogger; } }
 
         #endregion

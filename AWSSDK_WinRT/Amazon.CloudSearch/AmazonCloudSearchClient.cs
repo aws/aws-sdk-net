@@ -29,9 +29,9 @@ namespace Amazon.CloudSearch
     /// <summary>
     /// Implementation for accessing AmazonCloudSearch.
     /// 
-    /// Amazon CloudSearch Configuration Service <para>You use the configuration service to create, configure, and manage search domains.
-    /// Configuration service requests are submitted using the AWS Query protocol. AWS Query requests are HTTP or HTTPS requests submitted via HTTP
-    /// GET or POST with a query parameter named Action.</para> <para>The endpoint for configuration service requests is region-specific:
+    /// Amazon CloudSearch Configuration Service <para>You use the Amazon CloudSearch configuration service to create, configure, and manage search
+    /// domains. Configuration service requests are submitted using the AWS Query protocol. AWS Query requests are HTTP or HTTPS requests submitted
+    /// via HTTP GET or POST with a query parameter named Action.</para> <para>The endpoint for configuration service requests is region-specific:
     /// cloudsearch. <i>region</i> .amazonaws.com. For example, cloudsearch.us-east-1.amazonaws.com. For a current list of supported regions and
     /// endpoints, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#cloudsearch_region">Regions and Endpoints</a> .</para>
     /// </summary>
@@ -149,6 +149,42 @@ namespace Amazon.CloudSearch
         #endregion
 
  
+		internal BuildSuggestersResponse BuildSuggesters(BuildSuggestersRequest request)
+        {
+            var task = BuildSuggestersAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// <para>Indexes the search suggestions. </para>
+        /// </summary>
+        /// 
+        /// <param name="buildSuggestersRequest">Container for the necessary parameters to execute the BuildSuggesters service method on
+        /// AmazonCloudSearch.</param>
+        /// 
+        /// <returns>The response from the BuildSuggesters service method, as returned by AmazonCloudSearch.</returns>
+        /// 
+        /// <exception cref="T:Amazon.CloudSearch.Model.InternalException" />
+        /// <exception cref="T:Amazon.CloudSearch.Model.ResourceNotFoundException" />
+        /// <exception cref="T:Amazon.CloudSearch.Model.BaseException" />
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+		public Task<BuildSuggestersResponse> BuildSuggestersAsync(BuildSuggestersRequest buildSuggestersRequest, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new BuildSuggestersRequestMarshaller();
+            var unmarshaller = BuildSuggestersResponseUnmarshaller.GetInstance();
+            return Invoke<IRequest, BuildSuggestersRequest, BuildSuggestersResponse>(buildSuggestersRequest, marshaller, unmarshaller, signer, cancellationToken);
+        }
+ 
 		internal CreateDomainResponse CreateDomain(CreateDomainRequest request)
         {
             var task = CreateDomainAsync(request);
@@ -164,7 +200,8 @@ namespace Amazon.CloudSearch
         }
 
         /// <summary>
-        /// <para>Creates a new search domain.</para>
+        /// <para>Creates a new search domain. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/creating-domains.html">Creating a Search Domain</a> in the <i>Amazon
+        /// CloudSearch Developer Guide</i> .</para>
         /// </summary>
         /// 
         /// <param name="createDomainRequest">Container for the necessary parameters to execute the CreateDomain service method on
@@ -172,9 +209,9 @@ namespace Amazon.CloudSearch
         /// 
         /// <returns>The response from the CreateDomain service method, as returned by AmazonCloudSearch.</returns>
         /// 
-        /// <exception cref="T:Amazon.CloudSearch.Model.BaseException" />
-        /// <exception cref="T:Amazon.CloudSearch.Model.LimitExceededException" />
         /// <exception cref="T:Amazon.CloudSearch.Model.InternalException" />
+        /// <exception cref="T:Amazon.CloudSearch.Model.LimitExceededException" />
+        /// <exception cref="T:Amazon.CloudSearch.Model.BaseException" />
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -183,6 +220,85 @@ namespace Amazon.CloudSearch
             var marshaller = new CreateDomainRequestMarshaller();
             var unmarshaller = CreateDomainResponseUnmarshaller.GetInstance();
             return Invoke<IRequest, CreateDomainRequest, CreateDomainResponse>(createDomainRequest, marshaller, unmarshaller, signer, cancellationToken);
+        }
+ 
+		internal DefineAnalysisSchemeResponse DefineAnalysisScheme(DefineAnalysisSchemeRequest request)
+        {
+            var task = DefineAnalysisSchemeAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// <para>Configures an analysis scheme for a domain. An analysis scheme defines language-specific text processing options for a <c>text</c>
+        /// field. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html">Configuring Analysis Schemes</a> in the <i>Amazon CloudSearch Developer Guide</i> .</para>
+        /// </summary>
+        /// 
+        /// <param name="defineAnalysisSchemeRequest">Container for the necessary parameters to execute the DefineAnalysisScheme service method on
+        /// AmazonCloudSearch.</param>
+        /// 
+        /// <returns>The response from the DefineAnalysisScheme service method, as returned by AmazonCloudSearch.</returns>
+        /// 
+        /// <exception cref="T:Amazon.CloudSearch.Model.InternalException" />
+        /// <exception cref="T:Amazon.CloudSearch.Model.InvalidTypeException" />
+        /// <exception cref="T:Amazon.CloudSearch.Model.ResourceNotFoundException" />
+        /// <exception cref="T:Amazon.CloudSearch.Model.LimitExceededException" />
+        /// <exception cref="T:Amazon.CloudSearch.Model.BaseException" />
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+		public Task<DefineAnalysisSchemeResponse> DefineAnalysisSchemeAsync(DefineAnalysisSchemeRequest defineAnalysisSchemeRequest, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DefineAnalysisSchemeRequestMarshaller();
+            var unmarshaller = DefineAnalysisSchemeResponseUnmarshaller.GetInstance();
+            return Invoke<IRequest, DefineAnalysisSchemeRequest, DefineAnalysisSchemeResponse>(defineAnalysisSchemeRequest, marshaller, unmarshaller, signer, cancellationToken);
+        }
+ 
+		internal DefineExpressionResponse DefineExpression(DefineExpressionRequest request)
+        {
+            var task = DefineExpressionAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// <para>Configures an <c> Expression </c> for the search domain. Used to create new expressions and modify existing ones. If the expression
+        /// exists, the new configuration replaces the old one. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html">Configuring Expressions</a> in the
+        /// <i>Amazon CloudSearch Developer Guide</i> .</para>
+        /// </summary>
+        /// 
+        /// <param name="defineExpressionRequest">Container for the necessary parameters to execute the DefineExpression service method on
+        /// AmazonCloudSearch.</param>
+        /// 
+        /// <returns>The response from the DefineExpression service method, as returned by AmazonCloudSearch.</returns>
+        /// 
+        /// <exception cref="T:Amazon.CloudSearch.Model.InternalException" />
+        /// <exception cref="T:Amazon.CloudSearch.Model.InvalidTypeException" />
+        /// <exception cref="T:Amazon.CloudSearch.Model.ResourceNotFoundException" />
+        /// <exception cref="T:Amazon.CloudSearch.Model.LimitExceededException" />
+        /// <exception cref="T:Amazon.CloudSearch.Model.BaseException" />
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+		public Task<DefineExpressionResponse> DefineExpressionAsync(DefineExpressionRequest defineExpressionRequest, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DefineExpressionRequestMarshaller();
+            var unmarshaller = DefineExpressionResponseUnmarshaller.GetInstance();
+            return Invoke<IRequest, DefineExpressionRequest, DefineExpressionResponse>(defineExpressionRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DefineIndexFieldResponse DefineIndexField(DefineIndexFieldRequest request)
@@ -200,8 +316,11 @@ namespace Amazon.CloudSearch
         }
 
         /// <summary>
-        /// <para>Configures an <c>IndexField</c> for the search domain. Used to create new fields and modify existing ones. If the field exists, the
-        /// new configuration replaces the old one. You can configure a maximum of 200 index fields.</para>
+        /// <para>Configures an <c> IndexField </c> for the search domain. Used to create new fields and modify existing ones. You must specify the name
+        /// of the domain you are configuring and an index field configuration. The index field configuration specifies a unique name, the index field
+        /// type, and the options you want to configure for the field. The options you can specify depend on the <c> IndexFieldType </c> . If the field
+        /// exists, the new configuration replaces the old one. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-index-fields.html">Configuring Index Fields</a> in the
+        /// <i>Amazon CloudSearch Developer Guide</i> . </para>
         /// </summary>
         /// 
         /// <param name="defineIndexFieldRequest">Container for the necessary parameters to execute the DefineIndexField service method on
@@ -209,11 +328,11 @@ namespace Amazon.CloudSearch
         /// 
         /// <returns>The response from the DefineIndexField service method, as returned by AmazonCloudSearch.</returns>
         /// 
-        /// <exception cref="T:Amazon.CloudSearch.Model.BaseException" />
-        /// <exception cref="T:Amazon.CloudSearch.Model.ResourceNotFoundException" />
-        /// <exception cref="T:Amazon.CloudSearch.Model.LimitExceededException" />
         /// <exception cref="T:Amazon.CloudSearch.Model.InternalException" />
         /// <exception cref="T:Amazon.CloudSearch.Model.InvalidTypeException" />
+        /// <exception cref="T:Amazon.CloudSearch.Model.ResourceNotFoundException" />
+        /// <exception cref="T:Amazon.CloudSearch.Model.LimitExceededException" />
+        /// <exception cref="T:Amazon.CloudSearch.Model.BaseException" />
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -224,9 +343,9 @@ namespace Amazon.CloudSearch
             return Invoke<IRequest, DefineIndexFieldRequest, DefineIndexFieldResponse>(defineIndexFieldRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
-		internal DefineRankExpressionResponse DefineRankExpression(DefineRankExpressionRequest request)
+		internal DefineSuggesterResponse DefineSuggester(DefineSuggesterRequest request)
         {
-            var task = DefineRankExpressionAsync(request);
+            var task = DefineSuggesterAsync(request);
             try
             {
                 return task.Result;
@@ -239,28 +358,68 @@ namespace Amazon.CloudSearch
         }
 
         /// <summary>
-        /// <para>Configures a <c>RankExpression</c> for the search domain. Used to create new rank expressions and modify existing ones. If the
-        /// expression exists, the new configuration replaces the old one. You can configure a maximum of 50 rank expressions.</para>
+        /// <para>Configures a suggester for a domain. A suggester enables you to display possible matches before users finish typing their queries.
+        /// When you configure a suggester, you must specify the name of the text field you want to search for possible matches and a unique name for
+        /// the suggester. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-search-suggestions.html">Getting Search Suggestions</a> in the
+        /// <i>Amazon CloudSearch Developer Guide</i> .</para>
         /// </summary>
         /// 
-        /// <param name="defineRankExpressionRequest">Container for the necessary parameters to execute the DefineRankExpression service method on
+        /// <param name="defineSuggesterRequest">Container for the necessary parameters to execute the DefineSuggester service method on
         /// AmazonCloudSearch.</param>
         /// 
-        /// <returns>The response from the DefineRankExpression service method, as returned by AmazonCloudSearch.</returns>
+        /// <returns>The response from the DefineSuggester service method, as returned by AmazonCloudSearch.</returns>
         /// 
-        /// <exception cref="T:Amazon.CloudSearch.Model.BaseException" />
-        /// <exception cref="T:Amazon.CloudSearch.Model.ResourceNotFoundException" />
-        /// <exception cref="T:Amazon.CloudSearch.Model.LimitExceededException" />
         /// <exception cref="T:Amazon.CloudSearch.Model.InternalException" />
         /// <exception cref="T:Amazon.CloudSearch.Model.InvalidTypeException" />
+        /// <exception cref="T:Amazon.CloudSearch.Model.ResourceNotFoundException" />
+        /// <exception cref="T:Amazon.CloudSearch.Model.LimitExceededException" />
+        /// <exception cref="T:Amazon.CloudSearch.Model.BaseException" />
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public Task<DefineRankExpressionResponse> DefineRankExpressionAsync(DefineRankExpressionRequest defineRankExpressionRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DefineSuggesterResponse> DefineSuggesterAsync(DefineSuggesterRequest defineSuggesterRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DefineRankExpressionRequestMarshaller();
-            var unmarshaller = DefineRankExpressionResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, DefineRankExpressionRequest, DefineRankExpressionResponse>(defineRankExpressionRequest, marshaller, unmarshaller, signer, cancellationToken);
+            var marshaller = new DefineSuggesterRequestMarshaller();
+            var unmarshaller = DefineSuggesterResponseUnmarshaller.GetInstance();
+            return Invoke<IRequest, DefineSuggesterRequest, DefineSuggesterResponse>(defineSuggesterRequest, marshaller, unmarshaller, signer, cancellationToken);
+        }
+ 
+		internal DeleteAnalysisSchemeResponse DeleteAnalysisScheme(DeleteAnalysisSchemeRequest request)
+        {
+            var task = DeleteAnalysisSchemeAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// <para>Deletes an analysis scheme. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html.html">Configuring Analysis Schemes</a>
+        /// in the <i>Amazon CloudSearch Developer Guide</i> . </para>
+        /// </summary>
+        /// 
+        /// <param name="deleteAnalysisSchemeRequest">Container for the necessary parameters to execute the DeleteAnalysisScheme service method on
+        /// AmazonCloudSearch.</param>
+        /// 
+        /// <returns>The response from the DeleteAnalysisScheme service method, as returned by AmazonCloudSearch.</returns>
+        /// 
+        /// <exception cref="T:Amazon.CloudSearch.Model.InternalException" />
+        /// <exception cref="T:Amazon.CloudSearch.Model.InvalidTypeException" />
+        /// <exception cref="T:Amazon.CloudSearch.Model.ResourceNotFoundException" />
+        /// <exception cref="T:Amazon.CloudSearch.Model.BaseException" />
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+		public Task<DeleteAnalysisSchemeResponse> DeleteAnalysisSchemeAsync(DeleteAnalysisSchemeRequest deleteAnalysisSchemeRequest, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteAnalysisSchemeRequestMarshaller();
+            var unmarshaller = DeleteAnalysisSchemeResponseUnmarshaller.GetInstance();
+            return Invoke<IRequest, DeleteAnalysisSchemeRequest, DeleteAnalysisSchemeResponse>(deleteAnalysisSchemeRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DeleteDomainResponse DeleteDomain(DeleteDomainRequest request)
@@ -278,7 +437,9 @@ namespace Amazon.CloudSearch
         }
 
         /// <summary>
-        /// <para>Permanently deletes a search domain and all of its data.</para>
+        /// <para>Permanently deletes a search domain and all of its data. Once a domain has been deleted, it cannot be recovered. For more information,
+        /// see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/deleting-domains.html">Deleting a Search Domain</a> in the
+        /// <i>Amazon CloudSearch Developer Guide</i> . </para>
         /// </summary>
         /// 
         /// <param name="deleteDomainRequest">Container for the necessary parameters to execute the DeleteDomain service method on
@@ -286,8 +447,8 @@ namespace Amazon.CloudSearch
         /// 
         /// <returns>The response from the DeleteDomain service method, as returned by AmazonCloudSearch.</returns>
         /// 
-        /// <exception cref="T:Amazon.CloudSearch.Model.BaseException" />
         /// <exception cref="T:Amazon.CloudSearch.Model.InternalException" />
+        /// <exception cref="T:Amazon.CloudSearch.Model.BaseException" />
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -296,6 +457,44 @@ namespace Amazon.CloudSearch
             var marshaller = new DeleteDomainRequestMarshaller();
             var unmarshaller = DeleteDomainResponseUnmarshaller.GetInstance();
             return Invoke<IRequest, DeleteDomainRequest, DeleteDomainResponse>(deleteDomainRequest, marshaller, unmarshaller, signer, cancellationToken);
+        }
+ 
+		internal DeleteExpressionResponse DeleteExpression(DeleteExpressionRequest request)
+        {
+            var task = DeleteExpressionAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// <para>Removes an <c> Expression </c> from the search domain. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html">Configuring Expressions</a> in the
+        /// <i>Amazon CloudSearch Developer Guide</i> .</para>
+        /// </summary>
+        /// 
+        /// <param name="deleteExpressionRequest">Container for the necessary parameters to execute the DeleteExpression service method on
+        /// AmazonCloudSearch.</param>
+        /// 
+        /// <returns>The response from the DeleteExpression service method, as returned by AmazonCloudSearch.</returns>
+        /// 
+        /// <exception cref="T:Amazon.CloudSearch.Model.InternalException" />
+        /// <exception cref="T:Amazon.CloudSearch.Model.InvalidTypeException" />
+        /// <exception cref="T:Amazon.CloudSearch.Model.ResourceNotFoundException" />
+        /// <exception cref="T:Amazon.CloudSearch.Model.BaseException" />
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+		public Task<DeleteExpressionResponse> DeleteExpressionAsync(DeleteExpressionRequest deleteExpressionRequest, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteExpressionRequestMarshaller();
+            var unmarshaller = DeleteExpressionResponseUnmarshaller.GetInstance();
+            return Invoke<IRequest, DeleteExpressionRequest, DeleteExpressionResponse>(deleteExpressionRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DeleteIndexFieldResponse DeleteIndexField(DeleteIndexFieldRequest request)
@@ -313,7 +512,8 @@ namespace Amazon.CloudSearch
         }
 
         /// <summary>
-        /// <para>Removes an <c>IndexField</c> from the search domain.</para>
+        /// <para>Removes an <c> IndexField </c> from the search domain. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-index-fields.html">Configuring Index Fields</a> in the
+        /// <i>Amazon CloudSearch Developer Guide</i> .</para>
         /// </summary>
         /// 
         /// <param name="deleteIndexFieldRequest">Container for the necessary parameters to execute the DeleteIndexField service method on
@@ -321,10 +521,10 @@ namespace Amazon.CloudSearch
         /// 
         /// <returns>The response from the DeleteIndexField service method, as returned by AmazonCloudSearch.</returns>
         /// 
-        /// <exception cref="T:Amazon.CloudSearch.Model.BaseException" />
-        /// <exception cref="T:Amazon.CloudSearch.Model.ResourceNotFoundException" />
         /// <exception cref="T:Amazon.CloudSearch.Model.InternalException" />
         /// <exception cref="T:Amazon.CloudSearch.Model.InvalidTypeException" />
+        /// <exception cref="T:Amazon.CloudSearch.Model.ResourceNotFoundException" />
+        /// <exception cref="T:Amazon.CloudSearch.Model.BaseException" />
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -335,9 +535,9 @@ namespace Amazon.CloudSearch
             return Invoke<IRequest, DeleteIndexFieldRequest, DeleteIndexFieldResponse>(deleteIndexFieldRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
-		internal DeleteRankExpressionResponse DeleteRankExpression(DeleteRankExpressionRequest request)
+		internal DeleteSuggesterResponse DeleteSuggester(DeleteSuggesterRequest request)
         {
-            var task = DeleteRankExpressionAsync(request);
+            var task = DeleteSuggesterAsync(request);
             try
             {
                 return task.Result;
@@ -350,31 +550,32 @@ namespace Amazon.CloudSearch
         }
 
         /// <summary>
-        /// <para>Removes a <c>RankExpression</c> from the search domain.</para>
+        /// <para>Deletes a suggester. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-search-suggestions.html">Getting Search Suggestions</a> in the
+        /// <i>Amazon CloudSearch Developer Guide</i> .</para>
         /// </summary>
         /// 
-        /// <param name="deleteRankExpressionRequest">Container for the necessary parameters to execute the DeleteRankExpression service method on
+        /// <param name="deleteSuggesterRequest">Container for the necessary parameters to execute the DeleteSuggester service method on
         /// AmazonCloudSearch.</param>
         /// 
-        /// <returns>The response from the DeleteRankExpression service method, as returned by AmazonCloudSearch.</returns>
+        /// <returns>The response from the DeleteSuggester service method, as returned by AmazonCloudSearch.</returns>
         /// 
-        /// <exception cref="T:Amazon.CloudSearch.Model.BaseException" />
-        /// <exception cref="T:Amazon.CloudSearch.Model.ResourceNotFoundException" />
         /// <exception cref="T:Amazon.CloudSearch.Model.InternalException" />
         /// <exception cref="T:Amazon.CloudSearch.Model.InvalidTypeException" />
+        /// <exception cref="T:Amazon.CloudSearch.Model.ResourceNotFoundException" />
+        /// <exception cref="T:Amazon.CloudSearch.Model.BaseException" />
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public Task<DeleteRankExpressionResponse> DeleteRankExpressionAsync(DeleteRankExpressionRequest deleteRankExpressionRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DeleteSuggesterResponse> DeleteSuggesterAsync(DeleteSuggesterRequest deleteSuggesterRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DeleteRankExpressionRequestMarshaller();
-            var unmarshaller = DeleteRankExpressionResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, DeleteRankExpressionRequest, DeleteRankExpressionResponse>(deleteRankExpressionRequest, marshaller, unmarshaller, signer, cancellationToken);
+            var marshaller = new DeleteSuggesterRequestMarshaller();
+            var unmarshaller = DeleteSuggesterResponseUnmarshaller.GetInstance();
+            return Invoke<IRequest, DeleteSuggesterRequest, DeleteSuggesterResponse>(deleteSuggesterRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
-		internal DescribeDefaultSearchFieldResponse DescribeDefaultSearchField(DescribeDefaultSearchFieldRequest request)
+		internal DescribeAnalysisSchemesResponse DescribeAnalysisSchemes(DescribeAnalysisSchemesRequest request)
         {
-            var task = DescribeDefaultSearchFieldAsync(request);
+            var task = DescribeAnalysisSchemesAsync(request);
             try
             {
                 return task.Result;
@@ -387,25 +588,69 @@ namespace Amazon.CloudSearch
         }
 
         /// <summary>
-        /// <para>Gets the default search field configured for the search domain.</para>
+        /// <para>Gets the analysis schemes configured for a domain. An analysis scheme defines language-specific text processing options for a
+        /// <c>text</c> field. Can be limited to specific analysis schemes by name. By default, shows all analysis schemes and includes any pending
+        /// changes to the configuration. Set the <c>Deployed</c> option to <c>true</c> to show the active configuration and exclude pending changes.
+        /// For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html">Configuring Analysis Schemes</a> in the <i>Amazon CloudSearch Developer Guide</i> .</para>
         /// </summary>
         /// 
-        /// <param name="describeDefaultSearchFieldRequest">Container for the necessary parameters to execute the DescribeDefaultSearchField service
-        /// method on AmazonCloudSearch.</param>
+        /// <param name="describeAnalysisSchemesRequest">Container for the necessary parameters to execute the DescribeAnalysisSchemes service method on
+        /// AmazonCloudSearch.</param>
         /// 
-        /// <returns>The response from the DescribeDefaultSearchField service method, as returned by AmazonCloudSearch.</returns>
+        /// <returns>The response from the DescribeAnalysisSchemes service method, as returned by AmazonCloudSearch.</returns>
         /// 
-        /// <exception cref="T:Amazon.CloudSearch.Model.BaseException" />
-        /// <exception cref="T:Amazon.CloudSearch.Model.ResourceNotFoundException" />
         /// <exception cref="T:Amazon.CloudSearch.Model.InternalException" />
+        /// <exception cref="T:Amazon.CloudSearch.Model.ResourceNotFoundException" />
+        /// <exception cref="T:Amazon.CloudSearch.Model.BaseException" />
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public Task<DescribeDefaultSearchFieldResponse> DescribeDefaultSearchFieldAsync(DescribeDefaultSearchFieldRequest describeDefaultSearchFieldRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DescribeAnalysisSchemesResponse> DescribeAnalysisSchemesAsync(DescribeAnalysisSchemesRequest describeAnalysisSchemesRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeDefaultSearchFieldRequestMarshaller();
-            var unmarshaller = DescribeDefaultSearchFieldResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, DescribeDefaultSearchFieldRequest, DescribeDefaultSearchFieldResponse>(describeDefaultSearchFieldRequest, marshaller, unmarshaller, signer, cancellationToken);
+            var marshaller = new DescribeAnalysisSchemesRequestMarshaller();
+            var unmarshaller = DescribeAnalysisSchemesResponseUnmarshaller.GetInstance();
+            return Invoke<IRequest, DescribeAnalysisSchemesRequest, DescribeAnalysisSchemesResponse>(describeAnalysisSchemesRequest, marshaller, unmarshaller, signer, cancellationToken);
+        }
+ 
+		internal DescribeAvailabilityOptionsResponse DescribeAvailabilityOptions(DescribeAvailabilityOptionsRequest request)
+        {
+            var task = DescribeAvailabilityOptionsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// <para>Gets the availability options configured for a domain. By default, shows the configuration with any pending changes. Set the
+        /// <c>Deployed</c> option to <c>true</c> to show the active configuration and exclude pending changes. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-availability-options.html">Configuring Availability
+        /// Options</a> in the <i>Amazon CloudSearch Developer Guide</i> .</para>
+        /// </summary>
+        /// 
+        /// <param name="describeAvailabilityOptionsRequest">Container for the necessary parameters to execute the DescribeAvailabilityOptions service
+        /// method on AmazonCloudSearch.</param>
+        /// 
+        /// <returns>The response from the DescribeAvailabilityOptions service method, as returned by AmazonCloudSearch.</returns>
+        /// 
+        /// <exception cref="T:Amazon.CloudSearch.Model.InternalException" />
+        /// <exception cref="T:Amazon.CloudSearch.Model.InvalidTypeException" />
+        /// <exception cref="T:Amazon.CloudSearch.Model.DisabledOperationException" />
+        /// <exception cref="T:Amazon.CloudSearch.Model.ResourceNotFoundException" />
+        /// <exception cref="T:Amazon.CloudSearch.Model.LimitExceededException" />
+        /// <exception cref="T:Amazon.CloudSearch.Model.BaseException" />
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+		public Task<DescribeAvailabilityOptionsResponse> DescribeAvailabilityOptionsAsync(DescribeAvailabilityOptionsRequest describeAvailabilityOptionsRequest, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeAvailabilityOptionsRequestMarshaller();
+            var unmarshaller = DescribeAvailabilityOptionsResponseUnmarshaller.GetInstance();
+            return Invoke<IRequest, DescribeAvailabilityOptionsRequest, DescribeAvailabilityOptionsResponse>(describeAvailabilityOptionsRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DescribeDomainsResponse DescribeDomains(DescribeDomainsRequest request)
@@ -423,8 +668,9 @@ namespace Amazon.CloudSearch
         }
 
         /// <summary>
-        /// <para>Gets information about the search domains owned by this account. Can be limited to specific domains. Shows all domains by
-        /// default.</para>
+        /// <para>Gets information about the search domains owned by this account. Can be limited to specific domains. Shows all domains by default. For
+        /// more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getdomainstatus.html">Getting Information about
+        /// a Search Domain</a> in the <i>Amazon CloudSearch Developer Guide</i> .</para>
         /// </summary>
         /// 
         /// <param name="describeDomainsRequest">Container for the necessary parameters to execute the DescribeDomains service method on
@@ -432,8 +678,8 @@ namespace Amazon.CloudSearch
         /// 
         /// <returns>The response from the DescribeDomains service method, as returned by AmazonCloudSearch.</returns>
         /// 
-        /// <exception cref="T:Amazon.CloudSearch.Model.BaseException" />
         /// <exception cref="T:Amazon.CloudSearch.Model.InternalException" />
+        /// <exception cref="T:Amazon.CloudSearch.Model.BaseException" />
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -442,6 +688,45 @@ namespace Amazon.CloudSearch
             var marshaller = new DescribeDomainsRequestMarshaller();
             var unmarshaller = DescribeDomainsResponseUnmarshaller.GetInstance();
             return Invoke<IRequest, DescribeDomainsRequest, DescribeDomainsResponse>(describeDomainsRequest, marshaller, unmarshaller, signer, cancellationToken);
+        }
+ 
+		internal DescribeExpressionsResponse DescribeExpressions(DescribeExpressionsRequest request)
+        {
+            var task = DescribeExpressionsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// <para>Gets the expressions configured for the search domain. Can be limited to specific expressions by name. By default, shows all
+        /// expressions and includes any pending changes to the configuration. Set the <c>Deployed</c> option to <c>true</c> to show the active
+        /// configuration and exclude pending changes. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html">Configuring Expressions</a> in the
+        /// <i>Amazon CloudSearch Developer Guide</i> .</para>
+        /// </summary>
+        /// 
+        /// <param name="describeExpressionsRequest">Container for the necessary parameters to execute the DescribeExpressions service method on
+        /// AmazonCloudSearch.</param>
+        /// 
+        /// <returns>The response from the DescribeExpressions service method, as returned by AmazonCloudSearch.</returns>
+        /// 
+        /// <exception cref="T:Amazon.CloudSearch.Model.InternalException" />
+        /// <exception cref="T:Amazon.CloudSearch.Model.ResourceNotFoundException" />
+        /// <exception cref="T:Amazon.CloudSearch.Model.BaseException" />
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+		public Task<DescribeExpressionsResponse> DescribeExpressionsAsync(DescribeExpressionsRequest describeExpressionsRequest, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeExpressionsRequestMarshaller();
+            var unmarshaller = DescribeExpressionsResponseUnmarshaller.GetInstance();
+            return Invoke<IRequest, DescribeExpressionsRequest, DescribeExpressionsResponse>(describeExpressionsRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DescribeIndexFieldsResponse DescribeIndexFields(DescribeIndexFieldsRequest request)
@@ -459,8 +744,10 @@ namespace Amazon.CloudSearch
         }
 
         /// <summary>
-        /// <para>Gets information about the index fields configured for the search domain. Can be limited to specific fields by name. Shows all fields
-        /// by default.</para>
+        /// <para>Gets information about the index fields configured for the search domain. Can be limited to specific fields by name. By default,
+        /// shows all fields and includes any pending changes to the configuration. Set the <c>Deployed</c> option to <c>true</c> to show the active
+        /// configuration and exclude pending changes. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getdomainstatus.html">Getting Domain Information</a> in the <i>Amazon
+        /// CloudSearch Developer Guide</i> .</para>
         /// </summary>
         /// 
         /// <param name="describeIndexFieldsRequest">Container for the necessary parameters to execute the DescribeIndexFields service method on
@@ -468,9 +755,9 @@ namespace Amazon.CloudSearch
         /// 
         /// <returns>The response from the DescribeIndexFields service method, as returned by AmazonCloudSearch.</returns>
         /// 
-        /// <exception cref="T:Amazon.CloudSearch.Model.BaseException" />
-        /// <exception cref="T:Amazon.CloudSearch.Model.ResourceNotFoundException" />
         /// <exception cref="T:Amazon.CloudSearch.Model.InternalException" />
+        /// <exception cref="T:Amazon.CloudSearch.Model.ResourceNotFoundException" />
+        /// <exception cref="T:Amazon.CloudSearch.Model.BaseException" />
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -481,9 +768,9 @@ namespace Amazon.CloudSearch
             return Invoke<IRequest, DescribeIndexFieldsRequest, DescribeIndexFieldsResponse>(describeIndexFieldsRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
-		internal DescribeRankExpressionsResponse DescribeRankExpressions(DescribeRankExpressionsRequest request)
+		internal DescribeScalingParametersResponse DescribeScalingParameters(DescribeScalingParametersRequest request)
         {
-            var task = DescribeRankExpressionsAsync(request);
+            var task = DescribeScalingParametersAsync(request);
             try
             {
                 return task.Result;
@@ -496,26 +783,27 @@ namespace Amazon.CloudSearch
         }
 
         /// <summary>
-        /// <para>Gets the rank expressions configured for the search domain. Can be limited to specific rank expressions by name. Shows all rank
-        /// expressions by default. </para>
+        /// <para>Gets the scaling parameters configured for a domain. A domain's scaling parameters specify the desired search instance type and
+        /// replication count. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-scaling-options.html">Configuring Scaling Options</a> in the
+        /// <i>Amazon CloudSearch Developer Guide</i> .</para>
         /// </summary>
         /// 
-        /// <param name="describeRankExpressionsRequest">Container for the necessary parameters to execute the DescribeRankExpressions service method on
-        /// AmazonCloudSearch.</param>
+        /// <param name="describeScalingParametersRequest">Container for the necessary parameters to execute the DescribeScalingParameters service
+        /// method on AmazonCloudSearch.</param>
         /// 
-        /// <returns>The response from the DescribeRankExpressions service method, as returned by AmazonCloudSearch.</returns>
+        /// <returns>The response from the DescribeScalingParameters service method, as returned by AmazonCloudSearch.</returns>
         /// 
-        /// <exception cref="T:Amazon.CloudSearch.Model.BaseException" />
-        /// <exception cref="T:Amazon.CloudSearch.Model.ResourceNotFoundException" />
         /// <exception cref="T:Amazon.CloudSearch.Model.InternalException" />
+        /// <exception cref="T:Amazon.CloudSearch.Model.ResourceNotFoundException" />
+        /// <exception cref="T:Amazon.CloudSearch.Model.BaseException" />
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public Task<DescribeRankExpressionsResponse> DescribeRankExpressionsAsync(DescribeRankExpressionsRequest describeRankExpressionsRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DescribeScalingParametersResponse> DescribeScalingParametersAsync(DescribeScalingParametersRequest describeScalingParametersRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeRankExpressionsRequestMarshaller();
-            var unmarshaller = DescribeRankExpressionsResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, DescribeRankExpressionsRequest, DescribeRankExpressionsResponse>(describeRankExpressionsRequest, marshaller, unmarshaller, signer, cancellationToken);
+            var marshaller = new DescribeScalingParametersRequestMarshaller();
+            var unmarshaller = DescribeScalingParametersResponseUnmarshaller.GetInstance();
+            return Invoke<IRequest, DescribeScalingParametersRequest, DescribeScalingParametersResponse>(describeScalingParametersRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal DescribeServiceAccessPoliciesResponse DescribeServiceAccessPolicies(DescribeServiceAccessPoliciesRequest request)
@@ -533,7 +821,9 @@ namespace Amazon.CloudSearch
         }
 
         /// <summary>
-        /// <para>Gets information about the resource-based policies that control access to the domain's document and search services.</para>
+        /// <para>Gets information about the access policies that control access to the domain's document and search endpoints. By default, shows the
+        /// configuration with any pending changes. Set the <c>Deployed</c> option to <c>true</c> to show the active configuration and exclude pending
+        /// changes. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html">Configuring Access for a Search Domain</a> in the <i>Amazon CloudSearch Developer Guide</i> .</para>
         /// </summary>
         /// 
         /// <param name="describeServiceAccessPoliciesRequest">Container for the necessary parameters to execute the DescribeServiceAccessPolicies
@@ -541,9 +831,9 @@ namespace Amazon.CloudSearch
         /// 
         /// <returns>The response from the DescribeServiceAccessPolicies service method, as returned by AmazonCloudSearch.</returns>
         /// 
-        /// <exception cref="T:Amazon.CloudSearch.Model.BaseException" />
-        /// <exception cref="T:Amazon.CloudSearch.Model.ResourceNotFoundException" />
         /// <exception cref="T:Amazon.CloudSearch.Model.InternalException" />
+        /// <exception cref="T:Amazon.CloudSearch.Model.ResourceNotFoundException" />
+        /// <exception cref="T:Amazon.CloudSearch.Model.BaseException" />
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -554,9 +844,9 @@ namespace Amazon.CloudSearch
             return Invoke<IRequest, DescribeServiceAccessPoliciesRequest, DescribeServiceAccessPoliciesResponse>(describeServiceAccessPoliciesRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
-		internal DescribeStemmingOptionsResponse DescribeStemmingOptions(DescribeStemmingOptionsRequest request)
+		internal DescribeSuggestersResponse DescribeSuggesters(DescribeSuggestersRequest request)
         {
-            var task = DescribeStemmingOptionsAsync(request);
+            var task = DescribeSuggestersAsync(request);
             try
             {
                 return task.Result;
@@ -569,97 +859,29 @@ namespace Amazon.CloudSearch
         }
 
         /// <summary>
-        /// <para>Gets the stemming dictionary configured for the search domain.</para>
+        /// <para>Gets the suggesters configured for a domain. A suggester enables you to display possible matches before users finish typing their
+        /// queries. Can be limited to specific suggesters by name. By default, shows all suggesters and includes any pending changes to the
+        /// configuration. Set the <c>Deployed</c> option to <c>true</c> to show the active configuration and exclude pending changes. For more
+        /// information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-search-suggestions.html">Getting Search
+        /// Suggestions</a> in the <i>Amazon CloudSearch Developer Guide</i> .</para>
         /// </summary>
         /// 
-        /// <param name="describeStemmingOptionsRequest">Container for the necessary parameters to execute the DescribeStemmingOptions service method on
+        /// <param name="describeSuggestersRequest">Container for the necessary parameters to execute the DescribeSuggesters service method on
         /// AmazonCloudSearch.</param>
         /// 
-        /// <returns>The response from the DescribeStemmingOptions service method, as returned by AmazonCloudSearch.</returns>
+        /// <returns>The response from the DescribeSuggesters service method, as returned by AmazonCloudSearch.</returns>
         /// 
-        /// <exception cref="T:Amazon.CloudSearch.Model.BaseException" />
-        /// <exception cref="T:Amazon.CloudSearch.Model.ResourceNotFoundException" />
         /// <exception cref="T:Amazon.CloudSearch.Model.InternalException" />
+        /// <exception cref="T:Amazon.CloudSearch.Model.ResourceNotFoundException" />
+        /// <exception cref="T:Amazon.CloudSearch.Model.BaseException" />
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public Task<DescribeStemmingOptionsResponse> DescribeStemmingOptionsAsync(DescribeStemmingOptionsRequest describeStemmingOptionsRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<DescribeSuggestersResponse> DescribeSuggestersAsync(DescribeSuggestersRequest describeSuggestersRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new DescribeStemmingOptionsRequestMarshaller();
-            var unmarshaller = DescribeStemmingOptionsResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, DescribeStemmingOptionsRequest, DescribeStemmingOptionsResponse>(describeStemmingOptionsRequest, marshaller, unmarshaller, signer, cancellationToken);
-        }
- 
-		internal DescribeStopwordOptionsResponse DescribeStopwordOptions(DescribeStopwordOptionsRequest request)
-        {
-            var task = DescribeStopwordOptionsAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
-        }
-
-        /// <summary>
-        /// <para>Gets the stopwords configured for the search domain.</para>
-        /// </summary>
-        /// 
-        /// <param name="describeStopwordOptionsRequest">Container for the necessary parameters to execute the DescribeStopwordOptions service method on
-        /// AmazonCloudSearch.</param>
-        /// 
-        /// <returns>The response from the DescribeStopwordOptions service method, as returned by AmazonCloudSearch.</returns>
-        /// 
-        /// <exception cref="T:Amazon.CloudSearch.Model.BaseException" />
-        /// <exception cref="T:Amazon.CloudSearch.Model.ResourceNotFoundException" />
-        /// <exception cref="T:Amazon.CloudSearch.Model.InternalException" />
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-		public Task<DescribeStopwordOptionsResponse> DescribeStopwordOptionsAsync(DescribeStopwordOptionsRequest describeStopwordOptionsRequest, CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var marshaller = new DescribeStopwordOptionsRequestMarshaller();
-            var unmarshaller = DescribeStopwordOptionsResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, DescribeStopwordOptionsRequest, DescribeStopwordOptionsResponse>(describeStopwordOptionsRequest, marshaller, unmarshaller, signer, cancellationToken);
-        }
- 
-		internal DescribeSynonymOptionsResponse DescribeSynonymOptions(DescribeSynonymOptionsRequest request)
-        {
-            var task = DescribeSynonymOptionsAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
-        }
-
-        /// <summary>
-        /// <para>Gets the synonym dictionary configured for the search domain.</para>
-        /// </summary>
-        /// 
-        /// <param name="describeSynonymOptionsRequest">Container for the necessary parameters to execute the DescribeSynonymOptions service method on
-        /// AmazonCloudSearch.</param>
-        /// 
-        /// <returns>The response from the DescribeSynonymOptions service method, as returned by AmazonCloudSearch.</returns>
-        /// 
-        /// <exception cref="T:Amazon.CloudSearch.Model.BaseException" />
-        /// <exception cref="T:Amazon.CloudSearch.Model.ResourceNotFoundException" />
-        /// <exception cref="T:Amazon.CloudSearch.Model.InternalException" />
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-		public Task<DescribeSynonymOptionsResponse> DescribeSynonymOptionsAsync(DescribeSynonymOptionsRequest describeSynonymOptionsRequest, CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var marshaller = new DescribeSynonymOptionsRequestMarshaller();
-            var unmarshaller = DescribeSynonymOptionsResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, DescribeSynonymOptionsRequest, DescribeSynonymOptionsResponse>(describeSynonymOptionsRequest, marshaller, unmarshaller, signer, cancellationToken);
+            var marshaller = new DescribeSuggestersRequestMarshaller();
+            var unmarshaller = DescribeSuggestersResponseUnmarshaller.GetInstance();
+            return Invoke<IRequest, DescribeSuggestersRequest, DescribeSuggestersResponse>(describeSuggestersRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal IndexDocumentsResponse IndexDocuments(IndexDocumentsRequest request)
@@ -677,9 +899,8 @@ namespace Amazon.CloudSearch
         }
 
         /// <summary>
-        /// <para>Tells the search domain to start indexing its documents using the latest text processing options and <c>IndexFields</c> . This
-        /// operation must be invoked to make options whose OptionStatus has <c>OptionState</c> of <c>RequiresIndexDocuments</c> visible in search
-        /// results.</para>
+        /// <para>Tells the search domain to start indexing its documents using the latest indexing options. This operation must be invoked to activate
+        /// options whose OptionStatus is <c>RequiresIndexDocuments</c> .</para>
         /// </summary>
         /// 
         /// <param name="indexDocumentsRequest">Container for the necessary parameters to execute the IndexDocuments service method on
@@ -687,9 +908,9 @@ namespace Amazon.CloudSearch
         /// 
         /// <returns>The response from the IndexDocuments service method, as returned by AmazonCloudSearch.</returns>
         /// 
-        /// <exception cref="T:Amazon.CloudSearch.Model.BaseException" />
-        /// <exception cref="T:Amazon.CloudSearch.Model.ResourceNotFoundException" />
         /// <exception cref="T:Amazon.CloudSearch.Model.InternalException" />
+        /// <exception cref="T:Amazon.CloudSearch.Model.ResourceNotFoundException" />
+        /// <exception cref="T:Amazon.CloudSearch.Model.BaseException" />
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -700,9 +921,9 @@ namespace Amazon.CloudSearch
             return Invoke<IRequest, IndexDocumentsRequest, IndexDocumentsResponse>(indexDocumentsRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
-		internal UpdateDefaultSearchFieldResponse UpdateDefaultSearchField(UpdateDefaultSearchFieldRequest request)
+		internal ListDomainNamesResponse ListDomainNames(ListDomainNamesRequest request)
         {
-            var task = UpdateDefaultSearchFieldAsync(request);
+            var task = ListDomainNamesAsync(request);
             try
             {
                 return task.Result;
@@ -715,28 +936,107 @@ namespace Amazon.CloudSearch
         }
 
         /// <summary>
-        /// <para>Configures the default search field for the search domain. The default search field is the text field that is searched when a search
-        /// request does not specify which fields to search. By default, it is configured to include the contents of all of the domain's text fields.
-        /// </para>
+        /// <para>Lists all search domains owned by an account.</para>
         /// </summary>
         /// 
-        /// <param name="updateDefaultSearchFieldRequest">Container for the necessary parameters to execute the UpdateDefaultSearchField service method
-        /// on AmazonCloudSearch.</param>
+        /// <param name="listDomainNamesRequest">Container for the necessary parameters to execute the ListDomainNames service method on
+        /// AmazonCloudSearch.</param>
         /// 
-        /// <returns>The response from the UpdateDefaultSearchField service method, as returned by AmazonCloudSearch.</returns>
+        /// <returns>The response from the ListDomainNames service method, as returned by AmazonCloudSearch.</returns>
         /// 
         /// <exception cref="T:Amazon.CloudSearch.Model.BaseException" />
-        /// <exception cref="T:Amazon.CloudSearch.Model.ResourceNotFoundException" />
-        /// <exception cref="T:Amazon.CloudSearch.Model.InternalException" />
-        /// <exception cref="T:Amazon.CloudSearch.Model.InvalidTypeException" />
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-		public Task<UpdateDefaultSearchFieldResponse> UpdateDefaultSearchFieldAsync(UpdateDefaultSearchFieldRequest updateDefaultSearchFieldRequest, CancellationToken cancellationToken = default(CancellationToken))
+		public Task<ListDomainNamesResponse> ListDomainNamesAsync(ListDomainNamesRequest listDomainNamesRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
-            var marshaller = new UpdateDefaultSearchFieldRequestMarshaller();
-            var unmarshaller = UpdateDefaultSearchFieldResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, UpdateDefaultSearchFieldRequest, UpdateDefaultSearchFieldResponse>(updateDefaultSearchFieldRequest, marshaller, unmarshaller, signer, cancellationToken);
+            var marshaller = new ListDomainNamesRequestMarshaller();
+            var unmarshaller = ListDomainNamesResponseUnmarshaller.GetInstance();
+            return Invoke<IRequest, ListDomainNamesRequest, ListDomainNamesResponse>(listDomainNamesRequest, marshaller, unmarshaller, signer, cancellationToken);
+        }
+ 
+		internal UpdateAvailabilityOptionsResponse UpdateAvailabilityOptions(UpdateAvailabilityOptionsRequest request)
+        {
+            var task = UpdateAvailabilityOptionsAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// <para>Configures the availability options for a domain. Enabling the Multi-AZ option expands an Amazon CloudSearch domain to an additional
+        /// Availability Zone in the same Region to increase fault tolerance in the event of a service disruption. Changes to the Multi-AZ option can
+        /// take about half an hour to become active. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-availability-options.html">Configuring Availability
+        /// Options</a> in the <i>Amazon CloudSearch Developer Guide</i> .</para>
+        /// </summary>
+        /// 
+        /// <param name="updateAvailabilityOptionsRequest">Container for the necessary parameters to execute the UpdateAvailabilityOptions service
+        /// method on AmazonCloudSearch.</param>
+        /// 
+        /// <returns>The response from the UpdateAvailabilityOptions service method, as returned by AmazonCloudSearch.</returns>
+        /// 
+        /// <exception cref="T:Amazon.CloudSearch.Model.InternalException" />
+        /// <exception cref="T:Amazon.CloudSearch.Model.InvalidTypeException" />
+        /// <exception cref="T:Amazon.CloudSearch.Model.DisabledOperationException" />
+        /// <exception cref="T:Amazon.CloudSearch.Model.ResourceNotFoundException" />
+        /// <exception cref="T:Amazon.CloudSearch.Model.LimitExceededException" />
+        /// <exception cref="T:Amazon.CloudSearch.Model.BaseException" />
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+		public Task<UpdateAvailabilityOptionsResponse> UpdateAvailabilityOptionsAsync(UpdateAvailabilityOptionsRequest updateAvailabilityOptionsRequest, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateAvailabilityOptionsRequestMarshaller();
+            var unmarshaller = UpdateAvailabilityOptionsResponseUnmarshaller.GetInstance();
+            return Invoke<IRequest, UpdateAvailabilityOptionsRequest, UpdateAvailabilityOptionsResponse>(updateAvailabilityOptionsRequest, marshaller, unmarshaller, signer, cancellationToken);
+        }
+ 
+		internal UpdateScalingParametersResponse UpdateScalingParameters(UpdateScalingParametersRequest request)
+        {
+            var task = UpdateScalingParametersAsync(request);
+            try
+            {
+                return task.Result;
+            }
+            catch(AggregateException e)
+            {
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// <para>Configures scaling parameters for a domain. A domain's scaling parameters specify the desired search instance type and replication
+        /// count. Amazon CloudSearch will still automatically scale your domain based on the volume of data and traffic, but not below the desired
+        /// instance type and replication count. If the Multi-AZ option is enabled, these values control the resources used per Availability Zone. For
+        /// more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-scaling-options.html">Configuring
+        /// Scaling Options</a> in the <i>Amazon CloudSearch Developer Guide</i> . </para>
+        /// </summary>
+        /// 
+        /// <param name="updateScalingParametersRequest">Container for the necessary parameters to execute the UpdateScalingParameters service method on
+        /// AmazonCloudSearch.</param>
+        /// 
+        /// <returns>The response from the UpdateScalingParameters service method, as returned by AmazonCloudSearch.</returns>
+        /// 
+        /// <exception cref="T:Amazon.CloudSearch.Model.InternalException" />
+        /// <exception cref="T:Amazon.CloudSearch.Model.InvalidTypeException" />
+        /// <exception cref="T:Amazon.CloudSearch.Model.ResourceNotFoundException" />
+        /// <exception cref="T:Amazon.CloudSearch.Model.LimitExceededException" />
+        /// <exception cref="T:Amazon.CloudSearch.Model.BaseException" />
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+		public Task<UpdateScalingParametersResponse> UpdateScalingParametersAsync(UpdateScalingParametersRequest updateScalingParametersRequest, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateScalingParametersRequestMarshaller();
+            var unmarshaller = UpdateScalingParametersResponseUnmarshaller.GetInstance();
+            return Invoke<IRequest, UpdateScalingParametersRequest, UpdateScalingParametersResponse>(updateScalingParametersRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
  
 		internal UpdateServiceAccessPoliciesResponse UpdateServiceAccessPolicies(UpdateServiceAccessPoliciesRequest request)
@@ -754,8 +1054,8 @@ namespace Amazon.CloudSearch
         }
 
         /// <summary>
-        /// <para>Configures the policies that control access to the domain's document and search services. The maximum size of an access policy
-        /// document is 100 KB.</para>
+        /// <para>Configures the access rules that control access to the domain's document and search endpoints. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html"> Configuring Access for an Amazon CloudSearch
+        /// Domain</a> .</para>
         /// </summary>
         /// 
         /// <param name="updateServiceAccessPoliciesRequest">Container for the necessary parameters to execute the UpdateServiceAccessPolicies service
@@ -763,11 +1063,11 @@ namespace Amazon.CloudSearch
         /// 
         /// <returns>The response from the UpdateServiceAccessPolicies service method, as returned by AmazonCloudSearch.</returns>
         /// 
-        /// <exception cref="T:Amazon.CloudSearch.Model.BaseException" />
-        /// <exception cref="T:Amazon.CloudSearch.Model.ResourceNotFoundException" />
-        /// <exception cref="T:Amazon.CloudSearch.Model.LimitExceededException" />
         /// <exception cref="T:Amazon.CloudSearch.Model.InternalException" />
         /// <exception cref="T:Amazon.CloudSearch.Model.InvalidTypeException" />
+        /// <exception cref="T:Amazon.CloudSearch.Model.ResourceNotFoundException" />
+        /// <exception cref="T:Amazon.CloudSearch.Model.LimitExceededException" />
+        /// <exception cref="T:Amazon.CloudSearch.Model.BaseException" />
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -776,123 +1076,6 @@ namespace Amazon.CloudSearch
             var marshaller = new UpdateServiceAccessPoliciesRequestMarshaller();
             var unmarshaller = UpdateServiceAccessPoliciesResponseUnmarshaller.GetInstance();
             return Invoke<IRequest, UpdateServiceAccessPoliciesRequest, UpdateServiceAccessPoliciesResponse>(updateServiceAccessPoliciesRequest, marshaller, unmarshaller, signer, cancellationToken);
-        }
- 
-		internal UpdateStemmingOptionsResponse UpdateStemmingOptions(UpdateStemmingOptionsRequest request)
-        {
-            var task = UpdateStemmingOptionsAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
-        }
-
-        /// <summary>
-        /// <para>Configures a stemming dictionary for the search domain. The stemming dictionary is used during indexing and when processing search
-        /// requests. The maximum size of the stemming dictionary is 500 KB.</para>
-        /// </summary>
-        /// 
-        /// <param name="updateStemmingOptionsRequest">Container for the necessary parameters to execute the UpdateStemmingOptions service method on
-        /// AmazonCloudSearch.</param>
-        /// 
-        /// <returns>The response from the UpdateStemmingOptions service method, as returned by AmazonCloudSearch.</returns>
-        /// 
-        /// <exception cref="T:Amazon.CloudSearch.Model.BaseException" />
-        /// <exception cref="T:Amazon.CloudSearch.Model.ResourceNotFoundException" />
-        /// <exception cref="T:Amazon.CloudSearch.Model.LimitExceededException" />
-        /// <exception cref="T:Amazon.CloudSearch.Model.InternalException" />
-        /// <exception cref="T:Amazon.CloudSearch.Model.InvalidTypeException" />
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-		public Task<UpdateStemmingOptionsResponse> UpdateStemmingOptionsAsync(UpdateStemmingOptionsRequest updateStemmingOptionsRequest, CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var marshaller = new UpdateStemmingOptionsRequestMarshaller();
-            var unmarshaller = UpdateStemmingOptionsResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, UpdateStemmingOptionsRequest, UpdateStemmingOptionsResponse>(updateStemmingOptionsRequest, marshaller, unmarshaller, signer, cancellationToken);
-        }
- 
-		internal UpdateStopwordOptionsResponse UpdateStopwordOptions(UpdateStopwordOptionsRequest request)
-        {
-            var task = UpdateStopwordOptionsAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
-        }
-
-        /// <summary>
-        /// <para>Configures stopwords for the search domain. Stopwords are used during indexing and when processing search requests. The maximum size
-        /// of the stopwords dictionary is 10 KB.</para>
-        /// </summary>
-        /// 
-        /// <param name="updateStopwordOptionsRequest">Container for the necessary parameters to execute the UpdateStopwordOptions service method on
-        /// AmazonCloudSearch.</param>
-        /// 
-        /// <returns>The response from the UpdateStopwordOptions service method, as returned by AmazonCloudSearch.</returns>
-        /// 
-        /// <exception cref="T:Amazon.CloudSearch.Model.BaseException" />
-        /// <exception cref="T:Amazon.CloudSearch.Model.ResourceNotFoundException" />
-        /// <exception cref="T:Amazon.CloudSearch.Model.LimitExceededException" />
-        /// <exception cref="T:Amazon.CloudSearch.Model.InternalException" />
-        /// <exception cref="T:Amazon.CloudSearch.Model.InvalidTypeException" />
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-		public Task<UpdateStopwordOptionsResponse> UpdateStopwordOptionsAsync(UpdateStopwordOptionsRequest updateStopwordOptionsRequest, CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var marshaller = new UpdateStopwordOptionsRequestMarshaller();
-            var unmarshaller = UpdateStopwordOptionsResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, UpdateStopwordOptionsRequest, UpdateStopwordOptionsResponse>(updateStopwordOptionsRequest, marshaller, unmarshaller, signer, cancellationToken);
-        }
- 
-		internal UpdateSynonymOptionsResponse UpdateSynonymOptions(UpdateSynonymOptionsRequest request)
-        {
-            var task = UpdateSynonymOptionsAsync(request);
-            try
-            {
-                return task.Result;
-            }
-            catch(AggregateException e)
-            {
-                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
-                return null;
-            }
-        }
-
-        /// <summary>
-        /// <para>Configures a synonym dictionary for the search domain. The synonym dictionary is used during indexing to configure mappings for terms
-        /// that occur in text fields. The maximum size of the synonym dictionary is 100 KB. </para>
-        /// </summary>
-        /// 
-        /// <param name="updateSynonymOptionsRequest">Container for the necessary parameters to execute the UpdateSynonymOptions service method on
-        /// AmazonCloudSearch.</param>
-        /// 
-        /// <returns>The response from the UpdateSynonymOptions service method, as returned by AmazonCloudSearch.</returns>
-        /// 
-        /// <exception cref="T:Amazon.CloudSearch.Model.BaseException" />
-        /// <exception cref="T:Amazon.CloudSearch.Model.ResourceNotFoundException" />
-        /// <exception cref="T:Amazon.CloudSearch.Model.LimitExceededException" />
-        /// <exception cref="T:Amazon.CloudSearch.Model.InternalException" />
-        /// <exception cref="T:Amazon.CloudSearch.Model.InvalidTypeException" />
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-		public Task<UpdateSynonymOptionsResponse> UpdateSynonymOptionsAsync(UpdateSynonymOptionsRequest updateSynonymOptionsRequest, CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var marshaller = new UpdateSynonymOptionsRequestMarshaller();
-            var unmarshaller = UpdateSynonymOptionsResponseUnmarshaller.GetInstance();
-            return Invoke<IRequest, UpdateSynonymOptionsRequest, UpdateSynonymOptionsResponse>(updateSynonymOptionsRequest, marshaller, unmarshaller, signer, cancellationToken);
         }
     }
 }

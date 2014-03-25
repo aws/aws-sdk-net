@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -104,6 +104,36 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ImportTablesNotStarted/member", targetDepth))
                     {
                         response.ImportTablesNotStarted.Add(StringUnmarshaller.GetInstance().Unmarshall(context));
+                            
+                        continue;
+                    }
+                    if (context.TestExpression("AvgResizeRateInMegaBytesPerSecond", targetDepth))
+                    {
+                        response.AvgResizeRateInMegaBytesPerSecond = DoubleUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
+                    }
+                    if (context.TestExpression("TotalResizeDataInMegaBytes", targetDepth))
+                    {
+                        response.TotalResizeDataInMegaBytes = LongUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
+                    }
+                    if (context.TestExpression("ProgressInMegaBytes", targetDepth))
+                    {
+                        response.ProgressInMegaBytes = LongUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
+                    }
+                    if (context.TestExpression("ElapsedTimeInSeconds", targetDepth))
+                    {
+                        response.ElapsedTimeInSeconds = LongUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
+                    }
+                    if (context.TestExpression("EstimatedTimeToCompletionInSeconds", targetDepth))
+                    {
+                        response.EstimatedTimeToCompletionInSeconds = LongUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
                     }

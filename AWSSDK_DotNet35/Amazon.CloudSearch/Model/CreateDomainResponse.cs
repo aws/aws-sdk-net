@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -24,11 +24,11 @@ namespace Amazon.CloudSearch.Model
     /// <summary>
     /// Returns information about the  CreateDomain response and response metadata.
     /// </summary>
-    public class CreateDomainResponse : CreateDomainResult
+    public partial class CreateDomainResponse : CreateDomainResult
     {
         /// <summary>
         /// Gets and sets the CreateDomainResult property.
-        /// A response message that contains the status of a newly created domain.
+        /// The result of a CreateDomainRequest. Contains the status of a newly created domain.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the CreateDomainResult class are now available on the CreateDomainResponse class. You should use the properties on CreateDomainResponse instead of accessing them through CreateDomainResult.")]
         public CreateDomainResult CreateDomainResult

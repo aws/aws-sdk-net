@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -51,8 +51,9 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Indicates whether DNS resolution is supported for the VPC. If this attribute is <c>true</c>, the Amazon DNS server resolves DNS hostnames
-        /// for your instances to their corresponding IP addresses; otherwise, it does not.
+        /// Indicates whether the DNS resolution is supported for the VPC. If this attribute is <c>false</c>, the Amazon provided DNS service in the VPC
+        /// that resolves public DNS hostnames to IP addresses is not enabled. If this attribute is <c>true</c>, queries to the Amazon provided DNS
+        /// server at the 169.254.169.253 IP address, or the reserved IP address at the base of the VPC network range "plus two" will succeed.
         ///  
         /// </summary>
         public bool EnableDnsSupport

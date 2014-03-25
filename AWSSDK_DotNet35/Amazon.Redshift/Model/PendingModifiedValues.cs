@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -24,7 +24,7 @@ namespace Amazon.Redshift.Model
     /// <para> Describes cluster attributes that are in a pending state. A change to one or more the attributes was requested and is in progress or
     /// will be applied. </para>
     /// </summary>
-    public class PendingModifiedValues
+    public partial class PendingModifiedValues
     {
         
         private string masterUserPassword;
@@ -36,7 +36,7 @@ namespace Amazon.Redshift.Model
 
 
         /// <summary>
-        /// The pending or in-progress change of the master password for the cluster.
+        /// The pending or in-progress change of the master user password for the cluster.
         ///  
         /// </summary>
         public string MasterUserPassword

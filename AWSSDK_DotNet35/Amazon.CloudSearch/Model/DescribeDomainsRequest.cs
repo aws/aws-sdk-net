@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,8 +25,9 @@ namespace Amazon.CloudSearch.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeDomains operation.
-    /// <para>Gets information about the search domains owned by this account. Can be limited to specific domains. Shows all domains by
-    /// default.</para>
+    /// <para>Gets information about the search domains owned by this account. Can be limited to specific domains. Shows all domains by default. For
+    /// more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getdomainstatus.html" >Getting Information about
+    /// a Search Domain</a> in the <i>Amazon CloudSearch Developer Guide</i> .</para>
     /// </summary>
     public partial class DescribeDomainsRequest : AmazonCloudSearchRequest
     {
@@ -34,7 +35,7 @@ namespace Amazon.CloudSearch.Model
 
 
         /// <summary>
-        /// Limits the DescribeDomains response to the specified search domains.
+        /// The names of the domains you want to include in the response.
         ///  
         /// </summary>
         public List<string> DomainNames

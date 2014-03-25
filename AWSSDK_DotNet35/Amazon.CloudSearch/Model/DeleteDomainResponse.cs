@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -24,11 +24,12 @@ namespace Amazon.CloudSearch.Model
     /// <summary>
     /// Returns information about the  DeleteDomain response and response metadata.
     /// </summary>
-    public class DeleteDomainResponse : DeleteDomainResult
+    public partial class DeleteDomainResponse : DeleteDomainResult
     {
         /// <summary>
         /// Gets and sets the DeleteDomainResult property.
-        /// A response message that contains the status of a newly deleted domain, or no status if the domain has already been completely deleted.
+        /// The result of a DeleteDomain request. Contains the status of a newly deleted domain, or no status if the domain has already been completely
+        /// deleted.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DeleteDomainResult class are now available on the DeleteDomainResponse class. You should use the properties on DeleteDomainResponse instead of accessing them through DeleteDomainResult.")]
         public DeleteDomainResult DeleteDomainResult

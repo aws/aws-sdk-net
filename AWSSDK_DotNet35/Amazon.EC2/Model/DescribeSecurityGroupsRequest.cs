@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -74,12 +74,13 @@ namespace Amazon.EC2.Model
         /// One or more filters. <ul> <li> <c>description</c> - The description of the security group. </li> <li> <c>group-id</c> - The ID of the
         /// security group. </li> <li> <c>group-name</c> - The name of the security group. </li> <li> <c>ip-permission.cidr</c> - A CIDR range that has
         /// been granted permission. </li> <li> <c>ip-permission.from-port</c> - The start of port range for the TCP and UDP protocols, or an ICMP type
-        /// number. </li> <li> <c>ip-permission.group-name</c> - The name of a security group that has been granted permission. </li> <li>
-        /// <c>ip-permission.protocol</c> - The IP protocol for the permission (<c>tcp</c> | <c>udp</c> | <c>icmp</c> or a protocol number). </li> <li>
-        /// <c>ip-permission.to-port</c> - The end of port range for the TCP and UDP protocols, or an ICMP code. </li> <li> <c>ip-permission.user-id</c>
-        /// - The ID of an AWS account that has been granted permission. </li> <li> <c>owner-id</c> - The AWS account ID of the owner of the security
-        /// group. </li> <li> <c>tag-key</c> - The key of a tag assigned to the security group. </li> <li> <c>tag-value</c> - The value of a tag
-        /// assigned to the security group. </li> <li> <c>vpc-id</c> - The ID of the VPC specified when the security group was created. </li> </ul>
+        /// number. </li> <li> <c>ip-permission.group-id</c> - The ID of a security group that has been granted permission. </li> <li>
+        /// <c>ip-permission.group-name</c> - The name of a security group that has been granted permission. </li> <li> <c>ip-permission.protocol</c> -
+        /// The IP protocol for the permission (<c>tcp</c> | <c>udp</c> | <c>icmp</c> or a protocol number). </li> <li> <c>ip-permission.to-port</c> -
+        /// The end of port range for the TCP and UDP protocols, or an ICMP code. </li> <li> <c>ip-permission.user-id</c> - The ID of an AWS account
+        /// that has been granted permission. </li> <li> <c>owner-id</c> - The AWS account ID of the owner of the security group. </li> <li>
+        /// <c>tag-key</c> - The key of a tag assigned to the security group. </li> <li> <c>tag-value</c> - The value of a tag assigned to the security
+        /// group. </li> <li> <c>vpc-id</c> - The ID of the VPC specified when the security group was created. </li> </ul>
         ///  
         /// </summary>
         public List<Filter> Filters

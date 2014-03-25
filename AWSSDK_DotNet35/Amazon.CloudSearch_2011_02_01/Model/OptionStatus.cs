@@ -1,0 +1,137 @@
+/*
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+namespace Amazon.CloudSearch_2011_02_01.Model
+{
+    /// <summary>
+    /// <para>The status of an option, including when it was last updated and whether it is actively in use for searches.</para>
+    /// </summary>
+    public class OptionStatus
+    {
+        
+        private DateTime? creationDate;
+        private DateTime? updateDate;
+        private int? updateVersion;
+        private OptionState state;
+        private bool? pendingDeletion;
+
+
+        /// <summary>
+        /// A timestamp for when this option was created.
+        ///  
+        /// </summary>
+        public DateTime CreationDate
+        {
+            get { return this.creationDate ?? default(DateTime); }
+            set { this.creationDate = value; }
+        }
+
+        // Check to see if CreationDate property is set
+        internal bool IsSetCreationDate()
+        {
+            return this.creationDate.HasValue;
+        }
+
+        /// <summary>
+        /// A timestamp for when this option was last updated.
+        ///  
+        /// </summary>
+        public DateTime UpdateDate
+        {
+            get { return this.updateDate ?? default(DateTime); }
+            set { this.updateDate = value; }
+        }
+
+        // Check to see if UpdateDate property is set
+        internal bool IsSetUpdateDate()
+        {
+            return this.updateDate.HasValue;
+        }
+
+        /// <summary>
+        /// A unique integer that indicates when this option was last updated.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Range</term>
+        ///         <description>0 - </description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
+        public int UpdateVersion
+        {
+            get { return this.updateVersion ?? default(int); }
+            set { this.updateVersion = value; }
+        }
+
+        // Check to see if UpdateVersion property is set
+        internal bool IsSetUpdateVersion()
+        {
+            return this.updateVersion.HasValue;
+        }
+
+        /// <summary>
+        /// The state of processing a change to an option. Possible values:<ul> <li><c>RequiresIndexDocuments</c>: the option's latest value will not be
+        /// visible in searches until <a>IndexDocuments</a> has been called and indexing is complete.</li> <li><c>Processing</c>: the option's latest
+        /// value is not yet visible in all searches but is in the process of being activated. </li> <li><c>Active</c>: the option's latest value is
+        /// completely visible. Any warnings or messages generated during processing are provided in <c>Diagnostics</c>.</li> </ul>
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>RequiresIndexDocuments, Processing, Active</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
+        public OptionState State
+        {
+            get { return this.state; }
+            set { this.state = value; }
+        }
+
+        // Check to see if State property is set
+        internal bool IsSetState()
+        {
+            return this.state != null;
+        }
+
+        /// <summary>
+        /// Indicates that the option will be deleted once processing is complete.
+        ///  
+        /// </summary>
+        public bool PendingDeletion
+        {
+            get { return this.pendingDeletion ?? default(bool); }
+            set { this.pendingDeletion = value; }
+        }
+
+        // Check to see if PendingDeletion property is set
+        internal bool IsSetPendingDeletion()
+        {
+            return this.pendingDeletion.HasValue;
+        }
+    }
+}

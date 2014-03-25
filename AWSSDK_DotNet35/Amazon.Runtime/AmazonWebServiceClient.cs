@@ -472,7 +472,7 @@ namespace Amazon.Runtime
             {
                 if (we != null && WebExceptionStatusesToThrowOn.Contains(we.Status))
                 {
-                    throw new AmazonServiceException(we);
+                    throw new AmazonServiceException("Encountered a non retryable WebException : " + we.Status, we);
                 }
 
                 if (httpErrorResponse == null ||
@@ -486,7 +486,10 @@ namespace Amazon.Runtime
                         pauseExponentially(asyncResult);
                         return true;
                     }
-                    throw new AmazonServiceException(we);
+                    var errorMessage = string.Format(CultureInfo.InvariantCulture,
+                        "Encountered a WebException ({0}), the request cannot be retried. Either the maximum number of retries has been exceeded ({1}/{2}) or the request is using a non-seekable stream.",
+                        we.Status, asyncResult.RetriesAttempt, Config.MaxErrorRetry);
+                    throw new AmazonServiceException(errorMessage, we);
                 }
 
                 statusCode = httpErrorResponse.StatusCode;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -24,32 +24,16 @@ namespace Amazon.CloudSearch.Model
     /// <para>The endpoint to which service requests can be submitted, including the actual URL prefix for sending requests and the Amazon Resource
     /// Name (ARN) so the endpoint can be referenced in other API calls such as UpdateServiceAccessPolicies.</para>
     /// </summary>
-    public class ServiceEndpoint
+    public partial class ServiceEndpoint
     {
         
-        private string arn;
         private string endpoint;
 
 
         /// <summary>
-        /// An Amazon Resource Name (ARN). See <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
-        /// target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS Identity and Access Management</i> for more information.
-        ///  
-        /// </summary>
-        public string Arn
-        {
-            get { return this.arn; }
-            set { this.arn = value; }
-        }
-
-        // Check to see if Arn property is set
-        internal bool IsSetArn()
-        {
-            return this.arn != null;
-        }
-
-        /// <summary>
-        /// The URL (including /version/pathPrefix) to which service requests can be submitted.
+        /// The URL to which service requests can be submitted. Includes the API version and path prefix. For example,
+        /// <c>search-imdb-movies-oopcnjfn6ugofer3zx5iadxxca.eu-west-1.cloudsearch.amazonaws.com/2013-01-01/search</c> or
+        /// <c>doc-imdb-movies-oopcnjfn6ugofer3zx5iadxxca.eu-west-1.cloudsearch.amazonaws.com/2013-01-01/documents/batch</c>.
         ///  
         /// </summary>
         public string Endpoint

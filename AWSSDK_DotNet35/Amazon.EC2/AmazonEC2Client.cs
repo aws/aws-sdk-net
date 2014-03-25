@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -208,6 +208,73 @@ namespace Amazon.EC2
         #endregion
 
 
+        #region AcceptVpcPeeringConnection
+
+        /// <summary>
+        /// <para>Accept a VPC peering connection request. To accept a request, the VPC peering connection must be in the <c>pending-acceptance</c>
+        /// state, and you must be the owner of the peer VPC. Use the <c>DescribeVpcPeeringConnections</c> request to view your outstanding VPC peering
+        /// connection requests.</para>
+        /// </summary>
+        /// 
+        /// <param name="acceptVpcPeeringConnectionRequest">Container for the necessary parameters to execute the AcceptVpcPeeringConnection service
+        ///          method on AmazonEC2.</param>
+        /// 
+        /// <returns>The response from the AcceptVpcPeeringConnection service method, as returned by AmazonEC2.</returns>
+        /// 
+        public AcceptVpcPeeringConnectionResponse AcceptVpcPeeringConnection(AcceptVpcPeeringConnectionRequest acceptVpcPeeringConnectionRequest)
+        {
+            IAsyncResult asyncResult = invokeAcceptVpcPeeringConnection(acceptVpcPeeringConnectionRequest, null, null, true);
+            return EndAcceptVpcPeeringConnection(asyncResult);
+        }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AcceptVpcPeeringConnection operation.
+        /// <seealso cref="Amazon.EC2.IAmazonEC2.AcceptVpcPeeringConnection"/>
+        /// </summary>
+        /// 
+        /// <param name="acceptVpcPeeringConnectionRequest">Container for the necessary parameters to execute the AcceptVpcPeeringConnection operation
+        ///          on AmazonEC2.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
+        ///         EndAcceptVpcPeeringConnection operation.</returns>
+        public IAsyncResult BeginAcceptVpcPeeringConnection(AcceptVpcPeeringConnectionRequest acceptVpcPeeringConnectionRequest, AsyncCallback callback, object state)
+        {
+            return invokeAcceptVpcPeeringConnection(acceptVpcPeeringConnectionRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the AcceptVpcPeeringConnection operation.
+        /// <seealso cref="Amazon.EC2.IAmazonEC2.AcceptVpcPeeringConnection"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAcceptVpcPeeringConnection.</param>
+        /// 
+        /// <returns>Returns a AcceptVpcPeeringConnectionResult from AmazonEC2.</returns>
+        public AcceptVpcPeeringConnectionResponse EndAcceptVpcPeeringConnection(IAsyncResult asyncResult)
+        {
+            return endOperation<AcceptVpcPeeringConnectionResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeAcceptVpcPeeringConnection(AcceptVpcPeeringConnectionRequest acceptVpcPeeringConnectionRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new AcceptVpcPeeringConnectionRequestMarshaller().Marshall(acceptVpcPeeringConnectionRequest);
+            var unmarshaller = AcceptVpcPeeringConnectionResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        #endregion
+    
         #region AllocateAddress
 
         /// <summary>
@@ -2302,8 +2369,9 @@ namespace Amazon.EC2
 
         /// <summary>
         /// <para>Creates a route in a route table within a VPC.</para> <para>You must specify one of the following targets: Internet gateway, NAT
-        /// instance, or network interface.</para> <para>When determining how to route traffic, we use the route with the most specific match. For
-        /// example, let's say the traffic is destined for <c>192.0.2.3</c> , and the route table includes the following two routes:</para>
+        /// instance, VPC peering connection, or network interface.</para> <para>When determining how to route traffic, we use the route with the most
+        /// specific match. For example, let's say the traffic is destined for <c>192.0.2.3</c> , and the route table includes the following two
+        /// routes:</para>
         /// <ul>
         /// <li> <para> <c>192.0.2.0/24</c> (goes to some target A)</para> </li>
         /// <li> <para> <c>192.0.2.0/28</c> (goes to some target B)</para> </li>
@@ -2905,6 +2973,75 @@ namespace Amazon.EC2
         {
             IRequest irequest = new CreateVpcRequestMarshaller().Marshall(createVpcRequest);
             var unmarshaller = CreateVpcResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        #endregion
+    
+        #region CreateVpcPeeringConnection
+
+        /// <summary>
+        /// <para>Requests a VPC peering connection between two VPCs: a requester VPC that you own and a peer VPC with which to create the connection.
+        /// The peer VPC can belong to another AWS account. The requester VPC and peer VPC cannot have overlapping CIDR blocks.</para> <para>The owner
+        /// of the peer VPC must accept the the peering request to activate the peering connection. The VPC peering connection request expires after 7
+        /// days, after which it cannot be accepted or rejected.</para> <para>A <c>CreateVpcPeeringConnection</c> request between VPCs with overlapping
+        /// CIDR blocks results in the VPC peering connection having a status of <c>failed</c> .</para>
+        /// </summary>
+        /// 
+        /// <param name="createVpcPeeringConnectionRequest">Container for the necessary parameters to execute the CreateVpcPeeringConnection service
+        ///          method on AmazonEC2.</param>
+        /// 
+        /// <returns>The response from the CreateVpcPeeringConnection service method, as returned by AmazonEC2.</returns>
+        /// 
+        public CreateVpcPeeringConnectionResponse CreateVpcPeeringConnection(CreateVpcPeeringConnectionRequest createVpcPeeringConnectionRequest)
+        {
+            IAsyncResult asyncResult = invokeCreateVpcPeeringConnection(createVpcPeeringConnectionRequest, null, null, true);
+            return EndCreateVpcPeeringConnection(asyncResult);
+        }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateVpcPeeringConnection operation.
+        /// <seealso cref="Amazon.EC2.IAmazonEC2.CreateVpcPeeringConnection"/>
+        /// </summary>
+        /// 
+        /// <param name="createVpcPeeringConnectionRequest">Container for the necessary parameters to execute the CreateVpcPeeringConnection operation
+        ///          on AmazonEC2.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
+        ///         EndCreateVpcPeeringConnection operation.</returns>
+        public IAsyncResult BeginCreateVpcPeeringConnection(CreateVpcPeeringConnectionRequest createVpcPeeringConnectionRequest, AsyncCallback callback, object state)
+        {
+            return invokeCreateVpcPeeringConnection(createVpcPeeringConnectionRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the CreateVpcPeeringConnection operation.
+        /// <seealso cref="Amazon.EC2.IAmazonEC2.CreateVpcPeeringConnection"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateVpcPeeringConnection.</param>
+        /// 
+        /// <returns>Returns a CreateVpcPeeringConnectionResult from AmazonEC2.</returns>
+        public CreateVpcPeeringConnectionResponse EndCreateVpcPeeringConnection(IAsyncResult asyncResult)
+        {
+            return endOperation<CreateVpcPeeringConnectionResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeCreateVpcPeeringConnection(CreateVpcPeeringConnectionRequest createVpcPeeringConnectionRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new CreateVpcPeeringConnectionRequestMarshaller().Marshall(createVpcPeeringConnectionRequest);
+            var unmarshaller = CreateVpcPeeringConnectionResponseUnmarshaller.GetInstance();
             AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
             Invoke(result);
             return result;
@@ -4120,6 +4257,66 @@ namespace Amazon.EC2
 
         #endregion
     
+        #region DeleteVpcPeeringConnection
+
+        /// <summary>
+        /// <para>Deletes a VPC peering connection. Either the owner of the requester VPC or the owner of the peer VPC can delete the VPC peering
+        /// connection if it's in the <c>active</c> state. The owner of the requester VPC can delete a VPC peering connection in the
+        /// <c>pending-acceptance</c> state.</para>
+        /// </summary>
+        /// 
+        /// <param name="deleteVpcPeeringConnectionRequest">Container for the necessary parameters to execute the DeleteVpcPeeringConnection service
+        ///          method on AmazonEC2.</param>
+        /// 
+        public DeleteVpcPeeringConnectionResponse DeleteVpcPeeringConnection(DeleteVpcPeeringConnectionRequest deleteVpcPeeringConnectionRequest)
+        {
+            IAsyncResult asyncResult = invokeDeleteVpcPeeringConnection(deleteVpcPeeringConnectionRequest, null, null, true);
+            return EndDeleteVpcPeeringConnection(asyncResult);
+        }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteVpcPeeringConnection operation.
+        /// <seealso cref="Amazon.EC2.IAmazonEC2.DeleteVpcPeeringConnection"/>
+        /// </summary>
+        /// 
+        /// <param name="deleteVpcPeeringConnectionRequest">Container for the necessary parameters to execute the DeleteVpcPeeringConnection operation
+        ///          on AmazonEC2.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        public IAsyncResult BeginDeleteVpcPeeringConnection(DeleteVpcPeeringConnectionRequest deleteVpcPeeringConnectionRequest, AsyncCallback callback, object state)
+        {
+            return invokeDeleteVpcPeeringConnection(deleteVpcPeeringConnectionRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the DeleteVpcPeeringConnection operation.
+        /// <seealso cref="Amazon.EC2.IAmazonEC2.DeleteVpcPeeringConnection"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteVpcPeeringConnection.</param>
+        public DeleteVpcPeeringConnectionResponse EndDeleteVpcPeeringConnection(IAsyncResult asyncResult)
+        {
+            return endOperation<DeleteVpcPeeringConnectionResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeDeleteVpcPeeringConnection(DeleteVpcPeeringConnectionRequest deleteVpcPeeringConnectionRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new DeleteVpcPeeringConnectionRequestMarshaller().Marshall(deleteVpcPeeringConnectionRequest);
+            var unmarshaller = DeleteVpcPeeringConnectionResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        #endregion
+    
         #region DeleteVpnConnection
 
         /// <summary>
@@ -5002,7 +5199,7 @@ namespace Amazon.EC2
         #region DescribeImageAttribute
 
         /// <summary>
-        /// <para>Describes an attributes of an AMI. You can specify only one attribute at a time.</para>
+        /// <para>Describes the specified attribute of the specified AMI. You can specify only one attribute at a time.</para>
         /// </summary>
         /// 
         /// <param name="describeImageAttributeRequest">Container for the necessary parameters to execute the DescribeImageAttribute service method on
@@ -5147,7 +5344,7 @@ namespace Amazon.EC2
         #region DescribeInstanceAttribute
 
         /// <summary>
-        /// <para>Describes an attribute of the specified instance. You can specify only one attribute at a time.</para>
+        /// <para>Describes the specified attribute of the specified instance. You can specify only one attribute at a time.</para>
         /// </summary>
         /// 
         /// <param name="describeInstanceAttributeRequest">Container for the necessary parameters to execute the DescribeInstanceAttribute service
@@ -6475,9 +6672,9 @@ namespace Amazon.EC2
         #region DescribeSnapshotAttribute
 
         /// <summary>
-        /// <para>Describes an attribute of the specified snapshot. You can specify only one attribute at a time.</para> <para>For more information
-        /// about Amazon EBS snapshots, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html" >Amazon EBS Snapshots</a> in
-        /// the <i>Amazon Elastic Compute Cloud User Guide</i> .</para>
+        /// <para>Describes the specified attribute of the specified snapshot. You can specify only one attribute at a time.</para> <para>For more
+        /// information about Amazon EBS snapshots, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html" >Amazon EBS
+        /// Snapshots</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> .</para>
         /// </summary>
         /// 
         /// <param name="describeSnapshotAttributeRequest">Container for the necessary parameters to execute the DescribeSnapshotAttribute service
@@ -7401,6 +7598,83 @@ namespace Amazon.EC2
             return result;
         }
         
+        
+
+        #endregion
+    
+        #region DescribeVpcPeeringConnections
+
+        /// <summary>
+        /// <para>Describes one or more of your VPC peering connections.</para>
+        /// </summary>
+        /// 
+        /// <param name="describeVpcPeeringConnectionsRequest">Container for the necessary parameters to execute the DescribeVpcPeeringConnections
+        ///          service method on AmazonEC2.</param>
+        /// 
+        /// <returns>The response from the DescribeVpcPeeringConnections service method, as returned by AmazonEC2.</returns>
+        /// 
+        public DescribeVpcPeeringConnectionsResponse DescribeVpcPeeringConnections(DescribeVpcPeeringConnectionsRequest describeVpcPeeringConnectionsRequest)
+        {
+            IAsyncResult asyncResult = invokeDescribeVpcPeeringConnections(describeVpcPeeringConnectionsRequest, null, null, true);
+            return EndDescribeVpcPeeringConnections(asyncResult);
+        }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeVpcPeeringConnections operation.
+        /// <seealso cref="Amazon.EC2.IAmazonEC2.DescribeVpcPeeringConnections"/>
+        /// </summary>
+        /// 
+        /// <param name="describeVpcPeeringConnectionsRequest">Container for the necessary parameters to execute the DescribeVpcPeeringConnections
+        ///          operation on AmazonEC2.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking
+        ///         EndDescribeVpcPeeringConnections operation.</returns>
+        public IAsyncResult BeginDescribeVpcPeeringConnections(DescribeVpcPeeringConnectionsRequest describeVpcPeeringConnectionsRequest, AsyncCallback callback, object state)
+        {
+            return invokeDescribeVpcPeeringConnections(describeVpcPeeringConnectionsRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the DescribeVpcPeeringConnections operation.
+        /// <seealso cref="Amazon.EC2.IAmazonEC2.DescribeVpcPeeringConnections"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeVpcPeeringConnections.</param>
+        /// 
+        /// <returns>Returns a DescribeVpcPeeringConnectionsResult from AmazonEC2.</returns>
+        public DescribeVpcPeeringConnectionsResponse EndDescribeVpcPeeringConnections(IAsyncResult asyncResult)
+        {
+            return endOperation<DescribeVpcPeeringConnectionsResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeDescribeVpcPeeringConnections(DescribeVpcPeeringConnectionsRequest describeVpcPeeringConnectionsRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new DescribeVpcPeeringConnectionsRequestMarshaller().Marshall(describeVpcPeeringConnectionsRequest);
+            var unmarshaller = DescribeVpcPeeringConnectionsResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        /// <summary>
+        /// <para>Describes one or more of your VPC peering connections.</para>
+        /// </summary>
+        /// 
+        /// <returns>The response from the DescribeVpcPeeringConnections service method, as returned by AmazonEC2.</returns>
+        /// 
+        public DescribeVpcPeeringConnectionsResponse DescribeVpcPeeringConnections()
+        {
+            return DescribeVpcPeeringConnections(new DescribeVpcPeeringConnectionsRequest());
+        }
         
 
         #endregion
@@ -9211,6 +9485,65 @@ namespace Amazon.EC2
 
         #endregion
     
+        #region RejectVpcPeeringConnection
+
+        /// <summary>
+        /// <para>Rejects a VPC peering connection request. The VPC peering connection must be in the <c>pending-acceptance</c> state. Use the
+        /// <c>DescribeVpcPeeringConnections</c> request to view your outstanding VPC peering connection requests.</para>
+        /// </summary>
+        /// 
+        /// <param name="rejectVpcPeeringConnectionRequest">Container for the necessary parameters to execute the RejectVpcPeeringConnection service
+        ///          method on AmazonEC2.</param>
+        /// 
+        public RejectVpcPeeringConnectionResponse RejectVpcPeeringConnection(RejectVpcPeeringConnectionRequest rejectVpcPeeringConnectionRequest)
+        {
+            IAsyncResult asyncResult = invokeRejectVpcPeeringConnection(rejectVpcPeeringConnectionRequest, null, null, true);
+            return EndRejectVpcPeeringConnection(asyncResult);
+        }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RejectVpcPeeringConnection operation.
+        /// <seealso cref="Amazon.EC2.IAmazonEC2.RejectVpcPeeringConnection"/>
+        /// </summary>
+        /// 
+        /// <param name="rejectVpcPeeringConnectionRequest">Container for the necessary parameters to execute the RejectVpcPeeringConnection operation
+        ///          on AmazonEC2.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        public IAsyncResult BeginRejectVpcPeeringConnection(RejectVpcPeeringConnectionRequest rejectVpcPeeringConnectionRequest, AsyncCallback callback, object state)
+        {
+            return invokeRejectVpcPeeringConnection(rejectVpcPeeringConnectionRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the RejectVpcPeeringConnection operation.
+        /// <seealso cref="Amazon.EC2.IAmazonEC2.RejectVpcPeeringConnection"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRejectVpcPeeringConnection.</param>
+        public RejectVpcPeeringConnectionResponse EndRejectVpcPeeringConnection(IAsyncResult asyncResult)
+        {
+            return endOperation<RejectVpcPeeringConnectionResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeRejectVpcPeeringConnection(RejectVpcPeeringConnectionRequest rejectVpcPeeringConnectionRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new RejectVpcPeeringConnectionRequestMarshaller().Marshall(rejectVpcPeeringConnectionRequest);
+            var unmarshaller = RejectVpcPeeringConnectionResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        #endregion
+    
         #region ReleaseAddress
 
         /// <summary>
@@ -9406,7 +9739,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// <para>Replaces an existing route within a route table in a VPC. You must provide only one of the following: Internet gateway, NAT instance,
-        /// or network interface.</para> <para>For more information about route tables, see <a
+        /// VPC peering connection, or network interface.</para> <para>For more information about route tables, see <a
         /// href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html" >Route Tables</a> in the <i>Amazon Virtual Private Cloud
         /// User Guide</i> .</para>
         /// </summary>

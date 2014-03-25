@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// <para>Describes the S3 bucket for an instance store-backed AMI.</para>
     /// </summary>
-    public class S3Storage
+    public partial class S3Storage
     {
         
         private string bucket;

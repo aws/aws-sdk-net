@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// <para>Describe an Amazon EBS block device.</para>
     /// </summary>
-    public class EbsBlockDevice
+    public partial class EbsBlockDevice
     {
         
         private string snapshotId;

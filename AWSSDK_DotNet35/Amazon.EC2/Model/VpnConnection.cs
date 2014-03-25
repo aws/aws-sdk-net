@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// <para>Describes a VPN connection.</para>
     /// </summary>
-    public class VpnConnection
+    public partial class VpnConnection
     {
         
         private string vpnConnectionId;
@@ -203,7 +203,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// The static routes assoicated with the VPN connection.
+        /// The static routes associated with the VPN connection.
         ///  
         /// </summary>
         public List<VpnStaticRoute> Routes

@@ -130,7 +130,9 @@ namespace Amazon.Runtime
             int currentRetries = state.RetriesAttempt;
             T response = null;
             bool shouldRetry = false;
+            bool responseReceived = false;
             HttpResponseMessage responseMessage = null;
+            HttpClientResponseData responseData = null;
             var requestMessage = ConfigureRequestMessage(state);
             try
             {
@@ -142,20 +144,22 @@ namespace Amazon.Runtime
                     {
                         responseMessage = await httpClient.SendAsync(requestMessage, HttpCompletionOption.ResponseHeadersRead, cancellationToken)
                             .ConfigureAwait(continueOnCapturedContext: false);
+                        responseReceived = true;
                     }
 
+                    responseData = new HttpClientResponseData(responseMessage);
                     if (!IsErrorResponse(responseMessage) ||
                         responseMessage.StatusCode == HttpStatusCode.NotFound && state.Request.Suppress404Exceptions)
                     {
                         using (state.Metrics.StartEvent(Metric.ResponseProcessingTime))
                         {
-                            response = (T)await HandleHttpContentAsync(state, responseMessage)
+                            response = (T)await HandleHttpContentAsync(state, responseMessage, responseData)
                                 .ConfigureAwait(continueOnCapturedContext: false);
                         }
                     }
                     else
                     {
-                        bool retry = await HandleHttpErrorResponseAsync(state, responseMessage, cancellationToken)
+                        bool retry = await HandleHttpErrorResponseAsync(state, responseMessage, responseData, cancellationToken)
                             .ConfigureAwait(continueOnCapturedContext: false);
                         if (retry)
                         {
@@ -171,7 +175,7 @@ namespace Amazon.Runtime
                     {
                         if (WebExceptionStatusesToThrowOn.Contains(we.Status))
                         {
-                            throw new AmazonServiceException(we);
+                            throw new AmazonServiceException("Encountered a non retryable WebException : " + we.Status, we);
                         }
 
                         // The WinRT framework doesn't break down errors, not all status values are available for WinRT.                
@@ -262,12 +266,20 @@ WebExceptionStatusesToRetryOn.Contains(we.Status)
             catch (Exception e)
             {
                 // On errors that are passed to the client, invoke exception handlers
-                // Do this on the last throw (first recursive call), where state.RetriesAttempt was 0
-                if (currentRetries == 0)
+                if (!shouldRetry)
                 {
                     ProcessExceptionHandlers(e, state.Request);
                 }
                 throw;
+            }
+            finally
+            {
+                // ProcessResponseHandlers is called only if a response was received from the server (success or error).
+                // It's not called in case of client errors like timeout or proxy error.
+                if (!shouldRetry && responseReceived)
+                {
+                    ProcessResponseHandlers(response, state.Request, responseData);
+                }
             }
 
             return response;
@@ -347,11 +359,10 @@ WebExceptionStatusesToRetryOn.Contains(we.Status)
             }
         }
 
-        private async Task<AmazonWebServiceResponse> HandleHttpContentAsync(WebRequestState state, HttpResponseMessage httpResponse)
+        private async Task<AmazonWebServiceResponse> HandleHttpContentAsync(WebRequestState state, HttpResponseMessage httpResponse, HttpClientResponseData responseData)
         {
             LogResponse(state.Metrics, state.Request, httpResponse.StatusCode);
             AmazonWebServiceResponse response = null;
-            HttpClientResponseData responseData = new HttpClientResponseData(httpResponse);
             UnmarshallerContext context = null;
             try
             {
@@ -388,21 +399,16 @@ WebExceptionStatusesToRetryOn.Contains(we.Status)
             {
                 if (!state.Unmarshaller.HasStreamingProperty)
                     httpResponse.Dispose();
-
-                ProcessResponseHandlers(response, state.Request, responseData);
             }
         }
 
-        private async Task<bool> HandleHttpErrorResponseAsync(WebRequestState state, HttpResponseMessage httpErrorResponse, CancellationToken cancellationToken)
+        private async Task<bool> HandleHttpErrorResponseAsync(WebRequestState state, HttpResponseMessage httpErrorResponse, HttpClientResponseData responseData, CancellationToken cancellationToken)
         {
             HttpStatusCode statusCode;
             AmazonServiceException errorResponseException = null;
 
-            HttpClientResponseData responseData = new HttpClientResponseData(httpErrorResponse);
-
             UnmarshallerContext errorContext = null;
-            try
-            {
+
                 statusCode = httpErrorResponse.StatusCode;
                 state.Metrics.AddProperty(Metric.StatusCode, statusCode);
                 string redirectedLocation = responseData.GetHeaderValue("location");
@@ -445,12 +451,7 @@ WebExceptionStatusesToRetryOn.Contains(we.Status)
                     state.Metrics.AddProperty(Metric.Exception, errorResponseException);
                     throw errorResponseException;
                 }
-            }
-            finally
-            {
-                // Always invoke response handlers, even for failed requests
-                ProcessResponseHandlers(null, state.Request, responseData);
-            }
+
 
             AmazonServiceException excep = new AmazonServiceException("Unable to make request", null, statusCode);
             this.logger.Error(excep, "Error making request {0}.", state.Request.RequestName);
@@ -601,10 +602,19 @@ WebExceptionStatusesToRetryOn.Contains(we.Status)
         {
             if (CanRetry(state) && state.RetriesAttempt < Config.MaxErrorRetry)
             {
+                this.logger.DebugFormat("Retry number {0} for request {1}.", state.RetriesAttempt, state.Request.RequestName);
                 return true;
             }
             else
             {
+                var webException = exception.InnerException as WebException;
+                if (webException!=null)
+                {
+                    var errorMessage = string.Format(CultureInfo.InvariantCulture,
+                        "Encountered a WebException ({0}), the request cannot be retried. Either the maximum number of retries has been exceeded ({1}/{2}) or the request is using a non-seekable stream.",
+                        webException.Status, state.RetriesAttempt, Config.MaxErrorRetry);
+                    throw new AmazonServiceException(errorMessage, exception);
+                }
                 throw new AmazonServiceException(exception);
             }
         }

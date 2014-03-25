@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -22,7 +22,7 @@ using Amazon.Runtime;
 namespace Amazon.CloudSearch.Model
 {
     /// <summary>
-    /// <para>A response message that contains the status of a deleted index field.</para>
+    /// <para>The result of a <c> DeleteIndexField </c> request.</para>
     /// </summary>
     public partial class DeleteIndexFieldResult : AmazonWebServiceResponse
     {
@@ -31,7 +31,7 @@ namespace Amazon.CloudSearch.Model
 
 
         /// <summary>
-        /// The value of an <c>IndexField</c> and its current status.
+        /// The status of the index field being deleted.
         ///  
         /// </summary>
         public IndexFieldStatus IndexField
