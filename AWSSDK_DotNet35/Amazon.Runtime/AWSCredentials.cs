@@ -547,7 +547,7 @@ namespace Amazon.Runtime
             if (!string.IsNullOrEmpty(info.Message))
             {
                 throw new AmazonServiceException(string.Format(CultureInfo.InvariantCulture, 
-                    "Unable to retrieve credentials. Message = \"{1}\".",
+                    "Unable to retrieve credentials. Message = \"{0}\".",
                     info.Message));
             }
             SecurityCredentials credentials = GetRoleCredentials();

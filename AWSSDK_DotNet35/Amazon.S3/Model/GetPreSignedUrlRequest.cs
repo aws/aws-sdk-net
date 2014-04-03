@@ -100,8 +100,14 @@ namespace Amazon.S3.Model
         /// A standard MIME type describing the format of the object data.
         /// </summary>
         /// <remarks>
+        /// <para>
         /// The content type for the content being uploaded. This property defaults to "binary/octet-stream".
-        /// For more information, refer to: <see href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17"/>
+        /// For more information, refer to: <see href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17"/>.
+        /// </para>
+        /// <para>
+        /// Note that if content type is specified, it should also be included in the HttpRequest headers
+        /// of the eventual upload request, otherwise a signature error may result.
+        /// </para>
         /// </remarks>
         public string ContentType
         {

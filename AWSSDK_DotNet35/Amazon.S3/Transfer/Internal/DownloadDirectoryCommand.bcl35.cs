@@ -44,10 +44,10 @@ namespace Amazon.S3.Transfer.Internal
                 ListObjectsResponse listResponse = this._s3Client.ListObjects(listRequest);
                 foreach (S3Object s3o in listResponse.S3Objects)
                 {
-					if (this._request.IsSetModifiedSinceDate() && this._request.ModifiedSinceDate < s3o.LastModified)
-						continue;
-					if (this._request.IsSetUnmodifiedSinceDate() && s3o.LastModified < this._request.UnmodifiedSinceDate)
-						continue;
+                    if (this._request.IsSetModifiedSinceDate() && s3o.LastModified <= this._request.ModifiedSinceDate)
+                        continue;
+                    if (this._request.IsSetUnmodifiedSinceDate() && s3o.LastModified > this._request.UnmodifiedSinceDate)
+                        continue;
 
                     this._totalBytes += s3o.Size;
 					objs.Add(s3o);

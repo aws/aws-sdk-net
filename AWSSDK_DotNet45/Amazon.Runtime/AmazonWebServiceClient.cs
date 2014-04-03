@@ -510,7 +510,8 @@ WebExceptionStatusesToRetryOn.Contains(we.Status)
                 // Use default value (100 seconds) for other services.
                 httpClient.Timeout = this.Config.Timeout.Value;
             }
-            
+            // Disable the Expect 100-continue header
+            httpClient.DefaultRequestHeaders.ExpectContinue = false;            
             return httpClient;
         }
 
