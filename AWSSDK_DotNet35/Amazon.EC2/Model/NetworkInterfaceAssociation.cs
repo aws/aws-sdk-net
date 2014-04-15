@@ -27,6 +27,7 @@ namespace Amazon.EC2.Model
     {
         
         private string publicIp;
+        private string publicDnsName;
         private string ipOwnerId;
         private string allocationId;
         private string associationId;
@@ -46,6 +47,17 @@ namespace Amazon.EC2.Model
         internal bool IsSetPublicIp()
         {
             return this.publicIp != null;
+        }
+        public string PublicDnsName
+        {
+            get { return this.publicDnsName; }
+            set { this.publicDnsName = value; }
+        }
+
+        // Check to see if PublicDnsName property is set
+        internal bool IsSetPublicDnsName()
+        {
+            return this.publicDnsName != null;
         }
 
         /// <summary>

@@ -87,7 +87,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 }
                 if (launchSpecification != null && launchSpecification.IsSetMonitoring())
                 {
-                    request.Parameters.Add("LaunchSpecification.Monitoring", StringUtils.FromBool(launchSpecification.Monitoring));
+                    request.Parameters.Add("LaunchSpecification.Monitoring.Enabled", StringUtils.FromBool(launchSpecification.Monitoring));
                 }
                 if (launchSpecification != null && launchSpecification.IsSetSubnetId())
                 {

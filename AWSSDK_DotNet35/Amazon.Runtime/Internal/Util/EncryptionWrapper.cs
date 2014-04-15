@@ -24,19 +24,18 @@ using System.Security.Cryptography;
 
 namespace Amazon.Runtime.Internal.Util
 {
-    public class EncryptionWrapper : IEncryptionWrapper
+    public abstract class EncryptionWrapper : IEncryptionWrapper
     {
         private SymmetricAlgorithm algorithm;
         private ICryptoTransform encryptor;
         private const int encryptionKeySize = 256;
 
-        public EncryptionWrapper(string algorithmName)
+        protected EncryptionWrapper()
         {
-            if (string.IsNullOrEmpty(algorithmName))
-                throw new ArgumentNullException("algorithmName");
-
-            algorithm = SymmetricAlgorithm.Create(algorithmName);
+            algorithm = CreateAlgorithm();
         }
+
+        protected abstract SymmetricAlgorithm CreateAlgorithm();
 
         #region IEncryptionWrapper Members
 
@@ -77,9 +76,12 @@ namespace Amazon.Runtime.Internal.Util
 
     public class EncryptionWrapperAES : EncryptionWrapper
     {
-        private const string aesAlgorithmName = "AES";
-
         public EncryptionWrapperAES()
-            : base(aesAlgorithmName) { }
+            : base() { }
+
+        protected override SymmetricAlgorithm CreateAlgorithm()
+        {
+            return AesManaged.Create();
+        }
     }
 }

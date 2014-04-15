@@ -43,6 +43,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             
                         continue;
                     }
+                    if (context.TestExpression("publicDnsName", targetDepth))
+                    {
+                        networkInterfaceAssociation.PublicDnsName = StringUnmarshaller.GetInstance().Unmarshall(context);
+                            
+                        continue;
+                    }
                     if (context.TestExpression("ipOwnerId", targetDepth))
                     {
                         networkInterfaceAssociation.IpOwnerId = StringUnmarshaller.GetInstance().Unmarshall(context);
