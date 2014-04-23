@@ -34,7 +34,8 @@ namespace Amazon.S3.Transfer.Internal
 
             string basePath = new DirectoryInfo(this._request.Directory).FullName;
 
-            string[] filePaths = await GetFiles(basePath, this._request.SearchPattern, this._request.SearchOption, cancellationToken);
+            string[] filePaths = await GetFiles(basePath, this._request.SearchPattern, this._request.SearchOption, cancellationToken)
+                .ConfigureAwait(continueOnCapturedContext: false);                
             this._totalNumberOfFiles = filePaths.Length;
 
             SemaphoreSlim asyncThrottler = null;
@@ -77,7 +78,8 @@ namespace Amazon.S3.Transfer.Internal
                     var task = ExecuteCommandAsync(uploadCommand, internalCts, loopThrottler);
                     pendingTasks.Add(task);
                 }
-                await WhenAllOrFirstExceptionAsync(pendingTasks, cancellationToken);
+                await WhenAllOrFirstExceptionAsync(pendingTasks, cancellationToken)
+                    .ConfigureAwait(continueOnCapturedContext: false);
             }
             finally
             {                

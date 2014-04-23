@@ -101,7 +101,8 @@ namespace Amazon.S3.Transfer.Internal
                     var task = ExecuteCommandAsync(command, internalCts, asyncThrottler);
                     pendingTasks.Add(task);
                 }
-                await WhenAllOrFirstExceptionAsync(pendingTasks, cancellationToken);
+                await WhenAllOrFirstExceptionAsync(pendingTasks, cancellationToken)
+                    .ConfigureAwait(continueOnCapturedContext: false);
             }
             finally
             {
