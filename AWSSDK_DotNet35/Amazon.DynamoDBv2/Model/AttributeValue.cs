@@ -23,7 +23,7 @@ namespace Amazon.DynamoDBv2.Model
     /// <summary>
     /// <para>Represents the data for an attribute. You can set one, and only one, of the elements.</para>
     /// </summary>
-    public class AttributeValue
+    public partial class AttributeValue
     {
         
         private string s;

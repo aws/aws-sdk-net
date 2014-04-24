@@ -26,7 +26,7 @@ namespace Amazon.DynamoDBv2.Model
     /// request. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html"
     /// >Provisioned Throughput</a> in the Amazon DynamoDB Developer Guide.</para>
     /// </summary>
-    public class ConsumedCapacity
+    public partial class ConsumedCapacity
     {
         
         private string tableName;

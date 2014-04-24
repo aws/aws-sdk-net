@@ -347,6 +347,7 @@ using System.Diagnostics.CodeAnalysis;
 // Flag enums should have plural names, breaking changes
 [module: SuppressMessage("Microsoft.Naming", "CA1717:OnlyFlagsEnumsShouldHavePluralNames", Scope = "type", Target = "Amazon.DynamoDBv2.DocumentModel.ReturnValues")]
 [module: SuppressMessage("Microsoft.Naming", "CA1717:OnlyFlagsEnumsShouldHavePluralNames", Scope = "type", Target = "Amazon.DynamoDBv2.DocumentModel.SelectValues")]
+[module: SuppressMessage("Microsoft.Naming", "CA1717:OnlyFlagsEnumsShouldHavePluralNames", Scope = "type", Target = "Amazon.DynamoDBv2.DocumentModel.ConditionalOperatorValues")]
 
 // Unused parameters
 [module: SuppressMessage("Microsoft.Usage", "CA1801:ReviewUnusedParameters", Scope = "member", Target = "Amazon.DynamoDBv2.DocumentModel.Table.#UserAgentRequestEventHandler(System.Object,Amazon.Runtime.RequestEventArgs,System.Boolean)", MessageId = "sender")]

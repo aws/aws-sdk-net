@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -24,7 +24,7 @@ namespace Amazon.ElastiCache.Model
     /// <para>Represents a single occurrence of something interesting within the system. Some examples of events are creating a cache cluster,
     /// adding or removing a cache node, or rebooting a node.</para>
     /// </summary>
-    public class Event
+    public partial class Event
     {
         
         private string sourceIdentifier;

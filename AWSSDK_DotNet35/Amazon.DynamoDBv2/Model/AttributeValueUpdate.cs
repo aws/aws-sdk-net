@@ -27,7 +27,7 @@ namespace Amazon.DynamoDBv2.Model
     /// attributes must have lengths greater than zero; and set type attributes must not be empty. Requests with empty values will be rejected with
     /// a <i>ValidationException</i> .</para>
     /// </summary>
-    public class AttributeValueUpdate
+    public partial class AttributeValueUpdate
     {
         
         private AttributeValue value;

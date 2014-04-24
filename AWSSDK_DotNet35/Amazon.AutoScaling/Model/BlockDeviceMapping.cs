@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// <para> The <c>BlockDeviceMapping</c> data type. </para>
     /// </summary>
-    public class BlockDeviceMapping
+    public partial class BlockDeviceMapping
     {
         
         private string virtualName;
@@ -107,7 +107,8 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// Suppresses the device mapping.
+        /// Suppresses the device mapping. <note>If <c>NoDevice</c> is set to <c>true</c> for the root device, the instance might fail the EC2 health
+        /// check. Auto Scaling launches a replacement instance if the instance fails the health check.</note>
         ///  
         /// </summary>
         public bool NoDevice

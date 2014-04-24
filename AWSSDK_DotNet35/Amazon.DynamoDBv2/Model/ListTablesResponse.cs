@@ -24,7 +24,7 @@ namespace Amazon.DynamoDBv2.Model
     /// <summary>
     /// Returns information about the  ListTables response and response metadata.
     /// </summary>
-    public class ListTablesResponse : ListTablesResult
+    public partial class ListTablesResponse : ListTablesResult
     {
         /// <summary>
         /// Gets and sets the ListTablesResult property.

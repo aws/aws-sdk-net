@@ -24,7 +24,7 @@ namespace Amazon.DynamoDBv2.Model
     /// <summary>
     /// Returns information about the  Query response and response metadata.
     /// </summary>
-    public class QueryResponse : QueryResult
+    public partial class QueryResponse : QueryResult
     {
         /// <summary>
         /// Gets and sets the QueryResult property.

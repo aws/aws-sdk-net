@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -31,7 +31,7 @@ namespace Amazon.OpsWorks.Model
     /// directory name in the repository followed by two colons and the recipe name, which is the recipe's file name without the .rb extension. For
     /// example: phpapp2::dbsetup specifies the dbsetup.rb recipe in the repository's phpapp2 folder. </para>
     /// </summary>
-    public class Recipes
+    public partial class Recipes
     {
         
         private List<string> setup = new List<string>();

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -32,6 +32,7 @@ namespace Amazon.ElastiCache.Model
     public partial class DeleteCacheClusterRequest : AmazonElastiCacheRequest
     {
         private string cacheClusterId;
+        private string finalSnapshotIdentifier;
 
 
         /// <summary>
@@ -48,6 +49,22 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetCacheClusterId()
         {
             return this.cacheClusterId != null;
+        }
+
+        /// <summary>
+        /// The name of a final cache cluster snapshot. ElastiCache creates the snapshot, and then deletes the cache cluster immediately afterward.
+        ///  
+        /// </summary>
+        public string FinalSnapshotIdentifier
+        {
+            get { return this.finalSnapshotIdentifier; }
+            set { this.finalSnapshotIdentifier = value; }
+        }
+
+        // Check to see if FinalSnapshotIdentifier property is set
+        internal bool IsSetFinalSnapshotIdentifier()
+        {
+            return this.finalSnapshotIdentifier != null;
         }
 
     }

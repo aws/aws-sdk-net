@@ -102,6 +102,18 @@
                 continue;
               }
   
+              if (context.TestExpression("VolumeType", targetDepth))
+              {
+                raidArray.VolumeType = StringUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
+              if (context.TestExpression("Iops", targetDepth))
+              {
+                raidArray.Iops = IntUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
             }
           
             return raidArray;

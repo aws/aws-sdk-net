@@ -54,6 +54,12 @@
                 continue;
               }
   
+              if (context.TestExpression("Online", targetDepth))
+              {
+                instancesCount.Online = IntUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
               if (context.TestExpression("Pending", targetDepth))
               {
                 instancesCount.Pending = IntUnmarshaller.GetInstance().Unmarshall(context);
@@ -99,6 +105,12 @@
               if (context.TestExpression("Stopped", targetDepth))
               {
                 instancesCount.Stopped = IntUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
+              if (context.TestExpression("Stopping", targetDepth))
+              {
+                instancesCount.Stopping = IntUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   

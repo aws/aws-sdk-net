@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -41,6 +41,9 @@ namespace Amazon.ElastiCache.Model
         private string engineVersion;
         private bool? autoMinorVersionUpgrade;
         private string primaryClusterId;
+        private int? snapshotRetentionLimit;
+        private string snapshotWindow;
+        private string snapshottingClusterId;
 
 
         /// <summary>
@@ -246,6 +249,57 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetPrimaryClusterId()
         {
             return this.primaryClusterId != null;
+        }
+
+        /// <summary>
+        /// The number of days for which ElastiCache will retain automatic cache cluster snapshots before deleting them. For example, if you set
+        /// <i>SnapshotRetentionLimit</i> to 5, then a snapshot that was taken today will be retained for 5 days before being deleted.
+        ///  
+        /// </summary>
+        public int SnapshotRetentionLimit
+        {
+            get { return this.snapshotRetentionLimit ?? default(int); }
+            set { this.snapshotRetentionLimit = value; }
+        }
+
+        // Check to see if SnapshotRetentionLimit property is set
+        internal bool IsSetSnapshotRetentionLimit()
+        {
+            return this.snapshotRetentionLimit.HasValue;
+        }
+
+        /// <summary>
+        /// asdfasdf The daily time range (in UTC) during which ElastiCache will begin taking a daily snapshot of the cache cluster specified by
+        /// <i>SnapshottingClusterId</i>. Example: <c>05:00-09:00</c> If you do not specify this parameter, then ElastiCache will automatically choose
+        /// an appropriate time range.
+        ///  
+        /// </summary>
+        public string SnapshotWindow
+        {
+            get { return this.snapshotWindow; }
+            set { this.snapshotWindow = value; }
+        }
+
+        // Check to see if SnapshotWindow property is set
+        internal bool IsSetSnapshotWindow()
+        {
+            return this.snapshotWindow != null;
+        }
+
+        /// <summary>
+        /// The cache cluster ID that will be used as the daily snapshot source for the replication group.
+        ///  
+        /// </summary>
+        public string SnapshottingClusterId
+        {
+            get { return this.snapshottingClusterId; }
+            set { this.snapshottingClusterId = value; }
+        }
+
+        // Check to see if SnapshottingClusterId property is set
+        internal bool IsSetSnapshottingClusterId()
+        {
+            return this.snapshottingClusterId != null;
         }
 
     }

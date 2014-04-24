@@ -163,6 +163,47 @@ namespace Amazon.DynamoDBv2
     }
     
 
+    /// <summary>Conditional Operator
+    /// </summary>
+    public class ConditionalOperator : ConstantClass
+    {
+
+
+       /// <summary>Constant AND for ConditionalOperator
+       /// </summary>
+        public static readonly ConditionalOperator AND = new ConditionalOperator("AND");
+    
+
+       /// <summary>Constant OR for ConditionalOperator
+       /// </summary>
+        public static readonly ConditionalOperator OR = new ConditionalOperator("OR");
+    
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public ConditionalOperator(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConditionalOperator FindValue(string value)
+        {
+            return FindValue<ConditionalOperator>(value);
+        }
+
+        public static implicit operator ConditionalOperator(string value)
+        {
+            return FindValue(value);
+        }
+    }
+    
+
     /// <summary>Index Status
     /// </summary>
     public class IndexStatus : ConstantClass

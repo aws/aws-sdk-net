@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ namespace Amazon.OpsWorks.Model
     /// <summary>
     /// <para>Describes the configuration manager.</para>
     /// </summary>
-    public class StackConfigurationManager
+    public partial class StackConfigurationManager
     {
         
         private string name;
@@ -47,8 +47,7 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// The Chef version. This parameter must be set to "0.9" or "11.4". The default value is "0.9". However, we expect to change the default value
-        /// to "11.4" in September 2013.
+        /// The Chef version. This parameter must be set to 0.9, 11.4, or 11.10. The default value is 11.4.
         ///  
         /// </summary>
         public string Version

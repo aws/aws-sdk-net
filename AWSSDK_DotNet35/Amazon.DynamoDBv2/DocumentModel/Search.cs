@@ -15,9 +15,11 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 using Amazon.DynamoDBv2.Model;
 using Amazon.Runtime;
+using System.Globalization;
 
 namespace Amazon.DynamoDBv2.DocumentModel
 {
@@ -68,6 +70,11 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// Filter for the search operation
         /// </summary>
         public Filter Filter { get; internal set; }
+
+        /// <summary>
+        /// Conditional operator for the search operation
+        /// </summary>
+        public ConditionalOperatorValues ConditionalOperator { get; internal set; }
 
         /// <summary>
         /// List of attribute names to retrieve
@@ -147,13 +154,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// Otherwise, makes a call to DynamoDB to find out the number of
         /// matching items, without retrieving the items. Count is then cached.
         /// </summary>
-        public int Count
-        {
-            get
-            {
-                return GetCount();
-            }
-        }
+        public int Count { get { return GetCount(); } }
 
         /// <summary>
         /// Name of the index to query against.
@@ -186,8 +187,10 @@ namespace Amazon.DynamoDBv2.DocumentModel
                             TableName = TableName,
                             AttributesToGet = AttributesToGet,
                             ScanFilter = Filter,
-                            Select = EnumToStringMapper.Convert(Select)
+                            Select = EnumMapper.Convert(Select),
                         };
+                        if (scanReq.ScanFilter != null && scanReq.ScanFilter.Count > 1)
+                            scanReq.ConditionalOperator = EnumMapper.Convert(ConditionalOperator);
 
                         if (this.TotalSegments != 0)
                         {
@@ -218,16 +221,24 @@ namespace Amazon.DynamoDBv2.DocumentModel
                     case SearchType.Query:
                         QueryRequest queryReq = new QueryRequest
                         {
+                            TableName = TableName,
                             ConsistentRead = IsConsistentRead,
+                            Select = EnumMapper.Convert(Select),
                             ExclusiveStartKey = NextKey,
                             Limit = Limit,
                             ScanIndexForward = !IsBackwardSearch,
-                            TableName = TableName,
                             AttributesToGet = AttributesToGet,
-                            KeyConditions = Filter,
                             IndexName = IndexName,
-                            Select = EnumToStringMapper.Convert(Select)
                         };
+
+                        Dictionary<string, Condition> keyConditions, filterConditions;
+                        SplitQueryFilter(Filter, SourceTable, queryReq.IndexName, out keyConditions, out filterConditions);
+                        queryReq.KeyConditions = keyConditions;
+                        queryReq.QueryFilter = filterConditions;
+
+                        if (queryReq.QueryFilter != null && queryReq.QueryFilter.Count > 1)
+                            queryReq.ConditionalOperator = EnumMapper.Convert(ConditionalOperator);
+
                         queryReq.BeforeRequestEvent += isAsync ?
                             new RequestEventHandler(SourceTable.UserAgentRequestEventHandlerAsync) :
                             new RequestEventHandler(SourceTable.UserAgentRequestEventHandlerSync);
@@ -239,8 +250,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
                             ret.Add(doc);
                             if (CollectResults)
                             {
-                            Matches.Add(doc);
-                        }
+                                Matches.Add(doc);
+                            }
                         }
                         NextKey = queryResult.LastEvaluatedKey;
                         if (NextKey == null || NextKey.Count == 0)
@@ -282,6 +293,51 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         internal Table SourceTable { get; set; }
 
+        private static void SplitQueryFilter(Filter filter, Table targetTable, string indexName, out Dictionary<string, Condition> keyConditions, out Dictionary<string, Condition> filterConditions)
+        {
+            QueryFilter queryFilter = filter as QueryFilter;
+            if (queryFilter == null) throw new InvalidOperationException("Filter is not of type QueryFilter");
+
+            keyConditions = new Dictionary<string, Condition>();
+            filterConditions = new Dictionary<string, Condition>();
+
+            foreach (var kvp in filter.Conditions)
+            {
+                string attributeName = kvp.Key;
+                Condition condition = kvp.Value;
+
+                // depending on whether the attribute is key, place either in keyConditions or filterConditions
+                if (IsKeyAttribute(targetTable, indexName, attributeName))
+                    keyConditions[attributeName] = condition;
+                else
+                    filterConditions[attributeName] = condition;
+            }
+        }
+
+        // Test if the given attribute is a key on the table or a key on the given index
+        private static bool IsKeyAttribute(Table table, string indexName, string attributeName)
+        {
+            GlobalSecondaryIndexDescription gsi;
+            LocalSecondaryIndexDescription lsi;
+
+            // if no index, check only table keys
+            if (string.IsNullOrEmpty(indexName))
+                return table.Keys.ContainsKey(attributeName);
+            // for an index, check if attribute is part of KeySchema for GSI or LSI
+            else if (table.GlobalSecondaryIndexes.TryGetValue(indexName, out gsi) && gsi != null)
+                return gsi.KeySchema.Any(AttributeIsKey(attributeName));
+            else if (table.LocalSecondaryIndexes.TryGetValue(indexName, out lsi) && lsi != null)
+                return lsi.KeySchema.Any(AttributeIsKey(attributeName));
+            else
+                throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture,
+                    "Unable to locate index [{0}] on table [{1}]", indexName, table.TableName));
+        }
+
+        private static Func<KeySchemaElement, bool> AttributeIsKey(string attributeName)
+        {
+            return (kse => string.Equals(kse.AttributeName, attributeName, StringComparison.Ordinal));
+        }
+
         private int GetCount()
         {
             if (IsDone && CollectResults)
@@ -302,10 +358,12 @@ namespace Amazon.DynamoDBv2.DocumentModel
                             ScanRequest scanReq = new ScanRequest
                             {
                                 TableName = TableName,
-                                Select = EnumToStringMapper.Convert(SelectValues.Count),
+                                Select = EnumMapper.Convert(SelectValues.Count),
                                 ExclusiveStartKey = NextKey,
                                 ScanFilter = Filter,
                             };
+                            if (scanReq.ScanFilter != null && scanReq.ScanFilter.Count > 1)
+                                scanReq.ConditionalOperator = EnumMapper.Convert(ConditionalOperator);
 
                             if (this.TotalSegments != 0)
                             {
@@ -322,12 +380,20 @@ namespace Amazon.DynamoDBv2.DocumentModel
                             {
                                 TableName = TableName,
                                 ConsistentRead = IsConsistentRead,
-                                Select = EnumToStringMapper.Convert(SelectValues.Count),
+                                Select = EnumMapper.Convert(SelectValues.Count),
                                 ExclusiveStartKey = NextKey,
                                 ScanIndexForward = !IsBackwardSearch,
-                                KeyConditions = Filter,
                                 IndexName = IndexName
                             };
+
+                            Dictionary<string, Condition> keyConditions, filterConditions;
+                            SplitQueryFilter(Filter, SourceTable, queryReq.IndexName, out keyConditions, out filterConditions);
+                            queryReq.KeyConditions = keyConditions;
+                            queryReq.QueryFilter = filterConditions;
+
+                            if (queryReq.QueryFilter != null && queryReq.QueryFilter.Count > 1)
+                                queryReq.ConditionalOperator = EnumMapper.Convert(ConditionalOperator);
+
                             queryReq.BeforeRequestEvent += SourceTable.UserAgentRequestEventHandlerSync;
 
                             QueryResult queryResult = SourceTable.DDBClient.Query(queryReq);

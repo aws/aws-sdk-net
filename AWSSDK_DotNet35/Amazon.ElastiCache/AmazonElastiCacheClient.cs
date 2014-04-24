@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -274,6 +274,76 @@ namespace Amazon.ElastiCache
         {
             IRequest irequest = new AuthorizeCacheSecurityGroupIngressRequestMarshaller().Marshall(authorizeCacheSecurityGroupIngressRequest);
             var unmarshaller = AuthorizeCacheSecurityGroupIngressResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        #endregion
+    
+        #region CopySnapshot
+
+        /// <summary>
+        /// <para>The <i>CopySnapshot</i> operation makes a copy of an existing snapshot.</para>
+        /// </summary>
+        /// 
+        /// <param name="copySnapshotRequest">Container for the necessary parameters to execute the CopySnapshot service method on
+        ///          AmazonElastiCache.</param>
+        /// 
+        /// <returns>The response from the CopySnapshot service method, as returned by AmazonElastiCache.</returns>
+        /// 
+        /// <exception cref="InvalidSnapshotStateException"/>
+        /// <exception cref="InvalidParameterValueException"/>
+        /// <exception cref="SnapshotNotFoundException"/>
+        /// <exception cref="InvalidParameterCombinationException"/>
+        /// <exception cref="SnapshotAlreadyExistsException"/>
+        /// <exception cref="SnapshotQuotaExceededException"/>
+        public CopySnapshotResponse CopySnapshot(CopySnapshotRequest copySnapshotRequest)
+        {
+            IAsyncResult asyncResult = invokeCopySnapshot(copySnapshotRequest, null, null, true);
+            return EndCopySnapshot(asyncResult);
+        }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CopySnapshot operation.
+        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache.CopySnapshot"/>
+        /// </summary>
+        /// 
+        /// <param name="copySnapshotRequest">Container for the necessary parameters to execute the CopySnapshot operation on AmazonElastiCache.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCopySnapshot
+        ///         operation.</returns>
+        public IAsyncResult BeginCopySnapshot(CopySnapshotRequest copySnapshotRequest, AsyncCallback callback, object state)
+        {
+            return invokeCopySnapshot(copySnapshotRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the CopySnapshot operation.
+        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache.CopySnapshot"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCopySnapshot.</param>
+        /// 
+        /// <returns>Returns a Snapshot from AmazonElastiCache.</returns>
+        public CopySnapshotResponse EndCopySnapshot(IAsyncResult asyncResult)
+        {
+            return endOperation<CopySnapshotResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeCopySnapshot(CopySnapshotRequest copySnapshotRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new CopySnapshotRequestMarshaller().Marshall(copySnapshotRequest);
+            var unmarshaller = CopySnapshotResponseUnmarshaller.GetInstance();
             AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
             Invoke(result);
             return result;
@@ -649,6 +719,78 @@ namespace Amazon.ElastiCache
 
         #endregion
     
+        #region CreateSnapshot
+
+        /// <summary>
+        /// <para>The <i>CreateSnapshot</i> operation creates a copy of an entire cache cluster at a specific moment in time.</para>
+        /// </summary>
+        /// 
+        /// <param name="createSnapshotRequest">Container for the necessary parameters to execute the CreateSnapshot service method on
+        ///          AmazonElastiCache.</param>
+        /// 
+        /// <returns>The response from the CreateSnapshot service method, as returned by AmazonElastiCache.</returns>
+        /// 
+        /// <exception cref="InvalidParameterValueException"/>
+        /// <exception cref="SnapshotFeatureNotSupportedException"/>
+        /// <exception cref="CacheClusterNotFoundException"/>
+        /// <exception cref="InvalidParameterCombinationException"/>
+        /// <exception cref="SnapshotAlreadyExistsException"/>
+        /// <exception cref="InvalidCacheClusterStateException"/>
+        /// <exception cref="SnapshotQuotaExceededException"/>
+        public CreateSnapshotResponse CreateSnapshot(CreateSnapshotRequest createSnapshotRequest)
+        {
+            IAsyncResult asyncResult = invokeCreateSnapshot(createSnapshotRequest, null, null, true);
+            return EndCreateSnapshot(asyncResult);
+        }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateSnapshot operation.
+        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache.CreateSnapshot"/>
+        /// </summary>
+        /// 
+        /// <param name="createSnapshotRequest">Container for the necessary parameters to execute the CreateSnapshot operation on
+        ///          AmazonElastiCache.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateSnapshot
+        ///         operation.</returns>
+        public IAsyncResult BeginCreateSnapshot(CreateSnapshotRequest createSnapshotRequest, AsyncCallback callback, object state)
+        {
+            return invokeCreateSnapshot(createSnapshotRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the CreateSnapshot operation.
+        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache.CreateSnapshot"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateSnapshot.</param>
+        /// 
+        /// <returns>Returns a Snapshot from AmazonElastiCache.</returns>
+        public CreateSnapshotResponse EndCreateSnapshot(IAsyncResult asyncResult)
+        {
+            return endOperation<CreateSnapshotResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeCreateSnapshot(CreateSnapshotRequest createSnapshotRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new CreateSnapshotRequestMarshaller().Marshall(createSnapshotRequest);
+            var unmarshaller = CreateSnapshotResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        #endregion
+    
         #region DeleteCacheCluster
 
         /// <summary>
@@ -663,9 +805,12 @@ namespace Amazon.ElastiCache
         /// <returns>The response from the DeleteCacheCluster service method, as returned by AmazonElastiCache.</returns>
         /// 
         /// <exception cref="InvalidParameterValueException"/>
+        /// <exception cref="SnapshotFeatureNotSupportedException"/>
         /// <exception cref="CacheClusterNotFoundException"/>
         /// <exception cref="InvalidParameterCombinationException"/>
         /// <exception cref="InvalidCacheClusterStateException"/>
+        /// <exception cref="SnapshotAlreadyExistsException"/>
+        /// <exception cref="SnapshotQuotaExceededException"/>
         public DeleteCacheClusterResponse DeleteCacheCluster(DeleteCacheClusterRequest deleteCacheClusterRequest)
         {
             IAsyncResult asyncResult = invokeDeleteCacheCluster(deleteCacheClusterRequest, null, null, true);
@@ -910,9 +1055,10 @@ namespace Amazon.ElastiCache
         #region DeleteReplicationGroup
 
         /// <summary>
-        /// <para>The <i>DeleteReplicationGroup</i> operation deletes an existing replication group. <i>DeleteReplicationGroup</i> deletes the primary
-        /// cache cluster and all of the read replicas in the replication group. When you receive a successful response from this operation, Amazon
-        /// ElastiCache immediately begins deleting the entire replication group; you cannot cancel or revert this operation.</para>
+        /// <para>The <i>DeleteReplicationGroup</i> operation deletes an existing replication group. By default, this operation deletes the entire
+        /// replication group, including the primary cache cluster and all of the read replicas. You can optionally delete only the read replicas, while
+        /// retaining the primary cache cluster.</para> <para>When you receive a successful response from this operation, Amazon ElastiCache immediately
+        /// begins deleting the selected resources; you cannot cancel or revert this operation.</para>
         /// </summary>
         /// 
         /// <param name="deleteReplicationGroupRequest">Container for the necessary parameters to execute the DeleteReplicationGroup service method on
@@ -922,8 +1068,11 @@ namespace Amazon.ElastiCache
         /// 
         /// <exception cref="InvalidReplicationGroupStateException"/>
         /// <exception cref="InvalidParameterValueException"/>
+        /// <exception cref="SnapshotFeatureNotSupportedException"/>
         /// <exception cref="ReplicationGroupNotFoundException"/>
         /// <exception cref="InvalidParameterCombinationException"/>
+        /// <exception cref="SnapshotAlreadyExistsException"/>
+        /// <exception cref="SnapshotQuotaExceededException"/>
         public DeleteReplicationGroupResponse DeleteReplicationGroup(DeleteReplicationGroupRequest deleteReplicationGroupRequest)
         {
             IAsyncResult asyncResult = invokeDeleteReplicationGroup(deleteReplicationGroupRequest, null, null, true);
@@ -969,6 +1118,76 @@ namespace Amazon.ElastiCache
         {
             IRequest irequest = new DeleteReplicationGroupRequestMarshaller().Marshall(deleteReplicationGroupRequest);
             var unmarshaller = DeleteReplicationGroupResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        #endregion
+    
+        #region DeleteSnapshot
+
+        /// <summary>
+        /// <para>The <i>DeleteSnapshot</i> operation deletes an existing snapshot. When you receive a successful response from this operation,
+        /// ElastiCache immediately begins deleting the snapshot; you cannot cancel or revert this operation.</para>
+        /// </summary>
+        /// 
+        /// <param name="deleteSnapshotRequest">Container for the necessary parameters to execute the DeleteSnapshot service method on
+        ///          AmazonElastiCache.</param>
+        /// 
+        /// <returns>The response from the DeleteSnapshot service method, as returned by AmazonElastiCache.</returns>
+        /// 
+        /// <exception cref="InvalidSnapshotStateException"/>
+        /// <exception cref="InvalidParameterValueException"/>
+        /// <exception cref="SnapshotNotFoundException"/>
+        /// <exception cref="InvalidParameterCombinationException"/>
+        public DeleteSnapshotResponse DeleteSnapshot(DeleteSnapshotRequest deleteSnapshotRequest)
+        {
+            IAsyncResult asyncResult = invokeDeleteSnapshot(deleteSnapshotRequest, null, null, true);
+            return EndDeleteSnapshot(asyncResult);
+        }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteSnapshot operation.
+        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache.DeleteSnapshot"/>
+        /// </summary>
+        /// 
+        /// <param name="deleteSnapshotRequest">Container for the necessary parameters to execute the DeleteSnapshot operation on
+        ///          AmazonElastiCache.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteSnapshot
+        ///         operation.</returns>
+        public IAsyncResult BeginDeleteSnapshot(DeleteSnapshotRequest deleteSnapshotRequest, AsyncCallback callback, object state)
+        {
+            return invokeDeleteSnapshot(deleteSnapshotRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the DeleteSnapshot operation.
+        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache.DeleteSnapshot"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteSnapshot.</param>
+        /// 
+        /// <returns>Returns a Snapshot from AmazonElastiCache.</returns>
+        public DeleteSnapshotResponse EndDeleteSnapshot(IAsyncResult asyncResult)
+        {
+            return endOperation<DeleteSnapshotResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeDeleteSnapshot(DeleteSnapshotRequest deleteSnapshotRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new DeleteSnapshotRequestMarshaller().Marshall(deleteSnapshotRequest);
+            var unmarshaller = DeleteSnapshotResponseUnmarshaller.GetInstance();
             AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
             Invoke(result);
             return result;
@@ -1876,6 +2095,95 @@ namespace Amazon.ElastiCache
         public DescribeReservedCacheNodesOfferingsResponse DescribeReservedCacheNodesOfferings()
         {
             return DescribeReservedCacheNodesOfferings(new DescribeReservedCacheNodesOfferingsRequest());
+        }
+        
+
+        #endregion
+    
+        #region DescribeSnapshots
+
+        /// <summary>
+        /// <para>The <i>DescribeSnapshots</i> operation returns information about cache cluster snapshots. By default, <i>DescribeSnapshots</i> lists
+        /// all of your snapshots; it can optionally describe a single snapshot, or just the snapshots associated with a particular cache
+        /// cluster.</para>
+        /// </summary>
+        /// 
+        /// <param name="describeSnapshotsRequest">Container for the necessary parameters to execute the DescribeSnapshots service method on
+        ///          AmazonElastiCache.</param>
+        /// 
+        /// <returns>The response from the DescribeSnapshots service method, as returned by AmazonElastiCache.</returns>
+        /// 
+        /// <exception cref="InvalidParameterValueException"/>
+        /// <exception cref="SnapshotNotFoundException"/>
+        /// <exception cref="CacheClusterNotFoundException"/>
+        /// <exception cref="InvalidParameterCombinationException"/>
+        public DescribeSnapshotsResponse DescribeSnapshots(DescribeSnapshotsRequest describeSnapshotsRequest)
+        {
+            IAsyncResult asyncResult = invokeDescribeSnapshots(describeSnapshotsRequest, null, null, true);
+            return EndDescribeSnapshots(asyncResult);
+        }
+
+        
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeSnapshots operation.
+        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache.DescribeSnapshots"/>
+        /// </summary>
+        /// 
+        /// <param name="describeSnapshotsRequest">Container for the necessary parameters to execute the DescribeSnapshots operation on
+        ///          AmazonElastiCache.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeSnapshots
+        ///         operation.</returns>
+        public IAsyncResult BeginDescribeSnapshots(DescribeSnapshotsRequest describeSnapshotsRequest, AsyncCallback callback, object state)
+        {
+            return invokeDescribeSnapshots(describeSnapshotsRequest, callback, state, false);
+        }
+
+        
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the DescribeSnapshots operation.
+        /// <seealso cref="Amazon.ElastiCache.IAmazonElastiCache.DescribeSnapshots"/>
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeSnapshots.</param>
+        /// 
+        /// <returns>Returns a DescribeSnapshotsResult from AmazonElastiCache.</returns>
+        public DescribeSnapshotsResponse EndDescribeSnapshots(IAsyncResult asyncResult)
+        {
+            return endOperation<DescribeSnapshotsResponse>(asyncResult);
+        }
+        
+        IAsyncResult invokeDescribeSnapshots(DescribeSnapshotsRequest describeSnapshotsRequest, AsyncCallback callback, object state, bool synchronized)
+        {
+            IRequest irequest = new DescribeSnapshotsRequestMarshaller().Marshall(describeSnapshotsRequest);
+            var unmarshaller = DescribeSnapshotsResponseUnmarshaller.GetInstance();
+            AsyncResult result = new AsyncResult(irequest, callback, state, synchronized, signer, unmarshaller);
+            Invoke(result);
+            return result;
+        }
+        
+        
+
+        /// <summary>
+        /// <para>The <i>DescribeSnapshots</i> operation returns information about cache cluster snapshots. By default, <i>DescribeSnapshots</i> lists
+        /// all of your snapshots; it can optionally describe a single snapshot, or just the snapshots associated with a particular cache
+        /// cluster.</para>
+        /// </summary>
+        /// 
+        /// <returns>The response from the DescribeSnapshots service method, as returned by AmazonElastiCache.</returns>
+        /// 
+        /// <exception cref="InvalidParameterValueException"/>
+        /// <exception cref="SnapshotNotFoundException"/>
+        /// <exception cref="CacheClusterNotFoundException"/>
+        /// <exception cref="InvalidParameterCombinationException"/>
+        public DescribeSnapshotsResponse DescribeSnapshots()
+        {
+            return DescribeSnapshots(new DescribeSnapshotsRequest());
         }
         
 

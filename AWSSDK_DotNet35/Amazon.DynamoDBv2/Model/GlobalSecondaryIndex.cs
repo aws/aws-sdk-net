@@ -23,7 +23,7 @@ namespace Amazon.DynamoDBv2.Model
     /// <summary>
     /// <para>Represents a global secondary index.</para>
     /// </summary>
-    public class GlobalSecondaryIndex
+    public partial class GlobalSecondaryIndex
     {
         
         private string indexName;

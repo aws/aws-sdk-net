@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -79,15 +79,6 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// The maximum number of launch configurations. The default is 100.
         ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Range</term>
-        ///         <description>1 - 50</description>
-        ///     </item>
-        /// </list>
-        /// </para>
         /// </summary>
         public int MaxRecords
         {

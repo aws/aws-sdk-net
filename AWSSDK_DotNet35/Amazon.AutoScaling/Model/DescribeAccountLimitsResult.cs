@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -32,7 +32,7 @@ namespace Amazon.AutoScaling.Model
 
 
         /// <summary>
-        /// The maximum number of Auto Scaling groups set for your AWS account.
+        /// The maximum number of Auto Scaling groups allowed for your AWS account.
         ///  
         /// </summary>
         public int MaxNumberOfAutoScalingGroups
@@ -48,7 +48,7 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// The maximum number of launch configurations set for your AWS account.
+        /// The maximum number of launch configurations allowed for your AWS account.
         ///  
         /// </summary>
         public int MaxNumberOfLaunchConfigurations

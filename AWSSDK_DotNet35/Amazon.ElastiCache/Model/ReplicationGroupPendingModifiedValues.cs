@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ namespace Amazon.ElastiCache.Model
     /// <summary>
     /// <para>The settings to be applied to the replication group, either immediately or during the next maintenance window.</para>
     /// </summary>
-    public class ReplicationGroupPendingModifiedValues
+    public partial class ReplicationGroupPendingModifiedValues
     {
         
         private string primaryClusterId;

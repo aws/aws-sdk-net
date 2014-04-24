@@ -25,7 +25,7 @@ namespace Amazon.DynamoDBv2.Model
     /// was asked for in the request. If the table does not have any local secondary indexes, this information is not returned in the
     /// response.</para>
     /// </summary>
-    public class ItemCollectionMetrics
+    public partial class ItemCollectionMetrics
     {
         
         private Dictionary<string,AttributeValue> itemCollectionKey = new Dictionary<string,AttributeValue>();

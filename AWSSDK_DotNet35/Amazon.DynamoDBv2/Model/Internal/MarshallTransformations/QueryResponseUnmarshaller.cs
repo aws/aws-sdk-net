@@ -53,6 +53,12 @@
                 continue;
               }
   
+              if (context.TestExpression("ScannedCount", targetDepth))
+              {
+                response.ScannedCount = IntUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
               if (context.TestExpression("LastEvaluatedKey", targetDepth))
               {
                 

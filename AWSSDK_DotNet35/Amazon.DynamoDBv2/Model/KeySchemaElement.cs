@@ -24,7 +24,7 @@ namespace Amazon.DynamoDBv2.Model
     /// <para>Represents a single element of a key schema. A key schema specifies the attributes that make up the primary key of a table, or the key
     /// attributes of an index.</para>
     /// </summary>
-    public class KeySchemaElement
+    public partial class KeySchemaElement
     {
         
         private string attributeName;

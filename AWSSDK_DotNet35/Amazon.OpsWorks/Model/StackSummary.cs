@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,11 +23,12 @@ namespace Amazon.OpsWorks.Model
     /// <summary>
     /// <para>Summarizes the number of layers, instances, and apps in a stack.</para>
     /// </summary>
-    public class StackSummary
+    public partial class StackSummary
     {
         
         private string stackId;
         private string name;
+        private string arn;
         private int? layersCount;
         private int? appsCount;
         private InstancesCount instancesCount;
@@ -63,6 +64,22 @@ namespace Amazon.OpsWorks.Model
         internal bool IsSetName()
         {
             return this.name != null;
+        }
+
+        /// <summary>
+        /// The stack's ARN.
+        ///  
+        /// </summary>
+        public string Arn
+        {
+            get { return this.arn; }
+            set { this.arn = value; }
+        }
+
+        // Check to see if Arn property is set
+        internal bool IsSetArn()
+        {
+            return this.arn != null;
         }
 
         /// <summary>

@@ -222,7 +222,9 @@ namespace Amazon.AutoScaling
 
  
         /// <summary>
-        /// <para> Attaches one or more Amazon EC2 instances to an existing Auto Scaling group. </para>
+        /// <para> Attaches one or more Amazon EC2 instances to an existing Auto Scaling group. After the instance(s) is attached, it becomes a part of
+        /// the Auto Scaling group. </para> <para>For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/attach-instance-asg.html">Attach Amazon EC2 Instance(s) to Your Existing
+        /// Auto Scaling Group</a> in the <i>Auto Scaling Developer Guide</i> .</para>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the AttachInstances service method on
@@ -303,10 +305,7 @@ namespace Amazon.AutoScaling
         /// <summary>
         /// <para> Creates a new launch configuration. The launch configuration name must be unique within the scope of the client's AWS account. The
         /// maximum limit of launch configurations, which by default is 100, must not yet have been met; otherwise, the call will fail. When created,
-        /// the new launch configuration is available for immediate use. </para> <para>You can create a launch configuration with Amazon EC2 security
-        /// groups or with Amazon VPC security groups. However, you can't use Amazon EC2 security groups together with Amazon VPC security groups, or
-        /// vice versa.</para> <para><b>NOTE:</b> At this time, Auto Scaling launch configurations don't support compressed (e.g. zipped) user data
-        /// files. </para>
+        /// the new launch configuration is available for immediate use. </para>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the CreateLaunchConfiguration service
@@ -619,7 +618,9 @@ namespace Amazon.AutoScaling
         }
  
         /// <summary>
-        /// <para> Returns the limits for the Auto Scaling resources set for your AWS account. </para>
+        /// <para> Returns the limits for the Auto Scaling resources currently allowed for your AWS account. </para> <para>Your AWS account comes with
+        /// default limits on resources for Auto Scaling. There is a default limit of <c>20</c> Auto Scaling groups and <c>100</c> launch configurations
+        /// per region.</para> <para>If you reach the limits for the number of Auto Scaling groups or the launch configurations, you can go to the <a href="https://aws.amazon.com/support/">Support Center</a> and place a request to raise the limits.</para>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeAccountLimits service method on
@@ -658,7 +659,9 @@ namespace Amazon.AutoScaling
         }
  
         /// <summary>
-        /// <para> Returns the limits for the Auto Scaling resources set for your AWS account. </para>
+        /// <para> Returns the limits for the Auto Scaling resources currently allowed for your AWS account. </para> <para>Your AWS account comes with
+        /// default limits on resources for Auto Scaling. There is a default limit of <c>20</c> Auto Scaling groups and <c>100</c> launch configurations
+        /// per region.</para> <para>If you reach the limits for the number of Auto Scaling groups or the launch configurations, you can go to the <a href="https://aws.amazon.com/support/">Support Center</a> and place a request to raise the limits.</para>
         /// </summary>
         /// 
         /// 
@@ -1106,9 +1109,9 @@ namespace Amazon.AutoScaling
  
         /// <summary>
         /// <para> Returns the scaling activities for the specified Auto Scaling group. </para> <para> If the specified <c>ActivityIds</c> list is
-        /// empty, all the activities from the past six weeks are returned. Activities are sorted by completion time. Activities still in progress
-        /// appear first on the list. </para> <para> This action supports pagination. If the response includes a token, there are more records
-        /// available. To get the additional records, repeat the request with the response token as the <c>NextToken</c> parameter. </para>
+        /// empty, all the activities from the past six weeks are returned. Activities are sorted by the start time. Activities still in progress appear
+        /// first on the list. </para> <para> This action supports pagination. If the response includes a token, there are more records available. To
+        /// get the additional records, repeat the request with the response token as the <c>NextToken</c> parameter. </para>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the DescribeScalingActivities service
@@ -1150,9 +1153,9 @@ namespace Amazon.AutoScaling
  
         /// <summary>
         /// <para> Returns the scaling activities for the specified Auto Scaling group. </para> <para> If the specified <c>ActivityIds</c> list is
-        /// empty, all the activities from the past six weeks are returned. Activities are sorted by completion time. Activities still in progress
-        /// appear first on the list. </para> <para> This action supports pagination. If the response includes a token, there are more records
-        /// available. To get the additional records, repeat the request with the response token as the <c>NextToken</c> parameter. </para>
+        /// empty, all the activities from the past six weeks are returned. Activities are sorted by the start time. Activities still in progress appear
+        /// first on the list. </para> <para> This action supports pagination. If the response includes a token, there are more records available. To
+        /// get the additional records, repeat the request with the response token as the <c>NextToken</c> parameter. </para>
         /// </summary>
         /// 
         /// 

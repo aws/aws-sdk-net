@@ -54,6 +54,12 @@
                 continue;
               }
   
+              if (context.TestExpression("Arn", targetDepth))
+              {
+                stack.Arn = StringUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
               if (context.TestExpression("Region", targetDepth))
               {
                 stack.Region = StringUnmarshaller.GetInstance().Unmarshall(context);
@@ -124,9 +130,21 @@
                 continue;
               }
   
+              if (context.TestExpression("ChefConfiguration", targetDepth))
+              {
+                stack.ChefConfiguration = ChefConfigurationUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
               if (context.TestExpression("UseCustomCookbooks", targetDepth))
               {
                 stack.UseCustomCookbooks = BoolUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
+              if (context.TestExpression("UseOpsworksSecurityGroups", targetDepth))
+              {
+                stack.UseOpsworksSecurityGroups = BoolUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   

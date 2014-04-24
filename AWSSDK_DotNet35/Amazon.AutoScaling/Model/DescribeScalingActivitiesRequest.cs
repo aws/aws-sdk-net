@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -26,9 +26,9 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// Container for the parameters to the DescribeScalingActivities operation.
     /// <para> Returns the scaling activities for the specified Auto Scaling group. </para> <para> If the specified <c>ActivityIds</c> list is
-    /// empty, all the activities from the past six weeks are returned. Activities are sorted by completion time. Activities still in progress
-    /// appear first on the list. </para> <para> This action supports pagination. If the response includes a token, there are more records
-    /// available. To get the additional records, repeat the request with the response token as the <c>NextToken</c> parameter. </para>
+    /// empty, all the activities from the past six weeks are returned. Activities are sorted by the start time. Activities still in progress appear
+    /// first on the list. </para> <para> This action supports pagination. If the response includes a token, there are more records available. To
+    /// get the additional records, repeat the request with the response token as the <c>NextToken</c> parameter. </para>
     /// </summary>
     public partial class DescribeScalingActivitiesRequest : AmazonAutoScalingRequest
     {
@@ -88,15 +88,6 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// The maximum number of scaling activities to return.
         ///  
-        /// <para>
-        /// <b>Constraints:</b>
-        /// <list type="definition">
-        ///     <item>
-        ///         <term>Range</term>
-        ///         <description>1 - 50</description>
-        ///     </item>
-        /// </list>
-        /// </para>
         /// </summary>
         public int MaxRecords
         {

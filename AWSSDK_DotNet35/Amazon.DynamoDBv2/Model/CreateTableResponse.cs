@@ -24,7 +24,7 @@ namespace Amazon.DynamoDBv2.Model
     /// <summary>
     /// Returns information about the  CreateTable response and response metadata.
     /// </summary>
-    public class CreateTableResponse : CreateTableResult
+    public partial class CreateTableResponse : CreateTableResult
     {
         /// <summary>
         /// Gets and sets the CreateTableResult property.

@@ -310,10 +310,91 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                                 writer.WritePropertyName("Exists");
                                 writer.Write(expectedListValue.Exists);
                             }
+                            if (expectedListValue != null && expectedListValue.IsSetComparisonOperator()) 
+                            {
+                                writer.WritePropertyName("ComparisonOperator");
+                                writer.Write(expectedListValue.ComparisonOperator);
+                            }
+
+                            if (expectedListValue != null && expectedListValue.AttributeValueList != null && expectedListValue.AttributeValueList.Count > 0)
+                            {
+                                List<AttributeValue> attributeValueListList = expectedListValue.AttributeValueList;
+                                writer.WritePropertyName("AttributeValueList");
+                                writer.WriteArrayStart();
+
+                                foreach (AttributeValue attributeValueListListValue in attributeValueListList) 
+                                {
+                                    writer.WriteObjectStart();
+                                    if (attributeValueListListValue != null && attributeValueListListValue.IsSetS()) 
+                                    {
+                                        writer.WritePropertyName("S");
+                                        writer.Write(attributeValueListListValue.S);
+                                    }
+                                    if (attributeValueListListValue != null && attributeValueListListValue.IsSetN()) 
+                                    {
+                                        writer.WritePropertyName("N");
+                                        writer.Write(attributeValueListListValue.N);
+                                    }
+                                    if (attributeValueListListValue != null && attributeValueListListValue.IsSetB()) 
+                                    {
+                                        writer.WritePropertyName("B");
+                                        writer.Write(StringUtils.FromMemoryStream(attributeValueListListValue.B));
+                                    }
+
+                                    if (attributeValueListListValue != null && attributeValueListListValue.SS != null && attributeValueListListValue.SS.Count > 0) 
+                                    {
+                                        List<string> sSList = attributeValueListListValue.SS;
+                                        writer.WritePropertyName("SS");
+                                        writer.WriteArrayStart();
+
+                                        foreach (string sSListValue in sSList) 
+                                        { 
+                                            writer.Write(StringUtils.FromString(sSListValue));
+                                        }
+
+                                        writer.WriteArrayEnd();
+                                    }
+
+                                    if (attributeValueListListValue != null && attributeValueListListValue.NS != null && attributeValueListListValue.NS.Count > 0) 
+                                    {
+                                        List<string> nSList = attributeValueListListValue.NS;
+                                        writer.WritePropertyName("NS");
+                                        writer.WriteArrayStart();
+
+                                        foreach (string nSListValue in nSList) 
+                                        { 
+                                            writer.Write(StringUtils.FromString(nSListValue));
+                                        }
+
+                                        writer.WriteArrayEnd();
+                                    }
+
+                                    if (attributeValueListListValue != null && attributeValueListListValue.BS != null && attributeValueListListValue.BS.Count > 0) 
+                                    {
+                                        List<MemoryStream> bSList = attributeValueListListValue.BS;
+                                        writer.WritePropertyName("BS");
+                                        writer.WriteArrayStart();
+
+                                        foreach (MemoryStream bSListValue in bSList) 
+                                        { 
+                                            writer.Write(StringUtils.FromMemoryStream(bSListValue));
+                                        }
+
+                                        writer.WriteArrayEnd();
+                                    }
+                                    writer.WriteObjectEnd();
+                                }
+                                writer.WriteArrayEnd();
+                            }
                             writer.WriteObjectEnd();
                         }
                         writer.WriteObjectEnd();
                     }
+                }
+                if (updateItemRequest != null && updateItemRequest.IsSetConditionalOperator()) 
+                {
+                    writer.WritePropertyName("ConditionalOperator");
+                    writer.Write(updateItemRequest.ConditionalOperator);
                 }
                 if (updateItemRequest != null && updateItemRequest.IsSetReturnValues()) 
                 {

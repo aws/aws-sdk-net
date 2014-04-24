@@ -23,7 +23,7 @@ namespace Amazon.DynamoDBv2.Model
     /// <summary>
     /// <para>Represents the amount of provisioned throughput capacity consumed on a table or an index. </para>
     /// </summary>
-    public class Capacity
+    public partial class Capacity
     {
         
         private double? capacityUnits;

@@ -23,7 +23,7 @@ namespace Amazon.DynamoDBv2.Model
     /// <summary>
     /// <para>Represents the properties of a table.</para>
     /// </summary>
-    public class TableDescription
+    public partial class TableDescription
     {
         
         private List<AttributeDefinition> attributeDefinitions = new List<AttributeDefinition>();

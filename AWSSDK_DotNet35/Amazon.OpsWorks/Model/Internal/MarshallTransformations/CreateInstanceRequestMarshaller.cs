@@ -127,6 +127,11 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                     writer.WritePropertyName("InstallUpdatesOnBoot");
                     writer.Write(createInstanceRequest.InstallUpdatesOnBoot);
                 }
+                if (createInstanceRequest != null && createInstanceRequest.IsSetEbsOptimized()) 
+                {
+                    writer.WritePropertyName("EbsOptimized");
+                    writer.Write(createInstanceRequest.EbsOptimized);
+                }
 
                 writer.WriteObjectEnd();
                 

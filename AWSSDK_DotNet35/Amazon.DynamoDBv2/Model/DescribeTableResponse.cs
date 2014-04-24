@@ -24,7 +24,7 @@ namespace Amazon.DynamoDBv2.Model
     /// <summary>
     /// Returns information about the  DescribeTable response and response metadata.
     /// </summary>
-    public class DescribeTableResponse : DescribeTableResult
+    public partial class DescribeTableResponse : DescribeTableResult
     {
         /// <summary>
         /// Gets and sets the DescribeTableResult property.

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,11 +25,13 @@ namespace Amazon.OpsWorks.Model
 {
     /// <summary>
     /// Container for the parameters to the AttachElasticLoadBalancer operation.
-    /// <para>Attaches an Elastic Load Balancing load balancer to a specified layer.</para> <para><b>NOTE:</b>You must create the Elastic Load
-    /// Balancing instance separately, by using the Elastic Load Balancing console, API, or CLI. For more information, see Elastic Load Balancing
-    /// Developer Guide.</para> <para> <b>Required Permissions</b> : To use this action, an IAM user must have a Manage permissions level for the
-    /// stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a
-    /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
+    /// <para>Attaches an Elastic Load Balancing load balancer to a specified layer. For more information, see <a
+    /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/load-balancer-elb.html" >Elastic Load Balancing</a> .</para> <para><b>NOTE:</b>
+    /// You must create the Elastic Load Balancing instance separately, by using the Elastic Load Balancing console, API, or CLI. For more
+    /// information, see Elastic Load Balancing Developer Guide. </para> <para> <b>Required Permissions</b> : To use this action, an IAM user must
+    /// have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user
+    /// permissions, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a>
+    /// .</para>
     /// </summary>
     public partial class AttachElasticLoadBalancerRequest : AmazonOpsWorksRequest
     {

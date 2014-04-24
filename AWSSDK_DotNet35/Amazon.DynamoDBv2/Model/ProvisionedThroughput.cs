@@ -26,7 +26,7 @@ namespace Amazon.DynamoDBv2.Model
     /// href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html" >Limits</a> in the Amazon DynamoDB Developer
     /// Guide.</para>
     /// </summary>
-    public class ProvisionedThroughput
+    public partial class ProvisionedThroughput
     {
         
         private long? readCapacityUnits;
@@ -36,7 +36,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// The maximum number of strongly consistent reads consumed per second before DynamoDB returns a <i>ThrottlingException</i>. For more
         /// information, see <a
-        /// href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDDTables.html#ProvisionedThroughput">Specifying Read and
+        /// href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying Read and
         /// Write Requirements</a> in the Amazon DynamoDB Developer Guide.
         ///  
         /// <para>
@@ -63,7 +63,7 @@ namespace Amazon.DynamoDBv2.Model
 
         /// <summary>
         /// The maximum number of writes consumed per second before DynamoDB returns a <i>ThrottlingException</i>. For more information, see <a
-        /// href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDDTables.html#ProvisionedThroughput">Specifying Read and
+        /// href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying Read and
         /// Write Requirements</a> in the Amazon DynamoDB Developer Guide.
         ///  
         /// <para>

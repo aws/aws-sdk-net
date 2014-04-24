@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// <para> The <c>LaunchConfiguration</c> data type. </para>
     /// </summary>
-    public class LaunchConfiguration
+    public partial class LaunchConfiguration
     {
         
         private string launchConfigurationName;
@@ -42,6 +42,7 @@ namespace Amazon.AutoScaling.Model
         private DateTime? createdTime;
         private bool? ebsOptimized;
         private bool? associatePublicIpAddress;
+        private string placementTenancy;
 
 
         /// <summary>
@@ -425,6 +426,36 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetAssociatePublicIpAddress()
         {
             return this.associatePublicIpAddress.HasValue;
+        }
+
+        /// <summary>
+        /// Specifies the tenancy of the instance. It can be either <c>default</c> or <c>dedicated</c>. An instance with <c>dedicated</c> tenancy runs
+        /// in an isolated, single-tenant hardware and it can only be launched in a VPC.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Length</term>
+        ///         <description>1 - 64</description>
+        ///     </item>
+        ///     <item>
+        ///         <term>Pattern</term>
+        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
+        public string PlacementTenancy
+        {
+            get { return this.placementTenancy; }
+            set { this.placementTenancy = value; }
+        }
+
+        // Check to see if PlacementTenancy property is set
+        internal bool IsSetPlacementTenancy()
+        {
+            return this.placementTenancy != null;
         }
     }
 }

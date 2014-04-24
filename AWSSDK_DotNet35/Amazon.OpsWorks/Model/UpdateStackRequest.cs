@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -42,10 +42,12 @@ namespace Amazon.OpsWorks.Model
         private string defaultSubnetId;
         private string customJson;
         private StackConfigurationManager configurationManager;
+        private ChefConfiguration chefConfiguration;
         private bool? useCustomCookbooks;
         private Source customCookbooksSource;
         private string defaultSshKeyName;
         private RootDeviceType defaultRootDeviceType;
+        private bool? useOpsworksSecurityGroups;
 
 
         /// <summary>
@@ -81,7 +83,7 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// One or more user-defined key/value pairs to be added to the stack attributes bag.
+        /// One or more user-defined key/value pairs to be added to the stack attributes.
         ///  
         /// </summary>
         public Dictionary<string,string> Attributes
@@ -99,9 +101,9 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// The stack AWS Identity and Access Management (IAM) role, which allows AWS OpsWorks to work with AWS resources on your behalf. You must set
         /// this parameter to the Amazon Resource Name (ARN) for an existing IAM role. For more information about IAM ARNs, see <a
-        /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>. <note>You must set this parameter to a
+        /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>. <note> You must set this parameter to a
         /// valid service role ARN or the action will fail; there is no default value. You can specify the stack's current service role ARN, if you
-        /// prefer, but you must do so explicitly.</note>
+        /// prefer, but you must do so explicitly. </note>
         ///  
         /// </summary>
         public string ServiceRoleArn
@@ -226,8 +228,8 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// The configuration manager. When you update a stack you can optionally use the configuration manager to specify the Chef version, 0.9 or
-        /// 11.4. If you omit this parameter, AWS OpsWorks does not change the Chef version.
+        /// The configuration manager. When you clone a stack we recommend that you use the configuration manager to specify the Chef version, 0.9,
+        /// 11.4, or 11.10. The default value is currently 11.4.
         ///  
         /// </summary>
         public StackConfigurationManager ConfigurationManager
@@ -240,6 +242,23 @@ namespace Amazon.OpsWorks.Model
         internal bool IsSetConfigurationManager()
         {
             return this.configurationManager != null;
+        }
+
+        /// <summary>
+        /// A <c>ChefConfiguration</c> object that specifies whether to enable Berkshelf and the Berkshelf version on Chef 11.10 stacks. For more
+        /// information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.
+        ///  
+        /// </summary>
+        public ChefConfiguration ChefConfiguration
+        {
+            get { return this.chefConfiguration; }
+            set { this.chefConfiguration = value; }
+        }
+
+        // Check to see if ChefConfiguration property is set
+        internal bool IsSetChefConfiguration()
+        {
+            return this.chefConfiguration != null;
         }
 
         /// <summary>
@@ -293,8 +312,8 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// The default root device type. This value is used by default for all instances in the cloned stack, but you can override it when you create
-        /// an instance. For more information, see <a
+        /// The default root device type. This value is used by default for all instances in the stack, but you can override it when you create an
+        /// instance. For more information, see <a
         /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.
         ///  
         /// <para>
@@ -317,6 +336,30 @@ namespace Amazon.OpsWorks.Model
         internal bool IsSetDefaultRootDeviceType()
         {
             return this.defaultRootDeviceType != null;
+        }
+
+        /// <summary>
+        /// Whether to associate the AWS OpsWorks built-in security groups with the stack's layers. AWS OpsWorks provides a standard set of built-in
+        /// security groups, one for each layer, which are associated with layers by default. <c>UseOpsworksSecurityGroups</c> allows you to instead
+        /// provide your own custom security groups. <c>UseOpsworksSecurityGroups</c> has the following settings: <ul> <li>True - AWS OpsWorks
+        /// automatically associates the appropriate built-in security group with each layer (default setting). You can associate additional security
+        /// groups with a layer after you create it but you cannot delete the built-in security group. </li> <li>False - AWS OpsWorks does not associate
+        /// built-in security groups with layers. You must create appropriate EC2 security groups and associate a security group with each layer that
+        /// you create. However, you can still manually associate a built-in security group with a layer on creation; custom security groups are
+        /// required only for those layers that need custom settings. </li> </ul> For more information, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.
+        ///  
+        /// </summary>
+        public bool UseOpsworksSecurityGroups
+        {
+            get { return this.useOpsworksSecurityGroups ?? default(bool); }
+            set { this.useOpsworksSecurityGroups = value; }
+        }
+
+        // Check to see if UseOpsworksSecurityGroups property is set
+        internal bool IsSetUseOpsworksSecurityGroups()
+        {
+            return this.useOpsworksSecurityGroups.HasValue;
         }
 
     }

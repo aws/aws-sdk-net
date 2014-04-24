@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -33,6 +33,7 @@ namespace Amazon.ElastiCache.Model
         private ReplicationGroupPendingModifiedValues pendingModifiedValues;
         private List<string> memberClusters = new List<string>();
         private List<NodeGroup> nodeGroups = new List<NodeGroup>();
+        private string snapshottingClusterId;
 
 
         /// <summary>
@@ -129,6 +130,22 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetNodeGroups()
         {
             return this.nodeGroups.Count > 0;
+        }
+
+        /// <summary>
+        /// The cache cluster ID that is used as the daily snapshot source for the replication group.
+        ///  
+        /// </summary>
+        public string SnapshottingClusterId
+        {
+            get { return this.snapshottingClusterId; }
+            set { this.snapshottingClusterId = value; }
+        }
+
+        // Check to see if SnapshottingClusterId property is set
+        internal bool IsSetSnapshottingClusterId()
+        {
+            return this.snapshottingClusterId != null;
         }
     }
 }

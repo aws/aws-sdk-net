@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -24,7 +24,7 @@ namespace Amazon.ElastiCache.Model
     /// <para>Contains the specific price and frequency of a recurring charges for a reserved cache node, or for a reserved cache node
     /// offering.</para>
     /// </summary>
-    public class RecurringCharge
+    public partial class RecurringCharge
     {
         
         private double? recurringChargeAmount;

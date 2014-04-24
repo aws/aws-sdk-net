@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ namespace Amazon.OpsWorks.Model
     /// <summary>
     /// <para>Describes an instance.</para>
     /// </summary>
-    public class Instance
+    public partial class Instance
     {
         
         private string instanceId;
@@ -54,6 +54,7 @@ namespace Amazon.OpsWorks.Model
         private RootDeviceType rootDeviceType;
         private string rootDeviceVolumeId;
         private bool? installUpdatesOnBoot;
+        private bool? ebsOptimized;
 
 
         /// <summary>
@@ -529,8 +530,8 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Whether to install operating system and package updates when the instance boots. The default value is <c>true</c>. If this value is set to
         /// <c>false</c>, you must then update your instances manually by using <a>CreateDeployment</a> to run the <c>update_dependencies</c> stack
-        /// command or manually running <c>yum</c> (Amazon Linux) or <c>apt-get</c> (Ubuntu) on the instances. <note>We strongly recommend using the
-        /// default value of <c>true</c>, to ensure that your instances have the latest security updates.</note>
+        /// command or manually running <c>yum</c> (Amazon Linux) or <c>apt-get</c> (Ubuntu) on the instances. <note> We strongly recommend using the
+        /// default value of <c>true</c>, to ensure that your instances have the latest security updates. </note>
         ///  
         /// </summary>
         public bool InstallUpdatesOnBoot
@@ -543,6 +544,22 @@ namespace Amazon.OpsWorks.Model
         internal bool IsSetInstallUpdatesOnBoot()
         {
             return this.installUpdatesOnBoot.HasValue;
+        }
+
+        /// <summary>
+        /// Whether this is an Amazon EBS-optimized instance.
+        ///  
+        /// </summary>
+        public bool EbsOptimized
+        {
+            get { return this.ebsOptimized ?? default(bool); }
+            set { this.ebsOptimized = value; }
+        }
+
+        // Check to see if EbsOptimized property is set
+        internal bool IsSetEbsOptimized()
+        {
+            return this.ebsOptimized.HasValue;
         }
     }
 }

@@ -23,7 +23,7 @@ namespace Amazon.DynamoDBv2.Model
     /// <summary>
     /// <para>Represents a local secondary index.</para>
     /// </summary>
-    public class LocalSecondaryIndex
+    public partial class LocalSecondaryIndex
     {
         
         private string indexName;

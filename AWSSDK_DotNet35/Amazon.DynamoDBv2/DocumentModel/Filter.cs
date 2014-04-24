@@ -133,7 +133,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             AddCondition(attributeName, new Condition
             {
-                ComparisonOperator = EnumToStringMapper.Convert(op),
+                ComparisonOperator = EnumMapper.Convert(op),
                 AttributeValueList = values
             });
         }
@@ -149,7 +149,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             AddCondition(attributeName, new Condition
             {
-                ComparisonOperator = EnumToStringMapper.Convert(op),
+                ComparisonOperator = EnumMapper.Convert(op),
                 AttributeValueList = ConvertToAttributeValues(values)
             });
         }
@@ -202,36 +202,67 @@ namespace Amazon.DynamoDBv2.DocumentModel
         }
 
         /// <summary>
-        /// Adds a condition for a specified attribute that consists
+        /// Adds a condition for a specified key attribute that consists
         /// of an operator and any number of AttributeValues.
         /// </summary>
-        /// <param name="attributeName">Target attribute name</param>
+        /// <param name="keyAttributeName">Target key attribute name</param>
         /// <param name="op">Comparison operator</param>
         /// <param name="values">AttributeValues to compare to</param>
-        public void AddCondition(string attributeName, QueryOperator op, List<AttributeValue> values)
+        public void AddCondition(string keyAttributeName, QueryOperator op, List<AttributeValue> values)
         {
-            AddCondition(attributeName, new Condition
+            AddCondition(keyAttributeName, new Condition
             {
-                ComparisonOperator = EnumToStringMapper.Convert(op),
+                ComparisonOperator = EnumMapper.Convert(op),
                 AttributeValueList = values
             });
         }
 
         /// <summary>
-        /// Adds a condition for a specified attribute that consists
+        /// Adds a condition for a specified key attribute that consists
         /// of an operator and any number of values
         /// </summary>
-        /// <param name="attributeName">Target attribute name</param>
+        /// <param name="keyAttributeName">Target key attribute name</param>
         /// <param name="op">Comparison operator</param>
         /// <param name="values">Values to compare to</param>
-        public void AddCondition(string attributeName, QueryOperator op, params DynamoDBEntry[] values)
+        public void AddCondition(string keyAttributeName, QueryOperator op, params DynamoDBEntry[] values)
         {
-            AddCondition(attributeName, new Condition
+            AddCondition(keyAttributeName, new Condition
             {
-                ComparisonOperator = EnumToStringMapper.Convert(op),
+                ComparisonOperator = EnumMapper.Convert(op),
+                AttributeValueList = ConvertToAttributeValues(values)
+            });
+        }
+
+        /// <summary>
+        /// Adds a condition for a specified non-key attribute that consists
+        /// of an operator and any number of AttributeValues.
+        /// </summary>
+        /// <param name="nonKeyAttributeName">Target non-key attribute name</param>
+        /// <param name="op">Comparison operator</param>
+        /// <param name="values">AttributeValues to compare to</param>
+        public void AddCondition(string nonKeyAttributeName, ScanOperator op, List<AttributeValue> values)
+        {
+            AddCondition(nonKeyAttributeName, new Condition
+            {
+                ComparisonOperator = EnumMapper.Convert(op),
+                AttributeValueList = values
+            });
+        }
+
+        /// <summary>
+        /// Adds a condition for a specified non-key attribute that consists
+        /// of an operator and any number of values
+        /// </summary>
+        /// <param name="nonKeyAttributeName">Target non-key attribute name</param>
+        /// <param name="op">Comparison operator</param>
+        /// <param name="values">Values to compare to</param>
+        public void AddCondition(string nonKeyAttributeName, ScanOperator op, params DynamoDBEntry[] values)
+        {
+            AddCondition(nonKeyAttributeName, new Condition
+            {
+                ComparisonOperator = EnumMapper.Convert(op),
                 AttributeValueList = ConvertToAttributeValues(values)
             });
         }
     }
-
 }

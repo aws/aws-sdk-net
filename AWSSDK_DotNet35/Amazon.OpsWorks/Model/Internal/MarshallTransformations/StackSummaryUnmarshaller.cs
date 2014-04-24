@@ -54,6 +54,12 @@
                 continue;
               }
   
+              if (context.TestExpression("Arn", targetDepth))
+              {
+                stackSummary.Arn = StringUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
               if (context.TestExpression("LayersCount", targetDepth))
               {
                 stackSummary.LayersCount = IntUnmarshaller.GetInstance().Unmarshall(context);

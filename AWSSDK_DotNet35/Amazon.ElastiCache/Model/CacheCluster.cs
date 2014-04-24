@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -47,6 +47,8 @@ namespace Amazon.ElastiCache.Model
         private bool? autoMinorVersionUpgrade;
         private List<SecurityGroupMembership> securityGroups = new List<SecurityGroupMembership>();
         private string replicationGroupId;
+        private int? snapshotRetentionLimit;
+        private string snapshotWindow;
 
 
         /// <summary>
@@ -194,7 +196,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// The date and time the cache cluster was created.
+        /// The date and time when the cache cluster was created.
         ///  
         /// </summary>
         public DateTime CacheClusterCreateTime
@@ -369,6 +371,39 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetReplicationGroupId()
         {
             return this.replicationGroupId != null;
+        }
+
+        /// <summary>
+        /// The number of days for which ElastiCache will retain automatic cache cluster snapshots before deleting them. For example, if you set
+        /// <i>SnapshotRetentionLimit</i> to 5, then a snapshot that was taken today will be retained for 5 days before being deleted.
+        ///  
+        /// </summary>
+        public int SnapshotRetentionLimit
+        {
+            get { return this.snapshotRetentionLimit ?? default(int); }
+            set { this.snapshotRetentionLimit = value; }
+        }
+
+        // Check to see if SnapshotRetentionLimit property is set
+        internal bool IsSetSnapshotRetentionLimit()
+        {
+            return this.snapshotRetentionLimit.HasValue;
+        }
+
+        /// <summary>
+        /// The daily time range (in UTC) during which ElastiCache will begin taking a daily snapshot of your cache cluster. Example: <c>05:00-09:00</c>
+        ///  
+        /// </summary>
+        public string SnapshotWindow
+        {
+            get { return this.snapshotWindow; }
+            set { this.snapshotWindow = value; }
+        }
+
+        // Check to see if SnapshotWindow property is set
+        internal bool IsSetSnapshotWindow()
+        {
+            return this.snapshotWindow != null;
         }
     }
 }

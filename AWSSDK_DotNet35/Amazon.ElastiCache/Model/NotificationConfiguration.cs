@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -24,7 +24,7 @@ namespace Amazon.ElastiCache.Model
     /// <para>Describes a notification topic and its status. Notification topics are used for publishing ElastiCache events to subscribers using
     /// Amazon Simple Notification Service (SNS).</para>
     /// </summary>
-    public class NotificationConfiguration
+    public partial class NotificationConfiguration
     {
         
         private string topicArn;

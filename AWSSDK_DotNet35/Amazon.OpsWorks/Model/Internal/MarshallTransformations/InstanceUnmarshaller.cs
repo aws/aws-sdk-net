@@ -218,6 +218,12 @@
                 continue;
               }
   
+              if (context.TestExpression("EbsOptimized", targetDepth))
+              {
+                instance.EbsOptimized = BoolUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
             }
           
             return instance;

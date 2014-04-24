@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ namespace Amazon.OpsWorks.Model
     /// <summary>
     /// <para>Used to specify a deployment operation.</para>
     /// </summary>
-    public class DeploymentCommand
+    public partial class DeploymentCommand
     {
         
         private DeploymentCommandName name;
@@ -31,14 +31,17 @@ namespace Amazon.OpsWorks.Model
 
 
         /// <summary>
-        /// Specifies the deployment operation. You can specify only one command. For stacks, the available commands are: <ul>
-        /// <li><c>execute_recipes</c>: Execute the recipes that are specified by the <c>Args</c> parameter.</li> <li><c>install_dependencies</c>:
-        /// Installs the stack's dependencies.</li> <li><c>update_custom_cookbooks</c>: Update the stack's custom cookbooks.</li>
-        /// <li><c>update_dependencies</c>: Update the stack's dependencies.</li> </ul> For apps, the available commands are: <ul> <li><c>deploy</c>:
-        /// Deploy the app.</li> <li><c>rollback</c> Roll the app back to the previous version. When you update an app, AWS OpsWorks stores the previous
-        /// version, up to a maximum of five versions. You can use this command to roll an app back as many as four versions.</li> <li><c>start</c>:
-        /// Start the app's web or application server.</li> <li><c>stop</c>: Stop the app's web or application server.</li> <li><c>restart</c>: Restart
-        /// the app's web or application server.</li> <li><c>undeploy</c>: Undeploy the app.</li> </ul>
+        /// Specifies the operation. You can specify only one command. For stacks, the following commands are available: <ul>
+        /// <li><c>execute_recipes</c>: Execute one or more recipes. To specify the recipes, set an <c>Args</c> parameter named <c>recipes</c> to the
+        /// list of recipes to be executed. For example, to execute <c>phpapp::appsetup</c>, set <c>Args</c> to
+        /// <c>{"recipes":["phpapp::appsetup"]}</c>.</li> <li><c>install_dependencies</c>: Install the stack's dependencies.</li>
+        /// <li><c>update_custom_cookbooks</c>: Update the stack's custom cookbooks.</li> <li><c>update_dependencies</c>: Update the stack's
+        /// dependencies.</li> </ul> For apps, the following commands are available: <ul> <li><c>deploy</c>: Deploy an app. Rails apps have an optional
+        /// <c>Args</c> parameter named <c>migrate</c>. Set <c>Args</c> to {"migrate":["true"]} to migrate the database. The default setting is
+        /// {"migrate":["false"]}.</li> <li><c>rollback</c> Roll the app back to the previous version. When you update an app, AWS OpsWorks stores the
+        /// previous version, up to a maximum of five versions. You can use this command to roll an app back as many as four versions.</li>
+        /// <li><c>start</c>: Start the app's web or application server.</li> <li><c>stop</c>: Stop the app's web or application server.</li>
+        /// <li><c>restart</c>: Restart the app's web or application server.</li> <li><c>undeploy</c>: Undeploy the app.</li> </ul>
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -63,8 +66,8 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// An array of command arguments. This parameter is currently used only to specify the list of recipes to be executed by the
-        /// <c>ExecuteRecipes</c> command.
+        /// The arguments of those commands that take arguments. It should be set to a JSON object with the following format: <c>{"arg_name":["value1",
+        /// "value2", ...]}</c>
         ///  
         /// </summary>
         public Dictionary<string,List<string>> Args

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -24,7 +24,7 @@ namespace Amazon.ElastiCache.Model
     /// <para>Represents an individual cache node within a cache cluster. Each cache node runs its own instance of the cluster's protocol-compliant
     /// caching software - either Memcached or Redis.</para>
     /// </summary>
-    public class CacheNode
+    public partial class CacheNode
     {
         
         private string cacheNodeId;
@@ -69,7 +69,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// The date and time the cache node was created.
+        /// The date and time when the cache node was created.
         ///  
         /// </summary>
         public DateTime CacheNodeCreateTime

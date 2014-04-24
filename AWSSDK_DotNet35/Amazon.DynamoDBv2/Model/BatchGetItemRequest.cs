@@ -32,15 +32,16 @@ namespace Amazon.DynamoDBv2.Model
     /// value to retry the operation starting with the next item to get.</para> <para>For example, if you ask to retrieve 100 items, but each
     /// individual item is 50 KB in size, the system returns 20 items (1 MB) and an appropriate <i>UnprocessedKeys</i> value so you can get the next
     /// page of results. If desired, your application can include its own logic to assemble the pages of results into one dataset.</para> <para>If
-    /// no items can be processed because of insufficient provisioned throughput on each of the tables involved in the request, <i>BatchGetItem</i>
-    /// throws <i>ProvisionedThroughputExceededException</i> . </para> <para>By default, <i>BatchGetItem</i> performs eventually consistent reads on
-    /// every table in the request. If you want strongly consistent reads instead, you can set <i>ConsistentRead</i> to <c>true</c> for any or all
-    /// tables.</para> <para>In order to minimize response latency, <i>BatchGetItem</i> retrieves items in parallel.</para> <para>When designing
-    /// your application, keep in mind that DynamoDB does not return attributes in any particular order. To help parse the response by item, include
-    /// the primary key values for the items in your request in the <i>AttributesToGet</i> parameter.</para> <para>If a requested item does not
-    /// exist, it is not returned in the result. Requests for nonexistent items consume the minimum read capacity units according to the type of
-    /// read. For more information, see <a
-    /// href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDDTables.html#CapacityUnitCalculations" >Capacity Units
+    /// <i>none</i> of the items can be processed due to insufficient provisioned throughput on all of the tables in the request, then
+    /// <i>BatchGetItem</i> will throw a <i>ProvisionedThroughputExceededException</i> . If <i>at least one</i> of the items is successfully
+    /// processed, then <i>BatchGetItem</i> completes successfully, while returning the keys of the unread items in <i>UnprocessedKeys</i> .</para>
+    /// <para>By default, <i>BatchGetItem</i> performs eventually consistent reads on every table in the request. If you want strongly consistent
+    /// reads instead, you can set <i>ConsistentRead</i> to <c>true</c> for any or all tables.</para> <para>In order to minimize response latency,
+    /// <i>BatchGetItem</i> retrieves items in parallel.</para> <para>When designing your application, keep in mind that DynamoDB does not return
+    /// attributes in any particular order. To help parse the response by item, include the primary key values for the items in your request in the
+    /// <i>AttributesToGet</i> parameter.</para> <para>If a requested item does not exist, it is not returned in the result. Requests for
+    /// nonexistent items consume the minimum read capacity units according to the type of read. For more information, see <a
+    /// href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#CapacityUnitCalculations" >Capacity Units
     /// Calculations</a> in the Amazon DynamoDB Developer Guide.</para>
     /// </summary>
     public partial class BatchGetItemRequest : AmazonDynamoDBv2Request
@@ -53,8 +54,10 @@ namespace Amazon.DynamoDBv2.Model
         /// A map of one or more table names and, for each table, the corresponding primary keys for the items to retrieve. Each table name can be
         /// invoked only once. Each element in the map consists of the following: <ul> <li> <i>Keys</i> - An array of primary key attribute values that
         /// define specific items in the table. </li> <li> <i>AttributesToGet</i> - One or more attributes to be retrieved from the table. By default,
-        /// all attributes are returned. If a specified attribute is not found, it does not appear in the result. </li> <li> <i>ConsistentRead</i> - If
-        /// <c>true</c>, a strongly consistent read is used; if <c>false</c> (the default), an eventually consistent read is used. </li> </ul>
+        /// all attributes are returned. If a specified attribute is not found, it does not appear in the result. Note that <i>AttributesToGet</i> has
+        /// no effect on provisioned throughput consumption. DynamoDB determines capacity units consumed based on item size, not on the amount of data
+        /// that is returned to an application. </li> <li> <i>ConsistentRead</i> - If <c>true</c>, a strongly consistent read is used; if <c>false</c>
+        /// (the default), an eventually consistent read is used. </li> </ul>
         ///  
         /// <para>
         /// <b>Constraints:</b>

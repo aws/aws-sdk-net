@@ -141,10 +141,36 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                         writer.WriteObjectEnd();
                     }
                 }
+
+                if (createStackRequest != null) 
+                {
+                    ChefConfiguration chefConfiguration = createStackRequest.ChefConfiguration;
+                    if (chefConfiguration != null)
+                    {
+                        writer.WritePropertyName("ChefConfiguration");
+                        writer.WriteObjectStart();
+                        if (chefConfiguration != null && chefConfiguration.IsSetManageBerkshelf()) 
+                        {
+                            writer.WritePropertyName("ManageBerkshelf");
+                            writer.Write(chefConfiguration.ManageBerkshelf);
+                        }
+                        if (chefConfiguration != null && chefConfiguration.IsSetBerkshelfVersion()) 
+                        {
+                            writer.WritePropertyName("BerkshelfVersion");
+                            writer.Write(chefConfiguration.BerkshelfVersion);
+                        }
+                        writer.WriteObjectEnd();
+                    }
+                }
                 if (createStackRequest != null && createStackRequest.IsSetUseCustomCookbooks()) 
                 {
                     writer.WritePropertyName("UseCustomCookbooks");
                     writer.Write(createStackRequest.UseCustomCookbooks);
+                }
+                if (createStackRequest != null && createStackRequest.IsSetUseOpsworksSecurityGroups()) 
+                {
+                    writer.WritePropertyName("UseOpsworksSecurityGroups");
+                    writer.Write(createStackRequest.UseOpsworksSecurityGroups);
                 }
 
                 if (createStackRequest != null) 

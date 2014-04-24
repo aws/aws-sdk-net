@@ -170,6 +170,12 @@
                 continue;
               }
   
+              if (context.TestExpression("UseEbsOptimizedInstances", targetDepth))
+              {
+                layer.UseEbsOptimizedInstances = BoolUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
             }
           
             return layer;

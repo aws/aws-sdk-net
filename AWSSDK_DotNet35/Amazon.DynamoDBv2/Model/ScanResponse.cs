@@ -24,7 +24,7 @@ namespace Amazon.DynamoDBv2.Model
     /// <summary>
     /// Returns information about the  Scan response and response metadata.
     /// </summary>
-    public class ScanResponse : ScanResult
+    public partial class ScanResponse : ScanResult
     {
         /// <summary>
         /// Gets and sets the ScanResult property.

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,11 +30,9 @@ namespace Amazon.OpsWorks.Model
     /// <para>The default setting for all time periods is off, so you use the following parameters primarily to specify the online periods. You
     /// don't have to explicitly specify offline periods unless you want to change an online period to an offline period. </para> <para>The
     /// following example specifies that the instance should be online for four hours, from UTC 1200 - 1600. It will be off for the remainder of the
-    /// day.</para> <c> {
-    /// "12":"on", "13":"on", "14":"on", "15":"on" }
-    /// </c>
+    /// day.</para> <para> <c> { "12":"on", "13":"on", "14":"on", "15":"on" } </c> </para>
     /// </summary>
-    public class WeeklyAutoScalingSchedule
+    public partial class WeeklyAutoScalingSchedule
     {
         
         private Dictionary<string,string> monday = new Dictionary<string,string>();

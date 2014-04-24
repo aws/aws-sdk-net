@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -46,6 +46,7 @@ namespace Amazon.OpsWorks.Model
         private Architecture architecture;
         private RootDeviceType rootDeviceType;
         private bool? installUpdatesOnBoot;
+        private bool? ebsOptimized;
 
 
         /// <summary>
@@ -233,9 +234,9 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// The instance architecture. Instance types do not necessarily support both architectures. For a list of the architectures that are supported
-        /// by the different instance types, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and
-        /// Types</a>.
+        /// The instance architecture. The default option is <c>x86_64</c>. Instance types do not necessarily support both architectures. For a list of
+        /// the architectures that are supported by the different instance types, see <a
+        /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -288,8 +289,8 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Whether to install operating system and package updates when the instance boots. The default value is <c>true</c>. To control when updates
         /// are installed, set this value to <c>false</c>. You must then update your instances manually by using <a>CreateDeployment</a> to run the
-        /// <c>update_dependencies</c> stack command or manually running <c>yum</c> (Amazon Linux) or <c>apt-get</c> (Ubuntu) on the instances. <note>We
-        /// strongly recommend using the default value of <c>true</c>, to ensure that your instances have the latest security updates.</note>
+        /// <c>update_dependencies</c> stack command or manually running <c>yum</c> (Amazon Linux) or <c>apt-get</c> (Ubuntu) on the instances. <note>
+        /// We strongly recommend using the default value of <c>true</c> to ensure that your instances have the latest security updates. </note>
         ///  
         /// </summary>
         public bool InstallUpdatesOnBoot
@@ -302,6 +303,22 @@ namespace Amazon.OpsWorks.Model
         internal bool IsSetInstallUpdatesOnBoot()
         {
             return this.installUpdatesOnBoot.HasValue;
+        }
+
+        /// <summary>
+        /// Whether to create an Amazon EBS-optimized instance.
+        ///  
+        /// </summary>
+        public bool EbsOptimized
+        {
+            get { return this.ebsOptimized ?? default(bool); }
+            set { this.ebsOptimized = value; }
+        }
+
+        // Check to see if EbsOptimized property is set
+        internal bool IsSetEbsOptimized()
+        {
+            return this.ebsOptimized.HasValue;
         }
 
     }

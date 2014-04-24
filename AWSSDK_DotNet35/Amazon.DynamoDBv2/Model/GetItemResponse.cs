@@ -24,7 +24,7 @@ namespace Amazon.DynamoDBv2.Model
     /// <summary>
     /// Returns information about the  GetItem response and response metadata.
     /// </summary>
-    public class GetItemResponse : GetItemResult
+    public partial class GetItemResponse : GetItemResult
     {
         /// <summary>
         /// Gets and sets the GetItemResult property.

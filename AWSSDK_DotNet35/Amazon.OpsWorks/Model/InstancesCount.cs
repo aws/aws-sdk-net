@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,11 +23,12 @@ namespace Amazon.OpsWorks.Model
     /// <summary>
     /// <para>Describes how many instances a stack has for each status.</para>
     /// </summary>
-    public class InstancesCount
+    public partial class InstancesCount
     {
         
         private int? booting;
         private int? connectionLost;
+        private int? online;
         private int? pending;
         private int? rebooting;
         private int? requested;
@@ -36,6 +37,7 @@ namespace Amazon.OpsWorks.Model
         private int? shuttingDown;
         private int? startFailed;
         private int? stopped;
+        private int? stopping;
         private int? terminated;
         private int? terminating;
 
@@ -70,6 +72,22 @@ namespace Amazon.OpsWorks.Model
         internal bool IsSetConnectionLost()
         {
             return this.connectionLost.HasValue;
+        }
+
+        /// <summary>
+        /// The number of instances with <c>online</c> status.
+        ///  
+        /// </summary>
+        public int Online
+        {
+            get { return this.online ?? default(int); }
+            set { this.online = value; }
+        }
+
+        // Check to see if Online property is set
+        internal bool IsSetOnline()
+        {
+            return this.online.HasValue;
         }
 
         /// <summary>
@@ -198,6 +216,22 @@ namespace Amazon.OpsWorks.Model
         internal bool IsSetStopped()
         {
             return this.stopped.HasValue;
+        }
+
+        /// <summary>
+        /// The number of instances with <c>stopping</c> status.
+        ///  
+        /// </summary>
+        public int Stopping
+        {
+            get { return this.stopping ?? default(int); }
+            set { this.stopping = value; }
+        }
+
+        // Check to see if Stopping property is set
+        internal bool IsSetStopping()
+        {
+            return this.stopping.HasValue;
         }
 
         /// <summary>

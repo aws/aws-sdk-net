@@ -23,7 +23,7 @@ namespace Amazon.DynamoDBv2.Model
     /// <summary>
     /// <para>Represents a request to perform a <i>DeleteItem</i> operation on an item.</para>
     /// </summary>
-    public class DeleteRequest
+    public partial class DeleteRequest
     {
         
         private Dictionary<string,AttributeValue> key = new Dictionary<string,AttributeValue>();

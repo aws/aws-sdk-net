@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -24,7 +24,7 @@ namespace Amazon.OpsWorks.Model
     /// <summary>
     /// Returns information about the  DescribeDeployments response and response metadata.
     /// </summary>
-    public class DescribeDeploymentsResponse : DescribeDeploymentsResult
+    public partial class DescribeDeploymentsResponse : DescribeDeploymentsResult
     {
         /// <summary>
         /// Gets and sets the DescribeDeploymentsResult property.

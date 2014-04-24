@@ -23,7 +23,7 @@ namespace Amazon.DynamoDBv2.Model
     /// <summary>
     /// <para>Represents a set of primary keys and, for each key, the attributes to retrieve from the table.</para>
     /// </summary>
-    public class KeysAndAttributes
+    public partial class KeysAndAttributes
     {
         
         private List<Dictionary<string,AttributeValue>> keys = new List<Dictionary<string,AttributeValue>>();

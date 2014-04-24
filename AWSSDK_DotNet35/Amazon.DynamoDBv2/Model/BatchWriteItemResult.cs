@@ -44,7 +44,7 @@ namespace Amazon.DynamoDBv2.Model
         /// and an attribute value. Attribute values must not be null; string and binary type attributes must have lengths greater than zero; and set
         /// type attributes must not be empty. Requests that contain empty values will be rejected with a <i>ValidationException</i>. If you specify any
         /// attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute
-        /// definition.</li> </ul> </li> </ul> If there are no unprocessed items remaining, the response contains an empty <i>UnprocessedItems</i> map.
+        /// definition. </li> </ul> </li> </ul> If there are no unprocessed items remaining, the response contains an empty <i>UnprocessedItems</i> map.
         ///  
         /// <para>
         /// <b>Constraints:</b>

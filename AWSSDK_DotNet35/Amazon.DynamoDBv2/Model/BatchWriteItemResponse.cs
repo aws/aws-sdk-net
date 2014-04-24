@@ -24,7 +24,7 @@ namespace Amazon.DynamoDBv2.Model
     /// <summary>
     /// Returns information about the  BatchWriteItem response and response metadata.
     /// </summary>
-    public class BatchWriteItemResponse : BatchWriteItemResult
+    public partial class BatchWriteItemResponse : BatchWriteItemResult
     {
         /// <summary>
         /// Gets and sets the BatchWriteItemResult property.

@@ -97,8 +97,8 @@ namespace Amazon.DynamoDBv2.Model
         /// attribute, you must specify exactly one element with a <i>KeyType</i> of <c>HASH</c>. For a primary key that consists of hash and range
         /// attributes, you must specify exactly two elements, in this order: The first element must have a <i>KeyType</i> of <c>HASH</c>, and the
         /// second element must have a <i>KeyType</i> of <c>RANGE</c>. For more information, see <a
-        /// href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDDTables.html#WorkingWithDDTables.primary.key">Specifying
-        /// the Primary Key</a> in the Amazon DynamoDB Developer Guide.
+        /// href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Specifying the
+        /// Primary Key</a> in the Amazon DynamoDB Developer Guide.
         ///  
         /// <para>
         /// <b>Constraints:</b>

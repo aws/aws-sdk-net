@@ -78,6 +78,17 @@ namespace Amazon.DynamoDBv2.DocumentModel
         AllProjectedAttributes
     }
 
+    /// <summary>
+    /// An enumeration of all supported ConditionalOperator values.
+    /// Value of And for an operation will require that all conditions match.
+    /// Value of Or for an operation will require that at least one of the conditons match.
+    /// </summary>
+    public enum ConditionalOperatorValues
+    {
+        And,
+        Or
+    }
+
     internal enum ProjectionTypeValues
     {
         All,
@@ -115,7 +126,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         { }
     }
 
-    internal static class EnumToStringMapper
+    internal static class EnumMapper
     {
         public static string Convert(ReturnConsumedCapacityValues value)
         {
@@ -174,7 +185,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
                     throw new ArgumentOutOfRangeException("value", "Invalid SelectValues value");
             }
         }
-
 
         public static string Convert(ReturnValues value)
         {
@@ -250,6 +260,19 @@ namespace Amazon.DynamoDBv2.DocumentModel
                     return "BETWEEN";
                 default:
                     throw new ArgumentOutOfRangeException("value", "Invalid QueryOperator value");
+            }
+        }
+
+        public static string Convert(ConditionalOperatorValues value)
+        {
+            switch (value)
+            {
+                case ConditionalOperatorValues.And:
+                    return "AND";
+                case ConditionalOperatorValues.Or:
+                    return "OR";
+                default:
+                    throw new ArgumentOutOfRangeException("value", "Invalid ConditionalOperatorValues value");
             }
         }
     }

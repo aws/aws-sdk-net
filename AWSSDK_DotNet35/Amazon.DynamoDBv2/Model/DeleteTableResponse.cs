@@ -24,7 +24,7 @@ namespace Amazon.DynamoDBv2.Model
     /// <summary>
     /// Returns information about the  DeleteTable response and response metadata.
     /// </summary>
-    public class DeleteTableResponse : DeleteTableResult
+    public partial class DeleteTableResponse : DeleteTableResult
     {
         /// <summary>
         /// Gets and sets the DeleteTableResult property.

@@ -148,6 +148,16 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                             writer.WritePropertyName("Size");
                             writer.Write(volumeConfigurationsListValue.Size);
                         }
+                        if (volumeConfigurationsListValue != null && volumeConfigurationsListValue.IsSetVolumeType()) 
+                        {
+                            writer.WritePropertyName("VolumeType");
+                            writer.Write(volumeConfigurationsListValue.VolumeType);
+                        }
+                        if (volumeConfigurationsListValue != null && volumeConfigurationsListValue.IsSetIops()) 
+                        {
+                            writer.WritePropertyName("Iops");
+                            writer.Write(volumeConfigurationsListValue.Iops);
+                        }
                         writer.WriteObjectEnd();
                     }
                     writer.WriteArrayEnd();
@@ -252,6 +262,11 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                 {
                     writer.WritePropertyName("InstallUpdatesOnBoot");
                     writer.Write(updateLayerRequest.InstallUpdatesOnBoot);
+                }
+                if (updateLayerRequest != null && updateLayerRequest.IsSetUseEbsOptimizedInstances()) 
+                {
+                    writer.WritePropertyName("UseEbsOptimizedInstances");
+                    writer.Write(updateLayerRequest.UseEbsOptimizedInstances);
                 }
 
                 writer.WriteObjectEnd();

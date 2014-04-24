@@ -444,59 +444,81 @@ namespace Amazon.DynamoDBv2.DataModel
                 return true;
             }
 
-            var targetTypeWrapper = TypeFactory.GetTypeInfo(targetType);
-            if (targetTypeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(Boolean)))) output = value.AsBoolean();
-            else if (targetTypeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(Byte)))) output = value.AsByte();
-            else if (targetTypeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(Char)))) output = value.AsChar();
-            else if (targetTypeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(DateTime)))) output = value.AsDateTime();
-            else if (targetTypeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(Decimal)))) output = value.AsDecimal();
-            else if (targetTypeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(Double)))) output = value.AsDouble();
-            else if (targetTypeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(int)))) output = value.AsInt();
-            else if (targetTypeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(long)))) output = value.AsLong();
-            else if (targetTypeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(SByte)))) output = value.AsSByte();
-            else if (targetTypeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(short)))) output = value.AsShort();
-            else if (targetTypeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(Single)))) output = value.AsSingle();
-            else if (targetTypeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(String)))) output = value.AsString();
-            else if (targetTypeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(uint)))) output = value.AsUInt();
-            else if (targetTypeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(ulong)))) output = value.AsULong();
-            else if (targetTypeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(ushort)))) output = value.AsUShort();
-            else if (targetTypeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(Guid)))) output = value.AsGuid();
-            else if (targetTypeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(byte[])))) output = value.AsByteArray();
-            else if (targetTypeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(MemoryStream)))) output = value.AsMemoryStream();
-            else
+            try
             {
-                output = null;
-                return false;
+                var targetTypeWrapper = TypeFactory.GetTypeInfo(targetType);
+                if (targetTypeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(Boolean)))) output = value.AsBoolean();
+                else if (targetTypeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(Byte)))) output = value.AsByte();
+                else if (targetTypeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(Char)))) output = value.AsChar();
+                else if (targetTypeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(DateTime)))) output = value.AsDateTime();
+                else if (targetTypeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(Decimal)))) output = value.AsDecimal();
+                else if (targetTypeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(Double)))) output = value.AsDouble();
+                else if (targetTypeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(int)))) output = value.AsInt();
+                else if (targetTypeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(long)))) output = value.AsLong();
+                else if (targetTypeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(SByte)))) output = value.AsSByte();
+                else if (targetTypeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(short)))) output = value.AsShort();
+                else if (targetTypeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(Single)))) output = value.AsSingle();
+                else if (targetTypeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(String)))) output = value.AsString();
+                else if (targetTypeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(uint)))) output = value.AsUInt();
+                else if (targetTypeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(ulong)))) output = value.AsULong();
+                else if (targetTypeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(ushort)))) output = value.AsUShort();
+                else if (targetTypeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(Guid)))) output = value.AsGuid();
+                else if (targetTypeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(byte[])))) output = value.AsByteArray();
+                else if (targetTypeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(MemoryStream)))) output = value.AsMemoryStream();
+                else
+                {
+                    output = null;
+                    return false;
+                }
+                return true;
             }
-            return true;
+            catch (InvalidCastException)
+            {
+                throw new InvalidCastException(string.Format(CultureInfo.InvariantCulture,
+                    "Unable to cast value [{0}] of type [{1}] to type [{2}]",
+                    value.Value,
+                    value.Value.GetType().FullName,
+                    targetType.FullName));
+            }
         }
         private static bool TryToPrimitive(Type type, object value, out Primitive output)
         {
-            var typeWrapper = TypeFactory.GetTypeInfo(type);
-            if (typeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(Boolean)))) output = (Boolean)value;
-            else if (typeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(Byte)))) output = (Byte)value;
-            else if (typeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(Char)))) output = (Char)value;
-            else if (typeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(DateTime)))) output = (DateTime)value;
-            else if (typeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(Decimal)))) output = (Decimal)value;
-            else if (typeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(Double)))) output = (Double)value;
-            else if (typeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(int)))) output = (int)value;
-            else if (typeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(long)))) output = (long)value;
-            else if (typeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(SByte)))) output = (SByte)value;
-            else if (typeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(short)))) output = (short)value;
-            else if (typeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(Single)))) output = (Single)value;
-            else if (typeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(String)))) output = (String)value;
-            else if (typeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(uint)))) output = (uint)value;
-            else if (typeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(ulong)))) output = (ulong)value;
-            else if (typeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(ushort)))) output = (ushort)value;
-            else if (typeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(Guid)))) output = (Guid)value;
-            else if (typeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(byte[])))) output = (byte[])value;
-            else if (typeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(MemoryStream)))) output = (MemoryStream)value;
-            else
+            try
             {
-                output = null;
-                return false;
+                var typeWrapper = TypeFactory.GetTypeInfo(type);
+                if (typeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(Boolean)))) output = (Boolean)value;
+                else if (typeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(Byte)))) output = (Byte)value;
+                else if (typeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(Char)))) output = (Char)value;
+                else if (typeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(DateTime)))) output = (DateTime)value;
+                else if (typeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(Decimal)))) output = (Decimal)value;
+                else if (typeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(Double)))) output = (Double)value;
+                else if (typeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(int)))) output = (int)value;
+                else if (typeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(long)))) output = (long)value;
+                else if (typeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(SByte)))) output = (SByte)value;
+                else if (typeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(short)))) output = (short)value;
+                else if (typeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(Single)))) output = (Single)value;
+                else if (typeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(String)))) output = (String)value;
+                else if (typeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(uint)))) output = (uint)value;
+                else if (typeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(ulong)))) output = (ulong)value;
+                else if (typeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(ushort)))) output = (ushort)value;
+                else if (typeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(Guid)))) output = (Guid)value;
+                else if (typeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(byte[])))) output = (byte[])value;
+                else if (typeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(MemoryStream)))) output = (MemoryStream)value;
+                else
+                {
+                    output = null;
+                    return false;
+                }
+                return true;
             }
-            return true;
+            catch (InvalidCastException)
+            {
+                throw new InvalidCastException(string.Format(CultureInfo.InvariantCulture,
+                    "Unable to cast value [{0}] of type [{1}] to type [{2}]",
+                    value,
+                    value == null ? "null" : value.GetType().FullName,
+                    type.FullName));
+            }
         }
 
         // Get/Set object properties
@@ -586,11 +608,11 @@ namespace Amazon.DynamoDBv2.DataModel
 
             DynamoDBEntry hashKeyEntry = ValueToDynamoDBEntry(propertyStorage, hashKeyValue);
             if (hashKeyEntry == null) throw new InvalidOperationException("Unable to convert hash key value for property " + hashKeyProperty);
-            
+
             Document hashKey = new Document();
             hashKey[hashAttributeName] = hashKeyEntry;
 
-            return ComposeQueryFilterHelper(hashKey, conditions, storageConfig, currentConfig, out indexNames);
+            return ComposeQueryFilterHelper(currentConfig, hashKey, conditions, storageConfig, out indexNames);
         }
 
         private static string NO_INDEX = DynamoDBFlatConfig.DefaultIndexName;
@@ -598,10 +620,10 @@ namespace Amazon.DynamoDBv2.DataModel
         // may be used against. In the case where the condition property is also a RANGE key on the
         // table and not just on LSI/GSI, the potential index will be "" (absent).
         private static QueryFilter ComposeQueryFilterHelper(
+            DynamoDBFlatConfig currentConfig,
             Document hashKey,
             IEnumerable<QueryCondition> conditions,
             ItemStorageConfig storageConfig,
-            DynamoDBFlatConfig currentConfig,
             out List<string> indexNames)
         {
             if (hashKey == null)
@@ -633,17 +655,33 @@ namespace Amazon.DynamoDBv2.DataModel
                         indexNames.AddRange(conditionProperty.Indexes);
                     if (conditionProperty.IsRangeKey)
                         indexNames.Add(NO_INDEX);
-                    List<AttributeValue> attributeValues = new List<AttributeValue>();
-                    foreach (var conditionValue in conditionValues)
-                    {
-                        DynamoDBEntry entry = ToDynamoDBEntry(conditionProperty, conditionValue);
-                        AttributeValue attributeValue = entry.ConvertToAttributeValue();
-                        attributeValues.Add(attributeValue);
-                    }
+                    List<AttributeValue> attributeValues = ConvertConditionValues(conditionValues, conditionProperty);
+                    filter.AddCondition(conditionProperty.AttributeName, condition.Operator, attributeValues);
+                }
+            }
+            if (currentConfig.QueryFilter != null)
+            {
+                foreach (ScanCondition condition in currentConfig.QueryFilter)
+                {
+                    object[] conditionValues = condition.Values;
+                    PropertyStorage conditionProperty = storageConfig.GetPropertyStorage(condition.PropertyName);
+                    List<AttributeValue> attributeValues = ConvertConditionValues(conditionValues, conditionProperty);
                     filter.AddCondition(conditionProperty.AttributeName, condition.Operator, attributeValues);
                 }
             }
             return filter;
+        }
+
+        private static List<AttributeValue> ConvertConditionValues(object[] conditionValues, PropertyStorage conditionProperty)
+        {
+            List<AttributeValue> attributeValues = new List<AttributeValue>();
+            foreach (var conditionValue in conditionValues)
+            {
+                DynamoDBEntry entry = ToDynamoDBEntry(conditionProperty, conditionValue);
+                AttributeValue attributeValue = entry.ConvertToAttributeValue();
+                attributeValues.Add(attributeValue);
+            }
+            return attributeValues;
         }
 
         private static string GetQueryIndexName(DynamoDBFlatConfig flatConfig, List<string> indexNames)
@@ -807,11 +845,12 @@ namespace Amazon.DynamoDBv2.DataModel
 
             DynamoDBFlatConfig config = new DynamoDBFlatConfig(operationConfig, this.config);
             Table table = GetTargetTable(storageConfig, config);
-            ScanOperationConfig scanConfig = new ScanOperationConfig
+            var scanConfig = new ScanOperationConfig
             {
                 AttributesToGet = storageConfig.AttributesToGet,
                 Select = SelectValues.SpecificAttributes,
-                Filter = filter
+                Filter = filter,
+                ConditionalOperator = config.ConditionalOperator
             };
             Search scan = table.Scan(scanConfig);
             return scan;
@@ -846,7 +885,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
             List<string> indexNames;
             DynamoDBFlatConfig currentConfig = new DynamoDBFlatConfig(operationConfig, this.config);
-            QueryFilter filter = ComposeQueryFilter(currentConfig, hashKeyValue, conditions, storageConfig, out indexNames);
+            QueryFilter filter = ComposeQueryFilter(currentConfig, hashKeyValue, conditions,  storageConfig, out indexNames);
             return ConvertQueryHelper<T>(currentConfig, storageConfig, filter, indexNames);
         }
         private Search ConvertQueryHelper<T>(DynamoDBFlatConfig currentConfig, ItemStorageConfig storageConfig, QueryFilter filter, List<string> indexNames)
@@ -858,7 +897,8 @@ namespace Amazon.DynamoDBv2.DataModel
                 Filter = filter,
                 ConsistentRead = currentConfig.ConsistentRead.Value,
                 BackwardSearch = currentConfig.BackwardQuery.Value,
-                IndexName = indexName
+                IndexName = indexName,
+                ConditionalOperator = currentConfig.ConditionalOperator
             };
             if (string.IsNullOrEmpty(indexName))
             {

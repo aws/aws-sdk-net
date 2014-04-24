@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -24,7 +24,7 @@ namespace Amazon.OpsWorks.Model
     /// <summary>
     /// Returns information about the  DescribeApps response and response metadata.
     /// </summary>
-    public class DescribeAppsResponse : DescribeAppsResult
+    public partial class DescribeAppsResponse : DescribeAppsResult
     {
         /// <summary>
         /// Gets and sets the DescribeAppsResult property.

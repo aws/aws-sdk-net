@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ namespace Amazon.OpsWorks.Model
     /// <summary>
     /// <para>Describes an instance's RAID array.</para>
     /// </summary>
-    public class RaidArray
+    public partial class RaidArray
     {
         
         private string raidArrayId;
@@ -36,6 +36,8 @@ namespace Amazon.OpsWorks.Model
         private string mountPoint;
         private string availabilityZone;
         private string createdAt;
+        private string volumeType;
+        private int? iops;
 
 
         /// <summary>
@@ -197,6 +199,38 @@ namespace Amazon.OpsWorks.Model
         internal bool IsSetCreatedAt()
         {
             return this.createdAt != null;
+        }
+
+        /// <summary>
+        /// The volume type, standard or PIOPS.
+        ///  
+        /// </summary>
+        public string VolumeType
+        {
+            get { return this.volumeType; }
+            set { this.volumeType = value; }
+        }
+
+        // Check to see if VolumeType property is set
+        internal bool IsSetVolumeType()
+        {
+            return this.volumeType != null;
+        }
+
+        /// <summary>
+        /// For PIOPS volumes, the IOPS per disk.
+        ///  
+        /// </summary>
+        public int Iops
+        {
+            get { return this.iops ?? default(int); }
+            set { this.iops = value; }
+        }
+
+        // Check to see if Iops property is set
+        internal bool IsSetIops()
+        {
+            return this.iops.HasValue;
         }
     }
 }

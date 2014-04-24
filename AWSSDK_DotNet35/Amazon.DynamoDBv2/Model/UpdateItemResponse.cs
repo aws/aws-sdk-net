@@ -24,7 +24,7 @@ namespace Amazon.DynamoDBv2.Model
     /// <summary>
     /// Returns information about the  UpdateItem response and response metadata.
     /// </summary>
-    public class UpdateItemResponse : UpdateItemResult
+    public partial class UpdateItemResponse : UpdateItemResult
     {
         /// <summary>
         /// Gets and sets the UpdateItemResult property.

@@ -25,7 +25,7 @@ namespace Amazon.DynamoDBv2.Model
     /// both, in a single <i>WriteRequest</i> . If you do need to perform both of these operations, you will need to specify two separate
     /// <i>WriteRequest</i> objects.</para>
     /// </summary>
-    public class WriteRequest
+    public partial class WriteRequest
     {
         
         private PutRequest putRequest;

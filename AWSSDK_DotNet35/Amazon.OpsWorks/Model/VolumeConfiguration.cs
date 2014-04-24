@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,13 +23,15 @@ namespace Amazon.OpsWorks.Model
     /// <summary>
     /// <para>Describes an Amazon EBS volume configuration.</para>
     /// </summary>
-    public class VolumeConfiguration
+    public partial class VolumeConfiguration
     {
         
         private string mountPoint;
         private int? raidLevel;
         private int? numberOfDisks;
         private int? size;
+        private string volumeType;
+        private int? iops;
 
 
         /// <summary>
@@ -94,6 +96,38 @@ namespace Amazon.OpsWorks.Model
         internal bool IsSetSize()
         {
             return this.size.HasValue;
+        }
+
+        /// <summary>
+        /// The volume type, standard or PIOPS.
+        ///  
+        /// </summary>
+        public string VolumeType
+        {
+            get { return this.volumeType; }
+            set { this.volumeType = value; }
+        }
+
+        // Check to see if VolumeType property is set
+        internal bool IsSetVolumeType()
+        {
+            return this.volumeType != null;
+        }
+
+        /// <summary>
+        /// For PIOPS volumes, the IOPS per disk.
+        ///  
+        /// </summary>
+        public int Iops
+        {
+            get { return this.iops ?? default(int); }
+            set { this.iops = value; }
+        }
+
+        // Check to see if Iops property is set
+        internal bool IsSetIops()
+        {
+            return this.iops.HasValue;
         }
     }
 }

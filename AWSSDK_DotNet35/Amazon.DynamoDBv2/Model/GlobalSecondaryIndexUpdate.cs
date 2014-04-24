@@ -23,7 +23,7 @@ namespace Amazon.DynamoDBv2.Model
     /// <summary>
     /// <para>Represents the new provisioned throughput settings to apply to a global secondary index.</para>
     /// </summary>
-    public class GlobalSecondaryIndexUpdate
+    public partial class GlobalSecondaryIndexUpdate
     {
         
         private UpdateGlobalSecondaryIndexAction update;

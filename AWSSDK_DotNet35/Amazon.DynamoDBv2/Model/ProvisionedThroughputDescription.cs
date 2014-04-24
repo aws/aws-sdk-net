@@ -24,7 +24,7 @@ namespace Amazon.DynamoDBv2.Model
     /// <para>Represents the provisioned throughput settings for the table, consisting of read and write capacity units, along with data about
     /// increases and decreases.</para>
     /// </summary>
-    public class ProvisionedThroughputDescription
+    public partial class ProvisionedThroughputDescription
     {
         
         private DateTime? lastIncreaseDateTime;

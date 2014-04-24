@@ -86,7 +86,9 @@ namespace Amazon.DynamoDBv2.Model
 
         /// <summary>
         /// The names of one or more attributes to retrieve. If no attribute names are specified, then all attributes will be returned. If any of the
-        /// requested attributes are not found, they will not appear in the result.
+        /// requested attributes are not found, they will not appear in the result. Note that <i>AttributesToGet</i> has no effect on provisioned
+        /// throughput consumption. DynamoDB determines capacity units consumed based on item size, not on the amount of data that is returned to an
+        /// application.
         ///  
         /// <para>
         /// <b>Constraints:</b>

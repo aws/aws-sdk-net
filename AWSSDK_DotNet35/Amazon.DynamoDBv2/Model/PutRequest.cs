@@ -23,7 +23,7 @@ namespace Amazon.DynamoDBv2.Model
     /// <summary>
     /// <para>Represents a request to perform a <i>PutItem</i> operation on an item.</para>
     /// </summary>
-    public class PutRequest
+    public partial class PutRequest
     {
         
         private Dictionary<string,AttributeValue> item = new Dictionary<string,AttributeValue>();

@@ -456,7 +456,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <returns>AsyncSearch which can be used to retrieve DynamoDB data.</returns>
         public AsyncSearch<T> QueryAsync<T>(object hashKeyValue, DynamoDBOperationConfig operationConfig)
         {
-            Search query = ConvertQueryByValue<T>(hashKeyValue, null, operationConfig);
+            Search query = ConvertQueryByValue<T>(hashKeyValue, null,  operationConfig);
             return FromSearchAsync<T>(query);
         }
 
@@ -470,7 +470,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="values">
         /// Value(s) of the condition.
         /// For all operations except QueryOperator.Between, values should be one value.
-        /// For QueryOperator.Betwee, values should be two values.
+        /// For QueryOperator.Between, values should be two values.
         /// </param>
         /// <returns>AsyncSearch which can be used to retrieve DynamoDB data.</returns>
         public AsyncSearch<T> QueryAsync<T>(object hashKeyValue, QueryOperator op, params object[] values)
@@ -491,7 +491,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="values">
         /// Value(s) of the condition.
         /// For all operations except QueryOperator.Between, values should be one value.
-        /// For QueryOperator.Betwee, values should be two values.
+        /// For QueryOperator.Between, values should be two values.
         /// </param>
         /// <param name="operationConfig">Config object which can be used to override the table used.</param>
         /// <returns>AsyncSearch which can be used to retrieve DynamoDB data.</returns>

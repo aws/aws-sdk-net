@@ -29,6 +29,7 @@ namespace Amazon.DynamoDBv2.Model
         
         private List<Dictionary<string,AttributeValue>> items = new List<Dictionary<string,AttributeValue>>();
         private int? count;
+        private int? scannedCount;
         private Dictionary<string,AttributeValue> lastEvaluatedKey = new Dictionary<string,AttributeValue>();
         private ConsumedCapacity consumedCapacity;
 
@@ -64,6 +65,25 @@ namespace Amazon.DynamoDBv2.Model
         internal bool IsSetCount()
         {
             return this.count.HasValue;
+        }
+
+        /// <summary>
+        /// The number of items in the complete query, before any filters are applied. A high <i>ScannedCount</i> value with few, or no, <i>Count</i>
+        /// results indicates an inefficient <i>Query</i> operation. For more information, see <a
+        /// href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count and ScannedCount</a> in the Amazon
+        /// DynamoDB Developer Guide.
+        ///  
+        /// </summary>
+        public int ScannedCount
+        {
+            get { return this.scannedCount ?? default(int); }
+            set { this.scannedCount = value; }
+        }
+
+        // Check to see if ScannedCount property is set
+        internal bool IsSetScannedCount()
+        {
+            return this.scannedCount.HasValue;
         }
 
         /// <summary>

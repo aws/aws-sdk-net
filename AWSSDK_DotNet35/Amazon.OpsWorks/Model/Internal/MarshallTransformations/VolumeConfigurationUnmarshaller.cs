@@ -66,6 +66,18 @@
                 continue;
               }
   
+              if (context.TestExpression("VolumeType", targetDepth))
+              {
+                volumeConfiguration.VolumeType = StringUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
+              if (context.TestExpression("Iops", targetDepth))
+              {
+                volumeConfiguration.Iops = IntUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
             }
           
             return volumeConfiguration;

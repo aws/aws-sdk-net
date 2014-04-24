@@ -24,7 +24,7 @@ namespace Amazon.DynamoDBv2.Model
     /// <summary>
     /// Returns information about the  PutItem response and response metadata.
     /// </summary>
-    public class PutItemResponse : PutItemResult
+    public partial class PutItemResponse : PutItemResult
     {
         /// <summary>
         /// Gets and sets the PutItemResult property.

@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright 2012-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -26,7 +26,23 @@ namespace Amazon.DynamoDBv2.DocumentModel
     public class PutItemOperationConfig
     {
         /// <summary>
-        /// Document representing the expected state
+        /// The expected state of data in DynamoDB.
+        /// Note: setting both Expected and ExpectedState is not supported and
+        /// will result in an exception being thrown.
+        /// 
+        /// For the operation to succeed, the data in DynamoDB must match the conditions
+        /// specified in the ExpectedState.
+        /// </summary>
+        public ExpectedState ExpectedState { get; set; }
+
+        /// <summary>
+        /// Document representing the expected state of data in DynamoDB.
+        /// Note: setting both Expected and ExpectedState is not supported and
+        /// will result in an exception being thrown.
+        /// 
+        /// For the operation to succeed, the data in DynamoDB must be equal
+        /// to the attributes in Expected. If an attribute in Expected
+        /// is set to null, that attribute must not be preset on the item in DynamoDB.
         /// </summary>
         public Document Expected { get; set; }
 
@@ -61,7 +77,23 @@ namespace Amazon.DynamoDBv2.DocumentModel
     public class UpdateItemOperationConfig
     {
         /// <summary>
-        /// Document representing the expected state
+        /// The expected state of data in DynamoDB.
+        /// Note: setting both Expected and ExpectedState is not supported and
+        /// will result in an exception being thrown.
+        /// 
+        /// For the operation to succeed, the data in DynamoDB must match the conditions
+        /// specified in the ExpectedState.
+        /// </summary>
+        public ExpectedState ExpectedState { get; set; }
+
+        /// <summary>
+        /// Document representing the expected state of data in DynamoDB.
+        /// Note: setting both Expected and ExpectedState is not supported and
+        /// will result in an exception being thrown.
+        /// 
+        /// For the operation to succeed, the data in DynamoDB must be equal
+        /// to the attributes in Expected. If an attribute in Expected
+        /// is set to null, that attribute must not be preset on the item in DynamoDB.
         /// </summary>
         public Document Expected { get; set; }
 
@@ -77,7 +109,23 @@ namespace Amazon.DynamoDBv2.DocumentModel
     public class DeleteItemOperationConfig
     {
         /// <summary>
-        /// Document representing the expected state
+        /// The expected state of data in DynamoDB.
+        /// Note: setting both Expected and ExpectedState is not supported and
+        /// will result in an exception being thrown.
+        /// 
+        /// For the operation to succeed, the data in DynamoDB must match the conditions
+        /// specified in the ExpectedState.
+        /// </summary>
+        public ExpectedState ExpectedState { get; set; }
+
+        /// <summary>
+        /// Document representing the expected state of data in DynamoDB.
+        /// Note: setting both Expected and ExpectedState is not supported and
+        /// will result in an exception being thrown.
+        /// 
+        /// For the operation to succeed, the data in DynamoDB must be equal
+        /// to the attributes in Expected. If an attribute in Expected
+        /// is set to null, that attribute must not be preset on the item in DynamoDB.
         /// </summary>
         public Document Expected { get; set; }
 
@@ -103,6 +151,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             Filter = new ScanFilter();
             Limit = Int32.MaxValue;
             Select = SelectValues.AllAttributes;
+            ConditionalOperator = ConditionalOperatorValues.And;
         }
 
         /// <summary>
@@ -172,6 +221,15 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// Default is true. If set to false, Matches will always be empty.
         /// </summary>
         public bool CollectResults { get; set; }
+
+        /// <summary>
+        /// A logical operator to apply to the conditions in the Filter property:
+        /// AND - If all of the conditions evaluate to true, then the entire filter evaluates to true.
+        /// OR - If at least one of the conditions evaluate to true, then the entire filter evaluates to true.
+        /// 
+        /// Default value is AND.
+        /// </summary>
+        public ConditionalOperatorValues ConditionalOperator { get; set; }
     }
 
     /// <summary>
@@ -231,5 +289,14 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// Default is true. If set to false, Matches will always be empty.
         /// </summary>
         public bool CollectResults { get; set; }
+
+        /// <summary>
+        /// A logical operator to apply to the conditions in the Filter property:
+        /// AND - If all of the conditions evaluate to true, then the entire filter evaluates to true.
+        /// OR - If at least one of the conditions evaluate to true, then the entire filter evaluates to true.
+        /// 
+        /// Default value is AND.
+        /// </summary>
+        public ConditionalOperatorValues ConditionalOperator { get; set; }
     }
 }

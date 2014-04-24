@@ -24,8 +24,14 @@ namespace Amazon.DynamoDBv2
     /// Interface for accessing AmazonDynamoDBv2.
     /// 
     /// Amazon DynamoDB <b>Overview</b> <para>This is the Amazon DynamoDB API Reference. This guide provides descriptions and samples of the
-    /// DynamoDB API. For information about application development using this API, see the Amazon DynamoDB Developer Guide.</para> <para>The
-    /// following are short descriptions of each API action, organized by function.</para> <para> <b>Managing Tables</b> </para> <para>
+    /// low-level DynamoDB API. For information about DynamoDB application development, go to the <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/">Amazon DynamoDB Developer Guide</a> .</para> <para>Instead of
+    /// making the requests to the low-level DynamoDB API directly from your application, we recommend that you use the AWS Software Development
+    /// Kits (SDKs). The easy-to-use libraries in the AWS SDKs make it unnecessary to call the low-level DynamoDB API directly from your
+    /// application. The libraries take care of request authentication, serialization, and connection management. For more information, go to <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/UsingAWSSDK.html">Using the AWS SDKs with DynamoDB</a> in the
+    /// <i>Amazon DynamoDB Developer Guide</i> .</para> <para>If you decide to code against the low-level DynamoDB API directly, you will need to
+    /// write the necessary code to authenticate your requests. For more information on signing your requests, go to <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/API.html">Using the DynamoDB API</a> in the <i>Amazon DynamoDB
+    /// Developer Guide</i> .</para> <para>The following are short descriptions of each low-level API action, organized by function.</para> <para>
+    /// <b>Managing Tables</b> </para> <para>
     /// <ul>
     /// <li> <para> <i>CreateTable</i> - Creates a table with user-specified provisioned throughput settings. You must designate one attribute as
     /// the hash primary key for the table; you can optionally designate a second attribute as the range primary key. DynamoDB creates indexes on
@@ -38,7 +44,8 @@ namespace Amazon.DynamoDBv2
     /// <li> <para> <i>DeleteTable</i> - Deletes a table and all of its indexes.</para> </li>
     /// 
     /// </ul>
-    /// </para> <para> <b>Reading Data</b> </para> <para>
+    /// </para> <para>For conceptual information about managing tables, go to <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html">Working with Tables</a> in the <i>Amazon
+    /// DynamoDB Developer Guide</i> .</para> <para> <b>Reading Data</b> </para> <para>
     /// <ul>
     /// <li> <para> <i>GetItem</i> - Returns a set of attributes for the item that has a given primary key. By default, <i>GetItem</i> performs an
     /// eventually consistent read; however, applications can specify a strongly consistent read instead.</para> </li>
@@ -54,7 +61,8 @@ namespace Amazon.DynamoDBv2
     /// query use case that requires predictable performance.</para> </li>
     /// 
     /// </ul>
-    /// </para> <para> <b>Modifying Data</b> </para> <para>
+    /// </para> <para>For conceptual information about reading data, go to <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html">Working with Items</a> and <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query and Scan Operations</a> in the <i>Amazon
+    /// DynamoDB Developer Guide</i> .</para> <para> <b>Modifying Data</b> </para> <para>
     /// <ul>
     /// <li> <para> <i>PutItem</i> - Creates a new item, or replaces an existing item with a new item (including all the attributes). By default,
     /// if an item in the table already exists with the same primary key, the new item completely replaces the existing item. You can use
@@ -69,7 +77,8 @@ namespace Amazon.DynamoDBv2
     /// to 25 items to put or delete, with a maximum total request size of 1 MB. </para> </li>
     /// 
     /// </ul>
-    /// </para>
+    /// </para> <para>For conceptual information about modifying data, go to <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html">Working with Items</a> and <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query and Scan Operations</a> in the <i>Amazon
+    /// DynamoDB Developer Guide</i> .</para>
     /// </summary>
 	public partial interface IAmazonDynamoDB : IDisposable
     {
@@ -83,14 +92,15 @@ namespace Amazon.DynamoDBv2
         /// value to retry the operation starting with the next item to get.</para> <para>For example, if you ask to retrieve 100 items, but each
         /// individual item is 50 KB in size, the system returns 20 items (1 MB) and an appropriate <i>UnprocessedKeys</i> value so you can get the next
         /// page of results. If desired, your application can include its own logic to assemble the pages of results into one dataset.</para> <para>If
-        /// no items can be processed because of insufficient provisioned throughput on each of the tables involved in the request, <i>BatchGetItem</i>
-        /// throws <i>ProvisionedThroughputExceededException</i> . </para> <para>By default, <i>BatchGetItem</i> performs eventually consistent reads on
-        /// every table in the request. If you want strongly consistent reads instead, you can set <i>ConsistentRead</i> to <c>true</c> for any or all
-        /// tables.</para> <para>In order to minimize response latency, <i>BatchGetItem</i> retrieves items in parallel.</para> <para>When designing
-        /// your application, keep in mind that DynamoDB does not return attributes in any particular order. To help parse the response by item, include
-        /// the primary key values for the items in your request in the <i>AttributesToGet</i> parameter.</para> <para>If a requested item does not
-        /// exist, it is not returned in the result. Requests for nonexistent items consume the minimum read capacity units according to the type of
-        /// read. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDDTables.html#CapacityUnitCalculations">Capacity Units
+        /// <i>none</i> of the items can be processed due to insufficient provisioned throughput on all of the tables in the request, then
+        /// <i>BatchGetItem</i> will throw a <i>ProvisionedThroughputExceededException</i> . If <i>at least one</i> of the items is successfully
+        /// processed, then <i>BatchGetItem</i> completes successfully, while returning the keys of the unread items in <i>UnprocessedKeys</i> .</para>
+        /// <para>By default, <i>BatchGetItem</i> performs eventually consistent reads on every table in the request. If you want strongly consistent
+        /// reads instead, you can set <i>ConsistentRead</i> to <c>true</c> for any or all tables.</para> <para>In order to minimize response latency,
+        /// <i>BatchGetItem</i> retrieves items in parallel.</para> <para>When designing your application, keep in mind that DynamoDB does not return
+        /// attributes in any particular order. To help parse the response by item, include the primary key values for the items in your request in the
+        /// <i>AttributesToGet</i> parameter.</para> <para>If a requested item does not exist, it is not returned in the result. Requests for
+        /// nonexistent items consume the minimum read capacity units according to the type of read. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#CapacityUnitCalculations">Capacity Units
         /// Calculations</a> in the Amazon DynamoDB Developer Guide.</para>
         /// </summary>
         /// 
@@ -125,19 +135,21 @@ namespace Amazon.DynamoDBv2
         /// not. If any requested operations fail because the table's provisioned throughput is exceeded or an internal processing failure occurs, the
         /// failed operations are returned in the <i>UnprocessedItems</i> response parameter. You can investigate and optionally resend the requests.
         /// Typically, you would call <i>BatchWriteItem</i> in a loop. Each iteration would check for unprocessed items and submit a new
-        /// <i>BatchWriteItem</i> request with those unprocessed items until all items have been processed.</para> <para>To write one item, you can use
-        /// the <i>PutItem</i> operation; to delete one item, you can use the <i>DeleteItem</i> operation.</para> <para>With <i>BatchWriteItem</i> , you
-        /// can efficiently write or delete large amounts of data, such as from Amazon Elastic MapReduce (EMR), or copy data from another database into
-        /// DynamoDB. In order to improve performance with these large-scale operations, <i>BatchWriteItem</i> does not behave in the same way as
-        /// individual <i>PutItem</i> and <i>DeleteItem</i> calls would For example, you cannot specify conditions on individual put and delete
-        /// requests, and <i>BatchWriteItem</i> does not return deleted items in the response.</para> <para>If you use a programming language that
-        /// supports concurrency, such as Java, you can use threads to write items in parallel. Your application must include the necessary logic to
-        /// manage the threads.</para> <para>With languages that don't support threading, such as PHP, <i>BatchWriteItem</i> will write or delete the
-        /// specified items one at a time. In both situations, <i>BatchWriteItem</i> provides an alternative where the API performs the specified put
-        /// and delete operations in parallel, giving you the power of the thread pool approach without having to introduce complexity into your
-        /// application.</para> <para>Parallel processing reduces latency, but each specified put and delete request consumes the same number of write
-        /// capacity units whether it is processed in parallel or not. Delete operations on nonexistent items consume one write capacity unit.</para>
-        /// <para>If one or more of the following is true, DynamoDB rejects the entire batch write operation:</para>
+        /// <i>BatchWriteItem</i> request with those unprocessed items until all items have been processed.</para> <para>Note that if <i>none</i> of the
+        /// items can be processed due to insufficient provisioned throughput on all of the tables in the request, then <i>BatchGetItem</i> will throw a
+        /// <i>ProvisionedThroughputExceededException</i> .</para> <para>To write one item, you can use the <i>PutItem</i> operation; to delete one
+        /// item, you can use the <i>DeleteItem</i> operation.</para> <para>With <i>BatchWriteItem</i> , you can efficiently write or delete large
+        /// amounts of data, such as from Amazon Elastic MapReduce (EMR), or copy data from another database into DynamoDB. In order to improve
+        /// performance with these large-scale operations, <i>BatchWriteItem</i> does not behave in the same way as individual <i>PutItem</i> and
+        /// <i>DeleteItem</i> calls would For example, you cannot specify conditions on individual put and delete requests, and <i>BatchWriteItem</i>
+        /// does not return deleted items in the response.</para> <para>If you use a programming language that supports concurrency, such as Java, you
+        /// can use threads to write items in parallel. Your application must include the necessary logic to manage the threads. With languages that
+        /// don't support threading, such as PHP, you must update or delete the specified items one at a time. In both situations, <i>BatchWriteItem</i>
+        /// provides an alternative where the API performs the specified put and delete operations in parallel, giving you the power of the thread pool
+        /// approach without having to introduce complexity into your application.</para> <para>Parallel processing reduces latency, but each specified
+        /// put and delete request consumes the same number of write capacity units whether it is processed in parallel or not. Delete operations on
+        /// nonexistent items consume one write capacity unit.</para> <para>If one or more of the following is true, DynamoDB rejects the entire batch
+        /// write operation:</para>
         /// <ul>
         /// <li> <para>One or more tables specified in the <i>BatchWriteItem</i> request does not exist.</para> </li>
         /// <li> <para>Primary key attributes specified on an item in the request do not match those in the corresponding table's primary key
@@ -414,9 +426,9 @@ namespace Amazon.DynamoDBv2
         /// user with a <i>LastEvaluatedKey</i> to continue the query in a subsequent operation. Unlike a <i>Scan</i> operation, a <i>Query</i>
         /// operation never returns an empty result set <i>and</i> a
         /// <i>LastEvaluatedKey</i> . The <i>LastEvaluatedKey</i> is only provided if the results exceed 1 MB, or if you have used
-        /// <i>Limit</i> . </para> <para>You can query a table, a local secondary index (LSI), or a global secondary index (GSI). For a query on a table
-        /// or on an LSI, you can set <i>ConsistentRead</i> to true and obtain a strongly consistent result. GSIs support eventually consistent reads
-        /// only, so do not specify <i>ConsistentRead</i> when querying a GSI.</para>
+        /// <i>Limit</i> . </para> <para>You can query a table, a local secondary index, or a global secondary index. For a query on a table or on a
+        /// local secondary index, you can set <i>ConsistentRead</i> to true and obtain a strongly consistent result. Global secondary indexes support
+        /// eventually consistent reads only, so do not specify <i>ConsistentRead</i> when querying a global secondary index.</para>
         /// </summary>
         /// 
         /// <param name="request">Container for the necessary parameters to execute the Query service method on AmazonDynamoDBv2.</param>

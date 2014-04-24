@@ -110,6 +110,28 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </summary>
         public string IndexName { get; set; }
 
+        /// <summary>
+        /// A logical operator to apply to the filter conditions:
+        /// AND - If all of the conditions evaluate to true, then the entire filter evaluates to true.
+        /// OR - If at least one of the conditions evaluate to true, then the entire filter evaluates to true.
+        /// 
+        /// Default value is AND.
+        /// </summary>
+        public ConditionalOperatorValues ConditionalOperator { get; set; }
+
+        /// <summary>
+        /// Query filter for the Query operation operation. Evaluates the query results and returns only
+        /// the matching values. If you specify more than one condition, then by default all of the
+        /// conditions must evaluate to true. To match only some conditions, set ConditionalOperator to Or.
+        /// Note: Conditions must be against non-key properties.
+        /// </summary>
+        public List<ScanCondition> QueryFilter { get; set; }
+
+        public DynamoDBOperationConfig()
+        {
+            QueryFilter = new List<ScanCondition>();
+        }
+
         // Checks if the IndexName is set on the config
         internal bool IsIndexOperation { get { return !string.IsNullOrEmpty(IndexName); } }
     }
@@ -236,6 +258,7 @@ namespace Amazon.DynamoDBv2.DataModel
             IgnoreNullValues = null,
             BackwardQuery = null,
             IndexName = null,
+            ConditionalOperator = ConditionalOperatorValues.And
         };
         private static DynamoDBContextConfig _emptyContextConfig = new DynamoDBContextConfig
         {
@@ -263,6 +286,8 @@ namespace Amazon.DynamoDBv2.DataModel
             bool backwardQuery = operationConfig.BackwardQuery ?? false;
             string indexName =
                 !string.IsNullOrEmpty(operationConfig.IndexName) ? operationConfig.IndexName : DefaultIndexName;
+            List<ScanCondition> queryFilter = operationConfig.QueryFilter ?? new List<ScanCondition>();
+            ConditionalOperatorValues conditionalOperator = operationConfig.ConditionalOperator;
 
             ConsistentRead = consistentRead;
             SkipVersionCheck = skipVersionCheck;
@@ -271,6 +296,8 @@ namespace Amazon.DynamoDBv2.DataModel
             TableNamePrefix = tableNamePrefix;
             BackwardQuery = backwardQuery;
             IndexName = indexName;
+            QueryFilter = queryFilter;
+            ConditionalOperator = conditionalOperator;
         }
     }
 }

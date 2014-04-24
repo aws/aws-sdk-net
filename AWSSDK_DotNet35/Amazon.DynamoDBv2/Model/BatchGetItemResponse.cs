@@ -24,7 +24,7 @@ namespace Amazon.DynamoDBv2.Model
     /// <summary>
     /// Returns information about the  BatchGetItem response and response metadata.
     /// </summary>
-    public class BatchGetItemResponse : BatchGetItemResult
+    public partial class BatchGetItemResponse : BatchGetItemResult
     {
         /// <summary>
         /// Gets and sets the BatchGetItemResult property.

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -231,8 +231,9 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// The length of time that Auto Scaling waits before checking an instance's health status. The grace period begins when an instance comes into
-        /// service.
+        /// The length of time that Auto Scaling waits before checking an instance's health status. The grace period begins when the instance passes
+        /// System Status and the Instance Status checks from Amazon EC2. For more information, see <a
+        /// href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeInstanceStatus.html">DescribeInstanceStatus</a>.
         ///  
         /// </summary>
         public int HealthCheckGracePeriod

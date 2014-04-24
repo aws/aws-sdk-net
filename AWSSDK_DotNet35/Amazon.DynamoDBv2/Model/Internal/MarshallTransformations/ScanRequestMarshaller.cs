@@ -176,6 +176,11 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                         writer.WriteObjectEnd();
                     }
                 }
+                if (scanRequest != null && scanRequest.IsSetConditionalOperator()) 
+                {
+                    writer.WritePropertyName("ConditionalOperator");
+                    writer.Write(scanRequest.ConditionalOperator);
+                }
                 if (scanRequest != null) 
                 {
                     if (scanRequest.ExclusiveStartKey != null && scanRequest.ExclusiveStartKey.Count > 0)

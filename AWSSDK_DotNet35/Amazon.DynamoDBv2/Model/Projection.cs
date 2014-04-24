@@ -24,7 +24,7 @@ namespace Amazon.DynamoDBv2.Model
     /// <para>Represents attributes that are copied (projected) from the table into an index. These are in addition to the primary key attributes
     /// and index key attributes, which are automatically projected.</para>
     /// </summary>
-    public class Projection
+    public partial class Projection
     {
         
         private ProjectionType projectionType;
