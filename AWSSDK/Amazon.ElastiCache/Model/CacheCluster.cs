@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -46,6 +46,8 @@ namespace Amazon.ElastiCache.Model
         private bool? autoMinorVersionUpgrade;
         private List<SecurityGroupMembership> securityGroups = new List<SecurityGroupMembership>();
         private string replicationGroupId;
+        private int? snapshotRetentionLimit;
+        private string snapshotWindow;
 
         /// <summary>
         /// The user-supplied identifier of the cache cluster. This is a unique key that identifies a cache cluster.
@@ -309,7 +311,7 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
-        /// The date and time the cache cluster was created.
+        /// The date and time when the cache cluster was created.
         ///  
         /// </summary>
         public DateTime CacheClusterCreateTime
@@ -681,6 +683,65 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetReplicationGroupId()
         {
             return this.replicationGroupId != null;
+        }
+
+        /// <summary>
+        /// The number of days for which ElastiCache will retain automatic cache cluster snapshots before deleting them. For example, if you set
+        /// <i>SnapshotRetentionLimit</i> to 5, then a snapshot that was taken today will be retained for 5 days before being deleted.
+        ///  
+        /// </summary>
+        public int SnapshotRetentionLimit
+        {
+            get { return this.snapshotRetentionLimit ?? default(int); }
+            set { this.snapshotRetentionLimit = value; }
+        }
+
+        /// <summary>
+        /// Sets the SnapshotRetentionLimit property
+        /// </summary>
+        /// <param name="snapshotRetentionLimit">The value to set for the SnapshotRetentionLimit property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public CacheCluster WithSnapshotRetentionLimit(int snapshotRetentionLimit)
+        {
+            this.snapshotRetentionLimit = snapshotRetentionLimit;
+            return this;
+        }
+            
+
+        // Check to see if SnapshotRetentionLimit property is set
+        internal bool IsSetSnapshotRetentionLimit()
+        {
+            return this.snapshotRetentionLimit.HasValue;
+        }
+
+        /// <summary>
+        /// The daily time range (in UTC) during which ElastiCache will begin taking a daily snapshot of your cache cluster. Example: <c>05:00-09:00</c>
+        ///  
+        /// </summary>
+        public string SnapshotWindow
+        {
+            get { return this.snapshotWindow; }
+            set { this.snapshotWindow = value; }
+        }
+
+        /// <summary>
+        /// Sets the SnapshotWindow property
+        /// </summary>
+        /// <param name="snapshotWindow">The value to set for the SnapshotWindow property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public CacheCluster WithSnapshotWindow(string snapshotWindow)
+        {
+            this.snapshotWindow = snapshotWindow;
+            return this;
+        }
+            
+
+        // Check to see if SnapshotWindow property is set
+        internal bool IsSetSnapshotWindow()
+        {
+            return this.snapshotWindow != null;
         }
     }
 }

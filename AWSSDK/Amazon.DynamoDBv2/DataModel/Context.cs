@@ -605,7 +605,7 @@ namespace Amazon.DynamoDBv2.DataModel
             Key key = MakeKey(hashKey, rangeKey, storageConfig);
 
             Table table = GetTargetTable(storageConfig, config);
-            table.DeleteHelper(key, null, false);
+            table.DeleteHelper(key, null, isAsync);
         }
 
         private void DeleteHelper<T>(T value, DynamoDBOperationConfig operationConfig, bool isAsync)
@@ -894,7 +894,8 @@ namespace Amazon.DynamoDBv2.DataModel
             {
                 AttributesToGet = storageConfig.AttributesToGet,
                 Select = SelectValues.SpecificAttributes,
-                Filter = filter
+                Filter = filter,
+                ConditionalOperator = config.ConditionalOperator
             };
             Search scan = table.Scan(scanConfig);
 
@@ -1056,7 +1057,8 @@ namespace Amazon.DynamoDBv2.DataModel
                 Filter = filter,
                 ConsistentRead = currentConfig.ConsistentRead.Value,
                 BackwardSearch = currentConfig.BackwardQuery.Value,
-                IndexName = indexName
+                IndexName = indexName,
+                ConditionalOperator = currentConfig.ConditionalOperator
             };
             if (string.IsNullOrEmpty(indexName))
             {

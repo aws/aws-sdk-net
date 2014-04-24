@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -68,6 +68,10 @@
               if (context.TestExpression("LocalSecondaryIndexes", targetDepth))
               {
                 consumedCapacity.LocalSecondaryIndexes = new Dictionary<String,Capacity>();
+                if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                {
+                  continue;
+                }              
                 KeyValueUnmarshaller<string, Capacity, StringUnmarshaller, CapacityUnmarshaller> unmarshaller = new KeyValueUnmarshaller<string, Capacity, StringUnmarshaller, CapacityUnmarshaller>(StringUnmarshaller.GetInstance(), CapacityUnmarshaller.GetInstance());
                 while (context.Read())
                 {
@@ -88,6 +92,10 @@
               if (context.TestExpression("GlobalSecondaryIndexes", targetDepth))
               {
                 consumedCapacity.GlobalSecondaryIndexes = new Dictionary<String,Capacity>();
+                if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                {
+                  continue;
+                }              
                 KeyValueUnmarshaller<string, Capacity, StringUnmarshaller, CapacityUnmarshaller> unmarshaller = new KeyValueUnmarshaller<string, Capacity, StringUnmarshaller, CapacityUnmarshaller>(StringUnmarshaller.GetInstance(), CapacityUnmarshaller.GetInstance());
                 while (context.Read())
                 {

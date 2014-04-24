@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -83,6 +83,10 @@
               if (context.TestExpression("Attributes", targetDepth))
               {
                 layer.Attributes = new Dictionary<String,String>();
+                if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                {
+                  continue;
+                }              
                 KeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller> unmarshaller = new KeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.GetInstance(), StringUnmarshaller.GetInstance());
                 while (context.Read())
                 {
@@ -108,8 +112,13 @@
   
               if (context.TestExpression("CustomSecurityGroupIds", targetDepth))
               {
-                layer.CustomSecurityGroupIds = new List<String>();
-                        StringUnmarshaller unmarshaller = StringUnmarshaller.GetInstance();
+                layer.CustomSecurityGroupIds = new List<String>();   
+                if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                {
+                  continue;
+                }              
+
+                  StringUnmarshaller unmarshaller = StringUnmarshaller.GetInstance();
                 while (context.Read())
                 {
                   if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))
@@ -126,8 +135,13 @@
   
               if (context.TestExpression("DefaultSecurityGroupNames", targetDepth))
               {
-                layer.DefaultSecurityGroupNames = new List<String>();
-                        StringUnmarshaller unmarshaller = StringUnmarshaller.GetInstance();
+                layer.DefaultSecurityGroupNames = new List<String>();   
+                if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                {
+                  continue;
+                }              
+
+                  StringUnmarshaller unmarshaller = StringUnmarshaller.GetInstance();
                 while (context.Read())
                 {
                   if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))
@@ -144,8 +158,13 @@
   
               if (context.TestExpression("Packages", targetDepth))
               {
-                layer.Packages = new List<String>();
-                        StringUnmarshaller unmarshaller = StringUnmarshaller.GetInstance();
+                layer.Packages = new List<String>();   
+                if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                {
+                  continue;
+                }              
+
+                  StringUnmarshaller unmarshaller = StringUnmarshaller.GetInstance();
                 while (context.Read())
                 {
                   if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))
@@ -162,8 +181,13 @@
   
               if (context.TestExpression("VolumeConfigurations", targetDepth))
               {
-                layer.VolumeConfigurations = new List<VolumeConfiguration>();
-                        VolumeConfigurationUnmarshaller unmarshaller = VolumeConfigurationUnmarshaller.GetInstance();
+                layer.VolumeConfigurations = new List<VolumeConfiguration>();   
+                if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                {
+                  continue;
+                }              
+
+                  VolumeConfigurationUnmarshaller unmarshaller = VolumeConfigurationUnmarshaller.GetInstance();
                 while (context.Read())
                 {
                   if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))
@@ -217,6 +241,12 @@
               if (context.TestExpression("InstallUpdatesOnBoot", targetDepth))
               {
                 layer.InstallUpdatesOnBoot = BoolUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
+              if (context.TestExpression("UseEbsOptimizedInstances", targetDepth))
+              {
+                layer.UseEbsOptimizedInstances = BoolUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   

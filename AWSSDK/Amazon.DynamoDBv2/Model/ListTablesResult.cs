@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,14 +23,16 @@ namespace Amazon.DynamoDBv2.Model
     /// <summary>
     /// <para>Represents the output of a <i>ListTables</i> operation.</para>
     /// </summary>
-    public class ListTablesResult
+    public partial class ListTablesResult
     {
         
         private List<string> tableNames = new List<string>();
         private string lastEvaluatedTableName;
 
         /// <summary>
-        /// The names of the tables associated with the current account at the current endpoint.
+        /// The names of the tables associated with the current account at the current endpoint. The maximum size of this array is 100. If
+        /// <i>LastEvaluatedTableName</i> also appears in the output, you can use this value as the <i>ExclusiveStartTableName</i> parameter in a
+        /// subsequent <i>ListTables</i> request and obtain the next page of results.
         ///  
         /// </summary>
         public List<string> TableNames
@@ -77,9 +79,9 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// The name of the last table in the current list, only if some tables for the account and endpoint have not been returned. This value does not
-        /// exist in a response if all table names are already returned. Use this value as the <i>ExclusiveStartTableName</i> in a new request to
-        /// continue the list until all the table names are returned.
+        /// The name of the last table in the current page of results. Use this value as the <i>ExclusiveStartTableName</i> in a new request to obtain
+        /// the next page of results, until all the table names are returned. If you do not receive a <i>LastEvaluatedTableName</i> value in the
+        /// response, this means that there are no more table names to be retrieved.
         ///  
         /// <para>
         /// <b>Constraints:</b>

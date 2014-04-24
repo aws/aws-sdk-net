@@ -22,6 +22,7 @@ using System.Reflection;
 
 using Amazon.DynamoDBv2.DocumentModel;
 using Amazon.DynamoDBv2.Model;
+using System.Globalization;
 
 namespace Amazon.DynamoDBv2.DataModel
 {
@@ -438,57 +439,79 @@ namespace Amazon.DynamoDBv2.DataModel
                 return true;
             }
 
-            if (targetType.IsAssignableFrom(typeof(Boolean))) output = value.AsBoolean();
-            else if (targetType.IsAssignableFrom(typeof(Byte))) output = value.AsByte();
-            else if (targetType.IsAssignableFrom(typeof(Char))) output = value.AsChar();
-            else if (targetType.IsAssignableFrom(typeof(DateTime))) output = value.AsDateTime();
-            else if (targetType.IsAssignableFrom(typeof(Decimal))) output = value.AsDecimal();
-            else if (targetType.IsAssignableFrom(typeof(Double))) output = value.AsDouble();
-            else if (targetType.IsAssignableFrom(typeof(int))) output = value.AsInt();
-            else if (targetType.IsAssignableFrom(typeof(long))) output = value.AsLong();
-            else if (targetType.IsAssignableFrom(typeof(SByte))) output = value.AsSByte();
-            else if (targetType.IsAssignableFrom(typeof(short))) output = value.AsShort();
-            else if (targetType.IsAssignableFrom(typeof(Single))) output = value.AsSingle();
-            else if (targetType.IsAssignableFrom(typeof(String))) output = value.AsString();
-            else if (targetType.IsAssignableFrom(typeof(uint))) output = value.AsUInt();
-            else if (targetType.IsAssignableFrom(typeof(ulong))) output = value.AsULong();
-            else if (targetType.IsAssignableFrom(typeof(ushort))) output = value.AsUShort();
-            else if (targetType.IsAssignableFrom(typeof(Guid))) output = value.AsGuid();
-            else if (targetType.IsAssignableFrom(typeof(byte[]))) output = value.AsByteArray();
-            else if (targetType.IsAssignableFrom(typeof(MemoryStream))) output = value.AsMemoryStream();
-            else
+            try
             {
-                output = null;
-                return false;
+                if (targetType.IsAssignableFrom(typeof(Boolean))) output = value.AsBoolean();
+                else if (targetType.IsAssignableFrom(typeof(Byte))) output = value.AsByte();
+                else if (targetType.IsAssignableFrom(typeof(Char))) output = value.AsChar();
+                else if (targetType.IsAssignableFrom(typeof(DateTime))) output = value.AsDateTime();
+                else if (targetType.IsAssignableFrom(typeof(Decimal))) output = value.AsDecimal();
+                else if (targetType.IsAssignableFrom(typeof(Double))) output = value.AsDouble();
+                else if (targetType.IsAssignableFrom(typeof(int))) output = value.AsInt();
+                else if (targetType.IsAssignableFrom(typeof(long))) output = value.AsLong();
+                else if (targetType.IsAssignableFrom(typeof(SByte))) output = value.AsSByte();
+                else if (targetType.IsAssignableFrom(typeof(short))) output = value.AsShort();
+                else if (targetType.IsAssignableFrom(typeof(Single))) output = value.AsSingle();
+                else if (targetType.IsAssignableFrom(typeof(String))) output = value.AsString();
+                else if (targetType.IsAssignableFrom(typeof(uint))) output = value.AsUInt();
+                else if (targetType.IsAssignableFrom(typeof(ulong))) output = value.AsULong();
+                else if (targetType.IsAssignableFrom(typeof(ushort))) output = value.AsUShort();
+                else if (targetType.IsAssignableFrom(typeof(Guid))) output = value.AsGuid();
+                else if (targetType.IsAssignableFrom(typeof(byte[]))) output = value.AsByteArray();
+                else if (targetType.IsAssignableFrom(typeof(MemoryStream))) output = value.AsMemoryStream();
+                else
+                {
+                    output = null;
+                    return false;
+                }
+                return true;
             }
-            return true;
+            catch (InvalidCastException)
+            {
+                throw new InvalidCastException(string.Format(CultureInfo.InvariantCulture,
+                    "Unable to cast value [{0}] of type [{1}] to type [{2}]",
+                    value.Value,
+                    value.Value.GetType().FullName,
+                    targetType.FullName));
+            }
         }
         private static bool TryToPrimitive(Type type, object value, out Primitive output)
         {
-            if (type.IsAssignableFrom(typeof(Boolean))) output = (Boolean)value;
-            else if (type.IsAssignableFrom(typeof(Byte))) output = (Byte)value;
-            else if (type.IsAssignableFrom(typeof(Char))) output = (Char)value;
-            else if (type.IsAssignableFrom(typeof(DateTime))) output = (DateTime)value;
-            else if (type.IsAssignableFrom(typeof(Decimal))) output = (Decimal)value;
-            else if (type.IsAssignableFrom(typeof(Double))) output = (Double)value;
-            else if (type.IsAssignableFrom(typeof(int))) output = (int)value;
-            else if (type.IsAssignableFrom(typeof(long))) output = (long)value;
-            else if (type.IsAssignableFrom(typeof(SByte))) output = (SByte)value;
-            else if (type.IsAssignableFrom(typeof(short))) output = (short)value;
-            else if (type.IsAssignableFrom(typeof(Single))) output = (Single)value;
-            else if (type.IsAssignableFrom(typeof(String))) output = (String)value;
-            else if (type.IsAssignableFrom(typeof(uint))) output = (uint)value;
-            else if (type.IsAssignableFrom(typeof(ulong))) output = (ulong)value;
-            else if (type.IsAssignableFrom(typeof(ushort))) output = (ushort)value;
-            else if (type.IsAssignableFrom(typeof(Guid))) output = (Guid)value;
-            else if (type.IsAssignableFrom(typeof(byte[]))) output = (byte[])value;
-            else if (type.IsAssignableFrom(typeof(MemoryStream))) output = (MemoryStream)value;
-            else
+            try
             {
-                output = null;
-                return false;
+                if (type.IsAssignableFrom(typeof(Boolean))) output = (Boolean)value;
+                else if (type.IsAssignableFrom(typeof(Byte))) output = (Byte)value;
+                else if (type.IsAssignableFrom(typeof(Char))) output = (Char)value;
+                else if (type.IsAssignableFrom(typeof(DateTime))) output = (DateTime)value;
+                else if (type.IsAssignableFrom(typeof(Decimal))) output = (Decimal)value;
+                else if (type.IsAssignableFrom(typeof(Double))) output = (Double)value;
+                else if (type.IsAssignableFrom(typeof(int))) output = (int)value;
+                else if (type.IsAssignableFrom(typeof(long))) output = (long)value;
+                else if (type.IsAssignableFrom(typeof(SByte))) output = (SByte)value;
+                else if (type.IsAssignableFrom(typeof(short))) output = (short)value;
+                else if (type.IsAssignableFrom(typeof(Single))) output = (Single)value;
+                else if (type.IsAssignableFrom(typeof(String))) output = (String)value;
+                else if (type.IsAssignableFrom(typeof(uint))) output = (uint)value;
+                else if (type.IsAssignableFrom(typeof(ulong))) output = (ulong)value;
+                else if (type.IsAssignableFrom(typeof(ushort))) output = (ushort)value;
+                else if (type.IsAssignableFrom(typeof(Guid))) output = (Guid)value;
+                else if (type.IsAssignableFrom(typeof(byte[]))) output = (byte[])value;
+                else if (type.IsAssignableFrom(typeof(MemoryStream))) output = (MemoryStream)value;
+                else
+                {
+                    output = null;
+                    return false;
+                }
+                return true;
             }
-            return true;
+            catch (InvalidCastException)
+            {
+                throw new InvalidCastException(string.Format(CultureInfo.InvariantCulture,
+                    "Unable to cast value [{0}] of type [{1}] to type [{2}]",
+                    value,
+                    value == null ? "null" : value.GetType().FullName,
+                    type.FullName));
+            }
         }
 
         // Get/Set object properties
@@ -573,15 +596,25 @@ namespace Amazon.DynamoDBv2.DataModel
             PropertyStorage propertyStorage = storageConfig.GetPropertyStorage(hashKeyProperty);
             string hashAttributeName = propertyStorage.AttributeName;
 
-            DynamoDBEntry hashKeyEntry = ValueToDynamoDBEntry(propertyStorage, hashKeyValue, storageConfig);
+            DynamoDBEntry hashKeyEntry = ValueToDynamoDBEntry(propertyStorage, hashKeyValue);
             if (hashKeyEntry == null) throw new InvalidOperationException("Unable to convert hash key value for property " + hashKeyProperty);
             
             Document hashKey = new Document();
             hashKey[hashAttributeName] = hashKeyEntry;
 
-            return ComposeQueryFilterHelper(hashKey, conditions, storageConfig, currentConfig, out indexNames);
+            return ComposeQueryFilterHelper(currentConfig, hashKey, conditions, storageConfig, out indexNames);
         }
-        private static QueryFilter ComposeQueryFilterHelper(Document hashKey, IEnumerable<QueryCondition> conditions, ItemStorageConfig storageConfig, DynamoDBFlatConfig currentConfig, out List<string> indexNames)
+
+        private static string NO_INDEX = DynamoDBFlatConfig.DefaultIndexName;
+        // This method composes the query filter and determines the possible indexes that the filter
+        // may be used against. In the case where the condition property is also a RANGE key on the
+        // table and not just on LSI/GSI, the potential index will be "" (absent).
+        private static QueryFilter ComposeQueryFilterHelper(
+            DynamoDBFlatConfig currentConfig,
+            Document hashKey,
+            IEnumerable<QueryCondition> conditions,
+            ItemStorageConfig storageConfig,
+            out List<string> indexNames)
         {
             if (hashKey == null)
                 throw new ArgumentNullException("hashKey");
@@ -609,17 +642,34 @@ namespace Amazon.DynamoDBv2.DataModel
                     PropertyStorage conditionProperty = storageConfig.GetPropertyStorage(condition.PropertyName);
                     if (conditionProperty.IsLSIRangeKey || conditionProperty.IsGSIKey)
                         indexNames.AddRange(conditionProperty.Indexes);
-                    List<AttributeValue> attributeValues = new List<AttributeValue>();
-                    foreach (var conditionValue in conditionValues)
-                    {
-                        DynamoDBEntry entry = ToDynamoDBEntry(conditionProperty, conditionValue);
-                        AttributeValue attributeValue = entry.ConvertToAttributeValue();
-                        attributeValues.Add(attributeValue);
-                    }
+                    if (conditionProperty.IsRangeKey)
+                        indexNames.Add(NO_INDEX);
+                    List<AttributeValue> attributeValues = ConvertConditionValues(conditionValues, conditionProperty);
+                    filter.AddCondition(conditionProperty.AttributeName, condition.Operator, attributeValues);
+                }
+            }
+            if (currentConfig.QueryFilter != null)
+            {
+                foreach (ScanCondition condition in currentConfig.QueryFilter)
+                {
+                    object[] conditionValues = condition.Values;
+                    PropertyStorage conditionProperty = storageConfig.GetPropertyStorage(condition.PropertyName);
+                    List<AttributeValue> attributeValues = ConvertConditionValues(conditionValues, conditionProperty);
                     filter.AddCondition(conditionProperty.AttributeName, condition.Operator, attributeValues);
                 }
             }
             return filter;
+        }
+        private static List<AttributeValue> ConvertConditionValues(object[] conditionValues, PropertyStorage conditionProperty)
+        {
+            List<AttributeValue> attributeValues = new List<AttributeValue>();
+            foreach (var conditionValue in conditionValues)
+            {
+                DynamoDBEntry entry = ToDynamoDBEntry(conditionProperty, conditionValue);
+                AttributeValue attributeValue = entry.ConvertToAttributeValue();
+                attributeValues.Add(attributeValue);
+            }
+            return attributeValues;
         }
 
         private static string GetQueryIndexName(DynamoDBFlatConfig flatConfig, List<string> indexNames)
@@ -639,8 +689,8 @@ namespace Amazon.DynamoDBv2.DataModel
                 inferredIndexName = specifiedIndexName;
             }
 
-            if (string.IsNullOrEmpty(inferredIndexName) && indexNames.Count > 0)
-                throw new InvalidOperationException("Index range key conditions are used but no index could be inferred from model. Specified index name = " + specifiedIndexName);
+            else if (string.IsNullOrEmpty(inferredIndexName) && indexNames.Count > 0)
+                throw new InvalidOperationException("Local Secondary Index range key conditions are used but no index could be inferred from model. Specified index name = " + specifiedIndexName);
 
             // index is both specified and inferred
             if (!string.IsNullOrEmpty(specifiedIndexName) && !string.IsNullOrEmpty(inferredIndexName))
@@ -682,7 +732,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
 
         // Key creation
-        private static DynamoDBEntry ValueToDynamoDBEntry(PropertyStorage propertyStorage, object value, ItemStorageConfig storageConfig)
+        private static DynamoDBEntry ValueToDynamoDBEntry(PropertyStorage propertyStorage, object value)
         {
             var entry = ToDynamoDBEntry(propertyStorage, value);
             return entry;
@@ -715,7 +765,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
             string hashKeyPropertyName = storageConfig.HashKeyPropertyNames[0];
             PropertyStorage hashKeyProperty = storageConfig.GetPropertyStorage(hashKeyPropertyName);
-            DynamoDBEntry hashKeyEntry = ValueToDynamoDBEntry(hashKeyProperty, hashKey, storageConfig);
+            DynamoDBEntry hashKeyEntry = ValueToDynamoDBEntry(hashKeyProperty, hashKey);
             if (hashKeyEntry == null) throw new InvalidOperationException("Unable to convert hash key value for property " + hashKeyPropertyName);
             key[hashKeyProperty.AttributeName] = hashKeyEntry.ConvertToAttributeValue();
 
@@ -727,7 +777,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 string rangeKeyPropertyName = storageConfig.RangeKeyPropertyNames[0];
                 PropertyStorage rangeKeyProperty = storageConfig.GetPropertyStorage(rangeKeyPropertyName);
 
-                DynamoDBEntry rangeKeyEntry = ValueToDynamoDBEntry(rangeKeyProperty, rangeKey, storageConfig);
+                DynamoDBEntry rangeKeyEntry = ValueToDynamoDBEntry(rangeKeyProperty, rangeKey);
                 if (rangeKeyEntry == null) throw new InvalidOperationException("Unable to convert range key value for property " + rangeKeyPropertyName);
                 key[rangeKeyProperty.AttributeName] = rangeKeyEntry.ConvertToAttributeValue();
             }
@@ -782,11 +832,12 @@ namespace Amazon.DynamoDBv2.DataModel
 
             DynamoDBFlatConfig config = new DynamoDBFlatConfig(operationConfig, this.config);
             Table table = GetTargetTable(storageConfig, config);
-            ScanOperationConfig scanConfig = new ScanOperationConfig
+            var scanConfig = new ScanOperationConfig
             {
                 AttributesToGet = storageConfig.AttributesToGet,
                 Select = SelectValues.SpecificAttributes,
-                Filter = filter
+                Filter = filter,
+                ConditionalOperator = config.ConditionalOperator
             };
             Search scan = table.Scan(scanConfig);
             return scan;
@@ -833,7 +884,8 @@ namespace Amazon.DynamoDBv2.DataModel
                 Filter = filter,
                 ConsistentRead = currentConfig.ConsistentRead.Value,
                 BackwardSearch = currentConfig.BackwardQuery.Value,
-                IndexName = indexName
+                IndexName = indexName,
+                ConditionalOperator = currentConfig.ConditionalOperator
             };
             if (string.IsNullOrEmpty(indexName))
             {

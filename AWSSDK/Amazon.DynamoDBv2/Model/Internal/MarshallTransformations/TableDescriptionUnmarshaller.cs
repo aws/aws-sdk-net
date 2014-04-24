@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -51,8 +51,13 @@
               
               if (context.TestExpression("AttributeDefinitions", targetDepth))
               {
-                tableDescription.AttributeDefinitions = new List<AttributeDefinition>();
-                        AttributeDefinitionUnmarshaller unmarshaller = AttributeDefinitionUnmarshaller.GetInstance();
+                tableDescription.AttributeDefinitions = new List<AttributeDefinition>();   
+                if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                {
+                  continue;
+                }              
+
+                  AttributeDefinitionUnmarshaller unmarshaller = AttributeDefinitionUnmarshaller.GetInstance();
                 while (context.Read())
                 {
                   if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))
@@ -75,8 +80,13 @@
   
               if (context.TestExpression("KeySchema", targetDepth))
               {
-                tableDescription.KeySchema = new List<KeySchemaElement>();
-                        KeySchemaElementUnmarshaller unmarshaller = KeySchemaElementUnmarshaller.GetInstance();
+                tableDescription.KeySchema = new List<KeySchemaElement>();   
+                if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                {
+                  continue;
+                }              
+
+                  KeySchemaElementUnmarshaller unmarshaller = KeySchemaElementUnmarshaller.GetInstance();
                 while (context.Read())
                 {
                   if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))
@@ -123,8 +133,13 @@
   
               if (context.TestExpression("LocalSecondaryIndexes", targetDepth))
               {
-                tableDescription.LocalSecondaryIndexes = new List<LocalSecondaryIndexDescription>();
-                        LocalSecondaryIndexDescriptionUnmarshaller unmarshaller = LocalSecondaryIndexDescriptionUnmarshaller.GetInstance();
+                tableDescription.LocalSecondaryIndexes = new List<LocalSecondaryIndexDescription>();   
+                if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                {
+                  continue;
+                }              
+
+                  LocalSecondaryIndexDescriptionUnmarshaller unmarshaller = LocalSecondaryIndexDescriptionUnmarshaller.GetInstance();
                 while (context.Read())
                 {
                   if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))
@@ -141,8 +156,13 @@
   
               if (context.TestExpression("GlobalSecondaryIndexes", targetDepth))
               {
-                tableDescription.GlobalSecondaryIndexes = new List<GlobalSecondaryIndexDescription>();
-                        GlobalSecondaryIndexDescriptionUnmarshaller unmarshaller = GlobalSecondaryIndexDescriptionUnmarshaller.GetInstance();
+                tableDescription.GlobalSecondaryIndexes = new List<GlobalSecondaryIndexDescription>();   
+                if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                {
+                  continue;
+                }              
+
+                  GlobalSecondaryIndexDescriptionUnmarshaller unmarshaller = GlobalSecondaryIndexDescriptionUnmarshaller.GetInstance();
                 while (context.Read())
                 {
                   if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))

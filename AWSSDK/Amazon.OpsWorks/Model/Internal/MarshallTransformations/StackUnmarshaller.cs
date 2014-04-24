@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -58,6 +58,12 @@
                 continue;
               }
   
+              if (context.TestExpression("Arn", targetDepth))
+              {
+                stack.Arn = StringUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
               if (context.TestExpression("Region", targetDepth))
               {
                 stack.Region = StringUnmarshaller.GetInstance().Unmarshall(context);
@@ -73,6 +79,10 @@
               if (context.TestExpression("Attributes", targetDepth))
               {
                 stack.Attributes = new Dictionary<String,String>();
+                if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                {
+                  continue;
+                }              
                 KeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller> unmarshaller = new KeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.GetInstance(), StringUnmarshaller.GetInstance());
                 while (context.Read())
                 {
@@ -138,9 +148,21 @@
                 continue;
               }
   
+              if (context.TestExpression("ChefConfiguration", targetDepth))
+              {
+                stack.ChefConfiguration = ChefConfigurationUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
               if (context.TestExpression("UseCustomCookbooks", targetDepth))
               {
                 stack.UseCustomCookbooks = BoolUnmarshaller.GetInstance().Unmarshall(context);
+                continue;
+              }
+  
+              if (context.TestExpression("UseOpsworksSecurityGroups", targetDepth))
+              {
+                stack.UseOpsworksSecurityGroups = BoolUnmarshaller.GetInstance().Unmarshall(context);
                 continue;
               }
   

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -42,6 +42,9 @@ namespace Amazon.ElastiCache.Model
         private string engineVersion;
         private bool? autoMinorVersionUpgrade;
         private string primaryClusterId;
+        private int? snapshotRetentionLimit;
+        private string snapshotWindow;
+        private string snapshottingClusterId;
 
         /// <summary>
         /// The identifier of the replication group to modify.
@@ -438,6 +441,96 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetPrimaryClusterId()
         {
             return this.primaryClusterId != null;
+        }
+
+        /// <summary>
+        /// The number of days for which ElastiCache will retain automatic cache cluster snapshots before deleting them. For example, if you set
+        /// <i>SnapshotRetentionLimit</i> to 5, then a snapshot that was taken today will be retained for 5 days before being deleted.
+        ///  
+        /// </summary>
+        public int SnapshotRetentionLimit
+        {
+            get { return this.snapshotRetentionLimit ?? default(int); }
+            set { this.snapshotRetentionLimit = value; }
+        }
+
+        /// <summary>
+        /// Sets the SnapshotRetentionLimit property
+        /// </summary>
+        /// <param name="snapshotRetentionLimit">The value to set for the SnapshotRetentionLimit property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public ModifyReplicationGroupRequest WithSnapshotRetentionLimit(int snapshotRetentionLimit)
+        {
+            this.snapshotRetentionLimit = snapshotRetentionLimit;
+            return this;
+        }
+            
+
+        // Check to see if SnapshotRetentionLimit property is set
+        internal bool IsSetSnapshotRetentionLimit()
+        {
+            return this.snapshotRetentionLimit.HasValue;
+        }
+
+        /// <summary>
+        /// asdfasdf The daily time range (in UTC) during which ElastiCache will begin taking a daily snapshot of the cache cluster specified by
+        /// <i>SnapshottingClusterId</i>. Example: <c>05:00-09:00</c> If you do not specify this parameter, then ElastiCache will automatically choose
+        /// an appropriate time range.
+        ///  
+        /// </summary>
+        public string SnapshotWindow
+        {
+            get { return this.snapshotWindow; }
+            set { this.snapshotWindow = value; }
+        }
+
+        /// <summary>
+        /// Sets the SnapshotWindow property
+        /// </summary>
+        /// <param name="snapshotWindow">The value to set for the SnapshotWindow property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public ModifyReplicationGroupRequest WithSnapshotWindow(string snapshotWindow)
+        {
+            this.snapshotWindow = snapshotWindow;
+            return this;
+        }
+            
+
+        // Check to see if SnapshotWindow property is set
+        internal bool IsSetSnapshotWindow()
+        {
+            return this.snapshotWindow != null;
+        }
+
+        /// <summary>
+        /// The cache cluster ID that will be used as the daily snapshot source for the replication group.
+        ///  
+        /// </summary>
+        public string SnapshottingClusterId
+        {
+            get { return this.snapshottingClusterId; }
+            set { this.snapshottingClusterId = value; }
+        }
+
+        /// <summary>
+        /// Sets the SnapshottingClusterId property
+        /// </summary>
+        /// <param name="snapshottingClusterId">The value to set for the SnapshottingClusterId property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public ModifyReplicationGroupRequest WithSnapshottingClusterId(string snapshottingClusterId)
+        {
+            this.snapshottingClusterId = snapshottingClusterId;
+            return this;
+        }
+            
+
+        // Check to see if SnapshottingClusterId property is set
+        internal bool IsSetSnapshottingClusterId()
+        {
+            return this.snapshottingClusterId != null;
         }
     }
 }

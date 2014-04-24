@@ -365,11 +365,19 @@ namespace Amazon.DynamoDBv2.DocumentModel
             req.BeforeRequestEvent += isAsync ?
                 new RequestEventHandler(UserAgentRequestEventHandlerAsync) :
                 new RequestEventHandler(UserAgentRequestEventHandlerSync);
+            if (currentConfig.ReturnValues == ReturnValues.AllOldAttributes)
+                req.ReturnValues = EnumMapper.Convert(currentConfig.ReturnValues);
+            if (currentConfig.Expected != null && currentConfig.ExpectedState != null)
+                throw new InvalidOperationException("Expected and ExpectedState cannot be set at the same time");
             if (currentConfig.Expected != null)
                 req.Expected = currentConfig.Expected.ToExpectedAttributeMap();
-            if (currentConfig.ReturnValues == ReturnValues.AllOldAttributes)
+            if (currentConfig.ExpectedState != null &&
+                currentConfig.ExpectedState.ExpectedValues != null &&
+                currentConfig.ExpectedState.ExpectedValues.Count > 0)
             {
-                req.ReturnValues = EnumToStringMapper.Convert(currentConfig.ReturnValues);
+                req.Expected = currentConfig.ExpectedState.ToExpectedAttributeMap();
+                if (req.Expected.Count > 1)
+                    req.ConditionalOperator = EnumMapper.Convert(currentConfig.ExpectedState.ConditionalOperator);
             }
 
             var resp = DDBClient.PutItem(req);
@@ -747,13 +755,23 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 TableName = TableName,
                 Key = key,
                 AttributeUpdates = attributeUpdates.Count == 0 ? null : attributeUpdates, // pass null if keys-only update
-                ReturnValues = EnumToStringMapper.Convert(currentConfig.ReturnValues)
+                ReturnValues = EnumMapper.Convert(currentConfig.ReturnValues)
             };
             req.BeforeRequestEvent += isAsync ?
                 new RequestEventHandler(UserAgentRequestEventHandlerAsync) :
                 new RequestEventHandler(UserAgentRequestEventHandlerSync);
+            if (currentConfig.Expected != null && currentConfig.ExpectedState != null)
+                throw new InvalidOperationException("Expected and ExpectedState cannot be set at the same time");
             if (currentConfig.Expected != null)
                 req.Expected = currentConfig.Expected.ToExpectedAttributeMap();
+            if (currentConfig.ExpectedState != null &&
+                currentConfig.ExpectedState.ExpectedValues != null &&
+                currentConfig.ExpectedState.ExpectedValues.Count > 0)
+            {
+                req.Expected = currentConfig.ExpectedState.ToExpectedAttributeMap();
+                if (req.Expected.Count > 1)
+                    req.ConditionalOperator = EnumMapper.Convert(currentConfig.ExpectedState.ConditionalOperator);
+            }
 
             var resp = DDBClient.UpdateItem(req);
             var returnedAttributes = resp.UpdateItemResult.Attributes;
@@ -1021,12 +1039,18 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 new RequestEventHandler(UserAgentRequestEventHandlerAsync) :
                 new RequestEventHandler(UserAgentRequestEventHandlerSync);
             if (currentConfig.ReturnValues == ReturnValues.AllOldAttributes)
-            {
-                req.ReturnValues = EnumToStringMapper.Convert(currentConfig.ReturnValues);
-            }
+                req.ReturnValues = EnumMapper.Convert(currentConfig.ReturnValues);
+            if (currentConfig.Expected != null && currentConfig.ExpectedState != null)
+                throw new InvalidOperationException("Expected and ExpectedState cannot be set at the same time");
             if (currentConfig.Expected != null)
-            {
                 req.Expected = currentConfig.Expected.ToExpectedAttributeMap();
+            if (currentConfig.ExpectedState != null &&
+                currentConfig.ExpectedState.ExpectedValues != null &&
+                currentConfig.ExpectedState.ExpectedValues.Count > 0)
+            {
+                req.Expected = currentConfig.ExpectedState.ToExpectedAttributeMap();
+                if (req.Expected.Count > 1)
+                    req.ConditionalOperator = EnumMapper.Convert(currentConfig.ExpectedState.ConditionalOperator);
             }
 
             var attributes = DDBClient.DeleteItem(req).DeleteItemResult.Attributes;
@@ -1216,6 +1240,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 TableName = TableName,
                 Limit = currentConfig.Limit,
                 Filter = currentConfig.Filter,
+                ConditionalOperator = currentConfig.ConditionalOperator,
                 AttributesToGet = currentConfig.AttributesToGet,
                 Select = currentConfig.Select,
                 CollectResults = currentConfig.CollectResults
@@ -1285,6 +1310,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 TableName = TableName,
                 AttributesToGet = config.AttributesToGet,
                 Filter = config.Filter,
+                ConditionalOperator = config.ConditionalOperator,
                 Limit = config.Limit,
                 IsConsistentRead = config.ConsistentRead,
                 IsBackwardSearch = config.BackwardSearch,

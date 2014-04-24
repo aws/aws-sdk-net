@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -115,7 +115,9 @@ namespace Amazon.DynamoDBv2.Model
 
         /// <summary>
         /// The names of one or more attributes to retrieve. If no attribute names are specified, then all attributes will be returned. If any of the
-        /// requested attributes are not found, they will not appear in the result.
+        /// requested attributes are not found, they will not appear in the result. Note that <i>AttributesToGet</i> has no effect on provisioned
+        /// throughput consumption. DynamoDB determines capacity units consumed based on item size, not on the amount of data that is returned to an
+        /// application.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -200,7 +202,7 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// If set to <c>TOTAL</c>, the response includes <i>ConsumedCapacity</i> data for tables and indexes. If set to <c>INDEXES</c>, the repsonse
+        /// If set to <c>TOTAL</c>, the response includes <i>ConsumedCapacity</i> data for tables and indexes. If set to <c>INDEXES</c>, the response
         /// includes <i>ConsumedCapacity</i> for indexes. If set to <c>NONE</c> (the default), <i>ConsumedCapacity</i> is not included in the response.
         ///  
         /// <para>

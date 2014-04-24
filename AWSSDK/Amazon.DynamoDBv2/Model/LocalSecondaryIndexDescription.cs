@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ namespace Amazon.DynamoDBv2.Model
     /// <summary>
     /// <para>Represents the properties of a local secondary index.</para>
     /// </summary>
-    public class LocalSecondaryIndexDescription
+    public partial class LocalSecondaryIndexDescription
     {
         
         private string indexName;
@@ -161,8 +161,8 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// The total size of the specified index, in bytes. Amazon DynamoDB updates this value approximately every six hours. Recent changes might not
-        /// be reflected in this value.
+        /// The total size of the specified index, in bytes. DynamoDB updates this value approximately every six hours. Recent changes might not be
+        /// reflected in this value.
         ///  
         /// </summary>
         public long IndexSizeBytes
@@ -191,8 +191,8 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// The number of items in the specified index. Amazon DynamoDB updates this value approximately every six hours. Recent changes might not be
-        /// reflected in this value.
+        /// The number of items in the specified index. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected
+        /// in this value.
         ///  
         /// </summary>
         public long ItemCount

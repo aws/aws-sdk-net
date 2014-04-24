@@ -2729,6 +2729,7 @@
     <Compile Include="Amazon.DynamoDBv2\DocumentModel\DocumentBatchGet.cs" />
     <Compile Include="Amazon.DynamoDBv2\DocumentModel\DocumentBatchWrite.cs" />
     <Compile Include="Amazon.DynamoDBv2\DocumentModel\DynamoDBEntry.cs" />
+    <Compile Include="Amazon.DynamoDBv2\DocumentModel\ExpectedState.cs" />
     <Compile Include="Amazon.DynamoDBv2\DocumentModel\Filter.cs" />
     <Compile Include="Amazon.DynamoDBv2\DocumentModel\Primitive.cs" />
     <Compile Include="Amazon.DynamoDBv2\DocumentModel\PrimitiveList.cs" />
@@ -4403,6 +4404,9 @@
     <Compile Include="Amazon.ElastiCache\Model\CacheSubnetGroupQuotaExceededException.cs" />
     <Compile Include="Amazon.ElastiCache\Model\CacheSubnetQuotaExceededException.cs" />
     <Compile Include="Amazon.ElastiCache\Model\ClusterQuotaForCustomerExceededException.cs" />
+    <Compile Include="Amazon.ElastiCache\Model\CopySnapshotRequest.cs" />
+    <Compile Include="Amazon.ElastiCache\Model\CopySnapshotResponse.cs" />
+    <Compile Include="Amazon.ElastiCache\Model\CopySnapshotResult.cs" />
     <Compile Include="Amazon.ElastiCache\Model\CreateCacheClusterRequest.cs" />
     <Compile Include="Amazon.ElastiCache\Model\CreateCacheClusterResponse.cs" />
     <Compile Include="Amazon.ElastiCache\Model\CreateCacheClusterResult.cs" />
@@ -4418,6 +4422,9 @@
     <Compile Include="Amazon.ElastiCache\Model\CreateReplicationGroupRequest.cs" />
     <Compile Include="Amazon.ElastiCache\Model\CreateReplicationGroupResponse.cs" />
     <Compile Include="Amazon.ElastiCache\Model\CreateReplicationGroupResult.cs" />
+    <Compile Include="Amazon.ElastiCache\Model\CreateSnapshotRequest.cs" />
+    <Compile Include="Amazon.ElastiCache\Model\CreateSnapshotResponse.cs" />
+    <Compile Include="Amazon.ElastiCache\Model\CreateSnapshotResult.cs" />
     <Compile Include="Amazon.ElastiCache\Model\DeleteCacheClusterRequest.cs" />
     <Compile Include="Amazon.ElastiCache\Model\DeleteCacheClusterResponse.cs" />
     <Compile Include="Amazon.ElastiCache\Model\DeleteCacheClusterResult.cs" />
@@ -4430,6 +4437,9 @@
     <Compile Include="Amazon.ElastiCache\Model\DeleteReplicationGroupRequest.cs" />
     <Compile Include="Amazon.ElastiCache\Model\DeleteReplicationGroupResponse.cs" />
     <Compile Include="Amazon.ElastiCache\Model\DeleteReplicationGroupResult.cs" />
+    <Compile Include="Amazon.ElastiCache\Model\DeleteSnapshotRequest.cs" />
+    <Compile Include="Amazon.ElastiCache\Model\DeleteSnapshotResponse.cs" />
+    <Compile Include="Amazon.ElastiCache\Model\DeleteSnapshotResult.cs" />
     <Compile Include="Amazon.ElastiCache\Model\DescribeCacheClustersRequest.cs" />
     <Compile Include="Amazon.ElastiCache\Model\DescribeCacheClustersResponse.cs" />
     <Compile Include="Amazon.ElastiCache\Model\DescribeCacheClustersResult.cs" />
@@ -4463,6 +4473,9 @@
     <Compile Include="Amazon.ElastiCache\Model\DescribeReservedCacheNodesRequest.cs" />
     <Compile Include="Amazon.ElastiCache\Model\DescribeReservedCacheNodesResponse.cs" />
     <Compile Include="Amazon.ElastiCache\Model\DescribeReservedCacheNodesResult.cs" />
+    <Compile Include="Amazon.ElastiCache\Model\DescribeSnapshotsRequest.cs" />
+    <Compile Include="Amazon.ElastiCache\Model\DescribeSnapshotsResponse.cs" />
+    <Compile Include="Amazon.ElastiCache\Model\DescribeSnapshotsResult.cs" />
     <Compile Include="Amazon.ElastiCache\Model\EC2SecurityGroup.cs" />
     <Compile Include="Amazon.ElastiCache\Model\Endpoint.cs" />
     <Compile Include="Amazon.ElastiCache\Model\EngineDefaults.cs" />
@@ -4482,6 +4495,9 @@
     <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\CacheSecurityGroupMembershipUnmarshaller.cs" />
     <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\CacheSecurityGroupUnmarshaller.cs" />
     <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\CacheSubnetGroupUnmarshaller.cs" />
+    <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\CopySnapshotRequestMarshaller.cs" />
+    <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\CopySnapshotResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\CopySnapshotResultUnmarshaller.cs" />
     <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\CreateCacheClusterRequestMarshaller.cs" />
     <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\CreateCacheClusterResponseUnmarshaller.cs" />
     <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\CreateCacheClusterResultUnmarshaller.cs" />
@@ -4497,6 +4513,9 @@
     <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\CreateReplicationGroupRequestMarshaller.cs" />
     <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\CreateReplicationGroupResponseUnmarshaller.cs" />
     <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\CreateReplicationGroupResultUnmarshaller.cs" />
+    <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\CreateSnapshotRequestMarshaller.cs" />
+    <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\CreateSnapshotResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\CreateSnapshotResultUnmarshaller.cs" />
     <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\DeleteCacheClusterRequestMarshaller.cs" />
     <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\DeleteCacheClusterResponseUnmarshaller.cs" />
     <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\DeleteCacheClusterResultUnmarshaller.cs" />
@@ -4509,6 +4528,9 @@
     <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\DeleteReplicationGroupRequestMarshaller.cs" />
     <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\DeleteReplicationGroupResponseUnmarshaller.cs" />
     <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\DeleteReplicationGroupResultUnmarshaller.cs" />
+    <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\DeleteSnapshotRequestMarshaller.cs" />
+    <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\DeleteSnapshotResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\DeleteSnapshotResultUnmarshaller.cs" />
     <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\DescribeCacheClustersRequestMarshaller.cs" />
     <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\DescribeCacheClustersResponseUnmarshaller.cs" />
     <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\DescribeCacheClustersResultUnmarshaller.cs" />
@@ -4542,6 +4564,9 @@
     <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\DescribeReservedCacheNodesRequestMarshaller.cs" />
     <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\DescribeReservedCacheNodesResponseUnmarshaller.cs" />
     <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\DescribeReservedCacheNodesResultUnmarshaller.cs" />
+    <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\DescribeSnapshotsRequestMarshaller.cs" />
+    <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\DescribeSnapshotsResponseUnmarshaller.cs" />
+    <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\DescribeSnapshotsResultUnmarshaller.cs" />
     <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\EC2SecurityGroupUnmarshaller.cs" />
     <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\EndpointUnmarshaller.cs" />
     <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\EngineDefaultsUnmarshaller.cs" />
@@ -4560,6 +4585,7 @@
     <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\ModifyReplicationGroupResultUnmarshaller.cs" />
     <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\NodeGroupMemberUnmarshaller.cs" />
     <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\NodeGroupUnmarshaller.cs" />
+    <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\NodeSnapshotUnmarshaller.cs" />
     <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\NotificationConfigurationUnmarshaller.cs" />
     <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\ParameterUnmarshaller.cs" />
     <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\PendingModifiedValuesUnmarshaller.cs" />
@@ -4581,6 +4607,7 @@
     <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\RevokeCacheSecurityGroupIngressResponseUnmarshaller.cs" />
     <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\RevokeCacheSecurityGroupIngressResultUnmarshaller.cs" />
     <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\SecurityGroupMembershipUnmarshaller.cs" />
+    <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\SnapshotUnmarshaller.cs" />
     <Compile Include="Amazon.ElastiCache\Model\Internal\MarshallTransformations\SubnetUnmarshaller.cs" />
     <Compile Include="Amazon.ElastiCache\Model\InvalidCacheClusterStateException.cs" />
     <Compile Include="Amazon.ElastiCache\Model\InvalidCacheParameterGroupStateException.cs" />
@@ -4588,6 +4615,7 @@
     <Compile Include="Amazon.ElastiCache\Model\InvalidParameterCombinationException.cs" />
     <Compile Include="Amazon.ElastiCache\Model\InvalidParameterValueException.cs" />
     <Compile Include="Amazon.ElastiCache\Model\InvalidReplicationGroupStateException.cs" />
+    <Compile Include="Amazon.ElastiCache\Model\InvalidSnapshotStateException.cs" />
     <Compile Include="Amazon.ElastiCache\Model\InvalidSubnetException.cs" />
     <Compile Include="Amazon.ElastiCache\Model\InvalidVPCNetworkStateException.cs" />
     <Compile Include="Amazon.ElastiCache\Model\ModifyCacheClusterRequest.cs" />
@@ -4606,6 +4634,7 @@
     <Compile Include="Amazon.ElastiCache\Model\NodeGroupMember.cs" />
     <Compile Include="Amazon.ElastiCache\Model\NodeQuotaForClusterExceededException.cs" />
     <Compile Include="Amazon.ElastiCache\Model\NodeQuotaForCustomerExceededException.cs" />
+    <Compile Include="Amazon.ElastiCache\Model\NodeSnapshot.cs" />
     <Compile Include="Amazon.ElastiCache\Model\NotificationConfiguration.cs" />
     <Compile Include="Amazon.ElastiCache\Model\Parameter.cs" />
     <Compile Include="Amazon.ElastiCache\Model\ParameterNameValue.cs" />
@@ -4634,6 +4663,11 @@
     <Compile Include="Amazon.ElastiCache\Model\RevokeCacheSecurityGroupIngressResponse.cs" />
     <Compile Include="Amazon.ElastiCache\Model\RevokeCacheSecurityGroupIngressResult.cs" />
     <Compile Include="Amazon.ElastiCache\Model\SecurityGroupMembership.cs" />
+    <Compile Include="Amazon.ElastiCache\Model\Snapshot.cs" />
+    <Compile Include="Amazon.ElastiCache\Model\SnapshotAlreadyExistsException.cs" />
+    <Compile Include="Amazon.ElastiCache\Model\SnapshotFeatureNotSupportedException.cs" />
+    <Compile Include="Amazon.ElastiCache\Model\SnapshotNotFoundException.cs" />
+    <Compile Include="Amazon.ElastiCache\Model\SnapshotQuotaExceededException.cs" />
     <Compile Include="Amazon.ElastiCache\Model\Subnet.cs" />
     <Compile Include="Amazon.ElastiCache\Model\SubnetInUseException.cs" />
     <Compile Include="Amazon.ElasticBeanstalk\AmazonElasticBeanstalk.cs" />
@@ -6984,6 +7018,7 @@
     <Compile Include="Amazon.OpsWorks\Model\AutoScalingThresholds.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.OpsWorks\Model\ChefConfiguration.cs" />
     <Compile Include="Amazon.OpsWorks\Model\CloneStackRequest.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -7274,6 +7309,7 @@
     <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\AutoScalingThresholdsUnmarshaller.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\ChefConfigurationUnmarshaller.cs" />
     <Compile Include="Amazon.OpsWorks\Model\Internal\MarshallTransformations\CloneStackRequestMarshaller.cs">
       <SubType>Code</SubType>
     </Compile>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -27,10 +27,10 @@ namespace Amazon.OpsWorks.Model
     /// Container for the parameters to the CreateLayer operation.
     /// <para>Creates a layer. For more information, see <a
     /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-create.html" >How to Create a Layer</a> .</para>
-    /// <para><b>NOTE:</b>You should use CreateLayer for noncustom layer types such as PHP App Server only if the stack does not have an existing
+    /// <para><b>NOTE:</b> You should use CreateLayer for noncustom layer types such as PHP App Server only if the stack does not have an existing
     /// layer of that type. A stack can have at most one instance of each noncustom layer; if you attempt to create a second instance, CreateLayer
-    /// fails. A stack can have an arbitrary number of custom layers, so you can call CreateLayer as many times as you like for that layer
-    /// type.</para> <para> <b>Required Permissions</b> : To use this action, an IAM user must have a Manage permissions level for the stack, or an
+    /// fails. A stack can have an arbitrary number of custom layers, so you can call CreateLayer as many times as you like for that layer type.
+    /// </para> <para> <b>Required Permissions</b> : To use this action, an IAM user must have a Manage permissions level for the stack, or an
     /// attached policy that explicitly grants permissions. For more information on user permissions, see <a
     /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html" >Managing User Permissions</a> .</para>
     /// </summary>
@@ -51,6 +51,7 @@ namespace Amazon.OpsWorks.Model
         private bool? autoAssignPublicIps;
         private Recipes customRecipes;
         private bool? installUpdatesOnBoot;
+        private bool? useEbsOptimizedInstances;
 
         /// <summary>
         /// The layer stack ID.
@@ -82,10 +83,11 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// The layer type. A stack cannot have more than one layer of the same type. This parameter must be set to one of the following: <ul> <li>lb:
-        /// An HAProxy layer</li> <li>web: A Static Web Server layer</li> <li>rails-app: A Rails App Server layer</li> <li>php-app: A PHP App Server
-        /// layer</li> <li>nodejs-app: A Node.js App Server layer</li> <li>memcached: A Memcached layer</li> <li>db-master: A MySQL layer</li>
-        /// <li>monitoring-master: A Ganglia layer</li> <li>custom: A custom layer</li> </ul>
+        /// The layer type. A stack cannot have more than one built-in layer of the same type. It can have any number of custom layers. This parameter
+        /// must be set to one of the following: <ul> <li>custom: A custom layer</li> <li>db-master: A MySQL layer</li> <li>java-app: A Java App Server
+        /// layer</li> <li>rails-app: A Rails App Server layer</li> <li>lb: An HAProxy layer</li> <li>memcached: A Memcached layer</li>
+        /// <li>monitoring-master: A Ganglia layer</li> <li>nodejs-app: A Node.js App Server layer</li> <li>php-app: A PHP App Server layer</li>
+        /// <li>web: A Static Web Server layer</li> </ul>
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -183,7 +185,7 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// One or more user-defined key/value pairs to be added to the stack attributes bag.
+        /// One or more user-defined key/value pairs to be added to the stack attributes.
         ///  
         /// </summary>
         public Dictionary<string,string> Attributes
@@ -339,7 +341,7 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// A <c>VolumeConfigurations</c> object that describes the layer Amazon EBS volumes.
+        /// A <c>VolumeConfigurations</c> object that describes the layer's Amazon EBS volumes.
         ///  
         /// </summary>
         public List<VolumeConfiguration> VolumeConfigurations
@@ -507,8 +509,8 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Whether to install operating system and package updates when the instance boots. The default value is <c>true</c>. To control when updates
         /// are installed, set this value to <c>false</c>. You must then update your instances manually by using <a>CreateDeployment</a> to run the
-        /// <c>update_dependencies</c> stack command or manually running <c>yum</c> (Amazon Linux) or <c>apt-get</c> (Ubuntu) on the instances. <note>We
-        /// strongly recommend using the default value of <c>true</c>, to ensure that your instances have the latest security updates.</note>
+        /// <c>update_dependencies</c> stack command or manually running <c>yum</c> (Amazon Linux) or <c>apt-get</c> (Ubuntu) on the instances. <note>
+        /// We strongly recommend using the default value of <c>true</c>, to ensure that your instances have the latest security updates. </note>
         ///  
         /// </summary>
         public bool InstallUpdatesOnBoot
@@ -534,6 +536,35 @@ namespace Amazon.OpsWorks.Model
         internal bool IsSetInstallUpdatesOnBoot()
         {
             return this.installUpdatesOnBoot.HasValue;
+        }
+
+        /// <summary>
+        /// Whether to use Amazon EBS-optimized instances.
+        ///  
+        /// </summary>
+        public bool UseEbsOptimizedInstances
+        {
+            get { return this.useEbsOptimizedInstances ?? default(bool); }
+            set { this.useEbsOptimizedInstances = value; }
+        }
+
+        /// <summary>
+        /// Sets the UseEbsOptimizedInstances property
+        /// </summary>
+        /// <param name="useEbsOptimizedInstances">The value to set for the UseEbsOptimizedInstances property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public CreateLayerRequest WithUseEbsOptimizedInstances(bool useEbsOptimizedInstances)
+        {
+            this.useEbsOptimizedInstances = useEbsOptimizedInstances;
+            return this;
+        }
+            
+
+        // Check to see if UseEbsOptimizedInstances property is set
+        internal bool IsSetUseEbsOptimizedInstances()
+        {
+            return this.useEbsOptimizedInstances.HasValue;
         }
     }
 }

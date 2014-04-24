@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -48,8 +48,13 @@
               
               if (context.TestExpression("Volumes", targetDepth))
               {
-                describeVolumesResult.Volumes = new List<Volume>();
-                        VolumeUnmarshaller unmarshaller = VolumeUnmarshaller.GetInstance();
+                describeVolumesResult.Volumes = new List<Volume>();   
+                if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                {
+                  continue;
+                }              
+
+                  VolumeUnmarshaller unmarshaller = VolumeUnmarshaller.GetInstance();
                 while (context.Read())
                 {
                   if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))

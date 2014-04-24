@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -24,7 +24,7 @@ namespace Amazon.DynamoDBv2.Model
     /// <para>Represents attributes that are copied (projected) from the table into an index. These are in addition to the primary key attributes
     /// and index key attributes, which are automatically projected.</para>
     /// </summary>
-    public class Projection
+    public partial class Projection
     {
         
         private string projectionType;

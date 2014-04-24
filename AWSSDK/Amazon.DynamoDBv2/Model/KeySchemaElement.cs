@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -24,7 +24,7 @@ namespace Amazon.DynamoDBv2.Model
     /// <para>Represents a single element of a key schema. A key schema specifies the attributes that make up the primary key of a table, or the key
     /// attributes of an index.</para>
     /// </summary>
-    public class KeySchemaElement
+    public partial class KeySchemaElement
     {
         
         private string attributeName;

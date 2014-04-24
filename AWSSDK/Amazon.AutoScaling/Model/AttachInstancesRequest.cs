@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,7 +25,10 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the AttachInstances operation.
-    /// <para> Attaches one or more Amazon EC2 instances to an existing Auto Scaling group. </para>
+    /// <para> Attaches one or more Amazon EC2 instances to an existing Auto Scaling group. After the instance(s) is attached, it becomes a part of
+    /// the Auto Scaling group. </para> <para>For more information, see <a
+    /// href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/attach-instance-asg.html" >Attach Amazon EC2 Instance(s) to Your Existing
+    /// Auto Scaling Group</a> in the <i>Auto Scaling Developer Guide</i> .</para>
     /// </summary>
     /// <seealso cref="Amazon.AutoScaling.AmazonAutoScaling.AttachInstances"/>
     public class AttachInstancesRequest : AmazonWebServiceRequest
@@ -34,7 +37,7 @@ namespace Amazon.AutoScaling.Model
         private string autoScalingGroupName;
 
         /// <summary>
-        /// One or more IDs of the Amazon EC2 instances to attach to the specified Auto Scaling group.
+        /// One or more IDs of the Amazon EC2 instances to attach to the specified Auto Scaling group. You must specify at least one instance ID.
         ///  
         /// </summary>
         public List<string> InstanceIds
@@ -81,7 +84,7 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// The name of the Auto Scaling group to which to attach the specified instance.
+        /// The name of the Auto Scaling group to which to attach the specified instance(s).
         ///  
         /// <para>
         /// <b>Constraints:</b>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -67,7 +67,9 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// The user's SSH user name.
+        /// The user's SSH user name. The allowable characters are [a-z], [A-Z], [0-9], '-', and '_'. If the specified name includes other punctuation
+        /// marks, AWS OpsWorks removes them. For example, <c>my.name</c> will be changed to <c>myname</c>. If you do not specify an SSH user name, AWS
+        /// OpsWorks generates one from the IAM user name.
         ///  
         /// </summary>
         public string SshUsername
@@ -126,7 +128,7 @@ namespace Amazon.OpsWorks.Model
 
         /// <summary>
         /// Whether users can specify their own SSH public key through the My Settings page. For more information, see <a
-        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html"></a>.
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Setting an IAM User's Public SSH Key</a>.
         ///  
         /// </summary>
         public bool AllowSelfManagement

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ namespace Amazon.OpsWorks.Model
         
         private string stackId;
         private string name;
+        private string arn;
         private string region;
         private string vpcId;
         private Dictionary<string,string> attributes = new Dictionary<string,string>();
@@ -39,7 +40,9 @@ namespace Amazon.OpsWorks.Model
         private string defaultSubnetId;
         private string customJson;
         private StackConfigurationManager configurationManager;
+        private ChefConfiguration chefConfiguration;
         private bool? useCustomCookbooks;
+        private bool? useOpsworksSecurityGroups;
         private Source customCookbooksSource;
         private string defaultSshKeyName;
         private string createdAt;
@@ -104,6 +107,35 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
+        /// The stack's ARN.
+        ///  
+        /// </summary>
+        public string Arn
+        {
+            get { return this.arn; }
+            set { this.arn = value; }
+        }
+
+        /// <summary>
+        /// Sets the Arn property
+        /// </summary>
+        /// <param name="arn">The value to set for the Arn property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public Stack WithArn(string arn)
+        {
+            this.arn = arn;
+            return this;
+        }
+            
+
+        // Check to see if Arn property is set
+        internal bool IsSetArn()
+        {
+            return this.arn != null;
+        }
+
+        /// <summary>
         /// The stack AWS region, such as "us-east-1". For more information about AWS regions, see <a
         /// href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
         ///  
@@ -163,7 +195,7 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// The contents of the stack's attributes bag.
+        /// The stack's attributes.
         ///  
         /// </summary>
         public Dictionary<string,string> Attributes
@@ -433,6 +465,36 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
+        /// A <c>ChefConfiguration</c> object that specifies whether to enable Berkshelf and the Berkshelf version. For more information, see <a
+        /// href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.
+        ///  
+        /// </summary>
+        public ChefConfiguration ChefConfiguration
+        {
+            get { return this.chefConfiguration; }
+            set { this.chefConfiguration = value; }
+        }
+
+        /// <summary>
+        /// Sets the ChefConfiguration property
+        /// </summary>
+        /// <param name="chefConfiguration">The value to set for the ChefConfiguration property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public Stack WithChefConfiguration(ChefConfiguration chefConfiguration)
+        {
+            this.chefConfiguration = chefConfiguration;
+            return this;
+        }
+            
+
+        // Check to see if ChefConfiguration property is set
+        internal bool IsSetChefConfiguration()
+        {
+            return this.chefConfiguration != null;
+        }
+
+        /// <summary>
         /// Whether the stack uses custom cookbooks.
         ///  
         /// </summary>
@@ -459,6 +521,35 @@ namespace Amazon.OpsWorks.Model
         internal bool IsSetUseCustomCookbooks()
         {
             return this.useCustomCookbooks.HasValue;
+        }
+
+        /// <summary>
+        /// Whether the stack automatically associates the AWS OpsWorks built-in security groups with the stack's layers.
+        ///  
+        /// </summary>
+        public bool UseOpsworksSecurityGroups
+        {
+            get { return this.useOpsworksSecurityGroups ?? default(bool); }
+            set { this.useOpsworksSecurityGroups = value; }
+        }
+
+        /// <summary>
+        /// Sets the UseOpsworksSecurityGroups property
+        /// </summary>
+        /// <param name="useOpsworksSecurityGroups">The value to set for the UseOpsworksSecurityGroups property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public Stack WithUseOpsworksSecurityGroups(bool useOpsworksSecurityGroups)
+        {
+            this.useOpsworksSecurityGroups = useOpsworksSecurityGroups;
+            return this;
+        }
+            
+
+        // Check to see if UseOpsworksSecurityGroups property is set
+        internal bool IsSetUseOpsworksSecurityGroups()
+        {
+            return this.useOpsworksSecurityGroups.HasValue;
         }
 
         /// <summary>
@@ -551,8 +642,8 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// The default root device type. This value is used by default for all instances in the cloned stack, but you can override it when you create
-        /// an instance. For more information, see <a
+        /// The default root device type. This value is used by default for all instances in the stack, but you can override it when you create an
+        /// instance. For more information, see <a
         /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.
         ///  
         /// <para>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -34,7 +34,7 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(modifyReplicationGroupRequest, "AmazonElastiCache");
             request.Parameters.Add("Action", "ModifyReplicationGroup");
-            request.Parameters.Add("Version", "2013-06-15");
+            request.Parameters.Add("Version", "2014-03-24");
             if (modifyReplicationGroupRequest != null && modifyReplicationGroupRequest.IsSetReplicationGroupId())
             {
                 request.Parameters.Add("ReplicationGroupId", StringUtils.FromString(modifyReplicationGroupRequest.ReplicationGroupId));
@@ -96,6 +96,18 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
             if (modifyReplicationGroupRequest != null && modifyReplicationGroupRequest.IsSetPrimaryClusterId())
             {
                 request.Parameters.Add("PrimaryClusterId", StringUtils.FromString(modifyReplicationGroupRequest.PrimaryClusterId));
+            }
+            if (modifyReplicationGroupRequest != null && modifyReplicationGroupRequest.IsSetSnapshotRetentionLimit())
+            {
+                request.Parameters.Add("SnapshotRetentionLimit", StringUtils.FromInt(modifyReplicationGroupRequest.SnapshotRetentionLimit));
+            }
+            if (modifyReplicationGroupRequest != null && modifyReplicationGroupRequest.IsSetSnapshotWindow())
+            {
+                request.Parameters.Add("SnapshotWindow", StringUtils.FromString(modifyReplicationGroupRequest.SnapshotWindow));
+            }
+            if (modifyReplicationGroupRequest != null && modifyReplicationGroupRequest.IsSetSnapshottingClusterId())
+            {
+                request.Parameters.Add("SnapshottingClusterId", StringUtils.FromString(modifyReplicationGroupRequest.SnapshottingClusterId));
             }
 
             return request;

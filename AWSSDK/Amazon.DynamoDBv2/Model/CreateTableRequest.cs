@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -27,11 +27,11 @@ namespace Amazon.DynamoDBv2.Model
     /// Container for the parameters to the CreateTable operation.
     /// <para>The <i>CreateTable</i> operation adds a new table to your account. In an AWS account, table names must be unique within each region.
     /// That is, you can have two tables with same name if you create the tables in different regions.</para> <para> <i>CreateTable</i> is an
-    /// asynchronous operation. Upon receiving a <i>CreateTable</i> request, Amazon DynamoDB immediately returns a response with a
-    /// <i>TableStatus</i> of <c>CREATING</c> . After the table is created, Amazon DynamoDB sets the <i>TableStatus</i> to <c>ACTIVE</c> . You can
-    /// perform read and write operations only on an <c>ACTIVE</c> table. </para> <para>If you want to create multiple tables with secondary indexes
-    /// on them, you must create them sequentially. Only one table with secondary indexes can be in the <c>CREATING</c> state at any given
-    /// time.</para> <para>You can use the <i>DescribeTable</i> API to check the table status.</para>
+    /// asynchronous operation. Upon receiving a <i>CreateTable</i> request, DynamoDB immediately returns a response with a <i>TableStatus</i> of
+    /// <c>CREATING</c> . After the table is created, DynamoDB sets the <i>TableStatus</i> to <c>ACTIVE</c> . You can perform read and write
+    /// operations only on an <c>ACTIVE</c> table. </para> <para>If you want to create multiple tables with secondary indexes on them, you must
+    /// create them sequentially. Only one table with secondary indexes can be in the <c>CREATING</c> state at any given time.</para> <para>You can
+    /// use the <i>DescribeTable</i> API to check the table status.</para>
     /// </summary>
     /// <seealso cref="Amazon.DynamoDBv2.AmazonDynamoDB.CreateTable"/>
     public class CreateTableRequest : AmazonWebServiceRequest
@@ -141,8 +141,8 @@ namespace Amazon.DynamoDBv2.Model
         /// attribute, you must specify exactly one element with a <i>KeyType</i> of <c>HASH</c>. For a primary key that consists of hash and range
         /// attributes, you must specify exactly two elements, in this order: The first element must have a <i>KeyType</i> of <c>HASH</c>, and the
         /// second element must have a <i>KeyType</i> of <c>RANGE</c>. For more information, see <a
-        /// href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDDTables.html#WorkingWithDDTables.primary.key">Specifying
-        /// the Primary Key</a> in the Amazon DynamoDB Developer Guide.
+        /// href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Specifying the
+        /// Primary Key</a> in the Amazon DynamoDB Developer Guide.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -199,8 +199,8 @@ namespace Amazon.DynamoDBv2.Model
 
         /// <summary>
         /// One or more local secondary indexes (the maximum is five) to be created on the table. Each index is scoped to a given hash key value. There
-        /// is a 10 gigabyte size limit per hash key; otherwise, the size of a local secondary index is unconstrained. Each local secondary index in the
-        /// array includes the following: <ul> <li> <i>IndexName</i> - The name of the local secondary index. Must be unique only for this table. </li>
+        /// is a 10 GB size limit per hash key; otherwise, the size of a local secondary index is unconstrained. Each local secondary index in the array
+        /// includes the following: <ul> <li> <i>IndexName</i> - The name of the local secondary index. Must be unique only for this table. <p/> </li>
         /// <li> <i>KeySchema</i> - Specifies the key schema for the local secondary index. The key schema must begin with the same hash key attribute
         /// as the table. </li> <li> <i>Projection</i> - Specifies attributes that are copied (projected) from the table into the index. These are in
         /// addition to the primary key attributes and index key attributes, which are automatically projected. Each attribute specification is composed
@@ -257,7 +257,7 @@ namespace Amazon.DynamoDBv2.Model
 
         /// <summary>
         /// One or more global secondary indexes (the maximum is five) to be created on the table. Each global secondary index in the array includes the
-        /// following: <ul> <li> <i>IndexName</i> - The name of the global secondary index. Must be unique only for this table. </li> <li>
+        /// following: <ul> <li> <i>IndexName</i> - The name of the global secondary index. Must be unique only for this table. <p/> </li> <li>
         /// <i>KeySchema</i> - Specifies the key schema for the global secondary index. </li> <li> <i>Projection</i> - Specifies attributes that are
         /// copied (projected) from the table into the index. These are in addition to the primary key attributes and index key attributes, which are
         /// automatically projected. Each attribute specification is composed of: <ul> <li> <i>ProjectionType</i> - One of the following: <ul> <li>

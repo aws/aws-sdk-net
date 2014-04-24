@@ -82,6 +82,12 @@ namespace Amazon.EC2.Model
         public const string M22xlarge = "m2.2xlarge";
         public const string M24xlarge = "m2.4xlarge";
 
+        public const string R32xlarge = "r3.2xlarge";
+        public const string R34xlarge = "r3.4xlarge";
+        public const string R38xlarge = "r3.8xlarge";
+        public const string R3Large = "r3.large";
+        public const string R3Xlarge = "r3.xlarge";
+
         // High-CPU instances
         public const string C1Medium = "c1.medium";
         public const string C1Xlarge = "c1.xlarge";

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -103,8 +103,8 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// This parameter depends on the repository type. <ul> <li>For Amazon S3 bundles, set <c>Username</c> to the appropriate AWS access key.</li>
-        /// <li>For HTTP bundles, Git repositories, and Subversion repositories, set <c>Username</c> to the user name.</li> </ul>
+        /// This parameter depends on the repository type. <ul> <li>For Amazon S3 bundles, set <c>Username</c> to the appropriate IAM access key
+        /// ID.</li> <li>For HTTP bundles, Git repositories, and Subversion repositories, set <c>Username</c> to the user name.</li> </ul>
         ///  
         /// </summary>
         public string Username
@@ -133,8 +133,8 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// This parameter depends on the repository type. <ul> <li>For Amazon S3 bundles, set <c>Password</c> to the appropriate AWS secret key.</li>
-        /// <li>For HTTP bundles, Git repositories, and Subversion repositories, set <c>Password</c> to the password.</li> </ul>
+        /// This parameter depends on the repository type. <ul> <li>For Amazon S3 bundles, set <c>Password</c> to the appropriate IAM secret access
+        /// key.</li> <li>For HTTP bundles, Git repositories, and Subversion repositories, set <c>Password</c> to the password.</li> </ul>
         ///  
         /// </summary>
         public string Password

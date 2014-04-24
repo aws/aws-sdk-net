@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ namespace Amazon.DynamoDBv2.Model
     /// <summary>
     /// <para>Represents the output of a <i>BatchGetItem</i> operation.</para>
     /// </summary>
-    public class BatchGetItemResult
+    public partial class BatchGetItemResult
     {
         
         private Dictionary<string,List<Dictionary<string,AttributeValue>>> responses = new Dictionary<string,List<Dictionary<string,AttributeValue>>>();
@@ -31,7 +31,7 @@ namespace Amazon.DynamoDBv2.Model
         private List<ConsumedCapacity> consumedCapacity = new List<ConsumedCapacity>();
 
         /// <summary>
-        /// A map of table name to a list of items. Each object in <i>Responses</i>consists of a table name, along with a map of attribute data
+        /// A map of table name to a list of items. Each object in <i>Responses</i> consists of a table name, along with a map of attribute data
         /// consisting of the data type and attribute value.
         ///  
         /// </summary>
@@ -67,12 +67,11 @@ namespace Amazon.DynamoDBv2.Model
         /// A map of tables and their respective keys that were not processed with the current response. The <i>UnprocessedKeys</i> value is in the same
         /// form as <i>RequestItems</i>, so the value can be provided directly to a subsequent <i>BatchGetItem</i> operation. For more information, see
         /// <i>RequestItems</i> in the Request Parameters section. Each element consists of: <ul> <li> <i>Keys</i> - An array of primary key attribute
-        /// values that define specific items in the table. </li> <li> <li> <i>AttributesToGet</i> - One or more attributes to be retrieved from the
-        /// table or index. By default, all attributes are returned. If a specified attribute is not found, it does not appear in the result. </li> If
-        /// you are querying an index and request only attributes that are projected into that index, the operation will read only the index and not the
-        /// table. If any of the requested attributes are not projected into the index, Amazon DynamoDB will need to fetch each matching item from the
-        /// table. This extra fetching incurs additional throughput cost and latency. </li> <li> <i>ConsistentRead</i> - The consistency of a read
-        /// operation. If set to <c>true</c>, then a strongly consistent read is used; otherwise, an eventually consistent read is used. </li> </ul>
+        /// values that define specific items in the table. </li> <li> <i>AttributesToGet</i> - One or more attributes to be retrieved from the table or
+        /// index. By default, all attributes are returned. If a specified attribute is not found, it does not appear in the result. </li> <li>
+        /// <i>ConsistentRead</i> - The consistency of a read operation. If set to <c>true</c>, then a strongly consistent read is used; otherwise, an
+        /// eventually consistent read is used. </li> </ul> If there are no unprocessed keys remaining, the response contains an empty
+        /// <i>UnprocessedKeys</i> map.
         ///  
         /// <para>
         /// <b>Constraints:</b>

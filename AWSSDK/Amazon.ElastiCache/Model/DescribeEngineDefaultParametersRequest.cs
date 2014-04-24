@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -36,7 +36,7 @@ namespace Amazon.ElastiCache.Model
         private string marker;
 
         /// <summary>
-        /// The name of the cache parameter group family. Valid values are: <c>memcached1.4</c> | <c>redis2.6</c>
+        /// The name of the cache parameter group family. Valid values are: <c>memcached1.4</c> | <c>redis2.6</c> | <c>redis2.8</c>
         ///  
         /// </summary>
         public string CacheParameterGroupFamily

@@ -78,6 +78,17 @@ namespace Amazon.DynamoDBv2.DocumentModel
         AllProjectedAttributes
     }
 
+    /// <summary>
+    /// An enumeration of all supported ConditionalOperator values.
+    /// Value of And for an operation will require that all conditions match.
+    /// Value of Or for an operation will require that at least one of the conditons match.
+    /// </summary>
+    public enum ConditionalOperatorValues
+    {
+        And,
+        Or
+    }
+
     internal enum ProjectionTypeValues
     {
         All,
@@ -115,7 +126,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         { }
     }
 
-    internal static class EnumToStringMapper
+    internal static class EnumMapper
     {
         public static string Convert(ReturnConsumedCapacityValues value)
         {
@@ -126,7 +137,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 case ReturnConsumedCapacityValues.Total:
                     return "TOTAL";
                 default:
-                    throw new ArgumentOutOfRangeException("Invalid ReturnConsumedCapacityValues value");
+                    throw new ArgumentOutOfRangeException("value", "Invalid ReturnConsumedCapacityValues value");
             }
         }
 
@@ -139,7 +150,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 case ReturnItemCollectionMetricsValues.All:
                     return "ALL";
                 default:
-                    throw new ArgumentOutOfRangeException("Invalid ReturnItemCollectionMetricsValues value");
+                    throw new ArgumentOutOfRangeException("value", "Invalid ReturnItemCollectionMetricsValues value");
             }
         }
 
@@ -154,7 +165,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 case ProjectionTypeValues.KeysOnly:
                     return "KEYS_ONLY";
                 default:
-                    throw new ArgumentOutOfRangeException("Invalid ProjectionTypeValues value");
+                    throw new ArgumentOutOfRangeException("value", "Invalid ProjectionTypeValues value");
             }
         }
 
@@ -171,7 +182,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 case SelectValues.SpecificAttributes:
                     return "SPECIFIC_ATTRIBUTES";
                 default:
-                    throw new ArgumentOutOfRangeException("Invalid SelectValues value");
+                    throw new ArgumentOutOfRangeException("value", "Invalid SelectValues value");
             }
         }
 
@@ -191,7 +202,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 case ReturnValues.UpdatedNewAttributes:
                     return "UPDATED_NEW";
                 default:
-                    throw new ArgumentOutOfRangeException("Invalid ReturnValues value");
+                    throw new ArgumentOutOfRangeException("value", "Invalid ReturnValues value");
             }
         }
 
@@ -226,7 +237,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 case ScanOperator.Between:
                     return "BETWEEN";
                 default:
-                    throw new ArgumentOutOfRangeException("Invalid ScanOperator value");
+                    throw new ArgumentOutOfRangeException("value", "Invalid ScanOperator value");
             }
         }
 
@@ -249,7 +260,19 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 case QueryOperator.Between:
                     return "BETWEEN";
                 default:
-                    throw new ArgumentOutOfRangeException("Invalid QueryOperator value");
+                    throw new ArgumentOutOfRangeException("value", "Invalid QueryOperator value");
+            }
+        }
+        public static string Convert(ConditionalOperatorValues value)
+        {
+            switch (value)
+            {
+                case ConditionalOperatorValues.And:
+                    return "AND";
+                case ConditionalOperatorValues.Or:
+                    return "OR";
+                default:
+                    throw new ArgumentOutOfRangeException("value", "Invalid ConditionalOperatorValues value");
             }
         }
     }

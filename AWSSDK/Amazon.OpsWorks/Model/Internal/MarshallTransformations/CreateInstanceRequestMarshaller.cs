@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -146,6 +146,11 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                 {
                     writer.WritePropertyName("InstallUpdatesOnBoot");
                     writer.Write(createInstanceRequest.InstallUpdatesOnBoot);
+                }
+                if (createInstanceRequest != null && createInstanceRequest.IsSetEbsOptimized()) 
+                {
+                    writer.WritePropertyName("EbsOptimized");
+                    writer.Write(createInstanceRequest.EbsOptimized);
                 }
 
                 writer.WriteObjectEnd();

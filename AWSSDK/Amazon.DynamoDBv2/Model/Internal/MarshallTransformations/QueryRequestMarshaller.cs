@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -205,6 +205,105 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                         }
                         writer.WriteObjectEnd();
                     }
+                }
+                if (queryRequest != null) 
+                {
+                    if (queryRequest.QueryFilter != null && queryRequest.QueryFilter.Count > 0)
+                    {
+                        writer.WritePropertyName("QueryFilter");
+                        writer.WriteObjectStart();
+                        foreach (string queryRequestQueryFilterKey in queryRequest.QueryFilter.Keys)
+                        {
+                            Condition queryFilterListValue;
+                            bool queryFilterListValueHasValue = queryRequest.QueryFilter.TryGetValue(queryRequestQueryFilterKey, out queryFilterListValue);
+                            writer.WritePropertyName(queryRequestQueryFilterKey);
+
+                            writer.WriteObjectStart();
+
+                            if (queryFilterListValue != null && queryFilterListValue.AttributeValueList != null && queryFilterListValue.AttributeValueList.Count > 0)
+                            {
+                                List<AttributeValue> attributeValueListList = queryFilterListValue.AttributeValueList;
+                                writer.WritePropertyName("AttributeValueList");
+                                writer.WriteArrayStart();
+
+                                foreach (AttributeValue attributeValueListListValue in attributeValueListList) 
+                                {
+                                    writer.WriteObjectStart();
+                                    if (attributeValueListListValue != null && attributeValueListListValue.IsSetS()) 
+                                    {
+                                        writer.WritePropertyName("S");
+                                        writer.Write(attributeValueListListValue.S);
+                                    }
+                                    if (attributeValueListListValue != null && attributeValueListListValue.IsSetN()) 
+                                    {
+                                        writer.WritePropertyName("N");
+                                        writer.Write(attributeValueListListValue.N);
+                                    }
+                                    if (attributeValueListListValue != null && attributeValueListListValue.IsSetB()) 
+                                    {
+                                        writer.WritePropertyName("B");
+                                        writer.Write(StringUtils.FromMemoryStream(attributeValueListListValue.B));
+                                    }
+
+                                    if (attributeValueListListValue != null && attributeValueListListValue.SS != null && attributeValueListListValue.SS.Count > 0) 
+                                    {
+                                        List<string> sSList = attributeValueListListValue.SS;
+                                        writer.WritePropertyName("SS");
+                                        writer.WriteArrayStart();
+
+                                        foreach (string sSListValue in sSList) 
+                                        { 
+                                            writer.Write(StringUtils.FromString(sSListValue));
+                                        }
+
+                                        writer.WriteArrayEnd();
+                                    }
+
+                                    if (attributeValueListListValue != null && attributeValueListListValue.NS != null && attributeValueListListValue.NS.Count > 0) 
+                                    {
+                                        List<string> nSList = attributeValueListListValue.NS;
+                                        writer.WritePropertyName("NS");
+                                        writer.WriteArrayStart();
+
+                                        foreach (string nSListValue in nSList) 
+                                        { 
+                                            writer.Write(StringUtils.FromString(nSListValue));
+                                        }
+
+                                        writer.WriteArrayEnd();
+                                    }
+
+                                    if (attributeValueListListValue != null && attributeValueListListValue.BS != null && attributeValueListListValue.BS.Count > 0) 
+                                    {
+                                        List<MemoryStream> bSList = attributeValueListListValue.BS;
+                                        writer.WritePropertyName("BS");
+                                        writer.WriteArrayStart();
+
+                                        foreach (MemoryStream bSListValue in bSList) 
+                                        { 
+                                            writer.Write(StringUtils.FromMemoryStream(bSListValue));
+                                        }
+
+                                        writer.WriteArrayEnd();
+                                    }
+                                    writer.WriteObjectEnd();
+                                }
+                                writer.WriteArrayEnd();
+                            }
+                            if (queryFilterListValue != null && queryFilterListValue.IsSetComparisonOperator()) 
+                            {
+                                writer.WritePropertyName("ComparisonOperator");
+                                writer.Write(queryFilterListValue.ComparisonOperator);
+                            }
+                            writer.WriteObjectEnd();
+                        }
+                        writer.WriteObjectEnd();
+                    }
+                }
+                if (queryRequest != null && queryRequest.IsSetConditionalOperator()) 
+                {
+                    writer.WritePropertyName("ConditionalOperator");
+                    writer.Write(queryRequest.ConditionalOperator);
                 }
                 if (queryRequest != null && queryRequest.IsSetScanIndexForward()) 
                 {

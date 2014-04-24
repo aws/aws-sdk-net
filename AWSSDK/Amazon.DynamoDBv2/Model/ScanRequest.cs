@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,13 +25,13 @@ namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
     /// Container for the parameters to the Scan operation.
-    /// <para>The <i>Scan</i> operation returns one or more items and item attributes by accessing every item in the table. To have Amazon DynamoDB
-    /// return fewer items, you can provide a <i>ScanFilter</i> .</para> <para>If the total number of scanned items exceeds the maximum data set
-    /// size limit of 1 MB, the scan stops and results are returned to the user with a <i>LastEvaluatedKey</i> to continue the scan in a subsequent
-    /// operation. The results also include the number of items exceeding the limit. A scan can result in no table data meeting the filter criteria.
-    /// </para> <para>The result set is eventually consistent. </para> <para>By default, <i>Scan</i> operations proceed sequentially; however, for
-    /// faster performance on large tables, applications can request a parallel <i>Scan</i> by specifying the <i>Segment</i> and
-    /// <i>TotalSegments</i> parameters. For more information, see <a
+    /// <para>The <i>Scan</i> operation returns one or more items and item attributes by accessing every item in the table. To have DynamoDB return
+    /// fewer items, you can provide a <i>ScanFilter</i> .</para> <para>If the total number of scanned items exceeds the maximum data set size limit
+    /// of 1 MB, the scan stops and results are returned to the user with a <i>LastEvaluatedKey</i> to continue the scan in a subsequent operation.
+    /// The results also include the number of items exceeding the limit. A scan can result in no table data meeting the filter criteria. </para>
+    /// <para>The result set is eventually consistent. </para> <para>By default, <i>Scan</i> operations proceed sequentially; however, for faster
+    /// performance on large tables, applications can request a parallel <i>Scan</i> by specifying the <i>Segment</i> and <i>TotalSegments</i>
+    /// parameters. For more information, see <a
     /// href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#QueryAndScanParallelScan" >Parallel Scan</a> in the
     /// Amazon DynamoDB Developer Guide.</para>
     /// </summary>
@@ -43,6 +43,7 @@ namespace Amazon.DynamoDBv2.Model
         private int? limit;
         private string select;
         private Dictionary<string,Condition> scanFilter = new Dictionary<string,Condition>();
+        private string conditionalOperator;
         private Dictionary<string,AttributeValue> exclusiveStartKey = new Dictionary<string,AttributeValue>();
         private string returnConsumedCapacity;
         private int? totalSegments;
@@ -92,7 +93,9 @@ namespace Amazon.DynamoDBv2.Model
 
         /// <summary>
         /// The names of one or more attributes to retrieve. If no attribute names are specified, then all attributes will be returned. If any of the
-        /// requested attributes are not found, they will not appear in the result.
+        /// requested attributes are not found, they will not appear in the result. Note that <i>AttributesToGet</i> has no effect on provisioned
+        /// throughput consumption. DynamoDB determines capacity units consumed based on item size, not on the amount of data that is returned to an
+        /// application.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -148,11 +151,11 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// The maximum number of items to evaluate (not necessarily the number of matching items). If Amazon DynamoDB processes the number of items up
-        /// to the limit while processing the results, it stops the operation and returns the matching values up to that point, and a
-        /// <i>LastEvaluatedKey</i> to apply in a subsequent operation, so that you can pick up where you left off. Also, if the processed data set size
-        /// exceeds 1 MB before Amazon DynamoDB reaches this limit, it stops the operation and returns the matching values up to the limit, and a
-        /// <i>LastEvaluatedKey</i> to apply in a subsequent operation to continue the operation. For more information see <a
+        /// The maximum number of items to evaluate (not necessarily the number of matching items). If DynamoDB processes the number of items up to the
+        /// limit while processing the results, it stops the operation and returns the matching values up to that point, and a <i>LastEvaluatedKey</i>
+        /// to apply in a subsequent operation, so that you can pick up where you left off. Also, if the processed data set size exceeds 1 MB before
+        /// DynamoDB reaches this limit, it stops the operation and returns the matching values up to the limit, and a <i>LastEvaluatedKey</i> to apply
+        /// in a subsequent operation to continue the operation. For more information see <a
         /// href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query and Scan</a> in the Amazon DynamoDB Developer
         /// Guide.
         ///  
@@ -196,7 +199,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <ul> <li> <c>ALL_ATTRIBUTES</c>: Returns all of the item attributes. </li> <li> <c>COUNT</c>: Returns the number of matching items, rather
         /// than the matching items themselves. </li> <li> <c>SPECIFIC_ATTRIBUTES</c> : Returns only the attributes listed in <i>AttributesToGet</i>.
         /// This is equivalent to specifying <i>AttributesToGet</i> without specifying any value for <i>Select</i>. </li> </ul> If neither <i>Select</i>
-        /// nor <i>AttributesToGet</i> are specified, Amazon DynamoDB defaults to <c>ALL_ATTRIBUTES</c>. You cannot use both <i>Select</i> and
+        /// nor <i>AttributesToGet</i> are specified, DynamoDB defaults to <c>ALL_ATTRIBUTES</c>. You cannot use both <i>Select</i> and
         /// <i>AttributesToGet</i> together in a single request, <i>unless</i> the value for <i>Select</i> is <c>SPECIFIC_ATTRIBUTES</c>. (This usage is
         /// equivalent to specifying <i>AttributesToGet</i> without any value for <i>Select</i>.)
         ///  
@@ -236,56 +239,22 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// Evaluates the scan results and returns only the desired values. Multiple conditions are treated as "AND" operations: all conditions must be
-        /// met to be included in the results. Each <i>ScanConditions</i> element consists of an attribute name to compare, along with the following:
-        /// <ul> <li><i>AttributeValueList</i> - One or more values to evaluate against the supplied attribute. This list contains exactly one value,
-        /// except for a <c>BETWEEN</c> or <c>IN</c> comparison, in which case the list contains two values. <note> For type Number, value comparisons
-        /// are numeric. String value comparisons for greater than, equals, or less than are based on ASCII character code values. For example, <c>a</c>
-        /// is greater than <c>A</c>, and <c>aa</c> is greater than <c>B</c>. For a list of code values, see <a
+        /// Evaluates the scan results and returns only the desired values. If you specify more than one condition in the <i>ScanFilter</i> map, then by
+        /// default all of the conditions must evaluate to true. In other words, the conditions are ANDed together. (You can use the
+        /// <i>ConditionalOperator</i> parameter to OR the conditions instead. If you do this, then at least one of the conditions must evaluate to
+        /// true, rather than all of them.) Each <i>ScanFilter</i> element consists of an attribute name to compare, along with the following: <ul> <li>
+        /// <i>AttributeValueList</i> - One or more values to evaluate against the supplied attribute. The number of values in the list depends on the
+        /// <i>ComparisonOperator</i> being used. For type Number, value comparisons are numeric. String value comparisons for greater than, equals, or
+        /// less than are based on ASCII character code values. For example, <c>a</c> is greater than <c>A</c>, and <c>aa</c> is greater than <c>B</c>.
+        /// For a list of code values, see <a
         /// href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>. For
-        /// Binary, Amazon DynamoDB treats each byte of the binary data as unsigned when it compares binary values, for example when evaluating query
-        /// expressions. </note> </li> <li><i>ComparisonOperator</i> - A comparator for evaluating attributes. For example, equals, greater than, less
-        /// than, etc. Valid comparison operators for Scan: <c>EQ | NE | LE | LT | GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH |
-        /// IN | BETWEEN</c> For information on specifying data types in JSON, see <a
+        /// Binary, DynamoDB treats each byte of the binary data as unsigned when it compares binary values, for example when evaluating query
+        /// expressions. For information on specifying data types in JSON, see <a
         /// href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON Data Format</a> in the Amazon DynamoDB Developer
-        /// Guide. The following are descriptions of each comparison operator. <ul> <li> <c>EQ</c> : Equal. <i>AttributeValueList</i> can contain only
-        /// one <i>AttributeValue</i> of type String, Number, or Binary (not a set). If an item contains an <i>AttributeValue</i> of a different type
-        /// than the one specified in the request, the value does not match. For example, <c>{"S":"6"}</c> does not equal <c>{"N":"6"}</c>. Also,
-        /// <c>{"N":"6"}</c> does not equal <c>{"NS":["6", "2", "1"]}</c>. </li> <li> <c>NE</c> : Not equal. <i>AttributeValueList</i> can contain only
-        /// one <i>AttributeValue</i> of type String, Number, or Binary (not a set). If an item contains an <i>AttributeValue</i> of a different type
-        /// than the one specified in the request, the value does not match. For example, <c>{"S":"6"}</c> does not equal <c>{"N":"6"}</c>. Also,
-        /// <c>{"N":"6"}</c> does not equal <c>{"NS":["6", "2", "1"]}</c>. </li> <li> <c>LE</c> : Less than or equal. <i>AttributeValueList</i> can
-        /// contain only one <i>AttributeValue</i> of type String, Number, or Binary (not a set). If an item contains an <i>AttributeValue</i> of a
-        /// different type than the one specified in the request, the value does not match. For example, <c>{"S":"6"}</c> does not equal
-        /// <c>{"N":"6"}</c>. Also, <c>{"N":"6"}</c> does not compare to <c>{"NS":["6", "2", "1"]}</c>. </li> <li> <c>LT</c> : Less than.
-        /// <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type String, Number, or Binary (not a set). If an item contains an
-        /// <i>AttributeValue</i> of a different type than the one specified in the request, the value does not match. For example, <c>{"S":"6"}</c>
-        /// does not equal <c>{"N":"6"}</c>. Also, <c>{"N":"6"}</c> does not compare to <c>{"NS":["6", "2", "1"]}</c>. </li> <li> <c>GE</c> : Greater
-        /// than or equal. <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type String, Number, or Binary (not a set). If an
-        /// item contains an <i>AttributeValue</i> of a different type than the one specified in the request, the value does not match. For example,
-        /// <c>{"S":"6"}</c> does not equal <c>{"N":"6"}</c>. Also, <c>{"N":"6"}</c> does not compare to <c>{"NS":["6", "2", "1"]}</c>. </li> <li>
-        /// <c>GT</c> : Greater than. <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type String, Number, or Binary (not a
-        /// set). If an item contains an <i>AttributeValue</i> of a different type than the one specified in the request, the value does not match. For
-        /// example, <c>{"S":"6"}</c> does not equal <c>{"N":"6"}</c>. Also, <c>{"N":"6"}</c> does not compare to <c>{"NS":["6", "2", "1"]}</c>. </li>
-        /// <li> <c>NOT_NULL</c> : The attribute exists. </li> <li> <c>NULL</c> : The attribute does not exist. </li> <li> <c>CONTAINS</c> : checks for
-        /// a subsequence, or value in a set. <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type String, Number, or Binary
-        /// (not a set). If the target attribute of the comparison is a String, then the operation checks for a substring match. If the target attribute
-        /// of the comparison is Binary, then the operation looks for a subsequence of the target that matches the input. If the target attribute of the
-        /// comparison is a set ("SS", "NS", or "BS"), then the operation checks for a member of the set (not as a substring). </li> <li>
-        /// <c>NOT_CONTAINS</c> : checks for absence of a subsequence, or absence of a value in a set. <i>AttributeValueList</i> can contain only one
-        /// <i>AttributeValue</i> of type String, Number, or Binary (not a set). If the target attribute of the comparison is a String, then the
-        /// operation checks for the absence of a substring match. If the target attribute of the comparison is Binary, then the operation checks for
-        /// the absence of a subsequence of the target that matches the input. If the target attribute of the comparison is a set ("SS", "NS", or "BS"),
-        /// then the operation checks for the absence of a member of the set (not as a substring). </li> <li> <c>BEGINS_WITH</c> : checks for a prefix.
-        /// <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type String or Binary (not a Number or a set). The target attribute
-        /// of the comparison must be a String or Binary (not a Number or a set). </li> <li> <c>IN</c> : checks for exact matches.
-        /// <i>AttributeValueList</i> can contain more than one <i>AttributeValue</i> of type String, Number, or Binary (not a set). The target
-        /// attribute of the comparison must be of the same type and exact value to match. A String never matches a String set. </li> <li>
-        /// <c>BETWEEN</c> : Greater than or equal to the first value, and less than or equal to the second value. <i>AttributeValueList</i> must
-        /// contain two <i>AttributeValue</i> elements of the same type, either String, Number, or Binary (not a set). A target attribute matches if the
-        /// target value is greater than, or equal to, the first element and less than, or equal to, the second element. If an item contains an
-        /// <i>AttributeValue</i> of a different type than the one specified in the request, the value does not match. For example, <c>{"S":"6"}</c>
-        /// does not compare to <c>{"N":"6"}</c>. Also, <c>{"N":"6"}</c> does not compare to <c>{"NS":["6", "2", "1"]}</c> </li> </ul> </li> </ul>
+        /// Guide. </li> <li><i>ComparisonOperator</i> - A comparator for evaluating attributes. For example, equals, greater than, less than, etc. The
+        /// following comparison operators are available: <c>EQ | NE | LE | LT | GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN
+        /// | BETWEEN</c> For complete descriptions of all comparison operators, see <a
+        /// href="http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Condition.html">API_Condition.html</a>. </li> </ul>
         ///  
         /// </summary>
         public Dictionary<string,Condition> ScanFilter
@@ -317,7 +286,48 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// The primary key of the first item that this operation will evalute. Use the value that was returned for <i>LastEvaluatedKey</i> in the
+        /// A logical operator to apply to the conditions in the <i>ScanFilter</i> map: <ul> <li><c>AND</c> - If <i>all</i> of the conditions evaluate
+        /// to true, then the entire map evaluates to true.</li> <li><c>OR</c> - If <i>at least one</i> of the conditions evaluate to true, then the
+        /// entire map evaluates to true.</li> </ul> If you omit <i>ConditionalOperator</i>, then <c>AND</c> is used as the default. The operation will
+        /// succeed only if the entire map evaluates to true.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Allowed Values</term>
+        ///         <description>AND, OR</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
+        public string ConditionalOperator
+        {
+            get { return this.conditionalOperator; }
+            set { this.conditionalOperator = value; }
+        }
+
+        /// <summary>
+        /// Sets the ConditionalOperator property
+        /// </summary>
+        /// <param name="conditionalOperator">The value to set for the ConditionalOperator property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public ScanRequest WithConditionalOperator(string conditionalOperator)
+        {
+            this.conditionalOperator = conditionalOperator;
+            return this;
+        }
+            
+
+        // Check to see if ConditionalOperator property is set
+        internal bool IsSetConditionalOperator()
+        {
+            return this.conditionalOperator != null;
+        }
+
+        /// <summary>
+        /// The primary key of the first item that this operation will evaluate. Use the value that was returned for <i>LastEvaluatedKey</i> in the
         /// previous operation. The data type for <i>ExclusiveStartKey</i> must be String, Number or Binary. No set data types are allowed. In a
         /// parallel scan, a <i>Scan</i> request that includes <i>ExclusiveStartKey</i> must specify the same segment whose previous <i>Scan</i>
         /// returned the corresponding value of <i>LastEvaluatedKey</i>.
@@ -352,7 +362,7 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// If set to <c>TOTAL</c>, the response includes <i>ConsumedCapacity</i> data for tables and indexes. If set to <c>INDEXES</c>, the repsonse
+        /// If set to <c>TOTAL</c>, the response includes <i>ConsumedCapacity</i> data for tables and indexes. If set to <c>INDEXES</c>, the response
         /// includes <i>ConsumedCapacity</i> for indexes. If set to <c>NONE</c> (the default), <i>ConsumedCapacity</i> is not included in the response.
         ///  
         /// <para>
@@ -402,7 +412,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <list type="definition">
         ///     <item>
         ///         <term>Range</term>
-        ///         <description>1 - 4096</description>
+        ///         <description>1 - 1000000</description>
         ///     </item>
         /// </list>
         /// </para>
@@ -445,7 +455,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <list type="definition">
         ///     <item>
         ///         <term>Range</term>
-        ///         <description>0 - 4095</description>
+        ///         <description>0 - 999999</description>
         ///     </item>
         /// </list>
         /// </para>

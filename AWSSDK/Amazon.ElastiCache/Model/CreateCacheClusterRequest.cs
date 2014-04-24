@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -42,11 +42,14 @@ namespace Amazon.ElastiCache.Model
         private List<string> cacheSecurityGroupNames = new List<string>();
         private List<string> securityGroupIds = new List<string>();
         private List<string> snapshotArns = new List<string>();
+        private string snapshotName;
         private string preferredAvailabilityZone;
         private string preferredMaintenanceWindow;
         private int? port;
         private string notificationTopicArn;
         private bool? autoMinorVersionUpgrade;
+        private int? snapshotRetentionLimit;
+        private string snapshotWindow;
 
         /// <summary>
         /// The cache cluster identifier. This parameter is stored as a lowercase string. Constraints: <ul> <li>Must contain from 1 to 20 alphanumeric
@@ -113,8 +116,8 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// The initial number of cache nodes that the cache cluster will have. For a Memcached cluster, valid values are between 1 and 20. If you need
         /// to exceed this limit, please fill out the ElastiCache Limit Increase Request form at <a
-        /// href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/"></a> . For Redis, only single-node cache clusters are supported at
-        /// this time, so the value for this parameter must be 1.
+        /// href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/"/> . For Redis, only single-node cache clusters are supported at this
+        /// time, so the value for this parameter must be 1.
         ///  
         /// </summary>
         public int NumCacheNodes
@@ -148,7 +151,7 @@ namespace Amazon.ElastiCache.Model
         /// <c>cache.m2.xlarge</c> | <c>cache.m2.2xlarge</c> | <c>cache.m2.4xlarge</c> | <c>cache.c1.xlarge</c> Valid values for Redis:
         /// <c>cache.t1.micro</c> | <c>cache.m1.small</c> | <c>cache.m1.medium</c> | <c>cache.m1.large</c> | <c>cache.m1.xlarge</c> |
         /// <c>cache.m2.xlarge</c> | <c>cache.m2.2xlarge</c> | <c>cache.m2.4xlarge</c> | <c>cache.c1.xlarge</c> For a complete listing of cache node
-        /// types and specifications, see <a href="http://aws.amazon.com/elasticache/"></a>.
+        /// types and specifications, see <a href="http://aws.amazon.com/elasticache/"/>.
         ///  
         /// </summary>
         public string CacheNodeType
@@ -442,6 +445,36 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
+        /// The name of a snapshot from which to restore data into the new cache cluster. The snapshot's status changes to <c>restoring</c> while the
+        /// new cache cluster is being created.
+        ///  
+        /// </summary>
+        public string SnapshotName
+        {
+            get { return this.snapshotName; }
+            set { this.snapshotName = value; }
+        }
+
+        /// <summary>
+        /// Sets the SnapshotName property
+        /// </summary>
+        /// <param name="snapshotName">The value to set for the SnapshotName property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public CreateCacheClusterRequest WithSnapshotName(string snapshotName)
+        {
+            this.snapshotName = snapshotName;
+            return this;
+        }
+            
+
+        // Check to see if SnapshotName property is set
+        internal bool IsSetSnapshotName()
+        {
+            return this.snapshotName != null;
+        }
+
+        /// <summary>
         /// The EC2 Availability Zone in which the cache cluster will be created. All cache nodes belonging to a cache cluster are placed in the
         /// preferred availability zone. Default: System chosen availability zone.
         ///  
@@ -587,6 +620,68 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetAutoMinorVersionUpgrade()
         {
             return this.autoMinorVersionUpgrade.HasValue;
+        }
+
+        /// <summary>
+        /// The number of days for which ElastiCache will retain automatic cache cluster snapshots before deleting them. For example, if you set
+        /// <i>SnapshotRetentionLimit</i> to 5, then a snapshot that was taken today will be retained for 5 days before being deleted. If you do not
+        /// specify this parameter, then <i>SnapshotRetentionLimit</i> will be set to 0 (i.e., automatic backups will be disabled for this cache
+        /// cluster).
+        ///  
+        /// </summary>
+        public int SnapshotRetentionLimit
+        {
+            get { return this.snapshotRetentionLimit ?? default(int); }
+            set { this.snapshotRetentionLimit = value; }
+        }
+
+        /// <summary>
+        /// Sets the SnapshotRetentionLimit property
+        /// </summary>
+        /// <param name="snapshotRetentionLimit">The value to set for the SnapshotRetentionLimit property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public CreateCacheClusterRequest WithSnapshotRetentionLimit(int snapshotRetentionLimit)
+        {
+            this.snapshotRetentionLimit = snapshotRetentionLimit;
+            return this;
+        }
+            
+
+        // Check to see if SnapshotRetentionLimit property is set
+        internal bool IsSetSnapshotRetentionLimit()
+        {
+            return this.snapshotRetentionLimit.HasValue;
+        }
+
+        /// <summary>
+        /// The daily time range (in UTC) during which ElastiCache will begin taking a daily snapshot of your cache cluster. Example: <c>05:00-09:00</c>
+        /// If you do not specify this parameter, then ElastiCache will automatically choose an appropriate time range.
+        ///  
+        /// </summary>
+        public string SnapshotWindow
+        {
+            get { return this.snapshotWindow; }
+            set { this.snapshotWindow = value; }
+        }
+
+        /// <summary>
+        /// Sets the SnapshotWindow property
+        /// </summary>
+        /// <param name="snapshotWindow">The value to set for the SnapshotWindow property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public CreateCacheClusterRequest WithSnapshotWindow(string snapshotWindow)
+        {
+            this.snapshotWindow = snapshotWindow;
+            return this;
+        }
+            
+
+        // Check to see if SnapshotWindow property is set
+        internal bool IsSetSnapshotWindow()
+        {
+            return this.snapshotWindow != null;
         }
     }
 }

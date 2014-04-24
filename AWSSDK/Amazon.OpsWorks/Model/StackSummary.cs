@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ namespace Amazon.OpsWorks.Model
         
         private string stackId;
         private string name;
+        private string arn;
         private int? layersCount;
         private int? appsCount;
         private InstancesCount instancesCount;
@@ -88,6 +89,35 @@ namespace Amazon.OpsWorks.Model
         internal bool IsSetName()
         {
             return this.name != null;
+        }
+
+        /// <summary>
+        /// The stack's ARN.
+        ///  
+        /// </summary>
+        public string Arn
+        {
+            get { return this.arn; }
+            set { this.arn = value; }
+        }
+
+        /// <summary>
+        /// Sets the Arn property
+        /// </summary>
+        /// <param name="arn">The value to set for the Arn property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public StackSummary WithArn(string arn)
+        {
+            this.arn = arn;
+            return this;
+        }
+            
+
+        // Check to see if Arn property is set
+        internal bool IsSetArn()
+        {
+            return this.arn != null;
         }
 
         /// <summary>

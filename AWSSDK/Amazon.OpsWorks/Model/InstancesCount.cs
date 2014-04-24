@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ namespace Amazon.OpsWorks.Model
         
         private int? booting;
         private int? connectionLost;
+        private int? online;
         private int? pending;
         private int? rebooting;
         private int? requested;
@@ -36,6 +37,7 @@ namespace Amazon.OpsWorks.Model
         private int? shuttingDown;
         private int? startFailed;
         private int? stopped;
+        private int? stopping;
         private int? terminated;
         private int? terminating;
 
@@ -95,6 +97,35 @@ namespace Amazon.OpsWorks.Model
         internal bool IsSetConnectionLost()
         {
             return this.connectionLost.HasValue;
+        }
+
+        /// <summary>
+        /// The number of instances with <c>online</c> status.
+        ///  
+        /// </summary>
+        public int Online
+        {
+            get { return this.online ?? default(int); }
+            set { this.online = value; }
+        }
+
+        /// <summary>
+        /// Sets the Online property
+        /// </summary>
+        /// <param name="online">The value to set for the Online property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public InstancesCount WithOnline(int online)
+        {
+            this.online = online;
+            return this;
+        }
+            
+
+        // Check to see if Online property is set
+        internal bool IsSetOnline()
+        {
+            return this.online.HasValue;
         }
 
         /// <summary>
@@ -327,6 +358,35 @@ namespace Amazon.OpsWorks.Model
         internal bool IsSetStopped()
         {
             return this.stopped.HasValue;
+        }
+
+        /// <summary>
+        /// The number of instances with <c>stopping</c> status.
+        ///  
+        /// </summary>
+        public int Stopping
+        {
+            get { return this.stopping ?? default(int); }
+            set { this.stopping = value; }
+        }
+
+        /// <summary>
+        /// Sets the Stopping property
+        /// </summary>
+        /// <param name="stopping">The value to set for the Stopping property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public InstancesCount WithStopping(int stopping)
+        {
+            this.stopping = stopping;
+            return this;
+        }
+            
+
+        // Check to see if Stopping property is set
+        internal bool IsSetStopping()
+        {
+            return this.stopping.HasValue;
         }
 
         /// <summary>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,11 +23,12 @@ namespace Amazon.DynamoDBv2.Model
     /// <summary>
     /// <para>Represents the output of a <i>Query</i> operation.</para>
     /// </summary>
-    public class QueryResult
+    public partial class QueryResult
     {
         
         private List<Dictionary<string,AttributeValue>> items = new List<Dictionary<string,AttributeValue>>();
         private int? count;
+        private int? scannedCount;
         private Dictionary<string,AttributeValue> lastEvaluatedKey = new Dictionary<string,AttributeValue>();
         private ConsumedCapacity consumedCapacity;
 
@@ -106,6 +107,38 @@ namespace Amazon.DynamoDBv2.Model
         internal bool IsSetCount()
         {
             return this.count.HasValue;
+        }
+
+        /// <summary>
+        /// The number of items in the complete query, before any filters are applied. A high <i>ScannedCount</i> value with few, or no, <i>Count</i>
+        /// results indicates an inefficient <i>Query</i> operation. For more information, see <a
+        /// href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count and ScannedCount</a> in the Amazon
+        /// DynamoDB Developer Guide.
+        ///  
+        /// </summary>
+        public int ScannedCount
+        {
+            get { return this.scannedCount ?? default(int); }
+            set { this.scannedCount = value; }
+        }
+
+        /// <summary>
+        /// Sets the ScannedCount property
+        /// </summary>
+        /// <param name="scannedCount">The value to set for the ScannedCount property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public QueryResult WithScannedCount(int scannedCount)
+        {
+            this.scannedCount = scannedCount;
+            return this;
+        }
+            
+
+        // Check to see if ScannedCount property is set
+        internal bool IsSetScannedCount()
+        {
+            return this.scannedCount.HasValue;
         }
 
         /// <summary>

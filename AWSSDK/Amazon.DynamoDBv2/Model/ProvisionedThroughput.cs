@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -26,16 +26,16 @@ namespace Amazon.DynamoDBv2.Model
     /// href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html" >Limits</a> in the Amazon DynamoDB Developer
     /// Guide.</para>
     /// </summary>
-    public class ProvisionedThroughput
+    public partial class ProvisionedThroughput
     {
         
         private long? readCapacityUnits;
         private long? writeCapacityUnits;
 
         /// <summary>
-        /// The maximum number of strongly consistent reads consumed per second before Amazon DynamoDB returns a <i>ThrottlingException</i>. For more
+        /// The maximum number of strongly consistent reads consumed per second before DynamoDB returns a <i>ThrottlingException</i>. For more
         /// information, see <a
-        /// href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDDTables.html#ProvisionedThroughput">Specifying Read and
+        /// href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying Read and
         /// Write Requirements</a> in the Amazon DynamoDB Developer Guide.
         ///  
         /// <para>
@@ -74,8 +74,8 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// The maximum number of writes consumed per second before Amazon DynamoDB returns a <i>ThrottlingException</i>. For more information, see <a
-        /// href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDDTables.html#ProvisionedThroughput">Specifying Read and
+        /// The maximum number of writes consumed per second before DynamoDB returns a <i>ThrottlingException</i>. For more information, see <a
+        /// href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying Read and
         /// Write Requirements</a> in the Amazon DynamoDB Developer Guide.
         ///  
         /// <para>

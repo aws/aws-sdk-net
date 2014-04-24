@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -21,13 +21,13 @@ using System.IO;
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
-    /// <para>For the <i>UpdateItem</i> operation, represents the attributes to be modified,the action to perform on each, and the new value for
+    /// <para>For the <i>UpdateItem</i> operation, represents the attributes to be modified, the action to perform on each, and the new value for
     /// each.</para> <para><b>NOTE:</b> You cannot use UpdateItem to update any primary key attributes. Instead, you will need to delete the item,
     /// and then use PutItem to create a new item with new attributes. </para> <para>Attribute values cannot be null; string and binary type
     /// attributes must have lengths greater than zero; and set type attributes must not be empty. Requests with empty values will be rejected with
     /// a <i>ValidationException</i> .</para>
     /// </summary>
-    public class AttributeValueUpdate
+    public partial class AttributeValueUpdate
     {
         
         private AttributeValue value;
@@ -73,22 +73,22 @@ namespace Amazon.DynamoDBv2.Model
         /// attribute and its values are added to the item. If the attribute does exist, then the behavior of <c>ADD</c> depends on the data type of the
         /// attribute: <ul> <li> If the existing attribute is a number, and if <i>Value</i> is also a number, then the <i>Value</i> is mathematically
         /// added to the existing attribute. If <i>Value</i> is a negative number, then it is subtracted from the existing attribute. <note> If you use
-        /// <c>ADD</c> to increment or decrement a number value for an item that doesn't exist before the update, Amazon DynamoDB uses 0 as the initial
-        /// value. In addition, if you use <c>ADD</c> to update an existing item, and intend to increment or decrement an attribute value which does not
-        /// yet exist, Amazon DynamoDB uses <c>0</c> as the initial value. For example, suppose that the item you want to update does not yet have an
-        /// attribute named <i>itemcount</i>, but you decide to <c>ADD</c> the number <c>3</c> to this attribute anyway, even though it currently does
-        /// not exist. Amazon DynamoDB will create the <i>itemcount</i> attribute, set its initial value to <c>0</c>, and finally add <c>3</c> to it.
-        /// The result will be a new <i>itemcount</i> attribute in the item, with a value of <c>3</c>. </note> </li> <li> If the existing data type is a
-        /// set, and if the <i>Value</i> is also a set, then the <i>Value</i> is added to the existing set. (This is a <i>set</i> operation, not
-        /// mathematical addition.) For example, if the attribute value was the set <c>[1,2]</c>, and the <c>ADD</c> action specified <c>[3]</c>, then
-        /// the final attribute value would be <c>[1,2,3]</c>. An error occurs if an Add action is specified for a set attribute and the attribute type
-        /// specified does not match the existing set type. Both sets must have the same primitive data type. For example, if the existing data type is
-        /// a set of strings, the <i>Value</i> must also be a set of strings. The same holds true for number sets and binary sets. </li> </ul> This
-        /// action is only valid for an existing attribute whose data type is number or is a set. Do not use <c>ADD</c> for any other data types. </li>
-        /// </ul> <b>If no item with the specified <i>Key</i> is found:</b> <ul> <li> <c>PUT</c> - Amazon DynamoDB creates a new item with the specified
-        /// primary key, and then adds the attribute. </li> <li> <c>DELETE</c> - Nothing happens; there is no attribute to delete. </li> <li> <c>ADD</c>
-        /// - Amazon DynamoDB creates an item with the supplied primary key and number (or set of numbers) for the attribute value. The only data types
-        /// allowed are number and number set; no other data types can be specified. </li> </ul>
+        /// <c>ADD</c> to increment or decrement a number value for an item that doesn't exist before the update, DynamoDB uses 0 as the initial value.
+        /// In addition, if you use <c>ADD</c> to update an existing item, and intend to increment or decrement an attribute value which does not yet
+        /// exist, DynamoDB uses <c>0</c> as the initial value. For example, suppose that the item you want to update does not yet have an attribute
+        /// named <i>itemcount</i>, but you decide to <c>ADD</c> the number <c>3</c> to this attribute anyway, even though it currently does not exist.
+        /// DynamoDB will create the <i>itemcount</i> attribute, set its initial value to <c>0</c>, and finally add <c>3</c> to it. The result will be a
+        /// new <i>itemcount</i> attribute in the item, with a value of <c>3</c>. </note> </li> <li> If the existing data type is a set, and if the
+        /// <i>Value</i> is also a set, then the <i>Value</i> is added to the existing set. (This is a <i>set</i> operation, not mathematical addition.)
+        /// For example, if the attribute value was the set <c>[1,2]</c>, and the <c>ADD</c> action specified <c>[3]</c>, then the final attribute value
+        /// would be <c>[1,2,3]</c>. An error occurs if an Add action is specified for a set attribute and the attribute type specified does not match
+        /// the existing set type. Both sets must have the same primitive data type. For example, if the existing data type is a set of strings, the
+        /// <i>Value</i> must also be a set of strings. The same holds true for number sets and binary sets. </li> </ul> This action is only valid for
+        /// an existing attribute whose data type is number or is a set. Do not use <c>ADD</c> for any other data types. </li> </ul> <b>If no item with
+        /// the specified <i>Key</i> is found:</b> <ul> <li> <c>PUT</c> - DynamoDB creates a new item with the specified primary key, and then adds the
+        /// attribute. </li> <li> <c>DELETE</c> - Nothing happens; there is no attribute to delete. </li> <li> <c>ADD</c> - DynamoDB creates an item
+        /// with the supplied primary key and number (or set of numbers) for the attribute value. The only data types allowed are number and number set;
+        /// no other data types can be specified. </li> </ul>
         ///  
         /// <para>
         /// <b>Constraints:</b>

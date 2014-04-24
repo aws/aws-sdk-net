@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,7 +25,8 @@ namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTables operation.
-    /// <para>Returns an array of all the tables associated with the current account and endpoint. </para>
+    /// <para>Returns an array of table names associated with the current account and endpoint. The output from <i>ListTables</i> is paginated, with
+    /// each page returning a maximum of 100 table names.</para>
     /// </summary>
     /// <seealso cref="Amazon.DynamoDBv2.AmazonDynamoDB.ListTables"/>
     public class ListTablesRequest : AmazonWebServiceRequest
@@ -34,8 +35,8 @@ namespace Amazon.DynamoDBv2.Model
         private int? limit;
 
         /// <summary>
-        /// The name of the table that starts the list. If you already ran a <i>ListTables</i> operation and received a <i>LastEvaluatedTableName</i>
-        /// value in the response, use that value here to continue the list.
+        /// The first table name that this operation will evaluate. Use the value that was returned for <i>LastEvaluatedTableName</i> in a previous
+        /// operation, so that you can obtain the next page of results.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -77,7 +78,7 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// A maximum number of table names to return.
+        /// A maximum number of table names to return. If this parameter is not specified, the limit is 100.
         ///  
         /// <para>
         /// <b>Constraints:</b>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -42,6 +42,7 @@ namespace Amazon.AutoScaling.Model
         private DateTime? createdTime;
         private bool? ebsOptimized;
         private bool? associatePublicIpAddress;
+        private string placementTenancy;
 
         /// <summary>
         /// Specifies the name of the launch configuration.
@@ -668,6 +669,49 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetAssociatePublicIpAddress()
         {
             return this.associatePublicIpAddress.HasValue;
+        }
+
+        /// <summary>
+        /// Specifies the tenancy of the instance. It can be either <c>default</c> or <c>dedicated</c>. An instance with <c>dedicated</c> tenancy runs
+        /// in an isolated, single-tenant hardware and it can only be launched in a VPC.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Length</term>
+        ///         <description>1 - 64</description>
+        ///     </item>
+        ///     <item>
+        ///         <term>Pattern</term>
+        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
+        public string PlacementTenancy
+        {
+            get { return this.placementTenancy; }
+            set { this.placementTenancy = value; }
+        }
+
+        /// <summary>
+        /// Sets the PlacementTenancy property
+        /// </summary>
+        /// <param name="placementTenancy">The value to set for the PlacementTenancy property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public LaunchConfiguration WithPlacementTenancy(string placementTenancy)
+        {
+            this.placementTenancy = placementTenancy;
+            return this;
+        }
+            
+
+        // Check to see if PlacementTenancy property is set
+        internal bool IsSetPlacementTenancy()
+        {
+            return this.placementTenancy != null;
         }
     }
 }

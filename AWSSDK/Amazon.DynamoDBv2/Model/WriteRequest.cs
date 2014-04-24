@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,7 +25,7 @@ namespace Amazon.DynamoDBv2.Model
     /// both, in a single <i>WriteRequest</i> . If you do need to perform both of these operations, you will need to specify two separate
     /// <i>WriteRequest</i> objects.</para>
     /// </summary>
-    public class WriteRequest
+    public partial class WriteRequest
     {
         
         private PutRequest putRequest;

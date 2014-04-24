@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -156,6 +156,27 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                         writer.WriteObjectEnd();
                     }
                 }
+
+                if (updateStackRequest != null) 
+                {
+                    ChefConfiguration chefConfiguration = updateStackRequest.ChefConfiguration;
+                    if (chefConfiguration != null)
+                    {
+                        writer.WritePropertyName("ChefConfiguration");
+                        writer.WriteObjectStart();
+                        if (chefConfiguration != null && chefConfiguration.IsSetManageBerkshelf()) 
+                        {
+                            writer.WritePropertyName("ManageBerkshelf");
+                            writer.Write(chefConfiguration.ManageBerkshelf);
+                        }
+                        if (chefConfiguration != null && chefConfiguration.IsSetBerkshelfVersion()) 
+                        {
+                            writer.WritePropertyName("BerkshelfVersion");
+                            writer.Write(chefConfiguration.BerkshelfVersion);
+                        }
+                        writer.WriteObjectEnd();
+                    }
+                }
                 if (updateStackRequest != null && updateStackRequest.IsSetUseCustomCookbooks()) 
                 {
                     writer.WritePropertyName("UseCustomCookbooks");
@@ -211,6 +232,11 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
                 {
                     writer.WritePropertyName("DefaultRootDeviceType");
                     writer.Write(updateStackRequest.DefaultRootDeviceType);
+                }
+                if (updateStackRequest != null && updateStackRequest.IsSetUseOpsworksSecurityGroups()) 
+                {
+                    writer.WritePropertyName("UseOpsworksSecurityGroups");
+                    writer.Write(updateStackRequest.UseOpsworksSecurityGroups);
                 }
 
                 writer.WriteObjectEnd();

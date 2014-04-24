@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -45,6 +45,7 @@ namespace Amazon.OpsWorks.Model
         private bool? autoAssignPublicIps;
         private Recipes customRecipes;
         private bool? installUpdatesOnBoot;
+        private bool? useEbsOptimizedInstances;
 
         /// <summary>
         /// The layer ID.
@@ -135,7 +136,7 @@ namespace Amazon.OpsWorks.Model
         }
 
         /// <summary>
-        /// One or more user-defined key/value pairs to be added to the stack attributes bag.
+        /// One or more user-defined key/value pairs to be added to the stack attributes.
         ///  
         /// </summary>
         public Dictionary<string,string> Attributes
@@ -459,8 +460,8 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Whether to install operating system and package updates when the instance boots. The default value is <c>true</c>. To control when updates
         /// are installed, set this value to <c>false</c>. You must then update your instances manually by using <a>CreateDeployment</a> to run the
-        /// <c>update_dependencies</c> stack command or manually running <c>yum</c> (Amazon Linux) or <c>apt-get</c> (Ubuntu) on the instances. <note>We
-        /// strongly recommend using the default value of <c>true</c>, to ensure that your instances have the latest security updates.</note>
+        /// <c>update_dependencies</c> stack command or manually running <c>yum</c> (Amazon Linux) or <c>apt-get</c> (Ubuntu) on the instances. <note>
+        /// We strongly recommend using the default value of <c>true</c>, to ensure that your instances have the latest security updates. </note>
         ///  
         /// </summary>
         public bool InstallUpdatesOnBoot
@@ -486,6 +487,35 @@ namespace Amazon.OpsWorks.Model
         internal bool IsSetInstallUpdatesOnBoot()
         {
             return this.installUpdatesOnBoot.HasValue;
+        }
+
+        /// <summary>
+        /// Whether to use Amazon EBS-optimized instances.
+        ///  
+        /// </summary>
+        public bool UseEbsOptimizedInstances
+        {
+            get { return this.useEbsOptimizedInstances ?? default(bool); }
+            set { this.useEbsOptimizedInstances = value; }
+        }
+
+        /// <summary>
+        /// Sets the UseEbsOptimizedInstances property
+        /// </summary>
+        /// <param name="useEbsOptimizedInstances">The value to set for the UseEbsOptimizedInstances property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public UpdateLayerRequest WithUseEbsOptimizedInstances(bool useEbsOptimizedInstances)
+        {
+            this.useEbsOptimizedInstances = useEbsOptimizedInstances;
+            return this;
+        }
+            
+
+        // Check to see if UseEbsOptimizedInstances property is set
+        internal bool IsSetUseEbsOptimizedInstances()
+        {
+            return this.useEbsOptimizedInstances.HasValue;
         }
     }
 }

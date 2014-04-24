@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -35,6 +35,7 @@ namespace Amazon.ElastiCache.Model
     {
         private string replicationGroupId;
         private bool? retainPrimaryCluster;
+        private string finalSnapshotIdentifier;
 
         /// <summary>
         /// The identifier for the replication group to be deleted. This parameter is not case sensitive.
@@ -92,6 +93,37 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetRetainPrimaryCluster()
         {
             return this.retainPrimaryCluster.HasValue;
+        }
+
+        /// <summary>
+        /// The name of a final cache cluster snapshot. ElastiCache creates the snapshot from the primary cluster in the replication group, rather than
+        /// one of the replicas; this is to ensure that it captures the freshest data. After the final snapshot is taken, the replication group is
+        /// deleted immediately afterward.
+        ///  
+        /// </summary>
+        public string FinalSnapshotIdentifier
+        {
+            get { return this.finalSnapshotIdentifier; }
+            set { this.finalSnapshotIdentifier = value; }
+        }
+
+        /// <summary>
+        /// Sets the FinalSnapshotIdentifier property
+        /// </summary>
+        /// <param name="finalSnapshotIdentifier">The value to set for the FinalSnapshotIdentifier property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public DeleteReplicationGroupRequest WithFinalSnapshotIdentifier(string finalSnapshotIdentifier)
+        {
+            this.finalSnapshotIdentifier = finalSnapshotIdentifier;
+            return this;
+        }
+            
+
+        // Check to see if FinalSnapshotIdentifier property is set
+        internal bool IsSetFinalSnapshotIdentifier()
+        {
+            return this.finalSnapshotIdentifier != null;
         }
     }
 }

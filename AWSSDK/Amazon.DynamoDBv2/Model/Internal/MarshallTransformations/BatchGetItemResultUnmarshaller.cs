@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -51,6 +51,10 @@
               if (context.TestExpression("Responses", targetDepth))
               {
                 batchGetItemResult.Responses = new Dictionary<String,List<Dictionary<string,AttributeValue>>>();
+                if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                {
+                  continue;
+                }              
                 KeyValueUnmarshaller<string, List<Dictionary<string,AttributeValue>>, StringUnmarshaller, ListUnmarshaller<Dictionary<string,AttributeValue>, DictionaryUnmarshaller<string, AttributeValue, StringUnmarshaller, AttributeValueUnmarshaller>>> unmarshaller = new KeyValueUnmarshaller<string, List<Dictionary<string,AttributeValue>>, StringUnmarshaller, ListUnmarshaller<Dictionary<string,AttributeValue>, DictionaryUnmarshaller<string, AttributeValue, StringUnmarshaller, AttributeValueUnmarshaller>>>(StringUnmarshaller.GetInstance(), new ListUnmarshaller<Dictionary<string,AttributeValue>, DictionaryUnmarshaller<string, AttributeValue, StringUnmarshaller, AttributeValueUnmarshaller>>(new DictionaryUnmarshaller<string, AttributeValue, StringUnmarshaller, AttributeValueUnmarshaller>(StringUnmarshaller.GetInstance(),AttributeValueUnmarshaller.GetInstance())));
                 while (context.Read())
                 {
@@ -71,6 +75,10 @@
               if (context.TestExpression("UnprocessedKeys", targetDepth))
               {
                 batchGetItemResult.UnprocessedKeys = new Dictionary<String,KeysAndAttributes>();
+                if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                {
+                  continue;
+                }              
                 KeyValueUnmarshaller<string, KeysAndAttributes, StringUnmarshaller, KeysAndAttributesUnmarshaller> unmarshaller = new KeyValueUnmarshaller<string, KeysAndAttributes, StringUnmarshaller, KeysAndAttributesUnmarshaller>(StringUnmarshaller.GetInstance(), KeysAndAttributesUnmarshaller.GetInstance());
                 while (context.Read())
                 {
@@ -90,8 +98,13 @@
   
               if (context.TestExpression("ConsumedCapacity", targetDepth))
               {
-                batchGetItemResult.ConsumedCapacity = new List<ConsumedCapacity>();
-                        ConsumedCapacityUnmarshaller unmarshaller = ConsumedCapacityUnmarshaller.GetInstance();
+                batchGetItemResult.ConsumedCapacity = new List<ConsumedCapacity>();   
+                if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                {
+                  continue;
+                }              
+
+                  ConsumedCapacityUnmarshaller unmarshaller = ConsumedCapacityUnmarshaller.GetInstance();
                 while (context.Read())
                 {
                   if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))

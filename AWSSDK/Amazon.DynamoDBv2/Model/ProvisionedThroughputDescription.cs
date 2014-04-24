@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -24,7 +24,7 @@ namespace Amazon.DynamoDBv2.Model
     /// <para>Represents the provisioned throughput settings for the table, consisting of read and write capacity units, along with data about
     /// increases and decreases.</para>
     /// </summary>
-    public class ProvisionedThroughputDescription
+    public partial class ProvisionedThroughputDescription
     {
         
         private DateTime? lastIncreaseDateTime;
@@ -132,7 +132,7 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// The maximum number of strongly consistent reads consumed per second before Amazon DynamoDB returns a <i>ThrottlingException</i>. Eventually
+        /// The maximum number of strongly consistent reads consumed per second before DynamoDB returns a <i>ThrottlingException</i>. Eventually
         /// consistent reads require less effort than strongly consistent reads, so a setting of 50 <i>ReadCapacityUnits</i> per second provides 100
         /// eventually consistent <i>ReadCapacityUnits</i> per second.
         ///  
@@ -172,7 +172,7 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// The maximum number of writes consumed per second before Amazon DynamoDB returns a <i>ThrottlingException</i>.
+        /// The maximum number of writes consumed per second before DynamoDB returns a <i>ThrottlingException</i>.
         ///  
         /// <para>
         /// <b>Constraints:</b>

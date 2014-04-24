@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -34,7 +34,7 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(describeCacheEngineVersionsRequest, "AmazonElastiCache");
             request.Parameters.Add("Action", "DescribeCacheEngineVersions");
-            request.Parameters.Add("Version", "2013-06-15");
+            request.Parameters.Add("Version", "2014-03-24");
             if (describeCacheEngineVersionsRequest != null && describeCacheEngineVersionsRequest.IsSetEngine())
             {
                 request.Parameters.Add("Engine", StringUtils.FromString(describeCacheEngineVersionsRequest.Engine));

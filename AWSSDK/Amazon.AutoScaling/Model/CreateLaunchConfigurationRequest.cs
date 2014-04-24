@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -27,10 +27,7 @@ namespace Amazon.AutoScaling.Model
     /// Container for the parameters to the CreateLaunchConfiguration operation.
     /// <para> Creates a new launch configuration. The launch configuration name must be unique within the scope of the client's AWS account. The
     /// maximum limit of launch configurations, which by default is 100, must not yet have been met; otherwise, the call will fail. When created,
-    /// the new launch configuration is available for immediate use. </para> <para>You can create a launch configuration with Amazon EC2 security
-    /// groups or with Amazon VPC security groups. However, you can't use Amazon EC2 security groups together with Amazon VPC security groups, or
-    /// vice versa.</para> <para><b>NOTE:</b> At this time, Auto Scaling launch configurations don't support compressed (e.g. zipped) user data
-    /// files. </para>
+    /// the new launch configuration is available for immediate use. </para>
     /// </summary>
     /// <seealso cref="Amazon.AutoScaling.AmazonAutoScaling.CreateLaunchConfiguration"/>
     public class CreateLaunchConfigurationRequest : AmazonWebServiceRequest
@@ -50,6 +47,7 @@ namespace Amazon.AutoScaling.Model
         private string iamInstanceProfile;
         private bool? ebsOptimized;
         private bool? associatePublicIpAddress;
+        private string placementTenancy;
 
         /// <summary>
         /// The name of the launch configuration to create.
@@ -237,7 +235,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// The user data to make available to the launched Amazon EC2 instances. For more information about Amazon EC2 user data, see <a
         /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html#instancedata-user-data-retrieval">User Data
-        /// Retrieval</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// Retrieval</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. <note> At this time, Auto Scaling launch configurations don't support
+        /// compressed (e.g. zipped) user data files. </note>
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -279,11 +278,13 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
-        /// The ID of the Amazon EC2 instance you want to use to create the launch configuration. When you use an instance to create a launch
-        /// configuration, by default, all the parameters are automatically derived from the instance with the exception of the following: <ul> <li>The
-        /// block device mappings are derived from the AMI that was used to launch the instance.</li> <li>The <c>AssociatePublicIpAddress</c> is not
-        /// derived if the flag is already set for the instance.</li> </ul> You can override any of the values by specifying your own values as part of
-        /// the same request.
+        /// The ID of the Amazon EC2 instance you want to use to create the launch configuration. Use this attribute if you want the launch
+        /// configuration to derive its attributes from an EC2 instance. When you use an instance to create a launch configuration, all you need to
+        /// specify is the <c>InstanceId</c>. The new launch configuration, by default, derives all the attributes from the specified instance with the
+        /// exception of <c>BlockDeviceMapping</c>. If you want to create a launch configuration with <c>BlockDeviceMapping</c> or override any other
+        /// instance attributes, specify them as part of the same request. For more information on using an InstanceID to create a launch configuration,
+        /// see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/create-lc-with-instanceID.html">Create a Launch Configuration
+        /// Using an Amazon EC2 Instance</a> in the <i>Auto Scaling Developer Guide</i>.
         ///  
         /// <para>
         /// <b>Constraints:</b>
@@ -660,10 +661,11 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Used for Auto Scaling groups that launch instances into an Amazon Virtual Private Cloud (Amazon VPC). Specifies whether to assign a public
         /// IP address to each instance launched in a Amazon VPC. <note> If you specify a value for this parameter, be sure to specify at least one VPC
-        /// subnet using the <i>VPCZoneIdentifier</i> parameter when you create your Auto Scaling group. </note> Default: If the instance is launched in
-        /// default VPC, the default is <c>true</c>. If the instance is launched in a nondefault VPC (EC2-VPC), the default is <c>false</c>. For more
-        /// information about the platforms supported by Auto Scaling, see <a
-        /// href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US_BasicSetup.html">Basic Auto Scaling Configuration</a>.
+        /// subnet using the <i>VPCZoneIdentifier</i> parameter when you create your Auto Scaling group. </note> Default: If the instance is launched
+        /// into a default subnet in a default VPC, the default is <c>true</c>. If the instance is launched into a nondefault subnet in a VPC, the
+        /// default is <c>false</c>. For information about the platforms supported by Auto Scaling, see <a
+        /// href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US_BasicSetup.html">Get Started with Auto Scaling Using the Command Line
+        /// Interface</a>.
         ///  
         /// </summary>
         public bool AssociatePublicIpAddress
@@ -689,6 +691,50 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetAssociatePublicIpAddress()
         {
             return this.associatePublicIpAddress.HasValue;
+        }
+
+        /// <summary>
+        /// The tenancy of the instance. An instance with a tenancy of <c>dedicated</c> runs on single-tenant hardware and can only be launched into a
+        /// VPC. For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/autoscalingsubnets.html">Auto Scaling
+        /// in Amazon Virtual Private Cloud</a> in the <i>Auto Scaling Developer Guide</i>. Valid values: <c>default</c> | <c>dedicated</c>
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Length</term>
+        ///         <description>1 - 64</description>
+        ///     </item>
+        ///     <item>
+        ///         <term>Pattern</term>
+        ///         <description>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*</description>
+        ///     </item>
+        /// </list>
+        /// </para>
+        /// </summary>
+        public string PlacementTenancy
+        {
+            get { return this.placementTenancy; }
+            set { this.placementTenancy = value; }
+        }
+
+        /// <summary>
+        /// Sets the PlacementTenancy property
+        /// </summary>
+        /// <param name="placementTenancy">The value to set for the PlacementTenancy property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public CreateLaunchConfigurationRequest WithPlacementTenancy(string placementTenancy)
+        {
+            this.placementTenancy = placementTenancy;
+            return this;
+        }
+            
+
+        // Check to see if PlacementTenancy property is set
+        internal bool IsSetPlacementTenancy()
+        {
+            return this.placementTenancy != null;
         }
     }
 }

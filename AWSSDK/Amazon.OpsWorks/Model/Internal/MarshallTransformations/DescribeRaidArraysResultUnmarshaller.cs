@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -48,8 +48,13 @@
               
               if (context.TestExpression("RaidArrays", targetDepth))
               {
-                describeRaidArraysResult.RaidArrays = new List<RaidArray>();
-                        RaidArrayUnmarshaller unmarshaller = RaidArrayUnmarshaller.GetInstance();
+                describeRaidArraysResult.RaidArrays = new List<RaidArray>();   
+                if (context.CurrentTokenType == JsonUnmarshallerContext.TokenType.Null)
+                {
+                  continue;
+                }              
+
+                  RaidArrayUnmarshaller unmarshaller = RaidArrayUnmarshaller.GetInstance();
                 while (context.Read())
                 {
                   if ((context.IsArrayElement) && (context.CurrentDepth == targetDepth))
