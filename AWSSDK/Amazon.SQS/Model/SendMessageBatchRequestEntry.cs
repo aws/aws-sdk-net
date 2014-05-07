@@ -35,6 +35,7 @@ namespace Amazon.SQS.Model
         private string idField;
         private string messageBodyField;
         private int? delaySecondsField;
+        private List<MessageAttribute> messageAttributeField;
 
         /// <summary>
         /// An identifier for the message in this batch.
@@ -145,6 +146,56 @@ namespace Amazon.SQS.Model
         public bool IsSetDelaySeconds()
         {
             return this.delaySecondsField.HasValue;
+        }
+
+
+        /// <summary>
+        /// Gets or sets the message attributes.
+        /// </summary>
+        /// <remarks>
+        /// <para>A map of message attributes.</para>
+        /// </remarks>
+        /// <value>The attributes.</value>
+        [XmlElementAttribute(ElementName = "MessageAttribute")]
+        public List<MessageAttribute> MessageAttribute
+        {
+            get
+            {
+                if (null == this.messageAttributeField)
+                    this.messageAttributeField = new List<MessageAttribute>();
+                return this.messageAttributeField;
+            }
+            set
+            {
+                this.messageAttributeField = value;
+            }
+        }
+
+        /// <summary>
+        /// Determines whether the target <see cref="P:MessageAttribute"/> is set in this request.
+        /// </summary>
+        /// <returns>
+        ///   <c>true</c> if any MessageAttribute are set; otherwise, <c>false</c>.
+        /// </returns>
+        public bool IsSetMessageAttribute()
+        {
+            return this.MessageAttribute != null;
+        }
+
+
+        /// <summary>
+        /// Modifies this request with the specified MessageAttributes.
+        /// </summary>
+        /// <param name="list">The MessageAttributes.</param>
+        /// <returns>The current instance.</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public SendMessageBatchRequestEntry WithMessageAttribute(params MessageAttribute[] list)
+        {
+            foreach (MessageAttribute item in list)
+            {
+                MessageAttribute.Add(item);
+            }
+            return this;
         }
     }
 }

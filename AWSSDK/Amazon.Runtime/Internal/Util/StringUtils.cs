@@ -40,6 +40,10 @@ namespace Amazon.Runtime.Internal.Util
         {
             return Convert.ToBase64String(value.ToArray());
         }
+        public static MemoryStream ToMemoryStream(string value)
+        {
+            return new MemoryStream(Convert.FromBase64String(value));
+        }
 
         public static string FromInt(int value)
         {

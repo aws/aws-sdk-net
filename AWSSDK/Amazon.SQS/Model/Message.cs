@@ -36,8 +36,10 @@ namespace Amazon.SQS.Model
         private string messageIdField;
         private string receiptHandleField;
         private string MD5OfBodyField;
+        private string MD5OfMessageAttributesField;
         private string bodyField;
         private List<Attribute> attributeField;
+        private List<MessageAttribute> messageAttributeField;
 
         /// <summary>
         /// Unique ID associated with the message.
@@ -203,6 +205,89 @@ namespace Amazon.SQS.Model
         {
             return (Attribute.Count > 0);
         }
+
+
+        /// <summary>
+        /// Gets or sets the message attributes.
+        /// </summary>
+        /// <remarks>
+        /// <para>A map of message attributes.</para>
+        /// </remarks>
+        /// <value>The attributes.</value>
+        [XmlElementAttribute(ElementName = "MessageAttribute")]
+        public List<MessageAttribute> MessageAttribute
+        {
+            get
+            {
+                if (null == this.messageAttributeField)
+                    this.messageAttributeField = new List<MessageAttribute>();
+                return this.messageAttributeField;
+            }
+            set
+            {
+                this.messageAttributeField = value;
+            }
+        }
+
+        /// <summary>
+        /// Determines whether the target <see cref="P:MessageAttribute"/> is set in this request.
+        /// </summary>
+        /// <returns>
+        ///   <c>true</c> if any MessageAttribute are set; otherwise, <c>false</c>.
+        /// </returns>
+        public bool IsSetMessageAttribute()
+        {
+            return this.MessageAttribute != null;
+        }
+
+
+        /// <summary>
+        /// Modifies this request with the specified MessageAttributes.
+        /// </summary>
+        /// <param name="list">The MessageAttributes.</param>
+        /// <returns>The current instance.</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public Message WithMessageAttribute(params MessageAttribute[] list)
+        {
+            foreach (MessageAttribute item in list)
+            {
+                MessageAttribute.Add(item);
+            }
+            return this;
+        }
+
+
+        /// <summary>
+        /// MD5 digest of the message attributes.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "MD5OfMessageAttributes")]
+        public string MD5OfMessageAttributes
+        {
+            get { return this.MD5OfMessageAttributesField; }
+            set { this.MD5OfMessageAttributesField = value; }
+        }
+
+        /// <summary>
+        /// Sets the MD5 digest of the message attributes.
+        /// </summary>
+        /// <param name="md5OfMessageAttributes">MD5 digest of the message attributes.</param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public Message WithMD5OfMessageAttributes(string md5OfMessageAttributes)
+        {
+            this.MD5OfMessageAttributesField = md5OfMessageAttributes;
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if MD5OfMessageAttributes property is set
+        /// </summary>
+        /// <returns>true if MD5OfMessageAttributes property is set</returns>
+        public bool IsSetMD5OfMessageAttributes()
+        {
+            return this.MD5OfMessageAttributesField != null;
+        }
+
 
         /// <summary>
         /// XML Representation of this object

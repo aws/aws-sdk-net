@@ -10306,6 +10306,8 @@
     <Compile Include="Amazon.SQS\Model\ListDeadLetterSourceQueuesRequest.cs" />
     <Compile Include="Amazon.SQS\Model\ListDeadLetterSourceQueuesResponse.cs" />
     <Compile Include="Amazon.SQS\Model\ListDeadLetterSourceQueuesResult.cs" />
+    <Compile Include="Amazon.SQS\Model\MessageAttribute.cs" />
+    <Compile Include="Amazon.SQS\Model\MessageAttributeValue.cs" />
     <Compile Include="Amazon.SQS\Model\SQSRequest.cs" />
     <Compile Include="Amazon.StorageGateway\Model\AddCacheRequest.cs" />
     <Compile Include="Amazon.StorageGateway\Model\AddCacheResponse.cs" />

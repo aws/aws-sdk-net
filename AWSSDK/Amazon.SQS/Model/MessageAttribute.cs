@@ -28,73 +28,74 @@ using System.Text;
 namespace Amazon.SQS.Model
 {
     /// <summary>
-    /// Information about the message sent to Amazon SQS.
+    /// Name and value pair of an attribute associated with the queue.
     /// </summary>
     [XmlRootAttribute(Namespace = "http://queue.amazonaws.com/doc/2012-11-05/", IsNullable = false)]
-    public class SendMessageResult
+    public class MessageAttribute
     {    
-        private string messageIdField;
-        private string MD5OfMessageBodyField;
-        private string MD5OfMessageAttributesField;
+        private string nameField;
+        private MessageAttributeValue valueField;
 
         /// <summary>
-        /// Gets and sets the MessageId property.
-        /// An element containing the message ID of the message sent to the queue.
+        /// Name of the attribute.
         /// </summary>
-        [XmlElementAttribute(ElementName = "MessageId")]
-        public string MessageId
+        [XmlElementAttribute(ElementName = "Name")]
+        public string Name
         {
-            get { return this.messageIdField; }
-            set { this.messageIdField = value; }
+            get { return this.nameField; }
+            set { this.nameField = value; }
         }
 
         /// <summary>
-        /// Checks if MessageId property is set
+        /// Sets the name of the attribute.
         /// </summary>
-        /// <returns>true if MessageId property is set</returns>
-        public bool IsSetMessageId()
+        /// <param name="name">Name of the attribute.</param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public MessageAttribute WithName(string name)
         {
-            return this.messageIdField != null;
+            this.nameField = name;
+            return this;
         }
 
         /// <summary>
-        /// Gets and sets the MD5OfMessageBody property.
-        /// An MD5 digest of the non-URL-encoded message body string. You can use this to verify that SQS received the message
-        /// correctly. SQS first URL decodes the message before creating the MD5 digest. For information about MD5, go to
-        /// http://faqs.org/rfcs/rfc1321.html.
+        /// Checks if Name property is set
         /// </summary>
-        [XmlElementAttribute(ElementName = "MD5OfMessageBody")]
-        public string MD5OfMessageBody
+        /// <returns>true if Name property is set</returns>
+        public bool IsSetName()
         {
-            get { return this.MD5OfMessageBodyField; }
-            set { this.MD5OfMessageBodyField = value; }
+            return this.nameField != null;
         }
 
         /// <summary>
-        /// Checks if MD5OfMessageBody property is set
+        /// Values of the attribute.
         /// </summary>
-        /// <returns>true if MD5OfMessageBody property is set</returns>
-        public bool IsSetMD5OfMessageBody()
+        [XmlElementAttribute(ElementName = "Value")]
+        public MessageAttributeValue Value
         {
-            return this.MD5OfMessageBodyField != null;
+            get { return this.valueField; }
+            set { this.valueField = value; }
         }
 
         /// <summary>
-        /// MD5 digest of the message attributes.
+        /// Sets Values of the attribute.
         /// </summary>
-        public string MD5OfMessageAttributes
+        /// <param name="value">Values of the attribute.</param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public MessageAttribute WithValue(MessageAttributeValue value)
         {
-            get { return this.MD5OfMessageAttributesField; }
-            set { this.MD5OfMessageAttributesField = value; }
+            this.valueField = value;
+            return this;
         }
 
         /// <summary>
-        /// Checks if MD5OfMessageAttributes property is set
+        /// Checks if Value property is set
         /// </summary>
-        /// <returns>true if MD5OfMessageAttributes property is set</returns>
-        public bool IsSetMD5OfMessageAttributes()
+        /// <returns>true if Value property is set</returns>
+        public bool IsSetValue()
         {
-            return this.MD5OfMessageAttributesField != null;
+            return this.valueField != null;
         }
 
         /// <summary>

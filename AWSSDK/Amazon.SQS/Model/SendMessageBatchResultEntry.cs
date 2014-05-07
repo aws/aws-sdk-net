@@ -35,6 +35,7 @@ namespace Amazon.SQS.Model
         private string idField;
         private string messageIdField;
         private string md5OfMessageBody;
+        private string md5OfMessageAttributes;
 
         /// <summary>
         /// User-supplied Id of the sent message.
@@ -94,6 +95,25 @@ namespace Amazon.SQS.Model
         public bool IsSetMD5OfMessageBody()
         {
             return this.md5OfMessageBody != null;
+        }
+
+
+        /// <summary>
+        /// MD5 digest of the message attributes.
+        /// </summary>
+        public string MD5OfMessageAttributes
+        {
+            get { return this.md5OfMessageAttributes; }
+            set { this.md5OfMessageAttributes = value; }
+        }
+
+        /// <summary>
+        /// Checks if MD5OfMessageAttributes property is set
+        /// </summary>
+        /// <returns>true if MD5OfMessageAttributes property is set</returns>
+        public bool IsSetMD5OfMessageAttributes()
+        {
+            return this.md5OfMessageAttributes != null;
         }
     }
 }

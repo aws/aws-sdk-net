@@ -37,6 +37,7 @@ using Amazon.SQS.Util;
 using Amazon.Util;
 using Attribute = Amazon.SQS.Model.Attribute;
 using ErrorResponse = Amazon.SQS.Model.ErrorResponse;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.SQS
 {
@@ -1193,12 +1194,21 @@ namespace Amazon.SQS
             {
                 parameters["WaitTimeSeconds"] = request.WaitTimeSeconds.ToString();
             }
+
             List<string> receiveMessageRequestAttributeNameList = request.AttributeName;
             int receiveMessageRequestAttributeNameListIndex = 1;
             foreach (string receiveMessageRequestAttributeName in receiveMessageRequestAttributeNameList)
             {
                 parameters[String.Concat("AttributeName", ".", receiveMessageRequestAttributeNameListIndex)] = receiveMessageRequestAttributeName;
                 receiveMessageRequestAttributeNameListIndex++;
+            }
+
+            List<string> receiveMessageRequestMessageAttributeNameList = request.MessageAttributeName;
+            int receiveMessageRequestMessageAttributeNameListIndex = 1;
+            foreach (string receiveMessageRequestMessageAttributeName in receiveMessageRequestMessageAttributeNameList)
+            {
+                parameters[String.Concat("MessageAttributeName", ".", receiveMessageRequestMessageAttributeNameListIndex)] = receiveMessageRequestMessageAttributeName;
+                receiveMessageRequestMessageAttributeNameListIndex++;
             }
 
             return parameters;
@@ -1222,6 +1232,51 @@ namespace Amazon.SQS
             if (request.IsSetDelaySeconds())
             {
                 parameters["DelaySeconds"] = request.DelaySeconds.ToString();
+            }
+            if (request.IsSetMessageAttribute())
+            {
+                int mapIndex = 1;
+                foreach (var ma in request.MessageAttribute)
+                {
+                    string name = ma.Name;
+                    MessageAttributeValue value = ma.Value;
+                    bool hasValue = value != null;
+                    parameters.Add("MessageAttribute" + "." + mapIndex + "." + "Name", name);
+                    if (hasValue)
+                    {
+                        if (value.IsSetBinaryListValue())
+                        {
+                            int valuelistValueIndex = 1;
+                            foreach (var valuelistValue in value.BinaryListValue)
+                            {
+                                parameters.Add("MessageAttribute" + "." + mapIndex + "." + "Value" + "." + "BinaryListValue" + "." + "member" + "." + valuelistValueIndex, StringUtils.FromMemoryStream(valuelistValue));
+                                valuelistValueIndex++;
+                            }
+                        }
+                        if (value.IsSetBinaryValue())
+                        {
+                            parameters.Add("MessageAttribute" + "." + mapIndex + "." + "Value" + "." + "BinaryValue", StringUtils.FromMemoryStream(value.BinaryValue));
+                        }
+                        if (value.IsSetDataType())
+                        {
+                            parameters.Add("MessageAttribute" + "." + mapIndex + "." + "Value" + "." + "DataType", StringUtils.FromString(value.DataType));
+                        }
+                        if (value.IsSetStringListValue())
+                        {
+                            int valuelistValueIndex = 1;
+                            foreach (var valuelistValue in value.StringListValue)
+                            {
+                                parameters.Add("MessageAttribute" + "." + mapIndex + "." + "Value" + "." + "StringListValue" + "." + "member" + "." + valuelistValueIndex, StringUtils.FromString(valuelistValue));
+                                valuelistValueIndex++;
+                            }
+                        }
+                        if (value.IsSetStringValue())
+                        {
+                            parameters.Add("MessageAttribute" + "." + mapIndex + "." + "Value" + "." + "StringValue", StringUtils.FromString(value.StringValue));
+                        }
+                    }
+                    mapIndex++;
+                }
             }
 
             return parameters;
@@ -1252,6 +1307,52 @@ namespace Amazon.SQS
                 if (sendMessageBatchRequestEntry.IsSetDelaySeconds())
                 {
                     parameters[String.Concat("SendMessageBatchRequestEntry", ".", sendMessageBatchRequestEntryListIndex, ".DelaySeconds")] = sendMessageBatchRequestEntry.DelaySeconds.ToString();
+                }
+
+                if (sendMessageBatchRequestEntry.IsSetMessageAttribute())
+                {
+                    int mapIndex = 1;
+                    foreach (var ma in sendMessageBatchRequestEntry.MessageAttribute)
+                    {
+                        string name = ma.Name;
+                        MessageAttributeValue value = ma.Value;
+                        bool hasValue = value != null;
+                        parameters.Add("SendMessageBatchRequestEntry" + "." + sendMessageBatchRequestEntryListIndex + "." + "MessageAttribute" + "." + mapIndex + "." + "Name", name);
+                        if (hasValue)
+                        {
+                            if (value.IsSetBinaryListValue())
+                            {
+                                int valuelistValueIndex = 1;
+                                foreach (var valuelistValue in value.BinaryListValue)
+                                {
+                                    parameters.Add("SendMessageBatchRequestEntry" + "." + sendMessageBatchRequestEntryListIndex + "."  + "MessageAttribute" + "." + mapIndex + "." + "Value" + "." + "BinaryListValue" + "." + "member" + "." + valuelistValueIndex, StringUtils.FromMemoryStream(valuelistValue));
+                                    valuelistValueIndex++;
+                                }
+                            }
+                            if (value.IsSetBinaryValue())
+                            {
+                                parameters.Add("SendMessageBatchRequestEntry" + "." + sendMessageBatchRequestEntryListIndex + "."  + "MessageAttribute" + "." + mapIndex + "." + "Value" + "." + "BinaryValue", StringUtils.FromMemoryStream(value.BinaryValue));
+                            }
+                            if (value.IsSetDataType())
+                            {
+                                parameters.Add("SendMessageBatchRequestEntry" + "." + sendMessageBatchRequestEntryListIndex + "."  + "MessageAttribute" + "." + mapIndex + "." + "Value" + "." + "DataType", StringUtils.FromString(value.DataType));
+                            }
+                            if (value.IsSetStringListValue())
+                            {
+                                int valuelistValueIndex = 1;
+                                foreach (var valuelistValue in value.StringListValue)
+                                {
+                                    parameters.Add("SendMessageBatchRequestEntry" + "." + sendMessageBatchRequestEntryListIndex + "."  + "MessageAttribute" + "." + mapIndex + "." + "Value" + "." + "StringListValue" + "." + "member" + "." + valuelistValueIndex, StringUtils.FromString(valuelistValue));
+                                    valuelistValueIndex++;
+                                }
+                            }
+                            if (value.IsSetStringValue())
+                            {
+                                parameters.Add("SendMessageBatchRequestEntry" + "." + sendMessageBatchRequestEntryListIndex + "."  + "MessageAttribute" + "." + mapIndex + "." + "Value" + "." + "StringValue", StringUtils.FromString(value.StringValue));
+                            }
+                        }
+                        mapIndex++;
+                    }
                 }
 
                 sendMessageBatchRequestEntryListIndex++;

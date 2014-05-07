@@ -56,6 +56,7 @@ namespace Amazon.SQS.Model
         private Decimal? visibilityTimeoutField;
         private List<string> attributeNameField;
         private int? waitTimeSecondsField;
+        private List<string> messageAttributeNameField;
 
         /// <summary>
         /// Gets and sets the QueueUrl property.
@@ -234,6 +235,49 @@ namespace Amazon.SQS.Model
         public bool IsSetWaitTimeSeconds()
         {
             return this.waitTimeSecondsField.HasValue;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the MessageAttributeName property.
+        /// The message attributes you want to get.
+        /// </summary>
+        [XmlElementAttribute(ElementName = "MessageAttributeName")]
+        public List<string> MessageAttributeName
+        {
+            get
+            {
+                if (this.messageAttributeNameField == null)
+                {
+                    this.messageAttributeNameField = new List<string>();
+                }
+                return this.messageAttributeNameField;
+            }
+            set { this.messageAttributeNameField = value; }
+        }
+
+        /// <summary>
+        /// Sets the MessageAttributeName property
+        /// </summary>
+        /// <param name="list">The message attributes you want to get.</param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public ReceiveMessageRequest WithMessageAttributeName(params string[] list)
+        {
+            foreach (string item in list)
+            {
+                MessageAttributeName.Add(item);
+            }
+            return this;
+        }
+
+        /// <summary>
+        /// Checks if MessageAttributeName property is set
+        /// </summary>
+        /// <returns>true if MessageAttributeName property is set</returns>
+        public bool IsSetMessageAttributeName()
+        {
+            return (MessageAttributeName.Count > 0);
         }
     }
 }
