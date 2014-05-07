@@ -17,33 +17,37 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.SQS.Model
 {
     /// <summary>
-    /// <para> A list of your queues. </para>
+    /// A list of your queues.
     /// </summary>
     public partial class ListQueuesResult : AmazonWebServiceResponse
     {
-        
-        private List<string> queueUrls = new List<string>();
+        private List<string> _queueUrls = new List<string>();
 
 
         /// <summary>
+        /// Gets and sets the property QueueUrls. 
+        /// <para>
         /// A list of queue URLs, up to 1000 entries.
-        ///  
+        /// </para>
         /// </summary>
         public List<string> QueueUrls
         {
-            get { return this.queueUrls; }
-            set { this.queueUrls = value; }
+            get { return this._queueUrls; }
+            set { this._queueUrls = value; }
         }
 
         // Check to see if QueueUrls property is set
         internal bool IsSetQueueUrls()
         {
-            return this.queueUrls.Count > 0;
+            return this._queueUrls != null && this._queueUrls.Count > 0; 
         }
+
     }
 }

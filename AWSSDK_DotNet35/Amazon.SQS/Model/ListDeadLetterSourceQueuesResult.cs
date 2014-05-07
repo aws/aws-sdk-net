@@ -17,33 +17,35 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.SQS.Model
 {
     /// <summary>
-    /// <para> A list of your dead letter source queues. </para>
+    /// A list of your dead letter source queues.
     /// </summary>
     public partial class ListDeadLetterSourceQueuesResult : AmazonWebServiceResponse
     {
-        
-        private List<string> queueUrls = new List<string>();
+        private List<string> _queueUrls = new List<string>();
 
 
         /// <summary>
-        /// A list of source queue URLs that have the RedrivePolicy queue attribute configured with a dead letter queue.
-        ///  
+        /// Gets and sets the property QueueUrls. A list of source queue URLs that have the RedrivePolicy
+        /// queue attribute configured with a dead letter queue.
         /// </summary>
         public List<string> QueueUrls
         {
-            get { return this.queueUrls; }
-            set { this.queueUrls = value; }
+            get { return this._queueUrls; }
+            set { this._queueUrls = value; }
         }
 
         // Check to see if QueueUrls property is set
         internal bool IsSetQueueUrls()
         {
-            return this.queueUrls.Count > 0;
+            return this._queueUrls != null && this._queueUrls.Count > 0; 
         }
+
     }
 }

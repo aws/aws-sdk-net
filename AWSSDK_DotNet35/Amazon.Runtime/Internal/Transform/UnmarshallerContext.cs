@@ -115,6 +115,16 @@ namespace Amazon.Runtime.Internal.Transform
             return TestExpression(expression, startingStackDepth, CurrentPath, CurrentDepth);
         }
 
+        /// <summary>
+        /// Reads the next token at depth greater than or equal to terget depth.
+        /// </summary>
+        /// <param name="targetDepth">Tokens are read at depth greater than or equal to terget depth.</param>
+        /// <returns>True if a token was read and current depth is greater than or equal to target depth.</returns>
+        public bool ReadAtDepth(int targetDepth)
+        {
+            return Read() && this.CurrentDepth >= targetDepth;
+        }
+
         private static bool TestExpression(string expression, string currentPath)
         {
             if (expression.Equals("."))

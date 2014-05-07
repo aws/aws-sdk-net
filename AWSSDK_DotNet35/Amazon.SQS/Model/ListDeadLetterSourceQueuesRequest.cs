@@ -24,30 +24,27 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SQS.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListDeadLetterSourceQueues operation.
-    /// <para>Returns a list of your queues that have the RedrivePolicy queue attribute configured with a dead letter queue.</para>
+    /// 
     /// </summary>
     public partial class ListDeadLetterSourceQueuesRequest : AmazonSQSRequest
     {
-        private string queueUrl;
+        private string _queueUrl;
 
 
         /// <summary>
-        /// The queue URL of a dead letter queue.
-        ///  
+        /// Gets and sets the property QueueUrl. The queue URL of a dead letter queue.
         /// </summary>
         public string QueueUrl
         {
-            get { return this.queueUrl; }
-            set { this.queueUrl = value; }
+            get { return this._queueUrl; }
+            set { this._queueUrl = value; }
         }
 
         // Check to see if QueueUrl property is set
         internal bool IsSetQueueUrl()
         {
-            return this.queueUrl != null;
+            return this._queueUrl != null;
         }
 
     }
 }
-    

@@ -18,71 +18,98 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.SQS.Model
 {
     /// <summary>
-    /// <para>Encloses a receipt handle and an entry id for each message in ChangeMessageVisibilityBatch. </para> <para><b>IMPORTANT:</b> All of the
-    /// following parameters are list parameters that must be prefixed with ChangeMessageVisibilityBatchRequestEntry.n, where n is an integer value
-    /// starting with 1. For example, a parameter list for this action might look like this: </para> <para>
-    /// <c>&amp;amp;ChangeMessageVisibilityBatchRequestEntry.1.Id=change_visibility_msg_2</c> </para> <para>
-    /// <c>&amp;amp;ChangeMessageVisibilityBatchRequestEntry.1.ReceiptHandle=Your_Receipt_Handle </c> </para> <para>
-    /// <c>&amp;amp;ChangeMessageVisibilityBatchRequestEntry.1.VisibilityTimeout=45</c> </para>
+    /// Encloses a receipt handle and an entry id for each message in      <a>ChangeMessageVisibilityBatch</a>.
+    /// 
+    /// 
+    ///         <important>      
+    /// <para>
+    /// All of the following parameters are list parameters that must be prefixed with <code>ChangeMessageVisibilityBatchRequestEntry.n</code>,
+    ///         where <code>n</code> is an integer value starting with 1. For example, a parameter
+    /// list for this action might look like this:
+    /// </para>
+    ///                </important>    
+    /// <para>
+    /// <code>&amp;ChangeMessageVisibilityBatchRequestEntry.1.Id=change_visibility_msg_2</code>
+    /// </para>
+    ///     
+    /// <para>
+    /// <code>&amp;ChangeMessageVisibilityBatchRequestEntry.1.ReceiptHandle=<replaceable>Your_Receipt_Handle</replaceable></code>
+    /// </para>
+    ///     
+    /// <para>
+    /// <code>&amp;ChangeMessageVisibilityBatchRequestEntry.1.VisibilityTimeout=45</code>
+    /// </para>
     /// </summary>
-    public class ChangeMessageVisibilityBatchRequestEntry
+    public partial class ChangeMessageVisibilityBatchRequestEntry
     {
-        
-        private string id;
-        private string receiptHandle;
-        private int? visibilityTimeout;
+        private string _id;
+        private string _receiptHandle;
+        private int? _visibilityTimeout;
 
 
         /// <summary>
-        /// An identifier for this particular receipt handle. This is used to communicate the result. Note that the <c>Id</c>s of a batch request need
-        /// to be unique within the request.
-        ///  
+        /// Gets and sets the property Id. 
+        /// <para>
+        /// An identifier for this particular receipt handle. This is used to communicate    
+        ///  the result. Note that the <code>Id</code>s of a batch request need to be      unique
+        /// within the request.
+        /// </para>
         /// </summary>
         public string Id
         {
-            get { return this.id; }
-            set { this.id = value; }
+            get { return this._id; }
+            set { this._id = value; }
         }
 
         // Check to see if Id property is set
         internal bool IsSetId()
         {
-            return this.id != null;
+            return this._id != null;
         }
 
+
         /// <summary>
+        /// Gets and sets the property ReceiptHandle. 
+        /// <para>
         /// A receipt handle.
-        ///  
+        /// </para>
         /// </summary>
         public string ReceiptHandle
         {
-            get { return this.receiptHandle; }
-            set { this.receiptHandle = value; }
+            get { return this._receiptHandle; }
+            set { this._receiptHandle = value; }
         }
 
         // Check to see if ReceiptHandle property is set
         internal bool IsSetReceiptHandle()
         {
-            return this.receiptHandle != null;
+            return this._receiptHandle != null;
         }
 
+
         /// <summary>
+        /// Gets and sets the property VisibilityTimeout. 
+        /// <para>
         /// The new value (in seconds) for the message's visibility timeout.
-        ///  
+        /// </para>
         /// </summary>
         public int VisibilityTimeout
         {
-            get { return this.visibilityTimeout ?? default(int); }
-            set { this.visibilityTimeout = value; }
+            get { return this._visibilityTimeout.GetValueOrDefault(); }
+            set { this._visibilityTimeout = value; }
         }
 
         // Check to see if VisibilityTimeout property is set
         internal bool IsSetVisibilityTimeout()
         {
-            return this.visibilityTimeout.HasValue;
+            return this._visibilityTimeout.HasValue; 
         }
+
     }
 }

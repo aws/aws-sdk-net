@@ -17,33 +17,37 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.SQS.Model
 {
     /// <summary>
-    /// <para> A list of received messages. </para>
+    /// A list of received messages.
     /// </summary>
     public partial class ReceiveMessageResult : AmazonWebServiceResponse
     {
-        
-        private List<Message> messages = new List<Message>();
+        private List<Message> _messages = new List<Message>();
 
 
         /// <summary>
+        /// Gets and sets the property Messages. 
+        /// <para>
         /// A list of messages.
-        ///  
+        /// </para>
         /// </summary>
         public List<Message> Messages
         {
-            get { return this.messages; }
-            set { this.messages = value; }
+            get { return this._messages; }
+            set { this._messages = value; }
         }
 
         // Check to see if Messages property is set
         internal bool IsSetMessages()
         {
-            return this.messages.Count > 0;
+            return this._messages != null && this._messages.Count > 0; 
         }
+
     }
 }

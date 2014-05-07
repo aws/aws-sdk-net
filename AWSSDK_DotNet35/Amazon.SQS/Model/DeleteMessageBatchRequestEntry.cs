@@ -18,49 +18,58 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.SQS.Model
 {
     /// <summary>
-    /// <para>Encloses a receipt handle and an identifier for it.</para>
+    /// Encloses a receipt handle and an identifier for it.
     /// </summary>
-    public class DeleteMessageBatchRequestEntry
+    public partial class DeleteMessageBatchRequestEntry
     {
-        
-        private string id;
-        private string receiptHandle;
+        private string _id;
+        private string _receiptHandle;
 
 
         /// <summary>
-        /// An identifier for this particular receipt handle. This is used to communicate the result. Note that the <c>Id</c>s of a batch request need
-        /// to be unique within the request.
-        ///  
+        /// Gets and sets the property Id. 
+        /// <para>
+        /// An identifier for this particular receipt handle. This is used to      communicate
+        /// the result. Note that the <code>Id</code>s of a batch request      need to be unique
+        /// within the request.
+        /// </para>
         /// </summary>
         public string Id
         {
-            get { return this.id; }
-            set { this.id = value; }
+            get { return this._id; }
+            set { this._id = value; }
         }
 
         // Check to see if Id property is set
         internal bool IsSetId()
         {
-            return this.id != null;
+            return this._id != null;
         }
 
+
         /// <summary>
+        /// Gets and sets the property ReceiptHandle. 
+        /// <para>
         /// A receipt handle.
-        ///  
+        /// </para>
         /// </summary>
         public string ReceiptHandle
         {
-            get { return this.receiptHandle; }
-            set { this.receiptHandle = value; }
+            get { return this._receiptHandle; }
+            set { this._receiptHandle = value; }
         }
 
         // Check to see if ReceiptHandle property is set
         internal bool IsSetReceiptHandle()
         {
-            return this.receiptHandle != null;
+            return this._receiptHandle != null;
         }
+
     }
 }

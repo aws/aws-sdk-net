@@ -14,55 +14,100 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.SQS.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.SQS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Send Message Batch Request Marshaller
+    /// SendMessageBatch Request Marshaller
     /// </summary>       
-    public class SendMessageBatchRequestMarshaller : IMarshaller<IRequest, SendMessageBatchRequest>
+    internal class SendMessageBatchRequestMarshaller : IMarshaller<IRequest, SendMessageBatchRequest>
     {
-        public IRequest Marshall(SendMessageBatchRequest sendMessageBatchRequest)
+        public IRequest Marshall(SendMessageBatchRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(sendMessageBatchRequest, "AmazonSQS");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.SQS");
             request.Parameters.Add("Action", "SendMessageBatch");
             request.Parameters.Add("Version", "2012-11-05");
-            if (sendMessageBatchRequest != null && sendMessageBatchRequest.IsSetQueueUrl())
-            {
-                request.Parameters.Add("QueueUrl", StringUtils.FromString(sendMessageBatchRequest.QueueUrl));
-            }
 
-            if (sendMessageBatchRequest != null)
+            if(publicRequest != null)
             {
-                List<SendMessageBatchRequestEntry> entriesList = sendMessageBatchRequest.Entries;
-                int entriesListIndex = 1;
-                foreach (SendMessageBatchRequestEntry entriesListValue in entriesList)
+                if(publicRequest.IsSetEntries())
                 {
-                    if (entriesListValue != null && entriesListValue.IsSetId())
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.Entries)
                     {
-                        request.Parameters.Add("SendMessageBatchRequestEntry." + entriesListIndex + ".Id", StringUtils.FromString(entriesListValue.Id));
+                        if(publicRequestlistValue.IsSetDelaySeconds())
+                        {
+                            request.Parameters.Add("SendMessageBatchRequestEntry" + "." + publicRequestlistValueIndex + "." + "DelaySeconds", StringUtils.FromInt(publicRequestlistValue.DelaySeconds));
+                        }
+                        if(publicRequestlistValue.IsSetId())
+                        {
+                            request.Parameters.Add("SendMessageBatchRequestEntry" + "." + publicRequestlistValueIndex + "." + "Id", StringUtils.FromString(publicRequestlistValue.Id));
+                        }
+                        if(publicRequestlistValue.IsSetMessageAttributes())
+                        {
+                            int mapIndex = 1;
+                            foreach(var key in publicRequestlistValue.MessageAttributes.Keys)
+                            {
+                                MessageAttributeValue value;
+                                bool hasValue = publicRequestlistValue.MessageAttributes.TryGetValue(key, out value);
+                                request.Parameters.Add("SendMessageBatchRequestEntry" + "." + publicRequestlistValueIndex + "." + "MessageAttribute" + "." + mapIndex + "." + "Name", StringUtils.FromString(key));
+                                if (hasValue)
+                                {
+                                    if(value.IsSetBinaryListValues())
+                                    {
+                                        int valuelistValueIndex = 1;
+                                        foreach(var valuelistValue in value.BinaryListValues)
+                                        {
+                                            request.Parameters.Add("SendMessageBatchRequestEntry" + "." + publicRequestlistValueIndex + "." + "MessageAttribute" + "." + mapIndex + "." + "Value" + "." + "BinaryListValues" + "." + "member" + "." + valuelistValueIndex, StringUtils.FromMemoryStream(valuelistValue));
+                                            valuelistValueIndex++;
+                                        }
+                                    }
+                                    if(value.IsSetBinaryValue())
+                                    {
+                                        request.Parameters.Add("SendMessageBatchRequestEntry" + "." + publicRequestlistValueIndex + "." + "MessageAttribute" + "." + mapIndex + "." + "Value" + "." + "BinaryValue", StringUtils.FromMemoryStream(value.BinaryValue));
+                                    }
+                                    if(value.IsSetDataType())
+                                    {
+                                        request.Parameters.Add("SendMessageBatchRequestEntry" + "." + publicRequestlistValueIndex + "." + "MessageAttribute" + "." + mapIndex + "." + "Value" + "." + "DataType", StringUtils.FromString(value.DataType));
+                                    }
+                                    if(value.IsSetStringListValues())
+                                    {
+                                        int valuelistValueIndex = 1;
+                                        foreach(var valuelistValue in value.StringListValues)
+                                        {
+                                            request.Parameters.Add("SendMessageBatchRequestEntry" + "." + publicRequestlistValueIndex + "." + "MessageAttribute" + "." + mapIndex + "." + "Value" + "." + "StringListValues" + "." + "member" + "." + valuelistValueIndex, StringUtils.FromString(valuelistValue));
+                                            valuelistValueIndex++;
+                                        }
+                                    }
+                                    if(value.IsSetStringValue())
+                                    {
+                                        request.Parameters.Add("SendMessageBatchRequestEntry" + "." + publicRequestlistValueIndex + "." + "MessageAttribute" + "." + mapIndex + "." + "Value" + "." + "StringValue", StringUtils.FromString(value.StringValue));
+                                    }
+                                }
+                                mapIndex++;
+                            }
+                        }
+                        if(publicRequestlistValue.IsSetMessageBody())
+                        {
+                            request.Parameters.Add("SendMessageBatchRequestEntry" + "." + publicRequestlistValueIndex + "." + "MessageBody", StringUtils.FromString(publicRequestlistValue.MessageBody));
+                        }
+                        publicRequestlistValueIndex++;
                     }
-                    if (entriesListValue != null && entriesListValue.IsSetMessageBody())
-                    {
-                        request.Parameters.Add("SendMessageBatchRequestEntry." + entriesListIndex + ".MessageBody", StringUtils.FromString(entriesListValue.MessageBody));
-                    }
-                    if (entriesListValue != null && entriesListValue.IsSetDelaySeconds())
-                    {
-                        request.Parameters.Add("SendMessageBatchRequestEntry." + entriesListIndex + ".DelaySeconds", StringUtils.FromInt(entriesListValue.DelaySeconds));
-                    }
-
-                    entriesListIndex++;
+                }
+                if(publicRequest.IsSetQueueUrl())
+                {
+                    request.Parameters.Add("QueueUrl", StringUtils.FromString(publicRequest.QueueUrl));
                 }
             }
-
             return request;
         }
     }

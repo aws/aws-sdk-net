@@ -18,66 +18,100 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.SQS.Model
 {
     /// <summary>
-    /// <para>Contains the details of a single Amazon SQS message along with a <c>Id</c> . </para>
+    /// Contains the details of a single Amazon SQS message along with a <code>Id</code>.
     /// </summary>
-    public class SendMessageBatchRequestEntry
+    public partial class SendMessageBatchRequestEntry
     {
-        
-        private string id;
-        private string messageBody;
-        private int? delaySeconds;
+        private int? _delaySeconds;
+        private string _id;
+        private Dictionary<string, MessageAttributeValue> _messageAttributes = new Dictionary<string, MessageAttributeValue>();
+        private string _messageBody;
 
 
         /// <summary>
-        /// An identifier for the message in this batch. This is used to communicate the result. Note that the <c>Id</c>s of a batch request need to be
-        /// unique within the request.
-        ///  
-        /// </summary>
-        public string Id
-        {
-            get { return this.id; }
-            set { this.id = value; }
-        }
-
-        // Check to see if Id property is set
-        internal bool IsSetId()
-        {
-            return this.id != null;
-        }
-
-        /// <summary>
-        /// Body of the message.
-        ///  
-        /// </summary>
-        public string MessageBody
-        {
-            get { return this.messageBody; }
-            set { this.messageBody = value; }
-        }
-
-        // Check to see if MessageBody property is set
-        internal bool IsSetMessageBody()
-        {
-            return this.messageBody != null;
-        }
-
-        /// <summary>
+        /// Gets and sets the property DelaySeconds. 
+        /// <para>
         /// The number of seconds for which the message has to be delayed.
-        ///  
+        /// </para>
         /// </summary>
         public int DelaySeconds
         {
-            get { return this.delaySeconds ?? default(int); }
-            set { this.delaySeconds = value; }
+            get { return this._delaySeconds.GetValueOrDefault(); }
+            set { this._delaySeconds = value; }
         }
 
         // Check to see if DelaySeconds property is set
         internal bool IsSetDelaySeconds()
         {
-            return this.delaySeconds.HasValue;
+            return this._delaySeconds.HasValue; 
         }
+
+
+        /// <summary>
+        /// Gets and sets the property Id. 
+        /// <para>
+        /// An identifier for the message in this batch. This is used to communicate      the
+        /// result. Note that the <code>Id</code>s of a batch request need to      be unique within
+        /// the request.
+        /// </para>
+        /// </summary>
+        public string Id
+        {
+            get { return this._id; }
+            set { this._id = value; }
+        }
+
+        // Check to see if Id property is set
+        internal bool IsSetId()
+        {
+            return this._id != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property MessageAttributes. 
+        /// <para>
+        /// Each message attribute consists of a Name, Type, and Value. For more information,
+        /// see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributesNTV">Message
+        /// Attribute Items</a>.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, MessageAttributeValue> MessageAttributes
+        {
+            get { return this._messageAttributes; }
+            set { this._messageAttributes = value; }
+        }
+
+        // Check to see if MessageAttributes property is set
+        internal bool IsSetMessageAttributes()
+        {
+            return this._messageAttributes != null && this._messageAttributes.Count > 0; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property MessageBody. 
+        /// <para>
+        /// Body of the message.
+        /// </para>
+        /// </summary>
+        public string MessageBody
+        {
+            get { return this._messageBody; }
+            set { this._messageBody = value; }
+        }
+
+        // Check to see if MessageBody property is set
+        internal bool IsSetMessageBody()
+        {
+            return this._messageBody != null;
+        }
+
     }
 }

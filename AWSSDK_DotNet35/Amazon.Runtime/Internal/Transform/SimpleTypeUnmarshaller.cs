@@ -458,4 +458,12 @@ namespace Amazon.Runtime.Internal.Transform
 
         }
     }
+
+    internal static class UnmarshallerExtensions
+    {
+        public static void Add<K, V>(this Dictionary<K, V> dict, KeyValuePair<K, V> item)
+        {
+            dict.Add(item.Key, item.Value);
+        }
+    }
 }

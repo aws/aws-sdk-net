@@ -17,33 +17,37 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.SQS.Model
 {
     /// <summary>
-    /// <para> A list of returned queue attributes. </para>
+    /// A list of returned queue attributes.
     /// </summary>
     public partial class GetQueueAttributesResult : AmazonWebServiceResponse
     {
-        
-        private Dictionary<string,string> attributes = new Dictionary<string,string>();
+        private Dictionary<string, string> _attributes = new Dictionary<string, string>();
 
 
         /// <summary>
+        /// Gets and sets the property Attributes. 
+        /// <para>
         /// A map of attributes to the respective values.
-        ///  
+        /// </para>
         /// </summary>
-        public Dictionary<string,string> Attributes
+        public Dictionary<string, string> Attributes
         {
-            get { return this.attributes; }
-            set { this.attributes = value; }
+            get { return this._attributes; }
+            set { this._attributes = value; }
         }
 
         // Check to see if Attributes property is set
         internal bool IsSetAttributes()
         {
-            return this.attributes != null;
+            return this._attributes != null && this._attributes.Count > 0; 
         }
+
     }
 }

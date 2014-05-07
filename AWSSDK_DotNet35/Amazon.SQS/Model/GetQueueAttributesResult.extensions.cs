@@ -181,7 +181,7 @@ namespace Amazon.SQS.Model
         private string getAttributeValue(string field)
         {
             string value = null;
-            this.attributes.TryGetValue(field, out value);
+            this.Attributes.TryGetValue(field, out value);
             return value;
         }
     }

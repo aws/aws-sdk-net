@@ -12,23 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.SQS.Model
 {
     /// <summary>
-    /// Returns information about the  ListDeadLetterSourceQueues response and response metadata.
+    /// Configuration for accessing Amazon ListDeadLetterSourceQueues service
     /// </summary>
-    public class ListDeadLetterSourceQueuesResponse : ListDeadLetterSourceQueuesResult
+    public partial class ListDeadLetterSourceQueuesResponse : ListDeadLetterSourceQueuesResult
     {
         /// <summary>
         /// Gets and sets the ListDeadLetterSourceQueuesResult property.
-        /// A list of your dead letter source queues.
+        /// Represents the output of a ListDeadLetterSourceQueues operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the ListDeadLetterSourceQueuesResult class are now available on the ListDeadLetterSourceQueuesResponse class. You should use the properties on ListDeadLetterSourceQueuesResponse instead of accessing them through ListDeadLetterSourceQueuesResult.")]
         public ListDeadLetterSourceQueuesResult ListDeadLetterSourceQueuesResult
@@ -40,4 +36,3 @@ namespace Amazon.SQS.Model
         }
     }
 }
-    

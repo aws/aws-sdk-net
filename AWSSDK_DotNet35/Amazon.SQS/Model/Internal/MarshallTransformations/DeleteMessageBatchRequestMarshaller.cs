@@ -14,51 +14,52 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.SQS.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.SQS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Delete Message Batch Request Marshaller
+    /// DeleteMessageBatch Request Marshaller
     /// </summary>       
-    public class DeleteMessageBatchRequestMarshaller : IMarshaller<IRequest, DeleteMessageBatchRequest>
+    internal class DeleteMessageBatchRequestMarshaller : IMarshaller<IRequest, DeleteMessageBatchRequest>
     {
-        public IRequest Marshall(DeleteMessageBatchRequest deleteMessageBatchRequest)
+        public IRequest Marshall(DeleteMessageBatchRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(deleteMessageBatchRequest, "AmazonSQS");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.SQS");
             request.Parameters.Add("Action", "DeleteMessageBatch");
             request.Parameters.Add("Version", "2012-11-05");
-            if (deleteMessageBatchRequest != null && deleteMessageBatchRequest.IsSetQueueUrl())
-            {
-                request.Parameters.Add("QueueUrl", StringUtils.FromString(deleteMessageBatchRequest.QueueUrl));
-            }
 
-            if (deleteMessageBatchRequest != null)
+            if(publicRequest != null)
             {
-                List<DeleteMessageBatchRequestEntry> entriesList = deleteMessageBatchRequest.Entries;
-                int entriesListIndex = 1;
-                foreach (DeleteMessageBatchRequestEntry entriesListValue in entriesList)
+                if(publicRequest.IsSetEntries())
                 {
-                    if (entriesListValue != null && entriesListValue.IsSetId())
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.Entries)
                     {
-                        request.Parameters.Add("DeleteMessageBatchRequestEntry." + entriesListIndex + ".Id", StringUtils.FromString(entriesListValue.Id));
+                        if(publicRequestlistValue.IsSetId())
+                        {
+                            request.Parameters.Add("DeleteMessageBatchRequestEntry" + "." + publicRequestlistValueIndex + "." + "Id", StringUtils.FromString(publicRequestlistValue.Id));
+                        }
+                        if(publicRequestlistValue.IsSetReceiptHandle())
+                        {
+                            request.Parameters.Add("DeleteMessageBatchRequestEntry" + "." + publicRequestlistValueIndex + "." + "ReceiptHandle", StringUtils.FromString(publicRequestlistValue.ReceiptHandle));
+                        }
+                        publicRequestlistValueIndex++;
                     }
-                    if (entriesListValue != null && entriesListValue.IsSetReceiptHandle())
-                    {
-                        request.Parameters.Add("DeleteMessageBatchRequestEntry." + entriesListIndex + ".ReceiptHandle", StringUtils.FromString(entriesListValue.ReceiptHandle));
-                    }
-
-                    entriesListIndex++;
+                }
+                if(publicRequest.IsSetQueueUrl())
+                {
+                    request.Parameters.Add("QueueUrl", StringUtils.FromString(publicRequest.QueueUrl));
                 }
             }
-
             return request;
         }
     }

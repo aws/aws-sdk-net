@@ -12,81 +12,88 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.SQS.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.SQS.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   BatchResultErrorEntry Unmarshaller
-     /// </summary>
-    internal class BatchResultErrorEntryUnmarshaller : IUnmarshaller<BatchResultErrorEntry, XmlUnmarshallerContext>, IUnmarshaller<BatchResultErrorEntry, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for BatchResultErrorEntry Object
+    /// </summary>  
+    internal class BatchResultErrorEntryUnmarshaller : IUnmarshaller<BatchResultErrorEntry, XmlUnmarshallerContext>, IUnmarshaller<BatchResultErrorEntry, JsonUnmarshallerContext>
     {
-        public BatchResultErrorEntry Unmarshall(XmlUnmarshallerContext context) 
+        public BatchResultErrorEntry Unmarshall(XmlUnmarshallerContext context)
         {
-            BatchResultErrorEntry batchResultErrorEntry = new BatchResultErrorEntry();
+            BatchResultErrorEntry unmarshalledObject = new BatchResultErrorEntry();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("Id", targetDepth))
-                    {
-                        batchResultErrorEntry.Id = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("SenderFault", targetDepth))
-                    {
-                        batchResultErrorEntry.SenderFault = BoolUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
                     if (context.TestExpression("Code", targetDepth))
                     {
-                        batchResultErrorEntry.Code = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.Code = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Id", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.Id = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Message", targetDepth))
                     {
-                        batchResultErrorEntry.Message = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.Message = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("SenderFault", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.GetInstance();
+                        unmarshalledObject.SenderFault = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return batchResultErrorEntry;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return batchResultErrorEntry;
+            return unmarshalledObject;
         }
 
-        public BatchResultErrorEntry Unmarshall(JsonUnmarshallerContext context) 
+        public BatchResultErrorEntry Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
+
         private static BatchResultErrorEntryUnmarshaller instance;
-
-        public static BatchResultErrorEntryUnmarshaller GetInstance() 
+        public static BatchResultErrorEntryUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new BatchResultErrorEntryUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new BatchResultErrorEntryUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

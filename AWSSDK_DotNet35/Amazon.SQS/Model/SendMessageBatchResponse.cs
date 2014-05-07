@@ -12,24 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.SQS.Model
 {
     /// <summary>
-    /// Returns information about the  SendMessageBatch response and response metadata.
+    /// Configuration for accessing Amazon SendMessageBatch service
     /// </summary>
-    public class SendMessageBatchResponse : SendMessageBatchResult
+    public partial class SendMessageBatchResponse : SendMessageBatchResult
     {
         /// <summary>
         /// Gets and sets the SendMessageBatchResult property.
-        /// For each message in the batch, the response contains a SendMessageBatchResultEntry tag if the message succeeds or a BatchResultErrorEntry
-        /// tag if the message fails.
+        /// Represents the output of a SendMessageBatch operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the SendMessageBatchResult class are now available on the SendMessageBatchResponse class. You should use the properties on SendMessageBatchResponse instead of accessing them through SendMessageBatchResult.")]
         public SendMessageBatchResult SendMessageBatchResult
@@ -41,4 +36,3 @@ namespace Amazon.SQS.Model
         }
     }
 }
-    

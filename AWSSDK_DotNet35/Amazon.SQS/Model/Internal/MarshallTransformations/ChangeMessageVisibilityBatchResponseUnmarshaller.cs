@@ -13,25 +13,32 @@
  * permissions and limitations under the License.
  */
 using System;
-using System.Net;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
 using Amazon.SQS.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.SQS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    ///    Response Unmarshaller for ChangeMessageVisibilityBatch operation
-    /// </summary>
+    /// Response Unmarshaller for ChangeMessageVisibilityBatch operation
+    /// </summary>  
     internal class ChangeMessageVisibilityBatchResponseUnmarshaller : XmlResponseUnmarshaller
     {
-        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
-        {   
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
+        {
             ChangeMessageVisibilityBatchResponse response = new ChangeMessageVisibilityBatchResponse();
-            
-            while (context.Read())
+
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
             {
                 if (context.IsStartElement)
                 {                    
@@ -47,11 +54,10 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
                     }
                 }
             }
-                 
-                        
+
             return response;
         }
-        
+
         private static void UnmarshallResult(XmlUnmarshallerContext context,ChangeMessageVisibilityBatchResponse response)
         {
             
@@ -61,72 +67,63 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("ChangeMessageVisibilityBatchResultEntry", targetDepth))
-                    {
-                        response.Successful.Add(ChangeMessageVisibilityBatchResultEntryUnmarshaller.GetInstance().Unmarshall(context));
-                            
-                        continue;
-                    }
+
                     if (context.TestExpression("BatchResultErrorEntry", targetDepth))
                     {
-                        response.Failed.Add(BatchResultErrorEntryUnmarshaller.GetInstance().Unmarshall(context));
-                            
+                        var unmarshaller = BatchResultErrorEntryUnmarshaller.GetInstance();
+                        var item = unmarshaller.Unmarshall(context);
+                        response.Failed.Add(item);
                         continue;
                     }
-                }
-                else if (context.IsEndElement && context.CurrentDepth < originalDepth)
-                {
-                    return;
-                }
-            }
-                            
-
+                    if (context.TestExpression("ChangeMessageVisibilityBatchResultEntry", targetDepth))
+                    {
+                        var unmarshaller = ChangeMessageVisibilityBatchResultEntryUnmarshaller.GetInstance();
+                        var item = unmarshaller.Unmarshall(context);
+                        response.Successful.Add(item);
+                        continue;
+                    }
+                } 
+           }
 
             return;
         }
-        
+
+
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            
             if (errorResponse.Code != null && errorResponse.Code.Equals("AWS.SimpleQueueService.BatchEntryIdsNotDistinct"))
             {
                 return new BatchEntryIdsNotDistinctException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-    
-            if (errorResponse.Code != null && errorResponse.Code.Equals("AWS.SimpleQueueService.TooManyEntriesInBatchRequest"))
-            {
-                return new TooManyEntriesInBatchRequestException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-    
-            if (errorResponse.Code != null && errorResponse.Code.Equals("AWS.SimpleQueueService.InvalidBatchEntryId"))
-            {
-                return new InvalidBatchEntryIdException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-    
             if (errorResponse.Code != null && errorResponse.Code.Equals("AWS.SimpleQueueService.EmptyBatchRequest"))
             {
                 return new EmptyBatchRequestException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-    
+            if (errorResponse.Code != null && errorResponse.Code.Equals("AWS.SimpleQueueService.InvalidBatchEntryId"))
+            {
+                return new InvalidBatchEntryIdException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("AWS.SimpleQueueService.TooManyEntriesInBatchRequest"))
+            {
+                return new TooManyEntriesInBatchRequestException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             return new AmazonSQSException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        
-        private static ChangeMessageVisibilityBatchResponseUnmarshaller instance;
 
+        private static ChangeMessageVisibilityBatchResponseUnmarshaller instance;
         public static ChangeMessageVisibilityBatchResponseUnmarshaller GetInstance()
         {
-            if (instance == null) 
+            if (instance == null)
             {
-               instance = new ChangeMessageVisibilityBatchResponseUnmarshaller();
+                instance = new ChangeMessageVisibilityBatchResponseUnmarshaller();
             }
             return instance;
         }
-    
+
     }
 }
-    

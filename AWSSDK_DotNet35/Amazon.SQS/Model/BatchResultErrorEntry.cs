@@ -18,83 +18,97 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.SQS.Model
 {
     /// <summary>
-    /// <para>This is used in the responses of batch API to give a detailed description of the result of an action on each entry in the
-    /// request.</para>
+    /// This is used in the responses of batch API to give a detailed description      of
+    /// the result of an action on each entry in the request.
     /// </summary>
-    public class BatchResultErrorEntry
+    public partial class BatchResultErrorEntry
     {
-        
-        private string id;
-        private bool? senderFault;
-        private string code;
-        private string message;
+        private string _code;
+        private string _id;
+        private string _message;
+        private bool? _senderFault;
 
 
         /// <summary>
-        /// The id of an entry in a batch request.
-        ///  
-        /// </summary>
-        public string Id
-        {
-            get { return this.id; }
-            set { this.id = value; }
-        }
-
-        // Check to see if Id property is set
-        internal bool IsSetId()
-        {
-            return this.id != null;
-        }
-
-        /// <summary>
-        /// Whether the error happened due to the sender's fault.
-        ///  
-        /// </summary>
-        public bool SenderFault
-        {
-            get { return this.senderFault ?? default(bool); }
-            set { this.senderFault = value; }
-        }
-
-        // Check to see if SenderFault property is set
-        internal bool IsSetSenderFault()
-        {
-            return this.senderFault.HasValue;
-        }
-
-        /// <summary>
+        /// Gets and sets the property Code. 
+        /// <para>
         /// An error code representing why the action failed on this entry.
-        ///  
+        /// </para>
         /// </summary>
         public string Code
         {
-            get { return this.code; }
-            set { this.code = value; }
+            get { return this._code; }
+            set { this._code = value; }
         }
 
         // Check to see if Code property is set
         internal bool IsSetCode()
         {
-            return this.code != null;
+            return this._code != null;
         }
 
+
         /// <summary>
+        /// Gets and sets the property Id. 
+        /// <para>
+        /// The id of an entry in a batch request.
+        /// </para>
+        /// </summary>
+        public string Id
+        {
+            get { return this._id; }
+            set { this._id = value; }
+        }
+
+        // Check to see if Id property is set
+        internal bool IsSetId()
+        {
+            return this._id != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property Message. 
+        /// <para>
         /// A message explaining why the action failed on this entry.
-        ///  
+        /// </para>
         /// </summary>
         public string Message
         {
-            get { return this.message; }
-            set { this.message = value; }
+            get { return this._message; }
+            set { this._message = value; }
         }
 
         // Check to see if Message property is set
         internal bool IsSetMessage()
         {
-            return this.message != null;
+            return this._message != null;
         }
+
+
+        /// <summary>
+        /// Gets and sets the property SenderFault. 
+        /// <para>
+        /// Whether the error happened due to the sender's fault.
+        /// </para>
+        /// </summary>
+        public bool SenderFault
+        {
+            get { return this._senderFault.GetValueOrDefault(); }
+            set { this._senderFault = value; }
+        }
+
+        // Check to see if SenderFault property is set
+        internal bool IsSetSenderFault()
+        {
+            return this._senderFault.HasValue; 
+        }
+
     }
 }

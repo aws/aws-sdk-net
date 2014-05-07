@@ -14,36 +14,40 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.SQS.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.SQS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Remove Permission Request Marshaller
+    /// RemovePermission Request Marshaller
     /// </summary>       
-    public class RemovePermissionRequestMarshaller : IMarshaller<IRequest, RemovePermissionRequest>
+    internal class RemovePermissionRequestMarshaller : IMarshaller<IRequest, RemovePermissionRequest>
     {
-        public IRequest Marshall(RemovePermissionRequest removePermissionRequest)
+        public IRequest Marshall(RemovePermissionRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(removePermissionRequest, "AmazonSQS");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.SQS");
             request.Parameters.Add("Action", "RemovePermission");
             request.Parameters.Add("Version", "2012-11-05");
-            if (removePermissionRequest != null && removePermissionRequest.IsSetQueueUrl())
-            {
-                request.Parameters.Add("QueueUrl", StringUtils.FromString(removePermissionRequest.QueueUrl));
-            }
-            if (removePermissionRequest != null && removePermissionRequest.IsSetLabel())
-            {
-                request.Parameters.Add("Label", StringUtils.FromString(removePermissionRequest.Label));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetLabel())
+                {
+                    request.Parameters.Add("Label", StringUtils.FromString(publicRequest.Label));
+                }
+                if(publicRequest.IsSetQueueUrl())
+                {
+                    request.Parameters.Add("QueueUrl", StringUtils.FromString(publicRequest.QueueUrl));
+                }
+            }
             return request;
         }
     }

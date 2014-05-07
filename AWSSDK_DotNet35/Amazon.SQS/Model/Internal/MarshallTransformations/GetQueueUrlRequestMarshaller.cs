@@ -14,36 +14,40 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.SQS.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.SQS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Get Queue Url Request Marshaller
+    /// GetQueueUrl Request Marshaller
     /// </summary>       
-    public class GetQueueUrlRequestMarshaller : IMarshaller<IRequest, GetQueueUrlRequest>
+    internal class GetQueueUrlRequestMarshaller : IMarshaller<IRequest, GetQueueUrlRequest>
     {
-        public IRequest Marshall(GetQueueUrlRequest getQueueUrlRequest)
+        public IRequest Marshall(GetQueueUrlRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(getQueueUrlRequest, "AmazonSQS");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.SQS");
             request.Parameters.Add("Action", "GetQueueUrl");
             request.Parameters.Add("Version", "2012-11-05");
-            if (getQueueUrlRequest != null && getQueueUrlRequest.IsSetQueueName())
-            {
-                request.Parameters.Add("QueueName", StringUtils.FromString(getQueueUrlRequest.QueueName));
-            }
-            if (getQueueUrlRequest != null && getQueueUrlRequest.IsSetQueueOwnerAWSAccountId())
-            {
-                request.Parameters.Add("QueueOwnerAWSAccountId", StringUtils.FromString(getQueueUrlRequest.QueueOwnerAWSAccountId));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetQueueName())
+                {
+                    request.Parameters.Add("QueueName", StringUtils.FromString(publicRequest.QueueName));
+                }
+                if(publicRequest.IsSetQueueOwnerAWSAccountId())
+                {
+                    request.Parameters.Add("QueueOwnerAWSAccountId", StringUtils.FromString(publicRequest.QueueOwnerAWSAccountId));
+                }
+            }
             return request;
         }
     }

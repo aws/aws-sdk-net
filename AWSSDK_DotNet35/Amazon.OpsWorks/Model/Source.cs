@@ -96,7 +96,8 @@ namespace Amazon.OpsWorks.Model
 
         /// <summary>
         /// This parameter depends on the repository type. <ul> <li>For Amazon S3 bundles, set <c>Password</c> to the appropriate IAM secret access
-        /// key.</li> <li>For HTTP bundles, Git repositories, and Subversion repositories, set <c>Password</c> to the password.</li> </ul>
+        /// key.</li> <li>For HTTP bundles, and Subversion repositories, set <c>Password</c> to the password.</li> </ul> For more information on how to
+        /// safely handle IAM credentials, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html"/>.
         ///  
         /// </summary>
         public string Password

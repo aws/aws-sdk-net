@@ -14,32 +14,36 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.SQS.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.SQS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// List Dead Letter Source Queues Request Marshaller
+    /// ListDeadLetterSourceQueues Request Marshaller
     /// </summary>       
-    public class ListDeadLetterSourceQueuesRequestMarshaller : IMarshaller<IRequest, ListDeadLetterSourceQueuesRequest>
+    internal class ListDeadLetterSourceQueuesRequestMarshaller : IMarshaller<IRequest, ListDeadLetterSourceQueuesRequest>
     {
-        public IRequest Marshall(ListDeadLetterSourceQueuesRequest listDeadLetterSourceQueuesRequest)
+        public IRequest Marshall(ListDeadLetterSourceQueuesRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(listDeadLetterSourceQueuesRequest, "AmazonSQS");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.SQS");
             request.Parameters.Add("Action", "ListDeadLetterSourceQueues");
             request.Parameters.Add("Version", "2012-11-05");
-            if (listDeadLetterSourceQueuesRequest != null && listDeadLetterSourceQueuesRequest.IsSetQueueUrl())
-            {
-                request.Parameters.Add("QueueUrl", StringUtils.FromString(listDeadLetterSourceQueuesRequest.QueueUrl));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetQueueUrl())
+                {
+                    request.Parameters.Add("QueueUrl", StringUtils.FromString(publicRequest.QueueUrl));
+                }
+            }
             return request;
         }
     }

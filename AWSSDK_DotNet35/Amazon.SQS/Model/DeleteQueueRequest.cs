@@ -24,38 +24,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SQS.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteQueue operation.
-    /// <para> Deletes the queue specified by the <b>queue URL</b> , regardless of whether the queue is empty. If the specified queue does not
-    /// exist, Amazon SQS returns a successful response. </para> <para><b>IMPORTANT:</b> Use DeleteQueue with care; once you delete your queue, any
-    /// messages in the queue are no longer available. </para> <para> When you delete a queue, the deletion process takes up to 60 seconds. Requests
-    /// you send involving that queue during the 60 seconds might succeed. For example, a SendMessage request might succeed, but after the 60
-    /// seconds, the queue and that message you sent no longer exist. Also, when you delete a queue, you must wait at least 60 seconds before
-    /// creating a queue with the same name. </para> <para> We reserve the right to delete queues that have had no activity for more than 30 days.
-    /// For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSConcepts.html" >How Amazon
-    /// SQS Queues Work</a> in the <i>Amazon SQS Developer Guide</i> .
-    /// </para>
+    /// 
     /// </summary>
     public partial class DeleteQueueRequest : AmazonSQSRequest
     {
-        private string queueUrl;
+        private string _queueUrl;
 
 
         /// <summary>
+        /// Gets and sets the property QueueUrl. 
+        /// <para>
         /// The URL of the Amazon SQS queue to take action on.
-        ///  
+        /// </para>
         /// </summary>
         public string QueueUrl
         {
-            get { return this.queueUrl; }
-            set { this.queueUrl = value; }
+            get { return this._queueUrl; }
+            set { this._queueUrl = value; }
         }
 
         // Check to see if QueueUrl property is set
         internal bool IsSetQueueUrl()
         {
-            return this.queueUrl != null;
+            return this._queueUrl != null;
         }
 
     }
 }
-    

@@ -12,23 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.SQS.Model
 {
     /// <summary>
-    /// Returns information about the  ListQueues response and response metadata.
+    /// Configuration for accessing Amazon ListQueues service
     /// </summary>
-    public class ListQueuesResponse : ListQueuesResult
+    public partial class ListQueuesResponse : ListQueuesResult
     {
         /// <summary>
         /// Gets and sets the ListQueuesResult property.
-        /// A list of your queues.
+        /// Represents the output of a ListQueues operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the ListQueuesResult class are now available on the ListQueuesResponse class. You should use the properties on ListQueuesResponse instead of accessing them through ListQueuesResult.")]
         public ListQueuesResult ListQueuesResult
@@ -40,4 +36,3 @@ namespace Amazon.SQS.Model
         }
     }
 }
-    

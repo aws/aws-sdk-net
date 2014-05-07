@@ -12,23 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.SQS.Model
 {
     /// <summary>
-    /// Returns information about the  ReceiveMessage response and response metadata.
+    /// Configuration for accessing Amazon ReceiveMessage service
     /// </summary>
-    public class ReceiveMessageResponse : ReceiveMessageResult
+    public partial class ReceiveMessageResponse : ReceiveMessageResult
     {
         /// <summary>
         /// Gets and sets the ReceiveMessageResult property.
-        /// A list of received messages.
+        /// Represents the output of a ReceiveMessage operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the ReceiveMessageResult class are now available on the ReceiveMessageResponse class. You should use the properties on ReceiveMessageResponse instead of accessing them through ReceiveMessageResult.")]
         public ReceiveMessageResult ReceiveMessageResult
@@ -40,4 +36,3 @@ namespace Amazon.SQS.Model
         }
     }
 }
-    

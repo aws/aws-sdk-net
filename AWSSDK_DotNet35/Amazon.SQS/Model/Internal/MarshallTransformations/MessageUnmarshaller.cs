@@ -12,88 +12,108 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.SQS.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.SQS.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   Message Unmarshaller
-     /// </summary>
-    internal class MessageUnmarshaller : IUnmarshaller<Message, XmlUnmarshallerContext>, IUnmarshaller<Message, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for Message Object
+    /// </summary>  
+    internal class MessageUnmarshaller : IUnmarshaller<Message, XmlUnmarshallerContext>, IUnmarshaller<Message, JsonUnmarshallerContext>
     {
-        public Message Unmarshall(XmlUnmarshallerContext context) 
+        public Message Unmarshall(XmlUnmarshallerContext context)
         {
-            Message message = new Message();
+            Message unmarshalledObject = new Message();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("MessageId", targetDepth))
+                    if (context.TestExpression("Attribute", targetDepth))
                     {
-                        message.MessageId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("ReceiptHandle", targetDepth))
-                    {
-                        message.ReceiptHandle = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
-                        continue;
-                    }
-                    if (context.TestExpression("MD5OfBody", targetDepth))
-                    {
-                        message.MD5OfBody = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = new KeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.GetInstance(), StringUnmarshaller.GetInstance());
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Attributes.Add(item);
                         continue;
                     }
                     if (context.TestExpression("Body", targetDepth))
                     {
-                        message.Body = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.Body = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("Attribute", targetDepth))
+                    if (context.TestExpression("MD5OfBody", targetDepth))
                     {
-                        KeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller> unmarshaller = new KeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.GetInstance(), StringUnmarshaller.GetInstance());
-                        KeyValuePair<string, string> kvp = unmarshaller.Unmarshall(context);
-                        message.Attributes.Add(kvp.Key, kvp.Value);
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.MD5OfBody = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("MD5OfMessageAttributes", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.MD5OfMessageAttributes = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("MessageAttribute", targetDepth))
+                    {
+                        var unmarshaller = new KeyValueUnmarshaller<string, MessageAttributeValue, StringUnmarshaller, MessageAttributeValueUnmarshaller>(StringUnmarshaller.GetInstance(), MessageAttributeValueUnmarshaller.GetInstance());
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.MessageAttributes.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("MessageId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.MessageId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ReceiptHandle", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.ReceiptHandle = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return message;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return message;
+            return unmarshalledObject;
         }
 
-        public Message Unmarshall(JsonUnmarshallerContext context) 
+        public Message Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
+
         private static MessageUnmarshaller instance;
-
-        public static MessageUnmarshaller GetInstance() 
+        public static MessageUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new MessageUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new MessageUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

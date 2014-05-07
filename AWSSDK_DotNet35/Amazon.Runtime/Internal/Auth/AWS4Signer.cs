@@ -130,8 +130,8 @@ namespace Amazon.Runtime.Internal.Auth
                                              string awsSecretAccessKey)
         {
             var signedAt = InitializeHeaders(request.Headers, request.Endpoint);
-            var region = DetermineRegion(clientConfig);
             var service = DetermineService(clientConfig);
+            var region = DetermineSigningRegion(clientConfig, service);
             
             var resourcePathParamStart = -1;
             var resourcePath = string.Empty;
@@ -451,7 +451,7 @@ namespace Amazon.Runtime.Internal.Auth
 
         #region Private Signing Helpers
 
-        internal static string DetermineRegion(ClientConfig clientConfig)
+        internal static string DetermineSigningRegion(ClientConfig clientConfig, string serviceName)
         {
             if (!string.IsNullOrEmpty(clientConfig.AuthenticationRegion))
                 return clientConfig.AuthenticationRegion.ToLower(CultureInfo.InvariantCulture);
@@ -462,10 +462,17 @@ namespace Amazon.Runtime.Internal.Auth
                 if (!string.IsNullOrEmpty(parsedRegion))
                     return parsedRegion.ToLower(CultureInfo.InvariantCulture);
             }
-            
-            return clientConfig.RegionEndpoint != null 
-                ? clientConfig.RegionEndpoint.SystemName 
-                : string.Empty;
+
+            if (clientConfig.RegionEndpoint != null)
+            {
+                var serviceEndpoint = clientConfig.RegionEndpoint.GetEndpointForService(serviceName);
+                if (serviceEndpoint.AuthRegion != null)
+                    return serviceEndpoint.AuthRegion;
+
+                return clientConfig.RegionEndpoint.SystemName; 
+            }
+
+            return string.Empty;
         }
 
         internal static string DetermineService(ClientConfig clientConfig)
@@ -804,8 +811,8 @@ namespace Amazon.Runtime.Internal.Auth
             }
 
             var signedAt = DateTime.UtcNow;
-            var region = DetermineRegion(clientConfig);
             const string service = "s3";
+            var region = DetermineSigningRegion(clientConfig, service);
 
             // remove any hash supplied in headers in favor of the 'unsigned-payload' expected by AWS4
             if (request.Headers.ContainsKey(XAmzContentSha256))

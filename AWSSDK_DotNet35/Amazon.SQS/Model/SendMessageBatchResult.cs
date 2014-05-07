@@ -17,51 +17,59 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.SQS.Model
 {
     /// <summary>
-    /// <para>For each message in the batch, the response contains a SendMessageBatchResultEntry tag if the message succeeds or a
-    /// BatchResultErrorEntry tag if the message fails.</para>
+    /// For each message in the batch, the response contains a <a>SendMessageBatchResultEntry</a>
+    /// tag if the message succeeds or a <a>BatchResultErrorEntry</a> tag if the message fails.
     /// </summary>
     public partial class SendMessageBatchResult : AmazonWebServiceResponse
     {
-        
-        private List<SendMessageBatchResultEntry> successful = new List<SendMessageBatchResultEntry>();
-        private List<BatchResultErrorEntry> failed = new List<BatchResultErrorEntry>();
+        private List<BatchResultErrorEntry> _failed = new List<BatchResultErrorEntry>();
+        private List<SendMessageBatchResultEntry> _successful = new List<SendMessageBatchResultEntry>();
 
 
         /// <summary>
-        /// A list of <a>SendMessageBatchResultEntry</a> items.
-        ///  
-        /// </summary>
-        public List<SendMessageBatchResultEntry> Successful
-        {
-            get { return this.successful; }
-            set { this.successful = value; }
-        }
-
-        // Check to see if Successful property is set
-        internal bool IsSetSuccessful()
-        {
-            return this.successful.Count > 0;
-        }
-
-        /// <summary>
-        /// A list of <a>BatchResultErrorEntry</a> items with the error detail about each message that could not be enqueued.
-        ///  
+        /// Gets and sets the property Failed. 
+        /// <para>
+        /// A list of <a>BatchResultErrorEntry</a> items with the error detail about each    
+        ///  message that could not be enqueued.
+        /// </para>
         /// </summary>
         public List<BatchResultErrorEntry> Failed
         {
-            get { return this.failed; }
-            set { this.failed = value; }
+            get { return this._failed; }
+            set { this._failed = value; }
         }
 
         // Check to see if Failed property is set
         internal bool IsSetFailed()
         {
-            return this.failed.Count > 0;
+            return this._failed != null && this._failed.Count > 0; 
         }
+
+
+        /// <summary>
+        /// Gets and sets the property Successful. 
+        /// <para>
+        /// A list of <a>SendMessageBatchResultEntry</a> items.
+        /// </para>
+        /// </summary>
+        public List<SendMessageBatchResultEntry> Successful
+        {
+            get { return this._successful; }
+            set { this._successful = value; }
+        }
+
+        // Check to see if Successful property is set
+        internal bool IsSetSuccessful()
+        {
+            return this._successful != null && this._successful.Count > 0; 
+        }
+
     }
 }

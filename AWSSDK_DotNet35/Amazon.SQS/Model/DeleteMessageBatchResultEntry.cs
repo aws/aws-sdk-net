@@ -18,31 +18,36 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.SQS.Model
 {
     /// <summary>
-    /// <para>Encloses the id an entry in DeleteMessageBatch.</para>
+    /// Encloses the id an entry in <a>DeleteMessageBatch</a>.
     /// </summary>
-    public class DeleteMessageBatchResultEntry
+    public partial class DeleteMessageBatchResultEntry
     {
-        
-        private string id;
+        private string _id;
 
 
         /// <summary>
+        /// Gets and sets the property Id. 
+        /// <para>
         /// Represents a successfully deleted message.
-        ///  
+        /// </para>
         /// </summary>
         public string Id
         {
-            get { return this.id; }
-            set { this.id = value; }
+            get { return this._id; }
+            set { this._id = value; }
         }
 
         // Check to see if Id property is set
         internal bool IsSetId()
         {
-            return this.id != null;
+            return this._id != null;
         }
+
     }
 }

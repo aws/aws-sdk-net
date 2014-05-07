@@ -141,6 +141,7 @@ namespace Amazon.Runtime
         /// Gets and sets the UseHttp.
         /// If this property is set to true, the client attempts
         /// to use HTTP protocol, if the target endpoint supports it.
+        /// By default, this property is set to false.
         /// </summary>
         public bool UseHttp
         {

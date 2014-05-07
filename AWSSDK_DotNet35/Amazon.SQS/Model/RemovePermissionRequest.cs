@@ -24,48 +24,51 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SQS.Model
 {
     /// <summary>
-    /// Container for the parameters to the RemovePermission operation.
-    /// <para>Revokes any permissions in the queue policy that matches the specified <c>Label</c> parameter. Only the owner of the queue can remove
-    /// permissions.</para>
+    /// 
     /// </summary>
     public partial class RemovePermissionRequest : AmazonSQSRequest
     {
-        private string queueUrl;
-        private string label;
+        private string _label;
+        private string _queueUrl;
 
 
         /// <summary>
-        /// The URL of the Amazon SQS queue to take action on.
-        ///  
-        /// </summary>
-        public string QueueUrl
-        {
-            get { return this.queueUrl; }
-            set { this.queueUrl = value; }
-        }
-
-        // Check to see if QueueUrl property is set
-        internal bool IsSetQueueUrl()
-        {
-            return this.queueUrl != null;
-        }
-
-        /// <summary>
-        /// The identification of the permission to remove. This is the label added with the <a>AddPermission</a> action.
-        ///  
+        /// Gets and sets the property Label. 
+        /// <para>
+        /// The identification of the permission to remove. This is the label added with     
+        /// the <a>AddPermission</a> action.
+        /// </para>
         /// </summary>
         public string Label
         {
-            get { return this.label; }
-            set { this.label = value; }
+            get { return this._label; }
+            set { this._label = value; }
         }
 
         // Check to see if Label property is set
         internal bool IsSetLabel()
         {
-            return this.label != null;
+            return this._label != null;
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property QueueUrl. 
+        /// <para>
+        /// The URL of the Amazon SQS queue to take action on.
+        /// </para>
+        /// </summary>
+        public string QueueUrl
+        {
+            get { return this._queueUrl; }
+            set { this._queueUrl = value; }
+        }
+
+        // Check to see if QueueUrl property is set
+        internal bool IsSetQueueUrl()
+        {
+            return this._queueUrl != null;
         }
 
     }
 }
-    

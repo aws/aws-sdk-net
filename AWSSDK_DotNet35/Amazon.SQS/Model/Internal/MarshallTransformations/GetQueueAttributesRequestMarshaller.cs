@@ -14,43 +14,45 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.SQS.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.SQS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Get Queue Attributes Request Marshaller
+    /// GetQueueAttributes Request Marshaller
     /// </summary>       
-    public class GetQueueAttributesRequestMarshaller : IMarshaller<IRequest, GetQueueAttributesRequest>
+    internal class GetQueueAttributesRequestMarshaller : IMarshaller<IRequest, GetQueueAttributesRequest>
     {
-        public IRequest Marshall(GetQueueAttributesRequest getQueueAttributesRequest)
+        public IRequest Marshall(GetQueueAttributesRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(getQueueAttributesRequest, "AmazonSQS");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.SQS");
             request.Parameters.Add("Action", "GetQueueAttributes");
             request.Parameters.Add("Version", "2012-11-05");
-            if (getQueueAttributesRequest != null && getQueueAttributesRequest.IsSetQueueUrl())
-            {
-                request.Parameters.Add("QueueUrl", StringUtils.FromString(getQueueAttributesRequest.QueueUrl));
-            }
-            if (getQueueAttributesRequest != null)
-            {
-                List<string> attributeNamesList = getQueueAttributesRequest.AttributeNames;
 
-                int attributeNamesListIndex = 1;
-                foreach (string attributeNamesListValue in attributeNamesList)
-                { 
-                    request.Parameters.Add("AttributeName." + attributeNamesListIndex, StringUtils.FromString(attributeNamesListValue));
-                    attributeNamesListIndex++;
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetAttributeNames())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.AttributeNames)
+                    {
+                        request.Parameters.Add("AttributeName" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
+                }
+                if(publicRequest.IsSetQueueUrl())
+                {
+                    request.Parameters.Add("QueueUrl", StringUtils.FromString(publicRequest.QueueUrl));
                 }
             }
-
             return request;
         }
     }

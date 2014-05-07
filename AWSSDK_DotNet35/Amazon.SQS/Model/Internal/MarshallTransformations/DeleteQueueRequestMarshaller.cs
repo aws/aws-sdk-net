@@ -14,32 +14,36 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.SQS.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.SQS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Delete Queue Request Marshaller
+    /// DeleteQueue Request Marshaller
     /// </summary>       
-    public class DeleteQueueRequestMarshaller : IMarshaller<IRequest, DeleteQueueRequest>
+    internal class DeleteQueueRequestMarshaller : IMarshaller<IRequest, DeleteQueueRequest>
     {
-        public IRequest Marshall(DeleteQueueRequest deleteQueueRequest)
+        public IRequest Marshall(DeleteQueueRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(deleteQueueRequest, "AmazonSQS");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.SQS");
             request.Parameters.Add("Action", "DeleteQueue");
             request.Parameters.Add("Version", "2012-11-05");
-            if (deleteQueueRequest != null && deleteQueueRequest.IsSetQueueUrl())
-            {
-                request.Parameters.Add("QueueUrl", StringUtils.FromString(deleteQueueRequest.QueueUrl));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetQueueUrl())
+                {
+                    request.Parameters.Add("QueueUrl", StringUtils.FromString(publicRequest.QueueUrl));
+                }
+            }
             return request;
         }
     }

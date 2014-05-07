@@ -12,23 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.SQS.Model
 {
     /// <summary>
-    /// Returns information about the  SendMessage response and response metadata.
+    /// Configuration for accessing Amazon SendMessage service
     /// </summary>
-    public class SendMessageResponse : SendMessageResult
+    public partial class SendMessageResponse : SendMessageResult
     {
         /// <summary>
         /// Gets and sets the SendMessageResult property.
-        /// The MD5OfMessageBody and MessageId elements.
+        /// Represents the output of a SendMessage operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the SendMessageResult class are now available on the SendMessageResponse class. You should use the properties on SendMessageResponse instead of accessing them through SendMessageResult.")]
         public SendMessageResult SendMessageResult
@@ -40,4 +36,3 @@ namespace Amazon.SQS.Model
         }
     }
 }
-    

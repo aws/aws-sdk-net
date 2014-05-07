@@ -14,32 +14,36 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.SQS.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.SQS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// List Queues Request Marshaller
+    /// ListQueues Request Marshaller
     /// </summary>       
-    public class ListQueuesRequestMarshaller : IMarshaller<IRequest, ListQueuesRequest>
+    internal class ListQueuesRequestMarshaller : IMarshaller<IRequest, ListQueuesRequest>
     {
-        public IRequest Marshall(ListQueuesRequest listQueuesRequest)
+        public IRequest Marshall(ListQueuesRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(listQueuesRequest, "AmazonSQS");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.SQS");
             request.Parameters.Add("Action", "ListQueues");
             request.Parameters.Add("Version", "2012-11-05");
-            if (listQueuesRequest != null && listQueuesRequest.IsSetQueueNamePrefix())
-            {
-                request.Parameters.Add("QueueNamePrefix", StringUtils.FromString(listQueuesRequest.QueueNamePrefix));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetQueueNamePrefix())
+                {
+                    request.Parameters.Add("QueueNamePrefix", StringUtils.FromString(publicRequest.QueueNamePrefix));
+                }
+            }
             return request;
         }
     }

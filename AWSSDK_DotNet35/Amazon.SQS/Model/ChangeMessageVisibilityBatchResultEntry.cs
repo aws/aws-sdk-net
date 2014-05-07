@@ -18,31 +18,36 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
 namespace Amazon.SQS.Model
 {
     /// <summary>
-    /// <para>Encloses the id of an entry in ChangeMessageVisibilityBatch.</para>
+    /// Encloses the id of an entry in <a>ChangeMessageVisibilityBatch</a>.
     /// </summary>
-    public class ChangeMessageVisibilityBatchResultEntry
+    public partial class ChangeMessageVisibilityBatchResultEntry
     {
-        
-        private string id;
+        private string _id;
 
 
         /// <summary>
-        /// Represents a message whose visibility timeout has been changed successfully.
-        ///  
+        /// Gets and sets the property Id. 
+        /// <para>
+        /// Represents a message whose visibility timeout has been changed      successfully.
+        /// </para>
         /// </summary>
         public string Id
         {
-            get { return this.id; }
-            set { this.id = value; }
+            get { return this._id; }
+            set { this._id = value; }
         }
 
         // Check to see if Id property is set
         internal bool IsSetId()
         {
-            return this.id != null;
+            return this._id != null;
         }
+
     }
 }

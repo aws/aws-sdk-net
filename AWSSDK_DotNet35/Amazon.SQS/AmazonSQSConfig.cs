@@ -12,15 +12,17 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+
 using System;
 
 using Amazon.Runtime;
 
+
 namespace Amazon.SQS
 {
-
     /// <summary>
-    /// Configuration for accessing Amazon Simple Queue Service service
+    /// Configuration for accessing Amazon SQS service
     /// </summary>
     public partial class AmazonSQSConfig : ClientConfig
     {
@@ -29,7 +31,7 @@ namespace Amazon.SQS
         /// </summary>
         public AmazonSQSConfig()
         {
-            
+            this.AuthenticationServiceName = "sqs";
         }
 
         /// <summary>
@@ -39,9 +41,7 @@ namespace Amazon.SQS
         {
             get
             {
-                
                 return "sqs";
-                    
             }
         }
 
@@ -57,5 +57,3 @@ namespace Amazon.SQS
         }
     }
 }
-
-    

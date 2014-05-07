@@ -14,58 +14,58 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.SQS.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.SQS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Add Permission Request Marshaller
+    /// AddPermission Request Marshaller
     /// </summary>       
-    public class AddPermissionRequestMarshaller : IMarshaller<IRequest, AddPermissionRequest>
+    internal class AddPermissionRequestMarshaller : IMarshaller<IRequest, AddPermissionRequest>
     {
-        public IRequest Marshall(AddPermissionRequest addPermissionRequest)
+        public IRequest Marshall(AddPermissionRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(addPermissionRequest, "AmazonSQS");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.SQS");
             request.Parameters.Add("Action", "AddPermission");
             request.Parameters.Add("Version", "2012-11-05");
-            if (addPermissionRequest != null && addPermissionRequest.IsSetQueueUrl())
-            {
-                request.Parameters.Add("QueueUrl", StringUtils.FromString(addPermissionRequest.QueueUrl));
-            }
-            if (addPermissionRequest != null && addPermissionRequest.IsSetLabel())
-            {
-                request.Parameters.Add("Label", StringUtils.FromString(addPermissionRequest.Label));
-            }
-            if (addPermissionRequest != null)
-            {
-                List<string> aWSAccountIdsList = addPermissionRequest.AWSAccountIds;
 
-                int aWSAccountIdsListIndex = 1;
-                foreach (string aWSAccountIdsListValue in aWSAccountIdsList)
-                { 
-                    request.Parameters.Add("AWSAccountId." + aWSAccountIdsListIndex, StringUtils.FromString(aWSAccountIdsListValue));
-                    aWSAccountIdsListIndex++;
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetActions())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.Actions)
+                    {
+                        request.Parameters.Add("ActionName" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
+                }
+                if(publicRequest.IsSetAWSAccountIds())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.AWSAccountIds)
+                    {
+                        request.Parameters.Add("AWSAccountId" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
+                }
+                if(publicRequest.IsSetLabel())
+                {
+                    request.Parameters.Add("Label", StringUtils.FromString(publicRequest.Label));
+                }
+                if(publicRequest.IsSetQueueUrl())
+                {
+                    request.Parameters.Add("QueueUrl", StringUtils.FromString(publicRequest.QueueUrl));
                 }
             }
-            if (addPermissionRequest != null)
-            {
-                List<string> actionsList = addPermissionRequest.Actions;
-
-                int actionsListIndex = 1;
-                foreach (string actionsListValue in actionsList)
-                { 
-                    request.Parameters.Add("ActionName." + actionsListIndex, StringUtils.FromString(actionsListValue));
-                    actionsListIndex++;
-                }
-            }
-
             return request;
         }
     }

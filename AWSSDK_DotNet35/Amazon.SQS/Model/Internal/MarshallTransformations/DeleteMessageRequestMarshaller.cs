@@ -14,36 +14,40 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.SQS.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.SQS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Delete Message Request Marshaller
+    /// DeleteMessage Request Marshaller
     /// </summary>       
-    public class DeleteMessageRequestMarshaller : IMarshaller<IRequest, DeleteMessageRequest>
+    internal class DeleteMessageRequestMarshaller : IMarshaller<IRequest, DeleteMessageRequest>
     {
-        public IRequest Marshall(DeleteMessageRequest deleteMessageRequest)
+        public IRequest Marshall(DeleteMessageRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(deleteMessageRequest, "AmazonSQS");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.SQS");
             request.Parameters.Add("Action", "DeleteMessage");
             request.Parameters.Add("Version", "2012-11-05");
-            if (deleteMessageRequest != null && deleteMessageRequest.IsSetQueueUrl())
-            {
-                request.Parameters.Add("QueueUrl", StringUtils.FromString(deleteMessageRequest.QueueUrl));
-            }
-            if (deleteMessageRequest != null && deleteMessageRequest.IsSetReceiptHandle())
-            {
-                request.Parameters.Add("ReceiptHandle", StringUtils.FromString(deleteMessageRequest.ReceiptHandle));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetQueueUrl())
+                {
+                    request.Parameters.Add("QueueUrl", StringUtils.FromString(publicRequest.QueueUrl));
+                }
+                if(publicRequest.IsSetReceiptHandle())
+                {
+                    request.Parameters.Add("ReceiptHandle", StringUtils.FromString(publicRequest.ReceiptHandle));
+                }
+            }
             return request;
         }
     }

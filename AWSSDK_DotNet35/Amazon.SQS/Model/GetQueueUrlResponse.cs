@@ -12,23 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.SQS.Model
 {
     /// <summary>
-    /// Returns information about the  GetQueueUrl response and response metadata.
+    /// Configuration for accessing Amazon GetQueueUrl service
     /// </summary>
-    public class GetQueueUrlResponse : GetQueueUrlResult
+    public partial class GetQueueUrlResponse : GetQueueUrlResult
     {
         /// <summary>
         /// Gets and sets the GetQueueUrlResult property.
-        /// For more information, see Responses in the Amazon SQS Developer Guide.
+        /// Represents the output of a GetQueueUrl operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the GetQueueUrlResult class are now available on the GetQueueUrlResponse class. You should use the properties on GetQueueUrlResponse instead of accessing them through GetQueueUrlResult.")]
         public GetQueueUrlResult GetQueueUrlResult
@@ -40,4 +36,3 @@ namespace Amazon.SQS.Model
         }
     }
 }
-    

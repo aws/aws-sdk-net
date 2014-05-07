@@ -12,21 +12,27 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.SQS.Model
 {
     /// <summary>
-    /// Returns information about the DeleteQueue response metadata.
-    /// The DeleteQueue operation has a void result type.
+    /// Configuration for accessing Amazon DeleteQueue service
     /// </summary>
-    public partial class DeleteQueueResponse : AmazonWebServiceResponse
+    public partial class DeleteQueueResponse : DeleteQueueResult
     {
+        /// <summary>
+        /// Gets and sets the DeleteQueueResult property.
+        /// Represents the output of a DeleteQueue operation.
+        /// </summary>
+        [Obsolete(@"This property has been deprecated. All properties of the DeleteQueueResult class are now available on the DeleteQueueResponse class. You should use the properties on DeleteQueueResponse instead of accessing them through DeleteQueueResult.")]
+        public DeleteQueueResult DeleteQueueResult
+        {
+            get
+            {
+                return this;
+            }
+        }
     }
 }
-    

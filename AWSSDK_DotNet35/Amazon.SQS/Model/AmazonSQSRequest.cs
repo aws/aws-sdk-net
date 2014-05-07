@@ -18,10 +18,9 @@ using Amazon.Runtime;
 namespace Amazon.SQS
 {
     /// <summary>
-    /// Base class for AmazonSQS operation requests.
+    /// Base class for SQS operation requests.
     /// </summary>
     public partial class AmazonSQSRequest : AmazonWebServiceRequest
     {
     }
 }
-    

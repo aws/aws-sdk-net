@@ -24,52 +24,50 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SQS.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteMessageBatch operation.
-    /// <para>Deletes multiple messages. This is a batch version of DeleteMessage. The result of the delete action on each message is reported
-    /// individually in the response.</para> <para><b>IMPORTANT:</b> Because the batch request can result in a combination of successful and
-    /// unsuccessful actions, you should check for batch errors even when the call returns an HTTP status code of 200. </para>
-    /// <para><b>NOTE:</b>Some API actions take lists of parameters. These lists are specified using the param.n notation. Values of n are integers
-    /// starting from 1. For example, a parameter list with two elements looks like this: </para> <para> <c>&amp;amp;Attribute.1=this</c> </para>
-    /// <para> <c>&amp;amp;Attribute.2=that</c> </para>
+    /// 
     /// </summary>
     public partial class DeleteMessageBatchRequest : AmazonSQSRequest
     {
-        private string queueUrl;
-        private List<DeleteMessageBatchRequestEntry> entries = new List<DeleteMessageBatchRequestEntry>();
+        private List<DeleteMessageBatchRequestEntry> _entries = new List<DeleteMessageBatchRequestEntry>();
+        private string _queueUrl;
 
 
         /// <summary>
-        /// The URL of the Amazon SQS queue to take action on.
-        ///  
-        /// </summary>
-        public string QueueUrl
-        {
-            get { return this.queueUrl; }
-            set { this.queueUrl = value; }
-        }
-
-        // Check to see if QueueUrl property is set
-        internal bool IsSetQueueUrl()
-        {
-            return this.queueUrl != null;
-        }
-
-        /// <summary>
+        /// Gets and sets the property Entries. 
+        /// <para>
         /// A list of receipt handles for the messages to be deleted.
-        ///  
+        /// </para>
         /// </summary>
         public List<DeleteMessageBatchRequestEntry> Entries
         {
-            get { return this.entries; }
-            set { this.entries = value; }
+            get { return this._entries; }
+            set { this._entries = value; }
         }
 
         // Check to see if Entries property is set
         internal bool IsSetEntries()
         {
-            return this.entries.Count > 0;
+            return this._entries != null && this._entries.Count > 0; 
+        }
+
+
+        /// <summary>
+        /// Gets and sets the property QueueUrl. 
+        /// <para>
+        /// The URL of the Amazon SQS queue to take action on.
+        /// </para>
+        /// </summary>
+        public string QueueUrl
+        {
+            get { return this._queueUrl; }
+            set { this._queueUrl = value; }
+        }
+
+        // Check to see if QueueUrl property is set
+        internal bool IsSetQueueUrl()
+        {
+            return this._queueUrl != null;
         }
 
     }
 }
-    

@@ -12,75 +12,88 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.SQS.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.SQS.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   SendMessageBatchResultEntry Unmarshaller
-     /// </summary>
-    internal class SendMessageBatchResultEntryUnmarshaller : IUnmarshaller<SendMessageBatchResultEntry, XmlUnmarshallerContext>, IUnmarshaller<SendMessageBatchResultEntry, JsonUnmarshallerContext> 
+    /// <summary>
+    /// Response Unmarshaller for SendMessageBatchResultEntry Object
+    /// </summary>  
+    internal class SendMessageBatchResultEntryUnmarshaller : IUnmarshaller<SendMessageBatchResultEntry, XmlUnmarshallerContext>, IUnmarshaller<SendMessageBatchResultEntry, JsonUnmarshallerContext>
     {
-        public SendMessageBatchResultEntry Unmarshall(XmlUnmarshallerContext context) 
+        public SendMessageBatchResultEntry Unmarshall(XmlUnmarshallerContext context)
         {
-            SendMessageBatchResultEntry sendMessageBatchResultEntry = new SendMessageBatchResultEntry();
+            SendMessageBatchResultEntry unmarshalledObject = new SendMessageBatchResultEntry();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
                     if (context.TestExpression("Id", targetDepth))
                     {
-                        sendMessageBatchResultEntry.Id = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.Id = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("MessageId", targetDepth))
+                    if (context.TestExpression("MD5OfMessageAttributes", targetDepth))
                     {
-                        sendMessageBatchResultEntry.MessageId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.MD5OfMessageAttributes = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("MD5OfMessageBody", targetDepth))
                     {
-                        sendMessageBatchResultEntry.MD5OfMessageBody = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.MD5OfMessageBody = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("MessageId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        unmarshalledObject.MessageId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return sendMessageBatchResultEntry;
+                    return unmarshalledObject;
                 }
             }
-                        
 
-
-            return sendMessageBatchResultEntry;
+            return unmarshalledObject;
         }
 
-        public SendMessageBatchResultEntry Unmarshall(JsonUnmarshallerContext context) 
+        public SendMessageBatchResultEntry Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
+
         private static SendMessageBatchResultEntryUnmarshaller instance;
-
-        public static SendMessageBatchResultEntryUnmarshaller GetInstance() 
+        public static SendMessageBatchResultEntryUnmarshaller GetInstance()
         {
-            if (instance == null) 
-               instance = new SendMessageBatchResultEntryUnmarshaller();
-
+            if (instance == null)
+            {
+                instance = new SendMessageBatchResultEntryUnmarshaller();
+            }
             return instance;
         }
+
     }
 }
-    

@@ -12,23 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.SQS.Model
 {
     /// <summary>
-    /// Returns information about the  GetQueueAttributes response and response metadata.
+    /// Configuration for accessing Amazon GetQueueAttributes service
     /// </summary>
-    public class GetQueueAttributesResponse : GetQueueAttributesResult
+    public partial class GetQueueAttributesResponse : GetQueueAttributesResult
     {
         /// <summary>
         /// Gets and sets the GetQueueAttributesResult property.
-        /// A list of returned queue attributes.
+        /// Represents the output of a GetQueueAttributes operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the GetQueueAttributesResult class are now available on the GetQueueAttributesResponse class. You should use the properties on GetQueueAttributesResponse instead of accessing them through GetQueueAttributesResult.")]
         public GetQueueAttributesResult GetQueueAttributesResult
@@ -40,4 +36,3 @@ namespace Amazon.SQS.Model
         }
     }
 }
-    

@@ -14,55 +14,56 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.SQS.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.SQS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Change Message Visibility Batch Request Marshaller
+    /// ChangeMessageVisibilityBatch Request Marshaller
     /// </summary>       
-    public class ChangeMessageVisibilityBatchRequestMarshaller : IMarshaller<IRequest, ChangeMessageVisibilityBatchRequest>
+    internal class ChangeMessageVisibilityBatchRequestMarshaller : IMarshaller<IRequest, ChangeMessageVisibilityBatchRequest>
     {
-        public IRequest Marshall(ChangeMessageVisibilityBatchRequest changeMessageVisibilityBatchRequest)
+        public IRequest Marshall(ChangeMessageVisibilityBatchRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(changeMessageVisibilityBatchRequest, "AmazonSQS");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.SQS");
             request.Parameters.Add("Action", "ChangeMessageVisibilityBatch");
             request.Parameters.Add("Version", "2012-11-05");
-            if (changeMessageVisibilityBatchRequest != null && changeMessageVisibilityBatchRequest.IsSetQueueUrl())
-            {
-                request.Parameters.Add("QueueUrl", StringUtils.FromString(changeMessageVisibilityBatchRequest.QueueUrl));
-            }
 
-            if (changeMessageVisibilityBatchRequest != null)
+            if(publicRequest != null)
             {
-                List<ChangeMessageVisibilityBatchRequestEntry> entriesList = changeMessageVisibilityBatchRequest.Entries;
-                int entriesListIndex = 1;
-                foreach (ChangeMessageVisibilityBatchRequestEntry entriesListValue in entriesList)
+                if(publicRequest.IsSetEntries())
                 {
-                    if (entriesListValue != null && entriesListValue.IsSetId())
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.Entries)
                     {
-                        request.Parameters.Add("ChangeMessageVisibilityBatchRequestEntry." + entriesListIndex + ".Id", StringUtils.FromString(entriesListValue.Id));
+                        if(publicRequestlistValue.IsSetId())
+                        {
+                            request.Parameters.Add("ChangeMessageVisibilityBatchRequestEntry" + "." + publicRequestlistValueIndex + "." + "Id", StringUtils.FromString(publicRequestlistValue.Id));
+                        }
+                        if(publicRequestlistValue.IsSetReceiptHandle())
+                        {
+                            request.Parameters.Add("ChangeMessageVisibilityBatchRequestEntry" + "." + publicRequestlistValueIndex + "." + "ReceiptHandle", StringUtils.FromString(publicRequestlistValue.ReceiptHandle));
+                        }
+                        if(publicRequestlistValue.IsSetVisibilityTimeout())
+                        {
+                            request.Parameters.Add("ChangeMessageVisibilityBatchRequestEntry" + "." + publicRequestlistValueIndex + "." + "VisibilityTimeout", StringUtils.FromInt(publicRequestlistValue.VisibilityTimeout));
+                        }
+                        publicRequestlistValueIndex++;
                     }
-                    if (entriesListValue != null && entriesListValue.IsSetReceiptHandle())
-                    {
-                        request.Parameters.Add("ChangeMessageVisibilityBatchRequestEntry." + entriesListIndex + ".ReceiptHandle", StringUtils.FromString(entriesListValue.ReceiptHandle));
-                    }
-                    if (entriesListValue != null && entriesListValue.IsSetVisibilityTimeout())
-                    {
-                        request.Parameters.Add("ChangeMessageVisibilityBatchRequestEntry." + entriesListIndex + ".VisibilityTimeout", StringUtils.FromInt(entriesListValue.VisibilityTimeout));
-                    }
-
-                    entriesListIndex++;
+                }
+                if(publicRequest.IsSetQueueUrl())
+                {
+                    request.Parameters.Add("QueueUrl", StringUtils.FromString(publicRequest.QueueUrl));
                 }
             }
-
             return request;
         }
     }

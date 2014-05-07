@@ -12,24 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.SQS.Model
 {
     /// <summary>
-    /// Returns information about the  ChangeMessageVisibilityBatch response and response metadata.
+    /// Configuration for accessing Amazon ChangeMessageVisibilityBatch service
     /// </summary>
-    public class ChangeMessageVisibilityBatchResponse : ChangeMessageVisibilityBatchResult
+    public partial class ChangeMessageVisibilityBatchResponse : ChangeMessageVisibilityBatchResult
     {
         /// <summary>
         /// Gets and sets the ChangeMessageVisibilityBatchResult property.
-        /// For each message in the batch, the response contains a ChangeMessageVisibilityBatchResultEntry tag if the message succeeds or a
-        /// BatchResultErrorEntry tag if the message fails.
+        /// Represents the output of a ChangeMessageVisibilityBatch operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the ChangeMessageVisibilityBatchResult class are now available on the ChangeMessageVisibilityBatchResponse class. You should use the properties on ChangeMessageVisibilityBatchResponse instead of accessing them through ChangeMessageVisibilityBatchResult.")]
         public ChangeMessageVisibilityBatchResult ChangeMessageVisibilityBatchResult
@@ -41,4 +36,3 @@ namespace Amazon.SQS.Model
         }
     }
 }
-    

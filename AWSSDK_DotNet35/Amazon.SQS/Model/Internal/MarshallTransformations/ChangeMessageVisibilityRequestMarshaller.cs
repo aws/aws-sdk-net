@@ -14,40 +14,44 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.SQS.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.SQS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Change Message Visibility Request Marshaller
+    /// ChangeMessageVisibility Request Marshaller
     /// </summary>       
-    public class ChangeMessageVisibilityRequestMarshaller : IMarshaller<IRequest, ChangeMessageVisibilityRequest>
+    internal class ChangeMessageVisibilityRequestMarshaller : IMarshaller<IRequest, ChangeMessageVisibilityRequest>
     {
-        public IRequest Marshall(ChangeMessageVisibilityRequest changeMessageVisibilityRequest)
+        public IRequest Marshall(ChangeMessageVisibilityRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(changeMessageVisibilityRequest, "AmazonSQS");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.SQS");
             request.Parameters.Add("Action", "ChangeMessageVisibility");
             request.Parameters.Add("Version", "2012-11-05");
-            if (changeMessageVisibilityRequest != null && changeMessageVisibilityRequest.IsSetQueueUrl())
-            {
-                request.Parameters.Add("QueueUrl", StringUtils.FromString(changeMessageVisibilityRequest.QueueUrl));
-            }
-            if (changeMessageVisibilityRequest != null && changeMessageVisibilityRequest.IsSetReceiptHandle())
-            {
-                request.Parameters.Add("ReceiptHandle", StringUtils.FromString(changeMessageVisibilityRequest.ReceiptHandle));
-            }
-            if (changeMessageVisibilityRequest != null && changeMessageVisibilityRequest.IsSetVisibilityTimeout())
-            {
-                request.Parameters.Add("VisibilityTimeout", StringUtils.FromInt(changeMessageVisibilityRequest.VisibilityTimeout));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetQueueUrl())
+                {
+                    request.Parameters.Add("QueueUrl", StringUtils.FromString(publicRequest.QueueUrl));
+                }
+                if(publicRequest.IsSetReceiptHandle())
+                {
+                    request.Parameters.Add("ReceiptHandle", StringUtils.FromString(publicRequest.ReceiptHandle));
+                }
+                if(publicRequest.IsSetVisibilityTimeout())
+                {
+                    request.Parameters.Add("VisibilityTimeout", StringUtils.FromInt(publicRequest.VisibilityTimeout));
+                }
+            }
             return request;
         }
     }

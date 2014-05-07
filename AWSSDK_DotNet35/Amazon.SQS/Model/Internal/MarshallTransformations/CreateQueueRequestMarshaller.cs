@@ -14,50 +14,51 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.SQS.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.SQS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Create Queue Request Marshaller
+    /// CreateQueue Request Marshaller
     /// </summary>       
-    public class CreateQueueRequestMarshaller : IMarshaller<IRequest, CreateQueueRequest>
+    internal class CreateQueueRequestMarshaller : IMarshaller<IRequest, CreateQueueRequest>
     {
-        public IRequest Marshall(CreateQueueRequest createQueueRequest)
+        public IRequest Marshall(CreateQueueRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(createQueueRequest, "AmazonSQS");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.SQS");
             request.Parameters.Add("Action", "CreateQueue");
             request.Parameters.Add("Version", "2012-11-05");
-            if (createQueueRequest != null && createQueueRequest.IsSetQueueName())
+
+            if(publicRequest != null)
             {
-                request.Parameters.Add("QueueName", StringUtils.FromString(createQueueRequest.QueueName));
-            }
-            if (createQueueRequest != null)
-            {
-                if (createQueueRequest.Attributes != null)
+                if(publicRequest.IsSetAttributes())
                 {
-                    int attributesListIndex = 1;
-                    foreach (string key in createQueueRequest.Attributes.Keys)
+                    int mapIndex = 1;
+                    foreach(var key in publicRequest.Attributes.Keys)
                     {
-                        string value;
-                        bool hasValue = createQueueRequest.Attributes.TryGetValue(key, out value);
-                                    request.Parameters.Add("Attribute." + attributesListIndex + ".Name", StringUtils.FromString(key));
-                        if (hasValue) 
+                        String value;
+                        bool hasValue = publicRequest.Attributes.TryGetValue(key, out value);
+                        request.Parameters.Add("Attribute" + "." + mapIndex + "." + "Name", StringUtils.FromString(key));
+                        if (hasValue)
                         {
-                            request.Parameters.Add("Attribute." + attributesListIndex + ".Value", StringUtils.FromString(value));
+                            request.Parameters.Add("Attribute" + "." + mapIndex + "." + "Value", StringUtils.FromString(value));
                         }
-                            ++attributesListIndex;
+                        mapIndex++;
                     }
                 }
+                if(publicRequest.IsSetQueueName())
+                {
+                    request.Parameters.Add("QueueName", StringUtils.FromString(publicRequest.QueueName));
+                }
             }
-
             return request;
         }
     }

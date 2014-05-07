@@ -12,85 +12,72 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
 using System;
 
 using Amazon.Runtime;
 
-
 namespace Amazon.SQS
 {
 
-
-    /// <summary>Queue Attribute Name
+    /// <summary>
+    /// Constants used for properties of type QueueAttributeName.
     /// </summary>
     public class QueueAttributeName : ConstantClass
     {
 
-
-       /// <summary>Constant ApproximateNumberOfMessages for QueueAttributeName
-       /// </summary>
+        /// <summary>
+        /// Constant ApproximateNumberOfMessages for QueueAttributeName
+        /// </summary>
         public static readonly QueueAttributeName ApproximateNumberOfMessages = new QueueAttributeName("ApproximateNumberOfMessages");
-    
-
-       /// <summary>Constant ApproximateNumberOfMessagesDelayed for QueueAttributeName
-       /// </summary>
+        /// <summary>
+        /// Constant ApproximateNumberOfMessagesDelayed for QueueAttributeName
+        /// </summary>
         public static readonly QueueAttributeName ApproximateNumberOfMessagesDelayed = new QueueAttributeName("ApproximateNumberOfMessagesDelayed");
-    
-
-       /// <summary>Constant ApproximateNumberOfMessagesNotVisible for QueueAttributeName
-       /// </summary>
+        /// <summary>
+        /// Constant ApproximateNumberOfMessagesNotVisible for QueueAttributeName
+        /// </summary>
         public static readonly QueueAttributeName ApproximateNumberOfMessagesNotVisible = new QueueAttributeName("ApproximateNumberOfMessagesNotVisible");
-    
-
-       /// <summary>Constant CreatedTimestamp for QueueAttributeName
-       /// </summary>
+        /// <summary>
+        /// Constant CreatedTimestamp for QueueAttributeName
+        /// </summary>
         public static readonly QueueAttributeName CreatedTimestamp = new QueueAttributeName("CreatedTimestamp");
-    
-
-       /// <summary>Constant DelaySeconds for QueueAttributeName
-       /// </summary>
+        /// <summary>
+        /// Constant DelaySeconds for QueueAttributeName
+        /// </summary>
         public static readonly QueueAttributeName DelaySeconds = new QueueAttributeName("DelaySeconds");
-    
-
-       /// <summary>Constant LastModifiedTimestamp for QueueAttributeName
-       /// </summary>
+        /// <summary>
+        /// Constant LastModifiedTimestamp for QueueAttributeName
+        /// </summary>
         public static readonly QueueAttributeName LastModifiedTimestamp = new QueueAttributeName("LastModifiedTimestamp");
-    
-
-       /// <summary>Constant MaximumMessageSize for QueueAttributeName
-       /// </summary>
+        /// <summary>
+        /// Constant MaximumMessageSize for QueueAttributeName
+        /// </summary>
         public static readonly QueueAttributeName MaximumMessageSize = new QueueAttributeName("MaximumMessageSize");
-    
-
-       /// <summary>Constant MessageRetentionPeriod for QueueAttributeName
-       /// </summary>
+        /// <summary>
+        /// Constant MessageRetentionPeriod for QueueAttributeName
+        /// </summary>
         public static readonly QueueAttributeName MessageRetentionPeriod = new QueueAttributeName("MessageRetentionPeriod");
-    
-
-       /// <summary>Constant Policy for QueueAttributeName
-       /// </summary>
+        /// <summary>
+        /// Constant Policy for QueueAttributeName
+        /// </summary>
         public static readonly QueueAttributeName Policy = new QueueAttributeName("Policy");
-    
-
-       /// <summary>Constant QueueArn for QueueAttributeName
-       /// </summary>
+        /// <summary>
+        /// Constant QueueArn for QueueAttributeName
+        /// </summary>
         public static readonly QueueAttributeName QueueArn = new QueueAttributeName("QueueArn");
-    
-
-       /// <summary>Constant ReceiveMessageWaitTimeSeconds for QueueAttributeName
-       /// </summary>
+        /// <summary>
+        /// Constant ReceiveMessageWaitTimeSeconds for QueueAttributeName
+        /// </summary>
         public static readonly QueueAttributeName ReceiveMessageWaitTimeSeconds = new QueueAttributeName("ReceiveMessageWaitTimeSeconds");
-    
-
-       /// <summary>Constant RedrivePolicy for QueueAttributeName
-       /// </summary>
+        /// <summary>
+        /// Constant RedrivePolicy for QueueAttributeName
+        /// </summary>
         public static readonly QueueAttributeName RedrivePolicy = new QueueAttributeName("RedrivePolicy");
-    
-
-       /// <summary>Constant VisibilityTimeout for QueueAttributeName
-       /// </summary>
+        /// <summary>
+        /// Constant VisibilityTimeout for QueueAttributeName
+        /// </summary>
         public static readonly QueueAttributeName VisibilityTimeout = new QueueAttributeName("VisibilityTimeout");
-    
 
         /// <summary>
         /// Default Constructor
@@ -115,7 +102,5 @@ namespace Amazon.SQS
             return FindValue(value);
         }
     }
-    
 
 }
-        

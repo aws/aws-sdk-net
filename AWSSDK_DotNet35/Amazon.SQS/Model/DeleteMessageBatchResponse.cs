@@ -12,24 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.SQS.Model
 {
     /// <summary>
-    /// Returns information about the  DeleteMessageBatch response and response metadata.
+    /// Configuration for accessing Amazon DeleteMessageBatch service
     /// </summary>
-    public class DeleteMessageBatchResponse : DeleteMessageBatchResult
+    public partial class DeleteMessageBatchResponse : DeleteMessageBatchResult
     {
         /// <summary>
         /// Gets and sets the DeleteMessageBatchResult property.
-        /// For each message in the batch, the response contains a DeleteMessageBatchResultEntry tag if the message is deleted or a
-        /// BatchResultErrorEntry tag if the message cannot be deleted.
+        /// Represents the output of a DeleteMessageBatch operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the DeleteMessageBatchResult class are now available on the DeleteMessageBatchResponse class. You should use the properties on DeleteMessageBatchResponse instead of accessing them through DeleteMessageBatchResult.")]
         public DeleteMessageBatchResult DeleteMessageBatchResult
@@ -41,4 +36,3 @@ namespace Amazon.SQS.Model
         }
     }
 }
-    

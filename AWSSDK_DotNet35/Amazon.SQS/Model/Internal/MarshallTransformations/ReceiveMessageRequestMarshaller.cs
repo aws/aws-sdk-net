@@ -14,55 +14,66 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.SQS.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.SQS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Receive Message Request Marshaller
+    /// ReceiveMessage Request Marshaller
     /// </summary>       
-    public class ReceiveMessageRequestMarshaller : IMarshaller<IRequest, ReceiveMessageRequest>
+    internal class ReceiveMessageRequestMarshaller : IMarshaller<IRequest, ReceiveMessageRequest>
     {
-        public IRequest Marshall(ReceiveMessageRequest receiveMessageRequest)
+        public IRequest Marshall(ReceiveMessageRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(receiveMessageRequest, "AmazonSQS");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.SQS");
             request.Parameters.Add("Action", "ReceiveMessage");
             request.Parameters.Add("Version", "2012-11-05");
-            if (receiveMessageRequest != null && receiveMessageRequest.IsSetQueueUrl())
-            {
-                request.Parameters.Add("QueueUrl", StringUtils.FromString(receiveMessageRequest.QueueUrl));
-            }
-            if (receiveMessageRequest != null)
-            {
-                List<string> attributeNamesList = receiveMessageRequest.AttributeNames;
 
-                int attributeNamesListIndex = 1;
-                foreach (string attributeNamesListValue in attributeNamesList)
-                { 
-                    request.Parameters.Add("AttributeName." + attributeNamesListIndex, StringUtils.FromString(attributeNamesListValue));
-                    attributeNamesListIndex++;
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetAttributeNames())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.AttributeNames)
+                    {
+                        request.Parameters.Add("AttributeName" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
+                }
+                if(publicRequest.IsSetMaxNumberOfMessages())
+                {
+                    request.Parameters.Add("MaxNumberOfMessages", StringUtils.FromInt(publicRequest.MaxNumberOfMessages));
+                }
+                if(publicRequest.IsSetMessageAttributeNames())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.MessageAttributeNames)
+                    {
+                        request.Parameters.Add("MessageAttributeName" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
+                }
+                if(publicRequest.IsSetQueueUrl())
+                {
+                    request.Parameters.Add("QueueUrl", StringUtils.FromString(publicRequest.QueueUrl));
+                }
+                if(publicRequest.IsSetVisibilityTimeout())
+                {
+                    request.Parameters.Add("VisibilityTimeout", StringUtils.FromInt(publicRequest.VisibilityTimeout));
+                }
+                if(publicRequest.IsSetWaitTimeSeconds())
+                {
+                    request.Parameters.Add("WaitTimeSeconds", StringUtils.FromInt(publicRequest.WaitTimeSeconds));
                 }
             }
-            if (receiveMessageRequest != null && receiveMessageRequest.IsSetMaxNumberOfMessages())
-            {
-                request.Parameters.Add("MaxNumberOfMessages", StringUtils.FromInt(receiveMessageRequest.MaxNumberOfMessages));
-            }
-            if (receiveMessageRequest != null && receiveMessageRequest.IsSetVisibilityTimeout())
-            {
-                request.Parameters.Add("VisibilityTimeout", StringUtils.FromInt(receiveMessageRequest.VisibilityTimeout));
-            }
-            if (receiveMessageRequest != null && receiveMessageRequest.IsSetWaitTimeSeconds())
-            {
-                request.Parameters.Add("WaitTimeSeconds", StringUtils.FromInt(receiveMessageRequest.WaitTimeSeconds));
-            }
-
             return request;
         }
     }

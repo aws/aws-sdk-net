@@ -13,25 +13,32 @@
  * permissions and limitations under the License.
  */
 using System;
-using System.Net;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
+
 using Amazon.SQS.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-
+using Amazon.Runtime.Internal.Util;
 namespace Amazon.SQS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    ///    Response Unmarshaller for SendMessage operation
-    /// </summary>
+    /// Response Unmarshaller for SendMessage operation
+    /// </summary>  
     internal class SendMessageResponseUnmarshaller : XmlResponseUnmarshaller
     {
-        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
-        {   
+        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
+        {
             SendMessageResponse response = new SendMessageResponse();
-            
-            while (context.Read())
+
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
             {
                 if (context.IsStartElement)
                 {                    
@@ -47,11 +54,10 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
                     }
                 }
             }
-                 
-                        
+
             return response;
         }
-        
+
         private static void UnmarshallResult(XmlUnmarshallerContext context,SendMessageResponse response)
         {
             
@@ -61,57 +67,59 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
             if (context.IsStartOfDocument) 
                targetDepth += 2;
             
-            while (context.Read())
+            while (context.ReadAtDepth(originalDepth))
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+
+                    if (context.TestExpression("MD5OfMessageAttributes", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        response.MD5OfMessageAttributes = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("MD5OfMessageBody", targetDepth))
                     {
-                        response.MD5OfMessageBody = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        response.MD5OfMessageBody = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("MessageId", targetDepth))
                     {
-                        response.MessageId = StringUnmarshaller.GetInstance().Unmarshall(context);
-                            
+                        var unmarshaller = StringUnmarshaller.GetInstance();
+                        response.MessageId = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                }
-                else if (context.IsEndElement && context.CurrentDepth < originalDepth)
-                {
-                    return;
-                }
-            }
-                            
-
+                } 
+           }
 
             return;
         }
-        
+
+
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidMessageContents"))
             {
                 return new InvalidMessageContentsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-    
+            if (errorResponse.Code != null && errorResponse.Code.Equals("AWS.SimpleQueueService.UnsupportedOperation"))
+            {
+                return new UnsupportedOperationException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             return new AmazonSQSException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        
-        private static SendMessageResponseUnmarshaller instance;
 
+        private static SendMessageResponseUnmarshaller instance;
         public static SendMessageResponseUnmarshaller GetInstance()
         {
-            if (instance == null) 
+            if (instance == null)
             {
-               instance = new SendMessageResponseUnmarshaller();
+                instance = new SendMessageResponseUnmarshaller();
             }
             return instance;
         }
-    
+
     }
 }
-    

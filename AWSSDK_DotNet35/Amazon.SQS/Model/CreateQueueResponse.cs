@@ -12,23 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.SQS.Model
 {
     /// <summary>
-    /// Returns information about the  CreateQueue response and response metadata.
+    /// Configuration for accessing Amazon CreateQueue service
     /// </summary>
-    public class CreateQueueResponse : CreateQueueResult
+    public partial class CreateQueueResponse : CreateQueueResult
     {
         /// <summary>
         /// Gets and sets the CreateQueueResult property.
-        /// Returns the QueueUrl element of the created queue.
+        /// Represents the output of a CreateQueue operation.
         /// </summary>
         [Obsolete(@"This property has been deprecated. All properties of the CreateQueueResult class are now available on the CreateQueueResponse class. You should use the properties on CreateQueueResponse instead of accessing them through CreateQueueResult.")]
         public CreateQueueResult CreateQueueResult
@@ -40,4 +36,3 @@ namespace Amazon.SQS.Model
         }
     }
 }
-    

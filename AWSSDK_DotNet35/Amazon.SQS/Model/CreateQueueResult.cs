@@ -17,33 +17,37 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
 namespace Amazon.SQS.Model
 {
     /// <summary>
-    /// <para>Returns the QueueUrl element of the created queue.</para>
+    /// Returns the QueueUrl element of the created queue.
     /// </summary>
     public partial class CreateQueueResult : AmazonWebServiceResponse
     {
-        
-        private string queueUrl;
+        private string _queueUrl;
 
 
         /// <summary>
+        /// Gets and sets the property QueueUrl. 
+        /// <para>
         /// The URL for the created Amazon SQS queue.
-        ///  
+        /// </para>
         /// </summary>
         public string QueueUrl
         {
-            get { return this.queueUrl; }
-            set { this.queueUrl = value; }
+            get { return this._queueUrl; }
+            set { this._queueUrl = value; }
         }
 
         // Check to see if QueueUrl property is set
         internal bool IsSetQueueUrl()
         {
-            return this.queueUrl != null;
+            return this._queueUrl != null;
         }
+
     }
 }

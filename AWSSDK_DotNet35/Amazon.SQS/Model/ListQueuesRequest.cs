@@ -24,31 +24,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SQS.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListQueues operation.
-    /// <para>Returns a list of your queues. The maximum number of queues that can be returned is 1000. If you specify a value for the optional
-    /// <c>QueueNamePrefix</c> parameter, only queues with a name beginning with the specified value are returned.</para>
+    /// 
     /// </summary>
     public partial class ListQueuesRequest : AmazonSQSRequest
     {
-        private string queueNamePrefix;
+        private string _queueNamePrefix;
 
 
         /// <summary>
-        /// A string to use for filtering the list results. Only those queues whose name begins with the specified string are returned.
-        ///  
+        /// Gets and sets the property QueueNamePrefix. 
+        /// <para>
+        /// A string to use for filtering the list results. Only those queues whose name     
+        /// begins with the specified string are returned.
+        /// </para>
         /// </summary>
         public string QueueNamePrefix
         {
-            get { return this.queueNamePrefix; }
-            set { this.queueNamePrefix = value; }
+            get { return this._queueNamePrefix; }
+            set { this._queueNamePrefix = value; }
         }
 
         // Check to see if QueueNamePrefix property is set
         internal bool IsSetQueueNamePrefix()
         {
-            return this.queueNamePrefix != null;
+            return this._queueNamePrefix != null;
         }
 
     }
 }
-    

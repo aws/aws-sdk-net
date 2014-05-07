@@ -174,16 +174,6 @@ namespace Amazon.Runtime.Internal.Transform
         }
 
         /// <summary>
-        /// Reads the next token at depth greater than or equal to terget depth.
-        /// </summary>
-        /// <param name="targetDepth">Tokens are read at depth greater than or equal to terget depth.</param>
-        /// <returns>True if a token was read and current depth is greater than or equal to target depth.</returns>
-        public bool ReadAtDepth(int targetDepth)
-        {
-            return Read() && this.CurrentDepth >= targetDepth;
-        }
-
-        /// <summary>
         /// Peeks at the next token. This peek implementation
         /// reads the next token and makes the subsequent Read() return the same data.
         /// If Peek is called successively, it will return the same data.

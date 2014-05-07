@@ -75,7 +75,7 @@ namespace Amazon.S3
                 throw new InvalidOperationException("The Expires specified is null!");
 
             var aws4Signing = AWSConfigs.S3UseSignatureVersion4;
-            var region = AWS4Signer.DetermineRegion(Config);
+            var region = AWS4Signer.DetermineSigningRegion(Config, "s3");
             if (aws4Signing && string.IsNullOrEmpty(region))
                 throw new InvalidOperationException("To use AWS4 signing, a region must be specified in the client configuration using the AuthenticationRegion or Region properties, or be determinable from the service URL.");
 

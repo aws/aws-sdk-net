@@ -14,50 +14,51 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.SQS.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.SQS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Set Queue Attributes Request Marshaller
+    /// SetQueueAttributes Request Marshaller
     /// </summary>       
-    public class SetQueueAttributesRequestMarshaller : IMarshaller<IRequest, SetQueueAttributesRequest>
+    internal class SetQueueAttributesRequestMarshaller : IMarshaller<IRequest, SetQueueAttributesRequest>
     {
-        public IRequest Marshall(SetQueueAttributesRequest setQueueAttributesRequest)
+        public IRequest Marshall(SetQueueAttributesRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(setQueueAttributesRequest, "AmazonSQS");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.SQS");
             request.Parameters.Add("Action", "SetQueueAttributes");
             request.Parameters.Add("Version", "2012-11-05");
-            if (setQueueAttributesRequest != null && setQueueAttributesRequest.IsSetQueueUrl())
+
+            if(publicRequest != null)
             {
-                request.Parameters.Add("QueueUrl", StringUtils.FromString(setQueueAttributesRequest.QueueUrl));
-            }
-            if (setQueueAttributesRequest != null)
-            {
-                if (setQueueAttributesRequest.Attributes != null)
+                if(publicRequest.IsSetAttributes())
                 {
-                    int attributesListIndex = 1;
-                    foreach (string key in setQueueAttributesRequest.Attributes.Keys)
+                    int mapIndex = 1;
+                    foreach(var key in publicRequest.Attributes.Keys)
                     {
-                        string value;
-                        bool hasValue = setQueueAttributesRequest.Attributes.TryGetValue(key, out value);
-                                    request.Parameters.Add("Attribute." + attributesListIndex + ".Name", StringUtils.FromString(key));
-                        if (hasValue) 
+                        String value;
+                        bool hasValue = publicRequest.Attributes.TryGetValue(key, out value);
+                        request.Parameters.Add("Attribute" + "." + mapIndex + "." + "Name", StringUtils.FromString(key));
+                        if (hasValue)
                         {
-                            request.Parameters.Add("Attribute." + attributesListIndex + ".Value", StringUtils.FromString(value));
+                            request.Parameters.Add("Attribute" + "." + mapIndex + "." + "Value", StringUtils.FromString(value));
                         }
-                            ++attributesListIndex;
+                        mapIndex++;
                     }
                 }
+                if(publicRequest.IsSetQueueUrl())
+                {
+                    request.Parameters.Add("QueueUrl", StringUtils.FromString(publicRequest.QueueUrl));
+                }
             }
-
             return request;
         }
     }

@@ -12,21 +12,27 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.SQS.Model
 {
     /// <summary>
-    /// Returns information about the ChangeMessageVisibility response metadata.
-    /// The ChangeMessageVisibility operation has a void result type.
+    /// Configuration for accessing Amazon ChangeMessageVisibility service
     /// </summary>
-    public partial class ChangeMessageVisibilityResponse : AmazonWebServiceResponse
+    public partial class ChangeMessageVisibilityResponse : ChangeMessageVisibilityResult
     {
+        /// <summary>
+        /// Gets and sets the ChangeMessageVisibilityResult property.
+        /// Represents the output of a ChangeMessageVisibility operation.
+        /// </summary>
+        [Obsolete(@"This property has been deprecated. All properties of the ChangeMessageVisibilityResult class are now available on the ChangeMessageVisibilityResponse class. You should use the properties on ChangeMessageVisibilityResponse instead of accessing them through ChangeMessageVisibilityResult.")]
+        public ChangeMessageVisibilityResult ChangeMessageVisibilityResult
+        {
+            get
+            {
+                return this;
+            }
+        }
     }
 }
-    

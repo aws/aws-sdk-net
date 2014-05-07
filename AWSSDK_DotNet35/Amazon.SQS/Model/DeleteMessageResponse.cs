@@ -12,21 +12,27 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
 
-using Amazon.Runtime;
+using System;
 
 namespace Amazon.SQS.Model
 {
     /// <summary>
-    /// Returns information about the DeleteMessage response metadata.
-    /// The DeleteMessage operation has a void result type.
+    /// Configuration for accessing Amazon DeleteMessage service
     /// </summary>
-    public partial class DeleteMessageResponse : AmazonWebServiceResponse
+    public partial class DeleteMessageResponse : DeleteMessageResult
     {
+        /// <summary>
+        /// Gets and sets the DeleteMessageResult property.
+        /// Represents the output of a DeleteMessage operation.
+        /// </summary>
+        [Obsolete(@"This property has been deprecated. All properties of the DeleteMessageResult class are now available on the DeleteMessageResponse class. You should use the properties on DeleteMessageResponse instead of accessing them through DeleteMessageResult.")]
+        public DeleteMessageResult DeleteMessageResult
+        {
+            get
+            {
+                return this;
+            }
+        }
     }
 }
-    

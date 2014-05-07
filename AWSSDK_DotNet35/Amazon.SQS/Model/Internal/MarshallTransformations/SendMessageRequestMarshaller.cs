@@ -14,40 +14,88 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
+using System.Globalization;
+using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.SQS.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-
 namespace Amazon.SQS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Send Message Request Marshaller
+    /// SendMessage Request Marshaller
     /// </summary>       
-    public class SendMessageRequestMarshaller : IMarshaller<IRequest, SendMessageRequest>
+    internal class SendMessageRequestMarshaller : IMarshaller<IRequest, SendMessageRequest>
     {
-        public IRequest Marshall(SendMessageRequest sendMessageRequest)
+        public IRequest Marshall(SendMessageRequest publicRequest)
         {
-            IRequest request = new DefaultRequest(sendMessageRequest, "AmazonSQS");
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.SQS");
             request.Parameters.Add("Action", "SendMessage");
             request.Parameters.Add("Version", "2012-11-05");
-            if (sendMessageRequest != null && sendMessageRequest.IsSetQueueUrl())
-            {
-                request.Parameters.Add("QueueUrl", StringUtils.FromString(sendMessageRequest.QueueUrl));
-            }
-            if (sendMessageRequest != null && sendMessageRequest.IsSetMessageBody())
-            {
-                request.Parameters.Add("MessageBody", StringUtils.FromString(sendMessageRequest.MessageBody));
-            }
-            if (sendMessageRequest != null && sendMessageRequest.IsSetDelaySeconds())
-            {
-                request.Parameters.Add("DelaySeconds", StringUtils.FromInt(sendMessageRequest.DelaySeconds));
-            }
 
+            if(publicRequest != null)
+            {
+                if(publicRequest.IsSetDelaySeconds())
+                {
+                    request.Parameters.Add("DelaySeconds", StringUtils.FromInt(publicRequest.DelaySeconds));
+                }
+                if(publicRequest.IsSetMessageAttributes())
+                {
+                    int mapIndex = 1;
+                    foreach(var key in publicRequest.MessageAttributes.Keys)
+                    {
+                        MessageAttributeValue value;
+                        bool hasValue = publicRequest.MessageAttributes.TryGetValue(key, out value);
+                        request.Parameters.Add("MessageAttribute" + "." + mapIndex + "." + "Name", StringUtils.FromString(key));
+                        if (hasValue)
+                        {
+                            if(value.IsSetBinaryListValues())
+                            {
+                                int valuelistValueIndex = 1;
+                                foreach(var valuelistValue in value.BinaryListValues)
+                                {
+                                    request.Parameters.Add("MessageAttribute" + "." + mapIndex + "." + "Value" + "." + "BinaryListValues" + "." + "member" + "." + valuelistValueIndex, StringUtils.FromMemoryStream(valuelistValue));
+                                    valuelistValueIndex++;
+                                }
+                            }
+                            if(value.IsSetBinaryValue())
+                            {
+                                request.Parameters.Add("MessageAttribute" + "." + mapIndex + "." + "Value" + "." + "BinaryValue", StringUtils.FromMemoryStream(value.BinaryValue));
+                            }
+                            if(value.IsSetDataType())
+                            {
+                                request.Parameters.Add("MessageAttribute" + "." + mapIndex + "." + "Value" + "." + "DataType", StringUtils.FromString(value.DataType));
+                            }
+                            if(value.IsSetStringListValues())
+                            {
+                                int valuelistValueIndex = 1;
+                                foreach(var valuelistValue in value.StringListValues)
+                                {
+                                    request.Parameters.Add("MessageAttribute" + "." + mapIndex + "." + "Value" + "." + "StringListValues" + "." + "member" + "." + valuelistValueIndex, StringUtils.FromString(valuelistValue));
+                                    valuelistValueIndex++;
+                                }
+                            }
+                            if(value.IsSetStringValue())
+                            {
+                                request.Parameters.Add("MessageAttribute" + "." + mapIndex + "." + "Value" + "." + "StringValue", StringUtils.FromString(value.StringValue));
+                            }
+                        }
+                        mapIndex++;
+                    }
+                }
+                if(publicRequest.IsSetMessageBody())
+                {
+                    request.Parameters.Add("MessageBody", StringUtils.FromString(publicRequest.MessageBody));
+                }
+                if(publicRequest.IsSetQueueUrl())
+                {
+                    request.Parameters.Add("QueueUrl", StringUtils.FromString(publicRequest.QueueUrl));
+                }
+            }
             return request;
         }
     }

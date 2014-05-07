@@ -275,10 +275,14 @@ namespace Amazon
                         if (xmlEndpoint.Element("Http") is XElement)
                             http = bool.Parse(xmlEndpoint.Element("Http").Value);
 
+                        string authregion = null;
+                        if (xmlEndpoint.Element("AuthRegion") is XElement)
+                            authregion = xmlEndpoint.Element("AuthRegion").Value;
+
                         if (region.endpoints == null)
                             region.endpoints = new Dictionary<string, Endpoint>();
 
-                        region.endpoints.Add(serviceName, new Endpoint(hostname, https, http));
+                        region.endpoints.Add(serviceName, new Endpoint(hostname, https, http, authregion));
                     }
                 }
 
@@ -366,11 +370,12 @@ namespace Amazon
         public class Endpoint
         {
 
-            internal Endpoint(string hostname, bool https, bool http)
+            internal Endpoint(string hostname, bool https, bool http, string authregion = null)
             {
                 this.Hostname = hostname;
                 this.HTTPS = https;
                 this.HTTP = http;
+                this.AuthRegion = authregion;
             }
 
             /// <summary>
@@ -395,6 +400,15 @@ namespace Amazon
             /// Returns true of the service endpoint supports HTTP.
             /// </summary>
             public bool HTTP
+            {
+                get;
+                private set;
+            }
+
+            /// <summary>
+            /// The authentication region to be used in request signing.
+            /// </summary>
+            public string AuthRegion
             {
                 get;
                 private set;
