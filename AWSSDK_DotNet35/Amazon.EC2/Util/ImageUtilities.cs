@@ -37,19 +37,29 @@ namespace Amazon.EC2.Util
     public static class ImageUtilities
     {
         public static readonly ImageDescriptor WINDOWS_2012_BASE = new ImageDescriptor("WINDOWS_2012_BASE");
+
+        public static readonly ImageDescriptor WINDOWS_2012_SQL_SERVER_EXPRESS_2014 = new ImageDescriptor("WINDOWS_2012_SQL_SERVER_EXPRESS_2014");
+        public static readonly ImageDescriptor WINDOWS_2012_SQL_SERVER_STANDARD_2014 = new ImageDescriptor("WINDOWS_2012_SQL_SERVER_STANDARD_2014");
+        public static readonly ImageDescriptor WINDOWS_2012_SQL_SERVER_WEB_2014 = new ImageDescriptor("WINDOWS_2012_SQL_SERVER_WEB_2014");
+
         public static readonly ImageDescriptor WINDOWS_2012_SQL_SERVER_EXPRESS_2012 = new ImageDescriptor("WINDOWS_2012_SQL_SERVER_EXPRESS_2012");
         public static readonly ImageDescriptor WINDOWS_2012_SQL_SERVER_STANDARD_2012 = new ImageDescriptor("WINDOWS_2012_SQL_SERVER_STANDARD_2012");
         public static readonly ImageDescriptor WINDOWS_2012_SQL_SERVER_WEB_2012 = new ImageDescriptor("WINDOWS_2012_SQL_SERVER_WEB_2012");
+        
         public static readonly ImageDescriptor WINDOWS_2012_SQL_SERVER_EXPRESS_2008 = new ImageDescriptor("WINDOWS_2012_SQL_SERVER_EXPRESS_2008");
         public static readonly ImageDescriptor WINDOWS_2012_SQL_SERVER_STANDARD_2008 = new ImageDescriptor("WINDOWS_2012_SQL_SERVER_STANDARD_2008");
         public static readonly ImageDescriptor WINDOWS_2012_SQL_SERVER_WEB_2008 = new ImageDescriptor("WINDOWS_2012_SQL_SERVER_WEB_2008");
+        
         public static readonly ImageDescriptor WINDOWS_2008_BASE = new ImageDescriptor("WINDOWS_2008_BASE");
+        
         public static readonly ImageDescriptor WINDOWS_2008_SQL_SERVER_EXPRESS_2012 = new ImageDescriptor("WINDOWS_2008_SQL_SERVER_EXPRESS_2012");
         public static readonly ImageDescriptor WINDOWS_2008_SQL_SERVER_STANDARD_2012 = new ImageDescriptor("WINDOWS_2008_SQL_SERVER_STANDARD_2012");
         public static readonly ImageDescriptor WINDOWS_2008_SQL_SERVER_WEB_2012 = new ImageDescriptor("WINDOWS_2008_SQL_SERVER_WEB_2012");
+        
         public static readonly ImageDescriptor WINDOWS_2008_SQL_SERVER_EXPRESS_2008 = new ImageDescriptor("WINDOWS_2008_SQL_SERVER_EXPRESS_2008");
         public static readonly ImageDescriptor WINDOWS_2008_SQL_SERVER_STANDARD_2008 = new ImageDescriptor("WINDOWS_2008_SQL_SERVER_STANDARD_2008");
         public static readonly ImageDescriptor WINDOWS_2008_SQL_SERVER_WEB_2008 = new ImageDescriptor("WINDOWS_2008_SQL_SERVER_WEB_2008");
+        
         public static readonly ImageDescriptor WINDOWS_2008_BEANSTALK_IIS75 = new ImageDescriptor("WINDOWS_2008_BEANSTALK_IIS75");
         public static readonly ImageDescriptor WINDOWS_2012_BEANSTALK_IIS8 = new ImageDescriptor("WINDOWS_2012_BEANSTALK_IIS8");
 
@@ -107,19 +117,29 @@ namespace Amazon.EC2.Util
         private static readonly ImageDescriptor[] _WindowsDescriptors = new ImageDescriptor[]
         {
             WINDOWS_2012_BASE,
+
+            WINDOWS_2012_SQL_SERVER_EXPRESS_2014,
+            WINDOWS_2012_SQL_SERVER_STANDARD_2014,
+            WINDOWS_2012_SQL_SERVER_WEB_2014,
+
             WINDOWS_2012_SQL_SERVER_EXPRESS_2012,
             WINDOWS_2012_SQL_SERVER_STANDARD_2012,
             WINDOWS_2012_SQL_SERVER_WEB_2012,
+            
             WINDOWS_2012_SQL_SERVER_EXPRESS_2008,
             WINDOWS_2012_SQL_SERVER_STANDARD_2008,
             WINDOWS_2012_SQL_SERVER_WEB_2008,
+            
             WINDOWS_2008_BASE,
+            
             WINDOWS_2008_SQL_SERVER_EXPRESS_2012,
             WINDOWS_2008_SQL_SERVER_STANDARD_2012,
             WINDOWS_2008_SQL_SERVER_WEB_2012,
+            
             WINDOWS_2008_SQL_SERVER_EXPRESS_2008,
             WINDOWS_2008_SQL_SERVER_STANDARD_2008,
             WINDOWS_2008_SQL_SERVER_WEB_2008,
+            
             WINDOWS_2008_BEANSTALK_IIS75,
             WINDOWS_2012_BEANSTALK_IIS8
         };
