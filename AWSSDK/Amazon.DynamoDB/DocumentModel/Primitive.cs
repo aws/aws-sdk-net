@@ -18,6 +18,7 @@ using System.Globalization;
 using System.IO;
 
 using Amazon.DynamoDB.Model;
+using Amazon.Runtime.Internal.Util;
 using Amazon.Util;
 
 namespace Amazon.DynamoDB.DocumentModel
@@ -800,10 +801,27 @@ namespace Amazon.DynamoDB.DocumentModel
             return new Primitive(this.Value, this.Type);
         }
 
-        int hashCode = new Random().Next(int.MaxValue);
         public override int GetHashCode()
         {
-            return hashCode;
+            var typeHashCode = this.Type.GetHashCode();
+            var valueHashCode = 0;
+
+            if (this.Type == DynamoDBEntryType.Numeric || this.Type == DynamoDBEntryType.String)
+                valueHashCode = this.Value.GetHashCode();
+            else
+            {
+                var bytes = this.Value as byte[];
+                if (bytes != null)
+                {
+                    for (int i = 0; i < bytes.Length; i++)
+                    {
+                        byte b = bytes[i];
+                        valueHashCode = Hashing.CombineHashes(valueHashCode, b.GetHashCode());
+                    }
+                }
+            }
+
+            return Hashing.CombineHashes(typeHashCode, valueHashCode);
         }
 
         public override bool Equals(object obj)
