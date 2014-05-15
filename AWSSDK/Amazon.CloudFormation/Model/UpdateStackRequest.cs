@@ -35,17 +35,19 @@ namespace Amazon.CloudFormation.Model
     /// a Stack</a> .</para>
     /// </summary>
     /// <seealso cref="Amazon.CloudFormation.AmazonCloudFormation.UpdateStack"/>
-    public class UpdateStackRequest : AmazonWebServiceRequest
+    public partial class UpdateStackRequest : AmazonWebServiceRequest
     {
         private string stackName;
         private string templateBody;
         private string templateURL;
+        private bool? usePreviousTemplate;
         private string stackPolicyDuringUpdateBody;
         private string stackPolicyDuringUpdateURL;
         private List<Parameter> parameters = new List<Parameter>();
         private List<string> capabilities = new List<string>();
         private string stackPolicyBody;
         private string stackPolicyURL;
+        private List<string> notificationARNs = new List<string>();
 
         /// <summary>
         /// The name or stack ID of the stack to update. <note> Must contain only alphanumeric characters (case sensitive) and start with an alpha
@@ -156,6 +158,30 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetTemplateURL()
         {
             return this.templateURL != null;
+        }
+        public bool UsePreviousTemplate
+        {
+            get { return this.usePreviousTemplate ?? default(bool); }
+            set { this.usePreviousTemplate = value; }
+        }
+
+        /// <summary>
+        /// Sets the UsePreviousTemplate property
+        /// </summary>
+        /// <param name="usePreviousTemplate">The value to set for the UsePreviousTemplate property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public UpdateStackRequest WithUsePreviousTemplate(bool usePreviousTemplate)
+        {
+            this.usePreviousTemplate = usePreviousTemplate;
+            return this;
+        }
+            
+
+        // Check to see if UsePreviousTemplate property is set
+        internal bool IsSetUsePreviousTemplate()
+        {
+            return this.usePreviousTemplate.HasValue;
         }
 
         /// <summary>
@@ -421,6 +447,48 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetStackPolicyURL()
         {
             return this.stackPolicyURL != null;
+        }
+        public List<string> NotificationARNs
+        {
+            get { return this.notificationARNs; }
+            set { this.notificationARNs = value; }
+        }
+        /// <summary>
+        /// Adds elements to the NotificationARNs collection
+        /// </summary>
+        /// <param name="notificationARNs">The values to add to the NotificationARNs collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public UpdateStackRequest WithNotificationARNs(params string[] notificationARNs)
+        {
+            foreach (string element in notificationARNs)
+            {
+                this.notificationARNs.Add(element);
+            }
+
+            return this;
+        }
+
+        /// <summary>
+        /// Adds elements to the NotificationARNs collection
+        /// </summary>
+        /// <param name="notificationARNs">The values to add to the NotificationARNs collection </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public UpdateStackRequest WithNotificationARNs(IEnumerable<string> notificationARNs)
+        {
+            foreach (string element in notificationARNs)
+            {
+                this.notificationARNs.Add(element);
+            }
+
+            return this;
+        }
+
+        // Check to see if NotificationARNs property is set
+        internal bool IsSetNotificationARNs()
+        {
+            return this.notificationARNs.Count > 0;
         }
     }
 }

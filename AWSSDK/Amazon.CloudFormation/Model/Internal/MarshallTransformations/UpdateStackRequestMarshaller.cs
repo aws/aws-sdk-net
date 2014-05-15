@@ -47,6 +47,10 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
             {
                 request.Parameters.Add("TemplateURL", StringUtils.FromString(updateStackRequest.TemplateURL));
             }
+            if (updateStackRequest != null && updateStackRequest.IsSetUsePreviousTemplate())
+            {
+                request.Parameters.Add("UsePreviousTemplate", StringUtils.FromBool(updateStackRequest.UsePreviousTemplate));
+            }
             if (updateStackRequest != null && updateStackRequest.IsSetStackPolicyDuringUpdateBody())
             {
                 request.Parameters.Add("StackPolicyDuringUpdateBody", StringUtils.FromString(updateStackRequest.StackPolicyDuringUpdateBody));
@@ -70,6 +74,10 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     {
                         request.Parameters.Add("Parameters.member." + parametersListIndex + ".ParameterValue", StringUtils.FromString(parametersListValue.ParameterValue));
                     }
+                    if (parametersListValue != null && parametersListValue.IsSetUsePreviousValue())
+                    {
+                        request.Parameters.Add("Parameters.member." + parametersListIndex + ".UsePreviousValue", StringUtils.FromBool(parametersListValue.UsePreviousValue));
+                    }
 
                     parametersListIndex++;
                 }
@@ -92,6 +100,17 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
             if (updateStackRequest != null && updateStackRequest.IsSetStackPolicyURL())
             {
                 request.Parameters.Add("StackPolicyURL", StringUtils.FromString(updateStackRequest.StackPolicyURL));
+            }
+            if (updateStackRequest != null)
+            {
+                List<string> notificationARNsList = updateStackRequest.NotificationARNs;
+
+                int notificationARNsListIndex = 1;
+                foreach (string notificationARNsListValue in notificationARNsList)
+                { 
+                    request.Parameters.Add("NotificationARNs.member." + notificationARNsListIndex, StringUtils.FromString(notificationARNsListValue));
+                    notificationARNsListIndex++;
+                }
             }
 
             return request;

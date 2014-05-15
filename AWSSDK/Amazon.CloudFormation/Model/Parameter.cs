@@ -28,6 +28,7 @@ namespace Amazon.CloudFormation.Model
         
         private string parameterKey;
         private string parameterValue;
+        private bool? usePreviousValue;
 
         /// <summary>
         /// The key associated with the parameter.
@@ -85,6 +86,30 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetParameterValue()
         {
             return this.parameterValue != null;
+        }
+        public bool UsePreviousValue
+        {
+            get { return this.usePreviousValue ?? default(bool); }
+            set { this.usePreviousValue = value; }
+        }
+
+        /// <summary>
+        /// Sets the UsePreviousValue property
+        /// </summary>
+        /// <param name="usePreviousValue">The value to set for the UsePreviousValue property </param>
+        /// <returns>this instance</returns>
+        [Obsolete("The With methods are obsolete and will be removed in version 2 of the AWS SDK for .NET. See http://aws.amazon.com/sdkfornet/#version2 for more information.")]
+        public Parameter WithUsePreviousValue(bool usePreviousValue)
+        {
+            this.usePreviousValue = usePreviousValue;
+            return this;
+        }
+            
+
+        // Check to see if UsePreviousValue property is set
+        internal bool IsSetUsePreviousValue()
+        {
+            return this.usePreviousValue.HasValue;
         }
     }
 }

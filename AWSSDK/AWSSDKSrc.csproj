@@ -1087,6 +1087,7 @@
     <Compile Include="Amazon.CloudFormation\AmazonCloudFormationClient.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.CloudFormation\AmazonCloudFormationClient.Extension.cs" />
     <Compile Include="Amazon.CloudFormation\AmazonCloudFormationConfig.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -1367,6 +1368,7 @@
     <Compile Include="Amazon.CloudFormation\Model\UpdateStackRequest.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.CloudFormation\Model\UpdateStackRequest.Extension.cs" />
     <Compile Include="Amazon.CloudFormation\Model\UpdateStackResponse.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -10114,6 +10116,7 @@
     <Compile Include="Amazon.Runtime\Internal\Auth\CloudFrontSigner.cs" />
     <Compile Include="Amazon.Runtime\Internal\Auth\QueryStringSigner.cs" />
     <Compile Include="Amazon.Runtime\Internal\Auth\SignatureException.cs" />
+    <Compile Include="Amazon.Runtime\Internal\AutoConstructedTypes.cs" />
     <Compile Include="Amazon.Runtime\Internal\DefaultRequest.cs" />
     <Compile Include="Amazon.Runtime\Internal\ErrorResponse.cs">
       <SubType>Code</SubType>
